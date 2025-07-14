@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-06-12T23:47:19+00:00",
+  "translation_date": "2025-07-14T02:39:35+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "tr"
 }
@@ -19,26 +19,26 @@ Bu derste, MCP uygulamaları için güvenlik en iyi uygulamalarını inceleyece�
 
 Bu dersin sonunda şunları yapabileceksiniz:
 
-- MCP sunucuları için güvenli kimlik doğrulama ve yetkilendirme mekanizmalarını uygulamak.
+- MCP sunucuları için güvenli kimlik doğrulama ve yetkilendirme mekanizmaları uygulamak.
 - Şifreleme ve güvenli depolama kullanarak hassas verileri korumak.
-- Doğru erişim kontrolleriyle araçların güvenli çalıştırılmasını sağlamak.
+- Doğru erişim kontrolleri ile araçların güvenli çalışmasını sağlamak.
 - Veri koruma ve gizlilik uyumu için en iyi uygulamaları uygulamak.
 
 ## Kimlik Doğrulama ve Yetkilendirme
 
-Kimlik doğrulama ve yetkilendirme, MCP sunucularının güvenliğini sağlamak için gereklidir. Kimlik doğrulama "Sen kimsin?" sorusunu yanıtlar, yetkilendirme ise "Ne yapabilirsin?" sorusunu yanıtlar.
+Kimlik doğrulama ve yetkilendirme, MCP sunucularının güvenliği için temel unsurlardır. Kimlik doğrulama "Sen kimsin?" sorusuna yanıt verirken, yetkilendirme "Ne yapabilirsin?" sorusuna cevap verir.
 
-.NET ve Java kullanarak MCP sunucularında güvenli kimlik doğrulama ve yetkilendirmenin nasıl uygulanacağına dair örneklere bakalım.
+Şimdi, .NET ve Java kullanarak MCP sunucularında güvenli kimlik doğrulama ve yetkilendirme nasıl uygulanır örneklerine bakalım.
 
 ### .NET Identity Entegrasyonu
 
-ASP .NET Core Identity, kullanıcı kimlik doğrulama ve yetkilendirmeyi yönetmek için sağlam bir çerçeve sağlar. MCP sunucularına araçlar ve kaynaklara erişimi güvence altına almak için entegre edebiliriz.
+ASP .NET Core Identity, kullanıcı kimlik doğrulama ve yetkilendirmeyi yönetmek için sağlam bir çerçeve sunar. MCP sunucularına entegre ederek araçlara ve kaynaklara erişimi güvence altına alabiliriz.
 
 ASP.NET Core Identity'yi MCP sunucularıyla entegre ederken anlamamız gereken bazı temel kavramlar şunlardır:
 
-- **Identity Yapılandırması**: ASP.NET Core Identity'nin kullanıcı rolleri ve talepleri ile kurulması. Talep, kullanıcı hakkında bir bilgi parçasıdır; örneğin "Admin" veya "User" gibi roller veya izinler.
-- **JWT Kimlik Doğrulama**: Güvenli API erişimi için JSON Web Token'ları (JWT) kullanmak. JWT, dijital olarak imzalandığı için doğrulanabilir ve güvenilir olan, taraflar arasında bilgi iletmek için kullanılan standart bir JSON nesnesidir.
-- **Yetkilendirme Politikaları**: Kullanıcı rollerine göre belirli araçlara erişimi kontrol eden politikalar tanımlamak. MCP, kullanıcıların rollerine ve taleplerine göre hangi araçlara erişebileceğini belirlemek için yetkilendirme politikaları kullanır.
+- **Identity Yapılandırması**: Kullanıcı rolleri ve talepleri ile ASP.NET Core Identity'nin kurulması. Bir talep, kullanıcının rolü veya izinleri gibi bilgileri içerir; örneğin "Admin" veya "User".
+- **JWT Kimlik Doğrulama**: Güvenli API erişimi için JSON Web Token (JWT) kullanımı. JWT, dijital olarak imzalandığı için doğrulanabilir ve güvenilir olan, taraflar arasında bilgi güvenli şekilde iletmek için kullanılan standart bir JSON nesnesidir.
+- **Yetkilendirme Politikaları**: Kullanıcı rollerine göre belirli araçlara erişimi kontrol eden politikaların tanımlanması. MCP, kullanıcıların rollerine ve taleplerine göre hangi araçlara erişebileceğini belirlemek için yetkilendirme politikaları kullanır.
 
 ```csharp
 public class SecureMcpStartup
@@ -112,21 +112,21 @@ public class SecureMcpStartup
 Yukarıdaki kodda:
 
 - Kullanıcı yönetimi için ASP.NET Core Identity yapılandırıldı.
-- Güvenli API erişimi için JWT kimlik doğrulaması kuruldu. Yayımcı, hedef kitle ve imzalama anahtarı gibi token doğrulama parametreleri belirtildi.
-- Kullanıcı rollerine göre araçlara erişimi kontrol eden yetkilendirme politikaları tanımlandı. Örneğin, "CanUseAdminTools" politikası kullanıcıda "Admin" rolü olmasını gerektirirken, "CanUseBasic" politikası kullanıcının kimlik doğrulanmış olmasını şart koşar.
-- MCP araçları, uygun rollere sahip kullanıcıların erişebilmesi için belirli yetkilendirme gereksinimleriyle kaydedildi.
+- Güvenli API erişimi için JWT kimlik doğrulaması ayarlandı. Token doğrulama parametreleri, yayımlayan, hedef kitle ve imzalama anahtarı dahil olmak üzere belirtildi.
+- Kullanıcı rollerine göre araçlara erişimi kontrol eden yetkilendirme politikaları tanımlandı. Örneğin, "CanUseAdminTools" politikası kullanıcının "Admin" rolüne sahip olmasını gerektirirken, "CanUseBasic" politikası kullanıcının kimlik doğrulanmış olmasını şart koşar.
+- MCP araçları, yalnızca uygun rollere sahip kullanıcıların erişebilmesi için belirli yetkilendirme gereksinimleriyle kaydedildi.
 
 ### Java Spring Security Entegrasyonu
 
-Java için, MCP sunucuları için güvenli kimlik doğrulama ve yetkilendirme sağlamak üzere Spring Security kullanacağız. Spring Security, Spring uygulamalarıyla sorunsuz entegre olan kapsamlı bir güvenlik çerçevesi sunar.
+Java için, MCP sunucularında güvenli kimlik doğrulama ve yetkilendirme uygulamak üzere Spring Security kullanacağız. Spring Security, Spring uygulamalarıyla sorunsuz entegrasyon sağlayan kapsamlı bir güvenlik çerçevesidir.
 
-Buradaki temel kavramlar:
+Buradaki temel kavramlar şunlardır:
 
 - **Spring Security Yapılandırması**: Kimlik doğrulama ve yetkilendirme için güvenlik yapılandırmalarının kurulması.
-- **OAuth2 Kaynak Sunucusu**: MCP araçlarına güvenli erişim için OAuth2 kullanımı. OAuth2, üçüncü taraf hizmetlerin güvenli API erişimi için erişim belirteçleri alışverişi yapmasını sağlayan bir yetkilendirme çerçevesidir.
-- **Güvenlik Kesicileri**: Araç çalıştırmada erişim kontrollerini uygulamak için güvenlik kesicilerinin kullanılması.
-- **Rol Tabanlı Erişim Kontrolü**: Belirli araçlar ve kaynaklara erişimi kontrol etmek için rollerin kullanılması.
-- **Güvenlik Notasyonları**: Metotları ve uç noktaları güvence altına almak için notasyonların kullanılması.
+- **OAuth2 Resource Server**: MCP araçlarına güvenli erişim için OAuth2 kullanımı. OAuth2, üçüncü taraf hizmetlerin güvenli API erişimi için erişim tokenları alışverişi yapmasını sağlayan bir yetkilendirme çerçevesidir.
+- **Güvenlik Kesicileri (Interceptors)**: Araç çalıştırma sırasında erişim kontrollerini uygulamak için güvenlik kesicilerinin kullanılması.
+- **Role Dayalı Erişim Kontrolü**: Belirli araçlara ve kaynaklara erişimi kontrol etmek için rollerin kullanılması.
+- **Güvenlik Anotasyonları**: Metodları ve uç noktaları güvence altına almak için anotasyonların kullanılması.
 
 ```java
 @Configuration
@@ -180,18 +180,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Yukarıdaki kodda:
 
-- MCP uç noktalarını güvence altına almak için Spring Security yapılandırıldı; araç keşfine genel erişim sağlanırken araç çalıştırma için kimlik doğrulama zorunlu kılındı.
-- MCP araçlarına güvenli erişimi sağlamak için OAuth2 kaynak sunucusu olarak kullanıldı.
-- Araç çalıştırma sırasında erişim kontrollerini uygulamak için güvenlik kesicisi kullanıldı; kullanıcı rolleri ve izinleri kontrol edilerek belirli araçlara erişim sağlandı.
-- Yönetici araçlarına ve hassas veri erişimine rol tabanlı erişim kontrolü tanımlandı.
+- MCP uç noktalarını güvence altına almak için Spring Security yapılandırıldı; araç keşfine genel erişim sağlanırken, araç çalıştırma için kimlik doğrulama zorunlu kılındı.
+- MCP araçlarına güvenli erişimi yönetmek için OAuth2 resource server olarak kullanıldı.
+- Araç çalıştırma sırasında erişim kontrollerini uygulamak için güvenlik kesicisi uygulandı; belirli araçlara erişim öncesinde kullanıcı rolleri ve izinleri kontrol edildi.
+- Yönetici araçlarına ve hassas veri erişimine kullanıcı rollerine göre kısıtlama getiren role dayalı erişim kontrolü tanımlandı.
 
 ## Veri Koruma ve Gizlilik
 
-Veri koruma, hassas bilgilerin güvenli şekilde işlenmesini sağlamak için hayati öneme sahiptir. Bu, kişisel tanımlayıcı bilgilerin (PII), finansal verilerin ve diğer hassas bilgilerin yetkisiz erişim ve ihlallerden korunmasını içerir.
+Veri koruma, hassas bilgilerin güvenli şekilde işlenmesini sağlamak için çok önemlidir. Bu, kişisel tanımlayıcı bilgilerin (PII), finansal verilerin ve diğer hassas bilgilerin yetkisiz erişim ve ihlallerden korunmasını içerir.
 
 ### Python Veri Koruma Örneği
 
-Şifreleme ve PII tespiti kullanarak Python'da veri korumanın nasıl uygulanacağına dair bir örneğe bakalım.
+Şimdi, Python’da şifreleme ve PII tespiti kullanarak veri koruma nasıl uygulanır örneğine bakalım.
 
 ```python
 from mcp_server import McpServer
@@ -329,14 +329,14 @@ class SecureCustomerDataTool(Tool):
 
 Yukarıdaki kodda:
 
-- `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
-- Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
-- Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool` kullanarak hassas verilerin güvenli şekilde işlendiğinden emin olmak için bir veri koruma aracı uygulandı.
+- Metin ve parametrelerde kişisel tanımlayıcı bilgileri (PII) taramak için `PiiDetector` sınıfı uygulandı.
+- `cryptography` kütüphanesini kullanarak hassas verilerin şifrelenmesi ve şifresinin çözülmesi için `EncryptionService` sınıfı oluşturuldu.
+- Araç çalıştırmayı sarmalayan, PII kontrolü yapan, erişimi kaydeden ve gerekirse hassas verileri şifreleyen `secure_tool` dekoratörü tanımlandı.
+- Örnek bir araç olan `SecureCustomerDataTool` üzerinde `secure_tool` dekoratörü uygulanarak hassas verilerin güvenli şekilde işlendiği sağlandı.
 
 ## Sonraki Adımlar
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yanlış yorumlamalar nedeniyle sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-04T17:38:46+00:00",
+  "translation_date": "2025-07-13T16:08:07+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "da"
 }
 -->
-# 📖 MCP Kernebegreber: Mestring af Model Context Protocol til AI-integration
+# 📖 MCP Core Concepts: Mestring af Model Context Protocol til AI-integration
 
-[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) er en kraftfuld, standardiseret ramme, der optimerer kommunikationen mellem store sprogmodeller (LLMs) og eksterne værktøjer, applikationer og datakilder. Denne SEO-optimerede guide vil føre dig gennem MCP’s kernebegreber og sikre, at du forstår dens klient-server arkitektur, væsentlige komponenter, kommunikationsmekanik og bedste implementeringspraksis.
+[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) er en kraftfuld, standardiseret ramme, der optimerer kommunikationen mellem store sprogmodeller (LLMs) og eksterne værktøjer, applikationer og datakilder. Denne SEO-optimerede guide vil føre dig gennem MCP’s kernebegreber, så du får en forståelse for dens klient-server-arkitektur, væsentlige komponenter, kommunikationsmekanismer og bedste praksis for implementering.
 
 ## Oversigt
 
-Denne lektion udforsker den grundlæggende arkitektur og de komponenter, der udgør Model Context Protocol (MCP) økosystemet. Du vil lære om klient-server arkitekturen, nøglekomponenter og kommunikationsmekanismer, der driver MCP-interaktioner.
+Denne lektion udforsker den grundlæggende arkitektur og de komponenter, der udgør Model Context Protocol (MCP) økosystemet. Du vil lære om klient-server-arkitekturen, nøglekomponenter og kommunikationsmekanismer, der driver MCP-interaktioner.
 
 ## 👩‍🎓 Vigtige læringsmål
 
 Når du er færdig med denne lektion, vil du:
 
-- Forstå MCP’s klient-server arkitektur.
+- Forstå MCP’s klient-server-arkitektur.
 - Identificere roller og ansvar for Hosts, Clients og Servers.
 - Analysere de centrale funktioner, der gør MCP til et fleksibelt integrationslag.
 - Lære, hvordan information flyder inden for MCP-økosystemet.
@@ -27,9 +27,9 @@ Når du er færdig med denne lektion, vil du:
 
 ## 🔎 MCP Arkitektur: Et dybere kig
 
-MCP-økosystemet er bygget på en klient-server model. Denne modulære struktur gør det muligt for AI-applikationer effektivt at interagere med værktøjer, databaser, API’er og kontekstuelle ressourcer. Lad os bryde denne arkitektur ned i dens kernekomponenter.
+MCP-økosystemet er bygget på en klient-server-model. Denne modulære struktur gør det muligt for AI-applikationer effektivt at interagere med værktøjer, databaser, API’er og kontekstuelle ressourcer. Lad os bryde denne arkitektur ned i dens kernekomponenter.
 
-I sin kerne følger MCP en klient-server arkitektur, hvor en host-applikation kan forbinde til flere servere:
+I sin kerne følger MCP en klient-server-arkitektur, hvor en host-applikation kan forbinde til flere servere:
 
 ```mermaid
 flowchart LR
@@ -49,17 +49,17 @@ flowchart LR
     end
 ```
 
-- **MCP Hosts**: Programmer som VSCode, Claude Desktop, IDE’er eller AI-værktøjer, der ønsker at tilgå data via MCP
-- **MCP Clients**: Protokolklienter, der opretholder 1:1 forbindelser med servere
+- **MCP Hosts**: Programmer som VSCode, Claude Desktop, IDE’er eller AI-værktøjer, der ønsker at få adgang til data via MCP
+- **MCP Clients**: Protokolklienter, der opretholder 1:1-forbindelser med servere
 - **MCP Servers**: Letvægtsprogrammer, der hver især eksponerer specifikke funktioner gennem den standardiserede Model Context Protocol
-- **Lokale datakilder**: Din computers filer, databaser og tjenester, som MCP-servere kan tilgå sikkert
+- **Lokale datakilder**: Din computers filer, databaser og tjenester, som MCP-servere kan få sikker adgang til
 - **Fjernservices**: Eksterne systemer tilgængelige over internettet, som MCP-servere kan forbinde til via API’er.
 
 MCP-protokollen er en udviklende standard, og du kan se de seneste opdateringer i [protokolspecifikationen](https://modelcontextprotocol.io/specification/2025-06-18/)
 
 ### 1. Hosts
 
-I Model Context Protocol (MCP) spiller Hosts en afgørende rolle som den primære grænseflade, hvorigennem brugere interagerer med protokollen. Hosts er applikationer eller miljøer, der initierer forbindelser til MCP-servere for at tilgå data, værktøjer og prompts. Eksempler på Hosts inkluderer integrerede udviklingsmiljøer (IDEs) som Visual Studio Code, AI-værktøjer som Claude Desktop eller specialbyggede agenter designet til specifikke opgaver.
+I Model Context Protocol (MCP) spiller Hosts en afgørende rolle som den primære grænseflade, hvorigennem brugere interagerer med protokollen. Hosts er applikationer eller miljøer, der initierer forbindelser til MCP-servere for at få adgang til data, værktøjer og prompts. Eksempler på Hosts inkluderer integrerede udviklingsmiljøer (IDEs) som Visual Studio Code, AI-værktøjer som Claude Desktop eller specialbyggede agenter designet til specifikke opgaver.
 
 **Hosts** er LLM-applikationer, der initierer forbindelser. De:
 
@@ -71,7 +71,7 @@ I Model Context Protocol (MCP) spiller Hosts en afgørende rolle som den primær
 
 ### 2. Clients
 
-Clients er essentielle komponenter, der faciliterer interaktionen mellem Hosts og MCP-servere. Clients fungerer som mellemled, der gør det muligt for Hosts at tilgå og anvende funktionaliteter leveret af MCP-servere. De spiller en vigtig rolle i at sikre glidende kommunikation og effektiv dataudveksling inden for MCP-arkitekturen.
+Clients er essentielle komponenter, der faciliterer interaktionen mellem Hosts og MCP-servere. Clients fungerer som mellemled, der gør det muligt for Hosts at få adgang til og anvende funktionaliteter leveret af MCP-servere. De spiller en vigtig rolle i at sikre glidende kommunikation og effektiv dataudveksling inden for MCP-arkitekturen.
 
 **Clients** er forbindelser inden for host-applikationen. De:
 
@@ -160,7 +160,7 @@ I Model Context Protocol (MCP) tilbyder clients flere nøglefunktioner til serve
 ### 👉 Sampling
 
 - **Server-initierede agentiske handlinger**: Clients muliggør, at servere kan initiere specifikke handlinger eller adfærd autonomt, hvilket øger systemets dynamiske kapabiliteter.
-- **Rekursive LLM-interaktioner**: Denne funktion tillader rekursive interaktioner med store sprogmodeller (LLMs), hvilket muliggør mere komplekse og iterative opgaveprocesser.
+- **Rekursive LLM-interaktioner**: Denne funktion tillader rekursive interaktioner med store sprogmodeller (LLMs), hvilket muliggør mere komplekse og iterative opgavebehandlinger.
 - **Anmodning om yderligere modelkompletteringer**: Servere kan anmode om yderligere svar fra modellen for at sikre, at svarene er grundige og kontekstuelt relevante.
 
 ## Informationsflow i MCP
@@ -197,7 +197,7 @@ MCP (Model Context Protocol) er bygget oven på [JSON-RPC 2.0](https://www.jsonr
 
 ### Vigtige protokolfunktioner
 
-MCP udvider JSON-RPC 2.0 med yderligere konventioner til værktøjskald, ressourceadgang og promptstyring. Det understøtter flere transportlag (STDIO, WebSocket, SSE) og muliggør sikker, udvidelig og sprogagnostisk kommunikation mellem komponenter.
+MCP udvider JSON-RPC 2.0 med yderligere konventioner for værktøjskald, ressourceadgang og promptstyring. Den understøtter flere transportlag (STDIO, WebSocket, SSE) og muliggør sikker, udvidelig og sprogagnostisk kommunikation mellem komponenter.
 
 #### 🧢 Basal protokol
 
@@ -210,7 +210,7 @@ MCP udvider JSON-RPC 2.0 med yderligere konventioner til værktøjskald, ressour
 Nedenfor er nogle ekstra værktøjer og protokoludvidelser, som MCP tilbyder for at forbedre udvikleroplevelsen og muliggøre avancerede scenarier:
 
 - **Konfigurationsmuligheder**: MCP tillader dynamisk konfiguration af sessionsparametre, såsom værktøjstilladelser, ressourceadgang og modelindstillinger, tilpasset hver interaktion.
-- **Fremdriftssporing**: Langvarige operationer kan rapportere fremdriftsopdateringer, hvilket muliggør responsive brugergrænseflader og bedre brugeroplevelse under komplekse opgaver.
+- **Fremdriftssporing**: Langvarige operationer kan rapportere statusopdateringer, hvilket muliggør responsive brugergrænseflader og bedre brugeroplevelse under komplekse opgaver.
 - **Annullering af forespørgsler**: Clients kan annullere igangværende forespørgsler, så brugere kan afbryde operationer, der ikke længere er nødvendige eller tager for lang tid.
 - **Fejlrapportering**: Standardiserede fejlmeddelelser og koder hjælper med at diagnosticere problemer, håndtere fejl elegant og give brugbare tilbagemeldinger til brugere og udviklere.
 - **Logning**: Både clients og servers kan udsende strukturerede logs til revision, fejlfinding og overvågning af protokolinteraktioner.
@@ -233,9 +233,9 @@ Ved at følge disse principper sikrer MCP, at brugertillid, privatliv og sikkerh
 
 Nedenfor er kodeeksempler i flere populære programmeringssprog, der illustrerer, hvordan man implementerer nøglekomponenter og værktøjer til MCP-servere.
 
-### .NET Eksempel: Oprettelse af en simpel MCP-server med værktøjer
+### .NET-eksempel: Oprettelse af en simpel MCP-server med værktøjer
 
-Her er et praktisk .NET kodeeksempel, der demonstrerer, hvordan man implementerer en simpel MCP-server med brugerdefinerede værktøjer. Eksemplet viser, hvordan man definerer og registrerer værktøjer, håndterer forespørgsler og forbinder serveren via Model Context Protocol.
+Her er et praktisk .NET-kodeeksempel, der demonstrerer, hvordan man implementerer en simpel MCP-server med brugerdefinerede værktøjer. Eksemplet viser, hvordan man definerer og registrerer værktøjer, håndterer forespørgsler og forbinder serveren via Model Context Protocol.
 
 ```csharp
 using System;
@@ -294,7 +294,7 @@ public class WeatherData
 }
 ```
 
-### Java Eksempel: MCP-serverkomponenter
+### Java-eksempel: MCP-serverkomponenter
 
 Dette eksempel demonstrerer den samme MCP-server og værktøjsregistrering som .NET-eksemplet ovenfor, men implementeret i Java.
 
@@ -374,7 +374,7 @@ class WeatherData {
 }
 ```
 
-### Python Eksempel: Opbygning af en MCP-server
+### Python-eksempel: Opbygning af en MCP-server
 
 I dette eksempel viser vi, hvordan man bygger en MCP-server i Python. Du får også vist to forskellige måder at oprette værktøjer på.
 
@@ -424,7 +424,7 @@ if __name__ == "__main__":
     asyncio.run(serve_stdio(mcp))
 ```
 
-### JavaScript Eksempel: Oprettelse af en MCP-server
+### JavaScript-eksempel: Oprettelse af en MCP-server
 
 Dette eksempel viser oprettelse af en MCP-server i JavaScript og hvordan man registrerer to vejrudsigtsrelaterede værktøjer.
 
@@ -511,7 +511,7 @@ server.connect(transport).catch(console.error);
 console.log("Weather MCP Server started");
 ```
 
-Dette JavaScript-eksempel demonstrerer, hvordan man opretter en MCP-client, der forbinder til en server,
+Dette JavaScript-eksempel demonstrerer, hvordan man opretter en MCP-client
 MCP inkluderer flere indbyggede koncepter og mekanismer til at håndtere sikkerhed og autorisation gennem hele protokollen:
 
 1. **Værktøjstilladelseskontrol**:  
@@ -553,7 +553,7 @@ MCP-kommunikation bruger strukturerede JSON-beskeder for at muliggøre klare og 
 
 - **Tool Response**  
   Returneres af serveren efter udførelse af et værktøj. Denne besked indeholder:
-  - Resultaterne af værktøjets udførelse (strukturerede data eller indhold)
+  - Resultaterne af værktøjsudførelsen (strukturerede data eller indhold)
   - Eventuelle fejl eller statusinformation, hvis værktøjskaldet mislykkedes
   - Valgfrit yderligere metadata eller logfiler relateret til udførelsen
 

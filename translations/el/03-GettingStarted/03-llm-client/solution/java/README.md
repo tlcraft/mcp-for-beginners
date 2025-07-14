@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac2459c0d5cc823922e3d9240a95028c",
-  "translation_date": "2025-06-11T13:27:26+00:00",
+  "translation_date": "2025-07-13T19:09:42+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/java/README.md",
   "language_code": "el"
 }
 -->
 # Calculator LLM Client
 
-Μια εφαρμογή Java που δείχνει πώς να χρησιμοποιήσετε το LangChain4j για να συνδεθείτε με μια υπηρεσία MCP (Model Context Protocol) calculator με ενσωμάτωση GitHub Models.
+Μια εφαρμογή Java που δείχνει πώς να χρησιμοποιήσετε το LangChain4j για να συνδεθείτε σε μια υπηρεσία MCP (Model Context Protocol) calculator με ενσωμάτωση GitHub Models.
 
-## Προαπαιτούμενα
+## Απαιτήσεις
 
 - Java 21 ή νεότερη έκδοση
-- Maven 3.6+ (ή χρησιμοποιήστε το ενσωματωμένο Maven wrapper)
-- Ένας λογαριασμός GitHub με πρόσβαση στα GitHub Models
-- Μια υπηρεσία MCP calculator σε λειτουργία στο `http://localhost:8080`
+- Maven 3.6+ (ή χρησιμοποιήστε τον ενσωματωμένο Maven wrapper)
+- Λογαριασμός GitHub με πρόσβαση στα GitHub Models
+- Μια υπηρεσία MCP calculator που τρέχει στο `http://localhost:8080`
 
 ## Λήψη του GitHub Token
 
-Αυτή η εφαρμογή χρησιμοποιεί τα GitHub Models που απαιτούν ένα προσωπικό access token GitHub. Ακολουθήστε τα βήματα για να αποκτήσετε το token σας:
+Αυτή η εφαρμογή χρησιμοποιεί τα GitHub Models, τα οποία απαιτούν ένα προσωπικό access token από το GitHub. Ακολουθήστε τα παρακάτω βήματα για να αποκτήσετε το token σας:
 
 ### 1. Πρόσβαση στα GitHub Models
 1. Μεταβείτε στο [GitHub Models](https://github.com/marketplace/models)
@@ -28,17 +28,17 @@ CO_OP_TRANSLATOR_METADATA:
 3. Ζητήστε πρόσβαση στα GitHub Models αν δεν το έχετε ήδη κάνει
 
 ### 2. Δημιουργία Προσωπικού Access Token
-1. Μεταβείτε στα [GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
+1. Μεταβείτε στο [GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
 2. Πατήστε "Generate new token" → "Generate new token (classic)"
-3. Δώστε ένα περιγραφικό όνομα στο token σας (π.χ. "MCP Calculator Client")
-4. Ορίστε την ημερομηνία λήξης αν χρειάζεται
+3. Δώστε στο token σας ένα περιγραφικό όνομα (π.χ., "MCP Calculator Client")
+4. Ορίστε την ημερομηνία λήξης όπως χρειάζεται
 5. Επιλέξτε τα παρακάτω scopes:
-   - `repo` (αν χρειάζεστε πρόσβαση σε ιδιωτικά repositories)
+   - `repo` (αν χρειάζεστε πρόσβαση σε ιδιωτικά αποθετήρια)
    - `user:email`
 6. Πατήστε "Generate token"
 7. **Σημαντικό**: Αντιγράψτε το token αμέσως - δεν θα μπορείτε να το δείτε ξανά!
 
-### 3. Ορισμός Μεταβλητής Περιβάλλοντος
+### 3. Ορισμός της Μεταβλητής Περιβάλλοντος
 
 #### Σε Windows (Command Prompt):
 ```cmd
@@ -68,7 +68,7 @@ export GITHUB_TOKEN=your_github_token_here
    mvn clean install
    ```
 
-3. **Ορίστε τη μεταβλητή περιβάλλοντος** (βλέπε "Λήψη του GitHub Token" παραπάνω)
+3. **Ορίστε τη μεταβλητή περιβάλλοντος** (δείτε την ενότητα "Λήψη του GitHub Token" παραπάνω)
 
 4. **Εκκινήστε την υπηρεσία MCP Calculator**:
    Βεβαιωθείτε ότι η υπηρεσία MCP calculator από το κεφάλαιο 1 τρέχει στο `http://localhost:8080/sse`. Πρέπει να είναι ενεργή πριν ξεκινήσετε τον client.
@@ -84,13 +84,13 @@ java -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 
 Η εφαρμογή δείχνει τρεις βασικές αλληλεπιδράσεις με την υπηρεσία calculator:
 
-1. **Πρόσθεση**: Υπολογίζει το άθροισμα του 24.5 και του 17.3
+1. **Πρόσθεση**: Υπολογίζει το άθροισμα των 24.5 και 17.3
 2. **Τετραγωνική Ρίζα**: Υπολογίζει την τετραγωνική ρίζα του 144
 3. **Βοήθεια**: Εμφανίζει τις διαθέσιμες λειτουργίες του calculator
 
 ## Αναμενόμενη Έξοδος
 
-Όταν εκτελεστεί επιτυχώς, θα δείτε έξοδο παρόμοια με:
+Όταν τρέξει επιτυχώς, θα δείτε έξοδο παρόμοια με:
 
 ```
 The sum of 24.5 and 17.3 is 41.8.
@@ -103,47 +103,47 @@ The calculator service provides the following functions: add, subtract, multiply
 ### Συνηθισμένα Προβλήματα
 
 1. **"GITHUB_TOKEN environment variable not set"**
-   - Βεβαιωθείτε ότι έχετε ορίσει τη μεταβλητή `GITHUB_TOKEN` environment variable
-   - Restart your terminal/command prompt after setting the variable
+   - Βεβαιωθείτε ότι έχετε ορίσει τη μεταβλητή περιβάλλοντος `GITHUB_TOKEN`
+   - Επανεκκινήστε το τερματικό/command prompt μετά τον ορισμό της μεταβλητής
 
 2. **"Connection refused to localhost:8080"**
-   - Ensure the MCP calculator service is running on port 8080
-   - Check if another service is using port 8080
+   - Ελέγξτε ότι η υπηρεσία MCP calculator τρέχει στην πόρτα 8080
+   - Βεβαιωθείτε ότι δεν τρέχει άλλη υπηρεσία στην πόρτα 8080
 
 3. **"Authentication failed"**
-   - Verify your GitHub token is valid and has the correct permissions
-   - Check if you have access to GitHub Models
+   - Επαληθεύστε ότι το GitHub token σας είναι έγκυρο και έχει τα σωστά δικαιώματα
+   - Ελέγξτε αν έχετε πρόσβαση στα GitHub Models
 
-4. **Maven build errors**
-   - Ensure you're using Java 21 or higher: `java -version`
-   - Try cleaning the build: `mvnw clean`
+4. **Σφάλματα κατά το build με Maven**
+   - Βεβαιωθείτε ότι χρησιμοποιείτε Java 21 ή νεότερη: `java -version`
+   - Δοκιμάστε να καθαρίσετε το build: `mvnw clean`
 
 ### Αποσφαλμάτωση
 
-Για να ενεργοποιήσετε το debug logging, προσθέστε το ακόλουθο JVM όρισμα κατά την εκτέλεση:
+Για να ενεργοποιήσετε το debug logging, προσθέστε το παρακάτω όρισμα JVM κατά την εκτέλεση:
 ```cmd
 java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
 
 ## Ρυθμίσεις
 
-Η εφαρμογή είναι ρυθμισμένη να:
-- Χρησιμοποιεί τα GitHub Models με το `gpt-4.1-nano` model
-- Connect to MCP service at `http://localhost:8080/sse`
-- Έχει timeout 60 δευτερολέπτων για τα αιτήματα
+Η εφαρμογή έχει ρυθμιστεί να:
+- Χρησιμοποιεί τα GitHub Models με το μοντέλο `gpt-4.1-nano`
+- Συνδέεται στην υπηρεσία MCP στο `http://localhost:8080/sse`
+- Χρησιμοποιεί timeout 60 δευτερολέπτων για τα αιτήματα
 - Ενεργοποιεί logging αιτημάτων/απαντήσεων για αποσφαλμάτωση
 
 ## Εξαρτήσεις
 
-Βασικές εξαρτήσεις που χρησιμοποιούνται σε αυτό το έργο:
+Κύριες εξαρτήσεις που χρησιμοποιούνται σε αυτό το έργο:
 - **LangChain4j**: Για ενσωμάτωση AI και διαχείριση εργαλείων
 - **LangChain4j MCP**: Για υποστήριξη Model Context Protocol
 - **LangChain4j GitHub Models**: Για ενσωμάτωση GitHub Models
-- **Spring Boot**: Για το πλαίσιο εφαρμογής και την εξάρτηση injection
+- **Spring Boot**: Για το πλαίσιο εφαρμογής και dependency injection
 
 ## Άδεια Χρήσης
 
 Αυτό το έργο διατίθεται υπό την άδεια Apache License 2.0 - δείτε το αρχείο [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE) για λεπτομέρειες.
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που προσπαθούμε για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν σφάλματα ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του πρέπει να θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική μετάφραση από ανθρώπους. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

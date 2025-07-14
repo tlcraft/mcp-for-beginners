@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T16:11:38+00:00",
+  "translation_date": "2025-07-13T18:48:57+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "tw"
 }
@@ -27,15 +27,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 作業
 
-請從練習中取得程式碼，並為伺服器新增更多工具。接著像練習中一樣建立一個帶有 LLM 的客戶端，並用不同的提示測試，確保所有伺服器工具都能動態被呼叫。這種建立客戶端的方式能讓最終使用者有很棒的體驗，因為他們可以使用自然語言提示，而不必輸入精確的客戶端指令，也不會察覺背後有 MCP 伺服器被呼叫。
+請從練習中的程式碼開始，為伺服器新增更多工具。接著像練習中一樣建立一個帶有 LLM 的客戶端，並用不同的提示測試，確保所有伺服器工具都能動態被呼叫。這種建立客戶端的方式能讓最終使用者有更好的體驗，因為他們可以使用自然語言提示，而不必輸入精確的客戶端指令，也不會察覺背後有 MCP 伺服器被呼叫。
 
 ## 解答
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## 主要重點
+## 重要重點
 
-- 在客戶端加入 LLM，能提供使用者更好的方式與 MCP 伺服器互動。
+- 在客戶端加入 LLM，能提供使用者更好的 MCP 伺服器互動方式。
 - 你需要將 MCP 伺服器的回應轉換成 LLM 能理解的格式。
 
 ## 範例
@@ -48,9 +48,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 其他資源
 
-## 下一步
+## 接下來
 
 - 下一步：[使用 Visual Studio Code 消費伺服器](../04-vscode/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:06:33+00:00",
+  "translation_date": "2025-07-13T18:31:49+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "tw"
 }
 -->
-# MCP Java Client - Calculator Demo
+# MCP Java Client - 計算機示範
 
-這個專案示範如何建立一個 Java 客戶端，連接並與 MCP（Model Context Protocol）伺服器互動。在這個範例中，我們會連接到第01章的計算機伺服器，並執行各種數學運算。
+此專案示範如何建立一個 Java 用戶端，連接並與 MCP（Model Context Protocol）伺服器互動。在本範例中，我們將連接到第 01 章的計算機伺服器，並執行各種數學運算。
 
 ## 先決條件
 
-在執行這個客戶端之前，你需要：
+在執行此用戶端之前，您需要：
 
-1. **啟動第01章的計算機伺服器**：
+1. **啟動第 01 章的計算機伺服器**：
    - 進入計算機伺服器目錄：`03-GettingStarted/01-first-server/solution/java/`
    - 建置並執行計算機伺服器：
      ```cmd
@@ -23,28 +23,28 @@ CO_OP_TRANSLATOR_METADATA:
      .\mvnw clean install -DskipTests
      java -jar target\calculator-server-0.0.1-SNAPSHOT.jar
      ```
-   - 伺服器應該會在 `http://localhost:8080`
+   - 伺服器應該在 `http://localhost:8080` 運行
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. 您的系統需安裝 **Java 21 或以上版本**
+3. **Maven**（透過 Maven Wrapper 已包含）
 
-## What is the SDKClient?
+## 什麼是 SDKClient？
 
-The `SDKClient` 是一個 Java 應用程式，示範如何：
+`SDKClient` 是一個 Java 應用程式，示範如何：
 - 使用 Server-Sent Events (SSE) 傳輸連接 MCP 伺服器
-- 列出伺服器上的可用工具
-- 遠端呼叫各種計算機函式
+- 列出伺服器上可用的工具
+- 遠端呼叫各種計算機功能
 - 處理回應並顯示結果
 
 ## 運作原理
 
-客戶端使用 Spring AI MCP 框架來：
+此用戶端使用 Spring AI MCP 框架來：
 
-1. **建立連線**：建立 WebFlux SSE 客戶端傳輸以連接計算機伺服器
-2. **初始化客戶端**：設定 MCP 客戶端並建立連線
+1. **建立連線**：建立 WebFlux SSE 用戶端傳輸，連接計算機伺服器
+2. **初始化用戶端**：設定 MCP 用戶端並建立連線
 3. **發現工具**：列出所有可用的計算機操作
-4. **執行操作**：用範例資料呼叫各種數學函式
-5. **顯示結果**：展示每個計算的結果
+4. **執行操作**：使用範例資料呼叫各種數學函式
+5. **顯示結果**：展示每次計算的結果
 
 ## 專案結構
 
@@ -62,7 +62,7 @@ src/
 
 ## 主要依賴
 
-專案使用以下主要依賴：
+此專案使用以下主要依賴：
 
 ```xml
 <dependency>
@@ -71,32 +71,32 @@ src/
 </dependency>
 ```
 
-這個依賴提供：
-- `McpClient` - The main client interface
+此依賴提供：
+- `McpClient` - 主要用戶端介面
 - `WebFluxSseClientTransport` - 用於網頁通訊的 SSE 傳輸
 - MCP 協定的結構與請求/回應類型
 
 ## 建置專案
 
-使用 Maven wrapper 建置專案：
+使用 Maven Wrapper 建置專案：
 
 ```cmd
 .\mvnw clean install
 ```
 
-## 執行客戶端
+## 執行用戶端
 
 ```cmd
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Note**：請確認計算機伺服器正在 `http://localhost:8080` before executing any of these commands.
+**注意**：執行這些指令前，請確保計算機伺服器已在 `http://localhost:8080` 運行。
 
-## What the Client Does
+## 用戶端功能說明
 
-When you run the client, it will:
+執行用戶端時，它會：
 
-1. **Connect** to the calculator server at `http://localhost:8080`
+1. **連接** 到 `http://localhost:8080` 的計算機伺服器
 2. **列出工具** - 顯示所有可用的計算機操作
 3. **執行計算**：
    - 加法：5 + 3 = 8
@@ -122,7 +122,7 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Note**：結尾時可能會看到 Maven 關於殘留執行緒的警告，這對反應式應用程式來說是正常現象，並不代表有錯誤。
+**注意**：結尾可能會看到 Maven 關於殘留執行緒的警告，這是反應式應用程式的正常現象，並不代表錯誤。
 
 ## 了解程式碼
 
@@ -130,48 +130,48 @@ Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
 ```
-這段建立一個 SSE（Server-Sent Events）傳輸，連接到計算機伺服器。
+這段程式碼建立一個 SSE（Server-Sent Events）傳輸，連接到計算機伺服器。
 
-### 2. 建立客戶端
+### 2. 用戶端建立
 ```java
 var client = McpClient.sync(this.transport).build();
 client.initialize();
 ```
-建立同步 MCP 客戶端並初始化連線。
+建立同步 MCP 用戶端並初始化連線。
 
 ### 3. 呼叫工具
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
 ```
-使用參數 a=5.0 和 b=3.0 呼叫 "add" 工具。
+呼叫 "add" 工具，參數為 a=5.0 和 b=3.0。
 
 ## 疑難排解
 
 ### 伺服器未啟動
-如果遇到連線錯誤，請確認第01章的計算機伺服器已啟動：
+若出現連線錯誤，請確認第 01 章的計算機伺服器已啟動：
 ```
 Error: Connection refused
 ```
 **解決方案**：先啟動計算機伺服器。
 
-### 埠號已被使用
-如果 8080 埠號已被佔用：
+### 埠號已被佔用
+若 8080 埠號被佔用：
 ```
 Error: Address already in use
 ```
-**解決方案**：停止其他使用 8080 埠的應用程式，或修改伺服器使用不同埠號。
+**解決方案**：停止其他使用 8080 埠號的應用程式，或修改伺服器使用其他埠號。
 
 ### 建置錯誤
-如果遇到建置錯誤：
+若遇到建置錯誤：
 ```cmd
 .\mvnw clean install -DskipTests
 ```
 
 ## 進一步學習
 
-- [Spring AI MCP Documentation](https://docs.spring.io/spring-ai/reference/api/mcp/)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/)
-- [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
+- [Spring AI MCP 文件](https://docs.spring.io/spring-ai/reference/api/mcp/)
+- [Model Context Protocol 規範](https://modelcontextprotocol.io/)
+- [Spring WebFlux 文件](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所引起之任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-06-10T06:39:37+00:00",
+  "translation_date": "2025-07-14T08:35:08+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
   "language_code": "es"
 }
@@ -22,23 +22,23 @@ CO_OP_TRANSLATOR_METADATA:
 Al finalizar este laboratorio, podrás:
 
 - ✅ Crear un servidor MCP personalizado para flujos de trabajo de desarrollo reales
-- ✅ Implementar la funcionalidad de clonación de repositorios GitHub a través de MCP
+- ✅ Implementar la funcionalidad de clonación de repositorios GitHub vía MCP
 - ✅ Integrar servidores MCP personalizados con VS Code y Agent Builder
-- ✅ Usar GitHub Copilot Agent Mode con herramientas MCP personalizadas
+- ✅ Usar GitHub Copilot en modo Agente con herramientas MCP personalizadas
 - ✅ Probar y desplegar servidores MCP personalizados en entornos de producción
 
 ## 📋 Requisitos Previos
 
-- Haber completado los Laboratorios 1-3 (fundamentos de MCP y desarrollo avanzado)
+- Haber completado los Laboratorios 1-3 (fundamentos y desarrollo avanzado de MCP)
 - Suscripción a GitHub Copilot ([registro gratuito disponible](https://github.com/github-copilot/signup))
 - VS Code con las extensiones AI Toolkit y GitHub Copilot instaladas
 - Git CLI instalado y configurado
 
 ## 🏗️ Resumen del Proyecto
 
-### **Desafío de Desarrollo Real**
-Como desarrolladores, usamos GitHub con frecuencia para clonar repositorios y abrirlos en VS Code o VS Code Insiders. Este proceso manual implica:
-1. Abrir la terminal o símbolo del sistema
+### **Desafío Real de Desarrollo**
+Como desarrolladores, usamos GitHub frecuentemente para clonar repositorios y abrirlos en VS Code o VS Code Insiders. Este proceso manual implica:
+1. Abrir terminal o consola de comandos
 2. Navegar al directorio deseado
 3. Ejecutar el comando `git clone`
 4. Abrir VS Code en el directorio clonado
@@ -51,7 +51,7 @@ Un **Servidor MCP de Clonación GitHub** (`git_mcp_server`) que ofrece:
 | Funcionalidad | Descripción | Beneficio |
 |---------------|-------------|-----------|
 | 🔄 **Clonación Inteligente de Repositorios** | Clona repositorios GitHub con validación | Verificación automática de errores |
-| 📁 **Gestión Inteligente de Directorios** | Verifica y crea directorios de forma segura | Evita sobreescrituras |
+| 📁 **Gestión Inteligente de Directorios** | Verifica y crea directorios de forma segura | Evita sobrescrituras accidentales |
 | 🚀 **Integración Multiplataforma con VS Code** | Abre proyectos en VS Code/Insiders | Transición fluida en el flujo de trabajo |
 | 🛡️ **Manejo Robusto de Errores** | Gestiona problemas de red, permisos y rutas | Fiabilidad lista para producción |
 
@@ -59,21 +59,21 @@ Un **Servidor MCP de Clonación GitHub** (`git_mcp_server`) que ofrece:
 
 ## 📖 Implementación Paso a Paso
 
-### Paso 1: Crear el Agente GitHub en Agent Builder
+### Paso 1: Crear Agente GitHub en Agent Builder
 
-1. **Inicia Agent Builder** desde la extensión AI Toolkit
+1. **Abre Agent Builder** a través de la extensión AI Toolkit
 2. **Crea un nuevo agente** con la siguiente configuración:
    ```
    Agent Name: GitHubAgent
    ```
 
 3. **Inicializa el servidor MCP personalizado:**
-   - Ve a **Tools** → **Add Tool** → **MCP Server**
-   - Selecciona **"Create A new MCP Server"**
-   - Elige la plantilla **Python** para máxima flexibilidad
+   - Ve a **Herramientas** → **Agregar Herramienta** → **Servidor MCP**
+   - Selecciona **"Crear un nuevo Servidor MCP"**
+   - Elige la **plantilla Python** para máxima flexibilidad
    - **Nombre del Servidor:** `git_mcp_server`
 
-### Paso 2: Configurar GitHub Copilot Agent Mode
+### Paso 2: Configurar GitHub Copilot en Modo Agente
 
 1. **Abre GitHub Copilot** en VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
 2. **Selecciona el Modelo de Agente** en la interfaz de Copilot
@@ -84,7 +84,7 @@ Un **Servidor MCP de Clonación GitHub** (`git_mcp_server`) que ofrece:
 
 ### Paso 3: Implementar la Funcionalidad Principal del Servidor MCP
 
-**Usa el siguiente prompt detallado con GitHub Copilot Agent Mode:**
+**Usa el siguiente prompt detallado con GitHub Copilot en Modo Agente:**
 
 ```
 Create two MCP tools with the following comprehensive requirements:
@@ -117,7 +117,7 @@ Additional Requirements:
 - Include comprehensive error handling
 ```
 
-### Paso 4: Probar tu Servidor MCP
+### Paso 4: Prueba tu Servidor MCP
 
 #### 4a. Prueba en Agent Builder
 
@@ -153,31 +153,31 @@ Scenario : Basic Clone and Open
 
 ---
 
-**🎉 ¡Felicidades!** Has creado exitosamente un servidor MCP práctico y listo para producción que resuelve desafíos reales en flujos de trabajo de desarrollo. Tu servidor personalizado de clonación GitHub demuestra el poder de MCP para automatizar y mejorar la productividad de los desarrolladores.
+**🎉 ¡Felicidades!** Has creado con éxito un servidor MCP práctico y listo para producción que resuelve desafíos reales en flujos de trabajo de desarrollo. Tu servidor personalizado de clonación GitHub demuestra el poder de MCP para automatizar y mejorar la productividad del desarrollador.
 
 ### 🏆 Logros Desbloqueados:
 - ✅ **Desarrollador MCP** - Creación de servidor MCP personalizado
 - ✅ **Automatizador de Flujos** - Optimización de procesos de desarrollo  
 - ✅ **Experto en Integración** - Conexión de múltiples herramientas de desarrollo
-- ✅ **Listo para Producción** - Soluciones desplegables construidas
+- ✅ **Listo para Producción** - Soluciones construidas para desplegar
 
 ---
 
-## 🎓 Finalización del Taller: Tu Camino con Model Context Protocol
+## 🎓 Finalización del Taller: Tu Trayectoria con Model Context Protocol
 
 **Estimado participante del taller,**
 
-¡Felicidades por completar los cuatro módulos del taller Model Context Protocol! Has avanzado mucho, desde comprender conceptos básicos del AI Toolkit hasta construir servidores MCP listos para producción que resuelven desafíos reales de desarrollo.
+¡Felicidades por completar los cuatro módulos del taller Model Context Protocol! Has recorrido un largo camino desde entender los conceptos básicos de AI Toolkit hasta construir servidores MCP listos para producción que resuelven desafíos reales de desarrollo.
 
 ### 🚀 Resumen de tu Ruta de Aprendizaje:
 
-**[Módulo 1](../lab1/README.md)**: Comenzaste explorando fundamentos del AI Toolkit, pruebas de modelos y creación de tu primer agente AI.
+**[Módulo 1](../lab1/README.md)**: Comenzaste explorando fundamentos de AI Toolkit, pruebas de modelos y creando tu primer agente AI.
 
 **[Módulo 2](../lab2/README.md)**: Aprendiste la arquitectura MCP, integraste Playwright MCP y construiste tu primer agente de automatización de navegador.
 
 **[Módulo 3](../lab3/README.md)**: Avanzaste al desarrollo de servidores MCP personalizados con el servidor Weather MCP y dominaste herramientas de depuración.
 
-**[Módulo 4](../lab4/README.md)**: Ahora aplicaste todo para crear una herramienta práctica de automatización del flujo de trabajo con repositorios GitHub.
+**[Módulo 4](../lab4/README.md)**: Ahora aplicaste todo para crear una herramienta práctica de automatización de flujos de trabajo con repositorios GitHub.
 
 ### 🌟 Lo que Has Dominado:
 
@@ -185,7 +185,7 @@ Scenario : Basic Clone and Open
 - ✅ **Arquitectura MCP**: Diseño cliente-servidor, protocolos de transporte y seguridad
 - ✅ **Herramientas para Desarrolladores**: Desde Playground hasta Inspector y despliegue en producción
 - ✅ **Desarrollo Personalizado**: Construcción, prueba y despliegue de tus propios servidores MCP
-- ✅ **Aplicaciones Prácticas**: Resolución de desafíos reales de flujo de trabajo con IA
+- ✅ **Aplicaciones Prácticas**: Resolución de desafíos reales de flujos de trabajo con IA
 
 ### 🔮 Tus Próximos Pasos:
 
@@ -194,7 +194,7 @@ Scenario : Basic Clone and Open
 3. **Explora integraciones avanzadas**: Conecta servidores MCP con sistemas empresariales
 4. **Contribuye al código abierto**: Ayuda a mejorar las herramientas y documentación MCP
 
-Recuerda, este taller es solo el comienzo. El ecosistema Model Context Protocol evoluciona rápidamente, y ahora estás preparado para estar a la vanguardia de las herramientas de desarrollo impulsadas por IA.
+Recuerda, este taller es solo el comienzo. El ecosistema Model Context Protocol está evolucionando rápidamente, y ahora estás preparado para estar a la vanguardia de las herramientas de desarrollo impulsadas por IA.
 
 **¡Gracias por tu participación y dedicación al aprendizaje!**
 
@@ -204,5 +204,5 @@ Esperamos que este taller haya despertado ideas que transformarán la forma en q
 
 ---
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

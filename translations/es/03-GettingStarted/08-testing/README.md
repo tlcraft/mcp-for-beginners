@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T15:25:48+00:00",
+  "translation_date": "2025-07-13T21:56:26+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "es"
 }
@@ -20,14 +20,14 @@ Esta lección cubre cómo seleccionar el enfoque de prueba adecuado y la herrami
 Al finalizar esta lección, podrás:
 
 - Describir varios enfoques para realizar pruebas.
-- Utilizar diferentes herramientas para probar tu código de manera efectiva.
+- Usar diferentes herramientas para probar tu código de manera efectiva.
 
 ## Pruebas de Servidores MCP
 
-MCP ofrece herramientas para ayudarte a probar y depurar tus servidores:
+MCP proporciona herramientas para ayudarte a probar y depurar tus servidores:
 
 - **MCP Inspector**: Una herramienta de línea de comandos que puede ejecutarse tanto como CLI como herramienta visual.
-- **Pruebas manuales**: Puedes usar una herramienta como curl para realizar solicitudes web, aunque cualquier herramienta capaz de ejecutar HTTP servirá.
+- **Pruebas manuales**: Puedes usar una herramienta como curl para realizar solicitudes web, pero cualquier herramienta capaz de ejecutar HTTP servirá.
 - **Pruebas unitarias**: Es posible usar tu framework de pruebas preferido para testear las funcionalidades tanto del servidor como del cliente.
 
 ### Uso de MCP Inspector
@@ -36,9 +36,9 @@ Hemos descrito el uso de esta herramienta en lecciones anteriores, pero hablemos
 
 El [MCP Inspector](https://github.com/modelcontextprotocol/inspector) te ayuda a:
 
-- **Descubrir Capacidades del Servidor**: Detectar automáticamente recursos, herramientas y prompts disponibles.
-- **Probar la Ejecución de Herramientas**: Probar diferentes parámetros y ver las respuestas en tiempo real.
-- **Ver Metadatos del Servidor**: Examinar información del servidor, esquemas y configuraciones.
+- **Descubrir Capacidades del Servidor**: Detecta automáticamente recursos, herramientas y prompts disponibles.
+- **Probar la Ejecución de Herramientas**: Prueba diferentes parámetros y ve las respuestas en tiempo real.
+- **Ver Metadatos del Servidor**: Examina la información del servidor, esquemas y configuraciones.
 
 Una ejecución típica de la herramienta se ve así:
 
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Como puedes ver en el ejemplo anterior con curl, usas una solicitud POST para invocar una herramienta con un payload que contiene el nombre de la herramienta y sus parámetros. Usa el enfoque que mejor se adapte a ti. Las herramientas CLI en general suelen ser más rápidas de usar y se prestan para ser automatizadas, lo cual puede ser útil en un entorno CI/CD.
+Como puedes ver en el ejemplo anterior con curl, usas una solicitud POST para invocar una herramienta con una carga útil que consiste en el nombre de la herramienta y sus parámetros. Usa el enfoque que mejor se adapte a ti. Las herramientas CLI en general suelen ser más rápidas de usar y se prestan para ser automatizadas, lo cual puede ser útil en un entorno CI/CD.
 
 ### Pruebas Unitarias
 

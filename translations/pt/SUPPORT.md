@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b3cffaf217113101e21eba532be806ea",
-  "translation_date": "2025-05-20T21:12:18+00:00",
+  "translation_date": "2025-07-13T15:21:51+00:00",
   "source_file": "SUPPORT.md",
   "language_code": "pt"
 }
 -->
 # Suporte
 
-## Como registrar problemas e obter ajuda  
+## Como reportar problemas e obter ajuda  
 
-Este projeto utiliza GitHub Issues para acompanhar bugs e solicitações de funcionalidades. Por favor, pesquise os problemas existentes antes de registrar novos para evitar duplicatas. Para novos problemas, registre seu bug ou solicitação de funcionalidade como uma nova Issue.
+Este projeto utiliza o GitHub Issues para acompanhar bugs e pedidos de funcionalidades. Por favor, pesquise os issues existentes antes de criar novos para evitar duplicados. Para novos problemas, reporte o seu bug ou pedido de funcionalidade como um novo Issue.
 
-Para ajuda e dúvidas sobre o uso deste projeto, por favor:
-- Verifique o [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4), onde especialistas e desenvolvedores se reúnem
-- Utilize os recursos da [Model Context Protocol Community](https://modelcontextprotocol.io/community/) para perguntas relacionadas ao protocolo
+Para ajuda e dúvidas sobre a utilização deste projeto, por favor:
+- Consulte o [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4), onde especialistas e outros desenvolvedores se reúnem
+- Utilize os recursos da [Model Context Protocol Community](https://modelcontextprotocol.io/community/) para questões relacionadas com o protocolo
 
 ## Política de Suporte da Microsoft  
 
-O suporte para o projeto Model Context Protocol (MCP) for Beginners é limitado aos recursos listados acima.
+O suporte para o projeto Model Context Protocol (MCP) for Beginners está limitado aos recursos listados acima.
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

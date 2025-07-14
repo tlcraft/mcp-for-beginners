@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T18:10:55+00:00",
+  "translation_date": "2025-07-13T19:59:00+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "id"
 }
@@ -18,7 +18,7 @@ Untuk membuat server kita, kita perlu mengingat dua hal:
 
 ### -1- Membuat instance server
 
-Untuk membuat server kita, kita menggunakan tipe yang sama seperti dengan stdio. Namun, untuk transport, kita perlu memilih SSE.
+Untuk membuat server, kita menggunakan tipe yang sama seperti dengan stdio. Namun, untuk transport, kita perlu memilih SSE.
 
 ---
 
@@ -26,15 +26,15 @@ Mari kita tambahkan rute yang dibutuhkan selanjutnya.
 
 ### -2- Menambahkan rute
 
-Mari kita tambahkan rute yang menangani koneksi dan pesan masuk:
+Mari tambahkan rute yang menangani koneksi dan pesan masuk:
 
 ---
 
-Selanjutnya, mari kita tambahkan kemampuan ke server.
+Selanjutnya, mari tambahkan kemampuan ke server.
 
 ### -3- Menambahkan kemampuan server
 
-Sekarang setelah kita mendefinisikan semua yang spesifik untuk SSE, mari kita tambahkan kemampuan server seperti tools, prompt, dan resources.
+Sekarang setelah kita mendefinisikan semua yang spesifik untuk SSE, mari tambahkan kemampuan server seperti tools, prompt, dan resources.
 
 ---
 
@@ -50,7 +50,7 @@ Inspector adalah alat yang hebat yang sudah kita lihat di pelajaran sebelumnya [
 
 ### -1- Menjalankan inspector
 
-Untuk menjalankan inspector, Anda harus terlebih dahulu menjalankan server SSE, jadi mari kita lakukan itu sekarang:
+Untuk menjalankan inspector, Anda harus memiliki server SSE yang berjalan terlebih dahulu, jadi mari lakukan itu sekarang:
 
 1. Jalankan server
 
@@ -65,7 +65,7 @@ Untuk menjalankan inspector, Anda harus terlebih dahulu menjalankan server SSE, 
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Menjalankan inspector terlihat sama di semua runtime. Perhatikan bagaimana kita tidak melewatkan path ke server dan perintah untuk memulai server, melainkan kita melewatkan URL tempat server berjalan dan juga menentukan rute `/sse`.
+    Menjalankan inspector terlihat sama di semua runtime. Perhatikan bagaimana kita tidak melewatkan path ke server dan perintah untuk memulai server, melainkan melewatkan URL tempat server berjalan dan juga menentukan rute `/sse`.
 
 ### -2- Mencoba alat ini
 
@@ -89,7 +89,7 @@ Poin penting dari bab ini adalah sebagai berikut:
 
 - SSE adalah transport kedua yang didukung setelah stdio.
 - Untuk mendukung SSE, Anda perlu mengelola koneksi masuk dan pesan menggunakan framework web.
-- Anda dapat menggunakan baik Inspector maupun Visual Studio Code untuk mengkonsumsi server SSE, sama seperti server stdio. Perhatikan bagaimana sedikit berbeda antara stdio dan SSE. Untuk SSE, Anda perlu menjalankan server secara terpisah dan kemudian menjalankan alat inspector Anda. Untuk alat inspector, ada juga beberapa perbedaan yaitu Anda perlu menentukan URL.
+- Anda dapat menggunakan baik Inspector maupun Visual Studio Code untuk mengkonsumsi server SSE, sama seperti server stdio. Perhatikan perbedaannya sedikit antara stdio dan SSE. Untuk SSE, Anda perlu menjalankan server secara terpisah lalu menjalankan alat inspector Anda. Untuk alat inspector, ada juga beberapa perbedaan yaitu Anda perlu menentukan URL.
 
 ## Contoh
 

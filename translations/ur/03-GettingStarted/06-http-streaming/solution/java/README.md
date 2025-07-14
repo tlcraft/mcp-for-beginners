@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:43:57+00:00",
+  "translation_date": "2025-07-13T21:08:23+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "ur"
 }
 -->
 # Calculator HTTP Streaming Demo
 
-یہ پروجیکٹ Server-Sent Events (SSE) کے ذریعے HTTP streaming کو Spring Boot WebFlux کے ساتھ دکھاتا ہے۔ یہ دو ایپلیکیشنز پر مشتمل ہے:
+یہ پروجیکٹ Server-Sent Events (SSE) کے ذریعے HTTP streaming کو Spring Boot WebFlux کے ساتھ ظاہر کرتا ہے۔ اس میں دو ایپلیکیشنز شامل ہیں:
 
 - **Calculator Server**: ایک reactive ویب سروس جو حساب کتاب کرتی ہے اور SSE کے ذریعے نتائج کو stream کرتی ہے  
 - **Calculator Client**: ایک کلائنٹ ایپلیکیشن جو streaming endpoint کو استعمال کرتی ہے
 
-## ضروریات
+## Prerequisites
 
-- Java 17 یا اس سے زیادہ  
-- Maven 3.6 یا اس سے زیادہ
+- Java 17 یا اس سے اوپر  
+- Maven 3.6 یا اس سے اوپر  
 
-## پروجیکٹ کی ساخت
+## Project Structure
 
 ```
 java/
@@ -35,21 +35,21 @@ java/
 └── README.md
 ```
 
-## کام کرنے کا طریقہ
+## How It Works
 
-1. **Calculator Server** ایک `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** ایک `/calculate` endpoint فراہم کرتا ہے جو:  
+   - query parameters قبول کرتا ہے: `a` (نمبر)، `b` (نمبر)، `op` (آپریشن)  
+   - سپورٹ شدہ آپریشنز: `add`, `sub`, `mul`, `div`  
+   - Server-Sent Events کے ذریعے حساب کی پیش رفت اور نتیجہ واپس کرتا ہے  
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5` endpoint فراہم کرتا ہے  
+2. **Calculator Client** سرور سے جڑتا ہے اور:  
+   - `7 * 5` کا حساب کرنے کی درخواست بھیجتا ہے  
    - streaming response کو استعمال کرتا ہے  
-   - ہر event کو کنسول پر پرنٹ کرتا ہے
+   - ہر ایونٹ کو کنسول پر پرنٹ کرتا ہے  
 
-## ایپلیکیشنز چلانا
+## Running the Applications
 
-### آپشن 1: Maven کے ذریعے (تجویز کردہ)
+### Option 1: Using Maven (Recommended)
 
 #### 1. Calculator Server شروع کریں
 
@@ -79,9 +79,9 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-کلائنٹ سرور سے کنیکٹ ہوگا، حساب کتاب کرے گا، اور streaming نتائج دکھائے گا۔
+کلائنٹ سرور سے جڑ کر حساب کرے گا اور streaming نتائج دکھائے گا۔
 
-### آپشن 2: Java کو براہ راست استعمال کرنا
+### Option 2: Using Java directly
 
 #### 1. سرور کو کمپائل اور چلائیں:
 
@@ -99,19 +99,19 @@ mvn clean package
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## سرور کو دستی طور پر ٹیسٹ کرنا
+## Testing the Server Manually
 
-آپ ویب براؤزر یا curl کے ذریعے بھی سرور کو ٹیسٹ کر سکتے ہیں:
+آپ سرور کو ویب براؤزر یا curl کے ذریعے بھی ٹیسٹ کر سکتے ہیں:
 
 ### ویب براؤزر استعمال کرتے ہوئے:  
-یہاں جائیں: `http://localhost:8080/calculate?a=10&b=5&op=add`
+ملاحظہ کریں: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
 ### curl استعمال کرتے ہوئے:  
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
-## متوقع آؤٹ پٹ
+## Expected Output
 
 جب کلائنٹ چلائیں گے تو آپ کو اس طرح کا streaming آؤٹ پٹ نظر آئے گا:
 
@@ -123,34 +123,34 @@ event:result
 data:35.0
 ```
 
-## سپورٹ شدہ آپریشنز
+## Supported Operations
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - جمع (a + b)  
+- `sub` - تفریق (a - b)  
+- `mul` - ضرب (a * b)  
+- `div` - تقسیم (a / b، اگر b = 0 ہو تو NaN واپس کرتا ہے)  
 
 ## API Reference
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parameters:**  
+- `a` (ضروری): پہلا نمبر (double)  
+- `b` (ضروری): دوسرا نمبر (double)  
+- `op` (ضروری): آپریشن (`add`, `sub`, `mul`, `div`)  
 
-**Response:**
+**Response:**  
 - Content-Type: `text/event-stream`  
-- Server-Sent Events کے ذریعے حساب کتاب کی پیش رفت اور نتیجہ واپس کرتا ہے
+- Server-Sent Events کے ذریعے حساب کی پیش رفت اور نتیجہ واپس کرتا ہے  
 
-**مثال کے طور پر درخواست:**  
+**Example Request:**  
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**مثال کے طور پر جواب:**  
+**Example Response:**  
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -159,44 +159,44 @@ event: result
 data: 35.0
 ```
 
-## مسئلے حل کرنا
+## Troubleshooting
 
-### عام مسائل
+### Common Issues
 
-1. **پورٹ 8080 پہلے سے استعمال میں ہے**  
-   - کسی اور ایپلیکیشن کو بند کریں جو پورٹ 8080 استعمال کر رہی ہو  
-   - یا `calculator-server/src/main/resources/application.yml`
+1. **Port 8080 پہلے سے استعمال میں ہے**  
+   - کوئی اور ایپلیکیشن جو پورٹ 8080 استعمال کر رہی ہو اسے بند کریں  
+   - یا `calculator-server/src/main/resources/application.yml` میں سرور پورٹ تبدیل کریں  
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Connection refused**  
+   - کلائنٹ شروع کرنے سے پہلے یقینی بنائیں کہ سرور چل رہا ہے  
+   - چیک کریں کہ سرور پورٹ 8080 پر کامیابی سے شروع ہوا ہے  
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Parameter name issues**  
+   - یہ پروجیکٹ Maven compiler configuration کے ساتھ `-parameters` فلیگ استعمال کرتا ہے  
+   - اگر parameter binding میں مسئلہ ہو تو یقینی بنائیں کہ پروجیکٹ اس کنفیگریشن کے ساتھ بنایا گیا ہے  
 
 ### Stopping the Applications
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` میں سرور کا پورٹ تبدیل کریں اگر یہ پس منظر میں چل رہا ہو
+- ہر ایپلیکیشن کے چلنے والے ٹرمینل میں `Ctrl+C` دبائیں  
+- یا اگر بیک گراؤنڈ میں چل رہا ہو تو `mvn spring-boot:stop` استعمال کریں  
 
-## ٹیکنالوجی اسٹیک
+## Technology Stack
 
 - **Spring Boot 3.3.1** - ایپلیکیشن فریم ورک  
-- **Spring WebFlux** - ری ایکٹو ویب فریم ورک  
-- **Project Reactor** - ری ایکٹو streams لائبریری  
-- **Netty** - نان بلاکنگ I/O سرور  
-- **Maven** - بلڈ ٹول  
-- **Java 17+** - پروگرامنگ زبان
+- **Spring WebFlux** - Reactive ویب فریم ورک  
+- **Project Reactor** - Reactive streams لائبریری  
+- **Netty** - Non-blocking I/O سرور  
+- **Maven** - Build ٹول  
+- **Java 17+** - پروگرامنگ زبان  
 
-## اگلے اقدامات
+## Next Steps
 
-کوڈ میں ترمیم کرنے کی کوشش کریں تاکہ:  
-- مزید ریاضیاتی آپریشنز شامل کیے جا سکیں  
-- غلط آپریشنز کے لیے ایرر ہینڈلنگ شامل کی جائے  
-- درخواست/جواب کی لاگنگ شامل کی جائے  
-- تصدیق (authentication) نافذ کی جائے  
-- یونٹ ٹیسٹ شامل کیے جائیں
+کوڈ میں تبدیلی کر کے کوشش کریں:  
+- مزید ریاضیاتی آپریشنز شامل کریں  
+- غلط آپریشنز کے لیے error handling شامل کریں  
+- request/response logging شامل کریں  
+- authentication نافذ کریں  
+- unit tests شامل کریں
 
-**دستبرداری**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجموں میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ذریعہ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔
+**دستخطی دستبرداری**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

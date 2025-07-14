@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:01:17+00:00",
+  "translation_date": "2025-07-13T21:19:16+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "br"
 }
 -->
 # Executando este exemplo
 
-Aqui está como executar o servidor e cliente clássico de streaming HTTP, assim como o servidor e cliente MCP usando Python.
+Aqui está como executar o servidor e cliente de streaming HTTP clássico, assim como o servidor e cliente de streaming MCP usando Python.
 
 ### Visão geral
 
@@ -50,7 +50,7 @@ Aqui está como executar o servidor e cliente clássico de streaming HTTP, assim
 - **Servidor:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
 - **Cliente:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
 
-### Executando o Servidor Clássico de Streaming HTTP
+### Executando o Servidor de Streaming HTTP Clássico
 
 1. Navegue até o diretório da solução:
 
@@ -58,20 +58,20 @@ Aqui está como executar o servidor e cliente clássico de streaming HTTP, assim
    cd 03-GettingStarted/06-http-streaming/solution
    ```
 
-2. Inicie o servidor clássico de streaming HTTP:
+2. Inicie o servidor de streaming HTTP clássico:
 
    ```pwsh
    python server.py
    ```
 
-3. O servidor será iniciado e exibirá:
+3. O servidor iniciará e exibirá:
 
    ```
    Starting FastAPI server for classic HTTP streaming...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Executando o Cliente Clássico de Streaming HTTP
+### Executando o Cliente de Streaming HTTP Clássico
 
 1. Abra um novo terminal (ative o mesmo ambiente virtual e diretório):
 
@@ -93,7 +93,7 @@ Aqui está como executar o servidor e cliente clássico de streaming HTTP, assim
    --- Stream Ended ---
    ```
 
-### Executando o Servidor MCP Streaming
+### Executando o Servidor de Streaming MCP
 
 1. Navegue até o diretório da solução:
    ```pwsh
@@ -103,20 +103,20 @@ Aqui está como executar o servidor e cliente clássico de streaming HTTP, assim
    ```pwsh
    python server.py mcp
    ```
-3. O servidor será iniciado e exibirá:
+3. O servidor iniciará e exibirá:
    ```
    Starting MCP server with streamable-http transport...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Executando o Cliente MCP Streaming
+### Executando o Cliente de Streaming MCP
 
 1. Abra um novo terminal (ative o mesmo ambiente virtual e diretório):
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Você verá as notificações sendo exibidas em tempo real enquanto o servidor processa cada item:
+2. Você verá as notificações sendo exibidas em tempo real conforme o servidor processa cada item:
    ```
    Running MCP client...
    Starting client...
@@ -129,23 +129,23 @@ Aqui está como executar o servidor e cliente clássico de streaming HTTP, assim
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### Principais passos da implementação
+### Principais Passos da Implementação
 
 1. **Crie o servidor MCP usando FastMCP.**
-2. **Defina uma ferramenta que processa uma lista e envia notificações usando `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **Defina uma ferramenta que processa uma lista e envia notificações usando `ctx.info()` ou `ctx.log()`.**
+3. **Execute o servidor com `transport="streamable-http"`.**
+4. **Implemente um cliente com um manipulador de mensagens para exibir as notificações conforme chegam.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Explicação do Código
+- O servidor usa funções assíncronas e o contexto MCP para enviar atualizações de progresso.
+- O cliente implementa um manipulador de mensagens assíncrono para imprimir notificações e o resultado final.
 
-### Tips & Troubleshooting
+### Dicas e Solução de Problemas
 
-- Use `async/await` para operações não bloqueantes.**
-- Sempre trate exceções tanto no servidor quanto no cliente para garantir robustez.
+- Use `async/await` para operações não bloqueantes.
+- Sempre trate exceções tanto no servidor quanto no cliente para maior robustez.
 - Teste com múltiplos clientes para observar as atualizações em tempo real.
-- Se encontrar erros, verifique sua versão do Python e confirme que todas as dependências estão instaladas.
+- Se encontrar erros, verifique a versão do Python e certifique-se de que todas as dependências estão instaladas.
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

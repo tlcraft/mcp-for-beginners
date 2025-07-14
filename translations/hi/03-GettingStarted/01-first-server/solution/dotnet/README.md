@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:57:43+00:00",
+  "translation_date": "2025-07-13T17:47:56+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "hi"
 }
@@ -29,12 +29,12 @@ dotnet run
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-इससे एक वेब सर्वर शुरू होगा जिसमें एक विज़ुअल इंटरफ़ेस होगा, जिससे आप सैंपल का परीक्षण कर सकेंगे।
+इससे एक वेब सर्वर शुरू होगा जिसमें एक विज़ुअल इंटरफ़ेस होगा जो आपको सैंपल का परीक्षण करने की अनुमति देगा।
 
 सर्वर कनेक्ट होने के बाद:
 
-- टूल्स की सूची देखें और `add` कमांड चलाएँ, आर्ग्स 2 और 4 के साथ, आपको परिणाम में 6 दिखना चाहिए।
-- resources और resource template में जाएँ और "greeting" कॉल करें, कोई नाम टाइप करें और आपको उस नाम के साथ एक अभिवादन दिखाई देगा।
+- टूल्स की सूची देखें और `add` चलाएँ, आर्ग्स 2 और 4 के साथ, आपको परिणाम में 6 दिखाई देगा।
+- resources और resource template में जाएँ और "greeting" कॉल करें, एक नाम टाइप करें और आपको उस नाम के साथ एक अभिवादन दिखाई देगा जो आपने दिया है।
 
 ### CLI मोड में परीक्षण
 
@@ -95,7 +95,7 @@ npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-
 ```
 
 > ![!TIP]
-> आमतौर पर ब्राउज़र की तुलना में CLI मोड में इंस्पेक्टर चलाना कहीं तेज़ होता है।
+> आमतौर पर ब्राउज़र की तुलना में CLI मोड में इंस्पेक्टर चलाना बहुत तेज़ होता है।
 > इंस्पेक्टर के बारे में अधिक पढ़ें [यहाँ](https://github.com/modelcontextprotocol/inspector)।
 
 **अस्वीकरण**:  

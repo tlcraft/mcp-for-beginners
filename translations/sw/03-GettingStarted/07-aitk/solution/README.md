@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:33:06+00:00",
+  "translation_date": "2025-07-13T21:54:24+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "sw"
 }
 -->
-# 📘 Suluhisho la Kazi ya Nyumba: Kupanua Server yako ya Calculator MCP kwa Kifaa cha Mizizi ya Mraba
+# 📘 Suluhisho la Kazi ya Nyumbani: Kupanua Server ya Calculator MCP kwa Zana ya Mizizi ya Mraba
 
 ## Muhtasari
-Katika kazi hii ya nyumba, umeongeza server yako ya calculator MCP kwa kuongeza kifaa kipya kinachohesabu mizizi ya mraba ya nambari. Nyongeza hii inaruhusu wakala wako wa AI kushughulikia maswali ya hisabati ya hali ya juu, kama vile "Mizizi ya mraba ya 16 ni kiasi gani?" au "Hesabu √49," ukitumia maagizo ya lugha ya asili.
+Katika kazi hii ya nyumbani, umeongeza server yako ya calculator MCP kwa kuongeza zana mpya inayohesabu mizizi ya mraba ya nambari. Nyongeza hii inaruhusu wakala wako wa AI kushughulikia maswali ya hisabati ya hali ya juu, kama vile "Mizizi ya mraba ya 16 ni nini?" au "Hesabu √49," kwa kutumia maelekezo ya lugha ya asili.
 
-## 🛠️ Kutekeleza Kifaa cha Mizizi ya Mraba
-Ili kuongeza kazi hii, uliunda kifaa kipya cha kazi katika faili yako ya server.py. Hapa ni utekelezaji:
+## 🛠️ Kutekeleza Zana ya Mizizi ya Mraba
+Ili kuongeza uwezo huu, uliunda kazi mpya ya zana katika faili yako ya server.py. Hapa ni utekelezaji wake:
 
 ```python
 """
@@ -70,33 +70,33 @@ def sqrt(a: float) -> float:
 
 ## 🔍 Jinsi Inavyofanya Kazi
 
-- **Ingiza kifaa cha `math` module**: To perform mathematical operations beyond basic arithmetic, Python provides the built-in `math` module. This module includes a variety of mathematical functions and constants. By importing it using `import math`, you gain access to functions like `math.sqrt()`, which computes the square root of a number.
-- **Function Definition**: The `@server.tool()` decorator registers the `sqrt` function as a tool accessible by your AI agent.
-- **Input Parameter**: The function accepts a single argument `a` of type `float`.
-- **Error Handling**: If `a` is negative, the function raises a `ValueError` to prevent computing the square root of a negative number, which is not supported by the `math.sqrt()` function.
-- **Return Value**: For non-negative inputs, the function returns the square root of `a` using Python's built-in `math.sqrt()` method.
+- **Ingiza moduli ya `math`**: Ili kufanya operesheni za hisabati zaidi ya hesabu za msingi, Python inatoa moduli ya ndani ya `math`. Moduli hii ina kazi mbalimbali za hisabati na thamani za kudumu. Kwa kuingiza moduli hii kwa kutumia `import math`, unapata ufikiaji wa kazi kama `math.sqrt()`, inayohesabu mizizi ya mraba ya nambari.
+- **Ufafanuzi wa Kazi**: Dekoreta `@server.tool()` hujisajili kazi ya `sqrt` kama zana inayopatikana kwa wakala wako wa AI.
+- **Kiparameta cha Ingizo**: Kazi inakubali hoja moja `a` ya aina `float`.
+- **Kushughulikia Makosa**: Ikiwa `a` ni hasi, kazi itatoa `ValueError` ili kuzuia kuhesabu mizizi ya mraba ya nambari hasi, jambo ambalo halitekelezeki na kazi ya `math.sqrt()`.
+- **Thamani ya Kurudisha**: Kwa ingizo zisizo hasi, kazi inarudisha mizizi ya mraba ya `a` kwa kutumia njia ya ndani ya Python `math.sqrt()`.
 
-## 🔄 Restarting the Server
-After adding the new `sqrt` tool, it's essential to restart your MCP server to ensure the agent recognizes and can utilize the newly added functionality.
+## 🔄 Kuwasha Upya Server
+Baada ya kuongeza zana mpya ya `sqrt`, ni muhimu kuwasha upya server yako ya MCP ili kuhakikisha wakala anaitambua na kuweza kutumia uwezo mpya ulioungwa mkono.
 
-## 💬 Example Prompts to Test the New Tool
-Here are some natural language prompts you can use to test the square root functionality:
+## 💬 Mifano ya Maelekezo ya Kupima Zana Mpya
+Hapa kuna mifano ya maelekezo ya lugha ya asili unayoweza kutumia kupima uwezo wa mizizi ya mraba:
 
-- "What is the square root of 25?"
-- "Calculate the square root of 81."
-- "Find the square root of 0."
-- "What is the square root of 2.25?"
+- "Mizizi ya mraba ya 25 ni nini?"
+- "Hesabu mizizi ya mraba ya 81."
+- "Tafuta mizizi ya mraba ya 0."
+- "Mizizi ya mraba ya 2.25 ni nini?"
 
-These prompts should trigger the agent to invoke the `sqrt` tool and return the correct results.
+Maelekezo haya yanapaswa kusababisha wakala kuitumia zana ya `sqrt` na kurudisha matokeo sahihi.
 
-## ✅ Summary
-By completing this assignment, you've:
+## ✅ Muhtasari
+Kwa kumaliza kazi hii ya nyumbani, umefanya:
 
-- Extended your calculator MCP server with a new `sqrt`.**
-- Umeruhusu wakala wako wa AI kushughulikia hesabu za mizizi ya mraba kupitia maagizo ya lugha ya asili.
-- Umezoea kuongeza vifaa vipya na kuanzisha tena server ili kuingiza vipengele vipya.
+- Kupanua server yako ya calculator MCP kwa zana mpya ya `sqrt`.
+- Kumwezesha wakala wako wa AI kushughulikia hesabu za mizizi ya mraba kupitia maelekezo ya lugha ya asili.
+- Kufanya mazoezi ya kuongeza zana mpya na kuwasha upya server ili kuunganisha uwezo zaidi.
 
-Jisikilize huru kujaribu zaidi kwa kuongeza vifaa vingine vya hisabati, kama vile nguvu au kazi za logaritimu, ili kuendeleza uwezo wa wakala wako!
+Jisikie huru kujaribu zaidi kwa kuongeza zana nyingine za hisabati, kama vile nguvu au kazi za logaritimu, ili kuendelea kuboresha uwezo wa wakala wako!
 
-**Kisahafu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Nyaraka ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubeba dhamana yoyote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

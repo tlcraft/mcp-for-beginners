@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:52:55+00:00",
+  "translation_date": "2025-07-13T23:28:44+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "sw"
 }
 -->
-# Sampuli
+# Mfano
 
-Hii ni sampuli ya JavaScript kwa MCP Server
+Huu ni mfano wa JavaScript kwa MCP Server
 
-Hapa kuna mfano wa usajili wa chombo ambapo tunasajili chombo kinachofanya simu ya mfano kwa LLM:
+Hapa kuna mfano wa usajili wa zana ambapo tunasajili zana inayofanya simu ya kuigiza kwa LLM:
 
 ```javascript
 this.mcpServer.tool(
@@ -88,5 +88,5 @@ npm install
 npm start
 ```
 
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya awali katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa habari muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatuwajibiki kwa kutoelewana au kutafsiri vibaya kunakotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

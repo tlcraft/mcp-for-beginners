@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c06b12caf3c901eb3156e3dd5b0aea56",
-  "translation_date": "2025-05-17T05:15:52+00:00",
+  "translation_date": "2025-07-13T14:30:06+00:00",
   "source_file": "CODE_OF_CONDUCT.md",
   "language_code": "sl"
 }
 -->
-# Microsoft odprta izvorna koda - kodeks ravnanja
+# Microsoftov odprtokodni kodeks ravnanja
 
-Ta projekt je sprejel [Microsoft odprta izvorna koda - kodeks ravnanja](https://opensource.microsoft.com/codeofconduct/).
+Ta projekt je sprejel [Microsoftov odprtokodni kodeks ravnanja](https://opensource.microsoft.com/codeofconduct/).
 
 Viri:
 
-- [Microsoft odprta izvorna koda - kodeks ravnanja](https://opensource.microsoft.com/codeofconduct/)
-- [Pogosta vprašanja o kodeksu ravnanja Microsoft](https://opensource.microsoft.com/codeofconduct/faq/)
-- Obrnite se na [opencode@microsoft.com](mailto:opencode@microsoft.com) za vprašanja ali pomisleke
+- [Microsoftov odprtokodni kodeks ravnanja](https://opensource.microsoft.com/codeofconduct/)
+- [Microsoft Pogosta vprašanja o kodeksu ravnanja](https://opensource.microsoft.com/codeofconduct/faq/)
+- Kontaktirajte [opencode@microsoft.com](mailto:opencode@microsoft.com) za vprašanja ali pomisleke
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da se zavedate, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za kritične informacije je priporočljivo profesionalno človeško prevajanje. Ne odgovarjamo za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

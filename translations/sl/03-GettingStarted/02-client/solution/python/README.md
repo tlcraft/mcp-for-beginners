@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:05:30+00:00",
+  "translation_date": "2025-07-13T18:42:37+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "sl"
 }
 -->
-# Zagon tega vzorca
+# Zagon tega primera
 
-Priporočamo, da namestite `uv`, vendar ni nujno, glejte [navodila](https://docs.astral.sh/uv/#highlights)
+Priporočamo, da namestite `uv`, vendar ni nujno, poglejte [navodila](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Ustvarite virtualno okolje
 
@@ -29,13 +29,14 @@ venv\Scrips\activate
 pip install "mcp[cli]"
 ```
 
-## -3- Zaženite vzorec
+## -3- Zaženite primer
+
 
 ```bash
 python client.py
 ```
 
-Videti bi morali izhod, podoben temu:
+Videli bi morali izhod, podoben temu:
 
 ```text
 LISTING RESOURCES
@@ -53,4 +54,4 @@ CALL TOOL
 ```
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden s storitvijo AI prevajanja [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da se zavedate, da avtomatski prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije se priporoča profesionalni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

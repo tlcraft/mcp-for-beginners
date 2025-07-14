@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T17:16:50+00:00",
+  "translation_date": "2025-07-13T19:29:26+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "tr"
 }
@@ -33,7 +33,7 @@ MCP Server keşfini etkinleştirmeniz gerekebilir.
 
 ### -1- Konfigürasyon dosyası oluşturma
 
-Projede kök dizinde bir konfigürasyon dosyası oluşturun, MCP.json adında bir dosya ve bunu .vscode adlı bir klasöre koymanız gerekiyor. Dosya şöyle görünmeli:
+Proje kök dizininizde bir konfigürasyon dosyası oluşturarak başlayın, MCP.json adında bir dosyaya ve bunu .vscode adlı bir klasöre yerleştirmeniz gerekiyor. Dosya şöyle görünmeli:
 
 ```text
 .vscode
@@ -94,7 +94,7 @@ Bu bölümden çıkarılacak önemli noktalar şunlardır:
 
 - Visual Studio Code, birden fazla MCP Server ve araçlarını kullanmanızı sağlayan harika bir istemcidir.
 - GitHub Copilot Chat arayüzü, sunucularla etkileşim kurduğunuz yerdir.
-- Kullanıcıdan API anahtarları gibi girdiler isteyebilir ve bunları *mcp.json* dosyasındaki sunucu girdisini yapılandırırken MCP Server'a iletebilirsiniz.
+- *mcp.json* dosyasındaki sunucu girdisini yapılandırırken API anahtarları gibi kullanıcı girdilerini MCP Server'a iletmek için kullanıcıdan bilgi isteyebilirsiniz.
 
 ## Örnekler
 
@@ -113,4 +113,4 @@ Bu bölümden çıkarılacak önemli noktalar şunlardır:
 - Sonraki: [Bir SSE Sunucusu Oluşturma](../05-sse-server/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

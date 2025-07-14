@@ -2,27 +2,27 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-12T22:21:15+00:00",
+  "translation_date": "2025-07-13T21:17:56+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "ja"
 }
 -->
 # このサンプルの実行方法
 
-Pythonを使って、クラシックなHTTPストリーミングサーバーとクライアント、そしてMCPストリーミングサーバーとクライアントを実行する方法をご紹介します。
+クラシックなHTTPストリーミングサーバーとクライアント、そしてMCPストリーミングサーバーとクライアントをPythonで実行する方法をご紹介します。
 
 ### 概要
 
-- アイテムを処理しながら、進捗通知をクライアントにストリーミングするMCPサーバーをセットアップします。
+- アイテムを処理しながら進捗通知をクライアントにストリーム配信するMCPサーバーをセットアップします。
 - クライアントは各通知をリアルタイムで表示します。
-- このガイドでは、前提条件、セットアップ、実行方法、トラブルシューティングを解説します。
+- このガイドでは、前提条件、セットアップ、実行方法、トラブルシューティングを説明します。
 
 ### 前提条件
 
-- Python 3.9以上
+- Python 3.9以降
 - `mcp` Pythonパッケージ（`pip install mcp`でインストール）
 
-### インストール＆セットアップ
+### インストールとセットアップ
 
 1. リポジトリをクローンするか、ソリューションファイルをダウンロードします。
 
@@ -52,7 +52,7 @@ Pythonを使って、クラシックなHTTPストリーミングサーバーと�
 
 ### クラシックHTTPストリーミングサーバーの実行
 
-1. ソリューションのディレクトリに移動します：
+1. ソリューションディレクトリに移動します：
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
@@ -80,7 +80,7 @@ Pythonを使って、クラシックなHTTPストリーミングサーバーと�
    python client.py
    ```
 
-2. ストリーミングされたメッセージが順次表示されるはずです：
+2. ストリームされたメッセージが順次表示されます：
 
    ```text
    Running classic HTTP streaming client...
@@ -95,7 +95,7 @@ Pythonを使って、クラシックなHTTPストリーミングサーバーと�
 
 ### MCPストリーミングサーバーの実行
 
-1. ソリューションのディレクトリに移動します：
+1. ソリューションディレクトリに移動します：
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
@@ -132,20 +132,20 @@ Pythonを使って、クラシックなHTTPストリーミングサーバーと�
 ### 主要な実装ステップ
 
 1. **FastMCPを使ってMCPサーバーを作成します。**
-2. **リストを処理しながら、`ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **リストを処理し、`ctx.info()`や`ctx.log()`で通知を送るツールを定義します。**
+3. **`transport="streamable-http"`でサーバーを実行します。**
+4. **通知を受け取って表示するメッセージハンドラーを持つクライアントを実装します。**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### コードの解説
+- サーバーは非同期関数とMCPコンテキストを使って進捗を送信します。
+- クライアントは非同期のメッセージハンドラーを実装し、通知と最終結果を表示します。
 
-### Tips & Troubleshooting
+### ヒントとトラブルシューティング
 
-- Use `async/await` を使って通知を送るツールを定義します（非同期処理のため）。**
-- サーバーとクライアントの両方で例外処理を行い、堅牢性を確保しましょう。
-- 複数のクライアントでテストしてリアルタイム更新を確認してください。
-- エラーが発生した場合は、Pythonのバージョンや依存関係のインストール状況を確認してください。
+- 非同期処理には`async/await`を使い、ブロッキングを避けましょう。
+- サーバーとクライアントの両方で例外処理を行い、堅牢性を高めてください。
+- 複数のクライアントでテストし、リアルタイム更新を確認しましょう。
+- エラーが発生した場合は、Pythonのバージョンや依存関係が正しくインストールされているかを確認してください。
 
-**免責事項**:  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があります。原文の言語によるオリジナル文書が権威ある情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や解釈の相違について、当方は一切責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

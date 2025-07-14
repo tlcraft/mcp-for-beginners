@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:02:45+00:00",
+  "translation_date": "2025-07-13T21:20:49+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "nl"
 }
 -->
-# Deze voorbeeldcode uitvoeren
+# Dit voorbeeld uitvoeren
 
-Hier lees je hoe je de klassieke HTTP streaming server en client runt, evenals de MCP streaming server en client met Python.
+Hier lees je hoe je de klassieke HTTP streaming server en client, evenals de MCP streaming server en client, kunt draaien met Python.
 
 ### Overzicht
 
 - Je zet een MCP-server op die voortgangsnotificaties naar de client streamt terwijl deze items verwerkt.
 - De client toont elke notificatie in realtime.
-- Deze handleiding behandelt vereisten, installatie, uitvoering en probleemoplossing.
+- Deze gids behandelt de vereisten, installatie, uitvoering en probleemoplossing.
 
 ### Vereisten
 
 - Python 3.9 of nieuwer
-- Het `mcp` Python-pakket (installeren met `pip install mcp`)
+- Het `mcp` Python-pakket (te installeren met `pip install mcp`)
 
 ### Installatie & Setup
 
@@ -50,7 +50,7 @@ Hier lees je hoe je de klassieke HTTP streaming server en client runt, evenals d
 - **Server:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
 - **Client:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
 
-### De klassieke HTTP streaming server starten
+### De klassieke HTTP streaming server draaien
 
 1. Navigeer naar de map met de oplossing:
 
@@ -71,16 +71,16 @@ Hier lees je hoe je de klassieke HTTP streaming server en client runt, evenals d
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### De klassieke HTTP streaming client starten
+### De klassieke HTTP streaming client draaien
 
-1. Open een nieuw terminalvenster (activeer dezelfde virtuele omgeving en map):
+1. Open een nieuwe terminal (activeer dezelfde virtuele omgeving en map):
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py
    ```
 
-2. Je ziet gestreamde berichten achter elkaar verschijnen:
+2. Je ziet de gestreamde berichten achter elkaar verschijnen:
 
    ```text
    Running classic HTTP streaming client...
@@ -93,7 +93,7 @@ Hier lees je hoe je de klassieke HTTP streaming server en client runt, evenals d
    --- Stream Ended ---
    ```
 
-### De MCP streaming server starten
+### De MCP streaming server draaien
 
 1. Navigeer naar de map met de oplossing:
    ```pwsh
@@ -109,9 +109,9 @@ Hier lees je hoe je de klassieke HTTP streaming server en client runt, evenals d
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### De MCP streaming client starten
+### De MCP streaming client draaien
 
-1. Open een nieuw terminalvenster (activeer dezelfde virtuele omgeving en map):
+1. Open een nieuwe terminal (activeer dezelfde virtuele omgeving en map):
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
@@ -129,23 +129,23 @@ Hier lees je hoe je de klassieke HTTP streaming server en client runt, evenals d
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### Belangrijke implementatiestappen
+### Belangrijkste implementatiestappen
 
-1. **Maak de MCP-server met FastMCP.**
-2. **Definieer een tool die een lijst verwerkt en notificaties verstuurt met `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+1. **Maak de MCP-server aan met FastMCP.**
+2. **Definieer een tool die een lijst verwerkt en notificaties verstuurt met `ctx.info()` of `ctx.log()`.**
+3. **Draai de server met `transport="streamable-http"`.**
+4. **Implementeer een client met een message handler die notificaties toont zodra ze binnenkomen.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Code-uitleg
+- De server gebruikt async functies en de MCP context om voortgangsupdates te versturen.
+- De client implementeert een async message handler om notificaties en het eindresultaat te printen.
 
-### Tips & Troubleshooting
+### Tips & probleemoplossing
 
-- Use `async/await` voor niet-blokkerende operaties.**
-- Zorg dat je altijd uitzonderingen afhandelt in zowel server als client voor robuustheid.
+- Gebruik `async/await` voor niet-blokkerende operaties.
+- Zorg dat je altijd exceptions afvangt in zowel server als client voor stabiliteit.
 - Test met meerdere clients om realtime updates te zien.
-- Kom je fouten tegen, controleer dan je Python-versie en of alle dependencies geïnstalleerd zijn.
+- Kom je fouten tegen? Controleer je Python-versie en of alle dependencies geïnstalleerd zijn.
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal dient als de gezaghebbende bron te worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

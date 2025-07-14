@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-05-16T15:10:51+00:00",
+  "translation_date": "2025-07-13T18:05:20+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
   "language_code": "pl"
 }
@@ -31,16 +31,16 @@ Gdy serwer działa w jednym terminalu, otwórz inny terminal i uruchom następuj
 npm run inspector
 ```
 
-To powinno uruchomić serwer WWW z interfejsem wizualnym pozwalającym na testowanie przykładu.
+To powinno uruchomić serwer WWW z interfejsem wizualnym, który pozwoli Ci przetestować przykład.
 
-Po połączeniu serwera:
+Po połączeniu z serwerem:
 
-- spróbuj wyświetlić listę narzędzi i uruchom `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- spróbuj wyświetlić listę narzędzi i uruchom `add` z argumentami 2 i 4, w wyniku powinno pojawić się 6.
+- przejdź do zasobów i szablonu zasobu, wywołaj "greeting", wpisz imię i powinieneś zobaczyć powitanie z podanym imieniem.
 
-### Testing in CLI mode
+### Testowanie w trybie CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev`, który jest nakładką na to.
+Inspektor, który uruchomiłeś, to w rzeczywistości aplikacja Node.js, a `mcp dev` jest jej nakładką.
 
 Możesz uruchomić go bezpośrednio w trybie CLI, wykonując następujące polecenie:
 
@@ -104,4 +104,4 @@ Powinieneś zobaczyć następujący wynik:
 > Więcej o inspektorze przeczytasz [tutaj](https://github.com/modelcontextprotocol/inspector).
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy uważać za źródło ostateczne. W przypadku informacji o istotnym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

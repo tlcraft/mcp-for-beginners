@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "42272a791e515fdeb018ddd64c5ab5e7",
-  "translation_date": "2025-07-02T08:45:40+00:00",
+  "original_hash": "61219d6d0e866f6e714fe6988ebeba31",
+  "translation_date": "2025-07-13T14:30:21+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
@@ -31,40 +31,42 @@ Follow these steps to get started using these resources:
 
 #### Supported via GitHub Action (Automated & Always Up-to-Date)
 
+[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md) | [Ukrainian](../uk/README.md) | [Burmese (Myanmar)](../my/README.md)
+
 # 🚀 Model Context Protocol (MCP) Curriculum for Beginners
 
 ## **Learn MCP with Hands-on Code Examples in C#, Java, JavaScript, Python, and TypeScript**
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
 
-The **Model Context Protocol (MCP)** is an innovative framework designed to standardize how AI models interact with client applications. This open-source curriculum provides a structured learning path, featuring practical coding examples and real-world scenarios across popular programming languages like C#, Java, JavaScript, TypeScript, and Python.
+The **Model Context Protocol (MCP)** is a state-of-the-art framework designed to standardize communication between AI models and client applications. This open-source curriculum provides a structured learning path, complete with practical coding examples and real-world scenarios, across popular programming languages including C#, Java, JavaScript, TypeScript, and Python.
 
-Whether you're an AI developer, system architect, or software engineer, this guide serves as your comprehensive resource for mastering MCP fundamentals and implementation techniques.
+Whether you’re an AI developer, system architect, or software engineer, this guide is your all-in-one resource for mastering MCP basics and implementation techniques.
 
 ## 🔗 Official MCP Resources
 
-- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Detailed tutorials and user manuals  
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Comprehensive tutorials and user guides  
 - 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol architecture and technical references  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and sample code  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
 
 ## Join us for MCP Dev Days 29-30th July 2025 
 
-Prepare for two days packed with deep technical insights, community engagement, and hands-on learning at MCP Dev Days, a virtual event dedicated to the Model Context Protocol (MCP) — the emerging standard connecting AI models and their supporting tools.
+Get ready for two days packed with deep technical insights, community engagement, and hands-on learning at MCP Dev Days, a virtual event dedicated to the Model Context Protocol (MCP) — the emerging standard connecting AI models and their supporting tools.
 
 ➡️ [Register for MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-You can watch MCP Dev Days by registering on our event page: https://aka.ms/mcpdevdays. From there, you’ll be able to join a live stream on YouTube or Twitch. All sessions are recorded and will be available afterwards on the Microsoft Developer YouTube channel. Demo source code will also be available on GitHub.
+You can watch MCP Dev Days by registering on our event page: https://aka.ms/mcpdevdays. From there, you’ll be able to join a live stream on YouTube or Twitch. All sessions will be recorded and available afterwards on the Microsoft Developer YouTube channel. Demo source code will also be available on GitHub.
 
 ### Event Details
 - Dates: July 29 (Day 1) & July 30 (Day 2)
 - Time: 9:00 AM PST each day
-- Where: Online – join from anywhere!
+- Location: Online – join from anywhere!
 
 #### Day 1: MCP Productivity, DevTools, & Community
 
-Focused on empowering developers to incorporate MCP into their workflows and celebrating the vibrant MCP community. We’ll be joined by community members and partners such as Arcade, Block, Okta, and Neon to explore how they collaborate with Microsoft to build an open, extensible MCP ecosystem. Expect real-world demos across VS Code, Visual Studio, GitHub Copilot, and popular community tools.  
-Practical, context-driven development workflows  
-Community-led sessions and insights  
+Focuses on empowering developers to incorporate MCP into their workflows and celebrates the vibrant MCP community. We’ll be joined by community members and partners such as Arcade, Block, Okta, and Neon to showcase how they collaborate with Microsoft to build an open, extensible MCP ecosystem. Expect real-world demos across VS Code, Visual Studio, GitHub Copilot, and popular community tools.
+- Practical, context-driven developer workflows
+- Community-led sessions and insights
 Whether you’re new to MCP or already working with it, Day 1 will inspire and provide actionable takeaways.
 
 #### Day 2: Build MCP Servers with Confidence
@@ -77,27 +79,27 @@ Designed for MCP builders. We’ll dive deep into implementation strategies and 
 - Prompt-driven development
 - Security best practices
 - Using building blocks like Functions, ACA, and API Management
-- Registry alignment and tooling (1P + 3P)
+- Registry alignment and tooling (first-party + third-party)
 
-If you’re a developer, tool builder, or AI product strategist, this day is packed with insights to help you build scalable, secure, and future-ready MCP solutions.
+If you’re a developer, tool builder, or AI product strategist, this day is packed with the insights you need to build scalable, secure, and future-proof MCP solutions.
 
 ## 🧭 MCP Curriculum Overview
 
-### Model Context Protocol Fundamentals  
+### Model Context Protocol Fundamentals 
 <details>
   <summary><strong> Lesson 1-3: Model Context Protocol Fundamentals</strong></summary>
 
 - **00. Introduction to MCP**  
   An overview of the Model Context Protocol and its role in AI pipelines. [Read more](./00-Introduction/README.md)
 - **01. Core Concepts Explained**  
-  A deep dive into the fundamental MCP concepts. [Read more](./01-CoreConcepts/README.md)
+  A deep dive into the core MCP concepts. [Read more](./01-CoreConcepts/README.md)
 - **02. Security in MCP**  
-  Security threats and recommended best practices. [Read more](./02-Security/README.md)
+  Security threats and best practices. [Read more](./02-Security/README.md)
 - **03. Getting Started with MCP**  
-  Setting up your environment, basic servers and clients, integration steps. [Read more](./03-GettingStarted/README.md)
+  Setting up your environment, basic servers/clients, and integration. [Read more](./03-GettingStarted/README.md)
 </details>
 
-### Building and deploying your first MCP server and client, plus Hands-on Labs and Scenarios  
+### Building and deploying your first MCP server and Client and Hands on Labs and Scenarios.
 <details>
   <summary><strong> Lesson 3: Building and deploying your first MCP server and client</strong></summary>
 
@@ -112,7 +114,7 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 - **3.9. Deploy your server** – [Guide](./03-GettingStarted/09-deployment/README.md)
 </details>
 
-### Model Context Protocol Practical Implementations and Advanced Content  
+### Model Context Protocol Practical Implementations and Advanced Content
 <details>
   <summary><strong> Lessons 4-5: Practical & Advanced</strong></summary>
 
@@ -134,7 +136,6 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 - **5.12. Entra ID Authentication for Model Context Protocol Servers** – [Guide](./05-AdvancedTopics/mcp-security-entra/README.md)
 - **5.13. Model Context Protocol (MCP) Integration with Azure AI Foundry** – [Guide](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
 </details>
-
 ### Model Context Protocol Best Practices 
 <details>
   <summary><strong> Lessons 6-9: Community, Best Practices & Labs</strong></summary>
@@ -145,14 +146,14 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 - **09. MCP Case Studies** – [Guide](./09-CaseStudy/README.md)
 </details>
 
-### Model Context Protocol Hands-on Lab with AI Toolkit for VScode
+### Model Context Protocol Hands on Lab with AI Toolkit for VScode
 <details>
-  <summary><strong>Lesson 10: Hands-on Lab Building an MCP Server with AI Toolkit for VScode</strong></summary>
+  <summary><strong>Lesson 10: Hands on Lab Building an MCP Server with AI Toolkit for VScode </summary>
     
 - **10. Streamlining AI Workflows: Building an MCP Server with AI Toolkit** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 </details>
 
-## Model Context Protocol Sample Projects Building an MCP Calculator Project in Java, C#, JavaScript, TypeScript and Python
+## Model Context Protocol Sample Projects Building a MCP Calculator Project in Java, C#, JavaScript, TypeScript and Python
 
 ### 🧮 MCP Calculator Sample Projects in Java, C#, JavaScript, TypeScript and Python
 <details>
@@ -166,7 +167,7 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 
 </details>
 
-### 💡 MCP Advanced Example Solution: Calculator Projects in C#, Java, JavaScript, TypeScript and Python
+### 💡 MCP Advanced Example Solution: Calculator Projects in C#, Java, JavaScript,TypeScript and Python
 <details>
   <summary><strong>Explore Advanced Samples</strong></summary>
 
@@ -184,7 +185,7 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 To get the most out of this curriculum, you should have:
 
 - Basic knowledge of C#, Java, or Python
-- Understanding of the client-server model and APIs
+- Understanding of client-server model and APIs
 - (Optional) Familiarity with machine learning concepts
 
 ## 📚 Study Guide
@@ -195,7 +196,7 @@ A comprehensive [Study Guide](./study_guide.md) is available to help you navigat
 - Detailed breakdown of each repository section
 - Guidance on how to use sample projects
 - Recommended learning paths for different skill levels
-- Additional resources to support your learning journey
+- Additional resources to complement your learning journey
 
 ## 🛠️ How to Use This Curriculum Effectively
 
@@ -217,12 +218,17 @@ This content is licensed under the **MIT License**. For terms and conditions, se
 
 ## 🤝 Contribution Guidelines
 
-This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
+This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide
+a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
+provided by the bot. You will only need to do this once across all repos using our CLA.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## 🎒 Other Courses
 Our team produces other courses! Check out:
@@ -245,9 +251,11 @@ Our team produces other courses! Check out:
 
 ## ™️ Trademark Notice
 
-This project may include trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos must comply with and follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Using Microsoft trademarks or logos in modified versions of this project must not cause confusion or suggest Microsoft sponsorship.  
-Any use of third-party trademarks or logos is governed by those third parties' policies.
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
+[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
+Any use of third-party trademarks or logos is subject to those third-parties' policies.
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

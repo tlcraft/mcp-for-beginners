@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T18:03:10+00:00",
+  "translation_date": "2025-07-14T05:48:47+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "vi"
 }
@@ -17,12 +17,12 @@ Phần này giới thiệu các ví dụ cụ thể về việc triển khai MCP
 
 ## Mục Tiêu Học Tập Chính
 
-Qua các nghiên cứu tình huống này, bạn sẽ:
+Khi khám phá các nghiên cứu tình huống này, bạn sẽ:
 
 - Hiểu cách MCP được áp dụng để giải quyết các vấn đề kinh doanh cụ thể
 - Tìm hiểu về các mẫu tích hợp và phương pháp kiến trúc khác nhau
 - Nhận biết các thực hành tốt nhất khi triển khai MCP trong môi trường doanh nghiệp
-- Nắm bắt các thách thức và giải pháp trong các triển khai thực tế
+- Nắm bắt những thách thức và giải pháp trong các triển khai thực tế
 - Xác định cơ hội áp dụng các mẫu tương tự trong dự án của bạn
 
 ## Các Nghiên Cứu Tình Huống Tiêu Biểu
@@ -52,18 +52,18 @@ Ví dụ này cho thấy ngay cả các triển khai MCP tương đối đơn gi
 
 ### 3. [Truy Xuất Tài Liệu Thời Gian Thực với MCP](./docs-mcp/README.md)
 
-Nghiên cứu này hướng dẫn bạn kết nối một client Python console với server Model Context Protocol (MCP) để truy xuất và ghi lại tài liệu Microsoft theo ngữ cảnh, thời gian thực. Bạn sẽ học cách:
+Nghiên cứu này hướng dẫn bạn kết nối một client Python console với máy chủ Model Context Protocol (MCP) để truy xuất và ghi lại tài liệu Microsoft theo ngữ cảnh, thời gian thực. Bạn sẽ học cách:
 
-- Kết nối với server MCP bằng client Python và SDK MCP chính thức
+- Kết nối với máy chủ MCP bằng client Python và SDK MCP chính thức
 - Sử dụng client HTTP streaming để truy xuất dữ liệu hiệu quả, thời gian thực
-- Gọi các công cụ tài liệu trên server và ghi phản hồi trực tiếp lên console
+- Gọi các công cụ tài liệu trên máy chủ và ghi phản hồi trực tiếp lên console
 - Tích hợp tài liệu Microsoft cập nhật vào quy trình làm việc mà không cần rời terminal
 
 Chương này bao gồm bài tập thực hành, mẫu mã nguồn tối giản và liên kết đến tài nguyên bổ sung để học sâu hơn. Xem hướng dẫn chi tiết và mã nguồn trong chương liên kết để hiểu cách MCP có thể thay đổi việc truy cập tài liệu và nâng cao năng suất lập trình trong môi trường console.
 
 ### 4. [Ứng Dụng Web Tạo Kế Hoạch Học Tương Tác với MCP](./docs-mcp/README.md)
 
-Nghiên cứu này trình bày cách xây dựng ứng dụng web tương tác sử dụng Chainlit và Model Context Protocol (MCP) để tạo kế hoạch học tập cá nhân hóa cho bất kỳ chủ đề nào. Người dùng có thể chỉ định một môn học (ví dụ "chứng chỉ AI-900") và thời gian học (ví dụ 8 tuần), ứng dụng sẽ cung cấp kế hoạch chi tiết theo tuần với nội dung đề xuất. Chainlit tạo giao diện chat hội thoại, giúp trải nghiệm trở nên hấp dẫn và linh hoạt.
+Nghiên cứu này trình bày cách xây dựng ứng dụng web tương tác sử dụng Chainlit và Model Context Protocol (MCP) để tạo kế hoạch học tập cá nhân hóa cho bất kỳ chủ đề nào. Người dùng có thể chỉ định một môn học (ví dụ "chứng chỉ AI-900") và thời gian học (ví dụ 8 tuần), ứng dụng sẽ cung cấp kế hoạch chi tiết theo tuần với nội dung đề xuất. Chainlit tạo giao diện chat hội thoại, giúp trải nghiệm trở nên sinh động và linh hoạt.
 
 - Ứng dụng web hội thoại được hỗ trợ bởi Chainlit
 - Người dùng nhập chủ đề và thời gian học
@@ -74,7 +74,7 @@ Dự án minh họa cách kết hợp AI hội thoại và MCP để tạo công
 
 ### 5. [Tài Liệu Trong Trình Soạn Thảo với MCP Server trong VS Code](./docs-mcp/README.md)
 
-Nghiên cứu này cho thấy cách bạn có thể đưa Microsoft Learn Docs trực tiếp vào môi trường VS Code bằng MCP server — không cần chuyển đổi tab trình duyệt nữa! Bạn sẽ thấy cách:
+Nghiên cứu này cho thấy cách bạn có thể đưa Microsoft Learn Docs trực tiếp vào môi trường VS Code bằng MCP server—không cần chuyển đổi tab trình duyệt nữa! Bạn sẽ thấy cách:
 
 - Tìm kiếm và đọc tài liệu ngay trong VS Code qua bảng điều khiển MCP hoặc command palette
 - Tham chiếu tài liệu và chèn liên kết trực tiếp vào README hoặc file markdown khóa học
@@ -87,7 +87,7 @@ Triển khai bao gồm:
 - Hướng dẫn qua ảnh chụp màn hình trải nghiệm trong trình soạn thảo
 - Mẹo kết hợp Copilot và MCP để tối đa hiệu suất
 
-Tình huống này rất phù hợp cho tác giả khóa học, người viết tài liệu và nhà phát triển muốn tập trung trong trình soạn thảo khi làm việc với tài liệu, Copilot và công cụ xác thực — tất cả đều được hỗ trợ bởi MCP.
+Tình huống này rất phù hợp cho tác giả khóa học, người viết tài liệu và nhà phát triển muốn tập trung trong trình soạn thảo khi làm việc với tài liệu, Copilot và công cụ xác thực—tất cả đều được hỗ trợ bởi MCP.
 
 ### 6. [Tạo MCP Server với APIM](./apimsample.md)
 
@@ -103,7 +103,7 @@ Ví dụ này minh họa cách tận dụng khả năng của Azure để tạo 
 
 Các nghiên cứu tình huống này làm nổi bật tính linh hoạt và ứng dụng thực tiễn của Model Context Protocol trong các tình huống thực tế. Từ hệ thống đa tác nhân phức tạp đến quy trình tự động hóa mục tiêu, MCP cung cấp cách chuẩn hóa để kết nối hệ thống AI với công cụ và dữ liệu cần thiết nhằm tạo ra giá trị.
 
-Qua việc nghiên cứu các triển khai này, bạn có thể nắm bắt các mẫu kiến trúc, chiến lược triển khai và thực hành tốt nhất để áp dụng cho dự án MCP của riêng mình. Các ví dụ cho thấy MCP không chỉ là một khuôn khổ lý thuyết mà còn là giải pháp thực tiễn cho các thách thức kinh doanh thực tế.
+Qua việc nghiên cứu các triển khai này, bạn có thể rút ra bài học về các mẫu kiến trúc, chiến lược triển khai và thực hành tốt nhất để áp dụng cho dự án MCP của riêng bạn. Các ví dụ cho thấy MCP không chỉ là một khuôn khổ lý thuyết mà còn là giải pháp thực tiễn cho các thách thức kinh doanh thực tế.
 
 ## Tài Nguyên Bổ Sung
 

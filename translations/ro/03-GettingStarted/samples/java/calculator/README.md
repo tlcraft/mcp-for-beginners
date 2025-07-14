@@ -2,29 +2,29 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-05-17T13:17:51+00:00",
+  "translation_date": "2025-07-13T22:31:09+00:00",
   "source_file": "03-GettingStarted/samples/java/calculator/README.md",
   "language_code": "ro"
 }
 -->
-# Serviciu de Calculator de Bază MCP
+# Serviciu Calculator de Bază MCP
 
-Acest serviciu oferă operații de bază ale calculatorului prin Protocolul de Context al Modelului (MCP) folosind Spring Boot cu transport WebFlux. Este conceput ca un exemplu simplu pentru începători care învață despre implementările MCP.
+Acest serviciu oferă operații de bază pentru calculator prin Model Context Protocol (MCP) folosind Spring Boot cu transport WebFlux. Este conceput ca un exemplu simplu pentru începători care învață despre implementările MCP.
 
 Pentru mai multe informații, consultați documentația de referință [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
 ## Prezentare generală
 
-Serviciul prezintă:
-- Suport pentru SSE (Evenimente trimise de server)
-- Înregistrarea automată a instrumentelor folosind anotarea `@Tool` a Spring AI
+Serviciul demonstrează:
+- Suport pentru SSE (Server-Sent Events)
+- Înregistrare automată a uneltelor folosind adnotarea `@Tool` din Spring AI
 - Funcții de bază ale calculatorului:
   - Adunare, scădere, înmulțire, împărțire
   - Calculul puterii și rădăcina pătrată
-  - Modulus (rest) și valoare absolută
-  - Funcție de ajutor pentru descrierea operațiunilor
+  - Modul (restul împărțirii) și valoarea absolută
+  - Funcție de ajutor pentru descrierea operațiilor
 
-## Funcționalități
+## Caracteristici
 
 Acest serviciu de calculator oferă următoarele capabilități:
 
@@ -32,60 +32,60 @@ Acest serviciu de calculator oferă următoarele capabilități:
    - Adunarea a două numere
    - Scăderea unui număr din altul
    - Înmulțirea a două numere
-   - Împărțirea unui număr la altul (cu verificarea împărțirii la zero)
+   - Împărțirea unui număr la altul (cu verificare pentru împărțirea la zero)
 
 2. **Operații avansate**:
    - Calculul puterii (ridicarea unei baze la un exponent)
-   - Calculul rădăcinii pătrate (cu verificarea numerelor negative)
-   - Calculul modulus (rest)
+   - Calculul rădăcinii pătrate (cu verificare pentru numere negative)
+   - Calculul modulului (restul împărțirii)
    - Calculul valorii absolute
 
 3. **Sistem de ajutor**:
-   - Funcție de ajutor integrată care explică toate operațiunile disponibile
+   - Funcție de ajutor integrată care explică toate operațiile disponibile
 
-## Utilizarea Serviciului
+## Utilizarea serviciului
 
-Serviciul expune următoarele puncte finale API prin protocolul MCP:
+Serviciul expune următoarele endpoint-uri API prin protocolul MCP:
 
 - `add(a, b)`: Adună două numere
 - `subtract(a, b)`: Scade al doilea număr din primul
 - `multiply(a, b)`: Înmulțește două numere
-- `divide(a, b)`: Împarte primul număr la al doilea (cu verificare zero)
+- `divide(a, b)`: Împarte primul număr la al doilea (cu verificare pentru zero)
 - `power(base, exponent)`: Calculează puterea unui număr
-- `squareRoot(number)`: Calculează rădăcina pătrată (cu verificare număr negativ)
-- `modulus(a, b)`: Calculează restul la împărțire
+- `squareRoot(number)`: Calculează rădăcina pătrată (cu verificare pentru numere negative)
+- `modulus(a, b)`: Calculează restul împărțirii
 - `absolute(number)`: Calculează valoarea absolută
-- `help()`: Obține informații despre operațiunile disponibile
+- `help()`: Oferă informații despre operațiile disponibile
 
-## Client de Test
+## Client de test
 
-Un client de test simplu este inclus în pachetul `com.microsoft.mcp.sample.client`. Clasa `SampleCalculatorClient` demonstrează operațiunile disponibile ale serviciului de calculator.
+Un client simplu de test este inclus în pachetul `com.microsoft.mcp.sample.client`. Clasa `SampleCalculatorClient` demonstrează operațiile disponibile ale serviciului de calculator.
 
-## Utilizarea Clientului LangChain4j
+## Utilizarea clientului LangChain4j
 
-Proiectul include un exemplu de client LangChain4j în `com.microsoft.mcp.sample.client.LangChain4jClient` care demonstrează cum să integrați serviciul de calculator cu LangChain4j și modelele GitHub:
+Proiectul include un client exemplu LangChain4j în `com.microsoft.mcp.sample.client.LangChain4jClient` care arată cum să integrezi serviciul de calculator cu LangChain4j și modelele GitHub:
 
 ### Cerințe preliminare
 
-1. **Configurarea Token-ului GitHub**:
+1. **Configurarea token-ului GitHub**:
    
-   Pentru a utiliza modelele AI ale GitHub (cum ar fi phi-4), aveți nevoie de un token de acces personal GitHub:
+   Pentru a folosi modelele AI de la GitHub (cum ar fi phi-4), ai nevoie de un token personal de acces GitHub:
 
-   a. Mergeți la setările contului dvs. GitHub: https://github.com/settings/tokens
+   a. Accesează setările contului tău GitHub: https://github.com/settings/tokens
    
-   b. Click pe "Generate new token" → "Generate new token (classic)"
+   b. Apasă pe „Generate new token” → „Generate new token (classic)”
    
-   c. Dați token-ului dvs. un nume descriptiv
+   c. Dă token-ului un nume descriptiv
    
-   d. Selectați următoarele scopuri:
-      - `repo` (Control total al depozitelor private)
-      - `read:org` (Citiți apartenența la organizație și echipă, citiți proiectele organizației)
-      - `gist` (Creați gists)
-      - `user:email` (Accesați adresele de email ale utilizatorului (doar citire))
+   d. Selectează următoarele permisiuni:
+      - `repo` (Control complet asupra depozitelor private)
+      - `read:org` (Citire membri organizație și echipe, citire proiecte organizație)
+      - `gist` (Creare gist-uri)
+      - `user:email` (Acces la adresele de email ale utilizatorului (doar citire))
    
-   e. Click pe "Generate token" și copiați noul dvs. token
+   e. Apasă „Generate token” și copiază token-ul nou creat
    
-   f. Setați-l ca o variabilă de mediu:
+   f. Setează-l ca variabilă de mediu:
       
       Pe Windows:
       ```
@@ -97,9 +97,9 @@ Proiectul include un exemplu de client LangChain4j în `com.microsoft.mcp.sample
       export GITHUB_TOKEN=your-github-token
       ```
 
-   g. Pentru o configurare persistentă, adăugați-l la variabilele de mediu prin setările sistemului
+   g. Pentru configurare persistentă, adaugă-l în variabilele de mediu prin setările sistemului
 
-2. Adăugați dependența LangChain4j GitHub la proiectul dvs. (deja inclus în pom.xml):
+2. Adaugă dependența LangChain4j GitHub în proiectul tău (este deja inclusă în pom.xml):
    ```xml
    <dependency>
        <groupId>dev.langchain4j</groupId>
@@ -108,25 +108,25 @@ Proiectul include un exemplu de client LangChain4j în `com.microsoft.mcp.sample
    </dependency>
    ```
 
-3. Asigurați-vă că serverul calculatorului rulează pe `localhost:8080`
+3. Asigură-te că serverul calculatorului rulează pe `localhost:8080`
 
-### Rularea Clientului LangChain4j
+### Rularea clientului LangChain4j
 
 Acest exemplu demonstrează:
-- Conectarea la serverul MCP al calculatorului prin transport SSE
-- Utilizarea LangChain4j pentru a crea un chat bot care folosește operațiunile calculatorului
+- Conectarea la serverul MCP calculator prin transport SSE
+- Folosirea LangChain4j pentru a crea un chatbot care utilizează operațiile calculatorului
 - Integrarea cu modelele AI GitHub (acum folosind modelul phi-4)
 
-Clientul trimite următoarele interogări de exemplu pentru a demonstra funcționalitatea:
+Clientul trimite următoarele interogări exemplu pentru a demonstra funcționalitatea:
 1. Calcularea sumei a două numere
 2. Găsirea rădăcinii pătrate a unui număr
-3. Obținerea informațiilor de ajutor despre operațiunile disponibile ale calculatorului
+3. Obținerea informațiilor de ajutor despre operațiile disponibile ale calculatorului
 
-Rulați exemplul și verificați ieșirea consolei pentru a vedea cum modelul AI folosește instrumentele calculatorului pentru a răspunde la interogări.
+Rulează exemplul și verifică ieșirea în consolă pentru a vedea cum modelul AI folosește uneltele calculatorului pentru a răspunde la întrebări.
 
-### Configurarea Modelului GitHub
+### Configurarea modelului GitHub
 
-Clientul LangChain4j este configurat pentru a utiliza modelul phi-4 al GitHub cu următoarele setări:
+Clientul LangChain4j este configurat să folosească modelul phi-4 de la GitHub cu următoarele setări:
 
 ```java
 ChatLanguageModel model = GitHubChatModel.builder()
@@ -138,7 +138,7 @@ ChatLanguageModel model = GitHubChatModel.builder()
     .build();
 ```
 
-Pentru a utiliza diferite modele GitHub, schimbați pur și simplu parametrul `modelName` la un alt model suportat (de exemplu, "claude-3-haiku-20240307", "llama-3-70b-8192", etc.).
+Pentru a folosi alte modele GitHub, schimbă pur și simplu parametrul `modelName` cu un alt model suportat (de ex., "claude-3-haiku-20240307", "llama-3-70b-8192" etc.).
 
 ## Dependențe
 
@@ -166,78 +166,78 @@ Proiectul necesită următoarele dependențe cheie:
 </dependency>
 ```
 
-## Construirea Proiectului
+## Construirea proiectului
 
-Construiți proiectul folosind Maven:
+Construiește proiectul folosind Maven:
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## Rularea Serverului
+## Rularea serverului
 
-### Utilizarea Java
+### Folosind Java
 
 ```bash
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### Utilizarea MCP Inspector
+### Folosind MCP Inspector
 
-MCP Inspector este un instrument util pentru interacțiunea cu serviciile MCP. Pentru a-l utiliza cu acest serviciu de calculator:
+MCP Inspector este un instrument util pentru interacțiunea cu serviciile MCP. Pentru a-l folosi cu acest serviciu de calculator:
 
-1. **Instalați și rulați MCP Inspector** într-o fereastră nouă de terminal:
+1. **Instalează și pornește MCP Inspector** într-o fereastră nouă de terminal:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Accesați interfața web** făcând clic pe URL-ul afișat de aplicație (de obicei http://localhost:6274)
+2. **Accesează interfața web** făcând clic pe URL-ul afișat de aplicație (de obicei http://localhost:6274)
 
-3. **Configurați conexiunea**:
-   - Setați tipul de transport la "SSE"
-   - Setați URL-ul la punctul final SSE al serverului dvs. care rulează: `http://localhost:8080/sse`
-   - Click pe "Connect"
+3. **Configurează conexiunea**:
+   - Setează tipul de transport la „SSE”
+   - Setează URL-ul către endpoint-ul SSE al serverului tău: `http://localhost:8080/sse`
+   - Apasă „Connect”
 
-4. **Utilizați instrumentele**:
-   - Click pe "List Tools" pentru a vedea operațiunile disponibile ale calculatorului
-   - Selectați un instrument și click pe "Run Tool" pentru a executa o operațiune
+4. **Folosește uneltele**:
+   - Apasă „List Tools” pentru a vedea operațiile disponibile ale calculatorului
+   - Selectează o unealtă și apasă „Run Tool” pentru a executa o operație
 
-![Captură de ecran MCP Inspector](../../../../../../translated_images/tool.d45bdee7d4d5740a48d0d6378c9a8af0c1a289f1e0f2ae95ee176f1a5afb40a8.ro.png)
+![Captură ecran MCP Inspector](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.ro.png)
 
-### Utilizarea Docker
+### Folosind Docker
 
-Proiectul include un Dockerfile pentru implementarea containerizată:
+Proiectul include un Dockerfile pentru implementare containerizată:
 
-1. **Construiți imaginea Docker**:
+1. **Construiește imaginea Docker**:
    ```bash
    docker build -t calculator-mcp-service .
    ```
 
-2. **Rulați containerul Docker**:
+2. **Rulează containerul Docker**:
    ```bash
    docker run -p 8080:8080 calculator-mcp-service
    ```
 
 Aceasta va:
 - Construi o imagine Docker multi-stage cu Maven 3.9.9 și Eclipse Temurin 24 JDK
-- Crea o imagine de container optimizată
+- Crea o imagine optimizată pentru container
 - Expune serviciul pe portul 8080
-- Porni serviciul de calculator MCP în interiorul containerului
+- Porni serviciul MCP calculator în interiorul containerului
 
-Puteți accesa serviciul la `http://localhost:8080` odată ce containerul rulează.
+Poți accesa serviciul la `http://localhost:8080` odată ce containerul este pornit.
 
 ## Depanare
 
 ### Probleme comune cu token-ul GitHub
 
-1. **Probleme de permisiune a token-ului**: Dacă primiți o eroare 403 Forbidden, verificați dacă token-ul dvs. are permisiunile corecte așa cum sunt descrise în cerințele preliminare.
+1. **Probleme de permisiuni ale token-ului**: Dacă primești eroarea 403 Forbidden, verifică dacă token-ul are permisiunile corecte conform cerințelor.
 
-2. **Token-ul nu a fost găsit**: Dacă primiți o eroare "No API key found", asigurați-vă că variabila de mediu GITHUB_TOKEN este setată corect.
+2. **Token inexistent**: Dacă primești eroarea „No API key found”, asigură-te că variabila de mediu GITHUB_TOKEN este setată corect.
 
-3. **Limitarea ratei**: API-ul GitHub are limite de rată. Dacă întâmpinați o eroare de limitare a ratei (cod de status 429), așteptați câteva minute înainte de a încerca din nou.
+3. **Limitare de rată**: API-ul GitHub are limite de rată. Dacă întâmpini o eroare de limitare (cod status 429), așteaptă câteva minute înainte de a încerca din nou.
 
-4. **Expirarea token-ului**: Token-urile GitHub pot expira. Dacă primiți erori de autentificare după un timp, generați un nou token și actualizați variabila dvs. de mediu.
+4. **Expirarea token-ului**: Token-urile GitHub pot expira. Dacă primești erori de autentificare după o perioadă, generează un token nou și actualizează variabila de mediu.
 
-Dacă aveți nevoie de asistență suplimentară, verificați documentația [LangChain4j](https://github.com/langchain4j/langchain4j) sau documentația [GitHub API](https://docs.github.com/en/rest).
+Dacă ai nevoie de ajutor suplimentar, consultă [documentația LangChain4j](https://github.com/langchain4j/langchain4j) sau [documentația API GitHub](https://docs.github.com/en/rest).
 
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională umană. Nu ne asumăm răspunderea pentru neînțelegerile sau interpretările greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

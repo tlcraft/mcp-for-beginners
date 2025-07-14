@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4d3415b9d2bf58bc69be07f945a69e07",
-  "translation_date": "2025-06-13T21:40:31+00:00",
+  "translation_date": "2025-07-14T05:54:04+00:00",
   "source_file": "09-CaseStudy/travelagentsample.md",
   "language_code": "de"
 }
@@ -11,76 +11,76 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Überblick
 
-[Azure AI Travel Agents](https://github.com/Azure-Samples/azure-ai-travel-agents) ist eine umfassende Referenzlösung von Microsoft, die zeigt, wie man eine mehragentige, KI-gestützte Reiseplanungsanwendung mit dem Model Context Protocol (MCP), Azure OpenAI und Azure AI Search erstellt. Dieses Projekt demonstriert bewährte Methoden zur Orchestrierung mehrerer KI-Agenten, zur Integration von Unternehmensdaten und zur Bereitstellung einer sicheren, erweiterbaren Plattform für reale Anwendungsfälle.
+[Azure AI Travel Agents](https://github.com/Azure-Samples/azure-ai-travel-agents) ist eine umfassende Referenzlösung von Microsoft, die zeigt, wie man eine mehragentige, KI-gestützte Reiseplanungsanwendung mit dem Model Context Protocol (MCP), Azure OpenAI und Azure AI Search entwickelt. Dieses Projekt demonstriert Best Practices für die Orchestrierung mehrerer KI-Agenten, die Integration von Unternehmensdaten und die Bereitstellung einer sicheren, erweiterbaren Plattform für reale Anwendungsfälle.
 
-## Hauptfunktionen
-- **Multi-Agent Orchestrierung:** Nutzt MCP zur Koordination spezialisierter Agenten (z. B. FlightAgent, HotelAgent, ItineraryAgent), die zusammen komplexe Reiseplanungsaufgaben erfüllen.
-- **Integration von Unternehmensdaten:** Verbindet Azure AI Search und andere Unternehmensdatenquellen, um aktuelle und relevante Informationen für Reiseempfehlungen bereitzustellen.
-- **Sichere, skalierbare Architektur:** Setzt Azure-Dienste für Authentifizierung, Autorisierung und skalierbare Bereitstellung ein und folgt dabei den besten Sicherheitspraktiken für Unternehmen.
+## Hauptmerkmale
+- **Multi-Agent-Orchestrierung:** Nutzt MCP zur Koordination spezialisierter Agenten (z. B. Flug-, Hotel- und Reiseplanungsagenten), die zusammenarbeiten, um komplexe Reiseplanungsaufgaben zu erfüllen.
+- **Integration von Unternehmensdaten:** Verbindet sich mit Azure AI Search und anderen Unternehmensdatenquellen, um aktuelle und relevante Informationen für Reiseempfehlungen bereitzustellen.
+- **Sichere, skalierbare Architektur:** Nutzt Azure-Dienste für Authentifizierung, Autorisierung und skalierbare Bereitstellung unter Einhaltung von Sicherheitsstandards für Unternehmen.
 - **Erweiterbare Werkzeuge:** Implementiert wiederverwendbare MCP-Tools und Prompt-Vorlagen, die eine schnelle Anpassung an neue Bereiche oder Geschäftsanforderungen ermöglichen.
-- **Benutzererfahrung:** Bietet eine konversationelle Schnittstelle, über die Nutzer mit den Reiseagenten interagieren können, unterstützt von Azure OpenAI und MCP.
+- **Benutzererlebnis:** Bietet eine konversationelle Schnittstelle, über die Nutzer mit den Reiseagenten interagieren können, unterstützt durch Azure OpenAI und MCP.
 
 ## Architektur
 ![Architecture](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
 
 ### Beschreibung des Architekturdiagramms
 
-Die Lösung Azure AI Travel Agents ist modular, skalierbar und ermöglicht eine sichere Integration mehrerer KI-Agenten und Unternehmensdatenquellen. Die Hauptkomponenten und der Datenfluss sind wie folgt:
+Die Azure AI Travel Agents-Lösung ist modular, skalierbar und ermöglicht eine sichere Integration mehrerer KI-Agenten und Unternehmensdatenquellen. Die Hauptkomponenten und der Datenfluss sind wie folgt:
 
-- **Benutzeroberfläche:** Nutzer interagieren mit dem System über eine konversationelle UI (z. B. Webchat oder Teams-Bot), die Benutzeranfragen sendet und Reiseempfehlungen empfängt.
-- **MCP Server:** Dient als zentraler Koordinator, empfängt Benutzereingaben, verwaltet den Kontext und steuert die Aktionen spezialisierter Agenten (z. B. FlightAgent, HotelAgent, ItineraryAgent) über das Model Context Protocol.
-- **KI-Agenten:** Jeder Agent ist für einen bestimmten Bereich zuständig (Flüge, Hotels, Reiserouten) und als MCP-Tool implementiert. Agenten verwenden Prompt-Vorlagen und Logik, um Anfragen zu verarbeiten und Antworten zu generieren.
-- **Azure OpenAI Service:** Bietet fortschrittliches Verständnis und Erzeugung natürlicher Sprache, sodass Agenten die Absichten der Nutzer interpretieren und konversationelle Antworten liefern können.
-- **Azure AI Search & Unternehmensdaten:** Agenten fragen Azure AI Search und andere Unternehmensdatenquellen ab, um aktuelle Informationen zu Flügen, Hotels und Reiseoptionen zu erhalten.
-- **Authentifizierung & Sicherheit:** Integriert Microsoft Entra ID für sichere Authentifizierung und wendet das Prinzip der geringsten Privilegien auf alle Ressourcen an.
-- **Bereitstellung:** Für die Bereitstellung auf Azure Container Apps ausgelegt, um Skalierbarkeit, Überwachung und Betriebseffizienz sicherzustellen.
+- **Benutzeroberfläche:** Nutzer interagieren über eine konversationelle UI (z. B. Web-Chat oder Teams-Bot), die Anfragen sendet und Reiseempfehlungen empfängt.
+- **MCP Server:** Dient als zentraler Koordinator, empfängt Nutzereingaben, verwaltet den Kontext und steuert die Aktionen spezialisierter Agenten (z. B. FlightAgent, HotelAgent, ItineraryAgent) über das Model Context Protocol.
+- **KI-Agenten:** Jeder Agent ist für einen bestimmten Bereich zuständig (Flüge, Hotels, Reisepläne) und als MCP-Tool implementiert. Die Agenten verwenden Prompt-Vorlagen und Logik, um Anfragen zu verarbeiten und Antworten zu generieren.
+- **Azure OpenAI Service:** Bietet fortschrittliches Verständnis und Generierung natürlicher Sprache, damit die Agenten die Nutzerabsicht interpretieren und konversationelle Antworten erstellen können.
+- **Azure AI Search & Unternehmensdaten:** Die Agenten durchsuchen Azure AI Search und weitere Unternehmensdatenquellen, um aktuelle Informationen zu Flügen, Hotels und Reiseoptionen abzurufen.
+- **Authentifizierung & Sicherheit:** Integriert Microsoft Entra ID für sichere Authentifizierung und wendet das Prinzip der minimalen Rechtevergabe auf alle Ressourcen an.
+- **Bereitstellung:** Für den Einsatz auf Azure Container Apps konzipiert, um Skalierbarkeit, Überwachung und Betriebseffizienz zu gewährleisten.
 
-Diese Architektur ermöglicht eine nahtlose Orchestrierung mehrerer KI-Agenten, sichere Integration von Unternehmensdaten und eine robuste, erweiterbare Plattform zum Aufbau domänenspezifischer KI-Lösungen.
+Diese Architektur ermöglicht eine nahtlose Orchestrierung mehrerer KI-Agenten, eine sichere Integration von Unternehmensdaten und eine robuste, erweiterbare Plattform für domänenspezifische KI-Lösungen.
 
 ## Schritt-für-Schritt-Erklärung des Architekturdiagramms
-Stellen Sie sich vor, Sie planen eine große Reise und haben ein Team von Experten, die Ihnen bei jedem Detail helfen. Das Azure AI Travel Agents-System funktioniert ähnlich, indem es verschiedene Teile (wie Teammitglieder) nutzt, die jeweils eine spezielle Aufgabe haben. So fügt sich alles zusammen:
+Stellen Sie sich vor, Sie planen eine große Reise und haben ein Team von Experten, die Ihnen bei jedem Detail helfen. Das Azure AI Travel Agents-System funktioniert ähnlich, indem verschiedene Komponenten (wie Teammitglieder) jeweils eine spezielle Aufgabe übernehmen. So fügt sich alles zusammen:
 
 ### Benutzeroberfläche (UI):
-Man kann sich das wie den Empfangsschalter Ihres Reisebüros vorstellen. Hier stellen Sie (der Nutzer) Fragen oder machen Anfragen, z. B. „Finde mir einen Flug nach Paris.“ Das kann ein Chatfenster auf einer Webseite oder eine Messaging-App sein.
+Man kann sich das wie den Empfang Ihres Reisebüros vorstellen. Hier stellen Sie (der Nutzer) Fragen oder geben Wünsche ein, z. B. „Finde mir einen Flug nach Paris.“ Das kann ein Chatfenster auf einer Webseite oder eine Messaging-App sein.
 
 ### MCP Server (Der Koordinator):
-Der MCP Server ist wie der Manager, der Ihre Anfrage am Empfang entgegennimmt und entscheidet, welcher Spezialist welchen Teil übernimmt. Er verfolgt das Gespräch und sorgt dafür, dass alles reibungslos abläuft.
+Der MCP Server ist wie der Manager, der Ihre Anfrage am Empfang entgegennimmt und entscheidet, welcher Spezialist welchen Teil übernimmt. Er behält den Gesprächskontext im Blick und sorgt dafür, dass alles reibungslos abläuft.
 
-### KI-Agenten (Fachspezialisten):
-Jeder Agent ist Experte in einem bestimmten Bereich – einer kennt sich mit Flügen aus, ein anderer mit Hotels, ein weiterer mit der Planung Ihrer Reiseroute. Wenn Sie eine Reise anfragen, leitet der MCP Server Ihre Anfrage an den passenden Agenten oder die passenden Agenten weiter. Diese nutzen ihr Wissen und ihre Werkzeuge, um die besten Optionen für Sie zu finden.
+### KI-Agenten (Fachliche Assistenten):
+Jeder Agent ist Experte in einem bestimmten Bereich – einer kennt sich mit Flügen aus, ein anderer mit Hotels, ein weiterer mit der Reiseplanung. Wenn Sie eine Anfrage stellen, leitet der MCP Server diese an den passenden Agenten oder die passenden Agenten weiter. Diese nutzen ihr Wissen und ihre Werkzeuge, um die besten Optionen für Sie zu finden.
 
-### Azure OpenAI Service (Sprachexperte):
-Das ist wie ein Sprachprofi, der genau versteht, was Sie fragen, egal wie Sie es formulieren. Er hilft den Agenten, Ihre Anfragen zu verstehen und in natürlicher, konversationeller Sprache zu antworten.
+### Azure OpenAI Service (Sprachprofi):
+Das ist wie ein Sprachprofi, der genau versteht, was Sie meinen, egal wie Sie es formulieren. Er hilft den Agenten, Ihre Anfragen zu verstehen und natürlich klingende Antworten zu geben.
 
 ### Azure AI Search & Unternehmensdaten (Informationsbibliothek):
-Stellen Sie sich eine riesige, stets aktuelle Bibliothek vor, die alle neuesten Reiseinformationen enthält – Flugpläne, Hotelverfügbarkeiten und mehr. Die Agenten durchsuchen diese Bibliothek, um die genauesten Antworten für Sie zu finden.
+Stellen Sie sich eine riesige, stets aktuelle Bibliothek mit allen wichtigen Reiseinformationen vor – Flugpläne, Hotelverfügbarkeiten und mehr. Die Agenten durchsuchen diese Bibliothek, um die genauesten Antworten für Sie zu finden.
 
 ### Authentifizierung & Sicherheit (Sicherheitsdienst):
-Wie ein Sicherheitsdienst, der kontrolliert, wer bestimmte Bereiche betreten darf, sorgt dieser Teil dafür, dass nur autorisierte Personen und Agenten Zugriff auf sensible Informationen haben. So bleiben Ihre Daten sicher und privat.
+Wie ein Sicherheitsdienst, der kontrolliert, wer Zugang zu bestimmten Bereichen hat, sorgt dieser Teil dafür, dass nur autorisierte Personen und Agenten auf sensible Daten zugreifen können. So bleiben Ihre Daten sicher und geschützt.
 
 ### Bereitstellung auf Azure Container Apps (Das Gebäude):
-All diese Assistenten und Werkzeuge arbeiten zusammen in einem sicheren, skalierbaren „Gebäude“ (der Cloud). Das bedeutet, das System kann viele Nutzer gleichzeitig bedienen und ist immer verfügbar, wenn Sie es brauchen.
+All diese Assistenten und Werkzeuge arbeiten zusammen in einem sicheren, skalierbaren Gebäude (der Cloud). Das bedeutet, das System kann viele Nutzer gleichzeitig bedienen und ist jederzeit verfügbar, wenn Sie es brauchen.
 
 ## Wie alles zusammenarbeitet:
 
-Sie stellen am Empfang (UI) eine Frage.  
-Der Manager (MCP Server) findet heraus, welcher Spezialist (Agent) Ihnen helfen soll.  
-Der Spezialist nutzt den Sprachexperten (OpenAI), um Ihre Anfrage zu verstehen, und die Bibliothek (AI Search), um die beste Antwort zu finden.  
-Der Sicherheitsdienst (Authentifizierung) sorgt dafür, dass alles sicher abläuft.  
-Das alles geschieht in einem zuverlässigen, skalierbaren Gebäude (Azure Container Apps), sodass Ihre Erfahrung reibungslos und sicher ist.  
-Dieses Teamwork ermöglicht es dem System, Ihnen schnell und sicher bei der Reiseplanung zu helfen – genau wie ein Team von erfahrenen Reiseagenten in einem modernen Büro!
+Sie stellen eine Frage am Empfang (UI).
+Der Manager (MCP Server) entscheidet, welcher Spezialist (Agent) Ihnen hilft.
+Der Spezialist nutzt den Sprachprofi (OpenAI), um Ihre Anfrage zu verstehen, und die Bibliothek (AI Search), um die beste Antwort zu finden.
+Der Sicherheitsdienst (Authentifizierung) sorgt dafür, dass alles sicher abläuft.
+Das alles passiert in einem zuverlässigen, skalierbaren Gebäude (Azure Container Apps), damit Ihre Erfahrung reibungslos und sicher ist.
+Dieses Zusammenspiel ermöglicht es dem System, Ihnen schnell und sicher bei der Reiseplanung zu helfen – wie ein Team von erfahrenen Reiseagenten in einem modernen Büro!
 
 ## Technische Umsetzung
-- **MCP Server:** Beherbergt die Kernlogik der Orchestrierung, stellt Agenten-Tools bereit und verwaltet den Kontext für mehrstufige Reiseplanungs-Workflows.
+- **MCP Server:** Beherbergt die zentrale Orchestrierungslogik, stellt Agenten-Tools bereit und verwaltet den Kontext für mehrstufige Reiseplanungsabläufe.
 - **Agenten:** Jeder Agent (z. B. FlightAgent, HotelAgent) ist als MCP-Tool mit eigenen Prompt-Vorlagen und Logik implementiert.
 - **Azure-Integration:** Nutzt Azure OpenAI für das Verständnis natürlicher Sprache und Azure AI Search für die Datenabfrage.
-- **Sicherheit:** Integriert Microsoft Entra ID für die Authentifizierung und wendet das Prinzip der geringsten Privilegien auf alle Ressourcen an.
+- **Sicherheit:** Integriert Microsoft Entra ID für die Authentifizierung und wendet das Prinzip der minimalen Rechtevergabe auf alle Ressourcen an.
 - **Bereitstellung:** Unterstützt die Bereitstellung auf Azure Container Apps für Skalierbarkeit und Betriebseffizienz.
 
 ## Ergebnisse und Auswirkungen
-- Zeigt, wie MCP genutzt werden kann, um mehrere KI-Agenten in einem realen, produktionsreifen Szenario zu orchestrieren.
+- Zeigt, wie MCP zur Orchestrierung mehrerer KI-Agenten in einem produktionsreifen, realen Szenario eingesetzt werden kann.
 - Beschleunigt die Lösungsentwicklung durch wiederverwendbare Muster für Agentenkoordination, Datenintegration und sichere Bereitstellung.
-- Dient als Vorlage zum Aufbau domänenspezifischer, KI-gestützter Anwendungen mit MCP und Azure-Diensten.
+- Dient als Vorlage für die Entwicklung domänenspezifischer, KI-gestützter Anwendungen mit MCP und Azure-Diensten.
 
 ## Referenzen
 - [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)
@@ -89,4 +89,4 @@ Dieses Teamwork ermöglicht es dem System, Ihnen schnell und sicher bei der Reis
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Verwendung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

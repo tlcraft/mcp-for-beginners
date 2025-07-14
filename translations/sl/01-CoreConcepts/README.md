@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-04T19:12:09+00:00",
+  "translation_date": "2025-07-13T16:27:45+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "sl"
 }
@@ -27,7 +27,7 @@ Ob koncu te lekcije boste:
 
 ## 🔎 Arhitektura MCP: Podrobnejši pogled
 
-Ekosistem MCP temelji na modelu klient-strežnik. Ta modularna struktura omogoča AI aplikacijam učinkovito interakcijo z orodji, bazami podatkov, API-ji in kontekstualnimi viri. Razdelimo to arhitekturo na njene osnovne komponente.
+Ekosistem MCP temelji na modelu klient-strežnik. Ta modularna struktura omogoča AI aplikacijam učinkovito interakcijo z orodji, bazami podatkov, API-ji in kontekstualnimi viri. Razčlenimo to arhitekturo na njene osnovne komponente.
 
 V jedru MCP sledi arhitekturi klient-strežnik, kjer gostiteljska aplikacija lahko poveže več strežnikov:
 
@@ -59,12 +59,12 @@ MCP protokol je razvijajoči se standard, najnovejše posodobitve si lahko ogled
 
 ### 1. Hosti
 
-V Model Context Protocol (MCP) imajo Hosti ključno vlogo kot primarni vmesnik, preko katerega uporabniki komunicirajo s protokolom. Hosti so aplikacije ali okolja, ki vzpostavijo povezave z MCP strežniki za dostop do podatkov, orodij in pozivov. Primeri Hostov so integrirana razvojna okolja (IDE), kot je Visual Studio Code, AI orodja, kot je Claude Desktop, ali po meri izdelani agenti za specifične naloge.
+V Model Context Protocol (MCP) imajo Hosti ključno vlogo kot primarni vmesnik, preko katerega uporabniki komunicirajo s protokolom. Hosti so aplikacije ali okolja, ki vzpostavijo povezave z MCP strežniki za dostop do podatkov, orodij in pozivov. Primeri Hostov so integrirana razvojna okolja (IDE-ji) kot Visual Studio Code, AI orodja kot Claude Desktop ali po meri izdelani agenti za specifične naloge.
 
 **Hosti** so LLM aplikacije, ki vzpostavljajo povezave. Oni:
 
 - Izvajajo ali sodelujejo z AI modeli za generiranje odgovorov.
-- Vzpostavljajo povezave z MCP strežniki.
+- Začnejo povezave z MCP strežniki.
 - Upravljajo potek pogovora in uporabniški vmesnik.
 - Nadzorujejo dovoljenja in varnostne omejitve.
 - Upravljajo uporabniško soglasje za deljenje podatkov in izvajanje orodij.
@@ -76,15 +76,15 @@ Klienti so ključne komponente, ki omogočajo interakcijo med Hosti in MCP stre�
 **Klienti** so povezovalci znotraj gostiteljske aplikacije. Oni:
 
 - Pošiljajo zahteve strežnikom s pozivi/instrukcijami.
-- Pogajajo se o zmogljivostih s strežniki.
+- Pogajajo zmogljivosti s strežniki.
 - Upravljajo zahteve za izvajanje orodij iz modelov.
 - Obdelujejo in prikazujejo odgovore uporabnikom.
 
 ### 3. Strežniki
 
-Strežniki so odgovorni za obdelavo zahtev MCP klientov in zagotavljanje ustreznih odgovorov. Upravljajo različne operacije, kot so pridobivanje podatkov, izvajanje orodij in generiranje pozivov. Strežniki zagotavljajo, da je komunikacija med klienti in Hosti učinkovita in zanesljiva ter ohranjajo integriteto procesa interakcije.
+Strežniki so odgovorni za obdelavo zahtev od MCP klientov in zagotavljanje ustreznih odgovorov. Upravljajo različne operacije, kot so pridobivanje podatkov, izvajanje orodij in generiranje pozivov. Strežniki zagotavljajo, da je komunikacija med klienti in Hosti učinkovita in zanesljiva ter ohranjajo integriteto procesa interakcije.
 
-**Strežniki** so storitve, ki zagotavljajo kontekst in zmogljivosti. Oni:
+**Strežniki** so storitve, ki nudijo kontekst in zmogljivosti. Oni:
 
 - Registrirajo razpoložljive funkcije (viri, pozivi, orodja)
 - Prejemajo in izvajajo klice orodij od klienta
@@ -137,7 +137,7 @@ Orodja v Model Context Protocol (MCP) so funkcije, ki jih lahko AI model izvede 
 - **Funkcije, ki jih AI model lahko izvede**: Orodja so izvršljive funkcije, ki jih AI model lahko pokliče za izvedbo različnih nalog.
 - **Edinstveno ime in opis**: Vsako orodje ima svoje ime in podroben opis, ki pojasnjuje njegov namen in funkcionalnost.
 - **Parametri in izhodi**: Orodja sprejemajo določene parametre in vračajo strukturirane rezultate, kar zagotavlja dosledne in predvidljive izide.
-- **Diskretne funkcije**: Orodja izvajajo posamezne funkcije, kot so spletna iskanja, izračuni in poizvedbe v bazah podatkov.
+- **Diskretne funkcije**: Orodja izvajajo posamezne funkcije, kot so spletno iskanje, izračuni in poizvedbe v bazah podatkov.
 
 Primer orodja je lahko videti takole:
 
@@ -159,7 +159,7 @@ V Model Context Protocol (MCP) klienti strežnikom nudijo več ključnih funkcij
 
 ### 👉 Sampling
 
-- **Strežnikovo sprožanje agentnih vedenj**: Klienti omogočajo strežnikom, da samostojno sprožijo določena dejanja ali vedenja, kar povečuje dinamične zmogljivosti sistema.
+- **Agentna vedenja, ki jih sproži strežnik**: Klienti omogočajo strežnikom, da samostojno sprožijo določena dejanja ali vedenja, kar povečuje dinamične zmogljivosti sistema.
 - **Rekurzivne interakcije z LLM**: Ta funkcija omogoča rekurzivne interakcije z velikimi jezikovnimi modeli (LLM), kar omogoča bolj kompleksno in iterativno obdelavo nalog.
 - **Zahteva po dodatnih zaključkih modela**: Strežniki lahko zahtevajo dodatne zaključke od modela, da zagotovijo temeljite in kontekstualno ustrezne odgovore.
 
@@ -168,7 +168,7 @@ V Model Context Protocol (MCP) klienti strežnikom nudijo več ključnih funkcij
 Model Context Protocol (MCP) določa strukturiran pretok informacij med hosti, klienti, strežniki in modeli. Razumevanje tega pretoka pomaga pojasniti, kako se obdelujejo uporabniške zahteve in kako se zunanja orodja ter podatki vključujejo v odgovore modela.
 
 - **Host vzpostavi povezavo**  
-  Gostiteljska aplikacija (npr. IDE ali klepetalni vmesnik) vzpostavi povezavo z MCP strežnikom, običajno preko STDIO, WebSocket ali drugega podprtega transporta.
+  Gostiteljska aplikacija (kot IDE ali klepetalni vmesnik) vzpostavi povezavo z MCP strežnikom, običajno preko STDIO, WebSocket ali drugega podprtega transporta.
 
 - **Pogajanje o zmogljivostih**  
   Klient (vdelan v hosta) in strežnik si izmenjata informacije o podprtih funkcijah, orodjih, virih in različicah protokola. To zagotavlja, da obe strani razumeta, katere zmogljivosti so na voljo za sejo.
@@ -178,7 +178,7 @@ Model Context Protocol (MCP) določa strukturiran pretok informacij med hosti, k
 
 - **Uporaba vira ali orodja**  
   - Klient lahko zahteva dodatni kontekst ali vire od strežnika (kot so datoteke, vnosi v bazi podatkov ali članki iz baze znanja), da obogati razumevanje modela.
-  - Če model ugotovi, da je potrebno orodje (npr. za pridobitev podatkov, izvedbo izračuna ali klic API-ja), klient pošlje strežniku zahtevo za izvedbo orodja, pri čemer navede ime orodja in parametre.
+  - Če model ugotovi, da je potrebno orodje (npr. za pridobitev podatkov, izvedbo izračuna ali klic API-ja), klient pošlje strežniku zahtevo za klic orodja, pri čemer navede ime orodja in parametre.
 
 - **Izvajanje strežnika**  
   Strežnik prejme zahtevo za vir ali orodje, izvede potrebne operacije (kot so zagon funkcije, poizvedba v bazi podatkov ali pridobitev datoteke) in vrne rezultate klientu v strukturirani obliki.
@@ -187,7 +187,7 @@ Model Context Protocol (MCP) določa strukturiran pretok informacij med hosti, k
   Klient integrira odgovore strežnika (podatke vira, izhode orodij itd.) v tekočo interakcijo z modelom. Model uporabi te informacije za ustvarjanje celovitega in kontekstualno ustreznega odgovora.
 
 - **Prikaz rezultata**  
-  Host prejme končni izhod od klienta in ga prikaže uporabniku, pogosto vključujoč tako generirano besedilo modela kot tudi rezultate izvedb orodij ali iskanj po virih.
+  Host prejme končni izhod od klienta in ga prikaže uporabniku, pogosto vključujoč tako generirano besedilo modela kot tudi rezultate klicev orodij ali iskanj virov.
 
 Ta potek omogoča MCP podporo naprednim, interaktivnim in kontekstualno ozaveščenim AI aplikacijam z nemoteno povezavo modelov z zunanjimi orodji in podatkovnimi viri.
 
@@ -201,7 +201,7 @@ MCP razširja JSON-RPC 2.0 z dodatnimi konvencijami za klic orodij, dostop do vi
 
 #### 🧢 Osnovni protokol
 
-- **JSON-RPC format sporočil**: Vse zahteve in odgovori uporabljajo specifikacijo JSON-RPC 2.0, kar zagotavlja dosledno strukturo za klice metod, parametre, rezultate in obravnavo napak.
+- **Format sporočil JSON-RPC**: Vse zahteve in odgovori uporabljajo specifikacijo JSON-RPC 2.0, kar zagotavlja dosledno strukturo za klice metod, parametre, rezultate in obravnavo napak.
 - **Stanje povezav**: MCP seje ohranjajo stanje skozi več zahtev, podpirajo tekoče pogovore, kopičenje konteksta in upravljanje virov.
 - **Pogajanje o zmogljivostih**: Med vzpostavitvijo povezave si klienti in strežniki izmenjajo informacije o podprtih funkcijah, različicah protokola, razpoložljivih orodjih in virih. To zagotavlja, da obe strani razumeta zmogljivosti druga druge in se lahko temu prilagodita.
 
@@ -212,7 +212,7 @@ Spodaj so nekatere dodatne funkcije in razširitve protokola, ki jih MCP nudi za
 - **Možnosti konfiguracije**: MCP omogoča dinamično konfiguracijo parametrov seje, kot so dovoljenja za orodja, dostop do virov in nastavitve modela, prilagojene posamezni interakciji.
 - **Sledenje napredku**: Dolgotrajne operacije lahko poročajo o napredku, kar omogoča odzivne uporabniške vmesnike in boljšo uporabniško izkušnjo pri kompleksnih nalogah.
 - **Preklic zahtev**: Klienti lahko prekličejo tekoče zahteve, kar uporabnikom omogoča prekinitev operacij, ki niso več potrebne ali trajajo predolgo.
-- **Poročanje o napakah**: Standardizirana sporočila o napakah in kode pomagajo pri diagnosticiranju težav, elegantnem obravnavanju napak in zagotavljanju uporabnih povratnih informacij uporabnikom in razvijalcem.
+- **Poročanje o napakah**: Standardizirana sporočila o napakah in kode pomagajo pri diagnosticiranju težav, obravnavi napak in zagotavljanju uporabnih povratnih informacij uporabnikom in razvijalcem.
 - **Dnevniški zapisi**: Tako klienti kot strežniki lahko oddajajo strukturirane dnevnike za revizijo, odpravljanje napak in spremljanje interakcij protokola.
 
 Z uporabo teh funkcij protokola MCP zagotavlja robustno, varno in prilagodljivo komunikacijo med jezikovnimi modeli in zunanjimi orodji ali podatkovnimi viri.
@@ -221,7 +221,7 @@ Z uporabo teh funkcij protokola MCP zagotavlja robustno, varno in prilagodljivo 
 
 Implementacije MCP naj upoštevajo več ključnih varnostnih načel za zagotavljanje varnih in zaupanja vrednih interakcij:
 
-- **Uporabniško soglasje in nadzor**: Uporabniki morajo dati izrecno soglasje, preden se dostopajo podatki ali izvajajo operacije. Morajo imeti jasen nadzor nad tem, kateri podatki se delijo in katere akcije so dovoljene, podprto z intuitivnimi uporabniškimi vmesniki za pregled in odobritev aktivnosti.
+- **Uporabniško soglasje in nadzor**: Uporabniki morajo dati izrecno soglasje, preden se dostopajo podatki ali izvajajo operacije. Morajo imeti jasen nadzor nad tem, kateri podatki se delijo in katere akcije so pooblaščene, podprto z intuitivnimi uporabniškimi vmesniki za pregled in odobritev aktivnosti.
 
 - **Zasebnost podatkov**: Uporabniški podatki naj bodo razkriti le z izrecnim soglasjem in zaščiteni z ustreznimi kontrolami dostopa. Implementacije MCP morajo preprečiti nepooblaščen prenos podatkov in zagotoviti, da je zasebnost ohranjena skozi vse interakcije.
 
@@ -231,20 +231,20 @@ S spoštovanjem teh načel MCP zagotavlja, da so zaupanje uporabnikov, zasebnost
 
 ## Primeri kode: Ključne komponente
 
-Spodaj so primeri kode v več priljubljenih programskih jezikih, ki prikazujejo, kako implementirati ključne MCP strežni
-MCP vključuje več vgrajenih konceptov in mehanizmov za upravljanje varnosti in avtorizacije v celotnem protokolu:
+Spodaj so primeri kode v več priljubljenih programskih jezikih, ki prikazujejo, kako implementirati ključne MCP strežniške komponente in orodja
+MCP vključuje več vgrajenih konceptov in mehanizmov za upravljanje varnosti in avtorizacije skozi celoten protokol:
 
 1. **Nadzor dovoljenj orodij**:  
-  Stranke lahko določijo, katera orodja sme model uporabljati med sejo. To zagotavlja, da so dostopna le izrecno pooblaščena orodja, kar zmanjšuje tveganje za nenamerne ali nevarne operacije. Dovoljenja je mogoče dinamično nastavljati glede na uporabniške preference, organizacijske politike ali kontekst interakcije.
+  Stranke lahko določijo, katera orodja sme model uporabljati med sejo. To zagotavlja, da so dostopna le izrecno pooblaščena orodja, kar zmanjša tveganje za nenamerne ali nevarne operacije. Dovoljenja je mogoče dinamično nastavljati glede na uporabniške preference, organizacijske politike ali kontekst interakcije.
 
 2. **Avtentikacija**:  
   Strežniki lahko zahtevajo avtentikacijo pred podelitvijo dostopa do orodij, virov ali občutljivih operacij. To lahko vključuje API ključe, OAuth žetone ali druge sheme avtentikacije. Pravilna avtentikacija zagotavlja, da lahko strežniške zmogljivosti uporabljajo le zaupanja vredne stranke in uporabniki.
 
 3. **Validacija**:  
-  Za vse klice orodij je obvezna validacija parametrov. Vsako orodje določi pričakovane tipe, formate in omejitve za svoje parametre, strežnik pa ustrezno preveri dohodne zahteve. To preprečuje, da bi nepravilni ali zlonamerni vnosi dosegli implementacije orodij in pomaga ohranjati integriteto operacij.
+  Validacija parametrov je obvezna za vse klice orodij. Vsako orodje določa pričakovane tipe, formate in omejitve za svoje parametre, strežnik pa ustrezno preverja dohodne zahteve. To preprečuje, da bi nepravilni ali zlonamerni vnosi dosegli implementacije orodij in pomaga ohranjati integriteto operacij.
 
-4. **Omejevanje hitrosti (Rate Limiting)**:  
-  Da bi preprečili zlorabe in zagotovili pošteno uporabo strežniških virov, lahko MCP strežniki uvedejo omejevanje hitrosti za klice orodij in dostop do virov. Omejitve se lahko uporabljajo na uporabnika, sejo ali globalno in pomagajo zaščititi pred napadi zavrnitve storitve ali pretirano porabo virov.
+4. **Omejevanje hitrosti**:  
+  Za preprečevanje zlorab in zagotavljanje poštene rabe strežniških virov lahko MCP strežniki izvajajo omejevanje hitrosti za klice orodij in dostop do virov. Omejitve hitrosti se lahko uporabljajo na uporabnika, sejo ali globalno in pomagajo zaščititi pred napadi zavrnitve storitve ali pretirano porabo virov.
 
 S kombinacijo teh mehanizmov MCP zagotavlja varno osnovo za integracijo jezikovnih modelov z zunanjimi orodji in podatkovnimi viri, hkrati pa uporabnikom in razvijalcem omogoča natančen nadzor nad dostopom in uporabo.
 
@@ -253,53 +253,54 @@ S kombinacijo teh mehanizmov MCP zagotavlja varno osnovo za integracijo jezikovn
 MCP komunikacija uporablja strukturirana JSON sporočila za jasne in zanesljive interakcije med strankami, strežniki in modeli. Glavne vrste sporočil vključujejo:
 
 - **Zahteva stranke**  
-  Poslana iz stranke na strežnik, to sporočilo običajno vsebuje:  
-  - Uporabnikov poziv ali ukaz  
-  - Zgodovino pogovora za kontekst  
-  - Konfiguracijo orodij in dovoljenja  
+  Poslana s strani stranke strežniku, to sporočilo običajno vsebuje:
+  - Uporabnikov poziv ali ukaz
+  - Zgodovino pogovora za kontekst
+  - Konfiguracijo orodij in dovoljenja
   - Morebitne dodatne metapodatke ali informacije o seji
 
 - **Odgovor modela**  
-  Vrne model (prek stranke), to sporočilo vsebuje:  
-  - Generirano besedilo ali dokončanje na podlagi poziva in konteksta  
-  - Neobvezna navodila za klic orodja, če model presodi, da je treba orodje uporabiti  
+  Vrne model (prek stranke), to sporočilo vsebuje:
+  - Generirano besedilo ali dokončanje na podlagi poziva in konteksta
+  - Neobvezna navodila za klic orodja, če model presodi, da je treba orodje uporabiti
   - Reference na vire ali dodatni kontekst po potrebi
 
 - **Zahteva orodja**  
-  Poslana iz stranke na strežnik, ko je treba izvesti orodje. To sporočilo vključuje:  
-  - Ime orodja, ki ga je treba poklicati  
-  - Parametre, ki jih orodje zahteva (validirani glede na shemo orodja)  
+  Poslana s strani stranke strežniku, ko je treba izvesti orodje. To sporočilo vključuje:
+  - Ime orodja, ki ga je treba poklicati
+  - Parametre, ki jih orodje zahteva (validirane glede na shemo orodja)
   - Kontekstualne informacije ali identifikatorje za sledenje zahtevi
 
 - **Odgovor orodja**  
-  Vrne strežnik po izvedbi orodja. To sporočilo zagotavlja:  
-  - Rezultate izvedbe orodja (strukturirani podatki ali vsebina)  
-  - Morebitne napake ali statusne informacije, če je klic orodja spodletel  
-  - Neobvezno dodatne metapodatke ali zapise povezane z izvedbo
+  Vrne strežnik po izvedbi orodja. To sporočilo zagotavlja:
+  - Rezultate izvedbe orodja (strukturirani podatki ali vsebina)
+  - Morebitne napake ali statusne informacije, če je klic orodja spodletel
+  - Neobvezno dodatne metapodatke ali dnevnike povezane z izvedbo
 
 Ta strukturirana sporočila zagotavljajo, da je vsak korak v MCP poteku jasen, sledljiv in razširljiv, kar podpira napredne scenarije, kot so večkrožni pogovori, verižna uporaba orodij in robustno ravnanje z napakami.
 
 ## Ključne ugotovitve
 
-- MCP uporablja arhitekturo klient-strežnik za povezovanje modelov z zunanjimi zmogljivostmi  
-- Ekosistem sestavljajo stranke, gostitelji, strežniki, orodja in podatkovni viri  
-- Komunikacija poteka prek STDIO, SSE ali WebSockets  
-- Orodja so osnovne enote funkcionalnosti, ki so na voljo modelom  
+- MCP uporablja arhitekturo klient-strežnik za povezovanje modelov z zunanjimi zmogljivostmi
+- Ekosistem sestavljajo stranke, gostitelji, strežniki, orodja in podatkovni viri
+- Komunikacija poteka preko STDIO, SSE ali WebSockets
+- Orodja so osnovne enote funkcionalnosti, ki so na voljo modelom
 - Strukturirani komunikacijski protokoli zagotavljajo dosledne interakcije
 
 ## Vaja
 
-Oblikujte preprosto MCP orodje, ki bi bilo uporabno na vašem področju. Določite:  
-1. Kako bi se orodje imenovalo  
-2. Katere parametre bi sprejemalo  
-3. Kakšen izhod bi vrnilo  
+Oblikujte preprosto MCP orodje, ki bi bilo uporabno na vašem področju. Določite:
+1. Kako bi se orodje imenovalo
+2. Katere parametre bi sprejemalo
+3. Kakšen izhod bi vrnilo
 4. Kako bi model lahko uporabil to orodje za reševanje uporabniških težav
+
 
 ---
 
 ## Kaj sledi
 
-Naslednje: [Chapter 2: Security](../02-Security/README.md)
+Naslednje: [Poglavje 2: Varnost](../02-Security/README.md)
 
 **Omejitev odgovornosti**:  
 Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

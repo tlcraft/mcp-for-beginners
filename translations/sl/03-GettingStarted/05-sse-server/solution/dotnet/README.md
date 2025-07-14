@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T06:10:35+00:00",
+  "translation_date": "2025-07-13T20:12:16+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "sl"
 }
@@ -23,7 +23,7 @@ dotnet run
 
 ## -3- Preizkusite primer
 
-Preden zaženete spodnje, odprite ločen terminal (prepričajte se, da strežnik še vedno teče).
+Preden zaženete spodnje, odprite ločen terminal (poskrbite, da strežnik še vedno teče).
 
 Ko strežnik teče v enem terminalu, odprite drugega in zaženite naslednji ukaz:
 
@@ -35,9 +35,9 @@ To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča te
 
 > Prepričajte se, da je kot tip prenosa izbran **SSE**, URL pa je `http://localhost:3001/sse`.
 
-Once the server is connected: 
+Ko je strežnik povezan:
 
-- try listing tools and run `add`, z argumenti 2 in 4 boste v rezultatu videli 6.
+- poskusite izpisati orodja in zaženite `add` z argumenti 2 in 4, v rezultatu bi morali videti 6.
 - pojdite na resources in resource template ter pokličite "greeting", vnesite ime in videli boste pozdrav z vnesenim imenom.
 
 ### Testiranje v CLI načinu
@@ -48,7 +48,7 @@ Lahko ga zaženete neposredno v CLI načinu z naslednjim ukazom:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-To bo prikazalo vse orodja, ki so na voljo na strežniku. Videli bi morali naslednji izpis:
+To bo izpisalo vsa orodja, ki so na voljo na strežniku. Videli bi morali naslednji izpis:
 
 ```text
 {
@@ -80,13 +80,13 @@ To bo prikazalo vse orodja, ki so na voljo na strežniku. Videli bi morali nasle
 }
 ```
 
-Za zagon orodja vnesite:
+Za klic orodja vnesite:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Videli boste naslednji izpis:
+Videli bi morali naslednji izpis:
 
 ```text
 {
@@ -104,5 +104,5 @@ Videli boste naslednji izpis:
 > Običajno je veliko hitreje zagnati inspector v CLI načinu kot v brskalniku.
 > Več o inspectorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
 
-**Opozorilo:**  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

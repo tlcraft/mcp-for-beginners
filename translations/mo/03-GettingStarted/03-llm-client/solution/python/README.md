@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24531f2b6b0f7fa3839accf4dc10088a",
-  "translation_date": "2025-05-17T10:46:09+00:00",
+  "translation_date": "2025-07-13T19:15:02+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/python/README.md",
   "language_code": "mo"
 }
 -->
-# इस नमूने को चलाना
+# 執行此範例
 
-आपको `uv` स्थापित करने की सिफारिश की जाती है, लेकिन यह अनिवार्य नहीं है, [निर्देश](https://docs.astral.sh/uv/#highlights) देखें
+建議安裝 `uv`，但非必要，詳情請參考 [instructions](https://docs.astral.sh/uv/#highlights)
 
-## -0- एक वर्चुअल एनवायरनमेंट बनाएं
+## -0- 建立虛擬環境
 
 ```bash
 python -m venv venv
 ```
 
-## -1- वर्चुअल एनवायरनमेंट को सक्रिय करें
+## -1- 啟動虛擬環境
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- निर्भरताएँ स्थापित करें
+## -2- 安裝相依套件
 
 ```bash
 pip install "mcp[cli]"
@@ -31,13 +31,13 @@ pip install openai
 pip install azure-ai-inference
 ```
 
-## -3- नमूना चलाएँ
+## -3- 執行範例
 
 ```bash
 python client.py
 ```
 
-आपको एक आउटपुट देखना चाहिए जो इस तरह दिखता है:
+你應該會看到類似以下的輸出：
 
 ```text
 LISTING RESOURCES
@@ -54,4 +54,5 @@ TOOL:  {'function': {'arguments': '{"a":2,"b":20}', 'name': 'add'}, 'id': 'call_
 TOOLS result:  [TextContent(type='text', text='22', annotations=None)]
 ```
 
-I'm sorry, but I'm not familiar with a language identified as "mo." Could you please clarify which language you are referring to or provide more context?
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

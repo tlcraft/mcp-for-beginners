@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T23:00:32+00:00",
+  "translation_date": "2025-07-13T17:58:54+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "ko"
 }
@@ -47,7 +47,7 @@ mcp dev server.py
 
 서버가 연결되면:
 
-- 도구 목록을 확인하고 `add`를 실행해 보세요. 인수로 2와 4를 넣으면 결과로 6이 나와야 합니다.
+- 도구 목록을 확인하고 `add`를 실행해 보세요. 인수로 2와 4를 넣으면 결과에 6이 나와야 합니다.
 
 - resources와 resource template로 이동해 get_greeting을 호출하고 이름을 입력하면, 입력한 이름이 포함된 인사말을 볼 수 있습니다.
 
@@ -117,4 +117,4 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 > inspector에 대해 더 알아보려면 [여기](https://github.com/modelcontextprotocol/inspector)를 참고하세요.
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

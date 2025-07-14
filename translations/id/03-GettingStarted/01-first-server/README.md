@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:11:18+00:00",
+  "translation_date": "2025-07-13T17:36:58+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "id"
 }
@@ -32,7 +32,7 @@ Mulai server dengan perintah berikut:
 Inspector adalah alat hebat yang dapat memulai server Anda dan memungkinkan Anda berinteraksi dengannya sehingga Anda dapat menguji apakah server berfungsi. Mari kita mulai:
 > [!NOTE]  
 > mungkin terlihat berbeda di bidang "command" karena berisi perintah untuk menjalankan server dengan runtime spesifik Anda/
-Anda akan melihat antarmuka pengguna berikut:
+Anda seharusnya melihat antarmuka pengguna berikut:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.id.png)
 
@@ -47,11 +47,11 @@ Anda akan melihat antarmuka pengguna berikut:
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.id.png)
 
-Selamat, Anda telah berhasil membuat dan menjalankan server pertama Anda!
+Selamat, Anda berhasil membuat dan menjalankan server pertama Anda!
 
 ### SDK Resmi
 
-MCP menyediakan SDK resmi untuk berbagai bahasa:
+MCP menyediakan SDK resmi untuk berbagai bahasa pemrograman:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Dipelihara bekerja sama dengan Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Dipelihara bekerja sama dengan Spring AI
@@ -65,7 +65,7 @@ MCP menyediakan SDK resmi untuk berbagai bahasa:
 
 - Menyiapkan lingkungan pengembangan MCP mudah dengan SDK khusus bahasa
 - Membangun server MCP melibatkan pembuatan dan pendaftaran alat dengan skema yang jelas
-- Pengujian dan debugging penting untuk implementasi MCP yang andal
+- Pengujian dan debugging sangat penting untuk implementasi MCP yang andal
 
 ## Contoh
 
@@ -81,7 +81,7 @@ Buat server MCP sederhana dengan alat pilihan Anda:
 
 1. Implementasikan alat tersebut dalam bahasa favorit Anda (.NET, Java, Python, atau JavaScript).  
 2. Definisikan parameter input dan nilai kembalian.  
-3. Jalankan alat inspector untuk memastikan server berfungsi sesuai harapan.  
+3. Jalankan alat inspector untuk memastikan server berjalan sesuai harapan.  
 4. Uji implementasi dengan berbagai input.
 
 ## Solusi
@@ -99,4 +99,4 @@ Buat server MCP sederhana dengan alat pilihan Anda:
 Selanjutnya: [Memulai dengan MCP Clients](../02-client/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

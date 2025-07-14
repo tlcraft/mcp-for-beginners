@@ -2,43 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-06-12T21:24:35+00:00",
+  "translation_date": "2025-07-14T02:36:37+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "tw"
 }
 -->
-# Security Best Practices
+# 安全最佳實務
 
-安全性對 MCP 實作來說非常重要，尤其是在企業環境中。確保工具和資料免於未經授權的存取、資料外洩及其他安全威脅是必要的。
+安全對於 MCP 實作來說至關重要，尤其是在企業環境中。確保工具和資料免於未經授權的存取、資料外洩及其他安全威脅是非常重要的。
 
-## Introduction
+## 介紹
 
-本課程將探討 MCP 實作的安全最佳實務。我們會涵蓋身份驗證與授權、資料保護、安全的工具執行，以及遵守資料隱私法規。
+在本課程中，我們將探討 MCP 實作的安全最佳實務。我們會涵蓋身份驗證與授權、資料保護、安全的工具執行，以及遵守資料隱私法規。
 
-## Learning Objectives
+## 學習目標
 
-課程結束後，你將能夠：
+完成本課程後，您將能夠：
 
 - 為 MCP 伺服器實作安全的身份驗證與授權機制。
-- 使用加密與安全儲存來保護敏感資料。
-- 確保工具在適當的存取控制下安全執行。
-- 應用資料保護及隱私合規的最佳實務。
+- 使用加密和安全儲存來保護敏感資料。
+- 透過適當的存取控制確保工具的安全執行。
+- 應用資料保護和隱私合規的最佳實務。
 
-## Authentication and Authorization
+## 身份驗證與授權
 
-身份驗證與授權是保護 MCP 伺服器的關鍵。身份驗證回答「你是誰？」的問題，授權則回答「你能做什麼？」。
+身份驗證與授權是保護 MCP 伺服器安全的關鍵。身份驗證回答「你是誰？」的問題，而授權則回答「你可以做什麼？」。
 
-以下示範如何使用 .NET 與 Java 在 MCP 伺服器中實作安全的身份驗證與授權。
+讓我們來看看如何使用 .NET 和 Java 在 MCP 伺服器中實作安全的身份驗證與授權。
 
-### .NET Identity Integration
+### .NET Identity 整合
 
-ASP .NET Core Identity 提供了強大的框架來管理使用者的身份驗證與授權。我們可以將它整合到 MCP 伺服器，保障對工具與資源的存取安全。
+ASP .NET Core Identity 提供了一個強大的框架來管理使用者身份驗證與授權。我們可以將它整合到 MCP 伺服器中，以保護工具和資源的存取。
 
-整合 ASP.NET Core Identity 與 MCP 伺服器時，有幾個核心概念需要理解：
+整合 ASP.NET Core Identity 與 MCP 伺服器時，有幾個核心概念需要了解：
 
-- **Identity Configuration**：設定 ASP.NET Core Identity，包含使用者角色與聲明。聲明是關於使用者的資訊，例如角色或權限，如「Admin」或「User」。
-- **JWT Authentication**：使用 JSON Web Tokens (JWT) 來安全存取 API。JWT 是一種標準，用於以 JSON 物件形式安全傳遞資訊，並可藉由數位簽章驗證與信任。
-- **Authorization Policies**：定義政策以根據使用者角色控制對特定工具的存取。MCP 使用授權政策來決定哪些使用者可以根據其角色與聲明存取哪些工具。
+- **Identity 配置**：設定 ASP.NET Core Identity，包含使用者角色和聲明。聲明是關於使用者的一項資訊，例如其角色或權限，如「Admin」或「User」。
+- **JWT 身份驗證**：使用 JSON Web Tokens (JWT) 來實現安全的 API 存取。JWT 是一種標準，用於在雙方之間以 JSON 物件安全傳輸資訊，因為它是數位簽章的，可以被驗證和信任。
+- **授權政策**：定義政策以根據使用者角色控制對特定工具的存取。MCP 使用授權政策來決定哪些使用者可以根據其角色和聲明存取哪些工具。
 
 ```csharp
 public class SecureMcpStartup
@@ -109,24 +109,24 @@ public class SecureMcpStartup
 }
 ```
 
-前述程式碼中，我們：
+在上述程式碼中，我們：
 
-- 配置 ASP.NET Core Identity 來管理使用者。
-- 設定 JWT 身份驗證以保障 API 存取安全，指定了 token 驗證參數，包括發行者、受眾與簽章金鑰。
-- 定義授權政策以根據使用者角色控制工具存取。例如「CanUseAdminTools」政策要求使用者具備「Admin」角色，而「CanUseBasic」政策要求使用者已驗證身份。
-- 為 MCP 工具註冊特定授權需求，確保只有具適當角色的使用者能存取。
+- 配置了 ASP.NET Core Identity 以管理使用者。
+- 設定了 JWT 身份驗證以確保 API 的安全存取，指定了令牌驗證參數，包括發行者、受眾和簽名金鑰。
+- 定義了授權政策，根據使用者角色控制工具存取。例如，「CanUseAdminTools」政策要求使用者擁有「Admin」角色，而「CanUseBasic」政策則要求使用者已通過身份驗證。
+- 註冊了具有特定授權需求的 MCP 工具，確保只有擁有適當角色的使用者能存取。
 
-### Java Spring Security Integration
+### Java Spring Security 整合
 
-對於 Java，我們將使用 Spring Security 來實作 MCP 伺服器的安全身份驗證與授權。Spring Security 提供完整的安全框架，可無縫整合至 Spring 應用。
+對於 Java，我們將使用 Spring Security 來實作 MCP 伺服器的安全身份驗證與授權。Spring Security 提供了一個完整的安全框架，能與 Spring 應用程式無縫整合。
 
-核心概念包括：
+這裡的核心概念包括：
 
-- **Spring Security Configuration**：設定身份驗證與授權的安全配置。
-- **OAuth2 Resource Server**：使用 OAuth2 來安全存取 MCP 工具。OAuth2 是一種授權框架，允許第三方服務交換存取權杖以安全存取 API。
-- **Security Interceptors**：實作安全攔截器以強制工具執行的存取控制。
-- **Role-Based Access Control**：使用角色來控制對特定工具與資源的存取。
-- **Security Annotations**：使用註解來保護方法與端點。
+- **Spring Security 配置**：設定身份驗證與授權的安全配置。
+- **OAuth2 資源伺服器**：使用 OAuth2 來安全存取 MCP 工具。OAuth2 是一個授權框架，允許第三方服務交換存取令牌以安全存取 API。
+- **安全攔截器**：實作安全攔截器以強制執行工具執行的存取控制。
+- **基於角色的存取控制**：使用角色來控制對特定工具和資源的存取。
+- **安全註解**：使用註解來保護方法和端點。
 
 ```java
 @Configuration
@@ -178,20 +178,20 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-前述程式碼中，我們：
+在上述程式碼中，我們：
 
-- 配置 Spring Security 來保護 MCP 端點，允許公開存取工具發現功能，執行工具時則需身份驗證。
-- 使用 OAuth2 作為資源伺服器，處理 MCP 工具的安全存取。
-- 實作安全攔截器，在允許存取特定工具前檢查使用者角色與權限。
-- 定義基於角色的存取控制，根據使用者角色限制對管理工具及敏感資料的存取。
+- 配置了 Spring Security 以保護 MCP 端點，允許公開存取工具發現，但執行工具時需要身份驗證。
+- 使用 OAuth2 作為資源伺服器來處理對 MCP 工具的安全存取。
+- 實作了安全攔截器，在允許存取特定工具前檢查使用者角色和權限，以強制執行存取控制。
+- 定義了基於角色的存取控制，限制對管理工具和敏感資料的存取，依據使用者角色。
 
-## Data Protection and Privacy
+## 資料保護與隱私
 
-資料保護對於確保敏感資訊的安全處理至關重要。這包括保護個人識別資訊（PII）、財務資料及其他敏感資訊，避免未經授權的存取與外洩。
+資料保護對於確保敏感資訊的安全處理至關重要。這包括保護個人識別資訊 (PII)、財務資料及其他敏感資訊，避免未經授權的存取和外洩。
 
-### Python Data Protection Example
+### Python 資料保護範例
 
-以下示範如何使用 Python 實作資料保護，包含加密與 PII 偵測。
+讓我們來看一個如何使用加密和 PII 偵測在 Python 中實作資料保護的範例。
 
 ```python
 from mcp_server import McpServer
@@ -327,16 +327,16 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-前述程式碼中，我們：
+在上述程式碼中，我們：
 
-- 實作了 `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
-- Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
-- Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`，確保它能安全處理敏感資料。
+- 實作了 `PiiDetector` 類別，用來掃描文字和參數中的個人識別資訊 (PII)。
+- 建立了 `EncryptionService` 類別，使用 `cryptography` 函式庫來處理敏感資料的加密與解密。
+- 定義了 `secure_tool` 裝飾器，包裹工具執行流程以檢查 PII、記錄存取並在需要時加密敏感資料。
+- 將 `secure_tool` 裝飾器應用於範例工具 (`SecureCustomerDataTool`)，確保其安全處理敏感資料。
 
-## What's next
+## 接下來的內容
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於追求準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生之任何誤解或誤譯負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:22:04+00:00",
+  "translation_date": "2025-07-14T00:01:39+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sl"
 }
 -->
 # Integracija Model Context Protocol (MCP) z Azure AI Foundry
 
-Ta vodič prikazuje, kako integrirati strežnike Model Context Protocol (MCP) z agenti Azure AI Foundry, kar omogoča zmogljivo orkestracijo orodij in zmogljivosti podjetniške umetne inteligence.
+Ta vodič prikazuje, kako integrirati strežnike Model Context Protocol (MCP) z agenti Azure AI Foundry, kar omogoča zmogljivo orkestracijo orodij in podjetniške AI zmogljivosti.
 
 ## Uvod
 
-Model Context Protocol (MCP) je odprt standard, ki omogoča AI aplikacijam varno povezavo z zunanjimi podatkovnimi viri in orodji. Ko je integriran z Azure AI Foundry, MCP agentom omogoča dostop in interakcijo z različnimi zunanjimi storitvami, API-ji in podatkovnimi viri na standardiziran način.
+Model Context Protocol (MCP) je odprt standard, ki omogoča AI aplikacijam varno povezavo z zunanjimi podatkovnimi viri in orodji. Ko je integriran z Azure AI Foundry, MCP agentom omogoča dostop do različnih zunanjih storitev, API-jev in podatkovnih virov na standardiziran način.
 
-Ta integracija združuje prilagodljivost MCP-ovega ekosistema orodij z robustnim okvirom agentov Azure AI Foundry, kar zagotavlja podjetniške AI rešitve z obsežnimi možnostmi prilagajanja.
+Ta integracija združuje prilagodljivost MCP ekosistema orodij z robustnim agentnim ogrodjem Azure AI Foundry, kar zagotavlja podjetniške AI rešitve z obsežnimi možnostmi prilagajanja.
 
-**Note:** Če želite uporabljati MCP v Azure AI Foundry Agent Service, so trenutno podprte samo naslednje regije: westus, westus2, uaenorth, southindia in switzerlandnorth
+**Note:** Če želite uporabljati MCP v Azure AI Foundry Agent Service, so trenutno podprte le naslednje regije: westus, westus2, uaenorth, southindia in switzerlandnorth
 
 ## Cilji učenja
 
@@ -27,7 +27,7 @@ Ob koncu tega vodiča boste znali:
 - Nastaviti MCP strežnike za uporabo z agenti Azure AI Foundry
 - Ustvariti in konfigurirati agente z integracijo MCP orodij
 - Izvesti praktične primere z uporabo pravih MCP strežnikov
-- Upravljati odzive orodij in navajanja v pogovorih agentov
+- Obvladovati odzive orodij in navajanja v pogovorih agentov
 
 ## Predpogoji
 
@@ -43,7 +43,7 @@ Pred začetkom poskrbite, da imate:
 Model Context Protocol je standardiziran način, da se AI aplikacije povežejo z zunanjimi podatkovnimi viri in orodji. Ključne prednosti vključujejo:
 
 - **Standardizirana integracija**: Enoten vmesnik za različna orodja in storitve
-- **Varnost**: Varni mehanizmi za overjanje in avtorizacijo
+- **Varnost**: Varni mehanizmi za preverjanje pristnosti in avtorizacijo
 - **Prilagodljivost**: Podpora za različne podatkovne vire, API-je in prilagojena orodja
 - **Razširljivost**: Enostavno dodajanje novih zmogljivosti in integracij
 
@@ -51,7 +51,7 @@ Model Context Protocol je standardiziran način, da se AI aplikacije povežejo z
 
 ### 1. Konfiguracija okolja
 
-Najprej nastavite okoljske spremenljivke in odvisnosti:
+Najprej nastavite svoje okoljske spremenljivke in odvisnosti:
 
 ```python
 import os
@@ -172,7 +172,7 @@ def create_mcp_agent_example():
         for step in run_steps:
             print(f"Run step: {step.id}, status: {step.status}, type: {step.type}")
             if step.type == "tool_calls":
-                print("Podrobnosti klica orodja:")
+                print("Tool call details:")
                 for tool_call in step.step_details.tool_calls:
                     print(json.dumps(tool_call.as_dict(), indent=2))
 
@@ -193,12 +193,12 @@ if __name__ == "__main__":
 
 ### 1. Težave s povezavo
 - Preverite, ali je MCP strežniški URL dostopen
-- Preverite overitvene poverilnice
+- Preverite poverilnice za preverjanje pristnosti
 - Zagotovite omrežno povezljivost
 
-### 2. Neuspešni klici orodij
-- Preverite argumente in oblikovanje klicev orodij
-- Preverite specifične zahteve strežnika
+### 2. Napake pri klicih orodij
+- Preglejte argumente in oblikovanje klicev orodij
+- Preverite zahteve specifične za strežnik
 - Uvedite ustrezno obravnavo napak
 
 ### 3. Težave z zmogljivostjo
@@ -208,12 +208,12 @@ if __name__ == "__main__":
 
 ## Naslednji koraki
 
-Za nadaljnje izboljšanje integracije MCP:
+Za nadaljnjo izboljšavo vaše MCP integracije:
 
 1. **Raziskujte lastne MCP strežnike**: Zgradite svoje MCP strežnike za lastne podatkovne vire
-2. **Uvedite napredno varnost**: Dodajte OAuth2 ali prilagojene mehanizme overjanja
+2. **Izvedite napredno varnost**: Dodajte OAuth2 ali prilagojene mehanizme preverjanja pristnosti
 3. **Spremljanje in analitika**: Uvedite beleženje in spremljanje uporabe orodij
-4. **Razširite rešitev**: Razmislite o uravnoteženju obremenitve in distribuirani arhitekturi MCP strežnikov
+4. **Razširite svojo rešitev**: Razmislite o uravnoteženju obremenitve in distribuirani arhitekturi MCP strežnikov
 
 ## Dodatni viri
 
@@ -230,7 +230,7 @@ Za dodatno podporo in vprašanja:
 
 ## Kaj sledi
 
-- [6. Prispevki skupnosti](../../06-CommunityContributions/README.md)
+- [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatski prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v izvorni jezik je treba upoštevati kot avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

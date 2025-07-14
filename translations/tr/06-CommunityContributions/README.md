@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-05-20T21:29:03+00:00",
+  "translation_date": "2025-07-14T03:58:53+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "tr"
 }
@@ -11,28 +11,28 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Genel Bakış
 
-Bu ders, MCP topluluğuyla nasıl etkileşim kurulacağını, MCP ekosistemine nasıl katkıda bulunulacağını ve işbirlikçi geliştirme için en iyi uygulamaların nasıl takip edileceğini ele alır. Açık kaynak MCP projelerine nasıl katılacağınızı anlamak, bu teknolojinin geleceğini şekillendirmek isteyenler için çok önemlidir.
+Bu ders, MCP topluluğuyla nasıl etkileşim kurulacağını, MCP ekosistemine nasıl katkıda bulunulacağını ve iş birliğine dayalı geliştirme için en iyi uygulamaların nasıl takip edileceğini ele alır. Açık kaynak MCP projelerine katılımın nasıl sağlanacağını anlamak, bu teknolojinin geleceğini şekillendirmek isteyenler için önemlidir.
 
 ## Öğrenme Hedefleri
 
 Bu dersin sonunda şunları yapabileceksiniz:
-- MCP topluluğu ve ekosisteminin yapısını anlamak
-- MCP topluluk forumları ve tartışmalarına etkin şekilde katılmak
+- MCP topluluğunun ve ekosisteminin yapısını anlamak
+- MCP topluluk forumları ve tartışmalarına etkili şekilde katılmak
 - MCP açık kaynak depolarına katkıda bulunmak
 - Özel MCP araçları oluşturup paylaşmak
-- MCP geliştirme ve işbirliği için en iyi uygulamaları takip etmek
+- MCP geliştirme ve iş birliği için en iyi uygulamaları takip etmek
 
 ## MCP Topluluk Ekosistemi
 
 MCP ekosistemi, protokolü ilerletmek için birlikte çalışan çeşitli bileşenler ve katılımcılardan oluşur.
 
-### Önemli Topluluk Bileşenleri
+### Temel Topluluk Bileşenleri
 
-1. **Core Protocol Maintainers**: Microsoft ve diğer kuruluşlar, temel MCP spesifikasyonları ve referans uygulamalarını korur
+1. **Core Protocol Maintainers**: Microsoft ve diğer kuruluşlar, MCP çekirdek spesifikasyonları ve referans uygulamalarını sürdürür
 2. **Tool Developers**: MCP araçları geliştiren bireyler ve ekipler
 3. **Integration Providers**: MCP’yi ürün ve hizmetlerine entegre eden şirketler
-4. **End Users**: MCP’yi uygulamalarında kullanan geliştiriciler ve kuruluşlar
-5. **Contributors**: Kod, dokümantasyon veya diğer kaynaklar sağlayan topluluk üyeleri
+4. **End Users**: MCP’yi uygulamalarında kullanan geliştiriciler ve organizasyonlar
+5. **Contributors**: Kod, dokümantasyon veya diğer kaynaklarla katkıda bulunan topluluk üyeleri
 
 ### Topluluk Kaynakları
 
@@ -43,11 +43,11 @@ MCP ekosistemi, protokolü ilerletmek için birlikte çalışan çeşitli bileş
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
-#### Topluluk Tarafından Oluşturulan Kaynaklar
+#### Topluluk Odaklı Kaynaklar
 
 - Dil bazlı SDK uygulamaları
 - Sunucu uygulamaları ve araç kütüphaneleri
-- Blog yazıları ve öğreticiler
+- Blog yazıları ve eğitimler
 - Topluluk forumları ve sosyal medya tartışmaları
 
 ## MCP’ye Katkıda Bulunmak
@@ -57,20 +57,20 @@ MCP ekosistemi, protokolü ilerletmek için birlikte çalışan çeşitli bileş
 MCP ekosistemi çeşitli katkı türlerini memnuniyetle karşılar:
 
 1. **Kod Katkıları**:
-   - Temel protokol iyileştirmeleri
+   - Çekirdek protokol geliştirmeleri
    - Hata düzeltmeleri
    - Araç uygulamaları
    - Farklı dillerde istemci/sunucu kütüphaneleri
 
 2. **Dokümantasyon**:
-   - Mevcut dokümantasyonu geliştirmek
-   - Öğreticiler ve rehberler oluşturmak
-   - Dokümantasyon çevirileri yapmak
-   - Örnekler ve örnek uygulamalar oluşturmak
+   - Mevcut dokümantasyonun iyileştirilmesi
+   - Eğitim ve rehberlerin oluşturulması
+   - Dokümantasyonun çevirisi
+   - Örnekler ve örnek uygulamalar oluşturma
 
 3. **Topluluk Desteği**:
    - Forumlarda soruları yanıtlamak
-   - Test yapmak ve sorunları raporlamak
+   - Test yapmak ve sorun bildirmek
    - Topluluk etkinlikleri düzenlemek
    - Yeni katkıda bulunanlara mentorluk yapmak
 
@@ -78,7 +78,7 @@ MCP ekosistemi çeşitli katkı türlerini memnuniyetle karşılar:
 
 Core MCP protokolüne veya resmi uygulamalara katkıda bulunmak için:
 
-#### .NET Örneği: Protokol İyileştirmesi Katkısı
+#### .NET Örneği: Protokol Geliştirmesi Katkısı
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -392,13 +392,13 @@ class CsvProcessingTool(Tool):
 
 ### Katkı Rehberi
 
-MCP projelerine başarılı bir katkı yapmak için:
+MCP projelerine başarılı katkılar yapmak için:
 
-1. **Küçük Başlayın**: Dokümantasyon, hata düzeltmeleri veya küçük iyileştirmelerle başlayın
-2. **Stil Rehberine Uyun**: Projenin kodlama stili ve kurallarına bağlı kalın
+1. **Küçük Başlayın**: Dokümantasyon, hata düzeltmeleri veya küçük geliştirmelerle başlayın
+2. **Stil Kılavuzunu Takip Edin**: Projenin kodlama stiline ve kurallarına uyun
 3. **Test Yazın**: Kod katkılarınız için birim testleri ekleyin
 4. **Çalışmanızı Dokümante Edin**: Yeni özellikler veya değişiklikler için net dokümantasyon ekleyin
-5. **Hedefe Yönelik PR Gönderin**: Pull request’lerinizi tek bir sorun veya özelliğe odaklayın
+5. **Hedefe Yönelik PR Gönderin**: Pull request’lerinizi tek bir sorun veya özellik üzerine odaklayın
 6. **Geri Bildirime Açık Olun**: Katkılarınızla ilgili geri bildirimlere yanıt verin
 
 ### Örnek Katkı İş Akışı
@@ -435,7 +435,7 @@ MCP ekosistemine katkıda bulunmanın en değerli yollarından biri, özel araç
 
 ### Paylaşılabilir Araçlar Geliştirme
 
-#### .NET Örneği: Paylaşılabilir Bir Araç Paketi Oluşturma
+#### .NET Örneği: Paylaşılabilir Araç Paketi Oluşturma
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java Örneği: Araçlar için Maven Paketi Oluşturma
+#### Java Örneği: Araçlar İçin Maven Paketi Oluşturma
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -747,14 +747,14 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### En İyi Uygulamaların Paylaşılması
+### Paylaşımda En İyi Uygulamalar
 
 MCP araçlarını toplulukla paylaşırken:
 
-1. **Tam Dokümantasyon**:
-   - Amacı, kullanımı ve örnekleri açıklayın
-   - Parametreleri ve dönüş değerlerini anlatın
-   - Harici bağımlılıkları dokümante edin
+1. **Eksiksiz Dokümantasyon**:
+   - Amacı, kullanımı ve örnekleri dokümante edin
+   - Parametreleri ve dönüş değerlerini açıklayın
+   - Dış bağımlılıkları belirtin
 
 2. **Hata Yönetimi**:
    - Sağlam hata yönetimi uygulayın
@@ -762,30 +762,30 @@ MCP araçlarını toplulukla paylaşırken:
    - Kenar durumları düzgün yönetin
 
 3. **Performans Dikkatleri**:
-   - Hem hız hem de kaynak kullanımı için optimize edin
+   - Hem hız hem kaynak kullanımı için optimize edin
    - Uygun olduğunda önbellekleme uygulayın
    - Ölçeklenebilirliği göz önünde bulundurun
 
 4. **Güvenlik**:
    - Güvenli API anahtarları ve kimlik doğrulama kullanın
-   - Girdi doğrulama ve temizleme yapın
-   - Harici API çağrıları için hız sınırlandırması uygulayın
+   - Girdileri doğrulayın ve temizleyin
+   - Dış API çağrıları için hız sınırlaması uygulayın
 
 5. **Test**:
    - Kapsamlı test kapsamı sağlayın
-   - Farklı girdi türleri ve kenar durumları ile test edin
+   - Farklı giriş türleri ve kenar durumlarıyla test edin
    - Test prosedürlerini dokümante edin
 
-## Topluluk İşbirliği ve En İyi Uygulamalar
+## Topluluk İş Birliği ve En İyi Uygulamalar
 
-Etkili işbirliği, gelişen bir MCP ekosistemi için anahtardır.
+Etkili iş birliği, canlı bir MCP ekosistemi için anahtardır.
 
 ### İletişim Kanalları
 
 - GitHub Issues ve Discussions
 - Microsoft Tech Community
 - Discord ve Slack kanalları
-- Stack Overflow (etiket: `model-context-protocol` or `mcp`)
+- Stack Overflow (etiket: `model-context-protocol` veya `mcp`)
 
 ### Kod İncelemeleri
 
@@ -795,20 +795,20 @@ MCP katkılarını incelerken:
 2. **Doğruluk**: Beklendiği gibi çalışıyor mu?
 3. **Tutarlılık**: Proje kurallarına uyuyor mu?
 4. **Tamlık**: Testler ve dokümantasyon dahil mi?
-5. **Güvenlik**: Güvenlik açısından bir sorun var mı?
+5. **Güvenlik**: Güvenlik açısından sorun var mı?
 
 ### Sürüm Uyumluluğu
 
 MCP için geliştirirken:
 
-1. **Protokol Sürümleme**: Araçlarınızın desteklediği MCP protokol sürümüne uyun
-2. **İstemci Uyumluluğu**: Gerçek uyumluluğu göz önünde bulundurun
-3. **Sunucu Uyumluluğu**: Sunucu uygulama yönergelerini takip edin
-4. **Kırıcı Değişiklikler**: Herhangi bir kırıcı değişikliği net şekilde dokümante edin
+1. **Protokol Sürümü**: Aracınızın desteklediği MCP protokol sürümüne uyun
+2. **İstemci Uyumluluğu**: Geriye dönük uyumluluğu göz önünde bulundurun
+3. **Sunucu Uyumluluğu**: Sunucu uygulama rehberlerini takip edin
+4. **Kırıcı Değişiklikler**: Kırıcı değişiklikleri açıkça dokümante edin
 
 ## Örnek Topluluk Projesi: MCP Araç Kaydı
 
-Önemli bir topluluk katkısı, MCP araçları için halka açık bir kayıt geliştirmek olabilir.
+Önemli bir topluluk katkısı, MCP araçları için halka açık bir kayıt sistemi geliştirmek olabilir.
 
 ```python
 # Example schema for a community tool registry API
@@ -890,16 +890,16 @@ async def delete_tool(tool_name: str):
 ## Önemli Noktalar
 
 - MCP topluluğu çeşitlidir ve çeşitli katkı türlerini memnuniyetle karşılar
-- MCP’ye katkılar temel protokol iyileştirmelerinden özel araçlara kadar değişebilir
-- Katkı rehberlerini takip etmek PR kabul edilme şansını artırır
-- MCP araçları oluşturmak ve paylaşmak ekosistemi geliştirmek için değerli bir yoldur
-- Topluluk işbirliği, MCP’nin büyümesi ve gelişimi için esastır
+- MCP’ye katkılar çekirdek protokol geliştirmelerinden özel araçlara kadar değişebilir
+- Katkı rehberlerine uymak PR’nizin kabul edilme şansını artırır
+- MCP araçları oluşturup paylaşmak ekosistemi geliştirmek için değerli bir yoldur
+- Topluluk iş birliği, MCP’nin büyümesi ve gelişimi için gereklidir
 
 ## Alıştırma
 
-1. Yeteneklerinize ve ilgi alanlarınıza göre MCP ekosisteminde katkıda bulunabileceğiniz bir alan belirleyin
+1. Yetenekleriniz ve ilgi alanlarınıza göre MCP ekosisteminde katkıda bulunabileceğiniz bir alan belirleyin
 2. MCP deposunu fork edin ve yerel geliştirme ortamınızı kurun
-3. Topluluğa fayda sağlayacak küçük bir iyileştirme, hata düzeltmesi veya araç oluşturun
+3. Topluluğa fayda sağlayacak küçük bir geliştirme, hata düzeltmesi veya araç oluşturun
 4. Katkınızı uygun testler ve dokümantasyonla belgeleyin
 5. İlgili depoya pull request gönderin
 
@@ -913,4 +913,4 @@ async def delete_tool(tool_name: str):
 Sonraki: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan dolayı sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

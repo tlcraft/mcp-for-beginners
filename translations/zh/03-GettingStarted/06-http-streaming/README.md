@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-10T15:58:13+00:00",
+  "translation_date": "2025-07-13T20:27:54+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "zh"
 }
@@ -20,7 +20,7 @@ CO_OP_TRANSLATOR_METADATA:
 传输机制定义了客户端和服务器之间数据交换的方式。MCP 支持多种传输类型，以适应不同环境和需求：
 
 - **stdio**：标准输入/输出，适合本地和基于命令行的工具。简单但不适合 Web 或云环境。
-- **SSE（服务器发送事件）**：允许服务器通过 HTTP 向客户端推送实时更新。适合 Web UI，但在可扩展性和灵活性方面有限。
+- **SSE（服务器发送事件）**：允许服务器通过 HTTP 向客户端推送实时更新。适合 Web 界面，但在可扩展性和灵活性方面有限。
 - **可流式 HTTP**：基于现代 HTTP 的流式传输，支持通知和更好的可扩展性。推荐用于大多数生产和云场景。
 
 ### 比较表
@@ -31,11 +31,11 @@ CO_OP_TRANSLATOR_METADATA:
 |-------------------|----------------|-------------|-------------|-------------------------|
 | stdio             | 否             | 否          | 低          | 本地命令行工具          |
 | SSE               | 是             | 是          | 中          | Web，实时更新           |
-| 可流式 HTTP       | 是             | 是          | 高          | 云端，多客户端          |
+| 可流式 HTTP       | 是             | 是          | 高          | 云环境，多客户端         |
 
 > **提示：** 选择合适的传输方式会影响性能、可扩展性和用户体验。**可流式 HTTP** 推荐用于现代、可扩展且云就绪的应用。
 
-请注意前几章中介绍的 stdio 和 SSE 传输方式，以及本章重点讲解的可流式 HTTP 传输。
+请注意，前几章中介绍过的 stdio 和 SSE 传输方式，而本章重点讲解的是可流式 HTTP 传输。
 
 ## 流式传输：概念与动机
 
@@ -50,7 +50,7 @@ CO_OP_TRANSLATOR_METADATA:
 流式传输的核心要点：
 
 - 数据逐步传送，而非一次性全部发送。
-- 客户端可边接收边处理数据。
+- 客户端可以边接收边处理数据。
 - 降低感知延迟，提升用户体验。
 
 ### 为什么使用流式传输？
@@ -58,7 +58,7 @@ CO_OP_TRANSLATOR_METADATA:
 使用流式传输的原因包括：
 
 - 用户能立即获得反馈，而非等待结束。
-- 支持实时应用和响应式 UI。
+- 支持实时应用和响应式界面。
 - 更高效地利用网络和计算资源。
 
 ### 简单示例：HTTP 流式服务器与客户端
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
 <details>
 <summary>Python</summary>
 
-**服务器（Python，使用 FastAPI 和 StreamingResponse）：**
+**服务器端（Python，使用 FastAPI 和 StreamingResponse）：**
 <details>
 <summary>Python</summary>
 
@@ -106,7 +106,7 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-该示例演示服务器如何在消息准备好时逐条发送给客户端，而不是等待所有消息准备完毕。
+该示例演示服务器在消息准备好时逐条发送给客户端，而不是等待所有消息准备完毕后一次性发送。
 
 **工作原理：**
 - 服务器在每条消息准备好时逐条生成。
@@ -114,7 +114,7 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 **要求：**
 - 服务器必须使用流式响应（如 FastAPI 中的 `StreamingResponse`）。
-- 客户端需以流式方式处理响应（requests 中设置 `stream=True`）。
+- 客户端必须以流式方式处理响应（requests 中设置 `stream=True`）。
 - Content-Type 通常为 `text/event-stream` 或 `application/octet-stream`。
 
 </details>
@@ -122,7 +122,7 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 <details>
 <summary>Java</summary>
 
-**服务器（Java，使用 Spring Boot 和服务器发送事件）：**
+**服务器端（Java，使用 Spring Boot 和服务器发送事件）：**
 
 ```java
 @RestController
@@ -194,14 +194,14 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 </details>
 
-### 经典流式传输与 MCP 流式传输的比较
+### 比较：传统流式传输 vs MCP 流式传输
 
-经典流式传输与 MCP 流式传输的区别如下表所示：
+传统流式传输与 MCP 流式传输的区别如下表所示：
 
-| 特性                   | 经典 HTTP 流式传输           | MCP 流式传输（通知机制）          |
+| 特性                   | 传统 HTTP 流式传输           | MCP 流式传输（通知机制）          |
 |------------------------|-----------------------------|---------------------------------|
 | 主响应                 | 分块传输                    | 单次响应，最后发送               |
-| 进度更新               | 作为数据块发送              | 作为通知发送                    |
+| 进度更新               | 作为数据块发送              | 作为通知消息发送                 |
 | 客户端要求             | 必须处理流式响应            | 必须实现消息处理器               |
 | 使用场景               | 大文件，AI 令牌流           | 进度、日志、实时反馈             |
 
@@ -210,34 +210,34 @@ public class CalculatorClientApplication implements CommandLineRunner {
 此外，还有以下关键差异：
 
 - **通信模式：**
-   - 经典 HTTP 流式传输：使用简单的分块传输编码发送数据块
+   - 传统 HTTP 流式传输：使用简单的分块传输编码发送数据块
    - MCP 流式传输：使用基于 JSON-RPC 协议的结构化通知系统
 
 - **消息格式：**
-   - 经典 HTTP：纯文本块，带换行符
+   - 传统 HTTP：纯文本块，带换行符
    - MCP：结构化的 LoggingMessageNotification 对象，带元数据
 
 - **客户端实现：**
-   - 经典 HTTP：简单客户端处理流式响应
+   - 传统 HTTP：简单客户端处理流式响应
    - MCP：更复杂的客户端，需实现消息处理器以处理不同类型消息
 
 - **进度更新：**
-   - 经典 HTTP：进度作为主响应流的一部分
+   - 传统 HTTP：进度作为主响应流的一部分
    - MCP：进度通过单独的通知消息发送，主响应最后发送
 
 ### 建议
 
-关于选择经典流式传输（如前面示例中的 `/stream` 端点）还是 MCP 流式传输，我们有以下建议：
+关于选择传统流式传输（如前面示例中的 `/stream` 端点）还是 MCP 流式传输，我们有以下建议：
 
-- **简单流式需求：** 经典 HTTP 流式传输实现简单，适合基础流式需求。
-- **复杂交互应用：** MCP 流式传输提供更结构化的方式，带有丰富元数据，且通知与最终结果分离。
+- **简单流式需求：** 传统 HTTP 流式传输实现简单，适合基础流式需求。
+- **复杂交互应用：** MCP 流式传输提供更结构化的方式，带有丰富元数据，区分通知和最终结果。
 - **AI 应用场景：** MCP 的通知系统特别适合长时间运行的 AI 任务，能持续向用户反馈进度。
 
 ## MCP 中的流式传输
 
-到目前为止，你已经了解了经典流式传输与 MCP 流式传输的区别和建议。接下来详细介绍如何在 MCP 中利用流式传输。
+到目前为止，你已经了解了传统流式传输和 MCP 流式传输的区别和建议。接下来详细介绍如何在 MCP 中利用流式传输。
 
-理解 MCP 框架内的流式传输机制对于构建在长时间操作中向用户提供实时反馈的响应式应用至关重要。
+理解 MCP 框架内的流式传输机制，对于构建在长时间操作中向用户提供实时反馈的响应式应用至关重要。
 
 在 MCP 中，流式传输不是将主响应分块发送，而是在工具处理请求时向客户端发送**通知**。这些通知可以包含进度更新、日志或其他事件。
 
@@ -267,7 +267,7 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 通知属于 MCP 中称为 ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging) 的主题。
 
-要启用日志功能，服务器需将其作为功能/能力开启，如下所示：
+要启用日志功能，服务器需要将其作为功能/能力开启，如下所示：
 
 ```json
 {
@@ -278,7 +278,7 @@ public class CalculatorClientApplication implements CommandLineRunner {
 ```
 
 > [!NOTE]
-> 根据所用 SDK，日志功能可能默认启用，或需在服务器配置中显式开启。
+> 根据所用 SDK，日志功能可能默认启用，或者需要在服务器配置中显式开启。
 
 通知类型包括：
 
@@ -286,12 +286,12 @@ public class CalculatorClientApplication implements CommandLineRunner {
 |------------|------------------------------|------------------------------|
 | debug      | 详细调试信息                 | 函数入口/出口点              |
 | info       | 一般信息消息                 | 操作进度更新                |
-| notice     | 正常但重要事件               | 配置变更                    |
-| warning    | 警告条件                     | 弃用功能使用                |
-| error      | 错误条件                     | 操作失败                    |
-| critical   | 严重条件                     | 系统组件故障                |
-| alert      | 需立即采取行动               | 检测到数据损坏              |
-| emergency  | 系统不可用                   | 完全系统故障                |
+| notice     | 正常但重要的事件             | 配置变更                    |
+| warning    | 警告条件                    | 弃用功能使用                |
+| error      | 错误条件                    | 操作失败                    |
+| critical   | 严重条件                    | 系统组件故障                |
+| alert      | 需立即采取行动              | 检测到数据损坏              |
+| emergency  | 系统不可用                  | 完全系统故障                |
 
 ## 在 MCP 中实现通知
 
@@ -348,7 +348,7 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 
 在此 .NET 示例中，`ProcessFiles` 工具通过 `Tool` 属性标记，在处理每个文件时向客户端发送三条通知。`ctx.Info()` 方法用于发送信息类消息。
 
-要在 .NET MCP 服务器中启用通知，确保使用流式传输：
+要在 .NET MCP 服务器中启用通知，请确保使用流式传输：
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -451,7 +451,7 @@ await client.InitializeAsync();
 
 实现进度通知的方法：
 
-- **服务器端：** 使用 `ctx.info()` 或 `ctx.log()` 在处理每个项目时发送通知，主结果准备好前向客户端发送消息。
+- **服务器端：** 使用 `ctx.info()` 或 `ctx.log()` 在处理每个项目时发送通知。这样在主结果准备好之前，客户端就能收到消息。
 - **客户端：** 实现消息处理器，监听并展示接收到的通知。该处理器区分通知和最终结果。
 
 **服务器示例：**
@@ -545,7 +545,7 @@ async def message_handler(message):
 
 ## 安全注意事项
 
-实现任何服务器时，尤其是使用基于 HTTP 的传输（如 MCP 中的 Streamable HTTP）时，安全应放在首位。
+在实现任何服务器时，尤其是使用基于 HTTP 的传输（如 MCP 中的 Streamable HTTP）时，安全应放在首位。
 
 在使用基于 HTTP 的传输实现 MCP 服务器时，安全性成为首要关注点，需要仔细防范多种攻击向量并采取相应的保护措施。
 
@@ -553,7 +553,7 @@ async def message_handler(message):
 
 当通过 HTTP 暴露 MCP 服务器时，安全性至关重要。Streamable HTTP 引入了新的攻击面，需要谨慎配置。
 
-以下是一些关键的安全考虑：
+以下是一些关键的安全注意事项：
 
 - **Origin 头验证**：始终验证 `Origin` 头以防止 DNS 重新绑定攻击。
 - **绑定到 localhost**：本地开发时，将服务器绑定到 `localhost`，避免暴露到公共网络。
@@ -583,17 +583,17 @@ async def message_handler(message):
 
 **步骤：**
 
-1. 实现一个服务器工具，处理列表并为每个项目发送通知。
+1. 实现一个服务器工具，处理列表中的项目并发送通知。
 2. 实现一个客户端，带有消息处理器以实时显示通知。
-3. 运行服务器和客户端测试实现，观察通知效果。
+3. 运行服务器和客户端进行测试，观察通知效果。
 
 [Solution](./solution/README.md)
 
-## 深入阅读与后续步骤
+## 进一步阅读与后续步骤
 
-为了继续深入 MCP 流式传输的学习并扩展知识，本节提供了额外资源和建议的后续步骤，帮助你构建更高级的应用。
+为了继续深入 MCP 流式传输的学习并扩展知识，本节提供了额外资源和建议的后续行动，帮助你构建更高级的应用。
 
-### 深入阅读
+### 进一步阅读
 
 - [Microsoft: HTTP 流式传输简介](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
@@ -607,4 +607,4 @@ async def message_handler(message):
 - 下一步：[利用 VSCode 的 AI 工具包](../07-aitk/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T17:59:52+00:00",
+  "translation_date": "2025-07-13T22:09:52+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "he"
 }
@@ -100,7 +100,7 @@ Azure Container Apps תומך בפריסת שרתי MCP. זה עדיין בתה�
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-זהו, פרוס את השרת מקומית או לפרוס אותו ל-Azure באמצעות השלבים האלה.
+זהו, פרוס מקומית או פרוס ל-Azure באמצעות השלבים האלה.
 
 ## משאבים נוספים
 

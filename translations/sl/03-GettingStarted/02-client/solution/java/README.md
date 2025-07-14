@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:17:55+00:00",
+  "translation_date": "2025-07-13T18:38:25+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "sl"
 }
 -->
-# MCP Java Client - Calculator Demo
+# MCP Java Client - Demo kalkulatorja
 
-Ta proyekto na ipakitang paano gumawa ng Java client na kumokonekta at nakikipag-ugnayan sa MCP (Model Context Protocol) server. Sa halimbawa na ito, kakonekta tayo sa calculator server mula sa Kabanata 01 at gagawa ng iba't ibang matematikal na operasyon.
+Ta projekt prikazuje, kako ustvariti Java klienta, ki se poveže in komunicira z MCP (Model Context Protocol) strežnikom. V tem primeru se bomo povezali s kalkulator strežnikom iz Poglavja 01 in izvedli različne matematične operacije.
 
-## Mga Kinakailangan
+## Predpogoji
 
-Bago patakbuhin ang client na ito, kailangan mong:
+Pred zagonom tega klienta morate:
 
-1. **Simulan ang Calculator Server** mula sa Kabanata 01:
-   - Pumunta sa direktoryo ng calculator server: `03-GettingStarted/01-first-server/solution/java/`
-   - I-build at patakbuhin ang calculator server:
+1. **Zagnati kalkulator strežnik** iz Poglavja 01:
+   - Pomaknite se v imenik kalkulator strežnika: `03-GettingStarted/01-first-server/solution/java/`
+   - Sestavite in zaženite kalkulator strežnik:
      ```cmd
      cd ..\01-first-server\solution\java
      .\mvnw clean install -DskipTests
      java -jar target\calculator-server-0.0.1-SNAPSHOT.jar
      ```
-   - Dapat tumatakbo ang server sa `http://localhost:8080`
+   - Strežnik naj bo zagnan na `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. Imate nameščen **Java 21 ali novejšo različico**
+3. Imate na voljo **Maven** (vključen preko Maven Wrapperja)
 
-## What is the SDKClient?
+## Kaj je SDKClient?
 
-The `SDKClient` ay isang Java application na nagpapakita kung paano:
-- Kumonekta sa MCP server gamit ang Server-Sent Events (SSE) transport
-- Ilista ang mga available na tool mula sa server
-- Tawagan ang iba't ibang calculator functions nang remote
-- Pangasiwaan ang mga sagot at ipakita ang mga resulta
+`SDKClient` je Java aplikacija, ki prikazuje, kako:
+- Povezati se z MCP strežnikom preko Server-Sent Events (SSE) transporta
+- Pridobiti seznam razpoložljivih orodij s strežnika
+- Oddajati različne funkcije kalkulatorja na daljavo
+- Obdelati odgovore in prikazati rezultate
 
-## Paano Ito Gumagana
+## Kako deluje
 
-Gumagamit ang client ng Spring AI MCP framework para:
+Klient uporablja Spring AI MCP ogrodje za:
 
-1. **Mag-establish ng Koneksyon**: Gumagawa ng WebFlux SSE client transport para kumonekta sa calculator server
-2. **I-initialize ang Client**: Inaayos ang MCP client at itinatag ang koneksyon
-3. **Mag-discover ng Tools**: Ipinapakita lahat ng available na calculator operations
-4. **Magpatakbo ng Operasyon**: Tinatawag ang iba't ibang matematikal na function gamit ang sample data
-5. **Ipakita ang Resulta**: Ipinapakita ang resulta ng bawat kalkulasyon
+1. **Vzpostavitev povezave**: Ustvari WebFlux SSE klient transport za povezavo s kalkulator strežnikom
+2. **Inicializacijo klienta**: Nastavi MCP klienta in vzpostavi povezavo
+3. **Odkritje orodij**: Prikaže vse razpoložljive kalkulator operacije
+4. **Izvedbo operacij**: Pokliče različne matematične funkcije s primeri podatkov
+5. **Prikaz rezultatov**: Prikaže rezultate vsakega izračuna
 
-## Estruktura ng Proyekto
+## Struktura projekta
 
 ```
 src/
@@ -60,9 +60,9 @@ src/
                             └── SDKClient.java    # Main client implementation
 ```
 
-## Pangunahing Dependencies
+## Ključne odvisnosti
 
-Gumagamit ang proyekto ng mga sumusunod na pangunahing dependencies:
+Projekt uporablja naslednje ključne odvisnosti:
 
 ```xml
 <dependency>
@@ -71,44 +71,44 @@ Gumagamit ang proyekto ng mga sumusunod na pangunahing dependencies:
 </dependency>
 ```
 
-Ang dependency na ito ay nagbibigay ng:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - SSE transport para sa web-based na komunikasyon
-- MCP protocol schemas at mga uri ng request/response
+Ta odvisnost zagotavlja:
+- `McpClient` - glavni vmesnik klienta
+- `WebFluxSseClientTransport` - SSE transport za spletno komunikacijo
+- MCP protokolne sheme in tipe zahtevkov/odgovorov
 
-## Pagbuo ng Proyekto
+## Sestavljanje projekta
 
-I-build ang proyekto gamit ang Maven wrapper:
+Projekt sestavite z uporabo Maven wrapperja:
 
 ```cmd
 .\mvnw clean install
 ```
 
-## Pagpapatakbo ng Client
+## Zagon klienta
 
 ```cmd
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Note**: Siguraduhing tumatakbo ang calculator server sa `http://localhost:8080` before executing any of these commands.
+**Opomba**: Pred izvajanjem teh ukazov poskrbite, da je kalkulator strežnik zagnan na `http://localhost:8080`.
 
-## What the Client Does
+## Kaj klient počne
 
-When you run the client, it will:
+Ko zaženete klienta, bo:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **Ilista ang Tools** - Ipinapakita lahat ng available na calculator operations
-3. **Gumawa ng Kalkulasyon**:
-   - Addition: 5 + 3 = 8
-   - Subtraction: 10 - 4 = 6
-   - Multiplication: 6 × 7 = 42
-   - Division: 20 ÷ 4 = 5
-   - Power: 2^8 = 256
-   - Square Root: √16 = 4
-   - Absolute Value: |-5.5| = 5.5
-   - Help: Ipinapakita ang mga available na operasyon
+1. **Povezal se** s kalkulator strežnikom na `http://localhost:8080`
+2. **Prikazal orodja** - prikazal vse razpoložljive kalkulator operacije
+3. **Izvedel izračune**:
+   - Seštevanje: 5 + 3 = 8
+   - Odštevanje: 10 - 4 = 6
+   - Množenje: 6 × 7 = 42
+   - Deljenje: 20 ÷ 4 = 5
+   - Potenca: 2^8 = 256
+   - Kvadratni koren: √16 = 4
+   - Absolutna vrednost: |-5.5| = 5.5
+   - Pomoč: prikaže razpoložljive operacije
 
-## Inaasahang Output
+## Pričakovani izhod
 
 ```
 Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
@@ -122,56 +122,56 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Note**: Maaaring makakita ka ng mga warning mula sa Maven tungkol sa mga natitirang thread sa dulo - normal ito para sa mga reactive na aplikasyon at hindi ito nangangahulugan ng error.
+**Opomba**: Na koncu lahko vidite Maven opozorila o aktivnih nitih – to je običajno za reaktivne aplikacije in ne pomeni napake.
 
-## Pag-unawa sa Code
+## Razumevanje kode
 
-### 1. Setup ng Transport
+### 1. Nastavitev transporta
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
 ```
-Gumagawa ito ng SSE (Server-Sent Events) transport na kumokonekta sa calculator server.
+Ustvari SSE (Server-Sent Events) transport, ki se poveže s kalkulator strežnikom.
 
-### 2. Paglikha ng Client
+### 2. Ustvarjanje klienta
 ```java
 var client = McpClient.sync(this.transport).build();
 client.initialize();
 ```
-Lumilikha ng synchronous MCP client at ini-initialize ang koneksyon.
+Ustvari sinhroni MCP klient in inicializira povezavo.
 
-### 3. Pagtawag sa Tools
+### 3. Klic orodij
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
 ```
-Tinatawag ang "add" tool gamit ang mga parameter na a=5.0 at b=3.0.
+Pokliče orodje "add" s parametri a=5.0 in b=3.0.
 
-## Pag-troubleshoot
+## Reševanje težav
 
-### Server Hindi Tumakbo
-Kung makakakita ka ng mga error sa koneksyon, siguraduhing tumatakbo ang calculator server mula sa Kabanata 01:
+### Strežnik ni zagnan
+Če prejmete napake povezave, preverite, da je kalkulator strežnik iz Poglavja 01 zagnan:
 ```
 Error: Connection refused
 ```
-**Solusyon**: Simulan muna ang calculator server.
+**Rešitev**: Najprej zaženite kalkulator strežnik.
 
-### Port Ginagamit Na
-Kung ang port 8080 ay ginagamit na:
+### Vrata so že zasedena
+Če je vrata 8080 zasedena:
 ```
 Error: Address already in use
 ```
-**Solusyon**: Itigil ang ibang aplikasyon na gumagamit ng port 8080 o baguhin ang port ng server.
+**Rešitev**: Ustavite druge aplikacije, ki uporabljajo vrata 8080, ali spremenite vrata strežnika.
 
-### Mga Error sa Build
-Kung may mga error sa build:
+### Napake pri sestavljanju
+Če naletite na napake pri sestavljanju:
 ```cmd
 .\mvnw clean install -DskipTests
 ```
 
-## Dagdag Pang Kaalaman
+## Več informacij
 
-- [Spring AI MCP Documentation](https://docs.spring.io/spring-ai/reference/api/mcp/)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/)
-- [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
+- [Spring AI MCP Dokumentacija](https://docs.spring.io/spring-ai/reference/api/mcp/)
+- [Specifikacija Model Context Protocol](https://modelcontextprotocol.io/)
+- [Spring WebFlux Dokumentacija](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

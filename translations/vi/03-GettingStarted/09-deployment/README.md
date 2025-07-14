@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T18:04:56+00:00",
+  "translation_date": "2025-07-13T22:10:00+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "vi"
 }
 -->
 # Triển khai MCP Servers
 
-Triển khai server MCP của bạn cho phép người khác truy cập các công cụ và tài nguyên của nó ngoài môi trường cục bộ của bạn. Có nhiều chiến lược triển khai khác nhau để cân nhắc, tùy thuộc vào yêu cầu về khả năng mở rộng, độ tin cậy và sự dễ dàng trong quản lý. Dưới đây là hướng dẫn triển khai MCP servers tại chỗ, trong container và trên đám mây.
+Triển khai server MCP của bạn cho phép người khác truy cập các công cụ và tài nguyên của nó ngoài môi trường cục bộ của bạn. Có nhiều chiến lược triển khai khác nhau để cân nhắc, tùy thuộc vào yêu cầu về khả năng mở rộng, độ tin cậy và sự dễ dàng trong quản lý. Dưới đây bạn sẽ tìm thấy hướng dẫn triển khai MCP servers tại chỗ, trong container và trên đám mây.
 
 ## Tổng quan
 
@@ -29,7 +29,7 @@ Nếu server của bạn được thiết kế để chạy trên máy người 
 1. **Tải server về**. Nếu bạn không tự viết server, hãy tải nó về máy của bạn trước.  
 1. **Khởi động tiến trình server**: Chạy ứng dụng MCP server của bạn.
 
-Đối với SSE (không cần thiết với server kiểu stdio)
+Đối với SSE (không cần thiết với server loại stdio)
 
 1. **Cấu hình mạng**: Đảm bảo server có thể truy cập được trên cổng dự kiến.  
 1. **Kết nối client**: Sử dụng URL kết nối cục bộ như `http://localhost:3000`.
@@ -100,7 +100,7 @@ Dưới đây là cách bạn có thể thực hiện:
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Vậy là xong, bạn có thể triển khai cục bộ hoặc triển khai lên Azure theo các bước trên.
+Vậy là xong, bạn có thể triển khai cục bộ hoặc triển khai lên Azure theo các bước này.
 
 ## Tài nguyên bổ sung
 
@@ -110,7 +110,7 @@ Vậy là xong, bạn có thể triển khai cục bộ hoặc triển khai lên
 
 ## Tiếp theo
 
-- Tiếp theo: [Thực hành triển khai](../../04-PracticalImplementation/README.md)
+- Tiếp theo: [Thực thi thực tế](../../04-PracticalImplementation/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

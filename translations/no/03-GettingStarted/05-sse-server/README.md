@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T17:46:09+00:00",
+  "translation_date": "2025-07-13T19:57:13+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "no"
 }
@@ -46,7 +46,7 @@ For å kjøre Inspector må du først ha en SSE-server som kjører, så la oss g
 
 1. Start serveren
 
-1. Kjør Inspector
+1. Start Inspector
 
     > ![NOTE]
     > Kjør dette i et eget terminalvindu enn der serveren kjører. Merk også at du må tilpasse kommandoen under til URL-en der serveren din kjører.
@@ -55,11 +55,11 @@ For å kjøre Inspector må du først ha en SSE-server som kjører, så la oss g
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Å kjøre Inspector ser likt ut i alle runtime-miljøer. Legg merke til at i stedet for å sende inn en sti til serveren vår og en kommando for å starte serveren, sender vi i stedet URL-en der serveren kjører, og vi spesifiserer også `/sse`-ruten.
+    Å kjøre Inspector ser likt ut i alle runtime-miljøer. Legg merke til at i stedet for å sende inn en sti til serveren vår og en kommando for å starte serveren, sender vi URL-en der serveren kjører, og vi spesifiserer også `/sse`-ruten.
 
 ### -2- Prøve ut verktøyet
 
-Koble til serveren ved å velge SSE i nedtrekksmenyen og fyll inn URL-feltet der serveren din kjører, for eksempel http:localhost:4321/sse. Klikk deretter på "Connect"-knappen. Som før, velg å liste opp verktøy, velg et verktøy og gi inputverdier. Du bør se et resultat som under:
+Koble til serveren ved å velge SSE i nedtrekksmenyen og fyll inn URL-feltet der serveren din kjører, for eksempel http://localhost:4321/sse. Klikk deretter på "Connect"-knappen. Som før, velg å liste opp verktøy, velg et verktøy og gi inputverdier. Du bør se et resultat som under:
 
 ![SSE Server kjører i Inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.no.png)
 
@@ -67,7 +67,7 @@ Flott, du kan jobbe med Inspector, la oss se hvordan vi kan jobbe med Visual Stu
 
 ## Oppgave
 
-Prøv å bygge ut serveren din med flere funksjoner. Se [denne siden](https://api.chucknorris.io/) for eksempel for å legge til et verktøy som kaller et API. Du bestemmer hvordan serveren skal se ut. Lykke til :)
+Prøv å bygge ut serveren din med flere funksjoner. Se [denne siden](https://api.chucknorris.io/) for eksempelvis å legge til et verktøy som kaller et API. Du bestemmer hvordan serveren skal se ut. Lykke til :)
 
 ## Løsning
 

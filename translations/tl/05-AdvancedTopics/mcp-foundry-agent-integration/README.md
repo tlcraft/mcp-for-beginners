@@ -2,56 +2,56 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:18:55+00:00",
+  "translation_date": "2025-07-13T23:59:05+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "tl"
 }
 -->
-# Model Context Protocol (MCP) Integrasyon sa Azure AI Foundry
+# Model Context Protocol (MCP) Integration sa Azure AI Foundry
 
 Ipinapakita ng gabay na ito kung paano i-integrate ang Model Context Protocol (MCP) servers sa Azure AI Foundry agents, na nagbibigay-daan sa makapangyarihang tool orchestration at enterprise AI capabilities.
 
 ## Panimula
 
-Ang Model Context Protocol (MCP) ay isang bukas na pamantayan na nagpapahintulot sa mga AI application na ligtas na kumonekta sa mga panlabas na pinagkukunan ng data at mga tool. Kapag na-integrate sa Azure AI Foundry, pinapayagan ng MCP ang mga agent na ma-access at makipag-ugnayan sa iba't ibang panlabas na serbisyo, API, at pinagkukunan ng data sa isang standardized na paraan.
+Ang Model Context Protocol (MCP) ay isang bukas na pamantayan na nagpapahintulot sa mga AI application na ligtas na kumonekta sa mga panlabas na pinagkukunan ng datos at mga tool. Kapag na-integrate sa Azure AI Foundry, pinapayagan ng MCP ang mga agent na ma-access at makipag-ugnayan sa iba't ibang panlabas na serbisyo, API, at pinagkukunan ng datos sa isang standardized na paraan.
 
-Pinagsasama ng integrasyong ito ang kakayahang umangkop ng MCP tool ecosystem at ang matibay na agent framework ng Azure AI Foundry, na nagbibigay ng enterprise-grade AI solutions na may malawak na kakayahan sa pagpapasadya.
+Pinagsasama ng integrasyong ito ang kakayahang umangkop ng MCP tool ecosystem at ang matibay na agent framework ng Azure AI Foundry, na nagbibigay ng enterprise-grade AI solutions na may malawak na kakayahan sa pag-customize.
 
-**Note:** Kung nais mong gamitin ang MCP sa Azure AI Foundry Agent Service, sa kasalukuyan suportado lamang ang mga sumusunod na rehiyon: westus, westus2, uaenorth, southindia at switzerlandnorth
+**Note:** Kung nais mong gamitin ang MCP sa Azure AI Foundry Agent Service, sa kasalukuyan ay sinusuportahan lamang ang mga sumusunod na rehiyon: westus, westus2, uaenorth, southindia at switzerlandnorth
 
 ## Mga Layunin sa Pagkatuto
 
 Sa pagtatapos ng gabay na ito, magagawa mong:
 
 - Maunawaan ang Model Context Protocol at ang mga benepisyo nito
-- Mag-set up ng MCP servers para magamit kasama ang Azure AI Foundry agents
+- Mag-set up ng MCP servers para gamitin kasama ang Azure AI Foundry agents
 - Gumawa at mag-configure ng mga agent na may MCP tool integration
 - Magpatupad ng mga praktikal na halimbawa gamit ang totoong MCP servers
-- Pamahalaan ang mga tugon ng tool at mga citation sa mga pag-uusap ng agent
+- Pangasiwaan ang mga tugon ng tool at mga citation sa mga pag-uusap ng agent
 
 ## Mga Kinakailangan
 
-Bago magsimula, tiyaking mayroon ka ng:
+Bago magsimula, siguraduhing mayroon kang:
 
 - Isang Azure subscription na may access sa AI Foundry
-- Python 3.10+
+- Python 3.10+ 
 - Azure CLI na naka-install at naka-configure
-- Angkop na mga pahintulot para gumawa ng AI resources
+- Angkop na mga permiso para gumawa ng AI resources
 
 ## Ano ang Model Context Protocol (MCP)?
 
-Ang Model Context Protocol ay isang standardized na paraan para sa mga AI application na kumonekta sa mga panlabas na pinagkukunan ng data at mga tool. Ilan sa mga pangunahing benepisyo nito ay:
+Ang Model Context Protocol ay isang standardized na paraan para sa mga AI application na kumonekta sa mga panlabas na pinagkukunan ng datos at mga tool. Kabilang sa mga pangunahing benepisyo nito ang:
 
 - **Standardized Integration**: Pare-parehong interface sa iba't ibang tool at serbisyo
-- **Security**: Ligtas na mga mekanismo ng authentication at authorization
-- **Flexibility**: Suporta para sa iba't ibang pinagkukunan ng data, API, at custom na mga tool
-- **Extensibility**: Madaling magdagdag ng mga bagong kakayahan at integrasyon
+- **Seguridad**: Ligtas na authentication at authorization na mga mekanismo
+- **Kakayahang Umangkop**: Suporta para sa iba't ibang pinagkukunan ng datos, API, at custom na mga tool
+- **Pinalawak na Kakayahan**: Madaling magdagdag ng bagong mga kakayahan at integrasyon
 
 ## Pag-setup ng MCP sa Azure AI Foundry
 
 ### 1. Pag-configure ng Kapaligiran
 
-Una, i-setup ang iyong mga environment variable at mga dependencies:
+Una, i-setup ang iyong mga environment variable at dependencies:
 
 ```python
 import os
@@ -80,7 +80,7 @@ with project_client:
     agent = project_client.agents.create_agent(
         model="gpt-4.1-nano", 
         name="mcp_agent", 
-        instructions="Ikaw ay isang matulunging assistant. Gamitin ang mga ibinigay na tool para sagutin ang mga tanong. Siguraduhing banggitin ang iyong mga pinagkunan.",
+        instructions="Ikaw ay isang matulunging assistant. Gamitin ang mga ibinigay na tool upang sagutin ang mga tanong. Siguraduhing banggitin ang iyong mga pinagkunan.",
         tools=[
             {
                 "type": "mcp",
@@ -105,7 +105,7 @@ mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # Identifier para sa MCP server
     "server_url": "https://api.example.com/mcp", # Endpoint ng MCP server
-    "require_approval": "never"                 # Patakaran sa approval: sa ngayon suportado lamang ang "never"
+    "require_approval": "never"                 # Patakaran sa pag-apruba: sa ngayon ay sinusuportahan lamang ang "never" 
 }
 ```
 
@@ -133,7 +133,7 @@ def create_mcp_agent_example():
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="Ikaw ay isang matulunging assistant na dalubhasa sa Microsoft documentation. Gamitin ang Microsoft Learn MCP server para maghanap ng tumpak at napapanahong impormasyon. Laging banggitin ang iyong mga pinagkunan.",
+            instructions="Ikaw ay isang matulunging assistant na dalubhasa sa Microsoft documentation. Gamitin ang Microsoft Learn MCP server upang maghanap ng tumpak at napapanahong impormasyon. Laging banggitin ang iyong mga pinagkunan.",
             tools=[
                 {
                     "type": "mcp",
@@ -161,7 +161,7 @@ def create_mcp_agent_example():
         # Patakbuhin ang agent
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
         
-        # Hintayin ang pagkumpleto
+        # Mag-poll para sa pagkumpleto
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
@@ -172,7 +172,7 @@ def create_mcp_agent_example():
         for step in run_steps:
             print(f"Run step: {step.id}, status: {step.status}, type: {step.type}")
             if step.type == "tool_calls":
-                print("Mga detalye ng tool call:")
+                print("Detalye ng tawag sa tool:")
                 for tool_call in step.step_details.tool_calls:
                     print(json.dumps(tool_call.as_dict(), indent=2))
 
@@ -189,33 +189,33 @@ if __name__ == "__main__":
     create_mcp_agent_example()
 
 
-## Pag-aayos ng Karaniwang Mga Isyu
+## Pag-aayos ng Karaniwang mga Isyu
 
 ### 1. Mga Isyu sa Koneksyon
 - Siguraduhing naa-access ang MCP server URL
-- Suriin ang mga kredensyal sa authentication
+- Suriin ang mga authentication credentials
 - Tiyakin ang koneksyon sa network
 
 ### 2. Mga Pagkabigo sa Tawag ng Tool
 - Suriin ang mga argumento at format ng tool
-- Tingnan ang mga espesipikong kinakailangan ng server
-- Magpatupad ng tamang error handling
+- Tingnan ang mga partikular na pangangailangan ng server
+- Magpatupad ng tamang paghawak ng error
 
 ### 3. Mga Isyu sa Performance
 - I-optimize ang dalas ng tawag sa tool
-- Gumamit ng caching kung kinakailangan
-- Bantayan ang oras ng tugon ng server
+- Magpatupad ng caching kung kinakailangan
+- Subaybayan ang oras ng tugon ng server
 
 ## Mga Susunod na Hakbang
 
 Para lalo pang pagandahin ang iyong MCP integration:
 
-1. **Tuklasin ang Custom MCP Servers**: Gumawa ng sarili mong MCP servers para sa mga proprietary na pinagkukunan ng data
-2. **Magpatupad ng Advanced Security**: Magdagdag ng OAuth2 o custom na mekanismo ng authentication
-3. **Subaybayan at Gumawa ng Analytics**: Magpatupad ng logging at monitoring para sa paggamit ng tool
-4. **Palawakin ang Iyong Solusyon**: Isaalang-alang ang load balancing at distributed MCP server architectures
+1. **Suriin ang Custom MCP Servers**: Gumawa ng sarili mong MCP servers para sa mga proprietary na pinagkukunan ng datos
+2. **Magpatupad ng Advanced Security**: Magdagdag ng OAuth2 o custom na mga mekanismo ng authentication
+3. **Subaybayan at Mag-analisa**: Magpatupad ng logging at monitoring para sa paggamit ng tool
+4. **I-scale ang Iyong Solusyon**: Isaalang-alang ang load balancing at distributed MCP server architectures
 
-## Karagdagang Mga Sanggunian
+## Karagdagang Mga Mapagkukunan
 
 - [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-foundry/)
 - [Model Context Protocol Samples](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
@@ -228,9 +228,10 @@ Para sa karagdagang suporta at mga tanong:
 - Suriin ang [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-foundry/)
 - Tingnan ang [MCP community resources](https://modelcontextprotocol.io/)
 
+
 ## Ano ang susunod
 
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't nagsusumikap kami na maging tumpak, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

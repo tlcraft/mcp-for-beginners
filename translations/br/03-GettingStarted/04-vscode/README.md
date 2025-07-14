@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T17:00:57+00:00",
+  "translation_date": "2025-07-13T19:28:28+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "br"
 }
@@ -21,13 +21,13 @@ Aqui está como precisamos abordar isso em um nível geral:
 
 ## Exercício: Consumindo um servidor
 
-Neste exercício, vamos configurar o Visual Studio Code para encontrar seu MCP server para que ele possa ser usado pela interface do GitHub Copilot Chat.
+Neste exercício, vamos configurar o Visual Studio Code para encontrar seu MCP server para que ele possa ser usado na interface do GitHub Copilot Chat.
 
 ### -0- Passo prévio, habilitar descoberta do MCP Server
 
 Pode ser necessário habilitar a descoberta dos MCP Servers.
 
-1. Vá em `Arquivo -> Preferências -> Configurações` no Visual Studio Code.
+1. Vá em `File -> Preferences -> Settings` no Visual Studio Code.
 
 1. Procure por "MCP" e habilite `chat.mcp.discovery.enabled` no arquivo settings.json.
 
@@ -82,15 +82,15 @@ Agora que você adicionou uma entrada, vamos iniciar o servidor:
 
 ## Tarefa
 
-Tente adicionar uma entrada de servidor no seu arquivo *mcp.json* e certifique-se de que consegue iniciar/parar o servidor. Também verifique se consegue se comunicar com as ferramentas do seu servidor via interface do GitHub Copilot Chat.
+Tente adicionar uma entrada de servidor no seu arquivo *mcp.json* e certifique-se de que pode iniciar/parar o servidor. Também verifique se consegue se comunicar com as ferramentas do seu servidor via interface do GitHub Copilot Chat.
 
 ## Solução
 
 [Solução](./solution/README.md)
 
-## Principais aprendizados
+## Principais Lições
 
-Os principais aprendizados deste capítulo são:
+As lições principais deste capítulo são as seguintes:
 
 - Visual Studio Code é um ótimo cliente que permite consumir vários MCP Servers e suas ferramentas.
 - A interface do GitHub Copilot Chat é como você interage com os servidores.
@@ -104,13 +104,13 @@ Os principais aprendizados deste capítulo são:
 - [Calculadora TypeScript](../samples/typescript/README.md)
 - [Calculadora Python](../../../../03-GettingStarted/samples/python)
 
-## Recursos adicionais
+## Recursos Adicionais
 
 - [Documentação do Visual Studio](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
 ## O que vem a seguir
 
-- Próximo: [Criando um servidor SSE](../05-sse-server/README.md)
+- Próximo: [Criando um Servidor SSE](../05-sse-server/README.md)
 
 **Aviso Legal**:  
 Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

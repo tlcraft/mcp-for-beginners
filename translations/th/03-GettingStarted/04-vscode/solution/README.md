@@ -2,30 +2,30 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-06-18T06:00:04+00:00",
+  "translation_date": "2025-07-13T19:42:58+00:00",
   "source_file": "03-GettingStarted/04-vscode/solution/README.md",
   "language_code": "th"
 }
 -->
-ซึ่งหมายถึงการรันคำสั่งประมาณนี้: `node build/index.js`.
+ซึ่งสอดคล้องกับการรันคำสั่งแบบนี้: `node build/index.js`
 
-- Change this server entry to fit where your server file is located or to what's needed to startup your server depending on your chosen runtime and server location.
+- เปลี่ยน entry ของเซิร์ฟเวอร์นี้ให้ตรงกับตำแหน่งไฟล์เซิร์ฟเวอร์ของคุณ หรือให้เหมาะสมกับคำสั่งที่ต้องใช้ในการเริ่มต้นเซิร์ฟเวอร์ ขึ้นอยู่กับ runtime และตำแหน่งเซิร์ฟเวอร์ที่คุณเลือก
 
-## Consume the features in the server
+## ใช้งานฟีเจอร์ในเซิร์ฟเวอร์
 
-- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder,
+- คลิกไอคอน `play` หลังจากที่คุณเพิ่ม *mcp.json* ลงในโฟลเดอร์ *./vscode*
 
-    Observe the tooling icon change to increase the number of available tools. Tooling icon is located right above the chat field in GitHub Copilot.
+    สังเกตว่าไอคอนเครื่องมือจะเปลี่ยนไปเพื่อแสดงจำนวนเครื่องมือที่พร้อมใช้งาน ไอคอนเครื่องมือนี้จะอยู่เหนือช่องแชทใน GitHub Copilot
 
-## Run a tool
+## รันเครื่องมือ
 
-- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` พิมพ์ข้อความเช่น "add 3 to 20"
+- พิมพ์คำสั่งในหน้าต่างแชทที่ตรงกับคำอธิบายของเครื่องมือ เช่น เพื่อเรียกใช้เครื่องมือ `add` ให้พิมพ์ข้อความประมาณว่า "add 3 to 20"
 
-    คุณจะเห็นเครื่องมือแสดงขึ้นเหนือกล่องข้อความแชทเพื่อให้คุณเลือกใช้งานเครื่องมือดังภาพนี้:
+    คุณจะเห็นเครื่องมือแสดงขึ้นเหนือกล่องข้อความแชท เพื่อให้คุณเลือกใช้งานเครื่องมือนั้นตามภาพนี้:
 
-    ![VS Code แสดงว่าต้องการรันเครื่องมือ](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.th.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.th.png)
 
-    การเลือกเครื่องมือจะให้ผลลัพธ์เป็นตัวเลข "23" หากข้อความที่คุณพิมพ์เหมือนที่เรากล่าวไว้ข้างต้น
+    การเลือกเครื่องมือจะได้ผลลัพธ์เป็นตัวเลขแสดงว่า "23" หากคำสั่งของคุณเหมือนตัวอย่างที่กล่าวมา
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่แม่นยำ เอกสารต้นฉบับในภาษาต้นทางควรถูกพิจารณาเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใดๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

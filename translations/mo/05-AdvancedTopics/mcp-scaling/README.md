@@ -2,20 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cd973a4e381337c6a3ac2443e7548e63",
-  "translation_date": "2025-06-12T23:15:07+00:00",
+  "translation_date": "2025-07-14T02:27:52+00:00",
   "source_file": "05-AdvancedTopics/mcp-scaling/README.md",
   "language_code": "mo"
 }
 -->
-## Arkitektura Distribuit
+## 垂直擴展與資源優化
 
-Arkitektura distribuit implică mai multe noduri MCP care lucrează împreună pentru a gestiona cererile, a partaja resursele și a asigura redundanța. Această abordare îmbunătățește scalabilitatea și toleranța la erori prin permiterea nodurilor să comunice și să se coordoneze printr-un sistem distribuit.
+垂直擴展著重於優化單一 MCP 伺服器實例，以更有效率地處理更多請求。這可以透過微調設定、使用高效演算法以及有效管理資源來達成。例如，你可以調整執行緒池、請求逾時時間和記憶體限制，以提升效能。
 
-Să vedem un exemplu de implementare a unei arhitecturi distribuite MCP folosind Redis pentru coordonare.
+以下是一個優化 MCP 伺服器以支援垂直擴展和資源管理的範例。
 
-## Ce urmează
+## 分散式架構
 
-- [5.8 Securitate](../mcp-security/README.md)
+分散式架構涉及多個 MCP 節點協同工作，處理請求、共享資源並提供冗餘備援。這種方式透過節點間的通訊與協調，提升擴展性與容錯能力。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+以下是一個使用 Redis 進行協調，實作分散式 MCP 伺服器架構的範例。
+
+## 接下來的內容
+
+- [5.8 安全性](../mcp-security/README.md)
+
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

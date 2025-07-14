@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:29:50+00:00",
+  "translation_date": "2025-07-14T06:40:19+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "tr"
 }
@@ -27,28 +27,28 @@ CO_OP_TRANSLATOR_METADATA:
 ## Kullanım
 
 ### Senaryo 1: Docs MCP’ye Basit Sorgu
-Docs MCP sunucusuna bağlanan, sorgu gönderen ve sonucu yazdıran bir komut satırı istemcisi.
+Docs MCP sunucusuna bağlanan, bir sorgu gönderen ve sonucu yazdıran komut satırı istemcisi.
 
 1. Scripti çalıştırın:
    ```bash
    python scenario1.py
    ```
-2. İstekte dokümantasyon sorunuz yazın.
+2. İstekte dokümantasyon sorunuz girin.
 
 ### Senaryo 2: Çalışma Planı Oluşturucu (Chainlit Web Uygulaması)
-Kullanıcıların herhangi bir teknik konu için kişiselleştirilmiş, haftalık çalışma planı oluşturmasını sağlayan web tabanlı bir arayüz (Chainlit kullanılarak).
+Kullanıcıların herhangi bir teknik konu için kişiselleştirilmiş, haftalık çalışma planı oluşturmasına olanak tanıyan web tabanlı arayüz (Chainlit kullanılarak).
 
 1. Chainlit uygulamasını başlatın:
    ```bash
    chainlit run scenario2.py
    ```
-2. Terminalde verilen yerel URL’yi (örneğin, http://localhost:8000) tarayıcınızda açın.
+2. Terminalde verilen yerel URL’yi (örneğin http://localhost:8000) tarayıcınızda açın.
 3. Sohbet penceresine çalışma konunuzu ve çalışmak istediğiniz hafta sayısını girin (örneğin, "AI-900 sertifikası, 8 hafta").
-4. Uygulama, ilgili Microsoft Learn dokümantasyon bağlantılarıyla birlikte haftalık çalışma planını size sunacaktır.
+4. Uygulama, ilgili Microsoft Learn dokümantasyonuna bağlantılar içeren haftalık çalışma planını yanıt olarak verecektir.
 
 **Gerekli Ortam Değişkenleri:**
 
-Senaryo 2’yi (Azure OpenAI ile Chainlit web uygulaması) kullanmak için `.env` file in the `python` dizininde aşağıdaki ortam değişkenlerini ayarlamalısınız:
+Senaryo 2’yi (Azure OpenAI ile Chainlit web uygulaması) kullanmak için, `python` dizininde `.env` dosyasına aşağıdaki ortam değişkenlerini eklemelisiniz:
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -61,48 +61,48 @@ Uygulamayı çalıştırmadan önce bu değerleri Azure OpenAI kaynak bilgilerin
 
 > **İpucu:** Kendi modellerinizi kolayca [Azure AI Foundry](https://ai.azure.com/) kullanarak dağıtabilirsiniz.
 
-### Senaryo 3: VS Code’da MCP Sunucusu ile Editör İçi Dokümantasyon
+### Senaryo 3: VS Code İçinde MCP Sunucusu ile Dokümanlar
 
-Tarayıcı sekmeleri arasında geçiş yapmadan Microsoft Learn Docs’u doğrudan VS Code içinde kullanabilirsiniz. Bu sayede:
-- Kodlama ortamınızı terk etmeden VS Code içinde doküman arayıp okuyabilirsiniz.
-- Dokümantasyona referans verip, README veya ders dosyalarınıza doğrudan bağlantılar ekleyebilirsiniz.
-- GitHub Copilot ile MCP’yi birlikte kullanarak kesintisiz, yapay zekâ destekli bir dokümantasyon iş akışı sağlayabilirsiniz.
+Tarayıcı sekmeleri arasında geçiş yapmak yerine, Microsoft Learn Docs’u doğrudan VS Code’a MCP sunucusu ile getirebilirsiniz. Bu sayede:
+- Kodlama ortamınızı terk etmeden VS Code içinde doküman arayabilir ve okuyabilirsiniz.
+- Dokümantasyona referans verip, bağlantıları doğrudan README veya kurs dosyalarınıza ekleyebilirsiniz.
+- GitHub Copilot ve MCP’yi birlikte kullanarak kesintisiz, yapay zekâ destekli dokümantasyon akışı sağlayabilirsiniz.
 
-**Örnek Kullanım Senaryoları:**
+**Örnek Kullanım Durumları:**
 - Bir kurs veya proje dokümantasyonu yazarken README’ye hızlıca referans bağlantıları eklemek.
-- Copilot ile kod üretirken, MCP ile ilgili dokümanları anında bulup referans göstermek.
+- Copilot ile kod üretirken MCP ile ilgili dokümanları anında bulup alıntılamak.
 - Editörünüzde odaklanarak verimliliği artırmak.
 
 > [!IMPORTANT]
-> Geçerli bir [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> Çalışma alanınızda geçerli bir [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) yapılandırmasının olduğundan emin olun (konum `.vscode/mcp.json`).
 
-## Why Chainlit for Scenario 2?
+## Neden Senaryo 2 için Chainlit?
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit, sohbet tabanlı web uygulamaları oluşturmak için modern ve açık kaynaklı bir çerçevedir. Microsoft Learn Docs MCP sunucusu gibi arka uç servislerine bağlanan sohbet arayüzleri oluşturmayı kolaylaştırır. Bu proje, kişiselleştirilmiş çalışma planlarını gerçek zamanlı ve etkileşimli şekilde oluşturmak için Chainlit’i kullanır. Chainlit sayesinde, üretkenliği ve öğrenmeyi artıran sohbet tabanlı araçları hızlıca geliştirebilir ve dağıtabilirsiniz.
 
-## What This Does
+## Bu Ne Yapar?
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+Bu uygulama, kullanıcıların sadece bir konu ve süre girerek kişiselleştirilmiş bir çalışma planı oluşturmasını sağlar. Girdiğiniz bilgiyi analiz eder, Microsoft Learn Docs MCP sunucusuna ilgili içerik için sorgu gönderir ve sonuçları yapılandırılmış, haftalık plan halinde düzenler. Her haftanın önerileri sohbet penceresinde gösterilir, böylece ilerlemenizi kolayca takip edebilirsiniz. En güncel ve ilgili öğrenme kaynaklarını her zaman almanızı sağlar.
 
-## Sample Queries
+## Örnek Sorgular
 
-Try these queries in the chat window to see how the app responds:
+Uygulamanın yanıtlarını görmek için sohbet penceresine şu sorguları deneyin:
 
 - `AI-900 sertifikası, 8 hafta`
-- `Learn Azure Functions, 4 hafta`
+- `Azure Functions öğren, 4 hafta`
 - `Azure DevOps, 6 hafta`
-- `Azure üzerinde Veri Mühendisliği, 10 hafta`
+- `Azure’da veri mühendisliği, 10 hafta`
 - `Microsoft güvenlik temelleri, 5 hafta`
 - `Power Platform, 7 hafta`
 - `Azure AI servisleri, 12 hafta`
 - `Bulut mimarisi, 9 hafta`
 
-Bu örnekler, uygulamanın farklı öğrenme hedefleri ve süreleri için esnekliğini göstermektedir.
+Bu örnekler, uygulamanın farklı öğrenme hedefleri ve süreleri için ne kadar esnek olduğunu gösterir.
 
-## Referanslar
+## Kaynaklar
 
 - [Chainlit Dokümantasyonu](https://docs.chainlit.io/)
 - [MCP Dokümantasyonu](https://github.com/MicrosoftDocs/mcp)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-06-10T06:58:39+00:00",
+  "translation_date": "2025-07-14T08:48:30+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
   "language_code": "hr"
 }
@@ -15,15 +15,15 @@ CO_OP_TRANSLATOR_METADATA:
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ Brzi početak:** Izgradite proizvodni MCP server koji automatizira kloniranje GitHub repozitorija i integraciju s VS Code-om za samo 30 minuta!
+> **⚡ Brzi početak:** Izgradite MCP server spreman za produkciju koji automatizira kloniranje GitHub repozitorija i integraciju s VS Codeom za samo 30 minuta!
 
 ## 🎯 Ciljevi učenja
 
-Do kraja ovog laboratorija moći ćete:
+Na kraju ovog laboratorija moći ćete:
 
 - ✅ Kreirati prilagođeni MCP server za stvarne razvojne tokove rada
 - ✅ Implementirati funkcionalnost kloniranja GitHub repozitorija putem MCP-a
-- ✅ Integrirati prilagođene MCP servere s VS Code-om i Agent Builderom
+- ✅ Integrirati prilagođene MCP servere s VS Codeom i Agent Builderom
 - ✅ Koristiti GitHub Copilot Agent Mode s prilagođenim MCP alatima
 - ✅ Testirati i implementirati prilagođene MCP servere u produkcijskim okruženjima
 
@@ -37,29 +37,29 @@ Do kraja ovog laboratorija moći ćete:
 ## 🏗️ Pregled projekta
 
 ### **Izazov stvarnog razvoja**
-Kao developeri, često koristimo GitHub za kloniranje repozitorija i njihovo otvaranje u VS Code-u ili VS Code Insiders. Ovaj ručni proces uključuje:
+Kao developeri često koristimo GitHub za kloniranje repozitorija i njihovo otvaranje u VS Codeu ili VS Code Insidersu. Ovaj ručni proces uključuje:
 1. Otvaranje terminala/command prompta
 2. Navigaciju do željenog direktorija
 3. Pokretanje naredbe `git clone`
-4. Otvaranje VS Code-a u kloniranom direktoriju
+4. Otvaranje VS Codea u kloniranom direktoriju
 
-**Naše MCP rješenje pojednostavljuje to u jednu pametnu naredbu!**
+**Naše MCP rješenje to pojednostavljuje u jednu pametnu naredbu!**
 
-### **Što ćete izraditi**
+### **Što ćete izgraditi**
 **GitHub Clone MCP Server** (`git_mcp_server`) koji nudi:
 
 | Značajka | Opis | Prednost |
 |---------|-------------|---------|
-| 🔄 **Pametno kloniranje repozitorija** | Klonira GitHub repozitorije uz provjeru valjanosti | Automatska provjera grešaka |
-| 📁 **Inteligentno upravljanje direktorijima** | Sigurno provjerava i kreira direktorije | Sprječava prepisivanje podataka |
-| 🚀 **Višestruka integracija s VS Code-om** | Otvara projekte u VS Code/Insiders | Besprijekoran prijelaz u radni tok |
-| 🛡️ **Robusno rukovanje greškama** | Rješava mrežne, dozvole i putne probleme | Pouzdanost spremna za produkciju |
+| 🔄 **Pametno kloniranje repozitorija** | Klonira GitHub repozitorije s provjerom valjanosti | Automatska provjera pogrešaka |
+| 📁 **Inteligentno upravljanje direktorijima** | Sigurno provjerava i kreira direktorije | Sprječava prepisivanje |
+| 🚀 **Višeplatformska integracija s VS Codeom** | Otvara projekte u VS Code/Insiders | Besprijekoran prijelaz u radni tijek |
+| 🛡️ **Robusno rukovanje pogreškama** | Rješava mrežne, dozvolne i putne probleme | Pouzdanost spremna za produkciju |
 
 ---
 
-## 📖 Implementacija korak po korak
+## 📖 Korak-po-korak implementacija
 
-### Korak 1: Kreirajte GitHub Agenta u Agent Builderu
+### Korak 1: Kreirajte GitHub agenta u Agent Builderu
 
 1. **Pokrenite Agent Builder** kroz AI Toolkit ekstenziju
 2. **Kreirajte novog agenta** s ovom konfiguracijom:
@@ -75,12 +75,12 @@ Kao developeri, često koristimo GitHub za kloniranje repozitorija i njihovo otv
 
 ### Korak 2: Konfigurirajte GitHub Copilot Agent Mode
 
-1. **Otvorite GitHub Copilot** u VS Code-u (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
+1. **Otvorite GitHub Copilot** u VS Codeu (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
 2. **Odaberite Agent Model** u Copilot sučelju
 3. **Izaberite Claude 3.7 model** za poboljšane sposobnosti rezoniranja
 4. **Omogućite MCP integraciju** za pristup alatima
 
-> **💡 Koristan savjet:** Claude 3.7 pruža bolje razumijevanje razvojnih tokova i obrazaca rukovanja greškama.
+> **💡 Korisni savjet:** Claude 3.7 pruža izvrsno razumijevanje razvojnih tokova i obrazaca rukovanja pogreškama.
 
 ### Korak 3: Implementirajte osnovnu funkcionalnost MCP servera
 
@@ -129,7 +129,7 @@ SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
 
-3. **Testirajte s realističnim korisničkim scenarijima:**
+3. **Testirajte s realnim korisničkim scenarijima:**
 
 ```
 USER_PROMPT EXAMPLES:
@@ -143,8 +143,8 @@ Scenario : Basic Clone and Open
 
 **Očekivani rezultati:**
 - ✅ Uspješno kloniranje s potvrdom putanje
-- ✅ Automatsko pokretanje VS Code-a
-- ✅ Jasne poruke o greškama za neispravne scenarije
+- ✅ Automatsko pokretanje VS Codea
+- ✅ Jasne poruke o pogreškama za nevažeće scenarije
 - ✅ Ispravno rukovanje rubnim slučajevima
 
 #### 4b. Testiranje u MCP Inspectoru
@@ -153,29 +153,29 @@ Scenario : Basic Clone and Open
 
 ---
 
-**🎉 Čestitamo!** Uspješno ste izradili praktični, proizvodni MCP server koji rješava stvarne izazove razvojnih tokova. Vaš prilagođeni GitHub clone server pokazuje snagu MCP-a u automatizaciji i povećanju produktivnosti developera.
+**🎉 Čestitamo!** Uspješno ste kreirali praktični MCP server spreman za produkciju koji rješava stvarne izazove u razvojnim tokovima rada. Vaš prilagođeni GitHub clone server pokazuje snagu MCP-a u automatizaciji i povećanju produktivnosti developera.
 
-### 🏆 Osvajanje značke:
-- ✅ **MCP Developer** - Izradio prilagođeni MCP server
-- ✅ **Workflow Automator** - Pojednostavio razvojne procese  
-- ✅ **Integration Expert** - Povezao više razvojnih alata
-- ✅ **Production Ready** - Izgradio rješenja spremna za produkciju
+### 🏆 Postignuća:
+- ✅ **MCP Developer** - Kreirali prilagođeni MCP server
+- ✅ **Workflow Automator** - Pojednostavili razvojne procese  
+- ✅ **Integration Expert** - Povezali više razvojnih alata
+- ✅ **Production Ready** - Izgradili rješenja spremna za implementaciju
 
 ---
 
 ## 🎓 Završetak radionice: Vaše putovanje s Model Context Protocolom
 
-**Poštovani sudioniku radionice,**
+**Dragi sudionice radionice,**
 
-Čestitamo na završetku svih četiri modula radionice Model Context Protocol! Prošli ste dug put od razumijevanja osnovnih koncepata AI Toolkit-a do izgradnje proizvodnih MCP servera koji rješavaju stvarne razvojne izazove.
+Čestitamo na završetku svih četiri modula radionice Model Context Protocol! Prošli ste dug put od razumijevanja osnovnih pojmova AI Toolkita do izgradnje MCP servera spremnih za produkciju koji rješavaju stvarne razvojne izazove.
 
-### 🚀 Pregled vašeg puta učenja:
+### 🚀 Sažetak vašeg puta učenja:
 
-**[Modul 1](../lab1/README.md)**: Počeli ste istraživati osnove AI Toolkit-a, testiranje modela i kreiranje prvog AI agenta.
+**[Modul 1](../lab1/README.md)**: Počeli ste istraživati osnove AI Toolkita, testiranje modela i kreiranje prvog AI agenta.
 
 **[Modul 2](../lab2/README.md)**: Naučili ste MCP arhitekturu, integrirali Playwright MCP i izgradili prvog agenta za automatizaciju preglednika.
 
-**[Modul 3](../lab3/README.md)**: Napredovali ste u razvoju prilagođenih MCP servera s Weather MCP serverom i savladali alate za ispravljanje pogrešaka.
+**[Modul 3](../lab3/README.md)**: Napredovali ste u razvoju prilagođenih MCP servera s Weather MCP serverom i savladali alate za otklanjanje pogrešaka.
 
 **[Modul 4](../lab4/README.md)**: Sada ste primijenili sve naučeno za izradu praktičnog alata za automatizaciju GitHub repozitorija.
 
@@ -185,24 +185,24 @@ Scenario : Basic Clone and Open
 - ✅ **MCP arhitektura**: dizajn klijent-server, transportni protokoli i sigurnost
 - ✅ **Razvojni alati**: od Playgrounda do Inspectora i produkcijske implementacije
 - ✅ **Prilagođeni razvoj**: izgradnja, testiranje i implementacija vlastitih MCP servera
-- ✅ **Praktične primjene**: rješavanje stvarnih izazova razvojnih tokova uz AI
+- ✅ **Praktične primjene**: rješavanje stvarnih izazova u radnim tokovima pomoću AI-a
 
 ### 🔮 Vaši sljedeći koraci:
 
-1. **Izgradite vlastiti MCP server**: Primijenite ove vještine za automatizaciju vlastitih jedinstvenih tokova rada
+1. **Izgradite vlastiti MCP server**: Primijenite ove vještine za automatizaciju svojih jedinstvenih tokova rada
 2. **Pridružite se MCP zajednici**: Dijelite svoja rješenja i učite od drugih
-3. **Istražite napredne integracije**: Povežite MCP servere s enterprise sustavima
-4. **Doprinesite open source-u**: Pomozite u unapređenju MCP alata i dokumentacije
+3. **Istražite naprednu integraciju**: Povežite MCP servere s enterprise sustavima
+4. **Doprinesite open sourceu**: Pomozite u poboljšanju MCP alata i dokumentacije
 
-Zapamtite, ova radionica je tek početak. Ekosustav Model Context Protocol brzo se razvija, a vi ste sada opremljeni da budete na čelu AI-podržanih razvojnih alata.
+Zapamtite, ova radionica je tek početak. Ekosustav Model Context Protocola brzo se razvija, a vi ste sada opremljeni da budete na čelu AI-pokretanih razvojnih alata.
 
 **Hvala vam na sudjelovanju i predanosti učenju!**
 
-Nadamo se da vam je ova radionica dala ideje koje će transformirati način na koji gradite i koristite AI alate u svom razvoju.
+Nadamo se da vam je ova radionica dala ideje koje će promijeniti način na koji gradite i koristite AI alate u svom razvoju.
 
-**Sretno kodiranje!**
+**Sretno s kodiranjem!**
 
 ---
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

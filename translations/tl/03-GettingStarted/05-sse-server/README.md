@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T18:20:47+00:00",
+  "translation_date": "2025-07-13T19:59:40+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "tl"
 }
 -->
 Ngayon na may kaunting kaalaman na tayo tungkol sa SSE, gawin naman natin ang isang SSE server.
 
-## Ehersisyo: Paglikha ng SSE Server
+## Ehersisyo: Paggawa ng SSE Server
 
 Para gumawa ng server, kailangan nating tandaan ang dalawang bagay:
 
@@ -24,9 +24,9 @@ Para gumawa ng server, gagamitin natin ang parehong mga uri tulad ng sa stdio. N
 
 Magdagdag tayo ng mga ruta na humahawak sa koneksyon at mga papasok na mensahe:
 
-### -3- Pagdaragdag ng kakayahan sa server
+### -3- Magdagdag ng kakayahan sa server
 
-Ngayon na naitakda na natin ang lahat ng mga bagay na partikular sa SSE, idagdag naman natin ang mga kakayahan ng server tulad ng mga tools, prompts, at resources.
+Ngayon na naitakda na natin ang lahat ng partikular sa SSE, idagdag naman natin ang mga kakayahan ng server tulad ng mga tools, prompts, at resources.
 
 Ang buong code mo ay dapat ganito ang hitsura:
 
@@ -59,11 +59,11 @@ Ikonekta ang server sa pamamagitan ng pagpili ng SSE sa droplist at punan ang ur
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.tl.png)
 
-Magaling, nagawa mong gamitin ang inspector, tingnan naman natin kung paano gamitin ang Visual Studio Code.
+Magaling, nagawa mong gamitin ang inspector, tingnan natin kung paano gamitin ang Visual Studio Code.
 
 ## Takdang Aralin
 
-Subukang palawakin ang iyong server gamit ang mas maraming kakayahan. Tingnan ang [pahina na ito](https://api.chucknorris.io/) para, halimbawa, magdagdag ng tool na tumatawag sa isang API. Ikaw ang magdedesisyon kung ano ang magiging hitsura ng server. Mag-enjoy :)
+Subukang palawakin ang iyong server ng mas maraming kakayahan. Tingnan ang [pahina na ito](https://api.chucknorris.io/) para, halimbawa, magdagdag ng tool na tumatawag ng API. Ikaw ang magpapasya kung ano ang hitsura ng server. Mag-enjoy :)
 
 ## Solusyon
 
@@ -74,8 +74,8 @@ Subukang palawakin ang iyong server gamit ang mas maraming kakayahan. Tingnan an
 Ang mga mahahalagang punto mula sa kabanatang ito ay ang mga sumusunod:
 
 - Ang SSE ang pangalawang suportadong transport maliban sa stdio.
-- Para suportahan ang SSE, kailangan mong pamahalaan ang mga papasok na koneksyon at mga mensahe gamit ang isang web framework.
-- Maaari mong gamitin ang parehong Inspector at Visual Studio Code para gamitin ang SSE server, tulad ng sa stdio servers. Pansinin ang kaunting pagkakaiba sa pagitan ng stdio at SSE. Para sa SSE, kailangan mong patakbuhin ang server nang hiwalay at saka patakbuhin ang iyong inspector tool. Para sa inspector tool, may ilang pagkakaiba rin na kailangan mong tukuyin ang URL.
+- Para suportahan ang SSE, kailangan mong pamahalaan ang mga papasok na koneksyon at mga mensahe gamit ang web framework.
+- Maaari mong gamitin ang parehong Inspector at Visual Studio Code para gamitin ang SSE server, tulad ng mga stdio server. Pansinin ang kaunting pagkakaiba sa pagitan ng stdio at SSE. Para sa SSE, kailangan mong patakbuhin ang server nang hiwalay at saka patakbuhin ang iyong inspector tool. Para sa inspector tool, may ilang pagkakaiba rin na kailangan mong tukuyin ang URL.
 
 ## Mga Halimbawa
 
@@ -94,4 +94,4 @@ Ang mga mahahalagang punto mula sa kabanatang ito ay ang mga sumusunod:
 - Susunod: [HTTP Streaming gamit ang MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

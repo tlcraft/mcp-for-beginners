@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-10T15:53:01+00:00",
+  "translation_date": "2025-07-13T20:24:02+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "es"
 }
@@ -33,7 +33,7 @@ Consulta la tabla comparativa a continuación para entender las diferencias entr
 | SSE               | Sí                            | Sí          | Media         | Web, actualizaciones en tiempo real |
 | Streamable HTTP   | Sí                            | Sí          | Alta          | Nube, multi-cliente      |
 
-> **Tip:** Elegir el transporte adecuado impacta en el rendimiento, escalabilidad y experiencia del usuario. **Streamable HTTP** es recomendado para aplicaciones modernas, escalables y listas para la nube.
+> **Tip:** Elegir el transporte adecuado impacta en el rendimiento, escalabilidad y experiencia de usuario. **Streamable HTTP** es recomendado para aplicaciones modernas, escalables y listas para la nube.
 
 Ten en cuenta los transportes stdio y SSE que se mostraron en capítulos anteriores y cómo el transporte streamable HTTP es el que se cubre en este capítulo.
 
@@ -106,7 +106,7 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Este ejemplo demuestra un servidor enviando una serie de mensajes al cliente a medida que están disponibles, en lugar de esperar a que todos los mensajes estén listos.
+Este ejemplo demuestra un servidor que envía una serie de mensajes al cliente a medida que están disponibles, en lugar de esperar a que todos los mensajes estén listos.
 
 **Cómo funciona:**
 - El servidor envía cada mensaje tan pronto como está listo.
@@ -186,11 +186,11 @@ public class CalculatorClientApplication implements CommandLineRunner {
 ```
 
 **Notas sobre la implementación en Java:**
-- Usa la pila reactiva de Spring Boot con `Flux` para transmisión
-- `ServerSentEvent` provee transmisión estructurada de eventos con tipos de evento
-- `WebClient` con `bodyToFlux()` permite consumo reactivo de transmisión
-- `delayElements()` simula tiempo de procesamiento entre eventos
-- Los eventos pueden tener tipos (`info`, `result`) para mejor manejo en el cliente
+- Usa la pila reactiva de Spring Boot con `Flux` para transmisión.
+- `ServerSentEvent` provee transmisión estructurada de eventos con tipos de evento.
+- `WebClient` con `bodyToFlux()` permite consumo reactivo de transmisión.
+- `delayElements()` simula tiempo de procesamiento entre eventos.
+- Los eventos pueden tener tipos (`info`, `result`) para mejor manejo en el cliente.
 
 </details>
 
@@ -210,28 +210,28 @@ Las diferencias entre cómo funciona la transmisión de manera "clásica" versus
 Además, aquí algunas diferencias clave:
 
 - **Patrón de Comunicación:**
-   - Transmisión HTTP clásica: Usa codificación de transferencia fragmentada para enviar datos en fragmentos
-   - Transmisión MCP: Usa un sistema estructurado de notificaciones con protocolo JSON-RPC
+   - Transmisión HTTP clásica: Usa codificación de transferencia fragmentada para enviar datos en fragmentos.
+   - Transmisión MCP: Usa un sistema estructurado de notificaciones con protocolo JSON-RPC.
 
 - **Formato de Mensaje:**
-   - HTTP clásico: Fragmentos de texto plano con saltos de línea
-   - MCP: Objetos estructurados LoggingMessageNotification con metadatos
+   - HTTP clásico: Fragmentos de texto plano con saltos de línea.
+   - MCP: Objetos estructurados LoggingMessageNotification con metadatos.
 
 - **Implementación del Cliente:**
-   - HTTP clásico: Cliente simple que procesa respuestas de transmisión
-   - MCP: Cliente más sofisticado con un manejador de mensajes para procesar diferentes tipos de mensajes
+   - HTTP clásico: Cliente simple que procesa respuestas de transmisión.
+   - MCP: Cliente más sofisticado con un manejador de mensajes para procesar diferentes tipos de mensajes.
 
 - **Actualizaciones de Progreso:**
-   - HTTP clásico: El progreso es parte del flujo principal de respuesta
-   - MCP: El progreso se envía mediante mensajes de notificación separados mientras la respuesta principal llega al final
+   - HTTP clásico: El progreso es parte del flujo principal de respuesta.
+   - MCP: El progreso se envía mediante mensajes de notificación separados mientras la respuesta principal llega al final.
 
 ### Recomendaciones
 
-Hay algunas recomendaciones al elegir entre implementar transmisión clásica (como el endpoint que mostramos arriba usando `/stream`) versus transmisión vía MCP.
+Hay algunas recomendaciones al elegir entre implementar transmisión clásica (como el endpoint que mostramos arriba usando `/stream`) versus elegir transmisión vía MCP.
 
 - **Para necesidades simples de transmisión:** La transmisión HTTP clásica es más sencilla de implementar y suficiente para necesidades básicas.
 
-- **Para aplicaciones complejas e interactivas:** La transmisión MCP ofrece un enfoque más estructurado con metadatos más ricos y separación entre notificaciones y resultados finales.
+- **Para aplicaciones complejas e interactivas:** La transmisión MCP ofrece un enfoque más estructurado con metadatos enriquecidos y separación entre notificaciones y resultados finales.
 
 - **Para aplicaciones de IA:** El sistema de notificaciones de MCP es especialmente útil para tareas de IA de larga duración donde se quiere mantener informado al usuario sobre el progreso.
 
@@ -239,7 +239,7 @@ Hay algunas recomendaciones al elegir entre implementar transmisión clásica (c
 
 Bien, ya viste algunas recomendaciones y comparaciones sobre la diferencia entre transmisión clásica y transmisión en MCP. Ahora entremos en detalle sobre cómo puedes aprovechar la transmisión en MCP.
 
-Entender cómo funciona la transmisión dentro del marco MCP es esencial para construir aplicaciones responsivas que brinden retroalimentación en tiempo real a los usuarios durante operaciones de larga duración.
+Entender cómo funciona la transmisión dentro del marco MCP es esencial para construir aplicaciones responsivas que proporcionen retroalimentación en tiempo real a los usuarios durante operaciones de larga duración.
 
 En MCP, la transmisión no consiste en enviar la respuesta principal en fragmentos, sino en enviar **notificaciones** al cliente mientras una herramienta procesa una solicitud. Estas notificaciones pueden incluir actualizaciones de progreso, logs u otros eventos.
 
@@ -253,7 +253,7 @@ Dijimos "Notificación", ¿qué significa eso en el contexto de MCP?
 
 Una notificación es un mensaje enviado del servidor al cliente para informar sobre progreso, estado u otros eventos durante una operación de larga duración. Las notificaciones mejoran la transparencia y la experiencia del usuario.
 
-Por ejemplo, se espera que un cliente envíe una notificación una vez que se haya realizado el apretón de manos inicial con el servidor.
+Por ejemplo, se espera que un cliente envíe una notificación una vez que se haya realizado el handshake inicial con el servidor.
 
 Una notificación se ve así como un mensaje JSON:
 
@@ -297,7 +297,7 @@ Existen diferentes tipos de notificaciones:
 
 ## Implementación de Notificaciones en MCP
 
-Para implementar notificaciones en MCP, necesitas configurar tanto el servidor como el cliente para manejar actualizaciones en tiempo real. Esto permite que tu aplicación brinde retroalimentación inmediata a los usuarios durante operaciones de larga duración.
+Para implementar notificaciones en MCP, necesitas configurar tanto el servidor como el cliente para manejar actualizaciones en tiempo real. Esto permite que tu aplicación proporcione retroalimentación inmediata a los usuarios durante operaciones de larga duración.
 
 ### Lado servidor: Envío de Notificaciones
 
@@ -454,7 +454,7 @@ Las notificaciones de progreso son esenciales por varias razones:
 Así es como puedes implementar notificaciones de progreso en MCP:
 
 - **En el servidor:** Usa `ctx.info()` o `ctx.log()` para enviar notificaciones a medida que se procesa cada ítem. Esto envía un mensaje al cliente antes de que el resultado principal esté listo.
-- **En el cliente:** Implementa un manejador de mensajes que escuche y muestre notificaciones a medida que llegan. Este manejador distingue entre notificaciones y el resultado final.
+- **En el cliente:** Implementa un manejador de mensajes que escuche y muestre las notificaciones a medida que llegan. Este manejador distingue entre notificaciones y el resultado final.
 
 **Ejemplo de servidor:**
 
@@ -513,7 +513,7 @@ La seguridad es crucial al exponer servidores MCP a través de HTTP. Streamable 
 
 ## Actualización de SSE a Streamable HTTP
 
-Para aplicaciones que actualmente usan Server-Sent Events (SSE), migrar a Streamable HTTP ofrece capacidades mejoradas y una mayor sostenibilidad a largo plazo para tus implementaciones MCP.
+Para aplicaciones que actualmente usan Server-Sent Events (SSE), migrar a Streamable HTTP ofrece capacidades mejoradas y una mejor sostenibilidad a largo plazo para tus implementaciones MCP.
 
 ### ¿Por qué actualizar?
 
@@ -578,9 +578,9 @@ Enfrentarás algunos desafíos al implementar seguridad en servidores de streami
 - Equilibrar la seguridad con la facilidad de desarrollo
 - Asegurar compatibilidad con diversos entornos cliente
 
-### Tarea: Construye tu propia aplicación MCP de streaming
+### Ejercicio: Construye tu propia aplicación MCP de streaming
 
-**Escenario:**
+**Escenario:**  
 Construye un servidor y cliente MCP donde el servidor procese una lista de elementos (por ejemplo, archivos o documentos) y envíe una notificación por cada elemento procesado. El cliente debe mostrar cada notificación a medida que llega.
 
 **Pasos:**
@@ -609,4 +609,4 @@ Para continuar tu camino con el streaming MCP y ampliar tus conocimientos, esta 
 - Siguiente: [Utilizando AI Toolkit para VSCode](../07-aitk/README.md)
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

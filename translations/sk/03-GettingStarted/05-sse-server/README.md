@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T18:45:06+00:00",
+  "translation_date": "2025-07-13T20:01:10+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sk"
 }
@@ -14,23 +14,19 @@ Teraz, keď už vieme trochu viac o SSE, poďme si vytvoriť SSE server.
 Pri vytváraní nášho servera musíme mať na pamäti dve veci:
 
 - Potrebujeme použiť webový server na sprístupnenie endpointov pre pripojenie a správy.
-- Server postavíme tak, ako sme zvyknutí s nástrojmi, zdrojmi a promptami, keď sme používali stdio.
+- Server postavíme tak, ako sme zvyknutí s nástrojmi, zdrojmi a promptmi, keď sme používali stdio.
 
 ### -1- Vytvorenie inštancie servera
 
-Na vytvorenie servera použijeme rovnaké typy ako pri stdio. Avšak pre transport musíme zvoliť SSE.
-
-Poďme teraz pridať potrebné routy.
+Na vytvorenie servera používame rovnaké typy ako pri stdio. Avšak pre transport musíme zvoliť SSE.
 
 ### -2- Pridanie rout
 
 Pridajme routy, ktoré budú spracovávať pripojenie a prichádzajúce správy:
 
-Teraz pridajme schopnosti servera.
-
 ### -3- Pridanie schopností servera
 
-Keď už máme definované všetko špecifické pre SSE, pridajme schopnosti servera ako nástroje, prompty a zdroje.
+Keď už máme definované všetko špecifické pre SSE, pridajme schopnosti servera ako nástroje, prompt a zdroje.
 
 Celý váš kód by mal vyzerať takto:
 
@@ -49,7 +45,7 @@ Na spustenie inspektora musíte mať najprv bežiaci SSE server, tak ho spustime
 1. Spustite inspektora
 
     > ![NOTE]
-    > Spustite tento príkaz v inom terminálovom okne, než kde beží server. Tiež si všimnite, že musíte upraviť nižšie uvedený príkaz tak, aby zodpovedal URL, kde váš server beží.
+    > Spustite to v samostatnom terminálovom okne, než v ktorom beží server. Tiež si všimnite, že musíte upraviť nižšie uvedený príkaz tak, aby zodpovedal URL, kde váš server beží.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
@@ -95,7 +91,7 @@ Hlavné poznatky z tejto kapitoly sú:
 
 ## Čo ďalej
 
-- Ďalej: [HTTP Streaming s MCP (Streamovateľný HTTP)](../06-http-streaming/README.md)
+- Ďalej: [HTTP Streaming s MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, berte prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

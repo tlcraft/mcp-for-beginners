@@ -2,56 +2,56 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:15:44+00:00",
+  "translation_date": "2025-07-13T23:56:22+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "th"
 }
 -->
 # การรวม Model Context Protocol (MCP) กับ Azure AI Foundry
 
-คู่มือนี้จะแสดงวิธีการรวมเซิร์ฟเวอร์ Model Context Protocol (MCP) กับเอเจนต์ Azure AI Foundry เพื่อให้สามารถจัดการเครื่องมืออย่างทรงพลังและใช้ความสามารถ AI สำหรับองค์กรได้
+คู่มือนี้แสดงวิธีการรวมเซิร์ฟเวอร์ Model Context Protocol (MCP) กับเอเจนต์ Azure AI Foundry เพื่อเปิดใช้งานการประสานเครื่องมือที่ทรงพลังและความสามารถ AI สำหรับองค์กร
 
 ## บทนำ
 
-Model Context Protocol (MCP) คือมาตรฐานเปิดที่ช่วยให้แอปพลิเคชัน AI สามารถเชื่อมต่อกับแหล่งข้อมูลและเครื่องมือภายนอกได้อย่างปลอดภัย เมื่อรวมกับ Azure AI Foundry แล้ว MCP จะช่วยให้เอเจนต์เข้าถึงและโต้ตอบกับบริการภายนอก API และแหล่งข้อมูลต่าง ๆ ในรูปแบบที่เป็นมาตรฐานเดียวกัน
+Model Context Protocol (MCP) เป็นมาตรฐานเปิดที่ช่วยให้แอปพลิเคชัน AI สามารถเชื่อมต่อกับแหล่งข้อมูลและเครื่องมือภายนอกได้อย่างปลอดภัย เมื่อรวมกับ Azure AI Foundry MCP ช่วยให้เอเจนต์สามารถเข้าถึงและโต้ตอบกับบริการภายนอก API และแหล่งข้อมูลต่างๆ ได้ในรูปแบบมาตรฐาน
 
-การรวมนี้ผสมผสานความยืดหยุ่นของระบบเครื่องมือ MCP กับกรอบการทำงานเอเจนต์ที่แข็งแกร่งของ Azure AI Foundry เพื่อมอบโซลูชัน AI สำหรับองค์กรที่มีความสามารถในการปรับแต่งอย่างกว้างขวาง
+การรวมนี้ผสมผสานความยืดหยุ่นของระบบนิเวศเครื่องมือ MCP กับกรอบงานเอเจนต์ที่แข็งแกร่งของ Azure AI Foundry เพื่อมอบโซลูชัน AI ระดับองค์กรที่มีความสามารถในการปรับแต่งอย่างกว้างขวาง
 
-**Note:** หากต้องการใช้ MCP ใน Azure AI Foundry Agent Service ปัจจุบันรองรับเฉพาะภูมิภาคดังต่อไปนี้: westus, westus2, uaenorth, southindia และ switzerlandnorth
+**Note:** หากคุณต้องการใช้ MCP ใน Azure AI Foundry Agent Service ปัจจุบันรองรับเฉพาะภูมิภาคดังต่อไปนี้: westus, westus2, uaenorth, southindia และ switzerlandnorth
 
 ## วัตถุประสงค์การเรียนรู้
 
-หลังจากทำตามคู่มือนี้ คุณจะสามารถ:
+เมื่อจบคู่มือนี้ คุณจะสามารถ:
 
 - เข้าใจ Model Context Protocol และประโยชน์ของมัน
-- ตั้งค่าเซิร์ฟเวอร์ MCP เพื่อใช้งานกับเอเจนต์ Azure AI Foundry
+- ตั้งค่าเซิร์ฟเวอร์ MCP สำหรับใช้งานกับเอเจนต์ Azure AI Foundry
 - สร้างและกำหนดค่าเอเจนต์ที่รวมเครื่องมือ MCP
-- นำตัวอย่างใช้งานจริงกับเซิร์ฟเวอร์ MCP มาใช้
+- นำตัวอย่างการใช้งานจริงกับเซิร์ฟเวอร์ MCP มาใช้
 - จัดการกับการตอบกลับของเครื่องมือและการอ้างอิงในบทสนทนาเอเจนต์
 
 ## ข้อกำหนดเบื้องต้น
 
-ก่อนเริ่มต้น ตรวจสอบให้แน่ใจว่าคุณมี:
+ก่อนเริ่มต้น ให้แน่ใจว่าคุณมี:
 
-- การสมัครใช้งาน Azure พร้อมการเข้าถึง AI Foundry
+- การสมัครใช้งาน Azure ที่เข้าถึง AI Foundry ได้
 - Python 3.10 ขึ้นไป
 - ติดตั้งและกำหนดค่า Azure CLI แล้ว
 - สิทธิ์ที่เหมาะสมในการสร้างทรัพยากร AI
 
 ## Model Context Protocol (MCP) คืออะไร?
 
-Model Context Protocol คือวิธีการมาตรฐานสำหรับแอปพลิเคชัน AI ในการเชื่อมต่อกับแหล่งข้อมูลและเครื่องมือภายนอก ประโยชน์หลักได้แก่:
+Model Context Protocol คือวิธีมาตรฐานสำหรับแอปพลิเคชัน AI ในการเชื่อมต่อกับแหล่งข้อมูลและเครื่องมือภายนอก ประโยชน์หลักได้แก่:
 
-- **การรวมแบบมาตรฐาน**: อินเทอร์เฟซที่สอดคล้องกันสำหรับเครื่องมือและบริการต่าง ๆ
-- **ความปลอดภัย**: กลไกการยืนยันตัวตนและการอนุญาตที่ปลอดภัย
+- **การรวมแบบมาตรฐาน**: อินเทอร์เฟซที่สอดคล้องกันสำหรับเครื่องมือและบริการต่างๆ
+- **ความปลอดภัย**: กลไกการตรวจสอบสิทธิ์และอนุญาตที่ปลอดภัย
 - **ความยืดหยุ่น**: รองรับแหล่งข้อมูล API และเครื่องมือที่หลากหลาย
-- **การขยายตัวได้ง่าย**: เพิ่มความสามารถและการรวมระบบใหม่ ๆ ได้ง่าย
+- **การขยายตัว**: เพิ่มความสามารถและการรวมใหม่ๆ ได้ง่าย
 
 ## การตั้งค่า MCP กับ Azure AI Foundry
 
 ### 1. การกำหนดค่าสภาพแวดล้อม
 
-เริ่มต้นด้วยการตั้งค่าตัวแปรสภาพแวดล้อมและการติดตั้งที่จำเป็น:
+เริ่มต้นด้วยการตั้งค่าตัวแปรสภาพแวดล้อมและ dependencies:
 
 ```python
 import os
@@ -80,7 +80,7 @@ with project_client:
     agent = project_client.agents.create_agent(
         model="gpt-4.1-nano", 
         name="mcp_agent", 
-        instructions="คุณเป็นผู้ช่วยที่เป็นประโยชน์ ใช้เครื่องมือที่มีเพื่อช่วยตอบคำถาม และอย่าลืมอ้างอิงแหล่งข้อมูลของคุณ",
+        instructions="คุณเป็นผู้ช่วยที่เป็นประโยชน์ ใช้เครื่องมือที่มีเพื่อให้คำตอบ และอย่าลืมอ้างอิงแหล่งข้อมูลของคุณ",
         tools=[
             {
                 "type": "mcp",
@@ -105,7 +105,7 @@ mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # ตัวระบุสำหรับเซิร์ฟเวอร์ MCP
     "server_url": "https://api.example.com/mcp", # จุดเชื่อมต่อเซิร์ฟเวอร์ MCP
-    "require_approval": "never"                 # นโยบายการอนุมัติ: ปัจจุบันรองรับแค่ "never"
+    "require_approval": "never"                 # นโยบายการอนุมัติ: ตอนนี้รองรับแค่ "never"
 }
 ```
 
@@ -129,11 +129,11 @@ def create_mcp_agent_example():
     )
 
     with project_client:
-        # สร้างเอเจนต์ที่ใช้เครื่องมือ MCP
+        # สร้างเอเจนต์พร้อมเครื่องมือ MCP
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="คุณเป็นผู้ช่วยที่เชี่ยวชาญด้านเอกสารของ Microsoft ใช้เซิร์ฟเวอร์ MCP ของ Microsoft Learn เพื่อค้นหาข้อมูลที่ถูกต้องและทันสมัย และอย่าลืมอ้างอิงแหล่งข้อมูลเสมอ",
+            instructions="คุณเป็นผู้ช่วยที่เชี่ยวชาญด้านเอกสาร Microsoft ใช้เซิร์ฟเวอร์ Microsoft Learn MCP เพื่อค้นหาข้อมูลที่ถูกต้องและทันสมัย และอย่าลืมอ้างอิงแหล่งข้อมูลเสมอ",
             tools=[
                 {
                     "type": "mcp",
@@ -146,31 +146,31 @@ def create_mcp_agent_example():
         )
         print(f"สร้างเอเจนต์แล้ว, รหัสเอเจนต์: {agent.id}")    
         
-        # สร้างกระทู้บทสนทนา
+        # สร้างเธรดบทสนทนา
         thread = project_client.agents.threads.create()
-        print(f"สร้างกระทู้แล้ว, รหัสกระทู้: {thread.id}")
+        print(f"สร้างเธรดแล้ว, รหัสเธรด: {thread.id}")
 
         # ส่งข้อความ
         message = project_client.agents.messages.create(
             thread_id=thread.id, 
             role="user", 
-            content="NET MAUI คืออะไร? และเปรียบเทียบกับ Xamarin.Forms อย่างไร?",
+            content="What is .NET MAUI? How does it compare to Xamarin.Forms?",
         )
         print(f"สร้างข้อความแล้ว, รหัสข้อความ: {message.id}")
 
         # รันเอเจนต์
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
         
-        # ตรวจสอบสถานะจนเสร็จสิ้น
+        # ตรวจสอบสถานะจนเสร็จ
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
-            print(f"สถานะการทำงาน: {run.status}")
+            print(f"สถานะการรัน: {run.status}")
 
-        # ตรวจสอบขั้นตอนการทำงานและการเรียกเครื่องมือ
+        # ตรวจสอบขั้นตอนการรันและการเรียกเครื่องมือ
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
-            print(f"ขั้นตอนการทำงาน: {step.id}, สถานะ: {step.status}, ประเภท: {step.type}")
+            print(f"ขั้นตอนการรัน: {step.id}, สถานะ: {step.status}, ประเภท: {step.type}")
             if step.type == "tool_calls":
                 print("รายละเอียดการเรียกเครื่องมือ:")
                 for tool_call in step.step_details.tool_calls:
@@ -193,44 +193,44 @@ if __name__ == "__main__":
 
 ### 1. ปัญหาการเชื่อมต่อ
 - ตรวจสอบว่า URL ของเซิร์ฟเวอร์ MCP เข้าถึงได้
-- ตรวจสอบข้อมูลรับรองการยืนยันตัวตน
+- ตรวจสอบข้อมูลรับรองการตรวจสอบสิทธิ์
 - ตรวจสอบการเชื่อมต่อเครือข่าย
 
-### 2. การเรียกเครื่องมือไม่สำเร็จ
+### 2. การเรียกเครื่องมือล้มเหลว
 - ตรวจสอบอาร์กิวเมนต์และรูปแบบของเครื่องมือ
 - ตรวจสอบข้อกำหนดเฉพาะของเซิร์ฟเวอร์
-- ดำเนินการจัดการข้อผิดพลาดอย่างเหมาะสม
+- ใช้การจัดการข้อผิดพลาดที่เหมาะสม
 
 ### 3. ปัญหาด้านประสิทธิภาพ
-- ปรับปรุงความถี่ในการเรียกเครื่องมือ
+- ปรับความถี่ในการเรียกเครื่องมือ
 - ใช้การแคชเมื่อเหมาะสม
-- ติดตามเวลาตอบสนองของเซิร์ฟเวอร์
+- ตรวจสอบเวลาตอบสนองของเซิร์ฟเวอร์
 
 ## ขั้นตอนถัดไป
 
 เพื่อเพิ่มประสิทธิภาพการรวม MCP ของคุณ:
 
 1. **สำรวจเซิร์ฟเวอร์ MCP แบบกำหนดเอง**: สร้างเซิร์ฟเวอร์ MCP ของคุณเองสำหรับแหล่งข้อมูลเฉพาะ
-2. **เพิ่มความปลอดภัยขั้นสูง**: เพิ่ม OAuth2 หรือกลไกการยืนยันตัวตนแบบกำหนดเอง
-3. **ติดตามและวิเคราะห์**: ดำเนินการบันทึกและติดตามการใช้งานเครื่องมือ
-4. **ปรับขนาดโซลูชันของคุณ**: พิจารณาการบาลานซ์โหลดและสถาปัตยกรรมเซิร์ฟเวอร์ MCP แบบกระจาย
+2. **ใช้งานความปลอดภัยขั้นสูง**: เพิ่ม OAuth2 หรือกลไกการตรวจสอบสิทธิ์แบบกำหนดเอง
+3. **ติดตามและวิเคราะห์**: ใช้งานการบันทึกและการตรวจสอบการใช้งานเครื่องมือ
+4. **ขยายโซลูชันของคุณ**: พิจารณาการบาลานซ์โหลดและสถาปัตยกรรมเซิร์ฟเวอร์ MCP แบบกระจาย
 
 ## แหล่งข้อมูลเพิ่มเติม
 
-- [เอกสาร Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- [ตัวอย่าง Model Context Protocol](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
-- [ภาพรวม Azure AI Foundry Agents](https://learn.microsoft.com/azure/ai-foundry/agents/)
-- [ข้อกำหนด MCP](https://spec.modelcontextprotocol.io/)
+- [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-foundry/)
+- [Model Context Protocol Samples](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
+- [Azure AI Foundry Agents Overview](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
 
 ## การสนับสนุน
 
 สำหรับการสนับสนุนและคำถามเพิ่มเติม:
-- ดูเอกสาร [Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- ตรวจสอบแหล่งข้อมูลชุมชน [MCP](https://modelcontextprotocol.io/)
+- ดูเอกสาร [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-foundry/)
+- ตรวจสอบ [MCP community resources](https://modelcontextprotocol.io/)
 
-## สิ่งที่ต้องทำต่อไป
+## ต่อไปคืออะไร
 
-- [6. การมีส่วนร่วมของชุมชน](../../06-CommunityContributions/README.md)
+- [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดใด ๆ ที่เกิดขึ้นจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

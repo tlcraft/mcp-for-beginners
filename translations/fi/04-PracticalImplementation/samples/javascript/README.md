@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:51:34+00:00",
+  "translation_date": "2025-07-13T23:28:15+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "fi"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Tämä on JavaScript-esimerkki MCP-palvelimelle
 
-Tässä on esimerkki työkalun rekisteröinnistä, jossa rekisteröimme työkalun, joka tekee pilapuhelun LLM:lle:
+Tässä on esimerkki työkalun rekisteröinnistä, jossa rekisteröimme työkalun, joka tekee simuloidun kutsun LLM:lle:
 
 ```javascript
 this.mcpServer.tool(
@@ -74,7 +74,7 @@ this.mcpServer.tool(
 );
 ```
 
-## Asenna
+## Asennus
 
 Suorita seuraava komento:
 
@@ -89,4 +89,4 @@ npm start
 ```
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttäen AI-käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi katsoa olevan auktoriteetti. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-04T18:42:14+00:00",
+  "translation_date": "2025-07-13T16:21:03+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "sk"
 }
@@ -52,22 +52,22 @@ flowchart LR
 - **MCP Hosts**: Programy ako VSCode, Claude Desktop, IDE alebo AI nástroje, ktoré chcú pristupovať k dátam cez MCP
 - **MCP Clients**: Protokoloví klienti, ktorí udržiavajú 1:1 spojenia so servermi
 - **MCP Servers**: Ľahké programy, ktoré každé vystavujú špecifické schopnosti cez štandardizovaný Model Context Protocol
-- **Lokálne zdroje dát**: Súbory, databázy a služby na vašom počítači, ku ktorým MCP servery môžu bezpečne pristupovať
+- **Lokálne zdroje dát**: Súbory, databázy a služby vo vašom počítači, ku ktorým MCP servery môžu bezpečne pristupovať
 - **Vzdialené služby**: Externé systémy dostupné cez internet, ku ktorým sa MCP servery môžu pripájať cez API.
 
 MCP protokol je vyvíjajúci sa štandard, najnovšie aktualizácie nájdete v [špecifikácii protokolu](https://modelcontextprotocol.io/specification/2025-06-18/)
 
 ### 1. Hosts
 
-V Model Context Protocol (MCP) zohrávajú Hosts kľúčovú úlohu ako primárne rozhranie, cez ktoré používatelia komunikujú s protokolom. Hosts sú aplikácie alebo prostredia, ktoré iniciujú spojenia s MCP servermi, aby získali prístup k dátam, nástrojom a promptom. Príklady Hosts zahŕňajú integrované vývojové prostredia (IDEs) ako Visual Studio Code, AI nástroje ako Claude Desktop alebo vlastné agenti vytvorení pre špecifické úlohy.
+V Model Context Protocol (MCP) zohrávajú Hosts kľúčovú úlohu ako primárne rozhranie, cez ktoré používatelia komunikujú s protokolom. Hosts sú aplikácie alebo prostredia, ktoré iniciujú spojenia so servermi MCP, aby získali prístup k dátam, nástrojom a promptom. Príklady Hosts zahŕňajú integrované vývojové prostredia (IDEs) ako Visual Studio Code, AI nástroje ako Claude Desktop alebo vlastné agenti vytvorení pre špecifické úlohy.
 
 **Hosts** sú LLM aplikácie, ktoré iniciujú spojenia. Ich úlohy sú:
 
 - Spúšťať alebo komunikovať s AI modelmi na generovanie odpovedí.
-- Iniciovať spojenia s MCP servermi.
+- Iniciovať spojenia so servermi MCP.
 - Riadiť tok konverzácie a používateľské rozhranie.
 - Kontrolovať povolenia a bezpečnostné obmedzenia.
-- Spravovať súhlas používateľa so zdieľaním dát a vykonávaním nástrojov.
+- Spravovať súhlas používateľa so zdieľaním dát a spúšťaním nástrojov.
 
 ### 2. Clients
 
@@ -77,12 +77,12 @@ Clients sú nevyhnutné komponenty, ktoré uľahčujú interakciu medzi Hosts a 
 
 - Posielať požiadavky serverom s promptmi/inštrukciami.
 - Rokovať o schopnostiach so servermi.
-- Spravovať požiadavky na vykonávanie nástrojov od modelov.
+- Spravovať požiadavky na spustenie nástrojov od modelov.
 - Spracovávať a zobrazovať odpovede používateľom.
 
 ### 3. Servers
 
-Servery sú zodpovedné za spracovanie požiadaviek od MCP klientov a poskytovanie vhodných odpovedí. Riadia rôzne operácie ako získavanie dát, vykonávanie nástrojov a generovanie promptov. Servery zabezpečujú efektívnu a spoľahlivú komunikáciu medzi klientmi a Hosts, pričom zachovávajú integritu interakčného procesu.
+Servery sú zodpovedné za spracovanie požiadaviek od MCP klientov a poskytovanie vhodných odpovedí. Riadia rôzne operácie ako získavanie dát, spúšťanie nástrojov a generovanie promptov. Servery zabezpečujú efektívnu a spoľahlivú komunikáciu medzi klientmi a Hosts, pričom udržiavajú integritu interakčného procesu.
 
 **Servers** sú služby, ktoré poskytujú kontext a schopnosti. Ich úlohy sú:
 
@@ -168,7 +168,7 @@ V Model Context Protocol (MCP) klienti ponúkajú serverom niekoľko kľúčový
 Model Context Protocol (MCP) definuje štruktúrovaný tok informácií medzi hosts, clients, servers a modelmi. Pochopenie tohto toku pomáha objasniť, ako sa spracovávajú požiadavky používateľov a ako sa externé nástroje a dáta integrujú do odpovedí modelu.
 
 - **Host iniciuje spojenie**  
-  Hostiteľská aplikácia (napr. IDE alebo chat rozhranie) nadviaže spojenie s MCP serverom, zvyčajne cez STDIO, WebSocket alebo iný podporovaný transport.
+  Hostiteľská aplikácia (napr. IDE alebo chat rozhranie) nadviaže spojenie so serverom MCP, zvyčajne cez STDIO, WebSocket alebo iný podporovaný transport.
 
 - **Rokovanie o schopnostiach**  
   Klient (vložený v hostiteľovi) a server si vymieňajú informácie o podporovaných funkciách, nástrojoch, zdrojoch a verziách protokolu. To zabezpečuje, že obe strany rozumejú dostupným schopnostiam pre danú reláciu.
@@ -178,7 +178,7 @@ Model Context Protocol (MCP) definuje štruktúrovaný tok informácií medzi ho
 
 - **Použitie zdroja alebo nástroja**  
   - Klient môže požiadať server o ďalší kontext alebo zdroje (napr. súbory, záznamy v databáze alebo články zo znalostnej bázy) na obohatenie porozumenia modelu.
-  - Ak model určí, že je potrebný nástroj (napr. na získanie dát, vykonanie výpočtu alebo volanie API), klient pošle serveru požiadavku na vyvolanie nástroja, špecifikujúc názov nástroja a parametre.
+  - Ak model určí, že je potrebný nástroj (napr. na získanie dát, vykonanie výpočtu alebo volanie API), klient pošle serveru požiadavku na spustenie nástroja, špecifikujúc názov nástroja a parametre.
 
 - **Vykonanie serverom**  
   Server prijme požiadavku na zdroj alebo nástroj, vykoná potrebné operácie (napr. spustenie funkcie, dotaz do databázy alebo získanie súboru) a vráti výsledky klientovi v štruktúrovanej forme.
@@ -187,17 +187,17 @@ Model Context Protocol (MCP) definuje štruktúrovaný tok informácií medzi ho
   Klient integruje odpovede servera (dáta zo zdrojov, výstupy nástrojov atď.) do prebiehajúcej interakcie s modelom. Model využíva tieto informácie na vytvorenie komplexnej a kontextovo relevantnej odpovede.
 
 - **Prezentácia výsledku**  
-  Hostiteľ prijme finálny výstup od klienta a zobrazí ho používateľovi, často vrátane textu generovaného modelom a výsledkov z vykonaných nástrojov alebo vyhľadávania zdrojov.
+  Hostiteľ prijme finálny výstup od klienta a zobrazí ho používateľovi, často vrátane textu generovaného modelom a výsledkov zo spustených nástrojov alebo vyhľadávania zdrojov.
 
 Tento tok umožňuje MCP podporovať pokročilé, interaktívne a kontextovo uvedomelé AI aplikácie tým, že bezproblémovo prepája modely s externými nástrojmi a zdrojmi dát.
 
 ## Detaily protokolu
 
-MCP (Model Context Protocol) je postavený na [JSON-RPC 2.0](https://www.jsonrpc.org/), ktorý poskytuje štandardizovaný, jazykovo nezávislý formát správ pre komunikáciu medzi hosts, clients a servers. Táto základňa umožňuje spoľahlivé, štruktúrované a rozšíriteľné interakcie naprieč rôznymi platformami a programovacími jazykmi.
+MCP (Model Context Protocol) je postavený na základe [JSON-RPC 2.0](https://www.jsonrpc.org/), ktorý poskytuje štandardizovaný, jazykovo nezávislý formát správ pre komunikáciu medzi hosts, clients a servers. Táto základňa umožňuje spoľahlivé, štruktúrované a rozšíriteľné interakcie naprieč rôznymi platformami a programovacími jazykmi.
 
 ### Kľúčové vlastnosti protokolu
 
-MCP rozširuje JSON-RPC 2.0 o ďalšie konvencie pre vyvolávanie nástrojov, prístup k zdrojom a správu promptov. Podporuje viacero transportných vrstiev (STDIO, WebSocket, SSE) a umožňuje bezpečnú, rozšíriteľnú a jazykovo nezávislú komunikáciu medzi komponentmi.
+MCP rozširuje JSON-RPC 2.0 o ďalšie konvencie pre volanie nástrojov, prístup k zdrojom a správu promptov. Podporuje viacero transportných vrstiev (STDIO, WebSocket, SSE) a umožňuje bezpečnú, rozšíriteľnú a jazykovo nezávislú komunikáciu medzi komponentmi.
 
 #### 🧢 Základný protokol
 
@@ -212,16 +212,16 @@ Nižšie sú uvedené niektoré ďalšie nástroje a rozšírenia protokolu, kto
 - **Konfiguračné možnosti**: MCP umožňuje dynamickú konfiguráciu parametrov relácie, ako sú povolenia nástrojov, prístup k zdrojom a nastavenia modelu, prispôsobené každej interakcii.
 - **Sledovanie priebehu**: Dlhšie trvajúce operácie môžu hlásiť aktualizácie priebehu, čo umožňuje responzívne používateľské rozhrania a lepší zážitok počas zložitých úloh.
 - **Zrušenie požiadaviek**: Klienti môžu zrušiť prebiehajúce požiadavky, čo umožňuje používateľom prerušiť operácie, ktoré už nie sú potrebné alebo trvajú príliš dlho.
-- **Hlásenie chýb**: Štandardizované chybové správy a kódy pomáhajú diagnostikovať problémy, elegantne riešiť zlyhania a poskytovať použiteľnú spätnú väzbu používateľom a vývojárom.
+- **Hlásenie chýb**: Štandardizované chybové správy a kódy pomáhajú diagnostikovať problémy, zvládať zlyhania elegantne a poskytovať použiteľnú spätnú väzbu používateľom a vývojárom.
 - **Logovanie**: Klienti aj servery môžu emitovať štruktúrované logy na audit, ladenie a monitorovanie interakcií protokolu.
 
-Vďaka týmto vlastnostiam protokolu MCP zabezpečuje robustnú, bezpečnú a flexibilnú komunikáciu medzi jazykovými modelmi a externými nástrojmi či zdrojmi dát.
+Vďaka týmto vlastnostiam MCP zabezpečuje robustnú, bezpečnú a flexibilnú komunikáciu medzi jazykovými modelmi a externými nástrojmi či zdrojmi dát.
 
 ### 🔐 Bezpečnostné aspekty
 
 Implementácie MCP by mali dodržiavať niekoľko kľúčových bezpečnostných princípov, aby zabezpečili bezpečné a dôveryhodné interakcie:
 
-- **Súhlas a kontrola používateľa**:
+- **Súhlas a kontrola používateľa**: Pou
 MCP obsahuje niekoľko zabudovaných konceptov a mechanizmov na riadenie bezpečnosti a autorizácie v celom protokole:
 
 1. **Kontrola povolení nástrojov**:  
@@ -234,7 +234,7 @@ MCP obsahuje niekoľko zabudovaných konceptov a mechanizmov na riadenie bezpeč
   Validácia parametrov je vynucovaná pri všetkých volaniach nástrojov. Každý nástroj definuje očakávané typy, formáty a obmedzenia svojich parametrov a server overuje prichádzajúce požiadavky podľa toho. Tým sa zabraňuje tomu, aby do implementácií nástrojov prenikli nesprávne alebo škodlivé vstupy, a pomáha sa udržiavať integrita operácií.
 
 4. **Obmedzenie rýchlosti (Rate Limiting)**:  
-  Aby sa predišlo zneužitiu a zabezpečilo spravodlivé využívanie serverových zdrojov, servery MCP môžu implementovať obmedzenie rýchlosti volaní nástrojov a prístupu k zdrojom. Obmedzenia môžu byť aplikované na používateľa, reláciu alebo globálne a pomáhajú chrániť pred útokmi typu denial-of-service alebo nadmerným využívaním zdrojov.
+  Aby sa predišlo zneužitiu a zabezpečilo spravodlivé využívanie serverových zdrojov, MCP servery môžu implementovať obmedzenie rýchlosti volaní nástrojov a prístupu k zdrojom. Obmedzenia môžu byť aplikované na používateľa, reláciu alebo globálne a pomáhajú chrániť pred útokmi typu denial-of-service alebo nadmerným využívaním zdrojov.
 
 Kombináciou týchto mechanizmov MCP poskytuje bezpečný základ pre integráciu jazykových modelov s externými nástrojmi a zdrojmi dát, pričom používateľom a vývojárom dáva detailnú kontrolu nad prístupom a používaním.
 
@@ -252,7 +252,7 @@ Komunikácia MCP používa štruktúrované JSON správy na zabezpečenie jasnej
 - **Odpoveď modelu**  
   Vracia model (prostredníctvom klienta), táto správa obsahuje:
   - Generovaný text alebo dokončenie na základe výzvy a kontextu
-  - Voliteľné inštrukcie na volanie nástroja, ak model rozhodne, že je potrebné nástroj vyvolať
+  - Voliteľné inštrukcie na volanie nástroja, ak model rozhodne, že nástroj má byť vyvolaný
   - Odkazy na zdroje alebo ďalší kontext podľa potreby
 
 - **Žiadosť nástroja**  
@@ -274,7 +274,7 @@ Tieto štruktúrované správy zabezpečujú, že každý krok v pracovnom postu
 - MCP používa architektúru klient-server na prepojenie modelov s externými schopnosťami
 - Ekosystém pozostáva z klientov, hostiteľov, serverov, nástrojov a zdrojov dát
 - Komunikácia môže prebiehať cez STDIO, SSE alebo WebSockets
-- Nástroje sú základné jednotky funkcionality sprístupnené modelom
+- Nástroje sú základné jednotky funkčnosti sprístupnené modelom
 - Štruktúrované komunikačné protokoly zabezpečujú konzistentnú interakciu
 
 ## Cvičenie
@@ -283,7 +283,7 @@ Navrhnite jednoduchý MCP nástroj, ktorý by bol užitočný vo vašej oblasti.
 1. Ako by sa nástroj volal
 2. Aké parametre by prijímal
 3. Aký výstup by vracal
-4. Ako by model mohol tento nástroj použiť na riešenie problémov používateľa
+4. Ako by model mohol tento nástroj využiť na riešenie problémov používateľov
 
 
 ---

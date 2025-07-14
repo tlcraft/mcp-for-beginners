@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T18:08:04+00:00",
+  "translation_date": "2025-07-14T05:49:04+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "id"
 }
@@ -43,7 +43,7 @@ Detail arsitektur dan implementasi memberikan wawasan berharga dalam membangun s
 
 Studi kasus ini menunjukkan penerapan praktis MCP untuk mengotomatisasi proses alur kerja. Ini memperlihatkan bagaimana alat MCP dapat digunakan untuk:
 
-- Mengambil data dari platform online (YouTube)
+- Mengekstrak data dari platform online (YouTube)
 - Memperbarui item kerja di sistem Azure DevOps
 - Membuat alur kerja otomatis yang dapat diulang
 - Mengintegrasikan data antar sistem yang berbeda
@@ -54,7 +54,7 @@ Contoh ini menggambarkan bagaimana implementasi MCP yang relatif sederhana dapat
 
 Studi kasus ini memandu Anda menghubungkan klien konsol Python ke server Model Context Protocol (MCP) untuk mengambil dan mencatat dokumentasi Microsoft yang kontekstual dan real-time. Anda akan belajar bagaimana:
 
-- Terhubung ke server MCP menggunakan klien Python dan SDK MCP resmi
+- Menghubungkan ke server MCP menggunakan klien Python dan SDK MCP resmi
 - Menggunakan klien HTTP streaming untuk pengambilan data real-time yang efisien
 - Memanggil alat dokumentasi di server dan mencatat respons langsung ke konsol
 - Mengintegrasikan dokumentasi Microsoft terbaru ke dalam alur kerja tanpa meninggalkan terminal
@@ -116,4 +116,4 @@ Dengan mempelajari implementasi ini, Anda dapat memperoleh wawasan tentang pola 
 Selanjutnya: Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

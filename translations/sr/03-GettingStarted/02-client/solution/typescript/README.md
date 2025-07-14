@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fae57a69c2b62cb7d92ff12da65f36c3",
-  "translation_date": "2025-05-17T10:12:24+00:00",
+  "translation_date": "2025-07-13T18:46:02+00:00",
   "source_file": "03-GettingStarted/02-client/solution/typescript/README.md",
   "language_code": "sr"
 }
 -->
-# Pokretanje ovog primera
+# Покретање овог примера
 
-Preporučuje se instalacija `uv`, ali nije obavezno, pogledajte [uputstva](https://docs.astral.sh/uv/#highlights)
+Препоручује се да инсталирате `uv`, али није обавезно, погледајте [instructions](https://docs.astral.sh/uv/#highlights)
 
-## -1- Instalirajte zavisnosti
+## -1- Инсталирајте зависности
 
 ```bash
 npm install
 ```
 
-## -3- Pokrenite server
+## -3- Покрените сервер
 
 ```bash
 npm run build
 ```
 
-## -4- Pokrenite klijenta
+## -4- Покрените клијента
 
 ```sh
 npm run client
 ```
 
-Treba da vidite rezultat sličan:
+Требало би да видите резултат сличан овоме:
 
 ```text
 Prompt:  {
@@ -40,5 +40,5 @@ Resource template:  file
 Tool result:  { content: [ { type: 'text', text: '9' } ] }
 ```
 
-**Одричање од одговорности**:  
-Овај документ је преведен коришћењем услуге за превођење помоћу вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, молимо вас да будете свесни да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитативним извором. За критичне информације, препоручује се професионални превод од стране људи. Нисмо одговорни за било каква погрешна тумачења или неразумевања настала коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

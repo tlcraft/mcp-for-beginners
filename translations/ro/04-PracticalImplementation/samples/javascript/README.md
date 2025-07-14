@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:53:38+00:00",
+  "translation_date": "2025-07-13T23:29:01+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "ro"
 }
 -->
 # Exemplu
 
-Acesta este un exemplu JavaScript pentru un server MCP
+Acesta este un exemplu JavaScript pentru un MCP Server
 
-Iată un exemplu de înregistrare a unui instrument unde înregistrăm un instrument care face un apel fictiv la un LLM:
+Iată un exemplu de înregistrare a unui instrument în care înregistrăm un instrument care face un apel mock către un LLM:
 
 ```javascript
 this.mcpServer.tool(
@@ -76,17 +76,17 @@ this.mcpServer.tool(
 
 ## Instalare
 
-Rulează comanda următoare:
+Rulează următoarea comandă:
 
 ```bash
 npm install
 ```
 
-## Executare
+## Rulare
 
 ```bash
 npm start
 ```
 
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să obținem acuratețe, vă rugăm să fiți conștienți de faptul că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională umană. Nu suntem responsabili pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

@@ -2,60 +2,60 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a22b7dd11cd7690f99f9195877cafdc3",
-  "translation_date": "2025-06-10T05:57:17+00:00",
+  "translation_date": "2025-07-14T08:00:09+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab2/README.md",
   "language_code": "cs"
 }
 -->
-# 🌐 Module 2: MCP with AI Toolkit Fundamentals
+# 🌐 Modul 2: Základy MCP s AI Toolkit
 
-[![Duration](https://img.shields.io/badge/Duration-20%20minutes-blue.svg)]()
-[![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-yellow.svg)]()
-[![Prerequisites](https://img.shields.io/badge/Prerequisites-Module%201%20Complete-orange.svg)]()
+[![Délka](https://img.shields.io/badge/Duration-20%20minutes-blue.svg)]()
+[![Obtížnost](https://img.shields.io/badge/Difficulty-Intermediate-yellow.svg)]()
+[![Předpoklady](https://img.shields.io/badge/Prerequisites-Module%201%20Complete-orange.svg)]()
 
-## 📋 Learning Objectives
+## 📋 Výukové cíle
 
-By the end of this module, you will be able to:
-- ✅ Understand Model Context Protocol (MCP) architecture and benefits
-- ✅ Explore Microsoft's MCP server ecosystem
-- ✅ Integrate MCP servers with AI Toolkit Agent Builder
-- ✅ Build a functional browser automation agent using Playwright MCP
-- ✅ Configure and test MCP tools within your agents
-- ✅ Export and deploy MCP-powered agents for production use
+Na konci tohoto modulu budete schopni:
+- ✅ Porozumět architektuře a výhodám Model Context Protocol (MCP)
+- ✅ Prozkoumat ekosystém MCP serverů od Microsoftu
+- ✅ Integrovat MCP servery s AI Toolkit Agent Builderem
+- ✅ Vytvořit funkční agenta pro automatizaci prohlížeče pomocí Playwright MCP
+- ✅ Konfigurovat a testovat MCP nástroje ve svých agentech
+- ✅ Exportovat a nasadit agenty s podporou MCP do produkčního prostředí
 
-## 🎯 Building on Module 1
+## 🎯 Navazujeme na Modul 1
 
-In Module 1, we mastered AI Toolkit basics and created our first Python Agent. Now we'll **supercharge** your agents by connecting them to external tools and services through the revolutionary **Model Context Protocol (MCP)**. 
+V Modulu 1 jsme si osvojili základy AI Toolkitu a vytvořili našeho prvního Python agenta. Nyní vaše agenty **vylepšíme** propojením s externími nástroji a službami prostřednictvím revolučního **Model Context Protocolu (MCP)**.
 
-Think of this as upgrading from a basic calculator to a full computer - your AI agents will gain the ability to:
-- 🌐 Browse and interact with websites
-- 📁 Access and manipulate files
-- 🔧 Integrate with enterprise systems
-- 📊 Process real-time data from APIs
+Představte si to jako přechod z obyčejné kalkulačky na plnohodnotný počítač – vaši AI agenti získají schopnosti:
+- 🌐 Procházet a interagovat s webovými stránkami
+- 📁 Přistupovat k souborům a manipulovat s nimi
+- 🔧 Integrovat se s podnikovými systémy
+- 📊 Zpracovávat data v reálném čase z API
 
-## 🧠 Understanding Model Context Protocol (MCP)
+## 🧠 Porozumění Model Context Protocol (MCP)
 
-### 🔍 What is MCP?
+### 🔍 Co je MCP?
 
-Model Context Protocol (MCP) is the **"USB-C for AI applications"** - a revolutionary open standard that connects Large Language Models (LLMs) to external tools, data sources, and services. Just as USB-C eliminated cable chaos by providing one universal connector, MCP eliminates AI integration complexity with one standardized protocol.
+Model Context Protocol (MCP) je **„USB-C pro AI aplikace“** – revoluční otevřený standard, který propojuje velké jazykové modely (LLM) s externími nástroji, zdroji dat a službami. Stejně jako USB-C odstranilo chaos s kabely díky jednomu univerzálnímu konektoru, MCP zjednodušuje integraci AI pomocí jednoho standardizovaného protokolu.
 
-### 🎯 The Problem MCP Solves
+### 🎯 Problém, který MCP řeší
 
-**Before MCP:**
-- 🔧 Custom integrations for every tool
-- 🔄 Vendor lock-in with proprietary solutions  
-- 🔒 Security vulnerabilities from ad-hoc connections
-- ⏱️ Months of development for basic integrations
+**Před MCP:**
+- 🔧 Vlastní integrace pro každý nástroj
+- 🔄 Závislost na dodavatelích a proprietárních řešeních  
+- 🔒 Bezpečnostní rizika z ad-hoc připojení
+- ⏱️ Měsíce vývoje pro základní integrace
 
-**With MCP:**
-- ⚡ Plug-and-play tool integration
-- 🔄 Vendor-agnostic architecture
-- 🛡️ Built-in security best practices
-- 🚀 Minutes to add new capabilities
+**S MCP:**
+- ⚡ Plug-and-play integrace nástrojů
+- 🔄 Architektura nezávislá na dodavateli
+- 🛡️ Vestavěné bezpečnostní standardy
+- 🚀 Přidání nových funkcí během minut
 
-### 🏗️ MCP Architecture Deep Dive
+### 🏗️ Hloubkový pohled na architekturu MCP
 
-MCP follows a **client-server architecture** that creates a secure, scalable ecosystem:
+MCP využívá **klient-server architekturu**, která vytváří bezpečný a škálovatelný ekosystém:
 
 ```mermaid
 graph TB
@@ -71,203 +71,200 @@ graph TB
     F --> J[Enterprise Systems]
 ```
 
-**🔧 Core Components:**
+**🔧 Hlavní komponenty:**
 
-| Component | Role | Examples |
-|-----------|------|----------|
-| **MCP Hosts** | Applications that consume MCP services | Claude Desktop, VS Code, AI Toolkit |
-| **MCP Clients** | Protocol handlers (1:1 with servers) | Built into host applications |
-| **MCP Servers** | Expose capabilities via standard protocol | Playwright, Files, Azure, GitHub |
-| **Transport Layer** | Communication methods | stdio, HTTP, WebSockets |
+| Komponenta | Role | Příklady |
+|------------|------|----------|
+| **MCP Hosts** | Aplikace využívající MCP služby | Claude Desktop, VS Code, AI Toolkit |
+| **MCP Clients** | Zpracovatelé protokolu (1:1 se servery) | Zabudováno v hostitelských aplikacích |
+| **MCP Servers** | Nabízejí funkce přes standardní protokol | Playwright, Files, Azure, GitHub |
+| **Transportní vrstva** | Způsoby komunikace | stdio, HTTP, WebSockets |
 
+## 🏢 Ekosystém MCP serverů Microsoftu
 
-## 🏢 Microsoft's MCP Server Ecosystem
+Microsoft vede ekosystém MCP s komplexní sadou podnikových serverů, které řeší reálné obchodní potřeby.
 
-Microsoft leads the MCP ecosystem with a comprehensive suite of enterprise-grade servers that address real-world business needs.
+### 🌟 Vybrané MCP servery od Microsoftu
 
-### 🌟 Featured Microsoft MCP Servers
+#### 1. ☁️ Azure MCP Server  
+**🔗 Repozitář**: [azure/azure-mcp](https://github.com/azure/azure-mcp)  
+**🎯 Účel**: Komplexní správa Azure zdrojů s AI integrací
 
-#### 1. ☁️ Azure MCP Server
-**🔗 Repository**: [azure/azure-mcp](https://github.com/azure/azure-mcp)
-**🎯 Purpose**: Comprehensive Azure resource management with AI integration
+**✨ Klíčové vlastnosti:**  
+- Deklarativní provisioning infrastruktury  
+- Monitorování zdrojů v reálném čase  
+- Doporučení pro optimalizaci nákladů  
+- Kontrola souladu s bezpečnostními standardy
 
-**✨ Key Features:**
-- Declarative infrastructure provisioning
-- Real-time resource monitoring
-- Cost optimization recommendations
-- Security compliance checking
+**🚀 Použití:**  
+- Infrastructure-as-Code s AI asistencí  
+- Automatické škálování zdrojů  
+- Optimalizace nákladů na cloud  
+- Automatizace DevOps workflow
 
-**🚀 Use Cases:**
-- Infrastructure-as-Code with AI assistance
-- Automated resource scaling
-- Cloud cost optimization
-- DevOps workflow automation
+#### 2. 📊 Microsoft Dataverse MCP  
+**📚 Dokumentace**: [Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)  
+**🎯 Účel**: Přirozený jazykový přístup k obchodním datům
 
-#### 2. 📊 Microsoft Dataverse MCP
-**📚 Documentation**: [Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)
-**🎯 Purpose**: Natural language interface for business data
+**✨ Klíčové vlastnosti:**  
+- Dotazy do databáze v přirozeném jazyce  
+- Porozumění obchodnímu kontextu  
+- Vlastní šablony promptů  
+- Správa podnikových dat
 
-**✨ Key Features:**
-- Natural language database queries
-- Business context understanding
-- Custom prompt templates
-- Enterprise data governance
+**🚀 Použití:**  
+- Reporting business intelligence  
+- Analýza zákaznických dat  
+- Přehledy prodejních kanálů  
+- Dotazy na data pro compliance
 
-**🚀 Use Cases:**
-- Business intelligence reporting
-- Customer data analysis
-- Sales pipeline insights
-- Compliance data queries
+#### 3. 🌐 Playwright MCP Server  
+**🔗 Repozitář**: [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)  
+**🎯 Účel**: Automatizace prohlížeče a webová interakce
 
-#### 3. 🌐 Playwright MCP Server
-**🔗 Repository**: [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
-**🎯 Purpose**: Browser automation and web interaction capabilities
+**✨ Klíčové vlastnosti:**  
+- Automatizace napříč prohlížeči (Chrome, Firefox, Safari)  
+- Inteligentní detekce prvků  
+- Generování screenshotů a PDF  
+- Monitorování síťového provozu
 
-**✨ Key Features:**
-- Cross-browser automation (Chrome, Firefox, Safari)
-- Intelligent element detection
-- Screenshot and PDF generation
-- Network traffic monitoring
+**🚀 Použití:**  
+- Automatizované testování  
+- Web scraping a extrakce dat  
+- Monitorování UI/UX  
+- Automatizace konkurenční analýzy
 
-**🚀 Use Cases:**
-- Automated testing workflows
-- Web scraping and data extraction
-- UI/UX monitoring
-- Competitive analysis automation
+#### 4. 📁 Files MCP Server  
+**🔗 Repozitář**: [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)  
+**🎯 Účel**: Inteligentní operace se souborovým systémem
 
-#### 4. 📁 Files MCP Server
-**🔗 Repository**: [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)
-**🎯 Purpose**: Intelligent file system operations
+**✨ Klíčové vlastnosti:**  
+- Deklarativní správa souborů  
+- Synchronizace obsahu  
+- Integrace verzovacího systému  
+- Extrakce metadat
 
-**✨ Key Features:**
-- Declarative file management
-- Content synchronization
-- Version control integration
-- Metadata extraction
+**🚀 Použití:**  
+- Správa dokumentace  
+- Organizace kódových repozitářů  
+- Workflow publikování obsahu  
+- Zpracování souborů v datových pipelinech
 
-**🚀 Use Cases:**
-- Documentation management
-- Code repository organization
-- Content publishing workflows
-- Data pipeline file handling
+#### 5. 📝 MarkItDown MCP Server  
+**🔗 Repozitář**: [microsoft/markitdown](https://github.com/microsoft/markitdown)  
+**🎯 Účel**: Pokročilé zpracování a manipulace s Markdownem
 
-#### 5. 📝 MarkItDown MCP Server
-**🔗 Repository**: [microsoft/markitdown](https://github.com/microsoft/markitdown)
-**🎯 Purpose**: Advanced Markdown processing and manipulation
+**✨ Klíčové vlastnosti:**  
+- Pokročilé parsování Markdownu  
+- Konverze formátů (MD ↔ HTML ↔ PDF)  
+- Analýza struktury obsahu  
+- Zpracování šablon
 
-**✨ Key Features:**
-- Rich Markdown parsing
-- Format conversion (MD ↔ HTML ↔ PDF)
-- Content structure analysis
-- Template processing
+**🚀 Použití:**  
+- Workflow technické dokumentace  
+- Systémy pro správu obsahu  
+- Generování reportů  
+- Automatizace znalostních databází
 
-**🚀 Use Cases:**
-- Technical documentation workflows
-- Content management systems
-- Report generation
-- Knowledge base automation
+#### 6. 📈 Clarity MCP Server  
+**📦 Balíček**: [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)  
+**🎯 Účel**: Webová analytika a analýza chování uživatelů
 
-#### 6. 📈 Clarity MCP Server
-**📦 Package**: [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)
-**🎯 Purpose**: Web analytics and user behavior insights
+**✨ Klíčové vlastnosti:**  
+- Analýza heatmap  
+- Nahrávky uživatelských relací  
+- Výkonové metriky  
+- Analýza konverzních trychtýřů
 
-**✨ Key Features:**
-- Heatmap data analysis
-- User session recordings
-- Performance metrics
-- Conversion funnel analysis
+**🚀 Použití:**  
+- Optimalizace webu  
+- Výzkum uživatelské zkušenosti  
+- Analýza A/B testů  
+- Dashboardy business intelligence
 
-**🚀 Use Cases:**
-- Website optimization
-- User experience research
-- A/B testing analysis
-- Business intelligence dashboards
+### 🌍 Komunitní ekosystém
 
-### 🌍 Community Ecosystem
+Kromě Microsoft serverů zahrnuje MCP ekosystém také:  
+- **🐙 GitHub MCP**: Správa repozitářů a analýza kódu  
+- **🗄️ Databázové MCP**: Integrace PostgreSQL, MySQL, MongoDB  
+- **☁️ Cloud provider MCP**: Nástroje pro AWS, GCP, Digital Ocean  
+- **📧 Komunikační MCP**: Integrace Slack, Teams, Email
 
-Beyond Microsoft's servers, the MCP ecosystem includes:
-- **🐙 GitHub MCP**: Repository management and code analysis
-- **🗄️ Database MCPs**: PostgreSQL, MySQL, MongoDB integrations
-- **☁️ Cloud Provider MCPs**: AWS, GCP, Digital Ocean tools
-- **📧 Communication MCPs**: Slack, Teams, Email integrations
+## 🛠️ Praktická část: Vytvoření agenta pro automatizaci prohlížeče
 
-## 🛠️ Hands-On Lab: Building a Browser Automation Agent
+**🎯 Cíl projektu**: Vytvořit inteligentního agenta pro automatizaci prohlížeče pomocí Playwright MCP serveru, který dokáže procházet weby, extrahovat informace a provádět složité webové interakce.
 
-**🎯 Project Goal**: Create an intelligent browser automation agent using Playwright MCP server that can navigate websites, extract information, and perform complex web interactions.
+### 🚀 Fáze 1: Základní nastavení agenta
 
-### 🚀 Phase 1: Agent Foundation Setup
-
-#### Step 1: Initialize Your Agent
-1. **Open AI Toolkit Agent Builder**
-2. **Create New Agent** with the following configuration:
-   - **Name**: `BrowserAgent`
-   - **Model**: Choose GPT-4o 
+#### Krok 1: Inicializace agenta  
+1. **Otevřete AI Toolkit Agent Builder**  
+2. **Vytvořte nového agenta** s následující konfigurací:  
+   - **Jméno**: `BrowserAgent`  
+   - **Model**: Vyberte GPT-4o  
 
 ![BrowserAgent](../../../../translated_images/BrowserAgent.09c1adde5e136573b64ab1baecd830049830e295eac66cb18bebb85fb386e00a.cs.png)
 
+### 🔧 Fáze 2: Workflow integrace MCP
 
-### 🔧 Phase 2: MCP Integration Workflow
-
-#### Step 3: Add MCP Server Integration
-1. **Navigate to Tools Section** in Agent Builder
-2. **Click "Add Tool"** to open the integration menu
-3. **Select "MCP Server"** from available options
+#### Krok 3: Přidání MCP serveru  
+1. **Přejděte do sekce Nástroje** v Agent Builderu  
+2. **Klikněte na "Add Tool"** pro otevření menu integrací  
+3. **Vyberte "MCP Server"** z dostupných možností  
 
 ![AddMCP](../../../../translated_images/AddMCP.afe3308ac20aa94469a5717b632d77b2197b9838a438b05d39aeb2db3ec47ef1.cs.png)
 
-**🔍 Understanding Tool Types:**
-- **Built-in Tools**: Pre-configured AI Toolkit functions
-- **MCP Servers**: External service integrations
-- **Custom APIs**: Your own service endpoints
-- **Function Calling**: Direct model function access
+**🔍 Porozumění typům nástrojů:**  
+- **Vestavěné nástroje**: Přednastavené funkce AI Toolkitu  
+- **MCP servery**: Integrace externích služeb  
+- **Vlastní API**: Vaše vlastní koncové body služeb  
+- **Volání funkcí**: Přímý přístup k funkcím modelu
 
-#### Step 4: MCP Server Selection
-1. **Choose "MCP Server"** option to proceed
+#### Krok 4: Výběr MCP serveru  
+1. **Zvolte možnost "MCP Server"** pro pokračování  
 ![AddMCPServer](../../../../translated_images/AddMCPServer.69b911ccef872cbd0d0c0c2e6a00806916e1673e543b902a23dee23e6ff54b4c.cs.png)
 
-2. **Browse MCP Catalog** to explore available integrations
+2. **Prohlédněte si katalog MCP** a dostupné integrace  
 ![MCPCatalog](../../../../translated_images/MCPCatalog.a817d053145699006264f5a475f2b48fbd744e43633f656b6453c15a09ba5130.cs.png)
 
+### 🎮 Fáze 3: Konfigurace Playwright MCP
 
-### 🎮 Phase 3: Playwright MCP Configuration
-
-#### Step 5: Select and Configure Playwright
-1. **Click "Use Featured MCP Servers"** to access Microsoft's verified servers
-2. **Select "Playwright"** from the featured list
-3. **Accept Default MCP ID** or customize for your environment
+#### Krok 5: Výběr a konfigurace Playwright  
+1. **Klikněte na "Use Featured MCP Servers"** pro přístup k ověřeným serverům Microsoftu  
+2. **Vyberte "Playwright"** ze seznamu  
+3. **Přijměte výchozí MCP ID** nebo přizpůsobte podle svého prostředí  
 
 ![MCPID](../../../../translated_images/MCPID.67d446052979e819c945ff7b6430196ef587f5217daadd3ca52fa9659c1245c9.cs.png)
 
-#### Step 6: Enable Playwright Capabilities
-**🔑 Critical Step**: Select **ALL** available Playwright methods for maximum functionality
+#### Krok 6: Aktivace funkcí Playwright  
+**🔑 Klíčový krok**: Vyberte **VŠECHNY** dostupné metody Playwright pro maximální funkčnost  
 
 ![Tools](../../../../translated_images/Tools.3ea23c447b4d9feccbd7101e6dcf9e27cb0e5273f351995fde62c5abf9a78b4c.cs.png)
 
-**🛠️ Essential Playwright Tools:**
-- **Navigation**: `goto`, `goBack`, `goForward`, `reload`
-- **Interaction**: `click`, `fill`, `press`, `hover`, `drag`
-- **Extraction**: `textContent`, `innerHTML`, `getAttribute`
-- **Validation**: `isVisible`, `isEnabled`, `waitForSelector`
-- **Capture**: `screenshot`, `pdf`, `video`
-- **Network**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
+**🛠️ Základní nástroje Playwright:**  
+- **Navigace**: `goto`, `goBack`, `goForward`, `reload`  
+- **Interakce**: `click`, `fill`, `press`, `hover`, `drag`  
+- **Extrahování**: `textContent`, `innerHTML`, `getAttribute`  
+- **Validace**: `isVisible`, `isEnabled`, `waitForSelector`  
+- **Zachycení**: `screenshot`, `pdf`, `video`  
+- **Síť**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
 
-#### Step 7: Verify Integration Success
-**✅ Success Indicators:**
-- All tools appear in Agent Builder interface
-- No error messages in the integration panel
-- Playwright server status shows "Connected"
+#### Krok 7: Ověření úspěšné integrace  
+**✅ Indikátory úspěchu:**  
+- Všechny nástroje jsou viditelné v rozhraní Agent Builderu  
+- Žádné chybové hlášky v panelu integrace  
+- Stav Playwright serveru ukazuje „Connected“  
 
 ![AgentTools](../../../../translated_images/AgentTools.053cfb96a17e02199dcc6563010d2b324d4fc3ebdd24889657a6950647a52f63.cs.png)
 
-**🔧 Troubleshooting Common Issues:**
-- **Connection Failed**: Check internet connectivity and firewall settings
-- **Missing Tools**: Ensure all capabilities were selected during setup
-- **Permission Errors**: Verify VS Code has necessary system permissions
+**🔧 Řešení běžných problémů:**  
+- **Nepodařilo se připojit**: Zkontrolujte internetové připojení a nastavení firewallu  
+- **Chybějící nástroje**: Ujistěte se, že byly vybrány všechny funkce během nastavení  
+- **Chyby oprávnění**: Ověřte, že VS Code má potřebná systémová oprávnění
 
-### 🎯 Phase 4: Advanced Prompt Engineering
+### 🎯 Fáze 4: Pokročilé návrhy promptů
 
-#### Step 8: Design Intelligent System Prompts
-Create sophisticated prompts that leverage Playwright's full capabilities:
+#### Krok 8: Navrhněte inteligentní systémové prompty  
+Vytvořte sofistikované prompty, které využijí plný potenciál Playwrightu:
 
 ```markdown
 # Web Automation Expert System Prompt
@@ -307,10 +304,10 @@ You are an advanced web automation specialist with deep expertise in browser aut
 - Follow website terms of service
 ```
 
-#### Step 9: Create Dynamic User Prompts
-Design prompts that demonstrate various capabilities:
+#### Krok 9: Vytvořte dynamické uživatelské prompty  
+Navrhněte prompty, které demonstrují různé schopnosti:
 
-**🌐 Web Analysis Example:**
+**🌐 Příklad webové analýzy:**  
 ```markdown
 Navigate to github.com/kinfey and provide a comprehensive analysis including:
 1. Repository structure and organization
@@ -325,59 +322,58 @@ Include screenshots at key steps and provide actionable insights.
 
 ![Prompt](../../../../translated_images/Prompt.bfc846605db4999f4d9c1b09c710ef63cae7b3057444e68bf07240fb142d9f8f.cs.png)
 
-### 🚀 Phase 5: Execution and Testing
+### 🚀 Fáze 5: Spuštění a testování
 
-#### Step 10: Execute Your First Automation
-1. **Click "Run"** to launch the automation sequence
-2. **Monitor Real-time Execution**:
-   - Chrome browser launches automatically
-   - Agent navigates to target website
-   - Screenshots capture each major step
-   - Analysis results stream in real-time
+#### Krok 10: Spusťte první automatizaci  
+1. **Klikněte na "Run"** pro zahájení automatizační sekvence  
+2. **Sledujte průběh v reálném čase**:  
+   - Automatické spuštění prohlížeče Chrome  
+   - Agent naviguje na cílovou stránku  
+   - Screenshoty zachycují každý důležitý krok  
+   - Výsledky analýzy se zobrazují v reálném čase  
 
 ![Browser](../../../../translated_images/Browser.ec011d0bd64d0d112c8a29bd8cc44c76d0bbfd0b019cb2983ef679328435ce5d.cs.png)
 
-#### Step 11: Analyze Results and Insights
-Review comprehensive analysis in Agent Builder's interface:
+#### Krok 11: Analyzujte výsledky a poznatky  
+Prohlédněte si podrobnou analýzu v rozhraní Agent Builderu:
 
 ![Result](../../../../translated_images/Result.8638f2b6703e9ea6d58d4e4475e39456b6a51d4c787f9bf481bae694d370a69a.cs.png)
 
-### 🌟 Phase 6: Advanced Capabilities and Deployment
+### 🌟 Fáze 6: Pokročilé funkce a nasazení
 
-#### Step 12: Export and Production Deployment
-Agent Builder supports multiple deployment options:
+#### Krok 12: Export a produkční nasazení  
+Agent Builder podporuje různé možnosti nasazení:
 
 ![Code](../../../../translated_images/Code.d9eeeead0b96db0ca19c5b10ad64cfea8c1d0d1736584262970a4d43e1403d13.cs.png)
 
-## 🎓 Module 2 Summary & Next Steps
+## 🎓 Shrnutí modulu 2 a další kroky
 
-### 🏆 Achievement Unlocked: MCP Integration Master
+### 🏆 Odemčený úspěch: Mistr integrace MCP
 
-**✅ Skills Mastered:**
-- [ ] Understanding MCP architecture and benefits
-- [ ] Navigating Microsoft's MCP server ecosystem
-- [ ] Integrating Playwright MCP with AI Toolkit
-- [ ] Building sophisticated browser automation agents
-- [ ] Advanced prompt engineering for web automation
+**✅ Osvojené dovednosti:**  
+- [ ] Porozumění architektuře a výhodám MCP  
+- [ ] Orientace v ekosystému MCP serverů Microsoftu  
+- [ ] Integrace Playwright MCP s AI Toolkitem  
+- [ ] Vytváření pokročilých agentů pro automatizaci prohlížeče  
+- [ ] Pokročilé návrhy promptů pro webovou automatizaci
 
-### 📚 Additional Resources
+### 📚 Další zdroje
 
-- **🔗 MCP Specification**: [Official Protocol Documentation](https://modelcontextprotocol.io/)
-- **🛠️ Playwright API**: [Complete Method Reference](https://playwright.dev/docs/api/class-playwright)
-- **🏢 Microsoft MCP Servers**: [Enterprise Integration Guide](https://github.com/microsoft/mcp-servers)
-- **🌍 Community Examples**: [MCP Server Gallery](https://github.com/modelcontextprotocol/servers)
+- **🔗 Specifikace MCP**: [Oficiální dokumentace protokolu](https://modelcontextprotocol.io/)  
+- **🛠️ Playwright API**: [Kompletní reference metod](https://playwright.dev/docs/api/class-playwright)  
+- **🏢 Microsoft MCP servery**: [Průvodce podnikovou integrací](https://github.com/microsoft/mcp-servers)  
+- **🌍 Komunitní příklady**: [Galerie MCP serverů](https://github.com/modelcontextprotocol/servers)
 
-**🎉 Congratulations!** You've successfully mastered MCP integration and can now build production-ready AI agents with external tool capabilities!
+**🎉 Gratulujeme!** Úspěšně jste zvládli integraci MCP a nyní můžete vytvářet produkčně připravené AI agenty s podporou externích nástrojů!
 
+### 🔜 Pokračujte do dalšího modulu
 
-### 🔜 Continue to Next Module
-
-Ready to take your MCP skills to the next level? Proceed to **[Module 3: Advanced MCP Development with AI Toolkit](../lab3/README.md)** where you'll learn how to:
-- Create your own custom MCP servers
-- Configure and use the latest MCP Python SDK
-- Set up the MCP Inspector for debugging
-- Master advanced MCP server development workflows
-- Build a Weather MCP Server from scratch
+Chcete posunout své MCP dovednosti na vyšší úroveň? Pokračujte do **[Modulu 3: Pokročilý vývoj MCP s AI Toolkit](../lab3/README.md)**, kde se naučíte:  
+- Vytvářet vlastní MCP servery  
+- Konfigurovat a používat nejnovější MCP Python SDK  
+- Nastavit MCP Inspector pro ladění  
+- Ovládnout pokročilé workflow vývoje MCP serverů
+- Vytvoření Weather MCP serveru od základů
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

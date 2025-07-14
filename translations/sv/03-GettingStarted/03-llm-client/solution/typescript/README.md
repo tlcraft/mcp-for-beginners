@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6d6315e03f591fb5a39be91da88585dc",
-  "translation_date": "2025-05-17T10:55:52+00:00",
+  "translation_date": "2025-07-13T19:20:04+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/typescript/README.md",
   "language_code": "sv"
 }
 -->
 # Köra detta exempel
 
-Detta exempel kräver att du har en LLM på klienten. LLM behöver att du antingen kör detta i en Codespaces eller att du ställer in en personlig åtkomsttoken i GitHub för att fungera.
+Det här exemplet innebär att ha en LLM på klienten. LLM kräver att du antingen kör detta i en Codespaces eller att du ställer in en personlig åtkomsttoken i GitHub för att det ska fungera.
 
 ## -1- Installera beroenden
 
@@ -17,13 +17,13 @@ Detta exempel kräver att du har en LLM på klienten. LLM behöver att du anting
 npm install
 ```
 
-## -3- Kör servern
+## -3- Starta servern
 
 ```bash
 npm run build
 ```
 
-## -4- Kör klienten
+## -4- Starta klienten
 
 ```sh
 npm run client
@@ -41,4 +41,4 @@ Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Vi strävar efter noggrannhet, men var medveten om att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi är inte ansvariga för eventuella missförstånd eller feltolkningar som uppstår från användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

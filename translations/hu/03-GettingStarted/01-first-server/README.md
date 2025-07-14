@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:13:23+00:00",
+  "translation_date": "2025-07-13T17:38:46+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "hu"
 }
@@ -19,9 +19,9 @@ Most, hogy telepítetted az SDK-t, hozzuk létre a projektet:
 
 Adj hozzá egy eszközt és egy erőforrást az alábbi kód beillesztésével:
 
-### -6- Végleges kód
+### -6 Végleges kód
 
-Adjuk hozzá az utolsó szükséges kódot, hogy a szerver elindulhasson:
+Adjunk hozzá minden szükséges kódot, hogy a szerver elindulhasson:
 
 ### -7- A szerver tesztelése
 
@@ -53,13 +53,13 @@ Gratulálunk, sikeresen létrehoztad és futtattad az első szerveredet!
 
 Az MCP hivatalos SDK-kat biztosít több nyelvhez:
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Microsoft együttműködésével karbantartva
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Spring AI együttműködésével karbantartva
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Hivatalos TypeScript megvalósítás
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Hivatalos Python megvalósítás
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Hivatalos Kotlin megvalósítás
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AI együttműködésével karbantartva
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Hivatalos Rust megvalósítás
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) – Microsoft együttműködésével karbantartva
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) – Spring AI együttműködésével karbantartva
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) – Hivatalos TypeScript megvalósítás
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) – Hivatalos Python megvalósítás
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) – Hivatalos Kotlin megvalósítás
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) – Loopwork AI együttműködésével karbantartva
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) – Hivatalos Rust megvalósítás
 
 ## Főbb tanulságok
 
@@ -81,22 +81,22 @@ Hozz létre egy egyszerű MCP szervert egy általad választott eszközzel:
 
 1. Valósítsd meg az eszközt a preferált nyelveden (.NET, Java, Python vagy JavaScript).
 2. Határozd meg a bemeneti paramétereket és a visszatérési értékeket.
-3. Futtasd az inspector eszközt, hogy megbizonyosodj róla, a szerver a vártnak megfelelően működik.
+3. Futtasd az inspector eszközt, hogy megbizonyosodj róla, a szerver a vártak szerint működik.
 4. Teszteld a megvalósítást különböző bemenetekkel.
 
 ## Megoldás
 
-[Megoldás](./solution/README.md)
+[Solution](./solution/README.md)
 
 ## További források
 
 - [Ügynökök építése Model Context Protocol segítségével Azure-on](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Távoli MCP Azure Container Apps segítségével (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [.NET OpenAI MCP Ügynök](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Távoli MCP Azure Container Apps használatával (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Mi következik
 
 Következő: [MCP kliensek használatának megkezdése](../02-client/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

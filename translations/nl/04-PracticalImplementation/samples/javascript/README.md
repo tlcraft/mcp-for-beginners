@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:51:51+00:00",
+  "translation_date": "2025-07-13T23:28:19+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "nl"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Dit is een JavaScript voorbeeld voor een MCP Server
 
-Hier is een voorbeeld van een toolregistratie waarbij we een tool registreren die een mock-aanroep naar een LLM doet:
+Hier is een voorbeeld van een tool-registratie waarbij we een tool registreren die een mock-aanroep naar een LLM doet:
 
 ```javascript
 this.mcpServer.tool(
@@ -76,7 +76,7 @@ this.mcpServer.tool(
 
 ## Installeren
 
-Voer de volgende opdracht uit:
+Voer het volgende commando uit:
 
 ```bash
 npm install
@@ -88,5 +88,5 @@ npm install
 npm start
 ```
 
-**Disclaimer**:
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we ons best doen voor nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+**Disclaimer**:  
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

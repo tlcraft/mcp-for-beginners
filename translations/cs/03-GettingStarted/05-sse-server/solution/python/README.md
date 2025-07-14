@@ -2,66 +2,65 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-27T16:23:21+00:00",
+  "translation_date": "2025-07-13T20:16:51+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "cs"
 }
 -->
-# Running this sample
+# Spuštění tohoto příkladu
 
-Рекомендуется установить `uv`, но это не обязательно, смотрите [инструкции](https://docs.astral.sh/uv/#highlights)
+Doporučujeme nainstalovat `uv`, ale není to nutné, viz [instrukce](https://docs.astral.sh/uv/#highlights)
 
-## -0- Создайте виртуальное окружение
+## -0- Vytvoření virtuálního prostředí
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Активируйте виртуальное окружение
+## -1- Aktivace virtuálního prostředí
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Установите зависимости
+## -2- Instalace závislostí
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Запустите пример
-
+## -3- Spuštění příkladu
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Проверьте пример
+## -4- Testování příkladu
 
-С сервером, запущенным в одном терминале, откройте другой терминал и выполните следующую команду:
+Se spuštěným serverem v jednom terminálu otevřete další terminál a spusťte následující příkaz:
 
 ```bash
 mcp dev server.py
 ```
 
-Это должно запустить веб-сервер с визуальным интерфейсом, позволяющим тестировать пример.
+Tím by se měl spustit webový server s vizuálním rozhraním, které vám umožní příklad otestovat.
 
-После подключения к серверу:
+Jakmile je server připojen:
 
-- попробуйте вывести список инструментов и запустите `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- zkuste vypsat nástroje a spustit `add` s argumenty 2 a 4, v výsledku byste měli vidět 6.
+- přejděte na resources a resource template a zavolejte get_greeting, zadejte jméno a měli byste vidět pozdrav s vámi zadaným jménem.
 
-### Testing in ClI mode
+### Testování v CLI režimu
 
-The inspector you ran is actually a Node.js app and `mcp dev` — это оболочка для этого.
+Inspector, který jste spustili, je vlastně Node.js aplikace a `mcp dev` je její obal.
 
-Вы можете запустить его напрямую в режиме CLI, выполнив следующую команду:
+Můžete ji spustit přímo v CLI režimu pomocí následujícího příkazu:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Это выведет все доступные на сервере инструменты. Вы должны увидеть следующий вывод:
+Tím se vypíšou všechny nástroje dostupné na serveru. Měli byste vidět následující výstup:
 
 ```text
 {
@@ -92,13 +91,13 @@ npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method too
 }
 ```
 
-Чтобы вызвать инструмент, введите:
+Pro vyvolání nástroje napište:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Вы должны увидеть следующий вывод:
+Měli byste vidět následující výstup:
 
 ```text
 {
@@ -113,8 +112,8 @@ npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method too
 ```
 
 > ![!TIP]
-> Обычно запуск инспектора в режиме CLI значительно быстрее, чем в браузере.
-> Подробнее об инспекторе читайте [здесь](https://github.com/modelcontextprotocol/inspector).
+> Obvykle je mnohem rychlejší spustit inspector v CLI režimu než v prohlížeči.
+> Více o inspectoru si přečtěte [zde](https://github.com/modelcontextprotocol/inspector).
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-12T22:20:39+00:00",
+  "translation_date": "2025-07-13T21:17:22+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "zh"
 }
@@ -15,12 +15,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 - 你将搭建一个 MCP 服务器，在处理项目时向客户端推送进度通知。
 - 客户端会实时显示每条通知。
-- 本指南涵盖前提条件、设置、运行及故障排除。
+- 本指南涵盖了前提条件、设置、运行和故障排除。
 
 ### 前提条件
 
 - Python 3.9 或更高版本
-- `mcp` Python 包（使用 `pip install mcp` 安装）
+- `mcp` Python 包（通过 `pip install mcp` 安装）
 
 ### 安装与设置
 
@@ -73,14 +73,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 运行经典 HTTP 流式客户端
 
-1. 打开一个新的终端（激活相同的虚拟环境和目录）：
+1. 打开一个新终端（激活相同的虚拟环境和目录）：
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py
    ```
 
-2. 你将看到依次打印的流式消息：
+2. 你会看到按顺序打印的流式消息：
 
    ```text
    Running classic HTTP streaming client...
@@ -111,12 +111,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 运行 MCP 流式客户端
 
-1. 打开一个新的终端（激活相同的虚拟环境和目录）：
+1. 打开一个新终端（激活相同的虚拟环境和目录）：
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. 你将看到服务器处理每个项目时实时打印的通知：
+2. 你会看到服务器处理每个项目时实时打印的通知：
    ```
    Running MCP client...
    Starting client...
@@ -132,20 +132,20 @@ CO_OP_TRANSLATOR_METADATA:
 ### 关键实现步骤
 
 1. **使用 FastMCP 创建 MCP 服务器。**
-2. **定义一个处理列表并通过 `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **定义一个处理列表并通过 `ctx.info()` 或 `ctx.log()` 发送通知的工具。**
+3. **使用 `transport="streamable-http"` 运行服务器。**
+4. **实现一个带消息处理器的客户端，实时显示收到的通知。**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### 代码讲解
+- 服务器使用异步函数和 MCP 上下文发送进度更新。
+- 客户端实现异步消息处理器，打印通知和最终结果。
 
-### Tips & Troubleshooting
+### 小贴士与故障排除
 
-- Use `async/await` 发送通知的工具，实现非阻塞操作。**
-- 始终在服务器和客户端处理异常，确保程序健壮。
-- 通过多个客户端测试以观察实时更新效果。
-- 遇到错误时，请检查 Python 版本并确保所有依赖已安装。
+- 使用 `async/await` 实现非阻塞操作。
+- 服务器和客户端都要处理异常，保证健壮性。
+- 通过多个客户端测试，观察实时更新效果。
+- 遇到错误时，检查 Python 版本并确保所有依赖已安装。
 
 **免责声明**：  
-本文件已使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

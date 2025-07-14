@@ -2,62 +2,70 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6e562d7e5a77c8982da4aa8f762ad1d8",
-  "translation_date": "2025-07-02T09:17:14+00:00",
+  "translation_date": "2025-07-14T02:59:13+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "pa"
 }
 -->
-# Securing AI Workflows: Entra ID Authentication for Model Context Protocol Servers
+# AI ਵਰਕਫਲੋਜ਼ ਦੀ ਸੁਰੱਖਿਆ: ਮਾਡਲ ਕਾਂਟੈਕਸਟ ਪ੍ਰੋਟੋਕੋਲ ਸਰਵਰਾਂ ਲਈ Entra ID ਪ੍ਰਮਾਣਿਕਤਾ
 
-## Introduction  
-ਆਪਣੇ Model Context Protocol (MCP) ਸਰਵਰ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨਾ ਓਹਨਾ ਹੀ ਜਰੂਰੀ ਹੈ ਜਿਵੇਂ ਘਰ ਦਾ ਮੁੱਖ ਦਰਵਾਜ਼ਾ ਲਾਕ ਕਰਨਾ। ਜੇ ਤੁਸੀਂ MCP ਸਰਵਰ ਖੁੱਲ੍ਹਾ ਛੱਡ ਦਿੰਦੇ ਹੋ ਤਾਂ ਤੁਹਾਡੇ ਟੂਲਾਂ ਅਤੇ ਡਾਟਾ ਨੂੰ ਬਿਨਾਂ ਅਧਿਕਾਰ ਦੇ ਲੋਕਾਂ ਵੱਲੋਂ ਐਕਸੈਸ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਸੁਰੱਖਿਆ ਦੀਆਂ ਸਮੱਸਿਆਵਾਂ ਪੈਦਾ ਹੋ ਸਕਦੀਆਂ ਹਨ। Microsoft Entra ID ਇੱਕ ਮਜ਼ਬੂਤ ਕਲਾਉਡ-ਆਧਾਰਿਤ ਆਈਡੈਂਟਿਟੀ ਅਤੇ ਐਕਸੈਸ ਮੈਨੇਜਮੈਂਟ ਹੱਲ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ, ਜੋ ਇਹ ਯਕੀਨੀ ਬਣਾਉਂਦਾ ਹੈ ਕਿ ਸਿਰਫ ਅਧਿਕਾਰਤ ਯੂਜ਼ਰ ਅਤੇ ਐਪਲੀਕੇਸ਼ਨਾਂ ਹੀ ਤੁਹਾਡੇ MCP ਸਰਵਰ ਨਾਲ ਇੰਟਰੈਕਟ ਕਰ ਸਕਣ। ਇਸ ਭਾਗ ਵਿੱਚ, ਤੁਸੀਂ ਸਿੱਖੋਗੇ ਕਿ Entra ID ਪ੍ਰਮਾਣੀਕਰਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਪਣੇ AI ਵਰਕਫਲੋਜ਼ ਨੂੰ ਕਿਵੇਂ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ।
+## ਪਰਿਚਯ  
+ਆਪਣੇ ਮਾਡਲ ਕਾਂਟੈਕਸਟ ਪ੍ਰੋਟੋਕੋਲ (MCP) ਸਰਵਰ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨਾ ਉਸੇ ਤਰ੍ਹਾਂ ਜਰੂਰੀ ਹੈ ਜਿਵੇਂ ਆਪਣੇ ਘਰ ਦੇ ਮੁੱਖ ਦਰਵਾਜ਼ੇ ਨੂੰ ਤਾਲਾ ਲਗਾਉਣਾ। ਜੇ ਤੁਸੀਂ MCP ਸਰਵਰ ਖੁੱਲਾ ਛੱਡਦੇ ਹੋ ਤਾਂ ਤੁਹਾਡੇ ਟੂਲ ਅਤੇ ਡਾਟਾ ਅਣਅਧਿਕ੍ਰਿਤ ਪਹੁੰਚ ਲਈ ਖੁੱਲ੍ਹੇ ਹੋ ਜਾਂਦੇ ਹਨ, ਜਿਸ ਨਾਲ ਸੁਰੱਖਿਆ ਵਿੱਚ ਚੋਰੀ ਹੋ ਸਕਦੀ ਹੈ। Microsoft Entra ID ਇੱਕ ਮਜ਼ਬੂਤ ਕਲਾਉਡ-ਆਧਾਰਿਤ ਪਹਿਚਾਣ ਅਤੇ ਪਹੁੰਚ ਪ੍ਰਬੰਧਨ ਹੱਲ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ, ਜੋ ਇਹ ਯਕੀਨੀ ਬਣਾਉਂਦਾ ਹੈ ਕਿ ਸਿਰਫ ਅਧਿਕ੍ਰਿਤ ਉਪਭੋਗਤਾ ਅਤੇ ਐਪਲੀਕੇਸ਼ਨ ਹੀ ਤੁਹਾਡੇ MCP ਸਰਵਰ ਨਾਲ ਇੰਟਰੈਕਟ ਕਰ ਸਕਦੇ ਹਨ। ਇਸ ਭਾਗ ਵਿੱਚ, ਤੁਸੀਂ ਸਿੱਖੋਗੇ ਕਿ ਕਿਵੇਂ Entra ID ਪ੍ਰਮਾਣਿਕਤਾ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਪਣੇ AI ਵਰਕਫਲੋਜ਼ ਦੀ ਸੁਰੱਖਿਆ ਕਰਨੀ ਹੈ।
 
-## Learning Objectives  
-ਇਸ ਭਾਗ ਦੇ ਅੰਤ ਤੱਕ, ਤੁਸੀਂ ਸਮਝ ਸਕੋਗੇ:
+## ਸਿੱਖਣ ਦੇ ਉਦੇਸ਼  
+ਇਸ ਭਾਗ ਦੇ ਅੰਤ ਤੱਕ, ਤੁਸੀਂ ਸਮਰੱਥ ਹੋਵੋਗੇ:
 
-- MCP ਸਰਵਰਾਂ ਦੀ ਸੁਰੱਖਿਆ ਦੇ ਮਹੱਤਵ ਨੂੰ।  
-- Microsoft Entra ID ਅਤੇ OAuth 2.0 ਪ੍ਰਮਾਣੀਕਰਨ ਦੇ ਬੁਨਿਆਦੀ ਤੱਤਾਂ ਨੂੰ ਸਮਝਾਉਣਾ।  
-- ਪਬਲਿਕ ਅਤੇ ਗੁਪਤ ਕਲਾਇੰਟ ਵਿੱਚ ਫਰਕ ਪਛਾਣਨਾ।  
-- Entra ID ਪ੍ਰਮਾਣੀਕਰਨ ਨੂੰ ਲੋਕਲ (ਪਬਲਿਕ ਕਲਾਇੰਟ) ਅਤੇ ਰਿਮੋਟ (ਗੁਪਤ ਕਲਾਇੰਟ) MCP ਸਰਵਰ ਸਥਿਤੀਆਂ ਵਿੱਚ ਲਾਗੂ ਕਰਨਾ।  
-- AI ਵਰਕਫਲੋਜ਼ ਬਣਾਉਂਦਿਆਂ ਸੁਰੱਖਿਆ ਦੀਆਂ ਸਰਵੋਤਮ ਪ੍ਰਥਾਵਾਂ ਨੂੰ ਅਪਣਾਉਣਾ।  
+- MCP ਸਰਵਰਾਂ ਦੀ ਸੁਰੱਖਿਆ ਦੇ ਮਹੱਤਵ ਨੂੰ ਸਮਝਣਾ।  
+- Microsoft Entra ID ਅਤੇ OAuth 2.0 ਪ੍ਰਮਾਣਿਕਤਾ ਦੇ ਮੂਲ ਤੱਤਾਂ ਨੂੰ ਸਮਝਾਉਣਾ।  
+- ਪਬਲਿਕ ਅਤੇ ਕਨਫਿਡੈਂਸ਼ੀਅਲ ਕਲਾਇੰਟਾਂ ਵਿੱਚ ਫਰਕ ਪਛਾਣਨਾ।  
+- Entra ID ਪ੍ਰਮਾਣਿਕਤਾ ਨੂੰ ਸਥਾਨਕ (ਪਬਲਿਕ ਕਲਾਇੰਟ) ਅਤੇ ਰਿਮੋਟ (ਕਨਫਿਡੈਂਸ਼ੀਅਲ ਕਲਾਇੰਟ) MCP ਸਰਵਰ ਸਥਿਤੀਆਂ ਵਿੱਚ ਲਾਗੂ ਕਰਨਾ।  
+- AI ਵਰਕਫਲੋਜ਼ ਵਿਕਾਸ ਦੌਰਾਨ ਸੁਰੱਖਿਆ ਦੀਆਂ ਸਭ ਤੋਂ ਵਧੀਆ ਪ੍ਰਥਾਵਾਂ ਨੂੰ ਅਪਣਾਉਣਾ।  
 
-## Security and MCP  
-ਜਿਵੇਂ ਤੁਸੀਂ ਆਪਣੇ ਘਰ ਦਾ ਮੁੱਖ ਦਰਵਾਜ਼ਾ ਖੁੱਲ੍ਹਾ ਨਹੀਂ ਛੱਡਦੇ, ਉਸੇ ਤਰ੍ਹਾਂ ਤੁਹਾਨੂੰ MCP ਸਰਵਰ ਨੂੰ ਵੀ ਕਿਸੇ ਨੂੰ ਖੁੱਲ੍ਹਾ ਐਕਸੈਸ ਨਹੀਂ ਦੇਣਾ ਚਾਹੀਦਾ। ਆਪਣੇ AI ਵਰਕਫਲੋਜ਼ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨਾ ਮਜ਼ਬੂਤ, ਭਰੋਸੇਯੋਗ ਅਤੇ ਸੁਰੱਖਿਅਤ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਉਣ ਲਈ ਜਰੂਰੀ ਹੈ। ਇਹ ਅਧਿਆਇ ਤੁਹਾਨੂੰ Microsoft Entra ID ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਪਣੇ MCP ਸਰਵਰਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨ ਬਾਰੇ ਜਾਣੂ ਕਰਵਾਏਗਾ, ਤਾਂ ਜੋ ਸਿਰਫ ਅਧਿਕਾਰਤ ਯੂਜ਼ਰ ਅਤੇ ਐਪਲੀਕੇਸ਼ਨ ਹੀ ਤੁਹਾਡੇ ਟੂਲਾਂ ਅਤੇ ਡਾਟਾ ਨਾਲ ਕੰਮ ਕਰ ਸਕਣ।  
+## ਸੁਰੱਖਿਆ ਅਤੇ MCP  
 
-## Why Security Matters for MCP Servers  
-ਕਲਪਨਾ ਕਰੋ ਕਿ ਤੁਹਾਡੇ MCP ਸਰਵਰ ਕੋਲ ਇੱਕ ਐਸਾ ਟੂਲ ਹੈ ਜੋ ਈਮੇਲ ਭੇਜ ਸਕਦਾ ਹੈ ਜਾਂ ਗਾਹਕਾਂ ਦਾ ਡਾਟਾਬੇਸ ਐਕਸੈਸ ਕਰ ਸਕਦਾ ਹੈ। ਜੇ ਸਰਵਰ ਅਸੁਰੱਖਿਅਤ ਹੋਵੇ ਤਾਂ ਕੋਈ ਵੀ ਇਹ ਟੂਲ ਵਰਤ ਸਕਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਬਿਨਾਂ ਅਧਿਕਾਰ ਦੇ ਡਾਟਾ ਐਕਸੈਸ, ਸਪੈਮ ਜਾਂ ਹੋਰ ਨੁਕਸਾਨਦਾਇਕ ਗਤੀਵਿਧੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ।  
+ਜਿਵੇਂ ਤੁਸੀਂ ਆਪਣੇ ਘਰ ਦਾ ਮੁੱਖ ਦਰਵਾਜ਼ਾ ਖੁੱਲਾ ਨਹੀਂ ਛੱਡਦੇ, ਓਸੇ ਤਰ੍ਹਾਂ MCP ਸਰਵਰ ਨੂੰ ਵੀ ਕਿਸੇ ਲਈ ਖੁੱਲਾ ਨਹੀਂ ਛੱਡਣਾ ਚਾਹੀਦਾ। ਆਪਣੇ AI ਵਰਕਫਲੋਜ਼ ਦੀ ਸੁਰੱਖਿਆ ਕਰਨਾ ਮਜ਼ਬੂਤ, ਭਰੋਸੇਯੋਗ ਅਤੇ ਸੁਰੱਖਿਅਤ ਐਪਲੀਕੇਸ਼ਨਾਂ ਬਣਾਉਣ ਲਈ ਬਹੁਤ ਜਰੂਰੀ ਹੈ। ਇਹ ਅਧਿਆਇ ਤੁਹਾਨੂੰ Microsoft Entra ID ਦੀ ਵਰਤੋਂ ਕਰਕੇ MCP ਸਰਵਰਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨ ਦਾ ਤਰੀਕਾ ਦੱਸੇਗਾ, ਤਾਂ ਜੋ ਸਿਰਫ ਅਧਿਕ੍ਰਿਤ ਉਪਭੋਗਤਾ ਅਤੇ ਐਪਲੀਕੇਸ਼ਨ ਹੀ ਤੁਹਾਡੇ ਟੂਲ ਅਤੇ ਡਾਟਾ ਨਾਲ ਕੰਮ ਕਰ ਸਕਣ।  
 
-ਪ੍ਰਮਾਣੀਕਰਨ ਲਾਗੂ ਕਰਕੇ, ਤੁਸੀਂ ਯਕੀਨੀ ਬਣਾਉਂਦੇ ਹੋ ਕਿ ਹਰ ਸਰਵਰ ਨੂੰ ਕੀਤੀ ਗਈ ਬੇਨਤੀ ਦੀ ਪੁਸ਼ਟੀ ਹੋਵੇ, ਜਿਸ ਨਾਲ ਬੇਨਤੀ ਕਰਨ ਵਾਲੇ ਯੂਜ਼ਰ ਜਾਂ ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਪਛਾਣ ਹੋ ਸਕੇ। ਇਹ ਤੁਹਾਡੇ AI ਵਰਕਫਲੋਜ਼ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨ ਦਾ ਪਹਿਲਾ ਅਤੇ ਸਭ ਤੋਂ ਜਰੂਰੀ ਕਦਮ ਹੈ।  
+## MCP ਸਰਵਰਾਂ ਲਈ ਸੁਰੱਖਿਆ ਕਿਉਂ ਜਰੂਰੀ ਹੈ  
 
-## Introduction to Microsoft Entra ID  
-[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) ਇੱਕ ਕਲਾਉਡ-ਆਧਾਰਿਤ ਆਈਡੈਂਟਿਟੀ ਅਤੇ ਐਕਸੈਸ ਮੈਨੇਜਮੈਂਟ ਸੇਵਾ ਹੈ। ਇਸਨੂੰ ਆਪਣੇ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਇੱਕ ਯੂਨੀਵਰਸਲ ਸੁਰੱਖਿਆ ਗਾਰਡ ਵਜੋਂ ਸੋਚੋ। ਇਹ ਯੂਜ਼ਰ ਦੀਆਂ ਪਹਚਾਣਾਂ ਦੀ ਪੁਸ਼ਟੀ (ਪ੍ਰਮਾਣੀਕਰਨ) ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਕੀ ਕਰਨ ਦੀ ਆਗਿਆ ਹੈ (ਅਧਿਕਾਰ) ਦਾ ਨਿਰਣਯ ਕਰਨ ਦੀ ਮੁਸ਼ਕਲ ਪ੍ਰਕਿਰਿਆ ਨੂੰ ਸੰਭਾਲਦਾ ਹੈ।  
+ਕਲਪਨਾ ਕਰੋ ਕਿ ਤੁਹਾਡੇ MCP ਸਰਵਰ ਕੋਲ ਇੱਕ ਐਸਾ ਟੂਲ ਹੈ ਜੋ ਈਮੇਲ ਭੇਜ ਸਕਦਾ ਹੈ ਜਾਂ ਗਾਹਕਾਂ ਦੇ ਡਾਟਾਬੇਸ ਤੱਕ ਪਹੁੰਚ ਕਰ ਸਕਦਾ ਹੈ। ਜੇ ਸਰਵਰ ਸੁਰੱਖਿਅਤ ਨਾ ਹੋਵੇ ਤਾਂ ਕੋਈ ਵੀ ਉਸ ਟੂਲ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਅਣਅਧਿਕ੍ਰਿਤ ਡਾਟਾ ਪਹੁੰਚ, ਸਪੈਮ ਜਾਂ ਹੋਰ ਨੁਕਸਾਨਦਾਇਕ ਕਾਰਵਾਈਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ।  
 
-Entra ID ਦੀ ਵਰਤੋਂ ਕਰਕੇ, ਤੁਸੀਂ:  
-- ਯੂਜ਼ਰਾਂ ਲਈ ਸੁਰੱਖਿਅਤ ਸਾਈਨ-ਇਨ ਯਕੀਨੀ ਬਣਾਉਂਦੇ ਹੋ।  
-- APIs ਅਤੇ ਸਰਵਿਸਜ਼ ਦੀ ਰੱਖਿਆ ਕਰਦੇ ਹੋ।  
-- ਕੇਂਦਰੀ ਸਥਾਨ ਤੋਂ ਐਕਸੈਸ ਨੀਤੀਆਂ ਦਾ ਪ੍ਰਬੰਧ ਕਰਦੇ ਹੋ।  
+ਪ੍ਰਮਾਣਿਕਤਾ ਲਾਗੂ ਕਰਕੇ, ਤੁਸੀਂ ਇਹ ਯਕੀਨੀ ਬਣਾਉਂਦੇ ਹੋ ਕਿ ਹਰ ਬੇਨਤੀ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾਂਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਬੇਨਤੀ ਕਰਨ ਵਾਲੇ ਉਪਭੋਗਤਾ ਜਾਂ ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਪਹਿਚਾਣ ਪੁਸ਼ਟੀ ਹੁੰਦੀ ਹੈ। ਇਹ ਤੁਹਾਡੇ AI ਵਰਕਫਲੋਜ਼ ਦੀ ਸੁਰੱਖਿਆ ਦਾ ਪਹਿਲਾ ਅਤੇ ਸਭ ਤੋਂ ਜਰੂਰੀ ਕਦਮ ਹੈ।  
 
-MCP ਸਰਵਰਾਂ ਲਈ, Entra ID ਇੱਕ ਮਜ਼ਬੂਤ ਅਤੇ ਭਰੋਸੇਯੋਗ ਹੱਲ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ ਜੋ ਇਹ ਨਿਰਧਾਰਤ ਕਰਦਾ ਹੈ ਕਿ ਕੌਣ ਤੁਹਾਡੇ ਸਰਵਰ ਦੀਆਂ ਖੂਬੀਆਂ ਨੂੰ ਵਰਤ ਸਕਦਾ ਹੈ।  
+## Microsoft Entra ID ਦਾ ਪਰਿਚਯ  
 
----
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) ਇੱਕ ਕਲਾਉਡ-ਆਧਾਰਿਤ ਪਹਿਚਾਣ ਅਤੇ ਪਹੁੰਚ ਪ੍ਰਬੰਧਨ ਸੇਵਾ ਹੈ। ਇਸਨੂੰ ਆਪਣੇ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਇੱਕ ਵਿਸ਼ਵ ਭਰ ਦਾ ਸੁਰੱਖਿਆ ਗਾਰਡ ਸਮਝੋ। ਇਹ ਉਪਭੋਗਤਾ ਦੀ ਪਹਿਚਾਣ ਦੀ ਜਾਂਚ (ਪ੍ਰਮਾਣਿਕਤਾ) ਅਤੇ ਉਹਨਾਂ ਨੂੰ ਕੀ ਕਰਨ ਦੀ ਆਗਿਆ ਹੈ (ਪ੍ਰਮਾਣਿਕਰਨ) ਦਾ ਕੰਮ ਸੰਭਾਲਦਾ ਹੈ।  
 
-## Understanding the Magic: How Entra ID Authentication Works  
-Entra ID ਪ੍ਰਮਾਣੀਕਰਨ ਲਈ **OAuth 2.0** ਵਰਗੇ ਖੁੱਲ੍ਹੇ ਮਿਆਰਾਂ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ। ਜਦੋਂ ਕਿ ਵਿਸਥਾਰ ਕਾਫੀ ਜਟਿਲ ਹੋ ਸਕਦਾ ਹੈ, ਮੁੱਖ ਵਿਚਾਰ ਸਧਾਰਣ ਹੈ ਅਤੇ ਇੱਕ ਉਦਾਹਰਨ ਨਾਲ ਸਮਝਿਆ ਜਾ ਸਕਦਾ ਹੈ।  
+Entra ID ਦੀ ਵਰਤੋਂ ਨਾਲ, ਤੁਸੀਂ:  
 
-### A Gentle Introduction to OAuth 2.0: The Valet Key  
-OAuth 2.0 ਨੂੰ ਆਪਣੇ ਕਾਰ ਲਈ ਇੱਕ ਵੈਲੇਟ ਸੇਵਾ ਵਾਂਗ ਸਮਝੋ। ਜਦੋਂ ਤੁਸੀਂ ਰੈਸਟੋਰੈਂਟ ਪਹੁੰਚਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ ਵੈਲੇਟ ਨੂੰ ਆਪਣੀ ਮਾਸਟਰ ਚਾਬੀ ਨਹੀਂ ਦਿੰਦੇ। ਇਸ ਦੀ ਬਜਾਏ, ਤੁਸੀਂ ਇੱਕ **ਵੈਲੇਟ ਕੀ** ਦਿੰਦੇ ਹੋ ਜਿਸ ਵਿੱਚ ਸੀਮਿਤ ਅਧਿਕਾਰ ਹੁੰਦੇ ਹਨ—ਇਹ ਕਾਰ ਚਾਲੂ ਕਰ ਸਕਦੀ ਹੈ ਅਤੇ ਦਰਵਾਜ਼ੇ ਲਾਕ ਕਰ ਸਕਦੀ ਹੈ, ਪਰ ਟਰੰਕ ਜਾਂ ਗਲੋਵ ਕਮਪਾਰਟਮੈਂਟ ਨਹੀਂ ਖੋਲ੍ਹ ਸਕਦੀ।  
+- ਉਪਭੋਗਤਾਵਾਂ ਲਈ ਸੁਰੱਖਿਅਤ ਸਾਈਨ-ਇਨ ਯੋਗ ਬਣਾਉਂਦੇ ਹੋ।  
+- APIs ਅਤੇ ਸੇਵਾਵਾਂ ਦੀ ਸੁਰੱਖਿਆ ਕਰਦੇ ਹੋ।  
+- ਕੇਂਦਰੀ ਸਥਾਨ ਤੋਂ ਪਹੁੰਚ ਨੀਤੀਆਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰਦੇ ਹੋ।  
+
+MCP ਸਰਵਰਾਂ ਲਈ, Entra ID ਇੱਕ ਮਜ਼ਬੂਤ ਅਤੇ ਵਿਸ਼ਵਾਸਯੋਗ ਹੱਲ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ ਜੋ ਇਹ ਨਿਯੰਤਰਿਤ ਕਰਦਾ ਹੈ ਕਿ ਕੌਣ ਤੁਹਾਡੇ ਸਰਵਰ ਦੀਆਂ ਖੂਬੀਆਂ ਤੱਕ ਪਹੁੰਚ ਸਕਦਾ ਹੈ।  
+
+---  
+
+## ਜਾਦੂ ਨੂੰ ਸਮਝਣਾ: Entra ID ਪ੍ਰਮਾਣਿਕਤਾ ਕਿਵੇਂ ਕੰਮ ਕਰਦੀ ਹੈ  
+
+Entra ID ਪ੍ਰਮਾਣਿਕਤਾ ਲਈ ਖੁੱਲ੍ਹੇ ਮਿਆਰਾਂ ਜਿਵੇਂ ਕਿ **OAuth 2.0** ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ। ਜਦੋਂ ਕਿ ਵਿਸਥਾਰ ਕਾਫੀ ਜਟਿਲ ਹੋ ਸਕਦੇ ਹਨ, ਮੁੱਖ ਧਾਰਨਾ ਸਧਾਰਣ ਹੈ ਅਤੇ ਇੱਕ ਉਦਾਹਰਨ ਨਾਲ ਸਮਝੀ ਜਾ ਸਕਦੀ ਹੈ।  
+
+### OAuth 2.0 ਦਾ ਨਰਮ ਪਰਿਚਯ: ਵੈਲੇਟ ਕੀ  
+
+OAuth 2.0 ਨੂੰ ਆਪਣੇ ਕਾਰ ਲਈ ਵੈਲੇਟ ਸੇਵਾ ਵਾਂਗ ਸੋਚੋ। ਜਦੋਂ ਤੁਸੀਂ ਕਿਸੇ ਰੈਸਟੋਰੈਂਟ 'ਤੇ ਪਹੁੰਚਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ ਵੈਲੇਟ ਨੂੰ ਆਪਣੀ ਮਾਸਟਰ ਕੀ ਨਹੀਂ ਦਿੰਦੇ। ਬਲਕਿ ਤੁਸੀਂ ਇੱਕ **ਵੈਲੇਟ ਕੀ** ਦਿੰਦੇ ਹੋ ਜਿਸ ਦੀਆਂ ਹੱਦਬੰਦੀਵਾਂ ਹੁੰਦੀਆਂ ਹਨ—ਇਹ ਕਾਰ ਚਲਾ ਸਕਦੀ ਹੈ ਅਤੇ ਦਰਵਾਜ਼ੇ ਲਾਕ ਕਰ ਸਕਦੀ ਹੈ, ਪਰ ਟਰੰਕ ਜਾਂ ਗਲੋਵ ਕੰਪਾਰਟਮੈਂਟ ਨਹੀਂ ਖੋਲ੍ਹ ਸਕਦੀ।  
 
 ਇਸ ਉਦਾਹਰਨ ਵਿੱਚ:  
-- **ਤੁਸੀਂ** ਹੋ **ਯੂਜ਼ਰ**।  
+
+- **ਤੁਸੀਂ** ਹੋ **ਉਪਭੋਗਤਾ**।  
 - **ਤੁਹਾਡੀ ਕਾਰ** ਹੈ **MCP ਸਰਵਰ** ਜਿਸ ਵਿੱਚ ਕੀਮਤੀ ਟੂਲ ਅਤੇ ਡਾਟਾ ਹੈ।  
 - **ਵੈਲੇਟ** ਹੈ **Microsoft Entra ID**।  
-- **ਪਾਰਕਿੰਗ ਅਟੈਂਡੈਂਟ** ਹੈ **MCP ਕਲਾਇੰਟ** (ਐਪਲੀਕੇਸ਼ਨ ਜੋ ਸਰਵਰ ਨੂੰ ਐਕਸੈਸ ਕਰਨਾ ਚਾਹੁੰਦਾ ਹੈ)।  
+- **ਪਾਰਕਿੰਗ ਅਟੈਂਡੈਂਟ** ਹੈ **MCP ਕਲਾਇੰਟ** (ਜੋ ਐਪਲੀਕੇਸ਼ਨ ਸਰਵਰ ਤੱਕ ਪਹੁੰਚਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਿਹਾ ਹੈ)।  
 - **ਵੈਲੇਟ ਕੀ** ਹੈ **ਐਕਸੈਸ ਟੋਕਨ**।  
 
-ਐਕਸੈਸ ਟੋਕਨ ਇੱਕ ਸੁਰੱਖਿਅਤ ਟੈਕਸਟ ਸਟਰਿੰਗ ਹੁੰਦੀ ਹੈ ਜੋ MCP ਕਲਾਇੰਟ ਨੂੰ ਤੁਹਾਡੇ ਸਾਈਨ ਇਨ ਕਰਨ ਤੋਂ ਬਾਅਦ Entra ID ਵੱਲੋਂ ਮਿਲਦੀ ਹੈ। ਫਿਰ ਕਲਾਇੰਟ ਇਹ ਟੋਕਨ ਹਰ ਬੇਨਤੀ ਨਾਲ MCP ਸਰਵਰ ਨੂੰ ਦਿੰਦਾ ਹੈ। ਸਰਵਰ ਟੋਕਨ ਦੀ ਜਾਂਚ ਕਰਦਾ ਹੈ ਕਿ ਬੇਨਤੀ ਵੈਧ ਹੈ ਅਤੇ ਕਲਾਇੰਟ ਕੋਲ ਲੋੜੀਂਦੇ ਅਧਿਕਾਰ ਹਨ, ਬਿਨਾਂ ਤੁਹਾਡੇ ਅਸਲ ਪ੍ਰਮਾਣਪੱਤਰ (ਜਿਵੇਂ ਪਾਸਵਰਡ) ਨੂੰ ਸਾਂਭਣ ਦੀ ਲੋੜ ਦੇ।  
+ਐਕਸੈਸ ਟੋਕਨ ਇੱਕ ਸੁਰੱਖਿਅਤ ਟੈਕਸਟ ਸਟਰਿੰਗ ਹੁੰਦੀ ਹੈ ਜੋ MCP ਕਲਾਇੰਟ ਨੂੰ Entra ID ਤੋਂ ਤੁਹਾਡੇ ਸਾਈਨ-ਇਨ ਕਰਨ ਤੋਂ ਬਾਅਦ ਮਿਲਦੀ ਹੈ। ਕਲਾਇੰਟ ਇਹ ਟੋਕਨ ਹਰ ਬੇਨਤੀ ਨਾਲ MCP ਸਰਵਰ ਨੂੰ ਦਿੰਦਾ ਹੈ। ਸਰਵਰ ਟੋਕਨ ਦੀ ਜਾਂਚ ਕਰਦਾ ਹੈ ਤਾਂ ਜੋ ਇਹ ਯਕੀਨੀ ਬਣਾਇਆ ਜਾ ਸਕੇ ਕਿ ਬੇਨਤੀ ਕਾਨੂੰਨੀ ਹੈ ਅਤੇ ਕਲਾਇੰਟ ਕੋਲ ਲੋੜੀਂਦੇ ਅਧਿਕਾਰ ਹਨ, ਬਿਨਾਂ ਤੁਹਾਡੇ ਅਸਲ ਪ੍ਰਮਾਣ ਪੱਤਰਾਂ (ਜਿਵੇਂ ਕਿ ਪਾਸਵਰਡ) ਨੂੰ ਸੰਭਾਲਣ ਦੀ ਲੋੜ ਦੇ।  
 
-### The Authentication Flow  
-ਇਸ ਪ੍ਰਕਿਰਿਆ ਦਾ ਅਮਲ ਇਸ ਤਰ੍ਹਾਂ ਹੁੰਦਾ ਹੈ:  
+### ਪ੍ਰਮਾਣਿਕਤਾ ਪ੍ਰਕਿਰਿਆ  
+
+ਇਸ ਤਰ੍ਹਾਂ ਪ੍ਰਕਿਰਿਆ ਕੰਮ ਕਰਦੀ ਹੈ:  
 
 ```mermaid
 sequenceDiagram
@@ -77,53 +85,56 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```  
 
-### Introducing the Microsoft Authentication Library (MSAL)  
-ਕੋਡ ਵਿੱਚ ਜਾਣ ਤੋਂ ਪਹਿਲਾਂ, ਇੱਕ ਮਹੱਤਵਪੂਰਨ ਹਿੱਸਾ ਜਾਣਨਾ ਜਰੂਰੀ ਹੈ ਜੋ ਤੁਸੀਂ ਉਦਾਹਰਨਾਂ ਵਿੱਚ ਵੇਖੋਗੇ: **Microsoft Authentication Library (MSAL)**।  
+### Microsoft Authentication Library (MSAL) ਦਾ ਪਰਿਚਯ  
 
-MSAL ਮਾਇਕਰੋਸਾਫਟ ਵੱਲੋਂ ਵਿਕਸਿਤ ਇੱਕ ਲਾਇਬ੍ਰੇਰੀ ਹੈ ਜੋ ਡਿਵੈਲਪਰਾਂ ਲਈ ਪ੍ਰਮਾਣੀਕਰਨ ਸੰਭਾਲਣਾ ਬਹੁਤ ਆਸਾਨ ਬਣਾਉਂਦੀ ਹੈ। ਇਸ ਨਾਲ ਤੁਹਾਨੂੰ ਸੁਰੱਖਿਆ ਟੋਕਨਾਂ ਨੂੰ ਸੰਭਾਲਣ, ਸਾਈਨ-ਇਨ ਪ੍ਰਕਿਰਿਆ ਅਤੇ ਸੈਸ਼ਨ ਰੀਫ੍ਰੈਸ਼ ਕਰਨ ਲਈ ਮੁਸ਼ਕਲ ਕੋਡ ਲਿਖਣ ਦੀ ਜ਼ਰੂਰਤ ਨਹੀਂ ਪੈਂਦੀ।  
+ਕੋਡ ਵਿੱਚ ਡੁੱਬਣ ਤੋਂ ਪਹਿਲਾਂ, ਇੱਕ ਮੁੱਖ ਹਿੱਸਾ ਜਾਣਨਾ ਜਰੂਰੀ ਹੈ ਜੋ ਤੁਸੀਂ ਉਦਾਹਰਣਾਂ ਵਿੱਚ ਵੇਖੋਗੇ: **Microsoft Authentication Library (MSAL)**।  
 
-MSAL ਦੀ ਵਰਤੋਂ ਬਹੁਤ ਸਿਫਾਰਸ਼ੀ ਹੈ ਕਿਉਂਕਿ:  
-- **ਇਹ ਸੁਰੱਖਿਅਤ ਹੈ:** ਇਹ ਉਦਯੋਗ ਮਿਆਰਾਂ ਅਤੇ ਸਰਵੋਤਮ ਸੁਰੱਖਿਆ ਪ੍ਰਥਾਵਾਂ ਨੂੰ ਲਾਗੂ ਕਰਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਤੁਹਾਡੇ ਕੋਡ ਵਿੱਚ ਕਮਜ਼ੋਰੀਆਂ ਦੇ ਖਤਰੇ ਘੱਟ ਹੁੰਦੇ ਹਨ।  
-- **ਇਹ ਵਿਕਾਸ ਨੂੰ ਆਸਾਨ ਬਣਾਉਂਦਾ ਹੈ:** ਇਹ OAuth 2.0 ਅਤੇ OpenID Connect ਪ੍ਰੋਟੋਕਾਲਾਂ ਦੀ ਜਟਿਲਤਾ ਨੂੰ ਛੁਪਾ ਕੇ ਤੁਹਾਡੇ ਐਪ ਵਿੱਚ ਸਖ਼ਤ ਪ੍ਰਮਾਣੀਕਰਨ ਜੋੜਦਾ ਹੈ।  
-- **ਇਹ ਸੰਭਾਲਿਆ ਜਾਂਦਾ ਹੈ:** Microsoft MSAL ਨੂੰ ਨਵੇਂ ਸੁਰੱਖਿਆ ਖ਼ਤਰਿਆਂ ਅਤੇ ਪਲੇਟਫਾਰਮ ਬਦਲਾਅ ਲਈ ਨਿਰੰਤਰ ਅੱਪਡੇਟ ਕਰਦਾ ਹੈ।  
+MSAL ਮਾਈਕ੍ਰੋਸਾਫਟ ਵੱਲੋਂ ਵਿਕਸਿਤ ਇੱਕ ਲਾਇਬ੍ਰੇਰੀ ਹੈ ਜੋ ਡਿਵੈਲਪਰਾਂ ਲਈ ਪ੍ਰਮਾਣਿਕਤਾ ਸੰਭਾਲਣਾ ਬਹੁਤ ਆਸਾਨ ਬਣਾਉਂਦੀ ਹੈ। ਤੁਸੀਂ ਸੁਰੱਖਿਆ ਟੋਕਨਾਂ ਨੂੰ ਸੰਭਾਲਣ, ਸਾਈਨ-ਇਨ ਪ੍ਰਕਿਰਿਆ ਅਤੇ ਸੈਸ਼ਨ ਰੀਫ੍ਰੈਸ਼ ਕਰਨ ਲਈ ਸਾਰੇ ਜਟਿਲ ਕੋਡ ਲਿਖਣ ਦੀ ਜਗ੍ਹਾ MSAL ਨੂੰ ਇਹ ਕੰਮ ਸੌਂਪ ਸਕਦੇ ਹੋ।  
 
-MSAL ਕਈ ਭਾਸ਼ਾਵਾਂ ਅਤੇ ਐਪਲੀਕੇਸ਼ਨ ਫਰੇਮਵਰਕਾਂ ਲਈ ਉਪਲਬਧ ਹੈ, ਜਿਵੇਂ .NET, JavaScript/TypeScript, Python, Java, Go, ਅਤੇ ਮੋਬਾਈਲ ਪਲੇਟਫਾਰਮ iOS ਅਤੇ Android। ਇਸ ਨਾਲ ਤੁਸੀਂ ਆਪਣੇ ਸਾਰੇ ਟੈਕਨੋਲੋਜੀ ਸਟੈਕ ਵਿੱਚ ਇੱਕੋ ਜਿਹੇ ਪ੍ਰਮਾਣੀਕਰਨ ਪੈਟਰਨ ਵਰਤ ਸਕਦੇ ਹੋ।  
+MSAL ਦੀ ਵਰਤੋਂ ਇਸ ਲਈ ਸਿਫਾਰਸ਼ੀ ਹੈ ਕਿਉਂਕਿ:  
 
-MSAL ਬਾਰੇ ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ, ਤੁਸੀਂ ਅਧਿਕਾਰਿਕ [MSAL ਓਵਰਵਿਊ ਡੌਕਯੂਮੈਂਟੇਸ਼ਨ](https://learn.microsoft.com/entra/identity-platform/msal-overview) ਵੇਖ ਸਕਦੇ ਹੋ।  
+- **ਇਹ ਸੁਰੱਖਿਅਤ ਹੈ:** ਇਹ ਉਦਯੋਗ ਮਿਆਰੀ ਪ੍ਰੋਟੋਕੋਲ ਅਤੇ ਸੁਰੱਖਿਆ ਦੀਆਂ ਸਭ ਤੋਂ ਵਧੀਆ ਪ੍ਰਥਾਵਾਂ ਨੂੰ ਲਾਗੂ ਕਰਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਤੁਹਾਡੇ ਕੋਡ ਵਿੱਚ ਕਮਜ਼ੋਰੀਆਂ ਘੱਟ ਹੁੰਦੀਆਂ ਹਨ।  
+- **ਇਹ ਵਿਕਾਸ ਨੂੰ ਸਧਾਰਨ ਬਣਾਉਂਦਾ ਹੈ:** ਇਹ OAuth 2.0 ਅਤੇ OpenID Connect ਪ੍ਰੋਟੋਕੋਲ ਦੀ ਜਟਿਲਤਾ ਨੂੰ ਛੁਪਾ ਦਿੰਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਕੁਝ ਹੀ ਲਾਈਨਾਂ ਕੋਡ ਨਾਲ ਮਜ਼ਬੂਤ ਪ੍ਰਮਾਣਿਕਤਾ ਜੋੜ ਸਕਦੇ ਹੋ।  
+- **ਇਹ ਸੰਭਾਲਿਆ ਜਾਂਦਾ ਹੈ:** ਮਾਈਕ੍ਰੋਸਾਫਟ MSAL ਨੂੰ ਨਵੇਂ ਸੁਰੱਖਿਆ ਖਤਰਿਆਂ ਅਤੇ ਪਲੇਟਫਾਰਮ ਬਦਲਾਵਾਂ ਦੇ ਅਨੁਸਾਰ ਅਪਡੇਟ ਕਰਦਾ ਰਹਿੰਦਾ ਹੈ।  
 
----
+MSAL .NET, JavaScript/TypeScript, Python, Java, Go ਅਤੇ iOS ਅਤੇ Android ਵਰਗੇ ਮੋਬਾਈਲ ਪਲੇਟਫਾਰਮਾਂ ਸਮੇਤ ਕਈ ਭਾਸ਼ਾਵਾਂ ਅਤੇ ਐਪਲੀਕੇਸ਼ਨ ਫਰੇਮਵਰਕਾਂ ਨੂੰ ਸਹਿਯੋਗ ਦਿੰਦਾ ਹੈ। ਇਸਦਾ ਮਤਲਬ ਹੈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਸਾਰੇ ਤਕਨਾਲੋਜੀ ਸਟੈਕ ਵਿੱਚ ਇੱਕੋ ਜਿਹੇ ਪ੍ਰਮਾਣਿਕਤਾ ਪੈਟਰਨ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹੋ।  
 
-## Securing Your MCP Server with Entra ID: A Step-by-Step Guide  
-ਹੁਣ, ਆਓ ਵੇਖੀਏ ਕਿ ਇੱਕ ਲੋਕਲ MCP ਸਰਵਰ ਨੂੰ ਕਿਵੇਂ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ (ਜੋ `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+MSAL ਬਾਰੇ ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ, ਤੁਸੀਂ ਅਧਿਕਾਰਿਕ [MSAL ਓਵਰਵਿਊ ਦਸਤਾਵੇਜ਼](https://learn.microsoft.com/entra/identity-platform/msal-overview) ਵੇਖ ਸਕਦੇ ਹੋ।  
 
-### Scenario 1: Securing a Local MCP Server (with a Public Client)
+---  
 
-In this scenario, we'll look at an MCP server that runs locally, communicates over `stdio`, and uses Entra ID to authenticate the user before allowing access to its tools. The server will have a single tool that fetches the user's profile information from the Microsoft Graph API.
+## Entra ID ਨਾਲ ਆਪਣੇ MCP ਸਰਵਰ ਦੀ ਸੁਰੱਖਿਆ: ਕਦਮ-ਦਰ-ਕਦਮ ਮਾਰਗਦਰਸ਼ਨ  
 
-#### 1. Setting Up the Application in Entra ID
+ਹੁਣ, ਆਓ ਵੇਖੀਏ ਕਿ ਕਿਵੇਂ ਇੱਕ ਸਥਾਨਕ MCP ਸਰਵਰ (ਜੋ `stdio` ਰਾਹੀਂ ਸੰਚਾਰ ਕਰਦਾ ਹੈ) ਨੂੰ Entra ID ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਸੁਰੱਖਿਅਤ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। ਇਹ ਉਦਾਹਰਨ ਇੱਕ **ਪਬਲਿਕ ਕਲਾਇੰਟ** ਦੀ ਵਰਤੋਂ ਕਰਦੀ ਹੈ, ਜੋ ਉਪਭੋਗਤਾ ਦੀ ਮਸ਼ੀਨ 'ਤੇ ਚੱਲ ਰਹੀਆਂ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ موزੂ ਹੈ, ਜਿਵੇਂ ਡੈਸਕਟਾਪ ਐਪ ਜਾਂ ਸਥਾਨਕ ਵਿਕਾਸ ਸਰਵਰ।  
 
-Before writing any code, you need to register your application in Microsoft Entra ID. This tells Entra ID about your application and grants it permission to use the authentication service.
+### ਸਥਿਤੀ 1: ਸਥਾਨਕ MCP ਸਰਵਰ ਦੀ ਸੁਰੱਖਿਆ (ਪਬਲਿਕ ਕਲਾਇੰਟ ਨਾਲ)  
 
-1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
-2. Go to **App registrations** and click **New registration**.
-3. Give your application a name (e.g., "My Local MCP Server").
-4. For **Supported account types**, select **Accounts in this organizational directory only**.
-5. You can leave the **Redirect URI** blank for this example.
-6. Click **Register**.
+ਇਸ ਸਥਿਤੀ ਵਿੱਚ, ਅਸੀਂ ਇੱਕ ਐਸਾ MCP ਸਰਵਰ ਵੇਖਾਂਗੇ ਜੋ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਚੱਲਦਾ ਹੈ, `stdio` ਰਾਹੀਂ ਸੰਚਾਰ ਕਰਦਾ ਹੈ, ਅਤੇ Entra ID ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਉਪਭੋਗਤਾ ਦੀ ਪ੍ਰਮਾਣਿਕਤਾ ਕਰਦਾ ਹੈ ਤਾਂ ਜੋ ਉਸਦੇ ਟੂਲਾਂ ਤੱਕ ਪਹੁੰਚ ਦੀ ਆਗਿਆ ਮਿਲੇ। ਸਰਵਰ ਕੋਲ ਇੱਕ ਸਿੰਗਲ ਟੂਲ ਹੋਵੇਗਾ ਜੋ Microsoft Graph API ਤੋਂ ਉਪਭੋਗਤਾ ਦੀ ਪ੍ਰੋਫਾਈਲ ਜਾਣਕਾਰੀ ਲੈ ਕੇ ਆਉਂਦਾ ਹੈ।  
 
-Once registered, take note of the **Application (client) ID** and **Directory (tenant) ID**. You'll need these in your code.
+#### 1. Entra ID ਵਿੱਚ ਐਪਲੀਕੇਸ਼ਨ ਸੈੱਟਅਪ ਕਰਨਾ  
 
-#### 2. The Code: A Breakdown
+ਕੋਡ ਲਿਖਣ ਤੋਂ ਪਹਿਲਾਂ, ਤੁਹਾਨੂੰ ਆਪਣੀ ਐਪਲੀਕੇਸ਼ਨ ਨੂੰ Microsoft Entra ID ਵਿੱਚ ਰਜਿਸਟਰ ਕਰਨਾ ਪਵੇਗਾ। ਇਹ Entra ID ਨੂੰ ਤੁਹਾਡੇ ਐਪ ਬਾਰੇ ਦੱਸਦਾ ਹੈ ਅਤੇ ਪ੍ਰਮਾਣਿਕਤਾ ਸੇਵਾ ਦੀ ਵਰਤੋਂ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ।  
 
-Let's look at the key parts of the code that handle authentication. The full code for this example is available in the [Entra ID - Local - WAM](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-local-wam) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
+1. **[Microsoft Entra ਪੋਰਟਲ](https://entra.microsoft.com/)** 'ਤੇ ਜਾਓ।  
+2. **App registrations** 'ਤੇ ਜਾਓ ਅਤੇ **New registration** 'ਤੇ ਕਲਿੱਕ ਕਰੋ।  
+3. ਆਪਣੀ ਐਪਲੀਕੇਸ਼ਨ ਨੂੰ ਨਾਮ ਦਿਓ (ਜਿਵੇਂ "My Local MCP Server")।  
+4. **Supported account types** ਲਈ **Accounts in this organizational directory only** ਚੁਣੋ।  
+5. ਇਸ ਉਦਾਹਰਨ ਲਈ **Redirect URI** ਖਾਲੀ ਛੱਡੋ।  
+6. **Register** 'ਤੇ ਕਲਿੱਕ ਕਰੋ।  
 
-**`AuthenticationService.cs`**
+ਰਜਿਸਟਰ ਹੋਣ ਤੋਂ ਬਾਅਦ, **Application (client) ID** ਅਤੇ **Directory (tenant) ID** ਨੂੰ ਨੋਟ ਕਰ ਲਵੋ। ਇਹ ਤੁਹਾਨੂੰ ਕੋਡ ਵਿੱਚ ਲੋੜੀਂਦੇ ਹੋਣਗੇ।  
 
-This class is responsible for handling the interaction with Entra ID.
+#### 2. ਕੋਡ: ਇੱਕ ਝਲਕ  
 
-- **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
-- **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`** ਵਰਗਾ ਕੋਰ ਮੈਥਡ ਵਰਤਦਾ ਹੈ। ਇਹ ਪਹਿਲਾਂ ਟੋਕਨ ਨੂੰ ਚੁਪਚਾਪ ਪ੍ਰਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦਾ ਹੈ (ਜਿਸਦਾ ਮਤਲਬ ਹੈ ਕਿ ਯੂਜ਼ਰ ਨੂੰ ਦੁਬਾਰਾ ਸਾਈਨ ਇਨ ਕਰਨ ਦੀ ਲੋੜ ਨਹੀਂ ਪੈਂਦੀ ਜੇ ਉਹ ਪਹਿਲਾਂ ਹੀ ਵੈਧ ਸੈਸ਼ਨ ਰੱਖਦਾ ਹੈ)। ਜੇ ਚੁਪਚਾਪ ਟੋਕਨ ਨਹੀਂ ਮਿਲਦਾ, ਤਾਂ ਇਹ ਯੂਜ਼ਰ ਨੂੰ ਇੰਟਰਐਕਟਿਵ ਸਾਈਨ ਇਨ ਲਈ ਪ੍ਰੰਪਟ ਕਰੇਗਾ।  
+ਆਓ ਕੋਡ ਦੇ ਮੁੱਖ ਹਿੱਸਿਆਂ ਨੂੰ ਵੇਖੀਏ ਜੋ ਪ੍ਰਮਾਣਿਕਤਾ ਸੰਭਾਲਦੇ ਹਨ। ਇਸ ਉਦਾਹਰਨ ਦਾ ਪੂਰਾ ਕੋਡ [Entra ID - Local - WAM](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-local-wam) ਫੋਲਡਰ ਵਿੱਚ [mcp-auth-servers GitHub ਰਿਪੋਜ਼ਟਰੀ](https://github.com/Azure-Samples/mcp-auth-servers) ਵਿੱਚ ਉਪਲਬਧ ਹੈ।  
+
+**`AuthenticationService.cs`**  
+
+ਇਹ ਕਲਾਸ Entra ID ਨਾਲ ਇੰਟਰੈਕਸ਼ਨ ਸੰਭਾਲਦੀ ਹੈ।  
+
+- **`CreateAsync`**: ਇਹ ਮੈਥਡ MSAL ਤੋਂ `PublicClientApplication` ਨੂੰ ਇਨਿਸ਼ੀਅਲਾਈਜ਼ ਕਰਦਾ ਹੈ। ਇਹ ਤੁਹਾਡੇ ਐਪਲੀਕੇਸ਼ਨ ਦੇ `clientId` ਅਤੇ `tenantId` ਨਾਲ ਕਨਫਿਗਰ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।  
+- **`WithBroker`**: ਇਹ ਬ੍ਰੋਕਰ (ਜਿਵੇਂ Windows Web Account Manager) ਦੀ ਵਰਤੋਂ ਯੋਗ ਕਰਦਾ ਹੈ, ਜੋ ਇੱਕ ਸੁਰੱਖਿਅਤ ਅਤੇ ਬਿਨਾ ਰੁਕਾਵਟ ਸਿੰਗਲ ਸਾਈਨ-ਆਨ ਅਨੁਭਵ ਦਿੰਦਾ ਹੈ।  
+- **`AcquireTokenAsync`**: ਇਹ ਮੁੱਖ ਮੈਥਡ ਹੈ। ਪਹਿਲਾਂ ਇਹ ਟੋਕਨ ਨੂੰ ਚੁੱਪਚਾਪ ਪ੍ਰਾਪਤ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦਾ ਹੈ (ਜਿਸਦਾ ਮਤਲਬ ਹੈ ਕਿ ਜੇ ਉਪਭੋਗਤਾ ਕੋਲ ਪਹਿਲਾਂ ਹੀ ਵੈਧ ਸੈਸ਼ਨ ਹੈ ਤਾਂ ਉਹ ਦੁਬਾਰਾ ਸਾਈਨ-ਇਨ ਨਹੀਂ ਕਰੇਗਾ)। ਜੇ ਚੁੱਪਚਾਪ ਟੋਕਨ ਨਹੀਂ ਮਿਲਦਾ, ਤਾਂ ਇਹ ਉਪਭੋਗਤਾ ਨੂੰ ਇੰਟਰਐਕਟਿਵ ਤਰੀਕੇ ਨਾਲ ਸਾਈਨ-ਇਨ ਕਰਨ ਲਈ ਪ੍ਰੰਪਟ ਕਰਦਾ ਹੈ।  
 
 ```csharp
 // Simplified for clarity
@@ -171,12 +182,12 @@ public async Task<string> AcquireTokenAsync()
 }
 ```  
 
-**`Program.cs`**
+**`Program.cs`**  
 
-This is where the MCP server is set up and the authentication service is integrated.
+ਇੱਥੇ MCP ਸਰਵਰ ਸੈੱਟਅਪ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਅਤੇ ਪ੍ਰਮਾਣਿਕਤਾ ਸੇਵਾ ਨੂੰ ਇੰਟੀਗ੍ਰੇਟ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।  
 
-- **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਵੈਧ ਐਕਸੈਸ ਟੋਕਨ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ। ਜੇ ਪ੍ਰਮਾਣੀਕਰਨ ਸਫਲ ਰਹਿੰਦਾ ਹੈ, ਤਾਂ ਇਹ ਟੋਕਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ Microsoft Graph API ਨੂੰ ਕਾਲ ਕਰਦਾ ਹੈ ਅਤੇ ਯੂਜ਼ਰ ਦੇ ਵੇਰਵੇ ਲਿਆਉਂਦਾ ਹੈ।  
+- **`AddSingleton<AuthenticationService>`**: ਇਹ `AuthenticationService` ਨੂੰ ਡਿਪੈਂਡੈਂਸੀ ਇੰਜੈਕਸ਼ਨ ਕੰਟੇਨਰ ਵਿੱਚ ਰਜਿਸਟਰ ਕਰਦਾ ਹੈ, ਤਾਂ ਜੋ ਐਪਲੀਕੇਸ਼ਨ ਦੇ ਹੋਰ ਹਿੱਸਿਆਂ (ਜਿਵੇਂ ਸਾਡਾ ਟੂਲ) ਵੱਲੋਂ ਇਸਦੀ ਵਰਤੋਂ ਕੀਤੀ ਜਾ ਸਕੇ।  
+- **`GetUserDetailsFromGraph` ਟੂਲ**: ਇਸ ਟੂਲ ਨੂੰ `AuthenticationService` ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। ਇਹ ਕੁਝ ਵੀ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ `authService.AcquireTokenAsync()` ਨੂੰ ਕਾਲ ਕਰਦਾ ਹੈ ਤਾਂ ਜੋ ਵੈਧ ਐਕਸੈਸ ਟੋਕਨ ਮਿਲ ਸਕੇ। ਜੇ ਪ੍ਰਮਾਣਿਕਤਾ ਸਫਲ ਰਹਿੰਦੀ ਹੈ, ਤਾਂ ਇਹ ਟੋਕਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ Microsoft Graph API ਨੂੰ ਕਾਲ ਕਰਦਾ ਹੈ ਅਤੇ ਉਪਭੋਗਤਾ ਦੇ ਵੇਰਵੇ ਲੈ ਕੇ ਆਉਂਦਾ ਹੈ।  
 
 ```csharp
 // Simplified for clarity
@@ -204,140 +215,105 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```  
 
-#### 3. How It All Works Together  
-1. ਜਦ MCP ਕਲਾਇੰਟ `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
-2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
-3. If no token is found, MSAL, through the broker, will prompt the user to sign in with their Entra ID account.
-4. Once the user signs in, Entra ID issues an access token.
-5. The tool receives the token and uses it to make a secure call to the Microsoft Graph API.
-6. The user's details are returned to the MCP client.
+#### 3. ਇਹ ਸਾਰਾ ਪ੍ਰਕਿਰਿਆ ਕਿਵੇਂ ਕੰਮ ਕਰਦੀ ਹੈ  
 
-This process ensures that only authenticated users can use the tool, effectively securing your local MCP server.
+1. ਜਦ MCP ਕਲਾਇੰਟ `GetUserDetailsFromGraph` ਟੂਲ ਦੀ ਵਰਤੋਂ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦਾ ਹੈ, ਟੂਲ ਪਹਿਲਾਂ `AcquireTokenAsync` ਨੂੰ ਕਾਲ ਕਰਦਾ ਹੈ।  
+2. `AcquireTokenAsync` MSAL ਲਾਇਬ੍ਰੇਰੀ ਨੂੰ ਵੈਧ ਟੋਕਨ ਲਈ ਜਾਂਚ ਕਰਨ ਲਈ ਕਹਿੰਦਾ ਹੈ।  
+3. ਜੇ ਕੋਈ ਟੋਕਨ ਨਹੀਂ ਮਿਲਦਾ, ਤਾਂ MSAL ਬ੍ਰੋਕਰ ਰਾਹੀਂ ਉਪਭੋਗਤਾ ਨੂੰ Entra ID ਖਾਤੇ ਨਾਲ ਸਾਈਨ-ਇਨ ਕਰਨ ਲਈ ਪ੍ਰੰਪਟ ਕਰਦਾ ਹੈ।  
+4. ਜਦ ਉਪਭੋਗਤਾ ਸਾਈਨ-ਇਨ ਕਰ ਲੈਂਦਾ ਹੈ, Entra ID ਇੱਕ ਐਕਸੈਸ ਟੋਕਨ ਜਾਰੀ ਕਰਦਾ ਹੈ।  
+5. ਟੂਲ ਟੋਕਨ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ ਅਤੇ ਇਸਦੀ ਵਰਤੋਂ ਕਰਕੇ Microsoft Graph API ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਾਲ ਕਰਦਾ ਹੈ।  
+6. ਉਪਭੋਗਤਾ ਦੇ ਵੇਰਵੇ MCP ਕਲ
+4. ਸਰਵਰ ਕੋਡ ਨੂੰ ਇੱਕ ਐਕਸੈੱਸ ਟੋਕਨ ਅਤੇ ਇੱਕ ਰਿਫ੍ਰੈਸ਼ ਟੋਕਨ ਨਾਲ ਬਦਲਦਾ ਹੈ, ਉਹਨਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਦਾ ਹੈ ਅਤੇ ਇੱਕ ਸੈਸ਼ਨ ਟੋਕਨ ਬਣਾਉਂਦਾ ਹੈ ਜੋ ਕਲਾਇੰਟ ਨੂੰ ਭੇਜਿਆ ਜਾਂਦਾ ਹੈ।  
+5. ਹੁਣ ਕਲਾਇੰਟ ਇਸ ਸੈਸ਼ਨ ਟੋਕਨ ਨੂੰ `Authorization` ਹੈਡਰ ਵਿੱਚ ਵਰਤ ਸਕਦਾ ਹੈ ਤਾਂ ਜੋ MCP ਸਰਵਰ ਨੂੰ ਭਵਿੱਖ ਵਿੱਚ ਕੀਤੇ ਜਾਣ ਵਾਲੇ ਸਾਰੇ ਰਿਕਵੇਸਟਾਂ ਲਈ ਇਸਦੀ ਪਛਾਣ ਹੋ ਸਕੇ।  
+6. ਜਦੋਂ `getUserDetails` ਟੂਲ ਕਾਲ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਇਹ ਸੈਸ਼ਨ ਟੋਕਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ Entra ID ਐਕਸੈੱਸ ਟੋਕਨ ਲੱਭਦਾ ਹੈ ਅਤੇ ਫਿਰ ਉਸ ਟੋਕਨ ਨਾਲ Microsoft Graph API ਨੂੰ ਕਾਲ ਕਰਦਾ ਹੈ।  
 
-### Scenario 2: Securing a Remote MCP Server (with a Confidential Client)
+ਇਹ ਪ੍ਰਕਿਰਿਆ ਪਬਲਿਕ ਕਲਾਇੰਟ ਫਲੋ ਨਾਲੋਂ ਜ਼ਿਆਦਾ ਜਟਿਲ ਹੈ, ਪਰ ਇੰਟਰਨੈੱਟ-ਸਮਰੱਥ ਐਂਡਪੌਇੰਟਾਂ ਲਈ ਇਹ ਜ਼ਰੂਰੀ ਹੈ। ਕਿਉਂਕਿ ਰਿਮੋਟ MCP ਸਰਵਰ ਪਬਲਿਕ ਇੰਟਰਨੈੱਟ ਰਾਹੀਂ ਪਹੁੰਚਯੋਗ ਹੁੰਦੇ ਹਨ, ਉਹਨਾਂ ਨੂੰ ਅਣਅਧਿਕ੍ਰਿਤ ਪਹੁੰਚ ਅਤੇ ਸੰਭਾਵਿਤ ਹਮਲਿਆਂ ਤੋਂ ਬਚਾਅ ਲਈ ਮਜ਼ਬੂਤ ਸੁਰੱਖਿਆ ਉਪਾਅ ਲੱਗਦੇ ਹਨ।  
 
-When your MCP server is running on a remote machine (like a cloud server) and communicates over a protocol like HTTP Streaming, the security requirements are different. In this case, you should use a **confidential client** and the **Authorization Code Flow**. This is a more secure method because the application's secrets are never exposed to the browser.
 
-This example uses a TypeScript-based MCP server that uses Express.js to handle HTTP requests.
+## Security Best Practices
 
-#### 1. Setting Up the Application in Entra ID
+- **ਹਮੇਸ਼ਾ HTTPS ਵਰਤੋਂ**: ਕਲਾਇੰਟ ਅਤੇ ਸਰਵਰ ਵਿਚਕਾਰ ਸੰਚਾਰ ਨੂੰ ਇੰਕ੍ਰਿਪਟ ਕਰੋ ਤਾਂ ਜੋ ਟੋਕਨਾਂ ਨੂੰ ਚੋਰੀ ਹੋਣ ਤੋਂ ਬਚਾਇਆ ਜਾ ਸਕੇ।  
+- **Role-Based Access Control (RBAC) ਲਾਗੂ ਕਰੋ**: ਸਿਰਫ ਇਹ ਨਾ ਦੇਖੋ ਕਿ ਯੂਜ਼ਰ ਪ੍ਰਮਾਣਿਤ ਹੈ ਜਾਂ ਨਹੀਂ, ਬਲਕਿ ਇਹ ਵੀ ਦੇਖੋ ਕਿ ਉਹ ਕੀ ਕਰਨ ਲਈ ਅਧਿਕਾਰਤ ਹੈ। ਤੁਸੀਂ Entra ID ਵਿੱਚ ਰੋਲ ਡਿਫਾਈਨ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਆਪਣੇ MCP ਸਰਵਰ ਵਿੱਚ ਉਹਨਾਂ ਦੀ ਜਾਂਚ ਕਰ ਸਕਦੇ ਹੋ।  
+- **ਮਾਨੀਟਰਿੰਗ ਅਤੇ ਆਡਿਟਿੰਗ ਕਰੋ**: ਸਾਰੇ ਪ੍ਰਮਾਣਿਕਤਾ ਘਟਨਾਵਾਂ ਨੂੰ ਲੌਗ ਕਰੋ ਤਾਂ ਜੋ ਤੁਸੀਂ ਸ਼ੱਕੀ ਗਤੀਵਿਧੀ ਨੂੰ ਪਛਾਣ ਸਕੋ ਅਤੇ ਜਵਾਬ ਦੇ ਸਕੋ।  
+- **ਰੇਟ ਲਿਮਿਟਿੰਗ ਅਤੇ ਥਰੋਟਲਿੰਗ ਸੰਭਾਲੋ**: Microsoft Graph ਅਤੇ ਹੋਰ APIs ਰੇਟ ਲਿਮਿਟਿੰਗ ਲਗਾਉਂਦੇ ਹਨ ਤਾਂ ਜੋ ਦੁਰਵਰਤੋਂ ਨੂੰ ਰੋਕਿਆ ਜਾ ਸਕੇ। ਆਪਣੇ MCP ਸਰਵਰ ਵਿੱਚ ਐਕਸਪੋਨੇਨਸ਼ੀਅਲ ਬੈਕਆਫ ਅਤੇ ਰੀਟ੍ਰਾਈ ਲਾਜਿਕ ਲਾਗੂ ਕਰੋ ਤਾਂ ਜੋ HTTP 429 (ਬਹੁਤ ਜ਼ਿਆਦਾ ਬੇਨਤੀਆਂ) ਦੇ ਜਵਾਬ ਨੂੰ ਸੁਚੱਜੇ ਤਰੀਕੇ ਨਾਲ ਸੰਭਾਲਿਆ ਜਾ ਸਕੇ। ਅਕਸਰ ਵਰਤੇ ਜਾਣ ਵਾਲੇ ਡੇਟਾ ਨੂੰ ਕੈਸ਼ ਕਰਨਾ ਵੀ ਸੋਚੋ ਤਾਂ ਜੋ API ਕਾਲਾਂ ਘੱਟ ਹੋਣ।  
+- **ਟੋਕਨ ਸੁਰੱਖਿਅਤ ਸਟੋਰੇਜ**: ਐਕਸੈੱਸ ਟੋਕਨ ਅਤੇ ਰਿਫ੍ਰੈਸ਼ ਟੋਕਨ ਨੂੰ ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਸਟੋਰ ਕਰੋ। ਲੋਕਲ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ, ਸਿਸਟਮ ਦੇ ਸੁਰੱਖਿਅਤ ਸਟੋਰੇਜ ਮਕੈਨਿਜ਼ਮ ਵਰਤੋਂ। ਸਰਵਰ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ, ਇੰਕ੍ਰਿਪਟ ਕੀਤੀ ਸਟੋਰੇਜ ਜਾਂ ਸੁਰੱਖਿਅਤ ਕੀ ਮੈਨੇਜਮੈਂਟ ਸਰਵਿਸਿਜ਼ ਜਿਵੇਂ Azure Key Vault ਵਰਤਣ ਬਾਰੇ ਸੋਚੋ।  
+- **ਟੋਕਨ ਮਿਆਦ ਖਤਮ ਹੋਣ ਦੀ ਸੰਭਾਲ**: ਐਕਸੈੱਸ ਟੋਕਨਾਂ ਦੀ ਮਿਆਦ ਸੀਮਿਤ ਹੁੰਦੀ ਹੈ। ਰਿਫ੍ਰੈਸ਼ ਟੋਕਨਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਟੋਮੈਟਿਕ ਟੋਕਨ ਰਿਫ੍ਰੈਸ਼ ਲਾਗੂ ਕਰੋ ਤਾਂ ਜੋ ਯੂਜ਼ਰ ਨੂੰ ਮੁੜ ਪ੍ਰਮਾਣਿਤ ਕਰਨ ਦੀ ਲੋੜ ਨਾ ਪਏ ਅਤੇ ਤਜਰਬਾ ਬਿਨਾਂ ਰੁਕਾਵਟ ਜਾਰੀ ਰਹੇ।  
+- **Azure API Management ਬਾਰੇ ਸੋਚੋ**: ਜਦੋਂ ਤੁਸੀਂ ਆਪਣੇ MCP ਸਰਵਰ ਵਿੱਚ ਸੁਰੱਖਿਆ ਸਿੱਧਾ ਲਾਗੂ ਕਰਦੇ ਹੋ ਤਾਂ ਤੁਹਾਨੂੰ ਬਹੁਤ ਨਜ਼ਦੀਕੀ ਕੰਟਰੋਲ ਮਿਲਦਾ ਹੈ, ਪਰ API ਗੇਟਵੇਜ਼ ਜਿਵੇਂ Azure API Management ਬਹੁਤ ਸਾਰੇ ਸੁਰੱਖਿਆ ਮੁੱਦੇ ਆਪਣੇ ਆਪ ਸੰਭਾਲ ਸਕਦੇ ਹਨ, ਜਿਵੇਂ ਪ੍ਰਮਾਣਿਕਤਾ, ਅਧਿਕਾਰ, ਰੇਟ ਲਿਮਿਟਿੰਗ ਅਤੇ ਮਾਨੀਟਰਿੰਗ। ਇਹ ਇੱਕ ਕੇਂਦਰੀ ਸੁਰੱਖਿਆ ਪਰਤ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹਨ ਜੋ ਤੁਹਾਡੇ ਕਲਾਇੰਟਾਂ ਅਤੇ MCP ਸਰਵਰਾਂ ਦੇ ਵਿਚਕਾਰ ਹੁੰਦੀ ਹੈ। MCP ਨਾਲ API ਗੇਟਵੇਜ਼ ਦੀ ਵਰਤੋਂ ਬਾਰੇ ਹੋਰ ਜਾਣਕਾਰੀ ਲਈ ਸਾਡਾ [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) ਵੇਖੋ।  
 
-The setup in Entra ID is similar to the public client, but with one key difference: you need to create a **client secret**.
 
-1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
-2. In your app registration, go to the **Certificates & secrets** tab.
-3. Click **New client secret**, give it a description, and click **Add**.
-4. **Important:** Copy the secret value immediately. You will not be able to see it again.
-5. You also need to configure a **Redirect URI**. Go to the **Authentication** tab, click **Add a platform**, select **Web**, and enter the redirect URI for your application (e.g., `http://localhost:3001/auth/callback`).
+##  Key Takeaways
 
-> **⚠️ Important Security Note:** For production applications, Microsoft strongly recommends using **secretless authentication** methods such as **Managed Identity** or **Workload Identity Federation** instead of client secrets. Client secrets pose security risks as they can be exposed or compromised. Managed identities provide a more secure approach by eliminating the need to store credentials in your code or configuration.
->
-> For more information about managed identities and how to implement them, see the [Managed identities for Azure resources overview](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview).
+- ਆਪਣੇ MCP ਸਰਵਰ ਦੀ ਸੁਰੱਖਿਆ ਤੁਹਾਡੇ ਡੇਟਾ ਅਤੇ ਟੂਲਾਂ ਦੀ ਰੱਖਿਆ ਲਈ ਬਹੁਤ ਜ਼ਰੂਰੀ ਹੈ।  
+- Microsoft Entra ID ਪ੍ਰਮਾਣਿਕਤਾ ਅਤੇ ਅਧਿਕਾਰ ਲਈ ਇੱਕ ਮਜ਼ਬੂਤ ਅਤੇ ਸਕੇਲ ਕਰਨ ਯੋਗ ਹੱਲ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ।  
+- ਲੋਕਲ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ **ਪਬਲਿਕ ਕਲਾਇੰਟ** ਅਤੇ ਰਿਮੋਟ ਸਰਵਰਾਂ ਲਈ **ਕੰਫਿਡੈਂਸ਼ੀਅਲ ਕਲਾਇੰਟ** ਵਰਤੋਂ।  
+- ਵੈੱਬ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ **Authorization Code Flow** ਸਭ ਤੋਂ ਸੁਰੱਖਿਅਤ ਵਿਕਲਪ ਹੈ।  
 
-#### 2. The Code: A Breakdown
 
-This example uses a session-based approach. When the user authenticates, the server stores the access token and refresh token in a session and gives the user a session token. This session token is then used for subsequent requests. The full code for this example is available in the [Entra ID - Confidential client](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-cca-session) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
+## Exercise
 
-**`Server.ts`**
+1. ਸੋਚੋ ਕਿ ਤੁਸੀਂ ਕਿਸ ਤਰ੍ਹਾਂ ਦਾ MCP ਸਰਵਰ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ। ਕੀ ਇਹ ਲੋਕਲ ਸਰਵਰ ਹੋਵੇਗਾ ਜਾਂ ਰਿਮੋਟ ਸਰਵਰ?  
+2. ਆਪਣੇ ਜਵਾਬ ਦੇ ਆਧਾਰ 'ਤੇ, ਕੀ ਤੁਸੀਂ ਪਬਲਿਕ ਜਾਂ ਕੰਫਿਡੈਂਸ਼ੀਅਲ ਕਲਾਇੰਟ ਵਰਤੋਂਗੇ?  
+3. Microsoft Graph ਖਿਲਾਫ ਕਾਰਵਾਈ ਕਰਨ ਲਈ ਤੁਹਾਡਾ MCP ਸਰਵਰ ਕਿਹੜਾ ਅਧਿਕਾਰ ਮੰਗੇਗਾ?  
 
-This file sets up the Express server and the MCP transport layer.
 
-- **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
-- **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`** ਨੂੰ ਵਰਤਦਾ ਹੈ: ਇਹ ਐਂਡਪੋਇੰਟ Entra ID ਵੱਲੋਂ ਯੂਜ਼ਰ ਦੇ ਪ੍ਰਮਾਣੀਕਰਨ ਤੋਂ ਬਾਅਦ ਰੀਡਾਇਰੈਕਟ ਨੂੰ ਸੰਭਾਲਦਾ ਹੈ। ਇਹ ਅਧਿਕਾਰ ਕੋਡ ਨੂੰ ਐਕਸੈਸ ਟੋਕਨ ਅਤੇ ਰੀਫ੍ਰੈਸ਼ ਟੋਕਨ ਵਿੱਚ ਬਦਲਦਾ ਹੈ।  
+## Hands-on Exercises
 
-```typescript
-// Simplified for clarity
-const app = express();
-const { server } = createServer();
-const provider = new EntraIdServerAuthProvider();
+### Exercise 1: Entra ID ਵਿੱਚ ਇੱਕ ਐਪਲੀਕੇਸ਼ਨ ਰਜਿਸਟਰ ਕਰੋ  
+Microsoft Entra ਪੋਰਟਲ 'ਤੇ ਜਾਓ।  
+ਆਪਣੇ MCP ਸਰਵਰ ਲਈ ਇੱਕ ਨਵੀਂ ਐਪਲੀਕੇਸ਼ਨ ਰਜਿਸਟਰ ਕਰੋ।  
+Application (client) ID ਅਤੇ Directory (tenant) ID ਨੂੰ ਨੋਟ ਕਰੋ।  
 
-// Protect the SSE endpoint
-app.get("/sse", requireBearerAuth({
-  provider,
-  requiredScopes: ["User.Read"]
-}), async (req, res) => {
-  // ... connect to the transport ...
-});
+### Exercise 2: ਲੋਕਲ MCP ਸਰਵਰ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰੋ (ਪਬਲਿਕ ਕਲਾਇੰਟ)  
+- ਯੂਜ਼ਰ ਪ੍ਰਮਾਣਿਕਤਾ ਲਈ MSAL (Microsoft Authentication Library) ਨੂੰ ਇੰਟੀਗ੍ਰੇਟ ਕਰਨ ਲਈ ਕੋਡ ਉਦਾਹਰਨ ਦੀ ਪਾਲਣਾ ਕਰੋ।  
+- Microsoft Graph ਤੋਂ ਯੂਜ਼ਰ ਵੇਰਵੇ ਲੈਣ ਵਾਲੇ MCP ਟੂਲ ਨੂੰ ਕਾਲ ਕਰਕੇ ਪ੍ਰਮਾਣਿਕਤਾ ਪ੍ਰਕਿਰਿਆ ਦੀ ਜਾਂਚ ਕਰੋ।  
 
-// Protect the message endpoint
-app.post("/message", requireBearerAuth({
-  provider,
-  requiredScopes: ["User.Read"]
-}), async (req, res) => {
-  // ... handle the message ...
-});
+### Exercise 3: ਰਿਮੋਟ MCP ਸਰਵਰ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰੋ (ਕੰਫਿਡੈਂਸ਼ੀਅਲ ਕਲਾਇੰਟ)  
+- Entra ID ਵਿੱਚ ਇੱਕ ਕੰਫਿਡੈਂਸ਼ੀਅਲ ਕਲਾਇੰਟ ਰਜਿਸਟਰ ਕਰੋ ਅਤੇ ਇੱਕ ਕਲਾਇੰਟ ਸੀਕ੍ਰੇਟ ਬਣਾਓ।  
+- ਆਪਣੇ Express.js MCP ਸਰਵਰ ਨੂੰ Authorization Code Flow ਵਰਤਣ ਲਈ ਸੰਰਚਿਤ ਕਰੋ।  
+- ਸੁਰੱਖਿਅਤ ਐਂਡਪੌਇੰਟਾਂ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਟੋਕਨ-ਆਧਾਰਿਤ ਪਹੁੰਚ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ।  
 
-// Handle the OAuth 2.0 callback
-app.get("/auth/callback", (req, res) => {
-  provider.handleCallback(req.query.code, req.query.state)
-    .then(result => {
-      // ... handle success or failure ...
-    });
-});
-```  
+### Exercise 4: ਸੁਰੱਖਿਆ ਦੀਆਂ ਸਭ ਤੋਂ ਵਧੀਆ ਪ੍ਰਥਾਵਾਂ ਲਾਗੂ ਕਰੋ  
+- ਆਪਣੇ ਲੋਕਲ ਜਾਂ ਰਿਮੋਟ ਸਰਵਰ ਲਈ HTTPS ਚਾਲੂ ਕਰੋ।  
+- ਆਪਣੇ ਸਰਵਰ ਲਾਜਿਕ ਵਿੱਚ ਰੋਲ-ਆਧਾਰਿਤ ਪਹੁੰਚ ਨਿਯੰਤਰਣ (RBAC) ਲਾਗੂ ਕਰੋ।  
+- ਟੋਕਨ ਮਿਆਦ ਖਤਮ ਹੋਣ ਦੀ ਸੰਭਾਲ ਅਤੇ ਸੁਰੱਖਿਅਤ ਟੋਕਨ ਸਟੋਰੇਜ ਸ਼ਾਮਲ ਕਰੋ।  
 
-**`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails` ਟੂਲ ਪਿਛਲੇ ਉਦਾਹਰਨ ਵਰਗਾ ਹੀ ਹੈ, ਪਰ ਇਹ ਸੈਸ਼ਨ ਤੋਂ ਐਕਸੈਸ ਟੋਕਨ ਲੈਂਦਾ ਹੈ।  
+## Resources
 
-```typescript
-// Simplified for clarity
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  const { name } = request.params;
-  const context = request.params?.context as { token?: string } | undefined;
-  const sessionToken = context?.token;
+1. **MSAL Overview Documentation**  
+   ਜਾਣੋ ਕਿ Microsoft Authentication Library (MSAL) ਕਿਵੇਂ ਪਲੇਟਫਾਰਮਾਂ 'ਤੇ ਸੁਰੱਖਿਅਤ ਟੋਕਨ ਪ੍ਰਾਪਤੀ ਨੂੰ ਯਕੀਨੀ ਬਣਾਉਂਦਾ ਹੈ:  
+   [MSAL Overview on Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)  
 
-  if (name === ToolName.GET_USER_DETAILS) {
-    if (!sessionToken) {
-      throw new AuthenticationError("Authentication token is missing or invalid. Ensure the token is provided in the request context.");
-    }
+2. **Azure-Samples/mcp-auth-servers GitHub Repository**  
+   MCP ਸਰਵਰਾਂ ਦੇ ਪ੍ਰਮਾਣਿਕਤਾ ਫਲੋਜ਼ ਦੇ ਉਦਾਹਰਨਾਂ ਲਈ:  
+   [Azure-Samples/mcp-auth-servers on GitHub](https://github.com/Azure-Samples/mcp-auth-servers)  
 
-    // Get the Entra ID token from the session store
-    const tokenData = tokenStore.getToken(sessionToken);
-    const entraIdToken = tokenData.accessToken;
+3. **Managed Identities for Azure Resources Overview**  
+   ਸਮਝੋ ਕਿ ਕਿਵੇਂ ਸਿਸਟਮ ਜਾਂ ਯੂਜ਼ਰ-ਅਸਾਈਨਡ ਮੈਨੇਜਡ ਆਈਡੈਂਟਿਟੀਜ਼ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਸੀਕ੍ਰੇਟਸ ਨੂੰ ਖਤਮ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ:  
+   [Managed Identities Overview on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)  
 
-    const graphClient = Client.init({
-      authProvider: (done) => {
-        done(null, entraIdToken);
-      }
-    });
+4. **Azure API Management: Your Auth Gateway for MCP Servers**  
+   MCP ਸਰਵਰਾਂ ਲਈ APIM ਨੂੰ ਇੱਕ ਸੁਰੱਖਿਅਤ OAuth2 ਗੇਟਵੇ ਦੇ ਤੌਰ 'ਤੇ ਵਰਤਣ ਬਾਰੇ ਵਿਸਥਾਰ:  
+   [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)  
 
-    const user = await graphClient.api('/me').get();
+5. **Microsoft Graph Permissions Reference**  
+   Microsoft Graph ਲਈ ਡੈਲੀਗੇਟਡ ਅਤੇ ਐਪਲੀਕੇਸ਼ਨ ਅਧਿਕਾਰਾਂ ਦੀ ਵਿਸਥਾਰਿਤ ਸੂਚੀ:  
+   [Microsoft Graph Permissions Reference](https://learn.microsoft.com/zh-tw/graph/permissions-reference)  
 
-    // ... return user details ...
-  }
-});
-```  
 
-**`auth/EntraIdServerAuthProvider.ts`**
+## Learning Outcomes  
+ਇਸ ਭਾਗ ਨੂੰ ਪੂਰਾ ਕਰਨ ਤੋਂ ਬਾਅਦ, ਤੁਸੀਂ ਸਮਰੱਥ ਹੋਵੋਗੇ:  
 
-This class handles the logic for:
+- ਸਮਝਾਉਣਾ ਕਿ MCP ਸਰਵਰਾਂ ਅਤੇ AI ਵਰਕਫਲੋਜ਼ ਲਈ ਪ੍ਰਮਾਣਿਕਤਾ ਕਿਉਂ ਜ਼ਰੂਰੀ ਹੈ।  
+- ਲੋਕਲ ਅਤੇ ਰਿਮੋਟ MCP ਸਰਵਰ ਸਥਿਤੀਆਂ ਲਈ Entra ID ਪ੍ਰਮਾਣਿਕਤਾ ਸੈੱਟਅੱਪ ਅਤੇ ਸੰਰਚਿਤ ਕਰਨਾ।  
+- ਆਪਣੇ ਸਰਵਰ ਦੀ ਤਾਇਨਾਤੀ ਦੇ ਅਧਾਰ 'ਤੇ ਸਹੀ ਕਲਾਇੰਟ ਕਿਸਮ (ਪਬਲਿਕ ਜਾਂ ਕੰਫਿਡੈਂਸ਼ੀਅਲ) ਚੁਣਨਾ।  
+- ਸੁਰੱਖਿਅਤ ਕੋਡਿੰਗ ਅਭਿਆਸ ਲਾਗੂ ਕਰਨਾ, ਜਿਸ ਵਿੱਚ ਟੋਕਨ ਸਟੋਰੇਜ ਅਤੇ ਰੋਲ-ਆਧਾਰਿਤ ਅਧਿਕਾਰ ਸ਼ਾਮਲ ਹਨ।  
+- ਆਪਣੇ MCP ਸਰਵਰ ਅਤੇ ਉਸਦੇ ਟੂਲਾਂ ਨੂੰ ਅਣਅਧਿਕ੍ਰਿਤ ਪਹੁੰਚ ਤੋਂ ਬਚਾਉਣ ਵਿੱਚ ਭਰੋਸੇਮੰਦ ਹੋਣਾ।  
 
-- Redirecting the user to the Entra ID sign-in page.
-- Exchanging the authorization code for an access token.
-- Storing the tokens in the `tokenStore`.
-- Refreshing the access token when it expires.
 
-#### 3. How It All Works Together
+## What's next  
 
-1. When a user first tries to connect to the MCP server, the `requireBearerAuth` middleware will see that they don't have a valid session and will redirect them to the Entra ID sign-in page.
-2. The user signs in with their Entra ID account.
-3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
-4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
-5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails` ਟੂਲ ਨੂੰ ਕਾਲ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਜੋ ਸੈਸ਼ਨ ਟੋਕਨ ਦੀ ਵਰਤੋਂ ਕਰਕੇ Entra ID ਐਕਸੈਸ ਟੋਕਨ ਲੱਭਦਾ ਹੈ ਅਤੇ ਫਿਰ Microsoft Graph API ਨੂੰ ਕਾਲ ਕਰਦਾ ਹੈ।  
+- [5.13 Model Context Protocol (MCP) Integration with Azure AI Foundry](../mcp-foundry-agent-integration/README.md)
 
-ਇਹ ਪ੍ਰਵਾਹ ਪਬਲਿਕ ਕਲਾਇੰਟ ਪ੍ਰਵਾਹ ਨਾਲੋਂ ਜਿਆਦਾ ਜਟਿਲ ਹੈ, ਪਰ ਇੰਟਰਨੈੱਟ-ਮੁੱਖ ਐਂਡਪੋਇੰਟਾਂ ਲਈ ਲਾਜ਼ਮੀ ਹੈ। ਕਿਉਂਕਿ ਰਿਮੋਟ MCP ਸਰਵਰ ਪਬਲਿਕ ਇੰਟਰਨੈੱਟ 'ਤੇ ਉਪਲਬਧ ਹੁੰਦੇ ਹਨ, ਉਨ੍ਹਾਂ ਨੂੰ ਬਿਨਾਂ ਅਧਿਕਾਰ ਦੇ ਐਕਸੈਸ ਅਤੇ ਸੰਭਾਵਿਤ ਹਮਲਿਆਂ ਤੋਂ ਬਚਾਅ ਲਈ ਮਜ਼ਬੂਤ ਸੁਰੱਖਿਆ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ।  
-
-## Security Best Practices  
-- **ਹਮੇਸ਼ਾ HTTPS ਵਰਤੋਂ:** ਕਲਾਇੰਟ ਅਤੇ ਸਰਵਰ ਵਿਚਕਾਰ ਸੰਚਾਰ ਨੂੰ ਇਨਕ੍ਰਿਪਟ ਕਰੋ ਤਾਂ ਜੋ ਟੋਕਨਾਂ ਨੂੰ ਚੋਰੀ ਤੋਂ ਬਚਾਇਆ ਜਾ ਸਕੇ।  
-- **Role-Based Access Control (RBAC) ਲਾਗੂ ਕਰੋ:** ਸਿਰਫ ਇਹ ਨਹੀਂ ਦੇਖੋ ਕਿ ਯੂਜ਼ਰ ਪ੍ਰਮਾਣਿਤ ਹੈ ਜਾਂ ਨਹੀਂ, ਬਲਕਿ ਇਹ ਵੀ ਜਾਂਚੋ ਕਿ ਉਹ ਕੀ ਕਰਨ ਦੇ ਅਧਿਕਾਰ ਰੱਖਦਾ ਹੈ। ਤੁਸੀਂ Entra ID ਵਿੱਚ ਰੋਲ ਡਿਫਾਈਨ ਕਰਕੇ MCP ਸਰਵਰ ਵਿੱਚ ਉਹਨਾਂ ਦੀ ਜਾਂਚ ਕਰ ਸਕਦੇ ਹੋ।  
-- **ਮਾਨੀਟਰ ਅਤੇ ਆਡੀਟ ਕਰੋ:** ਸਾਰੇ ਪ੍ਰਮਾਣੀਕਰਨ ਇਵੈਂਟਾਂ ਨੂੰ ਲੌਗ ਕਰੋ ਤਾਂ ਜੋ ਸ਼ੱਕੀ ਗਤੀਵਿਧੀਆਂ ਦੀ ਪਛਾਣ ਅਤੇ ਪ੍ਰਤੀਕ੍ਰਿਆ ਕੀਤੀ ਜਾ ਸਕੇ।  
-- **ਰੇਟ ਲਿਮਿਟਿੰਗ ਅਤੇ ਥ੍ਰੌਟਲਿੰਗ ਸੰਭਾਲੋ:** Microsoft Graph ਅਤੇ ਹੋਰ APIs ਰੇਟ ਲਿਮਿਟਿੰਗ ਲਗਾਉਂਦੇ ਹਨ ਤਾਂ ਜੋ ਦੁਰੁਪਯੋਗ ਰੋਕਿਆ ਜਾ ਸਕੇ। MCP ਸਰਵਰ ਵਿੱਚ ਐਕਸਪੋਨੇਸ਼ੀਅਲ ਬੈਕਆਫ ਅਤੇ ਰੀਟ੍ਰਾਈ ਲਾਜਿਕ ਲਾਗੂ ਕਰੋ ਤਾਂ ਜੋ HTTP 429 (ਬਹੁਤ ਜ਼ਿਆਦਾ ਬੇਨਤੀਆਂ) ਦੇ ਜਵਾਬਾਂ ਨੂੰ ਨਰਮਾਈ ਨਾਲ ਸੰਭਾਲਿਆ ਜਾ ਸਕੇ। ਬਾਰ-ਬਾਰ ਐਕਸੈਸ ਕੀਤੇ ਜਾਣ ਵਾਲੇ ਡਾਟੇ ਨੂੰ ਕੈਸ਼ ਕਰਨ ਬਾਰੇ ਸੋਚੋ ਤਾਂ ਜੋ API ਕਾਲਾਂ ਘੱਟ ਹੋਣ।  
-- **ਟੋਕਨ ਸੁਰੱਖਿਅਤ ਸਟੋਰੇਜ:** ਐਕਸੈਸ ਟੋਕਨ ਅਤੇ ਰੀਫ੍ਰੈਸ਼ ਟੋਕਨ ਨੂੰ ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਸਟੋਰ ਕਰੋ। ਲੋਕਲ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ, ਸਿਸਟਮ ਦੇ ਸੁਰੱਖਿਅਤ ਸਟੋਰੇਜ ਮਕੈਨਿਜ਼ਮ ਵਰਤੋ। ਸਰਵਰ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ, ਇਨਕ੍ਰਿਪਟਿਡ ਸਟੋਰੇਜ ਜਾਂ ਸੁਰੱਖਿਅਤ ਕੀ ਮੈਨੇਜਮੈਂਟ ਸਰਵਿਸਜ਼ (ਜਿਵੇਂ Azure Key Vault) ਦੀ ਵਰਤੋਂ ਕਰੋ।  
-- **ਟੋਕਨ ਮਿਆਦ ਖਤਮ ਹੋਣ ਦੀ ਸੰਭਾਲ:** ਐਕਸੈਸ ਟੋਕਨਾਂ ਦੀ ਮਿਆਦ ਸੀਮਿਤ ਹੁੰਦੀ ਹੈ। ਰੀਫ੍ਰੈਸ਼ ਟੋਕਨਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਟੋਮੈਟਿਕ ਟੋਕਨ ਰੀਫ੍ਰੈਸ਼ ਲਾਗੂ ਕਰੋ ਤਾਂ ਜੋ ਯੂਜ਼ਰ ਨੂੰ ਮੁੜ ਪ੍ਰਮਾਣੀਕਰਨ ਕਰਨ ਦੀ ਲੋੜ ਨਾ ਪਵੇ।  
-- **Azure API Management ਦੀ ਵਰਤੋਂ ਬਾਰੇ ਸੋਚੋ:** ਜਦੋਂ ਤੁਸੀਂ MCP ਸਰਵਰ ਵਿੱਚ ਸਿੱਧੀ ਸੁਰੱਖਿਆ ਲਾਗੂ ਕਰਦੇ ਹੋ ਤਾਂ ਤੁਹਾਡੇ ਕੋਲ ਬਹੁਤ ਨਿਯੰਤਰਣ ਹੁੰਦਾ ਹੈ, ਪਰ API ਗੇਟਵੇਜ਼ ਜਿਵੇਂ Azure API Management ਬਹੁਤ ਸਾਰੇ ਸੁਰੱਖਿਆ ਮੁੱਦੇ ਆਪਣੇ ਆਪ ਸੰਭਾਲ ਸਕਦੇ ਹਨ, ਜਿਵੇਂ ਪ੍ਰਮਾਣੀਕਰਨ, ਅਧਿਕਾਰ, ਰੇਟ ਲਿਮਿਟਿੰਗ ਅਤੇ ਮਾਨੀਟਰਨਿੰਗ। ਇਹ ਤੁਹਾਡੇ ਕਲਾਇੰਟਾਂ ਅਤੇ MCP
-
-**ਅਸਵੀਕਾਰੋक्ति**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਯਤਨ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਆਟੋਮੈਟਿਕ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਣਸਹੀ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫ਼ਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀਆਂ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆਵਾਂ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+**ਅਸਵੀਕਾਰੋਪਣ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

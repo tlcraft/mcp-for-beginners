@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-17T15:08:14+00:00",
+  "translation_date": "2025-07-13T23:38:51+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "sr"
 }
 -->
-# Primer
+# Пример
 
-Ovo je Typescript primer za MCP Server
+Ово је пример у Typescript-у за MCP сервер
 
-Evo primera kreiranja alata:
+Ево примера креирања алата:
 
 ```typescript
 this.mcpServer.tool(
@@ -74,19 +74,19 @@ async ({ model, prompt, options }) => {
 );
 ```
 
-## Instalacija
+## Инсталација
 
-Pokrenite sledeću komandu:
+Покрените следећу команду:
 
 ```bash
 npm install
 ```
 
-## Pokretanje
+## Покрени
 
 ```bash
 npm start
 ```
 
-**Odricanje odgovornosti**:  
-Ovaj dokument je preveden koristeći AI uslugu za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako se trudimo da postignemo tačnost, imajte na umu da automatski prevodi mogu sadržati greške ili netačnosti. Originalni dokument na njegovom izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije, preporučuje se profesionalni ljudski prevod. Ne preuzimamo odgovornost za bilo kakva pogrešna tumačenja ili nesporazume koji mogu nastati korišćenjem ovog prevoda.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T05:45:09+00:00",
+  "translation_date": "2025-07-13T22:12:20+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "en"
 }
 -->
 # Basic Calculator MCP Service
 
-This service provides basic calculator operations through the Model Context Protocol (MCP). It’s designed as a simple example for beginners learning about MCP implementations.
+This service provides basic calculator operations through the Model Context Protocol (MCP). It's designed as a simple example for beginners learning about MCP implementations.
 
 For more information, see [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -73,24 +73,24 @@ The service exposes the following API endpoints through the MCP protocol:
    - "Subtract 10 from 4"
    - "Multiply 6 and 7"
    - "Divide 8 by 2"
-   - "Does 37854 prime?"
-   - "What are the 3 prime numbers before after 4242?"
+   - "Is 37854 prime?"
+   - "What are the 3 prime numbers before and after 4242?"
 2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
    - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+   - "Subtract 10 from 4 #MyCalculator"
 
 
 ## Containerized Version
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
+The previous solution is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you want to share the solution or run it in a different environment, you can use the containerized version.
 
 1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` with your Docker Hub username):
+1. From a terminal, navigate to the folder `03-GettingStarted\samples\csharp\src` 
+1. To build the Docker image for the calculator service, run the following command (replace `<YOUR-DOCKER-USERNAME>` with your Docker Hub username):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. After the image is built, let’s upload it to Docker Hub. Run the following command:
+1. After the image is built, upload it to Docker Hub by running:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
@@ -111,11 +111,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Looking at the configuration, you can see that the command is `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Looking at the configuration, you can see that the command is `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures the container is removed after it stops, and the `-i` flag allows interaction with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, and just like before you can ask the calculator service to do some math for you.
+Start the MCP Server by clicking the small Start button above `"mcp-calc": {`, and just like before, you can ask the calculator service to do some math for you.
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

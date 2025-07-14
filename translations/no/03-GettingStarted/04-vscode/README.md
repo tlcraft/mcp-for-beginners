@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T17:44:57+00:00",
+  "translation_date": "2025-07-13T19:31:15+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "no"
 }
@@ -33,7 +33,7 @@ Du må kanskje aktivere oppdagelse av MCP-servere.
 
 ### -1- Opprett konfigurasjonsfil
 
-Start med å opprette en konfigurasjonsfil i prosjektets rotmappe, du trenger en fil kalt MCP.json som plasseres i en mappe som heter .vscode. Den skal se slik ut:
+Start med å opprette en konfigurasjonsfil i prosjektets rotmappe, du trenger en fil som heter MCP.json og plassere den i en mappe som heter .vscode. Den skal se slik ut:
 
 ```text
 .vscode
@@ -82,7 +82,7 @@ Nå som du har lagt til en oppføring, la oss starte serveren:
 
 ## Oppgave
 
-Prøv å legge til en serveroppføring i *mcp.json*-filen din og sørg for at du kan starte og stoppe serveren. Sørg også for at du kan kommunisere med verktøyene på serveren via GitHub Copilot Chat-grensesnittet.
+Prøv å legge til en serveroppføring i *mcp.json*-filen din og sørg for at du kan starte/stoppe serveren. Sørg også for at du kan kommunisere med verktøyene på serveren via GitHub Copilot Chat-grensesnittet.
 
 ## Løsning
 

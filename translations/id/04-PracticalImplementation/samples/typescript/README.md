@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-17T15:06:21+00:00",
+  "translation_date": "2025-07-13T23:38:14+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "id"
 }
 -->
 # Contoh
 
-Ini adalah contoh Typescript untuk Server MCP
+Ini adalah contoh Typescript untuk MCP Server
 
 Berikut adalah contoh pembuatan alat:
 
@@ -74,7 +74,7 @@ async ({ model, prompt, options }) => {
 );
 ```
 
-## Instalasi
+## Instal
 
 Jalankan perintah berikut:
 
@@ -89,4 +89,4 @@ npm start
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi penting, disarankan untuk menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau interpretasi yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

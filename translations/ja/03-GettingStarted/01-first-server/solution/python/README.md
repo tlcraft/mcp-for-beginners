@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T23:00:01+00:00",
+  "translation_date": "2025-07-13T17:58:46+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "ja"
 }
@@ -37,31 +37,31 @@ mcp run server.py
 
 ## -4- サンプルのテスト
 
-サーバーを一つのターミナルで起動したまま、別のターミナルを開いて以下のコマンドを実行してください。
+サーバーを一つのターミナルで起動したまま、別のターミナルを開いて以下のコマンドを実行してください：
 
 ```bash
 mcp dev server.py
 ```
 
-これで、サンプルをテストできるビジュアルインターフェース付きのウェブサーバーが起動するはずです。
+これで、サンプルをテストできるビジュアルインターフェース付きのウェブサーバーが起動します。
 
 サーバーが接続されたら：
 
-- ツールの一覧を試し、`add` を引数 2 と 4 で実行してみてください。結果に 6 が表示されるはずです。
+- ツールの一覧を表示し、`add` を引数 2 と 4 で実行してみてください。結果に 6 が表示されるはずです。
 
-- resources と resource template に移動し、get_greeting を呼び出して名前を入力すると、入力した名前入りの挨拶が表示されます。
+- resources と resource template に移動し、get_greeting を呼び出して名前を入力すると、入力した名前を含む挨拶が表示されます。
 
 ### CLIモードでのテスト
 
 実行したインスペクターは実際には Node.js アプリで、`mcp dev` はそのラッパーです。
 
-以下のコマンドで直接 CLI モードで起動できます。
+以下のコマンドを実行すると、CLIモードで直接起動できます：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-これにより、サーバーで利用可能なすべてのツールが一覧表示されます。以下のような出力が表示されるはずです。
+これでサーバー上のすべてのツールが一覧表示されます。以下のような出力が得られるはずです：
 
 ```text
 {
@@ -92,13 +92,13 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 }
 ```
 
-ツールを呼び出すには、以下のように入力します。
+ツールを呼び出すには、以下のように入力します：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-以下のような出力が表示されるはずです。
+以下のような出力が表示されるはずです：
 
 ```text
 {
@@ -113,7 +113,7 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 ```
 
 > ![!TIP]
-> インスペクターをブラウザより CLI モードで実行するほうが通常はずっと高速です。
+> インスペクターをブラウザよりCLIモードで実行するほうが通常はずっと高速です。
 > インスペクターの詳細は [こちら](https://github.com/modelcontextprotocol/inspector) をご覧ください。
 
 **免責事項**：  

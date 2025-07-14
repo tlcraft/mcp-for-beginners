@@ -2,53 +2,54 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-05-17T09:24:57+00:00",
+  "translation_date": "2025-07-13T18:06:21+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
   "language_code": "he"
 }
 -->
-# הפעלת הדוגמה הזו
+# הרצת הדוגמה הזו
 
-מומלץ להתקין את `uv` אך זה לא חובה, ראו [הוראות](https://docs.astral.sh/uv/#highlights)
+מומלץ להתקין את `uv` אבל זה לא חובה, ראה [הוראות](https://docs.astral.sh/uv/#highlights)
 
-## -1- התקנת התלויות
+## -1- התקן את התלויות
 
 ```bash
 npm install
 ```
 
-## -3- הפעלת הדוגמה
+## -3- הרץ את הדוגמה
+
 
 ```bash
 npm run build
 ```
 
-## -4- בדיקת הדוגמה
+## -4- בדוק את הדוגמה
 
-עם השרת פועל בטרמינל אחד, פתחו טרמינל נוסף והפעילו את הפקודה הבאה:
+כאשר השרת רץ במסוף אחד, פתח מסוף נוסף והרץ את הפקודה הבאה:
 
 ```bash
 npm run inspector
 ```
 
-זה אמור להפעיל שרת אינטרנט עם ממשק חזותי שמאפשר לבדוק את הדוגמה.
+זה אמור להפעיל שרת ווב עם ממשק חזותי שיאפשר לך לבדוק את הדוגמה.
 
-לאחר שהשרת מחובר:
+ברגע שהשרת מחובר:
 
-- נסו לרשום כלים והפעילו `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- נסה לרשום את הכלים ולהריץ את `add` עם הפרמטרים 2 ו-4, אתה אמור לראות 6 בתוצאה.
+- עבור למשאבים ותבנית משאב וקרא ל-"greeting", הקלד שם ואתה אמור לראות ברכה עם השם שהזנת.
 
-### Testing in CLI mode
+### בדיקה במצב CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` הוא מעטפת מסביבו.
+ה- inspector שהרצת הוא למעשה אפליקציית Node.js ו- `mcp dev` הוא מעטפת סביבו.
 
-ניתן להפעיל אותו ישירות במצב CLI על ידי הרצת הפקודה הבאה:
+אתה יכול להפעיל אותו ישירות במצב CLI על ידי הרצת הפקודה הבאה:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/list
 ```
 
-זה ירשום את כל הכלים הזמינים בשרת. אמורים לראות את הפלט הבא:
+זה ירשום את כל הכלים הזמינים בשרת. אתה אמור לראות את הפלט הבא:
 
 ```text
 {
@@ -79,13 +80,13 @@ npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/l
 }
 ```
 
-כדי להפעיל כלי, הקלידו:
+כדי להפעיל כלי הקלד:
 
 ```bash
 nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-אמורים לראות את הפלט הבא:
+אתה אמור לראות את הפלט הבא:
 
 ```text
 {
@@ -100,8 +101,8 @@ nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/
 ```
 
 > ![!TIP]
-> בדרך כלל הרבה יותר מהיר להפעיל את המפקח במצב CLI מאשר בדפדפן.
-> קראו עוד על המפקח [כאן](https://github.com/modelcontextprotocol/inspector).
+> בדרך כלל הרבה יותר מהיר להריץ את ה-inspector במצב CLI מאשר בדפדפן.
+> קרא עוד על ה-inspector [כאן](https://github.com/modelcontextprotocol/inspector).
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). בעוד שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עשויים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. למידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי בני אדם. אנו לא נושאים באחריות לאי הבנות או פרשנויות שגויות הנובעות מהשימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו צריך להיחשב כמקור הסמכות. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

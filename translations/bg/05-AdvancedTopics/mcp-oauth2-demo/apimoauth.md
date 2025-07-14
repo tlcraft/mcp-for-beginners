@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "32c9a4263be08f9050c8044bb26267c4",
-  "translation_date": "2025-05-17T15:37:29+00:00",
+  "translation_date": "2025-07-14T00:36:23+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/apimoauth.md",
   "language_code": "bg"
 }
 -->
-# Деплой на приложението Spring AI MCP в Azure Container Apps
+# Разгръщане на Spring AI MCP приложението в Azure Container Apps
 
-([Защита на сървърите Spring AI MCP с OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Фигура: Сървър Spring AI MCP, защитен със Spring Authorization Server. Сървърът издава токени за достъп на клиентите и ги валидира при входящи заявки (източник: Spring блог) ([Защита на сървърите Spring AI MCP с OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* За да деплойнете сървъра Spring MCP, изградете го като контейнер и използвайте Azure Container Apps с външен вход. Например, с помощта на Azure CLI можете да изпълните:
+ ([Securing Spring AI MCP servers with OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Фигура: Spring AI MCP сървър, защитен със Spring Authorization Server. Сървърът издава access токени на клиентите и ги валидира при входящи заявки (източник: Spring блог) ([Securing Spring AI MCP servers with OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* За да разположите Spring MCP сървъра, изградете го като контейнер и използвайте Azure Container Apps с външен ingress. Например, чрез Azure CLI можете да изпълните:
 
 ```bash
 az containerapp up \
@@ -23,11 +23,11 @@ az containerapp up \
   --query properties.configuration.ingress.fqdn
 ```
 
-Това създава публично достъпно Container App с активиран HTTPS (Azure издава безплатен TLS сертификат за по подразбиране `*.azurecontainerapps.io` domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). The command output includes the app’s FQDN (e.g. `my-mcp-app.eastus.azurecontainerapps.io`), which becomes the **issuer URL** base. Ensure HTTP ingress is enabled (as above) so APIM can reach the app. In a test/dev setup, use the `--ingress external` option (or bind a custom domain with TLS per [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Store any sensitive properties (like OAuth client secrets) in Container Apps secrets or Azure Key Vault, and map them into the container as environment variables. 
+Това създава публично достъпно Container App с активиран HTTPS (Azure издава безплатен TLS сертификат за стандартния домейн `*.azurecontainerapps.io` ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Изходът от командата включва FQDN на приложението (например `my-mcp-app.eastus.azurecontainerapps.io`), който става основа за **issuer URL**. Уверете се, че HTTP ingress е активиран (както е описано по-горе), за да може APIM да достигне приложението. В тестова или дев среда използвайте опцията `--ingress external` (или свържете персонализиран домейн с TLS според [Microsoft документацията](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Съхранявайте чувствителни свойства (като OAuth client secrets) в Container Apps secrets или Azure Key Vault и ги мапирайте в контейнера като променливи на средата.
 
-## Configuring Spring Authorization Server
+## Конфигуриране на Spring Authorization Server
 
-In your Spring Boot app’s code, include the Spring Authorization Server and Resource Server starters. Configure a `RegisteredClient` (for the `client_credentials` grant in dev/test) and a JWT key source. For example, in `application.properties`, може да зададете:
+В кода на вашето Spring Boot приложение включете стартерите за Spring Authorization Server и Resource Server. Конфигурирайте `RegisteredClient` (за `client_credentials` grant в dev/test) и източник на JWT ключове. Например, в `application.properties` може да зададете:
 
 ```properties
 # OAuth2 client (for testing token issuance)
@@ -37,7 +37,7 @@ spring.security.oauth2.authorizationserver.client.oidc-client.registration.autho
 spring.security.oauth2.authorizationserver.client.oidc-client.registration.client-authentication-methods=client_secret_basic
 ```
 
-Активирайте Authorization Server и Resource Server, като дефинирате верига за филтри за сигурност. Например:
+Активирайте Authorization Server и Resource Server чрез дефиниране на security filter chain. Например:
 
 ```java
 @Configuration
@@ -84,9 +84,9 @@ public class SecurityConfiguration {
 }
 ```
 
-Тази конфигурация ще изложи по подразбиране OAuth2 крайните точки: `/oauth2/token` for tokens and `/oauth2/jwks` for the JSON Web Key Set. (By default Spring’s `AuthorizationServerSettings` maps `/oauth2/token` and `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) The server will issue JWT access tokens signed by the RSA key above, and publish its public key at `https://<your-app>:/oauth2/jwks`. 
+Тази конфигурация ще изложи стандартните OAuth2 крайни точки: `/oauth2/token` за токени и `/oauth2/jwks` за JSON Web Key Set. (По подразбиране Spring `AuthorizationServerSettings` мапва `/oauth2/token` и `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) Сървърът ще издава JWT access токени, подписани с RSA ключа по-горе, и ще публикува публичния си ключ на `https://<your-app>:/oauth2/jwks`.
 
-**Enable OpenID Connect discovery:** To let APIM automatically retrieve the issuer and JWKS, enable the OIDC provider configuration endpoint by adding `.oidc(Customizer.withDefaults())` във вашата конфигурация за сигурност ([Модел за конфигурация :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Например:
+**Активиране на OpenID Connect discovery:** За да може APIM автоматично да извлича issuer и JWKS, активирайте OIDC provider configuration endpoint, като добавите `.oidc(Customizer.withDefaults())` в конфигурацията на сигурността ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Например:
 
 ```java
 http
@@ -96,7 +96,7 @@ http
       .oidc(Customizer.withDefaults()));  // <– enables /.well-known/openid-configuration
 ```
 
-Това излага `/.well-known/openid-configuration`, which APIM can use for metadata. Finally, you may want to customize the JWT **audience** claim so that APIM’s `<audiences>` проверка ще премине. Например, добавете персонализатор на токени:
+Това ще изложи `/.well-known/openid-configuration`, който APIM може да използва за метаданни. Накрая, може да искате да персонализирате JWT claim-а **audience**, така че проверката на APIM `<audiences>` да премине успешно. Например, добавете token customizer:
 
 ```java
 @Bean
@@ -108,21 +108,21 @@ public OAuth2TokenCustomizer<OAuth2TokenClaimsContext> tokenCustomizer() {
 }
 ```
 
-Това гарантира, че токените носят `"aud": ["mcp-client"]`, matching the client ID or scope expected by APIM. 
+Това гарантира, че токените съдържат `"aud": ["mcp-client"]`, съвпадащо с client ID или scope, очакван от APIM.
 
-## Exposing Token and JWKS Endpoints
+## Излагане на Token и JWKS крайни точки
 
-After deploying, your app’s **issuer URL** will be `https://<app-fqdn>`, e.g. `https://my-mcp-app.eastus.azurecontainerapps.io`. Its OAuth2 endpoints are:
+След разгръщане, **issuer URL** на вашето приложение ще бъде `https://<app-fqdn>`, например `https://my-mcp-app.eastus.azurecontainerapps.io`. Неговите OAuth2 крайни точки са:
 
-- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – clients obtain tokens here (client_credentials flow).
-- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – returns the JWK set (used by APIM to get signing keys).
-- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC discovery JSON (contains `issuer`, `token_endpoint`, `jwks_uri`, etc.).  
+- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – тук клиентите получават токени (client_credentials flow).
+- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – връща JWK набора (използван от APIM за получаване на ключове за подпис).
+- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC discovery JSON (съдържа `issuer`, `token_endpoint`, `jwks_uri` и др.).
 
-APIM will point to the **OpenID configuration URL**, from which it discovers the `jwks_uri`. For example, if your Container App FQDN is `my-mcp-app.eastus.azurecontainerapps.io`, then APIM’s `<openid-config url="...">` should use `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (By default Spring will set the `issuer` in that metadata to the same base URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
+APIM ще сочи към **OpenID configuration URL**, от който открива `jwks_uri`. Например, ако FQDN на Container App е `my-mcp-app.eastus.azurecontainerapps.io`, тогава `<openid-config url="...">` в APIM трябва да използва `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (По подразбиране Spring задава `issuer` в тези метаданни на същия базов URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
 
-## Configuring Azure API Management (`validate-jwt`)
+## Конфигуриране на Azure API Management (`validate-jwt`)
 
-In Azure APIM, add an inbound policy that uses the `<validate-jwt>` политика за проверка на входящи JWT срещу вашия Spring Authorization Server. За опростена конфигурация можете да използвате URL за метаданни на OpenID Connect. Примерен фрагмент от политика:
+В Azure APIM добавете inbound policy, която използва `<validate-jwt>` за проверка на входящите JWT-та спрямо вашия Spring Authorization Server. За опростена конфигурация можете да използвате OpenID Connect metadata URL. Примерен откъс от политика:
 
 ```xml
 <inbound>
@@ -139,38 +139,37 @@ In Azure APIM, add an inbound policy that uses the `<validate-jwt>` полити
 </inbound>
 ```
 
-Тази политика казва на APIM да извлече OpenID конфигурацията от Spring Auth Server, да извлече неговия JWKS и да валидира, че всеки токен е подписан от надежден ключ и има правилната аудитория. (Ако пропуснете `<issuers>`, APIM will use the `issuer` claim from the metadata automatically.) The `<audience>` should match your client ID or API resource identifier in the token (in the example above, we set it to `"mcp-client"`). This is consistent with Microsoft’s documentation on using `validate-jwt` with `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
+Тази политика инструктира APIM да изтегли OpenID конфигурацията от Spring Auth Server, да получи JWKS и да валидира, че всеки токен е подписан с доверен ключ и има правилния audience. (Ако пропуснете `<issuers>`, APIM автоматично ще използва `issuer` claim от метаданните.) `<audience>` трябва да съвпада с client ID или идентификатора на API ресурса в токена (в горния пример зададохме `"mcp-client"`). Това е в съответствие с документацията на Microsoft за използване на `validate-jwt` с `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
 
-After validation, APIM will forward the request (including the original `Authorization` header) to the backend. Since the Spring app is also a resource server, it will re-validate the token, but APIM has already ensured its validity. (For development, you can rely on APIM’s check and disable additional checks in the app if desired, but it’s safer to keep both.)
+След валидирането APIM ще препрати заявката (включително оригиналния `Authorization` хедър) към бекенда. Тъй като Spring приложението също е resource server, то ще повтори проверката на токена, но APIM вече е гарантирал неговата валидност. (За разработка можете да разчитате само на проверката на APIM и да изключите допълнителните проверки в приложението, но е по-безопасно да се поддържат и двете.)
 
-## Example Settings
+## Примерни настройки
 
-| Setting            | Example Value                                                        | Notes                                      |
-|--------------------|----------------------------------------------------------------------|--------------------------------------------|
-| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                    | Your Container App’s URL (base URI)        |
-| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`       | Default Spring token endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
-| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`        | Default JWK Set endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
-| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC discovery document (auto-generated)    |
-| **APIM audience**  | `mcp-client`                                                         | OAuth client ID or API resource name       |
-| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` uses this URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
+| Настройка          | Примерна стойност                                                   | Бележки                                    |
+|--------------------|--------------------------------------------------------------------|--------------------------------------------|
+| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                  | URL на вашето Container App (базов URI)    |
+| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`     | Стандартна Spring token крайна точка ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
+| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`      | Стандартна JWK Set крайна точка ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
+| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC discovery документ (генериран автоматично)    |
+| **APIM audience**  | `mcp-client`                                                       | OAuth client ID или име на API ресурс      |
+| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` използва този URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
 
-## Common Pitfalls
+## Чести проблеми
 
-- **HTTPS/TLS:** The APIM gateway requires that the OpenID/JWKS endpoint be HTTPS with a valid certificate. By default, Azure Container Apps provides a trusted TLS cert for the Azure-managed domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If you use a custom domain, be sure to bind a certificate (you can use Azure’s free managed cert feature) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If APIM cannot trust the endpoint’s certificate, `<validate-jwt>` will fail to fetch the metadata.  
+- **HTTPS/TLS:** APIM gateway изисква OpenID/JWKS крайна точка да е HTTPS с валиден сертификат. По подразбиране Azure Container Apps предоставя доверен TLS сертификат за Azure управлявания домейн ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Ако използвате персонализиран домейн, задължително свържете сертификат (можете да използвате безплатната управлявана функция на Azure) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Ако APIM не може да се довери на сертификата на крайна точка, `<validate-jwt>` няма да успее да изтегли метаданните.
 
-- **Endpoint Accessibility:** Ensure the Spring app’s endpoints are reachable from APIM. Using `--ingress external` (or enabling ingress in the portal) is simplest. If you chose an internal or vNet-bound environment, APIM (by default public) might not reach it unless placed in the same VNet. In a test setup, prefer public ingress so APIM can call the `.well-known` and `/jwks` URLs. 
+- **Достъпност на крайни точки:** Уверете се, че крайни точки на Spring приложението са достъпни от APIM. Използването на `--ingress external` (или активиране на ingress през портала) е най-лесно. Ако сте избрали вътрешна или vNet-свързана среда, APIM (който по подразбиране е публичен) може да не достигне приложението, освен ако не е в същия VNet. В тестова среда предпочитайте публичен ingress, за да може APIM да извиква `.well-known` и `/jwks` URL адресите.
 
-- **OpenID Discovery Enabled:** By default, Spring Authorization Server **does not expose** the `/.well-known/openid-configuration` unless OIDC is enabled. Make sure to include `.oidc(Customizer.withDefaults())` in your security config (see above) so that the provider configuration endpoint is active ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Otherwise APIM’s `<openid-config>` call will 404.
+- **Активиране на OpenID Discovery:** По подразбиране Spring Authorization Server **не излага** `/.well-known/openid-configuration`, освен ако OIDC не е активиран. Уверете се, че сте включили `.oidc(Customizer.withDefaults())` в конфигурацията на сигурността (виж по-горе), за да е активна крайна точка за конфигурация на доставчика ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). В противен случай APIM заявката към `<openid-config>` ще върне 404.
 
-- **Audience Claim:** Spring’s default behavior is to set the `aud` claim to the client ID. If APIM’s `<audience>` check fails, you may need to customize the token (as shown above) or adjust the APIM policy. Ensure the audience in your JWT matches what you configure in `<audience>`. 
+- **Audience Claim:** По подразбиране Spring задава `aud` claim на client ID. Ако проверката на APIM `<audience>` не преминава, може да се наложи да персонализирате токена (както е показано по-горе) или да коригирате APIM политиката. Уверете се, че audience в JWT съвпада с конфигурацията в `<audience>`.
 
-- **JSON Metadata Parsing:** The OpenID configuration JSON must be valid. Spring’s default config will emit a standard OIDC metadata document. Verify that it contains the correct `issuer` and `jwks_uri`. If you host Spring behind a proxy or path-based route, double-check the URLs in this metadata. APIM will use these values as-is. 
+- **Парсване на JSON метаданни:** OpenID конфигурационният JSON трябва да е валиден. По подразбиране Spring издава стандартен OIDC metadata документ. Проверете дали съдържа правилните `issuer` и `jwks_uri`. Ако хоствате Spring зад прокси или с път-базирано маршрутизиране, проверете URL адресите в тези метаданни. APIM ще използва тези стойности без промяна.
 
-- **Policy Ordering:** In the APIM policy, place `<validate-jwt>` **before** any routing to the backend. Otherwise, calls might reach your app without a valid token. Also ensure `<validate-jwt>` appears immediately under `<inbound>` (not nested inside another condition) so that APIM applies it.
+- **Подредба на политиките:** В APIM политиката поставете `<validate-jwt>` **преди** всякакво маршрутизиране към бекенда. В противен случай заявките може да достигнат приложението без валиден токен. Също така се уверете, че `<validate-jwt>` е директно под `<inbound>` (не е вложен в друга условна конструкция), за да бъде приложен от APIM.
 
-By following the above steps, you can run your Spring AI MCP server in Azure Container Apps and have Azure API Management validate incoming OAuth2 JWTs with a minimal policy. The key points are: expose the Spring Auth endpoints publicly with TLS, enable OIDC discovery, and point APIM’s `validate-jwt` at the OpenID config URL (so it can fetch the JWKS automatically). This setup is suitable for a dev/test environment; for production, consider proper secret management, token lifetimes, and rotating keys in JWKS as needed. 
-
-**References:** See Spring Authorization Server docs for default endpoints ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) and OIDC configuration ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); see Microsoft APIM docs for `validate-jwt` примери ([Референция за политики на Azure API Management - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); и документация за Azure Container Apps за деплой и сертификати ([Деплой на Java Spring Boot приложения в Azure Container Apps - Java на Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Персонализирани домейн имена и безплатни управлявани сертификати в Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
+Следвайки горните стъпки, можете да стартирате вашия Spring AI MCP сървър в Azure Container Apps и да накарате Azure API Management да валидира входящите OAuth2 JWT-та с минимална политика. Ключовите моменти са: изложете Spring Auth крайни точки публично с TLS, активирайте OIDC discovery и насочете `validate-jwt` на APIM към OpenID конфигурационния URL (за автоматично изтегляне на JWKS). Тази конфигурация е подходяща за dev/test среда; за продукция обмислете правилно управление на тайни, срокове на токените и ротация на ключове в JWKS при необходимост.
+**References:** Вижте документацията на Spring Authorization Server за стандартните крайни точки ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) и конфигурацията на OIDC ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); вижте документацията на Microsoft APIM за примери с `validate-jwt` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); и документацията на Azure Container Apps за разгръщане и сертификати ([Deploy Java Spring Boot apps to Azure Container Apps - Java on Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Докато се стремим към точност, моля, имайте предвид, че автоматичните преводи може да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Не носим отговорност за каквито и да било недоразумения или погрешни интерпретации, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.

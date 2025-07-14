@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T19:09:41+00:00",
+  "translation_date": "2025-07-13T21:42:26+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "hr"
 }
@@ -15,7 +15,7 @@ Recimo da povežete agenta s vašim kalkulator MCP serverom. Odjednom, vaš agen
 
 ## Pregled
 
-Ova lekcija objašnjava kako povezati kalkulator MCP server s agentom koristeći [AI Toolkit](https://aka.ms/AIToolkit) ekstenziju u Visual Studio Codeu, omogućujući agentu izvođenje matematičkih operacija poput zbrajanja, oduzimanja, množenja i dijeljenja putem prirodnog jezika.
+Ova lekcija objašnjava kako povezati kalkulator MCP server s agentom koristeći [AI Toolkit](https://aka.ms/AIToolkit) ekstenziju u Visual Studio Codeu, omogućujući vašem agentu izvođenje matematičkih operacija poput zbrajanja, oduzimanja, množenja i dijeljenja putem prirodnog jezika.
 
 AI Toolkit je moćna ekstenzija za Visual Studio Code koja pojednostavljuje razvoj agenata. AI inženjeri mogu lako graditi AI aplikacije razvijanjem i testiranjem generativnih AI modela — lokalno ili u oblaku. Ekstenzija podržava većinu glavnih generativnih modela dostupnih danas.
 
@@ -26,7 +26,7 @@ AI Toolkit je moćna ekstenzija za Visual Studio Code koja pojednostavljuje razv
 Na kraju ove lekcije moći ćete:
 
 - Koristiti MCP server putem AI Toolkita.
-- Konfigurirati postavke agenta kako bi mogao otkrivati i koristiti alate koje pruža MCP server.
+- Konfigurirati agentovu postavku kako bi mogao otkrivati i koristiti alate koje pruža MCP server.
 - Koristiti MCP alate putem prirodnog jezika.
 
 ## Pristup
@@ -47,18 +47,18 @@ Odlično, sada kada razumijemo tijek, konfigurirajmo AI agenta da koristi vanjsk
 
 ## Vježba: Korištenje servera
 
-U ovoj vježbi izgradit ćete, pokrenuti i unaprijediti AI agenta s alatima s MCP servera unutar Visual Studio Codea koristeći AI Toolkit.
+U ovoj vježbi izgradit ćete, pokrenuti i unaprijediti AI agenta s alatima iz MCP servera unutar Visual Studio Codea koristeći AI Toolkit.
 
 ### -0- Priprema, dodajte OpenAI GPT-4o model u My Models
 
 Vježba koristi **GPT-4o** model. Model treba biti dodan u **My Models** prije nego što kreirate agenta.
 
-![Screenshot sučelja za odabir modela u AI Toolkit ekstenziji za Visual Studio Code. Naslov glasi "Find the right model for your AI Solution" s podnaslovom koji potiče korisnike da otkriju, testiraju i implementiraju AI modele. Ispod, pod “Popular Models,” prikazano je šest kartica modela: DeepSeek-R1 (hostano na GitHubu), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Small, Fast) i DeepSeek-R1 (hostano na Ollama). Svaka kartica ima opcije “Add” i “Try in Playground”.](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.hr.png)
+![Screenshot sučelja za odabir modela u AI Toolkit ekstenziji za Visual Studio Code. Naslov glasi "Find the right model for your AI Solution" s podnaslovom koji potiče korisnike da otkriju, testiraju i implementiraju AI modele. Ispod, pod “Popular Models,” prikazano je šest kartica modela: DeepSeek-R1 (hostano na GitHubu), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Small, Fast) i DeepSeek-R1 (hostano na Ollama). Svaka kartica ima opcije “Add” ili “Try in Playground”.](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.hr.png)
 
 1. Otvorite **AI Toolkit** ekstenziju iz **Activity Bar**.
 1. U odjeljku **Catalog** odaberite **Models** da otvorite **Model Catalog**. Odabirom **Models** otvara se **Model Catalog** u novom editor tabu.
 1. U traku za pretraživanje **Model Catalog** upišite **OpenAI GPT-4o**.
-1. Kliknite **+ Add** da dodate model na svoj popis **My Models**. Provjerite jeste li odabrali model koji je **hostan na GitHubu**.
+1. Kliknite **+ Add** da dodate model na svoj popis **My Models**. Provjerite jeste li odabrali model koji je **Hosted by GitHub**.
 1. U **Activity Bar** provjerite da se model **OpenAI GPT-4o** pojavljuje na popisu.
 
 ### -1- Kreirajte agenta
@@ -102,11 +102,11 @@ AI Toolkit dolazi s predlošcima koji olakšavaju izradu vlastitog MCP servera. 
 1. Unesite sljedeće ime za server: **Calculator**
 1. Otvorit će se novi Visual Studio Code prozor. Odaberite **Yes, I trust the authors**.
 1. U terminalu (**Terminal** > **New Terminal**) kreirajte virtualno okruženje: `python -m venv .venv`
-1. Aktivirajte virtualno okruženje u terminalu:
+1. U terminalu aktivirajte virtualno okruženje:
     1. Windows - `.venv\Scripts\activate`
     1. macOS/Linux - `source venv/bin/activate`
-1. Instalirajte ovisnosti: `pip install -e .[dev]`
-1. U **Explorer** prikazu u **Activity Bar** proširite direktorij **src** i otvorite datoteku **server.py**.
+1. U terminalu instalirajte ovisnosti: `pip install -e .[dev]`
+1. U prikazu **Explorer** u **Activity Bar** proširite direktorij **src** i otvorite datoteku **server.py** u editoru.
 1. Zamijenite kod u datoteci **server.py** sljedećim i spremite:
 
     ```python
@@ -152,11 +152,11 @@ AI Toolkit dolazi s predlošcima koji olakšavaju izradu vlastitog MCP servera. 
 
 ### -4- Pokrenite agenta s kalkulator MCP serverom
 
-Sada kada vaš agent ima alate, vrijeme je da ih iskoristite! U ovom dijelu poslat ćete upite agentu kako biste testirali i provjerili koristi li agent odgovarajući alat s kalkulator MCP servera.
+Sada kada vaš agent ima alate, vrijeme je da ih iskoristite! U ovom dijelu poslat ćete upite agentu kako biste testirali i provjerili koristi li agent odgovarajući alat iz kalkulator MCP servera.
 
 ![Screenshot sučelja Calculator Agent u AI Toolkit ekstenziji za Visual Studio Code. Na lijevoj strani, pod “Tools,” dodan je MCP server naziva local-server-calculator_server, koji prikazuje četiri dostupna alata: add, subtract, multiply i divide. Prikazuje se oznaka da su četiri alata aktivna. Ispod je sklopljeni odjeljak “Structure output” i plavi gumb “Run.” Na desnoj strani, pod “Model Response,” agent poziva alate multiply i subtract s unosima {"a": 3, "b": 25} i {"a": 75, "b": 20}. Konačni “Tool Response” prikazan je kao 75.0. Na dnu se nalazi gumb “View Code.”](../../../../translated_images/aitk-agent-response-with-tools.e7c781869dc8041a25f9903ed4f7e8e0c7e13d7d94f6786a6c51b1e172f56866.hr.png)
 
-Pokrenut ćete kalkulator MCP server na lokalnom razvojnom računalu putem **Agent Buildera** kao MCP klijenta.
+Pokrenut ćete kalkulator MCP server na svojem lokalnom razvojnom računalu putem **Agent Buildera** kao MCP klijenta.
 
 1. Pritisnite `F5` za pokretanje debugiranja MCP servera. **Agent (Prompt) Builder** otvorit će se u novom editor tabu. Status servera vidljiv je u terminalu.
 1. U polje **User prompt** u **Agent (Prompt) Builderu** unesite sljedeći upit: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
@@ -179,12 +179,12 @@ Pokušajte dodati dodatni alat u svoju datoteku **server.py** (npr. funkciju za 
 
 [Rješenje](./solution/README.md)
 
-## Ključne poruke
+## Ključne spoznaje
 
-Glavne poruke iz ovog poglavlja su:
+Glavne spoznaje iz ovog poglavlja su:
 
 - AI Toolkit ekstenzija je izvrstan klijent koji vam omogućuje korištenje MCP servera i njihovih alata.
-- Možete dodavati nove alate MCP serverima, proširujući mogućnosti agenta kako bi zadovoljio nove zahtjeve.
+- Možete dodavati nove alate MCP serverima, proširujući mogućnosti agenta kako bi zadovoljio rastuće zahtjeve.
 - AI Toolkit uključuje predloške (npr. Python MCP server predloške) koji pojednostavljuju izradu prilagođenih alata.
 
 ## Dodatni resursi
@@ -195,4 +195,4 @@ Glavne poruke iz ovog poglavlja su:
 - Sljedeće: [Testiranje i ispravljanje pogrešaka](../08-testing/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

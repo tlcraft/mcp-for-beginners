@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:16:59+00:00",
+  "translation_date": "2025-07-13T23:57:27+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "fi"
 }
 -->
-# Model Context Protocol (MCP) -integrointi Azure AI Foundryn kanssa
+# Model Context Protocol (MCP) -integraatio Azure AI Foundryn kanssa
 
-Tässä oppaassa näytetään, miten Model Context Protocol (MCP) -palvelimet integroidaan Azure AI Foundryn agenttien kanssa, mahdollistaen tehokkaan työkalujen orkestroinnin ja yritystason tekoälytoiminnot.
+Tässä oppaassa näytetään, miten Model Context Protocol (MCP) -palvelimet integroidaan Azure AI Foundryn agenttien kanssa, mikä mahdollistaa tehokkaan työkalujen orkestroinnin ja yritystason tekoälyominaisuudet.
 
 ## Johdanto
 
-Model Context Protocol (MCP) on avoin standardi, joka mahdollistaa tekoälysovellusten turvallisen yhteyden ulkoisiin tietolähteisiin ja työkaluihin. Kun MCP yhdistetään Azure AI Foundryyn, agentit voivat käyttää ja olla vuorovaikutuksessa eri ulkoisten palveluiden, rajapintojen ja tietolähteiden kanssa yhtenäisellä tavalla.
+Model Context Protocol (MCP) on avoin standardi, joka mahdollistaa tekoälysovellusten turvallisen yhteyden ulkoisiin tietolähteisiin ja työkaluihin. Kun MCP integroidaan Azure AI Foundryn kanssa, agentit voivat käyttää ja olla vuorovaikutuksessa eri ulkoisten palveluiden, API:en ja tietolähteiden kanssa yhtenäisellä tavalla.
 
-Tämä integraatio yhdistää MCP:n työkaluekosysteemin joustavuuden Azure AI Foundryn vankkaan agenttikehykseen tarjoten yritystason tekoälyratkaisuja laajalla räätälöitävyydellä.
+Tämä integraatio yhdistää MCP:n työkaluekosysteemin joustavuuden Azure AI Foundryn vankan agenttikehyksen kanssa, tarjoten yritystason tekoälyratkaisuja laajoilla räätälöintimahdollisuuksilla.
 
 **Note:** Jos haluat käyttää MCP:tä Azure AI Foundry Agent Service -palvelussa, tällä hetkellä tuetut alueet ovat: westus, westus2, uaenorth, southindia ja switzerlandnorth
 
@@ -25,27 +25,27 @@ Oppaan lopussa osaat:
 
 - Ymmärtää Model Context Protocolin ja sen hyödyt
 - Määrittää MCP-palvelimet Azure AI Foundryn agenttien käyttöön
-- Luoda ja konfiguroida agentteja MCP-työkalujen integraatiolla
+- Luoda ja konfiguroida agentteja MCP-työkalujen integroinnilla
 - Toteuttaa käytännön esimerkkejä oikeilla MCP-palvelimilla
 - Käsitellä työkalujen vastauksia ja lähdeviitteitä agenttikeskusteluissa
 
-## Vaatimukset
+## Ennen aloittamista
 
-Ennen aloittamista varmista, että sinulla on:
+Varmista ennen aloittamista, että sinulla on:
 
-- Azure-tilaus, jossa on AI Foundryn käyttöoikeus
+- Azure-tilaus, jossa on pääsy AI Foundryyn
 - Python 3.10+ 
 - Azure CLI asennettuna ja konfiguroituna
 - Tarvittavat oikeudet AI-resurssien luomiseen
 
 ## Mikä on Model Context Protocol (MCP)?
 
-Model Context Protocol on standardoitu tapa tekoälysovelluksille yhdistää ulkoisiin tietolähteisiin ja työkaluihin. Keskeisiä etuja ovat:
+Model Context Protocol on standardoitu tapa, jolla tekoälysovellukset voivat yhdistää ulkoisiin tietolähteisiin ja työkaluihin. Keskeiset hyödyt ovat:
 
-- **Standardoitu integraatio**: Johdonmukainen käyttöliittymä eri työkaluille ja palveluille
-- **Turvallisuus**: Turvalliset tunnistautumis- ja valtuutusmekanismit
-- **Joustavuus**: Tuki erilaisille tietolähteille, rajapinnoille ja räätälöidyille työkaluille
-- **Laajennettavuus**: Helppo lisätä uusia toimintoja ja integraatioita
+- **Standardoitu integraatio**: Johdonmukainen rajapinta eri työkaluille ja palveluille
+- **Turvallisuus**: Turvalliset todennus- ja valtuutusmekanismit
+- **Joustavuus**: Tuki erilaisille tietolähteille, API:ille ja räätälöidyille työkaluilla
+- **Laajennettavuus**: Helppo lisätä uusia ominaisuuksia ja integraatioita
 
 ## MCP:n käyttöönotto Azure AI Foundryn kanssa
 
@@ -80,7 +80,7 @@ with project_client:
     agent = project_client.agents.create_agent(
         model="gpt-4.1-nano", 
         name="mcp_agent", 
-        instructions="Olet avulias avustaja. Käytä annettuja työkaluja vastataksesi kysymyksiin. Muista aina mainita lähteet.",
+        instructions="Olet avulias avustaja. Käytä annettuja työkaluja vastataksesi kysymyksiin. Muista aina mainita lähteesi.",
         tools=[
             {
                 "type": "mcp",
@@ -103,9 +103,9 @@ When configuring MCP tools for your agent, you can specify several important par
 ```python
 mcp_tool = {
     "type": "mcp",
-    "server_label": "unique_server_name",      # Tunniste MCP-palvelimelle
+    "server_label": "unique_server_name",      # MCP-palvelimen tunniste
     "server_url": "https://api.example.com/mcp", # MCP-palvelimen päätepiste
-    "require_approval": "never"                 # Hyväksyntäkäytäntö: tällä hetkellä tuettu vain "never" 
+    "require_approval": "never"                 # Hyväksyntäpolitiikka: tällä hetkellä tuettu vain "never"
 }
 ```
 
@@ -133,7 +133,7 @@ def create_mcp_agent_example():
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="Olet avulias avustaja, joka on erikoistunut Microsoftin dokumentaatioon. Käytä Microsoft Learn MCP -palvelinta etsiäksesi tarkkaa ja ajantasaista tietoa. Muista aina mainita lähteet.",
+            instructions="Olet avulias avustaja, joka on erikoistunut Microsoftin dokumentaatioon. Käytä Microsoft Learn MCP -palvelinta etsiäksesi tarkkaa ja ajantasaista tietoa. Muista aina mainita lähteesi.",
             tools=[
                 {
                     "type": "mcp",
@@ -154,14 +154,14 @@ def create_mcp_agent_example():
         message = project_client.agents.messages.create(
             thread_id=thread.id, 
             role="user", 
-            content="Mikä on .NET MAUI? Miten se vertautuu Xamarin.Formsiin?",
+            content=".NET MAUI on mitä? Miten se vertautuu Xamarin.Formsiin?",
         )
         print(f"Viesti luotu, viestin ID: {message.id}")
 
-        # Käynnistä agentti
+        # Suorita agentti
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
         
-        # Tarkista suoritus
+        # Tarkista suorituksen tila
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
@@ -170,7 +170,7 @@ def create_mcp_agent_example():
         # Tarkastele suorituksen vaiheita ja työkalukutsuja
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
-            print(f"Suoritusvaihe: {step.id}, tila: {step.status}, tyyppi: {step.type}")
+            print(f"Suorituksen vaihe: {step.id}, tila: {step.status}, tyyppi: {step.type}")
             if step.type == "tool_calls":
                 print("Työkalukutsun tiedot:")
                 for tool_call in step.step_details.tool_calls:
@@ -187,50 +187,50 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-  
+```
 
-## Yleisiä ongelmia ja ratkaisuja
+## Yleisiä ongelmia ja niiden ratkaisuja
 
 ### 1. Yhteysongelmat
 - Varmista, että MCP-palvelimen URL on saavutettavissa
-- Tarkista tunnistautumistiedot
+- Tarkista todennustiedot
 - Varmista verkkoyhteys
 
 ### 2. Työkalukutsujen epäonnistumiset
-- Tarkista työkalujen argumentit ja muotoilu
-- Selvitä palvelinkohtaiset vaatimukset
+- Tarkista työkalun argumentit ja muotoilu
+- Varmista palvelinkohtaiset vaatimukset
 - Toteuta asianmukainen virheenkäsittely
 
 ### 3. Suorituskykyongelmat
 - Optimoi työkalukutsujen tiheys
-- Käytä välimuistia tarpeen mukaan
+- Käytä välimuistia tarvittaessa
 - Seuraa palvelimen vasteaikoja
 
 ## Seuraavat askeleet
 
-MCP-integraation parantamiseksi:
+MCP-integraation kehittämiseksi:
 
-1. **Tutustu omiin MCP-palvelimiin**: Rakenna omia MCP-palvelimia yksityisille tietolähteille
-2. **Ota käyttöön edistynyt turvallisuus**: Lisää OAuth2- tai räätälöityjä tunnistautumismekanismeja
-3. **Seuranta ja analytiikka**: Toteuta lokitus ja valvonta työkalujen käytölle
-4. **Skaalaa ratkaisusi**: Harkitse kuormantasauksen ja hajautettujen MCP-palvelinarkkitehtuurien käyttöönottoa
+1. **Tutustu räätälöityihin MCP-palvelimiin**: Rakenna omia MCP-palvelimia omille tietolähteillesi
+2. **Ota käyttöön kehittynyt turvallisuus**: Lisää OAuth2- tai mukautetut todennusmekanismit
+3. **Seuranta ja analytiikka**: Toteuta lokitus ja seuranta työkalujen käytölle
+4. **Skaalaa ratkaisusi**: Harkitse kuormantasapainotusta ja hajautettuja MCP-palvelinarkkitehtuureja
 
 ## Lisäresurssit
 
 - [Azure AI Foundryn dokumentaatio](https://learn.microsoft.com/azure/ai-foundry/)
 - [Model Context Protocol -esimerkit](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
 - [Azure AI Foundryn agenttien yleiskatsaus](https://learn.microsoft.com/azure/ai-foundry/agents/)
-- [MCP-määritys](https://spec.modelcontextprotocol.io/)
+- [MCP-spesifikaatio](https://spec.modelcontextprotocol.io/)
 
 ## Tuki
 
 Lisätukea ja kysymyksiä varten:
 - Tutustu [Azure AI Foundryn dokumentaatioon](https://learn.microsoft.com/azure/ai-foundry/)
-- Tarkista [MCP-yhteisön resurssit](https://modelcontextprotocol.io/)
+- Katso [MCP-yhteisön resurssit](https://modelcontextprotocol.io/)
 
 ## Mitä seuraavaksi
 
 - [6. Yhteisön panokset](../../06-CommunityContributions/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on virallinen lähde. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

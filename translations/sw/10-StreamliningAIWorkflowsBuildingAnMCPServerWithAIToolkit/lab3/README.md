@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:17:00+00:00",
+  "translation_date": "2025-07-14T08:17:59+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "sw"
 }
 -->
-# 🔧 Module 3: Maendeleo ya Juu ya MCP kwa AI Toolkit
+# 🔧 Moduli 3: Maendeleo ya MCP ya Juu kwa AI Toolkit
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
 ![AI Toolkit](https://img.shields.io/badge/AI_Toolkit-Required-orange?style=flat-square)
@@ -19,60 +19,60 @@ CO_OP_TRANSLATOR_METADATA:
 
 Mwisho wa maabara hii, utaweza:
 
-- ✅ Kuunda seva za MCP maalum kwa kutumia AI Toolkit
-- ✅ Kusanidi na kutumia toleo jipya la MCP Python SDK (v1.9.3)
-- ✅ Kuweka na kutumia MCP Inspector kwa ajili ya kufuatilia makosa
-- ✅ Kufuatilia makosa ya seva za MCP katika mazingira ya Agent Builder na Inspector
-- ✅ Kuelewa mchakato wa maendeleo ya seva za MCP kwa kiwango cha juu
+- ✅ Kuunda seva za MCP za kawaida kwa kutumia AI Toolkit
+- ✅ Kusanidi na kutumia toleo la hivi karibuni la MCP Python SDK (v1.9.3)
+- ✅ Kuweka na kutumia MCP Inspector kwa ajili ya utatuzi wa makosa
+- ✅ Kutatua matatizo ya seva za MCP katika mazingira ya Agent Builder na Inspector
+- ✅ Kuelewa taratibu za maendeleo ya seva za MCP za hali ya juu
 
 ## 📋 Mahitaji ya Awali
 
-- Kumaliza Lab 2 (Misingi ya MCP)
-- VS Code yenye AI Toolkit imewekwa
+- Kumaliza Maabara 2 (Misingi ya MCP)
+- VS Code na ugani wa AI Toolkit umewekwa
 - Mazingira ya Python 3.10+
 - Node.js na npm kwa ajili ya usanidi wa Inspector
 
-## 🏗️ Kile Utakachojenga
+## 🏗️ Kile Ukitakachojenga
 
-Katika maabara hii, utaunda **Seva ya Hali ya Hewa ya MCP** ambayo inaonyesha:
-- Utekelezaji wa seva ya MCP maalum
-- Uunganisho na AI Toolkit Agent Builder
-- Mchakato wa kitaalamu wa kufuatilia makosa
-- Matumizi ya mifumo ya kisasa ya MCP SDK
+Katika maabara hii, utaunda **Seva ya MCP ya Hali ya Hewa** inayonyesha:
+- Utekelezaji wa seva ya MCP ya kawaida
+- Muunganisho na AI Toolkit Agent Builder
+- Taratibu za kitaalamu za utatuzi wa makosa
+- Matumizi ya kisasa ya MCP SDK
 
 ---
 
 ## 🔧 Muhtasari wa Vipengele Muhimu
 
 ### 🐍 MCP Python SDK
-Model Context Protocol Python SDK ni msingi wa kujenga seva za MCP maalum. Utatumia toleo 1.9.3 lenye uwezo bora wa kufuatilia makosa.
+MCP Python SDK ni msingi wa kujenga seva za MCP za kawaida. Utatumia toleo 1.9.3 lenye uwezo wa kuboresha utatuzi wa makosa.
 
 ### 🔍 MCP Inspector
-Chombo chenye nguvu cha kufuatilia makosa kinachotoa:
+Chombo chenye nguvu cha utatuzi wa makosa kinachotoa:
 - Ufuatiliaji wa seva kwa wakati halisi
 - Uonyesho wa utekelezaji wa zana
-- Ukaguzi wa maombi na majibu ya mtandao
+- Ukaguzi wa maombi/jawabu ya mtandao
 - Mazingira ya majaribio ya mwingiliano
 
 ---
 
-## 📖 Hatua kwa Hatua ya Utekelezaji
+## 📖 Utekelezaji Hatua kwa Hatua
 
 ### Hatua 1: Unda WeatherAgent katika Agent Builder
 
-1. **Fungua Agent Builder** katika VS Code kupitia AI Toolkit
-2. **Unda agent mpya** kwa usanidi huu:
-   - Jina la Agent: `WeatherAgent`
+1. **Anzisha Agent Builder** katika VS Code kupitia ugani wa AI Toolkit
+2. **Unda wakala mpya** kwa usanidi ufuatao:
+   - Jina la Wakala: `WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.sw.png)
 
 ### Hatua 2: Anzisha Mradi wa Seva ya MCP
 
-1. **Nenda Tools** → **Add Tool** katika Agent Builder
+1. **Nenda kwenye Tools** → **Add Tool** katika Agent Builder
 2. **Chagua "MCP Server"** kutoka kwa chaguzi zilizopo
 3. **Chagua "Create A new MCP Server"**
-4. **Chagua templeti ya `python-weather`**
-5. **Weka jina la seva yako:** `weather_mcp`
+4. **Chagua kiolezo cha `python-weather`**
+5. **Pata jina seva yako:** `weather_mcp`
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.sw.png)
 
@@ -95,35 +95,33 @@ Chombo chenye nguvu cha kufuatilia makosa kinachotoa:
    └── README.md
    ```
 
-### Hatua 4: Sasisha MCP SDK hadi Toleo la Hivi Karibuni
+### Hatua 4: Sasisha MCP SDK kwa Toleo la Hivi Karibuni
 
-> **🔍 Kwa Nini Kusasisha?** Tunataka kutumia toleo jipya la MCP SDK (v1.9.3) na huduma ya Inspector (0.14.0) kwa vipengele vya hali ya juu na kufuatilia makosa kwa ufanisi zaidi.
+> **🔍 Kwa Nini Kusasisha?** Tunataka kutumia toleo la hivi karibuni la MCP SDK (v1.9.3) na huduma ya Inspector (0.14.0) kwa vipengele vilivyoboreshwa na uwezo bora wa utatuzi wa makosa.
 
 #### 4a. Sasisha Mategemeo ya Python
 
-**Hariri `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**Hariri `pyproject.toml`:** sasisha [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4b. Sasisha Usanidi wa Inspector
 
-#### 4b. Update Inspector Configuration
+**Hariri `inspector/package.json`:** sasisha [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Sasisha Mategemeo ya Inspector
 
-#### 4c. Update Inspector Dependencies
+**Hariri `inspector/package-lock.json`:** sasisha [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 Kumbuka:** Faili hili lina maelezo mengi ya utegemezi. Hapa chini ni muundo muhimu - maudhui kamili yanahakikisha utatuzi sahihi wa utegemezi.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ Kifungo Kamili cha Pakiti:** Faili kamili ya package-lock.json ina mistari takriban 3000 ya maelezo ya utegemezi. Hapo juu inaonyesha muundo muhimu - tumia faili iliyotolewa kwa utatuzi kamili wa utegemezi.
 
+### Hatua 5: Sanidi Utatuzi wa VS Code
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*Kumbuka: Tafadhali nakili faili katika njia iliyotajwa ili kubadilisha faili ya ndani inayolingana*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. Sasisha Usanidi wa Anzisha
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json`:**
+**Hariri `.vscode/launch.json`:**
 
 ```json
 {
@@ -302,14 +300,13 @@ Chombo chenye nguvu cha kufuatilia makosa kinachotoa:
 }
 ```
 
-
 ---
 
 ## 🚀 Kuendesha na Kupima Seva Yako ya MCP
 
 ### Hatua 6: Sakinisha Mategemeo
 
-Baada ya kufanya mabadiliko, tumia amri hizi:
+Baada ya kufanya mabadiliko ya usanidi, endesha amri zifuatazo:
 
 **Sakinisha mategemeo ya Python:**
 ```bash
@@ -322,14 +319,14 @@ cd inspector
 npm install
 ```
 
-### Hatua 7: Fuatilia Makosa kwa Agent Builder
+### Hatua 7: Tatua Makosa kwa Agent Builder
 
 1. **Bonyeza F5** au tumia usanidi wa **"Debug in Agent Builder"**
-2. **Chagua usanidi wa pamoja** kutoka kwenye paneli ya ufuatiliaji
+2. **Chagua usanidi wa mchanganyiko** kutoka kwenye paneli ya utatuzi
 3. **Subiri seva ianze** na Agent Builder ifunguke
-4. **Jaribu seva yako ya weather MCP** kwa maswali ya lugha ya kawaida
+4. **Jaribu seva yako ya weather MCP** kwa maswali ya lugha ya asili
 
-Ingiza ombi kama hili
+Ingiza maelekezo kama haya
 
 SYSTEM_PROMPT
 
@@ -345,15 +342,15 @@ How's the weather like in Seattle
 
 ![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.sw.png)
 
-### Hatua 8: Fuatilia Makosa kwa MCP Inspector
+### Hatua 8: Tatua Makosa kwa MCP Inspector
 
 1. **Tumia usanidi wa "Debug in Inspector"** (Edge au Chrome)
 2. **Fungua kiolesura cha Inspector** kwa `http://localhost:6274`
 3. **Chunguza mazingira ya majaribio ya mwingiliano:**
-   - Angalia zana zilizopo
+   - Tazama zana zilizopo
    - Jaribu utekelezaji wa zana
-   - Fuata maombi ya mtandao
-   - Fuatilia majibu ya seva
+   - Fuatilia maombi ya mtandao
+   - Tatua matatizo ya majibu ya seva
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.sw.png)
 
@@ -361,22 +358,22 @@ How's the weather like in Seattle
 
 ## 🎯 Matokeo Muhimu ya Kujifunza
 
-Kwa kumaliza maabara hii, ume:
+Kwa kumaliza maabara hii, umefanya:
 
-- [x] **Kuunda seva ya MCP maalum** kwa kutumia templeti za AI Toolkit
-- [x] **Kusasaisha hadi MCP SDK ya hivi karibuni** (v1.9.3) kwa vipengele bora
-- [x] **Kusakinisha mchakato wa kitaalamu wa kufuatilia makosa** kwa Agent Builder na Inspector
-- [x] **Kuweka MCP Inspector** kwa majaribio ya seva kwa mwingiliano
-- [x] **Kuwa mtaalamu wa usanidi wa ufuatiliaji makosa wa VS Code** kwa maendeleo ya MCP
+- [x] **Kuunda seva ya MCP ya kawaida** kwa kutumia violezo vya AI Toolkit
+- [x] **Kusasaisha hadi toleo la hivi karibuni la MCP SDK** (v1.9.3) kwa utendaji ulioboreshwa
+- [x] **Kusanidi taratibu za kitaalamu za utatuzi wa makosa** kwa Agent Builder na Inspector
+- [x] **Kuweka MCP Inspector** kwa ajili ya majaribio ya seva ya mwingiliano
+- [x] **Kuwa mtaalamu wa usanidi wa utatuzi wa VS Code** kwa maendeleo ya MCP
 
 ## 🔧 Vipengele vya Juu Vilivyogunduliwa
 
 | Kipengele | Maelezo | Matumizi |
 |---------|-------------|----------|
 | **MCP Python SDK v1.9.3** | Utekelezaji wa itifaki ya hivi karibuni | Maendeleo ya seva za kisasa |
-| **MCP Inspector 0.14.0** | Chombo cha kufuatilia makosa kwa mwingiliano | Majaribio ya seva kwa wakati halisi |
-| **VS Code Debugging** | Mazingira ya maendeleo yaliyojumuishwa | Mchakato wa kitaalamu wa kufuatilia makosa |
-| **Agent Builder Integration** | Muunganisho wa moja kwa moja wa AI Toolkit | Majaribio ya agent kutoka mwanzo hadi mwisho |
+| **MCP Inspector 0.14.0** | Chombo cha utatuzi wa makosa cha mwingiliano | Majaribio ya seva kwa wakati halisi |
+| **Utatuzi wa VS Code** | Mazingira ya maendeleo yaliyojumuishwa | Taratibu za kitaalamu za utatuzi |
+| **Muunganisho wa Agent Builder** | Muunganisho wa moja kwa moja na AI Toolkit | Majaribio ya wakala kutoka mwanzo hadi mwisho |
 
 ## 📚 Rasilimali Zaidi
 
@@ -387,16 +384,16 @@ Kwa kumaliza maabara hii, ume:
 
 ---
 
-**🎉 Hongera!** Umefanikiwa kumaliza Lab 3 na sasa unaweza kuunda, kufuatilia makosa, na kupeleka seva za MCP maalum kwa kutumia mchakato wa maendeleo ya kitaalamu.
+**🎉 Hongera!** Umefanikiwa kumaliza Maabara 3 na sasa unaweza kuunda, kutatua matatizo, na kupeleka seva za MCP za kawaida kwa kutumia taratibu za maendeleo za kitaalamu.
 
-### 🔜 Endelea kwenye Moduli Ifuatayo
+### 🔜 Endelea na Moduli Ifuatayo
 
-Uko tayari kutumia ujuzi wako wa MCP katika mchakato halisi wa maendeleo? Endelea kwenye **[Module 4: Practical MCP Development - Custom GitHub Clone Server](../lab4/README.md)** ambapo utajifunza:
-- Kujenga seva ya MCP inayotumika katika mazingira ya uzalishaji kwa kuendesha shughuli za GitHub
-- Kutekeleza utendaji wa kunakili repositori za GitHub kupitia MCP
-- Kuunganisha seva za MCP maalum na VS Code na GitHub Copilot Agent Mode
-- Kupima na kupeleka seva za MCP maalum katika mazingira ya uzalishaji
-- Kujifunza mchakato wa otomatiki wa kazi kwa waendelezaji
+Uko tayari kutumia ujuzi wako wa MCP katika mtiririko halisi wa maendeleo? Endelea na **[Moduli 4: Maendeleo ya Vitendo ya MCP - Seva ya Kurejesha GitHub ya Kawaida](../lab4/README.md)** ambapo utajifunza:
+- Kujenga seva ya MCP inayotumika kiutendaji inayojumuisha shughuli za hifadhidata za GitHub
+- Kutekeleza utendaji wa kunakili hifadhidata za GitHub kupitia MCP
+- Kuunganisha seva za MCP za kawaida na VS Code na GitHub Copilot Agent Mode
+- Kupima na kupeleka seva za MCP za kawaida katika mazingira ya uzalishaji
+- Kujifunza uendeshaji wa kiotomatiki wa taratibu kwa waendelezaji
 
-**Kiarifu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asilia katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya mtaalamu wa binadamu inapendekezwa. Hatubebeki dhima kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

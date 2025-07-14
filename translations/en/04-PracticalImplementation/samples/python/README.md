@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:26:44+00:00",
+  "translation_date": "2025-07-13T23:29:32+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "en"
 }
@@ -15,27 +15,27 @@ This repository contains a Python implementation of the Model Context Protocol (
 
 The MCP implementation includes two main parts:
 
-1. **MCP Server (`server.py`)** - A server that offers:
+1. **MCP Server (`server.py`)** - A server that provides:
    - **Tools**: Functions that can be called remotely
-   - **Resources**: Data that can be fetched
-   - **Prompts**: Templates for creating prompts for language models
+   - **Resources**: Data that can be accessed
+   - **Prompts**: Templates for generating prompts for language models
 
-2. **MCP Client (`client.py`)** - A client app that connects to the server and uses its features
+2. **MCP Client (`client.py`)** - A client application that connects to the server and uses its features
 
 ## Features
 
-This implementation showcases several core MCP features:
+This implementation showcases several key MCP features:
 
 ### Tools
 - `completion` - Generates text completions from AI models (simulated)
 - `add` - Simple calculator that adds two numbers
 
 ### Resources
-- `models://` - Provides information about available AI models
+- `models://` - Returns information about available AI models
 - `greeting://{name}` - Returns a personalized greeting for a given name
 
 ### Prompts
-- `review_code` - Creates a prompt for reviewing code
+- `review_code` - Generates a prompt for reviewing code
 
 ## Installation
 
@@ -55,7 +55,7 @@ Run the server in one terminal window:
 python server.py
 ```
 
-The server can also be started in development mode using the MCP CLI:
+The server can also be run in development mode using the MCP CLI:
 
 ```powershell
 mcp dev server.py
@@ -79,13 +79,13 @@ This will connect to the server and demonstrate all available features.
 
 ### Client Usage
 
-The client (`client.py`) showcases all MCP capabilities:
+The client (`client.py`) demonstrates all the MCP capabilities:
 
 ```powershell
 python client.py
 ```
 
-This connects to the server and exercises all features including tools, resources, and prompts. The output will display:
+This will connect to the server and test all features including tools, resources, and prompts. The output will show:
 
 1. Calculator tool result (5 + 7 = 12)
 2. Completion tool response to "What is the meaning of life?"
@@ -95,7 +95,7 @@ This connects to the server and exercises all features including tools, resource
 
 ## Implementation Details
 
-The server is built using the `FastMCP` API, which provides high-level abstractions for defining MCP services. Here's a simplified example of how tools are defined:
+The server is built using the `FastMCP` API, which offers high-level abstractions for defining MCP services. Here's a simplified example of how tools are defined:
 
 ```python
 @mcp.tool()

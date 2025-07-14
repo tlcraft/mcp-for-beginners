@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T23:13:37+00:00",
+  "translation_date": "2025-07-13T18:01:40+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "hu"
 }
@@ -37,7 +37,7 @@ mcp run server.py
 
 ## -4- A minta tesztelése
 
-Amíg a szerver fut az egyik terminálban, nyiss meg egy másik terminált, és futtasd a következő parancsot:
+Amíg a szerver fut az egyik terminálon, nyiss meg egy másik terminált, és futtasd a következő parancsot:
 
 ```bash
 mcp dev server.py
@@ -53,7 +53,7 @@ Miután a szerver csatlakozott:
 
 ### Tesztelés CLI módban
 
-Az inspector, amit futtattál, valójában egy Node.js alkalmazás, és a `mcp dev` egy wrapper köré épül.
+Az inspector, amit futtattál, valójában egy Node.js alkalmazás, és a `mcp dev` egy wrapper köré építve.
 
 Közvetlenül CLI módban is elindíthatod a következő paranccsal:
 
@@ -114,7 +114,7 @@ A következő kimenetet kell látnod:
 
 > ![!TIP]
 > Általában sokkal gyorsabb az inspectort CLI módban futtatni, mint a böngészőben.
-> Olvass többet az inspectorról [itt](https://github.com/modelcontextprotocol/inspector).
+> További információ az inspectorról [itt](https://github.com/modelcontextprotocol/inspector).
 
 **Jogi nyilatkozat**:  
 Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

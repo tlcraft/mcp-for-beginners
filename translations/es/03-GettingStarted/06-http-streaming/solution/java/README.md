@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:43:10+00:00",
+  "translation_date": "2025-07-13T21:07:28+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "es"
 }
 -->
 # Demo de Streaming HTTP de Calculadora
 
-Este proyecto demuestra el streaming HTTP usando Server-Sent Events (SSE) con Spring Boot WebFlux. Consta de dos aplicaciones:
+Este proyecto demuestra el streaming HTTP usando Server-Sent Events (SSE) con Spring Boot WebFlux. Consiste en dos aplicaciones:
 
 - **Calculator Server**: Un servicio web reactivo que realiza cálculos y transmite resultados usando SSE
 - **Calculator Client**: Una aplicación cliente que consume el endpoint de streaming
@@ -37,13 +37,13 @@ java/
 
 ## Cómo Funciona
 
-1. El **Calculator Server** expone un endpoint `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. El **Calculator Server** expone un endpoint `/calculate` que:
+   - Acepta parámetros de consulta: `a` (número), `b` (número), `op` (operación)
+   - Operaciones soportadas: `add`, `sub`, `mul`, `div`
+   - Devuelve Server-Sent Events con el progreso del cálculo y el resultado
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
+2. El **Calculator Client** se conecta al servidor y:
+   - Realiza una solicitud para calcular `7 * 5`
    - Consume la respuesta en streaming
    - Imprime cada evento en la consola
 
@@ -61,7 +61,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-El servidor arrancará en `http://localhost:8080`
+El servidor se iniciará en `http://localhost:8080`
 
 Deberías ver una salida similar a:
 ```
@@ -81,7 +81,7 @@ mvn spring-boot:run
 
 El cliente se conectará al servidor, realizará el cálculo y mostrará los resultados en streaming.
 
-### Opción 2: Usar Java directamente
+### Opción 2: Usando Java directamente
 
 #### 1. Compilar y ejecutar el servidor:
 
@@ -99,7 +99,7 @@ mvn clean package
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Probar el Servidor Manualmente
+## Probando el Servidor Manualmente
 
 También puedes probar el servidor usando un navegador web o curl:
 
@@ -125,23 +125,23 @@ data:35.0
 
 ## Operaciones Soportadas
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Suma (a + b)
+- `sub` - Resta (a - b)
+- `mul` - Multiplicación (a * b)
+- `div` - División (a / b, devuelve NaN si b = 0)
 
-## API Reference
+## Referencia de la API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parámetros:**
+- `a` (requerido): Primer número (double)
+- `b` (requerido): Segundo número (double)
+- `op` (requerido): Operación (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Respuesta:**
 - Content-Type: `text/event-stream`
-- Retorna Server-Sent Events con el progreso del cálculo y el resultado
+- Devuelve Server-Sent Events con el progreso del cálculo y el resultado
 
 **Ejemplo de Solicitud:**
 ```
@@ -163,40 +163,40 @@ data: 35.0
 
 ### Problemas Comunes
 
-1. **Puerto 8080 ya está en uso**
+1. **Puerto 8080 ya en uso**
    - Detén cualquier otra aplicación que esté usando el puerto 8080
    - O cambia el puerto del servidor en `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Conexión rechazada**
+   - Asegúrate de que el servidor esté en ejecución antes de iniciar el cliente
+   - Verifica que el servidor haya arrancado correctamente en el puerto 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Problemas con nombres de parámetros**
+   - Este proyecto incluye configuración del compilador Maven con la bandera `-parameters`
+   - Si tienes problemas con el enlace de parámetros, asegúrate de que el proyecto esté compilado con esta configuración
 
-### Stopping the Applications
+### Detener las Aplicaciones
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` si se está ejecutando como proceso en segundo plano
+- Presiona `Ctrl+C` en la terminal donde se está ejecutando cada aplicación
+- O usa `mvn spring-boot:stop` si se está ejecutando como proceso en segundo plano
 
 ## Tecnología Utilizada
 
 - **Spring Boot 3.3.1** - Framework de aplicación
 - **Spring WebFlux** - Framework web reactivo
 - **Project Reactor** - Biblioteca de streams reactivos
-- **Netty** - Servidor I/O no bloqueante
+- **Netty** - Servidor de I/O no bloqueante
 - **Maven** - Herramienta de construcción
 - **Java 17+** - Lenguaje de programación
 
 ## Próximos Pasos
 
 Intenta modificar el código para:
-- Añadir más operaciones matemáticas
+- Agregar más operaciones matemáticas
 - Incluir manejo de errores para operaciones inválidas
-- Agregar registro de solicitudes/respuestas
+- Añadir registro de solicitudes/respuestas
 - Implementar autenticación
-- Añadir pruebas unitarias
+- Agregar pruebas unitarias
 
-**Descargo de responsabilidad**:  
+**Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

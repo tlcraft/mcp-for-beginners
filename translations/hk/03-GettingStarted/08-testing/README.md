@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T16:06:25+00:00",
+  "translation_date": "2025-07-13T21:57:52+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "hk"
 }
 -->
 ## 測試與除錯
 
-在開始測試你的 MCP 伺服器之前，了解可用的工具和除錯的最佳實踐非常重要。有效的測試能確保你的伺服器按預期運作，並幫助你快速找出並解決問題。以下章節將介紹驗證 MCP 實作的推薦方法。
+在開始測試你的 MCP 伺服器之前，了解可用的工具和除錯的最佳實踐非常重要。有效的測試能確保你的伺服器按預期運作，並幫助你快速識別和解決問題。以下章節將介紹驗證 MCP 實作的推薦方法。
 
 ## 概覽
 
@@ -46,7 +46,7 @@ MCP 提供工具協助你測試和除錯伺服器：
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-上述指令會啟動 MCP 及其視覺介面，並在瀏覽器中開啟本地網頁介面。你會看到一個儀表板，顯示已註冊的 MCP 伺服器、可用的工具、資源和提示。介面允許你互動式測試工具執行、檢查伺服器元資料及即時查看回應，讓你更輕鬆驗證和除錯 MCP 伺服器實作。
+上述指令會啟動 MCP 及其視覺化介面，並在瀏覽器中開啟本地網頁介面。你會看到一個儀表板，顯示已註冊的 MCP 伺服器、可用的工具、資源和提示。介面允許你互動式測試工具執行、檢查伺服器元資料及即時查看回應，讓你更輕鬆驗證和除錯 MCP 伺服器實作。
 
 介面大致長這樣： ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hk.png)
 
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-從上述 curl 用法可見，你是用 POST 請求呼叫工具，並以包含工具名稱及參數的 payload 傳送。請選擇最適合你的方式。CLI 工具通常使用較快，且容易被腳本化，這在 CI/CD 環境中非常有用。
+從上述 curl 用法可見，你是用 POST 請求呼叫工具，並以包含工具名稱及參數的 payload 傳送。請選擇最適合你的方式。一般來說，CLI 工具使用起來較快，且容易被腳本化，這在 CI/CD 環境中非常有用。
 
 ### 單元測試
 
-為你的工具和資源撰寫單元測試，確保它們如預期運作。以下是範例測試程式碼。
+為你的工具和資源建立單元測試，確保它們如預期運作。以下是範例測試程式碼。
 
 ```python
 import pytest
@@ -131,13 +131,13 @@ async def test_list_tools_cursor_parameter():
 
 上述程式碼做了以下事情：
 
-- 使用 pytest 框架，讓你能以函式形式撰寫測試並使用 assert 陳述式。
+- 使用 pytest 框架，讓你能以函式建立測試並使用 assert 陳述式。
 - 建立一個包含兩個不同工具的 MCP 伺服器。
 - 使用 `assert` 陳述式檢查特定條件是否成立。
 
 你可以參考[完整檔案](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
-根據上述檔案，你可以測試自己的伺服器，確保功能如預期建立。
+根據上述檔案，你可以測試自己的伺服器，確保功能如預期被建立。
 
 所有主要 SDK 都有類似的測試章節，你可以依照所選的執行環境做調整。
 

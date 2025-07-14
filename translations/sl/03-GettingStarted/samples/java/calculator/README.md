@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-05-17T13:19:22+00:00",
+  "translation_date": "2025-07-13T22:32:18+00:00",
   "source_file": "03-GettingStarted/samples/java/calculator/README.md",
   "language_code": "sl"
 }
 -->
-# Osnovna Kalkulatorska MCP Storitev
+# Basic Calculator MCP Service
 
-Ta storitev nudi osnovne kalkulatorske operacije prek Model Context Protocol (MCP) z uporabo Spring Boot z WebFlux prenosom. Namenjena je kot preprost primer za začetnike, ki se učijo o MCP implementacijah.
+Ta storitev omogoča osnovne kalkulatorjske operacije preko Model Context Protocol (MCP) z uporabo Spring Boot in WebFlux transporta. Namenjena je kot preprost primer za začetnike, ki se učijo o implementacijah MCP.
 
 Za več informacij si oglejte referenčno dokumentacijo [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
@@ -17,73 +17,73 @@ Za več informacij si oglejte referenčno dokumentacijo [MCP Server Boot Starter
 
 Storitev prikazuje:
 - Podporo za SSE (Server-Sent Events)
-- Samodejno registracijo orodij z uporabo Spring AI-jeve `@Tool` oznake
-- Osnovne kalkulatorske funkcije:
+- Samodejno registracijo orodij z uporabo Spring AI `@Tool` anotacije
+- Osnovne kalkulatorjske funkcije:
   - Seštevanje, odštevanje, množenje, deljenje
-  - Izračun potence in kvadratnega korena
+  - Potenciranje in kvadratni koren
   - Modulus (ostanek) in absolutna vrednost
-  - Funkcija pomoči za opise operacij
+  - Pomoč za opise operacij
 
 ## Značilnosti
 
-Ta kalkulatorska storitev ponuja naslednje zmogljivosti:
+Ta kalkulatorjska storitev ponuja naslednje zmogljivosti:
 
-1. **Osnovne Aritmetične Operacije**:
+1. **Osnovne aritmetične operacije**:
    - Seštevanje dveh števil
    - Odštevanje enega števila od drugega
    - Množenje dveh števil
    - Deljenje enega števila z drugim (s preverjanjem deljenja z nič)
 
-2. **Napredne Operacije**:
-   - Izračun potence (dviganje osnove na eksponent)
-   - Izračun kvadratnega korena (s preverjanjem negativnega števila)
-   - Izračun modula (ostanek)
+2. **Napredne operacije**:
+   - Potenciranje (dvig baze na eksponent)
+   - Izračun kvadratnega korena (s preverjanjem negativnih števil)
+   - Izračun modula (ostanka pri deljenju)
    - Izračun absolutne vrednosti
 
-3. **Sistem Pomoči**:
-   - Vgrajena funkcija pomoči, ki razloži vse razpoložljive operacije
+3. **Sistem pomoči**:
+   - Vgrajena funkcija pomoči, ki pojasnjuje vse razpoložljive operacije
 
-## Uporaba Storitve
+## Uporaba storitve
 
-Storitev izpostavlja naslednje API končne točke prek MCP protokola:
+Storitev izpostavlja naslednje API končne točke preko MCP protokola:
 
-- `add(a, b)`: Seštej dve števili
-- `subtract(a, b)`: Odštej drugo število od prvega
+- `add(a, b)`: Sešteje dve števili
+- `subtract(a, b)`: Odšteje drugo število od prvega
 - `multiply(a, b)`: Pomnoži dve števili
-- `divide(a, b)`: Deli prvo število z drugim (s preverjanjem nič)
-- `power(base, exponent)`: Izračunaj potenco števila
-- `squareRoot(number)`: Izračunaj kvadratni koren (s preverjanjem negativnega števila)
-- `modulus(a, b)`: Izračunaj ostanek pri deljenju
-- `absolute(number)`: Izračunaj absolutno vrednost
+- `divide(a, b)`: Deli prvo število z drugim (s preverjanjem ničle)
+- `power(base, exponent)`: Izračuna potenco števila
+- `squareRoot(number)`: Izračuna kvadratni koren (s preverjanjem negativnih števil)
+- `modulus(a, b)`: Izračuna ostanek pri deljenju
+- `absolute(number)`: Izračuna absolutno vrednost
 - `help()`: Pridobi informacije o razpoložljivih operacijah
 
-## Testni Odjemalec
+## Testni odjemalec
 
-Preprost testni odjemalec je vključen v paket `com.microsoft.mcp.sample.client`. Razred `SampleCalculatorClient` prikazuje razpoložljive operacije kalkulatorske storitve.
+Preprost testni odjemalec je vključen v paketu `com.microsoft.mcp.sample.client`. Razred `SampleCalculatorClient` prikazuje razpoložljive operacije kalkulatorja.
 
-## Uporaba LangChain4j Odjemalca
+## Uporaba LangChain4j odjemalca
 
-Projekt vključuje primer LangChain4j odjemalca v `com.microsoft.mcp.sample.client.LangChain4jClient`, ki prikazuje, kako integrirati kalkulatorsko storitev z LangChain4j in GitHub modeli:
+Projekt vključuje primer LangChain4j odjemalca v `com.microsoft.mcp.sample.client.LangChain4jClient`, ki prikazuje, kako integrirati kalkulator s LangChain4j in GitHub modeli:
 
 ### Predpogoji
 
-1. **Nastavitev GitHub Žetona**:
+1. **Nastavitev GitHub žetona**:
+   
+   Za uporabo GitHub AI modelov (kot je phi-4) potrebujete osebni dostopni žeton GitHub:
 
-   Za uporabo GitHubovih AI modelov (kot je phi-4) potrebujete osebni dostopni žeton GitHub:
-
-   a. Pojdite v nastavitve svojega GitHub računa: https://github.com/settings/tokens
+   a. Obiščite nastavitve svojega GitHub računa: https://github.com/settings/tokens
    
    b. Kliknite "Generate new token" → "Generate new token (classic)"
    
-   c. Dajte svojemu žetonu opisno ime
+   c. Poimenujte žeton z opisnim imenom
    
    d. Izberite naslednje obsege:
-      - `repo` (Popoln nadzor nad zasebnimi repozitoriji)
-      - `read:org` (Branje članstva v organizaciji in ekipi, branje projektov organizacije)
-      - `gist` (Ustvarjanje gistov)
-      - `user:email` (Dostop do uporabniških e-poštnih naslovov (samo za branje))
+      - `repo` (poln nadzor nad zasebnimi repozitoriji)
+      - `read:org` (branje članstva v organizacijah in ekipah, branje projektov organizacije)
+      - `gist` (ustvarjanje gistov)
+      - `user:email` (dostop do e-poštnih naslovov uporabnika (samo za branje))
    
-   e. Kliknite "Generate token" in kopirajte svoj novi žeton
+   e. Kliknite "Generate token" in kopirajte nov žeton
    
    f. Nastavite ga kot okoljsko spremenljivko:
       
@@ -97,7 +97,7 @@ Projekt vključuje primer LangChain4j odjemalca v `com.microsoft.mcp.sample.clie
       export GITHUB_TOKEN=your-github-token
       ```
 
-   g. Za trajno nastavitev ga dodajte v okoljske spremenljivke prek sistemskih nastavitev
+   g. Za trajno nastavitev ga dodajte v okoljske spremenljivke preko sistemskih nastavitev
 
 2. Dodajte LangChain4j GitHub odvisnost v svoj projekt (že vključeno v pom.xml):
    ```xml
@@ -108,25 +108,25 @@ Projekt vključuje primer LangChain4j odjemalca v `com.microsoft.mcp.sample.clie
    </dependency>
    ```
 
-3. Prepričajte se, da kalkulatorski strežnik deluje na `localhost:8080`
+3. Prepričajte se, da kalkulator strežnik teče na `localhost:8080`
 
-### Zagon LangChain4j Odjemalca
+### Zagon LangChain4j odjemalca
 
 Ta primer prikazuje:
-- Povezovanje s kalkulatorskim MCP strežnikom prek SSE prenosa
-- Uporabo LangChain4j za ustvarjanje klepetalnega robota, ki uporablja kalkulatorske operacije
-- Integracijo z GitHub AI modeli (trenutno z uporabo phi-4 modela)
+- Povezavo na kalkulator MCP strežnik preko SSE transporta
+- Uporabo LangChain4j za ustvarjanje klepetalnega bota, ki uporablja kalkulatorjske operacije
+- Integracijo z GitHub AI modeli (trenutno model phi-4)
 
-Odjemalec pošilja naslednje vzorčne poizvedbe za prikaz funkcionalnosti:
+Odjemalec pošlje naslednje vzorčne poizvedbe za prikaz funkcionalnosti:
 1. Izračun vsote dveh števil
 2. Iskanje kvadratnega korena števila
-3. Pridobivanje informacij o razpoložljivih kalkulatorskih operacijah
+3. Pridobitev informacij o razpoložljivih kalkulator operacijah
 
-Zaženite primer in preverite izhod v konzoli, da vidite, kako AI model uporablja kalkulatorska orodja za odgovore na poizvedbe.
+Zaženite primer in preverite izhod v konzoli, da vidite, kako AI model uporablja kalkulator za odgovore.
 
-### Konfiguracija GitHub Modela
+### Konfiguracija GitHub modela
 
-LangChain4j odjemalec je konfiguriran za uporabo GitHubovega phi-4 modela z naslednjimi nastavitvami:
+LangChain4j odjemalec je konfiguriran za uporabo GitHub phi-4 modela z naslednjimi nastavitvami:
 
 ```java
 ChatLanguageModel model = GitHubChatModel.builder()
@@ -138,7 +138,7 @@ ChatLanguageModel model = GitHubChatModel.builder()
     .build();
 ```
 
-Za uporabo različnih GitHub modelov preprosto spremenite parameter `modelName` v drug podprt model (npr. "claude-3-haiku-20240307", "llama-3-70b-8192", itd.).
+Za uporabo drugih GitHub modelov preprosto spremenite parameter `modelName` na drug podprt model (npr. "claude-3-haiku-20240307", "llama-3-70b-8192" itd.).
 
 ## Odvisnosti
 
@@ -166,46 +166,46 @@ Projekt zahteva naslednje ključne odvisnosti:
 </dependency>
 ```
 
-## Gradnja Projekta
+## Gradnja projekta
 
-Zgradite projekt z uporabo Mavena:
+Projekt zgradite z uporabo Mavena:
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## Zagon Strežnika
+## Zagon strežnika
 
-### Uporaba Java
+### Uporaba Jave
 
 ```bash
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### Uporaba MCP Inšpektorja
+### Uporaba MCP Inspectorja
 
-MCP Inšpektor je koristen pripomoček za interakcijo z MCP storitvami. Za uporabo z to kalkulatorsko storitvijo:
+MCP Inspector je uporabno orodje za interakcijo z MCP storitvami. Za uporabo s to kalkulator storitvijo:
 
-1. **Namestite in zaženite MCP Inšpektor** v novem terminalskem oknu:
+1. **Namestite in zaženite MCP Inspector** v novem terminalskem oknu:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Dostop do spletnega vmesnika** s klikom na URL, ki ga prikaže aplikacija (običajno http://localhost:6274)
+2. **Dostopajte do spletnega vmesnika** s klikom na URL, ki ga aplikacija prikaže (običajno http://localhost:6274)
 
 3. **Konfigurirajte povezavo**:
-   - Nastavite vrsto prenosa na "SSE"
-   - Nastavite URL na SSE končno točko vašega delujočega strežnika: `http://localhost:8080/sse`
+   - Nastavite tip transporta na "SSE"
+   - Nastavite URL na SSE končno točko vašega strežnika: `http://localhost:8080/sse`
    - Kliknite "Connect"
 
 4. **Uporabite orodja**:
-   - Kliknite "List Tools" za ogled razpoložljivih kalkulatorskih operacij
+   - Kliknite "List Tools" za ogled razpoložljivih kalkulator operacij
    - Izberite orodje in kliknite "Run Tool" za izvedbo operacije
 
-![Posnetek Zaslona MCP Inšpektorja](../../../../../../translated_images/tool.d45bdee7d4d5740a48d0d6378c9a8af0c1a289f1e0f2ae95ee176f1a5afb40a8.sl.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.sl.png)
 
 ### Uporaba Dockerja
 
-Projekt vključuje Dockerfile za kontejnersko uvajanje:
+Projekt vključuje Dockerfile za kontejnersko namestitev:
 
 1. **Zgradite Docker sliko**:
    ```bash
@@ -220,24 +220,24 @@ Projekt vključuje Dockerfile za kontejnersko uvajanje:
 To bo:
 - Zgradilo večstopenjsko Docker sliko z Maven 3.9.9 in Eclipse Temurin 24 JDK
 - Ustvarilo optimizirano kontejnersko sliko
-- Izpostavilo storitev na portu 8080
-- Začelo MCP kalkulatorsko storitev znotraj kontejnerja
+- Izpostavilo storitev na vratih 8080
+- Zagnalo MCP kalkulator storitev znotraj kontejnerja
 
-Storitev lahko dostopate na `http://localhost:8080`, ko kontejner deluje.
+Storitev bo dostopna na `http://localhost:8080`, ko bo kontejner zagnan.
 
-## Odpravljanje Težav
+## Reševanje težav
 
-### Pogoste Težave z GitHub Žetonom
+### Pogoste težave z GitHub žetonom
 
-1. **Težave s Dovoljenji Žetona**: Če prejmete napako 403 Forbidden, preverite, da ima vaš žeton pravilna dovoljenja, kot je navedeno v predpogojih.
+1. **Težave s pravicami žetona**: Če prejmete napako 403 Forbidden, preverite, ali ima vaš žeton ustrezne pravice, kot je opisano v predpogojih.
 
-2. **Žeton Ni Najden**: Če prejmete napako "No API key found", zagotovite, da je okoljska spremenljivka GITHUB_TOKEN pravilno nastavljena.
+2. **Žeton ni najden**: Če prejmete napako "No API key found", preverite, ali je okoljska spremenljivka GITHUB_TOKEN pravilno nastavljena.
 
-3. **Omejevanje Hitrosti**: GitHub API ima omejitve hitrosti. Če naletite na napako omejevanja hitrosti (statusna koda 429), počakajte nekaj minut, preden poskusite znova.
+3. **Omejitev zahtevkov**: GitHub API ima omejitve števila zahtevkov. Če naletite na napako omejitve (statusna koda 429), počakajte nekaj minut in poskusite znova.
 
-4. **Potečen Žeton**: GitHub žetoni lahko potečejo. Če prejmete avtentikacijske napake po določenem času, ustvarite nov žeton in posodobite svojo okoljsko spremenljivko.
+4. **Potek žetona**: GitHub žetoni lahko potečejo. Če po določenem času prejmete napake pri avtentikaciji, ustvarite nov žeton in posodobite okoljsko spremenljivko.
 
 Če potrebujete dodatno pomoč, preverite [LangChain4j dokumentacijo](https://github.com/langchain4j/langchain4j) ali [GitHub API dokumentacijo](https://docs.github.com/en/rest).
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da se zavedate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije se priporoča strokovni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

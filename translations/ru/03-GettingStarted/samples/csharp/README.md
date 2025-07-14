@@ -2,30 +2,30 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T05:47:14+00:00",
+  "translation_date": "2025-07-13T22:12:57+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ru"
 }
 -->
-# Служба базового калькулятора MCP
+# Basic Calculator MCP Service
 
-Эта служба предоставляет базовые операции калькулятора через протокол Model Context Protocol (MCP). Она создана как простой пример для начинающих, изучающих реализацию MCP.
+Этот сервис предоставляет базовые операции калькулятора через Model Context Protocol (MCP). Он создан как простой пример для начинающих, изучающих реализацию MCP.
 
-Для получения дополнительной информации смотрите [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+Для дополнительной информации смотрите [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Возможности
 
-Данная служба калькулятора предлагает следующие функции:
+Этот сервис калькулятора предлагает следующие функции:
 
-1. **Базовые арифметические операции**:
+1. **Основные арифметические операции**:
    - Сложение двух чисел
    - Вычитание одного числа из другого
    - Умножение двух чисел
    - Деление одного числа на другое (с проверкой деления на ноль)
 
-## Использование `stdio` типа
-
-## Настройка
+## Использование типа `stdio`
+  
+## Конфигурация
 
 1. **Настройка MCP серверов**:
    - Откройте вашу рабочую область в VS Code.
@@ -54,50 +54,49 @@ CO_OP_TRANSLATOR_METADATA:
      }
      ```
 
-   - Вам будет предложено ввести корневую папку репозитория GitHub, которую можно получить с помощью команды `git rev-parse --show-toplevel`.
+   - Вас попросят ввести корень репозитория GitHub, который можно получить командой `git rev-parse --show-toplevel`.
 
-## Using the Service
+## Использование сервиса
 
-The service exposes the following API endpoints through the MCP protocol:
+Сервис предоставляет следующие API через протокол MCP:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Сложить два числа
+- `subtract(a, b)`: Вычесть второе число из первого
+- `multiply(a, b)`: Умножить два числа
+- `divide(a, b)`: Разделить первое число на второе (с проверкой на ноль)
+- isPrime(n): Проверить, является ли число простым
 
-## Test with Github Copilot Chat in VS Code
+## Тестирование с Github Copilot Chat в VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
+1. Попробуйте сделать запрос к сервису через протокол MCP. Например, вы можете спросить:
    - "Add 5 and 3"
    - "Subtract 10 from 4"
    - "Multiply 6 and 7"
    - "Divide 8 by 2"
    - "Does 37854 prime?"
    - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
+2. Чтобы убедиться, что используются нужные инструменты, добавьте #MyCalculator в запрос. Например:
    - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+   - "Subtract 10 from 4 #MyCalculator"
 
+## Контейнеризированная версия
 
-## Containerized Version
+Предыдущее решение отлично подходит, если у вас установлен .NET SDK и все зависимости на месте. Однако, если вы хотите поделиться решением или запустить его в другой среде, можно использовать контейнеризированную версию.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` с вашим именем пользователя Docker Hub):
+1. Запустите Docker и убедитесь, что он работает.
+1. В терминале перейдите в папку `03-GettingStarted\samples\csharp\src`
+1. Чтобы собрать Docker-образ для сервиса калькулятора, выполните следующую команду (замените `<YOUR-DOCKER-USERNAME>` на ваше имя пользователя Docker Hub):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. После сборки образа загрузите его в Docker Hub. Выполните следующую команду:
+1. После сборки образа загрузите его в Docker Hub. Выполните команду:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Использование версии в Docker
+## Использование Docker-версии
 
-1. В файле `.vscode/mcp.json` замените конфигурацию сервера следующим образом:
+1. В файле `.vscode/mcp.json` замените конфигурацию сервера на следующую:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Из конфигурации видно, что команда — `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   В конфигурации видно, что команда — `docker`, а аргументы — `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. Флаг `--rm` гарантирует удаление контейнера после остановки, а `-i` позволяет взаимодействовать со стандартным вводом контейнера. Последний аргумент — имя образа, который мы только что собрали и загрузили в Docker Hub.
 
-## Test the Dockerized Version
+## Тестирование Docker-версии
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, и, как и раньше, вы можете попросить службу калькулятора выполнить вычисления для вас.
+Запустите MCP сервер, нажав на маленькую кнопку запуска над `"mcp-calc": {`, и, как и раньше, вы можете попросить сервис калькулятора выполнить вычисления для вас.
 
 **Отказ от ответственности**:  
-Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия обеспечить точность, просим учитывать, что автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неверные толкования, возникшие в результате использования данного перевода.
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.

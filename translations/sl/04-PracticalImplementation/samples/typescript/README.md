@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-17T15:08:23+00:00",
+  "translation_date": "2025-07-13T23:38:59+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "sl"
 }
 -->
-# Vzorčni primer
+# Primer
 
-To je vzorčni primer za MCP strežnik v Typescriptu
+To je primer v Typescript za MCP strežnik
 
 Tukaj je primer ustvarjanja orodja:
 
@@ -88,5 +88,5 @@ npm install
 npm start
 ```
 
-**Omejitev odgovornosti**: 
-Ta dokument je bil preveden z uporabo storitve AI prevajanja [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku naj bo obravnavan kot avtoritativni vir. Za ključne informacije se priporoča strokovni človeški prevod. Ne prevzemamo odgovornosti za kakršnekoli nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

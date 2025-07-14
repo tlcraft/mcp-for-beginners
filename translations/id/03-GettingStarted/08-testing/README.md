@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T18:11:03+00:00",
+  "translation_date": "2025-07-13T22:02:25+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "id"
 }
@@ -34,7 +34,7 @@ MCP menyediakan alat untuk membantu Anda menguji dan debugging server Anda:
 
 Kami telah menjelaskan penggunaan alat ini di pelajaran sebelumnya, tapi mari kita bahas secara singkat. Ini adalah alat yang dibuat dengan Node.js dan Anda dapat menggunakannya dengan menjalankan executable `npx` yang akan mengunduh dan menginstal alat ini secara sementara, lalu membersihkan dirinya sendiri setelah selesai menjalankan permintaan Anda.
 
-[MCP Inspector](https://github.com/modelcontextprotocol/inspector) membantu Anda:
+[MCP Inspector](https://github.com/modelcontextprotocol/inspector) membantu Anda untuk:
 
 - **Menemukan Kapabilitas Server**: Mendeteksi secara otomatis sumber daya, alat, dan prompt yang tersedia
 - **Mengujicoba Eksekusi Alat**: Mencoba parameter berbeda dan melihat respons secara real-time
@@ -58,7 +58,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Pengujian Manual
 
-Selain menjalankan alat inspector untuk menguji kapabilitas server, pendekatan serupa adalah menjalankan klien yang mampu menggunakan HTTP seperti curl.
+Selain menjalankan alat inspector untuk menguji kapabilitas server, pendekatan lain yang serupa adalah menjalankan klien yang mampu menggunakan HTTP, misalnya curl.
 
 Dengan curl, Anda dapat menguji server MCP secara langsung menggunakan permintaan HTTP:
 
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Seperti yang terlihat dari contoh penggunaan curl di atas, Anda menggunakan permintaan POST untuk memanggil alat dengan payload yang berisi nama alat dan parameternya. Gunakan pendekatan yang paling sesuai untuk Anda. Alat CLI umumnya lebih cepat digunakan dan mudah untuk diotomasi, yang berguna dalam lingkungan CI/CD.
+Seperti yang terlihat dari contoh penggunaan curl di atas, Anda menggunakan permintaan POST untuk memanggil sebuah alat dengan payload yang berisi nama alat dan parameternya. Gunakan pendekatan yang paling sesuai untuk Anda. Alat CLI umumnya lebih cepat digunakan dan mudah untuk diotomasi, yang berguna dalam lingkungan CI/CD.
 
 ### Unit Testing
 
@@ -158,4 +158,4 @@ Semua SDK utama memiliki bagian pengujian serupa sehingga Anda dapat menyesuaika
 - Selanjutnya: [Deployment](../09-deployment/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

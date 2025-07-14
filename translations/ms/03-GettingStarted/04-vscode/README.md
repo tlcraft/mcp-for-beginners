@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T18:14:03+00:00",
+  "translation_date": "2025-07-13T19:33:17+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "ms"
 }
@@ -17,7 +17,7 @@ Berikut adalah cara kita perlu mendekati ini pada tahap tinggi:
 - Mulakan/Sambungkan ke server tersebut untuk mendapatkan senarai keupayaannya.
 - Gunakan keupayaan tersebut melalui antara muka GitHub Copilot Chat.
 
-Bagus, sekarang kita faham aliran ini, mari cuba gunakan MCP Server melalui Visual Studio Code dalam satu latihan.
+Bagus, sekarang kita faham alirannya, mari cuba gunakan MCP Server melalui Visual Studio Code melalui satu latihan.
 
 ## Latihan: Menggunakan server
 
@@ -25,7 +25,7 @@ Dalam latihan ini, kita akan konfigurasikan Visual Studio Code untuk mencari MCP
 
 ### -0- Langkah awal, aktifkan penemuan MCP Server
 
-Anda mungkin perlu mengaktifkan penemuan MCP Server.
+Anda mungkin perlu mengaktifkan penemuan MCP Servers.
 
 1. Pergi ke `File -> Preferences -> Settings` dalam Visual Studio Code.
 
@@ -60,7 +60,7 @@ Tambah kandungan berikut ke *mcp.json*:
 }
 ```
 
-Berikut adalah contoh mudah bagaimana untuk memulakan server yang ditulis dalam Node.js, untuk runtime lain nyatakan arahan yang betul untuk memulakan server menggunakan `command` dan `args`.
+Di atas adalah contoh mudah bagaimana untuk memulakan server yang ditulis dalam Node.js, untuk runtime lain nyatakan arahan yang betul untuk memulakan server menggunakan `command` dan `args`.
 
 ### -3- Mulakan server
 
@@ -92,9 +92,9 @@ Cuba tambah entri server ke dalam fail *mcp.json* anda dan pastikan anda boleh m
 
 Perkara penting dari bab ini adalah seperti berikut:
 
-- Visual Studio Code adalah klien yang hebat yang membolehkan anda menggunakan beberapa MCP Server dan alat mereka.
+- Visual Studio Code adalah klien yang hebat yang membolehkan anda menggunakan beberapa MCP Servers dan alat-alat mereka.
 - Antara muka GitHub Copilot Chat adalah cara anda berinteraksi dengan server.
-- Anda boleh meminta input pengguna seperti kunci API yang boleh dihantar ke MCP Server semasa mengkonfigurasi entri server dalam fail *mcp.json*.
+- Anda boleh meminta pengguna untuk input seperti kunci API yang boleh dihantar ke MCP Server apabila mengkonfigurasi entri server dalam fail *mcp.json*.
 
 ## Contoh
 
@@ -113,4 +113,4 @@ Perkara penting dari bab ini adalah seperti berikut:
 - Seterusnya: [Mencipta SSE Server](../05-sse-server/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

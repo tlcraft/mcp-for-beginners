@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:03:08+00:00",
+  "translation_date": "2025-07-13T18:41:31+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "nl"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Het wordt aanbevolen om `uv` te installeren, maar het is niet verplicht, zie [instructies](https://docs.astral.sh/uv/#highlights)
 
-## -0- Maak een virtuele omgeving
+## -0- Maak een virtuele omgeving aan
 
 ```bash
 python -m venv venv
@@ -30,6 +30,7 @@ pip install "mcp[cli]"
 ```
 
 ## -3- Voer het voorbeeld uit
+
 
 ```bash
 python client.py
@@ -52,5 +53,5 @@ CALL TOOL
 [TextContent(type='text', text='8', annotations=None)]
 ```
 
-**Disclaimer**:
-Dit document is vertaald met behulp van AI vertaaldienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, moet u er rekening mee houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+**Disclaimer**:  
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T17:08:17+00:00",
+  "translation_date": "2025-07-14T05:45:50+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "pl"
 }
 -->
 # MCP w praktyce: studia przypadków z rzeczywistego świata
 
-Model Context Protocol (MCP) zmienia sposób, w jaki aplikacje AI współpracują z danymi, narzędziami i usługami. Ta sekcja przedstawia studia przypadków z rzeczywistego świata, które pokazują praktyczne zastosowania MCP w różnych scenariuszach biznesowych.
+Model Context Protocol (MCP) zmienia sposób, w jaki aplikacje AI współpracują z danymi, narzędziami i usługami. W tej sekcji przedstawiono studia przypadków z rzeczywistego świata, które pokazują praktyczne zastosowania MCP w różnych scenariuszach biznesowych.
 
 ## Przegląd
 
-W tej części zaprezentowano konkretne przykłady wdrożeń MCP, podkreślając, jak organizacje wykorzystują ten protokół do rozwiązywania złożonych problemów biznesowych. Analizując te studia przypadków, zdobędziesz wiedzę na temat wszechstronności, skalowalności i praktycznych korzyści MCP w rzeczywistych zastosowaniach.
+Ta sekcja prezentuje konkretne przykłady wdrożeń MCP, podkreślając, jak organizacje wykorzystują ten protokół do rozwiązywania złożonych problemów biznesowych. Analizując te studia przypadków, zdobędziesz wiedzę na temat wszechstronności, skalowalności i praktycznych korzyści MCP w rzeczywistych zastosowaniach.
 
 ## Kluczowe cele nauki
 
 Analizując te studia przypadków, będziesz mógł:
 
-- Zrozumieć, jak MCP może być stosowany do rozwiązywania konkretnych problemów biznesowych
+- Zrozumieć, jak MCP można zastosować do rozwiązywania konkretnych problemów biznesowych
 - Poznać różne wzorce integracji i podejścia architektoniczne
 - Rozpoznać najlepsze praktyki wdrażania MCP w środowiskach korporacyjnych
 - Zyskać wgląd w wyzwania i rozwiązania napotkane podczas rzeczywistych wdrożeń
@@ -52,25 +52,25 @@ Ten przykład ilustruje, jak nawet stosunkowo proste wdrożenia MCP mogą przyni
 
 ### 3. [Pobieranie dokumentacji w czasie rzeczywistym z MCP](./docs-mcp/README.md)
 
-To studium przypadku przeprowadza przez proces łączenia klienta konsolowego w Pythonie z serwerem Model Context Protocol (MCP) w celu pobierania i rejestrowania kontekstowej, aktualnej dokumentacji Microsoft. Nauczysz się, jak:
+To studium przypadku przeprowadza przez proces łączenia klienta konsolowego w Pythonie z serwerem Model Context Protocol (MCP) w celu pobierania i rejestrowania w czasie rzeczywistym kontekstowej dokumentacji Microsoft. Nauczysz się, jak:
 
 - Połączyć się z serwerem MCP za pomocą klienta Python i oficjalnego SDK MCP
-- Wykorzystać strumieniowe klienty HTTP do efektywnego, bieżącego pobierania danych
-- Wywoływać narzędzia dokumentacyjne na serwerze i logować odpowiedzi bezpośrednio w konsoli
-- Zintegrować aktualną dokumentację Microsoft z workflow bez opuszczania terminala
+- Korzystać z klienta HTTP streamingowego dla efektywnego pobierania danych w czasie rzeczywistym
+- Wywoływać narzędzia dokumentacyjne na serwerze i logować odpowiedzi bezpośrednio do konsoli
+- Włączyć aktualną dokumentację Microsoft do swojego workflow bez opuszczania terminala
 
-Rozdział zawiera praktyczne zadanie, minimalny działający przykład kodu oraz linki do dodatkowych materiałów do pogłębionej nauki. Zobacz pełny przewodnik i kod w powiązanym rozdziale, aby zrozumieć, jak MCP może zmienić dostęp do dokumentacji i produktywność deweloperów w środowiskach konsolowych.
+Rozdział zawiera praktyczne zadanie, minimalny działający przykład kodu oraz linki do dodatkowych zasobów do pogłębionej nauki. Zobacz pełny przewodnik i kod w powiązanym rozdziale, aby zrozumieć, jak MCP może zmienić dostęp do dokumentacji i produktywność programistów w środowiskach konsolowych.
 
 ### 4. [Interaktywna aplikacja webowa do generowania planów nauki z MCP](./docs-mcp/README.md)
 
-To studium przypadku pokazuje, jak zbudować interaktywną aplikację webową wykorzystującą Chainlit i Model Context Protocol (MCP) do tworzenia spersonalizowanych planów nauki dla dowolnego tematu. Użytkownicy mogą określić przedmiot (np. „certyfikacja AI-900”) oraz czas nauki (np. 8 tygodni), a aplikacja dostarczy tygodniowy podział rekomendowanych materiałów. Chainlit umożliwia konwersacyjny interfejs czatu, co sprawia, że doświadczenie jest angażujące i adaptacyjne.
+To studium przypadku pokazuje, jak zbudować interaktywną aplikację webową wykorzystującą Chainlit i Model Context Protocol (MCP) do generowania spersonalizowanych planów nauki dla dowolnego tematu. Użytkownicy mogą określić temat (np. „certyfikacja AI-900”) oraz czas nauki (np. 8 tygodni), a aplikacja dostarczy tygodniowy podział rekomendowanych materiałów. Chainlit umożliwia konwersacyjny interfejs czatu, co sprawia, że doświadczenie jest angażujące i adaptacyjne.
 
 - Konwersacyjna aplikacja webowa zasilana przez Chainlit
 - Wprowadzanie tematów i czasu nauki przez użytkownika
 - Tygodniowe rekomendacje treści z wykorzystaniem MCP
 - Adaptacyjne odpowiedzi w czasie rzeczywistym w interfejsie czatu
 
-Projekt pokazuje, jak AI konwersacyjne i MCP mogą być połączone, by tworzyć dynamiczne, sterowane przez użytkownika narzędzia edukacyjne w nowoczesnym środowisku webowym.
+Projekt pokazuje, jak AI konwersacyjne i MCP można połączyć, tworząc dynamiczne, sterowane przez użytkownika narzędzia edukacyjne w nowoczesnym środowisku webowym.
 
 ### 5. [Dokumentacja w edytorze z serwerem MCP w VS Code](./docs-mcp/README.md)
 
@@ -78,8 +78,8 @@ To studium przypadku pokazuje, jak wprowadzić Microsoft Learn Docs bezpośredni
 
 - Natychmiast wyszukiwać i czytać dokumentację w VS Code za pomocą panelu MCP lub palety poleceń
 - Odwoływać się do dokumentacji i wstawiać linki bezpośrednio do plików README lub kursów w formacie markdown
-- Korzystać z GitHub Copilot i MCP razem, by uzyskać płynne, zasilane AI przepływy pracy z dokumentacją i kodem
-- Weryfikować i ulepszać dokumentację dzięki bieżącej informacji zwrotnej i dokładności pochodzącej od Microsoft
+- Korzystać z GitHub Copilot i MCP razem dla płynnych, zasilanych AI procesów dokumentacji i kodowania
+- Weryfikować i ulepszać dokumentację dzięki informacji zwrotnej w czasie rzeczywistym i dokładności pochodzącej od Microsoft
 - Integracja MCP z workflow GitHub dla ciągłej walidacji dokumentacji
 
 Wdrożenie zawiera:
@@ -87,7 +87,7 @@ Wdrożenie zawiera:
 - Przewodniki oparte na zrzutach ekranu pokazujące doświadczenie w edytorze
 - Wskazówki dotyczące łączenia Copilot i MCP dla maksymalnej produktywności
 
-Ten scenariusz jest idealny dla autorów kursów, twórców dokumentacji i programistów, którzy chcą pozostać skoncentrowani w edytorze podczas pracy z dokumentacją, Copilotem i narzędziami walidacyjnymi — wszystko zasilane przez MCP.
+Ten scenariusz jest idealny dla autorów kursów, twórców dokumentacji i programistów, którzy chcą pozostać skoncentrowani w edytorze podczas pracy z dokumentacją, Copilotem i narzędziami walidacyjnymi — wszystko to dzięki MCP.
 
 ### 6. [Tworzenie serwera MCP w APIM](./apimsample.md)
 
@@ -114,7 +114,7 @@ Analizując te wdrożenia, możesz zdobyć wiedzę na temat wzorców architekton
 - [Microsoft Docs MCP Server](https://github.com/MicrosoftDocs/mcp)
 - [MCP Community Examples](https://github.com/microsoft/mcp)
 
-Następne: Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+Następny temat: Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

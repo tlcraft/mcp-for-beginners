@@ -2,15 +2,15 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T06:06:12+00:00",
+  "translation_date": "2025-07-13T19:04:16+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "sw"
 }
 -->
-# Endesha mfano huu
+# Endesha sampuli hii
 
 > [!NOTE]
-> Mfano huu unadhani unatumia GitHub Codespaces. Ikiwa unataka kuendesha hii kwa ndani, unahitaji kuweka tokeni ya upatikanaji binafsi (PAT) kwenye GitHub.
+> Sampuli hii inadhani unatumia mfano wa GitHub Codespaces. Ikiwa unataka kuendesha hii kwa ndani ya kompyuta yako, unahitaji kuanzisha tokeni ya upatikanaji binafsi (PAT) kwenye GitHub.
 >
 > ```bash
 > # zsh/bash
@@ -28,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Inapaswa kusakinisha maktaba zifuatazo: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
+Inapaswa kusakinisha maktaba zifuatazo: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
 
 ## Endesha
 
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Sehemu kubwa ya matokeo ni za kufuatilia makosa, lakini muhimu ni kwamba unataja zana kutoka kwa MCP Server, kuzibadilisha kuwa zana za LLM na mwisho wa siku unapata jibu la mteja wa MCP "Jumla 6".
+Sehemu kubwa ya matokeo ni kwa ajili ya utambuzi wa makosa lakini kinachojali ni kwamba unataja zana kutoka kwa MCP Server, kuzibadilisha kuwa zana za LLM na mwisho unapata jibu la mteja wa MCP "Sum 6".
 
-**Kiarifu cha Kutokujali**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au upotovu. Hati ya asili katika lugha yake ya mama inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

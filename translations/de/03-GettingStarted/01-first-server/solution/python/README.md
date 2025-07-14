@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T22:55:17+00:00",
+  "translation_date": "2025-07-13T17:57:49+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "de"
 }
@@ -53,7 +53,7 @@ Sobald der Server verbunden ist:
 
 ### Testen im CLI-Modus
 
-Der Inspector, den du gestartet hast, ist eigentlich eine Node.js-Anwendung und `mcp dev` ist ein Wrapper darum herum.
+Der Inspector, den du gestartet hast, ist tatsächlich eine Node.js-Anwendung und `mcp dev` ist ein Wrapper darum herum.
 
 Du kannst ihn direkt im CLI-Modus starten, indem du folgenden Befehl ausführst:
 
@@ -117,4 +117,4 @@ Du solltest folgende Ausgabe sehen:
 > Mehr zum Inspector findest du [hier](https://github.com/modelcontextprotocol/inspector).
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

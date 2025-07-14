@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "105c2ddbb77bc38f7e9df009e1b06e45",
-  "translation_date": "2025-07-04T18:47:03+00:00",
+  "translation_date": "2025-07-13T15:38:56+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "ro"
 }
 -->
 # Introducere în Model Context Protocol (MCP): De ce este important pentru aplicațiile AI scalabile
 
-Aplicațiile AI generative reprezintă un mare pas înainte, deoarece permit utilizatorului să interacționeze cu aplicația folosind comenzi în limbaj natural. Totuși, pe măsură ce se investesc mai mult timp și resurse în astfel de aplicații, vrei să te asiguri că poți integra cu ușurință funcționalități și resurse într-un mod care să permită extinderea, ca aplicația ta să poată gestiona mai multe modele simultan și să facă față diverselor particularități ale modelelor. Pe scurt, construirea aplicațiilor Gen AI este ușoară la început, dar pe măsură ce acestea cresc și devin mai complexe, trebuie să începi să definești o arhitectură și probabil vei avea nevoie să te bazezi pe un standard pentru a asigura o construcție consistentă a aplicațiilor. Aici intervine MCP pentru a organiza lucrurile și a oferi un standard.
+Aplicațiile AI generative reprezintă un pas important înainte, deoarece permit utilizatorului să interacționeze cu aplicația folosind comenzi în limbaj natural. Totuși, pe măsură ce se investesc mai mult timp și resurse în astfel de aplicații, vrei să te asiguri că poți integra cu ușurință funcționalități și resurse într-un mod care să permită extinderea, ca aplicația ta să poată gestiona mai multe modele simultan și să facă față diverselor particularități ale modelelor. Pe scurt, construirea aplicațiilor Gen AI este ușoară la început, dar pe măsură ce acestea cresc și devin mai complexe, trebuie să începi să definești o arhitectură și probabil vei avea nevoie să te bazezi pe un standard pentru a te asigura că aplicațiile tale sunt construite într-un mod consecvent. Aici intervine MCP pentru a organiza lucrurile și a oferi un standard.
 
 ---
 
@@ -24,7 +24,7 @@ Aplicațiile AI generative reprezintă un mare pas înainte, deoarece permit uti
 Pe măsură ce aplicațiile AI generative devin mai complexe, este esențial să adoptăm standarde care să asigure **scalabilitate, extensibilitate** și **mentenabilitate**. MCP răspunde acestor nevoi prin:
 
 - Unificarea integrărilor model-unealtă
-- Reducerea soluțiilor fragile și unice, personalizate
+- Reducerea soluțiilor fragile și personalizate unice
 - Permițând coexistarea mai multor modele într-un singur ecosistem
 
 ---
@@ -68,14 +68,14 @@ MCP urmează un **model client-server**, unde:
 
 - **MCP Hosts** rulează modelele AI
 - **MCP Clients** inițiază cereri
-- **MCP Servers** furnizează context, unelte și capabilități
+- **MCP Servers** oferă context, unelte și capabilități
 
 ### **Componente cheie:**
 
-- **Resurse** – date statice sau dinamice pentru modele  
-- **Prompts** – fluxuri de lucru predefinite pentru generare ghidată  
-- **Unelte** – funcții executabile precum căutare, calcule  
-- **Sampling** – comportament agentic prin interacțiuni recursive
+- **Resurse** – Date statice sau dinamice pentru modele  
+- **Prompts** – Fluxuri de lucru predefinite pentru generare ghidată  
+- **Unelte** – Funcții executabile precum căutare, calcule  
+- **Sampling** – Comportament agentic prin interacțiuni recursive
 
 ---
 
@@ -159,11 +159,11 @@ Ești gata să încerci? Iată exemple de creare a unui server MCP simplu în di
 MCP permite o gamă largă de aplicații prin extinderea capabilităților AI:
 
 | **Aplicație**               | **Descriere**                                                                 |
-|----------------------------|-------------------------------------------------------------------------------|
-| Integrare date enterprise  | Conectează LLM-uri la baze de date, CRM-uri sau unelte interne                |
-| Sisteme AI agentice        | Permite agenților autonomi acces la unelte și fluxuri decizionale             |
-| Aplicații multimodale      | Combină unelte text, imagine și audio într-o singură aplicație AI unificată  |
-| Integrare date în timp real| Adaugă date live în interacțiunile AI pentru rezultate mai precise și actuale|
+|-----------------------------|-------------------------------------------------------------------------------|
+| Integrare date enterprise   | Conectează LLM-uri la baze de date, CRM-uri sau unelte interne                |
+| Sisteme AI agentice         | Permite agenților autonomi acces la unelte și fluxuri decizionale             |
+| Aplicații multimodale       | Combină unelte text, imagine și audio într-o singură aplicație AI unificată  |
+| Integrare date în timp real | Adaugă date live în interacțiunile AI pentru rezultate mai precise și actuale|
 
 ### 🧠 MCP = Standard universal pentru interacțiunile AI
 
@@ -294,7 +294,7 @@ Iată concluziile esențiale pentru utilizarea MCP:
 
 ## 🧠 Exercițiu
 
-Gândește-te la o aplicație AI pe care ai vrea să o construiești.
+Gândește-te la o aplicație AI pe care vrei să o construiești.
 
 - Ce **unelte externe sau date** ar putea să-i îmbunătățească capabilitățile?  
 - Cum ar putea MCP să facă integrarea **mai simplă și mai fiabilă**?

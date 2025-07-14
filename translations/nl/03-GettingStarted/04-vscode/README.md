@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T17:55:00+00:00",
+  "translation_date": "2025-07-13T19:31:57+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "nl"
 }
@@ -11,11 +11,11 @@ Laten we in de volgende secties dieper ingaan op het gebruik van de visuele inte
 
 ## Aanpak
 
-Dit is hoe we dit op hoofdlijnen moeten aanpakken:
+Dit is hoe we het op hoofdlijnen moeten aanpakken:
 
-- Configureer een bestand om onze MCP Server te vinden.
-- Start/Verbind met de server om een lijst van zijn mogelijkheden te krijgen.
-- Gebruik deze mogelijkheden via de GitHub Copilot Chat interface.
+- Een bestand configureren om onze MCP Server te vinden.
+- De server opstarten/verbinden zodat deze zijn mogelijkheden kan tonen.
+- Deze mogelijkheden gebruiken via de GitHub Copilot Chat interface.
 
 Geweldig, nu we de flow begrijpen, laten we proberen een MCP Server te gebruiken via Visual Studio Code met een oefening.
 
@@ -33,7 +33,7 @@ Je moet mogelijk de ontdekking van MCP Servers inschakelen.
 
 ### -1- Configuratiebestand aanmaken
 
-Begin met het aanmaken van een configuratiebestand in de root van je project. Je hebt een bestand nodig genaamd MCP.json dat je plaatst in een map genaamd .vscode. Het zou er ongeveer zo uit moeten zien:
+Begin met het aanmaken van een configuratiebestand in de root van je project. Je hebt een bestand nodig genaamd MCP.json dat je plaatst in een map genaamd .vscode. Het zou er als volgt uit moeten zien:
 
 ```text
 .vscode
@@ -60,9 +60,9 @@ Voeg de volgende inhoud toe aan *mcp.json*:
 }
 ```
 
-Hierboven zie je een eenvoudig voorbeeld van hoe je een server start die in Node.js is geschreven. Voor andere runtimes geef je het juiste commando op om de server te starten met `command` en `args`.
+Hierboven zie je een eenvoudig voorbeeld van het starten van een server geschreven in Node.js. Voor andere runtimes geef je het juiste commando op om de server te starten met `command` en `args`.
 
-### -3- Start de server
+### -3- Server starten
 
 Nu je een entry hebt toegevoegd, starten we de server:
 
@@ -108,7 +108,7 @@ De belangrijkste punten uit dit hoofdstuk zijn:
 
 - [Visual Studio docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
-## Wat is de volgende stap
+## Wat volgt
 
 - Volgende: [Een SSE Server maken](../05-sse-server/README.md)
 

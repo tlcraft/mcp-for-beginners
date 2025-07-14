@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-16T15:20:31+00:00",
+  "translation_date": "2025-07-13T20:20:15+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "pl"
 }
@@ -17,7 +17,6 @@ npm install
 
 ## -3- Uruchom przykład
 
-
 ```bash
 npm run build
 ```
@@ -30,26 +29,26 @@ Gdy serwer działa w jednym terminalu, otwórz drugi terminal i uruchom następu
 npm run inspector
 ```
 
-To powinno uruchomić serwer WWW z interfejsem graficznym, który pozwoli Ci przetestować przykład.
+To powinno uruchomić serwer WWW z interfejsem wizualnym, który pozwoli Ci przetestować przykład.
 
-Gdy serwer jest połączony:
+Po połączeniu się z serwerem:
 
-- spróbuj wyświetlić listę narzędzi i uruchom `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- spróbuj wyświetlić listę narzędzi i uruchomić `add` z argumentami 2 i 4, w wyniku powinno pojawić się 6.
+- przejdź do zasobów i szablonu zasobu, wywołaj "greeting", wpisz imię i powinieneś zobaczyć powitanie z podanym imieniem.
 
-### Testing in CLI mode
+### Testowanie w trybie CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+Inspektor, który uruchomiłeś, to w rzeczywistości aplikacja Node.js, a `mcp dev` jest jej nakładką.
 
-- Start up the server with the command `npm run build`.
+- Uruchom serwer poleceniem `npm run build`.
 
-- W osobnym terminalu uruchom następujące polecenie:
+- W osobnym terminalu wpisz następujące polecenie:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    To wyświetli listę wszystkich dostępnych narzędzi na serwerze. Powinieneś zobaczyć następujące wyjście:
+    To wyświetli listę wszystkich narzędzi dostępnych na serwerze. Powinieneś zobaczyć następujący wynik:
 
     ```text
     {
@@ -86,7 +85,7 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-Powinieneś zobaczyć następujące wyjście:
+Powinieneś zobaczyć następujący wynik:
 
     ```text
     {
@@ -101,7 +100,7 @@ Powinieneś zobaczyć następujące wyjście:
 
 > ![!TIP]
 > Zazwyczaj dużo szybciej jest uruchomić inspektora w trybie CLI niż w przeglądarce.
-> Więcej o inspektorze przeczytasz [tutaj](https://github.com/modelcontextprotocol/inspector).
+> Więcej informacji o inspektorze znajdziesz [tutaj](https://github.com/modelcontextprotocol/inspector).
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uważany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

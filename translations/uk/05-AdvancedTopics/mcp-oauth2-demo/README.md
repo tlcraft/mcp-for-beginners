@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-17T16:51:32+00:00",
+  "translation_date": "2025-07-14T00:44:28+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "uk"
 }
 -->
 # MCP OAuth2 Demo
 
-Цей проєкт — **мінімальний додаток на Spring Boot**, який одночасно виконує роль:
+Цей проєкт — **мінімальний Spring Boot додаток**, який виконує роль як:
 
-* **Spring Authorization Server** (видає JWT токени доступу через `client_credentials` flow), та  
-* **Resource Server** (захищає власний `/hello` endpoint).
+* **Spring Authorization Server** (видає JWT токени доступу через `client_credentials` flow), так і  
+* **Resource Server** (захищає власний ендпоінт `/hello`).
 
-Він відтворює налаштування, описані у [публікації в блозі Spring (2 квітня 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Він відтворює налаштування, показані в [публікації блогу Spring (2 квітня 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -38,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 Ви можете перевірити налаштування безпеки OAuth2 за допомогою наступних кроків:
 
-### 1. Переконайтеся, що сервер запущено і він захищений
+### 1. Переконайтеся, що сервер працює і захищений
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Отримайте токен доступу за допомогою client credentials
+### 2. Отримайте токен доступу, використовуючи client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Примітка: заголовок Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Примітка: заголовок Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) — це Base64-кодування рядка `mcp-client:secret`.
 
-### 3. Отримайте доступ до захищеного endpoint, використовуючи токен
+### 3. Отримайте доступ до захищеного ендпоінту, використовуючи токен
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Успішна відповідь із повідомленням "Hello from MCP OAuth2 Demo!" підтверджує, що конфігурація OAuth2 працює правильно.
+Успішна відповідь з повідомленням "Hello from MCP OAuth2 Demo!" підтверджує, що конфігурація OAuth2 працює правильно.
 
 ---
 
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-FQDN для ingress стане вашим **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Ім'я FQDN для входу стає вашим **issuer** (`https://<fqdn>`).  
+Azure автоматично надає довірений TLS сертифікат для `*.azurecontainerapps.io`.
 
 ---
 
 ## Інтеграція з **Azure API Management**
 
-Додайте цю вхідну політику до свого API:
+Додайте цю політику inbound до вашого API:
 
 ```xml
 <inbound>
@@ -125,4 +125,4 @@ APIM завантажить JWKS і перевірятиме кожен запи
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Відмова від відповідальності**:  
-Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння чи неправильні тлумачення, що виникли внаслідок використання цього перекладу.
+Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.

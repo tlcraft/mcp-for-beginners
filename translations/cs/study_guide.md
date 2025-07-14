@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-06-11T16:49:57+00:00",
+  "translation_date": "2025-07-13T15:17:47+00:00",
   "source_file": "study_guide.md",
   "language_code": "cs"
 }
 -->
-# Model Context Protocol (MCP) для начинающих - учебное пособие
+# Model Context Protocol (MCP) pro začátečníky – studijní průvodce
 
-Это учебное пособие предоставляет обзор структуры и содержимого репозитория для учебного курса "Model Context Protocol (MCP) для начинающих". Используйте его для эффективной навигации по репозиторию и максимального использования доступных ресурсов.
+Tento studijní průvodce nabízí přehled struktury a obsahu repozitáře pro kurz „Model Context Protocol (MCP) pro začátečníky“. Použijte ho k efektivní orientaci v repozitáři a maximálnímu využití dostupných zdrojů.
 
-## Обзор репозитория
+## Přehled repozitáře
 
-Model Context Protocol (MCP) — это стандартизированная платформа для взаимодействия между AI-моделями и клиентскими приложениями. Этот репозиторий содержит комплексный учебный курс с практическими примерами кода на C#, Java, JavaScript, Python и TypeScript, предназначенный для разработчиков AI, системных архитекторов и инженеров-программистов.
+Model Context Protocol (MCP) je standardizovaný rámec pro interakce mezi AI modely a klientskými aplikacemi. Tento repozitář poskytuje komplexní kurz s praktickými ukázkami kódu v jazycích C#, Java, JavaScript, Python a TypeScript, určený pro vývojáře AI, systémové architekty a softwarové inženýry.
 
-## Визуальная карта курса
+## Vizualizace kurikula
 
 ```mermaid
 mindmap
@@ -86,112 +86,112 @@ mindmap
       (Production Deployment)
 ```
 
-## Структура репозитория
+## Struktura repozitáře
 
-Репозиторий разделён на десять основных разделов, каждый из которых посвящён разным аспектам MCP:
+Repozitář je rozdělen do deseti hlavních sekcí, z nichž každá se zaměřuje na různé aspekty MCP:
 
-1. **Введение (00-Introduction/)**
-   - Обзор Model Context Protocol
-   - Почему стандартизация важна в AI-пайплайнах
-   - Практические примеры и преимущества
+1. **Úvod (00-Introduction/)**
+   - Přehled Model Context Protocol
+   - Proč je standardizace důležitá v AI pipelinech
+   - Praktické případy použití a přínosy
 
-2. **Основные концепции (01-CoreConcepts/)**
-   - Клиент-серверная архитектура
-   - Ключевые компоненты протокола
-   - Паттерны обмена сообщениями в MCP
+2. **Základní koncepty (01-CoreConcepts/)**
+   - Klient-server architektura
+   - Klíčové komponenty protokolu
+   - Vzory zpráv v MCP
 
-3. **Безопасность (02-Security/)**
-   - Угрозы безопасности в системах на базе MCP
-   - Лучшие практики по защите реализаций
-   - Стратегии аутентификации и авторизации
+3. **Bezpečnost (02-Security/)**
+   - Hrozby bezpečnosti v systémech založených na MCP
+   - Nejlepší postupy pro zabezpečení implementací
+   - Strategie autentizace a autorizace
 
-4. **Начало работы (03-GettingStarted/)**
-   - Настройка и конфигурация окружения
-   - Создание базовых MCP серверов и клиентов
-   - Интеграция с существующими приложениями
-   - Подразделы для первого сервера, первого клиента, LLM клиента, интеграции с VS Code, SSE сервера, AI Toolkit, тестирования и деплоя
+4. **Začínáme (03-GettingStarted/)**
+   - Nastavení a konfigurace prostředí
+   - Vytvoření základních MCP serverů a klientů
+   - Integrace s existujícími aplikacemi
+   - Podsekce pro první server, první klient, LLM klienta, integraci s VS Code, SSE server, AI Toolkit, testování a nasazení
 
-5. **Практическая реализация (04-PracticalImplementation/)**
-   - Использование SDK на разных языках программирования
-   - Отладка, тестирование и методы валидации
-   - Создание переиспользуемых шаблонов запросов и рабочих процессов
-   - Примеры проектов с реализациями
+5. **Praktická implementace (04-PracticalImplementation/)**
+   - Použití SDK v různých programovacích jazycích
+   - Ladění, testování a ověřování
+   - Tvorba znovupoužitelných šablon promptů a pracovních postupů
+   - Ukázkové projekty s příklady implementace
 
-6. **Продвинутые темы (05-AdvancedTopics/)**
-   - Мультимодальные AI рабочие процессы и расширяемость
-   - Безопасное масштабирование
-   - MCP в корпоративных экосистемах
-   - Специализированные темы: интеграция с Azure, мультимодальность, OAuth2, корневые контексты, маршрутизация, сэмплирование, масштабирование, безопасность, интеграция веб-поиска и стриминг.
+6. **Pokročilá témata (05-AdvancedTopics/)**
+   - Multimodální AI pracovní postupy a rozšiřitelnost
+   - Bezpečné škálování
+   - MCP v podnikových ekosystémech
+   - Specializovaná témata včetně integrace Azure, multimodality, OAuth2, root kontextů, směrování, vzorkování, škálování, bezpečnosti, integrace webového vyhledávání a streamování.
 
-7. **Вклад сообщества (06-CommunityContributions/)**
-   - Как вносить код и документацию
-   - Совместная работа через GitHub
-   - Улучшения и отзывы от сообщества
+7. **Příspěvky komunity (06-CommunityContributions/)**
+   - Jak přispívat kódem a dokumentací
+   - Spolupráce přes GitHub
+   - Vylepšení a zpětná vazba řízená komunitou
 
-8. **Уроки раннего внедрения (07-LessonsfromEarlyAdoption/)**
-   - Реальные реализации и истории успеха
-   - Создание и развёртывание решений на базе MCP
-   - Тенденции и планы на будущее
+8. **Lekce z raného nasazení (07-LessonsfromEarlyAdoption/)**
+   - Reálné implementace a úspěšné příběhy
+   - Budování a nasazení řešení založených na MCP
+   - Trendy a budoucí plán
 
-9. **Лучшие практики (08-BestPractices/)**
-   - Оптимизация производительности и настройка
-   - Проектирование отказоустойчивых MCP систем
-   - Стратегии тестирования и повышения устойчивости
+9. **Nejlepší postupy (08-BestPractices/)**
+   - Ladění výkonu a optimalizace
+   - Návrh odolných MCP systémů
+   - Testování a strategie odolnosti
 
-10. **Кейсы (09-CaseStudy/)**
-    - Глубокий разбор архитектур решений MCP
-    - Схемы развёртывания и советы по интеграции
-    - Аннотированные диаграммы и пошаговые обзоры проектов
+10. **Případové studie (09-CaseStudy/)**
+    - Hloubkové analýzy architektur MCP řešení
+    - Plány nasazení a tipy na integraci
+    - Anotované diagramy a průchody projekty
 
-11. **Практический воркшоп (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Комплексный практический воркшоп по сочетанию MCP с AI Toolkit от Microsoft для VS Code
-    - Создание интеллектуальных приложений, связывающих AI-модели с реальными инструментами
-    - Практические модули по основам, разработке кастомных серверов и стратегиям продакшн-развёртывания
+11. **Praktický workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
+    - Komplexní praktický workshop spojující MCP s Microsoft AI Toolkit pro VS Code
+    - Vytváření inteligentních aplikací propojujících AI modely s reálnými nástroji
+    - Praktické moduly pokrývající základy, vývoj vlastního serveru a strategie produkčního nasazení
 
-## Примеры проектов
+## Ukázkové projekty
 
-В репозитории представлены несколько проектов-примеров, демонстрирующих реализацию MCP на разных языках программирования:
+Repozitář obsahuje několik ukázkových projektů demonstrujících implementaci MCP v různých programovacích jazycích:
 
-### Примеры базового MCP калькулятора
-- C# MCP сервер пример
-- Java MCP калькулятор
-- JavaScript MCP демо
-- Python MCP сервер
-- TypeScript MCP пример
+### Základní ukázky MCP kalkulačky
+- C# MCP server – příklad
+- Java MCP kalkulačka
+- JavaScript MCP demo
+- Python MCP server
+- TypeScript MCP příklad
 
-### Продвинутые проекты MCP калькулятора
-- Продвинутый пример на C#
-- Java контейнерное приложение
-- Продвинутый пример на JavaScript
-- Сложная реализация на Python
-- Контейнерный пример на TypeScript
+### Pokročilé projekty MCP kalkulačky
+- Pokročilý C# příklad
+- Java kontejnerová aplikace – příklad
+- Pokročilý JavaScript příklad
+- Python složitá implementace
+- TypeScript kontejnerový příklad
 
-## Дополнительные ресурсы
+## Další zdroje
 
-В репозитории доступны вспомогательные ресурсы:
+Repozitář obsahuje podpůrné zdroje:
 
-- **Папка Images**: содержит диаграммы и иллюстрации, используемые в курсе
-- **Переводы**: поддержка нескольких языков с автоматическим переводом документации
-- **Официальные ресурсы MCP**:
-  - [MCP Documentation](https://modelcontextprotocol.io/)
-  - [MCP Specification](https://spec.modelcontextprotocol.io/)
-  - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- **Složka obrázků**: Obsahuje diagramy a ilustrace používané v kurikulu
+- **Překlady**: Podpora více jazyků s automatizovanými překlady dokumentace
+- **Oficiální MCP zdroje**:
+  - [MCP dokumentace](https://modelcontextprotocol.io/)
+  - [MCP specifikace](https://spec.modelcontextprotocol.io/)
+  - [MCP GitHub repozitář](https://github.com/modelcontextprotocol)
 
-## Как использовать этот репозиторий
+## Jak používat tento repozitář
 
-1. **Пошаговое обучение**: проходите главы последовательно (с 00 по 10) для структурированного изучения.
-2. **Фокус на языке программирования**: если вас интересует конкретный язык, изучайте папки с примерами для выбранного языка.
-3. **Практическая реализация**: начните с раздела "Начало работы" для настройки окружения и создания первого MCP сервера и клиента.
-4. **Продвинутый уровень**: после освоения основ переходите к продвинутым темам для расширения знаний.
-5. **Вовлечение сообщества**: присоединяйтесь к [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4), чтобы общаться с экспертами и другими разработчиками.
+1. **Sekvenční učení**: Projděte kapitoly v pořadí (00 až 10) pro strukturované studium.
+2. **Zaměření na konkrétní jazyk**: Pokud vás zajímá určitý programovací jazyk, prozkoumejte složky s ukázkami pro implementace ve vámi preferovaném jazyce.
+3. **Praktická implementace**: Začněte sekcí „Začínáme“ pro nastavení prostředí a vytvoření prvního MCP serveru a klienta.
+4. **Pokročilé prozkoumání**: Jakmile zvládnete základy, ponořte se do pokročilých témat a rozšiřte své znalosti.
+5. **Zapojení komunity**: Připojte se k [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) a spojte se s odborníky a dalšími vývojáři.
 
-## Вклад в проект
+## Přispívání
 
-Репозиторий приветствует вклады от сообщества. Ознакомьтесь с разделом Вклад сообщества для инструкций по участию.
+Tento repozitář vítá příspěvky od komunity. Podívejte se do sekce Příspěvky komunity pro informace, jak přispívat.
 
 ---
 
-*Это учебное пособие создано 11 июня 2025 года и отражает состояние репозитория на эту дату. Содержимое репозитория могло обновиться с тех пор.*
+*Tento studijní průvodce byl vytvořen 11. června 2025 a poskytuje přehled repozitáře k tomuto datu. Obsah repozitáře mohl být od té doby aktualizován.*
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

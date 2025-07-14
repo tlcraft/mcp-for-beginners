@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:10:11+00:00",
+  "translation_date": "2025-07-13T18:33:54+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "it"
 }
 -->
 # MCP Java Client - Demo Calcolatrice
 
-Questo progetto mostra come creare un client Java che si connette e interagisce con un server MCP (Model Context Protocol). In questo esempio, ci connetteremo al server della calcolatrice del Capitolo 01 ed eseguiremo varie operazioni matematiche.
+Questo progetto mostra come creare un client Java che si connette e interagisce con un server MCP (Model Context Protocol). In questo esempio, ci collegheremo al server della calcolatrice del Capitolo 01 ed eseguiremo varie operazioni matematiche.
 
 ## Prerequisiti
 
-Prima di eseguire questo client, è necessario:
+Prima di eseguire questo client, devi:
 
-1. **Avviare il Server della Calcolatrice** del Capitolo 01:
-   - Vai alla directory del server della calcolatrice: `03-GettingStarted/01-first-server/solution/java/`
-   - Compila ed esegui il server della calcolatrice:
+1. **Avviare il Server Calcolatrice** del Capitolo 01:
+   - Vai nella directory del server calcolatrice: `03-GettingStarted/01-first-server/solution/java/`
+   - Compila ed esegui il server calcolatrice:
      ```cmd
      cd ..\01-first-server\solution\java
      .\mvnw clean install -DskipTests
@@ -25,13 +25,13 @@ Prima di eseguire questo client, è necessario:
      ```
    - Il server dovrebbe essere in esecuzione su `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. Avere installato **Java 21 o superiore** sul tuo sistema
+3. Avere **Maven** (incluso tramite Maven Wrapper)
 
-## What is the SDKClient?
+## Cos’è SDKClient?
 
-The `SDKClient` è un'applicazione Java che dimostra come:
-- Connettersi a un server MCP utilizzando il trasporto Server-Sent Events (SSE)
+`SDKClient` è un’applicazione Java che dimostra come:
+- Connettersi a un server MCP usando il trasporto Server-Sent Events (SSE)
 - Elencare gli strumenti disponibili dal server
 - Chiamare varie funzioni della calcolatrice da remoto
 - Gestire le risposte e mostrare i risultati
@@ -40,11 +40,11 @@ The `SDKClient` è un'applicazione Java che dimostra come:
 
 Il client utilizza il framework Spring AI MCP per:
 
-1. **Stabilire la Connessione**: Crea un client WebFlux SSE per connettersi al server della calcolatrice
-2. **Inizializzare il Client**: Configura il client MCP e stabilisce la connessione
-3. **Scoprire gli Strumenti**: Elenca tutte le operazioni della calcolatrice disponibili
-4. **Eseguire le Operazioni**: Chiama varie funzioni matematiche con dati di esempio
-5. **Mostrare i Risultati**: Visualizza i risultati di ogni calcolo
+1. **Stabilire la Connessione**: crea un client WebFlux SSE per connettersi al server calcolatrice
+2. **Inizializzare il Client**: configura il client MCP e stabilisce la connessione
+3. **Scoprire gli Strumenti**: elenca tutte le operazioni disponibili della calcolatrice
+4. **Eseguire Operazioni**: chiama varie funzioni matematiche con dati di esempio
+5. **Mostrare i Risultati**: visualizza i risultati di ogni calcolo
 
 ## Struttura del Progetto
 
@@ -60,7 +60,7 @@ src/
                             └── SDKClient.java    # Main client implementation
 ```
 
-## Dipendenze Chiave
+## Dipendenze Principali
 
 Il progetto utilizza le seguenti dipendenze principali:
 
@@ -72,33 +72,33 @@ Il progetto utilizza le seguenti dipendenze principali:
 ```
 
 Questa dipendenza fornisce:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - trasporto SSE per comunicazione web
+- `McpClient` - L’interfaccia principale del client
+- `WebFluxSseClientTransport` - Trasporto SSE per comunicazioni web
 - Schemi del protocollo MCP e tipi di richiesta/risposta
 
-## Compilazione del Progetto
+## Compilare il Progetto
 
-Compila il progetto usando il wrapper Maven:
+Compila il progetto usando il Maven wrapper:
 
 ```cmd
 .\mvnw clean install
 ```
 
-## Esecuzione del Client
+## Eseguire il Client
 
 ```cmd
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Nota**: Assicurati che il server della calcolatrice sia in esecuzione su `http://localhost:8080` before executing any of these commands.
+**Nota**: Assicurati che il server calcolatrice sia in esecuzione su `http://localhost:8080` prima di eseguire uno di questi comandi.
 
-## What the Client Does
+## Cosa Fa il Client
 
-When you run the client, it will:
+Quando esegui il client, esso:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **Elencare gli Strumenti** - Mostra tutte le operazioni della calcolatrice disponibili
-3. **Eseguire i Calcoli**:
+1. **Si connette** al server calcolatrice su `http://localhost:8080`
+2. **Elenca gli Strumenti** - Mostra tutte le operazioni disponibili della calcolatrice
+3. **Esegue Calcoli**:
    - Addizione: 5 + 3 = 8
    - Sottrazione: 10 - 4 = 6
    - Moltiplicazione: 6 × 7 = 42
@@ -106,7 +106,7 @@ When you run the client, it will:
    - Potenza: 2^8 = 256
    - Radice Quadrata: √16 = 4
    - Valore Assoluto: |-5.5| = 5.5
-   - Aiuto: Mostra le operazioni disponibili
+   - Aiuto: mostra le operazioni disponibili
 
 ## Output Atteso
 
@@ -122,7 +122,7 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Nota**: Potresti vedere avvisi Maven riguardo thread residui alla fine - questo è normale per applicazioni reattive e non indica un errore.
+**Nota**: Potresti vedere avvisi di Maven riguardo thread residui alla fine - questo è normale per applicazioni reattive e non indica un errore.
 
 ## Comprendere il Codice
 
@@ -130,7 +130,7 @@ Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
 ```
-Questo crea un trasporto SSE (Server-Sent Events) che si connette al server della calcolatrice.
+Questo crea un trasporto SSE (Server-Sent Events) che si connette al server calcolatrice.
 
 ### 2. Creazione del Client
 ```java
@@ -139,22 +139,22 @@ client.initialize();
 ```
 Crea un client MCP sincrono e inizializza la connessione.
 
-### 3. Chiamata degli Strumenti
+### 3. Chiamata agli Strumenti
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
 ```
 Chiama lo strumento "add" con i parametri a=5.0 e b=3.0.
 
-## Risoluzione Problemi
+## Risoluzione dei Problemi
 
 ### Server Non Avviato
-Se ricevi errori di connessione, assicurati che il server della calcolatrice del Capitolo 01 sia in esecuzione:
+Se ricevi errori di connessione, assicurati che il server calcolatrice del Capitolo 01 sia in esecuzione:
 ```
 Error: Connection refused
 ```
-**Soluzione**: Avvia prima il server della calcolatrice.
+**Soluzione**: Avvia prima il server calcolatrice.
 
-### Porta Già in Uso
+### Porta già in Uso
 Se la porta 8080 è occupata:
 ```
 Error: Address already in use
@@ -173,5 +173,5 @@ Se incontri errori di compilazione:
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/)
 - [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
-**Avvertenza**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di considerare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua madre deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali incomprensioni o interpretazioni errate derivanti dall’uso di questa traduzione.
+**Disclaimer**:  
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:03:35+00:00",
+  "translation_date": "2025-07-13T18:30:09+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "es"
 }
 -->
-# MCP Java Client - Demo Calculadora
+# Cliente Java MCP - Demo Calculadora
 
 Este proyecto muestra cómo crear un cliente Java que se conecta e interactúa con un servidor MCP (Model Context Protocol). En este ejemplo, nos conectaremos al servidor de calculadora del Capítulo 01 y realizaremos varias operaciones matemáticas.
 
-## Requisitos Previos
+## Requisitos previos
 
 Antes de ejecutar este cliente, necesitas:
 
@@ -25,26 +25,26 @@ Antes de ejecutar este cliente, necesitas:
      ```
    - El servidor debería estar corriendo en `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. Tener instalado **Java 21 o superior** en tu sistema  
+3. Tener **Maven** (incluido mediante Maven Wrapper)
 
-## What is the SDKClient?
+## ¿Qué es el SDKClient?
 
-The `SDKClient` es una aplicación Java que demuestra cómo:
+El `SDKClient` es una aplicación Java que demuestra cómo:
 - Conectarse a un servidor MCP usando transporte Server-Sent Events (SSE)
-- Listar las herramientas disponibles del servidor
+- Listar las herramientas disponibles en el servidor
 - Llamar remotamente a varias funciones de la calculadora
-- Manejar respuestas y mostrar resultados
+- Manejar las respuestas y mostrar los resultados
 
 ## Cómo Funciona
 
 El cliente utiliza el framework Spring AI MCP para:
 
-1. **Establecer Conexión**: Crea un cliente WebFlux SSE para conectarse al servidor de calculadora
-2. **Inicializar Cliente**: Configura el cliente MCP y establece la conexión
-3. **Descubrir Herramientas**: Lista todas las operaciones disponibles de la calculadora
-4. **Ejecutar Operaciones**: Llama a varias funciones matemáticas con datos de ejemplo
-5. **Mostrar Resultados**: Muestra los resultados de cada cálculo
+1. **Establecer Conexión**: Crea un transporte WebFlux SSE para conectarse al servidor de calculadora  
+2. **Inicializar Cliente**: Configura el cliente MCP y establece la conexión  
+3. **Descubrir Herramientas**: Lista todas las operaciones disponibles de la calculadora  
+4. **Ejecutar Operaciones**: Llama a varias funciones matemáticas con datos de ejemplo  
+5. **Mostrar Resultados**: Presenta los resultados de cada cálculo
 
 ## Estructura del Proyecto
 
@@ -62,7 +62,7 @@ src/
 
 ## Dependencias Clave
 
-El proyecto usa las siguientes dependencias principales:
+El proyecto utiliza las siguientes dependencias principales:
 
 ```xml
 <dependency>
@@ -71,12 +71,12 @@ El proyecto usa las siguientes dependencias principales:
 </dependency>
 ```
 
-Esta dependencia provee:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - transporte SSE para comunicación web
+Esta dependencia provee:  
+- `McpClient` - La interfaz principal del cliente  
+- `WebFluxSseClientTransport` - Transporte SSE para comunicación web  
 - Esquemas del protocolo MCP y tipos de solicitud/respuesta
 
-## Construcción del Proyecto
+## Construyendo el Proyecto
 
 Construye el proyecto usando el wrapper de Maven:
 
@@ -90,25 +90,25 @@ Construye el proyecto usando el wrapper de Maven:
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Nota**: Asegúrate de que el servidor de calculadora esté corriendo en `http://localhost:8080` before executing any of these commands.
+**Nota**: Asegúrate de que el servidor de calculadora esté corriendo en `http://localhost:8080` antes de ejecutar cualquiera de estos comandos.
 
-## What the Client Does
+## Qué Hace el Cliente
 
-When you run the client, it will:
+Al ejecutar el cliente, este:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **Listar Herramientas** - Muestra todas las operaciones disponibles de la calculadora
-3. **Realizar Cálculos**:
-   - Suma: 5 + 3 = 8
-   - Resta: 10 - 4 = 6
-   - Multiplicación: 6 × 7 = 42
-   - División: 20 ÷ 4 = 5
-   - Potencia: 2^8 = 256
-   - Raíz Cuadrada: √16 = 4
-   - Valor Absoluto: |-5.5| = 5.5
+1. **Se conecta** al servidor de calculadora en `http://localhost:8080`  
+2. **Lista las Herramientas** - Muestra todas las operaciones disponibles de la calculadora  
+3. **Realiza Cálculos**:  
+   - Suma: 5 + 3 = 8  
+   - Resta: 10 - 4 = 6  
+   - Multiplicación: 6 × 7 = 42  
+   - División: 20 ÷ 4 = 5  
+   - Potencia: 2^8 = 256  
+   - Raíz Cuadrada: √16 = 4  
+   - Valor Absoluto: |-5.5| = 5.5  
    - Ayuda: Muestra las operaciones disponibles
 
-## Resultado Esperado
+## Salida Esperada
 
 ```
 Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
@@ -126,52 +126,52 @@ Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\
 
 ## Entendiendo el Código
 
-### 1. Configuración del Transporte
+### 1. Configuración del Transporte  
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
-```
+```  
 Esto crea un transporte SSE (Server-Sent Events) que se conecta al servidor de calculadora.
 
-### 2. Creación del Cliente
+### 2. Creación del Cliente  
 ```java
 var client = McpClient.sync(this.transport).build();
 client.initialize();
-```
+```  
 Crea un cliente MCP síncrono e inicializa la conexión.
 
-### 3. Llamada a Herramientas
+### 3. Llamada a Herramientas  
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
-```
+```  
 Llama a la herramienta "add" con los parámetros a=5.0 y b=3.0.
 
 ## Solución de Problemas
 
-### Servidor No Está Corriendo
-Si recibes errores de conexión, asegúrate de que el servidor de calculadora del Capítulo 01 esté en ejecución:
+### Servidor No Está Corriendo  
+Si recibes errores de conexión, asegúrate de que el servidor de calculadora del Capítulo 01 esté en ejecución:  
 ```
 Error: Connection refused
-```
+```  
 **Solución**: Inicia primero el servidor de calculadora.
 
-### Puerto Ya Está en Uso
-Si el puerto 8080 está ocupado:
+### Puerto Ya Está en Uso  
+Si el puerto 8080 está ocupado:  
 ```
 Error: Address already in use
-```
+```  
 **Solución**: Detén otras aplicaciones que usen el puerto 8080 o modifica el servidor para usar otro puerto.
 
-### Errores de Compilación
-Si encuentras errores al compilar:
+### Errores de Compilación  
+Si encuentras errores al compilar:  
 ```cmd
 .\mvnw clean install -DskipTests
 ```
 
 ## Aprende Más
 
-- [Spring AI MCP Documentation](https://docs.spring.io/spring-ai/reference/api/mcp/)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/)
-- [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
+- [Documentación Spring AI MCP](https://docs.spring.io/spring-ai/reference/api/mcp/)  
+- [Especificación Model Context Protocol](https://modelcontextprotocol.io/)  
+- [Documentación Spring WebFlux](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

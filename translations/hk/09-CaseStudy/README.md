@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T16:03:06+00:00",
+  "translation_date": "2025-07-14T05:42:23+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "hk"
 }
@@ -41,29 +41,29 @@ Model Context Protocol (MCP) 正在改變 AI 應用程式與數據、工具及�
 
 ### 2. [從 YouTube 資料更新 Azure DevOps 項目](./UpdateADOItemsFromYT.md)
 
-本案例展示 MCP 在自動化工作流程中的實際應用，說明如何利用 MCP 工具：
+此案例展示 MCP 在自動化工作流程中的實際應用，說明如何利用 MCP 工具：
 
 - 從線上平台（YouTube）擷取資料
 - 更新 Azure DevOps 系統中的工作項目
 - 建立可重複使用的自動化流程
-- 跨不同系統整合資料
+- 整合跨系統的資料
 
 此範例說明即使是相對簡單的 MCP 實作，也能透過自動化例行任務及提升系統間資料一致性，帶來顯著的效率提升。
 
 ### 3. [使用 MCP 即時文件檢索](./docs-mcp/README.md)
 
-本案例引導你如何將 Python 控制台客戶端連接至 Model Context Protocol (MCP) 伺服器，以檢索並記錄即時且具上下文感知的 Microsoft 文件。你將學習如何：
+本案例引導你如何連接 Python 主控台客戶端至 Model Context Protocol (MCP) 伺服器，以檢索並記錄即時且具上下文感知的 Microsoft 文件。你將學習如何：
 
 - 使用 Python 客戶端及官方 MCP SDK 連接 MCP 伺服器
 - 利用串流 HTTP 客戶端高效取得即時資料
-- 呼叫伺服器上的文件工具並直接將回應記錄至控制台
-- 在不離開終端機的情況下整合最新 Microsoft 文件至工作流程
+- 呼叫伺服器上的文件工具並直接將回應記錄至主控台
+- 在不離開終端機的情況下，將最新 Microsoft 文件整合至工作流程
 
-本章包含實作練習、最小可用程式碼範例及進階資源連結。請參閱連結章節的完整教學與程式碼，了解 MCP 如何改變基於控制台環境的文件存取與開發者生產力。
+本章包含實作練習、最小可用程式碼範例及進階資源連結。請參閱連結章節的完整教學與程式碼，了解 MCP 如何改變基於主控台環境的文件存取與開發者生產力。
 
 ### 4. [使用 MCP 的互動式學習計劃產生器網頁應用](./docs-mcp/README.md)
 
-本案例展示如何利用 Chainlit 與 Model Context Protocol (MCP) 建立互動式網頁應用，為任何主題生成個人化學習計劃。使用者可指定主題（如「AI-900 認證」）及學習週期（例如 8 週），應用會提供逐週的推薦內容。Chainlit 創造對話式聊天介面，讓體驗更具互動性與適應性。
+本案例展示如何利用 Chainlit 與 Model Context Protocol (MCP) 建立互動式網頁應用，為任意主題生成個人化學習計劃。使用者可指定主題（如「AI-900 認證」）及學習時長（例如 8 週），應用程式將提供逐週的推薦內容。Chainlit 創造對話式聊天介面，使體驗更具互動性與適應性。
 
 - 由 Chainlit 支援的對話式網頁應用
 - 使用者主導的主題與時長輸入
@@ -74,20 +74,20 @@ Model Context Protocol (MCP) 正在改變 AI 應用程式與數據、工具及�
 
 ### 5. [在 VS Code 編輯器中使用 MCP 伺服器的文件](./docs-mcp/README.md)
 
-本案例展示如何利用 MCP 伺服器將 Microsoft Learn 文件直接帶入 VS Code 環境，無需切換瀏覽器分頁！你將看到如何：
+本案例展示如何利用 MCP 伺服器將 Microsoft Learn 文件直接帶入 VS Code 環境，免去切換瀏覽器分頁的麻煩！你將看到如何：
 
-- 使用 MCP 面板或命令面板即時搜尋並閱讀 VS Code 內的文件
+- 使用 MCP 面板或命令面板，在 VS Code 內即時搜尋與閱讀文件
 - 直接在 README 或課程 Markdown 檔案中引用文件並插入連結
 - 結合 GitHub Copilot 與 MCP，實現無縫的 AI 文件與程式碼工作流程
-- 透過即時回饋與 Microsoft 來源的準確性驗證並強化文件
+- 透過即時回饋與 Microsoft 來源的準確性，驗證並強化文件內容
 - 將 MCP 整合至 GitHub 工作流程，持續驗證文件品質
 
-實作內容包含：
+實作內容包括：
 - 範例 `.vscode/mcp.json` 配置，方便快速設定
 - 以截圖說明編輯器內的使用體驗
 - 結合 Copilot 與 MCP 的生產力提升技巧
 
-此場景非常適合課程作者、文件撰寫者及開發者，讓他們在編輯器中專注工作，同時使用文件、Copilot 與驗證工具，全部由 MCP 驅動。
+此場景非常適合課程作者、文件撰寫者及開發者，讓他們在編輯器中專注工作，同時使用文件、Copilot 及驗證工具，全部由 MCP 驅動。
 
 ### 6. [APIM MCP 伺服器建立](./apimsample.md)
 
@@ -108,13 +108,13 @@ Model Context Protocol (MCP) 正在改變 AI 應用程式與數據、工具及�
 
 ## 其他資源
 
-- [Azure AI Travel Agents GitHub 倉庫](https://github.com/Azure-Samples/azure-ai-travel-agents)
-- [Azure DevOps MCP 工具](https://github.com/microsoft/azure-devops-mcp)
-- [Playwright MCP 工具](https://github.com/microsoft/playwright-mcp)
-- [Microsoft Docs MCP 伺服器](https://github.com/MicrosoftDocs/mcp)
-- [MCP 社群範例](https://github.com/microsoft/mcp)
+- [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)
+- [Azure DevOps MCP Tool](https://github.com/microsoft/azure-devops-mcp)
+- [Playwright MCP Tool](https://github.com/microsoft/playwright-mcp)
+- [Microsoft Docs MCP Server](https://github.com/MicrosoftDocs/mcp)
+- [MCP Community Examples](https://github.com/microsoft/mcp)
 
-下一步：實作實驗室 [精簡 AI 工作流程：使用 AI 工具包建立 MCP 伺服器](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+下一步：實作實驗室 [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **免責聲明**：  
 本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

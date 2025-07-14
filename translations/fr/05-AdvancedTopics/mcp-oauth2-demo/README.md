@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-12T21:32:44+00:00",
+  "translation_date": "2025-07-14T00:39:23+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "fr"
 }
 -->
-# MCP OAuth2 Demo
+# Démonstration MCP OAuth2
 
-Ce projet est une **application Spring Boot minimale** qui fait à la fois office de :
+Ce projet est une **application Spring Boot minimale** qui joue à la fois le rôle de :
 
 * **Serveur d’autorisation Spring** (émettant des jetons d’accès JWT via le flux `client_credentials`), et  
-* **Serveur de ressources** (protégeant son propre endpoint `/hello`).
+* **Serveur de ressources** (protégeant son propre point d’accès `/hello`).
 
-Il reflète la configuration présentée dans le [article de blog Spring (2 avril 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Il reproduit la configuration présentée dans le [article de blog Spring (2 avril 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Tester la configuration OAuth2
 
-Vous pouvez tester la configuration de sécurité OAuth2 avec les étapes suivantes :
+Vous pouvez tester la configuration de sécurité OAuth2 en suivant ces étapes :
 
 ### 1. Vérifier que le serveur est en fonctionnement et sécurisé
 
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Note : L’en-tête d’authentification Basic (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Note : L’en-tête d’authentification Basic (`bWNwLWNsaWVudDpzZWNyZXQ=`) correspond à l’encodage Base64 de `mcp-client:secret`.
 
-### 3. Accéder au endpoint protégé avec le jeton
+### 3. Accéder au point d’accès protégé avec le jeton
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Une réponse réussie avec « Hello from MCP OAuth2 Demo! » confirme que la configuration OAuth2 fonctionne correctement.
+Une réponse réussie avec "Hello from MCP OAuth2 Demo!" confirme que la configuration OAuth2 fonctionne correctement.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Déployer sur **Azure Container Apps**
+## Déploiement sur **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -96,7 +96,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Le FQDN d’ingress devient votre **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Azure fournit automatiquement un certificat TLS de confiance pour `*.azurecontainerapps.io`.
 
 ---
 
@@ -122,7 +122,7 @@ APIM récupérera le JWKS et validera chaque requête.
 
 ## Et ensuite
 
-- [5.4 Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Contextes racines](../mcp-root-contexts/README.md)
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d’interprétations erronées résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

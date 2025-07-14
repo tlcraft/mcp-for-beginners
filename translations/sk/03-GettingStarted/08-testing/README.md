@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T18:45:16+00:00",
+  "translation_date": "2025-07-13T22:03:33+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "sk"
 }
@@ -46,7 +46,7 @@ Typické spustenie nástroja vyzerá takto:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Vyššie uvedený príkaz spustí MCP a jeho vizuálne rozhranie a otvorí lokálne webové rozhranie vo vašom prehliadači. Môžete očakávať zobrazenie dashboardu, ktorý ukazuje vaše registrované MCP servery, ich dostupné nástroje, zdroje a výzvy. Rozhranie vám umožňuje interaktívne testovať spustenie nástrojov, prezerať metadata servera a sledovať odpovede v reálnom čase, čo uľahčuje overovanie a ladenie implementácií MCP servera.
+Vyššie uvedený príkaz spustí MCP a jeho vizuálne rozhranie a otvorí lokálne webové rozhranie vo vašom prehliadači. Môžete očakávať zobrazenie dashboardu s registrovanými MCP servermi, ich dostupnými nástrojmi, zdrojmi a výzvami. Rozhranie umožňuje interaktívne testovať spustenie nástrojov, prezerať metadata servera a sledovať odpovede v reálnom čase, čo uľahčuje overenie a ladenie implementácií MCP servera.
 
 Takto to môže vyzerať: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sk.png)
 
@@ -58,9 +58,9 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Manuálne testovanie
 
-Okrem spustenia nástroja inspector na testovanie schopností servera, ďalším podobným prístupom je spustiť klienta schopného používať HTTP, napríklad curl.
+Okrem spustenia nástroja inspector na testovanie schopností servera je ďalším podobným prístupom spustenie klienta schopného používať HTTP, napríklad curl.
 
-Pomocou curl môžete testovať MCP servery priamo cez HTTP požiadavky:
+Pomocou curl môžete priamo testovať MCP servery cez HTTP požiadavky:
 
 ```bash
 # Example: Test server metadata

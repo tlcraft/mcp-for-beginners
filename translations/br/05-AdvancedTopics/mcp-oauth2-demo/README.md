@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-12T23:38:45+00:00",
+  "translation_date": "2025-07-14T00:41:30+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "br"
 }
 -->
 # MCP OAuth2 Demo
 
-Este projeto é uma **aplicação Spring Boot minimalista** que funciona como:
+Este projeto é uma **aplicação Spring Boot minimalista** que atua como:
 
 * um **Spring Authorization Server** (emitindo tokens de acesso JWT via o fluxo `client_credentials`), e  
 * um **Resource Server** (protegendo seu próprio endpoint `/hello`).
 
-Ele reproduz a configuração mostrada no [post do blog Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Ele espelha a configuração mostrada no [post do blog Spring (2 de abril de 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -45,7 +45,7 @@ Você pode testar a configuração de segurança OAuth2 com os seguintes passos:
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtenha um token de acesso usando credenciais de cliente
+### 2. Obtenha um token de acesso usando client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Nota: O cabeçalho de Autenticação Básica (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Nota: O cabeçalho de Autenticação Basic (`bWNwLWNsaWVudDpzZWNyZXQ=`) é a codificação Base64 de `mcp-client:secret`.
 
 ### 3. Acesse o endpoint protegido usando o token
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deploy no **Azure Container Apps**
+## Deploy para **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -96,7 +96,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 O FQDN de ingresso se torna seu **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+O Azure fornece automaticamente um certificado TLS confiável para `*.azurecontainerapps.io`.
 
 ---
 
@@ -116,7 +116,7 @@ Adicione esta política inbound à sua API:
 </inbound>
 ```
 
-O APIM irá buscar o JWKS e validar cada requisição.
+O APIM buscará o JWKS e validará cada requisição.
 
 ---
 
@@ -125,4 +125,4 @@ O APIM irá buscar o JWKS e validar cada requisição.
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

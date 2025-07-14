@@ -2,27 +2,27 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:01:38+00:00",
+  "translation_date": "2025-07-13T21:19:43+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "tr"
 }
 -->
 # Bu örneği çalıştırma
 
-Klasik HTTP streaming sunucusunu ve istemcisini, ayrıca Python kullanarak MCP streaming sunucusu ve istemcisini nasıl çalıştıracağınız aşağıda açıklanmıştır.
+Klasik HTTP streaming sunucusu ve istemcisini, ayrıca MCP streaming sunucusu ve istemcisini Python kullanarak nasıl çalıştıracağınızı gösteriyoruz.
 
 ### Genel Bakış
 
 - İşlenen öğeler ilerledikçe istemciye bildirimler gönderen bir MCP sunucusu kuracaksınız.
-- İstemci her bildirimi gerçek zamanlı olarak gösterecek.
+- İstemci, her bildirimi gerçek zamanlı olarak gösterecek.
 - Bu rehber önkoşullar, kurulum, çalıştırma ve sorun giderme adımlarını kapsar.
 
 ### Önkoşullar
 
-- Python 3.9 veya üzeri
-- `mcp` Python paketi (`pip install mcp` ile kurun)
+- Python 3.9 veya daha yenisi
+- `mcp` Python paketi (yüklemek için `pip install mcp` kullanın)
 
-### Kurulum ve Ayarlar
+### Kurulum & Ayarlar
 
 1. Depoyu klonlayın veya çözüm dosyalarını indirin.
 
@@ -30,7 +30,7 @@ Klasik HTTP streaming sunucusunu ve istemcisini, ayrıca Python kullanarak MCP s
    git clone https://github.com/microsoft/mcp-for-beginners
    ```
 
-1. **Sanal bir ortam oluşturun ve etkinleştirin (önerilir):**
+1. **Bir sanal ortam oluşturun ve etkinleştirin (önerilir):**
 
    ```pwsh
    python -m venv venv
@@ -64,7 +64,7 @@ Klasik HTTP streaming sunucusunu ve istemcisini, ayrıca Python kullanarak MCP s
    python server.py
    ```
 
-3. Sunucu çalışmaya başlayacak ve şunu gösterecek:
+3. Sunucu başlayacak ve şu çıktıyı gösterecek:
 
    ```
    Starting FastAPI server for classic HTTP streaming...
@@ -80,7 +80,7 @@ Klasik HTTP streaming sunucusunu ve istemcisini, ayrıca Python kullanarak MCP s
    python client.py
    ```
 
-2. Yayınlanan mesajların sırayla yazdırıldığını göreceksiniz:
+2. Akış halinde mesajların sırasıyla yazdırıldığını görmelisiniz:
 
    ```text
    Running classic HTTP streaming client...
@@ -95,15 +95,15 @@ Klasik HTTP streaming sunucusunu ve istemcisini, ayrıca Python kullanarak MCP s
 
 ### MCP Streaming Sunucusunu Çalıştırma
 
-1. Çözüm dizinine gidin:
+1. Çözüm dizinine gidin:  
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
-   ```
-2. streamable-http transport ile MCP sunucusunu başlatın:
+   ```  
+2. Streamable-http transport ile MCP sunucusunu başlatın:  
    ```pwsh
    python server.py mcp
-   ```
-3. Sunucu çalışmaya başlayacak ve şunu gösterecek:
+   ```  
+3. Sunucu başlayacak ve şu çıktıyı gösterecek:  
    ```
    Starting MCP server with streamable-http transport...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
@@ -111,12 +111,12 @@ Klasik HTTP streaming sunucusunu ve istemcisini, ayrıca Python kullanarak MCP s
 
 ### MCP Streaming İstemcisini Çalıştırma
 
-1. Yeni bir terminal açın (aynı sanal ortamı ve dizini etkinleştirin):
+1. Yeni bir terminal açın (aynı sanal ortamı ve dizini etkinleştirin):  
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
-   ```
-2. Sunucu her öğeyi işlerken bildirimlerin gerçek zamanlı olarak yazdırıldığını göreceksiniz:
+   ```  
+2. Sunucu her öğeyi işlerken bildirimlerin gerçek zamanlı olarak yazdırıldığını görmelisiniz:  
    ```
    Running MCP client...
    Starting client...
@@ -131,21 +131,21 @@ Klasik HTTP streaming sunucusunu ve istemcisini, ayrıca Python kullanarak MCP s
 
 ### Temel Uygulama Adımları
 
-1. **FastMCP kullanarak MCP sunucusunu oluşturun.**
-2. **Bir listeyi işleyen ve `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+1. **FastMCP kullanarak MCP sunucusunu oluşturun.**  
+2. **Bir listeyi işleyen ve `ctx.info()` veya `ctx.log()` ile bildirim gönderen bir araç tanımlayın.**  
+3. **Sunucuyu `transport="streamable-http"` ile çalıştırın.**  
+4. **Bildirimler geldikçe göstermek için mesaj işleyicisi olan bir istemci uygulayın.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Kod İncelemesi
+- Sunucu, ilerleme güncellemelerini göndermek için async fonksiyonlar ve MCP bağlamını kullanır.  
+- İstemci, bildirimleri ve son sonucu yazdırmak için async mesaj işleyicisi uygular.
 
-### Tips & Troubleshooting
+### İpuçları & Sorun Giderme
 
-- Use `async/await` kullanarak bildirim gönderen bir araç tanımlayın; bu sayede işlemler engellenmeden gerçekleşir.**
-- Hem sunucu hem istemci tarafında hataları her zaman yönetin, böylece sağlamlık sağlanır.
-- Gerçek zamanlı güncellemeleri görmek için birden fazla istemci ile test edin.
+- Engelleme olmaması için `async/await` kullanın.  
+- Hem sunucu hem de istemcide hataları her zaman yakalayarak sağlamlığı artırın.  
+- Gerçek zamanlı güncellemeleri görmek için birden fazla istemci ile test edin.  
 - Hata alırsanız, Python sürümünüzü kontrol edin ve tüm bağımlılıkların yüklü olduğundan emin olun.
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalar nedeniyle sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac2459c0d5cc823922e3d9240a95028c",
-  "translation_date": "2025-06-11T13:18:51+00:00",
+  "translation_date": "2025-07-13T19:05:33+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/java/README.md",
   "language_code": "es"
 }
 -->
-# Calculator LLM Client
+# Cliente Calculator LLM
 
 Una aplicación Java que demuestra cómo usar LangChain4j para conectarse a un servicio de calculadora MCP (Model Context Protocol) con integración de GitHub Models.
 
-## Requisitos Previos
+## Requisitos previos
 
 - Java 21 o superior
-- Maven 3.6+ (o usa el wrapper de Maven incluido)
+- Maven 3.6+ (o usar el wrapper de Maven incluido)
 - Una cuenta de GitHub con acceso a GitHub Models
 - Un servicio de calculadora MCP corriendo en `http://localhost:8080`
 
-## Cómo Obtener el Token de GitHub
+## Cómo obtener el Token de GitHub
 
-Esta aplicación utiliza GitHub Models, lo que requiere un token de acceso personal de GitHub. Sigue estos pasos para obtener tu token:
+Esta aplicación usa GitHub Models, lo que requiere un token de acceso personal de GitHub. Sigue estos pasos para obtener tu token:
 
 ### 1. Accede a GitHub Models
 1. Ve a [GitHub Models](https://github.com/marketplace/models)
@@ -31,7 +31,7 @@ Esta aplicación utiliza GitHub Models, lo que requiere un token de acceso perso
 1. Ve a [GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
 2. Haz clic en "Generate new token" → "Generate new token (classic)"
 3. Ponle un nombre descriptivo al token (por ejemplo, "MCP Calculator Client")
-4. Configura la expiración según necesites
+4. Establece la expiración según necesites
 5. Selecciona los siguientes alcances:
    - `repo` (si accedes a repositorios privados)
    - `user:email`
@@ -68,10 +68,10 @@ export GITHUB_TOKEN=your_github_token_here
    mvn clean install
    ```
 
-3. **Configura la variable de entorno** (ver sección "Cómo Obtener el Token de GitHub" arriba)
+3. **Configura la variable de entorno** (ver sección "Cómo obtener el Token de GitHub" arriba)
 
-4. **Inicia el Servicio MCP Calculator**:
-   Asegúrate de que el servicio MCP calculator del capítulo 1 esté corriendo en `http://localhost:8080/sse`. Debe estar activo antes de iniciar el cliente.
+4. **Inicia el Servicio de Calculadora MCP**:
+   Asegúrate de tener el servicio de calculadora MCP del capítulo 1 corriendo en `http://localhost:8080/sse`. Debe estar activo antes de iniciar el cliente.
 
 ## Ejecutando la Aplicación
 
@@ -103,24 +103,24 @@ The calculator service provides the following functions: add, subtract, multiply
 ### Problemas Comunes
 
 1. **"GITHUB_TOKEN environment variable not set"**
-   - Asegúrate de haber configurado la variable `GITHUB_TOKEN` environment variable
-   - Restart your terminal/command prompt after setting the variable
+   - Asegúrate de haber configurado la variable de entorno `GITHUB_TOKEN`
+   - Reinicia tu terminal o consola después de configurar la variable
 
 2. **"Connection refused to localhost:8080"**
-   - Ensure the MCP calculator service is running on port 8080
-   - Check if another service is using port 8080
+   - Verifica que el servicio de calculadora MCP esté corriendo en el puerto 8080
+   - Comprueba si otro servicio está usando el puerto 8080
 
 3. **"Authentication failed"**
-   - Verify your GitHub token is valid and has the correct permissions
-   - Check if you have access to GitHub Models
+   - Verifica que tu token de GitHub sea válido y tenga los permisos correctos
+   - Confirma que tienes acceso a GitHub Models
 
-4. **Maven build errors**
-   - Ensure you're using Java 21 or higher: `java -version`
-   - Try cleaning the build: `mvnw clean`
+4. **Errores en la compilación con Maven**
+   - Asegúrate de usar Java 21 o superior: `java -version`
+   - Intenta limpiar la compilación: `mvnw clean`
 
 ### Depuración
 
-Para habilitar el registro de depuración, agrega el siguiente argumento JVM al ejecutar:
+Para habilitar el registro de depuración, añade el siguiente argumento JVM al ejecutar:
 ```cmd
 java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
@@ -128,8 +128,8 @@ java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0
 ## Configuración
 
 La aplicación está configurada para:
-- Usar GitHub Models con el `gpt-4.1-nano` model
-- Connect to MCP service at `http://localhost:8080/sse`
+- Usar GitHub Models con el modelo `gpt-4.1-nano`
+- Conectarse al servicio MCP en `http://localhost:8080/sse`
 - Usar un tiempo de espera de 60 segundos para las solicitudes
 - Habilitar el registro de solicitudes/respuestas para depuración
 
@@ -137,7 +137,7 @@ La aplicación está configurada para:
 
 Dependencias clave usadas en este proyecto:
 - **LangChain4j**: Para integración de IA y gestión de herramientas
-- **LangChain4j MCP**: Para soporte de Model Context Protocol
+- **LangChain4j MCP**: Para soporte del Model Context Protocol
 - **LangChain4j GitHub Models**: Para integración con GitHub Models
 - **Spring Boot**: Para el framework de la aplicación e inyección de dependencias
 
@@ -145,5 +145,5 @@ Dependencias clave usadas en este proyecto:
 
 Este proyecto está licenciado bajo la Apache License 2.0 - consulta el archivo [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE) para más detalles.
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

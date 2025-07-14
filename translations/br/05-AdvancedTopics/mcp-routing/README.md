@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-06-12T23:40:07+00:00",
+  "translation_date": "2025-07-14T02:12:45+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "br"
 }
 -->
 ## Arquitetura de Amostragem e Roteamento no MCP
 
-A amostragem é um componente crucial do Model Context Protocol (MCP) que permite o processamento eficiente das requisições e seu roteamento. Ela envolve a análise das requisições recebidas para determinar o modelo ou serviço mais adequado para atendê-las, com base em vários critérios, como tipo de conteúdo, contexto do usuário e carga do sistema.
+A amostragem é um componente crítico do Model Context Protocol (MCP) que permite o processamento e roteamento eficiente das requisições. Ela envolve a análise das requisições recebidas para determinar o modelo ou serviço mais adequado para atendê-las, com base em vários critérios, como tipo de conteúdo, contexto do usuário e carga do sistema.
 
 A amostragem e o roteamento podem ser combinados para criar uma arquitetura robusta que otimiza a utilização dos recursos e garante alta disponibilidade. O processo de amostragem pode ser usado para classificar as requisições, enquanto o roteamento as direciona para os modelos ou serviços apropriados.
 
@@ -80,9 +80,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Próximos passos
+## O que vem a seguir
 
 - [5.6 Amostragem](../mcp-sampling/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, por favor, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

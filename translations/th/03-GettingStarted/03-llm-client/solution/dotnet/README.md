@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T06:00:20+00:00",
+  "translation_date": "2025-07-13T19:03:18+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "th"
 }
@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # รันตัวอย่างนี้
 
 > [!NOTE]
-> ตัวอย่างนี้สมมติว่าคุณกำลังใช้ GitHub Codespaces หากต้องการรันในเครื่องของคุณเอง จำเป็นต้องตั้งค่า personal access token (PAT) บน GitHub
+> ตัวอย่างนี้สมมติว่าคุณกำลังใช้ GitHub Codespaces หากต้องการรันแบบโลคอล คุณต้องตั้งค่า personal access token (PAT) บน GitHub
 >
 > ```bash
 > # zsh/bash
@@ -28,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-ควรติดตั้งไลบรารีต่อไปนี้: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
+ควรติดตั้งไลบรารีดังต่อไปนี้: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## รัน
 
@@ -36,7 +36,7 @@ dotnet restore
 dotnet run
 ```
 
-คุณจะเห็นผลลัพธ์ประมาณนี้:
+คุณควรเห็นผลลัพธ์ประมาณนี้:
 
 ```text
 Setting up stdio transport
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-ผลลัพธ์ส่วนใหญ่เป็นการดีบัก แต่สิ่งสำคัญคือคุณกำลังดึงเครื่องมือจาก MCP Server แล้วแปลงเป็นเครื่องมือ LLM ซึ่งสุดท้ายจะได้การตอบกลับจาก MCP client เป็น "Sum 6"
+ผลลัพธ์ส่วนใหญ่เป็นการดีบัก แต่สิ่งสำคัญคือคุณกำลังแสดงรายการเครื่องมือจาก MCP Server แล้วเปลี่ยนเป็นเครื่องมือ LLM และสุดท้ายจะได้การตอบกลับจาก MCP client ว่า "Sum 6"
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความคลาดเคลื่อนได้ เอกสารต้นฉบับในภาษาดั้งเดิมถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญควรใช้บริการแปลโดยผู้เชี่ยวชาญมืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดใดๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T16:50:20+00:00",
+  "translation_date": "2025-07-13T19:27:47+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "pa"
 }
@@ -21,7 +21,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## ਅਭਿਆਸ: ਸਰਵਰ ਦੀ ਵਰਤੋਂ
 
-ਇਸ ਅਭਿਆਸ ਵਿੱਚ, ਅਸੀਂ Visual Studio Code ਨੂੰ ਕਨਫਿਗਰ ਕਰਾਂਗੇ ਤਾਂ ਜੋ ਇਹ ਤੁਹਾਡੇ MCP ਸਰਵਰ ਨੂੰ ਲੱਭ ਸਕੇ ਅਤੇ GitHub Copilot Chat ਇੰਟਰਫੇਸ ਤੋਂ ਵਰਤਿਆ ਜਾ ਸਕੇ।
+ਇਸ ਅਭਿਆਸ ਵਿੱਚ, ਅਸੀਂ Visual Studio Code ਨੂੰ ਤੁਹਾਡੇ MCP ਸਰਵਰ ਨੂੰ ਲੱਭਣ ਲਈ ਕਨਫਿਗਰ ਕਰਾਂਗੇ ਤਾਂ ਜੋ ਇਸਨੂੰ GitHub Copilot Chat ਇੰਟਰਫੇਸ ਤੋਂ ਵਰਤਿਆ ਜਾ ਸਕੇ।
 
 ### -0- ਪਹਿਲਾ ਕਦਮ, MCP ਸਰਵਰ ਖੋਜ ਨੂੰ ਯੋਗ ਕਰੋ
 
@@ -33,7 +33,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -1- ਕਨਫਿਗ ਫਾਈਲ ਬਣਾਓ
 
-ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਰੂਟ ਵਿੱਚ ਇੱਕ ਕਨਫਿਗ ਫਾਈਲ ਬਣਾਓ, ਜਿਸਦਾ ਨਾਮ MCP.json ਹੋਵੇ ਅਤੇ ਇਸਨੂੰ .vscode ਫੋਲਡਰ ਵਿੱਚ ਰੱਖੋ। ਇਹ ਇਸ ਤਰ੍ਹਾਂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ:
+ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਰੂਟ ਵਿੱਚ ਇੱਕ ਕਨਫਿਗ ਫਾਈਲ ਬਣਾਉ, ਤੁਹਾਨੂੰ MCP.json ਨਾਮ ਦੀ ਫਾਈਲ ਬਣਾਉਣੀ ਹੈ ਅਤੇ ਇਸਨੂੰ .vscode ਫੋਲਡਰ ਵਿੱਚ ਰੱਖਣਾ ਹੈ। ਇਹ ਇਸ ਤਰ੍ਹਾਂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ:
 
 ```text
 .vscode
@@ -60,7 +60,7 @@ CO_OP_TRANSLATOR_METADATA:
 }
 ```
 
-ਉਪਰ ਦਿੱਤਾ ਸਧਾਰਣ ਉਦਾਹਰਨ Node.js ਵਿੱਚ ਲਿਖੇ ਸਰਵਰ ਨੂੰ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਹੈ, ਹੋਰ ਰਨਟਾਈਮ ਲਈ `command` ਅਤੇ `args` ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਸਰਵਰ ਸ਼ੁਰੂ ਕਰਨ ਦਾ ਸਹੀ ਕਮਾਂਡ ਦੱਸੋ।
+ਉਪਰ ਦਿੱਤਾ ਸਧਾਰਣ ਉਦਾਹਰਨ Node.js ਵਿੱਚ ਲਿਖੇ ਸਰਵਰ ਨੂੰ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਹੈ, ਹੋਰ ਰਨਟਾਈਮ ਲਈ `command` ਅਤੇ `args` ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਸਰਵਰ ਸ਼ੁਰੂ ਕਰਨ ਦਾ ਸਹੀ ਕਮਾਂਡ ਦਿਓ।
 
 ### -3- ਸਰਵਰ ਸ਼ੁਰੂ ਕਰੋ
 
@@ -70,11 +70,11 @@ CO_OP_TRANSLATOR_METADATA:
 
   ![Visual Studio Code ਵਿੱਚ ਸਰਵਰ ਸ਼ੁਰੂ ਕਰਨਾ](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.pa.png)  
 
-2. "play" ਆਈਕਨ 'ਤੇ ਕਲਿੱਕ ਕਰੋ, ਤੁਸੀਂ GitHub Copilot Chat ਵਿੱਚ ਟੂਲ ਆਈਕਨ ਦੇ ਨਾਲ ਉਪਲਬਧ ਟੂਲਾਂ ਦੀ ਗਿਣਤੀ ਵਧਦੀ ਦੇਖੋਗੇ। ਜੇ ਤੁਸੀਂ ਉਸ ਟੂਲ ਆਈਕਨ 'ਤੇ ਕਲਿੱਕ ਕਰੋਗੇ, ਤਾਂ ਤੁਹਾਨੂੰ ਦਰਜ ਟੂਲਾਂ ਦੀ ਸੂਚੀ ਮਿਲੇਗੀ। ਤੁਸੀਂ ਹਰ ਟੂਲ ਨੂੰ ਚੈੱਕ ਜਾਂ ਅਨਚੈੱਕ ਕਰ ਸਕਦੇ ਹੋ ਕਿ ਤੁਸੀਂ GitHub Copilot ਨੂੰ ਉਹਨਾਂ ਨੂੰ ਸੰਦਰਭ ਵਜੋਂ ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ ਜਾਂ ਨਹੀਂ:
+2. "play" ਆਈਕਨ 'ਤੇ ਕਲਿੱਕ ਕਰੋ, ਤੁਸੀਂ GitHub Copilot Chat ਵਿੱਚ ਟੂਲ ਆਈਕਨ ਦੇ ਨਾਲ ਉਪਲਬਧ ਟੂਲਾਂ ਦੀ ਗਿਣਤੀ ਵਧਦੀ ਦੇਖੋਗੇ। ਜੇ ਤੁਸੀਂ ਉਸ ਟੂਲ ਆਈਕਨ 'ਤੇ ਕਲਿੱਕ ਕਰੋਗੇ, ਤਾਂ ਤੁਹਾਨੂੰ ਦਰਜ ਟੂਲਾਂ ਦੀ ਸੂਚੀ ਮਿਲੇਗੀ। ਤੁਸੀਂ ਹਰ ਟੂਲ ਨੂੰ ਚੈੱਕ ਜਾਂ ਅਨਚੈੱਕ ਕਰ ਸਕਦੇ ਹੋ ਕਿ GitHub Copilot ਉਹਨਾਂ ਨੂੰ ਸੰਦਰਭ ਵਜੋਂ ਵਰਤੇ:
 
-  ![Visual Studio Code ਵਿੱਚ ਟੂਲ](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.pa.png)
+  ![Visual Studio Code ਵਿੱਚ ਸਰਵਰ ਸ਼ੁਰੂ ਕਰਨਾ](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.pa.png)
 
-3. ਕਿਸੇ ਟੂਲ ਨੂੰ ਚਲਾਉਣ ਲਈ, ਇੱਕ ਪ੍ਰਾਂਪਟ ਟਾਈਪ ਕਰੋ ਜੋ ਤੁਹਾਨੂੰ ਪਤਾ ਹੈ ਕਿ ਤੁਹਾਡੇ ਕਿਸੇ ਟੂਲ ਦੇ ਵਰਣਨ ਨਾਲ ਮੇਲ ਖਾਂਦਾ ਹੈ, ਉਦਾਹਰਨ ਵਜੋਂ "add 22 to 1":
+3. ਕਿਸੇ ਟੂਲ ਨੂੰ ਚਲਾਉਣ ਲਈ, ਇੱਕ ਪ੍ਰਾਂਪਟ ਟਾਈਪ ਕਰੋ ਜੋ ਤੁਹਾਡੇ ਟੂਲਾਂ ਵਿੱਚੋਂ ਕਿਸੇ ਇੱਕ ਦੇ ਵਰਣਨ ਨਾਲ ਮੇਲ ਖਾਂਦਾ ਹੋਵੇ, ਉਦਾਹਰਨ ਵਜੋਂ "add 22 to 1":
 
   ![GitHub Copilot ਤੋਂ ਟੂਲ ਚਲਾਉਣਾ](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.pa.png)
 
@@ -90,27 +90,27 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## ਮੁੱਖ ਗੱਲਾਂ
 
-ਇਸ ਅਧਿਆਇ ਤੋਂ ਮੁੱਖ ਸਿੱਖਣ ਵਾਲੀਆਂ ਗੱਲਾਂ ਇਹ ਹਨ:
+ਇਸ ਅਧਿਆਇ ਤੋਂ ਸਿੱਖਣ ਵਾਲੀਆਂ ਮੁੱਖ ਗੱਲਾਂ ਇਹ ਹਨ:
 
 - Visual Studio Code ਇੱਕ ਸ਼ਾਨਦਾਰ ਕਲਾਇੰਟ ਹੈ ਜੋ ਤੁਹਾਨੂੰ ਕਈ MCP ਸਰਵਰਾਂ ਅਤੇ ਉਹਨਾਂ ਦੇ ਟੂਲਾਂ ਦੀ ਵਰਤੋਂ ਕਰਨ ਦਿੰਦਾ ਹੈ।
 - GitHub Copilot Chat ਇੰਟਰਫੇਸ ਉਹ ਢੰਗ ਹੈ ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਸਰਵਰਾਂ ਨਾਲ ਗੱਲਬਾਤ ਕਰਦੇ ਹੋ।
-- ਤੁਸੀਂ ਉਪਭੋਗਤਾ ਤੋਂ ਐਪੀ ਆਈ ਕੁੰਜੀਆਂ ਵਰਗੇ ਇਨਪੁੱਟ ਲਈ ਪ੍ਰਾਂਪਟ ਕਰ ਸਕਦੇ ਹੋ ਜੋ *mcp.json* ਫਾਈਲ ਵਿੱਚ ਸਰਵਰ ਐਂਟਰੀ ਕਨਫਿਗਰ ਕਰਦੇ ਸਮੇਂ MCP ਸਰਵਰ ਨੂੰ ਦਿੱਤੇ ਜਾ ਸਕਦੇ ਹਨ।
+- ਤੁਸੀਂ ਵਰਤੋਂਕਾਰ ਤੋਂ ਐਪੀ ਆਈ ਕੁੰਜੀਆਂ ਵਰਗੀਆਂ ਇਨਪੁੱਟਾਂ ਲਈ ਪ੍ਰਾਂਪਟ ਕਰ ਸਕਦੇ ਹੋ ਜੋ *mcp.json* ਫਾਈਲ ਵਿੱਚ ਸਰਵਰ ਐਂਟਰੀ ਕਨਫਿਗਰ ਕਰਦੇ ਸਮੇਂ MCP ਸਰਵਰ ਨੂੰ ਦਿੱਤੀਆਂ ਜਾ ਸਕਦੀਆਂ ਹਨ।
 
 ## ਨਮੂਨੇ
 
-- [Java ਕੈਲਕੁਲੇਟਰ](../samples/java/calculator/README.md)
-- [.Net ਕੈਲਕੁਲੇਟਰ](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript ਕੈਲਕੁਲੇਟਰ](../samples/javascript/README.md)
-- [TypeScript ਕੈਲਕੁਲੇਟਰ](../samples/typescript/README.md)
-- [Python ਕੈਲਕੁਲੇਟਰ](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## ਵਾਧੂ ਸਰੋਤ
 
-- [Visual Studio ਦਸਤਾਵੇਜ਼](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
+- [Visual Studio docs](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
 ## ਅਗਲਾ ਕੀ ਹੈ
 
 - ਅਗਲਾ: [SSE ਸਰਵਰ ਬਣਾਉਣਾ](../05-sse-server/README.md)
 
 **ਅਸਵੀਕਾਰੋਪਣ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

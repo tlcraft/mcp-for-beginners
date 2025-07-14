@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bb55f3119d45c4412fc5555299e60498",
-  "translation_date": "2025-05-17T13:30:21+00:00",
+  "translation_date": "2025-07-13T22:38:26+00:00",
   "source_file": "03-GettingStarted/samples/python/README.md",
   "language_code": "no"
 }
 -->
 # Eksempel
 
-Dette er et Python-eksempel for en MCP-server
+Dette er et Python-eksempel for en MCP Server
 
 Slik ser kalkulatordelen ut:
 
@@ -42,7 +42,7 @@ def divide(a: float, b: float) -> float:
     return a / b
 ```
 
-## Installere
+## Installer
 
 Kjør følgende kommando:
 
@@ -50,13 +50,11 @@ Kjør følgende kommando:
 pip install mcp
 ```
 
-## Kjøre
+## Kjør
 
 ```bash
 python mcp_calculator_server.py
 ```
 
-Here is the translation of the text into Norwegian:
-
-**Ansvarsfraskrivelse**:
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+**Ansvarsfraskrivelse**:  
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

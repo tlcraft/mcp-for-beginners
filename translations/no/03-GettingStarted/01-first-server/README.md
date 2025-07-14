@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:08:39+00:00",
+  "translation_date": "2025-07-13T17:34:46+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "no"
 }
@@ -77,7 +77,7 @@ MCP tilbyr offisielle SDK-er for flere språk:
 
 ## Oppgave
 
-Lag en enkel MCP-server med et verktøy du velger:
+Lag en enkel MCP-server med et verktøy etter eget valg:
 
 1. Implementer verktøyet i ditt foretrukne språk (.NET, Java, Python eller JavaScript).
 2. Definer inndata-parametere og returverdier.

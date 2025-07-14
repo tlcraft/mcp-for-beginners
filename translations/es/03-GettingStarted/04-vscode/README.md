@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T15:24:22+00:00",
+  "translation_date": "2025-07-13T19:22:24+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "es"
 }
@@ -92,7 +92,7 @@ Intenta agregar una entrada de servidor a tu archivo *mcp.json* y asegúrate de 
 
 Los puntos clave de este capítulo son los siguientes:
 
-- Visual Studio Code es un gran cliente que te permite consumir varios MCP Servers y sus herramientas.
+- Visual Studio Code es un excelente cliente que te permite consumir varios MCP Servers y sus herramientas.
 - La interfaz de GitHub Copilot Chat es cómo interactúas con los servidores.
 - Puedes solicitar al usuario entradas como claves API que pueden ser pasadas al MCP Server al configurar la entrada del servidor en el archivo *mcp.json*.
 
@@ -113,4 +113,4 @@ Los puntos clave de este capítulo son los siguientes:
 - Siguiente: [Creando un servidor SSE](../05-sse-server/README.md)
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

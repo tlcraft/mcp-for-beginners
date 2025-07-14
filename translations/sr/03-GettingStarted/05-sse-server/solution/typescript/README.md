@@ -2,53 +2,54 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:13:20+00:00",
+  "translation_date": "2025-07-13T20:22:24+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "sr"
 }
 -->
-# Pokretanje ovog primera
+# Покретање овог примера
 
-## -1- Instalirajte zavisnosti
+## -1- Инсталирајте зависности
 
 ```bash
 npm install
 ```
 
-## -3- Pokrenite primer
+## -3- Покрените пример
+
 
 ```bash
 npm run build
 ```
 
-## -4- Testirajte primer
+## -4- Тестирајте пример
 
-Sa serverom koji radi u jednom terminalu, otvorite drugi terminal i pokrenite sledeću komandu:
+Док сервер ради у једном терминалу, отворите други терминал и покрените следећу команду:
 
 ```bash
 npm run inspector
 ```
 
-Ovo bi trebalo da pokrene web server sa vizuelnim interfejsom koji vam omogućava da testirate primer.
+Ово би требало да покрене веб сервер са визуелним интерфејсом који вам омогућава да тестирате пример.
 
-Kada se server poveže:
+Када се сервер повеже:
 
-- pokušajte da prikažete alate i pokrenete `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- покушајте да набројите алате и покренете `add` са аргументима 2 и 4, требало би да видите резултат 6.
+- идите на resources и resource template и позовите "greeting", унесите име и требало би да видите поздрав са именом које сте унели.
 
-### Testing in CLI mode
+### Тестирање у CLI режиму
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+Инспектор који сте покренули је у ствари Node.js апликација, а `mcp dev` је омотач око ње.
 
-- Start up the server with the command `npm run build`.
+- Покрените сервер командом `npm run build`.
 
-- U zasebnom terminalu pokrenite sledeću komandu:
+- У другом терминалу покрените следећу команду:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    Ovo će prikazati sve dostupne alate na serveru. Trebalo bi da vidite sledeći izlaz:
+    Ово ће набројати све алате доступне на серверу. Требало би да видите следећи излаз:
 
     ```text
     {
@@ -79,13 +80,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- Pokrenite tip alata tako što ćete uneti sledeću komandu:
+- Позовите тип алата тако што ћете унети следећу команду:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-Trebalo bi da vidite sledeći izlaz:
+Требало би да видите следећи излаз:
 
     ```text
     {
@@ -99,8 +100,8 @@ Trebalo bi da vidite sledeći izlaz:
     ```
 
 > ![!TIP]
-> Obično je mnogo brže pokrenuti inspektor u CLI modu nego u pregledaču.
-> Pročitajte više o inspektoru [ovde](https://github.com/modelcontextprotocol/inspector).
+> Обично је много брже покренути инспектор у CLI режиму него у прегледачу.
+> Више о инспектору прочитајте [овде](https://github.com/modelcontextprotocol/inspector).
 
-**Odricanje odgovornosti**:  
-Ovaj dokument je preveden korišćenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako se trudimo da postignemo tačnost, molimo vas da budete svesni da automatski prevodi mogu sadržati greške ili netačnosti. Originalni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizilaze iz korišćenja ovog prevoda.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

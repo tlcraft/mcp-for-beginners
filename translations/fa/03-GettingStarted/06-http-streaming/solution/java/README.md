@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:43:47+00:00",
+  "translation_date": "2025-07-13T21:08:11+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "fa"
 }
 -->
-# دمو استریمینگ HTTP ماشین حساب
+# دمو استریمینگ HTTP ماشین‌حساب
 
 این پروژه استریمینگ HTTP را با استفاده از Server-Sent Events (SSE) و Spring Boot WebFlux نشان می‌دهد. این پروژه شامل دو برنامه است:
 
-- **Calculator Server**: یک سرویس وب واکنشی که محاسبات را انجام می‌دهد و نتایج را با استفاده از SSE استریم می‌کند
-- **Calculator Client**: یک برنامه کلاینت که نقطه انتهایی استریم را مصرف می‌کند
+- **سرور ماشین‌حساب**: یک سرویس وب واکنشی که محاسبات را انجام داده و نتایج را با SSE استریم می‌کند
+- **کلاینت ماشین‌حساب**: برنامه‌ای که نقطه انتهایی استریم را مصرف می‌کند
 
 ## پیش‌نیازها
 
@@ -37,13 +37,13 @@ java/
 
 ## نحوه کار
 
-1. **Calculator Server** نقطه انتهایی `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **سرور ماشین‌حساب** یک نقطه انتهایی `/calculate` ارائه می‌دهد که:
+   - پارامترهای کوئری را می‌پذیرد: `a` (عدد)، `b` (عدد)، `op` (عملیات)
+   - عملیات‌های پشتیبانی شده: `add`، `sub`، `mul`، `div`
+   - رویدادهای Server-Sent Events را با پیشرفت محاسبه و نتیجه بازمی‌گرداند
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5` را ارائه می‌دهد
+2. **کلاینت ماشین‌حساب** به سرور متصل می‌شود و:
+   - درخواست محاسبه `7 * 5` را ارسال می‌کند
    - پاسخ استریم شده را مصرف می‌کند
    - هر رویداد را در کنسول چاپ می‌کند
 
@@ -51,7 +51,7 @@ java/
 
 ### گزینه ۱: استفاده از Maven (توصیه شده)
 
-#### ۱. راه‌اندازی Calculator Server
+#### ۱. راه‌اندازی سرور ماشین‌حساب
 
 یک ترمینال باز کنید و به دایرکتوری سرور بروید:
 
@@ -61,7 +61,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-سرور روی `http://localhost:8080` راه‌اندازی خواهد شد
+سرور روی `http://localhost:8080` اجرا خواهد شد
 
 باید خروجی مشابه زیر را ببینید:
 ```
@@ -69,7 +69,7 @@ Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
 ```
 
-#### ۲. اجرای Calculator Client
+#### ۲. اجرای کلاینت ماشین‌حساب
 
 یک **ترمینال جدید** باز کنید و به دایرکتوری کلاینت بروید:
 
@@ -79,7 +79,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-کلاینت به سرور متصل می‌شود، محاسبه را انجام می‌دهد و نتایج استریم شده را نمایش می‌دهد.
+کلاینت به سرور متصل شده، محاسبه را انجام داده و نتایج استریم شده را نمایش می‌دهد.
 
 ### گزینه ۲: اجرای مستقیم با جاوا
 
@@ -101,10 +101,10 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## تست دستی سرور
 
-می‌توانید سرور را با استفاده از مرورگر وب یا curl نیز تست کنید:
+می‌توانید سرور را با مرورگر وب یا curl نیز تست کنید:
 
 ### استفاده از مرورگر وب:
-به آدرس `http://localhost:8080/calculate?a=10&b=5&op=add` مراجعه کنید
+به آدرس زیر مراجعه کنید: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
 ### استفاده از curl:
 ```bash
@@ -113,7 +113,7 @@ curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-st
 
 ## خروجی مورد انتظار
 
-هنگام اجرای کلاینت، باید خروجی استریم شده مشابه زیر را مشاهده کنید:
+هنگام اجرای کلاینت، باید خروجی استریم شده مشابه زیر را ببینید:
 
 ```
 event:info
@@ -123,34 +123,34 @@ event:result
 data:35.0
 ```
 
-## عملیات پشتیبانی شده
+## عملیات‌های پشتیبانی شده
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - جمع (a + b)
+- `sub` - تفریق (a - b)
+- `mul` - ضرب (a * b)
+- `div` - تقسیم (a / b، اگر b = 0 باشد مقدار NaN برمی‌گرداند)
 
-## API Reference
+## مرجع API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**پارامترها:**
+- `a` (الزامی): عدد اول (double)
+- `b` (الزامی): عدد دوم (double)
+- `op` (الزامی): عملیات (`add`، `sub`، `mul`، `div`)
 
-**Response:**
+**پاسخ:**
 - Content-Type: `text/event-stream`
-- بازگرداندن Server-Sent Events با پیشرفت محاسبه و نتیجه
+- رویدادهای Server-Sent Events با پیشرفت محاسبه و نتیجه را بازمی‌گرداند
 
-**درخواست نمونه:**
+**نمونه درخواست:**
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**پاسخ نمونه:**
+**نمونه پاسخ:**
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -159,44 +159,44 @@ event: result
 data: 35.0
 ```
 
-## عیب‌یابی
+## رفع اشکال
 
 ### مشکلات رایج
 
 1. **پورت ۸۰۸۰ در حال استفاده است**
-   - هر برنامه دیگری که از پورت ۸۰۸۰ استفاده می‌کند را متوقف کنید
-   - یا پورت سرور را در `calculator-server/src/main/resources/application.yml`
+   - برنامه‌های دیگر که از پورت ۸۰۸۰ استفاده می‌کنند را متوقف کنید
+   - یا پورت سرور را در `calculator-server/src/main/resources/application.yml` تغییر دهید
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **اتصال رد شد**
+   - مطمئن شوید سرور قبل از اجرای کلاینت در حال اجرا است
+   - بررسی کنید که سرور با موفقیت روی پورت ۸۰۸۰ اجرا شده باشد
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **مشکل در نام پارامترها**
+   - این پروژه شامل پیکربندی کامپایلر Maven با فلگ `-parameters` است
+   - اگر با مشکلات اتصال پارامتر مواجه شدید، مطمئن شوید پروژه با این پیکربندی ساخته شده است
 
-### Stopping the Applications
+### متوقف کردن برنامه‌ها
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` اگر به صورت پس‌زمینه اجرا می‌شود، تغییر دهید
+- در ترمینال هر برنامه، کلیدهای `Ctrl+C` را فشار دهید
+- یا اگر برنامه به صورت پس‌زمینه اجرا می‌شود، از دستور `mvn spring-boot:stop` استفاده کنید
 
 ## فناوری‌های استفاده شده
 
-- **Spring Boot 3.3.1** - چارچوب برنامه
-- **Spring WebFlux** - چارچوب وب واکنشی
-- **Project Reactor** - کتابخانه جریان‌های واکنشی
+- **Spring Boot 3.3.1** - فریم‌ورک برنامه
+- **Spring WebFlux** - فریم‌ورک وب واکنشی
+- **Project Reactor** - کتابخانه استریم‌های واکنشی
 - **Netty** - سرور I/O غیرمسدودکننده
 - **Maven** - ابزار ساخت
 - **Java 17+** - زبان برنامه‌نویسی
 
 ## مراحل بعدی
 
-سعی کنید کد را تغییر دهید تا:
-- عملیات ریاضی بیشتری اضافه کنید
-- مدیریت خطا برای عملیات نامعتبر را اضافه کنید
+کد را تغییر دهید تا:
+- عملیات‌های ریاضی بیشتری اضافه کنید
+- مدیریت خطا برای عملیات نامعتبر را پیاده‌سازی کنید
 - لاگ‌گیری درخواست/پاسخ را اضافه کنید
 - احراز هویت را پیاده‌سازی کنید
 - تست‌های واحد اضافه کنید
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه ماشینی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوء تفاهم یا تفسیر نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.

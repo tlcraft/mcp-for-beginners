@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:17:12+00:00",
+  "translation_date": "2025-07-13T21:04:00+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "pt"
 }
@@ -31,13 +31,13 @@ Com o servidor a correr num terminal, abra outro terminal e execute o seguinte c
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Isto deverá iniciar um servidor web com uma interface visual que lhe permite testar o exemplo.
+Isto deverá iniciar um servidor web com uma interface visual que permite testar o exemplo.
 
 > Certifique-se de que o **Streamable HTTP** está selecionado como tipo de transporte, e que a URL é `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Assim que o servidor estiver ligado:
 
-- try listing tools and run `add`, com os argumentos 2 e 4, deverá ver 6 no resultado.
+- experimente listar as ferramentas e executar `add`, com os argumentos 2 e 4, deverá ver 6 no resultado.
 - vá a resources e resource template e chame "greeting", escreva um nome e deverá ver uma saudação com o nome que forneceu.
 
 ### Testar em modo CLI
@@ -48,7 +48,7 @@ Pode iniciar diretamente em modo CLI executando o seguinte comando:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Isto irá listar todas as ferramentas disponíveis no servidor. Deve ver a seguinte saída:
+Isto irá listar todas as ferramentas disponíveis no servidor. Deverá ver a seguinte saída:
 
 ```text
 {
@@ -101,8 +101,8 @@ Deverá ver a seguinte saída:
 ```
 
 > ![!TIP]
-> Normalmente é muito mais rápido executar o inspector em modo CLI do que no browser.
+> Normalmente é muito mais rápido executar o inspector em modo CLI do que no navegador.
 > Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

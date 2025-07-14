@@ -2,46 +2,42 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8311f46a35cf608c9780f39b62c9dc3f",
-  "translation_date": "2025-06-13T00:48:05+00:00",
+  "translation_date": "2025-07-14T02:06:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-root-contexts/README.md",
   "language_code": "sw"
 }
 -->
-## Mfano: Utekelezaji wa Root Context kwa uchambuzi wa fedha
+## Mazoezi: Usimamizi wa Muktadha wa Msingi
 
-Katika mfano huu, tutaunda root context kwa ajili ya kikao cha uchambuzi wa fedha, tukionyesha jinsi ya kuhifadhi hali kupitia mwingiliano kadhaa.
+Kusimamia muktadha wa msingi kwa ufanisi ni muhimu kwa kudumisha historia ya mazungumzo na hali. Hapa chini ni mfano wa jinsi ya kutekeleza usimamizi wa muktadha wa msingi.
 
-## Mfano: Usimamizi wa Root Context
+## Muktadha wa Msingi kwa Msaada wa Mizunguko Mingi
 
-Kusimamia root contexts kwa ufanisi ni muhimu kwa kuhifadhi historia ya mazungumzo na hali. Hapa chini ni mfano wa jinsi ya kutekeleza usimamizi wa root context.
+Katika mfano huu, tutaunda muktadha wa msingi kwa ajili ya kikao cha msaada wa mizunguko mingi, tukionyesha jinsi ya kudumisha hali kupitia mwingiliano mingi.
 
-## Root Context kwa Msaada wa Mizunguko Nyingi
+## Mbinu Bora za Muktadha wa Msingi
 
-Katika mfano huu, tutaunda root context kwa ajili ya kikao cha msaada wa mizunguko mingi, tukionyesha jinsi ya kuhifadhi hali kupitia mwingiliano kadhaa.
+Hapa kuna mbinu bora za kusimamia muktadha wa msingi kwa ufanisi:
 
-## Mbinu Bora za Root Context
+- **Unda Muktadha Ulioelekezwa**: Unda muktadha tofauti wa msingi kwa madhumuni au nyanja tofauti za mazungumzo ili kudumisha uwazi.
 
-Hapa kuna mbinu bora za kusimamia root contexts kwa ufanisi:
+- **Weka Sera za Kumalizika**: Tekeleza sera za kuhifadhi au kufuta muktadha wa zamani ili kusimamia hifadhi na kufuata sera za uhifadhi wa data.
 
-- **Tengeneza Contexts Zenye Lengo**: Tengeneza root contexts tofauti kwa madhumuni au maeneo tofauti ya mazungumzo ili kudumisha uwazi.
+- **Hifadhi Metadata Muhimu**: Tumia metadata ya muktadha kuhifadhi taarifa muhimu kuhusu mazungumzo ambayo inaweza kuwa na manufaa baadaye.
 
-- **Weka Sera za Kumalizika kwa Muda**: Tekeleza sera za kuhifadhi au kufuta contexts za zamani ili kusimamia hifadhi na kuzingatia sera za uhifadhi wa data.
+- **Tumia Vitambulisho vya Muktadha kwa Ulinganifu**: Mara muktadha unapoundwa, tumia kitambulisho chake kwa ulinganifu kwa maombi yote yanayohusiana ili kudumisha mfuatano.
 
-- **Hifadhi Metadata Muhimu**: Tumia metadata ya context kuhifadhi taarifa muhimu kuhusu mazungumzo ambayo inaweza kuwa na faida baadaye.
+- **Tengeneza Muhtasari**: Wakati muktadha unapoanza kuwa mkubwa, fikiria kutengeneza muhtasari ili kunasa taarifa muhimu huku ukisimamia ukubwa wa muktadha.
 
-- **Tumia IDs za Context kwa Uthabiti**: Mara context inapoundwa, tumia ID yake kwa uthabiti kwa maombi yote yanayohusiana ili kudumisha mfululizo.
+- **Tekeleza Udhibiti wa Upatikanaji**: Kwa mifumo ya watumiaji wengi, tekeleza udhibiti sahihi wa upatikanaji ili kuhakikisha faragha na usalama wa muktadha wa mazungumzo.
 
-- **Tengeneza Muhtasari**: Wakati context inapoendelea kukua, fikiria kutengeneza muhtasari wa taarifa muhimu ili kudhibiti ukubwa wa context.
+- **Shughulikia Mipaka ya Muktadha**: Fahamu mipaka ya ukubwa wa muktadha na tekeleza mikakati ya kushughulikia mazungumzo marefu sana.
 
-- **Tekeleza Udhibiti wa Upatikanaji**: Kwa mifumo ya watumiaji wengi, tekeleza udhibiti sahihi wa upatikanaji kuhakikisha faragha na usalama wa contexts za mazungumzo.
+- **Hifadhi Muktadha Baada ya Kumaliza**: Hifadhi muktadha baada ya mazungumzo kumalizika ili kuachilia rasilimali huku ukihifadhi historia ya mazungumzo.
 
-- **Shughulikia Mipaka ya Context**: Fahamu mipaka ya ukubwa wa context na tekeleza mikakati ya kushughulikia mazungumzo marefu sana.
-
-- **Hifadhi Context Baada ya Kumalizika**: Hifadhi contexts wakati mazungumzo yanapokamilika ili kuachilia rasilimali huku ukihifadhi historia ya mazungumzo.
-
-## Kile kinachofuata
+## Nini Kifuatacho
 
 - [5.5 Routing](../mcp-routing/README.md)
 
-**Kiasi cha maelezo ya kukataa**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kuwa tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna wajibu kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

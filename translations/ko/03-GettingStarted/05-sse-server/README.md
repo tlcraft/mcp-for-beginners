@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T16:21:24+00:00",
+  "translation_date": "2025-07-13T19:51:46+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "ko"
 }
@@ -14,11 +14,11 @@ CO_OP_TRANSLATOR_METADATA:
 서버를 만들 때 두 가지를 염두에 두어야 합니다:
 
 - 연결과 메시지를 위한 엔드포인트를 노출하기 위해 웹 서버를 사용해야 합니다.
-- stdio를 사용할 때처럼 도구, 리소스, 프롬프트를 사용해 서버를 구축해야 합니다.
+- stdio를 사용할 때처럼 도구, 리소스, 프롬프트를 사용해 서버를 구축합니다.
 
 ### -1- 서버 인스턴스 생성하기
 
-서버를 만들 때는 stdio와 같은 타입을 사용합니다. 다만, 전송 방식으로는 SSE를 선택해야 합니다.
+서버를 만들 때는 stdio와 같은 타입을 사용하지만, 전송 방식으로는 SSE를 선택해야 합니다.
 
 ---
 
@@ -42,7 +42,7 @@ SSE에 특화된 부분을 정의했으니, 이제 도구, 프롬프트, 리소�
 
 ---
 
-좋습니다, SSE를 사용하는 서버가 완성되었습니다. 이제 실행해 봅시다.
+좋아요, SSE를 사용하는 서버가 준비되었습니다. 이제 실행해 봅시다.
 
 ## 연습: Inspector로 SSE 서버 디버깅하기
 
@@ -58,18 +58,18 @@ Inspector를 실행하려면 먼저 SSE 서버가 실행 중이어야 하므로,
 
 1. Inspector 실행하기
 
-    > ![NOTE]
+    > [!NOTE]
     > 서버가 실행 중인 터미널과는 별도의 터미널 창에서 실행하세요. 또한 아래 명령어는 서버가 실행 중인 URL에 맞게 조정해야 합니다.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Inspector 실행 방법은 모든 런타임에서 동일합니다. 서버 경로나 시작 명령어를 넘기는 대신, 서버가 실행 중인 URL과 `/sse` 경로를 지정하는 점에 주목하세요.
+    Inspector 실행 방법은 모든 런타임에서 동일합니다. 서버 경로나 서버 시작 명령어 대신 서버가 실행 중인 URL과 `/sse` 경로를 지정하는 점에 주목하세요.
 
 ### -2- 도구 사용해 보기
 
-드롭리스트에서 SSE를 선택하고, 서버가 실행 중인 URL(예: http://localhost:4321/sse)을 입력한 후 "Connect" 버튼을 클릭합니다. 이전과 마찬가지로 도구 목록을 불러오고, 도구를 선택한 뒤 입력값을 제공하세요. 아래와 같은 결과를 볼 수 있을 것입니다:
+드롭리스트에서 SSE를 선택하고, 서버가 실행 중인 URL(예: http://localhost:4321/sse)을 입력한 후 "Connect" 버튼을 클릭합니다. 이전과 같이 도구 목록을 불러오고, 도구를 선택한 뒤 입력값을 제공하세요. 아래와 같은 결과를 볼 수 있을 것입니다:
 
 ![Inspector에서 실행 중인 SSE 서버](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.ko.png)
 

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-17T12:06:29+00:00",
+  "translation_date": "2025-07-13T20:17:26+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "hr"
 }
 -->
 # Pokretanje ovog primjera
 
-Preporučuje se instalirati `uv`, ali nije obavezno, pogledajte [upute](https://docs.astral.sh/uv/#highlights)
+Preporučuje se instalacija `uv`, ali nije obavezno, pogledajte [upute](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Kreirajte virtualno okruženje
 
@@ -31,13 +31,14 @@ pip install "mcp[cli]"
 
 ## -3- Pokrenite primjer
 
+
 ```bash
 mcp run server.py
 ```
 
 ## -4- Testirajte primjer
 
-Dok server radi u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
+Dok je server pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
 
 ```bash
 mcp dev server.py
@@ -45,14 +46,14 @@ mcp dev server.py
 
 Ovo bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje testiranje primjera.
 
-Kada je server povezan:
+Kada se server poveže:
 
-- pokušajte nabrojati alate i pokrenuti `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- pokušajte ispisati alate i pokrenuti `add` s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
+- idite na resources i resource template te pozovite get_greeting, unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
 
-### Testing in ClI mode
+### Testiranje u CLI načinu
 
-The inspector you ran is actually a Node.js app and `mcp dev` je omotač oko toga.
+Inspector koji ste pokrenuli zapravo je Node.js aplikacija, a `mcp dev` je omotač oko nje.
 
 Možete ga pokrenuti izravno u CLI načinu pokretanjem sljedeće naredbe:
 
@@ -60,7 +61,7 @@ Možete ga pokrenuti izravno u CLI načinu pokretanjem sljedeće naredbe:
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Ovo će nabrojati sve dostupne alate na serveru. Trebali biste vidjeti sljedeći izlaz:
+Ovo će ispisati sve alate dostupne na serveru. Trebali biste vidjeti sljedeći ispis:
 
 ```text
 {
@@ -97,7 +98,7 @@ Za pozivanje alata upišite:
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Trebali biste vidjeti sljedeći izlaz:
+Trebali biste vidjeti sljedeći ispis:
 
 ```text
 {
@@ -112,8 +113,8 @@ Trebali biste vidjeti sljedeći izlaz:
 ```
 
 > ![!TIP]
-> Obično je mnogo brže pokrenuti inspektor u CLI načinu nego u pregledniku.
-> Pročitajte više o inspektoru [ovdje](https://github.com/modelcontextprotocol/inspector).
+> Obično je puno brže pokrenuti inspector u CLI načinu nego u pregledniku.
+> Više o inspectoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, molimo vas da budete svjesni da automatizirani prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

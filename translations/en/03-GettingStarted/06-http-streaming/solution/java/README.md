@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:42:49+00:00",
+  "translation_date": "2025-07-13T21:07:08+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "en"
 }
@@ -199,4 +199,4 @@ Try modifying the code to:
 - Add unit tests
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

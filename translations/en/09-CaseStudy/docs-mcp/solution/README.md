@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c8c1a74c74f6c2d42d511daf12d0b6c5",
-  "translation_date": "2025-06-21T14:22:45+00:00",
+  "translation_date": "2025-07-14T06:31:39+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/README.md",
   "language_code": "en"
 }

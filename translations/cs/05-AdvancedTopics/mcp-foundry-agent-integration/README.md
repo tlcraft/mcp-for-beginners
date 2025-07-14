@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:20:00+00:00",
+  "translation_date": "2025-07-13T23:59:55+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "cs"
 }
@@ -13,19 +13,19 @@ Tento průvodce ukazuje, jak integrovat servery Model Context Protocol (MCP) s a
 
 ## Úvod
 
-Model Context Protocol (MCP) je otevřený standard, který umožňuje AI aplikacím bezpečně se připojovat k externím zdrojům dat a nástrojům. Po integraci s Azure AI Foundry umožňuje MCP agentům přístup a interakci s různými externími službami, API a zdroji dat jednotným způsobem.
+Model Context Protocol (MCP) je otevřený standard, který umožňuje AI aplikacím bezpečně se připojit k externím datovým zdrojům a nástrojům. Po integraci s Azure AI Foundry umožňuje MCP agentům přístup a interakci s různými externími službami, API a datovými zdroji jednotným způsobem.
 
 Tato integrace kombinuje flexibilitu ekosystému nástrojů MCP s robustním rámcem agentů Azure AI Foundry, čímž poskytuje podniková AI řešení s rozsáhlými možnostmi přizpůsobení.
 
-**Note:** Pokud chcete používat MCP v Azure AI Foundry Agent Service, v současné době jsou podporovány pouze tyto regiony: westus, westus2, uaenorth, southindia a switzerlandnorth
+**Note:** Pokud chcete používat MCP v Azure AI Foundry Agent Service, aktuálně jsou podporovány pouze následující regiony: westus, westus2, uaenorth, southindia a switzerlandnorth
 
-## Výukové cíle
+## Cíle učení
 
-Po dokončení tohoto průvodce budete umět:
+Na konci tohoto průvodce budete schopni:
 
 - Pochopit Model Context Protocol a jeho výhody
-- Nastavit servery MCP pro použití s agenty Azure AI Foundry
-- Vytvořit a nakonfigurovat agenty s integrací nástrojů MCP
+- Nastavit MCP servery pro použití s agenty Azure AI Foundry
+- Vytvořit a nakonfigurovat agenty s integrací MCP nástrojů
 - Implementovat praktické příklady s reálnými MCP servery
 - Zpracovávat odpovědi nástrojů a citace v konverzacích agentů
 
@@ -40,11 +40,11 @@ Před začátkem se ujistěte, že máte:
 
 ## Co je Model Context Protocol (MCP)?
 
-Model Context Protocol je standardizovaný způsob, jak mohou AI aplikace přistupovat k externím zdrojům dat a nástrojům. Mezi klíčové výhody patří:
+Model Context Protocol je standardizovaný způsob, jak mohou AI aplikace přistupovat k externím datovým zdrojům a nástrojům. Mezi hlavní výhody patří:
 
 - **Standardizovaná integrace**: Konzistentní rozhraní napříč různými nástroji a službami
 - **Bezpečnost**: Bezpečné mechanismy autentizace a autorizace
-- **Flexibilita**: Podpora různých zdrojů dat, API a vlastních nástrojů
+- **Flexibilita**: Podpora různých datových zdrojů, API a vlastních nástrojů
 - **Rozšiřitelnost**: Snadné přidávání nových funkcí a integrací
 
 ## Nastavení MCP s Azure AI Foundry
@@ -91,7 +91,7 @@ with project_client:
         ],
         tool_resources=None
     )
-    print(f"Vytvořen agent, ID agenta: {agent.id}")
+    print(f"Agent vytvořen, ID agenta: {agent.id}")
 ```
 
 ## MCP Tool Configuration Options
@@ -104,8 +104,8 @@ When configuring MCP tools for your agent, you can specify several important par
 mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # Identifikátor MCP serveru
-    "server_url": "https://api.example.com/mcp", # Koncový bod MCP serveru
-    "require_approval": "never"                 # Politika schvalování: zatím podporováno pouze "never"
+    "server_url": "https://api.example.com/mcp", # Endpoint MCP serveru
+    "require_approval": "never"                 # Politika schvalování: momentálně podporováno pouze "never"
 }
 ```
 
@@ -133,7 +133,7 @@ def create_mcp_agent_example():
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="Jste užitečný asistent specializující se na dokumentaci Microsoftu. Použijte MCP server Microsoft Learn pro vyhledávání přesných a aktuálních informací. Vždy uvádějte zdroje.",
+            instructions="Jste užitečný asistent specializující se na dokumentaci Microsoftu. Používejte MCP server Microsoft Learn k vyhledávání přesných a aktuálních informací. Vždy uvádějte zdroje.",
             tools=[
                 {
                     "type": "mcp",
@@ -144,35 +144,35 @@ def create_mcp_agent_example():
             ],
             tool_resources=None
         )
-        print(f"Vytvořen agent, ID agenta: {agent.id}")    
+        print(f"Agent vytvořen, ID agenta: {agent.id}")    
         
         # Vytvoření vlákna konverzace
         thread = project_client.agents.threads.create()
-        print(f"Vytvořeno vlákno, ID vlákna: {thread.id}")
+        print(f"Vlákno vytvořeno, ID vlákna: {thread.id}")
 
         # Odeslání zprávy
         message = project_client.agents.messages.create(
             thread_id=thread.id, 
             role="user", 
-            content="Co je to .NET MAUI? Jak se srovnává s Xamarin.Forms?",
+            content="Co je .NET MAUI? Jak se liší od Xamarin.Forms?",
         )
-        print(f"Vytvořena zpráva, ID zprávy: {message.id}")
+        print(f"Zpráva vytvořena, ID zprávy: {message.id}")
 
         # Spuštění agenta
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
         
-        # Čekání na dokončení
+        # Kontrola dokončení
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
-            print(f"Stav spuštění: {run.status}")
+            print(f"Stav běhu: {run.status}")
 
-        # Prohlédnutí kroků spuštění a volání nástrojů
+        # Prohlédnutí kroků běhu a volání nástrojů
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
-            print(f"Krok spuštění: {step.id}, stav: {step.status}, typ: {step.type}")
+            print(f"Krok běhu: {step.id}, stav: {step.status}, typ: {step.type}")
             if step.type == "tool_calls":
-                print("Detaily volání nástrojů:")
+                print("Detaily volání nástroje:")
                 for tool_call in step.step_details.tool_calls:
                     print(json.dumps(tool_call.as_dict(), indent=2))
 
@@ -194,26 +194,26 @@ if __name__ == "__main__":
 ### 1. Problémy s připojením
 - Ověřte, že je URL MCP serveru dostupná
 - Zkontrolujte autentizační údaje
-- Ujistěte se o funkční síťové konektivitě
+- Ujistěte se o síťovém připojení
 
-### 2. Chyby při volání nástrojů
-- Zkontrolujte argumenty a formátování volání nástrojů
-- Prověřte specifické požadavky serveru
+### 2. Selhání volání nástrojů
+- Zkontrolujte argumenty a formátování nástrojů
+- Ověřte specifické požadavky serveru
 - Implementujte správné zpracování chyb
 
-### 3. Problémy s výkonem
+### 3. Výkonové problémy
 - Optimalizujte frekvenci volání nástrojů
 - Použijte cache tam, kde je to vhodné
 - Sledujte dobu odezvy serveru
 
 ## Další kroky
 
-Pro další rozšíření integrace MCP:
+Pro další vylepšení integrace MCP:
 
-1. **Prozkoumejte vlastní MCP servery**: Vytvořte si vlastní MCP servery pro proprietární zdroje dat
+1. **Prozkoumejte vlastní MCP servery**: Vytvořte si vlastní MCP servery pro proprietární datové zdroje
 2. **Implementujte pokročilou bezpečnost**: Přidejte OAuth2 nebo vlastní autentizační mechanismy
 3. **Monitorování a analýzy**: Zavádějte logování a sledování využití nástrojů
-4. **Škálování řešení**: Zvažte load balancing a distribuovanou architekturu MCP serverů
+4. **Škálování řešení**: Zvažte load balancing a distribuované architektury MCP serverů
 
 ## Další zdroje
 
@@ -230,7 +230,7 @@ Pro další podporu a dotazy:
 
 ## Co dál
 
-- [6. Přispění komunity](../../06-CommunityContributions/README.md)
+- [6. Příspěvky komunity](../../06-CommunityContributions/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

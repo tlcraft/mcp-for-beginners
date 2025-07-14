@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T15:23:59+00:00",
+  "translation_date": "2025-07-13T18:08:51+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "es"
 }
 -->
-En el código anterior:
+En el código anterior nosotros:
 
 - Importamos las librerías
 - Creamos una instancia de un cliente y lo conectamos usando stdio como transporte.
-- Listamos prompts, recursos y herramientas, y los invocamos todos.
+- Listamos prompts, recursos y herramientas y los invocamos todos.
 
 Ahí lo tienes, un cliente que puede comunicarse con un servidor MCP.
 
@@ -19,7 +19,7 @@ Tomémonos nuestro tiempo en la siguiente sección de ejercicios para desglosar 
 
 ## Ejercicio: Escribiendo un cliente
 
-Como se dijo antes, vamos a tomarnos nuestro tiempo explicando el código, y por supuesto, si quieres, puedes programar junto con nosotros.
+Como se dijo antes, tomémonos nuestro tiempo explicando el código, y por supuesto, si quieres, puedes programar junto con nosotros.
 
 ### -1- Importar las librerías
 
@@ -33,13 +33,13 @@ Necesitaremos crear una instancia del transporte y otra de nuestro cliente:
 
 ### -3- Listando las características del servidor
 
-Ahora, tenemos un cliente que puede conectarse cuando se ejecute el programa. Sin embargo, no lista realmente sus características, así que hagámoslo a continuación:
+Ahora, tenemos un cliente que puede conectarse cuando se ejecute el programa. Sin embargo, en realidad no lista sus características, así que hagámoslo a continuación:
 
 Genial, ahora hemos capturado todas las características. Ahora la pregunta es, ¿cuándo las usamos? Bueno, este cliente es bastante simple, simple en el sentido de que necesitaremos llamar explícitamente a las características cuando las queramos. En el próximo capítulo, crearemos un cliente más avanzado que tendrá acceso a su propio modelo de lenguaje grande, LLM. Por ahora, veamos cómo podemos invocar las características en el servidor:
 
 ### -4- Invocar características
 
-Para invocar las características, necesitamos asegurarnos de especificar los argumentos correctos y, en algunos casos, el nombre de lo que estamos tratando de invocar.
+Para invocar las características necesitamos asegurarnos de especificar los argumentos correctos y en algunos casos el nombre de lo que estamos tratando de invocar.
 
 ### -5- Ejecutar el cliente
 
@@ -49,7 +49,7 @@ Para ejecutar el cliente, escribe el siguiente comando en la terminal:
 
 En esta tarea, usarás lo que has aprendido para crear un cliente, pero crearás un cliente propio.
 
-Aquí tienes un servidor que puedes usar y al que necesitas llamar desde tu código cliente, intenta agregar más características al servidor para hacerlo más interesante.
+Aquí tienes un servidor que puedes usar y al que necesitas llamar mediante tu código cliente, intenta agregar más características al servidor para hacerlo más interesante.
 
 ## Solución
 
@@ -60,7 +60,7 @@ Aquí tienes un servidor que puedes usar y al que necesitas llamar desde tu cód
 Los puntos clave de este capítulo sobre los clientes son los siguientes:
 
 - Pueden usarse tanto para descubrir como para invocar características en el servidor.
-- Pueden iniciar un servidor mientras se inician ellos mismos (como en este capítulo), pero los clientes también pueden conectarse a servidores ya en ejecución.
+- Pueden iniciar un servidor mientras se inician a sí mismos (como en este capítulo), pero los clientes también pueden conectarse a servidores ya en ejecución.
 - Son una excelente manera de probar las capacidades del servidor junto a alternativas como el Inspector, como se describió en el capítulo anterior.
 
 ## Recursos adicionales

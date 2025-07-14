@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "105c2ddbb77bc38f7e9df009e1b06e45",
-  "translation_date": "2025-07-04T17:43:18+00:00",
+  "translation_date": "2025-07-13T15:34:42+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "no"
 }
@@ -15,7 +15,7 @@ Generative AI-applikasjoner er et stort steg fremover, da de ofte lar brukeren s
 
 ## **🔍 Hva er Model Context Protocol (MCP)?**
 
-**Model Context Protocol (MCP)** er et **åpent, standardisert grensesnitt** som gjør det mulig for store språkmodeller (LLMs) å samhandle sømløst med eksterne verktøy, API-er og datakilder. Det gir en konsekvent arkitektur som forbedrer AI-modellers funksjonalitet utover treningsdataene, og muliggjør smartere, skalerbare og mer responsive AI-systemer.
+**Model Context Protocol (MCP)** er et **åpent, standardisert grensesnitt** som gjør det mulig for store språkmodeller (LLMs) å samhandle sømløst med eksterne verktøy, API-er og datakilder. Det gir en konsistent arkitektur som forbedrer AI-modellers funksjonalitet utover treningsdataene, og muliggjør smartere, skalerbare og mer responsive AI-systemer.
 
 ---
 
@@ -86,15 +86,15 @@ MCP-servere opererer på følgende måte:
 - **Forespørselsflyt**:  
     1. MCP-klienten sender en forespørsel til AI-modellen som kjører i en MCP Host.  
     2. AI-modellen identifiserer når den trenger eksterne verktøy eller data.  
-    3. Modellen kommuniserer med MCP-serveren via det standardiserte protokoll.
+    3. Modellen kommuniserer med MCP-serveren ved hjelp av den standardiserte protokollen.
 
 - **MCP-serverens funksjonalitet**:  
     - Verktøyregister: Holder oversikt over tilgjengelige verktøy og deres funksjoner.  
-    - Autentisering: Verifiserer tillatelser for tilgang til verktøy.  
+    - Autentisering: Verifiserer tillatelser for verktøytillatelse.  
     - Forespørselsbehandler: Behandler innkommende verktøyforespørsler fra modellen.  
-    - Responsformattering: Strukturere verktøyutdata i et format modellen forstår.
+    - Responsformatterer: Strukturere verktøyutdata i et format modellen forstår.
 
-- **Verktøykjøring**:  
+- **Verktøyutførelse**:  
     - Serveren ruter forespørsler til riktige eksterne verktøy  
     - Verktøyene utfører sine spesialiserte funksjoner (søk, beregning, databaseforespørsler osv.)  
     - Resultatene returneres til modellen i et konsistent format.
@@ -154,22 +154,23 @@ Klar til å prøve? Her er eksempler på hvordan du lager en enkel MCP-server i 
 
 - **C#/.NET-eksempel**: https://github.com/modelcontextprotocol/csharp-sdk
 
+
 ## 🌍 Praktiske bruksområder for MCP
 
 MCP muliggjør et bredt spekter av applikasjoner ved å utvide AI-funksjonalitet:
 
-| **Bruksområde**             | **Beskrivelse**                                                                |
+| **Bruksområde**            | **Beskrivelse**                                                                |
 |----------------------------|--------------------------------------------------------------------------------|
 | Bedriftsdataintegrasjon    | Koble LLM-er til databaser, CRM-systemer eller interne verktøy                 |
-| Agentbaserte AI-systemer   | Muliggjør autonome agenter med tilgang til verktøy og beslutningsflyt         |
+| Agentbaserte AI-systemer   | Muliggjør autonome agenter med verktøystøtte og beslutningsflyt               |
 | Multimodale applikasjoner  | Kombiner tekst-, bilde- og lydverktøy i én samlet AI-app                       |
-| Sanntidsdataintegrasjon    | Hent inn live-data i AI-interaksjoner for mer nøyaktige og oppdaterte svar    |
+| Sanntidsdataintegrasjon    | Hent inn levende data i AI-interaksjoner for mer nøyaktige og oppdaterte svar |
 
 ### 🧠 MCP = Universell standard for AI-interaksjoner
 
-Model Context Protocol (MCP) fungerer som en universell standard for AI-interaksjoner, på samme måte som USB-C standardiserte fysiske tilkoblinger for enheter. I AI-verdenen gir MCP et konsekvent grensesnitt som lar modeller (klienter) integrere sømløst med eksterne verktøy og dataleverandører (servere). Dette eliminerer behovet for ulike, tilpassede protokoller for hver API eller datakilde.
+Model Context Protocol (MCP) fungerer som en universell standard for AI-interaksjoner, på samme måte som USB-C standardiserte fysiske tilkoblinger for enheter. I AI-verdenen gir MCP et konsistent grensesnitt som gjør det mulig for modeller (klienter) å integrere sømløst med eksterne verktøy og dataleverandører (servere). Dette eliminerer behovet for ulike, tilpassede protokoller for hver API eller datakilde.
 
-Under MCP følger et MCP-kompatibelt verktøy (kalt MCP-server) en felles standard. Disse serverne kan liste opp verktøyene eller handlingene de tilbyr, og utføre disse når en AI-agent ber om det. AI-agentplattformer som støtter MCP kan oppdage tilgjengelige verktøy fra serverne og kalle dem via denne standardprotokollen.
+Under MCP følger et MCP-kompatibelt verktøy (kalt MCP-server) en felles standard. Disse serverne kan liste opp verktøyene eller handlingene de tilbyr, og utføre disse når de blir bedt om det av en AI-agent. AI-agentplattformer som støtter MCP kan oppdage tilgjengelige verktøy fra serverne og kalle dem via denne standardprotokollen.
 
 ### 💡 Legger til rette for kunnskapstilgang
 
@@ -289,19 +290,20 @@ Her er hovedpunktene for bruk av MCP:
 
 - **MCP** standardiserer hvordan AI-modeller samhandler med verktøy og data  
 - Fremmer **utvidbarhet, konsistens og interoperabilitet**  
-- MCP bidrar til å **redusere utviklingstid, forbedre pålitelighet og utvide modellens funksjonalitet**  
+- MCP hjelper til med å **redusere utviklingstid, forbedre pålitelighet og utvide modellfunksjoner**  
 - Klient-server-arkitekturen **muliggjør fleksible, utvidbare AI-applikasjoner**
 
 ## 🧠 Øvelse
 
 Tenk på en AI-applikasjon du er interessert i å bygge.
 
-- Hvilke **eksterne verktøy eller data** kan forbedre dens funksjonalitet?  
+- Hvilke **eksterne verktøy eller data** kan forbedre funksjonaliteten?  
 - Hvordan kan MCP gjøre integrasjonen **enklere og mer pålitelig?**
 
 ## Ytterligere ressurser
 
 - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+
 
 ## Hva skjer videre
 

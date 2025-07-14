@@ -2,53 +2,53 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:07:37+00:00",
+  "translation_date": "2025-07-13T20:18:39+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "ur"
 }
 -->
 # اس نمونے کو چلانا
 
-## -1- انحصار کو انسٹال کریں
+## -1- انحصاریات انسٹال کریں
 
 ```bash
 npm install
 ```
 
-## -3- نمونے کو چلائیں
+## -3- نمونہ چلائیں
 
 ```bash
 npm run build
 ```
 
-## -4- نمونے کی جانچ کریں
+## -4- نمونے کا ٹیسٹ کریں
 
-جب سرور ایک ٹرمینل میں چل رہا ہو، تو دوسرا ٹرمینل کھولیں اور مندرجہ ذیل کمانڈ چلائیں:
+جب سرور ایک ٹرمینل میں چل رہا ہو، تو دوسرا ٹرمینل کھولیں اور درج ذیل کمانڈ چلائیں:
 
 ```bash
 npm run inspector
 ```
 
-یہ ایک ویب سرور کو شروع کرے گا جس میں بصری انٹرفیس ہوگا جو آپ کو نمونے کی جانچ کرنے کی اجازت دے گا۔
+اس سے ایک ویب سرور شروع ہو جائے گا جس میں ایک بصری انٹرفیس ہوگا جو آپ کو نمونے کا ٹیسٹ کرنے کی اجازت دے گا۔
 
-جب سرور جڑ جائے:
+جب سرور کنیکٹ ہو جائے:
 
-- ٹولز کی فہرست بنانے کی کوشش کریں اور `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- ٹولز کی فہرست دیکھیں اور `add` چلائیں، دلائل کے طور پر 2 اور 4 دیں، آپ کو نتیجے میں 6 نظر آنا چاہیے۔
+- resources اور resource template میں جائیں اور "greeting" کال کریں، کوئی نام ٹائپ کریں اور آپ کو وہ نام شامل کرتے ہوئے ایک سلام نظر آئے گا۔
 
-### Testing in CLI mode
+### CLI موڈ میں ٹیسٹنگ
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+جو inspector آپ نے چلایا ہے وہ درحقیقت ایک Node.js ایپ ہے اور `mcp dev` اس کا ایک ریپر ہے۔
 
-- Start up the server with the command `npm run build` چلائیں۔
+- سرور کو کمانڈ `npm run build` سے شروع کریں۔
 
-- ایک الگ ٹرمینل میں مندرجہ ذیل کمانڈ چلائیں:
+- ایک الگ ٹرمینل میں درج ذیل کمانڈ چلائیں:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    یہ سرور میں دستیاب تمام ٹولز کی فہرست بنائے گا۔ آپ کو مندرجہ ذیل آؤٹ پٹ دیکھنا چاہئے:
+    یہ سرور میں دستیاب تمام ٹولز کی فہرست دکھائے گا۔ آپ کو درج ذیل آؤٹ پٹ نظر آئے گا:
 
     ```text
     {
@@ -79,13 +79,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- ایک ٹول ٹائپ کو فعال کریں مندرجہ ذیل کمانڈ ٹائپ کر کے:
+- ٹول ٹائپ کو درج ذیل کمانڈ ٹائپ کر کے کال کریں:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-آپ کو مندرجہ ذیل آؤٹ پٹ دیکھنا چاہئے:
+آپ کو درج ذیل آؤٹ پٹ نظر آئے گا:
 
     ```text
     {
@@ -99,8 +99,8 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     ```
 
 > ![!TIP]
-> عام طور پر CLI موڈ میں انسپکٹر کو چلانا براؤزر کی نسبت زیادہ تیز ہوتا ہے۔
-> انسپکٹر کے بارے میں مزید پڑھیں [یہاں](https://github.com/modelcontextprotocol/inspector)۔
+> عام طور پر inspector کو CLI موڈ میں براؤزر کے مقابلے میں بہت تیزی سے چلایا جا سکتا ہے۔
+> inspector کے بارے میں مزید پڑھیں [یہاں](https://github.com/modelcontextprotocol/inspector)۔
 
-**ڈسکلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ جبکہ ہم درستگی کے لئے کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا غیر درستیاں ہوسکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں معتبر ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لئے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لئے ہم ذمہ دار نہیں ہیں۔
+**دستخطی دستبرداری**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

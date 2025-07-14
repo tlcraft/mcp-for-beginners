@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bb55f3119d45c4412fc5555299e60498",
-  "translation_date": "2025-05-17T13:26:34+00:00",
+  "translation_date": "2025-07-13T22:36:30+00:00",
   "source_file": "03-GettingStarted/samples/python/README.md",
   "language_code": "en"
 }
 -->
 # Sample
 
-This is a Python example for an MCP Server
+This is a Python sample for an MCP Server
 
-Here's what the calculator section looks like:
+Here's what the calculator portion looks like:
 
 ```python
 @mcp.tool()
@@ -44,7 +44,7 @@ def divide(a: float, b: float) -> float:
 
 ## Install
 
-Execute the following command:
+Run the following command:
 
 ```bash
 pip install mcp

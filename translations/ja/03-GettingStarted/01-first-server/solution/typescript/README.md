@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-05-16T15:10:31+00:00",
+  "translation_date": "2025-07-13T18:04:10+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
   "language_code": "ja"
 }
 -->
 # このサンプルの実行
 
-`uv` のインストールを推奨しますが、必須ではありません。詳しくは[instructions](https://docs.astral.sh/uv/#highlights)をご覧ください。
+`uv` のインストールを推奨しますが、必須ではありません。詳しくは [instructions](https://docs.astral.sh/uv/#highlights) をご覧ください。
 
 ## -1- 依存関係のインストール
 
@@ -25,30 +25,30 @@ npm run build
 
 ## -4- サンプルのテスト
 
-サーバーを一つのターミナルで起動した状態で、別のターミナルを開き、次のコマンドを実行してください：
+サーバーを一つのターミナルで起動したまま、別のターミナルを開いて以下のコマンドを実行してください：
 
 ```bash
 npm run inspector
 ```
 
-これにより、サンプルをテストできるビジュアルインターフェース付きのウェブサーバーが起動します。
+これで、サンプルをテストできるビジュアルインターフェース付きのウェブサーバーが起動するはずです。
 
-サーバーが接続されたら：
+サーバーに接続したら：
 
-- ツールの一覧表示を試し、`add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- ツールの一覧を表示し、`add` を引数 2 と 4 で実行してみてください。結果に 6 が表示されるはずです。
+- resources と resource template に移動し、「greeting」を呼び出して名前を入力すると、入力した名前を使った挨拶が表示されます。
 
-### Testing in CLI mode
+### CLIモードでのテスト
 
-The inspector you ran is actually a Node.js app and `mcp dev` はそのラッパーです。
+実行している inspector は実際には Node.js アプリで、`mcp dev` はそのラッパーです。
 
-次のコマンドを実行することで、CLIモードで直接起動できます：
+以下のコマンドを実行すると、CLIモードで直接起動できます：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/list
 ```
 
-これでサーバーで利用可能なすべてのツールが一覧表示されます。以下のような出力が表示されるはずです：
+これでサーバー上のすべてのツールが一覧表示されます。以下のような出力が得られるはずです：
 
 ```text
 {
@@ -100,8 +100,8 @@ nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/
 ```
 
 > ![!TIP]
-> ブラウザよりもCLIモードでinspectorを実行する方が通常はずっと高速です。
-> inspectorについての詳細は[こちら](https://github.com/modelcontextprotocol/inspector)をご覧ください。
+> inspector をブラウザで使うよりも、CLIモードで実行したほうが通常はずっと高速です。
+> inspector についての詳細は [こちら](https://github.com/modelcontextprotocol/inspector) をご覧ください。
 
-**免責事項**:  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や誤訳について、一切の責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

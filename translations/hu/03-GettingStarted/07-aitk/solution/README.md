@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:33:14+00:00",
+  "translation_date": "2025-07-13T21:54:32+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "hu"
 }
@@ -10,10 +10,10 @@ CO_OP_TRANSLATOR_METADATA:
 # 📘 Feladatmegoldás: A számológép MCP szerverének bővítése négyzetgyök eszközzel
 
 ## Áttekintés
-Ebben a feladatban bővítetted a számológép MCP szerveredet egy új eszközzel, amely egy szám négyzetgyökét számolja ki. Ez a kiegészítés lehetővé teszi, hogy az AI ügynököd összetettebb matematikai kérdéseket is kezeljen, például „Mi 16 négyzetgyöke?” vagy „Számold ki √49” természetes nyelvű utasítások alapján.
+Ebben a feladatban kibővítetted a számológép MCP szerveredet egy új eszközzel, amely egy szám négyzetgyökét számolja ki. Ez a kiegészítés lehetővé teszi, hogy az AI ügynököd összetettebb matematikai kérdéseket is kezeljen, például: „Mi 16 négyzetgyöke?” vagy „Számold ki √49”-et, természetes nyelvű utasítások alapján.
 
 ## 🛠️ A négyzetgyök eszköz megvalósítása
-Ehhez a funkcióhoz egy új eszközfüggvényt definiáltál a server.py fájlban. Íme a megvalósítás:
+A funkció hozzáadásához definiáltál egy új eszközfüggvényt a server.py fájlban. Íme a megvalósítás:
 
 ```python
 """
@@ -68,13 +68,35 @@ def sqrt(a: float) -> float:
     return math.sqrt(a)
 ```
 
-## 🔍 Működés
+## 🔍 Hogyan működik
 
-- **Importáld a `math` modult, majd használd a `math.sqrt()` függvényt a `@server.tool()` dekorátorral ellátott `sqrt` eszköz definiálásához.**
-- Lehetővé tetted, hogy az AI ügynököd természetes nyelvű utasítások alapján is tudjon négyzetgyököt számolni.
-- Gyakoroltad új eszközök hozzáadását és a szerver újraindítását, hogy integráld a további funkciókat.
+- **A `math` modul importálása**: A Python beépített `math` modulja lehetővé teszi az alapműveleteken túli matematikai számításokat. Ez a modul számos matematikai függvényt és állandót tartalmaz. Az `import math` használatával elérhetővé válik például a `math.sqrt()` függvény, amely egy szám négyzetgyökét számolja ki.
+- **Függvénydefiníció**: A `@server.tool()` dekorátor regisztrálja a `sqrt` függvényt eszközként, amelyet az AI ügynök elérhet.
+- **Bemeneti paraméter**: A függvény egyetlen `a` nevű, `float` típusú argumentumot fogad.
+- **Hibakezelés**: Ha `a` negatív, a függvény `ValueError` kivételt dob, hogy megakadályozza a negatív szám négyzetgyökének kiszámítását, amit a `math.sqrt()` nem támogat.
+- **Visszatérési érték**: Nem negatív bemenet esetén a függvény a Python beépített `math.sqrt()` metódusával visszaadja `a` négyzetgyökét.
 
-Nyugodtan kísérletezz tovább további matematikai eszközök hozzáadásával, például hatványozással vagy logaritmikus függvényekkel, hogy még tovább fejleszd az ügynök képességeit!
+## 🔄 A szerver újraindítása
+Az új `sqrt` eszköz hozzáadása után fontos újraindítani az MCP szervert, hogy az ügynök felismerje és használni tudja az új funkciót.
+
+## 💬 Példamondatok az új eszköz teszteléséhez
+Íme néhány természetes nyelvű példa, amivel kipróbálhatod a négyzetgyök funkciót:
+
+- „Mi 25 négyzetgyöke?”
+- „Számold ki 81 négyzetgyökét.”
+- „Add meg 0 négyzetgyökét.”
+- „Mi 2,25 négyzetgyöke?”
+
+Ezek a kérdések az ügynököt a `sqrt` eszköz meghívására ösztönzik, és a helyes eredményt adják vissza.
+
+## ✅ Összefoglalás
+A feladat elvégzésével:
+
+- Kibővítetted a számológép MCP szerveredet egy új `sqrt` eszközzel.
+- Lehetővé tetted, hogy az AI ügynök négyzetgyök számításokat végezzen természetes nyelvű utasítások alapján.
+- Gyakoroltad új eszközök hozzáadását és a szerver újraindítását az új funkciók integrálásához.
+
+Nyugodtan kísérletezz tovább további matematikai eszközök, például hatványozás vagy logaritmusok hozzáadásával, hogy még tovább fejleszd az ügynök képességeit!
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) használatával fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvű változata tekintendő hivatalos forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ezen fordítás használatából eredő félreértésekért vagy helytelen értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

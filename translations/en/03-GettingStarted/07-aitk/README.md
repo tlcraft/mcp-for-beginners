@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T15:16:17+00:00",
+  "translation_date": "2025-07-13T21:23:30+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "en"
 }
@@ -38,7 +38,7 @@ Here’s the high-level approach:
 - Connect the Agent Builder to the MCP server.
 - Test the agent’s tool usage via natural language.
 
-Great, now that we understand the flow, let’s configure an AI agent to leverage external tools through MCP, enhancing its capabilities!
+Great! Now that we understand the flow, let’s configure an AI agent to leverage external tools through MCP, enhancing its capabilities!
 
 ## Prerequisites
 
@@ -59,7 +59,7 @@ This exercise uses the **GPT-4o** model. You should add this model to **My Model
 2. In the **Catalog** section, select **Models** to open the **Model Catalog**. This opens the **Model Catalog** in a new editor tab.
 3. In the **Model Catalog** search bar, type **OpenAI GPT-4o**.
 4. Click **+ Add** to add the model to your **My Models** list. Make sure you select the model that is **Hosted by GitHub**.
-5. In the **Activity Bar**, verify that the **OpenAI GPT-4o** model appears in the list.
+5. In the **Activity Bar**, verify that the **OpenAI GPT-4o** model appears in your list.
 
 ### -1- Create an agent
 
@@ -156,16 +156,16 @@ Now that your agent has tools, it’s time to use them! In this section, you’l
 
 ![Screenshot of the Calculator Agent interface in the AI Toolkit extension for Visual Studio Code. On the left panel, under “Tools,” an MCP server named local-server-calculator_server is added, showing four available tools: add, subtract, multiply, and divide. A badge shows that four tools are active. Below is a collapsed “Structure output” section and a blue “Run” button. On the right panel, under “Model Response,” the agent invokes the multiply and subtract tools with inputs {"a": 3, "b": 25} and {"a": 75, "b": 20} respectively. The final “Tool Response” is shown as 75.0. A “View Code” button appears at the bottom.](../../../../translated_images/aitk-agent-response-with-tools.e7c781869dc8041a25f9903ed4f7e8e0c7e13d7d94f6786a6c51b1e172f56866.en.png)
 
-You will run the calculator MCP server locally via the **Agent Builder** acting as the MCP client.
+You will run the calculator MCP server locally via the **Agent Builder**, which acts as the MCP client.
 
 1. Press `F5` to start debugging the MCP server. The **Agent (Prompt) Builder** will open in a new editor tab. The server status is visible in the terminal.
 2. In the **User prompt** field of the **Agent (Prompt) Builder**, enter: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
 3. Click the **Run** button to generate the agent’s response.
 4. Review the agent’s output. The model should conclude that you paid **$55**.
 5. Here’s what should happen:
-    - The agent selects the **multiply** and **subtract** tools to help with the calculation.
-    - The `a` and `b` values are assigned for the **multiply** tool.
-    - The `a` and `b` values are assigned for the **subtract** tool.
+    - The agent selects the **multiply** and **subtract** tools to perform the calculation.
+    - The values for `a` and `b` are assigned for the **multiply** tool.
+    - The values for `a` and `b` are assigned for the **subtract** tool.
     - Each tool’s response is shown in the **Tool Response**.
     - The final output from the model is shown in the **Model Response**.
 6. Submit additional prompts to further test the agent. Modify the prompt in the **User prompt** field as needed.
@@ -173,7 +173,7 @@ You will run the calculator MCP server locally via the **Agent Builder** acting 
 
 ## Assignment
 
-Try adding an additional tool to your **server.py** file (for example, a function that returns the square root of a number). Submit prompts that require the agent to use your new tool (or existing tools). Remember to restart the server to load the new tools.
+Try adding an additional tool to your **server.py** file (for example, a function that returns the square root of a number). Submit prompts that require the agent to use your new tool (or existing tools). Remember to restart the server to load any new tools.
 
 ## Solution
 
@@ -181,17 +181,17 @@ Try adding an additional tool to your **server.py** file (for example, a functio
 
 ## Key Takeaways
 
-The key points from this chapter are:
+Here are the main points from this chapter:
 
 - The AI Toolkit extension is a great client for consuming MCP Servers and their tools.
-- You can add new tools to MCP servers, expanding the agent’s capabilities to meet evolving needs.
-- The AI Toolkit includes templates (e.g., Python MCP server templates) to simplify creating custom tools.
+- You can add new tools to MCP servers, expanding the agent’s capabilities to meet changing needs.
+- The AI Toolkit includes templates (such as Python MCP server templates) to simplify creating custom tools.
 
 ## Additional Resources
 
 - [AI Toolkit docs](https://aka.ms/AIToolkit/doc)
 
-## What’s Next
+## What's Next
 - Next: [Testing & Debugging](../08-testing/README.md)
 
 **Disclaimer**:  

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T22:54:34+00:00",
+  "translation_date": "2025-07-13T17:23:00+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "es"
 }
@@ -29,9 +29,9 @@ Inicia el servidor con el siguiente comando:
 
 ### -8- Ejecutar usando el inspector
 
-El inspector es una excelente herramienta que puede iniciar tu servidor y te permite interactuar con él para que puedas probar que funciona. Vamos a iniciarlo:
+El inspector es una herramienta excelente que puede iniciar tu servidor y te permite interactuar con él para que puedas probar que funciona. Vamos a iniciarlo:
 > [!NOTE]
-> podría verse diferente en el campo "command" ya que contiene el comando para ejecutar un servidor con tu entorno de ejecución específico/
+> puede verse diferente en el campo "command" ya que contiene el comando para ejecutar un servidor con tu entorno de ejecución específico/
 Deberías ver la siguiente interfaz de usuario:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.es.png)
@@ -99,4 +99,4 @@ Crea un servidor MCP simple con una herramienta de tu elección:
 Siguiente: [Primeros pasos con clientes MCP](../02-client/README.md)
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

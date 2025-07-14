@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T19:14:57+00:00",
+  "translation_date": "2025-07-13T20:03:03+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sl"
 }
@@ -59,11 +59,11 @@ Zagon Inspectorja je enak v vseh runtime okoljih. Opazite, da namesto da bi poda
 
 ### -2- Preizkus orodja
 
-Povežite strežnik tako, da v spustnem seznamu izberete SSE in v polje za URL vpišete naslov, kjer vaš strežnik teče, na primer http:localhost:4321/sse. Nato kliknite gumb "Connect". Kot prej izberite seznam orodij, izberite orodje in vnesite vhodne vrednosti. Rezultat bi moral biti podoben spodnjemu:
+Povežite se s strežnikom tako, da v spustnem seznamu izberete SSE in v polje za URL vpišete naslov, kjer vaš strežnik teče, na primer http:localhost:4321/sse. Nato kliknite gumb "Connect". Kot prej izberite seznam orodij, izberite orodje in vnesite vhodne vrednosti. Rezultat bi moral biti podoben spodnjemu:
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sl.png)
 
-Odlično, lahko delate z Inspectorjem, poglejmo zdaj, kako delati z Visual Studio Code.
+Odlično, lahko delate z Inspectorjem, poglejmo, kako lahko delate z Visual Studio Code.
 
 ## Naloga
 
@@ -83,11 +83,11 @@ Ključne ugotovitve iz tega poglavja so naslednje:
 
 ## Primeri
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java kalkulator](../samples/java/calculator/README.md)
+- [.Net kalkulator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript kalkulator](../samples/javascript/README.md)
+- [TypeScript kalkulator](../samples/typescript/README.md)
+- [Python kalkulator](../../../../03-GettingStarted/samples/python)
 
 ## Dodatni viri
 
@@ -98,4 +98,4 @@ Ključne ugotovitve iz tega poglavja so naslednje:
 - Naslednje: [HTTP Streaming z MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

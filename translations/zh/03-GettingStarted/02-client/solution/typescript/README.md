@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fae57a69c2b62cb7d92ff12da65f36c3",
-  "translation_date": "2025-05-16T15:27:20+00:00",
+  "translation_date": "2025-07-13T18:43:26+00:00",
   "source_file": "03-GettingStarted/02-client/solution/typescript/README.md",
   "language_code": "zh"
 }
 -->
 # 运行此示例
 
-建议你安装 `uv`，但不是必须，详情请参见[instructions](https://docs.astral.sh/uv/#highlights)
+建议安装 `uv`，但不是必须，详情请参见 [instructions](https://docs.astral.sh/uv/#highlights)
 
 ## -1- 安装依赖
 
@@ -29,7 +29,7 @@ npm run build
 npm run client
 ```
 
-你应该会看到类似如下的结果：
+你应该会看到类似以下的结果：
 
 ```text
 Prompt:  {
@@ -41,4 +41,4 @@ Tool result:  { content: [ { type: 'text', text: '9' } ] }
 ```
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。

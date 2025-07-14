@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-02T08:01:36+00:00",
+  "translation_date": "2025-07-14T04:59:47+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "pt"
 }
@@ -11,33 +11,33 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Visão Geral
 
-Esta lição foca-se nas melhores práticas avançadas para desenvolver, testar e implementar servidores e funcionalidades MCP em ambientes de produção. À medida que os ecossistemas MCP se tornam mais complexos e importantes, seguir padrões estabelecidos garante fiabilidade, facilidade de manutenção e interoperabilidade. Esta lição consolida a sabedoria prática adquirida em implementações reais de MCP para o ajudar a criar servidores robustos e eficientes com recursos, prompts e ferramentas eficazes.
+Esta lição foca-se nas melhores práticas avançadas para desenvolver, testar e implementar servidores e funcionalidades MCP em ambientes de produção. À medida que os ecossistemas MCP crescem em complexidade e importância, seguir padrões estabelecidos garante fiabilidade, facilidade de manutenção e interoperabilidade. Esta lição consolida a experiência prática adquirida em implementações reais de MCP para o ajudar a criar servidores robustos e eficientes com recursos, prompts e ferramentas eficazes.
 
 ## Objetivos de Aprendizagem
 
 No final desta lição, será capaz de:
 - Aplicar as melhores práticas da indústria no design de servidores e funcionalidades MCP
-- Criar estratégias abrangentes de teste para servidores MCP
-- Projetar padrões de fluxo de trabalho eficientes e reutilizáveis para aplicações MCP complexas
-- Implementar um tratamento adequado de erros, registos e observabilidade em servidores MCP
-- Otimizar implementações MCP para desempenho, segurança e facilidade de manutenção
+- Criar estratégias abrangentes de testes para servidores MCP
+- Projetar padrões de workflow eficientes e reutilizáveis para aplicações MCP complexas
+- Implementar tratamento adequado de erros, logging e observabilidade em servidores MCP
+- Otimizar implementações MCP para desempenho, segurança e manutenção
 
 ## Referências Adicionais
 
-Para a informação mais atualizada sobre melhores práticas MCP, consulte:
+Para obter a informação mais atualizada sobre as melhores práticas MCP, consulte:
 - [Documentação MCP](https://modelcontextprotocol.io/)
 - [Especificação MCP](https://spec.modelcontextprotocol.io/)
 - [Repositório GitHub](https://github.com/modelcontextprotocol)
 
-## Boas Práticas de Desenvolvimento de Ferramentas MCP
+## Boas Práticas no Desenvolvimento de Ferramentas MCP
 
-### Princípios Arquiteturais
+### Princípios Arquitetónicos
 
 #### 1. Princípio da Responsabilidade Única
 
 Cada funcionalidade MCP deve ter um propósito claro e focado. Em vez de criar ferramentas monolíticas que tentam lidar com múltiplas preocupações, desenvolva ferramentas especializadas que se destaquem em tarefas específicas.
 
-**Bom Exemplo:**
+**Exemplo Bom:**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -95,7 +95,7 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**Exemplo Fraco:**
+**Exemplo Mau:**
 ```csharp
 // A tool trying to do too many things
 public class WeatherToolSuite : ITool
@@ -155,7 +155,7 @@ public class WeatherToolSuite : ITool
 
 #### 2. Injeção de Dependências e Testabilidade
 
-Projete as ferramentas para receberem as suas dependências através da injeção no construtor, tornando-as testáveis e configuráveis:
+Projete ferramentas para receber as suas dependências através da injeção no construtor, tornando-as testáveis e configuráveis:
 
 ```java
 // Java example with dependency injection
@@ -181,7 +181,7 @@ public class CurrencyConversionTool implements Tool {
 
 #### 3. Ferramentas Componíveis
 
-Projete ferramentas que possam ser compostas para criar fluxos de trabalho mais complexos:
+Projete ferramentas que possam ser combinadas para criar workflows mais complexos:
 
 ```python
 # Python example showing composable tools
@@ -212,9 +212,9 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-### Melhores Práticas de Design de Esquemas
+### Melhores Práticas no Design de Esquemas
 
-O esquema é o contrato entre o modelo e a sua ferramenta. Esquemas bem desenhados levam a uma melhor usabilidade da ferramenta.
+O esquema é o contrato entre o modelo e a sua ferramenta. Esquemas bem desenhados conduzem a uma melhor usabilidade da ferramenta.
 
 #### 1. Descrições Claras dos Parâmetros
 
@@ -299,7 +299,7 @@ Map<String, Object> getSchema() {
 
 #### 3. Estruturas de Retorno Consistentes
 
-Mantenha a consistência nas estruturas de resposta para facilitar a interpretação dos resultados pelos modelos:
+Mantenha consistência nas estruturas de resposta para facilitar a interpretação dos resultados pelos modelos:
 
 ```python
 async def execute_async(self, request):
@@ -420,7 +420,7 @@ public ToolResponse execute(ToolRequest request) {
 
 #### 3. Lógica de Repetição
 
-Implemente lógica de repetição adequada para falhas transitórias:
+Implemente lógica adequada de repetição para falhas transitórias:
 
 ```python
 async def execute_async(self, request):
@@ -498,7 +498,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. Processamento Assíncrono
 
-Use padrões de programação assíncrona para operações dependentes de I/O:
+Utilize padrões de programação assíncrona para operações dependentes de I/O:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -547,7 +547,7 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Limitação de Recursos
+#### 3. Controlo de Recursos
 
 Implemente limitação de recursos para evitar sobrecarga:
 
@@ -682,7 +682,7 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. Manipulação de Dados Sensíveis
+#### 3. Tratamento de Dados Sensíveis
 
 Trate os dados sensíveis com cuidado:
 
@@ -735,11 +735,11 @@ class SecureDataTool(Tool):
 
 ## Melhores Práticas de Testes para Ferramentas MCP
 
-Testes abrangentes garantem que as ferramentas MCP funcionam corretamente, lidam com casos extremos e integram-se adequadamente com o resto do sistema.
+Testes abrangentes garantem que as ferramentas MCP funcionam corretamente, lidam com casos extremos e se integram adequadamente com o restante do sistema.
 
 ### Testes Unitários
 
-#### 1. Testar Cada Ferramenta Isoladamente
+#### 1. Testar Cada Ferramenta em Isolamento
 
 Crie testes focados na funcionalidade de cada ferramenta:
 
@@ -906,9 +906,9 @@ async def test_api_tool_handles_rate_limiting():
 
 ### Testes de Integração
 
-#### 1. Teste da Cadeia de Ferramentas
+#### 1. Testes da Cadeia de Ferramentas
 
-Teste ferramentas a funcionar em conjunto nas combinações esperadas:
+Teste as ferramentas a funcionar em conjunto nas combinações esperadas:
 
 ```csharp
 [Fact]
@@ -947,9 +947,9 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 }
 ```
 
-#### 2. Teste do Servidor MCP
+#### 2. Testes do Servidor MCP
 
-Teste o servidor MCP com registo completo e execução das ferramentas:
+Teste o servidor MCP com o registo completo e execução das ferramentas:
 
 ```java
 @SpringBootTest
@@ -1017,7 +1017,7 @@ public class McpServerIntegrationTest {
 
 #### 3. Testes End-to-End
 
-Teste fluxos completos desde o prompt do modelo até à execução da ferramenta:
+Teste workflows completos desde o prompt do modelo até à execução da ferramenta:
 
 ```python
 @pytest.mark.asyncio
@@ -1076,7 +1076,7 @@ async def test_model_interaction_with_tool():
 
 #### 1. Testes de Carga
 
-Teste quantos pedidos concorrentes o seu servidor MCP consegue suportar:
+Teste quantas requisições concorrentes o seu servidor MCP consegue suportar:
 
 ```csharp
 [Fact]
@@ -1111,7 +1111,7 @@ public async Task McpServer_HandlesHighConcurrency()
 
 #### 2. Testes de Stress
 
-Teste o sistema sob cargas extremas:
+Teste o sistema sob carga extrema:
 
 ```java
 @Test
@@ -1164,7 +1164,7 @@ public void testServerUnderStress() {
 }
 ```
 
-#### 3. Monitorização e Perfilagem
+#### 3. Monitorização e Profiling
 
 Configure monitorização para análise de desempenho a longo prazo:
 
@@ -1208,13 +1208,13 @@ def configure_monitoring(server):
     return server
 ```
 
-## Padrões de Design de Fluxos de Trabalho MCP
+## Padrões de Design de Workflows MCP
 
-Fluxos de trabalho MCP bem desenhados melhoram a eficiência, fiabilidade e facilidade de manutenção. Aqui estão os padrões principais a seguir:
+Workflows MCP bem desenhados melhoram a eficiência, fiabilidade e manutenção. Aqui estão os principais padrões a seguir:
 
 ### 1. Padrão Cadeia de Ferramentas
 
-Ligue múltiplas ferramentas em sequência, onde a saída de uma é a entrada da seguinte:
+Ligue várias ferramentas em sequência onde a saída de uma é a entrada da seguinte:
 
 ```python
 # Python Chain of Tools implementation
@@ -1337,7 +1337,7 @@ public class ContentDispatcherTool : IMcpTool
 
 ### 3. Padrão de Processamento Paralelo
 
-Execute múltiplas ferramentas simultaneamente para maior eficiência:
+Execute várias ferramentas simultaneamente para maior eficiência:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1405,7 +1405,7 @@ public class ParallelDataProcessingWorkflow {
 
 ### 4. Padrão de Recuperação de Erros
 
-Implemente alternativas elegantes para falhas das ferramentas:
+Implemente fallback elegantes para falhas de ferramentas:
 
 ```python
 class ResilientWorkflow:
@@ -1459,9 +1459,9 @@ async def get_weather(workflow, location):
     )
 ```
 
-### 5. Padrão de Composição de Fluxos de Trabalho
+### 5. Padrão de Composição de Workflows
 
-Construa fluxos complexos compondo fluxos mais simples:
+Construa workflows complexos compondo workflows mais simples:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1512,9 +1512,9 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 
 ## Visão Geral
 
-Testar é um aspeto crítico para desenvolver servidores MCP fiáveis e de alta qualidade. Este guia fornece melhores práticas abrangentes e dicas para testar os seus servidores MCP ao longo do ciclo de desenvolvimento, desde testes unitários a testes de integração e validação end-to-end.
+Testar é um aspeto crítico no desenvolvimento de servidores MCP fiáveis e de alta qualidade. Este guia fornece melhores práticas abrangentes e dicas para testar os seus servidores MCP ao longo do ciclo de desenvolvimento, desde testes unitários a testes de integração e validação end-to-end.
 
-## Porque é que Testar é Importante para Servidores MCP
+## Porquê Testar Servidores MCP
 
 Os servidores MCP funcionam como middleware crucial entre modelos de IA e aplicações cliente. Testes rigorosos garantem:
 
@@ -1528,14 +1528,14 @@ Os servidores MCP funcionam como middleware crucial entre modelos de IA e aplica
 
 ### Testes Unitários (Base)
 
-Os testes unitários verificam componentes individuais do seu servidor MCP isoladamente.
+Os testes unitários verificam componentes individuais do seu servidor MCP em isolamento.
 
-#### O Que Testar
+#### O que Testar
 
-1. **Handlers de Recursos**: Testar a lógica de cada handler de recurso de forma independente
+1. **Handlers de Recursos**: Testar a lógica de cada handler de recurso independentemente
 2. **Implementações de Ferramentas**: Verificar o comportamento das ferramentas com várias entradas
 3. **Templates de Prompt**: Garantir que os templates de prompt são renderizados corretamente
-4. **Validação de Esquema**: Testar a lógica de validação de parâmetros
+4. **Validação de Esquema**: Testar a lógica de validação dos parâmetros
 5. **Tratamento de Erros**: Verificar respostas de erro para entradas inválidas
 
 #### Melhores Práticas para Testes Unitários
@@ -1584,15 +1584,15 @@ def test_calculator_tool_add():
 
 ### Testes de Integração (Camada Intermédia)
 
-Os testes de integração verificam as interações entre componentes do seu servidor MCP.
+Os testes de integração verificam as interações entre os componentes do seu servidor MCP.
 
-#### O Que Testar
+#### O que Testar
 
-1. **Inicialização do Servidor**: Testar arranque do servidor com várias configurações
-2. **Registo de Rotas**: Verificar que todos os endpoints estão corretamente registados
-3. **Processamento de Pedidos**: Testar o ciclo completo de pedido-resposta
+1. **Inicialização do Servidor**: Testar o arranque do servidor com várias configurações
+2. **Registo de Rotas**: Verificar se todos os endpoints estão corretamente registados
+3. **Processamento de Requisições**: Testar o ciclo completo de pedido-resposta
 4. **Propagação de Erros**: Garantir que os erros são tratados corretamente entre componentes
-5. **Autenticação & Autorização**: Testar os mecanismos de segurança
+5. **Autenticação e Autorização**: Testar os mecanismos de segurança
 
 #### Melhores Práticas para Testes de Integração
 
@@ -1632,15 +1632,15 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 
 ### Testes End-to-End (Camada Superior)
 
-Os testes end-to-end verificam o comportamento completo do sistema do cliente ao servidor.
+Os testes end-to-end verificam o comportamento completo do sistema desde o cliente até ao servidor.
 
-#### O Que Testar
+#### O que Testar
 
 1. **Comunicação Cliente-Servidor**: Testar ciclos completos de pedido-resposta
 2. **SDKs de Cliente Reais**: Testar com implementações reais de cliente
-3. **Desempenho sob Carga**: Verificar comportamento com múltiplos pedidos concorrentes
-4. **Recuperação de Erros**: Testar recuperação do sistema após falhas
-5. **Operações de Longa Duração**: Verificar tratamento de streaming e operações prolongadas
+3. **Desempenho Sob Carga**: Verificar o comportamento com múltiplas requisições concorrentes
+4. **Recuperação de Erros**: Testar a recuperação do sistema após falhas
+5. **Operações de Longa Duração**: Verificar o tratamento de streaming e operações prolongadas
 
 #### Melhores Práticas para Testes E2E
 
@@ -1674,18 +1674,18 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
-## Estratégias de Mock para Testes MCP
+## Estratégias de Mocking para Testes MCP
 
 O mocking é essencial para isolar componentes durante os testes.
 
 ### Componentes a Mockar
 
 1. **Modelos de IA Externos**: Mockar respostas do modelo para testes previsíveis
-2. **Serviços Externos**: Mockar dependências API (bases de dados, serviços terceiros)
+2. **Serviços Externos**: Mockar dependências de API (bases de dados, serviços terceiros)
 3. **Serviços de Autenticação**: Mockar provedores de identidade
 4. **Fornecedores de Recursos**: Mockar handlers de recursos dispendiosos
 
-### Exemplo: Mock de Resposta de Modelo de IA
+### Exemplo: Mockar uma Resposta de Modelo de IA
 
 ```csharp
 // C# example with Moq
@@ -1719,15 +1719,15 @@ def test_with_mock_model(mock_model):
 
 ## Testes de Desempenho
 
-Os testes de desempenho são cruciais para servidores MCP em produção.
+Testar o desempenho é crucial para servidores MCP em produção.
 
-### O Que Medir
+### O que Medir
 
 1. **Latência**: Tempo de resposta para pedidos
-2. **Taxa de Transferência**: Pedidos processados por segundo
-3. **Utilização de Recursos**: Uso de CPU, memória, rede
+2. **Throughput**: Pedidos processados por segundo
+3. **Utilização de Recursos**: CPU, memória, uso de rede
 4. **Gestão de Concorrência**: Comportamento sob pedidos paralelos
-5. **Características de Escalabilidade**: Desempenho conforme a carga aumenta
+5. **Características de Escalabilidade**: Desempenho à medida que a carga aumenta
 
 ### Ferramentas para Testes de Desempenho
 
@@ -1782,9 +1782,9 @@ Automatizar os seus testes garante qualidade consistente e ciclos de feedback ma
 
 ### Integração CI/CD
 
-1. **Executar Testes Unitários em Pull Requests**: Garantir que mudanças no código não quebram funcionalidades existentes
+1. **Executar Testes Unitários em Pull Requests**: Garantir que alterações no código não quebram funcionalidades existentes
 2. **Testes de Integração em Staging**: Executar testes de integração em ambientes pré-produção
-3. **Linhas de Base de Desempenho**: Manter benchmarks para detetar regressões
+3. **Baselines de Desempenho**: Manter benchmarks de desempenho para detetar regressões
 4. **Scans de Segurança**: Automatizar testes de segurança como parte do pipeline
 
 ### Exemplo de Pipeline CI (GitHub Actions)
@@ -1826,19 +1826,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## Testar Conformidade com a Especificação MCP
+## Testes para Conformidade com a Especificação MCP
 
 Verifique se o seu servidor implementa corretamente a especificação MCP.
 
 ### Áreas-Chave de Conformidade
 
-1. **Endpoints API**: Testar endpoints obrigatórios (/resources, /tools, etc.)
-2. **Formato Pedido/Resposta**: Validar conformidade com esquemas
+1. **Endpoints da API**: Testar endpoints obrigatórios (/resources, /tools, etc.)
+2. **Formato de Pedido/Resposta**: Validar conformidade com o esquema
 3. **Códigos de Erro**: Verificar códigos de estado corretos para vários cenários
-4. **Tipos de Conteúdo**: Testar manipulação de diferentes tipos de conteúdo
-5. **Fluxo de Autenticação**: Verificar mecanismos de autenticação conforme especificação
+4. **Tipos de Conteúdo**: Testar o tratamento de diferentes tipos de conteúdo
+5. **Fluxo de Autenticação**: Verificar mecanismos de autenticação conformes à especificação
 
-### Conjunto de Testes de Conformidade
+### Suite de Testes de Conformidade
 
 ```csharp
 [Fact]
@@ -1865,62 +1865,62 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## Top 10 Dicas para Testes Eficazes de Servidores MCP
+## Top 10 Dicas para Testar Servidores MCP de Forma Eficaz
 
 1. **Testar Definições de Ferramentas Separadamente**: Verificar definições de esquema independentemente da lógica da ferramenta
-2. **Usar Testes Parametrizados**: Testar ferramentas com várias entradas, incluindo casos extremos
-3. **Verificar Respostas de Erro**: Confirmar tratamento adequado de todos os possíveis erros
-4. **Testar Lógica de Autorização**: Garantir controlo de acesso correto para diferentes perfis de utilizador
+2. **Usar Testes Parametrizados**: Testar ferramentas com uma variedade de entradas, incluindo casos extremos
+3. **Verificar Respostas de Erro**: Garantir tratamento correto de erros para todas as condições possíveis
+4. **Testar Lógica de Autorização**: Assegurar controlo de acesso adequado para diferentes perfis de utilizador
 5. **Monitorizar Cobertura de Testes**: Apontar para alta cobertura do código crítico
-6. **Testar Respostas em Streaming**: Verificar tratamento correto de conteúdos em streaming
+6. **Testar Respostas em Streaming**: Verificar o tratamento correto de conteúdos em streaming
 7. **Simular Problemas de Rede**: Testar comportamento em condições de rede instáveis
 8. **Testar Limites de Recursos**: Verificar comportamento ao atingir quotas ou limites de taxa
-9. **Automatizar Testes de Regressão**: Construir uma suite que execute a cada alteração de código
+9. **Automatizar Testes de Regressão**: Construir uma suite que corra a cada alteração de código
 10. **Documentar Casos de Teste**: Manter documentação clara dos cenários de teste
 
 ## Armadilhas Comuns nos Testes
 
-- **Excesso de confiança em testes do caminho feliz**: Assegure-se de testar casos de erro a fundo
-- **Ignorar testes de desempenho**: Identifique gargalos antes que afetem produção
+- **Excesso de confiança em testes de caminhos felizes**: Certifique-se de testar casos de erro exaustivamente
+- **Ignorar testes de desempenho**: Identifique gargalos antes que afetem a produção
 - **Testar apenas em isolamento**: Combine testes unitários, de integração e end-to-end
-- **Cobertura incompleta da API**: Garanta que todos os endpoints e funcionalidades são testados
+- **Cobertura incompleta da API**: Assegure que todos os endpoints e funcionalidades são testados
 - **Ambientes de teste inconsistentes**: Use containers para garantir ambientes de teste consistentes
 
 ## Conclusão
 
-Uma estratégia de testes abrangente é essencial para desenvolver servidores MCP fiáveis e de alta qualidade. Ao implementar as melhores práticas e dicas apresentadas neste guia, poderá garantir que as suas implementações MCP cumprem os mais altos padrões de qualidade, fiabilidade e desempenho.
+Uma estratégia de testes abrangente é essencial para desenvolver servidores MCP fiáveis e de alta qualidade. Ao implementar as melhores práticas e dicas apresentadas neste guia, pode garantir que as suas implementações MCP cumprem os mais elevados padrões de qualidade, fiabilidade e desempenho.
 
-## Principais Pontos a Reter
+## Principais Conclusões
 
-1. **Design de Ferramentas**: Siga o princípio da responsabilidade única, use injeção de dependências e projete para composibilidade
+1. **Design de Ferramentas**: Siga o princípio da responsabilidade única, use injeção de dependências e projete para composabilidade
 2. **Design de Esquemas**: Crie esquemas claros, bem documentados e com restrições de validação adequadas
 3. **Tratamento de Erros**: Implemente tratamento elegante de erros, respostas estruturadas e lógica de repetição
 4. **Desempenho**: Utilize cache, processamento assíncrono e limitação de recursos
-5. **Segurança**: Aplique validação rigorosa de entradas, verificações de autorização e manipulação cuidadosa de dados sensíveis
+5. **Segurança**: Aplique validação rigorosa de entradas, verificações de autorização e tratamento cuidadoso de dados sensíveis
 6. **Testes**: Crie testes unitários, de integração e end-to-end abrangentes
-7. **Padrões de Fluxo de Trabalho**: Aplique padrões estabelecidos como cadeias, dispatchers e processamento paralelo
+7. **Padrões de Workflow**: Aplique padrões estabelecidos como cadeias, dispatchers e processamento paralelo
 
 ## Exercício
 
-Projete uma ferramenta MCP e um fluxo de trabalho para um sistema de processamento de documentos que:
+Projete uma ferramenta MCP e um workflow para um sistema de processamento de documentos que:
 
 1. Aceite documentos em múltiplos formatos (PDF, DOCX, TXT)
-2. Extraia texto e informações-chave dos documentos
+2. Extraia texto e informação chave dos documentos
 3. Classifique documentos por tipo e conteúdo
 4. Gere um resumo de cada documento
 
-Implemente os esquemas da ferramenta, tratamento de erros e um padrão de fluxo de trabalho que melhor se adapte a este cenário. Considere como testaria esta implementação.
+Implemente os esquemas da ferramenta, tratamento de erros e um padrão de workflow que melhor se adeque a este cenário. Considere como testaria esta implementação.
 
 ## Recursos
 
-1. Junte-se à comunidade MCP no [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) para se manter atualizado com os últimos desenvolvimentos
-2. Contribua para projetos open-source [MCP](https://github.com/modelcontextprotocol)
-3. Aplique os princípios MCP nas iniciativas de IA da sua própria organização
-4. Explore implementações MCP especializadas para o seu setor
-5. Considere fazer cursos avançados sobre tópicos específicos MCP, como integração multimodal ou integração de aplicações empresariais
-6. Experimente construir as suas próprias ferramentas e fluxos de trabalho MCP usando os princípios aprendidos através do [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+1. Junte-se à comunidade MCP no [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) para se manter atualizado sobre os últimos desenvolvimentos  
+2. Contribua para projetos open-source [MCP](https://github.com/modelcontextprotocol)  
+3. Aplique os princípios MCP nas iniciativas de IA da sua organização  
+4. Explore implementações MCP especializadas para o seu setor.
+5. Considere fazer cursos avançados sobre tópicos específicos do MCP, como integração multimodal ou integração de aplicações empresariais.  
+6. Experimente criar as suas próprias ferramentas e fluxos de trabalho MCP usando os princípios aprendidos no [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-Seguinte: Estudos de caso de Melhores Práticas [case studies](../09-CaseStudy/README.md)
+Próximo: Melhores Práticas [estudos de caso](../09-CaseStudy/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional por um tradutor humano. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

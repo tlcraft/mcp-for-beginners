@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T06:05:34+00:00",
+  "translation_date": "2025-07-13T20:11:17+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "tl"
 }
@@ -31,24 +31,24 @@ Habang tumatakbo ang server sa isang terminal, buksan ang isa pang terminal at p
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Dapat nitong simulan ang isang web server na may visual interface na magpapahintulot sa iyo na subukan ang sample.
+Dapat itong magsimula ng web server na may visual na interface na nagpapahintulot sa iyo na subukan ang sample.
 
-> Siguraduhing naka-set ang **SSE** bilang transport type, at ang URL ay `http://localhost:3001/sse`.
+> Siguraduhing ang **SSE** ang napili bilang uri ng transport, at ang URL ay `http://localhost:3001/sse`.
 
-Once the server is connected: 
+Kapag nakakonekta na ang server:
 
-- try listing tools and run `add`, gamit ang mga args na 2 at 4, makikita mo ang 6 bilang resulta.
+- subukang ilista ang mga tools at patakbuhin ang `add`, gamit ang mga argumento na 2 at 4, dapat lumabas ang 6 bilang resulta.
 - pumunta sa resources at resource template at tawagin ang "greeting", mag-type ng pangalan at makikita mo ang pagbati gamit ang pangalang ibinigay mo.
 
 ### Pagsubok sa CLI mode
 
-Maaari mo itong direktang patakbuhin sa CLI mode sa pamamagitan ng pagsunod na utos:
+Maaari mo itong patakbuhin nang direkta sa CLI mode sa pamamagitan ng pagpapatakbo ng sumusunod na utos:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Ipapakita nito ang lahat ng tools na available sa server. Makikita mo ang sumusunod na output:
+Ililista nito ang lahat ng tools na available sa server. Dapat mong makita ang sumusunod na output:
 
 ```text
 {
@@ -86,7 +86,7 @@ Para tawagin ang isang tool, i-type:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Makikita mo ang sumusunod na output:
+Dapat mong makita ang sumusunod na output:
 
 ```text
 {
@@ -104,5 +104,5 @@ Makikita mo ang sumusunod na output:
 > Mas mabilis karaniwang patakbuhin ang inspector sa CLI mode kaysa sa browser.
 > Basahin pa ang tungkol sa inspector [dito](https://github.com/modelcontextprotocol/inspector).
 
-**Pagtatangi**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat aming pinagsisikapang maging tumpak ang salin, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T19:15:17+00:00",
+  "translation_date": "2025-07-13T21:42:50+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "sl"
 }
@@ -26,7 +26,7 @@ AI Toolkit je zmogljiva razširitev za Visual Studio Code, ki poenostavi razvoj 
 Na koncu te lekcije boste znali:
 
 - Uporabiti MCP strežnik preko AI Toolkit.
-- Nastaviti konfiguracijo agenta, da lahko odkrije in uporablja orodja, ki jih ponuja MCP strežnik.
+- Konfigurirati nastavitve agenta, da bo lahko odkrival in uporabljal orodja, ki jih ponuja MCP strežnik.
 - Uporabljati MCP orodja preko naravnega jezika.
 
 ## Pristop
@@ -34,8 +34,8 @@ Na koncu te lekcije boste znali:
 Tako bomo pristopili k nalogi na visoki ravni:
 
 - Ustvariti agenta in določiti njegov sistemski poziv.
-- Ustvariti MCP strežnik s kalkulatorskimi orodji.
-- Povezati Agent Builder s MCP strežnikom.
+- Ustvariti MCP strežnik s kalkulatorjem.
+- Povezati Agent Builder s strežnikom MCP.
 - Preizkusiti klic orodij agenta preko naravnega jezika.
 
 Super, zdaj ko razumemo potek, konfigurirajmo AI agenta, da bo lahko uporabljal zunanja orodja preko MCP in tako razširil svoje zmožnosti!
@@ -75,22 +75,22 @@ Vaja uporablja model **GPT-4o**. Model je treba dodati v **My Models** pred ustv
 
 ### -2- Ustvarite sistemski poziv za agenta
 
-Ko je agent pripravljen, je čas, da določite njegovo osebnost in namen. V tem razdelku boste uporabili funkcijo **Generate system prompt**, da opišete želeno vedenje agenta — v tem primeru kalkulatorskega agenta — in model bo za vas ustvaril sistemski poziv.
+Ko imate osnovno strukturo agenta, je čas, da določite njegovo osebnost in namen. V tem razdelku boste uporabili funkcijo **Generate system prompt**, da opišete pričakovano vedenje agenta — v tem primeru kalkulatorja — in model bo za vas ustvaril sistemski poziv.
 
-![Posnetek zaslona vmesnika "Calculator Agent" v AI Toolkit za Visual Studio Code z odprtim modalnim oknom z naslovom "Generate a prompt." Modalno okno pojasnjuje, da je mogoče ustvariti predlogo poziva z deljenjem osnovnih podatkov in vsebuje besedilno polje s primerom sistemskega poziva: "You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result." Pod besedilnim poljem sta gumba "Close" in "Generate." V ozadju je del konfiguracije agenta, vključno z izbranim modelom "OpenAI GPT-4o (via GitHub)" in polji za sistemski in uporabniški poziv.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.sl.png)
+![Posnetek zaslona vmesnika "Calculator Agent" v AI Toolkit za Visual Studio Code z odprtim modalnim oknom z naslovom "Generate a prompt." Modalno okno pojasnjuje, da je mogoče ustvariti predlogo poziva z deljenjem osnovnih podatkov in vsebuje besedilno polje s primerom sistemskega poziva: "You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result." Pod poljem sta gumba "Close" in "Generate." V ozadju je del konfiguracije agenta, vključno z izbranim modelom "OpenAI GPT-4o (via GitHub)" in polji za sistemski in uporabniški poziv.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.sl.png)
 
 1. V razdelku **Prompts** kliknite gumb **Generate system prompt**. Ta gumb odpre graditelja pozivov, ki uporablja AI za generiranje sistemskega poziva za agenta.
 1. V oknu **Generate a prompt** vnesite naslednje: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
 1. Kliknite gumb **Generate**. V spodnjem desnem kotu se bo prikazalo obvestilo, da se sistemski poziv generira. Ko je generiranje končano, se bo poziv prikazal v polju **System prompt** v **Agent (Prompt) Builder**.
-1. Preglejte **System prompt** in po potrebi prilagodite.
+1. Preglejte **System prompt** in ga po potrebi prilagodite.
 
 ### -3- Ustvarite MCP strežnik
 
-Zdaj, ko ste definirali sistemski poziv agenta — ki usmerja njegovo vedenje in odzive — je čas, da agenta opremite s praktičnimi zmožnostmi. V tem razdelku boste ustvarili kalkulatorski MCP strežnik z orodji za izvajanje seštevanja, odštevanja, množenja in deljenja. Ta strežnik bo agentu omogočil izvajanje matematičnih operacij v realnem času kot odgovor na naravne jezikovne ukaze.
+Zdaj, ko ste določili sistemski poziv agenta — ki usmerja njegovo vedenje in odzive — je čas, da agenta opremite s praktičnimi zmožnostmi. V tem razdelku boste ustvarili MCP strežnik kalkulatorja z orodji za izvajanje seštevanja, odštevanja, množenja in deljenja. Ta strežnik bo agentu omogočil izvajanje matematičnih operacij v realnem času kot odziv na naravne jezikovne ukaze.
 
-![Posnetek spodnjega dela vmesnika Calculator Agent v razširitvi AI Toolkit za Visual Studio Code. Prikazani so razširljivi meniji za “Tools” in “Structure output,” skupaj z izbirnim menijem “Choose output format” nastavljenim na “text.” Na desni je gumb “+ MCP Server” za dodajanje Model Context Protocol strežnika. Nad razdelkom Tools je prikazana ikona za sliko.](../../../../translated_images/aitk-add-mcp-server.9742cfddfe808353c0caf9cc0a7ed3e80e13abf4d2ebde315c81c3cb02a2a449.sl.png)
+![Posnetek zaslona spodnjega dela vmesnika Calculator Agent v razširitvi AI Toolkit za Visual Studio Code. Prikazani so razširljivi meniji za “Tools” in “Structure output,” skupaj z izbirnikom “Choose output format” nastavljenim na “text.” Na desni je gumb “+ MCP Server” za dodajanje Model Context Protocol strežnika. Nad razdelkom Tools je prikazana ikona za sliko.](../../../../translated_images/aitk-add-mcp-server.9742cfddfe808353c0caf9cc0a7ed3e80e13abf4d2ebde315c81c3cb02a2a449.sl.png)
 
-AI Toolkit je opremljen s predlogami, ki olajšajo ustvarjanje lastnih MCP strežnikov. Uporabili bomo Python predlogo za ustvarjanje kalkulatorskega MCP strežnika.
+AI Toolkit je opremljen s predlogami, ki olajšajo ustvarjanje lastnih MCP strežnikov. Uporabili bomo Python predlogo za ustvarjanje MCP strežnika kalkulatorja.
 
 *Opomba*: AI Toolkit trenutno podpira Python in TypeScript.
 
@@ -106,7 +106,7 @@ AI Toolkit je opremljen s predlogami, ki olajšajo ustvarjanje lastnih MCP stre�
     1. Windows - `.venv\Scripts\activate`
     1. macOS/Linux - `source venv/bin/activate`
 1. V terminalu namestite odvisnosti: `pip install -e .[dev]`
-1. V pogledu **Explorer** v **Activity Bar** razširite mapo **src** in izberite **server.py**, da odprete datoteko v urejevalniku.
+1. V pogledu **Explorer** v **Activity Bar** razširite mapo **src** in odprite datoteko **server.py**.
 1. Zamenjajte kodo v datoteki **server.py** z naslednjo in shranite:
 
     ```python
@@ -150,30 +150,30 @@ AI Toolkit je opremljen s predlogami, ki olajšajo ustvarjanje lastnih MCP stre�
         return a / b
     ```
 
-### -4- Zaženite agenta s kalkulatorskim MCP strežnikom
+### -4- Zaženite agenta s kalkulator MCP strežnikom
 
-Zdaj, ko ima vaš agent orodja, je čas, da jih uporabite! V tem razdelku boste agentu poslali pozive, da preizkusite in potrdite, ali agent uporablja ustrezno orodje iz kalkulatorskega MCP strežnika.
+Zdaj, ko ima vaš agent orodja, je čas, da jih uporabite! V tem razdelku boste agentu poslali pozive, da preizkusite in potrdite, ali agent uporablja ustrezno orodje iz kalkulator MCP strežnika.
 
 ![Posnetek zaslona vmesnika Calculator Agent v razširitvi AI Toolkit za Visual Studio Code. Na levem panelu, pod “Tools,” je dodan MCP strežnik z imenom local-server-calculator_server, ki prikazuje štiri razpoložljiva orodja: add, subtract, multiply in divide. Prikazana je značka, da so štiri orodja aktivna. Spodaj je strnjen razdelek “Structure output” in modri gumb “Run.” Na desnem panelu, pod “Model Response,” agent kliče orodji multiply in subtract z vhodoma {"a": 3, "b": 25} in {"a": 75, "b": 20}. Končni “Tool Response” je prikazan kot 75.0. Na dnu je gumb “View Code.”](../../../../translated_images/aitk-agent-response-with-tools.e7c781869dc8041a25f9903ed4f7e8e0c7e13d7d94f6786a6c51b1e172f56866.sl.png)
 
-Kalkulatorski MCP strežnik boste zagnali na svojem lokalnem razvojnem računalniku preko **Agent Builder** kot MCP odjemalec.
+Kalkulator MCP strežnik boste zagnali na svojem lokalnem razvojnem računalniku preko **Agent Builder** kot MCP odjemalec.
 
 1. Pritisnite `F5` za začetek razhroščevanja MCP strežnika. **Agent (Prompt) Builder** se bo odprl v novem zavihku urejevalnika. Status strežnika je viden v terminalu.
 1. V polje **User prompt** v **Agent (Prompt) Builder** vnesite naslednji poziv: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
 1. Kliknite gumb **Run**, da ustvarite odgovor agenta.
 1. Preglejte izhod agenta. Model bi moral zaključiti, da ste plačali **$55**.
 1. Tukaj je razčlenitev, kaj se zgodi:
-    - Agent izbere orodji **multiply** in **subtract**, da pomaga pri izračunu.
+    - Agent izbere orodji **multiply** in **subtract** za pomoč pri izračunu.
     - Za orodje **multiply** so dodeljene vrednosti `a` in `b`.
     - Za orodje **subtract** so dodeljene vrednosti `a` in `b`.
     - Odziv vsakega orodja je prikazan v ustreznem polju **Tool Response**.
     - Končni izhod modela je prikazan v polju **Model Response**.
-1. Pošljite dodatne pozive za nadaljnje testiranje agenta. Obstoječi poziv lahko spremenite tako, da kliknete v polje **User prompt** in zamenjate besedilo.
+1. Pošljite dodatne pozive za nadaljnje testiranje agenta. Obstoječi poziv lahko spremenite tako, da kliknete v polje **User prompt** in ga zamenjate.
 1. Ko končate s testiranjem, lahko strežnik ustavite v terminalu s pritiskom na **CTRL/CMD+C**.
 
 ## Naloga
 
-Poskusite dodati dodatno orodje v vašo datoteko **server.py** (npr. vrnite kvadratni koren števila). Pošljite dodatne pozive, ki bodo zahtevali uporabo vašega novega orodja (ali obstoječih orodij). Ne pozabite ponovno zagnati strežnika, da naložite novo dodana orodja.
+Poskusite dodati dodatno orodje v vašo datoteko **server.py** (npr. vrnite kvadratni koren števila). Pošljite dodatne pozive, ki bodo zahtevali uporabo vašega novega orodja (ali obstoječih). Ne pozabite znova zagnati strežnika, da naložite nova orodja.
 
 ## Rešitev
 

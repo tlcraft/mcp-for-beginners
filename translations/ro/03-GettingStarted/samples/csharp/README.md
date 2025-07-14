@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T06:07:56+00:00",
+  "translation_date": "2025-07-13T22:18:56+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ro"
 }
@@ -23,8 +23,8 @@ Acest serviciu de calculator oferă următoarele capabilități:
    - Înmulțirea a două numere
    - Împărțirea unui număr la altul (cu verificare pentru împărțirea la zero)
 
-## Utilizarea `stdio` Type
-
+## Utilizarea tipului `stdio`
+  
 ## Configurare
 
 1. **Configurează serverele MCP**:
@@ -56,41 +56,40 @@ Acest serviciu de calculator oferă următoarele capabilități:
 
    - Ți se va cere să introduci rădăcina depozitului GitHub, care poate fi obținută cu comanda `git rev-parse --show-toplevel`.
 
-## Using the Service
+## Utilizarea Serviciului
 
-The service exposes the following API endpoints through the MCP protocol:
+Serviciul expune următoarele endpoint-uri API prin protocolul MCP:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Adună două numere
+- `subtract(a, b)`: Scade al doilea număr din primul
+- `multiply(a, b)`: Înmulțește două numere
+- `divide(a, b)`: Împarte primul număr la al doilea (cu verificare pentru zero)
+- isPrime(n): Verifică dacă un număr este prim
 
-## Test with Github Copilot Chat in VS Code
+## Testare cu Github Copilot Chat în VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
-   - "Add 5 and 3"
-   - "Subtract 10 from 4"
-   - "Multiply 6 and 7"
-   - "Divide 8 by 2"
-   - "Does 37854 prime?"
-   - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
-   - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+1. Încearcă să faci o cerere către serviciu folosind protocolul MCP. De exemplu, poți întreba:
+   - "Adună 5 și 3"
+   - "Scade 10 din 4"
+   - "Înmulțește 6 și 7"
+   - "Împarte 8 la 2"
+   - "Este 37854 prim?"
+   - "Care sunt cele 3 numere prime înainte și după 4242?"
+2. Pentru a te asigura că folosește uneltele, adaugă #MyCalculator în prompt. De exemplu:
+   - "Adună 5 și 3 #MyCalculator"
+   - "Scade 10 din 4 #MyCalculator"
 
+## Versiunea Containerizată
 
-## Containerized Version
+Soluția anterioară este excelentă când ai instalat .NET SDK și toate dependențele sunt în regulă. Totuși, dacă dorești să distribui soluția sau să o rulezi într-un mediu diferit, poți folosi versiunea containerizată.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` cu numele tău de utilizator Docker Hub):
+1. Pornește Docker și asigură-te că rulează.
+1. Dintr-un terminal, navighează în folderul `03-GettingStarted\samples\csharp\src`
+1. Pentru a construi imaginea Docker pentru serviciul calculator, execută următoarea comandă (înlocuiește `<YOUR-DOCKER-USERNAME>` cu numele tău de utilizator Docker Hub):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. După ce imaginea este construită, să o încărcăm pe Docker Hub. Rulează următoarea comandă:
+1. După ce imaginea este construită, hai să o urcăm pe Docker Hub. Rulează comanda următoare:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Privind configurația, poți observa că comanda este `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Privind configurația, poți observa că comanda este `docker` iar argumentele sunt `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. Flag-ul `--rm` asigură că containerul este șters după ce se oprește, iar flag-ul `-i` îți permite să interacționezi cu inputul standard al containerului. Ultimul argument este numele imaginii pe care tocmai am construit-o și încărcat-o pe Docker Hub.
 
-## Test the Dockerized Version
+## Testarea Versiunii Dockerizate
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, iar, la fel ca înainte, poți cere serviciului de calculator să facă niște calcule pentru tine.
+Pornește serverul MCP făcând clic pe butonul mic Start de deasupra `"mcp-calc": {`, și la fel ca înainte, poți cere serviciului calculator să facă niște calcule pentru tine.
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

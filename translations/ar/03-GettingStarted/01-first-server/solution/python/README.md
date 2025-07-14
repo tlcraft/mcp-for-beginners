@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T22:56:16+00:00",
+  "translation_date": "2025-07-13T17:58:01+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "ar"
 }

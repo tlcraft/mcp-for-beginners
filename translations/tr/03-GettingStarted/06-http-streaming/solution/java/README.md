@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:46:49+00:00",
+  "translation_date": "2025-07-13T21:11:30+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "tr"
 }
@@ -37,15 +37,15 @@ java/
 
 ## Nasıl Çalışır
 
-1. **Calculator Server**, `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** `/calculate` uç noktasını sunar:
+   - Sorgu parametreleri alır: `a` (sayı), `b` (sayı), `op` (işlem)
+   - Desteklenen işlemler: `add`, `sub`, `mul`, `div`
+   - Hesaplama ilerlemesi ve sonucu Server-Sent Events olarak döner
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5` yolunu açar
+2. **Calculator Client** sunucuya bağlanır ve:
+   - `7 * 5` hesaplaması için istek yapar
    - Streaming yanıtını tüketir
-   - Her etkinliği konsola yazdırır
+   - Her olayı konsola yazdırır
 
 ## Uygulamaların Çalıştırılması
 
@@ -61,7 +61,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Sunucu `http://localhost:8080` adresinde çalışmaya başlayacak
+Sunucu `http://localhost:8080` adresinde çalışmaya başlayacaktır.
 
 Aşağıdaki gibi bir çıktı görmelisiniz:
 ```
@@ -79,9 +79,9 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-İstemci sunucuya bağlanacak, hesaplamayı yapacak ve streaming sonuçlarını gösterecek.
+İstemci sunucuya bağlanacak, hesaplamayı yapacak ve streaming sonuçlarını gösterecektir.
 
-### Seçenek 2: Java’yı doğrudan kullanmak
+### Seçenek 2: Doğrudan Java ile
 
 #### 1. Server’ı derleyip çalıştırın:
 
@@ -103,17 +103,17 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 Sunucuyu web tarayıcısı veya curl ile de test edebilirsiniz:
 
-### Web tarayıcısı kullanarak:
+### Web tarayıcısı ile:
 Şurayı ziyaret edin: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
-### curl kullanarak:
+### curl ile:
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
 ## Beklenen Çıktı
 
-İstemci çalışırken aşağıdakine benzer streaming çıktısı görmelisiniz:
+İstemci çalıştırıldığında aşağıdakine benzer streaming çıktısı görmelisiniz:
 
 ```
 event:info
@@ -125,23 +125,23 @@ data:35.0
 
 ## Desteklenen İşlemler
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Toplama (a + b)
+- `sub` - Çıkarma (a - b)
+- `mul` - Çarpma (a * b)
+- `div` - Bölme (a / b, b = 0 ise NaN döner)
 
-## API Reference
+## API Referansı
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parametreler:**
+- `a` (zorunlu): Birinci sayı (double)
+- `b` (zorunlu): İkinci sayı (double)
+- `op` (zorunlu): İşlem (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Yanıt:**
 - Content-Type: `text/event-stream`
-- Hesaplama ilerlemesi ve sonucu içeren Server-Sent Events döner
+- Hesaplama ilerlemesi ve sonucu Server-Sent Events olarak döner
 
 **Örnek İstek:**
 ```
@@ -163,22 +163,22 @@ data: 35.0
 
 ### Yaygın Sorunlar
 
-1. **Port 8080 zaten kullanımda**
+1. **Port 8080 zaten kullanılıyor**
    - Port 8080’i kullanan diğer uygulamaları durdurun
-   - Ya da `calculator-server/src/main/resources/application.yml`
+   - Ya da `calculator-server/src/main/resources/application.yml` dosyasından sunucu portunu değiştirin
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Bağlantı reddedildi**
+   - İstemciyi başlatmadan önce sunucunun çalıştığından emin olun
+   - Sunucunun 8080 portunda başarıyla başladığını kontrol edin
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Parametre adı sorunları**
+   - Bu proje Maven derleyici yapılandırmasında `-parameters` bayrağını içerir
+   - Parametre bağlama sorunları yaşarsanız, projenin bu yapılandırmayla derlendiğinden emin olun
 
-### Stopping the Applications
+### Uygulamaları Durdurma
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` içinde sunucu portunu değiştirin (arka planda çalıştırıyorsanız)
+- Her uygulamanın çalıştığı terminalde `Ctrl+C` tuşlarına basın
+- Ya da arka planda çalışıyorsa `mvn spring-boot:stop` komutunu kullanın
 
 ## Teknoloji Yığını
 
@@ -191,12 +191,12 @@ data: 35.0
 
 ## Sonraki Adımlar
 
-Kodu değiştirip deneyin:
+Kodu değiştirerek deneyin:
 - Daha fazla matematiksel işlem ekleyin
 - Geçersiz işlemler için hata yönetimi ekleyin
 - İstek/yanıt loglaması ekleyin
 - Kimlik doğrulama uygulayın
-- Birim testler ekleyin
+- Birim testleri ekleyin
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

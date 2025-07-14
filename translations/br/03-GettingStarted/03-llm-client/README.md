@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T17:02:56+00:00",
+  "translation_date": "2025-07-13T18:51:11+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "br"
 }

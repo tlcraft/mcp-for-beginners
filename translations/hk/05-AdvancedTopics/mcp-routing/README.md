@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-06-12T21:29:58+00:00",
+  "translation_date": "2025-07-14T02:10:42+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "hk"
 }
 -->
-## MCP中的取樣與路由架構
+## MCP中的抽樣與路由架構
 
-取樣是Model Context Protocol (MCP)中的關鍵組件，能有效分析和處理請求，根據內容類型、用戶背景及系統負載等不同標準，判斷最合適的模型或服務來處理請求。
+抽樣是Model Context Protocol (MCP)中一個關鍵的組成部分，它能有效地處理和路由請求。透過分析進來的請求，根據內容類型、使用者上下文和系統負載等多種條件，判斷最適合處理該請求的模型或服務。
 
-取樣與路由可以結合起來，打造一個強健的架構，優化資源使用並確保高可用性。取樣過程用於分類請求，而路由則將請求導向適當的模型或服務。
+抽樣與路由可以結合起來，打造一個強健的架構，優化資源利用率並確保高可用性。抽樣過程用於分類請求，而路由則將請求導向適當的模型或服務。
 
-下圖展示了取樣與路由如何在完整的MCP架構中協同運作：
+下圖說明了抽樣與路由如何在完整的MCP架構中協同運作：
 
 ```mermaid
 flowchart TB
@@ -82,7 +82,7 @@ flowchart TB
 
 ## 接下來的內容
 
-- [5.6 取樣](../mcp-sampling/README.md)
+- [5.6 抽樣](../mcp-sampling/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我哋致力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原文文件以其母語版本為準。對於重要資料，建議採用專業人工翻譯。我哋對因使用本翻譯而引致嘅任何誤解或誤釋概不負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

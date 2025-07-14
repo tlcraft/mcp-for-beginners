@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:47:21+00:00",
+  "translation_date": "2025-07-13T21:12:06+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "sv"
 }
 -->
 # Calculator HTTP Streaming Demo
 
-Det här projektet visar HTTP-streaming med Server-Sent Events (SSE) i Spring Boot WebFlux. Det består av två applikationer:
+Det här projektet visar HTTP-streaming med Server-Sent Events (SSE) med Spring Boot WebFlux. Det består av två applikationer:
 
-- **Calculator Server**: En reaktiv webbservice som utför beräkningar och strömmar resultat med SSE
+- **Calculator Server**: En reaktiv webbtjänst som utför beräkningar och streamar resultat med SSE
 - **Calculator Client**: En klientapplikation som konsumerar streaming-endpointen
 
 ## Förutsättningar
@@ -37,23 +37,23 @@ java/
 
 ## Hur det fungerar
 
-1. **Calculator Server** exponerar `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** exponerar en `/calculate`-endpoint som:
+   - Tar emot query-parametrar: `a` (nummer), `b` (nummer), `op` (operation)
+   - Stödda operationer: `add`, `sub`, `mul`, `div`
+   - Returnerar Server-Sent Events med beräkningsprogress och resultat
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
-   - Konsumerar streaming-svaret
+2. **Calculator Client** ansluter till servern och:
+   - Skickar en förfrågan för att beräkna `7 * 5`
+   - Konsumerar den strömmande responsen
    - Skriver ut varje event i konsolen
 
 ## Köra applikationerna
 
-### Alternativ 1: Använda Maven (Rekommenderas)
+### Alternativ 1: Använda Maven (rekommenderas)
 
 #### 1. Starta Calculator Server
 
-Öppna en terminal och gå till servermappen:
+Öppna en terminal och navigera till servermappen:
 
 ```bash
 cd calculator-server
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 Servern startar på `http://localhost:8080`
 
-Du bör se utdata som:
+Du bör se output som:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -71,7 +71,7 @@ Netty started on port 8080 (http)
 
 #### 2. Kör Calculator Client
 
-Öppna en **ny terminal** och gå till klientmappen:
+Öppna en **ny terminal** och navigera till klientmappen:
 
 ```bash
 cd calculator-client
@@ -79,7 +79,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Klienten kopplar upp sig mot servern, utför beräkningen och visar streaming-resultaten.
+Klienten ansluter till servern, utför beräkningen och visar de strömmande resultaten.
 
 ### Alternativ 2: Använda Java direkt
 
@@ -101,7 +101,7 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## Testa servern manuellt
 
-Du kan också testa servern via webbläsare eller curl:
+Du kan också testa servern med en webbläsare eller curl:
 
 ### Med webbläsare:
 Besök: `http://localhost:8080/calculate?a=10&b=5&op=add`
@@ -111,9 +111,9 @@ Besök: `http://localhost:8080/calculate?a=10&b=5&op=add`
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
-## Förväntad utdata
+## Förväntad output
 
-När du kör klienten bör du se streaming-utdata liknande:
+När du kör klienten bör du se strömmande output liknande:
 
 ```
 event:info
@@ -126,20 +126,20 @@ data:35.0
 ## Stödda operationer
 
 - `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `sub` - Subtraktion (a - b)
+- `mul` - Multiplikation (a * b)
+- `div` - Division (a / b, returnerar NaN om b = 0)
 
-## API Reference
+## API-referens
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parametrar:**
+- `a` (obligatorisk): Första talet (double)
+- `b` (obligatorisk): Andra talet (double)
+- `op` (obligatorisk): Operation (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Svar:**
 - Content-Type: `text/event-stream`
 - Returnerar Server-Sent Events med beräkningsprogress och resultat
 
@@ -165,38 +165,38 @@ data: 35.0
 
 1. **Port 8080 används redan**
    - Stoppa andra applikationer som använder port 8080
-   - Eller ändra serverport i `calculator-server/src/main/resources/application.yml`
+   - Eller ändra serverporten i `calculator-server/src/main/resources/application.yml`
 
 2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+   - Kontrollera att servern körs innan klienten startas
+   - Kontrollera att servern startade korrekt på port 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Problem med parameter-namn**
+   - Projektet inkluderar Maven-kompilatorinställning med flaggan `-parameters`
+   - Om du får problem med parameterbindning, se till att projektet byggs med denna konfiguration
 
-### Stopping the Applications
+### Stoppa applikationerna
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` om du kör som bakgrundsprocess
+- Tryck `Ctrl+C` i terminalen där varje applikation körs
+- Eller använd `mvn spring-boot:stop` om de körs som bakgrundsprocess
 
 ## Teknologistack
 
 - **Spring Boot 3.3.1** - Applikationsramverk
 - **Spring WebFlux** - Reaktivt webb-ramverk
-- **Project Reactor** - Bibliotek för reaktiva strömmar
+- **Project Reactor** - Bibliotek för reaktiva streams
 - **Netty** - Icke-blockerande I/O-server
 - **Maven** - Byggverktyg
 - **Java 17+** - Programmeringsspråk
 
 ## Nästa steg
 
-Prova att ändra koden för att:
+Testa att ändra koden för att:
 - Lägga till fler matematiska operationer
 - Inkludera felhantering för ogiltiga operationer
-- Lägg till loggning av förfrågningar/svar
+- Lägga till loggning av förfrågningar/svar
 - Implementera autentisering
 - Lägga till enhetstester
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

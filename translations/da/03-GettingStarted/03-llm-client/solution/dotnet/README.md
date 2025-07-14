@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T06:01:22+00:00",
+  "translation_date": "2025-07-13T19:03:29+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "da"
 }
@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # Kør dette eksempel
 
 > [!NOTE]
-> Dette eksempel forudsætter, at du bruger en GitHub Codespaces-instans. Hvis du vil køre det lokalt, skal du oprette et personligt adgangstoken (PAT) på GitHub.
+> Dette eksempel forudsætter, at du bruger en GitHub Codespaces-instans. Hvis du vil køre det lokalt, skal du oprette en personal access token (PAT) på GitHub.
 >
 > ```bash
 > # zsh/bash
@@ -36,7 +36,7 @@ Bør installere følgende biblioteker: Azure AI Inference, Azure Identity, Micro
 dotnet run
 ```
 
-Du burde se en output, der ligner:
+Du bør se en output, der ligner:
 
 ```text
 Setting up stdio transport
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Meget af outputtet er bare debugging, men det vigtige er, at du lister værktøjer fra MCP Server, omdanner dem til LLM-værktøjer, og ender med et MCP-klient svar "Sum 6".
+Meget af outputtet er bare debugging, men det vigtige er, at du får listet værktøjer fra MCP Server, omdanner dem til LLM-værktøjer, og ender med et MCP-klient svar "Sum 6".
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiske oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

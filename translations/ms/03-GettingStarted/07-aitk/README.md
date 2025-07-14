@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T18:15:36+00:00",
+  "translation_date": "2025-07-13T21:38:23+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "ms"
 }
 -->
 # Menggunakan pelayan dari sambungan AI Toolkit untuk Visual Studio Code
 
-Apabila anda membina agen AI, ia bukan sahaja tentang menjana respons yang pintar; ia juga tentang memberi keupayaan kepada agen anda untuk mengambil tindakan. Di sinilah Model Context Protocol (MCP) memainkan peranan. MCP memudahkan agen mengakses alat dan perkhidmatan luaran dengan cara yang konsisten. Fikirkan ia seperti menyambungkan agen anda ke dalam kotak alat yang *benar-benar* boleh digunakan.
+Apabila anda membina agen AI, ia bukan sekadar menjana respons pintar; ia juga tentang memberi agen anda keupayaan untuk mengambil tindakan. Di sinilah Model Context Protocol (MCP) memainkan peranan. MCP memudahkan agen mengakses alat dan perkhidmatan luaran dengan cara yang konsisten. Fikirkan ia seperti menyambungkan agen anda ke dalam kotak alat yang *benar-benar* boleh digunakan.
 
 Katakan anda menyambungkan agen kepada pelayan MCP kalkulator anda. Tiba-tiba, agen anda boleh melakukan operasi matematik hanya dengan menerima arahan seperti “Berapakah 47 darab 89?”—tanpa perlu menulis logik secara keras atau membina API tersuai.
 
@@ -26,7 +26,7 @@ AI Toolkit adalah sambungan yang kuat untuk Visual Studio Code yang memudahkan p
 Menjelang akhir pelajaran ini, anda akan dapat:
 
 - Menggunakan pelayan MCP melalui AI Toolkit.
-- Mengkonfigurasi konfigurasi agen untuk membolehkan ia menemui dan menggunakan alat yang disediakan oleh pelayan MCP.
+- Mengkonfigurasi konfigurasi agen untuk membolehkannya menemui dan menggunakan alat yang disediakan oleh pelayan MCP.
 - Menggunakan alat MCP melalui bahasa semula jadi.
 
 ## Pendekatan
@@ -77,18 +77,18 @@ Latihan ini menggunakan model **GPT-4o**. Model ini perlu ditambah ke dalam **My
 
 Dengan agen telah disediakan, tiba masanya untuk menentukan personaliti dan tujuannya. Dalam bahagian ini, anda akan menggunakan ciri **Generate system prompt** untuk menerangkan tingkah laku yang diinginkan agen—dalam kes ini, agen kalkulator—dan membiarkan model menulis arahan sistem untuk anda.
 
-![Tangkapan skrin antara muka "Calculator Agent" dalam AI Toolkit untuk Visual Studio Code dengan tetingkap modal terbuka bertajuk "Generate a prompt." Modal menerangkan bahawa templat arahan boleh dijana dengan berkongsi maklumat asas dan termasuk kotak teks dengan contoh arahan sistem: "Anda adalah pembantu matematik yang membantu dan cekap. Apabila diberikan masalah yang melibatkan aritmetik asas, anda memberi respons dengan keputusan yang betul." Di bawah kotak teks terdapat butang "Close" dan "Generate." Di latar belakang, sebahagian konfigurasi agen kelihatan, termasuk model yang dipilih "OpenAI GPT-4o (via GitHub)" dan medan untuk arahan sistem dan pengguna.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.ms.png)
+![Tangkapan skrin antara muka "Calculator Agent" dalam AI Toolkit untuk Visual Studio Code dengan tetingkap modal terbuka bertajuk "Generate a prompt." Modal menerangkan bahawa templat arahan boleh dijana dengan berkongsi maklumat asas dan termasuk kotak teks dengan contoh arahan sistem: "Anda adalah pembantu matematik yang membantu dan cekap. Apabila diberikan masalah yang melibatkan aritmetik asas, anda memberi respons dengan keputusan yang betul." Di bawah kotak teks terdapat butang "Close" dan "Generate". Di latar belakang, sebahagian konfigurasi agen kelihatan, termasuk model yang dipilih "OpenAI GPT-4o (via GitHub)" dan medan untuk arahan sistem dan pengguna.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.ms.png)
 
 1. Untuk bahagian **Prompts**, klik butang **Generate system prompt**. Butang ini membuka pembina arahan yang menggunakan AI untuk menjana arahan sistem bagi agen.
-1. Dalam tetingkap **Generate a prompt**, masukkan: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. Klik butang **Generate**. Pemberitahuan akan muncul di sudut kanan bawah mengesahkan arahan sistem sedang dijana. Setelah selesai, arahan akan muncul dalam medan **System prompt** di **Agent (Prompt) Builder**.
+1. Dalam tetingkap **Generate a prompt**, masukkan: `Anda adalah pembantu matematik yang membantu dan cekap. Apabila diberikan masalah yang melibatkan aritmetik asas, anda memberi respons dengan keputusan yang betul.`
+1. Klik butang **Generate**. Pemberitahuan akan muncul di sudut kanan bawah mengesahkan bahawa arahan sistem sedang dijana. Setelah penjanaan selesai, arahan akan muncul dalam medan **System prompt** di **Agent (Prompt) Builder**.
 1. Semak **System prompt** dan ubah jika perlu.
 
 ### -3- Cipta pelayan MCP
 
 Sekarang anda telah menentukan arahan sistem agen anda—yang membimbing tingkah laku dan responsnya—tiba masanya untuk melengkapkan agen dengan keupayaan praktikal. Dalam bahagian ini, anda akan mencipta pelayan MCP kalkulator dengan alat untuk melaksanakan pengiraan penambahan, penolakan, pendaraban, dan pembahagian. Pelayan ini akan membolehkan agen anda melakukan operasi matematik masa nyata sebagai respons kepada arahan bahasa semula jadi.
 
-!["Tangkapan skrin bahagian bawah antara muka Calculator Agent dalam sambungan AI Toolkit untuk Visual Studio Code. Ia menunjukkan menu boleh kembang untuk “Tools” dan “Structure output,” bersama menu lungsur bertajuk “Choose output format” yang diset kepada “text.” Di sebelah kanan, terdapat butang bertajuk “+ MCP Server” untuk menambah pelayan Model Context Protocol. Ikon gambar tempat letak ditunjukkan di atas bahagian Tools.](../../../../translated_images/aitk-add-mcp-server.9742cfddfe808353c0caf9cc0a7ed3e80e13abf4d2ebde315c81c3cb02a2a449.ms.png)
+![Tangkapan skrin bahagian bawah antara muka Calculator Agent dalam sambungan AI Toolkit untuk Visual Studio Code. Ia menunjukkan menu boleh kembang untuk “Tools” dan “Structure output,” bersama menu lungsur bertajuk “Choose output format” yang diset kepada “text.” Di sebelah kanan, terdapat butang bertanda “+ MCP Server” untuk menambah pelayan Model Context Protocol. Ikon gambar tempat letak ditunjukkan di atas bahagian Tools.](../../../../translated_images/aitk-add-mcp-server.9742cfddfe808353c0caf9cc0a7ed3e80e13abf4d2ebde315c81c3cb02a2a449.ms.png)
 
 AI Toolkit dilengkapi dengan templat untuk memudahkan penciptaan pelayan MCP anda sendiri. Kita akan menggunakan templat Python untuk mencipta pelayan MCP kalkulator.
 
@@ -159,7 +159,7 @@ Sekarang agen anda mempunyai alat, tiba masanya untuk menggunakannya! Dalam baha
 Anda akan menjalankan pelayan MCP kalkulator pada mesin pembangunan tempatan anda melalui **Agent Builder** sebagai klien MCP.
 
 1. Tekan `F5` untuk mula debug pelayan MCP. **Agent (Prompt) Builder** akan dibuka dalam tab editor baru. Status pelayan boleh dilihat di terminal.
-1. Dalam medan **User prompt** di **Agent (Prompt) Builder**, masukkan arahan berikut: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
+1. Dalam medan **User prompt** di **Agent (Prompt) Builder**, masukkan arahan berikut: `Saya membeli 3 barang berharga $25 setiap satu, dan kemudian menggunakan diskaun $20. Berapa jumlah yang saya bayar?`
 1. Klik butang **Run** untuk menjana respons agen.
 1. Semak output agen. Model sepatutnya membuat kesimpulan bahawa anda membayar **$55**.
 1. Berikut adalah pecahan apa yang sepatutnya berlaku:
@@ -173,7 +173,7 @@ Anda akan menjalankan pelayan MCP kalkulator pada mesin pembangunan tempatan and
 
 ## Tugasan
 
-Cuba tambah entri alat tambahan ke dalam fail **server.py** anda (contoh: pulangkan punca kuasa dua nombor). Hantar arahan tambahan yang memerlukan agen menggunakan alat baru anda (atau alat sedia ada). Pastikan anda mulakan semula pelayan untuk memuatkan alat yang baru ditambah.
+Cuba tambah entri alat tambahan ke dalam fail **server.py** anda (contoh: pulangkan punca kuasa dua bagi nombor). Hantar arahan tambahan yang memerlukan agen menggunakan alat baru anda (atau alat sedia ada). Pastikan anda mulakan semula pelayan untuk memuatkan alat yang baru ditambah.
 
 ## Penyelesaian
 
@@ -195,4 +195,4 @@ Perkara penting dari bab ini adalah seperti berikut:
 - Seterusnya: [Ujian & Debugging](../08-testing/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

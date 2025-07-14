@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:46:17+00:00",
+  "translation_date": "2025-07-13T21:10:59+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "br"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Este projeto demonstra streaming HTTP usando Server-Sent Events (SSE) com Spring Boot WebFlux. Ele consiste em duas aplicações:
 
-- **Calculator Server**: Um serviço web reativo que realiza cálculos e transmite os resultados usando SSE
+- **Calculator Server**: Um serviço web reativo que realiza cálculos e transmite resultados usando SSE
 - **Calculator Client**: Uma aplicação cliente que consome o endpoint de streaming
 
 ## Pré-requisitos
@@ -37,13 +37,13 @@ java/
 
 ## Como Funciona
 
-1. O **Calculator Server** expõe um endpoint `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. O **Calculator Server** expõe um endpoint `/calculate` que:
+   - Aceita parâmetros de consulta: `a` (número), `b` (número), `op` (operação)
+   - Operações suportadas: `add`, `sub`, `mul`, `div`
+   - Retorna Server-Sent Events com o progresso do cálculo e o resultado
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
+2. O **Calculator Client** conecta ao servidor e:
+   - Faz uma requisição para calcular `7 * 5`
    - Consome a resposta em streaming
    - Imprime cada evento no console
 
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 O servidor iniciará em `http://localhost:8080`
 
-Você verá uma saída semelhante a:
+Você deverá ver uma saída como:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -79,7 +79,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-O cliente se conectará ao servidor, realizará o cálculo e exibirá os resultados em streaming.
+O cliente irá conectar ao servidor, realizar o cálculo e exibir os resultados em streaming.
 
 ### Opção 2: Usando Java diretamente
 
@@ -125,21 +125,21 @@ data:35.0
 
 ## Operações Suportadas
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Adição (a + b)
+- `sub` - Subtração (a - b)
+- `mul` - Multiplicação (a * b)
+- `div` - Divisão (a / b, retorna NaN se b = 0)
 
-## API Reference
+## Referência da API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parâmetros:**
+- `a` (obrigatório): Primeiro número (double)
+- `b` (obrigatório): Segundo número (double)
+- `op` (obrigatório): Operação (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Resposta:**
 - Content-Type: `text/event-stream`
 - Retorna Server-Sent Events com o progresso do cálculo e o resultado
 
@@ -167,25 +167,25 @@ data: 35.0
    - Pare qualquer outra aplicação que esteja usando a porta 8080
    - Ou altere a porta do servidor em `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Conexão recusada**
+   - Certifique-se de que o servidor está rodando antes de iniciar o cliente
+   - Verifique se o servidor iniciou corretamente na porta 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Problemas com nomes de parâmetros**
+   - Este projeto inclui configuração do compilador Maven com a flag `-parameters`
+   - Se encontrar problemas de binding de parâmetros, garanta que o projeto foi construído com essa configuração
 
-### Stopping the Applications
+### Parando as Aplicações
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` caso esteja rodando como processo em background
+- Pressione `Ctrl+C` no terminal onde cada aplicação está rodando
+- Ou use `mvn spring-boot:stop` se estiver rodando como processo em background
 
-## Stack de Tecnologia
+## Stack Tecnológico
 
 - **Spring Boot 3.3.1** - Framework de aplicação
 - **Spring WebFlux** - Framework web reativo
 - **Project Reactor** - Biblioteca de streams reativos
-- **Netty** - Servidor I/O não bloqueante
+- **Netty** - Servidor de I/O não bloqueante
 - **Maven** - Ferramenta de build
 - **Java 17+** - Linguagem de programação
 
@@ -194,9 +194,9 @@ data: 35.0
 Tente modificar o código para:
 - Adicionar mais operações matemáticas
 - Incluir tratamento de erros para operações inválidas
-- Adicionar logging de requisições/respostas
+- Adicionar logging de requisição/resposta
 - Implementar autenticação
 - Adicionar testes unitários
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

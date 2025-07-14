@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T17:05:16+00:00",
+  "translation_date": "2025-07-13T22:08:22+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "it"
 }
@@ -24,9 +24,9 @@ Al termine di questa lezione, sarai in grado di:
 
 ## Sviluppo e distribuzione locale
 
-Se il tuo server è pensato per essere utilizzato direttamente sulla macchina degli utenti, puoi seguire questi passaggi:
+Se il tuo server è destinato a essere utilizzato eseguendolo sulla macchina degli utenti, puoi seguire questi passaggi:
 
-1. **Scarica il server**. Se non hai scritto il server, scaricalo prima sulla tua macchina.  
+1. **Scarica il server**. Se non hai scritto tu il server, scaricalo prima sulla tua macchina.  
 1. **Avvia il processo del server**: Esegui la tua applicazione MCP server.
 
 Per SSE (non necessario per server di tipo stdio)
@@ -38,8 +38,8 @@ Per SSE (non necessario per server di tipo stdio)
 
 I server MCP possono essere distribuiti su diverse piattaforme cloud:
 
-- **Funzioni serverless**: Distribuisci server MCP leggeri come funzioni serverless.  
-- **Servizi container**: Usa servizi come Azure Container Apps, AWS ECS o Google Cloud Run.  
+- **Serverless Functions**: Distribuisci server MCP leggeri come funzioni serverless.  
+- **Container Services**: Usa servizi come Azure Container Apps, AWS ECS o Google Cloud Run.  
 - **Kubernetes**: Distribuisci e gestisci i server MCP in cluster Kubernetes per alta disponibilità.
 
 ### Esempio: Azure Container Apps
@@ -92,7 +92,7 @@ Ecco come procedere:
   }
   ```
 
-  Una volta avviato il server SSE, puoi cliccare sull’icona play nel file JSON; ora dovresti vedere gli strumenti del server riconosciuti da GitHub Copilot, guarda l’icona Tool.
+  Una volta avviato il server SSE, puoi cliccare sull’icona play nel file JSON; ora dovresti vedere gli strumenti sul server riconosciuti da GitHub Copilot, vedi l’icona Tool.
 
 1. Per distribuire, esegui il seguente comando:
 

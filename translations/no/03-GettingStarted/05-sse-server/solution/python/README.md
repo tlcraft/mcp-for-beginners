@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-17T12:03:43+00:00",
+  "translation_date": "2025-07-13T20:15:46+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "no"
 }
 -->
-# Kjøre dette eksemplet
+# Kjøre dette eksempelet
 
-Det anbefales å installere `uv`, men det er ikke nødvendig, se [instruksjoner](https://docs.astral.sh/uv/#highlights)
+Det anbefales å installere `uv`, men det er ikke et krav, se [instruksjoner](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Opprett et virtuelt miljø
 
@@ -29,38 +29,39 @@ venv\Scrips\activate
 pip install "mcp[cli]"
 ```
 
-## -3- Kjør eksemplet
+## -3- Kjør eksempelet
+
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Test eksemplet
+## -4- Test eksempelet
 
-Med serveren kjørende i en terminal, åpne en annen terminal og kjør følgende kommando:
+Med serveren kjørende i ett terminalvindu, åpne et nytt terminalvindu og kjør følgende kommando:
 
 ```bash
 mcp dev server.py
 ```
 
-Dette bør starte en webserver med et visuelt grensesnitt som lar deg teste eksemplet.
+Dette skal starte en webserver med et visuelt grensesnitt som lar deg teste eksempelet.
 
 Når serveren er tilkoblet:
 
-- prøv å liste verktøyene og kjør `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- prøv å liste opp verktøy og kjør `add` med argumentene 2 og 4, du skal se 6 som resultat.
+- gå til resources og resource template og kall get_greeting, skriv inn et navn og du skal se en hilsen med navnet du oppga.
 
-### Testing in ClI mode
+### Testing i CLI-modus
 
-The inspector you ran is actually a Node.js app and `mcp dev` er en innpakning rundt det.
+Inspektøren du kjørte er egentlig en Node.js-app, og `mcp dev` er et wrapper rundt den.
 
-Du kan starte det direkte i CLI-modus ved å kjøre følgende kommando:
+Du kan starte den direkte i CLI-modus ved å kjøre følgende kommando:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Dette vil liste alle verktøyene som er tilgjengelige på serveren. Du bør se følgende output:
+Dette vil liste opp alle verktøyene som er tilgjengelige på serveren. Du skal se følgende output:
 
 ```text
 {
@@ -91,13 +92,13 @@ Dette vil liste alle verktøyene som er tilgjengelige på serveren. Du bør se f
 }
 ```
 
-For å bruke et verktøy, skriv:
+For å kalle et verktøy, skriv:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Du bør se følgende output:
+Du skal se følgende output:
 
 ```text
 {
@@ -115,4 +116,5 @@ Du bør se følgende output:
 > Det er vanligvis mye raskere å kjøre inspektøren i CLI-modus enn i nettleseren.
 > Les mer om inspektøren [her](https://github.com/modelcontextprotocol/inspector).
 
-I'm sorry, but I need clarification on what you mean by "Translate the following text to no." Could you please specify the language you would like the text translated into?
+**Ansvarsfraskrivelse**:  
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

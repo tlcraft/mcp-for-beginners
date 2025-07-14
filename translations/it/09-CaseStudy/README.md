@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T17:03:36+00:00",
+  "translation_date": "2025-07-14T05:45:35+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "it"
 }
@@ -29,7 +29,7 @@ Esplorando questi casi di studio, potrai:
 
 ### 1. [Azure AI Travel Agents – Implementazione di Riferimento](./travelagentsample.md)
 
-Questo caso di studio analizza la soluzione di riferimento completa di Microsoft che dimostra come costruire un’applicazione di pianificazione viaggi multi-agente, alimentata da AI, utilizzando MCP, Azure OpenAI e Azure AI Search. Il progetto mostra:
+Questo caso di studio analizza la soluzione di riferimento completa di Microsoft che dimostra come costruire un'applicazione di pianificazione viaggi multi-agente alimentata da AI usando MCP, Azure OpenAI e Azure AI Search. Il progetto mostra:
 
 - Orchestrazione multi-agente tramite MCP
 - Integrazione dati enterprise con Azure AI Search
@@ -57,7 +57,7 @@ Questo caso di studio ti guida nel collegare un client console Python a un serve
 - Connetterti a un server MCP usando un client Python e l’SDK ufficiale MCP
 - Usare client HTTP in streaming per un recupero dati efficiente e in tempo reale
 - Chiamare strumenti di documentazione sul server e registrare le risposte direttamente in console
-- Integrare la documentazione Microsoft aggiornata nel tuo flusso di lavoro senza uscire dal terminale
+- Integrare documentazione Microsoft aggiornata nel tuo flusso di lavoro senza uscire dal terminale
 
 Il capitolo include un esercizio pratico, un esempio di codice minimale funzionante e link a risorse aggiuntive per approfondire. Consulta la guida completa e il codice nel capitolo collegato per capire come MCP può trasformare l’accesso alla documentazione e la produttività degli sviluppatori in ambienti console.
 
@@ -92,7 +92,6 @@ Questo scenario è ideale per autori di corsi, redattori di documentazione e svi
 ### 6. [Creazione di un MCP Server con APIM](./apimsample.md)
 
 Questo caso di studio fornisce una guida passo-passo su come creare un server MCP usando Azure API Management (APIM). Copre:
-
 - Configurazione di un server MCP in Azure API Management
 - Esposizione delle operazioni API come strumenti MCP
 - Configurazione di policy per limitazione di traffico e sicurezza
@@ -102,7 +101,7 @@ Questo esempio illustra come sfruttare le capacità di Azure per creare un serve
 
 ## Conclusione
 
-Questi casi di studio evidenziano la versatilità e le applicazioni pratiche del Model Context Protocol in scenari reali. Da sistemi multi-agente complessi a workflow di automazione mirati, MCP offre un modo standardizzato per connettere i sistemi AI con gli strumenti e i dati necessari a generare valore.
+Questi casi di studio evidenziano la versatilità e le applicazioni pratiche del Model Context Protocol in scenari reali. Da sistemi multi-agente complessi a workflow di automazione mirati, MCP offre un modo standardizzato per connettere sistemi AI con gli strumenti e i dati necessari a generare valore.
 
 Analizzando queste implementazioni, potrai acquisire conoscenze su modelli architetturali, strategie di implementazione e best practice applicabili ai tuoi progetti MCP. Gli esempi dimostrano che MCP non è solo un framework teorico, ma una soluzione concreta a sfide aziendali reali.
 
@@ -117,4 +116,4 @@ Analizzando queste implementazioni, potrai acquisire conoscenze su modelli archi
 Prossimo: Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

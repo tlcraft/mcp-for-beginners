@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:06:16+00:00",
+  "translation_date": "2025-07-14T08:09:50+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "ja"
 }
 -->
-# 🔧 モジュール 3: AI Toolkit を使った高度な MCP 開発
+# 🔧 モジュール 3: AI Toolkitを使った高度なMCP開発
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
 ![AI Toolkit](https://img.shields.io/badge/AI_Toolkit-Required-orange?style=flat-square)
@@ -17,69 +17,70 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 学習目標
 
-このラボの終了時には、以下ができるようになります：
+このラボを終える頃には、以下ができるようになります：
 
-- ✅ AI Toolkit を使ってカスタム MCP サーバーを作成する
-- ✅ 最新の MCP Python SDK (v1.9.3) を設定・利用する
-- ✅ MCP Inspector をセットアップしてデバッグに活用する
-- ✅ Agent Builder と Inspector 環境の両方で MCP サーバーをデバッグする
-- ✅ 高度な MCP サーバー開発のワークフローを理解する
+- ✅ AI Toolkitを使ってカスタムMCPサーバーを作成する
+- ✅ 最新のMCP Python SDK（v1.9.3）を設定・利用する
+- ✅ MCP Inspectorをセットアップしてデバッグに活用する
+- ✅ Agent BuilderとInspectorの両環境でMCPサーバーをデバッグする
+- ✅ 高度なMCPサーバー開発のワークフローを理解する
 
 ## 📋 前提条件
 
-- ラボ 2 (MCP 基礎) の修了
-- AI Toolkit 拡張機能がインストールされた VS Code
-- Python 3.10+ 環境
-- Inspector セットアップのための Node.js と npm
+- ラボ2（MCP基礎）の完了
+- AI Toolkit拡張機能がインストールされたVS Code
+- Python 3.10以上の環境
+- Inspectorセットアップ用のNode.jsとnpm
 
 ## 🏗️ 作成するもの
 
-このラボでは、以下を示す **Weather MCP Server** を作成します：
-- カスタム MCP サーバーの実装
-- AI Toolkit Agent Builder との統合
+このラボでは、以下を示す**Weather MCP Server**を作成します：
+
+- カスタムMCPサーバーの実装
+- AI Toolkit Agent Builderとの統合
 - プロフェッショナルなデバッグワークフロー
-- 最新の MCP SDK 利用パターン
+- 最新のMCP SDKの利用パターン
 
 ---
 
-## 🔧 コアコンポーネントの概要
+## 🔧 コアコンポーネント概要
 
-### 🐍 MCP Python SDK
-Model Context Protocol の Python SDK は、カスタム MCP サーバー構築の基盤です。バージョン 1.9.3 を使い、強化されたデバッグ機能を利用します。
+### 🐍 MCP Python SDK  
+Model Context ProtocolのPython SDKはカスタムMCPサーバー構築の基盤です。バージョン1.9.3を使い、強化されたデバッグ機能を活用します。
 
-### 🔍 MCP Inspector
-強力なデバッグツールで、以下を提供します：
-- リアルタイムのサーバーモニタリング
-- ツール実行の可視化
-- ネットワークリクエスト／レスポンスの検査
+### 🔍 MCP Inspector  
+強力なデバッグツールで、以下を提供します：  
+- リアルタイムのサーバーモニタリング  
+- ツール実行の可視化  
+- ネットワークリクエスト／レスポンスの検査  
 - インタラクティブなテスト環境
 
 ---
 
 ## 📖 ステップバイステップ実装
 
-### ステップ 1: Agent Builder で WeatherAgent を作成
+### ステップ1: Agent BuilderでWeatherAgentを作成
 
-1. VS Code の AI Toolkit 拡張機能から **Agent Builder を起動**
-2. 以下の設定で **新しいエージェントを作成**：
-   - エージェント名: `WeatherAgent`
+1. AI Toolkit拡張機能からVS Codeで**Agent Builderを起動**  
+2. 以下の設定で**新しいエージェントを作成**：  
+   - エージェント名：`WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.ja.png)
 
-### ステップ 2: MCP サーバープロジェクトの初期化
+### ステップ2: MCPサーバープロジェクトの初期化
 
-1. Agent Builder で **Tools → Add Tool** に移動
-2. 利用可能なオプションから **"MCP Server" を選択**
-3. **"Create A new MCP Server" を選択**
-4. `python-weather` テンプレートを選ぶ
-5. サーバー名を設定：`weather_mcp`
+1. Agent Builderの**Tools → Add Tool**に移動  
+2. 利用可能なオプションから**「MCP Server」**を選択  
+3. **「Create A new MCP Server」**を選ぶ  
+4. **`python-weather`テンプレートを選択**  
+5. サーバー名を`weather_mcp`に設定
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.ja.png)
 
-### ステップ 3: プロジェクトを開いて確認
+### ステップ3: プロジェクトを開いて確認
 
-1. 生成されたプロジェクトを VS Code で開く
-2. プロジェクト構成を確認：
+1. 生成されたプロジェクトをVS Codeで**開く**  
+2. プロジェクト構成を**確認する**：  
    ```
    weather_mcp/
    ├── src/
@@ -95,35 +96,34 @@ Model Context Protocol の Python SDK は、カスタム MCP サーバー構築�
    └── README.md
    ```
 
-### ステップ 4: 最新 MCP SDK にアップグレード
+### ステップ4: 最新MCP SDKへアップグレード
 
-> **🔍 なぜアップグレード？** 最新の MCP SDK (v1.9.3) と Inspector サービス (0.14.0) を使うことで、機能強化とより良いデバッグが可能になるためです。
+> **🔍 なぜアップグレード？**  
+> 最新のMCP SDK（v1.9.3）とInspectorサービス（0.14.0）を使い、機能強化とデバッグ性能向上を図るためです。
 
-#### 4a. Python 依存関係の更新
+#### 4a. Python依存関係の更新
 
-**`pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
+**`pyproject.toml`を編集：** [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)を更新
 
+#### 4b. Inspector設定の更新
 
-#### 4b. Update Inspector Configuration
+**`inspector/package.json`を編集：** [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)を更新
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Inspector依存関係の更新
 
-#### 4c. Update Inspector Dependencies
+**`inspector/package-lock.json`を編集：** [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)を更新
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 注意：** このファイルは膨大な依存関係定義を含みます。以下は主要な構造のみ示しています。完全な依存関係解決には提供されたファイルを使用してください。
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ 完全なパッケージロック：** package-lock.jsonは約3000行の依存関係定義を含みます。上記は主要構造の例示です。完全な依存関係解決には元ファイルを利用してください。
 
+### ステップ5: VS Codeデバッグ設定
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*注：指定されたパスのファイルをコピーして、対応するローカルファイルを置き換えてください*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. 起動構成の更新
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json` を編集：**
+**`.vscode/launch.json`を編集：**
 
 ```json
 {
@@ -200,7 +200,7 @@ Model Context Protocol の Python SDK は、カスタム MCP サーバー構築�
 }
 ```
 
-**`.vscode/tasks.json` を編集：**
+**`.vscode/tasks.json`を編集：**
 
 ```
 {
@@ -304,31 +304,31 @@ Model Context Protocol の Python SDK は、カスタム MCP サーバー構築�
 
 ---
 
-## 🚀 MCP サーバーの起動とテスト
+## 🚀 MCPサーバーの起動とテスト
 
-### ステップ 6: 依存関係のインストール
+### ステップ6: 依存関係のインストール
 
-設定変更後、以下のコマンドを実行：
+設定変更後、以下のコマンドを実行してください：
 
-**Python 依存関係のインストール：**
+**Python依存関係のインストール：**  
 ```bash
 uv sync
 ```
 
-**Inspector 依存関係のインストール：**
+**Inspector依存関係のインストール：**  
 ```bash
 cd inspector
 npm install
 ```
 
-### ステップ 7: Agent Builder でデバッグ
+### ステップ7: Agent Builderでデバッグ
 
-1. **F5 キーを押す**か、**"Debug in Agent Builder"** 構成を使用
-2. デバッグパネルから複合構成を選択
-3. サーバー起動と Agent Builder の起動を待つ
-4. 自然言語クエリで Weather MCP サーバーをテスト
+1. **F5キーを押す**か、**「Debug in Agent Builder」**構成を選択  
+2. デバッグパネルから**compound構成を選択**  
+3. サーバー起動とAgent Builderの起動を待つ  
+4. 自然言語クエリでWeather MCPサーバーをテスト
 
-以下のような入力を行います
+以下のような入力プロンプトを使用
 
 SYSTEM_PROMPT
 
@@ -344,14 +344,14 @@ How's the weather like in Seattle
 
 ![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.ja.png)
 
-### ステップ 8: MCP Inspector でデバッグ
+### ステップ8: MCP Inspectorでデバッグ
 
-1. **"Debug in Inspector"** 構成を使用（Edge または Chrome）
-2. `http://localhost:6274` で Inspector インターフェースを開く
-3. インタラクティブなテスト環境を探索：
-   - 利用可能なツールの確認
-   - ツール実行のテスト
-   - ネットワークリクエストの監視
+1. **「Debug in Inspector」**構成を使用（EdgeまたはChrome）  
+2. `http://localhost:6274`でInspectorインターフェースを開く  
+3. インタラクティブなテスト環境を探索：  
+   - 利用可能なツールの確認  
+   - ツール実行のテスト  
+   - ネットワークリクエストの監視  
    - サーバーレスポンスのデバッグ
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.ja.png)
@@ -360,43 +360,43 @@ How's the weather like in Seattle
 
 ## 🎯 主要な学習成果
 
-このラボを終えて、以下ができるようになりました：
+このラボを完了して、以下を達成しました：
 
-- [x] AI Toolkit テンプレートを使ったカスタム MCP サーバーの作成
-- [x] 最新 MCP SDK (v1.9.3) へのアップグレードによる機能強化
-- [x] Agent Builder と Inspector 両方のプロフェッショナルなデバッグワークフローの設定
-- [x] インタラクティブなサーバーテストのための MCP Inspector のセットアップ
-- [x] MCP 開発における VS Code のデバッグ構成の習得
+- [x] AI Toolkitテンプレートを使った**カスタムMCPサーバーの作成**  
+- [x] 機能強化のための**最新MCP SDK（v1.9.3）へのアップグレード**  
+- [x] Agent BuilderとInspector両方の**プロフェッショナルなデバッグワークフローの設定**  
+- [x] インタラクティブなサーバーテストのための**MCP Inspectorのセットアップ**  
+- [x] MCP開発のための**VS Codeデバッグ構成の習得**
 
 ## 🔧 探索した高度な機能
 
 | 機能 | 説明 | 利用例 |
 |---------|-------------|----------|
 | **MCP Python SDK v1.9.3** | 最新のプロトコル実装 | モダンなサーバー開発 |
-| **MCP Inspector 0.14.0** | インタラクティブなデバッグツール | リアルタイムのサーバーテスト |
-| **VS Code デバッグ** | 統合開発環境 | プロフェッショナルなデバッグワークフロー |
-| **Agent Builder 統合** | AI Toolkit との直接接続 | エンドツーエンドのエージェントテスト |
+| **MCP Inspector 0.14.0** | インタラクティブなデバッグツール | リアルタイムサーバーテスト |
+| **VS Codeデバッグ** | 統合開発環境 | プロフェッショナルなデバッグワークフロー |
+| **Agent Builder統合** | AI Toolkitとの直接連携 | エンドツーエンドのエージェントテスト |
 
 ## 📚 追加リソース
 
-- [MCP Python SDK ドキュメント](https://modelcontextprotocol.io/docs/sdk/python)
-- [AI Toolkit 拡張機能ガイド](https://code.visualstudio.com/docs/ai/ai-toolkit)
-- [VS Code デバッグドキュメント](https://code.visualstudio.com/docs/editor/debugging)
-- [Model Context Protocol 仕様](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [MCP Python SDKドキュメント](https://modelcontextprotocol.io/docs/sdk/python)  
+- [AI Toolkit拡張機能ガイド](https://code.visualstudio.com/docs/ai/ai-toolkit)  
+- [VS Codeデバッグドキュメント](https://code.visualstudio.com/docs/editor/debugging)  
+- [Model Context Protocol仕様](https://modelcontextprotocol.io/docs/concepts/architecture)
 
 ---
 
-**🎉 おめでとうございます！** ラボ 3 を無事に完了し、プロフェッショナルな開発ワークフローでカスタム MCP サーバーの作成、デバッグ、デプロイができるようになりました。
+**🎉 おめでとうございます！** ラボ3を無事に完了し、プロフェッショナルな開発ワークフローでカスタムMCPサーバーの作成、デバッグ、デプロイができるようになりました。
 
 ### 🔜 次のモジュールへ進む
 
-実際の開発ワークフローで MCP スキルを活かす準備はできましたか？続けて **[モジュール 4: 実践的 MCP 開発 - カスタム GitHub クローンサーバー](../lab4/README.md)** に進みましょう。ここでは：
+実際の開発ワークフローでMCPスキルを活かす準備はできましたか？  
+続けて**[モジュール4: 実践的MCP開発 - カスタムGitHubクローンサーバー](../lab4/README.md)**へ進みましょう。ここでは：  
+- GitHubリポジトリ操作を自動化する本番対応MCPサーバーを構築  
+- MCP経由でGitHubリポジトリのクローン機能を実装  
+- VS CodeとGitHub Copilot Agent Modeとの統合  
+- 本番環境でのカスタムMCPサーバーのテストとデプロイ  
+- 開発者向けの実践的なワークフロー自動化を学習します
 
-- GitHub リポジトリ操作を自動化する本番対応の MCP サーバーを構築
-- MCP 経由で GitHub リポジトリのクローン機能を実装
-- VS Code と GitHub Copilot Agent Mode とカスタム MCP サーバーの統合
-- 本番環境でのカスタム MCP サーバーのテストとデプロイ
-- 開発者向けの実践的なワークフロー自動化を学習
-
-**免責事項**:  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。原文の言語で記載された文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

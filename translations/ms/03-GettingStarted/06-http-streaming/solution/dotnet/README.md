@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:18:42+00:00",
+  "translation_date": "2025-07-13T21:05:35+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "ms"
 }
@@ -31,13 +31,13 @@ Dengan server berjalan di satu terminal, buka terminal lain dan jalankan arahan 
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Ini akan memulakan pelayan web dengan antara muka visual yang membolehkan anda menguji contoh tersebut.
+Ini akan memulakan server web dengan antara muka visual yang membolehkan anda menguji contoh.
 
 > Pastikan **Streamable HTTP** dipilih sebagai jenis pengangkutan, dan URL adalah `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Setelah server disambungkan:
 
-- try listing tools and run `add`, dengan argumen 2 dan 4, anda sepatutnya melihat 6 sebagai hasilnya.
+- cuba senaraikan alat dan jalankan `add`, dengan argumen 2 dan 4, anda sepatutnya melihat hasil 6.
 - pergi ke resources dan resource template dan panggil "greeting", taipkan nama dan anda akan melihat ucapan dengan nama yang anda berikan.
 
 ### Ujian dalam mod CLI
@@ -48,7 +48,7 @@ Anda boleh lancarkan terus dalam mod CLI dengan menjalankan arahan berikut:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Ini akan menyenaraikan semua alat yang tersedia dalam server. Anda sepatutnya melihat output berikut:
+Ini akan menyenaraikan semua alat yang tersedia di server. Anda sepatutnya melihat output berikut:
 
 ```text
 {
@@ -102,7 +102,7 @@ Anda sepatutnya melihat output berikut:
 
 > ![!TIP]
 > Biasanya lebih pantas menjalankan inspector dalam mod CLI berbanding di pelayar.
-> Baca lebih lanjut mengenai inspector [di sini](https://github.com/modelcontextprotocol/inspector).
+> Baca lebih lanjut tentang inspector [di sini](https://github.com/modelcontextprotocol/inspector).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

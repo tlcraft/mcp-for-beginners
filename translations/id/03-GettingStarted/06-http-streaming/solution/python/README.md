@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:03:12+00:00",
+  "translation_date": "2025-07-13T21:21:15+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "id"
 }
@@ -11,16 +11,16 @@ CO_OP_TRANSLATOR_METADATA:
 
 Berikut cara menjalankan server dan klien streaming HTTP klasik, serta server dan klien streaming MCP menggunakan Python.
 
-### Ikhtisar
+### Gambaran Umum
 
-- Anda akan mengatur server MCP yang mengalirkan notifikasi progres ke klien saat memproses item.
+- Anda akan menyiapkan server MCP yang mengirimkan notifikasi progres ke klien saat memproses item.
 - Klien akan menampilkan setiap notifikasi secara real time.
 - Panduan ini mencakup prasyarat, pengaturan, menjalankan, dan pemecahan masalah.
 
 ### Prasyarat
 
 - Python 3.9 atau versi lebih baru
-- Paket Python `mcp` (pasang dengan `pip install mcp`)
+- Paket Python `mcp` (instal dengan `pip install mcp`)
 
 ### Instalasi & Pengaturan
 
@@ -39,7 +39,7 @@ Berikut cara menjalankan server dan klien streaming HTTP klasik, serta server da
    source venv/bin/activate      # On Linux/macOS
    ```
 
-1. **Pasang dependensi yang dibutuhkan:**
+1. **Instal dependensi yang dibutuhkan:**
 
    ```pwsh
    pip install "mcp[cli]"
@@ -80,7 +80,7 @@ Berikut cara menjalankan server dan klien streaming HTTP klasik, serta server da
    python client.py
    ```
 
-2. Anda akan melihat pesan streaming yang dicetak secara berurutan:
+2. Anda akan melihat pesan streaming dicetak secara berurutan:
 
    ```text
    Running classic HTTP streaming client...
@@ -116,7 +116,7 @@ Berikut cara menjalankan server dan klien streaming HTTP klasik, serta server da
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Anda akan melihat notifikasi yang dicetak secara real time saat server memproses setiap item:
+2. Anda akan melihat notifikasi dicetak secara real time saat server memproses setiap item:
    ```
    Running MCP client...
    Starting client...
@@ -129,23 +129,23 @@ Berikut cara menjalankan server dan klien streaming HTTP klasik, serta server da
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### Langkah-Langkah Implementasi Utama
+### Langkah Implementasi Utama
 
 1. **Buat server MCP menggunakan FastMCP.**
-2. **Definisikan alat yang memproses daftar dan mengirim notifikasi menggunakan `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+2. **Definisikan tool yang memproses daftar dan mengirim notifikasi menggunakan `ctx.info()` atau `ctx.log()`.**
+3. **Jalankan server dengan `transport="streamable-http"`.**
+4. **Implementasikan klien dengan handler pesan untuk menampilkan notifikasi saat diterima.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Penjelasan Kode
+- Server menggunakan fungsi async dan konteks MCP untuk mengirim pembaruan progres.
+- Klien mengimplementasikan handler pesan async untuk mencetak notifikasi dan hasil akhir.
 
-### Tips & Troubleshooting
+### Tips & Pemecahan Masalah
 
-- Use `async/await` untuk operasi non-blocking.**
-- Selalu tangani pengecualian di server dan klien untuk keandalan.
-- Uji dengan beberapa klien untuk melihat pembaruan secara real time.
-- Jika menemui kesalahan, periksa versi Python Anda dan pastikan semua dependensi sudah terpasang.
+- Gunakan `async/await` untuk operasi non-blocking.
+- Selalu tangani pengecualian di server dan klien agar lebih tangguh.
+- Uji dengan beberapa klien untuk melihat pembaruan real time.
+- Jika mengalami error, periksa versi Python dan pastikan semua dependensi sudah terinstal.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.

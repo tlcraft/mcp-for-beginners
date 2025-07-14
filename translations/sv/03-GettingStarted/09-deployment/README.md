@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T17:35:08+00:00",
+  "translation_date": "2025-07-13T22:09:10+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "sv"
 }
@@ -29,7 +29,7 @@ Om din server är avsedd att användas genom att köras på användarens dator k
 1. **Ladda ner servern**. Om du inte har skrivit servern själv, ladda ner den först till din dator.  
 1. **Starta serverprocessen**: Kör din MCP-serverapplikation.
 
-För SSE (behövs inte för stdio-typ server)
+För SSE (behövs inte för stdio-typ av server)
 
 1. **Konfigurera nätverk**: Se till att servern är tillgänglig på den förväntade porten.  
 1. **Anslut klienter**: Använd lokala anslutningsadresser som `http://localhost:3000`.
@@ -113,4 +113,4 @@ Där har du det, distribuera lokalt eller till Azure med dessa steg.
 - Nästa: [Praktisk implementering](../../04-PracticalImplementation/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

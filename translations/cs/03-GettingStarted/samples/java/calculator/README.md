@@ -2,104 +2,104 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-05-27T16:20:34+00:00",
+  "translation_date": "2025-07-13T22:30:36+00:00",
   "source_file": "03-GettingStarted/samples/java/calculator/README.md",
   "language_code": "cs"
 }
 -->
-# Basic Calculator MCP Service
+# Základní kalkulační MCP služba
 
-This service provides basic calculator operations through the Model Context Protocol (MCP) using Spring Boot with WebFlux transport. It's designed as a simple example for beginners learning about MCP implementations.
+Tato služba poskytuje základní kalkulační operace prostřednictvím Model Context Protocol (MCP) pomocí Spring Boot s WebFlux transportem. Je navržena jako jednoduchý příklad pro začátečníky, kteří se učí o implementacích MCP.
 
-For more information, see the [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) reference documentation.
+Pro více informací si přečtěte referenční dokumentaci [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
-## Overview
+## Přehled
 
-The service showcases:
-- Support for SSE (Server-Sent Events)
-- Automatic tool registration using Spring AI's `@Tool` annotation
-- Basic calculator functions:
-  - Addition, subtraction, multiplication, division
-  - Power calculation and square root
-  - Modulus (remainder) and absolute value
-  - Help function for operation descriptions
+Služba ukazuje:
+- Podporu SSE (Server-Sent Events)
+- Automatickou registraci nástrojů pomocí anotace `@Tool` ze Spring AI
+- Základní kalkulační funkce:
+  - Sčítání, odčítání, násobení, dělení
+  - Výpočet mocniny a druhé odmocniny
+  - Modulo (zbytek po dělení) a absolutní hodnota
+  - Nápověda k popisu operací
 
-## Features
+## Funkce
 
-This calculator service offers the following capabilities:
+Tato kalkulační služba nabízí následující možnosti:
 
-1. **Basic Arithmetic Operations**:
-   - Addition of two numbers
-   - Subtraction of one number from another
-   - Multiplication of two numbers
-   - Division of one number by another (with zero division check)
+1. **Základní aritmetické operace**:
+   - Sčítání dvou čísel
+   - Odčítání jednoho čísla od druhého
+   - Násobení dvou čísel
+   - Dělení jednoho čísla druhým (s kontrolou dělení nulou)
 
-2. **Advanced Operations**:
-   - Power calculation (raising a base to an exponent)
-   - Square root calculation (with negative number check)
-   - Modulus (remainder) calculation
-   - Absolute value calculation
+2. **Pokročilé operace**:
+   - Výpočet mocniny (základ na exponent)
+   - Výpočet druhé odmocniny (s kontrolou záporného čísla)
+   - Výpočet zbytku po dělení (modulo)
+   - Výpočet absolutní hodnoty
 
-3. **Help System**:
-   - Built-in help function explaining all available operations
+3. **Nápovědní systém**:
+   - Vestavěná funkce nápovědy vysvětlující všechny dostupné operace
 
-## Using the Service
+## Použití služby
 
-The service exposes the following API endpoints through the MCP protocol:
+Služba zpřístupňuje následující API endpointy přes MCP protokol:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- `power(base, exponent)`: Calculate the power of a number
-- `squareRoot(number)`: Calculate the square root (with negative number check)
-- `modulus(a, b)`: Calculate the remainder when dividing
-- `absolute(number)`: Calculate the absolute value
-- `help()`: Get information about available operations
+- `add(a, b)`: Sečte dvě čísla
+- `subtract(a, b)`: Odečte druhé číslo od prvního
+- `multiply(a, b)`: Vynásobí dvě čísla
+- `divide(a, b)`: Vydělí první číslo druhým (s kontrolou dělení nulou)
+- `power(base, exponent)`: Vypočítá mocninu čísla
+- `squareRoot(number)`: Vypočítá druhou odmocninu (s kontrolou záporného čísla)
+- `modulus(a, b)`: Vypočítá zbytek po dělení
+- `absolute(number)`: Vypočítá absolutní hodnotu
+- `help()`: Získá informace o dostupných operacích
 
-## Test Client
+## Testovací klient
 
-A simple test client is included in the `com.microsoft.mcp.sample.client` package. The `SampleCalculatorClient` class demonstrates the available operations of the calculator service.
+Jednoduchý testovací klient je součástí balíčku `com.microsoft.mcp.sample.client`. Třída `SampleCalculatorClient` demonstruje dostupné operace kalkulační služby.
 
-## Using the LangChain4j Client
+## Použití LangChain4j klienta
 
-The project includes a LangChain4j example client in `com.microsoft.mcp.sample.client.LangChain4jClient` that demonstrates how to integrate the calculator service with LangChain4j and GitHub models:
+Projekt obsahuje příklad klienta LangChain4j v `com.microsoft.mcp.sample.client.LangChain4jClient`, který ukazuje, jak integrovat kalkulační službu s LangChain4j a GitHub modely:
 
-### Prerequisites
+### Požadavky
 
-1. **GitHub Token Setup**:
+1. **Nastavení GitHub tokenu**:
    
-   To use GitHub's AI models (like phi-4), you need a GitHub personal access token:
+   Pro použití AI modelů GitHubu (např. phi-4) potřebujete osobní přístupový token GitHub:
 
-   a. Go to your GitHub account settings: https://github.com/settings/tokens
+   a. Přejděte do nastavení svého GitHub účtu: https://github.com/settings/tokens
    
-   b. Click "Generate new token" → "Generate new token (classic)"
+   b. Klikněte na "Generate new token" → "Generate new token (classic)"
    
-   c. Give your token a descriptive name
+   c. Pojmenujte token popisným názvem
    
-   d. Select the following scopes:
-      - `repo` (Full control of private repositories)
-      - `read:org` (Read org and team membership, read org projects)
-      - `gist` (Create gists)
-      - `user:email` (Access user email addresses (read-only))
+   d. Vyberte následující oprávnění:
+      - `repo` (plná kontrola nad soukromými repozitáři)
+      - `read:org` (čtení členství v organizacích a týmech, čtení projektů organizace)
+      - `gist` (vytváření gistů)
+      - `user:email` (přístup k e-mailovým adresám uživatele (pouze pro čtení))
    
-   e. Click "Generate token" and copy your new token
+   e. Klikněte na "Generate token" a zkopírujte nový token
    
-   f. Set it as an environment variable:
+   f. Nastavte ho jako proměnnou prostředí:
       
-      On Windows:
+      Na Windows:
       ```
       set GITHUB_TOKEN=your-github-token
       ```
       
-      On macOS/Linux:
+      Na macOS/Linux:
       ```bash
       export GITHUB_TOKEN=your-github-token
       ```
 
-   g. For persistent setup, add it to your environment variables through system settings
+   g. Pro trvalé nastavení přidejte token do systémových proměnných prostředí
 
-2. Add the LangChain4j GitHub dependency to your project (already included in pom.xml):
+2. Přidejte závislost LangChain4j GitHub do svého projektu (již zahrnuto v pom.xml):
    ```xml
    <dependency>
        <groupId>dev.langchain4j</groupId>
@@ -108,25 +108,25 @@ The project includes a LangChain4j example client in `com.microsoft.mcp.sample.c
    </dependency>
    ```
 
-3. Ensure the calculator server is running on `localhost:8080`
+3. Ujistěte se, že kalkulační server běží na `localhost:8080`
 
-### Running the LangChain4j Client
+### Spuštění LangChain4j klienta
 
-This example demonstrates:
-- Connecting to the calculator MCP server via SSE transport
-- Using LangChain4j to create a chat bot that leverages calculator operations
-- Integrating with GitHub AI models (now using phi-4 model)
+Tento příklad ukazuje:
+- Připojení ke kalkulačnímu MCP serveru přes SSE transport
+- Použití LangChain4j k vytvoření chatbota využívajícího kalkulační operace
+- Integraci s GitHub AI modely (nyní používá model phi-4)
 
-The client sends the following sample queries to demonstrate functionality:
-1. Calculating the sum of two numbers
-2. Finding the square root of a number
-3. Getting help information about available calculator operations
+Klient odesílá následující ukázkové dotazy pro demonstraci funkcí:
+1. Výpočet součtu dvou čísel
+2. Výpočet druhé odmocniny čísla
+3. Získání nápovědy o dostupných kalkulačních operacích
 
-Run the example and check the console output to see how the AI model uses the calculator tools to respond to queries.
+Spusťte příklad a sledujte výstup v konzoli, abyste viděli, jak AI model využívá kalkulační nástroje k odpovědím.
 
-### GitHub Model Configuration
+### Konfigurace GitHub modelu
 
-The LangChain4j client is configured to use GitHub's phi-4 model with the following settings:
+LangChain4j klient je nastaven pro použití GitHub modelu phi-4 s následujícími parametry:
 
 ```java
 ChatLanguageModel model = GitHubChatModel.builder()
@@ -138,11 +138,11 @@ ChatLanguageModel model = GitHubChatModel.builder()
     .build();
 ```
 
-To use different GitHub models, simply change the `modelName` parameter to another supported model (e.g., "claude-3-haiku-20240307", "llama-3-70b-8192", etc.).
+Pro použití jiných GitHub modelů stačí změnit parametr `modelName` na jiný podporovaný model (např. "claude-3-haiku-20240307", "llama-3-70b-8192" atd.).
 
-## Dependencies
+## Závislosti
 
-The project requires the following key dependencies:
+Projekt vyžaduje následující klíčové závislosti:
 
 ```xml
 <!-- For MCP Server -->
@@ -166,78 +166,78 @@ The project requires the following key dependencies:
 </dependency>
 ```
 
-## Building the Project
+## Sestavení projektu
 
-Build the project using Maven:
+Projekt sestavíte pomocí Maven:
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## Running the Server
+## Spuštění serveru
 
-### Using Java
+### Použití Java
 
 ```bash
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### Using MCP Inspector
+### Použití MCP Inspectoru
 
-The MCP Inspector is a helpful tool for interacting with MCP services. To use it with this calculator service:
+MCP Inspector je užitečný nástroj pro práci s MCP službami. Pro použití s touto kalkulační službou:
 
-1. **Install and run MCP Inspector** in a new terminal window:
+1. **Nainstalujte a spusťte MCP Inspector** v novém terminálovém okně:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Access the web UI** by clicking the URL displayed by the app (typically http://localhost:6274)
+2. **Přistupte k webovému rozhraní** kliknutím na URL zobrazenou aplikací (obvykle http://localhost:6274)
 
-3. **Configure the connection**:
-   - Set the transport type to "SSE"
-   - Set the URL to your running server's SSE endpoint: `http://localhost:8080/sse`
-   - Click "Connect"
+3. **Nastavte připojení**:
+   - Zvolte typ transportu "SSE"
+   - Nastavte URL na SSE endpoint běžícího serveru: `http://localhost:8080/sse`
+   - Klikněte na "Connect"
 
-4. **Use the tools**:
-   - Click "List Tools" to see available calculator operations
-   - Select a tool and click "Run Tool" to execute an operation
+4. **Používejte nástroje**:
+   - Klikněte na "List Tools" pro zobrazení dostupných kalkulačních operací
+   - Vyberte nástroj a klikněte na "Run Tool" pro spuštění operace
 
 ![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.cs.png)
 
-### Using Docker
+### Použití Dockeru
 
-The project includes a Dockerfile for containerized deployment:
+Projekt obsahuje Dockerfile pro nasazení v kontejneru:
 
-1. **Build the Docker image**:
+1. **Sestavte Docker image**:
    ```bash
    docker build -t calculator-mcp-service .
    ```
 
-2. **Run the Docker container**:
+2. **Spusťte Docker kontejner**:
    ```bash
    docker run -p 8080:8080 calculator-mcp-service
    ```
 
-This will:
-- Build a multi-stage Docker image with Maven 3.9.9 and Eclipse Temurin 24 JDK
-- Create an optimized container image
-- Expose the service on port 8080
-- Start the MCP calculator service inside the container
+Tímto se:
+- Sestaví multi-stage Docker image s Mavenem 3.9.9 a Eclipse Temurin 24 JDK
+- Vytvoří optimalizovaný kontejnerový image
+- Otevře port 8080 pro službu
+- Spustí MCP kalkulační službu uvnitř kontejneru
 
-You can access the service at `http://localhost:8080` once the container is running.
+Službu pak můžete používat na `http://localhost:8080`, jakmile kontejner poběží.
 
-## Troubleshooting
+## Řešení problémů
 
-### Common Issues with GitHub Token
+### Běžné problémy s GitHub tokenem
 
-1. **Token Permission Issues**: If you get a 403 Forbidden error, check that your token has the correct permissions as outlined in the prerequisites.
+1. **Problémy s oprávněními tokenu**: Pokud dostanete chybu 403 Forbidden, zkontrolujte, zda má token správná oprávnění podle požadavků výše.
 
-2. **Token Not Found**: If you get a "No API key found" error, ensure the GITHUB_TOKEN environment variable is properly set.
+2. **Token nenalezen**: Pokud se zobrazí chyba "No API key found", ujistěte se, že proměnná prostředí GITHUB_TOKEN je správně nastavena.
 
-3. **Rate Limiting**: GitHub API has rate limits. If you encounter a rate limit error (status code 429), wait a few minutes before trying again.
+3. **Omezení počtu požadavků**: GitHub API má limity na počet požadavků. Pokud narazíte na chybu limitu (kód 429), počkejte několik minut a zkuste to znovu.
 
-4. **Token Expiration**: GitHub tokens can expire. If you receive authentication errors after some time, generate a new token and update your environment variable.
+4. **Vypršení platnosti tokenu**: GitHub tokeny mohou vypršet. Pokud po čase dostáváte chyby autentizace, vygenerujte nový token a aktualizujte proměnnou prostředí.
 
-If you need further assistance, check the [LangChain4j documentation](https://github.com/langchain4j/langchain4j) or [GitHub API documentation](https://docs.github.com/en/rest).
+Pokud potřebujete další pomoc, podívejte se do [dokumentace LangChain4j](https://github.com/langchain4j/langchain4j) nebo [dokumentace GitHub API](https://docs.github.com/en/rest).
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

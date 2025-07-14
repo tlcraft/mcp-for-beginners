@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:18:47+00:00",
+  "translation_date": "2025-07-13T21:05:41+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "tl"
 }
@@ -33,22 +33,22 @@ npx @modelcontextprotocol/inspector http://localhost:3001
 
 Dapat itong magsimula ng web server na may visual na interface na nagpapahintulot sa iyo na subukan ang sample.
 
-> Siguraduhing ang **Streamable HTTP** ang napiling uri ng transport, at ang URL ay `http://localhost:3001/mcp`.
+> Siguraduhing ang **Streamable HTTP** ang napili bilang uri ng transport, at ang URL ay `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Kapag nakakonekta na ang server:
 
-- try listing tools and run `add`, na may mga args na 2 at 4, makikita mo ang 6 bilang resulta.
+- subukang ilista ang mga tools at patakbuhin ang `add`, gamit ang mga argumento na 2 at 4, dapat lumabas ang 6 bilang resulta.
 - pumunta sa resources at resource template at tawagin ang "greeting", mag-type ng pangalan at makikita mo ang pagbati gamit ang pangalang ibinigay mo.
 
-### Pagsusuri sa CLI mode
+### Pagsubok sa CLI mode
 
-Maaari mo itong patakbuhin direkta sa CLI mode sa pamamagitan ng pagpapatakbo ng sumusunod na utos:
+Maaari mo itong patakbuhin nang direkta sa CLI mode sa pamamagitan ng pagpapatakbo ng sumusunod na utos:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Ipapakita nito ang lahat ng mga tools na available sa server. Dapat mong makita ang sumusunod na output:
+Ililista nito ang lahat ng mga tools na available sa server. Dapat mong makita ang sumusunod na output:
 
 ```text
 {
@@ -86,7 +86,7 @@ Para tawagin ang isang tool, i-type:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
 ```
 
-Makikita mo ang sumusunod na output:
+Dapat mong makita ang sumusunod na output:
 
 ```text
 {
@@ -101,8 +101,8 @@ Makikita mo ang sumusunod na output:
 ```
 
 > ![!TIP]
-> Karaniwan, mas mabilis patakbuhin ang inspector sa CLI mode kaysa sa browser.
+> Mas mabilis karaniwang patakbuhin ang inspector sa CLI mode kaysa sa browser.
 > Basahin pa ang tungkol sa inspector [dito](https://github.com/modelcontextprotocol/inspector).
 
-**Pagtatangi**:  
-Ang dokumentong ito ay isinalin gamit ang serbisyong AI na pagsasalin na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama’t nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o kamalian. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasaling-tao. Hindi kami mananagot sa anumang hindi pagkakaintindihan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

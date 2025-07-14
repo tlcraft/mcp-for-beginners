@@ -2,53 +2,54 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-05-17T09:26:36+00:00",
+  "translation_date": "2025-07-13T18:07:20+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
   "language_code": "ro"
 }
 -->
 # Rularea acestui exemplu
 
-Este recomandat să instalați `uv`, dar nu este obligatoriu, vedeți [instrucțiunile](https://docs.astral.sh/uv/#highlights)
+Se recomandă instalarea `uv`, dar nu este obligatoriu, vezi [instrucțiunile](https://docs.astral.sh/uv/#highlights)
 
-## -1- Instalați dependențele
+## -1- Instalează dependențele
 
 ```bash
 npm install
 ```
 
-## -3- Rulați exemplul
+## -3- Rulează exemplul
+
 
 ```bash
 npm run build
 ```
 
-## -4- Testați exemplul
+## -4- Testează exemplul
 
-Cu serverul rulând într-un terminal, deschideți un alt terminal și executați următoarea comandă:
+Cu serverul pornit într-un terminal, deschide un alt terminal și execută următoarea comandă:
 
 ```bash
 npm run inspector
 ```
 
-Aceasta ar trebui să pornească un server web cu o interfață vizuală care vă permite să testați exemplul.
+Aceasta ar trebui să pornească un server web cu o interfață vizuală care îți permite să testezi exemplul.
 
 Odată ce serverul este conectat:
 
-- încercați să listați uneltele și să rulați `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- încearcă să listezi uneltele și rulează `add`, cu argumentele 2 și 4, ar trebui să vezi 6 ca rezultat.
+- mergi la resources și resource template și apelează "greeting", introdu un nume și ar trebui să vezi un mesaj de salut cu numele introdus.
 
-### Testing in CLI mode
+### Testarea în modul CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` este un wrapper în jurul său.
+Inspectorul pe care l-ai rulat este de fapt o aplicație Node.js, iar `mcp dev` este un wrapper pentru aceasta.
 
-Îl puteți lansa direct în modul CLI rulând următoarea comandă:
+Poți să îl lansezi direct în modul CLI rulând următoarea comandă:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/list
 ```
 
-Aceasta va lista toate uneltele disponibile pe server. Ar trebui să vedeți următoarea ieșire:
+Aceasta va lista toate uneltele disponibile pe server. Ar trebui să vezi următorul rezultat:
 
 ```text
 {
@@ -79,13 +80,13 @@ Aceasta va lista toate uneltele disponibile pe server. Ar trebui să vedeți urm
 }
 ```
 
-Pentru a invoca o unealtă, tastați:
+Pentru a apela o unealtă tastează:
 
 ```bash
 nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Ar trebui să vedeți următoarea ieșire:
+Ar trebui să vezi următorul rezultat:
 
 ```text
 {
@@ -100,8 +101,8 @@ Ar trebui să vedeți următoarea ieșire:
 ```
 
 > ![!TIP]
-> De obicei, este mult mai rapid să rulați inspectorul în modul CLI decât în browser.
-> Citiți mai multe despre inspector [aici](https://github.com/modelcontextprotocol/inspector).
+> De obicei, este mult mai rapid să rulezi inspectorul în modul CLI decât în browser.
+> Citește mai multe despre inspector [aici](https://github.com/modelcontextprotocol/inspector).
 
-**Declinare responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți de faptul că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională umană. Nu suntem responsabili pentru neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

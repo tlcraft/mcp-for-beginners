@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T16:16:32+00:00",
+  "translation_date": "2025-07-13T19:51:27+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "ja"
 }
@@ -11,7 +11,7 @@ SSEについて少し理解できたので、次はSSEサーバーを作って�
 
 ## 演習：SSEサーバーの作成
 
-サーバーを作成するにあたって、次の2点を意識する必要があります：
+サーバーを作成するにあたって、次の2点を念頭に置く必要があります：
 
 - 接続とメッセージ用のエンドポイントを公開するためにウェブサーバーを使うこと。
 - stdioを使っていたときと同様に、ツールやリソース、プロンプトを使ってサーバーを構築すること。
@@ -38,7 +38,7 @@ SSE固有の部分が定義できたので、ツールやプロンプト、リ�
 
 ## 演習：Inspectorを使ったSSEサーバーのデバッグ
 
-Inspectorは前のレッスン[最初のサーバーを作成する](/03-GettingStarted/01-first-server/README.md)で紹介した便利なツールです。ここでも使えるか試してみましょう。
+Inspectorは前のレッスン[最初のサーバーの作成](/03-GettingStarted/01-first-server/README.md)で見た便利なツールです。ここでも使えるか試してみましょう：
 
 ### -1- Inspectorの起動
 
@@ -48,8 +48,8 @@ Inspectorを起動するには、まずSSEサーバーが動いている必要�
 
 1. Inspectorを起動する
 
-    > ![NOTE]
-    > サーバーを起動しているターミナルとは別のウィンドウで実行してください。また、以下のコマンドはサーバーが動作しているURLに合わせて調整が必要です。
+    > [!NOTE]
+    > サーバーが動いているターミナルとは別のターミナルで実行してください。また、以下のコマンドはサーバーが動作しているURLに合わせて調整が必要です。
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
@@ -59,7 +59,7 @@ Inspectorの起動方法はどのランタイムでも同じです。サーバ�
 
 ### -2- ツールの試用
 
-ドロップダウンリストからSSEを選択し、サーバーが動作しているURL（例： http://localhost:4321/sse）を入力して「Connect」ボタンを押します。前回同様にツール一覧を表示し、ツールを選択して入力値を渡すと、以下のような結果が得られます：
+ドロップダウンリストからSSEを選択し、サーバーが動作しているURL（例： http://localhost:4321/sse）を入力して「Connect」ボタンをクリックします。前回同様、ツールの一覧を表示し、ツールを選択して入力値を渡します。以下のような結果が表示されるはずです：
 
 ![Inspectorで動作中のSSEサーバー](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.ja.png)
 
@@ -71,15 +71,15 @@ Inspectorの起動方法はどのランタイムでも同じです。サーバ�
 
 ## 解答例
 
-[解答例](./solution/README.md) 動作するコードの一例を示しています。
+[解答例](./solution/README.md) 実際に動作するコードの一例です。
 
 ## まとめ
 
-この章のポイントは以下の通りです：
+この章の重要なポイントは以下の通りです：
 
 - SSEはstdioに次ぐ2つ目のサポートされているトランスポートです。
 - SSEをサポートするには、ウェブフレームワークを使って接続とメッセージの管理が必要です。
-- InspectorやVisual Studio Codeを使ってstdioサーバーと同様にSSEサーバーを利用できます。ただしstdioとSSEでは少し違いがあり、SSEではサーバーを別途起動してからInspectorを実行し、InspectorではURLを指定する必要があります。
+- InspectorやVisual Studio Codeを使ってstdioサーバーと同様にSSEサーバーを利用できます。ただしstdioとSSEでは少し違いがあります。SSEではサーバーを別途起動してからInspectorを実行し、InspectorではURLを指定する必要があります。
 
 ## サンプル
 
@@ -98,4 +98,4 @@ Inspectorの起動方法はどのランタイムでも同じです。サーバ�
 - 次へ：[MCPによるHTTPストリーミング（Streamable HTTP）](../06-http-streaming/README.md)
 
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T06:04:37+00:00",
+  "translation_date": "2025-07-13T19:04:01+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "id"
 }
@@ -22,13 +22,13 @@ CO_OP_TRANSLATOR_METADATA:
 > $env:GITHUB_TOKEN = "{{YOUR_GITHUB_PAT}}"
 > ```
 
-## Pasang pustaka
+## Instal pustaka
 
 ```sh
 dotnet restore
 ```
 
-Harus memasang pustaka berikut: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
+Harus menginstal pustaka berikut: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Jalankan
 
@@ -36,7 +36,7 @@ Harus memasang pustaka berikut: Azure AI Inference, Azure Identity, Microsoft.Ex
 dotnet run
 ```
 
-Anda akan melihat keluaran yang mirip dengan:
+Anda akan melihat output yang mirip dengan:
 
 ```text
 Setting up stdio transport
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Sebagian besar keluaran hanya untuk debugging, tapi yang penting adalah Anda sedang mengambil daftar alat dari MCP Server, mengubahnya menjadi alat LLM, dan akhirnya mendapatkan respons klien MCP "Sum 6".
+Sebagian besar output hanya untuk debugging, tapi yang penting adalah Anda sedang mendaftar alat dari MCP Server, mengubahnya menjadi alat LLM, dan akhirnya mendapatkan respons klien MCP "Sum 6".
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan terjemahan yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi yang penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

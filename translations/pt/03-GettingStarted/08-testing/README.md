@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T16:57:53+00:00",
+  "translation_date": "2025-07-13T21:59:43+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "pt"
 }
@@ -139,15 +139,15 @@ Consulte o [ficheiro completo aqui](https://github.com/modelcontextprotocol/pyth
 
 Com base no ficheiro acima, pode testar o seu próprio servidor para garantir que as capacidades são criadas conforme esperado.
 
-Todos os principais SDKs têm secções de testes semelhantes, pelo que pode ajustar ao runtime que escolher.
+Todos os principais SDKs têm secções de testes semelhantes, pelo que pode adaptar ao runtime que escolher.
 
 ## Exemplos
 
-- [Calculadora Java](../samples/java/calculator/README.md)
-- [Calculadora .Net](../../../../03-GettingStarted/samples/csharp)
-- [Calculadora JavaScript](../samples/javascript/README.md)
-- [Calculadora TypeScript](../samples/typescript/README.md)
-- [Calculadora Python](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Recursos Adicionais
 
@@ -158,4 +158,4 @@ Todos os principais SDKs têm secções de testes semelhantes, pelo que pode aju
 - Seguinte: [Deployment](../09-deployment/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

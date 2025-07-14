@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T18:48:55+00:00",
+  "translation_date": "2025-07-13T18:20:45+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "ro"
 }
@@ -15,15 +15,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 Iată-l, un client care poate comunica cu un MCP Server.
 
-Să ne luăm timpul necesar în următoarea secțiune de exerciții pentru a analiza fiecare fragment de cod și a explica ce se întâmplă.
+Să ne luăm timpul în secțiunea următoare de exerciții și să analizăm fiecare fragment de cod explicând ce se întâmplă.
 
 ## Exercițiu: Scrierea unui client
 
-Așa cum am spus mai sus, să ne luăm timpul necesar pentru a explica codul și, desigur, poți să scrii codul alături dacă dorești.
+Așa cum am spus mai sus, să ne luăm timpul să explicăm codul, și, desigur, poți să scrii codul alături dacă dorești.
 
 ### -1- Importarea bibliotecilor
 
-Să importăm bibliotecile de care avem nevoie, vom avea nevoie de referințe către un client și către protocolul de transport ales, stdio. stdio este un protocol pentru lucruri care sunt menite să ruleze pe mașina ta locală. SSE este un alt protocol de transport pe care îl vom arăta în capitolele viitoare, dar aceasta este cealaltă opțiune. Pentru moment, să continuăm cu stdio.
+Să importăm bibliotecile de care avem nevoie, vom avea nevoie de referințe către un client și către protocolul de transport ales, stdio. stdio este un protocol pentru lucruri menite să ruleze pe mașina ta locală. SSE este un alt protocol de transport pe care îl vom arăta în capitolele viitoare, dar aceasta este cealaltă opțiune. Pentru moment, să continuăm cu stdio.
 
 Să trecem la instanțiere.
 
@@ -33,7 +33,7 @@ Va trebui să creăm o instanță a transportului și una a clientului nostru:
 
 ### -3- Listarea funcționalităților serverului
 
-Acum avem un client care se poate conecta dacă programul este rulat. Totuși, acesta nu listează efectiv funcționalitățile serverului, așa că să facem asta acum:
+Acum avem un client care se poate conecta dacă programul este rulat. Totuși, acesta nu listează efectiv funcționalitățile, așa că să facem asta acum:
 
 Minunat, acum am capturat toate funcționalitățile. Acum întrebarea este când le folosim? Ei bine, acest client este destul de simplu, simplu în sensul că va trebui să apelăm explicit funcționalitățile atunci când le dorim. În capitolul următor vom crea un client mai avansat care are acces la propriul său model lingvistic mare, LLM. Pentru moment, să vedem cum putem invoca funcționalitățile de pe server:
 

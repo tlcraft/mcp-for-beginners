@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-06-13T00:02:30+00:00",
+  "translation_date": "2025-07-14T02:40:29+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "sv"
 }
@@ -17,26 +17,26 @@ I denna lektion kommer vi att utforska säkerhetsbästa metoder för MCP-impleme
 
 ## Lärandemål
 
-I slutet av denna lektion kommer du att kunna:
+Efter denna lektion kommer du att kunna:
 
 - Implementera säkra autentiserings- och auktoriseringsmekanismer för MCP-servrar.
 - Skydda känslig data med kryptering och säker lagring.
-- Säkerställa säker verktygsexekvering med rätt åtkomstkontroller.
-- Tillämpa bästa metoder för dataskydd och integritet.
+- Säkerställa säker exekvering av verktyg med rätt åtkomstkontroller.
+- Tillämpa bästa metoder för dataskydd och integritetsöverensstämmelse.
 
 ## Autentisering och auktorisering
 
-Autentisering och auktorisering är avgörande för att säkra MCP-servrar. Autentisering svarar på frågan "Vem är du?" medan auktorisering svarar på "Vad kan du göra?".
+Autentisering och auktorisering är grundläggande för att säkra MCP-servrar. Autentisering svarar på frågan "Vem är du?" medan auktorisering svarar på "Vad får du göra?".
 
 Låt oss titta på exempel på hur man implementerar säker autentisering och auktorisering i MCP-servrar med .NET och Java.
 
 ### .NET Identity-integration
 
-ASP .NET Core Identity erbjuder ett robust ramverk för hantering av användarautentisering och auktorisering. Vi kan integrera det med MCP-servrar för att säkra åtkomst till verktyg och resurser.
+ASP .NET Core Identity erbjuder ett robust ramverk för att hantera användarautentisering och auktorisering. Vi kan integrera det med MCP-servrar för att säkra åtkomst till verktyg och resurser.
 
 Det finns några grundläggande begrepp vi behöver förstå när vi integrerar ASP.NET Core Identity med MCP-servrar, nämligen:
 
-- **Identity-konfiguration**: Konfigurera ASP.NET Core Identity med användarroller och claims. En claim är en bit information om användaren, såsom deras roll eller behörigheter, till exempel "Admin" eller "User".
+- **Identity-konfiguration**: Att ställa in ASP.NET Core Identity med användarroller och claims. En claim är en bit information om användaren, som deras roll eller behörigheter, till exempel "Admin" eller "User".
 - **JWT-autentisering**: Använda JSON Web Tokens (JWT) för säker API-åtkomst. JWT är en standard för att säkert överföra information mellan parter som ett JSON-objekt, vilket kan verifieras och litas på eftersom det är digitalt signerat.
 - **Auktoriseringspolicyer**: Definiera policyer för att kontrollera åtkomst till specifika verktyg baserat på användarroller. MCP använder auktoriseringspolicyer för att avgöra vilka användare som kan komma åt vilka verktyg baserat på deras roller och claims.
 
@@ -112,20 +112,20 @@ public class SecureMcpStartup
 I koden ovan har vi:
 
 - Konfigurerat ASP.NET Core Identity för användarhantering.
-- Ställt in JWT-autentisering för säker API-åtkomst. Vi specificerade tokenvalideringsparametrar, inklusive utfärdare, målgrupp och signeringsnyckel.
+- Ställt in JWT-autentisering för säker API-åtkomst. Vi specificerade tokenvalideringsparametrar, inklusive utfärdare, publik och signeringsnyckel.
 - Definierat auktoriseringspolicyer för att kontrollera åtkomst till verktyg baserat på användarroller. Till exempel kräver policyn "CanUseAdminTools" att användaren har rollen "Admin", medan "CanUseBasic" kräver att användaren är autentiserad.
 - Registrerat MCP-verktyg med specifika auktoriseringskrav, vilket säkerställer att endast användare med rätt roller kan komma åt dem.
 
 ### Java Spring Security-integration
 
-För Java kommer vi att använda Spring Security för att implementera säker autentisering och auktorisering för MCP-servrar. Spring Security erbjuder ett omfattande säkerhetsramverk som integreras sömlöst med Spring-applikationer.
+För Java använder vi Spring Security för att implementera säker autentisering och auktorisering för MCP-servrar. Spring Security erbjuder ett omfattande säkerhetsramverk som integreras sömlöst med Spring-applikationer.
 
 Grundläggande begrepp här är:
 
-- **Spring Security-konfiguration**: Ställa in säkerhetskonfigurationer för autentisering och auktorisering.
-- **OAuth2 Resource Server**: Använda OAuth2 för säker åtkomst till MCP-verktyg. OAuth2 är ett auktoriseringsramverk som tillåter tredjepartstjänster att utbyta åtkomsttoken för säker API-åtkomst.
+- **Spring Security-konfiguration**: Att ställa in säkerhetskonfigurationer för autentisering och auktorisering.
+- **OAuth2 Resource Server**: Använda OAuth2 för säker åtkomst till MCP-verktyg. OAuth2 är ett auktoriseringsramverk som tillåter tredjepartstjänster att byta access tokens för säker API-åtkomst.
 - **Säkerhetsinterceptorer**: Implementera säkerhetsinterceptorer för att upprätthålla åtkomstkontroller vid verktygsexekvering.
-- **Rollbaserad åtkomstkontroll**: Använda roller för att kontrollera åtkomst till specifika verktyg och resurser.
+- **Rollbaserad åtkomstkontroll**: Använda roller för att styra åtkomst till specifika verktyg och resurser.
 - **Säkerhetsannoteringar**: Använda annoteringar för att säkra metoder och endpoints.
 
 ```java
@@ -180,18 +180,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 I koden ovan har vi:
 
-- Konfigurerat Spring Security för att säkra MCP-endpoints, tillåta offentlig åtkomst till verktygsupptäckt samtidigt som autentisering krävs för verktygsexekvering.
+- Konfigurerat Spring Security för att säkra MCP-endpoints, med offentlig åtkomst till verktygsupptäckt men kräver autentisering för verktygsexekvering.
 - Använt OAuth2 som resursserver för att hantera säker åtkomst till MCP-verktyg.
 - Implementerat en säkerhetsinterceptor för att upprätthålla åtkomstkontroller vid verktygsexekvering, som kontrollerar användarroller och behörigheter innan åtkomst till specifika verktyg tillåts.
 - Definierat rollbaserad åtkomstkontroll för att begränsa åtkomst till adminverktyg och känslig data baserat på användarroller.
 
 ## Dataskydd och integritet
 
-Dataskydd är avgörande för att säkerställa att känslig information hanteras på ett säkert sätt. Detta inkluderar att skydda personligt identifierbar information (PII), finansiella data och annan känslig information från obehörig åtkomst och intrång.
+Dataskydd är avgörande för att säkerställa att känslig information hanteras på ett säkert sätt. Detta inkluderar att skydda personuppgifter (PII), finansiell data och annan känslig information från obehörig åtkomst och intrång.
 
 ### Exempel på dataskydd i Python
 
-Låt oss titta på ett exempel på hur man implementerar dataskydd i Python med hjälp av kryptering och PII-detektion.
+Låt oss titta på ett exempel på hur man implementerar dataskydd i Python med kryptering och PII-detektion.
 
 ```python
 from mcp_server import McpServer
@@ -329,14 +329,14 @@ class SecureCustomerDataTool(Tool):
 
 I koden ovan har vi:
 
-- Implementerat en `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
-- Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
-- Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`) för att säkerställa att den hanterar känslig data på ett säkert sätt.
+- Implementerat en `PiiDetector`-klass för att skanna text och parametrar efter personuppgifter (PII).
+- Skapat en `EncryptionService`-klass för att hantera kryptering och dekryptering av känslig data med hjälp av `cryptography`-biblioteket.
+- Definierat en `secure_tool`-dekoration som omsluter verktygsexekvering för att kontrollera PII, logga åtkomst och kryptera känslig data vid behov.
+- Använt `secure_tool`-dekorationen på ett exempelverktyg (`SecureCustomerDataTool`) för att säkerställa att det hanterar känslig data på ett säkert sätt.
 
 ## Vad händer härnäst
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

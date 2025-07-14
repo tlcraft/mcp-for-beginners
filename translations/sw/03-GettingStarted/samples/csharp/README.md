@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T06:05:45+00:00",
+  "translation_date": "2025-07-13T22:18:15+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "sw"
 }
 -->
-# Huduma ya Kalkuleta Msingi ya MCP
+# Huduma ya Calculator Msingi MCP
 
-Huduma hii hutoa shughuli za msingi za kalkuleta kupitia Model Context Protocol (MCP). Imetengenezwa kama mfano rahisi kwa wanaoanza kujifunza kuhusu utekelezaji wa MCP.
+Huduma hii hutoa shughuli za msingi za calculator kupitia Model Context Protocol (MCP). Imetengenezwa kama mfano rahisi kwa wanaoanza kujifunza kuhusu utekelezaji wa MCP.
 
 Kwa maelezo zaidi, angalia [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Sifa
 
-Huduma hii ya kalkuleta inatoa uwezo ufuatao:
+Huduma hii ya calculator inatoa uwezo ufuatao:
 
 1. **Shughuli za Msingi za Hisabati**:
    - Kuongeza nambari mbili
-   - Kutoa nambari moja kutoka kwa nyingine
+   - Kutoa nambari moja kutoka nyingine
    - Kuzidisha nambari mbili
-   - Kugawanya nambari moja kwa nyingine (ikiwa na ukaguzi wa kugawanya kwa sifuri)
+   - Kugawanya nambari moja kwa nyingine (ikiwa na ukaguzi wa mgawanyiko kwa sifuri)
 
 ## Kutumia Aina ya `stdio`
   
@@ -29,7 +29,7 @@ Huduma hii ya kalkuleta inatoa uwezo ufuatao:
 
 1. **Sanidi Seva za MCP**:
    - Fungua eneo lako la kazi (workspace) katika VS Code.
-   - Tengeneza faili la `.vscode/mcp.json` katika folda ya eneo lako la kazi ili kusanidi seva za MCP. Mfano wa usanidi:
+   - Tengeneza faili `.vscode/mcp.json` katika folda ya eneo lako la kazi ili kusanidi seva za MCP. Mfano wa usanidi:
 
      ```jsonc
      {
@@ -54,50 +54,49 @@ Huduma hii ya kalkuleta inatoa uwezo ufuatao:
      }
      ```
 
-   - Utaulizwa kuingiza mzizi wa hifadhidata ya GitHub, ambayo inaweza kupatikana kwa amri, `git rev-parse --show-toplevel`.
+   - Utaombwa kuingiza mzizi wa hifadhi ya GitHub, ambao unaweza kupatikana kwa amri, `git rev-parse --show-toplevel`.
 
-## Using the Service
+## Kutumia Huduma
 
-The service exposes the following API endpoints through the MCP protocol:
+Huduma inaonyesha API endpoints zifuatazo kupitia itifaki ya MCP:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Ongeza nambari mbili pamoja
+- `subtract(a, b)`: Toa nambari ya pili kutoka ya kwanza
+- `multiply(a, b)`: Zidisha nambari mbili
+- `divide(a, b)`: Gawanya nambari ya kwanza kwa ya pili (ikiwa na ukaguzi wa sifuri)
+- isPrime(n): Angalia kama nambari ni ya kwanza (prime)
 
-## Test with Github Copilot Chat in VS Code
+## Jaribu na Github Copilot Chat katika VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
-   - "Add 5 and 3"
-   - "Subtract 10 from 4"
-   - "Multiply 6 and 7"
-   - "Divide 8 by 2"
-   - "Does 37854 prime?"
-   - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
-   - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+1. Jaribu kutuma ombi kwa huduma ukitumia itifaki ya MCP. Kwa mfano, unaweza kuuliza:
+   - "Ongeza 5 na 3"
+   - "Toa 10 kutoka 4"
+   - "Zidisha 6 na 7"
+   - "Gawanya 8 kwa 2"
+   - "Je, 37854 ni nambari ya kwanza?"
+   - "Nambari zipi 3 za kwanza kabla na baada ya 4242?"
+2. Ili kuhakikisha inatumia zana, ongeza #MyCalculator kwenye maelezo. Kwa mfano:
+   - "Ongeza 5 na 3 #MyCalculator"
+   - "Toa 10 kutoka 4 #MyCalculator"
 
+## Toleo la Containerized
 
-## Containerized Version
+Suluhisho lililopita ni zuri wakati una SDK ya .NET imewekwa, na utegemezi wote uko sawa. Hata hivyo, ikiwa ungependa kushiriki suluhisho au kuendesha katika mazingira tofauti, unaweza kutumia toleo la containerized.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` pamoja na jina lako la mtumiaji wa Docker Hub):
+1. Anzisha Docker na hakikisha inaendesha.
+1. Kutoka kwenye terminal, elekea kwenye folda `03-GettingStarted\samples\csharp\src`
+1. Ili kujenga picha ya Docker kwa huduma ya calculator, tumia amri ifuatayo (badilisha `<YOUR-DOCKER-USERNAME>` na jina lako la mtumiaji wa Docker Hub):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ``` 
-1. Baada ya picha (image) kujengwa, tushawishi kuipeleka kwenye Docker Hub. Endesha amri ifuatayo:
+   ```
+1. Baada ya picha kujengwa, tushirikishe kwenye Docker Hub. Endesha amri ifuatayo:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Tumia Toleo la Docker
+## Tumia Toleo la Dockerized
 
-1. Katika faili la `.vscode/mcp.json`, badilisha usanidi wa seva kwa ifuatayo:
+1. Katika faili `.vscode/mcp.json`, badilisha usanidi wa seva kwa ifuatayo:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Ukiangalia usanidi, utaona kwamba amri ni `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Ukiangalia usanidi, utaona amri ni `docker` na hoja ni `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. Bendera `--rm` inahakikisha kontena linaondolewa baada ya kusimama, na bendera `-i` inakuwezesha kuingiliana na ingizo la kawaida la kontena. Hoja ya mwisho ni jina la picha tuliyojenga na kusukuma kwenye Docker Hub.
 
-## Test the Dockerized Version
+## Jaribu Toleo la Dockerized
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, na kama ilivyokuwa awali unaweza kuomba huduma ya kalkuleta kufanya hesabu kwako.
+Anzisha MCP Server kwa kubofya kitufe kidogo cha Anza juu ya `"mcp-calc": {`, na kama awali unaweza kumuomba huduma ya calculator kufanya hesabu kwako.
 
-**Tangazo la Kukataa**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya utafsiri wa AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya awali katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatuna wajibu kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

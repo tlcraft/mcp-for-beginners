@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:57:26+00:00",
+  "translation_date": "2025-07-13T17:47:38+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "tw"
 }
@@ -33,12 +33,12 @@ npx @modelcontextprotocol/inspector dotnet run
 
 伺服器連線後：
 
-- 嘗試列出工具並執行 `add`，參數為 2 和 4，結果應該會顯示 6。
+- 嘗試列出工具並執行 `add`，帶入參數 2 和 4，結果應該會顯示 6。
 - 前往 resources 和 resource template，呼叫 "greeting"，輸入一個名字，你應該會看到帶有你輸入名字的問候語。
 
-### CLI 模式測試
+### 在 CLI 模式下測試
 
-你也可以直接用以下指令以 CLI 模式啟動：
+你可以直接用以下指令啟動 CLI 模式：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list

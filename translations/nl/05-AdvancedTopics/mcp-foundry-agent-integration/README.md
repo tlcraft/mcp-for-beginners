@@ -2,32 +2,32 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:17:22+00:00",
+  "translation_date": "2025-07-13T23:57:45+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "nl"
 }
 -->
 # Model Context Protocol (MCP) Integratie met Azure AI Foundry
 
-Deze handleiding laat zien hoe je Model Context Protocol (MCP) servers integreert met Azure AI Foundry agents, waardoor krachtige toolorkestratie en AI-mogelijkheden voor ondernemingen mogelijk worden.
+Deze handleiding laat zien hoe je Model Context Protocol (MCP) servers integreert met Azure AI Foundry agents, waardoor krachtige toolorkestratie en enterprise AI-mogelijkheden mogelijk worden.
 
 ## Introductie
 
-Model Context Protocol (MCP) is een open standaard die AI-toepassingen in staat stelt om veilig verbinding te maken met externe databronnen en tools. Wanneer geïntegreerd met Azure AI Foundry, kunnen agents via MCP op een gestandaardiseerde manier toegang krijgen tot en communiceren met diverse externe diensten, API's en databronnen.
+Model Context Protocol (MCP) is een open standaard die AI-toepassingen in staat stelt om veilig verbinding te maken met externe databronnen en tools. Wanneer geïntegreerd met Azure AI Foundry, kunnen agents via MCP op een gestandaardiseerde manier toegang krijgen tot en interactie hebben met diverse externe services, API's en databronnen.
 
-Deze integratie combineert de flexibiliteit van MCP's tool-ecosysteem met het robuuste agent-framework van Azure AI Foundry, wat enterprise-grade AI-oplossingen biedt met uitgebreide aanpassingsmogelijkheden.
+Deze integratie combineert de flexibiliteit van MCP’s tool-ecosysteem met het robuuste agent-framework van Azure AI Foundry, en biedt zo enterprise-grade AI-oplossingen met uitgebreide aanpassingsmogelijkheden.
 
-**Note:** Als je MCP wilt gebruiken in Azure AI Foundry Agent Service, worden momenteel alleen de volgende regio's ondersteund: westus, westus2, uaenorth, southindia en switzerlandnorth
+**Note:** Als je MCP wilt gebruiken in Azure AI Foundry Agent Service, worden momenteel alleen de volgende regio’s ondersteund: westus, westus2, uaenorth, southindia en switzerlandnorth
 
 ## Leerdoelen
 
-Aan het einde van deze gids kun je:
+Aan het einde van deze handleiding kun je:
 
 - Het Model Context Protocol en de voordelen ervan begrijpen
 - MCP-servers opzetten voor gebruik met Azure AI Foundry agents
-- Agents maken en configureren met MCP tool-integratie
+- Agents aanmaken en configureren met MCP-toolintegratie
 - Praktische voorbeelden implementeren met echte MCP-servers
-- Omgaan met tool-responses en bronvermeldingen in agentgesprekken
+- Omgaan met toolresponsen en bronvermeldingen in agentgesprekken
 
 ## Vereisten
 
@@ -42,10 +42,10 @@ Zorg voordat je begint dat je het volgende hebt:
 
 Model Context Protocol is een gestandaardiseerde manier voor AI-toepassingen om verbinding te maken met externe databronnen en tools. Belangrijke voordelen zijn:
 
-- **Gestandaardiseerde Integratie**: Consistente interface voor verschillende tools en diensten
+- **Gestandaardiseerde Integratie**: Consistente interface voor verschillende tools en services
 - **Beveiliging**: Veilige authenticatie- en autorisatiemechanismen
-- **Flexibiliteit**: Ondersteuning voor diverse databronnen, API's en aangepaste tools
-- **Uitbreidbaarheid**: Gemakkelijk nieuwe functionaliteiten en integraties toevoegen
+- **Flexibiliteit**: Ondersteuning voor diverse databronnen, API’s en aangepaste tools
+- **Uitbreidbaarheid**: Eenvoudig nieuwe functionaliteiten en integraties toevoegen
 
 ## MCP instellen met Azure AI Foundry
 
@@ -133,7 +133,7 @@ def create_mcp_agent_example():
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="Je bent een behulpzame assistent die gespecialiseerd is in Microsoft-documentatie. Gebruik de Microsoft Learn MCP-server om nauwkeurige, actuele informatie te zoeken. Vermeld altijd je bronnen.",
+            instructions="Je bent een behulpzame assistent gespecialiseerd in Microsoft-documentatie. Gebruik de Microsoft Learn MCP-server om nauwkeurige, actuele informatie te zoeken. Vermeld altijd je bronnen.",
             tools=[
                 {
                     "type": "mcp",
@@ -146,9 +146,9 @@ def create_mcp_agent_example():
         )
         print(f"Agent aangemaakt, agent ID: {agent.id}")    
         
-        # Gespreksdraad aanmaken
+        # Gesprekthread aanmaken
         thread = project_client.agents.threads.create()
-        print(f"Draad aangemaakt, draad ID: {thread.id}")
+        print(f"Thread aangemaakt, thread ID: {thread.id}")
 
         # Bericht versturen
         message = project_client.agents.messages.create(
@@ -161,13 +161,13 @@ def create_mcp_agent_example():
         # Agent uitvoeren
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
         
-        # Wacht op voltooiing
+        # Wachten op voltooiing
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
             print(f"Status run: {run.status}")
 
-        # Bekijk run-stappen en tool-aanroepen
+        # Run-stappen en tool-aanroepen bekijken
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
             print(f"Run stap: {step.id}, status: {step.status}, type: {step.type}")
@@ -176,7 +176,7 @@ def create_mcp_agent_example():
                 for tool_call in step.step_details.tool_calls:
                     print(json.dumps(tool_call.as_dict(), indent=2))
 
-        # Toon gesprek
+        # Gesprek weergeven
         messages = project_client.agents.messages.list(thread_id=thread.id, order=ListSortOrder.ASCENDING)
         for data_point in messages:
             last_message_content = data_point.content[-1]
@@ -187,39 +187,39 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-  
+```
 
 ## Veelvoorkomende problemen oplossen
 
 ### 1. Verbindingsproblemen
-- Controleer of de MCP-server-URL bereikbaar is
+- Controleer of de MCP-server URL bereikbaar is
 - Controleer de authenticatiegegevens
-- Zorg voor netwerkconnectiviteit
+- Zorg voor een werkende netwerkverbinding
 
 ### 2. Fouten bij tool-aanroepen
-- Controleer tool-argumenten en opmaak
-- Controleer server-specifieke vereisten
+- Controleer de argumenten en opmaak van de tool-aanroepen
+- Bekijk server-specifieke vereisten
 - Implementeer goede foutafhandeling
 
 ### 3. Prestatieproblemen
 - Optimaliseer de frequentie van tool-aanroepen
 - Gebruik caching waar mogelijk
-- Monitor de reactietijden van de server
+- Houd de reactietijden van de server in de gaten
 
 ## Volgende stappen
 
 Om je MCP-integratie verder te verbeteren:
 
-1. **Ontdek aangepaste MCP-servers**: Bouw je eigen MCP-servers voor eigen databronnen
+1. **Verken aangepaste MCP-servers**: Bouw je eigen MCP-servers voor eigen databronnen
 2. **Implementeer geavanceerde beveiliging**: Voeg OAuth2 of aangepaste authenticatiemechanismen toe
-3. **Monitoren en analytics**: Implementeer logging en monitoring voor toolgebruik
+3. **Monitor en analyseer**: Implementeer logging en monitoring voor toolgebruik
 4. **Schaal je oplossing**: Overweeg load balancing en gedistribueerde MCP-serverarchitecturen
 
 ## Aanvullende bronnen
 
 - [Azure AI Foundry Documentatie](https://learn.microsoft.com/azure/ai-foundry/)
 - [Model Context Protocol Voorbeelden](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
-- [Azure AI Foundry Agents Overzicht](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [Overzicht Azure AI Foundry Agents](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [MCP Specificatie](https://spec.modelcontextprotocol.io/)
 
 ## Ondersteuning
@@ -228,9 +228,9 @@ Voor extra ondersteuning en vragen:
 - Bekijk de [Azure AI Foundry documentatie](https://learn.microsoft.com/azure/ai-foundry/)
 - Raadpleeg de [MCP community resources](https://modelcontextprotocol.io/)
 
-## Wat nu?
+## Wat nu
 
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-12T23:51:38+00:00",
+  "translation_date": "2025-07-14T00:41:55+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "el"
 }
 -->
-# Επίδειξη MCP OAuth2
+# MCP OAuth2 Demo
 
 Αυτό το έργο είναι μια **ελάχιστη εφαρμογή Spring Boot** που λειτουργεί και ως:
 
 * **Διακομιστής Εξουσιοδότησης Spring** (εκδίδοντας JWT access tokens μέσω της ροής `client_credentials`), και  
 * **Διακομιστής Πόρων** (προστατεύοντας το δικό του endpoint `/hello`).
 
-Αντιγράφει τη ρύθμιση που παρουσιάζεται στο [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Αντιγράφει τη ρύθμιση που παρουσιάζεται στο [Spring blog post (2 Απρ 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Δοκιμή της ρύθμισης OAuth2
+## Δοκιμή της διαμόρφωσης OAuth2
 
-Μπορείτε να δοκιμάσετε τη ρύθμιση ασφαλείας OAuth2 με τα εξής βήματα:
+Μπορείτε να δοκιμάσετε τη ρύθμιση ασφαλείας OAuth2 με τα παρακάτω βήματα:
 
-### 1. Επιβεβαιώστε ότι ο διακομιστής λειτουργεί και είναι ασφαλής
+### 1. Επιβεβαιώστε ότι ο διακομιστής τρέχει και είναι ασφαλής
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Λάβετε ένα access token χρησιμοποιώντας τα client credentials
+### 2. Πάρτε ένα access token χρησιμοποιώντας client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Σημείωση: Η κεφαλίδα Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Σημείωση: Η κεφαλίδα Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) είναι η κωδικοποίηση Base64 του `mcp-client:secret`.
 
 ### 3. Πρόσβαση στο προστατευμένο endpoint χρησιμοποιώντας το token
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Μια επιτυχημένη απάντηση με το μήνυμα "Hello from MCP OAuth2 Demo!" επιβεβαιώνει ότι η ρύθμιση OAuth2 λειτουργεί σωστά.
+Μια επιτυχημένη απάντηση με το μήνυμα "Hello from MCP OAuth2 Demo!" επιβεβαιώνει ότι η διαμόρφωση OAuth2 λειτουργεί σωστά.
 
 ---
 
@@ -96,13 +96,13 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Το ingress FQDN γίνεται ο **issuer** σας (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Η Azure παρέχει αυτόματα ένα αξιόπιστο πιστοποιητικό TLS για το `*.azurecontainerapps.io`.
 
 ---
 
-## Ενσωμάτωση με **Azure API Management**
+## Ενσωμάτωση στο **Azure API Management**
 
-Προσθέστε αυτήν την inbound policy στο API σας:
+Προσθέστε αυτή την inbound πολιτική στο API σας:
 
 ```xml
 <inbound>
@@ -124,5 +124,5 @@ Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Αποποίηση Ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που καταβάλλουμε προσπάθειες για ακρίβεια, παρακαλούμε να λάβετε υπόψη ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική μετάφραση από ανθρώπινο μεταφραστή. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+**Αποποίηση ευθυνών**:  
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T18:25:05+00:00",
+  "translation_date": "2025-07-13T19:34:01+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "sw"
 }
 -->
-Tuzungumzie zaidi jinsi tunavyotumia kiolesura cha kuona katika sehemu zinazofuata.
+Tuzungumze zaidi kuhusu jinsi tunavyotumia kiolesura cha kuona katika sehemu zinazofuata.
 
 ## Mbinu
 
@@ -40,7 +40,7 @@ Anza kwa kutengeneza faili la usanidi kwenye mzizi wa mradi wako, utahitaji fail
 |-- mcp.json
 ```
 
-Sasa, tazama jinsi ya kuongeza rekodi ya server.
+Sasa, tazama jinsi tunavyoweza kuongeza rekodi ya server.
 
 ### -2- Sanidi server
 
@@ -70,7 +70,7 @@ Sasa umeongeza rekodi, hebu anzisha server:
 
   ![Kuanzisha server katika Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.sw.png)  
 
-1. Bonyeza ikoni ya "play", unapaswa kuona ikoni ya zana katika GitHub Copilot Chat ikiongezeka idadi ya zana zinazopatikana. Ukibonyeza ikoni hiyo ya zana, utaona orodha ya zana zilizosajiliwa. Unaweza kuchagua/kutoa alama zana yoyote kulingana na kama unataka GitHub Copilot izitumia kama muktadha:
+1. Bonyeza ikoni ya "play", unapaswa kuona ikoni ya zana katika GitHub Copilot Chat ikiongezeka idadi ya zana zinazopatikana. Ukibonyeza ikoni hiyo ya zana, utaona orodha ya zana zilizosajiliwa. Unaweza kuchagua/kutoa alama zana kila moja kulingana na kama unataka GitHub Copilot izitumia kama muktadha:
 
   ![Kuanzisha server katika Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.sw.png)
 
@@ -88,9 +88,9 @@ Jaribu kuongeza rekodi ya server kwenye faili lako la *mcp.json* na hakikisha un
 
 [Suluhisho](./solution/README.md)
 
-## Muhimu Kukumbuka
+## Muhimu Kumbuka
 
-Mambo muhimu ya kuchukua kutoka sura hii ni yafuatayo:
+Mambo muhimu kutoka sura hii ni yafuatayo:
 
 - Visual Studio Code ni mteja mzuri unaokuwezesha kutumia MCP Servers kadhaa na zana zao.
 - Kiolesura cha GitHub Copilot Chat ndicho unachotumia kuwasiliana na server.
@@ -113,4 +113,4 @@ Mambo muhimu ya kuchukua kutoka sura hii ni yafuatayo:
 - Ifuatayo: [Kuunda SSE Server](../05-sse-server/README.md)
 
 **Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

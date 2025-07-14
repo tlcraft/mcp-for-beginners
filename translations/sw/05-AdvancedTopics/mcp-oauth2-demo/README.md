@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T00:45:29+00:00",
+  "translation_date": "2025-07-14T00:43:15+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "sw"
 }
@@ -11,14 +11,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 Mradi huu ni **programu ndogo ya Spring Boot** inayofanya kazi kama:
 
-* **Spring Authorization Server** (inayotuma tokeni za JWT kupitia mtiririko wa `client_credentials`), na  
-* **Resource Server** (inayolinda endpoint yake ya `/hello`).
+* **Seva ya Uidhinishaji ya Spring** (inatoa tokeni za JWT kupitia mtiririko wa `client_credentials`), na  
+* **Seva ya Rasilimali** (inailinda endpoint yake ya `/hello`).
 
-Inaiga usanidi ulioonyeshwa kwenye [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Inafanana na usanidi ulioonyeshwa katika [chapisho la blogu la Spring (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Anza haraka (ndani ya eneo lako)
+## Anza haraka (ndani ya kompyuta)
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Kupima usanidi wa OAuth2
+## Kupima Usanidi wa OAuth2
 
 Unaweza kupima usanidi wa usalama wa OAuth2 kwa hatua zifuatazo:
 
-### 1. Hakikisha server inaendesha na iko salama
+### 1. Hakiki kuwa seva inaendesha na imehifadhiwa
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Pata tokeni ya kufikia kwa kutumia client credentials
+### 2. Pata tokeni ya ufikiaji kwa kutumia sifa za mteja
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Kumbuka: Kichwa cha Basic Authentication ni (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Note: Kichwa cha Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) ni usimbaji wa Base64 wa `mcp-client:secret`.
 
 ### 3. Fikia endpoint iliyolindwa kwa kutumia tokeni
 
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Jibu lenye mafanikio lenye "Hello from MCP OAuth2 Demo!" linaonyesha kuwa usanidi wa OAuth2 unafanya kazi ipasavyo.
+Jibu lenye mafanikio lenye "Hello from MCP OAuth2 Demo!" linathibitisha kuwa usanidi wa OAuth2 unafanya kazi ipasavyo.
 
 ---
 
-## Kujenga container
+## Kujenga kontena
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Tumia kwenye **Azure Container Apps**
+## Weka kwenye **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-FQDN ya ingress inakuwa **issuer** yako (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+FQDN ya kuingilia itakuwa **issuer** yako (`https://<fqdn>`).  
+Azure hutoa cheti cha TLS kinachotegemewa moja kwa moja kwa `*.azurecontainerapps.io`.
 
 ---
 
 ## Unganisha na **Azure API Management**
 
-Ongeza sera hii ya inbound kwenye API yako:
+Ongeza sera hii ya kuingiza kwenye API yako:
 
 ```xml
 <inbound>
@@ -116,13 +116,13 @@ Ongeza sera hii ya inbound kwenye API yako:
 </inbound>
 ```
 
-APIM itapata JWKS na kuthibitisha kila ombi.
+APIM itachukua JWKS na kuthibitisha kila ombi.
 
 ---
 
-## Hatua zinazofuata
+## Nini kinachofuata
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Kiondoa lawama**:  
-Nyaraka hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Nyaraka ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubebeki lawama kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

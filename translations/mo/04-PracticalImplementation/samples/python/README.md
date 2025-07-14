@@ -2,100 +2,100 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:28:11+00:00",
+  "translation_date": "2025-07-13T23:30:40+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "mo"
 }
 -->
-# Model Context Protocol (MCP) Python Implementation
+# Model Context Protocol (MCP) Python 實作
 
-This repository contains a Python implementation of the Model Context Protocol (MCP), showing how to create both a server and client application that communicate using the MCP standard.
+此倉庫包含 Model Context Protocol (MCP) 的 Python 實作，示範如何建立同時作為伺服器與客戶端的應用程式，並使用 MCP 標準進行通訊。
 
-## Overview
+## 概述
 
-The MCP implementation consists of two main components:
+MCP 實作包含兩個主要部分：
 
-1. **MCP Server (`server.py`)** - A server that exposes:
-   - **Tools**: Functions that can be called remotely
-   - **Resources**: Data that can be retrieved
-   - **Prompts**: Templates for generating prompts for language models
+1. **MCP 伺服器 (`server.py`)** - 一個提供以下功能的伺服器：
+   - **工具**：可遠端呼叫的函式
+   - **資源**：可取得的資料
+   - **提示**：用於產生語言模型提示的範本
 
-2. **MCP Client (`client.py`)** - A client application that connects to the server and uses its features
+2. **MCP 客戶端 (`client.py`)** - 連接伺服器並使用其功能的客戶端應用程式
 
-## Features
+## 功能
 
-This implementation demonstrates several key MCP features:
+此實作展示了 MCP 的幾個重要功能：
 
-### Tools
-- `completion` - Generates text completions from AI models (simulated)
-- `add` - Simple calculator that adds two numbers
+### 工具
+- `completion` - 從 AI 模型產生文字補全（模擬）
+- `add` - 簡單的加法計算器，將兩個數字相加
 
-### Resources
-- `models://` - Returns information about available AI models
-- `greeting://{name}` - Returns a personalized greeting for a given name
+### 資源
+- `models://` - 回傳可用 AI 模型的資訊
+- `greeting://{name}` - 根據指定名稱回傳個人化問候語
 
-### Prompts
-- `review_code` - Generates a prompt for reviewing code
+### 提示
+- `review_code` - 產生用於程式碼審查的提示範本
 
-## Installation
+## 安裝
 
-To use this MCP implementation, install the required packages:
+要使用此 MCP 實作，請安裝所需套件：
 
 ```powershell
 pip install mcp-server mcp-client
 ```
 
-## Running the Server and Client
+## 啟動伺服器與客戶端
 
-### Starting the Server
+### 啟動伺服器
 
-Run the server in one terminal window:
+在一個終端機視窗中執行伺服器：
 
 ```powershell
 python server.py
 ```
 
-The server can also be run in development mode using the MCP CLI:
+也可以使用 MCP CLI 以開發模式執行伺服器：
 
 ```powershell
 mcp dev server.py
 ```
 
-Or installed in Claude Desktop (if available):
+或安裝到 Claude Desktop（若可用）：
 
 ```powershell
 mcp install server.py
 ```
 
-### Running the Client
+### 執行客戶端
 
-Run the client in another terminal window:
-
-```powershell
-python client.py
-```
-
-This will connect to the server and demonstrate all available features.
-
-### Client Usage
-
-The client (`client.py`) demonstrates all the MCP capabilities:
+在另一個終端機視窗中執行客戶端：
 
 ```powershell
 python client.py
 ```
 
-This will connect to the server and exercise all features including tools, resources, and prompts. The output will show:
+這會連接到伺服器並示範所有可用功能。
 
-1. Calculator tool result (5 + 7 = 12)
-2. Completion tool response to "What is the meaning of life?"
-3. List of available AI models
-4. Personalized greeting for "MCP Explorer"
-5. Code review prompt template
+### 客戶端使用說明
 
-## Implementation Details
+客戶端 (`client.py`) 展示所有 MCP 功能：
 
-The server is implemented using the `FastMCP` API, which provides high-level abstractions for defining MCP services. Here's a simplified example of how tools are defined:
+```powershell
+python client.py
+```
+
+這會連接伺服器並執行所有功能，包括工具、資源與提示。輸出將顯示：
+
+1. 計算器工具結果（5 + 7 = 12）
+2. 對「生命的意義是什麼？」的補全工具回應
+3. 可用 AI 模型清單
+4. 「MCP Explorer」的個人化問候語
+5. 程式碼審查提示範本
+
+## 實作細節
+
+伺服器使用 `FastMCP` API 實作，提供定義 MCP 服務的高階抽象。以下是工具定義的簡化範例：
 
 ```python
 @mcp.tool()
@@ -113,7 +113,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-The client uses the MCP client library to connect to and call the server:
+客戶端使用 MCP 客戶端函式庫連接並呼叫伺服器：
 
 ```python
 async with stdio_client(server_params) as (reader, writer):
@@ -122,9 +122,9 @@ async with stdio_client(server_params) as (reader, writer):
         result = await session.call_tool("add", arguments={"a": 5, "b": 7})
 ```
 
-## Learn More
+## 進一步了解
 
-For more information about MCP, visit: https://modelcontextprotocol.io/
+欲了解更多 MCP 資訊，請造訪：https://modelcontextprotocol.io/
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

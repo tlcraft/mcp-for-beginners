@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-16T15:20:04+00:00",
+  "translation_date": "2025-07-13T20:18:13+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "de"
 }
 -->
-# Dieses Beispiel ausführen
+# Ausführen dieses Beispiels
 
 ## -1- Installiere die Abhängigkeiten
 
@@ -24,7 +24,7 @@ npm run build
 
 ## -4- Teste das Beispiel
 
-Während der Server in einem Terminal läuft, öffne ein weiteres Terminal und führe folgenden Befehl aus:
+Während der Server in einem Terminal läuft, öffne ein weiteres Terminal und führe den folgenden Befehl aus:
 
 ```bash
 npm run inspector
@@ -34,22 +34,22 @@ Dadurch sollte ein Webserver mit einer visuellen Oberfläche gestartet werden, d
 
 Sobald der Server verbunden ist:
 
-- Versuche, Tools aufzulisten und führe `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- Versuche, Tools aufzulisten und führe `add` mit den Argumenten 2 und 4 aus, im Ergebnis solltest du 6 sehen.
+- Gehe zu resources und resource template und rufe "greeting" auf, gib einen Namen ein und du solltest eine Begrüßung mit dem eingegebenen Namen sehen.
 
-### Testing in CLI mode
+### Testen im CLI-Modus
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+Der Inspector, den du gestartet hast, ist tatsächlich eine Node.js-Anwendung und `mcp dev` ist eine Hülle darum.
 
-- Start up the server with the command `npm run build` aus.
+- Starte den Server mit dem Befehl `npm run build`.
 
-- In einem separaten Terminal führe folgenden Befehl aus:
+- Führe in einem separaten Terminal den folgenden Befehl aus:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    Dadurch werden alle auf dem Server verfügbaren Tools aufgelistet. Du solltest folgende Ausgabe sehen:
+    Dies listet alle im Server verfügbaren Tools auf. Du solltest die folgende Ausgabe sehen:
 
     ```text
     {
@@ -80,13 +80,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- Rufe einen Tool-Typ auf, indem du folgenden Befehl eingibst:
+- Rufe einen Tool-Typ auf, indem du den folgenden Befehl eingibst:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-Du solltest folgende Ausgabe sehen:
+Du solltest die folgende Ausgabe sehen:
 
     ```text
     {
@@ -100,8 +100,8 @@ Du solltest folgende Ausgabe sehen:
     ```
 
 > ![!TIP]
-> Es ist normalerweise viel schneller, den Inspector im CLI-Modus als im Browser auszuführen.
+> Es ist in der Regel viel schneller, den Inspector im CLI-Modus als im Browser auszuführen.
 > Mehr zum Inspector findest du [hier](https://github.com/modelcontextprotocol/inspector).
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

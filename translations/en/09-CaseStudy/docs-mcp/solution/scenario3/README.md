@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "db532b1ec386c9ce38c791653dc3c881",
-  "translation_date": "2025-06-21T14:33:51+00:00",
+  "translation_date": "2025-07-14T06:45:40+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/scenario3/README.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overview
 
-In this scenario, you'll learn how to bring Microsoft Learn Docs directly into your Visual Studio Code environment using the MCP server. Instead of constantly switching browser tabs to look up documentation, you can access, search, and reference official docs right inside your editor. This approach streamlines your workflow, keeps you focused, and allows seamless integration with tools like GitHub Copilot.
+In this scenario, you’ll learn how to bring Microsoft Learn Docs directly into your Visual Studio Code environment using the MCP server. Instead of constantly switching browser tabs to look up documentation, you can access, search, and reference official docs right inside your editor. This approach streamlines your workflow, keeps you focused, and enables seamless integration with tools like GitHub Copilot.
 
 - Search and read docs inside VS Code without leaving your coding environment.
 - Reference documentation and insert links directly into your README or course files.
@@ -19,21 +19,21 @@ In this scenario, you'll learn how to bring Microsoft Learn Docs directly into y
 
 ## Learning Objectives
 
-By the end of this chapter, you will know how to set up and use the MCP server within VS Code to improve your documentation and development workflow. You will be able to:
+By the end of this chapter, you’ll know how to set up and use the MCP server within VS Code to enhance your documentation and development workflow. You will be able to:
 
 - Configure your workspace to use the MCP server for documentation lookup.
 - Search and insert documentation directly from within VS Code.
-- Combine the power of GitHub Copilot and MCP for a more productive, AI-enhanced workflow.
+- Combine the power of GitHub Copilot and MCP for a more productive, AI-augmented workflow.
 
 These skills will help you stay focused, improve documentation quality, and boost your productivity as a developer or technical writer.
 
 ## Solution
 
-To enable in-editor documentation access, you will follow a series of steps that integrate the MCP server with VS Code and GitHub Copilot. This solution is perfect for course authors, documentation writers, and developers who want to stay focused in the editor while working with docs and Copilot.
+To enable in-editor documentation access, you’ll follow a series of steps that integrate the MCP server with VS Code and GitHub Copilot. This solution is ideal for course authors, documentation writers, and developers who want to stay focused in the editor while working with docs and Copilot.
 
 - Quickly add reference links to a README while writing course or project documentation.
 - Use Copilot to generate code and MCP to instantly find and cite relevant docs.
-- Stay focused in your editor and increase your productivity.
+- Stay focused in your editor and increase productivity.
 
 ### Step-by-Step Guide
 
@@ -55,7 +55,7 @@ To get started, follow these steps. For each step, you can add a screenshot from
    ![Step 1: Add mcp.json to .vscode folder](../../../../../../translated_images/step1-mcp-json.c06a007fccc3edfaf0598a31903c9ec71476d9fd3ae6c1b2b4321fd38688ca4b.en.png)
     
 2. **Open the GitHub Copilot Chat panel:**  
-   If you don’t have the GitHub Copilot extension installed yet, go to the Extensions view in VS Code and install it. You can download it directly from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat). Then, open the Copilot Chat panel from the sidebar.
+   If you don’t already have the GitHub Copilot extension installed, go to the Extensions view in VS Code and install it. You can download it directly from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat). Then, open the Copilot Chat panel from the sidebar.
 
    ![Step 2: Open Copilot Chat panel](../../../../../../translated_images/step2-copilot-panel.f1cc86e9b9b8cd1a85e4df4923de8bafee4830541ab255e3c90c09777fed97db.en.png)
 
@@ -64,12 +64,12 @@ To get started, follow these steps. For each step, you can add a screenshot from
 
    ![Step 3: Enable agent mode and verify tools](../../../../../../translated_images/step3-agent-mode.cdc32520fd7dd1d149c3f5226763c1d85a06d3c041d4cc983447625bdbeff4d4.en.png)
 
-   After enabling agent mode, check that the MCP server is listed among the available tools. This ensures the Copilot agent can access the documentation server to fetch relevant information.
+   After enabling agent mode, check that the MCP server is listed as one of the available tools. This ensures the Copilot agent can access the documentation server to fetch relevant information.
 
    ![Step 3: Verify MCP server tool](../../../../../../translated_images/step3-verify-mcp-tool.76096a6329cbfecd42888780f322370a0d8c8fa003ed3eeb7ccd23f0fc50c1ad.en.png)
 
 4. **Start a new chat and prompt the agent:**  
-   Open a new chat in the Copilot Chat panel. You can now ask the agent your documentation questions. The agent will use the MCP server to fetch and display relevant Microsoft Learn documentation right inside your editor.
+   Open a new chat in the Copilot Chat panel. You can now ask the agent your documentation questions. The agent will use the MCP server to fetch and display relevant Microsoft Learn documentation directly in your editor.
 
    - *"I'm trying to write a study plan for topic X. I’m going to study it for 8 weeks; for each week, suggest content I should cover."*
 
@@ -77,10 +77,10 @@ To get started, follow these steps. For each step, you can add a screenshot from
 
 5. **Live Query:**
 
-   > Here’s a live query from the [#get-help](https://discord.gg/D6cRhjHWSC) section in Azure AI Foundry Discord ([view original message](https://discord.com/channels/1113626258182504448/1385498306720829572)):
-   
-   *"I’m looking for guidance on deploying a multi-agent solution with AI agents developed on Azure AI Foundry. I understand there’s no direct deployment method like Copilot Studio channels. So, what are the different ways to deploy this so enterprise users can interact and get the job done?  
-   There are many articles and blogs suggesting that Azure Bot Service can act as a bridge between MS Teams and Azure AI Foundry Agents. Would this work if I set up an Azure bot connected to the Orchestrator Agent on Azure AI Foundry via Azure Functions to handle orchestration? Or do I need to create an Azure Function for each AI agent in the multi-agent solution to manage orchestration at the Bot Framework level? Any other suggestions are welcome."*
+   > Let’s look at a live query from the [#get-help](https://discord.gg/D6cRhjHWSC) section in Azure AI Foundry Discord ([view original message](https://discord.com/channels/1113626258182504448/1385498306720829572)):
+
+   *"I’m looking for answers on how to deploy a multi-agent solution with AI agents developed on Azure AI Foundry. I see there’s no direct deployment method like Copilot Studio channels. So, what are the different ways to deploy this so enterprise users can interact and get the job done?  
+   There are many articles/blogs suggesting we can use Azure Bot service as a bridge between MS Teams and Azure AI Foundry Agents. Will this work if I set up an Azure bot that connects to the Orchestrator Agent on Azure AI Foundry via Azure Function to handle orchestration? Or do I need to create an Azure Function for each AI agent in the multi-agent solution to manage orchestration at the Bot Framework level? Any other suggestions are welcome."*
 
    ![Step 5: Live queries](../../../../../../translated_images/step5-live-queries.49db3e4a50bea27327e3cb18c24d263b7d134930d78e7392f9515a1c00264a7f.en.png)
 
@@ -95,7 +95,7 @@ Here are some example queries you can try. These will show how the MCP server an
 - "What are the best practices for securing Azure resources?"
 - "Find a quickstart for Azure AI services."
 
-These queries demonstrate how the MCP server and Copilot combine to deliver instant, context-aware documentation and references without leaving VS Code.
+These queries demonstrate how the MCP server and Copilot can work together to provide instant, context-aware documentation and references without leaving VS Code.
 
 ---
 

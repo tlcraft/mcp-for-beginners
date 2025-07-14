@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "32c9a4263be08f9050c8044bb26267c4",
-  "translation_date": "2025-05-17T15:29:16+00:00",
+  "translation_date": "2025-07-14T00:22:13+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/apimoauth.md",
   "language_code": "tw"
 }
 -->
-# 部署 Spring AI MCP 應用程式到 Azure Container Apps
+# 將 Spring AI MCP 應用程式部署到 Azure Container Apps
 
-([使用 OAuth2 保護 Spring AI MCP 伺服器](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *圖：使用 Spring Authorization Server 保護的 Spring AI MCP 伺服器。伺服器向客戶端發放存取權杖並在收到請求時驗證它們（來源：Spring blog）([使用 OAuth2 保護 Spring AI MCP 伺服器](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* 要部署 Spring MCP 伺服器，將其建置為容器並使用 Azure Container Apps 和外部入口。例如，使用 Azure CLI 您可以執行：
+ ([Securing Spring AI MCP servers with OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *圖示：使用 Spring Authorization Server 保護的 Spring AI MCP 伺服器。伺服器向客戶端發行存取權杖，並在收到請求時驗證它們（來源：Spring 部落格）([Securing Spring AI MCP servers with OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* 要部署 Spring MCP 伺服器，請將其建置為容器，並使用帶有外部入口的 Azure Container Apps。例如，使用 Azure CLI 可以執行：
 
 ```bash
 az containerapp up \
@@ -23,11 +23,11 @@ az containerapp up \
   --query properties.configuration.ingress.fqdn
 ```
 
-這會建立一個啟用 HTTPS 的公開可訪問 Container App（Azure 為預設的 `*.azurecontainerapps.io` domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). The command output includes the app’s FQDN (e.g. `my-mcp-app.eastus.azurecontainerapps.io`), which becomes the **issuer URL** base. Ensure HTTP ingress is enabled (as above) so APIM can reach the app. In a test/dev setup, use the `--ingress external` option (or bind a custom domain with TLS per [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Store any sensitive properties (like OAuth client secrets) in Container Apps secrets or Azure Key Vault, and map them into the container as environment variables. 
+這會建立一個公開可存取且啟用 HTTPS 的 Container App（Azure 會為預設的 `*.azurecontainerapps.io` 網域發行免費的 TLS 憑證 ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))。指令輸出會包含應用程式的完整網域名稱（FQDN），例如 `my-mcp-app.eastus.azurecontainerapps.io`，這將成為 **issuer URL** 的基底。請確保啟用 HTTP 入口（如上所述），以便 APIM 能夠存取應用程式。在測試/開發環境中，使用 `--ingress external` 選項（或依照 [Microsoft 文件](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) 綁定帶 TLS 的自訂網域 ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))）。將任何敏感屬性（例如 OAuth 用戶端密鑰）儲存在 Container Apps 的 secrets 或 Azure Key Vault，並將它們映射為容器的環境變數。
 
-## Configuring Spring Authorization Server
+## 配置 Spring Authorization Server
 
-In your Spring Boot app’s code, include the Spring Authorization Server and Resource Server starters. Configure a `RegisteredClient` (for the `client_credentials` grant in dev/test) and a JWT key source. For example, in `application.properties` 發行免費的 TLS 憑證）您可能會設定：
+在你的 Spring Boot 應用程式程式碼中，加入 Spring Authorization Server 和 Resource Server 的啟動器。配置一個 `RegisteredClient`（用於開發/測試環境的 `client_credentials` 授權類型）以及 JWT 金鑰來源。例如，在 `application.properties` 中可以設定：
 
 ```properties
 # OAuth2 client (for testing token issuance)
@@ -37,7 +37,7 @@ spring.security.oauth2.authorizationserver.client.oidc-client.registration.autho
 spring.security.oauth2.authorizationserver.client.oidc-client.registration.client-authentication-methods=client_secret_basic
 ```
 
-透過定義安全過濾器鏈啟用 Authorization Server 和 Resource Server。例如：
+透過定義安全過濾鏈來啟用 Authorization Server 和 Resource Server。例如：
 
 ```java
 @Configuration
@@ -84,9 +84,9 @@ public class SecurityConfiguration {
 }
 ```
 
-此設定將暴露預設的 OAuth2 端點：`/oauth2/token` for tokens and `/oauth2/jwks` for the JSON Web Key Set. (By default Spring’s `AuthorizationServerSettings` maps `/oauth2/token` and `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) The server will issue JWT access tokens signed by the RSA key above, and publish its public key at `https://<your-app>:/oauth2/jwks`. 
+此設定會公開預設的 OAuth2 端點：`/oauth2/token` 用於取得權杖，`/oauth2/jwks` 用於 JSON Web Key Set。（Spring 的 `AuthorizationServerSettings` 預設會將 `/oauth2/token` 和 `/oauth2/jwks` 映射好 ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))。）伺服器會發行由上述 RSA 金鑰簽署的 JWT 存取權杖，並在 `https://<your-app>:/oauth2/jwks` 公開其公鑰。
 
-**Enable OpenID Connect discovery:** To let APIM automatically retrieve the issuer and JWKS, enable the OIDC provider configuration endpoint by adding `.oidc(Customizer.withDefaults())` 在您的安全配置中 ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build))。例如：
+**啟用 OpenID Connect 探索：** 為了讓 APIM 自動取得 issuer 和 JWKS，請在安全性設定中加入 `.oidc(Customizer.withDefaults())` 以啟用 OIDC 提供者設定端點 ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build))。例如：
 
 ```java
 http
@@ -96,7 +96,7 @@ http
       .oidc(Customizer.withDefaults()));  // <– enables /.well-known/openid-configuration
 ```
 
-這會暴露 `/.well-known/openid-configuration`, which APIM can use for metadata. Finally, you may want to customize the JWT **audience** claim so that APIM’s `<audiences>` 檢查將通過。例如，添加一個權杖自訂器：
+這會公開 `/.well-known/openid-configuration`，APIM 可用此取得元資料。最後，你可能想自訂 JWT 的 **audience** 聲明，以通過 APIM 的 `<audiences>` 檢查。例如，加入一個權杖自訂器：
 
 ```java
 @Bean
@@ -108,21 +108,21 @@ public OAuth2TokenCustomizer<OAuth2TokenClaimsContext> tokenCustomizer() {
 }
 ```
 
-這確保權杖包含 `"aud": ["mcp-client"]`, matching the client ID or scope expected by APIM. 
+這確保權杖攜帶 `"aud": ["mcp-client"]`，與 APIM 預期的用戶端 ID 或範圍相符。
 
-## Exposing Token and JWKS Endpoints
+## 公開 Token 和 JWKS 端點
 
-After deploying, your app’s **issuer URL** will be `https://<app-fqdn>`, e.g. `https://my-mcp-app.eastus.azurecontainerapps.io`. Its OAuth2 endpoints are:
+部署後，你的應用程式 **issuer URL** 將是 `https://<app-fqdn>`，例如 `https://my-mcp-app.eastus.azurecontainerapps.io`。其 OAuth2 端點為：
 
-- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – clients obtain tokens here (client_credentials flow).
-- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – returns the JWK set (used by APIM to get signing keys).
-- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC discovery JSON (contains `issuer`, `token_endpoint`, `jwks_uri`, etc.).  
+- **Token 端點：** `https://<app-fqdn>/oauth2/token` – 用戶端在此取得權杖（client_credentials 流程）。
+- **JWKS 端點：** `https://<app-fqdn>/oauth2/jwks` – 回傳 JWK 集合（APIM 用來取得簽署金鑰）。
+- **OpenID 配置：** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC 探索 JSON（包含 `issuer`、`token_endpoint`、`jwks_uri` 等）。
 
-APIM will point to the **OpenID configuration URL**, from which it discovers the `jwks_uri`. For example, if your Container App FQDN is `my-mcp-app.eastus.azurecontainerapps.io`, then APIM’s `<openid-config url="...">` should use `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (By default Spring will set the `issuer` in that metadata to the same base URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
+APIM 會指向 **OpenID 配置 URL**，從中發現 `jwks_uri`。例如，若你的 Container App FQDN 是 `my-mcp-app.eastus.azurecontainerapps.io`，則 APIM 的 `<openid-config url="...">` 應使用 `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`。（Spring 預設會將該元資料中的 `issuer` 設為相同的基底 URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))。）
 
-## Configuring Azure API Management (`validate-jwt`)
+## 配置 Azure API Management (`validate-jwt`)
 
-In Azure APIM, add an inbound policy that uses the `<validate-jwt>` 政策來檢查傳入的 JWT 是否符合您的 Spring Authorization Server。對於簡單的設置，您可以使用 OpenID Connect 元資料 URL。範例政策片段：
+在 Azure APIM 中，新增一個入站政策，使用 `<validate-jwt>` 來驗證傳入的 JWT 是否符合你的 Spring Authorization Server。簡單設定可使用 OpenID Connect 元資料 URL。範例政策片段：
 
 ```xml
 <inbound>
@@ -139,38 +139,37 @@ In Azure APIM, add an inbound policy that uses the `<validate-jwt>` 政策來檢
 </inbound>
 ```
 
-此政策告訴 APIM 從 Spring Auth Server 獲取 OpenID 配置，檢索其 JWKS，並驗證每個權杖是否由可信密鑰簽名並具有正確的受眾。（如果您省略 `<issuers>`, APIM will use the `issuer` claim from the metadata automatically.) The `<audience>` should match your client ID or API resource identifier in the token (in the example above, we set it to `"mcp-client"`). This is consistent with Microsoft’s documentation on using `validate-jwt` with `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
+此政策指示 APIM 從 Spring Auth Server 取得 OpenID 配置，抓取其 JWKS，並驗證每個權杖是否由受信任的金鑰簽署且擁有正確的 audience。（若省略 `<issuers>`，APIM 會自動使用元資料中的 `issuer` 聲明。）`<audience>` 應與權杖中的用戶端 ID 或 API 資源識別碼相符（上述範例中設定為 `"mcp-client"`）。這與 Microsoft 使用 `<openid-config>` 搭配 `validate-jwt` 的文件一致 ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation))。
 
-After validation, APIM will forward the request (including the original `Authorization` header) to the backend. Since the Spring app is also a resource server, it will re-validate the token, but APIM has already ensured its validity. (For development, you can rely on APIM’s check and disable additional checks in the app if desired, but it’s safer to keep both.)
+驗證通過後，APIM 會將請求（包含原始的 `Authorization` 標頭）轉發到後端。由於 Spring 應用程式同時是資源伺服器，它會再次驗證權杖，但 APIM 已先確保其有效性。（開發時，你可以只依賴 APIM 的檢查並在應用程式中停用額外檢查，但保留雙重檢查會更安全。）
 
-## Example Settings
+## 範例設定
 
-| Setting            | Example Value                                                        | Notes                                      |
-|--------------------|----------------------------------------------------------------------|--------------------------------------------|
-| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                    | Your Container App’s URL (base URI)        |
-| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`       | Default Spring token endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
-| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`        | Default JWK Set endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
-| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC discovery document (auto-generated)    |
-| **APIM audience**  | `mcp-client`                                                         | OAuth client ID or API resource name       |
-| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` uses this URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
+| 設定項目           | 範例值                                                             | 備註                                       |
+|--------------------|--------------------------------------------------------------------|--------------------------------------------|
+| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                  | 你的 Container App 網址（基底 URI）        |
+| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`     | 預設 Spring 權杖端點 ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
+| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`      | 預設 JWK 集合端點 ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
+| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC 探索文件（自動產生）                    |
+| **APIM audience**  | `mcp-client`                                                       | OAuth 用戶端 ID 或 API 資源名稱             |
+| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` 使用此 URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
 
-## Common Pitfalls
+## 常見陷阱
 
-- **HTTPS/TLS:** The APIM gateway requires that the OpenID/JWKS endpoint be HTTPS with a valid certificate. By default, Azure Container Apps provides a trusted TLS cert for the Azure-managed domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If you use a custom domain, be sure to bind a certificate (you can use Azure’s free managed cert feature) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If APIM cannot trust the endpoint’s certificate, `<validate-jwt>` will fail to fetch the metadata.  
+- **HTTPS/TLS：** APIM 閘道要求 OpenID/JWKS 端點必須使用有效憑證的 HTTPS。Azure Container Apps 預設會為 Azure 管理的網域提供受信任的 TLS 憑證 ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))。若使用自訂網域，務必綁定憑證（可使用 Azure 的免費管理憑證功能） ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))。若 APIM 無法信任端點憑證，`<validate-jwt>` 將無法取得元資料。
 
-- **Endpoint Accessibility:** Ensure the Spring app’s endpoints are reachable from APIM. Using `--ingress external` (or enabling ingress in the portal) is simplest. If you chose an internal or vNet-bound environment, APIM (by default public) might not reach it unless placed in the same VNet. In a test setup, prefer public ingress so APIM can call the `.well-known` and `/jwks` URLs. 
+- **端點可存取性：** 確保 Spring 應用程式的端點可由 APIM 存取。使用 `--ingress external`（或在入口網站啟用入口）是最簡單的方式。若選擇內部或 vNet 綁定環境，APIM（預設為公開）可能無法存取，除非放在相同的 VNet。測試環境建議使用公開入口，讓 APIM 能呼叫 `.well-known` 和 `/jwks` URL。
 
-- **OpenID Discovery Enabled:** By default, Spring Authorization Server **does not expose** the `/.well-known/openid-configuration` unless OIDC is enabled. Make sure to include `.oidc(Customizer.withDefaults())` in your security config (see above) so that the provider configuration endpoint is active ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Otherwise APIM’s `<openid-config>` call will 404.
+- **啟用 OpenID 探索：** Spring Authorization Server 預設 **不會公開** `/.well-known/openid-configuration`，除非啟用 OIDC。請務必在安全性設定中加入 `.oidc(Customizer.withDefaults())`（見上文），以啟用提供者設定端點 ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build))。否則 APIM 的 `<openid-config>` 呼叫會回傳 404。
 
-- **Audience Claim:** Spring’s default behavior is to set the `aud` claim to the client ID. If APIM’s `<audience>` check fails, you may need to customize the token (as shown above) or adjust the APIM policy. Ensure the audience in your JWT matches what you configure in `<audience>`. 
+- **Audience 聲明：** Spring 預設會將 `aud` 聲明設為用戶端 ID。若 APIM 的 `<audience>` 檢查失敗，可能需要自訂權杖（如上所示）或調整 APIM 政策。確保 JWT 中的 audience 與 `<audience>` 設定相符。
 
-- **JSON Metadata Parsing:** The OpenID configuration JSON must be valid. Spring’s default config will emit a standard OIDC metadata document. Verify that it contains the correct `issuer` and `jwks_uri`. If you host Spring behind a proxy or path-based route, double-check the URLs in this metadata. APIM will use these values as-is. 
+- **JSON 元資料解析：** OpenID 配置的 JSON 必須有效。Spring 預設會輸出標準的 OIDC 元資料文件。請確認其中包含正確的 `issuer` 和 `jwks_uri`。若 Spring 部署在代理或路徑路由後方，請再次確認元資料中的 URL。APIM 會直接使用這些值。
 
-- **Policy Ordering:** In the APIM policy, place `<validate-jwt>` **before** any routing to the backend. Otherwise, calls might reach your app without a valid token. Also ensure `<validate-jwt>` appears immediately under `<inbound>` (not nested inside another condition) so that APIM applies it.
+- **政策順序：** 在 APIM 政策中，請將 `<validate-jwt>` 放在任何路由到後端之前。否則請求可能在未驗證權杖的情況下到達應用程式。並確保 `<validate-jwt>` 直接置於 `<inbound>` 下（不要巢狀在其他條件中），以確保 APIM 正確套用。
 
-By following the above steps, you can run your Spring AI MCP server in Azure Container Apps and have Azure API Management validate incoming OAuth2 JWTs with a minimal policy. The key points are: expose the Spring Auth endpoints publicly with TLS, enable OIDC discovery, and point APIM’s `validate-jwt` at the OpenID config URL (so it can fetch the JWKS automatically). This setup is suitable for a dev/test environment; for production, consider proper secret management, token lifetimes, and rotating keys in JWKS as needed. 
+依照上述步驟，你可以在 Azure Container Apps 上執行 Spring AI MCP 伺服器，並使用 Azure API Management 以最簡單的政策驗證傳入的 OAuth2 JWT。重點是：公開 Spring Auth 端點並啟用 TLS，啟用 OIDC 探索，並將 APIM 的 `validate-jwt` 指向 OpenID 配置 URL（以自動取得 JWKS）。此設定適合開發/測試環境；生產環境則需考慮妥善的密鑰管理、權杖有效期限及 JWKS 金鑰輪替等。
+**References:** 請參考 Spring Authorization Server 文件了解預設端點 ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) 及 OIDC 配置 ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build))；參考 Microsoft APIM 文件中的 `validate-jwt` 範例 ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation))；以及 Azure Container Apps 文件中關於部署與憑證的說明 ([Deploy Java Spring Boot apps to Azure Container Apps - Java on Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))。
 
-**References:** See Spring Authorization Server docs for default endpoints ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) and OIDC configuration ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); see Microsoft APIM docs for `validate-jwt` 範例 ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); 和 Azure Container Apps 文件中有關部署和憑證的內容 ([Deploy Java Spring Boot apps to Azure Container Apps - Java on Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
-
-**免責聲明**：
-本文檔已使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)進行翻譯。我們努力追求準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應將原始文檔視為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或誤讀不承擔責任。
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T16:00:04+00:00",
+  "translation_date": "2025-07-13T19:24:41+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "mo"
 }
@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在 Visual Studio Code 中，前往 `檔案 -> 偏好設定 -> 設定`。
 
-1. 搜尋「MCP」，並在 settings.json 檔案中啟用 `chat.mcp.discovery.enabled`。
+2. 搜尋「MCP」，並在 settings.json 檔案中啟用 `chat.mcp.discovery.enabled`。
 
 ### -1- 建立設定檔
 
@@ -40,7 +40,7 @@ CO_OP_TRANSLATOR_METADATA:
 |-- mcp.json
 ```
 
-接著，讓我們看看如何新增一個伺服器條目。
+接著，讓我們看看如何新增伺服器條目。
 
 ### -2- 配置伺服器
 
@@ -70,11 +70,11 @@ CO_OP_TRANSLATOR_METADATA:
 
   ![在 Visual Studio Code 中啟動伺服器](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.mo.png)  
 
-1. 點擊「播放」圖示，你應該會看到 GitHub Copilot Chat 中的工具圖示顯示可用工具數量增加。點擊該工具圖示，你會看到已註冊的工具清單。你可以勾選或取消勾選每個工具，決定是否讓 GitHub Copilot 將它們作為上下文使用：
+2. 點擊「播放」圖示，你應該會看到 GitHub Copilot Chat 中的工具圖示顯示可用工具數量增加。點擊該工具圖示，你會看到已註冊工具的清單。你可以勾選或取消勾選每個工具，決定是否讓 GitHub Copilot 將它們作為上下文使用：
 
-  ![在 Visual Studio Code 中的工具](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.mo.png)
+  ![在 Visual Studio Code 中的工具清單](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.mo.png)
 
-1. 要執行工具，輸入一個你知道會符合其中一個工具描述的提示，例如「add 22 to 1」：
+3. 要執行工具，輸入一個你知道會符合其中一個工具描述的提示，例如「add 22 to 1」：
 
   ![從 GitHub Copilot 執行工具](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.mo.png)
 
@@ -82,7 +82,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 作業
 
-嘗試在你的 *mcp.json* 檔案中新增一個伺服器條目，並確保你能啟動/停止伺服器。也確保你能透過 GitHub Copilot Chat 介面與伺服器上的工具溝通。
+嘗試在你的 *mcp.json* 檔案中新增一個伺服器條目，並確保你能啟動/停止該伺服器。也要確保你能透過 GitHub Copilot Chat 介面與伺服器上的工具溝通。
 
 ## 解答
 
@@ -92,9 +92,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 本章節的重點如下：
 
-- Visual Studio Code 是一個很棒的用戶端，讓你能使用多個 MCP Server 及其工具。
+- Visual Studio Code 是一個很棒的客戶端，讓你能使用多個 MCP Server 及其工具。
 - GitHub Copilot Chat 介面是你與伺服器互動的方式。
-- 你可以提示使用者輸入像是 API 金鑰等資訊，並在 *mcp.json* 檔案中配置伺服器條目時將這些資訊傳遞給 MCP Server。
+- 你可以提示使用者輸入像是 API 金鑰等資訊，並在 *mcp.json* 中配置伺服器條目時將其傳遞給 MCP Server。
 
 ## 範例
 

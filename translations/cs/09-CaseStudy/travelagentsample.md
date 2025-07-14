@@ -2,91 +2,91 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4d3415b9d2bf58bc69be07f945a69e07",
-  "translation_date": "2025-06-13T21:52:45+00:00",
+  "translation_date": "2025-07-14T06:05:00+00:00",
   "source_file": "09-CaseStudy/travelagentsample.md",
   "language_code": "cs"
 }
 -->
-# Case Study: Azure AI Travel Agents – Reference Implementation
+# Případová studie: Azure AI Travel Agents – Referenční implementace
 
-## Overview
+## Přehled
 
-[Azure AI Travel Agents](https://github.com/Azure-Samples/azure-ai-travel-agents) — это комплексное эталонное решение от Microsoft, демонстрирующее, как создать многоагентное AI-приложение для планирования путешествий с использованием Model Context Protocol (MCP), Azure OpenAI и Azure AI Search. Этот проект показывает лучшие практики по координации нескольких AI-агентов, интеграции корпоративных данных и созданию безопасной, расширяемой платформы для реальных сценариев.
+[Azure AI Travel Agents](https://github.com/Azure-Samples/azure-ai-travel-agents) je komplexní referenční řešení vyvinuté společností Microsoft, které ukazuje, jak vytvořit aplikaci pro plánování cest s více agenty poháněnou umělou inteligencí pomocí Model Context Protocol (MCP), Azure OpenAI a Azure AI Search. Tento projekt představuje osvědčené postupy pro orchestraci více AI agentů, integraci podnikových dat a poskytování bezpečné, rozšiřitelné platformy pro reálné scénáře.
 
-## Key Features
-- **Многоагентная оркестрация:** Использует MCP для координации специализированных агентов (например, агенты по перелётам, отелям и маршрутам), которые совместно выполняют сложные задачи по планированию путешествий.
-- **Интеграция корпоративных данных:** Подключается к Azure AI Search и другим корпоративным источникам данных, чтобы предоставлять актуальную и релевантную информацию для рекомендаций по путешествиям.
-- **Безопасная и масштабируемая архитектура:** Использует сервисы Azure для аутентификации, авторизации и масштабируемого развертывания, следуя лучшим практикам безопасности корпоративного уровня.
-- **Расширяемые инструменты:** Реализует переиспользуемые MCP-инструменты и шаблоны подсказок, что позволяет быстро адаптироваться к новым областям или бизнес-требованиям.
-- **Пользовательский опыт:** Обеспечивает разговорный интерфейс для взаимодействия пользователей с агентами, основанный на Azure OpenAI и MCP.
+## Klíčové vlastnosti
+- **Orchestrace více agentů:** Využívá MCP k koordinaci specializovaných agentů (např. agenti pro lety, hotely a itineráře), kteří spolupracují na plnění složitých úkolů při plánování cest.
+- **Integrace podnikových dat:** Připojuje se k Azure AI Search a dalším podnikových zdrojům dat, aby poskytl aktuální a relevantní informace pro cestovní doporučení.
+- **Bezpečná a škálovatelná architektura:** Využívá služby Azure pro autentizaci, autorizaci a škálovatelné nasazení podle nejlepších bezpečnostních praktik pro podniky.
+- **Rozšiřitelné nástroje:** Implementuje znovupoužitelné MCP nástroje a šablony promptů, což umožňuje rychlé přizpůsobení novým oblastem nebo obchodním požadavkům.
+- **Uživatelská zkušenost:** Nabízí konverzační rozhraní, kde uživatelé komunikují s cestovními agenty, poháněné Azure OpenAI a MCP.
 
-## Architecture
-![Architecture](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
+## Architektura
+![Architektura](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
 
-### Architecture Diagram Description
+### Popis architektonického diagramu
 
-Решение Azure AI Travel Agents спроектировано с упором на модульность, масштабируемость и безопасную интеграцию нескольких AI-агентов и корпоративных источников данных. Основные компоненты и поток данных выглядят следующим образом:
+Řešení Azure AI Travel Agents je navrženo s důrazem na modularitu, škálovatelnost a bezpečnou integraci více AI agentů a podnikových zdrojů dat. Hlavní komponenty a tok dat jsou následující:
 
-- **Пользовательский интерфейс:** Пользователи взаимодействуют с системой через разговорный UI (например, веб-чат или бота в Teams), отправляя запросы и получая рекомендации по путешествиям.
-- **MCP Server:** Центральный оркестратор, который принимает ввод от пользователя, управляет контекстом и координирует действия специализированных агентов (например, FlightAgent, HotelAgent, ItineraryAgent) через Model Context Protocol.
-- **AI Agents:** Каждый агент отвечает за определённую область (перелёты, отели, маршруты) и реализован как MCP-инструмент. Агенты используют шаблоны подсказок и логику для обработки запросов и генерации ответов.
-- **Azure OpenAI Service:** Обеспечивает продвинутую обработку естественного языка, позволяя агентам интерпретировать намерения пользователя и формировать разговорные ответы.
-- **Azure AI Search & Enterprise Data:** Агенты обращаются к Azure AI Search и другим корпоративным источникам данных для получения актуальной информации о перелётах, отелях и вариантах путешествий.
-- **Аутентификация и безопасность:** Интегрируется с Microsoft Entra ID для безопасной аутентификации и применяет принципы минимально необходимых прав доступа ко всем ресурсам.
-- **Развертывание:** Спроектировано для развертывания в Azure Container Apps, что обеспечивает масштабируемость, мониторинг и эффективность эксплуатации.
+- **Uživatelské rozhraní:** Uživatelé komunikují se systémem prostřednictvím konverzačního UI (například webový chat nebo Teams bot), které odesílá uživatelské dotazy a přijímá cestovní doporučení.
+- **MCP Server:** Slouží jako centrální orchestrátor, přijímá vstupy od uživatele, spravuje kontext a koordinuje činnosti specializovaných agentů (např. FlightAgent, HotelAgent, ItineraryAgent) pomocí Model Context Protocol.
+- **AI agenti:** Každý agent je zodpovědný za konkrétní oblast (lety, hotely, itineráře) a je implementován jako MCP nástroj. Agenti používají šablony promptů a logiku k zpracování požadavků a generování odpovědí.
+- **Azure OpenAI Service:** Poskytuje pokročilé porozumění přirozenému jazyku a generování textu, což umožňuje agentům interpretovat uživatelský záměr a vytvářet konverzační odpovědi.
+- **Azure AI Search & podniková data:** Agenti dotazují Azure AI Search a další podnikové zdroje dat, aby získali aktuální informace o letech, hotelech a možnostech cestování.
+- **Autentizace a bezpečnost:** Integruje se s Microsoft Entra ID pro bezpečnou autentizaci a uplatňuje princip nejmenších oprávnění ke všem zdrojům.
+- **Nasazení:** Navrženo pro nasazení na Azure Container Apps, což zajišťuje škálovatelnost, monitoring a efektivní provoz.
 
-Эта архитектура позволяет безупречно координировать работу нескольких AI-агентов, безопасно интегрироваться с корпоративными данными и строить надёжную, расширяемую платформу для создания AI-решений, ориентированных на конкретные домены.
+Tato architektura umožňuje plynulou orchestraci více AI agentů, bezpečnou integraci podnikových dat a robustní, rozšiřitelnou platformu pro vytváření AI řešení specifických pro danou oblast.
 
-## Step-by-Step Explanation of the Architecture Diagram
-Представьте, что вы планируете большое путешествие и у вас есть команда экспертов, которые помогают с каждой деталью. Система Azure AI Travel Agents работает похожим образом — разные части (как члены команды) выполняют свои специализированные задачи. Вот как всё устроено:
+## Podrobný popis architektonického diagramu krok za krokem
+Představte si, že plánujete velký výlet a máte tým odborných asistentů, kteří vám pomáhají s každým detailem. Systém Azure AI Travel Agents funguje podobně, používá různé části (jako členy týmu), z nichž každý má svou specializaci. Takto to všechno funguje dohromady:
 
-### User Interface (UI):
-Это как ресепшн вашего турагентства. Здесь вы (пользователь) задаёте вопросы или делаете запросы, например, «Найди мне рейс в Париж». Это может быть окно чата на сайте или в мессенджере.
+### Uživatelské rozhraní (UI):
+Představte si to jako přepážku vašeho cestovního agenta. Zde vy (uživatel) kladete otázky nebo zadáváte požadavky, například „Najdi mi let do Paříže.“ Může to být chatovací okno na webu nebo v aplikaci pro zasílání zpráv.
 
-### MCP Server (The Coordinator):
-MCP Server — это менеджер, который принимает ваш запрос на ресепшене и решает, какой специалист должен заняться каждой частью. Он отслеживает ход разговора и обеспечивает плавную работу.
+### MCP Server (Koordinátor):
+MCP Server je jako manažer, který poslouchá váš požadavek na přepážce a rozhoduje, který specialista by měl řešit jednotlivé části. Sleduje průběh konverzace a zajišťuje, že vše probíhá hladce.
 
-### AI Agents (Specialist Assistants):
-Каждый агент — эксперт в своей области: один знает всё о перелётах, другой — об отелях, третий — о планировании маршрутов. Когда вы делаете запрос, MCP Server отправляет его нужному агенту(ам). Агенты используют свои знания и инструменты, чтобы найти лучшие варианты для вас.
+### AI agenti (Specialisté):
+Každý agent je odborník na určitou oblast – jeden zná vše o letech, druhý o hotelech a další o plánování itineráře. Když požádáte o cestu, MCP Server předá váš požadavek správnému agentovi nebo agentům. Ti využívají své znalosti a nástroje, aby našli nejlepší možnosti pro vás.
 
-### Azure OpenAI Service (Language Expert):
-Это как лингвист, который точно понимает, что вы хотите, независимо от того, как вы сформулировали запрос. Он помогает агентам понять ваши вопросы и отвечать естественным языком.
+### Azure OpenAI Service (Jazykový expert):
+Je to jako mít jazykového experta, který přesně rozumí tomu, co žádáte, bez ohledu na to, jak to formulujete. Pomáhá agentům pochopit vaše požadavky a odpovídat přirozeným, konverzačním jazykem.
 
-### Azure AI Search & Enterprise Data (Information Library):
-Представьте огромную, постоянно обновляемую библиотеку с самой свежей информацией о перелётах, наличии отелей и прочем. Агенты ищут в этой библиотеке, чтобы дать вам точные ответы.
+### Azure AI Search & podniková data (Informační knihovna):
+Představte si obrovskou, aktuální knihovnu se všemi nejnovějšími informacemi o cestování – letové řády, dostupnost hotelů a další. Agenti tuto knihovnu prohledávají, aby vám poskytli co nejpřesnější odpovědi.
 
-### Authentication & Security (Security Guard):
-Как охранник, который проверяет, кто может войти в определённые зоны, эта часть гарантирует, что только авторизованные пользователи и агенты имеют доступ к конфиденциальной информации. Это защищает ваши данные.
+### Autentizace a bezpečnost (Bezpečnostní stráž):
+Stejně jako bezpečnostní stráž kontroluje, kdo může vstoupit do určitých prostor, tato část zajišťuje, že pouze oprávněné osoby a agenti mají přístup k citlivým informacím. Vaše data tak zůstávají v bezpečí a soukromí.
 
-### Deployment on Azure Container Apps (The Building):
-Все эти помощники и инструменты работают вместе в безопасном, масштабируемом «здании» (облаке). Это значит, что система способна обслуживать множество пользователей одновременно и всегда доступна, когда вы её нуждаетесь.
+### Nasazení na Azure Container Apps (Budova):
+Všichni tito asistenti a nástroje spolupracují uvnitř bezpečné, škálovatelné „budovy“ (cloudu). To znamená, že systém zvládne obsloužit mnoho uživatelů najednou a je vždy k dispozici, když ho potřebujete.
 
-## How it all works together:
+## Jak to všechno funguje dohromady:
 
-Вы начинаете с вопроса на ресепшене (UI).  
-Менеджер (MCP Server) определяет, какой специалист (агент) вам поможет.  
-Специалист использует лингвиста (OpenAI), чтобы понять запрос, и библиотеку (AI Search), чтобы найти лучший ответ.  
-Охранник (аутентификация) следит за безопасностью.  
-Всё это происходит в надёжном, масштабируемом здании (Azure Container Apps), чтобы обеспечить плавный и безопасный опыт.  
-Такое взаимодействие позволяет системе быстро и безопасно помогать вам планировать поездку, как команда профессиональных турагентов в современном офисе!
+Začnete tím, že položíte otázku na přepážce (UI).  
+Manažer (MCP Server) zjistí, který specialista (agent) vám má pomoci.  
+Specialista využije jazykového experta (OpenAI), aby pochopil váš požadavek, a knihovnu (AI Search), aby našel nejlepší odpověď.  
+Bezpečnostní stráž (Autentizace) zajistí, že je vše v bezpečí.  
+To vše probíhá uvnitř spolehlivé, škálovatelné budovy (Azure Container Apps), takže vaše zkušenost je plynulá a bezpečná.  
+Tato týmová spolupráce umožňuje systému rychle a bezpečně pomoci s plánováním vaší cesty, stejně jako tým zkušených cestovních agentů pracujících společně v moderní kanceláři!
 
-## Technical Implementation
-- **MCP Server:** Хостит основную логику оркестрации, предоставляет инструменты агентов и управляет контекстом для многошаговых сценариев планирования путешествий.
-- **Agents:** Каждый агент (например, FlightAgent, HotelAgent) реализован как MCP-инструмент со своими шаблонами подсказок и логикой.
-- **Azure Integration:** Использует Azure OpenAI для понимания естественного языка и Azure AI Search для получения данных.
-- **Security:** Интегрируется с Microsoft Entra ID для аутентификации и применяет принципы минимально необходимых прав доступа ко всем ресурсам.
-- **Deployment:** Поддерживает развертывание в Azure Container Apps для масштабируемости и эффективной эксплуатации.
+## Technická implementace
+- **MCP Server:** Hostuje hlavní orchestraci, zpřístupňuje nástroje agentů a spravuje kontext pro vícestupňové pracovní postupy plánování cest.
+- **Agenti:** Každý agent (např. FlightAgent, HotelAgent) je implementován jako MCP nástroj se svými vlastními šablonami promptů a logikou.
+- **Integrace Azure:** Využívá Azure OpenAI pro porozumění přirozenému jazyku a Azure AI Search pro získávání dat.
+- **Bezpečnost:** Integruje se s Microsoft Entra ID pro autentizaci a uplatňuje princip nejmenších oprávnění ke všem zdrojům.
+- **Nasazení:** Podporuje nasazení do Azure Container Apps pro škálovatelnost a efektivní provoz.
 
-## Results and Impact
-- Демонстрирует, как MCP можно использовать для координации нескольких AI-агентов в реальном производственном сценарии.
-- Ускоряет разработку решений, предоставляя переиспользуемые шаблоны для координации агентов, интеграции данных и безопасного развертывания.
-- Служит образцом для создания AI-приложений, ориентированных на конкретные домены, с использованием MCP и сервисов Azure.
+## Výsledky a dopad
+- Ukazuje, jak lze MCP využít k orchestraci více AI agentů v reálném, produkčním prostředí.
+- Urychluje vývoj řešení díky poskytování znovupoužitelných vzorů pro koordinaci agentů, integraci dat a bezpečné nasazení.
+- Slouží jako vzor pro vytváření oborově specifických aplikací poháněných AI pomocí MCP a služeb Azure.
 
-## References
+## Reference
 - [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)
 - [Azure OpenAI Service](https://azure.microsoft.com/en-us/products/ai-services/openai-service/)
 - [Azure AI Search](https://azure.microsoft.com/en-us/products/ai-services/ai-search/)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

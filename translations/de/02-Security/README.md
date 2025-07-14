@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c69f9df7f3215dac8d056020539bac36",
-  "translation_date": "2025-07-04T15:31:43+00:00",
+  "translation_date": "2025-07-13T16:32:59+00:00",
   "source_file": "02-Security/README.md",
   "language_code": "de"
 }
@@ -31,7 +31,7 @@ Forschungen, veröffentlicht im [Microsoft Digital Defense Report](https://aka.m
 
 Schauen wir uns einige Möglichkeiten an, wie Sie Sicherheitsrisiken bei der Einführung von MCP angehen können.
 
-> **Note:** Die folgenden Informationen sind korrekt zum **29. Mai 2025**. Das MCP-Protokoll entwickelt sich ständig weiter, und zukünftige Implementierungen können neue Authentifizierungsmuster und Kontrollen einführen. Für die neuesten Updates und Anleitungen konsultieren Sie stets die [MCP-Spezifikation](https://spec.modelcontextprotocol.io/) sowie das offizielle [MCP GitHub-Repository](https://github.com/modelcontextprotocol) und die [Seite zu Sicherheits-Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices).
+> **Note:** Die folgenden Informationen sind korrekt zum **29. Mai 2025**. Das MCP-Protokoll entwickelt sich ständig weiter, und zukünftige Implementierungen können neue Authentifizierungsmuster und Kontrollen einführen. Für die neuesten Updates und Anleitungen konsultieren Sie bitte stets die [MCP-Spezifikation](https://spec.modelcontextprotocol.io/) sowie das offizielle [MCP GitHub-Repository](https://github.com/modelcontextprotocol) und die [Seite zu Sicherheits-Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices).
 
 ### Problemstellung  
 Die ursprüngliche MCP-Spezifikation ging davon aus, dass Entwickler ihren eigenen Authentifizierungsserver schreiben würden. Dies erforderte Kenntnisse über OAuth und damit verbundene Sicherheitsanforderungen. MCP-Server fungierten als OAuth 2.0 Authorization Server und verwalteten die erforderliche Benutzer-Authentifizierung direkt, anstatt sie an einen externen Dienst wie Microsoft Entra ID zu delegieren. Ab dem **26. April 2025** erlaubt ein Update der MCP-Spezifikation, dass MCP-Server die Benutzer-Authentifizierung an einen externen Dienst delegieren können.
@@ -53,7 +53,7 @@ Beide Faktoren erschweren die Untersuchung von Vorfällen, Kontrollen und Audits
 Wenn der MCP-Server Tokens weitergibt, ohne deren Claims (z. B. Rollen, Privilegien oder Audience) oder andere Metadaten zu validieren, kann ein Angreifer mit einem gestohlenen Token den Server als Proxy für Datenabfluss nutzen.
 
 #### Vertrauensgrenzen-Probleme
-Der nachgelagerte Resource Server vertraut bestimmten Entitäten. Dieses Vertrauen kann Annahmen über Herkunft oder Verhaltensmuster der Clients beinhalten. Das Brechen dieser Vertrauensgrenze kann zu unerwarteten Problemen führen.  
+Der nachgelagerte Resource Server gewährt Vertrauen an bestimmte Entitäten. Dieses Vertrauen kann Annahmen über Herkunft oder Verhaltensmuster des Clients beinhalten. Das Brechen dieser Vertrauensgrenze kann zu unerwarteten Problemen führen.  
 Wenn das Token von mehreren Diensten ohne ordnungsgemäße Validierung akzeptiert wird, kann ein Angreifer, der einen Dienst kompromittiert, das Token nutzen, um auf andere verbundene Dienste zuzugreifen.
 
 #### Risiko der zukünftigen Kompatibilität
@@ -70,7 +70,7 @@ Auch wenn ein MCP-Server heute als „reiner Proxy“ startet, könnte er späte
 # Übermäßige Berechtigungen für MCP-Server
 
 ### Problemstellung  
-MCP-Server könnten mit zu umfangreichen Berechtigungen für den Dienst oder die Ressource ausgestattet sein, auf die sie zugreifen. Zum Beispiel sollte ein MCP-Server, der Teil einer KI-Verkaufsanwendung ist und auf einen Unternehmensdatenspeicher zugreift, nur Zugriff auf Verkaufsdaten haben und nicht auf alle Dateien im Speicher. Zurück zum Prinzip der minimalen Rechtevergabe (eines der ältesten Sicherheitsprinzipien): Keine Ressource sollte Berechtigungen haben, die über das hinausgehen, was für die Ausführung der vorgesehenen Aufgaben erforderlich ist. KI stellt in diesem Bereich eine besondere Herausforderung dar, da es schwierig sein kann, die genauen erforderlichen Berechtigungen zu definieren, um Flexibilität zu gewährleisten.
+MCP-Server könnten mit zu umfangreichen Berechtigungen für den Dienst oder die Ressource ausgestattet sein, auf die sie zugreifen. Beispielsweise sollte ein MCP-Server, der Teil einer KI-Verkaufsanwendung ist und auf einen Unternehmensdatenspeicher zugreift, nur Zugriff auf Verkaufsdaten haben und nicht auf alle Dateien im Speicher. Zurück zum Prinzip der minimalen Rechtevergabe (eines der ältesten Sicherheitsprinzipien): Keine Ressource sollte Berechtigungen haben, die über das hinausgehen, was für die Ausführung der vorgesehenen Aufgaben erforderlich ist. KI stellt in diesem Bereich eine besondere Herausforderung dar, da es schwierig sein kann, die genauen erforderlichen Berechtigungen zu definieren, um Flexibilität zu gewährleisten.
 
 ### Risiken  
 - Übermäßige Berechtigungen können Datenabfluss oder Änderungen an Daten ermöglichen, auf die der MCP-Server eigentlich keinen Zugriff haben sollte. Dies kann auch ein Datenschutzproblem darstellen, wenn es sich um personenbezogene Daten (PII) handelt.
@@ -86,7 +86,7 @@ MCP-Server könnten mit zu umfangreichen Berechtigungen für den Dienst oder die
 
 Bösartige oder kompromittierte MCP-Server können erhebliche Risiken bergen, indem sie Kundendaten offenlegen oder unbeabsichtigte Aktionen ermöglichen. Diese Risiken sind besonders relevant bei KI- und MCP-basierten Workloads, bei denen:
 
-- **Prompt Injection-Angriffe:** Angreifer binden bösartige Anweisungen in Prompts oder externe Inhalte ein, wodurch das KI-System unbeabsichtigte Aktionen ausführt oder sensible Daten preisgibt. Mehr dazu: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
+- **Prompt Injection-Angriffe:** Angreifer betten bösartige Anweisungen in Prompts oder externe Inhalte ein, wodurch das KI-System unbeabsichtigte Aktionen ausführt oder sensible Daten preisgibt. Mehr dazu: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
 - **Tool Poisoning:** Angreifer manipulieren Tool-Metadaten (wie Beschreibungen oder Parameter), um das Verhalten der KI zu beeinflussen, Sicherheitskontrollen zu umgehen oder Daten abzufließen. Details: [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
 - **Cross-Domain Prompt Injection:** Bösartige Anweisungen werden in Dokumente, Webseiten oder E-Mails eingebettet, die dann von der KI verarbeitet werden, was zu Datenlecks oder Manipulationen führt.
 - **Dynamische Werkzeugmodifikation (Rug Pulls):** Tool-Definitionen können nach der Benutzerfreigabe geändert werden, wodurch neue bösartige Verhaltensweisen ohne Wissen des Nutzers eingeführt werden.
@@ -95,9 +95,9 @@ Diese Schwachstellen unterstreichen die Notwendigkeit robuster Validierung, Übe
 
 ![prompt-injection-lg-2048x1034](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.de.png)
 
-**Indirekte Prompt Injection** (auch bekannt als Cross-Domain Prompt Injection oder XPIA) ist eine kritische Schwachstelle in generativen KI-Systemen, einschließlich solcher, die das Model Context Protocol (MCP) verwenden. Bei diesem Angriff werden bösartige Anweisungen in externen Inhalten – wie Dokumenten, Webseiten oder E-Mails – versteckt. Wenn das KI-System diese Inhalte verarbeitet, interpretiert es die eingebetteten Anweisungen möglicherweise als legitime Benutzerbefehle, was zu unbeabsichtigten Aktionen wie Datenlecks, der Erzeugung schädlicher Inhalte oder der Manipulation von Benutzerinteraktionen führt. Für eine ausführliche Erklärung und Praxisbeispiele siehe [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
+**Indirekte Prompt Injection** (auch bekannt als Cross-Domain Prompt Injection oder XPIA) ist eine kritische Schwachstelle in generativen KI-Systemen, einschließlich solcher, die das Model Context Protocol (MCP) verwenden. Bei diesem Angriff werden bösartige Anweisungen in externen Inhalten – wie Dokumenten, Webseiten oder E-Mails – versteckt. Wenn das KI-System diese Inhalte verarbeitet, interpretiert es die eingebetteten Anweisungen möglicherweise als legitime Benutzerbefehle, was zu unbeabsichtigten Aktionen wie Datenlecks, der Erzeugung schädlicher Inhalte oder der Manipulation von Benutzerinteraktionen führt. Für eine ausführliche Erklärung und Beispiele aus der Praxis siehe [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
 
-Eine besonders gefährliche Form dieses Angriffs ist **Tool Poisoning**. Hierbei injizieren Angreifer bösartige Anweisungen in die Metadaten von MCP-Tools (wie Tool-Beschreibungen oder Parameter). Da große Sprachmodelle (LLMs) diese Metadaten nutzen, um zu entscheiden, welche Tools sie aufrufen, können kompromittierte Beschreibungen das Modell dazu verleiten, unautorisierte Tool-Aufrufe auszuführen oder Sicherheitskontrollen zu umgehen. Diese Manipulationen sind für Endnutzer oft unsichtbar, können aber vom KI-System interpretiert und ausgeführt werden. Dieses Risiko ist in gehosteten MCP-Server-Umgebungen besonders hoch, wo Tool-Definitionen nach Benutzerfreigabe aktualisiert werden können – ein Szenario, das manchmal als "[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)" bezeichnet wird. In solchen Fällen kann ein zuvor sicheres Tool später so modifiziert werden, dass es bösartige Aktionen ausführt, wie Datenabfluss oder Systemveränderungen, ohne dass der Nutzer davon erfährt. Mehr zu diesem Angriffsvektor unter [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
+Eine besonders gefährliche Form dieses Angriffs ist **Tool Poisoning**. Hierbei injizieren Angreifer bösartige Anweisungen in die Metadaten von MCP-Tools (wie Tool-Beschreibungen oder Parameter). Da große Sprachmodelle (LLMs) diese Metadaten nutzen, um zu entscheiden, welche Tools sie aufrufen, können kompromittierte Beschreibungen das Modell dazu verleiten, unautorisierte Tool-Aufrufe auszuführen oder Sicherheitskontrollen zu umgehen. Diese Manipulationen sind für Endnutzer oft unsichtbar, können aber vom KI-System interpretiert und ausgeführt werden. Dieses Risiko ist in gehosteten MCP-Server-Umgebungen besonders hoch, wo Tool-Definitionen nach Benutzerfreigabe aktualisiert werden können – ein Szenario, das manchmal als "[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)" bezeichnet wird. In solchen Fällen kann ein zuvor sicheres Tool später so modifiziert werden, dass es bösartige Aktionen ausführt, wie Datenabfluss oder Verhaltensänderungen im System, ohne dass der Nutzer davon erfährt. Mehr zu diesem Angriffsvektor unter [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
 
 ![tool-injection-lg-2048x1239 (1)](../../../translated_images/tool-injection.3b0b4a6b24de6befe7d3afdeae44138ef005881aebcfc84c6f61369ce31e3640.de.png)
 
@@ -112,7 +112,7 @@ Unbeabsichtigte KI-Aktionen bergen verschiedene Sicherheitsrisiken, darunter Dat
 
 1.  **Erkennung und Filterung:** Prompt Shields nutzen fortschrittliche Machine-Learning-Algorithmen und natürliche Sprachverarbeitung, um bösartige Anweisungen in externen Inhalten wie Dokumenten, Webseiten oder E-Mails zu erkennen und herauszufiltern.
     
-2.  **Spotlighting:** Diese Technik hilft dem KI-System, zwischen gültigen Systemanweisungen und potenziell unzuverlässigen externen Eingaben zu unterscheiden. Durch die Transformation des Eingabetexts in eine für das Modell relevantere Form stellt Spotlighting sicher, dass die KI bösartige Anweisungen besser erkennt und ignoriert.
+2.  **Spotlighting:** Diese Technik hilft dem KI-System, zwischen gültigen Systemanweisungen und potenziell unzuverlässigen externen Eingaben zu unterscheiden. Durch die Transformation des Eingabetexts in eine für das Modell relevantere Form stellt Spotlighting sicher, dass die KI bösartige Anweisungen besser identifizieren und ignorieren kann.
     
 3.  **Begrenzer und Datenmarkierung:** Das Einfügen von Begrenzerzeichen in die Systemnachricht macht die Position des Eingabetexts explizit sichtbar und hilft dem KI-System, Benutzereingaben von potenziell schädlichen externen Inhalten zu trennen. Datenmarkierung erweitert dieses Konzept durch spezielle Marker, die die Grenzen von vertrauenswürdigen und nicht vertrauenswürdigen Daten hervorheben.
     
@@ -131,7 +131,7 @@ Die Sicherheit der Lieferkette bleibt im KI-Zeitalter von grundlegender Bedeutun
 - **Alle Komponenten vor der Integration verifizieren:** Dies umfasst nicht nur Open-Source-Bibliotheken, sondern auch KI-Modelle, Datenquellen und externe APIs. Prüfen Sie stets Herkunft, Lizenzierung und bekannte Schwachstellen.
 - **Sichere Deployment-Pipelines aufrechterhalten:** Verwenden Sie automatisierte CI/CD-Pipelines mit integrierter Sicherheitsprüfung, um Probleme frühzeitig zu erkennen. Stellen Sie sicher, dass nur vertrauenswürdige Artefakte in die Produktion gelangen.
 - **Kontinuierlich überwachen und auditieren:** Implementieren Sie eine fortlaufende Überwachung aller Abhängigkeiten, einschließlich Modelle und Datendienste, um neue Schwachstellen oder Angriffe auf die Lieferkette zu erkennen.
-- **Prinzip der geringsten Rechte und Zugriffskontrollen anwenden:** Beschränken Sie den Zugriff auf Modelle, Daten und Dienste auf das notwendige Minimum, damit Ihr MCP-Server funktioniert.
+- **Prinzip der geringsten Privilegien und Zugriffskontrollen anwenden:** Beschränken Sie den Zugriff auf Modelle, Daten und Dienste auf das notwendige Minimum, damit Ihr MCP-Server ordnungsgemäß funktioniert.
 - **Schnell auf Bedrohungen reagieren:** Haben Sie einen Prozess für das Patchen oder Ersetzen kompromittierter Komponenten sowie für das Rotieren von Geheimnissen oder Zugangsdaten, falls ein Sicherheitsvorfall festgestellt wird.
 
 [GitHub Advanced Security](https://github.com/security/advanced-security) bietet Funktionen wie Secret Scanning, Dependency Scanning und CodeQL-Analyse. Diese Tools integrieren sich mit [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) und [Azure Repos](https://azure.microsoft.com/en-us/products/devops/repos/), um Teams dabei zu unterstützen, Schwachstellen sowohl im Code als auch in KI-Lieferkettenkomponenten zu identifizieren und zu beheben.
@@ -147,14 +147,14 @@ Jede MCP-Implementierung übernimmt die bestehende Sicherheitslage der Umgebung 
 -   Server-Härtung – wo möglich MFA einsetzen, Patches aktuell halten, Integration des Servers mit einem Drittanbieter-Identitätsanbieter für den Zugriff usw.
 -   Geräte, Infrastruktur und Anwendungen stets mit aktuellen Patches versorgen
 -   Sicherheitsüberwachung – Implementierung von Logging und Monitoring einer KI-Anwendung (einschließlich MCP-Client/Server) und Weiterleitung dieser Logs an ein zentrales SIEM zur Erkennung anomaler Aktivitäten
--   Zero-Trust-Architektur – logische Isolierung von Komponenten durch Netzwerk- und Identitätskontrollen, um seitliche Bewegungen zu minimieren, falls eine KI-Anwendung kompromittiert wird.
+-   Zero-Trust-Architektur – logische Isolierung von Komponenten durch Netzwerk- und Identitätskontrollen, um seitliche Bewegungen im Falle einer Kompromittierung der KI-Anwendung zu minimieren.
 
 # Wichtige Erkenntnisse
 
-- Sicherheitsgrundlagen bleiben entscheidend: Sichere Programmierung, Prinzip der geringsten Rechte, Lieferkettenverifizierung und kontinuierliche Überwachung sind für MCP und KI-Workloads unerlässlich.
-- MCP bringt neue Risiken mit sich – wie Prompt Injection, Tool Poisoning und übermäßige Berechtigungen – die sowohl traditionelle als auch KI-spezifische Kontrollen erfordern.
+- Sicherheitsgrundlagen bleiben entscheidend: Sichere Programmierung, geringste Privilegien, Lieferkettenverifizierung und kontinuierliche Überwachung sind für MCP und KI-Workloads unerlässlich.
+- MCP bringt neue Risiken mit sich – wie Prompt Injection, Tool Poisoning und übermäßige Berechtigungen –, die sowohl traditionelle als auch KI-spezifische Kontrollen erfordern.
 - Verwenden Sie robuste Authentifizierungs-, Autorisierungs- und Token-Management-Praktiken und nutzen Sie nach Möglichkeit externe Identitätsanbieter wie Microsoft Entra ID.
-- Schützen Sie sich vor indirekter Prompt Injection und Tool Poisoning, indem Sie Tool-Metadaten validieren, dynamische Änderungen überwachen und Lösungen wie Microsoft Prompt Shields einsetzen.
+- Schützen Sie vor indirekter Prompt Injection und Tool Poisoning, indem Sie Tool-Metadaten validieren, dynamische Änderungen überwachen und Lösungen wie Microsoft Prompt Shields einsetzen.
 - Behandeln Sie alle Komponenten Ihrer KI-Lieferkette – einschließlich Modelle, Embeddings und Kontextanbieter – mit derselben Sorgfalt wie Code-Abhängigkeiten.
 - Bleiben Sie auf dem neuesten Stand der sich entwickelnden MCP-Spezifikationen und tragen Sie zur Community bei, um sichere Standards mitzugestalten.
 
@@ -184,4 +184,4 @@ Jede MCP-Implementierung übernimmt die bestehende Sicherheitslage der Umgebung 
 Weiter: [Kapitel 3: Erste Schritte](../03-GettingStarted/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

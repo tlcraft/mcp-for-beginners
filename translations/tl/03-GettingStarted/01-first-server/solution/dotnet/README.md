@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:59:44+00:00",
+  "translation_date": "2025-07-13T17:50:10+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "tl"
 }
@@ -16,6 +16,7 @@ dotnet restore
 ```
 
 ## -3- Patakbuhin ang sample
+
 
 ```bash
 dotnet run
@@ -44,7 +45,7 @@ Maaari mo itong patakbuhin nang direkta sa CLI mode sa pamamagitan ng pagpapatak
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Ilista nito ang lahat ng mga tools na available sa server. Dapat mong makita ang sumusunod na output:
+Ililista nito ang lahat ng mga tools na available sa server. Dapat mong makita ang sumusunod na output:
 
 ```text
 {
@@ -96,7 +97,7 @@ Dapat mong makita ang sumusunod na output:
 
 > ![!TIP]
 > Mas mabilis karaniwang patakbuhin ang inspector sa CLI mode kaysa sa browser.
-> Basahin pa tungkol sa inspector [dito](https://github.com/modelcontextprotocol/inspector).
+> Basahin pa ang tungkol sa inspector [dito](https://github.com/modelcontextprotocol/inspector).
 
 **Paalala**:  
 Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

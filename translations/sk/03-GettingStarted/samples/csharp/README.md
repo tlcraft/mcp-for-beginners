@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T06:07:23+00:00",
+  "translation_date": "2025-07-13T22:18:47+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "sk"
 }
@@ -15,7 +15,7 @@ Pre viac informácií pozrite [C# SDK](https://github.com/modelcontextprotocol/c
 
 ## Funkcie
 
-Táto kalkulačná služba ponúka nasledujúce možnosti:
+Táto kalkulačková služba ponúka nasledujúce možnosti:
 
 1. **Základné aritmetické operácie**:
    - Sčítanie dvoch čísel
@@ -23,8 +23,8 @@ Táto kalkulačná služba ponúka nasledujúce možnosti:
    - Násobenie dvoch čísel
    - Delenie jedného čísla druhým (s kontrolou delenia nulou)
 
-## Použitie `stdio` typu
-
+## Použitie typu `stdio`
+  
 ## Konfigurácia
 
 1. **Nastavenie MCP serverov**:
@@ -56,48 +56,47 @@ Táto kalkulačná služba ponúka nasledujúce možnosti:
 
    - Bude vás vyzvaný na zadanie koreňového adresára GitHub repozitára, ktorý môžete získať príkazom `git rev-parse --show-toplevel`.
 
-## Using the Service
+## Použitie služby
 
-The service exposes the following API endpoints through the MCP protocol:
+Služba sprístupňuje nasledujúce API endpointy cez MCP protokol:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Sčíta dve čísla
+- `subtract(a, b)`: Odčíta druhé číslo od prvého
+- `multiply(a, b)`: Vynásobí dve čísla
+- `divide(a, b)`: Vydelí prvé číslo druhým (s kontrolou delenia nulou)
+- isPrime(n): Skontroluje, či je číslo prvočíslo
 
-## Test with Github Copilot Chat in VS Code
+## Testovanie s Github Copilot Chat vo VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
+1. Skúste poslať požiadavku na službu pomocou MCP protokolu. Napríklad môžete požiadať:
    - "Add 5 and 3"
    - "Subtract 10 from 4"
    - "Multiply 6 and 7"
    - "Divide 8 by 2"
    - "Does 37854 prime?"
    - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
+2. Aby ste sa uistili, že sa používajú nástroje, pridajte do promptu #MyCalculator. Napríklad:
    - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+   - "Subtract 10 from 4 #MyCalculator"
 
+## Verzia v kontajneri
 
-## Containerized Version
+Predchádzajúce riešenie je skvelé, keď máte nainštalovaný .NET SDK a všetky závislosti sú pripravené. Ak však chcete riešenie zdieľať alebo spustiť v inom prostredí, môžete použiť verziu v kontajneri.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` s vaším používateľským menom na Docker Hub):
+1. Spustite Docker a uistite sa, že beží.
+1. V termináli prejdite do priečinka `03-GettingStarted\samples\csharp\src`
+1. Na zostavenie Docker image pre kalkulačkovú službu spustite nasledujúci príkaz (nahraďte `<YOUR-DOCKER-USERNAME>` vaším používateľským menom na Docker Hub):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ``` 
-1. Po zostavení image ho nahrajme na Docker Hub. Spustite nasledujúci príkaz:
+   ```
+1. Po zostavení image ho nahrajte na Docker Hub pomocou tohto príkazu:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## Použitie Docker verzie
 
-1. V súbore `.vscode/mcp.json` nahraďte konfiguráciu servera nasledujúcim:
+1. V súbore `.vscode/mcp.json` nahraďte konfiguráciu servera týmto:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Pri pohľade na konfiguráciu vidíte, že príkaz je `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Pri pohľade na konfiguráciu vidíte, že príkaz je `docker` a argumenty sú `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. Prepínač `--rm` zabezpečuje, že kontajner sa po zastavení odstráni, a prepínač `-i` umožňuje interakciu so štandardným vstupom kontajnera. Posledný argument je názov image, ktorý sme práve zostavili a nahrali na Docker Hub.
 
-## Test the Dockerized Version
+## Testovanie Docker verzie
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, a rovnako ako predtým môžete požiadať kalkulačnú službu, aby vám vykonala nejaké výpočty.
+Spustite MCP server kliknutím na malý tlačidlo Štart nad `"mcp-calc": {`, a rovnako ako predtým môžete požiadať kalkulačkovú službu, aby pre vás vykonala nejaké výpočty.
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

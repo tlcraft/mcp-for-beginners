@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:33:04+00:00",
+  "translation_date": "2025-07-13T17:17:55+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "he"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 החלק הזה מורכב ממספר שיעורים:
 
-- **1 השרת הראשון שלך**, בשיעור הראשון תלמד כיצד ליצור את השרת הראשון שלך ולבדוק אותו עם כלי הבדיקה, דרך חשובה לבדוק ולתקן את השרת שלך, [לשיעור](01-first-server/README.md)
+- **1 השרת הראשון שלך**, בשיעור הראשון תלמד כיצד ליצור את השרת הראשון שלך ולבדוק אותו עם כלי המפקח, דרך חשובה לבדיקה וניפוי שגיאות של השרת, [לשיעור](01-first-server/README.md)
 
 - **2 לקוח**, בשיעור זה תלמד כיצד לכתוב לקוח שיכול להתחבר לשרת שלך, [לשיעור](02-client/README.md)
 
-- **3 לקוח עם LLM**, דרך טובה יותר לכתוב לקוח היא להוסיף לו LLM כדי שיוכל "לנהל משא ומתן" עם השרת שלך על מה לעשות, [לשיעור](03-llm-client/README.md)
+- **3 לקוח עם LLM**, דרך טובה יותר לכתוב לקוח היא להוסיף לו LLM כך שיוכל "לנהל משא ומתן" עם השרת שלך לגבי מה לעשות, [לשיעור](03-llm-client/README.md)
 
 - **4 צריכת מצב סוכן GitHub Copilot ב-Visual Studio Code**. כאן נבחן כיצד להריץ את MCP Server שלנו מתוך Visual Studio Code, [לשיעור](04-vscode/README.md)
 
 - **5 צריכה מ-SSE (Server Sent Events)** SSE הוא תקן לזרימה מהשרת ללקוח, המאפשר לשרתים לדחוף עדכונים בזמן אמת ללקוחות דרך HTTP [לשיעור](05-sse-server/README.md)
 
-- **6 זרימת HTTP עם MCP (Streamable HTTP)**. תלמד על זרימת HTTP מודרנית, התראות על התקדמות, וכיצד לממש שרתי ולקוחות MCP בזמן אמת וסקלאביליים באמצעות Streamable HTTP. [לשיעור](06-http-streaming/README.md)
+- **6 זרימת HTTP עם MCP (Streamable HTTP)**. תלמד על זרימת HTTP מודרנית, התראות התקדמות, וכיצד לממש שרתי ולקוחות MCP בזמן אמת וסקלאביליים באמצעות Streamable HTTP. [לשיעור](06-http-streaming/README.md)
 
-- **7 שימוש ב-AI Toolkit ל-VSCode** לצריכה ובדיקת לקוחות ושרתים של MCP [לשיעור](07-aitk/README.md)
+- **7 שימוש ב-AI Toolkit עבור VSCode** לצריכה ובדיקת לקוחות ושרתים של MCP [לשיעור](07-aitk/README.md)
 
 - **8 בדיקות**. כאן נתמקד במיוחד כיצד ניתן לבדוק את השרת והלקוח שלנו בדרכים שונות, [לשיעור](08-testing/README.md)
 
 - **9 פריסה**. פרק זה יבחן דרכים שונות לפריסת פתרונות MCP שלך, [לשיעור](09-deployment/README.md)
 
 
-Model Context Protocol (MCP) הוא פרוטוקול פתוח שמאחד את הדרך שבה אפליקציות מספקות הקשר ל-LLMs. אפשר לחשוב על MCP כמו על חיבור USB-C לאפליקציות AI - הוא מספק דרך סטנדרטית לחבר מודלים של AI למקורות נתונים וכלים שונים.
+פרוטוקול Model Context (MCP) הוא פרוטוקול פתוח שמאחד את הדרך שבה אפליקציות מספקות הקשר ל-LLMs. אפשר לחשוב על MCP כמו על חיבור USB-C לאפליקציות AI - הוא מספק דרך סטנדרטית לחבר מודלים של AI למקורות נתונים וכלים שונים.
 
 ## מטרות הלמידה
 
@@ -39,11 +39,11 @@ Model Context Protocol (MCP) הוא פרוטוקול פתוח שמאחד את ה
 - להגדיר סביבות פיתוח ל-MCP ב-C#, Java, Python, TypeScript ו-JavaScript
 - לבנות ולפרוס שרתי MCP בסיסיים עם תכונות מותאמות (משאבים, פרומפטים וכלים)
 - ליצור אפליקציות מארחות שמתחברות לשרתי MCP
-- לבדוק ולתקן יישומי MCP
+- לבדוק ולפתור תקלות ביישומי MCP
 - להבין את האתגרים הנפוצים בהגדרה ואת הפתרונות להם
 - לחבר את יישומי MCP שלך לשירותי LLM פופולריים
 
-## הגדרת סביבת MCP שלך
+## הגדרת סביבת ה-MCP שלך
 
 לפני שתתחיל לעבוד עם MCP, חשוב להכין את סביבת הפיתוח ולהבין את זרימת העבודה הבסיסית. חלק זה ינחה אותך בשלבי ההגדרה הראשוניים כדי להבטיח התחלה חלקה עם MCP.
 
@@ -55,6 +55,7 @@ Model Context Protocol (MCP) הוא פרוטוקול פתוח שמאחד את ה
 - **IDE/עורך קוד**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm או כל עורך קוד מודרני
 - **מנהל חבילות**: NuGet, Maven/Gradle, pip או npm/yarn
 - **מפתחות API**: עבור כל שירותי AI שתכננת להשתמש בהם באפליקציות המארחות שלך
+
 
 ### SDKs רשמיים
 
@@ -72,14 +73,14 @@ MCP מספק SDKs רשמיים למספר שפות:
 ## נקודות מפתח
 
 - הגדרת סביבת פיתוח MCP פשוטה עם SDKs ספציפיים לשפה
-- בניית שרתי MCP כוללת יצירה ורישום של כלים עם סכימות ברורות
+- בניית שרתי MCP כוללת יצירה ורישום כלים עם סכימות ברורות
 - לקוחות MCP מתחברים לשרתי ומודלים כדי לנצל יכולות מורחבות
-- בדיקות ותיקונים חיוניים ליישומי MCP אמינים
+- בדיקות וניפוי שגיאות חיוניים ליישומי MCP אמינים
 - אפשרויות פריסה מגוונות, מפיתוח מקומי ועד פתרונות מבוססי ענן
 
 ## תרגול
 
-יש לנו אוסף דוגמאות שמלוות את התרגילים שתראה בכל הפרקים בחלק זה. בנוסף, לכל פרק יש תרגילים ומשימות משלו.
+יש לנו אוסף דוגמאות שמלוות את התרגילים שתראה בכל הפרקים בחלק זה. בנוסף, לכל פרק יש תרגילים ומשימות משלו
 
 - [מחשבון Java](./samples/java/calculator/README.md)
 - [מחשבון .Net](../../../03-GettingStarted/samples/csharp)
@@ -91,7 +92,7 @@ MCP מספק SDKs רשמיים למספר שפות:
 
 - [בניית סוכנים באמצעות Model Context Protocol ב-Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
 - [MCP מרוחק עם Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [סוכן .NET OpenAI MCP](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## מה הלאה
 

@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-06-11T16:18:30+00:00",
+  "translation_date": "2025-07-14T03:45:43+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "cs"
 }
 -->
-# Lesson: Construindo um Servidor MCP de Busca Web
+# Lekce: Vytvoření Web Search MCP Serveru
 
-Este capítulo demonstra como construir um agente de IA real que integra APIs externas, lida com diversos tipos de dados, gerencia erros e orquestra múltiplas ferramentas — tudo em um formato pronto para produção. Você verá:
+Tato kapitola ukazuje, jak postavit reálného AI agenta, který se integruje s externími API, zpracovává různé typy dat, zvládá chyby a orchestruje více nástrojů – to vše v produkčním formátu. Uvidíte:
 
-- **Integração com APIs externas que exigem autenticação**
-- **Manipulação de diversos tipos de dados de múltiplos endpoints**
-- **Estratégias robustas de tratamento de erros e logging**
-- **Orquestração de múltiplas ferramentas em um único servidor**
+- **Integraci s externími API vyžadujícími autentizaci**
+- **Zpracování různorodých dat z více zdrojů**
+- **Robustní zpracování chyb a strategie logování**
+- **Orchestrace více nástrojů v jednom serveru**
 
-Ao final, você terá experiência prática com padrões e melhores práticas essenciais para aplicações avançadas de IA e LLM.
+Na konci budete mít praktické zkušenosti s vzory a osvědčenými postupy, které jsou nezbytné pro pokročilé AI a aplikace využívající LLM.
 
-## Introdução
+## Úvod
 
-Nesta lição, você aprenderá a construir um servidor MCP avançado e um cliente que estendem as capacidades do LLM com dados da web em tempo real usando SerpAPI. Esta é uma habilidade crítica para desenvolver agentes de IA dinâmicos que podem acessar informações atualizadas da web.
+V této lekci se naučíte, jak postavit pokročilý MCP server a klienta, kteří rozšiřují schopnosti LLM o data z webu v reálném čase pomocí SerpAPI. To je klíčová dovednost pro vývoj dynamických AI agentů, kteří mají přístup k aktuálním informacím z internetu.
 
-## Objetivos de Aprendizagem
+## Cíle učení
 
-Ao final desta lição, você será capaz de:
+Na konci této lekce budete schopni:
 
-- Integrar APIs externas (como SerpAPI) de forma segura em um servidor MCP
-- Implementar múltiplas ferramentas para busca na web, notícias, produtos e Q&A
-- Analisar e formatar dados estruturados para consumo do LLM
-- Tratar erros e gerenciar limites de requisições das APIs de forma eficaz
-- Construir e testar clientes MCP automatizados e interativos
+- Bezpečně integrovat externí API (jako SerpAPI) do MCP serveru
+- Implementovat více nástrojů pro vyhledávání na webu, zpráv, produktů a Q&A
+- Parsovat a formátovat strukturovaná data pro potřeby LLM
+- Efektivně zvládat chyby a řídit limity API
+- Vytvářet a testovat jak automatizované, tak interaktivní MCP klienty
 
-## Servidor MCP de Busca Web
+## Web Search MCP Server
 
-Esta seção apresenta a arquitetura e os recursos do Servidor MCP de Busca Web. Você verá como FastMCP e SerpAPI são usados juntos para estender as capacidades do LLM com dados da web em tempo real.
+Tato sekce představuje architekturu a funkce Web Search MCP Serveru. Uvidíte, jak FastMCP a SerpAPI spolupracují na rozšíření schopností LLM o data z webu v reálném čase.
 
-### Visão Geral
+### Přehled
 
-Esta implementação conta com quatro ferramentas que demonstram a capacidade do MCP de lidar com tarefas diversas, dirigidas por APIs externas, de forma segura e eficiente:
+Tato implementace obsahuje čtyři nástroje, které demonstrují schopnost MCP bezpečně a efektivně zpracovávat různé úkoly řízené externími API:
 
-- **general_search**: Para resultados amplos na web
-- **news_search**: Para manchetes recentes
-- **product_search**: Para dados de comércio eletrônico
-- **qna**: Para trechos de perguntas e respostas
+- **general_search**: Pro široké výsledky z webu
+- **news_search**: Pro aktuální zprávy
+- **product_search**: Pro data z e-commerce
+- **qna**: Pro otázky a odpovědi
 
-### Recursos
-- **Exemplos de Código**: Inclui blocos de código específicos para Python (e facilmente extensíveis para outras linguagens) usando seções recolhíveis para clareza
+### Funkce
+- **Ukázky kódu**: Obsahuje jazykově specifické bloky kódu pro Python (a snadno rozšiřitelné do dalších jazyků) s použitím skládacích sekcí pro přehlednost
 
 <details>  
 <summary>Python</summary>  
@@ -69,11 +69,11 @@ async def run_search():
 ```
 </details>
 
-Antes de executar o cliente, é útil entender o que o servidor faz. O arquivo [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+Před spuštěním klienta je užitečné pochopit, co server dělá. Soubor [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) implementuje MCP server, který zpřístupňuje nástroje pro vyhledávání na webu, zpráv, produktů a Q&A integrací se SerpAPI. Zpracovává příchozí požadavky, spravuje volání API, parsuje odpovědi a vrací strukturované výsledky klientovi.
 
-You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Celou implementaci si můžete prohlédnout v [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-Aqui está um breve exemplo de como o servidor define e registra uma ferramenta:
+Zde je krátký příklad, jak server definuje a registruje nástroj:
 
 <details>  
 <summary>Python Server</summary> 
@@ -93,24 +93,24 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **Integração com API Externa**: Demonstra o manuseio seguro de chaves de API e requisições externas
-- **Análise de Dados Estruturados**: Mostra como transformar respostas de API em formatos amigáveis para o LLM
-- **Tratamento de Erros**: Tratamento robusto de erros com logging apropriado
-- **Cliente Interativo**: Inclui testes automatizados e um modo interativo para testes
-- **Gerenciamento de Contexto**: Usa MCP Context para logging e rastreamento de requisições
+- **Integrace externího API**: Ukazuje bezpečné zacházení s API klíči a externími požadavky
+- **Parsování strukturovaných dat**: Ukazuje, jak převést odpovědi API do formátů vhodných pro LLM
+- **Zpracování chyb**: Robustní zpracování chyb s odpovídajícím logováním
+- **Interaktivní klient**: Obsahuje jak automatizované testy, tak interaktivní režim pro testování
+- **Správa kontextu**: Využívá MCP Context pro logování a sledování požadavků
 
-## Pré-requisitos
+## Požadavky
 
-Antes de começar, certifique-se de que seu ambiente está configurado corretamente seguindo estes passos. Isso garantirá que todas as dependências estejam instaladas e suas chaves de API configuradas corretamente para um desenvolvimento e testes sem problemas.
+Než začnete, ujistěte se, že máte správně nastavené prostředí podle těchto kroků. To zajistí, že všechny závislosti jsou nainstalovány a vaše API klíče jsou správně nakonfigurovány pro bezproblémový vývoj a testování.
 
-- Python 3.8 ou superior
-- Chave da API SerpAPI (Cadastre-se em [SerpAPI](https://serpapi.com/) - plano gratuito disponível)
+- Python 3.8 nebo novější
+- SerpAPI API klíč (Zaregistrujte se na [SerpAPI](https://serpapi.com/) – dostupný je i bezplatný tarif)
 
-## Instalação
+## Instalace
 
-Para começar, siga estes passos para configurar seu ambiente:
+Pro začátek postupujte podle těchto kroků k nastavení prostředí:
 
-1. Instale as dependências usando uv (recomendado) ou pip:
+1. Nainstalujte závislosti pomocí uv (doporučeno) nebo pip:
 
 ```bash
 # Using uv (recommended)
@@ -120,57 +120,57 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. Crie um arquivo `.env` na raiz do projeto com sua chave SerpAPI:
+2. Vytvořte soubor `.env` v kořenovém adresáři projektu a vložte do něj svůj SerpAPI klíč:
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
 ```
 
-## Uso
+## Použití
 
-O Servidor MCP de Busca Web é o componente central que expõe ferramentas para busca na web, notícias, produtos e Q&A integrando com SerpAPI. Ele trata requisições recebidas, gerencia chamadas de API, analisa respostas e retorna resultados estruturados para o cliente.
+Web Search MCP Server je hlavní komponenta, která zpřístupňuje nástroje pro vyhledávání na webu, zpráv, produktů a Q&A integrací se SerpAPI. Zpracovává příchozí požadavky, spravuje volání API, parsuje odpovědi a vrací strukturované výsledky klientovi.
 
-Você pode revisar a implementação completa em [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Celou implementaci si můžete prohlédnout v [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-### Executando o Servidor
+### Spuštění serveru
 
-Para iniciar o servidor MCP, use o seguinte comando:
+Pro spuštění MCP serveru použijte následující příkaz:
 
 ```bash
 python server.py
 ```
 
-O servidor será executado como um servidor MCP baseado em stdio, ao qual o cliente pode se conectar diretamente.
+Server poběží jako MCP server založený na stdio, ke kterému se klient může přímo připojit.
 
-### Modos do Cliente
+### Režimy klienta
 
-O cliente (`client.py`) supports two modes for interacting with the MCP server:
+Klient (`client.py`) podporuje dva režimy pro interakci s MCP serverem:
 
-- **Normal mode**: Runs automated tests that exercise all the tools and verify their responses. This is useful for quickly checking that the server and tools are working as expected.
-- **Interactive mode**: Starts a menu-driven interface where you can manually select and call tools, enter custom queries, and see results in real time. This is ideal for exploring the server's capabilities and experimenting with different inputs.
+- **Normální režim**: Spouští automatizované testy, které vyzkouší všechny nástroje a ověří jejich odpovědi. Je to užitečné pro rychlé ověření, že server a nástroje fungují správně.
+- **Interaktivní režim**: Spustí menu, kde můžete ručně vybírat a volat nástroje, zadávat vlastní dotazy a sledovat výsledky v reálném čase. Ideální pro prozkoumání možností serveru a experimentování s různými vstupy.
 
-You can review the full implementation in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
+Celou implementaci si můžete prohlédnout v [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
-### Executando o Cliente
+### Spuštění klienta
 
-Para rodar os testes automatizados (isso iniciará o servidor automaticamente):
+Pro spuštění automatizovaných testů (tím se automaticky spustí i server):
 
 ```bash
 python client.py
 ```
 
-Ou rode no modo interativo:
+Nebo spusťte interaktivní režim:
 
 ```bash
 python client.py --interactive
 ```
 
-### Testando com Diferentes Métodos
+### Testování různými způsoby
 
-Existem várias formas de testar e interagir com as ferramentas fornecidas pelo servidor, dependendo das suas necessidades e fluxo de trabalho.
+Existuje několik způsobů, jak testovat a pracovat s nástroji poskytovanými serverem, podle vašich potřeb a pracovního postupu.
 
-#### Escrevendo Scripts de Teste Customizados com o MCP Python SDK
-Você também pode criar seus próprios scripts de teste usando o MCP Python SDK:
+#### Vytváření vlastních testovacích skriptů s MCP Python SDK
+Můžete také vytvořit vlastní testovací skripty pomocí MCP Python SDK:
 
 <details>
 <summary>Python</summary>
@@ -195,30 +195,30 @@ async def test_custom_query():
 ```
 </details>
 
-Neste contexto, um "script de teste" é um programa Python customizado que você escreve para atuar como cliente do servidor MCP. Em vez de ser um teste unitário formal, esse script permite que você conecte programaticamente ao servidor, chame qualquer uma das ferramentas com parâmetros escolhidos e inspecione os resultados. Essa abordagem é útil para:
-- Prototipar e experimentar chamadas de ferramentas
-- Validar como o servidor responde a diferentes entradas
-- Automatizar invocações repetidas de ferramentas
-- Construir seus próprios fluxos de trabalho ou integrações sobre o servidor MCP
+V tomto kontextu znamená „testovací skript“ vlastní Python program, který napíšete jako klienta MCP serveru. Místo formálního unit testu vám tento skript umožní programově se připojit k serveru, volat jakýkoli z jeho nástrojů s vámi zvolenými parametry a prohlížet si výsledky. Tento přístup je užitečný pro:
+- Prototypování a experimentování s voláním nástrojů
+- Ověření, jak server reaguje na různé vstupy
+- Automatizaci opakovaných volání nástrojů
+- Vytváření vlastních pracovních postupů nebo integrací nad MCP serverem
 
-Você pode usar scripts de teste para experimentar rapidamente novas consultas, depurar o comportamento das ferramentas ou até como ponto de partida para automações mais avançadas. Abaixo está um exemplo de como usar o MCP Python SDK para criar tal script:
+Testovací skripty můžete použít k rychlému vyzkoušení nových dotazů, ladění chování nástrojů nebo jako výchozí bod pro pokročilejší automatizaci. Níže je příklad, jak použít MCP Python SDK k vytvoření takového skriptu:
 
-## Descrições das Ferramentas
+## Popisy nástrojů
 
-Você pode usar as ferramentas a seguir fornecidas pelo servidor para realizar diferentes tipos de buscas e consultas. Cada ferramenta é descrita abaixo com seus parâmetros e exemplos de uso.
+Následující nástroje poskytované serverem můžete použít k provádění různých typů vyhledávání a dotazů. Každý nástroj je popsán níže spolu s parametry a příklady použití.
 
-Esta seção fornece detalhes sobre cada ferramenta disponível e seus parâmetros.
+Tato sekce obsahuje podrobnosti o jednotlivých dostupných nástrojích a jejich parametrech.
 
 ### general_search
 
-Realiza uma busca geral na web e retorna resultados formatados.
+Provádí obecné vyhledávání na webu a vrací formátované výsledky.
 
-**Como chamar esta ferramenta:**
+**Jak tento nástroj volat:**
 
-Você pode chamar `general_search` a partir do seu próprio script usando o MCP Python SDK, ou interativamente usando o Inspector ou o modo interativo do cliente. Aqui está um exemplo de código usando o SDK:
+`general_search` můžete volat ze svého skriptu pomocí MCP Python SDK nebo interaktivně pomocí Inspektora či interaktivního režimu klienta. Zde je příklad kódu s použitím SDK:
 
 <details>
-<summary>Exemplo em Python</summary>
+<summary>Python příklad</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -237,12 +237,12 @@ async def run_general_search():
 ```
 </details>
 
-Alternativamente, no modo interativo, selecione `general_search` from the menu and enter your query when prompted.
+Alternativně v interaktivním režimu vyberte `general_search` z menu a zadejte dotaz, když budete vyzváni.
 
-**Parameters:**
-- `query` (string): A consulta de busca
+**Parametry:**
+- `query` (string): Vyhledávací dotaz
 
-**Exemplo de Requisição:**
+**Příklad požadavku:**
 
 ```json
 {
@@ -252,14 +252,14 @@ Alternativamente, no modo interativo, selecione `general_search` from the menu a
 
 ### news_search
 
-Busca por notícias recentes relacionadas a uma consulta.
+Vyhledává aktuální zprávy související s dotazem.
 
-**Como chamar esta ferramenta:**
+**Jak tento nástroj volat:**
 
-Você pode chamar `news_search` a partir do seu próprio script usando o MCP Python SDK, ou interativamente usando o Inspector ou o modo interativo do cliente. Aqui está um exemplo de código usando o SDK:
+`news_search` můžete volat ze svého skriptu pomocí MCP Python SDK nebo interaktivně pomocí Inspektora či interaktivního režimu klienta. Zde je příklad kódu s použitím SDK:
 
 <details>
-<summary>Exemplo em Python</summary>
+<summary>Python příklad</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -278,12 +278,12 @@ async def run_news_search():
 ```
 </details>
 
-Alternativamente, no modo interativo, selecione `news_search` from the menu and enter your query when prompted.
+Alternativně v interaktivním režimu vyberte `news_search` z menu a zadejte dotaz, když budete vyzváni.
 
-**Parameters:**
-- `query` (string): A consulta de busca
+**Parametry:**
+- `query` (string): Vyhledávací dotaz
 
-**Exemplo de Requisição:**
+**Příklad požadavku:**
 
 ```json
 {
@@ -293,14 +293,14 @@ Alternativamente, no modo interativo, selecione `news_search` from the menu and 
 
 ### product_search
 
-Busca por produtos que correspondam a uma consulta.
+Vyhledává produkty odpovídající dotazu.
 
-**Como chamar esta ferramenta:**
+**Jak tento nástroj volat:**
 
-Você pode chamar `product_search` a partir do seu próprio script usando o MCP Python SDK, ou interativamente usando o Inspector ou o modo interativo do cliente. Aqui está um exemplo de código usando o SDK:
+`product_search` můžete volat ze svého skriptu pomocí MCP Python SDK nebo interaktivně pomocí Inspektora či interaktivního režimu klienta. Zde je příklad kódu s použitím SDK:
 
 <details>
-<summary>Exemplo em Python</summary>
+<summary>Python příklad</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -319,12 +319,12 @@ async def run_product_search():
 ```
 </details>
 
-Alternativamente, no modo interativo, selecione `product_search` from the menu and enter your query when prompted.
+Alternativně v interaktivním režimu vyberte `product_search` z menu a zadejte dotaz, když budete vyzváni.
 
-**Parameters:**
-- `query` (string): A consulta de busca de produto
+**Parametry:**
+- `query` (string): Dotaz pro vyhledávání produktů
 
-**Exemplo de Requisição:**
+**Příklad požadavku:**
 
 ```json
 {
@@ -334,14 +334,14 @@ Alternativamente, no modo interativo, selecione `product_search` from the menu a
 
 ### qna
 
-Obtém respostas diretas para perguntas a partir de motores de busca.
+Získává přímé odpovědi na otázky z vyhledávačů.
 
-**Como chamar esta ferramenta:**
+**Jak tento nástroj volat:**
 
-Você pode chamar `qna` a partir do seu próprio script usando o MCP Python SDK, ou interativamente usando o Inspector ou o modo interativo do cliente. Aqui está um exemplo de código usando o SDK:
+`qna` můžete volat ze svého skriptu pomocí MCP Python SDK nebo interaktivně pomocí Inspektora či interaktivního režimu klienta. Zde je příklad kódu s použitím SDK:
 
 <details>
-<summary>Exemplo em Python</summary>
+<summary>Python příklad</summary>
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -360,12 +360,12 @@ async def run_qna():
 ```
 </details>
 
-Alternativamente, no modo interativo, selecione `qna` from the menu and enter your question when prompted.
+Alternativně v interaktivním režimu vyberte `qna` z menu a zadejte otázku, když budete vyzváni.
 
-**Parameters:**
-- `question` (string): A pergunta para a qual buscar uma resposta
+**Parametry:**
+- `question` (string): Otázka, na kterou chcete najít odpověď
 
-**Exemplo de Requisição:**
+**Příklad požadavku:**
 
 ```json
 {
@@ -373,14 +373,14 @@ Alternativamente, no modo interativo, selecione `qna` from the menu and enter yo
 }
 ```
 
-## Detalhes do Código
+## Podrobnosti kódu
 
-Esta seção fornece trechos de código e referências para as implementações do servidor e cliente.
+Tato sekce obsahuje úryvky kódu a odkazy na implementace serveru a klienta.
 
 <details>
 <summary>Python</summary>
 
-Veja [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) para detalhes completos da implementação.
+Podrobnosti celé implementace najdete v [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) a [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
 ```python
 # Example snippet from server.py:
@@ -390,43 +390,43 @@ import httpx
 ```
 </details>
 
-## Conceitos Avançados Nesta Lição
+## Pokročilé koncepty v této lekci
 
-Antes de começar a construir, aqui estão alguns conceitos avançados importantes que aparecerão ao longo deste capítulo. Compreender estes ajudará você a acompanhar, mesmo que sejam novos para você:
+Než začnete stavět, zde jsou některé důležité pokročilé koncepty, které se v této kapitole objeví. Jejich pochopení vám pomůže lépe sledovat obsah, i když s nimi nejste zatím obeznámeni:
 
-- **Orquestração Multi-ferramenta**: Isso significa executar várias ferramentas diferentes (como busca web, notícias, produtos e Q&A) dentro de um único servidor MCP. Permite que seu servidor lide com uma variedade de tarefas, não apenas uma.
-- **Gerenciamento de Limite de Requisições da API**: Muitas APIs externas (como SerpAPI) limitam quantas requisições você pode fazer em um determinado período. Um código bem feito verifica esses limites e os trata com elegância, para que seu app não quebre se atingir o limite.
-- **Análise de Dados Estruturados**: Respostas de API costumam ser complexas e aninhadas. Este conceito trata de transformar essas respostas em formatos limpos e fáceis de usar, amigáveis para LLMs ou outros programas.
-- **Recuperação de Erros**: Às vezes algo dá errado — talvez a rede falhe ou a API não retorne o esperado. Recuperação de erros significa que seu código pode lidar com esses problemas e ainda fornecer feedback útil, ao invés de travar.
-- **Validação de Parâmetros**: Trata-se de verificar se todas as entradas para suas ferramentas estão corretas e seguras para uso. Inclui definir valores padrão e garantir que os tipos estejam certos, ajudando a evitar bugs e confusões.
+- **Orchestrace více nástrojů**: Znamená to provozovat několik různých nástrojů (například webové vyhledávání, vyhledávání zpráv, produktů a Q&A) v jednom MCP serveru. Umožňuje to serveru zvládat různé úkoly, ne jen jeden.
+- **Řízení limitů API**: Mnoho externích API (jako SerpAPI) omezuje počet požadavků za určitý čas. Kvalitní kód tyto limity kontroluje a elegantně je řeší, aby aplikace nepřestala fungovat při dosažení limitu.
+- **Parsování strukturovaných dat**: Odpovědi API jsou často složité a vnořené. Tento koncept znamená převést tyto odpovědi do čistých, snadno použitelných formátů, které jsou přátelské pro LLM nebo jiné programy.
+- **Obnova po chybách**: Někdy se něco pokazí – třeba selže síť nebo API nevrátí očekávaná data. Obnova po chybách znamená, že váš kód tyto problémy zvládne a stále poskytne užitečnou zpětnou vazbu místo pádu aplikace.
+- **Validace parametrů**: Znamená to kontrolovat, že všechny vstupy do vašich nástrojů jsou správné a bezpečné k použití. Zahrnuje nastavení výchozích hodnot a ověření typů, což pomáhá předcházet chybám a nedorozuměním.
 
-Esta seção ajudará você a diagnosticar e resolver problemas comuns que podem surgir ao trabalhar com o Servidor MCP de Busca Web. Se você encontrar erros ou comportamentos inesperados, esta seção de solução de problemas oferece soluções para os problemas mais comuns. Revise essas dicas antes de buscar ajuda adicional — elas frequentemente resolvem problemas rapidamente.
+Tato sekce vám pomůže diagnostikovat a vyřešit běžné problémy, na které můžete při práci s Web Search MCP Serverem narazit. Pokud se setkáte s chybami nebo neočekávaným chováním, tato část nabízí řešení nejčastějších problémů. Projděte si tyto tipy předtím, než požádáte o další pomoc – často rychle vyřeší potíže.
 
-## Solução de Problemas
+## Řešení problémů
 
-Ao trabalhar com o Servidor MCP de Busca Web, você pode ocasionalmente encontrar problemas — isso é normal ao desenvolver com APIs externas e novas ferramentas. Esta seção oferece soluções práticas para os problemas mais comuns, para que você possa retomar rapidamente. Se encontrar um erro, comece aqui: as dicas abaixo abordam as questões que a maioria dos usuários enfrenta e frequentemente resolvem seu problema sem ajuda extra.
+Při práci s Web Search MCP Serverem se občas mohou vyskytnout problémy – to je běžné při vývoji s externími API a novými nástroji. Tato sekce nabízí praktická řešení nejčastějších problémů, abyste se mohli rychle vrátit k práci. Pokud narazíte na chybu, začněte zde: níže uvedené tipy řeší problémy, se kterými se většina uživatelů setkává, a často vyřeší váš problém bez nutnosti další pomoci.
 
-### Problemas Comuns
+### Běžné problémy
 
-Abaixo estão alguns dos problemas mais frequentes enfrentados pelos usuários, com explicações claras e passos para resolvê-los:
+Níže jsou uvedeny některé z nejčastějších problémů, se kterými se uživatelé setkávají, spolu s jasnými vysvětleními a kroky k jejich vyřešení:
 
-1. **Falta da variável SERPAPI_KEY no arquivo .env**
-   - Se você vir o erro `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
+1. **Chybějící SERPAPI_KEY v souboru .env**
+   - Pokud se zobrazí chyba `SERPAPI_KEY environment variable not found`, znamená to, že aplikace nemůže najít API klíč potřebný pro přístup k SerpAPI. Pro opravu vytvořte v kořenovém adresáři projektu soubor `.env` (pokud ještě neexistuje) a přidejte řádek `SERPAPI_KEY=your_serpapi_key_here`. Nezapomeňte nahradit `your_serpapi_key_here` vaším skutečným klíčem ze stránky SerpAPI.
 
-2. **Module not found errors**
-   - Errors such as `ModuleNotFoundError: No module named 'httpx'` indicate that a required Python package is missing. This usually happens if you haven't installed all the dependencies. To resolve this, run `pip install -r requirements.txt` in your terminal to install everything your project needs.
+2. **Chyby typu Module not found**
+   - Chyby jako `ModuleNotFoundError: No module named 'httpx'` znamenají, že chybí požadovaný Python balíček. Obvykle se to stane, pokud jste nenainstalovali všechny závislosti. Pro vyřešení spusťte v terminálu `pip install -r requirements.txt`, aby se nainstalovalo vše potřebné.
 
-3. **Connection issues**
-   - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
+3. **Problémy s připojením**
+   - Pokud se objeví chyba jako `Error during client execution`, často to znamená, že klient se nemůže připojit k serveru nebo server neběží správně. Zkontrolujte, zda jsou klient a server kompatibilní verze a zda je soubor `server.py` přítomen a spuštěn ve správném adresáři. Restartování serveru i klienta může také pomoci.
 
-4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env`, crie o arquivo `.env` se necessário. Se sua chave estiver correta, mas o erro persistir, verifique se sua cota do plano gratuito não foi esgotada.
+4. **Chyby SerpAPI**
+   - Pokud vidíte `Search API returned error status: 401`, znamená to, že váš SerpAPI klíč chybí, je nesprávný nebo vypršel. Přejděte do svého SerpAPI dashboardu, ověřte klíč a případně aktualizujte soubor `.env`. Pokud je klíč správný, ale chyba přetrvává, zkontrolujte, zda vám nevypršel bezplatný tarif.
 
-### Modo Debug
+### Režim ladění (Debug Mode)
 
-Por padrão, o app registra apenas informações importantes. Se quiser ver mais detalhes sobre o que está acontecendo (por exemplo, para diagnosticar problemas difíceis), você pode ativar o modo DEBUG. Isso mostrará muito mais sobre cada etapa que o app está realizando.
+Ve výchozím nastavení aplikace loguje pouze důležité informace. Pokud chcete vidět podrobnější informace o tom, co se děje (například pro diagnostiku složitých problémů), můžete zapnout režim DEBUG. Ten vám ukáže mnohem více o každém kroku, který aplikace provádí.
 
-**Exemplo: Saída Normal**
+**Příklad: Normální výstup**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:24,123 - __main__ - INFO - Successfully called general_search
@@ -435,7 +435,7 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-**Exemplo: Saída em DEBUG**
+**Příklad: Výstup v režimu DEBUG**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:23,457 - httpx - DEBUG - HTTP Request: GET https://serpapi.com/search ...
@@ -446,11 +446,10 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Note como o modo DEBUG inclui linhas extras sobre requisições HTTP, respostas e outros detalhes internos. Isso pode ser muito útil para solução de problemas.
+Všimněte si, že režim DEBUG obsahuje další řádky o HTTP požadavcích, odpovědích a dalších interních detailech. To může být velmi užitečné při řešení problémů.
 
-Para ativar o modo DEBUG, defina o nível de logging para DEBUG no topo do seu `client.py` or `server.py`:
+Pro zapnutí režimu DEBUG nastavte úroveň logování na DEBUG v horní části souboru `client.py` nebo `server.py`:
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -465,9 +464,9 @@ logging.basicConfig(
 
 ---
 
-## Próximos passos
+## Co dál
 
 - [5.10 Real Time Streaming](../mcp-realtimestreaming/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

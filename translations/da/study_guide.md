@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-06-11T16:45:25+00:00",
+  "translation_date": "2025-07-13T15:15:17+00:00",
   "source_file": "study_guide.md",
   "language_code": "da"
 }
 -->
-# Model Context Protocol (MCP) for Beginners - Studieguide
+# Model Context Protocol (MCP) for Begyndere - Studieguide
 
-Denne studieguide giver et overblik over repository-strukturen og indholdet for "Model Context Protocol (MCP) for Beginners"-pensum. Brug denne guide til effektivt at navigere i repository og få mest muligt ud af de tilgængelige ressourcer.
+Denne studieguide giver en oversigt over repository-strukturen og indholdet for "Model Context Protocol (MCP) for Beginners" pensum. Brug denne guide til effektivt at navigere i repositoryet og få mest muligt ud af de tilgængelige ressourcer.
 
-## Repository Oversigt
+## Oversigt over Repository
 
 Model Context Protocol (MCP) er en standardiseret ramme for interaktioner mellem AI-modeller og klientapplikationer. Dette repository tilbyder et omfattende pensum med praktiske kodeeksempler i C#, Java, JavaScript, Python og TypeScript, designet til AI-udviklere, systemarkitekter og softwareingeniører.
 
@@ -88,16 +88,16 @@ mindmap
 
 ## Repository Struktur
 
-Repository er opdelt i ti hovedsektioner, der hver især fokuserer på forskellige aspekter af MCP:
+Repositoryet er organiseret i ti hovedsektioner, der hver især fokuserer på forskellige aspekter af MCP:
 
 1. **Introduction (00-Introduction/)**
-   - Overblik over Model Context Protocol
+   - Oversigt over Model Context Protocol
    - Hvorfor standardisering er vigtigt i AI-pipelines
    - Praktiske anvendelsestilfælde og fordele
 
 2. **Core Concepts (01-CoreConcepts/)**
    - Client-server arkitektur
-   - Nøglekomponenter i protokollen
+   - Centrale protokolkomponenter
    - Messaging-mønstre i MCP
 
 3. **Security (02-Security/)**
@@ -114,14 +114,14 @@ Repository er opdelt i ti hovedsektioner, der hver især fokuserer på forskelli
 5. **Practical Implementation (04-PracticalImplementation/)**
    - Brug af SDK’er på tværs af forskellige programmeringssprog
    - Debugging, test og valideringsteknikker
-   - Udarbejdelse af genanvendelige promptskabeloner og workflows
-   - Eksempelsprojekter med implementeringer
+   - Udformning af genanvendelige promptskabeloner og workflows
+   - Eksempler på projekter med implementering
 
 6. **Advanced Topics (05-AdvancedTopics/)**
    - Multi-modale AI-workflows og udvidelsesmuligheder
    - Sikker skalering
    - MCP i virksomhedsekosystemer
-   - Specialiserede emner inklusiv Azure-integration, multi-modalitet, OAuth2, root contexts, routing, sampling, skalering, sikkerhed, websøgningsintegration og streaming.
+   - Specialiserede emner som Azure-integration, multi-modality, OAuth2, root contexts, routing, sampling, skalering, sikkerhed, websøgningsintegration og streaming.
 
 7. **Community Contributions (06-CommunityContributions/)**
    - Hvordan man bidrager med kode og dokumentation
@@ -131,26 +131,26 @@ Repository er opdelt i ti hovedsektioner, der hver især fokuserer på forskelli
 8. **Lessons from Early Adoption (07-LessonsfromEarlyAdoption/)**
    - Virkelige implementeringer og succeshistorier
    - Opbygning og udrulning af MCP-baserede løsninger
-   - Trends og fremtidig roadmap
+   - Tendenser og fremtidig roadmap
 
 9. **Best Practices (08-BestPractices/)**
-   - Performance tuning og optimering
+   - Performance-tuning og optimering
    - Design af fejltolerante MCP-systemer
    - Test- og robusthedsstrategier
 
 10. **Case Studies (09-CaseStudy/)**
-    - Dybdegående analyser af MCP-løsningsarkitekturer
-    - Udrulningsplaner og integrationstips
+    - Dybtgående analyser af MCP-løsningsarkitekturer
+    - Udrulningsplaner og integrationsråd
     - Annoterede diagrammer og projektgennemgange
 
 11. **Hands-on Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Omfattende hands-on workshop, der kombinerer MCP med Microsofts AI Toolkit til VS Code
     - Opbygning af intelligente applikationer, der forbinder AI-modeller med virkelige værktøjer
-    - Praktiske moduler, der dækker grundlæggende, tilpasset serverudvikling og produktionsudrulningsstrategier
+    - Praktiske moduler, der dækker grundlæggende, udvikling af custom server og produktionsudrulningsstrategier
 
-## Eksempelsprojekter
+## Eksempelprojekter
 
-Repository indeholder flere eksempelsprojekter, der demonstrerer MCP-implementering på tværs af forskellige programmeringssprog:
+Repositoryet indeholder flere eksempelprojekter, der demonstrerer MCP-implementering på forskellige programmeringssprog:
 
 ### Grundlæggende MCP Calculator Eksempler
 - C# MCP Server Eksempel
@@ -168,11 +168,11 @@ Repository indeholder flere eksempelsprojekter, der demonstrerer MCP-implementer
 
 ## Yderligere Ressourcer
 
-Repository indeholder understøttende ressourcer:
+Repositoryet indeholder understøttende ressourcer:
 
 - **Images folder**: Indeholder diagrammer og illustrationer brugt gennem pensum
-- **Translations**: Fleresproget support med automatiserede oversættelser af dokumentationen
-- **Official MCP Resources**:
+- **Translations**: Flersproget support med automatiserede oversættelser af dokumentation
+- **Officielle MCP Ressourcer**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
   - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
@@ -180,18 +180,18 @@ Repository indeholder understøttende ressourcer:
 ## Sådan Bruger Du Dette Repository
 
 1. **Sekventiel Læring**: Følg kapitlerne i rækkefølge (00 til 10) for en struktureret læringsoplevelse.
-2. **Sprog-specifik Fokus**: Hvis du er interesseret i et bestemt programmeringssprog, udforsk samples-mapperne for implementeringer i dit foretrukne sprog.
+2. **Sprog-specifik Fokus**: Hvis du er interesseret i et bestemt programmeringssprog, kan du udforske sample-mapperne for implementeringer i dit foretrukne sprog.
 3. **Praktisk Implementering**: Start med sektionen "Getting Started" for at sætte dit miljø op og oprette din første MCP-server og klient.
 4. **Avanceret Udforskning**: Når du er fortrolig med det grundlæggende, kan du dykke ned i de avancerede emner for at udvide din viden.
 5. **Fællesskabsengagement**: Deltag i [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) for at komme i kontakt med eksperter og andre udviklere.
 
 ## Bidrag
 
-Dette repository byder velkommen til bidrag fra fællesskabet. Se sektionen Community Contributions for vejledning om, hvordan du bidrager.
+Dette repository byder velkommen til bidrag fra fællesskabet. Se sektionen Community Contributions for vejledning om, hvordan du kan bidrage.
 
 ---
 
-*Denne studieguide blev oprettet den 11. juni 2025 og giver et overblik over repository på dette tidspunkt. Repository-indhold kan være opdateret siden da.*
+*Denne studieguide blev oprettet den 11. juni 2025 og giver en oversigt over repositoryet på dette tidspunkt. Indholdet i repositoryet kan være opdateret siden da.*
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

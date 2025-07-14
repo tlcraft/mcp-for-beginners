@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-16T15:22:17+00:00",
+  "translation_date": "2025-07-13T20:15:02+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "pl"
 }
@@ -47,20 +47,20 @@ To powinno uruchomić serwer WWW z interfejsem wizualnym, który pozwoli Ci prze
 
 Po połączeniu z serwerem:
 
-- spróbuj wyświetlić listę narzędzi i uruchom `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- spróbuj wyświetlić listę narzędzi i uruchom `add` z argumentami 2 i 4, w wyniku powinno pojawić się 6.
+- przejdź do zasobów i szablonu zasobu, wywołaj get_greeting, wpisz imię i powinieneś zobaczyć powitanie z podanym imieniem.
 
-### Testing in ClI mode
+### Testowanie w trybie CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` jest nakładką na to.
+Inspektor, który uruchomiłeś, to w rzeczywistości aplikacja Node.js, a `mcp dev` to jej nakładka.
 
-Możesz uruchomić to bezpośrednio w trybie CLI, wykonując następujące polecenie:
+Możesz uruchomić go bezpośrednio w trybie CLI, wykonując następujące polecenie:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-To wyświetli wszystkie dostępne narzędzia na serwerze. Powinieneś zobaczyć następujący wynik:
+To wyświetli listę wszystkich narzędzi dostępnych na serwerze. Powinieneś zobaczyć następujący wynik:
 
 ```text
 {
@@ -112,8 +112,8 @@ Powinieneś zobaczyć następujący wynik:
 ```
 
 > ![!TIP]
-> Zazwyczaj dużo szybciej jest uruchomić inspektora w trybie CLI niż w przeglądarce.
+> Zazwyczaj znacznie szybciej jest uruchomić inspektora w trybie CLI niż w przeglądarce.
 > Więcej o inspektorze przeczytasz [tutaj](https://github.com/modelcontextprotocol/inspector).
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uważany za wiarygodne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

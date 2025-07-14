@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T06:05:40+00:00",
+  "translation_date": "2025-07-13T19:04:11+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "tl"
 }
@@ -28,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Dapat mai-install ang mga sumusunod na library: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol 
+Dapat mai-install ang mga sumusunod na library: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Patakbuhin
 
@@ -36,7 +36,7 @@ Dapat mai-install ang mga sumusunod na library: Azure AI Inference, Azure Identi
 dotnet run
 ```
 
-Dapat mong makita ang output na kahalintulad ng:
+Dapat kang makakita ng output na katulad ng:
 
 ```text
 Setting up stdio transport
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Marami sa output ay para lang sa debugging pero ang mahalaga ay nililista mo ang mga tool mula sa MCP Server, ginagawa mo silang mga LLM tool at makakakuha ka ng tugon mula sa MCP client na "Sum 6".
+Marami sa output ay para lang sa debugging pero ang mahalaga ay inililista mo ang mga tools mula sa MCP Server, ginagawa mo itong mga LLM tools at magtatapos ka sa isang MCP client response na "Sum 6".
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasaling-tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

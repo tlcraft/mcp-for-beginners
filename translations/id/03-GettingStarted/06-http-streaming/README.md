@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-10T16:19:06+00:00",
+  "translation_date": "2025-07-13T20:46:47+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "id"
 }
 -->
 # HTTPS Streaming dengan Model Context Protocol (MCP)
 
-Bab ini memberikan panduan lengkap untuk mengimplementasikan streaming yang aman, skalabel, dan real-time dengan Model Context Protocol (MCP) menggunakan HTTPS. Materi mencakup motivasi untuk streaming, mekanisme transport yang tersedia, cara mengimplementasikan HTTP yang dapat distreaming di MCP, praktik keamanan terbaik, migrasi dari SSE, serta panduan praktis untuk membangun aplikasi streaming MCP Anda sendiri.
+Bab ini memberikan panduan lengkap untuk mengimplementasikan streaming yang aman, skalabel, dan real-time dengan Model Context Protocol (MCP) menggunakan HTTPS. Materi mencakup motivasi untuk streaming, mekanisme transport yang tersedia, cara mengimplementasikan HTTP yang dapat di-stream di MCP, praktik keamanan terbaik, migrasi dari SSE, serta panduan praktis untuk membangun aplikasi streaming MCP Anda sendiri.
 
 ## Mekanisme Transport dan Streaming di MCP
 
@@ -27,11 +27,11 @@ Mekanisme transport mendefinisikan bagaimana data dipertukarkan antara klien dan
 
 Lihat tabel perbandingan berikut untuk memahami perbedaan antara mekanisme transport ini:
 
-| Transport         | Pembaruan Real-time | Streaming | Skalabilitas | Kasus Penggunaan         |
-|-------------------|--------------------|-----------|--------------|-------------------------|
-| stdio             | Tidak              | Tidak     | Rendah       | Alat CLI lokal          |
-| SSE               | Ya                 | Ya        | Sedang       | Web, pembaruan real-time|
-| Streamable HTTP   | Ya                 | Ya        | Tinggi       | Cloud, multi-klien      |
+| Transport         | Pembaruan Real-time | Streaming | Skalabilitas | Kasus Penggunaan          |
+|-------------------|--------------------|-----------|--------------|--------------------------|
+| stdio             | Tidak              | Tidak     | Rendah       | Alat CLI lokal           |
+| SSE               | Ya                 | Ya        | Sedang       | Web, pembaruan real-time |
+| Streamable HTTP   | Ya                 | Ya        | Tinggi       | Cloud, multi-klien       |
 
 > **Tip:** Memilih transport yang tepat memengaruhi performa, skalabilitas, dan pengalaman pengguna. **Streamable HTTP** direkomendasikan untuk aplikasi modern, skalabel, dan siap cloud.
 
@@ -200,16 +200,16 @@ Perbedaan antara cara streaming "klasik" dan cara streaming di MCP dapat digamba
 
 | Fitur                  | Streaming HTTP Klasik          | Streaming MCP (Notifikasi)         |
 |------------------------|-------------------------------|-----------------------------------|
-| Respons utama           | Chunked                       | Tunggal, di akhir                 |
-| Pembaruan progres       | Dikirim sebagai potongan data | Dikirim sebagai notifikasi        |
-| Persyaratan klien       | Harus memproses stream        | Harus mengimplementasikan handler pesan |
-| Kasus penggunaan        | File besar, streaming token AI| Progres, log, umpan balik real-time|
+| Respons utama          | Chunked                       | Tunggal, di akhir                 |
+| Pembaruan progres      | Dikirim sebagai potongan data | Dikirim sebagai notifikasi        |
+| Persyaratan klien      | Harus memproses stream        | Harus mengimplementasikan handler pesan |
+| Kasus penggunaan       | File besar, aliran token AI   | Progres, log, umpan balik real-time |
 
 ### Perbedaan Utama yang Terlihat
 
 Selain itu, berikut beberapa perbedaan utama:
 
-- **Pola Komunikasi:**
+- **Polanya Komunikasi:**
    - Streaming HTTP klasik: Menggunakan encoding transfer chunked sederhana untuk mengirim data dalam potongan
    - Streaming MCP: Menggunakan sistem notifikasi terstruktur dengan protokol JSON-RPC
 
@@ -222,12 +222,12 @@ Selain itu, berikut beberapa perbedaan utama:
    - MCP: Klien lebih canggih dengan handler pesan untuk memproses berbagai tipe pesan
 
 - **Pembaruan Progres:**
-   - HTTP klasik: Progres adalah bagian dari stream respons utama
+   - HTTP klasik: Progres adalah bagian dari aliran respons utama
    - MCP: Progres dikirim melalui pesan notifikasi terpisah sementara respons utama datang di akhir
 
 ### Rekomendasi
 
-Ada beberapa hal yang kami rekomendasikan saat memilih antara mengimplementasikan streaming klasik (seperti endpoint `/stream` yang kami tunjukkan di atas) versus streaming melalui MCP.
+Ada beberapa hal yang kami rekomendasikan saat memilih antara mengimplementasikan streaming klasik (seperti endpoint `/stream` yang kami tunjukkan sebelumnya) versus streaming melalui MCP.
 
 - **Untuk kebutuhan streaming sederhana:** Streaming HTTP klasik lebih mudah diimplementasikan dan cukup untuk kebutuhan streaming dasar.
 
@@ -237,7 +237,7 @@ Ada beberapa hal yang kami rekomendasikan saat memilih antara mengimplementasika
 
 ## Streaming di MCP
 
-Baik, Anda sudah melihat beberapa rekomendasi dan perbandingan sejauh ini tentang perbedaan antara streaming klasik dan streaming di MCP. Sekarang mari kita bahas secara detail bagaimana Anda dapat memanfaatkan streaming di MCP.
+Baik, Anda sudah melihat beberapa rekomendasi dan perbandingan sejauh ini tentang perbedaan antara streaming klasik dan streaming di MCP. Sekarang mari kita bahas secara detail bagaimana Anda bisa memanfaatkan streaming di MCP.
 
 Memahami cara kerja streaming dalam kerangka MCP sangat penting untuk membangun aplikasi responsif yang memberikan umpan balik real-time kepada pengguna selama operasi yang berjalan lama.
 
@@ -291,7 +291,7 @@ Ada berbagai jenis notifikasi:
 | notice    | Peristiwa normal tapi penting  | Perubahan konfigurasi           |
 | warning   | Kondisi peringatan             | Penggunaan fitur yang deprecated|
 | error     | Kondisi kesalahan             | Kegagalan operasi               |
-| critical  | Kondisi kritis                 | Kegagalan komponen sistem       |
+| critical  | Kondisi kritis                | Kegagalan komponen sistem       |
 | alert     | Tindakan harus segera diambil | Deteksi korupsi data            |
 | emergency | Sistem tidak dapat digunakan   | Kegagalan sistem total          |
 
@@ -318,7 +318,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-Dalam contoh di atas, tool `process_files` mengirim tiga notifikasi ke klien saat memproses setiap file. Metode `ctx.info()` digunakan untuk mengirim pesan informasi.
+Dalam contoh sebelumnya, tool `process_files` mengirim tiga notifikasi ke klien saat memproses setiap file. Metode `ctx.info()` digunakan untuk mengirim pesan informasi.
 
 </details>
 
@@ -384,7 +384,7 @@ async with ClientSession(
 ) as session:
 ```
 
-Dalam kode di atas, fungsi `message_handler` memeriksa apakah pesan yang masuk adalah notifikasi. Jika iya, pesan tersebut dicetak; jika tidak, diproses sebagai pesan server biasa. Perhatikan juga bagaimana `ClientSession` diinisialisasi dengan `message_handler` untuk menangani notifikasi yang masuk.
+Dalam kode sebelumnya, fungsi `message_handler` memeriksa apakah pesan yang masuk adalah notifikasi. Jika iya, pesan tersebut dicetak; jika tidak, diproses sebagai pesan server biasa. Perhatikan juga bagaimana `ClientSession` diinisialisasi dengan `message_handler` untuk menangani notifikasi yang masuk.
 
 </details>
 
@@ -587,7 +587,7 @@ Bangun server dan klien MCP di mana server memproses daftar item (misalnya file 
 
 1. Implementasikan alat server yang memproses daftar dan mengirim notifikasi untuk setiap item.
 2. Implementasikan klien dengan handler pesan untuk menampilkan notifikasi secara real time.
-3. Uji implementasi Anda dengan menjalankan server dan klien, lalu amati notifikasinya.
+3. Uji implementasi Anda dengan menjalankan server dan klien, lalu amati notifikasi yang muncul.
 
 [Solution](./solution/README.md)
 
@@ -609,4 +609,4 @@ Untuk melanjutkan perjalanan Anda dengan streaming MCP dan memperluas pengetahua
 - Selanjutnya: [Utilising AI Toolkit for VSCode](../07-aitk/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:50:03+00:00",
+  "translation_date": "2025-07-13T23:27:40+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "it"
 }
 -->
 # Esempio
 
-Questo è un esempio di JavaScript per un server MCP
+Questo è un esempio in JavaScript per un MCP Server
 
 Ecco un esempio di registrazione di uno strumento in cui registriamo uno strumento che effettua una chiamata simulata a un LLM:
 
@@ -74,7 +74,7 @@ this.mcpServer.tool(
 );
 ```
 
-## Installare
+## Installazione
 
 Esegui il seguente comando:
 
@@ -82,11 +82,11 @@ Esegui il seguente comando:
 npm install
 ```
 
-## Eseguire
+## Esecuzione
 
 ```bash
 npm start
 ```
 
-**Disclaimer**:
-Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Anche se ci impegniamo per l'accuratezza, si prega di essere consapevoli che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+**Disclaimer**:  
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

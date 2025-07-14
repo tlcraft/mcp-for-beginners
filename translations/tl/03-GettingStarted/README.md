@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:34:00+00:00",
+  "translation_date": "2025-07-13T17:18:50+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "tl"
 }
@@ -21,7 +21,7 @@ Ang seksyong ito ay binubuo ng ilang mga aralin:
 
 - **5 Consuming from a SSE (Server Sent Events)** Ang SSE ay isang standard para sa server-to-client streaming, na nagpapahintulot sa mga server na magpadala ng real-time na mga update sa mga client sa pamamagitan ng HTTP [to the lesson](05-sse-server/README.md)
 
-- **6 HTTP Streaming with MCP (Streamable HTTP)**. Alamin ang tungkol sa modernong HTTP streaming, mga notification ng progreso, at kung paano magpatupad ng scalable, real-time MCP servers at clients gamit ang Streamable HTTP. [to the lesson](06-http-streaming/README.md)
+- **6 HTTP Streaming with MCP (Streamable HTTP)**. Alamin ang tungkol sa modernong HTTP streaming, mga notification ng progreso, at kung paano magpatupad ng scalable, real-time na MCP servers at clients gamit ang Streamable HTTP. [to the lesson](06-http-streaming/README.md)
 
 - **7 Utilising AI Toolkit for VSCode** para gamitin at subukan ang iyong MCP Clients at Servers [to the lesson](07-aitk/README.md)
 
@@ -30,14 +30,14 @@ Ang seksyong ito ay binubuo ng ilang mga aralin:
 - **9 Deployment**. Tatalakayin sa kabanatang ito ang iba't ibang paraan ng pag-deploy ng iyong MCP solutions, [to the lesson](09-deployment/README.md)
 
 
-Ang Model Context Protocol (MCP) ay isang bukas na protocol na nagtatakda kung paano nagbibigay ng konteksto ang mga aplikasyon sa LLMs. Isipin ang MCP bilang isang USB-C port para sa mga AI application - nagbibigay ito ng isang standardized na paraan para ikonekta ang mga AI model sa iba't ibang mga pinagkukunan ng data at mga tool.
+Ang Model Context Protocol (MCP) ay isang bukas na protocol na nagtatakda kung paano nagbibigay ng konteksto ang mga aplikasyon sa LLMs. Isipin ang MCP bilang isang USB-C port para sa mga AI application - nagbibigay ito ng standard na paraan para ikonekta ang mga AI model sa iba't ibang pinanggagalingan ng data at mga tool.
 
 ## Learning Objectives
 
 Sa pagtatapos ng araling ito, magagawa mong:
 
 - Mag-set up ng development environments para sa MCP gamit ang C#, Java, Python, TypeScript, at JavaScript
-- Gumawa at mag-deploy ng mga basic MCP servers na may custom na mga tampok (resources, prompts, at tools)
+- Gumawa at mag-deploy ng mga basic MCP server na may custom na mga tampok (resources, prompts, at tools)
 - Lumikha ng mga host application na kumokonekta sa MCP servers
 - Subukan at i-debug ang mga implementasyon ng MCP
 - Maunawaan ang mga karaniwang hamon sa setup at ang mga solusyon nito
@@ -54,7 +54,7 @@ Bago sumabak sa MCP development, siguraduhing mayroon kang:
 - **Development Environment**: Para sa napili mong wika (C#, Java, Python, TypeScript, o JavaScript)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, o anumang modernong code editor
 - **Package Managers**: NuGet, Maven/Gradle, pip, o npm/yarn
-- **API Keys**: Para sa anumang AI services na balak mong gamitin sa iyong mga host application
+- **API Keys**: Para sa anumang AI services na balak mong gamitin sa iyong host applications
 
 
 ### Official SDKs
@@ -73,14 +73,14 @@ Nagbibigay ang MCP ng opisyal na SDKs para sa iba't ibang wika:
 ## Key Takeaways
 
 - Madaling mag-set up ng MCP development environment gamit ang mga language-specific SDKs
-- Ang paggawa ng MCP servers ay nangangailangan ng paglikha at pagrerehistro ng mga tool na may malinaw na mga schema
+- Ang paggawa ng MCP servers ay nangangailangan ng paglikha at pagrerehistro ng mga tools na may malinaw na mga schema
 - Ang MCP clients ay kumokonekta sa mga server at modelo upang magamit ang pinalawak na mga kakayahan
 - Mahalaga ang testing at debugging para sa maaasahang implementasyon ng MCP
 - Ang mga opsyon sa deployment ay mula sa lokal na development hanggang sa cloud-based na mga solusyon
 
 ## Practicing
 
-Mayroon kaming mga sample na sumusuporta sa mga ehersisyo na makikita mo sa lahat ng kabanata sa seksyong ito. Bukod dito, bawat kabanata ay may kanya-kanyang mga ehersisyo at takdang-aralin
+Mayroon kaming mga sample na sumusuporta sa mga ehersisyong makikita mo sa lahat ng kabanata sa seksyong ito. Bukod dito, bawat kabanata ay may sarili ring mga ehersisyo at takdang-aralin
 
 - [Java Calculator](./samples/java/calculator/README.md)
 - [.Net Calculator](../../../03-GettingStarted/samples/csharp)

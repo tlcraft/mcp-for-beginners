@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T18:05:15+00:00",
+  "translation_date": "2025-07-13T19:32:37+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "vi"
 }
@@ -21,7 +21,7 @@ Tuyệt vời, giờ khi đã hiểu được quy trình, hãy thử sử dụng
 
 ## Bài tập: Sử dụng một server
 
-Trong bài tập này, chúng ta sẽ cấu hình Visual Studio Code để tìm MCP server của bạn nhằm sử dụng nó từ giao diện GitHub Copilot Chat.
+Trong bài tập này, chúng ta sẽ cấu hình Visual Studio Code để tìm MCP server của bạn để có thể sử dụng từ giao diện GitHub Copilot Chat.
 
 ### -0- Bước chuẩn bị, bật tính năng phát hiện MCP Server
 
@@ -94,7 +94,7 @@ Những điểm chính rút ra từ chương này là:
 
 - Visual Studio Code là một client tuyệt vời cho phép bạn sử dụng nhiều MCP Servers và các công cụ của chúng.
 - Giao diện GitHub Copilot Chat là cách bạn tương tác với các server.
-- Bạn có thể yêu cầu người dùng nhập các thông tin như API key và truyền chúng đến MCP Server khi cấu hình mục server trong file *mcp.json*.
+- Bạn có thể yêu cầu người dùng nhập các thông tin như khóa API để truyền cho MCP Server khi cấu hình mục server trong file *mcp.json*.
 
 ## Mẫu ví dụ
 
@@ -113,4 +113,4 @@ Những điểm chính rút ra từ chương này là:
 - Tiếp theo: [Tạo một SSE Server](../05-sse-server/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

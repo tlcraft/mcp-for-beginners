@@ -2,99 +2,99 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "195f7287638b77a549acadd96c8f981c",
-  "translation_date": "2025-06-12T23:28:36+00:00",
+  "translation_date": "2025-07-14T01:36:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimestreaming/README.md",
   "language_code": "ne"
 }
 -->
-# Model Context Protocol for Real-Time Data Streaming
+# वास्तविक-समय डाटा स्ट्रिमिङका लागि मोडेल सन्दर्भ प्रोटोकल
 
-## Overview
+## अवलोकन
 
-Real-time data streaming has become crucial in today’s data-driven world, where businesses and applications need instant access to information for timely decision-making. The Model Context Protocol (MCP) marks a major step forward in optimizing these real-time streaming processes by improving data processing efficiency, preserving contextual integrity, and boosting overall system performance.
+आजको डाटा-आधारित संसारमा, जहाँ व्यवसाय र अनुप्रयोगहरूले तत्काल जानकारीको पहुँच आवश्यक पर्छ निर्णय लिनका लागि, वास्तविक-समय डाटा स्ट्रिमिङ अत्यावश्यक भइसकेको छ। मोडेल सन्दर्भ प्रोटोकल (MCP) ले यी वास्तविक-समय स्ट्रिमिङ प्रक्रियाहरूलाई अधिकतम बनाउन महत्वपूर्ण प्रगति गरेको छ, जसले डाटा प्रशोधनको दक्षता बढाउँछ, सन्दर्भीय अखण्डता कायम राख्छ, र समग्र प्रणाली प्रदर्शन सुधार गर्दछ।
 
-This module explains how MCP transforms real-time data streaming by offering a standardized way to manage context across AI models, streaming platforms, and applications.
+यो मोड्युलले कसरी MCP ले AI मोडेलहरू, स्ट्रिमिङ प्लेटफर्महरू, र अनुप्रयोगहरूमा सन्दर्भ व्यवस्थापनको मानकीकृत दृष्टिकोण प्रदान गरेर वास्तविक-समय डाटा स्ट्रिमिङलाई रूपान्तरण गर्छ भन्ने कुरा अन्वेषण गर्छ।
 
-## Introduction to Real-Time Data Streaming
+## वास्तविक-समय डाटा स्ट्रिमिङ परिचय
 
-Real-time data streaming is a technology approach that allows continuous transfer, processing, and analysis of data as it is generated, enabling systems to respond immediately to new information. Unlike traditional batch processing that works on static datasets, streaming handles data in motion, providing insights and actions with minimal delay.
+वास्तविक-समय डाटा स्ट्रिमिङ भनेको यस्तो प्रविधि हो जसले डाटा उत्पन्न हुँदै गर्दा निरन्तर स्थानान्तरण, प्रशोधन, र विश्लेषण गर्न सक्षम बनाउँछ, जसले प्रणालीहरूलाई नयाँ जानकारीमा तुरुन्त प्रतिक्रिया दिन अनुमति दिन्छ। परम्परागत ब्याच प्रशोधन जसले स्थिर डाटासेटहरूमा काम गर्छ भन्दा फरक, स्ट्रिमिङले गतिशील डाटालाई प्रशोधन गर्छ र न्यूनतम विलम्बमा अन्तर्दृष्टि र कार्यहरू प्रदान गर्छ।
 
-### Core Concepts of Real-Time Data Streaming:
+### वास्तविक-समय डाटा स्ट्रिमिङका मुख्य अवधारणाहरू:
 
-- **Continuous Data Flow**: Data is handled as an ongoing, never-ending stream of events or records.
-- **Low Latency Processing**: Systems are designed to reduce the time between data creation and processing.
-- **Scalability**: Streaming architectures must accommodate varying data volumes and speeds.
-- **Fault Tolerance**: Systems need to be resilient to failures to maintain uninterrupted data flow.
-- **Stateful Processing**: Keeping context across events is essential for meaningful analysis.
+- **निरन्तर डाटा प्रवाह**: डाटा घटनाहरू वा रेकर्डहरूको निरन्तर, कहिल्यै नटुंगिने स्ट्रिमको रूपमा प्रशोधन हुन्छ।
+- **कम विलम्ब प्रशोधन**: डाटा उत्पन्न र प्रशोधन बीचको समय न्यूनतम बनाउन प्रणालीहरू डिजाइन गरिन्छन्।
+- **स्केलेबिलिटी**: स्ट्रिमिङ संरचनाहरूले भिन्न डाटा मात्रा र गतिलाई सम्हाल्न सक्नुपर्छ।
+- **त्रुटि सहिष्णुता**: प्रणालीहरूलाई विफलताबाट बचाउन र डाटा प्रवाह अवरुद्ध नहोस् भनेर सक्षम हुनुपर्छ।
+- **राज्यपूर्ण प्रशोधन**: घटनाहरू बीच सन्दर्भ कायम राख्नु अर्थपूर्ण विश्लेषणका लागि अत्यावश्यक हुन्छ।
 
-### The Model Context Protocol and Real-Time Streaming
+### मोडेल सन्दर्भ प्रोटोकल र वास्तविक-समय स्ट्रिमिङ
 
-The Model Context Protocol (MCP) tackles several key challenges in real-time streaming environments:
+मोडेल सन्दर्भ प्रोटोकल (MCP) ले वास्तविक-समय स्ट्रिमिङ वातावरणमा केही महत्वपूर्ण चुनौतीहरूलाई सम्बोधन गर्छ:
 
-1. **Contextual Continuity**: MCP standardizes how context is preserved across distributed streaming components, ensuring AI models and processing nodes have access to relevant historical and environmental context.
+1. **सन्दर्भीय निरन्तरता**: MCP ले वितरण गरिएको स्ट्रिमिङ कम्पोनेन्टहरूमा सन्दर्भ कसरी कायम राख्ने भन्ने मानकीकरण गर्छ, जसले AI मोडेलहरू र प्रशोधन नोडहरूलाई सम्बन्धित ऐतिहासिक र वातावरणीय सन्दर्भमा पहुँच दिन्छ।
 
-2. **Efficient State Management**: By providing structured methods for context transmission, MCP lowers the overhead of state management in streaming pipelines.
+2. **दक्ष राज्य व्यवस्थापन**: सन्दर्भ प्रसारणका लागि संरचित मेकानिजमहरू प्रदान गरेर, MCP ले स्ट्रिमिङ पाइपलाइनमा राज्य व्यवस्थापनको ओभरहेड घटाउँछ।
 
-3. **Interoperability**: MCP establishes a common language for sharing context between diverse streaming technologies and AI models, enabling more flexible and extensible architectures.
+3. **अन्तरक्रियाशीलता**: MCP ले विभिन्न स्ट्रिमिङ प्रविधिहरू र AI मोडेलहरूबीच सन्दर्भ साझेदारीका लागि साझा भाषा सिर्जना गर्छ, जसले लचिलो र विस्तारयोग्य संरचनाहरू सक्षम बनाउँछ।
 
-4. **Streaming-Optimized Context**: MCP implementations can prioritize the most relevant context elements for real-time decision-making, optimizing both performance and accuracy.
+4. **स्ट्रिमिङ-अनुकूलित सन्दर्भ**: MCP कार्यान्वयनहरूले कुन सन्दर्भ तत्वहरू वास्तविक-समय निर्णयका लागि सबैभन्दा सान्दर्भिक छन् भनेर प्राथमिकता दिन सक्छन्, प्रदर्शन र शुद्धता दुवैका लागि अनुकूलन गर्दै।
 
-5. **Adaptive Processing**: With effective context management through MCP, streaming systems can dynamically adjust processing based on changing conditions and data patterns.
+5. **अनुकूली प्रशोधन**: MCP मार्फत उचित सन्दर्भ व्यवस्थापनले स्ट्रिमिङ प्रणालीहरूलाई डाटामा विकास भइरहेका अवस्था र ढाँचाहरूको आधारमा गतिशील रूपमा प्रशोधन समायोजन गर्न सक्षम बनाउँछ।
 
-In modern applications—from IoT sensor networks to financial trading platforms—the integration of MCP with streaming technologies enables smarter, context-aware processing that can respond appropriately to complex, evolving situations in real time.
+आधुनिक अनुप्रयोगहरूमा, IoT सेन्सर नेटवर्कदेखि वित्तीय ट्रेडिङ प्लेटफर्मसम्म, MCP को स्ट्रिमिङ प्रविधिहरूसँग एकीकरणले अधिक बुद्धिमान, सन्दर्भ-सचेत प्रशोधन सक्षम बनाउँछ जसले जटिल, विकासशील अवस्थाहरूमा वास्तविक-समयमा उपयुक्त प्रतिक्रिया दिन सक्छ।
 
-## Learning Objectives
+## सिकाइ उद्देश्यहरू
 
-By the end of this lesson, you will be able to:
+यस पाठको अन्त्यसम्म, तपाईं सक्षम हुनुहुनेछ:
 
-- Understand the basics of real-time data streaming and its challenges
-- Explain how the Model Context Protocol (MCP) enhances real-time data streaming
-- Implement MCP-based streaming solutions using popular frameworks like Kafka and Pulsar
-- Design and deploy fault-tolerant, high-performance streaming architectures with MCP
-- Apply MCP concepts to IoT, financial trading, and AI-driven analytics use cases
-- Evaluate emerging trends and future innovations in MCP-based streaming technologies
+- वास्तविक-समय डाटा स्ट्रिमिङका आधारभूत कुरा र चुनौतीहरू बुझ्न
+- मोडेल सन्दर्भ प्रोटोकल (MCP) ले कसरी वास्तविक-समय डाटा स्ट्रिमिङलाई सुधार गर्छ व्याख्या गर्न
+- Kafka र Pulsar जस्ता लोकप्रिय फ्रेमवर्कहरू प्रयोग गरी MCP-आधारित स्ट्रिमिङ समाधानहरू कार्यान्वयन गर्न
+- MCP सँग त्रुटि सहिष्णु, उच्च प्रदर्शन स्ट्रिमिङ संरचनाहरू डिजाइन र तैनाथ गर्न
+- MCP अवधारणाहरूलाई IoT, वित्तीय ट्रेडिङ, र AI-चालित विश्लेषणका प्रयोगहरूमा लागू गर्न
+- MCP-आधारित स्ट्रिमिङ प्रविधिहरूमा उदाउँदो प्रवृत्ति र भविष्यका नवप्रवर्तनहरू मूल्याङ्कन गर्न
 
-### Definition and Significance
+### परिभाषा र महत्त्व
 
-Real-time data streaming involves continuous generation, processing, and delivery of data with minimal delay. Unlike batch processing, where data is collected and handled in groups, streaming processes data incrementally as it arrives, enabling immediate insights and actions.
+वास्तविक-समय डाटा स्ट्रिमिङ भनेको न्यूनतम विलम्बमा डाटा निरन्तर उत्पन्न, प्रशोधन, र वितरण गर्ने प्रक्रिया हो। ब्याच प्रशोधन जहाँ डाटा समूहमा सङ्कलन र प्रशोधन हुन्छ, त्यस्को विपरीत स्ट्रिमिङ डाटा आइरहेको बित्तिकै क्रमिक रूपमा प्रशोधन हुन्छ, जसले तत्काल अन्तर्दृष्टि र कार्यहरू सम्भव बनाउँछ।
 
-Key features of real-time data streaming include:
+वास्तविक-समय डाटा स्ट्रिमिङका मुख्य विशेषताहरू:
 
-- **Low Latency**: Processing and analyzing data within milliseconds to seconds
-- **Continuous Flow**: Uninterrupted streams of data from multiple sources
-- **Immediate Processing**: Analyzing data as it arrives rather than in batches
-- **Event-Driven Architecture**: Reacting to events as they happen
+- **कम विलम्ब**: डाटालाई मिलिसेकेन्डदेखि सेकेन्डसम्मको अवधिमा प्रशोधन र विश्लेषण गर्ने
+- **निरन्तर प्रवाह**: विभिन्न स्रोतहरूबाट अवरुद्ध नभएको डाटा स्ट्रिमहरू
+- **तत्काल प्रशोधन**: डाटा आइरहेको बित्तिकै विश्लेषण गर्ने, ब्याचमा होइन
+- **घटना-चालित संरचना**: घटनाहरू घट्दा तुरुन्त प्रतिक्रिया दिने
 
-### Challenges in Traditional Data Streaming
+### परम्परागत डाटा स्ट्रिमिङका चुनौतीहरू
 
-Traditional streaming approaches face several challenges:
+परम्परागत डाटा स्ट्रिमिङ विधिहरूले केही सीमाहरू भोग्छन्:
 
-1. **Context Loss**: Difficulty preserving context across distributed systems
-2. **Scalability Issues**: Problems scaling to handle high-volume, high-speed data
-3. **Integration Complexity**: Issues with interoperability between different systems
-4. **Latency Management**: Balancing throughput and processing time
-5. **Data Consistency**: Ensuring accuracy and completeness of data across the stream
+1. **सन्दर्भ हराउने समस्या**: वितरण गरिएको प्रणालीहरूमा सन्दर्भ कायम राख्न कठिनाई
+2. **स्केलेबिलिटी समस्या**: उच्च मात्रा र उच्च गतिका डाटालाई सम्हाल्न चुनौती
+3. **एकीकरण जटिलता**: विभिन्न प्रणालीहरूबीच अन्तरक्रियाशीलतामा समस्या
+4. **विलम्ब व्यवस्थापन**: थ्रुपुट र प्रशोधन समयको सन्तुलन
+5. **डाटा स्थिरता**: स्ट्रिमभरि डाटाको शुद्धता र पूर्णता सुनिश्चित गर्नु
 
-## Understanding Model Context Protocol (MCP)
+## मोडेल सन्दर्भ प्रोटोकल (MCP) बुझ्न
 
-### What is MCP?
+### MCP के हो?
 
-The Model Context Protocol (MCP) is a standardized communication protocol designed to enable efficient interaction between AI models and applications. In real-time data streaming, MCP provides a framework for:
+मोडेल सन्दर्भ प्रोटोकल (MCP) एक मानकीकृत सञ्चार प्रोटोकल हो जसले AI मोडेलहरू र अनुप्रयोगहरूबीच दक्ष अन्तरक्रिया सहज बनाउँछ। वास्तविक-समय डाटा स्ट्रिमिङको सन्दर्भमा, MCP ले निम्न कुराहरूको लागि फ्रेमवर्क प्रदान गर्छ:
 
-- Preserving context throughout the data pipeline
-- Standardizing data exchange formats
-- Optimizing transmission of large datasets
-- Enhancing communication between models and applications
+- डाटा पाइपलाइनभरि सन्दर्भ संरक्षण
+- डाटा विनिमय ढाँचाहरूको मानकीकरण
+- ठूलो डाटासेटहरूको प्रसारण अनुकूलन
+- मोडेल-देखि-मोडेल र मोडेल-देखि-अनुप्रयोग सञ्चार सुधार
 
-### Core Components and Architecture
+### मुख्य कम्पोनेन्टहरू र वास्तुकला
 
-MCP architecture for real-time streaming includes several key components:
+वास्तविक-समय स्ट्रिमिङका लागि MCP वास्तुकलामा केही मुख्य कम्पोनेन्टहरू हुन्छन्:
 
-1. **Context Handlers**: Manage and maintain contextual information across the streaming pipeline
-2. **Stream Processors**: Process incoming data streams using context-aware methods
-3. **Protocol Adapters**: Convert between different streaming protocols while preserving context
-4. **Context Store**: Efficiently store and retrieve contextual information
-5. **Streaming Connectors**: Connect to various streaming platforms (Kafka, Pulsar, Kinesis, etc.)
+1. **सन्दर्भ ह्यान्डलरहरू**: स्ट्रिमिङ पाइपलाइनभरि सन्दर्भीय जानकारी व्यवस्थापन र संरक्षण गर्छन्
+2. **स्ट्रिम प्रोसेसरहरू**: सन्दर्भ-सचेत प्रविधिहरू प्रयोग गरी आउने डाटा स्ट्रिमहरू प्रशोधन गर्छन्
+3. **प्रोटोकल एडाप्टरहरू**: विभिन्न स्ट्रिमिङ प्रोटोकलहरू बीच रूपान्तरण गर्छन् र सन्दर्भ संरक्षण गर्छन्
+4. **सन्दर्भ स्टोर**: सन्दर्भीय जानकारी कुशलतापूर्वक भण्डारण र पुनःप्राप्ति गर्छ
+5. **स्ट्रिमिङ कनेक्टरहरू**: विभिन्न स्ट्रिमिङ प्लेटफर्महरू (Kafka, Pulsar, Kinesis, आदि) सँग जडान गर्छन्
 
 ```mermaid
 graph TD
@@ -164,47 +164,47 @@ graph TD
     class DA,Alerts,DL,API apps
 ```
 
-### How MCP Improves Real-Time Data Handling
+### MCP ले वास्तविक-समय डाटा ह्यान्डलिङ कसरी सुधार गर्छ
 
-MCP addresses traditional streaming challenges by:
+MCP ले परम्परागत स्ट्रिमिङ चुनौतीहरूलाई यसरी सम्बोधन गर्छ:
 
-- **Contextual Integrity**: Keeping relationships between data points intact across the pipeline
-- **Optimized Transmission**: Reducing redundant data exchange through smart context management
-- **Standardized Interfaces**: Offering consistent APIs for streaming components
-- **Reduced Latency**: Cutting processing overhead with efficient context handling
-- **Enhanced Scalability**: Supporting horizontal scaling while maintaining context
+- **सन्दर्भीय अखण्डता**: सम्पूर्ण पाइपलाइनभरि डाटा बिन्दुहरूबीच सम्बन्ध कायम राख्ने
+- **अनुकूलित प्रसारण**: बुद्धिमानी सन्दर्भ व्यवस्थापनमार्फत डाटा विनिमयमा पुनरावृत्ति घटाउने
+- **मानकीकृत इन्टरफेसहरू**: स्ट्रिमिङ कम्पोनेन्टहरूका लागि सुसंगत API प्रदान गर्ने
+- **विलम्ब घटाउने**: दक्ष सन्दर्भ ह्यान्डलिङमार्फत प्रशोधन ओभरहेड कम गर्ने
+- **वृद्धि गरिएको स्केलेबिलिटी**: सन्दर्भ संरक्षण गर्दै तेर्सो स्केलिङ समर्थन गर्ने
 
-## Integration and Implementation
+## एकीकरण र कार्यान्वयन
 
-Real-time data streaming systems need careful architectural design and implementation to balance performance and contextual integrity. MCP provides a standardized way to integrate AI models and streaming technologies, enabling more advanced, context-aware processing pipelines.
+वास्तविक-समय डाटा स्ट्रिमिङ प्रणालीहरूले प्रदर्शन र सन्दर्भीय अखण्डता दुवै कायम राख्न सावधानीपूर्वक वास्तुकला डिजाइन र कार्यान्वयन आवश्यक पर्छ। मोडेल सन्दर्भ प्रोटोकलले AI मोडेलहरू र स्ट्रिमिङ प्रविधिहरूलाई एकीकृत गर्न मानकीकृत दृष्टिकोण प्रदान गर्छ, जसले अधिक परिष्कृत, सन्दर्भ-सचेत प्रशोधन पाइपलाइनहरू सक्षम बनाउँछ।
 
-### Overview of MCP Integration in Streaming Architectures
+### स्ट्रिमिङ वास्तुकलामा MCP एकीकरणको अवलोकन
 
-Implementing MCP in real-time streaming involves several key aspects:
+वास्तविक-समय स्ट्रिमिङ वातावरणमा MCP कार्यान्वयन गर्दा केही मुख्य विचारहरू छन्:
 
-1. **Context Serialization and Transport**: MCP offers efficient methods for encoding contextual information within streaming data packets, ensuring essential context travels with the data through the processing pipeline. This includes standardized serialization formats optimized for streaming transport.
+1. **सन्दर्भ सिरियलाइजेशन र ट्रान्सपोर्ट**: MCP ले स्ट्रिमिङ डाटा प्याकेटहरूमा सन्दर्भीय जानकारी कूटलेखनका लागि दक्ष मेकानिजमहरू प्रदान गर्छ, जसले आवश्यक सन्दर्भ डाटासँगै प्रशोधन पाइपलाइनभरि जान सुनिश्चित गर्छ। यसमा स्ट्रिमिङ ट्रान्सपोर्टका लागि अनुकूलित मानकीकृत सिरियलाइजेशन ढाँचाहरू समावेश छन्।
 
-2. **Stateful Stream Processing**: MCP supports smarter stateful processing by keeping consistent context representation across processing nodes, which is especially useful in distributed streaming systems where state management is traditionally difficult.
+2. **राज्यपूर्ण स्ट्रिम प्रशोधन**: MCP ले प्रशोधन नोडहरूमा सुसंगत सन्दर्भ प्रतिनिधित्व कायम राखेर अधिक बुद्धिमान राज्यपूर्ण प्रशोधन सक्षम बनाउँछ। यो विशेष गरी वितरण गरिएको स्ट्रिमिङ वास्तुकलामा जहाँ राज्य व्यवस्थापन चुनौतीपूर्ण हुन्छ, उपयोगी हुन्छ।
 
-3. **Event-Time vs. Processing-Time**: MCP implementations must address the common challenge of distinguishing when events occurred versus when they are processed. The protocol can include temporal context to preserve event time semantics.
+3. **घटना-समय बनाम प्रशोधन-समय**: MCP कार्यान्वयनहरूले घटनाहरू कहिले घटे र कहिले प्रशोधन भए भनी फरक पार्ने सामान्य चुनौतीलाई सम्बोधन गर्नुपर्छ। प्रोटोकलले घटना समय सिमान्टिक्स संरक्षण गर्ने कालिक सन्दर्भ समावेश गर्न सक्छ।
 
-4. **Backpressure Management**: By standardizing context handling, MCP helps control backpressure in streaming systems, allowing components to communicate their processing capacity and adjust data flow accordingly.
+4. **ब्याकप्रेशर व्यवस्थापन**: सन्दर्भ ह्यान्डलिङ मानकीकरण गरेर, MCP ले स्ट्रिमिङ प्रणालीहरूमा ब्याकप्रेशर व्यवस्थापनमा मद्दत गर्छ, जसले कम्पोनेन्टहरूलाई आफ्नो प्रशोधन क्षमता सञ्चार गर्न र प्रवाह समायोजन गर्न अनुमति दिन्छ।
 
-5. **Context Windowing and Aggregation**: MCP enables more advanced windowing operations by providing structured representations of temporal and relational contexts, allowing for more meaningful aggregations across event streams.
+5. **सन्दर्भ विन्डोइङ र समेकन**: MCP ले कालिक र सम्बन्धित सन्दर्भहरूको संरचित प्रतिनिधित्व प्रदान गरेर थप परिष्कृत विन्डोइङ अपरेसनहरूलाई सहज बनाउँछ, जसले घटना स्ट्रिमहरूमा अर्थपूर्ण समेकनहरू सक्षम बनाउँछ।
 
-6. **Exactly-Once Processing**: For streaming systems requiring exactly-once semantics, MCP can incorporate processing metadata to help track and verify processing status across distributed components.
+6. **ठ्याक्कै-एक पटक प्रशोधन**: ठ्याक्कै-एक पटक सिमान्टिक्स आवश्यक पर्ने स्ट्रिमिङ प्रणालीहरूमा, MCP ले प्रशोधन मेटाडाटा समावेश गर्न सक्छ जसले वितरण गरिएको कम्पोनेन्टहरूमा प्रशोधन स्थिति ट्र्याक र प्रमाणित गर्न मद्दत गर्छ।
 
-Implementing MCP across different streaming technologies creates a unified approach to context management, reducing the need for custom integration code while improving the system’s ability to maintain meaningful context as data moves through the pipeline.
+विभिन्न स्ट्रिमिङ प्रविधिहरूमा MCP को कार्यान्वयनले सन्दर्भ व्यवस्थापनमा एकीकृत दृष्टिकोण सिर्जना गर्छ, जसले अनुकूलन एकीकरण कोडको आवश्यकता घटाउँछ र डाटा पाइपलाइनमा सन्दर्भ अर्थपूर्ण रूपमा कायम राख्ने प्रणालीको क्षमता बढाउँछ।
 
-### MCP in Various Data Streaming Frameworks
+### विभिन्न डाटा स्ट्रिमिङ फ्रेमवर्कहरूमा MCP
 
-These examples follow the current MCP specification, which is based on a JSON-RPC protocol with distinct transport mechanisms. The code shows how to implement custom transports that integrate streaming platforms like Kafka and Pulsar while fully complying with the MCP protocol.
+यी उदाहरणहरूले हालको MCP विनिर्देशन अनुसरण गर्छन् जुन JSON-RPC आधारित प्रोटोकलमा केन्द्रित छ र फरक ट्रान्सपोर्ट मेकानिजमहरू छन्। कोडले कसरी कस्टम ट्रान्सपोर्टहरू कार्यान्वयन गर्ने देखाउँछ जसले Kafka र Pulsar जस्ता स्ट्रिमिङ प्लेटफर्महरूलाई MCP प्रोटोकलसँग पूर्ण अनुकूलता राख्दै एकीकृत गर्छ।
 
-The examples demonstrate how streaming platforms can be integrated with MCP to deliver real-time data processing while preserving the contextual awareness central to MCP. This ensures the code samples reflect the MCP specification as of June 2025.
+यी उदाहरणहरूले देखाउँछन् कसरी स्ट्रिमिङ प्लेटफर्महरू MCP सँग एकीकृत गरेर वास्तविक-समय डाटा प्रशोधन प्रदान गर्न सक्छन् र सन्दर्भीय सचेतना कायम राख्न सक्छन् जुन MCP को केन्द्रमा छ। यसले कोड नमूनाहरूलाई जून २०२५ सम्मको MCP विनिर्देशनको वर्तमान अवस्थालाई सही रूपमा प्रतिबिम्बित गर्न सुनिश्चित गर्छ।
 
-MCP can be integrated with popular streaming frameworks including:
+MCP लोकप्रिय स्ट्रिमिङ फ्रेमवर्कहरूसँग एकीकृत गर्न सकिन्छ, जस्तै:
 
-#### Apache Kafka Integration
+#### Apache Kafka एकीकरण
 
 ```python
 import asyncio
@@ -351,7 +351,7 @@ if __name__ == "__main__":
     asyncio.run(kafka_mcp_example())
 ```
 
-#### Apache Pulsar Implementation
+#### Apache Pulsar कार्यान्वयन
 
 ```python
 import asyncio
@@ -514,131 +514,93 @@ if __name__ == "__main__":
     asyncio.run(run_mcp_server_with_pulsar())
 ```
 
-### Best Practices for Deployment
+### तैनाथीकरणका लागि उत्तम अभ्यासहरू
 
-When deploying MCP for real-time streaming:
+वास्तविक-समय स्ट्रिमिङका लागि MCP कार्यान्वयन गर्दा:
 
-1. **Design for Fault Tolerance**:
-   - Implement robust error handling
-   - Use dead-letter queues for failed messages
-   - Design idempotent processors
+1. **त्रुटि सहिष्णुताका लागि डिजाइन गर्नुहोस्**:
+   - उचित त्रुटि ह्यान्डलिङ कार्यान्वयन गर्नुहोस्
+   - असफल सन्देशहरूको लागि डेड-लेटर क्यूहरू प्रयोग गर्नुहोस्
+   - आइडेम्पोटेन्ट प्रोसेसरहरू डिजाइन गर्नुहोस्
 
-2. **Optimize for Performance**:
-   - Configure appropriate buffer sizes
-   - Use batching where suitable
-   - Implement backpressure mechanisms
+2. **प्रदर्शनका लागि अनुकूलन गर्नुहोस्**:
+   - उपयुक्त बफर साइजहरू कन्फिगर गर्नुहोस्
+   - आवश्यक ठाउँमा ब्याचिङ प्रयोग गर्नुहोस्
+   - ब्याकप्रेशर मेकानिजमहरू कार्यान्वयन गर्नुहोस्
 
-3. **Monitor and Observe**:
-   - Track stream processing metrics
-   - Monitor context propagation
-   - Set up alerts for anomalies
+3. **निगरानी र अवलोकन गर्नुहोस्**:
+   - स्ट्रिम प्रशोधन मेट्रिक्स ट्र्याक गर्नुहोस्
+   - सन्दर्भ प्रसारण अनुगमन गर्नुहोस्
+   - असामान्यताका लागि अलर्ट सेटअप गर्नुहोस्
 
-4. **Secure Your Streams**:
-   - Encrypt sensitive data
-   - Use authentication and authorization
-   - Apply proper access controls
+4. **तपाईंका स्ट्रिमहरू सुरक्षित गर्नुहोस्**:
+   - संवेदनशील डाटाका लागि इन्क्रिप्सन कार्यान्वयन गर्नुहोस्
+   - प्रमाणीकरण र प्राधिकरण प्रयोग गर्नुहोस्
+   - उचित पहुँच नियन्त्रण लागू गर्नुहोस्
 
-### MCP in IoT and Edge Computing
+### IoT र एज कम्प्युटिङमा MCP
 
-MCP improves IoT streaming by:
+MCP ले IoT स्ट्रिमिङलाई यसरी सुधार गर्छ:
 
-- Preserving device context throughout the processing pipeline
-- Enabling efficient edge-to-cloud data streaming
-- Supporting real-time analytics on IoT data streams
-- Facilitating device-to-device communication with context
+- प्रशोधन पाइपलाइनभरि उपकरण सन्दर्भ संरक्षण
+- दक्ष एज-देखि-क्लाउड डाटा स्ट्रिमिङ सक्षम पार्ने
+- IoT डाटा स्ट्रिमहरूमा वास्तविक-समय विश्लेषण समर्थन गर्ने
+- सन्दर्भसहित उपकरण-देखि-उपकरण सञ्चार सहज बनाउने
 
-Example: Smart City Sensor Networks  
+उदाहरण: स्मार्ट सिटी सेन्सर नेटवर्कहरू  
 ```
 Sensors → Edge Gateways → MCP Stream Processors → Real-time Analytics → Automated Responses
 ```
 
-### Role in Financial Transactions and High-Frequency Trading
+### वित्तीय लेनदेन र उच्च-आवृत्ति ट्रेडिङमा भूमिका
 
-MCP offers significant benefits for financial data streaming:
+MCP ले वित्तीय डाटा स्ट्रिमिङका लागि महत्वपूर्ण फाइदाहरू प्रदान गर्छ:
 
-- Ultra-low latency processing for trading decisions
-- Maintaining transaction context throughout processing
-- Supporting complex event processing with contextual awareness
-- Ensuring data consistency across distributed trading systems
+- ट्रेडिङ निर्णयका लागि अल्ट्रा-कम विलम्ब प्रशोधन
+- प्रशोधनभरि लेनदेन सन्दर्भ कायम राख्ने
+- सन्दर्भीय सचेतनासहित जटिल घटना प्रशोधन समर्थन गर्ने
+- वितरण गरिएको ट्रेडिङ प्रणालीहरूमा डाटा स्थिरता सुनिश्चित गर्ने
 
-### Enhancing AI-Driven Data Analytics
+### AI-चालित डाटा विश्लेषणमा सुधार
 
-MCP opens new possibilities for streaming analytics:
+MCP ले स्ट्रिमिङ विश्लेषणका लागि नयाँ सम्भावनाहरू सिर्जना गर्छ:
 
-- Real-time model training and inference
-- Continuous learning from streaming data
-- Context-aware feature extraction
-- Multi-model inference pipelines with preserved context
+- वास्तविक-समय मोडेल प्रशिक्षण र अनुमान
+- स्ट्रिमिङ डाटाबाट निरन्तर सिकाइ
+- सन्दर्भ-सचेत विशेषता निष्कर्षण
+- सन्दर्भ संरक्षणसहित बहु-मोडेल अनुमान पाइपलाइनहरू
 
-## Future Trends and Innovations
+## भविष्यका प्रवृत्ति र नवप्रवर्तनहरू
 
-### Evolution of MCP in Real-Time Environments
+### वास्तविक-समय वातावरणमा MCP को विकास
 
-Looking forward, MCP is expected to evolve to address:
+आगामी दिनहरूमा, हामी MCP ले निम्न कुराहरू सम्बोधन गर्ने अपेक्षा गर्छौं:
 
-- **Quantum Computing Integration**: Preparing for quantum-based streaming systems
-- **Edge-Native Processing**: Shifting more context-aware processing to edge devices
-- **Autonomous Stream Management**: Self-optimizing streaming pipelines
-- **Federated Streaming**: Distributed processing that preserves privacy
+- **क्वान्टम कम्प्युटिङ एकीकरण**: क्वान्टम-आधारित स्ट्रिमिङ प्रणालीहरूको तयारी
+- **एज-नेटिभ प्रशोधन**: थप सन्दर्भ-सचेत प्रशोधन एज उपकरणहरूमा सार्ने
+- **स्वचालित स्ट्रिम व्यवस्थापन**: आत्म-अनुकूलन स्ट्रिमिङ पाइपलाइनहरू
+- **संघीय स्ट्रिमिङ**: गोपनीयता कायम राख्दै वितरण गरिएको प्रशोधन
 
-### Potential Advancements in Technology
+### प्रविधिमा सम्भावित प्रगतिहरू
 
-Emerging technologies shaping the future of MCP streaming include:
+MCP स्ट्रिमिङको भविष्यलाई आकार दिने उदाउँदो प्रविधिहरू:
 
-1. **AI-Optimized Streaming Protocols**: Protocols tailored specifically for AI workloads
-2. **Neuromorphic Computing Integration**: Brain-inspired computing for stream processing
-3. **Serverless Streaming**: Event-driven, scalable streaming without infrastructure management
-4. **Distributed Context Stores**: Globally distributed yet highly consistent context management
+1. **AI-अनुकूलित स्ट्रिमिङ प्रोटोकलहरू**: AI कार्यभारका लागि विशेष रूपमा डिजाइन गरिएका प्रोटोकलहरू
+2. **न्यूरोमॉर्फिक कम्प्युटिङ एकीकरण**: मस्तिष्क-प्रेरित कम्प्युटिङ स्ट्रिम प्रशोधनका लागि
+3. **सर्भरलेस स्ट्रिमिङ**: पूर्वाधार व्यवस्थापन बिना घटना-चालित, स्केलेबल स्ट्रिमिङ
+4. **वितरित सन्दर्भ स्टोरहरू**: विश्वव्यापी रूपमा वितरण भए पनि अत्यधिक स्थिर सन्दर्भ व्यवस्थापन
 
-## Hands-On Exercises
+## व्यावहारिक अभ्यासहरू
 
-### Exercise 1: Setting Up a Basic MCP Streaming Pipeline
+### अभ्यास १: आधारभूत MCP स्ट्रिमिङ पाइपलाइन सेटअप
 
-In this exercise, you will learn to:
-- Configure a basic MCP streaming environment
-- Implement context handlers for stream processing
-- Test and validate context preservation
+यस अभ्यासमा, तपाईं सिक्नुहुनेछ:
 
-### Exercise 2: Building a Real-Time Analytics Dashboard
+- आधारभूत MCP स्ट्रिमिङ वातावरण कन्फिगर गर्ने
+- स्ट्रिम प्रशोधनका लागि सन्दर्भ ह्यान्डलरहरू कार्यान्वयन गर्ने
+- सन्दर्भ संरक्षण परीक्षण र मान्यकरण गर्ने
 
-Create a complete application that:
-- Ingests streaming data using MCP
-- Processes the stream while maintaining context
-- Visualizes results in real time
-
-### Exercise 3: Implementing Complex Event Processing with MCP
-
-Advanced exercise covering:
-- Pattern detection in streams
-- Contextual correlation across multiple streams
-- Generating complex events with preserved context
-
-## Additional Resources
-
-- [Model Context Protocol Specification](https://github.com/modelcontextprotocol) - Official MCP specification and documentation
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/) - Learn about Kafka for stream processing
-- [Apache Pulsar](https://pulsar.apache.org/) - Unified messaging and streaming platform
-- [Streaming Systems: The What, Where, When, and How of Large-Scale Data Processing](https://www.oreilly.com/library/view/streaming-systems/9781491983867/) - Comprehensive book on streaming architectures
-- [Microsoft Azure Event Hubs](https://learn.microsoft.com/azure/event-hubs/event-hubs-about) - Managed event streaming service
-- [MLflow Documentation](https://mlflow.org/docs/latest/index.html) - For ML model tracking and deployment
-- [Real-Time Analytics with Apache Storm](https://storm.apache.org/releases/current/index.html) - Processing framework for real-time computation
-- [Flink ML](https://nightlies.apache.org/flink/flink-ml-docs-master/) - Machine learning library for Apache Flink
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Building applications with LLMs
-
-## Learning Outcomes
-
-By completing this module, you will be able to:
-
-- Understand the fundamentals of real-time data streaming and its challenges
-- Explain how the Model Context Protocol (MCP) enhances real-time data streaming
-- Implement MCP-based streaming solutions using popular frameworks like Kafka and Pulsar
-- Design and deploy fault-tolerant, high-performance streaming architectures with MCP
-- Apply MCP concepts to IoT, financial trading, and AI-driven analytics use cases
-- Evaluate emerging trends and future innovations in MCP-based streaming technologies
-
-## What's next 
-
-- [5.11 Realtime Search](../mcp-realtimesearch/README.md)
+### अभ्यास
 
 **अस्वीकरण**:  
-यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरेर अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुनसक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीको लागि पेशेवर मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।
+यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुन सक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

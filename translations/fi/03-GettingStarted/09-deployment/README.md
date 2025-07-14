@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T17:49:59+00:00",
+  "translation_date": "2025-07-13T22:09:35+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "fi"
 }
 -->
 # MCP-palvelimien käyttöönotto
 
-MCP-palvelimen käyttöönotto mahdollistaa sen työkalujen ja resurssien käytön myös paikallisen ympäristösi ulkopuolella. Käyttöönottoon on useita strategioita, jotka kannattaa valita skaalautuvuuden, luotettavuuden ja hallinnan helppouden mukaan. Alta löydät ohjeet MCP-palvelimien käyttöönottoon paikallisesti, konteissa ja pilvessä.
+MCP-palvelimen käyttöönotto mahdollistaa sen työkalujen ja resurssien käytön myös paikallisen ympäristösi ulkopuolella. Käyttöönottoon on useita strategioita, jotka kannattaa valita tarpeidesi mukaan skaalautuvuuden, luotettavuuden ja hallinnan helppouden perusteella. Alta löydät ohjeet MCP-palvelimien käyttöönottoon paikallisesti, konteissa ja pilvessä.
 
 ## Yleiskatsaus
 
@@ -17,7 +17,7 @@ Tässä oppitunnissa käydään läpi, miten MCP Server -sovellus otetaan käytt
 
 ## Oppimistavoitteet
 
-Oppitunnin lopussa osaat:
+Oppitunnin lopuksi osaat:
 
 - Arvioida erilaisia käyttöönoton tapoja.
 - Ottaa sovelluksesi käyttöön.
@@ -29,7 +29,7 @@ Jos palvelimesi on tarkoitettu käytettäväksi käyttäjän koneella, voit noud
 1. **Lataa palvelin**. Jos et ole itse kirjoittanut palvelinta, lataa se ensin koneellesi.  
 1. **Käynnistä palvelinprosessi**: Suorita MCP Server -sovelluksesi.
 
-SSE:tä varten (ei tarpeen stdio-tyyppiselle palvelimelle)
+SSE:tä varten (ei tarvita stdio-tyyppiselle palvelimelle)
 
 1. **Määritä verkkoasetukset**: Varmista, että palvelin on saavutettavissa odotetulla portilla.  
 1. **Yhdistä asiakkaat**: Käytä paikallisia yhteysosoitteita, kuten `http://localhost:3000`.
@@ -104,14 +104,13 @@ Siinä se, ota palvelin käyttöön paikallisesti tai Azureen näiden vaiheiden 
 
 ## Lisäresurssit
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
-- [Azure Container Apps -artikkeli](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Azure Container Apps MCP -repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
-
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
+- [Azure Container Apps -artikkeli](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Azure Container Apps MCP -repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
 ## Mitä seuraavaksi
 
 - Seuraava: [Käytännön toteutus](../../04-PracticalImplementation/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

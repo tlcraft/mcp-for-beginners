@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2a58caa6e11faa09470b7f81e6729652",
-  "translation_date": "2025-06-18T06:07:12+00:00",
+  "translation_date": "2025-07-13T20:11:37+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/dotnet/README.md",
   "language_code": "cs"
 }
@@ -35,20 +35,20 @@ Tím by se měl spustit webový server s vizuálním rozhraním, které vám umo
 
 > Ujistěte se, že jako typ přenosu je vybráno **SSE** a URL je `http://localhost:3001/sse`.
 
-Once the server is connected: 
+Jakmile je server připojen:
 
-- try listing tools and run `add`, se vstupními argumenty 2 a 4 byste měli vidět výsledek 6.
+- zkuste vypsat nástroje a spusťte `add` s argumenty 2 a 4, ve výsledku byste měli vidět 6.
 - přejděte na resources a resource template, zavolejte "greeting", zadejte jméno a měli byste vidět pozdrav s vámi zadaným jménem.
 
 ### Testování v režimu CLI
 
-Přímo v režimu CLI můžete spustit příkazem:
+Můžete jej spustit přímo v režimu CLI pomocí následujícího příkazu:
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Tím se zobrazí všechny nástroje dostupné na serveru. Měli byste vidět následující výstup:
+Tím se vypíšou všechny nástroje dostupné na serveru. Měli byste vidět následující výstup:
 
 ```text
 {
@@ -80,7 +80,7 @@ Tím se zobrazí všechny nástroje dostupné na serveru. Měli byste vidět ná
 }
 ```
 
-Pro vyvolání nástroje zadejte:
+Pro zavolání nástroje napište:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/call --tool-name AddNumbers --tool-arg a=1 --tool-arg b=2
@@ -101,8 +101,8 @@ Měli byste vidět následující výstup:
 ```
 
 > ![!TIP]
-> Obvykle je mnohem rychlejší spustit inspector v režimu CLI než v prohlížeči.
-> Více informací o inspectoru najdete [zde](https://github.com/modelcontextprotocol/inspector).
+> Obvykle je rychlejší spustit inspector v režimu CLI než v prohlížeči.
+> Více o inspectoru si přečtěte [zde](https://github.com/modelcontextprotocol/inspector).
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

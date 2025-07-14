@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T18:54:43+00:00",
+  "translation_date": "2025-07-13T22:11:19+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "bg"
 }
@@ -36,9 +36,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Разгръщане в облака
 
-MCP сървърите могат да бъдат разположени на различни облачни платформи:
+MCP сървърите могат да бъдат разгръщани на различни облачни платформи:
 
-- **Serverless функции**: Разгръщайте леки MCP сървъри като serverless функции.  
+- **Serverless функции**: Разгърнете леки MCP сървъри като serverless функции.  
 - **Контейнерни услуги**: Използвайте услуги като Azure Container Apps, AWS ECS или Google Cloud Run.  
 - **Kubernetes**: Разгръщайте и управлявайте MCP сървъри в Kubernetes клъстери за висока наличност.
 
@@ -68,7 +68,7 @@ Azure Container Apps поддържа разгръщане на MCP сървър
   uv run fastapi dev main.py
   ```
 
-1. За да го изпробвате локално, създайте файл *mcp.json* в директория *.vscode* и добавете следното съдържание:
+1. За да го пробвате локално, създайте файл *mcp.json* в директория *.vscode* и добавете следното съдържание:
 
   ```json
   {
@@ -104,9 +104,10 @@ Azure Container Apps поддържа разгръщане на MCP сървър
 
 ## Допълнителни ресурси
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [Статия за Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Azure Container Apps MCP репо](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
+- [Статия за Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
+- [Azure Container Apps MCP репо](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+
 
 ## Какво следва
 

@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:16:27+00:00",
+  "translation_date": "2025-07-13T21:03:12+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "ja"
 }
 -->
-# サンプルの実行
+# このサンプルの実行
 
 ## -1- 依存関係のインストール
 
@@ -23,9 +23,9 @@ dotnet run
 
 ## -3- サンプルのテスト
 
-以下を実行する前に、別のターミナルを開いて（サーバーがまだ動作していることを確認してください）。
+以下を実行する前に別のターミナルを開き（サーバーがまだ動作していることを確認してください）。
 
-一方のターミナルでサーバーを起動したまま、別のターミナルを開いて次のコマンドを実行します：
+サーバーが一つのターミナルで動作している状態で、別のターミナルを開き、次のコマンドを実行します：
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
@@ -33,16 +33,16 @@ npx @modelcontextprotocol/inspector http://localhost:3001
 
 これにより、サンプルをテストできるビジュアルインターフェース付きのウェブサーバーが起動します。
 
-> **Streamable HTTP** がトランスポートタイプとして選択されていること、URLが `http://localhost:3001/mcp`.
+> **Streamable HTTP** がトランスポートタイプとして選択されており、URLが `http://localhost:3001/mcp` になっていることを確認してください。
 
-Once the server is connected: 
+サーバーに接続できたら：
 
-- try listing tools and run `add` であることを確認してください。引数に2と4を指定すると、結果に6が表示されるはずです。  
-> - resources と resource template に移動し、「greeting」を呼び出して名前を入力すると、入力した名前で挨拶が表示されます。
+- ツールの一覧を試し、`add` を引数 2 と 4 で実行してみてください。結果に 6 が表示されるはずです。
+- resources と resource template に移動し、「greeting」を呼び出して名前を入力すると、入力した名前を使った挨拶が表示されます。
 
 ### CLIモードでのテスト
 
-次のコマンドを実行することで、直接CLIモードで起動できます：
+以下のコマンドを実行すると、直接CLIモードで起動できます：
 
 ```bash 
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
@@ -100,9 +100,9 @@ npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/c
 }
 ```
 
-> ![!TIP]  
-> ブラウザよりもCLIモードでインスペクターを実行したほうが通常はずっと高速です。  
-> インスペクターの詳細は[こちら](https://github.com/modelcontextprotocol/inspector)をご覧ください。
+> ![!TIP]
+> ブラウザよりもCLIモードでinspectorを実行するほうが通常はずっと速いです。
+> inspectorの詳細は[こちら](https://github.com/modelcontextprotocol/inspector)をご覧ください。
 
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があることをご承知おきください。原文の言語によるオリジナル文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨いたします。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

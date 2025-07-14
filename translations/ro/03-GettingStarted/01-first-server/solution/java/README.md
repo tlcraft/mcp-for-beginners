@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-06-11T09:36:04+00:00",
+  "translation_date": "2025-07-13T17:56:33+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
   "language_code": "ro"
 }
 -->
 # Serviciu Calculator de Bază MCP
 
-Acest serviciu oferă operații de calculator de bază prin Model Context Protocol (MCP) folosind Spring Boot cu transport WebFlux. Este conceput ca un exemplu simplu pentru începători care învață despre implementările MCP.
+Acest serviciu oferă operații de bază pentru calculator prin Model Context Protocol (MCP) folosind Spring Boot cu transport WebFlux. Este conceput ca un exemplu simplu pentru începători care învață despre implementările MCP.
 
 Pentru mai multe informații, consultați documentația de referință [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
@@ -62,18 +62,18 @@ MCP Inspector este un instrument util pentru interacțiunea cu serviciile MCP. P
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Accesează interfața web** făcând click pe URL-ul afișat de aplicație (de obicei http://localhost:6274)
+2. **Accesează interfața web** făcând clic pe URL-ul afișat de aplicație (de obicei http://localhost:6274)
 
 3. **Configurează conexiunea**:
    - Setează tipul de transport la "SSE"
    - Setează URL-ul către endpoint-ul SSE al serverului tău: `http://localhost:8080/sse`
-   - Apasă "Connect"
+   - Apasă pe "Connect"
 
-4. **Folosește uneltele**:
-   - Apasă "List Tools" pentru a vedea operațiile disponibile ale calculatorului
-   - Selectează o unealtă și apasă "Run Tool" pentru a executa o operație
+4. **Folosește instrumentele**:
+   - Apasă pe "List Tools" pentru a vedea operațiile disponibile ale calculatorului
+   - Selectează un instrument și apasă pe "Run Tool" pentru a executa o operație
 
 ![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.ro.png)
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea în urma utilizării acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

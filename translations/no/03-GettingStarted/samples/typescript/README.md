@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d1fd6d5079bee9fe4f6ed9cfd8031d98",
-  "translation_date": "2025-05-17T13:37:31+00:00",
+  "translation_date": "2025-07-13T22:41:43+00:00",
   "source_file": "03-GettingStarted/samples/typescript/README.md",
   "language_code": "no"
 }
 -->
 # Eksempel
 
-Dette er et Typescript-eksempel for en MCP-server
+Dette er et Typescript-eksempel for en MCP Server
 
-Her ser du hvordan kalkulator-delen ser ut:
+Slik ser kalkulatordelen ut:
 
 ```typescript
 // Define calculator tools for each operation
@@ -68,7 +68,7 @@ server.tool(
 );
 ```
 
-## Installere
+## Installer
 
 Kjør følgende kommando:
 
@@ -82,4 +82,5 @@ npm install
 npm start
 ```
 
-I'm sorry, but I'm not sure what language you're referring to with "no." Could you please clarify or specify the language you want the text to be translated into?
+**Ansvarsfraskrivelse**:  
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac2459c0d5cc823922e3d9240a95028c",
-  "translation_date": "2025-06-11T13:19:20+00:00",
+  "translation_date": "2025-07-13T19:05:55+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/java/README.md",
   "language_code": "ru"
 }
@@ -14,13 +14,13 @@ Java-приложение, демонстрирующее, как использ
 ## Требования
 
 - Java 21 или выше  
-- Maven 3.6+ (или используйте встроенный Maven wrapper)  
+- Maven 3.6+ (или используйте включённый Maven wrapper)  
 - Аккаунт GitHub с доступом к GitHub Models  
-- Запущенный сервис калькулятора MCP на `http://localhost:8080`
+- Запущенный сервис калькулятора MCP на `http://localhost:8080`  
 
-## Получение GitHub Token
+## Получение GitHub токена
 
-Это приложение использует GitHub Models, для которых требуется персональный токен доступа GitHub. Следуйте этим шагам, чтобы получить токен:
+Это приложение использует GitHub Models, для чего требуется персональный токен доступа GitHub. Следуйте этим шагам, чтобы получить токен:
 
 ### 1. Доступ к GitHub Models  
 1. Перейдите на [GitHub Models](https://github.com/marketplace/models)  
@@ -29,14 +29,14 @@ Java-приложение, демонстрирующее, как использ
 
 ### 2. Создание персонального токена доступа  
 1. Перейдите в [GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)  
-2. Нажмите «Generate new token» → «Generate new token (classic)»  
-3. Дайте токену понятное имя (например, «MCP Calculator Client»)  
+2. Нажмите "Generate new token" → "Generate new token (classic)"  
+3. Дайте токену понятное имя (например, "MCP Calculator Client")  
 4. Установите срок действия по необходимости  
 5. Выберите следующие области доступа:  
    - `repo` (если нужен доступ к приватным репозиториям)  
    - `user:email`  
-6. Нажмите «Generate token»  
-7. **Важно**: Скопируйте токен сразу — позже его будет нельзя увидеть!
+6. Нажмите "Generate token"  
+7. **Важно**: Скопируйте токен сразу — после этого он больше не будет отображаться!  
 
 ### 3. Установка переменной окружения
 
@@ -68,10 +68,10 @@ export GITHUB_TOKEN=your_github_token_here
    mvn clean install
    ```
 
-3. **Настройте переменную окружения** (см. раздел «Получение GitHub Token» выше)
+3. **Настройте переменную окружения** (см. раздел "Получение GitHub токена" выше)
 
-4. **Запустите сервис MCP Calculator**:  
-   Убедитесь, что сервис MCP calculator из главы 1 запущен по адресу `http://localhost:8080/sse`. Он должен работать до запуска клиента.
+4. **Запустите сервис калькулятора MCP**:  
+   Убедитесь, что сервис из главы 1 запущен на `http://localhost:8080/sse`. Он должен работать до запуска клиента.
 
 ## Запуск приложения
 
@@ -86,7 +86,7 @@ java -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 
 1. **Сложение**: вычисляет сумму 24.5 и 17.3  
 2. **Квадратный корень**: вычисляет квадратный корень из 144  
-3. **Помощь**: показывает доступные функции калькулятора
+3. **Помощь**: показывает доступные функции калькулятора  
 
 ## Ожидаемый результат
 
@@ -102,25 +102,25 @@ The calculator service provides the following functions: add, subtract, multiply
 
 ### Частые проблемы
 
-1. **«GITHUB_TOKEN environment variable not set»**  
-   - Убедитесь, что переменная `GITHUB_TOKEN` environment variable
-   - Restart your terminal/command prompt after setting the variable
+1. **"GITHUB_TOKEN environment variable not set"**  
+   - Убедитесь, что переменная окружения `GITHUB_TOKEN` установлена  
+   - Перезапустите терминал/командную строку после установки переменной  
 
-2. **"Connection refused to localhost:8080"**
-   - Ensure the MCP calculator service is running on port 8080
-   - Check if another service is using port 8080
+2. **"Connection refused to localhost:8080"**  
+   - Проверьте, что сервис калькулятора MCP запущен на порту 8080  
+   - Убедитесь, что другой сервис не занимает порт 8080  
 
-3. **"Authentication failed"**
-   - Verify your GitHub token is valid and has the correct permissions
-   - Check if you have access to GitHub Models
+3. **"Authentication failed"**  
+   - Проверьте, что ваш GitHub токен действителен и имеет нужные права  
+   - Убедитесь, что у вас есть доступ к GitHub Models  
 
-4. **Maven build errors**
-   - Ensure you're using Java 21 or higher: `java -version`
-   - Try cleaning the build: `mvnw clean` установлена корректно
+4. **Ошибки сборки Maven**  
+   - Убедитесь, что используете Java 21 или выше: `java -version`  
+   - Попробуйте очистить сборку: `mvnw clean`  
 
 ### Отладка
 
-Для включения подробного логирования добавьте следующий аргумент JVM при запуске:  
+Для включения отладочного логирования добавьте следующий аргумент JVM при запуске:  
 ```cmd
 java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
@@ -128,22 +128,22 @@ java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0
 ## Конфигурация
 
 Приложение настроено на:  
-- Использование GitHub Models с `gpt-4.1-nano` model
-- Connect to MCP service at `http://localhost:8080/sse`  
+- Использование GitHub Models с моделью `gpt-4.1-nano`  
+- Подключение к сервису MCP по адресу `http://localhost:8080/sse`  
 - Таймаут запросов 60 секунд  
-- Включение логирования запросов и ответов для отладки
+- Включение логирования запросов и ответов для отладки  
 
 ## Зависимости
 
-Основные зависимости в проекте:  
-- **LangChain4j**: для интеграции с ИИ и управления инструментами  
+Основные зависимости проекта:  
+- **LangChain4j**: для интеграции ИИ и управления инструментами  
 - **LangChain4j MCP**: поддержка Model Context Protocol  
 - **LangChain4j GitHub Models**: интеграция с GitHub Models  
-- **Spring Boot**: фреймворк приложения и внедрение зависимостей
+- **Spring Boot**: фреймворк приложения и внедрение зависимостей  
 
 ## Лицензия
 
 Этот проект лицензирован под Apache License 2.0 — подробности в файле [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE).
 
 **Отказ от ответственности**:  
-Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, имейте в виду, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для критически важной информации рекомендуется использовать профессиональный человеческий перевод. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.

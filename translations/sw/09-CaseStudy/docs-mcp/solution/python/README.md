@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:31:59+00:00",
+  "translation_date": "2025-07-14T06:43:03+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "sw"
 }
 -->
-# Kizazi cha Mpango wa Masomo kwa Chainlit & Microsoft Learn Docs MCP
+# Kizalishaji cha Mpango wa Kusoma kwa Chainlit & Microsoft Learn Docs MCP
 
-## Mahitaji
+## Mahitaji ya Awali
 
 - Python 3.8 au zaidi
 - pip (msimamizi wa vifurushi vya Python)
-- Muunganisho wa intaneti kuweza kuungana na seva ya Microsoft Learn Docs MCP
+- Muunganisho wa intaneti kuweza kuunganishwa na seva ya Microsoft Learn Docs MCP
 
 ## Usanidi
 
-1. Nakili (clone) hifadhi hii au pakua faili za mradi.
+1. Nakili hifadhidata hii au pakua faili za mradi.
 2. Sakinisha utegemezi unaohitajika:
 
    ```bash
@@ -26,29 +26,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Matumizi
 
-### Hali ya 1: Utafutaji Rahisi kwa Docs MCP  
+### Hali ya 1: Utafutaji Rahisi kwa Docs MCP
 Mteja wa mstari wa amri unaounganisha na seva ya Docs MCP, kutuma swali, na kuchapisha matokeo.
 
-1. Endesha script:  
+1. Endesha script:
    ```bash
    python scenario1.py
-   ```  
-2. Weka swali lako la nyaraka kwenye kiashiria.
+   ```
+2. Weka swali lako la nyaraka kwenye sehemu ya kuingiza.
 
-### Hali ya 2: Kizazi cha Mpango wa Masomo (Programu ya Wavuti ya Chainlit)  
-Kiolesura cha wavuti (kinachotumia Chainlit) kinachoruhusu watumiaji kuunda mpango wa masomo wa kibinafsi, wa wiki kwa wiki kwa mada yoyote ya kiufundi.
+### Hali ya 2: Kizalishaji cha Mpango wa Kusoma (Chainlit Web App)
+Kiolesura cha wavuti (kinatumia Chainlit) kinachowezesha watumiaji kuunda mpango wa kusoma wa kibinafsi, wa wiki kwa wiki kwa mada yoyote ya kiufundi.
 
-1. Anzisha programu ya Chainlit:  
+1. Anzisha app ya Chainlit:
    ```bash
    chainlit run scenario2.py
-   ```  
-2. Fungua URL ya ndani iliyotolewa kwenye terminal yako (mfano, http://localhost:8000) katika kivinjari chako.  
-3. Katika dirisha la mazungumzo, ingiza mada yako ya masomo na idadi ya wiki unayotaka kusoma (mfano, "AI-900 certification, 8 weeks").  
-4. Programu itajibu na mpango wa masomo wa wiki kwa wiki, ikiwa na viungo vya nyaraka husika za Microsoft Learn.
+   ```
+2. Fungua URL ya ndani iliyotolewa kwenye terminal yako (mfano, http://localhost:8000) kwenye kivinjari chako.
+3. Katika dirisha la mazungumzo, ingiza mada yako ya kusoma na idadi ya wiki unayotaka kusoma (mfano, "AI-900 certification, 8 weeks").
+4. App itajibu na mpango wa kusoma wa wiki kwa wiki, ikiwa na viungo vya nyaraka zinazohusiana za Microsoft Learn.
 
-**Mazingira Yanayohitajika:**  
+**Mazingira ya Kuweka Yanayohitajika:**
 
-Ili kutumia Hali ya 2 (programu ya wavuti ya Chainlit na Azure OpenAI), lazima uweke mabadiliko ya mazingira yafuatayo katika saraka ya `.env` file in the `python`:
+Ili kutumia Hali ya 2 (app ya wavuti ya Chainlit na Azure OpenAI), lazima uweke mabadiliko ya mazingira yafuatayo katika faili `.env` kwenye saraka ya `python`:
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -57,36 +57,36 @@ AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_VERSION=
 ```
 
-Jaza maelezo haya kwa taarifa zako za rasilimali ya Azure OpenAI kabla ya kuendesha programu.
+Jaza maelezo haya kwa taarifa zako za rasilimali za Azure OpenAI kabla ya kuendesha app.
 
-> **Tip:** Unaweza kwa urahisi kuanzisha mifano yako mwenyewe kwa kutumia [Azure AI Foundry](https://ai.azure.com/).
+> **Tip:** Unaweza kwa urahisi kupeleka mifano yako mwenyewe ukitumia [Azure AI Foundry](https://ai.azure.com/).
 
-### Hali ya 3: Nyaraka Ndani ya Mhariri na Seva ya MCP katika VS Code
+### Hali ya 3: Nyaraka Ndani ya Mhariri na MCP Server katika VS Code
 
-Badala ya kubadilisha tabo za kivinjari kutafuta nyaraka, unaweza kuleta Microsoft Learn Docs moja kwa moja ndani ya VS Code yako kwa kutumia seva ya MCP. Hii inakuwezesha:  
-- Kutafuta na kusoma nyaraka ndani ya VS Code bila kuondoka kwenye mazingira ya kuandika msimbo.  
-- Kurejelea nyaraka na kuweka viungo moja kwa moja katika README au faili za kozi.  
-- Kutumia GitHub Copilot na MCP pamoja kwa mtiririko wa kazi wa nyaraka unaoendeshwa na AI bila mshono.
+Badala ya kubadili tabo za kivinjari kutafuta nyaraka, unaweza kuleta Microsoft Learn Docs moja kwa moja ndani ya VS Code yako ukitumia seva ya MCP. Hii inakuwezesha:
+- Kutafuta na kusoma nyaraka ndani ya VS Code bila kuondoka kwenye mazingira yako ya kuandika msimbo.
+- Kurejelea nyaraka na kuingiza viungo moja kwa moja kwenye README au faili za kozi.
+- Kutumia GitHub Copilot na MCP pamoja kwa mtiririko wa kazi wa nyaraka unaotumia AI kwa urahisi.
 
-**Mifano ya Matumizi:**  
-- Ongeza viungo vya rejea kwa README haraka wakati wa kuandika nyaraka za kozi au mradi.  
-- Tumia Copilot kuunda msimbo na MCP kupata na kutaja nyaraka husika mara moja.  
-- Endelea kuzingatia mhariri wako na kuongeza tija.
+**Mifano ya Matumizi:**
+- Kuongeza viungo vya rejea haraka kwenye README wakati wa kuandika nyaraka za kozi au mradi.
+- Kutumia Copilot kuunda msimbo na MCP kupata na kutaja nyaraka zinazohusiana mara moja.
+- Kubaki makini ndani ya mhariri wako na kuongeza ufanisi.
 
-> [!IMPORTANT]  
-> Hakikisha una [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> [!IMPORTANT]
+> Hakikisha una usanidi halali wa [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) katika eneo la kazi lako (mahali ni `.vscode/mcp.json`).
 
-## Why Chainlit for Scenario 2?
+## Kwa Nini Chainlit kwa Hali ya 2?
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit ni mfumo wa kisasa wa chanzo huria wa kujenga programu za mazungumzo za wavuti. Inafanya iwe rahisi kuunda kiolesura cha mtumiaji cha mazungumzo kinachounganisha na huduma za nyuma kama seva ya Microsoft Learn Docs MCP. Mradi huu unatumia Chainlit kutoa njia rahisi na ya mwingiliano ya kuunda mipango ya kusoma ya kibinafsi kwa wakati halisi. Kwa kutumia Chainlit, unaweza haraka kujenga na kupeleka zana za mazungumzo zinazoongeza ufanisi na kujifunza.
 
-## What This Does
+## Hii Inafanya Nini
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+App hii inaruhusu watumiaji kuunda mpango wa kusoma wa kibinafsi kwa kuingiza mada na muda tu. App inachambua maingizo yako, kuomba seva ya Microsoft Learn Docs MCP kwa maudhui yanayofaa, na kupanga matokeo katika mpango uliopangwa wa wiki kwa wiki. Mapendekezo ya kila wiki yanaonyeshwa katika mazungumzo, kufanya iwe rahisi kufuatilia na kuendelea na maendeleo yako. Muunganiko huu unahakikisha unapata rasilimali za kujifunza za hivi karibuni na zinazofaa kila wakati.
 
-## Sample Queries
+## Maswali ya Mfano
 
-Try these queries in the chat window to see how the app responds:
+Jaribu maswali haya katika dirisha la mazungumzo kuona jinsi app inavyojibu:
 
 - `AI-900 certification, 8 weeks`
 - `Learn Azure Functions, 4 weeks`
@@ -97,12 +97,12 @@ Try these queries in the chat window to see how the app responds:
 - `Azure AI services, 12 weeks`
 - `Cloud architecture, 9 weeks`
 
-Mifano hii inaonyesha ufanisi wa programu kwa malengo mbalimbali ya kujifunza na vipindi tofauti vya muda.
+Mifano hii inaonyesha ufanisi wa app kwa malengo tofauti ya kujifunza na vipindi vya muda.
 
 ## Marejeleo
 
-- [Chainlit Documentation](https://docs.chainlit.io/)  
+- [Chainlit Documentation](https://docs.chainlit.io/)
 - [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
 **Kiarifu cha Kutotegemea**:  
-Nyaraka hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upotoshaji. Nyaraka asilia katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatubeba dhima kwa kutoelewana au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

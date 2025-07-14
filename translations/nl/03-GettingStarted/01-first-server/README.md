@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:09:44+00:00",
+  "translation_date": "2025-07-13T17:35:40+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "nl"
 }
@@ -19,7 +19,7 @@ Nu je de SDK hebt geïnstalleerd, gaan we een project aanmaken:
 
 Voeg een tool en een resource toe door de volgende code toe te voegen:
 
-### -6 Volledige code
+### -6- Volledige code
 
 Laten we de laatste code toevoegen die nodig is om de server te kunnen starten:
 
@@ -41,7 +41,7 @@ Je zou de volgende gebruikersinterface moeten zien:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.nl.png)
 
-1. Selecteer "Tools" en daarna "listTools", je zou "Add" moeten zien verschijnen. Selecteer "Add" en vul de parameterwaarden in.
+1. Selecteer "Tools" en vervolgens "listTools", je zou "Add" moeten zien verschijnen. Selecteer "Add" en vul de parameterwaarden in.
 
    Je zou de volgende reactie moeten zien, dit is het resultaat van de "add" tool:
 

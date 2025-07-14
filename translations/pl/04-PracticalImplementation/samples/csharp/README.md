@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-06-18T07:49:50+00:00",
+  "translation_date": "2025-07-13T23:06:38+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "pl"
 }
 -->
 # Przykład
 
-Poprzedni przykład pokazuje, jak używać lokalnego projektu .NET z typem `stdio`. I jak uruchomić serwer lokalnie w kontenerze. To dobre rozwiązanie w wielu sytuacjach. Jednak czasem przydatne jest, aby serwer działał zdalnie, na przykład w środowisku chmurowym. Tutaj z pomocą przychodzi typ `http`.
+Poprzedni przykład pokazuje, jak używać lokalnego projektu .NET z typem `stdio` oraz jak uruchomić serwer lokalnie w kontenerze. To dobre rozwiązanie w wielu sytuacjach. Jednak czasami przydatne jest, aby serwer działał zdalnie, na przykład w środowisku chmurowym. Właśnie tutaj przydaje się typ `http`.
 
-Patrząc na rozwiązanie w folderze `04-PracticalImplementation`, może się wydawać znacznie bardziej skomplikowane niż poprzednie. Ale w rzeczywistości tak nie jest. Jeśli przyjrzeć się uważnie projektowi `src/Calculator`, zobaczymy, że to w dużej mierze ten sam kod co wcześniej. Jedyną różnicą jest to, że używamy innej biblioteki `ModelContextProtocol.AspNetCore` do obsługi żądań HTTP. Dodatkowo zmieniamy metodę `IsPrime` na prywatną, aby pokazać, że w kodzie można mieć metody prywatne. Reszta kodu pozostaje bez zmian.
+Patrząc na rozwiązanie w folderze `04-PracticalImplementation`, może wydawać się ono znacznie bardziej skomplikowane niż poprzednie. W rzeczywistości tak nie jest. Jeśli przyjrzymy się projektowi `src/Calculator`, zobaczymy, że to w większości ten sam kod co wcześniej. Jedyną różnicą jest użycie innej biblioteki `ModelContextProtocol.AspNetCore` do obsługi żądań HTTP. Zmieniamy też metodę `IsPrime` na prywatną, aby pokazać, że w kodzie można mieć metody prywatne. Reszta kodu pozostaje bez zmian.
 
-Pozostałe projekty pochodzą z [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Obecność .NET Aspire w rozwiązaniu poprawia komfort pracy dewelopera podczas tworzenia i testowania oraz wspiera obserwowalność. Nie jest to wymagane do uruchomienia serwera, ale warto mieć to w swoim projekcie.
+Pozostałe projekty pochodzą z [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Obecność .NET Aspire w rozwiązaniu poprawia komfort pracy programisty podczas tworzenia i testowania oraz pomaga w obserwowalności. Nie jest to wymagane do uruchomienia serwera, ale warto mieć to w swoim projekcie.
 
 ## Uruchom serwer lokalnie
 
@@ -24,15 +24,15 @@ Pozostałe projekty pochodzą z [.NET Aspire](https://learn.microsoft.com/dotnet
     dotnet watch run --project ./src/AppHost
    ```
 
-1. Gdy przeglądarka internetowa otworzy pulpit .NET Aspire, zwróć uwagę na adres URL `http`. Powinien wyglądać mniej więcej tak: `http://localhost:5058/`.
+1. Gdy w przeglądarce otworzy się pulpit nawigacyjny .NET Aspire, zanotuj adres URL `http`. Powinien wyglądać mniej więcej tak: `http://localhost:5058/`.
 
    ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.pl.png)
 
-## Testuj Streamable HTTP za pomocą MCP Inspector
+## Testowanie Streamable HTTP za pomocą MCP Inspector
 
-Jeśli masz Node.js w wersji 22.7.5 lub nowszej, możesz użyć MCP Inspector do testowania swojego serwera.
+Jeśli masz Node.js w wersji 22.7.5 lub wyższej, możesz użyć MCP Inspector do testowania serwera.
 
-Uruchom serwer i wpisz w terminalu następujące polecenie:
+Uruchom serwer i w terminalu wpisz następujące polecenie:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:5058
@@ -40,18 +40,18 @@ npx @modelcontextprotocol/inspector http://localhost:5058
 
 ![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.pl.png)
 
-- Wybierz `Streamable HTTP` as the Transport type.
-- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. Powinno to być `http` (nie `https`) something like `http://localhost:5058/mcp`.
-- select the Connect button.
+- Wybierz `Streamable HTTP` jako typ transportu.
+- W polu Url wpisz wcześniej zanotowany adres serwera i dopisz `/mcp`. Powinno to być `http` (nie `https`), na przykład `http://localhost:5058/mcp`.
+- Kliknij przycisk Connect.
 
-A nice thing about the Inspector is that it provide a nice visibility on what is happening.
+Zaletą Inspector jest dobra widoczność tego, co się dzieje.
 
-- Try listing the available tools
-- Try some of them, it should works just like before.
+- Spróbuj wyświetlić listę dostępnych narzędzi
+- Przetestuj kilka z nich, powinny działać tak jak wcześniej.
 
-## Test MCP Server with GitHub Copilot Chat in VS Code
+## Testowanie serwera MCP z GitHub Copilot Chat w VS Code
 
-To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp`), serwer utworzony wcześniej, aby wyglądał tak:
+Aby użyć transportu Streamable HTTP z GitHub Copilot Chat, zmień konfigurację serwera `calc-mcp` utworzonego wcześniej, aby wyglądała tak:
 
 ```jsonc
 // .vscode/mcp.json
@@ -67,15 +67,15 @@ To use the Streamable HTTP transport with GitHub Copilot Chat, change the config
 
 Przeprowadź kilka testów:
 
-- Poproś o "3 liczby pierwsze po 6780". Zwróć uwagę, że Copilot użyje nowych narzędzi `NextFivePrimeNumbers` i zwróci tylko pierwsze 3 liczby pierwsze.
-- Poproś o "7 liczb pierwszych po 111", aby zobaczyć, co się stanie.
-- Zapytaj: "John ma 24 lizaki i chce rozdać je wszystkim swoim 3 dzieciom. Ile lizaków dostanie każde dziecko?", aby zobaczyć, co się stanie.
+- Poproś o „3 liczby pierwsze po 6780”. Zauważ, że Copilot użyje nowych narzędzi `NextFivePrimeNumbers` i zwróci tylko pierwsze 3 liczby pierwsze.
+- Poproś o „7 liczb pierwszych po 111”, aby zobaczyć, co się stanie.
+- Zapytaj „John ma 24 lizaki i chce rozdać je równo swoim 3 dzieciom. Ile lizaków dostanie każde dziecko?”, aby zobaczyć wynik.
 
 ## Wdróż serwer do Azure
 
-Wdróżmy serwer do Azure, aby mogło z niego korzystać więcej osób.
+Wdróżmy serwer do Azure, aby więcej osób mogło z niego korzystać.
 
-W terminalu przejdź do folderu `04-PracticalImplementation/samples/csharp` i wykonaj następujące polecenie:
+W terminalu przejdź do folderu `04-PracticalImplementation/samples/csharp` i uruchom następujące polecenie:
 
 ```bash
 azd up
@@ -101,7 +101,7 @@ Skopiuj adres URL i użyj go w MCP Inspector oraz w GitHub Copilot Chat.
 
 ## Co dalej?
 
-Wypróbujemy różne typy transportu i narzędzia do testowania. Wdrożymy też Twój serwer MCP do Azure. A co jeśli nasz serwer będzie potrzebował dostępu do zasobów prywatnych? Na przykład bazy danych lub prywatnego API? W kolejnym rozdziale zobaczymy, jak możemy poprawić bezpieczeństwo naszego serwera.
+Przetestowaliśmy różne typy transportu i narzędzia testowe. Wdrożyliśmy też serwer MCP do Azure. A co jeśli nasz serwer musi mieć dostęp do zasobów prywatnych? Na przykład bazy danych lub prywatnego API? W kolejnym rozdziale zobaczymy, jak możemy poprawić bezpieczeństwo naszego serwera.
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za autorytatywne źródło. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

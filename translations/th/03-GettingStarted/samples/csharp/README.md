@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T05:59:52+00:00",
+  "translation_date": "2025-07-13T22:16:31+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "th"
 }
 -->
-# Basic Calculator MCP Service
+# บริการเครื่องคิดเลขพื้นฐาน MCP
 
-บริการนี้ให้บริการการคำนวณพื้นฐานผ่าน Model Context Protocol (MCP) ถูกออกแบบมาเป็นตัวอย่างง่ายๆ สำหรับผู้เริ่มต้นที่เรียนรู้เกี่ยวกับการใช้งาน MCP
+บริการนี้ให้การทำงานเครื่องคิดเลขพื้นฐานผ่านโปรโตคอล Model Context Protocol (MCP) ออกแบบมาเป็นตัวอย่างง่ายๆ สำหรับผู้เริ่มต้นที่กำลังเรียนรู้การใช้งาน MCP
 
 สำหรับข้อมูลเพิ่มเติม ดูที่ [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## คุณสมบัติ
 
-บริการเครื่องคิดเลขนี้มีความสามารถดังต่อไปนี้:
+บริการเครื่องคิดเลขนี้มีความสามารถดังนี้:
 
-1. **การดำเนินการทางคณิตศาสตร์พื้นฐาน**:
+1. **การคำนวณเลขคณิตพื้นฐาน**:
    - การบวกเลขสองจำนวน
-   - การลบเลขจำนวนหนึ่งจากอีกจำนวนหนึ่ง
+   - การลบเลขจำนวนหนึ่งออกจากอีกจำนวนหนึ่ง
    - การคูณเลขสองจำนวน
    - การหารเลขจำนวนหนึ่งด้วยอีกจำนวนหนึ่ง (พร้อมตรวจสอบการหารด้วยศูนย์)
 
-## การใช้ `stdio` Type
-
+## การใช้ประเภท `stdio`
+  
 ## การตั้งค่า
 
 1. **ตั้งค่า MCP Servers**:
    - เปิด workspace ของคุณใน VS Code
-   - สร้างไฟล์ `.vscode/mcp.json` ในโฟลเดอร์ workspace ของคุณเพื่อกำหนดค่า MCP servers ตัวอย่างการตั้งค่า:
+   - สร้างไฟล์ `.vscode/mcp.json` ในโฟลเดอร์ workspace เพื่อกำหนดค่า MCP servers ตัวอย่างการตั้งค่า:
 
      ```jsonc
      {
@@ -54,50 +54,49 @@ CO_OP_TRANSLATOR_METADATA:
      }
      ```
 
-   - คุณจะถูกขอให้ใส่ root ของ GitHub repository ซึ่งสามารถดึงได้จากคำสั่ง `git rev-parse --show-toplevel`.
+   - คุณจะถูกขอให้ระบุ root ของ GitHub repository ซึ่งสามารถดึงได้จากคำสั่ง `git rev-parse --show-toplevel`
 
-## Using the Service
+## การใช้งานบริการ
 
-The service exposes the following API endpoints through the MCP protocol:
+บริการนี้เปิดเผย API endpoints ผ่านโปรโตคอล MCP ดังนี้:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: บวกเลขสองจำนวนเข้าด้วยกัน
+- `subtract(a, b)`: ลบเลขตัวที่สองออกจากตัวแรก
+- `multiply(a, b)`: คูณเลขสองจำนวน
+- `divide(a, b)`: หารเลขตัวแรกด้วยตัวที่สอง (พร้อมตรวจสอบหารด้วยศูนย์)
+- isPrime(n): ตรวจสอบว่าเลขเป็นจำนวนเฉพาะหรือไม่
 
-## Test with Github Copilot Chat in VS Code
+## ทดสอบกับ Github Copilot Chat ใน VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
+1. ลองส่งคำขอบริการผ่านโปรโตคอล MCP เช่น:
    - "Add 5 and 3"
    - "Subtract 10 from 4"
    - "Multiply 6 and 7"
    - "Divide 8 by 2"
    - "Does 37854 prime?"
    - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
+2. เพื่อให้แน่ใจว่าใช้เครื่องมือนี้ ให้เพิ่ม #MyCalculator ใน prompt เช่น:
    - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+   - "Subtract 10 from 4 #MyCalculator"
 
+## เวอร์ชันแบบ Container
 
-## Containerized Version
+โซลูชันก่อนหน้านี้เหมาะสำหรับผู้ที่ติดตั้ง .NET SDK และมี dependencies ครบถ้วนแล้ว แต่ถ้าคุณต้องการแชร์โซลูชันหรือรันในสภาพแวดล้อมอื่น คุณสามารถใช้เวอร์ชันแบบ container ได้
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` โดยใช้ชื่อผู้ใช้ Docker Hub ของคุณ:
+1. เริ่มต้น Docker และตรวจสอบให้แน่ใจว่ากำลังทำงานอยู่
+1. จากเทอร์มินัล ไปที่โฟลเดอร์ `03-GettingStarted\samples\csharp\src`
+1. เพื่อสร้าง Docker image สำหรับบริการเครื่องคิดเลข ให้รันคำสั่งนี้ (แทนที่ `<YOUR-DOCKER-USERNAME>` ด้วยชื่อผู้ใช้ Docker Hub ของคุณ):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
-1. หลังจากสร้าง image เสร็จแล้ว ให้ทำการอัปโหลดไปยัง Docker Hub โดยรันคำสั่งดังนี้:
+1. หลังจากสร้าง image เสร็จแล้ว ให้ทำการอัปโหลดไปยัง Docker Hub โดยรันคำสั่งนี้:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## การใช้งานเวอร์ชัน Dockerized
+## การใช้เวอร์ชัน Dockerized
 
-1. ในไฟล์ `.vscode/mcp.json` ให้แทนที่การตั้งค่า server ด้วยค่าดังนี้:
+1. ในไฟล์ `.vscode/mcp.json` ให้แทนที่การตั้งค่า server ด้วยดังนี้:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   จากการดูการตั้งค่า คุณจะเห็นว่าคำสั่งคือ `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   จากการตั้งค่านี้ คุณจะเห็นว่าคำสั่งคือ `docker` และ args คือ `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc` โดย flag `--rm` จะลบ container หลังจากหยุดทำงาน และ flag `-i` ช่วยให้คุณโต้ตอบกับ standard input ของ container ได้ อาร์กิวเมนต์สุดท้ายคือชื่อ image ที่เราสร้างและอัปโหลดไปยัง Docker Hub
 
-## Test the Dockerized Version
+## ทดสอบเวอร์ชัน Dockerized
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` และเหมือนเดิม คุณสามารถขอให้บริการเครื่องคิดเลขทำการคำนวณให้คุณได้เลย
+เริ่ม MCP Server โดยคลิกปุ่ม Start เล็กๆ เหนือ `"mcp-calc": {` และเหมือนเดิม คุณสามารถขอให้บริการเครื่องคิดเลขทำการคำนวณให้คุณได้เลย
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้ความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดขึ้นจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

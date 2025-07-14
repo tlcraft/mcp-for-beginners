@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T18:27:54+00:00",
+  "translation_date": "2025-07-14T05:50:03+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "hu"
 }
@@ -41,14 +41,14 @@ Az architektúra és a megvalósítás részletei értékes betekintést nyújta
 
 ### 2. [Azure DevOps elemek frissítése YouTube adatok alapján](./UpdateADOItemsFromYT.md)
 
-Ez az esettanulmány egy gyakorlati MCP alkalmazást mutat be munkafolyamatok automatizálására. Megmutatja, hogyan használhatók az MCP eszközök:
+Ez az esettanulmány egy gyakorlati MCP alkalmazást mutat be munkafolyamatok automatizálására. Megtudhatod, hogyan használhatók az MCP eszközök:
 
 - Adatok kinyerésére online platformokról (YouTube)
-- Munkafolyamat elemek frissítésére Azure DevOps rendszerekben
+- Munkafeladatok frissítésére Azure DevOps rendszerekben
 - Ismételhető automatizált munkafolyamatok létrehozására
 - Adatok integrálására különböző rendszerek között
 
-Ez a példa szemlélteti, hogy még viszonylag egyszerű MCP megvalósítások is jelentős hatékonyságnövekedést hozhatnak a rutinfeladatok automatizálásával és az adatok konzisztenciájának javításával.
+Ez a példa azt szemlélteti, hogy még viszonylag egyszerű MCP megvalósítások is jelentős hatékonyságnövekedést hozhatnak a rutinfeladatok automatizálásával és az adatok konzisztenciájának javításával.
 
 ### 3. [Valós idejű dokumentáció lekérése MCP-vel](./docs-mcp/README.md)
 
@@ -59,35 +59,35 @@ Ez az esettanulmány végigvezet azon, hogyan lehet egy Python konzol klienssel 
 - Hívj dokumentációs eszközöket a szerveren, és naplózd a válaszokat közvetlenül a konzolra
 - Integráld a naprakész Microsoft dokumentációt a munkafolyamatodba anélkül, hogy elhagynád a terminált
 
-A fejezet tartalmaz egy gyakorlati feladatot, egy minimális működő kódmintát, valamint további tanulási forrásokra mutató linkeket. A teljes útmutatót és kódot a kapcsolt fejezetben találod, amely bemutatja, hogyan alakíthatja át az MCP a dokumentációhoz való hozzáférést és a fejlesztői hatékonyságot konzolos környezetben.
+A fejezet gyakorlati feladatot, minimális működő kódmintát és további tanulási forrásokat is tartalmaz. A teljes útmutatót és kódot a hivatkozott fejezetben találod, amely megmutatja, hogyan alakíthatja át az MCP a dokumentációhoz való hozzáférést és a fejlesztői hatékonyságot konzolos környezetben.
 
 ### 4. [Interaktív tanulási terv generátor webalkalmazás MCP-vel](./docs-mcp/README.md)
 
 Ez az esettanulmány bemutatja, hogyan lehet Chainlit és a Model Context Protocol (MCP) használatával interaktív webalkalmazást építeni, amely személyre szabott tanulási terveket generál bármilyen témához. A felhasználók megadhatnak egy témát (például „AI-900 tanúsítvány”) és egy tanulási időtartamot (pl. 8 hét), az alkalmazás pedig heti bontásban ajánl tartalmakat. A Chainlit beszélgetés-alapú chat felületet biztosít, így az élmény interaktív és alkalmazkodó.
 
 - Beszélgetés-alapú webalkalmazás Chainlit segítségével
-- Felhasználó által vezérelt témaválasztás és időtartam megadása
-- Heti bontású tartalomajánlások MCP használatával
-- Valós idejű, adaptív válaszok chat felületen
+- Felhasználó által vezérelt témaválasztás és időtartam
+- Heti bontású tartalomajánlások MCP-vel
+- Valós idejű, alkalmazkodó válaszok chat felületen
 
 A projekt bemutatja, hogyan lehet a beszélgetés-alapú AI-t és az MCP-t kombinálni dinamikus, felhasználóközpontú oktatási eszközök létrehozásához modern webes környezetben.
 
-### 5. [Szerkesztőn belüli dokumentáció MCP szerverrel VS Code-ban](./docs-mcp/README.md)
+### 5. [Beépített dokumentáció MCP szerverrel VS Code-ban](./docs-mcp/README.md)
 
-Ez az esettanulmány megmutatja, hogyan hozhatod be a Microsoft Learn Docs tartalmakat közvetlenül a VS Code környezetedbe MCP szerver segítségével – így nem kell böngészőfüleket váltogatnod! Megtudhatod, hogyan:
+Ez az esettanulmány megmutatja, hogyan hozhatod be a Microsoft Learn dokumentációt közvetlenül a VS Code környezetedbe MCP szerver segítségével – így nem kell böngészőfüleket váltogatnod! Megtudhatod, hogyan:
 
 - Azonnal kereshetsz és olvashatsz dokumentációt a VS Code MCP paneljén vagy parancspalettáján keresztül
-- Hivatkozhatsz dokumentációra és illeszthetsz be linkeket közvetlenül README vagy kurzus markdown fájlokba
+- Hivatkozhatsz dokumentációra és illeszthetsz be linkeket közvetlenül README vagy tananyag markdown fájlokba
 - Használhatod a GitHub Copilotot és az MCP-t együtt zökkenőmentes, AI-alapú dokumentációs és kódolási munkafolyamatokhoz
 - Valós idejű visszajelzéssel ellenőrizheted és javíthatod dokumentációdat Microsoft által biztosított pontossággal
 - Integrálhatod az MCP-t GitHub munkafolyamatokkal a folyamatos dokumentációellenőrzéshez
 
 A megvalósítás tartalmazza:
 - Példa `.vscode/mcp.json` konfigurációt az egyszerű beállításhoz
-- Képernyőképes útmutatókat a szerkesztőn belüli élményről
+- Képernyőképes útmutatókat a beépített élményről
 - Tippeket a Copilot és MCP együttes használatához a maximális hatékonyság érdekében
 
-Ez a forgatókönyv ideális tananyagkészítőknek, dokumentációíróknak és fejlesztőknek, akik szeretnének a szerkesztőjükben maradva dolgozni dokumentációval, Copilottal és ellenőrző eszközökkel – mindezt az MCP támogatásával.
+Ez a forgatókönyv ideális tananyagkészítőknek, dokumentációíróknak és fejlesztőknek, akik szeretnének a szerkesztőjükben maradva dolgozni dokumentációval, Copilottal és ellenőrző eszközökkel – mindezt MCP támogatással.
 
 ### 6. [APIM MCP szerver létrehozása](./apimsample.md)
 
@@ -95,10 +95,10 @@ Ez az esettanulmány lépésről lépésre bemutatja, hogyan hozhatsz létre MCP
 
 - MCP szerver beállítása Azure API Managementben
 - API műveletek MCP eszközökként való kitettsége
-- Szabályok konfigurálása a sebességkorlátozás és biztonság érdekében
+- Szabályzatok konfigurálása sebességkorlátozásra és biztonságra
 - MCP szerver tesztelése Visual Studio Code és GitHub Copilot segítségével
 
-Ez a példa szemlélteti, hogyan használhatod ki az Azure képességeit egy robusztus MCP szerver létrehozásához, amely különféle alkalmazásokban használható, és elősegíti az AI rendszerek integrációját vállalati API-kkal.
+Ez a példa azt mutatja be, hogyan használhatod ki az Azure képességeit egy robusztus MCP szerver létrehozásához, amely különféle alkalmazásokban használható, és elősegíti az AI rendszerek integrációját vállalati API-kkal.
 
 ## Összefoglalás
 

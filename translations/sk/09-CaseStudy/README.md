@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T18:40:53+00:00",
+  "translation_date": "2025-07-14T05:50:41+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "sk"
 }
@@ -17,13 +17,13 @@ Táto časť prináša konkrétne príklady implementácií MCP a zdôrazňuje, 
 
 ## Kľúčové ciele učenia
 
-Preskúmaním týchto prípadových štúdií budete:
+Preskúmaním týchto prípadových štúdií budete schopní:
 
-- Rozumieť, ako možno MCP použiť na riešenie konkrétnych obchodných problémov
-- Naučiť sa o rôznych integračných vzorcoch a architektonických prístupoch
-- Spoznať osvedčené postupy pri implementácii MCP v podnikových prostrediach
+- Pochopiť, ako možno MCP využiť na riešenie konkrétnych obchodných problémov
+- Naučiť sa rôzne integračné vzory a architektonické prístupy
+- Rozpoznať osvedčené postupy pri implementácii MCP v podnikových prostrediach
 - Získať prehľad o výzvach a riešeniach, ktoré sa objavili pri reálnych implementáciách
-- Identifikovať príležitosti na použitie podobných vzorcov vo vlastných projektoch
+- Identifikovať príležitosti na použitie podobných vzorov vo vlastných projektoch
 
 ## Vybrané prípadové štúdie
 
@@ -48,7 +48,7 @@ Táto prípadová štúdia ukazuje praktické využitie MCP na automatizáciu pr
 - Vytváranie opakovateľných automatizačných pracovných tokov
 - Integráciu dát naprieč rôznymi systémami
 
-Tento príklad ilustruje, ako aj relatívne jednoduché implementácie MCP môžu priniesť výrazné zlepšenie efektivity automatizáciou rutinných úloh a zlepšením konzistencie dát medzi systémami.
+Tento príklad ukazuje, že aj relatívne jednoduché implementácie MCP môžu priniesť výrazné zlepšenie efektivity automatizáciou rutinných úloh a zlepšením konzistencie dát medzi systémami.
 
 ### 3. [Získavanie dokumentácie v reálnom čase s MCP](./docs-mcp/README.md)
 
@@ -63,14 +63,14 @@ Kapitola obsahuje praktické zadanie, minimálny funkčný ukážkový kód a od
 
 ### 4. [Interaktívna webová aplikácia na generovanie študijných plánov s MCP](./docs-mcp/README.md)
 
-Táto prípadová štúdia ukazuje, ako vytvoriť interaktívnu webovú aplikáciu pomocou Chainlit a Model Context Protocol (MCP) na generovanie personalizovaných študijných plánov pre akúkoľvek tému. Používatelia môžu zadať predmet (napríklad „certifikácia AI-900“) a dĺžku štúdia (napr. 8 týždňov), a aplikácia poskytne týždenný rozpis odporúčaného obsahu. Chainlit umožňuje konverzačné chatové rozhranie, ktoré robí zážitok pútavým a prispôsobivým.
+Táto prípadová štúdia ukazuje, ako vytvoriť interaktívnu webovú aplikáciu pomocou Chainlit a Model Context Protocol (MCP) na generovanie personalizovaných študijných plánov pre akúkoľvek tému. Používatelia môžu zadať predmet (napr. „certifikácia AI-900“) a dĺžku štúdia (napr. 8 týždňov), a aplikácia poskytne týždenný rozpis odporúčaného obsahu. Chainlit umožňuje konverzačné chatové rozhranie, ktoré robí zážitok pútavým a prispôsobivým.
 
 - Konverzačná webová aplikácia poháňaná Chainlit
 - Používateľom riadené vstupy pre tému a dĺžku štúdia
 - Odporúčania obsahu týždeň po týždni pomocou MCP
 - Reakcie v reálnom čase v chatovom rozhraní
 
-Projekt ukazuje, ako možno kombinovať konverzačnú AI a MCP na vytvorenie dynamických, používateľom riadených vzdelávacích nástrojov v modernom webovom prostredí.
+Projekt ukazuje, ako možno kombinovať konverzačnú AI a MCP na vytvorenie dynamických, používateľsky riadených vzdelávacích nástrojov v modernom webovom prostredí.
 
 ### 5. [Dokumentácia priamo v editore s MCP serverom vo VS Code](./docs-mcp/README.md)
 
@@ -84,7 +84,7 @@ Táto prípadová štúdia ukazuje, ako si môžete priniesť Microsoft Learn Do
 
 Implementácia obsahuje:
 - Príklad konfigurácie `.vscode/mcp.json` pre jednoduché nastavenie
-- Návody so screenshotmi z prostredia editora
+- Návody s obrázkami zobrazujúce zážitok v editore
 - Tipy na kombinovanie Copilota a MCP pre maximálnu produktivitu
 
 Tento scenár je ideálny pre autorov kurzov, tvorcov dokumentácie a vývojárov, ktorí chcú zostať sústredení v editore pri práci s dokumentáciou, Copilotom a nástrojmi na overovanie – všetko poháňané MCP.
@@ -104,7 +104,7 @@ Tento príklad ukazuje, ako využiť možnosti Azure na vytvorenie robustného M
 
 Tieto prípadové štúdie zdôrazňujú všestrannosť a praktické využitie Model Context Protocol v reálnych situáciách. Od zložitých viacagentových systémov po cielené automatizačné pracovné toky, MCP poskytuje štandardizovaný spôsob, ako prepojiť AI systémy s nástrojmi a dátami, ktoré potrebujú na vytváranie hodnoty.
 
-Štúdiom týchto implementácií získate prehľad o architektonických vzorcoch, stratégiách implementácie a osvedčených postupoch, ktoré môžete aplikovať vo vlastných MCP projektoch. Príklady ukazujú, že MCP nie je len teoretický rámec, ale praktické riešenie reálnych obchodných výziev.
+Štúdiom týchto implementácií získate prehľad o architektonických vzoroch, stratégiách implementácie a osvedčených postupoch, ktoré môžete aplikovať vo vlastných MCP projektoch. Príklady ukazujú, že MCP nie je len teoretický rámec, ale praktické riešenie reálnych obchodných výziev.
 
 ## Ďalšie zdroje
 
@@ -116,5 +116,5 @@ Tieto prípadové štúdie zdôrazňujú všestrannosť a praktické využitie M
 
 Ďalšie: Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

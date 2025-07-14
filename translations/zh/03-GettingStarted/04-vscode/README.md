@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T15:55:48+00:00",
+  "translation_date": "2025-07-13T19:24:22+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "zh"
 }
@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在 Visual Studio Code 中，进入 `文件 -> 首选项 -> 设置`。
 
-2. 搜索“MCP”，并在 settings.json 文件中启用 `chat.mcp.discovery.enabled`。
+2. 搜索 “MCP”，并在 settings.json 文件中启用 `chat.mcp.discovery.enabled`。
 
 ### -1- 创建配置文件
 
@@ -82,7 +82,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 任务
 
-尝试向你的 *mcp.json* 文件添加一个服务器条目，并确保你能启动和停止服务器。同时确认你能通过 GitHub Copilot 聊天界面与服务器上的工具通信。
+尝试向你的 *mcp.json* 文件添加一个服务器条目，并确保你能启动和停止服务器。还要确保可以通过 GitHub Copilot 聊天界面与服务器上的工具通信。
 
 ## 解决方案
 
@@ -113,4 +113,4 @@ CO_OP_TRANSLATOR_METADATA:
 - 下一章：[创建 SSE 服务器](../05-sse-server/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们不对因使用本翻译而产生的任何误解或误释承担责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

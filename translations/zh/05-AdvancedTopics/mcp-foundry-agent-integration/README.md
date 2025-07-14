@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:10:07+00:00",
+  "translation_date": "2025-07-13T23:51:43+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "zh"
 }
 -->
-# Model Context Protocol (MCP) 与 Azure AI Foundry 集成
+# Model Context Protocol (MCP) 与 Azure AI Foundry 的集成
 
 本指南演示如何将 Model Context Protocol (MCP) 服务器与 Azure AI Foundry 代理集成，实现强大的工具编排和企业级 AI 功能。
 
 ## 介绍
 
-Model Context Protocol (MCP) 是一种开放标准，使 AI 应用能够安全地连接到外部数据源和工具。与 Azure AI Foundry 集成后，MCP 允许代理以标准化方式访问和交互各种外部服务、API 和数据源。
+Model Context Protocol (MCP) 是一种开放标准，允许 AI 应用安全地连接到外部数据源和工具。与 Azure AI Foundry 集成后，MCP 使代理能够以标准化方式访问和交互各种外部服务、API 和数据源。
 
-此集成结合了 MCP 工具生态的灵活性与 Azure AI Foundry 强大的代理框架，提供具备广泛定制能力的企业级 AI 解决方案。
+此集成结合了 MCP 工具生态的灵活性和 Azure AI Foundry 强大的代理框架，提供具有广泛定制能力的企业级 AI 解决方案。
 
 **Note:** 如果您想在 Azure AI Foundry Agent Service 中使用 MCP，目前仅支持以下区域：westus、westus2、uaenorth、southindia 和 switzerlandnorth
 
@@ -31,27 +31,27 @@ Model Context Protocol (MCP) 是一种开放标准，使 AI 应用能够安全�
 
 ## 前提条件
 
-开始前，请确保您具备：
+开始之前，请确保您具备：
 
-- 拥有 Azure 订阅且可访问 AI Foundry
+- 拥有 AI Foundry 访问权限的 Azure 订阅
 - Python 3.10 及以上版本
 - 已安装并配置 Azure CLI
-- 具备创建 AI 资源的适当权限
+- 具备创建 AI 资源的相应权限
 
 ## 什么是 Model Context Protocol (MCP)？
 
 Model Context Protocol 是 AI 应用连接外部数据源和工具的标准化方式。主要优势包括：
 
-- **标准化集成**：不同工具和服务之间接口一致
+- **标准化集成**：不同工具和服务之间保持一致的接口
 - **安全性**：安全的身份验证和授权机制
 - **灵活性**：支持多种数据源、API 和自定义工具
-- **可扩展性**：方便添加新功能和集成
+- **可扩展性**：便于添加新功能和集成
 
 ## 在 Azure AI Foundry 中设置 MCP
 
 ### 1. 环境配置
 
-首先，配置环境变量和依赖项：
+首先，设置环境变量和依赖项：
 
 ```python
 import os
@@ -80,7 +80,7 @@ with project_client:
     agent = project_client.agents.create_agent(
         model="gpt-4.1-nano", 
         name="mcp_agent", 
-        instructions="你是一个乐于助人的助手。使用提供的工具回答问题，务必引用你的信息来源。",
+        instructions="You are a helpful assistant. Use the tools provided to answer questions. Be sure to cite your sources.",
         tools=[
             {
                 "type": "mcp",
@@ -91,7 +91,7 @@ with project_client:
         ],
         tool_resources=None
     )
-    print(f"已创建代理，代理 ID: {agent.id}")
+    print(f"Created agent, agent ID: {agent.id}")
 ```
 
 ## MCP Tool Configuration Options
@@ -129,11 +129,11 @@ def create_mcp_agent_example():
     )
 
     with project_client:
-        # 创建带 MCP 工具的代理
+        # 创建带有 MCP 工具的代理
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="你是专注于微软文档的乐于助人的助手。使用 Microsoft Learn MCP 服务器搜索准确、最新的信息。始终引用你的信息来源。",
+            instructions="You are a helpful assistant specializing in Microsoft documentation. Use the Microsoft Learn MCP server to search for accurate, up-to-date information. Always cite your sources.",
             tools=[
                 {
                     "type": "mcp",
@@ -144,19 +144,19 @@ def create_mcp_agent_example():
             ],
             tool_resources=None
         )
-        print(f"已创建代理，代理 ID: {agent.id}")    
+        print(f"Created agent, agent ID: {agent.id}")    
         
         # 创建对话线程
         thread = project_client.agents.threads.create()
-        print(f"已创建线程，线程 ID: {thread.id}")
+        print(f"Created thread, thread ID: {thread.id}")
 
         # 发送消息
         message = project_client.agents.messages.create(
             thread_id=thread.id, 
             role="user", 
-            content=".NET MAUI 是什么？它与 Xamarin.Forms 有何区别？",
+            content="What is .NET MAUI? How does it compare to Xamarin.Forms?",
         )
-        print(f"已创建消息，消息 ID: {message.id}")
+        print(f"Created message, message ID: {message.id}")
 
         # 运行代理
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
@@ -165,14 +165,14 @@ def create_mcp_agent_example():
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
-            print(f"运行状态：{run.status}")
+            print(f"Run status: {run.status}")
 
         # 检查运行步骤和工具调用
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
-            print(f"运行步骤：{step.id}，状态：{step.status}，类型：{step.type}")
+            print(f"Run step: {step.id}, status: {step.status}, type: {step.type}")
             if step.type == "tool_calls":
-                print("工具调用详情：")
+                print("Tool call details:")
                 for tool_call in step.step_details.tool_calls:
                     print(json.dumps(tool_call.as_dict(), indent=2))
 
@@ -187,7 +187,7 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-```
+  
 
 ## 常见问题排查
 
@@ -198,7 +198,7 @@ if __name__ == "__main__":
 
 ### 2. 工具调用失败
 - 检查工具参数和格式
-- 核实服务器特定要求
+- 了解服务器特定要求
 - 实现适当的错误处理
 
 ### 3. 性能问题
@@ -210,12 +210,12 @@ if __name__ == "__main__":
 
 进一步提升您的 MCP 集成：
 
-1. **探索自定义 MCP 服务器**：构建专有数据源的 MCP 服务器
+1. **探索自定义 MCP 服务器**：为专有数据源构建自己的 MCP 服务器
 2. **实现高级安全**：添加 OAuth2 或自定义身份验证机制
 3. **监控与分析**：实现工具使用的日志记录和监控
 4. **扩展解决方案**：考虑负载均衡和分布式 MCP 服务器架构
 
-## 附加资源
+## 额外资源
 
 - [Azure AI Foundry 文档](https://learn.microsoft.com/azure/ai-foundry/)
 - [Model Context Protocol 示例](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
@@ -228,9 +228,9 @@ if __name__ == "__main__":
 - 查阅 [Azure AI Foundry 文档](https://learn.microsoft.com/azure/ai-foundry/)
 - 访问 [MCP 社区资源](https://modelcontextprotocol.io/)
 
-## 接下来是什么
+## 接下来
 
 - [6. 社区贡献](../../06-CommunityContributions/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T17:16:23+00:00",
+  "translation_date": "2025-07-13T18:15:14+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "tr"
 }
@@ -10,12 +10,12 @@ CO_OP_TRANSLATOR_METADATA:
 Önceki kodda şunları yaptık:
 
 - Kütüphaneleri içe aktardık
-- Bir client örneği oluşturduk ve stdio üzerinden bağlantı kurduk.
+- Bir client örneği oluşturduk ve stdio kullanarak bağlantı kurduk.
 - Prompts, kaynaklar ve araçları listeledik ve hepsini çağırdık.
 
 İşte bu kadar, MCP Server ile iletişim kurabilen bir client.
 
-Bir sonraki alıştırma bölümünde her kod parçasını detaylıca inceleyip ne olup bittiğini açıklayacağız.
+Şimdi bir sonraki alıştırma bölümünde her kod parçasını detaylıca inceleyip ne olup bittiğini açıklayalım.
 
 ## Alıştırma: Bir client yazmak
 
@@ -23,7 +23,7 @@ Yukarıda da belirtildiği gibi, kodu açıklamak için zaman ayıralım ve iste
 
 ### -1- Kütüphaneleri içe aktarma
 
-Gerekli kütüphaneleri içe aktaralım, bir client ve seçtiğimiz taşıma protokolü olan stdio için referanslara ihtiyacımız olacak. stdio, yerel makinenizde çalıştırılmak üzere tasarlanmış bir protokoldür. SSE ise gelecekteki bölümlerde göstereceğimiz başka bir taşıma protokolüdür, ancak şu an için stdio ile devam edelim.
+Gerekli kütüphaneleri içe aktaralım, bir client ve seçtiğimiz taşıma protokolü olan stdio için referanslara ihtiyacımız olacak. stdio, yerel makinenizde çalıştırılmak üzere tasarlanmış bir protokoldür. SSE ise başka bir taşıma protokolüdür ve ilerleyen bölümlerde göstereceğiz, ancak şu an için stdio ile devam edelim.
 
 Şimdi örneklemeye geçelim.
 
@@ -49,7 +49,7 @@ Client'ı çalıştırmak için terminalde aşağıdaki komutu yazın:
 
 Bu ödevde, öğrendiklerinizi kullanarak kendi client'ınızı oluşturacaksınız.
 
-İşte kullanabileceğiniz bir sunucu, client kodunuz aracılığıyla çağırmanız gerekiyor. Sunucuyu daha ilginç hale getirmek için daha fazla özellik ekleyip ekleyemeyeceğinize bakın.
+İşte kullanabileceğiniz bir sunucu, client kodunuz aracılığıyla çağırmanız gerekiyor. Sunucuyu daha ilginç hale getirmek için daha fazla özellik ekleyip ekleyemeyeceğinizi görün.
 
 ## Çözüm
 
@@ -60,8 +60,8 @@ Bu ödevde, öğrendiklerinizi kullanarak kendi client'ınızı oluşturacaksın
 Bu bölümde client'lar hakkında önemli noktalar şunlardır:
 
 - Sunucudaki özellikleri keşfetmek ve çağırmak için kullanılabilirler.
-- Kendini başlatırken bir sunucuyu da başlatabilirler (bu bölümde olduğu gibi), ancak client'lar çalışan sunuculara da bağlanabilir.
-- Önceki bölümde anlatıldığı gibi Inspector gibi alternatiflerin yanında sunucu yeteneklerini test etmek için harika bir yoldur.
+- Kendini başlatırken bir sunucuyu da başlatabilir (bu bölümde olduğu gibi), ancak client'lar çalışan sunuculara da bağlanabilir.
+- Inspector gibi alternatiflerin yanında sunucu yeteneklerini test etmek için harika bir yoldur.
 
 ## Ek Kaynaklar
 
@@ -80,4 +80,4 @@ Bu bölümde client'lar hakkında önemli noktalar şunlardır:
 - Sonraki: [LLM ile client oluşturma](../03-llm-client/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

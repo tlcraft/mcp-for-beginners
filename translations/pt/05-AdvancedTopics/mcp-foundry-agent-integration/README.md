@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:13:42+00:00",
+  "translation_date": "2025-07-13T23:54:39+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "pt"
 }
 -->
 # Integração do Model Context Protocol (MCP) com Azure AI Foundry
 
-Este guia demonstra como integrar servidores Model Context Protocol (MCP) com agentes Azure AI Foundry, permitindo uma orquestração avançada de ferramentas e capacidades de IA empresarial.
+Este guia demonstra como integrar servidores Model Context Protocol (MCP) com agentes Azure AI Foundry, permitindo uma orquestração poderosa de ferramentas e capacidades de IA empresarial.
 
 ## Introdução
 
-O Model Context Protocol (MCP) é um padrão aberto que permite que aplicações de IA se conectem de forma segura a fontes de dados externas e ferramentas. Quando integrado com o Azure AI Foundry, o MCP permite que agentes acedam e interajam com vários serviços externos, APIs e fontes de dados de forma padronizada.
+O Model Context Protocol (MCP) é um padrão aberto que permite que aplicações de IA se liguem de forma segura a fontes de dados externas e ferramentas. Quando integrado com o Azure AI Foundry, o MCP permite que os agentes acedam e interajam com vários serviços externos, APIs e fontes de dados de forma padronizada.
 
-Esta integração combina a flexibilidade do ecossistema de ferramentas do MCP com a robusta estrutura de agentes do Azure AI Foundry, proporcionando soluções de IA empresariais com amplas capacidades de personalização.
+Esta integração combina a flexibilidade do ecossistema de ferramentas do MCP com a estrutura robusta de agentes do Azure AI Foundry, oferecendo soluções de IA de nível empresarial com amplas capacidades de personalização.
 
 **Note:** Se pretende usar MCP no Azure AI Foundry Agent Service, atualmente apenas as seguintes regiões são suportadas: westus, westus2, uaenorth, southindia e switzerlandnorth
 
@@ -27,11 +27,11 @@ No final deste guia, será capaz de:
 - Configurar servidores MCP para uso com agentes Azure AI Foundry
 - Criar e configurar agentes com integração de ferramentas MCP
 - Implementar exemplos práticos usando servidores MCP reais
-- Gerir respostas das ferramentas e citações em conversas dos agentes
+- Gerir respostas das ferramentas e citações em conversas com agentes
 
 ## Pré-requisitos
 
-Antes de começar, assegure-se de que tem:
+Antes de começar, certifique-se de que tem:
 
 - Uma subscrição Azure com acesso ao AI Foundry
 - Python 3.10+ 
@@ -45,9 +45,9 @@ O Model Context Protocol é uma forma padronizada para aplicações de IA se lig
 - **Integração Padronizada**: Interface consistente entre diferentes ferramentas e serviços
 - **Segurança**: Mecanismos seguros de autenticação e autorização
 - **Flexibilidade**: Suporte para várias fontes de dados, APIs e ferramentas personalizadas
-- **Extensibilidade**: Fácil adição de novas capacidades e integrações
+- **Extensibilidade**: Fácil adição de novas funcionalidades e integrações
 
-## Configuração do MCP com Azure AI Foundry
+## Configurar MCP com Azure AI Foundry
 
 ### 1. Configuração do Ambiente
 
@@ -80,7 +80,7 @@ with project_client:
     agent = project_client.agents.create_agent(
         model="gpt-4.1-nano", 
         name="mcp_agent", 
-        instructions="És um assistente prestável. Usa as ferramentas fornecidas para responder às perguntas. Assegura-te de citar as tuas fontes.",
+        instructions="You are a helpful assistant. Use the tools provided to answer questions. Be sure to cite your sources.",
         tools=[
             {
                 "type": "mcp",
@@ -91,7 +91,7 @@ with project_client:
         ],
         tool_resources=None
     )
-    print(f"Agente criado, ID do agente: {agent.id}")
+    print(f"Created agent, agent ID: {agent.id}")
 ```
 
 ## MCP Tool Configuration Options
@@ -133,7 +133,7 @@ def create_mcp_agent_example():
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="És um assistente prestável especializado na documentação Microsoft. Usa o servidor MCP do Microsoft Learn para pesquisar informação precisa e atualizada. Cita sempre as tuas fontes.",
+            instructions="You are a helpful assistant specializing in Microsoft documentation. Use the Microsoft Learn MCP server to search for accurate, up-to-date information. Always cite your sources.",
             tools=[
                 {
                     "type": "mcp",
@@ -144,19 +144,19 @@ def create_mcp_agent_example():
             ],
             tool_resources=None
         )
-        print(f"Agente criado, ID do agente: {agent.id}")    
+        print(f"Created agent, agent ID: {agent.id}")    
         
-        # Criar tópico de conversa
+        # Criar thread de conversa
         thread = project_client.agents.threads.create()
-        print(f"Tópico criado, ID do tópico: {thread.id}")
+        print(f"Created thread, thread ID: {thread.id}")
 
         # Enviar mensagem
         message = project_client.agents.messages.create(
             thread_id=thread.id, 
             role="user", 
-            content="O que é o .NET MAUI? Como se compara ao Xamarin.Forms?",
+            content="What is .NET MAUI? How does it compare to Xamarin.Forms?",
         )
-        print(f"Mensagem criada, ID da mensagem: {message.id}")
+        print(f"Created message, message ID: {message.id}")
 
         # Executar o agente
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
@@ -165,14 +165,14 @@ def create_mcp_agent_example():
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
-            print(f"Estado da execução: {run.status}")
+            print(f"Run status: {run.status}")
 
-        # Analisar passos da execução e chamadas de ferramentas
+        # Analisar passos da execução e chamadas às ferramentas
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
-            print(f"Passo da execução: {step.id}, estado: {step.status}, tipo: {step.type}")
+            print(f"Run step: {step.id}, status: {step.status}, type: {step.type}")
             if step.type == "tool_calls":
-                print("Detalhes da chamada da ferramenta:")
+                print("Detalhes da chamada à ferramenta:")
                 for tool_call in step.step_details.tool_calls:
                     print(json.dumps(tool_call.as_dict(), indent=2))
 
@@ -187,7 +187,7 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-
+  
 
 ## Resolução de Problemas Comuns
 
@@ -196,12 +196,12 @@ if __name__ == "__main__":
 - Confirme as credenciais de autenticação
 - Assegure a conectividade de rede
 
-### 2. Falhas em Chamadas de Ferramentas
-- Reveja os argumentos e formato das chamadas às ferramentas
-- Verifique os requisitos específicos do servidor
-- Implemente um tratamento adequado de erros
+### 2. Falhas nas Chamadas às Ferramentas
+- Reveja os argumentos e o formato das chamadas às ferramentas
+- Verifique requisitos específicos do servidor
+- Implemente tratamento adequado de erros
 
-### 3. Problemas de Performance
+### 3. Problemas de Desempenho
 - Otimize a frequência das chamadas às ferramentas
 - Utilize cache quando apropriado
 - Monitorize os tempos de resposta do servidor
@@ -210,8 +210,8 @@ if __name__ == "__main__":
 
 Para melhorar ainda mais a sua integração MCP:
 
-1. **Explore Servidores MCP Personalizados**: Construa os seus próprios servidores MCP para fontes de dados proprietárias
-2. **Implemente Segurança Avançada**: Adicione OAuth2 ou mecanismos personalizados de autenticação
+1. **Explore Servidores MCP Personalizados**: Crie os seus próprios servidores MCP para fontes de dados proprietárias
+2. **Implemente Segurança Avançada**: Adicione OAuth2 ou mecanismos de autenticação personalizados
 3. **Monitorização e Análise**: Implemente registos e monitorização do uso das ferramentas
 4. **Escale a Sua Solução**: Considere balanceamento de carga e arquiteturas distribuídas de servidores MCP
 
@@ -233,4 +233,4 @@ Para suporte adicional e dúvidas:
 - [6. Contribuições da Comunidade](../../06-CommunityContributions/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional por um humano. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

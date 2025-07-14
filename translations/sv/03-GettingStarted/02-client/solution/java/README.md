@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:11:53+00:00",
+  "translation_date": "2025-07-13T18:34:56+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "sv"
 }
@@ -25,12 +25,12 @@ Innan du kör den här klienten behöver du:
      ```
    - Servern ska vara igång på `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. **Java 21 eller högre** installerat på din dator
+3. **Maven** (ingår via Maven Wrapper)
 
-## What is the SDKClient?
+## Vad är SDKClient?
 
-The `SDKClient` är en Java-applikation som visar hur man:
+`SDKClient` är en Java-applikation som visar hur man:
 - Ansluter till en MCP-server med Server-Sent Events (SSE) transport
 - Listar tillgängliga verktyg från servern
 - Anropar olika kalkylatorfunktioner på distans
@@ -44,7 +44,7 @@ Klienten använder Spring AI MCP-ramverket för att:
 2. **Initiera klient**: Sätter upp MCP-klienten och etablerar anslutningen
 3. **Upptäcka verktyg**: Listar alla tillgängliga kalkylatoroperationer
 4. **Utföra operationer**: Anropar olika matematiska funktioner med exempeldata
-5. **Visa resultat**: Visar resultaten från varje beräkning
+5. **Visa resultat**: Visar resultaten av varje beräkning
 
 ## Projektstruktur
 
@@ -71,10 +71,10 @@ Projektet använder följande viktiga beroenden:
 </dependency>
 ```
 
-Detta beroende tillhandahåller:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - SSE-transport för webbkommunikation
-- MCP-protokollets scheman samt förfrågnings- och svarstyper
+Det här beroendet tillhandahåller:
+- `McpClient` - Huvudgränssnittet för klienten
+- `WebFluxSseClientTransport` - SSE-transport för webbaserad kommunikation
+- MCP-protokollens scheman samt förfrågnings- och svarstyper
 
 ## Bygga projektet
 
@@ -90,25 +90,25 @@ Bygg projektet med Maven-wrappern:
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Note**: Se till att kalkylatorsservern körs på `http://localhost:8080` before executing any of these commands.
+**Note**: Se till att kalkylatorsservern körs på `http://localhost:8080` innan du kör något av dessa kommandon.
 
-## What the Client Does
+## Vad klienten gör
 
-When you run the client, it will:
+När du kör klienten kommer den att:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
+1. **Ansluta** till kalkylatorsservern på `http://localhost:8080`
 2. **Lista verktyg** - Visar alla tillgängliga kalkylatoroperationer
-3. **Utför beräkningar**:
+3. **Utföra beräkningar**:
    - Addition: 5 + 3 = 8
    - Subtraktion: 10 - 4 = 6
    - Multiplikation: 6 × 7 = 42
    - Division: 20 ÷ 4 = 5
-   - Exponentiering: 2^8 = 256
+   - Potens: 2^8 = 256
    - Kvadratrot: √16 = 4
    - Absolutvärde: |-5.5| = 5.5
    - Hjälp: Visar tillgängliga operationer
 
-## Förväntad output
+## Förväntad utdata
 
 ```
 Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
@@ -122,7 +122,7 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Note**: Du kan se Maven-varningar om kvarvarande trådar i slutet – detta är normalt för reaktiva applikationer och betyder inte att något är fel.
+**Note**: Du kan se Maven-varningar om kvarvarande trådar i slutet – detta är normalt för reaktiva applikationer och indikerar inte något fel.
 
 ## Förstå koden
 
@@ -148,7 +148,7 @@ Anropar verktyget "add" med parametrarna a=5.0 och b=3.0.
 ## Felsökning
 
 ### Servern körs inte
-Om du får anslutningsfel, se till att kalkylatorsservern från Kapitel 01 är igång:
+Om du får anslutningsfel, kontrollera att kalkylatorsservern från Kapitel 01 är igång:
 ```
 Error: Connection refused
 ```
@@ -159,7 +159,7 @@ Om port 8080 är upptagen:
 ```
 Error: Address already in use
 ```
-**Lösning**: Stäng andra applikationer som använder port 8080 eller ändra servern att använda en annan port.
+**Lösning**: Stoppa andra program som använder port 8080 eller ändra servern till att använda en annan port.
 
 ### Byggfel
 Om du stöter på byggfel:
@@ -167,11 +167,11 @@ Om du stöter på byggfel:
 .\mvnw clean install -DskipTests
 ```
 
-## Lär dig mer
+## Läs mer
 
 - [Spring AI MCP Documentation](https://docs.spring.io/spring-ai/reference/api/mcp/)
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/)
 - [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

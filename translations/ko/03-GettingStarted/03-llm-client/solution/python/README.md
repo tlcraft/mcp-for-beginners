@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24531f2b6b0f7fa3839accf4dc10088a",
-  "translation_date": "2025-05-16T14:59:33+00:00",
+  "translation_date": "2025-07-13T19:15:22+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/python/README.md",
   "language_code": "ko"
 }
@@ -37,7 +37,7 @@ pip install azure-ai-inference
 python client.py
 ```
 
-다음과 비슷한 출력 결과가 나타납니다:
+다음과 비슷한 출력이 나타날 것입니다:
 
 ```text
 LISTING RESOURCES
@@ -55,4 +55,4 @@ TOOLS result:  [TextContent(type='text', text='22', annotations=None)]
 ```
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 내용이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서의 원어 버전이 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해서는 당사가 책임지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-10T16:22:34+00:00",
+  "translation_date": "2025-07-13T20:50:08+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "hu"
 }
 -->
 # HTTPS Streaming a Model Context Protocol-lal (MCP)
 
-Ez a fejezet átfogó útmutatót nyújt a biztonságos, skálázható és valós idejű streaming megvalósításához a Model Context Protocol (MCP) használatával HTTPS-en keresztül. Bemutatja a streaming motivációját, a rendelkezésre álló szállítási mechanizmusokat, hogyan valósítható meg streamelhető HTTP MCP-ben, a biztonsági legjobb gyakorlatokat, az SSE-ről való átállást, valamint gyakorlati útmutatást saját streaming MCP alkalmazások építéséhez.
+Ez a fejezet átfogó útmutatót nyújt a biztonságos, skálázható és valós idejű streaming megvalósításához a Model Context Protocol (MCP) használatával HTTPS-en keresztül. Bemutatja a streaming motivációját, a rendelkezésre álló szállítási mechanizmusokat, hogyan valósítható meg streamelhető HTTP az MCP-ben, a biztonsági legjobb gyakorlatokat, az SSE-ről való átállást, valamint gyakorlati útmutatást saját streaming MCP alkalmazások építéséhez.
 
-## Szállítási mechanizmusok és streaming MCP-ben
+## Szállítási mechanizmusok és streaming az MCP-ben
 
 Ebben a részben megvizsgáljuk az MCP-ben elérhető különböző szállítási mechanizmusokat, és azok szerepét a valós idejű kommunikáció streaming képességeinek biztosításában kliens és szerver között.
 
@@ -28,14 +28,15 @@ A szállítási mechanizmus meghatározza, hogyan cserélődnek az adatok a klie
 Nézd meg az alábbi összehasonlító táblázatot, hogy megértsd a különbségeket ezek között a szállítási mechanizmusok között:
 
 | Szállítás          | Valós idejű frissítések | Streaming | Skálázhatóság | Használati eset          |
-|--------------------|------------------------|-----------|---------------|--------------------------|
-| stdio              | Nem                    | Nem       | Alacsony      | Helyi CLI eszközök       |
+|--------------------|------------------------|-----------|---------------|-------------------------|
+| stdio              | Nem                    | Nem       | Alacsony      | Helyi CLI eszközök      |
 | SSE                | Igen                   | Igen      | Közepes       | Web, valós idejű frissítések |
-| Streamable HTTP    | Igen                   | Igen      | Magas         | Felhő, több kliens       |
+| Streamable HTTP    | Igen                   | Igen      | Magas         | Felhő, több kliens      |
 
-> **Tip:** A megfelelő szállítási mód kiválasztása befolyásolja a teljesítményt, skálázhatóságot és a felhasználói élményt. A **Streamable HTTP** ajánlott modern, skálázható és felhőbarát alkalmazásokhoz.
+> [!TIP]
+> A megfelelő szállítási mód kiválasztása befolyásolja a teljesítményt, skálázhatóságot és a felhasználói élményt. A **Streamable HTTP** ajánlott modern, skálázható és felhőbarát alkalmazásokhoz.
 
-Figyeld meg a stdio és SSE szállításokat, amelyeket az előző fejezetekben láttál, és hogy ebben a fejezetben a streamelhető HTTP a tárgyalt szállítás.
+Jegyezd meg a stdio és SSE szállításokat, amelyeket az előző fejezetekben láttál, és hogy ebben a fejezetben a streamelhető HTTP szállításról lesz szó.
 
 ## Streaming: Fogalmak és motiváció
 
@@ -45,11 +46,11 @@ A **streaming** egy hálózati programozási technika, amely lehetővé teszi, h
 
 - Nagy fájlok vagy adathalmazok esetén.
 - Valós idejű frissítésekhez (pl. chat, folyamatjelző sávok).
-- Hosszú ideig futó számításoknál, amikor szeretnénk a felhasználót folyamatosan tájékoztatni.
+- Hosszú futású számításoknál, amikor folyamatosan tájékoztatni szeretnénk a felhasználót.
 
 Íme, amit a streamingről tudni érdemes magas szinten:
 
-- Az adat fokozatosan érkezik, nem egyszerre.
+- Az adatok fokozatosan érkeznek, nem egyszerre.
 - A kliens az adatok érkezésekor azonnal feldolgozhatja azokat.
 - Csökkenti az észlelt késleltetést és javítja a felhasználói élményt.
 
@@ -106,7 +107,7 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Ez a példa bemutatja, hogy a szerver egy sor üzenetet küld a kliensnek, amint azok elérhetővé válnak, ahelyett, hogy az összes üzenet elkészülésére várna.
+Ez a példa bemutatja, hogy a szerver üzenetek sorozatát küldi a kliensnek, ahogy azok elérhetővé válnak, nem pedig egyszerre várja meg az összes üzenet elkészülését.
 
 **Hogyan működik:**
 - A szerver minden üzenetet akkor küld, amikor az elkészül.
@@ -190,7 +191,7 @@ public class CalculatorClientApplication implements CommandLineRunner {
 - `ServerSentEvent` strukturált esemény streaminget biztosít eseménytípusokkal
 - `WebClient` `bodyToFlux()`-szal reaktív streaming fogyasztást tesz lehetővé
 - `delayElements()` szimulálja az események közötti feldolgozási időt
-- Az események típusokat kaphatnak (`info`, `result`) a jobb klienskezelés érdekében
+- Az események típusokat kaphatnak (`info`, `result`) a jobb kliensoldali kezeléshez
 
 </details>
 
@@ -200,48 +201,48 @@ A különbségek a "klasszikus" streaming és az MCP streaming között az aláb
 
 | Jellemző               | Klasszikus HTTP streaming       | MCP streaming (értesítések)         |
 |------------------------|--------------------------------|------------------------------------|
-| Fő válasz              | Darabolt (chunked)              | Egyetlen, a végén                   |
-| Folyamatjelentések     | Adatdarabokként küldve          | Értesítésekként küldve              |
-| Kliens követelmények   | Stream feldolgozása szükséges   | Üzenetkezelő implementálása szükséges |
-| Használati eset        | Nagy fájlok, AI token stream-ek | Folyamatjelentések, naplók, valós idejű visszajelzés |
+| Fő válasz              | Darabolt                       | Egyetlen, a végén                   |
+| Haladás frissítések    | Adatdarabokként küldve         | Értesítésekként küldve              |
+| Kliens követelmények   | Stream feldolgozása szükséges  | Üzenetkezelő implementálása szükséges |
+| Használati eset        | Nagy fájlok, AI token stream-ek | Haladás, naplók, valós idejű visszajelzés |
 
 ### Fontosabb különbségek
 
-Továbbá, itt néhány kulcsfontosságú különbség:
+Továbbá, itt vannak a legfontosabb különbségek:
 
 - **Kommunikációs minta:**
-   - Klasszikus HTTP streaming: Egyszerű chunked átvitel az adatok darabokban küldéséhez
+   - Klasszikus HTTP streaming: Egyszerű darabolt átvitel
    - MCP streaming: Strukturált értesítési rendszer JSON-RPC protokollal
 
-- **Üzenetformátum:**
+- **Üzenet formátum:**
    - Klasszikus HTTP: Egyszerű szöveges darabok új sorokkal
    - MCP: Strukturált LoggingMessageNotification objektumok metaadatokkal
 
 - **Kliens megvalósítás:**
-   - Klasszikus HTTP: Egyszerű kliens, amely feldolgozza a streaming válaszokat
+   - Klasszikus HTTP: Egyszerű kliens, amely feldolgozza a streaming választ
    - MCP: Összetettebb kliens, amely üzenetkezelőt használ különböző üzenettípusok feldolgozására
 
-- **Folyamatjelentések:**
-   - Klasszikus HTTP: A folyamatjelentés a fő válasz része
-   - MCP: A folyamatjelentés külön értesítési üzenetekben érkezik, míg a fő válasz a végén jön
+- **Haladás frissítések:**
+   - Klasszikus HTTP: A haladás a fő válasz része
+   - MCP: A haladás külön értesítési üzenetekben érkezik, míg a fő válasz a végén jön
 
 ### Ajánlások
 
-Néhány javaslat a klasszikus streaming (például a fent bemutatott `/stream` végpont) és az MCP streaming közötti választáshoz:
+Néhány javaslat a klasszikus streaming (pl. `/stream` végpont) és az MCP streaming közötti választáshoz:
 
-- **Egyszerű streaming igényekhez:** A klasszikus HTTP streaming egyszerűbb megvalósítani, és elegendő az alapvető streaming igényekhez.
+- **Egyszerű streaming igényekhez:** A klasszikus HTTP streaming egyszerűbb és elegendő az alapvető streaminghez.
 
-- **Összetett, interaktív alkalmazásokhoz:** Az MCP streaming strukturáltabb megközelítést kínál gazdagabb metaadatokkal és az értesítések és a végső eredmény szétválasztásával.
+- **Összetett, interaktív alkalmazásokhoz:** Az MCP streaming strukturáltabb megközelítést kínál gazdagabb metaadatokkal és az értesítések és végső eredmények szétválasztásával.
 
-- **AI alkalmazásokhoz:** Az MCP értesítési rendszere különösen hasznos hosszú ideig futó AI feladatoknál, ahol fontos a felhasználók folyamatos tájékoztatása.
+- **AI alkalmazásokhoz:** Az MCP értesítési rendszere különösen hasznos hosszú futású AI feladatoknál, ahol folyamatosan tájékoztatni szeretnénk a felhasználókat a haladásról.
 
-## Streaming MCP-ben
+## Streaming az MCP-ben
 
-Rendben, eddig láttál néhány ajánlást és összehasonlítást a klasszikus streaming és az MCP streaming között. Most nézzük meg részletesen, hogyan használhatod ki a streaminget MCP-ben.
+Most, hogy láttál néhány ajánlást és összehasonlítást a klasszikus streaming és az MCP streaming között, nézzük meg részletesen, hogyan használhatod ki a streaminget az MCP-ben.
 
-Az MCP keretrendszeren belüli streaming működésének megértése elengedhetetlen olyan reszponzív alkalmazások építéséhez, amelyek valós idejű visszajelzést adnak a felhasználóknak hosszú ideig tartó műveletek során.
+Az MCP keretrendszeren belüli streaming működésének megértése elengedhetetlen olyan reszponzív alkalmazások építéséhez, amelyek valós idejű visszajelzést adnak a felhasználóknak hosszú futású műveletek során.
 
-Az MCP-ben a streaming nem arról szól, hogy a fő választ darabokban küldjük, hanem arról, hogy **értesítéseket** küldünk a kliensnek, miközben egy eszköz feldolgoz egy kérést. Ezek az értesítések tartalmazhatnak folyamatjelentéseket, naplókat vagy egyéb eseményeket.
+Az MCP-ben a streaming nem arról szól, hogy a fő választ darabokban küldjük, hanem arról, hogy **értesítéseket** küldünk a kliensnek, miközben egy eszköz feldolgoz egy kérést. Ezek az értesítések tartalmazhatnak haladásfrissítéseket, naplókat vagy egyéb eseményeket.
 
 ### Hogyan működik?
 
@@ -251,11 +252,11 @@ A fő eredmény továbbra is egyetlen válaszként érkezik. Azonban az értesí
 
 Mondtuk, hogy "értesítés" – mit jelent ez az MCP kontextusában?
 
-Az értesítés egy olyan üzenet, amelyet a szerver küld a kliensnek, hogy tájékoztassa a folyamat állapotáról, előrehaladásáról vagy egyéb eseményekről egy hosszú ideig tartó művelet során. Az értesítések növelik az átláthatóságot és javítják a felhasználói élményt.
+Az értesítés egy olyan üzenet, amelyet a szerver küld a kliensnek, hogy tájékoztassa a haladásról, állapotról vagy egyéb eseményekről egy hosszú futású művelet során. Az értesítések növelik az átláthatóságot és javítják a felhasználói élményt.
 
-Például a kliensnek értesítést kell küldenie, amikor az első kézfogás (handshake) megtörtént a szerverrel.
+Például a kliensnek értesítést kell küldenie, amikor a kezdeti kézfogás a szerverrel megtörtént.
 
-Egy értesítés JSON üzenetként így néz ki:
+Az értesítés JSON üzenetként így néz ki:
 
 ```json
 {
@@ -280,28 +281,28 @@ A naplózás működéséhez a szervernek engedélyeznie kell ezt a funkciót/k�
 ```
 
 > [!NOTE]
-> Az SDK-tól függően a naplózás alapértelmezés szerint engedélyezve lehet, vagy explicit módon kell bekapcsolni a szerver konfigurációjában.
+> Az SDK-tól függően a naplózás alapértelmezés szerint engedélyezve lehet, vagy explicit módon be kell kapcsolni a szerver konfigurációjában.
 
 Különböző értesítéstípusok léteznek:
 
 | Szint      | Leírás                        | Példahasználat                |
 |------------|------------------------------|------------------------------|
 | debug      | Részletes hibakeresési információk | Függvény belépési/kilépési pontok |
-| info       | Általános információs üzenetek | Művelet előrehaladásának frissítései |
-| notice     | Normál, de jelentős események | Konfigurációs változások      |
+| info       | Általános információs üzenetek | Művelet haladásfrissítések    |
+| notice     | Normál, de jelentős események  | Konfigurációs változások      |
 | warning    | Figyelmeztető állapotok       | Elavult funkció használata    |
-| error      | Hibás állapotok               | Művelet sikertelenségei       |
+| error      | Hibás állapotok               | Művelet sikertelenségek       |
 | critical   | Kritikus állapotok            | Rendszerkomponens hibák       |
 | alert      | Azonnali beavatkozás szükséges | Adatkorrupt állapot észlelése |
 | emergency  | A rendszer használhatatlan    | Teljes rendszerleállás        |
 
-## Értesítések megvalósítása MCP-ben
+## Értesítések megvalósítása az MCP-ben
 
-Az értesítések megvalósításához MCP-ben mind a szerver, mind a kliens oldalon be kell állítani a valós idejű frissítések kezelését. Ez lehetővé teszi, hogy az alkalmazás azonnali visszajelzést adjon a felhasználóknak hosszú ideig tartó műveletek során.
+Az MCP-ben az értesítések megvalósításához mind a szerver, mind a kliens oldalon be kell állítani a valós idejű frissítések kezelését. Ez lehetővé teszi, hogy az alkalmazás azonnali visszajelzést adjon a felhasználóknak hosszú futású műveletek során.
 
 ### Szerveroldal: Értesítések küldése
 
-Kezdjük a szerver oldallal. MCP-ben olyan eszközöket definiálsz, amelyek képesek értesítéseket küldeni a kérések feldolgozása közben. A szerver a kontextus objektumot (általában `ctx`) használja az üzenetek kliensnek küldésére.
+Kezdjük a szerver oldallal. Az MCP-ben olyan eszközöket definiálsz, amelyek képesek értesítéseket küldeni a kérések feldolgozása közben. A szerver a kontextus objektumot (általában `ctx`) használja az üzenetek kliensnek küldésére.
 
 <details>
 <summary>Python</summary>
@@ -318,7 +319,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-A fenti példában a `process_files` eszköz három értesítést küld a kliensnek, miközben feldolgozza az egyes fájlokat. A `ctx.info()` metódust használja információs üzenetek küldésére.
+A fenti példában a `process_files` eszköz három értesítést küld a kliensnek, miközben feldolgozza az egyes fájlokat. Az `ctx.info()` metódust használja információs üzenetek küldésére.
 
 </details>
 
@@ -348,7 +349,7 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 }
 ```
 
-Ebben a .NET példában a `ProcessFiles` eszköz a `Tool` attribútummal van ellátva, és három értesítést küld a kliensnek, miközben feldolgozza az egyes fájlokat. A `ctx.Info()` metódust használja információs üzenetek küldésére.
+Ebben a .NET példában a `ProcessFiles` eszköz a `Tool` attribútummal van ellátva, és három értesítést küld a kliensnek, miközben feldolgozza az egyes fájlokat. Az `ctx.Info()` metódust használja információs üzenetek küldésére.
 
 Az értesítések engedélyezéséhez a .NET MCP szerveredben győződj meg róla, hogy streaming szállítást használsz:
 
@@ -384,7 +385,7 @@ async with ClientSession(
 ) as session:
 ```
 
-A fenti kódban a `message_handler` függvény ellenőrzi, hogy az érkező üzenet értesítés-e. Ha igen, kiírja az értesítést; különben normál szerverüzenetként dolgozza fel. Figyeld meg, hogy a `ClientSession` inicializálásakor a `message_handler` van megadva az értesítések kezelésére.
+A fenti kódban a `message_handler` függvény ellenőrzi, hogy az érkező üzenet értesítés-e. Ha igen, kiírja az értesítést; különben a szerver üzeneteként dolgozza fel. Figyeld meg, hogy a `ClientSession` inicializálásakor a `message_handler` van megadva az értesítések kezelésére.
 
 </details>
 
@@ -418,17 +419,17 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-Ebben a .NET példában a `MessageHandler` függvény ellenőrzi, hogy az érkező üzenet értesítés-e. Ha igen, kiírja az értesítést; különben normál szerverüzenetként dolgozza fel. A `ClientSession` a `ClientSessionOptions` segítségével inicializálódik az üzenetkezelővel.
+Ebben a .NET példában a `MessageHandler` függvény ellenőrzi, hogy az érkező üzenet értesítés-e. Ha igen, kiírja az értesítést; különben a szerver üzeneteként dolgozza fel. A `ClientSession` a `ClientSessionOptions` segítségével inicializálódik az üzenetkezelővel.
 
 </details>
 
 Az értesítések engedélyezéséhez győződj meg róla, hogy a szerver streaming szállítást használ (például `streamable-http`), és a kliens üzenetkezelőt valósít meg az értesítések feldolgozására.
 
-## Folyamatjelentések és használati esetek
+## Haladás értesítések és forgatókönyvek
 
-Ez a rész bemutatja a folyamatjelentések fogalmát MCP-ben, miért fontosak, és hogyan valósíthatók meg Streamable HTTP segítségével. Találsz egy gyakorlati feladatot is a megértés elmélyítésére.
+Ez a rész bemutatja a haladás értesítések fogalmát az MCP-ben, miért fontosak, és hogyan valósíthatók meg Streamable HTTP használatával. Találsz egy gyakorlati feladatot is a megértésed elmélyítésére.
 
-A folyamatjelentések valós idejű üzenetek, amelyeket a
+A haladás értesítések valós idejű üzenetek, amelyeket a szerver küld a kliensnek hosszú futású műveletek során. Ahelyett, hogy a teljes folyamat befejezésére várnánk, a
 
 <summary>Python</summary>
 
@@ -460,14 +461,14 @@ async def message_handler(message):
 
 ## Biztonsági szempontok
 
-HTTP-alapú transzportokkal megvalósított MCP szerverek esetén a biztonság kiemelt fontosságú, amely többféle támadási vektor és védekezési mechanizmus alapos figyelembevételét igényli.
+HTTP-alapú átvitelek használatakor az MCP szerverek megvalósításánál a biztonság kiemelt fontosságú, amely többféle támadási vektor és védekezési mechanizmus alapos figyelembevételét igényli.
 
 ### Áttekintés
 
-A biztonság kulcsfontosságú, ha MCP szervereket teszünk elérhetővé HTTP-n keresztül. A streamelhető HTTP új támadási felületeket hoz, ezért gondos konfiguráció szükséges.
+A biztonság kulcsfontosságú, ha MCP szervereket teszünk elérhetővé HTTP-n keresztül. A streamelhető HTTP új támadási felületeket hoz létre, ezért gondos konfiguráció szükséges.
 
 ### Főbb pontok
-- **Origin fejléc ellenőrzése**: Mindig ellenőrizd az `Origin` fejlécet, hogy megakadályozd a DNS rebinding támadásokat.
+- **Origin fejléc ellenőrzése**: Mindig ellenőrizd az `Origin` fejlécet, hogy megakadályozd a DNS újracímzéses támadásokat.
 - **Localhost kötés**: Fejlesztéshez köss a szervereket `localhost`-hoz, hogy ne legyenek nyilvánosan elérhetők.
 - **Hitelesítés**: Éles környezetben alkalmazz hitelesítést (pl. API kulcsok, OAuth).
 - **CORS**: Állíts be Cross-Origin Resource Sharing (CORS) szabályokat a hozzáférés korlátozására.
@@ -475,12 +476,12 @@ A biztonság kulcsfontosságú, ha MCP szervereket teszünk elérhetővé HTTP-n
 
 ### Legjobb gyakorlatok
 - Soha ne bízz meg érkező kérésekben validálás nélkül.
-- Naplózz és figyelj minden hozzáférést és hibát.
+- Naplózz és figyeld az összes hozzáférést és hibát.
 - Rendszeresen frissítsd a függőségeket a biztonsági rések javítása érdekében.
 
 ### Kihívások
 - A biztonság és a fejlesztési egyszerűség egyensúlyának megtalálása
-- Különböző kliens környezetekkel való kompatibilitás biztosítása
+- A különböző kliens környezetekkel való kompatibilitás biztosítása
 
 
 ## Frissítés SSE-ről Streamable HTTP-re
@@ -492,7 +493,7 @@ Azoknak az alkalmazásoknak, amelyek jelenleg Server-Sent Events (SSE) technoló
 Két fő ok szól az SSE-ről Streamable HTTP-re való váltás mellett:
 
 - A Streamable HTTP jobb skálázhatóságot, kompatibilitást és gazdagabb értesítési támogatást nyújt, mint az SSE.
-- Ez az ajánlott transzport új MCP alkalmazásokhoz.
+- Ez az ajánlott átvitel az új MCP alkalmazásokhoz.
 
 ### Migrációs lépések
 
@@ -507,8 +508,8 @@ Két fő ok szól az SSE-ről Streamable HTTP-re való váltás mellett:
 
 Ajánlott a migráció során megőrizni a kompatibilitást a meglévő SSE kliensekkel. Néhány megoldás:
 
-- Mindkét transzportot támogathatod, ha különböző végpontokon futtatod őket.
-- Fokozatosan migráld a klienseket az új transzportra.
+- Mindkét átvitel támogatása különböző végpontokon.
+- A kliensek fokozatos átállítása az új átvitelre.
 
 ### Kihívások
 
@@ -519,17 +520,17 @@ A migráció során figyelj az alábbiakra:
 
 ## Biztonsági szempontok
 
-A biztonság kiemelt prioritás kell legyen bármilyen szerver megvalósításakor, különösen HTTP-alapú transzportok, például a Streamable HTTP használatakor az MCP-ben.
+A biztonság kiemelt fontosságú bármilyen szerver megvalósításánál, különösen HTTP-alapú átvitelek, például Streamable HTTP használatakor az MCP-ben.
 
-HTTP-alapú transzportokkal megvalósított MCP szerverek esetén a biztonság kiemelt fontosságú, amely többféle támadási vektor és védekezési mechanizmus alapos figyelembevételét igényli.
+HTTP-alapú átvitelek esetén a biztonság többféle támadási vektor és védekezési mechanizmus alapos figyelembevételét igényli.
 
 ### Áttekintés
 
-A biztonság kulcsfontosságú, ha MCP szervereket teszünk elérhetővé HTTP-n keresztül. A Streamable HTTP új támadási felületeket hoz, ezért gondos konfiguráció szükséges.
+A biztonság kritikus, ha MCP szervereket teszünk elérhetővé HTTP-n keresztül. A Streamable HTTP új támadási felületeket hoz létre, ezért gondos konfiguráció szükséges.
 
 Néhány fontos biztonsági szempont:
 
-- **Origin fejléc ellenőrzése**: Mindig ellenőrizd az `Origin` fejlécet, hogy megakadályozd a DNS rebinding támadásokat.
+- **Origin fejléc ellenőrzése**: Mindig ellenőrizd az `Origin` fejlécet, hogy megakadályozd a DNS újracímzéses támadásokat.
 - **Localhost kötés**: Fejlesztéshez köss a szervereket `localhost`-hoz, hogy ne legyenek nyilvánosan elérhetők.
 - **Hitelesítés**: Éles környezetben alkalmazz hitelesítést (pl. API kulcsok, OAuth).
 - **CORS**: Állíts be Cross-Origin Resource Sharing (CORS) szabályokat a hozzáférés korlátozására.
@@ -540,7 +541,7 @@ Néhány fontos biztonsági szempont:
 Ezen felül az MCP streaming szerver biztonságának megvalósításakor érdemes követni az alábbi legjobb gyakorlatokat:
 
 - Soha ne bízz meg érkező kérésekben validálás nélkül.
-- Naplózz és figyelj minden hozzáférést és hibát.
+- Naplózz és figyeld az összes hozzáférést és hibát.
 - Rendszeresen frissítsd a függőségeket a biztonsági rések javítása érdekében.
 
 ### Kihívások
@@ -548,17 +549,17 @@ Ezen felül az MCP streaming szerver biztonságának megvalósításakor érdeme
 Az MCP streaming szerverek biztonságának megvalósítása során az alábbi kihívásokkal találkozhatsz:
 
 - A biztonság és a fejlesztési egyszerűség egyensúlyának megtalálása
-- Különböző kliens környezetekkel való kompatibilitás biztosítása
+- A különböző kliens környezetekkel való kompatibilitás biztosítása
 
 ### Feladat: Építsd meg saját streaming MCP alkalmazásodat
 
 **Forgatókönyv:**
-Készíts egy MCP szervert és klienst, ahol a szerver egy elemlistát (pl. fájlok vagy dokumentumok) dolgoz fel, és minden feldolgozott elemhez értesítést küld. A kliensnek valós időben kell megjelenítenie az értesítéseket.
+Készíts egy MCP szervert és klienst, ahol a szerver egy elemlistát dolgoz fel (pl. fájlok vagy dokumentumok), és minden feldolgozott elemhez értesítést küld. A kliensnek valós időben kell megjelenítenie az érkező értesítéseket.
 
 **Lépések:**
 
 1. Valósíts meg egy szerver eszközt, amely feldolgoz egy listát és értesítéseket küld minden elemhez.
-2. Valósíts meg egy klienst, amely üzenetkezelővel valós időben jeleníti meg az értesítéseket.
+2. Valósíts meg egy klienst üzenetkezelővel, amely valós időben jeleníti meg az értesítéseket.
 3. Teszteld a megvalósítást úgy, hogy egyszerre futtatod a szervert és a klienst, és figyeled az értesítéseket.
 
 [Solution](./solution/README.md)
@@ -572,12 +573,12 @@ Ahhoz, hogy tovább mélyítsd MCP streaming ismereteidet és fejlettebb alkalma
 - [Microsoft: Bevezetés a HTTP streamingbe](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Microsoft: CORS az ASP.NET Core-ban](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
-- [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
+- [Python requests: Streaming kérések](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
 
 ### Mi következik?
 
 - Próbálj meg fejlettebb MCP eszközöket építeni, amelyek streaminget használnak valós idejű elemzéshez, csevegéshez vagy együttműködő szerkesztéshez.
-- Fedezd fel az MCP streaming integrálását frontend keretrendszerekkel (React, Vue stb.) az élő UI frissítésekhez.
+- Fedezd fel az MCP streaming integrálását frontend keretrendszerekkel (React, Vue, stb.) az élő UI frissítésekhez.
 - Következő: [AI Toolkit használata VSCode-ban](../07-aitk/README.md)
 
 **Jogi nyilatkozat**:  

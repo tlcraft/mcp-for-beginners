@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2aa9dbc165e104764fa57e8a0d3f1c73",
-  "translation_date": "2025-06-10T05:18:41+00:00",
+  "translation_date": "2025-07-14T07:25:30+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab1/README.md",
   "language_code": "br"
 }
 -->
-# 🚀 Module 1: Fundamentos do AI Toolkit
+# 🚀 Módulo 1: Fundamentos do AI Toolkit
 
 [![Duration](https://img.shields.io/badge/Duration-15%20minutes-blue.svg)]()
 [![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-green.svg)]()
@@ -20,7 +20,7 @@ Ao final deste módulo, você será capaz de:
 - ✅ Navegar pelo Catálogo de Modelos e entender as diferentes fontes de modelos
 - ✅ Usar o Playground para testar e experimentar com modelos
 - ✅ Criar agentes de IA personalizados usando o Agent Builder
-- ✅ Comparar o desempenho dos modelos entre diferentes provedores
+- ✅ Comparar o desempenho de modelos entre diferentes provedores
 - ✅ Aplicar as melhores práticas para engenharia de prompts
 
 ## 🧠 Introdução ao AI Toolkit (AITK)
@@ -33,30 +33,30 @@ O **AI Toolkit para Visual Studio Code** é a extensão principal da Microsoft q
 |---------|-------------|----------|
 | **🗂️ Catálogo de Modelos** | Acesso a mais de 100 modelos do GitHub, ONNX, OpenAI, Anthropic, Google | Descoberta e seleção de modelos |
 | **🔌 Suporte BYOM** | Integre seus próprios modelos (locais/remotos) | Implantação personalizada de modelos |
-| **🎮 Playground Interativo** | Testes em tempo real com interface de chat | Prototipagem rápida e testes |
+| **🎮 Playground Interativo** | Teste de modelos em tempo real com interface de chat | Protótipos rápidos e testes |
 | **📎 Suporte Multimodal** | Trabalha com texto, imagens e anexos | Aplicações complexas de IA |
-| **⚡ Processamento em Lote** | Execute múltiplos prompts simultaneamente | Fluxos de teste eficientes |
+| **⚡ Processamento em Lote** | Execute múltiplos prompts simultaneamente | Fluxos de trabalho de teste eficientes |
 | **📊 Avaliação de Modelos** | Métricas integradas (F1, relevância, similaridade, coerência) | Avaliação de desempenho |
 
 ### 🎯 Por que o AI Toolkit é Importante
 
-- **🚀 Desenvolvimento Acelerado**: Do conceito ao protótipo em minutos
-- **🔄 Fluxo Unificado**: Uma interface para múltiplos provedores de IA
+- **🚀 Desenvolvimento Acelerado**: Da ideia ao protótipo em minutos
+- **🔄 Fluxo de Trabalho Unificado**: Uma interface para múltiplos provedores de IA
 - **🧪 Experimentação Fácil**: Compare modelos sem configurações complexas
 - **📈 Pronto para Produção**: Transição suave do protótipo para implantação
 
-## 🛠️ Pré-requisitos e Configuração
+## 🛠️ Pré-requisitos & Configuração
 
 ### 📦 Instalar a Extensão AI Toolkit
 
-**Passo 1: Acessar o Marketplace de Extensões**
+**Passo 1: Acesse o Marketplace de Extensões**
 1. Abra o Visual Studio Code
-2. Vá para a visão de Extensões (`Ctrl+Shift+X` ou `Cmd+Shift+X`)
+2. Vá para a visualização de Extensões (`Ctrl+Shift+X` ou `Cmd+Shift+X`)
 3. Procure por "AI Toolkit"
 
-**Passo 2: Escolha sua Versão**
+**Passo 2: Escolha Sua Versão**
 - **🟢 Release**: Recomendado para uso em produção
-- **🔶 Pré-release**: Acesso antecipado a recursos avançados
+- **🔶 Pré-lançamento**: Acesso antecipado a recursos inovadores
 
 **Passo 3: Instale e Ative**
 
@@ -73,7 +73,7 @@ O **AI Toolkit para Visual Studio Code** é a extensão principal da Microsoft q
 
 ### 📊 Passo 1: Navegar pelo Catálogo de Modelos
 
-O Catálogo de Modelos é sua porta de entrada para o ecossistema de IA. Ele agrega modelos de vários provedores, facilitando a descoberta e comparação.
+O Catálogo de Modelos é sua porta de entrada para o ecossistema de IA. Ele agrega modelos de vários provedores, facilitando a descoberta e comparação de opções.
 
 **🔍 Guia de Navegação:**
 
@@ -81,28 +81,28 @@ Clique em **MODELS - Catalog** na barra lateral do AI Toolkit
 
 ![Model Catalog](../../../../translated_images/aimodel.263ed2be013d8fb0e2265c4f742cfe490f6f00eca5e132ec50438c8e826e34ed.br.png)
 
-**💡 Dica Profissional**: Procure por modelos com capacidades específicas que atendam seu caso de uso (ex: geração de código, escrita criativa, análise).
+**💡 Dica Profissional**: Procure por modelos com capacidades específicas que atendam ao seu caso de uso (ex: geração de código, escrita criativa, análise).
 
-**⚠️ Nota**: Modelos hospedados no GitHub (ou seja, GitHub Models) são gratuitos, mas têm limites de taxa para requisições e tokens. Para acessar modelos fora do GitHub (por exemplo, modelos externos via Azure AI ou outros endpoints), será necessário fornecer a chave API ou autenticação adequada.
+**⚠️ Nota**: Modelos hospedados no GitHub (ou seja, GitHub Models) são gratuitos para uso, mas estão sujeitos a limites de taxa para requisições e tokens. Se quiser acessar modelos fora do GitHub (modelos externos hospedados via Azure AI ou outros endpoints), será necessário fornecer a chave de API ou autenticação apropriada.
 
-### 🚀 Passo 2: Adicionar e Configurar seu Primeiro Modelo
+### 🚀 Passo 2: Adicionar e Configurar Seu Primeiro Modelo
 
 **Estratégia de Seleção de Modelo:**
-- **GPT-4.1**: Melhor para raciocínio complexo e análise
+- **GPT-4.1**: Ideal para raciocínio complexo e análise
 - **Phi-4-mini**: Leve, respostas rápidas para tarefas simples
 
 **🔧 Processo de Configuração:**
 1. Selecione **OpenAI GPT-4.1** no catálogo
 2. Clique em **Add to My Models** - isso registra o modelo para uso
 3. Escolha **Try in Playground** para abrir o ambiente de testes
-4. Aguarde a inicialização do modelo (a configuração inicial pode demorar um pouco)
+4. Aguarde a inicialização do modelo (a configuração inicial pode levar um momento)
 
 ![Playground Setup](../../../../translated_images/playground.dd6f5141344878ca4d4f3de819775da7b113518941accf37c291117c602f85db.br.png)
 
 **⚙️ Entendendo os Parâmetros do Modelo:**
 - **Temperature**: Controla a criatividade (0 = determinístico, 1 = criativo)
 - **Max Tokens**: Tamanho máximo da resposta
-- **Top-p**: Amostragem núcleo para diversidade nas respostas
+- **Top-p**: Amostragem núcleo para diversidade na resposta
 
 ### 🎯 Passo 3: Domine a Interface do Playground
 
@@ -111,8 +111,8 @@ O Playground é seu laboratório de experimentação com IA. Veja como tirar o m
 **🎨 Melhores Práticas para Engenharia de Prompts:**
 1. **Seja Específico**: Instruções claras e detalhadas geram melhores resultados
 2. **Forneça Contexto**: Inclua informações relevantes de fundo
-3. **Use Exemplos**: Mostre ao modelo o que deseja com exemplos
-4. **Itere**: Aperfeiçoe os prompts com base nos resultados iniciais
+3. **Use Exemplos**: Mostre ao modelo o que você quer com exemplos
+4. **Itere**: Refine os prompts com base nos resultados iniciais
 
 **🧪 Cenários de Teste:**
 ```markdown
@@ -128,7 +128,7 @@ O Playground é seu laboratório de experimentação com IA. Veja como tirar o m
 
 ![Testing Results](../../../../translated_images/result.1dfcf211fb359cf65902b09db191d3bfc65713ca15e279c1a30be213bb526949.br.png)
 
-### 🏆 Exercício Desafio: Comparação de Desempenho dos Modelos
+### 🏆 Exercício Desafio: Comparação de Desempenho de Modelos
 
 **🎯 Objetivo**: Compare diferentes modelos usando os mesmos prompts para entender seus pontos fortes
 
@@ -139,14 +139,14 @@ O Playground é seu laboratório de experimentação com IA. Veja como tirar o m
 ![set](../../../../translated_images/set.88132df189ecde2cbbda256c1841db5aac8e9bdeba1a4e343dfa031b9545d6c9.br.png)
 
 3. Compare qualidade, velocidade e precisão das respostas
-4. Documente suas conclusões na seção de resultados
+4. Documente suas descobertas na seção de resultados
 
 ![Model Comparison](../../../../translated_images/compare.97746cd0f907495503c1fc217739f3890dc76ea5f6fd92379a6db0cc331feb58.br.png)
 
 **💡 Insights Importantes para Descobrir:**
 - Quando usar LLM vs SLM
 - Custo vs desempenho
-- Capacidades especializadas de cada modelo
+- Capacidades especializadas de diferentes modelos
 
 ## 🤖 Exercício Prático 2: Construindo Agentes Personalizados com Agent Builder
 
@@ -154,10 +154,10 @@ O Playground é seu laboratório de experimentação com IA. Veja como tirar o m
 
 ### 🏗️ Passo 1: Entendendo o Agent Builder
 
-O Agent Builder é onde o AI Toolkit realmente se destaca. Ele permite criar assistentes de IA sob medida, combinando o poder dos grandes modelos de linguagem com instruções personalizadas, parâmetros específicos e conhecimento especializado.
+O Agent Builder é onde o AI Toolkit realmente se destaca. Ele permite criar assistentes de IA sob medida que combinam o poder dos grandes modelos de linguagem com instruções personalizadas, parâmetros específicos e conhecimento especializado.
 
 **🧠 Componentes da Arquitetura do Agente:**
-- **Modelo Base**: O LLM fundamental (GPT-4, Groks, Phi, etc.)
+- **Modelo Principal**: O LLM base (GPT-4, Groks, Phi, etc.)
 - **System Prompt**: Define a personalidade e comportamento do agente
 - **Parâmetros**: Configurações ajustadas para desempenho ideal
 - **Integração de Ferramentas**: Conexão com APIs externas e serviços MCP
@@ -187,7 +187,7 @@ You are a [specific role] with expertise in [domain].
 Provide 2-3 examples of ideal interactions
 ```
 
-*Claro, você também pode usar Generate System Prompt para que a IA ajude a criar e otimizar prompts*
+*Claro, você também pode usar Generate System Prompt para que a IA te ajude a gerar e otimizar prompts*
 
 **🔧 Otimização de Parâmetros:**
 | Parâmetro | Faixa Recomendada | Caso de Uso |
@@ -197,7 +197,7 @@ Provide 2-3 examples of ideal interactions
 | **Max Tokens** | 500-1000 | Respostas concisas |
 | **Max Tokens** | 2000-4000 | Explicações detalhadas |
 
-### 🐍 Passo 3: Exercício Prático - Agente de Programação Python
+### 🐍 Passo 3: Exercício Prático - Agente de Programação em Python
 
 **🎯 Missão**: Criar um assistente especializado em codificação Python
 
@@ -239,16 +239,16 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 
 ![Python Agent Configuration](../../../../translated_images/pythonagent.5e51b406401c165fcabfd66f2d943c27f46b5fed0f9fb73abefc9e91ca3489d4.br.png)
 
-### 🧪 Passo 4: Testando seu Agente Python
+### 🧪 Passo 4: Testando Seu Agente Python
 
 **Cenários de Teste:**
 1. **Função Básica**: "Crie uma função para encontrar números primos"
 2. **Algoritmo Complexo**: "Implemente uma árvore binária de busca com métodos de inserção, remoção e busca"
-3. **Problema do Mundo Real**: "Construa um web scraper que lide com limitação de taxa e tentativas de repetição"
+3. **Problema do Mundo Real**: "Construa um web scraper que lide com limitação de taxa e tentativas"
 4. **Depuração**: "Corrija este código [cole o código com erro]"
 
 **🏆 Critérios de Sucesso:**
-- ✅ Código roda sem erros
+- ✅ Código executa sem erros
 - ✅ Inclui documentação adequada
 - ✅ Segue as melhores práticas de Python
 - ✅ Fornece explicações claras
@@ -260,25 +260,25 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 
 Teste seu entendimento:
 - [ ] Você consegue explicar a diferença entre os modelos do catálogo?
-- [ ] Já criou e testou um agente personalizado com sucesso?
-- [ ] Entende como otimizar parâmetros para diferentes casos de uso?
-- [ ] Consegue criar system prompts eficazes?
+- [ ] Você criou e testou com sucesso um agente personalizado?
+- [ ] Você entende como otimizar parâmetros para diferentes casos de uso?
+- [ ] Você sabe como criar system prompts eficazes?
 
 ### 📚 Recursos Adicionais
 
-- **Documentação do AI Toolkit**: [Official Microsoft Docs](https://github.com/microsoft/vscode-ai-toolkit)
-- **Guia de Engenharia de Prompts**: [Best Practices](https://platform.openai.com/docs/guides/prompt-engineering)
-- **Modelos no AI Toolkit**: [Models in Develpment](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
+- **Documentação do AI Toolkit**: [Documentação Oficial Microsoft](https://github.com/microsoft/vscode-ai-toolkit)
+- **Guia de Engenharia de Prompts**: [Melhores Práticas](https://platform.openai.com/docs/guides/prompt-engineering)
+- **Modelos no AI Toolkit**: [Modelos em Desenvolvimento](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
 
 **🎉 Parabéns!** Você dominou os fundamentos do AI Toolkit e está pronto para criar aplicações de IA mais avançadas!
 
 ### 🔜 Continue para o Próximo Módulo
 
-Quer explorar recursos mais avançados? Continue para **[Module 2: MCP with AI Toolkit Fundamentals](../lab2/README.md)** onde você vai aprender a:
+Quer explorar recursos mais avançados? Continue para **[Módulo 2: Fundamentos do MCP com AI Toolkit](../lab2/README.md)** onde você aprenderá a:
 - Conectar seus agentes a ferramentas externas usando o Model Context Protocol (MCP)
-- Construir agentes de automação para navegador com Playwright
-- Integrar servidores MCP com seus agentes AI Toolkit
+- Construir agentes de automação de navegador com Playwright
+- Integrar servidores MCP com seus agentes do AI Toolkit
 - Potencializar seus agentes com dados e capacidades externas
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

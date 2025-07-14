@@ -2,52 +2,52 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:32:31+00:00",
+  "translation_date": "2025-07-13T23:34:13+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "tl"
 }
 -->
 # Model Context Protocol (MCP) Python Implementation
 
-Ang repository na ito ay naglalaman ng Python implementation ng Model Context Protocol (MCP), na nagpapakita kung paano gumawa ng parehong server at client application na nag-uusap gamit ang MCP standard.
+Ang repositoryong ito ay naglalaman ng Python na implementasyon ng Model Context Protocol (MCP), na nagpapakita kung paano gumawa ng parehong server at client na aplikasyon na nag-uusap gamit ang MCP standard.
 
-## Overview
+## Pangkalahatang-ideya
 
-Ang MCP implementation ay binubuo ng dalawang pangunahing bahagi:
+Ang implementasyon ng MCP ay binubuo ng dalawang pangunahing bahagi:
 
 1. **MCP Server (`server.py`)** - Isang server na naglalabas ng:
-   - **Tools**: Mga function na pwedeng tawagin nang remote
-   - **Resources**: Data na pwedeng kunin
-   - **Prompts**: Mga template para gumawa ng prompts para sa language models
+   - **Tools**: Mga function na maaaring tawagin nang malayuan
+   - **Resources**: Data na maaaring kunin
+   - **Prompts**: Mga template para sa paggawa ng prompts para sa mga language model
 
-2. **MCP Client (`client.py`)** - Isang client application na kumokonekta sa server at ginagamit ang mga features nito
+2. **MCP Client (`client.py`)** - Isang client na aplikasyon na kumokonekta sa server at ginagamit ang mga tampok nito
 
-## Features
+## Mga Tampok
 
-Ipinapakita ng implementation na ito ang ilang mahahalagang MCP features:
+Ipinapakita ng implementasyong ito ang ilang mahahalagang tampok ng MCP:
 
 ### Tools
-- `completion` - Gumagawa ng text completions mula sa AI models (simulated)
+- `completion` - Gumagawa ng mga text completion mula sa AI models (pinagkunwari)
 - `add` - Simpleng calculator na nagdadagdag ng dalawang numero
 
 ### Resources
-- `models://` - Nagbibigay ng impormasyon tungkol sa mga available na AI models
-- `greeting://{name}` - Nagbibigay ng personalized na pagbati para sa isang pangalan
+- `models://` - Nagbabalik ng impormasyon tungkol sa mga available na AI models
+- `greeting://{name}` - Nagbabalik ng personalisadong pagbati para sa isang pangalan
 
 ### Prompts
 - `review_code` - Gumagawa ng prompt para sa pagre-review ng code
 
-## Installation
+## Pag-install
 
-Para magamit ang MCP implementation na ito, i-install ang mga kinakailangang packages:
+Para magamit ang implementasyong MCP na ito, i-install ang mga kinakailangang package:
 
 ```powershell
 pip install mcp-server mcp-client
 ```
 
-## Running the Server and Client
+## Pagpapatakbo ng Server at Client
 
-### Starting the Server
+### Pagsisimula ng Server
 
 Patakbuhin ang server sa isang terminal window:
 
@@ -55,7 +55,7 @@ Patakbuhin ang server sa isang terminal window:
 python server.py
 ```
 
-Pwedeng patakbuhin ang server sa development mode gamit ang MCP CLI:
+Maari ring patakbuhin ang server sa development mode gamit ang MCP CLI:
 
 ```powershell
 mcp dev server.py
@@ -67,7 +67,7 @@ O i-install ito sa Claude Desktop (kung available):
 mcp install server.py
 ```
 
-### Running the Client
+### Pagpapatakbo ng Client
 
 Patakbuhin ang client sa isa pang terminal window:
 
@@ -75,9 +75,9 @@ Patakbuhin ang client sa isa pang terminal window:
 python client.py
 ```
 
-Ito ay kokonekta sa server at ipapakita ang lahat ng available na features.
+Ito ay kokonekta sa server at ipapakita ang lahat ng mga available na tampok.
 
-### Client Usage
+### Paggamit ng Client
 
 Ipinapakita ng client (`client.py`) ang lahat ng kakayahan ng MCP:
 
@@ -85,17 +85,17 @@ Ipinapakita ng client (`client.py`) ang lahat ng kakayahan ng MCP:
 python client.py
 ```
 
-Ito ay kokonekta sa server at gagamitin ang lahat ng features kabilang ang tools, resources, at prompts. Ang output ay magpapakita ng:
+Ito ay kokonekta sa server at gagamitin ang lahat ng tampok kabilang ang tools, resources, at prompts. Ang output ay magpapakita ng:
 
 1. Resulta ng calculator tool (5 + 7 = 12)
-2. Sagot ng completion tool sa "What is the meaning of life?"
+2. Tugon ng completion tool sa "What is the meaning of life?"
 3. Listahan ng mga available na AI models
-4. Personalized na pagbati para sa "MCP Explorer"
+4. Personal na pagbati para sa "MCP Explorer"
 5. Template ng prompt para sa pagre-review ng code
 
-## Implementation Details
+## Mga Detalye ng Implementasyon
 
-Ang server ay ginawa gamit ang `FastMCP` API, na nagbibigay ng mataas na antas na abstraction para magdefine ng MCP services. Narito ang isang pinasimpleng halimbawa kung paano dine-define ang mga tools:
+Ang server ay naipatupad gamit ang `FastMCP` API, na nagbibigay ng mataas na antas ng abstraction para sa pagdedeklara ng mga MCP service. Narito ang isang pinasimpleng halimbawa kung paano dine-define ang mga tools:
 
 ```python
 @mcp.tool()
@@ -122,9 +122,9 @@ async with stdio_client(server_params) as (reader, writer):
         result = await session.call_tool("add", arguments={"a": 5, "b": 7})
 ```
 
-## Learn More
+## Alamin Pa
 
 Para sa karagdagang impormasyon tungkol sa MCP, bisitahin: https://modelcontextprotocol.io/
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak ang pagsasalin, pakatandaan na maaaring may mga pagkakamali o hindi pagkakatugma ang mga awtomatikong pagsasalin. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

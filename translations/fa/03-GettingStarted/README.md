@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:27:13+00:00",
+  "translation_date": "2025-07-13T17:11:57+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "fa"
 }
@@ -13,11 +13,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **1 سرور اول شما**، در این درس اول، یاد می‌گیرید چگونه اولین سرور خود را بسازید و با ابزار inspector آن را بررسی کنید، روشی ارزشمند برای تست و اشکال‌زدایی سرور شما، [به درس](01-first-server/README.md)
 
-- **2 کلاینت**، در این درس یاد می‌گیرید چگونه یک کلاینت بنویسید که بتواند به سرور شما متصل شود، [به درس](02-client/README.md)
+- **2 کلاینت**، در این درس، یاد می‌گیرید چگونه یک کلاینت بنویسید که بتواند به سرور شما متصل شود، [به درس](02-client/README.md)
 
-- **3 کلاینت با LLM**، روشی بهتر برای نوشتن کلاینت اضافه کردن یک LLM به آن است تا بتواند با سرور شما "مذاکره" کند که چه کاری انجام دهد، [به درس](03-llm-client/README.md)
+- **3 کلاینت با LLM**، روشی بهتر برای نوشتن کلاینت، افزودن یک LLM به آن است تا بتواند با سرور شما "مذاکره" کند که چه کاری انجام دهد، [به درس](03-llm-client/README.md)
 
-- **4 استفاده از حالت GitHub Copilot Agent سرور در Visual Studio Code**. در اینجا، به اجرای سرور MCP خود از داخل Visual Studio Code می‌پردازیم، [به درس](04-vscode/README.md)
+- **4 استفاده از حالت GitHub Copilot Agent سرور در Visual Studio Code**. در اینجا، به اجرای MCP Server خود از داخل Visual Studio Code می‌پردازیم، [به درس](04-vscode/README.md)
 
 - **5 استفاده از SSE (Server Sent Events)** SSE استانداردی برای پخش داده از سرور به کلاینت است که به سرورها اجازه می‌دهد به‌روزرسانی‌های لحظه‌ای را از طریق HTTP به کلاینت‌ها ارسال کنند، [به درس](05-sse-server/README.md)
 
@@ -34,7 +34,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## اهداف یادگیری
 
-تا پایان این درس، شما قادر خواهید بود:
+تا پایان این درس، قادر خواهید بود:
 
 - راه‌اندازی محیط‌های توسعه برای MCP در C#، Java، Python، TypeScript و JavaScript
 - ساخت و استقرار سرورهای پایه MCP با ویژگی‌های سفارشی (منابع، پرامپت‌ها و ابزارها)
@@ -49,11 +49,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### پیش‌نیازها
 
-قبل از شروع توسعه MCP، مطمئن شوید که دارید:
+قبل از شروع توسعه MCP، مطمئن شوید که موارد زیر را دارید:
 
 - **محیط توسعه**: برای زبان انتخابی شما (C#، Java، Python، TypeScript یا JavaScript)
 - **IDE/ویرایشگر**: Visual Studio، Visual Studio Code، IntelliJ، Eclipse، PyCharm یا هر ویرایشگر کد مدرن دیگر
-- **مدیران بسته**: NuGet، Maven/Gradle، pip یا npm/yarn
+- **مدیر بسته‌ها**: NuGet، Maven/Gradle، pip یا npm/yarn
 - **کلیدهای API**: برای هر سرویس هوش مصنوعی که قصد استفاده در برنامه‌های میزبان خود را دارید
 
 ### SDKهای رسمی

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T22:57:51+00:00",
+  "translation_date": "2025-07-13T17:58:21+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "zh"
 }
@@ -49,7 +49,7 @@ mcp dev server.py
 
 - 尝试列出工具并运行 `add`，传入参数 2 和 4，结果应显示 6。
 
-- 进入 resources 和 resource template，调用 get_greeting，输入一个名字，你应该会看到带有你输入名字的问候语。
+- 进入 resources 和 resource template，调用 get_greeting，输入一个名字，你将看到带有你输入名字的问候语。
 
 ### 在 CLI 模式下测试
 
@@ -61,7 +61,7 @@ mcp dev server.py
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-这会列出服务器上所有可用的工具。你应该会看到如下输出：
+这会列出服务器上所有可用的工具。你应该看到如下输出：
 
 ```text
 {
@@ -98,7 +98,7 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-你应该会看到如下输出：
+你应该看到如下输出：
 
 ```text
 {
@@ -113,8 +113,8 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 ```
 
 > ![!TIP]
-> 通常在 CLI 模式下运行 inspector 会比在浏览器中快得多。
-> 更多关于 inspector 的信息请见 [here](https://github.com/modelcontextprotocol/inspector)。
+> 通常在 CLI 模式下运行 inspector 比在浏览器中快得多。
+> 详情请参见 [here](https://github.com/modelcontextprotocol/inspector)。
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。

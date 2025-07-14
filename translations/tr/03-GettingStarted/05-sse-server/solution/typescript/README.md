@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:09:49+00:00",
+  "translation_date": "2025-07-13T20:20:22+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "tr"
 }
@@ -23,24 +23,24 @@ npm run build
 
 ## -4- Örneği test edin
 
-Bir terminalde sunucu çalışırken, başka bir terminal açın ve aşağıdaki komutu çalıştırın:
+Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki komutu çalıştırın:
 
 ```bash
 npm run inspector
 ```
 
-Bu, örneği test etmenizi sağlayacak görsel bir arayüze sahip bir web sunucusu başlatmalıdır.
+Bu, örneği test etmenize olanak tanıyan görsel arayüze sahip bir web sunucusu başlatmalıdır.
 
 Sunucu bağlandıktan sonra:
 
-- Araçları listelemeyi deneyin ve `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- araçları listelemeyi deneyin ve `add` komutunu, argüman olarak 2 ve 4 ile çalıştırın, sonuçta 6 görmelisiniz.
+- resources ve resource template bölümüne gidin, "greeting" çağırın, bir isim yazın ve verdiğiniz isimle bir selamlama görmelisiniz.
 
-### Testing in CLI mode
+### CLI modunda test etme
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+Çalıştırdığınız inspector aslında bir Node.js uygulaması ve `mcp dev` bunun etrafında bir sarmalayıcıdır.
 
-- Start up the server with the command `npm run build` komutunu çalıştırın.
+- Sunucuyu `npm run build` komutuyla başlatın.
 
 - Ayrı bir terminalde aşağıdaki komutu çalıştırın:
 
@@ -99,8 +99,8 @@ Aşağıdaki çıktıyı görmelisiniz:
     ```
 
 > ![!TIP]
-> İnspektörü CLI modunda çalıştırmak genellikle tarayıcıda çalıştırmaktan çok daha hızlıdır.
-> İnspektör hakkında daha fazla bilgi [burada](https://github.com/modelcontextprotocol/inspector) okuyabilirsiniz.
+> Inspector'ı tarayıcıda çalıştırmaktansa CLI modunda çalıştırmak genellikle çok daha hızlıdır.
+> Inspector hakkında daha fazla bilgi için [buraya](https://github.com/modelcontextprotocol/inspector) bakabilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluğu sağlamak için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

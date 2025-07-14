@@ -2,37 +2,37 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-06-18T07:53:11+00:00",
+  "translation_date": "2025-07-13T23:09:31+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "sk"
 }
 -->
 # Príklad
 
-Predchádzajúci príklad ukazuje, ako používať lokálny .NET projekt s typom `stdio`. A ako spustiť server lokálne v kontajneri. Toto je dobré riešenie v mnohých situáciách. Avšak, môže byť užitočné mať server bežiaci na diaľku, napríklad v cloudovom prostredí. Práve tu prichádza na rad typ `http`.
+Predchádzajúci príklad ukazuje, ako použiť lokálny .NET projekt s typom `stdio`. A ako spustiť server lokálne v kontejnery. Toto je dobré riešenie v mnohých situáciách. Avšak môže byť užitočné mať server bežiaci vzdialene, napríklad v cloudovom prostredí. Práve tu prichádza na rad typ `http`.
 
-Ak sa pozriete na riešenie v priečinku `04-PracticalImplementation`, môže vyzerať oveľa zložitejšie ako predchádzajúce. Ale v skutočnosti to tak nie je. Ak sa pozorne pozriete na projekt `src/Calculator`, uvidíte, že ide väčšinou o rovnaký kód ako v predchádzajúcom príklade. Jediný rozdiel je, že používame inú knižnicu `ModelContextProtocol.AspNetCore` na spracovanie HTTP požiadaviek. A meníme metódu `IsPrime` na súkromnú, len aby sme ukázali, že v kóde môžete mať súkromné metódy. Zvyšok kódu je rovnaký ako predtým.
+Ak sa pozriete na riešenie v priečinku `04-PracticalImplementation`, môže sa zdať oveľa zložitejšie ako predchádzajúce. Ale v skutočnosti to tak nie je. Ak sa pozriete bližšie na projekt `src/Calculator`, uvidíte, že ide väčšinou o rovnaký kód ako v predchádzajúcom príklade. Jediný rozdiel je, že používame inú knižnicu `ModelContextProtocol.AspNetCore` na spracovanie HTTP požiadaviek. A zmeníme metódu `IsPrime` na súkromnú, len aby sme ukázali, že vo vašom kóde môžete mať súkromné metódy. Zvyšok kódu je rovnaký ako predtým.
 
-Ostatné projekty sú z [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Mať .NET Aspire v riešení zlepší skúsenosť vývojára počas vývoja a testovania a pomôže s observabilitou. Nie je to nevyhnutné pre spustenie servera, ale je to dobrá prax mať ho vo svojom riešení.
+Ostatné projekty sú z [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). Mať .NET Aspire v riešení zlepší skúsenosť vývojára počas vývoja a testovania a pomôže s pozorovateľnosťou. Nie je to povinné na spustenie servera, ale je to dobrá prax mať to vo vašom riešení.
 
 ## Spustenie servera lokálne
 
-1. Vo VS Code (s rozšírením C# DevKit) prejdite do priečinka `04-PracticalImplementation/samples/csharp`.
+1. Vo VS Code (s rozšírením C# DevKit) prejdite do adresára `04-PracticalImplementation/samples/csharp`.
 1. Spustite nasledujúci príkaz na spustenie servera:
 
    ```bash
     dotnet watch run --project ./src/AppHost
    ```
 
-1. Keď webový prehliadač otvorí dashboard .NET Aspire, všimnite si URL adresu `http`. Mala by vyzerať nejako takto: `http://localhost:5058/`.
+1. Keď sa v prehliadači otvorí dashboard .NET Aspire, všimnite si `http` URL. Malo by to byť niečo ako `http://localhost:5058/`.
 
    ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.sk.png)
 
-## Testovanie Streamable HTTP pomocou MCP Inspectora
+## Testovanie Streamable HTTP pomocou MCP Inspector
 
-Ak máte Node.js verzie 22.7.5 alebo novšej, môžete použiť MCP Inspector na otestovanie svojho servera.
+Ak máte Node.js verzie 22.7.5 alebo vyššej, môžete použiť MCP Inspector na testovanie vášho servera.
 
-Spustite server a v termináli zadajte nasledujúci príkaz:
+Spustite server a v termináli spustite nasledujúci príkaz:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:5058
@@ -40,18 +40,18 @@ npx @modelcontextprotocol/inspector http://localhost:5058
 
 ![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.sk.png)
 
-- Vyberte `Streamable HTTP` as the Transport type.
-- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. Malo by to byť `http` (nie `https`) something like `http://localhost:5058/mcp`.
-- select the Connect button.
+- Vyberte `Streamable HTTP` ako typ transportu.
+- Do poľa Url zadajte URL servera, ktorú ste si poznamenali, a pridajte `/mcp`. Malo by to byť `http` (nie `https`), napríklad `http://localhost:5058/mcp`.
+- Kliknite na tlačidlo Connect.
 
-A nice thing about the Inspector is that it provide a nice visibility on what is happening.
+Výhodou Inspektora je, že poskytuje dobrý prehľad o tom, čo sa deje.
 
-- Try listing the available tools
-- Try some of them, it should works just like before.
+- Skúste zobraziť zoznam dostupných nástrojov
+- Vyskúšajte niektoré z nich, mali by fungovať rovnako ako predtým.
 
-## Test MCP Server with GitHub Copilot Chat in VS Code
+## Testovanie MCP Servera s GitHub Copilot Chat vo VS Code
 
-To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` server vytvorený predtým, aby vyzeral takto:
+Ak chcete použiť Streamable HTTP transport s GitHub Copilot Chat, zmeňte konfiguráciu servera `calc-mcp`, ktorý ste vytvorili predtým, takto:
 
 ```jsonc
 // .vscode/mcp.json
@@ -67,9 +67,9 @@ To use the Streamable HTTP transport with GitHub Copilot Chat, change the config
 
 Vykonajte niekoľko testov:
 
-- Požiadajte o „3 prvočísla po 6780“. Všimnite si, ako Copilot použije nové nástroje `NextFivePrimeNumbers` a vráti len prvé 3 prvočísla.
+- Požiadajte o „3 prvočísla po 6780“. Všimnite si, že Copilot použije nové nástroje `NextFivePrimeNumbers` a vráti len prvé 3 prvočísla.
 - Požiadajte o „7 prvočísel po 111“, aby ste videli, čo sa stane.
-- Požiadajte o „John má 24 lízaniek a chce ich rozdať všetkým svojim 3 deťom. Koľko lízaniek dostane každé dieťa?“, aby ste videli, čo sa stane.
+- Požiadajte o „John má 24 lízaniek a chce ich rozdeliť medzi svoje 3 deti. Koľko lízaniek dostane každé dieťa?“, aby ste videli, čo sa stane.
 
 ## Nasadenie servera do Azure
 
@@ -85,7 +85,7 @@ Po dokončení nasadenia by ste mali vidieť správu ako táto:
 
 ![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.sk.png)
 
-Skopírujte URL a použite ju v MCP Inspectore a v GitHub Copilot Chate.
+Skopírujte URL a použite ju v MCP Inspector a v GitHub Copilot Chat.
 
 ```jsonc
 // .vscode/mcp.json
@@ -101,7 +101,7 @@ Skopírujte URL a použite ju v MCP Inspectore a v GitHub Copilot Chate.
 
 ## Čo ďalej?
 
-Vyskúšame rôzne typy transportov a testovacie nástroje. Tiež nasadíme váš MCP server do Azure. Ale čo ak náš server potrebuje prístup k súkromným zdrojom? Napríklad databáze alebo súkromnému API? V ďalšej kapitole uvidíme, ako môžeme zlepšiť bezpečnosť nášho servera.
+Vyskúšali sme rôzne typy transportu a testovacie nástroje. Tiež sme nasadili váš MCP server do Azure. Ale čo ak náš server potrebuje prístup k súkromným zdrojom? Napríklad databáze alebo súkromnému API? V ďalšej kapitole uvidíme, ako môžeme zlepšiť bezpečnosť nášho servera.
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nezodpovedáme za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

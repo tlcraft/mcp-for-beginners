@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-06-13T00:47:51+00:00",
+  "translation_date": "2025-07-14T02:15:43+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "sw"
 }
 -->
-## Sampuli na Usanidi wa Routing katika MCP
+## Usanidi wa Sampuli na Upangaji Njia katika MCP
 
-Sampuli ni sehemu muhimu ya Model Context Protocol (MCP) inayowezesha usindikaji bora wa maombi na usanidi wa routing. Inahusisha kuchambua maombi yanayoingia ili kubaini modeli au huduma inayofaa zaidi kushughulikia, kulingana na vigezo mbalimbali kama aina ya maudhui, muktadha wa mtumiaji, na mzigo wa mfumo.
+Usanidi wa sampuli ni sehemu muhimu ya Model Context Protocol (MCP) inayoruhusu usindikaji mzuri wa maombi na upangaji njia. Inahusisha kuchambua maombi yanayoingia ili kubaini mfano au huduma inayofaa zaidi kushughulikia maombi hayo, kulingana na vigezo mbalimbali kama aina ya maudhui, muktadha wa mtumiaji, na mzigo wa mfumo.
 
-Sampuli na routing zinaweza kuunganishwa kuunda usanidi thabiti unaoboresha matumizi ya rasilimali na kuhakikisha upatikanaji wa juu. Mchakato wa sampuli unaweza kutumika kuainisha maombi, wakati routing inawaelekeza kwa modeli au huduma zinazofaa.
+Usanidi wa sampuli na upangaji njia vinaweza kuunganishwa kuunda usanifu thabiti unaoboresha matumizi ya rasilimali na kuhakikisha upatikanaji wa juu. Mchakato wa sampuli unaweza kutumika kuainisha maombi, wakati upangaji njia unawaelekeza kwa mifano au huduma zinazofaa.
 
-Mchoro hapa chini unaonyesha jinsi sampuli na routing vinavyofanya kazi pamoja katika usanidi kamili wa MCP:
+Mchoro hapa chini unaonyesha jinsi usanidi wa sampuli na upangaji njia vinavyofanya kazi pamoja katika usanifu kamili wa MCP:
 
 ```mermaid
 flowchart TB
@@ -80,9 +80,9 @@ flowchart TB
     style ModelC fill:#c2f0c2,stroke:#333
 ```
 
-## Kinachofuata
+## Nini kinachofuata
 
 - [5.6 Sampuli](../mcp-sampling/README.md)
 
-**Kiasi cha Maelezo:**  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au kasoro. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei jukumu lolote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

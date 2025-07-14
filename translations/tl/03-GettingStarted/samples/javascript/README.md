@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0f27f8c14853621d982185e6bbdd1dc6",
-  "translation_date": "2025-05-17T13:24:57+00:00",
+  "translation_date": "2025-07-13T22:35:37+00:00",
   "source_file": "03-GettingStarted/samples/javascript/README.md",
   "language_code": "tl"
 }
 -->
-# Halimbawa
+# Sample
 
-Ito ay isang JavaScript na halimbawa para sa isang MCP Server
+Ito ay isang JavaScript sample para sa isang MCP Server
 
-Ganito ang itsura ng bahagi ng calculator:
+Ganito ang hitsura ng bahagi ng calculator nito:
 
 ```javascript
 // Define calculator tools for each operation
@@ -68,7 +68,7 @@ server.tool(
 );
 ```
 
-## I-install
+## Install
 
 Patakbuhin ang sumusunod na utos:
 
@@ -76,11 +76,11 @@ Patakbuhin ang sumusunod na utos:
 npm install
 ```
 
-## Patakbuhin
+## Run
 
 ```bash
 npm start
 ```
 
-**Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Habang sinisikap namin ang pagiging wasto, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatumpak. Ang orihinal na dokumento sa kanyang katutubong wika ay dapat ituring na mapagkakatiwalaang pinagmulan. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaintindihan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

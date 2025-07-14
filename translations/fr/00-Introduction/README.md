@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "105c2ddbb77bc38f7e9df009e1b06e45",
-  "translation_date": "2025-07-04T15:17:41+00:00",
+  "translation_date": "2025-07-13T15:24:40+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "fr"
 }
 -->
 # Introduction au Model Context Protocol (MCP) : Pourquoi c’est important pour des applications IA évolutives
 
-Les applications d’IA générative représentent une avancée majeure puisqu’elles permettent souvent à l’utilisateur d’interagir avec l’application via des instructions en langage naturel. Cependant, à mesure que l’on investit plus de temps et de ressources dans ces applications, il est essentiel de pouvoir intégrer facilement des fonctionnalités et des ressources de manière à ce que l’extension soit simple, que l’application puisse gérer plusieurs modèles simultanément, et qu’elle prenne en compte les spécificités de chaque modèle. En résumé, créer des applications d’IA générative est simple au départ, mais à mesure qu’elles grandissent et deviennent plus complexes, il devient nécessaire de définir une architecture et de s’appuyer sur une norme pour garantir une construction cohérente des applications. C’est là qu’intervient le MCP, pour organiser les choses et fournir un standard.
+Les applications d’IA générative représentent une avancée majeure puisqu’elles permettent souvent à l’utilisateur d’interagir avec l’application via des instructions en langage naturel. Cependant, à mesure que l’on investit plus de temps et de ressources dans ces applications, il est essentiel de pouvoir intégrer facilement des fonctionnalités et des ressources de manière à ce que l’extension soit simple, que l’application puisse gérer plusieurs modèles simultanément, et qu’elle prenne en compte les spécificités de chaque modèle. En résumé, créer des applications Gen AI est simple au départ, mais à mesure qu’elles grandissent et deviennent plus complexes, il devient nécessaire de définir une architecture et de s’appuyer sur une norme pour garantir une construction cohérente des applications. C’est là qu’intervient le MCP pour organiser les choses et fournir un standard.
 
 ---
 
@@ -54,11 +54,11 @@ Avant le MCP, intégrer des modèles avec des outils nécessitait :
 ### **✅ Avantages de la standardisation MCP**
 
 | **Avantage**             | **Description**                                                                 |
-|--------------------------|---------------------------------------------------------------------------------|
+|-------------------------|---------------------------------------------------------------------------------|
 | Interopérabilité         | Les LLM fonctionnent sans accroc avec des outils de différents fournisseurs     |
-| Cohérence                | Comportement uniforme sur toutes les plateformes et outils                     |
-| Réutilisabilité          | Les outils développés une fois peuvent être utilisés dans plusieurs projets     |
-| Développement accéléré   | Réduction du temps de développement grâce à des interfaces standardisées plug-and-play |
+| Cohérence               | Comportement uniforme sur toutes les plateformes et outils                     |
+| Réutilisabilité         | Les outils développés une fois peuvent être utilisés dans plusieurs projets     |
+| Développement accéléré  | Réduction du temps de développement grâce à des interfaces standardisées plug-and-play |
 
 ---
 
@@ -159,21 +159,21 @@ Prêt à essayer ? Voici des exemples pour créer un serveur MCP simple dans dif
 Le MCP permet une large gamme d’applications en étendant les capacités de l’IA :
 
 | **Application**             | **Description**                                                                 |
-|-----------------------------|---------------------------------------------------------------------------------|
-| Intégration de données en entreprise | Connecter les LLM aux bases de données, CRM ou outils internes             |
-| Systèmes d’IA agentiques    | Permettre à des agents autonomes d’accéder aux outils et de prendre des décisions |
-| Applications multimodales    | Combiner texte, image et audio dans une même application IA unifiée             |
+|----------------------------|---------------------------------------------------------------------------------|
+| Intégration de données en entreprise | Connecter les LLM aux bases de données, CRM ou outils internes           |
+| Systèmes IA agentiques     | Permettre à des agents autonomes d’accéder aux outils et de prendre des décisions |
+| Applications multimodales  | Combiner texte, image et audio dans une même application IA unifiée             |
 | Intégration de données en temps réel | Intégrer des données en direct dans les interactions IA pour des résultats plus précis et actuels |
 
 ### 🧠 MCP = Standard universel pour les interactions IA
 
-Le Model Context Protocol (MCP) agit comme un standard universel pour les interactions en IA, à l’image de l’USB-C qui a standardisé les connexions physiques entre appareils. Dans le domaine de l’IA, le MCP fournit une interface cohérente, permettant aux modèles (clients) de s’intégrer facilement avec des outils externes et des fournisseurs de données (serveurs). Cela élimine le besoin de protocoles divers et personnalisés pour chaque API ou source de données.
+Le Model Context Protocol (MCP) agit comme un standard universel pour les interactions IA, à l’image de l’USB-C qui a standardisé les connexions physiques entre appareils. Dans le domaine de l’IA, le MCP fournit une interface cohérente, permettant aux modèles (clients) de s’intégrer facilement avec des outils externes et des fournisseurs de données (serveurs). Cela évite la multiplication de protocoles personnalisés pour chaque API ou source de données.
 
-Avec le MCP, un outil compatible (appelé serveur MCP) suit une norme unifiée. Ces serveurs peuvent lister les outils ou actions qu’ils proposent et exécuter ces actions lorsqu’un agent IA les sollicite. Les plateformes d’agents IA supportant le MCP peuvent découvrir les outils disponibles sur les serveurs et les invoquer via ce protocole standard.
+Avec MCP, un outil compatible (appelé serveur MCP) suit une norme unifiée. Ces serveurs peuvent lister les outils ou actions qu’ils proposent et exécuter ces actions sur demande d’un agent IA. Les plateformes d’agents IA supportant MCP peuvent découvrir les outils disponibles sur les serveurs et les invoquer via ce protocole standard.
 
 ### 💡 Facilite l’accès au savoir
 
-Au-delà de fournir des outils, le MCP facilite aussi l’accès au savoir. Il permet aux applications d’apporter du contexte aux grands modèles de langage (LLM) en les connectant à diverses sources de données. Par exemple, un serveur MCP peut représenter le dépôt documentaire d’une entreprise, permettant aux agents de récupérer des informations pertinentes à la demande. Un autre serveur peut gérer des actions spécifiques comme l’envoi d’emails ou la mise à jour de dossiers. Du point de vue de l’agent, ce sont simplement des outils utilisables — certains retournent des données (contexte de connaissance), d’autres effectuent des actions. Le MCP gère efficacement les deux.
+Au-delà de fournir des outils, le MCP facilite aussi l’accès au savoir. Il permet aux applications d’apporter du contexte aux grands modèles de langage (LLM) en les connectant à diverses sources de données. Par exemple, un serveur MCP peut représenter le dépôt documentaire d’une entreprise, permettant aux agents de récupérer des informations pertinentes à la demande. Un autre serveur peut gérer des actions spécifiques comme l’envoi d’emails ou la mise à jour de dossiers. Du point de vue de l’agent, ce sont simplement des outils utilisables — certains retournent des données (contexte de connaissance), d’autres exécutent des actions. Le MCP gère efficacement les deux.
 
 Un agent qui se connecte à un serveur MCP apprend automatiquement les capacités disponibles et les données accessibles via un format standard. Cette standardisation permet une disponibilité dynamique des outils. Par exemple, ajouter un nouveau serveur MCP au système d’un agent rend ses fonctions immédiatement utilisables sans nécessiter de personnalisation supplémentaire des instructions de l’agent.
 
@@ -281,7 +281,7 @@ Voici les bénéfices concrets de l’utilisation du MCP :
 - **Actualité** : Les modèles peuvent accéder à des informations à jour au-delà de leurs données d’entraînement  
 - **Extension des capacités** : Les modèles peuvent exploiter des outils spécialisés pour des tâches non couvertes par leur entraînement  
 - **Réduction des hallucinations** : Les sources de données externes apportent un ancrage factuel  
-- **Confidentialité** : Les données sensibles peuvent rester dans des environnements sécurisés au lieu d’être intégrées dans les prompts
+- **Confidentialité** : Les données sensibles restent dans des environnements sécurisés au lieu d’être intégrées dans les prompts
 
 ## 📌 Points clés à retenir
 

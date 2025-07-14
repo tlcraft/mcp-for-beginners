@@ -2,104 +2,104 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-05-17T13:18:38+00:00",
+  "translation_date": "2025-07-13T22:31:42+00:00",
   "source_file": "03-GettingStarted/samples/java/calculator/README.md",
   "language_code": "sr"
 }
 -->
-# Osnovni Kalkulator MCP Servis
+# Basic Calculator MCP Service
 
-Ovaj servis pruža osnovne operacije kalkulatora putem Model Context Protocol (MCP) koristeći Spring Boot sa WebFlux transportom. Dizajniran je kao jednostavan primer za početnike koji uče o MCP implementacijama.
+Ова услуга пружа основне операције калкулатора преко Model Context Protocol (MCP) користећи Spring Boot са WebFlux транспортом. Дизајнирана је као једноставан пример за почетнике који уче о MCP имплементацијама.
 
-Za više informacija, pogledajte referentnu dokumentaciju [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
+За више информација, погледајте [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) референтну документацију.
 
-## Pregled
+## Преглед
 
-Servis prikazuje:
-- Podršku za SSE (Server-Sent Events)
-- Automatsku registraciju alata koristeći Spring AI `@Tool` anotaciju
-- Osnovne funkcije kalkulatora:
-  - Sabiranje, oduzimanje, množenje, deljenje
-  - Izračunavanje stepena i kvadratnog korena
-  - Modulo (ostatak) i apsolutna vrednost
-  - Funkcija pomoći za opise operacija
+Услуга приказује:
+- Подршку за SSE (Server-Sent Events)
+- Аутоматску регистрацију алата користећи Spring AI `@Tool` анотацију
+- Основне функције калкулатора:
+  - Сабирање, одузимање, множење, дељење
+  - Израчунавање степена и квадратног корена
+  - Модулус (остатак) и апсолутна вредност
+  - Помоћна функција за опис операција
 
-## Karakteristike
+## Карактеристике
 
-Ovaj kalkulator servis nudi sledeće mogućnosti:
+Ова услуга калкулатора нуди следеће могућности:
 
-1. **Osnovne aritmetičke operacije**:
-   - Sabiranje dva broja
-   - Oduzimanje jednog broja od drugog
-   - Množenje dva broja
-   - Deljenje jednog broja drugim (sa proverom deljenja nulom)
+1. **Основне аритметичке операције**:
+   - Сабирање два броја
+   - Одузимање једног броја од другог
+   - Множење два броја
+   - Дељење једног броја са другим (са провером дељења са нулом)
 
-2. **Napredne operacije**:
-   - Izračunavanje stepena (podizanje baze na eksponent)
-   - Izračunavanje kvadratnog korena (sa proverom negativnog broja)
-   - Izračunavanje modula (ostatka)
-   - Izračunavanje apsolutne vrednosti
+2. **Напредне операције**:
+   - Израчунавање степена (подизање базе на експонент)
+   - Израчунавање квадратног корена (са провером негативног броја)
+   - Израчунавање модулуса (остатка при дељењу)
+   - Израчунавање апсолутне вредности
 
-3. **Sistem pomoći**:
-   - Ugrađena funkcija pomoći koja objašnjava sve dostupne operacije
+3. **Систем помоћи**:
+   - Уграђена помоћна функција која објашњава све доступне операције
 
-## Korišćenje servisa
+## Коришћење услуге
 
-Servis izlaže sledeće API krajnje tačke putem MCP protokola:
+Услуга излаже следеће API крајње тачке преко MCP протокола:
 
-- `add(a, b)`: Saberi dva broja
-- `subtract(a, b)`: Oduzmi drugi broj od prvog
-- `multiply(a, b)`: Pomnoži dva broja
-- `divide(a, b)`: Podeli prvi broj drugim (sa proverom nule)
-- `power(base, exponent)`: Izračunaj stepen broja
-- `squareRoot(number)`: Izračunaj kvadratni koren (sa proverom negativnog broja)
-- `modulus(a, b)`: Izračunaj ostatak pri deljenju
-- `absolute(number)`: Izračunaj apsolutnu vrednost
-- `help()`: Dobij informacije o dostupnim operacijama
+- `add(a, b)`: Сабери два броја
+- `subtract(a, b)`: Одузми други број од првог
+- `multiply(a, b)`: Помножи два броја
+- `divide(a, b)`: Подели први број са другим (са провером нуле)
+- `power(base, exponent)`: Израчунај степен броја
+- `squareRoot(number)`: Израчунај квадратни корен (са провером негативног броја)
+- `modulus(a, b)`: Израчунај остатак при дељењу
+- `absolute(number)`: Израчунај апсолутну вредност
+- `help()`: Добиј информације о доступним операцијама
 
-## Test Klijent
+## Тест клијент
 
-Jednostavan test klijent je uključen u `com.microsoft.mcp.sample.client` paket. `SampleCalculatorClient` klasa demonstrira dostupne operacije kalkulator servisa.
+Једноставан тест клијент је укључен у пакет `com.microsoft.mcp.sample.client`. Класа `SampleCalculatorClient` демонстрира доступне операције калкулаторске услуге.
 
-## Korišćenje LangChain4j Klijenta
+## Коришћење LangChain4j клијента
 
-Projekat uključuje LangChain4j primer klijenta u `com.microsoft.mcp.sample.client.LangChain4jClient` koji pokazuje kako integrisati kalkulator servis sa LangChain4j i GitHub modelima:
+Пројекат укључује пример LangChain4j клијента у `com.microsoft.mcp.sample.client.LangChain4jClient` који показује како интегрисати калкулаторску услугу са LangChain4j и GitHub моделима:
 
-### Preduslovi
+### Захтеви
 
-1. **Postavljanje GitHub Tokena**:
+1. **Подешавање GitHub токена**:
    
-   Da biste koristili GitHub-ove AI modele (kao što je phi-4), potrebno vam je GitHub personalni pristupni token:
+   Да бисте користили GitHub AI моделе (нпр. phi-4), потребан вам је лични приступни токен са GitHub-а:
 
-   a. Idite na podešavanja vašeg GitHub naloga: https://github.com/settings/tokens
+   a. Идите у подешавања свог GitHub налога: https://github.com/settings/tokens
    
-   b. Kliknite "Generate new token" → "Generate new token (classic)"
+   b. Кликните на "Generate new token" → "Generate new token (classic)"
    
-   c. Dajte svom tokenu opisno ime
+   в. Дајте свом токену описно име
    
-   d. Izaberite sledeće opsege:
-      - `repo` (Potpuna kontrola privatnih repozitorijuma)
-      - `read:org` (Čitanje članstva u organizaciji i timu, čitanje projekata organizacije)
-      - `gist` (Kreiranje gista)
-      - `user:email` (Pristup korisničkim email adresama (samo za čitanje))
+   г. Изаберите следеће опсеге:
+      - `repo` (пуна контрола приватних репозиторијума)
+      - `read:org` (читање организације и чланства у тимовима, читање организационих пројеката)
+      - `gist` (креирање гистова)
+      - `user:email` (приступ адресама е-поште корисника (само за читање))
    
-   e. Kliknite "Generate token" i kopirajte svoj novi token
+   д. Кликните "Generate token" и копирајте нови токен
    
-   f. Postavite ga kao promenljivu okruženja:
+   е. Поставите га као системску променљиву окружења:
       
-      Na Windowsu:
+      На Windows-у:
       ```
       set GITHUB_TOKEN=your-github-token
       ```
       
-      Na macOS/Linuxu:
+      На macOS/Linux-у:
       ```bash
       export GITHUB_TOKEN=your-github-token
       ```
 
-   g. Za trajno postavljanje, dodajte ga u promenljive okruženja putem sistemskih podešavanja
+   ж. За трајно подешавање, додајте га у системске променљиве окружења преко подешавања система
 
-2. Dodajte LangChain4j GitHub zavisnost u vaš projekat (već uključeno u pom.xml):
+2. Додајте LangChain4j GitHub зависност у свој пројекат (већ укључено у pom.xml):
    ```xml
    <dependency>
        <groupId>dev.langchain4j</groupId>
@@ -108,25 +108,25 @@ Projekat uključuje LangChain4j primer klijenta u `com.microsoft.mcp.sample.clie
    </dependency>
    ```
 
-3. Osigurajte da kalkulator server radi na `localhost:8080`
+3. Уверите се да је калкулатор сервер покренут на `localhost:8080`
 
-### Pokretanje LangChain4j Klijenta
+### Покретање LangChain4j клијента
 
-Ovaj primer demonstrira:
-- Povezivanje sa kalkulator MCP serverom putem SSE transporta
-- Korišćenje LangChain4j za kreiranje chat bota koji koristi kalkulator operacije
-- Integracija sa GitHub AI modelima (sada koristi phi-4 model)
+Овај пример показује:
+- Повезивање на калкулатор MCP сервер преко SSE транспорта
+- Коришћење LangChain4j за креирање чат бота који користи калкулаторске операције
+- Интеграцију са GitHub AI моделима (сада користећи phi-4 модел)
 
-Klijent šalje sledeće uzorke upita da demonstrira funkcionalnost:
-1. Izračunavanje zbira dva broja
-2. Pronalaženje kvadratnog korena broja
-3. Dobijanje informacija o dostupnim kalkulator operacijama
+Клијент шаље следеће примерке упита да демонстрира функционалност:
+1. Израчунавање збира два броја
+2. Пронаћи квадратни корен броја
+3. Добијање помоћи о доступним калкулаторским операцијама
 
-Pokrenite primer i proverite izlaz na konzoli da vidite kako AI model koristi kalkulator alate za odgovaranje na upite.
+Покрените пример и проверите излаз у конзоли да видите како AI модел користи калкулаторске алате за одговоре.
 
-### Konfiguracija GitHub Modela
+### Конфигурација GitHub модела
 
-LangChain4j klijent je konfigurisan da koristi GitHub-ov phi-4 model sa sledećim podešavanjima:
+LangChain4j клијент је конфигурисан да користи GitHub phi-4 модел са следећим подешавањима:
 
 ```java
 ChatLanguageModel model = GitHubChatModel.builder()
@@ -138,11 +138,11 @@ ChatLanguageModel model = GitHubChatModel.builder()
     .build();
 ```
 
-Da biste koristili različite GitHub modele, jednostavno promenite `modelName` parametar na drugi podržani model (npr. "claude-3-haiku-20240307", "llama-3-70b-8192", itd.).
+Да бисте користили друге GitHub моделе, једноставно промените параметар `modelName` на други подржани модел (нпр. "claude-3-haiku-20240307", "llama-3-70b-8192" итд.).
 
-## Zavisnosti
+## Зависности
 
-Projekat zahteva sledeće ključne zavisnosti:
+Пројекат захтева следеће кључне зависности:
 
 ```xml
 <!-- For MCP Server -->
@@ -166,78 +166,78 @@ Projekat zahteva sledeće ključne zavisnosti:
 </dependency>
 ```
 
-## Izgradnja Projekta
+## Изградња пројекта
 
-Izgradite projekat koristeći Maven:
+Изградите пројекат користећи Maven:
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## Pokretanje Servera
+## Покретање сервера
 
-### Korišćenje Jave
+### Коришћење Јаве
 
 ```bash
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### Korišćenje MCP Inspectora
+### Коришћење MCP Inspector-а
 
-MCP Inspector je koristan alat za interakciju sa MCP servisima. Da biste ga koristili sa ovim kalkulator servisom:
+MCP Inspector је користан алат за интеракцију са MCP услугама. Да бисте га користили са овом калкулаторском услугом:
 
-1. **Instalirajte i pokrenite MCP Inspector** u novom terminal prozoru:
+1. **Инсталирајте и покрените MCP Inspector** у новом терминал прозору:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Pristupite web UI** klikom na URL koji aplikacija prikazuje (obično http://localhost:6274)
+2. **Приступите веб интерфејсу** кликом на URL који апликација приказује (обично http://localhost:6274)
 
-3. **Konfigurišite konekciju**:
-   - Postavite tip transporta na "SSE"
-   - Postavite URL na SSE krajnju tačku vašeg servera: `http://localhost:8080/sse`
-   - Kliknite "Connect"
+3. **Конфигуришите везу**:
+   - Подесите тип транспорта на "SSE"
+   - Поставите URL на SSE крајњу тачку вашег сервера: `http://localhost:8080/sse`
+   - Кликните "Connect"
 
-4. **Koristite alate**:
-   - Kliknite "List Tools" da vidite dostupne kalkulator operacije
-   - Izaberite alat i kliknite "Run Tool" da izvršite operaciju
+4. **Користите алате**:
+   - Кликните "List Tools" да видите доступне калкулаторске операције
+   - Изаберите алат и кликните "Run Tool" да извршите операцију
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.d45bdee7d4d5740a48d0d6378c9a8af0c1a289f1e0f2ae95ee176f1a5afb40a8.sr.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.sr.png)
 
-### Korišćenje Dockera
+### Коришћење Docker-а
 
-Projekat uključuje Dockerfile za kontejnerizovano postavljanje:
+Пројекат укључује Dockerfile за контејнеризовану имплементацију:
 
-1. **Izgradite Docker sliku**:
+1. **Изградите Docker слику**:
    ```bash
    docker build -t calculator-mcp-service .
    ```
 
-2. **Pokrenite Docker kontejner**:
+2. **Покрените Docker контејнер**:
    ```bash
    docker run -p 8080:8080 calculator-mcp-service
    ```
 
-Ovo će:
-- Izgraditi multi-stage Docker sliku sa Maven 3.9.9 i Eclipse Temurin 24 JDK
-- Kreirati optimizovanu sliku kontejnera
-- Izložiti servis na portu 8080
-- Pokrenuti MCP kalkulator servis unutar kontejnera
+Ово ће:
+- Изградити мулти-степену Docker слику са Maven 3.9.9 и Eclipse Temurin 24 JDK
+- Креирати оптимизовану слику контејнера
+- Изложити услугу на порту 8080
+- Покренути MCP калкулатор услугу унутар контејнера
 
-Možete pristupiti servisu na `http://localhost:8080` kada kontejner radi.
+Можете приступити услузи на `http://localhost:8080` када контејнер буде покренут.
 
-## Rešavanje Problema
+## Решавање проблема
 
-### Uobičajeni Problemi sa GitHub Tokenom
+### Чести проблеми са GitHub токеном
 
-1. **Problemi sa dozvolama tokena**: Ako dobijete 403 Forbidden grešku, proverite da li vaš token ima ispravne dozvole kako je navedeno u preduslovima.
+1. **Проблеми са дозволама токена**: Ако добијете грешку 403 Forbidden, проверите да ли ваш токен има исправне дозволе као што је наведено у захтевима.
 
-2. **Token nije pronađen**: Ako dobijete grešku "No API key found", osigurajte da je GITHUB_TOKEN promenljiva okruženja pravilno postavljena.
+2. **Токен није пронађен**: Ако добијете грешку "No API key found", уверите се да је GITHUB_TOKEN променљива окружења исправно подешена.
 
-3. **Ograničenje brzine**: GitHub API ima ograničenja brzine. Ako naiđete na grešku ograničenja brzine (status kod 429), sačekajte nekoliko minuta pre nego što ponovo pokušate.
+3. **Ограничење броја захтева**: GitHub API има ограничења броја захтева. Ако наиђете на грешку ограничења (статус код 429), сачекајте неколико минута пре поновног покушаја.
 
-4. **Istek tokena**: GitHub tokeni mogu isteći. Ako dobijete greške autentikacije nakon nekog vremena, generišite novi token i ažurirajte svoju promenljivu okruženja.
+4. **Истек токена**: GitHub токени могу истећи. Ако добијете грешке при аутентификацији након неког времена, генеришите нови токен и ажурирајте променљиву окружења.
 
-Ako vam je potrebna dodatna pomoć, proverite [LangChain4j dokumentaciju](https://github.com/langchain4j/langchain4j) ili [GitHub API dokumentaciju](https://docs.github.com/en/rest).
+Ако вам је потребна додатна помоћ, погледајте [LangChain4j документацију](https://github.com/langchain4j/langchain4j) или [GitHub API документацију](https://docs.github.com/en/rest).
 
-**Одричање од одговорности**:  
-Овај документ је преведен коришћењем услуге превођења вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да обезбедимо тачност, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати меродавним извором. За критичне информације, препоручује се професионални људски превод. Нисмо одговорни за било каква погрешна разумевања или тумачења која могу настати услед коришћења овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

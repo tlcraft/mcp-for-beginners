@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-16T15:37:32+00:00",
+  "translation_date": "2025-07-13T23:36:30+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "zh"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 这是一个用于 MCP 服务器的 Typescript 示例
 
-下面是一个工具创建示例：
+下面是一个工具创建的例子：
 
 ```typescript
 this.mcpServer.tool(
@@ -89,4 +89,4 @@ npm start
 ```
 
 **免责声明**：  
-本文件使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。虽然我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:53:12+00:00",
+  "translation_date": "2025-07-13T23:28:57+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "sk"
 }
 -->
-# Ukážka
+# Príklad
 
-Toto je ukážka JavaScriptu pre MCP Server
+Toto je príklad v JavaScripte pre MCP Server
 
-Tu je príklad registrácie nástroja, kde registrujeme nástroj, ktorý vykonáva falošné volanie na LLM:
+Tu je príklad registrácie nástroja, kde zaregistrujeme nástroj, ktorý vykoná simulovaný hovor na LLM:
 
 ```javascript
 this.mcpServer.tool(
@@ -88,5 +88,5 @@ npm install
 npm start
 ```
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím uvedomte si, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument vo svojom rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

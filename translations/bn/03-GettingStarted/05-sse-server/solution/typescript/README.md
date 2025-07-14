@@ -2,53 +2,53 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:08:30+00:00",
+  "translation_date": "2025-07-13T20:19:30+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "bn"
 }
 -->
-# এই নমুনা চালানো
+# এই স্যাম্পল চালানো
 
-## -1- নির্ভরশীলতা ইনস্টল করুন
+## -1- ডিপেন্ডেন্সিগুলো ইনস্টল করুন
 
 ```bash
 npm install
 ```
 
-## -3- নমুনা চালান
+## -3- স্যাম্পল চালান
 
 ```bash
 npm run build
 ```
 
-## -4- নমুনা পরীক্ষা করুন
+## -4- স্যাম্পল পরীক্ষা করুন
 
-একটি টার্মিনালে সার্ভার চালু থাকলে, অন্য একটি টার্মিনাল খুলুন এবং নিম্নলিখিত কমান্ড চালান:
+একটি টার্মিনালে সার্ভার চালু থাকাকালীন, আরেকটি টার্মিনাল খুলে নিচের কমান্ডটি চালান:
 
 ```bash
 npm run inspector
 ```
 
-এটি একটি ভিজ্যুয়াল ইন্টারফেস সহ একটি ওয়েব সার্ভার শুরু করবে যা আপনাকে নমুনা পরীক্ষা করতে সহায়তা করবে।
+এটি একটি ভিজ্যুয়াল ইন্টারফেসসহ ওয়েব সার্ভার চালু করবে যা আপনাকে স্যাম্পল পরীক্ষা করার সুযোগ দেবে।
 
-একবার সার্ভার সংযুক্ত হলে:
+সার্ভার সংযুক্ত হলে:
 
-- টুল তালিকা করার চেষ্টা করুন এবং `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- টুলস লিস্ট করার চেষ্টা করুন এবং `add` রান করুন, আর্গুমেন্ট হিসেবে ২ এবং ৪ দিন, ফলাফল হিসেবে ৬ দেখতে পাবেন।
+- resources এবং resource template এ যান এবং "greeting" কল করুন, একটি নাম টাইপ করুন, আপনি প্রদত্ত নামসহ একটি শুভেচ্ছা দেখতে পাবেন।
 
-### Testing in CLI mode
+### CLI মোডে পরীক্ষা
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+আপনি যে inspector চালিয়েছেন তা আসলে একটি Node.js অ্যাপ এবং `mcp dev` তার একটি র‍্যাপার।
 
-- Start up the server with the command `npm run build` চালান।
+- `npm run build` কমান্ড দিয়ে সার্ভার চালু করুন।
 
-- একটি পৃথক টার্মিনালে নিম্নলিখিত কমান্ড চালান:
+- অন্য একটি টার্মিনালে নিচের কমান্ডটি চালান:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    এটি সার্ভারে উপলব্ধ সমস্ত টুল তালিকাভুক্ত করবে। আপনি নিম্নলিখিত আউটপুট দেখতে পাবেন:
+    এটি সার্ভারে উপলব্ধ সব টুলসের তালিকা দেখাবে। আপনি নিচের আউটপুট দেখতে পাবেন:
 
     ```text
     {
@@ -79,13 +79,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- একটি টুল টাইপ আহ্বান করুন নিম্নলিখিত কমান্ড টাইপ করে:
+- একটি টুল টাইপ কল করতে নিচের কমান্ডটি টাইপ করুন:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-আপনি নিম্নলিখিত আউটপুট দেখতে পাবেন:
+আপনি নিচের আউটপুট দেখতে পাবেন:
 
     ```text
     {
@@ -99,8 +99,8 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     ```
 
 > ![!TIP]
-> সাধারণত CLI মোডে ইন্সপেক্টর চালানো ব্রাউজারের চেয়ে অনেক দ্রুত হয়।
-> ইন্সপেক্টর সম্পর্কে আরও পড়ুন [এখানে](https://github.com/modelcontextprotocol/inspector)।
+> সাধারণত ব্রাউজারের চেয়ে CLI মোডে inspector চালানো অনেক দ্রুত হয়।
+> inspector সম্পর্কে আরও পড়ুন [এখানে](https://github.com/modelcontextprotocol/inspector)।
 
 **অস্বীকৃতি**:  
-এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনুবাদ করা হয়েছে। আমরা যথাসাধ্য সঠিকতা বজায় রাখার চেষ্টা করি, তবে অনুগ্রহ করে সচেতন থাকুন যে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল ভাষায় থাকা নথিটি কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য, পেশাদার মানব অনুবাদ সুপারিশ করা হয়। এই অনুবাদের ব্যবহার থেকে উদ্ভূত কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী থাকব না।
+এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ গ্রহণ করার পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।

@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:59:22+00:00",
+  "translation_date": "2025-07-13T17:49:46+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "he"
 }
 -->
 # הרצת הדוגמה הזו
 
-## -1- התקן את התלויות
+## -1- התקנת התלויות
 
 ```bash
 dotnet restore
 ```
 
-## -3- הרץ את הדוגמה
+## -3- הרצת הדוגמה
 
 ```bash
 dotnet run
 ```
 
-## -4- בדוק את הדוגמה
+## -4- בדיקת הדוגמה
 
-כאשר השרת רץ במסוף אחד, פתח מסוף נוסף והרץ את הפקודה הבאה:
+כאשר השרת רץ במסוף אחד, פתח מסוף נוסף והריץ את הפקודה הבאה:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
@@ -95,8 +95,8 @@ npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-
 ```
 
 > ![!TIP]
-> בדרך כלל הרבה יותר מהיר להריץ את המפקח במצב CLI מאשר בדפדפן.
-> קרא עוד על המפקח [כאן](https://github.com/modelcontextprotocol/inspector).
+> בדרך כלל הרבה יותר מהיר להריץ את ה-inspector במצב CLI מאשר בדפדפן.
+> קרא עוד על ה-inspector [כאן](https://github.com/modelcontextprotocol/inspector).
 
 **כתב ויתור**:  
 מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

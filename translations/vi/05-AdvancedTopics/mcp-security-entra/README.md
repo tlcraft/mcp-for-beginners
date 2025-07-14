@@ -2,68 +2,68 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6e562d7e5a77c8982da4aa8f762ad1d8",
-  "translation_date": "2025-07-02T09:42:00+00:00",
+  "translation_date": "2025-07-14T03:09:41+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "vi"
 }
 -->
-# Bảo Mật Quy Trình AI: Xác Thực Entra ID cho Máy Chủ Model Context Protocol
+# Bảo mật Quy trình AI: Xác thực Entra ID cho Máy chủ Model Context Protocol
 
-## Giới Thiệu  
-Bảo mật máy chủ Model Context Protocol (MCP) của bạn quan trọng không kém việc khóa cửa chính nhà bạn. Nếu để máy chủ MCP mở, các công cụ và dữ liệu của bạn có thể bị truy cập trái phép, dẫn đến các sự cố bảo mật. Microsoft Entra ID cung cấp giải pháp quản lý danh tính và truy cập dựa trên đám mây mạnh mẽ, giúp đảm bảo chỉ những người dùng và ứng dụng được phép mới có thể tương tác với máy chủ MCP của bạn. Trong phần này, bạn sẽ học cách bảo vệ quy trình AI của mình bằng xác thực Entra ID.
+## Giới thiệu
+Bảo mật máy chủ Model Context Protocol (MCP) của bạn quan trọng không kém việc khóa cửa chính nhà bạn. Nếu để máy chủ MCP mở, công cụ và dữ liệu của bạn có thể bị truy cập trái phép, dẫn đến các sự cố bảo mật. Microsoft Entra ID cung cấp giải pháp quản lý danh tính và truy cập dựa trên đám mây mạnh mẽ, giúp đảm bảo chỉ người dùng và ứng dụng được phép mới có thể tương tác với máy chủ MCP của bạn. Trong phần này, bạn sẽ học cách bảo vệ quy trình AI của mình bằng xác thực Entra ID.
 
-## Mục Tiêu Học Tập  
+## Mục tiêu học tập
 Sau khi hoàn thành phần này, bạn sẽ có thể:
 
-- Hiểu được tầm quan trọng của việc bảo mật máy chủ MCP.  
-- Giải thích cơ bản về Microsoft Entra ID và xác thực OAuth 2.0.  
-- Nhận biết sự khác biệt giữa client công khai và client bí mật.  
-- Triển khai xác thực Entra ID trong cả hai trường hợp máy chủ MCP cục bộ (public client) và máy chủ MCP từ xa (confidential client).  
+- Hiểu được tầm quan trọng của việc bảo mật máy chủ MCP.
+- Giải thích các kiến thức cơ bản về Microsoft Entra ID và xác thực OAuth 2.0.
+- Nhận biết sự khác biệt giữa client công khai và client bảo mật.
+- Triển khai xác thực Entra ID trong cả kịch bản máy chủ MCP cục bộ (client công khai) và máy chủ MCP từ xa (client bảo mật).
 - Áp dụng các thực hành bảo mật tốt nhất khi phát triển quy trình AI.
 
-## Bảo Mật và MCP
+## Bảo mật và MCP
 
-Cũng giống như bạn không bao giờ để cửa chính nhà mình mở, bạn không nên để máy chủ MCP của mình cho bất kỳ ai truy cập tự do. Bảo mật quy trình AI là yếu tố thiết yếu để xây dựng các ứng dụng mạnh mẽ, đáng tin cậy và an toàn. Chương này sẽ giới thiệu cách sử dụng Microsoft Entra ID để bảo vệ máy chủ MCP, đảm bảo chỉ những người dùng và ứng dụng được phép mới có thể truy cập công cụ và dữ liệu của bạn.
+Cũng như bạn không để cửa chính nhà mình mở, bạn không nên để máy chủ MCP của mình mở cho bất kỳ ai truy cập. Bảo mật quy trình AI là điều cần thiết để xây dựng các ứng dụng mạnh mẽ, đáng tin cậy và an toàn. Chương này sẽ giới thiệu cách sử dụng Microsoft Entra ID để bảo vệ máy chủ MCP, đảm bảo chỉ người dùng và ứng dụng được phép mới có thể tương tác với công cụ và dữ liệu của bạn.
 
-## Tại Sao Bảo Mật Lại Quan Trọng Với Máy Chủ MCP
+## Tại sao bảo mật lại quan trọng với máy chủ MCP
 
-Hãy tưởng tượng máy chủ MCP của bạn có một công cụ có thể gửi email hoặc truy cập cơ sở dữ liệu khách hàng. Nếu máy chủ không được bảo mật, bất kỳ ai cũng có thể sử dụng công cụ đó, dẫn đến truy cập dữ liệu trái phép, gửi thư rác hoặc các hoạt động độc hại khác.
+Hãy tưởng tượng máy chủ MCP của bạn có một công cụ có thể gửi email hoặc truy cập cơ sở dữ liệu khách hàng. Nếu máy chủ không được bảo mật, bất kỳ ai cũng có thể sử dụng công cụ đó, dẫn đến việc truy cập dữ liệu trái phép, gửi thư rác hoặc các hoạt động độc hại khác.
 
-Bằng cách triển khai xác thực, bạn đảm bảo mọi yêu cầu gửi đến máy chủ đều được kiểm tra, xác nhận danh tính của người dùng hoặc ứng dụng gửi yêu cầu. Đây là bước đầu tiên và quan trọng nhất để bảo vệ quy trình AI của bạn.
+Bằng cách triển khai xác thực, bạn đảm bảo mọi yêu cầu gửi đến máy chủ đều được xác minh, xác nhận danh tính người dùng hoặc ứng dụng gửi yêu cầu. Đây là bước đầu tiên và quan trọng nhất để bảo vệ quy trình AI của bạn.
 
-## Giới Thiệu Microsoft Entra ID
+## Giới thiệu về Microsoft Entra ID
 
-[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) là dịch vụ quản lý danh tính và truy cập dựa trên đám mây. Bạn có thể coi nó như một nhân viên bảo vệ đa năng cho các ứng dụng của bạn. Nó xử lý quá trình phức tạp xác minh danh tính người dùng (xác thực) và xác định quyền hạn của họ (ủy quyền).
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) là dịch vụ quản lý danh tính và truy cập dựa trên đám mây. Hãy tưởng tượng nó như một nhân viên bảo vệ an ninh toàn diện cho các ứng dụng của bạn. Nó xử lý quá trình phức tạp xác minh danh tính người dùng (xác thực) và xác định quyền hạn của họ (ủy quyền).
 
 Bằng cách sử dụng Entra ID, bạn có thể:
 
-- Cho phép người dùng đăng nhập an toàn.  
-- Bảo vệ các API và dịch vụ.  
-- Quản lý chính sách truy cập từ một vị trí tập trung.
+- Cho phép người dùng đăng nhập an toàn.
+- Bảo vệ API và dịch vụ.
+- Quản lý chính sách truy cập từ một nơi tập trung.
 
 Đối với máy chủ MCP, Entra ID cung cấp giải pháp mạnh mẽ và được tin cậy rộng rãi để quản lý ai có thể truy cập các chức năng của máy chủ.
 
 ---
 
-## Hiểu Về Cơ Chế: Cách Xác Thực Entra ID Hoạt Động
+## Hiểu về cơ chế: Cách xác thực Entra ID hoạt động
 
-Entra ID sử dụng các chuẩn mở như **OAuth 2.0** để xử lý xác thực. Mặc dù chi tiết có thể phức tạp, nhưng ý tưởng cốt lõi rất đơn giản và có thể hiểu qua một phép ẩn dụ.
+Entra ID sử dụng các tiêu chuẩn mở như **OAuth 2.0** để xử lý xác thực. Mặc dù chi tiết có thể phức tạp, nhưng khái niệm cốt lõi rất đơn giản và có thể hiểu qua một phép ẩn dụ.
 
-### Giới Thiệu Nhẹ Nhàng về OAuth 2.0: Chìa Khóa Valet
+### Giới thiệu nhẹ nhàng về OAuth 2.0: Chìa khóa valet
 
-Hãy tưởng tượng OAuth 2.0 giống như dịch vụ valet giữ xe cho bạn. Khi bạn đến nhà hàng, bạn không đưa chìa khóa chính cho người giữ xe. Thay vào đó, bạn đưa cho họ một **chìa khóa valet** với quyền hạn giới hạn — có thể khởi động xe và khóa cửa, nhưng không mở được cốp hay ngăn đựng đồ.
+Hãy tưởng tượng OAuth 2.0 giống như dịch vụ valet cho chiếc xe của bạn. Khi bạn đến nhà hàng, bạn không đưa cho người valet chìa khóa chính. Thay vào đó, bạn cung cấp một **chìa khóa valet** với quyền hạn giới hạn — nó có thể khởi động xe và khóa cửa, nhưng không thể mở cốp hay ngăn đựng đồ.
 
-Trong ẩn dụ này:
+Trong phép ẩn dụ này:
 
-- **Bạn** là **Người dùng**.  
-- **Chiếc xe của bạn** là **Máy chủ MCP** với các công cụ và dữ liệu quý giá.  
-- **Người giữ xe** là **Microsoft Entra ID**.  
-- **Nhân viên bãi đỗ** là **MCP Client** (ứng dụng cố gắng truy cập máy chủ).  
-- **Chìa khóa valet** là **Access Token** (mã truy cập).
+- **Bạn** là **Người dùng**.
+- **Chiếc xe của bạn** là **Máy chủ MCP** với các công cụ và dữ liệu quý giá.
+- **Người valet** là **Microsoft Entra ID**.
+- **Nhân viên giữ xe** là **MCP Client** (ứng dụng cố gắng truy cập máy chủ).
+- **Chìa khóa valet** là **Access Token**.
 
-Access token là một chuỗi ký tự bảo mật mà MCP client nhận được từ Entra ID sau khi bạn đăng nhập. Client sẽ gửi token này đến máy chủ MCP trong mỗi yêu cầu. Máy chủ có thể xác minh token để đảm bảo yêu cầu hợp lệ và client có quyền truy cập cần thiết, mà không cần phải xử lý trực tiếp thông tin đăng nhập của bạn (như mật khẩu).
+Access token là một chuỗi văn bản bảo mật mà MCP client nhận được từ Entra ID sau khi bạn đăng nhập. Client sau đó trình token này cho máy chủ MCP mỗi khi gửi yêu cầu. Máy chủ có thể xác minh token để đảm bảo yêu cầu hợp lệ và client có quyền truy cập cần thiết, mà không cần xử lý trực tiếp thông tin đăng nhập của bạn (như mật khẩu).
 
-### Quy Trình Xác Thực
+### Quy trình xác thực
 
 Quy trình hoạt động như sau:
 
@@ -85,56 +85,56 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```
 
-### Giới Thiệu Microsoft Authentication Library (MSAL)
+### Giới thiệu Microsoft Authentication Library (MSAL)
 
-Trước khi đi vào phần mã, cần giới thiệu một thành phần quan trọng bạn sẽ gặp trong ví dụ: **Microsoft Authentication Library (MSAL)**.
+Trước khi đi vào mã nguồn, cần giới thiệu một thành phần quan trọng bạn sẽ thấy trong ví dụ: **Microsoft Authentication Library (MSAL)**.
 
-MSAL là thư viện do Microsoft phát triển giúp các nhà phát triển dễ dàng xử lý xác thực. Thay vì phải tự viết toàn bộ mã phức tạp để quản lý token bảo mật, đăng nhập và làm mới phiên làm việc, MSAL sẽ lo phần này cho bạn.
+MSAL là thư viện do Microsoft phát triển giúp các nhà phát triển dễ dàng xử lý xác thực. Thay vì bạn phải viết toàn bộ mã phức tạp để xử lý token bảo mật, quản lý đăng nhập và làm mới phiên, MSAL sẽ lo phần nặng nhọc đó.
 
-Việc sử dụng thư viện như MSAL được khuyến nghị vì:
+Sử dụng thư viện như MSAL được khuyến nghị vì:
 
-- **An toàn:** Thư viện áp dụng các giao thức chuẩn ngành và thực hành bảo mật tốt nhất, giảm thiểu rủi ro lỗ hổng trong mã của bạn.  
-- **Đơn giản hóa phát triển:** MSAL ẩn đi độ phức tạp của các giao thức OAuth 2.0 và OpenID Connect, cho phép bạn thêm xác thực mạnh mẽ chỉ với vài dòng mã.  
-- **Được duy trì:** Microsoft thường xuyên cập nhật MSAL để ứng phó với các mối đe dọa bảo mật mới và thay đổi nền tảng.
+- **An toàn:** Nó triển khai các giao thức tiêu chuẩn ngành và thực hành bảo mật tốt nhất, giảm thiểu rủi ro lỗ hổng trong mã của bạn.
+- **Đơn giản hóa phát triển:** Nó ẩn đi sự phức tạp của các giao thức OAuth 2.0 và OpenID Connect, cho phép bạn thêm xác thực mạnh mẽ vào ứng dụng chỉ với vài dòng mã.
+- **Được duy trì:** Microsoft liên tục cập nhật MSAL để đối phó với các mối đe dọa bảo mật mới và thay đổi nền tảng.
 
-MSAL hỗ trợ nhiều ngôn ngữ và nền tảng ứng dụng như .NET, JavaScript/TypeScript, Python, Java, Go và các nền tảng di động iOS, Android. Điều này giúp bạn áp dụng mẫu xác thực đồng nhất trên toàn bộ hệ thống công nghệ.
+MSAL hỗ trợ nhiều ngôn ngữ và framework ứng dụng, bao gồm .NET, JavaScript/TypeScript, Python, Java, Go, và các nền tảng di động như iOS và Android. Điều này giúp bạn sử dụng cùng một mẫu xác thực nhất quán trên toàn bộ hệ thống công nghệ.
 
 Để tìm hiểu thêm về MSAL, bạn có thể xem tài liệu chính thức [Tổng quan về MSAL](https://learn.microsoft.com/entra/identity-platform/msal-overview).
 
 ---
 
-## Bảo Mật Máy Chủ MCP Với Entra ID: Hướng Dẫn Từng Bước
+## Bảo mật máy chủ MCP với Entra ID: Hướng dẫn từng bước
 
-Bây giờ, hãy cùng xem cách bảo mật một máy chủ MCP cục bộ (giao tiếp qua `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+Bây giờ, hãy cùng xem cách bảo mật một máy chủ MCP cục bộ (giao tiếp qua `stdio`) bằng Entra ID. Ví dụ này sử dụng **client công khai**, phù hợp với các ứng dụng chạy trên máy người dùng, như ứng dụng desktop hoặc máy chủ phát triển cục bộ.
 
-### Scenario 1: Securing a Local MCP Server (with a Public Client)
+### Kịch bản 1: Bảo mật máy chủ MCP cục bộ (với client công khai)
 
-In this scenario, we'll look at an MCP server that runs locally, communicates over `stdio`, and uses Entra ID to authenticate the user before allowing access to its tools. The server will have a single tool that fetches the user's profile information from the Microsoft Graph API.
+Trong kịch bản này, chúng ta xem xét một máy chủ MCP chạy cục bộ, giao tiếp qua `stdio`, và sử dụng Entra ID để xác thực người dùng trước khi cho phép truy cập công cụ. Máy chủ có một công cụ duy nhất lấy thông tin hồ sơ người dùng từ Microsoft Graph API.
 
-#### 1. Setting Up the Application in Entra ID
+#### 1. Thiết lập ứng dụng trong Entra ID
 
-Before writing any code, you need to register your application in Microsoft Entra ID. This tells Entra ID about your application and grants it permission to use the authentication service.
+Trước khi viết mã, bạn cần đăng ký ứng dụng trong Microsoft Entra ID. Việc này giúp Entra ID biết về ứng dụng của bạn và cấp quyền sử dụng dịch vụ xác thực.
 
-1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
-2. Go to **App registrations** and click **New registration**.
-3. Give your application a name (e.g., "My Local MCP Server").
-4. For **Supported account types**, select **Accounts in this organizational directory only**.
-5. You can leave the **Redirect URI** blank for this example.
-6. Click **Register**.
+1. Truy cập **[Microsoft Entra portal](https://entra.microsoft.com/)**.
+2. Vào **App registrations** và nhấn **New registration**.
+3. Đặt tên cho ứng dụng (ví dụ: "My Local MCP Server").
+4. Ở mục **Supported account types**, chọn **Accounts in this organizational directory only**.
+5. Bạn có thể để trống **Redirect URI** cho ví dụ này.
+6. Nhấn **Register**.
 
-Once registered, take note of the **Application (client) ID** and **Directory (tenant) ID**. You'll need these in your code.
+Sau khi đăng ký, ghi lại **Application (client) ID** và **Directory (tenant) ID**. Bạn sẽ cần dùng chúng trong mã.
 
-#### 2. The Code: A Breakdown
+#### 2. Mã nguồn: Phân tích
 
-Let's look at the key parts of the code that handle authentication. The full code for this example is available in the [Entra ID - Local - WAM](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-local-wam) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
+Hãy xem các phần chính của mã xử lý xác thực. Mã đầy đủ cho ví dụ này có trong thư mục [Entra ID - Local - WAM](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-local-wam) trong kho [mcp-auth-servers GitHub](https://github.com/Azure-Samples/mcp-auth-servers).
 
 **`AuthenticationService.cs`**
 
-This class is responsible for handling the interaction with Entra ID.
+Lớp này chịu trách nhiệm xử lý tương tác với Entra ID.
 
-- **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
-- **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`**: Đây là phương thức chính. Nó cố gắng lấy token một cách im lặng (nghĩa là người dùng không cần đăng nhập lại nếu đã có phiên hợp lệ). Nếu không lấy được token im lặng, nó sẽ yêu cầu người dùng đăng nhập tương tác.
+- **`CreateAsync`**: Phương thức này khởi tạo `PublicClientApplication` từ MSAL. Nó được cấu hình với `clientId` và `tenantId` của ứng dụng bạn.
+- **`WithBroker`**: Kích hoạt sử dụng broker (như Windows Web Account Manager), giúp trải nghiệm đăng nhập một lần an toàn và liền mạch hơn.
+- **`AcquireTokenAsync`**: Phương thức chính. Nó cố gắng lấy token một cách im lặng (nếu người dùng đã có phiên hợp lệ). Nếu không lấy được token im lặng, nó sẽ yêu cầu người dùng đăng nhập tương tác.
 
 ```csharp
 // Simplified for clarity
@@ -184,10 +184,10 @@ public async Task<string> AcquireTokenAsync()
 
 **`Program.cs`**
 
-This is where the MCP server is set up and the authentication service is integrated.
+Đây là nơi thiết lập máy chủ MCP và tích hợp dịch vụ xác thực.
 
-- **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` dùng để lấy token truy cập hợp lệ. Nếu xác thực thành công, token sẽ được dùng để gọi Microsoft Graph API và lấy thông tin người dùng.
+- **`AddSingleton<AuthenticationService>`**: Đăng ký `AuthenticationService` với container dependency injection để các phần khác của ứng dụng (như công cụ) có thể sử dụng.
+- Công cụ **`GetUserDetailsFromGraph`**: Công cụ này cần một thể hiện của `AuthenticationService`. Trước khi thực hiện, nó gọi `authService.AcquireTokenAsync()` để lấy token truy cập hợp lệ. Nếu xác thực thành công, nó dùng token để gọi Microsoft Graph API và lấy thông tin người dùng.
 
 ```csharp
 // Simplified for clarity
@@ -215,48 +215,48 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```
 
-#### 3. Cách Các Thành Phần Hoạt Động Cùng Nhau
+#### 3. Cách hoạt động tổng thể
 
-1. Khi MCP client gọi `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
-2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
-3. If no token is found, MSAL, through the broker, will prompt the user to sign in with their Entra ID account.
-4. Once the user signs in, Entra ID issues an access token.
-5. The tool receives the token and uses it to make a secure call to the Microsoft Graph API.
-6. The user's details are returned to the MCP client.
+1. Khi MCP client cố gắng sử dụng công cụ `GetUserDetailsFromGraph`, công cụ gọi `AcquireTokenAsync`.
+2. `AcquireTokenAsync` kích hoạt thư viện MSAL kiểm tra token hợp lệ.
+3. Nếu không có token, MSAL qua broker sẽ yêu cầu người dùng đăng nhập bằng tài khoản Entra ID.
+4. Sau khi đăng nhập, Entra ID cấp token truy cập.
+5. Công cụ nhận token và dùng nó để gọi an toàn Microsoft Graph API.
+6. Thông tin người dùng được trả về cho MCP client.
 
-This process ensures that only authenticated users can use the tool, effectively securing your local MCP server.
+Quy trình này đảm bảo chỉ người dùng đã xác thực mới có thể sử dụng công cụ, bảo vệ hiệu quả máy chủ MCP cục bộ của bạn.
 
-### Scenario 2: Securing a Remote MCP Server (with a Confidential Client)
+### Kịch bản 2: Bảo mật máy chủ MCP từ xa (với client bảo mật)
 
-When your MCP server is running on a remote machine (like a cloud server) and communicates over a protocol like HTTP Streaming, the security requirements are different. In this case, you should use a **confidential client** and the **Authorization Code Flow**. This is a more secure method because the application's secrets are never exposed to the browser.
+Khi máy chủ MCP chạy trên máy từ xa (như máy chủ đám mây) và giao tiếp qua giao thức như HTTP Streaming, yêu cầu bảo mật khác biệt. Trong trường hợp này, bạn nên dùng **client bảo mật** và **Authorization Code Flow**. Đây là phương pháp an toàn hơn vì bí mật ứng dụng không bao giờ bị lộ ra trình duyệt.
 
-This example uses a TypeScript-based MCP server that uses Express.js to handle HTTP requests.
+Ví dụ này sử dụng máy chủ MCP viết bằng TypeScript, dùng Express.js để xử lý các yêu cầu HTTP.
 
-#### 1. Setting Up the Application in Entra ID
+#### 1. Thiết lập ứng dụng trong Entra ID
 
-The setup in Entra ID is similar to the public client, but with one key difference: you need to create a **client secret**.
+Việc thiết lập trong Entra ID tương tự client công khai, nhưng có một điểm khác: bạn cần tạo **client secret**.
 
-1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
-2. In your app registration, go to the **Certificates & secrets** tab.
-3. Click **New client secret**, give it a description, and click **Add**.
-4. **Important:** Copy the secret value immediately. You will not be able to see it again.
-5. You also need to configure a **Redirect URI**. Go to the **Authentication** tab, click **Add a platform**, select **Web**, and enter the redirect URI for your application (e.g., `http://localhost:3001/auth/callback`).
+1. Truy cập **[Microsoft Entra portal](https://entra.microsoft.com/)**.
+2. Trong phần đăng ký ứng dụng, vào tab **Certificates & secrets**.
+3. Nhấn **New client secret**, đặt mô tả và nhấn **Add**.
+4. **Quan trọng:** Sao chép giá trị secret ngay lập tức. Bạn sẽ không thể xem lại sau.
+5. Bạn cũng cần cấu hình **Redirect URI**. Vào tab **Authentication**, nhấn **Add a platform**, chọn **Web**, và nhập URI chuyển hướng cho ứng dụng (ví dụ: `http://localhost:3001/auth/callback`).
 
-> **⚠️ Important Security Note:** For production applications, Microsoft strongly recommends using **secretless authentication** methods such as **Managed Identity** or **Workload Identity Federation** instead of client secrets. Client secrets pose security risks as they can be exposed or compromised. Managed identities provide a more secure approach by eliminating the need to store credentials in your code or configuration.
+> **⚠️ Lưu ý bảo mật quan trọng:** Với ứng dụng sản xuất, Microsoft khuyến nghị sử dụng các phương pháp xác thực không cần secret như **Managed Identity** hoặc **Workload Identity Federation** thay vì client secret. Client secret có nguy cơ bị lộ hoặc bị tấn công. Managed identity cung cấp cách tiếp cận an toàn hơn bằng cách loại bỏ nhu cầu lưu trữ thông tin đăng nhập trong mã hoặc cấu hình.
 >
-> For more information about managed identities and how to implement them, see the [Managed identities for Azure resources overview](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview).
+> Để biết thêm về managed identities và cách triển khai, xem [Tổng quan về Managed identities cho tài nguyên Azure](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview).
 
-#### 2. The Code: A Breakdown
+#### 2. Mã nguồn: Phân tích
 
-This example uses a session-based approach. When the user authenticates, the server stores the access token and refresh token in a session and gives the user a session token. This session token is then used for subsequent requests. The full code for this example is available in the [Entra ID - Confidential client](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-cca-session) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
+Ví dụ này sử dụng phương pháp dựa trên session. Khi người dùng xác thực, máy chủ lưu access token và refresh token trong session và cấp cho người dùng một session token. Token này được dùng cho các yêu cầu tiếp theo. Mã đầy đủ có trong thư mục [Entra ID - Confidential client](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-cca-session) trong kho [mcp-auth-servers GitHub](https://github.com/Azure-Samples/mcp-auth-servers).
 
 **`Server.ts`**
 
-This file sets up the Express server and the MCP transport layer.
+Tệp này thiết lập máy chủ Express và lớp truyền tải MCP.
 
-- **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
-- **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`**: Endpoint này xử lý chuyển hướng từ Entra ID sau khi người dùng đã xác thực. Nó trao đổi mã ủy quyền lấy access token và refresh token.
+- **`requireBearerAuth`**: Middleware bảo vệ các endpoint `/sse` và `/message`. Nó kiểm tra token bearer hợp lệ trong header `Authorization` của yêu cầu.
+- **`EntraIdServerAuthProvider`**: Lớp tùy chỉnh triển khai interface `McpServerAuthorizationProvider`. Nó chịu trách nhiệm xử lý luồng OAuth 2.0.
+- **`/auth/callback`**: Endpoint xử lý chuyển hướng từ Entra ID sau khi người dùng xác thực. Nó trao đổi authorization code lấy access token và refresh token.
 
 ```typescript
 // Simplified for clarity
@@ -291,7 +291,7 @@ app.get("/auth/callback", (req, res) => {
 
 **`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails` công cụ tương tự ví dụ trước, nhưng lấy access token từ session.
+Tệp này định nghĩa các công cụ mà máy chủ MCP cung cấp. Công cụ `getUserDetails` tương tự ví dụ trước, nhưng lấy access token từ session.
 
 ```typescript
 // Simplified for clarity
@@ -324,102 +324,102 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 **`auth/EntraIdServerAuthProvider.ts`**
 
-This class handles the logic for:
+Lớp này xử lý logic:
 
-- Redirecting the user to the Entra ID sign-in page.
-- Exchanging the authorization code for an access token.
-- Storing the tokens in the `tokenStore`.
-- Refreshing the access token when it expires.
+- Chuyển hướng người dùng đến trang đăng nhập Entra ID.
+- Trao đổi authorization code lấy access token.
+- Lưu token vào `tokenStore`.
+- Làm mới access token khi hết hạn.
 
-#### 3. How It All Works Together
+#### 3. Cách hoạt động tổng thể
 
-1. When a user first tries to connect to the MCP server, the `requireBearerAuth` middleware will see that they don't have a valid session and will redirect them to the Entra ID sign-in page.
-2. The user signs in with their Entra ID account.
-3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
-4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
-5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails` khi được gọi, nó sử dụng token trong session để tìm access token Entra ID, rồi dùng token này gọi Microsoft Graph API.
+1. Khi người dùng lần đầu kết nối với máy chủ MCP, middleware `requireBearerAuth` phát hiện họ chưa có session hợp lệ và chuyển hướng đến trang đăng nhập Entra ID.
+2. Người dùng đăng nhập bằng tài khoản Entra ID.
+3. Entra ID chuyển hướng người dùng về endpoint `/auth/callback` kèm theo authorization code.
+4. Máy chủ trao đổi mã lấy access token và refresh token, lưu trữ chúng, và tạo một session token được gửi đến client.  
+5. Client giờ có thể sử dụng session token này trong header `Authorization` cho tất cả các yêu cầu tiếp theo đến máy chủ MCP.  
+6. Khi công cụ `getUserDetails` được gọi, nó sử dụng session token để tra cứu access token Entra ID và sau đó dùng token đó để gọi Microsoft Graph API.
 
-Quy trình này phức tạp hơn so với luồng client công khai, nhưng cần thiết cho các endpoint hướng internet. Vì máy chủ MCP từ xa có thể truy cập qua internet công cộng, nên cần các biện pháp bảo mật mạnh hơn để chống truy cập trái phép và các cuộc tấn công tiềm năng.
+Quy trình này phức tạp hơn so với luồng client công khai, nhưng cần thiết cho các endpoint hướng ra internet. Vì các máy chủ MCP từ xa có thể truy cập qua internet công cộng, nên cần các biện pháp bảo mật mạnh hơn để ngăn chặn truy cập trái phép và các cuộc tấn công tiềm năng.
 
-## Thực Hành Bảo Mật Tốt Nhất
+## Các Thực Hành Bảo Mật Tốt Nhất
 
-- **Luôn sử dụng HTTPS**: Mã hóa giao tiếp giữa client và server để bảo vệ token khỏi bị chặn.  
-- **Triển khai Kiểm Soát Truy Cập Theo Vai Trò (RBAC)**: Không chỉ kiểm tra *người dùng đã xác thực* mà còn kiểm tra *quyền hạn* của họ. Bạn có thể định nghĩa vai trò trong Entra ID và kiểm tra trong máy chủ MCP.  
-- **Giám sát và kiểm toán**: Ghi lại tất cả sự kiện xác thực để phát hiện và phản ứng với hoạt động đáng ngờ.  
-- **Xử lý giới hạn tần suất và điều tiết**: Microsoft Graph và các API khác áp dụng giới hạn tần suất để tránh lạm dụng. Hãy triển khai cơ chế tăng thời gian chờ và thử lại (exponential backoff) trong máy chủ MCP để xử lý các phản hồi HTTP 429 (Quá nhiều yêu cầu). Cân nhắc lưu cache dữ liệu truy cập thường xuyên để giảm số lần gọi API.  
-- **Lưu trữ token an toàn**: Lưu access token và refresh token một cách bảo mật. Với ứng dụng cục bộ, sử dụng cơ chế lưu trữ an toàn của hệ thống. Với ứng dụng máy chủ, cân nhắc dùng lưu trữ mã hóa hoặc dịch vụ quản lý khóa an toàn như Azure Key Vault.  
-- **Xử lý hết hạn token**: Access token có thời hạn sử dụng. Triển khai tự động làm mới token bằng refresh token để duy trì trải nghiệm người dùng liền mạch mà không cần đăng nhập lại.  
-- **Cân nhắc sử dụng Azure API Management**: Mặc dù bảo mật trực tiếp trong máy chủ MCP giúp bạn kiểm soát chi tiết, các API Gateway như Azure API Management có thể tự động xử lý nhiều vấn đề bảo mật như xác thực, ủy quyền, giới hạn tần suất và giám sát. Chúng cung cấp lớp bảo mật tập trung giữa client và máy chủ MCP. Để biết thêm chi tiết về việc sử dụng API Gateway với MCP, xem bài viết [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
+- **Luôn sử dụng HTTPS**: Mã hóa giao tiếp giữa client và server để bảo vệ token khỏi bị chặn.
+- **Triển khai Role-Based Access Control (RBAC)**: Không chỉ kiểm tra *nếu* người dùng đã xác thực; mà còn kiểm tra *họ được phép làm gì*. Bạn có thể định nghĩa vai trò trong Entra ID và kiểm tra chúng trong máy chủ MCP của bạn.
+- **Giám sát và kiểm toán**: Ghi lại tất cả các sự kiện xác thực để phát hiện và phản ứng với các hoạt động đáng ngờ.
+- **Xử lý giới hạn tần suất và điều tiết**: Microsoft Graph và các API khác áp dụng giới hạn tần suất để ngăn chặn lạm dụng. Triển khai cơ chế exponential backoff và logic thử lại trong máy chủ MCP để xử lý mượt mà các phản hồi HTTP 429 (Too Many Requests). Cân nhắc lưu cache dữ liệu truy cập thường xuyên để giảm số lần gọi API.
+- **Lưu trữ token an toàn**: Lưu trữ access token và refresh token một cách an toàn. Với ứng dụng cục bộ, sử dụng cơ chế lưu trữ an toàn của hệ thống. Với ứng dụng máy chủ, cân nhắc sử dụng lưu trữ mã hóa hoặc dịch vụ quản lý khóa an toàn như Azure Key Vault.
+- **Xử lý hết hạn token**: Access token có thời hạn sử dụng giới hạn. Triển khai tự động làm mới token bằng refresh token để duy trì trải nghiệm người dùng liền mạch mà không cần xác thực lại.
+- **Cân nhắc sử dụng Azure API Management**: Mặc dù việc triển khai bảo mật trực tiếp trong máy chủ MCP giúp bạn kiểm soát chi tiết, các API Gateway như Azure API Management có thể xử lý nhiều vấn đề bảo mật này tự động, bao gồm xác thực, ủy quyền, giới hạn tần suất và giám sát. Chúng cung cấp một lớp bảo mật tập trung nằm giữa client và máy chủ MCP của bạn. Để biết thêm chi tiết về việc sử dụng API Gateway với MCP, xem [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
 
-## Những Điều Cần Ghi Nhớ
+## Những Điểm Chính Cần Nhớ
 
-- Bảo mật máy chủ MCP rất quan trọng để bảo vệ dữ liệu và công cụ của bạn.  
-- Microsoft Entra ID cung cấp giải pháp xác thực và ủy quyền mạnh mẽ, dễ mở rộng.  
-- Dùng **public client** cho ứng dụng cục bộ và **confidential client** cho máy chủ từ xa.  
-- **Authorization Code Flow** là lựa chọn an toàn nhất cho ứng dụng web.
+- Bảo mật máy chủ MCP của bạn là điều quan trọng để bảo vệ dữ liệu và công cụ.
+- Microsoft Entra ID cung cấp giải pháp xác thực và ủy quyền mạnh mẽ, có khả năng mở rộng.
+- Sử dụng **public client** cho ứng dụng cục bộ và **confidential client** cho máy chủ từ xa.
+- **Authorization Code Flow** là lựa chọn bảo mật nhất cho các ứng dụng web.
 
 ## Bài Tập
 
-1. Hãy nghĩ về một máy chủ MCP bạn có thể xây dựng. Nó sẽ là máy chủ cục bộ hay máy chủ từ xa?  
-2. Dựa trên câu trả lời, bạn sẽ dùng client công khai hay client bí mật?  
-3. Máy chủ MCP của bạn sẽ yêu cầu quyền gì để thực hiện các thao tác với Microsoft Graph?
+1. Hãy nghĩ về một máy chủ MCP mà bạn có thể xây dựng. Nó sẽ là máy chủ cục bộ hay máy chủ từ xa?  
+2. Dựa trên câu trả lời của bạn, bạn sẽ sử dụng public client hay confidential client?  
+3. Máy chủ MCP của bạn sẽ yêu cầu quyền gì để thực hiện các hành động với Microsoft Graph?
 
 ## Bài Tập Thực Hành
 
-### Bài Tập 1: Đăng Ký Ứng Dụng Trong Entra ID  
+### Bài Tập 1: Đăng ký Ứng dụng trong Entra ID  
 Đi đến cổng Microsoft Entra.  
 Đăng ký một ứng dụng mới cho máy chủ MCP của bạn.  
 Ghi lại Application (client) ID và Directory (tenant) ID.
 
-### Bài Tập 2: Bảo Mật Máy Chủ MCP Cục Bộ (Public Client)  
-- Theo dõi ví dụ mã để tích hợp MSAL (Microsoft Authentication Library) cho xác thực người dùng.  
-- Thử nghiệm quy trình xác thực bằng cách gọi công cụ MCP lấy thông tin người dùng từ Microsoft Graph.
+### Bài Tập 2: Bảo mật Máy chủ MCP Cục bộ (Public Client)  
+- Theo ví dụ mã để tích hợp MSAL (Microsoft Authentication Library) cho xác thực người dùng.  
+- Thử nghiệm luồng xác thực bằng cách gọi công cụ MCP lấy thông tin người dùng từ Microsoft Graph.
 
-### Bài Tập 3: Bảo Mật Máy Chủ MCP Từ Xa (Confidential Client)  
+### Bài Tập 3: Bảo mật Máy chủ MCP Từ xa (Confidential Client)  
 - Đăng ký confidential client trong Entra ID và tạo client secret.  
-- Cấu hình máy chủ MCP Express.js sử dụng Authorization Code Flow.  
-- Kiểm tra các endpoint được bảo vệ và xác nhận truy cập dựa trên token.
+- Cấu hình máy chủ MCP Express.js của bạn sử dụng Authorization Code Flow.  
+- Thử nghiệm các endpoint được bảo vệ và xác nhận truy cập dựa trên token.
 
-### Bài Tập 4: Áp Dụng Thực Hành Bảo Mật Tốt Nhất  
-- Kích hoạt HTTPS cho máy chủ cục bộ hoặc từ xa.  
-- Triển khai kiểm soát truy cập theo vai trò (RBAC) trong logic máy chủ.  
+### Bài Tập 4: Áp dụng Các Thực Hành Bảo Mật Tốt Nhất  
+- Kích hoạt HTTPS cho máy chủ cục bộ hoặc từ xa của bạn.  
+- Triển khai kiểm soát truy cập dựa trên vai trò (RBAC) trong logic máy chủ.  
 - Thêm xử lý hết hạn token và lưu trữ token an toàn.
 
 ## Tài Nguyên
 
 1. **Tài liệu Tổng quan MSAL**  
    Tìm hiểu cách Microsoft Authentication Library (MSAL) giúp lấy token an toàn trên nhiều nền tảng:  
-   [Tổng quan MSAL trên Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
+   [MSAL Overview on Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
-2. **Kho Mã Azure-Samples/mcp-auth-servers trên GitHub**  
-   Các ví dụ tham khảo về máy chủ MCP minh họa quy trình xác thực:  
-   [Azure-Samples/mcp-auth-servers trên GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
+2. **Kho mã nguồn Azure-Samples/mcp-auth-servers trên GitHub**  
+   Các ví dụ tham khảo về máy chủ MCP minh họa các luồng xác thực:  
+   [Azure-Samples/mcp-auth-servers on GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
 3. **Tổng quan về Managed Identities cho Azure Resources**  
-   Hiểu cách loại bỏ bí mật bằng cách sử dụng managed identities do hệ thống hoặc người dùng gán:  
-   [Tổng quan Managed Identities trên Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
+   Hiểu cách loại bỏ bí mật bằng cách sử dụng managed identities được gán cho hệ thống hoặc người dùng:  
+   [Managed Identities Overview on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
-4. **Azure API Management: Cổng Xác Thực Cho Máy Chủ MCP**  
-   Phân tích sâu về việc sử dụng APIM như cổng OAuth2 bảo mật cho máy chủ MCP:  
+4. **Azure API Management: Your Auth Gateway for MCP Servers**  
+   Tìm hiểu sâu về việc sử dụng APIM như một cổng OAuth2 bảo mật cho máy chủ MCP:  
    [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
-5. **Tham Khảo Quyền Microsoft Graph**  
-   Danh sách đầy đủ các quyền ủy quyền và ứng dụng cho Microsoft Graph:  
-   [Tham khảo Quyền Microsoft Graph](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
+5. **Tham khảo Quyền Microsoft Graph**  
+   Danh sách đầy đủ các quyền được ủy quyền và quyền ứng dụng cho Microsoft Graph:  
+   [Microsoft Graph Permissions Reference](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
-## Kết Quả Học Tập  
+## Kết quả học tập  
 Sau khi hoàn thành phần này, bạn sẽ có thể:
 
-- Trình bày lý do tại sao xác thực lại quan trọng đối với máy chủ MCP và quy trình AI.  
-- Thiết lập và cấu hình xác thực Entra ID cho cả máy chủ MCP cục bộ và từ xa.  
+- Giải thích tại sao xác thực lại quan trọng đối với máy chủ MCP và các luồng AI.  
+- Thiết lập và cấu hình xác thực Entra ID cho cả kịch bản máy chủ MCP cục bộ và từ xa.  
 - Lựa chọn loại client phù hợp (public hoặc confidential) dựa trên cách triển khai máy chủ.  
-- Thực hiện các thực hành lập trình an toàn, bao gồm lưu trữ token và ủy quyền theo vai trò.  
-- Tự tin bảo vệ máy chủ MCP và các công cụ của nó khỏi truy cập trái phép.
+- Thực hiện các thực hành mã hóa an toàn, bao gồm lưu trữ token và ủy quyền dựa trên vai trò.  
+- Tự tin bảo vệ máy chủ MCP và các công cụ của bạn khỏi truy cập trái phép.
 
-## Tiếp Theo  
+## Tiếp theo
 
-- [5.13 Tích hợp Model Context Protocol (MCP) với Azure AI Foundry](../mcp-foundry-agent-integration/README.md)
+- [5.13 Model Context Protocol (MCP) Integration with Azure AI Foundry](../mcp-foundry-agent-integration/README.md)
 
-**Tuyên bố miễn trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ nguyên bản nên được coi là nguồn chính thức. Đối với thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

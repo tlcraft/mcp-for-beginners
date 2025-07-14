@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c91321a11935b0f2b67dfc57c88036ca",
-  "translation_date": "2025-06-17T16:46:39+00:00",
+  "translation_date": "2025-07-13T20:07:26+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/README.md",
   "language_code": "uk"
 }

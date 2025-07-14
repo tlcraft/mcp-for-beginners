@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:17:18+00:00",
+  "translation_date": "2025-07-13T18:38:02+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "sr"
 }
 -->
 # MCP Java Client - Calculator Demo
 
-Ovaj projekat prikazuje kako napraviti Java klijenta koji se povezuje i komunicira sa MCP (Model Context Protocol) serverom. U ovom primeru povezaćemo se na kalkulator server iz Poglavlja 01 i izvršiti različite matematičke operacije.
+Овај пројекат показује како направити Java клијента који се повезује и комуницира са MCP (Model Context Protocol) сервером. У овом примеру ћемо се повезати на сервер калкулатора из Поглавља 01 и извршити различите математичке операције.
 
-## Preduslovi
+## Захтеви
 
-Pre nego što pokrenete ovog klijenta, potrebno je da:
+Пре покретања овог клијента, потребно је да:
 
-1. **Pokrenete Calculator Server** iz Poglavlja 01:
-   - Idite u direktorijum kalkulator servera: `03-GettingStarted/01-first-server/solution/java/`
-   - Izgradite i pokrenite kalkulator server:
+1. **Покренете Calculator Server** из Поглавља 01:
+   - Идите у директоријум сервера калкулатора: `03-GettingStarted/01-first-server/solution/java/`
+   - Изградите и покрените сервер калкулатора:
      ```cmd
      cd ..\01-first-server\solution\java
      .\mvnw clean install -DskipTests
      java -jar target\calculator-server-0.0.1-SNAPSHOT.jar
      ```
-   - Server bi trebalo da radi na `http://localhost:8080`
+   - Сервер би требало да ради на адреси `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. Имати инсталиран **Java 21 или новији**
+3. Имати **Maven** (укључен преко Maven Wrapper-а)
 
-## What is the SDKClient?
+## Шта је SDKClient?
 
-The `SDKClient` je Java aplikacija koja pokazuje kako da:
-- Povežete se na MCP server koristeći Server-Sent Events (SSE) transport
-- Prikazujete dostupne alate sa servera
-- Pozivate različite kalkulatorske funkcije na daljinu
-- Obradite odgovore i prikažete rezultate
+`SDKClient` је Java апликација која показује како да:
+- Повежете се на MCP сервер користећи Server-Sent Events (SSE) транспорт
+- Прикажете доступне алате са сервера
+- Позовете различите функције калкулатора удаљено
+- Обрадите одговоре и прикажете резултате
 
-## Kako Radi
+## Како ради
 
-Klijent koristi Spring AI MCP framework da:
+Клијент користи Spring AI MCP фрејмворк да:
 
-1. **Uspostavi Vezu**: Kreira WebFlux SSE klijent transport za povezivanje sa kalkulator serverom
-2. **Inicijalizuje Klijenta**: Podešava MCP klijenta i uspostavlja vezu
-3. **Otkrije Alate**: Prikazuje sve dostupne kalkulatorske operacije
-4. **Izvrši Operacije**: Poziva različite matematičke funkcije sa primerima podataka
-5. **Prikazuje Rezultate**: Prikazuje rezultate svake kalkulacije
+1. **Успостави везу**: Креира WebFlux SSE клијент транспорт за повезивање са сервером калкулатора
+2. **Иницијализује клијента**: Подешава MCP клијента и успоставља везу
+3. **Открије алате**: Приказује све доступне операције калкулатора
+4. **Изврши операције**: Позива различите математичке функције са примерима података
+5. **Прикаже резултате**: Приказује резултате сваког израчунавања
 
-## Struktura Projekta
+## Структура пројекта
 
 ```
 src/
@@ -60,9 +60,9 @@ src/
                             └── SDKClient.java    # Main client implementation
 ```
 
-## Ključne Zavisnosti
+## Кључне зависности
 
-Projekat koristi sledeće ključne zavisnosti:
+Пројекат користи следеће кључне зависности:
 
 ```xml
 <dependency>
@@ -71,44 +71,44 @@ Projekat koristi sledeće ključne zavisnosti:
 </dependency>
 ```
 
-Ova zavisnost obezbeđuje:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - SSE transport za komunikaciju preko weba
-- MCP protokol šeme i tipove zahteva/odgovora
+Ова зависност обезбеђује:
+- `McpClient` - Главни интерфејс клијента
+- `WebFluxSseClientTransport` - SSE транспорт за веб комуникацију
+- MCP протокол шеме и типове захтева/одговора
 
-## Izgradnja Projekta
+## Изградња пројекта
 
-Izgradite projekat koristeći Maven wrapper:
+Изградите пројекат користећи Maven wrapper:
 
 ```cmd
 .\mvnw clean install
 ```
 
-## Pokretanje Klijenta
+## Покретање клијента
 
 ```cmd
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Note**: Proverite da li kalkulator server radi na `http://localhost:8080` before executing any of these commands.
+**Note**: Проверите да ли сервер калкулатора ради на `http://localhost:8080` пре извршавања било које од ових команди.
 
-## What the Client Does
+## Шта клијент ради
 
-When you run the client, it will:
+Када покренете клијента, он ће:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **Prikaz Alata** - Prikazuje sve dostupne kalkulatorske operacije
-3. **Izvrši Kalkulacije**:
-   - Sabiranje: 5 + 3 = 8
-   - Oduzimanje: 10 - 4 = 6
-   - Množenje: 6 × 7 = 42
-   - Deljenje: 20 ÷ 4 = 5
-   - Stepenovanje: 2^8 = 256
-   - Kvadratni koren: √16 = 4
-   - Apsolutna vrednost: |-5.5| = 5.5
-   - Pomoć: Prikazuje dostupne operacije
+1. **Повезати се** на сервер калкулатора на адреси `http://localhost:8080`
+2. **Приказати алате** - Приказује све доступне операције калкулатора
+3. **Извршити израчунавања**:
+   - Сабирање: 5 + 3 = 8
+   - Одузимање: 10 - 4 = 6
+   - Множење: 6 × 7 = 42
+   - Дељење: 20 ÷ 4 = 5
+   - Степеновање: 2^8 = 256
+   - Квадратни корен: √16 = 4
+   - Апсолутна вредност: |-5.5| = 5.5
+   - Помоћ: Приказује доступне операције
 
-## Očekivani Rezultat
+## Очекујени излаз
 
 ```
 Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
@@ -122,56 +122,56 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Note**: Možda ćete videti Maven upozorenja o preostalih nitima na kraju - to je normalno za reaktivne aplikacije i ne ukazuje na grešku.
+**Note**: Могуће је да ћете видети Maven упозорења о преосталим нитима на крају - то је нормално за реактивне апликације и не указује на грешку.
 
-## Razumevanje Koda
+## Разумевање кода
 
-### 1. Podešavanje Transporta
+### 1. Подешавање транспорта
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
 ```
-Ovo kreira SSE (Server-Sent Events) transport koji se povezuje na kalkulator server.
+Ово креира SSE (Server-Sent Events) транспорт који се повезује на сервер калкулатора.
 
-### 2. Kreiranje Klijenta
+### 2. Креирање клијента
 ```java
 var client = McpClient.sync(this.transport).build();
 client.initialize();
 ```
-Kreira sinhroni MCP klijent i inicijalizuje vezu.
+Креира синхрони MCP клијент и иницијализује везу.
 
-### 3. Pozivanje Alata
+### 3. Позивање алата
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
 ```
-Poziva "add" alat sa parametrima a=5.0 i b=3.0.
+Позива алат "add" са параметрима a=5.0 и b=3.0.
 
-## Rešavanje Problema
+## Решавање проблема
 
-### Server Ne Radi
-Ako dobijete greške u vezi, proverite da li kalkulator server iz Poglavlja 01 radi:
+### Сервер није покренут
+Ако добијете грешке у вези са повезивањем, проверите да ли је сервер калкулатора из Поглавља 01 покренут:
 ```
 Error: Connection refused
 ```
-**Rešenje**: Prvo pokrenite kalkulator server.
+**Решење**: Прво покрените сервер калкулатора.
 
-### Port Je Zauzet
-Ako je port 8080 zauzet:
+### Порт је већ у употреби
+Ако је порт 8080 заузет:
 ```
 Error: Address already in use
 ```
-**Rešenje**: Zaustavite druge aplikacije koje koriste port 8080 ili promenite port servera.
+**Решење**: Зауставите друге апликације које користе порт 8080 или промените порт сервера.
 
-### Greške Pri Izgradnji
-Ako naiđete na greške pri izgradnji:
+### Грешке при изградњи
+Ако наиђете на грешке приликом изградње:
 ```cmd
 .\mvnw clean install -DskipTests
 ```
 
-## Saznajte Više
+## Сазнајте више
 
 - [Spring AI MCP Documentation](https://docs.spring.io/spring-ai/reference/api/mcp/)
 - [Model Context Protocol Specification](https://modelcontextprotocol.io/)
 - [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем АИ услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде прецизан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне тумачења која произилазе из коришћења овог превода.
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

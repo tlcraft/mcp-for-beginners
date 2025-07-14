@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-04T17:04:09+00:00",
+  "translation_date": "2025-07-13T16:00:48+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "it"
 }
@@ -51,7 +51,7 @@ flowchart LR
 
 - **MCP Hosts**: Programmi come VSCode, Claude Desktop, IDE o strumenti AI che vogliono accedere ai dati tramite MCP
 - **MCP Clients**: Client del protocollo che mantengono connessioni 1:1 con i server
-- **MCP Servers**: Programmi leggeri che espongono specifiche funzionalità attraverso il Model Context Protocol standardizzato
+- **MCP Servers**: Programmi leggeri che espongono specifiche funzionalità tramite il Model Context Protocol standardizzato
 - **Fonti di Dati Locali**: File, database e servizi del tuo computer a cui i server MCP possono accedere in modo sicuro
 - **Servizi Remoti**: Sistemi esterni disponibili su internet a cui i server MCP possono connettersi tramite API.
 
@@ -77,7 +77,7 @@ I Clients sono componenti essenziali che facilitano l’interazione tra Hosts e 
 
 - Invia richieste ai server con prompt/istruzioni.
 - Negoziano le capacità con i server.
-- Gestiscono le richieste di esecuzione degli strumenti da parte dei modelli.
+- Gestiscono le richieste di esecuzione degli strumenti dai modelli.
 - Elaborano e mostrano le risposte agli utenti.
 
 ### 3. Servers
@@ -180,7 +180,7 @@ Il Model Context Protocol (MCP) definisce un flusso strutturato di informazioni 
   - Il client può richiedere contesto o risorse aggiuntive al server (come file, voci di database o articoli di basi di conoscenza) per arricchire la comprensione del modello.
   - Se il modello determina che è necessario uno strumento (ad esempio per recuperare dati, eseguire un calcolo o chiamare un’API), il client invia una richiesta di invocazione dello strumento al server, specificando nome e parametri dello strumento.
 
-- **Esecuzione da parte del Server**  
+- **Esecuzione del Server**  
   Il server riceve la richiesta di risorsa o strumento, esegue le operazioni necessarie (come eseguire una funzione, interrogare un database o recuperare un file) e restituisce i risultati al client in un formato strutturato.
 
 - **Generazione della Risposta**  
@@ -215,7 +215,7 @@ Di seguito alcune utilità e estensioni del protocollo che MCP offre per miglior
 - **Segnalazione degli Errori**: Messaggi e codici di errore standardizzati aiutano a diagnosticare problemi, gestire fallimenti in modo elegante e fornire feedback utili a utenti e sviluppatori.
 - **Logging**: Sia client che server possono emettere log strutturati per auditing, debug e monitoraggio delle interazioni del protocollo.
 
-Sfruttando queste funzionalità, MCP garantisce comunicazioni robuste, sicure e flessibili tra modelli linguistici e strumenti o fonti di dati esterni.
+Sfruttando queste caratteristiche, MCP garantisce comunicazioni robuste, sicure e flessibili tra modelli linguistici e strumenti o fonti di dati esterni.
 
 ### 🔐 Considerazioni sulla Sicurezza
 
@@ -225,7 +225,7 @@ Le implementazioni MCP dovrebbero aderire a diversi principi chiave di sicurezza
 
 - **Privacy dei Dati**: I dati degli utenti devono essere esposti solo con consenso esplicito e protetti da adeguati controlli di accesso. Le implementazioni MCP devono prevenire trasmissioni non autorizzate e garantire che la privacy sia mantenuta in tutte le interazioni.
 
-- **Sicurezza degli Strumenti**: Prima di invocare qualsiasi strumento, è richiesto il consenso esplicito dell’utente. Gli utenti devono comprendere chiaramente la funzionalità di ogni strumento e devono essere applicati confini di sicurezza robusti per prevenire esecuzioni non intenzionali o pericolose.
+- **Sicurezza degli Strumenti**: Prima di invocare qualsiasi strumento, è richiesto il consenso esplicito dell’utente. Gli utenti devono comprendere chiaramente la funzionalità di ogni strumento, e devono essere applicati confini di sicurezza robusti per prevenire esecuzioni non intenzionali o pericolose.
 
 Seguendo questi principi, MCP assicura che fiducia, privacy e sicurezza degli utenti siano mantenute in tutte le interazioni del protocollo.
 
@@ -296,7 +296,7 @@ public class WeatherData
 
 ### Esempio Java: Componenti Server MCP
 
-Questo esempio mostra lo stesso server MCP e la registrazione degli strumenti come nell’esempio .NET sopra, ma implementato in Java.
+Questo esempio dimostra lo stesso server MCP e la registrazione degli strumenti dell’esempio .NET sopra, ma implementato in Java.
 
 ```java
 import io.modelcontextprotocol.server.McpServer;

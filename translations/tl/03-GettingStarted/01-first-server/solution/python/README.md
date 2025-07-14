@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T23:12:29+00:00",
+  "translation_date": "2025-07-13T18:01:27+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "tl"
 }
@@ -61,7 +61,7 @@ Maaari mo itong patakbuhin nang direkta sa CLI mode sa pamamagitan ng pagpapatak
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Ililista nito ang lahat ng mga tools na available sa server. Dapat makita mo ang sumusunod na output:
+Ililista nito ang lahat ng tools na available sa server. Dapat makita mo ang sumusunod na output:
 
 ```text
 {
@@ -117,4 +117,4 @@ Dapat makita mo ang sumusunod na output:
 > Basahin pa ang tungkol sa inspector [dito](https://github.com/modelcontextprotocol/inspector).
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

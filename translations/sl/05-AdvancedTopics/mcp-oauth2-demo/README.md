@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T01:25:13+00:00",
+  "translation_date": "2025-07-14T00:44:11+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "sl"
 }
 -->
 # MCP OAuth2 Demo
 
-Ta proyekto je **minimalna Spring Boot aplikacija** ki deluje kot:
+Ta projekt je **minimalna Spring Boot aplikacija**, ki deluje kot:
 
 * **Spring Authorization Server** (izdaja JWT dostopne žetone preko `client_credentials` toka), in  
-* **Resource Server** (varuje svoj lasten `/hello` endpoint).
+* **Resource Server** (varuje svoj `/hello` endpoint).
 
-Odraža nastavitev prikazano v [Spring blog objavi (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Sledi nastavitvi, prikazani v [Spring blog objavi (2. aprila 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,16 +36,16 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testiranje OAuth2 konfiguracije
 
-OAuth2 varnostno konfiguracijo lahko preizkusiš z naslednjimi koraki:
+OAuth2 varnostno konfiguracijo lahko preizkusite z naslednjimi koraki:
 
-### 1. Preveri, da strežnik deluje in je zaščiten
+### 1. Preverite, da strežnik teče in je zaščiten
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Pridobi dostopni žeton z uporabo klientskih poverilnic
+### 2. Pridobite dostopni žeton z uporabo klientovih poverilnic
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Opomba: Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Opomba: Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) je Base64 kodiranje za `mcp-client:secret`.
 
-### 3. Dostopaj do zaščitenega endpointa z žetonom
+### 3. Dostopajte do zaščitenega endpointa z žetonom
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Uspešen odgovor z "Hello from MCP OAuth2 Demo!" potrjuje, da OAuth2 konfiguracija pravilno deluje.
+Uspešen odgovor z "Hello from MCP OAuth2 Demo!" potrjuje, da OAuth2 konfiguracija deluje pravilno.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Namestitev na **Azure Container Apps**
+## Namestitev v **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-FQDN za ingress postane tvoj **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Ingress FQDN postane vaš **issuer** (`https://<fqdn>`).  
+Azure samodejno zagotovi zaupanja vreden TLS certifikat za `*.azurecontainerapps.io`.
 
 ---
 
 ## Povezava z **Azure API Management**
 
-Dodaj to inbound politiko v svoj API:
+Dodajte to inbound politiko vaši API:
 
 ```xml
 <inbound>
@@ -124,5 +124,5 @@ APIM bo pridobil JWKS in preverjal vsak zahtevek.
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku naj velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

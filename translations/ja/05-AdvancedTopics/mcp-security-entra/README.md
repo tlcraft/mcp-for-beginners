@@ -2,70 +2,70 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6e562d7e5a77c8982da4aa8f762ad1d8",
-  "translation_date": "2025-07-02T09:05:35+00:00",
+  "translation_date": "2025-07-14T02:53:39+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "ja"
 }
 -->
-# AIワークフローのセキュリティ強化：モデルコンテキストプロトコルサーバーのEntra ID認証
+# AIワークフローの保護：Model Context ProtocolサーバーのEntra ID認証
 
-## はじめに  
-モデルコンテキストプロトコル（MCP）サーバーのセキュリティは、自宅の玄関の鍵をかけるのと同じくらい重要です。MCPサーバーを開放したままにすると、ツールやデータが不正アクセスにさらされ、セキュリティ侵害につながる恐れがあります。Microsoft Entra IDは、クラウドベースの強力なアイデンティティとアクセス管理ソリューションを提供し、許可されたユーザーやアプリケーションだけがMCPサーバーとやり取りできるようにします。このセクションでは、Entra ID認証を使ってAIワークフローを保護する方法を学びます。
+## はじめに
+Model Context Protocol（MCP）サーバーのセキュリティは、自宅の玄関の鍵をかけるのと同じくらい重要です。MCPサーバーを無防備にしておくと、ツールやデータが不正アクセスにさらされ、セキュリティ侵害につながる恐れがあります。Microsoft Entra IDは、クラウドベースの強力なIDおよびアクセス管理ソリューションを提供し、認可されたユーザーやアプリケーションだけがMCPサーバーとやり取りできるようにします。このセクションでは、Entra ID認証を使ってAIワークフローを保護する方法を学びます。
 
-## 学習目標  
-このセクションを終える頃には、以下ができるようになります。
+## 学習目標
+このセクションを終える頃には、以下ができるようになります：
 
 - MCPサーバーのセキュリティの重要性を理解する。
 - Microsoft Entra IDとOAuth 2.0認証の基本を説明できる。
-- パブリッククライアントとコンフィデンシャルクライアントの違いを理解する。
-- ローカル（パブリッククライアント）およびリモート（コンフィデンシャルクライアント）MCPサーバーシナリオでEntra ID認証を実装する。
-- AIワークフロー開発時のセキュリティベストプラクティスを適用する。
+- パブリッククライアントとコンフィデンシャルクライアントの違いを認識する。
+- ローカル（パブリッククライアント）およびリモート（コンフィデンシャルクライアント）MCPサーバーのシナリオでEntra ID認証を実装する。
+- AIワークフロー開発時にセキュリティのベストプラクティスを適用する。
 
 ## セキュリティとMCP
 
-自宅の玄関の鍵をかけずに放置しないのと同様に、MCPサーバーを誰でもアクセスできる状態にしてはいけません。AIワークフローのセキュリティ確保は、堅牢で信頼できる安全なアプリケーションを構築するために不可欠です。本章では、Microsoft Entra IDを使ってMCPサーバーを保護し、許可されたユーザーとアプリケーションのみがツールやデータにアクセスできるようにする方法を紹介します。
+自宅の玄関の鍵をかけずに放置しないのと同様に、MCPサーバーも誰でもアクセスできる状態にしてはいけません。AIワークフローのセキュリティは、堅牢で信頼性の高い安全なアプリケーションを構築するために不可欠です。本章では、Microsoft Entra IDを使ってMCPサーバーを保護し、認可されたユーザーやアプリケーションだけがツールやデータにアクセスできるようにする方法を紹介します。
 
-## MCPサーバーにおけるセキュリティの重要性
+## MCPサーバーのセキュリティが重要な理由
 
-例えば、MCPサーバーにメール送信や顧客データベースへのアクセスができるツールがあるとします。セキュリティが甘いサーバーでは、誰でもそのツールを使えてしまい、不正なデータアクセスやスパム、悪意ある行為につながる可能性があります。
+MCPサーバーにメール送信や顧客データベースへのアクセスが可能なツールがあると想像してください。セキュリティが甘いサーバーでは、誰でもそのツールを使えてしまい、不正なデータアクセスやスパム、その他の悪意ある行為につながる可能性があります。
 
-認証を実装することで、サーバーへのすべてのリクエストが検証され、リクエストを行うユーザーやアプリケーションの身元が確認されます。これはAIワークフローのセキュリティ確保における最初で最も重要なステップです。
+認証を実装することで、サーバーへのすべてのリクエストが検証され、リクエストを行うユーザーやアプリケーションの身元が確認されます。これがAIワークフローを保護するための最初で最も重要なステップです。
 
 ## Microsoft Entra IDの紹介
 
-[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/)は、クラウドベースのアイデンティティおよびアクセス管理サービスです。アプリケーションのための万能なセキュリティガードのようなものと考えてください。ユーザーの身元確認（認証）や、ユーザーが何を許可されているか（認可）を扱う複雑な処理を代行します。
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/)は、クラウドベースのIDおよびアクセス管理サービスです。アプリケーションのための万能なセキュリティガードのようなものと考えてください。ユーザーの身元確認（認証）や、許可されている操作の判定（認可）という複雑なプロセスを処理します。
 
-Entra IDを使うことで、以下が可能になります。
+Entra IDを使うことで、以下が可能になります：
 
 - ユーザーの安全なサインインを実現。
-- APIやサービスを保護。
+- APIやサービスの保護。
 - アクセスポリシーを一元管理。
 
-MCPサーバーにおいては、Entra IDが誰がサーバーの機能にアクセスできるかを管理するための信頼性の高いソリューションを提供します。
+MCPサーバーにおいては、Entra IDがサーバーの機能にアクセスできるユーザーを管理するための信頼性の高いソリューションを提供します。
 
 ---
 
-## 魔法の仕組み：Entra ID認証のしくみ
+## 仕組みの理解：Entra ID認証の動作
 
-Entra IDは**OAuth 2.0**などのオープンスタンダードを使って認証を処理します。詳細は複雑ですが、基本的な考え方はシンプルで、例え話で理解できます。
+Entra IDは**OAuth 2.0**のようなオープンスタンダードを使って認証を処理します。詳細は複雑ですが、基本的な考え方はシンプルで、例え話で理解できます。
 
 ### OAuth 2.0のやさしい紹介：バレットキーの例え
 
-OAuth 2.0は車のバレットサービスのようなものです。レストランに着いたとき、あなたはマスターキーをバレットに渡すわけではありません。代わりに、制限付きの**バレットキー**を渡します。これは車を始動させてドアをロックできますが、トランクやグローブボックスは開けられません。
+OAuth 2.0は車のバレットサービスのようなものです。レストランに着いたとき、マスターキーを渡すのではなく、限られた権限を持つ**バレットキー**を渡します。このキーは車のエンジンをかけてドアをロックできますが、トランクやグローブボックスは開けられません。
 
-この例での対応は以下の通りです。
+この例えでいうと：
 
 - **あなた**は**ユーザー**。
-- **あなたの車**は貴重なツールやデータを持つ**MCPサーバー**。
+- **あなたの車**は価値あるツールやデータを持つ**MCPサーバー**。
 - **バレット**は**Microsoft Entra ID**。
-- **パーキングアテンダント**は**MCPクライアント**（サーバーにアクセスしようとするアプリケーション）。
+- **駐車係**は**MCPクライアント**（サーバーにアクセスしようとするアプリケーション）。
 - **バレットキー**は**アクセストークン**。
 
-アクセストークンは、ユーザーがサインインした後にMCPクライアントがEntra IDから受け取る安全な文字列です。クライアントはこのトークンをサーバーへの各リクエストに添えて送信し、サーバーはトークンを検証してリクエストの正当性や必要な権限があるかを確認します。これにより、パスワードなどの実際の資格情報を扱う必要がなくなります。
+アクセストークンは、ユーザーがサインインした後にEntra IDからMCPクライアントに渡される安全な文字列です。クライアントはこのトークンを使ってサーバーにリクエストを送ります。サーバーはトークンを検証し、リクエストが正当であり、クライアントに必要な権限があることを確認します。これにより、パスワードなどの実際の認証情報を扱う必要がなくなります。
 
 ### 認証の流れ
 
-実際のプロセスは次のように進みます。
+実際の流れは以下の通りです：
 
 ```mermaid
 sequenceDiagram
@@ -85,19 +85,19 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```
 
-### Microsoft Authentication Library (MSAL)の紹介
+### Microsoft Authentication Library（MSAL）の紹介
 
-コード例に入る前に、重要なコンポーネントである**Microsoft Authentication Library (MSAL)**を紹介します。
+コードに入る前に、例で使われている重要なコンポーネントを紹介します：**Microsoft Authentication Library（MSAL）**です。
 
-MSALはMicrosoftが開発したライブラリで、認証処理を開発者にとってずっと簡単にします。セキュリティトークンの管理やサインイン、セッションの更新などの複雑なコードを書く代わりに、MSALがそれらを担います。
+MSALはMicrosoftが開発したライブラリで、認証処理を簡単にします。セキュリティトークンの管理やサインイン処理、セッションの更新などの複雑なコードを書く代わりに、MSALがそれらを代行します。
 
-MSALを使うことが強く推奨される理由は以下の通りです。
+MSALを使うメリットは：
 
-- **安全性**：業界標準のプロトコルとセキュリティベストプラクティスを実装しており、コードの脆弱性リスクを減らします。
-- **開発の簡素化**：OAuth 2.0やOpenID Connectの複雑さを抽象化し、数行のコードで堅牢な認証をアプリに追加できます。
-- **メンテナンス**：Microsoftが積極的に保守・更新を行い、新たな脅威やプラットフォームの変化に対応しています。
+- **安全性が高い**：業界標準のプロトコルとセキュリティのベストプラクティスを実装しており、コードの脆弱性リスクを減らせます。
+- **開発が簡単**：OAuth 2.0やOpenID Connectの複雑さを抽象化し、数行のコードで堅牢な認証を追加できます。
+- **メンテナンスされている**：Microsoftが積極的に更新し、新たなセキュリティ脅威やプラットフォームの変化に対応しています。
 
-MSALは.NET、JavaScript/TypeScript、Python、Java、Go、iOSやAndroidなど多様な言語やプラットフォームに対応しており、技術スタック全体で一貫した認証パターンを利用できます。
+MSALは.NET、JavaScript/TypeScript、Python、Java、Go、iOSやAndroidなど多くの言語やフレームワークをサポートしており、技術スタック全体で一貫した認証パターンを使えます。
 
 MSALの詳細は公式の[MSAL概要ドキュメント](https://learn.microsoft.com/entra/identity-platform/msal-overview)をご覧ください。
 
@@ -105,36 +105,36 @@ MSALの詳細は公式の[MSAL概要ドキュメント](https://learn.microsoft.
 
 ## Entra IDでMCPサーバーを保護する：ステップバイステップガイド
 
-ここからは、ローカルMCPサーバー（`stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+ここからは、`stdio`経由で通信するローカルMCPサーバーをEntra IDで保護する方法を見ていきます。この例では、ユーザーのマシン上で動作するデスクトップアプリやローカル開発サーバーに適した**パブリッククライアント**を使います。
 
-### Scenario 1: Securing a Local MCP Server (with a Public Client)
+### シナリオ1：ローカルMCPサーバーの保護（パブリッククライアント）
 
-In this scenario, we'll look at an MCP server that runs locally, communicates over `stdio`, and uses Entra ID to authenticate the user before allowing access to its tools. The server will have a single tool that fetches the user's profile information from the Microsoft Graph API.
+このシナリオでは、ローカルで動作し`stdio`で通信するMCPサーバーが、ユーザー認証にEntra IDを使ってツールへのアクセスを制御します。サーバーにはMicrosoft Graph APIからユーザープロファイル情報を取得する単一のツールがあります。
 
-#### 1. Setting Up the Application in Entra ID
+#### 1. Entra IDでアプリケーションを登録する
 
-Before writing any code, you need to register your application in Microsoft Entra ID. This tells Entra ID about your application and grants it permission to use the authentication service.
+コードを書く前に、Microsoft Entra IDにアプリケーションを登録し、認証サービスの利用権限を付与します。
 
-1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
-2. Go to **App registrations** and click **New registration**.
-3. Give your application a name (e.g., "My Local MCP Server").
-4. For **Supported account types**, select **Accounts in this organizational directory only**.
-5. You can leave the **Redirect URI** blank for this example.
-6. Click **Register**.
+1. **[Microsoft Entraポータル](https://entra.microsoft.com/)**にアクセス。
+2. **アプリ登録**に移動し、**新規登録**をクリック。
+3. アプリ名を入力（例：「My Local MCP Server」）。
+4. **サポートされているアカウントの種類**は**この組織ディレクトリ内のアカウントのみ**を選択。
+5. **リダイレクトURI**はこの例では空欄のままでOK。
+6. **登録**をクリック。
 
-Once registered, take note of the **Application (client) ID** and **Directory (tenant) ID**. You'll need these in your code.
+登録後、**アプリケーション（クライアント）ID**と**ディレクトリ（テナント）ID**を控えておきます。コードで使用します。
 
-#### 2. The Code: A Breakdown
+#### 2. コードの概要
 
-Let's look at the key parts of the code that handle authentication. The full code for this example is available in the [Entra ID - Local - WAM](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-local-wam) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
+認証を扱う主要な部分を見ていきましょう。完全なコードは[mcp-auth-servers GitHubリポジトリ](https://github.com/Azure-Samples/mcp-auth-servers)の[Entra ID - Local - WAM](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-local-wam)フォルダーにあります。
 
 **`AuthenticationService.cs`**
 
-This class is responsible for handling the interaction with Entra ID.
+このクラスはEntra IDとのやり取りを担当します。
 
-- **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
-- **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`**：これはコアメソッドです。最初にサイレントにトークンを取得しようとします（すでに有効なセッションがあればユーザーは再サインイン不要）。サイレント取得ができなければ、ユーザーにインタラクティブなサインインを促します。
+- **`CreateAsync`**：MSALの`PublicClientApplication`を初期化します。アプリの`clientId`と`tenantId`で設定。
+- **`WithBroker`**：Windows Web Account Managerなどのブローカーを使い、より安全でシームレスなシングルサインオンを可能にします。
+- **`AcquireTokenAsync`**：トークン取得の中核メソッド。まずサイレントでトークンを取得しようとし、失敗した場合はユーザーに対話的なサインインを促します。
 
 ```csharp
 // Simplified for clarity
@@ -184,10 +184,10 @@ public async Task<string> AcquireTokenAsync()
 
 **`Program.cs`**
 
-This is where the MCP server is set up and the authentication service is integrated.
+ここでMCPサーバーがセットアップされ、認証サービスが統合されます。
 
-- **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()`で有効なアクセストークンを取得し、認証に成功するとMicrosoft Graph APIを呼び出してユーザー情報を取得します。
+- **`AddSingleton<AuthenticationService>`**：`AuthenticationService`を依存性注入コンテナに登録し、他の部分（ツールなど）で利用可能にします。
+- **`GetUserDetailsFromGraph`ツール**：`AuthenticationService`のインスタンスを必要とし、処理の前に`authService.AcquireTokenAsync()`を呼び出して有効なアクセストークンを取得します。認証成功後、そのトークンを使ってMicrosoft Graph APIを呼び出し、ユーザー情報を取得します。
 
 ```csharp
 // Simplified for clarity
@@ -215,48 +215,48 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```
 
-#### 3. これらが連携する仕組み
+#### 3. 全体の流れ
 
-1. MCPクライアントが`GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
-2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
-3. If no token is found, MSAL, through the broker, will prompt the user to sign in with their Entra ID account.
-4. Once the user signs in, Entra ID issues an access token.
-5. The tool receives the token and uses it to make a secure call to the Microsoft Graph API.
-6. The user's details are returned to the MCP client.
+1. MCPクライアントが`GetUserDetailsFromGraph`ツールを使おうとすると、ツールはまず`AcquireTokenAsync`を呼び出します。
+2. `AcquireTokenAsync`はMSALライブラリを通じて有効なトークンを探します。
+3. トークンがなければ、MSALはブローカー経由でユーザーにEntra IDアカウントでのサインインを促します。
+4. ユーザーがサインインすると、Entra IDはアクセストークンを発行します。
+5. ツールはトークンを受け取り、それを使ってMicrosoft Graph APIに安全にアクセスします。
+6. ユーザー情報がMCPクライアントに返されます。
 
-This process ensures that only authenticated users can use the tool, effectively securing your local MCP server.
+この流れにより、認証済みユーザーだけがツールを使えるようになり、ローカルMCPサーバーが効果的に保護されます。
 
-### Scenario 2: Securing a Remote MCP Server (with a Confidential Client)
+### シナリオ2：リモートMCPサーバーの保護（コンフィデンシャルクライアント）
 
-When your MCP server is running on a remote machine (like a cloud server) and communicates over a protocol like HTTP Streaming, the security requirements are different. In this case, you should use a **confidential client** and the **Authorization Code Flow**. This is a more secure method because the application's secrets are never exposed to the browser.
+MCPサーバーがリモートマシン（クラウドサーバーなど）で動作し、HTTPストリーミングのようなプロトコルで通信する場合、セキュリティ要件は異なります。この場合は**コンフィデンシャルクライアント**と**Authorization Code Flow**を使うべきです。これは、アプリケーションの秘密情報がブラウザに露出しないため、より安全な方法です。
 
-This example uses a TypeScript-based MCP server that uses Express.js to handle HTTP requests.
+この例では、Express.jsを使ったTypeScriptベースのMCPサーバーを扱います。
 
-#### 1. Setting Up the Application in Entra ID
+#### 1. Entra IDでアプリケーションを登録する
 
-The setup in Entra ID is similar to the public client, but with one key difference: you need to create a **client secret**.
+パブリッククライアントと似ていますが、**クライアントシークレット**を作成する点が異なります。
 
-1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
-2. In your app registration, go to the **Certificates & secrets** tab.
-3. Click **New client secret**, give it a description, and click **Add**.
-4. **Important:** Copy the secret value immediately. You will not be able to see it again.
-5. You also need to configure a **Redirect URI**. Go to the **Authentication** tab, click **Add a platform**, select **Web**, and enter the redirect URI for your application (e.g., `http://localhost:3001/auth/callback`).
+1. **[Microsoft Entraポータル](https://entra.microsoft.com/)**にアクセス。
+2. アプリ登録の**証明書とシークレット**タブに移動。
+3. **新しいクライアントシークレット**を作成し、説明を入力して**追加**をクリック。
+4. **重要：** シークレット値はすぐにコピーしてください。後で再表示できません。
+5. **リダイレクトURI**も設定が必要です。**認証**タブで**プラットフォームの追加**をクリックし、**Web**を選択してアプリのリダイレクトURI（例：`http://localhost:3001/auth/callback`）を入力します。
 
-> **⚠️ Important Security Note:** For production applications, Microsoft strongly recommends using **secretless authentication** methods such as **Managed Identity** or **Workload Identity Federation** instead of client secrets. Client secrets pose security risks as they can be exposed or compromised. Managed identities provide a more secure approach by eliminating the need to store credentials in your code or configuration.
+> **⚠️ 重要なセキュリティ注意事項：** 本番環境のアプリケーションでは、Microsoftはクライアントシークレットの代わりに**Managed Identity**や**Workload Identity Federation**などの**シークレットレス認証**を強く推奨しています。クライアントシークレットは漏洩や悪用のリスクがあるためです。Managed Identityはコードや設定に資格情報を保存する必要がなく、より安全な方法です。
 >
-> For more information about managed identities and how to implement them, see the [Managed identities for Azure resources overview](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview).
+> Managed Identityの詳細や実装方法については、[AzureリソースのManaged identities概要](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview)を参照してください。
 
-#### 2. The Code: A Breakdown
+#### 2. コードの概要
 
-This example uses a session-based approach. When the user authenticates, the server stores the access token and refresh token in a session and gives the user a session token. This session token is then used for subsequent requests. The full code for this example is available in the [Entra ID - Confidential client](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-cca-session) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
+この例はセッションベースのアプローチを使います。ユーザーが認証すると、サーバーはアクセストークンとリフレッシュトークンをセッションに保存し、ユーザーにはセッショントークンを渡します。以降のリクエストはこのセッショントークンを使います。完全なコードは[mcp-auth-servers GitHubリポジトリ](https://github.com/Azure-Samples/mcp-auth-servers)の[Entra ID - Confidential client](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-cca-session)フォルダーにあります。
 
 **`Server.ts`**
 
-This file sets up the Express server and the MCP transport layer.
+ExpressサーバーとMCPトランスポート層をセットアップします。
 
-- **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
-- **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`**にアクセスしようとします。このエンドポイントはユーザーが認証後にEntra IDからのリダイレクトを処理し、認可コードをアクセストークンとリフレッシュトークンに交換します。
+- **`requireBearerAuth`**：`/sse`と`/message`エンドポイントを保護するミドルウェア。リクエストの`Authorization`ヘッダーに有効なベアラートークンがあるかチェックします。
+- **`EntraIdServerAuthProvider`**：`McpServerAuthorizationProvider`インターフェースを実装したカスタムクラス。OAuth 2.0フローを処理します。
+- **`/auth/callback`**：ユーザーが認証後にEntra IDからリダイレクトされるエンドポイント。認可コードをアクセストークンとリフレッシュトークンに交換します。
 
 ```typescript
 // Simplified for clarity
@@ -291,7 +291,7 @@ app.get("/auth/callback", (req, res) => {
 
 **`Tools.ts`**
 
-This file defines the tools that the MCP server provides. The `getUserDetails`ツールは前の例と似ていますが、アクセストークンをセッションから取得します。
+MCPサーバーが提供するツールを定義します。`getUserDetails`ツールは前の例と似ていますが、アクセストークンをセッションから取得します。
 
 ```typescript
 // Simplified for clarity
@@ -324,97 +324,107 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 **`auth/EntraIdServerAuthProvider.ts`**
 
-This class handles the logic for:
+このクラスは以下のロジックを担当します：
 
-- Redirecting the user to the Entra ID sign-in page.
-- Exchanging the authorization code for an access token.
-- Storing the tokens in the `tokenStore`.
-- Refreshing the access token when it expires.
+- ユーザーをEntra IDのサインインページにリダイレクト。
+- 認可コードをアクセストークンに交換。
+- トークンを`tokenStore`に保存。
+- アクセストークンの有効期限切れ時にリフレッシュ。
 
-#### 3. How It All Works Together
+#### 3. 全体の流れ
 
-1. When a user first tries to connect to the MCP server, the `requireBearerAuth` middleware will see that they don't have a valid session and will redirect them to the Entra ID sign-in page.
-2. The user signs in with their Entra ID account.
-3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
-4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
-5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails`ツールが呼ばれると、セッションのトークンを使ってEntra IDのアクセストークンを取得し、それを使ってMicrosoft Graph APIを呼び出します。
+1. ユーザーが初めてMCPサーバーに接続しようとすると、`requireBearerAuth`ミドルウェアが有効なセッションがないことを検知し、Entra IDのサインインページにリダイレクトします。
+2. ユーザーはEntra IDアカウントでサインインします。
+3. Entra IDは認可コードを付けてユーザーを`/auth/callback`エンドポイントにリダイレクトします。
+4. サーバーはコードをアクセストークンとリフレッシュトークンに交換し、それらを保存してセッショントークンを作成し、クライアントに送信します。  
+5. クライアントはこのセッショントークンを `Authorization` ヘッダーに使用して、以降のすべてのMCPサーバーへのリクエストに利用できます。  
+6. `getUserDetails` ツールが呼び出されると、セッショントークンを使ってEntra IDのアクセストークンを検索し、それを使ってMicrosoft Graph APIを呼び出します。
 
-このフローはパブリッククライアントの流れより複雑ですが、インターネットに公開されるエンドポイントでは必須です。リモートMCPサーバーはパブリックインターネット経由でアクセスされるため、不正アクセスや攻撃から守るためにより強力なセキュリティ対策が必要です。
+このフローはパブリッククライアントフローよりも複雑ですが、インターネットに公開されるエンドポイントには必要です。リモートのMCPサーバーはパブリックインターネット経由でアクセス可能なため、不正アクセスや攻撃から守るためにより強力なセキュリティ対策が求められます。
 
-## セキュリティベストプラクティス
 
-- **常にHTTPSを使用する**：クライアントとサーバー間の通信を暗号化し、トークンの盗聴を防ぎます。
-- **ロールベースアクセス制御（RBAC）を実装する**：ユーザーが認証されているかだけでなく、何が許可されているかをチェックします。Entra IDでロールを定義し、MCPサーバーでそれを確認しましょう。
-- **監視と監査を行う**：すべての認証イベントをログに記録し、不審な活動を検知・対応できるようにします。
-- **レート制限とスロットリングに対応する**：Microsoft GraphなどのAPIは悪用防止のためレート制限を実施しています。HTTP 429（リクエスト過多）応答を受けた際は指数的バックオフやリトライロジックを実装し、頻繁にアクセスするデータはキャッシュを検討しましょう。
-- **トークンの安全な保管**：アクセストークンやリフレッシュトークンは安全に保管します。ローカルアプリケーションではシステムの安全なストレージを使い、サーバーアプリケーションでは暗号化ストレージやAzure Key Vaultなどの安全なキー管理サービスを利用しましょう。
-- **トークンの有効期限管理**：アクセストークンは有効期限があります。リフレッシュトークンを使って自動的にトークンを更新し、ユーザーが再認証なしでシームレスに利用できるようにします。
-- **Azure API Managementの利用を検討する**：MCPサーバーに直接セキュリティを実装することで細かい制御は可能ですが、Azure API ManagementのようなAPIゲートウェイは認証、認可、レート制限、監視など多くのセキュリティ課題を自動で処理し、クライアントとMCPサーバー間のセキュリティレイヤーを一元化します。MCPでAPIゲートウェイを使う詳細は[Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)をご覧ください。
+## Security Best Practices
 
-## まとめ
+- **常にHTTPSを使用する**：クライアントとサーバー間の通信を暗号化し、トークンの傍受を防ぎます。  
+- **ロールベースアクセス制御（RBAC）を実装する**：ユーザーが認証されているかだけでなく、何が許可されているかを確認しましょう。Entra IDでロールを定義し、MCPサーバーでそれをチェックできます。  
+- **監視と監査を行う**：すべての認証イベントをログに記録し、不審な活動を検知・対応できるようにします。  
+- **レート制限とスロットリングに対応する**：Microsoft Graphや他のAPIは乱用防止のためレート制限を実施しています。MCPサーバーでは指数的バックオフとリトライロジックを実装し、HTTP 429（リクエスト過多）に対処しましょう。頻繁にアクセスされるデータはキャッシュしてAPIコールを減らすことも検討してください。  
+- **トークンの安全な保管**：アクセストークンとリフレッシュトークンは安全に保管します。ローカルアプリケーションではシステムのセキュアストレージを利用し、サーバーアプリケーションでは暗号化ストレージやAzure Key Vaultのような安全なキー管理サービスを検討してください。  
+- **トークンの有効期限管理**：アクセストークンは有効期限が限られています。リフレッシュトークンを使った自動更新を実装し、再認証なしでシームレスなユーザー体験を維持しましょう。  
+- **Azure API Managementの利用を検討する**：MCPサーバーに直接セキュリティを実装することで細かい制御が可能ですが、Azure API ManagementのようなAPIゲートウェイは認証、認可、レート制限、監視など多くのセキュリティ課題を自動的に処理します。クライアントとMCPサーバーの間に中央集約的なセキュリティレイヤーを提供します。MCPでのAPIゲートウェイ利用の詳細は[Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)をご覧ください。
 
-- MCPサーバーのセキュリティは、データやツールを守るために不可欠です。
-- Microsoft Entra IDは認証と認可のための強力でスケーラブルなソリューションを提供します。
-- ローカルアプリケーションには**パブリッククライアント**を、リモートサーバーには**コンフィデンシャルクライアント**を使い分けましょう。
-- Webアプリケーションには最も安全な**認可コードフロー**を利用します。
 
-## 演習
+## Key Takeaways
 
-1. あなたが構築しようとするMCPサーバーはローカルサーバーですか、それともリモートサーバーですか？
-2. その答えに基づいて、パブリッククライアントとコンフィデンシャルクライアントのどちらを使いますか？
-3. Microsoft Graphに対してどのような権限をMCPサーバーに要求させますか？
+- MCPサーバーのセキュリティ確保は、データとツールを守るために非常に重要です。  
+- Microsoft Entra IDは認証と認可のための堅牢でスケーラブルなソリューションを提供します。  
+- ローカルアプリケーションには**パブリッククライアント**を、リモートサーバーには**機密クライアント**を使用しましょう。  
+- **Authorization Code Flow**はウェブアプリケーションにとって最も安全な選択肢です。
 
-## ハンズオン演習
 
-### 演習1：Entra IDにアプリケーションを登録する  
-Microsoft Entraポータルにアクセスし、MCPサーバー用の新しいアプリケーションを登録します。  
-アプリケーション（クライアント）IDとディレクトリ（テナント）IDを控えましょう。
+## Exercise
 
-### 演習2：ローカルMCPサーバーを保護する（パブリッククライアント）  
-- MSAL（Microsoft Authentication Library）を統合してユーザー認証を実装します。  
-- Microsoft Graphからユーザー情報を取得するMCPツールを使って認証フローをテストします。
+1. あなたが構築するかもしれないMCPサーバーはローカルサーバーですか、それともリモートサーバーですか？  
+2. その答えに基づいて、パブリッククライアントと機密クライアントのどちらを使いますか？  
+3. Microsoft Graphに対して操作を行うために、MCPサーバーはどのような権限を要求しますか？
 
-### 演習3：リモートMCPサーバーを保護する（コンフィデンシャルクライアント）  
-- Entra IDでコンフィデンシャルクライアントを登録し、クライアントシークレットを作成します。  
-- Express.jsのMCPサーバーを認可コードフローで設定します。  
+
+## Hands-on Exercises
+
+### Exercise 1: Entra IDでアプリケーションを登録する  
+Microsoft Entraポータルにアクセスします。  
+MCPサーバー用の新しいアプリケーションを登録します。  
+アプリケーション（クライアント）IDとディレクトリ（テナント）IDを記録します。
+
+### Exercise 2: ローカルMCPサーバーのセキュリティ確保（パブリッククライアント）  
+- MSAL（Microsoft Authentication Library）を使ったユーザー認証のコード例に従って統合します。  
+- Microsoft Graphからユーザー詳細を取得するMCPツールを呼び出して認証フローをテストします。
+
+### Exercise 3: リモートMCPサーバーのセキュリティ確保（機密クライアント）  
+- Entra IDで機密クライアントを登録し、クライアントシークレットを作成します。  
+- Express.jsのMCPサーバーをAuthorization Code Flowを使うように設定します。  
 - 保護されたエンドポイントをテストし、トークンベースのアクセスを確認します。
 
-### 演習4：セキュリティベストプラクティスを適用する  
+### Exercise 4: セキュリティベストプラクティスの適用  
 - ローカルまたはリモートサーバーでHTTPSを有効にします。  
-- サーバーのロジックにロールベースアクセス制御（RBAC）を実装します。  
-- トークンの有効期限管理と安全な保管を追加します。
+- サーバーロジックにロールベースアクセス制御（RBAC）を実装します。  
+- トークンの有効期限管理と安全なトークン保管を追加します。
 
-## 参考資料
+## Resources
 
-1. **MSAL概要ドキュメント**  
-   Microsoft Authentication Library (MSAL)がプラットフォーム横断で安全なトークン取得を可能にする仕組み：  
+1. **MSAL Overview Documentation**  
+   Microsoft Authentication Library (MSAL) がプラットフォーム横断で安全なトークン取得を可能にする仕組みを学べます：  
    [MSAL Overview on Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
 
-2. **Azure-Samples/mcp-auth-servers GitHubリポジトリ**  
+2. **Azure-Samples/mcp-auth-servers GitHub Repository**  
    認証フローを示すMCPサーバーのリファレンス実装：  
    [Azure-Samples/mcp-auth-servers on GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
 
-3. **AzureリソースのマネージドID概要**  
-   シークレットを使わずにシステムまたはユーザー割り当てマネージドIDを利用する方法：  
+3. **Managed Identities for Azure Resources Overview**  
+   システム割り当てまたはユーザー割り当てのマネージドIDを使ってシークレットを排除する方法：  
    [Managed Identities Overview on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
 
-4. **Azure API Management: MCPサーバーの認証ゲートウェイ**  
-   MCPサーバーのOAuth2ゲートウェイとしてAPIMを使う方法の詳細：  
+4. **Azure API Management: Your Auth Gateway for MCP Servers**  
+   MCPサーバー向けの安全なOAuth2ゲートウェイとしてのAPIMの活用方法：  
    [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 
-5. **Microsoft Graph権限リファレンス**  
-   Microsoft Graphの委任権限とアプリケーション権限の包括的リスト：  
+5. **Microsoft Graph Permissions Reference**  
+   Microsoft Graphの委任権限およびアプリケーション権限の包括的リスト：  
    [Microsoft Graph Permissions Reference](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
 
-## 学習成果  
-このセクションを終えた時点で、以下ができるようになります。
 
-- MCPサーバーとAIワークフローにおける認証の重要性を説明できる。
-- ローカルおよびリモートMCPサーバーシナリオでEntra ID認証を設定・構成できる。
-- サーバーの展開形態に応じて適切なクライアントタイプ（パブリックまたはコンフィデンシャル）を選択できる。
-- トークン保管やロールベース認可などの安全なコーディングプラクティスを実装できる。
-- MCPサーバーとそのツールを不正アクセスから確実に守
+## Learning Outcomes  
+このセクションを終えると、以下ができるようになります：
 
-**免責事項**:  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨いたします。本翻訳の使用により生じた誤解や解釈の相違について、当方は一切の責任を負いかねます。
+- MCPサーバーとAIワークフローにおいて認証がなぜ重要か説明できる。  
+- ローカルおよびリモートMCPサーバーのシナリオに合わせてEntra ID認証を設定・構成できる。  
+- サーバーの展開形態に応じて適切なクライアントタイプ（パブリックまたは機密）を選択できる。  
+- トークン保管やロールベース認可を含む安全なコーディングプラクティスを実装できる。  
+- MCPサーバーとそのツールを不正アクセスから自信を持って保護できる。
+
+## What's next 
+
+- [5.13 Model Context Protocol (MCP) Integration with Azure AI Foundry](../mcp-foundry-agent-integration/README.md)
+
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

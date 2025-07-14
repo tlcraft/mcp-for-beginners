@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T18:27:10+00:00",
+  "translation_date": "2025-07-13T18:55:03+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sw"
 }
@@ -27,7 +27,7 @@ Nzuri, umefanya kazi nzuri!
 
 ## Kazi ya Nyumbani
 
-Chukua msimbo kutoka kwenye zoezi na ujenge seva yenye zana zaidi. Kisha tengeneza mteja mwenye LLM, kama ilivyo kwenye zoezi, na ujaribu kwa kutumia maelekezo tofauti ili kuhakikisha zana zote za seva zinaitwa kwa njia ya mabadiliko. Njia hii ya kujenga mteja inamaanisha mtumiaji wa mwisho atapata uzoefu mzuri wa mtumiaji kwani wanaweza kutumia maelekezo ya asili badala ya amri halisi za mteja, na hawatajua kama seva ya MCP inaitwa.
+Chukua msimbo kutoka kwenye zoezi na ujenge seva yenye zana zaidi. Kisha tengeneza mteja mwenye LLM, kama ilivyo kwenye zoezi, na ujaribu kwa kutumia maelekezo tofauti ili kuhakikisha zana zote za seva zinaitwa kwa njia ya mabadiliko. Njia hii ya kujenga mteja inamaanisha mtumiaji wa mwisho atapata uzoefu mzuri wa mtumiaji kwani wanaweza kutumia maelekezo ya asili badala ya amri kamili za mteja, na hawatajua kama seva ya MCP inaitwa.
 
 ## Suluhisho
 
@@ -35,8 +35,8 @@ Chukua msimbo kutoka kwenye zoezi na ujenge seva yenye zana zaidi. Kisha tengene
 
 ## Muhimu Kumbuka
 
-- Kuongeza LLM kwenye mteja wako kunatoa njia bora kwa watumiaji kuwasiliana na seva za MCP.
-- Unahitaji kubadilisha majibu ya seva ya MCP kuwa kitu ambacho LLM inaweza kuelewa.
+- Kuongeza LLM kwenye mteja wako kunatoa njia bora kwa watumiaji kuingiliana na Seva za MCP.
+- Unahitaji kubadilisha majibu ya Seva ya MCP kuwa kitu ambacho LLM inaweza kuelewa.
 
 ## Sampuli
 
@@ -53,4 +53,4 @@ Chukua msimbo kutoka kwenye zoezi na ujenge seva yenye zana zaidi. Kisha tengene
 - Ifuatayo: [Kutumia seva kwa kutumia Visual Studio Code](../04-vscode/README.md)
 
 **Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubeba dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

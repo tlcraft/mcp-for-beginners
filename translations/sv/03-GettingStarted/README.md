@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:31:54+00:00",
+  "translation_date": "2025-07-13T17:16:43+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "sv"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Denna sektion består av flera lektioner:
 
-- **1 Din första server**, i denna första lektion kommer du att lära dig hur du skapar din första server och inspekterar den med inspektörsverktyget, ett värdefullt sätt att testa och felsöka din server, [till lektionen](01-first-server/README.md)
+- **1 Din första server**, i denna första lektion lär du dig hur du skapar din första server och inspekterar den med inspektörsverktyget, ett värdefullt sätt att testa och felsöka din server, [till lektionen](01-first-server/README.md)
 
 - **2 Klient**, i denna lektion lär du dig hur du skriver en klient som kan ansluta till din server, [till lektionen](02-client/README.md)
 
@@ -99,4 +99,4 @@ Vi har ett antal exempel som kompletterar övningarna du kommer att se i alla ka
 Nästa: [Skapa din första MCP Server](01-first-server/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

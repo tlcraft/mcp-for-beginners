@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-04T17:09:37+00:00",
+  "translation_date": "2025-07-13T16:02:08+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "pl"
 }
@@ -23,7 +23,7 @@ Po ukończeniu tej lekcji będziesz potrafił:
 - Zidentyfikować role i obowiązki Hostów, Klientów i Serwerów.
 - Przeanalizować podstawowe cechy, które czynią MCP elastyczną warstwą integracyjną.
 - Poznać przepływ informacji w ekosystemie MCP.
-- Zdobyć praktyczną wiedzę dzięki przykładom kodu w .NET, Java, Python i JavaScript.
+- Zdobyć praktyczne wskazówki dzięki przykładom kodu w .NET, Java, Python i JavaScript.
 
 ## 🔎 Architektura MCP: Głębsze Spojrzenie
 
@@ -55,15 +55,15 @@ flowchart LR
 - **Lokalne Źródła Danych**: Pliki, bazy danych i usługi na Twoim komputerze, do których serwery MCP mają bezpieczny dostęp
 - **Zdalne Usługi**: Zewnętrzne systemy dostępne przez internet, z którymi serwery MCP łączą się przez API.
 
-Protokół MCP to rozwijający się standard — najnowsze aktualizacje znajdziesz w [specyfikacji protokołu](https://modelcontextprotocol.io/specification/2025-06-18/)
+Protokół MCP to rozwijający się standard – najnowsze aktualizacje znajdziesz w [specyfikacji protokołu](https://modelcontextprotocol.io/specification/2025-06-18/)
 
 ### 1. Hosty
 
-W Model Context Protocol (MCP) Hosty odgrywają kluczową rolę jako główny interfejs, przez który użytkownicy wchodzą w interakcję z protokołem. Hosty to aplikacje lub środowiska inicjujące połączenia z serwerami MCP, aby uzyskać dostęp do danych, narzędzi i promptów. Przykładami Hostów są zintegrowane środowiska programistyczne (IDE) takie jak Visual Studio Code, narzędzia AI jak Claude Desktop czy niestandardowe agenty stworzone do konkretnych zadań.
+W Model Context Protocol (MCP) Hosty odgrywają kluczową rolę jako główny interfejs, przez który użytkownicy wchodzą w interakcję z protokołem. Hosty to aplikacje lub środowiska, które inicjują połączenia z serwerami MCP, aby uzyskać dostęp do danych, narzędzi i promptów. Przykładami Hostów są zintegrowane środowiska programistyczne (IDE) takie jak Visual Studio Code, narzędzia AI jak Claude Desktop czy niestandardowe agenty stworzone do konkretnych zadań.
 
 **Hosty** to aplikacje LLM, które inicjują połączenia. One:
 
-- Wykonują lub współdziałają z modelami AI, generując odpowiedzi.
+- Wykonują lub współdziałają z modelami AI, aby generować odpowiedzi.
 - Inicjują połączenia z serwerami MCP.
 - Zarządzają przepływem rozmowy i interfejsem użytkownika.
 - Kontrolują uprawnienia i ograniczenia bezpieczeństwa.
@@ -73,7 +73,7 @@ W Model Context Protocol (MCP) Hosty odgrywają kluczową rolę jako główny in
 
 Klienci to kluczowe komponenty ułatwiające interakcję między Hostami a serwerami MCP. Działają jako pośrednicy, umożliwiając Hostom dostęp i korzystanie z funkcji oferowanych przez serwery MCP. Pełnią ważną rolę w zapewnieniu płynnej komunikacji i efektywnej wymiany danych w architekturze MCP.
 
-**Klienci** to konektory w aplikacji hosta. Oni:
+**Klienci** to łączniki w aplikacji hosta. Oni:
 
 - Wysyłają żądania do serwerów z promptami/instrukcjami.
 - Negocjują możliwości z serwerami.
@@ -88,7 +88,7 @@ Serwery odpowiadają za obsługę żądań od klientów MCP i dostarczanie odpow
 
 - Rejestrują dostępne funkcje (zasoby, prompt, narzędzia)
 - Odbierają i wykonują wywołania narzędzi od klienta
-- Dostarczają informacje kontekstowe wzbogacające odpowiedzi modelu
+- Dostarczają informacje kontekstowe, które wzbogacają odpowiedzi modelu
 - Zwracają wyniki do klienta
 - Utrzymują stan podczas interakcji, gdy jest to potrzebne
 
@@ -122,7 +122,7 @@ Prompty w Model Context Protocol (MCP) obejmują różne predefiniowane szablony
 
 - **Szablonowe wiadomości i procesy**: Wstępnie ustrukturyzowane wiadomości i procesy, które prowadzą użytkowników przez konkretne zadania i interakcje.
 - **Predefiniowane wzorce interakcji**: Standardowe sekwencje działań i odpowiedzi, które ułatwiają spójną i efektywną komunikację.
-- **Specjalistyczne szablony rozmów**: Dostosowywalne szablony przeznaczone do określonych typów konwersacji, zapewniające odpowiednie i kontekstowe interakcje.
+- **Specjalistyczne szablony rozmów**: Dostosowywalne szablony przeznaczone do określonych typów rozmów, zapewniające odpowiednie i kontekstowo właściwe interakcje.
 
 Szablon promptu może wyglądać tak:
 
@@ -134,9 +134,9 @@ Generate a product slogan based on the following {{product}} with the following 
 
 Narzędzia w Model Context Protocol (MCP) to funkcje, które model AI może wykonać, aby zrealizować konkretne zadania. Narzędzia te mają na celu zwiększenie możliwości modelu AI poprzez dostarczanie ustrukturyzowanych i niezawodnych operacji. Kluczowe aspekty to:
 
-- **Funkcje do wykonania przez model AI**: Narzędzia to wykonywalne funkcje, które model AI może wywołać, aby zrealizować różne zadania.
+- **Funkcje do wykonania przez model AI**: Narzędzia to wykonywalne funkcje, które model AI może wywołać, aby realizować różne zadania.
 - **Unikalna nazwa i opis**: Każde narzędzie ma unikalną nazwę oraz szczegółowy opis wyjaśniający jego cel i funkcjonalność.
-- **Parametry i wyniki**: Narzędzia przyjmują określone parametry i zwracają ustrukturyzowane wyniki, zapewniając spójne i przewidywalne efekty.
+- **Parametry i wyniki**: Narzędzia przyjmują określone parametry i zwracają ustrukturyzowane wyniki, zapewniając spójne i przewidywalne rezultaty.
 - **Funkcje dyskretne**: Narzędzia wykonują konkretne funkcje, takie jak wyszukiwanie w sieci, obliczenia czy zapytania do bazy danych.
 
 Przykładowe narzędzie może wyglądać tak:
@@ -159,13 +159,13 @@ W Model Context Protocol (MCP) klienci oferują serwerom kilka kluczowych funkcj
 
 ### 👉 Sampling
 
-- **Agentowe zachowania inicjowane przez serwer**: Klienci umożliwiają serwerom autonomiczne inicjowanie określonych działań lub zachowań, zwiększając dynamiczne możliwości systemu.
+- **Zachowania agentowe inicjowane przez serwer**: Klienci umożliwiają serwerom autonomiczne inicjowanie określonych działań lub zachowań, zwiększając dynamiczne możliwości systemu.
 - **Rekurencyjne interakcje z LLM**: Ta funkcja pozwala na rekurencyjne interakcje z dużymi modelami językowymi (LLM), umożliwiając bardziej złożone i iteracyjne przetwarzanie zadań.
 - **Żądanie dodatkowych uzupełnień modelu**: Serwery mogą prosić o dodatkowe uzupełnienia od modelu, zapewniając, że odpowiedzi są wyczerpujące i kontekstowo adekwatne.
 
 ## Przepływ Informacji w MCP
 
-Model Context Protocol (MCP) definiuje ustrukturyzowany przepływ informacji między hostami, klientami, serwerami i modelami. Zrozumienie tego przepływu pomaga wyjaśnić, jak przetwarzane są żądania użytkowników oraz jak zewnętrzne narzędzia i dane są integrowane z odpowiedziami modelu.
+Model Context Protocol (MCP) definiuje ustrukturyzowany przepływ informacji między hostami, klientami, serwerami i modelami. Zrozumienie tego przepływu pomaga wyjaśnić, jak przetwarzane są żądania użytkownika oraz jak zewnętrzne narzędzia i dane są integrowane z odpowiedziami modelu.
 
 - **Host inicjuje połączenie**  
   Aplikacja hostująca (np. IDE lub interfejs czatu) nawiązuje połączenie z serwerem MCP, zwykle przez STDIO, WebSocket lub inny obsługiwany transport.
@@ -207,7 +207,7 @@ MCP rozszerza JSON-RPC 2.0 o dodatkowe konwencje dotyczące wywoływania narzęd
 
 #### ➕ Dodatkowe Narzędzia
 
-Poniżej kilka dodatkowych narzędzi i rozszerzeń protokołu, które MCP oferuje, aby poprawić doświadczenie deweloperskie i umożliwić zaawansowane scenariusze:
+Poniżej kilka dodatkowych narzędzi i rozszerzeń protokołu, które MCP oferuje, aby poprawić doświadczenie dewelopera i umożliwić zaawansowane scenariusze:
 
 - **Opcje konfiguracji**: MCP pozwala na dynamiczną konfigurację parametrów sesji, takich jak uprawnienia narzędzi, dostęp do zasobów i ustawienia modelu, dostosowane do każdej interakcji.
 - **Śledzenie postępu**: Operacje długotrwałe mogą raportować aktualizacje postępu, umożliwiając responsywne interfejsy użytkownika i lepsze doświadczenie podczas złożonych zadań.
@@ -225,14 +225,14 @@ Implementacje MCP powinny przestrzegać kilku kluczowych zasad bezpieczeństwa, 
 
 - **Prywatność danych**: Dane użytkownika powinny być udostępniane tylko za wyraźną zgodą i chronione odpowiednimi mechanizmami kontroli dostępu. Implementacje MCP muszą zabezpieczać przed nieautoryzowanym przesyłaniem danych i zapewniać ochronę prywatności we wszystkich interakcjach.
 
-- **Bez
+
 MCP zawiera kilka wbudowanych koncepcji i mechanizmów zarządzania bezpieczeństwem i autoryzacją w całym protokole:
 
 1. **Kontrola uprawnień narzędzi**:  
   Klienci mogą określić, z których narzędzi model może korzystać podczas sesji. Zapewnia to dostęp tylko do wyraźnie autoryzowanych narzędzi, co zmniejsza ryzyko niezamierzonych lub niebezpiecznych operacji. Uprawnienia można konfigurować dynamicznie, w zależności od preferencji użytkownika, polityk organizacyjnych lub kontekstu interakcji.
 
 2. **Uwierzytelnianie**:  
-  Serwery mogą wymagać uwierzytelnienia przed udzieleniem dostępu do narzędzi, zasobów lub wrażliwych operacji. Może to obejmować klucze API, tokeny OAuth lub inne schematy uwierzytelniania. Właściwe uwierzytelnianie gwarantuje, że tylko zaufani klienci i użytkownicy mogą korzystać z funkcji po stronie serwera.
+  Serwery mogą wymagać uwierzytelnienia przed udzieleniem dostępu do narzędzi, zasobów lub wrażliwych operacji. Może to obejmować klucze API, tokeny OAuth lub inne schematy uwierzytelniania. Właściwe uwierzytelnianie zapewnia, że tylko zaufani klienci i użytkownicy mogą wywoływać funkcje po stronie serwera.
 
 3. **Walidacja**:  
   Walidacja parametrów jest wymagana przy każdym wywołaniu narzędzia. Każde narzędzie definiuje oczekiwane typy, formaty i ograniczenia dla swoich parametrów, a serwer weryfikuje przychodzące żądania zgodnie z tymi zasadami. Zapobiega to przekazywaniu niepoprawnych lub złośliwych danych do implementacji narzędzi i pomaga utrzymać integralność operacji.
@@ -244,7 +244,7 @@ MCP zawiera kilka wbudowanych koncepcji i mechanizmów zarządzania bezpieczeńs
 
 ## Wiadomości protokołu
 
-Komunikacja MCP wykorzystuje ustrukturyzowane wiadomości w formacie JSON, aby umożliwić jasne i niezawodne interakcje między klientami, serwerami i modelami. Główne typy wiadomości to:
+Komunikacja MCP wykorzystuje ustrukturyzowane wiadomości JSON, które ułatwiają jasne i niezawodne interakcje między klientami, serwerami i modelami. Główne typy wiadomości to:
 
 - **Żądanie klienta**  
   Wysyłane z klienta do serwera, zazwyczaj zawiera:
@@ -268,7 +268,7 @@ Komunikacja MCP wykorzystuje ustrukturyzowane wiadomości w formacie JSON, aby u
 - **Odpowiedź narzędzia**  
   Zwracana przez serwer po wykonaniu narzędzia. Ta wiadomość zawiera:
   - Wyniki wykonania narzędzia (ustrukturyzowane dane lub treść)
-  - Ewentualne błędy lub informacje o statusie, jeśli wywołanie narzędzia się nie powiodło
+  - Informacje o błędach lub statusie, jeśli wywołanie narzędzia się nie powiodło
   - Opcjonalnie dodatkowe metadane lub logi związane z wykonaniem
 
 Te ustrukturyzowane wiadomości zapewniają, że każdy etap w przepływie MCP jest jasny, możliwy do śledzenia i rozszerzalny, wspierając zaawansowane scenariusze, takie jak wieloetapowe rozmowy, łączenie narzędzi i solidne obsługiwanie błędów.
@@ -278,7 +278,7 @@ Te ustrukturyzowane wiadomości zapewniają, że każdy etap w przepływie MCP j
 - MCP wykorzystuje architekturę klient-serwer do łączenia modeli z zewnętrznymi funkcjonalnościami
 - Ekosystem składa się z klientów, hostów, serwerów, narzędzi i źródeł danych
 - Komunikacja może odbywać się przez STDIO, SSE lub WebSockets
-- Narzędzia to podstawowe jednostki funkcjonalności udostępniane modelom
+- Narzędzia są podstawowymi jednostkami funkcjonalności udostępnianymi modelom
 - Ustrukturyzowane protokoły komunikacyjne zapewniają spójne interakcje
 
 ## Ćwiczenie
@@ -287,7 +287,7 @@ Zaprojektuj proste narzędzie MCP, które byłoby przydatne w Twojej dziedzinie.
 1. Jaką nazwę miałoby narzędzie
 2. Jakie parametry by przyjmowało
 3. Jakie wyniki by zwracało
-4. Jak model mógłby używać tego narzędzia do rozwiązywania problemów użytkowników
+4. Jak model mógłby użyć tego narzędzia do rozwiązywania problemów użytkownika
 
 
 ---
@@ -297,4 +297,4 @@ Zaprojektuj proste narzędzie MCP, które byłoby przydatne w Twojej dziedzinie.
 Następny rozdział: [Chapter 2: Security](../02-Security/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

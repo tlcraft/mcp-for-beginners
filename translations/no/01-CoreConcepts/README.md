@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-04T17:43:35+00:00",
+  "translation_date": "2025-07-13T16:08:45+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "no"
 }
 -->
 # 📖 MCP Kjernebegreper: Mestre Model Context Protocol for AI-integrasjon
 
-[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) er et kraftfullt, standardisert rammeverk som optimaliserer kommunikasjonen mellom store språkmodeller (LLMs) og eksterne verktøy, applikasjoner og datakilder. Denne SEO-optimaliserte guiden tar deg gjennom kjernebegrepene i MCP, slik at du forstår klient-server-arkitekturen, viktige komponenter, kommunikasjonsmekanismer og beste praksis for implementering.
+[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) er en kraftfull, standardisert ramme som optimaliserer kommunikasjonen mellom store språkmodeller (LLMs) og eksterne verktøy, applikasjoner og datakilder. Denne SEO-optimaliserte guiden tar deg gjennom kjernebegrepene i MCP, slik at du forstår klient-server-arkitekturen, viktige komponenter, kommunikasjonsmekanismer og beste praksis for implementering.
 
 ## Oversikt
 
@@ -29,7 +29,7 @@ Etter denne leksjonen vil du:
 
 MCP-økosystemet er bygget på en klient-server-modell. Denne modulære strukturen gjør det mulig for AI-applikasjoner å samhandle effektivt med verktøy, databaser, API-er og kontekstuelle ressurser. La oss bryte ned denne arkitekturen i dens kjernekomponenter.
 
-I bunn og grunn følger MCP en klient-server-arkitektur hvor en host-applikasjon kan koble til flere servere:
+I kjernen følger MCP en klient-server-arkitektur hvor en host-applikasjon kan koble til flere servere:
 
 ```mermaid
 flowchart LR
@@ -104,7 +104,7 @@ MCP-servere kan tilby noen av følgende funksjoner:
 
 Ressurser i Model Context Protocol (MCP) omfatter ulike typer kontekst og data som kan brukes av brukere eller AI-modeller. Disse inkluderer:
 
-- **Kontekstuell data**: Informasjon og kontekst som brukere eller AI-modeller kan bruke til beslutningstaking og oppgaveutførelse.
+- **Kontekstuell data**: Informasjon og kontekst som brukere eller AI-modeller kan bruke for beslutningstaking og oppgaveutførelse.
 - **Kunnskapsbaser og dokumentarkiver**: Samlinger av strukturert og ustrukturert data, som artikler, manualer og forskningsartikler, som gir verdifull innsikt og informasjon.
 - **Lokale filer og databaser**: Data lagret lokalt på enheter eller i databaser, tilgjengelig for behandling og analyse.
 - **API-er og webtjenester**: Eksterne grensesnitt og tjenester som tilbyr ekstra data og funksjonalitet, og muliggjør integrasjon med ulike nettressurser og verktøy.
@@ -122,7 +122,7 @@ Prompts i Model Context Protocol (MCP) inkluderer ulike forhåndsdefinerte maler
 
 - **Malerte meldinger og arbeidsflyter**: Forhåndsstrukturerte meldinger og prosesser som veileder brukere gjennom spesifikke oppgaver og interaksjoner.
 - **Forhåndsdefinerte interaksjonsmønstre**: Standardiserte sekvenser av handlinger og svar som legger til rette for konsistent og effektiv kommunikasjon.
-- **Spesialiserte samtalemaler**: Tilpassbare maler skreddersydd for bestemte typer samtaler, som sikrer relevante og kontekstuelt passende interaksjoner.
+- **Spesialiserte samtalemaler**: Tilpassbare maler skreddersydd for spesifikke typer samtaler, som sikrer relevante og kontekstuelt passende interaksjoner.
 
 En prompt-mal kan se slik ut:
 
@@ -132,7 +132,7 @@ Generate a product slogan based on the following {{product}} with the following 
 
 #### ⛏️ Verktøy
 
-Verktøy i Model Context Protocol (MCP) er funksjoner som AI-modellen kan utføre for å løse spesifikke oppgaver. Disse verktøyene er designet for å utvide AI-modellens evner ved å tilby strukturerte og pålitelige operasjoner. Nøkkelaspekter inkluderer:
+Verktøy i Model Context Protocol (MCP) er funksjoner som AI-modellen kan utføre for å løse spesifikke oppgaver. Disse verktøyene er designet for å forbedre AI-modellens evner ved å tilby strukturerte og pålitelige operasjoner. Nøkkelaspekter inkluderer:
 
 - **Funksjoner som AI-modellen kan kjøre**: Verktøy er kjørbare funksjoner som AI-modellen kan påkalle for å utføre ulike oppgaver.
 - **Unikt navn og beskrivelse**: Hvert verktøy har et tydelig navn og en detaljert beskrivelse som forklarer formålet og funksjonaliteten.
@@ -160,34 +160,34 @@ I Model Context Protocol (MCP) tilbyr klienter flere viktige funksjoner til serv
 ### 👉 Sampling
 
 - **Server-initierte agentiske handlinger**: Klienter gjør det mulig for servere å initiere spesifikke handlinger eller atferd autonomt, noe som øker systemets dynamiske evner.
-- **Rekursive LLM-interaksjoner**: Denne funksjonen tillater rekursive interaksjoner med store språkmodeller (LLMs), som muliggjør mer komplekse og iterative oppgavebehandlinger.
+- **Rekursive LLM-interaksjoner**: Denne funksjonen tillater rekursive interaksjoner med store språkmodeller (LLMs), som muliggjør mer komplekse og iterative oppgaveprosesser.
 - **Forespørsel om flere modellfullføringer**: Servere kan be om flere fullføringer fra modellen, for å sikre at svarene er grundige og kontekstuelt relevante.
 
 ## Informasjonsflyt i MCP
 
-Model Context Protocol (MCP) definerer en strukturert informasjonsflyt mellom hosts, clients, servers og modeller. Å forstå denne flyten hjelper med å klargjøre hvordan brukerforespørsler behandles og hvordan eksterne verktøy og data integreres i modelsvar.
+Model Context Protocol (MCP) definerer en strukturert flyt av informasjon mellom hosts, clients, servers og modeller. Å forstå denne flyten hjelper med å klargjøre hvordan brukerforespørsler behandles og hvordan eksterne verktøy og data integreres i modelsvar.
 
 - **Host initierer tilkobling**  
   Host-applikasjonen (som en IDE eller chattegrensesnitt) etablerer en tilkobling til en MCP-server, vanligvis via STDIO, WebSocket eller en annen støttet transport.
 
 - **Forhandling av funksjonalitet**  
-  Klienten (innebygd i hosten) og serveren utveksler informasjon om hvilke funksjoner, verktøy, ressurser og protokollversjoner de støtter. Dette sikrer at begge parter forstår hvilke muligheter som er tilgjengelige for økten.
+  Klienten (innebygd i host) og serveren utveksler informasjon om hvilke funksjoner, verktøy, ressurser og protokollversjoner de støtter. Dette sikrer at begge parter forstår hvilke muligheter som er tilgjengelige for økten.
 
 - **Brukerforespørsel**  
   Brukeren samhandler med hosten (f.eks. skriver inn en prompt eller kommando). Hosten samler inn denne inputen og sender den til klienten for behandling.
 
 - **Bruk av ressurs eller verktøy**  
   - Klienten kan be om ekstra kontekst eller ressurser fra serveren (som filer, databaseoppføringer eller artikler fra kunnskapsbaser) for å berike modellens forståelse.  
-  - Hvis modellen avgjør at et verktøy trengs (f.eks. for å hente data, utføre en beregning eller kalle et API), sender klienten en forespørsel om verktøykall til serveren, med spesifikasjon av verktøynavn og parametere.
+  - Hvis modellen avgjør at et verktøy trengs (f.eks. for å hente data, utføre en beregning eller kalle et API), sender klienten en forespørsel om verktøykall til serveren, med spesifisering av verktøynavn og parametere.
 
 - **Serverutførelse**  
   Serveren mottar ressurs- eller verktøyforespørselen, utfører nødvendige operasjoner (som å kjøre en funksjon, spørre en database eller hente en fil), og returnerer resultatene til klienten i et strukturert format.
 
-- **Generering av svar**  
+- **Svargenerering**  
   Klienten integrerer serverens svar (ressursdata, verktøyutdata osv.) i den pågående modellinteraksjonen. Modellen bruker denne informasjonen til å generere et omfattende og kontekstuelt relevant svar.
 
 - **Resultatpresentasjon**  
-  Hosten mottar det endelige resultatet fra klienten og viser det til brukeren, ofte inkludert både modellens genererte tekst og eventuelle resultater fra verktøykjøringer eller ressursoppslag.
+  Hosten mottar det endelige resultatet fra klienten og presenterer det for brukeren, ofte inkludert både modellens genererte tekst og eventuelle resultater fra verktøykjøringer eller ressursoppslag.
 
 Denne flyten gjør det mulig for MCP å støtte avanserte, interaktive og kontekstbevisste AI-applikasjoner ved sømløst å koble modeller med eksterne verktøy og datakilder.
 
@@ -225,13 +225,13 @@ MCP-implementasjoner bør følge flere viktige sikkerhetsprinsipper for å sikre
 
 - **Datapersonvern**: Brukerdata skal kun eksponeres med eksplisitt samtykke og må beskyttes med passende tilgangskontroller. MCP-implementasjoner må forhindre uautorisert datatransmisjon og sikre at personvernet opprettholdes gjennom alle interaksjoner.
 
-- **Verktøysikkerhet**: Før et verktøy påkalles, kreves eksplisitt brukersamtykke. Brukere bør ha en klar forståelse av hvert verktøys funksjonalitet, og robuste sikkerhetsgrenser må håndheves for å forhindre utilsiktet eller usikker verktøykjøring.
+- **Verktøysikkerhet**: Før noen verktøy påkalles, kreves eksplisitt brukersamtykke. Brukere bør ha en klar forståelse av hvert verktøys funksjonalitet, og robuste sikkerhetsgrenser må håndheves for å forhindre utilsiktet eller usikker verktøykjøring.
 
 Ved å følge disse prinsippene sikrer MCP at brukertillit, personvern og sikkerhet opprettholdes i alle protokollinteraksjoner.
 
-## Kodeeksempler: Nøkkelkomponenter
+## Kodeeksempler: Viktige komponenter
 
-Nedenfor finner du kodeeksempler i flere populære programmeringsspråk som illustrerer hvordan man implementerer viktige MCP-serverkomponenter og verktøy.
+Nedenfor finner du kodeeksempler i flere populære programmeringsspråk som illustrerer hvordan man implementerer sentrale MCP-serverkomponenter og verktøy.
 
 ### .NET-eksempel: Lage en enkel MCP-server med verktøy
 
@@ -574,7 +574,7 @@ Disse strukturerte meldingene sikrer at hvert steg i MCP-arbeidsflyten er tydeli
 Design et enkelt MCP-verktøy som ville vært nyttig i ditt fagområde. Definer:
 1. Hva verktøyet skal hete
 2. Hvilke parametere det skal akseptere
-3. Hvilket resultat det skal returnere
+3. Hvilket output det skal gi
 4. Hvordan en modell kan bruke dette verktøyet for å løse brukerens problemer
 
 

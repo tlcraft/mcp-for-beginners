@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T22:00:37+00:00",
+  "translation_date": "2025-07-13T17:51:07+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "sl"
 }
@@ -45,7 +45,7 @@ Lahko ga zaženete neposredno v CLI načinu z naslednjim ukazom:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-To bo naštelo vsa orodja, ki so na voljo na strežniku. Videli bi morali naslednji izpis:
+To bo prikazalo vsa orodja, ki so na voljo na strežniku. Izpis bi moral biti naslednji:
 
 ```text
 {
@@ -81,7 +81,7 @@ Za klic orodja vnesite:
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/call --tool-name Add --tool-arg a=1 --tool-arg b=2
 ```
 
-Videli bi morali naslednji izpis:
+Videli boste naslednji izpis:
 
 ```text
 {
@@ -100,4 +100,4 @@ Videli bi morali naslednji izpis:
 > Več o inspectorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

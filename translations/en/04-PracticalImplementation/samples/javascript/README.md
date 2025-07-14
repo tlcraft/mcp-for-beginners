@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:47:28+00:00",
+  "translation_date": "2025-07-13T23:26:10+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 This is a JavaScript example for an MCP Server
 
-Here's an example of a tool registration where we register a tool that makes a mock call to an LLM:
+Here’s an example of tool registration where we register a tool that makes a mock call to an LLM:
 
 ```javascript
 this.mcpServer.tool(
@@ -88,4 +88,5 @@ npm install
 npm start
 ```
 
-Sure, please provide the text you would like translated into English.
+**Disclaimer**:  
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

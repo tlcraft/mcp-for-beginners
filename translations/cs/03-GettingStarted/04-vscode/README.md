@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T18:37:56+00:00",
+  "translation_date": "2025-07-13T19:34:45+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "cs"
 }
@@ -60,7 +60,7 @@ Přidejte následující obsah do *mcp.json*:
 }
 ```
 
-Výše je jednoduchý příklad, jak spustit server napsaný v Node.js, pro jiné runtime uveďte správný příkaz pro spuštění serveru pomocí `command` a `args`.
+Výše je jednoduchý příklad, jak spustit server napsaný v Node.js, pro jiné runtime použijte správný příkaz pro spuštění serveru pomocí `command` a `args`.
 
 ### -3- Spuštění serveru
 
@@ -92,9 +92,9 @@ Zkuste přidat záznam serveru do svého souboru *mcp.json* a ujistěte se, že 
 
 Z tohoto kapitoly si odnesete následující:
 
-- Visual Studio Code je skvělý klient, který vám umožní používat několik MCP Serverů a jejich nástrojů.
+- Visual Studio Code je skvělý klient, který vám umožní používat několik MCP Serverů a jejich nástroje.
 - Rozhraní GitHub Copilot Chat je způsob, jak komunikovat se servery.
-- Můžete vyzvat uživatele k zadání vstupů, jako jsou API klíče, které lze předat MCP Serveru při konfiguraci záznamu serveru v souboru *mcp.json*.
+- Můžete uživatele vyzvat k zadání vstupů, jako jsou API klíče, které lze předat MCP Serveru při konfiguraci záznamu serveru v souboru *mcp.json*.
 
 ## Ukázky
 
@@ -110,7 +110,7 @@ Z tohoto kapitoly si odnesete následující:
 
 ## Co dál
 
-- Další: [Vytvoření SSE serveru](../05-sse-server/README.md)
+- Další: [Vytvoření SSE Serveru](../05-sse-server/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

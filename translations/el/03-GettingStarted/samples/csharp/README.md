@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T05:59:15+00:00",
+  "translation_date": "2025-07-13T22:16:18+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "el"
 }
 -->
-# Υπηρεσία Βασικού Υπολογιστή MCP
+# Βασική Υπηρεσία Υπολογιστή MCP
 
-Αυτή η υπηρεσία παρέχει βασικές λειτουργίες αριθμομηχανής μέσω του Model Context Protocol (MCP). Έχει σχεδιαστεί ως απλό παράδειγμα για αρχάριους που μαθαίνουν για υλοποιήσεις MCP.
+Αυτή η υπηρεσία παρέχει βασικές λειτουργίες αριθμομηχανής μέσω του Πρωτοκόλλου Πλαισίου Μοντέλου (MCP). Έχει σχεδιαστεί ως ένα απλό παράδειγμα για αρχάριους που μαθαίνουν για υλοποιήσεις MCP.
 
-Για περισσότερες πληροφορίες, δείτε το [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+Για περισσότερες πληροφορίες, δείτε [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Χαρακτηριστικά
 
@@ -23,13 +23,13 @@ CO_OP_TRANSLATOR_METADATA:
    - Πολλαπλασιασμός δύο αριθμών
    - Διαίρεση ενός αριθμού με έναν άλλο (με έλεγχο διαίρεσης με το μηδέν)
 
-## Χρήση του `stdio` Τύπου
+## Χρήση τύπου `stdio`
+  
+## Ρυθμίσεις
 
-## Διαμόρφωση
-
-1. **Διαμόρφωση MCP Servers**:
+1. **Ρύθμιση MCP Servers**:
    - Ανοίξτε τον χώρο εργασίας σας στο VS Code.
-   - Δημιουργήστε ένα αρχείο `.vscode/mcp.json` στον φάκελο του χώρου εργασίας σας για να διαμορφώσετε τους MCP servers. Παράδειγμα διαμόρφωσης:
+   - Δημιουργήστε ένα αρχείο `.vscode/mcp.json` στον φάκελο του χώρου εργασίας σας για να ρυθμίσετε τους MCP servers. Παράδειγμα ρύθμισης:
 
      ```jsonc
      {
@@ -54,50 +54,49 @@ CO_OP_TRANSLATOR_METADATA:
      }
      ```
 
-   - Θα σας ζητηθεί να εισάγετε το ριζικό αποθετήριο GitHub, το οποίο μπορείτε να βρείτε με την εντολή `git rev-parse --show-toplevel`.
+   - Θα σας ζητηθεί να εισάγετε τη ρίζα του αποθετηρίου GitHub, η οποία μπορεί να ληφθεί με την εντολή `git rev-parse --show-toplevel`.
 
-## Using the Service
+## Χρήση της Υπηρεσίας
 
-The service exposes the following API endpoints through the MCP protocol:
+Η υπηρεσία εκθέτει τα παρακάτω API endpoints μέσω του πρωτοκόλλου MCP:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Προσθέτει δύο αριθμούς
+- `subtract(a, b)`: Αφαιρεί τον δεύτερο αριθμό από τον πρώτο
+- `multiply(a, b)`: Πολλαπλασιάζει δύο αριθμούς
+- `divide(a, b)`: Διαιρεί τον πρώτο αριθμό με τον δεύτερο (με έλεγχο μηδενικής διαίρεσης)
+- isPrime(n): Ελέγχει αν ένας αριθμός είναι πρώτος
 
-## Test with Github Copilot Chat in VS Code
+## Δοκιμή με Github Copilot Chat στο VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
-   - "Add 5 and 3"
-   - "Subtract 10 from 4"
-   - "Multiply 6 and 7"
-   - "Divide 8 by 2"
-   - "Does 37854 prime?"
-   - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
-   - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+1. Δοκιμάστε να κάνετε ένα αίτημα στην υπηρεσία χρησιμοποιώντας το πρωτόκολλο MCP. Για παράδειγμα, μπορείτε να ζητήσετε:
+   - "Πρόσθεσε 5 και 3"
+   - "Αφαίρεσε 10 από 4"
+   - "Πολλαπλασίασε 6 και 7"
+   - "Διαίρεσε 8 με 2"
+   - "Είναι το 37854 πρώτος;"
+   - "Ποιοι είναι οι 3 πρώτοι αριθμοί πριν και μετά το 4242;"
+2. Για να βεβαιωθείτε ότι χρησιμοποιεί τα εργαλεία, προσθέστε #MyCalculator στο prompt. Για παράδειγμα:
+   - "Πρόσθεσε 5 και 3 #MyCalculator"
+   - "Αφαίρεσε 10 από 4 #MyCalculator"
 
+## Έκδοση με Container
 
-## Containerized Version
+Η προηγούμενη λύση είναι ιδανική όταν έχετε εγκατεστημένο το .NET SDK και όλες οι εξαρτήσεις είναι στη θέση τους. Ωστόσο, αν θέλετε να μοιραστείτε τη λύση ή να την τρέξετε σε διαφορετικό περιβάλλον, μπορείτε να χρησιμοποιήσετε την έκδοση με container.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` με το όνομα χρήστη σας στο Docker Hub):
+1. Ξεκινήστε το Docker και βεβαιωθείτε ότι τρέχει.
+1. Από ένα τερματικό, μεταβείτε στον φάκελο `03-GettingStarted\samples\csharp\src`
+1. Για να δημιουργήσετε την εικόνα Docker για την υπηρεσία αριθμομηχανής, εκτελέστε την παρακάτω εντολή (αντικαταστήστε το `<YOUR-DOCKER-USERNAME>` με το όνομα χρήστη σας στο Docker Hub):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ```  
-1. Αφού δημιουργηθεί το image, ας το ανεβάσουμε στο Docker Hub. Εκτελέστε την παρακάτω εντολή:
+   ``` 
+1. Αφού δημιουργηθεί η εικόνα, ανεβάστε την στο Docker Hub. Εκτελέστε την παρακάτω εντολή:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## Χρήση της Dockerized Έκδοσης
 
-1. Στο αρχείο `.vscode/mcp.json`, αντικαταστήστε τη διαμόρφωση του server με την εξής:
+1. Στο αρχείο `.vscode/mcp.json`, αντικαταστήστε τη ρύθμιση του server με την παρακάτω:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Κοιτώντας τη διαμόρφωση, μπορείτε να δείτε ότι η εντολή είναι `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Κοιτάζοντας τη ρύθμιση, μπορείτε να δείτε ότι η εντολή είναι `docker` και τα ορίσματα είναι `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. Η σημαία `--rm` εξασφαλίζει ότι το container αφαιρείται μετά τη διακοπή του, και η σημαία `-i` επιτρέπει την αλληλεπίδραση με την τυπική είσοδο του container. Το τελευταίο όρισμα είναι το όνομα της εικόνας που μόλις δημιουργήσαμε και ανεβάσαμε στο Docker Hub.
 
-## Test the Dockerized Version
+## Δοκιμή της Dockerized Έκδοσης
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, και όπως πριν, μπορείτε να ζητήσετε από την υπηρεσία αριθμομηχανής να κάνει κάποιους υπολογισμούς για εσάς.
+Ξεκινήστε τον MCP Server πατώντας το μικρό κουμπί Start πάνω από το `"mcp-calc": {`, και όπως πριν, μπορείτε να ζητήσετε από την υπηρεσία αριθμομηχανής να κάνει κάποιους υπολογισμούς για εσάς.
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρότι επιδιώκουμε ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν σφάλματα ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

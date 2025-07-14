@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:48:20+00:00",
+  "translation_date": "2025-07-13T21:12:59+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "he"
 }
 -->
-# דמו של זרימת HTTP במחשבון
+# הדגמת סטרימינג HTTP של מחשבון
 
-הפרויקט הזה מדגים זרימת HTTP באמצעות Server-Sent Events (SSE) עם Spring Boot WebFlux. הוא מורכב משתי אפליקציות:
+הפרויקט הזה מדגים סטרימינג HTTP באמצעות Server-Sent Events (SSE) עם Spring Boot WebFlux. הוא מורכב משתי אפליקציות:
 
-- **Calculator Server**: שירות ריאקטיבי שמבצע חישובים ומשדר תוצאות באמצעות SSE  
-- **Calculator Client**: אפליקציית לקוח שצורכת את נקודת הקצה של הזרימה
+- **Calculator Server**: שירות ווב ריאקטיבי שמבצע חישובים ומשדר תוצאות באמצעות SSE  
+- **Calculator Client**: אפליקציית לקוח שצורכת את נקודת הקצה של הסטרימינג
 
 ## דרישות מוקדמות
 
@@ -37,15 +37,15 @@ java/
 
 ## איך זה עובד
 
-1. ה-**Calculator Server** פותח את הנתיב `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. ה-**Calculator Server** חושף נקודת קצה `/calculate` שמבצעת:  
+   - מקבלת פרמטרים בשאילתה: `a` (מספר), `b` (מספר), `op` (פעולה)  
+   - פעולות נתמכות: `add`, `sub`, `mul`, `div`  
+   - מחזירה Server-Sent Events עם התקדמות החישוב והתוצאה  
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`  
-   - צורך את תגובת הזרימה  
-   - מדפיס כל אירוע לקונסולה  
+2. ה-**Calculator Client** מתחבר לשרת ומבצע:  
+   - שולח בקשה לחישוב `7 * 5`  
+   - צורך את תגובת הסטרימינג  
+   - מדפיס כל אירוע למסוף  
 
 ## הפעלת האפליקציות
 
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 השרת יפעל בכתובת `http://localhost:8080`
 
-אתה אמור לראות פלט כמו:  
+תראה פלט דומה ל:  
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -79,9 +79,9 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-הלקוח יתחבר לשרת, יבצע את החישוב, ויציג את תוצאות הזרימה.
+הלקוח יתחבר לשרת, יבצע את החישוב ויציג את תוצאות הסטרימינג.
 
-### אפשרות 2: הפעלה ישירה של Java
+### אפשרות 2: שימוש ב-Java ישירות
 
 #### 1. קומפילציה והפעלה של השרת:
 
@@ -101,10 +101,10 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## בדיקת השרת ידנית
 
-ניתן גם לבדוק את השרת דרך דפדפן או curl:
+ניתן גם לבדוק את השרת באמצעות דפדפן או curl:
 
 ### שימוש בדפדפן:  
-בקר בכתובת: `http://localhost:8080/calculate?a=10&b=5&op=add`
+גש לכתובת: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
 ### שימוש ב-curl:  
 ```bash
@@ -113,7 +113,7 @@ curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-st
 
 ## פלט צפוי
 
-בעת הרצת הלקוח, תראה פלט זרימה דומה ל:
+בעת הרצת הלקוח, תראה פלט סטרימינג דומה ל:
 
 ```
 event:info
@@ -125,23 +125,23 @@ data:35.0
 
 ## פעולות נתמכות
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - חיבור (a + b)  
+- `sub` - חיסור (a - b)  
+- `mul` - כפל (a * b)  
+- `div` - חילוק (a / b, מחזיר NaN אם b = 0)  
 
-## API Reference
+## תיעוד API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**פרמטרים:**  
+- `a` (נדרש): מספר ראשון (double)  
+- `b` (נדרש): מספר שני (double)  
+- `op` (נדרש): פעולה (`add`, `sub`, `mul`, `div`)  
 
-**Response:**
+**תגובה:**  
 - Content-Type: `text/event-stream`  
-- מחזיר Server-Sent Events עם התקדמות החישוב והתוצאה
+- מחזיר Server-Sent Events עם התקדמות החישוב והתוצאה  
 
 **בקשת דוגמה:**  
 ```
@@ -163,29 +163,29 @@ data: 35.0
 
 ### בעיות נפוצות
 
-1. **הפורט 8080 כבר בשימוש**  
+1. **פורט 8080 כבר בשימוש**  
    - עצור כל אפליקציה אחרת שמשתמשת בפורט 8080  
-   - או שנה את פורט השרת בקובץ `calculator-server/src/main/resources/application.yml`
+   - או שנה את פורט השרת בקובץ `calculator-server/src/main/resources/application.yml`  
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **חיבור נדחה**  
+   - ודא שהשרת רץ לפני הפעלת הלקוח  
+   - בדוק שהשרת התחיל בהצלחה על פורט 8080  
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **בעיות בשמות פרמטרים**  
+   - הפרויקט כולל קונפיגורציית קומפילציה של Maven עם הדגל `-parameters`  
+   - אם נתקלת בבעיות בקישור פרמטרים, ודא שהפרויקט נבנה עם הקונפיגורציה הזו  
 
-### Stopping the Applications
+### עצירת האפליקציות
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` אם מריצים כתהליך ברקע  
+- לחץ `Ctrl+C` בטרמינל שבו רצה כל אפליקציה  
+- או השתמש בפקודה `mvn spring-boot:stop` אם רצה כרקע  
 
 ## טכנולוגיות בשימוש
 
-- **Spring Boot 3.3.1** - מסגרת יישומים  
-- **Spring WebFlux** - מסגרת ריאקטיבית לרשת  
-- **Project Reactor** - ספריית זרמים ריאקטיביים  
-- **Netty** - שרת I/O לא חסום  
+- **Spring Boot 3.3.1** - מסגרת אפליקציה  
+- **Spring WebFlux** - מסגרת ווב ריאקטיבית  
+- **Project Reactor** - ספריית סטרימינג ריאקטיבית  
+- **Netty** - שרת I/O לא חוסם  
 - **Maven** - כלי בנייה  
 - **Java 17+** - שפת תכנות  
 
@@ -193,10 +193,10 @@ data: 35.0
 
 נסה לשנות את הקוד כדי:  
 - להוסיף פעולות מתמטיות נוספות  
-- לכלול טיפול בשגיאות לפעולות לא חוקיות  
+- לכלול טיפול בשגיאות עבור פעולות לא חוקיות  
 - להוסיף רישום בקשות/תגובות  
 - לממש אימות  
 - להוסיף בדיקות יחידה
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). בעוד שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. יש להתייחס למסמך המקורי בשפתו המקורית כמקור הסמכותי. עבור מידע קריטי, מומלץ להיעזר בתרגום מקצועי על ידי אדם. איננו אחראים לכל אי-הבנות או פרשנויות שגויות הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

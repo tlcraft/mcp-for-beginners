@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:08:53+00:00",
+  "translation_date": "2025-07-13T20:19:43+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "ne"
 }
 -->
-# यो नमूना चलाउनुहोस्
+# यो नमुना चलाउने तरिका
 
 ## -1- निर्भरता स्थापना गर्नुहोस्
 
@@ -15,40 +15,40 @@ CO_OP_TRANSLATOR_METADATA:
 npm install
 ```
 
-## -3- नमूना चलाउनुहोस्
+## -3- नमुना चलाउनुहोस्
 
 ```bash
 npm run build
 ```
 
-## -4- नमूना परीक्षण गर्नुहोस्
+## -4- नमुना परीक्षण गर्नुहोस्
 
-सर्भर एक टर्मिनलमा चलिरहेको अवस्थामा, अर्को टर्मिनल खोल्नुहोस् र तलको आदेश चलाउनुहोस्:
+सर्भर एक टर्मिनलमा चलिरहेको अवस्थामा, अर्को टर्मिनल खोल्नुहोस् र तलको कमाण्ड चलाउनुहोस्:
 
 ```bash
 npm run inspector
 ```
 
-यसले दृश्य अन्तरफेसको साथ वेब सर्भर सुरु गर्नु पर्छ जसले तपाईंलाई नमूना परीक्षण गर्न अनुमति दिन्छ।
+यसले एउटा वेब सर्भर सुरु गर्नेछ जसले भिजुअल इन्टरफेस मार्फत नमुना परीक्षण गर्न अनुमति दिन्छ।
 
 सर्भर जडान भएपछि:
 
-- उपकरणहरूको सूची बनाउने प्रयास गर्नुहोस् र `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- उपकरणहरूको सूची हेर्नुहोस् र `add` कमाण्ड २ र ४ आर्गुमेन्टसहित चलाउनुहोस्, परिणाममा ६ देखिनु पर्छ।
+- resources र resource template मा जानुहोस् र "greeting" कल गर्नुहोस्, नाम टाइप गर्नुहोस् र तपाईंले दिएको नामसहितको अभिवादन देख्नु हुनेछ।
 
-### Testing in CLI mode
+### CLI मोडमा परीक्षण
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+तपाईंले चलाएको inspector वास्तवमा Node.js एप हो र `mcp dev` यसको वरिपरि बनेको wrapper हो।
 
-- Start up the server with the command `npm run build` चलाउनुहोस्।
+- सर्भर सुरु गर्न `npm run build` कमाण्ड चलाउनुहोस्।
 
-- छुट्टै टर्मिनलमा तलको आदेश चलाउनुहोस्:
+- अर्को टर्मिनलमा तलको कमाण्ड चलाउनुहोस्:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    यसले सर्भरमा उपलब्ध सबै उपकरणहरूको सूची बनाउनेछ। तपाईंले निम्न आउटपुट देख्नु पर्छ:
+    यसले सर्भरमा उपलब्ध सबै उपकरणहरूको सूची देखाउनेछ। तपाईंले तलको आउटपुट देख्नु पर्नेछ:
 
     ```text
     {
@@ -79,13 +79,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- उपकरण प्रकारलाई निम्न आदेश टाइप गरेर बोलाउनुहोस्:
+- उपकरण प्रकार invoke गर्न तलको कमाण्ड टाइप गर्नुहोस्:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-तपाईंले निम्न आउटपुट देख्नु पर्छ:
+तपाईंले तलको आउटपुट देख्नु पर्नेछ:
 
     ```text
     {
@@ -99,8 +99,8 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     ```
 
 > ![!TIP]
-> सामान्यतया ब्राउजरको भन्दा CLI मोडमा इस्पेक्टर चलाउनु धेरै छिटो हुन्छ।
-> इस्पेक्टरको बारेमा थप पढ्नुहोस् [यहाँ](https://github.com/modelcontextprotocol/inspector)।
+> CLI मोडमा inspector चलाउनु ब्राउजरमा भन्दा सामान्यतया धेरै छिटो हुन्छ।
+> inspector को बारेमा थप पढ्न [यहाँ](https://github.com/modelcontextprotocol/inspector) जानुहोस्।
 
 **अस्वीकरण**:  
-यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) को प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादहरूमा त्रुटिहरू वा अशुद्धताहरू हुन सक्छन्। यसको मूल भाषामा रहेको मूल दस्तावेजलाई प्राधिकृत स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीको लागि, पेशेवर मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याको लागि हामी उत्तरदायी हुनेछैनौं।
+यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुनसक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

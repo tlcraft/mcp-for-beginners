@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:34:12+00:00",
+  "translation_date": "2025-07-13T17:19:04+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "sw"
 }
@@ -21,7 +21,7 @@ Sehemu hii ina masomo kadhaa:
 
 - **5 Kutumia kutoka SSE (Server Sent Events)** SSE ni kiwango cha mtiririko wa data kutoka server kwenda kwa mteja, kinachoruhusu server kusukuma masasisho ya wakati halisi kwa wateja kupitia HTTP [kwenda somo](05-sse-server/README.md)
 
-- **6 HTTP Streaming na MCP (Streamable HTTP)**. Jifunze kuhusu mtiririko wa kisasa wa HTTP, taarifa za maendeleo, na jinsi ya kutekeleza server na wateja wa MCP wenye uwezo wa kupanuka na wa wakati halisi kwa kutumia Streamable HTTP. [kwenda somo](06-http-streaming/README.md)
+- **6 HTTP Streaming na MCP (Streamable HTTP)**. Jifunze kuhusu mtiririko wa kisasa wa HTTP, arifa za maendeleo, na jinsi ya kutekeleza server na wateja wa MCP wenye uwezo wa kupanuka na wa wakati halisi kwa kutumia Streamable HTTP. [kwenda somo](06-http-streaming/README.md)
 
 - **7 Kutumia AI Toolkit kwa VSCode** kwa ajili ya kutumia na kujaribu MCP Clients na Servers zako [kwenda somo](07-aitk/README.md)
 
@@ -45,7 +45,7 @@ Mwisho wa somo hili, utaweza:
 
 ## Kuandaa Mazingira Yako ya MCP
 
-Kabla ya kuanza kazi na MCP, ni muhimu kuandaa mazingira yako ya maendeleo na kuelewa mtiririko wa kazi wa msingi. Sehemu hii itakuongoza kupitia hatua za mwanzo za usanidi ili kuhakikisha kuanza kwa urahisi na MCP.
+Kabla ya kuanza kufanya kazi na MCP, ni muhimu kuandaa mazingira yako ya maendeleo na kuelewa mtiririko wa kazi wa msingi. Sehemu hii itakuongoza kupitia hatua za mwanzo za usanidi ili kuhakikisha kuanza kwa laini na MCP.
 
 ### Mahitaji ya Awali
 
@@ -59,7 +59,7 @@ Kabla ya kuingia katika maendeleo ya MCP, hakikisha una:
 
 ### SDK Rasmi
 
-Katika sura zijazo utaona suluhisho zilizojengwa kwa kutumia Python, TypeScript, Java na .NET. Hapa ni SDK zote zinazotambulika rasmi.
+Katika sura zijazo utaona suluhisho zilizojengwa kwa kutumia Python, TypeScript, Java na .NET. Hapa ni SDK zote zinazotegemewa rasmi.
 
 MCP hutoa SDK rasmi kwa lugha nyingi:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Inasimamiwa kwa ushirikiano na Microsoft
@@ -72,7 +72,7 @@ MCP hutoa SDK rasmi kwa lugha nyingi:
 
 ## Muhimu wa Kumbuka
 
-- Kuandaa mazingira ya maendeleo ya MCP ni rahisi kwa kutumia SDK za lugha husika
+- Kuandaa mazingira ya maendeleo ya MCP ni rahisi kwa kutumia SDK za lugha maalum
 - Kujenga server za MCP kunahusisha kuunda na kusajili zana zenye miundo wazi
 - Wateja wa MCP huungana na server na mifano ili kutumia uwezo uliopanuliwa
 - Kupima na kutatua matatizo ni muhimu kwa utekelezaji wa MCP unaotegemewa
@@ -96,7 +96,7 @@ Tuna seti ya mifano inayosaidia mazoezi utakayoyaona katika sura zote za sehemu 
 
 ## Kinachofuata
 
-Ifuatayo: [Kuunda MCP Server yako ya kwanza](01-first-server/README.md)
+Ifuatayo: [Kuunda Server yako ya kwanza ya MCP](01-first-server/README.md)
 
 **Kiarifu cha Kutotegemea**:  
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

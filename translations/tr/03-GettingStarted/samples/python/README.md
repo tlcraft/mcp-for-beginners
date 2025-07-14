@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bb55f3119d45c4412fc5555299e60498",
-  "translation_date": "2025-05-17T13:29:37+00:00",
+  "translation_date": "2025-07-13T22:38:04+00:00",
   "source_file": "03-GettingStarted/samples/python/README.md",
   "language_code": "tr"
 }
 -->
 # Örnek
 
-Bu, bir MCP Sunucusu için Python örneğidir.
+Bu, bir MCP Sunucusu için Python örneğidir
 
-İşte hesap makinesi kısmının görünümü:
+Hesaplayıcı kısmı şöyle görünüyor:
 
 ```python
 @mcp.tool()
@@ -50,11 +50,11 @@ Aşağıdaki komutu çalıştırın:
 pip install mcp
 ```
 
-## Çalıştır
+## Çalıştırma
 
 ```bash
 python mcp_calculator_server.py
 ```
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlama veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

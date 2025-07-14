@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:28:46+00:00",
+  "translation_date": "2025-07-13T23:31:13+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "ko"
 }
@@ -15,24 +15,24 @@ CO_OP_TRANSLATOR_METADATA:
 
 MCP 구현은 두 가지 주요 구성 요소로 이루어져 있습니다:
 
-1. **MCP Server (`server.py`)** - 다음을 제공하는 서버:
+1. **MCP 서버 (`server.py`)** - 다음을 제공하는 서버:
    - **Tools**: 원격으로 호출할 수 있는 함수들
    - **Resources**: 가져올 수 있는 데이터
-   - **Prompts**: 언어 모델용 프롬프트 생성 템플릿
+   - **Prompts**: 언어 모델용 프롬프트 템플릿
 
-2. **MCP Client (`client.py`)** - 서버에 연결하여 기능을 사용하는 클라이언트 애플리케이션
+2. **MCP 클라이언트 (`client.py`)** - 서버에 연결하여 기능을 사용하는 클라이언트 애플리케이션
 
 ## 기능
 
 이 구현은 여러 주요 MCP 기능을 보여줍니다:
 
 ### Tools
-- `completion` - AI 모델에서 텍스트 완성을 생성 (시뮬레이션)
-- `add` - 두 수를 더하는 간단한 계산기
+- `completion` - AI 모델로부터 텍스트 완성을 생성 (시뮬레이션)
+- `add` - 두 숫자를 더하는 간단한 계산기
 
 ### Resources
-- `models://` - 사용 가능한 AI 모델 정보 반환
-- `greeting://{name}` - 주어진 이름에 대한 개인화된 인사말 반환
+- `models://` - 사용 가능한 AI 모델에 대한 정보 반환
+- `greeting://{name}` - 주어진 이름에 대한 맞춤 인사 반환
 
 ### Prompts
 - `review_code` - 코드 리뷰용 프롬프트 생성
@@ -55,13 +55,13 @@ pip install mcp-server mcp-client
 python server.py
 ```
 
-서버는 MCP CLI를 사용해 개발 모드로 실행할 수도 있습니다:
+서버는 MCP CLI를 사용하여 개발 모드로도 실행할 수 있습니다:
 
 ```powershell
 mcp dev server.py
 ```
 
-또는 Claude Desktop에 설치하여 실행할 수도 있습니다(사용 가능한 경우):
+또는 Claude Desktop에 설치하여 실행할 수도 있습니다 (사용 가능한 경우):
 
 ```powershell
 mcp install server.py
@@ -75,7 +75,7 @@ mcp install server.py
 python client.py
 ```
 
-이렇게 하면 서버에 연결되어 모든 사용 가능한 기능을 시연합니다.
+이렇게 하면 서버에 연결되어 모든 기능을 시연합니다.
 
 ### 클라이언트 사용법
 
@@ -85,12 +85,12 @@ python client.py
 python client.py
 ```
 
-서버에 연결하여 tools, resources, prompts를 포함한 모든 기능을 사용합니다. 출력 결과는 다음과 같습니다:
+서버에 연결하여 tools, resources, prompts를 포함한 모든 기능을 사용합니다. 출력 결과는 다음을 보여줍니다:
 
 1. 계산기 도구 결과 (5 + 7 = 12)
-2. "What is the meaning of life?"에 대한 완성 도구 응답
+2. "What is the meaning of life?"에 대한 completion 도구 응답
 3. 사용 가능한 AI 모델 목록
-4. "MCP Explorer"에 대한 개인화된 인사말
+4. "MCP Explorer"에 대한 맞춤 인사
 5. 코드 리뷰 프롬프트 템플릿
 
 ## 구현 세부사항
@@ -113,7 +113,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-클라이언트는 MCP 클라이언트 라이브러리를 사용해 서버에 연결하고 호출합니다:
+클라이언트는 MCP 클라이언트 라이브러리를 사용하여 서버에 연결하고 호출합니다:
 
 ```python
 async with stdio_client(server_params) as (reader, writer):
@@ -122,9 +122,9 @@ async with stdio_client(server_params) as (reader, writer):
         result = await session.call_tool("add", arguments={"a": 5, "b": 7})
 ```
 
-## 자세히 알아보기
+## 더 알아보기
 
-MCP에 대한 더 많은 정보는 다음에서 확인하세요: https://modelcontextprotocol.io/
+MCP에 대한 자세한 정보는 다음을 방문하세요: https://modelcontextprotocol.io/
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 내용이 포함될 수 있음을 양지해 주시기 바랍니다. 원본 문서의 원어 버전이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

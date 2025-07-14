@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T18:32:32+00:00",
+  "translation_date": "2025-07-13T22:03:08+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "hu"
 }
@@ -27,12 +27,12 @@ A lecke végére képes leszel:
 Az MCP eszközöket biztosít a szerverek teszteléséhez és hibakereséséhez:
 
 - **MCP Inspector**: Parancssori eszköz, amely futtatható CLI-ként és vizuális eszközként is.
-- **Kézi tesztelés**: Használhatsz például curl-t webes kérések futtatásához, de bármilyen HTTP-képes eszköz megfelel.
+- **Kézi tesztelés**: Használhatsz például curl-t webkérések futtatásához, de bármilyen HTTP-képes eszköz megfelel.
 - **Egységtesztelés**: Használhatod a kedvenc tesztelési keretrendszeredet a szerver és kliens funkcióinak tesztelésére.
 
 ### MCP Inspector használata
 
-Ezt az eszközt korábbi leckékben már bemutattuk, de most egy kicsit magasabb szinten is beszéljünk róla. Ez egy Node.js-ben készült eszköz, amelyet az `npx` futtatható fájl segítségével használhatsz, ami ideiglenesen letölti és telepíti az eszközt, majd a futtatás után eltávolítja magát.
+Ezt az eszközt korábbi leckékben már bemutattuk, de most egy kicsit átfogóbb képet adunk róla. Ez egy Node.js-ben készült eszköz, amelyet az `npx` futtatható fájl segítségével használhatsz. Ez az eszköz ideiglenesen letölti és telepíti magát, majd a futtatás után eltávolítja magát.
 
 Az [MCP Inspector](https://github.com/modelcontextprotocol/inspector) segít neked:
 
@@ -46,11 +46,11 @@ Egy tipikus futtatás így néz ki:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-A fenti parancs elindít egy MCP-t és annak vizuális felületét, majd megnyit egy helyi webes felületet a böngésződben. Egy irányítópultot láthatsz, amely megjeleníti a regisztrált MCP szervereidet, azok elérhető eszközeit, erőforrásait és promptjait. Az interfész lehetővé teszi az eszközök interaktív tesztelését, a szerver metaadatainak vizsgálatát és a valós idejű válaszok megtekintését, megkönnyítve az MCP szerver implementációk ellenőrzését és hibakeresését.
+A fenti parancs elindít egy MCP-t és annak vizuális felületét, majd megnyit egy helyi webes felületet a böngésződben. Egy irányítópultot láthatsz, amely megjeleníti a regisztrált MCP szervereidet, azok elérhető eszközeit, erőforrásait és promptjait. Az interfész lehetővé teszi az eszközök interaktív tesztelését, a szerver metaadatainak vizsgálatát és a valós idejű válaszok megtekintését, megkönnyítve ezzel az MCP szerver implementációk ellenőrzését és hibakeresését.
 
 Így nézhet ki: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hu.png)
 
-Az eszközt CLI módban is futtathatod, ilyenkor a `--cli` kapcsolót kell hozzáadni. Íme egy példa a CLI módban történő futtatásra, amely felsorolja a szerveren elérhető összes eszközt:
+Az eszközt CLI módban is futtathatod, ehhez add hozzá a `--cli` kapcsolót. Íme egy példa a CLI módban történő futtatásra, amely listázza a szerveren található összes eszközt:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -58,7 +58,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Kézi tesztelés
 
-Az inspector eszköz futtatásán kívül egy másik hasonló megközelítés, ha egy HTTP-képes klienssel, például curl-lel teszteled a szervert.
+Az inspector eszköz futtatása mellett egy másik hasonló megközelítés, ha egy HTTP-képes klienssel, például curl-lel teszteled a szervert.
 
 Curl segítségével közvetlenül HTTP kérésekkel tesztelheted az MCP szervereket:
 
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Ahogy a fenti curl használatból látható, egy POST kérést használsz az eszköz meghívására, amelynek terhelése az eszköz nevét és paramétereit tartalmazza. Válaszd azt a megközelítést, amelyik neked a legkényelmesebb. A CLI eszközök általában gyorsabbak és könnyen automatizálhatók, ami hasznos lehet CI/CD környezetben.
+Ahogy a fenti curl használatból látható, egy POST kérést használsz az eszköz meghívására, amelynek terhelése az eszköz nevét és paramétereit tartalmazza. Válaszd azt a módszert, amelyik neked a legkényelmesebb. A CLI eszközök általában gyorsabbak és könnyen automatizálhatók, ami hasznos lehet CI/CD környezetben.
 
 ### Egységtesztelés
 
@@ -141,7 +141,7 @@ A fenti fájl alapján tesztelheted a saját szerveredet, hogy megbizonyosodj ar
 
 Minden jelentősebb SDK hasonló tesztelési részekkel rendelkezik, így könnyen igazíthatod a választott futtatókörnyezetedhez.
 
-## Minták
+## Példák
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
@@ -158,4 +158,4 @@ Minden jelentősebb SDK hasonló tesztelési részekkel rendelkezik, így könny
 - Következő: [Deployment](../09-deployment/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

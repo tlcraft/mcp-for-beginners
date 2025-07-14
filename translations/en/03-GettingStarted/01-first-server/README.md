@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T22:53:37+00:00",
+  "translation_date": "2025-07-13T17:22:11+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "en"
 }
@@ -41,13 +41,13 @@ You should see the following user interface:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.en.png)
 
-1. Select "Tools" and then "listTools". You should see "Add" appear. Select "Add" and fill in the parameter values.
+1. Select "Tools" and then "listTools". You should see "Add" appear. Click "Add" and fill in the parameter values.
 
    You should see the following response, which is the result from the "add" tool:
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.en.png)
 
-Congratulations, you have successfully created and run your first server!
+Congratulations, you’ve successfully created and run your first server!
 
 ### Official SDKs
 

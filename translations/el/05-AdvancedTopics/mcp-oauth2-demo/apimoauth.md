@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "32c9a4263be08f9050c8044bb26267c4",
-  "translation_date": "2025-05-17T15:32:22+00:00",
+  "translation_date": "2025-07-14T00:28:23+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/apimoauth.md",
   "language_code": "el"
 }
 -->
 # Ανάπτυξη της εφαρμογής Spring AI MCP σε Azure Container Apps
 
-([Διασφάλιση των διακομιστών Spring AI MCP με OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Εικόνα: Διακομιστής Spring AI MCP ασφαλισμένος με Spring Authorization Server. Ο διακομιστής εκδίδει access tokens σε πελάτες και τα επικυρώνει σε εισερχόμενα αιτήματα (πηγή: Spring blog) ([Διασφάλιση των διακομιστών Spring AI MCP με OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* Για να αναπτύξετε τον διακομιστή Spring MCP, δημιουργήστε τον ως container και χρησιμοποιήστε τα Azure Container Apps με εξωτερική εισαγωγή. Για παράδειγμα, χρησιμοποιώντας το Azure CLI μπορείτε να εκτελέσετε:
+ ([Securing Spring AI MCP servers with OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Εικόνα: Ο διακομιστής Spring AI MCP ασφαλισμένος με Spring Authorization Server. Ο διακομιστής εκδίδει access tokens στους πελάτες και τα επαληθεύει στα εισερχόμενα αιτήματα (πηγή: Spring blog) ([Securing Spring AI MCP servers with OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* Για να αναπτύξετε τον διακομιστή Spring MCP, δημιουργήστε τον ως container και χρησιμοποιήστε τα Azure Container Apps με εξωτερική πρόσβαση (ingress). Για παράδειγμα, με το Azure CLI μπορείτε να εκτελέσετε:
 
 ```bash
 az containerapp up \
@@ -23,11 +23,11 @@ az containerapp up \
   --query properties.configuration.ingress.fqdn
 ```
 
-Αυτό δημιουργεί μια δημόσια προσβάσιμη εφαρμογή Container με ενεργοποιημένο το HTTPS (το Azure εκδίδει ένα δωρεάν πιστοποιητικό TLS για το προεπιλεγμένο `*.azurecontainerapps.io` domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). The command output includes the app’s FQDN (e.g. `my-mcp-app.eastus.azurecontainerapps.io`), which becomes the **issuer URL** base. Ensure HTTP ingress is enabled (as above) so APIM can reach the app. In a test/dev setup, use the `--ingress external` option (or bind a custom domain with TLS per [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Store any sensitive properties (like OAuth client secrets) in Container Apps secrets or Azure Key Vault, and map them into the container as environment variables. 
+Αυτό δημιουργεί μια δημόσια προσβάσιμη Container App με ενεργοποιημένο HTTPS (η Azure εκδίδει δωρεάν πιστοποιητικό TLS για το προεπιλεγμένο domain `*.azurecontainerapps.io` ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Η έξοδος της εντολής περιλαμβάνει το FQDN της εφαρμογής (π.χ. `my-mcp-app.eastus.azurecontainerapps.io`), το οποίο γίνεται η βάση του **issuer URL**. Βεβαιωθείτε ότι η HTTP πρόσβαση (ingress) είναι ενεργοποιημένη (όπως παραπάνω) ώστε το APIM να μπορεί να φτάσει την εφαρμογή. Σε περιβάλλον δοκιμών/ανάπτυξης, χρησιμοποιήστε την επιλογή `--ingress external` (ή συνδέστε ένα προσαρμοσμένο domain με TLS σύμφωνα με τα [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Αποθηκεύστε ευαίσθητες ιδιότητες (όπως τα OAuth client secrets) στα Container Apps secrets ή στο Azure Key Vault και αντιστοιχίστε τα στο container ως μεταβλητές περιβάλλοντος.
 
-## Configuring Spring Authorization Server
+## Διαμόρφωση Spring Authorization Server
 
-In your Spring Boot app’s code, include the Spring Authorization Server and Resource Server starters. Configure a `RegisteredClient` (for the `client_credentials` grant in dev/test) and a JWT key source. For example, in `application.properties` μπορείτε να ορίσετε:
+Στον κώδικα της εφαρμογής Spring Boot, συμπεριλάβετε τα starters για Spring Authorization Server και Resource Server. Διαμορφώστε έναν `RegisteredClient` (για το grant `client_credentials` σε dev/test) και μια πηγή κλειδιού JWT. Για παράδειγμα, στο `application.properties` μπορείτε να ορίσετε:
 
 ```properties
 # OAuth2 client (for testing token issuance)
@@ -37,7 +37,7 @@ spring.security.oauth2.authorizationserver.client.oidc-client.registration.autho
 spring.security.oauth2.authorizationserver.client.oidc-client.registration.client-authentication-methods=client_secret_basic
 ```
 
-Ενεργοποιήστε τον Authorization Server και τον Resource Server ορίζοντας μια αλυσίδα φίλτρων ασφαλείας. Για παράδειγμα:
+Ενεργοποιήστε τον Authorization Server και Resource Server ορίζοντας μια αλυσίδα φίλτρων ασφαλείας. Για παράδειγμα:
 
 ```java
 @Configuration
@@ -84,9 +84,9 @@ public class SecurityConfiguration {
 }
 ```
 
-Αυτή η ρύθμιση θα εκθέσει τα προεπιλεγμένα OAuth2 endpoints: `/oauth2/token` for tokens and `/oauth2/jwks` for the JSON Web Key Set. (By default Spring’s `AuthorizationServerSettings` maps `/oauth2/token` and `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) The server will issue JWT access tokens signed by the RSA key above, and publish its public key at `https://<your-app>:/oauth2/jwks`. 
+Αυτή η διαμόρφωση θα εκθέσει τα προεπιλεγμένα OAuth2 endpoints: `/oauth2/token` για tokens και `/oauth2/jwks` για το JSON Web Key Set. (Εξ ορισμού, το `AuthorizationServerSettings` του Spring αντιστοιχίζει τα `/oauth2/token` και `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) Ο διακομιστής θα εκδίδει JWT access tokens υπογεγραμμένα με το παραπάνω RSA κλειδί και θα δημοσιεύει το δημόσιο κλειδί του στο `https://<your-app>:/oauth2/jwks`.
 
-**Enable OpenID Connect discovery:** To let APIM automatically retrieve the issuer and JWKS, enable the OIDC provider configuration endpoint by adding `.oidc(Customizer.withDefaults())` στη διαμόρφωση ασφαλείας σας ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Για παράδειγμα:
+**Ενεργοποίηση OpenID Connect discovery:** Για να επιτρέψετε στο APIM να ανακτήσει αυτόματα τον issuer και το JWKS, ενεργοποιήστε το endpoint διαμόρφωσης παρόχου OIDC προσθέτοντας `.oidc(Customizer.withDefaults())` στη ρύθμιση ασφαλείας σας ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Για παράδειγμα:
 
 ```java
 http
@@ -96,7 +96,7 @@ http
       .oidc(Customizer.withDefaults()));  // <– enables /.well-known/openid-configuration
 ```
 
-Αυτό εκθέτει `/.well-known/openid-configuration`, which APIM can use for metadata. Finally, you may want to customize the JWT **audience** claim so that APIM’s `<audiences>` έλεγχος θα περάσει. Για παράδειγμα, προσθέστε ένα token customizer:
+Αυτό εκθέτει το `/.well-known/openid-configuration`, το οποίο μπορεί να χρησιμοποιήσει το APIM για μεταδεδομένα. Τέλος, ίσως θελήσετε να προσαρμόσετε το JWT **audience** claim ώστε ο έλεγχος `<audiences>` του APIM να περάσει. Για παράδειγμα, προσθέστε έναν token customizer:
 
 ```java
 @Bean
@@ -108,21 +108,21 @@ public OAuth2TokenCustomizer<OAuth2TokenClaimsContext> tokenCustomizer() {
 }
 ```
 
-Αυτό εξασφαλίζει ότι τα tokens φέρουν `"aud": ["mcp-client"]`, matching the client ID or scope expected by APIM. 
+Αυτό διασφαλίζει ότι τα tokens φέρουν `"aud": ["mcp-client"]`, ταιριάζοντας με το client ID ή το scope που αναμένει το APIM.
 
-## Exposing Token and JWKS Endpoints
+## Έκθεση των Token και JWKS Endpoints
 
-After deploying, your app’s **issuer URL** will be `https://<app-fqdn>`, e.g. `https://my-mcp-app.eastus.azurecontainerapps.io`. Its OAuth2 endpoints are:
+Μετά την ανάπτυξη, το **issuer URL** της εφαρμογής σας θα είναι `https://<app-fqdn>`, π.χ. `https://my-mcp-app.eastus.azurecontainerapps.io`. Τα OAuth2 endpoints είναι:
 
-- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – clients obtain tokens here (client_credentials flow).
-- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – returns the JWK set (used by APIM to get signing keys).
-- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC discovery JSON (contains `issuer`, `token_endpoint`, `jwks_uri`, etc.).  
+- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – εδώ οι πελάτες λαμβάνουν tokens (client_credentials flow).
+- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – επιστρέφει το σύνολο JWK (χρησιμοποιείται από το APIM για να πάρει τα κλειδιά υπογραφής).
+- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – JSON για OIDC discovery (περιέχει `issuer`, `token_endpoint`, `jwks_uri` κ.ά.).
 
-APIM will point to the **OpenID configuration URL**, from which it discovers the `jwks_uri`. For example, if your Container App FQDN is `my-mcp-app.eastus.azurecontainerapps.io`, then APIM’s `<openid-config url="...">` should use `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (By default Spring will set the `issuer` in that metadata to the same base URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
+Το APIM θα δείχνει στο **OpenID configuration URL**, από όπου ανακαλύπτει το `jwks_uri`. Για παράδειγμα, αν το FQDN της Container App είναι `my-mcp-app.eastus.azurecontainerapps.io`, τότε το `<openid-config url="...">` του APIM πρέπει να χρησιμοποιεί `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (Εξ ορισμού, το Spring θα ορίσει το `issuer` στα μεταδεδομένα στο ίδιο βασικό URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
 
-## Configuring Azure API Management (`validate-jwt`)
+## Διαμόρφωση Azure API Management (`validate-jwt`)
 
-In Azure APIM, add an inbound policy that uses the `<validate-jwt>` πολιτική για να ελέγξετε τα εισερχόμενα JWTs σε σχέση με τον Spring Authorization Server σας. Για μια απλή ρύθμιση, μπορείτε να χρησιμοποιήσετε το OpenID Connect metadata URL. Παράδειγμα αποσπάσματος πολιτικής:
+Στο Azure APIM, προσθέστε μια inbound πολιτική που χρησιμοποιεί το `<validate-jwt>` για να ελέγξει τα εισερχόμενα JWTs έναντι του Spring Authorization Server σας. Για απλή διαμόρφωση, μπορείτε να χρησιμοποιήσετε το OpenID Connect metadata URL. Παράδειγμα αποσπάσματος πολιτικής:
 
 ```xml
 <inbound>
@@ -139,38 +139,37 @@ In Azure APIM, add an inbound policy that uses the `<validate-jwt>` πολιτι
 </inbound>
 ```
 
-Αυτή η πολιτική λέει στο APIM να ανακτήσει τη διαμόρφωση OpenID από τον Spring Auth Server, να ανακτήσει το JWKS του και να επικυρώσει ότι κάθε token είναι υπογεγραμμένο από ένα αξιόπιστο κλειδί και έχει το σωστό κοινό. (Αν παραλείψετε `<issuers>`, APIM will use the `issuer` claim from the metadata automatically.) The `<audience>` should match your client ID or API resource identifier in the token (in the example above, we set it to `"mcp-client"`). This is consistent with Microsoft’s documentation on using `validate-jwt` with `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
+Αυτή η πολιτική λέει στο APIM να πάρει τη διαμόρφωση OpenID από τον Spring Auth Server, να ανακτήσει το JWKS και να επαληθεύσει ότι κάθε token είναι υπογεγραμμένο από αξιόπιστο κλειδί και έχει το σωστό audience. (Αν παραλείψετε τα `<issuers>`, το APIM θα χρησιμοποιήσει αυτόματα το `issuer` claim από τα μεταδεδομένα.) Το `<audience>` πρέπει να ταιριάζει με το client ID ή το API resource identifier στο token (στο παράδειγμα παραπάνω το ορίσαμε σε `"mcp-client"`). Αυτό συμφωνεί με την τεκμηρίωση της Microsoft για τη χρήση του `validate-jwt` με `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
 
-After validation, APIM will forward the request (including the original `Authorization` header) to the backend. Since the Spring app is also a resource server, it will re-validate the token, but APIM has already ensured its validity. (For development, you can rely on APIM’s check and disable additional checks in the app if desired, but it’s safer to keep both.)
+Μετά την επαλήθευση, το APIM προωθεί το αίτημα (συμπεριλαμβανομένου του αρχικού header `Authorization`) στο backend. Επειδή η εφαρμογή Spring είναι επίσης resource server, θα επαληθεύσει ξανά το token, αλλά το APIM έχει ήδη διασφαλίσει την εγκυρότητά του. (Για ανάπτυξη, μπορείτε να βασιστείτε στον έλεγχο του APIM και να απενεργοποιήσετε επιπλέον ελέγχους στην εφαρμογή αν θέλετε, αλλά είναι πιο ασφαλές να διατηρήσετε και τους δύο.)
 
-## Example Settings
+## Παραδείγματα Ρυθμίσεων
 
-| Setting            | Example Value                                                        | Notes                                      |
-|--------------------|----------------------------------------------------------------------|--------------------------------------------|
-| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                    | Your Container App’s URL (base URI)        |
-| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`       | Default Spring token endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
-| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`        | Default JWK Set endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
-| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC discovery document (auto-generated)    |
-| **APIM audience**  | `mcp-client`                                                         | OAuth client ID or API resource name       |
-| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` uses this URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
+| Ρύθμιση           | Παράδειγμα Τιμής                                                   | Σημειώσεις                                  |
+|-------------------|-------------------------------------------------------------------|---------------------------------------------|
+| **Issuer**        | `https://my-mcp-app.eastus.azurecontainerapps.io`                 | Το URL της Container App (βασικό URI)       |
+| **Token endpoint**| `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`    | Προεπιλεγμένο token endpoint του Spring ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
+| **JWKS endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`     | Προεπιλεγμένο JWK Set endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
+| **OpenID Config** | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | Έγγραφο ανακάλυψης OIDC (αυτοπαραγόμενο)    |
+| **APIM audience** | `mcp-client`                                                      | OAuth client ID ή όνομα API resource        |
+| **APIM policy**   | `<openid-config url="https://.../.well-known/openid-configuration" />` | Το `<validate-jwt>` χρησιμοποιεί αυτό το URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
 
-## Common Pitfalls
+## Συνηθισμένα Σφάλματα
 
-- **HTTPS/TLS:** The APIM gateway requires that the OpenID/JWKS endpoint be HTTPS with a valid certificate. By default, Azure Container Apps provides a trusted TLS cert for the Azure-managed domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If you use a custom domain, be sure to bind a certificate (you can use Azure’s free managed cert feature) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If APIM cannot trust the endpoint’s certificate, `<validate-jwt>` will fail to fetch the metadata.  
+- **HTTPS/TLS:** Η πύλη APIM απαιτεί το OpenID/JWKS endpoint να είναι HTTPS με έγκυρο πιστοποιητικό. Εξ ορισμού, τα Azure Container Apps παρέχουν αξιόπιστο πιστοποιητικό TLS για το domain που διαχειρίζεται η Azure ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Αν χρησιμοποιείτε προσαρμοσμένο domain, βεβαιωθείτε ότι έχετε συνδέσει πιστοποιητικό (μπορείτε να χρησιμοποιήσετε τη δωρεάν διαχείριση πιστοποιητικών της Azure) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Αν το APIM δεν εμπιστεύεται το πιστοποιητικό του endpoint, το `<validate-jwt>` δεν θα καταφέρει να πάρει τα μεταδεδομένα.
 
-- **Endpoint Accessibility:** Ensure the Spring app’s endpoints are reachable from APIM. Using `--ingress external` (or enabling ingress in the portal) is simplest. If you chose an internal or vNet-bound environment, APIM (by default public) might not reach it unless placed in the same VNet. In a test setup, prefer public ingress so APIM can call the `.well-known` and `/jwks` URLs. 
+- **Προσβασιμότητα Endpoints:** Βεβαιωθείτε ότι τα endpoints της εφαρμογής Spring είναι προσβάσιμα από το APIM. Η χρήση `--ingress external` (ή η ενεργοποίηση ingress από το portal) είναι η απλούστερη λύση. Αν έχετε επιλέξει εσωτερικό ή vNet-bound περιβάλλον, το APIM (που είναι δημόσιο εξ ορισμού) μπορεί να μην έχει πρόσβαση εκτός αν βρίσκεται στο ίδιο VNet. Σε περιβάλλον δοκιμών, προτιμήστε δημόσιο ingress ώστε το APIM να μπορεί να καλέσει τα URLs `.well-known` και `/jwks`.
 
-- **OpenID Discovery Enabled:** By default, Spring Authorization Server **does not expose** the `/.well-known/openid-configuration` unless OIDC is enabled. Make sure to include `.oidc(Customizer.withDefaults())` in your security config (see above) so that the provider configuration endpoint is active ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Otherwise APIM’s `<openid-config>` call will 404.
+- **Ενεργοποίηση OpenID Discovery:** Εξ ορισμού, ο Spring Authorization Server **δεν εκθέτει** το `/.well-known/openid-configuration` αν δεν είναι ενεργοποιημένο το OIDC. Βεβαιωθείτε ότι έχετε συμπεριλάβει `.oidc(Customizer.withDefaults())` στη ρύθμιση ασφαλείας (βλ. παραπάνω) ώστε το endpoint διαμόρφωσης παρόχου να είναι ενεργό ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Διαφορετικά, το κάλεσμα `<openid-config>` του APIM θα επιστρέψει 404.
 
-- **Audience Claim:** Spring’s default behavior is to set the `aud` claim to the client ID. If APIM’s `<audience>` check fails, you may need to customize the token (as shown above) or adjust the APIM policy. Ensure the audience in your JWT matches what you configure in `<audience>`. 
+- **Audience Claim:** Η προεπιλεγμένη συμπεριφορά του Spring είναι να ορίζει το `aud` claim στο client ID. Αν ο έλεγχος `<audience>` του APIM αποτύχει, ίσως χρειαστεί να προσαρμόσετε το token (όπως δείχθηκε παραπάνω) ή να τροποποιήσετε την πολιτική του APIM. Βεβαιωθείτε ότι το audience στο JWT ταιριάζει με αυτό που ορίζετε στο `<audience>`.
 
-- **JSON Metadata Parsing:** The OpenID configuration JSON must be valid. Spring’s default config will emit a standard OIDC metadata document. Verify that it contains the correct `issuer` and `jwks_uri`. If you host Spring behind a proxy or path-based route, double-check the URLs in this metadata. APIM will use these values as-is. 
+- **Ανάλυση JSON Μεταδεδομένων:** Το JSON διαμόρφωσης OpenID πρέπει να είναι έγκυρο. Η προεπιλεγμένη ρύθμιση του Spring θα παράγει ένα τυπικό έγγραφο μεταδεδομένων OIDC. Ελέγξτε ότι περιέχει το σωστό `issuer` και `jwks_uri`. Αν φιλοξενείτε τον Spring πίσω από proxy ή με διαδρομή βάσης (path-based route), ελέγξτε προσεκτικά τα URLs σε αυτά τα μεταδεδομένα. Το APIM θα τα χρησιμοποιήσει όπως είναι.
 
-- **Policy Ordering:** In the APIM policy, place `<validate-jwt>` **before** any routing to the backend. Otherwise, calls might reach your app without a valid token. Also ensure `<validate-jwt>` appears immediately under `<inbound>` (not nested inside another condition) so that APIM applies it.
+- **Σειρά Πολιτικών:** Στην πολιτική του APIM, τοποθετήστε το `<validate-jwt>` **πριν** από οποιαδήποτε δρομολόγηση προς το backend. Διαφορετικά, τα αιτήματα μπορεί να φτάσουν στην εφαρμογή χωρίς έγκυρο token. Επίσης, βεβαιωθείτε ότι το `<validate-jwt>` εμφανίζεται αμέσως κάτω από το `<inbound>` (όχι μέσα σε άλλη συνθήκη) ώστε το APIM να το εφαρμόζει.
 
-By following the above steps, you can run your Spring AI MCP server in Azure Container Apps and have Azure API Management validate incoming OAuth2 JWTs with a minimal policy. The key points are: expose the Spring Auth endpoints publicly with TLS, enable OIDC discovery, and point APIM’s `validate-jwt` at the OpenID config URL (so it can fetch the JWKS automatically). This setup is suitable for a dev/test environment; for production, consider proper secret management, token lifetimes, and rotating keys in JWKS as needed. 
+Ακολουθώντας τα παραπάνω βήματα, μπορείτε να τρέξετε τον Spring AI MCP server σας σε Azure Container Apps και να έχετε το Azure API Management να επαληθεύει τα εισερχόμενα OAuth2 JWTs με μια ελάχιστη πολιτική. Τα βασικά σημεία είναι: εκθέστε δημόσια τα Spring Auth endpoints με TLS, ενεργοποιήστε το OIDC discovery και δείξτε το `validate-jwt` του APIM στο OpenID config URL (ώστε να παίρνει αυτόματα το JWKS). Αυτή η διαμόρφωση είναι κατάλληλη για περιβάλλον dev/test· για παραγωγή, σκεφτείτε σωστή διαχείριση μυστικών, διάρκεια ζωής tokens και περιστροφή κλειδιών στο JWKS όπως απαιτείται.
+**Αναφορές:** Δείτε τα έγγραφα του Spring Authorization Server για τις προεπιλεγμένες τελικές σημεία ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) και τη ρύθμιση OIDC ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); δείτε τα έγγραφα Microsoft APIM για παραδείγματα `validate-jwt` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); και τα έγγραφα Azure Container Apps για ανάπτυξη και πιστοποιητικά ([Deploy Java Spring Boot apps to Azure Container Apps - Java on Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
 
-**References:** See Spring Authorization Server docs for default endpoints ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) and OIDC configuration ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); see Microsoft APIM docs for `validate-jwt` παραδείγματα ([Αναφορά πολιτικής διαχείρισης API της Azure - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); και τα έγγραφα του Azure Container Apps για ανάπτυξη και πιστοποιητικά ([Ανάπτυξη εφαρμογών Java Spring Boot σε Azure Container Apps - Java στο Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Ονόματα προσαρμοσμένων τομέων και δωρεάν διαχειριζόμενα πιστοποιητικά σε Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
-
-**Αποποίηση ευθύνης**: 
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία AI μετάφρασης [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+**Αποποίηση ευθυνών**:  
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

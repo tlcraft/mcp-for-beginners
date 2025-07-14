@@ -2,42 +2,42 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-17T12:05:24+00:00",
+  "translation_date": "2025-07-13T20:16:44+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "hu"
 }
 -->
 # A minta futtatása
 
-Ajánlott telepíteni a `uv`, de nem kötelező, lásd [útmutató](https://docs.astral.sh/uv/#highlights)
+Ajánlott telepíteni az `uv`-t, de nem kötelező, lásd a [utasításokat](https://docs.astral.sh/uv/#highlights)
 
-## -0- Hozz létre egy virtuális környezetet
+## -0- Virtuális környezet létrehozása
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Aktiváld a virtuális környezetet
+## -1- A virtuális környezet aktiválása
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Telepítsd a függőségeket
+## -2- A függőségek telepítése
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Futtasd a mintát
+## -3- A minta futtatása
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Teszteld a mintát
+## -4- A minta tesztelése
 
-Miközben a szerver fut egy terminálban, nyiss meg egy másik terminált és futtasd a következő parancsot:
+Amíg a szerver fut az egyik terminálban, nyiss meg egy másik terminált, és futtasd a következő parancsot:
 
 ```bash
 mcp dev server.py
@@ -45,22 +45,22 @@ mcp dev server.py
 
 Ez elindít egy web szervert vizuális felülettel, amely lehetővé teszi a minta tesztelését.
 
-Amint a szerver csatlakozott:
+Miután a szerver csatlakozott:
 
-- próbáld meg felsorolni az eszközöket és futtasd `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- próbáld meg lekérdezni az eszközöket, és futtasd az `add` parancsot a 2 és 4 argumentummal, az eredménynek 6-nak kell lennie.
+- menj a resources és resource template részhez, hívd meg a get_greeting-et, írj be egy nevet, és egy névre szóló üdvözletet kell látnod.
 
-### Testing in ClI mode
+### Tesztelés CLI módban
 
-The inspector you ran is actually a Node.js app and `mcp dev` egy burkoló körülötte.
+Az inspector, amit futtattál, valójában egy Node.js alkalmazás, és a `mcp dev` egy wrapper köré építve.
 
-Közvetlenül CLI módban is elindíthatod a következő parancs futtatásával:
+Közvetlenül CLI módban is elindíthatod a következő paranccsal:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Ez felsorolja az összes elérhető eszközt a szerveren. A következő kimenetet kell látnod:
+Ez kilistázza az összes elérhető eszközt a szerveren. A következő kimenetet kell látnod:
 
 ```text
 {
@@ -112,8 +112,8 @@ A következő kimenetet kell látnod:
 ```
 
 > ![!TIP]
-> Általában sokkal gyorsabb futtatni az inspectort CLI módban, mint a böngészőben.
+> Általában sokkal gyorsabb az inspectort CLI módban futtatni, mint a böngészőben.
 > További információ az inspectorról [itt](https://github.com/modelcontextprotocol/inspector).
 
-**Felelősség kizárása**:  
-Ez a dokumentum AI fordítószolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) használatával lett lefordítva. Bár igyekszünk pontosságra törekedni, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt a professzionális emberi fordítás. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félremagyarázásokért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

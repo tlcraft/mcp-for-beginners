@@ -2,43 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-06-13T00:10:51+00:00",
+  "translation_date": "2025-07-14T02:40:55+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "no"
 }
 -->
-# Sikkerhets beste praksis
+# Sikkerhetsrutiner
 
-Sikkerhet er kritisk for MCP-implementasjoner, spesielt i bedriftsmiljøer. Det er viktig å sikre at verktøy og data er beskyttet mot uautorisert tilgang, datainnbrudd og andre sikkerhetstrusler.
+Sikkerhet er avgjørende for MCP-implementasjoner, spesielt i bedriftsmiljøer. Det er viktig å sørge for at verktøy og data er beskyttet mot uautorisert tilgang, datainnbrudd og andre sikkerhetstrusler.
 
 ## Introduksjon
 
-I denne leksjonen skal vi utforske sikkerhets beste praksis for MCP-implementasjoner. Vi vil dekke autentisering og autorisasjon, databeskyttelse, sikker kjøring av verktøy og overholdelse av personvernregler.
+I denne leksjonen skal vi utforske sikkerhetsrutiner for MCP-implementasjoner. Vi vil dekke autentisering og autorisasjon, databeskyttelse, sikker kjøring av verktøy og overholdelse av personvernregler.
 
 ## Læringsmål
 
 Etter denne leksjonen skal du kunne:
 
 - Implementere sikre autentiserings- og autorisasjonsmekanismer for MCP-servere.
-- Beskytte sensitive data ved bruk av kryptering og sikker lagring.
-- Sikre kjøring av verktøy med riktige tilgangskontroller.
+- Beskytte sensitiv data ved hjelp av kryptering og sikker lagring.
+- Sikre at verktøy kjøres trygt med riktige tilgangskontroller.
 - Anvende beste praksis for databeskyttelse og personvern.
 
 ## Autentisering og autorisasjon
 
-Autentisering og autorisasjon er avgjørende for å sikre MCP-servere. Autentisering svarer på spørsmålet «Hvem er du?», mens autorisasjon svarer på «Hva kan du gjøre?».
+Autentisering og autorisasjon er essensielt for å sikre MCP-servere. Autentisering svarer på spørsmålet «Hvem er du?», mens autorisasjon svarer på «Hva kan du gjøre?».
 
-La oss se på eksempler på hvordan man kan implementere sikker autentisering og autorisasjon i MCP-servere med .NET og Java.
+La oss se på eksempler på hvordan man kan implementere sikker autentisering og autorisasjon i MCP-servere ved bruk av .NET og Java.
 
 ### .NET Identity-integrasjon
 
 ASP .NET Core Identity tilbyr et robust rammeverk for håndtering av brukerautentisering og autorisasjon. Vi kan integrere det med MCP-servere for å sikre tilgang til verktøy og ressurser.
 
-Noen kjernebegreper vi må forstå når vi integrerer ASP.NET Core Identity med MCP-servere er:
+Det er noen grunnleggende konsepter vi må forstå når vi integrerer ASP.NET Core Identity med MCP-servere, nemlig:
 
-- **Identity-konfigurasjon**: Oppsett av ASP.NET Core Identity med brukerroller og claims. En claim er en informasjon om brukeren, som for eksempel deres rolle eller tillatelser, som "Admin" eller "User".
-- **JWT-autentisering**: Bruk av JSON Web Tokens (JWT) for sikker API-tilgang. JWT er en standard for sikker overføring av informasjon mellom parter som et JSON-objekt, som kan verifiseres og stoles på fordi det er digitalt signert.
-- **Autorisasjonspolicyer**: Definere policyer for å kontrollere tilgang til spesifikke verktøy basert på brukerroller. MCP bruker autorisasjonspolicyer for å avgjøre hvilke brukere som kan få tilgang til hvilke verktøy basert på roller og claims.
+- **Identity-konfigurasjon**: Sette opp ASP.NET Core Identity med brukerroller og claims. En claim er en informasjon om brukeren, som for eksempel deres rolle eller tillatelser, som «Admin» eller «User».
+- **JWT-autentisering**: Bruke JSON Web Tokens (JWT) for sikker API-tilgang. JWT er en standard for sikker overføring av informasjon mellom parter som et JSON-objekt, som kan verifiseres og stoles på fordi det er digitalt signert.
+- **Autorisasjonspolicyer**: Definere policyer for å kontrollere tilgang til spesifikke verktøy basert på brukerroller. MCP bruker autorisasjonspolicyer for å avgjøre hvilke brukere som kan få tilgang til hvilke verktøy basert på deres roller og claims.
 
 ```csharp
 public class SecureMcpStartup
@@ -109,12 +109,12 @@ public class SecureMcpStartup
 }
 ```
 
-I koden ovenfor har vi:
+I koden over har vi:
 
 - Konfigurert ASP.NET Core Identity for brukerstyring.
 - Satt opp JWT-autentisering for sikker API-tilgang. Vi spesifiserte token-valideringsparametere, inkludert issuer, audience og signeringsnøkkel.
-- Definert autorisasjonspolicyer for å kontrollere tilgang til verktøy basert på brukerroller. For eksempel krever policyen "CanUseAdminTools" at brukeren har "Admin"-rollen, mens "CanUseBasic" krever at brukeren er autentisert.
-- Registrert MCP-verktøy med spesifikke autorisasjonskrav, slik at kun brukere med riktige roller får tilgang til dem.
+- Definert autorisasjonspolicyer for å kontrollere tilgang til verktøy basert på brukerroller. For eksempel krever policyen «CanUseAdminTools» at brukeren har rollen «Admin», mens «CanUseBasic» krever at brukeren er autentisert.
+- Registrert MCP-verktøy med spesifikke autorisasjonskrav, slik at kun brukere med riktige roller får tilgang.
 
 ### Java Spring Security-integrasjon
 
@@ -122,11 +122,11 @@ For Java bruker vi Spring Security for å implementere sikker autentisering og a
 
 Kjernebegrepene her er:
 
-- **Spring Security-konfigurasjon**: Oppsett av sikkerhetskonfigurasjoner for autentisering og autorisasjon.
-- **OAuth2 Resource Server**: Bruk av OAuth2 for sikker tilgang til MCP-verktøy. OAuth2 er et autorisasjonsrammeverk som lar tredjepartstjenester utveksle tilgangstokener for sikker API-tilgang.
-- **Sikkerhetsinterceptorer**: Implementering av sikkerhetsinterceptorer for å håndheve tilgangskontroller ved kjøring av verktøy.
-- **Rollebasert tilgangskontroll**: Bruk av roller for å kontrollere tilgang til spesifikke verktøy og ressurser.
-- **Sikkerhetsannotasjoner**: Bruk av annotasjoner for å sikre metoder og endepunkter.
+- **Spring Security-konfigurasjon**: Sette opp sikkerhetskonfigurasjoner for autentisering og autorisasjon.
+- **OAuth2 Resource Server**: Bruke OAuth2 for sikker tilgang til MCP-verktøy. OAuth2 er et autorisasjonsrammeverk som lar tredjepartstjenester utveksle tilgangstokener for sikker API-tilgang.
+- **Sikkerhetsinterceptorer**: Implementere sikkerhetsinterceptorer for å håndheve tilgangskontroller ved kjøring av verktøy.
+- **Rollebasert tilgangskontroll**: Bruke roller for å styre tilgang til spesifikke verktøy og ressurser.
+- **Sikkerhetsannotasjoner**: Bruke annotasjoner for å sikre metoder og endepunkter.
 
 ```java
 @Configuration
@@ -178,16 +178,16 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-I koden ovenfor har vi:
+I koden over har vi:
 
-- Konfigurert Spring Security for å sikre MCP-endepunkter, med offentlig tilgang til verktøydiscovery, mens kjøring av verktøy krever autentisering.
-- Brukt OAuth2 som ressursserver for å håndtere sikker tilgang til MCP-verktøy.
+- Konfigurert Spring Security for å sikre MCP-endepunkter, med offentlig tilgang til verktøysøk, men krav om autentisering for kjøring av verktøy.
+- Brukt OAuth2 som resource server for å håndtere sikker tilgang til MCP-verktøy.
 - Implementert en sikkerhetsinterceptor for å håndheve tilgangskontroller ved kjøring av verktøy, som sjekker brukerroller og tillatelser før tilgang gis til spesifikke verktøy.
 - Definert rollebasert tilgangskontroll for å begrense tilgang til admin-verktøy og sensitiv data basert på brukerroller.
 
 ## Databeskyttelse og personvern
 
-Databeskyttelse er avgjørende for å sikre at sensitiv informasjon håndteres trygt. Dette inkluderer beskyttelse av personlig identifiserbar informasjon (PII), finansielle data og annen sensitiv informasjon mot uautorisert tilgang og brudd.
+Databeskyttelse er avgjørende for å sikre at sensitiv informasjon håndteres trygt. Dette inkluderer beskyttelse av personlig identifiserbar informasjon (PII), økonomiske data og annen sensitiv informasjon mot uautorisert tilgang og lekkasjer.
 
 ### Python-eksempel på databeskyttelse
 
@@ -327,16 +327,16 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-I koden ovenfor har vi:
+I koden over har vi:
 
-- Implementert en `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
-- Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
-- Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`) for å sikre at det håndterer sensitiv data på en trygg måte.
+- Implementert en `PiiDetector`-klasse for å skanne tekst og parametere etter personlig identifiserbar informasjon (PII).
+- Opprettet en `EncryptionService`-klasse for å håndtere kryptering og dekryptering av sensitiv data ved hjelp av `cryptography`-biblioteket.
+- Definert en `secure_tool`-dekoratør som pakker inn verktøykjøring for å sjekke etter PII, logge tilgang og kryptere sensitiv data ved behov.
+- Brukt `secure_tool`-dekoratøren på et eksempelverktøy (`SecureCustomerDataTool`) for å sikre at det håndterer sensitiv data på en trygg måte.
 
 ## Hva nå
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på det opprinnelige språket skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

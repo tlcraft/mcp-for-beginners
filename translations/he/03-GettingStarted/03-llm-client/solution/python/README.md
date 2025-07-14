@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24531f2b6b0f7fa3839accf4dc10088a",
-  "translation_date": "2025-05-17T10:49:44+00:00",
+  "translation_date": "2025-07-13T19:16:50+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/python/README.md",
   "language_code": "he"
 }
 -->
-# הפעלת הדוגמה הזו
+# הרצת הדוגמה הזו
 
-מומלץ להתקין את `uv` אך זה לא חובה, ראו [הוראות](https://docs.astral.sh/uv/#highlights)
+מומלץ להתקין את `uv` אבל זה לא חובה, ראה [הוראות](https://docs.astral.sh/uv/#highlights)
 
 ## -0- יצירת סביבה וירטואלית
 
@@ -31,13 +31,13 @@ pip install openai
 pip install azure-ai-inference
 ```
 
-## -3- הפעלת הדוגמה
+## -3- הרצת הדוגמה
 
 ```bash
 python client.py
 ```
 
-עליכם לראות פלט דומה ל:
+אתה אמור לראות פלט דומה ל:
 
 ```text
 LISTING RESOURCES
@@ -55,4 +55,4 @@ TOOLS result:  [TextContent(type='text', text='22', annotations=None)]
 ```
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום AI [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור הסמכותי. למידע קריטי, מומלץ להשתמש בתרגום אנושי מקצועי. איננו אחראים לכל אי-הבנות או פרשנויות מוטעות הנובעות מהשימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

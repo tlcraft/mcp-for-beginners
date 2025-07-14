@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T01:01:02+00:00",
+  "translation_date": "2025-07-14T00:43:38+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "sk"
 }
 -->
 # MCP OAuth2 Demo
 
-Tento projekt je **minimálna Spring Boot aplikácia**, ktorá slúži ako:
+Tento projekt je **minimálna Spring Boot aplikácia**, ktorá slúži zároveň ako:
 
-* **Spring Authorization Server** (vydáva JWT access tokeny cez `client_credentials` flow), a  
-* **Resource Server** (chráni vlastný `/hello` endpoint).
+* **Spring Authorization Server** (vydáva JWT prístupové tokeny cez `client_credentials` flow), a  
+* **Resource Server** (chráni vlastný endpoint `/hello`).
 
-Zrkadlí nastavenie z [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Zrkadlí nastavenie z [Spring blogu (2. apríl 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,7 +36,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testovanie OAuth2 konfigurácie
 
-OAuth2 bezpečnostnú konfiguráciu môžete otestovať nasledujúcimi krokmi:
+OAuth2 bezpečnostnú konfiguráciu môžete otestovať nasledovne:
 
 ### 1. Overte, že server beží a je zabezpečený
 
@@ -45,7 +45,7 @@ OAuth2 bezpečnostnú konfiguráciu môžete otestovať nasledujúcimi krokmi:
 curl -v http://localhost:8081/
 ```
 
-### 2. Získajte access token pomocou client credentials
+### 2. Získajte prístupový token pomocou klientskych údajov
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Poznámka: Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Poznámka: Basic Authentication hlavička (`bWNwLWNsaWVudDpzZWNyZXQ=`) je Base64 kódovanie reťazca `mcp-client:secret`.
 
-### 3. Prístup k chránenému endpointu pomocou tokenu
+### 3. Pristúpte k chránenému endpointu pomocou tokenu
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Úspešná odpoveď s "Hello from MCP OAuth2 Demo!" potvrdzuje, že OAuth2 konfigurácia funguje správne.
+Úspešná odpoveď s textom "Hello from MCP OAuth2 Demo!" potvrdzuje, že OAuth2 konfigurácia funguje správne.
 
 ---
 
-## Build kontajnera
+## Vytvorenie kontajnera
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deploy do **Azure Container Apps**
+## Nasadenie do **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ingress FQDN sa stáva vaším **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Ingress FQDN sa stáva vaším **issuerom** (`https://<fqdn>`).  
+Azure automaticky poskytuje dôveryhodný TLS certifikát pre `*.azurecontainerapps.io`.
 
 ---
 
-## Prepojenie do **Azure API Management**
+## Prepojenie s **Azure API Management**
 
-Pridajte tento inbound policy do vášho API:
+Pridajte túto inbound politiku do vášho API:
 
 ```xml
 <inbound>
@@ -116,7 +116,7 @@ Pridajte tento inbound policy do vášho API:
 </inbound>
 ```
 
-APIM získa JWKS a overí každú požiadavku.
+APIM stiahne JWKS a overí každý request.
 
 ---
 
@@ -125,4 +125,4 @@ APIM získa JWKS a overí každú požiadavku.
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

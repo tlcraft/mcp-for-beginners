@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:33:10+00:00",
+  "translation_date": "2025-07-14T06:44:42+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "hr"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - Python 3.8 ili noviji
 - pip (Python upravitelj paketa)
-- Pristup internetu za povezivanje s Microsoft Learn Docs MCP serverom
+- Internet veza za povezivanje s Microsoft Learn Docs MCP serverom
 
 ## Instalacija
 
@@ -27,28 +27,28 @@ CO_OP_TRANSLATOR_METADATA:
 ## Korištenje
 
 ### Scenarij 1: Jednostavan upit prema Docs MCP
-Klijent iz naredbenog retka koji se povezuje na Docs MCP server, šalje upit i ispisuje rezultat.
+Klijent iz komandne linije koji se povezuje na Docs MCP server, šalje upit i ispisuje rezultat.
 
 1. Pokrenite skriptu:
    ```bash
    python scenario1.py
    ```
-2. Na upit unesite svoje pitanje vezano uz dokumentaciju.
+2. Unesite svoje pitanje vezano uz dokumentaciju na upitniku.
 
 ### Scenarij 2: Generator plana učenja (Chainlit web aplikacija)
-Web sučelje (koristeći Chainlit) koje korisnicima omogućuje izradu personaliziranog plana učenja tjedan po tjedan za bilo koju tehničku temu.
+Web sučelje (koristeći Chainlit) koje korisnicima omogućuje generiranje personaliziranog, tjednog plana učenja za bilo koju tehničku temu.
 
 1. Pokrenite Chainlit aplikaciju:
    ```bash
    chainlit run scenario2.py
    ```
-2. Otvorite lokalnu URL adresu prikazanu u terminalu (npr. http://localhost:8000) u pregledniku.
-3. U chat prozoru unesite temu učenja i broj tjedana za koje želite učiti (npr. "AI-900 certification, 8 weeks").
-4. Aplikacija će odgovoriti planom učenja tjedan po tjedan, uključujući poveznice na relevantnu Microsoft Learn dokumentaciju.
+2. Otvorite lokalnu URL adresu prikazanu u terminalu (npr. http://localhost:8000) u svom pregledniku.
+3. U prozoru za chat unesite temu učenja i broj tjedana za koje želite učiti (npr. "AI-900 certifikacija, 8 tjedana").
+4. Aplikacija će odgovoriti tjednim planom učenja, uključujući poveznice na relevantnu Microsoft Learn dokumentaciju.
 
 **Potrebne varijable okoline:**
 
-Za korištenje Scenarija 2 (Chainlit web aplikacije s Azure OpenAI) potrebno je postaviti sljedeće varijable okoline u `.env` file in the `python` direktoriju:
+Za korištenje Scenarija 2 (Chainlit web aplikacija s Azure OpenAI), morate postaviti sljedeće varijable okoline u `.env` datoteci unutar `python` direktorija:
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -57,45 +57,45 @@ AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_VERSION=
 ```
 
-Prije pokretanja aplikacije unesite svoje podatke o Azure OpenAI resursu.
+Ispunite ove vrijednosti detaljima vašeg Azure OpenAI resursa prije pokretanja aplikacije.
 
-> **[!TIP]** Lako možete implementirati vlastite modele koristeći [Azure AI Foundry](https://ai.azure.com/).
+> **Tip:** Jednostavno možete implementirati vlastite modele koristeći [Azure AI Foundry](https://ai.azure.com/).
 
-### Scenarij 3: Dokumentacija u editoru s MCP serverom u VS Code
+### Scenarij 3: Dokumentacija unutar editora s MCP serverom u VS Code
 
-Umjesto prebacivanja između kartica u pregledniku za pretraživanje dokumentacije, možete integrirati Microsoft Learn Docs izravno u VS Code koristeći MCP server. Ovo vam omogućuje da:
-- Pretražujete i čitate dokumentaciju unutar VS Code bez napuštanja radnog okruženja.
-- Referencirate dokumentaciju i umetnete poveznice direktno u README ili datoteke tečaja.
-- Koristite GitHub Copilot i MCP zajedno za besprijekoran AI-podržan tijek rada s dokumentacijom.
+Umjesto prebacivanja između kartica preglednika za pretraživanje dokumentacije, možete Microsoft Learn Docs dovesti izravno u VS Code koristeći MCP server. To vam omogućuje:
+- Pretraživanje i čitanje dokumenata unutar VS Code bez napuštanja radnog okruženja.
+- Referenciranje dokumentacije i umetanje poveznica izravno u README ili datoteke tečaja.
+- Korištenje GitHub Copilot i MCP zajedno za besprijekoran, AI-podržan tijek rada s dokumentacijom.
 
-**Primjeri korištenja:**
-- Brzo dodajte referentne poveznice u README dok pišete dokumentaciju za tečaj ili projekt.
-- Koristite Copilot za generiranje koda i MCP za trenutno pronalaženje i citiranje relevantne dokumentacije.
+**Primjeri upotrebe:**
+- Brzo dodavanje referentnih poveznica u README dok pišete dokumentaciju za tečaj ili projekt.
+- Korištenje Copilota za generiranje koda i MCP-a za trenutno pronalaženje i citiranje relevantne dokumentacije.
 - Ostanite fokusirani u editoru i povećajte produktivnost.
 
 > [!IMPORTANT]
-> Provjerite imate li valjanu [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> Provjerite imate li valjanu [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) konfiguraciju u svom radnom prostoru (lokacija je `.vscode/mcp.json`).
 
-## Why Chainlit for Scenario 2?
+## Zašto Chainlit za Scenarij 2?
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit je moderan open-source okvir za izradu konverzacijskih web aplikacija. Omogućuje jednostavno stvaranje chat sučelja koja se povezuju s backend servisima poput Microsoft Learn Docs MCP servera. Ovaj projekt koristi Chainlit kako bi pružio jednostavan, interaktivan način za generiranje personaliziranih planova učenja u stvarnom vremenu. Korištenjem Chainlit-a brzo možete izgraditi i implementirati chat alate koji poboljšavaju produktivnost i učenje.
 
-## What This Does
+## Što ova aplikacija radi
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+Ova aplikacija omogućuje korisnicima da kreiraju personalizirani plan učenja jednostavnim unosom teme i trajanja. Aplikacija analizira vaš unos, šalje upit Microsoft Learn Docs MCP serveru za relevantni sadržaj i organizira rezultate u strukturirani, tjedni plan. Preporuke za svaki tjedan prikazuju se u chatu, što olakšava praćenje i napredak. Integracija osigurava da uvijek dobijete najnovije i najrelevantnije izvore za učenje.
 
-## Sample Queries
+## Primjeri upita
 
-Try these queries in the chat window to see how the app responds:
+Isprobajte ove upite u chat prozoru da vidite kako aplikacija odgovara:
 
-- `AI-900 certification, 8 weeks`
-- `Learn Azure Functions, 4 weeks`
-- `Azure DevOps, 6 weeks`
-- `Data engineering on Azure, 10 weeks`
-- `Microsoft security fundamentals, 5 weeks`
-- `Power Platform, 7 weeks`
-- `Azure AI services, 12 weeks`
-- `Cloud architecture, 9 weeks`
+- `AI-900 certifikacija, 8 tjedana`
+- `Nauči Azure Functions, 4 tjedna`
+- `Azure DevOps, 6 tjedana`
+- `Data engineering na Azureu, 10 tjedana`
+- `Microsoft sigurnosni temelji, 5 tjedana`
+- `Power Platform, 7 tjedana`
+- `Azure AI servisi, 12 tjedana`
+- `Cloud arhitektura, 9 tjedana`
 
 Ovi primjeri pokazuju fleksibilnost aplikacije za različite ciljeve učenja i vremenske okvire.
 
@@ -105,4 +105,4 @@ Ovi primjeri pokazuju fleksibilnost aplikacije za različite ciljeve učenja i v
 - [MCP dokumentacija](https://github.com/MicrosoftDocs/mcp)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

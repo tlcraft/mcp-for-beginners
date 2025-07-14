@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:50:51+00:00",
+  "translation_date": "2025-07-13T21:15:49+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "my"
 }
 -->
 # Calculator HTTP Streaming Demo
 
-ဒီပရောဂျက်က Spring Boot WebFlux နဲ့ Server-Sent Events (SSE) ကို အသုံးပြုပြီး HTTP streaming ကို ပြသပေးပါတယ်။ အဲဒီမှာ အပလီကေးရှင်းနှစ်ခု ပါဝင်ပါတယ်-
+ဤပရောဂျက်သည် Spring Boot WebFlux ဖြင့် Server-Sent Events (SSE) ကို အသုံးပြု၍ HTTP streaming ကို ပြသသည်။ အောက်ပါ အပလီကေးရှင်း နှစ်ခု ပါဝင်သည်-
 
-- **Calculator Server**: လုပ်ဆောင်ချက်တွေကို ပြုလုပ်ပြီး SSE နဲ့ ရလဒ်တွေကို streaming ပြသပေးတဲ့ reactive web service
-- **Calculator Client**: Streaming endpoint ကို အသုံးပြုတဲ့ client application
+- **Calculator Server**: တွက်ချက်မှုများ ပြုလုပ်ပြီး SSE ဖြင့် ရလဒ်များကို စီးဆင်းပေးသည့် reactive web service
+- **Calculator Client**: streaming endpoint ကို အသုံးပြုသည့် client application
 
 ## လိုအပ်ချက်များ
 
 - Java 17 သို့မဟုတ် အထက်
 - Maven 3.6 သို့မဟုတ် အထက်
 
-## ပရောဂျက်ဖွဲ့စည်းပုံ
+## ပရောဂျက် ဖွဲ့စည်းပုံ
 
 ```
 java/
@@ -35,25 +35,25 @@ java/
 └── README.md
 ```
 
-## အလုပ်လုပ်ပုံ
+## လုပ်ဆောင်ပုံ
 
-1. **Calculator Server** က `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** သည် `/calculate` endpoint ကို ဖော်ပြပြီး-
+   - query parameters များကို လက်ခံသည်- `a` (နံပါတ်), `b` (နံပါတ်), `op` (လုပ်ဆောင်ချက်)
+   - ထောက်ခံသော လုပ်ဆောင်ချက်များ- `add`, `sub`, `mul`, `div`
+   - တွက်ချက်မှု တိုးတက်မှုနှင့် ရလဒ်များကို Server-Sent Events အဖြစ် ပြန်ပေးပို့သည်
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5` ကို ဖော်ပြပါတယ်
-   - Streaming response ကို စားသုံးပါတယ်
-   - တစ်ခုချင်း event တစ်ခုကို console ပေါ်မှာ ပြသပါတယ်
+2. **Calculator Client** သည် server နှင့် ချိတ်ဆက်ပြီး-
+   - `7 * 5` တွက်ချက်ရန် တောင်းဆိုသည်
+   - streaming ဖြင့် ပြန်လာသော တုံ့ပြန်ချက်ကို စားသုံးသည်
+   - တစ်ခုချင်းစီသော event များကို console တွင် ပုံနှိပ်ပြသည်
 
-## အပလီကေးရှင်းများကို ပြေးစေခြင်း
+## အပလီကေးရှင်းများကို စတင်အသုံးပြုခြင်း
 
-### ရွေးချယ်စရာ ၁: Maven အသုံးပြုခြင်း (အကြံပြု)
+### ရွေးချယ်စရာ ၁: Maven ဖြင့် (အကြံပြု)
 
 #### ၁။ Calculator Server ကို စတင်ပါ
 
-Terminal တစ်ခု ဖွင့်ပြီး server directory ကို သွားပါ-
+terminal တစ်ခု ဖွင့်ပြီး server directory သို့ သွားပါ-
 
 ```bash
 cd calculator-server
@@ -61,17 +61,17 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Server က `http://localhost:8080` ပေါ်မှာ စတင်လည်ပတ်ပါလိမ့်မယ်
+server သည် `http://localhost:8080` တွင် စတင်လည်ပတ်မည်
 
-အောက်ပါအတိုင်း output ကို မြင်ရပါလိမ့်မယ်-
+အောက်ပါအတိုင်း output ကို မြင်ရမည်-
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
 ```
 
-#### ၂။ Calculator Client ကို ပြေးပါ
+#### ၂။ Calculator Client ကို လည်ပတ်ပါ
 
-Terminal အသစ်တစ်ခု ဖွင့်ပြီး client directory ကို သွားပါ-
+terminal အသစ်တစ်ခု ဖွင့်ပြီး client directory သို့ သွားပါ-
 
 ```bash
 cd calculator-client
@@ -79,11 +79,11 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Client က server နဲ့ ချိတ်ဆက်ပြီးတွက်ချက်မှုလုပ်ပြီး streaming ရလဒ်တွေကို ပြသပါလိမ့်မယ်။
+client သည် server နှင့် ချိတ်ဆက်ပြီး တွက်ချက်မှုကို ပြုလုပ်ကာ streaming ရလဒ်များကို ပြသမည်။
 
 ### ရွေးချယ်စရာ ၂: Java ကို တိုက်ရိုက် အသုံးပြုခြင်း
 
-#### ၁။ Server ကို compile ပြီး run လုပ်ပါ-
+#### ၁။ server ကို compile ပြီး run ပါ-
 
 ```bash
 cd calculator-server
@@ -91,7 +91,7 @@ mvn clean package
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-#### ၂။ Client ကို compile ပြီး run လုပ်ပါ-
+#### ၂။ client ကို compile ပြီး run ပါ-
 
 ```bash
 cd calculator-client
@@ -99,12 +99,12 @@ mvn clean package
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Server ကို လက်တွေ့စမ်းသပ်ခြင်း
+## Server ကို လက်ဖြင့် စမ်းသပ်ခြင်း
 
-Web browser သို့မဟုတ် curl ကို အသုံးပြုပြီး server ကို စမ်းသပ်နိုင်ပါတယ်-
+web browser သို့မဟုတ် curl ဖြင့် server ကို စမ်းသပ်နိုင်သည်-
 
-### Web browser အသုံးပြုခြင်း
-`http://localhost:8080/calculate?a=10&b=5&op=add` ကို သွားရောက်ကြည့်ပါ
+### web browser အသုံးပြုခြင်း
+သွားရောက်ရန်- `http://localhost:8080/calculate?a=10&b=5&op=add`
 
 ### curl အသုံးပြုခြင်း
 ```bash
@@ -113,7 +113,7 @@ curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-st
 
 ## မျှော်မှန်းထားသော output
 
-Client ကို run လုပ်တဲ့အခါ streaming output ကို အောက်ပါအတိုင်း မြင်ရပါလိမ့်မယ်-
+client ကို run လုပ်သောအခါ streaming output ကို အောက်ပါအတိုင်း မြင်ရမည်-
 
 ```
 event:info
@@ -123,34 +123,34 @@ event:result
 data:35.0
 ```
 
-## ထောက်ခံတဲ့ လုပ်ဆောင်ချက်များ
+## ထောက်ခံသော လုပ်ဆောင်ချက်များ
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - ပေါင်းခြင်း (a + b)
+- `sub` - ဖြုတ်ခြင်း (a - b)
+- `mul` - မြှောက်ခြင်း (a * b)
+- `div` - ခွဲခြင်း (a / b, b = 0 ဖြစ်ပါက NaN ပြန်ပေးသည်)
 
-## API Reference
+## API ကို ရည်ညွှန်းချက်
 
 ### GET /calculate
 
 **Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+- `a` (လိုအပ်သည်): ပထမနံပါတ် (double)
+- `b` (လိုအပ်သည်): ဒုတိယနံပါတ် (double)
+- `op` (လိုအပ်သည်): လုပ်ဆောင်ချက် (`add`, `sub`, `mul`, `div`)
 
 **Response:**
 - Content-Type: `text/event-stream`
-- Server-Sent Events နဲ့ တွက်ချက်မှု တိုးတက်မှုနဲ့ ရလဒ်ကို ပြန်ပေးပါသည်
+- တွက်ချက်မှု တိုးတက်မှုနှင့် ရလဒ်များကို Server-Sent Events အဖြစ် ပြန်ပေးပို့သည်
 
-**ဥပမာ Request:**
+**ဥပမာ တောင်းဆိုမှု:**
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**ဥပမာ Response:**
+**ဥပမာ တုံ့ပြန်မှု:**
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -161,42 +161,42 @@ data: 35.0
 
 ## ပြဿနာဖြေရှင်းခြင်း
 
-### ပုံမှန်ကြုံတွေ့ရသော ပြဿနာများ
+### ပုံမှန် ဖြစ်ပေါ်နိုင်သော ပြဿနာများ
 
-1. **Port 8080 ကို အခြား app က အသုံးပြုနေခြင်း**
-   - Port 8080 ကို အသုံးပြုနေတဲ့ အခြား app တွေကို ရပ်တန့်ပါ
-   - ဒါမှမဟုတ် `calculator-server/src/main/resources/application.yml`
+1. **Port 8080 ကို အခြား application တစ်ခု အသုံးပြုနေခြင်း**
+   - port 8080 ကို အသုံးပြုနေသော အခြား application များကို ပိတ်ပါ
+   - ဒါမှမဟုတ် `calculator-server/src/main/resources/application.yml` တွင် server port ကို ပြောင်းပါ
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **ချိတ်ဆက်မှု ပယ်ချခြင်း**
+   - client စတင်မလုပ်မီ server သည် လည်ပတ်နေသည်ကို သေချာစေပါ
+   - server သည် port 8080 တွင် အောင်မြင်စွာ စတင်လည်ပတ်နေသည်ကို စစ်ဆေးပါ
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **parameter name ပြဿနာများ**
+   - ဤပရောဂျက်တွင် Maven compiler configuration တွင် `-parameters` flag ပါဝင်သည်
+   - parameter binding ပြဿနာများ ဖြစ်ပါက ဤ configuration ဖြင့် ပရောဂျက်ကို ပြန်လည်တည်ဆောက်ပါ
 
-### Stopping the Applications
+### အပလီကေးရှင်းများကို ရပ်တန့်ခြင်း
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` မှာ server port ကို ပြောင်းပါ (background process အဖြစ် run နေပါက)
+- တစ်ခုချင်းစီ လည်ပတ်နေသော terminal တွင် `Ctrl+C` ကို နှိပ်ပါ
+- ဒါမှမဟုတ် background process အဖြစ် run လျှင် `mvn spring-boot:stop` ကို အသုံးပြုပါ
 
-## နည်းပညာ stack
+## နည်းပညာ Stack
 
-- **Spring Boot 3.3.1** - Application framework
+- **Spring Boot 3.3.1** - အပလီကေးရှင်း framework
 - **Spring WebFlux** - Reactive web framework
-- **Project Reactor** - Reactive streams library
+- **Project Reactor** - Reactive streams စာကြည့်တိုက်
 - **Netty** - Non-blocking I/O server
 - **Maven** - Build tool
 - **Java 17+** - Programming language
 
-## နောက်တစ်ဆင့်
+## နောက်တစ်ဆင့်များ
 
 ကုဒ်ကို ပြင်ဆင်ကြည့်ပါ-
-- သင်္ချာဆိုင်ရာ လုပ်ဆောင်ချက်များ ပိုထည့်ပါ
-- မမှန်ကန်တဲ့ လုပ်ဆောင်ချက်များအတွက် error handling ထည့်ပါ
-- Request/response logging ထည့်ပါ
-- Authentication ကို အကောင်အထည်ဖော်ပါ
-- Unit test များ ထည့်သွင်းပါ
+- သင်္ချာဆိုင်ရာ လုပ်ဆောင်ချက်များ ပိုမိုထည့်သွင်းရန်
+- မှားယွင်းသော လုပ်ဆောင်ချက်များအတွက် error handling ထည့်သွင်းရန်
+- တောင်းဆိုမှု/တုံ့ပြန်မှု logging ထည့်သွင်းရန်
+- authentication ကို အကောင်အထည်ဖော်ရန်
+- unit test များ ထည့်သွင်းရန်
 
-**စာရွက်ချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှုဖြစ်သော [Co-op Translator](https://github.com/Azure/co-op-translator) အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ တိကျမှုအတွက် ကြိုးစားပေမယ့် စက်ရုပ်ဘာသာပြန်မှုတွင် အမှားများ သို့မဟုတ် တိကျမှုနည်းပါးမှုများ ဖြစ်ပေါ်နိုင်ကြောင်း သတိပြုပါရန်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ ယုံကြည်စိတ်ချရသော အချက်အလက်အရင်းအမြစ်အဖြစ် သတ်မှတ်ရမည်ဖြစ်သည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များ၏ ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းကြောင့် ဖြစ်ပေါ်နိုင်သော နားလည်မှားယွင်းမှုများ သို့မဟုတ် မှားယွင်းသဘောထားများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
+**အကြောင်းကြားချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

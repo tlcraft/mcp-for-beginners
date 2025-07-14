@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T05:49:08+00:00",
+  "translation_date": "2025-07-13T22:13:25+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "ur"
 }
 -->
 # بنیادی کیلکولیٹر MCP سروس
 
-یہ سروس ماڈل کانٹیکسٹ پروٹوکول (MCP) کے ذریعے بنیادی کیلکولیٹر آپریشنز فراہم کرتی ہے۔ یہ MCP کی تنفیذات سیکھنے والے ابتدائی افراد کے لیے ایک سادہ مثال کے طور پر ڈیزائن کی گئی ہے۔
+یہ سروس ماڈل کانٹیکسٹ پروٹوکول (MCP) کے ذریعے بنیادی کیلکولیٹر آپریشنز فراہم کرتی ہے۔ یہ MCP کی امپلیمنٹیشن سیکھنے والے ابتدائی افراد کے لیے ایک سادہ مثال کے طور پر ڈیزائن کی گئی ہے۔
 
 مزید معلومات کے لیے دیکھیں [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -19,17 +19,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **بنیادی حسابی عملیات**:
    - دو نمبروں کا جمع کرنا
-   - ایک نمبر کو دوسرے سے منفی کرنا
+   - ایک نمبر سے دوسرے نمبر کو منفی کرنا
    - دو نمبروں کا ضرب دینا
-   - ایک نمبر کو دوسرے سے تقسیم کرنا (صفر سے تقسیم کی جانچ کے ساتھ)
+   - ایک نمبر کو دوسرے نمبر سے تقسیم کرنا (زیرو سے تقسیم کی جانچ کے ساتھ)
 
 ## `stdio` قسم کا استعمال
 
 ## ترتیب
 
-1. **MCP سرورز کو ترتیب دیں**:
+1. **MCP سرورز کی ترتیب**:
    - VS Code میں اپنا ورک اسپیس کھولیں۔
-   - اپنے ورک اسپیس فولڈر میں ایک `.vscode/mcp.json` فائل بنائیں تاکہ MCP سرورز کی ترتیب کی جا سکے۔ مثال کے طور پر ترتیب:
+   - اپنے ورک اسپیس فولڈر میں `.vscode/mcp.json` فائل بنائیں تاکہ MCP سرورز کی ترتیب دی جا سکے۔ ترتیب کی مثال:
 
      ```jsonc
      {
@@ -54,50 +54,49 @@ CO_OP_TRANSLATOR_METADATA:
      }
      ```
 
-   - آپ سے GitHub ریپوزٹری روٹ درج کرنے کو کہا جائے گا، جسے کمانڈ `git rev-parse --show-toplevel` سے حاصل کیا جا سکتا ہے۔ اپنے Docker Hub یوزرنیم کے ساتھ ``.
+   - آپ سے GitHub ریپوزیٹری روٹ داخل کرنے کو کہا جائے گا، جو کمانڈ `git rev-parse --show-toplevel` سے حاصل کیا جا سکتا ہے۔
 
-## Using the Service
+## سروس کا استعمال
 
-The service exposes the following API endpoints through the MCP protocol:
+یہ سروس MCP پروٹوکول کے ذریعے درج ذیل API اینڈ پوائنٹس فراہم کرتی ہے:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: دو نمبروں کو جمع کریں
+- `subtract(a, b)`: دوسرے نمبر کو پہلے نمبر سے منفی کریں
+- `multiply(a, b)`: دو نمبروں کا ضرب دیں
+- `divide(a, b)`: پہلے نمبر کو دوسرے نمبر سے تقسیم کریں (زیرو چیک کے ساتھ)
+- isPrime(n): چیک کریں کہ نمبر پرائم ہے یا نہیں
 
-## Test with Github Copilot Chat in VS Code
+## VS Code میں Github Copilot Chat کے ساتھ ٹیسٹ کریں
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
-   - "Add 5 and 3"
-   - "Subtract 10 from 4"
-   - "Multiply 6 and 7"
-   - "Divide 8 by 2"
-   - "Does 37854 prime?"
-   - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
-   - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+1. MCP پروٹوکول استعمال کرتے ہوئے سروس کو درخواست بھیجنے کی کوشش کریں۔ مثال کے طور پر، آپ پوچھ سکتے ہیں:
+   - "5 اور 3 کو جمع کریں"
+   - "4 میں سے 10 منفی کریں"
+   - "6 اور 7 کو ضرب دیں"
+   - "8 کو 2 سے تقسیم کریں"
+   - "کیا 37854 پرائم ہے؟"
+   - "4242 سے پہلے اور بعد کے 3 پرائم نمبرز کیا ہیں؟"
+2. یہ یقینی بنانے کے لیے کہ یہ ٹولز استعمال کر رہا ہے، پرامپٹ میں #MyCalculator شامل کریں۔ مثال کے طور پر:
+   - "5 اور 3 کو جمع کریں #MyCalculator"
+   - "4 میں سے 10 منفی کریں #MyCalculator"
 
+## کنٹینرائزڈ ورژن
 
-## Containerized Version
+پچھلا حل اس وقت بہترین ہے جب آپ کے پاس .NET SDK انسٹال ہو اور تمام انحصار موجود ہوں۔ تاہم، اگر آپ حل کو شیئر کرنا چاہتے ہیں یا اسے کسی مختلف ماحول میں چلانا چاہتے ہیں، تو آپ کنٹینرائزڈ ورژن استعمال کر سکتے ہیں۔
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` میں شامل کریں:
+1. Docker شروع کریں اور یقینی بنائیں کہ یہ چل رہا ہے۔
+1. ٹرمینل سے فولڈر `03-GettingStarted\samples\csharp\src` میں جائیں
+1. کیلکولیٹر سروس کے لیے Docker امیج بنانے کے لیے درج ذیل کمانڈ چلائیں (اپنا Docker Hub یوزر نیم `<YOUR-DOCKER-USERNAME>` سے بدلیں):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ``` 
-1. امیج بن جانے کے بعد، اسے Docker Hub پر اپلوڈ کریں۔ درج ذیل کمانڈ چلائیں:
+   ```
+1. امیج بننے کے بعد، اسے Docker Hub پر اپلوڈ کریں۔ درج ذیل کمانڈ چلائیں:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## Dockerized ورژن کا استعمال
 
-1. `.vscode/mcp.json` فائل میں سرور کی ترتیب کو درج ذیل سے بدل دیں:
+1. `.vscode/mcp.json` فائل میں سرور کی ترتیب کو درج ذیل سے بدلیں:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   ترتیب کو دیکھتے ہوئے، آپ دیکھ سکتے ہیں کہ کمانڈ `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   ترتیب دیکھ کر آپ دیکھ سکتے ہیں کہ کمانڈ `docker` ہے اور آرگس `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc` ہیں۔ `--rm` فلیگ اس بات کو یقینی بناتا ہے کہ کنٹینر بند ہونے کے بعد ہٹا دیا جائے، اور `-i` فلیگ آپ کو کنٹینر کے اسٹینڈرڈ ان پٹ کے ساتھ تعامل کرنے کی اجازت دیتا ہے۔ آخری آرگومنٹ وہ امیج کا نام ہے جو ہم نے ابھی بنایا اور Docker Hub پر اپلوڈ کیا ہے۔
 
-## Test the Dockerized Version
+## Dockerized ورژن کا ٹیسٹ کریں
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` ہے، اور پہلے کی طرح آپ کیلکولیٹر سروس سے کچھ حساب کروا سکتے ہیں۔
+MCP سرور کو شروع کرنے کے لیے `"mcp-calc": {` کے اوپر چھوٹے Start بٹن پر کلک کریں، اور پہلے کی طرح آپ کیلکولیٹر سروس سے کچھ حساب کتاب کرنے کو کہہ سکتے ہیں۔
 
-**دستخطی دستبرداری**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار تراجم میں غلطیاں یا عدم صحت ہو سکتی ہے۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تعبیر کی ذمہ داری ہم پر عائد نہیں ہوتی۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

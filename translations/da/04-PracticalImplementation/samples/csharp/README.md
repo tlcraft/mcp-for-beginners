@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-06-18T07:50:51+00:00",
+  "translation_date": "2025-07-13T23:07:32+00:00",
   "source_file": "04-PracticalImplementation/samples/csharp/README.md",
   "language_code": "da"
 }
@@ -11,20 +11,20 @@ CO_OP_TRANSLATOR_METADATA:
 
 Det forrige eksempel viser, hvordan man bruger et lokalt .NET-projekt med typen `stdio`. Og hvordan man kører serveren lokalt i en container. Dette er en god løsning i mange situationer. Men det kan være nyttigt at have serveren kørende eksternt, for eksempel i et cloud-miljø. Her kommer typen `http` ind i billedet.
 
-Når man ser på løsningen i `04-PracticalImplementation`-mappen, kan den se meget mere kompleks ud end den forrige. Men i virkeligheden er den det ikke. Hvis du kigger nærmere på projektet `src/Calculator`, vil du se, at det stort set er den samme kode som i det tidligere eksempel. Den eneste forskel er, at vi bruger et andet bibliotek `ModelContextProtocol.AspNetCore` til at håndtere HTTP-forespørgslerne. Og vi ændrer metoden `IsPrime` til at være privat, bare for at vise, at du kan have private metoder i din kode. Resten af koden er den samme som før.
+Hvis man kigger på løsningen i mappen `04-PracticalImplementation`, kan det se meget mere komplekst ud end det forrige eksempel. Men i virkeligheden er det ikke tilfældet. Hvis man ser nærmere på projektet `src/Calculator`, vil man se, at det stort set er den samme kode som i det tidligere eksempel. Den eneste forskel er, at vi bruger et andet bibliotek, `ModelContextProtocol.AspNetCore`, til at håndtere HTTP-forespørgslerne. Og vi ændrer metoden `IsPrime` til at være privat, bare for at vise, at man kan have private metoder i sin kode. Resten af koden er den samme som før.
 
-De andre projekter kommer fra [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). At have .NET Aspire i løsningen vil forbedre udviklerens oplevelse under udvikling og test og hjælpe med observabilitet. Det er ikke nødvendigt for at køre serveren, men det er god praksis at have det med i din løsning.
+De andre projekter kommer fra [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview). At have .NET Aspire i løsningen forbedrer udviklerens oplevelse under udvikling og test og hjælper med observabilitet. Det er ikke nødvendigt for at køre serveren, men det er god praksis at have det med i sin løsning.
 
 ## Start serveren lokalt
 
-1. Fra VS Code (med C# DevKit-udvidelsen) naviger ned til `04-PracticalImplementation/samples/csharp`-mappen.
+1. Fra VS Code (med C# DevKit-udvidelsen) naviger ned til mappen `04-PracticalImplementation/samples/csharp`.
 1. Kør følgende kommando for at starte serveren:
 
    ```bash
     dotnet watch run --project ./src/AppHost
    ```
 
-1. Når en webbrowser åbner .NET Aspire-dashboardet, bemærk `http` URL'en. Den burde være noget i retning af `http://localhost:5058/`.
+1. Når en webbrowser åbner .NET Aspire-dashboardet, bemærk `http`-URL’en. Den burde være noget i stil med `http://localhost:5058/`.
 
    ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.da.png)
 
@@ -40,18 +40,18 @@ npx @modelcontextprotocol/inspector http://localhost:5058
 
 ![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.da.png)
 
-- Vælg `Streamable HTTP` as the Transport type.
-- In the Url field, enter the URL of the server noted earlier, and append `/mcp`. Det burde være `http` (ikke `https`) something like `http://localhost:5058/mcp`.
-- select the Connect button.
+- Vælg `Streamable HTTP` som transporttype.
+- Indtast URL’en til serveren, som du noterede tidligere, i feltet Url, og tilføj `/mcp`. Det skal være `http` (ikke `https`), noget i stil med `http://localhost:5058/mcp`.
+- Vælg Connect-knappen.
 
-A nice thing about the Inspector is that it provide a nice visibility on what is happening.
+En fordel ved Inspector er, at den giver god indsigt i, hvad der foregår.
 
-- Try listing the available tools
-- Try some of them, it should works just like before.
+- Prøv at liste de tilgængelige værktøjer
+- Prøv nogle af dem, det burde fungere som før.
 
-## Test MCP Server with GitHub Copilot Chat in VS Code
+## Test MCP Server med GitHub Copilot Chat i VS Code
 
-To use the Streamable HTTP transport with GitHub Copilot Chat, change the configuration of the `calc-mcp` serveren oprettet tidligere, så det ser sådan ud:
+For at bruge Streamable HTTP-transporten med GitHub Copilot Chat, skal du ændre konfigurationen af `calc-mcp` serveren, som du oprettede tidligere, så den ser sådan ud:
 
 ```jsonc
 // .vscode/mcp.json
@@ -67,13 +67,13 @@ To use the Streamable HTTP transport with GitHub Copilot Chat, change the config
 
 Lav nogle tests:
 
-- Spørg efter "3 primtal efter 6780". Bemærk hvordan Copilot vil bruge de nye værktøjer `NextFivePrimeNumbers` og kun returnere de første 3 primtal.
-- Spørg efter "7 primtal efter 111" for at se, hvad der sker.
-- Spørg efter "John har 24 slik og vil fordele dem alle til sine 3 børn. Hvor mange slik får hvert barn?", for at se hvad der sker.
+- Spørg efter "3 prime numbers after 6780". Bemærk, hvordan Copilot bruger de nye værktøjer `NextFivePrimeNumbers` og kun returnerer de første 3 primtal.
+- Spørg efter "7 prime numbers after 111" for at se, hvad der sker.
+- Spørg efter "John has 24 lollies and wants to distribute them all to his 3 kids. How many lollies does each kid have?" for at se, hvad der sker.
 
-## Udrul serveren til Azure
+## Deploy serveren til Azure
 
-Lad os udrulle serveren til Azure, så flere kan bruge den.
+Lad os deploye serveren til Azure, så flere kan bruge den.
 
 Fra en terminal, naviger til mappen `04-PracticalImplementation/samples/csharp` og kør følgende kommando:
 
@@ -81,11 +81,11 @@ Fra en terminal, naviger til mappen `04-PracticalImplementation/samples/csharp` 
 azd up
 ```
 
-Når udrulningen er færdig, burde du se en besked som denne:
+Når deployment er færdig, skulle du gerne se en besked som denne:
 
 ![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.da.png)
 
-Tag URL'en og brug den i MCP Inspector og i GitHub Copilot Chat.
+Tag URL’en og brug den i MCP Inspector og i GitHub Copilot Chat.
 
 ```jsonc
 // .vscode/mcp.json
@@ -101,7 +101,7 @@ Tag URL'en og brug den i MCP Inspector og i GitHub Copilot Chat.
 
 ## Hvad nu?
 
-Vi prøver forskellige transporttyper og testværktøjer. Vi udruller også din MCP-server til Azure. Men hvad hvis vores server skal have adgang til private ressourcer? For eksempel en database eller en privat API? I næste kapitel vil vi se, hvordan vi kan forbedre sikkerheden på vores server.
+Vi har prøvet forskellige transporttyper og testværktøjer. Vi har også deployet din MCP-server til Azure. Men hvad hvis vores server skal have adgang til private ressourcer? For eksempel en database eller en privat API? I næste kapitel vil vi se, hvordan vi kan forbedre sikkerheden på vores server.
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

@@ -2,30 +2,30 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-06-18T05:49:19+00:00",
+  "translation_date": "2025-07-13T19:39:23+00:00",
   "source_file": "03-GettingStarted/04-vscode/solution/README.md",
   "language_code": "ur"
 }
 -->
-یہ اس کمانڈ کو چلانے کے برابر ہے: `node build/index.js`.
+یہ ایک کمانڈ چلانے کے مترادف ہے جیسے: `node build/index.js`۔
 
-- Change this server entry to fit where your server file is located or to what's needed to startup your server depending on your chosen runtime and server location.
+- اس سرور انٹری کو اپنی سرور فائل کی جگہ کے مطابق یا آپ کے منتخب کردہ رن ٹائم اور سرور کی جگہ کے مطابق سرور شروع کرنے کے لیے درکار مکمل کمانڈ کے ساتھ تبدیل کریں۔
 
-## Consume the features in the server
+## سرور میں فیچرز استعمال کریں
 
-- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder,
+- جب آپ نے *mcp.json* کو *./vscode* فولڈر میں شامل کر لیا ہو تو `play` آئیکن پر کلک کریں،
 
-    Observe the tooling icon change to increase the number of available tools. Tooling icon is located right above the chat field in GitHub Copilot.
+    ٹولنگ آئیکن میں تبدیلی دیکھیں جو دستیاب ٹولز کی تعداد بڑھا دے گا۔ ٹولنگ آئیکن GitHub Copilot میں چیٹ فیلڈ کے بالکل اوپر واقع ہوتا ہے۔
 
-## Run a tool
+## ٹول چلائیں
 
-- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add`، کچھ ایسا ٹائپ کریں جیسے "add 3 to 20"۔
+- اپنے چیٹ ونڈو میں ایسا پرامپٹ ٹائپ کریں جو آپ کے ٹول کی وضاحت سے میل کھاتا ہو۔ مثال کے طور پر، ٹول `add` کو چلانے کے لیے کچھ ایسا ٹائپ کریں: "add 3 to 20"۔
 
-    آپ کو چیٹ ٹیکسٹ باکس کے اوپر ایک ٹول نظر آئے گا جو آپ کو ٹول چلانے کے لیے منتخب کرنے کا اشارہ دے گا، جیسا کہ اس تصویر میں دکھایا گیا ہے:
+    آپ کو چیٹ ٹیکسٹ باکس کے اوپر ایک ٹول دکھائی دے گا جو آپ کو ٹول چلانے کے لیے منتخب کرنے کا اشارہ دے گا، جیسا کہ اس تصویر میں دکھایا گیا ہے:
 
     ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ur.png)
 
-    اگر آپ کا پرامپٹ جیسا کہ ہم نے پہلے ذکر کیا تھا، تو ٹول منتخب کرنے پر ایک عددی نتیجہ "23" ظاہر ہوگا۔
+    ٹول کو منتخب کرنے پر اگر آپ کا پرامپٹ جیسا کہ ہم نے پہلے بتایا تھا، تو آپ کو "23" جیسا عددی نتیجہ ملے گا۔
 
-**دستخطی وضاحت**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کی کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجموں میں غلطیاں یا بے دقتیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں مستند ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر نہیں ہوگی۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

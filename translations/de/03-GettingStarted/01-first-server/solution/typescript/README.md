@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-05-16T15:10:26+00:00",
+  "translation_date": "2025-07-13T18:03:11+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
   "language_code": "de"
 }
 -->
 # Ausführen dieses Beispiels
 
-Es wird empfohlen, `uv` zu installieren, ist aber nicht zwingend erforderlich. Siehe [Anleitung](https://docs.astral.sh/uv/#highlights)
+Es wird empfohlen, `uv` zu installieren, aber es ist nicht zwingend erforderlich. Siehe [Anleitung](https://docs.astral.sh/uv/#highlights)
 
 ## -1- Abhängigkeiten installieren
 
@@ -35,20 +35,20 @@ Dadurch sollte ein Webserver mit einer visuellen Oberfläche gestartet werden, m
 
 Sobald der Server verbunden ist:
 
-- versuche, Tools aufzulisten, und führe `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- Versuche, die Tools aufzulisten und führe `add` mit den Argumenten 2 und 4 aus, im Ergebnis solltest du 6 sehen.
+- Gehe zu resources und resource template und rufe "greeting" auf, gib einen Namen ein und du solltest eine Begrüßung mit dem eingegebenen Namen sehen.
 
-### Testing in CLI mode
+### Testen im CLI-Modus
 
-The inspector you ran is actually a Node.js app and `mcp dev` aus, das eine Hülle darum ist.
+Der Inspector, den du gestartet hast, ist tatsächlich eine Node.js-Anwendung und `mcp dev` ist eine Hülle darum.
 
-Du kannst es auch direkt im CLI-Modus starten, indem du den folgenden Befehl ausführst:
+Du kannst ihn direkt im CLI-Modus starten, indem du den folgenden Befehl ausführst:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/list
 ```
 
-Dadurch werden alle auf dem Server verfügbaren Tools aufgelistet. Du solltest die folgende Ausgabe sehen:
+Dies listet alle verfügbaren Tools auf dem Server auf. Du solltest die folgende Ausgabe sehen:
 
 ```text
 {
@@ -79,7 +79,7 @@ Dadurch werden alle auf dem Server verfügbaren Tools aufgelistet. Du solltest d
 }
 ```
 
-Um ein Tool aufzurufen, gib ein:
+Um ein Tool aufzurufen, tippe:
 
 ```bash
 nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -100,8 +100,8 @@ Du solltest die folgende Ausgabe sehen:
 ```
 
 > ![!TIP]
-> Im CLI-Modus läuft der Inspector in der Regel deutlich schneller als im Browser.
-> Mehr zum Inspector erfährst du [hier](https://github.com/modelcontextprotocol/inspector).
+> Es ist in der Regel viel schneller, den Inspector im CLI-Modus als im Browser auszuführen.
+> Mehr zum Inspector findest du [hier](https://github.com/modelcontextprotocol/inspector).
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ausgangssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

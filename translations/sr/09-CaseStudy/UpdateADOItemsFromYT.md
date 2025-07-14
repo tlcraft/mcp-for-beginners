@@ -2,38 +2,38 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "14a2dfbea55ef735660a06bd6bdfe5f3",
-  "translation_date": "2025-06-13T21:39:06+00:00",
+  "translation_date": "2025-07-14T06:15:51+00:00",
   "source_file": "09-CaseStudy/UpdateADOItemsFromYT.md",
   "language_code": "sr"
 }
 -->
-# Studija slučaja: Ažuriranje Azure DevOps stavki podacima sa YouTube-a pomoću MCP
+# Студија случаја: Ажурирање Azure DevOps ставки са YouTube подацима помоћу MCP
 
-> **Odricanje od odgovornosti:** Postoje postojeći online alati i izveštaji koji mogu automatizovati proces ažuriranja Azure DevOps stavki podacima sa platformi kao što je YouTube. Sledeći scenario je dat isključivo kao primer kako se MCP alati mogu primeniti za zadatke automatizacije i integracije.
+> **Одрицање од одговорности:** Постоје алати и извештаји на мрежи који могу аутоматизовати процес ажурирања Azure DevOps ставки подацима са платформи као што је YouTube. Следећи сценарио је дат искључиво као пример употребе да илуструје како се MCP алати могу применити за аутоматизацију и интеграционе задатке.
 
-## Pregled
+## Преглед
 
-Ova studija slučaja prikazuje jedan primer kako se Model Context Protocol (MCP) i njegovi alati mogu koristiti za automatizaciju procesa ažuriranja Azure DevOps (ADO) radnih stavki informacijama preuzetim sa online platformi, kao što je YouTube. Opisani scenario je samo ilustracija šireg spektra mogućnosti ovih alata, koji se mogu prilagoditi mnogim sličnim potrebama automatizacije.
+Ова студија случаја показује један пример како се Model Context Protocol (MCP) и његови алати могу користити за аутоматизацију процеса ажурирања Azure DevOps (ADO) радних ставки информацијама преузетим са онлајн платформи, као што је YouTube. Описани сценарио је само једна илустрација ширих могућности ових алата, који се могу прилагодити многим сличним потребама аутоматизације.
 
-U ovom primeru, Advocate prati online sesije koristeći ADO stavke, gde svaka stavka sadrži URL YouTube videa. Korišćenjem MCP alata, Advocate može da održava ADO stavke ažurnim sa najnovijim video metrima, poput broja pregleda, na ponovljiv i automatizovan način. Ovaj pristup se može generalizovati i na druge slučajeve gde je potrebno integrisati informacije sa online izvora u ADO ili druge sisteme.
+У овом примеру, Advocate прати онлајн сесије користећи ADO ставке, где свака ставка садржи URL YouTube видеа. Користећи MCP алате, Advocate може одржавати ADO ставке ажурним са најновијим метрикама видеа, као што су број прегледа, на понављан и аутоматизован начин. Овај приступ се може генерално применити и на друге случајеве где је потребно интегрисати информације са онлајн извора у ADO или друге системе.
 
-## Scenario
+## Сценарио
 
-Advocate je odgovoran za praćenje uticaja online sesija i angažmana zajednice. Svaka sesija je zabeležena kao ADO radna stavka u projektu 'DevRel', a radna stavka sadrži polje za URL YouTube videa. Da bi precizno izvestio o dometu sesije, Advocate treba da ažurira ADO stavku sa trenutnim brojem pregleda videa i datumom kada su ove informacije preuzete.
+Advocate је задужен за праћење утицаја онлајн сесија и ангажмана заједнице. Свака сесија се евидентира као ADO радна ставка у пројекту 'DevRel', а радна ставка садржи поље за URL YouTube видеа. Да би прецизно пријавио досег сесије, Advocate треба да ажурира ADO ставку са тренутним бројем прегледа видеа и датумом када су ови подаци преузети.
 
-## Korišćeni alati
+## Коришћени алати
 
-- [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp): Omogućava programski pristup i ažuriranje ADO radnih stavki preko MCP.
-- [Playwright MCP](https://github.com/microsoft/playwright-mcp): Automatizuje radnje u pregledaču kako bi izvukao aktuelne podatke sa web stranica, poput statistike YouTube videa.
+- [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp): Омогућава програмски приступ и ажурирање ADO радних ставки преко MCP.
+- [Playwright MCP](https://github.com/microsoft/playwright-mcp): Аутоматизује радње у прегледачу како би извлачио живе податке са веб страница, као што су статистике YouTube видеа.
 
-## Korak-po-korak tok rada
+## Корак по корак радни ток
 
-1. **Identifikuj ADO stavku**: Počni sa ID-jem ADO radne stavke (npr. 1234) u projektu 'DevRel'.
-2. **Preuzmi YouTube URL**: Koristi Azure DevOps MCP alat da dobiješ YouTube URL iz radne stavke.
-3. **Izvuci broj pregleda videa**: Koristi Playwright MCP alat da otvoriš YouTube URL i izvučeš trenutni broj pregleda.
-4. **Ažuriraj ADO stavku**: Upisi najnoviji broj pregleda i datum preuzimanja u sekciju 'Impact and Learnings' ADO radne stavke koristeći Azure DevOps MCP alat.
+1. **Идентификовати ADO ставку**: Почети са ID-јем ADO радне ставке (нпр. 1234) у пројекту 'DevRel'.
+2. **Преузети YouTube URL**: Користити Azure DevOps MCP алат да се добије YouTube URL из радне ставке.
+3. **Извући број прегледа видеа**: Користити Playwright MCP алат да се отвори YouTube URL и извуче тренутни број прегледа.
+4. **Ажурирати ADO ставку**: Унети најновији број прегледа и датум преузимања у одељак 'Impact and Learnings' ADO радне ставке користећи Azure DevOps MCP алат.
 
-## Primer prompta
+## Пример упита
 
 ```bash
 - Work with the ADO Item ID: 1234
@@ -43,7 +43,7 @@ Advocate je odgovoran za praćenje uticaja online sesija i angažmana zajednice.
 - Update the ADO item with the current video views and the updated date of the information
 ```
 
-## Mermaid dijagram toka
+## Mermaid дијаграм тока
 
 ```mermaid
 flowchart TD
@@ -53,23 +53,23 @@ flowchart TD
     D --> E[End]
 ```
 
-## Tehnička implementacija
+## Техничка имплементација
 
-- **MCP orkestracija**: Tok rada koordinira MCP server koji upravlja korišćenjem oba alata, Azure DevOps MCP i Playwright MCP.
-- **Automatizacija**: Proces može biti pokrenut ručno ili zakazan da se izvršava u redovnim intervalima kako bi ADO stavke bile stalno ažurirane.
-- **Proširivost**: Isti model se može proširiti za ažuriranje ADO stavki drugim online metrima (npr. lajkovi, komentari) ili sa drugih platformi.
+- **MCP оркестрација**: Радни ток координише MCP сервер, који управља коришћењем оба алата, Azure DevOps MCP и Playwright MCP.
+- **Аутоматизација**: Процес се може покренути ручно или заказати да се извршава у редовним интервалима како би ADO ставке биле увек ажурне.
+- **Проширивост**: Исти образац се може проширити за ажурирање ADO ставки са другим онлајн метрикама (нпр. лајкови, коментари) или са других платформи.
 
-## Rezultati i uticaj
+## Резултати и утицај
 
-- **Efikasnost**: Smanjuje ručni rad Advocata automatizacijom preuzimanja i ažuriranja video metrika.
-- **Tačnost**: Osigurava da ADO stavke odražavaju najnovije dostupne podatke sa online izvora.
-- **Ponovljivost**: Pruža ponovljiv tok rada za slične scenarije koji uključuju druge izvore podataka ili metrike.
+- **Ефикасност**: Смањује ручни рад Advocates-а аутоматизујући преузимање и ажурирање видео метрика.
+- **Тачност**: Осигурава да ADO ставке одражавају најсвежије податке доступне са онлајн извора.
+- **Понављивост**: Обезбеђује поновљив радни ток за сличне сценарије који укључују друге изворе података или метрике.
 
-## Reference
+## Референце
 
 - [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp)
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 
-**Ограничење одговорности**:  
-Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне интерпретације настале коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

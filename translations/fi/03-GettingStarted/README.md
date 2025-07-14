@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:32:39+00:00",
+  "translation_date": "2025-07-13T17:17:27+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "fi"
 }
@@ -17,13 +17,13 @@ Tässä osiossa on useita oppitunteja:
 
 - **3 Asiakas LLM:llä**, vielä parempi tapa kirjoittaa asiakas on lisätä siihen LLM, jotta se voi "neuvotella" palvelimesi kanssa siitä, mitä tehdä, [oppitunnille](03-llm-client/README.md)
 
-- **4 Palvelimen käyttäminen GitHub Copilot Agent -tilassa Visual Studio Codessa**. Tässä tarkastelemme MCP-palvelimen ajamista suoraan Visual Studio Codesta, [oppitunnille](04-vscode/README.md)
+- **4 Palvelimen käyttäminen GitHub Copilot Agent -tilassa Visual Studio Codessa**. Tässä tarkastelemme MCP-palvelimen ajamista Visual Studio Coden sisällä, [oppitunnille](04-vscode/README.md)
 
-- **5 Käyttö SSE:n (Server Sent Events) kautta** SSE on standardi palvelimelta asiakkaalle tapahtuvaan suoratoistoon, jonka avulla palvelimet voivat lähettää reaaliaikaisia päivityksiä asiakkaille HTTP:n yli [oppitunnille](05-sse-server/README.md)
+- **5 Käyttö SSE:n (Server Sent Events) kautta** SSE on standardi palvelimelta asiakkaalle tapahtuvaan suoratoistoon, jonka avulla palvelimet voivat työntää reaaliaikaisia päivityksiä asiakkaille HTTP:n yli [oppitunnille](05-sse-server/README.md)
 
-- **6 HTTP-suoratoisto MCP:llä (Streamable HTTP)**. Opit modernista HTTP-suoratoistosta, etenemisilmoituksista ja siitä, miten toteuttaa skaalautuvia, reaaliaikaisia MCP-palvelimia ja -asiakkaita Streamable HTTP:n avulla. [oppitunnille](06-http-streaming/README.md)
+- **6 HTTP-suoratoisto MCP:llä (Streamable HTTP)**. Opit nykyaikaisesta HTTP-suoratoistosta, etenemisilmoituksista ja siitä, miten toteuttaa skaalautuvia, reaaliaikaisia MCP-palvelimia ja -asiakkaita Streamable HTTP:n avulla. [oppitunnille](06-http-streaming/README.md)
 
-- **7 AI Toolkitin hyödyntäminen VSCodea varten** MCP-asiakkaiden ja -palvelimien kulutukseen ja testaamiseen [oppitunnille](07-aitk/README.md)
+- **7 AI Toolkitin hyödyntäminen VSCodea varten** MCP-asiakkaiden ja -palvelimien kuluttamiseen ja testaamiseen [oppitunnille](07-aitk/README.md)
 
 - **8 Testaus**. Tässä keskitymme erityisesti siihen, miten voimme testata palvelintamme ja asiakastamme eri tavoin, [oppitunnille](08-testing/README.md)
 
@@ -80,18 +80,18 @@ MCP tarjoaa virallisia SDK:ita useille kielille:
 
 ## Harjoittelu
 
-Meillä on joukko esimerkkejä, jotka täydentävät kaikkien tämän osion lukujen harjoituksia. Lisäksi jokaisessa luvussa on omat harjoituksensa ja tehtävänsä.
+Meillä on joukko esimerkkejä, jotka täydentävät kaikkien tämän osion lukujen harjoituksia. Lisäksi jokaisella luvulla on omat harjoituksensa ja tehtävänsä.
 
-- [Java-laskin](./samples/java/calculator/README.md)
-- [.Net-laskin](../../../03-GettingStarted/samples/csharp)
-- [JavaScript-laskin](./samples/javascript/README.md)
-- [TypeScript-laskin](./samples/typescript/README.md)
-- [Python-laskin](../../../03-GettingStarted/samples/python)
+- [Java Calculator](./samples/java/calculator/README.md)
+- [.Net Calculator](../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](./samples/javascript/README.md)
+- [TypeScript Calculator](./samples/typescript/README.md)
+- [Python Calculator](../../../03-GettingStarted/samples/python)
 
 ## Lisäresurssit
 
-- [Agenttien rakentaminen Model Context Protocolilla Azurella](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Etä-MCP Azure Container Appsilla (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Mitä seuraavaksi

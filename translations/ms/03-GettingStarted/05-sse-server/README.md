@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T18:15:16+00:00",
+  "translation_date": "2025-07-13T19:59:20+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "ms"
 }
@@ -13,7 +13,7 @@ Sekarang kita sudah tahu sedikit lebih banyak tentang SSE, mari bina server SSE 
 
 Untuk mencipta server kita, kita perlu ingat dua perkara:
 
-- Kita perlu menggunakan pelayan web untuk mendedahkan endpoint bagi sambungan dan mesej.
+- Kita perlu menggunakan pelayan web untuk mendedahkan titik akhir bagi sambungan dan mesej.
 - Bina server kita seperti biasa dengan menggunakan alat, sumber dan arahan ketika kita menggunakan stdio.
 
 ### -1- Cipta instans server
@@ -38,7 +38,7 @@ Bagus, kita sudah ada server menggunakan SSE, mari cuba jalankan pula.
 
 ## Latihan: Menyahpepijat Server SSE dengan Inspector
 
-Inspector adalah alat hebat yang kita lihat dalam pelajaran sebelum ini [Mencipta server pertama anda](/03-GettingStarted/01-first-server/README.md). Mari lihat jika kita boleh gunakan Inspector di sini juga:
+Inspector adalah alat hebat yang kita lihat dalam pelajaran sebelum ini [Mencipta server pertama anda](/03-GettingStarted/01-first-server/README.md). Mari kita lihat jika kita boleh gunakan Inspector di sini juga:
 
 ### -1- Menjalankan inspector
 
@@ -79,15 +79,15 @@ Perkara penting dari bab ini adalah seperti berikut:
 
 - SSE adalah pengangkutan kedua yang disokong selepas stdio.
 - Untuk menyokong SSE, anda perlu mengurus sambungan masuk dan mesej menggunakan rangka kerja web.
-- Anda boleh menggunakan kedua-dua Inspector dan Visual Studio Code untuk menggunakan server SSE, sama seperti server stdio. Perhatikan bagaimana ia sedikit berbeza antara stdio dan SSE. Untuk SSE, anda perlu memulakan server secara berasingan dan kemudian jalankan alat inspector anda. Untuk alat inspector, terdapat juga beberapa perbezaan di mana anda perlu nyatakan URL.
+- Anda boleh menggunakan kedua-dua Inspector dan Visual Studio Code untuk menggunakan server SSE, sama seperti server stdio. Perhatikan bagaimana ia berbeza sedikit antara stdio dan SSE. Untuk SSE, anda perlu memulakan server secara berasingan dan kemudian jalankan alat inspector anda. Untuk alat inspector, terdapat juga beberapa perbezaan di mana anda perlu nyatakan URL.
 
 ## Contoh
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Kalkulator Java](../samples/java/calculator/README.md)
+- [Kalkulator .Net](../../../../03-GettingStarted/samples/csharp)
+- [Kalkulator JavaScript](../samples/javascript/README.md)
+- [Kalkulator TypeScript](../samples/typescript/README.md)
+- [Kalkulator Python](../../../../03-GettingStarted/samples/python)
 
 ## Sumber Tambahan
 
@@ -98,4 +98,4 @@ Perkara penting dari bab ini adalah seperti berikut:
 - Seterusnya: [HTTP Streaming dengan MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

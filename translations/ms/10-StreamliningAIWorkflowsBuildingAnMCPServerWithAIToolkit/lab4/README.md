@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-06-10T06:54:19+00:00",
+  "translation_date": "2025-07-14T08:45:24+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
   "language_code": "ms"
 }
 -->
-# 🐙 Module 4: Practical MCP Development - Custom GitHub Clone Server
+# 🐙 Modul 4: Pembangunan MCP Praktikal - Pelayan Klon GitHub Tersuai
 
 ![Duration](https://img.shields.io/badge/Duration-30_minutes-blue?style=flat-square)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=flat-square)
@@ -15,76 +15,76 @@ CO_OP_TRANSLATOR_METADATA:
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ Quick Start:** Build a production-ready MCP server that automates GitHub repository cloning and VS Code integration in just 30 minutes!
+> **⚡ Mula Cepat:** Bina pelayan MCP yang sedia untuk produksi yang mengautomasikan klon repositori GitHub dan integrasi VS Code dalam hanya 30 minit!
 
-## 🎯 Learning Objectives
+## 🎯 Objektif Pembelajaran
 
-By the end of this lab, you will be able to:
+Menjelang akhir makmal ini, anda akan dapat:
 
-- ✅ Build a custom MCP server tailored for real-world development workflows  
-- ✅ Implement GitHub repository cloning through MCP  
-- ✅ Connect custom MCP servers with VS Code and Agent Builder  
-- ✅ Utilize GitHub Copilot Agent Mode with your custom MCP tools  
-- ✅ Test and deploy custom MCP servers in live environments  
+- ✅ Mewujudkan pelayan MCP tersuai untuk aliran kerja pembangunan dunia sebenar
+- ✅ Melaksanakan fungsi klon repositori GitHub melalui MCP
+- ✅ Mengintegrasikan pelayan MCP tersuai dengan VS Code dan Agent Builder
+- ✅ Menggunakan GitHub Copilot Agent Mode dengan alat MCP tersuai
+- ✅ Menguji dan melancarkan pelayan MCP tersuai dalam persekitaran produksi
 
-## 📋 Prerequisites
+## 📋 Prasyarat
 
-- Completion of Labs 1-3 (covering MCP basics and advanced development)  
-- Active GitHub Copilot subscription ([free signup available](https://github.com/github-copilot/signup))  
-- VS Code installed with AI Toolkit and GitHub Copilot extensions  
-- Git CLI installed and properly configured  
+- Menyelesaikan Makmal 1-3 (asas MCP dan pembangunan lanjutan)
+- Langganan GitHub Copilot ([pendaftaran percuma tersedia](https://github.com/github-copilot/signup))
+- VS Code dengan sambungan AI Toolkit dan GitHub Copilot
+- Git CLI dipasang dan dikonfigurasi
 
-## 🏗️ Project Overview
+## 🏗️ Gambaran Projek
 
-### **Real-World Development Challenge**  
-As developers, we often clone GitHub repositories and open them in VS Code or VS Code Insiders. This manual process typically involves:  
-1. Opening a terminal or command prompt  
-2. Navigating to the target directory  
-3. Running the `git clone` command  
-4. Launching VS Code in the cloned folder  
+### **Cabaran Pembangunan Dunia Sebenar**
+Sebagai pembangun, kita sering menggunakan GitHub untuk mengklon repositori dan membukanya dalam VS Code atau VS Code Insiders. Proses manual ini melibatkan:
+1. Membuka terminal/command prompt
+2. Menavigasi ke direktori yang dikehendaki
+3. Menjalankan arahan `git clone`
+4. Membuka VS Code dalam direktori yang diklon
 
-**Our MCP solution simplifies this entire workflow into a single smart command!**
+**Penyelesaian MCP kami memudahkan ini menjadi satu arahan pintar sahaja!**
 
-### **What You'll Build**  
-A **GitHub Clone MCP Server** (`git_mcp_server`) that offers:
+### **Apa yang Akan Anda Bina**
+Sebuah **Pelayan Klon GitHub MCP** (`git_mcp_server`) yang menyediakan:
 
-| Feature | Description | Benefit |
+| Ciri | Penerangan | Manfaat |
 |---------|-------------|---------|
-| 🔄 **Smart Repository Cloning** | Clone GitHub repos with built-in validation | Automated error detection and handling |
-| 📁 **Intelligent Directory Management** | Verify and create directories safely | Avoids accidental overwrites |
-| 🚀 **Cross-Platform VS Code Integration** | Open projects seamlessly in VS Code/Insiders | Smooth workflow handoff |
-| 🛡️ **Robust Error Handling** | Manage network, permission, and path errors gracefully | Production-grade reliability |
+| 🔄 **Klon Repositori Pintar** | Klon repositori GitHub dengan pengesahan | Semakan ralat automatik |
+| 📁 **Pengurusan Direktori Pintar** | Semak dan cipta direktori dengan selamat | Mengelakkan penimpaan |
+| 🚀 **Integrasi VS Code Merentas Platform** | Buka projek dalam VS Code/Insiders | Peralihan aliran kerja lancar |
+| 🛡️ **Pengendalian Ralat Kukuh** | Tangani isu rangkaian, kebenaran, dan laluan | Kebolehpercayaan sedia produksi |
 
 ---
 
-## 📖 Step-by-Step Implementation
+## 📖 Pelaksanaan Langkah demi Langkah
 
-### Step 1: Create GitHub Agent in Agent Builder
+### Langkah 1: Cipta Agen GitHub dalam Agent Builder
 
-1. **Open Agent Builder** via the AI Toolkit extension  
-2. **Create a new agent** using the following configuration:  
+1. **Lancarkan Agent Builder** melalui sambungan AI Toolkit
+2. **Cipta agen baru** dengan konfigurasi berikut:
    ```
    Agent Name: GitHubAgent
    ```
 
-3. **Initialize your custom MCP server:**  
-   - Go to **Tools** → **Add Tool** → **MCP Server**  
-   - Choose **"Create A new MCP Server"**  
-   - Select the **Python template** for maximum flexibility  
-   - **Server Name:** `git_mcp_server`  
+3. **Mulakan pelayan MCP tersuai:**
+   - Pergi ke **Tools** → **Add Tool** → **MCP Server**
+   - Pilih **"Create A new MCP Server"**
+   - Pilih **templat Python** untuk fleksibiliti maksimum
+   - **Nama Pelayan:** `git_mcp_server`
 
-### Step 2: Configure GitHub Copilot Agent Mode
+### Langkah 2: Konfigurasikan GitHub Copilot Agent Mode
 
-1. **Open GitHub Copilot** in VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")  
-2. **Select Agent Model** within the Copilot interface  
-3. **Pick the Claude 3.7 model** for improved reasoning capabilities  
-4. **Enable MCP integration** to allow tool access  
+1. **Buka GitHub Copilot** dalam VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
+2. **Pilih Model Agen** dalam antara muka Copilot
+3. **Pilih model Claude 3.7** untuk keupayaan penaakulan yang dipertingkatkan
+4. **Aktifkan integrasi MCP** untuk akses alat
 
-> **💡 Pro Tip:** Claude 3.7 excels at understanding development workflows and handling errors effectively.
+> **💡 Petua Pro:** Claude 3.7 memberikan kefahaman yang lebih baik tentang aliran kerja pembangunan dan corak pengendalian ralat.
 
-### Step 3: Implement Core MCP Server Functionality
+### Langkah 3: Laksanakan Fungsi Teras Pelayan MCP
 
-**Use this detailed prompt with GitHub Copilot Agent Mode:**  
+**Gunakan arahan terperinci berikut dengan GitHub Copilot Agent Mode:**
 
 ```
 Create two MCP tools with the following comprehensive requirements:
@@ -117,19 +117,19 @@ Additional Requirements:
 - Include comprehensive error handling
 ```
 
-### Step 4: Test Your MCP Server
+### Langkah 4: Uji Pelayan MCP Anda
 
-#### 4a. Test in Agent Builder
+#### 4a. Uji dalam Agent Builder
 
-1. **Start the debug configuration** in Agent Builder  
-2. **Set your agent’s system prompt as follows:**  
+1. **Lancarkan konfigurasi debug** untuk Agent Builder
+2. **Konfigurasikan agen anda dengan arahan sistem ini:**
 
 ```
 SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
 
-3. **Run tests with realistic user scenarios:**  
+3. **Uji dengan senario pengguna yang realistik:**
 
 ```
 USER_PROMPT EXAMPLES:
@@ -141,66 +141,69 @@ Scenario : Basic Clone and Open
 
 ![Agent Builder Testing](../../../../translated_images/DebugAgent.81d152370c503241b3b39a251b8966f7f739286df19dd57f9147f6402214a012.ms.png)
 
-**Expected Outcomes:**  
-- ✅ Repository cloning succeeds with path confirmation  
-- ✅ VS Code launches automatically  
-- ✅ Clear error messages for invalid inputs  
-- ✅ Proper handling of edge cases  
+**Hasil Dijangka:**
+- ✅ Klon berjaya dengan pengesahan laluan
+- ✅ Pelancaran VS Code automatik
+- ✅ Mesej ralat jelas untuk senario tidak sah
+- ✅ Pengendalian kes tepi yang betul
 
-#### 4b. Test in MCP Inspector
+#### 4b. Uji dalam MCP Inspector
+
 
 ![MCP Inspector Testing](../../../../translated_images/DebugInspector.eb5c95f94c69a8ba36944941b9a3588309a3a2fae101ace470ee09bde41d1667.ms.png)
 
 ---
 
-**🎉 Congratulations!** You’ve successfully built a practical, production-ready MCP server that addresses real development workflow needs. Your custom GitHub clone server showcases how MCP can automate and enhance developer productivity.
 
-### 🏆 Achievement Unlocked:
-- ✅ **MCP Developer** - Built a custom MCP server  
-- ✅ **Workflow Automator** - Streamlined development processes  
-- ✅ **Integration Expert** - Connected multiple developer tools  
-- ✅ **Production Ready** - Created deployable solutions  
+
+**🎉 Tahniah!** Anda telah berjaya mencipta pelayan MCP praktikal yang sedia untuk produksi dan menyelesaikan cabaran aliran kerja pembangunan sebenar. Pelayan klon GitHub tersuai anda menunjukkan kuasa MCP untuk mengautomasikan dan meningkatkan produktiviti pembangun.
+
+### 🏆 Pencapaian Dibuka:
+- ✅ **Pembangun MCP** - Mencipta pelayan MCP tersuai
+- ✅ **Automator Aliran Kerja** - Memperkemas proses pembangunan  
+- ✅ **Pakar Integrasi** - Menghubungkan pelbagai alat pembangunan
+- ✅ **Sedia Produksi** - Membangun penyelesaian yang boleh dilancarkan
 
 ---
 
-## 🎓 Workshop Completion: Your Journey with Model Context Protocol
+## 🎓 Penyelesaian Bengkel: Perjalanan Anda dengan Model Context Protocol
 
-**Dear Workshop Participant,**
+**Peserta Bengkel yang Dihormati,**
 
-Congratulations on finishing all four modules of the Model Context Protocol workshop! You’ve progressed from understanding AI Toolkit basics to building production-ready MCP servers that solve real-world development challenges.
+Tahniah kerana telah menyelesaikan keempat-empat modul bengkel Model Context Protocol! Anda telah melalui perjalanan panjang dari memahami konsep asas AI Toolkit hingga membina pelayan MCP sedia produksi yang menyelesaikan cabaran pembangunan dunia sebenar.
 
-### 🚀 Your Learning Path Recap:
+### 🚀 Ulasan Laluan Pembelajaran Anda:
 
-**[Module 1](../lab1/README.md)**: Started with AI Toolkit fundamentals, model testing, and creating your first AI agent.
+**[Modul 1](../lab1/README.md)**: Anda bermula dengan meneroka asas AI Toolkit, ujian model, dan mencipta agen AI pertama anda.
 
-**[Module 2](../lab2/README.md)**: Learned MCP architecture, integrated Playwright MCP, and built your first browser automation agent.
+**[Modul 2](../lab2/README.md)**: Anda mempelajari seni bina MCP, mengintegrasikan Playwright MCP, dan membina agen automasi pelayar pertama anda.
 
-**[Module 3](../lab3/README.md)**: Advanced to custom MCP server development with the Weather MCP server and mastered debugging tools.
+**[Modul 3](../lab3/README.md)**: Anda maju ke pembangunan pelayan MCP tersuai dengan pelayan Weather MCP dan menguasai alat debug.
 
-**[Module 4](../lab4/README.md)**: Applied all your knowledge to create a practical GitHub repository workflow automation tool.
+**[Modul 4](../lab4/README.md)**: Kini anda telah menggunakan semua ilmu untuk mencipta alat automasi aliran kerja repositori GitHub yang praktikal.
 
-### 🌟 What You've Mastered:
+### 🌟 Apa yang Anda Kuasai:
 
-- ✅ **AI Toolkit Ecosystem**: Models, agents, and integration patterns  
-- ✅ **MCP Architecture**: Client-server design, transport protocols, and security  
-- ✅ **Developer Tools**: From Playground to Inspector to production deployment  
-- ✅ **Custom Development**: Building, testing, and deploying your own MCP servers  
-- ✅ **Practical Applications**: Solving real-world workflow challenges with AI  
+- ✅ **Ekosistem AI Toolkit**: Model, agen, dan corak integrasi
+- ✅ **Seni Bina MCP**: Reka bentuk klien-pelayan, protokol pengangkutan, dan keselamatan
+- ✅ **Alat Pembangun**: Dari Playground ke Inspector hingga pelancaran produksi
+- ✅ **Pembangunan Tersuai**: Membina, menguji, dan melancarkan pelayan MCP sendiri
+- ✅ **Aplikasi Praktikal**: Menyelesaikan cabaran aliran kerja dunia sebenar dengan AI
 
-### 🔮 Your Next Steps:
+### 🔮 Langkah Seterusnya Anda:
 
-1. **Build Your Own MCP Server**: Use these skills to automate your unique workflows  
-2. **Join the MCP Community**: Share your creations and learn from others  
-3. **Explore Advanced Integration**: Connect MCP servers with enterprise systems  
-4. **Contribute to Open Source**: Help improve MCP tools and documentation  
+1. **Bina Pelayan MCP Anda Sendiri**: Gunakan kemahiran ini untuk mengautomasikan aliran kerja unik anda
+2. **Sertai Komuniti MCP**: Kongsi ciptaan anda dan belajar daripada orang lain
+3. **Terokai Integrasi Lanjutan**: Sambungkan pelayan MCP ke sistem perusahaan
+4. **Sumbang kepada Open Source**: Bantu memperbaiki alat dan dokumentasi MCP
 
-Remember, this workshop is just the beginning. The Model Context Protocol ecosystem is evolving rapidly, and you’re now equipped to lead in AI-powered development tools.
+Ingat, bengkel ini hanyalah permulaan. Ekosistem Model Context Protocol berkembang pesat, dan anda kini bersedia untuk berada di barisan hadapan alat pembangunan berkuasa AI.
 
-**Thank you for your participation and commitment to learning!**
+**Terima kasih atas penyertaan dan dedikasi anda untuk belajar!**
 
-We hope this workshop has inspired ideas that will transform how you build and interact with AI tools in your development journey.
+Kami berharap bengkel ini telah mencetuskan idea yang akan mengubah cara anda membina dan berinteraksi dengan alat AI dalam perjalanan pembangunan anda.
 
-**Happy coding!**
+**Selamat mengod!**
 
 ---
 

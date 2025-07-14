@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-06-13T01:07:55+00:00",
+  "translation_date": "2025-07-14T02:16:27+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "ro"
 }
 -->
-## Eșantionare și Arhitectură de Rutare în MCP
+## Arhitectura de Eșantionare și Rutare în MCP
 
-Eșantionarea este o componentă esențială a Model Context Protocol (MCP) care permite procesarea eficientă a cererilor și rutarea acestora. Aceasta implică analiza cererilor primite pentru a determina cel mai potrivit model sau serviciu care să le gestioneze, bazându-se pe diverse criterii precum tipul de conținut, contextul utilizatorului și încărcarea sistemului.
+Eșantionarea este o componentă esențială a Model Context Protocol (MCP) care permite procesarea și rutarea eficientă a cererilor. Aceasta implică analizarea cererilor primite pentru a determina cel mai potrivit model sau serviciu care să le gestioneze, pe baza unor criterii variate, cum ar fi tipul conținutului, contextul utilizatorului și încărcarea sistemului.
 
-Eșantionarea și rutarea pot fi combinate pentru a crea o arhitectură robustă care optimizează utilizarea resurselor și asigură o disponibilitate ridicată. Procesul de eșantionare poate fi folosit pentru a clasifica cererile, în timp ce rutarea le direcționează către modelele sau serviciile corespunzătoare.
+Eșantionarea și rutarea pot fi combinate pentru a crea o arhitectură robustă care optimizează utilizarea resurselor și asigură o disponibilitate ridicată. Procesul de eșantionare poate fi folosit pentru a clasifica cererile, în timp ce rutarea le direcționează către modelele sau serviciile adecvate.
 
-Diagrama de mai jos ilustrează modul în care eșantionarea și rutarea lucrează împreună într-o arhitectură cuprinzătoare MCP:
+Diagrama de mai jos ilustrează modul în care eșantionarea și rutarea funcționează împreună într-o arhitectură cuprinzătoare MCP:
 
 ```mermaid
 flowchart TB
@@ -82,7 +82,7 @@ flowchart TB
 
 ## Ce urmează
 
-- [5.6 Eșantionare](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
-**Declinare a responsabilității**:  
+**Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T18:15:26+00:00",
+  "translation_date": "2025-07-13T22:02:35+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "ms"
 }
@@ -32,7 +32,7 @@ MCP menyediakan alat untuk membantu anda menguji dan menyahpepijat pelayan anda:
 
 ### Menggunakan MCP Inspector
 
-Kami telah menerangkan penggunaan alat ini dalam pelajaran sebelum ini tetapi mari kita bincangkan sedikit secara ringkas. Ia adalah alat yang dibina menggunakan Node.js dan anda boleh menggunakannya dengan memanggil executable `npx` yang akan memuat turun dan memasang alat tersebut secara sementara dan akan membersihkan dirinya selepas selesai menjalankan permintaan anda.
+Kami telah menerangkan penggunaan alat ini dalam pelajaran sebelum ini tetapi mari kita bincangkan secara ringkas. Ia adalah alat yang dibina menggunakan Node.js dan anda boleh menggunakannya dengan memanggil executable `npx` yang akan memuat turun dan memasang alat ini secara sementara dan akan membersihkan dirinya selepas selesai menjalankan permintaan anda.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) membantu anda:
 
@@ -46,7 +46,7 @@ Contoh penggunaan alat ini adalah seperti berikut:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Arahan di atas memulakan MCP dan antara muka visualnya serta melancarkan antara muka web tempatan dalam pelayar anda. Anda boleh menjangkakan untuk melihat papan pemuka yang memaparkan pelayan MCP yang didaftarkan, alat, sumber, dan arahan yang tersedia. Antara muka ini membolehkan anda menguji pelaksanaan alat secara interaktif, memeriksa metadata pelayan, dan melihat respons masa nyata, menjadikannya lebih mudah untuk mengesahkan dan menyahpepijat pelaksanaan pelayan MCP anda.
+Arahan di atas memulakan MCP dan antara muka visualnya serta melancarkan antara muka web tempatan dalam pelayar anda. Anda boleh menjangkakan untuk melihat papan pemuka yang memaparkan pelayan MCP yang didaftarkan, alat, sumber, dan arahan yang tersedia. Antara muka ini membolehkan anda menguji pelaksanaan alat secara interaktif, memeriksa metadata pelayan, dan melihat respons masa nyata, menjadikan ia lebih mudah untuk mengesahkan dan menyahpepijat pelaksanaan pelayan MCP anda.
 
 Ini adalah contoh rupa antara mukanya: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ms.png)
 

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-12T21:50:25+00:00",
+  "translation_date": "2025-07-14T00:39:29+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "es"
 }
@@ -14,7 +14,7 @@ Este proyecto es una **aplicación mínima de Spring Boot** que funciona como:
 * un **Spring Authorization Server** (emitiendo tokens de acceso JWT mediante el flujo `client_credentials`), y  
 * un **Resource Server** (protegiendo su propio endpoint `/hello`).
 
-Refleja la configuración mostrada en el [post del blog de Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Refleja la configuración mostrada en la [entrada del blog de Spring (2 Abr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Prueba de la configuración OAuth2
+## Probando la configuración OAuth2
 
 Puedes probar la configuración de seguridad OAuth2 con los siguientes pasos:
 
-### 1. Verifica que el servidor esté en funcionamiento y seguro
+### 1. Verifica que el servidor esté en funcionamiento y protegido
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtén un token de acceso usando client credentials
+### 2. Obtén un token de acceso usando las credenciales del cliente
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Nota: El encabezado de Autenticación Básica (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Nota: El encabezado de Autenticación Básica (`bWNwLWNsaWVudDpzZWNyZXQ=`) es la codificación Base64 de `mcp-client:secret`.
 
 ### 3. Accede al endpoint protegido usando el token
 
@@ -96,7 +96,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 El FQDN de ingreso se convierte en tu **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Azure proporciona automáticamente un certificado TLS confiable para `*.azurecontainerapps.io`.
 
 ---
 
@@ -125,4 +125,4 @@ APIM obtendrá el JWKS y validará cada solicitud.
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por un humano. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

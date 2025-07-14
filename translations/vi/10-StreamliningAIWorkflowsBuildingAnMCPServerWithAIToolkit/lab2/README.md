@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a22b7dd11cd7690f99f9195877cafdc3",
-  "translation_date": "2025-06-10T05:53:14+00:00",
+  "translation_date": "2025-07-14T07:57:02+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab2/README.md",
   "language_code": "vi"
 }
 -->
-# 🌐 Module 2: MCP với AI Toolkit Fundamentals
+# 🌐 Module 2: MCP với Kiến thức Cơ bản về AI Toolkit
 
 [![Duration](https://img.shields.io/badge/Duration-20%20minutes-blue.svg)]()
 [![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-yellow.svg)]()
@@ -19,17 +19,17 @@ Kết thúc module này, bạn sẽ có thể:
 - ✅ Hiểu kiến trúc và lợi ích của Model Context Protocol (MCP)
 - ✅ Khám phá hệ sinh thái máy chủ MCP của Microsoft
 - ✅ Tích hợp các máy chủ MCP với AI Toolkit Agent Builder
-- ✅ Xây dựng agent tự động trình duyệt hoạt động bằng Playwright MCP
+- ✅ Xây dựng một agent tự động trình duyệt hoạt động bằng Playwright MCP
 - ✅ Cấu hình và kiểm tra các công cụ MCP trong agent của bạn
-- ✅ Xuất và triển khai các agent chạy MCP cho môi trường sản xuất
+- ✅ Xuất và triển khai các agent sử dụng MCP cho môi trường sản xuất
 
-## 🎯 Nối tiếp Module 1
+## 🎯 Xây dựng dựa trên Module 1
 
-Trong Module 1, chúng ta đã làm chủ các kiến thức cơ bản về AI Toolkit và tạo agent Python đầu tiên. Bây giờ, chúng ta sẽ **nâng cấp** agent của bạn bằng cách kết nối chúng với các công cụ và dịch vụ bên ngoài thông qua giao thức đột phá **Model Context Protocol (MCP)**.
+Trong Module 1, chúng ta đã làm chủ các kiến thức cơ bản về AI Toolkit và tạo agent Python đầu tiên. Giờ đây, chúng ta sẽ **nâng cấp mạnh mẽ** các agent bằng cách kết nối chúng với các công cụ và dịch vụ bên ngoài thông qua giao thức cách mạng **Model Context Protocol (MCP)**.
 
-Hãy tưởng tượng như nâng cấp từ máy tính bỏ túi lên một chiếc máy tính hoàn chỉnh – các agent AI của bạn sẽ có khả năng:
+Hãy tưởng tượng đây là việc nâng cấp từ một chiếc máy tính bỏ túi đơn giản lên một chiếc máy tính hoàn chỉnh - các agent AI của bạn sẽ có khả năng:
 - 🌐 Duyệt và tương tác với các trang web
-- 📁 Truy cập và xử lý tệp tin
+- 📁 Truy cập và thao tác với các tập tin
 - 🔧 Tích hợp với các hệ thống doanh nghiệp
 - 📊 Xử lý dữ liệu thời gian thực từ các API
 
@@ -37,15 +37,15 @@ Hãy tưởng tượng như nâng cấp từ máy tính bỏ túi lên một chi
 
 ### 🔍 MCP là gì?
 
-Model Context Protocol (MCP) là **"USB-C cho các ứng dụng AI"** – một chuẩn mở đột phá kết nối các mô hình ngôn ngữ lớn (LLMs) với các công cụ, nguồn dữ liệu và dịch vụ bên ngoài. Giống như USB-C giải quyết sự lộn xộn của cáp bằng một đầu nối chung, MCP loại bỏ sự phức tạp trong tích hợp AI bằng một giao thức chuẩn duy nhất.
+Model Context Protocol (MCP) là **"USB-C dành cho các ứng dụng AI"** - một chuẩn mở cách mạng kết nối các Large Language Models (LLMs) với các công cụ, nguồn dữ liệu và dịch vụ bên ngoài. Giống như USB-C đã loại bỏ sự lộn xộn của các loại cáp bằng một kết nối duy nhất, MCP cũng loại bỏ sự phức tạp trong tích hợp AI bằng một giao thức chuẩn hóa duy nhất.
 
 ### 🎯 Vấn đề MCP giải quyết
 
 **Trước MCP:**
 - 🔧 Tích hợp tùy chỉnh cho từng công cụ
-- 🔄 Bị khóa bởi nhà cung cấp với các giải pháp độc quyền  
+- 🔄 Bị khóa nhà cung cấp với các giải pháp độc quyền
 - 🔒 Lỗ hổng bảo mật do kết nối tùy tiện
-- ⏱️ Phát triển mất nhiều tháng cho các tích hợp cơ bản
+- ⏱️ Mất hàng tháng để phát triển các tích hợp cơ bản
 
 **Với MCP:**
 - ⚡ Tích hợp công cụ cắm là chạy
@@ -55,7 +55,7 @@ Model Context Protocol (MCP) là **"USB-C cho các ứng dụng AI"** – một 
 
 ### 🏗️ Khám phá kiến trúc MCP
 
-MCP tuân theo kiến trúc **client-server** tạo nên một hệ sinh thái an toàn, có khả năng mở rộng:
+MCP theo kiến trúc **client-server** tạo ra một hệ sinh thái an toàn và có thể mở rộng:
 
 ```mermaid
 graph TB
@@ -77,33 +77,32 @@ graph TB
 |------------|---------|-------|
 | **MCP Hosts** | Ứng dụng sử dụng dịch vụ MCP | Claude Desktop, VS Code, AI Toolkit |
 | **MCP Clients** | Bộ xử lý giao thức (1:1 với server) | Tích hợp trong ứng dụng host |
-| **MCP Servers** | Cung cấp khả năng qua giao thức chuẩn | Playwright, Files, Azure, GitHub |
+| **MCP Servers** | Cung cấp các khả năng qua giao thức chuẩn | Playwright, Files, Azure, GitHub |
 | **Transport Layer** | Phương thức giao tiếp | stdio, HTTP, WebSockets |
-
 
 ## 🏢 Hệ sinh thái máy chủ MCP của Microsoft
 
-Microsoft dẫn đầu hệ sinh thái MCP với bộ máy chủ cấp doanh nghiệp toàn diện, đáp ứng nhu cầu kinh doanh thực tế.
+Microsoft dẫn đầu hệ sinh thái MCP với bộ máy chủ cấp doanh nghiệp toàn diện đáp ứng các nhu cầu kinh doanh thực tế.
 
-### 🌟 Máy chủ MCP Microsoft nổi bật
+### 🌟 Các máy chủ MCP nổi bật của Microsoft
 
-#### 1. ☁️ Azure MCP Server
+#### 1. ☁️ Azure MCP Server  
 **🔗 Repository**: [azure/azure-mcp](https://github.com/azure/azure-mcp)  
 **🎯 Mục đích**: Quản lý tài nguyên Azure toàn diện với tích hợp AI
 
 **✨ Tính năng chính:**
 - Cung cấp hạ tầng theo khai báo
-- Giám sát tài nguyên thời gian thực
+- Giám sát tài nguyên theo thời gian thực
 - Đề xuất tối ưu chi phí
 - Kiểm tra tuân thủ bảo mật
 
-**🚀 Ứng dụng:**
-- Hạ tầng như mã với trợ giúp AI
+**🚀 Trường hợp sử dụng:**
+- Hạ tầng dưới dạng mã với trợ giúp AI
 - Tự động mở rộng tài nguyên
 - Tối ưu chi phí đám mây
 - Tự động hóa quy trình DevOps
 
-#### 2. 📊 Microsoft Dataverse MCP
+#### 2. 📊 Microsoft Dataverse MCP  
 **📚 Tài liệu**: [Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)  
 **🎯 Mục đích**: Giao diện ngôn ngữ tự nhiên cho dữ liệu doanh nghiệp
 
@@ -113,13 +112,13 @@ Microsoft dẫn đầu hệ sinh thái MCP với bộ máy chủ cấp doanh ngh
 - Mẫu prompt tùy chỉnh
 - Quản trị dữ liệu doanh nghiệp
 
-**🚀 Ứng dụng:**
-- Báo cáo trí tuệ kinh doanh
+**🚀 Trường hợp sử dụng:**
+- Báo cáo thông minh doanh nghiệp
 - Phân tích dữ liệu khách hàng
 - Hiểu biết về pipeline bán hàng
 - Truy vấn dữ liệu tuân thủ
 
-#### 3. 🌐 Playwright MCP Server
+#### 3. 🌐 Playwright MCP Server  
 **🔗 Repository**: [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)  
 **🎯 Mục đích**: Tự động hóa trình duyệt và tương tác web
 
@@ -129,29 +128,29 @@ Microsoft dẫn đầu hệ sinh thái MCP với bộ máy chủ cấp doanh ngh
 - Chụp ảnh màn hình và tạo PDF
 - Giám sát lưu lượng mạng
 
-**🚀 Ứng dụng:**
+**🚀 Trường hợp sử dụng:**
 - Quy trình kiểm thử tự động
-- Thu thập dữ liệu web và trích xuất
+- Thu thập dữ liệu web
 - Giám sát UI/UX
 - Tự động phân tích đối thủ
 
-#### 4. 📁 Files MCP Server
+#### 4. 📁 Files MCP Server  
 **🔗 Repository**: [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)  
-**🎯 Mục đích**: Thao tác hệ thống tệp thông minh
+**🎯 Mục đích**: Thao tác hệ thống tập tin thông minh
 
 **✨ Tính năng chính:**
-- Quản lý tệp theo khai báo
+- Quản lý tập tin theo khai báo
 - Đồng bộ nội dung
 - Tích hợp kiểm soát phiên bản
-- Trích xuất siêu dữ liệu
+- Trích xuất metadata
 
-**🚀 Ứng dụng:**
+**🚀 Trường hợp sử dụng:**
 - Quản lý tài liệu
 - Tổ chức kho mã nguồn
 - Quy trình xuất bản nội dung
-- Xử lý tệp trong pipeline dữ liệu
+- Xử lý tập tin trong pipeline dữ liệu
 
-#### 5. 📝 MarkItDown MCP Server
+#### 5. 📝 MarkItDown MCP Server  
 **🔗 Repository**: [microsoft/markitdown](https://github.com/microsoft/markitdown)  
 **🎯 Mục đích**: Xử lý và thao tác Markdown nâng cao
 
@@ -161,13 +160,13 @@ Microsoft dẫn đầu hệ sinh thái MCP với bộ máy chủ cấp doanh ngh
 - Phân tích cấu trúc nội dung
 - Xử lý mẫu
 
-**🚀 Ứng dụng:**
+**🚀 Trường hợp sử dụng:**
 - Quy trình tài liệu kỹ thuật
 - Hệ thống quản lý nội dung
 - Tạo báo cáo
-- Tự động hóa cơ sở kiến thức
+- Tự động hóa cơ sở tri thức
 
-#### 6. 📈 Clarity MCP Server
+#### 6. 📈 Clarity MCP Server  
 **📦 Package**: [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)  
 **🎯 Mục đích**: Phân tích web và hiểu hành vi người dùng
 
@@ -175,99 +174,97 @@ Microsoft dẫn đầu hệ sinh thái MCP với bộ máy chủ cấp doanh ngh
 - Phân tích dữ liệu heatmap
 - Ghi lại phiên người dùng
 - Chỉ số hiệu suất
-- Phân tích phễu chuyển đổi
+- Phân tích kênh chuyển đổi
 
-**🚀 Ứng dụng:**
+**🚀 Trường hợp sử dụng:**
 - Tối ưu hóa website
 - Nghiên cứu trải nghiệm người dùng
 - Phân tích A/B testing
-- Bảng điều khiển trí tuệ kinh doanh
+- Bảng điều khiển thông minh doanh nghiệp
 
 ### 🌍 Hệ sinh thái cộng đồng
 
 Ngoài các máy chủ của Microsoft, hệ sinh thái MCP còn bao gồm:  
-- **🐙 GitHub MCP**: Quản lý kho và phân tích mã nguồn  
+- **🐙 GitHub MCP**: Quản lý kho mã và phân tích code  
 - **🗄️ Database MCPs**: Tích hợp PostgreSQL, MySQL, MongoDB  
 - **☁️ Cloud Provider MCPs**: Công cụ AWS, GCP, Digital Ocean  
 - **📧 Communication MCPs**: Tích hợp Slack, Teams, Email  
 
 ## 🛠️ Thực hành: Xây dựng agent tự động trình duyệt
 
-**🎯 Mục tiêu dự án**: Tạo agent tự động trình duyệt thông minh dùng Playwright MCP server có thể điều hướng web, trích xuất thông tin và thực hiện các tương tác phức tạp.
+**🎯 Mục tiêu dự án**: Tạo một agent tự động trình duyệt thông minh sử dụng máy chủ Playwright MCP có thể duyệt web, trích xuất thông tin và thực hiện các tương tác phức tạp trên web.
 
 ### 🚀 Giai đoạn 1: Thiết lập nền tảng agent
 
 #### Bước 1: Khởi tạo agent của bạn
 1. **Mở AI Toolkit Agent Builder**  
-2. **Tạo agent mới** với cấu hình sau:  
-   - **Tên**: `BrowserAgent`
-   - **Model**: Choose GPT-4o 
+2. **Tạo Agent Mới** với cấu hình sau:  
+   - **Tên**: `BrowserAgent`  
+   - **Model**: Chọn GPT-4o  
 
 ![BrowserAgent](../../../../translated_images/BrowserAgent.09c1adde5e136573b64ab1baecd830049830e295eac66cb18bebb85fb386e00a.vi.png)
 
+### 🔧 Giai đoạn 2: Quy trình tích hợp MCP
 
-### 🔧 Phase 2: MCP Integration Workflow
-
-#### Step 3: Add MCP Server Integration
-1. **Navigate to Tools Section** in Agent Builder
-2. **Click "Add Tool"** to open the integration menu
-3. **Select "MCP Server"** from available options
+#### Bước 3: Thêm tích hợp máy chủ MCP
+1. **Đi tới phần Tools** trong Agent Builder  
+2. **Nhấn "Add Tool"** để mở menu tích hợp  
+3. **Chọn "MCP Server"** trong các tùy chọn có sẵn  
 
 ![AddMCP](../../../../translated_images/AddMCP.afe3308ac20aa94469a5717b632d77b2197b9838a438b05d39aeb2db3ec47ef1.vi.png)
 
-**🔍 Understanding Tool Types:**
-- **Built-in Tools**: Pre-configured AI Toolkit functions
-- **MCP Servers**: External service integrations
-- **Custom APIs**: Your own service endpoints
-- **Function Calling**: Direct model function access
+**🔍 Hiểu về các loại công cụ:**  
+- **Built-in Tools**: Các chức năng AI Toolkit được cấu hình sẵn  
+- **MCP Servers**: Tích hợp dịch vụ bên ngoài  
+- **Custom APIs**: Các endpoint dịch vụ riêng của bạn  
+- **Function Calling**: Truy cập trực tiếp các hàm của model  
 
-#### Step 4: MCP Server Selection
-1. **Choose "MCP Server"** option to proceed
+#### Bước 4: Chọn máy chủ MCP
+1. **Chọn tùy chọn "MCP Server"** để tiếp tục  
 ![AddMCPServer](../../../../translated_images/AddMCPServer.69b911ccef872cbd0d0c0c2e6a00806916e1673e543b902a23dee23e6ff54b4c.vi.png)
 
-2. **Browse MCP Catalog** to explore available integrations
+2. **Duyệt danh mục MCP** để khám phá các tích hợp có sẵn  
 ![MCPCatalog](../../../../translated_images/MCPCatalog.a817d053145699006264f5a475f2b48fbd744e43633f656b6453c15a09ba5130.vi.png)
 
+### 🎮 Giai đoạn 3: Cấu hình Playwright MCP
 
-### 🎮 Phase 3: Playwright MCP Configuration
-
-#### Step 5: Select and Configure Playwright
-1. **Click "Use Featured MCP Servers"** to access Microsoft's verified servers
-2. **Select "Playwright"** from the featured list
-3. **Accept Default MCP ID** or customize for your environment
+#### Bước 5: Chọn và cấu hình Playwright
+1. **Nhấn "Use Featured MCP Servers"** để truy cập các máy chủ được Microsoft xác thực  
+2. **Chọn "Playwright"** trong danh sách nổi bật  
+3. **Chấp nhận MCP ID mặc định** hoặc tùy chỉnh theo môi trường của bạn  
 
 ![MCPID](../../../../translated_images/MCPID.67d446052979e819c945ff7b6430196ef587f5217daadd3ca52fa9659c1245c9.vi.png)
 
-#### Step 6: Enable Playwright Capabilities
-**🔑 Critical Step**: Select **ALL** available Playwright methods for maximum functionality
+#### Bước 6: Kích hoạt các khả năng của Playwright
+**🔑 Bước quan trọng**: Chọn **TẤT CẢ** các phương thức Playwright có sẵn để có chức năng tối đa  
 
 ![Tools](../../../../translated_images/Tools.3ea23c447b4d9feccbd7101e6dcf9e27cb0e5273f351995fde62c5abf9a78b4c.vi.png)
 
-**🛠️ Essential Playwright Tools:**
-- **Navigation**: `goto`, `goBack`, `goForward`, `reload`
-- **Interaction**: `click`, `fill`, `press`, `hover`, `drag`
-- **Extraction**: `textContent`, `innerHTML`, `getAttribute`
-- **Validation**: `isVisible`, `isEnabled`, `waitForSelector`
-- **Capture**: `screenshot`, `pdf`, `video`
-- **Network**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
+**🛠️ Các công cụ Playwright thiết yếu:**  
+- **Điều hướng**: `goto`, `goBack`, `goForward`, `reload`  
+- **Tương tác**: `click`, `fill`, `press`, `hover`, `drag`  
+- **Trích xuất**: `textContent`, `innerHTML`, `getAttribute`  
+- **Xác thực**: `isVisible`, `isEnabled`, `waitForSelector`  
+- **Chụp ảnh**: `screenshot`, `pdf`, `video`  
+- **Mạng**: `setExtraHTTPHeaders`, `route`, `waitForResponse`  
 
 #### Bước 7: Xác nhận tích hợp thành công
-**✅ Dấu hiệu thành công:**
-- Tất cả công cụ hiển thị trong giao diện Agent Builder
-- Không có lỗi trong bảng điều khiển tích hợp
-- Trạng thái máy chủ Playwright hiện "Connected"
+**✅ Dấu hiệu thành công:**  
+- Tất cả công cụ hiển thị trong giao diện Agent Builder  
+- Không có thông báo lỗi trong bảng tích hợp  
+- Trạng thái máy chủ Playwright hiển thị "Connected"  
 
 ![AgentTools](../../../../translated_images/AgentTools.053cfb96a17e02199dcc6563010d2b324d4fc3ebdd24889657a6950647a52f63.vi.png)
 
-**🔧 Khắc phục sự cố phổ biến:**
+**🔧 Khắc phục sự cố phổ biến:**  
 - **Kết nối thất bại**: Kiểm tra kết nối internet và cài đặt tường lửa  
-- **Thiếu công cụ**: Đảm bảo đã chọn đầy đủ khả năng trong quá trình thiết lập  
-- **Lỗi quyền**: Xác nhận VS Code có quyền hệ thống cần thiết  
+- **Thiếu công cụ**: Đảm bảo đã chọn đầy đủ các khả năng trong quá trình thiết lập  
+- **Lỗi quyền truy cập**: Xác nhận VS Code có quyền hệ thống cần thiết  
 
 ### 🎯 Giai đoạn 4: Kỹ thuật prompt nâng cao
 
 #### Bước 8: Thiết kế prompt hệ thống thông minh
-Tạo các prompt tinh vi tận dụng tối đa khả năng của Playwright:
+Tạo các prompt tinh vi tận dụng toàn bộ khả năng của Playwright:
 
 ```markdown
 # Web Automation Expert System Prompt
@@ -308,7 +305,7 @@ You are an advanced web automation specialist with deep expertise in browser aut
 ```
 
 #### Bước 9: Tạo prompt người dùng động
-Thiết kế prompt thể hiện các khả năng đa dạng:
+Thiết kế các prompt minh họa nhiều khả năng khác nhau:
 
 **🌐 Ví dụ phân tích web:**  
 ```markdown
@@ -329,54 +326,54 @@ Include screenshots at key steps and provide actionable insights.
 
 #### Bước 10: Thực thi tự động hóa đầu tiên
 1. **Nhấn "Run"** để bắt đầu chuỗi tự động hóa  
-2. **Giám sát thực thi thời gian thực**:  
+2. **Theo dõi thực thi thời gian thực**:  
    - Trình duyệt Chrome tự động mở  
-   - Agent điều hướng đến trang mục tiêu  
+   - Agent điều hướng đến trang web mục tiêu  
    - Chụp ảnh màn hình từng bước chính  
-   - Kết quả phân tích truyền về theo thời gian thực  
+   - Kết quả phân tích được truyền trực tiếp  
 
 ![Browser](../../../../translated_images/Browser.ec011d0bd64d0d112c8a29bd8cc44c76d0bbfd0b019cb2983ef679328435ce5d.vi.png)
 
-#### Bước 11: Phân tích kết quả và insight
-Xem xét phân tích chi tiết trong giao diện Agent Builder:
+#### Bước 11: Phân tích kết quả và thông tin
+Xem lại phân tích chi tiết trong giao diện Agent Builder:
 
 ![Result](../../../../translated_images/Result.8638f2b6703e9ea6d58d4e4475e39456b6a51d4c787f9bf481bae694d370a69a.vi.png)
 
-### 🌟 Giai đoạn 6: Nâng cao khả năng và triển khai
+### 🌟 Giai đoạn 6: Khả năng nâng cao và triển khai
 
 #### Bước 12: Xuất và triển khai sản xuất
 Agent Builder hỗ trợ nhiều tùy chọn triển khai:
 
 ![Code](../../../../translated_images/Code.d9eeeead0b96db0ca19c5b10ad64cfea8c1d0d1736584262970a4d43e1403d13.vi.png)
 
-## 🎓 Tóm tắt Module 2 & Bước tiếp theo
+## 🎓 Tóm tắt Module 2 & Các bước tiếp theo
 
-### 🏆 Thành tựu đạt được: Thành thạo tích hợp MCP
+### 🏆 Thành tựu đạt được: Làm chủ tích hợp MCP
 
-**✅ Kỹ năng đã làm chủ:**  
+**✅ Kỹ năng đã thành thạo:**  
 - [ ] Hiểu kiến trúc và lợi ích MCP  
-- [ ] Khám phá hệ sinh thái máy chủ MCP của Microsoft  
+- [ ] Điều hướng hệ sinh thái máy chủ MCP của Microsoft  
 - [ ] Tích hợp Playwright MCP với AI Toolkit  
-- [ ] Xây dựng agent tự động trình duyệt phức tạp  
+- [ ] Xây dựng agent tự động trình duyệt tinh vi  
 - [ ] Kỹ thuật prompt nâng cao cho tự động hóa web  
 
 ### 📚 Tài nguyên bổ sung
 
-- **🔗 MCP Specification**: [Official Protocol Documentation](https://modelcontextprotocol.io/)  
-- **🛠️ Playwright API**: [Complete Method Reference](https://playwright.dev/docs/api/class-playwright)  
-- **🏢 Microsoft MCP Servers**: [Enterprise Integration Guide](https://github.com/microsoft/mcp-servers)  
-- **🌍 Community Examples**: [MCP Server Gallery](https://github.com/modelcontextprotocol/servers)  
+- **🔗 MCP Specification**: [Tài liệu giao thức chính thức](https://modelcontextprotocol.io/)  
+- **🛠️ Playwright API**: [Tham khảo phương thức đầy đủ](https://playwright.dev/docs/api/class-playwright)  
+- **🏢 Microsoft MCP Servers**: [Hướng dẫn tích hợp doanh nghiệp](https://github.com/microsoft/mcp-servers)  
+- **🌍 Community Examples**: [Thư viện máy chủ MCP](https://github.com/modelcontextprotocol/servers)  
 
-**🎉 Chúc mừng!** Bạn đã thành thạo tích hợp MCP và có thể xây dựng các agent AI sẵn sàng sản xuất với khả năng công cụ bên ngoài!
+**🎉 Chúc mừng!** Bạn đã thành công làm chủ tích hợp MCP và giờ có thể xây dựng các agent AI sẵn sàng sản xuất với khả năng sử dụng công cụ bên ngoài!
 
-### 🔜 Tiếp tục sang Module kế tiếp
+### 🔜 Tiếp tục sang Module tiếp theo
 
-Sẵn sàng nâng cao kỹ năng MCP? Tiến tới **[Module 3: Advanced MCP Development with AI Toolkit](../lab3/README.md)** để học cách:  
+Sẵn sàng nâng cao kỹ năng MCP? Hãy tiếp tục với **[Module 3: Phát triển MCP nâng cao với AI Toolkit](../lab3/README.md)**, nơi bạn sẽ học cách:  
 - Tạo máy chủ MCP tùy chỉnh của riêng bạn  
-- Cấu hình và sử dụng SDK Python MCP mới nhất  
+- Cấu hình và sử dụng SDK MCP Python mới nhất  
 - Thiết lập MCP Inspector để gỡ lỗi  
-- Làm chủ quy trình phát triển máy chủ MCP nâng cao  
-- Xây dựng Weather MCP Server từ đầu
+- Làm chủ quy trình phát triển máy chủ MCP nâng cao
+- Xây dựng một Máy chủ MCP Thời tiết từ đầu
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ nguyên bản nên được coi là nguồn thông tin chính xác nhất. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:59:55+00:00",
+  "translation_date": "2025-07-13T17:50:22+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "hu"
 }
@@ -23,7 +23,7 @@ dotnet run
 
 ## -4- A minta tesztelése
 
-Amíg a szerver egy terminálban fut, nyiss meg egy másik terminált, és futtasd a következő parancsot:
+Amíg a szerver fut az egyik terminálban, nyiss meg egy másik terminált, és futtasd a következő parancsot:
 
 ```bash
 npx @modelcontextprotocol/inspector dotnet run
@@ -96,7 +96,7 @@ A következő kimenetet kell látnod:
 
 > ![!TIP]
 > Általában sokkal gyorsabb az inspector futtatása CLI módban, mint a böngészőben.
-> További információkat az inspector-ról [itt](https://github.com/modelcontextprotocol/inspector) találsz.
+> További információkat az inspectorról [itt](https://github.com/modelcontextprotocol/inspector) találsz.
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

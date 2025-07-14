@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:32:42+00:00",
+  "translation_date": "2025-07-13T21:53:50+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "vi"
 }
 -->
-# 📘 Giải pháp bài tập: Mở rộng Máy chủ MCP máy tính của bạn với công cụ Căn bậc hai
+# 📘 Giải pháp Bài tập: Mở rộng Máy chủ MCP Máy tính của bạn với Công cụ Căn bậc hai
 
 ## Tổng quan
-Trong bài tập này, bạn đã nâng cấp máy chủ MCP máy tính của mình bằng cách thêm một công cụ mới để tính căn bậc hai của một số. Sự bổ sung này giúp AI agent của bạn xử lý các truy vấn toán học phức tạp hơn, chẳng hạn như "Căn bậc hai của 16 là bao nhiêu?" hoặc "Tính √49," sử dụng các lệnh ngôn ngữ tự nhiên.
+Trong bài tập này, bạn đã nâng cấp máy chủ MCP máy tính của mình bằng cách thêm một công cụ mới để tính căn bậc hai của một số. Sự bổ sung này giúp cho AI agent của bạn có thể xử lý các truy vấn toán học phức tạp hơn, như "Căn bậc hai của 16 là bao nhiêu?" hoặc "Tính √49," sử dụng các câu lệnh ngôn ngữ tự nhiên.
 
-## 🛠️ Triển khai công cụ Căn bậc hai
-Để thêm chức năng này, bạn đã định nghĩa một hàm công cụ mới trong file server.py của mình. Dưới đây là phần cài đặt:
+## 🛠️ Triển khai Công cụ Căn bậc hai
+Để thêm chức năng này, bạn đã định nghĩa một hàm công cụ mới trong file server.py. Dưới đây là phần cài đặt:
 
 ```python
 """
@@ -70,33 +70,33 @@ def sqrt(a: float) -> float:
 
 ## 🔍 Cách hoạt động
 
-- **Nhập công cụ `math` module**: To perform mathematical operations beyond basic arithmetic, Python provides the built-in `math` module. This module includes a variety of mathematical functions and constants. By importing it using `import math`, you gain access to functions like `math.sqrt()`, which computes the square root of a number.
-- **Function Definition**: The `@server.tool()` decorator registers the `sqrt` function as a tool accessible by your AI agent.
-- **Input Parameter**: The function accepts a single argument `a` of type `float`.
-- **Error Handling**: If `a` is negative, the function raises a `ValueError` to prevent computing the square root of a negative number, which is not supported by the `math.sqrt()` function.
-- **Return Value**: For non-negative inputs, the function returns the square root of `a` using Python's built-in `math.sqrt()` method.
+- **Nhập module `math`**: Để thực hiện các phép toán vượt ra ngoài các phép tính cơ bản, Python cung cấp module tích hợp `math`. Module này bao gồm nhiều hàm và hằng số toán học. Bằng cách nhập `import math`, bạn có thể sử dụng các hàm như `math.sqrt()`, dùng để tính căn bậc hai của một số.
+- **Định nghĩa hàm**: Bộ trang trí `@server.tool()` đăng ký hàm `sqrt` như một công cụ mà AI agent có thể truy cập.
+- **Tham số đầu vào**: Hàm nhận một đối số duy nhất `a` kiểu `float`.
+- **Xử lý lỗi**: Nếu `a` là số âm, hàm sẽ ném ra lỗi `ValueError` để ngăn việc tính căn bậc hai của số âm, điều mà hàm `math.sqrt()` không hỗ trợ.
+- **Giá trị trả về**: Với các giá trị không âm, hàm trả về căn bậc hai của `a` bằng phương thức `math.sqrt()` có sẵn trong Python.
 
-## 🔄 Restarting the Server
-After adding the new `sqrt` tool, it's essential to restart your MCP server to ensure the agent recognizes and can utilize the newly added functionality.
+## 🔄 Khởi động lại Máy chủ
+Sau khi thêm công cụ `sqrt` mới, bạn cần khởi động lại máy chủ MCP để đảm bảo agent nhận diện và sử dụng được chức năng vừa thêm.
 
-## 💬 Example Prompts to Test the New Tool
-Here are some natural language prompts you can use to test the square root functionality:
+## 💬 Ví dụ Câu lệnh để Kiểm tra Công cụ Mới
+Dưới đây là một số câu lệnh ngôn ngữ tự nhiên bạn có thể dùng để kiểm tra chức năng căn bậc hai:
 
-- "What is the square root of 25?"
-- "Calculate the square root of 81."
-- "Find the square root of 0."
-- "What is the square root of 2.25?"
+- "Căn bậc hai của 25 là bao nhiêu?"
+- "Tính căn bậc hai của 81."
+- "Tìm căn bậc hai của 0."
+- "Căn bậc hai của 2.25 là bao nhiêu?"
 
-These prompts should trigger the agent to invoke the `sqrt` tool and return the correct results.
+Những câu lệnh này sẽ kích hoạt agent gọi công cụ `sqrt` và trả về kết quả chính xác.
 
-## ✅ Summary
-By completing this assignment, you've:
+## ✅ Tóm tắt
+Qua bài tập này, bạn đã:
 
-- Extended your calculator MCP server with a new `sqrt`.**
-- Cho phép AI agent của bạn xử lý các phép tính căn bậc hai thông qua các lệnh ngôn ngữ tự nhiên.
-- Thực hành thêm các công cụ mới và khởi động lại máy chủ để tích hợp các chức năng bổ sung.
+- Mở rộng máy chủ MCP máy tính của mình với công cụ `sqrt` mới.
+- Giúp AI agent có thể thực hiện các phép tính căn bậc hai thông qua các câu lệnh ngôn ngữ tự nhiên.
+- Thực hành thêm công cụ mới và khởi động lại máy chủ để tích hợp các chức năng bổ sung.
 
-Hãy thử nghiệm thêm bằng cách thêm nhiều công cụ toán học khác, như lũy thừa hoặc hàm logarit, để tiếp tục nâng cao khả năng của agent!
+Hãy tiếp tục thử nghiệm bằng cách thêm các công cụ toán học khác, như phép lũy thừa hoặc hàm logarit, để nâng cao khả năng của agent nhé!
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn chính xác và có thẩm quyền. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:50:10+00:00",
+  "translation_date": "2025-07-13T23:27:49+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "tr"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Bu, bir MCP Sunucusu için JavaScript örneğidir
 
-Bir araca, bir LLM'ye sahte bir çağrı yapan bir aracı kaydettiğimiz bir araç kaydı örneği:
+Bir aracın kaydedildiği ve bu aracın LLM'e sahte bir çağrı yaptığı bir araç kayıt örneği:
 
 ```javascript
 this.mcpServer.tool(
@@ -82,11 +82,11 @@ Aşağıdaki komutu çalıştırın:
 npm install
 ```
 
-## Çalıştır
+## Çalıştırma
 
 ```bash
 npm start
 ```
 
-**Feragatname**:
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Belgenin orijinal hali, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan dolayı sorumlu değiliz.
+**Feragatname**:  
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

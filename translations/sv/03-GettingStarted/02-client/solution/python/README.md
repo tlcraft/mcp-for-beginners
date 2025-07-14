@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:02:18+00:00",
+  "translation_date": "2025-07-13T18:41:09+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "sv"
 }
 -->
 # Köra detta exempel
 
-Det rekommenderas att installera `uv` men det är inte ett måste, se [instruktioner](https://docs.astral.sh/uv/#highlights)
+Det rekommenderas att du installerar `uv` men det är inte ett måste, se [instructions](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Skapa en virtuell miljö
 
@@ -31,11 +31,12 @@ pip install "mcp[cli]"
 
 ## -3- Kör exemplet
 
+
 ```bash
 python client.py
 ```
 
-Du bör se ett resultat som liknar:
+Du bör se en utdata som liknar:
 
 ```text
 LISTING RESOURCES
@@ -53,4 +54,4 @@ CALL TOOL
 ```
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Vi strävar efter noggrannhet, men var medveten om att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

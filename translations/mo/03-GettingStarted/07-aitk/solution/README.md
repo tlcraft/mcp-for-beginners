@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:30:58+00:00",
+  "translation_date": "2025-07-13T21:45:23+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "mo"
 }
 -->
-# 📘 Assignment Solution: Extending Your Calculator MCP Server with a Square Root Tool
+# 📘 作業解答：為你的計算器 MCP 伺服器新增平方根工具
 
-## Overview
-In this assignment, you enhanced your calculator MCP server by adding a new tool that calculates the square root of a number. This addition allows your AI agent to handle more advanced mathematical queries, such as "What is the square root of 16?" or "Calculate √49," using natural language prompts.
+## 概述
+在這次作業中，你為計算器 MCP 伺服器新增了一個能計算平方根的工具。這讓你的 AI 代理能處理更進階的數學問題，例如「16 的平方根是多少？」或「計算 √49」，並能透過自然語言指令完成。
 
-## 🛠️ Implementing the Square Root Tool
-To add this functionality, you defined a new tool function in your server.py file. Here's the implementation:
+## 🛠️ 實作平方根工具
+要新增此功能，你在 server.py 檔案中定義了一個新的工具函式。以下是實作內容：
 
 ```python
 """
@@ -68,35 +68,35 @@ def sqrt(a: float) -> float:
     return math.sqrt(a)
 ```
 
-## 🔍 How It Works
+## 🔍 運作原理
 
-- **Import the `math` module**: To perform mathematical operations beyond basic arithmetic, Python provides the built-in `math` module. This module includes a variety of mathematical functions and constants. By importing it using `import math`, you gain access to functions like `math.sqrt()`, which computes the square root of a number.
-- **Function Definition**: The `@server.tool()` decorator registers the `sqrt` function as a tool accessible by your AI agent.
-- **Input Parameter**: The function accepts a single argument `a` of type `float`.
-- **Error Handling**: If `a` is negative, the function raises a `ValueError` to prevent computing the square root of a negative number, which is not supported by the `math.sqrt()` function.
-- **Return Value**: For non-negative inputs, the function returns the square root of `a` using Python's built-in `math.sqrt()` method.
+- **匯入 `math` 模組**：Python 內建的 `math` 模組提供了超越基本算術的數學運算功能。這個模組包含多種數學函式和常數。透過 `import math` 匯入後，你可以使用像是 `math.sqrt()` 這類計算平方根的函式。
+- **函式定義**：使用 `@server.tool()` 裝飾器將 `sqrt` 函式註冊為 AI 代理可使用的工具。
+- **輸入參數**：此函式接受一個 `float` 型態的參數 `a`。
+- **錯誤處理**：若 `a` 為負數，函式會拋出 `ValueError`，避免使用 `math.sqrt()` 計算負數平方根，因為該函式不支援負數輸入。
+- **回傳值**：對於非負數輸入，函式會使用 Python 內建的 `math.sqrt()` 方法回傳 `a` 的平方根。
 
-## 🔄 Restarting the Server
-After adding the new `sqrt` tool, it's essential to restart your MCP server to ensure the agent recognizes and can utilize the newly added functionality.
+## 🔄 重新啟動伺服器
+新增 `sqrt` 工具後，務必重新啟動 MCP 伺服器，確保代理能識別並使用這項新功能。
 
-## 💬 Example Prompts to Test the New Tool
-Here are some natural language prompts you can use to test the square root functionality:
+## 💬 測試新工具的範例指令
+以下是一些可用來測試平方根功能的自然語言指令：
 
-- "What is the square root of 25?"
-- "Calculate the square root of 81."
-- "Find the square root of 0."
-- "What is the square root of 2.25?"
+- 「25 的平方根是多少？」
+- 「計算 81 的平方根。」
+- 「找出 0 的平方根。」
+- 「2.25 的平方根是多少？」
 
-These prompts should trigger the agent to invoke the `sqrt` tool and return the correct results.
+這些指令會觸發代理呼叫 `sqrt` 工具並回傳正確結果。
 
-## ✅ Summary
-By completing this assignment, you've:
+## ✅ 總結
+完成此作業後，你已經：
 
-- Extended your calculator MCP server with a new `sqrt` tool.
-- Enabled your AI agent to handle square root calculations through natural language prompts.
-- Practiced adding new tools and restarting the server to integrate additional functionalities.
+- 為計算器 MCP 伺服器新增了 `sqrt` 工具。
+- 讓 AI 代理能透過自然語言指令處理平方根計算。
+- 練習了新增工具並重新啟動伺服器以整合新功能。
 
-Feel free to experiment further by adding more mathematical tools, such as exponentiation or logarithmic functions, to continue enhancing your agent's capabilities!
+歡迎繼續嘗試新增更多數學工具，例如次方或對數函式，持續提升代理的能力！
 
-**Disclaimer**:  
-Thiz documant haz bin translaited yusing AI translaiton sarvis [Co-op Translator](https://github.com/Azure/co-op-translator). Whil wee striv for accurasy, pleez be awair that automatid translaitons may contain errurs or inaccuraciez. The orijinal documant in its naytiv langwaj shud be considard the authoritativ sorce. For kritikal informashun, profeshunal hyuman translaiton iz rekomended. Wee ar not lyable for eny misandurstandings or misinterpretashuns arising from the yus of this translaiton.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T18:39:27+00:00",
+  "translation_date": "2025-07-13T22:03:21+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "cs"
 }
@@ -36,7 +36,7 @@ Použití tohoto nástroje jsme popsali v předchozích lekcích, ale pojďme si
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) vám pomůže:
 
-- **Objevit schopnosti serveru**: Automaticky detekuje dostupné zdroje, nástroje a výzvy
+- **Objevovat schopnosti serveru**: Automaticky detekuje dostupné zdroje, nástroje a výzvy
 - **Testovat spuštění nástrojů**: Vyzkoušet různé parametry a sledovat odpovědi v reálném čase
 - **Prohlížet metadata serveru**: Zkoumat informace o serveru, schémata a konfigurace
 
@@ -72,11 +72,11 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Jak vidíte z výše uvedeného použití curl, používáte POST požadavek k vyvolání nástroje s payloadem obsahujícím název nástroje a jeho parametry. Použijte přístup, který vám nejlépe vyhovuje. CLI nástroje jsou obecně rychlejší na použití a snadno se dají skriptovat, což může být užitečné v prostředí CI/CD.
+Jak vidíte z výše uvedeného příkladu použití curl, používáte POST požadavek k vyvolání nástroje s payloadem obsahujícím název nástroje a jeho parametry. Použijte přístup, který vám nejlépe vyhovuje. CLI nástroje jsou obecně rychlejší na použití a snadno se dají skriptovat, což může být užitečné v prostředí CI/CD.
 
 ### Unit testing
 
-Vytvořte unit testy pro své nástroje a zdroje, abyste zajistili, že fungují podle očekávání. Zde je příklad testovacího kódu.
+Vytvořte unit testy pro své nástroje a zdroje, abyste zajistili, že fungují podle očekávání. Zde je ukázka testovacího kódu.
 
 ```python
 import pytest
@@ -158,4 +158,4 @@ Všechny hlavní SDK mají podobné sekce pro testování, takže je můžete p�
 - Další: [Deployment](../09-deployment/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

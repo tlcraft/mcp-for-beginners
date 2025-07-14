@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "32c9a4263be08f9050c8044bb26267c4",
-  "translation_date": "2025-05-17T15:36:18+00:00",
+  "translation_date": "2025-07-14T00:34:28+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/apimoauth.md",
   "language_code": "hu"
 }
 -->
 # A Spring AI MCP alkalmazás telepítése Azure Container Apps-re
 
-([Spring AI MCP szerverek biztosítása OAuth2-vel](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Ábra: Spring AI MCP szerver biztosítva a Spring Authorization Serverrel. A szerver hozzáférési tokeneket ad ki az ügyfeleknek, és ellenőrzi őket a beérkező kéréseknél (forrás: Spring blog) ([Spring AI MCP szerverek biztosítása OAuth2-vel](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* A Spring MCP szerver telepítéséhez építse fel konténerként, és használja az Azure Container Apps külső bejáratát. Például az Azure CLI használatával futtathatja:
+ ([A Spring AI MCP szerverek OAuth2-vel történő védelme](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Ábra: Spring AI MCP szerver Spring Authorization Server-rel védve. A szerver hozzáférési tokeneket bocsát ki a klienseknek, és ellenőrzi azokat a bejövő kéréseknél (forrás: Spring blog) ([A Spring AI MCP szerverek OAuth2-vel történő védelme](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* A Spring MCP szerver telepítéséhez készítsd el konténerként, majd használd az Azure Container Apps szolgáltatást külső bejárattal. Például az Azure CLI segítségével futtathatod:
 
 ```bash
 az containerapp up \
@@ -23,11 +23,11 @@ az containerapp up \
   --query properties.configuration.ingress.fqdn
 ```
 
-Ez létrehoz egy nyilvánosan elérhető Container Appot HTTPS engedélyezéssel (Azure ingyenes TLS tanúsítványt ad ki az alapértelmezett `*.azurecontainerapps.io` domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). The command output includes the app’s FQDN (e.g. `my-mcp-app.eastus.azurecontainerapps.io`), which becomes the **issuer URL** base. Ensure HTTP ingress is enabled (as above) so APIM can reach the app. In a test/dev setup, use the `--ingress external` option (or bind a custom domain with TLS per [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Store any sensitive properties (like OAuth client secrets) in Container Apps secrets or Azure Key Vault, and map them into the container as environment variables. 
+Ez létrehoz egy nyilvánosan elérhető Container App-et HTTPS engedélyezéssel (az Azure ingyenes TLS tanúsítványt ad az alapértelmezett `*.azurecontainerapps.io` domainhez ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). A parancs kimenete tartalmazza az alkalmazás teljesen minősített domain nevét (pl. `my-mcp-app.eastus.azurecontainerapps.io`), amely lesz az **issuer URL** alapja. Győződj meg róla, hogy az HTTP bejárat engedélyezve van (ahogy fent), hogy az APIM elérhesse az alkalmazást. Teszt/fejlesztési környezetben használd a `--ingress external` opciót (vagy köss egy egyedi domaint TLS-sel a [Microsoft dokumentáció](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) szerint ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Bármilyen érzékeny beállítást (például OAuth kliens titkokat) tárolj Container Apps titkokban vagy Azure Key Vault-ban, és térképezd be őket környezeti változóként a konténerbe.
 
-## Configuring Spring Authorization Server
+## Spring Authorization Server konfigurálása
 
-In your Spring Boot app’s code, include the Spring Authorization Server and Resource Server starters. Configure a `RegisteredClient` (for the `client_credentials` grant in dev/test) and a JWT key source. For example, in `application.properties` beállíthatja:
+A Spring Boot alkalmazásod kódjában add hozzá a Spring Authorization Server és Resource Server startereket. Konfigurálj egy `RegisteredClient`-et (a `client_credentials` grant típushoz fejlesztési/tesztelési környezetben) és egy JWT kulcsforrást. Például az `application.properties`-ben beállíthatod:
 
 ```properties
 # OAuth2 client (for testing token issuance)
@@ -37,7 +37,7 @@ spring.security.oauth2.authorizationserver.client.oidc-client.registration.autho
 spring.security.oauth2.authorizationserver.client.oidc-client.registration.client-authentication-methods=client_secret_basic
 ```
 
-Engedélyezze az Authorization Server és Resource Server használatát egy biztonsági szűrőlánc definiálásával. Például:
+Engedélyezd az Authorization Server és Resource Server működését egy biztonsági szűrőlánc definiálásával. Például:
 
 ```java
 @Configuration
@@ -84,9 +84,9 @@ public class SecurityConfiguration {
 }
 ```
 
-Ez a beállítás az alapértelmezett OAuth2 végpontokat teszi elérhetővé: `/oauth2/token` for tokens and `/oauth2/jwks` for the JSON Web Key Set. (By default Spring’s `AuthorizationServerSettings` maps `/oauth2/token` and `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) The server will issue JWT access tokens signed by the RSA key above, and publish its public key at `https://<your-app>:/oauth2/jwks`. 
+Ez a beállítás elérhetővé teszi az alapértelmezett OAuth2 végpontokat: `/oauth2/token` a tokenekhez és `/oauth2/jwks` a JSON Web Key Set-hez. (Alapértelmezés szerint a Spring `AuthorizationServerSettings` leképezi a `/oauth2/token` és `/oauth2/jwks` végpontokat ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) A szerver JWT hozzáférési tokeneket bocsát ki, amelyeket az előzőleg definiált RSA kulccsal ír alá, és közzéteszi a nyilvános kulcsát a `https://<your-app>:/oauth2/jwks` címen.
 
-**Enable OpenID Connect discovery:** To let APIM automatically retrieve the issuer and JWKS, enable the OIDC provider configuration endpoint by adding `.oidc(Customizer.withDefaults())` a biztonsági konfigurációjában ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Például:
+**Engedélyezd az OpenID Connect felfedezést:** Ahhoz, hogy az APIM automatikusan lekérhesse az issuer és JWKS adatokat, engedélyezd az OIDC szolgáltató konfigurációs végpontját azzal, hogy a biztonsági konfigurációdban hozzáadod a `.oidc(Customizer.withDefaults())` hívást ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Például:
 
 ```java
 http
@@ -96,7 +96,7 @@ http
       .oidc(Customizer.withDefaults()));  // <– enables /.well-known/openid-configuration
 ```
 
-Ez elérhetővé teszi `/.well-known/openid-configuration`, which APIM can use for metadata. Finally, you may want to customize the JWT **audience** claim so that APIM’s `<audiences>` ellenőrzését. Például adjon hozzá egy token testreszabót:
+Ez elérhetővé teszi a `/.well-known/openid-configuration` végpontot, amelyet az APIM metadata lekérésére használhat. Végül érdemes lehet testreszabni a JWT **audience** mezőt, hogy az APIM `<audiences>` ellenőrzése sikeres legyen. Például adj hozzá egy token testreszabót:
 
 ```java
 @Bean
@@ -108,21 +108,21 @@ public OAuth2TokenCustomizer<OAuth2TokenClaimsContext> tokenCustomizer() {
 }
 ```
 
-Ez biztosítja, hogy a tokenek tartalmazzák az `"aud": ["mcp-client"]`, matching the client ID or scope expected by APIM. 
+Ez biztosítja, hogy a tokenek tartalmazzák az `"aud": ["mcp-client"]` értéket, amely megfelel az APIM által elvárt kliensazonosítónak vagy scope-nak.
 
-## Exposing Token and JWKS Endpoints
+## Token és JWKS végpontok elérhetővé tétele
 
-After deploying, your app’s **issuer URL** will be `https://<app-fqdn>`, e.g. `https://my-mcp-app.eastus.azurecontainerapps.io`. Its OAuth2 endpoints are:
+A telepítés után az alkalmazásod **issuer URL-je** `https://<app-fqdn>` lesz, például `https://my-mcp-app.eastus.azurecontainerapps.io`. Az OAuth2 végpontok:
 
-- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – clients obtain tokens here (client_credentials flow).
-- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – returns the JWK set (used by APIM to get signing keys).
-- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC discovery JSON (contains `issuer`, `token_endpoint`, `jwks_uri`, etc.).  
+- **Token végpont:** `https://<app-fqdn>/oauth2/token` – itt kérhetnek a kliensek tokeneket (client_credentials folyamat).
+- **JWKS végpont:** `https://<app-fqdn>/oauth2/jwks` – visszaadja a JWK készletet (amit az APIM a kulcsok lekérésére használ).
+- **OpenID konfiguráció:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC felfedezési JSON (tartalmazza az `issuer`, `token_endpoint`, `jwks_uri` stb. mezőket).
 
-APIM will point to the **OpenID configuration URL**, from which it discovers the `jwks_uri`. For example, if your Container App FQDN is `my-mcp-app.eastus.azurecontainerapps.io`, then APIM’s `<openid-config url="...">` should use `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (By default Spring will set the `issuer` in that metadata to the same base URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
+Az APIM az **OpenID konfiguráció URL-re** mutat, ahonnan lekéri a `jwks_uri`-t. Például, ha a Container App FQDN-je `my-mcp-app.eastus.azurecontainerapps.io`, akkor az APIM `<openid-config url="...">` beállítása legyen `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (Alapértelmezés szerint a Spring ugyanazt az alap URL-t állítja be az `issuer` mezőben ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
 
-## Configuring Azure API Management (`validate-jwt`)
+## Azure API Management konfigurálása (`validate-jwt`)
 
-In Azure APIM, add an inbound policy that uses the `<validate-jwt>` politika az érkező JWT-k ellenőrzésére a Spring Authorization Server ellen. Egyszerű beállítás esetén használhatja az OpenID Connect metaadat URL-t. Példa politika részlet:
+Az Azure APIM-ben adj hozzá egy bejövő szabályt, amely a `<validate-jwt>` szabályt használja a bejövő JWT-k ellenőrzésére a Spring Authorization Server alapján. Egyszerű beállításhoz használhatod az OpenID Connect metadata URL-t. Példa szabályrészlet:
 
 ```xml
 <inbound>
@@ -139,38 +139,37 @@ In Azure APIM, add an inbound policy that uses the `<validate-jwt>` politika az 
 </inbound>
 ```
 
-Ez a politika utasítja az APIM-t, hogy szerezze be az OpenID konfigurációt a Spring Auth Serverből, hívja le a JWKS-t, és ellenőrizze, hogy minden token megbízható kulccsal van aláírva és helyes közönsége van. (Ha kihagyja `<issuers>`, APIM will use the `issuer` claim from the metadata automatically.) The `<audience>` should match your client ID or API resource identifier in the token (in the example above, we set it to `"mcp-client"`). This is consistent with Microsoft’s documentation on using `validate-jwt` with `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
+Ez a szabály megmondja az APIM-nek, hogy töltse le a Spring Auth Server OpenID konfigurációját, szerezze be a JWKS-t, és ellenőrizze, hogy minden token megbízható kulccsal van aláírva, valamint a megfelelő audience értékkel rendelkezik. (Ha kihagyod az `<issuers>` elemet, az APIM automatikusan a metadata `issuer` mezőjét használja.) Az `<audience>` értékének meg kell egyeznie a kliensazonosítóval vagy az API erőforrás nevével a tokenben (a fenti példában `"mcp-client"`). Ez összhangban van a Microsoft dokumentációjával a `validate-jwt` és `<openid-config>` használatáról ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
 
-After validation, APIM will forward the request (including the original `Authorization` header) to the backend. Since the Spring app is also a resource server, it will re-validate the token, but APIM has already ensured its validity. (For development, you can rely on APIM’s check and disable additional checks in the app if desired, but it’s safer to keep both.)
+Az ellenőrzés után az APIM továbbítja a kérést (beleértve az eredeti `Authorization` fejlécet) a háttérrendszer felé. Mivel a Spring alkalmazás is resource server, újra ellenőrzi a tokent, de az APIM már biztosította annak érvényességét. (Fejlesztés alatt támaszkodhatsz az APIM ellenőrzésére és kikapcsolhatod az alkalmazásban az extra ellenőrzéseket, de biztonságosabb mindkettőt megtartani.)
 
-## Example Settings
+## Példa beállítások
 
-| Setting            | Example Value                                                        | Notes                                      |
-|--------------------|----------------------------------------------------------------------|--------------------------------------------|
-| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                    | Your Container App’s URL (base URI)        |
-| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`       | Default Spring token endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
-| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`        | Default JWK Set endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
-| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC discovery document (auto-generated)    |
-| **APIM audience**  | `mcp-client`                                                         | OAuth client ID or API resource name       |
-| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` uses this URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
+| Beállítás          | Példa érték                                                        | Megjegyzések                               |
+|--------------------|-------------------------------------------------------------------|--------------------------------------------|
+| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                 | A Container App URL-je (alap URI)          |
+| **Token végpont**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`    | Alapértelmezett Spring token végpont ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
+| **JWKS végpont**   | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`     | Alapértelmezett JWK készlet végpont ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
+| **OpenID konfiguráció** | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC felfedezési dokumentum (automatikusan generált) |
+| **APIM audience**  | `mcp-client`                                                      | OAuth kliensazonosító vagy API erőforrás neve |
+| **APIM szabály**   | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` ezt az URL-t használja ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
 
-## Common Pitfalls
+## Gyakori buktatók
 
-- **HTTPS/TLS:** The APIM gateway requires that the OpenID/JWKS endpoint be HTTPS with a valid certificate. By default, Azure Container Apps provides a trusted TLS cert for the Azure-managed domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If you use a custom domain, be sure to bind a certificate (you can use Azure’s free managed cert feature) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If APIM cannot trust the endpoint’s certificate, `<validate-jwt>` will fail to fetch the metadata.  
+- **HTTPS/TLS:** Az APIM átjárónak HTTPS és érvényes tanúsítvány szükséges az OpenID/JWKS végpont eléréséhez. Alapértelmezés szerint az Azure Container Apps megbízható TLS tanúsítványt biztosít az Azure által kezelt domainhez ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Egyedi domain használata esetén mindenképp köss tanúsítványt (az Azure ingyenes kezelt tanúsítvány funkcióját is használhatod) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Ha az APIM nem bízik a végpont tanúsítványában, a `<validate-jwt>` nem tudja lekérni a metadata-t.
 
-- **Endpoint Accessibility:** Ensure the Spring app’s endpoints are reachable from APIM. Using `--ingress external` (or enabling ingress in the portal) is simplest. If you chose an internal or vNet-bound environment, APIM (by default public) might not reach it unless placed in the same VNet. In a test setup, prefer public ingress so APIM can call the `.well-known` and `/jwks` URLs. 
+- **Végpont elérhetőség:** Biztosítsd, hogy a Spring alkalmazás végpontjai elérhetők legyenek az APIM számára. A legegyszerűbb a `--ingress external` használata (vagy a portálon az ingress engedélyezése). Ha belső vagy vNet-hez kötött környezetet választasz, az APIM (alapértelmezés szerint publikus) nem biztos, hogy eléri, hacsak nem ugyanabban a vNet-ben van. Teszteléshez inkább publikus ingress ajánlott, hogy az APIM elérje a `.well-known` és `/jwks` URL-eket.
 
-- **OpenID Discovery Enabled:** By default, Spring Authorization Server **does not expose** the `/.well-known/openid-configuration` unless OIDC is enabled. Make sure to include `.oidc(Customizer.withDefaults())` in your security config (see above) so that the provider configuration endpoint is active ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Otherwise APIM’s `<openid-config>` call will 404.
+- **OpenID felfedezés engedélyezve:** Alapértelmezés szerint a Spring Authorization Server **nem teszi elérhetővé** a `/.well-known/openid-configuration` végpontot, ha az OIDC nincs engedélyezve. Győződj meg róla, hogy a biztonsági konfigurációban szerepel a `.oidc(Customizer.withDefaults())` (lásd fent), hogy a szolgáltató konfigurációs végpont aktív legyen ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Ellenkező esetben az APIM `<openid-config>` hívása 404-et fog kapni.
 
-- **Audience Claim:** Spring’s default behavior is to set the `aud` claim to the client ID. If APIM’s `<audience>` check fails, you may need to customize the token (as shown above) or adjust the APIM policy. Ensure the audience in your JWT matches what you configure in `<audience>`. 
+- **Audience mező:** A Spring alapértelmezett viselkedése, hogy az `aud` mezőt a kliensazonosítóra állítja. Ha az APIM `<audience>` ellenőrzése nem sikerül, szükség lehet a token testreszabására (ahogy fent bemutatva) vagy az APIM szabály módosítására. Győződj meg róla, hogy a JWT-ben szereplő audience megegyezik az `<audience>` beállítással.
 
-- **JSON Metadata Parsing:** The OpenID configuration JSON must be valid. Spring’s default config will emit a standard OIDC metadata document. Verify that it contains the correct `issuer` and `jwks_uri`. If you host Spring behind a proxy or path-based route, double-check the URLs in this metadata. APIM will use these values as-is. 
+- **JSON metadata elemzés:** Az OpenID konfiguráció JSON-nak érvényesnek kell lennie. A Spring alapértelmezett konfigurációja szabványos OIDC metadata dokumentumot ad ki. Ellenőrizd, hogy tartalmazza a helyes `issuer` és `jwks_uri` értékeket. Ha a Spring proxyn vagy útvonal alapú routing mögött fut, ellenőrizd a metadata URL-eket. Az APIM ezeket az értékeket változtatás nélkül használja.
 
-- **Policy Ordering:** In the APIM policy, place `<validate-jwt>` **before** any routing to the backend. Otherwise, calls might reach your app without a valid token. Also ensure `<validate-jwt>` appears immediately under `<inbound>` (not nested inside another condition) so that APIM applies it.
+- **Szabályok sorrendje:** Az APIM szabályban a `<validate-jwt>`-t **mielőtt** bármilyen backend felé irányítás történik, helyezd el. Ellenkező esetben a hívások eljuthatnak az alkalmazáshoz érvényes token nélkül. Továbbá ügyelj arra, hogy a `<validate-jwt>` közvetlenül az `<inbound>` alatt legyen (ne legyen más feltételbe ágyazva), hogy az APIM alkalmazni tudja.
 
-By following the above steps, you can run your Spring AI MCP server in Azure Container Apps and have Azure API Management validate incoming OAuth2 JWTs with a minimal policy. The key points are: expose the Spring Auth endpoints publicly with TLS, enable OIDC discovery, and point APIM’s `validate-jwt` at the OpenID config URL (so it can fetch the JWKS automatically). This setup is suitable for a dev/test environment; for production, consider proper secret management, token lifetimes, and rotating keys in JWKS as needed. 
+A fenti lépések követésével futtathatod a Spring AI MCP szervert Azure Container Apps-ben, és az Azure API Management minimális szabállyal ellenőrzi a bejövő OAuth2 JWT-ket. A legfontosabbak: tedd nyilvánosan elérhetővé a Spring Auth végpontokat TLS-sel, engedélyezd az OIDC felfedezést, és állítsd be az APIM `validate-jwt` szabályát az OpenID konfiguráció URL-jére (így automatikusan lekéri a JWKS-t). Ez a beállítás fejlesztési/tesztelési környezethez ideális; éles környezetben gondoskodj a titkok megfelelő kezeléséről, a tokenek élettartamáról és a JWKS kulcsok forgatásáról.
+**Hivatkozások:** Lásd a Spring Authorization Server dokumentációját az alapértelmezett végpontokhoz ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) és az OIDC konfigurációhoz ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); lásd a Microsoft APIM dokumentációját a `validate-jwt` példákért ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); valamint az Azure Container Apps dokumentációját a telepítésről és tanúsítványokról ([Deploy Java Spring Boot apps to Azure Container Apps - Java on Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
 
-**References:** See Spring Authorization Server docs for default endpoints ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) and OIDC configuration ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); see Microsoft APIM docs for `validate-jwt` példák ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); és Azure Container Apps dokumentáció a telepítéshez és tanúsítványokhoz ([Deploy Java Spring Boot apps to Azure Container Apps - Java on Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
-
-**Felelősség kizárása**:  
-Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális emberi fordítás. Nem vállalunk felelősséget semmilyen félreértésért vagy félremagyarázásért, amely a fordítás használatából ered.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

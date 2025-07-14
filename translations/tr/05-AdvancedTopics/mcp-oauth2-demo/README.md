@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-12T23:47:04+00:00",
+  "translation_date": "2025-07-14T00:41:49+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "tr"
 }
@@ -11,12 +11,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 Bu proje, hem:
 
-* **Spring Authorization Server** (JWT erişim tokenlarını `client_credentials` akışı ile veren), hem de  
+* **Spring Authorization Server** (JWT erişim tokenlarını `client_credentials` akışıyla veren), hem de  
 * kendi `/hello` uç noktasını koruyan bir **Resource Server** olan  
 
 **minimal bir Spring Boot uygulamasıdır**.
 
-[Spring blog yazısında (2 Nis 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gösterilen yapılandırmayı yansıtır.
+Bu yapı, [Spring blog yazısında (2 Nis 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gösterilen kurulumla aynıdır.
 
 ---
 
@@ -40,14 +40,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 OAuth2 güvenlik yapılandırmasını aşağıdaki adımlarla test edebilirsiniz:
 
-### 1. Sunucunun çalıştığını ve güvenli olduğunu doğrulayın
+### 1. Sunucunun çalıştığını ve korunduğunu doğrulayın
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. İstemci kimlik bilgileri ile erişim tokenı alın
+### 2. Client credentials kullanarak erişim tokenı alın
 
 ```bash
 # Get and extract the full token response
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Not: Basic Authentication başlığı (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`).
+Not: Basic Authentication başlığı (`bWNwLWNsaWVudDpzZWNyZXQ=`), `mcp-client:secret` ifadesinin Base64 kodlamasıdır.
 
 ### 3. Token ile korunan uç noktaya erişin
 
@@ -98,7 +98,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Ingress FQDN, sizin **issuer** adresiniz olur (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`).
+Azure, `*.azurecontainerapps.io` için otomatik olarak güvenilir bir TLS sertifikası sağlar.
 
 ---
 
@@ -127,4 +127,4 @@ APIM, JWKS'i alacak ve her isteği doğrulayacaktır.
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek herhangi bir yanlış anlama veya yanlış yorumdan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

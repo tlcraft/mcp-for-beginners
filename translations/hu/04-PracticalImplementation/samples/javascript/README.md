@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:53:00+00:00",
+  "translation_date": "2025-07-13T23:28:48+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "hu"
 }
 -->
 # Minta
 
-Ez egy JavaScript minta egy MCP Serverhez
+Ez egy JavaScript minta egy MCP szerverhez
 
-Íme egy példa egy eszköz regisztrációjára, ahol egy eszközt regisztrálunk, amely egy ál hívást végez egy LLM-re:
+Itt egy példa egy eszköz regisztrációjára, ahol egy olyan eszközt regisztrálunk, amely egy hamis hívást indít egy LLM-hez:
 
 ```javascript
 this.mcpServer.tool(
@@ -76,17 +76,17 @@ this.mcpServer.tool(
 
 ## Telepítés
 
-Futtassa a következő parancsot:
+Futtasd a következő parancsot:
 
 ```bash
 npm install
 ```
 
-## Futás
+## Futtatás
 
 ```bash
 npm start
 ```
 
-**Felelősség kizárása**:  
-Ezt a dokumentumot AI fordítási szolgáltatással, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális emberi fordítás. Nem vállalunk felelősséget semmilyen félreértésért vagy félremagyarázásért, amely a fordítás használatából ered.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-10T16:19:41+00:00",
+  "translation_date": "2025-07-13T20:47:22+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "ms"
 }
 -->
 # Penstriman HTTPS dengan Protokol Konteks Model (MCP)
 
-Bab ini menyediakan panduan menyeluruh untuk melaksanakan penstriman yang selamat, boleh diskala, dan masa nyata menggunakan Protokol Konteks Model (MCP) dengan HTTPS. Ia merangkumi motivasi untuk penstriman, mekanisme pengangkutan yang tersedia, cara melaksanakan HTTP yang boleh distrim dalam MCP, amalan keselamatan terbaik, migrasi dari SSE, dan panduan praktikal untuk membina aplikasi MCP penstriman anda sendiri.
+Bab ini menyediakan panduan menyeluruh untuk melaksanakan penstriman yang selamat, boleh skala, dan masa nyata menggunakan Protokol Konteks Model (MCP) dengan HTTPS. Ia merangkumi motivasi untuk penstriman, mekanisme pengangkutan yang tersedia, cara melaksanakan HTTP yang boleh distrim dalam MCP, amalan keselamatan terbaik, migrasi dari SSE, dan panduan praktikal untuk membina aplikasi MCP penstriman anda sendiri.
 
 ## Mekanisme Pengangkutan dan Penstriman dalam MCP
 
@@ -20,20 +20,20 @@ Bahagian ini meneroka pelbagai mekanisme pengangkutan yang tersedia dalam MCP da
 Mekanisme pengangkutan mentakrifkan bagaimana data dipertukarkan antara klien dan pelayan. MCP menyokong pelbagai jenis pengangkutan untuk memenuhi persekitaran dan keperluan yang berbeza:
 
 - **stdio**: Input/output standard, sesuai untuk alat tempatan dan berasaskan CLI. Mudah tetapi tidak sesuai untuk web atau awan.
-- **SSE (Server-Sent Events)**: Membolehkan pelayan menolak kemas kini masa nyata kepada klien melalui HTTP. Baik untuk UI web, tetapi terhad dari segi skala dan fleksibiliti.
-- **Streamable HTTP**: Pengangkutan penstriman berasaskan HTTP moden, menyokong notifikasi dan skala yang lebih baik. Disyorkan untuk kebanyakan senario pengeluaran dan awan.
+- **SSE (Server-Sent Events)**: Membolehkan pelayan menolak kemas kini masa nyata kepada klien melalui HTTP. Baik untuk UI web, tetapi terhad dari segi kebolehsuaian dan fleksibiliti.
+- **Streamable HTTP**: Pengangkutan penstriman berasaskan HTTP moden, menyokong notifikasi dan kebolehsuaian yang lebih baik. Disyorkan untuk kebanyakan senario pengeluaran dan awan.
 
 ### Jadual Perbandingan
 
 Lihat jadual perbandingan di bawah untuk memahami perbezaan antara mekanisme pengangkutan ini:
 
-| Pengangkutan      | Kemas Kini Masa Nyata | Penstriman | Kebolehan Skala | Kes Penggunaan          |
-|-------------------|----------------------|------------|-----------------|------------------------|
-| stdio             | Tidak                | Tidak      | Rendah          | Alat CLI tempatan      |
-| SSE               | Ya                   | Ya         | Sederhana       | Web, kemas kini masa nyata |
-| Streamable HTTP   | Ya                   | Ya         | Tinggi          | Awan, pelbagai klien   |
+| Pengangkutan      | Kemas Kini Masa Nyata | Penstriman | Kebolehsuaian | Kes Penggunaan          |
+|-------------------|----------------------|------------|---------------|------------------------|
+| stdio             | Tidak                | Tidak      | Rendah        | Alat CLI tempatan      |
+| SSE               | Ya                   | Ya         | Sederhana     | Web, kemas kini masa nyata |
+| Streamable HTTP   | Ya                   | Ya         | Tinggi        | Awan, pelbagai klien   |
 
-> **Tip:** Memilih pengangkutan yang betul memberi kesan kepada prestasi, kebolehan skala, dan pengalaman pengguna. **Streamable HTTP** disyorkan untuk aplikasi moden, boleh diskala, dan sedia awan.
+> **Tip:** Memilih pengangkutan yang betul memberi kesan kepada prestasi, kebolehsuaian, dan pengalaman pengguna. **Streamable HTTP** disyorkan untuk aplikasi moden, boleh skala, dan sedia awan.
 
 Perhatikan pengangkutan stdio dan SSE yang telah anda lihat dalam bab sebelumnya dan bagaimana streamable HTTP adalah pengangkutan yang dibincangkan dalam bab ini.
 
@@ -106,7 +106,7 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 
 </details>
 
-Contoh ini menunjukkan pelayan menghantar satu siri mesej kepada klien sebaik sahaja ia tersedia, bukannya menunggu semua mesej siap.
+Contoh ini menunjukkan pelayan menghantar satu siri mesej kepada klien apabila ia tersedia, bukannya menunggu semua mesej siap.
 
 **Cara ia berfungsi:**
 - Pelayan menghantar setiap mesej sebaik ia sedia.
@@ -200,17 +200,17 @@ Perbezaan antara cara penstriman berfungsi secara "klasik" berbanding dalam MCP 
 
 | Ciri                   | Penstriman HTTP Klasik         | Penstriman MCP (Notifikasi)       |
 |------------------------|-------------------------------|----------------------------------|
-| Respons utama           | Berpecah (chunked)             | Tunggal, di akhir                |
-| Kemas kini kemajuan     | Dihantar sebagai bahagian data | Dihantar sebagai notifikasi      |
-| Keperluan klien        | Mesti memproses aliran         | Mesti melaksanakan pengendali mesej |
-| Kes penggunaan         | Fail besar, aliran token AI    | Kemajuan, log, maklum balas masa nyata |
+| Respons utama          | Berpecah-pecah (chunked)       | Tunggal, di akhir                 |
+| Kemas kini kemajuan    | Dihantar sebagai bahagian data  | Dihantar sebagai notifikasi       |
+| Keperluan klien        | Mesti memproses aliran          | Mesti melaksanakan pengendali mesej |
+| Kes penggunaan         | Fail besar, aliran token AI     | Kemajuan, log, maklum balas masa nyata |
 
 ### Perbezaan Utama Diperhatikan
 
 Selain itu, berikut adalah beberapa perbezaan utama:
 
 - **Corak Komunikasi:**
-   - Penstriman HTTP klasik: Menggunakan pengekodan pemindahan berpecah untuk menghantar data dalam bahagian
+   - Penstriman HTTP klasik: Menggunakan pengekodan pemindahan berpecah-pecah untuk menghantar data dalam bahagian
    - Penstriman MCP: Menggunakan sistem notifikasi berstruktur dengan protokol JSON-RPC
 
 - **Format Mesej:**
@@ -227,7 +227,7 @@ Selain itu, berikut adalah beberapa perbezaan utama:
 
 ### Cadangan
 
-Terdapat beberapa perkara yang kami cadangkan apabila memilih antara melaksanakan penstriman klasik (seperti titik akhir yang kami tunjukkan di atas menggunakan `/stream`) berbanding memilih penstriman melalui MCP.
+Terdapat beberapa perkara yang kami cadangkan apabila memilih antara melaksanakan penstriman klasik (sebagai titik akhir yang kami tunjukkan di atas menggunakan `/stream`) berbanding memilih penstriman melalui MCP.
 
 - **Untuk keperluan penstriman mudah:** Penstriman HTTP klasik lebih mudah dilaksanakan dan mencukupi untuk keperluan penstriman asas.
 
@@ -241,7 +241,7 @@ Baik, jadi anda telah melihat beberapa cadangan dan perbandingan setakat ini men
 
 Memahami bagaimana penstriman berfungsi dalam rangka kerja MCP adalah penting untuk membina aplikasi responsif yang memberikan maklum balas masa nyata kepada pengguna semasa operasi jangka panjang.
 
-Dalam MCP, penstriman bukan tentang menghantar respons utama secara berpecah, tetapi tentang menghantar **notifikasi** kepada klien semasa alat memproses permintaan. Notifikasi ini boleh merangkumi kemas kini kemajuan, log, atau peristiwa lain.
+Dalam MCP, penstriman bukan tentang menghantar respons utama secara berpecah-pecah, tetapi tentang menghantar **notifikasi** kepada klien semasa alat memproses permintaan. Notifikasi ini boleh merangkumi kemas kini kemajuan, log, atau peristiwa lain.
 
 ### Cara ia berfungsi
 
@@ -269,7 +269,7 @@ Notifikasi kelihatan seperti ini sebagai mesej JSON:
 
 Notifikasi tergolong dalam topik dalam MCP yang dirujuk sebagai ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
-Untuk mengaktifkan logging, pelayan perlu mengaktifkannya sebagai ciri/keupayaan seperti berikut:
+Untuk mengaktifkan logging, pelayan perlu menghidupkannya sebagai ciri/keupayaan seperti berikut:
 
 ```json
 {
@@ -285,13 +285,13 @@ Untuk mengaktifkan logging, pelayan perlu mengaktifkannya sebagai ciri/keupayaan
 Terdapat pelbagai jenis notifikasi:
 
 | Tahap      | Penerangan                    | Contoh Kes Penggunaan          |
-|------------|------------------------------|-------------------------------|
+|------------|-------------------------------|-------------------------------|
 | debug      | Maklumat debugging terperinci | Titik masuk/keluar fungsi     |
 | info       | Mesej maklumat umum           | Kemas kini kemajuan operasi   |
 | notice     | Peristiwa normal tetapi penting | Perubahan konfigurasi         |
-| warning    | Keadaan amaran                | Penggunaan ciri yang tidak disokong lagi |
+| warning    | Keadaan amaran                | Penggunaan ciri yang sudah lapuk |
 | error      | Keadaan ralat                | Kegagalan operasi             |
-| critical   | Keadaan kritikal              | Kegagalan komponen sistem     |
+| critical   | Keadaan kritikal             | Kegagalan komponen sistem     |
 | alert      | Tindakan mesti diambil segera | Pengesanan kerosakan data     |
 | emergency  | Sistem tidak boleh digunakan  | Kegagalan sistem sepenuhnya   |
 
@@ -318,7 +318,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-Dalam contoh di atas, alat `process_files` menghantar tiga notifikasi kepada klien semasa memproses setiap fail. Kaedah `ctx.info()` digunakan untuk menghantar mesej maklumat.
+Dalam contoh sebelum ini, alat `process_files` menghantar tiga notifikasi kepada klien semasa memproses setiap fail. Kaedah `ctx.info()` digunakan untuk menghantar mesej maklumat.
 
 </details>
 
@@ -384,7 +384,7 @@ async with ClientSession(
 ) as session:
 ```
 
-Dalam kod di atas, fungsi `message_handler` memeriksa sama ada mesej yang masuk adalah notifikasi. Jika ya, ia mencetak notifikasi tersebut; jika tidak, ia memprosesnya sebagai mesej pelayan biasa. Juga perhatikan bagaimana `ClientSession` diinisialisasi dengan `message_handler` untuk mengendalikan notifikasi yang masuk.
+Dalam kod sebelum ini, fungsi `message_handler` memeriksa sama ada mesej yang masuk adalah notifikasi. Jika ya, ia mencetak notifikasi; jika tidak, ia memprosesnya sebagai mesej pelayan biasa. Juga perhatikan bagaimana `ClientSession` diinisialisasi dengan `message_handler` untuk mengendalikan notifikasi yang masuk.
 
 </details>
 
@@ -418,7 +418,7 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-Dalam contoh .NET ini, fungsi `MessageHandler` memeriksa sama ada mesej yang masuk adalah notifikasi. Jika ya, ia mencetak notifikasi tersebut; jika tidak, ia memprosesnya sebagai mesej pelayan biasa. `ClientSession` diinisialisasi dengan pengendali mesej melalui `ClientSessionOptions`.
+Dalam contoh .NET ini, fungsi `MessageHandler` memeriksa sama ada mesej yang masuk adalah notifikasi. Jika ya, ia mencetak notifikasi; jika tidak, ia memprosesnya sebagai mesej pelayan biasa. `ClientSession` diinisialisasi dengan pengendali mesej melalui `ClientSessionOptions`.
 
 </details>
 

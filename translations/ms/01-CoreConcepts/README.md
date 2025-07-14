@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-04T18:12:46+00:00",
+  "translation_date": "2025-07-13T16:13:55+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "ms"
 }
 -->
 # 📖 Konsep Teras MCP: Menguasai Protokol Konteks Model untuk Integrasi AI
 
-[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) adalah rangka kerja berstandard yang kuat yang mengoptimumkan komunikasi antara Model Bahasa Besar (LLM) dan alat, aplikasi, serta sumber data luaran. Panduan yang dioptimumkan untuk SEO ini akan membawa anda melalui konsep teras MCP, memastikan anda memahami seni bina klien-pelayan, komponen penting, mekanisme komunikasi, dan amalan terbaik pelaksanaan.
+[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) adalah rangka kerja berstandard yang kuat yang mengoptimumkan komunikasi antara Large Language Models (LLM) dan alat, aplikasi, serta sumber data luaran. Panduan yang dioptimumkan untuk SEO ini akan membawa anda melalui konsep teras MCP, memastikan anda memahami seni bina klien-pelayan, komponen penting, mekanisme komunikasi, dan amalan terbaik pelaksanaan.
 
 ## Gambaran Keseluruhan
 
@@ -29,7 +29,7 @@ Menjelang akhir pelajaran ini, anda akan:
 
 Ekosistem MCP dibina berdasarkan model klien-pelayan. Struktur modular ini membolehkan aplikasi AI berinteraksi dengan alat, pangkalan data, API, dan sumber kontekstual dengan cekap. Mari kita pecahkan seni bina ini kepada komponen terasnya.
 
-Pada asasnya, MCP mengikuti seni bina klien-pelayan di mana aplikasi hos boleh berhubung dengan pelbagai pelayan:
+Pada asasnya, MCP mengikuti seni bina klien-pelayan di mana aplikasi host boleh berhubung dengan pelbagai pelayan:
 
 ```mermaid
 flowchart LR
@@ -73,7 +73,7 @@ Dalam Model Context Protocol (MCP), Hosts memainkan peranan penting sebagai anta
 
 Clients adalah komponen penting yang memudahkan interaksi antara Hosts dan pelayan MCP. Clients bertindak sebagai perantara, membolehkan Hosts mengakses dan menggunakan fungsi yang disediakan oleh pelayan MCP. Mereka memainkan peranan penting dalam memastikan komunikasi lancar dan pertukaran data yang cekap dalam seni bina MCP.
 
-**Clients** adalah penyambung dalam aplikasi hos. Mereka:
+**Clients** adalah penyambung dalam aplikasi host. Mereka:
 
 - Menghantar permintaan kepada pelayan dengan arahan/prompts.
 - Merundingkan keupayaan dengan pelayan.
@@ -96,7 +96,7 @@ Servers boleh dibangunkan oleh sesiapa sahaja untuk memperluas keupayaan model d
 
 ### 4. Ciri Pelayan
 
-Pelayan dalam Model Context Protocol (MCP) menyediakan blok binaan asas yang membolehkan interaksi kaya antara klien, hos, dan model bahasa. Ciri-ciri ini direka untuk meningkatkan keupayaan MCP dengan menawarkan konteks berstruktur, alat, dan arahan.
+Pelayan dalam Model Context Protocol (MCP) menyediakan blok binaan asas yang membolehkan interaksi kaya antara klien, host, dan model bahasa. Ciri-ciri ini direka untuk meningkatkan keupayaan MCP dengan menawarkan konteks berstruktur, alat, dan arahan.
 
 Pelayan MCP boleh menawarkan mana-mana ciri berikut:
 
@@ -117,12 +117,11 @@ database://schema
 ```
 
 ### 🤖 Arahan
-
 Arahan dalam Model Context Protocol (MCP) merangkumi pelbagai templat dan corak interaksi yang telah ditetapkan untuk memudahkan aliran kerja pengguna dan meningkatkan komunikasi. Ini termasuk:
 
 - **Mesej dan Aliran Kerja Bertemplated**: Mesej dan proses yang telah distrukturkan untuk membimbing pengguna melalui tugasan dan interaksi tertentu.
 - **Corak Interaksi Pra-Tetap**: Urutan tindakan dan respons yang distandardkan untuk memudahkan komunikasi yang konsisten dan cekap.
-- **Templat Perbualan Khusus**: Templat yang boleh disesuaikan untuk jenis perbualan tertentu, memastikan interaksi yang relevan dan sesuai konteks.
+- **Templat Perbualan Khusus**: Templat yang boleh disesuaikan untuk jenis perbualan tertentu, memastikan interaksi yang relevan dan sesuai dengan konteks.
 
 Contoh templat arahan boleh kelihatan seperti berikut:
 
@@ -135,7 +134,7 @@ Generate a product slogan based on the following {{product}} with the following 
 Alat dalam Model Context Protocol (MCP) adalah fungsi yang boleh dilaksanakan oleh model AI untuk melaksanakan tugasan tertentu. Alat ini direka untuk meningkatkan keupayaan model AI dengan menyediakan operasi yang berstruktur dan boleh dipercayai. Aspek utama termasuk:
 
 - **Fungsi untuk model AI laksanakan**: Alat adalah fungsi yang boleh dijalankan yang boleh dipanggil oleh model AI untuk melaksanakan pelbagai tugasan.
-- **Nama dan Penerangan Unik**: Setiap alat mempunyai nama yang tersendiri dan penerangan terperinci yang menerangkan tujuan dan fungsinya.
+- **Nama dan Penerangan Unik**: Setiap alat mempunyai nama yang tersendiri dan penerangan terperinci yang menjelaskan tujuan dan fungsinya.
 - **Parameter dan Output**: Alat menerima parameter tertentu dan mengembalikan output berstruktur, memastikan hasil yang konsisten dan boleh diramal.
 - **Fungsi Diskret**: Alat melaksanakan fungsi diskret seperti carian web, pengiraan, dan pertanyaan pangkalan data.
 
@@ -154,27 +153,26 @@ server.tool(
 ```
 
 ## Ciri Klien
-
 Dalam Model Context Protocol (MCP), klien menawarkan beberapa ciri utama kepada pelayan, meningkatkan fungsi keseluruhan dan interaksi dalam protokol. Salah satu ciri penting ialah Sampling.
 
 ### 👉 Sampling
 
 - **Tingkah Laku Agen yang Dimulakan oleh Pelayan**: Klien membolehkan pelayan memulakan tindakan atau tingkah laku tertentu secara autonomi, meningkatkan keupayaan dinamik sistem.
-- **Interaksi LLM Rekursif**: Ciri ini membolehkan interaksi rekursif dengan model bahasa besar (LLM), membolehkan pemprosesan tugasan yang lebih kompleks dan berulang.
-- **Meminta Lengkap Model Tambahan**: Pelayan boleh meminta lengkapan tambahan dari model, memastikan respons yang menyeluruh dan relevan secara kontekstual.
+- **Interaksi LLM Rekursif**: Ciri ini membolehkan interaksi rekursif dengan large language models (LLM), membolehkan pemprosesan tugasan yang lebih kompleks dan berulang.
+- **Meminta Lengkap Model Tambahan**: Pelayan boleh meminta lengkap tambahan dari model, memastikan respons yang menyeluruh dan relevan dengan konteks.
 
 ## Aliran Maklumat dalam MCP
 
-Model Context Protocol (MCP) mentakrifkan aliran maklumat berstruktur antara hos, klien, pelayan, dan model. Memahami aliran ini membantu menjelaskan bagaimana permintaan pengguna diproses dan bagaimana alat serta data luaran diintegrasikan ke dalam respons model.
+Model Context Protocol (MCP) mentakrifkan aliran maklumat berstruktur antara host, klien, pelayan, dan model. Memahami aliran ini membantu menjelaskan bagaimana permintaan pengguna diproses dan bagaimana alat serta data luaran diintegrasikan ke dalam respons model.
 
-- **Hos Memulakan Sambungan**  
-  Aplikasi hos (seperti IDE atau antara muka sembang) mewujudkan sambungan ke pelayan MCP, biasanya melalui STDIO, WebSocket, atau pengangkutan lain yang disokong.
+- **Host Memulakan Sambungan**  
+  Aplikasi host (seperti IDE atau antara muka sembang) mewujudkan sambungan ke pelayan MCP, biasanya melalui STDIO, WebSocket, atau pengangkutan lain yang disokong.
 
-- **Rundingan Keupayaan**  
-  Klien (terbenam dalam hos) dan pelayan bertukar maklumat mengenai ciri, alat, sumber, dan versi protokol yang disokong. Ini memastikan kedua-dua pihak memahami keupayaan yang tersedia untuk sesi tersebut.
+- **Perundingan Keupayaan**  
+  Klien (terbenam dalam host) dan pelayan bertukar maklumat mengenai ciri, alat, sumber, dan versi protokol yang disokong. Ini memastikan kedua-dua pihak memahami keupayaan yang tersedia untuk sesi tersebut.
 
 - **Permintaan Pengguna**  
-  Pengguna berinteraksi dengan hos (contohnya, memasukkan arahan atau perintah). Hos mengumpul input ini dan menghantarnya ke klien untuk diproses.
+  Pengguna berinteraksi dengan host (contohnya, memasukkan arahan atau perintah). Host mengumpul input ini dan menghantarnya ke klien untuk diproses.
 
 - **Penggunaan Sumber atau Alat**  
   - Klien mungkin meminta konteks atau sumber tambahan dari pelayan (seperti fail, entri pangkalan data, atau artikel pangkalan pengetahuan) untuk memperkayakan pemahaman model.
@@ -184,16 +182,16 @@ Model Context Protocol (MCP) mentakrifkan aliran maklumat berstruktur antara hos
   Pelayan menerima permintaan sumber atau alat, melaksanakan operasi yang diperlukan (seperti menjalankan fungsi, membuat pertanyaan pangkalan data, atau mendapatkan fail), dan mengembalikan hasil kepada klien dalam format berstruktur.
 
 - **Penjanaan Respons**  
-  Klien menggabungkan respons pelayan (data sumber, output alat, dan lain-lain) ke dalam interaksi model yang sedang berjalan. Model menggunakan maklumat ini untuk menghasilkan respons yang komprehensif dan relevan secara kontekstual.
+  Klien menggabungkan respons pelayan (data sumber, output alat, dan lain-lain) ke dalam interaksi model yang sedang berjalan. Model menggunakan maklumat ini untuk menghasilkan respons yang komprehensif dan relevan dengan konteks.
 
 - **Pembentangan Keputusan**  
-  Hos menerima output akhir dari klien dan membentangkannya kepada pengguna, sering kali termasuk teks yang dijana model dan sebarang hasil dari pelaksanaan alat atau pencarian sumber.
+  Host menerima output akhir dari klien dan membentangkannya kepada pengguna, sering kali termasuk teks yang dijana model dan sebarang hasil dari pelaksanaan alat atau pencarian sumber.
 
 Aliran ini membolehkan MCP menyokong aplikasi AI yang maju, interaktif, dan peka konteks dengan menghubungkan model dengan alat dan sumber data luaran secara lancar.
 
 ## Butiran Protokol
 
-MCP (Model Context Protocol) dibina di atas [JSON-RPC 2.0](https://www.jsonrpc.org/), menyediakan format mesej berstandard dan bebas bahasa untuk komunikasi antara hos, klien, dan pelayan. Asas ini membolehkan interaksi yang boleh dipercayai, berstruktur, dan boleh dikembangkan merentasi pelbagai platform dan bahasa pengaturcaraan.
+MCP (Model Context Protocol) dibina di atas [JSON-RPC 2.0](https://www.jsonrpc.org/), menyediakan format mesej berstandard dan bebas bahasa untuk komunikasi antara host, klien, dan pelayan. Asas ini membolehkan interaksi yang boleh dipercayai, berstruktur, dan boleh dikembangkan merentasi pelbagai platform dan bahasa pengaturcaraan.
 
 ### Ciri Protokol Utama
 
@@ -203,7 +201,7 @@ MCP meluaskan JSON-RPC 2.0 dengan konvensyen tambahan untuk panggilan alat, akse
 
 - **Format Mesej JSON-RPC**: Semua permintaan dan respons menggunakan spesifikasi JSON-RPC 2.0, memastikan struktur konsisten untuk panggilan kaedah, parameter, hasil, dan pengendalian ralat.
 - **Sambungan Berkeadaan**: Sesi MCP mengekalkan keadaan merentasi pelbagai permintaan, menyokong perbualan berterusan, pengumpulan konteks, dan pengurusan sumber.
-- **Rundingan Keupayaan**: Semasa penyediaan sambungan, klien dan pelayan bertukar maklumat mengenai ciri yang disokong, versi protokol, alat dan sumber yang tersedia. Ini memastikan kedua-dua pihak memahami keupayaan masing-masing dan boleh menyesuaikan diri.
+- **Perundingan Keupayaan**: Semasa penyediaan sambungan, klien dan pelayan bertukar maklumat mengenai ciri yang disokong, versi protokol, alat dan sumber yang tersedia. Ini memastikan kedua-dua pihak memahami keupayaan masing-masing dan boleh menyesuaikan diri.
 
 #### ➕ Utiliti Tambahan
 
@@ -211,9 +209,9 @@ Berikut adalah beberapa utiliti tambahan dan peluasan protokol yang disediakan M
 
 - **Pilihan Konfigurasi**: MCP membenarkan konfigurasi dinamik parameter sesi, seperti kebenaran alat, akses sumber, dan tetapan model, disesuaikan untuk setiap interaksi.
 - **Penjejakan Kemajuan**: Operasi yang mengambil masa lama boleh melaporkan kemas kini kemajuan, membolehkan antara muka pengguna yang responsif dan pengalaman pengguna yang lebih baik semasa tugasan kompleks.
-- **Pembatalan Permintaan**: Klien boleh membatalkan permintaan yang sedang berjalan, membolehkan pengguna menghentikan operasi yang tidak lagi diperlukan atau mengambil masa terlalu lama.
+- **Pembatalan Permintaan**: Klien boleh membatalkan permintaan yang sedang diproses, membolehkan pengguna menghentikan operasi yang tidak lagi diperlukan atau mengambil masa terlalu lama.
 - **Laporan Ralat**: Mesej dan kod ralat berstandard membantu mendiagnosis isu, mengendalikan kegagalan dengan baik, dan memberikan maklum balas yang berguna kepada pengguna dan pembangun.
-- **Pencatatan**: Kedua-dua klien dan pelayan boleh mengeluarkan log berstruktur untuk audit, penyahpepijatan, dan pemantauan interaksi protokol.
+- **Pencatatan**: Kedua-dua klien dan pelayan boleh mengeluarkan log berstruktur untuk audit, debugging, dan pemantauan interaksi protokol.
 
 Dengan memanfaatkan ciri protokol ini, MCP memastikan komunikasi yang kukuh, selamat, dan fleksibel antara model bahasa dan alat atau sumber data luaran.
 
@@ -376,7 +374,7 @@ class WeatherData {
 
 ### Contoh Python: Membina Pelayan MCP
 
-Dalam contoh ini kami menunjukkan cara membina pelayan MCP dalam Python. Anda juga ditunjukkan dua cara berbeza untuk mencipta alat.
+Dalam contoh ini kami menunjukkan cara membina pelayan MCP dalam Python. Anda juga ditunjukkan dua cara berbeza untuk membuat alat.
 
 ```python
 #!/usr/bin/env python3
@@ -511,7 +509,7 @@ server.connect(transport).catch(console.error);
 console.log("Weather MCP Server started");
 ```
 
-Contoh JavaScript ini menunjukkan cara mencipta klien MCP yang menyambung ke pelayan, menghantar arahan, dan memproses respons termasuk sebarang panggilan alat yang dibuat.
+Contoh JavaScript ini menunjukkan cara membuat klien MCP yang menyambung ke pelayan, menghantar arahan, dan memproses respons termasuk sebarang panggilan alat yang dibuat.
 
 ## Keselamatan dan Kebenaran
 MCP merangkumi beberapa konsep dan mekanisme terbina dalam untuk mengurus keselamatan dan kebenaran sepanjang protokol:
@@ -551,7 +549,7 @@ Komunikasi MCP menggunakan mesej JSON berstruktur untuk memudahkan interaksi yan
   Dihantar dari pelanggan ke pelayan apabila alat perlu dijalankan. Mesej ini mengandungi:
   - Nama alat yang hendak dipanggil
   - Parameter yang diperlukan oleh alat (disahkan mengikut skema alat)
-  - Maklumat kontekstual atau pengecam untuk menjejak permintaan
+  - Maklumat kontekstual atau pengecam untuk menjejaki permintaan
 
 - **Respons Alat**  
   Dikembalikan oleh pelayan selepas menjalankan alat. Mesej ini menyediakan:
@@ -559,7 +557,7 @@ Komunikasi MCP menggunakan mesej JSON berstruktur untuk memudahkan interaksi yan
   - Sebarang ralat atau maklumat status jika panggilan alat gagal
   - Secara pilihan, metadata tambahan atau log berkaitan pelaksanaan
 
-Mesej berstruktur ini memastikan setiap langkah dalam aliran kerja MCP adalah jelas, boleh dijejak, dan boleh dikembangkan, menyokong senario lanjutan seperti perbualan berbilang pusingan, rantai alat, dan pengendalian ralat yang kukuh.
+Mesej berstruktur ini memastikan setiap langkah dalam aliran kerja MCP adalah jelas, boleh dijejaki, dan boleh dikembangkan, menyokong senario lanjutan seperti perbualan berbilang pusingan, rantai alat, dan pengendalian ralat yang kukuh.
 
 ## Perkara Penting
 
@@ -571,7 +569,7 @@ Mesej berstruktur ini memastikan setiap langkah dalam aliran kerja MCP adalah je
 
 ## Latihan
 
-Reka bentuk alat MCP ringkas yang berguna dalam bidang anda. Tentukan:
+Reka alat MCP ringkas yang berguna dalam bidang anda. Tentukan:
 1. Nama alat tersebut
 2. Parameter yang diterima
 3. Output yang akan dikembalikan
@@ -582,7 +580,7 @@ Reka bentuk alat MCP ringkas yang berguna dalam bidang anda. Tentukan:
 
 ## Apa seterusnya
 
-Seterusnya: [Chapter 2: Security](../02-Security/README.md)
+Seterusnya: [Bab 2: Keselamatan](../02-Security/README.md)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

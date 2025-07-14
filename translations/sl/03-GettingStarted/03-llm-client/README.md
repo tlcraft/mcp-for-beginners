@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T19:15:50+00:00",
+  "translation_date": "2025-07-13T18:57:04+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sl"
 }
@@ -11,11 +11,11 @@ Super, za naslednji korak pa naštejmo zmogljivosti na strežniku.
 
 ### -2 Naštejmo zmogljivosti strežnika
 
-Zdaj se bomo povezali s strežnikom in zahtevali njegove zmogljivosti:
+Sedaj se bomo povezali s strežnikom in povprašali po njegovih zmogljivostih:
 
 ### -3- Pretvorba zmogljivosti strežnika v orodja za LLM
 
-Naslednji korak po naštetju zmogljivosti strežnika je, da jih pretvorimo v obliko, ki jo LLM razume. Ko to storimo, lahko te zmogljivosti ponudimo kot orodja našemu LLM.
+Naslednji korak po naštetju zmogljivosti strežnika je, da jih pretvorimo v format, ki ga LLM razume. Ko to storimo, lahko te zmogljivosti ponudimo kot orodja našemu LLM.
 
 Super, zdaj smo pripravljeni za obravnavo uporabniških zahtev, zato se lotimo tega.
 

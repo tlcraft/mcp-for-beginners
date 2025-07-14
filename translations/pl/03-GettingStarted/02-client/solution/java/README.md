@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:10:27+00:00",
+  "translation_date": "2025-07-13T18:34:06+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "pl"
 }
 -->
-# MCP Java Client - Calculator Demo
+# MCP Java Client - Demo Kalkulatora
 
-Ten projekt pokazuje, jak stworzyć klienta Java, który łączy się i komunikuje z serwerem MCP (Model Context Protocol). W tym przykładzie połączymy się z serwerem kalkulatora z Rozdziału 01 i wykonamy różne operacje matematyczne.
+Ten projekt pokazuje, jak stworzyć klienta Java, który łączy się i współpracuje z serwerem MCP (Model Context Protocol). W tym przykładzie połączymy się z serwerem kalkulatora z Rozdziału 01 i wykonamy różne operacje matematyczne.
 
 ## Wymagania wstępne
 
-Przed uruchomieniem tego klienta należy:
+Przed uruchomieniem tego klienta musisz:
 
-1. **Uruchomić serwer kalkulatora** z Rozdziału 01:
+1. **Uruchomić Serwer Kalkulatora** z Rozdziału 01:
    - Przejdź do katalogu serwera kalkulatora: `03-GettingStarted/01-first-server/solution/java/`
    - Zbuduj i uruchom serwer kalkulatora:
      ```cmd
@@ -25,12 +25,12 @@ Przed uruchomieniem tego klienta należy:
      ```
    - Serwer powinien działać pod adresem `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. Mieć zainstalowaną **Java 21 lub nowszą**
+3. Mieć zainstalowany **Maven** (dołączony przez Maven Wrapper)
 
-## What is the SDKClient?
+## Czym jest SDKClient?
 
-The `SDKClient` to aplikacja Java, która pokazuje, jak:
+`SDKClient` to aplikacja Java, która pokazuje, jak:
 - Połączyć się z serwerem MCP za pomocą transportu Server-Sent Events (SSE)
 - Wyświetlić listę dostępnych narzędzi na serwerze
 - Zdalnie wywołać różne funkcje kalkulatora
@@ -40,11 +40,11 @@ The `SDKClient` to aplikacja Java, która pokazuje, jak:
 
 Klient korzysta z frameworka Spring AI MCP, aby:
 
-1. **Nawiązać połączenie**: Tworzy transport WebFlux SSE, który łączy się z serwerem kalkulatora
-2. **Zainicjalizować klienta**: Ustawia klienta MCP i nawiązuje połączenie
-3. **Odkryć narzędzia**: Wyświetla listę wszystkich dostępnych operacji kalkulatora
+1. **Nawiązać połączenie**: Tworzy klienta WebFlux SSE do połączenia z serwerem kalkulatora
+2. **Zainicjalizować klienta**: Konfiguruje klienta MCP i ustanawia połączenie
+3. **Odkryć narzędzia**: Wyświetla wszystkie dostępne operacje kalkulatora
 4. **Wykonać operacje**: Wywołuje różne funkcje matematyczne na przykładowych danych
-5. **Wyświetlić wyniki**: Pokazuje wyniki każdego obliczenia
+5. **Wyświetlić wyniki**: Pokazuje rezultaty każdej kalkulacji
 
 ## Struktura projektu
 
@@ -71,14 +71,14 @@ Projekt korzysta z następujących kluczowych zależności:
 </dependency>
 ```
 
-Ta zależność zapewnia:
-- `McpClient` - The main client interface
+Ta zależność dostarcza:
+- `McpClient` - główny interfejs klienta
 - `WebFluxSseClientTransport` - transport SSE do komunikacji webowej
 - Schematy protokołu MCP oraz typy zapytań/odpowiedzi
 
 ## Budowanie projektu
 
-Zbuduj projekt używając wrappera Maven:
+Zbuduj projekt za pomocą Maven wrappera:
 
 ```cmd
 .\mvnw clean install
@@ -90,15 +90,15 @@ Zbuduj projekt używając wrappera Maven:
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Note**: Upewnij się, że serwer kalkulatora działa pod adresem `http://localhost:8080` before executing any of these commands.
+**Uwaga**: Upewnij się, że serwer kalkulatora działa pod adresem `http://localhost:8080` przed wykonaniem tych poleceń.
 
-## What the Client Does
+## Co robi klient
 
-When you run the client, it will:
+Po uruchomieniu klient:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **Wyświetl narzędzia** - Pokazuje wszystkie dostępne operacje kalkulatora
-3. **Wykonaj obliczenia**:
+1. **Łączy się** z serwerem kalkulatora pod adresem `http://localhost:8080`
+2. **Wyświetla narzędzia** - pokazuje wszystkie dostępne operacje kalkulatora
+3. **Wykonuje obliczenia**:
    - Dodawanie: 5 + 3 = 8
    - Odejmowanie: 10 - 4 = 6
    - Mnożenie: 6 × 7 = 42
@@ -106,7 +106,7 @@ When you run the client, it will:
    - Potęgowanie: 2^8 = 256
    - Pierwiastek kwadratowy: √16 = 4
    - Wartość bezwzględna: |-5.5| = 5.5
-   - Pomoc: Pokazuje dostępne operacje
+   - Pomoc: pokazuje dostępne operacje
 
 ## Oczekiwany wynik
 
@@ -122,7 +122,7 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Note**: Pod koniec mogą pojawić się ostrzeżenia Mavena o pozostających wątkach - jest to normalne w aplikacjach reaktywnych i nie oznacza błędu.
+**Uwaga**: Możesz zobaczyć ostrzeżenia Maven o pozostających wątkach na końcu - jest to normalne w aplikacjach reaktywnych i nie oznacza błędu.
 
 ## Zrozumienie kodu
 
@@ -174,4 +174,4 @@ Jeśli pojawią się błędy podczas budowania:
 - [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za wiarygodne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

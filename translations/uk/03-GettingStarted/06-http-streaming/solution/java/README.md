@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:51:05+00:00",
+  "translation_date": "2025-07-13T21:16:03+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "uk"
 }
@@ -37,13 +37,13 @@ java/
 
 ## Як це працює
 
-1. **Calculator Server** надає `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** надає кінцеву точку `/calculate`, яка:
+   - Приймає параметри запиту: `a` (число), `b` (число), `op` (операція)
+   - Підтримувані операції: `add`, `sub`, `mul`, `div`
+   - Повертає Server-Sent Events з прогресом обчислення та результатом
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
+2. **Calculator Client** підключається до сервера і:
+   - Виконує запит на обчислення `7 * 5`
    - Споживає стрімінгову відповідь
    - Виводить кожну подію у консоль
 
@@ -53,7 +53,7 @@ java/
 
 #### 1. Запустіть Calculator Server
 
-Відкрийте термінал і перейдіть до директорії сервера:
+Відкрийте термінал і перейдіть у директорію сервера:
 
 ```bash
 cd calculator-server
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 Сервер запуститься за адресою `http://localhost:8080`
 
-Ви побачите приблизно такий вивід:
+Ви побачите вивід подібний до:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -71,7 +71,7 @@ Netty started on port 8080 (http)
 
 #### 2. Запустіть Calculator Client
 
-Відкрийте **новий термінал** і перейдіть до директорії клієнта:
+Відкрийте **новий термінал** і перейдіть у директорію клієнта:
 
 ```bash
 cd calculator-client
@@ -79,7 +79,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Клієнт підключиться до сервера, виконає обчислення та покаже результати у стрімі.
+Клієнт підключиться до сервера, виконає обчислення та відобразить результати стрімінгу.
 
 ### Варіант 2: Запуск безпосередньо через Java
 
@@ -101,19 +101,19 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## Ручне тестування сервера
 
-Також ви можете протестувати сервер через браузер або curl:
+Ви також можете протестувати сервер через веб-браузер або curl:
 
-### Через браузер:
-Перейдіть за адресою: `http://localhost:8080/calculate?a=10&b=5&op=add`
+### Через веб-браузер:
+Відвідайте: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
 ### Через curl:
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
-## Очікуваний результат
+## Очікуваний вивід
 
-При запуску клієнта ви побачите стрімінговий вивід, схожий на цей:
+Під час запуску клієнта ви побачите стрімінговий вивід, схожий на:
 
 ```
 event:info
@@ -125,23 +125,23 @@ data:35.0
 
 ## Підтримувані операції
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Додавання (a + b)
+- `sub` - Віднімання (a - b)
+- `mul` - Множення (a * b)
+- `div` - Ділення (a / b, повертає NaN, якщо b = 0)
 
 ## API Reference
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Параметри:**
+- `a` (обов’язковий): перше число (double)
+- `b` (обов’язковий): друге число (double)
+- `op` (обов’язковий): операція (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Відповідь:**
 - Content-Type: `text/event-stream`
-- Повертає Server-Sent Events з прогресом обчислень та результатом
+- Повертає Server-Sent Events з прогресом обчислення та результатом
 
 **Приклад запиту:**
 ```
@@ -165,31 +165,31 @@ data: 35.0
 
 1. **Порт 8080 вже використовується**
    - Зупиніть інші додатки, які використовують порт 8080
-   - Або змініть порт сервера у `calculator-server/src/main/resources/application.yml`
+   - Або змініть порт сервера у файлі `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Відмова у з’єднанні**
+   - Переконайтеся, що сервер запущений перед запуском клієнта
+   - Перевірте, що сервер успішно стартував на порту 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Проблеми з іменами параметрів**
+   - У проєкті налаштовано Maven компілятор з прапорцем `-parameters`
+   - Якщо виникають проблеми з прив’язкою параметрів, переконайтеся, що проєкт зібрано з цією конфігурацією
 
-### Stopping the Applications
+### Зупинка додатків
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop`, якщо сервер запущений у фоновому режимі
+- Натисніть `Ctrl+C` у терміналі, де запущено кожен додаток
+- Або використайте `mvn spring-boot:stop`, якщо додаток запущено у фоновому режимі
 
 ## Технологічний стек
 
-- **Spring Boot 3.3.1** - фреймворк додатка
+- **Spring Boot 3.3.1** - фреймворк для додатків
 - **Spring WebFlux** - реактивний веб-фреймворк
-- **Project Reactor** - бібліотека реактивних стрімів
+- **Project Reactor** - бібліотека для реактивних стрімів
 - **Netty** - сервер з неблокуючим ввід/виводом
 - **Maven** - інструмент збірки
 - **Java 17+** - мова програмування
 
-## Подальші кроки
+## Наступні кроки
 
 Спробуйте змінити код, щоб:
 - Додати більше математичних операцій

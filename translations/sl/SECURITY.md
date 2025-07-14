@@ -2,48 +2,48 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "57f14126c1c6add76b3aef3844dfe4e3",
-  "translation_date": "2025-05-17T05:44:55+00:00",
+  "translation_date": "2025-07-13T15:08:31+00:00",
   "source_file": "SECURITY.md",
   "language_code": "sl"
 }
 -->
 ## Varnost
 
-Microsoft jemlje varnost naših programskih izdelkov in storitev resno, kar vključuje vse repozitorije izvorne kode, ki jih upravljamo prek naših GitHub organizacij, med katerimi so [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet) in [Xamarin](https://github.com/xamarin).
+Microsoft jemlje varnost naših programski izdelkov in storitev resno, kar vključuje vse repozitorije izvorne kode, ki jih upravljamo prek naših GitHub organizacij, med katerimi so [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet) in [Xamarin](https://github.com/xamarin).
 
-Če menite, da ste odkrili varnostno ranljivost v katerem koli repozitoriju v lasti Microsofta, ki ustreza [Microsoftovi definiciji varnostne ranljivosti](https://aka.ms/security.md/definition), nam to prosimo prijavite, kot je opisano spodaj.
+Če menite, da ste odkrili varnostno ranljivost v katerem koli repozitoriju v lasti Microsofta, ki ustreza [Microsoftovi definiciji varnostne ranljivosti](https://aka.ms/security.md/definition), nam jo prosim prijavite, kot je opisano spodaj.
 
 ## Prijava varnostnih težav
 
-**Prosim, ne prijavljajte varnostnih ranljivosti preko javnih GitHub vprašanj.**
+**Prosimo, ne prijavljajte varnostnih ranljivosti preko javnih GitHub zadev.**
 
-Namesto tega jih prijavite Microsoftovemu centru za odziv na varnost (MSRC) na [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report).
+Namesto tega jih prijavite Microsoft Security Response Center (MSRC) na [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report).
 
-Če želite prijavo poslati brez prijave, pošljite e-pošto na [secure@microsoft.com](mailto:secure@microsoft.com). Če je mogoče, šifrirajte vaše sporočilo z našim PGP ključem; prosimo, prenesite ga s strani [Microsoft Security Response Center PGP Key](https://aka.ms/security.md/msrc/pgp).
+Če želite prijavo oddati brez prijave, pošljite e-pošto na [secure@microsoft.com](mailto:secure@microsoft.com). Če je mogoče, sporočilo šifrirajte z našim PGP ključem; prenesite ga na strani [Microsoft Security Response Center PGP Key](https://aka.ms/security.md/msrc/pgp).
 
-Odgovor bi morali prejeti v 24 urah. Če ga iz kakršnega koli razloga ne prejmete, prosimo, da ponovno pošljete e-pošto, da zagotovite, da smo prejeli vaše prvotno sporočilo. Dodatne informacije lahko najdete na [microsoft.com/msrc](https://www.microsoft.com/msrc).
+Odgovor bi morali prejeti v 24 urah. Če iz kakršnega koli razloga ne, prosimo, da nas preko e-pošte opomnite, da smo prejeli vaše prvotno sporočilo. Dodatne informacije so na voljo na [microsoft.com/msrc](https://www.microsoft.com/msrc).
 
-Prosimo, vključite zahtevane informacije, navedene spodaj (kolikor jih lahko zagotovite), da nam pomagate bolje razumeti naravo in obseg morebitne težave:
+Prosimo, vključite spodaj zahtevane informacije (kolikor jih lahko zagotovite), da nam pomagate bolje razumeti naravo in obseg morebitne težave:
 
-  * Vrsta težave (npr. prelivanje medpomnilnika, SQL injekcija, skriptanje med mesti itd.)
-  * Polne poti izvorne datoteke(-datotek), povezane z manifestacijo težave
-  * Lokacija prizadete izvorne kode (oznaka/veja/zaveza ali neposredni URL)
-  * Kakršna koli posebna konfiguracija, potrebna za reproduciranje težave
-  * Korak za korakom navodila za reproduciranje težave
+  * Vrsta težave (npr. prelivanje medpomnilnika, SQL injection, cross-site scripting itd.)
+  * Polne poti izvornih datotek, povezanih z manifestacijo težave
+  * Lokacija prizadete izvorne kode (tag/branch/commit ali neposredni URL)
+  * Morebitna posebna konfiguracija, potrebna za ponovitev težave
+  * Korak za korakom navodila za ponovitev težave
   * Dokaz koncepta ali izkoriščevalna koda (če je mogoče)
-  * Vpliv težave, vključno s tem, kako bi napadalec lahko izkoristil težavo
+  * Vpliv težave, vključno s tem, kako bi jo lahko napadalec izkoristil
 
-Te informacije nam bodo pomagale hitreje obdelati vaše poročilo.
+Te informacije nam bodo pomagale hitreje obravnavati vašo prijavo.
 
-Če poročate za nagrado za napake, lahko bolj popolna poročila prispevajo k višji nagradi. Prosimo, obiščite našo stran [Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty) za več podrobnosti o naših aktivnih programih.
+Če prijavljate za bug bounty, lahko bolj popolne prijave prispevajo k višji nagradi. Za več podrobnosti o naših aktivnih programih obiščite stran [Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty).
 
-## Prednostni jeziki
+## Priporočeni jeziki
 
-Prednost dajemo komunikaciji v angleščini.
+Vse komunikacije naj bodo v angleščini.
 
 ## Politika
 
-Microsoft sledi načelu [Usklajeno razkritje ranljivosti](https://aka.ms/security.md/cvd).
+Microsoft sledi načelu [Koordinirane razkritja ranljivosti](https://aka.ms/security.md/cvd).
 
-**Omejitev odgovornosti**:
-Ta dokument je bil preveden z uporabo storitve AI prevajanja [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne odgovarjamo za morebitna nesporazumevanja ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

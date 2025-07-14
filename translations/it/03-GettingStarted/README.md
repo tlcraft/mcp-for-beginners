@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:30:37+00:00",
+  "translation_date": "2025-07-13T17:15:27+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "it"
 }
@@ -15,7 +15,7 @@ Questa sezione è composta da diverse lezioni:
 
 - **2 Client**, in questa lezione imparerai come scrivere un client che può connettersi al tuo server, [alla lezione](02-client/README.md)
 
-- **3 Client con LLM**, un modo ancora migliore di scrivere un client è aggiungendo un LLM così può "negoziare" con il tuo server su cosa fare, [alla lezione](03-llm-client/README.md)
+- **3 Client con LLM**, un modo ancora migliore di scrivere un client è aggiungendo un LLM così da poter "negoziare" con il tuo server cosa fare, [alla lezione](03-llm-client/README.md)
 
 - **4 Utilizzo di un server in modalità GitHub Copilot Agent in Visual Studio Code**. Qui vediamo come eseguire il nostro MCP Server direttamente da Visual Studio Code, [alla lezione](04-vscode/README.md)
 
@@ -30,7 +30,7 @@ Questa sezione è composta da diverse lezioni:
 - **9 Deployment**. Questo capitolo esaminerà diversi modi per distribuire le tue soluzioni MCP, [alla lezione](09-deployment/README.md)
 
 
-Il Model Context Protocol (MCP) è un protocollo aperto che standardizza il modo in cui le applicazioni forniscono contesto agli LLM. Pensa a MCP come a una porta USB-C per le applicazioni AI - offre un modo standardizzato per collegare modelli AI a diverse fonti di dati e strumenti.
+Il Model Context Protocol (MCP) è un protocollo aperto che standardizza il modo in cui le applicazioni forniscono contesto agli LLM. Pensa a MCP come a una porta USB-C per le applicazioni AI: offre un modo standardizzato per collegare modelli AI a diverse fonti di dati e strumenti.
 
 ## Obiettivi di Apprendimento
 
@@ -80,19 +80,19 @@ MCP fornisce SDK ufficiali per diversi linguaggi:
 
 ## Esercitarsi
 
-Abbiamo una serie di esempi che completano gli esercizi che vedrai in tutti i capitoli di questa sezione. Inoltre, ogni capitolo ha i propri esercizi e compiti
+Abbiamo una serie di esempi che completano gli esercizi che vedrai in tutti i capitoli di questa sezione. Inoltre, ogni capitolo ha i propri esercizi e compiti.
 
-- [Calcolatrice Java](./samples/java/calculator/README.md)
-- [Calcolatrice .Net](../../../03-GettingStarted/samples/csharp)
-- [Calcolatrice JavaScript](./samples/javascript/README.md)
-- [Calcolatrice TypeScript](./samples/typescript/README.md)
-- [Calcolatrice Python](../../../03-GettingStarted/samples/python)
+- [Java Calculator](./samples/java/calculator/README.md)
+- [.Net Calculator](../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](./samples/javascript/README.md)
+- [TypeScript Calculator](./samples/typescript/README.md)
+- [Python Calculator](../../../03-GettingStarted/samples/python)
 
 ## Risorse Aggiuntive
 
 - [Costruire agenti usando Model Context Protocol su Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
 - [MCP remoto con Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [Agente MCP OpenAI .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Agente MCP OpenAI per .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Cosa c’è dopo
 

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T15:55:33+00:00",
+  "translation_date": "2025-07-13T22:06:27+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "zh"
 }
 -->
 # 部署 MCP 服务器
 
-部署你的 MCP 服务器可以让其他人访问其工具和资源，而不仅限于你的本地环境。根据你对可扩展性、可靠性和管理便捷性的需求，有多种部署策略可供选择。下面你将找到关于本地、容器和云端部署 MCP 服务器的指导。
+部署你的 MCP 服务器可以让其他人访问其工具和资源，而不仅限于你的本地环境。根据你对可扩展性、可靠性和管理便捷性的需求，有多种部署策略可供选择。下面你将找到关于在本地、容器和云端部署 MCP 服务器的指导。
 
 ## 概述
 
@@ -38,7 +38,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 MCP 服务器可以部署到多种云平台：
 
-- **无服务器函数**：将轻量级 MCP 服务器部署为无服务器函数。  
+- **无服务器函数**：将轻量级 MCP 服务器作为无服务器函数部署。  
 - **容器服务**：使用 Azure Container Apps、AWS ECS 或 Google Cloud Run 等服务。  
 - **Kubernetes**：在 Kubernetes 集群中部署和管理 MCP 服务器，实现高可用性。
 
@@ -92,7 +92,7 @@ Azure Container Apps 支持部署 MCP 服务器。该功能仍在开发中，目
   }
   ```
 
-  SSE 服务器启动后，你可以点击 JSON 文件中的播放图标，此时 GitHub Copilot 应该能识别服务器上的工具，显示工具图标。
+  SSE 服务器启动后，你可以点击 JSON 文件中的播放图标，此时 GitHub Copilot 应该能识别服务器上的工具，查看工具图标。
 
 1. 部署时，运行以下命令：
 
@@ -100,17 +100,17 @@ Azure Container Apps 支持部署 MCP 服务器。该功能仍在开发中，目
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-就是这样，通过这些步骤你可以本地部署，也可以部署到 Azure。
+就是这样，通过这些步骤你可以在本地部署，也可以部署到 Azure。
 
 ## 额外资源
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
-- [Azure Container Apps 文章](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
-- [Azure Container Apps MCP 仓库](https://github.com/anthonychu/azure-container-apps-mcp-sample)
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
+- [Azure Container Apps 文章](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
+- [Azure Container Apps MCP 仓库](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
 
-## 后续内容
+## 接下来
 
-- 下一节：[实战演练](../../04-PracticalImplementation/README.md)
+- 下一步：[实战演练](../../04-PracticalImplementation/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。我们不对因使用本翻译而产生的任何误解或误释承担责任。

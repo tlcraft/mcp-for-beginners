@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T06:08:30+00:00",
+  "translation_date": "2025-07-13T19:04:37+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "ro"
 }
@@ -28,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Ar trebui să instaleze următoarele biblioteci: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
+Ar trebui să instalezi următoarele biblioteci: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Rulează
 
@@ -36,7 +36,7 @@ Ar trebui să instaleze următoarele biblioteci: Azure AI Inference, Azure Ident
 dotnet run
 ```
 
-Ar trebui să vezi o ieșire asemănătoare cu:
+Ar trebui să vezi o ieșire similară cu:
 
 ```text
 Setting up stdio transport
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-O mare parte din ieșire este doar pentru depanare, dar ceea ce contează este că listezi uneltele de pe MCP Server, le transformi în unelte LLM și la final obții un răspuns de la clientul MCP „Sum 6”.
+O mare parte din ieșire este doar pentru depanare, dar ceea ce contează este că listezi uneltele de pe MCP Server, le transformi în unelte LLM și obții un răspuns de la clientul MCP „Sum 6”.
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un traducător uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot rezulta din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

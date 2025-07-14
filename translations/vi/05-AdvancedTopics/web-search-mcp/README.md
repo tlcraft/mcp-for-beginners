@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-06-11T16:02:38+00:00",
+  "translation_date": "2025-07-14T03:41:45+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "vi"
 }
 -->
 # Bài học: Xây dựng MCP Server Tìm kiếm Web
 
-Chương này hướng dẫn cách xây dựng một AI agent thực tế tích hợp với các API bên ngoài, xử lý nhiều loại dữ liệu khác nhau, quản lý lỗi và điều phối nhiều công cụ—tất cả trong một định dạng sẵn sàng cho môi trường sản xuất. Bạn sẽ thấy:
+Chương này hướng dẫn cách xây dựng một agent AI thực tế tích hợp với các API bên ngoài, xử lý đa dạng loại dữ liệu, quản lý lỗi và điều phối nhiều công cụ—tất cả trong một định dạng sẵn sàng cho môi trường sản xuất. Bạn sẽ thấy:
 
 - **Tích hợp với các API bên ngoài yêu cầu xác thực**
 - **Xử lý đa dạng loại dữ liệu từ nhiều điểm cuối**
-- **Chiến lược xử lý lỗi và ghi log vững chắc**
-- **Điều phối đa công cụ trong một server duy nhất**
+- **Chiến lược xử lý lỗi và ghi log mạnh mẽ**
+- **Điều phối nhiều công cụ trong một server duy nhất**
 
-Kết thúc bài học, bạn sẽ có kinh nghiệm thực tế với các mẫu và thực hành tốt nhất cần thiết cho các ứng dụng AI và LLM nâng cao.
+Kết thúc bài học, bạn sẽ có kinh nghiệm thực tiễn với các mẫu thiết kế và thực hành tốt nhất cần thiết cho các ứng dụng AI và LLM nâng cao.
 
 ## Giới thiệu
 
-Trong bài học này, bạn sẽ học cách xây dựng một MCP server và client nâng cao mở rộng khả năng LLM với dữ liệu web thời gian thực bằng SerpAPI. Đây là kỹ năng quan trọng để phát triển các AI agent động có thể truy cập thông tin cập nhật từ web.
+Trong bài học này, bạn sẽ học cách xây dựng một MCP server và client nâng cao, mở rộng khả năng của LLM với dữ liệu web thời gian thực sử dụng SerpAPI. Đây là kỹ năng quan trọng để phát triển các agent AI động có thể truy cập thông tin cập nhật từ web.
 
 ## Mục tiêu học tập
 
@@ -28,7 +28,7 @@ Kết thúc bài học, bạn sẽ có thể:
 
 - Tích hợp các API bên ngoài (như SerpAPI) một cách an toàn vào MCP server
 - Triển khai nhiều công cụ cho tìm kiếm web, tin tức, sản phẩm và hỏi đáp
-- Phân tích và định dạng dữ liệu có cấu trúc để LLM tiêu thụ
+- Phân tích và định dạng dữ liệu có cấu trúc để LLM sử dụng
 - Xử lý lỗi và quản lý giới hạn tốc độ API hiệu quả
 - Xây dựng và kiểm thử cả client tự động và tương tác
 
@@ -38,15 +38,15 @@ Phần này giới thiệu kiến trúc và tính năng của MCP Server Tìm ki
 
 ### Tổng quan
 
-Triển khai này có bốn công cụ thể hiện khả năng của MCP trong việc xử lý các tác vụ API bên ngoài đa dạng, an toàn và hiệu quả:
+Triển khai này có bốn công cụ thể hiện khả năng của MCP trong việc xử lý các tác vụ đa dạng dựa trên API bên ngoài một cách an toàn và hiệu quả:
 
-- **general_search**: Tìm kiếm web rộng
-- **news_search**: Tin tức mới nhất
-- **product_search**: Dữ liệu thương mại điện tử
-- **qna**: Đoạn hỏi đáp
+- **general_search**: Tìm kiếm web tổng quát
+- **news_search**: Tìm kiếm các tiêu đề tin tức mới nhất
+- **product_search**: Tìm kiếm dữ liệu thương mại điện tử
+- **qna**: Trích xuất câu hỏi và trả lời
 
 ### Tính năng
-- **Ví dụ mã nguồn**: Bao gồm các đoạn mã theo ngôn ngữ cụ thể cho Python (và dễ dàng mở rộng sang ngôn ngữ khác) với các phần có thể thu gọn để rõ ràng hơn
+- **Ví dụ mã nguồn**: Bao gồm các đoạn mã theo ngôn ngữ cụ thể cho Python (và dễ dàng mở rộng sang các ngôn ngữ khác) sử dụng các phần có thể thu gọn để rõ ràng hơn
 
 <details>  
 <summary>Python</summary>  
@@ -69,11 +69,11 @@ async def run_search():
 ```
 </details>
 
-Trước khi chạy client, bạn nên hiểu server làm gì. File [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+Trước khi chạy client, bạn nên hiểu server làm gì. Tệp [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) triển khai MCP server, cung cấp các công cụ tìm kiếm web, tin tức, sản phẩm và hỏi đáp bằng cách tích hợp với SerpAPI. Nó xử lý các yêu cầu đến, quản lý các cuộc gọi API, phân tích phản hồi và trả về kết quả có cấu trúc cho client.
 
-You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Bạn có thể xem toàn bộ triển khai trong [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-Dưới đây là ví dụ ngắn gọn về cách server định nghĩa và đăng ký một công cụ:
+Dưới đây là ví dụ ngắn về cách server định nghĩa và đăng ký một công cụ:
 
 <details>  
 <summary>Python Server</summary> 
@@ -94,14 +94,14 @@ if __name__ == "__main__":
 </details>
 
 - **Tích hợp API bên ngoài**: Minh họa cách xử lý an toàn khóa API và các yêu cầu bên ngoài
-- **Phân tích dữ liệu có cấu trúc**: Biến đổi phản hồi API thành định dạng thân thiện với LLM
-- **Xử lý lỗi**: Xử lý lỗi vững chắc kèm ghi log phù hợp
+- **Phân tích dữ liệu có cấu trúc**: Cho thấy cách chuyển đổi phản hồi API thành định dạng thân thiện với LLM
+- **Xử lý lỗi**: Xử lý lỗi mạnh mẽ kèm ghi log phù hợp
 - **Client tương tác**: Bao gồm cả kiểm thử tự động và chế độ tương tác để thử nghiệm
-- **Quản lý ngữ cảnh**: Tận dụng MCP Context để ghi log và theo dõi các yêu cầu
+- **Quản lý ngữ cảnh**: Sử dụng MCP Context để ghi log và theo dõi các yêu cầu
 
 ## Yêu cầu trước
 
-Trước khi bắt đầu, hãy đảm bảo môi trường của bạn đã được thiết lập đúng bằng cách làm theo các bước sau. Điều này đảm bảo tất cả phụ thuộc được cài đặt và khóa API của bạn được cấu hình chính xác để phát triển và kiểm thử mượt mà.
+Trước khi bắt đầu, hãy đảm bảo môi trường của bạn được thiết lập đúng bằng cách làm theo các bước sau. Điều này đảm bảo tất cả các phụ thuộc được cài đặt và khóa API của bạn được cấu hình chính xác để phát triển và kiểm thử thuận lợi.
 
 - Python 3.8 trở lên
 - Khóa API SerpAPI (Đăng ký tại [SerpAPI](https://serpapi.com/) - có gói miễn phí)
@@ -120,21 +120,21 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. Tạo file `.env` ở thư mục gốc dự án với khóa SerpAPI của bạn:
+2. Tạo tệp `.env` ở thư mục gốc dự án với khóa SerpAPI của bạn:
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
 ```
 
-## Sử dụng
+## Cách sử dụng
 
 MCP Server Tìm kiếm Web là thành phần cốt lõi cung cấp các công cụ tìm kiếm web, tin tức, sản phẩm và hỏi đáp bằng cách tích hợp với SerpAPI. Nó xử lý các yêu cầu đến, quản lý các cuộc gọi API, phân tích phản hồi và trả về kết quả có cấu trúc cho client.
 
 Bạn có thể xem toàn bộ triển khai trong [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-### Khởi chạy Server
+### Khởi động Server
 
-Để chạy MCP server, dùng lệnh sau:
+Để khởi động MCP server, sử dụng lệnh sau:
 
 ```bash
 python server.py
@@ -144,16 +144,16 @@ Server sẽ chạy dưới dạng MCP server dựa trên stdio mà client có th
 
 ### Chế độ Client
 
-Client (`client.py`) supports two modes for interacting with the MCP server:
+Client (`client.py`) hỗ trợ hai chế độ tương tác với MCP server:
 
-- **Normal mode**: Runs automated tests that exercise all the tools and verify their responses. This is useful for quickly checking that the server and tools are working as expected.
-- **Interactive mode**: Starts a menu-driven interface where you can manually select and call tools, enter custom queries, and see results in real time. This is ideal for exploring the server's capabilities and experimenting with different inputs.
+- **Chế độ bình thường**: Chạy các kiểm thử tự động để kiểm tra tất cả các công cụ và xác minh phản hồi của chúng. Điều này hữu ích để nhanh chóng kiểm tra server và các công cụ hoạt động như mong đợi.
+- **Chế độ tương tác**: Khởi động giao diện menu cho phép bạn chọn và gọi công cụ thủ công, nhập truy vấn tùy chỉnh và xem kết quả theo thời gian thực. Đây là cách lý tưởng để khám phá khả năng của server và thử nghiệm với các đầu vào khác nhau.
 
-You can review the full implementation in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
+Bạn có thể xem toàn bộ triển khai trong [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
 ### Chạy Client
 
-Để chạy các kiểm thử tự động (lệnh này sẽ tự động khởi động server):
+Để chạy kiểm thử tự động (lệnh này sẽ tự động khởi động server):
 
 ```bash
 python client.py
@@ -167,10 +167,10 @@ python client.py --interactive
 
 ### Kiểm thử với các phương pháp khác nhau
 
-Có nhiều cách để kiểm thử và tương tác với các công cụ do server cung cấp, tùy theo nhu cầu và quy trình làm việc của bạn.
+Có nhiều cách để kiểm thử và tương tác với các công cụ do server cung cấp, tùy thuộc vào nhu cầu và quy trình làm việc của bạn.
 
 #### Viết script kiểm thử tùy chỉnh với MCP Python SDK
-Bạn cũng có thể tự viết các script kiểm thử sử dụng MCP Python SDK:
+Bạn cũng có thể xây dựng các script kiểm thử riêng bằng MCP Python SDK:
 
 <details>
 <summary>Python</summary>
@@ -195,27 +195,27 @@ async def test_custom_query():
 ```
 </details>
 
-Trong ngữ cảnh này, "script kiểm thử" là chương trình Python tùy chỉnh bạn viết để làm client cho MCP server. Thay vì là một unit test chính thức, script này cho phép bạn kết nối lập trình với server, gọi bất kỳ công cụ nào với tham số bạn chọn và kiểm tra kết quả. Cách làm này hữu ích cho:
-- Thử nghiệm và khám phá các lời gọi công cụ
+Trong ngữ cảnh này, "script kiểm thử" nghĩa là một chương trình Python tùy chỉnh bạn viết để làm client cho MCP server. Thay vì là một unit test chính thức, script này cho phép bạn kết nối lập trình với server, gọi bất kỳ công cụ nào với tham số bạn chọn, và kiểm tra kết quả. Cách làm này hữu ích cho:
+- Phát triển mẫu và thử nghiệm các cuộc gọi công cụ
 - Xác thực phản hồi của server với các đầu vào khác nhau
 - Tự động hóa các lần gọi công cụ lặp lại
-- Xây dựng các quy trình làm việc hoặc tích hợp riêng trên MCP server
+- Xây dựng quy trình làm việc hoặc tích hợp riêng trên MCP server
 
-Bạn có thể dùng script kiểm thử để nhanh chóng thử các truy vấn mới, gỡ lỗi hành vi công cụ, hoặc làm điểm khởi đầu cho tự động hóa nâng cao. Dưới đây là ví dụ về cách dùng MCP Python SDK để tạo script như vậy:
+Bạn có thể dùng script kiểm thử để nhanh chóng thử các truy vấn mới, gỡ lỗi hành vi công cụ, hoặc làm điểm khởi đầu cho tự động hóa nâng cao hơn. Dưới đây là ví dụ cách dùng MCP Python SDK để tạo script như vậy:
 
 ## Mô tả các công cụ
 
-Bạn có thể sử dụng các công cụ sau do server cung cấp để thực hiện các loại tìm kiếm và truy vấn khác nhau. Mỗi công cụ được mô tả bên dưới với các tham số và ví dụ sử dụng.
+Bạn có thể sử dụng các công cụ sau do server cung cấp để thực hiện các loại tìm kiếm và truy vấn khác nhau. Mỗi công cụ được mô tả dưới đây với các tham số và ví dụ sử dụng.
 
-Phần này cung cấp chi tiết về từng công cụ có sẵn và tham số của chúng.
+Phần này cung cấp chi tiết về từng công cụ có sẵn và các tham số của chúng.
 
 ### general_search
 
-Thực hiện tìm kiếm web tổng quát và trả về kết quả đã định dạng.
+Thực hiện tìm kiếm web tổng quát và trả về kết quả đã được định dạng.
 
 **Cách gọi công cụ này:**
 
-Bạn có thể gọi `general_search` từ script của bạn sử dụng MCP Python SDK, hoặc tương tác qua Inspector hoặc chế độ client tương tác. Dưới đây là ví dụ mã nguồn dùng SDK:
+Bạn có thể gọi `general_search` từ script của bạn sử dụng MCP Python SDK, hoặc tương tác qua Inspector hoặc chế độ client tương tác. Dưới đây là ví dụ mã sử dụng SDK:
 
 <details>
 <summary>Ví dụ Python</summary>
@@ -237,9 +237,9 @@ async def run_general_search():
 ```
 </details>
 
-Ngoài ra, ở chế độ tương tác, chọn `general_search` from the menu and enter your query when prompted.
+Ngoài ra, trong chế độ tương tác, chọn `general_search` từ menu và nhập truy vấn khi được yêu cầu.
 
-**Parameters:**
+**Tham số:**
 - `query` (chuỗi): Truy vấn tìm kiếm
 
 **Ví dụ yêu cầu:**
@@ -256,7 +256,7 @@ Tìm kiếm các bài báo tin tức gần đây liên quan đến truy vấn.
 
 **Cách gọi công cụ này:**
 
-Bạn có thể gọi `news_search` từ script của bạn sử dụng MCP Python SDK, hoặc tương tác qua Inspector hoặc chế độ client tương tác. Dưới đây là ví dụ mã nguồn dùng SDK:
+Bạn có thể gọi `news_search` từ script của bạn sử dụng MCP Python SDK, hoặc tương tác qua Inspector hoặc chế độ client tương tác. Dưới đây là ví dụ mã sử dụng SDK:
 
 <details>
 <summary>Ví dụ Python</summary>
@@ -278,9 +278,9 @@ async def run_news_search():
 ```
 </details>
 
-Ngoài ra, ở chế độ tương tác, chọn `news_search` from the menu and enter your query when prompted.
+Ngoài ra, trong chế độ tương tác, chọn `news_search` từ menu và nhập truy vấn khi được yêu cầu.
 
-**Parameters:**
+**Tham số:**
 - `query` (chuỗi): Truy vấn tìm kiếm
 
 **Ví dụ yêu cầu:**
@@ -293,11 +293,11 @@ Ngoài ra, ở chế độ tương tác, chọn `news_search` from the menu and 
 
 ### product_search
 
-Tìm kiếm sản phẩm phù hợp với truy vấn.
+Tìm kiếm các sản phẩm phù hợp với truy vấn.
 
 **Cách gọi công cụ này:**
 
-Bạn có thể gọi `product_search` từ script của bạn sử dụng MCP Python SDK, hoặc tương tác qua Inspector hoặc chế độ client tương tác. Dưới đây là ví dụ mã nguồn dùng SDK:
+Bạn có thể gọi `product_search` từ script của bạn sử dụng MCP Python SDK, hoặc tương tác qua Inspector hoặc chế độ client tương tác. Dưới đây là ví dụ mã sử dụng SDK:
 
 <details>
 <summary>Ví dụ Python</summary>
@@ -319,9 +319,9 @@ async def run_product_search():
 ```
 </details>
 
-Ngoài ra, ở chế độ tương tác, chọn `product_search` from the menu and enter your query when prompted.
+Ngoài ra, trong chế độ tương tác, chọn `product_search` từ menu và nhập truy vấn khi được yêu cầu.
 
-**Parameters:**
+**Tham số:**
 - `query` (chuỗi): Truy vấn tìm kiếm sản phẩm
 
 **Ví dụ yêu cầu:**
@@ -334,11 +334,11 @@ Ngoài ra, ở chế độ tương tác, chọn `product_search` from the menu a
 
 ### qna
 
-Lấy câu trả lời trực tiếp cho các câu hỏi từ công cụ tìm kiếm.
+Lấy câu trả lời trực tiếp cho các câu hỏi từ các công cụ tìm kiếm.
 
 **Cách gọi công cụ này:**
 
-Bạn có thể gọi `qna` từ script của bạn sử dụng MCP Python SDK, hoặc tương tác qua Inspector hoặc chế độ client tương tác. Dưới đây là ví dụ mã nguồn dùng SDK:
+Bạn có thể gọi `qna` từ script của bạn sử dụng MCP Python SDK, hoặc tương tác qua Inspector hoặc chế độ client tương tác. Dưới đây là ví dụ mã sử dụng SDK:
 
 <details>
 <summary>Ví dụ Python</summary>
@@ -360,9 +360,9 @@ async def run_qna():
 ```
 </details>
 
-Ngoài ra, ở chế độ tương tác, chọn `qna` from the menu and enter your question when prompted.
+Ngoài ra, trong chế độ tương tác, chọn `qna` từ menu và nhập câu hỏi khi được yêu cầu.
 
-**Parameters:**
+**Tham số:**
 - `question` (chuỗi): Câu hỏi cần tìm câu trả lời
 
 **Ví dụ yêu cầu:**
@@ -380,7 +380,7 @@ Phần này cung cấp các đoạn mã và tham chiếu cho triển khai server
 <details>
 <summary>Python</summary>
 
-Xem [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) để biết chi tiết triển khai đầy đủ.
+Xem [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) và [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) để biết chi tiết triển khai đầy đủ.
 
 ```python
 # Example snippet from server.py:
@@ -392,39 +392,39 @@ import httpx
 
 ## Các khái niệm nâng cao trong bài học này
 
-Trước khi bắt đầu xây dựng, dưới đây là một số khái niệm nâng cao quan trọng sẽ xuất hiện xuyên suốt chương này. Hiểu những điều này sẽ giúp bạn theo kịp, ngay cả khi bạn mới làm quen:
+Trước khi bắt đầu xây dựng, đây là một số khái niệm nâng cao quan trọng sẽ xuất hiện xuyên suốt chương này. Hiểu các khái niệm này sẽ giúp bạn theo dõi dễ dàng hơn, ngay cả khi bạn mới làm quen:
 
-- **Điều phối đa công cụ**: Nghĩa là chạy nhiều công cụ khác nhau (như tìm kiếm web, tin tức, sản phẩm và hỏi đáp) trong một MCP server duy nhất. Điều này cho phép server xử lý nhiều loại tác vụ, không chỉ một.
-- **Xử lý giới hạn tốc độ API**: Nhiều API bên ngoài (như SerpAPI) giới hạn số lần yêu cầu bạn có thể thực hiện trong một khoảng thời gian nhất định. Mã tốt sẽ kiểm tra các giới hạn này và xử lý một cách nhẹ nhàng, tránh làm ứng dụng bị lỗi khi vượt hạn mức.
-- **Phân tích dữ liệu có cấu trúc**: Phản hồi API thường phức tạp và lồng nhau. Khái niệm này là biến những phản hồi đó thành định dạng sạch, dễ dùng, thân thiện với LLM hoặc các chương trình khác.
-- **Phục hồi lỗi**: Đôi khi có sự cố—có thể mạng bị lỗi, hoặc API không trả về dữ liệu như mong đợi. Phục hồi lỗi có nghĩa là mã của bạn có thể xử lý những vấn đề này và vẫn cung cấp phản hồi hữu ích, thay vì bị crash.
-- **Xác thực tham số**: Đây là việc kiểm tra tất cả đầu vào cho công cụ của bạn là chính xác và an toàn để sử dụng. Bao gồm thiết lập giá trị mặc định và đảm bảo kiểu dữ liệu đúng, giúp tránh lỗi và nhầm lẫn.
+- **Điều phối nhiều công cụ**: Có nghĩa là chạy nhiều công cụ khác nhau (như tìm kiếm web, tin tức, sản phẩm và hỏi đáp) trong một MCP server duy nhất. Điều này cho phép server xử lý đa dạng các tác vụ, không chỉ một.
+- **Xử lý giới hạn tốc độ API**: Nhiều API bên ngoài (như SerpAPI) giới hạn số lượng yêu cầu bạn có thể gửi trong một khoảng thời gian nhất định. Mã tốt sẽ kiểm tra các giới hạn này và xử lý chúng một cách khéo léo, để ứng dụng không bị lỗi khi vượt quá giới hạn.
+- **Phân tích dữ liệu có cấu trúc**: Phản hồi API thường phức tạp và lồng nhau. Khái niệm này liên quan đến việc chuyển đổi các phản hồi đó thành định dạng sạch, dễ sử dụng, thân thiện với LLM hoặc các chương trình khác.
+- **Phục hồi lỗi**: Đôi khi có sự cố xảy ra—có thể mạng bị lỗi, hoặc API không trả về dữ liệu như mong đợi. Phục hồi lỗi nghĩa là mã của bạn có thể xử lý các vấn đề này và vẫn cung cấp phản hồi hữu ích, thay vì bị sập.
+- **Xác thực tham số**: Liên quan đến việc kiểm tra tất cả các đầu vào cho công cụ của bạn là chính xác và an toàn để sử dụng. Bao gồm việc đặt giá trị mặc định và đảm bảo kiểu dữ liệu đúng, giúp tránh lỗi và nhầm lẫn.
 
-Phần này sẽ giúp bạn chẩn đoán và giải quyết các vấn đề thường gặp khi làm việc với MCP Server Tìm kiếm Web. Nếu bạn gặp lỗi hoặc hành vi không mong muốn, phần xử lý sự cố này cung cấp các giải pháp cho những vấn đề phổ biến nhất. Hãy xem qua các mẹo dưới đây trước khi tìm kiếm trợ giúp thêm—chúng thường giải quyết nhanh các vấn đề.
+Phần này sẽ giúp bạn chẩn đoán và giải quyết các vấn đề phổ biến có thể gặp khi làm việc với MCP Server Tìm kiếm Web. Nếu bạn gặp lỗi hoặc hành vi không mong muốn khi làm việc với MCP Server Tìm kiếm Web, phần khắc phục sự cố này cung cấp các giải pháp cho những vấn đề phổ biến nhất. Hãy xem qua các mẹo này trước khi tìm kiếm sự trợ giúp thêm—chúng thường giúp bạn giải quyết vấn đề nhanh chóng.
 
-## Xử lý sự cố
+## Khắc phục sự cố
 
-Khi làm việc với MCP Server Tìm kiếm Web, đôi khi bạn sẽ gặp vấn đề—điều này bình thường khi phát triển với API bên ngoài và công cụ mới. Phần này cung cấp các giải pháp thực tế cho những sự cố phổ biến nhất, giúp bạn nhanh chóng trở lại làm việc. Nếu gặp lỗi, hãy bắt đầu từ đây: các mẹo dưới đây giải quyết các vấn đề mà đa số người dùng gặp phải và thường giúp bạn xử lý mà không cần hỗ trợ thêm.
+Khi làm việc với MCP Server Tìm kiếm Web, đôi khi bạn có thể gặp sự cố—điều này là bình thường khi phát triển với các API bên ngoài và công cụ mới. Phần này cung cấp các giải pháp thực tế cho những vấn đề phổ biến nhất, giúp bạn nhanh chóng trở lại làm việc. Nếu bạn gặp lỗi, hãy bắt đầu từ đây: các mẹo dưới đây giải quyết các vấn đề mà hầu hết người dùng gặp phải và thường có thể khắc phục vấn đề của bạn mà không cần trợ giúp thêm.
 
-### Vấn đề thường gặp
+### Các vấn đề thường gặp
 
-Dưới đây là một số vấn đề phổ biến người dùng gặp phải, kèm theo giải thích rõ ràng và các bước khắc phục:
+Dưới đây là một số vấn đề phổ biến nhất mà người dùng gặp phải, kèm theo giải thích rõ ràng và các bước để khắc phục:
 
-1. **Thiếu SERPAPI_KEY trong file .env**
-   - Nếu bạn thấy lỗi `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
+1. **Thiếu SERPAPI_KEY trong tệp .env**
+   - Nếu bạn thấy lỗi `SERPAPI_KEY environment variable not found`, nghĩa là ứng dụng của bạn không tìm thấy khóa API cần thiết để truy cập SerpAPI. Để khắc phục, tạo tệp `.env` trong thư mục gốc dự án (nếu chưa có) và thêm dòng `SERPAPI_KEY=your_serpapi_key_here`. Hãy chắc chắn thay `your_serpapi_key_here` bằng khóa thực tế của bạn lấy từ trang SerpAPI.
 
-2. **Module not found errors**
-   - Errors such as `ModuleNotFoundError: No module named 'httpx'` indicate that a required Python package is missing. This usually happens if you haven't installed all the dependencies. To resolve this, run `pip install -r requirements.txt` in your terminal to install everything your project needs.
+2. **Lỗi không tìm thấy module**
+   - Các lỗi như `ModuleNotFoundError: No module named 'httpx'` cho thấy một gói Python cần thiết bị thiếu. Thường xảy ra nếu bạn chưa cài đặt đầy đủ các phụ thuộc. Để khắc phục, chạy `pip install -r requirements.txt` trong terminal để cài đặt tất cả các gói cần thiết.
 
-3. **Connection issues**
-   - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
+3. **Sự cố kết nối**
+   - Nếu bạn nhận lỗi như `Error during client execution`, thường có nghĩa client không thể kết nối với server hoặc server không chạy đúng. Kiểm tra lại phiên bản client và server có tương thích, và đảm bảo `server.py` có mặt và đang chạy ở thư mục đúng. Khởi động lại cả server và client cũng có thể giúp.
 
-4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env`, hãy tạo file `.env` nếu cần. Nếu khóa của bạn đúng nhưng vẫn gặp lỗi này, hãy kiểm tra xem gói miễn phí của bạn đã hết hạn mức chưa.
+4. **Lỗi SerpAPI**
+   - Thấy lỗi `Search API returned error status: 401` nghĩa là khóa SerpAPI của bạn bị thiếu, sai hoặc hết hạn. Vào dashboard SerpAPI, kiểm tra khóa của bạn và cập nhật tệp `.env` nếu cần. Nếu khóa đúng mà vẫn lỗi, kiểm tra xem gói miễn phí của bạn có hết hạn mức không.
 
 ### Chế độ Debug
 
-Mặc định, ứng dụng chỉ ghi log những thông tin quan trọng. Nếu bạn muốn xem chi tiết hơn về các bước ứng dụng đang thực hiện (ví dụ, để chẩn đoán các vấn đề khó), bạn có thể bật chế độ DEBUG. Điều này sẽ hiển thị nhiều thông tin hơn về từng bước.
+Mặc định, ứng dụng chỉ ghi log các thông tin quan trọng. Nếu bạn muốn xem chi tiết hơn về những gì đang diễn ra (ví dụ để chẩn đoán các vấn đề khó), bạn có thể bật chế độ DEBUG. Chế độ này sẽ hiển thị nhiều thông tin hơn về từng bước ứng dụng thực hiện.
 
 **Ví dụ: Output bình thường**
 ```plaintext
@@ -435,7 +435,7 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-**Ví dụ: Output chế độ DEBUG**
+**Ví dụ: Output DEBUG**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:23,457 - httpx - DEBUG - HTTP Request: GET https://serpapi.com/search ...
@@ -446,11 +446,10 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Lưu ý chế độ DEBUG bao gồm thêm các dòng về yêu cầu HTTP, phản hồi và các chi tiết nội bộ khác. Điều này rất hữu ích cho việc xử lý sự cố.
+Lưu ý chế độ DEBUG bao gồm thêm các dòng về yêu cầu HTTP, phản hồi và các chi tiết nội bộ khác. Điều này rất hữu ích cho việc khắc phục sự cố.
 
-Để bật chế độ DEBUG, đặt mức logging thành DEBUG ở đầu file `client.py` or `server.py`:
+Để bật chế độ DEBUG, đặt mức logging thành DEBUG ở đầu tệp `client.py` hoặc `server.py`:
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -467,7 +466,7 @@ logging.basicConfig(
 
 ## Tiếp theo là gì
 
-- [5.10 Real Time Streaming](../mcp-realtimestreaming/README.md)
+- [5.10 Phát trực tiếp thời gian thực](../mcp-realtimestreaming/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được xem là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

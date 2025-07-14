@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T01:06:36+00:00",
+  "translation_date": "2025-07-14T00:43:45+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "ro"
 }
@@ -12,9 +12,9 @@ CO_OP_TRANSLATOR_METADATA:
 Acest proiect este o **aplicație minimală Spring Boot** care funcționează atât ca:
 
 * un **Spring Authorization Server** (emitând tokenuri JWT de acces prin fluxul `client_credentials`), cât și  
-* un **Resource Server** (protejând propriul său endpoint `/hello`).
+* un **Resource Server** (protejând propriul endpoint `/hello`).
 
-Reproduce configurația prezentată în [postarea de pe blogul Spring (2 apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Reprezintă configurația prezentată în [postarea de pe blogul Spring (2 apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -45,7 +45,7 @@ Poți testa configurația de securitate OAuth2 urmând pașii de mai jos:
 curl -v http://localhost:8081/
 ```
 
-### 2. Obține un token de acces folosind acreditările clientului
+### 2. Obține un token de acces folosind client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,7 +61,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Notă: Header-ul Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Notă: Header-ul Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) este codificarea Base64 a șirului `mcp-client:secret`.
 
 ### 3. Accesează endpoint-ul protejat folosind tokenul
 
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Un răspuns cu succes și mesajul "Hello from MCP OAuth2 Demo!" confirmă că configurația OAuth2 funcționează corect.
+Un răspuns de succes cu mesajul "Hello from MCP OAuth2 Demo!" confirmă că configurația OAuth2 funcționează corect.
 
 ---
 
@@ -96,13 +96,13 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Ingress FQDN devine **issuer-ul** tău (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Azure oferă automat un certificat TLS de încredere pentru `*.azurecontainerapps.io`.
 
 ---
 
 ## Integrare cu **Azure API Management**
 
-Adaugă această politică inbound API-ului tău:
+Adaugă această politică inbound la API-ul tău:
 
 ```xml
 <inbound>
@@ -124,5 +124,5 @@ APIM va prelua JWKS și va valida fiecare cerere.
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot rezulta din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

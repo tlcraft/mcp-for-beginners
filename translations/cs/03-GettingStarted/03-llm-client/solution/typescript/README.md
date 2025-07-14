@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6d6315e03f591fb5a39be91da88585dc",
-  "translation_date": "2025-05-27T16:20:04+00:00",
+  "translation_date": "2025-07-13T19:20:59+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/typescript/README.md",
   "language_code": "cs"
 }
 -->
-# Ejecutar este ejemplo
+# Spuštění tohoto příkladu
 
-Este ejemplo implica tener un LLM en el cliente. El LLM necesita que ejecutes esto en Codespaces o que configures un token de acceso personal en GitHub para que funcione.
+Tento příklad zahrnuje použití LLM na klientovi. LLM vyžaduje, abyste to buď spustili v Codespaces, nebo si nastavili osobní přístupový token na GitHubu.
 
-## -1- Instalar las dependencias
+## -1- Nainstalujte závislosti
 
 ```bash
 npm install
 ```
 
-## -3- Ejecutar el servidor
+## -3- Spusťte server
 
 ```bash
 npm run build
 ```
 
-## -4- Ejecutar el cliente
+## -4- Spusťte klienta
 
 ```sh
 npm run client
 ```
 
-Deberías ver un resultado similar a:
+Měli byste vidět výsledek podobný tomuto:
 
 ```text
 Asking server for available tools
@@ -41,4 +41,4 @@ Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za závazný zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné interpretace vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

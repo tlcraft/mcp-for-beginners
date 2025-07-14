@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T17:46:18+00:00",
+  "translation_date": "2025-07-13T22:01:28+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "no"
 }
@@ -46,7 +46,7 @@ Et typisk kjør av verktøyet ser slik ut:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Kommandoen over starter en MCP og dens visuelle grensesnitt, og åpner en lokal webgrensesnitt i nettleseren din. Du kan forvente å se et dashbord som viser dine registrerte MCP-servere, tilgjengelige verktøy, ressurser og prompts. Grensesnittet lar deg teste verktøyutførelse interaktivt, inspisere servermetadata og se svar i sanntid, noe som gjør det enklere å validere og feilsøke MCP-serverimplementasjonene dine.
+Kommandoen over starter en MCP og dens visuelle grensesnitt, og åpner en lokal webside i nettleseren din. Du vil se et dashbord som viser dine registrerte MCP-servere, tilgjengelige verktøy, ressurser og prompts. Grensesnittet lar deg teste verktøyutførelse interaktivt, inspisere servermetadata og se svar i sanntid, noe som gjør det enklere å validere og feilsøke MCP-serverimplementasjonene dine.
 
 Slik kan det se ut: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.no.png)
 
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Som du ser i eksempelet over, bruker du en POST-forespørsel for å kalle et verktøy med en payload som inneholder verktøyets navn og parametere. Velg den metoden som passer best for deg. CLI-verktøy er generelt raskere å bruke og egner seg godt for skripting, noe som kan være nyttig i et CI/CD-miljø.
+Som du ser i eksempelet over, bruker du en POST-forespørsel for å kalle et verktøy med en payload som inneholder verktøyets navn og parametere. Velg den metoden som passer deg best. CLI-verktøy er generelt raskere å bruke og egner seg godt for skripting, noe som kan være nyttig i et CI/CD-miljø.
 
 ### Enhetstesting
 
@@ -139,7 +139,7 @@ Ta en titt på [hele filen her](https://github.com/modelcontextprotocol/python-s
 
 Med denne filen kan du teste din egen server for å sikre at kapasiteter opprettes som de skal.
 
-Alle større SDK-er har lignende testseksjoner, så du kan tilpasse til ditt valgte runtime.
+Alle større SDK-er har lignende testseksjoner, så du kan tilpasse etter ditt valgte runtime.
 
 ## Eksempler
 

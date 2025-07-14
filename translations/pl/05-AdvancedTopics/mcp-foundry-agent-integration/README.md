@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:14:36+00:00",
+  "translation_date": "2025-07-13T23:55:25+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "pl"
 }
 -->
 # Integracja Model Context Protocol (MCP) z Azure AI Foundry
 
-Ten przewodnik pokazuje, jak zintegrować serwery Model Context Protocol (MCP) z agentami Azure AI Foundry, umożliwiając zaawansowaną orkiestrację narzędzi i funkcje AI na poziomie przedsiębiorstwa.
+Ten przewodnik pokazuje, jak zintegrować serwery Model Context Protocol (MCP) z agentami Azure AI Foundry, umożliwiając zaawansowaną orkiestrację narzędzi i możliwości AI na poziomie przedsiębiorstwa.
 
 ## Wprowadzenie
 
-Model Context Protocol (MCP) to otwarty standard, który pozwala aplikacjom AI bezpiecznie łączyć się z zewnętrznymi źródłami danych i narzędziami. Po integracji z Azure AI Foundry, MCP umożliwia agentom dostęp do różnych zewnętrznych usług, API i źródeł danych w ujednolicony sposób.
+Model Context Protocol (MCP) to otwarty standard, który pozwala aplikacjom AI na bezpieczne łączenie się z zewnętrznymi źródłami danych i narzędziami. Po integracji z Azure AI Foundry, MCP umożliwia agentom dostęp i interakcję z różnymi zewnętrznymi usługami, API i źródłami danych w ujednolicony sposób.
 
-Ta integracja łączy elastyczność ekosystemu narzędzi MCP z solidnym frameworkiem agentów Azure AI Foundry, oferując rozwiązania AI na poziomie przedsiębiorstwa z szerokimi możliwościami dostosowania.
+Ta integracja łączy elastyczność ekosystemu narzędzi MCP z solidnym frameworkiem agentów Azure AI Foundry, oferując rozwiązania AI klasy korporacyjnej z szerokimi możliwościami dostosowania.
 
 **Note:** Jeśli chcesz używać MCP w Azure AI Foundry Agent Service, obecnie obsługiwane są tylko następujące regiony: westus, westus2, uaenorth, southindia oraz switzerlandnorth
 
 ## Cele nauki
 
-Po zakończeniu tego przewodnika będziesz potrafił:
+Po ukończeniu tego przewodnika będziesz potrafił:
 
 - Zrozumieć Model Context Protocol i jego zalety
 - Skonfigurować serwery MCP do współpracy z agentami Azure AI Foundry
@@ -31,7 +31,7 @@ Po zakończeniu tego przewodnika będziesz potrafił:
 
 ## Wymagania wstępne
 
-Przed rozpoczęciem upewnij się, że masz:
+Przed rozpoczęciem upewnij się, że posiadasz:
 
 - Subskrypcję Azure z dostępem do AI Foundry
 - Pythona w wersji 3.10 lub wyższej
@@ -80,7 +80,7 @@ with project_client:
     agent = project_client.agents.create_agent(
         model="gpt-4.1-nano", 
         name="mcp_agent", 
-        instructions="Jesteś pomocnym asystentem. Korzystaj z dostępnych narzędzi, aby odpowiadać na pytania. Pamiętaj, aby cytować swoje źródła.",
+        instructions="Jesteś pomocnym asystentem. Używaj dostępnych narzędzi, aby odpowiadać na pytania. Pamiętaj, aby cytować swoje źródła.",
         tools=[
             {
                 "type": "mcp",
@@ -133,7 +133,7 @@ def create_mcp_agent_example():
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="Jesteś pomocnym asystentem specjalizującym się w dokumentacji Microsoft. Korzystaj z serwera Microsoft Learn MCP, aby wyszukiwać dokładne i aktualne informacje. Zawsze cytuj swoje źródła.",
+            instructions="Jesteś pomocnym asystentem specjalizującym się w dokumentacji Microsoft. Używaj serwera MCP Microsoft Learn, aby wyszukiwać dokładne i aktualne informacje. Zawsze cytuj swoje źródła.",
             tools=[
                 {
                     "type": "mcp",
@@ -192,9 +192,9 @@ if __name__ == "__main__":
 ## Rozwiązywanie typowych problemów
 
 ### 1. Problemy z połączeniem
-- Sprawdź, czy adres URL serwera MCP jest dostępny
+- Sprawdź, czy URL serwera MCP jest dostępny
 - Zweryfikuj dane uwierzytelniające
-- Upewnij się, że masz połączenie z siecią
+- Upewnij się, że masz połączenie sieciowe
 
 ### 2. Błędy wywołań narzędzi
 - Sprawdź argumenty i formatowanie wywołań narzędzi
@@ -204,15 +204,15 @@ if __name__ == "__main__":
 ### 3. Problemy z wydajnością
 - Optymalizuj częstotliwość wywołań narzędzi
 - Wprowadź mechanizmy cache’owania tam, gdzie to możliwe
-- Monitoruj czas odpowiedzi serwera
+- Monitoruj czasy odpowiedzi serwera
 
 ## Kolejne kroki
 
-Aby dalej rozwijać integrację MCP:
+Aby jeszcze bardziej rozwinąć integrację MCP:
 
-1. **Poznaj niestandardowe serwery MCP**: Buduj własne serwery MCP dla prywatnych źródeł danych
+1. **Poznaj własne serwery MCP**: Buduj własne serwery MCP dla prywatnych źródeł danych
 2. **Wdroż zaawansowane zabezpieczenia**: Dodaj OAuth2 lub niestandardowe mechanizmy uwierzytelniania
-3. **Monitorowanie i analizy**: Wprowadź logowanie i monitorowanie wykorzystania narzędzi
+3. **Monitorowanie i analityka**: Wprowadź logowanie i monitorowanie użycia narzędzi
 4. **Skaluj rozwiązanie**: Rozważ load balancing i rozproszone architektury serwerów MCP
 
 ## Dodatkowe zasoby
@@ -233,4 +233,4 @@ W przypadku dodatkowego wsparcia i pytań:
 - [6. Wkład społeczności](../../06-CommunityContributions/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczeń AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uważany za źródło autorytatywne. W przypadku informacji o krytycznym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T15:24:06+00:00",
+  "translation_date": "2025-07-13T22:05:36+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "es"
 }
@@ -26,13 +26,13 @@ Al finalizar esta lección, podrás:
 
 Si tu servidor está pensado para ser utilizado ejecutándose en la máquina del usuario, puedes seguir los siguientes pasos:
 
-1. **Descargar el servidor**. Si no escribiste el servidor, primero descárgalo a tu máquina.  
-1. **Iniciar el proceso del servidor**: Ejecuta tu aplicación MCP server.
+1. **Descarga el servidor**. Si no escribiste el servidor, primero descárgalo a tu máquina.  
+1. **Inicia el proceso del servidor**: Ejecuta tu aplicación MCP server.
 
 Para SSE (no es necesario para servidores tipo stdio)
 
-1. **Configurar la red**: Asegúrate de que el servidor sea accesible en el puerto esperado.  
-1. **Conectar clientes**: Usa URLs de conexión local como `http://localhost:3000`.
+1. **Configura la red**: Asegúrate de que el servidor sea accesible en el puerto esperado.  
+1. **Conecta los clientes**: Usa URLs de conexión local como `http://localhost:3000`.
 
 ## Despliegue en la nube
 

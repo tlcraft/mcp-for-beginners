@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T19:09:31+00:00",
+  "translation_date": "2025-07-13T22:04:22+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "hr"
 }
@@ -32,7 +32,7 @@ MCP pruža alate koji vam pomažu u testiranju i otklanjanju pogrešaka vaših s
 
 ### Korištenje MCP Inspectora
 
-Opisali smo korištenje ovog alata u prethodnim lekcijama, ali hajde da ga ukratko predstavimo. To je alat izgrađen u Node.js-u i možete ga koristiti pozivom `npx` izvršne datoteke koja će privremeno preuzeti i instalirati alat, a zatim se sama očistiti nakon što završi s vašim zahtjevom.
+Opisali smo korištenje ovog alata u prethodnim lekcijama, ali hajdemo ga ukratko predstaviti. To je alat izgrađen u Node.js-u i možete ga koristiti pozivom `npx` izvršne datoteke koja će privremeno preuzeti i instalirati alat, a zatim se sama očistiti nakon što završi s vašim zahtjevom.
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) vam pomaže:
 
@@ -58,7 +58,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Ručno testiranje
 
-Osim pokretanja inspectora za testiranje mogućnosti servera, sličan pristup je korištenje klijenta koji može koristiti HTTP, poput curl-a.
+Osim pokretanja inspectora za testiranje mogućnosti servera, sličan pristup je korištenje klijenta sposoban za HTTP, poput curl.
 
 Pomoću curl-a možete izravno testirati MCP servere koristeći HTTP zahtjeve:
 
@@ -76,7 +76,7 @@ Kao što vidite iz primjera korištenja curl-a, koristite POST zahtjev za poziva
 
 ### Jedinično testiranje
 
-Izradite jedinične testove za svoje alate i resurse kako biste osigurali da rade kako se očekuje. Evo primjera testnog koda.
+Izradite jedinične testove za vaše alate i resurse kako biste osigurali da rade kako se očekuje. Evo primjera testnog koda.
 
 ```python
 import pytest
@@ -139,7 +139,7 @@ Pogledajte [cijelu datoteku ovdje](https://github.com/modelcontextprotocol/pytho
 
 Na temelju ove datoteke možete testirati vlastiti server kako biste osigurali da su mogućnosti kreirane kako treba.
 
-Svi glavni SDK-ovi imaju slične odjeljke za testiranje pa ih možete prilagoditi svom odabranom runtime okruženju.
+Svi glavni SDK-ovi imaju slične odjeljke za testiranje pa ih možete prilagoditi vašem odabranom runtime okruženju.
 
 ## Primjeri
 

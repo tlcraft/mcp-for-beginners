@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T17:56:55+00:00",
+  "translation_date": "2025-07-13T18:53:34+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "nl"
 }
@@ -11,7 +11,7 @@ Geweldig, voor onze volgende stap gaan we de mogelijkheden op de server opvragen
 
 ### -2 Mogelijkheden van de server opvragen
 
-Nu gaan we verbinding maken met de server en vragen naar de mogelijkheden: 
+Nu gaan we verbinding maken met de server en vragen naar de mogelijkheden ervan: 
 
 ### -3- Servermogelijkheden omzetten naar LLM-tools
 

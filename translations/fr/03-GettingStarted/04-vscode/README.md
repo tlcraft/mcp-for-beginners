@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T15:19:28+00:00",
+  "translation_date": "2025-07-13T19:22:08+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "fr"
 }
@@ -60,7 +60,7 @@ Ajoutez le contenu suivant dans *mcp.json* :
 }
 ```
 
-Voici un exemple simple ci-dessus montrant comment démarrer un serveur écrit en Node.js, pour d’autres environnements d’exécution, indiquez la commande appropriée pour démarrer le serveur en utilisant `command` et `args`.
+Voici un exemple simple ci-dessus pour démarrer un serveur écrit en Node.js, pour d’autres environnements d’exécution, indiquez la commande appropriée pour lancer le serveur en utilisant `command` et `args`.
 
 ### -3- Démarrer le serveur
 
@@ -70,7 +70,7 @@ Maintenant que vous avez ajouté une entrée, lançons le serveur :
 
   ![Démarrage du serveur dans Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.fr.png)  
 
-1. Cliquez sur l’icône "play", vous devriez voir l’icône des outils dans GitHub Copilot Chat augmenter le nombre d’outils disponibles. Si vous cliquez sur cette icône d’outils, vous verrez la liste des outils enregistrés. Vous pouvez cocher/décocher chaque outil selon que vous souhaitez que GitHub Copilot les utilise comme contexte :
+1. Cliquez sur l’icône "play", vous devriez voir l’icône des outils dans GitHub Copilot Chat augmenter le nombre d’outils disponibles. Si vous cliquez sur cette icône, vous verrez la liste des outils enregistrés. Vous pouvez cocher/décocher chaque outil selon que vous souhaitez que GitHub Copilot les utilise comme contexte :
 
   ![Démarrage du serveur dans Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.fr.png)
 

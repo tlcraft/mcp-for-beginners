@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-05-20T22:03:31+00:00",
+  "translation_date": "2025-07-14T04:01:34+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "vi"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tổng quan
 
-Bài học này tập trung vào cách tham gia cộng đồng MCP, đóng góp vào hệ sinh thái MCP và tuân theo các thực hành tốt nhất trong phát triển hợp tác. Hiểu cách tham gia các dự án mã nguồn mở MCP là điều cần thiết cho những ai muốn định hình tương lai của công nghệ này.
+Bài học này tập trung vào cách tham gia cộng đồng MCP, đóng góp vào hệ sinh thái MCP và tuân theo các thực hành tốt nhất trong phát triển hợp tác. Hiểu cách tham gia vào các dự án mã nguồn mở MCP là điều cần thiết cho những ai muốn định hình tương lai của công nghệ này.
 
 ## Mục tiêu học tập
 
@@ -28,11 +28,11 @@ Hệ sinh thái MCP bao gồm nhiều thành phần và người tham gia cùng 
 
 ### Các thành phần chính của cộng đồng
 
-1. **Core Protocol Maintainers**: Microsoft và các tổ chức khác chịu trách nhiệm duy trì các đặc tả lõi MCP và các triển khai tham chiếu
-2. **Tool Developers**: Cá nhân và nhóm tạo ra các công cụ MCP
-3. **Integration Providers**: Các công ty tích hợp MCP vào sản phẩm và dịch vụ của họ
-4. **End Users**: Các nhà phát triển và tổ chức sử dụng MCP trong ứng dụng của mình
-5. **Contributors**: Thành viên cộng đồng đóng góp mã nguồn, tài liệu hoặc các nguồn lực khác
+1. **Người duy trì giao thức cốt lõi**: Microsoft và các tổ chức khác chịu trách nhiệm duy trì các đặc tả cốt lõi và các triển khai tham chiếu của MCP
+2. **Nhà phát triển công cụ**: Cá nhân và nhóm tạo ra các công cụ MCP
+3. **Nhà cung cấp tích hợp**: Các công ty tích hợp MCP vào sản phẩm và dịch vụ của họ
+4. **Người dùng cuối**: Các nhà phát triển và tổ chức sử dụng MCP trong ứng dụng của họ
+5. **Người đóng góp**: Thành viên cộng đồng đóng góp mã nguồn, tài liệu hoặc các tài nguyên khác
 
 ### Tài nguyên cộng đồng
 
@@ -46,39 +46,39 @@ Hệ sinh thái MCP bao gồm nhiều thành phần và người tham gia cùng 
 #### Tài nguyên do cộng đồng phát triển
 
 - Các triển khai SDK theo ngôn ngữ
-- Triển khai server và thư viện công cụ
+- Các triển khai server và thư viện công cụ
 - Bài viết blog và hướng dẫn
 - Diễn đàn cộng đồng và thảo luận trên mạng xã hội
 
-## Đóng góp vào MCP
+## Đóng góp cho MCP
 
 ### Các loại đóng góp
 
 Hệ sinh thái MCP chào đón nhiều loại đóng góp khác nhau:
 
-1. **Code Contributions**:
-   - Nâng cấp giao thức lõi
+1. **Đóng góp mã nguồn**:
+   - Cải tiến giao thức cốt lõi
    - Sửa lỗi
    - Triển khai công cụ
-   - Thư viện client/server cho các ngôn ngữ khác nhau
+   - Thư viện client/server bằng các ngôn ngữ khác nhau
 
-2. **Documentation**:
+2. **Tài liệu**:
    - Cải thiện tài liệu hiện có
    - Tạo hướng dẫn và bài học
    - Dịch tài liệu
    - Tạo ví dụ và ứng dụng mẫu
 
-3. **Community Support**:
+3. **Hỗ trợ cộng đồng**:
    - Trả lời câu hỏi trên diễn đàn
    - Kiểm thử và báo cáo lỗi
    - Tổ chức sự kiện cộng đồng
    - Hướng dẫn người đóng góp mới
 
-### Quy trình đóng góp: Core Protocol
+### Quy trình đóng góp: Giao thức cốt lõi
 
-Để đóng góp vào giao thức lõi MCP hoặc các triển khai chính thức:
+Để đóng góp vào giao thức MCP cốt lõi hoặc các triển khai chính thức:
 
-#### Ví dụ .NET: Đóng góp nâng cấp giao thức
+#### Ví dụ .NET: Đóng góp cải tiến giao thức
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Ví dụ Python: Đóng góp công cụ mới cho thư viện chuẩn
+#### Ví dụ Python: Đóng góp công cụ mới vào thư viện chuẩn
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -394,14 +394,14 @@ class CsvProcessingTool(Tool):
 
 Để đóng góp thành công vào các dự án MCP:
 
-1. **Bắt đầu từ nhỏ**: Khởi đầu với tài liệu, sửa lỗi hoặc nâng cấp nhỏ
-2. **Tuân theo hướng dẫn phong cách**: Giữ đúng phong cách mã nguồn và quy ước của dự án
-3. **Viết test**: Bao gồm các bài kiểm thử đơn vị cho đóng góp mã của bạn
-4. **Tài liệu công việc của bạn**: Thêm tài liệu rõ ràng cho tính năng hoặc thay đổi mới
+1. **Bắt đầu từ những việc nhỏ**: Bắt đầu với tài liệu, sửa lỗi hoặc cải tiến nhỏ
+2. **Tuân theo hướng dẫn phong cách**: Tuân thủ phong cách mã và quy ước của dự án
+3. **Viết kiểm thử**: Bao gồm các bài kiểm thử đơn vị cho mã của bạn
+4. **Ghi chép công việc**: Thêm tài liệu rõ ràng cho các tính năng hoặc thay đổi mới
 5. **Gửi PR có mục tiêu rõ ràng**: Giữ pull request tập trung vào một vấn đề hoặc tính năng duy nhất
-6. **Phản hồi tích cực**: Trả lời các góp ý về đóng góp của bạn
+6. **Phản hồi tích cực**: Chủ động phản hồi các góp ý về đóng góp của bạn
 
-### Quy trình làm việc ví dụ khi đóng góp
+### Quy trình đóng góp mẫu
 
 ```bash
 # Clone the repository
@@ -752,49 +752,49 @@ class SentimentAnalysisTool(Tool):
 Khi chia sẻ công cụ MCP với cộng đồng:
 
 1. **Tài liệu đầy đủ**:
-   - Giải thích mục đích, cách sử dụng và ví dụ
-   - Mô tả các tham số và giá trị trả về
-   - Ghi rõ các phụ thuộc bên ngoài
+   - Ghi rõ mục đích, cách sử dụng và ví dụ
+   - Giải thích các tham số và giá trị trả về
+   - Ghi chú các phụ thuộc bên ngoài nếu có
 
 2. **Xử lý lỗi**:
-   - Thực hiện xử lý lỗi chặt chẽ
+   - Triển khai xử lý lỗi chắc chắn
    - Cung cấp thông báo lỗi hữu ích
-   - Xử lý các trường hợp đặc biệt một cách mềm dẻo
+   - Xử lý các trường hợp đặc biệt một cách hợp lý
 
-3. **Xem xét hiệu năng**:
-   - Tối ưu cả tốc độ và sử dụng tài nguyên
+3. **Cân nhắc hiệu năng**:
+   - Tối ưu cả về tốc độ và sử dụng tài nguyên
    - Áp dụng caching khi phù hợp
    - Xem xét khả năng mở rộng
 
 4. **Bảo mật**:
-   - Sử dụng API key và xác thực an toàn
-   - Kiểm tra và làm sạch đầu vào
-   - Giới hạn tần suất gọi API bên ngoài
+   - Sử dụng khóa API và xác thực an toàn
+   - Kiểm tra và làm sạch dữ liệu đầu vào
+   - Áp dụng giới hạn tần suất cho các cuộc gọi API bên ngoài
 
 5. **Kiểm thử**:
    - Bao gồm phạm vi kiểm thử toàn diện
-   - Kiểm thử với nhiều loại đầu vào và trường hợp biên
-   - Ghi lại quy trình kiểm thử
+   - Kiểm thử với các loại đầu vào và trường hợp đặc biệt khác nhau
+   - Ghi chép quy trình kiểm thử
 
 ## Hợp tác cộng đồng và thực hành tốt nhất
 
-Hợp tác hiệu quả là chìa khóa cho một hệ sinh thái MCP phát triển mạnh.
+Hợp tác hiệu quả là chìa khóa cho một hệ sinh thái MCP phát triển bền vững.
 
 ### Kênh giao tiếp
 
 - GitHub Issues và Discussions
 - Microsoft Tech Community
-- Kênh Discord và Slack
-- Stack Overflow (tag: `model-context-protocol` or `mcp`)
+- Các kênh Discord và Slack
+- Stack Overflow (tag: `model-context-protocol` hoặc `mcp`)
 
 ### Đánh giá mã nguồn
 
-Khi đánh giá đóng góp MCP:
+Khi đánh giá các đóng góp MCP:
 
-1. **Rõ ràng**: Mã có dễ hiểu và có tài liệu không?
-2. **Chính xác**: Nó hoạt động đúng như mong đợi?
+1. **Rõ ràng**: Mã có rõ ràng và được tài liệu đầy đủ không?
+2. **Chính xác**: Mã hoạt động như mong đợi không?
 3. **Nhất quán**: Có tuân theo quy ước dự án không?
-4. **Đầy đủ**: Có kèm theo test và tài liệu không?
+4. **Đầy đủ**: Có bao gồm kiểm thử và tài liệu không?
 5. **Bảo mật**: Có vấn đề bảo mật nào không?
 
 ### Tương thích phiên bản
@@ -804,11 +804,11 @@ Khi phát triển cho MCP:
 1. **Phiên bản giao thức**: Tuân thủ phiên bản giao thức MCP mà công cụ hỗ trợ
 2. **Tương thích client**: Xem xét khả năng tương thích ngược
 3. **Tương thích server**: Tuân theo hướng dẫn triển khai server
-4. **Thay đổi phá vỡ**: Ghi rõ các thay đổi phá vỡ
+4. **Thay đổi phá vỡ**: Ghi rõ các thay đổi phá vỡ nếu có
 
-## Dự án cộng đồng ví dụ: MCP Tool Registry
+## Dự án cộng đồng mẫu: MCP Tool Registry
 
-Một đóng góp cộng đồng quan trọng có thể là phát triển một registry công khai cho các công cụ MCP.
+Một đóng góp quan trọng cho cộng đồng có thể là phát triển một registry công khai cho các công cụ MCP.
 
 ```python
 # Example schema for a community tool registry API
@@ -889,8 +889,8 @@ async def delete_tool(tool_name: str):
 
 ## Những điểm chính cần nhớ
 
-- Cộng đồng MCP đa dạng và chào đón nhiều loại đóng góp khác nhau
-- Đóng góp có thể từ nâng cấp giao thức lõi đến các công cụ tùy chỉnh
+- Cộng đồng MCP đa dạng và chào đón nhiều loại đóng góp
+- Đóng góp cho MCP có thể từ cải tiến giao thức cốt lõi đến công cụ tùy chỉnh
 - Tuân theo hướng dẫn đóng góp giúp tăng khả năng PR được chấp nhận
 - Tạo và chia sẻ công cụ MCP là cách giá trị để phát triển hệ sinh thái
 - Hợp tác cộng đồng là yếu tố thiết yếu cho sự phát triển và cải tiến MCP
@@ -899,9 +899,9 @@ async def delete_tool(tool_name: str):
 
 1. Xác định một lĩnh vực trong hệ sinh thái MCP mà bạn có thể đóng góp dựa trên kỹ năng và sở thích của mình
 2. Fork kho MCP và thiết lập môi trường phát triển cục bộ
-3. Tạo một nâng cấp nhỏ, sửa lỗi hoặc công cụ có ích cho cộng đồng
-4. Tài liệu đóng góp của bạn với các bài test và tài liệu phù hợp
-5. Gửi pull request tới kho thích hợp
+3. Tạo một cải tiến nhỏ, sửa lỗi hoặc công cụ có lợi cho cộng đồng
+4. Ghi chép đóng góp của bạn với kiểm thử và tài liệu đầy đủ
+5. Gửi pull request đến kho phù hợp
 
 ## Tài nguyên bổ sung
 
@@ -913,4 +913,4 @@ async def delete_tool(tool_name: str):
 Tiếp theo: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được xem là nguồn chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

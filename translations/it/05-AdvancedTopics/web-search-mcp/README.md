@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-06-11T15:30:55+00:00",
+  "translation_date": "2025-07-14T03:34:45+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "it"
 }
 -->
 # Lezione: Costruire un Server MCP per la Ricerca Web
 
-Questo capitolo mostra come costruire un agente AI reale che si integra con API esterne, gestisce diversi tipi di dati, gestisce gli errori e coordina più strumenti—tutto in un formato pronto per la produzione. Vedrai:
+Questo capitolo mostra come costruire un agente AI reale che si integra con API esterne, gestisce diversi tipi di dati, gestisce errori e orchestra più strumenti—tutto in un formato pronto per la produzione. Vedrai:
 
 - **Integrazione con API esterne che richiedono autenticazione**
-- **Gestione di dati eterogenei da molteplici endpoint**
-- **Strategie robuste di gestione errori e logging**
+- **Gestione di diversi tipi di dati da molteplici endpoint**
+- **Strategie robuste di gestione degli errori e logging**
 - **Orchestrazione multi-strumento in un unico server**
 
-Alla fine, avrai esperienza pratica con modelli e best practice essenziali per applicazioni avanzate AI e basate su LLM.
+Alla fine, avrai esperienza pratica con pattern e best practice essenziali per applicazioni avanzate basate su AI e LLM.
 
 ## Introduzione
 
-In questa lezione imparerai come costruire un avanzato server e client MCP che estende le capacità LLM con dati web in tempo reale usando SerpAPI. Questa è una competenza fondamentale per sviluppare agenti AI dinamici che possono accedere a informazioni aggiornate dal web.
+In questa lezione imparerai come costruire un server e un client MCP avanzati che estendono le capacità LLM con dati web in tempo reale usando SerpAPI. Questa è una competenza fondamentale per sviluppare agenti AI dinamici che possono accedere a informazioni aggiornate dal web.
 
 ## Obiettivi di Apprendimento
 
-Al termine di questa lezione sarai in grado di:
+Al termine di questa lezione, sarai in grado di:
 
 - Integrare API esterne (come SerpAPI) in modo sicuro in un server MCP
 - Implementare più strumenti per ricerca web, notizie, prodotti e Q&A
 - Analizzare e formattare dati strutturati per il consumo da parte di LLM
-- Gestire errori e limiti di chiamata API in modo efficace
+- Gestire errori e limiti di chiamate API in modo efficace
 - Costruire e testare sia client MCP automatizzati che interattivi
 
-## Web Search MCP Server
+## Server MCP per la Ricerca Web
 
-Questa sezione introduce l’architettura e le funzionalità del Web Search MCP Server. Vedrai come FastMCP e SerpAPI sono usati insieme per estendere le capacità LLM con dati web in tempo reale.
+Questa sezione introduce l’architettura e le funzionalità del Server MCP per la Ricerca Web. Vedrai come FastMCP e SerpAPI vengono usati insieme per estendere le capacità LLM con dati web in tempo reale.
 
 ### Panoramica
 
-Questa implementazione presenta quattro strumenti che mostrano la capacità di MCP di gestire compiti diversi, basati su API esterne, in modo sicuro ed efficiente:
+Questa implementazione include quattro strumenti che mostrano la capacità di MCP di gestire compiti diversi, basati su API esterne, in modo sicuro ed efficiente:
 
-- **general_search**: Per risultati web generali
-- **news_search**: Per titoli recenti
-- **product_search**: Per dati e-commerce
-- **qna**: Per snippet di domande e risposte
+- **general_search**: per risultati web generali
+- **news_search**: per le ultime notizie
+- **product_search**: per dati e-commerce
+- **qna**: per snippet di domande e risposte
 
 ### Funzionalità
-- **Esempi di Codice**: Include blocchi di codice specifici per Python (e facilmente estendibili ad altri linguaggi) con sezioni espandibili per chiarezza
+- **Esempi di Codice**: Include blocchi di codice specifici per Python (e facilmente estendibili ad altri linguaggi) con sezioni a scomparsa per maggiore chiarezza
 
 <details>  
 <summary>Python</summary>  
@@ -69,14 +69,14 @@ async def run_search():
 ```
 </details>
 
-Prima di eseguire il client, è utile capire cosa fa il server. Il file [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
+Prima di eseguire il client, è utile capire cosa fa il server. Il file [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) implementa il server MCP, esponendo strumenti per ricerca web, notizie, prodotti e Q&A integrandosi con SerpAPI. Gestisce le richieste in arrivo, le chiamate API, analizza le risposte e restituisce risultati strutturati al client.
 
-You can review the full implementation in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
+Puoi consultare l’implementazione completa in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
 Ecco un breve esempio di come il server definisce e registra uno strumento:
 
 <details>  
-<summary>Python Server</summary> 
+<summary>Server Python</summary> 
 
 ```python
 # server.py (excerpt)
@@ -93,15 +93,15 @@ if __name__ == "__main__":
 ```
 </details>
 
-- **Integrazione API Esterne**: Mostra come gestire in modo sicuro chiavi API e richieste esterne
-- **Parsing Dati Strutturati**: Dimostra come trasformare le risposte API in formati adatti a LLM
-- **Gestione Errori**: Gestione robusta degli errori con logging appropriato
-- **Client Interattivo**: Include sia test automatizzati che una modalità interattiva per i test
+- **Integrazione API Esterne**: Dimostra la gestione sicura delle chiavi API e delle richieste esterne
+- **Parsing di Dati Strutturati**: Mostra come trasformare le risposte API in formati adatti agli LLM
+- **Gestione degli Errori**: Gestione robusta degli errori con logging appropriato
+- **Client Interattivo**: Include sia test automatizzati che una modalità interattiva per il testing
 - **Gestione del Contesto**: Sfrutta MCP Context per logging e tracciamento delle richieste
 
 ## Prerequisiti
 
-Prima di iniziare, assicurati che il tuo ambiente sia configurato correttamente seguendo questi passaggi. Questo garantirà che tutte le dipendenze siano installate e le chiavi API configurate correttamente per uno sviluppo e test senza intoppi.
+Prima di iniziare, assicurati che il tuo ambiente sia configurato correttamente seguendo questi passaggi. Questo garantirà che tutte le dipendenze siano installate e che le chiavi API siano configurate correttamente per uno sviluppo e test senza intoppi.
 
 - Python 3.8 o superiore
 - Chiave API SerpAPI (Registrati su [SerpAPI](https://serpapi.com/) - disponibile piano gratuito)
@@ -128,28 +128,28 @@ SERPAPI_KEY=your_serpapi_key_here
 
 ## Utilizzo
 
-Il Web Search MCP Server è il componente centrale che espone strumenti per ricerca web, notizie, prodotti e Q&A integrandosi con SerpAPI. Gestisce le richieste in arrivo, le chiamate API, analizza le risposte e restituisce risultati strutturati al client.
+Il Server MCP per la Ricerca Web è il componente centrale che espone strumenti per ricerca web, notizie, prodotti e Q&A integrandosi con SerpAPI. Gestisce le richieste in arrivo, le chiamate API, analizza le risposte e restituisce risultati strutturati al client.
 
 Puoi consultare l’implementazione completa in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
 ### Avvio del Server
 
-Per avviare il server MCP, usa il comando seguente:
+Per avviare il server MCP, usa il seguente comando:
 
 ```bash
 python server.py
 ```
 
-Il server funzionerà come server MCP basato su stdio a cui il client può connettersi direttamente.
+Il server funzionerà come un server MCP basato su stdio a cui il client può connettersi direttamente.
 
 ### Modalità Client
 
-Il client (`client.py`) supports two modes for interacting with the MCP server:
+Il client (`client.py`) supporta due modalità per interagire con il server MCP:
 
-- **Normal mode**: Runs automated tests that exercise all the tools and verify their responses. This is useful for quickly checking that the server and tools are working as expected.
-- **Interactive mode**: Starts a menu-driven interface where you can manually select and call tools, enter custom queries, and see results in real time. This is ideal for exploring the server's capabilities and experimenting with different inputs.
+- **Modalità Normale**: Esegue test automatizzati che utilizzano tutti gli strumenti e verificano le risposte. Utile per controllare rapidamente che server e strumenti funzionino come previsto.
+- **Modalità Interattiva**: Avvia un’interfaccia a menu dove puoi selezionare manualmente gli strumenti, inserire query personalizzate e vedere i risultati in tempo reale. Ideale per esplorare le capacità del server e sperimentare con input diversi.
 
-You can review the full implementation in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
+Puoi consultare l’implementazione completa in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
 ### Esecuzione del Client
 
@@ -167,7 +167,7 @@ python client.py --interactive
 
 ### Test con Metodi Diversi
 
-Ci sono vari modi per testare e interagire con gli strumenti forniti dal server, a seconda delle tue esigenze e del flusso di lavoro.
+Ci sono diversi modi per testare e interagire con gli strumenti forniti dal server, a seconda delle tue esigenze e del tuo flusso di lavoro.
 
 #### Scrivere Script di Test Personalizzati con MCP Python SDK
 Puoi anche creare i tuoi script di test usando MCP Python SDK:
@@ -195,19 +195,19 @@ async def test_custom_query():
 ```
 </details>
 
-In questo contesto, uno "script di test" è un programma Python personalizzato che scrivi per agire da client del server MCP. Invece di essere un test unitario formale, questo script ti permette di connetterti programmaticamente al server, chiamare uno qualsiasi dei suoi strumenti con parametri a tua scelta e ispezionare i risultati. Questo approccio è utile per:
-- Prototipare e sperimentare chiamate agli strumenti
-- Verificare come il server risponde a input diversi
-- Automatizzare chiamate ripetute agli strumenti
+In questo contesto, uno "script di test" è un programma Python personalizzato che scrivi per agire come client del server MCP. Invece di essere un test unitario formale, questo script ti permette di connetterti programmaticamente al server, chiamare uno qualsiasi dei suoi strumenti con parametri a tua scelta e ispezionare i risultati. Questo approccio è utile per:
+- Prototipare e sperimentare con le chiamate agli strumenti
+- Validare come il server risponde a input diversi
+- Automatizzare invocazioni ripetute degli strumenti
 - Costruire i tuoi flussi di lavoro o integrazioni sopra il server MCP
 
-Puoi usare gli script di test per provare rapidamente nuove query, fare debug del comportamento degli strumenti, o come punto di partenza per automazioni più avanzate. Di seguito un esempio di come usare MCP Python SDK per creare uno script del genere:
+Puoi usare gli script di test per provare rapidamente nuove query, fare debug del comportamento degli strumenti o anche come punto di partenza per automazioni più avanzate. Di seguito un esempio di come usare MCP Python SDK per creare uno script del genere:
 
 ## Descrizione degli Strumenti
 
-Puoi utilizzare i seguenti strumenti forniti dal server per effettuare diversi tipi di ricerche e query. Ogni strumento è descritto qui sotto con i suoi parametri e un esempio di utilizzo.
+Puoi usare i seguenti strumenti forniti dal server per eseguire diversi tipi di ricerche e query. Ogni strumento è descritto con i suoi parametri e un esempio d’uso.
 
-Questa sezione fornisce dettagli su ciascuno strumento disponibile e i loro parametri.
+Questa sezione fornisce dettagli su ogni strumento disponibile e i loro parametri.
 
 ### general_search
 
@@ -215,7 +215,7 @@ Esegue una ricerca web generale e restituisce risultati formattati.
 
 **Come chiamare questo strumento:**
 
-Puoi chiamare `general_search` dal tuo script usando MCP Python SDK, o interattivamente tramite Inspector o la modalità client interattiva. Ecco un esempio di codice con SDK:
+Puoi chiamare `general_search` dal tuo script usando MCP Python SDK, o interattivamente usando l’Inspector o la modalità client interattiva. Ecco un esempio di codice con l’SDK:
 
 <details>
 <summary>Esempio Python</summary>
@@ -237,12 +237,12 @@ async def run_general_search():
 ```
 </details>
 
-In alternativa, in modalità interattiva, seleziona `general_search` from the menu and enter your query when prompted.
+In alternativa, in modalità interattiva, seleziona `general_search` dal menu e inserisci la tua query quando richiesto.
 
-**Parameters:**
+**Parametri:**
 - `query` (stringa): La query di ricerca
 
-**Esempio di richiesta:**
+**Esempio di Richiesta:**
 
 ```json
 {
@@ -252,11 +252,11 @@ In alternativa, in modalità interattiva, seleziona `general_search` from the me
 
 ### news_search
 
-Cerca articoli di notizie recenti correlati a una query.
+Cerca articoli di notizie recenti relativi a una query.
 
 **Come chiamare questo strumento:**
 
-Puoi chiamare `news_search` dal tuo script usando MCP Python SDK, o interattivamente tramite Inspector o la modalità client interattiva. Ecco un esempio di codice con SDK:
+Puoi chiamare `news_search` dal tuo script usando MCP Python SDK, o interattivamente usando l’Inspector o la modalità client interattiva. Ecco un esempio di codice con l’SDK:
 
 <details>
 <summary>Esempio Python</summary>
@@ -278,12 +278,12 @@ async def run_news_search():
 ```
 </details>
 
-In alternativa, in modalità interattiva, seleziona `news_search` from the menu and enter your query when prompted.
+In alternativa, in modalità interattiva, seleziona `news_search` dal menu e inserisci la tua query quando richiesto.
 
-**Parameters:**
+**Parametri:**
 - `query` (stringa): La query di ricerca
 
-**Esempio di richiesta:**
+**Esempio di Richiesta:**
 
 ```json
 {
@@ -297,7 +297,7 @@ Cerca prodotti corrispondenti a una query.
 
 **Come chiamare questo strumento:**
 
-Puoi chiamare `product_search` dal tuo script usando MCP Python SDK, o interattivamente tramite Inspector o la modalità client interattiva. Ecco un esempio di codice con SDK:
+Puoi chiamare `product_search` dal tuo script usando MCP Python SDK, o interattivamente usando l’Inspector o la modalità client interattiva. Ecco un esempio di codice con l’SDK:
 
 <details>
 <summary>Esempio Python</summary>
@@ -319,12 +319,12 @@ async def run_product_search():
 ```
 </details>
 
-In alternativa, in modalità interattiva, seleziona `product_search` from the menu and enter your query when prompted.
+In alternativa, in modalità interattiva, seleziona `product_search` dal menu e inserisci la tua query quando richiesto.
 
-**Parameters:**
+**Parametri:**
 - `query` (stringa): La query di ricerca prodotto
 
-**Esempio di richiesta:**
+**Esempio di Richiesta:**
 
 ```json
 {
@@ -338,7 +338,7 @@ Ottiene risposte dirette a domande dai motori di ricerca.
 
 **Come chiamare questo strumento:**
 
-Puoi chiamare `qna` dal tuo script usando MCP Python SDK, o interattivamente tramite Inspector o la modalità client interattiva. Ecco un esempio di codice con SDK:
+Puoi chiamare `qna` dal tuo script usando MCP Python SDK, o interattivamente usando l’Inspector o la modalità client interattiva. Ecco un esempio di codice con l’SDK:
 
 <details>
 <summary>Esempio Python</summary>
@@ -360,12 +360,12 @@ async def run_qna():
 ```
 </details>
 
-In alternativa, in modalità interattiva, seleziona `qna` from the menu and enter your question when prompted.
+In alternativa, in modalità interattiva, seleziona `qna` dal menu e inserisci la tua domanda quando richiesto.
 
-**Parameters:**
+**Parametri:**
 - `question` (stringa): La domanda a cui trovare risposta
 
-**Esempio di richiesta:**
+**Esempio di Richiesta:**
 
 ```json
 {
@@ -375,12 +375,12 @@ In alternativa, in modalità interattiva, seleziona `qna` from the menu and ente
 
 ## Dettagli del Codice
 
-Questa sezione fornisce snippet di codice e riferimenti per le implementazioni di server e client.
+Questa sezione fornisce frammenti di codice e riferimenti per le implementazioni di server e client.
 
 <details>
 <summary>Python</summary>
 
-Consulta [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) per i dettagli completi dell’implementazione.
+Consulta [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) e [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) per i dettagli completi dell’implementazione.
 
 ```python
 # Example snippet from server.py:
@@ -392,39 +392,39 @@ import httpx
 
 ## Concetti Avanzati in Questa Lezione
 
-Prima di iniziare a costruire, ecco alcuni importanti concetti avanzati che appariranno in tutto il capitolo. Comprenderli ti aiuterà a seguire anche se sono nuovi per te:
+Prima di iniziare a costruire, ecco alcuni concetti avanzati importanti che appariranno in tutto il capitolo. Capirli ti aiuterà a seguire meglio, anche se sono nuovi per te:
 
 - **Orchestrazione Multi-strumento**: Significa eseguire diversi strumenti (come ricerca web, notizie, prodotti e Q&A) all’interno di un unico server MCP. Permette al server di gestire una varietà di compiti, non solo uno.
-- **Gestione dei Limiti API**: Molte API esterne (come SerpAPI) limitano quante richieste puoi fare in un certo tempo. Un buon codice verifica questi limiti e li gestisce con grazia, così l’app non si blocca se superi il limite.
-- **Parsing Dati Strutturati**: Le risposte API sono spesso complesse e annidate. Questo concetto riguarda la trasformazione di queste risposte in formati puliti e facili da usare, adatti a LLM o altri programmi.
-- **Recupero dagli Errori**: A volte qualcosa va storto—magari la rete fallisce o l’API non restituisce ciò che ti aspetti. Il recupero dagli errori significa che il codice può gestire questi problemi e fornire feedback utili, invece di bloccarsi.
-- **Validazione Parametri**: Controllare che tutti gli input agli strumenti siano corretti e sicuri da usare. Include impostare valori di default e assicurarsi che i tipi siano corretti, aiutando a prevenire bug e confusioni.
+- **Gestione dei Limiti di Chiamata API**: Molte API esterne (come SerpAPI) limitano quante richieste puoi fare in un certo tempo. Un buon codice controlla questi limiti e li gestisce con grazia, così l’app non si blocca se superi un limite.
+- **Parsing di Dati Strutturati**: Le risposte API sono spesso complesse e annidate. Questo concetto riguarda la trasformazione di quelle risposte in formati puliti e facili da usare, adatti a LLM o altri programmi.
+- **Recupero dagli Errori**: A volte qualcosa va storto—magari la rete fallisce o l’API non restituisce quello che ti aspetti. Il recupero dagli errori significa che il codice può gestire questi problemi e fornire comunque feedback utili, invece di bloccarsi.
+- **Validazione dei Parametri**: Si tratta di controllare che tutti gli input agli strumenti siano corretti e sicuri da usare. Include impostare valori di default e assicurarsi che i tipi siano giusti, aiutando a prevenire bug e confusione.
 
-Questa sezione ti aiuterà a diagnosticare e risolvere problemi comuni che potresti incontrare lavorando con il Web Search MCP Server. Se incontri errori o comportamenti inattesi, questa sezione di troubleshooting offre soluzioni ai problemi più frequenti. Dai un’occhiata a questi suggerimenti prima di chiedere aiuto—spesso risolvono rapidamente i problemi.
+Questa sezione ti aiuterà a diagnosticare e risolvere problemi comuni che potresti incontrare lavorando con il Server MCP per la Ricerca Web. Se incontri errori o comportamenti inattesi, questa sezione di troubleshooting offre soluzioni ai problemi più frequenti. Consulta questi consigli prima di chiedere aiuto—spesso risolvono rapidamente i problemi.
 
 ## Risoluzione dei Problemi
 
-Quando lavori con il Web Search MCP Server, può capitare di incontrare problemi—è normale quando si sviluppa con API esterne e nuovi strumenti. Questa sezione offre soluzioni pratiche ai problemi più comuni, così puoi tornare a lavorare rapidamente. Se incontri un errore, inizia da qui: i suggerimenti qui sotto affrontano i problemi più frequenti e spesso risolvono il problema senza bisogno di ulteriore supporto.
+Quando lavori con il Server MCP per la Ricerca Web, potresti occasionalmente incontrare problemi—è normale quando si sviluppa con API esterne e nuovi strumenti. Questa sezione fornisce soluzioni pratiche ai problemi più comuni, così puoi tornare rapidamente operativo. Se incontri un errore, inizia da qui: i consigli seguenti affrontano i problemi più frequenti e spesso risolvono il problema senza bisogno di ulteriore assistenza.
 
 ### Problemi Comuni
 
-Ecco alcuni dei problemi più frequenti, con spiegazioni chiare e passaggi per risolverli:
+Ecco alcuni dei problemi più frequenti che gli utenti incontrano, con spiegazioni chiare e passaggi per risolverli:
 
 1. **Manca SERPAPI_KEY nel file .env**
-   - Se vedi l’errore `SERPAPI_KEY environment variable not found`, it means your application can't find the API key needed to access SerpAPI. To fix this, create a file named `.env` in your project root (if it doesn't already exist) and add a line like `SERPAPI_KEY=your_serpapi_key_here`. Make sure to replace `your_serpapi_key_here` with your actual key from the SerpAPI website.
+   - Se vedi l’errore `SERPAPI_KEY environment variable not found`, significa che l’applicazione non riesce a trovare la chiave API necessaria per accedere a SerpAPI. Per risolvere, crea un file chiamato `.env` nella root del progetto (se non esiste già) e aggiungi una riga come `SERPAPI_KEY=la_tua_chiave_serpapi`. Assicurati di sostituire `la_tua_chiave_serpapi` con la tua chiave reale dal sito SerpAPI.
 
-2. **Module not found errors**
-   - Errors such as `ModuleNotFoundError: No module named 'httpx'` indicate that a required Python package is missing. This usually happens if you haven't installed all the dependencies. To resolve this, run `pip install -r requirements.txt` in your terminal to install everything your project needs.
+2. **Errori di modulo non trovato**
+   - Errori come `ModuleNotFoundError: No module named 'httpx'` indicano che manca un pacchetto Python richiesto. Succede di solito se non hai installato tutte le dipendenze. Per risolvere, esegui `pip install -r requirements.txt` nel terminale per installare tutto ciò che serve al progetto.
 
-3. **Connection issues**
-   - If you get an error like `Error during client execution`, it often means the client can't connect to the server, or the server isn't running as expected. Double-check that both the client and server are compatible versions, and that `server.py` is present and running in the correct directory. Restarting both the server and client can also help.
+3. **Problemi di connessione**
+   - Se ricevi un errore tipo `Error during client execution`, spesso significa che il client non riesce a connettersi al server, o che il server non è in esecuzione come previsto. Controlla che client e server siano versioni compatibili, e che `server.py` sia presente e in esecuzione nella directory corretta. Riavviare sia server che client può aiutare.
 
-4. **SerpAPI errors**
-   - Seeing `Search API returned error status: 401` means your SerpAPI key is missing, incorrect, or expired. Go to your SerpAPI dashboard, verify your key, and update your `.env`, crea o aggiorna il file `.env` se necessario. Se la chiave è corretta ma l’errore persiste, verifica che il piano gratuito non abbia esaurito la quota.
+4. **Errori SerpAPI**
+   - Se vedi `Search API returned error status: 401` significa che la tua chiave SerpAPI è mancante, errata o scaduta. Vai al tuo dashboard SerpAPI, verifica la chiave e aggiorna il file `.env` se necessario. Se la chiave è corretta ma l’errore persiste, controlla se il tuo piano gratuito ha esaurito la quota.
 
 ### Modalità Debug
 
-Di default, l’app registra solo informazioni importanti. Se vuoi vedere più dettagli su cosa sta succedendo (per esempio per diagnosticare problemi difficili), puoi abilitare la modalità DEBUG. Questo ti mostrerà molte più informazioni su ogni passaggio dell’app.
+Di default, l’app registra solo informazioni importanti. Se vuoi vedere più dettagli su cosa succede (ad esempio per diagnosticare problemi complessi), puoi abilitare la modalità DEBUG. Questo ti mostrerà molto di più su ogni passaggio che l’app compie.
 
 **Esempio: Output Normale**
 ```plaintext
@@ -446,11 +446,10 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Nota come la modalità DEBUG include righe extra su richieste HTTP, risposte e altri dettagli interni. Questo può essere molto utile per il troubleshooting.
+Nota come la modalità DEBUG includa righe extra su richieste HTTP, risposte e altri dettagli interni. Questo può essere molto utile per il troubleshooting.
 
-Per abilitare la modalità DEBUG, imposta il livello di logging su DEBUG all’inizio di `client.py` or `server.py`:
+Per abilitare la modalità DEBUG, imposta il livello di logging su DEBUG in cima a `client.py` o `server.py`:
 
-<details>
 <summary>Python</summary>
 
 ```python
@@ -465,9 +464,9 @@ logging.basicConfig(
 
 ---
 
-## Cosa Fare Dopo
+## Cosa c'è dopo
 
-- [5.10 Real Time Streaming](../mcp-realtimestreaming/README.md)
+- [5.10 Streaming in tempo reale](../mcp-realtimestreaming/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di considerare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

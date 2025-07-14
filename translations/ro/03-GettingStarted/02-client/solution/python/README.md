@@ -2,40 +2,41 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T10:04:51+00:00",
+  "translation_date": "2025-07-13T18:42:17+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "ro"
 }
 -->
 # Rularea acestui exemplu
 
-Se recomandă să instalați `uv`, dar nu este obligatoriu, vedeți [instrucțiunile](https://docs.astral.sh/uv/#highlights)
+Se recomandă să instalezi `uv`, dar nu este obligatoriu, vezi [instrucțiunile](https://docs.astral.sh/uv/#highlights)
 
-## -0- Creați un mediu virtual
+## -0- Creează un mediu virtual
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Activați mediul virtual
+## -1- Activează mediul virtual
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Instalați dependențele
+## -2- Instalează dependențele
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Rulați exemplul
+## -3- Rulează exemplul
+
 
 ```bash
 python client.py
 ```
 
-Ar trebui să vedeți un output similar cu:
+Ar trebui să vezi o ieșire similară cu:
 
 ```text
 LISTING RESOURCES
@@ -52,5 +53,5 @@ CALL TOOL
 [TextContent(type='text', text='8', annotations=None)]
 ```
 
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa maternă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea umană profesională. Nu suntem responsabili pentru neînțelegerile sau interpretările greșite care decurg din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

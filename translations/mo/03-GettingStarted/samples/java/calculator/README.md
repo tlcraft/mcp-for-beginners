@@ -2,104 +2,104 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-05-17T13:06:28+00:00",
+  "translation_date": "2025-07-13T22:22:30+00:00",
   "source_file": "03-GettingStarted/samples/java/calculator/README.md",
   "language_code": "mo"
 }
 -->
-# Khidmat Kalkulator Asas MCP
+# Basic Calculator MCP Service
 
-Khidmat ini menyediakan operasi kalkulator asas melalui Model Context Protocol (MCP) menggunakan Spring Boot dengan pengangkutan WebFlux. Ia direka sebagai contoh mudah untuk pemula yang belajar tentang pelaksanaan MCP.
+此服務透過 Model Context Protocol (MCP) 並使用 Spring Boot 搭配 WebFlux 傳輸，提供基本計算機運算功能。它設計為初學者學習 MCP 實作的簡單範例。
 
-Untuk maklumat lanjut, lihat dokumentasi rujukan [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
+更多資訊請參考 [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) 參考文件。
 
-## Gambaran Keseluruhan
+## 概覽
 
-Perkhidmatan ini memaparkan:
-- Sokongan untuk SSE (Server-Sent Events)
-- Pendaftaran alat automatik menggunakan anotasi `@Tool` Spring AI
-- Fungsi kalkulator asas:
-  - Penambahan, penolakan, pendaraban, pembahagian
-  - Pengiraan kuasa dan punca kuasa dua
-  - Modulus (baki) dan nilai mutlak
-  - Fungsi bantuan untuk penerangan operasi
+此服務展示了：
+- 支援 SSE（Server-Sent Events）
+- 使用 Spring AI 的 `@Tool` 註解自動註冊工具
+- 基本計算機功能：
+  - 加法、減法、乘法、除法
+  - 次方計算與平方根
+  - 取餘數與絕對值
+  - 提供操作說明的幫助功能
 
-## Ciri-ciri
+## 功能特色
 
-Perkhidmatan kalkulator ini menawarkan keupayaan berikut:
+此計算機服務提供以下功能：
 
-1. **Operasi Aritmetik Asas**:
-   - Penambahan dua nombor
-   - Penolakan satu nombor daripada yang lain
-   - Pendaraban dua nombor
-   - Pembahagian satu nombor dengan yang lain (dengan semakan pembahagian sifar)
+1. **基本算術運算**：
+   - 兩數相加
+   - 一數減去另一數
+   - 兩數相乘
+   - 一數除以另一數（含除以零檢查）
 
-2. **Operasi Lanjutan**:
-   - Pengiraan kuasa (menaikkan asas kepada eksponen)
-   - Pengiraan punca kuasa dua (dengan semakan nombor negatif)
-   - Pengiraan modulus (baki)
-   - Pengiraan nilai mutlak
+2. **進階運算**：
+   - 次方計算（底數的指數次方）
+   - 平方根計算（含負數檢查）
+   - 取餘數計算
+   - 絕對值計算
 
-3. **Sistem Bantuan**:
-   - Fungsi bantuan terbina dalam yang menerangkan semua operasi yang tersedia
+3. **幫助系統**：
+   - 內建幫助函式，說明所有可用操作
 
-## Menggunakan Khidmat
+## 使用服務
 
-Perkhidmatan ini mendedahkan titik akhir API berikut melalui protokol MCP:
+此服務透過 MCP 協定公開以下 API 端點：
 
-- `add(a, b)`: Menambah dua nombor bersama
-- `subtract(a, b)`: Menolak nombor kedua daripada yang pertama
-- `multiply(a, b)`: Mendarab dua nombor
-- `divide(a, b)`: Membahagikan nombor pertama dengan yang kedua (dengan semakan sifar)
-- `power(base, exponent)`: Mengira kuasa nombor
-- `squareRoot(number)`: Mengira punca kuasa dua (dengan semakan nombor negatif)
-- `modulus(a, b)`: Mengira baki apabila membahagikan
-- `absolute(number)`: Mengira nilai mutlak
-- `help()`: Mendapatkan maklumat tentang operasi yang tersedia
+- `add(a, b)`：將兩數相加
+- `subtract(a, b)`：將第二個數從第一個數中減去
+- `multiply(a, b)`：將兩數相乘
+- `divide(a, b)`：將第一個數除以第二個數（含除以零檢查）
+- `power(base, exponent)`：計算次方
+- `squareRoot(number)`：計算平方根（含負數檢查）
+- `modulus(a, b)`：計算除法餘數
+- `absolute(number)`：計算絕對值
+- `help()`：取得可用操作的說明資訊
 
-## Pelanggan Ujian
+## 測試用戶端
 
-Pelanggan ujian mudah disertakan dalam pakej `com.microsoft.mcp.sample.client`. Kelas `SampleCalculatorClient` menunjukkan operasi kalkulator yang tersedia.
+在 `com.microsoft.mcp.sample.client` 套件中包含一個簡單的測試用戶端。`SampleCalculatorClient` 類別展示了計算機服務的可用操作。
 
-## Menggunakan Pelanggan LangChain4j
+## 使用 LangChain4j 用戶端
 
-Projek ini termasuk contoh pelanggan LangChain4j dalam `com.microsoft.mcp.sample.client.LangChain4jClient` yang menunjukkan cara mengintegrasikan perkhidmatan kalkulator dengan LangChain4j dan model GitHub:
+專案中包含一個 LangChain4j 範例用戶端，位於 `com.microsoft.mcp.sample.client.LangChain4jClient`，示範如何將計算機服務與 LangChain4j 及 GitHub 模型整合：
 
-### Prasyarat
+### 前置條件
 
-1. **Penyediaan Token GitHub**:
-   
-   Untuk menggunakan model AI GitHub (seperti phi-4), anda memerlukan token akses peribadi GitHub:
+1. **GitHub Token 設定**：
 
-   a. Pergi ke tetapan akaun GitHub anda: https://github.com/settings/tokens
-   
-   b. Klik "Generate new token" → "Generate new token (classic)"
-   
-   c. Beri token anda nama yang deskriptif
-   
-   d. Pilih skop berikut:
-      - `repo` (Kawalan penuh repositori peribadi)
-      - `read:org` (Baca keahlian org dan pasukan, baca projek org)
-      - `gist` (Cipta gists)
-      - `user:email` (Akses alamat emel pengguna (baca sahaja))
-   
-   e. Klik "Generate token" dan salin token baru anda
-   
-   f. Tetapkan sebagai pembolehubah persekitaran:
-      
-      Pada Windows:
+   若要使用 GitHub 的 AI 模型（如 phi-4），需要 GitHub 個人存取權杖：
+
+   a. 前往 GitHub 帳號設定頁面：https://github.com/settings/tokens
+
+   b. 點選「Generate new token」→「Generate new token (classic)」
+
+   c. 為權杖命名以便識別
+
+   d. 選擇以下權限範圍：
+      - `repo`（私有倉庫完整控制權）
+      - `read:org`（讀取組織與團隊成員資格、讀取組織專案）
+      - `gist`（建立 gist）
+      - `user:email`（讀取使用者電子郵件地址（唯讀））
+
+   e. 點選「Generate token」並複製新權杖
+
+   f. 設定為環境變數：
+
+      Windows 系統：
       ```
       set GITHUB_TOKEN=your-github-token
       ```
-      
-      Pada macOS/Linux:
+
+      macOS/Linux 系統：
       ```bash
       export GITHUB_TOKEN=your-github-token
       ```
 
-   g. Untuk penyediaan kekal, tambahkannya kepada pembolehubah persekitaran anda melalui tetapan sistem
+   g. 若需永久設定，請透過系統設定將其加入環境變數
 
-2. Tambah pergantungan GitHub LangChain4j kepada projek anda (sudah disertakan dalam pom.xml):
+2. 將 LangChain4j GitHub 依賴加入專案（已包含於 pom.xml）：
    ```xml
    <dependency>
        <groupId>dev.langchain4j</groupId>
@@ -108,25 +108,25 @@ Projek ini termasuk contoh pelanggan LangChain4j dalam `com.microsoft.mcp.sample
    </dependency>
    ```
 
-3. Pastikan pelayan kalkulator berjalan di `localhost:8080`
+3. 確保計算機伺服器正在 `localhost:8080` 運行
 
-### Menjalankan Pelanggan LangChain4j
+### 執行 LangChain4j 用戶端
 
-Contoh ini menunjukkan:
-- Menyambung ke pelayan kalkulator MCP melalui pengangkutan SSE
-- Menggunakan LangChain4j untuk mencipta bot sembang yang menggunakan operasi kalkulator
-- Mengintegrasikan dengan model AI GitHub (kini menggunakan model phi-4)
+此範例示範：
+- 透過 SSE 傳輸連接計算機 MCP 伺服器
+- 使用 LangChain4j 建立聊天機器人，利用計算機功能
+- 整合 GitHub AI 模型（目前使用 phi-4 模型）
 
-Pelanggan menghantar pertanyaan sampel berikut untuk menunjukkan fungsi:
-1. Mengira jumlah dua nombor
-2. Mencari punca kuasa dua nombor
-3. Mendapatkan maklumat bantuan tentang operasi kalkulator yang tersedia
+用戶端會發送以下範例查詢以展示功能：
+1. 計算兩數和
+2. 計算數字平方根
+3. 取得計算機可用操作的幫助資訊
 
-Jalankan contoh dan periksa output konsol untuk melihat bagaimana model AI menggunakan alat kalkulator untuk menjawab pertanyaan.
+執行範例並查看主控台輸出，了解 AI 模型如何使用計算機工具回應查詢。
 
-### Konfigurasi Model GitHub
+### GitHub 模型設定
 
-Pelanggan LangChain4j dikonfigurasikan untuk menggunakan model phi-4 GitHub dengan tetapan berikut:
+LangChain4j 用戶端設定使用 GitHub 的 phi-4 模型，設定如下：
 
 ```java
 ChatLanguageModel model = GitHubChatModel.builder()
@@ -138,11 +138,11 @@ ChatLanguageModel model = GitHubChatModel.builder()
     .build();
 ```
 
-Untuk menggunakan model GitHub yang berbeza, tukar sahaja parameter `modelName` kepada model lain yang disokong (contohnya, "claude-3-haiku-20240307", "llama-3-70b-8192", dll.).
+若要使用其他 GitHub 模型，只需將 `modelName` 參數改為其他支援的模型（例如 "claude-3-haiku-20240307"、"llama-3-70b-8192" 等）。
 
-## Pergantungan
+## 依賴項目
 
-Projek ini memerlukan pergantungan utama berikut:
+專案需要以下主要依賴：
 
 ```xml
 <!-- For MCP Server -->
@@ -166,77 +166,78 @@ Projek ini memerlukan pergantungan utama berikut:
 </dependency>
 ```
 
-## Membina Projek
+## 專案建置
 
-Bina projek menggunakan Maven:
+使用 Maven 建置專案：
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## Menjalankan Pelayan
+## 啟動伺服器
 
-### Menggunakan Java
+### 使用 Java
 
 ```bash
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### Menggunakan MCP Inspector
+### 使用 MCP Inspector
 
-MCP Inspector adalah alat yang berguna untuk berinteraksi dengan perkhidmatan MCP. Untuk menggunakannya dengan perkhidmatan kalkulator ini:
+MCP Inspector 是一個方便與 MCP 服務互動的工具。使用此計算機服務時：
 
-1. **Pasang dan jalankan MCP Inspector** dalam tetingkap terminal baru:
+1. **安裝並啟動 MCP Inspector**，在新終端視窗執行：
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Akses UI web** dengan mengklik URL yang dipaparkan oleh aplikasi (biasanya http://localhost:6274)
+2. **透過瀏覽器開啟網頁介面**，點擊應用程式顯示的 URL（通常是 http://localhost:6274）
 
-3. **Konfigurasikan sambungan**:
-   - Tetapkan jenis pengangkutan kepada "SSE"
-   - Tetapkan URL kepada titik akhir SSE pelayan yang berjalan: `http://localhost:8080/sse`
-   - Klik "Connect"
+3. **設定連線**：
+   - 傳輸類型選擇「SSE」
+   - URL 設為正在運行伺服器的 SSE 端點：`http://localhost:8080/sse`
+   - 點擊「Connect」
 
-4. **Gunakan alat**:
-   - Klik "List Tools" untuk melihat operasi kalkulator yang tersedia
-   - Pilih alat dan klik "Run Tool" untuk melaksanakan operasi
+4. **使用工具**：
+   - 點擊「List Tools」查看可用的計算機操作
+   - 選擇工具後點擊「Run Tool」執行操作
 
-![Tangkapan Skrin MCP Inspector](../../../../../../translated_images/tool.d45bdee7d4d5740a48d0d6378c9a8af0c1a289f1e0f2ae95ee176f1a5afb40a8.mo.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.mo.png)
 
-### Menggunakan Docker
+### 使用 Docker
 
-Projek ini termasuk Dockerfile untuk penyebaran dalam kontena:
+專案包含 Dockerfile 以便容器化部署：
 
-1. **Bina imej Docker**:
+1. **建置 Docker 映像檔**：
    ```bash
    docker build -t calculator-mcp-service .
    ```
 
-2. **Jalankan kontena Docker**:
+2. **執行 Docker 容器**：
    ```bash
    docker run -p 8080:8080 calculator-mcp-service
    ```
 
-Ini akan:
-- Membina imej Docker berbilang peringkat dengan Maven 3.9.9 dan Eclipse Temurin 24 JDK
-- Mencipta imej kontena yang dioptimumkan
-- Mendedahkan perkhidmatan pada port 8080
-- Memulakan perkhidmatan kalkulator MCP dalam kontena
+此操作將：
+- 使用 Maven 3.9.9 與 Eclipse Temurin 24 JDK 建置多階段 Docker 映像
+- 建立優化的容器映像
+- 開放服務於 8080 埠口
+- 在容器內啟動 MCP 計算機服務
 
-Anda boleh mengakses perkhidmatan di `http://localhost:8080` sebaik sahaja kontena berjalan.
+容器啟動後，可透過 `http://localhost:8080` 存取服務。
 
-## Penyelesaian Masalah
+## 疑難排解
 
-### Isu Biasa dengan Token GitHub
+### GitHub Token 常見問題
 
-1. **Isu Kebenaran Token**: Jika anda mendapat ralat 403 Forbidden, periksa bahawa token anda mempunyai kebenaran yang betul seperti yang dinyatakan dalam prasyarat.
+1. **權杖權限問題**：若遇到 403 Forbidden 錯誤，請確認權杖擁有前述正確權限。
 
-2. **Token Tidak Ditemui**: Jika anda mendapat ralat "No API key found", pastikan pembolehubah persekitaran GITHUB_TOKEN disetkan dengan betul.
+2. **找不到權杖**：若出現「No API key found」錯誤，請確認 GITHUB_TOKEN 環境變數已正確設定。
 
-3. **Pembatasan Kadar**: API GitHub mempunyai pembatasan kadar. Jika anda menghadapi ralat pembatasan kadar (kod status 429), tunggu beberapa minit sebelum mencuba lagi.
+3. **速率限制**：GitHub API 有速率限制，若遇到 429 錯誤，請稍候幾分鐘後再試。
 
-4. **Token Luput**: Token GitHub boleh luput. Jika anda menerima ralat pengesahan selepas beberapa waktu, hasilkan token baru dan kemas kini pembolehubah persekitaran anda.
+4. **權杖過期**：GitHub 權杖可能會過期，若一段時間後出現認證錯誤，請重新產生權杖並更新環境變數。
 
-Jika anda memerlukan bantuan lanjut, periksa dokumentasi [LangChain4j](https://github.com/langchain4j/langchain4j) atau dokumentasi [GitHub API](https://docs.github.com/en/rest).
+如需進一步協助，請參考 [LangChain4j 文件](https://github.com/langchain4j/langchain4j) 或 [GitHub API 文件](https://docs.github.com/en/rest)。
 
-I'm sorry, but I'm not familiar with a language called "mo." Could you please clarify or provide more context about the language you would like the text translated into?
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

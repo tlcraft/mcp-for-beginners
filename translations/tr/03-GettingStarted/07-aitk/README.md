@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T17:18:47+00:00",
+  "translation_date": "2025-07-13T21:33:39+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "tr"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Bir AI ajanı oluştururken, sadece akıllı yanıtlar üretmekle kalmaz, aynı zamanda ajanın harekete geçme yeteneğine sahip olması da önemlidir. İşte burada Model Context Protocol (MCP) devreye girer. MCP, ajanların dış araçlara ve hizmetlere tutarlı bir şekilde erişmesini kolaylaştırır. Bunu, ajanın gerçekten kullanabileceği bir araç kutusuna bağlanması gibi düşünebilirsiniz.
 
-Diyelim ki bir ajanı hesap makinesi MCP sunucunuza bağladınız. Birdenbire, ajanın “47 çarpı 89 kaçtır?” gibi bir istem alarak matematik işlemleri yapabilmesi mümkün olur—mantığı kodlamak ya da özel API’ler oluşturmak gerekmez.
+Diyelim ki bir ajanı hesap makinesi MCP sunucunuza bağladınız. Birdenbire, ajanın “47 çarpı 89 nedir?” gibi bir istem alarak matematik işlemleri yapabilmesi mümkün olur—mantığı kodlamak ya da özel API’ler oluşturmak gerekmez.
 
 ## Genel Bakış
 
@@ -31,7 +31,7 @@ Bu dersi tamamladıktan sonra şunları yapabileceksiniz:
 
 ## Yaklaşım
 
-Yüksek seviyede yaklaşımımız şöyle olacak:
+Yüksek seviyede şu adımları izlemeliyiz:
 
 - Bir ajan oluşturup sistem istemini tanımlamak.
 - Hesap makinesi araçları içeren bir MCP sunucusu oluşturmak.
@@ -53,7 +53,7 @@ Bu alıştırmada, Visual Studio Code içinde AI Toolkit kullanarak bir MCP sunu
 
 Alıştırma, **GPT-4o** modelini kullanır. Ajanı oluşturmadan önce modelin **My Models** listesine eklenmiş olması gerekir.
 
-![Visual Studio Code AI Toolkit uzantısında model seçme arayüzünün ekran görüntüsü. Başlık “AI Çözümünüz için doğru modeli bulun” ve alt başlık kullanıcıları AI modellerini keşfetmeye, test etmeye ve dağıtmaya teşvik ediyor. “Popüler Modeller” altında altı model kartı gösteriliyor: DeepSeek-R1 (GitHub barındırmalı), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Küçük, Hızlı) ve DeepSeek-R1 (Ollama barındırmalı). Her kartta “Ekle” ve “Playground’da Deneyin” seçenekleri var.](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.tr.png)
+![Visual Studio Code AI Toolkit uzantısında model seçimi arayüzünün ekran görüntüsü. Başlık “AI Çözümünüz için doğru modeli bulun” ve alt başlık AI modellerini keşfetme, test etme ve dağıtma çağrısı yapıyor. “Popüler Modeller” altında altı model kartı var: DeepSeek-R1 (GitHub barındırmalı), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Küçük, Hızlı) ve DeepSeek-R1 (Ollama barındırmalı). Her kartta “Ekle” ve “Playground’da Deneyin” seçenekleri bulunuyor.](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.tr.png)
 
 1. **Activity Bar**’dan **AI Toolkit** uzantısını açın.
 1. **Catalog** bölümünde **Models** seçeneğini seçin. Bu, **Model Catalog**’u yeni bir editör sekmesinde açar.
@@ -63,9 +63,9 @@ Alıştırma, **GPT-4o** modelini kullanır. Ajanı oluşturmadan önce modelin 
 
 ### -1- Bir ajan oluşturun
 
-**Agent (Prompt) Builder**, kendi AI destekli ajanlarınızı oluşturup özelleştirmenizi sağlar. Bu bölümde yeni bir ajan oluşturacak ve konuşmayı güçlendirmek için bir model atayacaksınız.
+**Agent (Prompt) Builder**, kendi AI destekli ajanlarınızı oluşturup özelleştirmenizi sağlar. Bu bölümde yeni bir ajan oluşturacak ve konuşmayı yönlendirmek için bir model atayacaksınız.
 
-![Visual Studio Code AI Toolkit uzantısında “Calculator Agent” oluşturucu arayüzünün ekran görüntüsü. Sol panelde seçili model “OpenAI GPT-4o (via GitHub).” Sistem istemi “Üniversitede matematik öğreten bir profesörsünüz,” kullanıcı istemi ise “Fourier denklemini basit terimlerle açıkla.” Araç ekleme, MCP Server etkinleştirme ve yapılandırılmış çıktı seçenekleri butonları var. Alt kısımda mavi “Run” butonu. Sağ panelde “Örneklerle Başlayın” altında Web Developer, Second-Grade Simplifier ve Dream Interpreter gibi üç örnek ajan listelenmiş.](../../../../translated_images/aitk-agent-builder.901e3a2960c3e4774b29a23024ff5bec2d4232f57fae2a418b2aaae80f81c05f.tr.png)
+![Visual Studio Code AI Toolkit uzantısında "Calculator Agent" oluşturucu arayüzünün ekran görüntüsü. Sol panelde seçili model "OpenAI GPT-4o (via GitHub)". Sistem istemi “Üniversitede matematik öğreten bir profesörsünüz” diyor, kullanıcı istemi “Fourier denklemini basit terimlerle açıkla” şeklinde. Araç ekleme, MCP Server etkinleştirme ve yapılandırılmış çıktı seçenekleri var. Alt kısımda mavi “Run” butonu. Sağ panelde “Örneklerle Başlayın” altında Web Developer, Second-Grade Simplifier ve Dream Interpreter gibi örnek ajanlar listelenmiş.](../../../../translated_images/aitk-agent-builder.901e3a2960c3e4774b29a23024ff5bec2d4232f57fae2a418b2aaae80f81c05f.tr.png)
 
 1. **Activity Bar**’dan **AI Toolkit** uzantısını açın.
 1. **Tools** bölümünde **Agent (Prompt) Builder**’ı seçin. Bu, **Agent (Prompt) Builder**’ı yeni bir editör sekmesinde açar.
@@ -77,18 +77,18 @@ Alıştırma, **GPT-4o** modelini kullanır. Ajanı oluşturmadan önce modelin 
 
 Ajan iskeletini oluşturduğunuza göre, şimdi kişiliğini ve amacını tanımlama zamanı. Bu bölümde, ajanınızın davranışını tanımlamak için **Generate system prompt** özelliğini kullanacak ve modelin sizin için sistem istemini yazmasını sağlayacaksınız. Bu örnekte, bir hesap makinesi ajanı olacak.
 
-![Visual Studio Code AI Toolkit’te “Calculator Agent” arayüzünün ekran görüntüsü. Açılan “Generate a prompt” başlıklı modal pencerede, temel bilgileri paylaşarak bir istem şablonu oluşturulabileceği açıklanıyor. Metin kutusunda örnek sistem istemi: “You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.” Altında “Close” ve “Generate” butonları var. Arka planda seçili model “OpenAI GPT-4o (via GitHub)” ve sistem ile kullanıcı istemi alanları görünüyor.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.tr.png)
+![Visual Studio Code AI Toolkit’te "Calculator Agent" arayüzünün ekran görüntüsü. Açılan "Generate a prompt" başlıklı modal pencerede, temel bilgileri paylaşarak bir istem şablonu oluşturulabileceği açıklanıyor. Metin kutusunda örnek sistem istemi: “You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.” Altında “Close” ve “Generate” butonları var. Arka planda seçili model “OpenAI GPT-4o (via GitHub)” ve sistem ile kullanıcı istemi alanları görünüyor.](../../../../translated_images/aitk-generate-prompt.ba9e69d3d2bbe2a26444d0c78775540b14196061eee32c2054e9ee68c4f51f3a.tr.png)
 
 1. **Prompts** bölümünde **Generate system prompt** butonuna tıklayın. Bu buton, ajan için sistem istemi oluşturmak üzere AI kullanan istem oluşturucuyu açar.
 1. **Generate a prompt** penceresine şu metni girin: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. **Generate** butonuna tıklayın. Sağ alt köşede sistem isteminin oluşturulduğuna dair bir bildirim görünecek. İstem oluşturma tamamlandığında, istem **Agent (Prompt) Builder** içindeki **System prompt** alanında görünecek.
-1. **System prompt**u gözden geçirin ve gerekirse düzenleyin.
+1. **Generate** butonuna tıklayın. Sağ alt köşede sistem isteminin oluşturulduğuna dair bir bildirim görünecek. İstem oluşturma tamamlandığında, istem **Agent (Prompt) Builder** içindeki **System prompt** alanında belirecek.
+1. **System prompt**’u gözden geçirin ve gerekirse düzenleyin.
 
 ### -3- Bir MCP sunucusu oluşturun
 
-Ajanınızın sistem istemini tanımladığınıza göre—davranışını ve yanıtlarını yönlendiren—şimdi ajana pratik yetenekler kazandırma zamanı. Bu bölümde, toplama, çıkarma, çarpma ve bölme işlemlerini yapabilen araçlara sahip bir hesap makinesi MCP sunucusu oluşturacaksınız. Bu sunucu, ajanın doğal dil istemlerine gerçek zamanlı matematik işlemleri yapmasını sağlayacak.
+Ajanınızın sistem istemini tanımladığınıza göre—davranışını ve yanıtlarını yönlendiren—şimdi ajana pratik yetenekler kazandırma zamanı. Bu bölümde, toplama, çıkarma, çarpma ve bölme işlemlerini yapabilen araçlar içeren bir hesap makinesi MCP sunucusu oluşturacaksınız. Bu sunucu, ajanın doğal dil istemlerine gerçek zamanlı matematik işlemleri yapmasını sağlayacak.
 
-![Visual Studio Code AI Toolkit uzantısında Calculator Agent arayüzünün alt kısmının ekran görüntüsü. “Tools” ve “Structure output” için genişletilebilir menüler, “Choose output format” açılır menüsü “text” olarak seçili. Sağda “+ MCP Server” butonu var. Araçlar bölümünün üstünde bir resim simgesi yer tutucu var.](../../../../translated_images/aitk-add-mcp-server.9742cfddfe808353c0caf9cc0a7ed3e80e13abf4d2ebde315c81c3cb02a2a449.tr.png)
+![Visual Studio Code AI Toolkit uzantısında Calculator Agent arayüzünün alt kısmının ekran görüntüsü. “Tools” ve “Structure output” için açılır menüler, “Choose output format” açılır menüsü “text” olarak seçili. Sağda “+ MCP Server” butonu var. Araçlar bölümünün üstünde bir resim simgesi yer tutucu olarak görünüyor.](../../../../translated_images/aitk-add-mcp-server.9742cfddfe808353c0caf9cc0a7ed3e80e13abf4d2ebde315c81c3cb02a2a449.tr.png)
 
 AI Toolkit, kendi MCP sunucunuzu kolayca oluşturmanız için şablonlar sunar. Hesap makinesi MCP sunucusunu oluşturmak için Python şablonunu kullanacağız.
 
@@ -97,9 +97,9 @@ AI Toolkit, kendi MCP sunucunuzu kolayca oluşturmanız için şablonlar sunar. 
 1. **Agent (Prompt) Builder** içindeki **Tools** bölümünde **+ MCP Server** butonuna tıklayın. Uzantı, **Command Palette** üzerinden bir kurulum sihirbazı başlatacak.
 1. **+ Add Server** seçeneğini seçin.
 1. **Create a New MCP Server** seçeneğini seçin.
-1. Şablon olarak **python-weather** seçin.
-1. MCP sunucu şablonunu kaydetmek için **Default folder** seçin.
-1. Sunucu adı olarak **Calculator** yazın.
+1. Şablon olarak **python-weather**’ı seçin.
+1. MCP sunucu şablonunu kaydetmek için **Default folder**’ı seçin.
+1. Sunucu için şu adı girin: **Calculator**
 1. Yeni bir Visual Studio Code penceresi açılacak. **Yes, I trust the authors** seçeneğini seçin.
 1. Terminali açın (**Terminal** > **New Terminal**) ve sanal ortam oluşturun: `python -m venv .venv`
 1. Terminalde sanal ortamı etkinleştirin:
@@ -162,7 +162,7 @@ Hesap makinesi MCP sunucusunu yerel geliştirme makinenizde **Agent Builder** ar
 1. **Agent (Prompt) Builder** içindeki **User prompt** alanına şu istemi yazın: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
 1. Ajanın yanıtını oluşturmak için **Run** butonuna tıklayın.
 1. Ajan çıktısını inceleyin. Model, ödediğiniz tutarın **$55** olduğunu sonuçlandırmalıdır.
-1. İşleyişin detayları şöyle olmalı:
+1. İşleyişin özeti şöyle olmalı:
     - Ajan, hesaplamaya yardımcı olmak için **multiply** ve **subtract** araçlarını seçer.
     - **multiply** aracı için `a` ve `b` değerleri atanır.
     - **subtract** aracı için `a` ve `b` değerleri atanır.
@@ -195,4 +195,4 @@ Bu bölümden çıkarılacak önemli noktalar şunlardır:
 - Sonraki: [Test Etme ve Hata Ayıklama](../08-testing/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

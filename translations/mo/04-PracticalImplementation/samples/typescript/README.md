@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-17T15:02:20+00:00",
+  "translation_date": "2025-07-13T23:36:34+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "mo"
 }
 -->
-# नमूना
+# 範例
 
-यह MCP सर्वर के लिए एक टाइपस्क्रिप्ट नमूना है
+這是一個 MCP 伺服器的 Typescript 範例
 
-यहाँ उपकरण निर्माण का एक उदाहरण है:
+以下是建立工具的示範：
 
 ```typescript
 this.mcpServer.tool(
@@ -74,18 +74,19 @@ async ({ model, prompt, options }) => {
 );
 ```
 
-## इंस्टॉल
+## 安裝
 
-निम्नलिखित कमांड चलाएं:
+執行以下指令：
 
 ```bash
 npm install
 ```
 
-## चलाएं
+## 執行
 
 ```bash
 npm start
 ```
 
-I'm sorry, but I need clarification on what "mo" refers to. Could you please specify the language or provide more context?
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

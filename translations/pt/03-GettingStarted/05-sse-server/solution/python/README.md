@@ -2,65 +2,65 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-17T12:02:17+00:00",
+  "translation_date": "2025-07-13T20:14:44+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "pt"
 }
 -->
-# Executando este exemplo
+# Executar este exemplo
 
-Recomenda-se instalar `uv`, mas não é obrigatório, veja [instruções](https://docs.astral.sh/uv/#highlights)
+Recomenda-se instalar o `uv`, mas não é obrigatório, veja as [instruções](https://docs.astral.sh/uv/#highlights)
 
-## -0- Crie um ambiente virtual
+## -0- Criar um ambiente virtual
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Ative o ambiente virtual
+## -1- Ativar o ambiente virtual
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Instale as dependências
+## -2- Instalar as dependências
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Execute o exemplo
+## -3- Executar o exemplo
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Teste o exemplo
+## -4- Testar o exemplo
 
-Com o servidor rodando em um terminal, abra outro terminal e execute o seguinte comando:
+Com o servidor a correr num terminal, abra outro terminal e execute o seguinte comando:
 
 ```bash
 mcp dev server.py
 ```
 
-Isso deve iniciar um servidor web com uma interface visual que permite testar o exemplo.
+Isto deverá iniciar um servidor web com uma interface visual que permite testar o exemplo.
 
-Uma vez que o servidor estiver conectado:
+Assim que o servidor estiver ligado:
 
-- tente listar ferramentas e executar `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- experimente listar as ferramentas e executar `add`, com os argumentos 2 e 4, deverá ver 6 no resultado.
+- vá a resources e resource template e chame get_greeting, escreva um nome e deverá ver uma saudação com o nome que forneceu.
 
-### Testing in ClI mode
+### Testar em modo CLI
 
-The inspector you ran is actually a Node.js app and `mcp dev` é um wrapper ao redor dele.
+O inspector que executou é na verdade uma aplicação Node.js e o `mcp dev` é um wrapper à sua volta.
 
-Você pode iniciá-lo diretamente no modo CLI executando o seguinte comando:
+Pode lançá-lo diretamente em modo CLI executando o seguinte comando:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Isso irá listar todas as ferramentas disponíveis no servidor. Você deve ver o seguinte resultado:
+Isto irá listar todas as ferramentas disponíveis no servidor. Deverá ver a seguinte saída:
 
 ```text
 {
@@ -91,13 +91,13 @@ Isso irá listar todas as ferramentas disponíveis no servidor. Você deve ver o
 }
 ```
 
-Para invocar uma ferramenta, digite:
+Para invocar uma ferramenta, escreva:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Você deve ver o seguinte resultado:
+Deverá ver a seguinte saída:
 
 ```text
 {
@@ -112,8 +112,8 @@ Você deve ver o seguinte resultado:
 ```
 
 > ![!TIP]
-> Geralmente é muito mais rápido executar o inspetor no modo CLI do que no navegador.
-> Leia mais sobre o inspetor [aqui](https://github.com/modelcontextprotocol/inspector).
+> Normalmente é muito mais rápido executar o inspector em modo CLI do que no navegador.
+> Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
 
-**Aviso Legal**:
-Este documento foi traduzido usando o serviço de tradução de IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução humana profissional. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+**Aviso Legal**:  
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

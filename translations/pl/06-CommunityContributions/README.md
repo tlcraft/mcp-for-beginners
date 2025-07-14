@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-05-20T21:25:03+00:00",
+  "translation_date": "2025-07-14T03:58:33+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "pl"
 }
@@ -11,39 +11,39 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Przegląd
 
-Ta lekcja skupia się na tym, jak angażować się w społeczność MCP, wnosić wkład w ekosystem MCP oraz stosować najlepsze praktyki współpracy przy tworzeniu oprogramowania. Zrozumienie, jak uczestniczyć w projektach open-source MCP, jest kluczowe dla tych, którzy chcą kształtować przyszłość tej technologii.
+Ta lekcja skupia się na tym, jak angażować się w społeczność MCP, wnosić wkład w ekosystem MCP oraz stosować najlepsze praktyki w pracy zespołowej. Zrozumienie, jak uczestniczyć w otwartych projektach MCP, jest kluczowe dla tych, którzy chcą kształtować przyszłość tej technologii.
 
-## Cele Nauki
+## Cele nauki
 
-Po zakończeniu tej lekcji będziesz potrafił:
+Po ukończeniu tej lekcji będziesz potrafił:
 - Zrozumieć strukturę społeczności i ekosystemu MCP
 - Skutecznie uczestniczyć w forach i dyskusjach społeczności MCP
 - Wnosić wkład do otwartych repozytoriów MCP
 - Tworzyć i udostępniać własne narzędzia MCP
-- Stosować najlepsze praktyki w rozwoju i współpracy przy MCP
+- Stosować najlepsze praktyki w rozwoju i współpracy nad MCP
 
 ## Ekosystem Społeczności MCP
 
-Ekosystem MCP składa się z różnych elementów i uczestników, którzy współpracują, aby rozwijać protokół.
+Ekosystem MCP składa się z różnych komponentów i uczestników, którzy współpracują, aby rozwijać protokół.
 
-### Kluczowe Elementy Społeczności
+### Kluczowe elementy społeczności
 
-1. **Opiekunowie Protokołu Core**: Microsoft oraz inne organizacje, które utrzymują podstawowe specyfikacje MCP i referencyjne implementacje
-2. **Twórcy Narzędzi**: Osoby i zespoły tworzące narzędzia MCP
-3. **Dostawcy Integracji**: Firmy integrujące MCP ze swoimi produktami i usługami
-4. **Użytkownicy Końcowi**: Deweloperzy i organizacje korzystające z MCP w swoich aplikacjach
+1. **Opiekunowie rdzenia protokołu**: Microsoft i inne organizacje, które utrzymują podstawowe specyfikacje MCP oraz referencyjne implementacje
+2. **Twórcy narzędzi**: Osoby i zespoły tworzące narzędzia MCP
+3. **Dostawcy integracji**: Firmy integrujące MCP w swoich produktach i usługach
+4. **Użytkownicy końcowi**: Programiści i organizacje korzystające z MCP w swoich aplikacjach
 5. **Współtwórcy**: Członkowie społeczności, którzy dostarczają kod, dokumentację lub inne zasoby
 
-### Zasoby Społeczności
+### Zasoby społeczności
 
-#### Oficjalne Kanały
+#### Oficjalne kanały
 
 - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
-#### Zasoby Tworzone przez Społeczność
+#### Zasoby tworzone przez społeczność
 
 - Implementacje SDK dla konkretnych języków
 - Implementacje serwerów i biblioteki narzędziowe
@@ -52,12 +52,12 @@ Ekosystem MCP składa się z różnych elementów i uczestników, którzy wspó�
 
 ## Wkład w MCP
 
-### Rodzaje Wkładu
+### Rodzaje wkładu
 
 Ekosystem MCP otwarty jest na różne formy wkładu:
 
-1. **Wkład w Kod**:
-   - Ulepszenia protokołu core
+1. **Wkład w kod**:
+   - Ulepszenia rdzenia protokołu
    - Poprawki błędów
    - Implementacje narzędzi
    - Biblioteki klient/serwer w różnych językach
@@ -68,17 +68,17 @@ Ekosystem MCP otwarty jest na różne formy wkładu:
    - Tłumaczenie dokumentacji
    - Tworzenie przykładów i aplikacji demonstracyjnych
 
-3. **Wsparcie Społeczności**:
+3. **Wsparcie społeczności**:
    - Odpowiadanie na pytania na forach
    - Testowanie i zgłaszanie problemów
    - Organizowanie wydarzeń społecznościowych
    - Mentoring nowych współtwórców
 
-### Proces Wkładu: Protokół Core
+### Proces wkładu: Rdzeń protokołu
 
-Aby wnieść wkład do podstawowego protokołu MCP lub oficjalnych implementacji:
+Aby wnieść wkład do rdzenia protokołu MCP lub oficjalnych implementacji:
 
-#### Przykład .NET: Wnoszenie Ulepszenia Protokołu
+#### Przykład .NET: Wniesienie ulepszenia protokołu
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -145,7 +145,7 @@ namespace Microsoft.Mcp.Protocol
 }
 ```
 
-#### Przykład Java: Wnoszenie Poprawki Błędu
+#### Przykład Java: Wniesienie poprawki błędu
 
 ```java
 package com.mcp.tools;
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Przykład Python: Dodanie Nowego Narzędzia do Standardowej Biblioteki
+#### Przykład Python: Dodanie nowego narzędzia do standardowej biblioteki
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,18 +390,18 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Wytyczne dotyczące Wkładu
+### Wytyczne dotyczące wkładu
 
 Aby skutecznie wnieść wkład do projektów MCP:
 
-1. **Zacznij od Małych Rzeczy**: Zacznij od dokumentacji, poprawek błędów lub drobnych ulepszeń
-2. **Przestrzegaj Przewodnika Stylu**: Stosuj się do stylu kodowania i konwencji projektu
-3. **Pisz Testy**: Dołącz testy jednostkowe do swoich zmian w kodzie
-4. **Dokumentuj Swoją Pracę**: Dodaj jasną dokumentację dla nowych funkcji lub zmian
-5. **Składaj Skoncentrowane PR**: Utrzymuj pull requesty skupione na jednym problemie lub funkcji
-6. **Reaguj na Opinie**: Bądź otwarty na uwagi dotyczące twojego wkładu
+1. **Zacznij od małych rzeczy**: Zacznij od dokumentacji, poprawek błędów lub drobnych ulepszeń
+2. **Przestrzegaj stylu**: Stosuj się do stylu kodowania i konwencji projektu
+3. **Pisz testy**: Dołącz testy jednostkowe do swoich zmian
+4. **Dokumentuj swoją pracę**: Dodaj jasną dokumentację nowych funkcji lub zmian
+5. **Składaj ukierunkowane PR**: Utrzymuj pull requesty skupione na jednym problemie lub funkcji
+6. **Reaguj na opinie**: Bądź otwarty na uwagi dotyczące twoich zmian
 
-### Przykładowy Przebieg Wkładu
+### Przykładowy przebieg pracy nad wkładem
 
 ```bash
 # Clone the repository
@@ -429,13 +429,13 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Tworzenie i Udostępnianie Własnych Narzędzi MCP
+## Tworzenie i udostępnianie własnych narzędzi MCP
 
-Jednym z najcenniejszych sposobów wniesienia wkładu w ekosystem MCP jest tworzenie i udostępnianie własnych narzędzi.
+Jednym z najcenniejszych sposobów na wkład w ekosystem MCP jest tworzenie i udostępnianie własnych narzędzi.
 
-### Tworzenie Narzędzi do Udostępniania
+### Tworzenie narzędzi do udostępniania
 
-#### Przykład .NET: Tworzenie Pakietu Narzędzi do Udostępniania
+#### Przykład .NET: Tworzenie pakietu narzędzi do udostępnienia
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Przykład Java: Tworzenie Pakietu Maven dla Narzędzi
+#### Przykład Java: Tworzenie pakietu Maven dla narzędzi
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Przykład Python: Publikacja Pakietu PyPI
+#### Przykład Python: Publikacja pakietu na PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,68 +747,68 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Najlepsze Praktyki Udostępniania
+### Najlepsze praktyki udostępniania
 
-Udostępniając narzędzia MCP społeczności:
+Podczas udostępniania narzędzi MCP społeczności:
 
-1. **Kompletna Dokumentacja**:
+1. **Kompletna dokumentacja**:
    - Opisz cel, sposób użycia i przykłady
    - Wyjaśnij parametry i wartości zwracane
    - Udokumentuj wszelkie zewnętrzne zależności
 
-2. **Obsługa Błędów**:
+2. **Obsługa błędów**:
    - Zaimplementuj solidną obsługę błędów
    - Zapewnij przydatne komunikaty o błędach
-   - Łagodnie obsługuj przypadki brzegowe
+   - Radź sobie z nietypowymi przypadkami w sposób elegancki
 
 3. **Wydajność**:
    - Optymalizuj pod kątem szybkości i zużycia zasobów
-   - Stosuj cache tam, gdzie to stosowne
+   - Wdrażaj cache, gdy to stosowne
    - Uwzględnij skalowalność
 
 4. **Bezpieczeństwo**:
-   - Używaj bezpiecznych kluczy API i mechanizmów uwierzytelniania
+   - Używaj bezpiecznych kluczy API i uwierzytelniania
    - Waliduj i oczyszczaj dane wejściowe
-   - Wdrażaj ograniczenia liczby wywołań dla zewnętrznych API
+   - Wdrażaj ograniczenia liczby wywołań API zewnętrznych
 
 5. **Testowanie**:
-   - Zapewnij szeroki zakres testów
+   - Zapewnij szerokie pokrycie testami
    - Testuj różne typy danych wejściowych i przypadki brzegowe
-   - Dokumentuj procedury testowe
+   - Udokumentuj procedury testowe
 
-## Współpraca Społeczności i Najlepsze Praktyki
+## Współpraca społeczności i najlepsze praktyki
 
-Efektywna współpraca jest kluczowa dla rozwoju ekosystemu MCP.
+Skuteczna współpraca jest kluczem do rozwoju ekosystemu MCP.
 
-### Kanały Komunikacji
+### Kanały komunikacji
 
 - GitHub Issues i Discussions
 - Microsoft Tech Community
 - Kanały Discord i Slack
-- Stack Overflow (tag: `model-context-protocol` or `mcp`)
+- Stack Overflow (tag: `model-context-protocol` lub `mcp`)
 
-### Przeglądy Kodów
+### Przeglądy kodu
 
-Podczas przeglądu wkładu do MCP zwróć uwagę na:
+Podczas przeglądu wkładów do MCP:
 
 1. **Jasność**: Czy kod jest czytelny i dobrze udokumentowany?
 2. **Poprawność**: Czy działa zgodnie z oczekiwaniami?
 3. **Spójność**: Czy przestrzega konwencji projektu?
-4. **Kompletność**: Czy dołączono testy i dokumentację?
-5. **Bezpieczeństwo**: Czy występują potencjalne zagrożenia?
+4. **Kompletność**: Czy zawiera testy i dokumentację?
+5. **Bezpieczeństwo**: Czy nie ma problemów z bezpieczeństwem?
 
-### Kompatybilność Wersji
+### Kompatybilność wersji
 
 Podczas tworzenia rozwiązań dla MCP:
 
-1. **Wersjonowanie Protokołu**: Stosuj wersję protokołu MCP, którą obsługuje twoje narzędzie
-2. **Kompatybilność Klienta**: Uwzględnij kompatybilność wsteczną
-3. **Kompatybilność Serwera**: Przestrzegaj wytycznych implementacji serwera
-4. **Zmiany Łamiące Zgodność**: Jasno dokumentuj wszelkie zmiany łamiące kompatybilność
+1. **Wersjonowanie protokołu**: Przestrzegaj wersji protokołu MCP, którą obsługuje twoje narzędzie
+2. **Kompatybilność klienta**: Uwzględnij kompatybilność wsteczną
+3. **Kompatybilność serwera**: Stosuj się do wytycznych implementacji serwera
+4. **Zmiany łamiące kompatybilność**: Wyraźnie dokumentuj wszelkie zmiany łamiące kompatybilność
 
-## Przykładowy Projekt Społeczności: Rejestr Narzędzi MCP
+## Przykładowy projekt społecznościowy: Rejestr narzędzi MCP
 
-Ważnym wkładem społeczności może być stworzenie publicznego rejestru narzędzi MCP.
+Ważnym wkładem społecznościowym może być stworzenie publicznego rejestru narzędzi MCP.
 
 ```python
 # Example schema for a community tool registry API
@@ -887,30 +887,30 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Kluczowe Wnioski
+## Kluczowe wnioski
 
 - Społeczność MCP jest różnorodna i otwarta na różne formy wkładu
-- Wkład w MCP może obejmować ulepszenia protokołu core, jak i własne narzędzia
-- Przestrzeganie wytycznych zwiększa szanse na zaakceptowanie PR
+- Wkład w MCP może obejmować zarówno ulepszenia rdzenia protokołu, jak i tworzenie własnych narzędzi
+- Przestrzeganie wytycznych zwiększa szanse na zaakceptowanie twojego PR
 - Tworzenie i udostępnianie narzędzi MCP to wartościowy sposób na rozwój ekosystemu
 - Współpraca społeczności jest niezbędna dla rozwoju i ulepszania MCP
 
 ## Ćwiczenie
 
-1. Zidentyfikuj obszar w ekosystemie MCP, gdzie możesz wnieść wkład zgodnie ze swoimi umiejętnościami i zainteresowaniami
+1. Zidentyfikuj obszar w ekosystemie MCP, w którym możesz wnieść wkład, bazując na swoich umiejętnościach i zainteresowaniach
 2. Zrób fork repozytorium MCP i skonfiguruj lokalne środowisko deweloperskie
-3. Stwórz niewielkie ulepszenie, poprawkę błędu lub narzędzie, które przyniesie korzyść społeczności
+3. Stwórz drobne ulepszenie, poprawkę błędu lub narzędzie, które przyniesie korzyść społeczności
 4. Udokumentuj swój wkład, dołączając odpowiednie testy i dokumentację
 5. Złóż pull request do odpowiedniego repozytorium
 
-## Dodatkowe Zasoby
+## Dodatkowe zasoby
 
 - [MCP Community Projects](https://github.com/topics/model-context-protocol)
 
 
 ---
 
-Następny temat: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+Następny: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być traktowany jako źródło wiarygodne i nadrzędne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-16T15:37:23+00:00",
+  "translation_date": "2025-07-13T23:36:46+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "ja"
 }
 -->
-# Sample
+# サンプル
 
-これはMCPサーバーのTypeScriptサンプルです
+これはMCPサーバー用のTypeScriptサンプルです
 
 ツール作成の例はこちら：
 
@@ -76,7 +76,7 @@ async ({ model, prompt, options }) => {
 
 ## インストール
 
-次のコマンドを実行してください：
+以下のコマンドを実行してください：
 
 ```bash
 npm install
@@ -88,5 +88,5 @@ npm install
 npm start
 ```
 
-**免責事項**:  
-本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があります。原文の母国語版が正式な情報源として扱われるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

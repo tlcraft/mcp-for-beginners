@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T15:30:54+00:00",
+  "translation_date": "2025-07-13T21:56:37+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "de"
 }
@@ -28,25 +28,25 @@ MCP stellt Werkzeuge bereit, die Ihnen beim Testen und Debuggen Ihrer Server hel
 
 - **MCP Inspector**: Ein Kommandozeilenwerkzeug, das sowohl als CLI-Tool als auch als visuelles Tool verwendet werden kann.
 - **Manuelles Testen**: Sie können ein Tool wie curl verwenden, um Webanfragen auszuführen, aber jedes Tool, das HTTP unterstützt, ist geeignet.
-- **Unit-Testing**: Es ist möglich, Ihr bevorzugtes Testframework zu verwenden, um die Funktionen von Server und Client zu testen.
+- **Unit Testing**: Es ist möglich, Ihr bevorzugtes Testframework zu verwenden, um die Funktionen von Server und Client zu testen.
 
-### Verwendung des MCP Inspectors
+### Verwendung des MCP Inspector
 
-Wir haben die Nutzung dieses Werkzeugs in vorherigen Lektionen beschrieben, aber hier eine kurze Übersicht. Es ist ein in Node.js entwickeltes Tool, das Sie über den `npx`-Befehl ausführen können. Dieser lädt das Tool temporär herunter, installiert es und entfernt es nach der Ausführung Ihrer Anfrage wieder.
+Wir haben die Nutzung dieses Tools in vorherigen Lektionen beschrieben, aber hier eine kurze Übersicht. Es ist ein in Node.js entwickeltes Tool, das Sie über den `npx`-Befehl ausführen können. Dieser lädt das Tool temporär herunter, installiert es und entfernt es nach der Ausführung Ihrer Anfrage wieder.
 
 Der [MCP Inspector](https://github.com/modelcontextprotocol/inspector) hilft Ihnen dabei:
 
-- **Serverfähigkeiten entdecken**: Automatische Erkennung verfügbarer Ressourcen, Werkzeuge und Eingabeaufforderungen
+- **Serverfähigkeiten entdecken**: Automatische Erkennung verfügbarer Ressourcen, Werkzeuge und Prompts
 - **Werkzeugausführung testen**: Verschiedene Parameter ausprobieren und Antworten in Echtzeit sehen
 - **Server-Metadaten anzeigen**: Serverinformationen, Schemata und Konfigurationen einsehen
 
-Ein typischer Ablauf des Tools sieht folgendermaßen aus:
+Ein typischer Aufruf des Tools sieht folgendermaßen aus:
 
 ```bash
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Der obige Befehl startet einen MCP und seine visuelle Oberfläche und öffnet eine lokale Weboberfläche in Ihrem Browser. Sie sehen ein Dashboard mit Ihren registrierten MCP-Servern, deren verfügbaren Werkzeugen, Ressourcen und Eingabeaufforderungen. Die Oberfläche ermöglicht es Ihnen, die Werkzeugausführung interaktiv zu testen, Server-Metadaten zu inspizieren und Echtzeitantworten zu betrachten, was die Validierung und das Debuggen Ihrer MCP-Server-Implementierungen erleichtert.
+Der obige Befehl startet einen MCP und seine visuelle Oberfläche und öffnet eine lokale Weboberfläche in Ihrem Browser. Sie sehen ein Dashboard mit Ihren registrierten MCP-Servern, deren verfügbaren Werkzeugen, Ressourcen und Prompts. Die Oberfläche ermöglicht es Ihnen, die Werkzeugausführung interaktiv zu testen, Server-Metadaten zu inspizieren und Echtzeitantworten zu betrachten, was die Validierung und das Debuggen Ihrer MCP-Server-Implementierungen erleichtert.
 
 So könnte das aussehen: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.de.png)
 
@@ -72,9 +72,9 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Wie Sie an der obigen curl-Nutzung sehen, verwenden Sie eine POST-Anfrage, um ein Werkzeug mit einer Nutzlast aufzurufen, die den Namen des Werkzeugs und dessen Parameter enthält. Wählen Sie den Ansatz, der am besten zu Ihnen passt. CLI-Tools sind in der Regel schneller zu bedienen und lassen sich gut skripten, was in CI/CD-Umgebungen nützlich sein kann.
+Wie Sie an dem obigen Beispiel mit curl sehen, verwenden Sie eine POST-Anfrage, um ein Werkzeug mit einer Nutzlast aufzurufen, die den Namen des Werkzeugs und dessen Parameter enthält. Wählen Sie den Ansatz, der für Sie am besten passt. CLI-Tools sind in der Regel schneller zu bedienen und lassen sich gut skripten, was in einer CI/CD-Umgebung nützlich sein kann.
 
-### Unit-Testing
+### Unit Testing
 
 Erstellen Sie Unit-Tests für Ihre Werkzeuge und Ressourcen, um sicherzustellen, dass sie wie erwartet funktionieren. Hier ein Beispiel für Testcode:
 
@@ -155,7 +155,7 @@ Alle wichtigen SDKs haben ähnliche Testabschnitte, sodass Sie diese an Ihre gew
 
 ## Was kommt als Nächstes
 
-- Nächstes: [Deployment](../09-deployment/README.md)
+- Weiter: [Deployment](../09-deployment/README.md)
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24531f2b6b0f7fa3839accf4dc10088a",
-  "translation_date": "2025-05-17T10:52:05+00:00",
+  "translation_date": "2025-07-13T19:17:46+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/python/README.md",
   "language_code": "hr"
 }
 -->
 # Pokretanje ovog primjera
 
-Preporučuje se instalacija `uv`, ali nije obavezna, pogledajte [upute](https://docs.astral.sh/uv/#highlights)
+Preporučuje se instalirati `uv`, ali nije obavezno, pogledajte [upute](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Kreirajte virtualno okruženje
 
@@ -23,7 +23,7 @@ python -m venv venv
 venv\Scrips\activate
 ```
 
-## -2- Instalirajte potrebne ovisnosti
+## -2- Instalirajte ovisnosti
 
 ```bash
 pip install "mcp[cli]"
@@ -33,11 +33,12 @@ pip install azure-ai-inference
 
 ## -3- Pokrenite primjer
 
+
 ```bash
 python client.py
 ```
 
-Trebali biste vidjeti izlaz sličan:
+Trebali biste vidjeti izlaz sličan ovom:
 
 ```text
 LISTING RESOURCES
@@ -55,4 +56,4 @@ TOOLS result:  [TextContent(type='text', text='22', annotations=None)]
 ```
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge prevođenja [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije proizašle iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

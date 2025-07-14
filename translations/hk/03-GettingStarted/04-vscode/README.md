@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T16:04:52+00:00",
+  "translation_date": "2025-07-13T19:25:00+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "hk"
 }
@@ -27,7 +27,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 你可能需要啟用 MCP Server 的探測功能。
 
-1. 在 Visual Studio Code 中，前往 `檔案 -> 偏好設定 -> 設定`。
+1. 在 Visual Studio Code 中，前往 `File -> Preferences -> Settings`。
 
 2. 搜尋「MCP」，並在 settings.json 檔案中啟用 `chat.mcp.discovery.enabled`。
 
@@ -40,7 +40,7 @@ CO_OP_TRANSLATOR_METADATA:
 |-- mcp.json
 ```
 
-接著，讓我們看看如何新增伺服器條目。
+接著，我們來看看如何新增伺服器條目。
 
 ### -2- 配置伺服器
 
@@ -68,11 +68,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在 *mcp.json* 中找到你的條目，並確認你看到「播放」圖示：
 
-  ![在 Visual Studio Code 中啟動伺服器](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.hk.png)  
+  ![在 Visual Studio Code 啟動伺服器](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.hk.png)  
 
 2. 點擊「播放」圖示，你應該會看到 GitHub Copilot Chat 中的工具圖示顯示可用工具數量增加。點擊該工具圖示，你會看到已註冊工具的清單。你可以勾選或取消勾選每個工具，決定是否讓 GitHub Copilot 將它們作為上下文使用：
 
-  ![在 Visual Studio Code 中啟動伺服器](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.hk.png)
+  ![在 Visual Studio Code 啟動伺服器](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.hk.png)
 
 3. 要執行工具，輸入你知道會符合其中一個工具描述的提示，例如「add 22 to 1」：
 
@@ -82,7 +82,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 作業
 
-嘗試在你的 *mcp.json* 檔案中新增一個伺服器條目，並確保你能啟動／停止伺服器。也要確保你能透過 GitHub Copilot Chat 介面與伺服器上的工具溝通。
+試著在你的 *mcp.json* 檔案中新增一個伺服器條目，並確保你能啟動／停止伺服器。也要確保你能透過 GitHub Copilot Chat 介面與伺服器上的工具溝通。
 
 ## 解答
 
@@ -104,13 +104,13 @@ CO_OP_TRANSLATOR_METADATA:
 - [TypeScript 計算機](../samples/typescript/README.md)
 - [Python 計算機](../../../../03-GettingStarted/samples/python)
 
-## 額外資源
+## 其他資源
 
 - [Visual Studio 文件](https://code.visualstudio.com/docs/copilot/chat/mcp-servers)
 
 ## 接下來
 
-- 下一步：[建立 SSE 伺服器](../05-sse-server/README.md)
+- 下一步：[建立 SSE Server](../05-sse-server/README.md)
 
 **免責聲明**：  
 本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

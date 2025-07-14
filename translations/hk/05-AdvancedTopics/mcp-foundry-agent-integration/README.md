@@ -2,50 +2,50 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:10:46+00:00",
+  "translation_date": "2025-07-13T23:52:12+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "hk"
 }
 -->
-# Model Context Protocol (MCP) 與 Azure AI Foundry 整合
+# Model Context Protocol (MCP) 與 Azure AI Foundry 的整合
 
-本指南示範如何將 Model Context Protocol (MCP) 伺服器與 Azure AI Foundry 代理整合，實現強大的工具協調及企業級 AI 能力。
+本指南示範如何將 Model Context Protocol (MCP) 伺服器與 Azure AI Foundry 代理整合，實現強大的工具協調與企業級 AI 功能。
 
-## 簡介
+## 介紹
 
-Model Context Protocol (MCP) 是一個開放標準，使 AI 應用能安全連接外部資料來源和工具。與 Azure AI Foundry 整合後，MCP 讓代理能以標準化方式存取並互動多種外部服務、API 及資料來源。
+Model Context Protocol (MCP) 是一個開放標準，讓 AI 應用能安全地連接外部資料來源和工具。與 Azure AI Foundry 整合後，MCP 使代理能以標準化方式存取並互動各種外部服務、API 和資料來源。
 
 此整合結合 MCP 工具生態系的彈性與 Azure AI Foundry 強大的代理框架，提供具高度客製化能力的企業級 AI 解決方案。
 
-**Note:** 若想在 Azure AI Foundry Agent Service 中使用 MCP，目前僅支援以下區域：westus、westus2、uaenorth、southindia 及 switzerlandnorth
+**Note:** 若要在 Azure AI Foundry Agent Service 使用 MCP，目前僅支援以下區域：westus、westus2、uaenorth、southindia 及 switzerlandnorth
 
 ## 學習目標
 
-完成本指南後，您將能：
+完成本指南後，您將能夠：
 
 - 了解 Model Context Protocol 及其優勢
 - 設定 MCP 伺服器以供 Azure AI Foundry 代理使用
-- 建立並配置整合 MCP 工具的代理
-- 使用真實 MCP 伺服器實作範例
-- 處理代理對話中的工具回應及引用來源
+- 建立並配置具 MCP 工具整合的代理
+- 使用真實 MCP 伺服器實作實務範例
+- 處理代理對話中的工具回應與引用
 
 ## 先決條件
 
-開始前請確認您具備：
+開始前請確保您具備：
 
-- 可使用 AI Foundry 的 Azure 訂閱
+- 具 AI Foundry 存取權的 Azure 訂閱
 - Python 3.10 以上版本
-- 已安裝並設定好 Azure CLI
-- 擁有建立 AI 資源的適當權限
+- 已安裝並設定 Azure CLI
+- 建立 AI 資源的適當權限
 
 ## 什麼是 Model Context Protocol (MCP)？
 
-Model Context Protocol 是 AI 應用連接外部資料來源與工具的標準化方式。主要優點包括：
+Model Context Protocol 是 AI 應用連接外部資料來源和工具的標準化方式。主要優點包括：
 
-- **標準化整合**：不同工具和服務間一致的介面
+- **標準化整合**：不同工具與服務間一致的介面
 - **安全性**：安全的身份驗證與授權機制
-- **彈性**：支援各種資料來源、API 及自訂工具
-- **擴充性**：輕鬆新增功能與整合
+- **彈性**：支援多種資料來源、API 及自訂工具
+- **可擴充性**：輕鬆新增功能與整合
 
 ## 在 Azure AI Foundry 設定 MCP
 
@@ -103,7 +103,7 @@ When configuring MCP tools for your agent, you can specify several important par
 ```python
 mcp_tool = {
     "type": "mcp",
-    "server_label": "unique_server_name",      # MCP 伺服器的識別名稱
+    "server_label": "unique_server_name",      # MCP 伺服器的識別標籤
     "server_url": "https://api.example.com/mcp", # MCP 伺服器端點
     "require_approval": "never"                 # 審核政策：目前僅支援 "never"
 }
@@ -129,7 +129,7 @@ def create_mcp_agent_example():
     )
 
     with project_client:
-        # 建立含 MCP 工具的代理
+        # 建立具 MCP 工具的代理
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
@@ -146,7 +146,7 @@ def create_mcp_agent_example():
         )
         print(f"Created agent, agent ID: {agent.id}")    
         
-        # 建立對話執行緒
+        # 建立對話串
         thread = project_client.agents.threads.create()
         print(f"Created thread, thread ID: {thread.id}")
 
@@ -172,7 +172,7 @@ def create_mcp_agent_example():
         for step in run_steps:
             print(f"Run step: {step.id}, status: {step.status}, type: {step.type}")
             if step.type == "tool_calls":
-                print("工具呼叫細節：")
+                print("Tool call details:")
                 for tool_call in step.step_details.tool_calls:
                     print(json.dumps(tool_call.as_dict(), indent=2))
 
@@ -187,7 +187,7 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-  
+
 
 ## 常見問題排解
 
@@ -197,40 +197,40 @@ if __name__ == "__main__":
 - 確保網路連線正常
 
 ### 2. 工具呼叫失敗
-- 檢查工具參數及格式
+- 檢查工具參數與格式
 - 確認伺服器特定需求
 - 實作適當的錯誤處理
 
 ### 3. 效能問題
 - 優化工具呼叫頻率
-- 適當實施快取
+- 適當實施快取機制
 - 監控伺服器回應時間
 
-## 下一步
+## 後續步驟
 
 進一步強化您的 MCP 整合：
 
 1. **探索自訂 MCP 伺服器**：為專有資料來源打造自有 MCP 伺服器
 2. **實作進階安全性**：加入 OAuth2 或自訂身份驗證機制
 3. **監控與分析**：實作工具使用的日誌與監控
-4. **擴展您的方案**：考慮負載平衡與分散式 MCP 伺服器架構
+4. **擴展解決方案**：考慮負載平衡與分散式 MCP 伺服器架構
 
 ## 其他資源
 
 - [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-foundry/)
 - [Model Context Protocol 範例](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
-- [Azure AI Foundry 代理概述](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [Azure AI Foundry 代理概覽](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [MCP 規範](https://spec.modelcontextprotocol.io/)
 
 ## 支援
 
-如需額外支援與問題解答：
-- 請參閱 [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-foundry/)
-- 查看 [MCP 社群資源](https://modelcontextprotocol.io/)
+如需更多支援與問題解答：
+- 查閱 [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-foundry/)
+- 參考 [MCP 社群資源](https://modelcontextprotocol.io/)
 
-## 下一步  
+## 下一步
 
 - [6. 社群貢獻](../../06-CommunityContributions/README.md)
 
 **免責聲明**：  
-本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

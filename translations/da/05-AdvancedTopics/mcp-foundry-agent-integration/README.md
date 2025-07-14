@@ -2,36 +2,36 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:16:23+00:00",
+  "translation_date": "2025-07-13T23:56:55+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "da"
 }
 -->
 # Model Context Protocol (MCP) Integration med Azure AI Foundry
 
-Denne vejledning viser, hvordan man integrerer Model Context Protocol (MCP) servere med Azure AI Foundry agenter, hvilket muliggør kraftfuld værktøjsorkestrering og enterprise AI-funktioner.
+Denne vejledning viser, hvordan man integrerer Model Context Protocol (MCP) servere med Azure AI Foundry-agenter, hvilket muliggør kraftfuld værktøjsorkestrering og AI-løsninger til virksomheder.
 
 ## Introduktion
 
-Model Context Protocol (MCP) er en åben standard, der gør det muligt for AI-applikationer sikkert at forbinde til eksterne datakilder og værktøjer. Når MCP integreres med Azure AI Foundry, kan agenter få adgang til og interagere med forskellige eksterne tjenester, API'er og datakilder på en standardiseret måde.
+Model Context Protocol (MCP) er en åben standard, der gør det muligt for AI-applikationer sikkert at forbinde til eksterne datakilder og værktøjer. Når MCP integreres med Azure AI Foundry, kan agenter få adgang til og interagere med forskellige eksterne tjenester, API’er og datakilder på en standardiseret måde.
 
-Denne integration kombinerer fleksibiliteten i MCP's værktøjsekosystem med Azure AI Foundrys robuste agentrammeværk og leverer enterprise-grade AI-løsninger med omfattende tilpasningsmuligheder.
+Denne integration kombinerer fleksibiliteten i MCP’s værktøjsøkosystem med Azure AI Foundrys robuste agentrammeværk og leverer AI-løsninger i virksomhedsklasse med omfattende tilpasningsmuligheder.
 
-**Note:** Hvis du ønsker at bruge MCP i Azure AI Foundry Agent Service, understøttes i øjeblikket kun følgende regioner: westus, westus2, uaenorth, southindia og switzerlandnorth
+**Note:** Hvis du vil bruge MCP i Azure AI Foundry Agent Service, understøttes i øjeblikket kun følgende regioner: westus, westus2, uaenorth, southindia og switzerlandnorth
 
 ## Læringsmål
 
 Når du har gennemført denne vejledning, vil du kunne:
 
 - Forstå Model Context Protocol og dets fordele  
-- Sætte MCP-servere op til brug med Azure AI Foundry agenter  
+- Opsætte MCP-servere til brug med Azure AI Foundry-agenter  
 - Oprette og konfigurere agenter med MCP-værktøjsintegration  
 - Implementere praktiske eksempler med rigtige MCP-servere  
 - Håndtere værktøjsresponser og kildehenvisninger i agent-samtaler  
 
 ## Forudsætninger
 
-Inden du går i gang, skal du sikre dig, at du har:
+Før du går i gang, skal du sikre dig, at du har:
 
 - Et Azure-abonnement med adgang til AI Foundry  
 - Python 3.10+  
@@ -40,18 +40,18 @@ Inden du går i gang, skal du sikre dig, at du har:
 
 ## Hvad er Model Context Protocol (MCP)?
 
-Model Context Protocol er en standardiseret måde for AI-applikationer at forbinde til eksterne datakilder og værktøjer. Nøglefordele inkluderer:
+Model Context Protocol er en standardiseret måde for AI-applikationer at forbinde til eksterne datakilder og værktøjer. Vigtige fordele inkluderer:
 
-- **Standardiseret integration**: Ensartet interface på tværs af forskellige værktøjer og tjenester  
+- **Standardiseret integration**: Ensartet grænseflade på tværs af forskellige værktøjer og tjenester  
 - **Sikkerhed**: Sikker autentificering og autorisationsmekanismer  
-- **Fleksibilitet**: Understøttelse af forskellige datakilder, API'er og brugerdefinerede værktøjer  
+- **Fleksibilitet**: Understøttelse af forskellige datakilder, API’er og brugerdefinerede værktøjer  
 - **Udvidelsesmuligheder**: Nem tilføjelse af nye funktioner og integrationer  
 
 ## Opsætning af MCP med Azure AI Foundry
 
 ### 1. Miljøkonfiguration
 
-Start med at konfigurere dine miljøvariabler og afhængigheder:
+Start med at sætte dine miljøvariabler og afhængigheder op:
 
 ```python
 import os
@@ -105,7 +105,7 @@ mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # Identifikator for MCP-serveren
     "server_url": "https://api.example.com/mcp", # MCP-server endpoint
-    "require_approval": "never"                 # Godkendelsespolitik: understøtter kun "never"
+    "require_approval": "never"                 # Godkendelsespolitik: understøtter kun "never" lige nu
 }
 ```
 
@@ -167,10 +167,10 @@ def create_mcp_agent_example():
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
             print(f"Kørselsstatus: {run.status}")
 
-        # Undersøg kørsels trin og værktøjsopkald
+        # Undersøg kørsels-trin og værktøjsopkald
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
-            print(f"Kørsels trin: {step.id}, status: {step.status}, type: {step.type}")
+            print(f"Kørsels-trin: {step.id}, status: {step.status}, type: {step.type}")
             if step.type == "tool_calls":
                 print("Detaljer om værktøjsopkald:")
                 for tool_call in step.step_details.tool_calls:
@@ -203,8 +203,8 @@ if __name__ == "__main__":
 
 ### 3. Ydelsesproblemer
 - Optimer hyppigheden af værktøjsopkald  
-- Implementer caching, hvor det er relevant  
-- Overvåg serverens svartider  
+- Brug caching hvor det er relevant  
+- Overvåg svartider fra serveren  
 
 ## Næste skridt
 
@@ -212,8 +212,8 @@ For at forbedre din MCP-integration yderligere:
 
 1. **Udforsk brugerdefinerede MCP-servere**: Byg dine egne MCP-servere til proprietære datakilder  
 2. **Implementer avanceret sikkerhed**: Tilføj OAuth2 eller brugerdefinerede autentificeringsmekanismer  
-3. **Overvågning og analyse**: Implementer logging og overvågning af værktøjsbrug  
-4. **Skalér din løsning**: Overvej load balancing og distribuerede MCP-serverarkitekturer  
+3. **Overvågning og analyse**: Implementer logning og overvågning af værktøjsbrug  
+4. **Skaler din løsning**: Overvej load balancing og distribuerede MCP-serverarkitekturer  
 
 ## Yderligere ressourcer
 

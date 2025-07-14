@@ -2,32 +2,32 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:33:19+00:00",
+  "translation_date": "2025-07-13T23:34:56+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "ro"
 }
 -->
-# Model Context Protocol (MCP) Implementare Python
+# Protocolul Model Context (MCP) Implementare Python
 
-Acest depozit conține o implementare Python a Model Context Protocol (MCP), demonstrând cum să creezi atât o aplicație server, cât și una client care comunică folosind standardul MCP.
+Acest depozit conține o implementare Python a Protocolului Model Context (MCP), demonstrând cum să creezi atât o aplicație server, cât și una client care comunică folosind standardul MCP.
 
 ## Prezentare generală
 
 Implementarea MCP constă în două componente principale:
 
-1. **MCP Server (`server.py`)** - Un server care oferă:
-   - **Tools**: Funcții ce pot fi apelate de la distanță
-   - **Resources**: Date ce pot fi obținute
-   - **Prompts**: Șabloane pentru generarea prompturilor pentru modelele lingvistice
+1. **Server MCP (`server.py`)** - Un server care expune:
+   - **Tools**: Funcții care pot fi apelate de la distanță
+   - **Resources**: Date care pot fi accesate
+   - **Prompts**: Șabloane pentru generarea de prompturi pentru modelele de limbaj
 
-2. **MCP Client (`client.py`)** - O aplicație client care se conectează la server și utilizează funcționalitățile acestuia
+2. **Client MCP (`client.py`)** - O aplicație client care se conectează la server și folosește funcționalitățile acestuia
 
 ## Funcționalități
 
-Această implementare demonstrează câteva caracteristici cheie MCP:
+Această implementare demonstrează câteva caracteristici cheie ale MCP:
 
 ### Tools
-- `completion` - Generează completări de text de la modele AI (simulat)
+- `completion` - Generează completări de text folosind modele AI (simulat)
 - `add` - Calculator simplu care adună două numere
 
 ### Resources
@@ -75,7 +75,7 @@ Rulează clientul într-o altă fereastră de terminal:
 python client.py
 ```
 
-Aceasta va stabili conexiunea cu serverul și va demonstra toate funcționalitățile disponibile.
+Aceasta va conecta clientul la server și va demonstra toate funcționalitățile disponibile.
 
 ### Utilizarea Clientului
 
@@ -85,10 +85,10 @@ Clientul (`client.py`) demonstrează toate capabilitățile MCP:
 python client.py
 ```
 
-Aceasta va conecta clientul la server și va folosi toate funcțiile, inclusiv tools, resources și prompts. Rezultatul va afișa:
+Aceasta va conecta clientul la server și va testa toate funcțiile, inclusiv tools, resources și prompts. Rezultatul va afișa:
 
-1. Rezultatul calculatorului (5 + 7 = 12)
-2. Răspunsul generatorului de completări la întrebarea „Care este sensul vieții?”
+1. Rezultatul tool-ului calculator (5 + 7 = 12)
+2. Răspunsul tool-ului completion la întrebarea „Care este sensul vieții?”
 3. Lista modelelor AI disponibile
 4. Mesaj personalizat pentru „MCP Explorer”
 5. Șablonul promptului pentru revizuirea codului
@@ -122,9 +122,9 @@ async with stdio_client(server_params) as (reader, writer):
         result = await session.call_tool("add", arguments={"a": 5, "b": 7})
 ```
 
-## Aflați mai multe
+## Află mai multe
 
-Pentru mai multe informații despre MCP, vizitați: https://modelcontextprotocol.io/
+Pentru mai multe informații despre MCP, vizitează: https://modelcontextprotocol.io/
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un traducător uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

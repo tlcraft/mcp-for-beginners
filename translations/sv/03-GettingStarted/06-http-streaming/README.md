@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-10T16:14:08+00:00",
+  "translation_date": "2025-07-13T20:42:16+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "sv"
 }
 -->
 # HTTPS Streaming med Model Context Protocol (MCP)
 
-Det här kapitlet ger en omfattande guide för att implementera säker, skalbar och realtidsströmning med Model Context Protocol (MCP) via HTTPS. Det täcker motivationen för strömning, tillgängliga transportmekanismer, hur man implementerar strömmande HTTP i MCP, säkerhetsrutiner, migrering från SSE samt praktisk vägledning för att bygga egna strömmande MCP-applikationer.
+Det här kapitlet ger en omfattande guide för att implementera säker, skalbar och realtidsströmning med Model Context Protocol (MCP) via HTTPS. Det täcker motivationen för strömning, tillgängliga transportmekanismer, hur man implementerar strömmande HTTP i MCP, säkerhetsrutiner, migrering från SSE samt praktiska råd för att bygga egna strömmande MCP-applikationer.
 
 ## Transportmekanismer och strömning i MCP
 
@@ -19,7 +19,7 @@ Denna sektion utforskar de olika transportmekanismer som finns i MCP och deras r
 
 En transportmekanism definierar hur data utbyts mellan klient och server. MCP stödjer flera transporttyper för att passa olika miljöer och behov:
 
-- **stdio**: Standard in-/utmatning, lämplig för lokala och CLI-baserade verktyg. Enkel men inte lämplig för webben eller molnet.
+- **stdio**: Standard in-/utgång, lämplig för lokala och CLI-baserade verktyg. Enkel men inte lämplig för webben eller molnet.
 - **SSE (Server-Sent Events)**: Tillåter servrar att skicka realtidsuppdateringar till klienter över HTTP. Bra för webbgränssnitt, men begränsad i skalbarhet och flexibilitet.
 - **Streamable HTTP**: Modern HTTP-baserad strömningstransport som stödjer notifieringar och bättre skalbarhet. Rekommenderas för de flesta produktions- och molnscenarier.
 
@@ -187,7 +187,7 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 **Java-implementationsnoteringar:**
 - Använder Spring Boots reaktiva stack med `Flux` för strömning
-- `ServerSentEvent` ger strukturerad händelseströmning med händelsetyper
+- `ServerSentEvent` ger strukturerad händelseströmning med eventtyper
 - `WebClient` med `bodyToFlux()` möjliggör reaktiv strömningskonsumtion
 - `delayElements()` simulerar bearbetningstid mellan händelser
 - Händelser kan ha typer (`info`, `result`) för bättre klienthantering
@@ -196,7 +196,7 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 ### Jämförelse: Klassisk strömning vs MCP-strömning
 
-Skillnaderna mellan hur strömning fungerar på ett "klassiskt" sätt jämfört med hur det fungerar i MCP kan illustreras så här:
+Skillnaderna mellan hur strömning fungerar på ett "klassiskt" sätt jämfört med i MCP kan illustreras så här:
 
 | Funktion               | Klassisk HTTP-strömning        | MCP-strömning (Notifieringar)     |
 |------------------------|-------------------------------|----------------------------------|
@@ -214,7 +214,7 @@ Här är några viktiga skillnader:
    - MCP-strömning: Använder ett strukturerat notifieringssystem med JSON-RPC-protokoll
 
 - **Meddelandformat:**
-   - Klassisk HTTP: Vanlig text i chunkar med radbrytningar
+   - Klassisk HTTP: Vanlig text med radbrytningar
    - MCP: Strukturerade LoggingMessageNotification-objekt med metadata
 
 - **Klientimplementering:**
@@ -227,11 +227,11 @@ Här är några viktiga skillnader:
 
 ### Rekommendationer
 
-Här är några rekommendationer när det gäller valet mellan att implementera klassisk strömning (som ett endpoint vi visade ovan med `/stream`) kontra strömning via MCP.
+Här är några rekommendationer när det gäller valet mellan klassisk strömning (som endpointen vi visade ovan med `/stream`) och strömning via MCP.
 
 - **För enkla strömningsbehov:** Klassisk HTTP-strömning är enklare att implementera och räcker för grundläggande strömningsbehov.
 
-- **För komplexa, interaktiva applikationer:** MCP-strömning ger ett mer strukturerat tillvägagångssätt med rikare metadata och separation mellan notifieringar och slutresultat.
+- **För komplexa, interaktiva applikationer:** MCP-strömning ger en mer strukturerad metod med rikare metadata och separation mellan notifieringar och slutresultat.
 
 - **För AI-applikationer:** MCP:s notifieringssystem är särskilt användbart för långvariga AI-uppgifter där man vill hålla användare informerade om progress.
 
@@ -245,7 +245,7 @@ I MCP handlar strömning inte om att skicka huvudsvar i delar, utan om att skick
 
 ### Hur det fungerar
 
-Huvudresultatet skickas fortfarande som ett enda svar. Däremot kan notifieringar skickas som separata meddelanden under bearbetningen och därigenom uppdatera klienten i realtid. Klienten måste kunna hantera och visa dessa notifieringar.
+Huvudresultatet skickas fortfarande som ett enda svar. Men notifieringar kan skickas som separata meddelanden under bearbetningen och därigenom uppdatera klienten i realtid. Klienten måste kunna hantera och visa dessa notifieringar.
 
 ## Vad är en notifiering?
 
@@ -285,21 +285,21 @@ För att få logging att fungera behöver servern aktivera det som en funktion/k
 Det finns olika typer av notifieringar:
 
 | Nivå      | Beskrivning                   | Exempel på användning          |
-|-----------|-------------------------------|-------------------------------|
+|-----------|------------------------------|-------------------------------|
 | debug     | Detaljerad felsökningsinformation | Funktionsin- och utgångspunkter |
 | info      | Allmänna informationsmeddelanden | Uppdateringar om progress      |
-| notice    | Normala men viktiga händelser  | Konfigurationsändringar        |
-| warning   | Varningsförhållanden           | Användning av föråldrad funktion |
-| error     | Felaktiga förhållanden         | Fel i operationer              |
-| critical  | Kritiska förhållanden          | Fel i systemkomponenter        |
+| notice    | Normala men viktiga händelser | Konfigurationsändringar        |
+| warning   | Varningsförhållanden          | Användning av föråldrad funktion |
+| error     | Fel                          | Fel i operationer              |
+| critical  | Kritiska förhållanden         | Systemkomponentfel             |
 | alert     | Åtgärd måste vidtas omedelbart | Upptäckt datakorruption        |
-| emergency | Systemet är oanvändbart        | Fullständigt systemfel         |
+| emergency | Systemet är oanvändbart       | Total systemkrasch             |
 
 ## Implementera notifieringar i MCP
 
 För att implementera notifieringar i MCP behöver du konfigurera både server- och klientsidan för att hantera realtidsuppdateringar. Detta gör att din applikation kan ge omedelbar återkoppling till användare under långvariga operationer.
 
-### Serversida: Skicka notifieringar
+### Serversidan: Skicka notifieringar
 
 Vi börjar med serversidan. I MCP definierar du verktyg som kan skicka notifieringar medan de bearbetar förfrågningar. Servern använder kontextobjektet (vanligtvis `ctx`) för att skicka meddelanden till klienten.
 
@@ -362,7 +362,7 @@ await builder
 
 </details>
 
-### Klientsida: Ta emot notifieringar
+### Klientsidan: Ta emot notifieringar
 
 Klienten måste implementera en meddelandehanterare för att bearbeta och visa notifieringar när de anländer.
 
@@ -384,7 +384,7 @@ async with ClientSession(
 ) as session:
 ```
 
-I koden ovan kontrollerar funktionen `message_handler` om det inkommande meddelandet är en notifiering. Om så är fallet skrivs notifieringen ut, annars bearbetas det som ett vanligt servermeddelande. Observera också hur `ClientSession` initieras med `message_handler` för att hantera inkommande notifieringar.
+I koden ovan kontrollerar funktionen `message_handler` om det inkommande meddelandet är en notifiering. Om så är fallet skrivs notifieringen ut, annars bearbetas det som ett vanligt servermeddelande. Notera också hur `ClientSession` initieras med `message_handler` för att hantera inkommande notifieringar.
 
 </details>
 
@@ -449,7 +449,7 @@ Progressnotifieringar är viktiga av flera skäl:
 - **Realtidsåterkoppling:** Klienter kan visa progressindikatorer eller loggar, vilket gör appen mer responsiv.
 - **Enklare felsökning och övervakning:** Utvecklare och användare kan se var en process eventuellt är långsam eller fastnar.
 
-### Hur man implementerar progressnotifieringar
+### Hur implementerar man progressnotifieringar
 
 Så här kan du implementera progressnotifieringar i MCP:
 
@@ -504,7 +504,7 @@ Säkerhet är kritiskt när MCP-servrar exponeras över HTTP. Streamable HTTP in
 ### Bästa praxis
 - Lita aldrig på inkommande förfrågningar utan validering.
 - Logga och övervaka all åtkomst och fel.
-- Uppdatera regelbundet beroenden för att åtgärda säkerhetssårbarheter.
+- Uppdatera regelbundet beroenden för att täppa till säkerhetshål.
 
 ### Utmaningar
 - Att balansera säkerhet med enkel utveckling
@@ -533,7 +533,7 @@ Så här kan du migrera från SSE till Streamable HTTP i dina MCP-applikationer:
 
 ### Behålla kompatibilitet
 
-Det rekommenderas att behålla kompatibilitet med befintliga SSE-klienter under migreringsprocessen. Här är några strategier:
+Det rekommenderas att behålla kompatibilitet med befintliga SSE-klienter under migreringen. Här är några strategier:
 
 - Du kan stödja både SSE och Streamable HTTP genom att köra båda transporterna på olika endpoints.
 - Migrera klienter gradvis till den nya transporten.
@@ -569,7 +569,7 @@ Dessutom, här är några bästa praxis att följa när du implementerar säkerh
 
 - Lita aldrig på inkommande förfrågningar utan validering.
 - Logga och övervaka all åtkomst och fel.
-- Uppdatera regelbundet beroenden för att åtgärda säkerhetssårbarheter.
+- Uppdatera regelbundet beroenden för att täppa till säkerhetshål.
 
 ### Utmaningar
 
@@ -589,7 +589,7 @@ Bygg en MCP-server och klient där servern bearbetar en lista med objekt (t.ex. 
 2. Implementera en klient med en meddelandehanterare som visar notifieringar i realtid.
 3. Testa din implementation genom att köra både server och klient och observera notifieringarna.
 
-[Solution](./solution/README.md)
+[Lösning](./solution/README.md)
 
 ## Vidare läsning & Vad händer härnäst?
 

@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:15:55+00:00",
+  "translation_date": "2025-07-13T18:37:10+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "cs"
 }
 -->
-# MCP Java Client - Calculator Demo
+# MCP Java Client - Ukázka kalkulačky
 
-Этот проект демонстрирует, как создать Java-клиент, который подключается и взаимодействует с MCP (Model Context Protocol) сервером. В этом примере мы подключимся к калькуляторному серверу из Главы 01 и выполним различные математические операции.
+Tento projekt ukazuje, jak vytvořit Java klienta, který se připojuje a komunikuje s MCP (Model Context Protocol) serverem. V tomto příkladu se připojíme ke kalkulačnímu serveru z kapitoly 01 a provedeme různé matematické operace.
 
-## Требования
+## Požadavky
 
-Перед запуском этого клиента необходимо:
+Před spuštěním tohoto klienta je potřeba:
 
-1. **Запустить калькуляторный сервер** из Главы 01:
-   - Перейдите в каталог калькуляторного сервера: `03-GettingStarted/01-first-server/solution/java/`
-   - Соберите и запустите калькуляторный сервер:
+1. **Spustit kalkulační server** z kapitoly 01:
+   - Přejděte do adresáře kalkulačního serveru: `03-GettingStarted/01-first-server/solution/java/`
+   - Sestavte a spusťte kalkulační server:
      ```cmd
      cd ..\01-first-server\solution\java
      .\mvnw clean install -DskipTests
      java -jar target\calculator-server-0.0.1-SNAPSHOT.jar
      ```
-   - Сервер должен работать по адресу `http://localhost:8080`
+   - Server by měl běžet na adrese `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. Mít nainstalovanou **Javu 21 nebo novější**
+3. Mít k dispozici **Maven** (součástí je Maven Wrapper)
 
-## What is the SDKClient?
+## Co je SDKClient?
 
-The `SDKClient` — это Java-приложение, которое демонстрирует, как:
-- Подключаться к MCP серверу с использованием транспорта Server-Sent Events (SSE)
-- Получать список доступных инструментов с сервера
-- Вызывать различные функции калькулятора удалённо
-- Обрабатывать ответы и отображать результаты
+`SDKClient` je Java aplikace, která ukazuje, jak:
+- Připojit se k MCP serveru pomocí Server-Sent Events (SSE) transportu
+- Vypsat dostupné nástroje ze serveru
+- Vzdáleně volat různé kalkulační funkce
+- Zpracovat odpovědi a zobrazit výsledky
 
-## Как это работает
+## Jak to funguje
 
-Клиент использует фреймворк Spring AI MCP для:
+Klient využívá Spring AI MCP framework k:
 
-1. **Установки соединения**: создаёт WebFlux SSE клиентский транспорт для подключения к калькуляторному серверу
-2. **Инициализации клиента**: настраивает MCP клиент и устанавливает соединение
-3. **Обнаружения инструментов**: выводит список всех доступных операций калькулятора
-4. **Выполнения операций**: вызывает различные математические функции с примерными данными
-5. **Отображения результатов**: показывает результаты каждого вычисления
+1. **Navázání spojení**: Vytvoří WebFlux SSE klientský transport pro připojení ke kalkulačnímu serveru
+2. **Inicializaci klienta**: Nastaví MCP klienta a naváže spojení
+3. **Objevení nástrojů**: Vylistuje všechny dostupné kalkulační operace
+4. **Provedení operací**: Zavolá různé matematické funkce s ukázkovými daty
+5. **Zobrazení výsledků**: Ukáže výsledky jednotlivých výpočtů
 
-## Структура проекта
+## Struktura projektu
 
 ```
 src/
@@ -60,9 +60,9 @@ src/
                             └── SDKClient.java    # Main client implementation
 ```
 
-## Основные зависимости
+## Klíčové závislosti
 
-Проект использует следующие ключевые зависимости:
+Projekt používá následující hlavní závislosti:
 
 ```xml
 <dependency>
@@ -71,44 +71,44 @@ src/
 </dependency>
 ```
 
-Эта зависимость предоставляет:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` — SSE транспорт для веб-коммуникации
-- Схемы протокола MCP и типы запросов/ответов
+Tato závislost poskytuje:
+- `McpClient` - hlavní klientské rozhraní
+- `WebFluxSseClientTransport` - SSE transport pro webovou komunikaci
+- MCP protokolové schémata a typy požadavků/odpovědí
 
-## Сборка проекта
+## Sestavení projektu
 
-Соберите проект с помощью Maven wrapper:
+Projekt sestavíte pomocí Maven wrapperu:
 
 ```cmd
 .\mvnw clean install
 ```
 
-## Запуск клиента
+## Spuštění klienta
 
 ```cmd
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**Примечание**: Убедитесь, что калькуляторный сервер запущен по адресу `http://localhost:8080` before executing any of these commands.
+**Poznámka**: Před spuštěním těchto příkazů se ujistěte, že kalkulační server běží na `http://localhost:8080`.
 
-## What the Client Does
+## Co klient dělá
 
-When you run the client, it will:
+Po spuštění klienta:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **Список инструментов** — показывает все доступные операции калькулятора
-3. **Выполнение вычислений**:
-   - Сложение: 5 + 3 = 8
-   - Вычитание: 10 - 4 = 6
-   - Умножение: 6 × 7 = 42
-   - Деление: 20 ÷ 4 = 5
-   - Возведение в степень: 2^8 = 256
-   - Квадратный корень: √16 = 4
-   - Абсолютное значение: |-5.5| = 5.5
-   - Помощь: показывает доступные операции
+1. **Připojí se** ke kalkulačnímu serveru na `http://localhost:8080`
+2. **Vylistuje nástroje** - zobrazí všechny dostupné kalkulační operace
+3. **Provede výpočty**:
+   - Sčítání: 5 + 3 = 8
+   - Odčítání: 10 - 4 = 6
+   - Násobení: 6 × 7 = 42
+   - Dělení: 20 ÷ 4 = 5
+   - Mocnina: 2^8 = 256
+   - Druhá odmocnina: √16 = 4
+   - Absolutní hodnota: |-5.5| = 5.5
+   - Nápověda: Zobrazí dostupné operace
 
-## Ожидаемый вывод
+## Očekávaný výstup
 
 ```
 Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
@@ -122,56 +122,56 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**Примечание**: В конце могут появляться предупреждения Maven о фоновых потоках — это нормально для реактивных приложений и не является ошибкой.
+**Poznámka**: Na konci se mohou objevit varování Maven o přetrvávajících vláknech – je to běžné u reaktivních aplikací a neznamená to chybu.
 
-## Пояснение к коду
+## Pochopení kódu
 
-### 1. Настройка транспорта
+### 1. Nastavení transportu
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
 ```
-Создаёт SSE (Server-Sent Events) транспорт, который подключается к калькуляторному серверу.
+Tím se vytvoří SSE (Server-Sent Events) transport, který se připojí ke kalkulačnímu serveru.
 
-### 2. Создание клиента
+### 2. Vytvoření klienta
 ```java
 var client = McpClient.sync(this.transport).build();
 client.initialize();
 ```
-Создаёт синхронный MCP клиент и инициализирует соединение.
+Vytvoří synchronní MCP klienta a inicializuje spojení.
 
-### 3. Вызов инструментов
+### 3. Volání nástrojů
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
 ```
-Вызов инструмента "add" с параметрами a=5.0 и b=3.0.
+Volá nástroj "add" s parametry a=5.0 a b=3.0.
 
-## Устранение неполадок
+## Řešení problémů
 
-### Сервер не запущен
-Если возникают ошибки подключения, убедитесь, что калькуляторный сервер из Главы 01 запущен:
+### Server neběží
+Pokud se objeví chyby připojení, ujistěte se, že kalkulační server z kapitoly 01 běží:
 ```
 Error: Connection refused
 ```
-**Решение**: сначала запустите калькуляторный сервер.
+**Řešení**: Nejprve spusťte kalkulační server.
 
-### Порт уже занят
-Если порт 8080 занят:
+### Port je již obsazen
+Pokud je port 8080 obsazen:
 ```
 Error: Address already in use
 ```
-**Решение**: остановите другие приложения, использующие порт 8080, или измените порт сервера.
+**Řešení**: Ukončete jiné aplikace používající port 8080 nebo změňte port serveru.
 
-### Ошибки сборки
-Если возникают ошибки сборки:
+### Chyby při sestavení
+Pokud narazíte na chyby při sestavení:
 ```cmd
 .\mvnw clean install -DskipTests
 ```
 
-## Дополнительная информация
+## Další zdroje
 
-- [Spring AI MCP Documentation](https://docs.spring.io/spring-ai/reference/api/mcp/)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/)
-- [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
+- [Spring AI MCP Dokumentace](https://docs.spring.io/spring-ai/reference/api/mcp/)
+- [Specifikace Model Context Protocol](https://modelcontextprotocol.io/)
+- [Spring WebFlux Dokumentace](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T16:57:44+00:00",
+  "translation_date": "2025-07-13T19:54:05+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "pt"
 }
@@ -32,7 +32,7 @@ Vamos adicionar capacidades ao servidor a seguir.
 
 Agora que definimos tudo o que é específico do SSE, vamos adicionar capacidades ao servidor como ferramentas, prompts e recursos.
 
-O seu código completo deve ficar assim:
+O seu código completo deverá ficar assim:
 
 Ótimo, temos um servidor a usar SSE, vamos testá-lo a seguir.
 
@@ -59,7 +59,7 @@ Executar o inspector é igual em todos os ambientes de execução. Note como, em
 
 ### -2- Experimentar a ferramenta
 
-Ligue ao servidor selecionando SSE na lista suspensa e preencha o campo do URL onde o seu servidor está a correr, por exemplo http://localhost:4321/sse. Agora clique no botão "Connect". Como antes, selecione listar ferramentas, escolha uma ferramenta e forneça valores de entrada. Deve ver um resultado como o abaixo:
+Ligue ao servidor selecionando SSE na lista suspensa e preencha o campo do URL onde o seu servidor está a correr, por exemplo http:localhost:4321/sse. Agora clique no botão "Connect". Como antes, selecione listar ferramentas, escolha uma ferramenta e forneça valores de entrada. Deve ver um resultado como o abaixo:
 
 ![Servidor SSE a correr no inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.pt.png)
 
@@ -98,4 +98,4 @@ As principais conclusões deste capítulo são as seguintes:
 - A seguir: [Streaming HTTP com MCP (HTTP Streamable)](../06-http-streaming/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

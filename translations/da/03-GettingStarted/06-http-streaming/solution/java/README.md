@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:47:42+00:00",
+  "translation_date": "2025-07-13T21:12:16+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "da"
 }
@@ -35,17 +35,17 @@ java/
 └── README.md
 ```
 
-## Sådan virker det
+## Sådan fungerer det
 
-1. **Calculator Server** eksponerer en `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** eksponerer et `/calculate` endpoint, som:
+   - Accepterer query-parametre: `a` (tal), `b` (tal), `op` (operation)
+   - Understøttede operationer: `add`, `sub`, `mul`, `div`
+   - Returnerer Server-Sent Events med beregningsprogression og resultat
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
+2. **Calculator Client** forbinder til serveren og:
+   - Sender en forespørgsel for at beregne `7 * 5`
    - Forbruger den streamede respons
-   - Printer hver event til konsollen
+   - Udskriver hver event til konsollen
 
 ## Kørsel af applikationerne
 
@@ -79,11 +79,11 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Klienten opretter forbindelse til serveren, udfører beregningen og viser de streamede resultater.
+Klienten forbinder til serveren, udfører beregningen og viser de streamede resultater.
 
 ### Mulighed 2: Brug Java direkte
 
-#### 1. Kompiler og kør serveren:
+#### 1. Compile og kør serveren:
 
 ```bash
 cd calculator-server
@@ -91,7 +91,7 @@ mvn clean package
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-#### 2. Kompiler og kør klienten:
+#### 2. Compile og kør klienten:
 
 ```bash
 cd calculator-client
@@ -113,7 +113,7 @@ curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-st
 
 ## Forventet output
 
-Når klienten kører, bør du se streamet output som:
+Når klienten kører, bør du se streamet output lignende:
 
 ```
 event:info
@@ -126,20 +126,20 @@ data:35.0
 ## Understøttede operationer
 
 - `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `sub` - Subtraktion (a - b)
+- `mul` - Multiplikation (a * b)
+- `div` - Division (a / b, returnerer NaN hvis b = 0)
 
 ## API Reference
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parametre:**
+- `a` (påkrævet): Første tal (double)
+- `b` (påkrævet): Andet tal (double)
+- `op` (påkrævet): Operation (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Respons:**
 - Content-Type: `text/event-stream`
 - Returnerer Server-Sent Events med beregningsprogression og resultat
 
@@ -150,7 +150,7 @@ Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**Eksempel på svar:**
+**Eksempel på respons:**
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -165,20 +165,20 @@ data: 35.0
 
 1. **Port 8080 er allerede i brug**
    - Stop andre applikationer, der bruger port 8080
-   - Eller skift serverporten i `calculator-server/src/main/resources/application.yml`
+   - Eller ændr serverporten i `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Forbindelse afvist**
+   - Sørg for, at serveren kører, før klienten startes
+   - Tjek at serveren er startet korrekt på port 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Problemer med parameter-navne**
+   - Projektet inkluderer Maven compiler-konfiguration med `-parameters` flag
+   - Hvis du oplever problemer med parameterbinding, skal du sikre, at projektet er bygget med denne konfiguration
 
-### Stopping the Applications
+### Stop af applikationerne
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` hvis den kører som baggrundsproces
+- Tryk `Ctrl+C` i terminalen, hvor hver applikation kører
+- Eller brug `mvn spring-boot:stop`, hvis applikationen kører som en baggrundsproces
 
 ## Teknologistak
 
@@ -186,7 +186,7 @@ data: 35.0
 - **Spring WebFlux** - Reaktivt webframework
 - **Project Reactor** - Bibliotek til reaktive streams
 - **Netty** - Non-blocking I/O server
-- **Maven** - Byggeværktøj
+- **Maven** - Build-værktøj
 - **Java 17+** - Programmeringssprog
 
 ## Næste skridt
@@ -194,9 +194,9 @@ data: 35.0
 Prøv at ændre koden til at:
 - Tilføje flere matematiske operationer
 - Inkludere fejlhåndtering for ugyldige operationer
-- Tilføje logning af forespørgsler/svar
+- Tilføje logging af forespørgsler/responser
 - Implementere autentificering
 - Tilføje enhedstests
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

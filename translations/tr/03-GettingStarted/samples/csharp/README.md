@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T05:58:35+00:00",
+  "translation_date": "2025-07-13T22:16:09+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "tr"
 }
@@ -15,7 +15,7 @@ Daha fazla bilgi için bkz. [C# SDK](https://github.com/modelcontextprotocol/csh
 
 ## Özellikler
 
-Bu hesap makinesi servisi aşağıdaki özellikleri sunar:
+Bu hesap makinesi servisi aşağıdaki yetenekleri sunar:
 
 1. **Temel Aritmetik İşlemler**:
    - İki sayının toplanması
@@ -54,52 +54,49 @@ Bu hesap makinesi servisi aşağıdaki özellikleri sunar:
      }
      ```
 
-   - GitHub depo kökünü girmeniz istenecek, bu değeri `git rev-parse --show-toplevel` komutuyla alabilirsiniz.  
-     ``.
+   - GitHub depo kökünü girmeniz istenecek, bu bilgi `git rev-parse --show-toplevel` komutuyla alınabilir.
 
-## Using the Service
+## Servisi Kullanma
 
-The service exposes the following API endpoints through the MCP protocol:
+Servis, MCP protokolü üzerinden aşağıdaki API uç noktalarını sunar:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: İki sayıyı toplar
+- `subtract(a, b)`: İkinci sayıyı birinciden çıkarır
+- `multiply(a, b)`: İki sayıyı çarpar
+- `divide(a, b)`: Birinci sayıyı ikinciye böler (sıfır kontrolü ile)
+- isPrime(n): Bir sayının asal olup olmadığını kontrol eder
 
-## Test with Github Copilot Chat in VS Code
+## VS Code’da Github Copilot Chat ile Test Etme
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
-   - "Add 5 and 3"
-   - "Subtract 10 from 4"
-   - "Multiply 6 and 7"
-   - "Divide 8 by 2"
-   - "Does 37854 prime?"
-   - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
-   - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+1. MCP protokolünü kullanarak servise istek yapmayı deneyin. Örneğin, şunları sorabilirsiniz:
+   - "5 ve 3'ü topla"
+   - "4'ten 10 çıkar"
+   - "6 ve 7'yi çarp"
+   - "8'i 2'ye böl"
+   - "37854 asal mı?"
+   - "4242’den önce ve sonra gelen 3 asal sayı nedir?"
+2. Araçların kullanıldığından emin olmak için isteme #MyCalculator ekleyin. Örneğin:
+   - "5 ve 3'ü topla #MyCalculator"
+   - "4'ten 10 çıkar #MyCalculator"
 
+## Konteynerize Edilmiş Versiyon
 
-## Containerized Version
+Önceki çözüm, .NET SDK yüklü ve tüm bağımlılıklar hazır olduğunda harikadır. Ancak, çözümü paylaşmak veya farklı bir ortamda çalıştırmak isterseniz, konteynerize edilmiş versiyonu kullanabilirsiniz.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` ifadesindeki `<YOUR-DOCKER-USERNAME>` kısmını Docker Hub kullanıcı adınızla değiştirin:  
+1. Docker’ı başlatın ve çalıştığından emin olun.
+1. Bir terminalden `03-GettingStarted\samples\csharp\src` klasörüne gidin.
+1. Hesap makinesi servisi için Docker imajını oluşturmak için aşağıdaki komutu çalıştırın ( `<YOUR-DOCKER-USERNAME>` kısmını Docker Hub kullanıcı adınızla değiştirin):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ``` 
-
-1. İmaj oluşturulduktan sonra, bunu Docker Hub’a yükleyelim. Aşağıdaki komutu çalıştırın:  
+   ```
+1. İmaj oluşturulduktan sonra, Docker Hub’a yükleyelim. Aşağıdaki komutu çalıştırın:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## Dockerize Edilmiş Versiyonu Kullanma
 
-1. `.vscode/mcp.json` dosyasında, sunucu yapılandırmasını aşağıdaki ile değiştirin:  
+1. `.vscode/mcp.json` dosyasında sunucu yapılandırmasını aşağıdaki ile değiştirin:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -112,12 +109,12 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "envFile": "",
       "env": {}
     }
-   ```  
-   Yapılandırmaya baktığınızda, komutun `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   ```
+   Yapılandırmaya baktığınızda, komutun `docker` ve argümanların `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc` olduğunu göreceksiniz. `--rm` bayrağı konteyner durduktan sonra silinmesini sağlar, `-i` bayrağı ise konteynerin standart girdisiyle etkileşim kurmanıza izin verir. Son argüman ise az önce oluşturup Docker Hub’a yüklediğimiz imajın adıdır.
 
-## Test the Dockerized Version
+## Dockerize Edilmiş Versiyonu Test Etme
 
-Start the MCP Server by clicking the little Start button above `` olduğunu görebilirsiniz ve tıpkı öncekiler gibi hesap makinesi servisine matematik işlemleri yaptırabilirsiniz.
+`"mcp-calc": {` satırının üstündeki küçük Başlat düğmesine tıklayarak MCP Sunucusunu başlatın ve tıpkı önceki gibi hesap makinesi servisine matematik işlemleri yaptırabilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek herhangi bir yanlış anlama veya yorumlama nedeniyle sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

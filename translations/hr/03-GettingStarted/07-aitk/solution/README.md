@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:33:58+00:00",
+  "translation_date": "2025-07-13T21:55:27+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "hr"
 }
@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # 📘 Rješenje zadatka: Proširenje vašeg Calculator MCP servera s alatom za izračunavanje kvadratnog korijena
 
 ## Pregled
-U ovom zadatku ste unaprijedili svoj Calculator MCP server dodavanjem novog alata koji računa kvadratni korijen broja. Ova nadogradnja omogućuje vašem AI agentu da rješava složenije matematičke upite, poput "Koliki je kvadratni korijen od 16?" ili "Izračunaj √49," koristeći prirodni jezik.
+U ovom zadatku ste proširili svoj Calculator MCP server dodavanjem novog alata koji izračunava kvadratni korijen broja. Ova nadogradnja omogućuje vašem AI agentu da rješava složenije matematičke upite, poput "Koliki je kvadratni korijen od 16?" ili "Izračunaj √49," koristeći prirodni jezik.
 
 ## 🛠️ Implementacija alata za kvadratni korijen
 Da biste dodali ovu funkcionalnost, definirali ste novu funkciju alata u datoteci server.py. Evo implementacije:
@@ -70,11 +70,33 @@ def sqrt(a: float) -> float:
 
 ## 🔍 Kako to radi
 
-- **Uvezite alat `math.sqrt()` pomoću `@server.tool()` dekoratora.**
-- Omogućili ste svom AI agentu da obrađuje izračune kvadratnog korijena putem prirodnih jezičnih upita.
-- Vježbali ste dodavanje novih alata i ponovno pokretanje servera kako biste integrirali dodatne funkcionalnosti.
+- **Uvoz modula `math`**: Za izvođenje matematičkih operacija izvan osnovne aritmetike, Python nudi ugrađeni modul `math`. Ovaj modul sadrži razne matematičke funkcije i konstante. Uvođenjem `import math` dobivate pristup funkcijama poput `math.sqrt()`, koja računa kvadratni korijen broja.
+- **Definicija funkcije**: Dekorator `@server.tool()` registrira funkciju `sqrt` kao alat dostupan vašem AI agentu.
+- **Ulazni parametar**: Funkcija prima jedan argument `a` tipa `float`.
+- **Rukovanje pogreškama**: Ako je `a` negativan, funkcija baca `ValueError` kako bi spriječila izračun kvadratnog korijena negativnog broja, što nije podržano funkcijom `math.sqrt()`.
+- **Povratna vrijednost**: Za nenegativne ulaze, funkcija vraća kvadratni korijen broja `a` koristeći ugrađenu Pythonovu metodu `math.sqrt()`.
 
-Slobodno nastavite eksperimentirati dodavanjem još matematičkih alata, poput potenciranja ili logaritamskih funkcija, kako biste dodatno unaprijedili mogućnosti vašeg agenta!
+## 🔄 Ponovno pokretanje servera
+Nakon dodavanja novog alata `sqrt`, važno je ponovno pokrenuti MCP server kako bi agent prepoznao i mogao koristiti novu funkcionalnost.
+
+## 💬 Primjeri upita za testiranje novog alata
+Evo nekoliko primjera upita na prirodnom jeziku koje možete koristiti za testiranje funkcionalnosti kvadratnog korijena:
+
+- "Koliki je kvadratni korijen od 25?"
+- "Izračunaj kvadratni korijen od 81."
+- "Pronađi kvadratni korijen od 0."
+- "Koliki je kvadratni korijen od 2.25?"
+
+Ovi upiti trebali bi potaknuti agenta da pozove alat `sqrt` i vrati točne rezultate.
+
+## ✅ Sažetak
+Završetkom ovog zadatka ste:
+
+- Proširili svoj Calculator MCP server novim alatom `sqrt`.
+- Omogućili svom AI agentu da obrađuje izračune kvadratnog korijena putem upita na prirodnom jeziku.
+- Vježbali dodavanje novih alata i ponovno pokretanje servera radi integracije dodatnih funkcionalnosti.
+
+Slobodno nastavite s eksperimentiranjem dodavanjem još matematičkih alata, poput potenciranja ili logaritamskih funkcija, kako biste dodatno unaprijedili mogućnosti svog agenta!
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-05-17T13:14:58+00:00",
+  "translation_date": "2025-07-13T22:29:16+00:00",
   "source_file": "03-GettingStarted/samples/java/calculator/README.md",
   "language_code": "id"
 }
 -->
-# Layanan MCP Kalkulator Dasar
+# Basic Calculator MCP Service
 
-Layanan ini menyediakan operasi kalkulator dasar melalui Model Context Protocol (MCP) menggunakan Spring Boot dengan transportasi WebFlux. Ini dirancang sebagai contoh sederhana bagi pemula yang belajar tentang implementasi MCP.
+Layanan ini menyediakan operasi kalkulator dasar melalui Model Context Protocol (MCP) menggunakan Spring Boot dengan transport WebFlux. Dirancang sebagai contoh sederhana untuk pemula yang belajar tentang implementasi MCP.
 
 Untuk informasi lebih lanjut, lihat dokumentasi referensi [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html).
 
-## Gambaran Umum
+## Ikhtisar
 
 Layanan ini menampilkan:
 - Dukungan untuk SSE (Server-Sent Events)
 - Pendaftaran alat otomatis menggunakan anotasi `@Tool` dari Spring AI
 - Fungsi kalkulator dasar:
-  - Penambahan, pengurangan, perkalian, pembagian
+  - Penjumlahan, pengurangan, perkalian, pembagian
   - Perhitungan pangkat dan akar kuadrat
-  - Modulus (sisa) dan nilai mutlak
+  - Modulus (sisa bagi) dan nilai mutlak
   - Fungsi bantuan untuk deskripsi operasi
 
 ## Fitur
@@ -29,15 +29,15 @@ Layanan ini menampilkan:
 Layanan kalkulator ini menawarkan kemampuan berikut:
 
 1. **Operasi Aritmatika Dasar**:
-   - Penambahan dua angka
+   - Penjumlahan dua angka
    - Pengurangan satu angka dari angka lain
    - Perkalian dua angka
-   - Pembagian satu angka dengan angka lain (dengan pemeriksaan pembagian nol)
+   - Pembagian satu angka dengan angka lain (dengan pengecekan pembagian nol)
 
 2. **Operasi Lanjutan**:
-   - Perhitungan pangkat (menaikkan basis ke eksponen)
-   - Perhitungan akar kuadrat (dengan pemeriksaan angka negatif)
-   - Perhitungan modulus (sisa)
+   - Perhitungan pangkat (mengangkat basis ke eksponen)
+   - Perhitungan akar kuadrat (dengan pengecekan angka negatif)
+   - Perhitungan modulus (sisa bagi)
    - Perhitungan nilai mutlak
 
 3. **Sistem Bantuan**:
@@ -45,25 +45,25 @@ Layanan kalkulator ini menawarkan kemampuan berikut:
 
 ## Menggunakan Layanan
 
-Layanan ini mengekspos endpoint API berikut melalui protokol MCP:
+Layanan ini menyediakan endpoint API berikut melalui protokol MCP:
 
-- `add(a, b)`: Menambahkan dua angka
-- `subtract(a, b)`: Mengurangi angka kedua dari yang pertama
+- `add(a, b)`: Menjumlahkan dua angka
+- `subtract(a, b)`: Mengurangi angka kedua dari angka pertama
 - `multiply(a, b)`: Mengalikan dua angka
-- `divide(a, b)`: Membagi angka pertama dengan angka kedua (dengan pemeriksaan nol)
-- `power(base, exponent)`: Menghitung pangkat dari sebuah angka
-- `squareRoot(number)`: Menghitung akar kuadrat (dengan pemeriksaan angka negatif)
-- `modulus(a, b)`: Menghitung sisa pembagian
+- `divide(a, b)`: Membagi angka pertama dengan angka kedua (dengan pengecekan nol)
+- `power(base, exponent)`: Menghitung pangkat sebuah angka
+- `squareRoot(number)`: Menghitung akar kuadrat (dengan pengecekan angka negatif)
+- `modulus(a, b)`: Menghitung sisa bagi dari pembagian
 - `absolute(number)`: Menghitung nilai mutlak
 - `help()`: Mendapatkan informasi tentang operasi yang tersedia
 
-## Klien Uji
+## Test Client
 
-Klien uji sederhana disertakan dalam paket `com.microsoft.mcp.sample.client`. Kelas `SampleCalculatorClient` mendemonstrasikan operasi yang tersedia dari layanan kalkulator.
+Sebuah test client sederhana disertakan dalam paket `com.microsoft.mcp.sample.client`. Kelas `SampleCalculatorClient` menunjukkan operasi yang tersedia dari layanan kalkulator.
 
-## Menggunakan Klien LangChain4j
+## Menggunakan LangChain4j Client
 
-Proyek ini menyertakan contoh klien LangChain4j di `com.microsoft.mcp.sample.client.LangChain4jClient` yang menunjukkan cara mengintegrasikan layanan kalkulator dengan LangChain4j dan model GitHub:
+Proyek ini menyertakan contoh client LangChain4j di `com.microsoft.mcp.sample.client.LangChain4jClient` yang menunjukkan cara mengintegrasikan layanan kalkulator dengan LangChain4j dan model GitHub:
 
 ### Prasyarat
 
@@ -75,17 +75,17 @@ Proyek ini menyertakan contoh klien LangChain4j di `com.microsoft.mcp.sample.cli
    
    b. Klik "Generate new token" → "Generate new token (classic)"
    
-   c. Berikan nama deskriptif untuk token Anda
+   c. Beri nama token Anda dengan deskripsi yang jelas
    
    d. Pilih cakupan berikut:
-      - `repo` (Kontrol penuh repositori pribadi)
-      - `read:org` (Baca keanggotaan organisasi dan tim, baca proyek organisasi)
-      - `gist` (Buat gists)
-      - `user:email` (Akses alamat email pengguna (hanya-baca))
+      - `repo` (Kontrol penuh repositori privat)
+      - `read:org` (Membaca keanggotaan organisasi dan tim, membaca proyek organisasi)
+      - `gist` (Membuat gists)
+      - `user:email` (Akses alamat email pengguna (hanya baca))
    
    e. Klik "Generate token" dan salin token baru Anda
    
-   f. Atur sebagai variabel lingkungan:
+   f. Setel sebagai variabel lingkungan:
       
       Pada Windows:
       ```
@@ -97,9 +97,9 @@ Proyek ini menyertakan contoh klien LangChain4j di `com.microsoft.mcp.sample.cli
       export GITHUB_TOKEN=your-github-token
       ```
 
-   g. Untuk pengaturan yang berkelanjutan, tambahkan ke variabel lingkungan Anda melalui pengaturan sistem
+   g. Untuk pengaturan permanen, tambahkan ke variabel lingkungan melalui pengaturan sistem
 
-2. Tambahkan ketergantungan GitHub LangChain4j ke proyek Anda (sudah disertakan dalam pom.xml):
+2. Tambahkan dependensi LangChain4j GitHub ke proyek Anda (sudah termasuk di pom.xml):
    ```xml
    <dependency>
        <groupId>dev.langchain4j</groupId>
@@ -110,23 +110,23 @@ Proyek ini menyertakan contoh klien LangChain4j di `com.microsoft.mcp.sample.cli
 
 3. Pastikan server kalkulator berjalan di `localhost:8080`
 
-### Menjalankan Klien LangChain4j
+### Menjalankan LangChain4j Client
 
 Contoh ini menunjukkan:
-- Menghubungkan ke server MCP kalkulator melalui transportasi SSE
-- Menggunakan LangChain4j untuk membuat bot obrolan yang memanfaatkan operasi kalkulator
+- Menghubungkan ke server MCP kalkulator melalui transport SSE
+- Menggunakan LangChain4j untuk membuat chat bot yang memanfaatkan operasi kalkulator
 - Integrasi dengan model AI GitHub (sekarang menggunakan model phi-4)
 
-Klien mengirimkan kueri contoh berikut untuk mendemonstrasikan fungsionalitas:
-1. Menghitung jumlah dari dua angka
-2. Mencari akar kuadrat dari sebuah angka
+Client mengirimkan contoh query berikut untuk mendemonstrasikan fungsionalitas:
+1. Menghitung jumlah dua angka
+2. Mencari akar kuadrat sebuah angka
 3. Mendapatkan informasi bantuan tentang operasi kalkulator yang tersedia
 
-Jalankan contoh dan periksa keluaran konsol untuk melihat bagaimana model AI menggunakan alat kalkulator untuk merespons kueri.
+Jalankan contoh dan periksa output konsol untuk melihat bagaimana model AI menggunakan alat kalkulator untuk merespons pertanyaan.
 
 ### Konfigurasi Model GitHub
 
-Klien LangChain4j dikonfigurasi untuk menggunakan model phi-4 GitHub dengan pengaturan berikut:
+Client LangChain4j dikonfigurasi untuk menggunakan model phi-4 GitHub dengan pengaturan berikut:
 
 ```java
 ChatLanguageModel model = GitHubChatModel.builder()
@@ -138,11 +138,11 @@ ChatLanguageModel model = GitHubChatModel.builder()
     .build();
 ```
 
-Untuk menggunakan model GitHub yang berbeda, cukup ubah parameter `modelName` ke model lain yang didukung (misalnya, "claude-3-haiku-20240307", "llama-3-70b-8192", dll.).
+Untuk menggunakan model GitHub lain, cukup ubah parameter `modelName` ke model lain yang didukung (misalnya, "claude-3-haiku-20240307", "llama-3-70b-8192", dll.).
 
-## Ketergantungan
+## Dependensi
 
-Proyek ini memerlukan ketergantungan kunci berikut:
+Proyek ini membutuhkan dependensi utama berikut:
 
 ```xml
 <!-- For MCP Server -->
@@ -185,59 +185,59 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 MCP Inspector adalah alat yang berguna untuk berinteraksi dengan layanan MCP. Untuk menggunakannya dengan layanan kalkulator ini:
 
-1. **Pasang dan jalankan MCP Inspector** di jendela terminal baru:
+1. **Instal dan jalankan MCP Inspector** di jendela terminal baru:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Akses antarmuka web** dengan mengklik URL yang ditampilkan oleh aplikasi (biasanya http://localhost:6274)
+2. **Akses UI web** dengan mengklik URL yang ditampilkan oleh aplikasi (biasanya http://localhost:6274)
 
 3. **Konfigurasikan koneksi**:
-   - Atur jenis transportasi ke "SSE"
-   - Atur URL ke endpoint SSE server Anda yang berjalan: `http://localhost:8080/sse`
+   - Atur tipe transport ke "SSE"
+   - Atur URL ke endpoint SSE server yang berjalan: `http://localhost:8080/sse`
    - Klik "Connect"
 
 4. **Gunakan alat**:
    - Klik "List Tools" untuk melihat operasi kalkulator yang tersedia
    - Pilih alat dan klik "Run Tool" untuk menjalankan operasi
 
-![Tangkapan Layar MCP Inspector](../../../../../../translated_images/tool.d45bdee7d4d5740a48d0d6378c9a8af0c1a289f1e0f2ae95ee176f1a5afb40a8.id.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.id.png)
 
 ### Menggunakan Docker
 
-Proyek ini menyertakan Dockerfile untuk penyebaran terkontainerisasi:
+Proyek ini menyertakan Dockerfile untuk deployment containerized:
 
-1. **Bangun gambar Docker**:
+1. **Bangun image Docker**:
    ```bash
    docker build -t calculator-mcp-service .
    ```
 
-2. **Jalankan kontainer Docker**:
+2. **Jalankan container Docker**:
    ```bash
    docker run -p 8080:8080 calculator-mcp-service
    ```
 
 Ini akan:
-- Membangun gambar Docker multi-tahap dengan Maven 3.9.9 dan Eclipse Temurin 24 JDK
-- Membuat gambar kontainer yang dioptimalkan
+- Membangun image Docker multi-stage dengan Maven 3.9.9 dan Eclipse Temurin 24 JDK
+- Membuat image container yang dioptimalkan
 - Mengekspos layanan pada port 8080
-- Memulai layanan kalkulator MCP di dalam kontainer
+- Menjalankan layanan MCP kalkulator di dalam container
 
-Anda dapat mengakses layanan di `http://localhost:8080` setelah kontainer berjalan.
+Anda dapat mengakses layanan di `http://localhost:8080` setelah container berjalan.
 
 ## Pemecahan Masalah
 
 ### Masalah Umum dengan Token GitHub
 
-1. **Masalah Izin Token**: Jika Anda mendapatkan kesalahan 403 Forbidden, periksa bahwa token Anda memiliki izin yang benar seperti yang diuraikan dalam prasyarat.
+1. **Masalah Izin Token**: Jika Anda mendapatkan error 403 Forbidden, periksa apakah token Anda memiliki izin yang benar seperti yang dijelaskan di prasyarat.
 
-2. **Token Tidak Ditemukan**: Jika Anda mendapatkan kesalahan "No API key found", pastikan variabel lingkungan GITHUB_TOKEN diatur dengan benar.
+2. **Token Tidak Ditemukan**: Jika muncul error "No API key found", pastikan variabel lingkungan GITHUB_TOKEN sudah disetel dengan benar.
 
-3. **Pembatasan Tingkat**: API GitHub memiliki batas tingkat. Jika Anda menghadapi kesalahan batas tingkat (kode status 429), tunggu beberapa menit sebelum mencoba lagi.
+3. **Pembatasan Rate**: API GitHub memiliki batasan rate. Jika Anda mengalami error batas rate (kode status 429), tunggu beberapa menit sebelum mencoba lagi.
 
-4. **Kedaluwarsa Token**: Token GitHub dapat kedaluwarsa. Jika Anda menerima kesalahan otentikasi setelah beberapa waktu, buat token baru dan perbarui variabel lingkungan Anda.
+4. **Token Kadaluarsa**: Token GitHub bisa kadaluarsa. Jika Anda menerima error otentikasi setelah beberapa waktu, buat token baru dan perbarui variabel lingkungan Anda.
 
-Jika Anda memerlukan bantuan lebih lanjut, periksa [dokumentasi LangChain4j](https://github.com/langchain4j/langchain4j) atau [dokumentasi API GitHub](https://docs.github.com/en/rest).
+Jika Anda membutuhkan bantuan lebih lanjut, periksa [dokumentasi LangChain4j](https://github.com/langchain4j/langchain4j) atau [dokumentasi API GitHub](https://docs.github.com/en/rest).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan terjemahan yang akurat, harap disadari bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

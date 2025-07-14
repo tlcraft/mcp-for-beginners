@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-17T15:07:14+00:00",
+  "translation_date": "2025-07-13T23:38:30+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "hu"
 }
 -->
 # Minta
 
-Ez egy Typescript minta egy MCP szerverhez
+Ez egy Typescript példa egy MCP szerverhez
 
-Íme egy eszköz létrehozási példa:
+Íme egy eszköz létrehozásának példája:
 
 ```typescript
 this.mcpServer.tool(
@@ -76,7 +76,7 @@ async ({ model, prompt, options }) => {
 
 ## Telepítés
 
-Futtassa a következő parancsot:
+Futtasd a következő parancsot:
 
 ```bash
 npm install
@@ -88,5 +88,5 @@ npm install
 npm start
 ```
 
-**Felelősségi nyilatkozat**:  
-Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) használatával került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum a saját nyelvén tekinthető a hiteles forrásnak. Kritikus információk esetén javasolt a professzionális emberi fordítás. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félremagyarázásokért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

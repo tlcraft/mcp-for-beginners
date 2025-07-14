@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-13T02:32:54+00:00",
+  "translation_date": "2025-07-13T21:54:07+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "ms"
 }
 -->
-# 📘 פתרון המשימה: הרחבת שרת ה-MCP של המחשבון שלך עם כלי שורש ריבועי
+# 📘 Penyelesaian Tugasan: Memperluaskan Server MCP Kalkulator Anda dengan Alat Punca Kuasa Dua
 
-## סקירה כללית
-במשימה זו, הרחבת את שרת ה-MCP של המחשבון שלך על ידי הוספת כלי חדש שמחשב את השורש הריבועי של מספר. תוספת זו מאפשרת לסוכן ה-AI שלך לטפל בשאילתות מתמטיות מתקדמות יותר, כמו "מה השורש הריבועי של 16?" או "חשב √49," באמצעות פקודות בשפה טבעית.
+## Gambaran Keseluruhan
+Dalam tugasan ini, anda telah menambah baik server MCP kalkulator anda dengan menambah alat baru yang mengira punca kuasa dua sesuatu nombor. Penambahan ini membolehkan ejen AI anda mengendalikan soalan matematik yang lebih kompleks, seperti "Apakah punca kuasa dua bagi 16?" atau "Kira √49," menggunakan arahan dalam bahasa semula jadi.
 
-## 🛠️ יישום כלי השורש הריבועי
-כדי להוסיף את הפונקציונליות הזו, הגדרת פונקציית כלי חדשה בקובץ server.py שלך. הנה היישום:
+## 🛠️ Melaksanakan Alat Punca Kuasa Dua
+Untuk menambah fungsi ini, anda telah mentakrifkan fungsi alat baru dalam fail server.py anda. Berikut adalah pelaksanaannya:
 
 ```python
 """
@@ -68,13 +68,35 @@ def sqrt(a: float) -> float:
     return math.sqrt(a)
 ```
 
-## 🔍 איך זה עובד
+## 🔍 Cara Ia Berfungsi
 
-- **ייבוא כלי ה-`math.sqrt()`**.
-- אפשרת לסוכן ה-AI שלך לבצע חישובי שורש ריבועי באמצעות פקודות בשפה טבעית.
-- התאמנת בהוספת כלים חדשים והפעלה מחדש של השרת כדי לשלב פונקציות נוספות.
+- **Import modul `math`**: Untuk melakukan operasi matematik yang lebih daripada aritmetik asas, Python menyediakan modul terbina dalam `math`. Modul ini mengandungi pelbagai fungsi dan pemalar matematik. Dengan mengimportnya menggunakan `import math`, anda boleh menggunakan fungsi seperti `math.sqrt()`, yang mengira punca kuasa dua sesuatu nombor.
+- **Definisi Fungsi**: Dekorator `@server.tool()` mendaftarkan fungsi `sqrt` sebagai alat yang boleh diakses oleh ejen AI anda.
+- **Parameter Input**: Fungsi ini menerima satu argumen `a` bertipe `float`.
+- **Pengendalian Ralat**: Jika `a` adalah negatif, fungsi akan membangkitkan `ValueError` untuk mengelakkan pengiraan punca kuasa dua nombor negatif, yang tidak disokong oleh fungsi `math.sqrt()`.
+- **Nilai Pulangan**: Untuk input bukan negatif, fungsi akan memulangkan punca kuasa dua `a` menggunakan kaedah terbina dalam Python `math.sqrt()`.
 
-אתה מוזמן להמשיך ולנסות להוסיף כלים מתמטיים נוספים, כמו חזקות או פונקציות לוגריתמיות, כדי להרחיב עוד יותר את יכולות הסוכן שלך!
+## 🔄 Memulakan Semula Server
+Selepas menambah alat `sqrt` yang baru, adalah penting untuk memulakan semula server MCP anda supaya ejen dapat mengenal pasti dan menggunakan fungsi baru yang telah ditambah.
+
+## 💬 Contoh Arahan untuk Menguji Alat Baru
+Berikut adalah beberapa arahan dalam bahasa semula jadi yang boleh anda gunakan untuk menguji fungsi punca kuasa dua:
+
+- "Apakah punca kuasa dua bagi 25?"
+- "Kira punca kuasa dua bagi 81."
+- "Cari punca kuasa dua bagi 0."
+- "Apakah punca kuasa dua bagi 2.25?"
+
+Arahan-arahan ini sepatutnya mengaktifkan ejen untuk menggunakan alat `sqrt` dan memulangkan keputusan yang betul.
+
+## ✅ Ringkasan
+Dengan menyelesaikan tugasan ini, anda telah:
+
+- Memperluaskan server MCP kalkulator anda dengan alat `sqrt` yang baru.
+- Membolehkan ejen AI anda mengendalikan pengiraan punca kuasa dua melalui arahan dalam bahasa semula jadi.
+- Berlatih menambah alat baru dan memulakan semula server untuk mengintegrasikan fungsi tambahan.
+
+Jangan ragu untuk terus mencuba dengan menambah lebih banyak alat matematik, seperti fungsi pendaraban kuasa atau logaritma, untuk terus meningkatkan keupayaan ejen anda!
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat kritikal, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

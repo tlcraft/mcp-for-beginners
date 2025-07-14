@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T17:22:40+00:00",
+  "translation_date": "2025-07-13T22:08:48+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "el"
 }
@@ -26,7 +26,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Αν ο server σας προορίζεται να χρησιμοποιείται εκτελώντας τον στη μηχανή των χρηστών, μπορείτε να ακολουθήσετε τα παρακάτω βήματα:
 
-1. **Κατεβάστε τον server**. Αν δεν έχετε γράψει εσείς τον server, κατεβάστε τον πρώτα στη μηχανή σας.  
+1. **Κατεβάστε τον server**. Αν δεν έχετε γράψει τον server, κατεβάστε τον πρώτα στη μηχανή σας.  
 1. **Ξεκινήστε τη διαδικασία του server**: Εκτελέστε την εφαρμογή MCP server σας.
 
 Για SSE (δεν απαιτείται για server τύπου stdio)
@@ -104,14 +104,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Επιπλέον Πόροι
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
-- [Άρθρο για Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
-
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
+- [Άρθρο για Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Azure Container Apps MCP αποθετήριο](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
 ## Τι Ακολουθεί
 
 - Επόμενο: [Πρακτική Εφαρμογή](../../04-PracticalImplementation/README.md)
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που προσπαθούμε για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

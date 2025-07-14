@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7074b9f4c8cd147c1c10f569d8508c82",
-  "translation_date": "2025-06-11T13:14:22+00:00",
+  "translation_date": "2025-07-13T18:36:22+00:00",
   "source_file": "03-GettingStarted/02-client/solution/java/README.md",
   "language_code": "ms"
 }
 -->
-# MCP Java Client - דוגמת מחשבון
+# MCP Java Client - Demo Kalkulator
 
-פרויקט זה מדגים כיצד ליצור לקוח Java שמתחבר לשרת MCP (Model Context Protocol) ומבצע איתו אינטראקציה. בדוגמה זו, נתחבר לשרת המחשבון מפרק 01 ונבצע פעולות מתמטיות שונות.
+Projek ini menunjukkan cara untuk mencipta klien Java yang berhubung dan berinteraksi dengan pelayan MCP (Model Context Protocol). Dalam contoh ini, kita akan berhubung dengan pelayan kalkulator dari Bab 01 dan melakukan pelbagai operasi matematik.
 
-## דרישות מוקדמות
+## Prasyarat
 
-לפני הרצת הלקוח, יש לבצע את הפעולות הבאות:
+Sebelum menjalankan klien ini, anda perlu:
 
-1. **הפעל את שרת המחשבון** מפרק 01:
-   - נווט לתיקיית שרת המחשבון: `03-GettingStarted/01-first-server/solution/java/`
-   - בנייה והרצת שרת המחשבון:
+1. **Mulakan Pelayan Kalkulator** dari Bab 01:
+   - Pergi ke direktori pelayan kalkulator: `03-GettingStarted/01-first-server/solution/java/`
+   - Bina dan jalankan pelayan kalkulator:
      ```cmd
      cd ..\01-first-server\solution\java
      .\mvnw clean install -DskipTests
      java -jar target\calculator-server-0.0.1-SNAPSHOT.jar
      ```
-   - השרת אמור לפעול בכתובת `http://localhost:8080`
+   - Pelayan sepatutnya berjalan di `http://localhost:8080`
 
-2. **Java 21 or higher** installed on your system
-3. **Maven** (included via Maven Wrapper)
+2. **Java 21 atau lebih tinggi** dipasang pada sistem anda  
+3. **Maven** (termasuk melalui Maven Wrapper)
 
-## What is the SDKClient?
+## Apakah SDKClient?
 
-The `SDKClient` היא אפליקציית Java שמדגימה כיצד:
-- להתחבר לשרת MCP באמצעות Server-Sent Events (SSE)
-- לרשום את הכלים הזמינים מהשרת
-- לקרוא לפונקציות מחשבון שונות מרחוק
-- לטפל בתגובות ולהציג תוצאות
+`SDKClient` adalah aplikasi Java yang menunjukkan cara untuk:
+- Berhubung dengan pelayan MCP menggunakan pengangkutan Server-Sent Events (SSE)
+- Senaraikan alat yang tersedia dari pelayan
+- Panggil pelbagai fungsi kalkulator secara jauh
+- Mengendalikan respons dan memaparkan keputusan
 
-## כיצד זה עובד
+## Cara Ia Berfungsi
 
-הלקוח משתמש במסגרת Spring AI MCP כדי:
+Klien menggunakan rangka kerja Spring AI MCP untuk:
 
-1. **להקים חיבור**: יוצר לקוח WebFlux SSE שמתחבר לשרת המחשבון
-2. **אתחול הלקוח**: מגדיר את לקוח MCP ומקים את החיבור
-3. **גילוי כלים**: מציג את כל פעולות המחשבון הזמינות
-4. **ביצוע פעולות**: קורא לפונקציות מתמטיות שונות עם נתוני דוגמה
-5. **הצגת תוצאות**: מציג את תוצאות כל חישוב
+1. **Mewujudkan Sambungan**: Mencipta pengangkutan WebFlux SSE untuk berhubung dengan pelayan kalkulator  
+2. **Inisialisasi Klien**: Menyediakan klien MCP dan mewujudkan sambungan  
+3. **Mengesan Alat**: Menyenaraikan semua operasi kalkulator yang tersedia  
+4. **Melaksanakan Operasi**: Memanggil pelbagai fungsi matematik dengan data contoh  
+5. **Memaparkan Keputusan**: Menunjukkan hasil setiap pengiraan
 
-## מבנה הפרויקט
+## Struktur Projek
 
 ```
 src/
@@ -60,9 +60,9 @@ src/
                             └── SDKClient.java    # Main client implementation
 ```
 
-## תלות מרכזית
+## Kebergantungan Utama
 
-הפרויקט משתמש בתלותות המרכזיות הבאות:
+Projek ini menggunakan kebergantungan utama berikut:
 
 ```xml
 <dependency>
@@ -71,44 +71,44 @@ src/
 </dependency>
 ```
 
-תלות זו מספקת:
-- `McpClient` - The main client interface
-- `WebFluxSseClientTransport` - תחבורה מסוג SSE לתקשורת מבוססת רשת
-- סכמות פרוטוקול MCP וסוגי בקשות/תגובות
+Kebergantungan ini menyediakan:  
+- `McpClient` - Antara muka klien utama  
+- `WebFluxSseClientTransport` - Pengangkutan SSE untuk komunikasi berasaskan web  
+- Skema protokol MCP dan jenis permintaan/respons
 
-## בניית הפרויקט
+## Membina Projek
 
-בנה את הפרויקט באמצעות Maven wrapper:
+Bina projek menggunakan Maven wrapper:
 
 ```cmd
 .\mvnw clean install
 ```
 
-## הרצת הלקוח
+## Menjalankan Klien
 
 ```cmd
 java -jar .\target\calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-**הערה**: ודא ששרת המחשבון פועל בכתובת `http://localhost:8080` before executing any of these commands.
+**Nota**: Pastikan pelayan kalkulator berjalan di `http://localhost:8080` sebelum menjalankan mana-mana arahan ini.
 
-## What the Client Does
+## Apa Yang Klien Lakukan
 
-When you run the client, it will:
+Apabila anda menjalankan klien, ia akan:
 
-1. **Connect** to the calculator server at `http://localhost:8080`
-2. **רשימת כלים** - מציג את כל פעולות המחשבון הזמינות
-3. **ביצוע חישובים**:
-   - חיבור: 5 + 3 = 8
-   - חיסור: 10 - 4 = 6
-   - כפל: 6 × 7 = 42
-   - חילוק: 20 ÷ 4 = 5
-   - חזקה: 2^8 = 256
-   - שורש ריבועי: √16 = 4
-   - ערך מוחלט: |-5.5| = 5.5
-   - עזרה: מציג את הפעולות הזמינות
+1. **Berhubung** dengan pelayan kalkulator di `http://localhost:8080`  
+2. **Senaraikan Alat** - Memaparkan semua operasi kalkulator yang tersedia  
+3. **Lakukan Pengiraan**:  
+   - Penambahan: 5 + 3 = 8  
+   - Penolakan: 10 - 4 = 6  
+   - Pendaraban: 6 × 7 = 42  
+   - Pembahagian: 20 ÷ 4 = 5  
+   - Kuasa: 2^8 = 256  
+   - Punca Kuasa Dua: √16 = 4  
+   - Nilai Mutlak: |-5.5| = 5.5  
+   - Bantuan: Memaparkan operasi yang tersedia
 
-## פלט צפוי
+## Output Dijangka
 
 ```
 Available Tools = ListToolsResult[tools=[Tool[name=add, description=Add two numbers together, ...], ...]]
@@ -122,56 +122,56 @@ Absolute Result = CallToolResult[content=[TextContent[text="|-5,50| = 5,50"]], i
 Help = CallToolResult[content=[TextContent[text="Basic Calculator MCP Service\n\nAvailable operations:\n1. add(a, b) - Adds two numbers\n2. subtract(a, b) - Subtracts the second number from the first\n..."]], isError=false]
 ```
 
-**הערה**: ייתכן שתקבל אזהרות Maven לגבי תהליכים שנותרו בסיום - זה נורמלי באפליקציות ריאקטיביות ואינו מצביע על שגיאה.
+**Nota**: Anda mungkin melihat amaran Maven tentang thread yang masih berjalan pada akhir - ini adalah normal untuk aplikasi reaktif dan tidak menunjukkan ralat.
 
-## הבנת הקוד
+## Memahami Kod
 
-### 1. הגדרת התחבורה
+### 1. Persediaan Pengangkutan  
 ```java
 var transport = new WebFluxSseClientTransport(WebClient.builder().baseUrl("http://localhost:8080"));
-```
-זה יוצר תחבורה מסוג SSE (Server-Sent Events) שמתחברת לשרת המחשבון.
+```  
+Ini mencipta pengangkutan SSE (Server-Sent Events) yang berhubung dengan pelayan kalkulator.
 
-### 2. יצירת הלקוח
+### 2. Penciptaan Klien  
 ```java
 var client = McpClient.sync(this.transport).build();
 client.initialize();
-```
-יוצר לקוח MCP סינכרוני ומאתחל את החיבור.
+```  
+Mencipta klien MCP secara segerak dan memulakan sambungan.
 
-### 3. קריאת כלים
+### 3. Memanggil Alat  
 ```java
 CallToolResult resultAdd = client.callTool(new CallToolRequest("add", Map.of("a", 5.0, "b", 3.0)));
-```
-קורא לכלי "add" עם הפרמטרים a=5.0 ו- b=3.0.
+```  
+Memanggil alat "add" dengan parameter a=5.0 dan b=3.0.
 
-## פתרון תקלות
+## Penyelesaian Masalah
 
-### השרת לא פועל
-אם מתקבלות שגיאות חיבור, ודא ששרת המחשבון מפרק 01 פועל:
+### Pelayan Tidak Berjalan  
+Jika anda mendapat ralat sambungan, pastikan pelayan kalkulator dari Bab 01 sedang berjalan:  
 ```
 Error: Connection refused
-```
-**פתרון**: הפעל את שרת המחשבון קודם.
+```  
+**Penyelesaian**: Mulakan pelayan kalkulator terlebih dahulu.
 
-### פורט בשימוש
-אם הפורט 8080 תפוס:
+### Port Sudah Digunakan  
+Jika port 8080 sedang digunakan:  
 ```
 Error: Address already in use
-```
-**פתרון**: עצור אפליקציות אחרות שמשתמשות בפורט 8080 או שנה את הפורט בשרת.
+```  
+**Penyelesaian**: Hentikan aplikasi lain yang menggunakan port 8080 atau ubah pelayan untuk menggunakan port lain.
 
-### שגיאות בנייה
-אם מתקבלות שגיאות בנייה:
+### Ralat Semasa Membina  
+Jika anda menghadapi ralat semasa membina:  
 ```cmd
 .\mvnw clean install -DskipTests
 ```
 
-## למידה נוספת
+## Ketahui Lebih Lanjut
 
-- [Spring AI MCP Documentation](https://docs.spring.io/spring-ai/reference/api/mcp/)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/)
-- [Spring WebFlux Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
+- [Dokumentasi Spring AI MCP](https://docs.spring.io/spring-ai/reference/api/mcp/)  
+- [Spesifikasi Model Context Protocol](https://modelcontextprotocol.io/)  
+- [Dokumentasi Spring WebFlux](https://docs.spring.io/spring-framework/docs/current/reference/html/web-reactive.html)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

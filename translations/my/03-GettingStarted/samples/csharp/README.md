@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T06:10:45+00:00",
+  "translation_date": "2025-07-13T22:19:48+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "my"
 }
 -->
 # Basic Calculator MCP Service
 
-ဤဝန်ဆောင်မှုသည် Model Context Protocol (MCP) မှတဆင့် မူလတွက်ချက်စက်လုပ်ဆောင်ချက်များကို ပံ့ပိုးပေးသည်။ MCP ကိုသင်ယူနေသော စတင်လေ့လာသူများအတွက် ရိုးရှင်းသော ဥပမာအဖြစ် ဒီဇိုင်းရေးဆွဲထားသည်။
+ဤဝန်ဆောင်မှုသည် Model Context Protocol (MCP) မှတဆင့် အခြေခံ ကိန်းဂဏန်းတွက်ချက်မှုများကို ပေးဆောင်သည်။ MCP ကို လေ့လာနေသော စတင်သူများအတွက် ရိုးရှင်းသည့် ဥပမာတစ်ခုအဖြစ် ဒီဝန်ဆောင်မှုကို ဒီဇိုင်းဆွဲထားသည်။
 
-အသေးစိတ်အချက်အလက်များအတွက် [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) ကိုကြည့်ပါ။
+အသေးစိတ်အချက်အလက်များအတွက် [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) ကို ကြည့်ပါ။
 
 ## Features
 
-ဤတွက်ချက်စက်ဝန်ဆောင်မှုတွင် အောက်ပါ လုပ်ဆောင်ချက်များပါဝင်သည်-
+ဤ ကိန်းဂဏန်းတွက်ချက်မှု ဝန်ဆောင်မှုတွင် အောက်ပါ လုပ်ဆောင်ချက်များ ပါဝင်သည်-
 
-1. **အခြေခံ သင်္ချာ လုပ်ဆောင်ချက်များ**  
-   - နံပါတ်နှစ်ခုကို ပေါင်းခြင်း  
-   - နံပါတ်တစ်ခုကို နောက်တစ်ခုမှ လျော့ခြင်း  
-   - နံပါတ်နှစ်ခုကို မြှောက်ခြင်း  
-   - နံပါတ်တစ်ခုကို နောက်တစ်ခုဖြင့် 나누ခြင်း (သုညဖြင့် 나누မှု စစ်ဆေးမှုပါရှိသည်)  
+1. **အခြေခံ သင်္ချာဆိုင်ရာ လုပ်ဆောင်ချက်များ**:
+   - နံပါတ်နှစ်ခုကို ပေါင်းခြင်း
+   - နံပါတ်တစ်ခုမှ နံပါတ်တစ်ခုကို ဖြုတ်ခြင်း
+   - နံပါတ်နှစ်ခုကို မြှောက်ခြင်း
+   - နံပါတ်တစ်ခုကို နံပါတ်တစ်ခုဖြင့် ခွဲခြင်း (သုညဖြင့် ခွဲခြင်းကို စစ်ဆေးသည်)
 
-## `stdio` Type အသုံးပြုခြင်း
+## Using `stdio` Type
   
-## ပြင်ဆင်ခြင်း
+## Configuration
 
-1. **MCP ဆာဗာများကို ပြင်ဆင်ခြင်း**  
-   - သင့် VS Code တွင် workspace ကိုဖွင့်ပါ။  
-   - workspace ဖိုလ်ဒါထဲတွင် `.vscode/mcp.json` ဖိုင်တစ်ခု ဖန်တီးပြီး MCP ဆာဗာများကို ပြင်ဆင်ပါ။ ဥပမာ ပြင်ဆင်မှု-
+1. **MCP Servers ကို ပြင်ဆင်ခြင်း**:
+   - သင့် workspace ကို VS Code တွင် ဖွင့်ပါ။
+   - MCP servers များကို ပြင်ဆင်ရန် သင့် workspace ဖိုလ်ဒါအတွင်း `.vscode/mcp.json` ဖိုင်ကို ဖန်တီးပါ။ ဥပမာ ပြင်ဆင်မှုမှာ -
 
      ```jsonc
      {
@@ -54,51 +54,49 @@ CO_OP_TRANSLATOR_METADATA:
      }
      ```
 
-   - GitHub repository ရဲ့ root ကို ထည့်သွင်းရန် မေးမြန်းမည်ဖြစ်ပြီး၊ `git rev-parse --show-toplevel`.
+   - GitHub repository root ကို ထည့်ရန် မေးမြန်းမည်ဖြစ်ပြီး၊ ၎င်းကို `git rev-parse --show-toplevel` ကွန်မန်းဒ်မှ ရယူနိုင်သည်။
 
 ## Using the Service
 
-The service exposes the following API endpoints through the MCP protocol:
+ဝန်ဆောင်မှုသည် MCP protocol မှတဆင့် အောက်ပါ API endpoints များကို ဖော်ပြပေးသည်-
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: နံပါတ်နှစ်ခုကို ပေါင်းခြင်း
+- `subtract(a, b)`: ပထမနံပါတ်မှ ဒုတိယနံပါတ်ကို ဖြုတ်ခြင်း
+- `multiply(a, b)`: နံပါတ်နှစ်ခုကို မြှောက်ခြင်း
+- `divide(a, b)`: ပထမနံပါတ်ကို ဒုတိယနံပါတ်ဖြင့် ခွဲခြင်း (သုညစစ်ဆေးမှုပါ)
+- isPrime(n): နံပါတ်တစ်ခုသည် ဗဟိုနံပါတ်ဖြစ်မဖြစ် စစ်ဆေးခြင်း
 
 ## Test with Github Copilot Chat in VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
+1. MCP protocol ကို အသုံးပြု၍ ဝန်ဆောင်မှုသို့ တောင်းဆိုမှုတစ်ခု ပြုလုပ်ကြည့်ပါ။ ဥပမာ၊ မေးမြန်းနိုင်သည်-
    - "Add 5 and 3"
    - "Subtract 10 from 4"
    - "Multiply 6 and 7"
    - "Divide 8 by 2"
    - "Does 37854 prime?"
    - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
+2. ၎င်းသည် tools ကို အသုံးပြုနေကြောင်း သေချာစေရန် prompt တွင် #MyCalculator ကို ထည့်ပါ။ ဥပမာ-
    - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
-
+   - "Subtract 10 from 4 #MyCalculator"
 
 ## Containerized Version
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
+ယခင်ဖြေရှင်းချက်သည် .NET SDK ထည့်သွင်းပြီး၊ လိုအပ်သော dependencies များ ပြည့်စုံသောအခါ အထူးသင့်တော်သည်။ သို့သော် ဖြေရှင်းချက်ကို မျှဝေလိုပါက သို့မဟုတ် အခြားပတ်ဝန်းကျင်တွင် ပြေးဆွဲလိုပါက containerized version ကို အသုံးပြုနိုင်သည်။
 
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` သို့ သင့် Docker Hub username ဖြင့် ပြောင်းလဲ၍ ရယူနိုင်သည်။  
+1. Docker ကို စတင်ပြီး အလုပ်လုပ်နေကြောင်း သေချာပါစေ။
+1. terminal မှ `03-GettingStarted\samples\csharp\src` ဖိုလ်ဒါသို့ သွားပါ။
+1. ကိန်းဂဏန်းတွက်ချက်မှု ဝန်ဆောင်မှုအတွက် Docker image ကို တည်ဆောက်ရန် အောက်ပါ command ကို အကောင်အထည်ဖော်ပါ ( `<YOUR-DOCKER-USERNAME>` ကို သင့် Docker Hub username ဖြင့် အစားထိုးပါ)-
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ```  
-
-1. Image ကို တည်ဆောက်ပြီးပါက Docker Hub သို့ တင်ပေးပါ။ အောက်ပါ command ကို အသုံးပြုပါ-  
+   ``` 
+1. image တည်ဆောက်ပြီးနောက် Docker Hub သို့ တင်ရန် အောက်ပါ command ကို ပြေးပါ-
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Dockerized ဗားရှင်းကို အသုံးပြုခြင်း
+## Use the Dockerized Version
 
-1. `.vscode/mcp.json` ဖိုင်တွင် ဆာဗာ ပြင်ဆင်မှုကို အောက်ပါအတိုင်း ပြောင်းလဲပါ-  
+1. `.vscode/mcp.json` ဖိုင်တွင် server configuration ကို အောက်ပါအတိုင်း ပြောင်းလဲပါ-
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,12 +109,12 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "envFile": "",
       "env": {}
     }
-   ```  
-   ပြင်ဆင်မှုကို ကြည့်လျှင် command သည် `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   ```
+   configuration ကို ကြည့်မယ်ဆိုရင် command သည် `docker` ဖြစ်ပြီး args တွေမှာ `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc` ဖြစ်သည်။ `--rm` flag သည် container ရပ်နားပြီးနောက် ဖျက်ပစ်ရန် ဖြစ်ပြီး `-i` flag သည် container ၏ standard input နှင့် အပြန်အလှန် ဆက်သွယ်နိုင်စေရန် ဖြစ်သည်။ နောက်ဆုံး argument သည် ကျွန်ုပ်တို့ တည်ဆောက်ပြီး Docker Hub သို့ တင်ထားသော image အမည်ဖြစ်သည်။
 
 ## Test the Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {` ဖြစ်ပြီး၊ ယခင်ကဲ့သို့ပင် သင်သည် ဒီတွက်ချက်စက်ဝန်ဆောင်မှုကို သင်လိုသလို သင်္ချာတွက်ချက်ပေးရန် တောင်းနိုင်ပါသည်။
+`"mcp-calc": {` အပေါ်ရှိ Start ခလုတ်ကို နှိပ်၍ MCP Server ကို စတင်ပါ၊ ယခင်ကဲ့သို့ ကိန်းဂဏန်းတွက်ချက်မှု ဝန်ဆောင်မှုကို တောင်းဆိုနိုင်ပါပြီ။
 
-**ကြိုတင်သတိပေးချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ တိကျမှန်ကန်မှုအတွက် ကြိုးစားပေမယ့်၊ အလိုအလျောက် ဘာသာပြန်ချက်များတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန်။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အရင်းအမြစ်အဖြစ် သတ်မှတ်ရန် လိုအပ်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် မိမိလက်တွေ့ကျွမ်းကျင်သော လူသား ဘာသာပြန်သူမှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားမလည်မှုများ သို့မဟုတ် မှားယွင်းဖော်ပြမှုများအတွက် ကျွန်ုပ်တို့မှာ တာဝန်မရှိပါ။
+**အကြောင်းကြားချက်**  
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းသည် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်သူမှ တာဝန်ယူ၍ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

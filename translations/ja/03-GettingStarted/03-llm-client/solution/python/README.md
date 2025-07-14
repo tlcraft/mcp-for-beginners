@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24531f2b6b0f7fa3839accf4dc10088a",
-  "translation_date": "2025-05-16T14:59:29+00:00",
+  "translation_date": "2025-07-13T19:15:17+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/python/README.md",
   "language_code": "ja"
 }
 -->
 # このサンプルの実行
 
-`uv` のインストールを推奨しますが、必須ではありません。詳しくは[instructions](https://docs.astral.sh/uv/#highlights)をご覧ください。
+`uv` のインストールを推奨しますが、必須ではありません。詳しくは [instructions](https://docs.astral.sh/uv/#highlights) をご覧ください。
 
-## -0- 仮想環境を作成する
+## -0- 仮想環境の作成
 
 ```bash
 python -m venv venv
 ```
 
-## -1- 仮想環境を有効化する
+## -1- 仮想環境の有効化
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- 依存関係をインストールする
+## -2- 依存関係のインストール
 
 ```bash
 pip install "mcp[cli]"
@@ -31,13 +31,13 @@ pip install openai
 pip install azure-ai-inference
 ```
 
-## -3- サンプルを実行する
+## -3- サンプルの実行
 
 ```bash
 python client.py
 ```
 
-以下のような出力が表示されるはずです：
+以下のような出力が表示されるはずです:
 
 ```text
 LISTING RESOURCES
@@ -55,4 +55,4 @@ TOOLS result:  [TextContent(type='text', text='22', annotations=None)]
 ```
 
 **免責事項**：  
-本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご了承ください。原文はあくまで正式な情報源とみなしてください。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や誤訳について、一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

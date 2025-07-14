@@ -2,47 +2,47 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:20:23+00:00",
+  "translation_date": "2025-07-14T00:00:12+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sk"
 }
 -->
 # Integrácia Model Context Protocol (MCP) s Azure AI Foundry
 
-Táto príručka ukazuje, ako integrovať Model Context Protocol (MCP) servery s agentmi Azure AI Foundry, čo umožňuje efektívnu orchestráciu nástrojov a podnikové AI riešenia.
+Tento návod ukazuje, ako integrovať servery Model Context Protocol (MCP) s agentmi Azure AI Foundry, čím umožníte výkonnú orchestráciu nástrojov a podnikové AI riešenia.
 
 ## Úvod
 
-Model Context Protocol (MCP) je otvorený štandard, ktorý umožňuje AI aplikáciám bezpečne sa pripájať k externým dátovým zdrojom a nástrojom. Pri integrácii s Azure AI Foundry MCP umožňuje agentom pristupovať a komunikovať s rôznymi externými službami, API a dátovými zdrojmi jednotným spôsobom.
+Model Context Protocol (MCP) je otvorený štandard, ktorý umožňuje AI aplikáciám bezpečne sa pripájať k externým dátovým zdrojom a nástrojom. Po integrácii s Azure AI Foundry umožňuje MCP agentom pristupovať a interagovať s rôznymi externými službami, API a dátovými zdrojmi štandardizovaným spôsobom.
 
-Táto integrácia spája flexibilitu MCP ekosystému nástrojov s robustným agentným rámcom Azure AI Foundry, čím poskytuje podnikové AI riešenia s rozsiahlymi možnosťami prispôsobenia.
+Táto integrácia spája flexibilitu ekosystému nástrojov MCP s robustným rámcom agentov Azure AI Foundry, čím poskytuje podnikové AI riešenia s rozsiahlymi možnosťami prispôsobenia.
 
-**Poznámka:** Ak chcete používať MCP v Azure AI Foundry Agent Service, momentálne sú podporované len tieto regióny: westus, westus2, uaenorth, southindia a switzerlandnorth
+**Note:** Ak chcete používať MCP v Azure AI Foundry Agent Service, momentálne sú podporované iba tieto regióny: westus, westus2, uaenorth, southindia a switzerlandnorth
 
 ## Ciele učenia
 
-Po preštudovaní tejto príručky budete vedieť:
+Na konci tohto návodu budete schopní:
 
 - Pochopiť Model Context Protocol a jeho výhody
 - Nastaviť MCP servery pre použitie s agentmi Azure AI Foundry
-- Vytvárať a konfigurovať agentov s integráciou MCP nástrojov
+- Vytvoriť a nakonfigurovať agentov s integráciou MCP nástrojov
 - Implementovať praktické príklady s reálnymi MCP servermi
 - Spracovávať odpovede nástrojov a citácie v konverzáciách agentov
 
 ## Predpoklady
 
-Pred začiatkom sa uistite, že máte:
+Pred začatím sa uistite, že máte:
 
-- Azure predplatné s prístupom k AI Foundry
-- Python 3.10 a vyšší
+- Predplatné Azure s prístupom k AI Foundry
+- Python 3.10+
 - Nainštalovaný a nakonfigurovaný Azure CLI
 - Príslušné oprávnenia na vytváranie AI zdrojov
 
 ## Čo je Model Context Protocol (MCP)?
 
-Model Context Protocol je štandardizovaný spôsob, ako môžu AI aplikácie pristupovať k externým dátovým zdrojom a nástrojom. Hlavné výhody sú:
+Model Context Protocol je štandardizovaný spôsob, ako sa AI aplikácie pripájajú k externým dátovým zdrojom a nástrojom. Hlavné výhody zahŕňajú:
 
-- **Štandardizovaná integrácia**: Konzistentné rozhranie pre rôzne nástroje a služby
+- **Štandardizovaná integrácia**: Konzistentné rozhranie naprieč rôznymi nástrojmi a službami
 - **Bezpečnosť**: Bezpečné mechanizmy autentifikácie a autorizácie
 - **Flexibilita**: Podpora rôznych dátových zdrojov, API a vlastných nástrojov
 - **Rozšíriteľnosť**: Jednoduché pridávanie nových funkcií a integrácií
@@ -80,7 +80,7 @@ with project_client:
     agent = project_client.agents.create_agent(
         model="gpt-4.1-nano", 
         name="mcp_agent", 
-        instructions="You are a helpful assistant. Use the tools provided to answer questions. Be sure to cite your sources.",
+        instructions="Ste užitočný asistent. Používajte dostupné nástroje na odpovedanie na otázky. Nezabudnite uviesť zdroje.",
         tools=[
             {
                 "type": "mcp",
@@ -91,7 +91,7 @@ with project_client:
         ],
         tool_resources=None
     )
-    print(f"Created agent, agent ID: {agent.id}")
+    print(f"Agent vytvorený, ID agenta: {agent.id}")
 ```
 
 ## MCP Tool Configuration Options
@@ -105,7 +105,7 @@ mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # Identifikátor MCP servera
     "server_url": "https://api.example.com/mcp", # Koncový bod MCP servera
-    "require_approval": "never"                 # Politika schválenia: zatiaľ podporujeme len "never"
+    "require_approval": "never"                 # Politika schvaľovania: momentálne podporované iba "never"
 }
 ```
 
@@ -133,7 +133,7 @@ def create_mcp_agent_example():
         agent = project_client.agents.create_agent(
             model="gpt-4.1-nano", 
             name="documentation_assistant", 
-            instructions="You are a helpful assistant specializing in Microsoft documentation. Use the Microsoft Learn MCP server to search for accurate, up-to-date information. Always cite your sources.",
+            instructions="Ste užitočný asistent špecializujúci sa na dokumentáciu Microsoftu. Používajte MCP server Microsoft Learn na vyhľadávanie presných a aktuálnych informácií. Vždy uvádzajte zdroje.",
             tools=[
                 {
                     "type": "mcp",
@@ -144,19 +144,19 @@ def create_mcp_agent_example():
             ],
             tool_resources=None
         )
-        print(f"Created agent, agent ID: {agent.id}")    
+        print(f"Agent vytvorený, ID agenta: {agent.id}")    
         
         # Vytvorenie vlákna konverzácie
         thread = project_client.agents.threads.create()
-        print(f"Created thread, thread ID: {thread.id}")
+        print(f"Vlákno vytvorené, ID vlákna: {thread.id}")
 
         # Odoslanie správy
         message = project_client.agents.messages.create(
             thread_id=thread.id, 
             role="user", 
-            content="What is .NET MAUI? How does it compare to Xamarin.Forms?",
+            content="Čo je .NET MAUI? Ako sa porovnáva so Xamarin.Forms?",
         )
-        print(f"Created message, message ID: {message.id}")
+        print(f"Správa vytvorená, ID správy: {message.id}")
 
         # Spustenie agenta
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
@@ -165,12 +165,12 @@ def create_mcp_agent_example():
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
-            print(f"Run status: {run.status}")
+            print(f"Stav behu: {run.status}")
 
         # Preskúmanie krokov behu a volaní nástrojov
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
-            print(f"Run step: {step.id}, status: {step.status}, type: {step.type}")
+            print(f"Krok behu: {step.id}, stav: {step.status}, typ: {step.type}")
             if step.type == "tool_calls":
                 print("Detaily volania nástroja:")
                 for tool_call in step.step_details.tool_calls:
@@ -194,17 +194,17 @@ if __name__ == "__main__":
 ### 1. Problémy s pripojením
 - Skontrolujte, či je URL MCP servera dostupná
 - Overte autentifikačné údaje
-- Uistite sa o správnom pripojení na sieť
+- Uistite sa o funkčnosti siete
 
 ### 2. Zlyhania volania nástrojov
-- Skontrolujte argumenty a formátovanie nástrojov
-- Preskúmajte špecifické požiadavky servera
+- Skontrolujte argumenty a formátovanie volaní nástrojov
+- Overte špecifické požiadavky servera
 - Implementujte správne spracovanie chýb
 
 ### 3. Problémy s výkonom
 - Optimalizujte frekvenciu volaní nástrojov
 - Používajte cache tam, kde je to vhodné
-- Sledujte čas odozvy servera
+- Sledujte časy odozvy servera
 
 ## Ďalšie kroky
 
@@ -212,7 +212,7 @@ Pre ďalšie vylepšenie integrácie MCP:
 
 1. **Preskúmajte vlastné MCP servery**: Vytvorte si vlastné MCP servery pre proprietárne dátové zdroje
 2. **Implementujte pokročilú bezpečnosť**: Pridajte OAuth2 alebo vlastné autentifikačné mechanizmy
-3. **Monitorovanie a analytika**: Zavádzajte logovanie a sledovanie používania nástrojov
+3. **Monitorovanie a analýzy**: Zaveste logovanie a monitorovanie používania nástrojov
 4. **Škálovanie riešenia**: Zvážte load balancing a distribuované architektúry MCP serverov
 
 ## Dodatočné zdroje
@@ -226,12 +226,11 @@ Pre ďalšie vylepšenie integrácie MCP:
 
 Pre ďalšiu podporu a otázky:
 - Prezrite si [dokumentáciu Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- Skontrolujte [MCP komunitné zdroje](https://modelcontextprotocol.io/)
-
+- Skontrolujte [komunitné zdroje MCP](https://modelcontextprotocol.io/)
 
 ## Čo ďalej
 
 - [6. Príspevky komunity](../../06-CommunityContributions/README.md)
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

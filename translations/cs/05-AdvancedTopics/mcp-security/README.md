@@ -2,43 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-06-13T00:56:58+00:00",
+  "translation_date": "2025-07-14T02:43:23+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "cs"
 }
 -->
-# Security Best Practices
+# Nejlepší bezpečnostní postupy
 
-Security is critical for MCP implementations, especially in enterprise environments. It's important to ensure that tools and data are protected against unauthorized access, data breaches, and other security threats. 
+Bezpečnost je klíčová pro implementace MCP, zejména v podnikových prostředích. Je důležité zajistit, aby nástroje a data byly chráněny před neoprávněným přístupem, úniky dat a dalšími bezpečnostními hrozbami.
 
-## Introduction
+## Úvod
 
-In this lesson, we will explore security best practices for MCP implementations. We will cover authentication and authorization, data protection, secure tool execution, and compliance with data privacy regulations.
+V této lekci se zaměříme na nejlepší bezpečnostní postupy pro implementace MCP. Probereme autentizaci a autorizaci, ochranu dat, bezpečné spouštění nástrojů a dodržování předpisů o ochraně osobních údajů.
 
-## Learning Objectives
+## Cíle učení
 
-By the end of this lesson, you will be able to:
+Na konci této lekce budete schopni:
 
-- Implement secure authentication and authorization mechanisms for MCP servers.
-- Protect sensitive data using encryption and secure storage.
-- Ensure secure execution of tools with proper access controls.
-- Apply best practices for data protection and privacy compliance.
+- Implementovat bezpečné mechanismy autentizace a autorizace pro MCP servery.
+- Chránit citlivá data pomocí šifrování a bezpečného ukládání.
+- Zajistit bezpečné spouštění nástrojů s odpovídajícími přístupovými kontrolami.
+- Aplikovat nejlepší postupy pro ochranu dat a dodržování pravidel ochrany soukromí.
 
-## Authentication and Authorization
+## Autentizace a autorizace
 
-Authentication and authorization are essential for securing MCP servers. Authentication answers the question "Who are you?" while authorization answers "What can you do?".
+Autentizace a autorizace jsou nezbytné pro zabezpečení MCP serverů. Autentizace odpovídá na otázku „Kdo jste?“, zatímco autorizace na otázku „Co můžete dělat?“.
 
-Let's look at examples of how to implement secure authentication and authorization in MCP servers using .NET and Java.
+Podívejme se na příklady, jak implementovat bezpečnou autentizaci a autorizaci v MCP serverech pomocí .NET a Javy.
 
-### .NET Identity Integration
+### Integrace .NET Identity
 
-ASP .NET Core Identity provides a robust framework for managing user authentication and authorization. We can integrate it with MCP servers to secure access to tools and resources.
+ASP .NET Core Identity poskytuje robustní rámec pro správu autentizace a autorizace uživatelů. Můžeme jej integrovat s MCP servery, aby byl přístup k nástrojům a zdrojům zabezpečený.
 
-There are some core concepts we need to understand when integrating ASP.NET Core Identity with MCP servers namely:
+Při integraci ASP.NET Core Identity s MCP servery je třeba pochopit několik základních konceptů:
 
-- **Identity Configuration**: Setting up ASP.NET Core Identity with user roles and claims. A claim is a piece of information about the user, such as their role or permissions for example "Admin" or "User".
-- **JWT Authentication**: Using JSON Web Tokens (JWT) for secure API access. JWT is a standard for securely transmitting information between parties as a JSON object, which can be verified and trusted because it is digitally signed.
-- **Authorization Policies**: Defining policies to control access to specific tools based on user roles. MCP uses authorization policies to determine which users can access which tools based on their roles and claims.
+- **Konfigurace Identity**: Nastavení ASP.NET Core Identity s uživatelskými rolemi a nároky (claims). Nárok je informace o uživateli, například jeho role nebo oprávnění, například „Admin“ nebo „User“.
+- **JWT autentizace**: Použití JSON Web Tokenů (JWT) pro bezpečný přístup k API. JWT je standard pro bezpečný přenos informací mezi stranami jako JSON objekt, který lze ověřit a důvěřovat mu, protože je digitálně podepsaný.
+- **Autorizacní politiky**: Definování politik pro řízení přístupu k určitým nástrojům na základě uživatelských rolí. MCP používá autorizacní politiky k určení, kteří uživatelé mají přístup k jakým nástrojům podle jejich rolí a nároků.
 
 ```csharp
 public class SecureMcpStartup
@@ -109,26 +109,24 @@ public class SecureMcpStartup
 }
 ```
 
-In the preceding code, we have:
+V předchozím kódu jsme:
 
-- Configured ASP.NET Core Identity for user management.
-- Set up JWT authentication for secure API access. We specified the token validation parameters, including the issuer, audience, and signing key.
-- Defined authorization policies to control access to tools based on user roles. For example, the "CanUseAdminTools" policy requires the user to have the "Admin" role, while the "CanUseBasic" policy requires the user to be authenticated.
-- Registered MCP tools with specific authorization requirements, ensuring that only users with the appropriate roles can access them. 
+- Nakonfigurovali ASP.NET Core Identity pro správu uživatelů.
+- Nastavili JWT autentizaci pro bezpečný přístup k API. Specifikovali jsme parametry ověřování tokenu, včetně vydavatele, publika a klíče pro podepisování.
+- Definovali autorizacní politiky pro řízení přístupu k nástrojům na základě uživatelských rolí. Například politika „CanUseAdminTools“ vyžaduje, aby uživatel měl roli „Admin“, zatímco politika „CanUseBasic“ vyžaduje, aby byl uživatel autentizovaný.
+- Registrovali MCP nástroje s konkrétními požadavky na autorizaci, čímž jsme zajistili, že k nim mají přístup pouze uživatelé s odpovídajícími rolemi.
 
-### Java Spring Security Integration
+### Integrace Java Spring Security
 
-For Java, we will use Spring Security to implement secure authentication and authorization for MCP servers. Spring Security provides a comprehensive security framework that integrates seamlessly with Spring applications.
+Pro Javu použijeme Spring Security k implementaci bezpečné autentizace a autorizace pro MCP servery. Spring Security poskytuje komplexní bezpečnostní rámec, který se hladce integruje se Spring aplikacemi.
 
+Základní koncepty jsou:
 
-Core concepts here are:
-
-- **Spring Security Configuration**: Setting up security configurations for authentication and authorization.
-- **OAuth2 Resource Server**: Using OAuth2 for secure access to MCP tools. OAuth2 is an authorization framework that allows third-party services to exchange access tokens for secure API access.
-- **Security Interceptors**: Implementing security interceptors to enforce access controls on tool execution.
-- **Role-Based Access Control**: Using roles to control access to specific tools and resources.
-- **Security Annotations**: Using annotations to secure methods and endpoints.
-
+- **Konfigurace Spring Security**: Nastavení bezpečnostních konfigurací pro autentizaci a autorizaci.
+- **OAuth2 Resource Server**: Použití OAuth2 pro bezpečný přístup k MCP nástrojům. OAuth2 je autorizační rámec, který umožňuje třetím stranám vyměňovat přístupové tokeny pro bezpečný přístup k API.
+- **Bezpečnostní interceptory**: Implementace bezpečnostních interceptorů pro vynucení přístupových kontrol při spouštění nástrojů.
+- **Řízení přístupu na základě rolí**: Použití rolí k řízení přístupu k určitým nástrojům a zdrojům.
+- **Bezpečnostní anotace**: Použití anotací k zabezpečení metod a endpointů.
 
 ```java
 @Configuration
@@ -180,20 +178,20 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-In the preceding code, we have:
+V předchozím kódu jsme:
 
-- Configured Spring Security to secure MCP endpoints, allowing public access to tool discovery while requiring authentication for tool execution.
-- Used OAuth2 as a resource server to handle secure access to MCP tools.
-- Implemented a security interceptor to enforce access controls on tool execution, checking user roles and permissions before allowing access to specific tools.
-- Defined role-based access control to restrict access to admin tools and sensitive data access based on user roles.
+- Nakonfigurovali Spring Security pro zabezpečení MCP endpointů, umožňující veřejný přístup k objevování nástrojů a vyžadující autentizaci pro jejich spouštění.
+- Použili OAuth2 jako resource server pro správu bezpečného přístupu k MCP nástrojům.
+- Implementovali bezpečnostní interceptor pro vynucení přístupových kontrol při spouštění nástrojů, kontrolující uživatelské role a oprávnění před povolením přístupu k určitým nástrojům.
+- Definovali řízení přístupu na základě rolí pro omezení přístupu k administrátorským nástrojům a citlivým datům podle uživatelských rolí.
 
-## Data Protection and Privacy
+## Ochrana dat a soukromí
 
-Data protection is crucial for ensuring that sensitive information is handled securely. This includes protecting personally identifiable information (PII), financial data, and other sensitive information from unauthorized access and breaches.
+Ochrana dat je zásadní pro zajištění bezpečného nakládání s citlivými informacemi. To zahrnuje ochranu osobních identifikovatelných údajů (PII), finančních dat a dalších citlivých informací před neoprávněným přístupem a úniky.
 
-### Python Data Protection Example
+### Příklad ochrany dat v Pythonu
 
-Let's look at an example of how to implement data protection in Python using encryption and PII detection.
+Podívejme se na příklad, jak implementovat ochranu dat v Pythonu pomocí šifrování a detekce PII.
 
 ```python
 from mcp_server import McpServer
@@ -329,16 +327,16 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-In the preceding code, we have:
+V předchozím kódu jsme:
 
-- Implemented a `PiiDetector` class to scan text and parameters for personally identifiable information (PII).
-- Created an `EncryptionService` class to handle encryption and decryption of sensitive data using the `cryptography` library.
-- Defined a `secure_tool` decorator that wraps tool execution to check for PII, log access, and encrypt sensitive data if required.
-- Applied the `secure_tool` decorator to a sample tool (`SecureCustomerDataTool`) to ensure it handles sensitive data securely.
+- Implementovali třídu `PiiDetector` pro skenování textu a parametrů na osobní identifikovatelné informace (PII).
+- Vytvořili třídu `EncryptionService` pro šifrování a dešifrování citlivých dat pomocí knihovny `cryptography`.
+- Definovali dekorátor `secure_tool`, který obaluje spouštění nástroje, aby kontroloval PII, zaznamenával přístupy a v případě potřeby šifroval citlivá data.
+- Aplikovali dekorátor `secure_tool` na ukázkový nástroj (`SecureCustomerDataTool`), aby bylo zajištěno bezpečné nakládání s citlivými daty.
 
-## What's next
+## Co dál
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

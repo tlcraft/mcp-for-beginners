@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "32c9a4263be08f9050c8044bb26267c4",
-  "translation_date": "2025-05-17T15:36:01+00:00",
+  "translation_date": "2025-07-14T00:34:01+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/apimoauth.md",
   "language_code": "sw"
 }
 -->
-# Kuweka Programu ya Spring AI MCP kwa Azure Container Apps
+# Kuweka Spring AI MCP App kwenye Azure Container Apps
 
-([Kusikilizisha seva za Spring AI MCP na OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Mchoro: Seva ya Spring AI MCP imehifadhiwa na Spring Authorization Server. Seva inatoa tokeni za ufikiaji kwa wateja na kuzithibitisha kwenye maombi yanayoingia (chanzo: Spring blog) ([Kusikilizisha seva za Spring AI MCP na OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* Ili kuweka seva ya Spring MCP, iunde kama kontena na utumie Azure Container Apps na ingress ya nje. Kwa mfano, ukitumia Azure CLI unaweza kuendesha:
+ ([Kuhakikisha seva za Spring AI MCP kwa OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *Mchoro: Seva ya Spring AI MCP iliyo salama kwa kutumia Spring Authorization Server. Seva hutoa tokeni za ufikiaji kwa wateja na kuzikagua kwenye maombi yanayoingia (chanzo: Spring blog) ([Kuhakikisha seva za Spring AI MCP kwa OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* Ili kuweka seva ya Spring MCP, jenge kama kontena na tumia Azure Container Apps na ingress ya nje. Kwa mfano, kwa kutumia Azure CLI unaweza kuendesha:
 
 ```bash
 az containerapp up \
@@ -23,11 +23,11 @@ az containerapp up \
   --query properties.configuration.ingress.fqdn
 ```
 
-Hii inaunda programu ya kontena inayoweza kufikiwa hadharani na HTTPS imewezeshwa (Azure inatoa cheti cha bure cha TLS kwa chaguo-msingi `*.azurecontainerapps.io` domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). The command output includes the app’s FQDN (e.g. `my-mcp-app.eastus.azurecontainerapps.io`), which becomes the **issuer URL** base. Ensure HTTP ingress is enabled (as above) so APIM can reach the app. In a test/dev setup, use the `--ingress external` option (or bind a custom domain with TLS per [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Store any sensitive properties (like OAuth client secrets) in Container Apps secrets or Azure Key Vault, and map them into the container as environment variables. 
+Hii inaunda Container App inayopatikana hadharani na HTTPS imewezeshwa (Azure hutoa cheti cha bure cha TLS kwa kikoa cha chaguo `*.azurecontainerapps.io` ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Matokeo ya amri yanajumuisha FQDN ya app (mfano `my-mcp-app.eastus.azurecontainerapps.io`), ambayo hutumika kama msingi wa **issuer URL**. Hakikisha ingress ya HTTP imewezeshwa (kama ilivyo hapo juu) ili APIM iweze kufikia app. Katika mazingira ya majaribio/maendeleo, tumia chaguo `--ingress external` (au weka kikoa maalum na TLS kulingana na [nyaraka za Microsoft](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Hifadhi mali nyeti yoyote (kama siri za mteja wa OAuth) katika siri za Container Apps au Azure Key Vault, na ziweke ndani ya kontena kama mabadiliko ya mazingira.
 
-## Configuring Spring Authorization Server
+## Kusanidi Spring Authorization Server
 
-In your Spring Boot app’s code, include the Spring Authorization Server and Resource Server starters. Configure a `RegisteredClient` (for the `client_credentials` grant in dev/test) and a JWT key source. For example, in `application.properties` unaweza kuweka:
+Katika msimbo wa app yako ya Spring Boot, jumuisha Spring Authorization Server na Resource Server starters. Sanidi `RegisteredClient` (kwa ajili ya ruhusa ya `client_credentials` katika mazingira ya majaribio/maendeleo) na chanzo cha funguo za JWT. Kwa mfano, katika `application.properties` unaweza kuweka:
 
 ```properties
 # OAuth2 client (for testing token issuance)
@@ -37,7 +37,7 @@ spring.security.oauth2.authorizationserver.client.oidc-client.registration.autho
 spring.security.oauth2.authorizationserver.client.oidc-client.registration.client-authentication-methods=client_secret_basic
 ```
 
-Wezesha Seva ya Uidhinishaji na Seva ya Rasilimali kwa kufafanua mnyororo wa kichujio cha usalama. Kwa mfano:
+Wezesha Authorization Server na Resource Server kwa kufafanua mnyororo wa kichujio cha usalama. Kwa mfano:
 
 ```java
 @Configuration
@@ -84,9 +84,9 @@ public class SecurityConfiguration {
 }
 ```
 
-Mpangilio huu utaweka wazi viingilio vya chaguo-msingi vya OAuth2: `/oauth2/token` for tokens and `/oauth2/jwks` for the JSON Web Key Set. (By default Spring’s `AuthorizationServerSettings` maps `/oauth2/token` and `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) The server will issue JWT access tokens signed by the RSA key above, and publish its public key at `https://<your-app>:/oauth2/jwks`. 
+Mpangilio huu utaonyesha vituo vya msingi vya OAuth2: `/oauth2/token` kwa tokeni na `/oauth2/jwks` kwa Seti ya Funguo za JSON Web. (Kwa kawaida Spring `AuthorizationServerSettings` huoanisha `/oauth2/token` na `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) Seva itatoa tokeni za ufikiaji za JWT zilizosainiwa na funguo za RSA zilizo hapo juu, na kuchapisha funguo zake za umma kwenye `https://<your-app>:/oauth2/jwks`.
 
-**Enable OpenID Connect discovery:** To let APIM automatically retrieve the issuer and JWKS, enable the OIDC provider configuration endpoint by adding `.oidc(Customizer.withDefaults())` katika usanidi wako wa usalama ([Modeli ya Usanidi :: Seva ya Uidhinishaji ya Spring](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Kwa mfano:
+**Wezesha ugunduzi wa OpenID Connect:** Ili APIM ipate moja kwa moja issuer na JWKS, wezesha kituo cha usanidi wa mtoa huduma wa OIDC kwa kuongeza `.oidc(Customizer.withDefaults())` katika usanidi wako wa usalama ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Kwa mfano:
 
 ```java
 http
@@ -96,7 +96,7 @@ http
       .oidc(Customizer.withDefaults()));  // <– enables /.well-known/openid-configuration
 ```
 
-Hii inaweka wazi `/.well-known/openid-configuration`, which APIM can use for metadata. Finally, you may want to customize the JWT **audience** claim so that APIM’s `<audiences>` ukaguzi utapita. Kwa mfano, ongeza kibadilishaji cha tokeni:
+Hii itaonyesha `/.well-known/openid-configuration`, ambayo APIM inaweza kutumia kwa metadata. Mwishowe, unaweza kutaka kubinafsisha dai la **audience** la JWT ili ukaguzi wa `<audiences>` wa APIM upite. Kwa mfano, ongeza mabadiliko ya tokeni:
 
 ```java
 @Bean
@@ -108,21 +108,21 @@ public OAuth2TokenCustomizer<OAuth2TokenClaimsContext> tokenCustomizer() {
 }
 ```
 
-Hii inahakikisha tokeni zinabeba `"aud": ["mcp-client"]`, matching the client ID or scope expected by APIM. 
+Hii inahakikisha tokeni zina `"aud": ["mcp-client"]`, inayolingana na ID ya mteja au upeo unaotarajiwa na APIM.
 
-## Exposing Token and JWKS Endpoints
+## Kuweka Vituo vya Token na JWKS wazi
 
-After deploying, your app’s **issuer URL** will be `https://<app-fqdn>`, e.g. `https://my-mcp-app.eastus.azurecontainerapps.io`. Its OAuth2 endpoints are:
+Baada ya kuweka, **issuer URL** ya app yako itakuwa `https://<app-fqdn>`, mfano `https://my-mcp-app.eastus.azurecontainerapps.io`. Vituo vyake vya OAuth2 ni:
 
-- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – clients obtain tokens here (client_credentials flow).
-- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – returns the JWK set (used by APIM to get signing keys).
-- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC discovery JSON (contains `issuer`, `token_endpoint`, `jwks_uri`, etc.).  
+- **Kituo cha Token:** `https://<app-fqdn>/oauth2/token` – wateja hupata tokeni hapa (mtiririko wa client_credentials).
+- **Kituo cha JWKS:** `https://<app-fqdn>/oauth2/jwks` – hurudisha seti ya JWK (inayotumika na APIM kupata funguo za kusaini).
+- **Usanidi wa OpenID:** `https://<app-fqdn>/.well-known/openid-configuration` – JSON ya ugunduzi wa OIDC (ina `issuer`, `token_endpoint`, `jwks_uri`, n.k.).
 
-APIM will point to the **OpenID configuration URL**, from which it discovers the `jwks_uri`. For example, if your Container App FQDN is `my-mcp-app.eastus.azurecontainerapps.io`, then APIM’s `<openid-config url="...">` should use `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (By default Spring will set the `issuer` in that metadata to the same base URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
+APIM itatumia **URL ya usanidi wa OpenID**, ambapo itagundua `jwks_uri`. Kwa mfano, ikiwa FQDN ya Container App ni `my-mcp-app.eastus.azurecontainerapps.io`, basi `<openid-config url="...">` ya APIM itumie `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (Kwa kawaida Spring itaweka `issuer` katika metadata hiyo kwa URL hiyo hiyo ya msingi ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
 
-## Configuring Azure API Management (`validate-jwt`)
+## Kusanidi Azure API Management (`validate-jwt`)
 
-In Azure APIM, add an inbound policy that uses the `<validate-jwt>` sera ya kukagua JWTs zinazoingia dhidi ya Seva yako ya Uidhinishaji ya Spring. Kwa mpangilio rahisi, unaweza kutumia URL ya metadata ya OpenID Connect. Mfano wa kipande cha sera:
+Katika Azure APIM, ongeza sera ya kuingia inayotumia sera ya `<validate-jwt>` kukagua JWT zinazokuja dhidi ya Spring Authorization Server yako. Kwa usanidi rahisi, unaweza kutumia URL ya metadata ya OpenID Connect. Mfano wa kipande cha sera:
 
 ```xml
 <inbound>
@@ -139,38 +139,37 @@ In Azure APIM, add an inbound policy that uses the `<validate-jwt>` sera ya kuka
 </inbound>
 ```
 
-Sera hii inaambia APIM kufetch usanidi wa OpenID kutoka Spring Auth Server, kupata JWKS yake, na kuthibitisha kwamba kila tokeni imesainiwa na ufunguo ulioaminika na ina hadhira sahihi. (Ikiwa utaacha `<issuers>`, APIM will use the `issuer` claim from the metadata automatically.) The `<audience>` should match your client ID or API resource identifier in the token (in the example above, we set it to `"mcp-client"`). This is consistent with Microsoft’s documentation on using `validate-jwt` with `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
+Sera hii inaeleza APIM ipate usanidi wa OpenID kutoka Spring Auth Server, ipate JWKS yake, na ikague kuwa kila tokeni imesainiwa na funguo inayotegemewa na ina audience sahihi. (Kama utaacha `<issuers>`, APIM itatumia dai la `issuer` kutoka metadata moja kwa moja.) `<audience>` inapaswa kuendana na ID ya mteja wako au kitambulisho cha rasilimali ya API katika tokeni (kama ilivyo kwenye mfano hapo juu, tumeiweka kuwa `"mcp-client"`). Hii ni sawa na nyaraka za Microsoft kuhusu kutumia `validate-jwt` na `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
 
-After validation, APIM will forward the request (including the original `Authorization` header) to the backend. Since the Spring app is also a resource server, it will re-validate the token, but APIM has already ensured its validity. (For development, you can rely on APIM’s check and disable additional checks in the app if desired, but it’s safer to keep both.)
+Baada ya ukaguzi, APIM itapeleka ombi (ikiwa ni pamoja na kichwa cha `Authorization` cha awali) kwa backend. Kwa kuwa app ya Spring pia ni seva ya rasilimali, itakagua tokeni tena, lakini APIM tayari imehakikisha uhalali wake. (Kwa maendeleo, unaweza kutegemea ukaguzi wa APIM na kuzima ukaguzi wa ziada katika app ikiwa unataka, lakini ni salama zaidi kuweka zote mbili.)
 
-## Example Settings
+## Mipangilio ya Mfano
 
-| Setting            | Example Value                                                        | Notes                                      |
-|--------------------|----------------------------------------------------------------------|--------------------------------------------|
-| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                    | Your Container App’s URL (base URI)        |
-| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`       | Default Spring token endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
-| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`        | Default JWK Set endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
-| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC discovery document (auto-generated)    |
-| **APIM audience**  | `mcp-client`                                                         | OAuth client ID or API resource name       |
-| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` uses this URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
+| Mpangilio          | Thamani ya Mfano                                                   | Maelezo                                   |
+|--------------------|-------------------------------------------------------------------|-------------------------------------------|
+| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                 | URL ya Container App yako (URI ya msingi) |
+| **Kituo cha Token** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`    | Kituo cha tokeni cha Spring (chaguo-msingi) ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) |
+| **Kituo cha JWKS**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`     | Kituo cha Seti ya JWK (chaguo-msingi) ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) |
+| **Usanidi wa OpenID** | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | Hati ya ugunduzi wa OIDC (inayotengenezwa moja kwa moja) |
+| **Audience ya APIM** | `mcp-client`                                                     | ID ya mteja wa OAuth au jina la rasilimali ya API |
+| **Sera ya APIM**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` hutumia URL hii ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
 
-## Common Pitfalls
+## Makosa Yanayojirudia Mara kwa Mara
 
-- **HTTPS/TLS:** The APIM gateway requires that the OpenID/JWKS endpoint be HTTPS with a valid certificate. By default, Azure Container Apps provides a trusted TLS cert for the Azure-managed domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If you use a custom domain, be sure to bind a certificate (you can use Azure’s free managed cert feature) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If APIM cannot trust the endpoint’s certificate, `<validate-jwt>` will fail to fetch the metadata.  
+- **HTTPS/TLS:** Lango la APIM linahitaji kituo cha OpenID/JWKS kiwe na HTTPS na cheti halali. Kwa kawaida, Azure Container Apps hutoa cheti cha TLS kinachotegemewa kwa kikoa kinachosimamiwa na Azure ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Ikiwa unatumia kikoa maalum, hakikisha umeambatanisha cheti (unaweza kutumia huduma ya cheti ya bure ya Azure) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). Ikiwa APIM haiwezi kuamini cheti cha kituo, `<validate-jwt>` itashindwa kupata metadata.
 
-- **Endpoint Accessibility:** Ensure the Spring app’s endpoints are reachable from APIM. Using `--ingress external` (or enabling ingress in the portal) is simplest. If you chose an internal or vNet-bound environment, APIM (by default public) might not reach it unless placed in the same VNet. In a test setup, prefer public ingress so APIM can call the `.well-known` and `/jwks` URLs. 
+- **Upatikanaji wa Vituo:** Hakikisha vituo vya app ya Spring vinaweza kufikiwa kutoka APIM. Kutumia `--ingress external` (au kuwezesha ingress kwenye portal) ni rahisi zaidi. Ikiwa umechagua mazingira ya ndani au yanayohusishwa na vNet, APIM (kwa kawaida ni ya umma) huenda isiweze kufikia isipokuwa ikiwa ipo katika vNet ile ile. Katika mazingira ya majaribio, tumia ingress ya umma ili APIM iweze kuita URL za `.well-known` na `/jwks`.
 
-- **OpenID Discovery Enabled:** By default, Spring Authorization Server **does not expose** the `/.well-known/openid-configuration` unless OIDC is enabled. Make sure to include `.oidc(Customizer.withDefaults())` in your security config (see above) so that the provider configuration endpoint is active ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Otherwise APIM’s `<openid-config>` call will 404.
+- **Ugunduzi wa OpenID Umewezeshwa:** Kwa kawaida, Spring Authorization Server **haitoi** `/.well-known/openid-configuration` isipokuwa OIDC iwe imewezeshwa. Hakikisha umejumuisha `.oidc(Customizer.withDefaults())` katika usanidi wako wa usalama (tazama hapo juu) ili kituo cha usanidi wa mtoa huduma kiwe hai ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Vinginevyo, wito wa `<openid-config>` wa APIM utarudisha 404.
 
-- **Audience Claim:** Spring’s default behavior is to set the `aud` claim to the client ID. If APIM’s `<audience>` check fails, you may need to customize the token (as shown above) or adjust the APIM policy. Ensure the audience in your JWT matches what you configure in `<audience>`. 
+- **Dai la Audience:** Tabia ya kawaida ya Spring ni kuweka dai la `aud` kwa ID ya mteja. Ikiwa ukaguzi wa `<audience>` wa APIM utashindwa, unaweza kuhitaji kubinafsisha tokeni (kama ilivyoonyeshwa hapo juu) au kurekebisha sera ya APIM. Hakikisha audience katika JWT yako inalingana na ile unayoainisha katika `<audience>`.
 
-- **JSON Metadata Parsing:** The OpenID configuration JSON must be valid. Spring’s default config will emit a standard OIDC metadata document. Verify that it contains the correct `issuer` and `jwks_uri`. If you host Spring behind a proxy or path-based route, double-check the URLs in this metadata. APIM will use these values as-is. 
+- **Uchambuzi wa Metadata ya JSON:** Metadata ya usanidi wa OpenID lazima iwe halali. Usanidi wa kawaida wa Spring utatengeneza hati ya kawaida ya metadata ya OIDC. Hakikisha ina `issuer` na `jwks_uri` sahihi. Ikiwa unahudumia Spring nyuma ya proxy au njia ya msingi, hakikisha URL hizi ni sahihi katika metadata hii. APIM itazitumia kama zilivyo.
 
-- **Policy Ordering:** In the APIM policy, place `<validate-jwt>` **before** any routing to the backend. Otherwise, calls might reach your app without a valid token. Also ensure `<validate-jwt>` appears immediately under `<inbound>` (not nested inside another condition) so that APIM applies it.
+- **Mpangilio wa Sera:** Katika sera ya APIM, weka `<validate-jwt>` **kabla** ya routing yoyote kwenda backend. Vinginevyo, maombi yanaweza kufika kwenye app bila tokeni halali. Pia hakikisha `<validate-jwt>` ipo moja kwa moja chini ya `<inbound>` (si ndani ya hali nyingine) ili APIM itumie sera hii.
 
-By following the above steps, you can run your Spring AI MCP server in Azure Container Apps and have Azure API Management validate incoming OAuth2 JWTs with a minimal policy. The key points are: expose the Spring Auth endpoints publicly with TLS, enable OIDC discovery, and point APIM’s `validate-jwt` at the OpenID config URL (so it can fetch the JWKS automatically). This setup is suitable for a dev/test environment; for production, consider proper secret management, token lifetimes, and rotating keys in JWKS as needed. 
+Kwa kufuata hatua zilizo hapo juu, unaweza kuendesha seva yako ya Spring AI MCP katika Azure Container Apps na kuruhusu Azure API Management ikague JWT za OAuth2 zinazokuja kwa sera rahisi. Mambo muhimu ni: kufungua vituo vya Spring Auth kwa umma kwa TLS, kuwezesha ugunduzi wa OIDC, na kuelekeza `validate-jwt` ya APIM kwenye URL ya usanidi wa OpenID (ili ipate JWKS moja kwa moja). Mpangilio huu unafaa kwa mazingira ya majaribio/maendeleo; kwa uzalishaji, zingatia usimamizi sahihi wa siri, muda wa tokeni, na mzunguko wa funguo katika JWKS kama inavyohitajika.
+**Marejeleo:** Angalia nyaraka za Spring Authorization Server kwa vituo vya chaguo-msingi ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) na usanidi wa OIDC ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); angalia nyaraka za Microsoft APIM kwa mifano ya `validate-jwt` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); na nyaraka za Azure Container Apps kwa usambazaji na vyeti ([Deploy Java Spring Boot apps to Azure Container Apps - Java on Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
 
-**References:** See Spring Authorization Server docs for default endpoints ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) and OIDC configuration ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); see Microsoft APIM docs for `validate-jwt` mifano ([Marejeleo ya sera ya Azure API Management - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); na nyaraka za Azure Container Apps kwa kuweka na vyeti ([Weka programu za Java Spring Boot kwa Azure Container Apps - Java kwenye Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Majina ya kikoa maalum na vyeti vilivyodhibitiwa bure katika Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
-
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa habari muhimu, tafsiri ya kibinadamu ya kitaalamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

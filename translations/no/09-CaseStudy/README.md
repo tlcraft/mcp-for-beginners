@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-04T17:43:04+00:00",
+  "translation_date": "2025-07-14T05:47:40+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "no"
 }
@@ -52,18 +52,18 @@ Dette eksempelet illustrerer hvordan selv relativt enkle MCP-implementasjoner ka
 
 ### 3. [Sanntidsdokumentasjon med MCP](./docs-mcp/README.md)
 
-Denne casestudien viser hvordan du kobler en Python-konsollklient til en Model Context Protocol (MCP)-server for å hente og logge sanntids, kontekstbevisst Microsoft-dokumentasjon. Du lærer hvordan du kan:
+Denne casestudien viser hvordan du kobler en Python-konsollklient til en Model Context Protocol (MCP)-server for å hente og logge sanntids, kontekstbevisst Microsoft-dokumentasjon. Du lærer hvordan du:
 
-- Koble til en MCP-server med en Python-klient og den offisielle MCP SDK-en
-- Bruke streaming HTTP-klienter for effektiv sanntidshenting av data
-- Kalle dokumentasjonsverktøy på serveren og logge svar direkte til konsollen
-- Integrere oppdatert Microsoft-dokumentasjon i arbeidsflyten uten å forlate terminalen
+- Knytter til en MCP-server med en Python-klient og den offisielle MCP SDK-en
+- Bruker streaming HTTP-klienter for effektiv sanntidshenting av data
+- Kaller dokumentasjonsverktøy på serveren og logger svar direkte til konsollen
+- Integrerer oppdatert Microsoft-dokumentasjon i arbeidsflyten uten å forlate terminalen
 
-Kapittelet inkluderer en praktisk oppgave, et minimalt fungerende kodeeksempel og lenker til flere ressurser for dypere læring. Se hele gjennomgangen og koden i det tilknyttede kapittelet for å forstå hvordan MCP kan revolusjonere tilgang til dokumentasjon og utviklerproduktivitet i konsollbaserte miljøer.
+Kapittelet inkluderer en praktisk oppgave, et minimalt fungerende kodeeksempel og lenker til flere ressurser for dypere læring. Se hele gjennomgangen og koden i det lenkede kapittelet for å forstå hvordan MCP kan revolusjonere tilgang til dokumentasjon og utviklerproduktivitet i konsollbaserte miljøer.
 
 ### 4. [Interaktiv studieplan-generator webapp med MCP](./docs-mcp/README.md)
 
-Denne casestudien viser hvordan man bygger en interaktiv webapplikasjon ved hjelp av Chainlit og Model Context Protocol (MCP) for å generere personlige studieplaner for ethvert emne. Brukere kan spesifisere et fag (for eksempel "AI-900 sertifisering") og en studietid (f.eks. 8 uker), og appen gir en uke-for-uke oversikt over anbefalt innhold. Chainlit muliggjør en samtaleorientert chatgrensesnitt som gjør opplevelsen engasjerende og tilpasningsdyktig.
+Denne casestudien viser hvordan man bygger en interaktiv webapplikasjon ved hjelp av Chainlit og Model Context Protocol (MCP) for å generere personlige studieplaner for ethvert emne. Brukere kan spesifisere et fag (for eksempel "AI-900 sertifisering") og en studietid (f.eks. 8 uker), og appen gir en uke-for-uke oversikt over anbefalt innhold. Chainlit muliggjør en samtalebasert chatgrensesnitt som gjør opplevelsen engasjerende og tilpasningsdyktig.
 
 - Samtaleorientert webapp drevet av Chainlit
 - Brukerstyrte spørsmål om tema og varighet
@@ -91,7 +91,7 @@ Dette scenariet passer perfekt for kursforfattere, dokumentasjonsforfattere og u
 
 ### 6. [Opprettelse av APIM MCP-server](./apimsample.md)
 
-Denne casestudien gir en steg-for-steg guide for hvordan man oppretter en MCP-server ved hjelp av Azure API Management (APIM). Den dekker:
+Denne casestudien gir en trinnvis veiledning for hvordan man oppretter en MCP-server ved hjelp av Azure API Management (APIM). Den dekker:
 
 - Oppsett av MCP-server i Azure API Management
 - Eksponering av API-operasjoner som MCP-verktøy

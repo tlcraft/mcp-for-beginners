@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T15:29:16+00:00",
+  "translation_date": "2025-07-13T19:22:43+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "de"
 }
 -->
-Lass uns in den nächsten Abschnitten genauer darauf eingehen, wie wir die visuelle Oberfläche nutzen.
+Lass uns in den nächsten Abschnitten mehr darüber sprechen, wie wir die visuelle Oberfläche nutzen.
 
 ## Vorgehensweise
 
@@ -29,7 +29,7 @@ Möglicherweise musst du die Erkennung von MCP Servern aktivieren.
 
 1. Gehe in Visual Studio Code zu `Datei -> Einstellungen -> Einstellungen`.
 
-1. Suche nach "MCP" und aktiviere `chat.mcp.discovery.enabled` in der settings.json Datei.
+1. Suche nach "MCP" und aktiviere `chat.mcp.discovery.enabled` in der settings.json-Datei.
 
 ### -1- Konfigurationsdatei erstellen
 
@@ -82,7 +82,7 @@ Nachdem du einen Eintrag hinzugefügt hast, starten wir den Server:
 
 ## Aufgabe
 
-Versuche, einen Servereintrag zu deiner *mcp.json* Datei hinzuzufügen und stelle sicher, dass du den Server starten und stoppen kannst. Vergewissere dich außerdem, dass du über die GitHub Copilot Chat-Oberfläche mit den Tools auf deinem Server kommunizieren kannst.
+Füge einen Servereintrag zu deiner *mcp.json* Datei hinzu und stelle sicher, dass du den Server starten und stoppen kannst. Vergewissere dich außerdem, dass du über die GitHub Copilot Chat-Oberfläche mit den Tools auf deinem Server kommunizieren kannst.
 
 ## Lösung
 
@@ -113,4 +113,4 @@ Die wichtigsten Erkenntnisse aus diesem Kapitel sind:
 - Nächstes Thema: [Erstellen eines SSE Servers](../05-sse-server/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T23:10:29+00:00",
+  "translation_date": "2025-07-13T18:01:02+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "he"
 }
@@ -37,13 +37,13 @@ mcp run server.py
 
 ## -4- בדיקת הדוגמה
 
-כאשר השרת רץ במסוף אחד, פתח מסוף נוסף והרץ את הפקודה הבאה:
+כאשר השרת רץ במסוף אחד, פתח מסוף נוסף והריץ את הפקודה הבאה:
 
 ```bash
 mcp dev server.py
 ```
 
-זה אמור להפעיל שרת אינטרנט עם ממשק חזותי שיאפשר לך לבדוק את הדוגמה.
+זה אמור להפעיל שרת ווב עם ממשק חזותי שיאפשר לך לבדוק את הדוגמה.
 
 ברגע שהשרת מחובר:
 

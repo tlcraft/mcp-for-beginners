@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T23:15:48+00:00",
+  "translation_date": "2025-07-13T18:02:09+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "bg"
 }
 -->
 # Стартиране на този пример
 
-Препоръчително е да инсталирате `uv`, но не е задължително, вижте [инструкции](https://docs.astral.sh/uv/#highlights)
+Препоръчително е да инсталирате `uv`, но не е задължително, вижте [инструкциите](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Създаване на виртуална среда
 

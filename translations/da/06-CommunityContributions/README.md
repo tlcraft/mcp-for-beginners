@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-05-20T21:45:37+00:00",
+  "translation_date": "2025-07-14T04:00:11+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "da"
 }
@@ -11,24 +11,24 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Oversigt
 
-Denne lektion fokuserer på, hvordan man engagerer sig i MCP-fællesskabet, bidrager til MCP-økosystemet og følger bedste praksis for samarbejdsudvikling. Det er vigtigt at forstå, hvordan man deltager i open-source MCP-projekter, hvis man ønsker at forme fremtiden for denne teknologi.
+Denne lektion fokuserer på, hvordan man engagerer sig i MCP-fællesskabet, bidrager til MCP-økosystemet og følger bedste praksis for samarbejdsudvikling. Det er vigtigt at forstå, hvordan man deltager i open source MCP-projekter, hvis man ønsker at være med til at forme fremtiden for denne teknologi.
 
 ## Læringsmål
 
 Når du har gennemført denne lektion, vil du kunne:
 - Forstå strukturen i MCP-fællesskabet og økosystemet
 - Deltage effektivt i MCP-fællesskabets fora og diskussioner
-- Bidrage til MCP open-source repositories
+- Bidrage til MCP open source repositories
 - Oprette og dele tilpassede MCP-værktøjer
 - Følge bedste praksis for MCP-udvikling og samarbejde
 
 ## MCP-fællesskabets Økosystem
 
-MCP-økosystemet består af forskellige komponenter og deltagere, som arbejder sammen for at fremme protokollen.
+MCP-økosystemet består af forskellige komponenter og deltagere, der arbejder sammen om at fremme protokollen.
 
-### Vigtige Fællesskabskomponenter
+### Centrale Fællesskabskomponenter
 
-1. **Core Protocol Maintainers**: Microsoft og andre organisationer, der vedligeholder de grundlæggende MCP-specifikationer og referenceimplementeringer  
+1. **Core Protocol Maintainers**: Microsoft og andre organisationer, der vedligeholder de centrale MCP-specifikationer og referenceimplementeringer  
 2. **Tool Developers**: Personer og teams, der skaber MCP-værktøjer  
 3. **Integration Providers**: Virksomheder, der integrerer MCP i deres produkter og tjenester  
 4. **End Users**: Udviklere og organisationer, der bruger MCP i deres applikationer  
@@ -54,29 +54,29 @@ MCP-økosystemet består af forskellige komponenter og deltagere, som arbejder s
 
 ### Typer af Bidrag
 
-MCP-økosystemet byder på forskellige typer af bidrag:
+MCP-økosystemet byder velkommen til forskellige typer af bidrag:
 
-1. **Code Contributions**:  
-   - Forbedringer af core-protokollen  
+1. **Kodebidrag**:  
+   - Forbedringer af kerneprotokollen  
    - Fejlrettelser  
    - Implementering af værktøjer  
-   - Client/server biblioteker i forskellige sprog  
+   - Client/server-biblioteker i forskellige sprog  
 
-2. **Documentation**:  
+2. **Dokumentation**:  
    - Forbedring af eksisterende dokumentation  
    - Oprettelse af tutorials og vejledninger  
    - Oversættelse af dokumentation  
    - Oprettelse af eksempler og prøveapplikationer  
 
-3. **Community Support**:  
+3. **Fællesskabsstøtte**:  
    - Besvare spørgsmål i fora  
    - Teste og rapportere problemer  
    - Organisere fællesskabsarrangementer  
-   - Vejlede nye bidragsydere  
+   - Vejlede nye bidragydere  
 
 ### Bidragsproces: Core Protocol
 
-For at bidrage til den grundlæggende MCP-protokol eller officielle implementeringer:
+For at bidrage til den centrale MCP-protokol eller officielle implementeringer:
 
 #### .NET Eksempel: Bidrage med en Protokolforbedring
 
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Python Eksempel: Publicering af en PyPI-pakke
+#### Python Eksempel: Udgivelse af en PyPI-pakke
 
 ```python
 # Directory structure for a PyPI package:
@@ -759,9 +759,9 @@ Når du deler MCP-værktøjer med fællesskabet:
 2. **Fejlhåndtering**:  
    - Implementer robust fejlhåndtering  
    - Giv brugbare fejlmeddelelser  
-   - Håndter kanttilfælde elegant  
+   - Håndter kanttilfælde på en elegant måde  
 
-3. **Ydeevne**:  
+3. **Ydelseshensyn**:  
    - Optimer både hastighed og ressourceforbrug  
    - Implementer caching, hvor det er relevant  
    - Tænk på skalerbarhed  
@@ -785,15 +785,15 @@ Effektivt samarbejde er nøglen til et blomstrende MCP-økosystem.
 - GitHub Issues og Discussions  
 - Microsoft Tech Community  
 - Discord og Slack-kanaler  
-- Stack Overflow (tag: `model-context-protocol` or `mcp`)  
+- Stack Overflow (tag: `model-context-protocol` eller `mcp`)  
 
 ### Code Reviews
 
 Når du gennemgår MCP-bidrag:
 
-1. **Klarhed**: Er koden klar og godt dokumenteret?  
-2. **Korrekthed**: Fungerer det som forventet?  
-3. **Konsistens**: Følger det projektets konventioner?  
+1. **Klarhed**: Er koden klar og veldokumenteret?  
+2. **Korrekthed**: Fungerer den som forventet?  
+3. **Konsistens**: Følger den projektets konventioner?  
 4. **Fuldstændighed**: Er tests og dokumentation inkluderet?  
 5. **Sikkerhed**: Er der nogen sikkerhedsproblemer?  
 
@@ -801,10 +801,10 @@ Når du gennemgår MCP-bidrag:
 
 Når du udvikler til MCP:
 
-1. **Protokolversionering**: Følg den MCP-protokolversion, dit værktøj understøtter  
+1. **Protokolversionering**: Overhold den MCP-protokolversion, dit værktøj understøtter  
 2. **Client-kompatibilitet**: Overvej bagudkompatibilitet  
-3. **Server-kompatibilitet**: Følg serverimplementeringsretningslinjer  
-4. **Breaking Changes**: Dokumenter tydeligt eventuelle inkompatible ændringer  
+3. **Server-kompatibilitet**: Følg retningslinjer for serverimplementering  
+4. **Breaking Changes**: Dokumenter tydeligt eventuelle brydende ændringer  
 
 ## Eksempel på Fællesskabsprojekt: MCP Tool Registry
 
@@ -889,17 +889,17 @@ async def delete_tool(tool_name: str):
 
 ## Vigtige Pointer
 
-- MCP-fællesskabet er mangfoldigt og byder på mange typer af bidrag  
-- Bidrag til MCP kan spænde fra core-protokolforbedringer til tilpassede værktøjer  
+- MCP-fællesskabet er mangfoldigt og byder velkommen til mange typer af bidrag  
+- Bidrag til MCP kan spænde fra kerneprotokolforbedringer til tilpassede værktøjer  
 - At følge bidragsretningslinjerne øger chancerne for, at din PR bliver accepteret  
 - At skabe og dele MCP-værktøjer er en værdifuld måde at styrke økosystemet på  
-- Fællesskabssamarbejde er afgørende for MCP’s vækst og udvikling  
+- Fællesskabssamarbejde er essentielt for MCP’s vækst og forbedring  
 
 ## Øvelse
 
 1. Identificer et område i MCP-økosystemet, hvor du kan bidrage ud fra dine færdigheder og interesser  
 2. Fork MCP-repositoriet og opsæt et lokalt udviklingsmiljø  
-3. Lav en lille forbedring, fejlrettelse eller et værktøj, som vil gavne fællesskabet  
+3. Lav en lille forbedring, fejlrettelse eller et værktøj, der kan gavne fællesskabet  
 4. Dokumenter dit bidrag med passende tests og dokumentation  
 5. Indsend en pull request til det relevante repository  
 
@@ -910,7 +910,7 @@ async def delete_tool(tool_name: str):
 
 ---
 
-Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+Næste: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

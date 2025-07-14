@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:27:00+00:00",
+  "translation_date": "2025-07-13T17:11:44+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "ar"
 }
@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **6 البث عبر HTTP مع MCP (HTTP قابل للبث)**. تعرّف على البث الحديث عبر HTTP، وإشعارات التقدم، وكيفية تنفيذ خوادم وعملاء MCP قابلة للتوسع وفي الوقت الحقيقي باستخدام HTTP القابل للبث. [إلى الدرس](06-http-streaming/README.md)
 
-- **7 استخدام مجموعة أدوات الذكاء الاصطناعي لـ VSCode** لاستهلاك واختبار عملاء وخوادم MCP الخاصة بك [إلى الدرس](07-aitk/README.md)
+- **7 استخدام مجموعة أدوات AI لـ VSCode** لاستهلاك واختبار عملاء وخوادم MCP الخاصة بك [إلى الدرس](07-aitk/README.md)
 
 - **8 الاختبار**. هنا سنركز بشكل خاص على كيفية اختبار خادمنا وعميلنا بطرق مختلفة، [إلى الدرس](08-testing/README.md)
 
@@ -59,7 +59,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### SDKs الرسمية
 
-في الفصول القادمة سترى حلولًا مبنية باستخدام Python، TypeScript، Java و .NET. إليك جميع SDKs المدعومة رسميًا.
+في الفصول القادمة سترى حلولًا مبنية باستخدام Python، TypeScript، Java و .NET. هذه هي جميع SDKs المدعومة رسميًا.
 
 يوفر MCP SDKs رسمية لعدة لغات:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - تتم صيانته بالتعاون مع Microsoft

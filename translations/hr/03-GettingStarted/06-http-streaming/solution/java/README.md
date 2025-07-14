@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:50:29+00:00",
+  "translation_date": "2025-07-13T21:15:29+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "hr"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ovaj projekt demonstrira HTTP streaming koristeći Server-Sent Events (SSE) sa Spring Boot WebFlux. Sastoji se od dvije aplikacije:
 
-- **Calculator Server**: reaktivni web servis koji vrši izračune i šalje rezultate putem SSE
+- **Calculator Server**: reaktivna web usluga koja izvodi izračune i šalje rezultate putem SSE
 - **Calculator Client**: klijentska aplikacija koja koristi streaming endpoint
 
 ## Preduvjeti
@@ -37,15 +37,15 @@ java/
 
 ## Kako radi
 
-1. **Calculator Server** izlaže `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** izlaže `/calculate` endpoint koji:
+   - Prima query parametre: `a` (broj), `b` (broj), `op` (operacija)
+   - Podržane operacije: `add`, `sub`, `mul`, `div`
+   - Vraća Server-Sent Events s napretkom izračuna i rezultatom
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
+2. **Calculator Client** se povezuje na server i:
+   - Šalje zahtjev za izračun `7 * 5`
    - Prima streaming odgovor
-   - Ispisuje svaki događaj na konzolu
+   - Ispisuje svaki event u konzolu
 
 ## Pokretanje aplikacija
 
@@ -79,7 +79,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Klijent će se spojiti na server, izvršiti izračun i prikazati streaming rezultate.
+Klijent će se povezati na server, izvršiti izračun i prikazati streaming rezultate.
 
 ### Opcija 2: Direktno korištenje Jave
 
@@ -101,7 +101,7 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## Ručno testiranje servera
 
-Server možete testirati i preko web preglednika ili curl-a:
+Server možete testirati i putem web preglednika ili curl-a:
 
 ### Korištenje web preglednika:
 Posjetite: `http://localhost:8080/calculate?a=10&b=5&op=add`
@@ -113,7 +113,7 @@ curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-st
 
 ## Očekivani izlaz
 
-Kada pokrenete klijenta, trebali biste vidjeti streaming izlaz sličan ovome:
+Prilikom pokretanja klijenta trebali biste vidjeti streaming izlaz sličan ovom:
 
 ```
 event:info
@@ -125,21 +125,21 @@ data:35.0
 
 ## Podržane operacije
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Zbrajanje (a + b)
+- `sub` - Oduzimanje (a - b)
+- `mul` - Množenje (a * b)
+- `div` - Dijeljenje (a / b, vraća NaN ako je b = 0)
 
-## API Reference
+## API Referenca
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parametri:**
+- `a` (obavezno): Prvi broj (double)
+- `b` (obavezno): Drugi broj (double)
+- `op` (obavezno): Operacija (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Odgovor:**
 - Content-Type: `text/event-stream`
 - Vraća Server-Sent Events s napretkom izračuna i rezultatom
 
@@ -164,39 +164,39 @@ data: 35.0
 ### Česti problemi
 
 1. **Port 8080 je već zauzet**
-   - Zaustavite sve druge aplikacije koje koriste port 8080
+   - Zaustavite druge aplikacije koje koriste port 8080
    - Ili promijenite port servera u `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Veza odbijena**
+   - Provjerite da je server pokrenut prije nego što pokrenete klijenta
+   - Provjerite je li server uspješno startao na portu 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Problemi s imenima parametara**
+   - Projekt uključuje Maven konfiguraciju kompajlera s `-parameters` zastavicom
+   - Ako imate problema s vezivanjem parametara, provjerite da je projekt izgrađen s ovom konfiguracijom
 
-### Stopping the Applications
+### Zaustavljanje aplikacija
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` ako je pokrenut kao pozadinski proces
+- Pritisnite `Ctrl+C` u terminalu gdje je aplikacija pokrenuta
+- Ili koristite `mvn spring-boot:stop` ako aplikacija radi u pozadini
 
 ## Tehnološki stack
 
-- **Spring Boot 3.3.1** - okvir za aplikacije
-- **Spring WebFlux** - reaktivni web okvir
+- **Spring Boot 3.3.1** - aplikacijski framework
+- **Spring WebFlux** - reaktivni web framework
 - **Project Reactor** - biblioteka za reaktivne tokove
-- **Netty** - server za neblokirajući I/O
-- **Maven** - alat za gradnju
+- **Netty** - server s neblokirajućim I/O
+- **Maven** - alat za izgradnju
 - **Java 17+** - programski jezik
 
 ## Sljedeći koraci
 
-Isprobajte promjene u kodu za:
-- Dodavanje više matematičkih operacija
-- Uključivanje rukovanja pogreškama za nevažeće operacije
-- Dodavanje logiranja zahtjeva/odgovora
-- Implementaciju autentikacije
-- Dodavanje jedinčnih testova
+Isprobajte izmjene koda kako biste:
+- Dodali više matematičkih operacija
+- Uključili obradu pogrešaka za nevažeće operacije
+- Dodali logiranje zahtjeva/odgovora
+- Implementirali autentifikaciju
+- Dodali jedinicne testove
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

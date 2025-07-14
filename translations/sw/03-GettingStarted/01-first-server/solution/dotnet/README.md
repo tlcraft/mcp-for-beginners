@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:59:49+00:00",
+  "translation_date": "2025-07-13T17:50:16+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "sw"
 }
@@ -34,7 +34,7 @@ Hii inapaswa kuanzisha serveri ya wavuti yenye kiolesura cha kuona kinachokuweze
 Mara serveri itakapounganishwa:
 
 - jaribu kuorodhesha zana na endesha `add`, ukiingiza hoja 2 na 4, unapaswa kuona 6 kama matokeo.
-- nenda kwenye rasilimali na templeti ya rasilimali kisha itaje "greeting", andika jina na utapokea salamu yenye jina uliloingiza.
+- nenda kwenye resources na resource template na piga "greeting", andika jina na utapokea salamu yenye jina ulilotoa.
 
 ### Kupima kwa njia ya CLI
 
@@ -99,4 +99,4 @@ Unapaswa kuona matokeo yafuatayo:
 > Soma zaidi kuhusu inspector [hapa](https://github.com/modelcontextprotocol/inspector).
 
 **Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

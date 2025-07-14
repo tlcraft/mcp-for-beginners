@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0f27f8c14853621d982185e6bbdd1dc6",
-  "translation_date": "2025-05-17T13:22:09+00:00",
+  "translation_date": "2025-07-13T22:34:39+00:00",
   "source_file": "03-GettingStarted/samples/javascript/README.md",
   "language_code": "it"
 }
 -->
 # Esempio
 
-Questo è un esempio di JavaScript per un server MCP
+Questo è un esempio in JavaScript per un MCP Server
 
-Ecco come appare la parte del calcolatore:
+Ecco come appare la parte della calcolatrice:
 
 ```javascript
 // Define calculator tools for each operation
@@ -68,7 +68,7 @@ server.tool(
 );
 ```
 
-## Installare
+## Installazione
 
 Esegui il seguente comando:
 
@@ -76,11 +76,11 @@ Esegui il seguente comando:
 npm install
 ```
 
-## Eseguire
+## Esecuzione
 
 ```bash
 npm start
 ```
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per l'accuratezza, si prega di essere consapevoli che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

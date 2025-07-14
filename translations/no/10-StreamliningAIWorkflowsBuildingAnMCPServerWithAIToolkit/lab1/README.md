@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2aa9dbc165e104764fa57e8a0d3f1c73",
-  "translation_date": "2025-06-10T05:24:02+00:00",
+  "translation_date": "2025-07-14T07:29:04+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab1/README.md",
   "language_code": "no"
 }
@@ -15,28 +15,28 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 📋 Læringsmål
 
-Når du er ferdig med dette modulen, vil du kunne:
+Etter denne modulen vil du kunne:
 - ✅ Installere og konfigurere AI Toolkit for Visual Studio Code
 - ✅ Navigere i Model Catalog og forstå ulike modellkilder
 - ✅ Bruke Playground for modelltesting og eksperimentering
 - ✅ Lage tilpassede AI-agenter med Agent Builder
-- ✅ Sammenligne modellprestasjon på tvers av leverandører
+- ✅ Sammenligne modellprestasjoner på tvers av leverandører
 - ✅ Anvende beste praksis for prompt engineering
 
 ## 🧠 Introduksjon til AI Toolkit (AITK)
 
-**AI Toolkit for Visual Studio Code** er Microsofts flaggskiputvidelse som gjør VS Code om til et komplett utviklingsmiljø for AI. Den bygger bro mellom AI-forskning og praktisk applikasjonsutvikling, og gjør generativ AI tilgjengelig for utviklere på alle ferdighetsnivåer.
+**AI Toolkit for Visual Studio Code** er Microsofts flaggskip-utvidelse som forvandler VS Code til et komplett AI-utviklingsmiljø. Den bygger bro mellom AI-forskning og praktisk applikasjonsutvikling, og gjør generativ AI tilgjengelig for utviklere på alle ferdighetsnivåer.
 
 ### 🌟 Nøkkelfunksjoner
 
 | Funksjon | Beskrivelse | Bruksområde |
 |---------|-------------|-------------|
-| **🗂️ Model Catalog** | Tilgang til 100+ modeller fra GitHub, ONNX, OpenAI, Anthropic, Google | Modelloppdagelse og valg |
-| **🔌 BYOM Support** | Integrer dine egne modeller (lokale/fjern) | Egne modellimplementasjoner |
-| **🎮 Interaktiv Playground** | Sanntidstesting av modeller med chattegrensesnitt | Rask prototyping og testing |
-| **📎 Multimodal støtte** | Håndter tekst, bilder og vedlegg | Komplekse AI-applikasjoner |
+| **🗂️ Model Catalog** | Tilgang til 100+ modeller fra GitHub, ONNX, OpenAI, Anthropic, Google | Modellutforskning og valg |
+| **🔌 BYOM Support** | Integrer dine egne modeller (lokalt/fjernt) | Tilpasset modellutrulling |
+| **🎮 Interaktiv Playground** | Sanntidstesting av modeller med chat-grensesnitt | Rask prototyping og testing |
+| **📎 Multi-modalt støtte** | Håndter tekst, bilder og vedlegg | Komplekse AI-applikasjoner |
 | **⚡ Batchbehandling** | Kjør flere prompts samtidig | Effektive testarbeidsflyter |
-| **📊 Modellvurdering** | Innebygde måleparametere (F1, relevans, likhet, sammenheng) | Vurdering av ytelse |
+| **📊 Modellevaluering** | Innebygde måleparametere (F1, relevans, likhet, sammenheng) | Vurdering av ytelse |
 
 ### 🎯 Hvorfor AI Toolkit er viktig
 
@@ -50,7 +50,7 @@ Når du er ferdig med dette modulen, vil du kunne:
 ### 📦 Installer AI Toolkit-utvidelsen
 
 **Steg 1: Åpne Extensions Marketplace**
-1. Start Visual Studio Code
+1. Åpne Visual Studio Code
 2. Gå til Extensions-visningen (`Ctrl+Shift+X` eller `Cmd+Shift+X`)
 3. Søk etter "AI Toolkit"
 
@@ -67,35 +67,35 @@ Når du er ferdig med dette modulen, vil du kunne:
 - [ ] Utvidelsen er aktivert og i bruk
 - [ ] Ingen installasjonsfeil i output-panelet
 
-## 🧪 Praktisk øvelse 1: Utforsk GitHub-modeller
+## 🧪 Praktisk øvelse 1: Utforske GitHub-modeller
 
 **🎯 Mål**: Bli kjent med Model Catalog og test din første AI-modell
 
 ### 📊 Steg 1: Naviger i Model Catalog
 
-Model Catalog er inngangsporten til AI-økosystemet. Den samler modeller fra flere leverandører, slik at du enkelt kan oppdage og sammenligne alternativer.
+Model Catalog er inngangsporten til AI-økosystemet. Den samler modeller fra flere leverandører, noe som gjør det enkelt å oppdage og sammenligne alternativer.
 
-**🔍 Navigasjonsguide:**
+**🔍 Navigasjonsveiledning:**
 
 Klikk på **MODELS - Catalog** i AI Toolkit-sidepanelet
 
 ![Model Catalog](../../../../translated_images/aimodel.263ed2be013d8fb0e2265c4f742cfe490f6f00eca5e132ec50438c8e826e34ed.no.png)
 
-**💡 Tips**: Se etter modeller med spesifikke egenskaper som passer ditt brukstilfelle (f.eks. kodegenerering, kreativ skriving, analyse).
+**💡 Profftips**: Se etter modeller med spesifikke egenskaper som passer ditt brukstilfelle (f.eks. kodegenerering, kreativ skriving, analyse).
 
-**⚠️ Merk**: Modeller hostet på GitHub (GitHub Models) er gratis å bruke, men har begrensninger på antall forespørsler og tokens. For å få tilgang til modeller utenfor GitHub (dvs. eksterne modeller via Azure AI eller andre endepunkter), må du legge inn riktig API-nøkkel eller autentisering.
+**⚠️ Merk**: GitHub-hostede modeller (dvs. GitHub Models) er gratis å bruke, men har begrensninger på antall forespørsler og tokens. For å få tilgang til ikke-GitHub-modeller (eksterne modeller via Azure AI eller andre endepunkter) må du oppgi riktig API-nøkkel eller autentisering.
 
 ### 🚀 Steg 2: Legg til og konfigurer din første modell
 
-**Strategi for modellvalg:**
+**Modellvalgstrategi:**
 - **GPT-4.1**: Best for komplekse resonnementer og analyser
-- **Phi-4-mini**: Lettvektsmodell, raske svar for enkle oppgaver
+- **Phi-4-mini**: Lettvekter, raske svar for enkle oppgaver
 
 **🔧 Konfigurasjonsprosess:**
 1. Velg **OpenAI GPT-4.1** fra katalogen
 2. Klikk **Add to My Models** – dette registrerer modellen for bruk
 3. Velg **Try in Playground** for å åpne testmiljøet
-4. Vent på at modellen starter opp (første gang kan ta litt tid)
+4. Vent på at modellen initialiseres (første oppstart kan ta litt tid)
 
 ![Playground Setup](../../../../translated_images/playground.dd6f5141344878ca4d4f3de819775da7b113518941accf37c291117c602f85db.no.png)
 
@@ -106,13 +106,13 @@ Klikk på **MODELS - Catalog** i AI Toolkit-sidepanelet
 
 ### 🎯 Steg 3: Mestre Playground-grensesnittet
 
-Playground er ditt laboratorium for AI-eksperimenter. Slik får du mest ut av det:
+Playground er ditt AI-eksperimentlaboratorium. Slik får du mest ut av det:
 
 **🎨 Beste praksis for prompt engineering:**
-1. **Vær spesifikk**: Klare og detaljerte instruksjoner gir bedre resultater
+1. **Vær spesifikk**: Klare, detaljerte instruksjoner gir bedre resultater
 2. **Gi kontekst**: Inkluder relevant bakgrunnsinformasjon
 3. **Bruk eksempler**: Vis modellen hva du ønsker med eksempler
-4. **Iterer**: Forbedre promptene basert på tidlige svar
+4. **Iterer**: Forbedre prompts basert på tidlige resultater
 
 **🧪 Testscenarier:**
 ```markdown
@@ -128,9 +128,9 @@ Playground er ditt laboratorium for AI-eksperimenter. Slik får du mest ut av de
 
 ![Testing Results](../../../../translated_images/result.1dfcf211fb359cf65902b09db191d3bfc65713ca15e279c1a30be213bb526949.no.png)
 
-### 🏆 Utfordringsøvelse: Sammenligning av modellprestasjon
+### 🏆 Utfordringsøvelse: Sammenligning av modellprestasjoner
 
-**🎯 Mål**: Sammenligne ulike modeller med identiske prompts for å forstå styrkene deres
+**🎯 Mål**: Sammenlign ulike modeller med identiske prompts for å forstå styrkene deres
 
 **📋 Instruksjoner:**
 1. Legg til **Phi-4-mini** i arbeidsområdet ditt
@@ -139,27 +139,27 @@ Playground er ditt laboratorium for AI-eksperimenter. Slik får du mest ut av de
 ![set](../../../../translated_images/set.88132df189ecde2cbbda256c1841db5aac8e9bdeba1a4e343dfa031b9545d6c9.no.png)
 
 3. Sammenlign svarenes kvalitet, hastighet og nøyaktighet
-4. Dokumenter funnene dine i resultatsseksjonen
+4. Dokumenter funnene dine i resultatdelen
 
 ![Model Comparison](../../../../translated_images/compare.97746cd0f907495503c1fc217739f3890dc76ea5f6fd92379a6db0cc331feb58.no.png)
 
 **💡 Viktige innsikter å oppdage:**
-- Når man bør bruke LLM vs SLM
+- Når bør man bruke LLM vs SLM
 - Kostnad vs ytelse
 - Spesialiserte egenskaper ved ulike modeller
 
-## 🤖 Praktisk øvelse 2: Bygg tilpassede agenter med Agent Builder
+## 🤖 Praktisk øvelse 2: Bygge tilpassede agenter med Agent Builder
 
-**🎯 Mål**: Lag spesialiserte AI-agenter tilpasset spesifikke oppgaver og arbeidsflyter
+**🎯 Mål**: Lag spesialiserte AI-agenter tilpasset bestemte oppgaver og arbeidsflyter
 
 ### 🏗️ Steg 1: Forstå Agent Builder
 
-Agent Builder er der AI Toolkit virkelig skinner. Her kan du lage målrettede AI-assistenter som kombinerer kraften til store språkmodeller med egne instruksjoner, spesifikke parametere og spesialisert kunnskap.
+Agent Builder er der AI Toolkit virkelig skinner. Her kan du lage skreddersydde AI-assistenter som kombinerer kraften i store språkmodeller med tilpassede instruksjoner, spesifikke parametere og spesialisert kunnskap.
 
 **🧠 Komponenter i agentarkitekturen:**
-- **Kjernemodell**: Grunnleggende LLM (GPT-4, Groks, Phi osv.)
+- **Kjernemodell**: Grunnleggende LLM (GPT-4, Groks, Phi, osv.)
 - **Systemprompt**: Definerer agentens personlighet og oppførsel
-- **Parametere**: Finjusterte innstillinger for optimal ytelse
+- **Parametere**: Fininnstilte innstillinger for optimal ytelse
 - **Verktøyintegrasjon**: Koble til eksterne API-er og MCP-tjenester
 - **Minne**: Samtalekontekst og sesjonspersistens
 
@@ -205,7 +205,7 @@ Provide 2-3 examples of ideal interactions
 
 1. **Modellvalg**: Velg **Claude 3.5 Sonnet** (utmerket for kode)
 
-2. **Systemprompt-design**:
+2. **Systempromptdesign**:
 ```markdown
 # Python Programming Expert Agent
 
@@ -233,7 +233,7 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 ```
 
 3. **Parameterkonfigurasjon**:
-   - Temperature: 0.2 (for konsistent og pålitelig kode)
+   - Temperature: 0.2 (for konsistent, pålitelig kode)
    - Max Tokens: 2000 (detaljerte forklaringer)
    - Top-p: 0.9 (balansert kreativitet)
 
@@ -242,23 +242,23 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 ### 🧪 Steg 4: Test din Python-agent
 
 **Testscenarier:**
-1. **Grunnleggende funksjon**: "Lag en funksjon som finner primtall"
+1. **Grunnleggende funksjon**: "Lag en funksjon for å finne primtall"
 2. **Kompleks algoritme**: "Implementer et binært søketre med innsetting, sletting og søk"
 3. **Virkelighetsproblem**: "Lag en webskraper som håndterer rate limiting og retry"
 4. **Feilsøking**: "Fiks denne koden [lim inn buggy kode]"
 
 **🏆 Suksesskriterier:**
 - ✅ Koden kjører uten feil
-- ✅ Inneholder god dokumentasjon
+- ✅ Inkluderer god dokumentasjon
 - ✅ Følger beste praksis for Python
 - ✅ Gir klare forklaringer
 - ✅ Foreslår forbedringer
 
-## 🎓 Modul 1 Oppsummering og veien videre
+## 🎓 Modul 1 Oppsummering og neste steg
 
-### 📊 Kunnskapstest
+### 📊 Kunnskapssjekk
 
-Test hva du har lært:
+Test din forståelse:
 - [ ] Kan du forklare forskjellen mellom modellene i katalogen?
 - [ ] Har du laget og testet en tilpasset agent?
 - [ ] Forstår du hvordan du optimaliserer parametere for ulike bruksområder?
@@ -268,17 +268,17 @@ Test hva du har lært:
 
 - **AI Toolkit Dokumentasjon**: [Official Microsoft Docs](https://github.com/microsoft/vscode-ai-toolkit)
 - **Guide til prompt engineering**: [Best Practices](https://platform.openai.com/docs/guides/prompt-engineering)
-- **Modeller i AI Toolkit**: [Models in Develpment](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
+- **Modeller i AI Toolkit**: [Models in Development](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
 
 **🎉 Gratulerer!** Du har mestret det grunnleggende i AI Toolkit og er klar for å bygge mer avanserte AI-applikasjoner!
 
 ### 🔜 Fortsett til neste modul
 
-Klar for mer avanserte funksjoner? Fortsett til **[Modul 2: MCP med AI Toolkit Fundamentals](../lab2/README.md)** hvor du lærer å:
+Klar for mer avanserte funksjoner? Fortsett til **[Modul 2: MCP med AI Toolkit Fundamentals](../lab2/README.md)** hvor du vil lære å:
 - Koble agentene dine til eksterne verktøy med Model Context Protocol (MCP)
 - Bygge nettleserautomatiseringsagenter med Playwright
 - Integrere MCP-servere med AI Toolkit-agentene dine
 - Gi agentene dine ekstra kraft med ekstern data og funksjonalitet
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på det opprinnelige språket bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår fra bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

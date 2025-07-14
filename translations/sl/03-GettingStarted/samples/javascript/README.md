@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0f27f8c14853621d982185e6bbdd1dc6",
-  "translation_date": "2025-05-17T13:26:17+00:00",
+  "translation_date": "2025-07-13T22:36:16+00:00",
   "source_file": "03-GettingStarted/samples/javascript/README.md",
   "language_code": "sl"
 }
 -->
-# සාම්පලය
+# Primer
 
-මෙය MCP සේවාදායකය සඳහා ජාවාස්ක්‍රිප්ට් සාම්පලයකි
+To je JavaScript primer za MCP strežnik
 
-මෙහි ගණකය කොටස මෙසේ පෙනේ:
+Tako izgleda del kalkulatorja:
 
 ```javascript
 // Define calculator tools for each operation
@@ -68,19 +68,19 @@ server.tool(
 );
 ```
 
-## ස්ථාපනය
+## Namestitev
 
-පහත විධානය ක්‍රියාත්මක කරන්න:
+Zaženite naslednji ukaz:
 
 ```bash
 npm install
 ```
 
-## ක්‍රියාත්මක කරන්න
+## Zagon
 
 ```bash
 npm start
 ```
 
-**Zavrnitev odgovornosti**: 
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da se zavedate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za kritične informacije se priporoča profesionalni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

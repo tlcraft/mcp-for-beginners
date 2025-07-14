@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T17:40:12+00:00",
+  "translation_date": "2025-07-13T19:30:53+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "da"
 }
@@ -11,7 +11,7 @@ Lad os tale mere om, hvordan vi bruger den visuelle grænseflade i de næste afs
 
 ## Fremgangsmåde
 
-Her er, hvordan vi skal gribe det an på et overordnet plan:
+Her er, hvordan vi skal gribe det an på et overordnet niveau:
 
 - Konfigurer en fil til at finde vores MCP Server.
 - Start/opret forbindelse til den nævnte server for at få den til at liste sine funktioner.

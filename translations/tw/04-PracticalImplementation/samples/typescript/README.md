@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-17T15:02:51+00:00",
+  "translation_date": "2025-07-13T23:36:42+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "tw"
 }
 -->
 # 範例
 
-這是一個用於 MCP 伺服器的 Typescript 範例
+這是一個 MCP Server 的 Typescript 範例
 
-以下是工具創建的例子：
+以下是建立工具的示範：
 
 ```typescript
 this.mcpServer.tool(
@@ -76,7 +76,7 @@ async ({ model, prompt, options }) => {
 
 ## 安裝
 
-執行以下命令：
+執行以下指令：
 
 ```bash
 npm install
@@ -88,5 +88,5 @@ npm install
 npm start
 ```
 
-**免責聲明**：
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保準確性，請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。對於因使用此翻譯而引起的任何誤解或誤讀，我們概不負責。
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

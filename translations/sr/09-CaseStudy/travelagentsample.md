@@ -2,91 +2,91 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4d3415b9d2bf58bc69be07f945a69e07",
-  "translation_date": "2025-06-13T21:54:18+00:00",
+  "translation_date": "2025-07-14T06:06:20+00:00",
   "source_file": "09-CaseStudy/travelagentsample.md",
   "language_code": "sr"
 }
 -->
-# Studija slučaja: Azure AI Travel Agents – Referentna implementacija
+# Студија случаја: Azure AI Travel Agents – Референтна имплементација
 
-## Pregled
+## Преглед
 
-[Azure AI Travel Agents](https://github.com/Azure-Samples/azure-ai-travel-agents) je sveobuhvatno referentno rešenje koje je razvio Microsoft, a koje pokazuje kako napraviti aplikaciju za planiranje putovanja sa više agenata pokretanih veštačkom inteligencijom koristeći Model Context Protocol (MCP), Azure OpenAI i Azure AI Search. Ovaj projekat demonstrira najbolje prakse za orkestraciju više AI agenata, integraciju podataka preduzeća i pružanje sigurne, proširive platforme za realne scenarije.
+[Azure AI Travel Agents](https://github.com/Azure-Samples/azure-ai-travel-agents) је свеобухватно референтно решење које је развио Microsoft и које показује како изградити апликацију за планирање путовања са више агената, покретану вештачком интелигенцијом, користећи Model Context Protocol (MCP), Azure OpenAI и Azure AI Search. Овај пројекат приказује најбоље праксе за оркестрацију више AI агената, интеграцију корпоративних података и пружање безбедне, прошириве платформе за реалне сценарије.
 
-## Ključne karakteristike
-- **Orkestracija više agenata:** Koristi MCP za koordinaciju specijalizovanih agenata (npr. za letove, hotele i itinerere) koji sarađuju kako bi izvršili složene zadatke planiranja putovanja.
-- **Integracija podataka preduzeća:** Povezuje se sa Azure AI Search i drugim izvorima podataka preduzeća da bi pružio aktuelne i relevantne informacije za preporuke putovanja.
-- **Sigurna, skalabilna arhitektura:** Iskorišćava Azure servise za autentifikaciju, autorizaciju i skalabilno postavljanje, prateći najbolje bezbednosne prakse preduzeća.
-- **Proširivi alati:** Implementira ponovo upotrebljive MCP alate i predloške za promptove, omogućavajući brzu prilagodbu novim domenima ili poslovnim zahtevima.
-- **Korisničko iskustvo:** Pruža konverzacijski interfejs za korisnike da komuniciraju sa agentima za putovanja, pokretan Azure OpenAI i MCP-om.
+## Кључне карактеристике
+- **Оркестрација више агената:** Користи MCP за координацију специјализованих агената (нпр. агенти за летове, хотеле и план пута) који сарађују како би испунили сложене задатке планирања путовања.
+- **Интеграција корпоративних података:** Повезује се са Azure AI Search и другим изворима корпоративних података како би обезбедио ажуриране и релевантне информације за препоруке путовања.
+- **Безбедна, скалабилна архитектура:** Користи Azure сервисе за аутентификацију, ауторизацију и скалабилно распоређивање, пратећи најбоље безбедносне праксе у предузећима.
+- **Прошириви алати:** Имплементира поновно употребљиве MCP алате и шаблоне упита, омогућавајући брзу адаптацију на нове домене или пословне захтеве.
+- **Корисничко искуство:** Пружа конверзацијски интерфејс за кориснике да комуницирају са агенатима за путовања, покретан Azure OpenAI и MCP-ом.
 
-## Arhitektura
+## Архитектура
 ![Architecture](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
 
-### Opis dijagrama arhitekture
+### Опис дијаграма архитектуре
 
-Rešenje Azure AI Travel Agents je dizajnirano za modularnost, skalabilnost i sigurnu integraciju više AI agenata i izvora podataka preduzeća. Glavni delovi i tok podataka su sledeći:
+Решење Azure AI Travel Agents је дизајнирано за модуларност, скалабилност и безбедну интеграцију више AI агената и извора корпоративних података. Главне компоненте и проток података су следећи:
 
-- **Korisnički interfejs:** Korisnici komuniciraju sa sistemom putem konverzacionog UI-ja (kao što je web chat ili Teams bot), koji šalje korisničke upite i prima preporuke za putovanja.
-- **MCP Server:** Deluje kao centralni orkestrator, prima korisničke ulaze, upravlja kontekstom i koordinira rad specijalizovanih agenata (npr. FlightAgent, HotelAgent, ItineraryAgent) preko Model Context Protocol-a.
-- **AI agenti:** Svaki agent je zadužen za određenu oblast (letovi, hoteli, itinereri) i implementiran je kao MCP alat. Agenti koriste predloške za promptove i logiku da obrađuju zahteve i generišu odgovore.
-- **Azure OpenAI Service:** Omogućava napredno razumevanje i generisanje prirodnog jezika, što pomaže agentima da interpretiraju korisničke namere i daju konverzacijske odgovore.
-- **Azure AI Search i podaci preduzeća:** Agenti pretražuju Azure AI Search i druge izvore podataka preduzeća da bi pribavili najnovije informacije o letovima, hotelima i opcijama putovanja.
-- **Autentifikacija i sigurnost:** Integrisan sa Microsoft Entra ID za sigurnu autentifikaciju i primenjuje pristup sa najmanjim privilegijama na sve resurse.
-- **Postavljanje:** Dizajniran za postavljanje na Azure Container Apps, što obezbeđuje skalabilnost, nadzor i efikasnost rada.
+- **Кориснички интерфејс:** Корисници комуницирају са системом преко конверзацијског UI (нпр. веб ћаскање или Teams бот), који шаље корисничке упите и прима препоруке за путовања.
+- **MCP сервер:** Делује као централни оркестратор, прима корисничке захтеве, управља контекстом и координира рад специјализованих агената (нпр. FlightAgent, HotelAgent, ItineraryAgent) преко Model Context Protocol-а.
+- **AI агенти:** Сваки агент је одговоран за одређену област (летови, хотели, план пута) и имплементиран је као MCP алат. Агенти користе шаблоне упита и логику за обраду захтева и генерисање одговора.
+- **Azure OpenAI сервис:** Обезбеђује напредно разумевање и генерисање природног језика, омогућавајући агентима да тумаче корисничке намере и генеришу конверзацијске одговоре.
+- **Azure AI Search и корпоративни подаци:** Агенти претражују Azure AI Search и друге изворе корпоративних података како би добили најсвежије информације о летовима, хотелима и опцијама путовања.
+- **Аутентификација и безбедност:** Интегрисан са Microsoft Entra ID за безбедну аутентификацију и примењује контролу приступа по принципу најмањих привилегија на све ресурсе.
+- **Распоређивање:** Дизајниран за распоређивање на Azure Container Apps, обезбеђујући скалабилност, праћење и оперативну ефикасност.
 
-Ova arhitektura omogućava neprimetnu orkestraciju više AI agenata, sigurnu integraciju sa podacima preduzeća i robusnu, proširivu platformu za izgradnju AI rešenja specifičnih za određene domene.
+Ова архитектура омогућава беспрекорну оркестрацију више AI агената, безбедну интеграцију са корпоративним подацима и робусну, прошириву платформу за изградњу AI решења специфичних за домен.
 
-## Detaljno objašnjenje dijagrama arhitekture
-Zamislite da planirate veliko putovanje i imate tim stručnih pomoćnika koji vam pomažu sa svakim detaljem. Sistem Azure AI Travel Agents funkcioniše na sličan način, koristeći različite delove (kao članove tima) koji svaki imaju svoju specijalnu ulogu. Evo kako sve to funkcioniše zajedno:
+## Корак по корак објашњење дијаграма архитектуре
+Замислите да планирате велико путовање и да имате тим стручних помоћника који вам помажу са сваким детаљем. Систем Azure AI Travel Agents ради на сличан начин, користећи различите делове (као чланове тима) који имају посебне улоге. Ево како све то функционише:
 
-### Korisnički interfejs (UI):
-Zamislite ovo kao recepciju vašeg putničkog agenta. Tu vi (korisnik) postavljate pitanja ili šaljete zahteve, kao što je „Pronađi mi let za Pariz.“ To može biti prozor za ćaskanje na veb sajtu ili aplikaciji za poruke.
+### Кориснички интерфејс (UI):
+Замислите ово као шалтер вашег агента за путовања. Ту ви (корисник) постављате питања или правите захтеве, као што је „Пронађи ми лет за Париз.“ То може бити прозор за ћаскање на веб сајту или апликацији за поруке.
 
-### MCP Server (koordinator):
-MCP Server je kao menadžer koji sluša vaš zahtev na recepciji i odlučuje koji specijalista treba da se pozabavi određenim delom. On prati vašu konverzaciju i osigurava da sve funkcioniše glatko.
+### MCP сервер (Координатор):
+MCP сервер је као менаџер који слуша ваш захтев на шалтеру и одлучује који специјалиста треба да обради сваки део. Он прати вашу конверзацију и осигурава да све тече глатко.
 
-### AI agenti (specijalistički pomoćnici):
-Svaki agent je stručnjak za određenu oblast – jedan zna sve o letovima, drugi o hotelima, a treći o planiranju itinerera. Kada tražite putovanje, MCP Server šalje vaš zahtev odgovarajućem agentu/agentima. Ti agenti koriste svoje znanje i alate da pronađu najbolje opcije za vas.
+### AI агенти (специјалистички помоћници):
+Сваки агент је стручњак за одређену област — један зна све о летовима, други о хотелима, а трећи о планирању маршруте. Када затражите путовање, MCP сервер шаље ваш захтев одговарајућем агенту/агентима. Ови агенти користе своје знање и алате да пронађу најбоље опције за вас.
 
-### Azure OpenAI Service (jezički ekspert):
-Ovo je kao da imate jezičkog stručnjaka koji tačno razume šta tražite, bez obzira kako to formulišete. Pomaže agentima da razumeju vaše zahteve i odgovaraju na prirodan, konverzacijski način.
+### Azure OpenAI сервис (стручњак за језик):
+Ово је као да имате стручњака за језик који тачно разуме шта тражите, без обзира како сте то формулисали. Помоћу њега агенти разумеју ваше захтеве и одговарају природним, конверзацијским језиком.
 
-### Azure AI Search i podaci preduzeća (biblioteka informacija):
-Zamislite ogromnu, ažuriranu biblioteku sa svim najnovijim informacijama o putovanjima – rasporedima letova, dostupnosti hotela i još mnogo toga. Agenti pretražuju ovu biblioteku da bi vam dali najpreciznije odgovore.
+### Azure AI Search и корпоративни подаци (библиотека информација):
+Замислите велику, ажурну библиотеку са свим најновијим информацијама о путовањима — распореди летова, доступност хотела и још много тога. Агенти претражују ову библиотеку да би вам дали најтачније одговоре.
 
-### Autentifikacija i sigurnost (čuvar sigurnosti):
-Baš kao što čuvar proverava ko može da uđe u određene prostorije, ovaj deo osigurava da samo ovlašćene osobe i agenti mogu pristupiti osetljivim informacijama. Čuva vaše podatke sigurnim i privatnim.
+### Аутентификација и безбедност (чувар безбедности):
+Као што чувар проверава ко може ући у одређене просторије, овај део осигурава да само овлашћене особе и агенти могу приступити осетљивим информацијама. Чува ваше податке безбедним и приватним.
 
-### Postavljanje na Azure Container Apps (zgrada):
-Svi ovi pomoćnici i alati rade zajedno unutar sigurne, skalabilne zgrade (oblaka). To znači da sistem može da podrži veliki broj korisnika istovremeno i da je uvek dostupan kada vam treba.
+### Распоређивање на Azure Container Apps (зграда):
+Сви ови помоћници и алати раде заједно унутар безбедне, скалабилне зграде (клауда). То значи да систем може истовремено да подржи велики број корисника и увек је доступан када вам затреба.
 
-## Kako sve funkcioniše zajedno:
+## Како све функционише заједно:
 
-Počinjete tako što postavite pitanje na recepciji (UI).
-Menadžer (MCP Server) odlučuje koji specijalista (agent) treba da vam pomogne.
-Specijalista koristi jezičkog eksperta (OpenAI) da razume vaš zahtev i biblioteku (AI Search) da pronađe najbolji odgovor.
-Čuvar sigurnosti (Autentifikacija) vodi računa da je sve bezbedno.
-Sve se ovo odvija unutar pouzdane, skalabilne zgrade (Azure Container Apps), tako da je vaše iskustvo glatko i sigurno.
-Ova saradnja omogućava sistemu da brzo i sigurno pomogne u planiranju putovanja, baš kao tim stručnih agenata za putovanja koji rade zajedno u modernom kancelarijskom prostoru!
+Почнете тако што поставите питање на шалтеру (UI).
+Менаџер (MCP сервер) одлучује који специјалиста (агент) треба да вам помогне.
+Специјалиста користи стручњака за језик (OpenAI) да разуме ваш захтев и библиотеку (AI Search) да пронађе најбољи одговор.
+Чувар безбедности (аутентификација) осигурава да је све безбедно.
+Све се ово дешава у поузданој, скалабилној згради (Azure Container Apps), тако да је ваше искуство глатко и безбедно.
+Ова сарадња омогућава систему да брзо и сигурно помогне у планирању вашег путовања, као тим стручних агената за путовања који раде заједно у модерној канцеларији!
 
-## Tehnička implementacija
-- **MCP Server:** Hostuje osnovnu logiku orkestracije, izlaže alate agenata i upravlja kontekstom za višestepene tokove planiranja putovanja.
-- **Agenti:** Svaki agent (npr. FlightAgent, HotelAgent) implementiran je kao MCP alat sa sopstvenim predlošcima za promptove i logikom.
-- **Azure integracija:** Koristi Azure OpenAI za razumevanje prirodnog jezika i Azure AI Search za pristup podacima.
-- **Sigurnost:** Integrisan sa Microsoft Entra ID za autentifikaciju i primenjuje pristup sa najmanjim privilegijama na sve resurse.
-- **Postavljanje:** Podržava postavljanje na Azure Container Apps radi skalabilnosti i operativne efikasnosti.
+## Техничка имплементација
+- **MCP сервер:** Домаћин основне логике оркестрације, излаже алате агената и управља контекстом за вишестепене токове планирања путовања.
+- **Агенти:** Сваки агент (нпр. FlightAgent, HotelAgent) је имплементиран као MCP алат са својим шаблонима упита и логиком.
+- **Azure интеграција:** Користи Azure OpenAI за разумевање природног језика и Azure AI Search за приступ подацима.
+- **Безбедност:** Интегрисан са Microsoft Entra ID за аутентификацију и примењује контролу приступа по принципу најмањих привилегија на све ресурсе.
+- **Распоређивање:** Подржава распоређивање на Azure Container Apps ради скалабилности и оперативне ефикасности.
 
-## Rezultati i uticaj
-- Pokazuje kako se MCP može koristiti za orkestraciju više AI agenata u stvarnom, produkcijskom okruženju.
-- Ubrzava razvoj rešenja pružajući ponovo upotrebljive obrasce za koordinaciju agenata, integraciju podataka i sigurno postavljanje.
-- Služi kao šablon za izgradnju domen-specifičnih aplikacija pokretanih AI koristeći MCP i Azure servise.
+## Резултати и утицај
+- Показује како се MCP може користити за оркестрацију више AI агената у реалном, продукцијском окружењу.
+- Убрзава развој решења пружајући поновно употребљиве шаблоне за координацију агената, интеграцију података и безбедно распоређивање.
+- Служи као план за изградњу доменски специфичних апликација покретаних AI-ом користећи MCP и Azure сервисе.
 
-## Reference
-- [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)
-- [Azure OpenAI Service](https://azure.microsoft.com/en-us/products/ai-services/openai-service/)
+## Референце
+- [Azure AI Travel Agents GitHub репозиторијум](https://github.com/Azure-Samples/azure-ai-travel-agents)
+- [Azure OpenAI сервис](https://azure.microsoft.com/en-us/products/ai-services/openai-service/)
 - [Azure AI Search](https://azure.microsoft.com/en-us/products/ai-services/ai-search/)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала употребом овог превода.
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

@@ -2,27 +2,27 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:00:10+00:00",
+  "translation_date": "2025-07-13T21:17:13+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "ur"
 }
 -->
 # اس نمونے کو چلانا
 
-یہاں بتایا گیا ہے کہ Python استعمال کرتے ہوئے کلاسک HTTP اسٹریمنگ سرور اور کلائنٹ، نیز MCP اسٹریمنگ سرور اور کلائنٹ کو کیسے چلایا جائے۔
+یہاں بتایا گیا ہے کہ کلاسک HTTP اسٹریمنگ سرور اور کلائنٹ کو کیسے چلایا جائے، نیز MCP اسٹریمنگ سرور اور کلائنٹ کو Python کے ذریعے کیسے چلایا جائے۔
 
 ### جائزہ
 
 - آپ ایک MCP سرور قائم کریں گے جو آئٹمز کو پروسیس کرتے ہوئے کلائنٹ کو پیش رفت کی اطلاعات بھیجے گا۔
 - کلائنٹ ہر اطلاع کو حقیقی وقت میں دکھائے گا۔
-- یہ رہنما شرائط، ترتیب، چلانے، اور مسائل کے حل کا احاطہ کرتا ہے۔
+- یہ رہنما شرائط، سیٹ اپ، چلانے اور مسائل کے حل کا احاطہ کرتا ہے۔
 
 ### شرائط
 
-- Python 3.9 یا اس سے جدید
-- `mcp` Python پیکج (انسٹال کرنے کے لیے `pip install mcp` استعمال کریں)
+- Python 3.9 یا اس سے جدید ورژن
+- `mcp` Python پیکیج (انسٹال کرنے کے لیے `pip install mcp` استعمال کریں)
 
-### تنصیب اور ترتیب
+### انسٹالیشن اور سیٹ اپ
 
 1. ریپوزیٹری کلون کریں یا حل کی فائلیں ڈاؤن لوڈ کریں۔
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
    git clone https://github.com/microsoft/mcp-for-beginners
    ```
 
-1. **ایک ورچوئل ماحول بنائیں اور فعال کریں (تجویز کردہ):**
+1. **ایک ورچوئل ماحول بنائیں اور اسے فعال کریں (تجویز کردہ):**
 
    ```pwsh
    python -m venv venv
@@ -39,7 +39,7 @@ CO_OP_TRANSLATOR_METADATA:
    source venv/bin/activate      # On Linux/macOS
    ```
 
-1. **ضروری انحصار انسٹال کریں:**
+1. **ضروری انحصارات انسٹال کریں:**
 
    ```pwsh
    pip install "mcp[cli]"
@@ -64,7 +64,7 @@ CO_OP_TRANSLATOR_METADATA:
    python server.py
    ```
 
-3. سرور شروع ہوگا اور یہ دکھائے گا:
+3. سرور شروع ہو کر یہ دکھائے گا:
 
    ```
    Starting FastAPI server for classic HTTP streaming...
@@ -80,7 +80,7 @@ CO_OP_TRANSLATOR_METADATA:
    python client.py
    ```
 
-2. آپ کو سلسلہ وار پرنٹ شدہ اسٹریمنگ پیغامات دیکھنے کو ملیں گے:
+2. آپ کو سلسلہ وار اسٹریمنگ پیغامات نظر آئیں گے:
 
    ```text
    Running classic HTTP streaming client...
@@ -103,7 +103,7 @@ CO_OP_TRANSLATOR_METADATA:
    ```pwsh
    python server.py mcp
    ```
-3. سرور شروع ہوگا اور یہ دکھائے گا:
+3. سرور شروع ہو کر یہ دکھائے گا:
    ```
    Starting MCP server with streamable-http transport...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. آپ کو ہر آئٹم کی پروسیسنگ کے دوران حقیقی وقت میں پرنٹ شدہ اطلاعات نظر آئیں گی:
+2. آپ کو ہر آئٹم کی پروسیسنگ کے دوران حقیقی وقت میں اطلاعات نظر آئیں گی:
    ```
    Running MCP client...
    Starting client...
@@ -129,23 +129,23 @@ CO_OP_TRANSLATOR_METADATA:
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### اہم عملدرآمد کے اقدامات
+### اہم نفاذی اقدامات
 
-1. **FastMCP استعمال کرتے ہوئے MCP سرور بنائیں۔**
-2. **ایک ٹول تعریف کریں جو فہرست کو پروسیس کرے اور `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+1. **FastMCP کا استعمال کرتے ہوئے MCP سرور بنائیں۔**
+2. **ایک ٹول ڈیفائن کریں جو فہرست کو پروسیس کرے اور `ctx.info()` یا `ctx.log()` کے ذریعے اطلاعات بھیجے۔**
+3. **سرور کو `transport="streamable-http"` کے ساتھ چلائیں۔**
+4. **ایک کلائنٹ بنائیں جس میں پیغام ہینڈلر ہو تاکہ اطلاعات کو پہنچتے ہی دکھایا جا سکے۔**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### کوڈ کا جائزہ
+- سرور async فنکشنز اور MCP کانٹیکسٹ کا استعمال کرتے ہوئے پیش رفت کی اپڈیٹس بھیجتا ہے۔
+- کلائنٹ ایک async پیغام ہینڈلر نافذ کرتا ہے جو اطلاعات اور حتمی نتیجہ پرنٹ کرتا ہے۔
 
-### Tips & Troubleshooting
+### تجاویز اور مسائل کا حل
 
-- Use `async/await` استعمال کرتے ہوئے اطلاعات بھیجے تاکہ بلاکنگ سے بچا جا سکے۔**
-- مضبوطی کے لیے سرور اور کلائنٹ دونوں میں ہمیشہ استثناءات کو ہینڈل کریں۔
-- حقیقی وقت کی اپ ڈیٹس دیکھنے کے لیے متعدد کلائنٹس کے ساتھ ٹیسٹ کریں۔
-- اگر آپ کو غلطیاں ملیں تو اپنے Python ورژن اور تمام انحصار کی تنصیب کو چیک کریں۔
+- غیر بلاکنگ آپریشنز کے لیے `async/await` استعمال کریں۔
+- سرور اور کلائنٹ دونوں میں استثنائی حالات کو ہمیشہ ہینڈل کریں تاکہ مضبوطی برقرار رہے۔
+- حقیقی وقت کی اپڈیٹس دیکھنے کے لیے متعدد کلائنٹس کے ساتھ ٹیسٹ کریں۔
+- اگر آپ کو غلطیاں ملیں تو اپنے Python ورژن اور تمام انحصارات کی تنصیب چیک کریں۔
 
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا کمی بیشی ہو سکتی ہے۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**دستخطی دستبرداری**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:10:27+00:00",
+  "translation_date": "2025-07-13T23:51:57+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "mo"
 }
 -->
-# Model Context Protocol (MCP) 與 Azure AI Foundry 整合
+# Model Context Protocol (MCP) 與 Azure AI Foundry 的整合
 
-本指南示範如何將 Model Context Protocol (MCP) 伺服器與 Azure AI Foundry 代理整合，實現強大的工具協同與企業級 AI 能力。
+本指南示範如何將 Model Context Protocol (MCP) 伺服器與 Azure AI Foundry 代理整合，實現強大的工具協同與企業級 AI 功能。
 
 ## 介紹
 
 Model Context Protocol (MCP) 是一個開放標準，讓 AI 應用能安全地連接外部資料來源與工具。與 Azure AI Foundry 整合後，MCP 使代理能以標準化方式存取並互動各種外部服務、API 及資料來源。
 
-此整合結合 MCP 工具生態系的彈性與 Azure AI Foundry 穩健的代理框架，提供具高度客製化能力的企業級 AI 解決方案。
+此整合結合 MCP 工具生態系的彈性與 Azure AI Foundry 強大的代理框架，提供具高度客製化能力的企業級 AI 解決方案。
 
-**Note:** 若想在 Azure AI Foundry Agent Service 使用 MCP，目前僅支援以下區域：westus、westus2、uaenorth、southindia 及 switzerlandnorth
+**Note:** 若要在 Azure AI Foundry Agent Service 使用 MCP，目前僅支援以下區域：westus、westus2、uaenorth、southindia 及 switzerlandnorth
 
 ## 學習目標
 
@@ -26,32 +26,32 @@ Model Context Protocol (MCP) 是一個開放標準，讓 AI 應用能安全地�
 - 了解 Model Context Protocol 及其優勢
 - 設定 MCP 伺服器以供 Azure AI Foundry 代理使用
 - 建立並配置具 MCP 工具整合的代理
-- 使用真實 MCP 伺服器實作實用範例
-- 處理代理對話中的工具回應與引用
+- 使用真實 MCP 伺服器實作範例
+- 處理代理對話中的工具回應與引用來源
 
-## 前置條件
+## 先決條件
 
 開始前請確保您具備：
 
-- 擁有 Azure 訂閱並可使用 AI Foundry
+- 具 AI Foundry 存取權的 Azure 訂閱
 - Python 3.10 以上版本
 - 已安裝並設定 Azure CLI
-- 具備建立 AI 資源的適當權限
+- 建立 AI 資源的適當權限
 
 ## 什麼是 Model Context Protocol (MCP)？
 
 Model Context Protocol 是 AI 應用連接外部資料來源與工具的標準化方式。主要優點包括：
 
-- **標準化整合**：不同工具與服務間具一致介面
-- **安全性**：安全的身份驗證與授權機制
-- **彈性**：支援多種資料來源、API 與自訂工具
-- **擴充性**：輕鬆新增新功能與整合
+- **標準化整合**：不同工具與服務間一致的介面
+- **安全性**：安全的驗證與授權機制
+- **彈性**：支援多種資料來源、API 及自訂工具
+- **可擴充性**：輕鬆新增功能與整合
 
 ## 在 Azure AI Foundry 設定 MCP
 
 ### 1. 環境設定
 
-首先，設定環境變數與相依套件：
+首先，設定您的環境變數與相依套件：
 
 ```python
 import os
@@ -105,7 +105,7 @@ mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # MCP 伺服器的識別名稱
     "server_url": "https://api.example.com/mcp", # MCP 伺服器端點
-    "require_approval": "never"                 # 核准政策：目前僅支援 "never"
+    "require_approval": "never"                 # 審核政策：目前僅支援 "never"
 }
 ```
 
@@ -150,7 +150,7 @@ def create_mcp_agent_example():
         thread = project_client.agents.threads.create()
         print(f"Created thread, thread ID: {thread.id}")
 
-        # 傳送訊息
+        # 發送訊息
         message = project_client.agents.messages.create(
             thread_id=thread.id, 
             role="user", 
@@ -161,7 +161,7 @@ def create_mcp_agent_example():
         # 執行代理
         run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
         
-        # 輪詢完成狀態
+        # 輪詢直到完成
         while run.status in ["queued", "in_progress", "requires_action"]:
             time.sleep(1)
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
@@ -192,30 +192,30 @@ if __name__ == "__main__":
 ## 常見問題排解
 
 ### 1. 連線問題
-- 確認 MCP 伺服器 URL 可連線
-- 檢查身份驗證憑證
+- 確認 MCP 伺服器 URL 可存取
+- 檢查驗證憑證
 - 確保網路連線正常
 
 ### 2. 工具呼叫失敗
-- 檢視工具參數與格式是否正確
+- 檢查工具參數與格式
 - 確認伺服器特定需求
 - 實作適當的錯誤處理
 
 ### 3. 效能問題
 - 優化工具呼叫頻率
-- 適當實作快取機制
+- 適當實施快取機制
 - 監控伺服器回應時間
 
 ## 後續步驟
 
 進一步強化您的 MCP 整合：
 
-1. **探索自訂 MCP 伺服器**：為專有資料來源打造專屬 MCP 伺服器
-2. **實作進階安全性**：加入 OAuth2 或自訂認證機制
-3. **監控與分析**：實作工具使用的日誌與監控
+1. **探索自訂 MCP 伺服器**：為專有資料來源打造自有 MCP 伺服器
+2. **實作進階安全性**：加入 OAuth2 或自訂驗證機制
+3. **監控與分析**：實施工具使用的日誌與監控
 4. **擴展解決方案**：考慮負載平衡與分散式 MCP 伺服器架構
 
-## 附加資源
+## 其他資源
 
 - [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-foundry/)
 - [Model Context Protocol 範例](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
@@ -224,13 +224,13 @@ if __name__ == "__main__":
 
 ## 支援
 
-如需額外支援與問題協助：
-- 查看 [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-foundry/)
-- 查閱 [MCP 社群資源](https://modelcontextprotocol.io/)
+如需更多支援與問題解答：
+- 查閱 [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-foundry/)
+- 參考 [MCP 社群資源](https://modelcontextprotocol.io/)
 
 ## 下一步
 
 - [6. 社群貢獻](../../06-CommunityContributions/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議使用專業人工翻譯。因使用本翻譯所產生之任何誤解或誤釋，本公司概不負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

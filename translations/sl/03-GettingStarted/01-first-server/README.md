@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T23:17:14+00:00",
+  "translation_date": "2025-07-13T17:42:02+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sl"
 }
@@ -21,7 +21,7 @@ Dodajte orodje in vir z naslednjo kodo:
 
 ### -6 Končna koda
 
-Dodajmo zadnjo kodo, ki jo potrebujemo, da se strežnik lahko zažene:
+Dodajmo še zadnjo kodo, ki jo potrebujemo, da se strežnik lahko zažene:
 
 ### -7- Preizkusi strežnik
 
@@ -36,7 +36,7 @@ Videti bi morali naslednji uporabniški vmesnik:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sl.png)
 
-1. Povežite se s strežnikom tako, da izberete gumb Connect
+1. Povežite se s strežnikom s klikom na gumb Connect
   Ko se povežete s strežnikom, bi morali videti naslednje:
 
   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.sl.png)
@@ -79,10 +79,10 @@ MCP ponuja uradne SDK-je za več programskih jezikov:
 
 Ustvarite preprost MCP strežnik z orodjem po vaši izbiri:
 
-1. Implementirajte orodje v vašem priljubljenem jeziku (.NET, Java, Python ali JavaScript).
+1. Implementirajte orodje v želenem jeziku (.NET, Java, Python ali JavaScript).
 2. Določite vhodne parametre in vrednosti, ki jih orodje vrača.
-3. Zaženite orodje inspector, da preverite, ali strežnik deluje kot je predvideno.
-4. Preizkusite implementacijo z različnimi vnosi.
+3. Zaženite orodje inspector, da preverite, ali strežnik deluje pravilno.
+4. Preizkusite implementacijo z različnimi vhodnimi podatki.
 
 ## Rešitev
 
@@ -99,4 +99,4 @@ Ustvarite preprost MCP strežnik z orodjem po vaši izbiri:
 Naslednje: [Začetek z MCP odjemalci](../02-client/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

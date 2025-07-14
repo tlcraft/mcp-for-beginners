@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:03:20+00:00",
+  "translation_date": "2025-07-13T21:21:26+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "ms"
 }
 -->
-# Running this sample
+# Menjalankan contoh ini
 
-Here's how to run the classic HTTP streaming server and client, as well as the MCP streaming server and client using Python.
+Berikut adalah cara untuk menjalankan server dan klien streaming HTTP klasik, serta server dan klien streaming MCP menggunakan Python.
 
-### Overview
+### Gambaran Keseluruhan
 
-- You will set up an MCP server that streams progress notifications to the client as it processes items.
-- The client will display each notification in real time.
-- This guide covers prerequisites, setup, running, and troubleshooting.
+- Anda akan menyediakan server MCP yang menstrim notifikasi kemajuan kepada klien semasa ia memproses item.
+- Klien akan memaparkan setiap notifikasi secara masa nyata.
+- Panduan ini merangkumi keperluan, persediaan, cara menjalankan, dan penyelesaian masalah.
 
-### Prerequisites
+### Keperluan
 
-- Python 3.9 or newer
-- The `mcp` Python package (install with `pip install mcp`)
+- Python 3.9 atau lebih baru
+- Pakej Python `mcp` (pasang dengan `pip install mcp`)
 
-### Installation & Setup
+### Pemasangan & Persediaan
 
-1. Clone the repository or download the solution files.
+1. Klon repositori atau muat turun fail penyelesaian.
 
    ```pwsh
    git clone https://github.com/microsoft/mcp-for-beginners
    ```
 
-1. **Create and activate a virtual environment (recommended):**
+1. **Buat dan aktifkan persekitaran maya (disyorkan):**
 
    ```pwsh
    python -m venv venv
@@ -39,48 +39,48 @@ Here's how to run the classic HTTP streaming server and client, as well as the M
    source venv/bin/activate      # On Linux/macOS
    ```
 
-1. **Install required dependencies:**
+1. **Pasang kebergantungan yang diperlukan:**
 
    ```pwsh
    pip install "mcp[cli]"
    ```
 
-### Files
+### Fail
 
 - **Server:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
-- **Client:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
+- **Klien:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
 
-### Running the Classic HTTP Streaming Server
+### Menjalankan Server Streaming HTTP Klasik
 
-1. Navigate to the solution directory:
+1. Pergi ke direktori penyelesaian:
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
 
-2. Start the classic HTTP streaming server:
+2. Mulakan server streaming HTTP klasik:
 
    ```pwsh
    python server.py
    ```
 
-3. The server will start and display:
+3. Server akan bermula dan memaparkan:
 
    ```
    Starting FastAPI server for classic HTTP streaming...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Running the Classic HTTP Streaming Client
+### Menjalankan Klien Streaming HTTP Klasik
 
-1. Open a new terminal (activate the same virtual environment and directory):
+1. Buka terminal baru (aktifkan persekitaran maya dan direktori yang sama):
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py
    ```
 
-2. You should see streamed messages printed sequentially:
+2. Anda akan melihat mesej yang distrim dicetak secara berurutan:
 
    ```text
    Running classic HTTP streaming client...
@@ -93,30 +93,30 @@ Here's how to run the classic HTTP streaming server and client, as well as the M
    --- Stream Ended ---
    ```
 
-### Running the MCP Streaming Server
+### Menjalankan Server Streaming MCP
 
-1. Navigate to the solution directory:
+1. Pergi ke direktori penyelesaian:
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
-2. Start the MCP server with the streamable-http transport:
+2. Mulakan server MCP dengan pengangkutan streamable-http:
    ```pwsh
    python server.py mcp
    ```
-3. The server will start and display:
+3. Server akan bermula dan memaparkan:
    ```
    Starting MCP server with streamable-http transport...
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Running the MCP Streaming Client
+### Menjalankan Klien Streaming MCP
 
-1. Open a new terminal (activate the same virtual environment and directory):
+1. Buka terminal baru (aktifkan persekitaran maya dan direktori yang sama):
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. You should see notifications printed in real time as the server processes each item:
+2. Anda akan melihat notifikasi dicetak secara masa nyata semasa server memproses setiap item:
    ```
    Running MCP client...
    Starting client...
@@ -129,23 +129,23 @@ Here's how to run the classic HTTP streaming server and client, as well as the M
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### Key Implementation Steps
+### Langkah Utama Pelaksanaan
 
-1. **Create the MCP server using FastMCP.**
-2. **Define a tool that processes a list and sends notifications using `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+1. **Buat server MCP menggunakan FastMCP.**
+2. **Tentukan alat yang memproses senarai dan menghantar notifikasi menggunakan `ctx.info()` atau `ctx.log()`.**
+3. **Jalankan server dengan `transport="streamable-http"`.**
+4. **Laksanakan klien dengan pengendali mesej untuk memaparkan notifikasi sebaik tiba.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### Penjelasan Kod
+- Server menggunakan fungsi async dan konteks MCP untuk menghantar kemas kini kemajuan.
+- Klien melaksanakan pengendali mesej async untuk mencetak notifikasi dan hasil akhir.
 
-### Tips & Troubleshooting
+### Petua & Penyelesaian Masalah
 
-- Use `async/await` for non-blocking operations.
-- Always handle exceptions in both server and client for robustness.
-- Test with multiple clients to observe real-time updates.
-- If you encounter errors, check your Python version and ensure all dependencies are installed.
+- Gunakan `async/await` untuk operasi tanpa sekatan.
+- Sentiasa tangani pengecualian di kedua-dua server dan klien untuk ketahanan.
+- Uji dengan pelbagai klien untuk melihat kemas kini masa nyata.
+- Jika menghadapi ralat, semak versi Python anda dan pastikan semua kebergantungan dipasang.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T15:25:40+00:00",
+  "translation_date": "2025-07-13T19:48:01+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "es"
 }
@@ -55,7 +55,7 @@ Para ejecutar el inspector, primero debes tener un servidor SSE corriendo, así 
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Ejecutar el inspector es igual en todos los entornos de ejecución. Observa cómo en lugar de pasar una ruta a nuestro servidor y un comando para iniciar el servidor, pasamos la URL donde el servidor está corriendo y también especificamos la ruta `/sse`.
+Ejecutar el inspector es igual en todos los entornos. Observa cómo en lugar de pasar una ruta a nuestro servidor y un comando para iniciar el servidor, pasamos la URL donde el servidor está corriendo y también especificamos la ruta `/sse`.
 
 ### -2- Probando la herramienta
 
@@ -98,4 +98,4 @@ Los puntos clave de este capítulo son los siguientes:
 - Siguiente: [HTTP Streaming con MCP (HTTP transmitible)](../06-http-streaming/README.md)
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

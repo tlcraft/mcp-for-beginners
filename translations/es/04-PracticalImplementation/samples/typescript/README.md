@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f7a8ffd07682d554929968dfc6ae2ecb",
-  "translation_date": "2025-05-16T15:37:11+00:00",
+  "translation_date": "2025-07-13T23:36:06+00:00",
   "source_file": "04-PracticalImplementation/samples/typescript/README.md",
   "language_code": "es"
 }
 -->
 # Ejemplo
 
-Este es un ejemplo de Typescript para un servidor MCP
+Este es un ejemplo en Typescript para un servidor MCP
 
 Aquí tienes un ejemplo de creación de herramienta:
 
@@ -74,7 +74,7 @@ async ({ model, prompt, options }) => {
 );
 ```
 
-## Instalar
+## Instalación
 
 Ejecuta el siguiente comando:
 
@@ -82,11 +82,11 @@ Ejecuta el siguiente comando:
 npm install
 ```
 
-## Ejecutar
+## Ejecución
 
 ```bash
 npm start
 ```
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por un humano. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

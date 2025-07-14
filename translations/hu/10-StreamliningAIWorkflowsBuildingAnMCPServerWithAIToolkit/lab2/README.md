@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a22b7dd11cd7690f99f9195877cafdc3",
-  "translation_date": "2025-06-10T05:56:31+00:00",
+  "translation_date": "2025-07-14T07:59:35+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab2/README.md",
   "language_code": "hu"
 }
@@ -18,16 +18,16 @@ CO_OP_TRANSLATOR_METADATA:
 A modul végére képes leszel:
 - ✅ Megérteni a Model Context Protocol (MCP) felépítését és előnyeit
 - ✅ Felfedezni a Microsoft MCP szerver ökoszisztémáját
-- ✅ Integrálni az MCP szervereket az AI Toolkit Agent Builderrel
-- ✅ Használható böngésző-automatizálási ügynököt építeni Playwright MCP-vel
-- ✅ Beállítani és tesztelni az MCP eszközöket az ügynökeidben
+- ✅ Integrálni MCP szervereket az AI Toolkit Agent Builderrel
+- ✅ Működő böngésző-automatizálási ügynököt építeni Playwright MCP segítségével
+- ✅ Konfigurálni és tesztelni az MCP eszközöket az ügynökeidben
 - ✅ Exportálni és éles környezetbe telepíteni MCP-alapú ügynököket
 
 ## 🎯 Az 1. modulra építve
 
-Az 1. modulban elsajátítottuk az AI Toolkit alapjait és elkészítettük első Python ügynökünket. Most **felpörgetjük** az ügynökeidet azzal, hogy a forradalmi **Model Context Protocol (MCP)** segítségével külső eszközökhöz és szolgáltatásokhoz kapcsolódnak.
+Az 1. modulban elsajátítottuk az AI Toolkit alapjait és elkészítettük az első Python ügynökünket. Most pedig **felturbózzuk** az ügynökeidet azzal, hogy a forradalmi **Model Context Protocol (MCP)** segítségével külső eszközökhöz és szolgáltatásokhoz kapcsolódnak.
 
-Gondolj erre úgy, mintha egy egyszerű számológépről egy teljes számítógépre váltanál – az AI ügynökeid képesek lesznek:
+Gondolj erre úgy, mintha egy egyszerű számológépről egy teljes értékű számítógépre váltanál – az AI ügynökeid képesek lesznek:
 - 🌐 Böngészni és interakcióba lépni weboldalakkal
 - 📁 Fájlokat elérni és kezelni
 - 🔧 Vállalati rendszerekkel integrálódni
@@ -37,25 +37,25 @@ Gondolj erre úgy, mintha egy egyszerű számológépről egy teljes számítóg
 
 ### 🔍 Mi az MCP?
 
-A Model Context Protocol (MCP) az AI alkalmazások **"USB-C csatlakozója"** – egy forradalmi, nyílt szabvány, amely összeköti a nagy nyelvi modelleket (LLM-eket) külső eszközökkel, adatforrásokkal és szolgáltatásokkal. Ahogy az USB-C megszüntette a kábelkavalkádot egy univerzális csatlakozóval, úgy az MCP egyszerűsíti az AI integrációkat egy egységes protokollal.
+A Model Context Protocol (MCP) az AI alkalmazások **"USB-C-je"** – egy forradalmi, nyílt szabvány, amely összeköti a Nagy Nyelvi Modelleket (LLM-eket) külső eszközökkel, adatforrásokkal és szolgáltatásokkal. Ahogy az USB-C megszüntette a kábelrengeteget egy univerzális csatlakozóval, úgy az MCP is leegyszerűsíti az AI integrációt egy egységes protokollal.
 
 ### 🎯 Az MCP által megoldott probléma
 
 **MCP előtt:**
 - 🔧 Egyedi integrációk minden eszközhöz
 - 🔄 Szállítófüggőség zárt megoldásokkal  
-- 🔒 Biztonsági kockázatok ad hoc kapcsolatokból
-- ⏱️ Hónapokig tartó fejlesztés alap integrációkra
+- 🔒 Biztonsági kockázatok ad-hoc kapcsolatok miatt
+- ⏱️ Hónapokig tartó fejlesztés alap integrációkhoz
 
 **MCP-vel:**
-- ⚡ Plug-and-play eszközintegráció
+- ⚡ Plug-and-play eszköz integráció
 - 🔄 Szállítófüggetlen architektúra
-- 🛡️ Beépített biztonsági gyakorlatok
-- 🚀 Új funkciók percek alatt hozzáadhatók
+- 🛡️ Beépített biztonsági legjobb gyakorlatok
+- 🚀 Percek alatt új képességek hozzáadása
 
-### 🏗️ MCP architektúra részletesen
+### 🏗️ Az MCP architektúra mélyebb megértése
 
-Az MCP **kliens-szerver architektúrát** követ, amely egy biztonságos, skálázható ökoszisztémát hoz létre:
+Az MCP egy **kliens-szerver architektúrát** követ, amely biztonságos, skálázható ökoszisztémát hoz létre:
 
 ```mermaid
 graph TB
@@ -78,195 +78,193 @@ graph TB
 | **MCP Hosts** | MCP szolgáltatásokat fogyasztó alkalmazások | Claude Desktop, VS Code, AI Toolkit |
 | **MCP Clients** | Protokoll kezelők (1:1 a szerverekkel) | Beépítve a host alkalmazásokba |
 | **MCP Servers** | Képességeket tesznek elérhetővé szabványos protokollon keresztül | Playwright, Files, Azure, GitHub |
-| **Transport Layer** | Kommunikációs módszerek | stdio, HTTP, WebSockets |
+| **Transport Layer** | Kommunikációs módok | stdio, HTTP, WebSockets |
 
-## 🏢 Microsoft MCP szerver ökoszisztéma
+## 🏢 A Microsoft MCP szerver ökoszisztémája
 
-A Microsoft vezeti az MCP ökoszisztémát egy átfogó vállalati szintű szervercsomaggal, amelyek valós üzleti igényeket fednek le.
+A Microsoft vezeti az MCP ökoszisztémát egy átfogó, vállalati szintű szervercsomaggal, amely valós üzleti igényeket fed le.
 
 ### 🌟 Kiemelt Microsoft MCP szerverek
 
 #### 1. ☁️ Azure MCP Server
 **🔗 Repository**: [azure/azure-mcp](https://github.com/azure/azure-mcp)  
-**🎯 Cél**: Átfogó Azure erőforrás-menedzsment AI integrációval
+**🎯 Cél:** Átfogó Azure erőforrás-kezelés AI integrációval
 
-**✨ Főbb funkciók:**
-- Deklaratív infrastruktúra-telepítés
+**✨ Főbb jellemzők:**
+- Deklaratív infrastruktúra-provisionálás
 - Valós idejű erőforrás-monitorozás
-- Költségoptimalizálási ajánlások
+- Költségoptimalizációs ajánlások
 - Biztonsági megfelelőség ellenőrzése
 
 **🚀 Használati esetek:**
 - Infrastructure-as-Code AI támogatással
 - Automatikus erőforrás skálázás
-- Felhő költségoptimalizálás
+- Felhő költségoptimalizáció
 - DevOps munkafolyamat automatizálás
 
 #### 2. 📊 Microsoft Dataverse MCP
 **📚 Dokumentáció**: [Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)  
-**🎯 Cél**: Természetes nyelvű interfész üzleti adatokhoz
+**🎯 Cél:** Természetes nyelvű felület üzleti adatokhoz
 
-**✨ Főbb funkciók:**
+**✨ Főbb jellemzők:**
 - Természetes nyelvű adatbázis lekérdezések
-- Üzleti kontextus értelmezése
+- Üzleti kontextus megértése
 - Egyedi prompt sablonok
 - Vállalati adatkezelés
 
 **🚀 Használati esetek:**
 - Üzleti intelligencia riportok
 - Ügyféladat elemzés
-- Értékesítési csővezeték áttekintés
+- Értékesítési csővezeték elemzés
 - Megfelelőségi adatlekérdezések
 
 #### 3. 🌐 Playwright MCP Server
 **🔗 Repository**: [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)  
-**🎯 Cél**: Böngésző-automatizálás és webes interakciók
+**🎯 Cél:** Böngésző automatizálás és webes interakciók
 
-**✨ Főbb funkciók:**
+**✨ Főbb jellemzők:**
 - Több böngészős automatizálás (Chrome, Firefox, Safari)
 - Intelligens elemfelismerés
 - Képernyőkép és PDF generálás
 - Hálózati forgalom monitorozás
 
 **🚀 Használati esetek:**
-- Automatizált tesztelési folyamatok
-- Weboldal adatkinyerés
+- Automatizált tesztelési munkafolyamatok
+- Web scraping és adatkinyerés
 - UI/UX monitorozás
-- Versenytárselemzés automatizálása
+- Versenytárs elemzés automatizálás
 
 #### 4. 📁 Files MCP Server
 **🔗 Repository**: [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)  
-**🎯 Cél**: Intelligens fájlrendszer műveletek
+**🎯 Cél:** Intelligens fájlrendszer műveletek
 
-**✨ Főbb funkciók:**
+**✨ Főbb jellemzők:**
 - Deklaratív fájlkezelés
 - Tartalomszinkronizáció
 - Verziókezelés integráció
 - Metaadat kinyerés
 
 **🚀 Használati esetek:**
-- Dokumentáció menedzsment
-- Kód tárház szervezés
+- Dokumentáció kezelése
+- Kód tárház szervezése
 - Tartalom publikálási munkafolyamatok
-- Adatfeldolgozó pipeline-ok fájlkezelése
+- Adatcső fájlkezelés
 
 #### 5. 📝 MarkItDown MCP Server
 **🔗 Repository**: [microsoft/markitdown](https://github.com/microsoft/markitdown)  
-**🎯 Cél**: Fejlett Markdown feldolgozás és manipuláció
+**🎯 Cél:** Fejlett Markdown feldolgozás és manipuláció
 
-**✨ Főbb funkciók:**
+**✨ Főbb jellemzők:**
 - Gazdag Markdown elemzés
 - Formátum konverzió (MD ↔ HTML ↔ PDF)
-- Tartalomszerkezet elemzés
+- Tartalmi struktúra elemzés
 - Sablon feldolgozás
 
 **🚀 Használati esetek:**
-- Műszaki dokumentáció munkafolyamatok
+- Műszaki dokumentációs munkafolyamatok
 - Tartalomkezelő rendszerek
 - Jelentéskészítés
 - Tudásbázis automatizálás
 
 #### 6. 📈 Clarity MCP Server
-**📦 Package**: [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)  
-**🎯 Cél**: Webanalitika és felhasználói viselkedés elemzés
+**📦 Csomag**: [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)  
+**🎯 Cél:** Webanalitika és felhasználói viselkedés elemzés
 
-**✨ Főbb funkciók:**
-- Hőtérképes adat elemzés
+**✨ Főbb jellemzők:**
+- Hőtérkép adat elemzés
 - Felhasználói munkamenet felvételek
 - Teljesítménymutatók
 - Konverziós tölcsér elemzés
 
 **🚀 Használati esetek:**
-- Weboldal optimalizálás
+- Weboldal optimalizáció
 - Felhasználói élmény kutatás
 - A/B teszt elemzés
 - Üzleti intelligencia dashboardok
 
 ### 🌍 Közösségi ökoszisztéma
 
-A Microsoft szerverein túl az MCP ökoszisztéma magában foglalja:
-- **🐙 GitHub MCP**: Repository menedzsment és kód elemzés
+A Microsoft szerverein túl az MCP ökoszisztéma tartalmazza:
+- **🐙 GitHub MCP**: Tárházkezelés és kódelemzés
 - **🗄️ Adatbázis MCP-k**: PostgreSQL, MySQL, MongoDB integrációk
 - **☁️ Felhőszolgáltató MCP-k**: AWS, GCP, Digital Ocean eszközök
 - **📧 Kommunikációs MCP-k**: Slack, Teams, Email integrációk
 
-## 🛠️ Gyakorlati labor: Böngésző-automatizálási ügynök építése
+## 🛠️ Gyakorlati labor: Böngésző automatizálási ügynök építése
 
-**🎯 Projekt célja**: Intelligens böngésző-automatizálási ügynök létrehozása Playwright MCP szerverrel, amely képes weboldalak navigálására, információkinyerésre és összetett webes műveletek végrehajtására.
+**🎯 Projekt cél:** Készíts egy intelligens böngésző automatizálási ügynököt Playwright MCP szerverrel, amely képes weboldalakat böngészni, információkat kinyerni és összetett webes műveleteket végrehajtani.
 
 ### 🚀 1. fázis: Ügynök alapjainak létrehozása
 
 #### 1. lépés: Ügynök inicializálása
 1. **Nyisd meg az AI Toolkit Agent Buildert**
-2. **Hozz létre új ügynököt** a következő beállításokkal:
+2. **Hozz létre új ügynököt** az alábbi beállításokkal:
    - **Név**: `BrowserAgent`
-   - **Model**: Choose GPT-4o 
+   - **Modell**: Válaszd a GPT-4o modellt
 
 ![BrowserAgent](../../../../translated_images/BrowserAgent.09c1adde5e136573b64ab1baecd830049830e295eac66cb18bebb85fb386e00a.hu.png)
 
+### 🔧 2. fázis: MCP integrációs munkafolyamat
 
-### 🔧 Phase 2: MCP Integration Workflow
-
-#### Step 3: Add MCP Server Integration
-1. **Navigate to Tools Section** in Agent Builder
-2. **Click "Add Tool"** to open the integration menu
-3. **Select "MCP Server"** from available options
+#### 3. lépés: MCP szerver integráció hozzáadása
+1. **Navigálj az Eszközök szekcióba** az Agent Builderben
+2. **Kattints az "Add Tool" gombra**, hogy megnyisd az integrációs menüt
+3. **Válaszd az "MCP Server" opciót** a listából
 
 ![AddMCP](../../../../translated_images/AddMCP.afe3308ac20aa94469a5717b632d77b2197b9838a438b05d39aeb2db3ec47ef1.hu.png)
 
-**🔍 Understanding Tool Types:**
-- **Built-in Tools**: Pre-configured AI Toolkit functions
-- **MCP Servers**: External service integrations
-- **Custom APIs**: Your own service endpoints
-- **Function Calling**: Direct model function access
+**🔍 Az eszköz típusok megértése:**
+- **Beépített eszközök**: Előre konfigurált AI Toolkit funkciók
+- **MCP szerverek**: Külső szolgáltatás integrációk
+- **Egyedi API-k**: Saját szolgáltatás végpontok
+- **Függvényhívás**: Közvetlen modell függvény elérés
 
-#### Step 4: MCP Server Selection
-1. **Choose "MCP Server"** option to proceed
+#### 4. lépés: MCP szerver kiválasztása
+1. **Válaszd az "MCP Server" opciót a folytatáshoz**
 ![AddMCPServer](../../../../translated_images/AddMCPServer.69b911ccef872cbd0d0c0c2e6a00806916e1673e543b902a23dee23e6ff54b4c.hu.png)
 
-2. **Browse MCP Catalog** to explore available integrations
+2. **Böngészd az MCP katalógust** a rendelkezésre álló integrációk megtekintéséhez
 ![MCPCatalog](../../../../translated_images/MCPCatalog.a817d053145699006264f5a475f2b48fbd744e43633f656b6453c15a09ba5130.hu.png)
 
+### 🎮 3. fázis: Playwright MCP konfiguráció
 
-### 🎮 Phase 3: Playwright MCP Configuration
-
-#### Step 5: Select and Configure Playwright
-1. **Click "Use Featured MCP Servers"** to access Microsoft's verified servers
-2. **Select "Playwright"** from the featured list
-3. **Accept Default MCP ID** or customize for your environment
+#### 5. lépés: Playwright kiválasztása és konfigurálása
+1. **Kattints a "Use Featured MCP Servers" gombra**, hogy elérd a Microsoft által hitelesített szervereket
+2. **Válaszd ki a "Playwright" szervert** a listából
+3. **Fogadd el az alapértelmezett MCP ID-t**, vagy testreszabhatod a környezetedhez
 
 ![MCPID](../../../../translated_images/MCPID.67d446052979e819c945ff7b6430196ef587f5217daadd3ca52fa9659c1245c9.hu.png)
 
-#### Step 6: Enable Playwright Capabilities
-**🔑 Critical Step**: Select **ALL** available Playwright methods for maximum functionality
+#### 6. lépés: Playwright képességek engedélyezése
+**🔑 Kritikus lépés**: Válaszd ki az összes elérhető Playwright metódust a maximális funkcionalitásért
 
 ![Tools](../../../../translated_images/Tools.3ea23c447b4d9feccbd7101e6dcf9e27cb0e5273f351995fde62c5abf9a78b4c.hu.png)
 
-**🛠️ Essential Playwright Tools:**
-- **Navigation**: `goto`, `goBack`, `goForward`, `reload`
-- **Interaction**: `click`, `fill`, `press`, `hover`, `drag`
-- **Extraction**: `textContent`, `innerHTML`, `getAttribute`
-- **Validation**: `isVisible`, `isEnabled`, `waitForSelector`
-- **Capture**: `screenshot`, `pdf`, `video`
-- **Network**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
+**🛠️ Alapvető Playwright eszközök:**
+- **Navigáció**: `goto`, `goBack`, `goForward`, `reload`
+- **Interakció**: `click`, `fill`, `press`, `hover`, `drag`
+- **Kinyerés**: `textContent`, `innerHTML`, `getAttribute`
+- **Ellenőrzés**: `isVisible`, `isEnabled`, `waitForSelector`
+- **Rögzítés**: `screenshot`, `pdf`, `video`
+- **Hálózat**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
 
 #### 7. lépés: Integráció sikerességének ellenőrzése
-**✅ Sikert jelző jelek:**
+**✅ Siker jelei:**
 - Minden eszköz megjelenik az Agent Builder felületén
-- Nincs hibaüzenet az integrációs panelen
+- Nincsenek hibák az integrációs panelen
 - A Playwright szerver státusza "Connected"
 
 ![AgentTools](../../../../translated_images/AgentTools.053cfb96a17e02199dcc6563010d2b324d4fc3ebdd24889657a6950647a52f63.hu.png)
 
 **🔧 Gyakori problémák elhárítása:**
 - **Kapcsolódási hiba**: Ellenőrizd az internetkapcsolatot és a tűzfal beállításokat
-- **Hiányzó eszközök**: Győződj meg róla, hogy minden képesség ki lett választva a beállítás során
+- **Hiányzó eszközök**: Győződj meg róla, hogy minden képességet kiválasztottál a beállítás során
 - **Engedélyezési hibák**: Ellenőrizd, hogy a VS Code rendelkezik a szükséges rendszerengedélyekkel
 
 ### 🎯 4. fázis: Fejlett prompt tervezés
 
-#### 8. lépés: Intelligens rendszer promptok megtervezése
-Készíts kifinomult promptokat, amelyek teljes mértékben kihasználják a Playwright képességeit:
+#### 8. lépés: Intelligens rendszer promptok tervezése
+Készíts kifinomult promptokat, amelyek kihasználják a Playwright teljes képességét:
 
 ```markdown
 # Web Automation Expert System Prompt
@@ -307,9 +305,9 @@ You are an advanced web automation specialist with deep expertise in browser aut
 ```
 
 #### 9. lépés: Dinamikus felhasználói promptok létrehozása
-Tervezd meg azokat a promptokat, amelyek különféle képességeket demonstrálnak:
+Tervezd meg azokat a promptokat, amelyek különböző képességeket demonstrálnak:
 
-**🌐 Webes elemzés példa:**
+**🌐 Web elemzés példa:**
 ```markdown
 Navigate to github.com/kinfey and provide a comprehensive analysis including:
 1. Repository structure and organization
@@ -326,56 +324,46 @@ Include screenshots at key steps and provide actionable insights.
 
 ### 🚀 5. fázis: Végrehajtás és tesztelés
 
-#### 10. lépés: Futtasd az első automatizálást
+#### 10. lépés: Az első automatizálás futtatása
 1. **Kattints a "Run" gombra**, hogy elindítsd az automatizálási folyamatot
-2. **Kövesd nyomon valós időben a futást**:
-   - A Chrome böngésző automatikusan elindul
-   - Az ügynök navigál a cél weboldalra
-   - Képernyőképek készülnek minden fontos lépésnél
+2. **Kövesd valós időben a végrehajtást**:
+   - Automatikusan elindul a Chrome böngésző
+   - Az ügynök navigál a céloldalra
+   - Képernyőképek készülnek minden fontos lépésről
    - Az elemzési eredmények valós időben érkeznek
 
 ![Browser](../../../../translated_images/Browser.ec011d0bd64d0d112c8a29bd8cc44c76d0bbfd0b019cb2983ef679328435ce5d.hu.png)
 
-#### 11. lépés: Eredmények és betekintések elemzése
-Tekintsd át az átfogó elemzést az Agent Builder felületén:
+#### 11. lépés: Eredmények és elemzések áttekintése
+Nézd át az átfogó elemzést az Agent Builder felületén:
 
 ![Result](../../../../translated_images/Result.8638f2b6703e9ea6d58d4e4475e39456b6a51d4c787f9bf481bae694d370a69a.hu.png)
 
-### 🌟 6. fázis: Fejlett képességek és élesítés
+### 🌟 6. fázis: Fejlett képességek és telepítés
 
 #### 12. lépés: Exportálás és éles környezetbe telepítés
-Az Agent Builder több telepítési lehetőséget támogat:
+Az Agent Builder többféle telepítési lehetőséget támogat:
 
 ![Code](../../../../translated_images/Code.d9eeeead0b96db0ca19c5b10ad64cfea8c1d0d1736584262970a4d43e1403d13.hu.png)
 
-## 🎓 2. modul összefoglaló és továbblépés
+## 🎓 2. modul összefoglaló és további lépések
 
-### 🏆 Elért eredmény: MCP integráció mesterfokon
+### 🏆 Elért eredmény: MCP integráció mesterszintű ismerete
 
 **✅ Megszerzett készségek:**
 - [ ] MCP architektúra és előnyök megértése
 - [ ] A Microsoft MCP szerver ökoszisztéma áttekintése
-- [ ] Playwright MCP integrálása az AI Toolkittel
-- [ ] Fejlett böngésző-automatizálási ügynökök építése
-- [ ] Fejlett prompt tervezés webes automatizáláshoz
+- [ ] Playwright MCP integrálása az AI Toolkitbe
+- [ ] Fejlett böngésző automatizálási ügynökök építése
+- [ ] Fejlett prompt tervezés web automatizáláshoz
 
 ### 📚 További források
 
 - **🔗 MCP specifikáció**: [Hivatalos protokoll dokumentáció](https://modelcontextprotocol.io/)
-- **🛠️ Playwright API**: [Teljes metódus referenciák](https://playwright.dev/docs/api/class-playwright)
+- **🛠️ Playwright API**: [Teljes metódus referencia](https://playwright.dev/docs/api/class-playwright)
 - **🏢 Microsoft MCP szerverek**: [Vállalati integrációs útmutató](https://github.com/microsoft/mcp-servers)
-- **🌍 Közösségi példák**: [MCP szerver galéria](https://github.com/modelcontextprotocol/servers)
+- **🌍 K
+- Építsünk fel egy Weather MCP szervert a semmiből
 
-**🎉 Gratulálunk!** Sikeresen elsajátítottad az MCP integrációt, és most már képes vagy éles környezetbe szánt AI ügynököket építeni külső eszközökkel!
-
-### 🔜 Folytatás a következő modullal
-
-Készen állsz, hogy még magasabb szintre emeld MCP tudásod? Folytasd a **[3. modul: Fejlett MCP fejlesztés AI Toolkittel](../lab3/README.md)** anyaggal, ahol megtanulhatod:
-- Saját egyedi MCP szerverek létrehozását
-- Az új MCP Python SDK konfigurálását és használatát
-- MCP Inspector beállítását hibakereséshez
-- Fejlett MCP szerver fejlesztési munkafolyamatok elsajátítását
-- Egy időjárás MCP szerver építését az alapoktól
-
-**Felelősségkizárás**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

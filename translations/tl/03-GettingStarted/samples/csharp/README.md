@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T06:05:11+00:00",
+  "translation_date": "2025-07-13T22:18:04+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "tl"
 }
 -->
 # Basic Calculator MCP Service
 
-Ang serbisyong ito ay nagbibigay ng mga pangunahing operasyon sa calculator gamit ang Model Context Protocol (MCP). Ito ay ginawa bilang isang simpleng halimbawa para sa mga baguhan na nag-aaral tungkol sa mga implementasyon ng MCP.
+Ang serbisyong ito ay nagbibigay ng mga pangunahing operasyon ng calculator gamit ang Model Context Protocol (MCP). Dinisenyo ito bilang isang simpleng halimbawa para sa mga nagsisimula na gustong matutunan ang tungkol sa mga implementasyon ng MCP.
 
 Para sa karagdagang impormasyon, tingnan ang [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Mga Tampok
 
-Ang serbisyong calculator na ito ay nag-aalok ng mga sumusunod na kakayahan:
+Ang serbisyong calculator na ito ay may mga sumusunod na kakayahan:
 
 1. **Pangunahing Operasyon sa Aritmetika**:
    - Pagdaragdag ng dalawang numero
    - Pagbabawas ng isang numero mula sa isa pa
    - Pagmumultiply ng dalawang numero
-   - Paghahati ng isang numero sa isa pa (na may tsek para sa paghahati sa zero)
+   - Pagdidibisyon ng isang numero sa isa pa (na may tseke sa zero division)
 
-## Paggamit ng `stdio` Uri
-  
+## Paggamit ng `stdio` Type
+
 ## Konfigurasyon
 
 1. **I-configure ang MCP Servers**:
    - Buksan ang iyong workspace sa VS Code.
-   - Gumawa ng `.vscode/mcp.json` file sa iyong workspace folder para i-configure ang MCP servers. Halimbawa ng konfigurasyon:
+   - Gumawa ng `.vscode/mcp.json` na file sa iyong workspace folder para i-configure ang MCP servers. Halimbawa ng konfigurasyon:
 
      ```jsonc
      {
@@ -54,50 +54,49 @@ Ang serbisyong calculator na ito ay nag-aalok ng mga sumusunod na kakayahan:
      }
      ```
 
-   - Hihilingin sa iyo na ilagay ang root ng GitHub repository, na maaaring makuha mula sa utos, `git rev-parse --show-toplevel`.
+   - Hihingin sa iyo na ilagay ang root ng GitHub repository, na makukuha gamit ang utos na `git rev-parse --show-toplevel`.
 
-## Using the Service
+## Paggamit ng Serbisyo
 
-The service exposes the following API endpoints through the MCP protocol:
+Ipinapakita ng serbisyo ang mga sumusunod na API endpoints sa pamamagitan ng MCP protocol:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Idagdag ang dalawang numero
+- `subtract(a, b)`: Ibawas ang pangalawang numero mula sa una
+- `multiply(a, b)`: Imultiply ang dalawang numero
+- `divide(a, b)`: Hatiin ang unang numero sa pangalawa (na may tseke sa zero)
+- isPrime(n): Suriin kung ang isang numero ay prime
 
-## Test with Github Copilot Chat in VS Code
+## Pagsubok gamit ang Github Copilot Chat sa VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
+1. Subukang gumawa ng request sa serbisyo gamit ang MCP protocol. Halimbawa, maaari mong itanong:
    - "Add 5 and 3"
    - "Subtract 10 from 4"
    - "Multiply 6 and 7"
    - "Divide 8 by 2"
    - "Does 37854 prime?"
    - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
+2. Para matiyak na ginagamit nito ang mga tools, idagdag ang #MyCalculator sa prompt. Halimbawa:
    - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
-
+   - "Subtract 10 from 4 #MyCalculator"
 
 ## Containerized Version
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
+Maganda ang naunang solusyon kapag naka-install ang .NET SDK at kumpleto ang mga dependencies. Ngunit kung nais mong ibahagi ang solusyon o patakbuhin ito sa ibang environment, maaari mong gamitin ang containerized na bersyon.
 
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` gamit ang iyong Docker Hub username):
+1. Simulan ang Docker at siguraduhing ito ay tumatakbo.
+1. Mula sa terminal, pumunta sa folder na `03-GettingStarted\samples\csharp\src`
+1. Para i-build ang Docker image para sa calculator service, patakbuhin ang sumusunod na utos (palitan ang `<YOUR-DOCKER-USERNAME>` ng iyong Docker Hub username):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
-   ``` 
-1. Pagkatapos mabuo ang image, i-upload natin ito sa Docker Hub. Patakbuhin ang sumusunod na utos:
+   ```
+1. Pagkatapos mabuo ang image, i-upload ito sa Docker Hub gamit ang sumusunod na utos:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Gamitin ang Dockerized na Bersyon
+## Paggamit ng Dockerized Version
 
-1. Sa `.vscode/mcp.json` file, palitan ang server configuration ng sumusunod:
+1. Sa `.vscode/mcp.json` na file, palitan ang server configuration ng sumusunod:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Sa pagtingin sa konfigurasyon, makikita mo na ang utos ay `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Sa konfigurasyon, makikita mo na ang command ay `docker` at ang args ay `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. Ang `--rm` flag ay nagsisiguro na matatanggal ang container pagkatapos itong huminto, at ang `-i` flag ay nagbibigay-daan para makipag-ugnayan sa standard input ng container. Ang huling argumento ay ang pangalan ng image na kakabuo lang natin at na-upload sa Docker Hub.
 
-## Test the Dockerized Version
+## Pagsubok sa Dockerized Version
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, at tulad ng dati, maaari mong hilingin sa calculator service na gawin ang ilang kalkulasyon para sa iyo.
+Simulan ang MCP Server sa pamamagitan ng pag-click sa maliit na Start button sa itaas ng `"mcp-calc": {`, at tulad ng dati, maaari mong hilingin sa calculator service na gumawa ng mga kalkulasyon para sa iyo.
 
-**Pahayag ng Pagwawaksi**:  
-Ang dokumentong ito ay isinalin gamit ang serbisyong AI na pagsasalin [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang orihinal na wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

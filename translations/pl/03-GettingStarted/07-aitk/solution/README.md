@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e9490aedc71f99bc774af57b207a7adb",
-  "translation_date": "2025-06-12T22:31:59+00:00",
+  "translation_date": "2025-07-13T21:52:18+00:00",
   "source_file": "03-GettingStarted/07-aitk/solution/README.md",
   "language_code": "pl"
 }
@@ -10,7 +10,7 @@ CO_OP_TRANSLATOR_METADATA:
 # 📘 Rozwiązanie zadania: Rozszerzenie serwera MCP kalkulatora o narzędzie do pierwiastkowania
 
 ## Przegląd
-W tym zadaniu rozbudowałeś swój serwer MCP kalkulatora, dodając nowe narzędzie, które oblicza pierwiastek kwadratowy liczby. Dzięki temu Twój agent AI może obsługiwać bardziej zaawansowane zapytania matematyczne, takie jak „Jaki jest pierwiastek kwadratowy z 16?” lub „Oblicz √49”, używając naturalnych poleceń.
+W tym zadaniu rozbudowałeś swój serwer MCP kalkulatora, dodając nowe narzędzie, które oblicza pierwiastek kwadratowy z liczby. To rozszerzenie pozwala Twojemu agentowi AI obsługiwać bardziej zaawansowane zapytania matematyczne, takie jak „Jaki jest pierwiastek kwadratowy z 16?” lub „Oblicz √49” za pomocą naturalnych poleceń.
 
 ## 🛠️ Implementacja narzędzia do pierwiastkowania
 Aby dodać tę funkcjonalność, zdefiniowałeś nową funkcję narzędzia w pliku server.py. Oto implementacja:
@@ -70,11 +70,33 @@ def sqrt(a: float) -> float:
 
 ## 🔍 Jak to działa
 
-- **Importuj narzędzie `math.sqrt()` i oznacz je dekoratorem `@server.tool()` jako `sqrt`.**
-- Umożliwiłeś agentowi AI obsługę obliczeń pierwiastka kwadratowego na podstawie naturalnych poleceń.
-- Przećwiczyłeś dodawanie nowych narzędzi oraz ponowne uruchamianie serwera, aby zintegrować dodatkowe funkcje.
+- **Import modułu `math`**: Aby wykonywać operacje matematyczne wykraczające poza podstawowe działania arytmetyczne, Python oferuje wbudowany moduł `math`. Zawiera on różne funkcje i stałe matematyczne. Importując go za pomocą `import math`, uzyskujesz dostęp do funkcji takich jak `math.sqrt()`, która oblicza pierwiastek kwadratowy z liczby.
+- **Definicja funkcji**: Dekorator `@server.tool()` rejestruje funkcję `sqrt` jako narzędzie dostępną dla Twojego agenta AI.
+- **Parametr wejściowy**: Funkcja przyjmuje jeden argument `a` typu `float`.
+- **Obsługa błędów**: Jeśli `a` jest ujemne, funkcja zgłasza wyjątek `ValueError`, aby zapobiec obliczaniu pierwiastka kwadratowego z liczby ujemnej, co nie jest obsługiwane przez funkcję `math.sqrt()`.
+- **Wartość zwracana**: Dla wartości nieujemnych funkcja zwraca pierwiastek kwadratowy z `a` za pomocą wbudowanej metody `math.sqrt()`.
 
-Śmiało eksperymentuj dalej, dodając kolejne narzędzia matematyczne, takie jak potęgowanie czy funkcje logarytmiczne, aby jeszcze bardziej rozbudować możliwości swojego agenta!
+## 🔄 Restart serwera
+Po dodaniu nowego narzędzia `sqrt` ważne jest, aby zrestartować serwer MCP, aby agent mógł rozpoznać i korzystać z nowo dodanej funkcjonalności.
+
+## 💬 Przykładowe zapytania do przetestowania nowego narzędzia
+Oto kilka naturalnych zapytań, które możesz wykorzystać do sprawdzenia działania funkcji pierwiastkowania:
+
+- „Jaki jest pierwiastek kwadratowy z 25?”
+- „Oblicz pierwiastek kwadratowy z 81.”
+- „Znajdź pierwiastek kwadratowy z 0.”
+- „Jaki jest pierwiastek kwadratowy z 2.25?”
+
+Te zapytania powinny spowodować, że agent wywoła narzędzie `sqrt` i zwróci poprawne wyniki.
+
+## ✅ Podsumowanie
+Wykonując to zadanie:
+
+- Rozszerzyłeś swój serwer MCP kalkulatora o nowe narzędzie `sqrt`.
+- Umożliwiłeś agentowi AI obsługę obliczeń pierwiastka kwadratowego za pomocą naturalnych poleceń.
+- Przećwiczyłeś dodawanie nowych narzędzi i restartowanie serwera, aby zintegrować dodatkowe funkcjonalności.
+
+Zachęcam do dalszych eksperymentów i dodawania kolejnych narzędzi matematycznych, takich jak potęgowanie czy funkcje logarytmiczne, aby jeszcze bardziej rozbudować możliwości swojego agenta!
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym należy traktować jako autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

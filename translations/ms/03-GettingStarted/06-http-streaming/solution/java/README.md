@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:48:49+00:00",
+  "translation_date": "2025-07-13T21:13:35+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "ms"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Projek ini menunjukkan penstriman HTTP menggunakan Server-Sent Events (SSE) dengan Spring Boot WebFlux. Ia terdiri daripada dua aplikasi:
 
-- **Calculator Server**: Perkhidmatan web reaktif yang melakukan pengiraan dan menstrim hasil menggunakan SSE  
-- **Calculator Client**: Aplikasi klien yang menggunakan titik akhir penstriman
+- **Calculator Server**: Perkhidmatan web reaktif yang melakukan pengiraan dan menstrim keputusan menggunakan SSE
+- **Calculator Client**: Aplikasi klien yang menggunakan endpoint penstriman
 
 ## Prasyarat
 
-- Java 17 atau lebih tinggi  
-- Maven 3.6 atau lebih tinggi  
+- Java 17 atau lebih tinggi
+- Maven 3.6 atau lebih tinggi
 
 ## Struktur Projek
 
@@ -37,15 +37,15 @@ java/
 
 ## Cara Ia Berfungsi
 
-1. **Calculator Server** membuka `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** menyediakan endpoint `/calculate` yang:
+   - Menerima parameter query: `a` (nombor), `b` (nombor), `op` (operasi)
+   - Operasi yang disokong: `add`, `sub`, `mul`, `div`
+   - Mengembalikan Server-Sent Events dengan kemajuan pengiraan dan keputusan
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`  
-   - Menggunakan respons penstriman  
-   - Mencetak setiap acara ke konsol  
+2. **Calculator Client** menyambung ke server dan:
+   - Membuat permintaan untuk mengira `7 * 5`
+   - Menggunakan respons penstriman
+   - Mencetak setiap acara ke konsol
 
 ## Menjalankan Aplikasi
 
@@ -61,9 +61,9 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Server akan bermula pada `http://localhost:8080`
+Server akan bermula di `http://localhost:8080`
 
-Anda akan melihat output seperti:  
+Anda akan melihat output seperti:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -79,7 +79,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Klien akan menyambung ke server, melakukan pengiraan, dan memaparkan hasil penstriman.
+Klien akan menyambung ke server, melakukan pengiraan, dan memaparkan keputusan penstriman.
 
 ### Pilihan 2: Menggunakan Java secara langsung
 
@@ -99,21 +99,21 @@ mvn clean package
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Ujian Server Secara Manual
+## Uji Server Secara Manual
 
 Anda juga boleh menguji server menggunakan pelayar web atau curl:
 
-### Menggunakan pelayar web:  
+### Menggunakan pelayar web:
 Lawati: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
-### Menggunakan curl:  
+### Menggunakan curl:
 ```bash
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
-## Output Yang Dijangkakan
+## Output Dijangka
 
-Apabila menjalankan klien, anda sepatutnya melihat output penstriman seperti:
+Apabila menjalankan klien, anda akan melihat output penstriman seperti:
 
 ```
 event:info
@@ -123,34 +123,34 @@ event:result
 data:35.0
 ```
 
-## Operasi Yang Disokong
+## Operasi Disokong
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Penambahan (a + b)
+- `sub` - Penolakan (a - b)
+- `mul` - Pendaraban (a * b)
+- `div` - Pembahagian (a / b, mengembalikan NaN jika b = 0)
 
-## API Reference
+## Rujukan API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parameter:**
+- `a` (wajib): Nombor pertama (double)
+- `b` (wajib): Nombor kedua (double)
+- `op` (wajib): Operasi (`add`, `sub`, `mul`, `div`)
 
-**Response:**
-- Content-Type: `text/event-stream`  
-- Mengembalikan Server-Sent Events dengan kemajuan pengiraan dan hasil
+**Respons:**
+- Content-Type: `text/event-stream`
+- Mengembalikan Server-Sent Events dengan kemajuan pengiraan dan keputusan
 
-**Contoh Permintaan:**  
+**Contoh Permintaan:**
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**Contoh Respons:**  
+**Contoh Respons:**
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -163,40 +163,40 @@ data: 35.0
 
 ### Isu Biasa
 
-1. **Port 8080 sudah digunakan**  
-   - Hentikan mana-mana aplikasi lain yang menggunakan port 8080  
+1. **Port 8080 sudah digunakan**
+   - Hentikan mana-mana aplikasi lain yang menggunakan port 8080
    - Atau tukar port server dalam `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Sambungan ditolak**
+   - Pastikan server berjalan sebelum memulakan klien
+   - Semak bahawa server berjaya bermula pada port 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Isu nama parameter**
+   - Projek ini termasuk konfigurasi compiler Maven dengan flag `-parameters`
+   - Jika anda menghadapi masalah pengikatan parameter, pastikan projek dibina dengan konfigurasi ini
 
-### Stopping the Applications
+### Menghentikan Aplikasi
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` jika menjalankan sebagai proses latar belakang  
+- Tekan `Ctrl+C` di terminal tempat setiap aplikasi dijalankan
+- Atau gunakan `mvn spring-boot:stop` jika dijalankan sebagai proses latar belakang
 
 ## Teknologi Digunakan
 
-- **Spring Boot 3.3.1** - Rangka kerja aplikasi  
-- **Spring WebFlux** - Rangka kerja web reaktif  
-- **Project Reactor** - Perpustakaan aliran reaktif  
-- **Netty** - Server I/O tanpa sekatan  
-- **Maven** - Alat binaan  
-- **Java 17+** - Bahasa pengaturcaraan  
+- **Spring Boot 3.3.1** - Rangka kerja aplikasi
+- **Spring WebFlux** - Rangka kerja web reaktif
+- **Project Reactor** - Perpustakaan aliran reaktif
+- **Netty** - Server I/O tanpa sekatan
+- **Maven** - Alat binaan
+- **Java 17+** - Bahasa pengaturcaraan
 
 ## Langkah Seterusnya
 
-Cuba ubah kod untuk:  
-- Tambah lebih banyak operasi matematik  
-- Sertakan pengendalian ralat untuk operasi tidak sah  
-- Tambah log permintaan/respons  
-- Laksanakan pengesahan  
+Cuba ubah suai kod untuk:
+- Menambah lebih banyak operasi matematik
+- Sertakan pengendalian ralat untuk operasi tidak sah
+- Tambah log permintaan/respons
+- Laksanakan pengesahan
 - Tambah ujian unit
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:49:56+00:00",
+  "translation_date": "2025-07-13T21:14:48+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "ro"
 }
 -->
-# Demo Streaming HTTP Calculator
+# Calculator HTTP Streaming Demo
 
-Acest proiect demonstrează streaming-ul HTTP folosind Server-Sent Events (SSE) cu Spring Boot WebFlux. Este compus din două aplicații:
+Acest proiect demonstrează streaming HTTP folosind Server-Sent Events (SSE) cu Spring Boot WebFlux. Este format din două aplicații:
 
-- **Calculator Server**: Un serviciu web reactiv care efectuează calcule și transmite rezultatele prin SSE
+- **Calculator Server**: Un serviciu web reactiv care efectuează calcule și transmite rezultatele folosind SSE
 - **Calculator Client**: O aplicație client care consumă endpoint-ul de streaming
 
-## Cerințe
+## Cerințe preliminare
 
 - Java 17 sau versiune superioară
 - Maven 3.6 sau versiune superioară
 
-## Structura Proiectului
+## Structura proiectului
 
 ```
 java/
@@ -35,21 +35,21 @@ java/
 └── README.md
 ```
 
-## Cum Funcționează
+## Cum funcționează
 
-1. **Calculator Server** expune `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** expune un endpoint `/calculate` care:
+   - Primește parametrii de interogare: `a` (număr), `b` (număr), `op` (operație)
+   - Operații suportate: `add`, `sub`, `mul`, `div`
+   - Returnează Server-Sent Events cu progresul calculului și rezultatul
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
-   - Consumă răspunsul de tip streaming
+2. **Calculator Client** se conectează la server și:
+   - Trimite o cerere pentru a calcula `7 * 5`
+   - Consumă răspunsul în streaming
    - Afișează fiecare eveniment în consolă
 
-## Pornirea Aplicațiilor
+## Rularea aplicațiilor
 
-### Opțiunea 1: Folosind Maven (Recomandat)
+### Opțiunea 1: Folosind Maven (recomandat)
 
 #### 1. Pornește Calculator Server
 
@@ -61,9 +61,9 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Serverul va porni pe `http://localhost:8080`
+Serverul va porni la `http://localhost:8080`
 
-Ar trebui să vezi un output asemănător cu:
+Ar trebui să vezi o ieșire similară cu:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -71,7 +71,7 @@ Netty started on port 8080 (http)
 
 #### 2. Rulează Calculator Client
 
-Deschide un **nou terminal** și navighează în directorul clientului:
+Deschide un **terminal nou** și navighează în directorul clientului:
 
 ```bash
 cd calculator-client
@@ -99,11 +99,11 @@ mvn clean package
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Testarea Serverului Manual
+## Testarea serverului manual
 
 Poți testa serverul și folosind un browser web sau curl:
 
-### Folosind un browser:
+### Folosind un browser web:
 Accesează: `http://localhost:8080/calculate?a=10&b=5&op=add`
 
 ### Folosind curl:
@@ -111,9 +111,9 @@ Accesează: `http://localhost:8080/calculate?a=10&b=5&op=add`
 curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-stream"
 ```
 
-## Output Așteptat
+## Ieșire așteptată
 
-La rularea clientului, ar trebui să vezi un output în streaming similar cu:
+Când rulezi clientul, ar trebui să vezi o ieșire în streaming similară cu:
 
 ```
 event:info
@@ -123,34 +123,34 @@ event:result
 data:35.0
 ```
 
-## Operații Suportate
+## Operații suportate
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Adunare (a + b)
+- `sub` - Scădere (a - b)
+- `mul` - Înmulțire (a * b)
+- `div` - Împărțire (a / b, returnează NaN dacă b = 0)
 
-## API Reference
+## Referință API
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parametri:**
+- `a` (obligatoriu): Primul număr (double)
+- `b` (obligatoriu): Al doilea număr (double)
+- `op` (obligatoriu): Operația (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Răspuns:**
 - Content-Type: `text/event-stream`
-- Returnează Server-Sent Events cu progresul și rezultatul calculului
+- Returnează Server-Sent Events cu progresul calculului și rezultatul
 
-**Exemplu de Cerere:**
+**Exemplu de cerere:**
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**Exemplu de Răspuns:**
+**Exemplu de răspuns:**
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -161,42 +161,42 @@ data: 35.0
 
 ## Depanare
 
-### Probleme Comune
+### Probleme comune
 
 1. **Portul 8080 este deja folosit**
    - Oprește orice altă aplicație care folosește portul 8080
    - Sau schimbă portul serverului în `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Conexiune refuzată**
+   - Asigură-te că serverul este pornit înainte de a porni clientul
+   - Verifică dacă serverul a pornit cu succes pe portul 8080
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Probleme cu numele parametrilor**
+   - Proiectul include configurarea Maven pentru compilator cu flag-ul `-parameters`
+   - Dacă întâmpini probleme la legarea parametrilor, asigură-te că proiectul este construit cu această configurație
 
-### Stopping the Applications
+### Oprirea aplicațiilor
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` dacă rulezi în fundal
+- Apasă `Ctrl+C` în terminalul unde rulează fiecare aplicație
+- Sau folosește `mvn spring-boot:stop` dacă rulezi ca proces în fundal
 
-## Tehnologii Folosite
+## Tehnologii folosite
 
 - **Spring Boot 3.3.1** - Framework pentru aplicații
 - **Spring WebFlux** - Framework web reactiv
 - **Project Reactor** - Bibliotecă pentru fluxuri reactive
 - **Netty** - Server I/O non-blocant
-- **Maven** - Unealtă de build
+- **Maven** - Instrument de build
 - **Java 17+** - Limbaj de programare
 
-## Pași Următori
+## Pași următori
 
 Încearcă să modifici codul pentru a:
 - Adăuga mai multe operații matematice
-- Include tratarea erorilor pentru operații invalide
+- Include gestionarea erorilor pentru operații invalide
 - Adăuga logare pentru cereri/răspunsuri
 - Implementa autentificare
 - Adăuga teste unitare
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

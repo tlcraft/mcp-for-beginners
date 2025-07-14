@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-06-11T09:36:29+00:00",
+  "translation_date": "2025-07-13T17:56:48+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
   "language_code": "sr"
 }
 -->
-# Basic Calculator MCP Service
+# Основна калкулатор MCP услуга
 
-Ova usluga pruža osnovne kalkulatorske operacije preko Model Context Protocol (MCP) koristeći Spring Boot sa WebFlux transportom. Dizajnirana je kao jednostavan primer za početnike koji uče o MCP implementacijama.
+Ова услуга пружа основне калкулаторске операције преко Model Context Protocol (MCP) користећи Spring Boot са WebFlux транспортом. Дизајнирана је као једноставан пример за почетнике који уче о MCP имплементацијама.
 
-Za više informacija, pogledajte [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) referentnu dokumentaciju.
+За више информација, погледајте [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) референтну документацију.
 
 
-## Korišćenje usluge
+## Коришћење услуге
 
-Usluga izlaže sledeće API krajnje tačke preko MCP protokola:
+Услуга излаже следеће API крајње тачке преко MCP протокола:
 
-- `add(a, b)`: Saberi dva broja
-- `subtract(a, b)`: Oduzmi drugi broj od prvog
-- `multiply(a, b)`: Pomnoži dva broja
-- `divide(a, b)`: Podeli prvi broj sa drugim (sa proverom na nulu)
-- `power(base, exponent)`: Izračunaj stepen broja
-- `squareRoot(number)`: Izračunaj kvadratni koren (sa proverom na negativan broj)
-- `modulus(a, b)`: Izračunaj ostatak pri deljenju
-- `absolute(number)`: Izračunaj apsolutnu vrednost
+- `add(a, b)`: Сабери два броја
+- `subtract(a, b)`: Одузми други број од првог
+- `multiply(a, b)`: Помножи два броја
+- `divide(a, b)`: Подели први број са другим (са провером на нулу)
+- `power(base, exponent)`: Израчунај степен броја
+- `squareRoot(number)`: Израчунај квадратни корен (са провером на негативан број)
+- `modulus(a, b)`: Израчунај остатак при дељењу
+- `absolute(number)`: Израчунај апсолутну вредност
 
-## Zavisnosti
+## Зависности
 
-Projekat zahteva sledeće ključne zavisnosti:
+Пројекат захтева следеће кључне зависности:
 
 ```xml
 <dependency>
@@ -38,42 +38,42 @@ Projekat zahteva sledeće ključne zavisnosti:
 </dependency>
 ```
 
-## Pravljenje projekta
+## Изградња пројекта
 
-Napravite projekat koristeći Maven:
+Изгради пројекат користећи Maven:
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## Pokretanje servera
+## Покретање сервера
 
-### Korišćenje Java
+### Коришћење Јаве
 
 ```bash
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### Korišćenje MCP Inspectora
+### Коришћење MCP Inspector-а
 
-MCP Inspector je koristan alat za interakciju sa MCP uslugama. Da biste ga koristili sa ovom kalkulatorskom uslugom:
+MCP Inspector је користан алат за интеракцију са MCP услугама. Да бисте га користили са овом калкулаторском услугом:
 
-1. **Instalirajte i pokrenite MCP Inspector** u novom terminal prozoru:
+1. **Инсталирајте и покрените MCP Inspector** у новом терминал прозору:
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **Pristupite web korisničkom interfejsu** klikom na URL koji aplikacija prikazuje (obično http://localhost:6274)
+2. **Приступите веб интерфејсу** кликом на URL који апликација приказује (обично http://localhost:6274)
 
-3. **Konfigurišite konekciju**:
-   - Postavite tip transporta na "SSE"
-   - Postavite URL na SSE krajnju tačku vašeg pokrenutog servera: `http://localhost:8080/sse`
-   - Kliknite na "Connect"
+3. **Конфигуришите везу**:
+   - Поставите тип транспорта на "SSE"
+   - Поставите URL на SSE крајњу тачку вашег сервера: `http://localhost:8080/sse`
+   - Кликните "Connect"
 
-4. **Koristite alate**:
-   - Kliknite na "List Tools" da vidite dostupne kalkulatorske operacije
-   - Izaberite alat i kliknite na "Run Tool" da izvršite operaciju
+4. **Користите алате**:
+   - Кликните "List Tools" да видите доступне калкулаторске операције
+   - Изаберите алат и кликните "Run Tool" да извршите операцију
 
 ![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.sr.png)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Не сносимо одговорност за било какве неспоразуме или погрешне тумачења која могу проистећи из коришћења овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

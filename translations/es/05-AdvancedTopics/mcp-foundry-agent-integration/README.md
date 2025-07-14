@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:08:12+00:00",
+  "translation_date": "2025-07-13T23:50:06+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "es"
 }
@@ -15,9 +15,9 @@ Esta guía muestra cómo integrar servidores del Protocolo de Contexto de Modelo
 
 El Protocolo de Contexto de Modelo (MCP) es un estándar abierto que permite a las aplicaciones de IA conectarse de forma segura a fuentes de datos y herramientas externas. Al integrarse con Azure AI Foundry, MCP permite que los agentes accedan e interactúen con diversos servicios externos, APIs y fuentes de datos de manera estandarizada.
 
-Esta integración combina la flexibilidad del ecosistema de herramientas de MCP con el sólido marco de agentes de Azure AI Foundry, proporcionando soluciones de IA empresariales con amplias capacidades de personalización.
+Esta integración combina la flexibilidad del ecosistema de herramientas de MCP con el robusto marco de agentes de Azure AI Foundry, ofreciendo soluciones de IA empresariales con amplias capacidades de personalización.
 
-**Note:** Si deseas usar MCP en Azure AI Foundry Agent Service, actualmente solo se soportan las siguientes regiones: westus, westus2, uaenorth, southindia y switzerlandnorth
+**Note:** Si deseas usar MCP en Azure AI Foundry Agent Service, actualmente solo se admiten las siguientes regiones: westus, westus2, uaenorth, southindia y switzerlandnorth
 
 ## Objetivos de aprendizaje
 
@@ -27,7 +27,7 @@ Al finalizar esta guía, podrás:
 - Configurar servidores MCP para usarlos con agentes de Azure AI Foundry
 - Crear y configurar agentes con integración de herramientas MCP
 - Implementar ejemplos prácticos usando servidores MCP reales
-- Gestionar respuestas de herramientas y citas en conversaciones de agentes
+- Gestionar respuestas de herramientas y citas en las conversaciones de los agentes
 
 ## Requisitos previos
 
@@ -42,7 +42,7 @@ Antes de comenzar, asegúrate de contar con:
 
 El Protocolo de Contexto de Modelo es una forma estandarizada para que las aplicaciones de IA se conecten a fuentes de datos y herramientas externas. Sus principales beneficios incluyen:
 
-- **Integración estandarizada**: Interfaz consistente entre distintas herramientas y servicios
+- **Integración estandarizada**: Interfaz consistente entre diferentes herramientas y servicios
 - **Seguridad**: Mecanismos seguros de autenticación y autorización
 - **Flexibilidad**: Soporte para diversas fuentes de datos, APIs y herramientas personalizadas
 - **Extensibilidad**: Fácil incorporación de nuevas capacidades e integraciones
@@ -104,7 +104,7 @@ When configuring MCP tools for your agent, you can specify several important par
 mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # Identificador para el servidor MCP
-    "server_url": "https://api.example.com/mcp", # Punto de acceso del servidor MCP
+    "server_url": "https://api.example.com/mcp", # Endpoint del servidor MCP
     "require_approval": "never"                 # Política de aprobación: actualmente solo se soporta "never"
 }
 ```
@@ -167,7 +167,7 @@ def create_mcp_agent_example():
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
             print(f"Estado de la ejecución: {run.status}")
 
-        # Examinar pasos de ejecución y llamadas a herramientas
+        # Revisar pasos de la ejecución y llamadas a herramientas
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
             print(f"Paso de ejecución: {step.id}, estado: {step.status}, tipo: {step.type}")
@@ -197,8 +197,8 @@ if __name__ == "__main__":
 - Asegura la conectividad de red
 
 ### 2. Fallos en llamadas a herramientas
-- Revisa los argumentos y el formato de las llamadas a herramientas
-- Comprueba los requisitos específicos del servidor
+- Revisa los argumentos y formato de las llamadas a herramientas
+- Verifica los requisitos específicos del servidor
 - Implementa un manejo adecuado de errores
 
 ### 3. Problemas de rendimiento
@@ -210,8 +210,8 @@ if __name__ == "__main__":
 
 Para mejorar aún más tu integración MCP:
 
-1. **Explora servidores MCP personalizados**: Construye tus propios servidores MCP para fuentes de datos propietarias
-2. **Implementa seguridad avanzada**: Añade OAuth2 o mecanismos personalizados de autenticación
+1. **Explora servidores MCP personalizados**: Crea tus propios servidores MCP para fuentes de datos propietarias
+2. **Implementa seguridad avanzada**: Añade OAuth2 o mecanismos de autenticación personalizados
 3. **Monitoreo y análisis**: Implementa registro y monitoreo del uso de herramientas
 4. **Escala tu solución**: Considera balanceo de carga y arquitecturas distribuidas para servidores MCP
 
@@ -232,5 +232,5 @@ Para soporte adicional y preguntas:
 
 - [6. Contribuciones de la comunidad](../../06-CommunityContributions/README.md)
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

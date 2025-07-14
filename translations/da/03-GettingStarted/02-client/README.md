@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T17:39:47+00:00",
+  "translation_date": "2025-07-13T18:16:31+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "da"
 }
@@ -35,9 +35,9 @@ Vi skal oprette en instans af transporten og en af vores client:
 
 Nu har vi en client, der kan oprette forbindelse, hvis programmet køres. Men den lister faktisk ikke sine funktioner, så lad os gøre det næste:
 
-Fint, nu har vi fanget alle funktionerne. Nu er spørgsmålet, hvornår bruger vi dem? Denne client er ret simpel, simpel i den forstand, at vi eksplicit skal kalde funktionerne, når vi vil bruge dem. I næste kapitel vil vi lave en mere avanceret client, der har adgang til sin egen store sprogmodel, LLM. For nu, lad os se, hvordan vi kan kalde funktionerne på serveren:
+Fantastisk, nu har vi fanget alle funktionerne. Nu er spørgsmålet, hvornår bruger vi dem? Denne client er ret simpel, simpel i den forstand, at vi eksplicit skal kalde funktionerne, når vi vil bruge dem. I næste kapitel vil vi lave en mere avanceret client, der har adgang til sin egen store sprogmodel, LLM. For nu, lad os se, hvordan vi kan kalde funktionerne på serveren:
 
-### -4- Kald funktioner
+### -4- Kald funktionerne
 
 For at kalde funktionerne skal vi sikre, at vi angiver de korrekte argumenter og i nogle tilfælde navnet på det, vi prøver at kalde.
 

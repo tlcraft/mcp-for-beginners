@@ -2,32 +2,32 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a22b7dd11cd7690f99f9195877cafdc3",
-  "translation_date": "2025-06-10T05:34:23+00:00",
+  "translation_date": "2025-07-14T07:38:55+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab2/README.md",
   "language_code": "fr"
 }
 -->
-# 🌐 Module 2 : Fondamentaux de MCP avec AI Toolkit
+# 🌐 Module 2 : Fondamentaux du MCP avec AI Toolkit
 
 [![Durée](https://img.shields.io/badge/Duration-20%20minutes-blue.svg)]()
 [![Difficulté](https://img.shields.io/badge/Difficulty-Intermediate-yellow.svg)]()
 [![Prérequis](https://img.shields.io/badge/Prerequisites-Module%201%20Complete-orange.svg)]()
 
-## 📋 Objectifs d’apprentissage
+## 📋 Objectifs d'apprentissage
 
 À la fin de ce module, vous serez capable de :
 - ✅ Comprendre l’architecture et les avantages du Model Context Protocol (MCP)
 - ✅ Explorer l’écosystème des serveurs MCP de Microsoft
 - ✅ Intégrer les serveurs MCP avec AI Toolkit Agent Builder
-- ✅ Créer un agent d’automatisation de navigateur fonctionnel avec Playwright MCP
+- ✅ Construire un agent d’automatisation de navigateur fonctionnel avec Playwright MCP
 - ✅ Configurer et tester les outils MCP dans vos agents
-- ✅ Exporter et déployer des agents propulsés par MCP pour la production
+- ✅ Exporter et déployer des agents propulsés par MCP en production
 
-## 🎯 Suite du Module 1
+## 🎯 Bâtir sur le Module 1
 
-Dans le Module 1, nous avons maîtrisé les bases d’AI Toolkit et créé notre premier Agent Python. Maintenant, nous allons **booster** vos agents en les connectant à des outils et services externes via le révolutionnaire **Model Context Protocol (MCP)**.
+Dans le Module 1, nous avons maîtrisé les bases d’AI Toolkit et créé notre premier agent Python. Maintenant, nous allons **booster** vos agents en les connectant à des outils et services externes grâce au révolutionnaire **Model Context Protocol (MCP)**.
 
-Imaginez cela comme passer d’une simple calculatrice à un ordinateur complet – vos agents IA pourront désormais :
+Pensez à cela comme passer d’une simple calculatrice à un véritable ordinateur — vos agents IA pourront désormais :
 - 🌐 Naviguer et interagir avec des sites web
 - 📁 Accéder et manipuler des fichiers
 - 🔧 S’intégrer aux systèmes d’entreprise
@@ -37,25 +37,25 @@ Imaginez cela comme passer d’une simple calculatrice à un ordinateur complet 
 
 ### 🔍 Qu’est-ce que le MCP ?
 
-Le Model Context Protocol (MCP) est le **« USB-C des applications IA »** – un standard ouvert révolutionnaire qui connecte les Large Language Models (LLM) à des outils externes, sources de données et services. Tout comme l’USB-C a mis fin au chaos des câbles en offrant un connecteur universel, MCP simplifie l’intégration IA avec un protocole standardisé unique.
+Le Model Context Protocol (MCP) est le **« USB-C des applications IA »** — une norme ouverte révolutionnaire qui connecte les grands modèles de langage (LLM) à des outils, sources de données et services externes. Tout comme l’USB-C a mis fin au chaos des câbles en proposant un connecteur universel, le MCP simplifie l’intégration IA avec un protocole standardisé unique.
 
-### 🎯 Le problème que résout MCP
+### 🎯 Le problème que résout le MCP
 
-**Avant MCP :**
+**Avant le MCP :**
 - 🔧 Intégrations personnalisées pour chaque outil
-- 🔄 Verrouillage fournisseur avec des solutions propriétaires
+- 🔄 Verrouillage fournisseur avec des solutions propriétaires  
 - 🔒 Vulnérabilités de sécurité dues à des connexions ad hoc
 - ⏱️ Des mois de développement pour des intégrations basiques
 
-**Avec MCP :**
-- ⚡ Intégration d’outils plug-and-play
+**Avec le MCP :**
+- ⚡ Intégration d’outils en plug-and-play
 - 🔄 Architecture indépendante des fournisseurs
 - 🛡️ Meilleures pratiques de sécurité intégrées
 - 🚀 Ajout de nouvelles fonctionnalités en quelques minutes
 
-### 🏗️ Architecture MCP en détail
+### 🏗️ Plongée dans l’architecture MCP
 
-MCP suit une **architecture client-serveur** qui crée un écosystème sécurisé et évolutif :
+Le MCP suit une **architecture client-serveur** qui crée un écosystème sécurisé et évolutif :
 
 ```mermaid
 graph TB
@@ -71,73 +71,72 @@ graph TB
     F --> J[Enterprise Systems]
 ```
 
-**🔧 Composants principaux :**
+**🔧 Composants clés :**
 
 | Composant | Rôle | Exemples |
 |-----------|------|----------|
 | **MCP Hosts** | Applications consommant les services MCP | Claude Desktop, VS Code, AI Toolkit |
-| **MCP Clients** | Gestionnaires du protocole (1:1 avec les serveurs) | Intégrés aux applications hôtes |
+| **MCP Clients** | Gestionnaires de protocole (1:1 avec serveurs) | Intégrés dans les applications hôtes |
 | **MCP Servers** | Exposent des fonctionnalités via un protocole standard | Playwright, Files, Azure, GitHub |
 | **Couche de transport** | Méthodes de communication | stdio, HTTP, WebSockets |
 
+## 🏢 L’écosystème des serveurs MCP de Microsoft
 
-## 🏢 Écosystème des serveurs MCP de Microsoft
-
-Microsoft est à la pointe de l’écosystème MCP avec une suite complète de serveurs de niveau entreprise répondant aux besoins réels des entreprises.
+Microsoft est à la pointe de l’écosystème MCP avec une suite complète de serveurs de niveau entreprise répondant à des besoins métiers concrets.
 
 ### 🌟 Serveurs MCP Microsoft phares
 
 #### 1. ☁️ Azure MCP Server  
-**🔗 Repository** : [azure/azure-mcp](https://github.com/azure/azure-mcp)  
+**🔗 Dépôt** : [azure/azure-mcp](https://github.com/azure/azure-mcp)  
 **🎯 Objectif** : Gestion complète des ressources Azure avec intégration IA
 
 **✨ Fonctionnalités clés :**  
 - Provisionnement d’infrastructure déclaratif  
 - Surveillance des ressources en temps réel  
 - Recommandations d’optimisation des coûts  
-- Vérification de conformité en matière de sécurité
+- Vérification de conformité sécurité
 
 **🚀 Cas d’usage :**  
 - Infrastructure-as-Code assistée par IA  
-- Mise à l’échelle automatisée des ressources  
+- Mise à l’échelle automatique des ressources  
 - Optimisation des coûts cloud  
 - Automatisation des workflows DevOps
 
 #### 2. 📊 Microsoft Dataverse MCP  
 **📚 Documentation** : [Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)  
-**🎯 Objectif** : Interface en langage naturel pour les données métier
+**🎯 Objectif** : Interface en langage naturel pour les données métiers
 
 **✨ Fonctionnalités clés :**  
-- Requêtes en langage naturel sur base de données  
+- Requêtes en langage naturel sur bases de données  
 - Compréhension du contexte métier  
-- Modèles de prompts personnalisés  
+- Modèles de prompt personnalisés  
 - Gouvernance des données d’entreprise
 
 **🚀 Cas d’usage :**  
 - Reporting business intelligence  
 - Analyse des données clients  
-- Insights sur le pipeline de ventes  
+- Insights sur le pipeline commercial  
 - Requêtes de conformité
 
 #### 3. 🌐 Playwright MCP Server  
-**🔗 Repository** : [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)  
+**🔗 Dépôt** : [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)  
 **🎯 Objectif** : Automatisation de navigateur et interaction web
 
 **✨ Fonctionnalités clés :**  
 - Automatisation multi-navigateurs (Chrome, Firefox, Safari)  
-- Détection intelligente des éléments  
+- Détection intelligente d’éléments  
 - Capture d’écran et génération PDF  
 - Surveillance du trafic réseau
 
 **🚀 Cas d’usage :**  
-- Workflows de tests automatisés  
+- Tests automatisés  
 - Web scraping et extraction de données  
 - Monitoring UI/UX  
-- Automatisation d’analyse concurrentielle
+- Analyse concurrentielle automatisée
 
 #### 4. 📁 Files MCP Server  
-**🔗 Repository** : [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)  
-**🎯 Objectif** : Opérations intelligentes sur le système de fichiers
+**🔗 Dépôt** : [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)  
+**🎯 Objectif** : Opérations intelligentes sur système de fichiers
 
 **✨ Fonctionnalités clés :**  
 - Gestion déclarative des fichiers  
@@ -152,11 +151,11 @@ Microsoft est à la pointe de l’écosystème MCP avec une suite complète de s
 - Gestion des fichiers dans les pipelines de données
 
 #### 5. 📝 MarkItDown MCP Server  
-**🔗 Repository** : [microsoft/markitdown](https://github.com/microsoft/markitdown)  
-**🎯 Objectif** : Traitement avancé et manipulation Markdown
+**🔗 Dépôt** : [microsoft/markitdown](https://github.com/microsoft/markitdown)  
+**🎯 Objectif** : Traitement avancé et manipulation de Markdown
 
 **✨ Fonctionnalités clés :**  
-- Parsing avancé Markdown  
+- Parsing riche de Markdown  
 - Conversion de formats (MD ↔ HTML ↔ PDF)  
 - Analyse de la structure du contenu  
 - Traitement de templates
@@ -169,105 +168,103 @@ Microsoft est à la pointe de l’écosystème MCP avec une suite complète de s
 
 #### 6. 📈 Clarity MCP Server  
 **📦 Package** : [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)  
-**🎯 Objectif** : Analyse web et insights sur le comportement utilisateur
+**🎯 Objectif** : Analyse web et compréhension du comportement utilisateur
 
 **✨ Fonctionnalités clés :**  
 - Analyse de cartes de chaleur  
-- Enregistrements de sessions utilisateurs  
+- Enregistrements de sessions utilisateur  
 - Mesures de performance  
 - Analyse des tunnels de conversion
 
 **🚀 Cas d’usage :**  
 - Optimisation de sites web  
-- Recherche sur l’expérience utilisateur  
+- Recherche UX  
 - Analyse A/B testing  
 - Tableaux de bord business intelligence
 
 ### 🌍 Écosystème communautaire
 
 Au-delà des serveurs Microsoft, l’écosystème MCP comprend :  
-- **🐙 GitHub MCP** : Gestion de dépôts et analyse de code  
-- **🗄️ MCP Bases de données** : Intégrations PostgreSQL, MySQL, MongoDB  
-- **☁️ MCP fournisseurs cloud** : Outils AWS, GCP, Digital Ocean  
-- **📧 MCP communications** : Intégrations Slack, Teams, Email
+- **🐙 GitHub MCP** : gestion de dépôts et analyse de code  
+- **🗄️ MCP Bases de données** : intégrations PostgreSQL, MySQL, MongoDB  
+- **☁️ MCP Fournisseurs Cloud** : outils AWS, GCP, Digital Ocean  
+- **📧 MCP Communication** : intégrations Slack, Teams, Email
 
-## 🛠️ Atelier pratique : Créer un agent d’automatisation de navigateur
+## 🛠️ Atelier pratique : Construire un agent d’automatisation de navigateur
 
-**🎯 Objectif du projet** : Créer un agent intelligent d’automatisation de navigateur avec Playwright MCP capable de naviguer sur des sites, extraire des informations et réaliser des interactions web complexes.
+**🎯 Objectif du projet** : Créer un agent intelligent d’automatisation de navigateur utilisant le serveur Playwright MCP capable de naviguer sur des sites, extraire des informations et réaliser des interactions web complexes.
 
 ### 🚀 Phase 1 : Mise en place de la base de l’agent
 
 #### Étape 1 : Initialiser votre agent  
-1. **Ouvrir AI Toolkit Agent Builder**  
-2. **Créer un nouvel agent** avec la configuration suivante :  
-   - **Nom** : `BrowserAgent`
-   - **Model**: Choose GPT-4o 
+1. **Ouvrez AI Toolkit Agent Builder**  
+2. **Créez un nouvel agent** avec la configuration suivante :  
+   - **Nom** : `BrowserAgent`  
+   - **Modèle** : Choisissez GPT-4o  
 
 ![BrowserAgent](../../../../translated_images/BrowserAgent.09c1adde5e136573b64ab1baecd830049830e295eac66cb18bebb85fb386e00a.fr.png)
 
+### 🔧 Phase 2 : Workflow d’intégration MCP
 
-### 🔧 Phase 2: MCP Integration Workflow
-
-#### Step 3: Add MCP Server Integration
-1. **Navigate to Tools Section** in Agent Builder
-2. **Click "Add Tool"** to open the integration menu
-3. **Select "MCP Server"** from available options
+#### Étape 3 : Ajouter une intégration de serveur MCP  
+1. **Allez dans la section Outils** de Agent Builder  
+2. **Cliquez sur "Add Tool"** pour ouvrir le menu d’intégration  
+3. **Sélectionnez "MCP Server"** parmi les options disponibles  
 
 ![AddMCP](../../../../translated_images/AddMCP.afe3308ac20aa94469a5717b632d77b2197b9838a438b05d39aeb2db3ec47ef1.fr.png)
 
-**🔍 Understanding Tool Types:**
-- **Built-in Tools**: Pre-configured AI Toolkit functions
-- **MCP Servers**: External service integrations
-- **Custom APIs**: Your own service endpoints
-- **Function Calling**: Direct model function access
+**🔍 Comprendre les types d’outils :**  
+- **Outils intégrés** : fonctions AI Toolkit préconfigurées  
+- **Serveurs MCP** : intégrations de services externes  
+- **APIs personnalisées** : vos propres points de service  
+- **Appels de fonctions** : accès direct aux fonctions du modèle
 
-#### Step 4: MCP Server Selection
-1. **Choose "MCP Server"** option to proceed
+#### Étape 4 : Sélection du serveur MCP  
+1. **Choisissez l’option "MCP Server"** pour continuer  
 ![AddMCPServer](../../../../translated_images/AddMCPServer.69b911ccef872cbd0d0c0c2e6a00806916e1673e543b902a23dee23e6ff54b4c.fr.png)
 
-2. **Browse MCP Catalog** to explore available integrations
+2. **Parcourez le catalogue MCP** pour explorer les intégrations disponibles  
 ![MCPCatalog](../../../../translated_images/MCPCatalog.a817d053145699006264f5a475f2b48fbd744e43633f656b6453c15a09ba5130.fr.png)
 
+### 🎮 Phase 3 : Configuration Playwright MCP
 
-### 🎮 Phase 3: Playwright MCP Configuration
-
-#### Step 5: Select and Configure Playwright
-1. **Click "Use Featured MCP Servers"** to access Microsoft's verified servers
-2. **Select "Playwright"** from the featured list
-3. **Accept Default MCP ID** or customize for your environment
+#### Étape 5 : Sélectionner et configurer Playwright  
+1. **Cliquez sur "Use Featured MCP Servers"** pour accéder aux serveurs vérifiés par Microsoft  
+2. **Sélectionnez "Playwright"** dans la liste mise en avant  
+3. **Acceptez l’ID MCP par défaut** ou personnalisez-le pour votre environnement  
 
 ![MCPID](../../../../translated_images/MCPID.67d446052979e819c945ff7b6430196ef587f5217daadd3ca52fa9659c1245c9.fr.png)
 
-#### Step 6: Enable Playwright Capabilities
-**🔑 Critical Step**: Select **ALL** available Playwright methods for maximum functionality
+#### Étape 6 : Activer les capacités Playwright  
+**🔑 Étape cruciale** : Sélectionnez **TOUTES** les méthodes Playwright disponibles pour une fonctionnalité maximale  
 
 ![Tools](../../../../translated_images/Tools.3ea23c447b4d9feccbd7101e6dcf9e27cb0e5273f351995fde62c5abf9a78b4c.fr.png)
 
-**🛠️ Essential Playwright Tools:**
-- **Navigation**: `goto`, `goBack`, `goForward`, `reload`
-- **Interaction**: `click`, `fill`, `press`, `hover`, `drag`
-- **Extraction**: `textContent`, `innerHTML`, `getAttribute`
-- **Validation**: `isVisible`, `isEnabled`, `waitForSelector`
-- **Capture**: `screenshot`, `pdf`, `video`
-- **Network**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
+**🛠️ Outils Playwright essentiels :**  
+- **Navigation** : `goto`, `goBack`, `goForward`, `reload`  
+- **Interaction** : `click`, `fill`, `press`, `hover`, `drag`  
+- **Extraction** : `textContent`, `innerHTML`, `getAttribute`  
+- **Validation** : `isVisible`, `isEnabled`, `waitForSelector`  
+- **Capture** : `screenshot`, `pdf`, `video`  
+- **Réseau** : `setExtraHTTPHeaders`, `route`, `waitForResponse`
 
 #### Étape 7 : Vérifier la réussite de l’intégration  
 **✅ Indicateurs de succès :**  
 - Tous les outils apparaissent dans l’interface Agent Builder  
-- Aucune erreur dans le panneau d’intégration  
-- Le statut du serveur Playwright indique « Connected »
+- Aucun message d’erreur dans le panneau d’intégration  
+- Le statut du serveur Playwright affiche "Connected"  
 
 ![AgentTools](../../../../translated_images/AgentTools.053cfb96a17e02199dcc6563010d2b324d4fc3ebdd24889657a6950647a52f63.fr.png)
 
 **🔧 Résolution des problèmes courants :**  
-- **Échec de connexion** : Vérifiez la connexion internet et les paramètres du pare-feu  
+- **Connexion échouée** : Vérifiez la connexion internet et les paramètres du pare-feu  
 - **Outils manquants** : Assurez-vous que toutes les capacités ont été sélectionnées lors de la configuration  
 - **Erreurs de permission** : Vérifiez que VS Code dispose des autorisations système nécessaires
 
 ### 🎯 Phase 4 : Ingénierie avancée des prompts
 
 #### Étape 8 : Concevoir des prompts système intelligents  
-Créez des prompts sophistiqués exploitant toutes les capacités de Playwright :
+Créez des prompts sophistiqués exploitant pleinement les capacités de Playwright :
 
 ```markdown
 # Web Automation Expert System Prompt
@@ -328,12 +325,12 @@ Include screenshots at key steps and provide actionable insights.
 ### 🚀 Phase 5 : Exécution et tests
 
 #### Étape 10 : Exécuter votre première automatisation  
-1. **Cliquez sur « Run »** pour lancer la séquence d’automatisation  
+1. **Cliquez sur "Run"** pour lancer la séquence d’automatisation  
 2. **Surveillez l’exécution en temps réel** :  
    - Le navigateur Chrome se lance automatiquement  
    - L’agent navigue vers le site cible  
    - Des captures d’écran sont prises à chaque étape majeure  
-   - Les résultats d’analyse sont diffusés en temps réel
+   - Les résultats d’analyse s’affichent en temps réel  
 
 ![Browser](../../../../translated_images/Browser.ec011d0bd64d0d112c8a29bd8cc44c76d0bbfd0b019cb2983ef679328435ce5d.fr.png)
 
@@ -342,7 +339,7 @@ Consultez l’analyse complète dans l’interface Agent Builder :
 
 ![Result](../../../../translated_images/Result.8638f2b6703e9ea6d58d4e4475e39456b6a51d4c787f9bf481bae694d370a69a.fr.png)
 
-### 🌟 Phase 6 : Fonctionnalités avancées et déploiement
+### 🌟 Phase 6 : Capacités avancées et déploiement
 
 #### Étape 12 : Exporter et déployer en production  
 Agent Builder prend en charge plusieurs options de déploiement :
@@ -354,10 +351,10 @@ Agent Builder prend en charge plusieurs options de déploiement :
 ### 🏆 Succès débloqué : Maîtrise de l’intégration MCP
 
 **✅ Compétences acquises :**  
-- [ ] Comprendre l’architecture et les bénéfices du MCP  
-- [ ] Naviguer dans l’écosystème des serveurs MCP de Microsoft  
-- [ ] Intégrer Playwright MCP avec AI Toolkit  
-- [ ] Construire des agents d’automatisation de navigateur sophistiqués  
+- [ ] Compréhension de l’architecture et des avantages du MCP  
+- [ ] Navigation dans l’écosystème des serveurs MCP Microsoft  
+- [ ] Intégration de Playwright MCP avec AI Toolkit  
+- [ ] Construction d’agents d’automatisation de navigateur sophistiqués  
 - [ ] Ingénierie avancée des prompts pour l’automatisation web
 
 ### 📚 Ressources supplémentaires
@@ -369,14 +366,14 @@ Agent Builder prend en charge plusieurs options de déploiement :
 
 **🎉 Félicitations !** Vous avez maîtrisé l’intégration MCP et pouvez désormais créer des agents IA prêts pour la production avec des capacités d’outils externes !
 
-### 🔜 Poursuivez vers le module suivant
+### 🔜 Poursuivez avec le module suivant
 
-Prêt à approfondir vos compétences MCP ? Passez au **[Module 3 : Développement avancé MCP avec AI Toolkit](../lab3/README.md)** où vous apprendrez à :  
+Prêt à passer au niveau supérieur avec MCP ? Rendez-vous dans **[Module 3 : Développement avancé MCP avec AI Toolkit](../lab3/README.md)** où vous apprendrez à :  
 - Créer vos propres serveurs MCP personnalisés  
 - Configurer et utiliser le dernier SDK MCP Python  
-- Installer MCP Inspector pour le débogage  
-- Maîtriser les workflows avancés de développement de serveurs MCP  
-- Construire un Weather MCP Server from scratch
+- Mettre en place MCP Inspector pour le débogage  
+- Maîtriser les workflows avancés de développement de serveurs MCP
+- Construire un serveur Weather MCP de zéro
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour des informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous ne saurions être tenus responsables des malentendus ou des interprétations erronées résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

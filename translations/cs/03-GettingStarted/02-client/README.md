@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T18:37:29+00:00",
+  "translation_date": "2025-07-13T18:20:04+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "cs"
 }
@@ -15,11 +15,11 @@ V předchozím kódu jsme:
 
 Máte tedy klienta, který může komunikovat s MCP Serverem.
 
-V další části cvičení si vezmeme čas a rozložíme každý úryvek kódu a vysvětlíme, co se děje.
+V další cvičné části si kód podrobně rozebere a vysvětlíme, co se děje.
 
 ## Cvičení: Psání klienta
 
-Jak bylo řečeno výše, vezmeme si čas na vysvětlení kódu a klidně kódujte spolu s námi, pokud chcete.
+Jak bylo řečeno výše, pojďme si kód podrobně vysvětlit a klidně si ho i sami napište.
 
 ### -1- Import knihoven
 
@@ -29,13 +29,13 @@ Přejděme k instanciaci.
 
 ### -2- Instanciace klienta a transportu
 
-Budeme muset vytvořit instanci transportu a také naši instanci klienta:
+Budeme potřebovat vytvořit instanci transportu a také naši instanci klienta:
 
 ### -3- Výpis funkcí serveru
 
-Nyní máme klienta, který se může připojit, pokud se program spustí. Nicméně zatím nevypisuje jeho funkce, tak to udělejme nyní:
+Nyní máme klienta, který se může připojit, pokud se program spustí. Nicméně zatím nevypisuje jeho funkce, pojďme to tedy udělat:
 
-Skvěle, nyní jsme zachytili všechny funkce. Teď je otázka, kdy je použijeme? Tento klient je poměrně jednoduchý, jednoduchý v tom smyslu, že budeme muset explicitně volat funkce, když je chceme použít. V další kapitole vytvoříme pokročilejšího klienta, který bude mít přístup ke svému vlastnímu velkému jazykovému modelu (LLM). Prozatím si ale ukážeme, jak můžeme vyvolat funkce na serveru:
+Skvěle, nyní jsme zachytili všechny funkce. Otázka zní, kdy je použijeme? Tento klient je poměrně jednoduchý, v tom smyslu, že funkce budeme muset explicitně volat, když je chceme použít. V další kapitole vytvoříme pokročilejšího klienta, který bude mít přístup ke svému vlastnímu velkému jazykovému modelu (LLM). Prozatím si ale ukážeme, jak můžeme funkce na serveru vyvolat:
 
 ### -4- Vyvolání funkcí
 
@@ -43,11 +43,11 @@ Pro vyvolání funkcí musíme zajistit, že zadáme správné argumenty a v ně
 
 ### -5- Spuštění klienta
 
-Pro spuštění klienta zadejte následující příkaz v terminálu:
+Pro spuštění klienta zadejte v terminálu následující příkaz:
 
 ## Zadání
 
-V tomto zadání použijete to, co jste se naučili o vytváření klienta, ale vytvoříte si vlastního klienta.
+V tomto úkolu použijete to, co jste se naučili o vytváření klienta, ale vytvoříte si vlastního klienta.
 
 Zde je server, který můžete použít a ke kterému se musíte připojit přes svůj klientský kód. Zkuste přidat na server více funkcí, aby byl zajímavější.
 
@@ -75,9 +75,9 @@ Hlavní poznatky z této kapitoly o klientech jsou:
 - [TypeScript Kalkulačka](../samples/typescript/README.md)
 - [Python Kalkulačka](../../../../03-GettingStarted/samples/python)
 
-## Co bude dál
+## Co dál
 
 - Dále: [Vytváření klienta s LLM](../03-llm-client/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

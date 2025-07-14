@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-06-10T06:52:39+00:00",
+  "translation_date": "2025-07-14T08:44:14+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
   "language_code": "nl"
 }
@@ -21,7 +21,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Aan het einde van deze lab kun je:
 
-- ✅ Een aangepaste MCP-server maken voor realistische ontwikkelworkflows
+- ✅ Een aangepaste MCP-server maken voor echte ontwikkelworkflows
 - ✅ Functionaliteit voor het klonen van GitHub-repositories via MCP implementeren
 - ✅ Aangepaste MCP-servers integreren met VS Code en Agent Builder
 - ✅ GitHub Copilot Agent Mode gebruiken met aangepaste MCP-tools
@@ -30,44 +30,44 @@ Aan het einde van deze lab kun je:
 ## 📋 Vereisten
 
 - Voltooiing van Labs 1-3 (MCP basisprincipes en gevorderde ontwikkeling)
-- GitHub Copilot abonnement ([gratis aanmelding beschikbaar](https://github.com/github-copilot/signup))
+- GitHub Copilot-abonnement ([gratis aanmelding beschikbaar](https://github.com/github-copilot/signup))
 - VS Code met AI Toolkit en GitHub Copilot extensies
 - Git CLI geïnstalleerd en geconfigureerd
 
 ## 🏗️ Projectoverzicht
 
-### **Realistische Ontwikkeluitdaging**
+### **Echte ontwikkeluitdaging**
 Als ontwikkelaars gebruiken we vaak GitHub om repositories te klonen en deze te openen in VS Code of VS Code Insiders. Dit handmatige proces bestaat uit:
 1. Terminal/command prompt openen
-2. Naar de gewenste map navigeren
-3. Het `git clone` commando uitvoeren
+2. Navigeren naar de gewenste map
+3. `git clone` commando uitvoeren
 4. VS Code openen in de gekloonde map
 
-**Onze MCP-oplossing stroomlijnt dit tot één slimme opdracht!**
+**Onze MCP-oplossing maakt dit mogelijk met één slimme opdracht!**
 
 ### **Wat je gaat bouwen**
 Een **GitHub Clone MCP Server** (`git_mcp_server`) die het volgende biedt:
 
 | Functie | Beschrijving | Voordeel |
-|---------|-------------|----------|
-| 🔄 **Slim repository klonen** | GitHub repos klonen met validatie | Geautomatiseerde foutcontrole |
-| 📁 **Intelligent mapbeheer** | Veilig controleren en aanmaken van mappen | Voorkomt overschrijven |
-| 🚀 **Cross-platform VS Code integratie** | Projecten openen in VS Code/Insiders | Naadloze workflowovergang |
-| 🛡️ **Robuuste foutafhandeling** | Omgaan met netwerk-, permissie- en padproblemen | Betrouwbaar voor productie |
+|---------|--------------|----------|
+| 🔄 **Slim Repository Klonen** | GitHub-repos klonen met validatie | Geautomatiseerde foutcontrole |
+| 📁 **Intelligent Mapbeheer** | Mappen veilig controleren en aanmaken | Voorkomt overschrijven |
+| 🚀 **Cross-Platform VS Code Integratie** | Projecten openen in VS Code/Insiders | Naadloze workflowovergang |
+| 🛡️ **Robuuste Foutafhandeling** | Omgaan met netwerk-, permissie- en padproblemen | Betrouwbaarheid voor productie |
 
 ---
 
 ## 📖 Stapsgewijze Implementatie
 
-### Stap 1: Maak een GitHub Agent in Agent Builder
+### Stap 1: Maak GitHub Agent aan in Agent Builder
 
 1. **Start Agent Builder** via de AI Toolkit extensie
-2. **Maak een nieuwe agent aan** met de volgende configuratie:
+2. **Maak een nieuwe agent** met de volgende configuratie:
    ```
    Agent Name: GitHubAgent
    ```
 
-3. **Initialiseer de aangepaste MCP-server:**
+3. **Initialiseer aangepaste MCP-server:**
    - Ga naar **Tools** → **Add Tool** → **MCP Server**
    - Kies **"Create A new MCP Server"**
    - Selecteer de **Python template** voor maximale flexibiliteit
@@ -76,7 +76,7 @@ Een **GitHub Clone MCP Server** (`git_mcp_server`) die het volgende biedt:
 ### Stap 2: Configureer GitHub Copilot Agent Mode
 
 1. **Open GitHub Copilot** in VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
-2. **Selecteer Agent Model** in de Copilot interface
+2. **Selecteer Agent Model** in de Copilot-interface
 3. **Kies het Claude 3.7 model** voor verbeterde redeneercapaciteiten
 4. **Schakel MCP-integratie in** voor toegang tot tools
 
@@ -122,7 +122,7 @@ Additional Requirements:
 #### 4a. Test in Agent Builder
 
 1. **Start de debugconfiguratie** voor Agent Builder
-2. **Configureer je agent met deze system prompt:**
+2. **Configureer je agent met deze systeem-prompt:**
 
 ```
 SYSTEM_PROMPT:
@@ -158,51 +158,51 @@ Scenario : Basic Clone and Open
 ### 🏆 Behaalde prestaties:
 - ✅ **MCP Developer** - Aangepaste MCP-server gemaakt
 - ✅ **Workflow Automator** - Ontwikkelprocessen gestroomlijnd  
-- ✅ **Integration Expert** - Meerdere ontwikkeltools verbonden
-- ✅ **Production Ready** - Oplossingen klaar voor uitrol
+- ✅ **Integratie Expert** - Meerdere ontwikkeltools verbonden
+- ✅ **Productieklaar** - Oplossingen gebouwd voor uitrol
 
 ---
 
-## 🎓 Workshop voltooid: Je reis met Model Context Protocol
+## 🎓 Workshop voltooid: Jouw reis met Model Context Protocol
 
 **Beste workshopdeelnemer,**
 
-Gefeliciteerd met het afronden van alle vier modules van de Model Context Protocol workshop! Je bent van de basisprincipes van AI Toolkit naar het bouwen van productieklare MCP-servers gegaan die echte ontwikkeluitdagingen oplossen.
+Gefeliciteerd met het afronden van alle vier modules van de Model Context Protocol-workshop! Je hebt een flinke weg afgelegd, van het begrijpen van basisconcepten van AI Toolkit tot het bouwen van productieklare MCP-servers die echte ontwikkeluitdagingen oplossen.
 
-### 🚀 Samenvatting van je leerpad:
+### 🚀 Overzicht van je leertraject:
 
 **[Module 1](../lab1/README.md)**: Je begon met het verkennen van AI Toolkit basisprincipes, modeltesten en het maken van je eerste AI-agent.
 
-**[Module 2](../lab2/README.md)**: Je leerde de MCP-architectuur, integreerde Playwright MCP en bouwde je eerste browserautomatiseringsagent.
+**[Module 2](../lab2/README.md)**: Je leerde MCP-architectuur, integreerde Playwright MCP en bouwde je eerste browserautomatiseringsagent.
 
 **[Module 3](../lab3/README.md)**: Je ging verder met aangepaste MCP-serverontwikkeling met de Weather MCP-server en beheerde debuggingtools.
 
-**[Module 4](../lab4/README.md)**: Nu heb je alles toegepast om een praktische automatiseringstool voor GitHub-repository workflows te maken.
+**[Module 4](../lab4/README.md)**: Je hebt nu alles toegepast om een praktische workflow-automatiseringstool voor GitHub repositories te maken.
 
 ### 🌟 Wat je hebt beheerst:
 
 - ✅ **AI Toolkit Ecosysteem**: Modellen, agents en integratiepatronen
 - ✅ **MCP Architectuur**: Client-server ontwerp, transportprotocollen en beveiliging
-- ✅ **Ontwikkeltools**: Van Playground tot Inspector en productie-uitrol
+- ✅ **Ontwikkeltools**: Van Playground tot Inspector tot productie-uitrol
 - ✅ **Aangepaste ontwikkeling**: Bouwen, testen en uitrollen van eigen MCP-servers
-- ✅ **Praktische toepassingen**: Oplossen van echte workflow-uitdagingen met AI
+- ✅ **Praktische toepassingen**: Echte workflow-uitdagingen oplossen met AI
 
-### 🔮 Je volgende stappen:
+### 🔮 Jouw volgende stappen:
 
-1. **Bouw je eigen MCP-server**: Pas deze vaardigheden toe om je eigen workflows te automatiseren
-2. **Sluit je aan bij de MCP-community**: Deel je creaties en leer van anderen
-3. **Verken geavanceerde integraties**: Verbind MCP-servers met enterprise-systemen
+1. **Bouw je eigen MCP-server**: Pas deze vaardigheden toe om je unieke workflows te automatiseren
+2. **Word lid van de MCP-community**: Deel je creaties en leer van anderen
+3. **Verken geavanceerde integratie**: Verbind MCP-servers met enterprise-systemen
 4. **Draag bij aan open source**: Help MCP-tools en documentatie te verbeteren
 
-Onthoud dat deze workshop slechts het begin is. Het Model Context Protocol ecosysteem ontwikkelt zich snel en jij bent nu klaar om voorop te lopen in AI-gedreven ontwikkeltools.
+Onthoud, deze workshop is slechts het begin. Het Model Context Protocol-ecosysteem ontwikkelt zich snel en jij bent nu klaar om voorop te lopen in AI-gedreven ontwikkeltools.
 
 **Bedankt voor je deelname en je inzet om te leren!**
 
-We hopen dat deze workshop ideeën heeft aangewakkerd die je manier van bouwen en samenwerken met AI-tools in je ontwikkeltraject zullen transformeren.
+We hopen dat deze workshop ideeën heeft aangewakkerd die zullen transformeren hoe je AI-tools bouwt en gebruikt in je ontwikkeltraject.
 
 **Veel programmeerplezier!**
 
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal geldt als de gezaghebbende bron. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

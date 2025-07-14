@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:17:36+00:00",
+  "translation_date": "2025-07-13T21:04:24+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "tr"
 }
@@ -23,7 +23,7 @@ dotnet run
 
 ## -3- Örneği test edin
 
-Aşağıdakileri çalıştırmadan önce ayrı bir terminal açın (sunucunun hala çalıştığından emin olun).
+Aşağıdaki komutu çalıştırmadan önce ayrı bir terminal açın (sunucunun hala çalıştığından emin olun).
 
 Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki komutu çalıştırın:
 
@@ -31,14 +31,14 @@ Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki
 npx @modelcontextprotocol/inspector http://localhost:3001
 ```
 
-Bu, örneği test etmenizi sağlayan görsel arayüze sahip bir web sunucusunu başlatmalıdır.
+Bu, örneği test etmenize olanak tanıyan görsel arayüze sahip bir web sunucusu başlatmalıdır.
 
-> **Streamable HTTP**'nin taşıma türü olarak seçili olduğundan ve URL'nin `http://localhost:3001/mcp`.
+> **Streamable HTTP**'nin taşıma türü olarak seçili olduğundan ve URL'nin `http://localhost:3001/mcp` olduğundan emin olun.
 
-Once the server is connected: 
+Sunucu bağlandıktan sonra:
 
-- try listing tools and run `add` olduğundan emin olun, argümanlar 2 ve 4 ile sonucu 6 olarak görmelisiniz.
-- resources ve resource template kısmına gidip "greeting" çağırın, bir isim yazın ve verdiğiniz isimle bir selamlama görmelisiniz.
+- araçları listelemeyi deneyin ve `add` komutunu, argümanlar olarak 2 ve 4 ile çalıştırın, sonuçta 6 görmelisiniz.
+- resources ve resource template bölümüne gidin, "greeting"i çağırın, bir isim yazın ve verdiğiniz isimle bir selamlama görmelisiniz.
 
 ### CLI modunda test etme
 
@@ -48,7 +48,7 @@ Aşağıdaki komutu çalıştırarak doğrudan CLI modunda başlatabilirsiniz:
 npx @modelcontextprotocol/inspector --cli http://localhost:3001 --method tools/list
 ```
 
-Bu, sunucuda bulunan tüm araçları listeleyecektir. Aşağıdaki çıktıyı görmelisiniz:
+Bu, sunucuda mevcut olan tüm araçları listeleyecektir. Aşağıdaki çıktıyı görmelisiniz:
 
 ```text
 {
@@ -105,4 +105,4 @@ Aşağıdaki çıktıyı görmelisiniz:
 > Inspector hakkında daha fazla bilgi için [buraya](https://github.com/modelcontextprotocol/inspector) bakabilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek herhangi bir yanlış anlama veya yorum hatasından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

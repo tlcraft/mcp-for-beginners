@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T23:09:56+00:00",
+  "translation_date": "2025-07-13T18:00:55+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "nl"
 }
 -->
 # Deze sample uitvoeren
 
-Het wordt aanbevolen om `uv` te installeren, maar het is niet verplicht, zie [instructies](https://docs.astral.sh/uv/#highlights)
+Het wordt aanbevolen om `uv` te installeren, maar het is niet verplicht. Zie [instructies](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Maak een virtuele omgeving aan
 
@@ -55,7 +55,7 @@ Zodra de server verbonden is:
 
 De inspector die je hebt gestart is eigenlijk een Node.js-app en `mcp dev` is een wrapper daaromheen.
 
-Je kunt deze direct in CLI-modus starten door het volgende commando uit te voeren:
+Je kunt het direct in CLI-modus starten door het volgende commando uit te voeren:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list

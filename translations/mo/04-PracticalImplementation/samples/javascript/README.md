@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:48:10+00:00",
+  "translation_date": "2025-07-13T23:26:46+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "mo"
 }
 -->
-# نمونہ
+# 範例
 
-یہ ایم سی پی سرور کے لئے جاوا اسکرپٹ کا نمونہ ہے
+這是一個用於 MCP Server 的 JavaScript 範例
 
-یہاں ایک ٹول رجسٹریشن کی مثال ہے جہاں ہم ایک ٹول رجسٹر کرتے ہیں جو ایل ایل ایم کو ایک فرضی کال کرتا ہے:
+以下是一個工具註冊的範例，我們註冊了一個會對 LLM 進行模擬呼叫的工具：
 
 ```javascript
 this.mcpServer.tool(
@@ -74,18 +74,19 @@ this.mcpServer.tool(
 );
 ```
 
-## انسٹال کریں
+## 安裝
 
-درج ذیل کمانڈ چلائیں:
+執行以下指令：
 
 ```bash
 npm install
 ```
 
-## چلائیں
+## 執行
 
 ```bash
 npm start
 ```
 
-I'm sorry, but I couldn't find a language identified as "mo." Could you please clarify the language you are referring to or provide additional context?
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

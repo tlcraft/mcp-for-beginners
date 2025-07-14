@@ -2,104 +2,104 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-05-17T13:07:15+00:00",
+  "translation_date": "2025-07-13T22:23:02+00:00",
   "source_file": "03-GettingStarted/samples/java/calculator/README.md",
   "language_code": "tw"
 }
 -->
-# 基本計算器MCP服務
+# Basic Calculator MCP Service
 
-此服務透過Spring Boot和WebFlux傳輸提供基本計算器操作，使用模型上下文協議（MCP）。它被設計為初學者學習MCP實現的簡單示例。
+此服務透過 Model Context Protocol (MCP) 並使用 Spring Boot 搭配 WebFlux 傳輸，提供基本計算機運算功能。設計為初學者學習 MCP 實作的簡單範例。
 
-欲了解更多信息，請參閱[MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html)參考文件。
+更多資訊請參考 [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) 參考文件。
 
-## 概述
+## 概覽
 
-該服務展示了：
-- 支援SSE（伺服器發送事件）
-- 使用Spring AI的`@Tool`註釋自動工具註冊
-- 基本計算器功能：
+本服務展示了：
+- 支援 SSE（Server-Sent Events）
+- 使用 Spring AI 的 `@Tool` 註解自動註冊工具
+- 基本計算機功能：
   - 加法、減法、乘法、除法
-  - 指數計算和平方根
-  - 取模（餘數）和絕對值
-  - 操作描述的幫助功能
+  - 次方計算與平方根
+  - 取餘數與絕對值
+  - 提供操作說明的幫助功能
 
-## 功能
+## 功能特色
 
-這個計算器服務提供以下功能：
+此計算機服務具備以下功能：
 
 1. **基本算術運算**：
-   - 兩個數字相加
-   - 一個數字減去另一個數字
-   - 兩個數字相乘
-   - 一個數字除以另一個數字（檢查零除）
+   - 兩數相加
+   - 一數減另一數
+   - 兩數相乘
+   - 一數除以另一數（含除以零檢查）
 
-2. **高級運算**：
-   - 指數計算（將基數提高到指數）
-   - 平方根計算（檢查負數）
-   - 取模（餘數）計算
+2. **進階運算**：
+   - 次方計算（底數的指數次方）
+   - 平方根計算（含負數檢查）
+   - 取餘數計算
    - 絕對值計算
 
 3. **幫助系統**：
-   - 內置幫助功能，解釋所有可用操作
+   - 內建說明功能，解釋所有可用操作
 
 ## 使用服務
 
-該服務通過MCP協議提供以下API端點：
+此服務透過 MCP 協定公開以下 API 端點：
 
-- `add(a, b)`：將兩個數字相加
-- `subtract(a, b)`：從第一個數字中減去第二個數字
-- `multiply(a, b)`：將兩個數字相乘
-- `divide(a, b)`：將第一個數字除以第二個數字（檢查零）
-- `power(base, exponent)`：計算數字的指數
-- `squareRoot(number)`：計算平方根（檢查負數）
-- `modulus(a, b)`：計算除法時的餘數
+- `add(a, b)`：將兩數相加
+- `subtract(a, b)`：將第二個數從第一個數中減去
+- `multiply(a, b)`：將兩數相乘
+- `divide(a, b)`：將第一個數除以第二個數（含除以零檢查）
+- `power(base, exponent)`：計算次方
+- `squareRoot(number)`：計算平方根（含負數檢查）
+- `modulus(a, b)`：計算除法餘數
 - `absolute(number)`：計算絕對值
-- `help()`：獲取可用操作的信息
+- `help()`：取得可用操作的說明資訊
 
-## 測試客戶端
+## 測試用客戶端
 
-一個簡單的測試客戶端包含在`com.microsoft.mcp.sample.client`包中。`SampleCalculatorClient`類演示了計算器服務的可用操作。
+在 `com.microsoft.mcp.sample.client` 套件中包含一個簡單的測試客戶端。`SampleCalculatorClient` 類別示範了計算機服務的可用操作。
 
-## 使用LangChain4j客戶端
+## 使用 LangChain4j 客戶端
 
-項目包括一個LangChain4j示例客戶端在`com.microsoft.mcp.sample.client.LangChain4jClient`中，演示如何將計算器服務與LangChain4j和GitHub模型集成：
+專案中包含一個 LangChain4j 範例客戶端 `com.microsoft.mcp.sample.client.LangChain4jClient`，示範如何將計算機服務與 LangChain4j 及 GitHub 模型整合：
 
-### 先決條件
+### 前置條件
 
-1. **GitHub Token設置**：
-   
-   要使用GitHub的AI模型（如phi-4），您需要GitHub個人訪問令牌：
+1. **GitHub Token 設定**：
 
-   a. 前往您的GitHub帳戶設置：https://github.com/settings/tokens
-   
-   b. 點擊“生成新令牌”→“生成新令牌（經典）”
-   
-   c. 給您的令牌一個描述性名稱
-   
-   d. 選擇以下範圍：
-      - `repo`（完全控制私有存儲庫）
-      - `read:org`（讀取組織和團隊成員資格，讀取組織項目）
-      - `gist`（創建gists）
-      - `user:email`（訪問用戶電子郵件地址（只讀））
-   
-   e. 點擊“生成令牌”並複製您的新令牌
-   
-   f. 將其設置為環境變量：
-      
-      在Windows上：
+   若要使用 GitHub 的 AI 模型（如 phi-4），需要 GitHub 個人存取權杖：
+
+   a. 前往 GitHub 帳號設定頁面：https://github.com/settings/tokens
+
+   b. 點選「Generate new token」→「Generate new token (classic)」
+
+   c. 為權杖命名
+
+   d. 選擇以下權限範圍：
+      - `repo`（私有倉庫完整控制權）
+      - `read:org`（讀取組織與團隊成員、組織專案）
+      - `gist`（建立 gist）
+      - `user:email`（讀取使用者電子郵件地址（唯讀））
+
+   e. 點選「Generate token」並複製新權杖
+
+   f. 設定為環境變數：
+
+      Windows 系統：
       ```
       set GITHUB_TOKEN=your-github-token
       ```
-      
-      在macOS/Linux上：
+
+      macOS/Linux 系統：
       ```bash
       export GITHUB_TOKEN=your-github-token
       ```
 
-   g. 為持久設置，通過系統設置添加到您的環境變量中
+   g. 若需永久設定，請透過系統設定將其加入環境變數
 
-2. 添加LangChain4j GitHub依賴到您的項目（已包含在pom.xml中）：
+2. 將 LangChain4j GitHub 依賴加入專案（已包含於 pom.xml）：
    ```xml
    <dependency>
        <groupId>dev.langchain4j</groupId>
@@ -108,25 +108,25 @@ CO_OP_TRANSLATOR_METADATA:
    </dependency>
    ```
 
-3. 確保計算器伺服器在`localhost:8080`上運行
+3. 確認計算機伺服器正在 `localhost:8080` 運行
 
-### 運行LangChain4j客戶端
+### 執行 LangChain4j 客戶端
 
-此示例演示：
-- 通過SSE傳輸連接到計算器MCP伺服器
-- 使用LangChain4j創建一個利用計算器操作的聊天機器人
-- 與GitHub AI模型集成（現在使用phi-4模型）
+此範例示範：
+- 透過 SSE 傳輸連接計算機 MCP 伺服器
+- 使用 LangChain4j 建立聊天機器人，利用計算機功能
+- 整合 GitHub AI 模型（目前使用 phi-4 模型）
 
-客戶端發送以下示例查詢以演示功能：
-1. 計算兩個數字的和
-2. 找到數字的平方根
-3. 獲取有關可用計算器操作的幫助信息
+客戶端會送出以下範例查詢以展示功能：
+1. 計算兩數和
+2. 計算數字平方根
+3. 取得計算機可用操作的說明資訊
 
-運行示例並檢查控制台輸出，以查看AI模型如何使用計算器工具響應查詢。
+執行範例並查看主控台輸出，了解 AI 模型如何使用計算機工具回應查詢。
 
-### GitHub模型配置
+### GitHub 模型設定
 
-LangChain4j客戶端配置為使用GitHub的phi-4模型，具有以下設置：
+LangChain4j 客戶端設定使用 GitHub 的 phi-4 模型，設定如下：
 
 ```java
 ChatLanguageModel model = GitHubChatModel.builder()
@@ -138,11 +138,11 @@ ChatLanguageModel model = GitHubChatModel.builder()
     .build();
 ```
 
-要使用不同的GitHub模型，只需將`modelName`參數更改為另一個支持的模型（例如，“claude-3-haiku-20240307”，“llama-3-70b-8192”等）。
+若要使用其他 GitHub 模型，只需將 `modelName` 參數改為其他支援的模型（例如 "claude-3-haiku-20240307"、"llama-3-70b-8192" 等）。
 
-## 依賴項
+## 依賴項目
 
-項目需要以下關鍵依賴項：
+專案需要以下主要依賴：
 
 ```xml
 <!-- For MCP Server -->
@@ -166,78 +166,78 @@ ChatLanguageModel model = GitHubChatModel.builder()
 </dependency>
 ```
 
-## 構建項目
+## 專案建置
 
-使用Maven構建項目：
+使用 Maven 建置專案：
 ```bash
 ./mvnw clean install -DskipTests
 ```
 
-## 運行伺服器
+## 啟動伺服器
 
-### 使用Java
+### 使用 Java
 
 ```bash
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### 使用MCP Inspector
+### 使用 MCP Inspector
 
-MCP Inspector是一個有助於與MCP服務交互的工具。要與此計算器服務一起使用它：
+MCP Inspector 是一個方便與 MCP 服務互動的工具。使用此計算機服務時：
 
-1. **安裝並運行MCP Inspector**在新的終端窗口中：
+1. **安裝並啟動 MCP Inspector**，在新終端視窗執行：
    ```bash
    npx @modelcontextprotocol/inspector
    ```
 
-2. **訪問Web UI**通過點擊應用顯示的URL（通常是http://localhost:6274）
+2. **透過瀏覽器開啟網頁介面**，點擊應用程式顯示的 URL（通常是 http://localhost:6274）
 
-3. **配置連接**：
-   - 將傳輸類型設置為“SSE”
-   - 將URL設置為您運行的伺服器的SSE端點：`http://localhost:8080/sse`
-   - 點擊“連接”
+3. **設定連線**：
+   - 傳輸類型選擇「SSE」
+   - URL 設為正在運行伺服器的 SSE 端點：`http://localhost:8080/sse`
+   - 點擊「Connect」
 
 4. **使用工具**：
-   - 點擊“列出工具”查看可用的計算器操作
-   - 選擇一個工具並點擊“運行工具”執行操作
+   - 點擊「List Tools」查看可用的計算機操作
+   - 選擇工具後點擊「Run Tool」執行操作
 
-![MCP Inspector 截圖](../../../../../../translated_images/tool.d45bdee7d4d5740a48d0d6378c9a8af0c1a289f1e0f2ae95ee176f1a5afb40a8.tw.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.tw.png)
 
-### 使用Docker
+### 使用 Docker
 
-項目包含一個Dockerfile，用於容器化部署：
+專案包含 Dockerfile 以便容器化部署：
 
-1. **構建Docker映像**：
+1. **建置 Docker 映像檔**：
    ```bash
    docker build -t calculator-mcp-service .
    ```
 
-2. **運行Docker容器**：
+2. **執行 Docker 容器**：
    ```bash
    docker run -p 8080:8080 calculator-mcp-service
    ```
 
-這將：
-- 使用Maven 3.9.9和Eclipse Temurin 24 JDK構建多階段Docker映像
-- 創建優化的容器映像
-- 在端口8080上公開服務
-- 在容器內啟動MCP計算器服務
+此操作將：
+- 使用 Maven 3.9.9 與 Eclipse Temurin 24 JDK 建置多階段 Docker 映像
+- 建立優化的容器映像
+- 開放服務於 8080 埠口
+- 在容器內啟動 MCP 計算機服務
 
-容器運行後，您可以在`http://localhost:8080`訪問服務。
+容器啟動後，可透過 `http://localhost:8080` 存取服務。
 
 ## 疑難排解
 
-### GitHub Token常見問題
+### GitHub Token 常見問題
 
-1. **令牌權限問題**：如果您收到403 Forbidden錯誤，請檢查您的令牌是否具有先決條件中列出的正確權限。
+1. **權杖權限問題**：若遇到 403 Forbidden 錯誤，請確認權杖擁有前述正確權限。
 
-2. **找不到令牌**：如果您收到“No API key found”錯誤，請確保正確設置了GITHUB_TOKEN環境變量。
+2. **找不到權杖**：若出現「No API key found」錯誤，請確認 GITHUB_TOKEN 環境變數已正確設定。
 
-3. **速率限制**：GitHub API有速率限制。如果您遇到速率限制錯誤（狀態碼429），請等待幾分鐘再重試。
+3. **速率限制**：GitHub API 有速率限制，若遇到 429 錯誤，請稍等幾分鐘後再試。
 
-4. **令牌過期**：GitHub令牌可能會過期。如果一段時間後收到身份驗證錯誤，請生成新令牌並更新您的環境變量。
+4. **權杖過期**：GitHub 權杖可能會過期，若一段時間後出現認證錯誤，請重新產生權杖並更新環境變數。
 
-如果需要進一步協助，請查看[LangChain4j文檔](https://github.com/langchain4j/langchain4j)或[GitHub API文檔](https://docs.github.com/en/rest)。
+如需更多協助，請參考 [LangChain4j 文件](https://github.com/langchain4j/langchain4j) 或 [GitHub API 文件](https://docs.github.com/en/rest)。
 
-**免責聲明**：
-本文檔使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)進行翻譯。我們努力確保翻譯準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始語言的文檔應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們不對使用此翻譯所產生的任何誤解或誤讀承擔責任。
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

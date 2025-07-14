@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T22:59:15+00:00",
+  "translation_date": "2025-07-13T17:26:59+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "tw"
 }
@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -8- 使用 inspector 執行
 
-inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與它互動，方便你測試功能是否正常。讓我們啟動它：
+inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與之互動，方便你測試它是否正常運作。讓我們啟動它：
 > [!NOTE]
 > 在「command」欄位中顯示的內容可能會有所不同，因為它包含了使用您特定執行環境來啟動伺服器的指令/
 你應該會看到以下的使用者介面：
@@ -41,7 +41,7 @@ inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與它�
 
   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.tw.png)
 
-1. 選擇「Tools」然後選擇「listTools」，你會看到「Add」出現，點選「Add」並填入參數值。
+1. 選擇「Tools」和「listTools」，你會看到「Add」出現，選擇「Add」並填入參數值。
 
   你應該會看到以下回應，也就是「add」工具的結果：
 
@@ -96,7 +96,7 @@ MCP 提供多種語言的官方 SDK：
 
 ## 下一步
 
-下一步：[MCP 用戶端入門](../02-client/README.md)
+下一章節：[MCP 用戶端入門](../02-client/README.md)
 
 **免責聲明**：  
 本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

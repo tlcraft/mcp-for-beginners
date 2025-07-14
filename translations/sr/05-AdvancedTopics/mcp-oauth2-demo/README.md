@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T01:16:18+00:00",
+  "translation_date": "2025-07-14T00:43:58+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "sr"
 }
 -->
 # MCP OAuth2 Demo
 
-Ovaj projekat je **minimalna Spring Boot aplikacija** koja funkcioniše kao:
+Овај пројекат је **минимална Spring Boot апликација** која служи као:
 
-* **Spring Authorization Server** (izdaje JWT pristupne tokene preko `client_credentials` toka), i  
-* **Resource Server** (štiti sopstvenu `/hello` krajnju tačku).
+* **Spring Authorization Server** (који издаје JWT приступне токене преко `client_credentials` флоуа), и  
+* **Resource Server** (који штити свој `/hello` ендпоинт).
 
-Ona prati konfiguraciju prikazanu u [Spring blog postu (2. apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Ово одговара подешавању приказаном у [Spring блог посту (2. април 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
-## Brzi početak (lokalno)
+## Брзи почетак (локално)
 
 ```bash
 # build & run
@@ -34,18 +34,18 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ---
 
-## Testiranje OAuth2 konfiguracije
+## Тестирање OAuth2 конфигурације
 
-OAuth2 bezbednosnu konfiguraciju možete testirati sledećim koracima:
+Можете тестирати OAuth2 безбедносну конфигурацију следећим корацима:
 
-### 1. Proverite da li server radi i da je zaštićen
+### 1. Проверите да ли сервер ради и да је заштићен
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Nabavite pristupni token koristeći klijentske kredencijale
+### 2. Узмите приступни токен користећи client credentials
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Note: Basic Authentication zaglavlje (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Напомена: Basic Authentication хедер (`bWNwLWNsaWVudDpzZWNyZXQ=`) је Base64 енкодирана вредност за `mcp-client:secret`.
 
-### 3. Pristupite zaštićenoj krajnjoj tački koristeći token
+### 3. Приступите заштићеном ендпоинту користећи токен
 
 ```bash
 # Using the saved token
@@ -73,11 +73,11 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Uspešan odgovor sa "Hello from MCP OAuth2 Demo!" potvrđuje da OAuth2 konfiguracija funkcioniše kako treba.
+Успешан одговор са "Hello from MCP OAuth2 Demo!" потврђује да OAuth2 конфигурација исправно функционише.
 
 ---
 
-## Izgradnja kontejnera
+## Изградња контејнера
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deploy na **Azure Container Apps**
+## Деплој на **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +95,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ingress FQDN postaje vaš **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Ingress FQDN постаје ваш **issuer** (`https://<fqdn>`).  
+Azure аутоматски обезбеђује поуздан TLS сертификат за `*.azurecontainerapps.io`.
 
 ---
 
-## Povezivanje sa **Azure API Management**
+## Повезивање са **Azure API Management**
 
-Dodajte ovu inbound politiku u svoj API:
+Додајте ову inbound политику у ваш API:
 
 ```xml
 <inbound>
@@ -116,13 +116,13 @@ Dodajte ovu inbound politiku u svoj API:
 </inbound>
 ```
 
-APIM će preuzimati JWKS i validirati svaki zahtev.
+APIM ће преузимати JWKS и валидарати сваки захтев.
 
 ---
 
-## Šta dalje
+## Шта следи
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Не сносимо одговорност за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

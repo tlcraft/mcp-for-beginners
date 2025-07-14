@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-06-13T02:02:53+00:00",
+  "translation_date": "2025-07-13T21:20:57+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "he"
 }
 -->
-# הרצת הדוגמה הזו
+# הפעלת הדוגמה הזו
 
-כאן תמצאו כיצד להפעיל את שרת ולקוח הזרמת HTTP הקלאסיים, וכן את שרת ולקוח ה-MCP באמצעות Python.
+הנה איך להפעיל את שרת ולקוח ה-HTTP הזרמתי הקלאסי, כמו גם את שרת ולקוח ה-MCP הזרמתי באמצעות Python.
 
 ### סקירה כללית
 
-- תגדירו שרת MCP שמשדר התראות התקדמות ללקוח בזמן שהוא מעבד פריטים.
+- תגדיר שרת MCP שמשדר התראות התקדמות ללקוח בזמן שהוא מעבד פריטים.
 - הלקוח יציג כל התראה בזמן אמת.
-- מדריך זה מכסה דרישות מוקדמות, הגדרה, הרצה ופתרון תקלות.
+- מדריך זה מכסה דרישות מוקדמות, התקנה, הפעלה ופתרון בעיות.
 
 ### דרישות מוקדמות
 
 - Python 3.9 או גרסה חדשה יותר
-- חבילת `mcp` של Python (התקנה עם `pip install mcp`)
+- חבילת Python בשם `mcp` (התקנה עם `pip install mcp`)
 
 ### התקנה והגדרה
 
-1. שיכפלו את המאגר או הורידו את קבצי הפתרון.
+1. שיבט את המאגר או הורד את קבצי הפתרון.
 
    ```pwsh
    git clone https://github.com/microsoft/mcp-for-beginners
    ```
 
-1. **צרו והפעילו סביבת וירטואלית (מומלץ):**
+1. **צור והפעל סביבה וירטואלית (מומלץ):**
 
    ```pwsh
    python -m venv venv
@@ -39,7 +39,7 @@ CO_OP_TRANSLATOR_METADATA:
    source venv/bin/activate      # On Linux/macOS
    ```
 
-1. **התקינו את התלויות הנדרשות:**
+1. **התקן את התלויות הנדרשות:**
 
    ```pwsh
    pip install "mcp[cli]"
@@ -50,15 +50,15 @@ CO_OP_TRANSLATOR_METADATA:
 - **שרת:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
 - **לקוח:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
 
-### הרצת שרת הזרמת HTTP הקלאסי
+### הפעלת שרת ה-HTTP הזרמתי הקלאסי
 
-1. עברו לתיקיית הפתרון:
+1. עבור לתיקיית הפתרון:
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
 
-2. התחילו את שרת הזרמת HTTP הקלאסי:
+2. הפעל את שרת ה-HTTP הזרמתי הקלאסי:
 
    ```pwsh
    python server.py
@@ -71,16 +71,16 @@ CO_OP_TRANSLATOR_METADATA:
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### הרצת לקוח הזרמת HTTP הקלאסי
+### הפעלת לקוח ה-HTTP הזרמתי הקלאסי
 
-1. פתחו טרמינל חדש (הפעילו את אותה סביבת וירטואלית ותיקייה):
+1. פתח טרמינל חדש (הפעל את אותה סביבה וירטואלית ותיקייה):
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py
    ```
 
-2. תראו הודעות משודרות המודפסות ברצף:
+2. תראה הודעות משודרות מודפסות ברצף:
 
    ```text
    Running classic HTTP streaming client...
@@ -93,13 +93,13 @@ CO_OP_TRANSLATOR_METADATA:
    --- Stream Ended ---
    ```
 
-### הרצת שרת הזרמת MCP
+### הפעלת שרת ה-MCP הזרמתי
 
-1. עברו לתיקיית הפתרון:
+1. עבור לתיקיית הפתרון:
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
-2. התחילו את שרת MCP עם ה-transport מסוג streamable-http:
+2. הפעל את שרת ה-MCP עם ה-transport מסוג streamable-http:
    ```pwsh
    python server.py mcp
    ```
@@ -109,14 +109,14 @@ CO_OP_TRANSLATOR_METADATA:
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### הרצת לקוח הזרמת MCP
+### הפעלת לקוח ה-MCP הזרמתי
 
-1. פתחו טרמינל חדש (הפעילו את אותה סביבת וירטואלית ותיקייה):
+1. פתח טרמינל חדש (הפעל את אותה סביבה וירטואלית ותיקייה):
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. תראו התראות המודפסות בזמן אמת בזמן שהשרת מעבד כל פריט:
+2. תראה התראות מודפסות בזמן אמת בזמן שהשרת מעבד כל פריט:
    ```
    Running MCP client...
    Starting client...
@@ -129,23 +129,23 @@ CO_OP_TRANSLATOR_METADATA:
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### שלבי מימוש עיקריים
+### שלבי מפתח ביישום
 
-1. **צרו את שרת ה-MCP באמצעות FastMCP.**
-2. **הגדירו כלי שמעבד רשימה ושולח התראות באמצעות `ctx.info()` or `ctx.log()`.**
-3. **Run the server with `transport="streamable-http"`.**
-4. **Implement a client with a message handler to display notifications as they arrive.**
+1. **צור את שרת ה-MCP באמצעות FastMCP.**
+2. **הגדר כלי שמעבד רשימה ושולח התראות באמצעות `ctx.info()` או `ctx.log()`.**
+3. **הפעל את השרת עם `transport="streamable-http"`.**
+4. **ממש לקוח עם מטפל הודעות להצגת ההתראות כשהן מגיעות.**
 
-### Code Walkthrough
-- The server uses async functions and the MCP context to send progress updates.
-- The client implements an async message handler to print notifications and the final result.
+### סקירת הקוד
+- השרת משתמש בפונקציות אסינכרוניות ובהקשר MCP כדי לשלוח עדכוני התקדמות.
+- הלקוח מיישם מטפל הודעות אסינכרוני להדפסת ההתראות והתוצאה הסופית.
 
-### Tips & Troubleshooting
+### טיפים ופתרון בעיות
 
-- Use `async/await` לפעולות לא חוסמות.**
-- תמיד לטפל בשגיאות גם בשרת וגם בלקוח לשמירה על יציבות.
-- בדקו עם מספר לקוחות כדי לצפות בעדכונים בזמן אמת.
-- אם נתקלים בשגיאות, בדקו את גרסת ה-Python ודאו שכל התלויות מותקנות.
+- השתמש ב-`async/await` לפעולות לא חוסמות.
+- תמיד טפל בשגיאות גם בשרת וגם בלקוח כדי להבטיח יציבות.
+- בדוק עם מספר לקוחות כדי לראות עדכונים בזמן אמת.
+- אם נתקלת בשגיאות, בדוק את גרסת ה-Python שלך וודא שכל התלויות מותקנות.
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. איננו אחראים לכל אי הבנה או פרשנות שגויה הנובעים משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

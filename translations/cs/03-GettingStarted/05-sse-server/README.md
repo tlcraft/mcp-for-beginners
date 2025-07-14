@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d90ca3d326c48fab2ac0ebd3a9876f59",
-  "translation_date": "2025-07-04T18:39:17+00:00",
+  "translation_date": "2025-07-13T20:00:47+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "cs"
 }
@@ -11,7 +11,7 @@ Teď, když už o SSE víme trochu víc, pojďme si postavit SSE server.
 
 ## Cvičení: Vytvoření SSE serveru
 
-Při tvorbě serveru je potřeba mít na paměti dvě věci:
+Při vytváření serveru je potřeba mít na paměti dvě věci:
 
 - Musíme použít webový server, který zpřístupní endpointy pro připojení a zprávy.
 - Server postavíme stejně jako obvykle s nástroji, zdroji a promptami, jak jsme to dělali u stdio.
@@ -34,7 +34,7 @@ Nyní přidáme schopnosti serveru.
 
 ### -3- Přidání schopností serveru
 
-Teď, když máme definováno vše specifické pro SSE, přidáme schopnosti serveru jako nástroje, prompty a zdroje.
+Teď, když máme definováno vše specifické pro SSE, přidáme schopnosti serveru jako nástroje, prompta a zdroje.
 
 ---
 
@@ -46,11 +46,11 @@ Skvěle, máme server používající SSE, pojďme si ho teď vyzkoušet.
 
 ## Cvičení: Ladění SSE serveru pomocí Inspectoru
 
-Inspector je skvělý nástroj, který jsme viděli v předchozí lekci [Vytvoření vašeho prvního serveru](/03-GettingStarted/01-first-server/README.md). Podívejme se, jestli ho můžeme použít i zde:
+Inspector je skvělý nástroj, který jsme viděli v předchozí lekci [Vytvoření vašeho prvního serveru](/03-GettingStarted/01-first-server/README.md). Podívejme se, jestli ho můžeme použít i tady:
 
 ### -1- Spuštění inspectoru
 
-Nejdřív musíte mít spuštěný SSE server, tak ho spusťme:
+Nejprve musíte mít spuštěný SSE server, tak ho spusťme:
 
 1. Spusťte server
 
@@ -65,11 +65,11 @@ Nejdřív musíte mít spuštěný SSE server, tak ho spusťme:
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Spuštění inspectoru vypadá ve všech runtime stejně. Všimněte si, že místo předání cesty k serveru a příkazu pro jeho spuštění předáváme URL, kde server běží, a také specifikujeme routu `/sse`.
+Spuštění inspectoru vypadá stejně ve všech runtimech. Všimněte si, že místo předání cesty k serveru a příkazu pro jeho spuštění předáváme URL, kde server běží, a také specifikujeme routu `/sse`.
 
 ### -2- Vyzkoušení nástroje
 
-Připojte se k serveru výběrem SSE v rozbalovacím seznamu a vyplňte pole URL, kde váš server běží, například http://localhost:4321/sse. Poté klikněte na tlačítko „Connect“. Stejně jako dříve vyberte zobrazení nástrojů, vyberte nástroj a zadejte vstupní hodnoty. Měli byste vidět výsledek jako na obrázku níže:
+Připojte se k serveru výběrem SSE v rozbalovacím seznamu a vyplňte pole URL, kde váš server běží, například http://localhost:4321/sse. Pak klikněte na tlačítko „Connect“. Stejně jako dříve vyberte zobrazení nástrojů, vyberte nástroj a zadejte vstupní hodnoty. Měli byste vidět výsledek jako na obrázku níže:
 
 ![SSE Server běžící v inspectoru](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.cs.png)
 
@@ -77,7 +77,7 @@ Skvěle, umíte pracovat s inspector, pojďme se podívat, jak pracovat s Visual
 
 ## Zadání
 
-Zkuste rozšířit svůj server o další schopnosti. Podívejte se na [tuto stránku](https://api.chucknorris.io/), kde můžete například přidat nástroj, který volá API. Vy rozhodnete, jak bude server vypadat. Hodně zábavy :)
+Zkuste rozšířit svůj server o další schopnosti. Podívejte se na [tuto stránku](https://api.chucknorris.io/), kde můžete například přidat nástroj, který volá API. Vy rozhodnete, jak by měl server vypadat. Hodně zábavy :)
 
 ## Řešení
 
@@ -103,9 +103,9 @@ Hlavní poznatky z této kapitoly jsou:
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Co bude dál
+## Co dál
 
 - Další: [HTTP Streaming s MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

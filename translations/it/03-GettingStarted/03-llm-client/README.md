@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T17:07:35+00:00",
+  "translation_date": "2025-07-13T18:51:23+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "it"
 }
@@ -27,11 +27,11 @@ Ottimo, ce l'hai fatta!
 
 ## Compito
 
-Prendi il codice dall'esercizio e amplia il server aggiungendo altri strumenti. Poi crea un client con un LLM, come nell'esercizio, e testalo con diversi prompt per assicurarti che tutti gli strumenti del server vengano chiamati dinamicamente. Questo modo di costruire un client garantisce all'utente finale un'ottima esperienza, poiché può usare prompt in linguaggio naturale invece di comandi precisi del client, senza doversi preoccupare di eventuali chiamate al server MCP.
+Prendi il codice dell'esercizio e amplia il server aggiungendo altri strumenti. Poi crea un client con un LLM, come nell'esercizio, e testalo con diversi prompt per assicurarti che tutti gli strumenti del server vengano chiamati dinamicamente. Questo modo di costruire un client garantisce all'utente finale un'esperienza ottimale, poiché può usare prompt in linguaggio naturale invece di comandi precisi del client, senza doversi preoccupare di eventuali chiamate al server MCP.
 
 ## Soluzione
 
-[Soluzione](/03-GettingStarted/03-llm-client/solution/README.md)
+[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
 ## Punti Chiave
 

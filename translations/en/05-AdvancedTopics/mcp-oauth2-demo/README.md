@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-12T22:55:36+00:00",
+  "translation_date": "2025-07-14T00:39:17+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "en"
 }
@@ -36,16 +36,16 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testing the OAuth2 Configuration
 
-You can verify the OAuth2 security setup by following these steps:
+You can test the OAuth2 security setup with the following steps:
 
-### 1. Confirm the server is running and secured
+### 1. Verify the server is running and secured
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Obtain an access token using client credentials
+### 2. Get an access token using client credentials
 
 ```bash
 # Get and extract the full token response
@@ -63,7 +63,7 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Note: The Basic Authentication header (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
 
-### 3. Use the token to access the protected endpoint
+### 3. Access the protected endpoint using the token
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-A successful response with "Hello from MCP OAuth2 Demo!" means the OAuth2 configuration is working properly.
+A successful response with "Hello from MCP OAuth2 Demo!" confirms that the OAuth2 setup is working correctly.
 
 ---
 
@@ -96,7 +96,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 The ingress FQDN becomes your **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Azure automatically provides a trusted TLS certificate for `*.azurecontainerapps.io`.
 
 ---
 
@@ -116,7 +116,7 @@ Add this inbound policy to your API:
 </inbound>
 ```
 
-APIM will retrieve the JWKS and validate each request.
+APIM will retrieve the JWKS and validate every request.
 
 ---
 

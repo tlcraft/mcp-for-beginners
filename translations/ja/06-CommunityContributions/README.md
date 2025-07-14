@@ -2,83 +2,83 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-05-20T20:48:06+00:00",
+  "translation_date": "2025-07-14T03:55:41+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "ja"
 }
 -->
 # Community and Contributions
 
-## Overview
+## 概要
 
-このレッスンでは、MCPコミュニティとの関わり方、MCPエコシステムへの貢献方法、そして共同開発のベストプラクティスについて学びます。オープンソースのMCPプロジェクトに参加する方法を理解することは、この技術の未来を形作るために重要です。
+このレッスンでは、MCPコミュニティへの参加方法、MCPエコシステムへの貢献方法、そして共同開発のベストプラクティスについて学びます。オープンソースのMCPプロジェクトに参加する方法を理解することは、この技術の未来を形作りたい方にとって重要です。
 
-## Learning Objectives
+## 学習目標
 
-このレッスンを終えるまでに、以下ができるようになります：
+このレッスンを終える頃には、以下ができるようになります：
 - MCPコミュニティとエコシステムの構造を理解する
 - MCPコミュニティのフォーラムやディスカッションに効果的に参加する
 - MCPのオープンソースリポジトリに貢献する
 - カスタムMCPツールを作成し共有する
 - MCP開発と協力のベストプラクティスに従う
 
-## The MCP Community Ecosystem
+## MCPコミュニティエコシステム
 
-MCPエコシステムは、プロトコルの発展に貢献する様々な要素と参加者で構成されています。
+MCPエコシステムは、プロトコルの発展に向けて協力するさまざまな要素と参加者で構成されています。
 
-### Key Community Components
+### 主要なコミュニティ構成要素
 
-1. **Core Protocol Maintainers**：Microsoftやその他の組織で、MCPのコア仕様やリファレンス実装を維持しています
-2. **Tool Developers**：MCPツールを作成する個人やチーム
+1. **Core Protocol Maintainers**：Microsoftやその他の組織で、MCPのコア仕様やリファレンス実装を管理しています
+2. **Tool Developers**：MCPツールを開発する個人やチーム
 3. **Integration Providers**：MCPを自社製品やサービスに統合する企業
 4. **End Users**：MCPをアプリケーションで利用する開発者や組織
-5. **Contributors**：コードやドキュメント、その他のリソースを提供するコミュニティメンバー
+5. **Contributors**：コード、ドキュメント、その他のリソースを提供するコミュニティメンバー
 
-### Community Resources
+### コミュニティリソース
 
-#### Official Channels
+#### 公式チャネル
 
 - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
-#### Community-Driven Resources
+#### コミュニティ主導のリソース
 
-- 言語別のSDK実装
+- 言語別SDK実装
 - サーバー実装やツールライブラリ
 - ブログ記事やチュートリアル
 - コミュニティフォーラムやSNSでのディスカッション
 
-## Contributing to MCP
+## MCPへの貢献
 
-### Types of Contributions
+### 貢献の種類
 
-MCPエコシステムは様々な形の貢献を歓迎しています：
+MCPエコシステムはさまざまな貢献を歓迎しています：
 
-1. **Code Contributions**：
-   - コアプロトコルの機能強化
+1. **コード貢献**：
+   - コアプロトコルの改善
    - バグ修正
    - ツールの実装
-   - 複数言語でのクライアント／サーバーライブラリ
+   - 言語別のクライアント/サーバーライブラリ
 
-2. **Documentation**：
+2. **ドキュメント**：
    - 既存ドキュメントの改善
    - チュートリアルやガイドの作成
    - ドキュメントの翻訳
-   - サンプルや例示アプリケーションの作成
+   - サンプルや例の作成
 
-3. **Community Support**：
-   - フォーラムでの質問対応
+3. **コミュニティサポート**：
+   - フォーラムでの質問回答
    - テストや問題報告
-   - コミュニティイベントの企画運営
-   - 新規貢献者のメンタリング
+   - コミュニティイベントの企画
+   - 新しい貢献者のメンタリング
 
-### Contribution Process: Core Protocol
+### 貢献プロセス：コアプロトコル
 
 コアMCPプロトコルや公式実装に貢献するには：
 
-#### .NET Example: Contributing a Protocol Enhancement
+#### .NETの例：プロトコル改善の貢献
 
 ```csharp
 // Example contribution to MCP protocol: Adding support for binary data streams
@@ -145,7 +145,7 @@ namespace Microsoft.Mcp.Protocol
 }
 ```
 
-#### Java Example: Contributing a Bug Fix
+#### Javaの例：バグ修正の貢献
 
 ```java
 package com.mcp.tools;
@@ -230,7 +230,7 @@ public class ToolParameterValidator {
 }
 ```
 
-#### Python Example: Contributing a New Tool to the Standard Library
+#### Pythonの例：標準ライブラリへの新ツールの貢献
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,18 +390,18 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Contribution Guidelines
+### 貢献ガイドライン
 
 MCPプロジェクトに成功裏に貢献するためのポイント：
 
-1. **Start Small**：ドキュメント、バグ修正、小さな改善から始める
-2. **Follow the Style Guide**：プロジェクトのコーディングスタイルと規約を守る
-3. **Write Tests**：コードにはユニットテストを含める
-4. **Document Your Work**：新機能や変更点を明確にドキュメント化する
-5. **Submit Targeted PRs**：プルリクエストは単一の課題や機能に絞る
-6. **Engage with Feedback**：フィードバックには積極的に対応する
+1. **小さく始める**：ドキュメント、バグ修正、小さな改善から始めましょう
+2. **スタイルガイドに従う**：プロジェクトのコーディングスタイルや規約を守る
+3. **テストを書く**：コードにはユニットテストを含める
+4. **作業を文書化する**：新機能や変更点は明確にドキュメント化する
+5. **的を絞ったPRを提出する**：プルリクエストは単一の課題や機能に集中させる
+6. **フィードバックに対応する**：貢献に対するフィードバックには積極的に応じる
 
-### Example Contribution Workflow
+### 貢献のワークフロー例
 
 ```bash
 # Clone the repository
@@ -429,13 +429,13 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Creating and Sharing Custom MCP Tools
+## カスタムMCPツールの作成と共有
 
 MCPエコシステムに貢献する最も価値ある方法の一つは、カスタムツールを作成し共有することです。
 
-### Developing Shareable Tools
+### 共有可能なツールの開発
 
-#### .NET Example: Creating a Shareable Tool Package
+#### .NETの例：共有可能なツールパッケージの作成
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +541,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java Example: Creating a Maven Package for Tools
+#### Javaの例：ツール用Mavenパッケージの作成
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +642,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Python Example: Publishing a PyPI Package
+#### Pythonの例：PyPIパッケージの公開
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,66 +747,66 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Sharing Best Practices
+### 共有時のベストプラクティス
 
-MCPツールをコミュニティと共有する際のポイント：
+MCPツールをコミュニティと共有する際には：
 
-1. **Complete Documentation**：
-   - 目的、使い方、例を文書化する
-   - パラメーターや戻り値を説明する
-   - 外部依存関係も明記する
+1. **完全なドキュメント**：
+   - 目的、使い方、例を記載
+   - パラメータや戻り値の説明
+   - 外部依存関係の明示
 
-2. **Error Handling**：
-   - 堅牢なエラーハンドリングを実装する
-   - 有用なエラーメッセージを提供する
-   - エッジケースにも適切に対応する
+2. **エラーハンドリング**：
+   - 堅牢なエラーハンドリングを実装
+   - 有用なエラーメッセージを提供
+   - エッジケースも適切に処理
 
-3. **Performance Considerations**：
-   - 処理速度とリソース使用の最適化を図る
-   - 必要に応じてキャッシュを利用する
-   - スケーラビリティを考慮する
+3. **パフォーマンスの考慮**：
+   - 速度とリソース使用の最適化
+   - 適切なキャッシュの実装
+   - スケーラビリティを考慮
 
-4. **Security**：
-   - 安全なAPIキーや認証を使う
-   - 入力値の検証とサニタイズを行う
-   - 外部API呼び出しに対するレート制限を実装する
+4. **セキュリティ**：
+   - 安全なAPIキーや認証の使用
+   - 入力の検証とサニタイズ
+   - 外部API呼び出しのレート制限の実装
 
-5. **Testing**：
-   - 十分なテストカバレッジを含める
-   - 多様な入力やエッジケースでテストする
-   - テスト手順も文書化する
+5. **テスト**：
+   - 包括的なテストカバレッジを含める
+   - さまざまな入力タイプやエッジケースでテスト
+   - テスト手順を文書化
 
-## Community Collaboration and Best Practices
+## コミュニティでの協力とベストプラクティス
 
-活発なMCPエコシステムのためには効果的な協力が欠かせません。
+効果的な協力は、活発なMCPエコシステムの鍵です。
 
-### Communication Channels
+### コミュニケーションチャネル
 
-- GitHub IssuesおよびDiscussions
+- GitHub IssuesとDiscussions
 - Microsoft Tech Community
 - DiscordやSlackチャンネル
-- Stack Overflow（タグ：`model-context-protocol` or `mcp`）
+- Stack Overflow（タグ：`model-context-protocol` または `mcp`）
 
-### Code Reviews
+### コードレビュー
 
-MCPへの貢献をレビューする際には：
+MCPへの貢献をレビューする際は：
 
-1. **Clarity**：コードは明確でドキュメントも充実しているか？
-2. **Correctness**：期待通りに動作するか？
-3. **Consistency**：プロジェクトの規約に従っているか？
-4. **Completeness**：テストやドキュメントは含まれているか？
-5. **Security**：セキュリティ上の懸念はないか？
+1. **明確さ**：コードは分かりやすく、十分に文書化されているか？
+2. **正確さ**：期待通りに動作するか？
+3. **一貫性**：プロジェクトの規約に従っているか？
+4. **完全性**：テストやドキュメントが含まれているか？
+5. **セキュリティ**：セキュリティ上の懸念はないか？
 
-### Version Compatibility
+### バージョン互換性
 
-MCP向け開発の際には：
+MCP向けに開発する際は：
 
-1. **Protocol Versioning**：対応するMCPプロトコルバージョンを守る
-2. **Client Compatibility**：後方互換性を考慮する
-3. **Server Compatibility**：サーバー実装のガイドラインに従う
-4. **Breaking Changes**：破壊的変更は明確に文書化する
+1. **プロトコルのバージョン管理**：ツールが対応するMCPプロトコルのバージョンを守る
+2. **クライアント互換性**：後方互換性を考慮する
+3. **サーバー互換性**：サーバー実装のガイドラインに従う
+4. **破壊的変更**：破壊的変更は明確に文書化する
 
-## Example Community Project: MCP Tool Registry
+## コミュニティプロジェクトの例：MCPツールレジストリ
 
 重要なコミュニティ貢献の一例として、MCPツールの公開レジストリの開発があります。
 
@@ -887,23 +887,23 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Key Takeaways
+## 重要なポイント
 
-- MCPコミュニティは多様で、様々な形の貢献を歓迎している
-- 貢献内容はコアプロトコルの強化からカスタムツール作成まで幅広い
-- 貢献ガイドラインを守ることでPRが受け入れられやすくなる
-- MCPツールの作成と共有はエコシステムを豊かにする貴重な手段
-- コミュニティの協力はMCPの成長と改善に不可欠
+- MCPコミュニティは多様で、さまざまな貢献を歓迎しています
+- 貢献内容はコアプロトコルの改善からカスタムツールまで幅広いです
+- 貢献ガイドラインに従うことでPRの承認率が上がります
+- MCPツールの作成と共有はエコシステムを強化する貴重な方法です
+- コミュニティでの協力はMCPの成長と改善に不可欠です
 
-## Exercise
+## 演習
 
 1. 自分のスキルや興味に基づいて、MCPエコシステムで貢献できそうな分野を見つける
-2. MCPリポジトリをフォークし、ローカル開発環境を整える
-3. コミュニティに役立つ小さな改善やバグ修正、ツールを作成する
+2. MCPリポジトリをフォークし、ローカル開発環境をセットアップする
+3. コミュニティに役立つ小さな改善、バグ修正、またはツールを作成する
 4. 適切なテストとドキュメントを添えて貢献内容を記録する
 5. 対応するリポジトリにプルリクエストを提出する
 
-## Additional Resources
+## 追加リソース
 
 - [MCP Community Projects](https://github.com/topics/model-context-protocol)
 
@@ -913,4 +913,4 @@ async def delete_tool(tool_name: str):
 Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **免責事項**：  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。原文の母国語版が正式な情報源とみなされます。重要な情報については、専門の人間翻訳をご利用いただくことを推奨します。本翻訳の利用により生じたいかなる誤解や解釈の相違についても、一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。

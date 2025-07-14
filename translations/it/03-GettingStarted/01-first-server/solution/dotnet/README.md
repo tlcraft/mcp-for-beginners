@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-07-09T21:58:24+00:00",
+  "translation_date": "2025-07-13T17:48:44+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
   "language_code": "it"
 }
@@ -35,7 +35,7 @@ Questo dovrebbe avviare un server web con un'interfaccia visiva che ti permette 
 Una volta che il server è connesso:
 
 - prova a elencare gli strumenti ed esegui `add`, con argomenti 2 e 4, dovresti vedere 6 come risultato.
-- vai su resources e resource template e chiama "greeting", digita un nome e dovresti vedere un saluto con il nome che hai fornito.
+- vai su resources e resource template e chiama "greeting", digita un nome e dovresti vedere un saluto con il nome che hai inserito.
 
 ### Test in modalità CLI
 

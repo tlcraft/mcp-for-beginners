@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-06-10T06:55:16+00:00",
+  "translation_date": "2025-07-14T08:46:01+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
   "language_code": "sw"
 }
 -->
-# 🐙 Moduli 4: Maendeleo ya Vitendo ya MCP - Server ya Kigezo ya GitHub ya Kipekee
+# 🐙 Moduli 4: Maendeleo ya Vitendo ya MCP - Server ya Kigezo cha GitHub ya Kipekee
 
 ![Duration](https://img.shields.io/badge/Duration-30_minutes-blue?style=flat-square)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=flat-square)
@@ -15,72 +15,72 @@ CO_OP_TRANSLATOR_METADATA:
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ Anza Haraka:** Tengeneza server ya MCP inayoweza kutumika moja kwa moja inayochukua nakala za GitHub na kuunganishwa na VS Code kwa dakika 30 tu!
+> **⚡ Anza Haraka:** Tengeneza server ya MCP inayotumika moja kwa moja kwa uzalishaji ambayo inafanya kazi ya kunakili hifadhidata za GitHub na kuunganisha na VS Code kwa dakika 30 tu!
 
 ## 🎯 Malengo ya Kujifunza
 
 Mwisho wa maabara hii, utaweza:
 
 - ✅ Kuunda server ya MCP ya kipekee kwa mtiririko halisi wa maendeleo
-- ✅ Kutekeleza uwezo wa kunakili hifadhidata za GitHub kupitia MCP
+- ✅ Kutekeleza kazi ya kunakili hifadhidata za GitHub kupitia MCP
 - ✅ Kuunganisha server za MCP za kipekee na VS Code na Agent Builder
 - ✅ Kutumia GitHub Copilot Agent Mode na zana za MCP za kipekee
-- ✅ Kupima na kupeleka server za MCP za kipekee kwenye mazingira ya uzalishaji
+- ✅ Kupima na kupeleka server za MCP za kipekee katika mazingira ya uzalishaji
 
 ## 📋 Mahitaji ya Awali
 
-- Kumaliza maabara 1-3 (misingi ya MCP na maendeleo ya hali ya juu)
-- Usajili wa GitHub Copilot ([usajili wa bure upo](https://github.com/github-copilot/signup))
-- VS Code yenye AI Toolkit na ugani wa GitHub Copilot
+- Kumaliza Maabara 1-3 (Misingi ya MCP na maendeleo ya hali ya juu)
+- Usajili wa GitHub Copilot ([usajili wa bure unapatikana](https://github.com/github-copilot/signup))
+- VS Code yenye AI Toolkit na nyongeza za GitHub Copilot
 - Git CLI imewekwa na kusanidiwa
 
 ## 🏗️ Muhtasari wa Mradi
 
-### **Changamoto ya Maendeleo Halisi**
-Kama watengenezaji, mara nyingi tunatumia GitHub kunakili hifadhidata na kuzifungua kwenye VS Code au VS Code Insiders. Mchakato huu wa mikono unahusisha:
+### **Changamoto Halisi ya Maendeleo**
+Kama watengenezaji, mara nyingi tunatumia GitHub kunakili hifadhidata na kuzifungua katika VS Code au VS Code Insiders. Mchakato huu wa mikono unahusisha:
 1. Kufungua terminal/command prompt
 2. Kuenda kwenye saraka inayotakiwa
 3. Kutumia amri ya `git clone`
-4. Kufungua VS Code kwenye saraka iliyonakiliwa
+4. Kufungua VS Code katika saraka iliyonakiliwa
 
-**Suluhisho letu la MCP linahakikisha kila kitu kinatokea kwa amri moja mahiri!**
+**Suluhisho letu la MCP linaboresha hili kuwa amri moja yenye akili!**
 
 ### **Utajenga Nini**
 Server ya **GitHub Clone MCP** (`git_mcp_server`) inayotoa:
 
 | Kipengele | Maelezo | Faida |
 |---------|-------------|---------|
-| 🔄 **Kukokotoa Hifadhidata kwa Hekima** | Nakili hifadhidata za GitHub na uhakiki | Ukaguzi wa makosa kiotomatiki |
-| 📁 **Usimamizi wa Saraka kwa Hekima** | Angalia na tengeneza saraka kwa usalama | Huzuia kufutwa kwa faili zilizopo |
-| 🚀 **Muunganisho wa VS Code kwa Majukwaa Mbalimbali** | Fungua miradi kwenye VS Code/Insiders | Kuendelea kwa kazi bila usumbufu |
-| 🛡️ **Usimamizi Imara wa Makosa** | Shughulikia matatizo ya mtandao, ruhusa, na njia | Uaminifu kwa mazingira ya uzalishaji |
+| 🔄 **Kunakili Hifadhidata kwa Akili** | Kunakili hifadhidata za GitHub kwa uhakiki | Ukaguzi wa makosa kiotomatiki |
+| 📁 **Usimamizi wa Saraka kwa Akili** | Kagua na tengeneza saraka kwa usalama | Huzuia kufuta yaliyopo |
+| 🚀 **Uunganishaji wa VS Code kwa Majukwaa Mbalimbali** | Fungua miradi katika VS Code/Insiders | Mtiririko wa kazi usio na mshono |
+| 🛡️ **Udhibiti Imara wa Makosa** | Shughulikia matatizo ya mtandao, ruhusa, na njia | Uaminifu kwa mazingira ya uzalishaji |
 
 ---
 
-## 📖 Hatua kwa Hatua ya Utekelezaji
+## 📖 Utekelezaji Hatua kwa Hatua
 
-### Hatua 1: Unda GitHub Agent katika Agent Builder
+### Hatua 1: Unda Agent wa GitHub katika Agent Builder
 
-1. **Anzisha Agent Builder** kupitia ugani wa AI Toolkit
+1. **Anzisha Agent Builder** kupitia nyongeza ya AI Toolkit
 2. **Unda agent mpya** kwa usanidi ufuatao:
    ```
    Agent Name: GitHubAgent
    ```
 
 3. **Anzisha server ya MCP ya kipekee:**
-   - Nenda **Zana** → **Ongeza Zana** → **Server ya MCP**
-   - Chagua **"Unda Server Mpya wa MCP"**
-   - Chagua **kiolezo cha Python** kwa ufanisi mkubwa
+   - Nenda kwenye **Tools** → **Add Tool** → **MCP Server**
+   - Chagua **"Create A new MCP Server"**
+   - Chagua **kiolezo cha Python** kwa kubadilika zaidi
    - **Jina la Server:** `git_mcp_server`
 
-### Hatua 2: Sanidi GitHub Copilot Agent Mode
+### Hatua 2: Sanidi Agent Mode ya GitHub Copilot
 
-1. **Fungua GitHub Copilot** ndani ya VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
-2. **Chagua Modeli ya Agent** kwenye kiolesura cha Copilot
-3. **Chagua modeli ya Claude 3.7** kwa uwezo wa hali ya juu wa kuelewa
-4. **Washa muunganisho wa MCP** kwa upatikanaji wa zana
+1. **Fungua GitHub Copilot** katika VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
+2. **Chagua Modeli ya Agent** katika kiolesura cha Copilot
+3. **Chagua modeli ya Claude 3.7** kwa uwezo bora wa kufikiri
+4. **Washa uunganishaji wa MCP** kwa upatikanaji wa zana
 
-> **💡 Ushauri wa Mtaalamu:** Claude 3.7 hutoa uelewa bora wa mtiririko wa maendeleo na mifumo ya usimamizi wa makosa.
+> **💡 Ushauri wa Mtaalamu:** Claude 3.7 hutoa uelewa bora wa mtiririko wa maendeleo na mifumo ya kushughulikia makosa.
 
 ### Hatua 3: Tekeleza Kazi Kuu ya Server ya MCP
 
@@ -121,8 +121,8 @@ Additional Requirements:
 
 #### 4a. Jaribu katika Agent Builder
 
-1. **Anzisha usanidi wa debug** kwa Agent Builder
-2. **Sanidi agent yako na maelekezo haya ya mfumo:**
+1. **Anzisha usanidi wa urekebishaji (debug) kwa Agent Builder**
+2. **Sanidi agent yako kwa maelekezo haya ya mfumo:**
 
 ```
 SYSTEM_PROMPT:
@@ -143,9 +143,9 @@ Scenario : Basic Clone and Open
 
 **Matokeo Yanayotarajiwa:**
 - ✅ Kunakili kwa mafanikio na uthibitisho wa njia
-- ✅ Kuzindua VS Code kiotomatiki
+- ✅ Kuzindua VS Code moja kwa moja
 - ✅ Ujumbe wazi wa makosa kwa hali zisizo halali
-- ✅ Usimamizi mzuri wa kesi za pembezoni
+- ✅ Kushughulikia vizuri kesi za pembezoni
 
 #### 4b. Jaribu katika MCP Inspector
 
@@ -153,56 +153,56 @@ Scenario : Basic Clone and Open
 
 ---
 
-**🎉 Hongera!** Umefanikiwa kuunda server ya MCP inayotumika kwa vitendo, inayotatua changamoto halisi za mtiririko wa maendeleo. Server yako ya kipekee ya kunakili GitHub inaonyesha nguvu ya MCP katika kuendeleza na kuongeza tija ya watengenezaji.
+**🎉 Hongera!** Umefanikiwa kuunda server ya MCP ya vitendo, tayari kwa uzalishaji inayotatua changamoto halisi za mtiririko wa maendeleo. Server yako ya kunakili GitHub ya kipekee inaonyesha nguvu ya MCP katika kuendesha na kuboresha tija ya watengenezaji.
 
-### 🏆 Mafanikio Yamepatikana:
+### 🏆 Mafanikio Uliyopata:
 - ✅ **MCP Developer** - Umeunda server ya MCP ya kipekee
 - ✅ **Workflow Automator** - Umeboresha michakato ya maendeleo  
-- ✅ **Integration Expert** - Umeunganisha zana nyingi za maendeleo
-- ✅ **Production Ready** - Umetengeneza suluhisho zinazoweza kupelekwa
+- ✅ **Mtaalamu wa Uunganishaji** - Umeunganisha zana nyingi za maendeleo
+- ✅ **Tayari kwa Uzalishaji** - Umetengeneza suluhisho zinazoweza kupelekwa
 
 ---
 
 ## 🎓 Kumaliza Warsha: Safari Yako na Model Context Protocol
 
-**Mhusika wa Warsha,**
+**Mshiriki Mpendwa wa Warsha,**
 
-Hongera kwa kumaliza moduli zote nne za warsha ya Model Context Protocol! Umefikia hatua kubwa kuanzia kuelewa misingi ya AI Toolkit hadi kuunda server za MCP zinazotumika uzalishaji na kutatua changamoto halisi za maendeleo.
+Hongera kwa kumaliza moduli zote nne za warsha ya Model Context Protocol! Umefika mbali kutoka kuelewa misingi ya AI Toolkit hadi kujenga server za MCP zinazotumika moja kwa moja kwa uzalishaji zinazotatua changamoto halisi za maendeleo.
 
 ### 🚀 Muhtasari wa Njia Yako ya Kujifunza:
 
-**[Moduli 1](../lab1/README.md)**: Ulianza kwa kuchunguza misingi ya AI Toolkit, upimaji wa modeli, na kuunda agent yako ya kwanza ya AI.
+**[Moduli 1](../lab1/README.md)**: Umeanza kwa kuchunguza misingi ya AI Toolkit, upimaji wa modeli, na kuunda agent yako ya kwanza ya AI.
 
-**[Moduli 2](../lab2/README.md)**: Ulijifunza usanifu wa MCP, kuunganisha Playwright MCP, na kuunda agent wa otomatiki wa kivinjari.
+**[Moduli 2](../lab2/README.md)**: Umejifunza usanifu wa MCP, kuunganisha Playwright MCP, na kujenga agent wa otomatiki wa kivinjari.
 
-**[Moduli 3](../lab3/README.md)**: Ulipata ujuzi wa maendeleo ya server za MCP za kipekee na kuimarisha zana za uchunguzi makosa.
+**[Moduli 3](../lab3/README.md)**: Umeendelea na maendeleo ya server za MCP za kipekee kwa server ya Weather MCP na umemaster zana za urekebishaji.
 
-**[Moduli 4](../lab4/README.md)**: Sasa umeweka yote katika matumizi kwa kuunda zana ya otomatiki ya mtiririko wa hifadhidata za GitHub.
+**[Moduli 4](../lab4/README.md)**: Sasa umeweka yote pamoja kuunda zana ya otomatiki ya mtiririko wa kazi wa hifadhidata za GitHub.
 
 ### 🌟 Umejifunza Nini:
 
-- ✅ **Ecosystem ya AI Toolkit**: Modeli, agent, na mifumo ya muunganisho
+- ✅ **Ecosystem ya AI Toolkit**: Modeli, agent, na mifumo ya uunganishaji
 - ✅ **Usanifu wa MCP**: Muundo wa mteja-server, itifaki za usafirishaji, na usalama
-- ✅ **Zana za Mtaalamu**: Kutoka Playground hadi Inspector na kupeleka uzalishaji
-- ✅ **Maendeleo Maalum**: Kujenga, kupima, na kupeleka server zako za MCP
+- ✅ **Zana za Mtaalamu**: Kutoka Playground hadi Inspector hadi uzalishaji
+- ✅ **Maendeleo ya Kipekee**: Kujenga, kupima, na kupeleka server zako za MCP
 - ✅ **Matumizi ya Vitendo**: Kutatua changamoto halisi za mtiririko wa kazi kwa AI
 
 ### 🔮 Hatua Zako Zifuatazo:
 
-1. **Jenga Server Yako ya MCP**: Tumia ujuzi huu kuunda otomatiki wa mtiririko wako wa kipekee
+1. **Jenga Server Yako ya MCP**: Tumia ujuzi huu kuendesha mitiririko yako ya kipekee
 2. **Jiunge na Jamii ya MCP**: Shiriki kazi zako na jifunze kutoka kwa wengine
-3. **Chunguza Muunganisho wa Juu**: Unganisha server za MCP na mifumo ya kampuni
+3. **Chunguza Uunganishaji wa Juu**: Unganisha server za MCP na mifumo ya makampuni
 4. **Changia Chanzo Huria**: Saidia kuboresha zana na nyaraka za MCP
 
-Kumbuka, warsha hii ni mwanzo tu. Eneo la Model Context Protocol linaendelea kukua kwa kasi, na sasa umewezeshwa kuwa mstari wa mbele wa zana za maendeleo zinazoendeshwa na AI.
+Kumbuka, warsha hii ni mwanzo tu. Ecosystem ya Model Context Protocol inaendelea kukua kwa kasi, na sasa umewezeshwa kuwa mstari wa mbele wa zana za maendeleo zinazotumia AI.
 
-**Asante kwa kushiriki na kujitolea kujifunza!**
+**Asante kwa kushiriki na kujitolea kwako kwa kujifunza!**
 
-Tunatumai warsha hii imechochea mawazo yatakayobadilisha jinsi unavyotengeneza na kuingiliana na zana za AI katika safari yako ya maendeleo.
+Tunatumai warsha hii imezindua mawazo yatakayobadilisha jinsi unavyotengeneza na kuingiliana na zana za AI katika safari yako ya maendeleo.
 
-**Furahia kuandika programu!**
+**Furahia kuandika msimbo!**
 
 ---
 
-**Kiarifu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatubebeki dhima kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Msamaha**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

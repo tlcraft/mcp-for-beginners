@@ -2,119 +2,119 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2aa9dbc165e104764fa57e8a0d3f1c73",
-  "translation_date": "2025-06-10T05:16:24+00:00",
+  "translation_date": "2025-07-14T07:23:39+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab1/README.md",
   "language_code": "mr"
 }
 -->
-# 🚀 Module 1: AI Toolkit Fundamentals
+# 🚀 Module 1: AI Toolkit मूलतत्त्वे
 
 [![Duration](https://img.shields.io/badge/Duration-15%20minutes-blue.svg)]()
 [![Difficulty](https://img.shields.io/badge/Difficulty-Beginner-green.svg)]()
 [![Prerequisites](https://img.shields.io/badge/Prerequisites-VS%20Code-orange.svg)]()
 
-## 📋 Learning Objectives
+## 📋 शिकण्याचे उद्दिष्टे
 
-By the end of this module, you will be able to:
-- ✅ Install and configure AI Toolkit for Visual Studio Code
-- ✅ Navigate the Model Catalog and understand different model sources
-- ✅ Use the Playground for model testing and experimentation
-- ✅ Create custom AI agents using Agent Builder
-- ✅ Compare model performance across different providers
-- ✅ Apply best practices for prompt engineering
+या मॉड्यूलच्या शेवटी, तुम्ही सक्षम असाल:
+- ✅ Visual Studio Code साठी AI Toolkit इन्स्टॉल आणि कॉन्फिगर करणे
+- ✅ Model Catalog मध्ये नेव्हिगेट करणे आणि वेगवेगळ्या मॉडेल स्रोत समजून घेणे
+- ✅ Playground वापरून मॉडेल चाचणी आणि प्रयोग करणे
+- ✅ Agent Builder वापरून कस्टम AI एजंट तयार करणे
+- ✅ वेगवेगळ्या प्रदात्यांमधील मॉडेल कामगिरीची तुलना करणे
+- ✅ प्रॉम्प्ट इंजिनिअरिंगसाठी सर्वोत्तम पद्धती लागू करणे
 
-## 🧠 Introduction to AI Toolkit (AITK)
+## 🧠 AI Toolkit (AITK) परिचय
 
-The **AI Toolkit for Visual Studio Code** is Microsoft's flagship extension that transforms VS Code into a comprehensive AI development environment. It bridges the gap between AI research and practical application development, making generative AI accessible to developers of all skill levels.
+**AI Toolkit for Visual Studio Code** हा Microsoft चा प्रमुख विस्तार आहे जो VS Code ला एक संपूर्ण AI विकास वातावरणात रूपांतरित करतो. हा AI संशोधन आणि व्यावहारिक अनुप्रयोग विकास यामधील अंतर कमी करतो, ज्यामुळे जनरेटिव्ह AI सर्व कौशल्य पातळ्यांवरील विकासकांसाठी सुलभ होते.
 
-### 🌟 Key Capabilities
+### 🌟 मुख्य क्षमता
 
-| Feature | Description | Use Case |
+| वैशिष्ट्य | वर्णन | वापर प्रकरण |
 |---------|-------------|----------|
-| **🗂️ Model Catalog** | Access 100+ models from GitHub, ONNX, OpenAI, Anthropic, Google | Model discovery and selection |
-| **🔌 BYOM Support** | Integrate your own models (local/remote) | Custom model deployment |
-| **🎮 Interactive Playground** | Real-time model testing with chat interface | Rapid prototyping and testing |
-| **📎 Multi-Modal Support** | Handle text, images, and attachments | Complex AI applications |
-| **⚡ Batch Processing** | Run multiple prompts simultaneously | Efficient testing workflows |
-| **📊 Model Evaluation** | Built-in metrics (F1, relevance, similarity, coherence) | Performance assessment |
+| **🗂️ Model Catalog** | GitHub, ONNX, OpenAI, Anthropic, Google यांच्याकडून 100+ मॉडेल्स उपलब्ध | मॉडेल शोध आणि निवड |
+| **🔌 BYOM Support** | तुमची स्वतःची मॉडेल्स (स्थानिक/दूरस्थ) एकत्रित करा | कस्टम मॉडेल तैनाती |
+| **🎮 Interactive Playground** | चॅट इंटरफेससह रिअल-टाइम मॉडेल चाचणी | जलद प्रोटोटायपिंग आणि चाचणी |
+| **📎 Multi-Modal Support** | मजकूर, प्रतिमा आणि संलग्नक हाताळा | जटिल AI अनुप्रयोग |
+| **⚡ Batch Processing** | एकाच वेळी अनेक प्रॉम्प्ट चालवा | कार्यक्षम चाचणी कार्यप्रवाह |
+| **📊 Model Evaluation** | अंगभूत मेट्रिक्स (F1, सापेक्षता, साम्य, सुसंगतता) | कामगिरीचे मूल्यांकन |
 
-### 🎯 Why AI Toolkit Matters
+### 🎯 AI Toolkit का महत्त्वाचा आहे
 
-- **🚀 Accelerated Development**: From idea to prototype in minutes
-- **🔄 Unified Workflow**: One interface for multiple AI providers
-- **🧪 Easy Experimentation**: Compare models without complex setup
-- **📈 Production Ready**: Seamless transition from prototype to deployment
+- **🚀 वेगवान विकास**: कल्पनेपासून प्रोटोटाइपपर्यंत काही मिनिटांत
+- **🔄 एकसंध कार्यप्रवाह**: अनेक AI प्रदात्यांसाठी एकाच इंटरफेस
+- **🧪 सोपी प्रयोगशाळा**: क्लिष्ट सेटअपशिवाय मॉडेल्सची तुलना करा
+- **📈 उत्पादनासाठी तयार**: प्रोटोटाइपपासून तैनातीपर्यंत सहज संक्रमण
 
-## 🛠️ Prerequisites & Setup
+## 🛠️ पूर्वअट आणि सेटअप
 
-### 📦 Install AI Toolkit Extension
+### 📦 AI Toolkit विस्तार इन्स्टॉल करा
 
-**Step 1: Access Extensions Marketplace**
-1. Open Visual Studio Code
-2. Navigate to the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X`)
-3. Search for "AI Toolkit"
+**पायरी 1: Extensions Marketplace मध्ये प्रवेश करा**
+1. Visual Studio Code उघडा
+2. Extensions दृश्यावर जा (`Ctrl+Shift+X` किंवा `Cmd+Shift+X`)
+3. "AI Toolkit" शोधा
 
-**Step 2: Choose Your Version**
-- **🟢 Release**: Recommended for production use
-- **🔶 Pre-release**: Early access to cutting-edge features
+**पायरी 2: तुमची आवृत्ती निवडा**
+- **🟢 Release**: उत्पादनासाठी शिफारस केलेली आवृत्ती
+- **🔶 Pre-release**: नवीनतम वैशिष्ट्यांसाठी लवकर प्रवेश
 
-**Step 3: Install and Activate**
+**पायरी 3: इन्स्टॉल आणि सक्रिय करा**
 
 ![AI Toolkit Extension](../../../../translated_images/aitkext.d28945a03eed003c39fc39bc96ae655af9b64b9b922e78e88b07214420ed7985.mr.png)
 
-### ✅ Verification Checklist
-- [ ] AI Toolkit icon appears in the VS Code sidebar
-- [ ] Extension is enabled and activated
-- [ ] No installation errors in the output panel
+### ✅ पडताळणी यादी
+- [ ] AI Toolkit आयकॉन VS Code साइडबारमध्ये दिसतो का
+- [ ] विस्तार सक्षम आणि सक्रिय आहे का
+- [ ] आउटपुट पॅनेलमध्ये कोणतीही इन्स्टॉलेशन त्रुटी नाहीत का
 
-## 🧪 Hands-on Exercise 1: Exploring GitHub Models
+## 🧪 हाताळणी व्यायाम 1: GitHub मॉडेल्सचा अभ्यास
 
-**🎯 Objective**: Master the Model Catalog and test your first AI model
+**🎯 उद्दिष्ट**: Model Catalog मध्ये पारंगत व्हा आणि तुमचा पहिला AI मॉडेल चाचणी करा
 
-### 📊 Step 1: Navigate the Model Catalog
+### 📊 पायरी 1: Model Catalog मध्ये नेव्हिगेट करा
 
-The Model Catalog is your gateway to the AI ecosystem. It aggregates models from multiple providers, making it easy to discover and compare options.
+Model Catalog हा AI परिसंस्थेचा प्रवेशद्वार आहे. तो अनेक प्रदात्यांकडून मॉडेल्स एकत्र करतो, ज्यामुळे शोधणे आणि तुलना करणे सोपे होते.
 
-**🔍 Navigation Guide:**
+**🔍 नेव्हिगेशन मार्गदर्शक:**
 
-Click on **MODELS - Catalog** in the AI Toolkit sidebar
+AI Toolkit साइडबारमध्ये **MODELS - Catalog** वर क्लिक करा
 
 ![Model Catalog](../../../../translated_images/aimodel.263ed2be013d8fb0e2265c4f742cfe490f6f00eca5e132ec50438c8e826e34ed.mr.png)
 
-**💡 Pro Tip**: Look for models with specific capabilities that match your use case (e.g., code generation, creative writing, analysis).
+**💡 प्रो टिप**: तुमच्या वापर प्रकरणाशी जुळणाऱ्या विशिष्ट क्षमतांसह मॉडेल्स शोधा (उदा. कोड जनरेशन, सर्जनशील लेखन, विश्लेषण).
 
-**⚠️ Note**: GitHub-hosted models (i.e. GitHub Models) are free to use but are subject to rate limits on requests and tokens. If you want to access non-GitHub models (that is, external models hosted via Azure AI or other endpoints), you'll need to supply the appropriate API key or authentication.
+**⚠️ लक्षात ठेवा**: GitHub-होस्ट केलेले मॉडेल्स (म्हणजे GitHub Models) वापरण्यास मोफत आहेत पण विनंत्या आणि टोकन्सवर मर्यादा लागू होतात. जर तुम्हाला GitHub व्यतिरिक्त मॉडेल्स (उदा. Azure AI किंवा इतर एंडपॉइंट्सवर होस्ट केलेले) वापरायचे असतील, तर तुम्हाला योग्य API की किंवा प्रमाणीकरण पुरवावे लागेल.
 
-### 🚀 Step 2: Add and Configure Your First Model
+### 🚀 पायरी 2: तुमचा पहिला मॉडेल जोडा आणि कॉन्फिगर करा
 
-**Model Selection Strategy:**
-- **GPT-4.1**: Best for complex reasoning and analysis
-- **Phi-4-mini**: Lightweight, fast responses for simple tasks
+**मॉडेल निवड धोरण:**
+- **GPT-4.1**: जटिल विचार आणि विश्लेषणासाठी सर्वोत्तम
+- **Phi-4-mini**: हलके, सोप्या कामांसाठी जलद प्रतिसाद
 
-**🔧 Configuration Process:**
-1. Select **OpenAI GPT-4.1** from the catalog
-2. Click **Add to My Models** - this registers the model for use
-3. Choose **Try in Playground** to launch the testing environment
-4. Wait for model initialization (first-time setup may take a moment)
+**🔧 कॉन्फिगरेशन प्रक्रिया:**
+1. Catalog मधून **OpenAI GPT-4.1** निवडा
+2. **Add to My Models** वर क्लिक करा - यामुळे मॉडेल वापरासाठी नोंदणी होईल
+3. **Try in Playground** निवडा जेणेकरून चाचणी वातावरण सुरू होईल
+4. मॉडेल सुरू होण्याची वाट पहा (पहिल्यांदा सेटअप थोडा वेळ घेऊ शकतो)
 
 ![Playground Setup](../../../../translated_images/playground.dd6f5141344878ca4d4f3de819775da7b113518941accf37c291117c602f85db.mr.png)
 
-**⚙️ Understanding Model Parameters:**
-- **Temperature**: Controls creativity (0 = deterministic, 1 = creative)
-- **Max Tokens**: Maximum response length
-- **Top-p**: Nucleus sampling for response diversity
+**⚙️ मॉडेल पॅरामीटर्स समजून घ्या:**
+- **Temperature**: सर्जनशीलता नियंत्रित करते (0 = निश्चित, 1 = सर्जनशील)
+- **Max Tokens**: जास्तीत जास्त प्रतिसाद लांबी
+- **Top-p**: प्रतिसाद वैविध्यतेसाठी न्यूक्लियस सॅम्पलिंग
 
-### 🎯 Step 3: Master the Playground Interface
+### 🎯 पायरी 3: Playground इंटरफेसमध्ये पारंगत व्हा
 
-The Playground is your AI experimentation lab. Here's how to maximize its potential:
+Playground हा तुमचा AI प्रयोगशाळा आहे. त्याचा जास्तीत जास्त फायदा कसा घ्यायचा ते येथे आहे:
 
-**🎨 Prompt Engineering Best Practices:**
-1. **Be Specific**: Clear, detailed instructions yield better results
-2. **Provide Context**: Include relevant background information
-3. **Use Examples**: Show the model what you want with examples
-4. **Iterate**: Refine prompts based on initial results
+**🎨 प्रॉम्प्ट इंजिनिअरिंग सर्वोत्तम पद्धती:**
+1. **स्पष्ट रहा**: स्पष्ट, तपशीलवार सूचना चांगले निकाल देतात
+2. **संदर्भ द्या**: संबंधित पार्श्वभूमी माहिती द्या
+3. **उदाहरणे वापरा**: मॉडेलला काय हवे ते उदाहरणांनी दाखवा
+4. **पुनरावृत्ती करा**: सुरुवातीच्या निकालांनुसार प्रॉम्प्ट सुधारित करा
 
-**🧪 Testing Scenarios:**
+**🧪 चाचणी परिस्थिती:**
 ```markdown
 # Example 1: Code Generation
 "Write a Python function that calculates the factorial of a number using recursion. Include error handling and docstrings."
@@ -128,46 +128,46 @@ The Playground is your AI experimentation lab. Here's how to maximize its potent
 
 ![Testing Results](../../../../translated_images/result.1dfcf211fb359cf65902b09db191d3bfc65713ca15e279c1a30be213bb526949.mr.png)
 
-### 🏆 Challenge Exercise: Model Performance Comparison
+### 🏆 आव्हानात्मक व्यायाम: मॉडेल कामगिरीची तुलना
 
-**🎯 Goal**: Compare different models using identical prompts to understand their strengths
+**🎯 उद्दिष्ट**: समान प्रॉम्प्ट वापरून वेगवेगळ्या मॉडेल्सची ताकद समजून घ्या
 
-**📋 Instructions:**
-1. Add **Phi-4-mini** to your workspace
-2. Use the same prompt for both GPT-4.1 and Phi-4-mini
+**📋 सूचना:**
+1. तुमच्या वर्कस्पेसमध्ये **Phi-4-mini** जोडा
+2. GPT-4.1 आणि Phi-4-mini दोन्हींसाठी समान प्रॉम्प्ट वापरा
 
 ![set](../../../../translated_images/set.88132df189ecde2cbbda256c1841db5aac8e9bdeba1a4e343dfa031b9545d6c9.mr.png)
 
-3. Compare response quality, speed, and accuracy
-4. Document your findings in the results section
+3. प्रतिसादाची गुणवत्ता, गती आणि अचूकता यांची तुलना करा
+4. निकाल विभागात तुमची नोंद करा
 
 ![Model Comparison](../../../../translated_images/compare.97746cd0f907495503c1fc217739f3890dc76ea5f6fd92379a6db0cc331feb58.mr.png)
 
-**💡 Key Insights to Discover:**
-- When to use LLM vs SLM
-- Cost vs. performance trade-offs
-- Specialized capabilities of different models
+**💡 शोधण्यासाठी महत्त्वाचे मुद्दे:**
+- LLM आणि SLM कधी वापरायचे
+- खर्च विरुद्ध कामगिरीचे संतुलन
+- वेगवेगळ्या मॉडेल्सच्या विशेष क्षमता
 
-## 🤖 Hands-on Exercise 2: Building Custom Agents with Agent Builder
+## 🤖 हाताळणी व्यायाम 2: Agent Builder वापरून कस्टम एजंट तयार करणे
 
-**🎯 Objective**: Create specialized AI agents tailored for specific tasks and workflows
+**🎯 उद्दिष्ट**: विशिष्ट कामे आणि कार्यप्रवाहांसाठी खास AI एजंट तयार करा
 
-### 🏗️ Step 1: Understanding Agent Builder
+### 🏗️ पायरी 1: Agent Builder समजून घ्या
 
-Agent Builder is where AI Toolkit truly shines. It allows you to create purpose-built AI assistants that combine the power of large language models with custom instructions, specific parameters, and specialized knowledge.
+Agent Builder हा AI Toolkit चा खरा ठसा आहे. यामुळे तुम्ही मोठ्या भाषा मॉडेल्सच्या सामर्थ्यासह कस्टम सूचना, विशिष्ट पॅरामीटर्स आणि विशेष ज्ञान असलेले उद्दिष्ट-निर्मित AI सहाय्यक तयार करू शकता.
 
-**🧠 Agent Architecture Components:**
-- **Core Model**: The foundation LLM (GPT-4, Groks, Phi, etc.)
-- **System Prompt**: Defines agent personality and behavior
-- **Parameters**: Fine-tuned settings for optimal performance
-- **Tools Integration**: Connect to external APIs and MCP services
-- **Memory**: Conversation context and session persistence
+**🧠 Agent आर्किटेक्चर घटक:**
+- **Core Model**: मूलभूत LLM (GPT-4, Groks, Phi, इ.)
+- **System Prompt**: एजंटची व्यक्तिमत्व आणि वर्तन ठरवते
+- **Parameters**: सर्वोत्तम कामगिरीसाठी सूक्ष्म समायोजन
+- **Tools Integration**: बाह्य API आणि MCP सेवा जोडणे
+- **Memory**: संभाषण संदर्भ आणि सत्र टिकवून ठेवणे
 
 ![Agent Builder Interface](../../../../translated_images/agentbuilder.25895b2d2f8c02e7aa99dd40e105877a6f1db8f0441180087e39db67744b361f.mr.png)
 
-### ⚙️ Step 2: Agent Configuration Deep Dive
+### ⚙️ पायरी 2: Agent कॉन्फिगरेशन सखोल अभ्यास
 
-**🎨 Creating Effective System Prompts:**
+**🎨 प्रभावी System Prompts तयार करणे:**
 ```markdown
 # Template Structure:
 ## Role Definition
@@ -187,25 +187,25 @@ You are a [specific role] with expertise in [domain].
 Provide 2-3 examples of ideal interactions
 ```
 
-*Of course, you can also use Generate System Prompt to use AI to help you generate and optimize prompts*
+*तुम्ही Generate System Prompt वापरून AI च्या मदतीने प्रॉम्प्ट तयार आणि सुधारित करू शकता*
 
-**🔧 Parameter Optimization:**
-| Parameter | Recommended Range | Use Case |
+**🔧 पॅरामीटर ऑप्टिमायझेशन:**
+| पॅरामीटर | शिफारस केलेली श्रेणी | वापर प्रकरण |
 |-----------|------------------|----------|
-| **Temperature** | 0.1-0.3 | Technical/factual responses |
-| **Temperature** | 0.7-0.9 | Creative/brainstorming tasks |
-| **Max Tokens** | 500-1000 | Concise responses |
-| **Max Tokens** | 2000-4000 | Detailed explanations |
+| **Temperature** | 0.1-0.3 | तांत्रिक/तथ्यात्मक प्रतिसादांसाठी |
+| **Temperature** | 0.7-0.9 | सर्जनशील/ब्रेनस्टॉर्मिंग कामांसाठी |
+| **Max Tokens** | 500-1000 | संक्षिप्त प्रतिसादांसाठी |
+| **Max Tokens** | 2000-4000 | सविस्तर स्पष्टीकरणांसाठी |
 
-### 🐍 Step 3: Practical Exercise - Python Programming Agent
+### 🐍 पायरी 3: व्यावहारिक व्यायाम - Python प्रोग्रामिंग एजंट
 
-**🎯 Mission**: Create a specialized Python coding assistant
+**🎯 मिशन**: खास Python कोडिंग सहाय्यक तयार करा
 
-**📋 Configuration Steps:**
+**📋 कॉन्फिगरेशन पायऱ्या:**
 
-1. **Model Selection**: Choose **Claude 3.5 Sonnet** (excellent for code)
+1. **मॉडेल निवड**: **Claude 3.5 Sonnet** निवडा (कोडसाठी उत्कृष्ट)
 
-2. **System Prompt Design**:
+2. **System Prompt डिझाइन**:
 ```markdown
 # Python Programming Expert Agent
 
@@ -232,53 +232,53 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
 - Write readable, maintainable code
 ```
 
-3. **Parameter Configuration**:
-   - Temperature: 0.2 (for consistent, reliable code)
-   - Max Tokens: 2000 (detailed explanations)
-   - Top-p: 0.9 (balanced creativity)
+3. **पॅरामीटर कॉन्फिगरेशन**:
+   - Temperature: 0.2 (सुसंगत, विश्वासार्ह कोडसाठी)
+   - Max Tokens: 2000 (सविस्तर स्पष्टीकरणांसाठी)
+   - Top-p: 0.9 (संतुलित सर्जनशीलता)
 
 ![Python Agent Configuration](../../../../translated_images/pythonagent.5e51b406401c165fcabfd66f2d943c27f46b5fed0f9fb73abefc9e91ca3489d4.mr.png)
 
-### 🧪 Step 4: Testing Your Python Agent
+### 🧪 पायरी 4: तुमचा Python एजंट चाचणी करा
 
-**Test Scenarios:**
-1. **Basic Function**: "Create a function to find prime numbers"
-2. **Complex Algorithm**: "Implement a binary search tree with insert, delete, and search methods"
-3. **Real-world Problem**: "Build a web scraper that handles rate limiting and retries"
-4. **Debugging**: "Fix this code [paste buggy code]"
+**चाचणी परिस्थिती:**
+1. **मूलभूत फंक्शन**: "प्राइम नंबर शोधण्यासाठी फंक्शन तयार करा"
+2. **जटिल अल्गोरिदम**: "इन्सर्ट, डिलीट आणि सर्च मेथडसह बायनरी सर्च ट्री अंमलात आणा"
+3. **खऱ्या जगातील समस्या**: "रेट लिमिटिंग आणि पुनर्प्रयत्न हाताळणारा वेब स्क्रॅपर तयार करा"
+4. **डिबगिंग**: "हा कोड दुरुस्त करा [बग असलेला कोड पेस्ट करा]"
 
-**🏆 Success Criteria:**
-- ✅ Code runs without errors
-- ✅ Includes proper documentation
-- ✅ Follows Python best practices
-- ✅ Provides clear explanations
-- ✅ Suggests improvements
+**🏆 यश निकष:**
+- ✅ कोड त्रुटीशिवाय चालतो
+- ✅ योग्य दस्तऐवजीकरण समाविष्ट आहे
+- ✅ Python सर्वोत्तम पद्धतींचे पालन करते
+- ✅ स्पष्ट स्पष्टीकरणे देते
+- ✅ सुधारणा सुचवते
 
-## 🎓 Module 1 Wrap-Up & Next Steps
+## 🎓 Module 1 सारांश आणि पुढील पावले
 
-### 📊 Knowledge Check
+### 📊 ज्ञान तपासणी
 
-Test your understanding:
-- [ ] Can you explain the difference between models in the catalog?
-- [ ] Have you successfully created and tested a custom agent?
-- [ ] Do you understand how to optimize parameters for different use cases?
-- [ ] Can you design effective system prompts?
+तुमची समज तपासा:
+- [ ] तुम्ही Catalog मधील मॉडेल्समधील फरक समजावून सांगू शकता का?
+- [ ] तुम्ही यशस्वीपणे कस्टम एजंट तयार आणि चाचणी केली आहे का?
+- [ ] तुम्हाला वेगवेगळ्या वापर प्रकरणांसाठी पॅरामीटर्स कसे ऑप्टिमाइझ करायचे हे समजते का?
+- [ ] तुम्ही प्रभावी System Prompts डिझाइन करू शकता का?
 
-### 📚 Additional Resources
+### 📚 अतिरिक्त संसाधने
 
 - **AI Toolkit Documentation**: [Official Microsoft Docs](https://github.com/microsoft/vscode-ai-toolkit)
 - **Prompt Engineering Guide**: [Best Practices](https://platform.openai.com/docs/guides/prompt-engineering)
 - **Models in AI Toolkit**: [Models in Develpment](https://github.com/microsoft/vscode-ai-toolkit/blob/main/doc/models.md)
 
-**🎉 Congratulations!** You've mastered the fundamentals of AI Toolkit and are ready to build more advanced AI applications!
+**🎉 अभिनंदन!** तुम्ही AI Toolkit चे मूलतत्त्वे आत्मसात केली आहेत आणि अधिक प्रगत AI अनुप्रयोग तयार करण्यास तयार आहात!
 
-### 🔜 Continue to Next Module
+### 🔜 पुढील मॉड्यूलकडे पुढे जा
 
-Ready for more advanced capabilities? Continue to **[Module 2: MCP with AI Toolkit Fundamentals](../lab2/README.md)** where you'll learn how to:
-- Connect your agents to external tools using Model Context Protocol (MCP)
-- Build browser automation agents with Playwright
-- Integrate MCP servers with your AI Toolkit agents
-- Supercharge your agents with external data and capabilities
+अधिक प्रगत क्षमता शिकण्यासाठी तयार आहात? पुढील **[Module 2: MCP with AI Toolkit Fundamentals](../lab2/README.md)** मध्ये पुढे जा जिथे तुम्ही शिकाल:
+- Model Context Protocol (MCP) वापरून तुमचे एजंट बाह्य साधनांशी कसे जोडायचे
+- Playwright वापरून ब्राउझर ऑटोमेशन एजंट तयार करणे
+- AI Toolkit एजंटसह MCP सर्व्हर एकत्रित करणे
+- बाह्य डेटा आणि क्षमता वापरून तुमचे एजंट अधिक सामर्थ्यशाली बनवणे
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) चा वापर करून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील आहोत, परंतु कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेचा अभाव असू शकतो. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत म्हणून मानला पाहिजे. महत्त्वाची माहिती असल्यास, व्यावसायिक मानवी अनुवाद करणे शिफारसीय आहे. या अनुवादाच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

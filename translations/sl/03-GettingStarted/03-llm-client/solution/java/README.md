@@ -2,95 +2,95 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac2459c0d5cc823922e3d9240a95028c",
-  "translation_date": "2025-06-11T13:35:18+00:00",
+  "translation_date": "2025-07-13T19:13:44+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/java/README.md",
   "language_code": "sl"
 }
 -->
 # Calculator LLM Client
 
-Java uygulaması, LangChain4j kullanarak MCP (Model Context Protocol) hesap makinesi servisine GitHub Models entegrasyonu ile nasıl bağlanılacağını gösterir.
+Java aplikacija, ki prikazuje, kako uporabiti LangChain4j za povezavo s kalkulatorjem MCP (Model Context Protocol) s podporo GitHub Models.
 
-## Ön Koşullar
+## Zahteve
 
-- Java 21 veya üzeri
-- Maven 3.6+ (veya dahil edilen Maven wrapper)
-- GitHub Models erişimine sahip bir GitHub hesabı
-- `http://localhost:8080` üzerinde çalışan bir MCP hesap makinesi servisi
+- Java 21 ali novejša
+- Maven 3.6+ (ali uporabi priložen Maven wrapper)
+- GitHub račun z dostopom do GitHub Models
+- MCP kalkulator storitev, ki teče na `http://localhost:8080`
 
-## GitHub Token Alma
+## Pridobitev GitHub žetona
 
-Bu uygulama, GitHub Models kullanır ve GitHub kişisel erişim token'ı gerektirir. Token'ınızı almak için şu adımları izleyin:
+Ta aplikacija uporablja GitHub Models, kar zahteva osebni dostopni žeton GitHub. Sledi tem korakom za pridobitev žetona:
 
-### 1. GitHub Models'a Erişim
-1. [GitHub Models](https://github.com/marketplace/models) sayfasına gidin  
-2. GitHub hesabınızla giriş yapın  
-3. Henüz erişiminiz yoksa GitHub Models için erişim isteğinde bulunun  
+### 1. Dostop do GitHub Models
+1. Obišči [GitHub Models](https://github.com/marketplace/models)
+2. Prijavi se s svojim GitHub računom
+3. Če še nimaš dostopa do GitHub Models, ga zahtej
 
-### 2. Kişisel Erişim Token'ı Oluşturma
-1. [GitHub Ayarları → Geliştirici ayarları → Kişisel erişim tokenları → Tokenlar (klasik)](https://github.com/settings/tokens) sayfasına gidin  
-2. "Generate new token" → "Generate new token (classic)" seçeneğine tıklayın  
-3. Token'a anlamlı bir isim verin (örneğin, "MCP Calculator Client")  
-4. Süre sonunu ihtiyacınıza göre ayarlayın  
-5. Aşağıdaki izinleri seçin:  
-   - `repo` (özel depolara erişim için)  
-   - `user:email`  
-6. "Generate token" butonuna basın  
-7. **Önemli**: Token'ı hemen kopyalayın - tekrar göremeyeceksiniz!
+### 2. Ustvari osebni dostopni žeton
+1. Obišči [GitHub Nastavitve → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
+2. Klikni "Generate new token" → "Generate new token (classic)"
+3. Poimenuj žeton (npr. "MCP Calculator Client")
+4. Nastavi potek veljavnosti po potrebi
+5. Izberi naslednje pravice:
+   - `repo` (če dostopaš do zasebnih repozitorijev)
+   - `user:email`
+6. Klikni "Generate token"
+7. **Pomembno**: Žeton takoj kopiraj - kasneje ga ne boš več videl!
 
-### 3. Ortam Değişkenini Ayarlama
+### 3. Nastavi okoljsko spremenljivko
 
-#### Windows (Komut İstemi):
+#### Na Windows (Command Prompt):
 ```cmd
 set GITHUB_TOKEN=your_github_token_here
 ```
 
-#### Windows (PowerShell):
+#### Na Windows (PowerShell):
 ```powershell
 $env:GITHUB_TOKEN="your_github_token_here"
 ```
 
-#### macOS/Linux:
+#### Na macOS/Linux:
 ```bash
 export GITHUB_TOKEN=your_github_token_here
 ```
 
-## Kurulum ve Yükleme
+## Namestitev in nastavitev
 
-1. **Projeyi klonlayın veya proje dizinine gidin**
+1. **Kloniraj ali pojdi v mapo projekta**
 
-2. **Bağımlılıkları yükleyin**:  
+2. **Namesti odvisnosti**:
    ```cmd
    mvnw clean install
-   ```  
-   Ya da Maven global kuruluysa:  
+   ```
+   Ali če imaš Maven nameščen globalno:
    ```cmd
    mvn clean install
    ```
 
-3. **Ortam değişkenini ayarlayın** ("GitHub Token Alma" bölümüne bakınız)
+3. **Nastavi okoljsko spremenljivko** (glej razdelek "Pridobitev GitHub žetona" zgoraj)
 
-4. **MCP Calculator Servisini Başlatın**:  
-   1. bölümdeki MCP hesap makinesi servisini `http://localhost:8080/sse` adresinde çalıştırdığınızdan emin olun. Bu servis çalışmadan istemciyi başlatmayın.
+4. **Zaženi MCP kalkulator storitev**:
+   Prepričaj se, da imaš zagnano MCP kalkulator storitev iz poglavja 1 na `http://localhost:8080/sse`. Ta mora teči pred zagonom klienta.
 
-## Uygulamayı Çalıştırma
+## Zagon aplikacije
 
 ```cmd
 mvnw clean package
 java -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Uygulamanın Yaptıkları
+## Kaj aplikacija počne
 
-Uygulama, hesap makinesi servisiyle üç temel etkileşimi gösterir:
+Aplikacija prikazuje tri glavne interakcije s kalkulator storitvijo:
 
-1. **Toplama**: 24.5 ile 17.3 sayılarının toplamını hesaplar  
-2. **Karekök**: 144 sayısının karekökünü hesaplar  
-3. **Yardım**: Kullanılabilir hesap makinesi fonksiyonlarını gösterir  
+1. **Seštevanje**: Izračuna vsoto 24.5 in 17.3
+2. **Kvadratni koren**: Izračuna kvadratni koren števila 144
+3. **Pomoč**: Prikaže razpoložljive funkcije kalkulatorja
 
-## Beklenen Çıktı
+## Pričakovani izpis
 
-Başarıyla çalıştığında aşağıdakine benzer bir çıktı görmelisiniz:
+Ob uspešnem zagonu bi moral videti izpis, podoben temu:
 
 ```
 The sum of 24.5 and 17.3 is 41.8.
@@ -98,52 +98,52 @@ The square root of 144 is 12.
 The calculator service provides the following functions: add, subtract, multiply, divide, sqrt, power...
 ```
 
-## Sorun Giderme
+## Reševanje težav
 
-### Yaygın Sorunlar
+### Pogoste težave
 
-1. **"GITHUB_TOKEN environment variable not set"**  
-   - `GITHUB_TOKEN` environment variable
-   - Restart your terminal/command prompt after setting the variable
+1. **"GITHUB_TOKEN environment variable not set"**
+   - Preveri, da si nastavil `GITHUB_TOKEN` okoljsko spremenljivko
+   - Po nastavitvi ponovno zaženi terminal/ukazno vrstico
 
 2. **"Connection refused to localhost:8080"**
-   - Ensure the MCP calculator service is running on port 8080
-   - Check if another service is using port 8080
+   - Preveri, da MCP kalkulator storitev teče na vratih 8080
+   - Preveri, ali katera druga storitev ne uporablja vrat 8080
 
 3. **"Authentication failed"**
-   - Verify your GitHub token is valid and has the correct permissions
-   - Check if you have access to GitHub Models
+   - Preveri, da je tvoj GitHub žeton veljaven in ima ustrezne pravice
+   - Preveri, ali imaš dostop do GitHub Models
 
-4. **Maven build errors**
-   - Ensure you're using Java 21 or higher: `java -version`
-   - Try cleaning the build: `mvnw clean` komutlarını doğru şekilde çalıştırdığınızdan emin olun  
+4. **Napake pri Maven build-u**
+   - Preveri, da uporabljaš Java 21 ali novejšo: `java -version`
+   - Poskusi očistiti build: `mvnw clean`
 
-### Hata Ayıklama
+### Odpravljanje napak
 
-Hata ayıklama günlüklerini etkinleştirmek için çalıştırırken aşağıdaki JVM argümanını ekleyin:  
+Za omogočanje debug logiranja dodaj naslednji JVM argument ob zagonu:
 ```cmd
 java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Konfigürasyon
+## Konfiguracija
 
-Uygulama şu şekilde yapılandırılmıştır:  
-- GitHub Models `gpt-4.1-nano` model
-- Connect to MCP service at `http://localhost:8080/sse` kullanır  
-- İstekler için 60 saniyelik zaman aşımı  
-- Hata ayıklama için istek/yanıt günlüklemesi etkin  
+Aplikacija je nastavljena tako, da:
+- Uporablja GitHub Models z modelom `gpt-4.1-nano`
+- Povezuje se na MCP storitev na `http://localhost:8080/sse`
+- Uporablja 60-sekundni timeout za zahteve
+- Omogoča beleženje zahtev in odgovorov za lažje odpravljanje napak
 
-## Bağımlılıklar
+## Odvisnosti
 
-Projede kullanılan temel bağımlılıklar:  
-- **LangChain4j**: AI entegrasyonu ve araç yönetimi için  
-- **LangChain4j MCP**: Model Context Protocol desteği için  
-- **LangChain4j GitHub Models**: GitHub Models entegrasyonu için  
-- **Spring Boot**: Uygulama çatısı ve bağımlılık yönetimi için  
+Ključne odvisnosti v tem projektu:
+- **LangChain4j**: za AI integracijo in upravljanje orodij
+- **LangChain4j MCP**: za podporo Model Context Protocol
+- **LangChain4j GitHub Models**: za integracijo GitHub Models
+- **Spring Boot**: za ogrodje aplikacije in injekcijo odvisnosti
 
-## Lisans
+## Licenca
 
-Bu proje Apache Lisansı 2.0 altında lisanslanmıştır - detaylar için [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE) dosyasına bakınız.
+Ta projekt je licenciran pod Apache License 2.0 - podrobnosti najdeš v datoteki [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE).
 
-**Opozorilo**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

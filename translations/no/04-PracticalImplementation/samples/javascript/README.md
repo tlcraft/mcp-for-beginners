@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:51:09+00:00",
+  "translation_date": "2025-07-13T23:28:11+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "no"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Dette er et JavaScript-eksempel for en MCP-server
 
-Her er et eksempel på registrering av et verktøy der vi registrerer et verktøy som foretar en falsk anrop til en LLM:
+Her er et eksempel på en verktøyregistrering hvor vi registrerer et verktøy som gjør et mock-kall til en LLM:
 
 ```javascript
 this.mcpServer.tool(
@@ -74,7 +74,7 @@ this.mcpServer.tool(
 );
 ```
 
-## Installere
+## Installer
 
 Kjør følgende kommando:
 
@@ -88,4 +88,5 @@ npm install
 npm start
 ```
 
-I'm sorry, it seems there might be a misunderstanding. Could you clarify what language you mean by "no"? If you meant Norwegian, I can certainly help with that translation.
+**Ansvarsfraskrivelse**:  
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

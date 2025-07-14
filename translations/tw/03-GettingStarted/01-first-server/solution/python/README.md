@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-09T22:59:27+00:00",
+  "translation_date": "2025-07-13T17:58:39+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "tw"
 }
@@ -47,21 +47,21 @@ mcp dev server.py
 
 伺服器連線後：
 
-- 試著列出工具並執行 `add`，帶入參數 2 和 4，結果應該會顯示 6。
+- 嘗試列出工具並執行 `add`，參數為 2 和 4，結果應該會顯示 6。
 
-- 前往 resources 和 resource template，呼叫 get_greeting，輸入一個名字，你應該會看到帶有該名字的問候語。
+- 前往 resources 和 resource template，呼叫 get_greeting，輸入一個名字，你應該會看到帶有你輸入名字的問候語。
 
-### CLI 模式測試
+### 在 CLI 模式下測試
 
-你執行的 inspector 實際上是個 Node.js 應用程式，而 `mcp dev` 是它的包裝器。
+你執行的 inspector 其實是個 Node.js 應用程式，而 `mcp dev` 是它的包裝器。
 
-你可以直接用 CLI 模式啟動它，執行以下指令：
+你可以直接用以下指令以 CLI 模式啟動它：
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-這會列出伺服器中所有可用的工具，你應該會看到以下輸出：
+這會列出伺服器中所有可用的工具。你應該會看到以下輸出：
 
 ```text
 {

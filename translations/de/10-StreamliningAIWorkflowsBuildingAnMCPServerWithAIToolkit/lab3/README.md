@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-06-10T06:02:34+00:00",
+  "translation_date": "2025-07-14T08:06:51+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
   "language_code": "de"
 }
@@ -23,7 +23,7 @@ Am Ende dieses Labs wirst du in der Lage sein:
 - ✅ Das neueste MCP Python SDK (v1.9.3) zu konfigurieren und zu nutzen
 - ✅ Den MCP Inspector für das Debugging einzurichten und zu verwenden
 - ✅ MCP-Server sowohl in Agent Builder als auch im Inspector zu debuggen
-- ✅ Fortgeschrittene Workflows für die MCP-Serverentwicklung zu verstehen
+- ✅ Fortgeschrittene Workflows für die MCP-Server-Entwicklung zu verstehen
 
 ## 📋 Voraussetzungen
 
@@ -34,10 +34,9 @@ Am Ende dieses Labs wirst du in der Lage sein:
 
 ## 🏗️ Was du bauen wirst
 
-In diesem Lab erstellst du einen **Weather MCP Server**, der zeigt:
-
-- Umsetzung eines eigenen MCP-Servers
-- Integration mit AI Toolkit Agent Builder
+In diesem Lab erstellst du einen **Weather MCP Server**, der folgende Punkte demonstriert:
+- Eigene MCP-Server-Implementierung
+- Integration mit dem AI Toolkit Agent Builder
 - Professionelle Debugging-Workflows
 - Moderne Nutzungsmuster des MCP SDK
 
@@ -46,14 +45,14 @@ In diesem Lab erstellst du einen **Weather MCP Server**, der zeigt:
 ## 🔧 Überblick über die Kernkomponenten
 
 ### 🐍 MCP Python SDK  
-Das Model Context Protocol Python SDK bildet die Basis für die Entwicklung eigener MCP-Server. Du verwendest Version 1.9.3 mit erweiterten Debugging-Funktionen.
+Das Model Context Protocol Python SDK bildet die Grundlage für den Bau eigener MCP-Server. Du verwendest Version 1.9.3 mit erweiterten Debugging-Funktionen.
 
 ### 🔍 MCP Inspector  
 Ein leistungsstarkes Debugging-Tool, das bietet:  
-- Echtzeit-Serverüberwachung  
+- Echtzeit-Überwachung des Servers  
 - Visualisierung der Tool-Ausführung  
 - Inspektion von Netzwerk-Anfragen und -Antworten  
-- Interaktive Testumgebung  
+- Interaktive Testumgebung
 
 ---
 
@@ -63,7 +62,7 @@ Ein leistungsstarkes Debugging-Tool, das bietet:
 
 1. **Starte den Agent Builder** in VS Code über die AI Toolkit Erweiterung  
 2. **Erstelle einen neuen Agenten** mit folgender Konfiguration:  
-   - Agent Name: `WeatherAgent`
+   - Agentenname: `WeatherAgent`
 
 ![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.de.png)
 
@@ -72,12 +71,12 @@ Ein leistungsstarkes Debugging-Tool, das bietet:
 1. **Gehe zu Tools** → **Add Tool** im Agent Builder  
 2. **Wähle "MCP Server"** aus den verfügbaren Optionen  
 3. **Wähle "Create A new MCP Server"**  
-4. **Wähle die `python-weather` Vorlage aus**  
-5. **Gib deinem Server einen Namen:** `weather_mcp`
+4. **Wähle die Vorlage `python-weather`**  
+5. **Benenne deinen Server:** `weather_mcp`
 
 ![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.de.png)
 
-### Schritt 3: Öffne und untersuche das Projekt
+### Schritt 3: Öffne und prüfe das Projekt
 
 1. **Öffne das generierte Projekt** in VS Code  
 2. **Überprüfe die Projektstruktur:**  
@@ -98,33 +97,31 @@ Ein leistungsstarkes Debugging-Tool, das bietet:
 
 ### Schritt 4: Upgrade auf das neueste MCP SDK
 
-> **🔍 Warum upgraden?** Wir möchten das aktuellste MCP SDK (v1.9.3) und den Inspector Dienst (0.14.0) nutzen, um erweiterte Funktionen und bessere Debugging-Möglichkeiten zu erhalten.
+> **🔍 Warum upgraden?** Wir möchten das neueste MCP SDK (v1.9.3) und den Inspector Service (0.14.0) nutzen, um erweiterte Funktionen und bessere Debugging-Möglichkeiten zu erhalten.
 
-#### 4a. Aktualisiere die Python-Abhängigkeiten
+#### 4a. Aktualisiere Python-Abhängigkeiten
 
 **Bearbeite `pyproject.toml`:** update [./code/weather_mcp/pyproject.toml](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/pyproject.toml)
 
+#### 4b. Aktualisiere Inspector-Konfiguration
 
-#### 4b. Update Inspector Configuration
+**Bearbeite `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
 
-**Edit `inspector/package.json`:** update [./code/weather_mcp/inspector/package.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package.json)
+#### 4c. Aktualisiere Inspector-Abhängigkeiten
 
-#### 4c. Update Inspector Dependencies
+**Bearbeite `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
 
-**Edit `inspector/package-lock.json`:** update [./code/weather_mcp/inspector/package-lock.json](../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/inspector/package-lock.json)
+> **📝 Hinweis:** Diese Datei enthält umfangreiche Abhängigkeitsdefinitionen. Unten ist die wesentliche Struktur dargestellt – der vollständige Inhalt sorgt für eine korrekte Auflösung der Abhängigkeiten.
 
-> **📝 Note:** This file contains extensive dependency definitions. Below is the essential structure - the full content ensures proper dependency resolution.
+> **⚡ Vollständige Package Lock:** Die komplette package-lock.json umfasst ca. 3000 Zeilen an Abhängigkeitsdefinitionen. Oben ist die Schlüsselstruktur gezeigt – für die vollständige Auflösung verwende die bereitgestellte Datei.
 
+### Schritt 5: Konfiguriere das Debugging in VS Code
 
-> **⚡ Full Package Lock:** The complete package-lock.json contains ~3000 lines of dependency definitions. The above shows the key structure - use the provided file for complete dependency resolution.
+*Hinweis: Bitte kopiere die Datei an den angegebenen Pfad, um die entsprechende lokale Datei zu ersetzen*
 
-### Step 5: Configure VS Code Debugging
+#### 5a. Aktualisiere die Launch-Konfiguration
 
-*Note: Please copy the file in the specified path to replace the corresponding local file*
-
-#### 5a. Update Launch Configuration
-
-**Edit `.vscode/launch.json`:**
+**Bearbeite `.vscode/launch.json`:**
 
 ```json
 {
@@ -305,18 +302,18 @@ Ein leistungsstarkes Debugging-Tool, das bietet:
 
 ---
 
-## 🚀 Ausführen und Testen deines MCP Servers
+## 🚀 Deinen MCP Server starten und testen
 
-### Schritt 6: Installiere Abhängigkeiten
+### Schritt 6: Abhängigkeiten installieren
 
 Nach den Konfigurationsänderungen führe folgende Befehle aus:
 
-**Installiere Python-Abhängigkeiten:**  
+**Python-Abhängigkeiten installieren:**  
 ```bash
 uv sync
 ```
 
-**Installiere Inspector-Abhängigkeiten:**  
+**Inspector-Abhängigkeiten installieren:**  
 ```bash
 cd inspector
 npm install
@@ -325,11 +322,11 @@ npm install
 ### Schritt 7: Debuggen mit Agent Builder
 
 1. **Drücke F5** oder nutze die Konfiguration **"Debug in Agent Builder"**  
-2. **Wähle die zusammengesetzte Konfiguration** im Debug-Panel  
-3. **Warte, bis der Server startet** und Agent Builder sich öffnet  
-4. **Teste deinen Weather MCP Server** mit natürlichsprachlichen Anfragen
+2. **Wähle die zusammengesetzte Konfiguration** im Debug-Panel aus  
+3. **Warte, bis der Server startet** und der Agent Builder geöffnet wird  
+4. **Teste deinen Weather MCP Server** mit natürlichen Spracheingaben
 
-Eingabeaufforderung wie folgt:
+Gib eine Eingabeaufforderung wie diese ein
 
 SYSTEM_PROMPT
 
@@ -350,10 +347,10 @@ How's the weather like in Seattle
 1. **Nutze die Konfiguration "Debug in Inspector"** (Edge oder Chrome)  
 2. **Öffne die Inspector-Oberfläche** unter `http://localhost:6274`  
 3. **Erkunde die interaktive Testumgebung:**  
-   - Verfügbare Tools ansehen  
+   - Verfügbare Tools anzeigen  
    - Tool-Ausführung testen  
    - Netzwerk-Anfragen überwachen  
-   - Serverantworten debuggen  
+   - Server-Antworten debuggen
 
 ![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.de.png)
 
@@ -361,42 +358,42 @@ How's the weather like in Seattle
 
 ## 🎯 Wichtige Lernergebnisse
 
-Durch den Abschluss dieses Labs hast du:
+Mit Abschluss dieses Labs hast du:
 
 - [x] **Einen eigenen MCP-Server** mit AI Toolkit Vorlagen erstellt  
 - [x] **Auf das neueste MCP SDK** (v1.9.3) für erweiterte Funktionen aktualisiert  
-- [x] **Professionelle Debugging-Workflows** für Agent Builder und Inspector eingerichtet  
-- [x] **Den MCP Inspector** für interaktives Server-Testing konfiguriert  
-- [x] **VS Code Debugging-Konfigurationen** für die MCP-Entwicklung gemeistert  
+- [x] **Professionelle Debugging-Workflows** für Agent Builder und Inspector konfiguriert  
+- [x] **Den MCP Inspector** für interaktives Server-Testing eingerichtet  
+- [x] **VS Code Debugging-Konfigurationen** für MCP-Entwicklung gemeistert
 
 ## 🔧 Erforschte erweiterte Funktionen
 
-| Feature                  | Beschreibung                  | Anwendungsfall              |
-|--------------------------|------------------------------|----------------------------|
-| **MCP Python SDK v1.9.3** | Neueste Protokollimplementierung | Moderne Serverentwicklung    |
-| **MCP Inspector 0.14.0**  | Interaktives Debugging-Tool   | Echtzeit-Servertests         |
-| **VS Code Debugging**     | Integrierte Entwicklungsumgebung | Professioneller Debugging-Workflow |
-| **Agent Builder Integration** | Direkte AI Toolkit Anbindung | End-to-End Agent Testing     |
+| Funktion | Beschreibung | Anwendungsfall |
+|---------|-------------|----------|
+| **MCP Python SDK v1.9.3** | Neueste Protokoll-Implementierung | Moderne Server-Entwicklung |
+| **MCP Inspector 0.14.0** | Interaktives Debugging-Tool | Echtzeit-Server-Tests |
+| **VS Code Debugging** | Integrierte Entwicklungsumgebung | Professioneller Debugging-Workflow |
+| **Agent Builder Integration** | Direkte AI Toolkit Anbindung | End-to-End Agenten-Tests |
 
 ## 📚 Zusätzliche Ressourcen
 
 - [MCP Python SDK Dokumentation](https://modelcontextprotocol.io/docs/sdk/python)  
 - [AI Toolkit Erweiterungsanleitung](https://code.visualstudio.com/docs/ai/ai-toolkit)  
 - [VS Code Debugging Dokumentation](https://code.visualstudio.com/docs/editor/debugging)  
-- [Model Context Protocol Spezifikation](https://modelcontextprotocol.io/docs/concepts/architecture)  
+- [Model Context Protocol Spezifikation](https://modelcontextprotocol.io/docs/concepts/architecture)
 
 ---
 
-**🎉 Herzlichen Glückwunsch!** Du hast Lab 3 erfolgreich abgeschlossen und kannst jetzt eigene MCP-Server erstellen, debuggen und mit professionellen Workflows bereitstellen.
+**🎉 Glückwunsch!** Du hast Lab 3 erfolgreich abgeschlossen und kannst nun eigene MCP-Server erstellen, debuggen und mit professionellen Entwicklungs-Workflows bereitstellen.
 
 ### 🔜 Weiter zum nächsten Modul
 
-Bereit, deine MCP-Kenntnisse in einem realen Entwicklungsworkflow anzuwenden? Fahre fort zu **[Modul 4: Praktische MCP-Entwicklung – Custom GitHub Clone Server](../lab4/README.md)**, wo du:  
-- Einen produktionsreifen MCP-Server baust, der GitHub Repository-Operationen automatisiert  
-- GitHub Repository Klon-Funktionalität über MCP implementierst  
+Bereit, deine MCP-Fähigkeiten in einem realen Entwicklungsworkflow anzuwenden? Fahre fort mit **[Modul 4: Praktische MCP-Entwicklung – Custom GitHub Clone Server](../lab4/README.md)**, wo du:  
+- Einen produktionsreifen MCP-Server baust, der GitHub-Repository-Operationen automatisiert  
+- Die Funktionalität zum Klonen von GitHub-Repositories über MCP implementierst  
 - Eigene MCP-Server mit VS Code und GitHub Copilot Agent Mode integrierst  
 - Eigene MCP-Server in Produktionsumgebungen testest und bereitstellst  
 - Praktische Workflow-Automatisierung für Entwickler lernst
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

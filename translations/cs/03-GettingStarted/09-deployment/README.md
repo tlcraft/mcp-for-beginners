@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T18:37:38+00:00",
+  "translation_date": "2025-07-13T22:10:53+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "cs"
 }
@@ -24,7 +24,7 @@ Na konci této lekce budete schopni:
 
 ## Lokální vývoj a nasazení
 
-Pokud je váš server určen k použití přímo na počítači uživatele, můžete postupovat podle těchto kroků:
+Pokud je váš server určen k použití na počítači uživatele, můžete postupovat podle těchto kroků:
 
 1. **Stáhněte server**. Pokud jste server nenapsali, nejprve si ho stáhněte do svého počítače.  
 1. **Spusťte serverový proces**: Spusťte vaši MCP serverovou aplikaci.
@@ -38,15 +38,15 @@ Pro SSE (není potřeba u serveru typu stdio)
 
 MCP servery lze nasadit na různé cloudové platformy:
 
-- **Serverless Functions**: Nasazení lehkých MCP serverů jako serverless funkcí.  
-- **Container Services**: Použití služeb jako Azure Container Apps, AWS ECS nebo Google Cloud Run.  
-- **Kubernetes**: Nasazení a správa MCP serverů v Kubernetes clusterech pro vysokou dostupnost.
+- **Serverless Functions**: Nasazení lehkých MCP serverů jako serverless funkcí  
+- **Container Services**: Použití služeb jako Azure Container Apps, AWS ECS nebo Google Cloud Run  
+- **Kubernetes**: Nasazení a správa MCP serverů v Kubernetes clusterech pro vysokou dostupnost
 
 ### Příklad: Azure Container Apps
 
-Azure Container Apps podporují nasazení MCP serverů. Projekt je stále ve vývoji a aktuálně podporuje SSE servery.
+Azure Container Apps podporují nasazení MCP serverů. Je to stále ve vývoji a aktuálně podporuje SSE servery.
 
-Postupujte takto:
+Zde je postup, jak na to:
 
 1. Naklonujte repozitář:
 
@@ -100,17 +100,17 @@ Postupujte takto:
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-A je to, nasazení lokálně i do Azure pomocí těchto kroků.
+A je to, nasadíte ho lokálně i do Azure podle těchto kroků.
 
 ## Další zdroje
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
-- [Článek o Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Repo Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
+- [Článek o Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Repo Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
 ## Co dál
 
 - Další: [Praktická implementace](../../04-PracticalImplementation/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:32:24+00:00",
+  "translation_date": "2025-07-13T17:17:11+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "no"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Denne seksjonen består av flere leksjoner:
 
-- **1 Din første server**, i denne første leksjonen vil du lære hvordan du oppretter din første server og inspiserer den med inspeksjonsverktøyet, en verdifull måte å teste og feilsøke serveren din på, [til leksjonen](01-first-server/README.md)
+- **1 Din første server**, i denne første leksjonen vil du lære hvordan du oppretter din første server og inspiserer den med inspeksjonsverktøyet, en verdifull måte å teste og feilsøke serveren på, [til leksjonen](01-first-server/README.md)
 
 - **2 Klient**, i denne leksjonen vil du lære hvordan du skriver en klient som kan koble til serveren din, [til leksjonen](02-client/README.md)
 
@@ -80,7 +80,7 @@ MCP tilbyr offisielle SDK-er for flere språk:
 
 ## Øving
 
-Vi har et sett med eksempler som utfyller øvelsene du vil se i alle kapitlene i denne seksjonen. I tillegg har hvert kapittel også egne øvelser og oppgaver
+Vi har et sett med eksempler som utfyller øvelsene du vil se i alle kapitlene i denne seksjonen. I tillegg har hvert kapittel sine egne øvelser og oppgaver.
 
 - [Java Kalkulator](./samples/java/calculator/README.md)
 - [.Net Kalkulator](../../../03-GettingStarted/samples/csharp)

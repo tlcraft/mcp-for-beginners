@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:13:41+00:00",
+  "translation_date": "2025-07-13T20:22:37+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "sl"
 }
 -->
-# Zagon tega vzorca
+# Zagon tega primera
 
 ## -1- Namestite odvisnosti
 
@@ -15,13 +15,14 @@ CO_OP_TRANSLATOR_METADATA:
 npm install
 ```
 
-## -3- Zaženite vzorec
+## -3- Zaženite primer
+
 
 ```bash
 npm run build
 ```
 
-## -4- Preizkusite vzorec
+## -4- Preizkusite primer
 
 Ko je strežnik zagnan v enem terminalu, odprite drug terminal in zaženite naslednji ukaz:
 
@@ -29,26 +30,26 @@ Ko je strežnik zagnan v enem terminalu, odprite drug terminal in zaženite nasl
 npm run inspector
 ```
 
-To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča preizkus vzorca.
+To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča testiranje primera.
 
 Ko je strežnik povezan:
 
-- poskusite našteti orodja in zaženite `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- poskusite našteti orodja in zaženite `add` z argumenti 2 in 4, v rezultatu bi morali videti 6.
+- pojdite na resources in resource template ter pokličite "greeting", vnesite ime in videli boste pozdrav z vnesenim imenom.
 
-### Testing in CLI mode
+### Testiranje v CLI načinu
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+Inspector, ki ste ga zagnali, je pravzaprav Node.js aplikacija, `mcp dev` pa je ovitek okoli nje.
 
-- Start up the server with the command `npm run build`.
+- Zaženite strežnik z ukazom `npm run build`.
 
-- V ločenem terminalu zaženite naslednji ukaz:
+- V drugem terminalu zaženite naslednji ukaz:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    To bo naštelo vsa orodja, ki so na voljo na strežniku. Videti bi morali naslednji izpis:
+    To bo naštelo vsa orodja, ki so na voljo na strežniku. Videli bi morali naslednji izpis:
 
     ```text
     {
@@ -79,13 +80,13 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- Orodje prikličite tako, da vnesete naslednji ukaz:
+- Zaženite orodje tako, da vnesete naslednji ukaz:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
     ```
 
-Videti bi morali naslednji izpis:
+Videli bi morali naslednji izpis:
 
     ```text
     {
@@ -99,8 +100,8 @@ Videti bi morali naslednji izpis:
     ```
 
 > ![!TIP]
-> Običajno je veliko hitreje zagnati inšpektor v načinu CLI kot v brskalniku.
-> Več o inšpektorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
+> Običajno je veliko hitreje zagnati inspector v CLI načinu kot v brskalniku.
+> Več o inspectorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
 
-**Omejitev odgovornosti**:
-Ta dokument je bil preveden z uporabo storitve AI prevajanja [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da se zavedate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku bi moral veljati za avtoritativni vir. Za ključne informacije je priporočljiv strokovni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne interpretacije, ki bi nastale zaradi uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

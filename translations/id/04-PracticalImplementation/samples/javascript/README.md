@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8f12fc94cee9ed16a5eddf9f51fba755",
-  "translation_date": "2025-05-17T14:52:07+00:00",
+  "translation_date": "2025-07-13T23:28:32+00:00",
   "source_file": "04-PracticalImplementation/samples/javascript/README.md",
   "language_code": "id"
 }
 -->
 # Contoh
 
-Ini adalah contoh JavaScript untuk Server MCP
+Ini adalah contoh JavaScript untuk MCP Server
 
-Berikut adalah contoh pendaftaran alat di mana kita mendaftarkan alat yang melakukan panggilan tiruan ke LLM:
+Berikut adalah contoh pendaftaran tool di mana kita mendaftarkan tool yang membuat panggilan tiruan ke LLM:
 
 ```javascript
 this.mcpServer.tool(
@@ -89,4 +89,4 @@ npm start
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau salah penafsiran yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

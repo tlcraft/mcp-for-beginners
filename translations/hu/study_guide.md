@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-06-11T16:49:32+00:00",
+  "translation_date": "2025-07-13T15:17:33+00:00",
   "source_file": "study_guide.md",
   "language_code": "hu"
 }
 -->
 # Model Context Protocol (MCP) kezdőknek – Tanulmányi útmutató
 
-Ez a tanulmányi útmutató áttekintést nyújt a "Model Context Protocol (MCP) kezdőknek" tananyag tárházának felépítéséről és tartalmáról. Használd ezt az útmutatót a tárház hatékonyabb böngészéséhez és az elérhető erőforrások maximális kihasználásához.
+Ez a tanulmányi útmutató áttekintést nyújt a tárház felépítéséről és tartalmáról a „Model Context Protocol (MCP) kezdőknek” tananyaghoz. Használd ezt az útmutatót a tárház hatékonyabb böngészéséhez és a rendelkezésre álló erőforrások maximális kihasználásához.
 
 ## Tárház áttekintése
 
-A Model Context Protocol (MCP) egy szabványosított keretrendszer az AI modellek és kliens alkalmazások közötti kommunikációhoz. Ez a tárház átfogó tananyagot kínál, gyakorlati kódpéldákkal C#, Java, JavaScript, Python és TypeScript nyelveken, AI fejlesztők, rendszermérnökök és szoftvermérnökök számára.
+A Model Context Protocol (MCP) egy szabványosított keretrendszer az AI modellek és kliensalkalmazások közötti kommunikációhoz. Ez a tárház átfogó tananyagot kínál gyakorlati kódpéldákkal C#, Java, JavaScript, Python és TypeScript nyelveken, amelyeket AI fejlesztők, rendszertervezők és szoftvermérnökök számára készítettek.
 
-## Vizuális tananyag térkép
+## Vizualizált tananyag térkép
 
 ```mermaid
 mindmap
@@ -88,7 +88,7 @@ mindmap
 
 ## Tárház felépítése
 
-A tárház tíz fő részre tagolódik, amelyek az MCP különböző aspektusaira fókuszálnak:
+A tárház tíz fő részre tagolódik, amelyek mindegyike az MCP különböző aspektusaira fókuszál:
 
 1. **Bevezetés (00-Introduction/)**
    - A Model Context Protocol áttekintése
@@ -113,7 +113,7 @@ A tárház tíz fő részre tagolódik, amelyek az MCP különböző aspektusair
 
 5. **Gyakorlati megvalósítás (04-PracticalImplementation/)**
    - SDK-k használata különböző programozási nyelveken
-   - Hibakeresési, tesztelési és érvényesítési módszerek
+   - Hibakeresés, tesztelés és validálás
    - Újrahasználható prompt sablonok és munkafolyamatok készítése
    - Minta projektek megvalósítási példákkal
 
@@ -121,77 +121,77 @@ A tárház tíz fő részre tagolódik, amelyek az MCP különböző aspektusair
    - Többmodalitású AI munkafolyamatok és bővíthetőség
    - Biztonságos skálázási stratégiák
    - MCP vállalati ökoszisztémákban
-   - Speciális témák, mint Azure integráció, többmodalitás, OAuth2, root context-ek, routing, mintavételezés, skálázás, biztonság, webes keresés integrációja és streaming
+   - Speciális témák, mint Azure integráció, többmodalitás, OAuth2, root context-ek, routing, mintavételezés, skálázás, biztonság, webes keresés integráció és streaming
 
 7. **Közösségi hozzájárulások (06-CommunityContributions/)**
-   - Kód és dokumentáció hozzájárulás módjai
+   - Kód és dokumentáció hozzájárulásának módjai
    - Együttműködés GitHub-on keresztül
-   - Közösség által vezérelt fejlesztések és visszajelzések
+   - Közösségi fejlesztések és visszajelzések
 
-8. **Tapasztalatok a korai bevezetésből (07-LessonsfromEarlyAdoption/)**
+8. **Tanulságok a korai alkalmazásból (07-LessonsfromEarlyAdoption/)**
    - Valós megvalósítások és sikertörténetek
    - MCP-alapú megoldások építése és telepítése
-   - Trendek és jövőbeli fejlesztési irányok
+   - Trendek és jövőbeli irányok
 
 9. **Legjobb gyakorlatok (08-BestPractices/)**
-   - Teljesítményhangolás és optimalizáció
+   - Teljesítményhangolás és optimalizálás
    - Hibabiztos MCP rendszerek tervezése
-   - Tesztelési és ellenállóképességi stratégiák
+   - Tesztelési és ellenálló képesség stratégiák
 
 10. **Esettanulmányok (09-CaseStudy/)**
-    - Mélyebb betekintés MCP megoldás architektúrákba
+    - Mélyebb elemzések MCP megoldás architektúrákról
     - Telepítési tervek és integrációs tippek
-    - Kommentált ábrák és projektbemutatók
+    - Jegyzetelt diagramok és projektbemutatók
 
-11. **Gyakorlati műhely (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Átfogó gyakorlati műhely, amely az MCP-t a Microsoft AI Toolkit VS Code bővítményével ötvözi
+11. **Gyakorlati workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
+    - Átfogó gyakorlati workshop, amely az MCP-t a Microsoft AI Toolkit-jével kombinálja VS Code-hoz
     - Intelligens alkalmazások építése, amelyek összekapcsolják az AI modelleket a valós eszközökkel
     - Gyakorlati modulok az alapoktól a saját szerver fejlesztésén át a termelési telepítésig
 
 ## Minta projektek
 
-A tárház számos mintaprojektet tartalmaz, amelyek bemutatják az MCP megvalósítását különböző programozási nyelveken:
+A tárház több minta projektet tartalmaz, amelyek bemutatják az MCP megvalósítását különböző programozási nyelveken:
 
-### Alap MCP kalkulátor minták
+### Alap MCP számológép minták
 - C# MCP szerver példa
-- Java MCP kalkulátor
-- JavaScript MCP demo
+- Java MCP számológép
+- JavaScript MCP demó
 - Python MCP szerver
 - TypeScript MCP példa
 
-### Haladó MCP kalkulátor projektek
+### Haladó MCP számológép projektek
 - Haladó C# példa
 - Java konténer alkalmazás példa
-- JavaScript haladó minta
+- JavaScript haladó példa
 - Python összetett megvalósítás
-- TypeScript konténer minta
+- TypeScript konténer példa
 
-## További erőforrások
+## További források
 
-A tárház további támogatást nyújtó anyagokat is tartalmaz:
+A tárház tartalmaz további támogató anyagokat:
 
-- **Images mappa**: Diagramok és illusztrációk, amelyek a tananyagban szerepelnek
+- **Képek mappa**: Diagramok és illusztrációk a tananyagban
 - **Fordítások**: Többnyelvű támogatás automatikus dokumentáció fordításokkal
 - **Hivatalos MCP források**:
-  - [MCP Documentation](https://modelcontextprotocol.io/)
-  - [MCP Specification](https://spec.modelcontextprotocol.io/)
-  - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+  - [MCP dokumentáció](https://modelcontextprotocol.io/)
+  - [MCP specifikáció](https://spec.modelcontextprotocol.io/)
+  - [MCP GitHub tárház](https://github.com/modelcontextprotocol)
 
 ## Hogyan használd ezt a tárházat
 
-1. **Fokozatos tanulás**: Kövesd a fejezeteket sorrendben (00-tól 10-ig) a strukturált tanulás érdekében.
-2. **Nyelvspecifikus fókusz**: Ha egy adott programozási nyelv érdekel, böngészd a minták mappáit a választott nyelv megvalósításaiért.
-3. **Gyakorlati megvalósítás**: Kezdd az "Első lépések" résszel a környezet beállításához és az első MCP szerver és kliens létrehozásához.
-4. **Haladó ismeretek**: Ha már magabiztos vagy az alapokban, merülj el a haladó témákban a tudásod bővítéséhez.
-5. **Közösségi részvétel**: Csatlakozz az [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) szerverhez, hogy kapcsolatba léphess szakértőkkel és fejlesztőtársakkal.
+1. **Sorrendben tanulás**: Kövesd a fejezeteket sorrendben (00-tól 10-ig) a strukturált tanulás érdekében.
+2. **Nyelvspecifikus fókusz**: Ha egy adott programozási nyelv érdekel, nézd meg a minták könyvtárait a választott nyelv megvalósításaiért.
+3. **Gyakorlati megvalósítás**: Kezdd az „Első lépések” résszel, hogy beállítsd a környezeted és elkészítsd az első MCP szerveredet és kliensedet.
+4. **Haladó felfedezés**: Ha már magabiztos vagy az alapokban, mélyedj el a haladó témákban a tudásod bővítéséhez.
+5. **Közösségi részvétel**: Csatlakozz az [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) szerverhez, hogy kapcsolatba léphess szakértőkkel és fejlesztőtársaiddal.
 
 ## Hozzájárulás
 
-Ez a tárház szívesen fogadja a közösség hozzájárulásait. A Közösségi hozzájárulások részben találsz útmutatást arról, hogyan járulhatsz hozzá.
+Ez a tárház szívesen fogadja a közösség hozzájárulásait. A Közösségi hozzájárulások részben találsz útmutatást a beküldésekhez.
 
 ---
 
-*Ez a tanulmányi útmutató 2025. június 11-én készült, és az akkori tárház állapotát tükrözi. Azóta a tartalom frissülhetett.*
+*Ez a tanulmányi útmutató 2025. június 11-én készült, és a tárház ezen időpontbeli állapotát tükrözi. Azóta a tárház tartalma frissülhetett.*
 
-**Nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy helytelen értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

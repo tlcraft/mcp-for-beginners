@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-09T22:54:05+00:00",
+  "translation_date": "2025-07-13T17:22:36+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "fr"
 }
@@ -31,7 +31,7 @@ Démarrez le serveur avec la commande suivante :
 
 L’inspecteur est un excellent outil qui peut démarrer votre serveur et vous permettre d’interagir avec lui pour tester son bon fonctionnement. Démarrons-le :
 > [!NOTE]
-> cela peut sembler différent dans le champ "command" car il contient la commande pour lancer un serveur avec votre runtime spécifique/
+> cela peut sembler différent dans le champ "command" car il contient la commande pour exécuter un serveur avec votre runtime spécifique/
 Vous devriez voir l'interface utilisateur suivante :
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.fr.png)

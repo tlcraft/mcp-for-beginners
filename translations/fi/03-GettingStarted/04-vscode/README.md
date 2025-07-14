@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T17:50:20+00:00",
+  "translation_date": "2025-07-13T19:31:36+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "fi"
 }
@@ -14,7 +14,7 @@ Puhutaan lisää siitä, miten käytämme visuaalista käyttöliittymää seuraa
 Näin meidän tulee lähestyä tätä korkealla tasolla:
 
 - Määritä tiedosto, josta MCP-palvelimemme löytyy.
-- Käynnistä/Yhdistä kyseiseen palvelimeen, jotta se listaa kykynsä.
+- Käynnistä/Yhdistä kyseiseen palvelimeen, jotta se voi listata kykynsä.
 - Käytä näitä kykyjä GitHub Copilot Chat -käyttöliittymän kautta.
 
 Hienoa, nyt kun ymmärrämme prosessin, kokeillaan MCP-palvelimen käyttöä Visual Studio Codessa harjoituksen avulla.
@@ -23,9 +23,9 @@ Hienoa, nyt kun ymmärrämme prosessin, kokeillaan MCP-palvelimen käyttöä Vis
 
 Tässä harjoituksessa määritämme Visual Studio Coden löytämään MCP-palvelimesi, jotta sitä voidaan käyttää GitHub Copilot Chat -käyttöliittymässä.
 
-### -0- Esiaste, ota MCP-palvelimen löytyminen käyttöön
+### -0- Esivaihe, ota MCP-palvelinten haku käyttöön
 
-Saatat joutua ottamaan MCP-palvelimien löytymisen käyttöön.
+Saatat joutua ottamaan MCP-palvelinten haun käyttöön.
 
 1. Mene Visual Studio Codessa kohtaan `File -> Preferences -> Settings`.
 
@@ -66,11 +66,11 @@ Yllä on yksinkertainen esimerkki Node.js:llä kirjoitetun palvelimen käynnist�
 
 Nyt kun olet lisännyt merkinnän, käynnistetään palvelin:
 
-1. Etsi merkintäsi *mcp.json*-tiedostosta ja varmista, että löydät "play"-ikonin:
+1. Etsi merkintäsi *mcp.json*-tiedostosta ja varmista, että näet "play"-ikonin:
 
   ![Palvelimen käynnistäminen Visual Studio Codessa](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.fi.png)  
 
-1. Klikkaa "play"-ikonia, GitHub Copilot Chatin työkalujen kuvakkeen pitäisi näyttää lisääntyneen käytettävissä olevien työkalujen määrän. Kun klikkaat työkalujen kuvaketta, näet rekisteröityjen työkalujen listan. Voit valita tai poistaa valinnan kunkin työkalun kohdalta sen mukaan, haluatko GitHub Copilotin käyttävän niitä kontekstina:
+1. Klikkaa "play"-ikonia, GitHub Copilot Chatin työkalujen kuvakkeen pitäisi näyttää lisääntyneen käytettävissä olevien työkalujen määrän. Kun klikkaat työkalukuvaketta, näet rekisteröityjen työkalujen listan. Voit valita tai poistaa valinnan kunkin työkalun kohdalta sen mukaan, haluatko GitHub Copilotin käyttävän niitä kontekstina:
 
   ![Palvelimen käynnistäminen Visual Studio Codessa](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.fi.png)
 
@@ -88,9 +88,9 @@ Kokeile lisätä palvelinmerkintä *mcp.json*-tiedostoosi ja varmista, että voi
 
 [Ratkaisu](./solution/README.md)
 
-## Keskeiset opit
+## Tärkeimmät opit
 
-Tämän luvun keskeiset opit ovat seuraavat:
+Tämän luvun tärkeimmät opit ovat:
 
 - Visual Studio Code on erinomainen asiakasohjelma, joka mahdollistaa useiden MCP-palvelimien ja niiden työkalujen käytön.
 - GitHub Copilot Chat -käyttöliittymä on tapa, jolla kommunikoit palvelimien kanssa.
@@ -98,11 +98,11 @@ Tämän luvun keskeiset opit ovat seuraavat:
 
 ## Esimerkit
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java-laskin](../samples/java/calculator/README.md)
+- [.Net-laskin](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript-laskin](../samples/javascript/README.md)
+- [TypeScript-laskin](../samples/typescript/README.md)
+- [Python-laskin](../../../../03-GettingStarted/samples/python)
 
 ## Lisäresurssit
 
@@ -110,7 +110,7 @@ Tämän luvun keskeiset opit ovat seuraavat:
 
 ## Mitä seuraavaksi
 
-- Seuraava: [SSE-palvelimen luominen](../05-sse-server/README.md)
+- Seuraavaksi: [SSE-palvelimen luominen](../05-sse-server/README.md)
 
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

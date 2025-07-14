@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f74887f51a69d3f255cb83d0b517c623",
-  "translation_date": "2025-07-04T15:16:51+00:00",
+  "translation_date": "2025-07-13T18:46:33+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "en"
 }
@@ -17,7 +17,7 @@ Now we will connect to the server and ask for its capabilities:
 
 The next step after listing server capabilities is to convert them into a format that the LLM understands. Once we do that, we can provide these capabilities as tools to our LLM.
 
-Great, we're now set up to handle user requests, so let's tackle that next.
+Great, we're now set up to handle any user requests, so let's tackle that next.
 
 ### -4- Handle user prompt request
 

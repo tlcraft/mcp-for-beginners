@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T06:06:16+00:00",
+  "translation_date": "2025-07-13T22:18:26+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "hu"
 }
 -->
 # Alap Számológép MCP Szolgáltatás
 
-Ez a szolgáltatás alapvető számológép műveleteket biztosít a Model Context Protocol (MCP) segítségével. Egyszerű példaként készült kezdők számára, akik az MCP implementációkat tanulják.
+Ez a szolgáltatás alapvető számológép műveleteket biztosít a Model Context Protocol (MCP) segítségével. Egyszerű példaként készült kezdők számára, akik az MCP megvalósításokat tanulják.
 
-További információért lásd a [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) oldalt.
+További információkért lásd a [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) oldalt.
 
 ## Jellemzők
 
 Ez a számológép szolgáltatás a következő funkciókat kínálja:
 
-1. **Alapvető matematikai műveletek**:
+1. **Alapvető Aritmetikai Műveletek**:
    - Két szám összeadása
    - Egy szám kivonása egy másikból
    - Két szám szorzása
@@ -28,8 +28,8 @@ Ez a számológép szolgáltatás a következő funkciókat kínálja:
 ## Konfiguráció
 
 1. **MCP szerverek beállítása**:
-   - Nyisd meg a munkaterületedet VS Code-ban.
-   - Hozz létre egy `.vscode/mcp.json` fájlt a munkaterületed mappájában az MCP szerverek konfigurálásához. Példa konfiguráció:
+   - Nyisd meg a munkaterületedet a VS Code-ban.
+   - Hozz létre egy `.vscode/mcp.json` fájlt a munkaterület mappájában az MCP szerverek konfigurálásához. Példa konfiguráció:
 
      ```jsonc
      {
@@ -54,50 +54,49 @@ Ez a számológép szolgáltatás a következő funkciókat kínálja:
      }
      ```
 
-   - A GitHub tároló gyökérkönyvtárát meg kell adnod, amely lekérdezhető a `git rev-parse --show-toplevel` parancsból`.
+   - Megkérnek majd, hogy add meg a GitHub tároló gyökérkönyvtárát, amit a `git rev-parse --show-toplevel` parancsból tudsz lekérdezni.
 
-## Using the Service
+## A szolgáltatás használata
 
-The service exposes the following API endpoints through the MCP protocol:
+A szolgáltatás az MCP protokollon keresztül a következő API végpontokat teszi elérhetővé:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Két szám összeadása
+- `subtract(a, b)`: A második szám kivonása az elsőből
+- `multiply(a, b)`: Két szám szorzása
+- `divide(a, b)`: Az első szám osztása a másodikkal (nulla ellenőrzéssel)
+- isPrime(n): Ellenőrzi, hogy egy szám prím-e
 
-## Test with Github Copilot Chat in VS Code
+## Tesztelés Github Copilot Chattel a VS Code-ban
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
-   - "Add 5 and 3"
-   - "Subtract 10 from 4"
-   - "Multiply 6 and 7"
-   - "Divide 8 by 2"
-   - "Does 37854 prime?"
-   - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
-   - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+1. Próbálj meg kérni a szolgáltatást az MCP protokoll használatával. Például kérdezhetsz:
+   - "Add össze 5 és 3"
+   - "Vonj ki 10-et 4-ből"
+   - "Szorozd meg 6-ot 7-tel"
+   - "Oszd el 8-at 2-vel"
+   - "Prím-e a 37854?"
+   - "Melyek a 3 prím számok 4242 előtt és után?"
+2. Hogy biztosan a megfelelő eszközt használd, add hozzá a #MyCalculator címkét a kéréshez. Például:
+   - "Add össze 5 és 3 #MyCalculator"
+   - "Vonj ki 10-et 4-ből #MyCalculator"
 
+## Konténerizált verzió
 
-## Containerized Version
+Az előző megoldás nagyszerű, ha a .NET SDK telepítve van, és minden függőség rendelkezésre áll. Ha azonban meg szeretnéd osztani a megoldást vagy más környezetben futtatni, használhatod a konténerizált verziót.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` helyére a Docker Hub felhasználónevedet írd be):
+1. Indítsd el a Dockert, és győződj meg róla, hogy fut.
+1. Egy terminálból navigálj a `03-GettingStarted\samples\csharp\src` mappába.
+1. A számológép szolgáltatás Docker képének elkészítéséhez futtasd a következő parancsot (cseréld le a `<YOUR-DOCKER-USERNAME>` részt a Docker Hub felhasználónevedre):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ```
-2. Miután az image elkészült, töltsük fel a Docker Hubra. Futtasd a következő parancsot:
+1. Miután a kép elkészült, töltsd fel a Docker Hubra a következő paranccsal:
    ```bash
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
 ## A Dockerizált verzió használata
 
-1. A `.vscode/mcp.json` fájlban cseréld le a szerver konfigurációt az alábbiakra:
+1. A `.vscode/mcp.json` fájlban cseréld le a szerver konfigurációt a következőre:
    ```json
     "mcp-calc": {
       "command": "docker",
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   A konfigurációt nézve látható, hogy a parancs `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   A konfigurációból látható, hogy a parancs `docker`, az argumentumok pedig `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. A `--rm` kapcsoló gondoskodik arról, hogy a konténer leállás után törlődjön, az `-i` pedig lehetővé teszi, hogy a konténer standard bemenetével interakcióba lépj. Az utolsó argumentum a kép neve, amit épp építettünk és feltöltöttünk a Docker Hubra.
 
-## Test the Dockerized Version
+## A Dockerizált verzió tesztelése
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, és ahogy korábban, kérheted a számológép szolgáltatást, hogy végezzen el néhány számítást.
+Indítsd el az MCP szervert a kis Start gombra kattintva a `"mcp-calc": {` fölött, és ugyanúgy kérheted a számológép szolgáltatást, hogy végezzen el néhány számítást.
 
-**Felelősségkizárás**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvén tekintendő hivatalos forrásnak. Kritikus információk esetén profi, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

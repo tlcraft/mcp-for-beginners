@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T16:56:33+00:00",
+  "translation_date": "2025-07-13T19:28:10+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "pt"
 }
@@ -29,7 +29,7 @@ Pode ser necessário ativar a descoberta dos MCP Servers.
 
 1. Vá a `File -> Preferences -> Settings` no Visual Studio Code.
 
-1. Pesquise por "MCP" e ative `chat.mcp.discovery.enabled` no ficheiro settings.json.
+1. Procure por "MCP" e ative `chat.mcp.discovery.enabled` no ficheiro settings.json.
 
 ### -1- Criar ficheiro de configuração
 

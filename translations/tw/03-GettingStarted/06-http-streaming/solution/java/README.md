@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:44:38+00:00",
+  "translation_date": "2025-07-13T21:09:08+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "tw"
 }
@@ -11,10 +11,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 此專案示範如何使用 Spring Boot WebFlux 透過 Server-Sent Events (SSE) 實現 HTTP 串流。專案包含兩個應用程式：
 
-- **Calculator Server**：一個反應式的網路服務，用於計算並透過 SSE 傳送串流結果
-- **Calculator Client**：一個客戶端應用程式，用來接收串流端點的資料
+- **Calculator Server**：一個反應式網路服務，執行計算並使用 SSE 串流結果
+- **Calculator Client**：一個客戶端應用程式，消費串流端點
 
-## 前置需求
+## 先決條件
 
 - Java 17 或以上版本
 - Maven 3.6 或以上版本
@@ -37,23 +37,23 @@ java/
 
 ## 運作原理
 
-1. **Calculator Server** 開放 `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. **Calculator Server** 提供 `/calculate` 端點，功能如下：
+   - 接收查詢參數：`a`（數字）、`b`（數字）、`op`（運算）
+   - 支援的運算：`add`、`sub`、`mul`、`div`
+   - 回傳包含計算進度與結果的 Server-Sent Events
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
-   - 接收串流回應
-   - 將每個事件印出至主控台
+2. **Calculator Client** 連接伺服器並：
+   - 發送請求計算 `7 * 5`
+   - 消費串流回應
+   - 將每個事件輸出到主控台
 
 ## 執行應用程式
 
-### 選項一：使用 Maven（推薦）
+### 選項 1：使用 Maven（推薦）
 
 #### 1. 啟動 Calculator Server
 
-開啟終端機並切換到 server 目錄：
+打開終端機並切換到伺服器目錄：
 
 ```bash
 cd calculator-server
@@ -61,7 +61,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-伺服器會啟動於 `http://localhost:8080`
+伺服器將在 `http://localhost:8080` 啟動
 
 你會看到類似以下的輸出：
 ```
@@ -71,7 +71,7 @@ Netty started on port 8080 (http)
 
 #### 2. 執行 Calculator Client
 
-開啟**另一個終端機**並切換到 client 目錄：
+打開**新的終端機**並切換到客戶端目錄：
 
 ```bash
 cd calculator-client
@@ -79,9 +79,9 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-客戶端會連接到伺服器，執行計算並顯示串流結果。
+客戶端會連接伺服器，執行計算並顯示串流結果。
 
-### 選項二：直接使用 Java
+### 選項 2：直接使用 Java
 
 #### 1. 編譯並執行伺服器：
 
@@ -101,7 +101,7 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## 手動測試伺服器
 
-你也可以使用瀏覽器或 curl 來測試伺服器：
+你也可以使用瀏覽器或 curl 測試伺服器：
 
 ### 使用瀏覽器：
 造訪：`http://localhost:8080/calculate?a=10&b=5&op=add`
@@ -125,21 +125,21 @@ data:35.0
 
 ## 支援的運算
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - 加法 (a + b)
+- `sub` - 減法 (a - b)
+- `mul` - 乘法 (a * b)
+- `div` - 除法 (a / b，若 b = 0 則回傳 NaN)
 
-## API Reference
+## API 參考
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**參數：**
+- `a`（必填）：第一個數字（double）
+- `b`（必填）：第二個數字（double）
+- `op`（必填）：運算類型（`add`、`sub`、`mul`、`div`）
 
-**Response:**
+**回應：**
 - Content-Type: `text/event-stream`
 - 回傳包含計算進度與結果的 Server-Sent Events
 
@@ -163,26 +163,26 @@ data: 35.0
 
 ### 常見問題
 
-1. **8080 埠口已被佔用**
-   - 停止其他佔用 8080 埠口的應用程式
-   - 或修改 `calculator-server/src/main/resources/application.yml`
+1. **埠號 8080 已被使用**
+   - 停止其他使用 8080 埠號的應用程式
+   - 或修改 `calculator-server/src/main/resources/application.yml` 中的伺服器埠號
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **連線被拒絕**
+   - 確認伺服器已啟動，且在埠號 8080 正常運作
+   - 確保在啟動客戶端前伺服器已啟動
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **參數名稱問題**
+   - 專案包含 Maven 編譯器設定，使用 `-parameters` 旗標
+   - 若遇到參數綁定問題，請確認專案已使用此設定編譯
 
-### Stopping the Applications
+### 停止應用程式
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` 中的伺服器埠號（如果是以背景程序執行）
+- 在執行應用程式的終端機按下 `Ctrl+C`
+- 或若以背景程序執行，使用 `mvn spring-boot:stop`
 
 ## 技術棧
 
-- **Spring Boot 3.3.1** - 應用框架
+- **Spring Boot 3.3.1** - 應用程式框架
 - **Spring WebFlux** - 反應式網路框架
 - **Project Reactor** - 反應式串流函式庫
 - **Netty** - 非阻塞 I/O 伺服器
@@ -191,12 +191,12 @@ data: 35.0
 
 ## 下一步
 
-嘗試修改程式碼來：
+嘗試修改程式碼以：
 - 新增更多數學運算
 - 加入無效運算的錯誤處理
-- 增加請求/回應的日誌紀錄
+- 新增請求/回應日誌
 - 實作身份驗證
 - 新增單元測試
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所產生的任何誤解或誤譯負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。

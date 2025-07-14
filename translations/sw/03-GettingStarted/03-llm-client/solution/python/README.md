@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24531f2b6b0f7fa3839accf4dc10088a",
-  "translation_date": "2025-05-17T10:50:43+00:00",
+  "translation_date": "2025-07-13T19:17:13+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/python/README.md",
   "language_code": "sw"
 }
 -->
-# Kuendesha mfano huu
+# Kuendesha sampuli hii
 
-Unashauriwa kusakinisha `uv` lakini si lazima, angalia [maelekezo](https://docs.astral.sh/uv/#highlights)
+Unashauriwa kufunga `uv` lakini si lazima, angalia [maelekezo](https://docs.astral.sh/uv/#highlights)
 
-## -0- Unda mazingira halisi
+## -0- Unda mazingira ya mtandaoni
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Washa mazingira halisi
+## -1- Washa mazingira ya mtandaoni
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Sakinisha mahitaji
+## -2- Sakinisha utegemezi
 
 ```bash
 pip install "mcp[cli]"
@@ -31,7 +31,8 @@ pip install openai
 pip install azure-ai-inference
 ```
 
-## -3- Endesha mfano
+## -3- Endesha sampuli
+
 
 ```bash
 python client.py
@@ -54,5 +55,5 @@ TOOL:  {'function': {'arguments': '{"a":2,"b":20}', 'name': 'add'}, 'id': 'call_
 TOOLS result:  [TextContent(type='text', text='22', annotations=None)]
 ```
 
-**Kanusho**: 
-Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T17:44:29+00:00",
+  "translation_date": "2025-07-13T18:16:48+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "no"
 }
@@ -35,7 +35,7 @@ Vi må opprette en instans av transporten og en av klienten vår:
 
 Nå har vi en klient som kan koble til når programmet kjøres. Men den lister ikke faktisk opp funksjonene sine, så la oss gjøre det nå:
 
-Flott, nå har vi fanget opp alle funksjonene. Spørsmålet er når bruker vi dem? Vel, denne klienten er ganske enkel, enkel i den forstand at vi må eksplisitt kalle funksjonene når vi ønsker dem. I neste kapittel skal vi lage en mer avansert klient som har tilgang til sin egen store språkmodell, LLM. For nå, la oss se hvordan vi kan kalle funksjonene på serveren:
+Flott, nå har vi fanget opp alle funksjonene. Spørsmålet er når bruker vi dem? Vel, denne klienten er ganske enkel, enkel i den forstand at vi må eksplisitt kalle funksjonene når vi ønsker det. I neste kapittel skal vi lage en mer avansert klient som har tilgang til sin egen store språkmodell, LLM. For nå, la oss se hvordan vi kan kalle funksjonene på serveren:
 
 ### -4- Kalle funksjoner
 

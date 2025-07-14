@@ -2,60 +2,60 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a22b7dd11cd7690f99f9195877cafdc3",
-  "translation_date": "2025-06-10T05:54:42+00:00",
+  "translation_date": "2025-07-14T07:58:00+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab2/README.md",
   "language_code": "ms"
 }
 -->
-# 🌐 Module 2: MCP עם יסודות AI Toolkit
+# 🌐 Modul 2: Asas MCP dengan AI Toolkit
 
 [![Duration](https://img.shields.io/badge/Duration-20%20minutes-blue.svg)]()
 [![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-yellow.svg)]()
 [![Prerequisites](https://img.shields.io/badge/Prerequisites-Module%201%20Complete-orange.svg)]()
 
-## 📋 מטרות הלמידה
+## 📋 Objektif Pembelajaran
 
-בסיום המודול הזה, תוכלו:
-- ✅ להבין את ארכיטקטורת Model Context Protocol (MCP) ואת יתרונותיה
-- ✅ להכיר את מערך שרתי MCP של מיקרוסופט
-- ✅ לשלב שרתי MCP עם AI Toolkit Agent Builder
-- ✅ לבנות סוכן אוטומציה לדפדפן עובד באמצעות Playwright MCP
-- ✅ להגדיר ולבדוק כלי MCP בתוך הסוכנים שלכם
-- ✅ לייצא ולפרוס סוכני MCP לשימוש בייצור
+Menjelang akhir modul ini, anda akan dapat:
+- ✅ Memahami seni bina dan manfaat Model Context Protocol (MCP)
+- ✅ Meneroka ekosistem pelayan MCP Microsoft
+- ✅ Mengintegrasikan pelayan MCP dengan AI Toolkit Agent Builder
+- ✅ Membangunkan ejen automasi pelayar berfungsi menggunakan Playwright MCP
+- ✅ Mengkonfigurasi dan menguji alat MCP dalam ejen anda
+- ✅ Mengeksport dan melancarkan ejen berkuasa MCP untuk kegunaan produksi
 
-## 🎯 המשך למודול 1
+## 🎯 Membangun dari Modul 1
 
-במודול 1 רכשנו את יסודות AI Toolkit ויצרנו את הסוכן הראשון שלנו בפייתון. עכשיו נוכל **להעצים** את הסוכנים שלכם על ידי חיבורם לכלים ושירותים חיצוניים דרך פרוטוקול מהפכני בשם **Model Context Protocol (MCP)**.
+Dalam Modul 1, kita menguasai asas AI Toolkit dan mencipta Ejen Python pertama kita. Kini kita akan **memperkasakan** ejen anda dengan menghubungkannya kepada alat dan perkhidmatan luaran melalui **Model Context Protocol (MCP)** yang revolusioner.
 
-תחשבו על זה כמו שדרוג ממחשבון פשוט למחשב מלא – לסוכני ה-AI שלכם תהיה היכולת:
-- 🌐 לגלוש ולהתממשק עם אתרי אינטרנט
-- 📁 לגשת ולנהל קבצים
-- 🔧 להשתלב עם מערכות ארגוניות
-- 📊 לעבד נתונים בזמן אמת מ-APIs
+Fikirkan ini seperti menaik taraf dari kalkulator asas ke komputer penuh - ejen AI anda akan mendapat keupayaan untuk:
+- 🌐 Melayari dan berinteraksi dengan laman web
+- 📁 Mengakses dan mengurus fail
+- 🔧 Berintegrasi dengan sistem perusahaan
+- 📊 Memproses data masa nyata dari API
 
-## 🧠 הבנת Model Context Protocol (MCP)
+## 🧠 Memahami Model Context Protocol (MCP)
 
-### 🔍 מהו MCP?
+### 🔍 Apa itu MCP?
 
-Model Context Protocol (MCP) הוא ה"USB-C של יישומי AI" – תקן פתוח מהפכני שמחבר מודלים שפתיים גדולים (LLMs) לכלים חיצוניים, מקורות נתונים ושירותים. בדיוק כמו ש-USB-C פתר את בעיית הכבלים עם מחבר אוניברסלי אחד, כך MCP מפשט את האינטגרציה של AI עם פרוטוקול סטנדרטי אחד.
+Model Context Protocol (MCP) adalah **"USB-C untuk aplikasi AI"** - satu piawaian terbuka revolusioner yang menghubungkan Large Language Models (LLMs) kepada alat, sumber data, dan perkhidmatan luaran. Sama seperti USB-C menghapuskan kekacauan kabel dengan menyediakan satu penyambung universal, MCP menghapuskan kerumitan integrasi AI dengan satu protokol piawai.
 
-### 🎯 הבעיה ש-MCP פותר
+### 🎯 Masalah yang Diselesaikan oleh MCP
 
-**לפני MCP:**
-- 🔧 אינטגרציות מותאמות לכל כלי
-- 🔄 נעילה לספקים עם פתרונות קנייניים  
-- 🔒 פגיעויות אבטחה מחיבורים לא מבוקרים
-- ⏱️ פיתוח של חודשים לאינטגרציות בסיסיות
+**Sebelum MCP:**
+- 🔧 Integrasi khusus untuk setiap alat
+- 🔄 Terikat dengan vendor melalui penyelesaian proprietari  
+- 🔒 Kerentanan keselamatan akibat sambungan ad-hoc
+- ⏱️ Berbulan-bulan pembangunan untuk integrasi asas
 
-**עם MCP:**
-- ⚡ אינטגרציה של כלים בהכנסה מהירה
-- 🔄 ארכיטקטורה בלתי תלויה בספקים
-- 🛡️ אבטחה מובנית לפי מיטב הנוהגים
-- 🚀 הוספת יכולות תוך דקות
+**Dengan MCP:**
+- ⚡ Integrasi alat plug-and-play
+- 🔄 Seni bina bebas vendor
+- 🛡️ Amalan keselamatan terbina dalam
+- 🚀 Beberapa minit untuk menambah keupayaan baru
 
-### 🏗️ מבט מעמיק על ארכיטקטורת MCP
+### 🏗️ Mendalami Seni Bina MCP
 
-MCP פועל על ארכיטקטורת **לקוח-שרת** היוצרת מערכת מאובטחת וסקלאבילית:
+MCP mengikuti seni bina **klien-pelayan** yang mewujudkan ekosistem yang selamat dan boleh diskala:
 
 ```mermaid
 graph TB
@@ -71,203 +71,200 @@ graph TB
     F --> J[Enterprise Systems]
 ```
 
-**🔧 רכיבים מרכזיים:**
+**🔧 Komponen Teras:**
 
-| רכיב | תפקיד | דוגמאות |
-|-----------|------|----------|
-| **MCP Hosts** | אפליקציות שצורכות שירותי MCP | Claude Desktop, VS Code, AI Toolkit |
-| **MCP Clients** | מטפלי הפרוטוקול (1:1 עם שרתים) | משולבים באפליקציות המארחות |
-| **MCP Servers** | חושפים יכולות דרך פרוטוקול סטנדרטי | Playwright, Files, Azure, GitHub |
-| **שכבת תקשורת** | שיטות תקשורת | stdio, HTTP, WebSockets |
+| Komponen | Peranan | Contoh |
+|-----------|---------|---------|
+| **MCP Hosts** | Aplikasi yang menggunakan perkhidmatan MCP | Claude Desktop, VS Code, AI Toolkit |
+| **MCP Clients** | Pengendali protokol (1:1 dengan pelayan) | Terbina dalam aplikasi hos |
+| **MCP Servers** | Mendedahkan keupayaan melalui protokol piawai | Playwright, Files, Azure, GitHub |
+| **Transport Layer** | Kaedah komunikasi | stdio, HTTP, WebSockets |
 
+## 🏢 Ekosistem Pelayan MCP Microsoft
 
-## 🏢 מערך שרתי MCP של מיקרוסופט
+Microsoft mengetuai ekosistem MCP dengan suite pelayan kelas perusahaan yang menyelesaikan keperluan perniagaan sebenar.
 
-מיקרוסופט מובילה את מערך MCP עם חבילת שרתים ארגוניים מקיפה שמטפלת בצרכי עסקים אמיתיים.
-
-### 🌟 שרתי MCP מובילים של מיקרוסופט
+### 🌟 Pelayan MCP Microsoft Pilihan
 
 #### 1. ☁️ Azure MCP Server
-**🔗 מאגר קוד**: [azure/azure-mcp](https://github.com/azure/azure-mcp)
-**🎯 מטרה**: ניהול משאבי Azure מקיף עם אינטגרציה ל-AI
+**🔗 Repositori**: [azure/azure-mcp](https://github.com/azure/azure-mcp)  
+**🎯 Tujuan**: Pengurusan sumber Azure menyeluruh dengan integrasi AI
 
-**✨ תכונות מרכזיות:**
-- פרוביזיה דקלרטיבית של תשתיות
-- ניטור משאבים בזמן אמת
-- המלצות לאופטימיזציה של עלויות
-- בדיקת תאימות אבטחה
+**✨ Ciri Utama:**
+- Penyediaan infrastruktur secara deklaratif
+- Pemantauan sumber masa nyata
+- Cadangan pengoptimuman kos
+- Pemeriksaan pematuhan keselamatan
 
-**🚀 מקרי שימוש:**
-- תשתית כקוד עם סיוע AI
-- קנה מידה אוטומטי של משאבים
-- אופטימיזציה של עלויות ענן
-- אוטומציה של תהליכי DevOps
+**🚀 Kes Penggunaan:**
+- Infrastruktur-sebagai-Kod dengan bantuan AI
+- Penskalakan sumber automatik
+- Pengoptimuman kos awan
+- Automasi aliran kerja DevOps
 
 #### 2. 📊 Microsoft Dataverse MCP
-**📚 תיעוד**: [Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)
-**🎯 מטרה**: ממשק שפה טבעית לנתוני עסקים
+**📚 Dokumentasi**: [Microsoft Dataverse Integration](https://go.microsoft.com/fwlink/?linkid=2320176)  
+**🎯 Tujuan**: Antara muka bahasa semula jadi untuk data perniagaan
 
-**✨ תכונות מרכזיות:**
-- שאילתות מסדי נתונים בשפה טבעית
-- הבנת הקשר עסקי
-- תבניות פרומפט מותאמות אישית
-- ממשל נתונים ארגוני
+**✨ Ciri Utama:**
+- Pertanyaan pangkalan data menggunakan bahasa semula jadi
+- Pemahaman konteks perniagaan
+- Templat prompt tersuai
+- Tadbir urus data perusahaan
 
-**🚀 מקרי שימוש:**
-- דיווח בינה עסקית
-- ניתוח נתוני לקוחות
-- תובנות צינור מכירות
-- שאילתות תאימות ורגולציה
+**🚀 Kes Penggunaan:**
+- Laporan perisikan perniagaan
+- Analisis data pelanggan
+- Wawasan saluran jualan
+- Pertanyaan data pematuhan
 
 #### 3. 🌐 Playwright MCP Server
-**🔗 מאגר קוד**: [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)
-**🎯 מטרה**: אוטומציה בדפדפן ויכולות אינטראקציה עם רשת
+**🔗 Repositori**: [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp)  
+**🎯 Tujuan**: Keupayaan automasi pelayar dan interaksi web
 
-**✨ תכונות מרכזיות:**
-- אוטומציה חוצת דפדפנים (Chrome, Firefox, Safari)
-- זיהוי אלמנטים חכם
-- יצירת צילומי מסך ו-PDF
-- ניטור תעבורת רשת
+**✨ Ciri Utama:**
+- Automasi pelbagai pelayar (Chrome, Firefox, Safari)
+- Pengecaman elemen pintar
+- Penjanaan tangkapan skrin dan PDF
+- Pemantauan trafik rangkaian
 
-**🚀 מקרי שימוש:**
-- אוטומציה של תהליכי בדיקה
-- גרידת אתרים וחילוץ נתונים
-- ניטור UI/UX
-- אוטומציה לניתוח תחרות
+**🚀 Kes Penggunaan:**
+- Aliran kerja ujian automatik
+- Pengikisan web dan ekstraksi data
+- Pemantauan UI/UX
+- Automasi analisis persaingan
 
 #### 4. 📁 Files MCP Server
-**🔗 מאגר קוד**: [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)
-**🎯 מטרה**: פעולות חכמות על מערכת הקבצים
+**🔗 Repositori**: [microsoft/files-mcp-server](https://github.com/microsoft/files-mcp-server)  
+**🎯 Tujuan**: Operasi sistem fail pintar
 
-**✨ תכונות מרכזיות:**
-- ניהול קבצים דקלרטיבי
-- סנכרון תוכן
-- אינטגרציה עם בקרת גרסאות
-- חילוץ מטה-דאטה
+**✨ Ciri Utama:**
+- Pengurusan fail secara deklaratif
+- Penyelarasan kandungan
+- Integrasi kawalan versi
+- Ekstraksi metadata
 
-**🚀 מקרי שימוש:**
-- ניהול תיעוד
-- ארגון מאגרי קוד
-- תהליכי פרסום תוכן
-- טיפול בקבצים לצינורות נתונים
+**🚀 Kes Penggunaan:**
+- Pengurusan dokumentasi
+- Pengorganisasian repositori kod
+- Aliran kerja penerbitan kandungan
+- Pengendalian fail saluran data
 
 #### 5. 📝 MarkItDown MCP Server
-**🔗 מאגר קוד**: [microsoft/markitdown](https://github.com/microsoft/markitdown)
-**🎯 מטרה**: עיבוד מתקדם של Markdown
+**🔗 Repositori**: [microsoft/markitdown](https://github.com/microsoft/markitdown)  
+**🎯 Tujuan**: Pemprosesan dan manipulasi Markdown lanjutan
 
-**✨ תכונות מרכזיות:**
-- ניתוח Markdown עשיר
-- המרת פורמטים (MD ↔ HTML ↔ PDF)
-- ניתוח מבנה תוכן
-- עיבוד תבניות
+**✨ Ciri Utama:**
+- Parsing Markdown yang kaya
+- Penukaran format (MD ↔ HTML ↔ PDF)
+- Analisis struktur kandungan
+- Pemprosesan templat
 
-**🚀 מקרי שימוש:**
-- תהליכי תיעוד טכני
-- מערכות ניהול תוכן
-- יצירת דוחות
-- אוטומציה של בסיסי ידע
+**🚀 Kes Penggunaan:**
+- Aliran kerja dokumentasi teknikal
+- Sistem pengurusan kandungan
+- Penjanaan laporan
+- Automasi pangkalan pengetahuan
 
 #### 6. 📈 Clarity MCP Server
-**📦 חבילה**: [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)
-**🎯 מטרה**: ניתוח אינטרנט והתנהגות משתמשים
+**📦 Pakej**: [@microsoft/clarity-mcp-server](https://www.npmjs.com/package/@microsoft/clarity-mcp-server)  
+**🎯 Tujuan**: Analitik web dan wawasan tingkah laku pengguna
 
-**✨ תכונות מרכזיות:**
-- ניתוח מפות חום
-- הקלטות מושבי משתמשים
-- מדדי ביצועים
-- ניתוח משפכי המרה
+**✨ Ciri Utama:**
+- Analisis data heatmap
+- Rakaman sesi pengguna
+- Metik prestasi
+- Analisis corong penukaran
 
-**🚀 מקרי שימוש:**
-- אופטימיזציה של אתרים
-- מחקר חוויית משתמש
-- ניתוח A/B Testing
-- לוחות מחוונים לבינה עסקית
+**🚀 Kes Penggunaan:**
+- Pengoptimuman laman web
+- Kajian pengalaman pengguna
+- Analisis ujian A/B
+- Papan pemuka perisikan perniagaan
 
-### 🌍 קהילת MCP
+### 🌍 Ekosistem Komuniti
 
-מעבר לשרתי מיקרוסופט, מערך MCP כולל:
-- **🐙 GitHub MCP**: ניהול מאגרים וניתוח קוד
-- **🗄️ Database MCPs**: אינטגרציות ל-PostgreSQL, MySQL, MongoDB
-- **☁️ Cloud Provider MCPs**: כלים ל-AWS, GCP, Digital Ocean
-- **📧 Communication MCPs**: אינטגרציות ל-Slack, Teams, Email
+Selain pelayan Microsoft, ekosistem MCP merangkumi:
+- **🐙 GitHub MCP**: Pengurusan repositori dan analisis kod
+- **🗄️ Database MCPs**: Integrasi PostgreSQL, MySQL, MongoDB
+- **☁️ Cloud Provider MCPs**: Alat AWS, GCP, Digital Ocean
+- **📧 Communication MCPs**: Integrasi Slack, Teams, Email
 
-## 🛠️ מעבדה מעשית: בניית סוכן אוטומציה לדפדפן
+## 🛠️ Makmal Praktikal: Membangun Ejen Automasi Pelayar
 
-**🎯 מטרה בפרויקט**: ליצור סוכן אוטומציה חכם לדפדפן באמצעות שרת Playwright MCP שיכול לנווט באתרים, לחלץ מידע ולבצע אינטראקציות מורכבות ברשת.
+**🎯 Matlamat Projek**: Cipta ejen automasi pelayar pintar menggunakan pelayan Playwright MCP yang boleh melayari laman web, mengekstrak maklumat, dan melakukan interaksi web kompleks.
 
-### 🚀 שלב 1: הקמת בסיס הסוכן
+### 🚀 Fasa 1: Persediaan Asas Ejen
 
-#### שלב 1: אתחול הסוכן
-1. **פתח את AI Toolkit Agent Builder**
-2. **צור סוכן חדש** עם התצורה הבאה:
-   - **שם**: `BrowserAgent`
-   - **Model**: Choose GPT-4o 
+#### Langkah 1: Mulakan Ejen Anda
+1. **Buka AI Toolkit Agent Builder**  
+2. **Cipta Ejen Baru** dengan konfigurasi berikut:  
+   - **Nama**: `BrowserAgent`  
+   - **Model**: Pilih GPT-4o  
 
 ![BrowserAgent](../../../../translated_images/BrowserAgent.09c1adde5e136573b64ab1baecd830049830e295eac66cb18bebb85fb386e00a.ms.png)
 
+### 🔧 Fasa 2: Aliran Kerja Integrasi MCP
 
-### 🔧 Phase 2: MCP Integration Workflow
-
-#### Step 3: Add MCP Server Integration
-1. **Navigate to Tools Section** in Agent Builder
-2. **Click "Add Tool"** to open the integration menu
-3. **Select "MCP Server"** from available options
+#### Langkah 3: Tambah Integrasi Pelayan MCP
+1. **Pergi ke Bahagian Alat** dalam Agent Builder  
+2. **Klik "Add Tool"** untuk membuka menu integrasi  
+3. **Pilih "MCP Server"** dari pilihan yang ada  
 
 ![AddMCP](../../../../translated_images/AddMCP.afe3308ac20aa94469a5717b632d77b2197b9838a438b05d39aeb2db3ec47ef1.ms.png)
 
-**🔍 Understanding Tool Types:**
-- **Built-in Tools**: Pre-configured AI Toolkit functions
-- **MCP Servers**: External service integrations
-- **Custom APIs**: Your own service endpoints
-- **Function Calling**: Direct model function access
+**🔍 Memahami Jenis Alat:**
+- **Built-in Tools**: Fungsi AI Toolkit yang telah dikonfigurasi  
+- **MCP Servers**: Integrasi perkhidmatan luaran  
+- **Custom APIs**: Titik akhir perkhidmatan anda sendiri  
+- **Function Calling**: Akses fungsi model secara langsung
 
-#### Step 4: MCP Server Selection
-1. **Choose "MCP Server"** option to proceed
+#### Langkah 4: Pemilihan Pelayan MCP
+1. **Pilih pilihan "MCP Server"** untuk meneruskan  
 ![AddMCPServer](../../../../translated_images/AddMCPServer.69b911ccef872cbd0d0c0c2e6a00806916e1673e543b902a23dee23e6ff54b4c.ms.png)
 
-2. **Browse MCP Catalog** to explore available integrations
+2. **Terokai Katalog MCP** untuk melihat integrasi yang tersedia  
 ![MCPCatalog](../../../../translated_images/MCPCatalog.a817d053145699006264f5a475f2b48fbd744e43633f656b6453c15a09ba5130.ms.png)
 
+### 🎮 Fasa 3: Konfigurasi Playwright MCP
 
-### 🎮 Phase 3: Playwright MCP Configuration
-
-#### Step 5: Select and Configure Playwright
-1. **Click "Use Featured MCP Servers"** to access Microsoft's verified servers
-2. **Select "Playwright"** from the featured list
-3. **Accept Default MCP ID** or customize for your environment
+#### Langkah 5: Pilih dan Konfigurasikan Playwright
+1. **Klik "Use Featured MCP Servers"** untuk akses pelayan Microsoft yang disahkan  
+2. **Pilih "Playwright"** dari senarai pilihan  
+3. **Terima MCP ID lalai** atau sesuaikan mengikut persekitaran anda  
 
 ![MCPID](../../../../translated_images/MCPID.67d446052979e819c945ff7b6430196ef587f5217daadd3ca52fa9659c1245c9.ms.png)
 
-#### Step 6: Enable Playwright Capabilities
-**🔑 Critical Step**: Select **ALL** available Playwright methods for maximum functionality
+#### Langkah 6: Aktifkan Keupayaan Playwright
+**🔑 Langkah Kritikal**: Pilih **SEMUA** kaedah Playwright yang tersedia untuk fungsi maksimum  
 
 ![Tools](../../../../translated_images/Tools.3ea23c447b4d9feccbd7101e6dcf9e27cb0e5273f351995fde62c5abf9a78b4c.ms.png)
 
-**🛠️ Essential Playwright Tools:**
-- **Navigation**: `goto`, `goBack`, `goForward`, `reload`
-- **Interaction**: `click`, `fill`, `press`, `hover`, `drag`
-- **Extraction**: `textContent`, `innerHTML`, `getAttribute`
-- **Validation**: `isVisible`, `isEnabled`, `waitForSelector`
-- **Capture**: `screenshot`, `pdf`, `video`
-- **Network**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
+**🛠️ Alat Playwright Penting:**
+- **Navigasi**: `goto`, `goBack`, `goForward`, `reload`  
+- **Interaksi**: `click`, `fill`, `press`, `hover`, `drag`  
+- **Ekstraksi**: `textContent`, `innerHTML`, `getAttribute`  
+- **Pengesahan**: `isVisible`, `isEnabled`, `waitForSelector`  
+- **Tangkap**: `screenshot`, `pdf`, `video`  
+- **Rangkaian**: `setExtraHTTPHeaders`, `route`, `waitForResponse`
 
-#### שלב 7: אימות הצלחת האינטגרציה
-**✅ אינדיקטורים להצלחה:**
-- כל הכלים מופיעים בממשק Agent Builder
-- אין הודעות שגיאה בלוח האינטגרציה
-- סטטוס שרת Playwright מציג "Connected"
+#### Langkah 7: Sahkan Kejayaan Integrasi
+**✅ Petunjuk Kejayaan:**
+- Semua alat muncul dalam antara muka Agent Builder  
+- Tiada mesej ralat dalam panel integrasi  
+- Status pelayan Playwright menunjukkan "Connected"  
 
 ![AgentTools](../../../../translated_images/AgentTools.053cfb96a17e02199dcc6563010d2b324d4fc3ebdd24889657a6950647a52f63.ms.png)
 
-**🔧 פתרון תקלות נפוצות:**
-- **כשל חיבור**: בדוק את חיבור האינטרנט והגדרות חומת האש
-- **כלים חסרים**: ודא שכל היכולות נבחרו במהלך ההגדרה
-- **שגיאות הרשאה**: וודא של-VS Code יש הרשאות מערכת נדרשות
+**🔧 Penyelesaian Masalah Lazim:**
+- **Sambungan Gagal**: Semak sambungan internet dan tetapan firewall  
+- **Alat Hilang**: Pastikan semua keupayaan dipilih semasa persediaan  
+- **Ralat Kebenaran**: Sahkan VS Code mempunyai kebenaran sistem yang diperlukan
 
-### 🎯 שלב 4: הנדסת פרומפטים מתקדמת
+### 🎯 Fasa 4: Kejuruteraan Prompt Lanjutan
 
-#### שלב 8: עיצוב פרומפטים חכמים למערכת
-צרו פרומפטים מתוחכמים המנצלים את כל יכולות Playwright:
+#### Langkah 8: Reka Prompt Sistem Pintar
+Cipta prompt canggih yang memanfaatkan sepenuhnya keupayaan Playwright:
 
 ```markdown
 # Web Automation Expert System Prompt
@@ -307,10 +304,10 @@ You are an advanced web automation specialist with deep expertise in browser aut
 - Follow website terms of service
 ```
 
-#### שלב 9: יצירת פרומפטים דינמיים למשתמש
-עצבו פרומפטים המדגימים יכולות שונות:
+#### Langkah 9: Cipta Prompt Pengguna Dinamik
+Reka prompt yang menunjukkan pelbagai keupayaan:
 
-**🌐 דוגמה לניתוח אתרים:**
+**🌐 Contoh Analisis Web:**  
 ```markdown
 Navigate to github.com/kinfey and provide a comprehensive analysis including:
 1. Repository structure and organization
@@ -325,59 +322,58 @@ Include screenshots at key steps and provide actionable insights.
 
 ![Prompt](../../../../translated_images/Prompt.bfc846605db4999f4d9c1b09c710ef63cae7b3057444e68bf07240fb142d9f8f.ms.png)
 
-### 🚀 שלב 5: ביצוע ובדיקות
+### 🚀 Fasa 5: Pelaksanaan dan Ujian
 
-#### שלב 10: הפעלת האוטומציה הראשונה שלך
-1. **לחץ על "Run"** כדי להפעיל את רצף האוטומציה
-2. **עקוב אחרי ביצוע בזמן אמת**:
-   - דפדפן Chrome נפתח אוטומטית
-   - הסוכן מנווט לאתר היעד
-   - צילומי מסך מתועדים בכל שלב מרכזי
-   - תוצאות הניתוח מוזרמות בזמן אמת
+#### Langkah 10: Jalankan Automasi Pertama Anda
+1. **Klik "Run"** untuk memulakan urutan automasi  
+2. **Pantau Pelaksanaan Masa Nyata**:  
+   - Pelayar Chrome dilancarkan secara automatik  
+   - Ejen melayari laman web sasaran  
+   - Tangkapan skrin diambil setiap langkah utama  
+   - Keputusan analisis dipaparkan secara langsung  
 
 ![Browser](../../../../translated_images/Browser.ec011d0bd64d0d112c8a29bd8cc44c76d0bbfd0b019cb2983ef679328435ce5d.ms.png)
 
-#### שלב 11: ניתוח תוצאות ותובנות
-סקור ניתוחים מקיפים בממשק Agent Builder:
+#### Langkah 11: Analisis Keputusan dan Wawasan
+Semak analisis menyeluruh dalam antara muka Agent Builder:
 
 ![Result](../../../../translated_images/Result.8638f2b6703e9ea6d58d4e4475e39456b6a51d4c787f9bf481bae694d370a69a.ms.png)
 
-### 🌟 שלב 6: יכולות מתקדמות ופריסה
+### 🌟 Fasa 6: Keupayaan Lanjutan dan Pelancaran
 
-#### שלב 12: ייצוא ופריסה לייצור
-Agent Builder תומך באפשרויות פריסה רבות:
+#### Langkah 12: Eksport dan Pelancaran Produksi
+Agent Builder menyokong pelbagai pilihan pelancaran:
 
 ![Code](../../../../translated_images/Code.d9eeeead0b96db0ca19c5b10ad64cfea8c1d0d1736584262970a4d43e1403d13.ms.png)
 
-## 🎓 סיכום מודול 2 ושלבים הבאים
+## 🎓 Ringkasan Modul 2 & Langkah Seterusnya
 
-### 🏆 הישג נפתח: שליט באינטגרציית MCP
+### 🏆 Pencapaian Dibuka: Pakar Integrasi MCP
 
-**✅ מיומנויות שנרכשו:**
-- [ ] הבנת ארכיטקטורת MCP ויתרונותיה
-- [ ] ניווט במערך שרתי MCP של מיקרוסופט
-- [ ] שילוב Playwright MCP עם AI Toolkit
-- [ ] בניית סוכני אוטומציה לדפדפן מתקדמים
-- [ ] הנדסת פרומפטים מתקדמת לאוטומציה ברשת
+**✅ Kemahiran Dikuasai:**
+- [ ] Memahami seni bina dan manfaat MCP  
+- [ ] Menavigasi ekosistem pelayan MCP Microsoft  
+- [ ] Mengintegrasikan Playwright MCP dengan AI Toolkit  
+- [ ] Membangun ejen automasi pelayar yang canggih  
+- [ ] Kejuruteraan prompt lanjutan untuk automasi web
 
-### 📚 משאבים נוספים
+### 📚 Sumber Tambahan
 
-- **🔗 מפרט MCP**: [מסמכי הפרוטוקול הרשמיים](https://modelcontextprotocol.io/)
-- **🛠️ API של Playwright**: [מדריך שיטות מלא](https://playwright.dev/docs/api/class-playwright)
-- **🏢 שרתי MCP של מיקרוסופט**: [מדריך אינטגרציה ארגוני](https://github.com/microsoft/mcp-servers)
-- **🌍 דוגמאות קהילתיות**: [גלריית שרתי MCP](https://github.com/modelcontextprotocol/servers)
+- **🔗 Spesifikasi MCP**: [Dokumentasi Protokol Rasmi](https://modelcontextprotocol.io/)  
+- **🛠️ API Playwright**: [Rujukan Kaedah Lengkap](https://playwright.dev/docs/api/class-playwright)  
+- **🏢 Pelayan MCP Microsoft**: [Panduan Integrasi Perusahaan](https://github.com/microsoft/mcp-servers)  
+- **🌍 Contoh Komuniti**: [Galeri Pelayan MCP](https://github.com/modelcontextprotocol/servers)
 
-**🎉 מזל טוב!** שלטתם בהצלחה באינטגרציית MCP וכעת תוכלו לבנות סוכני AI מוכנים לייצור עם יכולות כלים חיצוניים!
+**🎉 Tahniah!** Anda telah berjaya menguasai integrasi MCP dan kini boleh membina ejen AI bersedia produksi dengan keupayaan alat luaran!
 
+### 🔜 Teruskan ke Modul Seterusnya
 
-### 🔜 המשך למודול הבא
-
-רוצים לקחת את כישורי ה-MCP שלכם לשלב הבא? עברו ל-**[מודול 3: פיתוח MCP מתקדם עם AI Toolkit](../lab3/README.md)** שם תלמדו איך:
-- ליצור שרתי MCP מותאמים אישית
-- להגדיר ולהשתמש ב-SDK החדש ביותר של MCP לפייתון
-- להקים את MCP Inspector לצורך איתור תקלות
-- לשלוט בתהליכי פיתוח מתקדמים לשרת MCP
-- לבנות שרת Weather MCP מאפס
+Bersedia untuk meningkatkan kemahiran MCP anda? Teruskan ke **[Modul 3: Pembangunan MCP Lanjutan dengan AI Toolkit](../lab3/README.md)** di mana anda akan belajar cara untuk:
+- Mencipta pelayan MCP tersuai anda sendiri  
+- Mengkonfigurasi dan menggunakan SDK Python MCP terkini  
+- Menyediakan MCP Inspector untuk debugging  
+- Menguasai aliran kerja pembangunan pelayan MCP lanjutan
+- Bina Pelayan MCP Cuaca dari awal
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -2,45 +2,46 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fab17bf59e2eb82a5aeef03ad977d31",
-  "translation_date": "2025-05-17T12:11:07+00:00",
+  "translation_date": "2025-07-13T20:21:09+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/typescript/README.md",
   "language_code": "nl"
 }
 -->
-# Dit voorbeeld uitvoeren
+# Deze sample uitvoeren
 
-## -1- Installeer de afhankelijkheden
+## -1- Installeer de dependencies
 
 ```bash
 npm install
 ```
 
-## -3- Voer het voorbeeld uit
+## -3- Voer de sample uit
+
 
 ```bash
 npm run build
 ```
 
-## -4- Test het voorbeeld
+## -4- Test de sample
 
-Met de server draaiend in één terminal, open een andere terminal en voer het volgende commando uit:
+Met de server draaiend in één terminal, open je een andere terminal en voer je het volgende commando uit:
 
 ```bash
 npm run inspector
 ```
 
-Dit zou een webserver moeten starten met een visuele interface waarmee je het voorbeeld kunt testen.
+Dit zou een webserver moeten starten met een visuele interface waarmee je de sample kunt testen.
 
-Zodra de server is verbonden:
+Zodra de server verbonden is:
 
-- probeer tools op te sommen en voer `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call "greeting", type in a name and you should see a greeting with the name you provided.
+- probeer tools op te sommen en voer `add` uit met argumenten 2 en 4, je zou 6 als resultaat moeten zien.
+- ga naar resources en resource template en roep "greeting" aan, typ een naam in en je zou een begroeting met de door jou opgegeven naam moeten zien.
 
-### Testing in CLI mode
+### Testen in CLI-modus
 
-The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper around it. 
+De inspector die je hebt gestart is eigenlijk een Node.js-app en `mcp dev` is een wrapper daaromheen.
 
-- Start up the server with the command `npm run build` uit.
+- Start de server met het commando `npm run build`.
 
 - Voer in een aparte terminal het volgende commando uit:
 
@@ -48,7 +49,7 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/list
     ```
 
-    Dit zal alle beschikbare tools in de server opsommen. Je zou de volgende output moeten zien:
+    Dit zal alle beschikbare tools op de server weergeven. Je zou de volgende output moeten zien:
 
     ```text
     {
@@ -79,7 +80,7 @@ The inspector you ran is actually a Node.js app and `mcp dev` is a wrapper aroun
     }
     ```
 
-- Roep een tooltype aan door het volgende commando te typen:
+- Roep een tool type aan door het volgende commando te typen:
 
     ```bash
     npx @modelcontextprotocol/inspector --cli http://localhost:3000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -100,7 +101,7 @@ Je zou de volgende output moeten zien:
 
 > ![!TIP]
 > Het is meestal veel sneller om de inspector in CLI-modus te draaien dan in de browser.
-> Lees hier meer over de inspector [hier](https://github.com/modelcontextprotocol/inspector).
+> Lees meer over de inspector [hier](https://github.com/modelcontextprotocol/inspector).
 
-**Disclaimer**:
-Dit document is vertaald met behulp van AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we ons best doen voor nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+**Disclaimer**:  
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

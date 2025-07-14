@@ -2,40 +2,40 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:27:03+00:00",
+  "translation_date": "2025-07-13T23:29:46+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "es"
 }
 -->
 # Protocolo de Contexto de Modelo (MCP) Implementación en Python
 
-Este repositorio contiene una implementación en Python del Protocolo de Contexto de Modelo (MCP), demostrando cómo crear una aplicación tanto de servidor como de cliente que se comunican usando el estándar MCP.
+Este repositorio contiene una implementación en Python del Protocolo de Contexto de Modelo (MCP), que muestra cómo crear una aplicación tanto de servidor como de cliente que se comuniquen usando el estándar MCP.
 
-## Visión General
+## Resumen
 
 La implementación de MCP consta de dos componentes principales:
 
-1. **MCP Server (`server.py`)** - Un servidor que expone:
-   - **Tools**: Funciones que pueden ser llamadas de forma remota
-   - **Resources**: Datos que pueden ser recuperados
-   - **Prompts**: Plantillas para generar indicaciones para modelos de lenguaje
+1. **Servidor MCP (`server.py`)** - Un servidor que expone:
+   - **Herramientas**: Funciones que pueden ser llamadas de forma remota
+   - **Recursos**: Datos que pueden ser recuperados
+   - **Prompts**: Plantillas para generar prompts para modelos de lenguaje
 
-2. **MCP Client (`client.py`)** - Una aplicación cliente que se conecta al servidor y utiliza sus funcionalidades
+2. **Cliente MCP (`client.py`)** - Una aplicación cliente que se conecta al servidor y utiliza sus funcionalidades
 
 ## Características
 
 Esta implementación demuestra varias características clave de MCP:
 
-### Tools
-- `completion` - Genera textos completados a partir de modelos de IA (simulado)
+### Herramientas
+- `completion` - Genera completados de texto a partir de modelos de IA (simulado)
 - `add` - Calculadora simple que suma dos números
 
-### Resources
+### Recursos
 - `models://` - Devuelve información sobre los modelos de IA disponibles
 - `greeting://{name}` - Devuelve un saludo personalizado para un nombre dado
 
 ### Prompts
-- `review_code` - Genera una plantilla de indicación para revisar código
+- `review_code` - Genera un prompt para revisar código
 
 ## Instalación
 
@@ -55,7 +55,7 @@ Ejecuta el servidor en una ventana de terminal:
 python server.py
 ```
 
-El servidor también puede ejecutarse en modo desarrollo usando el MCP CLI:
+El servidor también puede ejecutarse en modo desarrollo usando la CLI de MCP:
 
 ```powershell
 mcp dev server.py
@@ -75,7 +75,7 @@ Ejecuta el cliente en otra ventana de terminal:
 python client.py
 ```
 
-Esto se conectará al servidor y demostrará todas las características disponibles.
+Esto conectará con el servidor y demostrará todas las funcionalidades disponibles.
 
 ### Uso del Cliente
 
@@ -85,17 +85,17 @@ El cliente (`client.py`) demuestra todas las capacidades de MCP:
 python client.py
 ```
 
-Esto se conectará al servidor y utilizará todas las funcionalidades, incluyendo tools, resources y prompts. La salida mostrará:
+Esto conectará con el servidor y utilizará todas las funciones, incluyendo herramientas, recursos y prompts. La salida mostrará:
 
 1. Resultado de la herramienta calculadora (5 + 7 = 12)
-2. Respuesta de la herramienta de completado a "¿Cuál es el significado de la vida?"
+2. Respuesta de la herramienta completion a "¿Cuál es el sentido de la vida?"
 3. Lista de modelos de IA disponibles
 4. Saludo personalizado para "MCP Explorer"
-5. Plantilla de indicación para revisión de código
+5. Plantilla de prompt para revisión de código
 
-## Detalles de Implementación
+## Detalles de la Implementación
 
-El servidor está implementado usando la API `FastMCP`, que proporciona abstracciones de alto nivel para definir servicios MCP. Aquí hay un ejemplo simplificado de cómo se definen las tools:
+El servidor está implementado usando la API `FastMCP`, que provee abstracciones de alto nivel para definir servicios MCP. Aquí hay un ejemplo simplificado de cómo se definen las herramientas:
 
 ```python
 @mcp.tool()
@@ -126,5 +126,5 @@ async with stdio_client(server_params) as (reader, writer):
 
 Para más información sobre MCP, visita: https://modelcontextprotocol.io/
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos responsabilizamos por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

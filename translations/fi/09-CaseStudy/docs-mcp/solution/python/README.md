@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:30:51+00:00",
+  "translation_date": "2025-07-14T06:41:35+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "fi"
 }
 -->
-# Opintosuunnitelman generaattori Chainlitin ja Microsoft Learn Docs MCP:n avulla
+# Opintosuunnitelman generaattori Chainlitillä & Microsoft Learn Docs MCP:llä
 
-## Esivaatimukset
+## Vaatimukset
 
 - Python 3.8 tai uudempi
-- pip (Python-pakettien hallintaohjelma)
+- pip (Python-pakettien hallinta)
 - Internet-yhteys Microsoft Learn Docs MCP -palvelimeen yhdistämistä varten
 
 ## Asennus
@@ -27,7 +27,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## Käyttö
 
 ### Tilanne 1: Yksinkertainen kysely Docs MCP:lle
-Komentoriviasiakas, joka yhdistää Docs MCP -palvelimeen, lähettää kyselyn ja tulostaa tuloksen.
+Komentoriviasiakas, joka yhdistää Docs MCP -palvelimeen, lähettää kyselyn ja tulostaa vastauksen.
 
 1. Suorita skripti:
    ```bash
@@ -36,19 +36,19 @@ Komentoriviasiakas, joka yhdistää Docs MCP -palvelimeen, lähettää kyselyn j
 2. Kirjoita dokumentaatiokysymyksesi kehotteeseen.
 
 ### Tilanne 2: Opintosuunnitelman generaattori (Chainlit-verkkosovellus)
-Verkkopohjainen käyttöliittymä (Chainlitin avulla), jonka kautta käyttäjät voivat luoda henkilökohtaisen, viikko kerrallaan etenevän opintosuunnitelman mille tahansa tekniselle aiheelle.
+Verkkopohjainen käyttöliittymä (Chainlitillä), jonka avulla käyttäjät voivat luoda henkilökohtaisen, viikko kerrallaan etenevän opintosuunnitelman mille tahansa tekniselle aiheelle.
 
 1. Käynnistä Chainlit-sovellus:
    ```bash
    chainlit run scenario2.py
    ```
-2. Avaa terminaalissa näkyvä paikallinen URL-osoite (esim. http://localhost:8000) selaimessasi.
-3. Kirjoita chat-ikkunaan opiskeluaiheesi ja haluamiesi viikkojen määrä (esim. "AI-900 certification, 8 weeks").
-4. Sovellus vastaa viikko kerrallaan etenevällä opintosuunnitelmalla, joka sisältää linkkejä asiaankuuluviin Microsoft Learn -dokumentaatiosivuihin.
+2. Avaa paikallinen URL-osoite, joka näkyy terminaalissasi (esim. http://localhost:8000) selaimessasi.
+3. Kirjoita chat-ikkunaan opiskeluaiheesi ja haluamasi opiskeluviikkojen määrä (esim. "AI-900 certification, 8 weeks").
+4. Sovellus vastaa viikko kerrallaan etenevällä opintosuunnitelmalla, joka sisältää linkkejä asiaankuuluviin Microsoft Learn -dokumentaatioihin.
 
 **Vaaditut ympäristömuuttujat:**
 
-Käyttääksesi tilannetta 2 (Chainlit-verkkosovellus Azure OpenAI:n kanssa), sinun tulee määrittää seuraavat ympäristömuuttujat `.env` file in the `python`-hakemistossa:
+Käyttääksesi tilannetta 2 (Chainlit-verkkosovellus Azure OpenAI:lla), sinun tulee määrittää seuraavat ympäristömuuttujat `.env`-tiedostoon `python`-hakemistossa:
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -57,36 +57,36 @@ AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_VERSION=
 ```
 
-Täytä nämä tiedot omien Azure OpenAI -resurssiesi tiedoilla ennen sovelluksen käynnistämistä.
+Täytä nämä arvot Azure OpenAI -resurssisi tiedoilla ennen sovelluksen käynnistämistä.
 
-> **Vinkki:** Voit helposti ottaa käyttöön omia mallejasi käyttämällä [Azure AI Foundryä](https://ai.azure.com/).
+> **Tip:** Voit helposti ottaa omat mallit käyttöön [Azure AI Foundryn](https://ai.azure.com/) avulla.
 
-### Tilanne 3: Dokumentaatio MCP-palvelimella suoraan VS Codessa
+### Tilanne 3: Dokumentaatio suoraan editorissa MCP-palvelimen avulla VS Codessa
 
-Sen sijaan, että vaihtaisit selaimen välilehteä dokumentaation hakemiseksi, voit tuoda Microsoft Learn Docs -sisällön suoraan VS Codeen MCP-palvelimen avulla. Tämä mahdollistaa:
-- Dokumentaation hakemisen ja lukemisen VS Codessa ilman, että sinun tarvitsee poistua koodausympäristöstäsi.
+Sen sijaan, että vaihtaisit selaimen välilehteä dokumentaation etsimiseksi, voit tuoda Microsoft Learn Docsin suoraan VS Codeen MCP-palvelimen avulla. Tämä mahdollistaa:
+- Dokumentaation hakemisen ja lukemisen suoraan VS Codessa ilman, että sinun tarvitsee poistua koodausympäristöstä.
 - Dokumentaation viittausten lisäämisen ja linkkien upottamisen suoraan README- tai kurssitiedostoihin.
-- GitHub Copilotin ja MCP:n yhteiskäytön sujuvan, tekoälyä hyödyntävän dokumentaatiotyönkulun luomiseksi.
+- GitHub Copilotin ja MCP:n yhteiskäytön sujuvaan, tekoälyavusteiseen dokumentaatiotyöskentelyyn.
 
 **Esimerkkikäyttötapaukset:**
-- Lisää nopeasti viittauslinkkejä README-tiedostoon kurssin tai projektin dokumentaatiota kirjoittaessasi.
-- Käytä Copilotia koodin luomiseen ja MCP:tä löytämään ja lainaamaan relevantteja dokumentaatiosivuja välittömästi.
-- Pysy keskittyneenä editorissasi ja lisää tuottavuutta.
+- Lisää nopeasti viittauslinkkejä README-tiedostoon kurssia tai projektidokumentaatiota kirjoittaessasi.
+- Käytä Copilotia koodin generointiin ja MCP:tä löytääksesi ja viitataksesi asiaankuuluviin dokumentteihin välittömästi.
+- Pysy keskittyneenä editorissa ja tehosta tuottavuuttasi.
 
 > [!IMPORTANT]
-> Varmista, että sinulla on voimassa oleva [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> Varmista, että sinulla on voimassa oleva [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) -konfiguraatio työtilassasi (sijainti on `.vscode/mcp.json`).
 
-## Why Chainlit for Scenario 2?
+## Miksi Chainlit tilannetta 2 varten?
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit on moderni avoimen lähdekoodin kehys keskustelupohjaisten web-sovellusten rakentamiseen. Sen avulla on helppo luoda chat-käyttöliittymiä, jotka yhdistävät taustapalveluihin kuten Microsoft Learn Docs MCP -palvelimeen. Tämä projekti käyttää Chainlitia tarjotakseen yksinkertaisen ja interaktiivisen tavan luoda henkilökohtaisia opintosuunnitelmia reaaliajassa. Chainlitin avulla voit nopeasti rakentaa ja ottaa käyttöön chat-pohjaisia työkaluja, jotka parantavat tuottavuutta ja oppimista.
 
-## What This Does
+## Mitä tämä tekee
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+Tämä sovellus antaa käyttäjille mahdollisuuden luoda henkilökohtainen opintosuunnitelma syöttämällä vain aiheen ja keston. Sovellus tulkitsee syötteesi, kysyy Microsoft Learn Docs MCP -palvelimelta asiaankuuluvaa sisältöä ja järjestää tulokset rakenteelliseksi, viikko kerrallaan eteneväksi suunnitelmaksi. Kunkin viikon suositukset näytetään chatissa, mikä helpottaa etenemisen seuraamista. Integraatio varmistaa, että saat aina uusimmat ja relevantit oppimateriaalit.
 
-## Sample Queries
+## Esimerkkikyselyt
 
-Try these queries in the chat window to see how the app responds:
+Kokeile näitä kyselyjä chat-ikkunassa nähdäksesi, miten sovellus vastaa:
 
 - `AI-900 certification, 8 weeks`
 - `Learn Azure Functions, 4 weeks`
@@ -97,12 +97,12 @@ Try these queries in the chat window to see how the app responds:
 - `Azure AI services, 12 weeks`
 - `Cloud architecture, 9 weeks`
 
-Nämä esimerkit osoittavat sovelluksen joustavuuden erilaisiin oppimistavoitteisiin ja aikatauluihin.
+Nämä esimerkit havainnollistavat sovelluksen joustavuutta eri oppimistavoitteisiin ja aikatauluihin.
 
-## Viitteet
+## Lähteet
 
 - [Chainlit Documentation](https://docs.chainlit.io/)
 - [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä tulee katsoa auktoriteettiseksi lähteeksi. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

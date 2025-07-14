@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:49:21+00:00",
+  "translation_date": "2025-07-13T21:14:13+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "hu"
 }
 -->
 # Calculator HTTP Streaming Demo
 
-Ez a projekt a HTTP streaminget mutatja be Server-Sent Events (SSE) segítségével, Spring Boot WebFlux használatával. Két alkalmazásból áll:
+Ez a projekt a HTTP streaminget mutatja be Server-Sent Events (SSE) használatával Spring Boot WebFlux keretrendszerrel. Két alkalmazásból áll:
 
-- **Calculator Server**: egy reaktív webszolgáltatás, amely számításokat végez és SSE-n keresztül továbbítja az eredményeket
-- **Calculator Client**: egy kliens alkalmazás, amely fogyasztja a streaming végpontot
+- **Calculator Server**: Egy reaktív webszolgáltatás, amely számításokat végez és SSE segítségével továbbítja az eredményeket
+- **Calculator Client**: Egy kliens alkalmazás, amely fogyasztja a streaming végpontot
 
 ## Előfeltételek
 
@@ -37,15 +37,15 @@ java/
 
 ## Hogyan működik
 
-1. A **Calculator Server** elérhetővé teszi a `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. A **Calculator Server** egy `/calculate` végpontot biztosít, amely:
+   - Elfogadja a lekérdezési paramétereket: `a` (szám), `b` (szám), `op` (művelet)
+   - Támogatott műveletek: `add`, `sub`, `mul`, `div`
+   - Server-Sent Events formájában küldi a számítás előrehaladását és az eredményt
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5`
+2. A **Calculator Client** kapcsolódik a szerverhez és:
+   - Lekér egy számítást: `7 * 5`
    - Fogyasztja a streaming választ
-   - Minden eseményt kiír a konzolra
+   - Kiírja az eseményeket a konzolra
 
 ## Az alkalmazások futtatása
 
@@ -53,7 +53,7 @@ java/
 
 #### 1. Indítsd el a Calculator Server-t
 
-Nyiss egy terminált, és lépj a szerver könyvtárába:
+Nyiss egy terminált és lépj be a szerver könyvtárába:
 
 ```bash
 cd calculator-server
@@ -61,7 +61,7 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-A szerver a `http://localhost:8080` címen fog futni
+A szerver elindul a `http://localhost:8080` címen
 
 Ilyen kimenetet kell látnod:
 ```
@@ -71,7 +71,7 @@ Netty started on port 8080 (http)
 
 #### 2. Futtasd a Calculator Client-et
 
-Nyiss egy **új terminált**, és lépj a kliens könyvtárába:
+Nyiss egy **új terminált** és lépj be a kliens könyvtárába:
 
 ```bash
 cd calculator-client
@@ -79,9 +79,9 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-A kliens csatlakozik a szerverhez, végrehajtja a számítást, és megjeleníti a streaming eredményeket.
+A kliens kapcsolódik a szerverhez, elvégzi a számítást, és megjeleníti a streaming eredményeket.
 
-### 2. lehetőség: Java közvetlen futtatása
+### 2. lehetőség: Java közvetlen használata
 
 #### 1. Fordítsd és futtasd a szervert:
 
@@ -99,9 +99,9 @@ mvn clean package
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## A szerver manuális tesztelése
+## A szerver kézi tesztelése
 
-Tesztelheted a szervert böngészőből vagy curl-lel is:
+A szervert böngészőből vagy curl segítségével is tesztelheted:
 
 ### Böngésző használata:
 Látogass el ide: `http://localhost:8080/calculate?a=10&b=5&op=add`
@@ -125,23 +125,23 @@ data:35.0
 
 ## Támogatott műveletek
 
-- `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `add` - Összeadás (a + b)
+- `sub` - Kivonás (a - b)
+- `mul` - Szorzás (a * b)
+- `div` - Osztás (a / b, NaN-t ad vissza, ha b = 0)
 
-## API Reference
+## API referencia
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Paraméterek:**
+- `a` (kötelező): Első szám (double)
+- `b` (kötelező): Második szám (double)
+- `op` (kötelező): Művelet (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Válasz:**
 - Content-Type: `text/event-stream`
-- Visszaad Server-Sent Eventeket a számítás állapotáról és eredményéről
+- Server-Sent Events formájában küldi a számítás előrehaladását és az eredményt
 
 **Példa kérés:**
 ```
@@ -163,24 +163,24 @@ data: 35.0
 
 ### Gyakori problémák
 
-1. **A 8080-as port már használatban van**
+1. **A 8080-as port már foglalt**
    - Állítsd le azokat az alkalmazásokat, amelyek használják a 8080-as portot
-   - Vagy módosítsd a szerver portját a `calculator-server/src/main/resources/application.yml`
+   - Vagy módosítsd a szerver portját a `calculator-server/src/main/resources/application.yml` fájlban
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Kapcsolat elutasítva**
+   - Győződj meg róla, hogy a szerver fut, mielőtt elindítod a klienst
+   - Ellenőrizd, hogy a szerver sikeresen elindult a 8080-as porton
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Paraméternév problémák**
+   - A projekt tartalmazza a Maven fordító konfigurációját a `-parameters` kapcsolóval
+   - Ha paraméter kötési problémákba ütközöl, győződj meg róla, hogy a projekt ezzel a beállítással lett fordítva
 
-### Stopping the Applications
+### Az alkalmazások leállítása
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop` fájlban, ha háttérben fut
+- Nyomd meg a `Ctrl+C` billentyűkombinációt abban a terminálban, ahol az alkalmazás fut
+- Vagy használd a `mvn spring-boot:stop` parancsot, ha háttérben futtatod
 
-## Technológiai környezet
+## Technológiai stack
 
 - **Spring Boot 3.3.1** - Alkalmazás keretrendszer
 - **Spring WebFlux** - Reaktív web keretrendszer
@@ -192,11 +192,11 @@ data: 35.0
 ## Következő lépések
 
 Próbáld meg módosítani a kódot, hogy:
-- Több matematikai műveletet támogasson
-- Hibakezelést tartalmazzon érvénytelen műveletek esetén
-- Kérés/válasz naplózást valósítson meg
-- Hitelesítést építsen be
-- Egységteszteket adjon hozzá
+- Több matematikai műveletet adj hozzá
+- Hibakezelést valósíts meg érvénytelen műveletek esetén
+- Kérés/válasz naplózást adj hozzá
+- Hitelesítést valósíts meg
+- Egységteszteket írj
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

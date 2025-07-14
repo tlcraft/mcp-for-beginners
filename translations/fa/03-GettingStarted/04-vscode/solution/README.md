@@ -2,30 +2,30 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-06-18T05:48:33+00:00",
+  "translation_date": "2025-07-13T19:39:12+00:00",
   "source_file": "03-GettingStarted/04-vscode/solution/README.md",
   "language_code": "fa"
 }
 -->
 این معادل اجرای دستوری مانند این است: `node build/index.js`.
 
-- Change this server entry to fit where your server file is located or to what's needed to startup your server depending on your chosen runtime and server location.
+- این ورودی سرور را تغییر دهید تا متناسب با محل فایل سرور شما باشد یا با آنچه برای راه‌اندازی سرور شما بسته به زمان اجرای انتخابی و محل سرور لازم است، مطابقت داشته باشد.
 
-## Consume the features in the server
+## استفاده از قابلیت‌ها در سرور
 
-- Click the `play` icon, once you've added *mcp.json* to *./vscode* folder,
+- روی آیکون `play` کلیک کنید، پس از اینکه فایل *mcp.json* را به پوشه *./vscode* اضافه کردید،
 
-    Observe the tooling icon change to increase the number of available tools. Tooling icon is located right above the chat field in GitHub Copilot.
+    مشاهده خواهید کرد که آیکون ابزار تغییر می‌کند و تعداد ابزارهای در دسترس افزایش می‌یابد. آیکون ابزار درست بالای کادر چت در GitHub Copilot قرار دارد.
 
-## Run a tool
+## اجرای یک ابزار
 
-- Type a prompt in your chat window that matches the description of your tool. For example to trigger the tool `add` و چیزی شبیه به "add 3 to 20" تایپ کنید.
+- در پنجره چت خود متنی وارد کنید که با توضیح ابزار شما مطابقت داشته باشد. برای مثال برای فعال کردن ابزار `add` چیزی شبیه به "add 3 to 20" تایپ کنید.
 
-    باید ابزاری بالای کادر متن چت نمایش داده شود که از شما می‌خواهد برای اجرای ابزار آن را انتخاب کنید، مشابه این تصویر:
+    باید ابزاری را بالای کادر متن چت ببینید که به شما نشان می‌دهد برای اجرای ابزار باید آن را انتخاب کنید، مانند تصویر زیر:
 
-    ![VS Code نشان می‌دهد که می‌خواهد ابزاری را اجرا کند](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.fa.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.fa.png)
 
-    انتخاب این ابزار باید نتیجه عددی "23" را نمایش دهد اگر دستوری که وارد کردید مانند مثالی بود که قبلاً گفتیم.
+    انتخاب ابزار باید نتیجه عددی "23" را نشان دهد اگر متن شما مانند مثالی که قبلاً گفتیم باشد.
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان اصلی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، استفاده از ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.

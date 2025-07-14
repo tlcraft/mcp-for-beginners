@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c40c54fa74ded9c223bc0ebfc8a2de7c",
-  "translation_date": "2025-06-18T05:46:40+00:00",
+  "translation_date": "2025-07-13T19:01:19+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/dotnet/README.md",
   "language_code": "es"
 }
 -->
-# Ejecutar este ejemplo
+# Ejecuta este ejemplo
 
 > [!NOTE]
 > Este ejemplo asume que estás usando una instancia de GitHub Codespaces. Si quieres ejecutarlo localmente, necesitas configurar un token de acceso personal (PAT) en GitHub.
@@ -28,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 dotnet restore
 ```
 
-Deberías instalar las siguientes librerías: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
+Debería instalar las siguientes librerías: Azure AI Inference, Azure Identity, Microsoft.Extension, Model.Hosting, ModelContextProtcol
 
 ## Ejecutar
 
@@ -51,7 +51,7 @@ Tool call 0: Add with arguments {"a":2,"b":4}
 Sum 6
 ```
 
-Gran parte de la salida es solo para depuración, pero lo importante es que estás listando herramientas desde el MCP Server, las conviertes en herramientas LLM y terminas con una respuesta del cliente MCP que dice "Sum 6".
+Gran parte de la salida es solo para depuración, pero lo importante es que estás listando herramientas desde el MCP Server, las conviertes en herramientas LLM y terminas con una respuesta del cliente MCP "Sum 6".
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

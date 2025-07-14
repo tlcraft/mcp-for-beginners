@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-06-13T00:51:24+00:00",
+  "translation_date": "2025-07-14T00:43:23+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
   "language_code": "hu"
 }
@@ -14,7 +14,7 @@ Ez a projekt egy **minimális Spring Boot alkalmazás**, amely egyszerre működ
 * **Spring Authorization Server-ként** (JWT hozzáférési tokeneket bocsát ki a `client_credentials` folyamat segítségével), és  
 * **Resource Server-ként** (védi a saját `/hello` végpontját).
 
-Ez a beállítás megfelel a [Spring blogbejegyzésben (2025. április 2.)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) bemutatottnak.
+Ez a beállítás megegyezik a [Spring blogbejegyzésben (2025. április 2.)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) bemutatottal.
 
 ---
 
@@ -38,14 +38,14 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 Az OAuth2 biztonsági beállításokat a következő lépésekkel tesztelheted:
 
-### 1. Ellenőrizd, hogy a szerver fut és biztonságos
+### 1. Ellenőrizd, hogy a szerver fut és védett
 
 ```bash
 # This should return 401 Unauthorized, confirming OAuth2 security is active
 curl -v http://localhost:8081/
 ```
 
-### 2. Szerezz hozzáférési tokent kliens-hitelesítéssel
+### 2. Szerezz hozzáférési tokent client credentials segítségével
 
 ```bash
 # Get and extract the full token response
@@ -61,9 +61,9 @@ curl -s -X POST http://localhost:8081/oauth2/token \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Megjegyzés: A Basic Authentication fejléc (`bWNwLWNsaWVudDpzZWNyZXQ=`) is the Base64 encoding of `mcp-client:secret`.
+Megjegyzés: A Basic Authentication fejléc (`bWNwLWNsaWVudDpzZWNyZXQ=`) a `mcp-client:secret` Base64 kódolása.
 
-### 3. Használd a tokent a védett végpont eléréséhez
+### 3. Érd el a védett végpontot a tokennel
 
 ```bash
 # Using the saved token
@@ -73,7 +73,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Ha a válaszban megjelenik a "Hello from MCP OAuth2 Demo!", az azt jelenti, hogy az OAuth2 konfiguráció helyesen működik.
+Ha a válasz sikeres és a "Hello from MCP OAuth2 Demo!" üzenetet kapod, az azt jelenti, hogy az OAuth2 konfiguráció helyesen működik.
 
 ---
 
@@ -86,7 +86,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Telepítés **Azure Container Apps** szolgáltatásba
+## Telepítés **Azure Container Apps**-re
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -96,7 +96,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Az ingress FQDN lesz az **issuer** (`https://<fqdn>`).  
-Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
+Az Azure automatikusan biztosít egy megbízható TLS tanúsítványt a `*.azurecontainerapps.io` domainhez.
 
 ---
 
@@ -120,9 +120,9 @@ Az APIM lekéri a JWKS-t és minden kérést érvényesít.
 
 ---
 
-## Mi a következő lépés
+## Mi következik
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk pontos fordítást biztosítani, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

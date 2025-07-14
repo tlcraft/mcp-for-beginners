@@ -2,40 +2,41 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0ab9613fc9595f493847f91275859a18",
-  "translation_date": "2025-05-17T09:59:39+00:00",
+  "translation_date": "2025-07-13T18:39:46+00:00",
   "source_file": "03-GettingStarted/02-client/solution/python/README.md",
   "language_code": "mo"
 }
 -->
-# इस नमूने को चलाना
+# 執行此範例
 
-आपको `uv` स्थापित करने की सलाह दी जाती है, लेकिन यह अनिवार्य नहीं है, देखें [निर्देश](https://docs.astral.sh/uv/#highlights)
+建議安裝 `uv`，但非必要，詳情請參考 [instructions](https://docs.astral.sh/uv/#highlights)
 
-## -0- एक वर्चुअल वातावरण बनाएँ
+## -0- 建立虛擬環境
 
 ```bash
 python -m venv venv
 ```
 
-## -1- वर्चुअल वातावरण को सक्रिय करें
+## -1- 啟動虛擬環境
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- निर्भरताएँ स्थापित करें
+## -2- 安裝相依套件
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- नमूना चलाएँ
+## -3- 執行範例
+
 
 ```bash
 python client.py
 ```
 
-आपको इस प्रकार का आउटपुट देखना चाहिए:
+你應該會看到類似以下的輸出：
 
 ```text
 LISTING RESOURCES
@@ -52,4 +53,5 @@ CALL TOOL
 [TextContent(type='text', text='8', annotations=None)]
 ```
 
-I'm sorry, but it seems like "mo" is not recognized as a language code in my current database. Could you please specify the language or provide more context?
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

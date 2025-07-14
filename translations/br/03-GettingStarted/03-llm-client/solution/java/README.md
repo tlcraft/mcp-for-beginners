@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ac2459c0d5cc823922e3d9240a95028c",
-  "translation_date": "2025-06-11T13:25:36+00:00",
+  "translation_date": "2025-07-13T19:08:59+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/java/README.md",
   "language_code": "br"
 }
 -->
 # Calculator LLM Client
 
-Uma aplicação Java que demonstra como usar LangChain4j para conectar a um serviço de calculadora MCP (Model Context Protocol) com integração dos GitHub Models.
+Uma aplicação Java que demonstra como usar o LangChain4j para se conectar a um serviço de calculadora MCP (Model Context Protocol) com integração dos GitHub Models.
 
 ## Pré-requisitos
 
@@ -20,7 +20,7 @@ Uma aplicação Java que demonstra como usar LangChain4j para conectar a um serv
 
 ## Obtendo o Token do GitHub
 
-Esta aplicação usa GitHub Models, que requer um token de acesso pessoal do GitHub. Siga os passos para obter seu token:
+Esta aplicação usa os GitHub Models, que requerem um token de acesso pessoal do GitHub. Siga os passos abaixo para obter seu token:
 
 ### 1. Acesse os GitHub Models
 1. Vá para [GitHub Models](https://github.com/marketplace/models)
@@ -28,12 +28,12 @@ Esta aplicação usa GitHub Models, que requer um token de acesso pessoal do Git
 3. Solicite acesso aos GitHub Models, caso ainda não tenha
 
 ### 2. Crie um Token de Acesso Pessoal
-1. Vá para [GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)](https://github.com/settings/tokens)
+1. Vá para [Configurações do GitHub → Configurações de desenvolvedor → Tokens de acesso pessoal → Tokens (clássicos)](https://github.com/settings/tokens)
 2. Clique em "Generate new token" → "Generate new token (classic)"
 3. Dê um nome descritivo para seu token (ex: "MCP Calculator Client")
 4. Defina a expiração conforme necessário
 5. Selecione os seguintes escopos:
-   - `repo` (se acessar repositórios privados)
+   - `repo` (se for acessar repositórios privados)
    - `user:email`
 6. Clique em "Generate token"
 7. **Importante**: Copie o token imediatamente - você não poderá vê-lo novamente!
@@ -63,15 +63,15 @@ export GITHUB_TOKEN=your_github_token_here
    ```cmd
    mvnw clean install
    ```
-   Ou, se você tem o Maven instalado globalmente:
+   Ou, se você tiver o Maven instalado globalmente:
    ```cmd
    mvn clean install
    ```
 
 3. **Configure a variável de ambiente** (veja a seção "Obtendo o Token do GitHub" acima)
 
-4. **Inicie o Serviço MCP Calculator**:
-   Certifique-se de que o serviço MCP calculator do capítulo 1 esteja rodando em `http://localhost:8080/sse`. Ele deve estar ativo antes de iniciar o cliente.
+4. **Inicie o Serviço de Calculadora MCP**:
+   Certifique-se de que o serviço de calculadora MCP do capítulo 1 esteja rodando em `http://localhost:8080/sse`. Ele deve estar ativo antes de iniciar o cliente.
 
 ## Executando a Aplicação
 
@@ -84,13 +84,13 @@ java -jar target\calculator-llm-client-0.0.1-SNAPSHOT.jar
 
 A aplicação demonstra três interações principais com o serviço de calculadora:
 
-1. **Adição**: Calcula a soma de 24.5 e 17.3  
-2. **Raiz Quadrada**: Calcula a raiz quadrada de 144  
-3. **Ajuda**: Mostra as funções disponíveis na calculadora
+1. **Adição**: Calcula a soma de 24.5 e 17.3
+2. **Raiz Quadrada**: Calcula a raiz quadrada de 144
+3. **Ajuda**: Exibe as funções disponíveis da calculadora
 
 ## Saída Esperada
 
-Quando executado com sucesso, você verá uma saída semelhante a:
+Quando executada com sucesso, você deve ver uma saída semelhante a:
 
 ```
 The sum of 24.5 and 17.3 is 41.8.
@@ -102,21 +102,21 @@ The calculator service provides the following functions: add, subtract, multiply
 
 ### Problemas Comuns
 
-1. **"GITHUB_TOKEN environment variable not set"**  
-   - Verifique se você configurou a variável `GITHUB_TOKEN` environment variable
-   - Restart your terminal/command prompt after setting the variable
+1. **"Variável de ambiente GITHUB_TOKEN não configurada"**
+   - Verifique se você configurou a variável de ambiente `GITHUB_TOKEN`
+   - Reinicie seu terminal/prompt de comando após configurar a variável
 
-2. **"Connection refused to localhost:8080"**
-   - Ensure the MCP calculator service is running on port 8080
-   - Check if another service is using port 8080
+2. **"Conexão recusada para localhost:8080"**
+   - Certifique-se de que o serviço de calculadora MCP está rodando na porta 8080
+   - Verifique se outro serviço não está usando a porta 8080
 
-3. **"Authentication failed"**
-   - Verify your GitHub token is valid and has the correct permissions
-   - Check if you have access to GitHub Models
+3. **"Falha na autenticação"**
+   - Verifique se seu token do GitHub é válido e tem as permissões corretas
+   - Confirme se você tem acesso aos GitHub Models
 
-4. **Maven build errors**
-   - Ensure you're using Java 21 or higher: `java -version`
-   - Try cleaning the build: `mvnw clean`
+4. **Erros na build do Maven**
+   - Confirme que está usando Java 21 ou superior: `java -version`
+   - Tente limpar a build: `mvnw clean`
 
 ### Depuração
 
@@ -127,18 +127,18 @@ java -Dlogging.level.dev.langchain4j=DEBUG -jar target\calculator-llm-client-0.0
 
 ## Configuração
 
-A aplicação está configurada para:  
-- Usar GitHub Models com o `gpt-4.1-nano` model
-- Connect to MCP service at `http://localhost:8080/sse`  
-- Usar timeout de 60 segundos para requisições  
+A aplicação está configurada para:
+- Usar os GitHub Models com o modelo `gpt-4.1-nano`
+- Conectar ao serviço MCP em `http://localhost:8080/sse`
+- Usar timeout de 60 segundos para requisições
 - Habilitar log de requisição/resposta para depuração
 
 ## Dependências
 
-Principais dependências usadas neste projeto:  
-- **LangChain4j**: Para integração com IA e gerenciamento de ferramentas  
-- **LangChain4j MCP**: Para suporte ao Model Context Protocol  
-- **LangChain4j GitHub Models**: Para integração com GitHub Models  
+Principais dependências usadas neste projeto:
+- **LangChain4j**: Para integração com IA e gerenciamento de ferramentas
+- **LangChain4j MCP**: Para suporte ao Model Context Protocol
+- **LangChain4j GitHub Models**: Para integração com GitHub Models
 - **Spring Boot**: Para framework da aplicação e injeção de dependências
 
 ## Licença
@@ -146,4 +146,4 @@ Principais dependências usadas neste projeto:
 Este projeto está licenciado sob a Apache License 2.0 - veja o arquivo [LICENSE](../../../../../../03-GettingStarted/03-llm-client/solution/java/LICENSE) para mais detalhes.
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c06b12caf3c901eb3156e3dd5b0aea56",
-  "translation_date": "2025-05-16T14:21:10+00:00",
+  "translation_date": "2025-07-13T14:27:20+00:00",
   "source_file": "CODE_OF_CONDUCT.md",
   "language_code": "zh"
 }
@@ -18,4 +18,4 @@ CO_OP_TRANSLATOR_METADATA:
 - 如有疑问或顾虑，请联系 [opencode@microsoft.com](mailto:opencode@microsoft.com)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

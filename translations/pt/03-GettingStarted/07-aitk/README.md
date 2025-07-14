@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8248e3491f5245ee6ab48ef724a4f65a",
-  "translation_date": "2025-07-04T16:58:02+00:00",
+  "translation_date": "2025-07-13T21:32:07+00:00",
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "pt"
 }
@@ -31,7 +31,7 @@ No final desta lição, será capaz de:
 
 ## Abordagem
 
-Aqui está como devemos abordar isto a um nível geral:
+Aqui está como devemos abordar isto a um nível elevado:
 
 - Criar um agente e definir o seu prompt de sistema.
 - Criar um servidor MCP com ferramentas de calculadora.
@@ -49,27 +49,27 @@ Aqui está como devemos abordar isto a um nível geral:
 
 Neste exercício, irá construir, executar e melhorar um agente de IA com ferramentas de um servidor MCP dentro do Visual Studio Code usando o AI Toolkit.
 
-### -0- Passo prévio, adicionar o modelo OpenAI GPT-4o a Meus Modelos
+### -0- Passo prévio, adicionar o modelo OpenAI GPT-4o a My Models
 
-O exercício utiliza o modelo **GPT-4o**. O modelo deve ser adicionado a **Meus Modelos** antes de criar o agente.
+O exercício utiliza o modelo **GPT-4o**. O modelo deve ser adicionado a **My Models** antes de criar o agente.
 
-![Screenshot da interface de seleção de modelos na extensão AI Toolkit do Visual Studio Code. O título diz "Find the right model for your AI Solution" com um subtítulo a incentivar os utilizadores a descobrir, testar e implementar modelos de IA. Abaixo, em “Popular Models,” são exibidos seis cartões de modelos: DeepSeek-R1 (hospedado no GitHub), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Pequeno, Rápido), e DeepSeek-R1 (hospedado no Ollama). Cada cartão inclui opções para “Add” o modelo ou “Try in Playground](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.pt.png)
+![Screenshot da interface de seleção de modelo na extensão AI Toolkit do Visual Studio Code. O título diz "Find the right model for your AI Solution" com um subtítulo a incentivar os utilizadores a descobrir, testar e implementar modelos de IA. Abaixo, em “Popular Models,” são exibidos seis cartões de modelo: DeepSeek-R1 (hospedado no GitHub), OpenAI GPT-4o, OpenAI GPT-4.1, OpenAI o1, Phi 4 Mini (CPU - Pequeno, Rápido), e DeepSeek-R1 (hospedado no Ollama). Cada cartão inclui opções para “Add” o modelo ou “Try in Playground](../../../../translated_images/aitk-model-catalog.2acd38953bb9c119aa629fe74ef34cc56e4eed35e7f5acba7cd0a59e614ab335.pt.png)
 
-1. Abra a extensão **AI Toolkit** a partir da **Barra de Atividades**.
-1. Na secção **Catalog**, selecione **Models** para abrir o **Catálogo de Modelos**. Selecionar **Models** abre o **Catálogo de Modelos** numa nova aba do editor.
-1. Na barra de pesquisa do **Catálogo de Modelos**, escreva **OpenAI GPT-4o**.
-1. Clique em **+ Add** para adicionar o modelo à sua lista de **Meus Modelos**. Certifique-se de que selecionou o modelo que está **Hospedado no GitHub**.
-1. Na **Barra de Atividades**, confirme que o modelo **OpenAI GPT-4o** aparece na lista.
+1. Abra a extensão **AI Toolkit** a partir da **Activity Bar**.
+1. Na secção **Catalog**, selecione **Models** para abrir o **Model Catalog**. Selecionar **Models** abre o **Model Catalog** numa nova aba do editor.
+1. Na barra de pesquisa do **Model Catalog**, escreva **OpenAI GPT-4o**.
+1. Clique em **+ Add** para adicionar o modelo à sua lista **My Models**. Certifique-se de que selecionou o modelo que está **Hospedado no GitHub**.
+1. Na **Activity Bar**, confirme que o modelo **OpenAI GPT-4o** aparece na lista.
 
 ### -1- Criar um agente
 
 O **Agent (Prompt) Builder** permite criar e personalizar os seus próprios agentes alimentados por IA. Nesta secção, irá criar um novo agente e atribuir um modelo para alimentar a conversa.
 
-![Screenshot da interface do construtor "Calculator Agent" na extensão AI Toolkit para Visual Studio Code. No painel esquerdo, o modelo selecionado é "OpenAI GPT-4o (via GitHub)." Um prompt de sistema diz "You are a professor in university teaching math," e o prompt do utilizador diz, "Explain to me the Fourier equation in simple terms." Opções adicionais incluem botões para adicionar ferramentas, ativar MCP Server e selecionar saída estruturada. Um botão azul “Run” está na parte inferior. No painel direito, em "Get Started with Examples," estão listados três agentes de exemplo: Web Developer (com MCP Server, Simplificador de Segunda Classe, e Intérprete de Sonhos, cada um com breves descrições das suas funções.](../../../../translated_images/aitk-agent-builder.901e3a2960c3e4774b29a23024ff5bec2d4232f57fae2a418b2aaae80f81c05f.pt.png)
+![Screenshot da interface do "Calculator Agent" no AI Toolkit para Visual Studio Code. No painel esquerdo, o modelo selecionado é "OpenAI GPT-4o (via GitHub)." Um prompt de sistema diz "You are a professor in university teaching math," e o prompt do utilizador diz, "Explain to me the Fourier equation in simple terms." Opções adicionais incluem botões para adicionar ferramentas, ativar MCP Server e selecionar output estruturado. Um botão azul “Run” está na parte inferior. No painel direito, em "Get Started with Examples," estão listados três agentes de exemplo: Web Developer (com MCP Server, Second-Grade Simplifier, e Dream Interpreter, cada um com breves descrições das suas funções.](../../../../translated_images/aitk-agent-builder.901e3a2960c3e4774b29a23024ff5bec2d4232f57fae2a418b2aaae80f81c05f.pt.png)
 
-1. Abra a extensão **AI Toolkit** a partir da **Barra de Atividades**.
+1. Abra a extensão **AI Toolkit** a partir da **Activity Bar**.
 1. Na secção **Tools**, selecione **Agent (Prompt) Builder**. Selecionar **Agent (Prompt) Builder** abre o **Agent (Prompt) Builder** numa nova aba do editor.
-1. Clique no botão **+ New Agent**. A extensão irá iniciar um assistente de configuração via a **Command Palette**.
+1. Clique no botão **+ New Agent**. A extensão irá iniciar um assistente de configuração via **Command Palette**.
 1. Introduza o nome **Calculator Agent** e pressione **Enter**.
 1. No **Agent (Prompt) Builder**, no campo **Model**, selecione o modelo **OpenAI GPT-4o (via GitHub)**.
 
@@ -81,7 +81,7 @@ Com o agente criado, é hora de definir a sua personalidade e propósito. Nesta 
 
 1. Na secção **Prompts**, clique no botão **Generate system prompt**. Este botão abre o construtor de prompts que usa IA para gerar um prompt de sistema para o agente.
 1. Na janela **Generate a prompt**, escreva o seguinte: `You are a helpful and efficient math assistant. When given a problem involving basic arithmetic, you respond with the correct result.`
-1. Clique no botão **Generate**. Uma notificação aparecerá no canto inferior direito a confirmar que o prompt de sistema está a ser gerado. Quando a geração do prompt estiver concluída, o prompt aparecerá no campo **System prompt** do **Agent (Prompt) Builder**.
+1. Clique no botão **Generate**. Aparecerá uma notificação no canto inferior direito a confirmar que o prompt de sistema está a ser gerado. Quando a geração estiver concluída, o prompt aparecerá no campo **System prompt** do **Agent (Prompt) Builder**.
 1. Reveja o **System prompt** e modifique se necessário.
 
 ### -3- Criar um servidor MCP
@@ -94,19 +94,19 @@ O AI Toolkit está equipado com templates para facilitar a criação do seu pró
 
 *Nota*: O AI Toolkit suporta atualmente Python e TypeScript.
 
-1. Na secção **Tools** do **Agent (Prompt) Builder**, clique no botão **+ MCP Server**. A extensão irá iniciar um assistente de configuração via a **Command Palette**.
+1. Na secção **Tools** do **Agent (Prompt) Builder**, clique no botão **+ MCP Server**. A extensão irá iniciar um assistente de configuração via **Command Palette**.
 1. Selecione **+ Add Server**.
 1. Selecione **Create a New MCP Server**.
 1. Selecione **python-weather** como template.
 1. Selecione **Default folder** para guardar o template do servidor MCP.
 1. Introduza o seguinte nome para o servidor: **Calculator**
-1. Uma nova janela do Visual Studio Code abrirá. Selecione **Yes, I trust the authors**.
+1. Abrir-se-á uma nova janela do Visual Studio Code. Selecione **Yes, I trust the authors**.
 1. Usando o terminal (**Terminal** > **New Terminal**), crie um ambiente virtual: `python -m venv .venv`
 1. No terminal, ative o ambiente virtual:
     1. Windows - `.venv\Scripts\activate`
     1. macOS/Linux - `source venv/bin/activate`
 1. No terminal, instale as dependências: `pip install -e .[dev]`
-1. Na vista **Explorer** da **Barra de Atividades**, expanda o diretório **src** e selecione **server.py** para abrir o ficheiro no editor.
+1. Na vista **Explorer** da **Activity Bar**, expanda o diretório **src** e selecione **server.py** para abrir o ficheiro no editor.
 1. Substitua o código no ficheiro **server.py** pelo seguinte e guarde:
 
     ```python
@@ -158,14 +158,14 @@ Agora que o seu agente tem ferramentas, é hora de as usar! Nesta secção, irá
 
 Irá executar o servidor MCP de calculadora na sua máquina local de desenvolvimento via o **Agent Builder** como cliente MCP.
 
-1. Pressione `F5` para iniciar a depuração do servidor MCP. O **Agent (Prompt) Builder** abrirá numa nova aba do editor. O estado do servidor é visível no terminal.
+1. Pressione `F5` para iniciar a depuração do servidor MCP. O **Agent (Prompt) Builder** abrir-se-á numa nova aba do editor. O estado do servidor é visível no terminal.
 1. No campo **User prompt** do **Agent (Prompt) Builder**, introduza o seguinte prompt: `I bought 3 items priced at $25 each, and then used a $20 discount. How much did I pay?`
 1. Clique no botão **Run** para gerar a resposta do agente.
 1. Reveja a saída do agente. O modelo deverá concluir que pagou **$55**.
-1. Aqui está um resumo do que deverá acontecer:
+1. Aqui está uma explicação do que deverá acontecer:
     - O agente seleciona as ferramentas **multiply** e **subtract** para ajudar no cálculo.
-    - Os valores `a` e `b` são atribuídos para a ferramenta **multiply**.
-    - Os valores `a` e `b` são atribuídos para a ferramenta **subtract**.
+    - Os valores `a` e `b` são atribuídos respetivamente para a ferramenta **multiply**.
+    - Os valores `a` e `b` são atribuídos respetivamente para a ferramenta **subtract**.
     - A resposta de cada ferramenta é fornecida na respetiva **Tool Response**.
     - A saída final do modelo é apresentada na **Model Response** final.
 1. Submeta prompts adicionais para testar mais o agente. Pode modificar o prompt existente no campo **User prompt** clicando no campo e substituindo o prompt atual.
@@ -177,14 +177,14 @@ Tente adicionar uma entrada de ferramenta adicional ao seu ficheiro **server.py*
 
 ## Solução
 
-[Solução](./solution/README.md)
+[Solution](./solution/README.md)
 
 ## Principais conclusões
 
 As principais conclusões deste capítulo são as seguintes:
 
 - A extensão AI Toolkit é um excelente cliente que permite consumir servidores MCP e as suas ferramentas.
-- Pode adicionar novas ferramentas aos servidores MCP, expandindo as capacidades do agente para responder a requisitos em evolução.
+- Pode adicionar novas ferramentas a servidores MCP, expandindo as capacidades do agente para responder a requisitos em evolução.
 - O AI Toolkit inclui templates (ex: templates de servidor MCP em Python) para simplificar a criação de ferramentas personalizadas.
 
 ## Recursos adicionais
@@ -195,4 +195,4 @@ As principais conclusões deste capítulo são as seguintes:
 - Seguinte: [Testes e Depuração](../08-testing/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos por garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-04T17:18:36+00:00",
+  "translation_date": "2025-07-13T22:00:24+00:00",
   "source_file": "03-GettingStarted/08-testing/README.md",
   "language_code": "tr"
 }
@@ -13,20 +13,20 @@ MCP sunucunuzu test etmeye başlamadan önce, kullanılabilir araçları ve hata
 
 ## Genel Bakış
 
-Bu ders, doğru test yaklaşımını seçmeyi ve en etkili test aracını kullanmayı ele alır.
+Bu ders, doğru test yaklaşımının nasıl seçileceğini ve en etkili test aracını nasıl kullanacağınızı ele alır.
 
 ## Öğrenme Hedefleri
 
 Bu dersin sonunda şunları yapabileceksiniz:
 
-- Farklı test yaklaşımlarını tanımlamak.
-- Kodunuzu etkili şekilde test etmek için çeşitli araçları kullanmak.
+- Test için çeşitli yaklaşımları tanımlamak.
+- Kodunuzu etkili bir şekilde test etmek için farklı araçları kullanmak.
 
 ## MCP Sunucularını Test Etme
 
 MCP, sunucularınızı test etmenize ve hata ayıklamanıza yardımcı olacak araçlar sunar:
 
-- **MCP Inspector**: Hem komut satırı aracı hem de görsel araç olarak çalıştırılabilen bir komut satırı aracı.
+- **MCP Inspector**: Hem komut satırı aracı olarak hem de görsel araç olarak çalıştırılabilen bir komut satırı aracı.
 - **Manuel test**: curl gibi bir araç kullanarak web istekleri yapabilirsiniz, ancak HTTP çalıştırabilen herhangi bir araç işinizi görür.
 - **Birim testi**: Tercih ettiğiniz test çerçevesini kullanarak hem sunucu hem de istemci özelliklerini test etmek mümkündür.
 
@@ -36,7 +36,7 @@ Bu aracın kullanımını önceki derslerde anlattık ancak burada biraz genel h
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) size şunları sağlar:
 
-- **Sunucu Yetkinliklerini Keşfetme**: Mevcut kaynakları, araçları ve istemleri otomatik olarak tespit eder
+- **Sunucu Yetkinliklerini Keşfetme**: Mevcut kaynakları, araçları ve istemleri otomatik olarak algılar
 - **Araç Çalıştırmayı Test Etme**: Farklı parametreleri deneyip yanıtları gerçek zamanlı görebilirsiniz
 - **Sunucu Meta Verilerini Görüntüleme**: Sunucu bilgilerini, şemaları ve yapılandırmaları inceleyebilirsiniz
 
@@ -50,7 +50,7 @@ Yukarıdaki komut, bir MCP ve görsel arayüzünü başlatır ve tarayıcınızd
 
 Şöyle görünebilir: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.tr.png)
 
-Bu aracı CLI modunda da çalıştırabilirsiniz; bu durumda `--cli` parametresini eklersiniz. İşte araçları listeleyen "CLI" modunda çalıştırmaya bir örnek:
+Bu aracı CLI modunda da çalıştırabilirsiniz; bu durumda `--cli` parametresini eklersiniz. İşte sunucudaki tüm araçları listeleyen "CLI" modunda çalıştırma örneği:
 
 ```sh
 npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/list
@@ -58,7 +58,7 @@ npx @modelcontextprotocol/inspector --cli node build/index.js --method tools/lis
 
 ### Manuel Test
 
-Sunucu yetkinliklerini test etmek için inspector aracını çalıştırmanın yanı sıra, HTTP kullanabilen bir istemciyi, örneğin curl'u kullanmak da benzer bir yaklaşımdır.
+Sunucu yetkinliklerini test etmek için inspector aracını çalıştırmanın yanı sıra, HTTP kullanabilen bir istemciyi, örneğin curl'u çalıştırmak da benzer bir yaklaşımdır.
 
 curl ile MCP sunucularını doğrudan HTTP istekleriyle test edebilirsiniz:
 
@@ -72,7 +72,7 @@ curl -X POST http://localhost:3000/v1/tools/execute \
   -d '{"name": "calculator", "parameters": {"expression": "2+2"}}'
 ```
 
-Yukarıdaki curl kullanımından da görebileceğiniz gibi, bir aracı çağırmak için araç adı ve parametrelerinden oluşan bir yükle POST isteği yapıyorsunuz. Size en uygun olan yöntemi kullanın. CLI araçları genellikle daha hızlıdır ve betiklenebilir olmaları CI/CD ortamlarında faydalı olabilir.
+Yukarıdaki curl kullanımından da görebileceğiniz gibi, bir aracı çağırmak için araç adı ve parametrelerinden oluşan bir yükle POST isteği yapıyorsunuz. Size en uygun olan yaklaşımı kullanın. CLI araçları genellikle daha hızlıdır ve betiklenebilir olmaları CI/CD ortamlarında faydalı olabilir.
 
 ### Birim Testi
 
@@ -133,7 +133,7 @@ Yukarıdaki kod şunları yapar:
 
 - Fonksiyon olarak testler oluşturmanıza ve assert ifadeleri kullanmanıza olanak tanıyan pytest çerçevesini kullanır.
 - İki farklı araca sahip bir MCP Sunucusu oluşturur.
-- Belirli koşulların sağlandığını kontrol etmek için `assert` ifadesini kullanır.
+- Belirli koşulların sağlandığını kontrol etmek için `assert` ifadesi kullanır.
 
 [Tam dosyaya buradan bakabilirsiniz](https://github.com/modelcontextprotocol/python-sdk/blob/main/tests/client/test_list_methods_cursor.py)
 
@@ -158,4 +158,4 @@ Tüm büyük SDK'larda benzer test bölümleri bulunur, böylece seçtiğiniz ç
 - Sonraki: [Deployment](../09-deployment/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

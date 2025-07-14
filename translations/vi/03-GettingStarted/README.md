@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-09T22:33:20+00:00",
+  "translation_date": "2025-07-13T17:18:10+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "vi"
 }
@@ -19,7 +19,7 @@ Phần này bao gồm một số bài học:
 
 - **4 Sử dụng chế độ GitHub Copilot Agent của máy chủ trong Visual Studio Code**. Ở đây, chúng ta sẽ xem cách chạy MCP Server từ bên trong Visual Studio Code, [đến bài học](04-vscode/README.md)
 
-- **5 Sử dụng SSE (Server Sent Events)** SSE là một chuẩn cho việc truyền dữ liệu từ server đến client, cho phép server gửi các cập nhật thời gian thực đến client qua HTTP [đến bài học](05-sse-server/README.md)
+- **5 Sử dụng SSE (Server Sent Events)** SSE là một chuẩn cho việc truyền dữ liệu từ server đến client, cho phép server đẩy các cập nhật thời gian thực đến client qua HTTP [đến bài học](05-sse-server/README.md)
 
 - **6 HTTP Streaming với MCP (Streamable HTTP)**. Tìm hiểu về streaming HTTP hiện đại, thông báo tiến trình, và cách triển khai các máy chủ và client MCP có khả năng mở rộng, thời gian thực sử dụng Streamable HTTP. [đến bài học](06-http-streaming/README.md)
 
@@ -30,17 +30,17 @@ Phần này bao gồm một số bài học:
 - **9 Triển khai**. Chương này sẽ xem xét các cách khác nhau để triển khai các giải pháp MCP của bạn, [đến bài học](09-deployment/README.md)
 
 
-Model Context Protocol (MCP) là một giao thức mở chuẩn hóa cách các ứng dụng cung cấp ngữ cảnh cho LLMs. Hãy tưởng tượng MCP như một cổng USB-C cho các ứng dụng AI - nó cung cấp một cách chuẩn để kết nối các mô hình AI với các nguồn dữ liệu và công cụ khác nhau.
+Model Context Protocol (MCP) là một giao thức mở chuẩn hóa cách các ứng dụng cung cấp ngữ cảnh cho LLMs. Hãy nghĩ MCP như một cổng USB-C cho các ứng dụng AI - nó cung cấp một cách chuẩn để kết nối các mô hình AI với các nguồn dữ liệu và công cụ khác nhau.
 
 ## Mục tiêu học tập
 
 Sau bài học này, bạn sẽ có thể:
 
-- Thiết lập môi trường phát triển MCP cho C#, Java, Python, TypeScript và JavaScript
-- Xây dựng và triển khai các máy chủ MCP cơ bản với các tính năng tùy chỉnh (tài nguyên, prompt, và công cụ)
-- Tạo các ứng dụng host kết nối với máy chủ MCP
+- Thiết lập môi trường phát triển cho MCP bằng C#, Java, Python, TypeScript và JavaScript
+- Xây dựng và triển khai các máy chủ MCP cơ bản với các tính năng tùy chỉnh (tài nguyên, prompts, và công cụ)
+- Tạo các ứng dụng host kết nối với các máy chủ MCP
 - Kiểm thử và gỡ lỗi các triển khai MCP
-- Hiểu các thách thức phổ biến khi thiết lập và cách giải quyết
+- Hiểu các thách thức phổ biến khi thiết lập và cách giải quyết chúng
 - Kết nối các triển khai MCP của bạn với các dịch vụ LLM phổ biến
 
 ## Thiết lập môi trường MCP của bạn
@@ -72,10 +72,10 @@ MCP cung cấp SDK chính thức cho nhiều ngôn ngữ:
 
 ## Những điểm chính cần nhớ
 
-- Việc thiết lập môi trường phát triển MCP khá đơn giản với các SDK theo từng ngôn ngữ
+- Việc thiết lập môi trường phát triển MCP khá đơn giản với các SDK theo ngôn ngữ
 - Xây dựng máy chủ MCP bao gồm tạo và đăng ký các công cụ với các schema rõ ràng
-- Client MCP kết nối với máy chủ và mô hình để tận dụng các khả năng mở rộng
-- Kiểm thử và gỡ lỗi là rất quan trọng để có triển khai MCP đáng tin cậy
+- MCP clients kết nối với máy chủ và mô hình để tận dụng các khả năng mở rộng
+- Kiểm thử và gỡ lỗi là rất quan trọng để có các triển khai MCP đáng tin cậy
 - Các lựa chọn triển khai đa dạng từ phát triển cục bộ đến giải pháp trên đám mây
 
 ## Thực hành
@@ -99,4 +99,4 @@ Chúng tôi có một bộ mẫu bổ sung cho các bài tập bạn sẽ thấy
 Tiếp theo: [Tạo MCP Server đầu tiên của bạn](01-first-server/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

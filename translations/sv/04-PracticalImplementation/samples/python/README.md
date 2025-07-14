@@ -2,39 +2,39 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:31:02+00:00",
+  "translation_date": "2025-07-13T23:33:03+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "sv"
 }
 -->
 # Model Context Protocol (MCP) Python-implementation
 
-Det här arkivet innehåller en Python-implementation av Model Context Protocol (MCP), som visar hur man skapar både en server- och klientapplikation som kommunicerar med MCP-standarden.
+Det här arkivet innehåller en Python-implementation av Model Context Protocol (MCP) som visar hur man skapar både en server- och klientapplikation som kommunicerar med MCP-standarden.
 
 ## Översikt
 
 MCP-implementationen består av två huvudkomponenter:
 
-1. **MCP Server (`server.py`)** – En server som tillhandahåller:
-   - **Tools**: Funktioner som kan anropas på distans
-   - **Resources**: Data som kan hämtas
-   - **Prompts**: Mallar för att generera prompts till språkmodeller
+1. **MCP Server (`server.py`)** – En server som exponerar:
+   - **Verktyg**: Funktioner som kan anropas på distans
+   - **Resurser**: Data som kan hämtas
+   - **Prompter**: Mallar för att generera prompts för språkmodeller
 
-2. **MCP Client (`client.py`)** – En klientapplikation som ansluter till servern och använder dess funktioner
+2. **MCP Klient (`client.py`)** – En klientapplikation som ansluter till servern och använder dess funktioner
 
 ## Funktioner
 
 Denna implementation visar flera viktiga MCP-funktioner:
 
-### Tools
+### Verktyg
 - `completion` – Genererar textkompletteringar från AI-modeller (simulerat)
 - `add` – Enkel kalkylator som adderar två tal
 
-### Resources
+### Resurser
 - `models://` – Returnerar information om tillgängliga AI-modeller
 - `greeting://{name}` – Returnerar en personlig hälsning för ett givet namn
 
-### Prompts
+### Prompter
 - `review_code` – Genererar en prompt för kodgranskning
 
 ## Installation
@@ -55,7 +55,7 @@ Kör servern i ett terminalfönster:
 python server.py
 ```
 
-Servern kan även köras i utvecklingsläge med MCP CLI:
+Servern kan också köras i utvecklingsläge med MCP CLI:
 
 ```powershell
 mcp dev server.py
@@ -77,7 +77,7 @@ python client.py
 
 Detta ansluter till servern och demonstrerar alla tillgängliga funktioner.
 
-### Användning av Klient
+### Användning av Klienten
 
 Klienten (`client.py`) visar alla MCP-funktioner:
 
@@ -85,17 +85,17 @@ Klienten (`client.py`) visar alla MCP-funktioner:
 python client.py
 ```
 
-Detta ansluter till servern och testar alla funktioner inklusive tools, resources och prompts. Utdata visar:
+Detta ansluter till servern och testar alla funktioner inklusive verktyg, resurser och prompter. Utdata visar:
 
-1. Resultatet från kalkylatorn (5 + 7 = 12)
-2. Svar från completions-tool på "What is the meaning of life?"
+1. Resultat från kalkylatorverktyget (5 + 7 = 12)
+2. Svar från completion-verktyget på "What is the meaning of life?"
 3. Lista över tillgängliga AI-modeller
-4. Personlig hälsning för "MCP Explorer"
-5. Mall för kodgranskningsprompt
+4. Personlig hälsning till "MCP Explorer"
+5. Promptmall för kodgranskning
 
 ## Implementationsdetaljer
 
-Servern är implementerad med `FastMCP` API:et, som erbjuder högre abstraktioner för att definiera MCP-tjänster. Här är ett förenklat exempel på hur tools definieras:
+Servern är implementerad med `FastMCP` API:et, som erbjuder högre abstraktioner för att definiera MCP-tjänster. Här är ett förenklat exempel på hur verktyg definieras:
 
 ```python
 @mcp.tool()
@@ -113,7 +113,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Klienten använder MCP client-biblioteket för att ansluta till och anropa servern:
+Klienten använder MCP-klientbiblioteket för att ansluta till och anropa servern:
 
 ```python
 async with stdio_client(server_params) as (reader, writer):
@@ -122,9 +122,9 @@ async with stdio_client(server_params) as (reader, writer):
         result = await session.call_tool("add", arguments={"a": 5, "b": 7})
 ```
 
-## Läs Mer
+## Läs mer
 
 För mer information om MCP, besök: https://modelcontextprotocol.io/
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

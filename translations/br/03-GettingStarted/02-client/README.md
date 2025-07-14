@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4cc245e2f4ea5db5e2b8c2cd1dadc4b4",
-  "translation_date": "2025-07-04T17:00:33+00:00",
+  "translation_date": "2025-07-13T18:14:21+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "br"
 }
@@ -33,7 +33,7 @@ Precisaremos criar uma instância do transporte e outra do nosso cliente:
 
 ### -3- Listando as funcionalidades do servidor
 
-Agora, temos um cliente que pode se conectar caso o programa seja executado. No entanto, ele ainda não lista suas funcionalidades, então vamos fazer isso a seguir:
+Agora temos um cliente que pode se conectar caso o programa seja executado. No entanto, ele ainda não lista suas funcionalidades, então vamos fazer isso a seguir:
 
 Ótimo, agora capturamos todas as funcionalidades. A questão é: quando usamos elas? Bem, esse cliente é bem simples, simples no sentido de que precisaremos chamar explicitamente as funcionalidades quando quisermos. No próximo capítulo, criaremos um cliente mais avançado que terá acesso ao seu próprio modelo de linguagem grande, LLM. Por enquanto, vamos ver como invocar as funcionalidades no servidor:
 
@@ -61,7 +61,7 @@ As principais lições deste capítulo sobre clientes são as seguintes:
 
 - Podem ser usados tanto para descobrir quanto para invocar funcionalidades no servidor.
 - Podem iniciar um servidor enquanto se iniciam (como neste capítulo), mas clientes também podem se conectar a servidores já em execução.
-- São uma ótima forma de testar as capacidades do servidor, ao lado de alternativas como o Inspector, conforme descrito no capítulo anterior.
+- São uma ótima forma de testar as capacidades do servidor ao lado de alternativas como o Inspector, conforme descrito no capítulo anterior.
 
 ## Recursos Adicionais
 

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "14a2dfbea55ef735660a06bd6bdfe5f3",
-  "translation_date": "2025-06-13T21:30:12+00:00",
+  "translation_date": "2025-07-14T06:08:03+00:00",
   "source_file": "09-CaseStudy/UpdateADOItemsFromYT.md",
   "language_code": "en"
 }
@@ -13,13 +13,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overview
 
-This case study shows one example of how the Model Context Protocol (MCP) and its tools can be used to automate updating Azure DevOps (ADO) work items with information gathered from online platforms like YouTube. The scenario presented here is just one example of the broader capabilities of these tools, which can be adapted to many similar automation needs.
+This case study shows an example of how the Model Context Protocol (MCP) and its tools can be used to automate updating Azure DevOps (ADO) work items with information from online platforms like YouTube. The scenario presented is just one example of the broader capabilities of these tools, which can be adapted to many similar automation needs.
 
-In this example, an Advocate tracks online sessions using ADO items, each containing a YouTube video URL. By using MCP tools, the Advocate can keep ADO items updated with the latest video metrics, such as view counts, in a consistent and automated way. This approach can be applied to other cases where data from online sources needs to be integrated into ADO or other systems.
+In this example, an Advocate tracks online sessions using ADO items, each containing a YouTube video URL. By using MCP tools, the Advocate can keep ADO items updated with the latest video metrics, such as view counts, in a repeatable and automated way. This approach can be applied to other cases where data from online sources needs to be integrated into ADO or other systems.
 
 ## Scenario
 
-An Advocate is responsible for tracking the impact of online sessions and community engagement. Each session is logged as an ADO work item in the 'DevRel' project, and the work item includes a field for the YouTube video URL. To accurately report the session’s reach, the Advocate needs to update the ADO item with the current number of video views and the date this data was retrieved.
+An Advocate is responsible for tracking the impact of online sessions and community engagements. Each session is recorded as an ADO work item in the 'DevRel' project, and the work item includes a field for the YouTube video URL. To accurately report the session’s reach, the Advocate needs to update the ADO item with the current number of video views and the date this information was retrieved.
 
 ## Tools Used
 
@@ -28,10 +28,10 @@ An Advocate is responsible for tracking the impact of online sessions and commun
 
 ## Step-by-Step Workflow
 
-1. **Identify the ADO Item**: Begin with the ADO work item ID (e.g., 1234) in the 'DevRel' project.
-2. **Retrieve the YouTube URL**: Use the Azure DevOps MCP tool to fetch the YouTube URL from the work item.
-3. **Extract Video Views**: Use the Playwright MCP tool to open the YouTube URL and extract the current view count.
-4. **Update the ADO Item**: Record the latest view count and the retrieval date in the 'Impact and Learnings' section of the ADO work item using the Azure DevOps MCP tool.
+1. **Identify the ADO Item**: Start with the ADO work item ID (e.g., 1234) in the 'DevRel' project.
+2. **Retrieve the YouTube URL**: Use the Azure DevOps MCP tool to get the YouTube URL from the work item.
+3. **Extract Video Views**: Use the Playwright MCP tool to navigate to the YouTube URL and extract the current view count.
+4. **Update the ADO Item**: Write the latest view count and the date of retrieval into the 'Impact and Learnings' section of the ADO work item using the Azure DevOps MCP tool.
 
 ## Example Prompt
 
@@ -56,13 +56,13 @@ flowchart TD
 ## Technical Implementation
 
 - **MCP Orchestration**: The workflow is managed by an MCP server, which coordinates the use of both Azure DevOps MCP and Playwright MCP tools.
-- **Automation**: The process can be triggered manually or scheduled to run regularly to keep ADO items updated.
+- **Automation**: The process can be triggered manually or scheduled to run regularly to keep ADO items current.
 - **Extensibility**: This pattern can be extended to update ADO items with other online metrics (e.g., likes, comments) or from other platforms.
 
 ## Results and Impact
 
 - **Efficiency**: Reduces manual work for Advocates by automating the retrieval and update of video metrics.
-- **Accuracy**: Ensures ADO items reflect the most current data available from online sources.
+- **Accuracy**: Ensures ADO items reflect the most up-to-date data available from online sources.
 - **Repeatability**: Provides a reusable workflow for similar scenarios involving other data sources or metrics.
 
 ## References

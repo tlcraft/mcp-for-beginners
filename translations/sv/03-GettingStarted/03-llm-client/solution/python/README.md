@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "24531f2b6b0f7fa3839accf4dc10088a",
-  "translation_date": "2025-05-17T10:48:58+00:00",
+  "translation_date": "2025-07-13T19:16:26+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/python/README.md",
   "language_code": "sv"
 }
 -->
 # Köra detta exempel
 
-Det rekommenderas att installera `uv` men det är inte ett måste, se [instruktioner](https://docs.astral.sh/uv/#highlights)
+Det rekommenderas att du installerar `uv` men det är inte ett måste, se [instructions](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Skapa en virtuell miljö
 
@@ -33,11 +33,12 @@ pip install azure-ai-inference
 
 ## -3- Kör exemplet
 
+
 ```bash
 python client.py
 ```
 
-Du bör se en utmatning som liknar:
+Du bör se en utdata som liknar:
 
 ```text
 LISTING RESOURCES
@@ -55,4 +56,4 @@ TOOLS result:  [TextContent(type='text', text='22', annotations=None)]
 ```
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen notera att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller misstolkningar som uppstår vid användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

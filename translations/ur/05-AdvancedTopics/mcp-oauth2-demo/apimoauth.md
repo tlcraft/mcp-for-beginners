@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "32c9a4263be08f9050c8044bb26267c4",
-  "translation_date": "2025-05-17T15:28:19+00:00",
+  "translation_date": "2025-07-14T00:20:26+00:00",
   "source_file": "05-AdvancedTopics/mcp-oauth2-demo/apimoauth.md",
   "language_code": "ur"
 }
 -->
-# اسپرنگ اے آئی ایم سی پی ایپ کو ایذور کنٹینر ایپس پر ڈپلائے کرنا
+# Spring AI MCP ایپ کو Azure Container Apps پر تعینات کرنا
 
-([اسپرنگ اے آئی ایم سی پی سرورز کو اوتھ 2 کے ساتھ محفوظ بنانا](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *شکل: اسپرنگ اے آئی ایم سی پی سرور اسپرنگ اتھورائزیشن سرور کے ساتھ محفوظ۔ سرور کلائنٹس کو ایکسیس ٹوکن جاری کرتا ہے اور آنے والی درخواستوں پر ان کی توثیق کرتا ہے (ماخذ: اسپرنگ بلاگ) ([اسپرنگ اے آئی ایم سی پی سرورز کو اوتھ 2 کے ساتھ محفوظ بنانا](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* اسپرنگ ایم سی پی سرور کو ڈپلائے کرنے کے لیے، اسے کنٹینر کے طور پر بنائیں اور ایذور کنٹینر ایپس کو بیرونی انگریس کے ساتھ استعمال کریں۔ مثال کے طور پر، ایذور کمانڈ لائن انٹرفیس کا استعمال کرتے ہوئے آپ چلا سکتے ہیں:
+ ([Securing Spring AI MCP servers with OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2)) *تصویر: Spring AI MCP سرور کو Spring Authorization Server کے ذریعے محفوظ کیا گیا ہے۔ سرور کلائنٹس کو ایکسیس ٹوکن جاری کرتا ہے اور آنے والی درخواستوں پر ان کی تصدیق کرتا ہے (ماخذ: Spring بلاگ) ([Securing Spring AI MCP servers with OAuth2](https://spring.io/blog/2025/04/02/mcp-server-oauth2#:~:text=,server%20with%20the%20MCP%20inspector)).* Spring MCP سرور کو تعینات کرنے کے لیے، اسے کنٹینر کے طور پر بنائیں اور Azure Container Apps کے ساتھ external ingress استعمال کریں۔ مثال کے طور پر، Azure CLI کے ذریعے آپ یہ کمانڈ چلا سکتے ہیں:
 
 ```bash
 az containerapp up \
@@ -23,11 +23,11 @@ az containerapp up \
   --query properties.configuration.ingress.fqdn
 ```
 
-یہ ایک عوامی رسائی کے قابل کنٹینر ایپ تخلیق کرتا ہے جس میں HTTPS فعال ہوتا ہے (ایذور ڈیفالٹ `*.azurecontainerapps.io` domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). The command output includes the app’s FQDN (e.g. `my-mcp-app.eastus.azurecontainerapps.io`), which becomes the **issuer URL** base. Ensure HTTP ingress is enabled (as above) so APIM can reach the app. In a test/dev setup, use the `--ingress external` option (or bind a custom domain with TLS per [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). Store any sensitive properties (like OAuth client secrets) in Container Apps secrets or Azure Key Vault, and map them into the container as environment variables. 
+یہ ایک عوامی طور پر قابل رسائی Container App بناتا ہے جس میں HTTPS فعال ہوتا ہے (Azure ڈیفالٹ `*.azurecontainerapps.io` ڈومین کے لیے مفت TLS سرٹیفکیٹ جاری کرتا ہے ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))). کمانڈ کے نتیجے میں ایپ کا FQDN ملتا ہے (مثلاً `my-mcp-app.eastus.azurecontainerapps.io`)، جو **issuer URL** کی بنیاد بنتا ہے۔ یقینی بنائیں کہ HTTP ingress فعال ہے (جیسا کہ اوپر بتایا گیا ہے) تاکہ APIM ایپ تک پہنچ سکے۔ ٹیسٹ/ڈویلپمنٹ سیٹ اپ میں، `--ingress external` آپشن استعمال کریں (یا TLS کے ساتھ کسٹم ڈومین باندھیں جیسا کہ [Microsoft docs](https://learn.microsoft.com/azure/container-apps/custom-domains-managed-certificates) میں بتایا گیا ہے ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)))۔ حساس پراپرٹیز (جیسے OAuth کلائنٹ سیکریٹس) کو Container Apps secrets یا Azure Key Vault میں محفوظ کریں اور انہیں کنٹینر میں environment variables کے طور پر میپ کریں۔
 
-## Configuring Spring Authorization Server
+## Spring Authorization Server کی ترتیب
 
-In your Spring Boot app’s code, include the Spring Authorization Server and Resource Server starters. Configure a `RegisteredClient` (for the `client_credentials` grant in dev/test) and a JWT key source. For example, in `application.properties` کے لیے مفت TLS سرٹیفکیٹ جاری کرتا ہے) آپ سیٹ کر سکتے ہیں:
+اپنی Spring Boot ایپ کے کوڈ میں Spring Authorization Server اور Resource Server starters شامل کریں۔ `RegisteredClient` کو ترتیب دیں (dev/test میں `client_credentials` گرانٹ کے لیے) اور JWT key source بنائیں۔ مثال کے طور پر، `application.properties` میں آپ یہ سیٹنگ کر سکتے ہیں:
 
 ```properties
 # OAuth2 client (for testing token issuance)
@@ -37,7 +37,7 @@ spring.security.oauth2.authorizationserver.client.oidc-client.registration.autho
 spring.security.oauth2.authorizationserver.client.oidc-client.registration.client-authentication-methods=client_secret_basic
 ```
 
-اتھورائزیشن سرور اور ریسورس سرور کو سیکیورٹی فلٹر چین کی تعریف کر کے فعال کریں۔ مثال کے طور پر:
+Authorization Server اور Resource Server کو فعال کرنے کے لیے سیکیورٹی فلٹر چین ڈیفائن کریں۔ مثال کے طور پر:
 
 ```java
 @Configuration
@@ -84,9 +84,9 @@ public class SecurityConfiguration {
 }
 ```
 
-یہ سیٹ اپ ڈیفالٹ اوتھ 2 اینڈپوائنٹس کو ظاہر کرے گا: `/oauth2/token` for tokens and `/oauth2/jwks` for the JSON Web Key Set. (By default Spring’s `AuthorizationServerSettings` maps `/oauth2/token` and `/oauth2/jwks` ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).) The server will issue JWT access tokens signed by the RSA key above, and publish its public key at `https://<your-app>:/oauth2/jwks`. 
+یہ ترتیب ڈیفالٹ OAuth2 اینڈپوائنٹس کو ظاہر کرے گی: `/oauth2/token` ٹوکنز کے لیے اور `/oauth2/jwks` JSON Web Key Set کے لیے۔ (Spring کی `AuthorizationServerSettings` ڈیفالٹ میں `/oauth2/token` اور `/oauth2/jwks` کو میپ کرتی ہے ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))۔) سرور RSA کی کے ذریعے دستخط شدہ JWT ایکسیس ٹوکن جاری کرے گا، اور اپنا پبلک کی `https://<your-app>:/oauth2/jwks` پر شائع کرے گا۔
 
-**Enable OpenID Connect discovery:** To let APIM automatically retrieve the issuer and JWKS, enable the OIDC provider configuration endpoint by adding `.oidc(Customizer.withDefaults())` آپ کی سیکیورٹی کنفیگریشن میں ([کنفیگریشن ماڈل :: اسپرنگ اتھورائزیشن سرور](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build))۔ مثال کے طور پر:
+**OpenID Connect دریافت کو فعال کریں:** تاکہ APIM خود بخود issuer اور JWKS حاصل کر سکے، اپنی سیکیورٹی کنفیگریشن میں `.oidc(Customizer.withDefaults())` شامل کریں ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build))۔ مثال کے طور پر:
 
 ```java
 http
@@ -96,7 +96,7 @@ http
       .oidc(Customizer.withDefaults()));  // <– enables /.well-known/openid-configuration
 ```
 
-یہ `/.well-known/openid-configuration`, which APIM can use for metadata. Finally, you may want to customize the JWT **audience** claim so that APIM’s `<audiences>` کو ظاہر کرتا ہے چیک پاس ہو جائے گا۔ مثال کے طور پر، ایک ٹوکن کسٹمائزر شامل کریں:
+یہ `/.well-known/openid-configuration` کو ظاہر کرتا ہے، جسے APIM میٹا ڈیٹا کے لیے استعمال کر سکتا ہے۔ آخر میں، آپ JWT **audience** کلیم کو حسب ضرورت بنا سکتے ہیں تاکہ APIM کا `<audiences>` چیک کامیاب ہو۔ مثال کے طور پر، ایک ٹوکن کسٹمائزر شامل کریں:
 
 ```java
 @Bean
@@ -108,21 +108,21 @@ public OAuth2TokenCustomizer<OAuth2TokenClaimsContext> tokenCustomizer() {
 }
 ```
 
-یہ یقینی بناتا ہے کہ ٹوکن `"aud": ["mcp-client"]`, matching the client ID or scope expected by APIM. 
+یہ یقینی بناتا ہے کہ ٹوکنز میں `"aud": ["mcp-client"]` شامل ہو، جو APIM کی توقع کردہ کلائنٹ ID یا اسکوپ سے میل کھاتا ہے۔
 
-## Exposing Token and JWKS Endpoints
+## ٹوکن اور JWKS اینڈپوائنٹس کو ظاہر کرنا
 
-After deploying, your app’s **issuer URL** will be `https://<app-fqdn>`, e.g. `https://my-mcp-app.eastus.azurecontainerapps.io`. Its OAuth2 endpoints are:
+تعیناتی کے بعد، آپ کی ایپ کا **issuer URL** ہوگا `https://<app-fqdn>`، مثلاً `https://my-mcp-app.eastus.azurecontainerapps.io`۔ اس کے OAuth2 اینڈپوائنٹس یہ ہیں:
 
-- **Token endpoint:** `https://<app-fqdn>/oauth2/token` – clients obtain tokens here (client_credentials flow).
-- **JWKS endpoint:** `https://<app-fqdn>/oauth2/jwks` – returns the JWK set (used by APIM to get signing keys).
-- **OpenID Config:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC discovery JSON (contains `issuer`, `token_endpoint`, `jwks_uri`, etc.).  
+- **ٹوکن اینڈپوائنٹ:** `https://<app-fqdn>/oauth2/token` – کلائنٹس یہاں سے ٹوکن حاصل کرتے ہیں (client_credentials فلو)۔
+- **JWKS اینڈپوائنٹ:** `https://<app-fqdn>/oauth2/jwks` – JWK سیٹ واپس کرتا ہے (APIM دستخطی کیز حاصل کرنے کے لیے استعمال کرتا ہے)۔
+- **OpenID کنفیگریشن:** `https://<app-fqdn>/.well-known/openid-configuration` – OIDC دریافت کا JSON (جس میں `issuer`, `token_endpoint`, `jwks_uri` وغیرہ شامل ہیں)۔
 
-APIM will point to the **OpenID configuration URL**, from which it discovers the `jwks_uri`. For example, if your Container App FQDN is `my-mcp-app.eastus.azurecontainerapps.io`, then APIM’s `<openid-config url="...">` should use `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`. (By default Spring will set the `issuer` in that metadata to the same base URL ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)).)
+APIM **OpenID configuration URL** کی طرف اشارہ کرے گا، جہاں سے وہ `jwks_uri` دریافت کرتا ہے۔ مثال کے طور پر، اگر آپ کی Container App کا FQDN `my-mcp-app.eastus.azurecontainerapps.io` ہے، تو APIM کا `<openid-config url="...">` ہونا چاہیے `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration`۔ (Spring ڈیفالٹ میں اس میٹا ڈیٹا میں `issuer` کو اسی بیس URL پر سیٹ کرے گا ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))۔
 
-## Configuring Azure API Management (`validate-jwt`)
+## Azure API Management (`validate-jwt`) کی ترتیب
 
-In Azure APIM, add an inbound policy that uses the `<validate-jwt>` پالیسی کے خلاف آپ کے اسپرنگ اتھورائزیشن سرور پر آنے والے JWTs کو چیک کرنے کے لیے۔ ایک سادہ سیٹ اپ کے لیے، آپ اوپن آئی ڈی کنیکٹ میٹا ڈیٹا یو آر ایل استعمال کر سکتے ہیں۔ مثال کے طور پر پالیسی کا ٹکڑا:
+Azure APIM میں، ایک inbound پالیسی شامل کریں جو `<validate-jwt>` پالیسی استعمال کرے تاکہ آنے والے JWTs کو آپ کے Spring Authorization Server کے خلاف چیک کیا جا سکے۔ سادہ سیٹ اپ کے لیے، OpenID Connect میٹا ڈیٹا URL استعمال کریں۔ مثال کے طور پر پالیسی کا ٹکڑا:
 
 ```xml
 <inbound>
@@ -139,38 +139,37 @@ In Azure APIM, add an inbound policy that uses the `<validate-jwt>` پالیسی
 </inbound>
 ```
 
-یہ پالیسی اے پی آئی ایم کو بتاتی ہے کہ اسپرنگ اتھ سرور سے اوپن آئی ڈی کنفیگریشن حاصل کریں، اس کی جے ڈبلیو کے ایس کو ریٹریو کریں، اور اس بات کی توثیق کریں کہ ہر ٹوکن ایک معتبر کلید سے سائن کیا گیا ہے اور اس کے پاس درست آڈینس ہے۔ (اگر آپ `<issuers>`, APIM will use the `issuer` claim from the metadata automatically.) The `<audience>` should match your client ID or API resource identifier in the token (in the example above, we set it to `"mcp-client"`). This is consistent with Microsoft’s documentation on using `validate-jwt` with `<openid-config>` ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)).
+یہ پالیسی APIM کو ہدایت دیتی ہے کہ وہ Spring Auth Server سے OpenID کنفیگریشن حاصل کرے، اس کا JWKS لائے، اور ہر ٹوکن کی دستخط شدہ کلید کی تصدیق کرے اور درست audience چیک کرے۔ (اگر آپ `<issuers>` کو چھوڑ دیں، تو APIM خود بخود میٹا ڈیٹا سے `issuer` کلیم استعمال کرے گا۔) `<audience>` کو آپ کے کلائنٹ ID یا API resource identifier سے میل کھانا چاہیے (اوپر کی مثال میں ہم نے اسے `"mcp-client"` رکھا ہے)۔ یہ Microsoft کی دستاویزات کے مطابق ہے جو `validate-jwt` کو `<openid-config>` کے ساتھ استعمال کرنے پر روشنی ڈالتی ہے ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation))۔
 
-After validation, APIM will forward the request (including the original `Authorization` header) to the backend. Since the Spring app is also a resource server, it will re-validate the token, but APIM has already ensured its validity. (For development, you can rely on APIM’s check and disable additional checks in the app if desired, but it’s safer to keep both.)
+تصدیق کے بعد، APIM درخواست کو (اصل `Authorization` ہیڈر سمیت) بیک اینڈ کو بھیج دے گا۔ چونکہ Spring ایپ بھی resource server ہے، وہ ٹوکن کو دوبارہ چیک کرے گی، لیکن APIM پہلے ہی اس کی درستگی کو یقینی بنا چکا ہوتا ہے۔ (ڈویلپمنٹ کے لیے، آپ APIM کے چیک پر انحصار کر سکتے ہیں اور ایپ میں اضافی چیکس کو غیر فعال کر سکتے ہیں، لیکن دونوں کو فعال رکھنا زیادہ محفوظ ہے۔)
 
-## Example Settings
+## مثال کی ترتیبات
 
-| Setting            | Example Value                                                        | Notes                                      |
+| سیٹنگ              | مثال کی قیمت                                                        | نوٹس                                      |
 |--------------------|----------------------------------------------------------------------|--------------------------------------------|
-| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                    | Your Container App’s URL (base URI)        |
-| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`       | Default Spring token endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
-| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`        | Default JWK Set endpoint ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
-| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC discovery document (auto-generated)    |
-| **APIM audience**  | `mcp-client`                                                         | OAuth client ID or API resource name       |
-| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` uses this URL ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
+| **Issuer**         | `https://my-mcp-app.eastus.azurecontainerapps.io`                    | آپ کی Container App کا URL (بنیادی URI)        |
+| **Token endpoint** | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/token`       | ڈیفالٹ Spring ٹوکن اینڈپوائنٹ ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))  |
+| **JWKS endpoint**  | `https://my-mcp-app.eastus.azurecontainerapps.io/oauth2/jwks`        | ڈیفالٹ JWK سیٹ اینڈپوائنٹ ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize))    |
+| **OpenID Config**  | `https://my-mcp-app.eastus.azurecontainerapps.io/.well-known/openid-configuration` | OIDC دریافت دستاویز (خودکار جنریٹڈ)    |
+| **APIM audience**  | `mcp-client`                                                         | OAuth کلائنٹ ID یا API resource نام       |
+| **APIM policy**    | `<openid-config url="https://.../.well-known/openid-configuration" />` | `<validate-jwt>` اس URL کو استعمال کرتا ہے ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)) |
 
-## Common Pitfalls
+## عام مسائل
 
-- **HTTPS/TLS:** The APIM gateway requires that the OpenID/JWKS endpoint be HTTPS with a valid certificate. By default, Azure Container Apps provides a trusted TLS cert for the Azure-managed domain ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If you use a custom domain, be sure to bind a certificate (you can use Azure’s free managed cert feature) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)). If APIM cannot trust the endpoint’s certificate, `<validate-jwt>` will fail to fetch the metadata.  
+- **HTTPS/TLS:** APIM گیٹ وے کو ضرورت ہوتی ہے کہ OpenID/JWKS اینڈپوائنٹ HTTPS پر ہو اور اس کا سرٹیفکیٹ درست ہو۔ ڈیفالٹ میں، Azure Container Apps Azure کے زیر انتظام ڈومین کے لیے معتبر TLS سرٹیفکیٹ فراہم کرتا ہے ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))۔ اگر آپ کسٹم ڈومین استعمال کرتے ہیں، تو سرٹیفکیٹ باندھنا یقینی بنائیں (آپ Azure کا مفت managed cert فیچر استعمال کر سکتے ہیں) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements))۔ اگر APIM سرٹیفکیٹ پر اعتماد نہیں کرتا، تو `<validate-jwt>` میٹا ڈیٹا حاصل کرنے میں ناکام ہو جائے گا۔
 
-- **Endpoint Accessibility:** Ensure the Spring app’s endpoints are reachable from APIM. Using `--ingress external` (or enabling ingress in the portal) is simplest. If you chose an internal or vNet-bound environment, APIM (by default public) might not reach it unless placed in the same VNet. In a test setup, prefer public ingress so APIM can call the `.well-known` and `/jwks` URLs. 
+- **اینڈپوائنٹ کی رسائی:** یقینی بنائیں کہ Spring ایپ کے اینڈپوائنٹس APIM سے قابل رسائی ہوں۔ `--ingress external` استعمال کرنا (یا پورٹل میں ingress کو فعال کرنا) سب سے آسان طریقہ ہے۔ اگر آپ نے internal یا vNet-bound ماحول منتخب کیا ہے، تو APIM (جو ڈیفالٹ میں public ہے) اسے اس وقت تک نہیں پہنچ پائے گا جب تک کہ وہ اسی VNet میں نہ ہو۔ ٹیسٹ سیٹ اپ میں، عوامی ingress کو ترجیح دیں تاکہ APIM `.well-known` اور `/jwks` URLs کو کال کر سکے۔
 
-- **OpenID Discovery Enabled:** By default, Spring Authorization Server **does not expose** the `/.well-known/openid-configuration` unless OIDC is enabled. Make sure to include `.oidc(Customizer.withDefaults())` in your security config (see above) so that the provider configuration endpoint is active ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)). Otherwise APIM’s `<openid-config>` call will 404.
+- **OpenID دریافت فعال ہونا:** Spring Authorization Server ڈیفالٹ میں `/.well-known/openid-configuration` ظاہر نہیں کرتا جب تک کہ OIDC فعال نہ ہو۔ اپنی سیکیورٹی کنفیگریشن میں `.oidc(Customizer.withDefaults())` شامل کرنا یقینی بنائیں (اوپر دیکھیں) تاکہ provider configuration endpoint فعال ہو ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build))۔ ورنہ APIM کا `<openid-config>` کال 404 دے گا۔
 
-- **Audience Claim:** Spring’s default behavior is to set the `aud` claim to the client ID. If APIM’s `<audience>` check fails, you may need to customize the token (as shown above) or adjust the APIM policy. Ensure the audience in your JWT matches what you configure in `<audience>`. 
+- **Audience کلیم:** Spring کی ڈیفالٹ پالیسی `aud` کلیم کو کلائنٹ ID پر سیٹ کرتی ہے۔ اگر APIM کا `<audience>` چیک ناکام ہو، تو آپ کو ٹوکن کو حسب ضرورت بنانا پڑ سکتا ہے (جیسا کہ اوپر دکھایا گیا ہے) یا APIM پالیسی کو ایڈجسٹ کرنا ہوگا۔ یقینی بنائیں کہ JWT میں audience وہی ہو جو آپ `<audience>` میں سیٹ کرتے ہیں۔
 
-- **JSON Metadata Parsing:** The OpenID configuration JSON must be valid. Spring’s default config will emit a standard OIDC metadata document. Verify that it contains the correct `issuer` and `jwks_uri`. If you host Spring behind a proxy or path-based route, double-check the URLs in this metadata. APIM will use these values as-is. 
+- **JSON میٹا ڈیٹا کی پارسنگ:** OpenID کنفیگریشن JSON درست ہونا چاہیے۔ Spring کی ڈیفالٹ کنفیگریشن ایک معیاری OIDC میٹا ڈیٹا دستاویز جاری کرے گی۔ تصدیق کریں کہ اس میں درست `issuer` اور `jwks_uri` شامل ہوں۔ اگر آپ Spring کو پراکسی یا path-based روٹنگ کے پیچھے ہوسٹ کر رہے ہیں، تو URLs کو اچھی طرح چیک کریں۔ APIM ان ویلیوز کو جیسا ہے ویسا استعمال کرے گا۔
 
-- **Policy Ordering:** In the APIM policy, place `<validate-jwt>` **before** any routing to the backend. Otherwise, calls might reach your app without a valid token. Also ensure `<validate-jwt>` appears immediately under `<inbound>` (not nested inside another condition) so that APIM applies it.
+- **پالیسی کی ترتیب:** APIM پالیسی میں `<validate-jwt>` کو بیک اینڈ کی طرف روٹنگ سے **پہلے** رکھیں۔ ورنہ کالز آپ کی ایپ تک بغیر درست ٹوکن کے پہنچ سکتی ہیں۔ اس کے علاوہ، `<validate-jwt>` کو `<inbound>` کے فوراً نیچے رکھیں (کسی اور کنڈیشن کے اندر نہیں) تاکہ APIM اسے لاگو کرے۔
 
-By following the above steps, you can run your Spring AI MCP server in Azure Container Apps and have Azure API Management validate incoming OAuth2 JWTs with a minimal policy. The key points are: expose the Spring Auth endpoints publicly with TLS, enable OIDC discovery, and point APIM’s `validate-jwt` at the OpenID config URL (so it can fetch the JWKS automatically). This setup is suitable for a dev/test environment; for production, consider proper secret management, token lifetimes, and rotating keys in JWKS as needed. 
+مندرجہ بالا مراحل پر عمل کرتے ہوئے، آپ اپنے Spring AI MCP سرور کو Azure Container Apps میں چلا سکتے ہیں اور Azure API Management کے ذریعے آنے والے OAuth2 JWTs کی تصدیق کر سکتے ہیں۔ اہم نکات یہ ہیں: Spring Auth اینڈپوائنٹس کو TLS کے ساتھ عوامی طور پر ظاہر کریں، OIDC دریافت کو فعال کریں، اور APIM کے `validate-jwt` کو OpenID کنفیگریشن URL کی طرف اشارہ کریں تاکہ وہ JWKS خودکار طریقے سے حاصل کر سکے۔ یہ سیٹ اپ dev/test ماحول کے لیے موزوں ہے؛ پروڈکشن کے لیے مناسب سیکریٹ مینجمنٹ، ٹوکن کی مدت، اور JWKS میں کیز کی گردش پر غور کریں۔
+**حوالہ جات:** Spring Authorization Server کی دستاویزات میں ڈیفالٹ اینڈ پوائنٹس دیکھیں ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) اور OIDC کنفیگریشن ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); Microsoft APIM کی دستاویزات میں `validate-jwt` کی مثالیں دیکھیں ([Azure API Management policy reference - validate-jwt | Microsoft Learn](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); اور Azure Container Apps کی دستاویزات میں تعیناتی اور سرٹیفیکیٹس کے بارے میں معلومات حاصل کریں ([Deploy Java Spring Boot apps to Azure Container Apps - Java on Azure | Microsoft Learn](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([Custom domain names and free managed certificates in Azure Container Apps | Microsoft Learn](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
 
-**References:** See Spring Authorization Server docs for default endpoints ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=public%20static%20Builder%20builder%28%29%20,oauth2%2Fauthorize)) and OIDC configuration ([Configuration Model :: Spring Authorization Server](https://docs.spring.io/spring-authorization-server/reference/configuration-model.html#:~:text=.securityMatcher%28authorizationServerConfigurer.getEndpointsMatcher%28%29%29%20.with%28authorizationServerConfigurer%2C%20%28authorizationServer%29%20,%29%3B%20return%20http.build)); see Microsoft APIM docs for `validate-jwt` کی مثالیں ([ایذور اے پی آئی مینجمنٹ پالیسی ریفرنس - validate-jwt | مائیکروسافٹ لرن](https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy#:~:text=Microsoft%20Entra%20ID%20single%20tenant,token%20validation)); اور ایذور کنٹینر ایپس کی دستاویزات برائے ڈپلائمنٹ اور سرٹیفکیٹس ([جاوا اسپرنگ بوٹ ایپس کو ایذور کنٹینر ایپس پر ڈپلائے کریں - جاوا آن ایذور | مائیکروسافٹ لرن](https://learn.microsoft.com/en-us/azure/developer/java/identity/deploy-spring-boot-to-azure-container-apps#:~:text=Now%20you%20can%20deploy%20your,CLI%20command)) ([ایذور کنٹینر ایپس میں کسٹم ڈومین نام اور مفت مینیجڈ سرٹیفکیٹس | مائیکروسافٹ لرن](https://learn.microsoft.com/en-us/azure/container-apps/custom-domains-managed-certificates#:~:text=Free%20certificate%20requirements)).
-
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا نقائص ہو سکتے ہیں۔ اصل دستاویز کو اس کی مقامی زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

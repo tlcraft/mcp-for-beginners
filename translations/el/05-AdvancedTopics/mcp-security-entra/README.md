@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6e562d7e5a77c8982da4aa8f762ad1d8",
-  "translation_date": "2025-07-02T09:28:49+00:00",
+  "translation_date": "2025-07-14T03:04:12+00:00",
   "source_file": "05-AdvancedTopics/mcp-security-entra/README.md",
   "language_code": "el"
 }
@@ -10,60 +10,60 @@ CO_OP_TRANSLATOR_METADATA:
 # Ασφάλεια Ροών Εργασίας Τεχνητής Νοημοσύνης: Πιστοποίηση Entra ID για Διακομιστές Model Context Protocol
 
 ## Εισαγωγή  
-Η ασφάλεια του διακομιστή Model Context Protocol (MCP) είναι εξίσου σημαντική με το να κλειδώνεις την εξώπορτα του σπιτιού σου. Αν αφήσεις τον διακομιστή MCP ανοιχτό, τα εργαλεία και τα δεδομένα σου γίνονται ευάλωτα σε μη εξουσιοδοτημένη πρόσβαση, κάτι που μπορεί να οδηγήσει σε παραβιάσεις ασφαλείας. Το Microsoft Entra ID παρέχει μια ισχυρή λύση διαχείρισης ταυτότητας και πρόσβασης στο νέφος, βοηθώντας να διασφαλιστεί ότι μόνο εξουσιοδοτημένοι χρήστες και εφαρμογές μπορούν να αλληλεπιδρούν με τον MCP διακομιστή σου. Σε αυτή την ενότητα, θα μάθεις πώς να προστατεύεις τις ροές εργασίας AI χρησιμοποιώντας την πιστοποίηση Entra ID.
+Η ασφάλεια του διακομιστή Model Context Protocol (MCP) είναι εξίσου σημαντική με το να κλειδώνεις την πόρτα του σπιτιού σου. Αν αφήσεις τον MCP διακομιστή ανοιχτό, εκθέτεις τα εργαλεία και τα δεδομένα σου σε μη εξουσιοδοτημένη πρόσβαση, που μπορεί να οδηγήσει σε παραβιάσεις ασφαλείας. Το Microsoft Entra ID προσφέρει μια ισχυρή λύση διαχείρισης ταυτότητας και πρόσβασης στο cloud, βοηθώντας να διασφαλιστεί ότι μόνο εξουσιοδοτημένοι χρήστες και εφαρμογές μπορούν να αλληλεπιδρούν με τον MCP διακομιστή σου. Σε αυτή την ενότητα, θα μάθεις πώς να προστατεύεις τις ροές εργασίας AI χρησιμοποιώντας την πιστοποίηση Entra ID.
 
 ## Στόχοι Μάθησης  
-Με το τέλος αυτής της ενότητας, θα μπορείς να:
+Στο τέλος αυτής της ενότητας, θα είσαι σε θέση να:
 
-- Κατανοείς τη σημασία της ασφάλειας των διακομιστών MCP.  
-- Εξηγείς τις βασικές αρχές του Microsoft Entra ID και της πιστοποίησης OAuth 2.0.  
+- Κατανοείς τη σημασία της ασφάλειας των MCP διακομιστών.  
+- Εξηγείς τα βασικά του Microsoft Entra ID και της πιστοποίησης OAuth 2.0.  
 - Αναγνωρίζεις τη διαφορά μεταξύ δημόσιων και εμπιστευτικών πελατών.  
 - Εφαρμόζεις την πιστοποίηση Entra ID σε τοπικά (δημόσιος πελάτης) και απομακρυσμένα (εμπιστευτικός πελάτης) σενάρια MCP διακομιστών.  
-- Εφαρμόζεις βέλτιστες πρακτικές ασφαλείας κατά την ανάπτυξη ροών εργασίας AI.  
+- Εφαρμόζεις βέλτιστες πρακτικές ασφάλειας κατά την ανάπτυξη ροών εργασίας AI.
 
-## Ασφάλεια και MCP
+## Ασφάλεια και MCP  
 
-Όπως δεν θα άφηνες την εξώπορτα του σπιτιού σου ξεκλείδωτη, έτσι δεν πρέπει να αφήνεις τον MCP διακομιστή σου ανοιχτό σε όλους. Η ασφάλεια των ροών εργασίας AI είναι απαραίτητη για την ανάπτυξη αξιόπιστων, ασφαλών και αξιόπιστων εφαρμογών. Αυτό το κεφάλαιο θα σε εισαγάγει στη χρήση του Microsoft Entra ID για να ασφαλίσεις τους MCP διακομιστές σου, διασφαλίζοντας ότι μόνο εξουσιοδοτημένοι χρήστες και εφαρμογές έχουν πρόσβαση στα εργαλεία και τα δεδομένα σου.
+Όπως δεν θα άφηνες την πόρτα του σπιτιού σου ξεκλείδωτη, έτσι δεν πρέπει να αφήνεις τον MCP διακομιστή σου ανοιχτό για οποιονδήποτε. Η ασφάλεια των ροών εργασίας AI είναι απαραίτητη για τη δημιουργία αξιόπιστων, ασφαλών και σταθερών εφαρμογών. Αυτό το κεφάλαιο θα σε εισάγει στη χρήση του Microsoft Entra ID για την ασφάλεια των MCP διακομιστών, διασφαλίζοντας ότι μόνο εξουσιοδοτημένοι χρήστες και εφαρμογές μπορούν να αλληλεπιδρούν με τα εργαλεία και τα δεδομένα σου.
 
-## Γιατί η Ασφάλεια είναι Σημαντική για τους MCP Διακομιστές
+## Γιατί η Ασφάλεια Είναι Σημαντική για τους MCP Διακομιστές  
 
-Φαντάσου ότι ο MCP διακομιστής σου έχει ένα εργαλείο που μπορεί να στείλει email ή να έχει πρόσβαση σε μια βάση δεδομένων πελατών. Ένας μη ασφαλής διακομιστής σημαίνει ότι οποιοσδήποτε μπορεί να χρησιμοποιήσει αυτό το εργαλείο, με αποτέλεσμα μη εξουσιοδοτημένη πρόσβαση σε δεδομένα, αποστολή ανεπιθύμητης αλληλογραφίας ή άλλες κακόβουλες ενέργειες.
+Φαντάσου ότι ο MCP διακομιστής σου έχει ένα εργαλείο που μπορεί να στείλει email ή να έχει πρόσβαση σε μια βάση δεδομένων πελατών. Ένας μη ασφαλής διακομιστής σημαίνει ότι οποιοσδήποτε θα μπορούσε να χρησιμοποιήσει αυτό το εργαλείο, οδηγώντας σε μη εξουσιοδοτημένη πρόσβαση σε δεδομένα, ανεπιθύμητα μηνύματα ή άλλες κακόβουλες ενέργειες.
 
-Με την εφαρμογή της πιστοποίησης, διασφαλίζεις ότι κάθε αίτημα προς τον διακομιστή σου επαληθεύεται, επιβεβαιώνοντας την ταυτότητα του χρήστη ή της εφαρμογής που το υποβάλλει. Αυτή είναι η πρώτη και πιο κρίσιμη ενέργεια για την ασφάλεια των ροών εργασίας AI σου.
+Με την εφαρμογή πιστοποίησης, διασφαλίζεις ότι κάθε αίτημα προς τον διακομιστή σου επαληθεύεται, επιβεβαιώνοντας την ταυτότητα του χρήστη ή της εφαρμογής που κάνει το αίτημα. Αυτό είναι το πρώτο και πιο κρίσιμο βήμα για την ασφάλεια των ροών εργασίας AI.
 
-## Εισαγωγή στο Microsoft Entra ID
+## Εισαγωγή στο Microsoft Entra ID  
 
-[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) είναι μια υπηρεσία διαχείρισης ταυτότητας και πρόσβασης στο νέφος. Σκέψου το σαν έναν καθολικό φύλακα ασφαλείας για τις εφαρμογές σου. Αναλαμβάνει τη σύνθετη διαδικασία επαλήθευσης ταυτότητας χρηστών (πιστοποίηση) και καθορίζει τι επιτρέπεται να κάνουν (εξουσιοδότηση).
+[**Microsoft Entra ID**](https://adoption.microsoft.com/microsoft-security/entra/) είναι μια υπηρεσία διαχείρισης ταυτότητας και πρόσβασης στο cloud. Σκέψου το σαν έναν καθολικό φύλακα ασφαλείας για τις εφαρμογές σου. Αναλαμβάνει τη σύνθετη διαδικασία επαλήθευσης ταυτότητας χρηστών (πιστοποίηση) και τον καθορισμό των δικαιωμάτων τους (εξουσιοδότηση).
 
 Χρησιμοποιώντας το Entra ID, μπορείς να:
 
-- Ενεργοποιήσεις ασφαλή σύνδεση για χρήστες.  
+- Ενεργοποιήσεις ασφαλή σύνδεση για τους χρήστες.  
 - Προστατεύσεις APIs και υπηρεσίες.  
-- Διαχειριστείς πολιτικές πρόσβασης από ένα κεντρικό σημείο.  
+- Διαχειριστείς πολιτικές πρόσβασης από ένα κεντρικό σημείο.
 
-Για τους MCP διακομιστές, το Entra ID παρέχει μια αξιόπιστη και ευρέως αποδεκτή λύση για τη διαχείριση του ποιος μπορεί να έχει πρόσβαση στις λειτουργίες του διακομιστή.
+Για τους MCP διακομιστές, το Entra ID προσφέρει μια ισχυρή και ευρέως αξιόπιστη λύση για τη διαχείριση του ποιος μπορεί να έχει πρόσβαση στις δυνατότητες του διακομιστή σου.
 
 ---
 
-## Κατανόηση της Μαγικής Λειτουργίας: Πώς Λειτουργεί η Πιστοποίηση Entra ID
+## Κατανόηση της Μαγικής Λειτουργίας: Πώς Λειτουργεί η Πιστοποίηση Entra ID  
 
-Το Entra ID χρησιμοποιεί ανοιχτά πρότυπα όπως το **OAuth 2.0** για τη διαχείριση της πιστοποίησης. Παρόλο που οι λεπτομέρειες μπορεί να είναι περίπλοκες, η βασική ιδέα είναι απλή και μπορεί να εξηγηθεί με μια αναλογία.
+Το Entra ID χρησιμοποιεί ανοιχτά πρότυπα όπως το **OAuth 2.0** για τη διαχείριση της πιστοποίησης. Αν και οι λεπτομέρειες μπορεί να είναι πολύπλοκες, η βασική ιδέα είναι απλή και μπορεί να γίνει κατανοητή με μια αναλογία.
 
-### Μια Απαλή Εισαγωγή στο OAuth 2.0: Το Κλειδί του Παρκαδόρου
+### Μια Απαλή Εισαγωγή στο OAuth 2.0: Το Κλειδί του Βαλέ  
 
-Σκέψου το OAuth 2.0 σαν μια υπηρεσία παρκαδόρου για το αυτοκίνητό σου. Όταν φτάνεις σε ένα εστιατόριο, δεν δίνεις στον παρκαδόρο το γενικό κλειδί σου. Αντίθετα, του δίνεις ένα **κλειδί παρκαδόρου** με περιορισμένες αρμοδιότητες — μπορεί να ξεκινήσει το αυτοκίνητο και να κλειδώσει τις πόρτες, αλλά δεν μπορεί να ανοίξει το πορτμπαγκάζ ή το ντουλαπάκι.
+Σκέψου το OAuth 2.0 σαν μια υπηρεσία valet για το αυτοκίνητό σου. Όταν φτάνεις σε ένα εστιατόριο, δεν δίνεις στον valet το κύριο κλειδί σου. Αντίθετα, του δίνεις ένα **κλειδί valet** με περιορισμένα δικαιώματα — μπορεί να ξεκινήσει το αυτοκίνητο και να κλειδώσει τις πόρτες, αλλά δεν μπορεί να ανοίξει το πορτ-μπαγκάζ ή το ντουλαπάκι.
 
-Στην αναλογία αυτή:
+Σε αυτή την αναλογία:
 
 - **Εσύ** είσαι ο **Χρήστης**.  
-- **Το αυτοκίνητό σου** είναι ο **MCP Διακομιστής** με τα πολύτιμα εργαλεία και δεδομένα.  
-- Ο **Παρκαδόρος** είναι το **Microsoft Entra ID**.  
-- Ο **Υπάλληλος Στάθμευσης** είναι ο **MCP Πελάτης** (η εφαρμογή που προσπαθεί να αποκτήσει πρόσβαση στο διακομιστή).  
-- Το **Κλειδί Παρκαδόρου** είναι το **Access Token**.  
+- **Το αυτοκίνητό σου** είναι ο **MCP Διακομιστής** με τα πολύτιμα εργαλεία και δεδομένα του.  
+- Ο **Valet** είναι το **Microsoft Entra ID**.  
+- Ο **Υπάλληλος Στάθμευσης** είναι ο **MCP Client** (η εφαρμογή που προσπαθεί να έχει πρόσβαση στον διακομιστή).  
+- Το **Κλειδί Valet** είναι το **Access Token**.
 
-Το access token είναι μια ασφαλής συμβολοσειρά που λαμβάνει ο MCP πελάτης από το Entra ID μετά τη σύνδεσή σου. Ο πελάτης παρουσιάζει αυτό το token στον MCP διακομιστή σε κάθε αίτημα. Ο διακομιστής μπορεί να επαληθεύσει το token για να βεβαιωθεί ότι το αίτημα είναι νόμιμο και ότι ο πελάτης έχει τα απαραίτητα δικαιώματα, χωρίς να χρειάζεται ποτέ να χειριστεί τους πραγματικούς σου κωδικούς (όπως τον κωδικό πρόσβασής σου).
+Το access token είναι μια ασφαλής αλφαριθμητική συμβολοσειρά που λαμβάνει ο MCP client από το Entra ID μετά τη σύνδεσή σου. Ο client παρουσιάζει αυτό το token στον MCP διακομιστή με κάθε αίτημα. Ο διακομιστής μπορεί να επαληθεύσει το token για να βεβαιωθεί ότι το αίτημα είναι νόμιμο και ότι ο client έχει τα απαραίτητα δικαιώματα, χωρίς ποτέ να χρειάζεται να χειριστεί τα πραγματικά σου διαπιστευτήρια (όπως τον κωδικό σου).
 
-### Η Ροή Πιστοποίησης
+### Η Ροή Πιστοποίησης  
 
 Έτσι λειτουργεί η διαδικασία στην πράξη:
 
@@ -85,56 +85,56 @@ sequenceDiagram
     Server-->>-Client: Token is valid. Here is the result of the tool.
 ```
 
-### Εισαγωγή στη Microsoft Authentication Library (MSAL)
+### Εισαγωγή στη Microsoft Authentication Library (MSAL)  
 
-Πριν δούμε τον κώδικα, είναι σημαντικό να γνωρίσεις ένα βασικό στοιχείο που θα δεις στα παραδείγματα: τη **Microsoft Authentication Library (MSAL)**.
+Πριν δούμε τον κώδικα, είναι σημαντικό να παρουσιάσουμε ένα βασικό στοιχείο που θα δεις στα παραδείγματα: τη **Microsoft Authentication Library (MSAL)**.
 
-Η MSAL είναι μια βιβλιοθήκη που έχει αναπτύξει η Microsoft και κάνει πολύ πιο εύκολη τη διαχείριση της πιστοποίησης για τους προγραμματιστές. Αντί να γράφεις όλο τον σύνθετο κώδικα για τη διαχείριση των security tokens, των συνδέσεων και της ανανέωσης των συνεδριών, η MSAL αναλαμβάνει το πιο δύσκολο μέρος.
+Η MSAL είναι μια βιβλιοθήκη που έχει αναπτύξει η Microsoft και διευκολύνει πολύ τους προγραμματιστές στη διαχείριση της πιστοποίησης. Αντί να γράφεις όλο τον πολύπλοκο κώδικα για τη διαχείριση των security tokens, των συνδέσεων και των ανανεώσεων συνεδριών, η MSAL αναλαμβάνει το βαρύ φορτίο.
 
 Η χρήση μιας βιβλιοθήκης όπως η MSAL συνιστάται έντονα γιατί:
 
-- **Είναι Ασφαλής:** Εφαρμόζει πρωτόκολλα βιομηχανικών προτύπων και βέλτιστες πρακτικές ασφαλείας, μειώνοντας τον κίνδυνο ευπαθειών στον κώδικά σου.  
-- **Απλοποιεί την Ανάπτυξη:** Αφαιρεί την πολυπλοκότητα των πρωτοκόλλων OAuth 2.0 και OpenID Connect, επιτρέποντάς σου να προσθέσεις αξιόπιστη πιστοποίηση στην εφαρμογή σου με λίγες γραμμές κώδικα.  
-- **Υποστηρίζεται Ενεργά:** Η Microsoft διατηρεί και ενημερώνει την MSAL για να αντιμετωπίζει νέες απειλές ασφαλείας και αλλαγές πλατφορμών.  
+- **Είναι Ασφαλής:** Εφαρμόζει πρωτόκολλα βιομηχανικού επιπέδου και βέλτιστες πρακτικές ασφαλείας, μειώνοντας τον κίνδυνο ευπαθειών στον κώδικά σου.  
+- **Απλοποιεί την Ανάπτυξη:** Αφαιρεί την πολυπλοκότητα των πρωτοκόλλων OAuth 2.0 και OpenID Connect, επιτρέποντάς σου να προσθέσεις ισχυρή πιστοποίηση στην εφαρμογή σου με λίγες μόνο γραμμές κώδικα.  
+- **Υποστηρίζεται και Συντηρείται:** Η Microsoft διατηρεί ενεργά και ενημερώνει τη MSAL για να αντιμετωπίζει νέες απειλές ασφαλείας και αλλαγές πλατφορμών.
 
-Η MSAL υποστηρίζει πολλές γλώσσες προγραμματισμού και πλαίσια εφαρμογών, όπως .NET, JavaScript/TypeScript, Python, Java, Go, καθώς και κινητές πλατφόρμες όπως iOS και Android. Αυτό σημαίνει ότι μπορείς να χρησιμοποιείς συνεπείς προσεγγίσεις πιστοποίησης σε όλο το τεχνολογικό σου στοίβαγμα.
+Η MSAL υποστηρίζει πολλές γλώσσες και πλαίσια εφαρμογών, όπως .NET, JavaScript/TypeScript, Python, Java, Go, καθώς και κινητές πλατφόρμες όπως iOS και Android. Αυτό σημαίνει ότι μπορείς να χρησιμοποιήσεις τα ίδια συνεπή πρότυπα πιστοποίησης σε όλο το τεχνολογικό σου στοίβαγμα.
 
-Για να μάθεις περισσότερα για την MSAL, μπορείς να δεις την επίσημη [τεκμηρίωση επισκόπησης MSAL](https://learn.microsoft.com/entra/identity-platform/msal-overview).
+Για να μάθεις περισσότερα για τη MSAL, μπορείς να δεις την επίσημη [τεκμηρίωση επισκόπησης MSAL](https://learn.microsoft.com/entra/identity-platform/msal-overview).
 
 ---
 
-## Ασφάλεια του MCP Διακομιστή σου με Entra ID: Οδηγός Βήμα προς Βήμα
+## Ασφάλεια του MCP Διακομιστή σου με Entra ID: Οδηγός Βήμα-βήμα  
 
-Ας δούμε πώς να ασφαλίσεις έναν τοπικό MCP διακομιστή (που επικοινωνεί μέσω `stdio`) using Entra ID. This example uses a **public client**, which is suitable for applications running on a user's machine, like a desktop app or a local development server.
+Ας δούμε τώρα πώς να ασφαλίσεις έναν τοπικό MCP διακομιστή (που επικοινωνεί μέσω `stdio`) χρησιμοποιώντας το Entra ID. Αυτό το παράδειγμα χρησιμοποιεί έναν **δημόσιο πελάτη**, κατάλληλο για εφαρμογές που τρέχουν στη μηχανή του χρήστη, όπως μια επιτραπέζια εφαρμογή ή τοπικός διακομιστής ανάπτυξης.
 
-### Scenario 1: Securing a Local MCP Server (with a Public Client)
+### Σενάριο 1: Ασφάλεια Τοπικού MCP Διακομιστή (με Δημόσιο Πελάτη)  
 
-In this scenario, we'll look at an MCP server that runs locally, communicates over `stdio`, and uses Entra ID to authenticate the user before allowing access to its tools. The server will have a single tool that fetches the user's profile information from the Microsoft Graph API.
+Σε αυτό το σενάριο, εξετάζουμε έναν MCP διακομιστή που τρέχει τοπικά, επικοινωνεί μέσω `stdio` και χρησιμοποιεί το Entra ID για να πιστοποιήσει τον χρήστη πριν επιτρέψει την πρόσβαση στα εργαλεία του. Ο διακομιστής θα έχει ένα εργαλείο που ανακτά τις πληροφορίες προφίλ του χρήστη από το Microsoft Graph API.
 
-#### 1. Setting Up the Application in Entra ID
+#### 1. Ρύθμιση της Εφαρμογής στο Entra ID  
 
-Before writing any code, you need to register your application in Microsoft Entra ID. This tells Entra ID about your application and grants it permission to use the authentication service.
+Πριν γράψεις κώδικα, πρέπει να καταχωρήσεις την εφαρμογή σου στο Microsoft Entra ID. Αυτό ενημερώνει το Entra ID για την εφαρμογή σου και της δίνει άδεια να χρησιμοποιεί την υπηρεσία πιστοποίησης.
 
-1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
-2. Go to **App registrations** and click **New registration**.
-3. Give your application a name (e.g., "My Local MCP Server").
-4. For **Supported account types**, select **Accounts in this organizational directory only**.
-5. You can leave the **Redirect URI** blank for this example.
-6. Click **Register**.
+1. Πήγαινε στο **[Microsoft Entra portal](https://entra.microsoft.com/)**.  
+2. Μετάβαση σε **App registrations** και πάτησε **New registration**.  
+3. Δώσε ένα όνομα στην εφαρμογή σου (π.χ. "My Local MCP Server").  
+4. Στο **Supported account types**, επίλεξε **Accounts in this organizational directory only**.  
+5. Μπορείς να αφήσεις το **Redirect URI** κενό για αυτό το παράδειγμα.  
+6. Πάτησε **Register**.
 
-Once registered, take note of the **Application (client) ID** and **Directory (tenant) ID**. You'll need these in your code.
+Μόλις καταχωρηθεί, σημείωσε το **Application (client) ID** και το **Directory (tenant) ID**. Θα τα χρειαστείς στον κώδικά σου.
 
-#### 2. The Code: A Breakdown
+#### 2. Ο Κώδικας: Ανάλυση  
 
-Let's look at the key parts of the code that handle authentication. The full code for this example is available in the [Entra ID - Local - WAM](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-local-wam) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
+Ας δούμε τα βασικά μέρη του κώδικα που διαχειρίζονται την πιστοποίηση. Ο πλήρης κώδικας για αυτό το παράδειγμα είναι διαθέσιμος στον φάκελο [Entra ID - Local - WAM](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-local-wam) του [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
 
 **`AuthenticationService.cs`**
 
-This class is responsible for handling the interaction with Entra ID.
+Αυτή η κλάση είναι υπεύθυνη για την αλληλεπίδραση με το Entra ID.
 
-- **`CreateAsync`**: This method initializes the `PublicClientApplication` from the MSAL (Microsoft Authentication Library). It's configured with your application's `clientId` and `tenantId`.
-- **`WithBroker`**: This enables the use of a broker (like the Windows Web Account Manager), which provides a more secure and seamless single sign-on experience.
-- **`AcquireTokenAsync`**: Αυτή είναι η βασική μέθοδος. Προσπαθεί πρώτα να αποκτήσει ένα token σιωπηλά (χωρίς να απαιτείται εκ νέου σύνδεση αν υπάρχει ήδη έγκυρη συνεδρία). Αν δεν είναι δυνατή η σιωπηλή απόκτηση token, ζητά από το χρήστη να συνδεθεί αλληλεπιδραστικά.
+- **`CreateAsync`**: Αρχικοποιεί το `PublicClientApplication` από τη MSAL. Ρυθμίζεται με το `clientId` και το `tenantId` της εφαρμογής σου.  
+- **`WithBroker`**: Ενεργοποιεί τη χρήση broker (όπως το Windows Web Account Manager), που προσφέρει μια πιο ασφαλή και ομαλή εμπειρία single sign-on.  
+- **`AcquireTokenAsync`**: Η βασική μέθοδος. Προσπαθεί πρώτα να πάρει ένα token σιωπηλά (χωρίς να ζητήσει ξανά σύνδεση αν υπάρχει έγκυρη συνεδρία). Αν δεν βρεθεί token, ζητά από τον χρήστη να συνδεθεί διαδραστικά.
 
 ```csharp
 // Simplified for clarity
@@ -184,10 +184,10 @@ public async Task<string> AcquireTokenAsync()
 
 **`Program.cs`**
 
-This is where the MCP server is set up and the authentication service is integrated.
+Εδώ γίνεται η ρύθμιση του MCP διακομιστή και η ενσωμάτωση της υπηρεσίας πιστοποίησης.
 
-- **`AddSingleton<AuthenticationService>`**: This registers the `AuthenticationService` with the dependency injection container, so it can be used by other parts of the application (like our tool).
-- **`GetUserDetailsFromGraph` tool**: This tool requires an instance of `AuthenticationService`. Before it does anything, it calls `authService.AcquireTokenAsync()` για να πάρει ένα έγκυρο access token. Αν η πιστοποίηση είναι επιτυχής, χρησιμοποιεί το token για να καλέσει το Microsoft Graph API και να πάρει τα στοιχεία του χρήστη.
+- **`AddSingleton<AuthenticationService>`**: Καταχωρεί την `AuthenticationService` στο container εξαρτήσεων, ώστε να μπορεί να χρησιμοποιηθεί από άλλα μέρη της εφαρμογής (όπως το εργαλείο μας).  
+- Το εργαλείο **`GetUserDetailsFromGraph`** χρειάζεται μια παρουσία της `AuthenticationService`. Πριν κάνει οτιδήποτε, καλεί `authService.AcquireTokenAsync()` για να πάρει ένα έγκυρο access token. Αν η πιστοποίηση πετύχει, χρησιμοποιεί το token για να καλέσει το Microsoft Graph API και να πάρει τα στοιχεία του χρήστη.
 
 ```csharp
 // Simplified for clarity
@@ -215,170 +215,129 @@ public static async Task<string> GetUserDetailsFromGraph(
 }
 ```
 
-#### 3. Πώς Λειτουργούν Όλα Μαζί
+#### 3. Πώς Λειτουργεί Όλο Μαζί  
 
-1. Όταν ο MCP πελάτης προσπαθεί να χρησιμοποιήσει το `GetUserDetailsFromGraph` tool, the tool first calls `AcquireTokenAsync`.
-2. `AcquireTokenAsync` triggers the MSAL library to check for a valid token.
-3. If no token is found, MSAL, through the broker, will prompt the user to sign in with their Entra ID account.
-4. Once the user signs in, Entra ID issues an access token.
-5. The tool receives the token and uses it to make a secure call to the Microsoft Graph API.
-6. The user's details are returned to the MCP client.
+1. Όταν ο MCP client προσπαθεί να χρησιμοποιήσει το εργαλείο `GetUserDetailsFromGraph`, το εργαλείο καλεί πρώτα `AcquireTokenAsync`.  
+2. Η `AcquireTokenAsync` ενεργοποιεί τη βιβλιοθήκη MSAL να ελέγξει για έγκυρο token.  
+3. Αν δεν βρεθεί token, η MSAL μέσω του broker ζητά από τον χρήστη να συνδεθεί με τον λογαριασμό Entra ID.  
+4. Μόλις ο χρήστης συνδεθεί, το Entra ID εκδίδει ένα access token.  
+5. Το εργαλείο λαμβάνει το token και το χρησιμοποιεί για να κάνει μια ασφαλή κλήση στο Microsoft Graph API.  
+6. Τα στοιχεία του χρήστη επιστρέφονται στον MCP client.
 
-This process ensures that only authenticated users can use the tool, effectively securing your local MCP server.
+Αυτή η διαδικασία διασφαλίζει ότι μόνο πιστοποιημένοι χρήστες μπορούν να χρησιμοποιήσουν το εργαλείο, προστατεύοντας αποτελεσματικά τον τοπικό MCP διακομιστή σου.
 
-### Scenario 2: Securing a Remote MCP Server (with a Confidential Client)
+### Σενάριο 2: Ασφάλεια Απομακρυσμένου MCP Διακομιστή (με Εμπιστευτικό Πελάτη)  
 
-When your MCP server is running on a remote machine (like a cloud server) and communicates over a protocol like HTTP Streaming, the security requirements are different. In this case, you should use a **confidential client** and the **Authorization Code Flow**. This is a more secure method because the application's secrets are never exposed to the browser.
+Όταν ο MCP διακομιστής σου τρέχει σε απομακρυσμένη μηχανή (π.χ. cloud server) και επικοινωνεί μέσω πρωτοκόλλου όπως HTTP Streaming, οι απαιτήσεις ασφαλείας είναι διαφορετικές. Σε αυτή την περίπτωση, πρέπει να χρησιμοποιήσεις έναν **εμπιστευτικό πελάτη** και τη **Ροή Κωδικού Εξουσιοδότησης (Authorization Code Flow)**. Αυτή είναι μια πιο ασφαλής μέθοδος γιατί τα μυστικά της εφαρμογής δεν εκτίθενται ποτέ στον browser.
 
-This example uses a TypeScript-based MCP server that uses Express.js to handle HTTP requests.
+Αυτό το παράδειγμα χρησιμοποιεί έναν MCP διακομιστή βασισμένο σε TypeScript που χρησιμοποιεί το Express.js για τη διαχείριση HTTP αιτημάτων.
 
-#### 1. Setting Up the Application in Entra ID
+#### 1. Ρύθμιση της Εφαρμογής στο Entra ID  
 
-The setup in Entra ID is similar to the public client, but with one key difference: you need to create a **client secret**.
+Η ρύθμιση στο Entra ID είναι παρόμοια με τον δημόσιο πελάτη, αλλά με μια βασική διαφορά: πρέπει να δημιουργήσεις ένα **client secret**.
 
-1. Navigate to the **[Microsoft Entra portal](https://entra.microsoft.com/)**.
-2. In your app registration, go to the **Certificates & secrets** tab.
-3. Click **New client secret**, give it a description, and click **Add**.
-4. **Important:** Copy the secret value immediately. You will not be able to see it again.
-5. You also need to configure a **Redirect URI**. Go to the **Authentication** tab, click **Add a platform**, select **Web**, and enter the redirect URI for your application (e.g., `http://localhost:3001/auth/callback`).
+1. Πήγαινε στο **[Microsoft Entra portal](https://entra.microsoft.com/)**.  
+2. Στην καταχώρηση της εφαρμογής σου, πήγαινε στην καρτέλα **Certificates & secrets**.  
+3. Πάτησε **New client secret**, δώσε μια περιγραφή και πάτησε **Add**.  
+4. **Σημαντικό:** Αντέγραψε αμέσως την τιμή του secret. Δεν θα μπορείς να τη δεις ξανά.  
+5. Πρέπει επίσης να ρυθμίσεις ένα **Redirect URI**. Πήγαινε στην καρτέλα **Authentication**, πάτησε **Add a platform**, επίλεξε **Web** και εισήγαγε το redirect URI της εφαρμογής σου (π.χ. `http://localhost:3001/auth/callback`).
 
-> **⚠️ Important Security Note:** For production applications, Microsoft strongly recommends using **secretless authentication** methods such as **Managed Identity** or **Workload Identity Federation** instead of client secrets. Client secrets pose security risks as they can be exposed or compromised. Managed identities provide a more secure approach by eliminating the need to store credentials in your code or configuration.
->
-> For more information about managed identities and how to implement them, see the [Managed identities for Azure resources overview](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview).
+> **⚠️ Σημαντική Σημείωση Ασφαλείας:** Για εφαρμογές παραγωγής, η Microsoft συνιστά έντονα τη χρήση **πιστοποίησης χωρίς μυστικά** όπως **Managed Identity** ή **Workload Identity Federation** αντί για client secrets. Τα client secrets ενέχουν κινδύνους ασφαλείας καθώς μπορεί να εκτεθούν ή να παραβιαστούν. Οι managed identities προσφέρουν πιο ασφαλή προσέγγιση, εξαλείφοντας την ανάγκη αποθήκευσης διαπιστευτηρίων στον κώδικα ή τη ρύθμιση.  
+>  
+> Για περισσότερες πληροφορίες σχετικά με τις managed identities και την υλοποίησή τους, δες το [Managed identities for Azure resources overview](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview).
 
-#### 2. The Code: A Breakdown
+#### 2. Ο Κώδικας: Ανάλυση  
 
-This example uses a session-based approach. When the user authenticates, the server stores the access token and refresh token in a session and gives the user a session token. This session token is then used for subsequent requests. The full code for this example is available in the [Entra ID - Confidential client](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-cca-session) folder of the [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples/mcp-auth-servers).
+Αυτό το παράδειγμα χρησιμοποιεί προσέγγιση βασισμένη σε συνεδρίες. Όταν ο χρήστης πιστοποιείται, ο διακομιστής αποθηκεύει το access token και το refresh token στη συνεδρία και δίνει στον χρήστη ένα session token. Αυτό το session token χρησιμοποιείται για τα επόμενα αιτήματα. Ο πλήρης κώδικας για αυτό το παράδειγμα είναι διαθέσιμος στον φάκελο [Entra ID - Confidential client](https://github.com/Azure-Samples/mcp-auth-servers/tree/main/src/entra-id-cca-session) του [mcp-auth-servers GitHub repository](https://github.com/Azure-Samples
+4. Ο διακομιστής ανταλλάσσει τον κωδικό με ένα access token και ένα refresh token, τα αποθηκεύει και δημιουργεί ένα session token το οποίο αποστέλλεται στον πελάτη.  
+5. Ο πελάτης μπορεί πλέον να χρησιμοποιεί αυτό το session token στην κεφαλίδα `Authorization` για όλα τα μελλοντικά αιτήματα προς τον MCP διακομιστή.  
+6. Όταν καλείται το εργαλείο `getUserDetails`, χρησιμοποιεί το session token για να αναζητήσει το Entra ID access token και στη συνέχεια το χρησιμοποιεί για να καλέσει το Microsoft Graph API.
 
-**`Server.ts`**
+Αυτή η ροή είναι πιο σύνθετη από τη ροή του public client, αλλά είναι απαραίτητη για endpoints που είναι προσβάσιμα μέσω διαδικτύου. Επειδή οι απομακρυσμένοι MCP διακομιστές είναι προσβάσιμοι μέσω του δημόσιου διαδικτύου, χρειάζονται αυστηρότερα μέτρα ασφαλείας για να προστατευτούν από μη εξουσιοδοτημένη πρόσβαση και πιθανές επιθέσεις.
 
-This file sets up the Express server and the MCP transport layer.
 
-- **`requireBearerAuth`**: This is middleware that protects the `/sse` and `/message` endpoints. It checks for a valid bearer token in the `Authorization` header of the request.
-- **`EntraIdServerAuthProvider`**: This is a custom class that implements the `McpServerAuthorizationProvider` interface. It's responsible for handling the OAuth 2.0 flow.
-- **`/auth/callback`**: Αυτό το endpoint χειρίζεται την ανακατεύθυνση από το Entra ID αφού ο χρήστης έχει πιστοποιηθεί. Ανταλλάσσει τον κωδικό εξουσιοδότησης για ένα access token και ένα refresh token.
+## Καλές Πρακτικές Ασφαλείας
 
-```typescript
-// Simplified for clarity
-const app = express();
-const { server } = createServer();
-const provider = new EntraIdServerAuthProvider();
+- **Χρησιμοποιείτε πάντα HTTPS**: Κρυπτογραφήστε την επικοινωνία μεταξύ πελάτη και διακομιστή για να προστατεύσετε τα tokens από υποκλοπή.  
+- **Εφαρμόστε Role-Based Access Control (RBAC)**: Μην ελέγχετε μόνο *αν* ένας χρήστης είναι αυθεντικοποιημένος, αλλά και *τι* έχει δικαίωμα να κάνει. Μπορείτε να ορίσετε ρόλους στο Entra ID και να τους ελέγχετε στον MCP διακομιστή σας.  
+- **Παρακολούθηση και έλεγχος**: Καταγράψτε όλα τα γεγονότα αυθεντικοποίησης ώστε να μπορείτε να εντοπίζετε και να ανταποκρίνεστε σε ύποπτες δραστηριότητες.  
+- **Διαχείριση περιορισμών ρυθμού και throttling**: Το Microsoft Graph και άλλα APIs εφαρμόζουν περιορισμούς ρυθμού για να αποτρέψουν κατάχρηση. Εφαρμόστε λογική εκθετικής επανάληψης (exponential backoff) και επανειλημμένες προσπάθειες στον MCP διακομιστή σας για να διαχειριστείτε ομαλά τις απαντήσεις HTTP 429 (Too Many Requests). Σκεφτείτε την προσωρινή αποθήκευση (caching) συχνά προσπελαύσιμων δεδομένων για να μειώσετε τις κλήσεις API.  
+- **Ασφαλής αποθήκευση tokens**: Αποθηκεύστε τα access tokens και refresh tokens με ασφάλεια. Για τοπικές εφαρμογές, χρησιμοποιήστε τους μηχανισμούς ασφαλούς αποθήκευσης του συστήματος. Για διακομιστές, εξετάστε τη χρήση κρυπτογραφημένης αποθήκευσης ή υπηρεσιών ασφαλούς διαχείρισης κλειδιών όπως το Azure Key Vault.  
+- **Διαχείριση λήξης tokens**: Τα access tokens έχουν περιορισμένη διάρκεια ζωής. Εφαρμόστε αυτόματη ανανέωση token χρησιμοποιώντας τα refresh tokens για να διατηρείτε μια ομαλή εμπειρία χρήστη χωρίς να απαιτείται επανεπιβεβαίωση ταυτότητας.  
+- **Σκεφτείτε τη χρήση του Azure API Management**: Ενώ η υλοποίηση ασφάλειας απευθείας στον MCP διακομιστή σας προσφέρει λεπτομερή έλεγχο, τα API Gateways όπως το Azure API Management μπορούν να διαχειριστούν αυτόματα πολλά από αυτά τα ζητήματα ασφαλείας, συμπεριλαμβανομένης της αυθεντικοποίησης, εξουσιοδότησης, περιορισμού ρυθμού και παρακολούθησης. Παρέχουν ένα κεντρικό επίπεδο ασφάλειας που βρίσκεται ανάμεσα στους πελάτες σας και τους MCP διακομιστές σας. Για περισσότερες λεπτομέρειες σχετικά με τη χρήση API Gateways με MCP, δείτε το [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
 
-// Protect the SSE endpoint
-app.get("/sse", requireBearerAuth({
-  provider,
-  requiredScopes: ["User.Read"]
-}), async (req, res) => {
-  // ... connect to the transport ...
-});
 
-// Protect the message endpoint
-app.post("/message", requireBearerAuth({
-  provider,
-  requiredScopes: ["User.Read"]
-}), async (req, res) => {
-  // ... handle the message ...
-});
+## Βασικά Συμπεράσματα
 
-// Handle the OAuth 2.0 callback
-app.get("/auth/callback", (req, res) => {
-  provider.handleCallback(req.query.code, req.query.state)
-    .then(result => {
-      // ... handle success or failure ...
-    });
-});
-```
+- Η ασφάλεια του MCP διακομιστή σας είναι κρίσιμη για την προστασία των δεδομένων και των εργαλείων σας.  
+- Το Microsoft Entra ID παρέχει μια ισχυρή και επεκτάσιμη λύση για αυθεντικοποίηση και εξουσιοδότηση.  
+- Χρησιμοποιήστε έναν **public client** για τοπικές εφαρμογές και έναν **confidential client** για απομακρυσμένους διακομιστές.  
+- Η **Authorization Code Flow** είναι η πιο ασφαλής επιλογή για web εφαρμογές.
 
-**`Tools.ts`**
-
-This file defines the tools that the MCP server provides. The `getUserDetails` εργαλείο είναι παρόμοιο με το προηγούμενο παράδειγμα, αλλά παίρνει το access token από τη συνεδρία.
-
-```typescript
-// Simplified for clarity
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  const { name } = request.params;
-  const context = request.params?.context as { token?: string } | undefined;
-  const sessionToken = context?.token;
-
-  if (name === ToolName.GET_USER_DETAILS) {
-    if (!sessionToken) {
-      throw new AuthenticationError("Authentication token is missing or invalid. Ensure the token is provided in the request context.");
-    }
-
-    // Get the Entra ID token from the session store
-    const tokenData = tokenStore.getToken(sessionToken);
-    const entraIdToken = tokenData.accessToken;
-
-    const graphClient = Client.init({
-      authProvider: (done) => {
-        done(null, entraIdToken);
-      }
-    });
-
-    const user = await graphClient.api('/me').get();
-
-    // ... return user details ...
-  }
-});
-```
-
-**`auth/EntraIdServerAuthProvider.ts`**
-
-This class handles the logic for:
-
-- Redirecting the user to the Entra ID sign-in page.
-- Exchanging the authorization code for an access token.
-- Storing the tokens in the `tokenStore`.
-- Refreshing the access token when it expires.
-
-#### 3. How It All Works Together
-
-1. When a user first tries to connect to the MCP server, the `requireBearerAuth` middleware will see that they don't have a valid session and will redirect them to the Entra ID sign-in page.
-2. The user signs in with their Entra ID account.
-3. Entra ID redirects the user back to the `/auth/callback` endpoint with an authorization code.
-4. The server exchanges the code for an access token and a refresh token, stores them, and creates a session token which is sent to the client.
-5. The client can now use this session token in the `Authorization` header for all future requests to the MCP server.
-6. When the `getUserDetails` εργαλείο καλείται, χρησιμοποιώντας το token της συνεδρίας για να αναζητήσει το Entra ID access token και στη συνέχεια το χρησιμοποιεί για να καλέσει το Microsoft Graph API.
-
-Αυτή η ροή είναι πιο σύνθετη από αυτήν του δημόσιου πελάτη, αλλά απαιτείται για endpoints που είναι προσβάσιμα μέσω διαδικτύου. Επειδή οι απομακρυσμένοι MCP διακομιστές είναι προσβάσιμοι μέσω του δημόσιου διαδικτύου, χρειάζονται ισχυρότερα μέτρα ασφαλείας για να προστατευθούν από μη εξουσιοδοτημένη πρόσβαση και πιθανές επιθέσεις.
-
-## Βέλτιστες Πρακτικές Ασφαλείας
-
-- **Χρησιμοποιείτε πάντα HTTPS**: Κρυπτογραφεί την επικοινωνία μεταξύ πελάτη και διακομιστή για να προστατεύσει τα tokens από υποκλοπή.  
-- **Εφαρμόστε Έλεγχο Πρόσβασης με Βάση Ρόλους (RBAC)**: Μην ελέγχετε μόνο αν ο χρήστης είναι πιστοποιημένος, αλλά και τι δικαιώματα έχει. Μπορείτε να ορίσετε ρόλους στο Entra ID και να τους ελέγχετε στον MCP διακομιστή σας.  
-- **Παρακολούθηση και Έλεγχος**: Καταγράψτε όλα τα γεγονότα πιστοποίησης για να εντοπίζετε και να ανταποκρίνεστε σε ύποπτες δραστηριότητες.  
-- **Διαχείριση Περιορισμού Ροής και Ρυθμού**: Το Microsoft Graph και άλλα APIs εφαρμόζουν περιορισμούς για να αποτρέψουν κατάχρηση. Εφαρμόστε λογική εκθετικής επανάληψης και retry στον MCP διακομιστή σας για να χειρίζεστε ομαλά τις απαντήσεις HTTP 429 (Too Many Requests). Σκεφτείτε την αποθήκευση συχνά προσπελαύσιμων δεδομένων για να μειώσετε τις κλήσεις API.  
-- **Ασφαλής Αποθήκευση Tokens**: Αποθηκεύστε τα access και refresh tokens με ασφάλεια. Για τοπικές εφαρμογές, χρησιμοποιήστε τους μηχανισμούς ασφαλούς αποθήκευσης του συστήματος. Για διακομιστές, εξετάστε την κρυπτογραφημένη αποθήκευση ή υπηρεσίες διαχείρισης κλειδιών όπως το Azure Key Vault.  
-- **Διαχείριση Λήξης Tokens**: Τα access tokens έχουν περιορισμένη διάρκεια ζωής. Εφαρμόστε αυτόματη ανανέωση token με χρήση refresh tokens για να διατηρείται η απρόσκοπτη εμπειρία χρήστη χωρίς να απαιτείται επαναπιστοποίηση.  
-- **Σκεφτείτε τη Χρήση του Azure API Management**: Παρόλο που η ασφάλεια απευθείας στον MCP διακομιστή σας παρέχει λεπτομερή έλεγχο, τα API Gateways όπως το Azure API Management μπορούν να αναλάβουν αυτόματα πολλά από αυτά τα ζητήματα ασφαλείας, όπως πιστοποίηση, εξουσιοδότηση, περιορισμό ροής και παρακολούθηση. Προσφέρουν ένα κεντρικό επίπεδο ασφάλειας ανάμεσα στους πελάτες και τους MCP διακομιστές σας. Για περισσότερες πληροφορίες σχετικά με τη χρήση API Gateways με MCP, δείτε το [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690).
-
-## Κύρια Συμπεράσματα
-
-- Η ασφάλεια του MCP διακομιστή σου είναι ζωτικής σημασίας για την προστασία των δεδομένων και των εργαλείων σου.  
-- Το Microsoft Entra ID παρέχει μια ισχυρή και κλιμακούμενη λύση για πιστοποίηση και εξουσιοδότηση.  
-- Χρησιμοποίησε **δημόσιο πελάτη** για τοπικές εφαρμογές και **εμπιστευτικό πελάτη** για απομακρυσμένους διακομιστές.  
-- Η **Ροή Κώδικα Εξουσιοδότησης** είναι η πιο ασφαλής επιλογή για web εφαρμογές.  
 
 ## Άσκηση
 
-1. Σκέψου έναν MCP διακομιστή που θα μπορούσες να δημιουργήσεις. Θα ήταν τοπικός ή απομακρυσμένος;  
-2. Με βάση την απάντησή σου, θα χρησιμοποιούσες δημόσιο ή εμπιστευτικό πελάτη;  
-3. Ποια άδεια θα ζητούσε ο MCP διακομιστής σου για να εκτελεί ενέργειες ενάντια στο Microsoft Graph;  
+1. Σκεφτείτε έναν MCP διακομιστή που θα μπορούσατε να δημιουργήσετε. Θα ήταν τοπικός ή απομακρυσμένος;  
+2. Με βάση την απάντησή σας, θα χρησιμοποιούσατε public ή confidential client;  
+3. Ποια άδεια θα ζητούσε ο MCP διακομιστής σας για να εκτελεί ενέργειες στο Microsoft Graph;
+
 
 ## Πρακτικές Ασκήσεις
 
-### Άσκηση 1: Εγγραφή Εφαρμογής στο Entra ID  
-Πήγαινε στην πύλη Microsoft Entra.  
-Καταχώρησε μια νέα εφαρμογή για τον MCP διακομιστή σου.  
-Καταχώρησε το Application (client) ID και το Directory (tenant) ID.
+### Άσκηση 1: Καταχώρηση Εφαρμογής στο Entra ID  
+Πλοηγηθείτε στην πύλη Microsoft Entra.  
+Καταχωρήστε μια νέα εφαρμογή για τον MCP διακομιστή σας.  
+Καταγράψτε το Application (client) ID και το Directory (tenant) ID.
 
-### Άσκηση 2: Ασφάλεια Τοπικού MCP Διακομιστή (Δημόσιος Πελάτης)  
-- Ακολούθησε το παράδειγμα κώδικα για να ενσωματώσεις τη MSAL για πιστοποίηση χρηστών.  
-- Δοκίμασε τη ροή πιστοποίησης καλώντας το εργαλείο MCP που αντλεί στοιχεία χρήστη από το Microsoft Graph.
+### Άσκηση 2: Ασφάλεια Τοπικού MCP Διακομιστή (Public Client)  
+- Ακολουθήστε το παράδειγμα κώδικα για να ενσωματώσετε το MSAL (Microsoft Authentication Library) για αυθεντικοποίηση χρήστη.  
+- Δοκιμάστε τη ροή αυθεντικοποίησης καλώντας το εργαλείο MCP που ανακτά λεπτομέρειες χρήστη από το Microsoft Graph.
 
-### Άσκηση 3: Ασφάλεια Απομακρυσμένου MCP Διακομιστή (Εμπιστευτικός Πελάτης)  
-- Καταχώρησε έναν εμπιστευτικό πελάτη στο Entra ID και δημιούργησε ένα client secret.  
-- Ρύθμισε τον MCP διακομιστή Express.js να χρησιμοποιεί τη Ροή Κώδικ
+### Άσκηση 3: Ασφάλεια Απομακρυσμένου MCP Διακομιστή (Confidential Client)  
+- Καταχωρήστε έναν confidential client στο Entra ID και δημιουργήστε ένα client secret.  
+- Διαμορφώστε τον MCP διακομιστή σας με Express.js ώστε να χρησιμοποιεί την Authorization Code Flow.  
+- Δοκιμάστε τα προστατευμένα endpoints και επιβεβαιώστε την πρόσβαση με βάση τα tokens.
+
+### Άσκηση 4: Εφαρμογή Καλών Πρακτικών Ασφαλείας  
+- Ενεργοποιήστε HTTPS για τον τοπικό ή απομακρυσμένο διακομιστή σας.  
+- Εφαρμόστε role-based access control (RBAC) στη λογική του διακομιστή σας.  
+- Προσθέστε διαχείριση λήξης tokens και ασφαλή αποθήκευση tokens.
+
+## Πόροι
+
+1. **Τεκμηρίωση Επισκόπησης MSAL**  
+   Μάθετε πώς η Microsoft Authentication Library (MSAL) επιτρέπει την ασφαλή απόκτηση tokens σε διάφορες πλατφόρμες:  
+   [MSAL Overview on Microsoft Learn](https://learn.microsoft.com/en-gb/entra/msal/overview)
+
+2. **Azure-Samples/mcp-auth-servers GitHub Repository**  
+   Παραδείγματα υλοποίησης MCP διακομιστών που δείχνουν ροές αυθεντικοποίησης:  
+   [Azure-Samples/mcp-auth-servers on GitHub](https://github.com/Azure-Samples/mcp-auth-servers)
+
+3. **Επισκόπηση Managed Identities για Azure Resources**  
+   Κατανοήστε πώς να εξαλείψετε μυστικά χρησιμοποιώντας διαχειριζόμενες ταυτότητες που ανατίθενται από το σύστημα ή τον χρήστη:  
+   [Managed Identities Overview on Microsoft Learn](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/)
+
+4. **Azure API Management: Your Auth Gateway for MCP Servers**  
+   Αναλυτική παρουσίαση της χρήσης του APIM ως ασφαλούς πύλης OAuth2 για MCP διακομιστές:  
+   [Azure API Management Your Auth Gateway For MCP Servers](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+
+5. **Αναφορά Δικαιωμάτων Microsoft Graph**  
+   Ολοκληρωμένη λίστα εξουσιοδοτήσεων για delegated και application permissions στο Microsoft Graph:  
+   [Microsoft Graph Permissions Reference](https://learn.microsoft.com/zh-tw/graph/permissions-reference)
+
+
+## Μαθησιακά Αποτελέσματα  
+Μετά την ολοκλήρωση αυτής της ενότητας, θα μπορείτε να:
+
+- Εξηγείτε γιατί η αυθεντικοποίηση είναι κρίσιμη για MCP διακομιστές και ροές εργασίας AI.  
+- Ρυθμίζετε και διαμορφώνετε την αυθεντικοποίηση Entra ID για τοπικά και απομακρυσμένα σενάρια MCP διακομιστών.  
+- Επιλέγετε τον κατάλληλο τύπο πελάτη (public ή confidential) ανάλογα με την ανάπτυξη του διακομιστή σας.  
+- Εφαρμόζετε ασφαλείς πρακτικές κωδικοποίησης, συμπεριλαμβανομένης της αποθήκευσης tokens και της εξουσιοδότησης βάσει ρόλων.  
+- Προστατεύετε με σιγουριά τον MCP διακομιστή και τα εργαλεία του από μη εξουσιοδοτημένη πρόσβαση.
+
+## Τι ακολουθεί
+
+- [5.13 Model Context Protocol (MCP) Integration with Azure AI Foundry](../mcp-foundry-agent-integration/README.md)
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία μετάφρασης με τεχνητή νοημοσύνη [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που προσπαθούμε για ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις μπορεί να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

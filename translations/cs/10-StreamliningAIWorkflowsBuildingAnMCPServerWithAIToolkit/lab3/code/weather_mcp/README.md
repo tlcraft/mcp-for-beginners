@@ -2,77 +2,77 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "999c5e7623c1e2d5e5a07c2feb39eb67",
-  "translation_date": "2025-06-10T06:36:18+00:00",
+  "translation_date": "2025-07-14T08:31:59+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/README.md",
   "language_code": "cs"
 }
 -->
 # Weather MCP Server
 
-This is a sample MCP Server in Python implementing weather tools with mock responses. It can be used as a scaffold for your own MCP Server. It includes the following features: 
+Toto je ukázkový MCP Server v Pythonu, který implementuje nástroje pro počasí s falešnými odpověďmi. Může sloužit jako základ pro váš vlastní MCP Server. Obsahuje následující funkce:
 
-- **Weather Tool**: A tool that provides mocked weather information based on the given location.
-- **Connect to Agent Builder**: A feature that allows you to connect the MCP server to the Agent Builder for testing and debugging.
-- **Debug in [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: A feature that allows you to debug the MCP Server using the MCP Inspector.
+- **Weather Tool**: Nástroj, který poskytuje simulované informace o počasí na základě zadané lokality.
+- **Připojení k Agent Builderu**: Funkce umožňující připojit MCP server k Agent Builderu pro testování a ladění.
+- **Ladění v [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: Funkce umožňující ladit MCP Server pomocí MCP Inspectoru.
 
-## Get started with the Weather MCP Server template
+## Začínáme s šablonou Weather MCP Serveru
 
-> **Prerequisites**
+> **Požadavky**
 >
-> To run the MCP Server on your local dev machine, you will need:
+> Pro spuštění MCP Serveru na vašem lokálním vývojovém počítači budete potřebovat:
 >
 > - [Python](https://www.python.org/)
-> - (*Optional - if you prefer uv*) [uv](https://github.com/astral-sh/uv)
-> - [Python Debugger Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+> - (*Volitelné - pokud preferujete uv*) [uv](https://github.com/astral-sh/uv)
+> - [Rozšíření Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
 
-## Prepare environment
+## Příprava prostředí
 
-There are two ways to set up the environment for this project. Choose the one that suits you best.
+Existují dva způsoby, jak nastavit prostředí pro tento projekt. Vyberte si ten, který vám více vyhovuje.
 
-> Note: Reload VSCode or your terminal to make sure the virtual environment’s Python is used after creating it.
+> Poznámka: Po vytvoření virtuálního prostředí znovu načtěte VSCode nebo terminál, aby se používal python z virtuálního prostředí.
 
-| Approach | Steps |
+| Přístup | Kroky |
 | -------- | ----- |
-| Using `uv` | 1. Create virtual environment: `uv venv` <br>2. Run VSCode Command "***Python: Select Interpreter***" and select the Python from the created virtual environment <br>3. Install dependencies (including dev dependencies): `uv pip install -r pyproject.toml --extra dev` |
-| Using `pip` | 1. Create virtual environment: `python -m venv .venv` <br>2. Run VSCode Command "***Python: Select Interpreter***" and select the Python from the created virtual environment<br>3. Install dependencies (including dev dependencies): `pip install -e .[dev]` | 
+| Použití `uv` | 1. Vytvořte virtuální prostředí: `uv venv` <br>2. Spusťte příkaz ve VSCode "***Python: Select Interpreter***" a vyberte python z vytvořeného virtuálního prostředí <br>3. Nainstalujte závislosti (včetně vývojových): `uv pip install -r pyproject.toml --extra dev` |
+| Použití `pip` | 1. Vytvořte virtuální prostředí: `python -m venv .venv` <br>2. Spusťte příkaz ve VSCode "***Python: Select Interpreter***" a vyberte python z vytvořeného virtuálního prostředí<br>3. Nainstalujte závislosti (včetně vývojových): `pip install -e .[dev]` |
 
-Once the environment is ready, you can run the server locally via Agent Builder as the MCP Client to get started:
-1. Open VS Code Debug panel. Select `Debug in Agent Builder` or press `F5` to start debugging the MCP server.
-2. Use AI Toolkit Agent Builder to test the server with [this prompt](../../../../../../../../../../../open_prompt_builder). The server will automatically connect to the Agent Builder.
-3. Click `Run` to test the server with the prompt.
+Po nastavení prostředí můžete spustit server na svém lokálním vývojovém počítači přes Agent Builder jako MCP klienta a začít:
+1. Otevřete panel ladění ve VS Code. Vyberte `Debug in Agent Builder` nebo stiskněte `F5` pro spuštění ladění MCP serveru.
+2. Použijte AI Toolkit Agent Builder k otestování serveru s [tímto promptem](../../../../../../../../../../open_prompt_builder). Server se automaticky připojí k Agent Builderu.
+3. Klikněte na `Run` pro otestování serveru s promptem.
 
-**Congratulations**! You’ve successfully run the Weather MCP Server on your local dev machine via Agent Builder as the MCP Client.
+**Gratulujeme**! Úspěšně jste spustili Weather MCP Server na svém lokálním vývojovém počítači přes Agent Builder jako MCP klienta.  
 ![DebugMCP](https://raw.githubusercontent.com/microsoft/windows-ai-studio-templates/refs/heads/dev/mcpServers/mcp_debug.gif)
 
-## What’s included in the template
+## Co šablona obsahuje
 
-| Folder / File| Contents                                     |
-| ------------ | -------------------------------------------- |
-| `.vscode`    | VSCode files for debugging                   |
-| `.aitk`      | Configurations for AI Toolkit                |
-| `src`        | The source code for the weather MCP server   |
+| Složka / Soubor | Obsah                                      |
+| --------------- | ------------------------------------------ |
+| `.vscode`       | Soubory VSCode pro ladění                   |
+| `.aitk`         | Konfigurace pro AI Toolkit                   |
+| `src`           | Zdrojový kód Weather MCP serveru             |
 
-## How to debug the Weather MCP Server
+## Jak ladit Weather MCP Server
 
-> Notes:
-> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is a visual developer tool for testing and debugging MCP servers.
-> - All debugging modes support breakpoints, so you can add breakpoints to the tool implementation code.
+> Poznámky:
+> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector) je vizuální nástroj pro vývojáře pro testování a ladění MCP serverů.
+> - Všechny režimy ladění podporují breakpointy, takže můžete přidávat breakpointy do kódu implementace nástroje.
 
-| Debug Mode | Description | Steps to debug |
-| ---------- | ----------- | --------------- |
-| Agent Builder | Debug the MCP server in the Agent Builder via AI Toolkit. | 1. Open VS Code Debug panel. Select `Debug in Agent Builder` and press `F5` to start debugging the MCP server.<br>2. Use AI Toolkit Agent Builder to test the server with [this prompt](../../../../../../../../../../../open_prompt_builder). The server will automatically connect to the Agent Builder.<br>3. Click `Run` to test the server with the prompt. |
-| MCP Inspector | Debug the MCP server using the MCP Inspector. | 1. Install [Node.js](https://nodejs.org/)<br> 2. Set up Inspector: `cd inspector` && `npm install` <br> 3. Open VS Code Debug panel. Select `Debug SSE in Inspector (Edge)` or `Debug SSE in Inspector (Chrome)`. Press F5 to start debugging.<br> 4. When MCP Inspector opens in the browser, click the `Connect` button to connect this MCP server.<br> 5. Then you can `List Tools`, select a tool, input parameters, and `Run Tool` to debug your server code.<br> |
+| Režim ladění | Popis | Kroky ladění |
+| ------------ | ------ | ------------ |
+| Agent Builder | Ladění MCP serveru v Agent Builderu přes AI Toolkit. | 1. Otevřete panel ladění ve VS Code. Vyberte `Debug in Agent Builder` a stiskněte `F5` pro spuštění ladění MCP serveru.<br>2. Použijte AI Toolkit Agent Builder k otestování serveru s [tímto promptem](../../../../../../../../../../open_prompt_builder). Server se automaticky připojí k Agent Builderu.<br>3. Klikněte na `Run` pro otestování serveru s promptem. |
+| MCP Inspector | Ladění MCP serveru pomocí MCP Inspectoru. | 1. Nainstalujte [Node.js](https://nodejs.org/)<br>2. Nastavte Inspector: `cd inspector` && `npm install` <br>3. Otevřete panel ladění ve VS Code. Vyberte `Debug SSE in Inspector (Edge)` nebo `Debug SSE in Inspector (Chrome)`. Stiskněte F5 pro spuštění ladění.<br>4. Po spuštění MCP Inspectoru v prohlížeči klikněte na tlačítko `Connect` pro připojení tohoto MCP serveru.<br>5. Poté můžete `List Tools`, vybrat nástroj, zadat parametry a `Run Tool` pro ladění vašeho serverového kódu.<br> |
 
-## Default Ports and customizations
+## Výchozí porty a přizpůsobení
 
-| Debug Mode | Ports | Definitions | Customizations | Note |
-| ---------- | ----- | ------------ | -------------- |-------------- |
-| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) to change these ports. | N/A |
-| MCP Inspector | 3001 (Server); 5173 and 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | Edit [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) to change these ports.| N/A |
+| Režim ladění | Porty | Definice | Přizpůsobení | Poznámka |
+| ------------ | ----- | -------- | ------------ | -------- |
+| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | Upravte [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) pro změnu těchto portů. | Není k dispozici |
+| MCP Inspector | 3001 (Server); 5173 a 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json) | Upravte [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/code/weather_mcp/.aitk/mcp.json) pro změnu těchto portů. | Není k dispozici |
 
-## Feedback
+## Zpětná vazba
 
-If you have any feedback or suggestions for this template, please open an issue on the [AI Toolkit GitHub repository](https://github.com/microsoft/vscode-ai-toolkit/issues)
+Pokud máte jakoukoli zpětnou vazbu nebo návrhy k této šabloně, otevřete prosím issue na [AI Toolkit GitHub repozitáři](https://github.com/microsoft/vscode-ai-toolkit/issues)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

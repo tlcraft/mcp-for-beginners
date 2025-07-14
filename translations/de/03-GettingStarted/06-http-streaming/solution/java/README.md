@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "acd4010e430da00946a154f62847a169",
-  "translation_date": "2025-06-18T09:43:21+00:00",
+  "translation_date": "2025-07-13T21:07:39+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/java/README.md",
   "language_code": "de"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Dieses Projekt demonstriert HTTP-Streaming mit Server-Sent Events (SSE) unter Verwendung von Spring Boot WebFlux. Es besteht aus zwei Anwendungen:
 
-- **Calculator Server**: Ein reaktiver Webservice, der Berechnungen durchführt und Ergebnisse per SSE streamt
+- **Calculator Server**: Ein reaktiver Webservice, der Berechnungen durchführt und Ergebnisse über SSE streamt
 - **Calculator Client**: Eine Client-Anwendung, die den Streaming-Endpunkt konsumiert
 
 ## Voraussetzungen
@@ -37,23 +37,23 @@ java/
 
 ## Funktionsweise
 
-1. Der **Calculator Server** stellt einen `/calculate` endpoint that:
-   - Accepts query parameters: `a` (number), `b` (number), `op` (operation)
-   - Supported operations: `add`, `sub`, `mul`, `div`
-   - Returns Server-Sent Events with calculation progress and result
+1. Der **Calculator Server** stellt einen `/calculate`-Endpunkt bereit, der:
+   - Abfrageparameter akzeptiert: `a` (Zahl), `b` (Zahl), `op` (Operation)
+   - Unterstützte Operationen: `add`, `sub`, `mul`, `div`
+   - Server-Sent Events mit dem Fortschritt der Berechnung und dem Ergebnis zurückgibt
 
-2. The **Calculator Client** connects to the server and:
-   - Makes a request to calculate `7 * 5` Endpunkt bereit
-   - Konsumiert die Streaming-Antwort
+2. Der **Calculator Client** verbindet sich mit dem Server und:
+   - Sendet eine Anfrage zur Berechnung von `7 * 5`
+   - Verarbeitet die Streaming-Antwort
    - Gibt jedes Event in der Konsole aus
 
-## Anwendungen starten
+## Ausführen der Anwendungen
 
 ### Option 1: Mit Maven (empfohlen)
 
 #### 1. Starte den Calculator Server
 
-Öffne ein Terminal und wechsle in das Server-Verzeichnis:
+Öffne ein Terminal und navigiere in das Server-Verzeichnis:
 
 ```bash
 cd calculator-server
@@ -63,7 +63,7 @@ mvn spring-boot:run
 
 Der Server startet unter `http://localhost:8080`
 
-Du solltest eine Ausgabe wie folgt sehen:
+Du solltest eine Ausgabe wie diese sehen:
 ```
 Started CalculatorServerApplication in X.XXX seconds
 Netty started on port 8080 (http)
@@ -71,7 +71,7 @@ Netty started on port 8080 (http)
 
 #### 2. Starte den Calculator Client
 
-Öffne ein **neues Terminal** und wechsle in das Client-Verzeichnis:
+Öffne ein **neues Terminal** und navigiere in das Client-Verzeichnis:
 
 ```bash
 cd calculator-client
@@ -79,9 +79,9 @@ mvn clean package
 mvn spring-boot:run
 ```
 
-Der Client verbindet sich mit dem Server, führt die Berechnung aus und zeigt die Streaming-Ergebnisse an.
+Der Client verbindet sich mit dem Server, führt die Berechnung durch und zeigt die Streaming-Ergebnisse an.
 
-### Option 2: Java direkt verwenden
+### Option 2: Direkt mit Java
 
 #### 1. Server kompilieren und starten:
 
@@ -113,7 +113,7 @@ curl "http://localhost:8080/calculate?a=10&b=5&op=add" -H "Accept: text/event-st
 
 ## Erwartete Ausgabe
 
-Beim Ausführen des Clients solltest du eine Streaming-Ausgabe ähnlich dieser sehen:
+Beim Ausführen des Clients solltest du eine Streaming-Ausgabe ähnlich der folgenden sehen:
 
 ```
 event:info
@@ -126,31 +126,31 @@ data:35.0
 ## Unterstützte Operationen
 
 - `add` - Addition (a + b)
-- `sub` - Subtraction (a - b)
-- `mul` - Multiplication (a * b)
-- `div` - Division (a / b, returns NaN if b = 0)
+- `sub` - Subtraktion (a - b)
+- `mul` - Multiplikation (a * b)
+- `div` - Division (a / b, gibt NaN zurück, wenn b = 0)
 
-## API Reference
+## API Referenz
 
 ### GET /calculate
 
-**Parameters:**
-- `a` (required): First number (double)
-- `b` (required): Second number (double)
-- `op` (required): Operation (`add`, `sub`, `mul`, `div`)
+**Parameter:**
+- `a` (erforderlich): Erste Zahl (double)
+- `b` (erforderlich): Zweite Zahl (double)
+- `op` (erforderlich): Operation (`add`, `sub`, `mul`, `div`)
 
-**Response:**
+**Antwort:**
 - Content-Type: `text/event-stream`
-- Gibt Server-Sent Events mit Berechnungsfortschritt und Ergebnis zurück
+- Gibt Server-Sent Events mit dem Fortschritt der Berechnung und dem Ergebnis zurück
 
-**Beispiel-Anfrage:**
+**Beispielanfrage:**
 ```
 GET /calculate?a=7&b=5&op=mul HTTP/1.1
 Host: localhost:8080
 Accept: text/event-stream
 ```
 
-**Beispiel-Antwort:**
+**Beispielantwort:**
 ```
 event: info
 data: Calculating: 7.0 mul 5.0
@@ -163,24 +163,24 @@ data: 35.0
 
 ### Häufige Probleme
 
-1. **Port 8080 ist bereits belegt**
-   - Beende alle anderen Anwendungen, die Port 8080 verwenden
+1. **Port 8080 bereits belegt**
+   - Beende andere Anwendungen, die Port 8080 verwenden
    - Oder ändere den Server-Port in `calculator-server/src/main/resources/application.yml`
 
-2. **Connection refused**
-   - Make sure the server is running before starting the client
-   - Check that the server started successfully on port 8080
+2. **Verbindung abgelehnt**
+   - Stelle sicher, dass der Server läuft, bevor du den Client startest
+   - Prüfe, ob der Server erfolgreich auf Port 8080 gestartet wurde
 
-3. **Parameter name issues**
-   - This project includes Maven compiler configuration with `-parameters` flag
-   - If you encounter parameter binding issues, ensure the project is built with this configuration
+3. **Probleme mit Parameternamen**
+   - Dieses Projekt enthält eine Maven-Compiler-Konfiguration mit dem Flag `-parameters`
+   - Wenn Probleme bei der Parameterbindung auftreten, stelle sicher, dass das Projekt mit dieser Konfiguration gebaut wurde
 
-### Stopping the Applications
+### Anwendungen stoppen
 
-- Press `Ctrl+C` in the terminal where each application is running
-- Or use `mvn spring-boot:stop`, falls der Server im Hintergrund läuft
+- Drücke `Ctrl+C` im Terminal, in dem die jeweilige Anwendung läuft
+- Oder verwende `mvn spring-boot:stop`, wenn die Anwendung im Hintergrund läuft
 
-## Technologie-Stack
+## Technologiestack
 
 - **Spring Boot 3.3.1** - Anwendungsframework
 - **Spring WebFlux** - Reaktives Webframework
@@ -194,9 +194,9 @@ data: 35.0
 Versuche den Code zu ändern, um:
 - Weitere mathematische Operationen hinzuzufügen
 - Fehlerbehandlung für ungültige Operationen einzubauen
-- Request-/Response-Logging zu integrieren
+- Request/Response-Logging hinzuzufügen
 - Authentifizierung zu implementieren
-- Unit-Tests hinzuzufügen
+- Unit-Tests zu ergänzen
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, kann es bei automatischen Übersetzungen zu Fehlern oder Ungenauigkeiten kommen. Das Originaldokument in seiner ursprünglichen Sprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

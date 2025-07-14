@@ -2,44 +2,44 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "706b9b075dc484b73a053e6e9c709b4b",
-  "translation_date": "2025-05-25T13:30:22+00:00",
+  "translation_date": "2025-07-13T23:32:27+00:00",
   "source_file": "04-PracticalImplementation/samples/python/README.md",
   "language_code": "pl"
 }
 -->
 # Model Context Protocol (MCP) Implementacja w Pythonie
 
-To repozytorium zawiera implementację Model Context Protocol (MCP) w Pythonie, pokazującą jak stworzyć zarówno serwer, jak i klienta komunikujące się za pomocą standardu MCP.
+To repozytorium zawiera implementację Model Context Protocol (MCP) w Pythonie, pokazującą, jak stworzyć zarówno serwer, jak i klienta komunikujących się za pomocą standardu MCP.
 
 ## Przegląd
 
 Implementacja MCP składa się z dwóch głównych komponentów:
 
-1. **MCP Server (`server.py`)** - Serwer udostępniający:
-   - **Tools**: Funkcje, które można wywoływać zdalnie
-   - **Resources**: Dane, które można pobierać
-   - **Prompts**: Szablony do generowania promptów dla modeli językowych
+1. **MCP Server (`server.py`)** – Serwer udostępniający:
+   - **Narzędzia**: Funkcje, które można wywoływać zdalnie
+   - **Zasoby**: Dane, które można pobierać
+   - **Prompty**: Szablony do generowania promptów dla modeli językowych
 
-2. **MCP Client (`client.py`)** - Aplikacja kliencka łącząca się z serwerem i korzystająca z jego funkcji
+2. **MCP Client (`client.py`)** – Aplikacja kliencka łącząca się z serwerem i korzystająca z jego funkcji
 
 ## Funkcje
 
 Ta implementacja demonstruje kilka kluczowych funkcji MCP:
 
-### Tools
-- `completion` - Generuje uzupełnienia tekstu z modeli AI (symulowane)
-- `add` - Prosty kalkulator dodający dwie liczby
+### Narzędzia
+- `completion` – Generuje uzupełnienia tekstu z modeli AI (symulowane)
+- `add` – Prosty kalkulator dodający dwie liczby
 
-### Resources
-- `models://` - Zwraca informacje o dostępnych modelach AI
-- `greeting://{name}` - Zwraca spersonalizowane powitanie dla podanego imienia
+### Zasoby
+- `models://` – Zwraca informacje o dostępnych modelach AI
+- `greeting://{name}` – Zwraca spersonalizowane powitanie dla podanego imienia
 
-### Prompts
-- `review_code` - Generuje prompt do przeglądu kodu
+### Prompty
+- `review_code` – Generuje prompt do przeglądu kodu
 
 ## Instalacja
 
-Aby użyć tej implementacji MCP, zainstaluj wymagane pakiety:
+Aby korzystać z tej implementacji MCP, zainstaluj wymagane pakiety:
 
 ```powershell
 pip install mcp-server mcp-client
@@ -55,7 +55,7 @@ Uruchom serwer w jednym oknie terminala:
 python server.py
 ```
 
-Serwer można również uruchomić w trybie developerskim używając MCP CLI:
+Serwer można też uruchomić w trybie deweloperskim za pomocą MCP CLI:
 
 ```powershell
 mcp dev server.py
@@ -85,7 +85,7 @@ Klient (`client.py`) demonstruje wszystkie możliwości MCP:
 python client.py
 ```
 
-Połączenie z serwerem pozwoli przetestować wszystkie funkcje, w tym tools, resources i prompts. Wynik pokaże:
+To połączy się z serwerem i przetestuje wszystkie funkcje, w tym narzędzia, zasoby i prompty. Wynik pokaże:
 
 1. Wynik działania kalkulatora (5 + 7 = 12)
 2. Odpowiedź narzędzia completion na pytanie "What is the meaning of life?"
@@ -93,9 +93,9 @@ Połączenie z serwerem pozwoli przetestować wszystkie funkcje, w tym tools, re
 4. Spersonalizowane powitanie dla "MCP Explorer"
 5. Szablon promptu do przeglądu kodu
 
-## Szczegóły implementacji
+## Szczegóły Implementacji
 
-Serwer został zaimplementowany przy użyciu API `FastMCP`, które oferuje wysokopoziomowe abstrakcje do definiowania usług MCP. Oto uproszczony przykład definiowania narzędzi:
+Serwer jest zaimplementowany przy użyciu API `FastMCP`, które oferuje wysokopoziomowe abstrakcje do definiowania usług MCP. Oto uproszczony przykład definiowania narzędzi:
 
 ```python
 @mcp.tool()
@@ -124,7 +124,7 @@ async with stdio_client(server_params) as (reader, writer):
 
 ## Dowiedz się więcej
 
-Aby uzyskać więcej informacji o MCP, odwiedź: https://modelcontextprotocol.io/
+Więcej informacji o MCP znajdziesz na: https://modelcontextprotocol.io/
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy wszelkich starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

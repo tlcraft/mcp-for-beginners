@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-02T10:07:38+00:00",
+  "translation_date": "2025-07-13T23:49:38+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "en"
 }
@@ -13,9 +13,9 @@ This guide shows how to integrate Model Context Protocol (MCP) servers with Azur
 
 ## Introduction
 
-Model Context Protocol (MCP) is an open standard that allows AI applications to securely connect to external data sources and tools. When integrated with Azure AI Foundry, MCP lets agents access and interact with various external services, APIs, and data sources in a standardized way.
+Model Context Protocol (MCP) is an open standard that allows AI applications to securely connect to external data sources and tools. When integrated with Azure AI Foundry, MCP enables agents to access and interact with various external services, APIs, and data sources in a standardized way.
 
-This integration combines the flexibility of MCP’s tool ecosystem with Azure AI Foundry’s robust agent framework, delivering enterprise-grade AI solutions with extensive customization options.
+This integration combines the flexibility of MCP's tool ecosystem with Azure AI Foundry's robust agent framework, delivering enterprise-grade AI solutions with extensive customization options.
 
 **Note:** If you want to use MCP in Azure AI Foundry Agent Service, currently only the following regions are supported: westus, westus2, uaenorth, southindia, and switzerlandnorth
 
@@ -23,24 +23,24 @@ This integration combines the flexibility of MCP’s tool ecosystem with Azure A
 
 By the end of this guide, you will be able to:
 
-- Understand the Model Context Protocol and its benefits
+- Understand the Model Context Protocol and its advantages
 - Set up MCP servers for use with Azure AI Foundry agents
 - Create and configure agents with MCP tool integration
 - Implement practical examples using real MCP servers
-- Handle tool responses and citations in agent conversations
+- Manage tool responses and citations in agent conversations
 
 ## Prerequisites
 
-Before you start, make sure you have:
+Before you begin, make sure you have:
 
 - An Azure subscription with AI Foundry access
-- Python 3.10+
+- Python 3.10 or higher
 - Azure CLI installed and configured
 - Appropriate permissions to create AI resources
 
 ## What is Model Context Protocol (MCP)?
 
-Model Context Protocol is a standardized way for AI applications to connect to external data sources and tools. Key benefits include:
+Model Context Protocol is a standardized method for AI applications to connect to external data sources and tools. Key benefits include:
 
 - **Standardized Integration**: A consistent interface across different tools and services
 - **Security**: Secure authentication and authorization mechanisms
@@ -51,7 +51,7 @@ Model Context Protocol is a standardized way for AI applications to connect to e
 
 ### 1. Environment Configuration
 
-First, set up your environment variables and dependencies:
+First, configure your environment variables and dependencies:
 
 ```python
 import os
@@ -105,7 +105,7 @@ mcp_tool = {
     "type": "mcp",
     "server_label": "unique_server_name",      # Identifier for the MCP server
     "server_url": "https://api.example.com/mcp", # MCP server endpoint
-    "require_approval": "never"                 # Approval policy: this time only support "never" 
+    "require_approval": "never"                 # Approval policy: currently only "never" is supported
 }
 ```
 
@@ -167,7 +167,7 @@ def create_mcp_agent_example():
             run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
             print(f"Run status: {run.status}")
 
-        # Examine run steps and tool calls
+        # Review run steps and tool calls
         run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
         for step in run_steps:
             print(f"Run step: {step.id}, status: {step.status}, type: {step.type}")
@@ -187,14 +187,14 @@ def create_mcp_agent_example():
 
 if __name__ == "__main__":
     create_mcp_agent_example()
-
+  
 
 ## Troubleshooting Common Issues
 
 ### 1. Connection Issues
-- Verify that the MCP server URL is accessible
-- Check authentication credentials
-- Ensure network connectivity
+- Make sure the MCP server URL is reachable
+- Verify authentication credentials
+- Check network connectivity
 
 ### 2. Tool Call Failures
 - Review tool arguments and formatting
@@ -202,8 +202,8 @@ if __name__ == "__main__":
 - Implement proper error handling
 
 ### 3. Performance Issues
-- Optimize the frequency of tool calls
-- Implement caching where appropriate
+- Optimize how often tool calls are made
+- Use caching where appropriate
 - Monitor server response times
 
 ## Next Steps
@@ -224,7 +224,7 @@ To further improve your MCP integration:
 
 ## Support
 
-For further support and questions:
+For additional help and questions:
 - Review the [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-foundry/)
 - Check the [MCP community resources](https://modelcontextprotocol.io/)
 
@@ -233,4 +233,4 @@ For further support and questions:
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

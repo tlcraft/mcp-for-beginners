@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6d6315e03f591fb5a39be91da88585dc",
-  "translation_date": "2025-05-17T10:55:36+00:00",
+  "translation_date": "2025-07-13T19:19:50+00:00",
   "source_file": "03-GettingStarted/03-llm-client/solution/typescript/README.md",
   "language_code": "tr"
 }
 -->
-# Bu örneği çalıştırma
+# Bu örneği çalıştırmak
 
-Bu örnek, istemcide bir LLM bulunmasını gerektirir. LLM, bunu ya bir Codespaces içinde çalıştırmanızı ya da GitHub'da kişisel erişim belirteci ayarlamanızı gerektirir.
+Bu örnek, istemcide bir LLM bulundurmayı içerir. LLM'nin çalışması için bunu ya Codespaces'te çalıştırmanız ya da GitHub'da kişisel erişim belirteci ayarlamanız gerekir.
 
-## -1- Bağımlılıkları yükle
+## -1- Bağımlılıkları yükleyin
 
 ```bash
 npm install
 ```
 
-## -3- Sunucuyu çalıştır
+## -3- Sunucuyu çalıştırın
 
 ```bash
 npm run build
 ```
 
-## -4- İstemciyi çalıştır
+## -4- İstemciyi çalıştırın
 
 ```sh
 npm run client
 ```
 
-Benzer bir sonuç görmelisiniz:
+Aşağıdakine benzer bir sonuç görmelisiniz:
 
 ```text
 Asking server for available tools
@@ -40,5 +40,5 @@ Calling tool add with args "{\"a\":2,\"b\":3}"
 Tool result:  { content: [ { type: 'text', text: '5' } ] }
 ```
 
-**Feragatname**: 
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından doğabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+**Feragatname**:  
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

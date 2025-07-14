@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-06-10T06:53:59+00:00",
+  "translation_date": "2025-07-14T08:45:05+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
   "language_code": "id"
 }
@@ -21,39 +21,39 @@ CO_OP_TRANSLATOR_METADATA:
 
 Di akhir lab ini, Anda akan mampu:
 
-- ✅ Membuat server MCP kustom untuk alur kerja pengembangan dunia nyata  
-- ✅ Mengimplementasikan fungsi kloning repositori GitHub melalui MCP  
-- ✅ Mengintegrasikan server MCP kustom dengan VS Code dan Agent Builder  
-- ✅ Menggunakan GitHub Copilot Agent Mode dengan alat MCP kustom  
-- ✅ Menguji dan menerapkan server MCP kustom di lingkungan produksi  
+- ✅ Membuat server MCP kustom untuk alur kerja pengembangan dunia nyata
+- ✅ Mengimplementasikan fungsi kloning repositori GitHub melalui MCP
+- ✅ Mengintegrasikan server MCP kustom dengan VS Code dan Agent Builder
+- ✅ Menggunakan GitHub Copilot Agent Mode dengan alat MCP kustom
+- ✅ Menguji dan menerapkan server MCP kustom di lingkungan produksi
 
 ## 📋 Prasyarat
 
-- Menyelesaikan Lab 1-3 (dasar-dasar MCP dan pengembangan lanjutan)  
-- Langganan GitHub Copilot ([pendaftaran gratis tersedia](https://github.com/github-copilot/signup))  
-- VS Code dengan ekstensi AI Toolkit dan GitHub Copilot  
-- Git CLI terpasang dan dikonfigurasi  
+- Menyelesaikan Lab 1-3 (fundamental MCP dan pengembangan lanjutan)
+- Langganan GitHub Copilot ([pendaftaran gratis tersedia](https://github.com/github-copilot/signup))
+- VS Code dengan ekstensi AI Toolkit dan GitHub Copilot
+- Git CLI terpasang dan terkonfigurasi
 
 ## 🏗️ Gambaran Proyek
 
-### **Tantangan Pengembangan Dunia Nyata**  
-Sebagai pengembang, kita sering menggunakan GitHub untuk mengkloning repositori dan membukanya di VS Code atau VS Code Insiders. Proses manual ini meliputi:  
-1. Membuka terminal/command prompt  
-2. Menavigasi ke direktori yang diinginkan  
-3. Menjalankan perintah `git clone`  
-4. Membuka VS Code di direktori hasil kloning  
+### **Tantangan Pengembangan Dunia Nyata**
+Sebagai pengembang, kita sering menggunakan GitHub untuk mengkloning repositori dan membukanya di VS Code atau VS Code Insiders. Proses manual ini meliputi:
+1. Membuka terminal/command prompt
+2. Menavigasi ke direktori yang diinginkan
+3. Menjalankan perintah `git clone`
+4. Membuka VS Code di direktori hasil kloning
 
 **Solusi MCP kami menyederhanakan ini menjadi satu perintah cerdas!**
 
-### **Apa yang Akan Anda Bangun**  
+### **Apa yang Akan Anda Bangun**
 Sebuah **GitHub Clone MCP Server** (`git_mcp_server`) yang menyediakan:
 
 | Fitur | Deskripsi | Manfaat |
 |---------|-------------|---------|
-| 🔄 **Kloning Repositori Cerdas** | Kloning repositori GitHub dengan validasi | Pemeriksaan kesalahan otomatis |
+| 🔄 **Kloning Repositori Pintar** | Kloning repositori GitHub dengan validasi | Pemeriksaan kesalahan otomatis |
 | 📁 **Manajemen Direktori Cerdas** | Memeriksa dan membuat direktori dengan aman | Mencegah penimpaan data |
 | 🚀 **Integrasi VS Code Lintas Platform** | Membuka proyek di VS Code/Insiders | Transisi alur kerja yang mulus |
-| 🛡️ **Penanganan Kesalahan yang Kuat** | Menangani masalah jaringan, izin, dan jalur | Keandalan siap produksi |
+| 🛡️ **Penanganan Kesalahan Tangguh** | Menangani masalah jaringan, izin, dan jalur | Keandalan siap produksi |
 
 ---
 
@@ -61,30 +61,30 @@ Sebuah **GitHub Clone MCP Server** (`git_mcp_server`) yang menyediakan:
 
 ### Langkah 1: Buat GitHub Agent di Agent Builder
 
-1. **Buka Agent Builder** melalui ekstensi AI Toolkit  
-2. **Buat agent baru** dengan konfigurasi berikut:  
+1. **Buka Agent Builder** melalui ekstensi AI Toolkit
+2. **Buat agent baru** dengan konfigurasi berikut:
    ```
    Agent Name: GitHubAgent
    ```
 
-3. **Inisialisasi server MCP kustom:**  
-   - Pergi ke **Tools** → **Add Tool** → **MCP Server**  
-   - Pilih **"Create A new MCP Server"**  
-   - Pilih **template Python** untuk fleksibilitas maksimal  
-   - **Nama Server:** `git_mcp_server`  
+3. **Inisialisasi server MCP kustom:**
+   - Pergi ke **Tools** → **Add Tool** → **MCP Server**
+   - Pilih **"Create A new MCP Server"**
+   - Pilih **template Python** untuk fleksibilitas maksimal
+   - **Nama Server:** `git_mcp_server`
 
-### Langkah 2: Konfigurasi GitHub Copilot Agent Mode
+### Langkah 2: Konfigurasikan GitHub Copilot Agent Mode
 
-1. **Buka GitHub Copilot** di VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")  
-2. **Pilih Agent Model** di antarmuka Copilot  
-3. **Pilih model Claude 3.7** untuk kemampuan penalaran yang lebih baik  
-4. **Aktifkan integrasi MCP** untuk akses alat  
+1. **Buka GitHub Copilot** di VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
+2. **Pilih Model Agent** di antarmuka Copilot
+3. **Pilih model Claude 3.7** untuk kemampuan penalaran yang lebih baik
+4. **Aktifkan integrasi MCP** untuk akses alat
 
-> **💡 Tips Pro:** Claude 3.7 memberikan pemahaman superior terhadap alur kerja pengembangan dan pola penanganan kesalahan.
+> **💡 Tips Pro:** Claude 3.7 memberikan pemahaman yang lebih baik tentang alur kerja pengembangan dan pola penanganan kesalahan.
 
 ### Langkah 3: Implementasikan Fungsi Inti Server MCP
 
-**Gunakan prompt rinci berikut dengan GitHub Copilot Agent Mode:**  
+**Gunakan prompt detail berikut dengan GitHub Copilot Agent Mode:**
 
 ```
 Create two MCP tools with the following comprehensive requirements:
@@ -121,15 +121,15 @@ Additional Requirements:
 
 #### 4a. Uji di Agent Builder
 
-1. **Jalankan konfigurasi debug** untuk Agent Builder  
-2. **Konfigurasikan agent Anda dengan prompt sistem ini:**  
+1. **Jalankan konfigurasi debug** untuk Agent Builder
+2. **Konfigurasikan agent Anda dengan system prompt ini:**
 
 ```
 SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
 
-3. **Uji dengan skenario pengguna realistis:**  
+3. **Uji dengan skenario pengguna realistis:**
 
 ```
 USER_PROMPT EXAMPLES:
@@ -141,11 +141,11 @@ Scenario : Basic Clone and Open
 
 ![Agent Builder Testing](../../../../translated_images/DebugAgent.81d152370c503241b3b39a251b8966f7f739286df19dd57f9147f6402214a012.id.png)
 
-**Hasil yang Diharapkan:**  
-- ✅ Kloning berhasil dengan konfirmasi jalur  
-- ✅ Peluncuran VS Code otomatis  
-- ✅ Pesan kesalahan jelas untuk skenario tidak valid  
-- ✅ Penanganan tepat untuk kasus tepi  
+**Hasil yang Diharapkan:**
+- ✅ Kloning berhasil dengan konfirmasi jalur
+- ✅ VS Code otomatis terbuka
+- ✅ Pesan kesalahan jelas untuk skenario tidak valid
+- ✅ Penanganan kasus tepi yang tepat
 
 #### 4b. Uji di MCP Inspector
 
@@ -153,13 +153,13 @@ Scenario : Basic Clone and Open
 
 ---
 
-**🎉 Selamat!** Anda berhasil membuat server MCP praktis siap produksi yang menyelesaikan tantangan alur kerja pengembangan nyata. Server kloning GitHub kustom Anda menunjukkan kekuatan MCP dalam mengotomatisasi dan meningkatkan produktivitas pengembang.
+**🎉 Selamat!** Anda telah berhasil membuat server MCP praktis dan siap produksi yang menyelesaikan tantangan alur kerja pengembangan nyata. Server kloning GitHub kustom Anda menunjukkan kekuatan MCP dalam mengotomatisasi dan meningkatkan produktivitas pengembang.
 
-### 🏆 Pencapaian Terkunci:  
-- ✅ **Pengembang MCP** - Membuat server MCP kustom  
-- ✅ **Otomatisasi Alur Kerja** - Menyederhanakan proses pengembangan  
-- ✅ **Ahli Integrasi** - Menghubungkan berbagai alat pengembangan  
-- ✅ **Siap Produksi** - Membangun solusi yang dapat diterapkan  
+### 🏆 Pencapaian Terbuka:
+- ✅ **Pengembang MCP** - Membuat server MCP kustom
+- ✅ **Automator Alur Kerja** - Menyederhanakan proses pengembangan  
+- ✅ **Ahli Integrasi** - Menghubungkan berbagai alat pengembangan
+- ✅ **Siap Produksi** - Membangun solusi yang dapat diterapkan
 
 ---
 
@@ -167,11 +167,11 @@ Scenario : Basic Clone and Open
 
 **Peserta Workshop yang Terhormat,**
 
-Selamat telah menyelesaikan keempat modul workshop Model Context Protocol! Anda telah menempuh perjalanan panjang dari memahami konsep dasar AI Toolkit hingga membangun server MCP siap produksi yang menyelesaikan tantangan pengembangan dunia nyata.
+Selamat telah menyelesaikan keempat modul workshop Model Context Protocol! Anda telah menempuh perjalanan jauh dari memahami konsep dasar AI Toolkit hingga membangun server MCP siap produksi yang menyelesaikan tantangan pengembangan dunia nyata.
 
 ### 🚀 Rekap Jalur Pembelajaran Anda:
 
-**[Modul 1](../lab1/README.md)**: Anda mulai dengan mempelajari dasar-dasar AI Toolkit, pengujian model, dan membuat agent AI pertama Anda.
+**[Modul 1](../lab1/README.md)**: Anda memulai dengan mengeksplorasi dasar-dasar AI Toolkit, pengujian model, dan membuat agent AI pertama Anda.
 
 **[Modul 2](../lab2/README.md)**: Anda mempelajari arsitektur MCP, mengintegrasikan Playwright MCP, dan membangun agent otomatisasi browser pertama.
 
@@ -181,28 +181,28 @@ Selamat telah menyelesaikan keempat modul workshop Model Context Protocol! Anda 
 
 ### 🌟 Apa yang Telah Anda Kuasai:
 
-- ✅ **Ekosistem AI Toolkit**: Model, agent, dan pola integrasi  
-- ✅ **Arsitektur MCP**: Desain client-server, protokol transport, dan keamanan  
-- ✅ **Alat Pengembang**: Dari Playground ke Inspector hingga penerapan produksi  
-- ✅ **Pengembangan Kustom**: Membangun, menguji, dan menerapkan server MCP Anda sendiri  
-- ✅ **Aplikasi Praktis**: Menyelesaikan tantangan alur kerja dunia nyata dengan AI  
+- ✅ **Ekosistem AI Toolkit**: Model, agent, dan pola integrasi
+- ✅ **Arsitektur MCP**: Desain client-server, protokol transport, dan keamanan
+- ✅ **Alat Pengembang**: Dari Playground ke Inspector hingga penerapan produksi
+- ✅ **Pengembangan Kustom**: Membangun, menguji, dan menerapkan server MCP sendiri
+- ✅ **Aplikasi Praktis**: Menyelesaikan tantangan alur kerja nyata dengan AI
 
 ### 🔮 Langkah Selanjutnya:
 
-1. **Bangun Server MCP Anda Sendiri**: Terapkan keterampilan ini untuk mengotomatisasi alur kerja unik Anda  
-2. **Bergabung dengan Komunitas MCP**: Bagikan karya Anda dan belajar dari yang lain  
-3. **Jelajahi Integrasi Lanjutan**: Hubungkan server MCP ke sistem perusahaan  
-4. **Kontribusi ke Open Source**: Bantu tingkatkan alat dan dokumentasi MCP  
+1. **Bangun Server MCP Anda Sendiri**: Terapkan keterampilan ini untuk mengotomatisasi alur kerja unik Anda
+2. **Bergabung dengan Komunitas MCP**: Bagikan karya Anda dan belajar dari yang lain
+3. **Jelajahi Integrasi Lanjutan**: Hubungkan server MCP ke sistem perusahaan
+4. **Kontribusi ke Open Source**: Bantu tingkatkan alat dan dokumentasi MCP
 
-Ingat, workshop ini hanyalah awal. Ekosistem Model Context Protocol berkembang pesat, dan kini Anda siap berada di garis depan alat pengembangan berbasis AI.
+Ingat, workshop ini baru permulaan. Ekosistem Model Context Protocol berkembang pesat, dan Anda kini siap berada di garis depan alat pengembangan berbasis AI.
 
 **Terima kasih atas partisipasi dan semangat belajar Anda!**
 
-Kami berharap workshop ini memicu ide yang akan mengubah cara Anda membangun dan berinteraksi dengan alat AI dalam perjalanan pengembangan Anda.
+Kami berharap workshop ini memicu ide-ide yang akan mengubah cara Anda membangun dan berinteraksi dengan alat AI dalam perjalanan pengembangan Anda.
 
 **Selamat berkoding!**
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

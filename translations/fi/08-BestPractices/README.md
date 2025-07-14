@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-02T08:09:09+00:00",
+  "translation_date": "2025-07-14T05:07:01+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "fi"
 }
@@ -11,16 +11,16 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Yleiskatsaus
 
-Tässä oppitunnissa keskitytään edistyneisiin parhaisiin käytäntöihin MCP-palvelimien ja -ominaisuuksien kehittämisessä, testaamisessa ja käyttöönotossa tuotantoympäristöissä. MCP-ekosysteemien kasvaessa monimutkaisuudeltaan ja merkitykseltään, vakiintuneiden mallien noudattaminen takaa luotettavuuden, ylläpidettävyyden ja yhteensopivuuden. Tämä oppitunti kokoaa käytännön kokemuksia todellisista MCP-toteutuksista ohjatakseen sinua luomaan vankkoja, tehokkaita palvelimia hyödyntäen toimivia resursseja, kehotteita ja työkaluja.
+Tämä oppitunti keskittyy edistyneisiin parhaisiin käytäntöihin MCP-palvelimien ja -ominaisuuksien kehittämisessä, testaamisessa ja käyttöönotossa tuotantoympäristöissä. MCP-ekosysteemien kasvaessa monimutkaisuudeltaan ja merkitykseltään, vakiintuneiden mallien noudattaminen takaa luotettavuuden, ylläpidettävyyden ja yhteentoimivuuden. Tämä oppitunti kokoaa käytännön kokemuksia todellisista MCP-toteutuksista ohjatakseen sinua luomaan vankkoja, tehokkaita palvelimia toimivilla resursseilla, kehotteilla ja työkaluilla.
 
 ## Oppimistavoitteet
 
-Oppitunnin lopuksi osaat:
+Oppitunnin lopussa osaat:
 - Soveltaa alan parhaita käytäntöjä MCP-palvelimien ja -ominaisuuksien suunnittelussa
 - Laatia kattavia testausstrategioita MCP-palvelimille
-- Suunnitella tehokkaita, uudelleenkäytettäviä työnkulkujen malleja monimutkaisiin MCP-sovelluksiin
-- Toteuttaa asianmukaista virheenkäsittelyä, lokitusta ja havaittavuutta MCP-palvelimissa
-- Optimoida MCP-toteutuksia suorituskyvyn, turvallisuuden ja ylläpidettävyyden näkökulmasta
+- Suunnitella tehokkaita, uudelleenkäytettäviä työnkulkuja monimutkaisiin MCP-sovelluksiin
+- Toteuttaa asianmukaisen virheenkäsittelyn, lokituksen ja havaittavuuden MCP-palvelimissa
+- Optimoida MCP-toteutukset suorituskyvyn, turvallisuuden ja ylläpidettävyyden näkökulmasta
 
 ## Lisäviitteet
 
@@ -35,7 +35,7 @@ Ajantasaisimman tiedon MCP:n parhaista käytännöistä löydät osoitteista:
 
 #### 1. Yhden vastuun periaate
 
-Jokaisella MCP-ominaisuudella tulisi olla selkeä ja tarkka tarkoitus. Sen sijaan, että luot monoliittisia työkaluja, jotka yrittävät hoitaa useita asioita, kehitä erikoistuneita työkaluja, jotka ovat erinomaisia tietyissä tehtävissä.
+Jokaisella MCP-ominaisuudella tulisi olla selkeä ja tarkka tarkoitus. Sen sijaan, että luot monoliittisia työkaluja, jotka yrittävät hoitaa useita tehtäviä, kehitä erikoistuneita työkaluja, jotka ovat erinomaisia tietyissä tehtävissä.
 
 **Hyvä esimerkki:**
 ```csharp
@@ -179,9 +179,9 @@ public class CurrencyConversionTool implements Tool {
 }
 ```
 
-#### 3. Komposiittiset työkalut
+#### 3. Yhdisteltävät työkalut
 
-Suunnittele työkalut niin, että niitä voi yhdistellä monimutkaisempien työnkulkujen luomiseksi:
+Suunnittele työkalut siten, että niitä voi yhdistellä monimutkaisempien työnkulkujen luomiseksi:
 
 ```python
 # Python example showing composable tools
@@ -299,7 +299,7 @@ Map<String, Object> getSchema() {
 
 #### 3. Johdonmukaiset palautusrakenteet
 
-Pidä vastausrakenteet johdonmukaisina, jotta mallien on helpompi tulkita tuloksia:
+Pidä vastausrakenteet johdonmukaisina, jotta mallit voivat tulkita tuloksia helpommin:
 
 ```python
 async def execute_async(self, request):
@@ -344,7 +344,7 @@ Vankka virheenkäsittely on ratkaisevan tärkeää MCP-työkalujen luotettavuude
 
 #### 1. Sujuva virheenkäsittely
 
-Käsittele virheet sopivilla tasoilla ja tarjoa informatiivisia viestejä:
+Käsittele virheitä sopivilla tasoilla ja tarjoa informatiivisia viestejä:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -386,9 +386,9 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Rakenteelliset virhevastausviestit
+#### 2. Rakenteelliset virhevastaukset
 
-Palauta virheistä rakenteellista tietoa aina kun mahdollista:
+Palauta mahdollisuuksien mukaan rakenteellista virhetietoa:
 
 ```java
 @Override
@@ -420,7 +420,7 @@ public ToolResponse execute(ToolRequest request) {
 
 #### 3. Uudelleenyrityslogiikka
 
-Toteuta sopiva uudelleenyrityslogiikka tilapäisten virheiden varalle:
+Toteuta sopiva uudelleenyrityslogiikka tilapäisten virheiden varalta:
 
 ```python
 async def execute_async(self, request):
@@ -450,7 +450,7 @@ async def execute_async(self, request):
 
 #### 1. Välimuisti
 
-Ota käyttöön välimuisti kalliille toiminnoille:
+Ota käyttöön välimuisti kalliita operaatioita varten:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -498,7 +498,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. Asynkroninen käsittely
 
-Hyödynnä asynkronisia ohjelmointimalleja I/O-sidonnaisissa operaatioissa:
+Käytä asynkronisia ohjelmointimalleja I/O-sidonnaisissa operaatioissa:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -547,9 +547,9 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Resurssien rajoittaminen
+#### 3. Resurssien rajoitus
 
-Rajoita resurssien käyttöä ylikuormituksen estämiseksi:
+Toteuta resurssien rajoitus ylikuormituksen estämiseksi:
 
 ```python
 class ThrottledApiTool(Tool):
@@ -613,9 +613,9 @@ class TokenBucketRateLimiter:
 
 ### Turvallisuuden parhaat käytännöt
 
-#### 1. Syötteiden validointi
+#### 1. Syötteen validointi
 
-Tarkista aina syöteparametrit huolellisesti:
+Tarkista syöteparametrit aina huolellisesti:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -656,9 +656,9 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Valtuutustarkastukset
+#### 2. Valtuutustarkistukset
 
-Toteuta asianmukaiset valtuutustarkastukset:
+Toteuta asianmukaiset valtuutustarkistukset:
 
 ```java
 @Override
@@ -682,7 +682,7 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. Arkaluontoisen datan käsittely
+#### 3. Arkaluonteisten tietojen käsittely
 
 Käsittele arkaluonteisia tietoja huolellisesti:
 
@@ -741,7 +741,7 @@ Kattava testaus varmistaa, että MCP-työkalut toimivat oikein, käsittelevät r
 
 #### 1. Testaa jokainen työkalu erikseen
 
-Luo tarkkaan rajatut testit kunkin työkalun toiminnallisuudelle:
+Laadi kohdennettuja testejä kunkin työkalun toiminnallisuudelle:
 
 ```csharp
 [Fact]
@@ -803,7 +803,7 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 
 #### 2. Skeeman validointitestit
 
-Testaa, että skeemat ovat validit ja rajoitteet toimivat oikein:
+Testaa, että skeemat ovat kelvollisia ja rajoitteet toimivat oikein:
 
 ```java
 @Test
@@ -848,7 +848,7 @@ public void testSchemaValidation() {
 
 #### 3. Virheenkäsittelytestit
 
-Laadi testejä virhetilanteiden varalle:
+Laadi erityisiä testejä virhetilanteille:
 
 ```python
 @pytest.mark.asyncio
@@ -908,7 +908,7 @@ async def test_api_tool_handles_rate_limiting():
 
 #### 1. Työkaluketjutestaus
 
-Testaa, että työkalut toimivat yhdessä odotetuissa yhdistelmissä:
+Testaa työkalujen yhteistoimintaa odotetuissa yhdistelmissä:
 
 ```csharp
 [Fact]
@@ -949,7 +949,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. MCP-palvelimen testaus
 
-Testaa MCP-palvelinta täydellä työkalurekisteröinnillä ja suorituksella:
+Testaa MCP-palvelin täydellä työkalurekisteröinnillä ja suorituksella:
 
 ```java
 @SpringBootTest
@@ -1015,7 +1015,7 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. Loppukäyttäjätestaus
+#### 3. End-to-End-testaus
 
 Testaa kokonaiset työnkulut mallikehotteesta työkalun suoritukseen:
 
@@ -1109,9 +1109,9 @@ public async Task McpServer_HandlesHighConcurrency()
 }
 ```
 
-#### 2. Rasitustestaus
+#### 2. Stressitestaus
 
-Testaa järjestelmän toimintaa äärikuormituksessa:
+Testaa järjestelmää äärimmäisellä kuormituksella:
 
 ```java
 @Test
@@ -1164,9 +1164,9 @@ public void testServerUnderStress() {
 }
 ```
 
-#### 3. Monitorointi ja profilointi
+#### 3. Seuranta ja profilointi
 
-Ota käyttöön monitorointi pitkäaikaista suorituskyvyn analysointia varten:
+Ota käyttöön seuranta pitkäaikaista suorituskyvyn analysointia varten:
 
 ```python
 # Configure monitoring for an MCP server
@@ -1210,9 +1210,9 @@ def configure_monitoring(server):
 
 ## MCP-työnkulkujen suunnittelumallit
 
-Hyvin suunnitellut MCP-työnkulut parantavat tehokkuutta, luotettavuutta ja ylläpidettävyyttä. Tässä keskeisiä malleja:
+Hyvin suunnitellut MCP-työnkulut parantavat tehokkuutta, luotettavuutta ja ylläpidettävyyttä. Tässä keskeiset mallit:
 
-### 1. Työkaluketjun malli
+### 1. Työkaluketjumalli
 
 Yhdistä useita työkaluja peräkkäin siten, että kunkin työkalun tulos toimii seuraavan syötteenä:
 
@@ -1253,7 +1253,7 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Dispatcher-malli
+### 2. Lähettäjä-malli
 
 Käytä keskitettyä työkalua, joka ohjaa syötteen perusteella erikoistuneisiin työkaluihin:
 
@@ -1403,9 +1403,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Virheiden palautusmalli
+### 4. Virheiden palautumismalli
 
-Toteuta sujuvat vararatkaisut työkalujen virhetilanteiden varalle:
+Toteuta sujuvat varajärjestelmät työkalujen virhetilanteiden varalle:
 
 ```python
 class ResilientWorkflow:
@@ -1459,9 +1459,9 @@ async def get_weather(workflow, location):
     )
 ```
 
-### 5. Työnkulkujen koostaminen
+### 5. Työnkulun koostamismalli
 
-Rakenna monimutkaisia työnkulkuja koostamalla yksinkertaisempia:
+Rakenna monimutkaisia työnkulkuja yhdistämällä yksinkertaisempia:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1508,11 +1508,11 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# MCP-palvelimien testaus: parhaat käytännöt ja tärkeimmät vinkit
+# MCP-palvelimien testaus: parhaat käytännöt ja vinkit
 
 ## Yleiskatsaus
 
-Testaus on keskeinen osa luotettavien ja laadukkaiden MCP-palvelimien kehitystä. Tämä opas tarjoaa kattavat parhaat käytännöt ja vinkit MCP-palvelimien testaamiseen kehityksen eri vaiheissa yksikkötesteistä integraatiotestaukseen ja loppukäyttäjävalidaatioon.
+Testaus on keskeinen osa luotettavien, laadukkaiden MCP-palvelimien kehitystä. Tämä opas tarjoaa kattavat parhaat käytännöt ja vinkit MCP-palvelimien testaamiseen kehityksen eri vaiheissa, yksikkötesteistä integraatiotesteihin ja end-to-end-validointiin.
 
 ## Miksi testaus on tärkeää MCP-palvelimille
 
@@ -1520,7 +1520,7 @@ MCP-palvelimet toimivat tärkeinä välikerroksina tekoälymallien ja asiakasohj
 
 - Luotettavuuden tuotantoympäristöissä
 - Tarkkuuden pyyntöjen ja vastausten käsittelyssä
-- MCP-spesifikaatioiden oikean toteutuksen
+- MCP-spesifikaatioiden asianmukaisen toteutuksen
 - Kestävyyden virheitä ja reunatapauksia vastaan
 - Johdonmukaisen suorituskyvyn eri kuormitustilanteissa
 
@@ -1528,15 +1528,15 @@ MCP-palvelimet toimivat tärkeinä välikerroksina tekoälymallien ja asiakasohj
 
 ### Yksikkötestaus (perusta)
 
-Yksikkötestit varmistavat MCP-palvelimen yksittäisten komponenttien toiminnan erillään muista.
+Yksikkötestit varmistavat MCP-palvelimen yksittäisten komponenttien toiminnan erillään.
 
 #### Mitä testata
 
-1. **Resurssien käsittelijät**: Testaa jokaisen resurssinkäsittelijän logiikka itsenäisesti
+1. **Resurssien käsittelijät**: Testaa jokaisen resurssikäsittelijän logiikka erikseen
 2. **Työkalujen toteutukset**: Varmista työkalujen toiminta eri syötteillä
-3. **Kehotepohjat**: Tarkista, että kehotepohjat renderöityvät oikein
+3. **Kehotemallit**: Varmista, että kehotemallit renderöityvät oikein
 4. **Skeeman validointi**: Testaa parametrien validointilogiikka
-5. **Virheenkäsittely**: Varmista virhevastaukset virheellisille syötteille
+5. **Virheenkäsittely**: Varmista virhevastausten toimivuus virheellisissä syötteissä
 
 #### Parhaat käytännöt yksikkötestauksessa
 
@@ -1584,14 +1584,14 @@ def test_calculator_tool_add():
 
 ### Integraatiotestaus (välikerros)
 
-Integraatiotestit varmistavat MCP-palvelimen komponenttien vuorovaikutuksen.
+Integraatiotestit varmistavat MCP-palvelimen komponenttien yhteistoiminnan.
 
 #### Mitä testata
 
 1. **Palvelimen käynnistys**: Testaa palvelimen käynnistys eri kokoonpanoilla
 2. **Reittien rekisteröinti**: Varmista, että kaikki päätepisteet on rekisteröity oikein
 3. **Pyyntöjen käsittely**: Testaa koko pyyntö-vastaus-sykli
-4. **Virheiden välittyminen**: Varmista, että virheet käsitellään oikein eri komponenteissa
+4. **Virheiden välittyminen**: Varmista, että virheet käsitellään oikein komponenttien välillä
 5. **Autentikointi ja valtuutus**: Testaa turvallisuusmekanismit
 
 #### Parhaat käytännöt integraatiotestauksessa
@@ -1630,19 +1630,19 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 }
 ```
 
-### Loppukäyttäjätestaus (kokonaisuus)
+### End-to-End-testaus (yläkerros)
 
-Loppukäyttäjätestit varmistavat koko järjestelmän toiminnan asiakkaasta palvelimeen.
+End-to-end-testit varmistavat koko järjestelmän toiminnan asiakkaasta palvelimeen.
 
 #### Mitä testata
 
-1. **Asiakas-palvelin -viestintä**: Testaa täydet pyyntö-vastaus -syklit
-2. **Todelliset asiakas-SDK:t**: Testaa oikeilla asiakasohjelmistoilla
+1. **Asiakas-palvelin -viestintä**: Testaa täydet pyyntö-vastaus-syklit
+2. **Todelliset asiakas-SDK:t**: Testaa oikeilla asiakasohjelmilla
 3. **Suorituskyky kuormituksessa**: Varmista toiminta useilla samanaikaisilla pyynnöillä
-4. **Virheiden palautuminen**: Testaa järjestelmän toipuminen virhetilanteista
-5. **Pitkäkestoiset operaatiot**: Varmista suorituskyky suoratoisto- ja pitkissä operaatioissa
+4. **Virheiden palautuminen**: Testaa järjestelmän palautuminen virheistä
+5. **Pitkät operaatiot**: Varmista suorituskyky suoratoistoissa ja pitkissä operaatioissa
 
-#### Parhaat käytännöt loppukäyttäjätestauksessa
+#### Parhaat käytännöt E2E-testauksessa
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -1674,16 +1674,16 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
-## Mockausstrategiat MCP-testaukseen
+## Mockausstrategiat MCP-testauksessa
 
 Mockaus on välttämätöntä komponenttien eristämiseksi testauksen aikana.
 
-### Komponentit, joita mockata
+### Mockattavat komponentit
 
 1. **Ulkoiset tekoälymallit**: Mockkaa mallivastaukset ennustettavaa testausta varten
 2. **Ulkoiset palvelut**: Mockkaa API-riippuvuudet (tietokannat, kolmannen osapuolen palvelut)
 3. **Autentikointipalvelut**: Mockkaa identiteetin tarjoajat
-4. **Resurssien tarjoajat**: Mockkaa kalliita resurssinkäsittelijöitä
+4. **Resurssien tarjoajat**: Mockkaa kalliita resurssikäsittelijöitä
 
 ### Esimerkki: tekoälymallin vastauksen mockaus
 
@@ -1723,10 +1723,10 @@ Suorituskykytestaus on ratkaisevaa tuotantokäyttöön tarkoitetuille MCP-palvel
 
 ### Mitä mitata
 
-1. **Viive**: Pyyntöjen vasteaika
-2. **Läpimeno**: Käsiteltyjen pyyntöjen määrä sekunnissa
+1. **Viive**: Vastausaika pyynnöille
+2. **Läpäisykyky**: Käsiteltyjen pyyntöjen määrä sekunnissa
 3. **Resurssien käyttö**: CPU:n, muistin ja verkon käyttö
-4. **Samaan aikaan suoritettavat pyynnöt**: Toiminta rinnakkaisissa pyynnöissä
+4. **Saman aikaiset pyynnöt**: Toiminta rinnakkaisten pyyntöjen alla
 5. **Skaalautuvuus**: Suorituskyky kuormituksen kasvaessa
 
 ### Suorituskykytestauksen työkalut
@@ -1776,13 +1776,13 @@ export default function () {
 }
 ```
 
-## Testiautomaation hyödyntäminen MCP-palvelimissa
+## Testiautomaation käyttö MCP-palvelimissa
 
-Testien automatisointi varmistaa laadun johdonmukaisuuden ja nopeammat palautesykli.
+Testien automatisointi varmistaa tasaisen laadun ja nopeammat palautesykli.
 
 ### CI/CD-integraatio
 
-1. **Aja yksikkötestit pull requesteissa**: Varmista, etteivät koodimuutokset riko olemassa olevaa toimintaa
+1. **Suorita yksikkötestit pull requesteissa**: Varmista, ettei koodimuutokset riko olemassa olevaa toiminnallisuutta
 2. **Integraatiotestit staging-ympäristössä**: Suorita integraatiotestit esituotantoympäristössä
 3. **Suorituskyvyn vertailuarvot**: Pidä yllä suorituskykyvertailuja regressioiden havaitsemiseksi
 4. **Turvallisuusskannaukset**: Automatisoi turvallisuustestaus osana putkea
@@ -1826,19 +1826,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## MCP-spesifikaation noudattamisen testaus
+## MCP-spesifikaation mukaisuuden testaus
 
 Varmista, että palvelimesi toteuttaa MCP-spesifikaation oikein.
 
-### Keskeiset noudattamisalueet
+### Keskeiset vaatimukset
 
 1. **API-päätepisteet**: Testaa vaaditut päätepisteet (/resources, /tools jne.)
-2. **Pyyntö-/vastausmuoto**: Vahvista skeemanmukaisuus
+2. **Pyyntö-/vastausmuoto**: Varmista skeeman mukaisuus
 3. **Virhekoodit**: Tarkista oikeat tilakoodit eri tilanteissa
-4. **Sisältötyypit**: Testaa eri sisältötyyppien käsittely
-5. **Autentikointivirta**: Varmista spesifikaation mukaiset tunnistautumismenetelmät
+4. **Sisältötyypit**: Testaa erilaisten sisältötyyppien käsittely
+5. **Autentikointivirta**: Varmista spesifikaation mukaiset autentikointimekanismit
 
-### Noudattavuustestaussarja
+### Yhteensopivuustestaussarja
 
 ```csharp
 [Fact]
@@ -1865,30 +1865,34 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## Kymmenen parasta vinkkiä tehokkaaseen MCP-palvelinten testaukseen
+## 10 parasta vinkkiä tehokkaaseen MCP-palvelinten testaukseen
 
-1. **Testaa työkalumäärittelyt erikseen**: Varmista skeemojen oikeellisuus erillään työkalulogiiikasta
-2. **Käytä parametrisoituja testejä**: Testaa työkaluja monipuolisilla syötteillä, mukaan lukien reunatapaukset
-3. **Tarkista virhevastaukset**: Varmista asianmukainen virheenkäsittely kaikissa mahdollisissa virhetilanteissa
+1. **Testaa työkalumäärittelyt erikseen**: Varmista skeemojen toimivuus erillään työkalulogikasta
+2. **Käytä parametrisoituja testejä**: Testaa työkaluja monipuolisilla syötteillä, myös reunatapauksilla
+3. **Tarkista virhevastaukset**: Varmista virheiden asianmukainen käsittely kaikissa tilanteissa
 4. **Testaa valtuutuslogiikka**: Varmista pääsynhallinta eri käyttäjärooleille
-5. **Seuraa testikattavuutta**: Pyri korkeaan kattavuuteen kriittisissä poluissa
-6. **Testaa suoratoistovastaukset**: Varmista suoratoistosisällön asianmukainen käsittely
+5. **Seuraa testikattavuutta**: Pyri korkeaan kattavuuteen kriittisissä koodipoluissa
+6. **Testaa suoratoistovastaukset**: Varmista suoratoiston asianmukainen käsittely
 7. **Simuloi verkkohäiriöitä**: Testaa toiminta huonoissa verkkoyhteyksissä
-8. **Testaa resurssirajoituksia**: Varmista toiminta, kun käyttörajat tai nopeusrajoitukset ylittyvät
-9. **Automatisoi regressiotestit**: Luo testipaketti, joka ajetaan jokaisen koodimuutoksen yhteydessä
-10. **Dokumentoi testitapaukset**: Pidä selkeää dokumentaatiota testiskenaarioista
+8. **Testaa resurssirajoitukset**: Varmista toiminta, kun saavutetaan kiintiöt tai rajoitukset
+9. **Automatisoi regressiotestit**: Rakenna testipaketti, joka ajetaan jokaisen koodimuutoksen yhteydessä
+10. **Dokumentoi testitapaukset**: Pidä selkeät dokumentaatiot testiskenaarioista
 
 ## Yleisiä testauksen sudenkuoppia
 
-- **Liiallinen luottamus onnistuneisiin polkuihin**: Muista testata myös virhetilanteet perusteellisesti
-- **Suorituskyvyn testaamisen laiminlyönti**: Tunnista pullonkaulat ennen kuin ne vaikuttavat tuotantoon
-- **Testaus vain eristetysti**: Yhdistä yksikkö-, integraatio- ja loppukäyttäjätestit
-- **Epä täydellinen API-kattavuus**: Varmista, että kaikki päätepisteet ja ominaisuudet on testattu
-- **Epäjohdonmukaiset testausympäristöt**: Käytä kontteja johdonmukaisuuden takaamiseksi
+- **Liiallinen luottamus onnistuneisiin polkuihin**: Muista testata virhetilanteet huolellisesti
+- **Suorituskyvyn testaamisen laiminlyönti**: Tunnista pullonkaulat ennen tuotantovaikutuksia
+- **Testaus vain eristyksissä**: Yhdistä yksikkö-, integraatio- ja E2E-testit
+- **Epätyydyttävä API-kattavuus**: Varmista kaikkien päätepisteiden ja ominaisuuksien testaus
+- **Epäjohdonmukaiset testausympäristöt**: Käytä kontteja yhtenäisten ympäristöjen varmistamiseksi
 
 ## Yhteenveto
 
+Kattava testausstrategia on välttämätön luotettavien ja laadukkaiden MCP-palvelimien kehittämisessä. Toteuttamalla tässä oppaassa esitetyt parhaat käytännöt
+5. Harkitse edistyneiden kurssien suorittamista tietyistä MCP-aiheista, kuten monimuotoisen integraation tai yrityssovellusintegraation parissa.  
+6. Kokeile rakentaa omia MCP-työkaluja ja työnkulkuja käyttäen [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) -harjoituksessa opittuja periaatteita.  
 
+Seuraava: Parhaat käytännöt [case studyt](../09-CaseStudy/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja omalla kielellään on ensisijainen ja virallinen lähde. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

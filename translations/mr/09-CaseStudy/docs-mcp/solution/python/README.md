@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a05fb941810e539147fec53aaadbb6fd",
-  "translation_date": "2025-06-21T14:28:25+00:00",
+  "translation_date": "2025-07-14T06:38:50+00:00",
   "source_file": "09-CaseStudy/docs-mcp/solution/python/README.md",
   "language_code": "mr"
 }
 -->
-# Chainlit आणि Microsoft Learn Docs MCP सह अभ्यास योजना जनरेटर
+# Study Plan Generator with Chainlit & Microsoft Learn Docs MCP
 
-## आवश्यक पूर्वतयारी
+## पूर्वअट
 
 - Python 3.8 किंवा त्याहून अधिक आवृत्ती
 - pip (Python पॅकेज मॅनेजर)
@@ -18,7 +18,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## स्थापना
 
 1. हा रेपॉजिटरी क्लोन करा किंवा प्रोजेक्ट फाइल्स डाउनलोड करा.
-2. आवश्यक असलेल्या अवलंबनांची स्थापना करा:
+2. आवश्यक अवलंबित्वे इन्स्टॉल करा:
 
    ```bash
    pip install -r requirements.txt
@@ -26,29 +26,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## वापर
 
-### परिस्थिती 1: Docs MCP साठी सोपा प्रश्न
-एक कमांड-लाइन क्लायंट जो Docs MCP सर्व्हरशी कनेक्ट होतो, प्रश्न पाठवतो आणि निकाल दाखवतो.
+### परिस्थिती 1: Docs MCP कडे साधा प्रश्न विचारणे
+एक कमांड-लाइन क्लायंट जो Docs MCP सर्व्हरशी कनेक्ट होतो, प्रश्न पाठवतो आणि निकाल प्रदर्शित करतो.
 
 1. स्क्रिप्ट चालवा:
    ```bash
    python scenario1.py
    ```
-2. प्रॉम्प्टवर तुमचा दस्तऐवज प्रश्न टाका.
+2. प्रॉम्प्टवर आपला दस्तऐवजीकरण प्रश्न टाका.
 
-### परिस्थिती 2: अभ्यास योजना जनरेटर (Chainlit वेब अ‍ॅप)
-Chainlit वापरून वेब-आधारित इंटरफेस जे वापरकर्त्यांना कोणत्याही तांत्रिक विषयासाठी वैयक्तिकृत, आठवड्यांनिहाय अभ्यास योजना तयार करण्याची परवानगी देते.
+### परिस्थिती 2: Study Plan Generator (Chainlit वेब अॅप)
+एक वेब-आधारित इंटरफेस (Chainlit वापरून) जो वापरकर्त्यांना कोणत्याही तांत्रिक विषयासाठी वैयक्तिकृत, आठवड्यांनिहाय अभ्यास योजना तयार करण्याची परवानगी देतो.
 
-1. Chainlit अ‍ॅप सुरू करा:
+1. Chainlit अॅप सुरू करा:
    ```bash
    chainlit run scenario2.py
    ```
-2. तुमच्या टर्मिनलमध्ये दिलेला स्थानिक URL (उदा., http://localhost:8000) तुमच्या ब्राउझरमध्ये उघडा.
-3. चॅट विंडोमध्ये तुमचा अभ्यास विषय आणि तुम्हाला किती आठवडे अभ्यास करायचा आहे ते लिहा (उदा., "AI-900 certification, 8 weeks").
-4. अ‍ॅप आठवड्यांनिहाय अभ्यास योजना तयार करेल, ज्यात संबंधित Microsoft Learn दस्तऐवजांचे दुवे असतील.
+2. आपल्या टर्मिनलमध्ये दिलेला लोकल URL (उदा. http://localhost:8000) आपल्या ब्राउझरमध्ये उघडा.
+3. चॅट विंडोमध्ये आपला अभ्यास विषय आणि आपण किती आठवडे अभ्यास करू इच्छिता ते टाका (उदा. "AI-900 certification, 8 weeks").
+4. अॅप आठवड्यांनिहाय अभ्यास योजना देईल, ज्यात संबंधित Microsoft Learn दस्तऐवजीकरणासाठी दुवे असतील.
 
 **आवश्यक पर्यावरणीय चल:**
 
-परिस्थिती 2 (Azure OpenAI सह Chainlit वेब अ‍ॅप) वापरण्यासाठी, तुम्हाला `.env` file in the `python` फोल्डरमध्ये खालील पर्यावरणीय चल सेट करावे लागतील:
+परिस्थिती 2 (Azure OpenAI सह Chainlit वेब अॅप) वापरण्यासाठी, `python` निर्देशिकेत `.env` फाइलमध्ये खालील पर्यावरणीय चल सेट करणे आवश्यक आहे:
 
 ```
 AZURE_OPENAI_CHAT_DEPLOYMENT_NAME=
@@ -57,36 +57,36 @@ AZURE_OPENAI_ENDPOINT=
 AZURE_OPENAI_API_VERSION=
 ```
 
-अ‍ॅप चालवण्यापूर्वी या मूल्यांमध्ये तुमचे Azure OpenAI संसाधन तपशील भरा.
+अॅप चालवण्यापूर्वी आपल्या Azure OpenAI संसाधन तपशीलांसह ही मूल्ये भरा.
 
-> **टीप:** तुम्ही सहजपणे [Azure AI Foundry](https://ai.azure.com/) वापरून तुमची स्वतःची मॉडेल्स डिप्लॉय करू शकता.
+> **Tip:** आपण सहजपणे [Azure AI Foundry](https://ai.azure.com/) वापरून आपले स्वतःचे मॉडेल तैनात करू शकता.
 
 ### परिस्थिती 3: VS Code मध्ये MCP सर्व्हरसह इन-एडिटर Docs
 
-ब्राउझर टॅब स्विच न करता, तुम्ही Microsoft Learn Docs थेट तुमच्या VS Code मध्ये MCP सर्व्हर वापरून आणू शकता. यामुळे तुम्हाला:
-- VS Code मध्येच डॉक्युमेंटेशन शोधणे आणि वाचणे शक्य होते, कोडिंग वातावरण सोडण्याची गरज नाही.
-- README किंवा कोर्स फाइल्समध्ये थेट संदर्भ दुवे समाविष्ट करता येतात.
-- GitHub Copilot आणि MCP एकत्र वापरून एक अखंड, AI-शक्तीने चालणारा डॉक्युमेंटेशन वर्कफ्लो मिळतो.
+ब्राउझर टॅब स्विच न करता Microsoft Learn Docs थेट आपल्या VS Code मध्ये आणा, MCP सर्व्हर वापरून. यामुळे आपण:
+- VS Code मध्येच दस्तऐवज शोधू आणि वाचू शकता, कोडिंग वातावरण सोडण्याची गरज नाही.
+- दस्तऐवज संदर्भित करू शकता आणि थेट README किंवा कोर्स फाइल्समध्ये दुवे घालू शकता.
+- GitHub Copilot आणि MCP एकत्र वापरून AI-शक्तीने चालणारा दस्तऐवज कार्यप्रवाह साधू शकता.
 
-**उदाहरण वापर:**
-- कोर्स किंवा प्रोजेक्ट डॉक्युमेंटेशन लिहिताना README मध्ये जलद संदर्भ दुवे जोडणे.
-- Copilot वापरून कोड जनरेट करा आणि MCP वापरून तत्काळ संबंधित डॉक्युमेंटेशन शोधा आणि उद्धृत करा.
-- तुमच्या एडिटरमध्ये लक्ष केंद्रित ठेवा आणि उत्पादनक्षमता वाढवा.
+**उदाहरण वापर प्रकरणे:**
+- कोर्स किंवा प्रोजेक्ट दस्तऐवज लिहिताना README मध्ये जलद संदर्भ दुवे जोडा.
+- Copilot वापरून कोड तयार करा आणि MCP वापरून तत्काळ संबंधित दस्तऐवज शोधा आणि संदर्भ द्या.
+- आपल्या संपादकात लक्ष केंद्रित ठेवा आणि उत्पादकता वाढवा.
 
 > [!IMPORTANT]
-> सुनिश्चित करा की तुमच्याकडे वैध [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) configuration in your workspace (location is `.vscode/mcp.json`).
+> आपल्या वर्कस्पेसमध्ये वैध [`mcp.json`](../../../../../../09-CaseStudy/docs-mcp/solution/scenario3/mcp.json) कॉन्फिगरेशन असल्याची खात्री करा (स्थान `.vscode/mcp.json` आहे).
 
-## Why Chainlit for Scenario 2?
+## परिस्थिती 2 साठी Chainlit का?
 
-Chainlit is a modern open-source framework for building conversational web applications. It makes it easy to create chat-based user interfaces that connect to backend services like the Microsoft Learn Docs MCP server. This project uses Chainlit to provide a simple, interactive way to generate personalized study plans in real time. By leveraging Chainlit, you can quickly build and deploy chat-based tools that enhance productivity and learning.
+Chainlit ही संभाषणात्मक वेब अॅप्लिकेशन्स तयार करण्यासाठी एक आधुनिक ओपन-सोर्स फ्रेमवर्क आहे. हे Microsoft Learn Docs MCP सर्व्हर सारख्या बॅकएंड सेवांशी कनेक्ट होणारे चॅट-आधारित यूजर इंटरफेस तयार करणे सोपे करते. हा प्रोजेक्ट Chainlit वापरून वैयक्तिकृत अभ्यास योजना रिअल टाइममध्ये तयार करण्याचा एक सोपा, संवादात्मक मार्ग प्रदान करतो. Chainlit चा वापर करून आपण जलदपणे चॅट-आधारित टूल्स तयार आणि तैनात करू शकता जे उत्पादकता आणि शिक्षण सुधारतात.
 
-## What This Does
+## हे काय करते
 
-This app allows users to create a personalized study plan by simply entering a topic and a duration. The app parses your input, queries the Microsoft Learn Docs MCP server for relevant content, and organizes the results into a structured, week-by-week plan. Each week’s recommendations are displayed in the chat, making it easy to follow and track your progress. The integration ensures you always get the latest, most relevant learning resources.
+हा अॅप वापरकर्त्यांना फक्त विषय आणि कालावधी टाकून वैयक्तिकृत अभ्यास योजना तयार करण्याची परवानगी देतो. अॅप आपला इनपुट पार्स करतो, Microsoft Learn Docs MCP सर्व्हरवर संबंधित सामग्रीसाठी क्वेरी पाठवतो आणि निकालांना संरचित, आठवड्यांनिहाय योजनेत रूपांतरित करतो. प्रत्येक आठवड्याच्या शिफारशी चॅटमध्ये दाखवल्या जातात, ज्यामुळे प्रगती सहजपणे ट्रॅक करता येते. या एकत्रिकरणामुळे आपल्याला नेहमीच ताज्या आणि संबंधित शिक्षण संसाधनांचा लाभ मिळतो.
 
-## Sample Queries
+## नमुना प्रश्न
 
-Try these queries in the chat window to see how the app responds:
+चॅट विंडोमध्ये खालील प्रश्न विचारून पहा आणि अॅप कसे प्रतिसाद देते ते पाहा:
 
 - `AI-900 certification, 8 weeks`
 - `Learn Azure Functions, 4 weeks`
@@ -95,9 +95,9 @@ Try these queries in the chat window to see how the app responds:
 - `Microsoft security fundamentals, 5 weeks`
 - `Power Platform, 7 weeks`
 - `Azure AI services, 12 weeks`
-- `Cloud architecture, 9 weeks` 
+- `Cloud architecture, 9 weeks`
 
-हे उदाहरण वेगवेगळ्या शिकण्याच्या उद्दिष्टांसाठी आणि कालावधींसाठी अ‍ॅपची लवचीकता दर्शवितात.
+हे उदाहरणे अॅपच्या विविध शिक्षण उद्दिष्टे आणि कालावधींसाठी लवचिकता दर्शवतात.
 
 ## संदर्भ
 
@@ -105,4 +105,4 @@ Try these queries in the chat window to see how the app responds:
 - [MCP Documentation](https://github.com/MicrosoftDocs/mcp)
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) चा वापर करून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा असमर्थता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवलेल्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थ लावण्याबद्दल आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

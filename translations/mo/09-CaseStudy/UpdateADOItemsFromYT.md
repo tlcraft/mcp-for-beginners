@@ -2,38 +2,38 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "14a2dfbea55ef735660a06bd6bdfe5f3",
-  "translation_date": "2025-06-13T21:32:02+00:00",
+  "translation_date": "2025-07-14T06:09:37+00:00",
   "source_file": "09-CaseStudy/UpdateADOItemsFromYT.md",
   "language_code": "mo"
 }
 -->
-# Case Study: Updating Azure DevOps Items from YouTube Data with MCP
+# 案例研究：使用 MCP 從 YouTube 資料更新 Azure DevOps 項目
 
-> **Disclaimer:** There are existing online tools and reports that can automate the process of updating Azure DevOps items with data from platforms like YouTube. The following scenario is provided purely as a sample use case to illustrate how MCP tools can be applied for automation and integration tasks.
+> **免責聲明：** 市面上已有現成的線上工具和報告，可以自動化將 YouTube 等平台的資料更新至 Azure DevOps 項目的流程。以下情境僅作為示範用例，說明如何運用 MCP 工具進行自動化與整合任務。
 
-## Overview
+## 概述
 
-This case study shows an example of how the Model Context Protocol (MCP) and its tools can automate updating Azure DevOps (ADO) work items with information pulled from online platforms like YouTube. The scenario is just one example of the broader capabilities of these tools, which can be adapted to many similar automation needs.
+本案例展示了如何利用 Model Context Protocol (MCP) 及其工具，自動化將來自線上平台（如 YouTube）的資訊更新至 Azure DevOps (ADO) 工作項目。所描述的情境只是這些工具廣泛應用能力的一個範例，能夠靈活調整以符合其他類似的自動化需求。
 
-In this example, an Advocate tracks online sessions using ADO items, where each item includes a YouTube video URL. By using MCP tools, the Advocate can keep ADO items updated with the latest video metrics, such as view counts, in a repeatable and automated way. This approach can be generalized to other cases where data from online sources needs to be integrated into ADO or other systems.
+在此範例中，一位 Advocate 使用 ADO 項目追蹤線上會議，每個項目包含一個 YouTube 影片網址。透過 MCP 工具，Advocate 能夠以可重複且自動化的方式，持續更新 ADO 項目中的最新影片數據，例如觀看次數。此方法同樣適用於其他需要將線上資訊整合至 ADO 或其他系統的情境。
 
-## Scenario
+## 情境說明
 
-An Advocate is responsible for tracking the impact of online sessions and community engagements. Each session is logged as an ADO work item in the 'DevRel' project, and the work item contains a field for the YouTube video URL. To accurately report the session's reach, the Advocate needs to update the ADO item with the current number of video views and the date this information was retrieved.
+Advocate 負責追蹤線上會議及社群互動的影響力。每場會議皆以 ADO 工作項目記錄於 'DevRel' 專案中，且工作項目包含 YouTube 影片網址欄位。為了準確報告會議的觸及範圍，Advocate 需要將目前的影片觀看次數及資料擷取日期更新至 ADO 項目中。
 
-## Tools Used
+## 使用工具
 
-- [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp): Enables programmatic access and updates to ADO work items via MCP.
-- [Playwright MCP](https://github.com/microsoft/playwright-mcp): Automates browser actions to extract live data from web pages, such as YouTube video statistics.
+- [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp)：透過 MCP 以程式化方式存取並更新 ADO 工作項目。
+- [Playwright MCP](https://github.com/microsoft/playwright-mcp)：自動化瀏覽器操作，擷取網頁上的即時資料，如 YouTube 影片統計數據。
 
-## Step-by-Step Workflow
+## 逐步工作流程
 
-1. **Identify the ADO Item**: Start with the ADO work item ID (e.g., 1234) in the 'DevRel' project.
-2. **Retrieve the YouTube URL**: Use the Azure DevOps MCP tool to get the YouTube URL from the work item.
-3. **Extract Video Views**: Use the Playwright MCP tool to navigate to the YouTube URL and extract the current view count.
-4. **Update the ADO Item**: Write the latest view count and the date of retrieval into the 'Impact and Learnings' section of the ADO work item using the Azure DevOps MCP tool.
+1. **識別 ADO 項目**：從 'DevRel' 專案中取得 ADO 工作項目 ID（例如 1234）。
+2. **擷取 YouTube 網址**：使用 Azure DevOps MCP 工具從該工作項目取得 YouTube 影片網址。
+3. **擷取影片觀看次數**：利用 Playwright MCP 工具前往該 YouTube 網址，擷取目前的觀看次數。
+4. **更新 ADO 項目**：使用 Azure DevOps MCP 工具，將最新觀看次數及擷取日期寫入 ADO 工作項目的「Impact and Learnings」區塊。
 
-## Example Prompt
+## 範例提示
 
 ```bash
 - Work with the ADO Item ID: 1234
@@ -43,7 +43,7 @@ An Advocate is responsible for tracking the impact of online sessions and commun
 - Update the ADO item with the current video views and the updated date of the information
 ```
 
-## Mermaid Flowchart
+## Mermaid 流程圖
 
 ```mermaid
 flowchart TD
@@ -53,27 +53,23 @@ flowchart TD
     D --> E[End]
 ```
 
-## Technical Implementation
+## 技術實作
 
-- **MCP Orchestration**: The workflow is orchestrated by an MCP server, which coordinates the use of both Azure DevOps MCP and Playwright MCP tools.
-- **Automation**: The process can be triggered manually or scheduled to run at regular intervals to keep ADO items up to date.
-- **Extensibility**: The same pattern can be extended to update ADO items with other online metrics (e.g., likes, comments) or from other platforms.
+- **MCP 編排**：整個流程由 MCP 伺服器負責編排，協調 Azure DevOps MCP 與 Playwright MCP 工具的使用。
+- **自動化**：此流程可手動觸發，或設定定期排程以保持 ADO 項目資料最新。
+- **擴充性**：同樣模式可延伸至更新 ADO 項目其他線上指標（如按讚數、留言數）或來自其他平台的資料。
 
-## Results and Impact
+## 成果與影響
 
-- **Efficiency**: Reduces manual effort for Advocates by automating the retrieval and update of video metrics.
-- **Accuracy**: Ensures that ADO items reflect the most current data available from online sources.
-- **Repeatability**: Provides a reusable workflow for similar scenarios involving other data sources or metrics.
+- **效率提升**：透過自動擷取與更新影片數據，減少 Advocate 的手動工作量。
+- **資料準確**：確保 ADO 項目反映線上來源的最新資訊。
+- **可重複使用**：提供一套可重複利用的工作流程，適用於其他資料來源或指標的類似情境。
 
-## References
+## 參考資料
 
 - [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp)
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language or code "mo" refers to? There are several possibilities (e.g., Moldovan, a programming language, or a constructed language). Providing more context will help me deliver an accurate translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

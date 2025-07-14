@@ -2,40 +2,40 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-05-17T12:02:47+00:00",
+  "translation_date": "2025-07-13T20:15:11+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "tr"
 }
 -->
 # Bu örneği çalıştırma
 
-`uv` yüklemeniz önerilir, ancak zorunlu değildir, [talimatlara](https://docs.astral.sh/uv/#highlights) bakın
+`uv` kurmanız önerilir ancak zorunlu değildir, detaylar için [talimatlara](https://docs.astral.sh/uv/#highlights) bakabilirsiniz.
 
-## -0- Sanal bir ortam oluşturun
+## -0- Sanal ortam oluşturma
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Sanal ortamı etkinleştirin
+## -1- Sanal ortamı aktifleştirme
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Bağımlılıkları yükleyin
+## -2- Bağımlılıkları yükleme
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Örneği çalıştırın
+## -3- Örneği çalıştırma
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Örneği test edin
+## -4- Örneği test etme
 
 Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki komutu çalıştırın:
 
@@ -43,16 +43,16 @@ Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki
 mcp dev server.py
 ```
 
-Bu, örneği test etmenize olanak tanıyan görsel arayüzlü bir web sunucusu başlatmalıdır.
+Bu, örneği test etmenize olanak sağlayan görsel arayüze sahip bir web sunucusunu başlatmalıdır.
 
-Sunucu bağlandığında:
+Sunucu bağlandıktan sonra:
 
-- araçları listelemeyi deneyin ve `add`, with args 2 and 4, you should see 6 in the result.
-- go to resources and resource template and call get_greeting, type in a name and you should see a greeting with the name you provided.
+- araçları listelemeyi deneyin ve `add` komutunu, argüman olarak 2 ve 4 ile çalıştırın, sonuçta 6 görmelisiniz.
+- resources ve resource template kısmına gidin, get_greeting fonksiyonunu çağırın, bir isim yazın ve verdiğiniz isimle bir selamlama görmelisiniz.
 
-### Testing in ClI mode
+### CLI modunda test etme
 
-The inspector you ran is actually a Node.js app and `mcp dev` bunun etrafında bir sarmalayıcıdır.
+Çalıştırdığınız inspector aslında bir Node.js uygulamasıdır ve `mcp dev` bunun etrafında bir sarmalayıcıdır.
 
 Aşağıdaki komutu çalıştırarak doğrudan CLI modunda başlatabilirsiniz:
 
@@ -91,7 +91,7 @@ Bu, sunucuda mevcut olan tüm araçları listeleyecektir. Aşağıdaki çıktıy
 }
 ```
 
-Bir aracı çağırmak için yazın:
+Bir aracı çağırmak için şunu yazın:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -112,8 +112,8 @@ Aşağıdaki çıktıyı görmelisiniz:
 ```
 
 > ![!TIP]
-> Genellikle ispector'ı tarayıcıda çalıştırmaktan çok CLI modunda çalıştırmak daha hızlıdır.
-> İnspektör hakkında daha fazla bilgiyi [buradan](https://github.com/modelcontextprotocol/inspector) okuyun.
+> Inspector'ı tarayıcıda çalıştırmaktansa CLI modunda çalıştırmak genellikle çok daha hızlıdır.
+> Inspector hakkında daha fazla bilgi için [buraya](https://github.com/modelcontextprotocol/inspector) bakabilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "882aae00f1d3f007e20d03b883f44afa",
-  "translation_date": "2025-06-18T06:04:10+00:00",
+  "translation_date": "2025-07-13T22:17:46+00:00",
   "source_file": "03-GettingStarted/samples/csharp/README.md",
   "language_code": "id"
 }
 -->
-# Layanan Kalkulator Dasar MCP
+# Basic Calculator MCP Service
 
-Layanan ini menyediakan operasi kalkulator dasar melalui Model Context Protocol (MCP). Dirancang sebagai contoh sederhana bagi pemula yang ingin mempelajari implementasi MCP.
+Layanan ini menyediakan operasi kalkulator dasar melalui Model Context Protocol (MCP). Dirancang sebagai contoh sederhana untuk pemula yang belajar tentang implementasi MCP.
 
 Untuk informasi lebih lanjut, lihat [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 
@@ -19,17 +19,17 @@ Layanan kalkulator ini menawarkan kemampuan berikut:
 
 1. **Operasi Aritmatika Dasar**:
    - Penjumlahan dua angka
-   - Pengurangan satu angka dari angka lainnya
+   - Pengurangan satu angka dari angka lain
    - Perkalian dua angka
    - Pembagian satu angka dengan angka lain (dengan pengecekan pembagian nol)
 
-## Menggunakan `stdio` Tipe
-
+## Menggunakan Tipe `stdio`
+  
 ## Konfigurasi
 
-1. **Konfigurasikan Server MCP**:
+1. **Konfigurasikan MCP Servers**:
    - Buka workspace Anda di VS Code.
-   - Buat file `.vscode/mcp.json` di folder workspace Anda untuk mengonfigurasi server MCP. Contoh konfigurasi:
+   - Buat file `.vscode/mcp.json` di folder workspace Anda untuk mengonfigurasi MCP servers. Contoh konfigurasi:
 
      ```jsonc
      {
@@ -54,39 +54,38 @@ Layanan kalkulator ini menawarkan kemampuan berikut:
      }
      ```
 
-   - Anda akan diminta memasukkan root repositori GitHub, yang dapat diambil dari perintah `git rev-parse --show-toplevel`.
+   - Anda akan diminta memasukkan root repository GitHub, yang bisa didapatkan dari perintah `git rev-parse --show-toplevel`.
 
-## Using the Service
+## Menggunakan Layanan
 
-The service exposes the following API endpoints through the MCP protocol:
+Layanan ini menyediakan endpoint API berikut melalui protokol MCP:
 
-- `add(a, b)`: Add two numbers together
-- `subtract(a, b)`: Subtract the second number from the first
-- `multiply(a, b)`: Multiply two numbers
-- `divide(a, b)`: Divide the first number by the second (with zero check)
-- isPrime(n): Check if a number is prime
+- `add(a, b)`: Menjumlahkan dua angka
+- `subtract(a, b)`: Mengurangkan angka kedua dari angka pertama
+- `multiply(a, b)`: Mengalikan dua angka
+- `divide(a, b)`: Membagi angka pertama dengan angka kedua (dengan pengecekan nol)
+- isPrime(n): Memeriksa apakah sebuah angka adalah bilangan prima
 
-## Test with Github Copilot Chat in VS Code
+## Uji dengan Github Copilot Chat di VS Code
 
-1. Try making a request to the service using the MCP protocol. For example, you can ask:
+1. Coba buat permintaan ke layanan menggunakan protokol MCP. Misalnya, Anda bisa bertanya:
    - "Add 5 and 3"
    - "Subtract 10 from 4"
    - "Multiply 6 and 7"
    - "Divide 8 by 2"
    - "Does 37854 prime?"
    - "What are the 3 prime numbers before after 4242?"
-2. To make sure it's using the tools add #MyCalculator to the prompt. For example:
+2. Untuk memastikan menggunakan tools, tambahkan #MyCalculator pada prompt. Contohnya:
    - "Add 5 and 3 #MyCalculator"
-   - "Subtract 10 from 4 #MyCalculator
+   - "Subtract 10 from 4 #MyCalculator"
 
+## Versi Containerized
 
-## Containerized Version
+Solusi sebelumnya sangat baik jika Anda sudah menginstal .NET SDK dan semua dependensi sudah tersedia. Namun, jika Anda ingin membagikan solusi ini atau menjalankannya di lingkungan berbeda, Anda bisa menggunakan versi containerized.
 
-The previous soultion is great when you have the .NET SDK installed, and all the dependencies are in place. However, if you would like to share the solution or run it in a different environment, you can use the containerized version.
-
-1. Start Docker and make sure it's running.
-1. From a terminal, navigate in the folder `03-GettingStarted\samples\csharp\src` 
-1. To build the Docker image for the calculator service, execute the following command (replace `<YOUR-DOCKER-USERNAME>` dengan username Docker Hub Anda):
+1. Jalankan Docker dan pastikan sudah aktif.
+1. Dari terminal, masuk ke folder `03-GettingStarted\samples\csharp\src`
+1. Untuk membangun image Docker untuk layanan kalkulator, jalankan perintah berikut (ganti `<YOUR-DOCKER-USERNAME>` dengan username Docker Hub Anda):
    ```bash
    docker build -t <YOUR-DOCKER-USERNAME>/mcp-calculator .
    ``` 
@@ -95,7 +94,7 @@ The previous soultion is great when you have the .NET SDK installed, and all the
     docker push <YOUR-DOCKER-USERNAME>/mcp-calculator
   ```
 
-## Gunakan Versi Dockerized
+## Menggunakan Versi Dockerized
 
 1. Di file `.vscode/mcp.json`, ganti konfigurasi server dengan yang berikut:
    ```json
@@ -111,11 +110,11 @@ The previous soultion is great when you have the .NET SDK installed, and all the
       "env": {}
     }
    ```
-   Melihat konfigurasi tersebut, Anda dapat melihat bahwa perintahnya adalah `docker` and the args are `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. The `--rm` flag ensures that the container is removed after it stops, and the `-i` flag allows you to interact with the container's standard input. The last argument is the name of the image we just built and pushed to Docker Hub.
+   Melihat konfigurasi tersebut, Anda bisa lihat bahwa perintahnya adalah `docker` dan argumennya `run --rm -i <YOUR-DOCKER-USERNAME>/mcp-calc`. Flag `--rm` memastikan container dihapus setelah berhenti, dan flag `-i` memungkinkan Anda berinteraksi dengan input standar container. Argumen terakhir adalah nama image yang baru saja kita buat dan unggah ke Docker Hub.
 
-## Test the Dockerized Version
+## Uji Versi Dockerized
 
-Start the MCP Server by clicking the little Start button above `"mcp-calc": {`, dan seperti sebelumnya Anda dapat meminta layanan kalkulator untuk melakukan perhitungan matematika untuk Anda.
+Mulai MCP Server dengan mengklik tombol Start kecil di atas `"mcp-calc": {`, dan seperti sebelumnya Anda bisa meminta layanan kalkulator untuk melakukan perhitungan.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

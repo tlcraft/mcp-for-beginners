@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54e9ffc5dba01afcb8880a9949fd1881",
-  "translation_date": "2025-07-04T17:35:24+00:00",
+  "translation_date": "2025-07-13T19:30:32+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "sv"
 }
@@ -60,7 +60,7 @@ Lägg till följande innehåll i *mcp.json*:
 }
 ```
 
-Ovan är ett enkelt exempel på hur man startar en server skriven i Node.js, för andra körmiljöer anger du rätt kommando för att starta servern med `command` och `args`.
+Här ovan är ett enkelt exempel på hur man startar en server skriven i Node.js, för andra körmiljöer anger du rätt kommando för att starta servern med `command` och `args`.
 
 ### -3- Starta servern
 
@@ -72,17 +72,17 @@ Nu när du har lagt till en post, låt oss starta servern:
 
 1. Klicka på "play"-ikonen, du bör se att verktygsikonen i GitHub Copilot Chat ökar antalet tillgängliga verktyg. Om du klickar på verktygsikonen ser du en lista över registrerade verktyg. Du kan markera/avmarkera varje verktyg beroende på om du vill att GitHub Copilot ska använda dem som kontext:
 
-  ![Verktyg i Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.sv.png)
+  ![Starta server i Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.sv.png)
 
 1. För att köra ett verktyg, skriv en prompt som du vet matchar beskrivningen av ett av dina verktyg, till exempel en prompt som "add 22 to 1":
 
   ![Köra ett verktyg från GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.sv.png)
 
-  Du bör få ett svar som säger 23.
+  Du bör se ett svar som säger 23.
 
 ## Uppgift
 
-Försök att lägga till en serverpost i din *mcp.json*-fil och se till att du kan starta/stoppa servern. Kontrollera också att du kan kommunicera med verktygen på din server via GitHub Copilot Chat-gränssnittet.
+Försök att lägga till en serverpost i din *mcp.json*-fil och se till att du kan starta/stoppa servern. Se också till att du kan kommunicera med verktygen på din server via GitHub Copilot Chat-gränssnittet.
 
 ## Lösning
 
@@ -113,4 +113,4 @@ De viktigaste insikterna från detta kapitel är följande:
 - Nästa: [Skapa en SSE-server](../05-sse-server/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

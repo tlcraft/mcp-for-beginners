@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4eb6a48c54555c64b33c763fba3f2842",
-  "translation_date": "2025-06-18T06:17:30+00:00",
+  "translation_date": "2025-07-13T21:04:17+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/dotnet/README.md",
   "language_code": "pl"
 }
@@ -25,7 +25,7 @@ dotnet run
 
 Przed uruchomieniem poniższego polecenia otwórz osobny terminal (upewnij się, że serwer nadal działa).
 
-Gdy serwer działa w jednym terminalu, otwórz kolejny i uruchom następujące polecenie:
+Gdy serwer działa w jednym terminalu, otwórz drugi terminal i uruchom następujące polecenie:
 
 ```bash
 npx @modelcontextprotocol/inspector http://localhost:3001
@@ -35,10 +35,10 @@ To powinno uruchomić serwer WWW z interfejsem wizualnym, który pozwoli Ci prze
 
 > Upewnij się, że jako typ transportu wybrano **Streamable HTTP**, a URL to `http://localhost:3001/mcp`.
 
-Once the server is connected: 
+Po połączeniu z serwerem:
 
-- try listing tools and run `add`, z argumentami 2 i 4, powinieneś zobaczyć w wyniku 6.
-- przejdź do resources i resource template i wywołaj "greeting", wpisz imię, a zobaczysz powitanie z podanym imieniem.
+- spróbuj wyświetlić listę narzędzi i uruchom `add` z argumentami 2 i 4, w wyniku powinno pojawić się 6.
+- przejdź do zasobów i szablonu zasobu, wywołaj "greeting", wpisz imię i powinieneś zobaczyć powitanie z podanym imieniem.
 
 ### Testowanie w trybie CLI
 
@@ -102,7 +102,7 @@ Powinieneś zobaczyć następujący wynik:
 
 > ![!TIP]
 > Zazwyczaj znacznie szybciej jest uruchomić inspektora w trybie CLI niż w przeglądarce.
-> Więcej o inspektorze przeczytasz [tutaj](https://github.com/modelcontextprotocol/inspector).
+> Więcej informacji o inspektorze znajdziesz [tutaj](https://github.com/modelcontextprotocol/inspector).
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być uważany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

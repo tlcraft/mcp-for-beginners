@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-04T18:30:31+00:00",
+  "translation_date": "2025-07-13T22:10:44+00:00",
   "source_file": "03-GettingStarted/09-deployment/README.md",
   "language_code": "hu"
 }
 -->
 # MCP szerverek telepítése
 
-Az MCP szerver telepítésével mások is hozzáférhetnek az eszközeihez és erőforrásaihoz a helyi környezeteden kívül. Többféle telepítési stratégia létezik, amelyeket a skálázhatóság, megbízhatóság és a kezelhetőség szempontjai alapján érdemes mérlegelni. Az alábbiakban útmutatót találsz az MCP szerverek helyi, konténeres és felhőbeli telepítéséhez.
+Az MCP szerver telepítése lehetővé teszi, hogy mások is hozzáférjenek az eszközeihez és erőforrásaihoz a helyi környezeteden kívül. Többféle telepítési stratégia létezik, amelyeket a skálázhatóság, megbízhatóság és a kezelhetőség szempontjai alapján érdemes mérlegelni. Az alábbiakban útmutatót találsz az MCP szerverek helyi, konténeres és felhő alapú telepítéséhez.
 
 ## Áttekintés
 
-Ebben a leckében megtanulhatod, hogyan telepítsd az MCP Server alkalmazásodat.
+Ebben a leckében azt tanulhatod meg, hogyan telepítsd az MCP Server alkalmazásodat.
 
 ## Tanulási célok
 
@@ -34,7 +34,7 @@ SSE esetén (nem szükséges stdio típusú szerverhez)
 1. **Hálózat beállítása**: Győződj meg róla, hogy a szerver elérhető a várt porton.  
 1. **Csatlakoztasd az ügyfeleket**: Használj helyi kapcsolati URL-eket, például `http://localhost:3000`.
 
-## Felhőbeli telepítés
+## Felhő alapú telepítés
 
 Az MCP szerverek különböző felhőplatformokra telepíthetők:
 
@@ -92,7 +92,7 @@ Az Azure Container Apps támogatja az MCP szerverek telepítését. Ez még fejl
   }
   ```
 
-  Miután elindítottad az SSE szervert, a JSON fájlban kattints a lejátszás ikonra, így a GitHub Copilot fel fogja ismerni a szerveren futó eszközöket, lásd az Eszköz ikont.
+  Miután az SSE szerver elindult, kattints a JSON fájlban a lejátszás ikonra, így a GitHub Copilot már fel fogja ismerni a szerveren elérhető eszközöket, lásd az Eszköz ikont.
 
 1. A telepítéshez futtasd a következő parancsot:
 
@@ -113,4 +113,4 @@ Ennyi az egész, telepítsd helyben, vagy az Azure-ra a fenti lépésekkel.
 - Következő: [Gyakorlati megvalósítás](../../04-PracticalImplementation/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

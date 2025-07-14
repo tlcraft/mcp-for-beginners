@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-02T08:12:03+00:00",
+  "translation_date": "2025-07-14T05:09:35+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "ms"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Gambaran Keseluruhan
 
-Pelajaran ini memfokuskan pada amalan terbaik lanjutan untuk membangunkan, menguji, dan mengendalikan pelayan dan ciri MCP dalam persekitaran produksi. Apabila ekosistem MCP menjadi semakin kompleks dan penting, mengikuti corak yang telah ditetapkan memastikan kebolehpercayaan, kemudahan penyelenggaraan, dan interoperabiliti. Pelajaran ini mengumpulkan kebijaksanaan praktikal yang diperoleh daripada pelaksanaan MCP sebenar untuk membimbing anda dalam mencipta pelayan yang kukuh, cekap dengan sumber, arahan, dan alat yang berkesan.
+Pelajaran ini memfokuskan kepada amalan terbaik lanjutan untuk membangunkan, menguji, dan melaksanakan pelayan dan ciri MCP dalam persekitaran pengeluaran. Apabila ekosistem MCP menjadi semakin kompleks dan penting, mengikuti corak yang telah ditetapkan memastikan kebolehpercayaan, kebolehselenggaraan, dan kebolehoperasian. Pelajaran ini mengumpulkan kebijaksanaan praktikal yang diperoleh daripada pelaksanaan MCP sebenar untuk membimbing anda dalam mencipta pelayan yang kukuh dan cekap dengan sumber, arahan, dan alat yang berkesan.
 
 ## Objektif Pembelajaran
 
@@ -20,14 +20,14 @@ Menjelang akhir pelajaran ini, anda akan dapat:
 - Mewujudkan strategi ujian menyeluruh untuk pelayan MCP
 - Mereka corak aliran kerja yang cekap dan boleh digunakan semula untuk aplikasi MCP yang kompleks
 - Melaksanakan pengendalian ralat, pencatatan, dan pemerhatian yang betul dalam pelayan MCP
-- Mengoptimumkan pelaksanaan MCP untuk prestasi, keselamatan, dan kemudahan penyelenggaraan
+- Mengoptimumkan pelaksanaan MCP untuk prestasi, keselamatan, dan kebolehselenggaraan
 
 ## Rujukan Tambahan
 
 Untuk maklumat terkini mengenai amalan terbaik MCP, rujuk:
-- [Dokumentasi MCP](https://modelcontextprotocol.io/)
-- [Spesifikasi MCP](https://spec.modelcontextprotocol.io/)
-- [Repositori GitHub](https://github.com/modelcontextprotocol)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Amalan Terbaik Pembangunan Alat MCP
 
@@ -153,9 +153,9 @@ public class WeatherToolSuite : ITool
 }
 ```
 
-#### 2. Suntikan Kebergantungan dan Kebolehtest
+#### 2. Suntikan Kebergantungan dan Kebolehtestabilan
 
-Reka alat supaya menerima kebergantungan mereka melalui suntikan konstruktor, menjadikannya boleh diuji dan boleh dikonfigurasikan:
+Reka alat supaya menerima kebergantungan mereka melalui suntikan konstruktor, menjadikannya boleh diuji dan dikonfigurasikan:
 
 ```java
 // Java example with dependency injection
@@ -179,7 +179,7 @@ public class CurrencyConversionTool implements Tool {
 }
 ```
 
-#### 3. Alat Boleh Disusun
+#### 3. Alat yang Boleh Disusun
 
 Reka alat yang boleh disusun bersama untuk mencipta aliran kerja yang lebih kompleks:
 
@@ -255,9 +255,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. Had Pengesahan
+#### 2. Sekatan Pengesahan
 
-Sertakan had pengesahan untuk mengelakkan input yang tidak sah:
+Sertakan sekatan pengesahan untuk mengelakkan input yang tidak sah:
 
 ```java
 Map<String, Object> getSchema() {
@@ -299,7 +299,7 @@ Map<String, Object> getSchema() {
 
 #### 3. Struktur Pulangan yang Konsisten
 
-Kekalkan konsistensi dalam struktur respons anda supaya model lebih mudah mentafsir keputusan:
+Kekalkan konsistensi dalam struktur respons anda untuk memudahkan model mentafsir keputusan:
 
 ```python
 async def execute_async(self, request):
@@ -340,9 +340,9 @@ def _format_item(self, item):
 
 ### Pengendalian Ralat
 
-Pengendalian ralat yang mantap adalah penting untuk alat MCP mengekalkan kebolehpercayaan.
+Pengendalian ralat yang kukuh adalah penting untuk alat MCP mengekalkan kebolehpercayaan.
 
-#### 1. Pengendalian Ralat Secara Anggun
+#### 1. Pengendalian Ralat yang Sopan
 
 Urus ralat pada tahap yang sesuai dan berikan mesej yang informatif:
 
@@ -448,9 +448,9 @@ async def execute_async(self, request):
 
 ### Pengoptimuman Prestasi
 
-#### 1. Penyimpanan Kumpulan (Caching)
+#### 1. Caching
 
-Laksanakan penyimpanan kumpulan untuk operasi yang mahal:
+Laksanakan caching untuk operasi yang mahal:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -498,7 +498,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. Pemprosesan Asinkron
 
-Gunakan corak pengaturcaraan asinkron untuk operasi terikat I/O:
+Gunakan corak pengaturcaraan asinkron untuk operasi yang bergantung pada I/O:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -741,7 +741,7 @@ Ujian menyeluruh memastikan alat MCP berfungsi dengan betul, mengendalikan kes t
 
 #### 1. Uji Setiap Alat Secara Berasingan
 
-Cipta ujian fokus untuk fungsi setiap alat:
+Cipta ujian fokus untuk setiap fungsi alat:
 
 ```csharp
 [Fact]
@@ -803,7 +803,7 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 
 #### 2. Ujian Pengesahan Skema
 
-Uji bahawa skema adalah sah dan menguatkuasakan had dengan betul:
+Uji bahawa skema adalah sah dan menguatkuasakan sekatan dengan betul:
 
 ```java
 @Test
@@ -908,7 +908,7 @@ async def test_api_tool_handles_rate_limiting():
 
 #### 1. Ujian Rantaian Alat
 
-Uji alat bekerja bersama dalam gabungan yang dijangka:
+Uji alat yang berfungsi bersama dalam gabungan yang dijangka:
 
 ```csharp
 [Fact]
@@ -1015,7 +1015,7 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. Ujian Sepanjang Aliran
+#### 3. Ujian Hujung-ke-Hujung
 
 Uji aliran kerja lengkap dari arahan model ke pelaksanaan alat:
 
@@ -1111,7 +1111,7 @@ public async Task McpServer_HandlesHighConcurrency()
 
 #### 2. Ujian Tekanan
 
-Uji sistem di bawah beban melampau:
+Uji sistem di bawah beban yang melampau:
 
 ```java
 @Test
@@ -1210,11 +1210,11 @@ def configure_monitoring(server):
 
 ## Corak Reka Bentuk Aliran Kerja MCP
 
-Aliran kerja MCP yang direka dengan baik meningkatkan kecekapan, kebolehpercayaan, dan kemudahan penyelenggaraan. Berikut adalah corak utama yang perlu diikuti:
+Aliran kerja MCP yang direka dengan baik meningkatkan kecekapan, kebolehpercayaan, dan kebolehselenggaraan. Berikut adalah corak utama yang perlu diikuti:
 
 ### 1. Corak Rantaian Alat
 
-Sambungkan beberapa alat dalam urutan di mana output setiap alat menjadi input untuk alat seterusnya:
+Sambungkan pelbagai alat dalam urutan di mana output setiap alat menjadi input untuk yang seterusnya:
 
 ```python
 # Python Chain of Tools implementation
@@ -1255,7 +1255,7 @@ result = await data_processing_chain.execute(
 
 ### 2. Corak Penghantar
 
-Gunakan alat pusat yang menghantar ke alat khusus berdasarkan input:
+Gunakan alat pusat yang menghantar kepada alat khusus berdasarkan input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1337,7 +1337,7 @@ public class ContentDispatcherTool : IMcpTool
 
 ### 3. Corak Pemprosesan Selari
 
-Jalankan beberapa alat secara serentak untuk kecekapan:
+Laksanakan pelbagai alat secara serentak untuk kecekapan:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1405,7 +1405,7 @@ public class ParallelDataProcessingWorkflow {
 
 ### 4. Corak Pemulihan Ralat
 
-Laksanakan fallback secara anggun untuk kegagalan alat:
+Laksanakan fallback yang sopan untuk kegagalan alat:
 
 ```python
 class ResilientWorkflow:
@@ -1512,13 +1512,13 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 
 ## Gambaran Keseluruhan
 
-Ujian adalah aspek penting dalam membangunkan pelayan MCP yang boleh dipercayai dan berkualiti tinggi. Panduan ini menyediakan amalan terbaik dan petua menyeluruh untuk menguji pelayan MCP anda sepanjang kitaran pembangunan, dari ujian unit hingga ujian integrasi dan pengesahan hujung ke hujung.
+Ujian adalah aspek kritikal dalam membangunkan pelayan MCP yang boleh dipercayai dan berkualiti tinggi. Panduan ini menyediakan amalan terbaik dan petua menyeluruh untuk menguji pelayan MCP anda sepanjang kitaran pembangunan, dari ujian unit hingga ujian integrasi dan pengesahan hujung-ke-hujung.
 
 ## Mengapa Ujian Penting untuk Pelayan MCP
 
-Pelayan MCP berfungsi sebagai perantara penting antara model AI dan aplikasi klien. Ujian yang teliti memastikan:
+Pelayan MCP berfungsi sebagai perantara penting antara model AI dan aplikasi klien. Ujian menyeluruh memastikan:
 
-- Kebolehpercayaan dalam persekitaran produksi
+- Kebolehpercayaan dalam persekitaran pengeluaran
 - Pengendalian permintaan dan respons yang tepat
 - Pelaksanaan spesifikasi MCP yang betul
 - Ketahanan terhadap kegagalan dan kes tepi
@@ -1536,7 +1536,7 @@ Ujian unit mengesahkan komponen individu pelayan MCP anda secara berasingan.
 2. **Pelaksanaan Alat**: Sahkan tingkah laku alat dengan pelbagai input
 3. **Templat Arahan**: Pastikan templat arahan dipaparkan dengan betul
 4. **Pengesahan Skema**: Uji logik pengesahan parameter
-5. **Pengendalian Ralat**: Sahkan respons ralat untuk input yang tidak sah
+5. **Pengendalian Ralat**: Sahkan respons ralat untuk input tidak sah
 
 #### Amalan Terbaik untuk Ujian Unit
 
@@ -1591,7 +1591,7 @@ Ujian integrasi mengesahkan interaksi antara komponen pelayan MCP anda.
 1. **Inisialisasi Pelayan**: Uji permulaan pelayan dengan pelbagai konfigurasi
 2. **Pendaftaran Laluan**: Sahkan semua titik akhir didaftarkan dengan betul
 3. **Pemprosesan Permintaan**: Uji kitaran permintaan-respons penuh
-4. **Penularan Ralat**: Pastikan ralat dikendalikan dengan betul merentasi komponen
+4. **Penularan Ralat**: Pastikan ralat diurus dengan betul merentasi komponen
 5. **Pengesahan & Kebenaran**: Uji mekanisme keselamatan
 
 #### Amalan Terbaik untuk Ujian Integrasi
@@ -1630,9 +1630,9 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 }
 ```
 
-### Ujian Hujung ke Hujung (Lapisan Atas)
+### Ujian Hujung-ke-Hujung (Lapisan Atas)
 
-Ujian hujung ke hujung mengesahkan tingkah laku sistem lengkap dari klien ke pelayan.
+Ujian hujung-ke-hujung mengesahkan tingkah laku sistem lengkap dari klien ke pelayan.
 
 #### Apa yang Perlu Diuji
 
@@ -1640,7 +1640,7 @@ Ujian hujung ke hujung mengesahkan tingkah laku sistem lengkap dari klien ke pel
 2. **SDK Klien Sebenar**: Uji dengan pelaksanaan klien sebenar
 3. **Prestasi di Bawah Beban**: Sahkan tingkah laku dengan pelbagai permintaan serentak
 4. **Pemulihan Ralat**: Uji pemulihan sistem daripada kegagalan
-5. **Operasi Berjalan Lama**: Sahkan pengendalian aliran dan operasi panjang
+5. **Operasi Jangka Panjang**: Sahkan pengendalian penstriman dan operasi panjang
 
 #### Amalan Terbaik untuk Ujian E2E
 
@@ -1681,7 +1681,7 @@ Mocking penting untuk mengasingkan komponen semasa ujian.
 ### Komponen yang Perlu Dimock
 
 1. **Model AI Luaran**: Mock respons model untuk ujian yang boleh diramal
-2. **Perkhidmatan Luaran**: Mock pergantungan API (pangkalan data, perkhidmatan pihak ketiga)
+2. **Perkhidmatan Luaran**: Mock kebergantungan API (pangkalan data, perkhidmatan pihak ketiga)
 3. **Perkhidmatan Pengesahan**: Mock penyedia identiti
 4. **Penyedia Sumber**: Mock pengendali sumber yang mahal
 
@@ -1719,13 +1719,13 @@ def test_with_mock_model(mock_model):
 
 ## Ujian Prestasi
 
-Ujian prestasi penting untuk pelayan MCP produksi.
+Ujian prestasi penting untuk pelayan MCP pengeluaran.
 
 ### Apa yang Perlu Diukur
 
 1. **Latensi**: Masa respons untuk permintaan
-2. **Throughput**: Permintaan yang diuruskan per saat
-3. **Penggunaan Sumber**: CPU, memori, penggunaan rangkaian
+2. **Throughput**: Permintaan yang diurus per saat
+3. **Penggunaan Sumber**: Penggunaan CPU, memori, rangkaian
 4. **Pengendalian Serentak**: Tingkah laku di bawah permintaan selari
 5. **Ciri Skala**: Prestasi apabila beban meningkat
 
@@ -1778,13 +1778,13 @@ export default function () {
 
 ## Automasi Ujian untuk Pelayan MCP
 
-Automasi ujian memastikan kualiti konsisten dan pusingan maklum balas lebih pantas.
+Automasi ujian memastikan kualiti konsisten dan maklum balas lebih pantas.
 
 ### Integrasi CI/CD
 
 1. **Jalankan Ujian Unit pada Pull Request**: Pastikan perubahan kod tidak merosakkan fungsi sedia ada
-2. **Ujian Integrasi di Staging**: Jalankan ujian integrasi dalam persekitaran pra-produksi
-3. **Garis Asas Prestasi**: Kekalkan penanda aras prestasi untuk mengesan regresi
+2. **Ujian Integrasi di Staging**: Jalankan ujian integrasi dalam persekitaran pra-pengeluaran
+3. **Penanda Aras Prestasi**: Kekalkan penanda aras prestasi untuk mengesan regresi
 4. **Imbasan Keselamatan**: Automasi ujian keselamatan sebagai sebahagian daripada saluran
 
 ### Contoh Saluran CI (GitHub Actions)
@@ -1838,7 +1838,7 @@ Sahkan pelayan anda melaksanakan spesifikasi MCP dengan betul.
 4. **Jenis Kandungan**: Uji pengendalian jenis kandungan berbeza
 5. **Aliran Pengesahan**: Sahkan mekanisme pengesahan mengikut spesifikasi
 
-### Suite Ujian Pematuhan
+### Set Ujian Pematuhan
 
 ```csharp
 [Fact]
@@ -1867,60 +1867,60 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 
 ## 10 Petua Teratas untuk Ujian Pelayan MCP yang Berkesan
 
-1. **Uji Definisi Alat Secara Berasingan**: Sahkan definisi skema secara bebas daripada logik alat
+1. **Uji Definisi Alat Secara Berasingan**: Sahkan definisi skema secara berasingan daripada logik alat
 2. **Gunakan Ujian Berparameter**: Uji alat dengan pelbagai input termasuk kes tepi
 3. **Periksa Respons Ralat**: Sahkan pengendalian ralat yang betul untuk semua keadaan ralat
 4. **Uji Logik Kebenaran**: Pastikan kawalan akses yang betul untuk peranan pengguna berbeza
-5. **Pantau Liputan Ujian**: Sasarkan liputan tinggi bagi kod laluan kritikal
+5. **Pantau Liputan Ujian**: Sasarkan liputan tinggi untuk kod laluan kritikal
 6. **Uji Respons Penstriman**: Sahkan pengendalian kandungan penstriman yang betul
 7. **Simulasikan Masalah Rangkaian**: Uji tingkah laku di bawah keadaan rangkaian yang lemah
 8. **Uji Had Sumber**: Sahkan tingkah laku apabila mencapai kuota atau had kadar
-9. **Automasi Ujian Regresi**: Bina suite yang dijalankan setiap kali kod berubah
-10. **Dokumentasikan Kes Ujian**: Kekalkan dokumentasi jelas mengenai senario ujian
+9. **Automasi Ujian Regresi**: Bina suite yang dijalankan pada setiap perubahan kod
+10. **Dokumentasikan Kes Ujian**: Kekalkan dokumentasi jelas bagi senario ujian
 
 ## Kesilapan Lazim dalam Ujian
 
-- **Terlalu bergantung pada ujian laluan berjaya**: Pastikan ujian kes ralat dilakukan dengan teliti
-- **Mengabaikan ujian prestasi**: Kenal pasti kesesakan sebelum ia menjejaskan produksi
-- **Ujian secara berasingan sahaja**: Gabungkan ujian unit, integrasi, dan hujung ke hujung
+- **Terlalu bergantung pada ujian laluan bahagia**: Pastikan ujian kes ralat dilakukan dengan teliti
+- **Mengabaikan ujian prestasi**: Kenal pasti halangan sebelum ia menjejaskan pengeluaran
+- **Ujian secara berasingan sahaja**: Gabungkan ujian unit, integrasi, dan E2E
 - **Liputan API tidak lengkap**: Pastikan semua titik akhir dan ciri diuji
-- **Persekitaran ujian tidak konsisten**: Gunakan kontena untuk memastikan persekitaran ujian yang konsisten
+- **Persekitaran ujian tidak konsisten**: Gunakan kontena untuk memastikan persekitaran ujian konsisten
 
 ## Kesimpulan
 
 Strategi ujian menyeluruh adalah penting untuk membangunkan pelayan MCP yang boleh dipercayai dan berkualiti tinggi. Dengan melaksanakan amalan terbaik dan petua yang diterangkan dalam panduan ini, anda boleh memastikan pelaksanaan MCP anda memenuhi piawaian tertinggi dari segi kualiti, kebolehpercayaan, dan prestasi.
 
-## Perkara Penting untuk Diingati
+## Perkara Penting
 
-1. **Reka Bentuk Alat**: Ikuti prinsip tanggungjawab tunggal, gunakan suntikan kebergantungan, dan reka untuk boleh disusun
-2. **Reka Bentuk Skema**: Cipta skema yang jelas dan didokumenkan dengan baik serta had pengesahan yang betul
-3. **Pengendalian Ralat**: Laksanakan pengendalian ralat secara anggun, respons ralat berstruktur, dan logik cuba semula
-4. **Prestasi**: Gunakan penyimpanan kumpulan, pemprosesan asinkron, dan pengawalan sumber
+1. **Reka Bentuk Alat**: Ikuti prinsip tanggungjawab tunggal, gunakan suntikan kebergantungan, dan reka untuk kebolehserasian
+2. **Reka Bentuk Skema**: Cipta skema yang jelas, didokumenkan dengan baik dan sekatan pengesahan yang betul
+3. **Pengendalian Ralat**: Laksanakan pengendalian ralat yang sopan, respons ralat berstruktur, dan logik cuba semula
+4. **Prestasi**: Gunakan caching, pemprosesan asinkron, dan pengawalan sumber
 5. **Keselamatan**: Terapkan pengesahan input yang teliti, semakan kebenaran, dan pengendalian data sensitif
-6. **Ujian**: Cipta ujian unit, integrasi, dan hujung ke hujung yang menyeluruh
+6. **Ujian**: Cipta ujian unit, integrasi, dan hujung-ke-hujung yang menyeluruh
 7. **Corak Aliran Kerja**: Gunakan corak yang telah ditetapkan seperti rantaian, penghantar, dan pemprosesan selari
 
 ## Latihan
 
-Reka alat dan aliran kerja MCP untuk sistem pemprosesan dokumen yang:
+Reka alat MCP dan aliran kerja untuk sistem pemprosesan dokumen yang:
 
 1. Menerima dokumen dalam pelbagai format (PDF, DOCX, TXT)
 2. Mengekstrak teks dan maklumat utama daripada dokumen
 3. Mengklasifikasikan dokumen mengikut jenis dan kandungan
 4. Menjana ringkasan bagi setiap dokumen
 
-Laksanakan skema alat, pengendalian ralat, dan corak aliran kerja yang paling sesuai dengan senario ini. Pertimbangkan bagaimana anda akan menguji pelaksanaan ini.
+Laksanakan skema alat, pengendalian ralat, dan corak aliran kerja yang paling sesuai untuk senario ini. Pertimbangkan bagaimana anda akan menguji pelaksanaan ini.
 
 ## Sumber
 
-1. Sertai komuniti MCP di [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) untuk sentiasa dikemas kini dengan perkembangan terkini
-2. Sumbang kepada projek sumber terbuka [MCP](https://github.com/modelcontextprotocol)
-3. Terapkan prinsip MCP dalam inisiatif AI organisasi anda sendiri
+1. Sertai komuniti MCP di [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) untuk sentiasa dikemas kini dengan perkembangan terkini  
+2. Sumbang kepada projek sumber terbuka [MCP](https://github.com/modelcontextprotocol)  
+3. Terapkan prinsip MCP dalam inisiatif AI organisasi anda sendiri  
 4. Terokai pelaksanaan MCP khusus untuk industri anda
-5. Pertimbangkan untuk mengikuti kursus lanjutan mengenai topik MCP tertentu, seperti integrasi multi-modal atau integrasi aplikasi perusahaan
-6. Bereksperimen dengan membina alat dan aliran kerja MCP anda sendiri menggunakan prinsip yang dipelajari melalui [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+5. Pertimbangkan untuk mengikuti kursus lanjutan mengenai topik MCP tertentu, seperti integrasi multi-modal atau integrasi aplikasi perusahaan.  
+6. Cuba bina alat dan aliran kerja MCP anda sendiri menggunakan prinsip yang dipelajari melalui [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-Seterusnya: Kajian Kes Amalan Terbaik [case studies](../09-CaseStudy/README.md)
+Seterusnya: Amalan Terbaik [kajian kes](../09-CaseStudy/README.md)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
