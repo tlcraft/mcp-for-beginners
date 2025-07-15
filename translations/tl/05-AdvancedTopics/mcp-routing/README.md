@@ -1,19 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-07-14T02:15:32+00:00",
+  "original_hash": "2f1b473818b5a6cc9a9bbf777fffa6d4",
+  "translation_date": "2025-07-14T21:49:52+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "tl"
 }
 -->
-## Sampling at Arkitektura ng Routing sa MCP
+## Dynamic Tool Routing
 
-Ang sampling ay isang mahalagang bahagi ng Model Context Protocol (MCP) na nagpapahintulot sa mahusay na pagproseso at pag-routing ng mga kahilingan. Kasama dito ang pagsusuri ng mga papasok na kahilingan upang matukoy ang pinakaangkop na modelo o serbisyo na hahawak sa mga ito, batay sa iba't ibang pamantayan tulad ng uri ng nilalaman, konteksto ng gumagamit, at load ng sistema.
+Tinitiyak ng tool routing na ang mga tawag sa tool ay naituturo sa pinakaangkop na serbisyo base sa konteksto. Halimbawa, ang tawag sa weather tool ay maaaring kailangang ituro sa regional endpoint base sa lokasyon ng gumagamit, o ang calculator tool ay maaaring kailangang gumamit ng partikular na bersyon ng API.
 
-Maaaring pagsamahin ang sampling at routing upang makabuo ng matibay na arkitektura na nag-ooptimize ng paggamit ng mga yaman at nagsisiguro ng mataas na availability. Ang proseso ng sampling ay maaaring gamitin upang iklasipika ang mga kahilingan, habang ang routing naman ang nagdidirekta sa mga ito sa angkop na mga modelo o serbisyo.
+Tingnan natin ang isang halimbawa ng implementasyon na nagpapakita ng dynamic tool routing base sa pagsusuri ng kahilingan, mga regional endpoint, at suporta sa versioning.
 
-Ipinapakita sa diagram sa ibaba kung paano nagtutulungan ang sampling at routing sa isang komprehensibong arkitektura ng MCP:
+## Sampling and Routing Architecture in MCP
+
+Ang sampling ay isang mahalagang bahagi ng Model Context Protocol (MCP) na nagpapahintulot sa epektibong pagproseso at pag-route ng mga kahilingan. Kasama rito ang pagsusuri sa mga papasok na kahilingan upang matukoy ang pinakaangkop na modelo o serbisyo na hahawak nito, base sa iba't ibang pamantayan tulad ng uri ng nilalaman, konteksto ng gumagamit, at load ng sistema.
+
+Maaaring pagsamahin ang sampling at routing upang makabuo ng matibay na arkitektura na nag-ooptimize ng paggamit ng mga yaman at nagsisiguro ng mataas na availability. Ang proseso ng sampling ay maaaring gamitin upang iklasipika ang mga kahilingan, habang ang routing ay nagtuturo sa mga ito sa angkop na mga modelo o serbisyo.
+
+Ipinapakita ng diagram sa ibaba kung paano nagtutulungan ang sampling at routing sa isang komprehensibong arkitektura ng MCP:
 
 ```mermaid
 flowchart TB

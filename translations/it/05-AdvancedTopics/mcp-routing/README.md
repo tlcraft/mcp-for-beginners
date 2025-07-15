@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-07-14T02:12:55+00:00",
+  "original_hash": "2f1b473818b5a6cc9a9bbf777fffa6d4",
+  "translation_date": "2025-07-14T21:47:13+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "it"
 }
@@ -13,7 +13,7 @@ Il campionamento è un componente fondamentale del Model Context Protocol (MCP) 
 
 Campionamento e routing possono essere combinati per creare un'architettura solida che ottimizza l'utilizzo delle risorse e garantisce un'elevata disponibilità. Il processo di campionamento può essere utilizzato per classificare le richieste, mentre il routing le indirizza ai modelli o servizi appropriati.
 
-Il diagramma sottostante illustra come campionamento e routing lavorino insieme in un'architettura MCP completa:
+Il diagramma seguente illustra come campionamento e routing lavorano insieme in un'architettura MCP completa:
 
 ```mermaid
 flowchart TB
@@ -82,7 +82,7 @@ flowchart TB
 
 ## Cosa c'è dopo
 
-- [5.6 Campionamento](../mcp-sampling/README.md)
+- [5.6 Sampling](../mcp-sampling/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

@@ -1,21 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-07-14T02:14:05+00:00",
+  "original_hash": "2f1b473818b5a6cc9a9bbf777fffa6d4",
+  "translation_date": "2025-07-14T21:48:24+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "da"
 }
 -->
-## Dynamisk værktøjsrouting
+## Sampling og Routing Arkitektur i MCP
 
-Værktøjsrouting sikrer, at kald til værktøjer dirigeres til den mest passende service baseret på konteksten. For eksempel kan et kald til et vejrværktøj skulle rutes til en regional endpoint baseret på brugerens placering, eller et regneværktøj kan have brug for at anvende en specifik version af API'en.
-
-Lad os se på et eksempel på implementering, der demonstrerer dynamisk værktøjsrouting baseret på anlyse af forespørgslen, regionale endpoints og versionsunderstøttelse.
-
-## Sampling og routing-arkitektur i MCP
-
-Sampling er en afgørende komponent i Model Context Protocol (MCP), som muliggør effektiv behandling og routing af forespørgsler. Det indebærer at analysere indkommende forespørgsler for at bestemme den mest passende model eller service til at håndtere dem, baseret på forskellige kriterier som indholdstype, brugerens kontekst og systembelastning.
+Sampling er en vigtig komponent i Model Context Protocol (MCP), som muliggør effektiv behandling og routing af forespørgsler. Det indebærer en analyse af indkommende forespørgsler for at bestemme den mest passende model eller service til at håndtere dem, baseret på forskellige kriterier som indholdstype, brugerens kontekst og systembelastning.
 
 Sampling og routing kan kombineres for at skabe en robust arkitektur, der optimerer ressourceudnyttelsen og sikrer høj tilgængelighed. Sampling-processen kan bruges til at klassificere forespørgsler, mens routing dirigerer dem til de relevante modeller eller services.
 

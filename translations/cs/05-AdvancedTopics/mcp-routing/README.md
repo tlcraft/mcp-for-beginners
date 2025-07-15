@@ -1,12 +1,18 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "af40eab7bd6ebf7e607f982a5506a5b5",
-  "translation_date": "2025-07-14T02:16:05+00:00",
+  "original_hash": "2f1b473818b5a6cc9a9bbf777fffa6d4",
+  "translation_date": "2025-07-14T21:50:27+00:00",
   "source_file": "05-AdvancedTopics/mcp-routing/README.md",
   "language_code": "cs"
 }
 -->
+## Dynamické směrování nástrojů
+
+Směrování nástrojů zajišťuje, že volání nástrojů jsou směrována na nejvhodnější službu podle kontextu. Například volání nástroje pro počasí může být směrováno na regionální koncový bod podle polohy uživatele, nebo kalkulační nástroj může potřebovat použít specifickou verzi API.
+
+Podívejme se na příklad implementace, který demonstruje dynamické směrování nástrojů na základě analýzy požadavku, regionálních koncových bodů a podpory verzování.
+
 ## Architektura vzorkování a směrování v MCP
 
 Vzorkování je klíčovou součástí Model Context Protocol (MCP), která umožňuje efektivní zpracování a směrování požadavků. Zahrnuje analýzu příchozích požadavků za účelem určení nejvhodnějšího modelu nebo služby, která je zpracuje, na základě různých kritérií, jako je typ obsahu, uživatelský kontext a zatížení systému.
@@ -85,4 +91,4 @@ flowchart TB
 - [5.6 Sampling](../mcp-sampling/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
