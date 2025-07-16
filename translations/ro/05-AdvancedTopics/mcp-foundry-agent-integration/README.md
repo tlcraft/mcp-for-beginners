@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:20:54+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:38:32+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "ro"
 }
@@ -59,6 +59,8 @@ Alege mediul de dezvoltare preferat:
 ---
 
 ## Implementare Python
+
+***Note*** Poți rula acest [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Instalarea pachetelor necesare
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## Implementare .NET
+
+***Note*** Poți rula acest [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Instalarea pachetelor necesare
 
@@ -342,7 +346,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## Depanarea problemelor comune
 
-### 1. Probleme de conectare
+### 1. Probleme de conexiune
 - Verifică dacă URL-ul serverului MCP este accesibil
 - Verifică credențialele de autentificare
 - Asigură-te că există conectivitate de rețea
@@ -350,11 +354,11 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ### 2. Eșecuri la apelul uneltei
 - Revizuiește argumentele și formatul apelului uneltei
 - Verifică cerințele specifice serverului
-- Implementează gestionarea corectă a erorilor
+- Implementează o gestionare corectă a erorilor
 
 ### 3. Probleme de performanță
 - Optimizează frecvența apelurilor către unelte
-- Folosește caching acolo unde este potrivit
+- Implementează caching acolo unde este potrivit
 - Monitorizează timpii de răspuns ai serverului
 
 ## Pașii următori

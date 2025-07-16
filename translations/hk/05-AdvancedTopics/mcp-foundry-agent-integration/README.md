@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:14:13+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:31:21+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "hk"
 }
@@ -24,7 +24,7 @@ Model Context Protocol (MCP) 是一個開放標準，讓 AI 應用能安全地�
 完成本指南後，您將能夠：
 
 - 了解 Model Context Protocol 及其優勢
-- 設置 MCP 伺服器以供 Azure AI Foundry 代理使用
+- 設定 MCP 伺服器以供 Azure AI Foundry 代理使用
 - 建立並配置具 MCP 工具整合的代理
 - 使用真實 MCP 伺服器實作範例
 - 處理代理對話中的工具回應與引用
@@ -40,12 +40,12 @@ Model Context Protocol (MCP) 是一個開放標準，讓 AI 應用能安全地�
 
 ## 什麼是 Model Context Protocol (MCP)？
 
-Model Context Protocol 是 AI 應用連接外部資料來源和工具的標準化方式。主要優點包括：
+Model Context Protocol 是 AI 應用連接外部資料來源與工具的標準化方式。主要優點包括：
 
 - **標準化整合**：不同工具與服務間一致的介面
 - **安全性**：安全的驗證與授權機制
 - **彈性**：支援多種資料來源、API 及自訂工具
-- **可擴充性**：輕鬆新增功能與整合
+- **擴充性**：輕鬆新增功能與整合
 
 ## 在 Azure AI Foundry 設定 MCP
 
@@ -59,6 +59,8 @@ Model Context Protocol 是 AI 應用連接外部資料來源和工具的標準�
 ---
 
 ## Python 實作
+
+***Note*** 您可以執行此 [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. 安裝所需套件
 
@@ -187,6 +189,8 @@ with project_client:
 
 ## .NET 實作
 
+***Note*** 您可以執行此 [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+
 ### 1. 安裝所需套件
 
 ```csharp
@@ -304,7 +308,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 ## MCP 工具配置選項
 
-為代理配置 MCP 工具時，可指定多項重要參數：
+設定代理的 MCP 工具時，可指定多項重要參數：
 
 ### Python 配置
 
@@ -357,7 +361,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - 適當實施快取
 - 監控伺服器回應時間
 
-## 下一步
+## 後續步驟
 
 進一步強化您的 MCP 整合：
 
@@ -375,11 +379,11 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## 支援
 
-如需更多支援與問題解答：
+如需更多支援與問題協助：
 - 查閱 [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-foundry/)
 - 參考 [MCP 社群資源](https://modelcontextprotocol.io/)
 
-## 接下來的內容
+## 下一步
 
 - [6. 社群貢獻](../../06-CommunityContributions/README.md)
 

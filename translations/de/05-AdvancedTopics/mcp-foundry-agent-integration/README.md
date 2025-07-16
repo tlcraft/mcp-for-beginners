@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:12:37+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:29:48+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "de"
 }
 -->
 # Model Context Protocol (MCP) Integration mit Azure AI Foundry
 
-Dieser Leitfaden zeigt, wie Model Context Protocol (MCP)-Server mit Azure AI Foundry Agents integriert werden, um leistungsstarke Tool-Orchestrierung und Enterprise-KI-Funktionen zu ermöglichen.
+Dieser Leitfaden zeigt, wie Model Context Protocol (MCP)-Server mit Azure AI Foundry-Agenten integriert werden, um leistungsstarke Tool-Orchestrierung und Enterprise-KI-Funktionen zu ermöglichen.
 
 ## Einführung
 
-Model Context Protocol (MCP) ist ein offener Standard, der es KI-Anwendungen ermöglicht, sicher auf externe Datenquellen und Tools zuzugreifen. In Kombination mit Azure AI Foundry erlaubt MCP Agents den Zugriff auf verschiedene externe Dienste, APIs und Datenquellen auf standardisierte Weise.
+Model Context Protocol (MCP) ist ein offener Standard, der es KI-Anwendungen ermöglicht, sicher auf externe Datenquellen und Tools zuzugreifen. In Kombination mit Azure AI Foundry erlaubt MCP Agenten, auf verschiedene externe Dienste, APIs und Datenquellen auf standardisierte Weise zuzugreifen und mit ihnen zu interagieren.
 
 Diese Integration verbindet die Flexibilität des MCP-Tool-Ökosystems mit dem robusten Agenten-Framework von Azure AI Foundry und bietet so Enterprise-KI-Lösungen mit umfangreichen Anpassungsmöglichkeiten.
 
@@ -24,23 +24,23 @@ Diese Integration verbindet die Flexibilität des MCP-Tool-Ökosystems mit dem r
 Am Ende dieses Leitfadens werden Sie in der Lage sein:
 
 - Das Model Context Protocol und seine Vorteile zu verstehen
-- MCP-Server für die Nutzung mit Azure AI Foundry Agents einzurichten
-- Agents mit MCP-Tool-Integration zu erstellen und zu konfigurieren
+- MCP-Server für die Nutzung mit Azure AI Foundry-Agenten einzurichten
+- Agenten mit MCP-Tool-Integration zu erstellen und zu konfigurieren
 - Praktische Beispiele mit echten MCP-Servern umzusetzen
-- Tool-Antworten und Quellenangaben in Agenten-Gesprächen zu verarbeiten
+- Tool-Antworten und Quellenangaben in Agentengesprächen zu verarbeiten
 
 ## Voraussetzungen
 
-Stellen Sie vor Beginn sicher, dass Sie folgende Voraussetzungen erfüllen:
+Bevor Sie beginnen, stellen Sie sicher, dass Sie:
 
-- Ein Azure-Abonnement mit Zugriff auf AI Foundry
-- Python 3.10+ oder .NET 8.0+
-- Azure CLI installiert und konfiguriert
-- Die erforderlichen Berechtigungen zum Erstellen von AI-Ressourcen
+- Ein Azure-Abonnement mit Zugriff auf AI Foundry besitzen
+- Python 3.10+ oder .NET 8.0+ installiert haben
+- Azure CLI installiert und konfiguriert ist
+- Die erforderlichen Berechtigungen zum Erstellen von AI-Ressourcen besitzen
 
 ## Was ist Model Context Protocol (MCP)?
 
-Model Context Protocol ist eine standardisierte Methode, mit der KI-Anwendungen externe Datenquellen und Tools anbinden können. Wichtige Vorteile sind:
+Model Context Protocol ist eine standardisierte Methode, mit der KI-Anwendungen eine Verbindung zu externen Datenquellen und Tools herstellen können. Wichtige Vorteile sind:
 
 - **Standardisierte Integration**: Einheitliche Schnittstelle für verschiedene Tools und Dienste
 - **Sicherheit**: Sichere Authentifizierungs- und Autorisierungsmechanismen
@@ -59,6 +59,8 @@ Wählen Sie Ihre bevorzugte Entwicklungsumgebung:
 ---
 
 ## Python-Implementierung
+
+***Note*** Sie können dieses [Notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) ausführen
 
 ### 1. Installation der benötigten Pakete
 
@@ -187,6 +189,8 @@ with project_client:
 
 ## .NET-Implementierung
 
+***Note*** Sie können dieses [Notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) ausführen
+
 ### 1. Installation der benötigten Pakete
 
 ```csharp
@@ -217,7 +221,7 @@ PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCreden
 MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
 ```
 
-### 5. Erstellung eines Agents mit MCP-Tools
+### 5. Erstellung eines Agenten mit MCP-Tools
 
 ```csharp
 PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
@@ -302,7 +306,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 ---
 
-## MCP Tool Konfigurationsoptionen
+## MCP Tool-Konfigurationsoptionen
 
 Bei der Konfiguration von MCP-Tools für Ihren Agenten können Sie mehrere wichtige Parameter festlegen:
 
@@ -340,7 +344,7 @@ MCPToolResource mcpToolResource = new(mcpServerLabel);
 mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ```
 
-## Häufige Probleme und deren Behebung
+## Fehlerbehebung bei häufigen Problemen
 
 ### 1. Verbindungsprobleme
 - Überprüfen Sie, ob die MCP-Server-URL erreichbar ist
@@ -384,4 +388,4 @@ Für weitere Unterstützung und Fragen:
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

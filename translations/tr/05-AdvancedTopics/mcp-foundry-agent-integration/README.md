@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:17:03+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:34:29+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "tr"
 }
@@ -13,17 +13,17 @@ Bu rehber, Model Context Protocol (MCP) sunucularını Azure AI Foundry ajanlar�
 
 ## Giriş
 
-Model Context Protocol (MCP), yapay zeka uygulamalarının harici veri kaynakları ve araçlara güvenli bir şekilde bağlanmasını sağlayan açık bir standarttır. Azure AI Foundry ile entegre edildiğinde, MCP ajanların çeşitli harici servisler, API'ler ve veri kaynaklarıyla standart bir şekilde erişim kurup etkileşimde bulunmasına olanak tanır.
+Model Context Protocol (MCP), yapay zeka uygulamalarının dış veri kaynakları ve araçlara güvenli bir şekilde bağlanmasını sağlayan açık bir standarttır. Azure AI Foundry ile entegre edildiğinde, MCP ajanların çeşitli dış hizmetlere, API’lere ve veri kaynaklarına standart bir şekilde erişip etkileşimde bulunmasına olanak tanır.
 
-Bu entegrasyon, MCP'nin araç ekosisteminin esnekliğini Azure AI Foundry'nin sağlam ajan çerçevesiyle birleştirerek, geniş özelleştirme imkanları sunan kurumsal düzeyde yapay zeka çözümleri sağlar.
+Bu entegrasyon, MCP’nin araç ekosisteminin esnekliğini Azure AI Foundry’nin sağlam ajan çerçevesiyle birleştirerek, geniş özelleştirme imkanları sunan kurumsal düzeyde yapay zeka çözümleri sağlar.
 
-**Not:** MCP'yi Azure AI Foundry Agent Service içinde kullanmak isterseniz, şu anda yalnızca aşağıdaki bölgeler desteklenmektedir: westus, westus2, uaenorth, southindia ve switzerlandnorth
+**Not:** MCP’yi Azure AI Foundry Agent Service içinde kullanmak isterseniz, şu anda yalnızca şu bölgeler desteklenmektedir: westus, westus2, uaenorth, southindia ve switzerlandnorth
 
 ## Öğrenme Hedefleri
 
 Bu rehberin sonunda şunları yapabileceksiniz:
 
-- Model Context Protocol'ü ve faydalarını anlamak
+- Model Context Protocol’ü ve faydalarını anlamak
 - Azure AI Foundry ajanlarıyla kullanmak üzere MCP sunucularını kurmak
 - MCP araç entegrasyonuyla ajanlar oluşturup yapılandırmak
 - Gerçek MCP sunucuları kullanarak pratik örnekler uygulamak
@@ -40,12 +40,12 @@ Başlamadan önce şunlara sahip olduğunuzdan emin olun:
 
 ## Model Context Protocol (MCP) Nedir?
 
-Model Context Protocol, yapay zeka uygulamalarının harici veri kaynakları ve araçlara bağlanması için standart bir yöntemdir. Temel faydaları şunlardır:
+Model Context Protocol, yapay zeka uygulamalarının dış veri kaynakları ve araçlara bağlanması için standart bir yöntemdir. Temel faydaları şunlardır:
 
-- **Standartlaştırılmış Entegrasyon**: Farklı araçlar ve servisler arasında tutarlı arayüz
+- **Standartlaştırılmış Entegrasyon**: Farklı araçlar ve hizmetler arasında tutarlı arayüz
 - **Güvenlik**: Güvenli kimlik doğrulama ve yetkilendirme mekanizmaları
-- **Esneklik**: Çeşitli veri kaynakları, API'ler ve özel araçları destekler
-- **Genişletilebilirlik**: Yeni yetenekler ve entegrasyonlar kolayca eklenebilir
+- **Esneklik**: Çeşitli veri kaynakları, API’ler ve özel araçlar desteği
+- **Genişletilebilirlik**: Yeni yetenekler ve entegrasyonların kolayca eklenebilmesi
 
 ## Azure AI Foundry ile MCP Kurulumu
 
@@ -59,6 +59,8 @@ Tercih ettiğiniz geliştirme ortamını seçin:
 ---
 
 ## Python Uygulaması
+
+***Not*** Bu [notebook’u](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) çalıştırabilirsiniz
 
 ### 1. Gerekli Paketleri Yükleyin
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET Uygulaması
+
+***Not*** Bu [notebook’u](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) çalıştırabilirsiniz
 
 ### 1. Gerekli Paketleri Yükleyin
 
@@ -343,7 +347,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ## Yaygın Sorun Giderme
 
 ### 1. Bağlantı Sorunları
-- MCP sunucu URL'sinin erişilebilir olduğunu doğrulayın
+- MCP sunucu URL’sinin erişilebilir olduğunu doğrulayın
 - Kimlik doğrulama bilgilerini kontrol edin
 - Ağ bağlantısını sağlayın
 
@@ -363,7 +367,7 @@ MCP entegrasyonunuzu daha da geliştirmek için:
 
 1. **Özel MCP Sunucuları Keşfedin**: Kendi MCP sunucularınızı kurarak özel veri kaynakları oluşturun
 2. **Gelişmiş Güvenlik Uygulayın**: OAuth2 veya özel kimlik doğrulama mekanizmaları ekleyin
-3. **İzleme ve Analitik**: Araç kullanımı için günlük kaydı ve izleme uygulayın
+3. **İzleme ve Analitik**: Araç kullanımını kaydetmek ve izlemek için sistemler kurun
 4. **Çözümünüzü Ölçeklendirin**: Yük dengeleme ve dağıtık MCP sunucu mimarilerini değerlendirin
 
 ## Ek Kaynaklar
@@ -379,9 +383,9 @@ Ek destek ve sorular için:
 - [Azure AI Foundry dokümantasyonunu](https://learn.microsoft.com/azure/ai-foundry/) inceleyin
 - [MCP topluluk kaynaklarını](https://modelcontextprotocol.io/) kontrol edin
 
-## Sonraki Bölüm
+## Sonraki
 
 - [6. Topluluk Katkıları](../../06-CommunityContributions/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:16:17+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:33:34+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "pt"
 }
@@ -17,7 +17,7 @@ O Model Context Protocol (MCP) é um padrão aberto que permite que aplicações
 
 Esta integração combina a flexibilidade do ecossistema de ferramentas do MCP com a estrutura robusta de agentes do Azure AI Foundry, oferecendo soluções de IA ao nível empresarial com amplas capacidades de personalização.
 
-**Note:** Se pretende usar MCP no Azure AI Foundry Agent Service, atualmente apenas as seguintes regiões são suportadas: westus, westus2, uaenorth, southindia e switzerlandnorth
+**Nota:** Se pretende usar MCP no Azure AI Foundry Agent Service, atualmente apenas as seguintes regiões são suportadas: westus, westus2, uaenorth, southindia e switzerlandnorth
 
 ## Objetivos de Aprendizagem
 
@@ -59,6 +59,8 @@ Escolha o seu ambiente de desenvolvimento preferido:
 ---
 
 ## Implementação em Python
+
+***Nota*** Pode executar este [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Instalar Pacotes Necessários
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## Implementação em .NET
+
+***Nota*** Pode executar este [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Instalar Pacotes Necessários
 
@@ -384,4 +388,4 @@ Para suporte adicional e dúvidas:
 - [6. Contribuições da Comunidade](../../06-CommunityContributions/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos por garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

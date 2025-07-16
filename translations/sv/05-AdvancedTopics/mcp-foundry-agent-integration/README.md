@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:17:48+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:35:14+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sv"
 }
@@ -15,13 +15,13 @@ Denna guide visar hur du integrerar Model Context Protocol (MCP) servrar med Azu
 
 Model Context Protocol (MCP) är en öppen standard som gör det möjligt för AI-applikationer att säkert ansluta till externa datakällor och verktyg. När MCP integreras med Azure AI Foundry kan agenter få tillgång till och interagera med olika externa tjänster, API:er och datakällor på ett standardiserat sätt.
 
-Denna integration kombinerar flexibiliteten i MCP:s verktygsekosystem med Azure AI Foundrys robusta agentramverk, vilket ger företagsklassade AI-lösningar med omfattande anpassningsmöjligheter.
+Denna integration kombinerar flexibiliteten i MCP:s verktygsekosystem med Azure AI Foundrys robusta agentramverk, vilket ger AI-lösningar i företagsklass med omfattande anpassningsmöjligheter.
 
 **Note:** Om du vill använda MCP i Azure AI Foundry Agent Service stöds för närvarande endast följande regioner: westus, westus2, uaenorth, southindia och switzerlandnorth
 
 ## Lärandemål
 
-Efter att ha gått igenom denna guide kommer du att kunna:
+I slutet av denna guide kommer du att kunna:
 
 - Förstå Model Context Protocol och dess fördelar
 - Sätta upp MCP-servrar för användning med Azure AI Foundry-agenter
@@ -33,7 +33,7 @@ Efter att ha gått igenom denna guide kommer du att kunna:
 
 Innan du börjar, se till att du har:
 
-- En Azure-prenumeration med tillgång till AI Foundry
+- Ett Azure-abonnemang med tillgång till AI Foundry
 - Python 3.10+ eller .NET 8.0+
 - Azure CLI installerat och konfigurerat
 - Lämpliga behörigheter för att skapa AI-resurser
@@ -59,6 +59,8 @@ Välj din föredragna utvecklingsmiljö:
 ---
 
 ## Python-implementation
+
+***Note*** Du kan köra denna [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Installera nödvändiga paket
 
@@ -187,6 +189,8 @@ with project_client:
 
 ## .NET-implementation
 
+***Note*** Du kan köra denna [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+
 ### 1. Installera nödvändiga paket
 
 ```csharp
@@ -302,7 +306,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 ---
 
-## MCP-verktyg konfigurationsalternativ
+## MCP-verktygskonfigurationsalternativ
 
 När du konfigurerar MCP-verktyg för din agent kan du ange flera viktiga parametrar:
 

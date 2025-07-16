@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:16:50+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:34:14+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "pl"
 }
@@ -44,7 +44,7 @@ Model Context Protocol to ustandaryzowany sposób, w jaki aplikacje AI łączą 
 
 - **Ustandaryzowana integracja**: Spójny interfejs dla różnych narzędzi i usług
 - **Bezpieczeństwo**: Bezpieczne mechanizmy uwierzytelniania i autoryzacji
-- **Elastyczność**: Wsparcie dla różnych źródeł danych, API i narzędzi niestandardowych
+- **Elastyczność**: Obsługa różnych źródeł danych, API i narzędzi niestandardowych
 - **Rozszerzalność**: Łatwe dodawanie nowych funkcji i integracji
 
 ## Konfiguracja MCP z Azure AI Foundry
@@ -59,6 +59,8 @@ Wybierz preferowane środowisko programistyczne:
 ---
 
 ## Implementacja w Pythonie
+
+***Note*** Możesz uruchomić ten [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Instalacja wymaganych pakietów
 
@@ -187,6 +189,8 @@ with project_client:
 
 ## Implementacja w .NET
 
+***Note*** Możesz uruchomić ten [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+
 ### 1. Instalacja wymaganych pakietów
 
 ```csharp
@@ -304,7 +308,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 ## Opcje konfiguracji narzędzi MCP
 
-Podczas konfigurowania narzędzi MCP dla agenta możesz określić kilka ważnych parametrów:
+Podczas konfigurowania narzędzi MCP dla swojego agenta możesz określić kilka ważnych parametrów:
 
 ### Konfiguracja w Pythonie
 
@@ -354,7 +358,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 3. Problemy z wydajnością
 - Optymalizuj częstotliwość wywołań narzędzi
-- Wdrażaj cache tam, gdzie to możliwe
+- Wprowadź cache tam, gdzie to możliwe
 - Monitoruj czasy odpowiedzi serwera
 
 ## Kolejne kroki
@@ -363,8 +367,8 @@ Aby jeszcze bardziej rozwinąć integrację MCP:
 
 1. **Poznaj niestandardowe serwery MCP**: Buduj własne serwery MCP dla własnych źródeł danych
 2. **Wdroż zaawansowane zabezpieczenia**: Dodaj OAuth2 lub niestandardowe mechanizmy uwierzytelniania
-3. **Monitorowanie i analityka**: Wdróż logowanie i monitorowanie użycia narzędzi
-4. **Skaluj rozwiązanie**: Rozważ load balancing i rozproszone architektury serwerów MCP
+3. **Monitorowanie i analityka**: Wprowadź logowanie i monitorowanie użycia narzędzi
+4. **Skaluj swoje rozwiązanie**: Rozważ load balancing i rozproszone architektury serwerów MCP
 
 ## Dodatkowe zasoby
 
@@ -384,4 +388,4 @@ W przypadku dodatkowego wsparcia i pytań:
 - [6. Wkład społeczności](../../06-CommunityContributions/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:20:40+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:38:17+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sk"
 }
@@ -13,15 +13,15 @@ Tento návod ukazuje, ako integrovať servery Model Context Protocol (MCP) s age
 
 ## Úvod
 
-Model Context Protocol (MCP) je otvorený štandard, ktorý umožňuje AI aplikáciám bezpečne sa pripájať k externým dátovým zdrojom a nástrojom. Po integrácii s Azure AI Foundry umožňuje MCP agentom pristupovať a interagovať s rôznymi externými službami, API a dátovými zdrojmi štandardizovaným spôsobom.
+Model Context Protocol (MCP) je otvorený štandard, ktorý umožňuje AI aplikáciám bezpečne sa pripájať k externým dátovým zdrojom a nástrojom. Po integrácii s Azure AI Foundry umožňuje MCP agentom pristupovať a komunikovať s rôznymi externými službami, API a dátovými zdrojmi štandardizovaným spôsobom.
 
 Táto integrácia spája flexibilitu ekosystému nástrojov MCP s robustným rámcom agentov Azure AI Foundry, čím poskytuje podnikové AI riešenia s rozsiahlymi možnosťami prispôsobenia.
 
-**Note:** Ak chcete používať MCP v Azure AI Foundry Agent Service, momentálne sú podporované len tieto regióny: westus, westus2, uaenorth, southindia a switzerlandnorth
+**Note:** Ak chcete používať MCP v Azure AI Foundry Agent Service, momentálne sú podporované iba tieto regióny: westus, westus2, uaenorth, southindia a switzerlandnorth
 
 ## Ciele učenia
 
-Na konci tohto návodu budete schopní:
+Po prečítaní tohto návodu budete schopní:
 
 - Pochopiť Model Context Protocol a jeho výhody
 - Nastaviť MCP servery pre použitie s agentmi Azure AI Foundry
@@ -33,14 +33,14 @@ Na konci tohto návodu budete schopní:
 
 Pred začatím sa uistite, že máte:
 
-- Azure predplatné s prístupom k AI Foundry
+- Predplatné Azure s prístupom k AI Foundry
 - Python 3.10+ alebo .NET 8.0+
 - Nainštalovaný a nakonfigurovaný Azure CLI
 - Príslušné oprávnenia na vytváranie AI zdrojov
 
 ## Čo je Model Context Protocol (MCP)?
 
-Model Context Protocol je štandardizovaný spôsob, ako sa AI aplikácie pripájajú k externým dátovým zdrojom a nástrojom. Medzi hlavné výhody patrí:
+Model Context Protocol je štandardizovaný spôsob, ako sa AI aplikácie pripájajú k externým dátovým zdrojom a nástrojom. Hlavné výhody zahŕňajú:
 
 - **Štandardizovaná integrácia**: Konzistentné rozhranie naprieč rôznymi nástrojmi a službami
 - **Bezpečnosť**: Bezpečné mechanizmy autentifikácie a autorizácie
@@ -59,6 +59,8 @@ Vyberte si preferované vývojové prostredie:
 ---
 
 ## Python Implementácia
+
+***Note*** Tento [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) môžete spustiť
 
 ### 1. Inštalácia potrebných balíčkov
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET Implementácia
+
+***Note*** Tento [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) môžete spustiť
 
 ### 1. Inštalácia potrebných balíčkov
 
@@ -355,7 +359,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ### 3. Problémy s výkonom
 - Optimalizujte frekvenciu volaní nástrojov
 - Používajte cache tam, kde je to vhodné
-- Sledujte časy odozvy servera
+- Monitorujte časy odozvy servera
 
 ## Ďalšie kroky
 
@@ -383,5 +387,5 @@ Pre ďalšiu podporu a otázky:
 
 - [6. Príspevky komunity](../../06-CommunityContributions/README.md)
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

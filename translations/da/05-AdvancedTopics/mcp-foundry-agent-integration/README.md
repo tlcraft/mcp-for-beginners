@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:18:03+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:35:29+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "da"
 }
@@ -13,7 +13,7 @@ Denne vejledning viser, hvordan man integrerer Model Context Protocol (MCP) serv
 
 ## Introduktion
 
-Model Context Protocol (MCP) er en åben standard, der gør det muligt for AI-applikationer sikkert at forbinde til eksterne datakilder og værktøjer. Når det integreres med Azure AI Foundry, giver MCP agenter adgang til og mulighed for at interagere med forskellige eksterne tjenester, API’er og datakilder på en standardiseret måde.
+Model Context Protocol (MCP) er en åben standard, der gør det muligt for AI-applikationer sikkert at forbinde til eksterne datakilder og værktøjer. Når MCP integreres med Azure AI Foundry, kan agenter få adgang til og interagere med forskellige eksterne tjenester, API’er og datakilder på en standardiseret måde.
 
 Denne integration kombinerer fleksibiliteten i MCP’s værktøjsøkosystem med Azure AI Foundrys robuste agentrammeværk og leverer AI-løsninger i virksomhedsklasse med omfattende tilpasningsmuligheder.
 
@@ -43,7 +43,7 @@ Før du går i gang, skal du sikre dig, at du har:
 Model Context Protocol er en standardiseret måde for AI-applikationer at forbinde til eksterne datakilder og værktøjer. Vigtige fordele inkluderer:
 
 - **Standardiseret integration**: Ensartet grænseflade på tværs af forskellige værktøjer og tjenester  
-- **Sikkerhed**: Sikker autentificering og autorisationsmekanismer  
+- **Sikkerhed**: Sikker autentificering og autorisation  
 - **Fleksibilitet**: Understøttelse af forskellige datakilder, API’er og brugerdefinerede værktøjer  
 - **Udvidelsesmuligheder**: Let at tilføje nye funktioner og integrationer  
 
@@ -59,6 +59,8 @@ Vælg dit foretrukne udviklingsmiljø:
 ---
 
 ## Python-implementering
+
+***Note*** Du kan køre denne [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Installer nødvendige pakker
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET-implementering
+
+***Note*** Du kan køre denne [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Installer nødvendige pakker
 
@@ -343,7 +347,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ## Fejlfinding af almindelige problemer
 
 ### 1. Forbindelsesproblemer  
-- Bekræft, at MCP-serverens URL er tilgængelig  
+- Kontroller, at MCP-serverens URL er tilgængelig  
 - Tjek autentificeringsoplysninger  
 - Sørg for netværksforbindelse  
 
@@ -376,7 +380,7 @@ For at forbedre din MCP-integration yderligere:
 ## Support
 
 For yderligere support og spørgsmål:  
-- Gennemse [Azure AI Foundry dokumentationen](https://learn.microsoft.com/azure/ai-foundry/)  
+- Gennemgå [Azure AI Foundry dokumentationen](https://learn.microsoft.com/azure/ai-foundry/)  
 - Tjek [MCP community-ressourcer](https://modelcontextprotocol.io/)  
 
 ## Hvad er det næste

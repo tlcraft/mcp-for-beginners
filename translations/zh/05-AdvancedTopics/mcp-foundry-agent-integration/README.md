@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:13:48+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:30:56+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "zh"
 }
@@ -51,7 +51,7 @@ Model Context Protocol 是 AI 应用连接外部数据源和工具的标准化�
 
 ### 环境配置
 
-选择您偏好的开发环境：
+请选择您偏好的开发环境：
 
 - [Python 实现](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
 - [.NET 实现](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
@@ -59,6 +59,8 @@ Model Context Protocol 是 AI 应用连接外部数据源和工具的标准化�
 ---
 
 ## Python 实现
+
+***Note*** 您可以运行此 [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. 安装所需包
 
@@ -69,7 +71,7 @@ pip install azure-identity -U
 pip install mcp==1.11.0 -U
 ```
 
-### 2. 导入依赖
+### 2. 导入依赖项
 
 ```python
 import os, time
@@ -104,7 +106,7 @@ mcp_tool = McpTool(
 )
 ```
 
-### 6. 完整 Python 示例
+### 6. 完整的 Python 示例
 
 ```python
 with project_client:
@@ -187,6 +189,8 @@ with project_client:
 
 ## .NET 实现
 
+***Note*** 您可以运行此 [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+
 ### 1. 安装所需包
 
 ```csharp
@@ -194,7 +198,7 @@ with project_client:
 #r "nuget: Azure.Identity, 1.14.2"
 ```
 
-### 2. 导入依赖
+### 2. 导入依赖项
 
 ```csharp
 using Azure.AI.Agents.Persistent;
@@ -228,7 +232,7 @@ PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
    );
 ```
 
-### 6. 完整 .NET 示例
+### 6. 完整的 .NET 示例
 
 ```csharp
 // Create thread and message
@@ -304,7 +308,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 ## MCP 工具配置选项
 
-配置 MCP 工具时，您可以指定多个重要参数：
+配置代理的 MCP 工具时，您可以指定多个重要参数：
 
 ### Python 配置
 
@@ -384,4 +388,4 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - [6. 社区贡献](../../06-CommunityContributions/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

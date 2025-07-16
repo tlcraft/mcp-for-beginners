@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:13:05+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:30:16+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "ar"
 }
 -->
 # دمج بروتوكول سياق النموذج (MCP) مع Azure AI Foundry
 
-يوضح هذا الدليل كيفية دمج خوادم بروتوكول سياق النموذج (MCP) مع وكلاء Azure AI Foundry، مما يتيح تنسيق أدوات قوي وقدرات ذكاء اصطناعي على مستوى المؤسسات.
+يوضح هذا الدليل كيفية دمج خوادم بروتوكول سياق النموذج (MCP) مع وكلاء Azure AI Foundry، مما يتيح تنظيم أدوات قوية وقدرات ذكاء اصطناعي على مستوى المؤسسات.
 
 ## المقدمة
 
@@ -45,7 +45,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **تكامل موحد**: واجهة متسقة عبر أدوات وخدمات مختلفة
 - **الأمان**: آليات مصادقة وتفويض آمنة
 - **المرونة**: دعم لمصادر بيانات مختلفة، وواجهات برمجة التطبيقات، والأدوات المخصصة
-- **القابلية للتوسع**: سهولة إضافة قدرات وتكاملات جديدة
+- **قابلية التوسع**: سهولة إضافة قدرات وتكاملات جديدة
 
 ## إعداد MCP مع Azure AI Foundry
 
@@ -59,6 +59,8 @@ CO_OP_TRANSLATOR_METADATA:
 ---
 
 ## تنفيذ Python
+
+***ملاحظة*** يمكنك تشغيل هذا [الدفتر](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. تثبيت الحزم المطلوبة
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## تنفيذ .NET
+
+***ملاحظة*** يمكنك تشغيل هذا [الدفتر](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. تثبيت الحزم المطلوبة
 
@@ -354,7 +358,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 3. مشاكل الأداء
 - حسّن تكرار استدعاء الأداة
-- نفذ التخزين المؤقت عند الاقتضاء
+- نفذ التخزين المؤقت عند الحاجة
 - راقب أوقات استجابة الخادم
 
 ## الخطوات التالية

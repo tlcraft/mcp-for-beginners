@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:15:06+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:32:15+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "hi"
 }
@@ -13,9 +13,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## परिचय
 
-Model Context Protocol (MCP) एक खुला मानक है जो AI एप्लिकेशन को बाहरी डेटा स्रोतों और टूल्स से सुरक्षित रूप से कनेक्ट करने में सक्षम बनाता है। Azure AI Foundry के साथ एकीकरण के दौरान, MCP एजेंट्स को विभिन्न बाहरी सेवाओं, APIs, और डेटा स्रोतों तक मानकीकृत तरीके से पहुँचने और इंटरैक्ट करने की अनुमति देता है।
+Model Context Protocol (MCP) एक खुला मानक है जो AI एप्लिकेशन को बाहरी डेटा स्रोतों और टूल्स से सुरक्षित रूप से कनेक्ट करने में सक्षम बनाता है। Azure AI Foundry के साथ एकीकृत होने पर, MCP एजेंट्स को विभिन्न बाहरी सेवाओं, APIs, और डेटा स्रोतों तक मानकीकृत तरीके से पहुंचने और इंटरैक्ट करने की अनुमति देता है।
 
-यह एकीकरण MCP के टूल इकोसिस्टम की लचीलापन को Azure AI Foundry के मजबूत एजेंट फ्रेमवर्क के साथ जोड़ता है, जिससे व्यापक अनुकूलन क्षमताओं के साथ एंटरप्राइज-ग्रेड AI समाधान प्रदान होते हैं।
+यह एकीकरण MCP के टूल इकोसिस्टम की लचीलापन को Azure AI Foundry के मजबूत एजेंट फ्रेमवर्क के साथ जोड़ता है, जिससे एंटरप्राइज-ग्रेड AI समाधान व्यापक अनुकूलन क्षमताओं के साथ प्रदान किए जाते हैं।
 
 **Note:** यदि आप Azure AI Foundry Agent Service में MCP का उपयोग करना चाहते हैं, तो वर्तमान में केवल निम्नलिखित क्षेत्र समर्थित हैं: westus, westus2, uaenorth, southindia और switzerlandnorth
 
@@ -59,6 +59,8 @@ Model Context Protocol AI एप्लिकेशन को बाहरी ड
 ---
 
 ## Python Implementation
+
+***Note*** आप इस [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) को चला सकते हैं
 
 ### 1. आवश्यक पैकेज इंस्टॉल करें
 
@@ -187,6 +189,8 @@ with project_client:
 
 ## .NET Implementation
 
+***Note*** आप इस [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) को चला सकते हैं
+
 ### 1. आवश्यक पैकेज इंस्टॉल करें
 
 ```csharp
@@ -211,7 +215,7 @@ var mcpServerLabel = "mslearn";
 PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCredential());
 ```
 
-### 4. MCP टूल डिफिनिशन बनाएं
+### 4. MCP टूल परिभाषा बनाएं
 
 ```csharp
 MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
@@ -354,14 +358,14 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 3. प्रदर्शन समस्याएँ
 - टूल कॉल की आवृत्ति अनुकूलित करें
-- जहाँ उपयुक्त हो कैशिंग लागू करें
+- जहां उपयुक्त हो कैशिंग लागू करें
 - सर्वर प्रतिक्रिया समय की निगरानी करें
 
 ## अगले कदम
 
 अपने MCP एकीकरण को और बेहतर बनाने के लिए:
 
-1. **कस्टम MCP सर्वर एक्सप्लोर करें**: अपने स्वामित्व वाले डेटा स्रोतों के लिए MCP सर्वर बनाएं
+1. **कस्टम MCP सर्वर एक्सप्लोर करें**: अपने स्वामित्व वाले डेटा स्रोतों के लिए अपने MCP सर्वर बनाएं
 2. **उन्नत सुरक्षा लागू करें**: OAuth2 या कस्टम प्रमाणीकरण तंत्र जोड़ें
 3. **मॉनिटरिंग और एनालिटिक्स**: टूल उपयोग के लिए लॉगिंग और मॉनिटरिंग लागू करें
 4. **अपने समाधान का स्केल करें**: लोड बैलेंसिंग और वितरित MCP सर्वर आर्किटेक्चर पर विचार करें
@@ -377,7 +381,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 अतिरिक्त सहायता और प्रश्नों के लिए:
 - [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-foundry/) देखें
-- [MCP community resources](https://modelcontextprotocol.io/) जांचें
+- [MCP community resources](https://modelcontextprotocol.io/) देखें
 
 ## आगे क्या है
 

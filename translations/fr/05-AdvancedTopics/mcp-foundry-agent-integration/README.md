@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:12:11+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:29:20+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "fr"
 }
@@ -59,6 +59,8 @@ Choisissez votre environnement de développement préféré :
 ---
 
 ## Implémentation Python
+
+***Note*** Vous pouvez exécuter ce [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Installer les packages requis
 
@@ -187,6 +189,8 @@ with project_client:
 
 ## Implémentation .NET
 
+***Note*** Vous pouvez exécuter ce [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+
 ### 1. Installer les packages requis
 
 ```csharp
@@ -217,7 +221,7 @@ PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCreden
 MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
 ```
 
-### 5. Créer l’agent avec les outils MCP
+### 5. Créer un agent avec les outils MCP
 
 ```csharp
 PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
@@ -350,7 +354,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ### 2. Échecs d’appel d’outil
 - Vérifiez les arguments et leur format
 - Contrôlez les exigences spécifiques du serveur
-- Implémentez une gestion d’erreurs appropriée
+- Implémentez une gestion appropriée des erreurs
 
 ### 3. Problèmes de performance
 - Optimisez la fréquence des appels aux outils

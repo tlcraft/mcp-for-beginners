@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:18:16+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:35:43+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "no"
 }
 -->
 # Model Context Protocol (MCP) Integrasjon med Azure AI Foundry
 
-Denne veiledningen viser hvordan du integrerer Model Context Protocol (MCP) servere med Azure AI Foundry-agenter, noe som muliggjør kraftig verktøyorchestrering og AI-løsninger for bedrifter.
+Denne veiledningen viser hvordan du integrerer Model Context Protocol (MCP) servere med Azure AI Foundry-agenter, noe som muliggjør kraftig verktøyorchestrering og AI-funksjonalitet for bedrifter.
 
 ## Introduksjon
 
@@ -59,6 +59,8 @@ Velg ditt foretrukne utviklingsmiljø:
 ---
 
 ## Python-implementasjon
+
+***Note*** Du kan kjøre denne [notebooken](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Installer nødvendige pakker
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET-implementasjon
+
+***Note*** Du kan kjøre denne [notebooken](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Installer nødvendige pakker
 
@@ -353,7 +357,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Implementer riktig feilhåndtering
 
 ### 3. Ytelsesproblemer
-- Optimaliser hyppigheten av verktøysamtaler
+- Optimaliser frekvensen av verktøysamtaler
 - Bruk caching der det er hensiktsmessig
 - Overvåk responstider fra serveren
 
@@ -370,7 +374,7 @@ For å forbedre MCP-integrasjonen ytterligere:
 
 - [Azure AI Foundry Dokumentasjon](https://learn.microsoft.com/azure/ai-foundry/)
 - [Model Context Protocol Eksempler](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
-- [Azure AI Foundry Agenter Oversikt](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [Oversikt over Azure AI Foundry-agenter](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [MCP Spesifikasjon](https://spec.modelcontextprotocol.io/)
 
 ## Support

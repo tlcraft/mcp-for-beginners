@@ -1,32 +1,32 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:18:54+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:36:25+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "he"
 }
 -->
-# פרוטוקול הקשר למודל (MCP) אינטגרציה עם Azure AI Foundry
+# אינטגרציה של Model Context Protocol (MCP) עם Azure AI Foundry
 
-מדריך זה מציג כיצד לשלב שרתי Model Context Protocol (MCP) עם סוכני Azure AI Foundry, המאפשרים תזמור כלים חזק ויכולות AI ארגוניות.
+מדריך זה מציג כיצד לשלב שרתי Model Context Protocol (MCP) עם סוכני Azure AI Foundry, ומאפשר תזמור כלים מתקדם ויכולות AI ארגוניות.
 
 ## מבוא
 
-Model Context Protocol (MCP) הוא תקן פתוח המאפשר לאפליקציות AI להתחבר בצורה מאובטחת למקורות נתונים וכלים חיצוניים. כאשר משולב עם Azure AI Foundry, MCP מאפשר לסוכנים לגשת ולתקשר עם שירותים, APIs ומקורות נתונים חיצוניים שונים בצורה סטנדרטית.
+Model Context Protocol (MCP) הוא תקן פתוח המאפשר לאפליקציות AI להתחבר בצורה מאובטחת למקורות נתונים וכלים חיצוניים. בשילוב עם Azure AI Foundry, MCP מאפשר לסוכנים לגשת ולפעול מול שירותים, APIs ומקורות נתונים חיצוניים שונים בצורה סטנדרטית.
 
-שילוב זה משלב את הגמישות של מערכת הכלים של MCP עם מסגרת הסוכנים החזקה של Azure AI Foundry, ומספק פתרונות AI ברמת ארגון עם אפשרויות התאמה נרחבות.
+שילוב זה מחבר בין הגמישות של מערכת הכלים של MCP לבין מסגרת הסוכנים החזקה של Azure AI Foundry, ומספק פתרונות AI ברמת ארגון עם אפשרויות התאמה נרחבות.
 
-**Note:** אם ברצונך להשתמש ב-MCP בשירות סוכני Azure AI Foundry, כרגע נתמכים רק האזורים הבאים: westus, westus2, uaenorth, southindia ו-switzerlandnorth
+**[!NOTE]** אם ברצונך להשתמש ב-MCP בשירות סוכני Azure AI Foundry, כרגע נתמכים רק האזורים הבאים: westus, westus2, uaenorth, southindia ו-switzerlandnorth
 
 ## מטרות הלמידה
 
 בסיום מדריך זה תוכל:
 
-- להבין את Model Context Protocol ואת היתרונות שלו
+- להבין את Model Context Protocol ואת יתרונותיו
 - להגדיר שרתי MCP לשימוש עם סוכני Azure AI Foundry
-- ליצור ולהגדיר סוכנים עם אינטגרציית כלי MCP
-- ליישם דוגמאות מעשיות באמצעות שרתי MCP אמיתיים
+- ליצור ולהגדיר סוכנים עם אינטגרציה של כלי MCP
+- ליישם דוגמאות מעשיות עם שרתי MCP אמיתיים
 - לטפל בתגובות כלים וציטוטים בשיחות עם הסוכן
 
 ## דרישות מוקדמות
@@ -53,12 +53,14 @@ Model Context Protocol הוא דרך סטנדרטית לאפליקציות AI ל
 
 בחר את סביבת הפיתוח המועדפת עליך:
 
-- [מימוש Python](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
-- [מימוש .NET](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [מימוש ב-Python](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [מימוש ב-.NET](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
 
 ---
 
-## מימוש Python
+## מימוש ב-Python
+
+***[!NOTE]*** ניתן להריץ את ה-[מחברת](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) הזו
 
 ### 1. התקנת חבילות נדרשות
 
@@ -185,7 +187,9 @@ with project_client:
 
 ---
 
-## מימוש .NET
+## מימוש ב-.NET
+
+***[!NOTE]*** ניתן להריץ את ה-[מחברת](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) הזו
 
 ### 1. התקנת חבילות נדרשות
 
@@ -217,7 +221,7 @@ PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCreden
 MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
 ```
 
-### 5. יצירת סוכן עם כלים של MCP
+### 5. יצירת סוכן עם כלי MCP
 
 ```csharp
 PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
@@ -304,9 +308,9 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 ## אפשרויות קונפיגורציית כלי MCP
 
-בעת הגדרת כלים של MCP לסוכן שלך, ניתן לציין מספר פרמטרים חשובים:
+בעת הגדרת כלי MCP לסוכן שלך, ניתן לציין מספר פרמטרים חשובים:
 
-### קונפיגורציית Python
+### קונפיגורציה ב-Python
 
 ```python
 mcp_tool = McpTool(
@@ -316,7 +320,7 @@ mcp_tool = McpTool(
 )
 ```
 
-### קונפיגורציית .NET
+### קונפיגורציה ב-.NET
 
 ```csharp
 MCPToolDefinition mcpTool = new(
@@ -381,7 +385,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## מה הלאה
 
-- [6. תרומות קהילתיות](../../06-CommunityContributions/README.md)
+- [6. תרומות מהקהילה](../../06-CommunityContributions/README.md)
 
 **כתב ויתור**:  
 מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
