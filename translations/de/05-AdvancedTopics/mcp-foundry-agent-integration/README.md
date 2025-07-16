@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:29:48+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-16T22:17:04+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "de"
 }
@@ -31,12 +31,12 @@ Am Ende dieses Leitfadens werden Sie in der Lage sein:
 
 ## Voraussetzungen
 
-Bevor Sie beginnen, stellen Sie sicher, dass Sie:
+Stellen Sie vor Beginn sicher, dass Sie Folgendes haben:
 
-- Ein Azure-Abonnement mit Zugriff auf AI Foundry besitzen
-- Python 3.10+ oder .NET 8.0+ installiert haben
-- Azure CLI installiert und konfiguriert ist
-- Die erforderlichen Berechtigungen zum Erstellen von AI-Ressourcen besitzen
+- Ein Azure-Abonnement mit Zugriff auf AI Foundry
+- Python 3.10+ oder .NET 8.0+
+- Azure CLI installiert und konfiguriert
+- Die erforderlichen Berechtigungen zum Erstellen von AI-Ressourcen
 
 ## Was ist Model Context Protocol (MCP)?
 
@@ -352,7 +352,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Stellen Sie die Netzwerkverbindung sicher
 
 ### 2. Fehler bei Tool-Aufrufen
-- Überprüfen Sie die Argumente und deren Formatierung
+- Überprüfen Sie die Argumente und das Format der Tool-Aufrufe
 - Beachten Sie server-spezifische Anforderungen
 - Implementieren Sie eine geeignete Fehlerbehandlung
 
@@ -385,7 +385,7 @@ Für weitere Unterstützung und Fragen:
 
 ## Was kommt als Nächstes
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

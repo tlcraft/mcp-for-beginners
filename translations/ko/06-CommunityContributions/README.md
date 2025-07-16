@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T03:56:05+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-16T21:42:24+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "ko"
 }
 -->
-# 커뮤니티와 기여
+# Community and Contributions
 
 ## 개요
 
-이 강의에서는 MCP 커뮤니티에 참여하는 방법, MCP 생태계에 기여하는 방법, 그리고 협업 개발을 위한 모범 사례를 다룹니다. 오픈 소스 MCP 프로젝트에 참여하는 방법을 이해하는 것은 이 기술의 미래를 만들어가고자 하는 사람들에게 매우 중요합니다.
+이 강의에서는 MCP 커뮤니티에 참여하는 방법, MCP 생태계에 기여하는 방법, 그리고 협업 개발을 위한 모범 사례를 다룹니다. 오픈 소스 MCP 프로젝트에 참여하는 방법을 이해하는 것은 이 기술의 미래를 형성하고자 하는 사람들에게 매우 중요합니다.
 
 ## 학습 목표
 
@@ -19,8 +19,9 @@ CO_OP_TRANSLATOR_METADATA:
 - MCP 커뮤니티와 생태계의 구조 이해
 - MCP 커뮤니티 포럼과 토론에 효과적으로 참여
 - MCP 오픈 소스 저장소에 기여
-- 맞춤형 MCP 도구를 만들고 공유
+- 맞춤형 MCP 도구와 서버 생성 및 공유
 - MCP 개발 및 협업을 위한 모범 사례 준수
+- MCP 개발을 위한 커뮤니티 리소스와 프레임워크 발견
 
 ## MCP 커뮤니티 생태계
 
@@ -28,8 +29,8 @@ MCP 생태계는 프로토콜 발전을 위해 함께 협력하는 다양한 구
 
 ### 주요 커뮤니티 구성 요소
 
-1. **Core Protocol Maintainers**: Microsoft 및 기타 조직으로, 핵심 MCP 사양과 참조 구현을 유지 관리합니다.
-2. **Tool Developers**: MCP 도구를 개발하는 개인 및 팀
+1. **Core Protocol Maintainers**: 공식 [Model Context Protocol GitHub 조직](https://github.com/modelcontextprotocol)에서 핵심 MCP 사양과 참조 구현을 관리합니다.
+2. **Tool Developers**: MCP 도구와 서버를 개발하는 개인 및 팀
 3. **Integration Providers**: MCP를 자사 제품과 서비스에 통합하는 기업
 4. **End Users**: MCP를 애플리케이션에 사용하는 개발자 및 조직
 5. **Contributors**: 코드, 문서 또는 기타 자원을 기여하는 커뮤니티 구성원
@@ -38,17 +39,21 @@ MCP 생태계는 프로토콜 발전을 위해 함께 협력하는 다양한 구
 
 #### 공식 채널
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP GitHub Organization](https://github.com/modelcontextprotocol)
 - [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [MCP Specification](https://modelcontextprotocol.io/docs/specification)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP Examples & Servers Repository](https://github.com/modelcontextprotocol/servers)
 
 #### 커뮤니티 주도 리소스
 
+- [MCP Clients](https://modelcontextprotocol.io/clients) - MCP 통합을 지원하는 클라이언트 목록
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - 커뮤니티에서 개발한 MCP 서버 목록
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - 엄선된 MCP 서버 목록
+- [PulseMCP](https://www.pulsemcp.com/) - MCP 리소스를 발견할 수 있는 커뮤니티 허브 및 뉴스레터
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - MCP 개발자들과 소통할 수 있는 공간
 - 언어별 SDK 구현체
-- 서버 구현 및 도구 라이브러리
 - 블로그 게시물 및 튜토리얼
-- 커뮤니티 포럼 및 소셜 미디어 토론
 
 ## MCP에 기여하기
 
@@ -59,7 +64,7 @@ MCP 생태계는 다양한 형태의 기여를 환영합니다:
 1. **코드 기여**:
    - 핵심 프로토콜 개선
    - 버그 수정
-   - 도구 구현
+   - 도구 및 서버 구현
    - 다양한 언어의 클라이언트/서버 라이브러리
 
 2. **문서화**:
@@ -69,168 +74,79 @@ MCP 생태계는 다양한 형태의 기여를 환영합니다:
    - 예제 및 샘플 애플리케이션 작성
 
 3. **커뮤니티 지원**:
-   - 포럼 질문 답변
+   - 포럼과 토론에서 질문 답변
    - 테스트 및 이슈 보고
    - 커뮤니티 이벤트 조직
    - 신규 기여자 멘토링
 
 ### 기여 절차: Core Protocol
 
-핵심 MCP 프로토콜 또는 공식 구현에 기여하려면:
+핵심 MCP 프로토콜이나 공식 구현에 기여하려면 [공식 기여 가이드라인](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md)의 원칙을 따르세요:
 
-#### .NET 예시: 프로토콜 개선 기여하기
+1. **단순함과 최소주의**: MCP 사양은 새로운 개념 추가에 대해 높은 기준을 유지합니다. 사양에 무언가를 추가하는 것은 제거하는 것보다 쉽습니다.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **구체적인 접근법**: 사양 변경은 추측성 아이디어가 아닌 구체적인 구현 문제에 기반해야 합니다.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **제안 단계**:
+   - 정의: 문제 영역을 탐색하고 다른 MCP 사용자들도 유사한 문제를 겪는지 검증
+   - 프로토타입: 예제 솔루션을 만들어 실제 적용 가능성을 보여줌
+   - 작성: 프로토타입을 바탕으로 사양 제안서 작성
+
+### 개발 환경 설정
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Java 예시: 버그 수정 기여하기
+### 예시: 버그 수정 기여
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Python 예시: 표준 라이브러리에 새로운 도구 기여하기
+### 예시: 표준 라이브러리에 새로운 도구 기여
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -396,17 +312,17 @@ MCP 프로젝트에 성공적으로 기여하려면:
 
 1. **작게 시작하기**: 문서, 버그 수정 또는 작은 개선부터 시작하세요.
 2. **스타일 가이드 준수**: 프로젝트의 코딩 스타일과 규칙을 따르세요.
-3. **테스트 작성**: 코드 기여에 대한 단위 테스트를 포함하세요.
+3. **테스트 작성**: 코드 기여에 단위 테스트를 포함하세요.
 4. **작업 문서화**: 새로운 기능이나 변경 사항에 대해 명확한 문서를 추가하세요.
-5. **목표가 명확한 PR 제출**: 하나의 이슈나 기능에 집중한 풀 리퀘스트를 만드세요.
+5. **목표가 명확한 PR 제출**: 풀 리퀘스트는 한 가지 이슈나 기능에 집중하세요.
 6. **피드백에 적극 대응**: 기여에 대한 피드백에 신속히 응답하세요.
 
-### 기여 워크플로우 예시
+### 예시 기여 워크플로우
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,9 +343,27 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## 맞춤형 MCP 도구 만들기 및 공유
+## MCP 서버 생성 및 공유
 
-MCP 생태계에 기여하는 가장 가치 있는 방법 중 하나는 맞춤형 도구를 만들고 공유하는 것입니다.
+MCP 생태계에 기여하는 가장 가치 있는 방법 중 하나는 맞춤형 MCP 서버를 만들고 공유하는 것입니다. 커뮤니티는 이미 다양한 서비스와 사용 사례를 위한 수백 개의 서버를 개발했습니다.
+
+### MCP 서버 개발 프레임워크
+
+MCP 서버 개발을 간소화하는 여러 프레임워크가 있습니다:
+
+1. **공식 SDK**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **커뮤니티 프레임워크**:
+   - [MCP-Framework](https://mcp-framework.com/) - TypeScript로 우아하고 빠르게 MCP 서버 구축
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Java 기반 어노테이션 중심 MCP 서버
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - MCP 서버용 Java 프레임워크
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP 서버용 Next.js 시작 프로젝트
 
 ### 공유 가능한 도구 개발
 
@@ -642,7 +574,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Python 예시: PyPI 패키지 배포하기
+#### Python 예시: PyPI 패키지 배포
 
 ```python
 # Directory structure for a PyPI package:
@@ -763,7 +695,7 @@ MCP 도구를 커뮤니티와 공유할 때는 다음을 지키세요:
 
 3. **성능 고려**:
    - 속도와 자원 사용 최적화
-   - 적절한 경우 캐싱 구현
+   - 적절한 캐싱 구현
    - 확장성 고려
 
 4. **보안**:
@@ -789,24 +721,24 @@ MCP 도구를 커뮤니티와 공유할 때는 다음을 지키세요:
 
 ### 코드 리뷰
 
-MCP 기여물을 리뷰할 때는 다음을 확인하세요:
+MCP 기여를 리뷰할 때는 다음을 확인하세요:
 
-1. **명확성**: 코드가 명확하고 잘 문서화되어 있나요?
-2. **정확성**: 기대한 대로 작동하나요?
-3. **일관성**: 프로젝트 규칙을 따르고 있나요?
-4. **완성도**: 테스트와 문서가 포함되어 있나요?
-5. **보안**: 보안상 문제는 없나요?
+1. **명확성**: 코드가 명확하고 잘 문서화되어 있는가?
+2. **정확성**: 기대한 대로 작동하는가?
+3. **일관성**: 프로젝트 규칙을 따르고 있는가?
+4. **완성도**: 테스트와 문서가 포함되어 있는가?
+5. **보안**: 보안상 문제는 없는가?
 
 ### 버전 호환성
 
 MCP 개발 시 다음을 고려하세요:
 
-1. **프로토콜 버전 관리**: 도구가 지원하는 MCP 프로토콜 버전을 준수하세요.
-2. **클라이언트 호환성**: 이전 버전과의 호환성을 고려하세요.
-3. **서버 호환성**: 서버 구현 가이드라인을 따르세요.
-4. **파괴적 변경**: 파괴적 변경 사항은 명확히 문서화하세요.
+1. **프로토콜 버전 관리**: 도구가 지원하는 MCP 프로토콜 버전을 준수
+2. **클라이언트 호환성**: 이전 버전과의 호환성 고려
+3. **서버 호환성**: 서버 구현 가이드라인 준수
+4. **파괴적 변경**: 파괴적 변경 사항은 명확히 문서화
 
-## 커뮤니티 프로젝트 예시: MCP 도구 레지스트리
+## 커뮤니티 프로젝트 예시: MCP Tool Registry
 
 중요한 커뮤니티 기여 중 하나는 MCP 도구를 위한 공개 레지스트리를 개발하는 것입니다.
 
@@ -890,17 +822,17 @@ async def delete_tool(tool_name: str):
 ## 주요 내용 정리
 
 - MCP 커뮤니티는 다양하며 여러 형태의 기여를 환영합니다.
-- MCP에 기여하는 방법은 핵심 프로토콜 개선부터 맞춤형 도구 개발까지 다양합니다.
+- MCP에 기여하는 범위는 핵심 프로토콜 개선부터 맞춤형 도구 개발까지 다양합니다.
 - 기여 가이드라인을 따르면 PR 승인 가능성이 높아집니다.
 - MCP 도구를 만들고 공유하는 것은 생태계 발전에 큰 도움이 됩니다.
 - 커뮤니티 협업은 MCP 성장과 개선에 필수적입니다.
 
 ## 연습 문제
 
-1. 자신의 기술과 관심사에 맞는 MCP 생태계 내 기여 분야를 찾아보세요.
+1. 자신의 기술과 관심사에 맞는 MCP 생태계 내 기여 영역을 찾아보세요.
 2. MCP 저장소를 포크하고 로컬 개발 환경을 설정하세요.
 3. 커뮤니티에 도움이 될 작은 개선, 버그 수정 또는 도구를 만들어 보세요.
-4. 적절한 테스트와 문서로 기여 내용을 문서화하세요.
+4. 적절한 테스트와 문서화로 기여 내용을 문서화하세요.
 5. 해당 저장소에 풀 리퀘스트를 제출하세요.
 
 ## 추가 자료
@@ -910,7 +842,7 @@ async def delete_tool(tool_name: str):
 
 ---
 
-다음: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

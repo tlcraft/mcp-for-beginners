@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:02:20+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-16T22:38:36+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "pl"
 }
 -->
 ## Zastrzeżenie dotyczące przykładów kodu
 
-> **Ważna uwaga**: Poniższe przykłady kodu demonstrują integrację Model Context Protocol (MCP) z funkcjonalnością wyszukiwania w sieci. Choć opierają się na wzorcach i strukturach oficjalnych SDK MCP, zostały uproszczone na potrzeby edukacyjne.
+> **Ważna uwaga**: Poniższe przykłady kodu demonstrują integrację Model Context Protocol (MCP) z funkcjonalnością wyszukiwania w sieci. Choć opierają się na wzorcach i strukturach oficjalnych SDK MCP, zostały uproszczone w celach edukacyjnych.
 > 
 > Przykłady te pokazują:
 > 
@@ -25,17 +25,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Framework Model Context Protocol (MCP)
 
-Model Context Protocol to ustandaryzowany sposób wymiany kontekstu między modelami AI, aplikacjami i usługami. W wyszukiwaniu w czasie rzeczywistym jest to fundament do tworzenia spójnych, wieloetapowych doświadczeń wyszukiwania. Kluczowe elementy to:
+Model Context Protocol to ustandaryzowany sposób wymiany kontekstu między modelami AI, aplikacjami i usługami. W wyszukiwaniu w czasie rzeczywistym ten framework jest kluczowy do tworzenia spójnych, wieloetapowych doświadczeń wyszukiwania. Główne elementy to:
 
 1. **Architektura klient-serwer**: MCP wyraźnie rozdziela klientów wyszukiwania (żądających) od serwerów wyszukiwania (dostawców), co pozwala na elastyczne modele wdrożeń.
 
-2. **Komunikacja JSON-RPC**: Protokół wykorzystuje JSON-RPC do wymiany wiadomości, co zapewnia kompatybilność z technologiami webowymi i łatwość implementacji na różnych platformach.
+2. **Komunikacja JSON-RPC**: Protokół wykorzystuje JSON-RPC do wymiany wiadomości, co zapewnia kompatybilność z technologiami webowymi i ułatwia implementację na różnych platformach.
 
 3. **Zarządzanie kontekstem**: MCP definiuje ustrukturyzowane metody utrzymywania, aktualizacji i wykorzystywania kontekstu wyszukiwania w wielu interakcjach.
 
 4. **Definicje narzędzi**: Możliwości wyszukiwania są udostępniane jako ustandaryzowane narzędzia z jasno określonymi parametrami i wartościami zwrotnymi.
 
-5. **Wsparcie dla streamingu**: Protokół obsługuje przesyłanie wyników strumieniowo, co jest kluczowe w wyszukiwaniu w czasie rzeczywistym, gdzie wyniki mogą napływać stopniowo.
+5. **Wsparcie dla streamingu**: Protokół obsługuje przesyłanie wyników strumieniowo, co jest niezbędne w wyszukiwaniu w czasie rzeczywistym, gdzie wyniki mogą pojawiać się stopniowo.
 
 ### Wzorce integracji wyszukiwania w sieci
 
@@ -69,7 +69,7 @@ graph LR
 
 Ten wzorzec rozdziela zapytania wyszukiwania pomiędzy wielu kompatybilnych z MCP dostawców, z których każdy może specjalizować się w różnych typach treści lub funkcjach wyszukiwania, zachowując przy tym spójny kontekst.
 
-#### 3. Łańcuch wyszukiwania wzbogacony o kontekst
+#### 3. Łańcuch wyszukiwania z rozszerzonym kontekstem
 
 ```mermaid
 graph LR
@@ -83,7 +83,7 @@ graph LR
     Server --> |Final Results + Updated Context| Client
 ```
 
-W tym wzorcu proces wyszukiwania dzieli się na wiele etapów, a kontekst jest wzbogacany na każdym kroku, co prowadzi do coraz bardziej trafnych wyników.
+W tym wzorcu proces wyszukiwania dzieli się na wiele etapów, a kontekst jest wzbogacany na każdym kroku, co skutkuje coraz bardziej trafnymi wynikami.
 
 ### Składniki kontekstu wyszukiwania
 
@@ -121,8 +121,8 @@ Wyszukiwanie oparte na MCP oferuje korzyści w monitoringu wiadomości:
 
 MCP otwiera nowe możliwości w przeglądaniu wspomaganym przez AI:
 
-- Kontekstowe sugestie wyszukiwania oparte na bieżącej aktywności w przeglądarce
-- Bezproblemowa integracja wyszukiwania w sieci z asystentami opartymi na dużych modelach językowych (LLM)
+- Kontekstowe sugestie wyszukiwania na podstawie bieżącej aktywności w przeglądarce
+- Bezproblemowa integracja wyszukiwania w sieci z asystentami opartymi na LLM
 - Wieloetapowe udoskonalanie wyszukiwania z zachowaniem kontekstu
 - Ulepszone sprawdzanie faktów i weryfikacja informacji
 
@@ -135,16 +135,16 @@ Patrząc w przyszłość, spodziewamy się, że MCP będzie się rozwijać, aby 
 - **Wyszukiwaniu multimodalnemu**: Integracja wyszukiwania tekstu, obrazów, dźwięku i wideo z zachowaniem kontekstu
 - **Wyszukiwaniu zdecentralizowanemu**: Wsparcie dla rozproszonych i federacyjnych ekosystemów wyszukiwania
 - **Prywatność wyszukiwania**: Mechanizmy wyszukiwania z zachowaniem prywatności i świadomością kontekstu  
-- **Zrozumienie zapytań**: Głębokie semantyczne analizowanie zapytań w naturalnym języku
+- **Zrozumienie zapytań**: Głębokie semantyczne analizowanie zapytań w naturalnym języku  
 
 ### Potencjalne postępy technologiczne
 
 Nowe technologie, które ukształtują przyszłość wyszukiwania MCP:
 
 1. **Neuronalne architektury wyszukiwania**: Systemy wyszukiwania oparte na embeddingach, zoptymalizowane pod MCP  
-2. **Spersonalizowany kontekst wyszukiwania**: Nauka indywidualnych wzorców wyszukiwania użytkownika w czasie  
+2. **Spersonalizowany kontekst wyszukiwania**: Nauka indywidualnych wzorców wyszukiwania użytkowników w czasie  
 3. **Integracja grafów wiedzy**: Wyszukiwanie kontekstowe wzbogacone o domenowe grafy wiedzy  
-4. **Kontekst międzymodalny**: Utrzymywanie kontekstu pomiędzy różnymi modalnościami wyszukiwania
+4. **Kontekst międzymodalny**: Utrzymywanie kontekstu pomiędzy różnymi modalnościami wyszukiwania  
 
 ## Ćwiczenia praktyczne
 
@@ -153,7 +153,7 @@ Nowe technologie, które ukształtują przyszłość wyszukiwania MCP:
 W tym ćwiczeniu nauczysz się:  
 - Konfigurować podstawowe środowisko wyszukiwania MCP  
 - Implementować obsługę kontekstu dla wyszukiwania w sieci  
-- Testować i weryfikować zachowanie kontekstu podczas kolejnych iteracji wyszukiwania
+- Testować i weryfikować zachowanie kontekstu podczas kolejnych iteracji wyszukiwania  
 
 ### Ćwiczenie 2: Budowa asystenta badawczego z MCP Search
 
@@ -161,7 +161,7 @@ Stwórz kompletną aplikację, która:
 - Przetwarza pytania badawcze w naturalnym języku  
 - Wykonuje wyszukiwania w sieci z uwzględnieniem kontekstu  
 - Syntezuje informacje z wielu źródeł  
-- Prezentuje uporządkowane wyniki badań
+- Prezentuje uporządkowane wyniki badań  
 
 ### Ćwiczenie 3: Implementacja federacji wyszukiwania wieloźródłowego z MCP
 
@@ -169,7 +169,7 @@ Zaawansowane ćwiczenie obejmujące:
 - Kontekstowe rozsyłanie zapytań do wielu silników wyszukiwania  
 - Ranking i agregację wyników  
 - Kontekstowe usuwanie duplikatów wyników wyszukiwania  
-- Obsługę metadanych specyficznych dla źródeł
+- Obsługę metadanych specyficznych dla źródeł  
 
 ## Dodatkowe zasoby
 
@@ -183,7 +183,7 @@ Zaawansowane ćwiczenie obejmujące:
 - [SerpAPI Documentation](https://serpapi.com/search-api) - API wyników wyszukiwania  
 - [Meilisearch Documentation](https://www.meilisearch.com/docs) - Open-source’owy silnik wyszukiwania  
 - [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - Rozproszony silnik wyszukiwania i analityki  
-- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Tworzenie aplikacji z wykorzystaniem LLM
+- [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Tworzenie aplikacji z wykorzystaniem LLM  
 
 ## Efekty nauki
 
@@ -194,27 +194,27 @@ Po ukończeniu tego modułu będziesz potrafił:
 - Implementować rozwiązania wyszukiwania oparte na MCP, korzystając z popularnych frameworków i API  
 - Projektować i wdrażać skalowalne, wydajne architektury wyszukiwania z MCP  
 - Stosować koncepcje MCP w różnych zastosowaniach, w tym wyszukiwaniu semantycznym, asystentach badawczych i przeglądaniu wspomaganym przez AI  
-- Ocenić nowe trendy i przyszłe innowacje w technologiach wyszukiwania opartych na MCP
+- Ocenić nowe trendy i przyszłe innowacje w technologiach wyszukiwania opartych na MCP  
 
 ### Zagadnienia związane z zaufaniem i bezpieczeństwem
 
-Implementując rozwiązania wyszukiwania sieciowego oparte na MCP, pamiętaj o następujących ważnych zasadach z specyfikacji MCP:
+Implementując rozwiązania wyszukiwania sieciowego oparte na MCP, pamiętaj o następujących ważnych zasadach z specyfikacji MCP:  
 
-1. **Zgoda i kontrola użytkownika**: Użytkownicy muszą wyraźnie wyrazić zgodę i rozumieć wszystkie operacje oraz dostęp do danych. Jest to szczególnie istotne w implementacjach wyszukiwania sieciowego, które mogą korzystać z zewnętrznych źródeł danych.
+1. **Zgoda i kontrola użytkownika**: Użytkownicy muszą wyraźnie wyrazić zgodę i rozumieć wszystkie operacje oraz dostęp do danych. Jest to szczególnie istotne w implementacjach wyszukiwania sieciowego, które mogą korzystać z zewnętrznych źródeł danych.  
 
-2. **Prywatność danych**: Zapewnij odpowiednie zarządzanie zapytaniami i wynikami wyszukiwania, zwłaszcza gdy mogą zawierać wrażliwe informacje. Wdroż odpowiednie mechanizmy kontroli dostępu, aby chronić dane użytkowników.
+2. **Prywatność danych**: Zapewnij odpowiednie zarządzanie zapytaniami i wynikami wyszukiwania, zwłaszcza gdy mogą zawierać wrażliwe informacje. Wdroż odpowiednie mechanizmy kontroli dostępu, aby chronić dane użytkowników.  
 
-3. **Bezpieczeństwo narzędzi**: Wprowadź właściwą autoryzację i walidację narzędzi wyszukiwania, ponieważ mogą one stanowić potencjalne zagrożenie bezpieczeństwa przez wykonywanie dowolnego kodu. Opisy zachowania narzędzi powinny być traktowane jako niezweryfikowane, chyba że pochodzą z zaufanego serwera.
+3. **Bezpieczeństwo narzędzi**: Wprowadź właściwą autoryzację i walidację narzędzi wyszukiwania, ponieważ mogą one stanowić potencjalne zagrożenie bezpieczeństwa przez wykonywanie dowolnego kodu. Opisy zachowania narzędzi powinny być traktowane jako niezweryfikowane, chyba że pochodzą z zaufanego serwera.  
 
-4. **Jasna dokumentacja**: Zapewnij przejrzystą dokumentację dotyczącą możliwości, ograniczeń i aspektów bezpieczeństwa Twojej implementacji MCP, zgodnie z wytycznymi specyfikacji MCP.
+4. **Jasna dokumentacja**: Zapewnij przejrzystą dokumentację dotyczącą możliwości, ograniczeń i aspektów bezpieczeństwa Twojej implementacji MCP, zgodnie z wytycznymi specyfikacji MCP.  
 
-5. **Solidne procesy zgody**: Zbuduj solidne mechanizmy uzyskiwania zgody i autoryzacji, które jasno wyjaśniają działanie każdego narzędzia przed jego użyciem, zwłaszcza jeśli narzędzia te mają dostęp do zewnętrznych zasobów sieciowych.
+5. **Solidne procesy zgody**: Zbuduj solidne mechanizmy uzyskiwania zgody i autoryzacji, które jasno wyjaśniają działanie każdego narzędzia przed jego użyciem, zwłaszcza jeśli narzędzia te mają dostęp do zewnętrznych zasobów sieciowych.  
 
-Szczegółowe informacje na temat bezpieczeństwa i zaufania w MCP znajdziesz w [oficjalnej dokumentacji](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
+Pełne informacje na temat bezpieczeństwa i zaufania w MCP znajdziesz w [oficjalnej dokumentacji](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).  
 
-## Co dalej
+## Co dalej  
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-14T04:51:52+00:00",
+  "original_hash": "80e5c8949af5af0f401fce6f905990aa",
+  "translation_date": "2025-07-16T20:52:47+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "zh"
 }
@@ -22,22 +22,70 @@ CO_OP_TRANSLATOR_METADATA:
 - 实现 MCP 服务器中的正确错误处理、日志记录和可观测性
 - 优化 MCP 实现的性能、安全性和可维护性
 
-## 额外参考资料
+## MCP 核心原则
 
-有关 MCP 最佳实践的最新信息，请参考：
+在深入具体实现实践之前，理解指导有效 MCP 开发的核心原则非常重要：
+
+1. **标准化通信**：MCP 以 JSON-RPC 2.0 为基础，提供统一的请求、响应和错误处理格式，适用于所有实现。
+
+2. **以用户为中心的设计**：始终优先考虑用户的同意、控制权和透明度。
+
+3. **安全优先**：实施强有力的安全措施，包括身份验证、授权、校验和速率限制。
+
+4. **模块化架构**：采用模块化设计 MCP 服务器，每个工具和资源都有明确且专注的职责。
+
+5. **有状态连接**：利用 MCP 维持多次请求间状态的能力，实现更连贯且具上下文感知的交互。
+
+## 官方 MCP 最佳实践
+
+以下最佳实践摘自官方 Model Context Protocol 文档：
+
+### 安全最佳实践
+
+1. **用户同意与控制**：访问数据或执行操作前，始终要求用户明确同意。清晰告知用户共享的数据内容及授权的操作范围。
+
+2. **数据隐私**：仅在获得明确同意后暴露用户数据，并通过适当的访问控制保护数据安全。防止未经授权的数据传输。
+
+3. **工具安全**：调用任何工具前必须获得用户明确同意。确保用户理解每个工具的功能，并执行严格的安全边界。
+
+4. **工具权限控制**：配置模型在会话期间允许使用的工具，确保仅能访问明确授权的工具。
+
+5. **身份验证**：在授予工具、资源或敏感操作访问权限前，要求使用 API 密钥、OAuth 令牌或其他安全认证方式进行身份验证。
+
+6. **参数校验**：对所有工具调用的参数进行校验，防止格式错误或恶意输入传入工具实现。
+
+7. **速率限制**：实施速率限制，防止滥用并确保服务器资源的公平使用。
+
+### 实现最佳实践
+
+1. **能力协商**：连接建立时，交换支持的功能、协议版本、可用工具和资源信息。
+
+2. **工具设计**：打造专注且单一职责的工具，避免设计处理多重关注点的庞大工具。
+
+3. **错误处理**：实现标准化的错误消息和代码，便于诊断问题、优雅处理失败并提供可操作的反馈。
+
+4. **日志记录**：配置结构化日志，用于审计、调试和监控协议交互。
+
+5. **进度跟踪**：对于长时间运行的操作，报告进度更新以支持响应式用户界面。
+
+6. **请求取消**：允许客户端取消不再需要或超时的进行中请求。
+
+## 其他参考资料
+
+有关 MCP 最佳实践的最新信息，请参阅：
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
+- [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
-## MCP 工具开发最佳实践
+## 实践实现示例
 
-### 架构原则
+### 工具设计最佳实践
 
 #### 1. 单一职责原则
 
-每个 MCP 功能应有明确且专注的目标。避免创建试图处理多种职责的单一庞大工具，而应开发专注于特定任务的专业工具。
+每个 MCP 工具应有明确且专注的目标。避免创建试图处理多重关注点的庞大工具，而应开发专门且擅长特定任务的工具。
 
-**良好示例：**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -75,7 +123,8 @@ public class WeatherForecastTool : ITool
             Required = new[] { "location" }
         };
     }
-      public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
     {
         var location = parameters["location"].ToString();
         var days = parameters.ContainsKey("days") 
@@ -95,76 +144,477 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**不良示例：**
-```csharp
-// A tool trying to do too many things
-public class WeatherToolSuite : ITool
-{
-    public string Name => "weather";
-    public string Description => "Weather-related functionality";
+#### 2. 一致的错误处理
+
+实现健壮的错误处理，提供详尽的错误信息和适当的恢复机制。
+
+```python
+# Python example with comprehensive error handling
+class DataQueryTool:
+    def get_name(self):
+        return "dataQuery"
+        
+    def get_description(self):
+        return "Queries data from specified database tables"
     
-    public ToolDefinition GetDefinition()
-    {
-        return new ToolDefinition
-        {
-            Name = Name,
-            Description = Description,
-            Parameters = new Dictionary<string, ParameterDefinition>
-            {
-                ["action"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "Weather action to perform",
-                    Enum = new[] { "forecast", "history", "alerts", "radar" }
-                },
-                ["location"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "City or location name"
-                },
-                // Many more properties for different actions...
-            },
-            required = new[] { "action", "location" }
-        };
+    async def execute(self, parameters):
+        try:
+            # Parameter validation
+            if "query" not in parameters:
+                raise ToolParameterError("Missing required parameter: query")
+                
+            query = parameters["query"]
+            
+            # Security validation
+            if self._contains_unsafe_sql(query):
+                raise ToolSecurityError("Query contains potentially unsafe SQL")
+            
+            try:
+                # Database operation with timeout
+                async with timeout(10):  # 10 second timeout
+                    result = await self._database.execute_query(query)
+                    
+                return ToolResponse(
+                    content=[TextContent(json.dumps(result))]
+                )
+            except asyncio.TimeoutError:
+                raise ToolExecutionError("Database query timed out after 10 seconds")
+            except DatabaseConnectionError as e:
+                # Connection errors might be transient
+                self._log_error("Database connection error", e)
+                raise ToolExecutionError(f"Database connection error: {str(e)}")
+            except DatabaseQueryError as e:
+                # Query errors are likely client errors
+                self._log_error("Database query error", e)
+                raise ToolExecutionError(f"Invalid query: {str(e)}")
+                
+        except ToolError:
+            # Let tool-specific errors pass through
+            raise
+        except Exception as e:
+            # Catch-all for unexpected errors
+            self._log_error("Unexpected error in DataQueryTool", e)
+            raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
+    
+    def _contains_unsafe_sql(self, query):
+        # Implementation of SQL injection detection
+        pass
+        
+    def _log_error(self, message, error):
+        # Implementation of error logging
+        pass
+```
+
+#### 3. 参数校验
+
+始终彻底校验参数，防止格式错误或恶意输入。
+
+```javascript
+// JavaScript/TypeScript example with detailed parameter validation
+class FileOperationTool {
+  getName() {
+    return "fileOperation";
+  }
+  
+  getDescription() {
+    return "Performs file operations like read, write, and delete";
+  }
+  
+  getDefinition() {
+    return {
+      name: this.getName(),
+      description: this.getDescription(),
+      parameters: {
+        operation: {
+          type: "string",
+          description: "Operation to perform",
+          enum: ["read", "write", "delete"]
+        },
+        path: {
+          type: "string",
+          description: "File path (must be within allowed directories)"
+        },
+        content: {
+          type: "string",
+          description: "Content to write (only for write operation)",
+          optional: true
+        }
+      },
+      required: ["operation", "path"]
+    };
+  }
+  
+  async execute(parameters) {
+    // 1. Validate parameter presence
+    if (!parameters.operation) {
+      throw new ToolError("Missing required parameter: operation");
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
-    {
-        // Complex conditional logic to handle different actions
-        var action = request.Parameters.GetProperty("action").GetString();
-        var location = request.Parameters.GetProperty("location").GetString();
+    if (!parameters.path) {
+      throw new ToolError("Missing required parameter: path");
+    }
+    
+    // 2. Validate parameter types
+    if (typeof parameters.operation !== "string") {
+      throw new ToolError("Parameter 'operation' must be a string");
+    }
+    
+    if (typeof parameters.path !== "string") {
+      throw new ToolError("Parameter 'path' must be a string");
+    }
+    
+    // 3. Validate parameter values
+    const validOperations = ["read", "write", "delete"];
+    if (!validOperations.includes(parameters.operation)) {
+      throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
+    }
+    
+    // 4. Validate content presence for write operation
+    if (parameters.operation === "write" && !parameters.content) {
+      throw new ToolError("Content parameter is required for write operation");
+    }
+    
+    // 5. Path safety validation
+    if (!this.isPathWithinAllowedDirectories(parameters.path)) {
+      throw new ToolError("Access denied: path is outside of allowed directories");
+    }
+    
+    // Implementation based on validated parameters
+    // ...
+  }
+  
+  isPathWithinAllowedDirectories(path) {
+    // Implementation of path safety check
+    // ...
+  }
+}
+```
+
+### 安全实现示例
+
+#### 1. 身份验证与授权
+
+```java
+// Java example with authentication and authorization
+public class SecureDataAccessTool implements Tool {
+    private final AuthenticationService authService;
+    private final AuthorizationService authzService;
+    private final DataService dataService;
+    
+    // Dependency injection
+    public SecureDataAccessTool(
+            AuthenticationService authService,
+            AuthorizationService authzService,
+            DataService dataService) {
+        this.authService = authService;
+        this.authzService = authzService;
+        this.dataService = dataService;
+    }
+    
+    @Override
+    public String getName() {
+        return "secureDataAccess";
+    }
+    
+    @Override
+    public ToolResponse execute(ToolRequest request) {
+        // 1. Extract authentication context
+        String authToken = request.getContext().getAuthToken();
         
-        switch (action)
-        {
-            case "forecast":
-                // Forecast logic
-                break;
-            case "history":
-                // Historical data logic
-                break;
-            // More cases...
-            default:
-                throw new ToolExecutionException($"Unknown action: {action}");
+        // 2. Authenticate user
+        UserIdentity user;
+        try {
+            user = authService.validateToken(authToken);
+        } catch (AuthenticationException e) {
+            return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // Result processing
+        // 3. Check authorization for the specific operation
+        String dataId = request.getParameters().get("dataId").getAsString();
+        String operation = request.getParameters().get("operation").getAsString();
+        
+        boolean isAuthorized = authzService.isAuthorized(user, "data:" + dataId, operation);
+        if (!isAuthorized) {
+            return ToolResponse.error("Access denied: Insufficient permissions for this operation");
+        }
+        
+        // 4. Proceed with authorized operation
+        try {
+            switch (operation) {
+                case "read":
+                    Object data = dataService.getData(dataId, user.getId());
+                    return ToolResponse.success(data);
+                case "update":
+                    JsonNode newData = request.getParameters().get("newData");
+                    dataService.updateData(dataId, newData, user.getId());
+                    return ToolResponse.success("Data updated successfully");
+                default:
+                    return ToolResponse.error("Unsupported operation: " + operation);
+            }
+        } catch (Exception e) {
+            return ToolResponse.error("Operation failed: " + e.getMessage());
+        }
+    }
+}
+```
+
+#### 2. 速率限制
+
+```csharp
+// C# rate limiting implementation
+public class RateLimitingMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly IMemoryCache _cache;
+    private readonly ILogger<RateLimitingMiddleware> _logger;
+    
+    // Configuration options
+    private readonly int _maxRequestsPerMinute;
+    
+    public RateLimitingMiddleware(
+        RequestDelegate next,
+        IMemoryCache cache,
+        ILogger<RateLimitingMiddleware> logger,
+        IConfiguration config)
+    {
+        _next = next;
+        _cache = cache;
+        _logger = logger;
+        _maxRequestsPerMinute = config.GetValue<int>("RateLimit:MaxRequestsPerMinute", 60);
+    }
+    
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // 1. Get client identifier (API key or user ID)
+        string clientId = GetClientIdentifier(context);
+        
+        // 2. Get rate limiting key for this minute
+        string cacheKey = $"rate_limit:{clientId}:{DateTime.UtcNow:yyyyMMddHHmm}";
+        
+        // 3. Check current request count
+        if (!_cache.TryGetValue(cacheKey, out int requestCount))
+        {
+            requestCount = 0;
+        }
+        
+        // 4. Enforce rate limit
+        if (requestCount >= _maxRequestsPerMinute)
+        {
+            _logger.LogWarning("Rate limit exceeded for client {ClientId}", clientId);
+            
+            context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+            context.Response.Headers.Add("Retry-After", "60");
+            
+            await context.Response.WriteAsJsonAsync(new
+            {
+                error = "Rate limit exceeded",
+                message = "Too many requests. Please try again later.",
+                retryAfterSeconds = 60
+            });
+            
+            return;
+        }
+        
+        // 5. Increment request count
+        _cache.Set(cacheKey, requestCount + 1, TimeSpan.FromMinutes(2));
+        
+        // 6. Add rate limit headers
+        context.Response.Headers.Add("X-RateLimit-Limit", _maxRequestsPerMinute.ToString());
+        context.Response.Headers.Add("X-RateLimit-Remaining", (_maxRequestsPerMinute - requestCount - 1).ToString());
+        
+        // 7. Continue with the request
+        await _next(context);
+    }
+    
+    private string GetClientIdentifier(HttpContext context)
+    {
+        // Implementation to extract API key or user ID
         // ...
     }
 }
 ```
 
-#### 2. 依赖注入与可测试性
+## 测试最佳实践
 
-设计工具时通过构造函数注入依赖，使其更易测试和配置：
+### 1. MCP 工具单元测试
+
+始终隔离测试工具，模拟外部依赖：
+
+```typescript
+// TypeScript example of a tool unit test
+describe('WeatherForecastTool', () => {
+  let tool: WeatherForecastTool;
+  let mockWeatherService: jest.Mocked<IWeatherService>;
+  
+  beforeEach(() => {
+    // Create a mock weather service
+    mockWeatherService = {
+      getForecasts: jest.fn()
+    } as any;
+    
+    // Create the tool with the mock dependency
+    tool = new WeatherForecastTool(mockWeatherService);
+  });
+  
+  it('should return weather forecast for a location', async () => {
+    // Arrange
+    const mockForecast = {
+      location: 'Seattle',
+      forecasts: [
+        { date: '2025-07-16', temperature: 72, conditions: 'Sunny' },
+        { date: '2025-07-17', temperature: 68, conditions: 'Partly Cloudy' },
+        { date: '2025-07-18', temperature: 65, conditions: 'Rain' }
+      ]
+    };
+    
+    mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
+    
+    // Act
+    const response = await tool.execute({
+      location: 'Seattle',
+      days: 3
+    });
+    
+    // Assert
+    expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
+    expect(response.content[0].text).toContain('Seattle');
+    expect(response.content[0].text).toContain('Sunny');
+  });
+  
+  it('should handle errors from the weather service', async () => {
+    // Arrange
+    mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
+    
+    // Act & Assert
+    await expect(tool.execute({
+      location: 'Seattle',
+      days: 3
+    })).rejects.toThrow('Weather service error: Service unavailable');
+  });
+});
+```
+
+### 2. 集成测试
+
+测试从客户端请求到服务器响应的完整流程：
+
+```python
+# Python integration test example
+@pytest.mark.asyncio
+async def test_mcp_server_integration():
+    # Start a test server
+    server = McpServer()
+    server.register_tool(WeatherForecastTool(MockWeatherService()))
+    await server.start(port=5000)
+    
+    try:
+        # Create a client
+        client = McpClient("http://localhost:5000")
+        
+        # Test tool discovery
+        tools = await client.discover_tools()
+        assert "weatherForecast" in [t.name for t in tools]
+        
+        # Test tool execution
+        response = await client.execute_tool("weatherForecast", {
+            "location": "Seattle",
+            "days": 3
+        })
+        
+        # Verify response
+        assert response.status_code == 200
+        assert "Seattle" in response.content[0].text
+        assert len(json.loads(response.content[0].text)["forecasts"]) == 3
+        
+    finally:
+        # Clean up
+        await server.stop()
+```
+
+## 性能优化
+
+### 1. 缓存策略
+
+实施合适的缓存以降低延迟和资源消耗：
+
+```csharp
+// C# example with caching
+public class CachedWeatherTool : ITool
+{
+    private readonly IWeatherService _weatherService;
+    private readonly IDistributedCache _cache;
+    private readonly ILogger<CachedWeatherTool> _logger;
+    
+    public CachedWeatherTool(
+        IWeatherService weatherService,
+        IDistributedCache cache,
+        ILogger<CachedWeatherTool> logger)
+    {
+        _weatherService = weatherService;
+        _cache = cache;
+        _logger = logger;
+    }
+    
+    public string Name => "weatherForecast";
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    {
+        var location = parameters["location"].ToString();
+        var days = Convert.ToInt32(parameters.GetValueOrDefault("days", 3));
+        
+        // Create cache key
+        string cacheKey = $"weather:{location}:{days}";
+        
+        // Try to get from cache
+        string cachedForecast = await _cache.GetStringAsync(cacheKey);
+        if (!string.IsNullOrEmpty(cachedForecast))
+        {
+            _logger.LogInformation("Cache hit for weather forecast: {Location}", location);
+            return new ToolResponse
+            {
+                Content = new List<ContentItem>
+                {
+                    new TextContent(cachedForecast)
+                }
+            };
+        }
+        
+        // Cache miss - get from service
+        _logger.LogInformation("Cache miss for weather forecast: {Location}", location);
+        var forecast = await _weatherService.GetForecastAsync(location, days);
+        string forecastJson = JsonSerializer.Serialize(forecast);
+        
+        // Store in cache (weather forecasts valid for 1 hour)
+        await _cache.SetStringAsync(
+            cacheKey,
+            forecastJson,
+            new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1)
+            });
+        
+        return new ToolResponse
+        {
+            Content = new List<ContentItem>
+            {
+                new TextContent(forecastJson)
+            }
+        };
+    }
+}
+
+#### 2. Dependency Injection and Testability
+
+Design tools to receive their dependencies through constructor injection, making them testable and configurable:
 
 ```java
-// Java example with dependency injection
+// Java 示例，使用依赖注入
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // 通过构造函数注入依赖
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -174,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // 工具实现
     // ...
 }
 ```
 
-#### 3. 可组合工具
+#### 3. Composable Tools
 
-设计能够组合使用的工具，以构建更复杂的工作流：
+Design tools that can be composed together to create more complex workflows:
 
 ```python
-# Python example showing composable tools
+# Python 示例，展示可组合工具
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # 实现...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # 该工具可使用 dataFetch 工具的结果
     async def execute_async(self, request):
-        # Implementation...
+        # 实现...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # 该工具可使用 dataAnalysis 工具的结果
     async def execute_async(self, request):
-        # Implementation...
+        # 实现...
         pass
 
-# These tools can be used independently or as part of a workflow
+# 这些工具既可独立使用，也可作为工作流的一部分
 ```
 
-### 模式设计最佳实践
+### Schema Design Best Practices
 
-模式是模型与工具之间的契约。设计良好的模式能提升工具的易用性。
+The schema is the contract between the model and your tool. Well-designed schemas lead to better tool usability.
 
-#### 1. 清晰的参数描述
+#### 1. Clear Parameter Descriptions
 
-始终为每个参数提供详细描述：
+Always include descriptive information for each parameter:
 
 ```csharp
 public object GetSchema()
@@ -228,25 +678,25 @@ public object GetSchema()
         properties = new {
             query = new { 
                 type = "string", 
-                description = "Search query text. Use precise keywords for better results." 
+                description = "搜索查询文本。使用精准关键词以获得更好结果。" 
             },
             filters = new {
                 type = "object",
-                description = "Optional filters to narrow down search results",
+                description = "可选过滤器，用于缩小搜索结果范围",
                 properties = new {
                     dateRange = new { 
                         type = "string", 
-                        description = "Date range in format YYYY-MM-DD:YYYY-MM-DD" 
+                        description = "日期范围，格式为 YYYY-MM-DD:YYYY-MM-DD" 
                     },
                     category = new { 
                         type = "string", 
-                        description = "Category name to filter by" 
+                        description = "用于过滤的类别名称" 
                     }
                 }
             },
             limit = new { 
                 type = "integer", 
-                description = "Maximum number of results to return (1-50)",
+                description = "返回结果的最大数量（1-50）",
                 default = 10
             }
         },
@@ -255,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. 验证约束
+#### 2. Validation Constraints
 
-包含验证约束以防止无效输入：
+Include validation constraints to prevent invalid inputs:
 
 ```java
 Map<String, Object> getSchema() {
@@ -266,25 +716,25 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // 带格式校验的邮箱属性
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
-    email.put("description", "User email address");
+    email.put("description", "用户邮箱地址");
     
-    // Age property with numeric constraints
+    // 带数值约束的年龄属性
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
-    age.put("description", "User age in years");
+    age.put("description", "用户年龄（岁）");
     
-    // Enumerated property
+    // 枚举属性
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
     subscription.put("default", "free");
-    subscription.put("description", "Subscription tier");
+    subscription.put("description", "订阅等级");
     
     properties.put("email", email);
     properties.put("age", age);
@@ -297,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. 一致的返回结构
+#### 3. Consistent Return Structures
 
-保持响应结构的一致性，便于模型解析结果：
+Maintain consistency in your response structures to make it easier for models to interpret results:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # 处理请求
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # 始终返回一致的结构
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -328,7 +778,7 @@ async def execute_async(self, request):
         )
     
 def _format_item(self, item):
-    """Ensures each item has a consistent structure"""
+    """确保每个条目结构一致"""
     return {
         "id": item.id,
         "title": item.title,
@@ -338,13 +788,13 @@ def _format_item(self, item):
     }
 ```
 
-### 错误处理
+### Error Handling
 
-健壮的错误处理对 MCP 工具的可靠性至关重要。
+Robust error handling is crucial for MCP tools to maintain reliability.
 
-#### 1. 优雅的错误处理
+#### 1. Graceful Error Handling
 
-在适当层级处理错误，并提供有用的错误信息：
+Handle errors at appropriate levels and provide informative messages:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -362,39 +812,39 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
         }
         catch (FileNotFoundException)
         {
-            throw new ToolExecutionException($"File not found: {fileId}");
+            throw new ToolExecutionException($"未找到文件: {fileId}");
         }
         catch (UnauthorizedAccessException)
         {
-            throw new ToolExecutionException("You don't have permission to access this file");
+            throw new ToolExecutionException("您无权访问此文件");
         }
         catch (Exception ex) when (ex is IOException || ex is TimeoutException)
         {
-            _logger.LogError(ex, "Error accessing file {FileId}", fileId);
-            throw new ToolExecutionException("Error accessing file: The service is temporarily unavailable");
+            _logger.LogError(ex, "访问文件时出错 {FileId}", fileId);
+            throw new ToolExecutionException("访问文件出错：服务暂时不可用");
         }
     }
     catch (JsonException)
     {
-        throw new ToolExecutionException("Invalid file ID format");
+        throw new ToolExecutionException("文件 ID 格式无效");
     }
     catch (Exception ex)
     {
-        _logger.LogError(ex, "Unexpected error in FileAccessTool");
-        throw new ToolExecutionException("An unexpected error occurred");
+        _logger.LogError(ex, "FileAccessTool 中发生意外错误");
+        throw new ToolExecutionException("发生意外错误");
     }
 }
 ```
 
-#### 2. 结构化错误响应
+#### 2. Structured Error Responses
 
-尽可能返回结构化的错误信息：
+Return structured error information when possible:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // 实现
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -412,45 +862,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
-        throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
+        // 其他异常重新抛出为 ToolExecutionException
+        throw new ToolExecutionException("工具执行失败: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. 重试逻辑
+#### 3. Retry Logic
 
-针对临时失败实现合适的重试机制：
+Implement appropriate retry logic for transient failures:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # 秒
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # 调用外部 API
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
-                raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
+                raise ToolExecutionException(f"操作在 {max_retries} 次尝试后失败: {str(e)}")
                 
-            # Exponential backoff
+            # 指数退避
             delay = base_delay * (2 ** (retry_count - 1))
-            logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
+            logging.warning(f"临时错误，{delay}秒后重试: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
-            raise ToolExecutionException(f"Operation failed: {str(e)}")
+            # 非临时错误，不重试
+            raise ToolExecutionException(f"操作失败: {str(e)}")
 ```
 
-### 性能优化
+### Performance Optimization
 
-#### 1. 缓存
+#### 1. Caching
 
-对高开销操作实现缓存：
+Implement caching for expensive operations:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -464,23 +914,25 @@ public class CachedDataTool : IMcpTool
         _cache = cache;
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+    public async Task
+
+ExecuteAsync(ToolRequest request)
     {
         var query = request.Parameters.GetProperty("query").GetString();
         
-        // Create cache key based on parameters
+        // 根据参数创建缓存键
         var cacheKey = $"data_query_{ComputeHash(query)}";
         
-        // Try to get from cache first
+        // 先尝试从缓存获取
         if (_cache.TryGetValue(cacheKey, out var cachedResult))
         {
             return new ToolResponse { Result = cachedResult };
         }
         
-        // Cache miss - perform actual query
+        // 缓存未命中 - 执行实际查询
         var result = await _database.QueryAsync(query);
         
-        // Store in cache with expiration
+        // 以过期时间存入缓存
         var cacheOptions = new MemoryCacheEntryOptions()
             .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
             
@@ -491,14 +943,14 @@ public class CachedDataTool : IMcpTool
     
     private string ComputeHash(string input)
     {
-        // Implementation to generate stable hash for cache key
+        // 生成用于缓存键的稳定哈希的实现
     }
 }
 ```
 
-#### 2. 异步处理
+#### 2. Asynchronous Processing
 
-对 I/O 密集型操作采用异步编程模式：
+Use asynchronous programming patterns for I/O-bound operations:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -509,23 +961,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // 对于长时间运行的操作，立即返回一个处理ID
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // 启动异步处理
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // 执行长时间操作
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // 更新状态（通常存储在数据库中）
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // 返回带有处理ID的即时响应
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -534,7 +986,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // 伴随的状态检查工具
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -547,35 +999,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. 资源限流
+#### 3. Resource Throttling
 
-实现资源限流以防止过载：
+Implement resource throttling to prevent overload:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # 允许每秒5个请求
+            bucket_size=10        # 允许突发最多10个请求
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # 检查是否可以继续，或者需要等待
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # 如果等待时间过长
                 raise ToolExecutionException(
-                    f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
+                    f"超出速率限制。请在 {delay:.1f} 秒后重试。"
                 )
             else:
-                # Wait for the appropriate delay time
+                # 等待适当的延迟时间
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # 消耗一个令牌并继续请求
         self.rate_limiter.consume()
         
-        # Call API
+        # 调用API
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -593,7 +1045,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # 计算下一个令牌可用的时间
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -605,86 +1057,86 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # 根据经过的时间添加新令牌
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### 安全最佳实践
+### Security Best Practices
 
-#### 1. 输入验证
+#### 1. Input Validation
 
-始终对输入参数进行彻底验证：
+Always validate input parameters thoroughly:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 {
-    // Validate parameters exist
+    // 验证参数是否存在
     if (!request.Parameters.TryGetProperty("query", out var queryProp))
     {
-        throw new ToolExecutionException("Missing required parameter: query");
+        throw new ToolExecutionException("缺少必需参数：query");
     }
     
-    // Validate correct type
+    // 验证类型是否正确
     if (queryProp.ValueKind != JsonValueKind.String)
     {
-        throw new ToolExecutionException("Query parameter must be a string");
+        throw new ToolExecutionException("查询参数必须是字符串");
     }
     
     var query = queryProp.GetString();
     
-    // Validate string content
+    // 验证字符串内容
     if (string.IsNullOrWhiteSpace(query))
     {
-        throw new ToolExecutionException("Query parameter cannot be empty");
+        throw new ToolExecutionException("查询参数不能为空");
     }
     
     if (query.Length > 500)
     {
-        throw new ToolExecutionException("Query parameter exceeds maximum length of 500 characters");
+        throw new ToolExecutionException("查询参数长度不能超过500个字符");
     }
     
-    // Check for SQL injection attacks if applicable
+    // 如果适用，检查SQL注入攻击
     if (ContainsSqlInjection(query))
     {
-        throw new ToolExecutionException("Invalid query: contains potentially unsafe SQL");
+        throw new ToolExecutionException("无效查询：包含潜在不安全的SQL");
     }
     
-    // Proceed with execution
+    // 继续执行
     // ...
 }
 ```
 
-#### 2. 授权检查
+#### 2. Authorization Checks
 
-实现正确的授权检查：
+Implement proper authorization checks:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // 从请求中获取用户上下文
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // 检查用户是否有所需权限
     if (!authorizationService.hasPermission(user, "documents:read")) {
-        throw new ToolExecutionException("User does not have permission to access documents");
+        throw new ToolExecutionException("用户无权访问文档");
     }
     
-    // For specific resources, check access to that resource
+    // 对特定资源，检查对该资源的访问权限
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
-        throw new ToolExecutionException("Access denied to the requested document");
+        throw new ToolExecutionException("拒绝访问请求的文档");
     }
     
-    // Proceed with tool execution
+    // 继续执行工具
     // ...
 }
 ```
 
-#### 3. 敏感数据处理
+#### 3. Sensitive Data Handling
 
-谨慎处理敏感数据：
+Handle sensitive data carefully:
 
 ```python
 class SecureDataTool(Tool):
@@ -702,56 +1154,56 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # 获取用户数据
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # 除非明确请求且有权限，否则过滤敏感字段
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # 检查请求上下文中的授权级别
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # 创建副本以避免修改原始数据
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # 涂黑特定敏感字段
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # 涂黑嵌套的敏感数据
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## MCP 工具测试最佳实践
+## Testing Best Practices for MCP Tools
 
-全面测试确保 MCP 工具功能正确，能处理边界情况，并与系统其他部分良好集成。
+Comprehensive testing ensures that MCP tools function correctly, handle edge cases, and integrate properly with the rest of the system.
 
-### 单元测试
+### Unit Testing
 
-#### 1. 独立测试每个工具
+#### 1. Test Each Tool in Isolation
 
-为每个工具的功能编写针对性测试：
+Create focused tests for each tool's functionality:
 
 ```csharp
 [Fact]
 public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 {
-    // Arrange
+    // 准备
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("Seattle", 3))
-        .ReturnsAsync(new WeatherForecast(/* test data */));
+        .ReturnsAsync(new WeatherForecast(/* 测试数据 */));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -763,10 +1215,10 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
         })
     );
     
-    // Act
+    // 执行
     var response = await tool.ExecuteAsync(request);
     
-    // Assert
+    // 断言
     Assert.NotNull(response);
     var result = JsonSerializer.Deserialize<WeatherForecast>(response.Result);
     Assert.Equal("Seattle", result.Location);
@@ -776,11 +1228,11 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 [Fact]
 public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 {
-    // Arrange
+    // 准备
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("InvalidLocation", It.IsAny<int>()))
-        .ThrowsAsync(new LocationNotFoundException("Location not found"));
+        .ThrowsAsync(new LocationNotFoundException("未找到位置"));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -792,36 +1244,36 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
         })
     );
     
-    // Act & Assert
+    // 执行并断言
     var exception = await Assert.ThrowsAsync<ToolExecutionException>(
         () => tool.ExecuteAsync(request)
     );
     
-    Assert.Contains("Location not found", exception.Message);
+    Assert.Contains("未找到位置", exception.Message);
 }
 ```
 
-#### 2. 模式验证测试
+#### 2. Schema Validation Testing
 
-测试模式的有效性及约束执行情况：
+Test that schemas are valid and properly enforce constraints:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // 创建工具实例
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // 获取模式
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // 将模式转换为JSON以便验证
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // 验证模式是否为有效的JSONSchema
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // 测试有效参数
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -829,14 +1281,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // 测试缺少必需参数
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // 测试参数类型无效
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -846,21 +1298,21 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. 错误处理测试
+#### 3. Error Handling Tests
 
-针对错误情况编写专门测试：
+Create specific tests for error conditions:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # 准备
+    tool = ApiTool(timeout=0.1)  # 非常短的超时时间
     
-    # Mock a request that will time out
+    # 模拟一个会超时的请求
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # 超过超时时间
         )
         
         request = ToolRequest(
@@ -868,19 +1320,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # 执行并断言
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # 验证异常消息
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # 准备
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # 模拟一个速率限制响应
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -894,27 +1346,27 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # 执行并断言
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # 验证异常包含速率限制信息
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### 集成测试
+### Integration Testing
 
-#### 1. 工具链测试
+#### 1. Tool Chain Testing
 
-测试工具按预期组合工作：
+Test tools working together in expected combinations:
 
 ```csharp
 [Fact]
 public async Task DataProcessingWorkflow_CompletesSuccessfully()
 {
-    // Arrange
+    // 准备
     var dataFetchTool = new DataFetchTool(mockDataService.Object);
     var analysisTools = new DataAnalysisTool(mockAnalysisService.Object);
     var visualizationTool = new DataVisualizationTool(mockVisualizationService.Object);
@@ -926,30 +1378,31 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
     
     var workflowExecutor = new WorkflowExecutor(toolRegistry);
     
-    // Act
-    var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
-        new ToolCall("dataFetch", new { source = "sales2023" }),
-        new ToolCall("dataAnalysis", ctx => new { 
+    // 执行
+var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
+    new ToolCall("dataFetch", new { source = "sales2023" }),
+    new ToolCall("dataAnalysis", ctx =>
+        new { 
             data = ctx.GetResult("dataFetch"),
             analysis = "trend" 
         }),
-        new ToolCall("dataVisualize", ctx => new {
-            analysisResult = ctx.GetResult("dataAnalysis"),
-            type = "line-chart"
-        })
-    });
-    
-    // Assert
-    Assert.NotNull(result);
-    Assert.True(result.Success);
-    Assert.NotNull(result.GetResult("dataVisualize"));
-    Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
+    new ToolCall("dataVisualize", ctx => new {
+        analysisResult = ctx.GetResult("dataAnalysis"),
+        type = "line-chart"
+    })
+});
+
+// 断言
+Assert.NotNull(result);
+Assert.True(result.Success);
+Assert.NotNull(result.GetResult("dataVisualize"));
+Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
 }
 ```
 
-#### 2. MCP 服务器测试
+#### 2. MCP Server Testing
 
-测试 MCP 服务器的完整工具注册和执行：
+Test the MCP server with full tool registration and execution:
 
 ```java
 @SpringBootTest
@@ -964,7 +1417,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // 测试发现端点
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -975,7 +1428,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // 创建工具请求
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -985,7 +1438,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // 发送请求并验证响应
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -995,17 +1448,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // 创建无效的工具请求
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // 缺少参数 "b"
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // 发送请求并验证错误响应
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1015,17 +1468,17 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. 端到端测试
+#### 3. End-to-End Testing
 
-测试从模型提示到工具执行的完整工作流：
+Test complete workflows from model prompt to tool execution:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # 准备 - 设置 MCP 客户端和模拟模型
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # 模拟模型响应
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1040,7 +1493,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # 模拟天气工具响应
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1056,14 +1509,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # 执行
         response = await mcp_client.send_prompt(
             "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # 断言
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1072,17 +1525,17 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### 性能测试
+### Performance Testing
 
-#### 1. 负载测试
+#### 1. Load Testing
 
-测试 MCP 服务器能处理的并发请求数：
+Test how many concurrent requests your MCP server can handle:
 
 ```csharp
 [Fact]
 public async Task McpServer_HandlesHighConcurrency()
 {
-    // Arrange
+    // 准备
     var server = new McpServer(
         name: "TestServer",
         version: "1.0",
@@ -1094,7 +1547,7 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var client = new McpClient("http://localhost:5000");
     
-    // Act
+    // 执行
     var tasks = new List<Task<McpResponse>>();
     for (int i = 0; i < 1000; i++)
     {
@@ -1103,15 +1556,15 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var results = await Task.WhenAll(tasks);
     
-    // Assert
+    // 断言
     Assert.Equal(1000, results.Length);
     Assert.All(results, r => Assert.NotNull(r));
 }
 ```
 
-#### 2. 压力测试
+#### 2. Stress Testing
 
-测试系统在极端负载下的表现：
+Test the system under extreme load:
 
 ```java
 @Test
@@ -1120,13 +1573,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // 设置 JMeter 进行压力测试
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // 配置 JMeter 测试计划
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // 创建测试计划、线程组、采样器等
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1138,7 +1591,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // 添加用于工具执行的 HTTP 采样器
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1149,58 +1602,58 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // 添加监听器
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // 运行测试
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // 验证结果
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // 平均响应时间 < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90百分位响应时间 < 500ms
 }
 ```
 
-#### 3. 监控与性能分析
+#### 3. Monitoring and Profiling
 
-设置监控以进行长期性能分析：
+Set up monitoring for long-term performance analysis:
 
 ```python
-# Configure monitoring for an MCP server
+# 配置 MCP 服务器的监控
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # 设置 Prometheus 指标
     prometheus_metrics = {
-        "request_count": Counter("mcp_requests_total", "Total MCP requests"),
+        "request_count": Counter("mcp_requests_total", "MCP 请求总数"),
         "request_latency": Histogram(
             "mcp_request_duration_seconds", 
-            "Request duration in seconds",
+            "请求持续时间（秒）",
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_execution_count": Counter(
             "mcp_tool_executions_total", 
-            "Tool execution count",
+            "工具执行次数",
             labelnames=["tool_name"]
         ),
         "tool_execution_latency": Histogram(
             "mcp_tool_duration_seconds", 
-            "Tool execution duration in seconds",
+            "工具执行持续时间（秒）",
             labelnames=["tool_name"],
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_errors": Counter(
             "mcp_tool_errors_total",
-            "Tool execution errors",
+            "工具执行错误数",
             labelnames=["tool_name", "error_type"]
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # 添加用于计时和记录指标的中间件
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # 暴露指标端点
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1208,29 +1661,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP 工作流设计模式
+## MCP Workflow Design Patterns
 
-设计良好的 MCP 工作流能提升效率、可靠性和可维护性。以下是关键模式：
+Well-designed MCP workflows improve efficiency, reliability, and maintainability. Here are key patterns to follow:
 
-### 1. 工具链模式
+### 1. Chain of Tools Pattern
 
-将多个工具按顺序连接，每个工具的输出作为下一个工具的输入：
+Connect multiple tools in a sequence where each tool's output becomes the input for the next:
 
 ```python
-# Python Chain of Tools implementation
+# Python 工具链实现
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # 按顺序执行的工具名称列表
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # 执行链中的每个工具，传入上一个结果
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # 存储结果并作为下一个工具的输入
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1239,7 +1692,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# 示例用法
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1253,9 +1706,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. 分发器模式
+### 2. Dispatcher Pattern
 
-使用中央工具根据输入分发到专门工具：
+Use a central tool that dispatches to specialized tools based on input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1268,7 +1721,7 @@ public class ContentDispatcherTool : IMcpTool
     }
     
     public string Name => "contentProcessor";
-    public string Description => "Processes content of various types";
+    public string Description => "处理各种类型的内容";
     
     public object GetSchema()
     {
@@ -1295,10 +1748,10 @@ public class ContentDispatcherTool : IMcpTool
         var contentType = request.Parameters.GetProperty("contentType").GetString();
         var operation = request.Parameters.GetProperty("operation").GetString();
         
-        // Determine which specialized tool to use
+        // 确定使用哪个专用工具
         string targetTool = DetermineTargetTool(contentType, operation);
         
-        // Forward to the specialized tool
+        // 转发给专用工具
         var specializedResponse = await _mcpClient.ExecuteToolAsync(
             targetTool,
             new { content, options = GetOptionsForTool(targetTool, operation) }
@@ -1315,7 +1768,48 @@ public class ContentDispatcherTool : IMcpTool
             ("text", "analyze") => "textAnalyzer",
             ("html", _) => "htmlProcessor",
             ("markdown", _) => "markdownProcessor",
-            ("csv", _) => "csvProcessor",
+            ("csv", _) =>
+# csvProcessor 使用指南
+
+欢迎使用 csvProcessor，这是一个强大的工具，用于高效处理 CSV 文件。
+
+## 主要功能
+
+- 读取和解析 CSV 文件
+- 支持自定义分隔符
+- 处理包含引号和换行符的字段
+- 导出为多种格式
+
+## 快速开始
+
+```python
+from csvProcessor import CSVReader
+
+reader = CSVReader('@@INLINE_CODE_1@@')
+data = reader.read()
+print(data)
+```
+
+## 注意事项
+
+[!NOTE] 确保输入文件的编码格式为 UTF-8，以避免解析错误。
+
+## 高级用法
+
+您可以通过传递参数来自定义解析行为：
+
+```python
+reader = CSVReader('@@INLINE_CODE_2@@', delimiter=';', quotechar='"')
+data = reader.read()
+```
+
+## 常见问题
+
+[!TIP] 如果遇到解析错误，检查 CSV 文件中是否有未闭合的引号。
+
+## 反馈与支持
+
+如有任何问题或建议，请访问我们的[支持页面](https://example.com/support)。
             ("code", _) => "codeAnalyzer",
             _ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
         };
@@ -1323,21 +1817,21 @@ public class ContentDispatcherTool : IMcpTool
     
     private object GetOptionsForTool(string toolName, string operation)
     {
-        // Return appropriate options for each specialized tool
+        // 为每个专用工具返回合适的选项
         return toolName switch
         {
             "textSummarizer" => new { length = "medium" },
             "htmlProcessor" => new { cleanUp = true, operation },
-            // Options for other tools...
+            // 其他工具的选项...
             _ => new { }
         };
     }
 }
 ```
 
-### 3. 并行处理模式
+### 3. Parallel Processing Pattern
 
-同时执行多个工具以提高效率：
+Execute multiple tools simultaneously for efficiency:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1348,11 +1842,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // 第一步：获取数据集元数据（同步）
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // 第二步：并行启动多个分析任务
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1374,25 +1868,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // 等待所有并行任务完成
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // 等待完成
         
-        // Step 3: Combine results
+        // 第三步：合并结果
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // 第四步：生成汇总报告
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // 返回完整的工作流结果
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1403,9 +1897,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. 错误恢复模式
+### 4. Error Recovery Pattern
 
-为工具失败实现优雅的回退机制：
+Implement graceful fallbacks for tool failures:
 
 ```python
 class ResilientWorkflow:
@@ -1414,7 +1908,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # 先尝试主工具
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1422,12 +1916,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
-            logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
+            # 记录失败日志
+            logging.warning(f"主工具 '{primary_tool}' 失败: {str(e)}")
             
-            # Fall back to secondary tool
+            # 回退到备用工具
             try:
-                # Might need to transform parameters for fallback tool
+                # 可能需要为备用工具调整参数
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1438,30 +1932,30 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
-                logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
+                # 两个工具都失败
+                logging.error(f"主工具和备用工具均失败。备用工具错误: {str(fallback_error)}")
                 raise WorkflowExecutionException(
-                    f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
+                    f"工作流失败：主错误：{str(e)}；备用错误：{str(fallback_error)}"
                 )
     
     def _adapt_parameters(self, params, from_tool, to_tool):
-        """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        """如有需要，调整不同工具间的参数"""
+        # 具体实现取决于具体工具
+        # 这里示例中直接返回原始参数
         return params
 
-# Example usage
+# 示例用法
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # 主（付费）天气API
+        "basicWeatherService",    # 备用（免费）天气API
         {"location": location}
     )
 ```
 
-### 5. 工作流组合模式
+### 5. Workflow Composition Pattern
 
-通过组合简单工作流构建复杂工作流：
+Build complex workflows by composing simpler ones:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1481,10 +1975,10 @@ public class CompositeWorkflow : IWorkflow
         {
             var workflowResult = await workflow.ExecuteAsync(context);
             
-            // Store each workflow's result
+            // 保存每个工作流的结果
             results[workflow.Name] = workflowResult;
             
-            // Update context with the result for the next workflow
+            // 用当前结果更新上下文，供下一个工作流使用
             context = context.WithResult(workflow.Name, workflowResult);
         }
         
@@ -1492,10 +1986,10 @@ public class CompositeWorkflow : IWorkflow
     }
     
     public string Name => "CompositeWorkflow";
-    public string Description => "Executes multiple workflows in sequence";
+    public string Description => "按顺序执行多个工作流";
 }
 
-// Example usage
+// 示例用法
 var documentWorkflow = new CompositeWorkflow(new IWorkflow[] {
     new DocumentFetchWorkflow(),
     new DocumentProcessingWorkflow(),
@@ -1508,44 +2002,44 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# MCP 服务器测试：最佳实践与顶级技巧
+# Testing MCP Servers: Best Practices and Top Tips
 
-## 概述
+## Overview
 
-测试是开发可靠、高质量 MCP 服务器的关键环节。本指南提供了从单元测试到集成测试及端到端验证的全面最佳实践和技巧，贯穿整个开发生命周期。
+Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
 
-## 为什么 MCP 服务器测试很重要
+## Why Testing Matters for MCP Servers
 
-MCP 服务器作为 AI 模型与客户端应用之间的重要中间件，全面测试能确保：
+MCP servers serve as crucial middleware between AI models and client applications. Thorough testing ensures:
 
-- 生产环境的可靠性
-- 请求和响应的准确处理
-- MCP 规范的正确实现
-- 对故障和边界情况的韧性
-- 在各种负载下的稳定性能
+- Reliability in production environments
+- Accurate handling of requests and responses
+- Proper implementation of MCP specifications
+- Resilience against failures and edge cases
+- Consistent performance under various loads
 
-## MCP 服务器单元测试
+## Unit Testing for MCP Servers
 
-### 单元测试（基础）
+### Unit Testing (Foundation)
 
-单元测试验证 MCP 服务器中各个组件的独立功能。
+Unit tests verify individual components of your MCP server in isolation.
 
-#### 测试内容
+#### What to Test
 
-1. **资源处理器**：独立测试每个资源处理器的逻辑
-2. **工具实现**：验证工具在不同输入下的行为
-3. **提示模板**：确保提示模板正确渲染
-4. **模式验证**：测试参数验证逻辑
-5. **错误处理**：验证无效输入的错误响应
+1. **Resource Handlers**: Test each resource handler's logic independently
+2. **Tool Implementations**: Verify tool behavior with various inputs
+3. **Prompt Templates**: Ensure prompt templates render correctly
+4. **Schema Validation**: Test parameter validation logic
+5. **Error Handling**: Verify error responses for invalid inputs
 
-#### 单元测试最佳实践
+#### Best Practices for Unit Testing
 
 ```csharp
-// Example unit test for a calculator tool in C#
+// C# 中计算器工具的示例单元测试
 [Fact]
 public async Task CalculatorTool_Add_ReturnsCorrectSum()
 {
-    // Arrange
+    // 准备
     var calculator = new CalculatorTool();
     var parameters = new Dictionary<string, object>
     {
@@ -1554,19 +2048,19 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
         ["b"] = 7
     };
     
-    // Act
+    // 执行
     var response = await calculator.ExecuteAsync(parameters);
     var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
     
-    // Assert
+    // 断言
     Assert.Equal(12, result.Value);
 }
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# Python 中计算器工具的示例单元测试
 def test_calculator_tool_add():
-    # Arrange
+    # 准备
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -1574,34 +2068,34 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # 执行
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # 断言
     assert result["value"] == 12
 ```
 
-### 集成测试（中间层）
+### Integration Testing (Middle Layer)
 
-集成测试验证 MCP 服务器各组件间的交互。
+Integration tests verify interactions between components of your MCP server.
 
-#### 测试内容
+#### What to Test
 
-1. **服务器初始化**：测试不同配置下的服务器启动
-2. **路由注册**：验证所有端点正确注册
-3. **请求处理**：测试完整的请求-响应流程
-4. **错误传播**：确保错误在组件间正确传递
-5. **认证与授权**：测试安全机制
+1. **Server Initialization**: Test server startup with various configurations
+2. **Route Registration**: Verify all endpoints are correctly registered
+3. **Request Processing**: Test the full request-response cycle
+4. **Error Propagation**: Ensure errors are properly handled across components
+5. **Authentication & Authorization**: Test security mechanisms
 
-#### 集成测试最佳实践
+#### Best Practices for Integration Testing
 
 ```csharp
-// Example integration test for MCP server in C#
+// C# 中 MCP 服务器的示例集成测试
 [Fact]
 public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 {
-    // Arrange
+    // 准备
     var server = new McpServer();
     server.RegisterTool(new CalculatorTool());
     await server.StartAsync();
@@ -1617,40 +2111,40 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
         }
     };
     
-    // Act
+    // 执行
     var response = await server.ProcessRequestAsync(request);
     
-    // Assert
+    // 断言
     Assert.NotNull(response);
     Assert.Equal(McpStatusCodes.Success, response.StatusCode);
-    // Additional assertions for response content
+    // 对响应内容的额外断言
     
-    // Cleanup
+    // 清理
     await server.StopAsync();
 }
 ```
 
-### 端到端测试（顶层）
+### End-to-End Testing (Top Layer)
 
-端到端测试验证从客户端到服务器的完整系统行为。
+End-to-end tests verify the complete system behavior from client to server.
 
-#### 测试内容
+#### What to Test
 
-1. **客户端-服务器通信**：测试完整的请求-响应周期
-2. **真实客户端 SDK**：使用实际客户端实现进行测试
-3. **负载下性能**：验证多并发请求下的表现
-4. **错误恢复**：测试系统从故障中恢复能力
-5. **长时间运行操作**：验证流式和长时间操作的处理
+1. **Client-Server Communication**: Test complete request-response cycles
+2. **Real Client SDKs**: Test with actual client implementations
+3. **Performance Under Load**: Verify behavior with multiple concurrent requests
+4. **Error Recovery**: Test system recovery from failures
+5. **Long-Running Operations**: Verify handling of streaming and long operations
 
-#### 端到端测试最佳实践
+#### Best Practices for E2E Testing
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// TypeScript 中的 MCP 服务器端到端测试示例
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // 在测试环境启动服务器
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -1660,35 +2154,35 @@ describe('MCP Server E2E Tests', () => {
   });
   
   test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+    // 执行
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // 断言
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
 });
 ```
 
-## MCP 测试中的 Mock 策略
+## Mocking Strategies for MCP Testing
 
-Mock 是测试中隔离组件的关键手段。
+Mocking is essential for isolating components during testing.
 
-### 需要 Mock 的组件
+### Components to Mock
 
-1. **外部 AI 模型**：模拟模型响应以实现可预测测试
-2. **外部服务**：模拟 API 依赖（数据库、第三方服务）
-3. **认证服务**：模拟身份提供者
-4. **资源提供者**：模拟高开销资源处理器
+1. **External AI Models**: Mock model responses for predictable testing
+2. **External Services**: Mock API dependencies (databases, third-party services)
+3. **Authentication Services**: Mock identity providers
+4. **Resource Providers**: Mock expensive resource handlers
 
-### 示例：模拟 AI 模型响应
+### Example: Mocking an AI Model Response
 
 ```csharp
-// C# example with Moq
+// C# 中使用 Moq 的示例
 var mockModel = new Mock<ILanguageModel>();
 mockModel
     .Setup(m => m.GenerateResponseAsync(
@@ -1703,48 +2197,48 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# Python 中使用 unittest.mock 的示例
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
+    # 配置 mock
     mock_model.return_value.generate_response.return_value = {
         "text": "Mocked model response",
         "finish_reason": "completed"
     }
     
-    # Use mock in test
+    # 在测试中使用 mock
     server = McpServer(model_client=mock_model)
-    # Continue with test
+    # 继续测试
 ```
 
-## 性能测试
+## Performance Testing
 
-性能测试对生产环境的 MCP 服务器至关重要。
+Performance testing is crucial for production MCP servers.
 
-### 测量指标
+### What to Measure
 
-1. **延迟**：请求响应时间
-2. **吞吐量**：每秒处理请求数
-3. **资源利用率**：CPU、内存、网络使用情况
-4. **并发处理能力**：并行请求下的表现
-5. **扩展特性**：负载增加时的性能表现
+1. **Latency**: Response time for requests
+2. **Throughput**: Requests handled per second
+3. **Resource Utilization**: CPU, memory, network usage
+4. **Concurrency Handling**: Behavior under parallel requests
+5. **Scaling Characteristics**: Performance as load increases
 
-### 性能测试工具
+### Tools for Performance Testing
 
-- **k6**：开源负载测试工具
-- **JMeter**：全面性能测试工具
-- **Locust**：基于 Python 的负载测试
-- **Azure Load Testing**：云端性能测试服务
+- **k6**: Open-source load testing tool
+- **JMeter**: Comprehensive performance testing
+- **Locust**: Python-based load testing
+- **Azure Load Testing**: Cloud-based performance testing
 
-### 示例：使用 k6 进行基础负载测试
+### Example: Basic Load Test with k6
 
 ```javascript
-// k6 script for load testing MCP server
+// 用于 MCP 服务器负载测试的 k6 脚本
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10 virtual users
+  vus: 10,  // 10 个虚拟用户
   duration: '30s',
 };
 
@@ -1776,18 +2270,18 @@ export default function () {
 }
 ```
 
-## MCP 服务器测试自动化
+## Test Automation for MCP Servers
 
-自动化测试确保质量稳定，反馈更快。
+Automating your tests ensures consistent quality and faster feedback loops.
 
-### CI/CD 集成
+### CI/CD Integration
 
-1. **在 Pull Request 上运行单元测试**：确保代码变更不破坏现有功能
-2. **在预发布环境运行集成测试**：保证集成质量
-3. **性能基线维护**：监控性能基准，防止回退
-4. **安全扫描**：将安全测试纳入流水线
+1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
+2. **Integration Tests in Staging**: Run integration tests in pre-production environments
+3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
+4. **Security Scans**: Automate security testing as part of the pipeline
 
-### 示例 CI 流水线（GitHub Actions）
+### Example CI Pipeline (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -1826,101 +2320,101 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## MCP 规范合规性测试
+## Testing for Compliance with MCP Specification
 
-验证服务器正确实现 MCP 规范。
+Verify your server correctly implements the MCP specification.
 
-### 关键合规点
+### Key Compliance Areas
 
-1. **API 端点**：测试必需端点（/resources、/tools 等）
-2. **请求/响应格式**：验证模式合规性
-3. **错误码**：验证各种场景下的状态码正确性
-4. **内容类型**：测试不同内容类型的处理
-5. **认证流程**：验证符合规范的认证机制
+1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
+2. **Request/Response Format**: Validate schema compliance
+3. **Error Codes**: Verify correct status codes for various scenarios
+4. **Content Types**: Test handling of different content types
+5. **Authentication Flow**: Verify spec-compliant auth mechanisms
 
-### 合规测试套件
+### Compliance Test Suite
 
 ```csharp
 [Fact]
 public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 {
-    // Arrange
+    // 准备
     var client = new HttpClient();
     client.DefaultRequestHeaders.Add("Authorization", "Bearer test-token");
     
-    // Act
+    // 执行
     var response = await client.GetAsync("http://localhost:5000/api/resources");
     var content = await response.Content.ReadAsStringAsync();
-    var resources = JsonSerializer.Deserialize<ResourceList>(content);
-    
-    // Assert
-    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-    Assert.NotNull(resources);
-    Assert.All(resources.Resources, resource => 
-    {
-        Assert.NotNull(resource.Id);
-        Assert.NotNull(resource.Type);
-        // Additional schema validation
-    });
-}
+    var resources = JsonSerializer.Deserialize
+
+// 断言  
+Assert.Equal(HttpStatusCode.OK, response.StatusCode);  
+Assert.NotNull(resources);  
+Assert.All(resources.Resources, resource =>  
+{  
+    Assert.NotNull(resource.Id);  
+    Assert.NotNull(resource.Type);  
+    // 额外的模式验证  
+});  
+}  
 ```
 
-## MCP 服务器测试十大技巧
+## 高效 MCP 服务器测试的十大技巧
 
-1. **单独测试工具定义**：独立验证模式定义，分离工具逻辑
-2. **使用参数化测试**：用多样输入（含边界情况）测试工具
-3. **检查错误响应**：验证所有可能错误的正确处理
-4. **测试授权逻辑**：确保不同用户角色的访问控制
-5. **监控测试覆盖率**：争取关键路径代码的高覆盖率
-6. **测试流式响应**：验证流式内容的正确处理
-7. **模拟网络问题**：测试网络不佳时的表现
-8. **测试资源限制**：验证达到配额或速率限制时的行为
-9. **自动化回归测试**：构建每次代码变更都运行的测试套件
-10. **文档化测试用例**：保持测试场景的清晰文档
+1. **单独测试工具定义**：独立验证模式定义，避免与工具逻辑混淆  
+2. **使用参数化测试**：用各种输入（包括边界情况）测试工具  
+3. **检查错误响应**：验证所有可能错误条件下的正确错误处理  
+4. **测试授权逻辑**：确保不同用户角色的访问控制正确  
+5. **监控测试覆盖率**：争取关键路径代码的高覆盖率  
+6. **测试流式响应**：验证流式内容的正确处理  
+7. **模拟网络问题**：测试在网络不佳情况下的表现  
+8. **测试资源限制**：验证达到配额或速率限制时的行为  
+9. **自动化回归测试**：构建每次代码变更都能运行的测试套件  
+10. **文档化测试用例**：保持测试场景的清晰文档  
 
 ## 常见测试误区
 
-- **过度依赖正常路径测试**：务必充分测试错误情况
-- **忽视性能测试**：提前发现瓶颈，避免生产问题
-- **仅做孤立测试**：结合单元、集成和端到端测试
-- **API 覆盖不全**：确保所有端点和功能均被测试
-- **测试环境不一致**：使用容器保证环境一致性
+- **过度依赖正常路径测试**：务必彻底测试错误情况  
+- **忽视性能测试**：提前发现瓶颈，避免影响生产环境  
+- **仅孤立测试**：结合单元测试、集成测试和端到端测试  
+- **API 覆盖不完整**：确保所有端点和功能都被测试  
+- **测试环境不一致**：使用容器保证测试环境一致性  
 
 ## 结论
 
-全面的测试策略是开发可靠、高质量 MCP 服务器的基石。通过实施本指南中的最佳实践和技巧，你可以确保 MCP 实现达到最高的质量、可靠性和性能标准。
+全面的测试策略对于开发可靠、高质量的 MCP 服务器至关重要。通过实施本指南中介绍的最佳实践和技巧，您可以确保 MCP 实现达到最高的质量、可靠性和性能标准。
 
 ## 关键要点
 
-1. **工具设计**：遵循单一职责原则，使用依赖注入，设计可组合工具
-2. **模式设计**：创建清晰、文档完善且具备验证约束的模式
-3. **错误处理**：实现优雅错误处理、结构化错误响应和重试机制
-4. **性能**：采用缓存、异步处理和资源限流
-5. **安全**：全面输入验证、授权检查和敏感数据处理
-6. **测试**：构建全面的单元、集成和端到端测试
-7. **工作流模式**：应用链式、分发器和并行处理等成熟模式
+1. **工具设计**：遵循单一职责原则，使用依赖注入，设计可组合的工具  
+2. **模式设计**：创建清晰、文档完善且带有适当验证约束的模式  
+3. **错误处理**：实现优雅的错误处理、结构化错误响应和重试机制  
+4. **性能**：使用缓存、异步处理和资源限流  
+5. **安全**：进行全面的输入验证、授权检查和敏感数据处理  
+6. **测试**：创建全面的单元测试、集成测试和端到端测试  
+7. **工作流模式**：应用成熟的模式，如链式调用、调度器和并行处理  
 
 ## 练习
 
-设计一个用于文档处理系统的 MCP 工具和工作流，该系统需：
+设计一个用于文档处理系统的 MCP 工具和工作流，该系统能够：
 
-1. 支持多种格式的文档（PDF、DOCX、TXT）
-2. 从文档中提取文本和关键信息
-3. 根据类型和内容对文档进行分类
-4. 生成每个文档的摘要
+1. 接受多种格式的文档（PDF、DOCX、TXT）  
+2. 从文档中提取文本和关键信息  
+3. 按类型和内容对文档进行分类  
+4. 生成每个文档的摘要  
 
-实现工具模式、错误处理及最适合该场景的工作流模式。考虑如何测试该实现。
+实现工具的模式、错误处理以及最适合该场景的工作流模式。考虑如何测试该实现。
 
 ## 资源
 
-1. 加入 [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) MCP 社区，获取最新动态
-2. 参与开源 [MCP 项目](https://github.com/modelcontextprotocol) 贡献
-3. 在贵组织的 AI 计划中应用 MCP 原则
-4. 探索适合行业的专用 MCP 实现方案
-5. 考虑参加关于特定 MCP 主题的高级课程，例如多模态集成或企业应用集成。  
-6. 通过[动手实验](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)中学到的原理，尝试构建自己的 MCP 工具和工作流程。  
+1. 加入 [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) MCP 社区，获取最新动态  
+2. 参与开源 [MCP 项目](https://github.com/modelcontextprotocol)  
+3. 在贵组织的 AI 计划中应用 MCP 原则  
+4. 探索针对您行业的专用 MCP 实现  
+5. 考虑参加关于特定 MCP 主题的高级课程，如多模态集成或企业应用集成  
+6. 通过 [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) 学习的原则，尝试构建自己的 MCP 工具和工作流  
 
-下一步：最佳实践[案例研究](../09-CaseStudy/README.md)
+下一步：最佳实践 [案例研究](../09-CaseStudy/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

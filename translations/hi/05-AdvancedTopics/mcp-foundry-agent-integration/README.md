@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:32:15+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-16T22:50:40+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "hi"
 }
@@ -13,9 +13,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## परिचय
 
-Model Context Protocol (MCP) एक खुला मानक है जो AI एप्लिकेशन को बाहरी डेटा स्रोतों और टूल्स से सुरक्षित रूप से कनेक्ट करने में सक्षम बनाता है। Azure AI Foundry के साथ एकीकृत होने पर, MCP एजेंट्स को विभिन्न बाहरी सेवाओं, APIs, और डेटा स्रोतों तक मानकीकृत तरीके से पहुंचने और इंटरैक्ट करने की अनुमति देता है।
+Model Context Protocol (MCP) एक खुला मानक है जो AI एप्लिकेशन को बाहरी डेटा स्रोतों और टूल्स से सुरक्षित रूप से कनेक्ट करने में सक्षम बनाता है। Azure AI Foundry के साथ एकीकृत होने पर, MCP एजेंट्स को विभिन्न बाहरी सेवाओं, APIs, और डेटा स्रोतों तक मानकीकृत तरीके से पहुँचने और इंटरैक्ट करने की अनुमति देता है।
 
-यह एकीकरण MCP के टूल इकोसिस्टम की लचीलापन को Azure AI Foundry के मजबूत एजेंट फ्रेमवर्क के साथ जोड़ता है, जिससे एंटरप्राइज-ग्रेड AI समाधान व्यापक अनुकूलन क्षमताओं के साथ प्रदान किए जाते हैं।
+यह एकीकरण MCP के टूल इकोसिस्टम की लचीलापन को Azure AI Foundry के मजबूत एजेंट फ्रेमवर्क के साथ जोड़ता है, जिससे व्यापक अनुकूलन क्षमताओं के साथ एंटरप्राइज-ग्रेड AI समाधान मिलते हैं।
 
 **Note:** यदि आप Azure AI Foundry Agent Service में MCP का उपयोग करना चाहते हैं, तो वर्तमान में केवल निम्नलिखित क्षेत्र समर्थित हैं: westus, westus2, uaenorth, southindia और switzerlandnorth
 
@@ -60,7 +60,7 @@ Model Context Protocol AI एप्लिकेशन को बाहरी ड
 
 ## Python Implementation
 
-***Note*** आप इस [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) को चला सकते हैं
+***Note*** आप यह [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) चला सकते हैं
 
 ### 1. आवश्यक पैकेज इंस्टॉल करें
 
@@ -189,7 +189,7 @@ with project_client:
 
 ## .NET Implementation
 
-***Note*** आप इस [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) को चला सकते हैं
+***Note*** आप यह [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) चला सकते हैं
 
 ### 1. आवश्यक पैकेज इंस्टॉल करें
 
@@ -308,7 +308,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 ## MCP टूल कॉन्फ़िगरेशन विकल्प
 
-जब आप अपने एजेंट के लिए MCP टूल्स कॉन्फ़िगर कर रहे हों, तो आप कई महत्वपूर्ण पैरामीटर निर्दिष्ट कर सकते हैं:
+अपने एजेंट के लिए MCP टूल्स कॉन्फ़िगर करते समय, आप कई महत्वपूर्ण पैरामीटर निर्दिष्ट कर सकते हैं:
 
 ### Python कॉन्फ़िगरेशन
 
@@ -358,14 +358,14 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 3. प्रदर्शन समस्याएँ
 - टूल कॉल की आवृत्ति अनुकूलित करें
-- जहां उपयुक्त हो कैशिंग लागू करें
+- जहाँ उपयुक्त हो कैशिंग लागू करें
 - सर्वर प्रतिक्रिया समय की निगरानी करें
 
 ## अगले कदम
 
 अपने MCP एकीकरण को और बेहतर बनाने के लिए:
 
-1. **कस्टम MCP सर्वर एक्सप्लोर करें**: अपने स्वामित्व वाले डेटा स्रोतों के लिए अपने MCP सर्वर बनाएं
+1. **कस्टम MCP सर्वर एक्सप्लोर करें**: अपने स्वामित्व वाले डेटा स्रोतों के लिए MCP सर्वर बनाएं
 2. **उन्नत सुरक्षा लागू करें**: OAuth2 या कस्टम प्रमाणीकरण तंत्र जोड़ें
 3. **मॉनिटरिंग और एनालिटिक्स**: टूल उपयोग के लिए लॉगिंग और मॉनिटरिंग लागू करें
 4. **अपने समाधान का स्केल करें**: लोड बैलेंसिंग और वितरित MCP सर्वर आर्किटेक्चर पर विचार करें
@@ -385,7 +385,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## आगे क्या है
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **अस्वीकरण**:  
 यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयासरत हैं, कृपया ध्यान दें कि स्वचालित अनुवादों में त्रुटियाँ या अशुद्धियाँ हो सकती हैं। मूल दस्तावेज़ अपनी मूल भाषा में ही अधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सलाह दी जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम जिम्मेदार नहीं हैं।

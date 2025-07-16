@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:29:20+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-16T21:26:35+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "fr"
 }
@@ -15,7 +15,7 @@ Ce guide montre comment intégrer les serveurs Model Context Protocol (MCP) avec
 
 Le Model Context Protocol (MCP) est une norme ouverte qui permet aux applications d’IA de se connecter de manière sécurisée à des sources de données et outils externes. Lorsqu’il est intégré à Azure AI Foundry, MCP permet aux agents d’accéder et d’interagir avec divers services externes, API et sources de données de façon standardisée.
 
-Cette intégration combine la flexibilité de l’écosystème d’outils MCP avec le cadre robuste des agents Azure AI Foundry, offrant des solutions d’IA d’entreprise avec de larges possibilités de personnalisation.
+Cette intégration combine la flexibilité de l’écosystème d’outils MCP avec le cadre robuste des agents Azure AI Foundry, offrant des solutions d’IA de niveau entreprise avec de larges possibilités de personnalisation.
 
 **Note :** Si vous souhaitez utiliser MCP dans Azure AI Foundry Agent Service, seules les régions suivantes sont actuellement prises en charge : westus, westus2, uaenorth, southindia et switzerlandnorth
 
@@ -354,7 +354,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ### 2. Échecs d’appel d’outil
 - Vérifiez les arguments et leur format
 - Contrôlez les exigences spécifiques du serveur
-- Implémentez une gestion appropriée des erreurs
+- Implémentez une gestion d’erreurs appropriée
 
 ### 3. Problèmes de performance
 - Optimisez la fréquence des appels aux outils
@@ -385,7 +385,7 @@ Pour un support supplémentaire et des questions :
 
 ## Et après ?
 
-- [6. Contributions de la communauté](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Avertissement** :  
 Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

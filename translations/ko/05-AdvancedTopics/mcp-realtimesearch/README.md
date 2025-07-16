@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T00:54:32+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-16T21:48:09+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "ko"
 }
@@ -11,15 +11,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 > **중요 참고**: 아래 코드 예제는 Model Context Protocol(MCP)과 웹 검색 기능의 통합을 보여줍니다. 공식 MCP SDK의 패턴과 구조를 따르지만 교육 목적으로 단순화되어 있습니다.
 > 
-> 이 예제들은 다음을 포함합니다:
+> 이 예제들은 다음을 보여줍니다:
 > 
-> 1. **Python 구현**: FastMCP 서버 구현으로, 웹 검색 도구를 제공하고 외부 검색 API에 연결합니다. 이 예제는 [공식 MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)의 패턴을 따라 적절한 수명 주기 관리, 컨텍스트 처리, 도구 구현을 보여줍니다. 서버는 프로덕션 배포에서 이전 SSE 전송 방식을 대체한 권장 Streamable HTTP 전송 방식을 사용합니다.
+> 1. **파이썬 구현**: FastMCP 서버 구현으로, 웹 검색 도구를 제공하고 외부 검색 API에 연결합니다. 이 예제는 [공식 MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)의 패턴을 따라 적절한 수명 주기 관리, 컨텍스트 처리, 도구 구현을 시연합니다. 서버는 프로덕션 배포에서 이전 SSE 전송 방식을 대체한 권장 Streamable HTTP 전송을 사용합니다.
 > 
-> 2. **JavaScript 구현**: [공식 MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)의 FastMCP 패턴을 사용한 TypeScript/JavaScript 구현으로, 적절한 도구 정의와 클라이언트 연결을 갖춘 검색 서버를 만듭니다. 최신 권장 세션 관리 및 컨텍스트 보존 패턴을 따릅니다.
+> 2. **자바스크립트 구현**: [공식 MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)의 FastMCP 패턴을 활용한 TypeScript/JavaScript 구현으로, 적절한 도구 정의와 클라이언트 연결을 갖춘 검색 서버를 만듭니다. 최신 권장 세션 관리 및 컨텍스트 보존 패턴을 따릅니다.
 > 
-> 이 예제들은 프로덕션 사용을 위해 추가적인 오류 처리, 인증, 특정 API 통합 코드가 필요합니다. 예시로 사용된 검색 API 엔드포인트(`https://api.search-service.example/search`)는 자리 표시자이며 실제 검색 서비스 엔드포인트로 교체해야 합니다.
+> 이 예제들은 프로덕션 환경에서는 추가적인 오류 처리, 인증, 특정 API 통합 코드가 필요합니다. 예시로 사용된 검색 API 엔드포인트(`https://api.search-service.example/search`)는 자리 표시자이며 실제 검색 서비스 엔드포인트로 교체해야 합니다.
 > 
-> 완전한 구현 세부사항과 최신 접근법은 [공식 MCP 명세](https://spec.modelcontextprotocol.io/)와 SDK 문서를 참고하세요.
+> 완전한 구현 세부사항과 최신 접근법은 [공식 MCP 명세](https://spec.modelcontextprotocol.io/)와 SDK 문서를 참고하시기 바랍니다.
 
 ## 핵심 개념
 
@@ -29,17 +29,17 @@ MCP는 AI 모델, 애플리케이션, 서비스 간에 컨텍스트를 교환하
 
 1. **클라이언트-서버 아키텍처**: MCP는 검색 클라이언트(요청자)와 검색 서버(제공자)를 명확히 분리하여 유연한 배포 모델을 지원합니다.
 
-2. **JSON-RPC 통신**: 프로토콜은 메시지 교환에 JSON-RPC를 사용하여 웹 기술과 호환되며 다양한 플랫폼에서 쉽게 구현할 수 있습니다.
+2. **JSON-RPC 통신**: 프로토콜은 JSON-RPC를 사용해 메시지를 교환하며, 웹 기술과 호환되고 다양한 플랫폼에서 쉽게 구현할 수 있습니다.
 
 3. **컨텍스트 관리**: MCP는 여러 상호작용에 걸쳐 검색 컨텍스트를 유지, 업데이트, 활용하는 구조화된 방법을 정의합니다.
 
 4. **도구 정의**: 검색 기능을 명확한 매개변수와 반환값을 가진 표준화된 도구로 노출합니다.
 
-5. **스트리밍 지원**: 결과가 점진적으로 도착할 수 있는 실시간 검색에 필수적인 스트리밍 결과를 지원합니다.
+5. **스트리밍 지원**: 결과가 점진적으로 도착하는 실시간 검색에 필수적인 스트리밍 결과를 지원합니다.
 
 ### 웹 검색 통합 패턴
 
-MCP를 웹 검색과 통합할 때 다음과 같은 패턴이 나타납니다:
+MCP를 웹 검색에 통합할 때 다음과 같은 패턴이 나타납니다:
 
 #### 1. 직접 검색 제공자 통합
 
@@ -122,7 +122,7 @@ MCP 기반 검색은 뉴스 모니터링에 다음과 같은 이점을 제공합
 MCP는 AI 보조 브라우징에 새로운 가능성을 만듭니다:
 
 - 현재 브라우저 활동에 기반한 컨텍스트 검색 제안
-- 웹 검색과 LLM 기반 어시스턴트의 원활한 통합
+- LLM 기반 어시스턴트와 웹 검색의 원활한 통합
 - 유지되는 컨텍스트로 다중 턴 검색 정제
 - 향상된 사실 확인 및 정보 검증
 
@@ -130,10 +130,10 @@ MCP는 AI 보조 브라우징에 새로운 가능성을 만듭니다:
 
 ### 웹 검색에서 MCP의 진화
 
-앞으로 MCP는 다음을 다룰 것으로 예상됩니다:
+앞으로 MCP는 다음을 다룰 것으로 기대됩니다:
 
 - **멀티모달 검색**: 텍스트, 이미지, 오디오, 비디오 검색을 컨텍스트 보존과 통합
-- **분산 검색**: 분산 및 연합 검색 생태계 지원
+- **분산 검색**: 분산형 및 연합 검색 생태계 지원
 - **검색 프라이버시**: 상황 인식 기반의 개인정보 보호 검색 메커니즘  
 - **쿼리 이해**: 자연어 검색 쿼리의 심층 의미 분석  
 
@@ -144,7 +144,7 @@ MCP는 AI 보조 브라우징에 새로운 가능성을 만듭니다:
 1. **신경망 검색 아키텍처**: MCP에 최적화된 임베딩 기반 검색 시스템  
 2. **개인화된 검색 컨텍스트**: 개별 사용자의 검색 패턴을 시간에 따라 학습  
 3. **지식 그래프 통합**: 도메인별 지식 그래프를 활용한 맥락 기반 검색 강화  
-4. **교차 모달 컨텍스트**: 다양한 검색 모달리티 간의 컨텍스트 유지  
+4. **교차 모달 컨텍스트**: 다양한 검색 모달리티 간 컨텍스트 유지  
 
 ## 실습 과제
 
@@ -174,12 +174,12 @@ MCP는 AI 보조 브라우징에 새로운 가능성을 만듭니다:
 ## 추가 자료
 
 - [Model Context Protocol Specification](https://spec.modelcontextprotocol.io/) - 공식 MCP 사양 및 상세 프로토콜 문서  
-- [Model Context Protocol Documentation](https://modelcontextprotocol.io/) - 자세한 튜토리얼과 구현 가이드  
+- [Model Context Protocol Documentation](https://modelcontextprotocol.io/) - 상세 튜토리얼 및 구현 가이드  
 - [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) - MCP 프로토콜 공식 Python 구현체  
 - [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - MCP 프로토콜 공식 TypeScript 구현체  
 - [MCP Reference Servers](https://github.com/modelcontextprotocol/servers) - MCP 서버 참조 구현체  
 - [Bing Web Search API Documentation](https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview) - 마이크로소프트 웹 검색 API  
-- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - 구글 프로그래머블 검색 엔진  
+- [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - 구글 맞춤 검색 엔진  
 - [SerpAPI Documentation](https://serpapi.com/search-api) - 검색 엔진 결과 페이지 API  
 - [Meilisearch Documentation](https://www.meilisearch.com/docs) - 오픈소스 검색 엔진  
 - [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - 분산 검색 및 분석 엔진  
@@ -189,7 +189,7 @@ MCP는 AI 보조 브라우징에 새로운 가능성을 만듭니다:
 
 이 모듈을 완료하면 다음을 할 수 있습니다:  
 
-- 실시간 웹 검색의 기본 원리와 도전 과제 이해  
+- 실시간 웹 검색의 기본 개념과 도전 과제 이해  
 - Model Context Protocol(MCP)이 실시간 웹 검색 기능을 어떻게 향상시키는지 설명  
 - 인기 있는 프레임워크와 API를 사용해 MCP 기반 검색 솔루션 구현  
 - MCP를 활용한 확장 가능하고 고성능 검색 아키텍처 설계 및 배포  
@@ -200,21 +200,21 @@ MCP는 AI 보조 브라우징에 새로운 가능성을 만듭니다:
 
 MCP 기반 웹 검색 솔루션을 구현할 때 MCP 사양에서 제시하는 다음 중요한 원칙을 기억하세요:  
 
-1. **사용자 동의 및 통제**: 사용자는 모든 데이터 접근과 작업에 대해 명확히 동의하고 이해해야 합니다. 특히 외부 데이터 소스에 접근하는 웹 검색 구현에서 중요합니다.  
+1. **사용자 동의 및 통제**: 사용자는 모든 데이터 접근 및 작업에 대해 명확히 동의하고 이해해야 합니다. 특히 외부 데이터 소스에 접근하는 웹 검색 구현에서 중요합니다.  
 
 2. **데이터 프라이버시**: 민감한 정보가 포함될 수 있는 검색 쿼리와 결과를 적절히 처리하고, 사용자 데이터를 보호하기 위한 접근 제어를 구현해야 합니다.  
 
 3. **도구 안전성**: 검색 도구는 임의 코드 실행을 통해 보안 위험이 될 수 있으므로 적절한 권한 부여와 검증을 수행해야 합니다. 도구 동작 설명은 신뢰할 수 있는 서버에서 제공된 경우가 아니면 신뢰하지 않아야 합니다.  
 
-4. **명확한 문서화**: MCP 사양의 구현 지침에 따라 MCP 기반 검색 구현의 기능, 한계, 보안 고려사항을 명확히 문서화해야 합니다.  
+4. **명확한 문서화**: MCP 사양의 구현 지침에 따라 MCP 기반 검색 구현의 기능, 한계, 보안 고려사항에 대해 명확한 문서를 제공해야 합니다.  
 
-5. **견고한 동의 절차**: 외부 웹 리소스와 상호작용하는 도구 사용 전, 각 도구의 기능을 명확히 설명하는 견고한 동의 및 권한 부여 절차를 구축해야 합니다.  
+5. **견고한 동의 절차**: 외부 웹 리소스와 상호작용하는 도구 사용 전, 각 도구가 수행하는 작업을 명확히 설명하는 견고한 동의 및 권한 부여 절차를 구축해야 합니다.  
 
 MCP 보안 및 신뢰 관련 자세한 내용은 [공식 문서](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety)를 참고하세요.  
 
 ## 다음 단계
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T03:55:10+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-16T21:10:30+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "hk"
 }
@@ -19,8 +19,9 @@ CO_OP_TRANSLATOR_METADATA:
 - 了解 MCP 社群與生態系統的結構
 - 有效參與 MCP 社群論壇與討論
 - 為 MCP 開源倉庫作出貢獻
-- 創建並分享自訂的 MCP 工具
+- 創建並分享自訂的 MCP 工具與伺服器
 - 遵循 MCP 開發與協作的最佳實踐
+- 探索 MCP 開發的社群資源與框架
 
 ## MCP 社群生態系統
 
@@ -28,8 +29,8 @@ MCP 生態系統由多個組成部分與參與者共同推動協議的發展。
 
 ### 主要社群組成
 
-1. **核心協議維護者**：Microsoft 及其他維護核心 MCP 規範與參考實作的組織
-2. **工具開發者**：個人與團隊，負責開發 MCP 工具
+1. **核心協議維護者**：官方的 [Model Context Protocol GitHub 組織](https://github.com/modelcontextprotocol) 負責維護核心 MCP 規範與參考實作
+2. **工具開發者**：個人或團隊負責開發 MCP 工具與伺服器
 3. **整合提供者**：將 MCP 整合到其產品與服務中的公司
 4. **終端用戶**：在應用程式中使用 MCP 的開發者與組織
 5. **貢獻者**：為程式碼、文件或其他資源作出貢獻的社群成員
@@ -38,199 +39,112 @@ MCP 生態系統由多個組成部分與參與者共同推動協議的發展。
 
 #### 官方管道
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub 組織](https://github.com/modelcontextprotocol)
+- [MCP 文件](https://modelcontextprotocol.io/)
+- [MCP 規範](https://modelcontextprotocol.io/docs/specification)
+- [GitHub 討論區](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP 範例與伺服器倉庫](https://github.com/modelcontextprotocol/servers)
 
 #### 社群驅動資源
 
-- 針對不同語言的 SDK 實作
-- 伺服器實作與工具庫
+- [MCP 客戶端](https://modelcontextprotocol.io/clients) - 支援 MCP 整合的客戶端列表
+- [社群 MCP 伺服器](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - 不斷成長的社群開發 MCP 伺服器列表
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - 精選 MCP 伺服器清單
+- [PulseMCP](https://www.pulsemcp.com/) - 社群中心與電子報，方便發掘 MCP 資源
+- [Discord 伺服器](https://discord.gg/jHEGxQu2a5) - 與 MCP 開發者連結
+- 各語言的 SDK 實作
 - 部落格文章與教學
-- 社群論壇與社交媒體討論
 
 ## 為 MCP 作出貢獻
 
 ### 貢獻類型
 
-MCP 生態系統歡迎各種形式的貢獻：
+MCP 生態系統歡迎多種形式的貢獻：
 
 1. **程式碼貢獻**：
-   - 核心協議增強
-   - 修正錯誤
-   - 工具實作
+   - 核心協議改進
+   - 修復錯誤
+   - 工具與伺服器實作
    - 不同語言的客戶端/伺服器函式庫
 
 2. **文件**：
    - 改善現有文件
    - 撰寫教學與指南
-   - 文件翻譯
+   - 翻譯文件
    - 製作範例與示範應用程式
 
 3. **社群支援**：
-   - 回答論壇問題
+   - 回答論壇與討論區問題
    - 測試並回報問題
    - 組織社群活動
    - 指導新貢獻者
 
 ### 貢獻流程：核心協議
 
-若要為核心 MCP 協議或官方實作作出貢獻：
+若要為核心 MCP 協議或官方實作作出貢獻，請遵循[官方貢獻指南](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md)中的原則：
 
-#### .NET 範例：貢獻協議增強
+1. **簡潔與極簡主義**：MCP 規範對新增概念設有高標準，新增比刪除容易。
+2. **具體實務**：規範變更應基於具體實作挑戰，而非推測性想法。
+3. **提案階段**：
+   - 定義：探索問題範圍，確認其他 MCP 使用者也面臨相似問題
+   - 原型：建立範例解決方案並展示其實際應用
+   - 撰寫：根據原型撰寫規範提案
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+### 開發環境設定
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Java 範例：貢獻錯誤修正
+### 範例：貢獻錯誤修正
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Python 範例：為標準函式庫貢獻新工具
+### 範例：為標準函式庫貢獻新工具
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -394,19 +308,19 @@ class CsvProcessingTool(Tool):
 
 成功為 MCP 專案作出貢獻的建議：
 
-1. **從小處開始**：先從文件、錯誤修正或小幅增強著手
-2. **遵守風格指南**：遵循專案的程式碼風格與慣例
-3. **撰寫測試**：為你的程式碼貢獻包含單元測試
+1. **從小處著手**：先從文件、錯誤修正或小幅改進開始
+2. **遵循風格指南**：遵守專案的程式碼風格與慣例
+3. **撰寫測試**：為程式碼貢獻包含單元測試
 4. **文件說明**：為新功能或變更撰寫清楚的文件
-5. **提交針對性 PR**：保持 pull request 專注於單一議題或功能
+5. **提交針對性 PR**：保持拉取請求聚焦於單一問題或功能
 6. **積極回應反饋**：對貢獻的回饋保持回應
 
 ### 範例貢獻工作流程
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +329,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,9 +341,27 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## 創建與分享自訂 MCP 工具
+## 創建與分享 MCP 伺服器
 
-創建並分享自訂工具是為 MCP 生態系統作出貢獻的寶貴方式之一。
+為 MCP 生態系統作出貢獻最有價值的方式之一，是創建並分享自訂 MCP 伺服器。社群已經開發出數百個針對不同服務與使用場景的伺服器。
+
+### MCP 伺服器開發框架
+
+有多個框架可簡化 MCP 伺服器的開發：
+
+1. **官方 SDK**：
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **社群框架**：
+   - [MCP-Framework](https://mcp-framework.com/) - 使用 TypeScript 優雅且快速地建立 MCP 伺服器
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - 以註解驅動的 Java MCP 伺服器
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java MCP 伺服器框架
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP 伺服器的 Next.js 起始專案
 
 ### 開發可分享的工具
 
@@ -752,27 +682,27 @@ class SentimentAnalysisTool(Tool):
 與社群分享 MCP 工具時：
 
 1. **完整文件**：
-   - 說明用途、使用方法與範例
+   - 說明用途、使用方式與範例
    - 解釋參數與回傳值
    - 註明任何外部依賴
 
 2. **錯誤處理**：
-   - 實作健全的錯誤處理機制
+   - 實作健全的錯誤處理
    - 提供有用的錯誤訊息
    - 優雅處理邊界狀況
 
 3. **效能考量**：
    - 優化速度與資源使用
-   - 適當時實作快取
+   - 適時實作快取
    - 考慮可擴展性
 
 4. **安全性**：
    - 使用安全的 API 金鑰與認證
-   - 驗證並清理輸入資料
-   - 對外部 API 呼叫實作速率限制
+   - 驗證並清理輸入
+   - 對外部 API 呼叫實施速率限制
 
 5. **測試**：
-   - 包含全面的測試覆蓋
+   - 包含完整的測試覆蓋
    - 測試不同輸入類型與邊界狀況
    - 文件化測試流程
 
@@ -801,12 +731,12 @@ class SentimentAnalysisTool(Tool):
 
 開發 MCP 時：
 
-1. **協議版本管理**：遵守工具支援的 MCP 協議版本
+1. **協議版本**：遵守工具支援的 MCP 協議版本
 2. **客戶端相容性**：考慮向後相容性
 3. **伺服器相容性**：遵循伺服器實作指引
 4. **重大變更**：清楚文件化任何破壞性變更
 
-## 範例社群專案：MCP 工具註冊表
+## 社群專案範例：MCP 工具註冊表
 
 一個重要的社群貢獻是開發 MCP 工具的公開註冊表。
 
@@ -889,28 +819,28 @@ async def delete_tool(tool_name: str):
 
 ## 主要重點
 
-- MCP 社群多元，歡迎各種形式的貢獻
-- 貢獻範圍從核心協議增強到自訂工具皆有
+- MCP 社群多元且歡迎各種貢獻形式
+- 貢獻範圍從核心協議改進到自訂工具皆有
 - 遵循貢獻指南能提升 PR 被接受的機會
-- 創建並分享 MCP 工具是強化生態系統的有效方式
+- 創建並分享 MCP 工具是強化生態系統的寶貴方式
 - 社群協作對 MCP 的成長與改進至關重要
 
 ## 練習
 
 1. 根據你的技能與興趣，找出 MCP 生態系統中可貢獻的領域
 2. Fork MCP 倉庫並設置本地開發環境
-3. 創建一個小幅增強、錯誤修正或工具，造福社群
-4. 為你的貢獻撰寫適當的測試與文件
-5. 向相應的倉庫提交 pull request
+3. 創建一個小型改進、錯誤修正或工具，造福社群
+4. 以適當的測試與文件記錄你的貢獻
+5. 向相應倉庫提交拉取請求
 
 ## 額外資源
 
-- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+- [MCP 社群專案](https://github.com/topics/model-context-protocol)
 
 
 ---
 
-下一課： [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+下一課： [早期採用的經驗教訓](../07-LessonsfromEarlyAdoption/README.md)
 
 **免責聲明**：  
 本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

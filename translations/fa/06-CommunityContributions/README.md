@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T03:54:06+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-16T22:21:05+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "fa"
 }
@@ -19,8 +19,9 @@ CO_OP_TRANSLATOR_METADATA:
 - ساختار جامعه و اکوسیستم MCP را درک کنید
 - به طور مؤثر در انجمن‌ها و بحث‌های جامعه MCP شرکت کنید
 - در مخازن متن‌باز MCP مشارکت کنید
-- ابزارهای سفارشی MCP بسازید و به اشتراک بگذارید
+- ابزارها و سرورهای سفارشی MCP ایجاد و به اشتراک بگذارید
 - بهترین شیوه‌های توسعه و همکاری در MCP را دنبال کنید
+- منابع و چارچوب‌های جامعه برای توسعه MCP را کشف کنید
 
 ## اکوسیستم جامعه MCP
 
@@ -28,27 +29,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### اجزای کلیدی جامعه
 
-1. **نگهدارندگان اصلی پروتکل**: مایکروسافت و سایر سازمان‌ها که مشخصات اصلی MCP و پیاده‌سازی‌های مرجع را نگهداری می‌کنند  
-2. **توسعه‌دهندگان ابزار**: افراد و تیم‌هایی که ابزارهای MCP را ایجاد می‌کنند  
-3. **ارائه‌دهندگان یکپارچه‌سازی**: شرکت‌هایی که MCP را در محصولات و خدمات خود ادغام می‌کنند  
-4. **کاربران نهایی**: توسعه‌دهندگان و سازمان‌هایی که MCP را در برنامه‌های خود استفاده می‌کنند  
+1. **نگهدارندگان اصلی پروتکل**: سازمان رسمی [Model Context Protocol GitHub](https://github.com/modelcontextprotocol) مشخصات اصلی MCP و پیاده‌سازی‌های مرجع را نگهداری می‌کند
+2. **توسعه‌دهندگان ابزار**: افراد و تیم‌هایی که ابزارها و سرورهای MCP را ایجاد می‌کنند
+3. **ارائه‌دهندگان یکپارچه‌سازی**: شرکت‌هایی که MCP را در محصولات و خدمات خود ادغام می‌کنند
+4. **کاربران نهایی**: توسعه‌دهندگان و سازمان‌هایی که از MCP در برنامه‌های خود استفاده می‌کنند
 5. **مشارکت‌کنندگان**: اعضای جامعه که کد، مستندات یا منابع دیگر را ارائه می‌دهند
 
 ### منابع جامعه
 
 #### کانال‌های رسمی
 
-- [مخزن GitHub MCP](https://github.com/modelcontextprotocol)  
-- [مستندات MCP](https://modelcontextprotocol.io/)  
-- [مشخصات MCP](https://spec.modelcontextprotocol.io/)  
-- [بحث‌های GitHub](https://github.com/orgs/modelcontextprotocol/discussions)  
+- [سازمان MCP در گیت‌هاب](https://github.com/modelcontextprotocol)
+- [مستندات MCP](https://modelcontextprotocol.io/)
+- [مشخصات MCP](https://modelcontextprotocol.io/docs/specification)
+- [بحث‌های گیت‌هاب](https://github.com/orgs/modelcontextprotocol/discussions)
+- [مخزن نمونه‌ها و سرورهای MCP](https://github.com/modelcontextprotocol/servers)
 
 #### منابع مبتنی بر جامعه
 
-- پیاده‌سازی‌های SDK مخصوص زبان‌های مختلف  
-- پیاده‌سازی‌های سرور و کتابخانه‌های ابزار  
-- پست‌های وبلاگی و آموزش‌ها  
-- انجمن‌های جامعه و بحث‌های شبکه‌های اجتماعی  
+- [کلاینت‌های MCP](https://modelcontextprotocol.io/clients) - فهرستی از کلاینت‌هایی که از یکپارچه‌سازی MCP پشتیبانی می‌کنند
+- [سرورهای جامعه MCP](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - فهرست رو به رشد سرورهای توسعه یافته توسط جامعه MCP
+- [سرورهای عالی MCP](https://github.com/wong2/awesome-mcp-servers) - فهرست منتخب سرورهای MCP
+- [PulseMCP](https://www.pulsemcp.com/) - مرکز و خبرنامه جامعه برای کشف منابع MCP
+- [سرور Discord](https://discord.gg/jHEGxQu2a5) - ارتباط با توسعه‌دهندگان MCP
+- پیاده‌سازی‌های SDK به زبان‌های مختلف
+- پست‌های وبلاگی و آموزش‌ها
 
 ## مشارکت در MCP
 
@@ -56,181 +61,92 @@ CO_OP_TRANSLATOR_METADATA:
 
 اکوسیستم MCP انواع مختلفی از مشارکت‌ها را می‌پذیرد:
 
-1. **مشارکت‌های کد**:  
-   - بهبودهای پروتکل اصلی  
-   - رفع اشکال  
-   - پیاده‌سازی ابزار  
-   - کتابخانه‌های کلاینت/سرور در زبان‌های مختلف  
+1. **مشارکت‌های کد**:
+   - بهبودهای پروتکل اصلی
+   - رفع اشکال
+   - پیاده‌سازی ابزارها و سرورها
+   - کتابخانه‌های کلاینت/سرور به زبان‌های مختلف
 
-2. **مستندسازی**:  
-   - بهبود مستندات موجود  
-   - ایجاد آموزش‌ها و راهنماها  
-   - ترجمه مستندات  
-   - ایجاد مثال‌ها و برنامه‌های نمونه  
+2. **مستندسازی**:
+   - بهبود مستندات موجود
+   - ایجاد آموزش‌ها و راهنماها
+   - ترجمه مستندات
+   - ایجاد نمونه‌ها و برنامه‌های نمونه
 
-3. **پشتیبانی جامعه**:  
-   - پاسخ به سوالات در انجمن‌ها  
-   - تست و گزارش مشکلات  
-   - سازماندهی رویدادهای جامعه  
-   - راهنمایی مشارکت‌کنندگان جدید  
+3. **پشتیبانی جامعه**:
+   - پاسخ به سوالات در انجمن‌ها و بحث‌ها
+   - تست و گزارش مشکلات
+   - سازماندهی رویدادهای جامعه
+   - راهنمایی مشارکت‌کنندگان جدید
 
 ### فرآیند مشارکت: پروتکل اصلی
 
-برای مشارکت در پروتکل اصلی MCP یا پیاده‌سازی‌های رسمی:
+برای مشارکت در پروتکل اصلی MCP یا پیاده‌سازی‌های رسمی، اصول زیر را از [راهنمای رسمی مشارکت](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) دنبال کنید:
 
-#### مثال .NET: مشارکت در بهبود پروتکل
+1. **سادگی و حداقلی بودن**: مشخصات MCP استاندارد بالایی برای افزودن مفاهیم جدید دارد. افزودن موارد به مشخصات آسان‌تر از حذف آن‌ها است.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **رویکرد ملموس**: تغییرات مشخصات باید بر اساس چالش‌های پیاده‌سازی خاص باشد، نه ایده‌های فرضی.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **مراحل یک پیشنهاد**:
+   - تعریف: بررسی فضای مشکل و تأیید اینکه سایر کاربران MCP با مشکل مشابهی مواجه هستند
+   - نمونه‌سازی: ساخت یک راه‌حل نمونه و نشان دادن کاربرد عملی آن
+   - نوشتن: بر اساس نمونه‌سازی، نوشتن پیشنهاد مشخصات
+
+### راه‌اندازی محیط توسعه
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### مثال Java: مشارکت در رفع اشکال
+### مثال: مشارکت در رفع یک اشکال
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### مثال Python: افزودن ابزار جدید به کتابخانه استاندارد
+### مثال: مشارکت در افزودن ابزار جدید به کتابخانه استاندارد
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -394,19 +310,19 @@ class CsvProcessingTool(Tool):
 
 برای انجام یک مشارکت موفق در پروژه‌های MCP:
 
-1. **از کوچک شروع کنید**: با مستندسازی، رفع اشکال یا بهبودهای کوچک آغاز کنید  
-2. **راهنمای سبک را دنبال کنید**: به سبک کدنویسی و قراردادهای پروژه پایبند باشید  
-3. **تست بنویسید**: برای مشارکت‌های کد خود تست واحد اضافه کنید  
-4. **کار خود را مستند کنید**: مستندات واضح برای ویژگی‌ها یا تغییرات جدید اضافه کنید  
-5. **درخواست‌های کشش هدفمند ارسال کنید**: درخواست‌های کشش را روی یک مسئله یا ویژگی متمرکز نگه دارید  
-6. **با بازخوردها تعامل داشته باشید**: به بازخوردها درباره مشارکت‌های خود پاسخگو باشید  
+1. **از کوچک شروع کنید**: با مستندسازی، رفع اشکال یا بهبودهای کوچک آغاز کنید
+2. **راهنمای سبک را دنبال کنید**: به سبک کدنویسی و قراردادهای پروژه پایبند باشید
+3. **تست بنویسید**: برای مشارکت‌های کد خود تست واحد اضافه کنید
+4. **کار خود را مستندسازی کنید**: مستندات واضح برای ویژگی‌ها یا تغییرات جدید اضافه کنید
+5. **درخواست‌های کشش هدفمند ارسال کنید**: درخواست‌های کشش را متمرکز بر یک مسئله یا ویژگی نگه دارید
+6. **با بازخوردها تعامل داشته باشید**: به بازخوردها درباره مشارکت‌های خود پاسخگو باشید
 
-### نمونه روند مشارکت
+### نمونه روند کاری مشارکت
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,13 +343,31 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## ساخت و به اشتراک‌گذاری ابزارهای سفارشی MCP
+## ایجاد و به اشتراک‌گذاری سرورهای MCP
 
-یکی از ارزشمندترین راه‌های مشارکت در اکوسیستم MCP، ساخت و به اشتراک‌گذاری ابزارهای سفارشی است.
+یکی از ارزشمندترین روش‌های مشارکت در اکوسیستم MCP، ایجاد و به اشتراک‌گذاری سرورهای سفارشی MCP است. جامعه تاکنون صدها سرور برای خدمات و موارد استفاده مختلف توسعه داده است.
+
+### چارچوب‌های توسعه سرور MCP
+
+چندین چارچوب برای ساده‌سازی توسعه سرور MCP در دسترس است:
+
+1. **SDKهای رسمی**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **چارچوب‌های جامعه**:
+   - [MCP-Framework](https://mcp-framework.com/) - ساخت سرورهای MCP با ظرافت و سرعت در TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - سرورهای MCP مبتنی بر حاشیه‌نویسی با جاوا
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - چارچوب جاوا برای سرورهای MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - پروژه شروع‌کننده Next.js برای سرورهای MCP
 
 ### توسعه ابزارهای قابل اشتراک‌گذاری
 
-#### مثال .NET: ساخت بسته ابزار قابل اشتراک‌گذاری
+#### مثال .NET: ایجاد بسته ابزار قابل اشتراک‌گذاری
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +473,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### مثال Java: ساخت بسته Maven برای ابزارها
+#### مثال جاوا: ایجاد بسته Maven برای ابزارها
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +574,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### مثال Python: انتشار بسته PyPI
+#### مثال پایتون: انتشار بسته PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -751,30 +683,30 @@ class SentimentAnalysisTool(Tool):
 
 هنگام به اشتراک‌گذاری ابزارهای MCP با جامعه:
 
-1. **مستندات کامل**:  
-   - هدف، نحوه استفاده و مثال‌ها را مستند کنید  
-   - پارامترها و مقادیر بازگشتی را توضیح دهید  
-   - هر وابستگی خارجی را مستند کنید  
+1. **مستندات کامل**:
+   - هدف، نحوه استفاده و مثال‌ها را مستندسازی کنید
+   - پارامترها و مقادیر بازگشتی را توضیح دهید
+   - هر وابستگی خارجی را مستندسازی کنید
 
-2. **مدیریت خطا**:  
-   - مدیریت خطای قوی پیاده‌سازی کنید  
-   - پیام‌های خطای مفید ارائه دهید  
-   - موارد خاص را به خوبی مدیریت کنید  
+2. **مدیریت خطا**:
+   - مدیریت خطای قوی پیاده‌سازی کنید
+   - پیام‌های خطای مفید ارائه دهید
+   - موارد خاص را به خوبی مدیریت کنید
 
-3. **ملاحظات عملکرد**:  
-   - برای سرعت و مصرف منابع بهینه‌سازی کنید  
-   - در صورت لزوم کشینگ را پیاده‌سازی کنید  
-   - مقیاس‌پذیری را در نظر بگیرید  
+3. **ملاحظات عملکرد**:
+   - بهینه‌سازی برای سرعت و مصرف منابع
+   - در صورت لزوم کشینگ را پیاده‌سازی کنید
+   - مقیاس‌پذیری را در نظر بگیرید
 
-4. **امنیت**:  
-   - از کلیدهای API و احراز هویت امن استفاده کنید  
-   - ورودی‌ها را اعتبارسنجی و پاک‌سازی کنید  
-   - محدودیت نرخ برای تماس‌های API خارجی اعمال کنید  
+4. **امنیت**:
+   - از کلیدهای API و احراز هویت امن استفاده کنید
+   - ورودی‌ها را اعتبارسنجی و پاک‌سازی کنید
+   - محدودیت نرخ برای تماس‌های API خارجی اعمال کنید
 
-5. **تست**:  
-   - پوشش تست جامع داشته باشید  
-   - با انواع ورودی و موارد خاص تست کنید  
-   - روش‌های تست را مستند کنید  
+5. **تست**:
+   - پوشش تست جامع داشته باشید
+   - با انواع ورودی و موارد خاص تست کنید
+   - روش‌های تست را مستندسازی کنید
 
 ## همکاری جامعه و بهترین شیوه‌ها
 
@@ -782,29 +714,29 @@ class SentimentAnalysisTool(Tool):
 
 ### کانال‌های ارتباطی
 
-- Issues و Discussions در GitHub  
-- جامعه فنی مایکروسافت  
-- کانال‌های Discord و Slack  
-- Stack Overflow (برچسب: `model-context-protocol` یا `mcp`)  
+- Issues و Discussions در گیت‌هاب
+- Microsoft Tech Community
+- کانال‌های Discord و Slack
+- Stack Overflow (برچسب: `model-context-protocol` یا `mcp`)
 
 ### بازبینی کد
 
 هنگام بازبینی مشارکت‌های MCP:
 
-1. **وضوح**: آیا کد واضح و خوب مستند شده است؟  
-2. **درستی**: آیا به درستی کار می‌کند؟  
-3. **یکنواختی**: آیا از قراردادهای پروژه پیروی می‌کند؟  
-4. **کامل بودن**: آیا تست‌ها و مستندات شامل شده‌اند؟  
-5. **امنیت**: آیا نگرانی‌های امنیتی وجود دارد؟  
+1. **وضوح**: آیا کد واضح و خوب مستندسازی شده است؟
+2. **درستی**: آیا به درستی کار می‌کند؟
+3. **یکنواختی**: آیا با قراردادهای پروژه هماهنگ است؟
+4. **کامل بودن**: آیا تست‌ها و مستندات شامل شده‌اند؟
+5. **امنیت**: آیا نگرانی‌های امنیتی وجود دارد؟
 
-### سازگاری نسخه‌ها
+### سازگاری نسخه
 
 هنگام توسعه برای MCP:
 
-1. **نسخه‌بندی پروتکل**: به نسخه پروتکل MCP که ابزار شما پشتیبانی می‌کند پایبند باشید  
-2. **سازگاری کلاینت**: سازگاری به عقب را در نظر بگیرید  
-3. **سازگاری سرور**: دستورالعمل‌های پیاده‌سازی سرور را دنبال کنید  
-4. **تغییرات شکسته‌کننده**: هر تغییر شکسته‌کننده را به وضوح مستند کنید  
+1. **نسخه‌بندی پروتکل**: به نسخه پروتکل MCP که ابزار شما پشتیبانی می‌کند پایبند باشید
+2. **سازگاری کلاینت**: سازگاری به عقب را در نظر بگیرید
+3. **سازگاری سرور**: دستورالعمل‌های پیاده‌سازی سرور را دنبال کنید
+4. **تغییرات شکسته‌کننده**: هر تغییر شکسته‌کننده را به وضوح مستندسازی کنید
 
 ## پروژه نمونه جامعه: رجیستری ابزار MCP
 
@@ -889,23 +821,23 @@ async def delete_tool(tool_name: str):
 
 ## نکات کلیدی
 
-- جامعه MCP متنوع است و انواع مختلفی از مشارکت‌ها را می‌پذیرد  
-- مشارکت در MCP می‌تواند از بهبودهای پروتکل اصلی تا ابزارهای سفارشی متغیر باشد  
-- پیروی از راهنمای مشارکت شانس پذیرش درخواست‌های کشش شما را افزایش می‌دهد  
-- ساخت و به اشتراک‌گذاری ابزارهای MCP راهی ارزشمند برای تقویت اکوسیستم است  
-- همکاری جامعه برای رشد و بهبود MCP ضروری است  
+- جامعه MCP متنوع است و انواع مختلفی از مشارکت‌ها را می‌پذیرد
+- مشارکت در MCP می‌تواند از بهبود پروتکل اصلی تا ابزارهای سفارشی متغیر باشد
+- پیروی از راهنمای مشارکت شانس پذیرش درخواست‌های کشش شما را افزایش می‌دهد
+- ایجاد و به اشتراک‌گذاری ابزارهای MCP راهی ارزشمند برای تقویت اکوسیستم است
+- همکاری جامعه برای رشد و بهبود MCP ضروری است
 
 ## تمرین
 
-1. یک حوزه در اکوسیستم MCP را که می‌توانید بر اساس مهارت‌ها و علاقه‌مندی‌های خود در آن مشارکت کنید، شناسایی کنید  
-2. مخزن MCP را فورک کرده و محیط توسعه محلی راه‌اندازی کنید  
-3. یک بهبود کوچک، رفع اشکال یا ابزار ایجاد کنید که به جامعه کمک کند  
-4. مشارکت خود را با تست‌ها و مستندات مناسب مستند کنید  
-5. درخواست کشش را به مخزن مربوطه ارسال کنید  
+1. حوزه‌ای در اکوسیستم MCP را که می‌توانید بر اساس مهارت‌ها و علاقه‌مندی‌های خود در آن مشارکت کنید، شناسایی کنید
+2. مخزن MCP را فورک کرده و محیط توسعه محلی را راه‌اندازی کنید
+3. یک بهبود کوچک، رفع اشکال یا ابزار ایجاد کنید که به جامعه کمک کند
+4. مشارکت خود را با تست‌ها و مستندات مناسب مستندسازی کنید
+5. درخواست کشش را به مخزن مربوطه ارسال کنید
 
 ## منابع اضافی
 
-- [پروژه‌های جامعه MCP](https://github.com/topics/model-context-protocol)  
+- [پروژه‌های جامعه MCP](https://github.com/topics/model-context-protocol)
 
 
 ---
