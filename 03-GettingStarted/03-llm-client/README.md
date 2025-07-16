@@ -48,7 +48,7 @@ Creating a GitHub token is a straightforward process. Here’s how you can do it
 
 Let's create our client first:
 
-### Typescript
+### TypeScript
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";

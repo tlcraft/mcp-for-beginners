@@ -962,7 +962,7 @@ public class McpServerApplication {
 
 Start the server with the following command:
 
-### Typescript
+### TypeScript
 
 ```sh
 npm run build
