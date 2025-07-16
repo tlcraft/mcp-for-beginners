@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:12:00+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:29:08+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "en"
 }
@@ -17,7 +17,7 @@ Model Context Protocol (MCP) is an open standard that allows AI applications to 
 
 This integration combines the flexibility of MCP's tool ecosystem with Azure AI Foundry's robust agent framework, delivering enterprise-grade AI solutions with extensive customization options.
 
-**Note:** If you want to use MCP in Azure AI Foundry Agent Service, currently only the following regions are supported: westus, westus2, uaenorth, southindia and switzerlandnorth
+**Note:** If you want to use MCP in Azure AI Foundry Agent Service, currently only the following regions are supported: westus, westus2, uaenorth, southindia, and switzerlandnorth
 
 ## Learning Objectives
 
@@ -45,7 +45,7 @@ Model Context Protocol is a standardized method for AI applications to connect t
 - **Standardized Integration**: A consistent interface across different tools and services
 - **Security**: Secure authentication and authorization mechanisms
 - **Flexibility**: Support for various data sources, APIs, and custom tools
-- **Extensibility**: Easy to add new features and integrations
+- **Extensibility**: Easy to add new capabilities and integrations
 
 ## Setting Up MCP with Azure AI Foundry
 
@@ -59,6 +59,8 @@ Choose your preferred development environment:
 ---
 
 ## Python Implementation
+
+***Note*** You can run this [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Install Required Packages
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET Implementation
+
+***Note*** You can run this [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Install Required Packages
 
@@ -343,7 +347,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ## Troubleshooting Common Issues
 
 ### 1. Connection Issues
-- Verify that the MCP server URL is accessible
+- Verify the MCP server URL is accessible
 - Check authentication credentials
 - Ensure network connectivity
 
@@ -353,8 +357,8 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Implement proper error handling
 
 ### 3. Performance Issues
-- Optimize the frequency of tool calls
-- Use caching where appropriate
+- Optimize tool call frequency
+- Implement caching where appropriate
 - Monitor server response times
 
 ## Next Steps

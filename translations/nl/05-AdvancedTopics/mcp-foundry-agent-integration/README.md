@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:18:41+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:36:13+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "nl"
 }
 -->
 # Model Context Protocol (MCP) Integratie met Azure AI Foundry
 
-Deze gids laat zien hoe je Model Context Protocol (MCP) servers integreert met Azure AI Foundry agents, waardoor krachtige toolorkestratie en enterprise AI-mogelijkheden mogelijk worden.
+Deze handleiding laat zien hoe je Model Context Protocol (MCP) servers integreert met Azure AI Foundry agents, waardoor krachtige toolorkestratie en enterprise AI-mogelijkheden mogelijk worden.
 
 ## Introductie
 
@@ -21,13 +21,13 @@ Deze integratie combineert de flexibiliteit van MCP’s tool-ecosysteem met het 
 
 ## Leerdoelen
 
-Aan het einde van deze gids kun je:
+Aan het einde van deze handleiding kun je:
 
 - Het Model Context Protocol en de voordelen ervan begrijpen
 - MCP-servers opzetten voor gebruik met Azure AI Foundry agents
 - Agents aanmaken en configureren met MCP-toolintegratie
 - Praktische voorbeelden implementeren met echte MCP-servers
-- Omgaan met toolreacties en citaties in agentgesprekken
+- Omgaan met toolresponsen en citaties in agentgesprekken
 
 ## Vereisten
 
@@ -60,6 +60,8 @@ Kies je favoriete ontwikkelomgeving:
 
 ## Python Implementatie
 
+***Note*** Je kunt deze [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) uitvoeren
+
 ### 1. Vereiste pakketten installeren
 
 ```bash
@@ -85,7 +87,7 @@ mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/a
 mcp_server_label = os.environ.get("MCP_SERVER_LABEL", "mslearn")
 ```
 
-### 4. Projectclient initialiseren
+### 4. Project Client initialiseren
 
 ```python
 project_client = AIProjectClient(
@@ -94,7 +96,7 @@ project_client = AIProjectClient(
 )
 ```
 
-### 5. MCP-tool aanmaken
+### 5. MCP Tool aanmaken
 
 ```python
 mcp_tool = McpTool(
@@ -187,6 +189,8 @@ with project_client:
 
 ## .NET Implementatie
 
+***Note*** Je kunt deze [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) uitvoeren
+
 ### 1. Vereiste pakketten installeren
 
 ```csharp
@@ -211,13 +215,13 @@ var mcpServerLabel = "mslearn";
 PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCredential());
 ```
 
-### 4. MCP-tooldefinitie aanmaken
+### 4. MCP Tooldefinitie aanmaken
 
 ```csharp
 MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
 ```
 
-### 5. Agent aanmaken met MCP-tools
+### 5. Agent aanmaken met MCP Tools
 
 ```csharp
 PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
@@ -343,12 +347,12 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ## Veelvoorkomende problemen oplossen
 
 ### 1. Verbindingsproblemen
-- Controleer of de MCP-server-URL bereikbaar is
+- Controleer of de MCP-server URL bereikbaar is
 - Controleer de authenticatiegegevens
 - Zorg voor netwerkconnectiviteit
 
 ### 2. Fouten bij tool-aanroepen
-- Controleer toolargumenten en opmaak
+- Controleer tool-argumenten en opmaak
 - Bekijk server-specifieke vereisten
 - Implementeer correcte foutafhandeling
 
@@ -370,7 +374,7 @@ Om je MCP-integratie verder te verbeteren:
 
 - [Azure AI Foundry Documentatie](https://learn.microsoft.com/azure/ai-foundry/)
 - [Model Context Protocol Voorbeelden](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
-- [Overzicht Azure AI Foundry Agents](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [Azure AI Foundry Agents Overzicht](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [MCP Specificatie](https://spec.modelcontextprotocol.io/)
 
 ## Ondersteuning

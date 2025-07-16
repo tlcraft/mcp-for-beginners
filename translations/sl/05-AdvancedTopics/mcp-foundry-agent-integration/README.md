@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:21:47+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:39:32+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sl"
 }
@@ -27,7 +27,7 @@ Ob koncu tega vodiča boste znali:
 - Nastaviti MCP strežnike za uporabo z agenti Azure AI Foundry
 - Ustvariti in konfigurirati agente z integracijo MCP orodij
 - Izvesti praktične primere z uporabo pravih MCP strežnikov
-- Obdelovati odzive orodij in navajanja v pogovorih agentov
+- Obvladovati odzive orodij in navajanja v pogovorih agentov
 
 ## Predpogoji
 
@@ -59,6 +59,8 @@ Izberite želeno razvojno okolje:
 ---
 
 ## Python Implementation
+
+***Note*** Lahko zaženete ta [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Namestite potrebne pakete
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET Implementation
+
+***Note*** Lahko zaženete ta [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Namestite potrebne pakete
 
@@ -325,7 +329,7 @@ MCPToolDefinition mcpTool = new(
 );
 ```
 
-## Avtentikacija in glave zahtevkov
+## Avtentikacija in glave
 
 Obe implementaciji podpirata prilagojene glave za avtentikacijo:
 
@@ -363,7 +367,7 @@ Za nadaljnje izboljšanje vaše MCP integracije:
 
 1. **Raziskujte prilagojene MCP strežnike**: Zgradite svoje MCP strežnike za lastne podatkovne vire
 2. **Izvedite napredno varnost**: Dodajte OAuth2 ali prilagojene mehanizme avtentikacije
-3. **Spremljanje in analitika**: Uvedite beleženje in nadzor uporabe orodij
+3. **Spremljanje in analitika**: Uvedite beleženje in spremljanje uporabe orodij
 4. **Razširite svojo rešitev**: Razmislite o uravnoteženju obremenitev in distribuiranih arhitekturah MCP strežnikov
 
 ## Dodatni viri

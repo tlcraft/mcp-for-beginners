@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:16:26+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:33:48+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "br"
 }
@@ -38,7 +38,7 @@ Antes de começar, certifique-se de que você possui:
 - Azure CLI instalado e configurado
 - Permissões adequadas para criar recursos de IA
 
-## O que é o Model Context Protocol (MCP)?
+## O que é Model Context Protocol (MCP)?
 
 Model Context Protocol é uma forma padronizada para aplicações de IA se conectarem a fontes de dados e ferramentas externas. Os principais benefícios incluem:
 
@@ -60,7 +60,9 @@ Escolha seu ambiente de desenvolvimento preferido:
 
 ## Implementação em Python
 
-### 1. Instale os Pacotes Necessários
+***Note*** Você pode executar este [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
+
+### 1. Instalar Pacotes Necessários
 
 ```bash
 pip install azure-ai-projects -U
@@ -69,7 +71,7 @@ pip install azure-identity -U
 pip install mcp==1.11.0 -U
 ```
 
-### 2. Importe as Dependências
+### 2. Importar Dependências
 
 ```python
 import os, time
@@ -78,14 +80,14 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import McpTool, RequiredMcpToolCall, SubmitToolApprovalAction, ToolApproval
 ```
 
-### 3. Configure as Definições do MCP
+### 3. Configurar as Definições do MCP
 
 ```python
 mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/api/mcp")
 mcp_server_label = os.environ.get("MCP_SERVER_LABEL", "mslearn")
 ```
 
-### 4. Inicialize o Cliente do Projeto
+### 4. Inicializar o Cliente do Projeto
 
 ```python
 project_client = AIProjectClient(
@@ -94,7 +96,7 @@ project_client = AIProjectClient(
 )
 ```
 
-### 5. Crie a Ferramenta MCP
+### 5. Criar a Ferramenta MCP
 
 ```python
 mcp_tool = McpTool(
@@ -187,21 +189,23 @@ with project_client:
 
 ## Implementação em .NET
 
-### 1. Instale os Pacotes Necessários
+***Note*** Você pode executar este [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+
+### 1. Instalar Pacotes Necessários
 
 ```csharp
 #r "nuget: Azure.AI.Agents.Persistent, 1.1.0-beta.4"
 #r "nuget: Azure.Identity, 1.14.2"
 ```
 
-### 2. Importe as Dependências
+### 2. Importar Dependências
 
 ```csharp
 using Azure.AI.Agents.Persistent;
 using Azure.Identity;
 ```
 
-### 3. Configure as Definições
+### 3. Configurar as Definições
 
 ```csharp
 var projectEndpoint = "https://your-project-endpoint.services.ai.azure.com/api/projects/your-project";
@@ -211,13 +215,13 @@ var mcpServerLabel = "mslearn";
 PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCredential());
 ```
 
-### 4. Crie a Definição da Ferramenta MCP
+### 4. Criar a Definição da Ferramenta MCP
 
 ```csharp
 MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
 ```
 
-### 5. Crie o Agente com Ferramentas MCP
+### 5. Criar Agente com Ferramentas MCP
 
 ```csharp
 PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
@@ -368,7 +372,7 @@ Para aprimorar ainda mais sua integração MCP:
 
 ## Recursos Adicionais
 
-- [Documentação do Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- [Documentação Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
 - [Exemplos do Model Context Protocol](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
 - [Visão Geral dos Agentes Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [Especificação MCP](https://spec.modelcontextprotocol.io/)
@@ -376,7 +380,7 @@ Para aprimorar ainda mais sua integração MCP:
 ## Suporte
 
 Para suporte adicional e dúvidas:
-- Consulte a [documentação do Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- Consulte a [documentação Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
 - Verifique os [recursos da comunidade MCP](https://modelcontextprotocol.io/)
 
 ## O que vem a seguir

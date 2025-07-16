@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:14:28+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:31:34+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "tw"
 }
@@ -26,7 +26,7 @@ Model Context Protocol (MCP) 是一個開放標準，讓 AI 應用能安全地�
 - 了解 Model Context Protocol 及其優勢
 - 設置 MCP 伺服器以供 Azure AI Foundry 代理使用
 - 建立並配置具 MCP 工具整合的代理
-- 使用真實 MCP 伺服器實作實務範例
+- 使用真實 MCP 伺服器實作範例
 - 處理代理對話中的工具回應與引用
 
 ## 先決條件
@@ -47,7 +47,7 @@ Model Context Protocol 是 AI 應用連接外部資料來源與工具的標準�
 - **彈性**：支援多種資料來源、API 及自訂工具
 - **可擴充性**：輕鬆新增功能與整合
 
-## 在 Azure AI Foundry 設定 MCP
+## 在 Azure AI Foundry 中設定 MCP
 
 ### 環境配置
 
@@ -59,6 +59,8 @@ Model Context Protocol 是 AI 應用連接外部資料來源與工具的標準�
 ---
 
 ## Python 實作
+
+***Note*** 您可以執行此 [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. 安裝所需套件
 
@@ -78,7 +80,7 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import McpTool, RequiredMcpToolCall, SubmitToolApprovalAction, ToolApproval
 ```
 
-### 3. 配置 MCP 設定
+### 3. 設定 MCP 參數
 
 ```python
 mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/api/mcp")
@@ -187,6 +189,8 @@ with project_client:
 
 ## .NET 實作
 
+***Note*** 您可以執行此 [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+
 ### 1. 安裝所需套件
 
 ```csharp
@@ -201,7 +205,7 @@ using Azure.AI.Agents.Persistent;
 using Azure.Identity;
 ```
 
-### 3. 配置設定
+### 3. 設定參數
 
 ```csharp
 var projectEndpoint = "https://your-project-endpoint.services.ai.azure.com/api/projects/your-project";
@@ -304,7 +308,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 ## MCP 工具配置選項
 
-為代理配置 MCP 工具時，可指定多項重要參數：
+設定 MCP 工具給代理時，可指定多項重要參數：
 
 ### Python 配置
 
@@ -325,7 +329,7 @@ MCPToolDefinition mcpTool = new(
 );
 ```
 
-## 驗證與標頭
+## 驗證與標頭設定
 
 兩種實作皆支援自訂標頭以進行驗證：
 
@@ -361,7 +365,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 進一步強化您的 MCP 整合：
 
-1. **探索自訂 MCP 伺服器**：為專有資料來源打造自有 MCP 伺服器
+1. **探索自訂 MCP 伺服器**：為專有資料來源打造專屬 MCP 伺服器
 2. **實作進階安全性**：加入 OAuth2 或自訂驗證機制
 3. **監控與分析**：實施工具使用的日誌與監控
 4. **擴展解決方案**：考慮負載平衡與分散式 MCP 伺服器架構
@@ -375,7 +379,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## 支援
 
-如需更多支援與問題協助：
+如需更多支援與問題解答：
 - 查閱 [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-foundry/)
 - 參考 [MCP 社群資源](https://modelcontextprotocol.io/)
 
@@ -384,4 +388,4 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - [6. 社群貢獻](../../06-CommunityContributions/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

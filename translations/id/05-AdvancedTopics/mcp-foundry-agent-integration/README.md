@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:19:18+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:36:52+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "id"
 }
@@ -13,7 +13,7 @@ Panduan ini menunjukkan cara mengintegrasikan server Model Context Protocol (MCP
 
 ## Pendahuluan
 
-Model Context Protocol (MCP) adalah standar terbuka yang memungkinkan aplikasi AI untuk terhubung secara aman ke sumber data dan alat eksternal. Ketika diintegrasikan dengan Azure AI Foundry, MCP memungkinkan agen mengakses dan berinteraksi dengan berbagai layanan eksternal, API, dan sumber data secara terstandarisasi.
+Model Context Protocol (MCP) adalah standar terbuka yang memungkinkan aplikasi AI untuk terhubung secara aman ke sumber data dan alat eksternal. Saat diintegrasikan dengan Azure AI Foundry, MCP memungkinkan agen mengakses dan berinteraksi dengan berbagai layanan eksternal, API, dan sumber data secara standar.
 
 Integrasi ini menggabungkan fleksibilitas ekosistem alat MCP dengan kerangka kerja agen Azure AI Foundry yang kuat, memberikan solusi AI kelas perusahaan dengan kemampuan kustomisasi yang luas.
 
@@ -21,7 +21,7 @@ Integrasi ini menggabungkan fleksibilitas ekosistem alat MCP dengan kerangka ker
 
 ## Tujuan Pembelajaran
 
-Di akhir panduan ini, Anda akan dapat:
+Setelah menyelesaikan panduan ini, Anda akan dapat:
 
 - Memahami Model Context Protocol dan manfaatnya
 - Menyiapkan server MCP untuk digunakan dengan agen Azure AI Foundry
@@ -40,9 +40,9 @@ Sebelum memulai, pastikan Anda memiliki:
 
 ## Apa itu Model Context Protocol (MCP)?
 
-Model Context Protocol adalah cara terstandarisasi bagi aplikasi AI untuk terhubung ke sumber data dan alat eksternal. Manfaat utamanya meliputi:
+Model Context Protocol adalah cara standar bagi aplikasi AI untuk terhubung ke sumber data dan alat eksternal. Manfaat utamanya meliputi:
 
-- **Integrasi Terstandarisasi**: Antarmuka konsisten di berbagai alat dan layanan
+- **Integrasi Standar**: Antarmuka konsisten di berbagai alat dan layanan
 - **Keamanan**: Mekanisme autentikasi dan otorisasi yang aman
 - **Fleksibilitas**: Mendukung berbagai sumber data, API, dan alat kustom
 - **Ekstensibilitas**: Mudah menambahkan kemampuan dan integrasi baru
@@ -60,7 +60,9 @@ Pilih lingkungan pengembangan yang Anda sukai:
 
 ## Implementasi Python
 
-### 1. Pasang Paket yang Dibutuhkan
+***Note*** Anda dapat menjalankan [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) ini
+
+### 1. Instal Paket yang Dibutuhkan
 
 ```bash
 pip install azure-ai-projects -U
@@ -187,7 +189,9 @@ with project_client:
 
 ## Implementasi .NET
 
-### 1. Pasang Paket yang Dibutuhkan
+***Note*** Anda dapat menjalankan [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) ini
+
+### 1. Instal Paket yang Dibutuhkan
 
 ```csharp
 #r "nuget: Azure.AI.Agents.Persistent, 1.1.0-beta.4"
@@ -354,7 +358,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 3. Masalah Performa
 - Optimalkan frekuensi panggilan alat
-- Terapkan caching jika diperlukan
+- Terapkan caching jika perlu
 - Pantau waktu respons server
 
 ## Langkah Selanjutnya
@@ -363,7 +367,7 @@ Untuk meningkatkan integrasi MCP Anda:
 
 1. **Jelajahi Server MCP Kustom**: Bangun server MCP Anda sendiri untuk sumber data proprietary
 2. **Terapkan Keamanan Lanjutan**: Tambahkan OAuth2 atau mekanisme autentikasi kustom
-3. **Pantau dan Analisis**: Terapkan logging dan monitoring untuk penggunaan alat
+3. **Pantau dan Analisis**: Terapkan logging dan monitoring penggunaan alat
 4. **Skalakan Solusi Anda**: Pertimbangkan load balancing dan arsitektur server MCP terdistribusi
 
 ## Sumber Daya Tambahan
@@ -384,4 +388,4 @@ Untuk dukungan dan pertanyaan tambahan:
 - [6. Kontribusi Komunitas](../../06-CommunityContributions/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

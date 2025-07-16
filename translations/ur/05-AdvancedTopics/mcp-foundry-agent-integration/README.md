@@ -1,57 +1,57 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:13:36+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:30:43+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "ur"
 }
 -->
 # Model Context Protocol (MCP) کا Azure AI Foundry کے ساتھ انضمام
 
-یہ رہنما بتاتا ہے کہ Model Context Protocol (MCP) سرورز کو Azure AI Foundry ایجنٹس کے ساتھ کیسے مربوط کیا جائے، تاکہ طاقتور ٹول آرکیسٹریشن اور انٹرپرائز AI صلاحیتیں حاصل کی جا سکیں۔
+یہ رہنما بتاتا ہے کہ Model Context Protocol (MCP) سرورز کو Azure AI Foundry ایجنٹس کے ساتھ کیسے مربوط کیا جائے، تاکہ طاقتور ٹول آرکسٹریشن اور انٹرپرائز AI صلاحیتیں حاصل کی جا سکیں۔
 
 ## تعارف
 
-Model Context Protocol (MCP) ایک کھلا معیار ہے جو AI ایپلیکیشنز کو بیرونی ڈیٹا ذرائع اور ٹولز سے محفوظ طریقے سے جڑنے کی اجازت دیتا ہے۔ Azure AI Foundry کے ساتھ انضمام کے ذریعے، MCP ایجنٹس کو مختلف بیرونی سروسز، APIs، اور ڈیٹا ذرائع تک معیاری انداز میں رسائی اور تعامل کی سہولت فراہم کرتا ہے۔
+Model Context Protocol (MCP) ایک اوپن اسٹینڈرڈ ہے جو AI ایپلیکیشنز کو بیرونی ڈیٹا ذرائع اور ٹولز سے محفوظ طریقے سے جڑنے کی اجازت دیتا ہے۔ Azure AI Foundry کے ساتھ انضمام کے ذریعے، MCP ایجنٹس کو مختلف بیرونی سروسز، APIs، اور ڈیٹا ذرائع تک معیاری انداز میں رسائی اور تعامل کی سہولت دیتا ہے۔
 
-یہ انضمام MCP کے ٹول ماحولیاتی نظام کی لچک کو Azure AI Foundry کے مضبوط ایجنٹ فریم ورک کے ساتھ جوڑتا ہے، جو انٹرپرائز گریڈ AI حل فراہم کرتا ہے جن میں وسیع تخصیص کی صلاحیتیں شامل ہیں۔
+یہ انضمام MCP کے ٹول ایکو سسٹم کی لچک کو Azure AI Foundry کے مضبوط ایجنٹ فریم ورک کے ساتھ جوڑتا ہے، جو انٹرپرائز گریڈ AI حل فراہم کرتا ہے جن میں وسیع تخصیص کی صلاحیتیں شامل ہیں۔
 
-**Note:** اگر آپ Azure AI Foundry Agent Service میں MCP استعمال کرنا چاہتے ہیں، تو فی الحال صرف درج ذیل علاقے سپورٹ کیے جاتے ہیں: westus, westus2, uaenorth, southindia اور switzerlandnorth
+**Note:** اگر آپ MCP کو Azure AI Foundry Agent Service میں استعمال کرنا چاہتے ہیں، تو فی الحال صرف درج ذیل ریجنز کی حمایت کی جاتی ہے: westus, westus2, uaenorth, southindia اور switzerlandnorth
 
 ## سیکھنے کے مقاصد
 
-اس رہنما کے اختتام تک، آپ قابل ہوں گے کہ:
+اس رہنما کے اختتام تک، آپ قابل ہوں گے:
 
-- Model Context Protocol اور اس کے فوائد کو سمجھیں
-- MCP سرورز کو Azure AI Foundry ایجنٹس کے ساتھ استعمال کے لیے سیٹ اپ کریں
-- MCP ٹول انضمام کے ساتھ ایجنٹس بنائیں اور ترتیب دیں
-- حقیقی MCP سرورز استعمال کرتے ہوئے عملی مثالیں نافذ کریں
-- ایجنٹ کی گفتگو میں ٹول کے جوابات اور حوالہ جات کو سنبھالیں
+- Model Context Protocol اور اس کے فوائد کو سمجھنا
+- MCP سرورز کو Azure AI Foundry ایجنٹس کے ساتھ استعمال کے لیے سیٹ اپ کرنا
+- MCP ٹول انضمام کے ساتھ ایجنٹس بنانا اور ترتیب دینا
+- حقیقی MCP سرورز استعمال کرتے ہوئے عملی مثالیں نافذ کرنا
+- ایجنٹ کی گفتگو میں ٹول کے جوابات اور حوالہ جات کو سنبھالنا
 
 ## ضروریات
 
 شروع کرنے سے پہلے، یقینی بنائیں کہ آپ کے پاس ہے:
 
-- Azure سبسکرپشن جس میں AI Foundry تک رسائی ہو
+- Azure سبسکرپشن جس میں AI Foundry کی رسائی ہو
 - Python 3.10+ یا .NET 8.0+
 - Azure CLI انسٹال اور ترتیب دیا ہوا
 - AI وسائل بنانے کی مناسب اجازتیں
 
 ## Model Context Protocol (MCP) کیا ہے؟
 
-Model Context Protocol AI ایپلیکیشنز کے لیے بیرونی ڈیٹا ذرائع اور ٹولز سے جڑنے کا ایک معیاری طریقہ ہے۔ اہم فوائد میں شامل ہیں:
+Model Context Protocol AI ایپلیکیشنز کے لیے ایک معیاری طریقہ ہے جو بیرونی ڈیٹا ذرائع اور ٹولز سے جڑنے کی سہولت دیتا ہے۔ اہم فوائد میں شامل ہیں:
 
 - **معیاری انضمام**: مختلف ٹولز اور سروسز کے لیے یکساں انٹرفیس
 - **سیکیورٹی**: محفوظ تصدیق اور اجازت کے طریقہ کار
 - **لچک**: مختلف ڈیٹا ذرائع، APIs، اور کسٹم ٹولز کی حمایت
 - **توسیع پذیری**: نئی صلاحیتوں اور انضمام کو آسانی سے شامل کرنا
 
-## Azure AI Foundry کے ساتھ MCP سیٹ اپ کرنا
+## Azure AI Foundry کے ساتھ MCP کی ترتیب
 
 ### ماحول کی ترتیب
 
-اپنا پسندیدہ ترقیاتی ماحول منتخب کریں:
+اپنا پسندیدہ ڈیولپمنٹ ماحول منتخب کریں:
 
 - [Python Implementation](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
 - [.NET Implementation](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
@@ -59,6 +59,8 @@ Model Context Protocol AI ایپلیکیشنز کے لیے بیرونی ڈیٹا
 ---
 
 ## Python Implementation
+
+***Note*** آپ یہ [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) چلا سکتے ہیں
 
 ### 1. مطلوبہ پیکجز انسٹال کریں
 
@@ -78,14 +80,14 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import McpTool, RequiredMcpToolCall, SubmitToolApprovalAction, ToolApproval
 ```
 
-### 3. MCP سیٹنگز ترتیب دیں
+### 3. MCP کی ترتیبات ترتیب دیں
 
 ```python
 mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/api/mcp")
 mcp_server_label = os.environ.get("MCP_SERVER_LABEL", "mslearn")
 ```
 
-### 4. پروجیکٹ کلائنٹ کو انیشیالائز کریں
+### 4. پروجیکٹ کلائنٹ کو انیشیئلائز کریں
 
 ```python
 project_client = AIProjectClient(
@@ -187,6 +189,8 @@ with project_client:
 
 ## .NET Implementation
 
+***Note*** آپ یہ [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) چلا سکتے ہیں
+
 ### 1. مطلوبہ پیکجز انسٹال کریں
 
 ```csharp
@@ -201,7 +205,7 @@ using Azure.AI.Agents.Persistent;
 using Azure.Identity;
 ```
 
-### 3. سیٹنگز ترتیب دیں
+### 3. ترتیبات ترتیب دیں
 
 ```csharp
 var projectEndpoint = "https://your-project-endpoint.services.ai.azure.com/api/projects/your-project";
@@ -306,7 +310,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 جب آپ اپنے ایجنٹ کے لیے MCP ٹولز ترتیب دے رہے ہوں، تو آپ کئی اہم پیرامیٹرز متعین کر سکتے ہیں:
 
-### Python ترتیب
+### Python کی ترتیب
 
 ```python
 mcp_tool = McpTool(
@@ -316,7 +320,7 @@ mcp_tool = McpTool(
 )
 ```
 
-### .NET ترتیب
+### .NET کی ترتیب
 
 ```csharp
 MCPToolDefinition mcpTool = new(
@@ -327,7 +331,7 @@ MCPToolDefinition mcpTool = new(
 
 ## توثیق اور ہیڈرز
 
-دونوں امپلیمنٹیشنز کسٹم ہیڈرز کے ذریعے توثیق کی حمایت کرتی ہیں:
+دونوں implementations توثیق کے لیے کسٹم ہیڈرز کی حمایت کرتے ہیں:
 
 ### Python
 ```python
@@ -363,7 +367,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 1. **کسٹم MCP سرورز دریافت کریں**: اپنے مخصوص ڈیٹا ذرائع کے لیے MCP سرورز بنائیں
 2. **جدید سیکیورٹی نافذ کریں**: OAuth2 یا کسٹم توثیقی طریقے شامل کریں
-3. **مانیٹرنگ اور تجزیہ**: ٹول کے استعمال کے لیے لاگنگ اور مانیٹرنگ نافذ کریں
+3. **مانیٹرنگ اور تجزیات**: ٹول کے استعمال کے لیے لاگنگ اور مانیٹرنگ نافذ کریں
 4. **اپنے حل کو اسکیل کریں**: لوڈ بیلنسنگ اور تقسیم شدہ MCP سرور آرکیٹیکچرز پر غور کریں
 
 ## اضافی وسائل
@@ -384,4 +388,4 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - [6. Community Contributions](../../06-CommunityContributions/README.md)
 
 **دستخطی نوٹ**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

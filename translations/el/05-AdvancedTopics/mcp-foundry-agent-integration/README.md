@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:17:17+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:34:42+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "el"
 }
@@ -13,11 +13,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Εισαγωγή
 
-Το Model Context Protocol (MCP) είναι ένα ανοιχτό πρότυπο που επιτρέπει στις εφαρμογές AI να συνδέονται με ασφάλεια σε εξωτερικές πηγές δεδομένων και εργαλεία. Όταν ενσωματώνεται με το Azure AI Foundry, το MCP δίνει τη δυνατότητα στους agents να έχουν πρόσβαση και να αλληλεπιδρούν με διάφορες εξωτερικές υπηρεσίες, APIs και πηγές δεδομένων με έναν τυποποιημένο τρόπο.
+Το Model Context Protocol (MCP) είναι ένα ανοιχτό πρότυπο που επιτρέπει στις εφαρμογές AI να συνδέονται με ασφάλεια σε εξωτερικές πηγές δεδομένων και εργαλεία. Όταν ενσωματώνεται με το Azure AI Foundry, το MCP επιτρέπει στους agents να έχουν πρόσβαση και να αλληλεπιδρούν με διάφορες εξωτερικές υπηρεσίες, APIs και πηγές δεδομένων με έναν τυποποιημένο τρόπο.
 
-Αυτή η ενσωμάτωση συνδυάζει την ευελιξία του οικοσυστήματος εργαλείων του MCP με το στιβαρό πλαίσιο agents του Azure AI Foundry, προσφέροντας λύσεις AI επιπέδου επιχείρησης με εκτεταμένες δυνατότητες προσαρμογής.
+Αυτή η ενσωμάτωση συνδυάζει την ευελιξία του οικοσυστήματος εργαλείων του MCP με το ισχυρό πλαίσιο agents του Azure AI Foundry, προσφέροντας λύσεις AI επιπέδου επιχείρησης με εκτεταμένες δυνατότητες προσαρμογής.
 
-**Note:** Εάν θέλετε να χρησιμοποιήσετε το MCP στην Υπηρεσία Agents του Azure AI Foundry, προς το παρόν υποστηρίζονται μόνο οι εξής περιοχές: westus, westus2, uaenorth, southindia και switzerlandnorth
+**Note:** Εάν θέλετε να χρησιμοποιήσετε το MCP στην υπηρεσία Azure AI Foundry Agent, προς το παρόν υποστηρίζονται μόνο οι εξής περιοχές: westus, westus2, uaenorth, southindia και switzerlandnorth
 
 ## Στόχοι Μάθησης
 
@@ -25,7 +25,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - Κατανοήσετε το Model Context Protocol και τα οφέλη του
 - Ρυθμίσετε διακομιστές MCP για χρήση με agents του Azure AI Foundry
-- Δημιουργήσετε και διαμορφώσετε agents με ενσωμάτωση εργαλείων MCP
+- Δημιουργήσετε και να διαμορφώσετε agents με ενσωμάτωση εργαλείων MCP
 - Υλοποιήσετε πρακτικά παραδείγματα χρησιμοποιώντας πραγματικούς διακομιστές MCP
 - Διαχειριστείτε τις απαντήσεις εργαλείων και τις παραπομπές στις συνομιλίες των agents
 
@@ -59,6 +59,8 @@ CO_OP_TRANSLATOR_METADATA:
 ---
 
 ## Python Implementation
+
+***Note*** Μπορείτε να εκτελέσετε αυτό το [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Εγκατάσταση Απαιτούμενων Πακέτων
 
@@ -104,7 +106,7 @@ mcp_tool = McpTool(
 )
 ```
 
-### 6. Πλήρες Παράδειγμα σε Python
+### 6. Πλήρες Παράδειγμα Python
 
 ```python
 with project_client:
@@ -187,6 +189,8 @@ with project_client:
 
 ## .NET Implementation
 
+***Note*** Μπορείτε να εκτελέσετε αυτό το [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+
 ### 1. Εγκατάσταση Απαιτούμενων Πακέτων
 
 ```csharp
@@ -228,7 +232,7 @@ PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
    );
 ```
 
-### 6. Πλήρες Παράδειγμα σε .NET
+### 6. Πλήρες Παράδειγμα .NET
 
 ```csharp
 // Create thread and message
@@ -343,9 +347,9 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ## Αντιμετώπιση Συνηθισμένων Προβλημάτων
 
 ### 1. Προβλήματα Σύνδεσης
-- Ελέγξτε ότι το URL του διακομιστή MCP είναι προσβάσιμο
-- Επαληθεύστε τα διαπιστευτήρια πιστοποίησης
-- Βεβαιωθείτε για τη δικτυακή σύνδεση
+- Επαληθεύστε ότι το URL του διακομιστή MCP είναι προσβάσιμο
+- Ελέγξτε τα διαπιστευτήρια πιστοποίησης
+- Βεβαιωθείτε για τη δικτυακή συνδεσιμότητα
 
 ### 2. Αποτυχίες Κλήσεων Εργαλείων
 - Επανεξετάστε τα ορίσματα και τη μορφοποίηση των κλήσεων εργαλείων
@@ -354,7 +358,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 3. Προβλήματα Απόδοσης
 - Βελτιστοποιήστε τη συχνότητα κλήσεων εργαλείων
-- Εφαρμόστε caching όπου χρειάζεται
+- Εφαρμόστε caching όπου είναι κατάλληλο
 - Παρακολουθήστε τους χρόνους απόκρισης του διακομιστή
 
 ## Επόμενα Βήματα
@@ -376,8 +380,8 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ## Υποστήριξη
 
 Για επιπλέον υποστήριξη και ερωτήσεις:
-- Ανατρέξτε στην [τεκμηρίωση του Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- Εξετάστε τους [πόρους της κοινότητας MCP](https://modelcontextprotocol.io/)
+- Ανατρέξτε στην [τεκμηρίωση Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- Ελέγξτε τους [πόρους της κοινότητας MCP](https://modelcontextprotocol.io/)
 
 ## Τι ακολουθεί
 
