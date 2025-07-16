@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:26:05+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:37:24+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "mo"
 }
@@ -31,21 +31,21 @@ CO_OP_TRANSLATOR_METADATA:
 
 Inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與之互動，方便你測試它是否正常運作。讓我們啟動它：
 > [!NOTE]
-> 在「command」欄位中顯示的內容可能會有所不同，因為它包含了使用您特定執行環境來啟動伺服器的指令。
+> 在「command」欄位中顯示的內容可能會有所不同，因為它包含了用於執行伺服器的特定執行環境指令。
 你應該會看到以下的使用者介面：
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.mo.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. 按下 Connect 按鈕連接到伺服器
   連接成功後，你應該會看到以下畫面：
 
-  ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.mo.png)
+  ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
-1. 選擇「Tools」和「listTools」，你會看到「Add」出現，點選「Add」並填入參數值。
+1. 選擇「Tools」和「listTools」，你會看到「Add」出現，選擇「Add」並填入參數值。
 
-  你會看到以下回應，也就是「add」工具的結果：
+  你應該會看到以下回應，也就是「add」工具的結果：
 
-  ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.mo.png)
+  ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 恭喜，你已成功建立並執行你的第一個伺服器！
 
@@ -64,7 +64,7 @@ MCP 提供多種語言的官方 SDK：
 ## 主要重點
 
 - 使用語言專屬的 SDK，設定 MCP 開發環境非常簡單
-- 建立 MCP 伺服器需創建並註冊具明確結構的工具
+- 建立 MCP 伺服器需要創建並註冊具有明確結構的工具
 - 測試與除錯對於可靠的 MCP 實作至關重要
 
 ## 範例
@@ -77,7 +77,7 @@ MCP 提供多種語言的官方 SDK：
 
 ## 作業
 
-建立一個簡單的 MCP 伺服器，並加入你選擇的工具：
+建立一個簡單的 MCP 伺服器，並包含你選擇的工具：
 
 1. 使用你偏好的語言 (.NET、Java、Python 或 JavaScript) 實作該工具。
 2. 定義輸入參數與回傳值。
@@ -88,7 +88,7 @@ MCP 提供多種語言的官方 SDK：
 
 [Solution](./solution/README.md)
 
-## 其他資源
+## 額外資源
 
 - [在 Azure 上使用 Model Context Protocol 建立代理](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
 - [使用 Azure Container Apps 遠端 MCP (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
@@ -96,7 +96,7 @@ MCP 提供多種語言的官方 SDK：
 
 ## 下一步
 
-下一章節：[MCP 用戶端入門](../02-client/README.md)
+下一章節：[Getting Started with MCP Clients](../02-client/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

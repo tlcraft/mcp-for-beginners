@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:40:12+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:51:45+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "ro"
 }
 -->
-### -2- Creează un proiect
+### -2- Creează proiectul
 
 Acum că ai instalat SDK-ul, să trecem la crearea unui proiect:
 
@@ -15,9 +15,9 @@ Acum că ai instalat SDK-ul, să trecem la crearea unui proiect:
 
 ### -4- Creează codul serverului
 
-### -5- Adaugă un tool și o resursă
+### -5- Adaugă un instrument și o resursă
 
-Adaugă un tool și o resursă prin includerea următorului cod:
+Adaugă un instrument și o resursă prin adăugarea următorului cod:
 
 ### -6 Codul final
 
@@ -30,22 +30,22 @@ Pornește serverul cu următoarea comandă:
 ### -8- Rulează folosind inspectorul
 
 Inspectorul este un instrument excelent care poate porni serverul și îți permite să interacționezi cu el pentru a testa dacă funcționează. Să-l pornim:
-> [!NOTE]  
+> [!NOTE]
 > s-ar putea să arate diferit în câmpul „command” deoarece conține comanda pentru rularea unui server cu runtime-ul tău specific/
 Ar trebui să vezi următoarea interfață de utilizator:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ro.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Conectează-te la server selectând butonul Connect
   Odată ce te conectezi la server, ar trebui să vezi următorul ecran:
 
-  ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ro.png)
+  ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
-1. Selectează "Tools" și "listTools", ar trebui să apară opțiunea "Add", selectează "Add" și completează valorile parametrilor.
+1. Selectează "Tools" și "listTools", ar trebui să apară "Add", selectează "Add" și completează valorile parametrilor.
 
   Ar trebui să vezi următorul răspuns, adică un rezultat de la instrumentul "add":
 
-  ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.ro.png)
+  ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Felicitări, ai reușit să creezi și să rulezi primul tău server!
 
@@ -69,11 +69,11 @@ MCP oferă SDK-uri oficiale pentru mai multe limbaje:
 
 ## Exemple
 
-- [Calculator Java](../samples/java/calculator/README.md)
-- [Calculator .Net](../../../../03-GettingStarted/samples/csharp)
-- [Calculator JavaScript](../samples/javascript/README.md)
-- [Calculator TypeScript](../samples/typescript/README.md)
-- [Calculator Python](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Exercițiu
 
@@ -90,9 +90,9 @@ Creează un server MCP simplu cu un instrument la alegerea ta:
 
 ## Resurse suplimentare
 
-- [Construiește agenți folosind Model Context Protocol pe Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Construirea agenților folosind Model Context Protocol pe Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
 - [MCP Remote cu Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [Agent MCP OpenAI .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Agent .NET OpenAI MCP](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Ce urmează
 

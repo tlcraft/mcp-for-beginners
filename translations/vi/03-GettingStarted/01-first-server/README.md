@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:36:31+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:48:06+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "vi"
 }
@@ -34,18 +34,18 @@ Inspector là một công cụ tuyệt vời giúp bạn khởi động server v
 > nó có thể trông khác trong trường "command" vì nó chứa lệnh để chạy một server với runtime cụ thể của bạn/
 Bạn sẽ thấy giao diện người dùng sau:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.vi.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Kết nối với server bằng cách chọn nút Connect  
    Khi bạn kết nối với server, bạn sẽ thấy như sau:
 
-   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.vi.png)
+   ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. Chọn "Tools" và "listTools", bạn sẽ thấy "Add" xuất hiện, chọn "Add" và điền các giá trị tham số.
 
    Bạn sẽ thấy phản hồi sau, tức là kết quả từ công cụ "add":
 
-   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.vi.png)
+   ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Chúc mừng, bạn đã tạo và chạy thành công server đầu tiên của mình!
 
@@ -55,19 +55,19 @@ MCP cung cấp các SDK chính thức cho nhiều ngôn ngữ:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Được duy trì phối hợp với Microsoft  
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Được duy trì phối hợp với Spring AI  
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Triển khai chính thức cho TypeScript  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Triển khai chính thức cho Python  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Triển khai chính thức cho Kotlin  
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Triển khai TypeScript chính thức  
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Triển khai Python chính thức  
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Triển khai Kotlin chính thức  
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Được duy trì phối hợp với Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Triển khai chính thức cho Rust  
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Triển khai Rust chính thức  
 
 ## Những điểm chính cần nhớ
 
-- Thiết lập môi trường phát triển MCP rất đơn giản với các SDK theo từng ngôn ngữ  
-- Xây dựng server MCP bao gồm việc tạo và đăng ký các công cụ với các schema rõ ràng  
+- Thiết lập môi trường phát triển MCP rất đơn giản với các SDK theo ngôn ngữ  
+- Xây dựng server MCP bao gồm tạo và đăng ký các công cụ với các schema rõ ràng  
 - Kiểm thử và gỡ lỗi là rất quan trọng để đảm bảo triển khai MCP đáng tin cậy  
 
-## Ví dụ mẫu
+## Mẫu ví dụ
 
 - [Máy tính Java](../samples/java/calculator/README.md)  
 - [Máy tính .Net](../../../../03-GettingStarted/samples/csharp)  
@@ -81,12 +81,12 @@ Tạo một server MCP đơn giản với một công cụ bạn chọn:
 
 1. Triển khai công cụ bằng ngôn ngữ bạn thích (.NET, Java, Python hoặc JavaScript).  
 2. Định nghĩa các tham số đầu vào và giá trị trả về.  
-3. Chạy công cụ inspector để đảm bảo server hoạt động như mong muốn.  
+3. Chạy công cụ inspector để đảm bảo server hoạt động đúng.  
 4. Kiểm thử triển khai với nhiều đầu vào khác nhau.  
 
 ## Giải pháp
 
-[Solution](./solution/README.md)
+[Giải pháp](./solution/README.md)
 
 ## Tài nguyên bổ sung
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:32:04+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:43:25+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "pl"
 }
@@ -29,23 +29,23 @@ Uruchom serwer za pomocą następującego polecenia:
 
 ### -8- Uruchomienie za pomocą inspektora
 
-Inspektor to świetne narzędzie, które może uruchomić twój serwer i pozwala na interakcję z nim, dzięki czemu możesz przetestować, czy działa poprawnie. Uruchommy go:
+Inspektor to świetne narzędzie, które może uruchomić twój serwer i pozwala na interakcję z nim, abyś mógł przetestować jego działanie. Uruchommy go:
 > [!NOTE]
 > może wyglądać inaczej w polu "command", ponieważ zawiera polecenie uruchomienia serwera z Twoim konkretnym środowiskiem wykonawczym/
 Powinieneś zobaczyć następujący interfejs użytkownika:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.pl.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Połącz się z serwerem, wybierając przycisk Connect  
    Po połączeniu z serwerem powinieneś zobaczyć następujące:
 
-   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.pl.png)
+   ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. Wybierz "Tools" i "listTools", powinieneś zobaczyć pojawiającą się opcję "Add", wybierz "Add" i wypełnij wartości parametrów.
 
    Powinieneś zobaczyć następującą odpowiedź, czyli wynik działania narzędzia "add":
 
-   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.pl.png)
+   ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Gratulacje, udało Ci się stworzyć i uruchomić swój pierwszy serwer!
 
@@ -81,8 +81,8 @@ Stwórz prosty serwer MCP z narzędziem według własnego wyboru:
 
 1. Zaimplementuj narzędzie w preferowanym języku (.NET, Java, Python lub JavaScript).
 2. Zdefiniuj parametry wejściowe i wartości zwracane.
-3. Uruchom narzędzie inspektora, aby upewnić się, że serwer działa poprawnie.
-4. Przetestuj implementację na różnych danych wejściowych.
+3. Uruchom narzędzie inspektora, aby upewnić się, że serwer działa zgodnie z oczekiwaniami.
+4. Przetestuj implementację z różnymi danymi wejściowymi.
 
 ## Rozwiązanie
 
@@ -99,4 +99,4 @@ Stwórz prosty serwer MCP z narzędziem według własnego wyboru:
 Następny krok: [Pierwsze kroki z klientami MCP](../02-client/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

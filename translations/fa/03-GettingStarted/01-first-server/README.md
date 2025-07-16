@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:24:48+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:35:59+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "fa"
 }
@@ -27,31 +27,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 سرور را با دستور زیر راه‌اندازی کنید:
 
-### -8- اجرا با استفاده از Inspector
+### -8- اجرا با استفاده از inspector
 
 Inspector ابزاری عالی است که می‌تواند سرور شما را راه‌اندازی کند و به شما اجازه می‌دهد با آن تعامل داشته باشید تا مطمئن شوید که به درستی کار می‌کند. بیایید آن را راه‌اندازی کنیم:
 > [!NOTE]
 > ممکن است در فیلد "command" متفاوت به نظر برسد زیرا شامل دستوری برای اجرای سرور با محیط اجرایی خاص شما است/
 شما باید رابط کاربری زیر را ببینید:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.fa.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. با انتخاب دکمه Connect به سرور متصل شوید  
    پس از اتصال به سرور، باید تصویر زیر را مشاهده کنید:
 
-   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.fa.png)
+   ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. گزینه "Tools" و سپس "listTools" را انتخاب کنید، باید گزینه "Add" ظاهر شود، "Add" را انتخاب کرده و مقادیر پارامترها را وارد کنید.
 
    باید پاسخ زیر را ببینید، یعنی نتیجه‌ای از ابزار "add":
 
-   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.fa.png)
+   ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 تبریک! شما موفق شدید اولین سرور خود را ایجاد و اجرا کنید!
 
 ### SDKهای رسمی
 
-MCP SDKهای رسمی برای زبان‌های مختلف ارائه می‌دهد:
+MCP SDKهای رسمی برای چند زبان برنامه‌نویسی ارائه می‌دهد:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - با همکاری مایکروسافت نگهداری می‌شود  
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - با همکاری Spring AI نگهداری می‌شود  
