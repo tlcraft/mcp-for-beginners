@@ -178,14 +178,6 @@ We maintain a detailed [Changelog](./changelog.md) that tracks all significant u
 - Feature improvements
 - Documentation updates
 
-### Alternative Layouts
-
-For different ways to navigate the curriculum content, we've provided [alternative layout options](./alternative_layouts/) including:
-
-- Card-based visual layout
-- Tabbed-style navigation
-- Accordion-style with emojis
-
 ## 🛠️ How to Use This Curriculum Effectively
 
 Each lesson in this guide includes:
