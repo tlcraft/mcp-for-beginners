@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T00:46:17+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-16T22:07:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "es"
 }
@@ -13,11 +13,11 @@ CO_OP_TRANSLATOR_METADATA:
 > 
 > Estos ejemplos muestran:
 > 
-> 1. **Implementación en Python**: Una implementación de servidor FastMCP que proporciona una herramienta de búsqueda web y se conecta a una API de búsqueda externa. Este ejemplo demuestra la gestión adecuada del ciclo de vida, el manejo del contexto y la implementación de herramientas siguiendo los patrones del [SDK oficial de MCP para Python](https://github.com/modelcontextprotocol/python-sdk). El servidor utiliza el transporte HTTP Streamable recomendado, que ha reemplazado al transporte SSE para despliegues en producción.
+> 1. **Implementación en Python**: Una implementación de servidor FastMCP que proporciona una herramienta de búsqueda web y se conecta a una API externa de búsqueda. Este ejemplo demuestra la gestión adecuada del ciclo de vida, el manejo del contexto y la implementación de herramientas siguiendo los patrones del [SDK oficial de MCP para Python](https://github.com/modelcontextprotocol/python-sdk). El servidor utiliza el transporte HTTP Streamable recomendado, que ha reemplazado al transporte SSE para despliegues en producción.
 > 
 > 2. **Implementación en JavaScript**: Una implementación en TypeScript/JavaScript usando el patrón FastMCP del [SDK oficial de MCP para TypeScript](https://github.com/modelcontextprotocol/typescript-sdk) para crear un servidor de búsqueda con definiciones de herramientas y conexiones de cliente adecuadas. Sigue los patrones más recientes recomendados para la gestión de sesiones y preservación del contexto.
 > 
-> Estos ejemplos requerirían manejo adicional de errores, autenticación y código específico de integración con APIs para uso en producción. Los endpoints de la API de búsqueda mostrados (`https://api.search-service.example/search`) son marcadores de posición y deberían ser reemplazados por endpoints reales de servicios de búsqueda.
+> Estos ejemplos requerirían manejo adicional de errores, autenticación y código específico de integración de API para uso en producción. Los endpoints de la API de búsqueda mostrados (`https://api.search-service.example/search`) son marcadores de posición y deberían reemplazarse por endpoints reales de servicios de búsqueda.
 > 
 > Para detalles completos de implementación y los enfoques más actualizados, por favor consulte la [especificación oficial de MCP](https://spec.modelcontextprotocol.io/) y la documentación de los SDK.
 
@@ -25,7 +25,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### El Marco del Model Context Protocol (MCP)
 
-En su base, el Model Context Protocol proporciona una forma estandarizada para que modelos de IA, aplicaciones y servicios intercambien contexto. En la búsqueda web en tiempo real, este marco es esencial para crear experiencias de búsqueda coherentes y con múltiples interacciones. Los componentes clave incluyen:
+En su base, el Model Context Protocol proporciona una forma estandarizada para que modelos de IA, aplicaciones y servicios intercambien contexto. En la búsqueda web en tiempo real, este marco es esencial para crear experiencias de búsqueda coherentes y de múltiples interacciones. Los componentes clave incluyen:
 
 1. **Arquitectura Cliente-Servidor**: MCP establece una separación clara entre clientes de búsqueda (solicitantes) y servidores de búsqueda (proveedores), permitiendo modelos de despliegue flexibles.
 
@@ -35,7 +35,7 @@ En su base, el Model Context Protocol proporciona una forma estandarizada para q
 
 4. **Definiciones de Herramientas**: Las capacidades de búsqueda se exponen como herramientas estandarizadas con parámetros y valores de retorno bien definidos.
 
-5. **Soporte para Streaming**: El protocolo soporta resultados en streaming, esencial para la búsqueda en tiempo real donde los resultados pueden llegar progresivamente.
+5. **Soporte para Streaming**: El protocolo soporta la transmisión continua de resultados, esencial para la búsqueda en tiempo real donde los resultados pueden llegar progresivamente.
 
 ### Patrones de Integración para Búsqueda Web
 
@@ -91,7 +91,7 @@ En la búsqueda web basada en MCP, el contexto típicamente incluye:
 
 - **Historial de Consultas**: Consultas de búsqueda previas en la sesión
 - **Preferencias del Usuario**: Idioma, región, configuraciones de búsqueda segura
-- **Historial de Interacciones**: Resultados clicados, tiempo dedicado a resultados
+- **Historial de Interacciones**: Resultados clicados, tiempo dedicado en resultados
 - **Parámetros de Búsqueda**: Filtros, órdenes de clasificación y otros modificadores de búsqueda
 - **Conocimiento de Dominio**: Contexto específico del tema relevante para la búsqueda
 - **Contexto Temporal**: Factores de relevancia basados en el tiempo
@@ -134,28 +134,28 @@ De cara al futuro, anticipamos que MCP evolucionará para abordar:
 
 - **Búsqueda Multimodal**: Integración de búsqueda de texto, imagen, audio y video con contexto preservado
 - **Búsqueda Descentralizada**: Soporte para ecosistemas de búsqueda distribuidos y federados
-- **Privacidad en la búsqueda**: Mecanismos de búsqueda que preservan la privacidad y son conscientes del contexto  
-- **Comprensión de consultas**: Análisis semántico profundo de consultas de búsqueda en lenguaje natural
+- **Privacidad en la Búsqueda**: Mecanismos de búsqueda que preservan la privacidad y son conscientes del contexto  
+- **Comprensión de Consultas**: Análisis semántico profundo de consultas de búsqueda en lenguaje natural
 
-### Avances potenciales en la tecnología
+### Avances Potenciales en la Tecnología
 
 Tecnologías emergentes que moldearán el futuro de la búsqueda MCP:
 
-1. **Arquitecturas de búsqueda neuronal**: Sistemas de búsqueda basados en embeddings optimizados para MCP  
-2. **Contexto de búsqueda personalizado**: Aprendizaje de patrones de búsqueda individuales a lo largo del tiempo  
-3. **Integración de grafos de conocimiento**: Búsqueda contextual mejorada con grafos de conocimiento específicos de dominio  
-4. **Contexto multimodal**: Mantener el contexto a través de diferentes modalidades de búsqueda
+1. **Arquitecturas de Búsqueda Neuronal**: Sistemas de búsqueda basados en embeddings optimizados para MCP  
+2. **Contexto de Búsqueda Personalizado**: Aprendizaje de patrones de búsqueda individuales a lo largo del tiempo  
+3. **Integración de Grafos de Conocimiento**: Búsqueda contextual mejorada con grafos de conocimiento específicos de dominio  
+4. **Contexto Multimodal**: Mantener el contexto a través de diferentes modalidades de búsqueda
 
-## Ejercicios prácticos
+## Ejercicios Prácticos
 
-### Ejercicio 1: Configuración de una canalización básica de búsqueda MCP
+### Ejercicio 1: Configuración de una Pipeline Básica de Búsqueda MCP
 
 En este ejercicio aprenderás a:  
 - Configurar un entorno básico de búsqueda MCP  
 - Implementar manejadores de contexto para búsqueda web  
 - Probar y validar la preservación del contexto a lo largo de iteraciones de búsqueda
 
-### Ejercicio 2: Construcción de un asistente de investigación con búsqueda MCP
+### Ejercicio 2: Construcción de un Asistente de Investigación con Búsqueda MCP
 
 Crea una aplicación completa que:  
 - Procese preguntas de investigación en lenguaje natural  
@@ -163,7 +163,7 @@ Crea una aplicación completa que:
 - Sintetice información de múltiples fuentes  
 - Presente hallazgos de investigación organizados
 
-### Ejercicio 3: Implementación de federación de búsqueda multi-fuente con MCP
+### Ejercicio 3: Implementación de Federación de Búsqueda Multi-Fuente con MCP
 
 Ejercicio avanzado que cubre:  
 - Envío de consultas conscientes del contexto a múltiples motores de búsqueda  
@@ -171,7 +171,7 @@ Ejercicio avanzado que cubre:
 - Deducción contextual de resultados duplicados  
 - Manejo de metadatos específicos de cada fuente
 
-## Recursos adicionales
+## Recursos Adicionales
 
 - [Model Context Protocol Specification](https://spec.modelcontextprotocol.io/) - Especificación oficial de MCP y documentación detallada del protocolo  
 - [Model Context Protocol Documentation](https://modelcontextprotocol.io/) - Tutoriales detallados y guías de implementación  
@@ -185,36 +185,36 @@ Ejercicio avanzado que cubre:
 - [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - Motor distribuido de búsqueda y análisis  
 - [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Construcción de aplicaciones con LLMs
 
-## Resultados de aprendizaje
+## Resultados de Aprendizaje
 
 Al completar este módulo, serás capaz de:
 
-- Comprender los fundamentos de la búsqueda web en tiempo real y sus desafíos  
+- Entender los fundamentos de la búsqueda web en tiempo real y sus desafíos  
 - Explicar cómo el Model Context Protocol (MCP) mejora las capacidades de búsqueda web en tiempo real  
 - Implementar soluciones de búsqueda basadas en MCP usando frameworks y APIs populares  
 - Diseñar y desplegar arquitecturas de búsqueda escalables y de alto rendimiento con MCP  
 - Aplicar conceptos de MCP a diversos casos de uso, incluyendo búsqueda semántica, asistencia en investigación y navegación aumentada por IA  
 - Evaluar tendencias emergentes e innovaciones futuras en tecnologías de búsqueda basadas en MCP
 
-### Consideraciones de confianza y seguridad
+### Consideraciones de Confianza y Seguridad
 
 Al implementar soluciones de búsqueda web basadas en MCP, recuerda estos principios importantes de la especificación MCP:
 
-1. **Consentimiento y control del usuario**: Los usuarios deben dar su consentimiento explícito y comprender todas las operaciones y accesos a datos. Esto es especialmente importante en implementaciones de búsqueda web que puedan acceder a fuentes de datos externas.
+1. **Consentimiento y Control del Usuario**: Los usuarios deben dar su consentimiento explícito y comprender todas las operaciones y accesos a datos. Esto es especialmente importante en implementaciones de búsqueda web que puedan acceder a fuentes de datos externas.
 
-2. **Privacidad de los datos**: Asegura un manejo adecuado de las consultas y resultados de búsqueda, especialmente cuando puedan contener información sensible. Implementa controles de acceso apropiados para proteger los datos del usuario.
+2. **Privacidad de Datos**: Asegura un manejo adecuado de las consultas y resultados de búsqueda, especialmente cuando puedan contener información sensible. Implementa controles de acceso apropiados para proteger los datos del usuario.
 
-3. **Seguridad de las herramientas**: Implementa autorización y validación adecuadas para las herramientas de búsqueda, ya que representan riesgos de seguridad por la ejecución arbitraria de código. Las descripciones del comportamiento de las herramientas deben considerarse no confiables a menos que provengan de un servidor de confianza.
+3. **Seguridad de las Herramientas**: Implementa autorización y validación adecuadas para las herramientas de búsqueda, ya que representan riesgos de seguridad por la ejecución arbitraria de código. Las descripciones del comportamiento de las herramientas deben considerarse no confiables a menos que provengan de un servidor de confianza.
 
-4. **Documentación clara**: Proporciona documentación clara sobre las capacidades, limitaciones y consideraciones de seguridad de tu implementación de búsqueda basada en MCP, siguiendo las directrices de la especificación MCP.
+4. **Documentación Clara**: Proporciona documentación clara sobre las capacidades, limitaciones y consideraciones de seguridad de tu implementación de búsqueda basada en MCP, siguiendo las directrices de la especificación MCP.
 
-5. **Flujos robustos de consentimiento**: Construye flujos robustos de consentimiento y autorización que expliquen claramente qué hace cada herramienta antes de autorizar su uso, especialmente para herramientas que interactúan con recursos web externos.
+5. **Flujos Robustos de Consentimiento**: Construye flujos robustos de consentimiento y autorización que expliquen claramente qué hace cada herramienta antes de autorizar su uso, especialmente para herramientas que interactúan con recursos web externos.
 
 Para detalles completos sobre seguridad y consideraciones de confianza en MCP, consulta la [documentación oficial](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
 
 ## Qué sigue
 
-- [5.11 Autenticación Entra ID para servidores Model Context Protocol](../mcp-security-entra/README.md)
+- [5.12 Autenticación Entra ID para Servidores Model Context Protocol](../mcp-security-entra/README.md)
 
 **Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

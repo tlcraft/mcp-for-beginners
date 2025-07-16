@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:31:34+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-16T21:06:47+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "tw"
 }
@@ -35,7 +35,7 @@ Model Context Protocol (MCP) 是一個開放標準，讓 AI 應用能安全地�
 
 - 具 AI Foundry 存取權的 Azure 訂閱
 - Python 3.10+ 或 .NET 8.0+
-- 已安裝並設定 Azure CLI
+- 已安裝並設定好的 Azure CLI
 - 建立 AI 資源的適當權限
 
 ## 什麼是 Model Context Protocol (MCP)？
@@ -80,7 +80,7 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import McpTool, RequiredMcpToolCall, SubmitToolApprovalAction, ToolApproval
 ```
 
-### 3. 設定 MCP 參數
+### 3. 配置 MCP 設定
 
 ```python
 mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/api/mcp")
@@ -205,7 +205,7 @@ using Azure.AI.Agents.Persistent;
 using Azure.Identity;
 ```
 
-### 3. 設定參數
+### 3. 配置設定
 
 ```csharp
 var projectEndpoint = "https://your-project-endpoint.services.ai.azure.com/api/projects/your-project";
@@ -329,7 +329,7 @@ MCPToolDefinition mcpTool = new(
 );
 ```
 
-## 驗證與標頭設定
+## 驗證與標頭
 
 兩種實作皆支援自訂標頭以進行驗證：
 
@@ -365,9 +365,9 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 進一步強化您的 MCP 整合：
 
-1. **探索自訂 MCP 伺服器**：為專有資料來源打造專屬 MCP 伺服器
+1. **探索自訂 MCP 伺服器**：為專有資料來源打造自有 MCP 伺服器
 2. **實作進階安全性**：加入 OAuth2 或自訂驗證機制
-3. **監控與分析**：實施工具使用的日誌與監控
+3. **監控與分析**：實作工具使用的日誌與監控
 4. **擴展解決方案**：考慮負載平衡與分散式 MCP 伺服器架構
 
 ## 其他資源
@@ -379,13 +379,13 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## 支援
 
-如需更多支援與問題解答：
+如需更多支援與問題協助：
 - 查閱 [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-foundry/)
 - 參考 [MCP 社群資源](https://modelcontextprotocol.io/)
 
 ## 下一步
 
-- [6. 社群貢獻](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

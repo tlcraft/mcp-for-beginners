@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T00:45:34+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-16T21:25:55+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "fr"
 }
@@ -15,9 +15,9 @@ CO_OP_TRANSLATOR_METADATA:
 > 
 > 1. **Implémentation Python** : Une implémentation serveur FastMCP qui fournit un outil de recherche web et se connecte à une API de recherche externe. Cet exemple montre une gestion correcte du cycle de vie, du contexte et de l’implémentation des outils en suivant les modèles du [SDK MCP Python officiel](https://github.com/modelcontextprotocol/python-sdk). Le serveur utilise le transport HTTP Streamable recommandé, qui a remplacé l’ancien transport SSE pour les déploiements en production.
 > 
-> 2. **Implémentation JavaScript** : Une implémentation TypeScript/JavaScript utilisant le modèle FastMCP du [SDK MCP TypeScript officiel](https://github.com/modelcontextprotocol/typescript-sdk) pour créer un serveur de recherche avec des définitions d’outils et des connexions clients appropriées. Elle suit les derniers modèles recommandés pour la gestion des sessions et la préservation du contexte.
+> 2. **Implémentation JavaScript** : Une implémentation TypeScript/JavaScript utilisant le modèle FastMCP du [SDK MCP TypeScript officiel](https://github.com/modelcontextprotocol/typescript-sdk) pour créer un serveur de recherche avec des définitions d’outils appropriées et des connexions clients. Elle suit les derniers modèles recommandés pour la gestion des sessions et la préservation du contexte.
 > 
-> Ces exemples nécessiteraient une gestion d’erreurs supplémentaire, une authentification et un code d’intégration API spécifique pour une utilisation en production. Les points de terminaison de l’API de recherche indiqués (`https://api.search-service.example/search`) sont des espaces réservés et devraient être remplacés par de véritables points de service de recherche.
+> Ces exemples nécessiteraient une gestion d’erreurs supplémentaire, une authentification et un code d’intégration API spécifique pour une utilisation en production. Les points de terminaison de l’API de recherche indiqués (`https://api.search-service.example/search`) sont des espaces réservés et doivent être remplacés par de véritables points de service de recherche.
 > 
 > Pour des détails complets d’implémentation et les approches les plus récentes, veuillez consulter la [spécification MCP officielle](https://spec.modelcontextprotocol.io/) et la documentation des SDK.
 
@@ -25,7 +25,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Le cadre du Model Context Protocol (MCP)
 
-À sa base, le Model Context Protocol fournit un moyen standardisé pour que les modèles d’IA, les applications et les services échangent du contexte. Dans la recherche web en temps réel, ce cadre est essentiel pour créer des expériences de recherche cohérentes et multi-interactions. Les composants clés incluent :
+À sa base, le Model Context Protocol fournit un moyen standardisé pour que les modèles d’IA, applications et services échangent du contexte. Dans la recherche web en temps réel, ce cadre est essentiel pour créer des expériences de recherche cohérentes et multi-interactions. Les composants clés incluent :
 
 1. **Architecture client-serveur** : MCP établit une séparation claire entre les clients de recherche (demandeurs) et les serveurs de recherche (fournisseurs), permettant des modèles de déploiement flexibles.
 
@@ -35,7 +35,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 4. **Définitions d’outils** : Les capacités de recherche sont exposées comme des outils standardisés avec des paramètres et valeurs de retour bien définis.
 
-5. **Support du streaming** : Le protocole prend en charge la diffusion progressive des résultats, essentielle pour la recherche en temps réel où les résultats peuvent arriver de manière continue.
+5. **Support du streaming** : Le protocole supporte la diffusion progressive des résultats, essentielle pour la recherche en temps réel où les résultats peuvent arriver de manière incrémentale.
 
 ### Modèles d’intégration de la recherche web
 
@@ -83,7 +83,7 @@ graph LR
     Server --> |Final Results + Updated Context| Client
 ```
 
-Ici, le processus de recherche est divisé en plusieurs étapes, le contexte étant enrichi à chaque phase, ce qui aboutit à des résultats de plus en plus pertinents.
+Ici, le processus de recherche est divisé en plusieurs étapes, le contexte étant enrichi à chaque étape, ce qui aboutit à des résultats de plus en plus pertinents.
 
 ### Composants du contexte de recherche
 
@@ -93,9 +93,9 @@ Dans la recherche web basée sur MCP, le contexte inclut généralement :
 - **Préférences utilisateur** : Langue, région, paramètres de recherche sécurisée
 - **Historique d’interaction** : Résultats cliqués, temps passé sur les résultats
 - **Paramètres de recherche** : Filtres, ordres de tri et autres modificateurs
-- **Connaissances de domaine** : Contexte spécifique au sujet pertinent pour la recherche
+- **Connaissances spécifiques au domaine** : Contexte lié au sujet pertinent pour la recherche
 - **Contexte temporel** : Facteurs de pertinence basés sur le temps
-- **Préférences de source** : Sources d’information fiables ou préférées
+- **Préférences de sources** : Sources d’information fiables ou préférées
 
 ## Cas d’usage et applications
 
@@ -160,7 +160,7 @@ Dans cet exercice, vous apprendrez à :
 Créez une application complète qui :  
 - Traite des questions de recherche en langage naturel  
 - Effectue des recherches web sensibles au contexte  
-- Synthétise les informations provenant de plusieurs sources  
+- Synthétise les informations issues de plusieurs sources  
 - Présente les résultats de recherche de manière organisée
 
 ### Exercice 3 : Implémenter une fédération de recherche multi-sources avec MCP
@@ -193,7 +193,7 @@ En complétant ce module, vous serez capable de :
 - Expliquer comment le Model Context Protocol (MCP) améliore les capacités de recherche web en temps réel  
 - Implémenter des solutions de recherche basées sur MCP en utilisant des frameworks et API populaires  
 - Concevoir et déployer des architectures de recherche évolutives et performantes avec MCP  
-- Appliquer les concepts MCP à divers cas d’usage, notamment la recherche sémantique, l’assistance à la recherche et la navigation augmentée par l’IA  
+- Appliquer les concepts MCP à divers cas d’usage, notamment la recherche sémantique, l’assistance à la recherche et la navigation augmentée par IA  
 - Évaluer les tendances émergentes et les innovations futures dans les technologies de recherche basées sur MCP
 
 ### Considérations de confiance et de sécurité
@@ -212,9 +212,9 @@ Lors de la mise en œuvre de solutions de recherche web basées sur MCP, gardez 
 
 Pour plus de détails sur la sécurité et la confiance dans MCP, consultez la [documentation officielle](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
 
-## Et après ?
+## Et ensuite
 
-- [5.11 Authentification Entra ID pour les serveurs Model Context Protocol](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
