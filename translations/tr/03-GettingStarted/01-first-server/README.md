@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:32:32+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:43:51+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "tr"
 }
@@ -30,22 +30,22 @@ Sunucuyu aşağıdaki komutla başlatın:
 ### -8- Inspector kullanarak çalıştırma
 
 Inspector, sunucunuzu başlatan ve onunla etkileşim kurmanızı sağlayan harika bir araçtır, böylece çalışıp çalışmadığını test edebilirsiniz. Hadi başlatalım:
-> [!NOTE]  
-> "command" alanında farklı görünebilir çünkü burada belirli çalışma zamanınızla bir sunucu çalıştırmak için komut yer alır/
+> [!NOTE]
+> "command" alanında farklı görünebilir çünkü burada kendi çalışma zamanınızla bir sunucu çalıştırmak için komut yer alır/
 Aşağıdaki kullanıcı arayüzünü görmelisiniz:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.tr.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Connect butonunu seçerek sunucuya bağlanın  
   Sunucuya bağlandıktan sonra aşağıdakini görmelisiniz:
 
-  ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.tr.png)
+  ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
-1. "Tools" ve ardından "listTools" seçin, "Add" seçeneği görünmelidir, "Add"i seçin ve parametre değerlerini doldurun.
+1. "Tools" ve ardından "listTools" seçeneğini seçin, "Add" görünmelidir, "Add" seçeneğini seçin ve parametre değerlerini doldurun.
 
   Aşağıdaki yanıtı görmelisiniz, yani "add" aracından bir sonuç:
 
-  ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.tr.png)
+  ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Tebrikler, ilk sunucunuzu oluşturup çalıştırmayı başardınız!
 
@@ -63,7 +63,7 @@ MCP, birden fazla dil için resmi SDK'lar sağlar:
 
 ## Önemli Noktalar
 
-- MCP geliştirme ortamı, dil bazlı SDK'lar sayesinde kolayca kurulabilir
+- MCP geliştirme ortamı, dil bazlı SDK'lar ile kurulumu kolaydır
 - MCP sunucuları, net şemalara sahip araçlar oluşturup kaydetmeyi içerir
 - Test ve hata ayıklama, güvenilir MCP uygulamaları için gereklidir
 
@@ -81,7 +81,7 @@ Seçtiğiniz bir araçla basit bir MCP sunucusu oluşturun:
 
 1. Aracı tercih ettiğiniz dilde (.NET, Java, Python veya JavaScript) uygulayın.
 2. Girdi parametrelerini ve dönüş değerlerini tanımlayın.
-3. Sunucunun doğru çalıştığını doğrulamak için inspector aracını çalıştırın.
+3. Sunucunun doğru çalıştığından emin olmak için inspector aracını çalıştırın.
 4. Farklı girdilerle uygulamayı test edin.
 
 ## Çözüm
@@ -99,4 +99,4 @@ Seçtiğiniz bir araçla basit bir MCP sunucusu oluşturun:
 Sonraki: [MCP İstemcileri ile Başlarken](../02-client/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

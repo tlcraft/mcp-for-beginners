@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:36:06+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:47:37+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "he"
 }
 -->
-### -2- יצירת פרויקט
+### -2- צור פרויקט
 
 עכשיו כשיש לך את ה-SDK מותקן, בוא ניצור פרויקט בשלב הבא:
 
-### -3- יצירת קבצי הפרויקט
+### -3- צור קבצי פרויקט
 
-### -4- יצירת קוד השרת
+### -4- צור את קוד השרת
 
 ### -5- הוספת כלי ומשאב
 
 הוסף כלי ומשאב על ידי הוספת הקוד הבא:
 
-### -6- הקוד הסופי
+### -6 קוד סופי
 
 בוא נוסיף את הקוד האחרון שאנחנו צריכים כדי שהשרת יוכל להתחיל לפעול:
 
-### -7- בדיקת השרת
+### -7- בדוק את השרת
 
 הפעל את השרת עם הפקודה הבאה:
 
@@ -31,21 +31,21 @@ CO_OP_TRANSLATOR_METADATA:
 
 ה-Inspector הוא כלי מצוין שיכול להפעיל את השרת שלך ומאפשר לך לתקשר איתו כדי לבדוק שהוא עובד. בוא נתחיל אותו:
 > [!NOTE]
-> זה עשוי להיראות שונה בשדה "command" מכיוון שהוא מכיל את הפקודה להרצת שרת עם סביבת הריצה הספציפית שלך/
+> זה עשוי להיראות שונה בשדה "command" כי הוא מכיל את הפקודה להרצת שרת עם סביבת הריצה הספציפית שלך/
 אתה אמור לראות את ממשק המשתמש הבא:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.he.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. התחבר לשרת על ידי בחירת כפתור Connect  
    ברגע שתתחבר לשרת, אמור להופיע הדבר הבא:
 
-   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.he.png)
+   ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. בחר ב-"Tools" ואז ב-"listTools", אמור להופיע "Add", בחר ב-"Add" ומלא את ערכי הפרמטרים.
 
    אמור להופיע התגובה הבאה, כלומר תוצאה מהכלי "add":
 
-   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.he.png)
+   ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 מזל טוב, הצלחת ליצור ולהפעיל את השרת הראשון שלך!
 
@@ -53,13 +53,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 MCP מספק SDKs רשמיים למספר שפות:
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - מתוחזק בשיתוף עם Microsoft  
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - מתוחזק בשיתוף עם מיקרוסופט  
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - מתוחזק בשיתוף עם Spring AI  
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - המימוש הרשמי ב-TypeScript  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - המימוש הרשמי ב-Python  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - המימוש הרשמי ב-Kotlin  
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - המימוש הרשמי של TypeScript  
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - המימוש הרשמי של Python  
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - המימוש הרשמי של Kotlin  
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - מתוחזק בשיתוף עם Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - המימוש הרשמי ב-Rust  
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - המימוש הרשמי של Rust  
 
 ## נקודות מפתח
 
@@ -69,11 +69,11 @@ MCP מספק SDKs רשמיים למספר שפות:
 
 ## דוגמאות
 
-- [מחשבון ב-Java](../samples/java/calculator/README.md)  
-- [מחשבון ב-.Net](../../../../03-GettingStarted/samples/csharp)  
-- [מחשבון ב-JavaScript](../samples/javascript/README.md)  
-- [מחשבון ב-TypeScript](../samples/typescript/README.md)  
-- [מחשבון ב-Python](../../../../03-GettingStarted/samples/python)  
+- [מחשבון Java](../samples/java/calculator/README.md)  
+- [מחשבון .Net](../../../../03-GettingStarted/samples/csharp)  
+- [מחשבון JavaScript](../samples/javascript/README.md)  
+- [מחשבון TypeScript](../samples/typescript/README.md)  
+- [מחשבון Python](../../../../03-GettingStarted/samples/python)  
 
 ## משימה
 
@@ -86,7 +86,7 @@ MCP מספק SDKs רשמיים למספר שפות:
 
 ## פתרון
 
-[פתרון](./solution/README.md)
+[Solution](./solution/README.md)
 
 ## משאבים נוספים
 

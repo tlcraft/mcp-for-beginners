@@ -165,7 +165,8 @@ To create a server, you need to follow these steps:
 
 This differs a little bit depending your chosen runtime, so choose one of the runtimes below:
 
-Generative AI can generate text, images, and even code.
+> [!NOTE]
+> For Python, we are going to first create the project structure and then install the dependencies.
 
 <details>
   <summary>TypeScript</summary>
@@ -181,8 +182,11 @@ Generative AI can generate text, images, and even code.
 <summary>Python</summary>
 
 ```sh
-# For server development
-pip install "mcp[cli]"
+# Create project dir
+mkdir calculator-server
+cd calculator-server
+# Open the folder in Visual Studio Code - Skip this if you are using a different IDE
+code .
 ```
 
 </details>
@@ -343,8 +347,10 @@ Now that you have your SDK installed, let's create a project next:
   <summary>Python</summary>
 
   ```sh
+  # Create a virtual env and install dependencies
   python -m venv venv
   venv\Scripts\activate
+  pip install "mcp[cli]"
   ```
 
 </details>
@@ -407,6 +413,9 @@ cd calculator-server
 <summary>Python</summary>
 
 Create a file *server.py*
+```sh
+touch server.py
+```
 </details>
 
 <details>
@@ -947,6 +956,10 @@ def add(a: int, b: int) -> int:
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
     return f"Hello, {name}!"
+
+# Main execution block - this is required to run the server
+if __name__ == "__main__":
+    mcp.run()
 ```
 
 </details>
@@ -1096,7 +1109,7 @@ However, it doesn't implement all the methods available on the tool so you're re
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
 ```
-
+Make sure you have `python` in the `Command` field and `server.py` as `Arguments`.
 </details>
 
 <details>

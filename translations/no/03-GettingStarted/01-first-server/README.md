@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:34:46+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:46:12+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "no"
 }
 -->
 ### -2- Opprett prosjekt
 
-Nå som du har installert SDK-en, la oss opprette et prosjekt neste steg:
+Nå som du har SDK-en installert, la oss opprette et prosjekt neste steg:
 
 ### -3- Opprett prosjektfiler
 
-### -4- Skriv serverkoden
+### -4- Lag serverkoden
 
 ### -5- Legg til et verktøy og en ressurs
 
@@ -34,18 +34,18 @@ Inspector er et flott verktøy som kan starte opp serveren din og lar deg samhan
 > det kan se annerledes ut i "command"-feltet siden det inneholder kommandoen for å kjøre en server med din spesifikke runtime/
 Du skal nå se følgende brukergrensesnitt:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.no.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Koble til serveren ved å velge Connect-knappen
   Når du har koblet til serveren, skal du nå se følgende:
 
-  ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.no.png)
+  ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. Velg "Tools" og "listTools", du skal se "Add" dukke opp, velg "Add" og fyll inn parameterverdiene.
 
   Du skal se følgende respons, altså et resultat fra "add"-verktøyet:
 
-  ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.no.png)
+  ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Gratulerer, du har klart å opprette og kjøre din første server!
 
@@ -77,7 +77,7 @@ MCP tilbyr offisielle SDK-er for flere språk:
 
 ## Oppgave
 
-Lag en enkel MCP-server med et verktøy etter eget valg:
+Lag en enkel MCP-server med et verktøy du velger:
 
 1. Implementer verktøyet i ditt foretrukne språk (.NET, Java, Python eller JavaScript).
 2. Definer inndata-parametere og returverdier.

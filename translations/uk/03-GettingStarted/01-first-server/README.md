@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:43:04+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:54:37+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "uk"
 }
 -->
 ### -2- Створення проекту
 
-Тепер, коли у вас встановлений SDK, давайте створимо проект:
+Тепер, коли у вас встановлено SDK, давайте створимо проект:
 
 ### -3- Створення файлів проекту
 
@@ -34,18 +34,18 @@ CO_OP_TRANSLATOR_METADATA:
 > у полі "command" це може виглядати інакше, оскільки там міститься команда для запуску сервера з вашим конкретним середовищем виконання/
 Ви повинні побачити наступний інтерфейс користувача:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.uk.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Підключіться до сервера, натиснувши кнопку Connect  
-  Після підключення до сервера ви побачите наступне:
+   Після підключення до сервера ви побачите наступне:
 
-  ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.uk.png)
+   ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
-1. Виберіть "Tools" та "listTools", ви побачите, що з’явиться "Add", виберіть "Add" і заповніть значення параметрів.
+1. Виберіть "Tools" та "listTools", ви побачите, що з’явилася опція "Add", виберіть "Add" і заповніть значення параметрів.
 
-  Ви побачите наступну відповідь, тобто результат роботи інструменту "add":
+   Ви побачите наступну відповідь, тобто результат роботи інструменту "add":
 
-  ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.uk.png)
+   ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Вітаємо, ви успішно створили і запустили свій перший сервер!
 
@@ -53,36 +53,36 @@ CO_OP_TRANSLATOR_METADATA:
 
 MCP надає офіційні SDK для кількох мов програмування:
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) – підтримується у співпраці з Microsoft  
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) – підтримується у співпраці з Spring AI  
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) – офіційна реалізація на TypeScript  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) – офіційна реалізація на Python  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) – офіційна реалізація на Kotlin  
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) – підтримується у співпраці з Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) – офіційна реалізація на Rust  
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Підтримується у співпраці з Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Підтримується у співпраці з Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Офіційна реалізація на TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Офіційна реалізація на Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Офіційна реалізація на Kotlin
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Підтримується у співпраці з Loopwork AI
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Офіційна реалізація на Rust
 
 ## Основні висновки
 
-- Налаштування середовища розробки MCP є простим завдяки SDK для конкретних мов  
-- Створення MCP серверів включає створення та реєстрацію інструментів із чіткими схемами  
-- Тестування та налагодження є необхідними для надійної реалізації MCP  
+- Налаштування середовища розробки MCP є простим завдяки SDK для конкретних мов
+- Створення MCP серверів включає створення та реєстрацію інструментів з чіткими схемами
+- Тестування та налагодження є необхідними для надійної реалізації MCP
 
 ## Приклади
 
-- [Java Calculator](../samples/java/calculator/README.md)  
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
-- [JavaScript Calculator](../samples/javascript/README.md)  
-- [TypeScript Calculator](../samples/typescript/README.md)  
-- [Python Calculator](../../../../03-GettingStarted/samples/python)  
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Завдання
 
 Створіть простий MCP сервер з інструментом на ваш вибір:
 
-1. Реалізуйте інструмент на обраній мові (.NET, Java, Python або JavaScript).  
-2. Визначте вхідні параметри та значення, що повертаються.  
-3. Запустіть інструмент інспектора, щоб переконатися, що сервер працює як слід.  
-4. Протестуйте реалізацію з різними вхідними даними.  
+1. Реалізуйте інструмент на обраній мові (.NET, Java, Python або JavaScript).
+2. Визначте вхідні параметри та значення, що повертаються.
+3. Запустіть інструмент інспектора, щоб переконатися, що сервер працює як слід.
+4. Протестуйте реалізацію з різними вхідними даними.
 
 ## Розв’язок
 
@@ -90,9 +90,9 @@ MCP надає офіційні SDK для кількох мов програм�
 
 ## Додаткові ресурси
 
-- [Створення агентів за допомогою Model Context Protocol на Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [Віддалений MCP з Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
+- [Створення агентів за допомогою Model Context Protocol на Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Віддалений MCP з Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Що далі
 
