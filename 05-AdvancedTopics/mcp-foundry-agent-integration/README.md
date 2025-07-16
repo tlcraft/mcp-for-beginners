@@ -51,6 +51,8 @@ Choose your preferred development environment:
 
 ## Python Implementation
 
+***Note*** You can run this [notebook](./mcp_support_python.ipynb)
+
 ### 1. Install Required Packages
 
 ```bash
@@ -177,6 +179,8 @@ with project_client:
 ---
 
 ## .NET Implementation
+
+***Note*** You can run this [notebook](./mcp_support_dotnet.ipynb)
 
 ### 1. Install Required Packages
 
