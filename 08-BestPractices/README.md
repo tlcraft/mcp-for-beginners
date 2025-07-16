@@ -593,13 +593,10 @@ public class CachedWeatherTool : ITool
         };
     }
 }
-```
 
 ## What's next
 
 Next: [Case Studies](../09-CaseStudy/README.md)
-```
-
 #### 2. Dependency Injection and Testability
 
 Design tools to receive their dependencies through constructor injection, making them testable and configurable:
