@@ -37,8 +37,10 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 ## 🔗 Official MCP Resources
 
 - 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Detailed tutorials and user guides  
-- 📜 [MCP Specification](https://spec.modelcontextprotocol.io/) – Protocol architecture and technical references  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
+- 📜 [MCP Specification](https://modelcontextprotocol.io/docs/) – Protocol architecture and technical references  
+- 📜 [Original MCP Specification](https://spec.modelcontextprotocol.io/) – Legacy technical references (may contain additional details)  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples
+- 🌐 [MCP Community](https://github.com/orgs/modelcontextprotocol/discussions) – Join discussions and contribute to the community
 
 ## Join us for MCP Dev Days 29-30th July 2025 
 
@@ -76,111 +78,88 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 
 ## 🧭 MCP Curriculum Overview
 
-### Model Context Protocol Fundamentals 
-<details>
-  <summary><strong> Lesson 1-3: Model Context Protocol Fundamentals</strong></summary>
+### 📚 Complete Curriculum Structure
 
-- **00. Introduction to MCP**  
-  Overview of the Model Context Protocol and its significance in AI pipelines. [Read more](./00-Introduction/README.md)
-- **01. Core Concepts Explained**  
-  In-depth exploration of core MCP concepts. [Read more](./01-CoreConcepts/README.md)
-- **02. Security in MCP**  
-  Security threats and best practices. [Read more](./02-Security/README.md)
-- **03. Getting Started with MCP**  
-  Environment setup, basic servers/clients, integration. [Read more](./03-GettingStarted/README.md)
-</details>
+| Module | Topic | Description | Link |
+|--------|-------|-------------|------|
+| **Module 1-3: Fundamentals** | | | |
+| 00 | Introduction to MCP | Overview of the Model Context Protocol and its significance in AI pipelines | [Read more](./00-Introduction/README.md) |
+| 01 | Core Concepts Explained | In-depth exploration of core MCP concepts | [Read more](./01-CoreConcepts/README.md) |
+| 02 | Security in MCP | Security threats and best practices | [Read more](./02-Security/README.md) |
+| 03 | Getting Started with MCP | Environment setup, basic servers/clients, integration | [Read more](./03-GettingStarted/README.md) |
+| **Module 3: Building Your First Server & Client** | | | |
+| 3.1 | First Server | Create your first MCP server | [Guide](./03-GettingStarted/01-first-server/README.md) |
+| 3.2 | First Client | Develop a basic MCP client | [Guide](./03-GettingStarted/02-client/README.md) |
+| 3.3 | Client with LLM | Integrate large language models | [Guide](./03-GettingStarted/03-llm-client/README.md) |
+| 3.4 | VS Code Integration | Consume MCP servers in VS Code | [Guide](./03-GettingStarted/04-vscode/README.md) |
+| 3.5 | SSE Server | Create servers using Server-Sent Events | [Guide](./03-GettingStarted/05-sse-server/README.md) |
+| 3.6 | HTTP Streaming | Implement HTTP streaming in MCP | [Guide](./03-GettingStarted/06-http-streaming/README.md) |
+| 3.7 | AI Toolkit | Use AI Toolkit with MCP | [Guide](./03-GettingStarted/07-aitk/README.md) |
+| 3.8 | Testing | Test your MCP server implementation | [Guide](./03-GettingStarted/08-testing/README.md) |
+| 3.9 | Deployment | Deploy MCP servers to production | [Guide](./03-GettingStarted/09-deployment/README.md) |
+| **Module 4-5: Practical & Advanced** | | | |
+| 04 | Practical Implementation | SDKs, debugging, testing, reusable prompt templates | [Read more](./04-PracticalImplementation/README.md) |
+| 05 | Advanced Topics in MCP | Multi-modal AI, scaling, enterprise use | [Read more](./05-AdvancedTopics/README.md) |
+| 5.1 | Azure Integration | MCP Integration with Azure | [Guide](./05-AdvancedTopics/mcp-integration/README.md) |
+| 5.2 | Multi-modality | Working with multiple modalities | [Guide](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.3 | OAuth2 Demo | Implement OAuth2 authentication | [Guide](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+| 5.4 | Root Contexts | Understand and implement root contexts | [Guide](./05-AdvancedTopics/mcp-root-contexts/README.md) |
+| 5.5 | Routing | MCP routing strategies | [Guide](./05-AdvancedTopics/mcp-routing/README.md) |
+| 5.6 | Sampling | Sampling techniques in MCP | [Guide](./05-AdvancedTopics/mcp-sampling/README.md) |
+| 5.7 | Scaling | Scale MCP implementations | [Guide](./05-AdvancedTopics/mcp-scaling/README.md) |
+| 5.8 | Security | Advanced security considerations | [Guide](./05-AdvancedTopics/mcp-security/README.md) |
+| 5.9 | Web Search | Implement web search capabilities | [Guide](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 5.10 | Realtime Streaming | Build realtime streaming functionality | [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
+| 5.11 | Realtime Search | Implement realtime search | [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
+| 5.12 | Entra ID Auth | Authentication with Microsoft Entra ID | [Guide](./05-AdvancedTopics/mcp-security-entra/README.md) |
+| 5.13 | Foundry Integration | Integrate with Azure AI Foundry | [Guide](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
+| 5.14 | Context Engineering | Techniques for effective context engineering | [Guide](./05-AdvancedTopics/mcp-contextengineering/README.md) |
+| **Module 6-10: Community & Best Practices** | | | |
+| 06 | Community Contributions | How to contribute to the MCP ecosystem | [Guide](./06-CommunityContributions/README.md) |
+| 07 | Insights from Early Adoption | Real-world implementation stories | [Guide](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | Best Practices for MCP | Performance, fault-tolerance, resilience | [Guide](./08-BestPractices/README.md) |
+| 09 | MCP Case Studies | Practical implementation examples | [Guide](./09-CaseStudy/README.md) |
+| 10 | Hands-on Workshop | Building an MCP Server with AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
-### Building and deploying your first MCP server and Client and Hands on Labs and Scenarios.
-<details>
-  <summary><strong> Lesson 3: Building and deploying your first MCP server and client</strong></summary>
+### 💻 Sample Code Projects
 
-- **3.1. First server** – [Guide](./03-GettingStarted/01-first-server/README.md)
-- **3.2. First client** – [Guide](./03-GettingStarted/02-client/README.md)
-- **3.3. Client with LLM** – [Guide](./03-GettingStarted/03-llm-client/README.md)
-- **3.4. Consuming a server with Visual Studio Code** – [Guide](./03-GettingStarted/04-vscode/README.md)
-- **3.5. Creating a server using SSE** – [Guide](./03-GettingStarted/05-sse-server/README.md)
-- **3.6. HTTP Streaming** – [Guide](./03-GettingStarted/06-http-streaming/README.md)
-- **3.7. Use AI Toolkit** – [Guide](./03-GettingStarted/07-aitk/README.md)
-- **3.8. Testing your server** – [Guide](./03-GettingStarted/08-testing/README.md)
-- **3.9. Deploy your server** – [Guide](./03-GettingStarted/09-deployment/README.md)
-</details>
+#### Basic MCP Calculator Samples
 
-### Model Context Protocol Practical Implementations and Advanced Content
-<details>
-  <summary><strong> Lessons 4-5: Practical & Advanced</strong></summary>
+| Language | Description | Link |
+|----------|-------------|------|
+| C# | MCP Server Example | [View Code](./03-GettingStarted/samples/csharp/README.md) |
+| Java | MCP Calculator | [View Code](./03-GettingStarted/samples/java/calculator/README.md) |
+| JavaScript | MCP Demo | [View Code](./03-GettingStarted/samples/javascript/README.md) |
+| Python | MCP Server | [View Code](./03-GettingStarted/samples/python/mcp_calculator_server.py) |
+| TypeScript | MCP Example | [View Code](./03-GettingStarted/samples/typescript/README.md) |
 
-- **04. Practical Implementation**  
-  SDKs, debugging, testing, reusable prompt templates. [Read more](./04-PracticalImplementation/README.md)
-- **05. Advanced Topics in MCP**  
-  Multi-modal AI, scaling, enterprise use. [Read more](./05-AdvancedTopics/README.md)
-- **5.1. MCP Integration with Azure** – [Guide](./05-AdvancedTopics/mcp-integration/README.md)
-- **5.2. Multi modality** – [Guide](./05-AdvancedTopics/mcp-multi-modality/README.md)
-- **5.3. MCP OAuth2 Demo** – [Guide](./05-AdvancedTopics/mcp-oauth2-demo/README.md)
-- **5.4. Root Contexts** – [Guide](./05-AdvancedTopics/mcp-root-contexts/README.md)
-- **5.5. Routing** – [Guide](./05-AdvancedTopics/mcp-routing/README.md)
-- **5.6. Sampling** – [Guide](./05-AdvancedTopics/mcp-sampling/README.md)
-- **5.7. Scaling** – [Guide](./05-AdvancedTopics/mcp-scaling/README.md)
-- **5.8. Security** – [Guide](./05-AdvancedTopics/mcp-security/README.md)
-- **5.9. Web Search MCP** – [Guide](./05-AdvancedTopics/web-search-mcp/README.md)
-- **5.10. Realtime Streaming** – [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md)
-- **5.11. Realtime Web Search** – [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md)
-- **5.12. Entra ID Authentication for Model Context Protocol Servers** – [Guide](./05-AdvancedTopics/mcp-security-entra/README.md)
-- **5.13. Model Context Protocol (MCP) Integration with Azure AI Foundry** – [Guide](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md)
-</details>
+#### Advanced MCP Implementations
 
-### Model Context Protocol Best Practices 
-<details>
-  <summary><strong> Lessons 6-9: Community, Best Practices & Labs</strong></summary>
-
-- **06. Community Contributions** – [Guide](./06-CommunityContributions/README.md)
-- **07. Insights from Early Adoption** – [Guide](./07-LessonsFromEarlyAdoption/README.md)
-- **08. Best Practices for MCP** – [Guide](./08-BestPractices/README.md)
-- **09. MCP Case Studies** – [Guide](./09-CaseStudy/README.md)
-</details>
-
-### Model Context Protocol Hands on Lab with AI Toolkit for VScode
-<details>
-  <summary><strong>Lesson 10: Hands on Lab Building an MCP Server with AI Toolkit for VScode </summary>
-    
-- **10. Streamlining AI Workflows: Building an MCP Server with AI Toolkit** – [Hands On Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
-</details>
-
-## Model Context Protocol Sample Projects Building a MCP Calculator Project in Java, C#, JavaScript, TypeScript and Python
-
-### 🧮 MCP Calculator Sample Projects in Java, C#, JavaScript, TypeScript and Python
-<details>
-  <summary><strong>Explore Code Implementations by Language</strong></summary>
-
-  - [C# MCP Server Example](./03-GettingStarted/samples/csharp/README.md)
-  - [Java MCP Calculator](./03-GettingStarted/samples/java/calculator/README.md)
-  - [JavaScript MCP Demo](./03-GettingStarted/samples/javascript/README.md)
-  - [Python MCP Server](./03-GettingStarted/samples/python/mcp_calculator_server.py)
-  - [TypeScript MCP Example](./03-GettingStarted/samples/typescript/README.md)
-
-</details>
-
-### 💡 MCP Advanced Example Solution: Calculator Projects in C#, Java, JavaScript,TypeScript and Python
-<details>
-  <summary><strong>Explore Advanced Samples</strong></summary>
-
-  - [Advanced C# Sample](./04-PracticalImplementation/samples/csharp/README.md)
-  - [Java Container App Example](./04-PracticalImplementation/samples/java/containerapp/README.md)
-  - [JavaScript Advanced Sample](./04-PracticalImplementation/samples/javascript/README.md)
-  - [Python Complex Implementation](./04-PracticalImplementation/samples/python/mcp_sample.py)
-  - [TypeScript Container Sample](./04-PracticalImplementation/samples/typescript/README.md)
-
-</details>
+| Language | Description | Link |
+|----------|-------------|------|
+| C# | Advanced Sample | [View Code](./04-PracticalImplementation/samples/csharp/README.md) |
+| Java | Container App Example | [View Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
+| JavaScript | Advanced Sample | [View Code](./04-PracticalImplementation/samples/javascript/README.md) |
+| Python | Complex Implementation | [View Code](./04-PracticalImplementation/samples/python/mcp_sample.py) |
+| TypeScript | Container Sample | [View Code](./04-PracticalImplementation/samples/typescript/README.md) |
 
 
 ## 🎯 Prerequisites for Learning MCP
 
 To get the most out of this curriculum, you should have:
 
-- Basic knowledge of C#, Java, or Python
+- Basic knowledge of programming in at least one of the following languages: C#, Java, JavaScript, Python, or TypeScript
 - Understanding of client-server model and APIs
-- (Optional) Familiarity with machine learning concepts
+- Familiarity with REST and HTTP concepts
+- (Optional) Background in AI/ML concepts
 
-## 📚 Study Guide
+- Joining our community discussions for support
+
+## 📚 Study Guide & Resources
+
+This repository includes several resources to help you navigate and learn effectively:
+
+### Study Guide
 
 A comprehensive [Study Guide](./study_guide.md) is available to help you navigate this repository effectively. The guide includes:
 
@@ -189,6 +168,23 @@ A comprehensive [Study Guide](./study_guide.md) is available to help you navigat
 - Guidance on how to use sample projects
 - Recommended learning paths for different skill levels
 - Additional resources to complement your learning journey
+
+### Changelog
+
+We maintain a detailed [Changelog](./changelog.md) that tracks all significant updates to the curriculum materials, including:
+
+- New content additions
+- Structural changes
+- Feature improvements
+- Documentation updates
+
+### Alternative Layouts
+
+For different ways to navigate the curriculum content, we've provided [alternative layout options](./alternative_layouts/) including:
+
+- Card-based visual layout
+- Tabbed-style navigation
+- Accordion-style with emojis
 
 ## 🛠️ How to Use This Curriculum Effectively
 
@@ -221,6 +217,20 @@ provided by the bot. You will only need to do this once across all repos using o
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+## 📂 Repository Structure
+
+The repository is organized as follows:
+
+- **Core Curriculum (00-10)**: The main content organized in ten sequential modules
+- **images/**: Diagrams and illustrations used throughout the curriculum
+- **translations/**: Multi-language support with automated translations
+- **translated_images/**: Localized versions of diagrams and illustrations
+- **alternative_layouts/**: Different presentation formats for the curriculum content
+- **study_guide.md**: Comprehensive guide to navigating the repository
+- **changelog.md**: Record of all significant changes to the curriculum materials
+- **mcp.json**: Configuration file for MCP specification
+- **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Project governance documents
 
 ## 🎒 Other Courses
 Our team produces other courses! Check out:

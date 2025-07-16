@@ -13,22 +13,70 @@ By the end of this lesson, you will be able to:
 - Implement proper error handling, logging, and observability in MCP servers
 - Optimize MCP implementations for performance, security, and maintainability
 
+## MCP Core Principles
+
+Before diving into specific implementation practices, it's important to understand the core principles that guide effective MCP development:
+
+1. **Standardized Communication**: MCP uses JSON-RPC 2.0 as its foundation, providing a consistent format for requests, responses, and error handling across all implementations.
+
+2. **User-Centric Design**: Always prioritize user consent, control, and transparency in your MCP implementations.
+
+3. **Security First**: Implement robust security measures including authentication, authorization, validation, and rate limiting.
+
+4. **Modular Architecture**: Design your MCP servers with a modular approach, where each tool and resource has a clear, focused purpose.
+
+5. **Stateful Connections**: Leverage MCP's ability to maintain state across multiple requests for more coherent and context-aware interactions.
+
+## Official MCP Best Practices
+
+The following best practices are derived from the official Model Context Protocol documentation:
+
+### Security Best Practices
+
+1. **User Consent and Control**: Always require explicit user consent before accessing data or performing operations. Provide clear control over what data is shared and which actions are authorized.
+
+2. **Data Privacy**: Only expose user data with explicit consent and protect it with appropriate access controls. Safeguard against unauthorized data transmission.
+
+3. **Tool Safety**: Require explicit user consent before invoking any tool. Ensure users understand each tool's functionality and enforce robust security boundaries.
+
+4. **Tool Permission Control**: Configure which tools a model is allowed to use during a session, ensuring only explicitly authorized tools are accessible.
+
+5. **Authentication**: Require proper authentication before granting access to tools, resources, or sensitive operations using API keys, OAuth tokens, or other secure authentication methods.
+
+6. **Parameter Validation**: Enforce validation for all tool invocations to prevent malformed or malicious input from reaching tool implementations.
+
+7. **Rate Limiting**: Implement rate limiting to prevent abuse and ensure fair usage of server resources.
+
+### Implementation Best Practices
+
+1. **Capability Negotiation**: During connection setup, exchange information about supported features, protocol versions, available tools, and resources.
+
+2. **Tool Design**: Create focused tools that do one thing well, rather than monolithic tools that handle multiple concerns.
+
+3. **Error Handling**: Implement standardized error messages and codes to help diagnose issues, handle failures gracefully, and provide actionable feedback.
+
+4. **Logging**: Configure structured logs for auditing, debugging, and monitoring protocol interactions.
+
+5. **Progress Tracking**: For long-running operations, report progress updates to enable responsive user interfaces.
+
+6. **Request Cancellation**: Allow clients to cancel in-flight requests that are no longer needed or taking too long.
+
 ## Additional References
 
 For the most up-to-date information on MCP best practices, refer to:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
+- [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
-## MCP Tool Development Best Practices
+## Practical Implementation Examples
 
-### Architectural Principles
+### Tool Design Best Practices
 
 #### 1. Single Responsibility Principle
 
-Each MCP feature should have a clear, focused purpose. Rather than creating monolithic tools that attempt to handle multiple concerns, develop specialized tools that excel at specific tasks.
+Each MCP tool should have a clear, focused purpose. Rather than creating monolithic tools that attempt to handle multiple concerns, develop specialized tools that excel at specific tasks.
 
-**Good Example:**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -66,7 +114,8 @@ public class WeatherForecastTool : ITool
             Required = new[] { "location" }
         };
     }
-      public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
     {
         var location = parameters["location"].ToString();
         var days = parameters.ContainsKey("days") 
@@ -86,63 +135,464 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**Poor Example:**
-```csharp
-// A tool trying to do too many things
-public class WeatherToolSuite : ITool
-{
-    public string Name => "weather";
-    public string Description => "Weather-related functionality";
+#### 2. Consistent Error Handling
+
+Implement robust error handling with informative error messages and appropriate recovery mechanisms.
+
+```python
+# Python example with comprehensive error handling
+class DataQueryTool:
+    def get_name(self):
+        return "dataQuery"
+        
+    def get_description(self):
+        return "Queries data from specified database tables"
     
-    public ToolDefinition GetDefinition()
-    {
-        return new ToolDefinition
-        {
-            Name = Name,
-            Description = Description,
-            Parameters = new Dictionary<string, ParameterDefinition>
-            {
-                ["action"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "Weather action to perform",
-                    Enum = new[] { "forecast", "history", "alerts", "radar" }
-                },
-                ["location"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "City or location name"
-                },
-                // Many more properties for different actions...
-            },
-            required = new[] { "action", "location" }
-        };
+    async def execute(self, parameters):
+        try:
+            # Parameter validation
+            if "query" not in parameters:
+                raise ToolParameterError("Missing required parameter: query")
+                
+            query = parameters["query"]
+            
+            # Security validation
+            if self._contains_unsafe_sql(query):
+                raise ToolSecurityError("Query contains potentially unsafe SQL")
+            
+            try:
+                # Database operation with timeout
+                async with timeout(10):  # 10 second timeout
+                    result = await self._database.execute_query(query)
+                    
+                return ToolResponse(
+                    content=[TextContent(json.dumps(result))]
+                )
+            except asyncio.TimeoutError:
+                raise ToolExecutionError("Database query timed out after 10 seconds")
+            except DatabaseConnectionError as e:
+                # Connection errors might be transient
+                self._log_error("Database connection error", e)
+                raise ToolExecutionError(f"Database connection error: {str(e)}")
+            except DatabaseQueryError as e:
+                # Query errors are likely client errors
+                self._log_error("Database query error", e)
+                raise ToolExecutionError(f"Invalid query: {str(e)}")
+                
+        except ToolError:
+            # Let tool-specific errors pass through
+            raise
+        except Exception as e:
+            # Catch-all for unexpected errors
+            self._log_error("Unexpected error in DataQueryTool", e)
+            raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
+    
+    def _contains_unsafe_sql(self, query):
+        # Implementation of SQL injection detection
+        pass
+        
+    def _log_error(self, message, error):
+        # Implementation of error logging
+        pass
+```
+
+#### 3. Parameter Validation
+
+Always validate parameters thoroughly to prevent malformed or malicious input.
+
+```javascript
+// JavaScript/TypeScript example with detailed parameter validation
+class FileOperationTool {
+  getName() {
+    return "fileOperation";
+  }
+  
+  getDescription() {
+    return "Performs file operations like read, write, and delete";
+  }
+  
+  getDefinition() {
+    return {
+      name: this.getName(),
+      description: this.getDescription(),
+      parameters: {
+        operation: {
+          type: "string",
+          description: "Operation to perform",
+          enum: ["read", "write", "delete"]
+        },
+        path: {
+          type: "string",
+          description: "File path (must be within allowed directories)"
+        },
+        content: {
+          type: "string",
+          description: "Content to write (only for write operation)",
+          optional: true
+        }
+      },
+      required: ["operation", "path"]
+    };
+  }
+  
+  async execute(parameters) {
+    // 1. Validate parameter presence
+    if (!parameters.operation) {
+      throw new ToolError("Missing required parameter: operation");
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
-    {
-        // Complex conditional logic to handle different actions
-        var action = request.Parameters.GetProperty("action").GetString();
-        var location = request.Parameters.GetProperty("location").GetString();
+    if (!parameters.path) {
+      throw new ToolError("Missing required parameter: path");
+    }
+    
+    // 2. Validate parameter types
+    if (typeof parameters.operation !== "string") {
+      throw new ToolError("Parameter 'operation' must be a string");
+    }
+    
+    if (typeof parameters.path !== "string") {
+      throw new ToolError("Parameter 'path' must be a string");
+    }
+    
+    // 3. Validate parameter values
+    const validOperations = ["read", "write", "delete"];
+    if (!validOperations.includes(parameters.operation)) {
+      throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
+    }
+    
+    // 4. Validate content presence for write operation
+    if (parameters.operation === "write" && !parameters.content) {
+      throw new ToolError("Content parameter is required for write operation");
+    }
+    
+    // 5. Path safety validation
+    if (!this.isPathWithinAllowedDirectories(parameters.path)) {
+      throw new ToolError("Access denied: path is outside of allowed directories");
+    }
+    
+    // Implementation based on validated parameters
+    // ...
+  }
+  
+  isPathWithinAllowedDirectories(path) {
+    // Implementation of path safety check
+    // ...
+  }
+}
+```
+
+### Security Implementation Examples
+
+#### 1. Authentication and Authorization
+
+```java
+// Java example with authentication and authorization
+public class SecureDataAccessTool implements Tool {
+    private final AuthenticationService authService;
+    private final AuthorizationService authzService;
+    private final DataService dataService;
+    
+    // Dependency injection
+    public SecureDataAccessTool(
+            AuthenticationService authService,
+            AuthorizationService authzService,
+            DataService dataService) {
+        this.authService = authService;
+        this.authzService = authzService;
+        this.dataService = dataService;
+    }
+    
+    @Override
+    public String getName() {
+        return "secureDataAccess";
+    }
+    
+    @Override
+    public ToolResponse execute(ToolRequest request) {
+        // 1. Extract authentication context
+        String authToken = request.getContext().getAuthToken();
         
-        switch (action)
-        {
-            case "forecast":
-                // Forecast logic
-                break;
-            case "history":
-                // Historical data logic
-                break;
-            // More cases...
-            default:
-                throw new ToolExecutionException($"Unknown action: {action}");
+        // 2. Authenticate user
+        UserIdentity user;
+        try {
+            user = authService.validateToken(authToken);
+        } catch (AuthenticationException e) {
+            return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // Result processing
+        // 3. Check authorization for the specific operation
+        String dataId = request.getParameters().get("dataId").getAsString();
+        String operation = request.getParameters().get("operation").getAsString();
+        
+        boolean isAuthorized = authzService.isAuthorized(user, "data:" + dataId, operation);
+        if (!isAuthorized) {
+            return ToolResponse.error("Access denied: Insufficient permissions for this operation");
+        }
+        
+        // 4. Proceed with authorized operation
+        try {
+            switch (operation) {
+                case "read":
+                    Object data = dataService.getData(dataId, user.getId());
+                    return ToolResponse.success(data);
+                case "update":
+                    JsonNode newData = request.getParameters().get("newData");
+                    dataService.updateData(dataId, newData, user.getId());
+                    return ToolResponse.success("Data updated successfully");
+                default:
+                    return ToolResponse.error("Unsupported operation: " + operation);
+            }
+        } catch (Exception e) {
+            return ToolResponse.error("Operation failed: " + e.getMessage());
+        }
+    }
+}
+```
+
+#### 2. Rate Limiting
+
+```csharp
+// C# rate limiting implementation
+public class RateLimitingMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly IMemoryCache _cache;
+    private readonly ILogger<RateLimitingMiddleware> _logger;
+    
+    // Configuration options
+    private readonly int _maxRequestsPerMinute;
+    
+    public RateLimitingMiddleware(
+        RequestDelegate next,
+        IMemoryCache cache,
+        ILogger<RateLimitingMiddleware> logger,
+        IConfiguration config)
+    {
+        _next = next;
+        _cache = cache;
+        _logger = logger;
+        _maxRequestsPerMinute = config.GetValue<int>("RateLimit:MaxRequestsPerMinute", 60);
+    }
+    
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // 1. Get client identifier (API key or user ID)
+        string clientId = GetClientIdentifier(context);
+        
+        // 2. Get rate limiting key for this minute
+        string cacheKey = $"rate_limit:{clientId}:{DateTime.UtcNow:yyyyMMddHHmm}";
+        
+        // 3. Check current request count
+        if (!_cache.TryGetValue(cacheKey, out int requestCount))
+        {
+            requestCount = 0;
+        }
+        
+        // 4. Enforce rate limit
+        if (requestCount >= _maxRequestsPerMinute)
+        {
+            _logger.LogWarning("Rate limit exceeded for client {ClientId}", clientId);
+            
+            context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+            context.Response.Headers.Add("Retry-After", "60");
+            
+            await context.Response.WriteAsJsonAsync(new
+            {
+                error = "Rate limit exceeded",
+                message = "Too many requests. Please try again later.",
+                retryAfterSeconds = 60
+            });
+            
+            return;
+        }
+        
+        // 5. Increment request count
+        _cache.Set(cacheKey, requestCount + 1, TimeSpan.FromMinutes(2));
+        
+        // 6. Add rate limit headers
+        context.Response.Headers.Add("X-RateLimit-Limit", _maxRequestsPerMinute.ToString());
+        context.Response.Headers.Add("X-RateLimit-Remaining", (_maxRequestsPerMinute - requestCount - 1).ToString());
+        
+        // 7. Continue with the request
+        await _next(context);
+    }
+    
+    private string GetClientIdentifier(HttpContext context)
+    {
+        // Implementation to extract API key or user ID
         // ...
     }
 }
 ```
+
+## Testing Best Practices
+
+### 1. Unit Testing MCP Tools
+
+Always test your tools in isolation, mocking external dependencies:
+
+```typescript
+// TypeScript example of a tool unit test
+describe('WeatherForecastTool', () => {
+  let tool: WeatherForecastTool;
+  let mockWeatherService: jest.Mocked<IWeatherService>;
+  
+  beforeEach(() => {
+    // Create a mock weather service
+    mockWeatherService = {
+      getForecasts: jest.fn()
+    } as any;
+    
+    // Create the tool with the mock dependency
+    tool = new WeatherForecastTool(mockWeatherService);
+  });
+  
+  it('should return weather forecast for a location', async () => {
+    // Arrange
+    const mockForecast = {
+      location: 'Seattle',
+      forecasts: [
+        { date: '2025-07-16', temperature: 72, conditions: 'Sunny' },
+        { date: '2025-07-17', temperature: 68, conditions: 'Partly Cloudy' },
+        { date: '2025-07-18', temperature: 65, conditions: 'Rain' }
+      ]
+    };
+    
+    mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
+    
+    // Act
+    const response = await tool.execute({
+      location: 'Seattle',
+      days: 3
+    });
+    
+    // Assert
+    expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
+    expect(response.content[0].text).toContain('Seattle');
+    expect(response.content[0].text).toContain('Sunny');
+  });
+  
+  it('should handle errors from the weather service', async () => {
+    // Arrange
+    mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
+    
+    // Act & Assert
+    await expect(tool.execute({
+      location: 'Seattle',
+      days: 3
+    })).rejects.toThrow('Weather service error: Service unavailable');
+  });
+});
+```
+
+### 2. Integration Testing
+
+Test the complete flow from client requests to server responses:
+
+```python
+# Python integration test example
+@pytest.mark.asyncio
+async def test_mcp_server_integration():
+    # Start a test server
+    server = McpServer()
+    server.register_tool(WeatherForecastTool(MockWeatherService()))
+    await server.start(port=5000)
+    
+    try:
+        # Create a client
+        client = McpClient("http://localhost:5000")
+        
+        # Test tool discovery
+        tools = await client.discover_tools()
+        assert "weatherForecast" in [t.name for t in tools]
+        
+        # Test tool execution
+        response = await client.execute_tool("weatherForecast", {
+            "location": "Seattle",
+            "days": 3
+        })
+        
+        # Verify response
+        assert response.status_code == 200
+        assert "Seattle" in response.content[0].text
+        assert len(json.loads(response.content[0].text)["forecasts"]) == 3
+        
+    finally:
+        # Clean up
+        await server.stop()
+```
+
+## Performance Optimization
+
+### 1. Caching Strategies
+
+Implement appropriate caching to reduce latency and resource usage:
+
+```csharp
+// C# example with caching
+public class CachedWeatherTool : ITool
+{
+    private readonly IWeatherService _weatherService;
+    private readonly IDistributedCache _cache;
+    private readonly ILogger<CachedWeatherTool> _logger;
+    
+    public CachedWeatherTool(
+        IWeatherService weatherService,
+        IDistributedCache cache,
+        ILogger<CachedWeatherTool> logger)
+    {
+        _weatherService = weatherService;
+        _cache = cache;
+        _logger = logger;
+    }
+    
+    public string Name => "weatherForecast";
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    {
+        var location = parameters["location"].ToString();
+        var days = Convert.ToInt32(parameters.GetValueOrDefault("days", 3));
+        
+        // Create cache key
+        string cacheKey = $"weather:{location}:{days}";
+        
+        // Try to get from cache
+        string cachedForecast = await _cache.GetStringAsync(cacheKey);
+        if (!string.IsNullOrEmpty(cachedForecast))
+        {
+            _logger.LogInformation("Cache hit for weather forecast: {Location}", location);
+            return new ToolResponse
+            {
+                Content = new List<ContentItem>
+                {
+                    new TextContent(cachedForecast)
+                }
+            };
+        }
+        
+        // Cache miss - get from service
+        _logger.LogInformation("Cache miss for weather forecast: {Location}", location);
+        var forecast = await _weatherService.GetForecastAsync(location, days);
+        string forecastJson = JsonSerializer.Serialize(forecast);
+        
+        // Store in cache (weather forecasts valid for 1 hour)
+        await _cache.SetStringAsync(
+            cacheKey,
+            forecastJson,
+            new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1)
+            });
+        
+        return new ToolResponse
+        {
+            Content = new List<ContentItem>
+            {
+                new TextContent(forecastJson)
+            }
+        };
+    }
+}
 
 #### 2. Dependency Injection and Testability
 

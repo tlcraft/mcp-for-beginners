@@ -19,8 +19,7 @@ By the end of this lesson, you will be able to:
 
 Azure OpenAI provides access to powerful AI models like GPT-4 and others. Integrating MCP with Azure OpenAI allows you to utilize these models while maintaining the flexibility of MCP's tool orchestration.
 
-<details>
-<summary>csharp</summary>
+### C# Implementation
 
 In this code snippet, we demonstrate how to integrate MCP with Azure OpenAI using the Azure OpenAI SDK. 
 
@@ -94,16 +93,13 @@ In the preceding code we've:
 
 You're encouraged to implement the actual tool handling logic based on your specific MCP server setup.
 
-</details>
-
 ## Microsoft AI Foundry Integration
 
 Azure AI Foundry provides a platform for building and deploying AI agents. Integrating MCP with AI Foundry allows you to leverage its capabilities while maintaining the flexibility of MCP.
 
 In the below code, we develop an Agent integration that processes requests and handles tool calls using MCP.
 
-<details>
-<summary>Java</summary>
+### Java Implementation
 
 ```java
 // Java AI Foundry Agent Integration
@@ -160,21 +156,17 @@ public class AIFoundryMcpBridge {
     }
 }
 ```
-
 In the preceding code, we've:
 
 - Created an `AIFoundryMcpBridge` class that integrates with both AI Foundry and MCP.
 - Implemented a method `processAgentRequest` that processes an AI Foundry agent request.
 - Handled tool calls by executing them through the MCP client and submitting the results back to the AI Foundry agent.
 
-</details>
-
 ## Integrating MCP with Azure ML
 
 Integrating MCP with Azure Machine Learning (ML) allows you to leverage Azure's powerful ML capabilities while maintaining the flexibility of MCP. This integration can be used to execute ML pipelines, register models as tools, and manage compute resources.
 
-<details>
-<summary>Python</summary>
+### Python Implementation
 
 ```python
 # Python Azure AI Integration
@@ -305,8 +297,6 @@ In the preceding code, we've:
 - Implemented a `register_ml_model_as_tool` method that registers an Azure ML model as an MCP tool, including creating the necessary deployment environment and compute resources.
 - Mapped Azure ML data types to JSON schema types for tool registration.
 - Used asynchronous programming to handle potentially long-running operations like ML pipeline execution and model registration.
-
-</details>
 
 ## What's next
 

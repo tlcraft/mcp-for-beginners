@@ -28,8 +28,7 @@ Multi-modal MCP implementations typically involve:
 
 In the below example, we will analyze an image and extract information.
 
-<details>
-<summary>csharp</summary>
+### C# Implementation
 
 ```csharp
 using ModelContextProtocol.SDK.Server;
@@ -169,16 +168,11 @@ In the preceding example, we've:
 - Implemented a method to download images from a URL and analyze them based on the requested type (objects, text, faces, etc.).
 - Returned structured results in a format compliant with the MCP specification.
 
-</details>
-
 ## Multi-Modal Example: Audio Processing
 
 Audio processing is another common modality in multi-modal applications. Below is an example of how to implement an audio transcription tool that can handle audio files and return transcriptions.
 
-<details>
-<summary>Java</summary>
-
-Let's implement an audio transcription tool:
+### Java Implementation
 
 ```java
 package com.example.mcp.multimodal;
@@ -317,13 +311,9 @@ In the preceding example, we've:
 - Used an `AudioProcessor` service to handle the actual transcription logic.
 - Started the MCP server to listen for requests.
 
-</details>
-
 ### Multi-Modal Example: Multi-Modal Response Generation
 
-
-<details>
-<summary>Python</summary>
+### Python Implementation
 
 ```python
 from mcp_server import McpServer
@@ -470,8 +460,6 @@ if __name__ == "__main__":
     import asyncio
     asyncio.run(main())
 ```
-
-</details>
 
 ## What's next
 

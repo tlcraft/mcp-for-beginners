@@ -37,10 +37,9 @@ This implementation features four tools that showcase MCP's ability to handle di
 - **qna**: For question-and-answer snippets
 
 ### Features
-- **Code Examples**: Includes language-specific code blocks for Python (and easily extendable to other languages) using collapsible sections for clarity
+- **Code Examples**: Includes language-specific code blocks for Python (and easily extendable to other languages) using code pivots for clarity
 
-<details>  
-<summary>Python</summary>  
+### Python
 
 ```python
 # Example usage of the general_search tool
@@ -58,7 +57,8 @@ async def run_search():
             result = await session.call_tool("general_search", arguments={"query": "open source LLMs"})
             print(result)
 ```
-</details>
+
+---
 
 Before running the client, it's helpful to understand what the server does. The [`server.py`](./server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
 
@@ -66,8 +66,7 @@ You can review the full implementation in [`server.py`](./server.py).
 
 Here is a brief example of how the server defines and registers a tool:
 
-<details>  
-<summary>Python Server</summary> 
+### Python Server
 
 ```python
 # server.py (excerpt)
@@ -82,7 +81,8 @@ server.add_tool(Tool("general_search", general_search))
 if __name__ == "__main__":
     server.run()
 ```
-</details>
+
+---
 
 - **External API Integration**: Demonstrates secure handling of API keys and external requests
 - **Structured Data Parsing**: Shows how to transform API responses into LLM-friendly formats
@@ -163,8 +163,7 @@ There are several ways to test and interact with the tools provided by the serve
 #### Writing Custom Test Scripts with the MCP Python SDK
 You can also build your own test scripts using the MCP Python SDK:
 
-<details>
-<summary>Python</summary>
+# [Python](#tab/python-sdk)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -184,7 +183,8 @@ async def test_custom_query():
                                            arguments={"query": "your custom query"})
             # Process the result
 ```
-</details>
+
+---
 
 
 In this context, a "test script" means a custom Python program you write to act as a client for the MCP server. Instead of being a formal unit test, this script lets you programmatically connect to the server, call any of its tools with parameters you choose, and inspect the results. This approach is useful for:
@@ -210,8 +210,7 @@ Performs a general web search and returns formatted results.
 
 You can call `general_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
 
-<details>
-<summary>Python Example</summary>
+# [Python Example](#tab/python-general-search)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -228,7 +227,8 @@ async def run_general_search():
             result = await session.call_tool("general_search", arguments={"query": "latest AI trends"})
             print(result)
 ```
-</details>
+
+---
 
 Alternatively, in interactive mode, select `general_search` from the menu and enter your query when prompted.
 
@@ -251,8 +251,7 @@ Searches for recent news articles related to a query.
 
 You can call `news_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
 
-<details>
-<summary>Python Example</summary>
+# [Python Example](#tab/python-news-search)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -269,7 +268,8 @@ async def run_news_search():
             result = await session.call_tool("news_search", arguments={"query": "AI policy updates"})
             print(result)
 ```
-</details>
+
+---
 
 Alternatively, in interactive mode, select `news_search` from the menu and enter your query when prompted.
 
@@ -292,8 +292,7 @@ Searches for products matching a query.
 
 You can call `product_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
 
-<details>
-<summary>Python Example</summary>
+# [Python Example](#tab/python-product-search)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -310,7 +309,8 @@ async def run_product_search():
             result = await session.call_tool("product_search", arguments={"query": "best AI gadgets 2025"})
             print(result)
 ```
-</details>
+
+---
 
 Alternatively, in interactive mode, select `product_search` from the menu and enter your query when prompted.
 
@@ -333,8 +333,7 @@ Gets direct answers to questions from search engines.
 
 You can call `qna` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
 
-<details>
-<summary>Python Example</summary>
+# [Python Example](#tab/python-qna)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -351,7 +350,8 @@ async def run_qna():
             result = await session.call_tool("qna", arguments={"question": "what is artificial intelligence"})
             print(result)
 ```
-</details>
+
+---
 
 Alternatively, in interactive mode, select `qna` from the menu and enter your question when prompted.
 
@@ -370,8 +370,7 @@ Alternatively, in interactive mode, select `qna` from the menu and enter your qu
 
 This section provides code snippets and references for the server and client implementations.
 
-<details>
-<summary>Python</summary>
+# [Python](#tab/python-code-details)
 
 See [`server.py`](./server.py) and [`client.py`](./client.py) for full implementation details.
 
@@ -381,7 +380,8 @@ import os
 import httpx
 # ...existing code...
 ```
-</details>
+
+---
 
 ## Advanced Concepts in This Lesson
 
@@ -443,8 +443,7 @@ Notice how DEBUG mode includes extra lines about HTTP requests, responses, and o
 
 To enable DEBUG mode, set the logging level to DEBUG at the top of your `client.py` or `server.py`:
 
-<details>
-<summary>Python</summary>
+# [Python](#tab/python-debug)
 
 ```python
 # At the top of your client.py or server.py
@@ -454,7 +453,8 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 ```
-</details>
+
+---
 
 ---
 
