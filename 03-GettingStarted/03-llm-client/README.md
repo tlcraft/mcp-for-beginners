@@ -496,7 +496,9 @@ In the preceding code we've:
 
         The input schema is part of the tool response but on the "properties" attribute, so we need to extract. Furthermore, we now call `ConvertFrom` with the tool details. Now we've done the heavy lifting, let's see how it call comes together as we handle a user prompt next.
 
-### Java```java
+### Java
+
+```java
 // Create a Bot interface for natural language interaction
 public interface Bot {
     String chat(String prompt);

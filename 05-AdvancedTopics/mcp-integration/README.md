@@ -156,21 +156,11 @@ public class AIFoundryMcpBridge {
     }
 }
 ```
-
 In the preceding code, we've:
 
 - Created an `AIFoundryMcpBridge` class that integrates with both AI Foundry and MCP.
 - Implemented a method `processAgentRequest` that processes an AI Foundry agent request.
 - Handled tool calls by executing them through the MCP client and submitting the results back to the AI Foundry agent.
-```
-
-In the preceding code, we've:
-
-- Created an `AIFoundryMcpBridge` class that integrates with both AI Foundry and MCP.
-- Implemented a method `processAgentRequest` that processes an AI Foundry agent request.
-- Handled tool calls by executing them through the MCP client and submitting the results back to the AI Foundry agent.
-
-</details>
 
 ## Integrating MCP with Azure ML
 
