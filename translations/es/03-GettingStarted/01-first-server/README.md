@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:23:00+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:34:13+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "es"
 }
 -->
 ### -2- Crear proyecto
 
-Ahora que tienes instalado el SDK, vamos a crear un proyecto a continuación:
+Ahora que tienes instalado tu SDK, vamos a crear un proyecto a continuación:
 
 ### -3- Crear archivos del proyecto
 
@@ -34,18 +34,18 @@ El inspector es una herramienta excelente que puede iniciar tu servidor y te per
 > puede verse diferente en el campo "command" ya que contiene el comando para ejecutar un servidor con tu entorno de ejecución específico/
 Deberías ver la siguiente interfaz de usuario:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.es.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Conéctate al servidor seleccionando el botón Connect.
   Una vez conectado al servidor, deberías ver lo siguiente:
 
-  ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.es.png)
+  ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. Selecciona "Tools" y luego "listTools", deberías ver que aparece "Add", selecciona "Add" y completa los valores de los parámetros.
 
   Deberías ver la siguiente respuesta, es decir, un resultado de la herramienta "add":
 
-  ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.es.png)
+  ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 ¡Felicidades, has logrado crear y ejecutar tu primer servidor!
 

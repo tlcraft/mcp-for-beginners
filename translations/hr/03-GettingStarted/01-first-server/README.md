@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:41:35+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:53:08+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "hr"
 }
 -->
 ### -2- Kreirajte projekt
 
-Sada kada ste instalirali SDK, sljedeći korak je kreirati projekt:
+Sada kada imate instaliran SDK, sljedeći korak je kreirati projekt:
 
 ### -3- Kreirajte datoteke projekta
 
@@ -17,7 +17,7 @@ Sada kada ste instalirali SDK, sljedeći korak je kreirati projekt:
 
 ### -5- Dodavanje alata i resursa
 
-Dodajte alat i resurs tako da unesete sljedeći kod:
+Dodajte alat i resurs dodavanjem sljedećeg koda:
 
 ### -6 Završni kod
 
@@ -34,18 +34,18 @@ Inspektor je izvrstan alat koji može pokrenuti vaš server i omogućiti vam int
 > u polju "command" može izgledati drugačije jer sadrži naredbu za pokretanje servera s vašim specifičnim runtime-om/
 Trebali biste vidjeti sljedeće korisničko sučelje:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hr.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Povežite se sa serverom odabirom gumba Connect  
    Nakon što se povežete sa serverom, trebali biste vidjeti sljedeće:
 
-   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.hr.png)
+   ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. Odaberite "Tools" i "listTools", trebali biste vidjeti da se pojavljuje "Add", odaberite "Add" i ispunite vrijednosti parametara.
 
    Trebali biste vidjeti sljedeći odgovor, tj. rezultat iz "add" alata:
 
-   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.hr.png)
+   ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Čestitamo, uspjeli ste kreirati i pokrenuti svoj prvi server!
 

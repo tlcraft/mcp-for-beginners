@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:37:50+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:49:20+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "tl"
 }
 -->
 ### -2- Gumawa ng proyekto
 
-Ngayon na na-install mo na ang iyong SDK, gumawa tayo ng proyekto sa susunod:
+Ngayon na na-install mo na ang iyong SDK, gumawa tayo ng proyekto: 
 
 ### -3- Gumawa ng mga file ng proyekto
 
@@ -34,24 +34,24 @@ Ang inspector ay isang mahusay na tool na maaaring magpatakbo ng iyong server at
 > maaaring magmukhang iba ito sa "command" field dahil naglalaman ito ng utos para patakbuhin ang server gamit ang iyong partikular na runtime/
 Dapat mong makita ang sumusunod na user interface:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.tl.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Kumonekta sa server sa pamamagitan ng pagpili sa Connect button  
   Kapag nakakonekta ka na sa server, dapat mong makita ang sumusunod:
 
-  ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.tl.png)
+  ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. Piliin ang "Tools" at "listTools", dapat lumabas ang "Add", piliin ang "Add" at punan ang mga halaga ng parameter.
 
   Makikita mo ang sumusunod na tugon, ibig sabihin ay resulta mula sa "add" tool:
 
-  ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.tl.png)
+  ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Congrats, nagawa mo nang gumawa at patakbuhin ang iyong unang server!
 
 ### Official SDKs
 
-Nagbibigay ang MCP ng opisyal na SDKs para sa iba't ibang wika:
+Nagbibigay ang MCP ng opisyal na SDK para sa iba't ibang wika:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Pinapanatili kasama ang Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Pinapanatili kasama ang Spring AI
@@ -63,8 +63,8 @@ Nagbibigay ang MCP ng opisyal na SDKs para sa iba't ibang wika:
 
 ## Mga Pangunahing Punto
 
-- Madaling mag-setup ng MCP development environment gamit ang mga SDK na nakatuon sa partikular na wika
-- Ang paggawa ng MCP servers ay nangangailangan ng paglikha at pagrerehistro ng mga tools na may malinaw na mga schema
+- Madaling mag-setup ng MCP development environment gamit ang mga SDK na nakatuon sa wika
+- Ang paggawa ng MCP servers ay nangangailangan ng paglikha at pagrerehistro ng mga tool na may malinaw na mga schema
 - Mahalaga ang pagsubok at pag-debug para sa maaasahang implementasyon ng MCP
 
 ## Mga Halimbawa
@@ -82,7 +82,7 @@ Gumawa ng simpleng MCP server gamit ang tool na iyong pipiliin:
 1. I-implementa ang tool sa iyong gustong wika (.NET, Java, Python, o JavaScript).
 2. Tukuyin ang mga input parameter at mga return value.
 3. Patakbuhin ang inspector tool upang matiyak na gumagana ang server ayon sa inaasahan.
-4. Subukan ang implementasyon gamit ang iba't ibang inputs.
+4. Subukan ang implementasyon gamit ang iba't ibang input.
 
 ## Solusyon
 

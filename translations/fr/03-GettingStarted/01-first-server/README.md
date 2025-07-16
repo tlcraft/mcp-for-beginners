@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:22:36+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:33:49+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "fr"
 }
@@ -19,7 +19,7 @@ Maintenant que vous avez installé votre SDK, passons à la création d’un pro
 
 Ajoutez un outil et une ressource en insérant le code suivant :
 
-### -6- Code final
+### -6 Code final
 
 Ajoutons le dernier morceau de code nécessaire pour que le serveur puisse démarrer :
 
@@ -29,23 +29,23 @@ Démarrez le serveur avec la commande suivante :
 
 ### -8- Lancer avec l’inspecteur
 
-L’inspecteur est un excellent outil qui peut démarrer votre serveur et vous permettre d’interagir avec lui pour tester son bon fonctionnement. Démarrons-le :
-> [!NOTE]
-> cela peut sembler différent dans le champ "command" car il contient la commande pour exécuter un serveur avec votre runtime spécifique/
+L’inspecteur est un excellent outil qui peut démarrer votre serveur et vous permettre d’interagir avec lui pour vérifier son bon fonctionnement. Démarrons-le :
+> [!NOTE]  
+> cela peut sembler différent dans le champ "command" car il contient la commande pour lancer un serveur avec votre runtime spécifique/
 Vous devriez voir l'interface utilisateur suivante :
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.fr.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Connectez-vous au serveur en sélectionnant le bouton Connect
   Une fois connecté au serveur, vous devriez voir ceci :
 
-  ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.fr.png)
+  ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. Sélectionnez "Tools" puis "listTools", vous devriez voir apparaître "Add", sélectionnez "Add" et remplissez les valeurs des paramètres.
 
-  Vous devriez obtenir la réponse suivante, c’est-à-dire un résultat de l’outil "add" :
+  Vous devriez voir la réponse suivante, c’est-à-dire un résultat de l’outil "add" :
 
-  ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.fr.png)
+  ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Félicitations, vous avez réussi à créer et exécuter votre premier serveur !
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:33:29+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:44:47+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "th"
 }
@@ -17,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -5- เพิ่มเครื่องมือและทรัพยากร
 
-เพิ่มเครื่องมือและทรัพยากรโดยการเพิ่มโค้ดดังต่อไปนี้:
+เพิ่มเครื่องมือและทรัพยากรโดยเพิ่มโค้ดดังต่อไปนี้:
 
 ### -6 โค้ดสุดท้าย
 
@@ -29,23 +29,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -8- รันด้วย inspector
 
-Inspector เป็นเครื่องมือที่ยอดเยี่ยมที่ช่วยให้คุณเริ่มเซิร์ฟเวอร์และโต้ตอบกับมันเพื่อทดสอบการทำงาน มาเริ่มใช้งานกันเลย:
+Inspector เป็นเครื่องมือที่ยอดเยี่ยมที่ช่วยให้คุณเริ่มเซิร์ฟเวอร์และโต้ตอบกับมันเพื่อทดสอบการทำงาน มาเริ่มใช้งานกัน:
 > [!NOTE]  
 > อาจดูแตกต่างในช่อง "command" เนื่องจากมีคำสั่งสำหรับรันเซิร์ฟเวอร์ด้วย runtime เฉพาะของคุณ/
 คุณควรเห็นอินเทอร์เฟซผู้ใช้ดังนี้:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.th.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. เชื่อมต่อกับเซิร์ฟเวอร์โดยเลือกปุ่ม Connect
   เมื่อคุณเชื่อมต่อกับเซิร์ฟเวอร์แล้ว คุณควรเห็นดังนี้:
 
-  ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.th.png)
+  ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. เลือก "Tools" และ "listTools" คุณจะเห็น "Add" ปรากฏขึ้น เลือก "Add" และกรอกค่าพารามิเตอร์
 
   คุณจะเห็นผลลัพธ์ดังนี้ ซึ่งเป็นผลลัพธ์จากเครื่องมือ "add":
 
-  ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.th.png)
+  ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 ยินดีด้วย คุณได้สร้างและรันเซิร์ฟเวอร์แรกของคุณสำเร็จแล้ว!
 

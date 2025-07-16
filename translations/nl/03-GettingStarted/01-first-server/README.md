@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:35:40+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:47:09+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "nl"
 }
 -->
 ### -2- Maak een project aan
 
-Nu je de SDK hebt geïnstalleerd, gaan we een project aanmaken:
+Nu je de SDK hebt geïnstalleerd, laten we als volgende stap een project aanmaken:
 
 ### -3- Maak projectbestanden aan
 
@@ -21,7 +21,7 @@ Voeg een tool en een resource toe door de volgende code toe te voegen:
 
 ### -6- Volledige code
 
-Laten we de laatste code toevoegen die nodig is om de server te kunnen starten:
+Laten we de laatste code toevoegen die nodig is zodat de server kan starten:
 
 ### -7- Test de server
 
@@ -34,18 +34,18 @@ De inspector is een geweldig hulpmiddel dat je server kan opstarten en waarmee j
 > het kan er anders uitzien in het veld "command" omdat dit de opdracht bevat om een server te starten met jouw specifieke runtime/
 Je zou de volgende gebruikersinterface moeten zien:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.nl.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
-1. Maak verbinding met de server door op de knop Connect te klikken  
-   Zodra je verbonden bent met de server, zou je het volgende moeten zien:
+1. Maak verbinding met de server door op de knop Connect te klikken
+  Zodra je verbonden bent met de server, zou je het volgende moeten zien:
 
-   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.nl.png)
+  ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
-1. Selecteer "Tools" en vervolgens "listTools", je zou "Add" moeten zien verschijnen. Selecteer "Add" en vul de parameterwaarden in.
+1. Selecteer "Tools" en "listTools", je zou "Add" moeten zien verschijnen, selecteer "Add" en vul de parameterwaarden in.
 
-   Je zou de volgende reactie moeten zien, dit is het resultaat van de "add" tool:
+  Je zou de volgende reactie moeten zien, dat wil zeggen een resultaat van de "add" tool:
 
-   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.nl.png)
+  ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Gefeliciteerd, je hebt je eerste server gemaakt en uitgevoerd!
 
@@ -63,25 +63,25 @@ MCP biedt officiële SDK's voor meerdere talen:
 
 ## Belangrijkste punten
 
-- Het opzetten van een MCP-ontwikkelomgeving is eenvoudig met taalspecifieke SDK's  
-- Het bouwen van MCP-servers houdt in dat je tools maakt en registreert met duidelijke schema's  
+- Het opzetten van een MCP-ontwikkelomgeving is eenvoudig met taalspecifieke SDK's
+- Het bouwen van MCP-servers houdt in dat je tools maakt en registreert met duidelijke schema's
 - Testen en debuggen zijn essentieel voor betrouwbare MCP-implementaties
 
 ## Voorbeelden
 
-- [Java Calculator](../samples/java/calculator/README.md)  
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
-- [JavaScript Calculator](../samples/javascript/README.md)  
-- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Opdracht
 
 Maak een eenvoudige MCP-server met een tool naar keuze:
 
-1. Implementeer de tool in je favoriete taal (.NET, Java, Python of JavaScript).  
-2. Definieer invoerparameters en retourwaarden.  
-3. Voer de inspector-tool uit om te controleren of de server werkt zoals bedoeld.  
+1. Implementeer de tool in je favoriete taal (.NET, Java, Python of JavaScript).
+2. Definieer invoerparameters en retourwaarden.
+3. Voer de inspector tool uit om te controleren of de server werkt zoals bedoeld.
 4. Test de implementatie met verschillende invoerwaarden.
 
 ## Oplossing
@@ -90,8 +90,8 @@ Maak een eenvoudige MCP-server met een tool naar keuze:
 
 ## Extra bronnen
 
-- [Agents bouwen met Model Context Protocol op Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [Remote MCP met Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
+- [Agents bouwen met Model Context Protocol op Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Remote MCP met Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Wat nu?

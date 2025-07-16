@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:39:14+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:50:49+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "cs"
 }
@@ -29,23 +29,23 @@ Spusťte server pomocí následujícího příkazu:
 
 ### -8- Spuštění pomocí inspektoru
 
-Inspektor je skvělý nástroj, který může spustit váš server a umožní vám s ním interagovat, abyste mohli otestovat, že funguje. Pojďme ho spustit:
+Inspektor je skvělý nástroj, který dokáže spustit váš server a umožní vám s ním interagovat, abyste mohli otestovat, že funguje. Pojďme ho spustit:
 > [!NOTE]
 > může to v poli "command" vypadat jinak, protože obsahuje příkaz pro spuštění serveru s vaším konkrétním runtime/
 Měli byste vidět následující uživatelské rozhraní:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.cs.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. Připojte se k serveru výběrem tlačítka Connect  
    Po připojení k serveru byste měli vidět následující:
 
-   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.cs.png)
+   ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. Vyberte "Tools" a "listTools", měli byste vidět možnost "Add", vyberte "Add" a vyplňte hodnoty parametrů.
 
    Měli byste vidět následující odpověď, tedy výsledek z nástroje "add":
 
-   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.cs.png)
+   ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 Gratulujeme, podařilo se vám vytvořit a spustit váš první server!
 
@@ -99,4 +99,4 @@ Vytvořte jednoduchý MCP server s nástrojem dle vašeho výběru:
 Další: [Začínáme s MCP klienty](../02-client/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

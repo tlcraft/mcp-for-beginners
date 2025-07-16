@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315ecce765d22639b60dbc41344c8533",
-  "translation_date": "2025-07-13T17:26:31+00:00",
+  "original_hash": "4d5b044c0924d393af3066e03d7d89c5",
+  "translation_date": "2025-07-16T09:37:52+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "hk"
 }
@@ -29,23 +29,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### -8- 使用 inspector 執行
 
-inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與它互動，方便你測試功能是否正常。讓我們啟動它：
+Inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與它互動，方便你測試功能是否正常。讓我們啟動它：
 > [!NOTE]
-> 在「command」欄位中顯示可能會有所不同，因為它包含了用於運行特定執行環境的伺服器指令/
+> 在「command」欄位中顯示可能會有所不同，因為它包含了用於運行伺服器的特定執行環境指令/
 你應該會看到以下的使用者介面：
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hk.png)
+![Connect](/03-GettingStarted/01-first-server/assets/connect.png)
 
 1. 按下 Connect 按鈕連接到伺服器
   連接成功後，你應該會看到以下畫面：
 
-  ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.hk.png)
+  ![Connected](/03-GettingStarted/01-first-server/assets/connected.png)
 
 1. 選擇「Tools」然後選擇「listTools」，你會看到「Add」出現，點選「Add」並填入參數值。
 
   你應該會看到以下回應，也就是「add」工具的結果：
 
-  ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.hk.png)
+  ![Result of running add](/03-GettingStarted/01-first-server/assets/ran-tool.png)
 
 恭喜，你已成功建立並執行你的第一個伺服器！
 
