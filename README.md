@@ -147,7 +147,7 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 
 To get the most out of this curriculum, you should have:
 
-- Basic knowledge of programming in at least one language
+- Basic knowledge of programming in at least one of the following languages: C#, Java, JavaScript, Python, or TypeScript
 - Understanding of client-server model and APIs
 - Familiarity with REST and HTTP concepts
 - (Optional) Background in AI/ML concepts
