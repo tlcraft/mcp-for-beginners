@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "0d29a939f59d34de10d14433125ea8f5",
-  "translation_date": "2025-07-13T23:54:54+00:00",
+  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
+  "translation_date": "2025-07-16T07:16:26+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "br"
 }
@@ -27,14 +27,14 @@ Ao final deste guia, você será capaz de:
 - Configurar servidores MCP para uso com agentes Azure AI Foundry
 - Criar e configurar agentes com integração de ferramentas MCP
 - Implementar exemplos práticos usando servidores MCP reais
-- Gerenciar respostas de ferramentas e citações em conversas de agentes
+- Gerenciar respostas de ferramentas e citações em conversas dos agentes
 
 ## Pré-requisitos
 
 Antes de começar, certifique-se de que você possui:
 
 - Uma assinatura Azure com acesso ao AI Foundry
-- Python 3.10+
+- Python 3.10+ ou .NET 8.0+
 - Azure CLI instalado e configurado
 - Permissões adequadas para criar recursos de IA
 
@@ -49,20 +49,43 @@ Model Context Protocol é uma forma padronizada para aplicações de IA se conec
 
 ## Configurando MCP com Azure AI Foundry
 
-### 1. Configuração do Ambiente
+### Configuração do Ambiente
 
-Primeiro, configure suas variáveis de ambiente e dependências:
+Escolha seu ambiente de desenvolvimento preferido:
+
+- [Implementação em Python](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [Implementação em .NET](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+
+---
+
+## Implementação em Python
+
+### 1. Instale os Pacotes Necessários
+
+```bash
+pip install azure-ai-projects -U
+pip install azure-ai-agents==1.1.0b4 -U
+pip install azure-identity -U
+pip install mcp==1.11.0 -U
+```
+
+### 2. Importe as Dependências
 
 ```python
-import os
-import time
-import json
-from azure.ai.agents.models import MessageTextContent, ListSortOrder
+import os, time
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential
+from azure.ai.agents.models import McpTool, RequiredMcpToolCall, SubmitToolApprovalAction, ToolApproval
+```
 
+### 3. Configure as Definições do MCP
 
-### 1. Initialize the AI Project Client
+```python
+mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/api/mcp")
+mcp_server_label = os.environ.get("MCP_SERVER_LABEL", "mslearn")
+```
+
+### 4. Inicialize o Cliente do Projeto
 
 ```python
 project_client = AIProjectClient(
@@ -71,123 +94,251 @@ project_client = AIProjectClient(
 )
 ```
 
-### 2. Create an Agent with MCP Tools
+### 5. Crie a Ferramenta MCP
 
-Configure an agent with MCP server integration:
+```python
+mcp_tool = McpTool(
+    server_label=mcp_server_label,
+    server_url=mcp_server_url,
+    allowed_tools=[],  # Optional: specify allowed tools
+)
+```
+
+### 6. Exemplo Completo em Python
 
 ```python
 with project_client:
-    agent = project_client.agents.create_agent(
-        model="gpt-4.1-nano", 
-        name="mcp_agent", 
-        instructions="Você é um assistente prestativo. Use as ferramentas fornecidas para responder às perguntas. Certifique-se de citar suas fontes.",
-        tools=[
-            {
-                "type": "mcp",
-                "server_label": "microsoft_docs",
-                "server_url": "https://learn.microsoft.com/api/mcp",
-                "require_approval": "never"
-            }
-        ],
-        tool_resources=None
+    agents_client = project_client.agents
+
+    # Create a new agent with MCP tools
+    agent = agents_client.create_agent(
+        model="Your AOAI Model Deployment",
+        name="my-mcp-agent",
+        instructions="You are a helpful agent that can use MCP tools to assist users. Use the available MCP tools to answer questions and perform tasks.",
+        tools=mcp_tool.definitions,
     )
-    print(f"Agente criado, ID do agente: {agent.id}")
+    print(f"Created agent, ID: {agent.id}")
+    print(f"MCP Server: {mcp_tool.server_label} at {mcp_tool.server_url}")
+
+    # Create thread for communication
+    thread = agents_client.threads.create()
+    print(f"Created thread, ID: {thread.id}")
+
+    # Create message to thread
+    message = agents_client.messages.create(
+        thread_id=thread.id,
+        role="user",
+        content="What's difference between Azure OpenAI and OpenAI?",
+    )
+    print(f"Created message, ID: {message.id}")
+
+    # Handle tool approvals and run agent
+    mcp_tool.update_headers("SuperSecret", "123456")
+    run = agents_client.runs.create(thread_id=thread.id, agent_id=agent.id, tool_resources=mcp_tool.resources)
+    print(f"Created run, ID: {run.id}")
+
+    while run.status in ["queued", "in_progress", "requires_action"]:
+        time.sleep(1)
+        run = agents_client.runs.get(thread_id=thread.id, run_id=run.id)
+
+        if run.status == "requires_action" and isinstance(run.required_action, SubmitToolApprovalAction):
+            tool_calls = run.required_action.submit_tool_approval.tool_calls
+            if not tool_calls:
+                print("No tool calls provided - cancelling run")
+                agents_client.runs.cancel(thread_id=thread.id, run_id=run.id)
+                break
+
+            tool_approvals = []
+            for tool_call in tool_calls:
+                if isinstance(tool_call, RequiredMcpToolCall):
+                    try:
+                        print(f"Approving tool call: {tool_call}")
+                        tool_approvals.append(
+                            ToolApproval(
+                                tool_call_id=tool_call.id,
+                                approve=True,
+                                headers=mcp_tool.headers,
+                            )
+                        )
+                    except Exception as e:
+                        print(f"Error approving tool_call {tool_call.id}: {e}")
+
+            if tool_approvals:
+                agents_client.runs.submit_tool_outputs(
+                    thread_id=thread.id, run_id=run.id, tool_approvals=tool_approvals
+                )
+
+        print(f"Current run status: {run.status}")
+
+    print(f"Run completed with status: {run.status}")
+
+    # Display conversation
+    messages = agents_client.messages.list(thread_id=thread.id)
+    print("\nConversation:")
+    print("-" * 50)
+    for msg in messages:
+        if msg.text_messages:
+            last_text = msg.text_messages[-1]
+            print(f"{msg.role.upper()}: {last_text.text.value}")
+            print("-" * 50)
 ```
 
-## MCP Tool Configuration Options
+---
 
-When configuring MCP tools for your agent, you can specify several important parameters:
+## Implementação em .NET
 
-### Configuration
+### 1. Instale os Pacotes Necessários
 
-```python
-mcp_tool = {
-    "type": "mcp",
-    "server_label": "unique_server_name",      # Identificador para o servidor MCP
-    "server_url": "https://api.example.com/mcp", # Endpoint do servidor MCP
-    "require_approval": "never"                 # Política de aprovação: atualmente suporta apenas "never"
+```csharp
+#r "nuget: Azure.AI.Agents.Persistent, 1.1.0-beta.4"
+#r "nuget: Azure.Identity, 1.14.2"
+```
+
+### 2. Importe as Dependências
+
+```csharp
+using Azure.AI.Agents.Persistent;
+using Azure.Identity;
+```
+
+### 3. Configure as Definições
+
+```csharp
+var projectEndpoint = "https://your-project-endpoint.services.ai.azure.com/api/projects/your-project";
+var modelDeploymentName = "Your AOAI Model Deployment";
+var mcpServerUrl = "https://learn.microsoft.com/api/mcp";
+var mcpServerLabel = "mslearn";
+PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCredential());
+```
+
+### 4. Crie a Definição da Ferramenta MCP
+
+```csharp
+MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
+```
+
+### 5. Crie o Agente com Ferramentas MCP
+
+```csharp
+PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
+   model: modelDeploymentName,
+   name: "my-learn-agent",
+   instructions: "You are a helpful agent that can use MCP tools to assist users. Use the available MCP tools to answer questions and perform tasks.",
+   tools: [mcpTool]
+   );
+```
+
+### 6. Exemplo Completo em .NET
+
+```csharp
+// Create thread and message
+PersistentAgentThread thread = await agentClient.Threads.CreateThreadAsync();
+
+PersistentThreadMessage message = await agentClient.Messages.CreateMessageAsync(
+    thread.Id,
+    MessageRole.User,
+    "What's difference between Azure OpenAI and OpenAI?");
+
+// Configure tool resources with headers
+MCPToolResource mcpToolResource = new(mcpServerLabel);
+mcpToolResource.UpdateHeader("SuperSecret", "123456");
+ToolResources toolResources = mcpToolResource.ToToolResources();
+
+// Create and handle run
+ThreadRun run = await agentClient.Runs.CreateRunAsync(thread, agent, toolResources);
+
+while (run.Status == RunStatus.Queued || run.Status == RunStatus.InProgress || run.Status == RunStatus.RequiresAction)
+{
+    await Task.Delay(TimeSpan.FromMilliseconds(1000));
+    run = await agentClient.Runs.GetRunAsync(thread.Id, run.Id);
+
+    if (run.Status == RunStatus.RequiresAction && run.RequiredAction is SubmitToolApprovalAction toolApprovalAction)
+    {
+        var toolApprovals = new List<ToolApproval>();
+        foreach (var toolCall in toolApprovalAction.SubmitToolApproval.ToolCalls)
+        {
+            if (toolCall is RequiredMcpToolCall mcpToolCall)
+            {
+                Console.WriteLine($"Approving MCP tool call: {mcpToolCall.Name}");
+                toolApprovals.Add(new ToolApproval(mcpToolCall.Id, approve: true)
+                {
+                    Headers = { ["SuperSecret"] = "123456" }
+                });
+            }
+        }
+
+        if (toolApprovals.Count > 0)
+        {
+            run = await agentClient.Runs.SubmitToolOutputsToRunAsync(thread.Id, run.Id, toolApprovals: toolApprovals);
+        }
+    }
+}
+
+// Display messages
+using Azure;
+
+AsyncPageable<PersistentThreadMessage> messages = agentClient.Messages.GetMessagesAsync(
+    threadId: thread.Id,
+    order: ListSortOrder.Ascending
+);
+
+await foreach (PersistentThreadMessage threadMessage in messages)
+{
+    Console.Write($"{threadMessage.CreatedAt:yyyy-MM-dd HH:mm:ss} - {threadMessage.Role,10}: ");
+    foreach (MessageContent contentItem in threadMessage.ContentItems)
+    {
+        if (contentItem is MessageTextContent textItem)
+        {
+            Console.Write(textItem.Text);
+        }
+        else if (contentItem is MessageImageFileContent imageFileItem)
+        {
+            Console.Write($"<image from ID: {imageFileItem.FileId}>");
+        }
+        Console.WriteLine();
+    }
 }
 ```
 
-## Complete Example: Using Microsoft Learn MCP Server
+---
 
-Here's a complete example that demonstrates creating an agent with MCP integration and processing a conversation:
+## Opções de Configuração da Ferramenta MCP
+
+Ao configurar ferramentas MCP para seu agente, você pode especificar vários parâmetros importantes:
+
+### Configuração em Python
 
 ```python
-import time
-import json
-import os
-from azure.ai.agents.models import MessageTextContent, ListSortOrder
-from azure.ai.projects import AIProjectClient
-from azure.identity import DefaultAzureCredential
+mcp_tool = McpTool(
+    server_label="unique_server_name",      # Identifier for the MCP server
+    server_url="https://api.example.com/mcp", # MCP server endpoint
+    allowed_tools=[],                       # Optional: specify allowed tools
+)
+```
 
-def create_mcp_agent_example():
+### Configuração em .NET
 
-    project_client = AIProjectClient(
-        endpoint="https://your-endpoint.services.ai.azure.com/api/projects/your-project",
-        credential=DefaultAzureCredential(),
-    )
+```csharp
+MCPToolDefinition mcpTool = new(
+    "unique_server_name",                   // Server label
+    "https://api.example.com/mcp"          // MCP server URL
+);
+```
 
-    with project_client:
-        # Cria agente com ferramentas MCP
-        agent = project_client.agents.create_agent(
-            model="gpt-4.1-nano", 
-            name="documentation_assistant", 
-            instructions="Você é um assistente prestativo especializado em documentação Microsoft. Use o servidor MCP do Microsoft Learn para buscar informações precisas e atualizadas. Sempre cite suas fontes.",
-            tools=[
-                {
-                    "type": "mcp",
-                    "server_label": "mslearn",
-                    "server_url": "https://learn.microsoft.com/api/mcp",
-                    "require_approval": "never"
-                }
-            ],
-            tool_resources=None
-        )
-        print(f"Agente criado, ID do agente: {agent.id}")    
-        
-        # Cria thread de conversa
-        thread = project_client.agents.threads.create()
-        print(f"Thread criada, ID da thread: {thread.id}")
+## Autenticação e Headers
 
-        # Envia mensagem
-        message = project_client.agents.messages.create(
-            thread_id=thread.id, 
-            role="user", 
-            content="O que é .NET MAUI? Como ele se compara ao Xamarin.Forms?",
-        )
-        print(f"Mensagem criada, ID da mensagem: {message.id}")
+Ambas as implementações suportam headers personalizados para autenticação:
 
-        # Executa o agente
-        run = project_client.agents.runs.create(thread_id=thread.id, agent_id=agent.id)
-        
-        # Aguarda conclusão
-        while run.status in ["queued", "in_progress", "requires_action"]:
-            time.sleep(1)
-            run = project_client.agents.runs.get(thread_id=thread.id, run_id=run.id)
-            print(f"Status da execução: {run.status}")
+### Python
+```python
+mcp_tool.update_headers("SuperSecret", "123456")
+```
 
-        # Examina etapas da execução e chamadas de ferramentas
-        run_steps = project_client.agents.run_steps.list(thread_id=thread.id, run_id=run.id)
-        for step in run_steps:
-            print(f"Etapa da execução: {step.id}, status: {step.status}, tipo: {step.type}")
-            if step.type == "tool_calls":
-                print("Detalhes da chamada da ferramenta:")
-                for tool_call in step.step_details.tool_calls:
-                    print(json.dumps(tool_call.as_dict(), indent=2))
-
-        # Exibe a conversa
-        messages = project_client.agents.messages.list(thread_id=thread.id, order=ListSortOrder.ASCENDING)
-        for data_point in messages:
-            last_message_content = data_point.content[-1]
-            if isinstance(last_message_content, MessageTextContent):
-                print(f"{data_point.role}: {last_message_content.text.value}")
-
-        return agent.id, thread.id
-
-if __name__ == "__main__":
-    create_mcp_agent_example()
-  
+### .NET
+```csharp
+MCPToolResource mcpToolResource = new(mcpServerLabel);
+mcpToolResource.UpdateHeader("SuperSecret", "123456");
+```
 
 ## Solução de Problemas Comuns
 
@@ -210,14 +361,14 @@ if __name__ == "__main__":
 
 Para aprimorar ainda mais sua integração MCP:
 
-1. **Explore Servidores MCP Personalizados**: Crie seus próprios servidores MCP para fontes de dados proprietárias
+1. **Explore Servidores MCP Personalizados**: Construa seus próprios servidores MCP para fontes de dados proprietárias
 2. **Implemente Segurança Avançada**: Adicione OAuth2 ou mecanismos personalizados de autenticação
-3. **Monitore e Analise**: Implemente logs e monitoramento do uso das ferramentas
+3. **Monitore e Analise**: Implemente logging e monitoramento do uso das ferramentas
 4. **Escale Sua Solução**: Considere balanceamento de carga e arquiteturas distribuídas para servidores MCP
 
 ## Recursos Adicionais
 
-- [Documentação Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- [Documentação do Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
 - [Exemplos do Model Context Protocol](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
 - [Visão Geral dos Agentes Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [Especificação MCP](https://spec.modelcontextprotocol.io/)
@@ -225,7 +376,7 @@ Para aprimorar ainda mais sua integração MCP:
 ## Suporte
 
 Para suporte adicional e dúvidas:
-- Consulte a [documentação Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- Consulte a [documentação do Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
 - Verifique os [recursos da comunidade MCP](https://modelcontextprotocol.io/)
 
 ## O que vem a seguir
