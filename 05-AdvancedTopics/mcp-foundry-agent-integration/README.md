@@ -376,4 +376,4 @@ For additional support and questions:
 
 ## What's next 
 
-- [5.14 MCP Context Enginnering](../mcp-contextengineering/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)

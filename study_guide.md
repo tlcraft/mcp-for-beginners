@@ -58,7 +58,7 @@ mindmap
       (Security)
       (Entra ID)
       (Web Search)
-      (Context Engineering)
+      
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
