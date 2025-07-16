@@ -1,10 +1,10 @@
 # Sampling in Model Context Protocol
 
-Sampling strategies are critical for optimizing model responses in MCP implementations. The right sampling configuration can dramatically improve response quality and performance. MCP provides a standardized way to control how models generate text with specific parameters that influence randomness, creativity, and coherence.
+Sampling is a powerful MCP feature that allows servers to request LLM completions through the client, enabling sophisticated agentic behaviors while maintaining security and privacy. The right sampling configuration can dramatically improve response quality and performance. MCP provides a standardized way to control how models generate text with specific parameters that influence randomness, creativity, and coherence.
 
 ## Introduction
 
-In this lesson, we will explore how to configure sampling parameters in MCP requests. 
+In this lesson, we will explore how to configure sampling parameters in MCP requests and understand the underlying protocol mechanics of sampling.
 
 ## Learning Objectives
 
@@ -15,6 +15,19 @@ By the end of this lesson, you will be able to:
 - Implement deterministic sampling for reproducible results.
 - Dynamically adjust sampling parameters based on context and user preferences.
 - Apply sampling strategies to enhance model performance in various scenarios.
+- Understand how sampling works in the client-server flow of MCP.
+
+## How Sampling Works in MCP
+
+The sampling flow in MCP follows these steps:
+
+1. Server sends a `sampling/createMessage` request to the client
+2. Client reviews the request and can modify it
+3. Client samples from an LLM
+4. Client reviews the completion
+5. Client returns the result to the server
+
+This human-in-the-loop design ensures users maintain control over what the LLM sees and generates.
 
 ## Sampling Parameters Overview
 
@@ -22,23 +35,100 @@ MCP defines the following sampling parameters that can be configured in client r
 
 | Parameter | Description | Typical Range |
 |-----------|-------------|---------------|
-| `temperature` | Controls randomness in token selection | 0.0 - 2.0 |
+| `temperature` | Controls randomness in token selection | 0.0 - 1.0 |
+| `maxTokens` | Maximum number of tokens to generate | Integer value |
+| `stopSequences` | Custom sequences that stop generation when encountered | Array of strings |
+| `metadata` | Additional provider-specific parameters | JSON object |
+
+Many LLM providers support additional parameters through the `metadata` field, which may include:
+
+| Common Extension Parameter | Description | Typical Range |
+|-----------|-------------|---------------|
 | `top_p` | Nucleus sampling - limits tokens to top cumulative probability | 0.0 - 1.0 |
 | `top_k` | Limits token selection to top K options | 1 - 100 |
 | `presence_penalty` | Penalizes tokens based on their presence in the text so far | -2.0 - 2.0 |
 | `frequency_penalty` | Penalizes tokens based on their frequency in the text so far | -2.0 - 2.0 |
 | `seed` | Specific random seed for reproducible results | Integer value |
-| `max_tokens` | Maximum number of tokens to generate | Integer value |
-| `stop_sequences` | Custom sequences that stop generation when encountered | Array of strings |
 
-## Temperature and Top-K/Top-P Sampling
+## Example Request Format
+
+Here's an example of requesting sampling from a client in MCP:
+
+```json
+{
+  "method": "sampling/createMessage",
+  "params": {
+    "messages": [
+      {
+        "role": "user",
+        "content": {
+          "type": "text",
+          "text": "What files are in the current directory?"
+        }
+      }
+    ],
+    "systemPrompt": "You are a helpful file system assistant.",
+    "includeContext": "thisServer",
+    "maxTokens": 100,
+    "temperature": 0.7
+  }
+}
+```
+
+## Response Format
+
+The client returns a completion result:
+
+```json
+{
+  "model": "string",  // Name of the model used
+  "stopReason": "endTurn" | "stopSequence" | "maxTokens" | "string",
+  "role": "assistant",
+  "content": {
+    "type": "text",
+    "text": "string"
+  }
+}
+```
+
+## Human in the Loop Controls
+
+MCP sampling is designed with human oversight in mind:
+
+- **For prompts**:
+  - Clients should show users the proposed prompt
+  - Users should be able to modify or reject prompts
+  - System prompts can be filtered or modified
+  - Context inclusion is controlled by the client
+
+- **For completions**:
+  - Clients should show users the completion
+  - Users should be able to modify or reject completions
+  - Clients can filter or modify completions
+  - Users control which model is used
+
+With these principles in mind, let's look at how to implement sampling in different programming languages, focusing on the parameters that are commonly supported across LLM providers.
+
+## Security Considerations
+
+When implementing sampling in MCP, consider these security best practices:
+
+- **Validate all message content** before sending it to the client
+- **Sanitize sensitive information** from prompts and completions
+- **Implement rate limits** to prevent abuse
+- **Monitor sampling usage** for unusual patterns
+- **Encrypt data in transit** using secure protocols
+- **Handle user data privacy** according to relevant regulations
+- **Audit sampling requests** for compliance and security
+- **Control cost exposure** with appropriate limits
+- **Implement timeouts** for sampling requests
+- **Handle model errors gracefully** with appropriate fallbacks
 
 Sampling parameters allow fine-tuning the behavior of language models to achieve the desired balance between deterministic and creative outputs.
 
 Let's look at how to configure these parameters in different programming languages.
 
-<details>
-<summary>.NET</summary>
+# [.NET](#tab/dotnet)
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
@@ -87,10 +177,7 @@ In the preceding code we've:
     - `top_k` to restrict the model to the top K most probable tokens, which can help in generating more coherent responses.
     - `frequencyPenalty` and `presencePenalty` to reduce repetition and encourage diversity in the generated text.
 
-</details>
-
-<details>
-<summary>JavaScript</summary>
+# [JavaScript](#tab/javascript)
 
 ```javascript
 // JavaScript Example: Temperature and Top-P sampling configuration
@@ -162,7 +249,7 @@ In the preceding code we've:
 - Used `frequencyPenalty` and `presencePenalty` to reduce repetition and encourage diversity in the output.
 - Used `top_k` to restrict the model to the top K most probable tokens, which can help in generating more coherent responses.
 
-</details>
+---
 
 ## Deterministic Sampling
 
@@ -170,8 +257,7 @@ For applications requiring consistent outputs, deterministic sampling ensures re
 
 Let's look at below sample implementation to demonstrate deterministic sampling in different programming languages.
 
-<details>
-<summary>Java</summary>
+# [Java](#tab/java)
 
 ```java
 // Java Example: Deterministic responses with fixed seed
@@ -219,10 +305,7 @@ In the preceding code we've:
 - Used `setSeed` to specify a fixed random seed, ensuring that the model generates the same output for the same input every time.
 - Set `temperature` to zero to ensure maximum determinism, meaning the model will always select the most probable next token without randomness.
 
-</details>
-
-<details>
-<summary>JavaScript</summary>
+# [JavaScript](#tab/javascript-deterministic)
 
 ```javascript
 // JavaScript Example: Deterministic responses with seed control
@@ -279,7 +362,7 @@ In the preceding code we've:
 - Set `temperature` to zero to ensure maximum determinism, meaning the model will always select the most probable next token without randomness.
 - Used a different seed for the third request to show that changing the seed results in different outputs, even with the same prompt and temperature.
 
-</details>
+---
 
 ## Dynamic Sampling Configuration
 
@@ -287,8 +370,7 @@ Intelligent sampling adapts parameters based on the context and requirements of 
 
 Let's look at how to implement dynamic sampling in different programming languages.
 
-<details>
-<summary>Python</summary>
+# [Python](#tab/python)
 
 ```python
 # Python Example: Dynamic sampling based on request context
@@ -355,10 +437,7 @@ In the preceding code we've:
 - Used `generated_text` to retrieve the model's response, which is then returned along with the sampling parameters and task type for further analysis or display.
 - Used `min` and `max` functions to ensure that user preferences are clamped within valid ranges, preventing invalid sampling configurations.
 
-</details>
-
-<details>
-<summary>JavaScript</summary>
+# [JavaScript Dynamic](#tab/javascript-dynamic)
 
 ```javascript
 // JavaScript Example: Dynamic sampling configuration based on user context
@@ -571,7 +650,7 @@ In the preceding code we've:
     - `detectTaskType` to classify the task based on the prompt, enabling the system to apply appropriate sampling strategies for different types of requests.
     - `samplingProfiles` to define base sampling configurations for different task types, allowing for quick adjustments based on the nature of the request.
 
-</details>
+---
 
 ## What's next
 

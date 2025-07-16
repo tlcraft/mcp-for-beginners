@@ -31,8 +31,7 @@ Horizontal scaling involves deploying multiple instances of MCP servers and usin
 
 Let's look at an example of how to configure horizontal scaling and MCP.
 
-<details>
-<summary>.NET</summary>
+# [.NET](#tab/dotnet)
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
@@ -68,7 +67,7 @@ In the preceding code we've:
 - Enabled distributed caching in the MCP server configuration.
 - Registered a high-performance tool that can be used across multiple MCP instances.
 
-</details>
+***
 
 ## Vertical Scaling and Resource Optimization
 
@@ -76,8 +75,7 @@ Vertical scaling focuses on optimizing a single MCP server instance to handle mo
 
 Let's look at an example of how to optimize an MCP server for vertical scaling and resource management.
 
-<details>
-<summary>Java</summary>
+# [Java](#tab/java)
 
 ```java
 // Java MCP server with resource optimization
@@ -116,7 +114,7 @@ In the preceding code, we have:
 - Set resource constraints such as maximum request size, maximum concurrent requests, and request timeout.
 - Used a backpressure strategy to handle overload situations gracefully.
 
-</details>
+***
 
 ## Distributed Architecture
 
@@ -124,8 +122,7 @@ Distributed architectures involve multiple MCP nodes working together to handle 
 
 Let's look at an example of how to implement a distributed MCP server architecture using Redis for coordination.
 
-<details>
-<summary>Python</summary>
+# [Python](#tab/python)
 
 ```python
 # Python MCP server in distributed architecture
@@ -217,7 +214,7 @@ In the preceding code, we have:
 - Used asynchronous programming to handle requests efficiently and maintain responsiveness.
 - Utilized Redis for coordination and state management across distributed nodes.
 
-</details>
+***
 
 
 ## What's next

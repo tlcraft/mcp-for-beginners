@@ -47,8 +47,7 @@ flowchart TD
 
 Here's an example of how to create and manage root contexts. 
 
-<details>
-<summary>csharp</summary>
+### C# Implementation
 
 ```csharp
 // .NET Example: Root Context Management
@@ -131,14 +130,11 @@ In the preceding code we've:
 1. Retrieved context information to understand the conversation history.
 1. Archived the context when the conversation was complete.
 
-</details>
-
 ## Example: Root Context Implementation for financial analysis
 
 In this example, we will create a root context for a financial analysis session, demonstrating how to maintain state across multiple interactions.
 
-<details>
-<summary>java</summary>
+### Java Implementation
 
 ```java
 // Java Example: Root Context Implementation
@@ -232,14 +228,11 @@ In the preceding code, we've:
 4. Generated a summary of the analysis session and stored it in the context metadata.
 5. Archived the context when the conversation was complete.
 
-</details>
-
 ## Example: Root Context Management
 
 Managing root contexts effectively is crucial for maintaining conversation history and state. Below is an example of how to implement root context management.
 
-<details>
-<summary>JavaScript</summary>
+### JavaScript Implementation
 
 ```javascript
 // JavaScript Example: Managing MCP Root Contexts
@@ -494,14 +487,11 @@ In the preceding code we've:
 
 1. Handled errors gracefully to ensure robustness.
 
-</details>
-
 ## Root Context for Multi-Turn Assistance
 
 In this example, we will create a root context for a multi-turn assistance session, demonstrating how to maintain state across multiple interactions.
 
-<details>
-<summary>Python</summary>
+### Python Implementation
 
 ```python
 # Python Example: Root Context for Multi-Turn Assistance
@@ -637,8 +627,6 @@ In the preceding code we've:
 1. Retrieved conversation history using the function `get_conversation_history`, which provides context information and messages.
 
 1. Ended the session by archiving the context and generating a summary with the function `end_session`. The summary captures key points from the conversation.
-
-</details>
 
 ## Root Context Best Practices
 

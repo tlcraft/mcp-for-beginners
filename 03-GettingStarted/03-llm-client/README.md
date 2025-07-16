@@ -48,8 +48,7 @@ Creating a GitHub token is a straightforward process. Here’s how you can do it
 
 Let's create our client first:
 
-<details>
-<summary>Typescript</summary>
+### Typescript
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -90,10 +89,7 @@ In the preceding code we've:
 - Create a class with two members, `client` and `openai` that will help us manage a client and interact with an LLM respectively.
 - Configured our LLM instance to use GitHub Models by setting `baseUrl` to point to the inference API.
 
-</details>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
@@ -128,10 +124,7 @@ In the preceding code we've:
 - Imported the needed libraries for MCP
 - Created a client
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 using Azure;
@@ -152,10 +145,7 @@ var clientTransport = new StdioClientTransport(new()
 await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 ```
 
-</details>
-
-<details>
-<summary>Java</summary>
+### Java
 
 First, you'll need to add the LangChain4j dependencies to your `pom.xml` file. Add these dependencies to enable MCP integration and GitHub Models support:
 
@@ -245,17 +235,13 @@ In the preceding code we've:
 - **Created an MCP client**: That will handle communication with the server
 - **Used LangChain4j's built-in MCP support**: Which simplifies integration between LLMs and MCP servers
 
-</details>
-
-
 Great, for our next step, let's list the capbilities on the server.
 
 ### -2 List server capabilities
 
 Now we will connect to the server and ask for its capabilities:
 
-<details>
-<summary>Typescript</summary>
+### Typescript
 
 In the same class, add the following methods:
 
@@ -279,10 +265,7 @@ In the preceding code we've:
 - Added code for connecting to the server, `connectToServer`.
 - Created a `run` method responsible for handling our app flow. So far it only lists the tools but we will add more to it shortly.
 
-</details>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 # List available resources
@@ -303,10 +286,7 @@ Here's what we added:
 
 - Listing resources and tools and printed them. For tools we also list `inputSchema` which we use later.
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -334,10 +314,7 @@ In the preceding code we've:
 - Listed the tools available on the MCP Server
 - For each tool, listed name, description and its schema. The latter is something we will use to call the tools shortly.
 
-</details>
-
-<details>
-<summary>Java</summary>
+### Java
 
 ```java
 // Create a tool provider that automatically discovers MCP tools
@@ -357,15 +334,12 @@ In the preceding code we've:
 - The tool provider handles the conversion between MCP tool schemas and LangChain4j's tool format internally
 - This approach abstracts away the manual tool listing and conversion process
 
-</details>
-
 
 ### -3- Convert server capabilities to LLM tools
 
 Next step after listing server capabilities is to convert them into a format that the LLM understands. Once we do that, we can provide these capabilities as tools to our LLM.
 
-<details>
-<summary>Typescript</summary>
+### TypeScript
 
 1. Add the following code to convert response from MCP Server to a tool format the LLM can use:
 
@@ -414,10 +388,7 @@ Next step after listing server capabilities is to convert them into a format tha
 
     In the preceding code, we've update the `run` method to map through the result and for each entry call `openAiToolAdapter`.
 
-</details>
-
-<details>
-<summary>Python</summary>
+### Python
 
 1. First, let's create the following converter function
 
@@ -452,38 +423,35 @@ Next step after listing server capabilities is to convert them into a format tha
 
     Here, we're adding a call to `convert_to_llm_tool` to convert the MCP tool response to something we can feed the LLM later.
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 1. Let's add code to convert the MCP tool response to something the LLM can understand
 
-    ```csharp
-    ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
-    { 
-        // convert the tool to a function definition
-        FunctionDefinition functionDefinition = new FunctionDefinition(name)
+```csharp
+ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
+{ 
+    // convert the tool to a function definition
+    FunctionDefinition functionDefinition = new FunctionDefinition(name)
+    {
+        Description = description,
+        Parameters = BinaryData.FromObjectAsJson(new
         {
-            Description = description,
-            Parameters = BinaryData.FromObjectAsJson(new
-            {
-                Type = "object",
-                Properties = jsonElement
-            },
-            new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase })
-        };
+            Type = "object",
+            Properties = jsonElement
+        },
+        new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase })
+    };
 
-        // create a tool definition
-        ChatCompletionsToolDefinition toolDefinition = new ChatCompletionsToolDefinition(functionDefinition);
-        return toolDefinition;
-    }
-    ```
+    // create a tool definition
+    ChatCompletionsToolDefinition toolDefinition = new ChatCompletionsToolDefinition(functionDefinition);
+    return toolDefinition;
+}
+```
 
-    In the preceding code we've:
+In the preceding code we've:
 
-    - Created a function `ConvertFrom` that takes, name, description and input schema.
-    - Defined functionality that creates a FunctionDefinition that gets passed to a ChatCompletionsDefinition. The latter is something the LLM can understand.
+- Created a function `ConvertFrom` that takes, name, description and input schema.
+- Defined functionality that creates a FunctionDefinition that gets passed to a ChatCompletionsDefinition. The latter is something the LLM can understand.
 
 1. Let's see how we can update some existing code to take advantage of this function above:
 
@@ -528,12 +496,7 @@ Next step after listing server capabilities is to convert them into a format tha
 
         The input schema is part of the tool response but on the "properties" attribute, so we need to extract. Furthermore, we now call `ConvertFrom` with the tool details. Now we've done the heavy lifting, let's see how it call comes together as we handle a user prompt next.
 
-</details>
-
-<details>
-<summary>Java</summary>
-
-```java
+### Java```java
 // Create a Bot interface for natural language interaction
 public interface Bot {
     String chat(String prompt);
@@ -553,16 +516,13 @@ In the preceding code we've:
 - The framework automatically handles tool schema conversion and function calling behind the scenes
 - This approach eliminates manual tool conversion - LangChain4j handles all the complexity of converting MCP tools to LLM-compatible format
 
-</details>
-
 Great, we're not set up to handle any user requests, so let's tackle that next.
 
 ### -4- Handle user prompt request
 
 In this part of the code, we will handle user requests.
 
-<details>
-<summary>Typescript</summary>
+### TypeScript
 
 1. Add a method that will be used to call our LLM:
 
@@ -799,10 +759,7 @@ let client = new MyClient();
 client.connectToServer(transport);
 ```
 
-</details>
-
-<details>
-<summary>Python</summary>
+### Python
 
 1. Let's add some imports needed to call an LLM
 
@@ -891,10 +848,7 @@ client.connectToServer(transport);
     - Calling an MCP tool via `call_tool` using a function that the LLM thought we should call based on our prompt.
     - Printing the result of the tool call to the MCP Server.
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 1. Let's show some code for doing an LLM prompt request:
 
@@ -1092,10 +1046,7 @@ for (int i = 0; i < response.ToolCalls.Count; i++)
 Console.WriteLine($"Assistant response: {content}");
 ```
 
-</details>
-
-<details>
-<summary>Java</summary>
+### Java
 
 ```java
 try {
@@ -1171,8 +1122,6 @@ public class LangChain4jClient {
     }
 }
 ```
-
-</details>
 
 Great, you did it!
 

@@ -29,8 +29,7 @@ Now that we understand at high level what we're about to do, let's look at an ex
 
 Let's have a look at this example client:
 
-<details>
-<summary>TypeScript</summary>
+### TypeScript
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -78,8 +77,6 @@ const result = await client.callTool({
 });
 ```
 
-</details>
-
 In the preceding code we:
 
 - Import the libraries
@@ -98,28 +95,21 @@ As said above, let's take our time explaining the code, and by all means code al
 
 Let's import the libraries we need, we will need references to a client and to our chosen transport protocol, stdio. stdio is a protocol for things meant to run on your local machine. SSE is another transport protocol we will show in future chapters but that's your other option. For now though, let's continue with stdio. 
 
-<details>
-<summary>TypeScript</summary>
+### TypeScript
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 ```
 
-</details>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
 from mcp.client.stdio import stdio_client
 ```
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 using Microsoft.Extensions.AI;
@@ -129,10 +119,7 @@ using ModelContextProtocol.Client;
 using ModelContextProtocol.Protocol.Transport;
 ```
 
-</details>
-
-<details>
-<summary>Java</summary>
+### Java
 
 For Java, you'll create a client that connects to the MCP server from the previous exercise. Using the same Java Spring Boot project structure from [Getting Started with MCP Server](../01-first-server/solution/java), create a new Java class called `SDKClient` in the `src/main/java/com/microsoft/mcp/sample/client/` folder and add the following imports:
 
@@ -147,16 +134,13 @@ import io.modelcontextprotocol.spec.McpSchema.CallToolResult;
 import io.modelcontextprotocol.spec.McpSchema.ListToolsResult;
 ```
 
-</details>
-
 Let's move on to instantiation.
 
 ### -2- Instantiating client and transport
 
 We will need to create an instance of the transport and that of our client:
 
-<details>
-<summary>TypeScript</summary>
+### TypeScript
 
 ```typescript
 const transport = new StdioClientTransport({
@@ -201,10 +185,7 @@ In the preceding code we've:
     await client.connect(transport);
     ```
 
-</details>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
@@ -240,10 +221,7 @@ In the preceding code we've:
 - Defined a method `run` that in turn calls `stdio_client` which starts a client session. 
 - Created an entry point where we provide the `run` method to `asyncio.run`.
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```dotnet
 using Microsoft.Extensions.AI;
@@ -277,10 +255,7 @@ In the preceding code we've:
 
 Note, in "Arguments", you can either point to the *.csproj* or to the executable.
 
-</details>
-
-<details>
-<summary>Java</summary>
+### Java
 
 ```java
 public class SDKClient {
@@ -312,14 +287,11 @@ In the preceding code we've:
 - In the `run` method, we create a synchronous MCP client using the transport and initialize the connection.
 - Used SSE (Server-Sent Events) transport which is suitable for HTTP-based communication with Java Spring Boot MCP servers.
 
-</details>
-
 ### -3- Listing the server features
 
 Now, we have a client that can connect to should the program be run. However, it doesn't actually list its features so let's do that next:
 
-<details>
-<summary>TypeScript</summary>
+### TypeScript
 
 ```typescript
 // List prompts
@@ -332,10 +304,7 @@ const resources = await client.listResources();
 const tools = await client.listTools();
 ```
 
-</details>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 # List available resources
@@ -353,10 +322,7 @@ for tool in tools.tools:
 
 Here we list the available resources, `list_resources()` and tools, `list_tools` and print them out.
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```dotnet
 foreach (var tool in await client.ListToolsAsync())
@@ -367,10 +333,7 @@ foreach (var tool in await client.ListToolsAsync())
 
 Above is an example how we can list the tools on the server. For each tool, we then print out its name.
 
-</details>
-
-<details>
-<summary>Java</summary>
+### Java
 
 ```java
 // List and demonstrate tools
@@ -387,16 +350,13 @@ In the preceding code we've:
 - Used `ping()` to verify that the connection to the server is working.
 - The `ListToolsResult` contains information about all tools including their names, descriptions, and input schemas.
 
-</details>
-
 Great, now we've captures all the features. Now the question is when do we use them? Well, this client is pretty simple, simple in the sense that we will need to explicitly call the features when we want them. In the next chapter, we will create a more advanced client that has access to it's own large language model, LLM. For now though, let's see how we can invoke the features on the server:
 
 ### -4- Invoke features
 
 To invoke the features we need to ensure we specify the correct arguments and in some cases the name of what we're trying to invoke.
 
-<details>
-<summary>TypeScript</summary>
+### TypeScript
 
 ```typescript
 
@@ -481,10 +441,7 @@ In the preceding code we:
     })
     ```
 
-</details>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 # Read a resource
@@ -502,10 +459,7 @@ In the preceding code, we've:
 - Called a resource called `greeting` using `read_resource`.
 - Invoked a tool called `add` using `call_tool`.
 
-</details>
-
-<details>
-<summary>C#</summary>
+### C#
 
 1. Let's add some code to call a tool:
 
@@ -523,10 +477,7 @@ In the preceding code, we've:
   // Sum 4
   ```
 
-</details>
-
-<details>
-<summary>Java</summary>
+### Java
 
 ```java
 // Call various calculator tools
@@ -553,14 +504,11 @@ In the preceding code we've:
 - The server tools expect specific parameter names (like "a", "b" for mathematical operations).
 - Results are returned as `CallToolResult` objects containing the response from the server.
 
-</details>
-
 ### -5- Run the client
 
 To run the client, type the following command in the terminal:
 
-<details>
-<summary>TypeScript</summary>
+### TypeScript
 
 Add the following entry to your "scripts" section in *package.json*:
 
@@ -572,10 +520,7 @@ Add the following entry to your "scripts" section in *package.json*:
 npm run client
 ```
 
-</details>
-
-<details>
-<summary>Python</summary>
+### Python
 
 Call the client with the following command:
 
@@ -583,19 +528,13 @@ Call the client with the following command:
 python client.py
 ```
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```sh
 dotnet run
 ```
 
-</details>
-
-<details>
-<summary>Java</summary>
+### Java
 
 First, ensure your MCP server is running on `http://localhost:8080`. Then run the client:
 
@@ -618,16 +557,13 @@ cd 03-GettingStarted/02-client/solution/java
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-</details>
-
 ## Assignment
 
 In this assignment, you'll use what you've learned in creating a client but create a client of your own.
 
 Here's a server you can use that you need to call via your client code, see if you can add more features to the server to make it more interesting.
 
-<details>
-<summary>TypeScript</summary>
+### TypeScript
 
 ```typescript
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -674,10 +610,7 @@ main().catch((error) => {
 });
 ```
 
-</details>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 # server.py
@@ -702,10 +635,7 @@ def get_greeting(name: str) -> str:
 
 ```
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -738,9 +668,6 @@ public static class CalculatorTool
 See this project to see how you can [add prompts and resources](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
 
 Also, check this link for how to invoke [prompts and resources](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
-
-</details>
-
 
 ## Solution
 
