@@ -414,7 +414,7 @@ cd calculator-server
 
 Create a file *server.py*
 ```sh
-echo "" > server.py
+touch server.py
 ```
 </details>
 
