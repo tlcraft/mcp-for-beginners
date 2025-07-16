@@ -66,7 +66,7 @@ You can review the full implementation in [`server.py`](./server.py).
 
 Here is a brief example of how the server defines and registers a tool:
 
-# [Python Server](#tab/python-server)
+### Python Server
 
 ```python
 # server.py (excerpt)
