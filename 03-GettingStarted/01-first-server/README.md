@@ -1018,7 +1018,8 @@ However, it doesn't implement all the methods available on the tool so you're re
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
 ```
-Make sure you have `python` in the `Command` field and `server.py` as `Arguments`.
+If you're using a tool or IDE that allows you to configure commands and arguments for running scripts, 
+make sure to set `python` in the `Command` field and `server.py` as `Arguments`. This ensures the script runs correctly.
 
 ### .NET
 
