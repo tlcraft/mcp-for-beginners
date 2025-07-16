@@ -31,7 +31,7 @@ Horizontal scaling involves deploying multiple instances of MCP servers and usin
 
 Let's look at an example of how to configure horizontal scaling and MCP.
 
-# [.NET](#tab/dotnet)
+### [.NET](#tab/dotnet)
 
 ```csharp
 // ASP.NET Core MCP load balancing configuration
