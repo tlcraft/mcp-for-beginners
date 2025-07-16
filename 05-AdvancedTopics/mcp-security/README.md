@@ -363,7 +363,7 @@ This vulnerability occurs when an MCP server acts as a proxy to third-party APIs
 
 Token passthrough occurs when an MCP server accepts tokens from an MCP client without validating that the tokens were properly issued to the MCP server and passes them through to downstream APIs.
 
-**Risks:**
+### Risks
 - Security control circumvention (bypassing rate limiting, request validation)
 - Accountability and audit trail issues
 - Trust boundary violations
