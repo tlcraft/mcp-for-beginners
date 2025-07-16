@@ -75,7 +75,9 @@ In the preceding code we:
 
   What happens behind the scenes is that the routes `/sse` and `/messages` are setup to handle connections and messages respectively. The rest of the app, like adding features like tools, happens like with stdio servers.
 
-### .NET    ```csharp
+### .NET    
+
+```csharp
     var builder = WebApplication.CreateBuilder(args);
     builder.Services
         .AddMcpServer()
