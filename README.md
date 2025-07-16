@@ -38,6 +38,7 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 - 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Detailed tutorials and user guides  
 - 📜 [MCP Specification](https://modelcontextprotocol.io/docs/) – Protocol architecture and technical references  
+- 📜 [Original MCP Specification](https://spec.modelcontextprotocol.io/) – Legacy technical references (may contain additional details)  
 - 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples
 - 🌐 [MCP Community](https://github.com/orgs/modelcontextprotocol/discussions) – Join discussions and contribute to the community
 
