@@ -128,7 +128,7 @@ Sampling parameters allow fine-tuning the behavior of language models to achieve
 
 Let's look at how to configure these parameters in different programming languages.
 
-# [.NET](#tab/dotnet)
+# [.NET](#tab-dotnet)
 
 ```csharp
 // .NET Example: Configuring sampling parameters in MCP
