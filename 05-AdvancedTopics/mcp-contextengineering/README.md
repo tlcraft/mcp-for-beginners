@@ -20,7 +20,7 @@ Context engineering is an emerging concept focused on the deliberate design and 
 
 As large language models (LLMs) have evolved, the importance of context has become increasingly apparent. The quality, relevance, and structure of the context we provide directly impacts model outputs. Context engineering explores this relationship and seeks to develop principles for effective context management.
 
-> "In 2025, the models out there are extremely intelligent. But even the smartest human won't be able to do their job effectively without the context of what they're being asked to do... 'Context engineering' is the next level of [prompt engineering]. It is about doing this automatically in a dynamic system." — Walden Yan, Cognition AI
+> "In 2025, the models out there are extremely intelligent. But even the smartest human won't be able to do their job effectively without the context of what they're being asked to do... 'Context engineering' is the next level of prompt engineering. It is about doing this automatically in a dynamic system." — Walden Yan, Cognition AI
 
 Context engineering might encompass:
 
