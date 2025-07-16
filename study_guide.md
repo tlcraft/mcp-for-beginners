@@ -4,7 +4,7 @@ This study guide provides an overview of the repository structure and content fo
 
 ## Repository Overview
 
-The Model Context Protocol (MCP) is a standardized framework for interactions between AI models and client applications. Created by Anthropic, MCP allows AI assistants to access external tools and services securely. This repository provides a comprehensive curriculum with hands-on code examples in various programming languages, designed for AI developers, system architects, and software engineers.
+The Model Context Protocol (MCP) is a standardized framework for interactions between AI models and client applications. Initially created by Anthropic, MCP is now maintained by the broader MCP community and the official GitHub organization. This repository provides a comprehensive curriculum with hands-on code examples in various programming languages, designed for AI developers, system architects, and software engineers.
 
 ## Visual Curriculum Map
 
