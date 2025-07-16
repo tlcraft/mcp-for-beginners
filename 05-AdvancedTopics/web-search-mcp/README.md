@@ -39,7 +39,7 @@ This implementation features four tools that showcase MCP's ability to handle di
 ### Features
 - **Code Examples**: Includes language-specific code blocks for Python (and easily extendable to other languages) using code pivots for clarity
 
-# [Python](#tab/python)
+### [Python](#tab/python)
 
 ```python
 # Example usage of the general_search tool

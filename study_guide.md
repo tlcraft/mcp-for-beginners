@@ -181,7 +181,7 @@ The repository includes supporting resources:
 - **Translations**: Multi-language support with automated translations of documentation
 - **Official MCP Resources**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
-  - [MCP Specification](https://modelcontextprotocol.io/docs/)
+  - [MCP Specification](https://spec.modelcontextprotocol.io/)
   - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## How to Use This Repository

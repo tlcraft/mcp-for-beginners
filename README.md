@@ -152,20 +152,6 @@ To get the most out of this curriculum, you should have:
 - Familiarity with REST and HTTP concepts
 - (Optional) Background in AI/ML concepts
 
-## 🛠️ How to Use This Curriculum Effectively
-
-Each lesson in this guide includes:
-
-1. Clear explanations of MCP concepts
-2. Live code examples in multiple languages
-3. Exercises to build real MCP applications
-4. Additional resources for further learning
-
-We recommend:
-
-- Following the chapters in sequence from 00 through 10
-- Completing the exercises in each section
-- Exploring the sample code projects that interest you
 - Joining our community discussions for support
 
 ## 📚 Study Guide & Resources
