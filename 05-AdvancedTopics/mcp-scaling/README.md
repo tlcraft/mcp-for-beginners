@@ -67,7 +67,7 @@ In the preceding code we've:
 - Enabled distributed caching in the MCP server configuration.
 - Registered a high-performance tool that can be used across multiple MCP instances.
 
-***
+---
 
 ## Vertical Scaling and Resource Optimization
 
@@ -114,7 +114,7 @@ In the preceding code, we have:
 - Set resource constraints such as maximum request size, maximum concurrent requests, and request timeout.
 - Used a backpressure strategy to handle overload situations gracefully.
 
-***
+---
 
 ## Distributed Architecture
 
@@ -214,7 +214,7 @@ In the preceding code, we have:
 - Used asynchronous programming to handle requests efficiently and maintain responsiveness.
 - Utilized Redis for coordination and state management across distributed nodes.
 
-***
+---
 
 
 ## What's next
