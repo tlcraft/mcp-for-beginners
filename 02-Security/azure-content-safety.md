@@ -32,4 +32,4 @@ To learn more about implementing Azure Content Safety with your MCP servers, con
 6. [Detecting Jailbreak Attempts](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) - Specific guidance on detecting and preventing jailbreak attempts.
 7. [Best Practices for Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/best-practices) - Best practices for implementing content safety effectively.
 
-For a more in-depth implementation example, see our [Azure Content Safety Implementation guide](./azure-content-safety-implementation.md).
+For a more in-depth implementation, see our [Azure Content Safety Implementation guide](./azure-content-safety-implementation.md).
