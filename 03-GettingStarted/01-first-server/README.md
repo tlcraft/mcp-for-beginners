@@ -185,7 +185,7 @@ This differs a little bit depending your chosen runtime, so choose one of the ru
 # Create project dir
 mkdir calculator-server
 cd calculator-server
-# Open the folder in Visual Studio Code - skip it if you are using a different IDE
+# Open the folder in Visual Studio Code - Skip this if you are using a different IDE
 code .
 ```
 
