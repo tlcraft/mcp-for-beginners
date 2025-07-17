@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:17:32+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:34:59+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "th"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## บทนำ
 
-Model Context Protocol (MCP) เป็นมาตรฐานเปิดที่ช่วยให้แอปพลิเคชัน AI สามารถเชื่อมต่อกับแหล่งข้อมูลและเครื่องมือภายนอกได้อย่างปลอดภัย เมื่อรวมกับ Azure AI Foundry MCP ช่วยให้เอเจนต์เข้าถึงและโต้ตอบกับบริการภายนอก API และแหล่งข้อมูลต่างๆ ได้ในรูปแบบมาตรฐาน
+Model Context Protocol (MCP) เป็นมาตรฐานเปิดที่ช่วยให้แอปพลิเคชัน AI สามารถเชื่อมต่อกับแหล่งข้อมูลและเครื่องมือภายนอกได้อย่างปลอดภัย เมื่อรวมกับ Azure AI Foundry MCP ช่วยให้เอเจนต์สามารถเข้าถึงและโต้ตอบกับบริการภายนอก API และแหล่งข้อมูลต่างๆ ได้ในรูปแบบที่เป็นมาตรฐาน
 
 การรวมนี้ผสมผสานความยืดหยุ่นของระบบนิเวศเครื่องมือ MCP กับกรอบงานเอเจนต์ที่แข็งแกร่งของ Azure AI Foundry เพื่อมอบโซลูชัน AI ระดับองค์กรที่มีความสามารถในการปรับแต่งอย่างกว้างขวาง
 
@@ -26,12 +26,12 @@ Model Context Protocol (MCP) เป็นมาตรฐานเปิดที
 - เข้าใจ Model Context Protocol และประโยชน์ของมัน
 - ตั้งค่าเซิร์ฟเวอร์ MCP สำหรับใช้งานกับเอเจนต์ Azure AI Foundry
 - สร้างและกำหนดค่าเอเจนต์ที่รวมเครื่องมือ MCP
-- นำตัวอย่างการใช้งานจริงกับเซิร์ฟเวอร์ MCP มาใช้
-- จัดการกับการตอบกลับและการอ้างอิงเครื่องมือในบทสนทนาเอเจนต์
+- นำตัวอย่างใช้งานจริงกับเซิร์ฟเวอร์ MCP มาใช้
+- จัดการกับการตอบกลับของเครื่องมือและการอ้างอิงในบทสนทนาของเอเจนต์
 
 ## ข้อกำหนดเบื้องต้น
 
-ก่อนเริ่มต้น โปรดตรวจสอบว่าคุณมี:
+ก่อนเริ่มต้น ให้แน่ใจว่าคุณมี:
 
 - การสมัครใช้งาน Azure ที่เข้าถึง AI Foundry ได้
 - Python 3.10 ขึ้นไป หรือ .NET 8.0 ขึ้นไป
@@ -60,6 +60,8 @@ Model Context Protocol คือวิธีมาตรฐานสำหรั
 
 ## การใช้งาน Python
 
+***Note*** คุณสามารถรัน [notebook นี้](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
+
 ### 1. ติดตั้งแพ็กเกจที่จำเป็น
 
 ```bash
@@ -78,7 +80,7 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import McpTool, RequiredMcpToolCall, SubmitToolApprovalAction, ToolApproval
 ```
 
-### 3. กำหนดค่าการตั้งค่า MCP
+### 3. กำหนดค่า MCP
 
 ```python
 mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/api/mcp")
@@ -187,6 +189,8 @@ with project_client:
 
 ## การใช้งาน .NET
 
+***Note*** คุณสามารถรัน [notebook นี้](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+
 ### 1. ติดตั้งแพ็กเกจที่จำเป็น
 
 ```csharp
@@ -201,7 +205,7 @@ using Azure.AI.Agents.Persistent;
 using Azure.Identity;
 ```
 
-### 3. กำหนดค่าการตั้งค่า
+### 3. กำหนดค่า
 
 ```csharp
 var projectEndpoint = "https://your-project-endpoint.services.ai.azure.com/api/projects/your-project";
@@ -376,10 +380,10 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ## การสนับสนุน
 
 สำหรับการสนับสนุนและคำถามเพิ่มเติม:
-- ดูเอกสาร [Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- ตรวจสอบแหล่งข้อมูลชุมชน [MCP](https://modelcontextprotocol.io/)
+- ตรวจสอบ [เอกสาร Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- ดูแหล่งข้อมูลชุมชน [MCP](https://modelcontextprotocol.io/)
 
-## ต่อไปคือ
+## ต่อไปคืออะไร
 
 - [6. การมีส่วนร่วมของชุมชน](../../06-CommunityContributions/README.md)
 

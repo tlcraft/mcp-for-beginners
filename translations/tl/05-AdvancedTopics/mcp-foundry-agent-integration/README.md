@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:19:44+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:37:17+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "tl"
 }
@@ -13,7 +13,7 @@ Ipinapakita ng gabay na ito kung paano i-integrate ang Model Context Protocol (M
 
 ## Panimula
 
-Ang Model Context Protocol (MCP) ay isang bukas na pamantayan na nagpapahintulot sa mga AI application na ligtas na kumonekta sa mga panlabas na pinagkukunan ng datos at mga tool. Kapag na-integrate sa Azure AI Foundry, pinapayagan ng MCP ang mga agent na ma-access at makipag-ugnayan sa iba't ibang panlabas na serbisyo, API, at pinagkukunan ng datos sa isang standardized na paraan.
+Ang Model Context Protocol (MCP) ay isang bukas na pamantayan na nagpapahintulot sa mga AI application na ligtas na kumonekta sa mga panlabas na pinagkukunan ng data at mga tool. Kapag na-integrate sa Azure AI Foundry, pinapayagan ng MCP ang mga agent na ma-access at makipag-ugnayan sa iba't ibang panlabas na serbisyo, API, at pinagkukunan ng data sa isang standardized na paraan.
 
 Pinagsasama ng integrasyong ito ang kakayahang umangkop ng MCP tool ecosystem at ang matibay na agent framework ng Azure AI Foundry, na nagbibigay ng enterprise-grade AI solutions na may malawak na kakayahan sa pag-customize.
 
@@ -27,7 +27,7 @@ Sa pagtatapos ng gabay na ito, magagawa mong:
 - Mag-set up ng MCP servers para gamitin kasama ang Azure AI Foundry agents
 - Gumawa at mag-configure ng mga agent na may MCP tool integration
 - Magpatupad ng mga praktikal na halimbawa gamit ang totoong MCP servers
-- Pamahalaan ang mga tugon ng tool at mga citation sa mga pag-uusap ng agent
+- Pangasiwaan ang mga tugon ng tool at mga citation sa mga pag-uusap ng agent
 
 ## Mga Kinakailangan
 
@@ -40,14 +40,14 @@ Bago magsimula, tiyaking mayroon kang:
 
 ## Ano ang Model Context Protocol (MCP)?
 
-Ang Model Context Protocol ay isang standardized na paraan para sa mga AI application na kumonekta sa mga panlabas na pinagkukunan ng datos at mga tool. Kabilang sa mga pangunahing benepisyo nito ang:
+Ang Model Context Protocol ay isang standardized na paraan para sa mga AI application na kumonekta sa mga panlabas na pinagkukunan ng data at mga tool. Kabilang sa mga pangunahing benepisyo nito ang:
 
 - **Standardized Integration**: Pare-parehong interface sa iba't ibang tool at serbisyo
-- **Seguridad**: Ligtas na authentication at authorization na mga mekanismo
-- **Kakayahang Umangkop**: Suporta para sa iba't ibang pinagkukunan ng datos, API, at custom na mga tool
-- **Extensibility**: Madaling magdagdag ng bagong kakayahan at integrasyon
+- **Security**: Ligtas na mga mekanismo ng authentication at authorization
+- **Flexibility**: Suporta para sa iba't ibang pinagkukunan ng data, API, at custom na mga tool
+- **Extensibility**: Madaling magdagdag ng mga bagong kakayahan at integrasyon
 
-## Pag-setup ng MCP sa Azure AI Foundry
+## Pagsasaayos ng MCP sa Azure AI Foundry
 
 ### Pag-configure ng Kapaligiran
 
@@ -59,6 +59,8 @@ Pumili ng iyong nais na development environment:
 ---
 
 ## Python Implementation
+
+***Note*** Maaari mong patakbuhin ang [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) na ito
 
 ### 1. I-install ang Mga Kinakailangang Package
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET Implementation
+
+***Note*** Maaari mong patakbuhin ang [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) na ito
 
 ### 1. I-install ang Mga Kinakailangang Package
 
@@ -340,11 +344,11 @@ MCPToolResource mcpToolResource = new(mcpServerLabel);
 mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ```
 
-## Pag-troubleshoot ng Karaniwang Mga Isyu
+## Pag-aayos ng Karaniwang Mga Isyu
 
 ### 1. Mga Isyu sa Koneksyon
 - Siguraduhing naa-access ang MCP server URL
-- Suriin ang mga authentication credentials
+- Suriin ang mga kredensyal sa authentication
 - Tiyaking may koneksyon sa network
 
 ### 2. Mga Pagkabigo sa Pagtawag ng Tool
@@ -361,9 +365,9 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 Para lalo pang pagandahin ang iyong MCP integration:
 
-1. **Suriin ang Custom MCP Servers**: Gumawa ng sarili mong MCP servers para sa proprietary na pinagkukunan ng datos
+1. **Suriin ang Custom MCP Servers**: Gumawa ng sarili mong MCP servers para sa proprietary na pinagkukunan ng data
 2. **Magpatupad ng Advanced Security**: Magdagdag ng OAuth2 o custom na mga mekanismo ng authentication
-3. **Mag-monitor at Mag-analisa**: Magpatupad ng logging at monitoring para sa paggamit ng tool
+3. **Subaybayan at Mag-analisa**: Magpatupad ng logging at monitoring para sa paggamit ng tool
 4. **I-scale ang Iyong Solusyon**: Isaalang-alang ang load balancing at distributed MCP server architectures
 
 ## Karagdagang Mga Mapagkukunan

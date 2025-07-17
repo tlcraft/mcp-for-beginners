@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "748c61250d4a326206b72b28f6154615",
-  "translation_date": "2025-07-13T23:40:00+00:00",
+  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
+  "translation_date": "2025-07-16T23:24:14+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "ru"
 }
@@ -46,9 +46,9 @@ CO_OP_TRANSLATOR_METADATA:
 ## Дополнительные ссылки
 
 Для получения самой актуальной информации по продвинутым темам MCP обращайтесь к:
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Repository](https://github.com/modelcontextprotocol)
+- [Документация MCP](https://modelcontextprotocol.io/)
+- [Спецификация MCP](https://spec.modelcontextprotocol.io/)
+- [Репозиторий на GitHub](https://github.com/modelcontextprotocol)
 
 ## Основные выводы
 
@@ -66,7 +66,7 @@ CO_OP_TRANSLATOR_METADATA:
 2. Опишите меры безопасности для защиты конфиденциальных данных
 3. Спроектируйте масштабируемую архитектуру, способную справляться с переменной нагрузкой
 4. Запланируйте точки интеграции с корпоративными AI-системами
-5. Задокументируйте возможные узкие места производительности и стратегии их устранения
+5. Задокументируйте возможные узкие места по производительности и стратегии их устранения
 
 ## Дополнительные ресурсы
 

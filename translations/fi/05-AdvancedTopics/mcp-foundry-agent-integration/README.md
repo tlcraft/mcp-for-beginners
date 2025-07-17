@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:18:29+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:35:58+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "fi"
 }
@@ -13,7 +13,7 @@ Tässä oppaassa näytetään, miten Model Context Protocol (MCP) -palvelimet in
 
 ## Johdanto
 
-Model Context Protocol (MCP) on avoin standardi, joka mahdollistaa tekoälysovellusten turvallisen yhteyden ulkoisiin tietolähteisiin ja työkaluihin. Kun MCP integroidaan Azure AI Foundryn kanssa, agentit voivat käyttää ja olla vuorovaikutuksessa eri ulkoisten palveluiden, API:en ja tietolähteiden kanssa yhtenäisellä tavalla.
+Model Context Protocol (MCP) on avoin standardi, joka mahdollistaa tekoälysovellusten turvallisen yhteyden ulkoisiin tietolähteisiin ja työkaluihin. Kun MCP integroidaan Azure AI Foundryn kanssa, agentit voivat käyttää ja olla vuorovaikutuksessa erilaisten ulkoisten palveluiden, API:en ja tietolähteiden kanssa yhtenäisellä tavalla.
 
 Tämä integraatio yhdistää MCP:n työkaluekosysteemin joustavuuden Azure AI Foundryn vankan agenttikehyksen kanssa, tarjoten yritystason tekoälyratkaisuja laajoilla räätälöintimahdollisuuksilla.
 
@@ -24,7 +24,7 @@ Tämä integraatio yhdistää MCP:n työkaluekosysteemin joustavuuden Azure AI F
 Oppaan lopussa osaat:
 
 - Ymmärtää Model Context Protocolin ja sen hyödyt
-- Määrittää MCP-palvelimet käytettäväksi Azure AI Foundryn agenttien kanssa
+- Määrittää MCP-palvelimet Azure AI Foundryn agenteille
 - Luoda ja konfiguroida agentteja MCP-työkalujen integroinnilla
 - Toteuttaa käytännön esimerkkejä oikeilla MCP-palvelimilla
 - Käsitellä työkalujen vastauksia ja lähdeviitteitä agenttikeskusteluissa
@@ -33,7 +33,7 @@ Oppaan lopussa osaat:
 
 Varmista ennen aloittamista, että sinulla on:
 
-- Azure-tilaus, jossa on pääsy AI Foundryyn
+- Azure-tilaus, jossa on AI Foundryn käyttöoikeus
 - Python 3.10+ tai .NET 8.0+
 - Azure CLI asennettuna ja konfiguroituna
 - Tarvittavat oikeudet AI-resurssien luomiseen
@@ -42,9 +42,9 @@ Varmista ennen aloittamista, että sinulla on:
 
 Model Context Protocol on standardoitu tapa, jolla tekoälysovellukset voivat yhdistää ulkoisiin tietolähteisiin ja työkaluihin. Keskeisiä etuja ovat:
 
-- **Standardoitu integraatio**: Johdonmukainen rajapinta eri työkaluille ja palveluille
+- **Standardoitu integraatio**: Yhtenäinen rajapinta eri työkaluille ja palveluille
 - **Turvallisuus**: Turvalliset todennus- ja valtuutusmekanismit
-- **Joustavuus**: Tuki erilaisille tietolähteille, API:ille ja räätälöidyille työkaluilla
+- **Joustavuus**: Tuki erilaisille tietolähteille, API:lle ja räätälöidyille työkaluilla
 - **Laajennettavuus**: Helppo lisätä uusia ominaisuuksia ja integraatioita
 
 ## MCP:n käyttöönotto Azure AI Foundryn kanssa
@@ -59,6 +59,8 @@ Valitse haluamasi kehitysympäristö:
 ---
 
 ## Python-toteutus
+
+***Note*** Voit suorittaa tämän [notebookin](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Asenna tarvittavat paketit
 
@@ -85,7 +87,7 @@ mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/a
 mcp_server_label = os.environ.get("MCP_SERVER_LABEL", "mslearn")
 ```
 
-### 4. Alusta projektin client
+### 4. Alusta projektin asiakas
 
 ```python
 project_client = AIProjectClient(
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET-toteutus
+
+***Note*** Voit suorittaa tämän [notebookin](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Asenna tarvittavat paketit
 
@@ -359,11 +363,11 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## Seuraavat askeleet
 
-Parantaaksesi MCP-integraatiotasi entisestään:
+MCP-integraation kehittämiseksi edelleen:
 
 1. **Tutustu räätälöityihin MCP-palvelimiin**: Rakenna omia MCP-palvelimia omille tietolähteillesi
 2. **Ota käyttöön kehittynyt turvallisuus**: Lisää OAuth2- tai mukautetut todennusmekanismit
-3. **Seuranta ja analytiikka**: Toteuta lokitus ja valvonta työkalujen käytölle
+3. **Seuranta ja analytiikka**: Toteuta lokitus ja seuranta työkalujen käytölle
 4. **Skaalaa ratkaisusi**: Harkitse kuormantasauksen ja hajautettujen MCP-palvelinarkkitehtuurien käyttöä
 
 ## Lisäresurssit

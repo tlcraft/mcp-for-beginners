@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:21:34+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:39:18+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "hr"
 }
@@ -15,7 +15,7 @@ Ovaj vodič pokazuje kako integrirati Model Context Protocol (MCP) servere s Azu
 
 Model Context Protocol (MCP) je otvoreni standard koji omogućuje AI aplikacijama sigurno povezivanje s vanjskim izvorima podataka i alatima. Kada se integrira s Azure AI Foundry, MCP omogućuje agentima pristup i interakciju s različitim vanjskim uslugama, API-jima i izvorima podataka na standardiziran način.
 
-Ova integracija spaja fleksibilnost MCP-ovog ekosustava alata s robusnim okvirom agenata Azure AI Foundry, pružajući AI rješenja razine poduzeća s opsežnim mogućnostima prilagodbe.
+Ova integracija spaja fleksibilnost MCP-ovog ekosustava alata s robusnim okvirom Azure AI Foundry agenata, pružajući AI rješenja razine poduzeća s opsežnim mogućnostima prilagodbe.
 
 **Note:** Ako želite koristiti MCP u Azure AI Foundry Agent Service, trenutno su podržane samo sljedeće regije: westus, westus2, uaenorth, southindia i switzerlandnorth
 
@@ -59,6 +59,8 @@ Odaberite željeno razvojno okruženje:
 ---
 
 ## Python implementacija
+
+***Note*** Možete pokrenuti ovaj [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Instalirajte potrebne pakete
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET implementacija
+
+***Note*** Možete pokrenuti ovaj [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Instalirajte potrebne pakete
 
@@ -348,13 +352,13 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Osigurajte mrežnu povezanost
 
 ### 2. Neuspjesi poziva alata
-- Pregledajte argumente i format poziva alata
+- Pregledajte argumente i formatiranje poziva alata
 - Provjerite zahtjeve specifične za server
-- Implementirajte ispravno rukovanje greškama
+- Implementirajte ispravno rukovanje pogreškama
 
 ### 3. Problemi s performansama
 - Optimizirajte učestalost poziva alata
-- Implementirajte keširanje gdje je prikladno
+- Koristite keširanje gdje je prikladno
 - Pratite vrijeme odziva servera
 
 ## Sljedeći koraci
@@ -369,7 +373,7 @@ Za dodatno unapređenje vaše MCP integracije:
 ## Dodatni resursi
 
 - [Azure AI Foundry dokumentacija](https://learn.microsoft.com/azure/ai-foundry/)
-- [Model Context Protocol primjeri](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
+- [Primjeri Model Context Protocol](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
 - [Pregled Azure AI Foundry agenata](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [MCP specifikacija](https://spec.modelcontextprotocol.io/)
 
@@ -384,4 +388,4 @@ Za dodatnu podršku i pitanja:
 - [6. Doprinos zajednice](../../06-CommunityContributions/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

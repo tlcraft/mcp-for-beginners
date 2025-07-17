@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-07-13T15:13:35+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T05:29:14+00:00",
   "source_file": "study_guide.md",
   "language_code": "br"
 }
 -->
-# Model Context Protocol (MCP) para Iniciantes - Guia de Estudo
+# Protocolo de Contexto de Modelo (MCP) para Iniciantes - Guia de Estudo
 
-Este guia de estudo oferece uma visão geral da estrutura e do conteúdo do repositório para o currículo "Model Context Protocol (MCP) para Iniciantes". Use este guia para navegar pelo repositório de forma eficiente e aproveitar ao máximo os recursos disponíveis.
+Este guia de estudo oferece uma visão geral da estrutura e do conteúdo do repositório para o currículo "Protocolo de Contexto de Modelo (MCP) para Iniciantes". Use este guia para navegar pelo repositório de forma eficiente e aproveitar ao máximo os recursos disponíveis.
 
 ## Visão Geral do Repositório
 
-O Model Context Protocol (MCP) é um framework padronizado para interações entre modelos de IA e aplicações clientes. Este repositório oferece um currículo completo com exemplos práticos em C#, Java, JavaScript, Python e TypeScript, voltado para desenvolvedores de IA, arquitetos de sistemas e engenheiros de software.
+O Protocolo de Contexto de Modelo (MCP) é uma estrutura padronizada para interações entre modelos de IA e aplicações clientes. Inicialmente criado pela Anthropic, o MCP agora é mantido pela comunidade mais ampla do MCP por meio da organização oficial no GitHub. Este repositório oferece um currículo completo com exemplos práticos de código em C#, Java, JavaScript, Python e TypeScript, voltado para desenvolvedores de IA, arquitetos de sistemas e engenheiros de software.
 
 ## Mapa Visual do Currículo
 
@@ -38,10 +38,11 @@ mindmap
     03. Getting Started
       ::icon(fa fa-rocket)
       (First Server)
-      (First Client)
+      (Client)
       (LLM Client)
       (VS Code Integration)
       (SSE Server)
+      (HTTP Streaming)
       (AI Toolkit)
       (Testing)
       (Deployment)
@@ -53,17 +54,27 @@ mindmap
       (Sample Projects)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
+      (Context Engineering)
+      (Foundry Integration)
       (Multi-modal AI)
-      (Scaling)
-      (Enterprise Integration)
-      (Azure Integration)
-      (OAuth2)
+      (OAuth2 Demo)
+      (Real-time Search)
+      (Streaming)
       (Root Contexts)
+      (Routing)
+      (Sampling)
+      (Scaling)
+      (Security)
+      (Entra ID)
+      (Web Search)
+      
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (Feedback)
+      (MCP Clients)
+      (MCP Servers)
+      (Image Generation)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
       (Real-world Examples)
@@ -76,9 +87,10 @@ mindmap
       (Resilience)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (Solution Architectures)
-      (Deployment Blueprints)
-      (Project Walkthroughs)
+      (API Management)
+      (Travel Agent)
+      (Azure DevOps)
+      (Documentation MCP)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
       (AI Toolkit Integration)
@@ -91,7 +103,7 @@ mindmap
 O repositório está organizado em dez seções principais, cada uma focada em diferentes aspectos do MCP:
 
 1. **Introdução (00-Introduction/)**
-   - Visão geral do Model Context Protocol
+   - Visão geral do Protocolo de Contexto de Modelo
    - Por que a padronização é importante em pipelines de IA
    - Casos de uso práticos e benefícios
 
@@ -107,9 +119,18 @@ O repositório está organizado em dez seções principais, cada uma focada em d
 
 4. **Primeiros Passos (03-GettingStarted/)**
    - Configuração e preparação do ambiente
-   - Criando servidores e clientes MCP básicos
+   - Criação de servidores e clientes MCP básicos
    - Integração com aplicações existentes
-   - Subseções para primeiro servidor, primeiro cliente, cliente LLM, integração com VS Code, servidor SSE, AI Toolkit, testes e implantação
+   - Inclui seções para:
+     - Primeira implementação de servidor
+     - Desenvolvimento de cliente
+     - Integração com cliente LLM
+     - Integração com VS Code
+     - Servidor Server-Sent Events (SSE)
+     - Streaming HTTP
+     - Integração com AI Toolkit
+     - Estratégias de testes
+     - Diretrizes de implantação
 
 5. **Implementação Prática (04-PracticalImplementation/)**
    - Uso de SDKs em diferentes linguagens de programação
@@ -118,15 +139,26 @@ O repositório está organizado em dez seções principais, cada uma focada em d
    - Projetos de exemplo com casos de implementação
 
 6. **Tópicos Avançados (05-AdvancedTopics/)**
-   - Fluxos de trabalho multimodais de IA e extensibilidade
-   - Estratégias seguras para escalabilidade
-   - MCP em ecossistemas empresariais
-   - Tópicos especializados incluindo integração com Azure, multimodalidade, OAuth2, contextos raiz, roteamento, amostragem, escalabilidade, segurança, integração com busca web e streaming.
+   - Técnicas de engenharia de contexto
+   - Integração com agente Foundry
+   - Fluxos de trabalho multimodais de IA
+   - Demonstrações de autenticação OAuth2
+   - Capacidades de busca em tempo real
+   - Streaming em tempo real
+   - Implementação de contextos raiz
+   - Estratégias de roteamento
+   - Técnicas de amostragem
+   - Abordagens de escalabilidade
+   - Considerações de segurança
+   - Integração de segurança Entra ID
+   - Integração com busca na web
 
 7. **Contribuições da Comunidade (06-CommunityContributions/)**
    - Como contribuir com código e documentação
    - Colaboração via GitHub
    - Melhorias e feedback impulsionados pela comunidade
+   - Uso de diversos clientes MCP (Claude Desktop, Cline, VSCode)
+   - Trabalho com servidores MCP populares, incluindo geração de imagens
 
 8. **Lições da Adoção Inicial (07-LessonsfromEarlyAdoption/)**
    - Implementações reais e histórias de sucesso
@@ -139,38 +171,22 @@ O repositório está organizado em dez seções principais, cada uma focada em d
    - Estratégias de testes e resiliência
 
 10. **Estudos de Caso (09-CaseStudy/)**
-    - Análises detalhadas de arquiteturas de soluções MCP
-    - Modelos de implantação e dicas de integração
-    - Diagramas anotados e walkthroughs de projetos
+    - Estudo de caso: integração com Azure API Management
+    - Estudo de caso: implementação de agente de viagens
+    - Estudo de caso: integração Azure DevOps com YouTube
+    - Exemplos de implementação com documentação detalhada
 
 11. **Workshop Prático (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Workshop prático completo combinando MCP com o AI Toolkit da Microsoft para VS Code
+    - Workshop prático completo combinando MCP com AI Toolkit
     - Construção de aplicações inteligentes que conectam modelos de IA com ferramentas do mundo real
     - Módulos práticos cobrindo fundamentos, desenvolvimento de servidor customizado e estratégias de implantação em produção
-
-## Projetos de Exemplo
-
-O repositório inclui diversos projetos de exemplo que demonstram a implementação do MCP em diferentes linguagens de programação:
-
-### Exemplos Básicos de Calculadora MCP
-- Exemplo de Servidor MCP em C#
-- Calculadora MCP em Java
-- Demonstração MCP em JavaScript
-- Servidor MCP em Python
-- Exemplo MCP em TypeScript
-
-### Projetos Avançados de Calculadora MCP
-- Exemplo Avançado em C#
-- Aplicação Container em Java
-- Exemplo Avançado em JavaScript
-- Implementação Complexa em Python
-- Exemplo Container em TypeScript
+    - Abordagem de aprendizado em laboratório com instruções passo a passo
 
 ## Recursos Adicionais
 
-O repositório inclui recursos complementares:
+O repositório inclui recursos de apoio:
 
-- **Pasta de Imagens**: Contém diagramas e ilustrações usados ao longo do currículo
+- **Pasta de imagens**: Contém diagramas e ilustrações usadas ao longo do currículo
 - **Traduções**: Suporte multilíngue com traduções automáticas da documentação
 - **Recursos Oficiais do MCP**:
   - [Documentação MCP](https://modelcontextprotocol.io/)
@@ -180,18 +196,73 @@ O repositório inclui recursos complementares:
 ## Como Usar Este Repositório
 
 1. **Aprendizado Sequencial**: Siga os capítulos na ordem (00 a 10) para uma experiência de aprendizado estruturada.
-2. **Foco em Linguagem Específica**: Se preferir uma linguagem de programação específica, explore os diretórios de exemplos para encontrar implementações na sua linguagem favorita.
+2. **Foco em Linguagem Específica**: Se estiver interessado em uma linguagem de programação específica, explore os diretórios de exemplos para implementações na sua linguagem preferida.
 3. **Implementação Prática**: Comece pela seção "Primeiros Passos" para configurar seu ambiente e criar seu primeiro servidor e cliente MCP.
 4. **Exploração Avançada**: Depois de dominar o básico, mergulhe nos tópicos avançados para expandir seu conhecimento.
-5. **Engajamento com a Comunidade**: Participe do [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) para se conectar com especialistas e outros desenvolvedores.
+5. **Engajamento com a Comunidade**: Participe da comunidade MCP por meio das discussões no GitHub e canais no Discord para se conectar com especialistas e outros desenvolvedores.
+
+## Clientes e Ferramentas MCP
+
+O currículo aborda diversos clientes e ferramentas MCP:
+
+1. **Clientes Oficiais**:
+   - Visual Studio Code
+   - MCP no Visual Studio Code
+   - Claude Desktop
+   - Claude no VSCode
+   - Claude API
+
+2. **Clientes da Comunidade**:
+   - Cline (baseado em terminal)
+   - Cursor (editor de código)
+   - ChatMCP
+   - Windsurf
+
+3. **Ferramentas de Gerenciamento MCP**:
+   - MCP CLI
+   - MCP Manager
+   - MCP Linker
+   - MCP Router
+
+## Servidores MCP Populares
+
+O repositório apresenta vários servidores MCP, incluindo:
+
+1. **Servidores de Referência Oficiais**:
+   - Filesystem
+   - Fetch
+   - Memory
+   - Sequential Thinking
+
+2. **Geração de Imagens**:
+   - Azure OpenAI DALL-E 3
+   - Stable Diffusion WebUI
+   - Replicate
+
+3. **Ferramentas de Desenvolvimento**:
+   - Git MCP
+   - Terminal Control
+   - Code Assistant
+
+4. **Servidores Especializados**:
+   - Salesforce
+   - Microsoft Teams
+   - Jira & Confluence
 
 ## Contribuindo
 
-Este repositório recebe contribuições da comunidade. Veja a seção Contribuições da Comunidade para orientações sobre como colaborar.
+Este repositório recebe contribuições da comunidade. Veja a seção Contribuições da Comunidade para orientações sobre como contribuir de forma eficaz para o ecossistema MCP.
+
+## Registro de Alterações
+
+| Data | Alterações |
+|------|------------|
+| 16 de julho de 2025 | - Atualizada a estrutura do repositório para refletir o conteúdo atual<br>- Adicionada seção Clientes e Ferramentas MCP<br>- Adicionada seção Servidores MCP Populares<br>- Atualizado o Mapa Visual do Currículo com todos os tópicos atuais<br>- Aprimorada a seção Tópicos Avançados com todas as áreas especializadas<br>- Atualizados Estudos de Caso para refletir exemplos reais<br>- Esclarecida a origem do MCP como criado pela Anthropic |
+| 11 de junho de 2025 | - Criação inicial do guia de estudo<br>- Adicionado Mapa Visual do Currículo<br>- Estruturado o repositório<br>- Incluídos projetos de exemplo e recursos adicionais |
 
 ---
 
-*Este guia de estudo foi criado em 11 de junho de 2025 e oferece uma visão geral do repositório até essa data. O conteúdo do repositório pode ter sido atualizado desde então.*
+*Este guia de estudo foi atualizado em 16 de julho de 2025 e oferece uma visão geral do repositório até essa data. O conteúdo do repositório pode ser atualizado após essa data.*
 
 **Aviso Legal**:  
 Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

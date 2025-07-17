@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:12:23+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-16T22:07:38+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "es"
 }
@@ -17,7 +17,7 @@ El Protocolo de Contexto de Modelo (MCP) es un estándar abierto que permite a l
 
 Esta integración combina la flexibilidad del ecosistema de herramientas de MCP con el robusto marco de agentes de Azure AI Foundry, ofreciendo soluciones de IA empresariales con amplias capacidades de personalización.
 
-**Nota:** Si deseas usar MCP en Azure AI Foundry Agent Service, actualmente solo se soportan las siguientes regiones: westus, westus2, uaenorth, southindia y switzerlandnorth
+**Note:** Si deseas usar MCP en Azure AI Foundry Agent Service, actualmente solo se soportan las siguientes regiones: westus, westus2, uaenorth, southindia y switzerlandnorth
 
 ## Objetivos de Aprendizaje
 
@@ -27,7 +27,7 @@ Al finalizar esta guía, podrás:
 - Configurar servidores MCP para su uso con agentes de Azure AI Foundry
 - Crear y configurar agentes con integración de herramientas MCP
 - Implementar ejemplos prácticos usando servidores MCP reales
-- Gestionar respuestas de herramientas y citas en conversaciones de agentes
+- Manejar respuestas de herramientas y citas en conversaciones de agentes
 
 ## Requisitos Previos
 
@@ -59,6 +59,8 @@ Elige tu entorno de desarrollo preferido:
 ---
 
 ## Implementación en Python
+
+***Note*** Puedes ejecutar este [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Instalar Paquetes Requeridos
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## Implementación en .NET
+
+***Note*** Puedes ejecutar este [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Instalar Paquetes Requeridos
 
@@ -349,8 +353,8 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 2. Fallos en Llamadas a Herramientas
 - Revisa los argumentos y formato de las llamadas a herramientas
-- Verifica requisitos específicos del servidor
-- Implementa manejo adecuado de errores
+- Verifica los requisitos específicos del servidor
+- Implementa un manejo adecuado de errores
 
 ### 3. Problemas de Rendimiento
 - Optimiza la frecuencia de llamadas a herramientas
@@ -379,9 +383,9 @@ Para soporte adicional y preguntas:
 - Consulta la [documentación de Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
 - Revisa los [recursos comunitarios de MCP](https://modelcontextprotocol.io/)
 
-## ¿Qué sigue?
+## Qué sigue
 
-- [6. Contribuciones de la Comunidad](../../06-CommunityContributions/README.md)
+- [5.14 Ingeniería de Contexto MCP](../mcp-contextengineering/README.md)
 
 **Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

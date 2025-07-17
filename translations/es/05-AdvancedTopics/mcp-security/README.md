@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:34:47+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-16T22:06:01+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "es"
 }
@@ -13,7 +13,15 @@ La seguridad es fundamental para las implementaciones de MCP, especialmente en e
 
 ## Introducción
 
-En esta lección, exploraremos las mejores prácticas de seguridad para las implementaciones de MCP. Cubriremos autenticación y autorización, protección de datos, ejecución segura de herramientas y cumplimiento de regulaciones de privacidad de datos.
+El Protocolo de Contexto de Modelo (MCP) requiere consideraciones específicas de seguridad debido a su función de proporcionar a los LLM acceso a datos y herramientas. Esta lección explora las mejores prácticas de seguridad para implementaciones de MCP basadas en las directrices oficiales de MCP y patrones de seguridad establecidos.
+
+MCP sigue principios clave de seguridad para asegurar interacciones seguras y confiables:
+
+- **Consentimiento y Control del Usuario**: Los usuarios deben dar su consentimiento explícito antes de que se acceda a cualquier dato o se realicen operaciones. Proporcione un control claro sobre qué datos se comparten y qué acciones están autorizadas.
+  
+- **Privacidad de los Datos**: Los datos del usuario solo deben exponerse con consentimiento explícito y deben protegerse mediante controles de acceso adecuados. Proteja contra la transmisión no autorizada de datos.
+  
+- **Seguridad de las Herramientas**: Antes de invocar cualquier herramienta, se requiere el consentimiento explícito del usuario. Los usuarios deben comprender claramente la funcionalidad de cada herramienta y se deben aplicar límites de seguridad robustos.
 
 ## Objetivos de Aprendizaje
 
@@ -21,20 +29,31 @@ Al finalizar esta lección, podrás:
 
 - Implementar mecanismos seguros de autenticación y autorización para servidores MCP.
 - Proteger datos sensibles mediante cifrado y almacenamiento seguro.
-- Asegurar la ejecución segura de herramientas con controles de acceso adecuados.
+- Garantizar la ejecución segura de herramientas con controles de acceso adecuados.
 - Aplicar mejores prácticas para la protección de datos y el cumplimiento de la privacidad.
+- Identificar y mitigar vulnerabilidades comunes de seguridad en MCP como problemas de delegado confundido, token passthrough y secuestro de sesión.
 
 ## Autenticación y Autorización
 
-La autenticación y la autorización son esenciales para asegurar los servidores MCP. La autenticación responde a la pregunta "¿Quién eres?" mientras que la autorización responde "¿Qué puedes hacer?".
+La autenticación y autorización son esenciales para asegurar los servidores MCP. La autenticación responde a la pregunta "¿Quién eres?" mientras que la autorización responde "¿Qué puedes hacer?".
+
+Según la especificación de seguridad de MCP, estas son consideraciones críticas de seguridad:
+
+1. **Validación de Tokens**: Los servidores MCP NO DEBEN aceptar tokens que no hayan sido emitidos explícitamente para el servidor MCP. El "token passthrough" es un antipatrón explícitamente prohibido.
+
+2. **Verificación de Autorización**: Los servidores MCP que implementen autorización DEBEN verificar todas las solicitudes entrantes y NO DEBEN usar sesiones para autenticación.
+
+3. **Gestión Segura de Sesiones**: Cuando se usen sesiones para estado, los servidores MCP DEBEN usar IDs de sesión seguros y no determinísticos generados con generadores de números aleatorios seguros. Los IDs de sesión DEBERÍAN estar vinculados a información específica del usuario.
+
+4. **Consentimiento Explícito del Usuario**: Para servidores proxy, las implementaciones MCP DEBEN obtener el consentimiento del usuario para cada cliente registrado dinámicamente antes de reenviar a servidores de autorización de terceros.
 
 Veamos ejemplos de cómo implementar autenticación y autorización seguras en servidores MCP usando .NET y Java.
 
-### Integración de .NET Identity
+### Integración de Identity en .NET
 
-ASP .NET Core Identity ofrece un marco sólido para gestionar la autenticación y autorización de usuarios. Podemos integrarlo con servidores MCP para proteger el acceso a herramientas y recursos.
+ASP .NET Core Identity proporciona un marco robusto para gestionar la autenticación y autorización de usuarios. Podemos integrarlo con servidores MCP para asegurar el acceso a herramientas y recursos.
 
-Hay algunos conceptos clave que debemos entender al integrar ASP.NET Core Identity con servidores MCP, a saber:
+Hay algunos conceptos clave que debemos entender al integrar ASP.NET Core Identity con servidores MCP, tales como:
 
 - **Configuración de Identity**: Configurar ASP.NET Core Identity con roles y claims de usuario. Un claim es una información sobre el usuario, como su rol o permisos, por ejemplo "Admin" o "User".
 - **Autenticación JWT**: Uso de JSON Web Tokens (JWT) para acceso seguro a la API. JWT es un estándar para transmitir información de forma segura entre partes como un objeto JSON, que puede ser verificado y confiable porque está firmado digitalmente.
@@ -113,20 +132,20 @@ En el código anterior, hemos:
 
 - Configurado ASP.NET Core Identity para la gestión de usuarios.
 - Configurado la autenticación JWT para acceso seguro a la API. Especificamos los parámetros de validación del token, incluyendo el emisor, audiencia y clave de firma.
-- Definido políticas de autorización para controlar el acceso a herramientas según los roles de usuario. Por ejemplo, la política "CanUseAdminTools" requiere que el usuario tenga el rol "Admin", mientras que la política "CanUseBasic" requiere que el usuario esté autenticado.
-- Registrado herramientas MCP con requisitos específicos de autorización, asegurando que solo los usuarios con los roles adecuados puedan acceder a ellas.
+- Definido políticas de autorización para controlar el acceso a herramientas según roles de usuario. Por ejemplo, la política "CanUseAdminTools" requiere que el usuario tenga el rol "Admin", mientras que la política "CanUseBasic" requiere que el usuario esté autenticado.
+- Registrado herramientas MCP con requisitos específicos de autorización, asegurando que solo usuarios con los roles adecuados puedan acceder a ellas.
 
-### Integración de Java Spring Security
+### Integración de Spring Security en Java
 
-Para Java, usaremos Spring Security para implementar autenticación y autorización seguras en servidores MCP. Spring Security ofrece un marco de seguridad completo que se integra perfectamente con aplicaciones Spring.
+Para Java, usaremos Spring Security para implementar autenticación y autorización seguras para servidores MCP. Spring Security proporciona un marco de seguridad integral que se integra perfectamente con aplicaciones Spring.
 
 Los conceptos clave aquí son:
 
 - **Configuración de Spring Security**: Configurar la seguridad para autenticación y autorización.
-- **Servidor de Recursos OAuth2**: Uso de OAuth2 para acceso seguro a herramientas MCP. OAuth2 es un marco de autorización que permite a servicios terceros intercambiar tokens de acceso para acceso seguro a APIs.
+- **Servidor de Recursos OAuth2**: Usar OAuth2 para acceso seguro a herramientas MCP. OAuth2 es un marco de autorización que permite a servicios terceros intercambiar tokens de acceso para acceso seguro a APIs.
 - **Interceptores de Seguridad**: Implementar interceptores de seguridad para hacer cumplir controles de acceso en la ejecución de herramientas.
-- **Control de Acceso Basado en Roles**: Uso de roles para controlar el acceso a herramientas y recursos específicos.
-- **Anotaciones de Seguridad**: Uso de anotaciones para proteger métodos y endpoints.
+- **Control de Acceso Basado en Roles**: Usar roles para controlar el acceso a herramientas y recursos específicos.
+- **Anotaciones de Seguridad**: Usar anotaciones para asegurar métodos y endpoints.
 
 ```java
 @Configuration
@@ -180,10 +199,10 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 En el código anterior, hemos:
 
-- Configurado Spring Security para proteger los endpoints MCP, permitiendo acceso público al descubrimiento de herramientas y requiriendo autenticación para la ejecución de herramientas.
+- Configurado Spring Security para asegurar los endpoints MCP, permitiendo acceso público al descubrimiento de herramientas mientras se requiere autenticación para la ejecución de herramientas.
 - Usado OAuth2 como servidor de recursos para manejar el acceso seguro a herramientas MCP.
 - Implementado un interceptor de seguridad para hacer cumplir controles de acceso en la ejecución de herramientas, verificando roles y permisos del usuario antes de permitir acceso a herramientas específicas.
-- Definido control de acceso basado en roles para restringir el acceso a herramientas administrativas y acceso a datos sensibles según los roles de usuario.
+- Definido control de acceso basado en roles para restringir el acceso a herramientas administrativas y acceso a datos sensibles según roles de usuario.
 
 ## Protección de Datos y Privacidad
 
@@ -334,9 +353,64 @@ En el código anterior, hemos:
 - Definido un decorador `secure_tool` que envuelve la ejecución de herramientas para verificar PII, registrar accesos y cifrar datos sensibles si es necesario.
 - Aplicado el decorador `secure_tool` a una herramienta de ejemplo (`SecureCustomerDataTool`) para asegurar que maneje datos sensibles de forma segura.
 
+## Riesgos de Seguridad Específicos de MCP
+
+Según la documentación oficial de seguridad MCP, existen riesgos específicos que los implementadores de MCP deben conocer:
+
+### 1. Problema de Delegado Confundido
+
+Esta vulnerabilidad ocurre cuando un servidor MCP actúa como proxy para APIs de terceros, lo que podría permitir a atacantes explotar la relación de confianza entre el servidor MCP y estas APIs.
+
+**Mitigación:**
+- Los servidores proxy MCP que usen IDs de cliente estáticos DEBEN obtener el consentimiento del usuario para cada cliente registrado dinámicamente antes de reenviar a servidores de autorización de terceros.
+- Implementar el flujo OAuth adecuado con PKCE (Proof Key for Code Exchange) para solicitudes de autorización.
+- Validar estrictamente los URI de redirección y los identificadores de cliente.
+
+### 2. Vulnerabilidades de Token Passthrough
+
+El token passthrough ocurre cuando un servidor MCP acepta tokens de un cliente MCP sin validar que los tokens fueron emitidos correctamente para el servidor MCP y los pasa a APIs descendentes.
+
+### Riesgos
+- Circunvención de controles de seguridad (evitar limitación de tasa, validación de solicitudes)
+- Problemas de responsabilidad y auditoría
+- Violaciones de límites de confianza
+- Riesgos de compatibilidad futura
+
+**Mitigación:**
+- Los servidores MCP NO DEBEN aceptar tokens que no hayan sido emitidos explícitamente para el servidor MCP.
+- Siempre validar los claims de audiencia del token para asegurar que coincidan con el servicio esperado.
+
+### 3. Secuestro de Sesión
+
+Ocurre cuando una parte no autorizada obtiene un ID de sesión y lo usa para suplantar al cliente original, lo que puede llevar a acciones no autorizadas.
+
+**Mitigación:**
+- Los servidores MCP que implementen autorización DEBEN verificar todas las solicitudes entrantes y NO DEBEN usar sesiones para autenticación.
+- Usar IDs de sesión seguros y no determinísticos generados con generadores de números aleatorios seguros.
+- Vincular los IDs de sesión a información específica del usuario usando un formato de clave como `<user_id>:<session_id>`.
+- Implementar políticas adecuadas de expiración y rotación de sesiones.
+
+## Mejores Prácticas Adicionales de Seguridad para MCP
+
+Más allá de las consideraciones básicas de seguridad MCP, considere implementar estas prácticas adicionales:
+
+- **Usar siempre HTTPS**: Cifrar la comunicación entre cliente y servidor para proteger los tokens de intercepciones.
+- **Implementar Control de Acceso Basado en Roles (RBAC)**: No solo verifique si un usuario está autenticado; verifique qué está autorizado a hacer.
+- **Monitorear y auditar**: Registrar todos los eventos de autenticación para detectar y responder a actividades sospechosas.
+- **Manejar limitación de tasa y throttling**: Implementar retroceso exponencial y lógica de reintentos para manejar límites de tasa de forma adecuada.
+- **Almacenamiento seguro de tokens**: Guardar tokens de acceso y refresh tokens de forma segura usando mecanismos de almacenamiento seguro del sistema o servicios seguros de gestión de claves.
+- **Considerar el uso de Gestión de API**: Servicios como Azure API Management pueden manejar muchas preocupaciones de seguridad automáticamente, incluyendo autenticación, autorización y limitación de tasa.
+
+## Referencias
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
+
 ## Qué sigue
 
-- [5.9 Web search](../web-search-mcp/README.md)
+- [5.9 Búsqueda web](../web-search-mcp/README.md)
 
 **Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

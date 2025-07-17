@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:19:31+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:37:04+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "ms"
 }
@@ -21,7 +21,7 @@ Integrasi ini menggabungkan fleksibiliti ekosistem alat MCP dengan rangka kerja 
 
 ## Objektif Pembelajaran
 
-Menjelang akhir panduan ini, anda akan dapat:
+Pada akhir panduan ini, anda akan dapat:
 
 - Memahami Model Context Protocol dan manfaatnya
 - Menyediakan pelayan MCP untuk digunakan dengan ejen Azure AI Foundry
@@ -45,7 +45,7 @@ Model Context Protocol adalah cara berstandard untuk aplikasi AI berhubung denga
 - **Integrasi Berstandard**: Antara muka konsisten merentas pelbagai alat dan perkhidmatan
 - **Keselamatan**: Mekanisme pengesahan dan kebenaran yang selamat
 - **Fleksibiliti**: Menyokong pelbagai sumber data, API, dan alat tersuai
-- **Kebolehluasan**: Mudah menambah keupayaan dan integrasi baru
+- **Kebolehlanjutan**: Mudah menambah keupayaan dan integrasi baru
 
 ## Menyediakan MCP dengan Azure AI Foundry
 
@@ -53,12 +53,14 @@ Model Context Protocol adalah cara berstandard untuk aplikasi AI berhubung denga
 
 Pilih persekitaran pembangunan pilihan anda:
 
-- [Pelaksanaan Python](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
-- [Pelaksanaan .NET](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [Implementasi Python](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [Implementasi .NET](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
 
 ---
 
-## Pelaksanaan Python
+## Implementasi Python
+
+***Note*** Anda boleh menjalankan [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) ini
 
 ### 1. Pasang Pakej Diperlukan
 
@@ -185,7 +187,9 @@ with project_client:
 
 ---
 
-## Pelaksanaan .NET
+## Implementasi .NET
+
+***Note*** Anda boleh menjalankan [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) ini
 
 ### 1. Pasang Pakej Diperlukan
 
@@ -327,7 +331,7 @@ MCPToolDefinition mcpTool = new(
 
 ## Pengesahan dan Header
 
-Kedua-dua pelaksanaan menyokong header tersuai untuk pengesahan:
+Kedua-dua implementasi menyokong header tersuai untuk pengesahan:
 
 ### Python
 ```python

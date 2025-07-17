@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:19:06+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:36:39+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "vi"
 }
@@ -17,7 +17,7 @@ Model Context Protocol (MCP) là một tiêu chuẩn mở cho phép các ứng d
 
 Sự tích hợp này kết hợp sự linh hoạt của hệ sinh thái công cụ MCP với khung agent mạnh mẽ của Azure AI Foundry, cung cấp các giải pháp AI cấp doanh nghiệp với khả năng tùy chỉnh rộng rãi.
 
-**Lưu ý:** Nếu bạn muốn sử dụng MCP trong Azure AI Foundry Agent Service, hiện tại chỉ hỗ trợ các khu vực sau: westus, westus2, uaenorth, southindia và switzerlandnorth
+**Note:** Nếu bạn muốn sử dụng MCP trong Azure AI Foundry Agent Service, hiện tại chỉ hỗ trợ các khu vực sau: westus, westus2, uaenorth, southindia và switzerlandnorth
 
 ## Mục tiêu học tập
 
@@ -59,6 +59,8 @@ Chọn môi trường phát triển bạn ưa thích:
 ---
 
 ## Triển khai Python
+
+***Note*** Bạn có thể chạy [notebook này](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Cài đặt các gói cần thiết
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## Triển khai .NET
+
+***Note*** Bạn có thể chạy [notebook này](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Cài đặt các gói cần thiết
 
@@ -348,7 +352,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Đảm bảo kết nối mạng ổn định
 
 ### 2. Lỗi gọi công cụ
-- Kiểm tra các tham số và định dạng của công cụ
+- Kiểm tra các tham số và định dạng gọi công cụ
 - Xem xét các yêu cầu riêng của máy chủ
 - Thực hiện xử lý lỗi phù hợp
 
@@ -362,8 +366,8 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 Để nâng cao tích hợp MCP của bạn:
 
 1. **Khám phá các máy chủ MCP tùy chỉnh**: Xây dựng máy chủ MCP riêng cho các nguồn dữ liệu độc quyền
-2. **Triển khai bảo mật nâng cao**: Thêm OAuth2 hoặc cơ chế xác thực tùy chỉnh
-3. **Giám sát và phân tích**: Thực hiện ghi log và theo dõi việc sử dụng công cụ
+2. **Triển khai bảo mật nâng cao**: Thêm OAuth2 hoặc các cơ chế xác thực tùy chỉnh
+3. **Giám sát và phân tích**: Thực hiện ghi log và giám sát việc sử dụng công cụ
 4. **Mở rộng giải pháp**: Xem xét cân bằng tải và kiến trúc máy chủ MCP phân tán
 
 ## Tài nguyên bổ sung

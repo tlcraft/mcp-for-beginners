@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:16:17+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-16T21:58:16+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "pt"
 }
@@ -13,7 +13,7 @@ Este guia demonstra como integrar servidores Model Context Protocol (MCP) com ag
 
 ## Introdução
 
-O Model Context Protocol (MCP) é um padrão aberto que permite que aplicações de IA se liguem de forma segura a fontes de dados externas e ferramentas. Quando integrado com o Azure AI Foundry, o MCP permite que os agentes acedam e interajam com vários serviços externos, APIs e fontes de dados de forma padronizada.
+O Model Context Protocol (MCP) é um padrão aberto que permite que aplicações de IA se liguem de forma segura a fontes de dados e ferramentas externas. Quando integrado com o Azure AI Foundry, o MCP permite que os agentes acedam e interajam com vários serviços externos, APIs e fontes de dados de forma padronizada.
 
 Esta integração combina a flexibilidade do ecossistema de ferramentas do MCP com a estrutura robusta de agentes do Azure AI Foundry, oferecendo soluções de IA ao nível empresarial com amplas capacidades de personalização.
 
@@ -40,7 +40,7 @@ Antes de começar, certifique-se de que tem:
 
 ## O que é o Model Context Protocol (MCP)?
 
-O Model Context Protocol é uma forma padronizada para aplicações de IA se ligarem a fontes de dados externas e ferramentas. Os principais benefícios incluem:
+O Model Context Protocol é uma forma padronizada para aplicações de IA se ligarem a fontes de dados e ferramentas externas. Os principais benefícios incluem:
 
 - **Integração Padronizada**: Interface consistente entre diferentes ferramentas e serviços
 - **Segurança**: Mecanismos seguros de autenticação e autorização
@@ -59,6 +59,8 @@ Escolha o seu ambiente de desenvolvimento preferido:
 ---
 
 ## Implementação em Python
+
+***Note*** Pode executar este [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Instalar Pacotes Necessários
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## Implementação em .NET
+
+***Note*** Pode executar este [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. Instalar Pacotes Necessários
 
@@ -325,9 +329,9 @@ MCPToolDefinition mcpTool = new(
 );
 ```
 
-## Autenticação e Cabeçalhos
+## Autenticação e Headers
 
-Ambas as implementações suportam cabeçalhos personalizados para autenticação:
+Ambas as implementações suportam headers personalizados para autenticação:
 
 ### Python
 ```python
@@ -348,23 +352,23 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Assegure a conectividade de rede
 
 ### 2. Falhas nas Chamadas às Ferramentas
-- Reveja os argumentos e o formato das chamadas às ferramentas
+- Reveja os argumentos e formatação das chamadas às ferramentas
 - Verifique requisitos específicos do servidor
 - Implemente tratamento adequado de erros
 
-### 3. Problemas de Desempenho
+### 3. Problemas de Performance
 - Otimize a frequência das chamadas às ferramentas
-- Utilize cache quando apropriado
+- Utilize caching quando apropriado
 - Monitorize os tempos de resposta do servidor
 
 ## Próximos Passos
 
 Para melhorar ainda mais a sua integração MCP:
 
-1. **Explore Servidores MCP Personalizados**: Crie os seus próprios servidores MCP para fontes de dados proprietárias
+1. **Explore Servidores MCP Personalizados**: Construa os seus próprios servidores MCP para fontes de dados proprietárias
 2. **Implemente Segurança Avançada**: Adicione OAuth2 ou mecanismos de autenticação personalizados
-3. **Monitorização e Análise**: Implemente registos e monitorização do uso das ferramentas
-4. **Escale a Sua Solução**: Considere balanceamento de carga e arquiteturas distribuídas de servidores MCP
+3. **Monitorização e Análise**: Implemente logging e monitorização do uso das ferramentas
+4. **Escale a Sua Solução**: Considere balanceamento de carga e arquiteturas distribuídas para servidores MCP
 
 ## Recursos Adicionais
 
@@ -381,7 +385,7 @@ Para suporte adicional e dúvidas:
 
 ## O que vem a seguir
 
-- [6. Contribuições da Comunidade](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos por garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

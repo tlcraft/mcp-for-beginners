@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-07-14T03:26:04+00:00",
+  "original_hash": "151265c9a2124d7c53e04d16ee3fb73b",
+  "translation_date": "2025-07-16T20:55:42+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "zh"
 }
@@ -46,10 +46,9 @@ CO_OP_TRANSLATOR_METADATA:
 - **qna**：用于问答片段
 
 ### 功能
-- **代码示例**：包含针对 Python 的语言特定代码块（并可轻松扩展到其他语言），使用可折叠部分以增强清晰度
+- **代码示例**：包含针对 Python 的语言特定代码块（并可轻松扩展到其他语言），使用代码切换以增强清晰度
 
-<details>  
-<summary>Python</summary>  
+### Python
 
 ```python
 # Example usage of the general_search tool
@@ -67,16 +66,16 @@ async def run_search():
             result = await session.call_tool("general_search", arguments={"query": "open source LLMs"})
             print(result)
 ```
-</details>
+
+---
 
 在运行客户端之前，了解服务器的功能会很有帮助。[`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) 文件实现了 MCP 服务器，通过集成 SerpAPI，暴露了网页、新闻、产品搜索和问答工具。它处理传入请求，管理 API 调用，解析响应，并将结构化结果返回给客户端。
 
-你可以查看 [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) 中的完整实现。
+你可以查看 [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) 的完整实现。
 
 下面是服务器如何定义和注册工具的简要示例：
 
-<details>  
-<summary>Python 服务器</summary> 
+### Python 服务器
 
 ```python
 # server.py (excerpt)
@@ -91,17 +90,18 @@ server.add_tool(Tool("general_search", general_search))
 if __name__ == "__main__":
     server.run()
 ```
-</details>
+
+---
 
 - **外部 API 集成**：演示了 API 密钥和外部请求的安全处理
 - **结构化数据解析**：展示如何将 API 响应转换为适合 LLM 使用的格式
 - **错误处理**：健壮的错误处理和适当的日志记录
-- **交互式客户端**：包含自动化测试和交互模式以供测试
+- **交互式客户端**：包含自动化测试和交互模式以便测试
 - **上下文管理**：利用 MCP Context 进行日志记录和请求跟踪
 
 ## 先决条件
 
-开始之前，请确保你的环境已正确设置，按照以下步骤操作。这将确保所有依赖项已安装，API 密钥配置正确，方便开发和测试。
+开始之前，请确保你的环境已正确配置，按照以下步骤操作。这将确保所有依赖项已安装，API 密钥配置正确，方便开发和测试。
 
 - Python 3.8 或更高版本
 - SerpAPI API Key（在 [SerpAPI](https://serpapi.com/) 注册 - 提供免费套餐）
@@ -130,11 +130,11 @@ SERPAPI_KEY=your_serpapi_key_here
 
 Web 搜索 MCP 服务器是核心组件，通过集成 SerpAPI，暴露网页、新闻、产品搜索和问答工具。它处理传入请求，管理 API 调用，解析响应，并将结构化结果返回给客户端。
 
-你可以查看 [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) 中的完整实现。
+你可以查看 [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) 的完整实现。
 
 ### 启动服务器
 
-启动 MCP 服务器，使用以下命令：
+使用以下命令启动 MCP 服务器：
 
 ```bash
 python server.py
@@ -149,7 +149,7 @@ python server.py
 - **普通模式**：运行自动化测试，调用所有工具并验证响应。适合快速检查服务器和工具是否正常工作。
 - **交互模式**：启动菜单驱动界面，你可以手动选择并调用工具，输入自定义查询，实时查看结果。适合探索服务器功能和尝试不同输入。
 
-你可以查看 [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) 中的完整实现。
+你可以查看 [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) 的完整实现。
 
 ### 运行客户端
 
@@ -172,8 +172,7 @@ python client.py --interactive
 #### 使用 MCP Python SDK 编写自定义测试脚本
 你也可以使用 MCP Python SDK 编写自己的测试脚本：
 
-<details>
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -193,9 +192,10 @@ async def test_custom_query():
                                            arguments={"query": "your custom query"})
             # Process the result
 ```
-</details>
 
-这里的“测试脚本”指的是你编写的自定义 Python 程序，作为 MCP 服务器的客户端。它不是正式的单元测试，而是让你以编程方式连接服务器，调用任意工具并传入参数，检查结果。这种方式适合：
+---
+
+在这里，“测试脚本”指的是你编写的自定义 Python 程序，作为 MCP 服务器的客户端。它不是正式的单元测试，而是让你以编程方式连接服务器，调用任意工具并传入参数，检查结果。这种方式适合：
 
 - 原型设计和工具调用实验
 - 验证服务器对不同输入的响应
@@ -216,10 +216,9 @@ async def test_custom_query():
 
 **如何调用此工具：**
 
-你可以通过 MCP Python SDK 在自己的脚本中调用 `general_search`，或在 Inspector 或交互式客户端模式中交互调用。以下是使用 SDK 的代码示例：
+你可以通过 MCP Python SDK 在自己的脚本中调用 `general_search`，也可以通过 Inspector 或交互式客户端模式交互调用。以下是使用 SDK 的代码示例：
 
-<details>
-<summary>Python 示例</summary>
+# [Python 示例](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -236,7 +235,8 @@ async def run_general_search():
             result = await session.call_tool("general_search", arguments={"query": "latest AI trends"})
             print(result)
 ```
-</details>
+
+---
 
 或者在交互模式中，从菜单选择 `general_search`，然后输入查询。
 
@@ -257,10 +257,9 @@ async def run_general_search():
 
 **如何调用此工具：**
 
-你可以通过 MCP Python SDK 在自己的脚本中调用 `news_search`，或在 Inspector 或交互式客户端模式中交互调用。以下是使用 SDK 的代码示例：
+你可以通过 MCP Python SDK 在自己的脚本中调用 `news_search`，也可以通过 Inspector 或交互式客户端模式交互调用。以下是使用 SDK 的代码示例：
 
-<details>
-<summary>Python 示例</summary>
+# [Python 示例](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -277,7 +276,8 @@ async def run_news_search():
             result = await session.call_tool("news_search", arguments={"query": "AI policy updates"})
             print(result)
 ```
-</details>
+
+---
 
 或者在交互模式中，从菜单选择 `news_search`，然后输入查询。
 
@@ -298,10 +298,9 @@ async def run_news_search():
 
 **如何调用此工具：**
 
-你可以通过 MCP Python SDK 在自己的脚本中调用 `product_search`，或在 Inspector 或交互式客户端模式中交互调用。以下是使用 SDK 的代码示例：
+你可以通过 MCP Python SDK 在自己的脚本中调用 `product_search`，也可以通过 Inspector 或交互式客户端模式交互调用。以下是使用 SDK 的代码示例：
 
-<details>
-<summary>Python 示例</summary>
+# [Python 示例](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -318,7 +317,8 @@ async def run_product_search():
             result = await session.call_tool("product_search", arguments={"query": "best AI gadgets 2025"})
             print(result)
 ```
-</details>
+
+---
 
 或者在交互模式中，从菜单选择 `product_search`，然后输入查询。
 
@@ -339,10 +339,9 @@ async def run_product_search():
 
 **如何调用此工具：**
 
-你可以通过 MCP Python SDK 在自己的脚本中调用 `qna`，或在 Inspector 或交互式客户端模式中交互调用。以下是使用 SDK 的代码示例：
+你可以通过 MCP Python SDK 在自己的脚本中调用 `qna`，也可以通过 Inspector 或交互式客户端模式交互调用。以下是使用 SDK 的代码示例：
 
-<details>
-<summary>Python 示例</summary>
+# [Python 示例](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -359,7 +358,8 @@ async def run_qna():
             result = await session.call_tool("qna", arguments={"question": "what is artificial intelligence"})
             print(result)
 ```
-</details>
+
+---
 
 或者在交互模式中，从菜单选择 `qna`，然后输入问题。
 
@@ -378,8 +378,7 @@ async def run_qna():
 
 本节提供服务器和客户端实现的代码片段和参考。
 
-<details>
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 完整实现请参见 [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) 和 [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py)。
 
@@ -389,45 +388,46 @@ import os
 import httpx
 # ...existing code...
 ```
-</details>
 
-## 本课中的高级概念
+---
 
-开始构建之前，这里介绍一些本章中会出现的重要高级概念。理解它们将帮助你更好地跟进内容，即使你之前不熟悉：
+## 本课的高级概念
+
+在开始构建之前，这里介绍一些本章中会出现的重要高级概念。理解它们将帮助你更好地跟进内容，即使你之前不熟悉：
 
 - **多工具协调**：指在单一 MCP 服务器中运行多个不同工具（如网页搜索、新闻搜索、产品搜索和问答）。这让服务器能处理多种任务，而非单一功能。
 - **API 速率限制处理**：许多外部 API（如 SerpAPI）限制一定时间内的请求次数。良好的代码会检测这些限制并优雅处理，避免应用崩溃。
-- **结构化数据解析**：API 响应通常复杂且嵌套。该概念指将响应转换为简洁、易用且适合 LLM 或其他程序处理的格式。
-- **错误恢复**：有时会出现网络故障或 API 返回异常。错误恢复意味着代码能处理这些问题，仍然提供有用反馈，而非崩溃。
-- **参数验证**：检查传入工具的所有输入是否正确且安全，包括设置默认值和类型检查，有助于防止错误和混淆。
+- **结构化数据解析**：API 响应通常复杂且嵌套。该概念指将响应转换为简洁、易用的格式，方便 LLM 或其他程序使用。
+- **错误恢复**：有时会出现网络故障或 API 返回异常。错误恢复意味着代码能处理这些问题，提供有用反馈，而非崩溃。
+- **参数验证**：检查传入工具的所有输入是否正确且安全，包括设置默认值和类型校验，有助于防止错误和混淆。
 
-本节将帮助你诊断和解决使用 Web 搜索 MCP 服务器时可能遇到的常见问题。如果遇到错误或异常行为，先查看本节内容——这些提示通常能快速解决问题。
+本节将帮助你诊断和解决使用 Web 搜索 MCP 服务器时可能遇到的常见问题。如果遇到错误或异常行为，先查看本节的解决方案——它们通常能快速帮你排除故障。
 
 ## 故障排除
 
-使用 Web 搜索 MCP 服务器时，偶尔会遇到问题——这是使用外部 API 和新工具开发时的常见情况。本节提供最常见问题的实用解决方案，帮助你快速恢复。如果遇到错误，请从这里开始：以下提示涵盖了大多数用户遇到的问题，通常能无需额外帮助就解决。
+在使用 Web 搜索 MCP 服务器时，偶尔会遇到问题——这在开发外部 API 和新工具时很常见。本节提供最常见问题的实用解决方案，帮助你快速恢复。如果遇到错误，请从这里开始：以下提示涵盖了大多数用户遇到的问题，通常能无需额外帮助就解决。
 
 ### 常见问题
 
 以下是用户最常遇到的问题及其清晰解释和解决步骤：
 
 1. **.env 文件中缺少 SERPAPI_KEY**
-   - 如果看到错误 `SERPAPI_KEY environment variable not found`，说明应用找不到访问 SerpAPI 所需的 API 密钥。解决方法是在项目根目录创建 `.env` 文件（如果尚未存在），并添加一行 `SERPAPI_KEY=your_serpapi_key_here`。请将 `your_serpapi_key_here` 替换为你从 SerpAPI 网站获得的实际密钥。
+   - 如果出现 `SERPAPI_KEY environment variable not found` 错误，说明应用找不到访问 SerpAPI 所需的 API 密钥。解决方法是在项目根目录创建 `.env` 文件（如果尚未创建），并添加一行 `SERPAPI_KEY=your_serpapi_key_here`。请将 `your_serpapi_key_here` 替换为你从 SerpAPI 网站获取的实际密钥。
 
 2. **模块未找到错误**
-   - 如 `ModuleNotFoundError: No module named 'httpx'` 表示缺少必需的 Python 包。通常是因为未安装所有依赖。解决方法是在终端运行 `pip install -r requirements.txt`，安装项目所需的所有依赖。
+   - 如 `ModuleNotFoundError: No module named 'httpx'` 表示缺少必要的 Python 包。通常是因为未安装所有依赖。解决方法是在终端运行 `pip install -r requirements.txt`，安装项目所需的全部依赖。
 
 3. **连接问题**
-   - 如果出现 `Error during client execution`，通常表示客户端无法连接服务器，或服务器未按预期运行。请确认客户端和服务器版本兼容，且 `server.py` 文件存在且在正确目录运行。重启服务器和客户端也可能有帮助。
+   - 如果出现 `Error during client execution`，通常表示客户端无法连接服务器，或服务器未按预期运行。请确认客户端和服务器版本兼容，`server.py` 文件存在且在正确目录运行。重启服务器和客户端也可能解决问题。
 
 4. **SerpAPI 错误**
-   - 出现 `Search API returned error status: 401` 表示 SerpAPI 密钥缺失、错误或过期。请登录 SerpAPI 控制台，核实密钥并更新 `.env` 文件。如果密钥正确但仍报错，检查免费套餐配额是否用尽。
+   - 出现 `Search API returned error status: 401` 表示 SerpAPI 密钥缺失、错误或过期。请登录 SerpAPI 控制台核实密钥，并根据需要更新 `.env` 文件。如果密钥正确但仍报错，检查免费套餐配额是否用尽。
 
 ### 调试模式
 
 默认情况下，应用只记录重要信息。如果你想查看更多细节（例如诊断复杂问题），可以启用 DEBUG 模式。这样会显示应用执行的更多步骤信息。
 
-**示例：普通输出**
+**示例：正常输出**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:24,123 - __main__ - INFO - Successfully called general_search
@@ -447,11 +447,10 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-注意 DEBUG 模式包含额外的 HTTP 请求、响应及其他内部细节，非常有助于排查问题。
+注意 DEBUG 模式会额外显示 HTTP 请求、响应及其他内部细节，有助于故障排查。
+要启用 DEBUG 模式，请在 `client.py` 或 `server.py` 文件顶部将日志级别设置为 DEBUG：
 
-要启用 DEBUG 模式，请在 `client.py` 或 `server.py` 顶部将日志级别设置为 DEBUG：
-
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 # At the top of your client.py or server.py
@@ -461,13 +460,14 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 ```
-</details>
+
+---
 
 ---
 
 ## 接下来做什么
 
-- [5.10 实时流处理](../mcp-realtimestreaming/README.md)
+- [5.10 实时流](../mcp-realtimestreaming/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言的原文应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

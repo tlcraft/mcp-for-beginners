@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:12:11+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-16T21:26:35+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "fr"
 }
@@ -15,7 +15,7 @@ Ce guide montre comment intégrer les serveurs Model Context Protocol (MCP) avec
 
 Le Model Context Protocol (MCP) est une norme ouverte qui permet aux applications d’IA de se connecter de manière sécurisée à des sources de données et outils externes. Lorsqu’il est intégré à Azure AI Foundry, MCP permet aux agents d’accéder et d’interagir avec divers services externes, API et sources de données de façon standardisée.
 
-Cette intégration combine la flexibilité de l’écosystème d’outils MCP avec le cadre robuste des agents Azure AI Foundry, offrant des solutions d’IA d’entreprise avec de larges possibilités de personnalisation.
+Cette intégration combine la flexibilité de l’écosystème d’outils MCP avec le cadre robuste des agents Azure AI Foundry, offrant des solutions d’IA de niveau entreprise avec de larges possibilités de personnalisation.
 
 **Note :** Si vous souhaitez utiliser MCP dans Azure AI Foundry Agent Service, seules les régions suivantes sont actuellement prises en charge : westus, westus2, uaenorth, southindia et switzerlandnorth
 
@@ -59,6 +59,8 @@ Choisissez votre environnement de développement préféré :
 ---
 
 ## Implémentation Python
+
+***Note*** Vous pouvez exécuter ce [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. Installer les packages requis
 
@@ -187,6 +189,8 @@ with project_client:
 
 ## Implémentation .NET
 
+***Note*** Vous pouvez exécuter ce [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+
 ### 1. Installer les packages requis
 
 ```csharp
@@ -217,7 +221,7 @@ PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCreden
 MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
 ```
 
-### 5. Créer l’agent avec les outils MCP
+### 5. Créer un agent avec les outils MCP
 
 ```csharp
 PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
@@ -381,7 +385,7 @@ Pour un support supplémentaire et des questions :
 
 ## Et après ?
 
-- [6. Contributions de la communauté](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Avertissement** :  
 Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

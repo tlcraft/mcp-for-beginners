@@ -1,48 +1,83 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "222e01c3002a33355806d60d558d9429",
-  "translation_date": "2025-07-14T09:29:05+00:00",
+  "original_hash": "8ea28e5e566edd5969337fd0b191ba3f",
+  "translation_date": "2025-07-17T00:02:00+00:00",
   "source_file": "03-GettingStarted/04-vscode/README.md",
   "language_code": "mo"
 }
 -->
-讓我們在接下來的章節中更詳細地討論如何使用視覺介面。
+# 從 GitHub Copilot Agent 模式使用伺服器
+
+Visual Studio Code 和 GitHub Copilot 可以作為客戶端來使用 MCP 伺服器。你可能會問，為什麼我們要這麼做？這代表 MCP 伺服器的所有功能現在都能直接在你的 IDE 裡使用。想像一下，如果你加入 GitHub 的 MCP 伺服器，就能透過提示詞來控制 GitHub，而不必在終端機輸入特定指令。或者，想像任何能提升你開發體驗的功能，都能用自然語言來操作。現在你應該能看到這樣做的好處了吧？
+
+## 概覽
+
+本課程將介紹如何使用 Visual Studio Code 和 GitHub Copilot 的 Agent 模式，作為你的 MCP 伺服器的客戶端。
+
+## 學習目標
+
+完成本課程後，你將能夠：
+
+- 透過 Visual Studio Code 使用 MCP 伺服器。
+- 透過 GitHub Copilot 執行工具等功能。
+- 設定 Visual Studio Code 以尋找並管理你的 MCP 伺服器。
+
+## 使用方式
+
+你可以用兩種方式控制你的 MCP 伺服器：
+
+- 使用者介面，稍後本章會示範如何操作。
+- 終端機，可以用 `code` 執行檔從終端機控制：
+
+  要將 MCP 伺服器加入你的使用者設定檔，請使用 --add-mcp 命令列選項，並提供 JSON 格式的伺服器設定，如 {\"name\":\"server-name\",\"command\":...}。
+
+  ```
+  code --add-mcp "{\"name\":\"my-server\",\"command\": \"uvx\",\"args\": [\"mcp-server-fetch\"]}"
+  ```
+
+### 截圖
+
+![Visual Studio Code 中的引導式 MCP 伺服器設定](../../../../translated_images/chat-mode-agent.729a22473f822216dd1e723aaee1f7d4a2ede571ee0948037a2d9357a63b9d0b.mo.png)  
+![每個代理會話的工具選擇](../../../../translated_images/agent-mode-select-tools.522c7ba5df0848f8f0d1e439c2e96159431bc620cb39ccf3f5dc611412fd0006.mo.png)  
+![輕鬆除錯 MCP 開發中的錯誤](../../../../translated_images/mcp-list-servers.fce89eefe3f30032bed8952e110ab9d82fadf043fcfa071f7d40cf93fb1ea9e9.mo.png)
+
+接下來的章節我們會更詳細說明如何使用視覺介面。
 
 ## 方法
 
-以下是我們需要採取的高層次步驟：
+高層次來說，我們需要這樣做：
 
-- 配置一個檔案以找到我們的 MCP Server。
-- 啟動/連接到該伺服器，讓它列出其功能。
+- 設定一個檔案來尋找 MCP 伺服器。
+- 啟動／連接該伺服器，讓它列出可用功能。
 - 透過 GitHub Copilot Chat 介面使用這些功能。
 
-很好，現在我們了解了流程，讓我們透過一個練習，嘗試在 Visual Studio Code 中使用 MCP Server。
+了解流程後，讓我們透過練習嘗試用 Visual Studio Code 使用 MCP 伺服器。
 
 ## 練習：使用伺服器
 
-在這個練習中，我們將配置 Visual Studio Code 以找到你的 MCP 伺服器，讓它能從 GitHub Copilot Chat 介面使用。
+在這個練習中，我們將設定 Visual Studio Code 以尋找你的 MCP 伺服器，讓它能在 GitHub Copilot Chat 介面中使用。
 
-### -0- 預備步驟，啟用 MCP Server 探測
+### -0- 前置步驟，啟用 MCP 伺服器發現功能
 
-你可能需要啟用 MCP Server 的探測功能。
+你可能需要啟用 MCP 伺服器的發現功能。
 
-1. 在 Visual Studio Code 中，前往 `檔案 -> 偏好設定 -> 設定`。
+1. 在 Visual Studio Code 中，前往 `File -> Preferences -> Settings`。
 
-2. 搜尋「MCP」，並在 settings.json 檔案中啟用 `chat.mcp.discovery.enabled`。
+1. 搜尋「MCP」，並在 settings.json 檔案中啟用 `chat.mcp.discovery.enabled`。
 
 ### -1- 建立設定檔
 
-首先，在你的專案根目錄建立一個設定檔，你需要一個名為 MCP.json 的檔案，並將它放在名為 .vscode 的資料夾中。內容應該如下：
+先在專案根目錄建立設定檔，你需要一個名為 MCP.json 的檔案，並放在名為 .vscode 的資料夾中。內容應該像這樣：
 
 ```text
 .vscode
 |-- mcp.json
 ```
 
-接著，讓我們看看如何新增伺服器條目。
+接著，我們來看看如何新增伺服器條目。
 
-### -2- 配置伺服器
+### -2- 設定伺服器
 
 將以下內容加入 *mcp.json*：
 
@@ -60,29 +95,29 @@ CO_OP_TRANSLATOR_METADATA:
 }
 ```
 
-上面是一個簡單的範例，展示如何啟動一個用 Node.js 撰寫的伺服器，對於其他執行環境，請使用 `command` 和 `args` 指定啟動伺服器的正確指令。
+上面是一個簡單的範例，示範如何啟動一個用 Node.js 撰寫的伺服器，其他執行環境請用 `command` 和 `args` 指定正確的啟動指令。
 
 ### -3- 啟動伺服器
 
-現在你已新增條目，讓我們啟動伺服器：
+新增條目後，開始啟動伺服器：
 
-1. 在 *mcp.json* 中找到你的條目，並確認你看到「播放」圖示：
+1. 找到 *mcp.json* 中的條目，確認你看到「播放」圖示：
 
   ![在 Visual Studio Code 中啟動伺服器](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.mo.png)  
 
-2. 點擊「播放」圖示，你應該會看到 GitHub Copilot Chat 中的工具圖示顯示可用工具數量增加。點擊該工具圖示，你會看到已註冊工具的清單。你可以勾選或取消勾選每個工具，決定是否讓 GitHub Copilot 將它們作為上下文使用：
+1. 點擊「播放」圖示，你會看到 GitHub Copilot Chat 中的工具圖示顯示可用工具數量增加。點擊該工具圖示，會列出已註冊的工具。你可以勾選或取消勾選工具，決定是否讓 GitHub Copilot 將它們作為上下文使用：
 
-  ![在 Visual Studio Code 中的工具清單](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.mo.png)
+  ![在 Visual Studio Code 中啟動伺服器](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.mo.png)
 
-3. 要執行工具，輸入一個你知道會符合其中一個工具描述的提示，例如「add 22 to 1」：
+1. 要執行工具，輸入你知道會符合其中一個工具描述的提示詞，例如「add 22 to 1」：
 
   ![從 GitHub Copilot 執行工具](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.mo.png)
 
-  你應該會看到回應為 23。
+  你應該會看到回應是 23。
 
 ## 作業
 
-嘗試在你的 *mcp.json* 檔案中新增一個伺服器條目，並確保你能啟動/停止伺服器。也確保你能透過 GitHub Copilot Chat 介面與伺服器上的工具溝通。
+嘗試在 *mcp.json* 檔案中新增伺服器條目，並確保你能啟動／停止伺服器。也要確認你能透過 GitHub Copilot Chat 介面與伺服器上的工具溝通。
 
 ## 解答
 
@@ -90,11 +125,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 重要重點
 
-本章節的重點如下：
+本章重點如下：
 
-- Visual Studio Code 是一個很棒的用戶端，讓你能使用多個 MCP Server 及其工具。
+- Visual Studio Code 是一個很棒的客戶端，能讓你使用多個 MCP 伺服器及其工具。
 - GitHub Copilot Chat 介面是你與伺服器互動的方式。
-- 你可以提示使用者輸入像是 API 金鑰等資訊，並在 *mcp.json* 檔案中配置伺服器條目時將其傳遞給 MCP Server。
+- 你可以提示使用者輸入像是 API 金鑰等資訊，並在 *mcp.json* 設定伺服器條目時傳遞給 MCP 伺服器。
 
 ## 範例
 
@@ -113,4 +148,4 @@ CO_OP_TRANSLATOR_METADATA:
 - 下一步：[建立 SSE 伺服器](../05-sse-server/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

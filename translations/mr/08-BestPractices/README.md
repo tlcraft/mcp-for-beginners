@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-14T04:57:34+00:00",
+  "original_hash": "80e5c8949af5af0f401fce6f905990aa",
+  "translation_date": "2025-07-17T00:19:46+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "mr"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## आढावा
 
-हा धडा उत्पादन वातावरणात MCP सर्व्हर आणि वैशिष्ट्ये विकसित करणे, चाचणी घेणे आणि तैनात करण्यासाठी प्रगत सर्वोत्तम पद्धतींवर लक्ष केंद्रित करतो. जसे जसे MCP परिसंस्था अधिक गुंतागुंतीच्या आणि महत्त्वाच्या होत आहेत, तसतसे स्थापित नमुन्यांचे पालन केल्याने विश्वासार्हता, देखभालयोग्यता आणि परस्परसंवाद सुनिश्चित होतो. हा धडा वास्तविक जगातील MCP अंमलबजावणीतून मिळालेल्या व्यावहारिक ज्ञानाचा संकलन करतो, ज्यामुळे तुम्हाला प्रभावी संसाधने, प्रॉम्प्ट आणि साधने वापरून मजबूत, कार्यक्षम सर्व्हर तयार करण्यात मार्गदर्शन मिळते.
+हा धडा उत्पादन वातावरणात MCP सर्व्हर आणि वैशिष्ट्ये विकसित करणे, चाचणी घेणे आणि तैनात करण्यासाठी प्रगत सर्वोत्तम पद्धतींवर लक्ष केंद्रित करतो. MCP परिसंस्था जसे जास्त गुंतागुंतीच्या आणि महत्त्वाच्या होत आहेत, तशा स्थापित नमुन्यांचे पालन केल्याने विश्वासार्हता, देखभालयोग्यता आणि परस्परसंवाद सुनिश्चित होतो. हा धडा वास्तविक जगातील MCP अंमलबजावणीतून मिळालेल्या व्यावहारिक ज्ञानाचा संकलन करतो, ज्यामुळे तुम्हाला प्रभावी संसाधने, प्रॉम्प्ट्स आणि साधने वापरून मजबूत, कार्यक्षम सर्व्हर तयार करण्यात मार्गदर्शन मिळेल.
 
 ## शिकण्याचे उद्दिष्टे
 
@@ -22,22 +22,70 @@ CO_OP_TRANSLATOR_METADATA:
 - MCP सर्व्हरमध्ये योग्य त्रुटी हाताळणी, लॉगिंग आणि निरीक्षण अंमलात आणणे
 - कार्यक्षमता, सुरक्षा आणि देखभालयोग्यता यासाठी MCP अंमलबजावणीचे ऑप्टिमायझेशन करणे
 
+## MCP मुख्य तत्त्वे
+
+विशिष्ट अंमलबजावणी पद्धतींमध्ये प्रवेश करण्यापूर्वी, प्रभावी MCP विकासासाठी मार्गदर्शक मुख्य तत्त्वे समजून घेणे महत्त्वाचे आहे:
+
+1. **मानकीकृत संवाद**: MCP JSON-RPC 2.0 वापरते, जे विनंत्या, प्रतिसाद आणि त्रुटी हाताळणीसाठी सर्व अंमलबजावणींमध्ये सुसंगत स्वरूप प्रदान करते.
+
+2. **वापरकर्ता-केंद्रित डिझाइन**: तुमच्या MCP अंमलबजावणींमध्ये नेहमी वापरकर्त्याच्या संमती, नियंत्रण आणि पारदर्शकतेला प्राधान्य द्या.
+
+3. **सुरक्षा प्रथम**: प्रमाणीकरण, अधिकृतता, पडताळणी आणि दर मर्यादिती यांसह मजबूत सुरक्षा उपाय अंमलात आणा.
+
+4. **मॉड्युलर आर्किटेक्चर**: तुमचे MCP सर्व्हर मॉड्युलर दृष्टिकोनाने डिझाइन करा, जिथे प्रत्येक साधन आणि संसाधनाचा स्पष्ट, लक्ष केंद्रित उद्देश असतो.
+
+5. **स्थितीपूर्ण कनेक्शन**: अधिक सुसंगत आणि संदर्भ-जाणणाऱ्या संवादांसाठी अनेक विनंत्यांमध्ये स्थिती राखण्याची MCP क्षमता वापरा.
+
+## अधिकृत MCP सर्वोत्तम पद्धती
+
+खालील सर्वोत्तम पद्धती अधिकृत Model Context Protocol दस्तऐवजांवर आधारित आहेत:
+
+### सुरक्षा सर्वोत्तम पद्धती
+
+1. **वापरकर्ता संमती आणि नियंत्रण**: डेटा प्रवेश करण्यापूर्वी किंवा ऑपरेशन्स करण्यापूर्वी नेहमी स्पष्ट वापरकर्ता संमती आवश्यक आहे. कोणता डेटा शेअर केला जातो आणि कोणती क्रिया अधिकृत आहे यावर स्पष्ट नियंत्रण द्या.
+
+2. **डेटा गोपनीयता**: फक्त स्पष्ट संमतीने वापरकर्ता डेटा उघडा आणि योग्य प्रवेश नियंत्रणांसह त्याचे संरक्षण करा. अनधिकृत डेटा प्रसारणापासून संरक्षण करा.
+
+3. **साधन सुरक्षा**: कोणतेही साधन वापरण्यापूर्वी स्पष्ट वापरकर्ता संमती आवश्यक आहे. वापरकर्त्यांना प्रत्येक साधनाची कार्यक्षमता समजावून द्या आणि मजबूत सुरक्षा मर्यादा लागू करा.
+
+4. **साधन परवानगी नियंत्रण**: सत्रादरम्यान कोणती साधने मॉडेल वापरू शकते हे कॉन्फिगर करा, ज्यामुळे फक्त स्पष्टपणे अधिकृत साधनांनाच प्रवेश मिळतो.
+
+5. **प्रमाणीकरण**: API कीज, OAuth टोकन्स किंवा इतर सुरक्षित प्रमाणीकरण पद्धती वापरून साधने, संसाधने किंवा संवेदनशील ऑपरेशन्ससाठी योग्य प्रमाणीकरण आवश्यक आहे.
+
+6. **पॅरामीटर पडताळणी**: सर्व साधन कॉलसाठी पडताळणी लागू करा जेणेकरून चुकीचा किंवा हानिकारक इनपुट साधन अंमलबजावणीपर्यंत पोहोचू नये.
+
+7. **दर मर्यादिती**: गैरवापर टाळण्यासाठी आणि सर्व्हर संसाधनांचा न्याय्य वापर सुनिश्चित करण्यासाठी दर मर्यादिती लागू करा.
+
+### अंमलबजावणी सर्वोत्तम पद्धती
+
+1. **क्षमता वाटाघाटी**: कनेक्शन सेटअप दरम्यान समर्थित वैशिष्ट्ये, प्रोटोकॉल आवृत्त्या, उपलब्ध साधने आणि संसाधने याबाबत माहिती देवाणघेवाण करा.
+
+2. **साधन डिझाइन**: एकाच कामासाठी लक्ष केंद्रित केलेली साधने तयार करा, बहुतेक समस्या हाताळणाऱ्या मोठ्या साधनांऐवजी.
+
+3. **त्रुटी हाताळणी**: समस्या ओळखण्यासाठी, अपयश सौम्यपणे हाताळण्यासाठी आणि उपयुक्त अभिप्राय देण्यासाठी मानकीकृत त्रुटी संदेश आणि कोड अंमलात आणा.
+
+4. **लॉगिंग**: प्रोटोकॉल संवादांचे ऑडिटिंग, डीबगिंग आणि निरीक्षणासाठी संरचित लॉग कॉन्फिगर करा.
+
+5. **प्रगती ट्रॅकिंग**: दीर्घकालीन ऑपरेशन्ससाठी प्रगती अद्यतने द्या जेणेकरून प्रतिसादक्षम वापरकर्ता इंटरफेस सक्षम होईल.
+
+6. **विनंती रद्द करणे**: क्लायंटना आवश्यक नसलेल्या किंवा खूप वेळ घेणाऱ्या इन-फ्लाइट विनंत्या रद्द करण्याची परवानगी द्या.
+
 ## अतिरिक्त संदर्भ
 
-MCP सर्वोत्तम पद्धतींबाबत सर्वात अद्ययावत माहिती साठी, खालील पहा:
+MCP सर्वोत्तम पद्धतींबाबत सर्वात अद्ययावत माहितीकरिता, खालील पहा:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
+- [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
-## MCP टूल विकासासाठी सर्वोत्तम पद्धती
+## व्यावहारिक अंमलबजावणी उदाहरणे
 
-### आर्किटेक्चरल तत्त्वे
+### साधन डिझाइन सर्वोत्तम पद्धती
 
-#### 1. सिंगल रिस्पॉन्सिबिलिटी प्रिन्सिपल
+#### 1. एकल जबाबदारी तत्त्व
 
-प्रत्येक MCP वैशिष्ट्याला स्पष्ट, लक्ष केंद्रित उद्दिष्ट असावे. अनेक समस्या हाताळण्याचा प्रयत्न करणाऱ्या एकत्रित साधनांऐवजी, विशिष्ट कार्यांमध्ये उत्कृष्ट असलेली विशेष साधने विकसित करा.
+प्रत्येक MCP साधनाचा स्पष्ट, लक्ष केंद्रित उद्देश असावा. अनेक समस्या हाताळणाऱ्या मोठ्या साधनांऐवजी, विशिष्ट कार्यांमध्ये उत्कृष्ट असलेली विशेष साधने विकसित करा.
 
-**चांगले उदाहरण:**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -75,7 +123,8 @@ public class WeatherForecastTool : ITool
             Required = new[] { "location" }
         };
     }
-      public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
     {
         var location = parameters["location"].ToString();
         var days = parameters.ContainsKey("days") 
@@ -95,67 +144,468 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**वाईट उदाहरण:**
-```csharp
-// A tool trying to do too many things
-public class WeatherToolSuite : ITool
-{
-    public string Name => "weather";
-    public string Description => "Weather-related functionality";
+#### 2. सुसंगत त्रुटी हाताळणी
+
+माहितीपूर्ण त्रुटी संदेशांसह आणि योग्य पुनर्प्राप्ती यंत्रणांसह मजबूत त्रुटी हाताळणी अंमलात आणा.
+
+```python
+# Python example with comprehensive error handling
+class DataQueryTool:
+    def get_name(self):
+        return "dataQuery"
+        
+    def get_description(self):
+        return "Queries data from specified database tables"
     
-    public ToolDefinition GetDefinition()
-    {
-        return new ToolDefinition
-        {
-            Name = Name,
-            Description = Description,
-            Parameters = new Dictionary<string, ParameterDefinition>
-            {
-                ["action"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "Weather action to perform",
-                    Enum = new[] { "forecast", "history", "alerts", "radar" }
-                },
-                ["location"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "City or location name"
-                },
-                // Many more properties for different actions...
-            },
-            required = new[] { "action", "location" }
-        };
+    async def execute(self, parameters):
+        try:
+            # Parameter validation
+            if "query" not in parameters:
+                raise ToolParameterError("Missing required parameter: query")
+                
+            query = parameters["query"]
+            
+            # Security validation
+            if self._contains_unsafe_sql(query):
+                raise ToolSecurityError("Query contains potentially unsafe SQL")
+            
+            try:
+                # Database operation with timeout
+                async with timeout(10):  # 10 second timeout
+                    result = await self._database.execute_query(query)
+                    
+                return ToolResponse(
+                    content=[TextContent(json.dumps(result))]
+                )
+            except asyncio.TimeoutError:
+                raise ToolExecutionError("Database query timed out after 10 seconds")
+            except DatabaseConnectionError as e:
+                # Connection errors might be transient
+                self._log_error("Database connection error", e)
+                raise ToolExecutionError(f"Database connection error: {str(e)}")
+            except DatabaseQueryError as e:
+                # Query errors are likely client errors
+                self._log_error("Database query error", e)
+                raise ToolExecutionError(f"Invalid query: {str(e)}")
+                
+        except ToolError:
+            # Let tool-specific errors pass through
+            raise
+        except Exception as e:
+            # Catch-all for unexpected errors
+            self._log_error("Unexpected error in DataQueryTool", e)
+            raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
+    
+    def _contains_unsafe_sql(self, query):
+        # Implementation of SQL injection detection
+        pass
+        
+    def _log_error(self, message, error):
+        # Implementation of error logging
+        pass
+```
+
+#### 3. पॅरामीटर पडताळणी
+
+चुकीचा किंवा हानिकारक इनपुट टाळण्यासाठी पॅरामीटर्सची नेहमीच सखोल पडताळणी करा.
+
+```javascript
+// JavaScript/TypeScript example with detailed parameter validation
+class FileOperationTool {
+  getName() {
+    return "fileOperation";
+  }
+  
+  getDescription() {
+    return "Performs file operations like read, write, and delete";
+  }
+  
+  getDefinition() {
+    return {
+      name: this.getName(),
+      description: this.getDescription(),
+      parameters: {
+        operation: {
+          type: "string",
+          description: "Operation to perform",
+          enum: ["read", "write", "delete"]
+        },
+        path: {
+          type: "string",
+          description: "File path (must be within allowed directories)"
+        },
+        content: {
+          type: "string",
+          description: "Content to write (only for write operation)",
+          optional: true
+        }
+      },
+      required: ["operation", "path"]
+    };
+  }
+  
+  async execute(parameters) {
+    // 1. Validate parameter presence
+    if (!parameters.operation) {
+      throw new ToolError("Missing required parameter: operation");
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
-    {
-        // Complex conditional logic to handle different actions
-        var action = request.Parameters.GetProperty("action").GetString();
-        var location = request.Parameters.GetProperty("location").GetString();
+    if (!parameters.path) {
+      throw new ToolError("Missing required parameter: path");
+    }
+    
+    // 2. Validate parameter types
+    if (typeof parameters.operation !== "string") {
+      throw new ToolError("Parameter 'operation' must be a string");
+    }
+    
+    if (typeof parameters.path !== "string") {
+      throw new ToolError("Parameter 'path' must be a string");
+    }
+    
+    // 3. Validate parameter values
+    const validOperations = ["read", "write", "delete"];
+    if (!validOperations.includes(parameters.operation)) {
+      throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
+    }
+    
+    // 4. Validate content presence for write operation
+    if (parameters.operation === "write" && !parameters.content) {
+      throw new ToolError("Content parameter is required for write operation");
+    }
+    
+    // 5. Path safety validation
+    if (!this.isPathWithinAllowedDirectories(parameters.path)) {
+      throw new ToolError("Access denied: path is outside of allowed directories");
+    }
+    
+    // Implementation based on validated parameters
+    // ...
+  }
+  
+  isPathWithinAllowedDirectories(path) {
+    // Implementation of path safety check
+    // ...
+  }
+}
+```
+
+### सुरक्षा अंमलबजावणी उदाहरणे
+
+#### 1. प्रमाणीकरण आणि अधिकृतता
+
+```java
+// Java example with authentication and authorization
+public class SecureDataAccessTool implements Tool {
+    private final AuthenticationService authService;
+    private final AuthorizationService authzService;
+    private final DataService dataService;
+    
+    // Dependency injection
+    public SecureDataAccessTool(
+            AuthenticationService authService,
+            AuthorizationService authzService,
+            DataService dataService) {
+        this.authService = authService;
+        this.authzService = authzService;
+        this.dataService = dataService;
+    }
+    
+    @Override
+    public String getName() {
+        return "secureDataAccess";
+    }
+    
+    @Override
+    public ToolResponse execute(ToolRequest request) {
+        // 1. Extract authentication context
+        String authToken = request.getContext().getAuthToken();
         
-        switch (action)
-        {
-            case "forecast":
-                // Forecast logic
-                break;
-            case "history":
-                // Historical data logic
-                break;
-            // More cases...
-            default:
-                throw new ToolExecutionException($"Unknown action: {action}");
+        // 2. Authenticate user
+        UserIdentity user;
+        try {
+            user = authService.validateToken(authToken);
+        } catch (AuthenticationException e) {
+            return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // Result processing
+        // 3. Check authorization for the specific operation
+        String dataId = request.getParameters().get("dataId").getAsString();
+        String operation = request.getParameters().get("operation").getAsString();
+        
+        boolean isAuthorized = authzService.isAuthorized(user, "data:" + dataId, operation);
+        if (!isAuthorized) {
+            return ToolResponse.error("Access denied: Insufficient permissions for this operation");
+        }
+        
+        // 4. Proceed with authorized operation
+        try {
+            switch (operation) {
+                case "read":
+                    Object data = dataService.getData(dataId, user.getId());
+                    return ToolResponse.success(data);
+                case "update":
+                    JsonNode newData = request.getParameters().get("newData");
+                    dataService.updateData(dataId, newData, user.getId());
+                    return ToolResponse.success("Data updated successfully");
+                default:
+                    return ToolResponse.error("Unsupported operation: " + operation);
+            }
+        } catch (Exception e) {
+            return ToolResponse.error("Operation failed: " + e.getMessage());
+        }
+    }
+}
+```
+
+#### 2. दर मर्यादिती
+
+```csharp
+// C# rate limiting implementation
+public class RateLimitingMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly IMemoryCache _cache;
+    private readonly ILogger<RateLimitingMiddleware> _logger;
+    
+    // Configuration options
+    private readonly int _maxRequestsPerMinute;
+    
+    public RateLimitingMiddleware(
+        RequestDelegate next,
+        IMemoryCache cache,
+        ILogger<RateLimitingMiddleware> logger,
+        IConfiguration config)
+    {
+        _next = next;
+        _cache = cache;
+        _logger = logger;
+        _maxRequestsPerMinute = config.GetValue<int>("RateLimit:MaxRequestsPerMinute", 60);
+    }
+    
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // 1. Get client identifier (API key or user ID)
+        string clientId = GetClientIdentifier(context);
+        
+        // 2. Get rate limiting key for this minute
+        string cacheKey = $"rate_limit:{clientId}:{DateTime.UtcNow:yyyyMMddHHmm}";
+        
+        // 3. Check current request count
+        if (!_cache.TryGetValue(cacheKey, out int requestCount))
+        {
+            requestCount = 0;
+        }
+        
+        // 4. Enforce rate limit
+        if (requestCount >= _maxRequestsPerMinute)
+        {
+            _logger.LogWarning("Rate limit exceeded for client {ClientId}", clientId);
+            
+            context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+            context.Response.Headers.Add("Retry-After", "60");
+            
+            await context.Response.WriteAsJsonAsync(new
+            {
+                error = "Rate limit exceeded",
+                message = "Too many requests. Please try again later.",
+                retryAfterSeconds = 60
+            });
+            
+            return;
+        }
+        
+        // 5. Increment request count
+        _cache.Set(cacheKey, requestCount + 1, TimeSpan.FromMinutes(2));
+        
+        // 6. Add rate limit headers
+        context.Response.Headers.Add("X-RateLimit-Limit", _maxRequestsPerMinute.ToString());
+        context.Response.Headers.Add("X-RateLimit-Remaining", (_maxRequestsPerMinute - requestCount - 1).ToString());
+        
+        // 7. Continue with the request
+        await _next(context);
+    }
+    
+    private string GetClientIdentifier(HttpContext context)
+    {
+        // Implementation to extract API key or user ID
         // ...
     }
 }
 ```
 
-#### 2. डिपेंडन्सी इंजेक्शन आणि टेस्टेबिलिटी
+## चाचणी सर्वोत्तम पद्धती
 
-साधने त्यांच्या अवलंबित्वांना कन्स्ट्रक्टर इंजेक्शनद्वारे प्राप्त करण्यासाठी डिझाइन करा, ज्यामुळे ती चाचणीसाठी आणि कॉन्फिगर करण्यासाठी योग्य बनतात:
+### 1. युनिट चाचणी MCP साधने
+
+तुमची साधने स्वतंत्रपणे, बाह्य अवलंबनांचे मॉकिंग करून नेहमीच चाचणी करा:
+
+```typescript
+// TypeScript example of a tool unit test
+describe('WeatherForecastTool', () => {
+  let tool: WeatherForecastTool;
+  let mockWeatherService: jest.Mocked<IWeatherService>;
+  
+  beforeEach(() => {
+    // Create a mock weather service
+    mockWeatherService = {
+      getForecasts: jest.fn()
+    } as any;
+    
+    // Create the tool with the mock dependency
+    tool = new WeatherForecastTool(mockWeatherService);
+  });
+  
+  it('should return weather forecast for a location', async () => {
+    // Arrange
+    const mockForecast = {
+      location: 'Seattle',
+      forecasts: [
+        { date: '2025-07-16', temperature: 72, conditions: 'Sunny' },
+        { date: '2025-07-17', temperature: 68, conditions: 'Partly Cloudy' },
+        { date: '2025-07-18', temperature: 65, conditions: 'Rain' }
+      ]
+    };
+    
+    mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
+    
+    // Act
+    const response = await tool.execute({
+      location: 'Seattle',
+      days: 3
+    });
+    
+    // Assert
+    expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
+    expect(response.content[0].text).toContain('Seattle');
+    expect(response.content[0].text).toContain('Sunny');
+  });
+  
+  it('should handle errors from the weather service', async () => {
+    // Arrange
+    mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
+    
+    // Act & Assert
+    await expect(tool.execute({
+      location: 'Seattle',
+      days: 3
+    })).rejects.toThrow('Weather service error: Service unavailable');
+  });
+});
+```
+
+### 2. एकत्रीकरण चाचणी
+
+क्लायंट विनंत्यांपासून सर्व्हर प्रतिसादांपर्यंत संपूर्ण प्रवाहाची चाचणी करा:
+
+```python
+# Python integration test example
+@pytest.mark.asyncio
+async def test_mcp_server_integration():
+    # Start a test server
+    server = McpServer()
+    server.register_tool(WeatherForecastTool(MockWeatherService()))
+    await server.start(port=5000)
+    
+    try:
+        # Create a client
+        client = McpClient("http://localhost:5000")
+        
+        # Test tool discovery
+        tools = await client.discover_tools()
+        assert "weatherForecast" in [t.name for t in tools]
+        
+        # Test tool execution
+        response = await client.execute_tool("weatherForecast", {
+            "location": "Seattle",
+            "days": 3
+        })
+        
+        # Verify response
+        assert response.status_code == 200
+        assert "Seattle" in response.content[0].text
+        assert len(json.loads(response.content[0].text)["forecasts"]) == 3
+        
+    finally:
+        # Clean up
+        await server.stop()
+```
+
+## कार्यक्षमता ऑप्टिमायझेशन
+
+### 1. कॅशिंग धोरणे
+
+विलंब आणि संसाधन वापर कमी करण्यासाठी योग्य कॅशिंग अंमलात आणा:
+
+```csharp
+// C# example with caching
+public class CachedWeatherTool : ITool
+{
+    private readonly IWeatherService _weatherService;
+    private readonly IDistributedCache _cache;
+    private readonly ILogger<CachedWeatherTool> _logger;
+    
+    public CachedWeatherTool(
+        IWeatherService weatherService,
+        IDistributedCache cache,
+        ILogger<CachedWeatherTool> logger)
+    {
+        _weatherService = weatherService;
+        _cache = cache;
+        _logger = logger;
+    }
+    
+    public string Name => "weatherForecast";
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    {
+        var location = parameters["location"].ToString();
+        var days = Convert.ToInt32(parameters.GetValueOrDefault("days", 3));
+        
+        // Create cache key
+        string cacheKey = $"weather:{location}:{days}";
+        
+        // Try to get from cache
+        string cachedForecast = await _cache.GetStringAsync(cacheKey);
+        if (!string.IsNullOrEmpty(cachedForecast))
+        {
+            _logger.LogInformation("Cache hit for weather forecast: {Location}", location);
+            return new ToolResponse
+            {
+                Content = new List<ContentItem>
+                {
+                    new TextContent(cachedForecast)
+                }
+            };
+        }
+        
+        // Cache miss - get from service
+        _logger.LogInformation("Cache miss for weather forecast: {Location}", location);
+        var forecast = await _weatherService.GetForecastAsync(location, days);
+        string forecastJson = JsonSerializer.Serialize(forecast);
+        
+        // Store in cache (weather forecasts valid for 1 hour)
+        await _cache.SetStringAsync(
+            cacheKey,
+            forecastJson,
+            new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1)
+            });
+        
+        return new ToolResponse
+        {
+            Content = new List<ContentItem>
+            {
+                new TextContent(forecastJson)
+            }
+        };
+    }
+}
+
+#### 2. Dependency Injection and Testability
+
+Design tools to receive their dependencies through constructor injection, making them testable and configurable:
 
 ```java
 // Java example with dependency injection
@@ -179,9 +629,9 @@ public class CurrencyConversionTool implements Tool {
 }
 ```
 
-#### 3. कंपोजेबल टूल्स
+#### 3. Composable Tools
 
-अधिक गुंतागुंतीच्या वर्कफ्लो तयार करण्यासाठी एकत्र जोडता येणारी साधने डिझाइन करा:
+Design tools that can be composed together to create more complex workflows:
 
 ```python
 # Python example showing composable tools
@@ -212,13 +662,13 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-### स्कीमा डिझाइनसाठी सर्वोत्तम पद्धती
+### Schema Design Best Practices
 
-स्कीमा हा मॉडेल आणि तुमच्या साधनादरम्यानचा करार आहे. चांगल्या प्रकारे डिझाइन केलेल्या स्कीमामुळे साधनाचा वापर सुलभ होतो.
+The schema is the contract between the model and your tool. Well-designed schemas lead to better tool usability.
 
-#### 1. स्पष्ट पॅरामीटर वर्णने
+#### 1. Clear Parameter Descriptions
 
-प्रत्येक पॅरामीटरसाठी नेहमी वर्णनात्मक माहिती द्या:
+Always include descriptive information for each parameter:
 
 ```csharp
 public object GetSchema()
@@ -255,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. व्हॅलिडेशन बंधने
+#### 2. Validation Constraints
 
-अवैध इनपुट टाळण्यासाठी व्हॅलिडेशन बंधने समाविष्ट करा:
+Include validation constraints to prevent invalid inputs:
 
 ```java
 Map<String, Object> getSchema() {
@@ -297,9 +747,9 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. सुसंगत रिटर्न स्ट्रक्चर्स
+#### 3. Consistent Return Structures
 
-मॉडेल्सना निकाल समजून घेणे सोपे होण्यासाठी प्रतिसाद संरचनेत सुसंगतता ठेवा:
+Maintain consistency in your response structures to make it easier for models to interpret results:
 
 ```python
 async def execute_async(self, request):
@@ -338,13 +788,13 @@ def _format_item(self, item):
     }
 ```
 
-### त्रुटी हाताळणी
+### Error Handling
 
-MCP साधनांसाठी विश्वासार्हता राखण्यासाठी मजबूत त्रुटी हाताळणी अत्यावश्यक आहे.
+Robust error handling is crucial for MCP tools to maintain reliability.
 
-#### 1. सौम्य त्रुटी हाताळणी
+#### 1. Graceful Error Handling
 
-योग्य स्तरांवर त्रुटी हाताळा आणि माहितीपूर्ण संदेश द्या:
+Handle errors at appropriate levels and provide informative messages:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -386,9 +836,9 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. संरचित त्रुटी प्रतिसाद
+#### 2. Structured Error Responses
 
-संभव असल्यास संरचित त्रुटी माहिती परत करा:
+Return structured error information when possible:
 
 ```java
 @Override
@@ -418,9 +868,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-#### 3. पुनःप्रयत्न लॉजिक
+#### 3. Retry Logic
 
-तात्पुरत्या अपयशांसाठी योग्य पुनःप्रयत्न लॉजिक अंमलात आणा:
+Implement appropriate retry logic for transient failures:
 
 ```python
 async def execute_async(self, request):
@@ -446,11 +896,11 @@ async def execute_async(self, request):
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### कार्यक्षमता ऑप्टिमायझेशन
+### Performance Optimization
 
-#### 1. कॅशिंग
+#### 1. Caching
 
-महागड्या ऑपरेशन्ससाठी कॅशिंग अंमलात आणा:
+Implement caching for expensive operations:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -464,23 +914,25 @@ public class CachedDataTool : IMcpTool
         _cache = cache;
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+    public async Task
+
+ExecuteAsync(ToolRequest request)
     {
         var query = request.Parameters.GetProperty("query").GetString();
         
-        // Create cache key based on parameters
+        // पॅरामीटर्सवर आधारित कॅश की तयार करा
         var cacheKey = $"data_query_{ComputeHash(query)}";
         
-        // Try to get from cache first
+        // प्रथम कॅशमधून मिळवण्याचा प्रयत्न करा
         if (_cache.TryGetValue(cacheKey, out var cachedResult))
         {
             return new ToolResponse { Result = cachedResult };
         }
         
-        // Cache miss - perform actual query
+        // कॅशमध्ये न सापडल्यास - प्रत्यक्ष क्वेरी करा
         var result = await _database.QueryAsync(query);
         
-        // Store in cache with expiration
+        // कालबाह्यतेसह कॅशमध्ये साठवा
         var cacheOptions = new MemoryCacheEntryOptions()
             .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
             
@@ -491,14 +943,14 @@ public class CachedDataTool : IMcpTool
     
     private string ComputeHash(string input)
     {
-        // Implementation to generate stable hash for cache key
+        // कॅश कीसाठी स्थिर हॅश तयार करण्याची अंमलबजावणी
     }
 }
 ```
 
-#### 2. असिंक्रोनस प्रोसेसिंग
+#### 2. Asynchronous Processing
 
-I/O-आधारित ऑपरेशन्ससाठी असिंक्रोनस प्रोग्रामिंग पॅटर्न वापरा:
+Use asynchronous programming patterns for I/O-bound operations:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -509,23 +961,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // दीर्घकालीन ऑपरेशन्ससाठी, लगेच प्रक्रिया आयडी परत करा
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // असिंक्रोनस प्रक्रिया सुरू करा
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // दीर्घकालीन ऑपरेशन करा
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // स्थिती अपडेट करा (सामान्यतः डेटाबेसमध्ये साठवली जाते)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // प्रक्रिया आयडीसह त्वरित प्रतिसाद परत करा
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -534,7 +986,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // सहकारी स्थिती तपासणी साधन
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -547,35 +999,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. रिसोर्स थ्रॉटलिंग
+#### 3. Resource Throttling
 
-ओव्हरलोड टाळण्यासाठी संसाधन थ्रॉटलिंग अंमलात आणा:
+Implement resource throttling to prevent overload:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # प्रति सेकंद 5 विनंत्या परवानगी
+            bucket_size=10        # 10 विनंत्यांपर्यंत अचानक वाढीची परवानगी
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # पुढे जाऊ शकतो का किंवा थांबावे लागेल का ते तपासा
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # जर थांबा खूप जास्त असेल
                 raise ToolExecutionException(
-                    f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
+                    f"रेट लिमिट ओलांडली आहे. कृपया {delay:.1f} सेकंदांनी पुन्हा प्रयत्न करा."
                 )
             else:
-                # Wait for the appropriate delay time
+                # योग्य विलंबासाठी थांबा
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # एक टोकन वापरा आणि विनंतीसह पुढे जा
         self.rate_limiter.consume()
         
-        # Call API
+        # API कॉल करा
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -593,7 +1045,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # पुढील टोकन उपलब्ध होईपर्यंतचा वेळ मोजा
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -605,86 +1057,86 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # गेलेला वेळ लक्षात घेऊन नवीन टोकन जोडा
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### सुरक्षा सर्वोत्तम पद्धती
+### Security Best Practices
 
-#### 1. इनपुट व्हॅलिडेशन
+#### 1. Input Validation
 
-नेहमी इनपुट पॅरामीटर्सची सखोल पडताळणी करा:
+Always validate input parameters thoroughly:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 {
-    // Validate parameters exist
+    // पॅरामीटर्स अस्तित्वात आहेत का ते तपासा
     if (!request.Parameters.TryGetProperty("query", out var queryProp))
     {
-        throw new ToolExecutionException("Missing required parameter: query");
+        throw new ToolExecutionException("आवश्यक पॅरामीटर गहाळ आहे: query");
     }
     
-    // Validate correct type
+    // योग्य प्रकार आहे का ते तपासा
     if (queryProp.ValueKind != JsonValueKind.String)
     {
-        throw new ToolExecutionException("Query parameter must be a string");
+        throw new ToolExecutionException("Query पॅरामीटर स्ट्रिंग असणे आवश्यक आहे");
     }
     
     var query = queryProp.GetString();
     
-    // Validate string content
+    // स्ट्रिंग सामग्री वैध आहे का ते तपासा
     if (string.IsNullOrWhiteSpace(query))
     {
-        throw new ToolExecutionException("Query parameter cannot be empty");
+        throw new ToolExecutionException("Query पॅरामीटर रिकामा असू शकत नाही");
     }
     
     if (query.Length > 500)
     {
-        throw new ToolExecutionException("Query parameter exceeds maximum length of 500 characters");
+        throw new ToolExecutionException("Query पॅरामीटरची जास्तीत जास्त लांबी 500 अक्षरे आहे");
     }
     
-    // Check for SQL injection attacks if applicable
+    // SQL इंजेक्शन हल्ल्यांसाठी तपासा, जर लागू असेल तर
     if (ContainsSqlInjection(query))
     {
-        throw new ToolExecutionException("Invalid query: contains potentially unsafe SQL");
+        throw new ToolExecutionException("अवैध क्वेरी: संभाव्य असुरक्षित SQL आहे");
     }
     
-    // Proceed with execution
+    // अंमलबजावणीसह पुढे जा
     // ...
 }
 ```
 
-#### 2. अधिकृतता तपासणी
+#### 2. Authorization Checks
 
-योग्य अधिकृतता तपासणी अंमलात आणा:
+Implement proper authorization checks:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // विनंतीमधून वापरकर्ता संदर्भ मिळवा
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // वापरकर्त्याकडे आवश्यक परवानग्या आहेत का ते तपासा
     if (!authorizationService.hasPermission(user, "documents:read")) {
-        throw new ToolExecutionException("User does not have permission to access documents");
+        throw new ToolExecutionException("वापरकर्त्याकडे दस्तऐवज पाहण्याची परवानगी नाही");
     }
     
-    // For specific resources, check access to that resource
+    // विशिष्ट संसाधनांसाठी, त्या संसाधनावर प्रवेश तपासा
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
-        throw new ToolExecutionException("Access denied to the requested document");
+        throw new ToolExecutionException("विनंती केलेल्या दस्तऐवजावर प्रवेश नाकारला");
     }
     
-    // Proceed with tool execution
+    // साधन अंमलबजावणीसह पुढे जा
     // ...
 }
 ```
 
-#### 3. संवेदनशील डेटा हाताळणी
+#### 3. Sensitive Data Handling
 
-संवेदनशील डेटा काळजीपूर्वक हाताळा:
+Handle sensitive data carefully:
 
 ```python
 class SecureDataTool(Tool):
@@ -702,56 +1154,56 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # वापरकर्त्याचा डेटा मिळवा
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # संवेदनशील क्षेत्रे फिल्टर करा जोपर्यंत स्पष्टपणे विनंती केली नाही आणि अधिकृत नाही
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # विनंती संदर्भातील अधिकृत स्तर तपासा
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # मूळ डेटा बदलू नये म्हणून कॉपी तयार करा
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # विशिष्ट संवेदनशील क्षेत्रे लपवा
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # अंतर्गत संवेदनशील डेटा लपवा
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## MCP साधनांसाठी चाचणी सर्वोत्तम पद्धती
+## Testing Best Practices for MCP Tools
 
-व्यापक चाचणी सुनिश्चित करते की MCP साधने योग्य प्रकारे कार्य करतात, कडेकोट परिस्थिती हाताळतात आणि संपूर्ण प्रणालीशी योग्यरित्या एकत्रित होतात.
+Comprehensive testing ensures that MCP tools function correctly, handle edge cases, and integrate properly with the rest of the system.
 
-### युनिट चाचणी
+### Unit Testing
 
-#### 1. प्रत्येक साधन स्वतंत्रपणे चाचणी करा
+#### 1. Test Each Tool in Isolation
 
-प्रत्येक साधनाच्या कार्यक्षमतेसाठी लक्ष केंद्रित चाचण्या तयार करा:
+Create focused tests for each tool's functionality:
 
 ```csharp
 [Fact]
 public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 {
-    // Arrange
+    // तयारी करा
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("Seattle", 3))
-        .ReturnsAsync(new WeatherForecast(/* test data */));
+        .ReturnsAsync(new WeatherForecast(/* चाचणी डेटा */));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -763,10 +1215,10 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
         })
     );
     
-    // Act
+    // क्रिया करा
     var response = await tool.ExecuteAsync(request);
     
-    // Assert
+    // पुष्टी करा
     Assert.NotNull(response);
     var result = JsonSerializer.Deserialize<WeatherForecast>(response.Result);
     Assert.Equal("Seattle", result.Location);
@@ -776,11 +1228,11 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 [Fact]
 public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 {
-    // Arrange
+    // तयारी करा
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("InvalidLocation", It.IsAny<int>()))
-        .ThrowsAsync(new LocationNotFoundException("Location not found"));
+        .ThrowsAsync(new LocationNotFoundException("स्थान सापडले नाही"));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -792,36 +1244,36 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
         })
     );
     
-    // Act & Assert
+    // क्रिया आणि पुष्टी करा
     var exception = await Assert.ThrowsAsync<ToolExecutionException>(
         () => tool.ExecuteAsync(request)
     );
     
-    Assert.Contains("Location not found", exception.Message);
+    Assert.Contains("स्थान सापडले नाही", exception.Message);
 }
 ```
 
-#### 2. स्कीमा व्हॅलिडेशन चाचणी
+#### 2. Schema Validation Testing
 
-स्कीमा वैध आहेत आणि योग्य बंधने लागू करतात याची चाचणी करा:
+Test that schemas are valid and properly enforce constraints:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // साधन उदाहरण तयार करा
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // स्कीमा मिळवा
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // स्कीमा JSON मध्ये रूपांतरित करा आणि वैधता तपासा
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // स्कीमा वैध JSONSchema आहे का ते तपासा
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // वैध पॅरामीटर्ससाठी चाचणी करा
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -829,14 +1281,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // आवश्यक पॅरामीटर गहाळ असल्यास चाचणी करा
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // अवैध पॅरामीटर प्रकारासाठी चाचणी करा
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -846,21 +1298,21 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. त्रुटी हाताळणी चाचण्या
+#### 3. Error Handling Tests
 
-त्रुटी परिस्थितींसाठी विशिष्ट चाचण्या तयार करा:
+Create specific tests for error conditions:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # तयारी करा
+    tool = ApiTool(timeout=0.1)  # खूप कमी टाइमआउट
     
-    # Mock a request that will time out
+    # टाइमआउट होणारी विनंती मॉक करा
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # टाइमआउटपेक्षा जास्त वेळ
         )
         
         request = ToolRequest(
@@ -868,19 +1320,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # क्रिया आणि पुष्टी करा
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # अपवाद संदेश तपासा
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # तयारी करा
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # रेट-लिमिटेड प्रतिसाद मॉक करा
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -894,27 +1346,27 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # क्रिया आणि पुष्टी करा
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # अपवादात रेट लिमिट माहिती आहे का तपासा
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### इंटिग्रेशन चाचणी
+### Integration Testing
 
-#### 1. टूल चेन चाचणी
+#### 1. Tool Chain Testing
 
-अपेक्षित संयोजनांमध्ये साधने एकत्र काम करत आहेत का ते तपासा:
+Test tools working together in expected combinations:
 
 ```csharp
 [Fact]
 public async Task DataProcessingWorkflow_CompletesSuccessfully()
 {
-    // Arrange
+    // तयारी करा
     var dataFetchTool = new DataFetchTool(mockDataService.Object);
     var analysisTools = new DataAnalysisTool(mockAnalysisService.Object);
     var visualizationTool = new DataVisualizationTool(mockVisualizationService.Object);
@@ -926,30 +1378,31 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
     
     var workflowExecutor = new WorkflowExecutor(toolRegistry);
     
-    // Act
-    var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
-        new ToolCall("dataFetch", new { source = "sales2023" }),
-        new ToolCall("dataAnalysis", ctx => new { 
+    // क्रिया करा
+var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
+    new ToolCall("dataFetch", new { source = "sales2023" }),
+    new ToolCall("dataAnalysis", ctx =>
+        new { 
             data = ctx.GetResult("dataFetch"),
             analysis = "trend" 
         }),
-        new ToolCall("dataVisualize", ctx => new {
-            analysisResult = ctx.GetResult("dataAnalysis"),
-            type = "line-chart"
-        })
-    });
-    
-    // Assert
-    Assert.NotNull(result);
-    Assert.True(result.Success);
-    Assert.NotNull(result.GetResult("dataVisualize"));
-    Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
+    new ToolCall("dataVisualize", ctx => new {
+        analysisResult = ctx.GetResult("dataAnalysis"),
+        type = "line-chart"
+    })
+});
+
+// Assert
+Assert.NotNull(result);
+Assert.True(result.Success);
+Assert.NotNull(result.GetResult("dataVisualize"));
+Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
 }
 ```
 
-#### 2. MCP सर्व्हर चाचणी
+#### 2. MCP Server Testing
 
-पूर्ण साधन नोंदणी आणि अंमलबजावणीसह MCP सर्व्हरची चाचणी करा:
+Test the MCP server with full tool registration and execution:
 
 ```java
 @SpringBootTest
@@ -964,7 +1417,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // डिस्कव्हरी एंडपॉइंटची चाचणी करा
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -975,7 +1428,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // टूल विनंती तयार करा
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -985,7 +1438,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // विनंती पाठवा आणि प्रतिसाद तपासा
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -995,17 +1448,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // अवैध टूल विनंती तयार करा
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // "b" हा पॅरामीटर गहाळ आहे
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // विनंती पाठवा आणि त्रुटी प्रतिसाद तपासा
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1015,17 +1468,17 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. एंड-टू-एंड चाचणी
+#### 3. End-to-End Testing
 
-मॉडेल प्रॉम्प्टपासून साधन अंमलबजावणीपर्यंत संपूर्ण वर्कफ्लोची चाचणी करा:
+Test complete workflows from model prompt to tool execution:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # तयारी - MCP क्लायंट आणि मॉक मॉडेल सेट करा
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # मॉक मॉडेल प्रतिसाद
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1040,7 +1493,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # मॉक वेदर टूल प्रतिसाद
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1056,14 +1509,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # क्रिया करा
         response = await mcp_client.send_prompt(
             "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # पुष्टी करा
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1072,17 +1525,17 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### कार्यक्षमता चाचणी
+### Performance Testing
 
-#### 1. लोड चाचणी
+#### 1. Load Testing
 
-तुमचा MCP सर्व्हर किती समांतर विनंत्या हाताळू शकतो ते तपासा:
+Test how many concurrent requests your MCP server can handle:
 
 ```csharp
 [Fact]
 public async Task McpServer_HandlesHighConcurrency()
 {
-    // Arrange
+    // तयारी
     var server = new McpServer(
         name: "TestServer",
         version: "1.0",
@@ -1094,7 +1547,7 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var client = new McpClient("http://localhost:5000");
     
-    // Act
+    // क्रिया
     var tasks = new List<Task<McpResponse>>();
     for (int i = 0; i < 1000; i++)
     {
@@ -1103,15 +1556,15 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var results = await Task.WhenAll(tasks);
     
-    // Assert
+    // पुष्टी करा
     Assert.Equal(1000, results.Length);
     Assert.All(results, r => Assert.NotNull(r));
 }
 ```
 
-#### 2. स्ट्रेस चाचणी
+#### 2. Stress Testing
 
-अत्यंत लोडखाली प्रणालीची चाचणी करा:
+Test the system under extreme load:
 
 ```java
 @Test
@@ -1120,13 +1573,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // स्ट्रेस टेस्टसाठी JMeter सेट करा
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // JMeter टेस्ट प्लॅन कॉन्फिगर करा
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // टेस्ट प्लॅन, थ्रेड ग्रुप, सॅम्पलर्स इत्यादी तयार करा
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1138,7 +1591,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // टूल एक्सिक्युशनसाठी HTTP सॅम्पलर जोडा
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1149,58 +1602,58 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // लिसनर्स जोडा
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // टेस्ट चालवा
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // निकालांची पडताळणी करा
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // सरासरी प्रतिसाद वेळ < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90वा टक्केवारी < 500ms
 }
 ```
 
-#### 3. मॉनिटरिंग आणि प्रोफाइलिंग
+#### 3. Monitoring and Profiling
 
-दीर्घकालीन कार्यक्षमता विश्लेषणासाठी मॉनिटरिंग सेट करा:
+Set up monitoring for long-term performance analysis:
 
 ```python
-# Configure monitoring for an MCP server
+# MCP सर्वरसाठी मॉनिटरिंग कॉन्फिगर करा
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Prometheus मेट्रिक्स सेट करा
     prometheus_metrics = {
-        "request_count": Counter("mcp_requests_total", "Total MCP requests"),
+        "request_count": Counter("mcp_requests_total", "एकूण MCP विनंत्या"),
         "request_latency": Histogram(
             "mcp_request_duration_seconds", 
-            "Request duration in seconds",
+            "विनंतीचा कालावधी सेकंदांत",
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_execution_count": Counter(
             "mcp_tool_executions_total", 
-            "Tool execution count",
+            "टूल एक्सिक्युशन्सची संख्या",
             labelnames=["tool_name"]
         ),
         "tool_execution_latency": Histogram(
             "mcp_tool_duration_seconds", 
-            "Tool execution duration in seconds",
+            "टूल एक्सिक्युशनचा कालावधी सेकंदांत",
             labelnames=["tool_name"],
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_errors": Counter(
             "mcp_tool_errors_total",
-            "Tool execution errors",
+            "टूल एक्सिक्युशन त्रुटी",
             labelnames=["tool_name", "error_type"]
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # टाइमिंग आणि मेट्रिक्स रेकॉर्ड करण्यासाठी मिडलवेअर जोडा
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # मेट्रिक्स एंडपॉइंट उघडा
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1208,29 +1661,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP वर्कफ्लो डिझाइन पॅटर्न्स
+## MCP Workflow Design Patterns
 
-चांगल्या प्रकारे डिझाइन केलेले MCP वर्कफ्लो कार्यक्षमता, विश्वासार्हता आणि देखभालयोग्यता सुधारतात. खाली काही महत्त्वाचे नमुने दिले आहेत:
+Well-designed MCP workflows improve efficiency, reliability, and maintainability. Here are key patterns to follow:
 
-### 1. चेन ऑफ टूल्स पॅटर्न
+### 1. Chain of Tools Pattern
 
-अनेक साधने अशी साखळी तयार करा जिथे प्रत्येक साधनाचा आउटपुट पुढील साधनाचा इनपुट बनतो:
+Connect multiple tools in a sequence where each tool's output becomes the input for the next:
 
 ```python
-# Python Chain of Tools implementation
+# Python Chain of Tools अंमलबजावणी
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # अनुक्रमे चालवायची टूल्सची यादी
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # प्रत्येक टूल चालवा, मागील निकाल पुढील इनपुट म्हणून वापरा
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # निकाल साठवा आणि पुढील टूलसाठी इनपुट म्हणून वापरा
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1239,7 +1692,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# उदाहरण वापर
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1253,9 +1706,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. डिस्पॅचर पॅटर्न
+### 2. Dispatcher Pattern
 
-एक केंद्रीय साधन वापरा जे इनपुटनुसार विशेष साधनांकडे पाठवते:
+Use a central tool that dispatches to specialized tools based on input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1268,7 +1721,7 @@ public class ContentDispatcherTool : IMcpTool
     }
     
     public string Name => "contentProcessor";
-    public string Description => "Processes content of various types";
+    public string Description => "विविध प्रकारच्या सामग्रीची प्रक्रिया करतो";
     
     public object GetSchema()
     {
@@ -1295,10 +1748,10 @@ public class ContentDispatcherTool : IMcpTool
         var contentType = request.Parameters.GetProperty("contentType").GetString();
         var operation = request.Parameters.GetProperty("operation").GetString();
         
-        // Determine which specialized tool to use
+        // कोणता विशेष टूल वापरायचा ते ठरवा
         string targetTool = DetermineTargetTool(contentType, operation);
         
-        // Forward to the specialized tool
+        // विशेष टूलकडे पुढे पाठवा
         var specializedResponse = await _mcpClient.ExecuteToolAsync(
             targetTool,
             new { content, options = GetOptionsForTool(targetTool, operation) }
@@ -1315,569 +1768,625 @@ public class ContentDispatcherTool : IMcpTool
             ("text", "analyze") => "textAnalyzer",
             ("html", _) => "htmlProcessor",
             ("markdown", _) => "markdownProcessor",
-            ("csv", _) => "csvProcessor",
-            ("code", _) => "codeAnalyzer",
-            _ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
-        };
-    }
-    
-    private object GetOptionsForTool(string toolName, string operation)
-    {
-        // Return appropriate options for each specialized tool
-        return toolName switch
-        {
-            "textSummarizer" => new { length = "medium" },
-            "htmlProcessor" => new { cleanUp = true, operation },
-            // Options for other tools...
-            _ => new { }
-        };
-    }
+            ("csv", _) =>
+महत्त्वाचे नियम:
+1. भाषांतराच्या भोवती '''markdown किंवा इतर कोणतेही टॅग लावू नका
+2. भाषांतर खूप शब्दशः वाटू नये याची काळजी घ्या
+3. टिप्पण्या देखील भाषांतरित करा
+4. हा फाइल Markdown स्वरूपात आहे - XML किंवा HTML म्हणून वागवू नका
+5. खालील गोष्टी भाषांतर करू नका:
+   - [!NOTE], [!WARNING], [!TIP], [!IMPORTANT], [!CAUTION]
+   - व्हेरिएबल नावे, फंक्शन नावे, क्लास नावे
+   - @@INLINE_CODE_x@@ किंवा @@CODE_BLOCK_x@@ सारखे प्लेसहोल्डर्स
+   - URL किंवा पथ
+6. मूळ Markdown फॉरमॅटिंग जसे आहे तसे ठेवा
+7. फक्त भाषांतरित मजकूर परत करा, कोणतेही अतिरिक्त टॅग किंवा मार्कअप न वापरता
+
+> "csvProcessor",
+("code", _) => "codeAnalyzer",
+_ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
+};
+}
+
+private object GetOptionsForTool(string toolName, string operation)
+{
+// प्रत्येक विशेष टूलसाठी योग्य पर्याय परत करा
+return toolName switch
+{
+"textSummarizer" => new { length = "medium" },
+"htmlProcessor" => new { cleanUp = true, operation },
+// इतर टूलसाठी पर्याय...
+_ => new { }
+};
+}
 }
 ```
 
-### 3. पॅरलेल प्रोसेसिंग पॅटर्न
+### 3. Parallel Processing Pattern
 
-कार्यक्षमतेसाठी अनेक साधने एकाच वेळी चालवा:
+Execute multiple tools simultaneously for efficiency:
 
 ```java
 public class ParallelDataProcessingWorkflow {
-    private final McpClient mcpClient;
-    
-    public ParallelDataProcessingWorkflow(McpClient mcpClient) {
-        this.mcpClient = mcpClient;
-    }
-    
-    public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
-        ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
-            Map.of("datasetId", datasetId));
-        
-        // Step 2: Launch multiple analyses in parallel
-        CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
-            mcpClient.executeTool("statisticalAnalysis", Map.of(
-                "datasetId", datasetId,
-                "type", "comprehensive"
-            ))
-        );
-        
-        CompletableFuture<ToolResponse> correlationAnalysis = CompletableFuture.supplyAsync(() ->
-            mcpClient.executeTool("correlationAnalysis", Map.of(
-                "datasetId", datasetId,
-                "method", "pearson"
-            ))
-        );
-        
-        CompletableFuture<ToolResponse> outlierDetection = CompletableFuture.supplyAsync(() ->
-            mcpClient.executeTool("outlierDetection", Map.of(
-                "datasetId", datasetId,
-                "sensitivity", "medium"
-            ))
-        );
-        
-        // Wait for all parallel tasks to complete
-        CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
-            statisticalAnalysis, correlationAnalysis, outlierDetection
-        );
-        
-        allAnalyses.join();  // Wait for completion
-        
-        // Step 3: Combine results
-        Map<String, Object> combinedResults = new HashMap<>();
-        combinedResults.put("metadata", metadataResponse.getResult());
-        combinedResults.put("statistics", statisticalAnalysis.join().getResult());
-        combinedResults.put("correlations", correlationAnalysis.join().getResult());
-        combinedResults.put("outliers", outlierDetection.join().getResult());
-        
-        // Step 4: Generate summary report
-        ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
-            Map.of("analysisResults", combinedResults));
-        
-        // Return complete workflow result
-        WorkflowResult result = new WorkflowResult();
-        result.setDatasetId(datasetId);
-        result.setAnalysisResults(combinedResults);
-        result.setSummaryReport(summaryResponse.getResult());
-        
-        return result;
-    }
+private final McpClient mcpClient;
+
+public ParallelDataProcessingWorkflow(McpClient mcpClient) {
+this.mcpClient = mcpClient;
+}
+
+public WorkflowResult execute(String datasetId) {
+// टप्पा 1: डेटासेट मेटाडेटा मिळवा (सिंक्रोनस)
+ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata",
+Map.of("datasetId", datasetId));
+
+// टप्पा 2: अनेक विश्लेषणे समांतरपणे सुरू करा
+CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
+mcpClient.executeTool("statisticalAnalysis", Map.of(
+"datasetId", datasetId,
+"type", "comprehensive"
+))
+);
+
+CompletableFuture<ToolResponse> correlationAnalysis = CompletableFuture.supplyAsync(() ->
+mcpClient.executeTool("correlationAnalysis", Map.of(
+"datasetId", datasetId,
+"method", "pearson"
+))
+);
+
+CompletableFuture<ToolResponse> outlierDetection = CompletableFuture.supplyAsync(() ->
+mcpClient.executeTool("outlierDetection", Map.of(
+"datasetId", datasetId,
+"sensitivity", "medium"
+))
+);
+
+// सर्व समांतर कार्य पूर्ण होईपर्यंत थांबा
+CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
+statisticalAnalysis, correlationAnalysis, outlierDetection
+);
+
+allAnalyses.join();  // पूर्ण होईपर्यंत थांबा
+
+// टप्पा 3: निकाल एकत्र करा
+Map<String, Object> combinedResults = new HashMap<>();
+combinedResults.put("metadata", metadataResponse.getResult());
+combinedResults.put("statistics", statisticalAnalysis.join().getResult());
+combinedResults.put("correlations", correlationAnalysis.join().getResult());
+combinedResults.put("outliers", outlierDetection.join().getResult());
+
+// टप्पा 4: सारांश अहवाल तयार करा
+ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator",
+Map.of("analysisResults", combinedResults));
+
+// पूर्ण वर्कफ्लो निकाल परत करा
+WorkflowResult result = new WorkflowResult();
+result.setDatasetId(datasetId);
+result.setAnalysisResults(combinedResults);
+result.setSummaryReport(summaryResponse.getResult());
+
+return result;
+}
 }
 ```
 
-### 4. त्रुटी पुनर्प्राप्ती पॅटर्न
+### 4. Error Recovery Pattern
 
-साधनांच्या अपयशासाठी सौम्य फॉलबॅक अंमलात आणा:
+Implement graceful fallbacks for tool failures:
 
 ```python
 class ResilientWorkflow:
-    def __init__(self, mcp_client):
-        self.client = mcp_client
-    
-    async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
-        try:
-            # Try primary tool first
-            response = await self.client.execute_tool(primary_tool, parameters)
-            return {
-                "result": response.result,
-                "source": "primary",
-                "tool": primary_tool
-            }
-        except ToolExecutionException as e:
-            # Log the failure
-            logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
-            
-            # Fall back to secondary tool
-            try:
-                # Might need to transform parameters for fallback tool
-                fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
-                
-                response = await self.client.execute_tool(fallback_tool, fallback_params)
-                return {
-                    "result": response.result,
-                    "source": "fallback",
-                    "tool": fallback_tool,
-                    "primaryError": str(e)
-                }
-            except ToolExecutionException as fallback_error:
-                # Both tools failed
-                logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
-                raise WorkflowExecutionException(
-                    f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
-                )
-    
-    def _adapt_parameters(self, params, from_tool, to_tool):
-        """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
-        return params
+def __init__(self, mcp_client):
+self.client = mcp_client
 
-# Example usage
+async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
+try:
+# प्रथम प्राथमिक टूल वापरून पहा
+response = await self.client.execute_tool(primary_tool, parameters)
+return {
+"result": response.result,
+"source": "primary",
+"tool": primary_tool
+}
+except ToolExecutionException as e:
+# अयशस्वीतेची नोंद करा
+logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
+
+# दुय्यम टूलकडे वळा
+try:
+# कदाचित fallback टूलसाठी parameters रूपांतरित करावे लागतील
+fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
+
+response = await self.client.execute_tool(fallback_tool, fallback_params)
+return {
+"result": response.result,
+"source": "fallback",
+"tool": fallback_tool,
+"primaryError": str(e)
+}
+except ToolExecutionException as fallback_error:
+# दोन्ही टूल अयशस्वी
+logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
+raise WorkflowExecutionException(
+f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
+)
+
+def _adapt_parameters(self, params, from_tool, to_tool):
+"""वेगवेगळ्या टूल्ससाठी parameters अनुकूल करा"""
+# ही अंमलबजावणी विशिष्ट टूल्सवर अवलंबून असेल
+# या उदाहरणात, मूळ parameters परत करतो
+return params
+
+# उदाहरण वापर
 async def get_weather(workflow, location):
-    return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
-        {"location": location}
-    )
+return await workflow.execute_with_fallback(
+"premiumWeatherService",  # प्राथमिक (पेड) हवामान API
+"basicWeatherService",    # दुय्यम (मुफ्त) हवामान API
+{"location": location}
+)
 ```
 
-### 5. वर्कफ्लो कंपोजिशन पॅटर्न
+### 5. Workflow Composition Pattern
 
-सोप्या वर्कफ्लो एकत्र करून गुंतागुंतीचे वर्कफ्लो तयार करा:
+Build complex workflows by composing simpler ones:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
 {
-    private readonly List<IWorkflow> _workflows;
-    
-    public CompositeWorkflow(IEnumerable<IWorkflow> workflows)
-    {
-        _workflows = new List<IWorkflow>(workflows);
-    }
-    
-    public async Task<WorkflowResult> ExecuteAsync(WorkflowContext context)
-    {
-        var results = new Dictionary<string, object>();
-        
-        foreach (var workflow in _workflows)
-        {
-            var workflowResult = await workflow.ExecuteAsync(context);
-            
-            // Store each workflow's result
-            results[workflow.Name] = workflowResult;
-            
-            // Update context with the result for the next workflow
-            context = context.WithResult(workflow.Name, workflowResult);
-        }
-        
-        return new WorkflowResult(results);
-    }
-    
-    public string Name => "CompositeWorkflow";
-    public string Description => "Executes multiple workflows in sequence";
+private readonly List<IWorkflow> _workflows;
+
+public CompositeWorkflow(IEnumerable<IWorkflow> workflows)
+{
+_workflows = new List<IWorkflow>(workflows);
 }
 
-// Example usage
+public async Task<WorkflowResult> ExecuteAsync(WorkflowContext context)
+{
+var results = new Dictionary<string, object>();
+
+foreach (var workflow in _workflows)
+{
+var workflowResult = await workflow.ExecuteAsync(context);
+
+// प्रत्येक वर्कफ्लोचा निकाल साठवा
+results[workflow.Name] = workflowResult;
+
+// पुढील वर्कफ्लोसाठी context अपडेट करा
+context = context.WithResult(workflow.Name, workflowResult);
+}
+
+return new WorkflowResult(results);
+}
+
+public string Name => "CompositeWorkflow";
+public string Description => "एकाच वेळी अनेक वर्कफ्लो चालवते";
+}
+
+// उदाहरण वापर
 var documentWorkflow = new CompositeWorkflow(new IWorkflow[] {
-    new DocumentFetchWorkflow(),
-    new DocumentProcessingWorkflow(),
-    new InsightGenerationWorkflow(),
-    new ReportGenerationWorkflow()
+new DocumentFetchWorkflow(),
+new DocumentProcessingWorkflow(),
+new InsightGenerationWorkflow(),
+new ReportGenerationWorkflow()
 });
 
 var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
-    Parameters = new { documentId = "12345" }
+Parameters = new { documentId = "12345" }
 });
 ```
 
-# MCP सर्व्हर चाचणी: सर्वोत्तम पद्धती आणि महत्त्वाच्या टिपा
+# Testing MCP Servers: Best Practices and Top Tips
 
-## आढावा
+## Overview
 
-विश्वासार्ह, उच्च-गुणवत्तेचे MCP सर्व्हर विकसित करण्यासाठी चाचणी अत्यंत महत्त्वाची आहे. हा मार्गदर्शक युनिट चाचण्यांपासून इंटिग्रेशन चाचण्या आणि एंड-टू-एंड पडताळणीपर्यंत विकास जीवनचक्रात तुमच्या MCP सर्व्हरची चाचणी करण्यासाठी व्यापक सर्वोत्तम पद्धती आणि टिपा प्रदान करतो.
+Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
 
-## MCP सर्व्हर साठी चाचणी का महत्त्वाची आहे
+## Why Testing Matters for MCP Servers
 
-MCP सर्व्हर AI मॉडेल्स आणि क्लायंट अनुप्रयोगांमधील महत्त्वाचे मिडलवेअर म्हणून काम करतात. सखोल चाचणी सुनिश्चित करते:
+MCP servers serve as crucial middleware between AI models and client applications. Thorough testing ensures:
 
-- उत्पादन वातावरणात विश्वासार्हता
-- विनंत्या आणि प्रतिसादांची अचूक हाताळणी
-- MCP स्पेसिफिकेशन्सची योग्य अंमलबजावणी
-- अपयश आणि कडेकोट परिस्थितींसाठी लवचिकता
-- विविध लोडखाली सातत्यपूर्ण कार्यक्षमता
+- Reliability in production environments
+- Accurate handling of requests and responses
+- Proper implementation of MCP specifications
+- Resilience against failures and edge cases
+- Consistent performance under various loads
 
-## MCP सर्व्हर साठी युनिट चाचणी
+## Unit Testing for MCP Servers
 
-### युनिट चाचणी (मूलाधार)
+### Unit Testing (Foundation)
 
-युनिट चाचण्या तुमच्या MCP सर्व्हरच्या वैयक्तिक घटकांची स्वतंत्रपणे पडताळणी करतात.
+Unit tests verify individual components of your MCP server in isolation.
 
-#### काय चाचणी करायची
+#### What to Test
 
-1. **रिसोर्स हँडलर्स**: प्रत्येक रिसोर्स हँडलरच्या लॉजिकची स्वतंत्र चाचणी करा
-2. **टूल अंमलबजावणी**: विविध इनपुटसह टूलच्या वर्तनाची पडताळणी करा
-3. **प्रॉम्प्ट टेम्पलेट्स**: प्रॉम्प्ट टेम्पलेट्स योग्यरित्या रेंडर होतात याची खात्री करा
-4. **स्कीमा व्हॅलिडेशन**: पॅरामीटर व्हॅलिडेशन लॉजिकची चाचणी करा
-5. **त्रुटी हाताळणी**: अवैध इनपुटसाठी त्रुटी प्रतिसादांची पडताळणी करा
+1. **Resource Handlers**: Test each resource handler's logic independently
+2. **Tool Implementations**: Verify tool behavior with various inputs
+3. **Prompt Templates**: Ensure prompt templates render correctly
+4. **Schema Validation**: Test parameter validation logic
+5. **Error Handling**: Verify error responses for invalid inputs
 
-#### युनिट चाचणीसाठी सर्वोत्तम पद्धती
+#### Best Practices for Unit Testing
 
 ```csharp
-// Example unit test for a calculator tool in C#
+// C# मध्ये कॅल्क्युलेटर टूलसाठी युनिट टेस्टचे उदाहरण
 [Fact]
 public async Task CalculatorTool_Add_ReturnsCorrectSum()
 {
-    // Arrange
-    var calculator = new CalculatorTool();
-    var parameters = new Dictionary<string, object>
-    {
-        ["operation"] = "add",
-        ["a"] = 5,
-        ["b"] = 7
-    };
-    
-    // Act
-    var response = await calculator.ExecuteAsync(parameters);
-    var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
-    
-    // Assert
-    Assert.Equal(12, result.Value);
+// तयारी
+var calculator = new CalculatorTool();
+var parameters = new Dictionary<string, object>
+{
+["operation"] = "add",
+["a"] = 5,
+["b"] = 7
+};
+
+// क्रिया
+var response = await calculator.ExecuteAsync(parameters);
+var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
+
+// पडताळणी
+Assert.Equal(12, result.Value);
 }
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# Python मध्ये कॅल्क्युलेटर टूलसाठी युनिट टेस्टचे उदाहरण
 def test_calculator_tool_add():
-    # Arrange
-    calculator = CalculatorTool()
-    parameters = {
-        "operation": "add",
-        "a": 5,
-        "b": 7
-    }
-    
-    # Act
-    response = calculator.execute(parameters)
-    result = json.loads(response.content[0].text)
-    
-    # Assert
-    assert result["value"] == 12
+# तयारी
+calculator = CalculatorTool()
+parameters = {
+"operation": "add",
+"a": 5,
+"b": 7
+}
+
+# क्रिया
+response = calculator.execute(parameters)
+result = json.loads(response.content[0].text)
+
+# पडताळणी
+assert result["value"] == 12
 ```
 
-### इंटिग्रेशन चाचणी (मधली पातळी)
+### Integration Testing (Middle Layer)
 
-इंटिग्रेशन चाचण्या तुमच्या MCP सर्व्हरच्या घटकांमधील परस्परसंवादाची पडताळणी करतात.
+Integration tests verify interactions between components of your MCP server.
 
-#### काय चाचणी करायची
+#### What to Test
 
-1. **सर्व्हर प्रारंभ**: विविध कॉन्फिगरेशनसह सर्व्हर सुरू होतो का ते तपासा
-2. **रूट नोंदणी**: सर्व एंडपॉइंट योग्यरित्या नोंदणीकृत आहेत का ते तपासा
-3. **विनंती प्रक्रिया**: पूर्ण विनंती-प्रतिसाद चक्राची चाचणी करा
-4. **त्रुटी प्रसार**: घटकांमध्ये त्रुटी योग्यरित्या हाताळल्या जातात का ते तपासा
-5. **प्रमाणीकरण आणि अधिकृतता**: सुरक्षा यंत्रणा तपासा
+1. **Server Initialization**: Test server startup with various configurations
+2. **Route Registration**: Verify all endpoints are correctly registered
+3. **Request Processing**: Test the full request-response cycle
+4. **Error Propagation**: Ensure errors are properly handled across components
+5. **Authentication & Authorization**: Test security mechanisms
 
-#### इंटिग्रेशन चाचणीसाठी सर्वोत्तम पद्धती
+#### Best Practices for Integration Testing
 
 ```csharp
-// Example integration test for MCP server in C#
+// C# मध्ये MCP सर्व्हरसाठी इंटिग्रेशन टेस्टचे उदाहरण
 [Fact]
 public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 {
-    // Arrange
-    var server = new McpServer();
-    server.RegisterTool(new CalculatorTool());
-    await server.StartAsync();
-    
-    var request = new McpRequest
-    {
-        Tool = "calculator",
-        Parameters = new Dictionary<string, object>
-        {
-            ["operation"] = "multiply",
-            ["a"] = 6,
-            ["b"] = 7
-        }
-    };
-    
-    // Act
-    var response = await server.ProcessRequestAsync(request);
-    
-    // Assert
-    Assert.NotNull(response);
-    Assert.Equal(McpStatusCodes.Success, response.StatusCode);
-    // Additional assertions for response content
-    
-    // Cleanup
-    await server.StopAsync();
+// तयारी
+var server = new McpServer();
+server.RegisterTool(new CalculatorTool());
+await server.StartAsync();
+
+var request = new McpRequest
+{
+Tool = "calculator",
+Parameters = new Dictionary<string, object>
+{
+["operation"] = "multiply",
+["a"] = 6,
+["b"] = 7
+}
+};
+
+// क्रिया
+var response = await server.ProcessRequestAsync(request);
+
+// पडताळणी
+Assert.NotNull(response);
+Assert.Equal(McpStatusCodes.Success, response.StatusCode);
+// प्रतिसादाच्या सामग्रीसाठी अतिरिक्त पडताळण्या
+
+// साफसफाई
+await server.StopAsync();
 }
 ```
 
-### एंड-टू-एंड चाचणी (वरची पातळी)
+### End-to-End Testing (Top Layer)
 
-एंड-टू-एंड चाचण्या क्लायंटपासून सर्व्हरपर्यंत संपूर्ण प्रणालीचे वर्तन पडताळतात.
+End-to-end tests verify the complete system behavior from client to server.
 
-#### काय चाचणी करायची
+#### What to Test
 
-1. **क्लायंट-सर्व्हर संवाद**: पूर्ण विनंती-प्रतिसाद चक्रांची चाचणी करा
-2. **खऱ्या क्लायंट SDKs**: वास्तविक क्लायंट अंमलबजावणीसह चाचणी करा
-3. **लोडखाली कार्यक्षमता**: अनेक समांतर विनंत्यांसह वर्तन पडताळा
-4. **त्रुटी पुनर्प्राप्ती**: अपयशांमधून प्रणालीची पुनर्प्राप्ती तपासा
-5. **दीर्घकालीन ऑपरेशन्स**: स्ट्रीमिंग आणि दीर्घकालीन ऑपरेशन्सची हाताळणी पडताळा
+1. **Client-Server Communication**: Test complete request-response cycles
+2. **Real Client SDKs**: Test with actual client implementations
+3. **Performance Under Load**: Verify behavior with multiple concurrent requests
+4. **Error Recovery**: Test system recovery from failures
+5. **Long-Running Operations**: Verify handling of streaming and long operations
 
-#### एंड-टू-एंड चाचणीसाठी सर्वोत्तम पद्धती
+#### Best Practices for E2E Testing
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// TypeScript मध्ये क्लायंटसह E2E टेस्टचे उदाहरण
 describe('MCP Server E2E Tests', () => {
-  let client: McpClient;
-  
-  beforeAll(async () => {
-    // Start server in test environment
-    await startTestServer();
-    client = new McpClient('http://localhost:5000');
-  });
-  
-  afterAll(async () => {
-    await stopTestServer();
-  });
-  
-  test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
-    const response = await client.invokeToolAsync('calculator', {
-      operation: 'divide',
-      a: 20,
-      b: 4
-    });
-    
-    // Assert
-    expect(response.statusCode).toBe(200);
-    expect(response.content[0].text).toContain('5');
-  });
+let client: McpClient;
+
+beforeAll(async () => {
+// टेस्ट वातावरणात सर्व्हर सुरू करा
+await startTestServer();
+client = new McpClient('http://localhost:5000');
+});
+
+afterAll(async () => {
+await stopTestServer();
+});
+
+test('Client can invoke calculator tool and get correct result', async () => {
+// क्रिया
+const response = await client.invokeToolAsync('calculator', {
+operation: 'divide',
+a: 20,
+b: 4
+});
+
+// पडताळणी
+expect(response.statusCode).toBe(200);
+expect(response.content[0].text).toContain('5');
+});
 });
 ```
 
-## MCP चाचणीसाठी मॉकिंग धोरणे
+## Mocking Strategies for MCP Testing
 
-मॉकिंग ही चाचणी दरम्यान घटक वेगळे करण्यासाठी आवश्यक आहे.
+Mocking is essential for isolating components during testing.
 
-### मॉक करावयाचे घटक
+### Components to Mock
 
-1. **बाह्य AI मॉडेल्स**: पूर्वनिर्धारित चाचणीसाठी मॉडेल प्रतिसाद मॉक करा
-2. **बाह्य सेवा**: API अवलंबित्वे (डेटाबेस, तृतीय-पक्ष सेवा) मॉक करा
-3. **प्रमाणीकरण सेवा**: ओळख प्रदाते मॉक करा
-4. **रिसोर्स प्रदाते**: महागड्या रिसोर्स हँडलर्स मॉक करा
+1. **External AI Models**: Mock model responses for predictable testing
+2. **External Services**: Mock API dependencies (databases, third-party services)
+3. **Authentication Services**: Mock identity providers
+4. **Resource Providers**: Mock expensive resource handlers
 
-### उदाहरण: AI मॉडेल प्रतिसाद मॉक करणे
+### Example: Mocking an AI Model Response
 
 ```csharp
-// C# example with Moq
+// C# मध्ये Moq सह उदाहरण
 var mockModel = new Mock<ILanguageModel>();
 mockModel
-    .Setup(m => m.GenerateResponseAsync(
-        It.IsAny<string>(),
-        It.IsAny<McpRequestContext>()))
-    .ReturnsAsync(new ModelResponse { 
-        Text = "Mocked model response",
-        FinishReason = FinishReason.Completed
-    });
+.Setup(m => m.GenerateResponseAsync(
+It.IsAny<string>(),
+It.IsAny<McpRequestContext>()))
+.ReturnsAsync(new ModelResponse {
+Text = "Mocked model response",
+FinishReason = FinishReason.Completed
+});
 
 var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# Python मध्ये unittest.mock सह उदाहरण
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
-    mock_model.return_value.generate_response.return_value = {
-        "text": "Mocked model response",
-        "finish_reason": "completed"
-    }
-    
-    # Use mock in test
-    server = McpServer(model_client=mock_model)
-    # Continue with test
+# मॉक कॉन्फिगर करा
+mock_model.return_value.generate_response.return_value = {
+"text": "Mocked model response",
+"finish_reason": "completed"
+}
+
+# टेस्टमध्ये मॉक वापरा
+server = McpServer(model_client=mock_model)
+# टेस्ट सुरू ठेवा
 ```
 
-## कार्यक्षमता चाचणी
+## Performance Testing
 
-उत्पादन MCP सर्व्हरसाठी कार्यक्षमता चाचणी अत्यंत महत्त्वाची आहे.
+Performance testing is crucial for production MCP servers.
 
-### काय मोजायचे
+### What to Measure
 
-1. **लेटन्सी**: विनंत्यांसाठी प्रतिसाद वेळ
-2. **थ्रूपुट**: प्रति सेकंद हाताळल्या जाणाऱ्या विनंत्या
-3. **संसाधन वापर**: CPU, मेमरी, नेटवर्क वापर
-4. **समांतर हाताळणी**: समांतर विनंत्यांखाली वर्तन
-5. **स्केलिंग वैशिष्ट्ये**: लोड वाढल्यावर कार्यक्षमता
+1. **Latency**: Response time for requests
+2. **Throughput**: Requests handled per second
+3. **Resource Utilization**: CPU, memory, network usage
+4. **Concurrency Handling**: Behavior under parallel requests
+5. **Scaling Characteristics**: Performance as load increases
 
-### कार्यक्षमता चाचणीसाठी साधने
+### Tools for Performance Testing
 
-- **k6**: ओपन-सोर्स लोड चाचणी साधन
-- **JMeter**: व्यापक कार्यक्षमता चाचणी
-- **Locust**: Python-आधारित लोड चाचणी
-- **Azure Load Testing**: क्लाउड-आधारित कार्यक्षमता चाचणी
+- **k6**: Open-source load testing tool
+- **JMeter**: Comprehensive performance testing
+- **Locust**: Python-based load testing
+- **Azure Load Testing**: Cloud-based performance testing
 
-### उदाहरण: k6 सह मूलभूत लोड चाचणी
+### Example: Basic Load Test with k6
 
 ```javascript
-// k6 script for load testing MCP server
+// MCP सर्व्हरसाठी लोड टेस्टिंगसाठी k6 स्क्रिप्ट
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10 virtual users
-  duration: '30s',
+vus: 10,  // 10 आभासी वापरकर्ते
+duration: '30s',
 };
 
 export default function () {
-  const payload = JSON.stringify({
-    tool: 'calculator',
-    parameters: {
-      operation: 'add',
-      a: Math.floor(Math.random() * 100),
-      b: Math.floor(Math.random() * 100)
-    }
-  });
+const payload = JSON.stringify({
+tool: 'calculator',
+parameters: {
+operation: 'add',
+a: Math.floor(Math.random() * 100),
+b: Math.floor(Math.random() * 100)
+}
+});
 
-  const params = {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer test-token'
-    },
-  };
+const params = {
+headers: {
+'Content-Type': 'application/json',
+'Authorization': 'Bearer test-token'
+},
+};
 
-  const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
-  
-  check(res, {
-    'status is 200': (r) => r.status === 200,
-    'response time < 500ms': (r) => r.timings.duration < 500,
-  });
-  
-  sleep(1);
+const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
+
+check(res, {
+'status is 200': (r) => r.status === 200,
+'response time < 500ms': (r) => r.timings.duration < 500,
+});
+
+sleep(1);
 }
 ```
 
-## MCP सर्व्हरसाठी चाचणी ऑटोमेशन
+## Test Automation for MCP Servers
 
-तुमच्या चाचण्यांचे ऑटोमेशन सातत्यपूर्ण गुणवत्ता आणि जलद अभिप्राय सुनिश्चित करते.
+Automating your tests ensures consistent quality and faster feedback loops.
 
-### CI/CD एकत्रीकरण
+### CI/CD Integration
 
-1. **पुल रिक्वेस्टवर युनिट चाचण्या चालवा**: कोड बदलांमुळे विद्यमान कार्यक्षमता बिघडू नये याची खात्री करा
-2. **स्टेजिंगमध्ये इंटिग्रेशन चाचण्या**: प्री-प्रॉडक्शन वातावरणात इंटिग्रेशन चाचण्या चालवा
-3. **कार्यक्षमता बेसलाइन**: कार्यक्षमता मोजमाप ठेवा जेणेकरून रिग्रेशन पकडता येतील
-4. **सुरक्षा स्कॅन**: पाईपलाइनचा भाग म्हणून सुरक्षा चाचणी ऑटोमेट करा
+1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
+2. **Integration Tests in Staging**: Run integration tests in pre-production environments
+3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
+4. **Security Scans**: Automate security testing as part of the pipeline
 
-### उदाहरण CI पाइपलाइन (GitHub Actions)
+### Example CI Pipeline (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+push:
+branches: [ main ]
+pull_request:
+branches: [ main ]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-    
-    - name: Set up Runtime
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '8.0.x'
-    
-    - name: Restore dependencies
-      run: dotnet restore
-    
-    - name: Build
-      run: dotnet build --no-restore
-    
-    - name: Unit Tests
-      run: dotnet test --no-build --filter Category=Unit
-    
-    - name: Integration Tests
-      run: dotnet test --no-build --filter Category=Integration
-      
-    - name: Performance Tests
-      run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
+test:
+runs-on: ubuntu-latest
+
+steps:
+- uses: actions/checkout@v2
+
+- name: Set up Runtime
+uses: actions/setup-dotnet@v1
+with:
+dotnet-version: '8.0.x'
+
+- name: Restore dependencies
+run: dotnet restore
+
+- name: Build
+run: dotnet build --no-restore
+
+- name: Unit Tests
+run: dotnet test --no-build --filter Category=Unit
+
+- name: Integration Tests
+run: dotnet test --no-build --filter Category=Integration
+
+- name: Performance Tests
+run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## MCP स्पेसिफिकेशनशी अनुरूपतेसाठी चाचणी
+## Testing for Compliance with MCP Specification
 
-तुमचा सर्व्हर MCP स्पेसिफिकेशन योग्यरित्या अंमलात आणतो का ते पडताळा.
+Verify your server correctly implements the MCP specification.
 
-### मुख्य अनुरूपता क्षेत्रे
+### Key Compliance Areas
 
-1. **API एंडपॉइंट्स**: आवश्यक एंडपॉइंट्स (/resources, /tools, इ.) तपासा
-2. **विनंती/प्रतिसाद स्वरूप**: स्कीमा अनुरूपता पडताळा
-3. **त्रुटी कोड**: विविध परिस्थितीसाठी योग्य स्थिती कोड तपासा
-4. **कंटेंट टाइप्स**: वेगवेगळ्या कंटेंट टाइप्सची हाताळणी तपासा
-5. **प्रमाणीकरण प्रवाह**: स्पेसिफिकेशन अनुरूप प्रमाणीकरण यंत्रणा पडताळा
+1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
+2. **Request/Response Format**: Validate schema compliance
+3. **Error Codes**: Verify correct status codes for various scenarios
+4. **Content Types**: Test handling of different content types
+5. **Authentication Flow**: Verify spec-compliant auth mechanisms
 
-### अनुरूपता चाचणी संच
+### Compliance Test Suite
 
 ```csharp
 [Fact]
 public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 {
-    // Arrange
-    var client = new HttpClient();
-    client.DefaultRequestHeaders.Add("Authorization", "Bearer test-token");
-    
-    // Act
-    var response = await client.GetAsync("http://localhost:5000/api/resources");
-    var content = await response.Content.ReadAsStringAsync();
-    var resources = JsonSerializer.Deserialize<ResourceList>(content);
-    
-    // Assert
-    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-    Assert.NotNull(resources);
-    Assert.All(resources.Resources, resource => 
-    {
-        Assert.NotNull(resource.Id);
-        Assert.NotNull(resource.Type);
-        // Additional schema validation
-    });
+// तयारी
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Authorization", "Bearer test-token");
+
+// क्रिया
+var response = await client.GetAsync("http://localhost:5000/api/resources");
+var content = await response.Content.ReadAsStringAsync();
+var resources = JsonSerializer.Deserialize
+
+// Assert
+Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+Assert.NotNull(resources);
+Assert.All(resources.Resources, resource => 
+{
+    Assert.NotNull(resource.Id);
+    Assert.NotNull(resource.Type);
+    // अतिरिक्त स्कीमा पडताळणी
+});
 }
-```
 
-## प्रभावी MCP सर्व्हर चाचणीसाठी टॉप 10 टिपा
+## प्रभावी MCP सर्व्हर चाचणीसाठी टॉप 10 टिप्स
 
-1. **टूल डिफिनिशन्स स्वतंत्रपणे चाचणी करा**: टूल लॉजिकपासून स्कीमा डिफिनिशन्स स्वतंत्रपणे पडताळा
-2. **पॅरामीटराइज्ड चाचण्या वापरा**: विविध इनपुटसह, विशेषतः कडेकोट परिस्थितींसह टूल चाचणी करा
-3. **त्रुटी प्रतिसाद तपासा**: सर्व संभाव्य त्रुटी परिस्थितीसाठी योग्य त्रुटी हाताळणी पडताळा
-4. **अधिकृतता लॉजिक तपासा**: वेगवेगळ्या वापरकर्ता भूमिका साठी योग्य प्रवेश नियंत्रण सुनिश्चित करा
-5. **चाचणी कव्हरेज मॉनिटर करा**: महत्त्वाच्या कोड मार्गांसाठी उच्च कव्हरेज साधा
-6. **स्ट्रीमिंग प्रतिसाद चाचणी करा**: स्ट्रीमिंग कंटेंटची योग्य हाताळणी पडताळा
-7. **
-5. मल्टी-मोडल इंटिग्रेशन किंवा एंटरप्राइझ अॅप्लिकेशन इंटिग्रेशनसारख्या विशिष्ट MCP विषयांवर प्रगत कोर्सेस घेण्याचा विचार करा.  
-6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) मधून शिकलेल्या तत्त्वांचा वापर करून स्वतःचे MCP टूल्स आणि वर्कफ्लोज तयार करण्याचा प्रयोग करा.  
+1. **टूल डिफिनिशन्स स्वतंत्रपणे तपासा**: टूल लॉजिकपासून स्कीमा डिफिनिशन्स स्वतंत्रपणे पडताळा
+2. **पॅरामीटराइज्ड चाचण्या वापरा**: विविध इनपुटसह, विशेषतः एज केससह टूल्सची चाचणी करा
+3. **त्रुटी प्रतिसाद तपासा**: सर्व संभाव्य त्रुटी परिस्थितींसाठी योग्य त्रुटी हाताळणी पडताळा
+4. **प्राधिकरण लॉजिक तपासा**: वेगवेगळ्या वापरकर्ता भूमिकांसाठी योग्य प्रवेश नियंत्रण सुनिश्चित करा
+5. **चाचणी कव्हरेजवर लक्ष ठेवा**: महत्त्वाच्या कोड मार्गाचा उच्च कव्हरेज साध्य करा
+6. **स्ट्रीमिंग प्रतिसादांची चाचणी करा**: स्ट्रीमिंग सामग्रीची योग्य हाताळणी पडताळा
+7. **नेटवर्क समस्या अनुकरण करा**: खराब नेटवर्क परिस्थितीत वर्तन तपासा
+8. **संसाधन मर्यादा तपासा**: कोटा किंवा दर मर्यादा गाठल्यावर वर्तन पडताळा
+9. **रिग्रेशन चाचण्या स्वयंचलित करा**: प्रत्येक कोड बदलावर चालणारी चाचणी संच तयार करा
+10. **चाचणी प्रकरणे दस्तऐवजीकरण करा**: चाचणी परिस्थितींचे स्पष्ट दस्तऐवजीकरण ठेवा
+
+## सामान्य चाचणीतील चुका
+
+- **फक्त यशस्वी मार्गावर अवलंबून राहणे**: त्रुटी प्रकरणांची सखोल चाचणी करा
+- **कार्यक्षमता चाचणी दुर्लक्षित करणे**: उत्पादनावर परिणाम होण्यापूर्वी अडथळे ओळखा
+- **फक्त स्वतंत्रपणे चाचणी करणे**: युनिट, इंटिग्रेशन आणि E2E चाचण्या एकत्र करा
+- **अपूर्ण API कव्हरेज**: सर्व एंडपॉइंट्स आणि वैशिष्ट्यांची चाचणी सुनिश्चित करा
+- **असुसंगत चाचणी वातावरणे**: सुसंगत चाचणी वातावरणासाठी कंटेनर वापरा
+
+## निष्कर्ष
+
+विश्वसनीय, उच्च-गुणवत्तेचे MCP सर्व्हर विकसित करण्यासाठी व्यापक चाचणी धोरण आवश्यक आहे. या मार्गदर्शकातील सर्वोत्तम पद्धती आणि टिप्स अमलात आणून, आपण आपल्या MCP अंमलबजावण्या उच्चतम गुणवत्ता, विश्वासार्हता आणि कार्यक्षमतेच्या मानकांशी जुळवू शकता.
+
+## मुख्य मुद्दे
+
+1. **टूल डिझाइन**: सिंगल रिस्पॉन्सिबिलिटी प्रिन्सिपलचे पालन करा, डिपेंडन्सी इंजेक्शन वापरा, आणि कंपोजिबिलिटीसाठी डिझाइन करा
+2. **स्कीमा डिझाइन**: स्पष्ट, चांगल्या प्रकारे दस्तऐवजीकृत स्कीमा तयार करा ज्यात योग्य पडताळणी बंधने असतील
+3. **त्रुटी हाताळणी**: सौम्य त्रुटी हाताळणी, संरचित त्रुटी प्रतिसाद आणि पुनःप्रयत्न लॉजिक अंमलात आणा
+4. **कार्यक्षमता**: कॅशिंग, असिंक्रोनस प्रक्रिया आणि संसाधन थ्रॉटलिंग वापरा
+5. **सुरक्षा**: सखोल इनपुट पडताळणी, प्राधिकरण तपासणी आणि संवेदनशील डेटा हाताळणी करा
+6. **चाचणी**: व्यापक युनिट, इंटिग्रेशन आणि एंड-टू-एंड चाचण्या तयार करा
+7. **वर्कफ्लो पॅटर्न्स**: चेन, डिस्पॅचर्स आणि समांतर प्रक्रिया यांसारखे स्थापित पॅटर्न वापरा
+
+## व्यायाम
+
+एक दस्तऐवज प्रक्रिया प्रणालीसाठी MCP टूल आणि वर्कफ्लो डिझाइन करा जे:
+
+1. अनेक स्वरूपांमध्ये (PDF, DOCX, TXT) दस्तऐवज स्वीकारते
+2. दस्तऐवजांमधून मजकूर आणि मुख्य माहिती काढते
+3. दस्तऐवजांचे प्रकार आणि सामग्रीनुसार वर्गीकरण करते
+4. प्रत्येक दस्तऐवजाचा सारांश तयार करते
+
+या परिस्थितीसाठी सर्वोत्तम अनुरूप टूल स्कीमा, त्रुटी हाताळणी आणि वर्कफ्लो पॅटर्न अंमलात आणा. या अंमलबजावणीची चाचणी कशी कराल याचा विचार करा.
+
+## संसाधने
+
+1. नवीनतम विकासांवर अपडेट राहण्यासाठी [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) मध्ये MCP समुदायात सहभागी व्हा
+2. मुक्त स्रोत [MCP प्रोजेक्ट्स](https://github.com/modelcontextprotocol) मध्ये योगदान द्या
+3. आपल्या संस्थेच्या AI उपक्रमांमध्ये MCP तत्त्वे लागू करा
+4. आपल्या उद्योगासाठी विशेष MCP अंमलबजावण्या शोधा
+5. मल्टी-मोडल इंटिग्रेशन किंवा एंटरप्राइझ अ‍ॅप्लिकेशन इंटिग्रेशनसारख्या विशिष्ट MCP विषयांवर प्रगत कोर्सेस घेण्याचा विचार करा
+6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) मधील तत्त्वे वापरून स्वतःचे MCP टूल्स आणि वर्कफ्लो तयार करण्याचा प्रयोग करा
 
 पुढे: सर्वोत्तम पद्धती [केस स्टडीज](../09-CaseStudy/README.md)
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवलेल्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

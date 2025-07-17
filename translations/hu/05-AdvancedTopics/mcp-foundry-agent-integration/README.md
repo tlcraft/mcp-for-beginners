@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:20:12+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:37:47+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "hu"
 }
 -->
 # Model Context Protocol (MCP) integráció az Azure AI Foundry-val
 
-Ez az útmutató bemutatja, hogyan lehet integrálni a Model Context Protocol (MCP) szervereket az Azure AI Foundry ügynökeivel, lehetővé téve a hatékony eszközök összehangolását és vállalati szintű mesterséges intelligencia képességeket.
+Ez az útmutató bemutatja, hogyan lehet integrálni a Model Context Protocol (MCP) szervereket az Azure AI Foundry ügynökeivel, lehetővé téve a hatékony eszközök összehangolását és vállalati szintű AI képességeket.
 
 ## Bevezetés
 
-A Model Context Protocol (MCP) egy nyílt szabvány, amely lehetővé teszi az AI alkalmazások számára, hogy biztonságosan kapcsolódjanak külső adatforrásokhoz és eszközökhöz. Az Azure AI Foundry-val való integráció során az MCP lehetővé teszi az ügynökök számára, hogy szabványos módon férjenek hozzá és lépjenek interakcióba különféle külső szolgáltatásokkal, API-kkal és adatforrásokkal.
+A Model Context Protocol (MCP) egy nyílt szabvány, amely lehetővé teszi az AI alkalmazások számára, hogy biztonságosan csatlakozzanak külső adatforrásokhoz és eszközökhöz. Az Azure AI Foundry-val való integráció során az MCP lehetővé teszi az ügynökök számára, hogy szabványos módon hozzáférjenek és kommunikáljanak különféle külső szolgáltatásokkal, API-kkal és adatforrásokkal.
 
 Ez az integráció ötvözi az MCP eszközök ökoszisztémájának rugalmasságát az Azure AI Foundry robusztus ügynök keretrendszerével, így vállalati szintű AI megoldásokat kínál széles körű testreszabási lehetőségekkel.
 
@@ -33,14 +33,14 @@ Az útmutató végére képes leszel:
 
 A kezdés előtt győződj meg róla, hogy rendelkezel:
 
-- Azure előfizetéssel, amely hozzáférést biztosít az AI Foundry-hoz
+- Azure előfizetéssel, amelyhez hozzáférsz az AI Foundry-hoz
 - Python 3.10+ vagy .NET 8.0+ környezettel
 - Telepített és konfigurált Azure CLI-vel
 - Megfelelő jogosultságokkal AI erőforrások létrehozásához
 
 ## Mi az a Model Context Protocol (MCP)?
 
-A Model Context Protocol egy szabványosított módja annak, hogy az AI alkalmazások külső adatforrásokhoz és eszközökhöz kapcsolódjanak. Fő előnyei:
+A Model Context Protocol egy szabványosított módja annak, hogy az AI alkalmazások külső adatforrásokhoz és eszközökhöz csatlakozzanak. Fő előnyei:
 
 - **Szabványosított integráció**: Egységes felület különböző eszközök és szolgáltatások között
 - **Biztonság**: Biztonságos hitelesítési és jogosultságkezelési mechanizmusok
@@ -59,6 +59,8 @@ Válaszd ki a számodra megfelelő fejlesztői környezetet:
 ---
 
 ## Python megvalósítás
+
+***Megjegyzés*** Ezt a [notebookot](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) is futtathatod
 
 ### 1. Szükséges csomagok telepítése
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET megvalósítás
+
+***Megjegyzés*** Ezt a [notebookot](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) is futtathatod
 
 ### 1. Szükséges csomagok telepítése
 
@@ -327,7 +331,7 @@ MCPToolDefinition mcpTool = new(
 
 ## Hitelesítés és fejléc beállítások
 
-Mindkét megvalósítás támogatja az egyedi fejléceket a hitelesítéshez:
+Mindkét megvalósítás támogatja az egyedi fejlécek használatát a hitelesítéshez:
 
 ### Python
 ```python
@@ -350,7 +354,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ### 2. Eszköz hívás hibák
 - Vizsgáld meg az eszköz argumentumait és formátumát
 - Ellenőrizd a szerver specifikus követelményeket
-- Valósíts meg megfelelő hibakezelést
+- Alkalmazz megfelelő hibakezelést
 
 ### 3. Teljesítmény problémák
 - Optimalizáld az eszköz hívások gyakoriságát
@@ -361,10 +365,10 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 Az MCP integrációd további fejlesztéséhez:
 
-1. **Saját MCP szerverek felfedezése**: Építs saját MCP szervereket zárt adatforrásokhoz
-2. **Fejlett biztonság megvalósítása**: Adj hozzá OAuth2 vagy egyedi hitelesítési megoldásokat
-3. **Monitorozás és elemzés**: Valósíts meg naplózást és monitorozást az eszközhasználathoz
-4. **Megoldás skálázása**: Gondolkodj terheléselosztásban és elosztott MCP szerver architektúrákban
+1. **Ismerd meg az egyedi MCP szervereket**: Építs saját MCP szervereket saját adatforrásokhoz
+2. **Valósíts meg fejlett biztonságot**: Adj hozzá OAuth2 vagy egyedi hitelesítési megoldásokat
+3. **Monitorozás és elemzés**: Vezess be naplózást és monitorozást az eszközhasználathoz
+4. **Skálázd megoldásodat**: Gondolkodj terheléselosztásban és elosztott MCP szerver architektúrákban
 
 ## További források
 

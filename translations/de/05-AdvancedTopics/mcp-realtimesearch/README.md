@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T00:47:00+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-16T22:16:23+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "de"
 }
@@ -104,8 +104,8 @@ Im MCP-basierten Websuche-Kontext umfasst der Kontext typischerweise:
 MCP verbessert Forschungsabläufe durch:
 
 - Bewahrung des Forschungskontexts über Suchsitzungen hinweg
-- Ermöglichung anspruchsvollerer und kontextuell relevanter Suchanfragen
-- Unterstützung von Multi-Source-Suchföderation
+- Ermöglichung komplexerer und kontextuell relevanter Suchanfragen
+- Unterstützung föderierter Mehrquellensuche
 - Erleichterung der Wissensextraktion aus Suchergebnissen
 
 ### Echtzeit-Nachrichten- und Trendüberwachung
@@ -114,7 +114,7 @@ MCP-gestützte Suche bietet Vorteile für die Nachrichtenüberwachung:
 
 - Nahezu Echtzeit-Erkennung aufkommender Nachrichten
 - Kontextuelle Filterung relevanter Informationen
-- Themen- und Entitätenverfolgung über mehrere Quellen hinweg
+- Verfolgung von Themen und Entitäten über mehrere Quellen hinweg
 - Personalisierte Nachrichtenbenachrichtigungen basierend auf Benutzerkontext
 
 ### KI-unterstütztes Browsen und Forschen
@@ -130,7 +130,7 @@ MCP eröffnet neue Möglichkeiten für KI-unterstütztes Browsen:
 
 ### Weiterentwicklung von MCP in der Websuche
 
-Mit Blick auf die Zukunft erwarten wir, dass MCP sich weiterentwickelt, um folgende Aspekte zu adressieren:
+Mit Blick auf die Zukunft erwarten wir, dass MCP sich weiterentwickelt, um folgende Bereiche abzudecken:
 
 - **Multimodale Suche**: Integration von Text-, Bild-, Audio- und Videosuche mit bewahrtem Kontext
 - **Dezentrale Suche**: Unterstützung verteilter und föderierter Suchökosysteme
@@ -214,7 +214,7 @@ Für vollständige Details zu Sicherheit und Vertrauensfragen im MCP siehe die [
 
 ## Was kommt als Nächstes
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

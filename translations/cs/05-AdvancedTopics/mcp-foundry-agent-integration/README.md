@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:20:26+00:00",
+  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
+  "translation_date": "2025-07-16T14:38:03+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "cs"
 }
@@ -13,11 +13,11 @@ Tento průvodce ukazuje, jak integrovat servery Model Context Protocol (MCP) s a
 
 ## Úvod
 
-Model Context Protocol (MCP) je otevřený standard, který umožňuje AI aplikacím bezpečně se připojit k externím datovým zdrojům a nástrojům. Po integraci s Azure AI Foundry umožňuje MCP agentům přístup a interakci s různými externími službami, API a datovými zdroji jednotným způsobem.
+Model Context Protocol (MCP) je otevřený standard, který umožňuje AI aplikacím bezpečně se připojovat k externím datovým zdrojům a nástrojům. Po integraci s Azure AI Foundry umožňuje MCP agentům přístup a interakci s různými externími službami, API a datovými zdroji jednotným způsobem.
 
 Tato integrace kombinuje flexibilitu ekosystému nástrojů MCP s robustním rámcem agentů Azure AI Foundry, čímž poskytuje podniková AI řešení s rozsáhlými možnostmi přizpůsobení.
 
-**Note:** Pokud chcete používat MCP v Azure AI Foundry Agent Service, v současnosti jsou podporovány pouze následující regiony: westus, westus2, uaenorth, southindia a switzerlandnorth
+**Note:** Pokud chcete používat MCP v Azure AI Foundry Agent Service, aktuálně jsou podporovány pouze následující regiony: westus, westus2, uaenorth, southindia a switzerlandnorth
 
 ## Cíle učení
 
@@ -59,6 +59,8 @@ Vyberte si preferované vývojové prostředí:
 ---
 
 ## Implementace v Pythonu
+
+***Note*** Tento [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) můžete spustit
 
 ### 1. Instalace požadovaných balíčků
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## Implementace v .NET
+
+***Note*** Tento [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) můžete spustit
 
 ### 1. Instalace požadovaných balíčků
 
@@ -352,7 +356,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Ověřte specifické požadavky serveru
 - Implementujte správné zpracování chyb
 
-### 3. Problémy s výkonem
+### 3. Výkonové problémy
 - Optimalizujte frekvenci volání nástrojů
 - Použijte cache tam, kde je to vhodné
 - Sledujte dobu odezvy serveru
@@ -384,4 +388,4 @@ Pro další podporu a dotazy:
 - [6. Příspěvky komunity](../../06-CommunityContributions/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

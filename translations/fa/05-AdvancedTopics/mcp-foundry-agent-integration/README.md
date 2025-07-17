@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:13:17+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-16T22:27:45+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "fa"
 }
 -->
-# ادغام پروتکل مدل کانتکست (MCP) با Azure AI Foundry
+# ادغام پروتکل زمینه مدل (MCP) با Azure AI Foundry
 
-این راهنما نحوه ادغام سرورهای پروتکل مدل کانتکست (MCP) با عامل‌های Azure AI Foundry را نشان می‌دهد که امکان هماهنگی قدرتمند ابزارها و قابلیت‌های هوش مصنوعی سازمانی را فراهم می‌کند.
+این راهنما نحوه ادغام سرورهای پروتکل زمینه مدل (MCP) با عامل‌های Azure AI Foundry را نشان می‌دهد که امکان هماهنگی قدرتمند ابزارها و قابلیت‌های هوش مصنوعی سازمانی را فراهم می‌کند.
 
 ## مقدمه
 
-پروتکل مدل کانتکست (MCP) یک استاندارد باز است که به برنامه‌های هوش مصنوعی اجازه می‌دهد به‌صورت امن به منابع داده و ابزارهای خارجی متصل شوند. وقتی با Azure AI Foundry ادغام شود، MCP به عامل‌ها امکان می‌دهد به خدمات، APIها و منابع داده مختلف خارجی به روشی استاندارد دسترسی داشته و با آن‌ها تعامل کنند.
+پروتکل زمینه مدل (MCP) یک استاندارد باز است که به برنامه‌های هوش مصنوعی اجازه می‌دهد به‌صورت امن به منابع داده و ابزارهای خارجی متصل شوند. هنگامی که با Azure AI Foundry ادغام شود، MCP به عامل‌ها امکان می‌دهد به خدمات، APIها و منابع داده خارجی مختلف به‌صورت استاندارد دسترسی داشته و با آن‌ها تعامل کنند.
 
 این ادغام، انعطاف‌پذیری اکوسیستم ابزارهای MCP را با چارچوب قدرتمند عامل‌های Azure AI Foundry ترکیب می‌کند و راه‌حل‌های هوش مصنوعی سازمانی با قابلیت‌های سفارشی‌سازی گسترده ارائه می‌دهد.
 
@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 در پایان این راهنما، قادر خواهید بود:
 
-- پروتکل مدل کانتکست و مزایای آن را درک کنید
+- پروتکل زمینه مدل و مزایای آن را درک کنید
 - سرورهای MCP را برای استفاده با عامل‌های Azure AI Foundry راه‌اندازی کنید
 - عامل‌ها را با ادغام ابزار MCP ایجاد و پیکربندی کنید
 - مثال‌های عملی با استفاده از سرورهای واقعی MCP پیاده‌سازی کنید
@@ -34,15 +34,15 @@ CO_OP_TRANSLATOR_METADATA:
 قبل از شروع، اطمینان حاصل کنید که:
 
 - اشتراک Azure با دسترسی به AI Foundry دارید
-- Python نسخه 3.10 یا بالاتر یا .NET نسخه 8.0 یا بالاتر نصب شده است
+- Python 3.10+ یا .NET 8.0+ نصب شده است
 - Azure CLI نصب و پیکربندی شده است
 - مجوزهای لازم برای ایجاد منابع هوش مصنوعی را دارید
 
-## پروتکل مدل کانتکست (MCP) چیست؟
+## پروتکل زمینه مدل (MCP) چیست؟
 
-پروتکل مدل کانتکست روشی استاندارد برای اتصال برنامه‌های هوش مصنوعی به منابع داده و ابزارهای خارجی است. مزایای کلیدی آن عبارتند از:
+پروتکل زمینه مدل روشی استاندارد برای اتصال برنامه‌های هوش مصنوعی به منابع داده و ابزارهای خارجی است. مزایای کلیدی آن عبارتند از:
 
-- **ادغام استاندارد شده**: رابطی یکنواخت برای ابزارها و خدمات مختلف
+- **ادغام استاندارد**: رابطی یکنواخت در سراسر ابزارها و خدمات مختلف
 - **امنیت**: مکانیزم‌های احراز هویت و مجوزدهی امن
 - **انعطاف‌پذیری**: پشتیبانی از منابع داده، APIها و ابزارهای سفارشی متنوع
 - **قابلیت توسعه**: افزودن آسان قابلیت‌ها و ادغام‌های جدید
@@ -60,7 +60,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## پیاده‌سازی Python
 
-### 1. نصب بسته‌های مورد نیاز
+***توجه*** می‌توانید این [دفترچه یادداشت](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) را اجرا کنید
+
+### ۱. نصب بسته‌های مورد نیاز
 
 ```bash
 pip install azure-ai-projects -U
@@ -69,7 +71,7 @@ pip install azure-identity -U
 pip install mcp==1.11.0 -U
 ```
 
-### 2. وارد کردن وابستگی‌ها
+### ۲. وارد کردن وابستگی‌ها
 
 ```python
 import os, time
@@ -78,14 +80,14 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import McpTool, RequiredMcpToolCall, SubmitToolApprovalAction, ToolApproval
 ```
 
-### 3. پیکربندی تنظیمات MCP
+### ۳. پیکربندی تنظیمات MCP
 
 ```python
 mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/api/mcp")
 mcp_server_label = os.environ.get("MCP_SERVER_LABEL", "mslearn")
 ```
 
-### 4. مقداردهی اولیه کلاینت پروژه
+### ۴. مقداردهی اولیه کلاینت پروژه
 
 ```python
 project_client = AIProjectClient(
@@ -94,7 +96,7 @@ project_client = AIProjectClient(
 )
 ```
 
-### 5. ایجاد ابزار MCP
+### ۵. ایجاد ابزار MCP
 
 ```python
 mcp_tool = McpTool(
@@ -104,7 +106,7 @@ mcp_tool = McpTool(
 )
 ```
 
-### 6. مثال کامل Python
+### ۶. مثال کامل Python
 
 ```python
 with project_client:
@@ -187,21 +189,23 @@ with project_client:
 
 ## پیاده‌سازی .NET
 
-### 1. نصب بسته‌های مورد نیاز
+***توجه*** می‌توانید این [دفترچه یادداشت](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) را اجرا کنید
+
+### ۱. نصب بسته‌های مورد نیاز
 
 ```csharp
 #r "nuget: Azure.AI.Agents.Persistent, 1.1.0-beta.4"
 #r "nuget: Azure.Identity, 1.14.2"
 ```
 
-### 2. وارد کردن وابستگی‌ها
+### ۲. وارد کردن وابستگی‌ها
 
 ```csharp
 using Azure.AI.Agents.Persistent;
 using Azure.Identity;
 ```
 
-### 3. پیکربندی تنظیمات
+### ۳. پیکربندی تنظیمات
 
 ```csharp
 var projectEndpoint = "https://your-project-endpoint.services.ai.azure.com/api/projects/your-project";
@@ -211,13 +215,13 @@ var mcpServerLabel = "mslearn";
 PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCredential());
 ```
 
-### 4. ایجاد تعریف ابزار MCP
+### ۴. ایجاد تعریف ابزار MCP
 
 ```csharp
 MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
 ```
 
-### 5. ایجاد عامل با ابزارهای MCP
+### ۵. ایجاد عامل با ابزارهای MCP
 
 ```csharp
 PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
@@ -228,7 +232,7 @@ PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
    );
 ```
 
-### 6. مثال کامل .NET
+### ۶. مثال کامل .NET
 
 ```csharp
 // Create thread and message
@@ -342,17 +346,17 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## رفع مشکلات رایج
 
-### 1. مشکلات اتصال
+### ۱. مشکلات اتصال
 - بررسی کنید که URL سرور MCP در دسترس باشد
 - اعتبارنامه‌های احراز هویت را بررسی کنید
-- اطمینان حاصل کنید که اتصال شبکه برقرار است
+- اتصال شبکه را اطمینان حاصل کنید
 
-### 2. خطاهای فراخوانی ابزار
+### ۲. خطاهای فراخوانی ابزار
 - آرگومان‌ها و قالب‌بندی ابزار را بازبینی کنید
 - نیازمندی‌های خاص سرور را بررسی کنید
 - مدیریت خطای مناسب را پیاده‌سازی کنید
 
-### 3. مشکلات عملکرد
+### ۳. مشکلات عملکرد
 - فرکانس فراخوانی ابزار را بهینه کنید
 - در صورت لزوم کشینگ را پیاده‌سازی کنید
 - زمان پاسخ سرور را نظارت کنید
@@ -362,14 +366,14 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 برای بهبود بیشتر ادغام MCP خود:
 
 1. **کاوش سرورهای سفارشی MCP**: سرورهای MCP خود را برای منابع داده اختصاصی بسازید
-2. **پیاده‌سازی امنیت پیشرفته**: مکانیزم‌های OAuth2 یا احراز هویت سفارشی اضافه کنید
-3. **نظارت و تحلیل**: لاگ‌گیری و نظارت بر استفاده از ابزارها را پیاده‌سازی کنید
-4. **مقیاس‌پذیری راه‌حل**: معماری‌های تعادل بار و سرورهای توزیع‌شده MCP را در نظر بگیرید
+2. **پیاده‌سازی امنیت پیشرفته**: افزودن OAuth2 یا مکانیزم‌های احراز هویت سفارشی
+3. **نظارت و تحلیل**: پیاده‌سازی لاگ‌گیری و نظارت بر استفاده از ابزارها
+4. **مقیاس‌پذیری راه‌حل**: در نظر گرفتن تعادل بار و معماری‌های توزیع‌شده سرور MCP
 
 ## منابع اضافی
 
 - [مستندات Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- [نمونه‌های پروتکل مدل کانتکست](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
+- [نمونه‌های پروتکل زمینه مدل](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
 - [مروری بر عامل‌های Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [مشخصات MCP](https://spec.modelcontextprotocol.io/)
 
@@ -379,9 +383,9 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - مستندات [Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/) را بررسی کنید
 - منابع جامعه [MCP](https://modelcontextprotocol.io/) را مشاهده کنید
 
-## مرحله بعد
+## گام بعدی
 
-- [6. مشارکت‌های جامعه](../../06-CommunityContributions/README.md)
+- [5.14 مهندسی زمینه MCP](../mcp-contextengineering/README.md)
 
 **سلب مسئولیت**:  
 این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:00:00+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-16T21:57:38+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "pt"
 }
@@ -15,7 +15,7 @@ CO_OP_TRANSLATOR_METADATA:
 > 
 > 1. **Implementação em Python**: Uma implementação de servidor FastMCP que fornece uma ferramenta de pesquisa na web e se conecta a uma API externa de pesquisa. Este exemplo demonstra a gestão adequada do ciclo de vida, manipulação de contexto e implementação da ferramenta seguindo os padrões do [SDK oficial MCP para Python](https://github.com/modelcontextprotocol/python-sdk). O servidor utiliza o transporte HTTP Streamable recomendado, que substituiu o transporte SSE mais antigo para implementações em produção.
 > 
-> 2. **Implementação em JavaScript**: Uma implementação em TypeScript/JavaScript usando o padrão FastMCP do [SDK oficial MCP para TypeScript](https://github.com/modelcontextprotocol/typescript-sdk) para criar um servidor de pesquisa com definições corretas de ferramentas e conexões de cliente. Segue os padrões mais recentes recomendados para gestão de sessões e preservação de contexto.
+> 2. **Implementação em JavaScript**: Uma implementação em TypeScript/JavaScript usando o padrão FastMCP do [SDK oficial MCP para TypeScript](https://github.com/modelcontextprotocol/typescript-sdk) para criar um servidor de pesquisa com definições corretas de ferramentas e conexões de clientes. Segue os padrões mais recentes recomendados para gestão de sessões e preservação de contexto.
 > 
 > Estes exemplos requerem tratamento adicional de erros, autenticação e código específico de integração de API para uso em produção. Os endpoints da API de pesquisa mostrados (`https://api.search-service.example/search`) são exemplos e devem ser substituídos por endpoints reais de serviços de pesquisa.
 > 
@@ -137,36 +137,36 @@ Olhando para o futuro, prevê-se que o MCP evolua para abordar:
 - **Privacidade na Pesquisa**: Mecanismos de pesquisa que preservam a privacidade e são conscientes do contexto  
 - **Compreensão da Consulta**: Análise semântica profunda de consultas de pesquisa em linguagem natural
 
-### Potenciais Avanços Tecnológicos
+### Potenciais Avanços na Tecnologia
 
 Tecnologias emergentes que irão moldar o futuro da pesquisa MCP:
 
 1. **Arquiteturas de Pesquisa Neural**: Sistemas de pesquisa baseados em embeddings otimizados para MCP  
 2. **Contexto de Pesquisa Personalizado**: Aprendizagem dos padrões de pesquisa individuais dos utilizadores ao longo do tempo  
-3. **Integração de Grafos de Conhecimento**: Pesquisa contextual melhorada por grafos de conhecimento específicos de domínio  
-4. **Contexto Multimodal**: Manutenção do contexto através de diferentes modalidades de pesquisa
+3. **Integração de Grafos de Conhecimento**: Pesquisa contextual aprimorada por grafos de conhecimento específicos de domínio  
+4. **Contexto Cross-Modal**: Manutenção do contexto através de diferentes modalidades de pesquisa
 
 ## Exercícios Práticos
 
-### Exercício 1: Configurar uma Pipeline Básica de Pesquisa MCP
+### Exercício 1: Configurar um Pipeline Básico de Pesquisa MCP
 
 Neste exercício, vais aprender a:  
 - Configurar um ambiente básico de pesquisa MCP  
-- Implementar manipuladores de contexto para pesquisa web  
+- Implementar manipuladores de contexto para pesquisa na web  
 - Testar e validar a preservação do contexto ao longo das iterações de pesquisa
 
 ### Exercício 2: Construir um Assistente de Investigação com Pesquisa MCP
 
 Cria uma aplicação completa que:  
 - Processa perguntas de investigação em linguagem natural  
-- Realiza pesquisas web conscientes do contexto  
+- Realiza pesquisas na web conscientes do contexto  
 - Sintetiza informação de múltiplas fontes  
-- Apresenta resultados de investigação organizados
+- Apresenta os resultados da investigação de forma organizada
 
 ### Exercício 3: Implementar Federação de Pesquisa Multi-Fonte com MCP
 
 Exercício avançado que abrange:  
-- Encaminhamento de consultas consciente do contexto para múltiplos motores de pesquisa  
+- Encaminhamento de consultas conscientes do contexto para múltiplos motores de pesquisa  
 - Classificação e agregação de resultados  
 - Deduplificação contextual dos resultados de pesquisa  
 - Gestão de metadados específicos das fontes
@@ -214,7 +214,7 @@ Para detalhes completos sobre segurança e considerações de confiança no MCP,
 
 ## O que vem a seguir
 
-- [5.11 Autenticação Entra ID para Servidores Model Context Protocol](../mcp-security-entra/README.md)
+- [5.12 Autenticação Entra ID para Servidores Model Context Protocol](../mcp-security-entra/README.md)
 
 **Aviso Legal**:  
 Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

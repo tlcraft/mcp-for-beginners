@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:39:20+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-16T22:37:09+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "pl"
 }
@@ -13,31 +13,50 @@ Bezpieczeństwo jest kluczowe dla implementacji MCP, zwłaszcza w środowiskach 
 
 ## Wprowadzenie
 
-W tej lekcji omówimy najlepsze praktyki bezpieczeństwa dla implementacji MCP. Poruszymy tematy związane z uwierzytelnianiem i autoryzacją, ochroną danych, bezpiecznym uruchamianiem narzędzi oraz zgodnością z przepisami dotyczącymi prywatności danych.
+Model Context Protocol (MCP) wymaga szczególnych rozważań dotyczących bezpieczeństwa ze względu na swoją rolę w udostępnianiu LLM dostępu do danych i narzędzi. Ta lekcja omawia najlepsze praktyki bezpieczeństwa dla implementacji MCP, opierając się na oficjalnych wytycznych MCP oraz sprawdzonych wzorcach bezpieczeństwa.
+
+MCP opiera się na kluczowych zasadach bezpieczeństwa, aby zapewnić bezpieczne i godne zaufania interakcje:
+
+- **Zgoda i kontrola użytkownika**: Użytkownicy muszą wyrazić wyraźną zgodę przed uzyskaniem dostępu do danych lub wykonaniem operacji. Zapewnij jasną kontrolę nad tym, jakie dane są udostępniane i które działania są autoryzowane.
+  
+- **Prywatność danych**: Dane użytkownika powinny być udostępniane tylko za wyraźną zgodą i chronione odpowiednimi mechanizmami kontroli dostępu. Zabezpiecz przed nieautoryzowanym przesyłaniem danych.
+  
+- **Bezpieczeństwo narzędzi**: Przed wywołaniem jakiegokolwiek narzędzia wymagana jest wyraźna zgoda użytkownika. Użytkownicy powinni mieć jasne zrozumienie funkcji każdego narzędzia, a granice bezpieczeństwa muszą być rygorystycznie egzekwowane.
 
 ## Cele nauki
 
-Po zakończeniu tej lekcji będziesz potrafił:
+Po ukończeniu tej lekcji będziesz potrafił:
 
 - Wdrażać bezpieczne mechanizmy uwierzytelniania i autoryzacji dla serwerów MCP.
 - Chronić wrażliwe dane za pomocą szyfrowania i bezpiecznego przechowywania.
-- Zapewnić bezpieczne uruchamianie narzędzi z odpowiednią kontrolą dostępu.
-- Stosować najlepsze praktyki dotyczące ochrony danych i zgodności z przepisami o prywatności.
+- Zapewnić bezpieczne wykonywanie narzędzi z odpowiednimi kontrolami dostępu.
+- Stosować najlepsze praktyki ochrony danych i zgodności z przepisami o prywatności.
+- Identyfikować i łagodzić typowe luki bezpieczeństwa MCP, takie jak problemy typu confused deputy, token passthrough i przejęcie sesji.
 
 ## Uwierzytelnianie i autoryzacja
 
 Uwierzytelnianie i autoryzacja są niezbędne do zabezpieczenia serwerów MCP. Uwierzytelnianie odpowiada na pytanie „Kim jesteś?”, natomiast autoryzacja na „Co możesz zrobić?”.
 
+Zgodnie ze specyfikacją bezpieczeństwa MCP, są to kluczowe kwestie bezpieczeństwa:
+
+1. **Weryfikacja tokenów**: Serwery MCP NIE MOGĄ akceptować żadnych tokenów, które nie zostały wyraźnie wydane dla serwera MCP. „Token passthrough” jest wyraźnie zabronionym antywzorcem.
+
+2. **Weryfikacja autoryzacji**: Serwery MCP implementujące autoryzację MUSZĄ weryfikować wszystkie przychodzące żądania i NIE MOGĄ używać sesji do uwierzytelniania.
+
+3. **Bezpieczne zarządzanie sesjami**: Przy używaniu sesji do przechowywania stanu, serwery MCP MUSZĄ stosować bezpieczne, niedeterministyczne identyfikatory sesji generowane za pomocą bezpiecznych generatorów liczb losowych. Identyfikatory sesji POWINNY być powiązane z informacjami specyficznymi dla użytkownika.
+
+4. **Wyraźna zgoda użytkownika**: W przypadku serwerów proxy implementacje MCP MUSZĄ uzyskać zgodę użytkownika dla każdego dynamicznie rejestrowanego klienta przed przekazaniem do zewnętrznych serwerów autoryzacji.
+
 Przyjrzyjmy się przykładom implementacji bezpiecznego uwierzytelniania i autoryzacji w serwerach MCP z użyciem .NET i Java.
 
-### Integracja .NET Identity
+### Integracja z .NET Identity
 
 ASP .NET Core Identity oferuje solidne ramy do zarządzania uwierzytelnianiem i autoryzacją użytkowników. Możemy zintegrować je z serwerami MCP, aby zabezpieczyć dostęp do narzędzi i zasobów.
 
-Istnieje kilka kluczowych pojęć, które musimy zrozumieć podczas integracji ASP.NET Core Identity z serwerami MCP, mianowicie:
+Istnieją podstawowe koncepcje, które musimy zrozumieć przy integracji ASP.NET Core Identity z serwerami MCP, mianowicie:
 
-- **Konfiguracja Identity**: Ustawienie ASP.NET Core Identity z rolami użytkowników i roszczeniami (claims). Roszczenie to informacja o użytkowniku, na przykład jego rola lub uprawnienia, takie jak „Admin” lub „User”.
-- **Uwierzytelnianie JWT**: Wykorzystanie JSON Web Tokens (JWT) do bezpiecznego dostępu do API. JWT to standard bezpiecznego przesyłania informacji między stronami w formacie JSON, który można zweryfikować i zaufać mu, ponieważ jest cyfrowo podpisany.
+- **Konfiguracja Identity**: Konfiguracja ASP.NET Core Identity z rolami i roszczeniami użytkowników. Roszczenie to informacja o użytkowniku, np. jego rola lub uprawnienia, takie jak „Admin” lub „User”.
+- **Uwierzytelnianie JWT**: Użycie JSON Web Tokens (JWT) do bezpiecznego dostępu do API. JWT to standard bezpiecznego przesyłania informacji między stronami jako obiekt JSON, który można zweryfikować i któremu można zaufać, ponieważ jest cyfrowo podpisany.
 - **Polityki autoryzacji**: Definiowanie polityk kontrolujących dostęp do konkretnych narzędzi na podstawie ról użytkowników. MCP używa polityk autoryzacji, aby określić, którzy użytkownicy mogą korzystać z których narzędzi na podstawie ich ról i roszczeń.
 
 ```csharp
@@ -112,20 +131,20 @@ public class SecureMcpStartup
 W powyższym kodzie:
 
 - Skonfigurowaliśmy ASP.NET Core Identity do zarządzania użytkownikami.
-- Ustawiliśmy uwierzytelnianie JWT dla bezpiecznego dostępu do API. Określiliśmy parametry walidacji tokena, w tym wydawcę, odbiorcę i klucz podpisu.
-- Zdefiniowaliśmy polityki autoryzacji kontrolujące dostęp do narzędzi na podstawie ról użytkowników. Na przykład polityka „CanUseAdminTools” wymaga, aby użytkownik miał rolę „Admin”, natomiast polityka „CanUseBasic” wymaga, aby użytkownik był uwierzytelniony.
+- Ustawiliśmy uwierzytelnianie JWT dla bezpiecznego dostępu do API. Określiliśmy parametry walidacji tokenów, w tym wydawcę, odbiorcę i klucz podpisu.
+- Zdefiniowaliśmy polityki autoryzacji kontrolujące dostęp do narzędzi na podstawie ról użytkowników. Na przykład polityka „CanUseAdminTools” wymaga roli „Admin”, a polityka „CanUseBasic” wymaga uwierzytelnienia użytkownika.
 - Zarejestrowaliśmy narzędzia MCP z określonymi wymaganiami autoryzacyjnymi, zapewniając, że tylko użytkownicy z odpowiednimi rolami mają do nich dostęp.
 
-### Integracja Java Spring Security
+### Integracja z Java Spring Security
 
-Dla Javy użyjemy Spring Security do implementacji bezpiecznego uwierzytelniania i autoryzacji dla serwerów MCP. Spring Security oferuje kompleksowe ramy bezpieczeństwa, które integrują się bezproblemowo z aplikacjami Spring.
+Dla Javy użyjemy Spring Security do implementacji bezpiecznego uwierzytelniania i autoryzacji dla serwerów MCP. Spring Security oferuje kompleksowy framework bezpieczeństwa, który integruje się bezproblemowo z aplikacjami Spring.
 
-Kluczowe pojęcia to:
+Podstawowe koncepcje to:
 
-- **Konfiguracja Spring Security**: Ustawienie konfiguracji bezpieczeństwa dla uwierzytelniania i autoryzacji.
-- **OAuth2 Resource Server**: Wykorzystanie OAuth2 do bezpiecznego dostępu do narzędzi MCP. OAuth2 to framework autoryzacji, który pozwala usługom trzecim wymieniać tokeny dostępu dla bezpiecznego dostępu do API.
-- **Interceptory bezpieczeństwa**: Implementacja interceptorów bezpieczeństwa do egzekwowania kontroli dostępu podczas uruchamiania narzędzi.
-- **Kontrola dostępu oparta na rolach**: Wykorzystanie ról do kontrolowania dostępu do konkretnych narzędzi i zasobów.
+- **Konfiguracja Spring Security**: Ustawienia bezpieczeństwa dla uwierzytelniania i autoryzacji.
+- **OAuth2 Resource Server**: Użycie OAuth2 do bezpiecznego dostępu do narzędzi MCP. OAuth2 to framework autoryzacji pozwalający usługom trzecim wymieniać tokeny dostępu dla bezpiecznego dostępu do API.
+- **Interceptory bezpieczeństwa**: Implementacja interceptorów bezpieczeństwa do egzekwowania kontroli dostępu przy wykonywaniu narzędzi.
+- **Kontrola dostępu oparta na rolach**: Użycie ról do kontrolowania dostępu do konkretnych narzędzi i zasobów.
 - **Adnotacje bezpieczeństwa**: Użycie adnotacji do zabezpieczania metod i punktów końcowych.
 
 ```java
@@ -180,18 +199,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 W powyższym kodzie:
 
-- Skonfigurowaliśmy Spring Security, aby zabezpieczyć punkty końcowe MCP, umożliwiając publiczny dostęp do wykrywania narzędzi, a wymagając uwierzytelnienia do ich uruchamiania.
+- Skonfigurowaliśmy Spring Security, aby zabezpieczyć punkty końcowe MCP, umożliwiając publiczny dostęp do wykrywania narzędzi, a wymagając uwierzytelnienia do ich wykonywania.
 - Użyliśmy OAuth2 jako resource server do obsługi bezpiecznego dostępu do narzędzi MCP.
-- Wdrożyliśmy interceptor bezpieczeństwa, który egzekwuje kontrolę dostępu podczas uruchamiania narzędzi, sprawdzając role i uprawnienia użytkownika przed udzieleniem dostępu do konkretnych narzędzi.
+- Zaimplementowaliśmy interceptor bezpieczeństwa, który egzekwuje kontrolę dostępu przy wykonywaniu narzędzi, sprawdzając role i uprawnienia użytkownika przed udzieleniem dostępu.
 - Zdefiniowaliśmy kontrolę dostępu opartą na rolach, aby ograniczyć dostęp do narzędzi administracyjnych i wrażliwych danych na podstawie ról użytkowników.
 
 ## Ochrona danych i prywatność
 
-Ochrona danych jest kluczowa, aby zapewnić, że wrażliwe informacje są przetwarzane w sposób bezpieczny. Obejmuje to ochronę danych osobowych (PII), danych finansowych oraz innych wrażliwych informacji przed nieautoryzowanym dostępem i wyciekami.
+Ochrona danych jest kluczowa, aby zapewnić bezpieczne przetwarzanie wrażliwych informacji. Obejmuje to ochronę danych osobowych (PII), danych finansowych oraz innych wrażliwych informacji przed nieautoryzowanym dostępem i wyciekami.
 
 ### Przykład ochrony danych w Pythonie
 
-Spójrzmy na przykład implementacji ochrony danych w Pythonie z użyciem szyfrowania i wykrywania PII.
+Przyjrzyjmy się przykładzie implementacji ochrony danych w Pythonie z użyciem szyfrowania i wykrywania PII.
 
 ```python
 from mcp_server import McpServer
@@ -329,14 +348,69 @@ class SecureCustomerDataTool(Tool):
 
 W powyższym kodzie:
 
-- Zaimplementowaliśmy klasę `PiiDetector`, która skanuje tekst i parametry pod kątem danych osobowych (PII).
+- Zaimplementowaliśmy klasę `PiiDetector` do skanowania tekstu i parametrów pod kątem danych osobowych (PII).
 - Stworzyliśmy klasę `EncryptionService` do obsługi szyfrowania i odszyfrowywania wrażliwych danych z użyciem biblioteki `cryptography`.
-- Zdefiniowaliśmy dekorator `secure_tool`, który otacza wykonanie narzędzia, sprawdzając obecność PII, logując dostęp oraz szyfrując wrażliwe dane, jeśli jest to wymagane.
-- Zastosowaliśmy dekorator `secure_tool` do przykładowego narzędzia (`SecureCustomerDataTool`), aby zapewnić bezpieczne przetwarzanie danych wrażliwych.
+- Zdefiniowaliśmy dekorator `secure_tool`, który otacza wykonanie narzędzia, sprawdzając PII, logując dostęp i szyfrując wrażliwe dane, jeśli jest to wymagane.
+- Zastosowaliśmy dekorator `secure_tool` do przykładowego narzędzia (`SecureCustomerDataTool`), aby zapewnić bezpieczne przetwarzanie wrażliwych danych.
+
+## Specyficzne ryzyka bezpieczeństwa MCP
+
+Zgodnie z oficjalną dokumentacją bezpieczeństwa MCP, istnieją specyficzne zagrożenia, o których powinni wiedzieć implementatorzy MCP:
+
+### 1. Problem confused deputy
+
+Ta luka występuje, gdy serwer MCP działa jako proxy do zewnętrznych API, co może pozwolić atakującym na wykorzystanie zaufanego związku między serwerem MCP a tymi API.
+
+**Łagodzenie:**
+- Serwery proxy MCP używające statycznych identyfikatorów klienta MUSZĄ uzyskać zgodę użytkownika dla każdego dynamicznie rejestrowanego klienta przed przekazaniem do zewnętrznych serwerów autoryzacji.
+- Wdrożenie właściwego przepływu OAuth z PKCE (Proof Key for Code Exchange) dla żądań autoryzacji.
+- Ścisła walidacja URI przekierowań i identyfikatorów klienta.
+
+### 2. Luki token passthrough
+
+Token passthrough występuje, gdy serwer MCP akceptuje tokeny od klienta MCP bez weryfikacji, czy tokeny zostały prawidłowo wydane dla serwera MCP, i przekazuje je dalej do downstream API.
+
+### Ryzyka
+- Obejście kontroli bezpieczeństwa (np. limitów zapytań, walidacji żądań)
+- Problemy z odpowiedzialnością i śledzeniem działań
+- Naruszenia granic zaufania
+- Ryzyka kompatybilności w przyszłości
+
+**Łagodzenie:**
+- Serwery MCP NIE MOGĄ akceptować tokenów, które nie zostały wyraźnie wydane dla serwera MCP.
+- Zawsze weryfikuj roszczenia odbiorcy tokena, aby upewnić się, że odpowiadają oczekiwanej usłudze.
+
+### 3. Przejęcie sesji
+
+Występuje, gdy nieuprawniona osoba uzyskuje identyfikator sesji i używa go do podszywania się pod oryginalnego klienta, co może prowadzić do nieautoryzowanych działań.
+
+**Łagodzenie:**
+- Serwery MCP implementujące autoryzację MUSZĄ weryfikować wszystkie przychodzące żądania i NIE MOGĄ używać sesji do uwierzytelniania.
+- Używaj bezpiecznych, niedeterministycznych identyfikatorów sesji generowanych za pomocą bezpiecznych generatorów liczb losowych.
+- Powiąż identyfikatory sesji z informacjami specyficznymi dla użytkownika, stosując format klucza np. `<user_id>:<session_id>`.
+- Wdroż odpowiednie polityki wygasania i rotacji sesji.
+
+## Dodatkowe najlepsze praktyki bezpieczeństwa dla MCP
+
+Poza podstawowymi wymaganiami bezpieczeństwa MCP, rozważ wdrożenie następujących praktyk:
+
+- **Zawsze używaj HTTPS**: Szyfruj komunikację między klientem a serwerem, aby chronić tokeny przed przechwyceniem.
+- **Wdrażaj kontrolę dostępu opartą na rolach (RBAC)**: Nie sprawdzaj tylko, czy użytkownik jest uwierzytelniony, ale także, do czego jest uprawniony.
+- **Monitoruj i audytuj**: Loguj wszystkie zdarzenia uwierzytelniania, aby wykrywać i reagować na podejrzane działania.
+- **Obsługuj limitowanie i throttling**: Wdrażaj mechanizmy wykładniczego opóźniania i ponawiania prób, aby łagodnie radzić sobie z limitami zapytań.
+- **Bezpieczne przechowywanie tokenów**: Przechowuj tokeny dostępu i odświeżania w bezpieczny sposób, korzystając z systemowych mechanizmów bezpiecznego przechowywania lub usług zarządzania kluczami.
+- **Rozważ użycie zarządzania API**: Usługi takie jak Azure API Management mogą automatycznie obsługiwać wiele kwestii bezpieczeństwa, w tym uwierzytelnianie, autoryzację i limitowanie zapytań.
+
+## Źródła
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## Co dalej
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

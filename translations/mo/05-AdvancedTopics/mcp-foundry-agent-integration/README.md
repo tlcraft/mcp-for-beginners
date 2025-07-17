@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c537696a0fd4a801a15cd2afbbe8e6c1",
-  "translation_date": "2025-07-16T07:13:59+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T00:00:34+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "mo"
 }
 -->
 # Model Context Protocol (MCP) 與 Azure AI Foundry 的整合
 
-本指南示範如何將 Model Context Protocol (MCP) 伺服器與 Azure AI Foundry 代理整合，實現強大的工具協調與企業級 AI 功能。
+本指南示範如何將 Model Context Protocol (MCP) 伺服器與 Azure AI Foundry 代理整合，實現強大的工具協同與企業級 AI 功能。
 
 ## 介紹
 
@@ -24,14 +24,14 @@ Model Context Protocol (MCP) 是一個開放標準，讓 AI 應用能安全地�
 完成本指南後，您將能夠：
 
 - 了解 Model Context Protocol 及其優勢
-- 設定 MCP 伺服器以供 Azure AI Foundry 代理使用
+- 設置 MCP 伺服器以供 Azure AI Foundry 代理使用
 - 建立並配置具 MCP 工具整合的代理
-- 使用真實 MCP 伺服器實作實務範例
+- 使用真實 MCP 伺服器實作範例
 - 處理代理對話中的工具回應與引用
 
 ## 先決條件
 
-開始前，請確保您具備：
+開始前請確保您具備：
 
 - 具 AI Foundry 存取權的 Azure 訂閱
 - Python 3.10+ 或 .NET 8.0+
@@ -45,7 +45,7 @@ Model Context Protocol 是 AI 應用連接外部資料來源與工具的標準�
 - **標準化整合**：不同工具與服務間一致的介面
 - **安全性**：安全的驗證與授權機制
 - **彈性**：支援多種資料來源、API 及自訂工具
-- **擴充性**：輕鬆新增功能與整合
+- **可擴充性**：輕鬆新增功能與整合
 
 ## 在 Azure AI Foundry 設定 MCP
 
@@ -59,6 +59,8 @@ Model Context Protocol 是 AI 應用連接外部資料來源與工具的標準�
 ---
 
 ## Python 實作
+
+***Note*** 您可以執行此 [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. 安裝所需套件
 
@@ -186,6 +188,8 @@ with project_client:
 ---
 
 ## .NET 實作
+
+***Note*** 您可以執行此 [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. 安裝所需套件
 
@@ -375,13 +379,13 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## 支援
 
-如需更多支援與問題協助：
+如需更多支援與問題解答：
 - 查閱 [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-foundry/)
 - 參考 [MCP 社群資源](https://modelcontextprotocol.io/)
 
 ## 下一步
 
-- [6. 社群貢獻](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **免責聲明**：  
 本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
