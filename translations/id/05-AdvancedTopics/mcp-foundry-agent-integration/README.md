@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:36:52+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T07:55:15+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "id"
 }
@@ -13,9 +13,9 @@ Panduan ini menunjukkan cara mengintegrasikan server Model Context Protocol (MCP
 
 ## Pendahuluan
 
-Model Context Protocol (MCP) adalah standar terbuka yang memungkinkan aplikasi AI untuk terhubung secara aman ke sumber data dan alat eksternal. Saat diintegrasikan dengan Azure AI Foundry, MCP memungkinkan agen mengakses dan berinteraksi dengan berbagai layanan eksternal, API, dan sumber data secara standar.
+Model Context Protocol (MCP) adalah standar terbuka yang memungkinkan aplikasi AI untuk terhubung secara aman ke sumber data dan alat eksternal. Saat diintegrasikan dengan Azure AI Foundry, MCP memungkinkan agen mengakses dan berinteraksi dengan berbagai layanan eksternal, API, dan sumber data secara terstandarisasi.
 
-Integrasi ini menggabungkan fleksibilitas ekosistem alat MCP dengan kerangka kerja agen Azure AI Foundry yang kuat, memberikan solusi AI kelas perusahaan dengan kemampuan kustomisasi yang luas.
+Integrasi ini menggabungkan fleksibilitas ekosistem alat MCP dengan kerangka kerja agen Azure AI Foundry yang tangguh, memberikan solusi AI kelas perusahaan dengan kemampuan kustomisasi yang luas.
 
 **Note:** Jika Anda ingin menggunakan MCP di Azure AI Foundry Agent Service, saat ini hanya wilayah berikut yang didukung: westus, westus2, uaenorth, southindia, dan switzerlandnorth
 
@@ -40,9 +40,9 @@ Sebelum memulai, pastikan Anda memiliki:
 
 ## Apa itu Model Context Protocol (MCP)?
 
-Model Context Protocol adalah cara standar bagi aplikasi AI untuk terhubung ke sumber data dan alat eksternal. Manfaat utamanya meliputi:
+Model Context Protocol adalah cara terstandarisasi bagi aplikasi AI untuk terhubung ke sumber data dan alat eksternal. Manfaat utamanya meliputi:
 
-- **Integrasi Standar**: Antarmuka konsisten di berbagai alat dan layanan
+- **Integrasi Terstandarisasi**: Antarmuka konsisten di berbagai alat dan layanan
 - **Keamanan**: Mekanisme autentikasi dan otorisasi yang aman
 - **Fleksibilitas**: Mendukung berbagai sumber data, API, dan alat kustom
 - **Ekstensibilitas**: Mudah menambahkan kemampuan dan integrasi baru
@@ -87,7 +87,7 @@ mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/a
 mcp_server_label = os.environ.get("MCP_SERVER_LABEL", "mslearn")
 ```
 
-### 4. Inisialisasi Klien Proyek
+### 4. Inisialisasi Project Client
 
 ```python
 project_client = AIProjectClient(
@@ -333,12 +333,12 @@ MCPToolDefinition mcpTool = new(
 
 Kedua implementasi mendukung header kustom untuk autentikasi:
 
-### Python
+### Python  
 ```python
 mcp_tool.update_headers("SuperSecret", "123456")
 ```
 
-### .NET
+### .NET  
 ```csharp
 MCPToolResource mcpToolResource = new(mcpServerLabel);
 mcpToolResource.UpdateHeader("SuperSecret", "123456");
@@ -351,23 +351,23 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Periksa kredensial autentikasi
 - Pastikan konektivitas jaringan
 
-### 2. Kegagalan Panggilan Alat
+### 2. Kegagalan Pemanggilan Alat
 - Tinjau argumen dan format alat
 - Periksa persyaratan khusus server
 - Terapkan penanganan kesalahan yang tepat
 
 ### 3. Masalah Performa
-- Optimalkan frekuensi panggilan alat
-- Terapkan caching jika perlu
+- Optimalkan frekuensi pemanggilan alat
+- Terapkan caching jika diperlukan
 - Pantau waktu respons server
 
 ## Langkah Selanjutnya
 
 Untuk meningkatkan integrasi MCP Anda:
 
-1. **Jelajahi Server MCP Kustom**: Bangun server MCP Anda sendiri untuk sumber data proprietary
-2. **Terapkan Keamanan Lanjutan**: Tambahkan OAuth2 atau mekanisme autentikasi kustom
-3. **Pantau dan Analisis**: Terapkan logging dan monitoring penggunaan alat
+1. **Jelajahi Server MCP Kustom**: Bangun server MCP Anda sendiri untuk sumber data proprietary  
+2. **Terapkan Keamanan Lanjutan**: Tambahkan OAuth2 atau mekanisme autentikasi kustom  
+3. **Pantau dan Analisis**: Terapkan logging dan monitoring penggunaan alat  
 4. **Skalakan Solusi Anda**: Pertimbangkan load balancing dan arsitektur server MCP terdistribusi
 
 ## Sumber Daya Tambahan
@@ -379,13 +379,13 @@ Untuk meningkatkan integrasi MCP Anda:
 
 ## Dukungan
 
-Untuk dukungan dan pertanyaan tambahan:
-- Tinjau [dokumentasi Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+Untuk dukungan dan pertanyaan tambahan:  
+- Tinjau [dokumentasi Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)  
 - Periksa [sumber daya komunitas MCP](https://modelcontextprotocol.io/)
 
-## Selanjutnya
+## Apa Selanjutnya
 
-- [6. Kontribusi Komunitas](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

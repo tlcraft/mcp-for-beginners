@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:40:29+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-17T06:14:36+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "sv"
 }
@@ -13,7 +13,15 @@ Säkerhet är avgörande för MCP-implementationer, särskilt i företagsmiljöe
 
 ## Introduktion
 
-I denna lektion kommer vi att utforska säkerhetsbästa metoder för MCP-implementationer. Vi kommer att täcka autentisering och auktorisering, dataskydd, säker verktygsexekvering och efterlevnad av dataskyddsregler.
+Model Context Protocol (MCP) kräver särskilda säkerhetsöverväganden på grund av dess roll i att ge LLM:er tillgång till data och verktyg. Denna lektion utforskar säkerhetsbästa metoder för MCP-implementationer baserat på officiella MCP-riktlinjer och etablerade säkerhetsmönster.
+
+MCP följer viktiga säkerhetsprinciper för att säkerställa säkra och pålitliga interaktioner:
+
+- **Användarsamtycke och kontroll**: Användare måste ge uttryckligt samtycke innan någon data nås eller operationer utförs. Ge tydlig kontroll över vilken data som delas och vilka åtgärder som är godkända.
+  
+- **Datasekretess**: Användardata bör endast exponeras med uttryckligt samtycke och måste skyddas med lämpliga åtkomstkontroller. Skydda mot obehörig datatransmission.
+  
+- **Verktygssäkerhet**: Innan något verktyg anropas krävs uttryckligt användarsamtycke. Användare bör ha en klar förståelse för varje verktygs funktionalitet, och robusta säkerhetsgränser måste upprätthållas.
 
 ## Lärandemål
 
@@ -21,24 +29,35 @@ Efter denna lektion kommer du att kunna:
 
 - Implementera säkra autentiserings- och auktoriseringsmekanismer för MCP-servrar.
 - Skydda känslig data med kryptering och säker lagring.
-- Säkerställa säker exekvering av verktyg med rätt åtkomstkontroller.
-- Tillämpa bästa metoder för dataskydd och integritetsöverensstämmelse.
+- Säkerställa säker körning av verktyg med korrekta åtkomstkontroller.
+- Tillämpa bästa metoder för dataskydd och efterlevnad av sekretessregler.
+- Identifiera och mildra vanliga MCP-säkerhetsrisker som confused deputy-problem, token passthrough och sessionkapning.
 
 ## Autentisering och auktorisering
 
-Autentisering och auktorisering är grundläggande för att säkra MCP-servrar. Autentisering svarar på frågan "Vem är du?" medan auktorisering svarar på "Vad får du göra?".
+Autentisering och auktorisering är avgörande för att säkra MCP-servrar. Autentisering svarar på frågan "Vem är du?" medan auktorisering svarar på "Vad får du göra?".
+
+Enligt MCP:s säkerhetsspecifikation är följande kritiska säkerhetsaspekter:
+
+1. **Tokenvalidering**: MCP-servrar FÅR INTE acceptera några tokens som inte uttryckligen utfärdats för MCP-servern. "Token passthrough" är ett uttryckligen förbjudet antipattern.
+
+2. **Verifiering av auktorisering**: MCP-servrar som implementerar auktorisering MÅSTE verifiera alla inkommande förfrågningar och FÅR INTE använda sessioner för autentisering.
+
+3. **Säker sessionshantering**: Vid användning av sessioner för tillstånd MÅSTE MCP-servrar använda säkra, icke-deterministiska sessions-ID:n genererade med säkra slumpgeneratorer. Sessions-ID:n BÖR kopplas till användarspecifik information.
+
+4. **Uttryckligt användarsamtycke**: För proxyservrar MÅSTE MCP-implementationer inhämta användarsamtycke för varje dynamiskt registrerad klient innan vidarebefordran till tredjepartsauktoriseringsservrar.
 
 Låt oss titta på exempel på hur man implementerar säker autentisering och auktorisering i MCP-servrar med .NET och Java.
 
 ### .NET Identity-integration
 
-ASP .NET Core Identity erbjuder ett robust ramverk för att hantera användarautentisering och auktorisering. Vi kan integrera det med MCP-servrar för att säkra åtkomst till verktyg och resurser.
+ASP .NET Core Identity erbjuder ett robust ramverk för hantering av användarautentisering och auktorisering. Vi kan integrera det med MCP-servrar för att säkra åtkomst till verktyg och resurser.
 
-Det finns några grundläggande begrepp vi behöver förstå när vi integrerar ASP.NET Core Identity med MCP-servrar, nämligen:
+Några grundläggande begrepp vi behöver förstå när vi integrerar ASP.NET Core Identity med MCP-servrar är:
 
-- **Identity-konfiguration**: Att ställa in ASP.NET Core Identity med användarroller och claims. En claim är en bit information om användaren, som deras roll eller behörigheter, till exempel "Admin" eller "User".
-- **JWT-autentisering**: Använda JSON Web Tokens (JWT) för säker API-åtkomst. JWT är en standard för att säkert överföra information mellan parter som ett JSON-objekt, vilket kan verifieras och litas på eftersom det är digitalt signerat.
-- **Auktoriseringspolicyer**: Definiera policyer för att kontrollera åtkomst till specifika verktyg baserat på användarroller. MCP använder auktoriseringspolicyer för att avgöra vilka användare som kan komma åt vilka verktyg baserat på deras roller och claims.
+- **Identity-konfiguration**: Konfigurera ASP.NET Core Identity med användarroller och claims. En claim är en informationsbit om användaren, som deras roll eller behörigheter, till exempel "Admin" eller "User".
+- **JWT-autentisering**: Använda JSON Web Tokens (JWT) för säker API-åtkomst. JWT är en standard för säker överföring av information mellan parter som ett JSON-objekt, vilket kan verifieras och litas på eftersom det är digitalt signerat.
+- **Auktoriseringspolicyer**: Definiera policyer för att kontrollera åtkomst till specifika verktyg baserat på användarroller. MCP använder auktoriseringspolicyer för att avgöra vilka användare som kan nå vilka verktyg baserat på deras roller och claims.
 
 ```csharp
 public class SecureMcpStartup
@@ -114,7 +133,7 @@ I koden ovan har vi:
 - Konfigurerat ASP.NET Core Identity för användarhantering.
 - Ställt in JWT-autentisering för säker API-åtkomst. Vi specificerade tokenvalideringsparametrar, inklusive utfärdare, publik och signeringsnyckel.
 - Definierat auktoriseringspolicyer för att kontrollera åtkomst till verktyg baserat på användarroller. Till exempel kräver policyn "CanUseAdminTools" att användaren har rollen "Admin", medan "CanUseBasic" kräver att användaren är autentiserad.
-- Registrerat MCP-verktyg med specifika auktoriseringskrav, vilket säkerställer att endast användare med rätt roller kan komma åt dem.
+- Registrerat MCP-verktyg med specifika auktoriseringskrav, vilket säkerställer att endast användare med rätt roller kan nå dem.
 
 ### Java Spring Security-integration
 
@@ -122,9 +141,9 @@ För Java använder vi Spring Security för att implementera säker autentiserin
 
 Grundläggande begrepp här är:
 
-- **Spring Security-konfiguration**: Att ställa in säkerhetskonfigurationer för autentisering och auktorisering.
+- **Spring Security-konfiguration**: Ställa in säkerhetskonfigurationer för autentisering och auktorisering.
 - **OAuth2 Resource Server**: Använda OAuth2 för säker åtkomst till MCP-verktyg. OAuth2 är ett auktoriseringsramverk som tillåter tredjepartstjänster att byta access tokens för säker API-åtkomst.
-- **Säkerhetsinterceptorer**: Implementera säkerhetsinterceptorer för att upprätthålla åtkomstkontroller vid verktygsexekvering.
+- **Säkerhetsinterceptorer**: Implementera säkerhetsinterceptorer för att upprätthålla åtkomstkontroller vid verktygskörning.
 - **Rollbaserad åtkomstkontroll**: Använda roller för att styra åtkomst till specifika verktyg och resurser.
 - **Säkerhetsannoteringar**: Använda annoteringar för att säkra metoder och endpoints.
 
@@ -180,14 +199,14 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 I koden ovan har vi:
 
-- Konfigurerat Spring Security för att säkra MCP-endpoints, med offentlig åtkomst till verktygsupptäckt men kräver autentisering för verktygsexekvering.
+- Konfigurerat Spring Security för att säkra MCP-endpoints, med offentlig åtkomst till verktygsupptäckt men krav på autentisering för verktygskörning.
 - Använt OAuth2 som resursserver för att hantera säker åtkomst till MCP-verktyg.
-- Implementerat en säkerhetsinterceptor för att upprätthålla åtkomstkontroller vid verktygsexekvering, som kontrollerar användarroller och behörigheter innan åtkomst till specifika verktyg tillåts.
+- Implementerat en säkerhetsinterceptor för att upprätthålla åtkomstkontroller vid verktygskörning, som kontrollerar användarroller och behörigheter innan åtkomst till specifika verktyg tillåts.
 - Definierat rollbaserad åtkomstkontroll för att begränsa åtkomst till adminverktyg och känslig data baserat på användarroller.
 
-## Dataskydd och integritet
+## Dataskydd och sekretess
 
-Dataskydd är avgörande för att säkerställa att känslig information hanteras på ett säkert sätt. Detta inkluderar att skydda personuppgifter (PII), finansiell data och annan känslig information från obehörig åtkomst och intrång.
+Dataskydd är avgörande för att säkerställa att känslig information hanteras säkert. Detta inkluderar skydd av personuppgifter (PII), finansiell data och annan känslig information från obehörig åtkomst och intrång.
 
 ### Exempel på dataskydd i Python
 
@@ -331,12 +350,67 @@ I koden ovan har vi:
 
 - Implementerat en `PiiDetector`-klass för att skanna text och parametrar efter personuppgifter (PII).
 - Skapat en `EncryptionService`-klass för att hantera kryptering och dekryptering av känslig data med hjälp av `cryptography`-biblioteket.
-- Definierat en `secure_tool`-dekoration som omsluter verktygsexekvering för att kontrollera PII, logga åtkomst och kryptera känslig data vid behov.
-- Använt `secure_tool`-dekorationen på ett exempelverktyg (`SecureCustomerDataTool`) för att säkerställa att det hanterar känslig data på ett säkert sätt.
+- Definierat en `secure_tool`-dekoratör som omsluter verktygskörning för att kontrollera PII, logga åtkomst och kryptera känslig data vid behov.
+- Använt `secure_tool`-dekoratören på ett exempelverktyg (`SecureCustomerDataTool`) för att säkerställa att det hanterar känslig data på ett säkert sätt.
+
+## MCP-specifika säkerhetsrisker
+
+Enligt den officiella MCP-säkerhetsdokumentationen finns det specifika säkerhetsrisker som MCP-implementerare bör vara medvetna om:
+
+### 1. Confused Deputy-problemet
+
+Denna sårbarhet uppstår när en MCP-server agerar som proxy till tredjeparts-API:er, vilket potentiellt kan tillåta angripare att utnyttja den betrodda relationen mellan MCP-servern och dessa API:er.
+
+**Åtgärder:**
+- MCP-proxyservrar som använder statiska klient-ID:n MÅSTE inhämta användarsamtycke för varje dynamiskt registrerad klient innan vidarebefordran till tredjepartsauktoriseringsservrar.
+- Implementera korrekt OAuth-flöde med PKCE (Proof Key for Code Exchange) för auktoriseringsförfrågningar.
+- Strikt validera redirect-URI:er och klientidentifierare.
+
+### 2. Token Passthrough-sårbarheter
+
+Token passthrough uppstår när en MCP-server accepterar tokens från en MCP-klient utan att validera att token utfärdats korrekt för MCP-servern och vidarebefordrar dem till nedströms-API:er.
+
+### Risker
+- Omgång av säkerhetskontroller (t.ex. rate limiting, förfrågningsvalidering)
+- Ansvars- och revisionsspårproblem
+- Brott mot förtroendegränser
+- Framtida kompatibilitetsrisker
+
+**Åtgärder:**
+- MCP-servrar FÅR INTE acceptera några tokens som inte uttryckligen utfärdats för MCP-servern.
+- Validera alltid tokenens audience-claims för att säkerställa att de matchar den förväntade tjänsten.
+
+### 3. Sessionkapning
+
+Detta inträffar när en obehörig part får tag på ett sessions-ID och använder det för att utge sig för att vara den ursprungliga klienten, vilket kan leda till obehöriga åtgärder.
+
+**Åtgärder:**
+- MCP-servrar som implementerar auktorisering MÅSTE verifiera alla inkommande förfrågningar och FÅR INTE använda sessioner för autentisering.
+- Använd säkra, icke-deterministiska sessions-ID:n genererade med säkra slumpgeneratorer.
+- Knyt sessions-ID:n till användarspecifik information med ett nyckelformat som `<user_id>:<session_id>`.
+- Implementera korrekt sessionsutgång och rotationspolicyer.
+
+## Ytterligare säkerhetsbästa metoder för MCP
+
+Utöver de grundläggande MCP-säkerhetsövervägandena bör du överväga att implementera följande säkerhetspraxis:
+
+- **Använd alltid HTTPS**: Kryptera kommunikationen mellan klient och server för att skydda tokens från avlyssning.
+- **Implementera rollbaserad åtkomstkontroll (RBAC)**: Kontrollera inte bara om en användare är autentiserad, utan vad de är auktoriserade att göra.
+- **Övervaka och granska**: Logga alla autentiseringshändelser för att upptäcka och reagera på misstänkt aktivitet.
+- **Hantera rate limiting och throttling**: Implementera exponentiell backoff och retry-logik för att hantera begränsningar smidigt.
+- **Säker tokenlagring**: Lagra access tokens och refresh tokens säkert med systemets säkra lagringsmekanismer eller säkra nyckelhanteringstjänster.
+- **Överväg att använda API Management**: Tjänster som Azure API Management kan automatiskt hantera många säkerhetsaspekter, inklusive autentisering, auktorisering och rate limiting.
+
+## Referenser
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## Vad händer härnäst
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "748c61250d4a326206b72b28f6154615",
-  "translation_date": "2025-07-13T23:45:06+00:00",
+  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
+  "translation_date": "2025-07-17T06:26:17+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "da"
 }
@@ -13,14 +13,14 @@ Dette kapitel dækker en række avancerede emner inden for implementering af Mod
 
 ## Oversigt
 
-Denne lektion udforsker avancerede koncepter i implementeringen af Model Context Protocol med fokus på multimodal integration, skalerbarhed, sikkerhedspraksis og enterprise-integration. Disse emner er essentielle for at udvikle MCP-applikationer i produktionskvalitet, som kan håndtere komplekse krav i enterprise-miljøer.
+Denne lektion udforsker avancerede koncepter i implementeringen af Model Context Protocol med fokus på multimodal integration, skalerbarhed, sikkerhedspraksis og enterprise-integration. Disse emner er essentielle for at bygge produktionsklare MCP-applikationer, der kan håndtere komplekse krav i enterprise-miljøer.
 
 ## Læringsmål
 
 Når du har gennemført denne lektion, vil du kunne:
 
 - Implementere multimodale funktioner inden for MCP-rammer
-- Designe skalerbare MCP-arkitekturer til scenarier med højt krav
+- Designe skalerbare MCP-arkitekturer til scenarier med høje krav
 - Anvende sikkerhedspraksis i overensstemmelse med MCP’s sikkerhedsprincipper
 - Integrere MCP med enterprise AI-systemer og -rammer
 - Optimere ydeevne og pålidelighed i produktionsmiljøer
@@ -31,7 +31,7 @@ Når du har gennemført denne lektion, vil du kunne:
 |------|-------|-------------|
 | [5.1 Integration with Azure](./mcp-integration/README.md) | Integrer med Azure | Lær hvordan du integrerer din MCP Server på Azure |
 | [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP multimodale eksempler | Eksempler på lyd, billede og multimodale svar |
-| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimal Spring Boot-app, der viser OAuth2 med MCP som både Authorization og Resource Server. Demonstrerer sikker token-udstedelse, beskyttede endpoints, Azure Container Apps-udrulning og API Management-integration. |
+| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimal Spring Boot-app, der viser OAuth2 med MCP som både Authorization og Resource Server. Demonstrerer sikker token-udstedelse, beskyttede endpoints, deployment på Azure Container Apps og integration med API Management. |
 | [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root contexts | Lær mere om root context og hvordan du implementerer dem |
 | [5.5 Routing](./mcp-routing/README.md) | Routing | Lær om forskellige typer routing |
 | [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Lær hvordan du arbejder med sampling |
@@ -63,7 +63,7 @@ For den mest opdaterede information om avancerede MCP-emner, se:
 Design en enterprise-klasse MCP-implementering til et specifikt brugsscenarie:
 
 1. Identificer multimodale krav til dit brugsscenarie
-2. Skitser de nødvendige sikkerhedskontroller for at beskytte følsomme data
+2. Skitser de sikkerhedskontroller, der er nødvendige for at beskytte følsomme data
 3. Design en skalerbar arkitektur, der kan håndtere varierende belastning
 4. Planlæg integrationspunkter med enterprise AI-systemer
 5. Dokumenter potentielle flaskehalse i ydeevnen og strategier til at afbøde dem

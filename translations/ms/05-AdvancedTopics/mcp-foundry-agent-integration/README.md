@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:37:04+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T08:07:48+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "ms"
 }
@@ -21,7 +21,7 @@ Integrasi ini menggabungkan fleksibiliti ekosistem alat MCP dengan rangka kerja 
 
 ## Objektif Pembelajaran
 
-Pada akhir panduan ini, anda akan dapat:
+Menjelang akhir panduan ini, anda akan dapat:
 
 - Memahami Model Context Protocol dan manfaatnya
 - Menyediakan pelayan MCP untuk digunakan dengan ejen Azure AI Foundry
@@ -45,7 +45,7 @@ Model Context Protocol adalah cara berstandard untuk aplikasi AI berhubung denga
 - **Integrasi Berstandard**: Antara muka konsisten merentas pelbagai alat dan perkhidmatan
 - **Keselamatan**: Mekanisme pengesahan dan kebenaran yang selamat
 - **Fleksibiliti**: Menyokong pelbagai sumber data, API, dan alat tersuai
-- **Kebolehlanjutan**: Mudah menambah keupayaan dan integrasi baru
+- **Kebolehluasan**: Mudah menambah keupayaan dan integrasi baru
 
 ## Menyediakan MCP dengan Azure AI Foundry
 
@@ -383,9 +383,9 @@ Untuk sokongan tambahan dan pertanyaan:
 - Semak [dokumentasi Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
 - Lihat [sumber komuniti MCP](https://modelcontextprotocol.io/)
 
-## Apa Seterusnya
+## Apa seterusnya
 
-- [6. Sumbangan Komuniti](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

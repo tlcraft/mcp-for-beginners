@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:11:47+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T07:54:21+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "id"
 }
@@ -91,8 +91,8 @@ Dalam pencarian web berbasis MCP, konteks biasanya mencakup:
 
 - **Riwayat Kueri**: Kueri pencarian sebelumnya dalam sesi
 - **Preferensi Pengguna**: Bahasa, wilayah, pengaturan pencarian aman
-- **Riwayat Interaksi**: Hasil mana yang diklik, waktu yang dihabiskan pada hasil
-- **Parameter Pencarian**: Filter, urutan sortir, dan modifikasi pencarian lainnya
+- **Riwayat Interaksi**: Hasil yang diklik, waktu yang dihabiskan pada hasil
+- **Parameter Pencarian**: Filter, urutan sortir, dan modifikator pencarian lainnya
 - **Pengetahuan Domain**: Konteks khusus subjek yang relevan dengan pencarian
 - **Konteks Temporal**: Faktor relevansi berbasis waktu
 - **Preferensi Sumber**: Sumber informasi yang dipercaya atau disukai
@@ -137,25 +137,25 @@ Ke depan, kami memperkirakan MCP akan berkembang untuk mengatasi:
 - **Privasi Pencarian**: Mekanisme pencarian yang menjaga privasi dengan kesadaran konteks  
 - **Pemahaman Query**: Parsing semantik mendalam dari query pencarian berbahasa alami  
 
-### Kemajuan Potensial dalam Teknologi
+### Kemajuan Potensial dalam Teknologi  
 
-Teknologi baru yang akan membentuk masa depan pencarian MCP:
+Teknologi baru yang akan membentuk masa depan pencarian MCP:  
 
 1. **Arsitektur Pencarian Neural**: Sistem pencarian berbasis embedding yang dioptimalkan untuk MCP  
 2. **Konteks Pencarian yang Dipersonalisasi**: Mempelajari pola pencarian pengguna secara individu dari waktu ke waktu  
 3. **Integrasi Knowledge Graph**: Pencarian kontekstual yang ditingkatkan dengan knowledge graph khusus domain  
 4. **Konteks Lintas Modalitas**: Mempertahankan konteks di berbagai modalitas pencarian  
 
-## Latihan Praktis
+## Latihan Praktik  
 
-### Latihan 1: Menyiapkan Pipeline Pencarian MCP Dasar
+### Latihan 1: Menyiapkan Pipeline Pencarian MCP Dasar  
 
 Dalam latihan ini, Anda akan belajar cara:  
 - Mengonfigurasi lingkungan pencarian MCP dasar  
 - Mengimplementasikan pengelola konteks untuk pencarian web  
 - Menguji dan memvalidasi pelestarian konteks di berbagai iterasi pencarian  
 
-### Latihan 2: Membangun Asisten Riset dengan Pencarian MCP
+### Latihan 2: Membangun Asisten Riset dengan Pencarian MCP  
 
 Buat aplikasi lengkap yang:  
 - Memproses pertanyaan riset berbahasa alami  
@@ -163,15 +163,15 @@ Buat aplikasi lengkap yang:
 - Mensintesis informasi dari berbagai sumber  
 - Menyajikan temuan riset secara terorganisir  
 
-### Latihan 3: Mengimplementasikan Federasi Pencarian Multi-Sumber dengan MCP
+### Latihan 3: Mengimplementasikan Federasi Pencarian Multi-Sumber dengan MCP  
 
 Latihan lanjutan yang mencakup:  
-- Pengiriman query dengan kesadaran konteks ke beberapa mesin pencari  
+- Pengiriman query yang sadar konteks ke beberapa mesin pencari  
 - Peringkat dan agregasi hasil  
 - Dedupikasi hasil pencarian secara kontekstual  
 - Penanganan metadata spesifik sumber  
 
-## Sumber Daya Tambahan
+## Sumber Daya Tambahan  
 
 - [Model Context Protocol Specification](https://spec.modelcontextprotocol.io/) - Spesifikasi resmi MCP dan dokumentasi protokol terperinci  
 - [Model Context Protocol Documentation](https://modelcontextprotocol.io/) - Tutorial dan panduan implementasi mendalam  
@@ -185,7 +185,7 @@ Latihan lanjutan yang mencakup:
 - [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - Mesin pencarian dan analitik terdistribusi  
 - [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Membangun aplikasi dengan LLM  
 
-## Hasil Pembelajaran
+## Hasil Pembelajaran  
 
 Dengan menyelesaikan modul ini, Anda akan mampu:  
 
@@ -196,7 +196,7 @@ Dengan menyelesaikan modul ini, Anda akan mampu:
 - Menerapkan konsep MCP pada berbagai kasus penggunaan termasuk pencarian semantik, asisten riset, dan browsing yang didukung AI  
 - Mengevaluasi tren baru dan inovasi masa depan dalam teknologi pencarian berbasis MCP  
 
-### Pertimbangan Kepercayaan dan Keamanan
+### Pertimbangan Kepercayaan dan Keamanan  
 
 Saat mengimplementasikan solusi pencarian web berbasis MCP, ingat prinsip penting berikut dari spesifikasi MCP:  
 
@@ -204,7 +204,7 @@ Saat mengimplementasikan solusi pencarian web berbasis MCP, ingat prinsip pentin
 
 2. **Privasi Data**: Pastikan penanganan query pencarian dan hasilnya dilakukan dengan tepat, terutama jika mengandung informasi sensitif. Terapkan kontrol akses yang sesuai untuk melindungi data pengguna.  
 
-3. **Keamanan Alat**: Terapkan otorisasi dan validasi yang tepat untuk alat pencarian, karena alat ini berpotensi menjadi risiko keamanan melalui eksekusi kode sembarangan. Deskripsi perilaku alat harus dianggap tidak terpercaya kecuali diperoleh dari server yang terpercaya.  
+3. **Keamanan Alat**: Terapkan otorisasi dan validasi yang tepat untuk alat pencarian, karena alat ini berpotensi menimbulkan risiko keamanan melalui eksekusi kode sembarangan. Deskripsi perilaku alat harus dianggap tidak terpercaya kecuali diperoleh dari server yang terpercaya.  
 
 4. **Dokumentasi yang Jelas**: Berikan dokumentasi yang jelas mengenai kemampuan, keterbatasan, dan pertimbangan keamanan dari implementasi pencarian berbasis MCP Anda, sesuai dengan panduan implementasi dari spesifikasi MCP.  
 
@@ -214,7 +214,7 @@ Untuk detail lengkap mengenai keamanan dan pertimbangan kepercayaan MCP, lihat [
 
 ## Selanjutnya  
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

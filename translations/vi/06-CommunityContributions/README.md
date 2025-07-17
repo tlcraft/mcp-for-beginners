@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:01:34+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T07:32:39+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "vi"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tổng quan
 
-Bài học này tập trung vào cách tham gia cộng đồng MCP, đóng góp vào hệ sinh thái MCP và tuân theo các thực hành tốt nhất trong phát triển hợp tác. Hiểu cách tham gia vào các dự án mã nguồn mở MCP là điều cần thiết cho những ai muốn định hình tương lai của công nghệ này.
+Bài học này tập trung vào cách tham gia cộng đồng MCP, đóng góp vào hệ sinh thái MCP và tuân theo các thực hành tốt nhất trong phát triển hợp tác. Hiểu cách tham gia các dự án MCP mã nguồn mở là điều cần thiết cho những ai muốn định hình tương lai của công nghệ này.
 
 ## Mục tiêu học tập
 
@@ -19,8 +19,9 @@ Sau bài học này, bạn sẽ có thể:
 - Hiểu cấu trúc của cộng đồng và hệ sinh thái MCP
 - Tham gia hiệu quả vào các diễn đàn và thảo luận của cộng đồng MCP
 - Đóng góp vào các kho mã nguồn mở MCP
-- Tạo và chia sẻ các công cụ MCP tùy chỉnh
+- Tạo và chia sẻ các công cụ và máy chủ MCP tùy chỉnh
 - Tuân theo các thực hành tốt nhất trong phát triển và hợp tác MCP
+- Khám phá các tài nguyên và framework cộng đồng dành cho phát triển MCP
 
 ## Hệ sinh thái cộng đồng MCP
 
@@ -28,27 +29,31 @@ Hệ sinh thái MCP bao gồm nhiều thành phần và người tham gia cùng 
 
 ### Các thành phần chính của cộng đồng
 
-1. **Người duy trì giao thức cốt lõi**: Microsoft và các tổ chức khác chịu trách nhiệm duy trì các đặc tả cốt lõi và các triển khai tham chiếu của MCP
-2. **Nhà phát triển công cụ**: Cá nhân và nhóm tạo ra các công cụ MCP
+1. **Người duy trì giao thức cốt lõi**: Tổ chức [Model Context Protocol GitHub](https://github.com/modelcontextprotocol) chính thức duy trì các đặc tả cốt lõi và các triển khai tham chiếu của MCP
+2. **Nhà phát triển công cụ**: Cá nhân và nhóm tạo ra các công cụ và máy chủ MCP
 3. **Nhà cung cấp tích hợp**: Các công ty tích hợp MCP vào sản phẩm và dịch vụ của họ
 4. **Người dùng cuối**: Các nhà phát triển và tổ chức sử dụng MCP trong ứng dụng của họ
-5. **Người đóng góp**: Thành viên cộng đồng đóng góp mã nguồn, tài liệu hoặc các tài nguyên khác
+5. **Người đóng góp**: Thành viên cộng đồng đóng góp mã, tài liệu hoặc các tài nguyên khác
 
 ### Tài nguyên cộng đồng
 
 #### Kênh chính thức
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Tổ chức MCP trên GitHub](https://github.com/modelcontextprotocol)
+- [Tài liệu MCP](https://modelcontextprotocol.io/)
+- [Đặc tả MCP](https://modelcontextprotocol.io/docs/specification)
+- [Thảo luận trên GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Kho ví dụ & máy chủ MCP](https://github.com/modelcontextprotocol/servers)
 
 #### Tài nguyên do cộng đồng phát triển
 
+- [Khách hàng MCP](https://modelcontextprotocol.io/clients) - Danh sách các client hỗ trợ tích hợp MCP
+- [Máy chủ MCP do cộng đồng phát triển](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Danh sách ngày càng tăng các máy chủ MCP do cộng đồng phát triển
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Danh sách được tuyển chọn các máy chủ MCP
+- [PulseMCP](https://www.pulsemcp.com/) - Trung tâm cộng đồng & bản tin để khám phá tài nguyên MCP
+- [Máy chủ Discord](https://discord.gg/jHEGxQu2a5) - Kết nối với các nhà phát triển MCP
 - Các triển khai SDK theo ngôn ngữ
-- Các triển khai server và thư viện công cụ
 - Bài viết blog và hướng dẫn
-- Diễn đàn cộng đồng và thảo luận trên mạng xã hội
 
 ## Đóng góp cho MCP
 
@@ -59,7 +64,7 @@ Hệ sinh thái MCP chào đón nhiều loại đóng góp khác nhau:
 1. **Đóng góp mã nguồn**:
    - Cải tiến giao thức cốt lõi
    - Sửa lỗi
-   - Triển khai công cụ
+   - Triển khai công cụ và máy chủ
    - Thư viện client/server bằng các ngôn ngữ khác nhau
 
 2. **Tài liệu**:
@@ -69,168 +74,77 @@ Hệ sinh thái MCP chào đón nhiều loại đóng góp khác nhau:
    - Tạo ví dụ và ứng dụng mẫu
 
 3. **Hỗ trợ cộng đồng**:
-   - Trả lời câu hỏi trên diễn đàn
+   - Trả lời câu hỏi trên diễn đàn và thảo luận
    - Kiểm thử và báo cáo lỗi
    - Tổ chức sự kiện cộng đồng
    - Hướng dẫn người đóng góp mới
 
 ### Quy trình đóng góp: Giao thức cốt lõi
 
-Để đóng góp vào giao thức MCP cốt lõi hoặc các triển khai chính thức:
+Để đóng góp vào giao thức MCP cốt lõi hoặc các triển khai chính thức, hãy tuân theo các nguyên tắc từ [hướng dẫn đóng góp chính thức](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### Ví dụ .NET: Đóng góp cải tiến giao thức
+1. **Đơn giản và Tối giản**: Đặc tả MCP đặt tiêu chuẩn cao cho việc thêm khái niệm mới. Việc thêm vào đặc tả dễ hơn là loại bỏ.
+2. **Cách tiếp cận cụ thể**: Thay đổi đặc tả nên dựa trên các thách thức triển khai cụ thể, không phải ý tưởng suy đoán.
+3. **Các giai đoạn của đề xuất**:
+   - Định nghĩa: Khám phá vấn đề, xác nhận rằng người dùng MCP khác cũng gặp vấn đề tương tự
+   - Nguyên mẫu: Xây dựng giải pháp mẫu và chứng minh ứng dụng thực tế
+   - Viết: Dựa trên nguyên mẫu, viết đề xuất đặc tả
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+### Thiết lập môi trường phát triển
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Ví dụ Java: Đóng góp sửa lỗi
+### Ví dụ: Đóng góp sửa lỗi
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Ví dụ Python: Đóng góp công cụ mới vào thư viện chuẩn
+### Ví dụ: Đóng góp công cụ mới vào thư viện chuẩn
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -394,19 +308,19 @@ class CsvProcessingTool(Tool):
 
 Để đóng góp thành công vào các dự án MCP:
 
-1. **Bắt đầu từ những việc nhỏ**: Bắt đầu với tài liệu, sửa lỗi hoặc cải tiến nhỏ
+1. **Bắt đầu từ nhỏ**: Bắt đầu với tài liệu, sửa lỗi hoặc cải tiến nhỏ
 2. **Tuân theo hướng dẫn phong cách**: Tuân thủ phong cách mã và quy ước của dự án
-3. **Viết kiểm thử**: Bao gồm các bài kiểm thử đơn vị cho mã của bạn
-4. **Ghi chép công việc**: Thêm tài liệu rõ ràng cho các tính năng hoặc thay đổi mới
-5. **Gửi PR có mục tiêu rõ ràng**: Giữ pull request tập trung vào một vấn đề hoặc tính năng duy nhất
-6. **Phản hồi tích cực**: Chủ động phản hồi các góp ý về đóng góp của bạn
+3. **Viết kiểm thử**: Bao gồm kiểm thử đơn vị cho các đóng góp mã
+4. **Ghi chép công việc**: Thêm tài liệu rõ ràng cho tính năng hoặc thay đổi mới
+5. **Gửi PR tập trung**: Giữ pull request tập trung vào một vấn đề hoặc tính năng duy nhất
+6. **Phản hồi tích cực**: Phản hồi nhanh chóng với các góp ý về đóng góp của bạn
 
 ### Quy trình đóng góp mẫu
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +329,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,9 +341,27 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Tạo và chia sẻ công cụ MCP tùy chỉnh
+## Tạo và chia sẻ máy chủ MCP
 
-Một trong những cách đóng góp giá trị nhất cho hệ sinh thái MCP là tạo và chia sẻ các công cụ tùy chỉnh.
+Một trong những cách đóng góp giá trị nhất cho hệ sinh thái MCP là tạo và chia sẻ các máy chủ MCP tùy chỉnh. Cộng đồng đã phát triển hàng trăm máy chủ cho nhiều dịch vụ và trường hợp sử dụng khác nhau.
+
+### Framework phát triển máy chủ MCP
+
+Có nhiều framework giúp đơn giản hóa việc phát triển máy chủ MCP:
+
+1. **SDK chính thức**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **Framework cộng đồng**:
+   - [MCP-Framework](https://mcp-framework.com/) - Xây dựng máy chủ MCP nhanh và tinh tế với TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Máy chủ MCP dựa trên annotation với Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Framework Java cho máy chủ MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Dự án khởi đầu Next.js cho máy chủ MCP
 
 ### Phát triển công cụ có thể chia sẻ
 
@@ -754,31 +684,31 @@ Khi chia sẻ công cụ MCP với cộng đồng:
 1. **Tài liệu đầy đủ**:
    - Ghi rõ mục đích, cách sử dụng và ví dụ
    - Giải thích các tham số và giá trị trả về
-   - Ghi chú các phụ thuộc bên ngoài nếu có
+   - Ghi chú các phụ thuộc bên ngoài (nếu có)
 
 2. **Xử lý lỗi**:
    - Triển khai xử lý lỗi chắc chắn
    - Cung cấp thông báo lỗi hữu ích
-   - Xử lý các trường hợp đặc biệt một cách hợp lý
+   - Xử lý các trường hợp đặc biệt một cách khéo léo
 
 3. **Cân nhắc hiệu năng**:
-   - Tối ưu cả về tốc độ và sử dụng tài nguyên
+   - Tối ưu cả tốc độ và sử dụng tài nguyên
    - Áp dụng caching khi phù hợp
    - Xem xét khả năng mở rộng
 
 4. **Bảo mật**:
    - Sử dụng khóa API và xác thực an toàn
    - Kiểm tra và làm sạch dữ liệu đầu vào
-   - Áp dụng giới hạn tần suất cho các cuộc gọi API bên ngoài
+   - Giới hạn tần suất gọi API bên ngoài
 
 5. **Kiểm thử**:
-   - Bao gồm phạm vi kiểm thử toàn diện
+   - Bao gồm kiểm thử toàn diện
    - Kiểm thử với các loại đầu vào và trường hợp đặc biệt khác nhau
    - Ghi chép quy trình kiểm thử
 
 ## Hợp tác cộng đồng và thực hành tốt nhất
 
-Hợp tác hiệu quả là chìa khóa cho một hệ sinh thái MCP phát triển bền vững.
+Hợp tác hiệu quả là chìa khóa cho sự phát triển bền vững của hệ sinh thái MCP.
 
 ### Kênh giao tiếp
 
@@ -801,9 +731,9 @@ Khi đánh giá các đóng góp MCP:
 
 Khi phát triển cho MCP:
 
-1. **Phiên bản giao thức**: Tuân thủ phiên bản giao thức MCP mà công cụ hỗ trợ
+1. **Phiên bản giao thức**: Tuân thủ phiên bản giao thức MCP mà công cụ của bạn hỗ trợ
 2. **Tương thích client**: Xem xét khả năng tương thích ngược
-3. **Tương thích server**: Tuân theo hướng dẫn triển khai server
+3. **Tương thích server**: Tuân theo hướng dẫn triển khai máy chủ
 4. **Thay đổi phá vỡ**: Ghi rõ các thay đổi phá vỡ nếu có
 
 ## Dự án cộng đồng mẫu: MCP Tool Registry
@@ -891,7 +821,7 @@ async def delete_tool(tool_name: str):
 
 - Cộng đồng MCP đa dạng và chào đón nhiều loại đóng góp
 - Đóng góp cho MCP có thể từ cải tiến giao thức cốt lõi đến công cụ tùy chỉnh
-- Tuân theo hướng dẫn đóng góp giúp tăng khả năng PR được chấp nhận
+- Tuân theo hướng dẫn đóng góp giúp tăng khả năng PR của bạn được chấp nhận
 - Tạo và chia sẻ công cụ MCP là cách giá trị để phát triển hệ sinh thái
 - Hợp tác cộng đồng là yếu tố thiết yếu cho sự phát triển và cải tiến MCP
 
@@ -905,12 +835,12 @@ async def delete_tool(tool_name: str):
 
 ## Tài nguyên bổ sung
 
-- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+- [Dự án cộng đồng MCP](https://github.com/topics/model-context-protocol)
 
 
 ---
 
-Tiếp theo: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+Tiếp theo: [Bài học từ việc áp dụng sớm](../07-LessonsfromEarlyAdoption/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
 Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

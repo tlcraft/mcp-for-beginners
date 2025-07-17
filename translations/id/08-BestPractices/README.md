@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-14T05:09:06+00:00",
+  "original_hash": "80e5c8949af5af0f401fce6f905990aa",
+  "translation_date": "2025-07-17T07:49:35+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "id"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Ikhtisar
 
-Pelajaran ini berfokus pada praktik terbaik lanjutan untuk mengembangkan, menguji, dan menerapkan server dan fitur MCP di lingkungan produksi. Seiring ekosistem MCP yang semakin kompleks dan penting, mengikuti pola yang sudah terbukti memastikan keandalan, kemudahan pemeliharaan, dan interoperabilitas. Pelajaran ini mengumpulkan kebijaksanaan praktis yang diperoleh dari implementasi MCP di dunia nyata untuk membimbing Anda dalam menciptakan server yang tangguh dan efisien dengan sumber daya, prompt, dan alat yang efektif.
+Pelajaran ini berfokus pada praktik terbaik lanjutan untuk mengembangkan, menguji, dan menerapkan server dan fitur MCP di lingkungan produksi. Seiring ekosistem MCP yang semakin kompleks dan penting, mengikuti pola yang sudah mapan memastikan keandalan, kemudahan pemeliharaan, dan interoperabilitas. Pelajaran ini mengkonsolidasikan kebijaksanaan praktis yang diperoleh dari implementasi MCP di dunia nyata untuk membimbing Anda dalam menciptakan server yang tangguh dan efisien dengan sumber daya, prompt, dan alat yang efektif.
 
 ## Tujuan Pembelajaran
 
@@ -22,22 +22,70 @@ Pada akhir pelajaran ini, Anda akan mampu:
 - Menerapkan penanganan kesalahan, pencatatan, dan observabilitas yang tepat pada server MCP
 - Mengoptimalkan implementasi MCP untuk kinerja, keamanan, dan kemudahan pemeliharaan
 
+## Prinsip Inti MCP
+
+Sebelum masuk ke praktik implementasi spesifik, penting untuk memahami prinsip inti yang membimbing pengembangan MCP yang efektif:
+
+1. **Komunikasi Standar**: MCP menggunakan JSON-RPC 2.0 sebagai dasar, menyediakan format konsisten untuk permintaan, respons, dan penanganan kesalahan di semua implementasi.
+
+2. **Desain Berorientasi Pengguna**: Selalu prioritaskan persetujuan, kontrol, dan transparansi pengguna dalam implementasi MCP Anda.
+
+3. **Keamanan Utama**: Terapkan langkah keamanan yang kuat termasuk autentikasi, otorisasi, validasi, dan pembatasan laju.
+
+4. **Arsitektur Modular**: Rancang server MCP Anda dengan pendekatan modular, di mana setiap alat dan sumber daya memiliki tujuan yang jelas dan terfokus.
+
+5. **Koneksi Stateful**: Manfaatkan kemampuan MCP untuk mempertahankan status di antara beberapa permintaan agar interaksi lebih koheren dan kontekstual.
+
+## Praktik Terbaik Resmi MCP
+
+Praktik terbaik berikut diambil dari dokumentasi resmi Model Context Protocol:
+
+### Praktik Terbaik Keamanan
+
+1. **Persetujuan dan Kontrol Pengguna**: Selalu minta persetujuan eksplisit pengguna sebelum mengakses data atau melakukan operasi. Berikan kontrol yang jelas atas data apa yang dibagikan dan tindakan apa yang diizinkan.
+
+2. **Privasi Data**: Hanya tampilkan data pengguna dengan persetujuan eksplisit dan lindungi dengan kontrol akses yang sesuai. Lindungi dari transmisi data yang tidak sah.
+
+3. **Keamanan Alat**: Minta persetujuan eksplisit pengguna sebelum memanggil alat apa pun. Pastikan pengguna memahami fungsi setiap alat dan terapkan batasan keamanan yang kuat.
+
+4. **Kontrol Izin Alat**: Konfigurasikan alat mana yang diizinkan digunakan model selama sesi, memastikan hanya alat yang secara eksplisit diotorisasi yang dapat diakses.
+
+5. **Autentikasi**: Minta autentikasi yang tepat sebelum memberikan akses ke alat, sumber daya, atau operasi sensitif menggunakan kunci API, token OAuth, atau metode autentikasi aman lainnya.
+
+6. **Validasi Parameter**: Terapkan validasi untuk semua pemanggilan alat guna mencegah input yang salah format atau berbahaya mencapai implementasi alat.
+
+7. **Pembatasan Laju**: Terapkan pembatasan laju untuk mencegah penyalahgunaan dan memastikan penggunaan sumber daya server yang adil.
+
+### Praktik Terbaik Implementasi
+
+1. **Negosiasi Kapabilitas**: Saat pengaturan koneksi, tukar informasi tentang fitur yang didukung, versi protokol, alat, dan sumber daya yang tersedia.
+
+2. **Desain Alat**: Buat alat yang terfokus yang melakukan satu hal dengan baik, bukan alat monolitik yang menangani banyak hal sekaligus.
+
+3. **Penanganan Kesalahan**: Terapkan pesan dan kode kesalahan standar untuk membantu mendiagnosis masalah, menangani kegagalan dengan baik, dan memberikan umpan balik yang dapat ditindaklanjuti.
+
+4. **Pencatatan**: Konfigurasikan log terstruktur untuk audit, debugging, dan pemantauan interaksi protokol.
+
+5. **Pelacakan Progres**: Untuk operasi yang berjalan lama, laporkan pembaruan progres agar antarmuka pengguna responsif.
+
+6. **Pembatalan Permintaan**: Izinkan klien membatalkan permintaan yang sedang berjalan yang tidak lagi diperlukan atau memakan waktu terlalu lama.
+
 ## Referensi Tambahan
 
 Untuk informasi terbaru tentang praktik terbaik MCP, lihat:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
+- [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
-## Praktik Terbaik Pengembangan Alat MCP
+## Contoh Implementasi Praktis
 
-### Prinsip Arsitektur
+### Praktik Terbaik Desain Alat
 
 #### 1. Prinsip Tanggung Jawab Tunggal
 
-Setiap fitur MCP harus memiliki tujuan yang jelas dan terfokus. Daripada membuat alat monolitik yang mencoba menangani banyak hal sekaligus, kembangkan alat khusus yang unggul dalam tugas tertentu.
+Setiap alat MCP harus memiliki tujuan yang jelas dan terfokus. Daripada membuat alat monolitik yang mencoba menangani banyak hal sekaligus, kembangkan alat khusus yang unggul dalam tugas tertentu.
 
-**Contoh Baik:**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -75,7 +123,8 @@ public class WeatherForecastTool : ITool
             Required = new[] { "location" }
         };
     }
-      public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
     {
         var location = parameters["location"].ToString();
         var days = parameters.ContainsKey("days") 
@@ -95,76 +144,477 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**Contoh Buruk:**
-```csharp
-// A tool trying to do too many things
-public class WeatherToolSuite : ITool
-{
-    public string Name => "weather";
-    public string Description => "Weather-related functionality";
+#### 2. Penanganan Kesalahan Konsisten
+
+Terapkan penanganan kesalahan yang kuat dengan pesan kesalahan yang informatif dan mekanisme pemulihan yang sesuai.
+
+```python
+# Python example with comprehensive error handling
+class DataQueryTool:
+    def get_name(self):
+        return "dataQuery"
+        
+    def get_description(self):
+        return "Queries data from specified database tables"
     
-    public ToolDefinition GetDefinition()
-    {
-        return new ToolDefinition
-        {
-            Name = Name,
-            Description = Description,
-            Parameters = new Dictionary<string, ParameterDefinition>
-            {
-                ["action"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "Weather action to perform",
-                    Enum = new[] { "forecast", "history", "alerts", "radar" }
-                },
-                ["location"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "City or location name"
-                },
-                // Many more properties for different actions...
-            },
-            required = new[] { "action", "location" }
-        };
+    async def execute(self, parameters):
+        try:
+            # Parameter validation
+            if "query" not in parameters:
+                raise ToolParameterError("Missing required parameter: query")
+                
+            query = parameters["query"]
+            
+            # Security validation
+            if self._contains_unsafe_sql(query):
+                raise ToolSecurityError("Query contains potentially unsafe SQL")
+            
+            try:
+                # Database operation with timeout
+                async with timeout(10):  # 10 second timeout
+                    result = await self._database.execute_query(query)
+                    
+                return ToolResponse(
+                    content=[TextContent(json.dumps(result))]
+                )
+            except asyncio.TimeoutError:
+                raise ToolExecutionError("Database query timed out after 10 seconds")
+            except DatabaseConnectionError as e:
+                # Connection errors might be transient
+                self._log_error("Database connection error", e)
+                raise ToolExecutionError(f"Database connection error: {str(e)}")
+            except DatabaseQueryError as e:
+                # Query errors are likely client errors
+                self._log_error("Database query error", e)
+                raise ToolExecutionError(f"Invalid query: {str(e)}")
+                
+        except ToolError:
+            # Let tool-specific errors pass through
+            raise
+        except Exception as e:
+            # Catch-all for unexpected errors
+            self._log_error("Unexpected error in DataQueryTool", e)
+            raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
+    
+    def _contains_unsafe_sql(self, query):
+        # Implementation of SQL injection detection
+        pass
+        
+    def _log_error(self, message, error):
+        # Implementation of error logging
+        pass
+```
+
+#### 3. Validasi Parameter
+
+Selalu validasi parameter secara menyeluruh untuk mencegah input yang salah format atau berbahaya.
+
+```javascript
+// JavaScript/TypeScript example with detailed parameter validation
+class FileOperationTool {
+  getName() {
+    return "fileOperation";
+  }
+  
+  getDescription() {
+    return "Performs file operations like read, write, and delete";
+  }
+  
+  getDefinition() {
+    return {
+      name: this.getName(),
+      description: this.getDescription(),
+      parameters: {
+        operation: {
+          type: "string",
+          description: "Operation to perform",
+          enum: ["read", "write", "delete"]
+        },
+        path: {
+          type: "string",
+          description: "File path (must be within allowed directories)"
+        },
+        content: {
+          type: "string",
+          description: "Content to write (only for write operation)",
+          optional: true
+        }
+      },
+      required: ["operation", "path"]
+    };
+  }
+  
+  async execute(parameters) {
+    // 1. Validate parameter presence
+    if (!parameters.operation) {
+      throw new ToolError("Missing required parameter: operation");
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
-    {
-        // Complex conditional logic to handle different actions
-        var action = request.Parameters.GetProperty("action").GetString();
-        var location = request.Parameters.GetProperty("location").GetString();
+    if (!parameters.path) {
+      throw new ToolError("Missing required parameter: path");
+    }
+    
+    // 2. Validate parameter types
+    if (typeof parameters.operation !== "string") {
+      throw new ToolError("Parameter 'operation' must be a string");
+    }
+    
+    if (typeof parameters.path !== "string") {
+      throw new ToolError("Parameter 'path' must be a string");
+    }
+    
+    // 3. Validate parameter values
+    const validOperations = ["read", "write", "delete"];
+    if (!validOperations.includes(parameters.operation)) {
+      throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
+    }
+    
+    // 4. Validate content presence for write operation
+    if (parameters.operation === "write" && !parameters.content) {
+      throw new ToolError("Content parameter is required for write operation");
+    }
+    
+    // 5. Path safety validation
+    if (!this.isPathWithinAllowedDirectories(parameters.path)) {
+      throw new ToolError("Access denied: path is outside of allowed directories");
+    }
+    
+    // Implementation based on validated parameters
+    // ...
+  }
+  
+  isPathWithinAllowedDirectories(path) {
+    // Implementation of path safety check
+    // ...
+  }
+}
+```
+
+### Contoh Implementasi Keamanan
+
+#### 1. Autentikasi dan Otorisasi
+
+```java
+// Java example with authentication and authorization
+public class SecureDataAccessTool implements Tool {
+    private final AuthenticationService authService;
+    private final AuthorizationService authzService;
+    private final DataService dataService;
+    
+    // Dependency injection
+    public SecureDataAccessTool(
+            AuthenticationService authService,
+            AuthorizationService authzService,
+            DataService dataService) {
+        this.authService = authService;
+        this.authzService = authzService;
+        this.dataService = dataService;
+    }
+    
+    @Override
+    public String getName() {
+        return "secureDataAccess";
+    }
+    
+    @Override
+    public ToolResponse execute(ToolRequest request) {
+        // 1. Extract authentication context
+        String authToken = request.getContext().getAuthToken();
         
-        switch (action)
-        {
-            case "forecast":
-                // Forecast logic
-                break;
-            case "history":
-                // Historical data logic
-                break;
-            // More cases...
-            default:
-                throw new ToolExecutionException($"Unknown action: {action}");
+        // 2. Authenticate user
+        UserIdentity user;
+        try {
+            user = authService.validateToken(authToken);
+        } catch (AuthenticationException e) {
+            return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // Result processing
+        // 3. Check authorization for the specific operation
+        String dataId = request.getParameters().get("dataId").getAsString();
+        String operation = request.getParameters().get("operation").getAsString();
+        
+        boolean isAuthorized = authzService.isAuthorized(user, "data:" + dataId, operation);
+        if (!isAuthorized) {
+            return ToolResponse.error("Access denied: Insufficient permissions for this operation");
+        }
+        
+        // 4. Proceed with authorized operation
+        try {
+            switch (operation) {
+                case "read":
+                    Object data = dataService.getData(dataId, user.getId());
+                    return ToolResponse.success(data);
+                case "update":
+                    JsonNode newData = request.getParameters().get("newData");
+                    dataService.updateData(dataId, newData, user.getId());
+                    return ToolResponse.success("Data updated successfully");
+                default:
+                    return ToolResponse.error("Unsupported operation: " + operation);
+            }
+        } catch (Exception e) {
+            return ToolResponse.error("Operation failed: " + e.getMessage());
+        }
+    }
+}
+```
+
+#### 2. Pembatasan Laju
+
+```csharp
+// C# rate limiting implementation
+public class RateLimitingMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly IMemoryCache _cache;
+    private readonly ILogger<RateLimitingMiddleware> _logger;
+    
+    // Configuration options
+    private readonly int _maxRequestsPerMinute;
+    
+    public RateLimitingMiddleware(
+        RequestDelegate next,
+        IMemoryCache cache,
+        ILogger<RateLimitingMiddleware> logger,
+        IConfiguration config)
+    {
+        _next = next;
+        _cache = cache;
+        _logger = logger;
+        _maxRequestsPerMinute = config.GetValue<int>("RateLimit:MaxRequestsPerMinute", 60);
+    }
+    
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // 1. Get client identifier (API key or user ID)
+        string clientId = GetClientIdentifier(context);
+        
+        // 2. Get rate limiting key for this minute
+        string cacheKey = $"rate_limit:{clientId}:{DateTime.UtcNow:yyyyMMddHHmm}";
+        
+        // 3. Check current request count
+        if (!_cache.TryGetValue(cacheKey, out int requestCount))
+        {
+            requestCount = 0;
+        }
+        
+        // 4. Enforce rate limit
+        if (requestCount >= _maxRequestsPerMinute)
+        {
+            _logger.LogWarning("Rate limit exceeded for client {ClientId}", clientId);
+            
+            context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+            context.Response.Headers.Add("Retry-After", "60");
+            
+            await context.Response.WriteAsJsonAsync(new
+            {
+                error = "Rate limit exceeded",
+                message = "Too many requests. Please try again later.",
+                retryAfterSeconds = 60
+            });
+            
+            return;
+        }
+        
+        // 5. Increment request count
+        _cache.Set(cacheKey, requestCount + 1, TimeSpan.FromMinutes(2));
+        
+        // 6. Add rate limit headers
+        context.Response.Headers.Add("X-RateLimit-Limit", _maxRequestsPerMinute.ToString());
+        context.Response.Headers.Add("X-RateLimit-Remaining", (_maxRequestsPerMinute - requestCount - 1).ToString());
+        
+        // 7. Continue with the request
+        await _next(context);
+    }
+    
+    private string GetClientIdentifier(HttpContext context)
+    {
+        // Implementation to extract API key or user ID
         // ...
     }
 }
 ```
 
-#### 2. Dependency Injection dan Kemudahan Pengujian
+## Praktik Terbaik Pengujian
 
-Rancang alat agar menerima dependensi melalui constructor injection, sehingga mudah diuji dan dikonfigurasi:
+### 1. Unit Testing Alat MCP
+
+Selalu uji alat Anda secara terpisah, dengan memalsukan dependensi eksternal:
+
+```typescript
+// TypeScript example of a tool unit test
+describe('WeatherForecastTool', () => {
+  let tool: WeatherForecastTool;
+  let mockWeatherService: jest.Mocked<IWeatherService>;
+  
+  beforeEach(() => {
+    // Create a mock weather service
+    mockWeatherService = {
+      getForecasts: jest.fn()
+    } as any;
+    
+    // Create the tool with the mock dependency
+    tool = new WeatherForecastTool(mockWeatherService);
+  });
+  
+  it('should return weather forecast for a location', async () => {
+    // Arrange
+    const mockForecast = {
+      location: 'Seattle',
+      forecasts: [
+        { date: '2025-07-16', temperature: 72, conditions: 'Sunny' },
+        { date: '2025-07-17', temperature: 68, conditions: 'Partly Cloudy' },
+        { date: '2025-07-18', temperature: 65, conditions: 'Rain' }
+      ]
+    };
+    
+    mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
+    
+    // Act
+    const response = await tool.execute({
+      location: 'Seattle',
+      days: 3
+    });
+    
+    // Assert
+    expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
+    expect(response.content[0].text).toContain('Seattle');
+    expect(response.content[0].text).toContain('Sunny');
+  });
+  
+  it('should handle errors from the weather service', async () => {
+    // Arrange
+    mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
+    
+    // Act & Assert
+    await expect(tool.execute({
+      location: 'Seattle',
+      days: 3
+    })).rejects.toThrow('Weather service error: Service unavailable');
+  });
+});
+```
+
+### 2. Integration Testing
+
+Uji alur lengkap dari permintaan klien hingga respons server:
+
+```python
+# Python integration test example
+@pytest.mark.asyncio
+async def test_mcp_server_integration():
+    # Start a test server
+    server = McpServer()
+    server.register_tool(WeatherForecastTool(MockWeatherService()))
+    await server.start(port=5000)
+    
+    try:
+        # Create a client
+        client = McpClient("http://localhost:5000")
+        
+        # Test tool discovery
+        tools = await client.discover_tools()
+        assert "weatherForecast" in [t.name for t in tools]
+        
+        # Test tool execution
+        response = await client.execute_tool("weatherForecast", {
+            "location": "Seattle",
+            "days": 3
+        })
+        
+        # Verify response
+        assert response.status_code == 200
+        assert "Seattle" in response.content[0].text
+        assert len(json.loads(response.content[0].text)["forecasts"]) == 3
+        
+    finally:
+        # Clean up
+        await server.stop()
+```
+
+## Optimasi Kinerja
+
+### 1. Strategi Caching
+
+Terapkan caching yang sesuai untuk mengurangi latensi dan penggunaan sumber daya:
+
+```csharp
+// C# example with caching
+public class CachedWeatherTool : ITool
+{
+    private readonly IWeatherService _weatherService;
+    private readonly IDistributedCache _cache;
+    private readonly ILogger<CachedWeatherTool> _logger;
+    
+    public CachedWeatherTool(
+        IWeatherService weatherService,
+        IDistributedCache cache,
+        ILogger<CachedWeatherTool> logger)
+    {
+        _weatherService = weatherService;
+        _cache = cache;
+        _logger = logger;
+    }
+    
+    public string Name => "weatherForecast";
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    {
+        var location = parameters["location"].ToString();
+        var days = Convert.ToInt32(parameters.GetValueOrDefault("days", 3));
+        
+        // Create cache key
+        string cacheKey = $"weather:{location}:{days}";
+        
+        // Try to get from cache
+        string cachedForecast = await _cache.GetStringAsync(cacheKey);
+        if (!string.IsNullOrEmpty(cachedForecast))
+        {
+            _logger.LogInformation("Cache hit for weather forecast: {Location}", location);
+            return new ToolResponse
+            {
+                Content = new List<ContentItem>
+                {
+                    new TextContent(cachedForecast)
+                }
+            };
+        }
+        
+        // Cache miss - get from service
+        _logger.LogInformation("Cache miss for weather forecast: {Location}", location);
+        var forecast = await _weatherService.GetForecastAsync(location, days);
+        string forecastJson = JsonSerializer.Serialize(forecast);
+        
+        // Store in cache (weather forecasts valid for 1 hour)
+        await _cache.SetStringAsync(
+            cacheKey,
+            forecastJson,
+            new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1)
+            });
+        
+        return new ToolResponse
+        {
+            Content = new List<ContentItem>
+            {
+                new TextContent(forecastJson)
+            }
+        };
+    }
+}
+
+#### 2. Dependency Injection and Testability
+
+Design tools to receive their dependencies through constructor injection, making them testable and configurable:
 
 ```java
-// Java example with dependency injection
+// Contoh Java dengan dependency injection
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // Dependensi disuntikkan melalui konstruktor
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -174,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // Implementasi alat
     // ...
 }
 ```
 
-#### 3. Alat yang Bisa Dikombinasikan
+#### 3. Composable Tools
 
-Rancang alat yang dapat digabungkan untuk membuat alur kerja yang lebih kompleks:
+Design tools that can be composed together to create more complex workflows:
 
 ```python
-# Python example showing composable tools
+# Contoh Python yang menunjukkan alat yang dapat dikomposisi
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # Implementasi...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # Alat ini dapat menggunakan hasil dari alat dataFetch
     async def execute_async(self, request):
-        # Implementation...
+        # Implementasi...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # Alat ini dapat menggunakan hasil dari alat dataAnalysis
     async def execute_async(self, request):
-        # Implementation...
+        # Implementasi...
         pass
 
-# These tools can be used independently or as part of a workflow
+# Alat-alat ini dapat digunakan secara mandiri atau sebagai bagian dari alur kerja
 ```
 
-### Praktik Terbaik Desain Skema
+### Schema Design Best Practices
 
-Skema adalah kontrak antara model dan alat Anda. Skema yang dirancang dengan baik meningkatkan kemudahan penggunaan alat.
+The schema is the contract between the model and your tool. Well-designed schemas lead to better tool usability.
 
-#### 1. Deskripsi Parameter yang Jelas
+#### 1. Clear Parameter Descriptions
 
-Selalu sertakan informasi deskriptif untuk setiap parameter:
+Always include descriptive information for each parameter:
 
 ```csharp
 public object GetSchema()
@@ -228,25 +678,25 @@ public object GetSchema()
         properties = new {
             query = new { 
                 type = "string", 
-                description = "Search query text. Use precise keywords for better results." 
+                description = "Teks kueri pencarian. Gunakan kata kunci yang tepat untuk hasil yang lebih baik." 
             },
             filters = new {
                 type = "object",
-                description = "Optional filters to narrow down search results",
+                description = "Filter opsional untuk mempersempit hasil pencarian",
                 properties = new {
                     dateRange = new { 
                         type = "string", 
-                        description = "Date range in format YYYY-MM-DD:YYYY-MM-DD" 
+                        description = "Rentang tanggal dalam format YYYY-MM-DD:YYYY-MM-DD" 
                     },
                     category = new { 
                         type = "string", 
-                        description = "Category name to filter by" 
+                        description = "Nama kategori untuk difilter" 
                     }
                 }
             },
             limit = new { 
                 type = "integer", 
-                description = "Maximum number of results to return (1-50)",
+                description = "Jumlah maksimum hasil yang dikembalikan (1-50)",
                 default = 10
             }
         },
@@ -255,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. Batasan Validasi
+#### 2. Validation Constraints
 
-Sertakan batasan validasi untuk mencegah input yang tidak valid:
+Include validation constraints to prevent invalid inputs:
 
 ```java
 Map<String, Object> getSchema() {
@@ -266,25 +716,25 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // Properti email dengan validasi format
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
-    email.put("description", "User email address");
+    email.put("description", "Alamat email pengguna");
     
-    // Age property with numeric constraints
+    // Properti umur dengan batasan numerik
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
-    age.put("description", "User age in years");
+    age.put("description", "Umur pengguna dalam tahun");
     
-    // Enumerated property
+    // Properti enumerasi
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
     subscription.put("default", "free");
-    subscription.put("description", "Subscription tier");
+    subscription.put("description", "Tingkat langganan");
     
     properties.put("email", email);
     properties.put("age", age);
@@ -297,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Struktur Return yang Konsisten
+#### 3. Consistent Return Structures
 
-Pertahankan konsistensi dalam struktur respons agar model lebih mudah menginterpretasi hasil:
+Maintain consistency in your response structures to make it easier for models to interpret results:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # Proses permintaan
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # Selalu kembalikan struktur yang konsisten
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -328,7 +778,7 @@ async def execute_async(self, request):
         )
     
 def _format_item(self, item):
-    """Ensures each item has a consistent structure"""
+    """Memastikan setiap item memiliki struktur yang konsisten"""
     return {
         "id": item.id,
         "title": item.title,
@@ -338,13 +788,13 @@ def _format_item(self, item):
     }
 ```
 
-### Penanganan Kesalahan
+### Error Handling
 
-Penanganan kesalahan yang kuat sangat penting agar alat MCP tetap andal.
+Robust error handling is crucial for MCP tools to maintain reliability.
 
-#### 1. Penanganan Kesalahan yang Elegan
+#### 1. Graceful Error Handling
 
-Tangani kesalahan pada tingkat yang tepat dan berikan pesan yang informatif:
+Handle errors at appropriate levels and provide informative messages:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -362,39 +812,39 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
         }
         catch (FileNotFoundException)
         {
-            throw new ToolExecutionException($"File not found: {fileId}");
+            throw new ToolExecutionException($"File tidak ditemukan: {fileId}");
         }
         catch (UnauthorizedAccessException)
         {
-            throw new ToolExecutionException("You don't have permission to access this file");
+            throw new ToolExecutionException("Anda tidak memiliki izin untuk mengakses file ini");
         }
         catch (Exception ex) when (ex is IOException || ex is TimeoutException)
         {
-            _logger.LogError(ex, "Error accessing file {FileId}", fileId);
-            throw new ToolExecutionException("Error accessing file: The service is temporarily unavailable");
+            _logger.LogError(ex, "Kesalahan mengakses file {FileId}", fileId);
+            throw new ToolExecutionException("Kesalahan mengakses file: Layanan sementara tidak tersedia");
         }
     }
     catch (JsonException)
     {
-        throw new ToolExecutionException("Invalid file ID format");
+        throw new ToolExecutionException("Format ID file tidak valid");
     }
     catch (Exception ex)
     {
-        _logger.LogError(ex, "Unexpected error in FileAccessTool");
-        throw new ToolExecutionException("An unexpected error occurred");
+        _logger.LogError(ex, "Kesalahan tak terduga di FileAccessTool");
+        throw new ToolExecutionException("Terjadi kesalahan tak terduga");
     }
 }
 ```
 
-#### 2. Respons Kesalahan Terstruktur
+#### 2. Structured Error Responses
 
-Kembalikan informasi kesalahan yang terstruktur jika memungkinkan:
+Return structured error information when possible:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // Implementasi
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -412,45 +862,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
-        throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
+        // Lempar ulang exception lain sebagai ToolExecutionException
+        throw new ToolExecutionException("Eksekusi alat gagal: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. Logika Retry
+#### 3. Retry Logic
 
-Terapkan logika retry yang sesuai untuk kegagalan sementara:
+Implement appropriate retry logic for transient failures:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # detik
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # Panggil API eksternal
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
-                raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
+                raise ToolExecutionException(f"Operasi gagal setelah {max_retries} percobaan: {str(e)}")
                 
-            # Exponential backoff
+            # Penundaan eksponensial
             delay = base_delay * (2 ** (retry_count - 1))
-            logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
+            logging.warning(f"Kesalahan sementara, mencoba ulang dalam {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
-            raise ToolExecutionException(f"Operation failed: {str(e)}")
+            # Kesalahan non-sementara, tidak mencoba ulang
+            raise ToolExecutionException(f"Operasi gagal: {str(e)}")
 ```
 
-### Optimasi Kinerja
+### Performance Optimization
 
 #### 1. Caching
 
-Terapkan caching untuk operasi yang mahal:
+Implement caching for expensive operations:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -464,23 +914,25 @@ public class CachedDataTool : IMcpTool
         _cache = cache;
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+    public async Task
+
+ExecuteAsync(ToolRequest request)
     {
         var query = request.Parameters.GetProperty("query").GetString();
         
-        // Create cache key based on parameters
+        // Buat cache key berdasarkan parameter
         var cacheKey = $"data_query_{ComputeHash(query)}";
         
-        // Try to get from cache first
+        // Coba ambil dari cache terlebih dahulu
         if (_cache.TryGetValue(cacheKey, out var cachedResult))
         {
             return new ToolResponse { Result = cachedResult };
         }
         
-        // Cache miss - perform actual query
+        // Cache tidak ditemukan - lakukan query sebenarnya
         var result = await _database.QueryAsync(query);
         
-        // Store in cache with expiration
+        // Simpan di cache dengan masa berlaku
         var cacheOptions = new MemoryCacheEntryOptions()
             .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
             
@@ -491,14 +943,14 @@ public class CachedDataTool : IMcpTool
     
     private string ComputeHash(string input)
     {
-        // Implementation to generate stable hash for cache key
+        // Implementasi untuk menghasilkan hash stabil sebagai cache key
     }
 }
 ```
 
-#### 2. Pemrosesan Asinkron
+#### 2. Asynchronous Processing
 
-Gunakan pola pemrograman asinkron untuk operasi yang bergantung pada I/O:
+Use asynchronous programming patterns for I/O-bound operations:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -509,23 +961,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // Untuk operasi yang berjalan lama, langsung kembalikan ID proses
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // Mulai pemrosesan async
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // Lakukan operasi yang berjalan lama
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // Perbarui status (biasanya disimpan di database)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // Kembalikan respons segera dengan ID proses
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -534,7 +986,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // Alat pendamping untuk pengecekan status
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -547,35 +999,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Pembatasan Sumber Daya
+#### 3. Resource Throttling
 
-Terapkan pembatasan sumber daya untuk mencegah kelebihan beban:
+Implement resource throttling to prevent overload:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # Izinkan 5 permintaan per detik
+            bucket_size=10        # Izinkan lonjakan hingga 10 permintaan
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # Periksa apakah bisa lanjut atau harus menunggu
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # Jika waktu tunggu terlalu lama
                 raise ToolExecutionException(
-                    f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
+                    f"Batas kecepatan terlampaui. Silakan coba lagi dalam {delay:.1f} detik."
                 )
             else:
-                # Wait for the appropriate delay time
+                # Tunggu sesuai waktu delay yang diperlukan
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # Konsumsi token dan lanjutkan permintaan
         self.rate_limiter.consume()
         
-        # Call API
+        # Panggil API
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -593,7 +1045,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # Hitung waktu sampai token berikutnya tersedia
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -605,86 +1057,86 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # Tambahkan token baru berdasarkan waktu yang berlalu
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### Praktik Terbaik Keamanan
+### Security Best Practices
 
-#### 1. Validasi Input
+#### 1. Input Validation
 
-Selalu validasi parameter input secara menyeluruh:
+Always validate input parameters thoroughly:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 {
-    // Validate parameters exist
+    // Validasi parameter ada
     if (!request.Parameters.TryGetProperty("query", out var queryProp))
     {
-        throw new ToolExecutionException("Missing required parameter: query");
+        throw new ToolExecutionException("Parameter yang dibutuhkan: query tidak ditemukan");
     }
     
-    // Validate correct type
+    // Validasi tipe yang benar
     if (queryProp.ValueKind != JsonValueKind.String)
     {
-        throw new ToolExecutionException("Query parameter must be a string");
+        throw new ToolExecutionException("Parameter query harus berupa string");
     }
     
     var query = queryProp.GetString();
     
-    // Validate string content
+    // Validasi isi string
     if (string.IsNullOrWhiteSpace(query))
     {
-        throw new ToolExecutionException("Query parameter cannot be empty");
+        throw new ToolExecutionException("Parameter query tidak boleh kosong");
     }
     
     if (query.Length > 500)
     {
-        throw new ToolExecutionException("Query parameter exceeds maximum length of 500 characters");
+        throw new ToolExecutionException("Parameter query melebihi panjang maksimum 500 karakter");
     }
     
-    // Check for SQL injection attacks if applicable
+    // Periksa serangan SQL injection jika berlaku
     if (ContainsSqlInjection(query))
     {
-        throw new ToolExecutionException("Invalid query: contains potentially unsafe SQL");
+        throw new ToolExecutionException("Query tidak valid: mengandung SQL yang berpotensi berbahaya");
     }
     
-    // Proceed with execution
+    // Lanjutkan eksekusi
     // ...
 }
 ```
 
-#### 2. Pemeriksaan Otorisasi
+#### 2. Authorization Checks
 
-Terapkan pemeriksaan otorisasi yang tepat:
+Implement proper authorization checks:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // Ambil konteks pengguna dari request
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // Periksa apakah pengguna memiliki izin yang dibutuhkan
     if (!authorizationService.hasPermission(user, "documents:read")) {
-        throw new ToolExecutionException("User does not have permission to access documents");
+        throw new ToolExecutionException("Pengguna tidak memiliki izin untuk mengakses dokumen");
     }
     
-    // For specific resources, check access to that resource
+    // Untuk sumber daya tertentu, periksa akses ke sumber daya tersebut
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
-        throw new ToolExecutionException("Access denied to the requested document");
+        throw new ToolExecutionException("Akses ke dokumen yang diminta ditolak");
     }
     
-    // Proceed with tool execution
+    // Lanjutkan eksekusi alat
     // ...
 }
 ```
 
-#### 3. Penanganan Data Sensitif
+#### 3. Sensitive Data Handling
 
-Tangani data sensitif dengan hati-hati:
+Handle sensitive data carefully:
 
 ```python
 class SecureDataTool(Tool):
@@ -702,56 +1154,56 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # Ambil data pengguna
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # Saring field sensitif kecuali diminta secara eksplisit DAN berwenang
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # Periksa level otorisasi dalam konteks request
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # Buat salinan agar tidak mengubah data asli
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # Sensor field sensitif tertentu
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # Sensor data sensitif yang bersarang
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## Praktik Terbaik Pengujian untuk Alat MCP
+## Testing Best Practices for MCP Tools
 
-Pengujian yang komprehensif memastikan alat MCP berfungsi dengan benar, menangani kasus tepi, dan terintegrasi dengan baik dengan sistem lainnya.
+Comprehensive testing ensures that MCP tools function correctly, handle edge cases, and integrate properly with the rest of the system.
 
-### Pengujian Unit
+### Unit Testing
 
-#### 1. Uji Setiap Alat Secara Terpisah
+#### 1. Test Each Tool in Isolation
 
-Buat pengujian yang fokus pada fungsi masing-masing alat:
+Create focused tests for each tool's functionality:
 
 ```csharp
 [Fact]
 public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 {
-    // Arrange
+    // Siapkan
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("Seattle", 3))
-        .ReturnsAsync(new WeatherForecast(/* test data */));
+        .ReturnsAsync(new WeatherForecast(/* data uji */));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -763,10 +1215,10 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
         })
     );
     
-    // Act
+    // Eksekusi
     var response = await tool.ExecuteAsync(request);
     
-    // Assert
+    // Verifikasi
     Assert.NotNull(response);
     var result = JsonSerializer.Deserialize<WeatherForecast>(response.Result);
     Assert.Equal("Seattle", result.Location);
@@ -776,11 +1228,11 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 [Fact]
 public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 {
-    // Arrange
+    // Siapkan
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("InvalidLocation", It.IsAny<int>()))
-        .ThrowsAsync(new LocationNotFoundException("Location not found"));
+        .ThrowsAsync(new LocationNotFoundException("Lokasi tidak ditemukan"));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -792,36 +1244,36 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
         })
     );
     
-    // Act & Assert
+    // Eksekusi & Verifikasi
     var exception = await Assert.ThrowsAsync<ToolExecutionException>(
         () => tool.ExecuteAsync(request)
     );
     
-    Assert.Contains("Location not found", exception.Message);
+    Assert.Contains("Lokasi tidak ditemukan", exception.Message);
 }
 ```
 
-#### 2. Pengujian Validasi Skema
+#### 2. Schema Validation Testing
 
-Uji agar skema valid dan menerapkan batasan dengan benar:
+Test that schemas are valid and properly enforce constraints:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // Buat instance alat
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // Ambil skema
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // Konversi skema ke JSON untuk validasi
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // Validasi skema adalah JSONSchema yang valid
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // Uji parameter yang valid
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -829,14 +1281,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // Uji parameter wajib yang hilang
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // Uji tipe parameter yang tidak valid
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -846,21 +1298,21 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. Pengujian Penanganan Kesalahan
+#### 3. Error Handling Tests
 
-Buat pengujian khusus untuk kondisi kesalahan:
+Create specific tests for error conditions:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # Siapkan
+    tool = ApiTool(timeout=0.1)  # Timeout sangat singkat
     
-    # Mock a request that will time out
+    # Mock permintaan yang akan timeout
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Lebih lama dari timeout
         )
         
         request = ToolRequest(
@@ -868,19 +1320,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Eksekusi & Verifikasi
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # Verifikasi pesan exception
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # Siapkan
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # Mock respons yang dibatasi rate limit
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -894,27 +1346,27 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Eksekusi & Verifikasi
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # Verifikasi exception mengandung info rate limit
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### Pengujian Integrasi
+### Integration Testing
 
-#### 1. Pengujian Rangkaian Alat
+#### 1. Tool Chain Testing
 
-Uji alat yang bekerja bersama dalam kombinasi yang diharapkan:
+Test tools working together in expected combinations:
 
 ```csharp
 [Fact]
 public async Task DataProcessingWorkflow_CompletesSuccessfully()
 {
-    // Arrange
+    // Siapkan
     var dataFetchTool = new DataFetchTool(mockDataService.Object);
     var analysisTools = new DataAnalysisTool(mockAnalysisService.Object);
     var visualizationTool = new DataVisualizationTool(mockVisualizationService.Object);
@@ -926,30 +1378,31 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
     
     var workflowExecutor = new WorkflowExecutor(toolRegistry);
     
-    // Act
-    var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
-        new ToolCall("dataFetch", new { source = "sales2023" }),
-        new ToolCall("dataAnalysis", ctx => new { 
+    // Eksekusi
+var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
+    new ToolCall("dataFetch", new { source = "sales2023" }),
+    new ToolCall("dataAnalysis", ctx =>
+        new { 
             data = ctx.GetResult("dataFetch"),
             analysis = "trend" 
         }),
-        new ToolCall("dataVisualize", ctx => new {
-            analysisResult = ctx.GetResult("dataAnalysis"),
-            type = "line-chart"
-        })
-    });
-    
-    // Assert
-    Assert.NotNull(result);
-    Assert.True(result.Success);
-    Assert.NotNull(result.GetResult("dataVisualize"));
-    Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
+    new ToolCall("dataVisualize", ctx => new {
+        analysisResult = ctx.GetResult("dataAnalysis"),
+        type = "line-chart"
+    })
+});
+
+// Assert
+Assert.NotNull(result);
+Assert.True(result.Success);
+Assert.NotNull(result.GetResult("dataVisualize"));
+Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
 }
 ```
 
-#### 2. Pengujian Server MCP
+#### 2. MCP Server Testing
 
-Uji server MCP dengan pendaftaran dan eksekusi alat secara penuh:
+Test the MCP server with full tool registration and execution:
 
 ```java
 @SpringBootTest
@@ -964,7 +1417,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // Uji endpoint discovery
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -975,7 +1428,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // Buat permintaan tool
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -985,7 +1438,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // Kirim permintaan dan verifikasi respons
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -995,17 +1448,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // Buat permintaan tool yang tidak valid
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // Parameter "b" hilang
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // Kirim permintaan dan verifikasi respons error
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1015,17 +1468,17 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. Pengujian End-to-End
+#### 3. End-to-End Testing
 
-Uji alur kerja lengkap dari prompt model hingga eksekusi alat:
+Test complete workflows from model prompt to tool execution:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # Arrange - Siapkan klien MCP dan model mock
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # Mock respons model
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1040,7 +1493,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # Mock respons tool cuaca
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1072,11 +1525,11 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### Pengujian Kinerja
+### Performance Testing
 
-#### 1. Pengujian Beban
+#### 1. Load Testing
 
-Uji berapa banyak permintaan bersamaan yang dapat ditangani server MCP Anda:
+Test how many concurrent requests your MCP server can handle:
 
 ```csharp
 [Fact]
@@ -1109,9 +1562,9 @@ public async Task McpServer_HandlesHighConcurrency()
 }
 ```
 
-#### 2. Pengujian Stres
+#### 2. Stress Testing
 
-Uji sistem di bawah beban ekstrem:
+Test the system under extreme load:
 
 ```java
 @Test
@@ -1120,13 +1573,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // Siapkan JMeter untuk pengujian beban
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // Konfigurasikan rencana pengujian JMeter
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // Buat rencana pengujian, thread group, sampler, dll.
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1138,7 +1591,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // Tambahkan HTTP sampler untuk eksekusi tool
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1149,58 +1602,58 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // Tambahkan listener
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // Jalankan pengujian
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // Validasi hasil
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // Waktu respons rata-rata < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // Persentil ke-90 < 500ms
 }
 ```
 
-#### 3. Pemantauan dan Profiling
+#### 3. Monitoring and Profiling
 
-Siapkan pemantauan untuk analisis kinerja jangka panjang:
+Set up monitoring for long-term performance analysis:
 
 ```python
-# Configure monitoring for an MCP server
+# Konfigurasikan monitoring untuk server MCP
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Siapkan metrik Prometheus
     prometheus_metrics = {
-        "request_count": Counter("mcp_requests_total", "Total MCP requests"),
+        "request_count": Counter("mcp_requests_total", "Total permintaan MCP"),
         "request_latency": Histogram(
             "mcp_request_duration_seconds", 
-            "Request duration in seconds",
+            "Durasi permintaan dalam detik",
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_execution_count": Counter(
             "mcp_tool_executions_total", 
-            "Tool execution count",
+            "Jumlah eksekusi tool",
             labelnames=["tool_name"]
         ),
         "tool_execution_latency": Histogram(
             "mcp_tool_duration_seconds", 
-            "Tool execution duration in seconds",
+            "Durasi eksekusi tool dalam detik",
             labelnames=["tool_name"],
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_errors": Counter(
             "mcp_tool_errors_total",
-            "Tool execution errors",
+            "Kesalahan eksekusi tool",
             labelnames=["tool_name", "error_type"]
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # Tambahkan middleware untuk pengukuran waktu dan pencatatan metrik
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # Ekspos endpoint metrik
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1208,29 +1661,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## Pola Desain Alur Kerja MCP
+## MCP Workflow Design Patterns
 
-Alur kerja MCP yang dirancang dengan baik meningkatkan efisiensi, keandalan, dan kemudahan pemeliharaan. Berikut pola utama yang perlu diikuti:
+Well-designed MCP workflows improve efficiency, reliability, and maintainability. Here are key patterns to follow:
 
-### 1. Pola Rangkaian Alat
+### 1. Chain of Tools Pattern
 
-Hubungkan beberapa alat secara berurutan di mana output alat sebelumnya menjadi input alat berikutnya:
+Connect multiple tools in a sequence where each tool's output becomes the input for the next:
 
 ```python
-# Python Chain of Tools implementation
+# Implementasi Chain of Tools di Python
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # Daftar nama tool yang akan dijalankan berurutan
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # Jalankan setiap tool dalam rantai, meneruskan hasil sebelumnya
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # Simpan hasil dan gunakan sebagai input untuk tool berikutnya
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1239,7 +1692,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# Contoh penggunaan
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1253,9 +1706,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Pola Dispatcher
+### 2. Dispatcher Pattern
 
-Gunakan alat pusat yang mendistribusikan ke alat khusus berdasarkan input:
+Use a central tool that dispatches to specialized tools based on input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1268,7 +1721,7 @@ public class ContentDispatcherTool : IMcpTool
     }
     
     public string Name => "contentProcessor";
-    public string Description => "Processes content of various types";
+    public string Description => "Memproses konten dari berbagai jenis";
     
     public object GetSchema()
     {
@@ -1295,10 +1748,10 @@ public class ContentDispatcherTool : IMcpTool
         var contentType = request.Parameters.GetProperty("contentType").GetString();
         var operation = request.Parameters.GetProperty("operation").GetString();
         
-        // Determine which specialized tool to use
+        // Tentukan tool khusus yang akan digunakan
         string targetTool = DetermineTargetTool(contentType, operation);
         
-        // Forward to the specialized tool
+        // Teruskan ke tool khusus tersebut
         var specializedResponse = await _mcpClient.ExecuteToolAsync(
             targetTool,
             new { content, options = GetOptionsForTool(targetTool, operation) }
@@ -1315,29 +1768,70 @@ public class ContentDispatcherTool : IMcpTool
             ("text", "analyze") => "textAnalyzer",
             ("html", _) => "htmlProcessor",
             ("markdown", _) => "markdownProcessor",
-            ("csv", _) => "csvProcessor",
-            ("code", _) => "codeAnalyzer",
-            _ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
-        };
-    }
-    
-    private object GetOptionsForTool(string toolName, string operation)
-    {
-        // Return appropriate options for each specialized tool
-        return toolName switch
-        {
-            "textSummarizer" => new { length = "medium" },
-            "htmlProcessor" => new { cleanUp = true, operation },
-            // Options for other tools...
-            _ => new { }
-        };
-    }
+            ("csv", _) =>
+# Panduan Pengguna csvProcessor
+
+Selamat datang di dokumentasi resmi untuk **csvProcessor**, alat yang dirancang untuk memudahkan pengolahan file CSV Anda.
+
+## Fitur Utama
+
+- Membaca dan menulis file CSV dengan cepat dan efisien
+- Mendukung berbagai format delimiter
+- Memungkinkan filter dan transformasi data secara fleksibel
+- Integrasi mudah dengan pipeline data Anda
+
+## Cara Menggunakan
+
+1. Impor modul csvProcessor ke dalam proyek Anda.
+2. Gunakan fungsi `loadCSV()` untuk memuat file CSV.
+3. Terapkan filter atau transformasi menggunakan metode yang tersedia.
+4. Simpan hasilnya dengan `saveCSV()`.
+
+```python
+from csvProcessor import loadCSV, saveCSV
+
+data = loadCSV('data.csv')
+filtered_data = data.filter(lambda row: int(row['age']) > 30)
+saveCSV(filtered_data, 'filtered_data.csv')
+```
+
+## Tips dan Trik
+
+- [!TIP] Gunakan parameter `delimiter` untuk menyesuaikan pemisah kolom jika file CSV Anda tidak menggunakan koma.
+- [!IMPORTANT] Pastikan file CSV Anda memiliki header agar fungsi filter dapat bekerja dengan benar.
+
+## Troubleshooting
+
+- [!WARNING] Jika Anda mengalami error saat memuat file, periksa apakah path file sudah benar dan file tidak sedang digunakan oleh aplikasi lain.
+- Jika data tidak terfilter sesuai harapan, cek kembali fungsi lambda yang Anda gunakan.
+
+## Dukungan
+
+Untuk bantuan lebih lanjut, kunjungi halaman dokumentasi resmi atau hubungi tim support kami melalui email support@csvprocessor.com.
+
+Terima kasih telah menggunakan csvProcessor!
+("code", _) => "codeAnalyzer",
+_ => throw new ToolExecutionException($"Tidak ada alat yang tersedia untuk {contentType}/{operation}")
+};
+}
+
+private object GetOptionsForTool(string toolName, string operation)
+{
+// Kembalikan opsi yang sesuai untuk setiap alat khusus
+return toolName switch
+{
+    "textSummarizer" => new { length = "medium" },
+    "htmlProcessor" => new { cleanUp = true, operation },
+    // Opsi untuk alat lain...
+    _ => new { }
+};
+}
 }
 ```
 
-### 3. Pola Pemrosesan Paralel
+### 3. Parallel Processing Pattern
 
-Jalankan beberapa alat secara bersamaan untuk efisiensi:
+Execute multiple tools simultaneously for efficiency:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1348,11 +1842,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // Langkah 1: Ambil metadata dataset (sinkron)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // Langkah 2: Jalankan beberapa analisis secara paralel
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1374,25 +1868,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // Tunggu semua tugas paralel selesai
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // Tunggu penyelesaian
         
-        // Step 3: Combine results
+        // Langkah 3: Gabungkan hasil
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // Langkah 4: Buat laporan ringkasan
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // Kembalikan hasil workflow lengkap
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1403,9 +1897,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Pola Pemulihan Kesalahan
+### 4. Error Recovery Pattern
 
-Terapkan fallback yang elegan untuk kegagalan alat:
+Implement graceful fallbacks for tool failures:
 
 ```python
 class ResilientWorkflow:
@@ -1414,7 +1908,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # Coba alat utama terlebih dahulu
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1422,12 +1916,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
-            logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
+            # Catat kegagalan
+            logging.warning(f"Alat utama '{primary_tool}' gagal: {str(e)}")
             
-            # Fall back to secondary tool
+            # Beralih ke alat cadangan
             try:
-                # Might need to transform parameters for fallback tool
+                # Mungkin perlu mengubah parameter untuk alat cadangan
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1438,30 +1932,30 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
-                logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
+                # Kedua alat gagal
+                logging.error(f"Kedua alat utama dan cadangan gagal. Error cadangan: {str(fallback_error)}")
                 raise WorkflowExecutionException(
-                    f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
+                    f"Workflow gagal: error utama: {str(e)}; error cadangan: {str(fallback_error)}"
                 )
     
     def _adapt_parameters(self, params, from_tool, to_tool):
-        """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        """Sesuaikan parameter antar alat jika diperlukan"""
+        # Implementasi ini tergantung pada alat spesifik
+        # Untuk contoh ini, kita kembalikan parameter asli saja
         return params
 
-# Example usage
+# Contoh penggunaan
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # API cuaca utama (berbayar)
+        "basicWeatherService",    # API cuaca cadangan (gratis)
         {"location": location}
     )
 ```
 
-### 5. Pola Komposisi Alur Kerja
+### 5. Workflow Composition Pattern
 
-Bangun alur kerja kompleks dengan menggabungkan alur kerja yang lebih sederhana:
+Build complex workflows by composing simpler ones:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1481,10 +1975,10 @@ public class CompositeWorkflow : IWorkflow
         {
             var workflowResult = await workflow.ExecuteAsync(context);
             
-            // Store each workflow's result
+            // Simpan hasil setiap workflow
             results[workflow.Name] = workflowResult;
             
-            // Update context with the result for the next workflow
+            // Perbarui konteks dengan hasil untuk workflow berikutnya
             context = context.WithResult(workflow.Name, workflowResult);
         }
         
@@ -1492,10 +1986,10 @@ public class CompositeWorkflow : IWorkflow
     }
     
     public string Name => "CompositeWorkflow";
-    public string Description => "Executes multiple workflows in sequence";
+    public string Description => "Menjalankan beberapa workflow secara berurutan";
 }
 
-// Example usage
+// Contoh penggunaan
 var documentWorkflow = new CompositeWorkflow(new IWorkflow[] {
     new DocumentFetchWorkflow(),
     new DocumentProcessingWorkflow(),
@@ -1508,44 +2002,44 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# Pengujian Server MCP: Praktik Terbaik dan Tips Utama
+# Testing MCP Servers: Best Practices and Top Tips
 
-## Ikhtisar
+## Overview
 
-Pengujian adalah aspek penting dalam mengembangkan server MCP yang andal dan berkualitas tinggi. Panduan ini memberikan praktik terbaik dan tips komprehensif untuk menguji server MCP Anda sepanjang siklus pengembangan, mulai dari pengujian unit hingga pengujian integrasi dan validasi end-to-end.
+Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
 
-## Mengapa Pengujian Penting untuk Server MCP
+## Why Testing Matters for MCP Servers
 
-Server MCP berfungsi sebagai middleware penting antara model AI dan aplikasi klien. Pengujian menyeluruh memastikan:
+MCP servers serve as crucial middleware between AI models and client applications. Thorough testing ensures:
 
-- Keandalan di lingkungan produksi
-- Penanganan permintaan dan respons yang akurat
-- Implementasi spesifikasi MCP yang tepat
-- Ketahanan terhadap kegagalan dan kasus tepi
-- Kinerja yang konsisten di berbagai beban
+- Reliability in production environments
+- Accurate handling of requests and responses
+- Proper implementation of MCP specifications
+- Resilience against failures and edge cases
+- Consistent performance under various loads
 
-## Pengujian Unit untuk Server MCP
+## Unit Testing for MCP Servers
 
-### Pengujian Unit (Dasar)
+### Unit Testing (Foundation)
 
-Pengujian unit memverifikasi komponen individual server MCP secara terpisah.
+Unit tests verify individual components of your MCP server in isolation.
 
-#### Apa yang Diuji
+#### What to Test
 
-1. **Resource Handlers**: Uji logika setiap resource handler secara mandiri
-2. **Implementasi Alat**: Verifikasi perilaku alat dengan berbagai input
-3. **Template Prompt**: Pastikan template prompt dirender dengan benar
-4. **Validasi Skema**: Uji logika validasi parameter
-5. **Penanganan Kesalahan**: Verifikasi respons kesalahan untuk input tidak valid
+1. **Resource Handlers**: Test each resource handler's logic independently
+2. **Tool Implementations**: Verify tool behavior with various inputs
+3. **Prompt Templates**: Ensure prompt templates render correctly
+4. **Schema Validation**: Test parameter validation logic
+5. **Error Handling**: Verify error responses for invalid inputs
 
-#### Praktik Terbaik Pengujian Unit
+#### Best Practices for Unit Testing
 
 ```csharp
-// Example unit test for a calculator tool in C#
+// Contoh unit test untuk alat kalkulator di C#
 [Fact]
 public async Task CalculatorTool_Add_ReturnsCorrectSum()
 {
-    // Arrange
+    // Persiapan
     var calculator = new CalculatorTool();
     var parameters = new Dictionary<string, object>
     {
@@ -1554,19 +2048,19 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
         ["b"] = 7
     };
     
-    // Act
+    // Eksekusi
     var response = await calculator.ExecuteAsync(parameters);
     var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
     
-    // Assert
+    // Verifikasi
     Assert.Equal(12, result.Value);
 }
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# Contoh unit test untuk alat kalkulator di Python
 def test_calculator_tool_add():
-    # Arrange
+    # Persiapan
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -1574,34 +2068,34 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # Eksekusi
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # Verifikasi
     assert result["value"] == 12
 ```
 
-### Pengujian Integrasi (Lapisan Tengah)
+### Integration Testing (Middle Layer)
 
-Pengujian integrasi memverifikasi interaksi antar komponen server MCP.
+Integration tests verify interactions between components of your MCP server.
 
-#### Apa yang Diuji
+#### What to Test
 
-1. **Inisialisasi Server**: Uji startup server dengan berbagai konfigurasi
-2. **Registrasi Rute**: Verifikasi semua endpoint terdaftar dengan benar
-3. **Proses Permintaan**: Uji siklus permintaan-respons secara penuh
-4. **Propagasi Kesalahan**: Pastikan kesalahan ditangani dengan benar antar komponen
-5. **Autentikasi & Otorisasi**: Uji mekanisme keamanan
+1. **Server Initialization**: Test server startup with various configurations
+2. **Route Registration**: Verify all endpoints are correctly registered
+3. **Request Processing**: Test the full request-response cycle
+4. **Error Propagation**: Ensure errors are properly handled across components
+5. **Authentication & Authorization**: Test security mechanisms
 
-#### Praktik Terbaik Pengujian Integrasi
+#### Best Practices for Integration Testing
 
 ```csharp
-// Example integration test for MCP server in C#
+// Contoh integration test untuk server MCP di C#
 [Fact]
 public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 {
-    // Arrange
+    // Persiapan
     var server = new McpServer();
     server.RegisterTool(new CalculatorTool());
     await server.StartAsync();
@@ -1617,40 +2111,40 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
         }
     };
     
-    // Act
+    // Eksekusi
     var response = await server.ProcessRequestAsync(request);
     
-    // Assert
+    // Verifikasi
     Assert.NotNull(response);
     Assert.Equal(McpStatusCodes.Success, response.StatusCode);
-    // Additional assertions for response content
+    // Verifikasi tambahan untuk isi respons
     
-    // Cleanup
+    // Bersihkan
     await server.StopAsync();
 }
 ```
 
-### Pengujian End-to-End (Lapisan Atas)
+### End-to-End Testing (Top Layer)
 
-Pengujian end-to-end memverifikasi perilaku sistem lengkap dari klien ke server.
+End-to-end tests verify the complete system behavior from client to server.
 
-#### Apa yang Diuji
+#### What to Test
 
-1. **Komunikasi Klien-Server**: Uji siklus permintaan-respons lengkap
-2. **SDK Klien Nyata**: Uji dengan implementasi klien yang sebenarnya
-3. **Kinerja di Bawah Beban**: Verifikasi perilaku dengan banyak permintaan bersamaan
-4. **Pemulihan Kesalahan**: Uji pemulihan sistem dari kegagalan
-5. **Operasi Jangka Panjang**: Verifikasi penanganan streaming dan operasi panjang
+1. **Client-Server Communication**: Test complete request-response cycles
+2. **Real Client SDKs**: Test with actual client implementations
+3. **Performance Under Load**: Verify behavior with multiple concurrent requests
+4. **Error Recovery**: Test system recovery from failures
+5. **Long-Running Operations**: Verify handling of streaming and long operations
 
-#### Praktik Terbaik Pengujian E2E
+#### Best Practices for E2E Testing
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// Contoh E2E test dengan client di TypeScript
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // Mulai server di lingkungan test
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -1659,36 +2153,36 @@ describe('MCP Server E2E Tests', () => {
     await stopTestServer();
   });
   
-  test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+  test('Client dapat memanggil alat kalkulator dan mendapatkan hasil yang benar', async () => {
+    // Eksekusi
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // Verifikasi
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
 });
 ```
 
-## Strategi Mocking untuk Pengujian MCP
+## Mocking Strategies for MCP Testing
 
-Mocking penting untuk mengisolasi komponen selama pengujian.
+Mocking is essential for isolating components during testing.
 
-### Komponen yang Perlu Dimock
+### Components to Mock
 
-1. **Model AI Eksternal**: Mock respons model untuk pengujian yang dapat diprediksi
-2. **Layanan Eksternal**: Mock dependensi API (database, layanan pihak ketiga)
-3. **Layanan Autentikasi**: Mock penyedia identitas
-4. **Penyedia Resource**: Mock resource handler yang mahal
+1. **External AI Models**: Mock model responses for predictable testing
+2. **External Services**: Mock API dependencies (databases, third-party services)
+3. **Authentication Services**: Mock identity providers
+4. **Resource Providers**: Mock expensive resource handlers
 
-### Contoh: Mock Respons Model AI
+### Example: Mocking an AI Model Response
 
 ```csharp
-// C# example with Moq
+// Contoh C# dengan Moq
 var mockModel = new Mock<ILanguageModel>();
 mockModel
     .Setup(m => m.GenerateResponseAsync(
@@ -1703,48 +2197,48 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# Contoh Python dengan unittest.mock
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
+    # Konfigurasi mock
     mock_model.return_value.generate_response.return_value = {
         "text": "Mocked model response",
         "finish_reason": "completed"
     }
     
-    # Use mock in test
+    # Gunakan mock dalam test
     server = McpServer(model_client=mock_model)
-    # Continue with test
+    # Lanjutkan dengan test
 ```
 
-## Pengujian Kinerja
+## Performance Testing
 
-Pengujian kinerja sangat penting untuk server MCP produksi.
+Performance testing is crucial for production MCP servers.
 
-### Apa yang Diukur
+### What to Measure
 
-1. **Latensi**: Waktu respons permintaan
-2. **Throughput**: Permintaan yang ditangani per detik
-3. **Pemanfaatan Sumber Daya**: Penggunaan CPU, memori, jaringan
-4. **Penanganan Konkuren**: Perilaku di bawah permintaan paralel
-5. **Karakteristik Skalabilitas**: Kinerja saat beban meningkat
+1. **Latency**: Response time for requests
+2. **Throughput**: Requests handled per second
+3. **Resource Utilization**: CPU, memory, network usage
+4. **Concurrency Handling**: Behavior under parallel requests
+5. **Scaling Characteristics**: Performance as load increases
 
-### Alat untuk Pengujian Kinerja
+### Tools for Performance Testing
 
-- **k6**: Alat pengujian beban open-source
-- **JMeter**: Pengujian kinerja komprehensif
-- **Locust**: Pengujian beban berbasis Python
-- **Azure Load Testing**: Pengujian kinerja berbasis cloud
+- **k6**: Open-source load testing tool
+- **JMeter**: Comprehensive performance testing
+- **Locust**: Python-based load testing
+- **Azure Load Testing**: Cloud-based performance testing
 
-### Contoh: Pengujian Beban Dasar dengan k6
+### Example: Basic Load Test with k6
 
 ```javascript
-// k6 script for load testing MCP server
+// Skrip k6 untuk load testing server MCP
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10 virtual users
+  vus: 10,  // 10 pengguna virtual
   duration: '30s',
 };
 
@@ -1768,26 +2262,26 @@ export default function () {
   const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
   
   check(res, {
-    'status is 200': (r) => r.status === 200,
-    'response time < 500ms': (r) => r.timings.duration < 500,
+    'status adalah 200': (r) => r.status === 200,
+    'waktu respons < 500ms': (r) => r.timings.duration < 500,
   });
   
   sleep(1);
 }
 ```
 
-## Otomasi Pengujian untuk Server MCP
+## Test Automation for MCP Servers
 
-Otomasi pengujian memastikan kualitas konsisten dan siklus umpan balik lebih cepat.
+Automating your tests ensures consistent quality and faster feedback loops.
 
-### Integrasi CI/CD
+### CI/CD Integration
 
-1. **Jalankan Pengujian Unit pada Pull Request**: Pastikan perubahan kode tidak merusak fungsi yang ada
-2. **Pengujian Integrasi di Staging**: Jalankan pengujian integrasi di lingkungan pra-produksi
-3. **Baseline Kinerja**: Pertahankan tolok ukur kinerja untuk mendeteksi regresi
-4. **Pemindaian Keamanan**: Otomatiskan pengujian keamanan sebagai bagian dari pipeline
+1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
+2. **Integration Tests in Staging**: Run integration tests in pre-production environments
+3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
+4. **Security Scans**: Automate security testing as part of the pipeline
 
-### Contoh Pipeline CI (GitHub Actions)
+### Example CI Pipeline (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -1826,101 +2320,101 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## Pengujian Kepatuhan terhadap Spesifikasi MCP
+## Testing for Compliance with MCP Specification
 
-Verifikasi server Anda mengimplementasikan spesifikasi MCP dengan benar.
+Verify your server correctly implements the MCP specification.
 
-### Area Kepatuhan Utama
+### Key Compliance Areas
 
-1. **API Endpoints**: Uji endpoint yang diwajibkan (/resources, /tools, dll.)
-2. **Format Permintaan/Respons**: Validasi kepatuhan skema
-3. **Kode Kesalahan**: Verifikasi kode status yang benar untuk berbagai skenario
-4. **Tipe Konten**: Uji penanganan berbagai tipe konten
-5. **Alur Autentikasi**: Verifikasi mekanisme otentikasi sesuai spesifikasi
+1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
+2. **Request/Response Format**: Validate schema compliance
+3. **Error Codes**: Verify correct status codes for various scenarios
+4. **Content Types**: Test handling of different content types
+5. **Authentication Flow**: Verify spec-compliant auth mechanisms
 
-### Suite Pengujian Kepatuhan
+### Compliance Test Suite
 
 ```csharp
 [Fact]
 public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 {
-    // Arrange
+    // Persiapan
     var client = new HttpClient();
     client.DefaultRequestHeaders.Add("Authorization", "Bearer test-token");
     
-    // Act
+    // Eksekusi
     var response = await client.GetAsync("http://localhost:5000/api/resources");
     var content = await response.Content.ReadAsStringAsync();
-    var resources = JsonSerializer.Deserialize<ResourceList>(content);
-    
-    // Assert
-    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-    Assert.NotNull(resources);
-    Assert.All(resources.Resources, resource => 
-    {
-        Assert.NotNull(resource.Id);
-        Assert.NotNull(resource.Type);
-        // Additional schema validation
-    });
-}
+    var resources = JsonSerializer.Deserialize
+
+// Assert  
+Assert.Equal(HttpStatusCode.OK, response.StatusCode);  
+Assert.NotNull(resources);  
+Assert.All(resources.Resources, resource =>  
+{  
+    Assert.NotNull(resource.Id);  
+    Assert.NotNull(resource.Type);  
+    // Validasi skema tambahan  
+});  
+}  
 ```
 
 ## 10 Tips Teratas untuk Pengujian Server MCP yang Efektif
 
-1. **Uji Definisi Alat Secara Terpisah**: Verifikasi definisi skema secara independen dari logika alat
-2. **Gunakan Pengujian Parameterisasi**: Uji alat dengan berbagai input, termasuk kasus tepi
-3. **Periksa Respons Kesalahan**: Verifikasi penanganan kesalahan yang tepat untuk semua kondisi
-4. **Uji Logika Otorisasi**: Pastikan kontrol akses yang tepat untuk berbagai peran pengguna
-5. **Pantau Cakupan Pengujian**: Usahakan cakupan tinggi pada kode jalur kritis
-6. **Uji Respons Streaming**: Verifikasi penanganan konten streaming yang benar
-7. **Simulasikan Masalah Jaringan**: Uji perilaku di kondisi jaringan buruk
-8. **Uji Batasan Resource**: Verifikasi perilaku saat mencapai kuota atau batas laju
-9. **Otomatiskan Pengujian Regresi**: Bangun suite yang dijalankan pada setiap perubahan kode
-10. **Dokumentasikan Kasus Uji**: Pertahankan dokumentasi yang jelas tentang skenario pengujian
+1. **Uji Definisi Alat Secara Terpisah**: Verifikasi definisi skema secara mandiri dari logika alat  
+2. **Gunakan Tes Parameterisasi**: Uji alat dengan berbagai input, termasuk kasus ekstrem  
+3. **Periksa Respons Kesalahan**: Pastikan penanganan kesalahan yang tepat untuk semua kondisi error  
+4. **Uji Logika Otorisasi**: Pastikan kontrol akses yang benar untuk berbagai peran pengguna  
+5. **Pantau Cakupan Tes**: Usahakan cakupan tinggi pada kode jalur kritis  
+6. **Uji Respons Streaming**: Verifikasi penanganan konten streaming yang tepat  
+7. **Simulasikan Masalah Jaringan**: Uji perilaku di bawah kondisi jaringan yang buruk  
+8. **Uji Batasan Sumber Daya**: Verifikasi perilaku saat mencapai kuota atau batas laju  
+9. **Otomatisasi Tes Regresi**: Bangun rangkaian tes yang berjalan setiap kali ada perubahan kode  
+10. **Dokumentasikan Kasus Tes**: Pertahankan dokumentasi yang jelas untuk skenario pengujian  
 
 ## Kesalahan Umum dalam Pengujian
 
-- **Terlalu mengandalkan pengujian jalur bahagia**: Pastikan menguji kasus kesalahan secara menyeluruh
-- **Mengabaikan pengujian kinerja**: Identifikasi hambatan sebelum memengaruhi produksi
-- **Hanya menguji secara terpisah**: Gabungkan pengujian unit, integrasi, dan E2E
-- **Cakupan API yang tidak lengkap**: Pastikan semua endpoint dan fitur diuji
-- **Lingkungan pengujian yang tidak konsisten**: Gunakan container untuk memastikan lingkungan pengujian yang konsisten
+- **Terlalu mengandalkan pengujian jalur bahagia**: Pastikan menguji kasus kesalahan secara menyeluruh  
+- **Mengabaikan pengujian performa**: Identifikasi hambatan sebelum berdampak pada produksi  
+- **Hanya menguji secara terpisah**: Gabungkan tes unit, integrasi, dan end-to-end  
+- **Cakupan API yang tidak lengkap**: Pastikan semua endpoint dan fitur diuji  
+- **Lingkungan tes yang tidak konsisten**: Gunakan container untuk memastikan lingkungan tes yang konsisten  
 
 ## Kesimpulan
 
-Strategi pengujian yang komprehensif sangat penting untuk mengembangkan server MCP yang andal dan berkualitas tinggi. Dengan menerapkan praktik terbaik dan tips yang dijelaskan dalam panduan ini, Anda dapat memastikan implementasi MCP Anda memenuhi standar tertinggi dalam kualitas, keandalan, dan kinerja.
+Strategi pengujian yang komprehensif sangat penting untuk mengembangkan server MCP yang andal dan berkualitas tinggi. Dengan menerapkan praktik terbaik dan tips yang dijelaskan dalam panduan ini, Anda dapat memastikan implementasi MCP Anda memenuhi standar tertinggi dalam kualitas, keandalan, dan performa.  
 
 ## Poin Penting
 
-1. **Desain Alat**: Ikuti prinsip tanggung jawab tunggal, gunakan dependency injection, dan rancang untuk komposabilitas
-2. **Desain Skema**: Buat skema yang jelas, terdokumentasi dengan baik, dan memiliki batasan validasi yang tepat
-3. **Penanganan Kesalahan**: Terapkan penanganan kesalahan yang elegan, respons kesalahan terstruktur, dan logika retry
-4. **Kinerja**: Gunakan caching, pemrosesan asinkron, dan pembatasan sumber daya
-5. **Keamanan**: Terapkan validasi input menyeluruh, pemeriksaan otorisasi, dan penanganan data sensitif
-6. **Pengujian**: Buat pengujian unit, integrasi, dan end-to-end yang komprehensif
-7. **Pola Alur Kerja**: Terapkan pola yang sudah mapan seperti rantai, dispatcher, dan pemrosesan paralel
+1. **Desain Alat**: Ikuti prinsip tanggung jawab tunggal, gunakan dependency injection, dan desain untuk komposabilitas  
+2. **Desain Skema**: Buat skema yang jelas, terdokumentasi dengan baik, dan batasan validasi yang tepat  
+3. **Penanganan Kesalahan**: Terapkan penanganan kesalahan yang elegan, respons kesalahan terstruktur, dan logika retry  
+4. **Performa**: Gunakan caching, pemrosesan asinkron, dan pembatasan sumber daya  
+5. **Keamanan**: Terapkan validasi input yang menyeluruh, pemeriksaan otorisasi, dan penanganan data sensitif  
+6. **Pengujian**: Buat tes unit, integrasi, dan end-to-end yang komprehensif  
+7. **Pola Alur Kerja**: Terapkan pola yang sudah mapan seperti chains, dispatchers, dan pemrosesan paralel  
 
 ## Latihan
 
 Rancang alat MCP dan alur kerja untuk sistem pemrosesan dokumen yang:
 
-1. Menerima dokumen dalam berbagai format (PDF, DOCX, TXT)
-2. Mengekstrak teks dan informasi kunci dari dokumen
-3. Mengklasifikasikan dokumen berdasarkan tipe dan isi
-4. Menghasilkan ringkasan untuk setiap dokumen
+1. Menerima dokumen dalam berbagai format (PDF, DOCX, TXT)  
+2. Mengekstrak teks dan informasi kunci dari dokumen  
+3. Mengklasifikasikan dokumen berdasarkan tipe dan isi  
+4. Menghasilkan ringkasan dari setiap dokumen  
 
-Implementasikan skema alat, penanganan kesalahan, dan pola alur kerja yang paling sesuai dengan skenario ini. Pertimbangkan bagaimana Anda akan menguji implementasi ini.
+Implementasikan skema alat, penanganan kesalahan, dan pola alur kerja yang paling sesuai dengan skenario ini. Pertimbangkan bagaimana Anda akan menguji implementasi ini.  
 
 ## Sumber Daya
 
-1. Bergabunglah dengan komunitas MCP di [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) untuk tetap mendapatkan informasi terbaru
-2. Berkontribusi pada proyek open-source [MCP](https://github.com/modelcontextprotocol)
-3. Terapkan prinsip MCP dalam inisiatif AI organisasi Anda sendiri
-4. Jelajahi implementasi MCP khusus untuk industri Anda
-5. Pertimbangkan untuk mengikuti kursus lanjutan tentang topik MCP tertentu, seperti integrasi multi-modal atau integrasi aplikasi perusahaan.  
-6. Cobalah membuat alat dan alur kerja MCP Anda sendiri menggunakan prinsip yang dipelajari melalui [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+1. Bergabunglah dengan komunitas MCP di [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) untuk mendapatkan update terbaru  
+2. Berkontribusi pada proyek open-source [MCP](https://github.com/modelcontextprotocol)  
+3. Terapkan prinsip MCP dalam inisiatif AI organisasi Anda sendiri  
+4. Jelajahi implementasi MCP khusus untuk industri Anda  
+5. Pertimbangkan mengikuti kursus lanjutan tentang topik MCP tertentu, seperti integrasi multi-modal atau integrasi aplikasi enterprise  
+6. Bereksperimenlah membangun alat dan alur kerja MCP Anda sendiri menggunakan prinsip yang dipelajari melalui [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-Selanjutnya: Praktik Terbaik [studi kasus](../09-CaseStudy/README.md)
+Selanjutnya: Studi Kasus Praktik Terbaik [case studies](../09-CaseStudy/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-14T05:08:33+00:00",
+  "original_hash": "80e5c8949af5af0f401fce6f905990aa",
+  "translation_date": "2025-07-17T07:35:39+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "vi"
 }
@@ -11,33 +11,81 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Tổng Quan
 
-Bài học này tập trung vào các thực tiễn nâng cao trong việc phát triển, kiểm thử và triển khai các máy chủ và tính năng MCP trong môi trường sản xuất. Khi hệ sinh thái MCP ngày càng phức tạp và quan trọng, việc tuân theo các mẫu đã được thiết lập giúp đảm bảo độ tin cậy, khả năng bảo trì và khả năng tương tác. Bài học này tổng hợp những kinh nghiệm thực tiễn từ các triển khai MCP thực tế để hướng dẫn bạn tạo ra các máy chủ vững chắc, hiệu quả với tài nguyên, lời nhắc và công cụ phù hợp.
+Bài học này tập trung vào các thực tiễn nâng cao trong việc phát triển, kiểm thử và triển khai các máy chủ MCP và tính năng trong môi trường sản xuất. Khi hệ sinh thái MCP ngày càng phức tạp và quan trọng, việc tuân theo các mẫu đã được thiết lập giúp đảm bảo tính ổn định, dễ bảo trì và khả năng tương tác. Bài học này tổng hợp những kinh nghiệm thực tiễn từ các triển khai MCP thực tế để hướng dẫn bạn tạo ra các máy chủ mạnh mẽ, hiệu quả với tài nguyên, lời nhắc và công cụ phù hợp.
 
 ## Mục Tiêu Học Tập
 
-Sau khi hoàn thành bài học này, bạn sẽ có khả năng:
+Kết thúc bài học này, bạn sẽ có khả năng:
 - Áp dụng các thực tiễn tốt nhất trong thiết kế máy chủ và tính năng MCP
 - Tạo chiến lược kiểm thử toàn diện cho các máy chủ MCP
 - Thiết kế các mẫu quy trình làm việc hiệu quả, có thể tái sử dụng cho các ứng dụng MCP phức tạp
-- Triển khai xử lý lỗi, ghi nhật ký và quan sát đúng cách trong máy chủ MCP
+- Triển khai xử lý lỗi, ghi nhật ký và quan sát đúng cách trong các máy chủ MCP
 - Tối ưu hóa các triển khai MCP về hiệu suất, bảo mật và khả năng bảo trì
+
+## Nguyên Tắc Cốt Lõi MCP
+
+Trước khi đi sâu vào các thực tiễn triển khai cụ thể, điều quan trọng là hiểu các nguyên tắc cốt lõi hướng dẫn phát triển MCP hiệu quả:
+
+1. **Giao Tiếp Chuẩn Hóa**: MCP sử dụng JSON-RPC 2.0 làm nền tảng, cung cấp định dạng nhất quán cho các yêu cầu, phản hồi và xử lý lỗi trên tất cả các triển khai.
+
+2. **Thiết Kế Tập Trung Vào Người Dùng**: Luôn ưu tiên sự đồng ý, kiểm soát và minh bạch đối với người dùng trong các triển khai MCP của bạn.
+
+3. **Bảo Mật Là Trên Hết**: Triển khai các biện pháp bảo mật mạnh mẽ bao gồm xác thực, phân quyền, xác thực dữ liệu và giới hạn tần suất.
+
+4. **Kiến Trúc Mô-đun**: Thiết kế các máy chủ MCP theo hướng mô-đun, mỗi công cụ và tài nguyên có mục đích rõ ràng và tập trung.
+
+5. **Kết Nối Có Trạng Thái**: Tận dụng khả năng của MCP trong việc duy trì trạng thái qua nhiều yêu cầu để tạo ra các tương tác mạch lạc và có ngữ cảnh.
+
+## Thực Tiễn Tốt Nhất Chính Thức của MCP
+
+Các thực tiễn tốt nhất sau đây được rút ra từ tài liệu chính thức của Model Context Protocol:
+
+### Thực Tiễn Bảo Mật
+
+1. **Sự Đồng Ý và Kiểm Soát của Người Dùng**: Luôn yêu cầu sự đồng ý rõ ràng của người dùng trước khi truy cập dữ liệu hoặc thực hiện các thao tác. Cung cấp quyền kiểm soát rõ ràng về dữ liệu được chia sẻ và các hành động được phép.
+
+2. **Bảo Mật Dữ Liệu**: Chỉ tiết lộ dữ liệu người dùng khi có sự đồng ý rõ ràng và bảo vệ bằng các kiểm soát truy cập phù hợp. Ngăn chặn việc truyền dữ liệu trái phép.
+
+3. **An Toàn Công Cụ**: Yêu cầu sự đồng ý rõ ràng của người dùng trước khi gọi bất kỳ công cụ nào. Đảm bảo người dùng hiểu chức năng của từng công cụ và thực thi các ranh giới bảo mật chặt chẽ.
+
+4. **Kiểm Soát Quyền Công Cụ**: Cấu hình các công cụ mà mô hình được phép sử dụng trong phiên làm việc, đảm bảo chỉ những công cụ được phép mới có thể truy cập.
+
+5. **Xác Thực**: Yêu cầu xác thực đúng cách trước khi cấp quyền truy cập công cụ, tài nguyên hoặc các thao tác nhạy cảm bằng API key, token OAuth hoặc các phương pháp xác thực an toàn khác.
+
+6. **Xác Thực Tham Số**: Thực thi xác thực cho tất cả các lần gọi công cụ để ngăn chặn đầu vào bị sai định dạng hoặc độc hại đến các triển khai công cụ.
+
+7. **Giới Hạn Tần Suất**: Triển khai giới hạn tần suất để ngăn chặn lạm dụng và đảm bảo sử dụng công bằng tài nguyên máy chủ.
+
+### Thực Tiễn Triển Khai
+
+1. **Đàm Phán Khả Năng**: Trong quá trình thiết lập kết nối, trao đổi thông tin về các tính năng được hỗ trợ, phiên bản giao thức, công cụ và tài nguyên có sẵn.
+
+2. **Thiết Kế Công Cụ**: Tạo các công cụ tập trung làm tốt một việc, thay vì các công cụ đơn khối xử lý nhiều vấn đề cùng lúc.
+
+3. **Xử Lý Lỗi**: Triển khai các thông báo lỗi và mã lỗi chuẩn hóa để giúp chẩn đoán sự cố, xử lý lỗi một cách nhẹ nhàng và cung cấp phản hồi có thể hành động.
+
+4. **Ghi Nhật Ký**: Cấu hình các bản ghi có cấu trúc để kiểm toán, gỡ lỗi và giám sát các tương tác giao thức.
+
+5. **Theo Dõi Tiến Độ**: Đối với các thao tác chạy lâu, báo cáo cập nhật tiến độ để hỗ trợ giao diện người dùng phản hồi nhanh.
+
+6. **Hủy Yêu Cầu**: Cho phép khách hàng hủy các yêu cầu đang xử lý mà không còn cần thiết hoặc mất quá nhiều thời gian.
 
 ## Tham Khảo Bổ Sung
 
-Để có thông tin cập nhật nhất về các thực tiễn tốt nhất của MCP, tham khảo:
+Để có thông tin cập nhật nhất về các thực tiễn tốt nhất MCP, tham khảo:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
+- [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
-## Thực Tiễn Phát Triển Công Cụ MCP
+## Ví Dụ Triển Khai Thực Tế
 
-### Nguyên Tắc Kiến Trúc
+### Thực Tiễn Thiết Kế Công Cụ
 
-#### 1. Nguyên Tắc Trách Nhiệm Đơn
+#### 1. Nguyên Tắc Trách Nhiệm Đơn Lẻ
 
-Mỗi tính năng MCP nên có mục đích rõ ràng và tập trung. Thay vì tạo ra các công cụ đơn khối cố gắng xử lý nhiều vấn đề, hãy phát triển các công cụ chuyên biệt, xuất sắc trong từng nhiệm vụ cụ thể.
+Mỗi công cụ MCP nên có mục đích rõ ràng và tập trung. Thay vì tạo các công cụ đơn khối cố gắng xử lý nhiều vấn đề, hãy phát triển các công cụ chuyên biệt làm tốt các nhiệm vụ cụ thể.
 
-**Ví dụ Tốt:**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -75,7 +123,8 @@ public class WeatherForecastTool : ITool
             Required = new[] { "location" }
         };
     }
-      public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
     {
         var location = parameters["location"].ToString();
         var days = parameters.ContainsKey("days") 
@@ -95,76 +144,477 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**Ví dụ Kém:**
-```csharp
-// A tool trying to do too many things
-public class WeatherToolSuite : ITool
-{
-    public string Name => "weather";
-    public string Description => "Weather-related functionality";
+#### 2. Xử Lý Lỗi Nhất Quán
+
+Triển khai xử lý lỗi mạnh mẽ với các thông báo lỗi chi tiết và cơ chế phục hồi phù hợp.
+
+```python
+# Python example with comprehensive error handling
+class DataQueryTool:
+    def get_name(self):
+        return "dataQuery"
+        
+    def get_description(self):
+        return "Queries data from specified database tables"
     
-    public ToolDefinition GetDefinition()
-    {
-        return new ToolDefinition
-        {
-            Name = Name,
-            Description = Description,
-            Parameters = new Dictionary<string, ParameterDefinition>
-            {
-                ["action"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "Weather action to perform",
-                    Enum = new[] { "forecast", "history", "alerts", "radar" }
-                },
-                ["location"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "City or location name"
-                },
-                // Many more properties for different actions...
-            },
-            required = new[] { "action", "location" }
-        };
+    async def execute(self, parameters):
+        try:
+            # Parameter validation
+            if "query" not in parameters:
+                raise ToolParameterError("Missing required parameter: query")
+                
+            query = parameters["query"]
+            
+            # Security validation
+            if self._contains_unsafe_sql(query):
+                raise ToolSecurityError("Query contains potentially unsafe SQL")
+            
+            try:
+                # Database operation with timeout
+                async with timeout(10):  # 10 second timeout
+                    result = await self._database.execute_query(query)
+                    
+                return ToolResponse(
+                    content=[TextContent(json.dumps(result))]
+                )
+            except asyncio.TimeoutError:
+                raise ToolExecutionError("Database query timed out after 10 seconds")
+            except DatabaseConnectionError as e:
+                # Connection errors might be transient
+                self._log_error("Database connection error", e)
+                raise ToolExecutionError(f"Database connection error: {str(e)}")
+            except DatabaseQueryError as e:
+                # Query errors are likely client errors
+                self._log_error("Database query error", e)
+                raise ToolExecutionError(f"Invalid query: {str(e)}")
+                
+        except ToolError:
+            # Let tool-specific errors pass through
+            raise
+        except Exception as e:
+            # Catch-all for unexpected errors
+            self._log_error("Unexpected error in DataQueryTool", e)
+            raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
+    
+    def _contains_unsafe_sql(self, query):
+        # Implementation of SQL injection detection
+        pass
+        
+    def _log_error(self, message, error):
+        # Implementation of error logging
+        pass
+```
+
+#### 3. Xác Thực Tham Số
+
+Luôn xác thực tham số kỹ lưỡng để ngăn chặn đầu vào bị sai định dạng hoặc độc hại.
+
+```javascript
+// JavaScript/TypeScript example with detailed parameter validation
+class FileOperationTool {
+  getName() {
+    return "fileOperation";
+  }
+  
+  getDescription() {
+    return "Performs file operations like read, write, and delete";
+  }
+  
+  getDefinition() {
+    return {
+      name: this.getName(),
+      description: this.getDescription(),
+      parameters: {
+        operation: {
+          type: "string",
+          description: "Operation to perform",
+          enum: ["read", "write", "delete"]
+        },
+        path: {
+          type: "string",
+          description: "File path (must be within allowed directories)"
+        },
+        content: {
+          type: "string",
+          description: "Content to write (only for write operation)",
+          optional: true
+        }
+      },
+      required: ["operation", "path"]
+    };
+  }
+  
+  async execute(parameters) {
+    // 1. Validate parameter presence
+    if (!parameters.operation) {
+      throw new ToolError("Missing required parameter: operation");
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
-    {
-        // Complex conditional logic to handle different actions
-        var action = request.Parameters.GetProperty("action").GetString();
-        var location = request.Parameters.GetProperty("location").GetString();
+    if (!parameters.path) {
+      throw new ToolError("Missing required parameter: path");
+    }
+    
+    // 2. Validate parameter types
+    if (typeof parameters.operation !== "string") {
+      throw new ToolError("Parameter 'operation' must be a string");
+    }
+    
+    if (typeof parameters.path !== "string") {
+      throw new ToolError("Parameter 'path' must be a string");
+    }
+    
+    // 3. Validate parameter values
+    const validOperations = ["read", "write", "delete"];
+    if (!validOperations.includes(parameters.operation)) {
+      throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
+    }
+    
+    // 4. Validate content presence for write operation
+    if (parameters.operation === "write" && !parameters.content) {
+      throw new ToolError("Content parameter is required for write operation");
+    }
+    
+    // 5. Path safety validation
+    if (!this.isPathWithinAllowedDirectories(parameters.path)) {
+      throw new ToolError("Access denied: path is outside of allowed directories");
+    }
+    
+    // Implementation based on validated parameters
+    // ...
+  }
+  
+  isPathWithinAllowedDirectories(path) {
+    // Implementation of path safety check
+    // ...
+  }
+}
+```
+
+### Ví Dụ Triển Khai Bảo Mật
+
+#### 1. Xác Thực và Phân Quyền
+
+```java
+// Java example with authentication and authorization
+public class SecureDataAccessTool implements Tool {
+    private final AuthenticationService authService;
+    private final AuthorizationService authzService;
+    private final DataService dataService;
+    
+    // Dependency injection
+    public SecureDataAccessTool(
+            AuthenticationService authService,
+            AuthorizationService authzService,
+            DataService dataService) {
+        this.authService = authService;
+        this.authzService = authzService;
+        this.dataService = dataService;
+    }
+    
+    @Override
+    public String getName() {
+        return "secureDataAccess";
+    }
+    
+    @Override
+    public ToolResponse execute(ToolRequest request) {
+        // 1. Extract authentication context
+        String authToken = request.getContext().getAuthToken();
         
-        switch (action)
-        {
-            case "forecast":
-                // Forecast logic
-                break;
-            case "history":
-                // Historical data logic
-                break;
-            // More cases...
-            default:
-                throw new ToolExecutionException($"Unknown action: {action}");
+        // 2. Authenticate user
+        UserIdentity user;
+        try {
+            user = authService.validateToken(authToken);
+        } catch (AuthenticationException e) {
+            return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // Result processing
+        // 3. Check authorization for the specific operation
+        String dataId = request.getParameters().get("dataId").getAsString();
+        String operation = request.getParameters().get("operation").getAsString();
+        
+        boolean isAuthorized = authzService.isAuthorized(user, "data:" + dataId, operation);
+        if (!isAuthorized) {
+            return ToolResponse.error("Access denied: Insufficient permissions for this operation");
+        }
+        
+        // 4. Proceed with authorized operation
+        try {
+            switch (operation) {
+                case "read":
+                    Object data = dataService.getData(dataId, user.getId());
+                    return ToolResponse.success(data);
+                case "update":
+                    JsonNode newData = request.getParameters().get("newData");
+                    dataService.updateData(dataId, newData, user.getId());
+                    return ToolResponse.success("Data updated successfully");
+                default:
+                    return ToolResponse.error("Unsupported operation: " + operation);
+            }
+        } catch (Exception e) {
+            return ToolResponse.error("Operation failed: " + e.getMessage());
+        }
+    }
+}
+```
+
+#### 2. Giới Hạn Tần Suất
+
+```csharp
+// C# rate limiting implementation
+public class RateLimitingMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly IMemoryCache _cache;
+    private readonly ILogger<RateLimitingMiddleware> _logger;
+    
+    // Configuration options
+    private readonly int _maxRequestsPerMinute;
+    
+    public RateLimitingMiddleware(
+        RequestDelegate next,
+        IMemoryCache cache,
+        ILogger<RateLimitingMiddleware> logger,
+        IConfiguration config)
+    {
+        _next = next;
+        _cache = cache;
+        _logger = logger;
+        _maxRequestsPerMinute = config.GetValue<int>("RateLimit:MaxRequestsPerMinute", 60);
+    }
+    
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // 1. Get client identifier (API key or user ID)
+        string clientId = GetClientIdentifier(context);
+        
+        // 2. Get rate limiting key for this minute
+        string cacheKey = $"rate_limit:{clientId}:{DateTime.UtcNow:yyyyMMddHHmm}";
+        
+        // 3. Check current request count
+        if (!_cache.TryGetValue(cacheKey, out int requestCount))
+        {
+            requestCount = 0;
+        }
+        
+        // 4. Enforce rate limit
+        if (requestCount >= _maxRequestsPerMinute)
+        {
+            _logger.LogWarning("Rate limit exceeded for client {ClientId}", clientId);
+            
+            context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+            context.Response.Headers.Add("Retry-After", "60");
+            
+            await context.Response.WriteAsJsonAsync(new
+            {
+                error = "Rate limit exceeded",
+                message = "Too many requests. Please try again later.",
+                retryAfterSeconds = 60
+            });
+            
+            return;
+        }
+        
+        // 5. Increment request count
+        _cache.Set(cacheKey, requestCount + 1, TimeSpan.FromMinutes(2));
+        
+        // 6. Add rate limit headers
+        context.Response.Headers.Add("X-RateLimit-Limit", _maxRequestsPerMinute.ToString());
+        context.Response.Headers.Add("X-RateLimit-Remaining", (_maxRequestsPerMinute - requestCount - 1).ToString());
+        
+        // 7. Continue with the request
+        await _next(context);
+    }
+    
+    private string GetClientIdentifier(HttpContext context)
+    {
+        // Implementation to extract API key or user ID
         // ...
     }
 }
 ```
 
-#### 2. Tiêm Phụ Thuộc và Khả Năng Kiểm Thử
+## Thực Tiễn Kiểm Thử
 
-Thiết kế công cụ để nhận các phụ thuộc thông qua tiêm trong hàm khởi tạo, giúp chúng dễ kiểm thử và cấu hình:
+### 1. Kiểm Thử Đơn Vị Công Cụ MCP
+
+Luôn kiểm thử công cụ của bạn một cách độc lập, giả lập các phụ thuộc bên ngoài:
+
+```typescript
+// TypeScript example of a tool unit test
+describe('WeatherForecastTool', () => {
+  let tool: WeatherForecastTool;
+  let mockWeatherService: jest.Mocked<IWeatherService>;
+  
+  beforeEach(() => {
+    // Create a mock weather service
+    mockWeatherService = {
+      getForecasts: jest.fn()
+    } as any;
+    
+    // Create the tool with the mock dependency
+    tool = new WeatherForecastTool(mockWeatherService);
+  });
+  
+  it('should return weather forecast for a location', async () => {
+    // Arrange
+    const mockForecast = {
+      location: 'Seattle',
+      forecasts: [
+        { date: '2025-07-16', temperature: 72, conditions: 'Sunny' },
+        { date: '2025-07-17', temperature: 68, conditions: 'Partly Cloudy' },
+        { date: '2025-07-18', temperature: 65, conditions: 'Rain' }
+      ]
+    };
+    
+    mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
+    
+    // Act
+    const response = await tool.execute({
+      location: 'Seattle',
+      days: 3
+    });
+    
+    // Assert
+    expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
+    expect(response.content[0].text).toContain('Seattle');
+    expect(response.content[0].text).toContain('Sunny');
+  });
+  
+  it('should handle errors from the weather service', async () => {
+    // Arrange
+    mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
+    
+    // Act & Assert
+    await expect(tool.execute({
+      location: 'Seattle',
+      days: 3
+    })).rejects.toThrow('Weather service error: Service unavailable');
+  });
+});
+```
+
+### 2. Kiểm Thử Tích Hợp
+
+Kiểm thử toàn bộ luồng từ yêu cầu của khách hàng đến phản hồi của máy chủ:
+
+```python
+# Python integration test example
+@pytest.mark.asyncio
+async def test_mcp_server_integration():
+    # Start a test server
+    server = McpServer()
+    server.register_tool(WeatherForecastTool(MockWeatherService()))
+    await server.start(port=5000)
+    
+    try:
+        # Create a client
+        client = McpClient("http://localhost:5000")
+        
+        # Test tool discovery
+        tools = await client.discover_tools()
+        assert "weatherForecast" in [t.name for t in tools]
+        
+        # Test tool execution
+        response = await client.execute_tool("weatherForecast", {
+            "location": "Seattle",
+            "days": 3
+        })
+        
+        # Verify response
+        assert response.status_code == 200
+        assert "Seattle" in response.content[0].text
+        assert len(json.loads(response.content[0].text)["forecasts"]) == 3
+        
+    finally:
+        # Clean up
+        await server.stop()
+```
+
+## Tối Ưu Hiệu Suất
+
+### 1. Chiến Lược Bộ Nhớ Đệm
+
+Triển khai bộ nhớ đệm phù hợp để giảm độ trễ và sử dụng tài nguyên:
+
+```csharp
+// C# example with caching
+public class CachedWeatherTool : ITool
+{
+    private readonly IWeatherService _weatherService;
+    private readonly IDistributedCache _cache;
+    private readonly ILogger<CachedWeatherTool> _logger;
+    
+    public CachedWeatherTool(
+        IWeatherService weatherService,
+        IDistributedCache cache,
+        ILogger<CachedWeatherTool> logger)
+    {
+        _weatherService = weatherService;
+        _cache = cache;
+        _logger = logger;
+    }
+    
+    public string Name => "weatherForecast";
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    {
+        var location = parameters["location"].ToString();
+        var days = Convert.ToInt32(parameters.GetValueOrDefault("days", 3));
+        
+        // Create cache key
+        string cacheKey = $"weather:{location}:{days}";
+        
+        // Try to get from cache
+        string cachedForecast = await _cache.GetStringAsync(cacheKey);
+        if (!string.IsNullOrEmpty(cachedForecast))
+        {
+            _logger.LogInformation("Cache hit for weather forecast: {Location}", location);
+            return new ToolResponse
+            {
+                Content = new List<ContentItem>
+                {
+                    new TextContent(cachedForecast)
+                }
+            };
+        }
+        
+        // Cache miss - get from service
+        _logger.LogInformation("Cache miss for weather forecast: {Location}", location);
+        var forecast = await _weatherService.GetForecastAsync(location, days);
+        string forecastJson = JsonSerializer.Serialize(forecast);
+        
+        // Store in cache (weather forecasts valid for 1 hour)
+        await _cache.SetStringAsync(
+            cacheKey,
+            forecastJson,
+            new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1)
+            });
+        
+        return new ToolResponse
+        {
+            Content = new List<ContentItem>
+            {
+                new TextContent(forecastJson)
+            }
+        };
+    }
+}
+
+#### 2. Dependency Injection and Testability
+
+Design tools to receive their dependencies through constructor injection, making them testable and configurable:
 
 ```java
-// Java example with dependency injection
+// Ví dụ Java với dependency injection
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // Các phụ thuộc được tiêm qua constructor
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -174,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // Triển khai công cụ
     // ...
 }
 ```
 
-#### 3. Công Cụ Có Thể Kết Hợp
+#### 3. Composable Tools
 
-Thiết kế các công cụ có thể kết hợp với nhau để tạo ra các quy trình làm việc phức tạp hơn:
+Design tools that can be composed together to create more complex workflows:
 
 ```python
-# Python example showing composable tools
+# Ví dụ Python thể hiện các công cụ có thể kết hợp
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # Triển khai...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # Công cụ này có thể sử dụng kết quả từ dataFetch
     async def execute_async(self, request):
-        # Implementation...
+        # Triển khai...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # Công cụ này có thể sử dụng kết quả từ dataAnalysis
     async def execute_async(self, request):
-        # Implementation...
+        # Triển khai...
         pass
 
-# These tools can be used independently or as part of a workflow
+# Các công cụ này có thể dùng độc lập hoặc như một phần của quy trình làm việc
 ```
 
-### Thực Tiễn Thiết Kế Schema
+### Schema Design Best Practices
 
-Schema là hợp đồng giữa mô hình và công cụ của bạn. Schema được thiết kế tốt giúp công cụ dễ sử dụng hơn.
+The schema is the contract between the model and your tool. Well-designed schemas lead to better tool usability.
 
-#### 1. Mô Tả Tham Số Rõ Ràng
+#### 1. Clear Parameter Descriptions
 
-Luôn bao gồm thông tin mô tả cho từng tham số:
+Always include descriptive information for each parameter:
 
 ```csharp
 public object GetSchema()
@@ -228,25 +678,25 @@ public object GetSchema()
         properties = new {
             query = new { 
                 type = "string", 
-                description = "Search query text. Use precise keywords for better results." 
+                description = "Văn bản truy vấn tìm kiếm. Sử dụng từ khóa chính xác để có kết quả tốt hơn." 
             },
             filters = new {
                 type = "object",
-                description = "Optional filters to narrow down search results",
+                description = "Bộ lọc tùy chọn để thu hẹp kết quả tìm kiếm",
                 properties = new {
                     dateRange = new { 
                         type = "string", 
-                        description = "Date range in format YYYY-MM-DD:YYYY-MM-DD" 
+                        description = "Khoảng thời gian theo định dạng YYYY-MM-DD:YYYY-MM-DD" 
                     },
                     category = new { 
                         type = "string", 
-                        description = "Category name to filter by" 
+                        description = "Tên danh mục để lọc" 
                     }
                 }
             },
             limit = new { 
                 type = "integer", 
-                description = "Maximum number of results to return (1-50)",
+                description = "Số lượng kết quả tối đa trả về (1-50)",
                 default = 10
             }
         },
@@ -255,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. Ràng Buộc Xác Thực
+#### 2. Validation Constraints
 
-Bao gồm các ràng buộc xác thực để ngăn chặn đầu vào không hợp lệ:
+Include validation constraints to prevent invalid inputs:
 
 ```java
 Map<String, Object> getSchema() {
@@ -266,25 +716,25 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // Thuộc tính email với xác thực định dạng
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
-    email.put("description", "User email address");
+    email.put("description", "Địa chỉ email người dùng");
     
-    // Age property with numeric constraints
+    // Thuộc tính tuổi với giới hạn số
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
-    age.put("description", "User age in years");
+    age.put("description", "Tuổi người dùng tính theo năm");
     
-    // Enumerated property
+    // Thuộc tính liệt kê
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
     subscription.put("default", "free");
-    subscription.put("description", "Subscription tier");
+    subscription.put("description", "Cấp độ đăng ký");
     
     properties.put("email", email);
     properties.put("age", age);
@@ -297,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Cấu Trúc Trả Về Nhất Quán
+#### 3. Consistent Return Structures
 
-Duy trì sự nhất quán trong cấu trúc phản hồi để mô hình dễ dàng hiểu kết quả:
+Maintain consistency in your response structures to make it easier for models to interpret results:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # Xử lý yêu cầu
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # Luôn trả về cấu trúc nhất quán
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -328,7 +778,7 @@ async def execute_async(self, request):
         )
     
 def _format_item(self, item):
-    """Ensures each item has a consistent structure"""
+    """Đảm bảo mỗi mục có cấu trúc nhất quán"""
     return {
         "id": item.id,
         "title": item.title,
@@ -338,13 +788,13 @@ def _format_item(self, item):
     }
 ```
 
-### Xử Lý Lỗi
+### Error Handling
 
-Xử lý lỗi vững chắc là yếu tố quan trọng để các công cụ MCP duy trì độ tin cậy.
+Robust error handling is crucial for MCP tools to maintain reliability.
 
-#### 1. Xử Lý Lỗi Nhẹ Nhàng
+#### 1. Graceful Error Handling
 
-Xử lý lỗi ở các cấp độ phù hợp và cung cấp thông báo rõ ràng:
+Handle errors at appropriate levels and provide informative messages:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -362,39 +812,39 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
         }
         catch (FileNotFoundException)
         {
-            throw new ToolExecutionException($"File not found: {fileId}");
+            throw new ToolExecutionException($"Không tìm thấy tệp: {fileId}");
         }
         catch (UnauthorizedAccessException)
         {
-            throw new ToolExecutionException("You don't have permission to access this file");
+            throw new ToolExecutionException("Bạn không có quyền truy cập tệp này");
         }
         catch (Exception ex) when (ex is IOException || ex is TimeoutException)
         {
-            _logger.LogError(ex, "Error accessing file {FileId}", fileId);
-            throw new ToolExecutionException("Error accessing file: The service is temporarily unavailable");
+            _logger.LogError(ex, "Lỗi truy cập tệp {FileId}", fileId);
+            throw new ToolExecutionException("Lỗi truy cập tệp: Dịch vụ tạm thời không khả dụng");
         }
     }
     catch (JsonException)
     {
-        throw new ToolExecutionException("Invalid file ID format");
+        throw new ToolExecutionException("Định dạng ID tệp không hợp lệ");
     }
     catch (Exception ex)
     {
-        _logger.LogError(ex, "Unexpected error in FileAccessTool");
-        throw new ToolExecutionException("An unexpected error occurred");
+        _logger.LogError(ex, "Lỗi không mong muốn trong FileAccessTool");
+        throw new ToolExecutionException("Đã xảy ra lỗi không mong muốn");
     }
 }
 ```
 
-#### 2. Phản Hồi Lỗi Có Cấu Trúc
+#### 2. Structured Error Responses
 
-Trả về thông tin lỗi có cấu trúc khi có thể:
+Return structured error information when possible:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // Triển khai
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -412,45 +862,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
-        throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
+        // Ném lại các ngoại lệ khác dưới dạng ToolExecutionException
+        throw new ToolExecutionException("Thực thi công cụ thất bại: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. Logic Thử Lại
+#### 3. Retry Logic
 
-Triển khai logic thử lại phù hợp cho các lỗi tạm thời:
+Implement appropriate retry logic for transient failures:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # giây
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # Gọi API bên ngoài
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
-                raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
+                raise ToolExecutionException(f"Thao tác thất bại sau {max_retries} lần thử: {str(e)}")
                 
-            # Exponential backoff
+            # Tăng thời gian chờ theo cấp số nhân
             delay = base_delay * (2 ** (retry_count - 1))
-            logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
+            logging.warning(f"Lỗi tạm thời, thử lại sau {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
-            raise ToolExecutionException(f"Operation failed: {str(e)}")
+            # Lỗi không tạm thời, không thử lại
+            raise ToolExecutionException(f"Thao tác thất bại: {str(e)}")
 ```
 
-### Tối Ưu Hiệu Suất
+### Performance Optimization
 
-#### 1. Bộ Nhớ Đệm
+#### 1. Caching
 
-Triển khai bộ nhớ đệm cho các thao tác tốn kém:
+Implement caching for expensive operations:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -464,41 +914,43 @@ public class CachedDataTool : IMcpTool
         _cache = cache;
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+    public async Task
+
+ExecuteAsync(ToolRequest request)
+{
+    var query = request.Parameters.GetProperty("query").GetString();
+    
+    // Tạo khóa cache dựa trên các tham số
+    var cacheKey = $"data_query_{ComputeHash(query)}";
+    
+    // Thử lấy dữ liệu từ cache trước
+    if (_cache.TryGetValue(cacheKey, out var cachedResult))
     {
-        var query = request.Parameters.GetProperty("query").GetString();
-        
-        // Create cache key based on parameters
-        var cacheKey = $"data_query_{ComputeHash(query)}";
-        
-        // Try to get from cache first
-        if (_cache.TryGetValue(cacheKey, out var cachedResult))
-        {
-            return new ToolResponse { Result = cachedResult };
-        }
-        
-        // Cache miss - perform actual query
-        var result = await _database.QueryAsync(query);
-        
-        // Store in cache with expiration
-        var cacheOptions = new MemoryCacheEntryOptions()
-            .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
-            
-        _cache.Set(cacheKey, JsonSerializer.SerializeToElement(result), cacheOptions);
-        
-        return new ToolResponse { Result = JsonSerializer.SerializeToElement(result) };
+        return new ToolResponse { Result = cachedResult };
     }
     
-    private string ComputeHash(string input)
-    {
-        // Implementation to generate stable hash for cache key
-    }
+    // Cache không có - thực hiện truy vấn thực tế
+    var result = await _database.QueryAsync(query);
+    
+    // Lưu vào cache với thời gian hết hạn
+    var cacheOptions = new MemoryCacheEntryOptions()
+        .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
+        
+    _cache.Set(cacheKey, JsonSerializer.SerializeToElement(result), cacheOptions);
+    
+    return new ToolResponse { Result = JsonSerializer.SerializeToElement(result) };
+}
+
+private string ComputeHash(string input)
+{
+    // Cài đặt để tạo hash ổn định cho khóa cache
+}
 }
 ```
 
-#### 2. Xử Lý Bất Đồng Bộ
+#### 2. Asynchronous Processing
 
-Sử dụng các mẫu lập trình bất đồng bộ cho các thao tác I/O:
+Use asynchronous programming patterns for I/O-bound operations:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -509,23 +961,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // Với các thao tác chạy lâu, trả về ID xử lý ngay lập tức
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // Bắt đầu xử lý bất đồng bộ
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // Thực hiện thao tác chạy lâu
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // Cập nhật trạng thái (thường được lưu trong cơ sở dữ liệu)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // Trả về phản hồi ngay với ID xử lý
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -534,7 +986,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // Công cụ kiểm tra trạng thái đi kèm
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -547,35 +999,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Giới Hạn Tài Nguyên
+#### 3. Resource Throttling
 
-Triển khai giới hạn tài nguyên để tránh quá tải:
+Implement resource throttling to prevent overload:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # Cho phép 5 yêu cầu mỗi giây
+            bucket_size=10        # Cho phép bùng phát tối đa 10 yêu cầu
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # Kiểm tra xem có thể tiếp tục hay phải chờ
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # Nếu thời gian chờ quá lâu
                 raise ToolExecutionException(
-                    f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
+                    f"Vượt quá giới hạn tốc độ. Vui lòng thử lại sau {delay:.1f} giây."
                 )
             else:
-                # Wait for the appropriate delay time
+                # Chờ đúng thời gian cần thiết
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # Tiêu thụ một token và tiếp tục xử lý yêu cầu
         self.rate_limiter.consume()
         
-        # Call API
+        # Gọi API
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -593,7 +1045,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # Tính thời gian chờ đến khi có token tiếp theo
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -605,86 +1057,86 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # Thêm token mới dựa trên thời gian đã trôi qua
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### Thực Tiễn Bảo Mật
+### Security Best Practices
 
-#### 1. Xác Thực Đầu Vào
+#### 1. Input Validation
 
-Luôn xác thực kỹ lưỡng các tham số đầu vào:
+Always validate input parameters thoroughly:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 {
-    // Validate parameters exist
+    // Kiểm tra tham số tồn tại
     if (!request.Parameters.TryGetProperty("query", out var queryProp))
     {
-        throw new ToolExecutionException("Missing required parameter: query");
+        throw new ToolExecutionException("Thiếu tham số bắt buộc: query");
     }
     
-    // Validate correct type
+    // Kiểm tra kiểu dữ liệu đúng
     if (queryProp.ValueKind != JsonValueKind.String)
     {
-        throw new ToolExecutionException("Query parameter must be a string");
+        throw new ToolExecutionException("Tham số query phải là chuỗi");
     }
     
     var query = queryProp.GetString();
     
-    // Validate string content
+    // Kiểm tra nội dung chuỗi
     if (string.IsNullOrWhiteSpace(query))
     {
-        throw new ToolExecutionException("Query parameter cannot be empty");
+        throw new ToolExecutionException("Tham số query không được để trống");
     }
     
     if (query.Length > 500)
     {
-        throw new ToolExecutionException("Query parameter exceeds maximum length of 500 characters");
+        throw new ToolExecutionException("Tham số query vượt quá độ dài tối đa 500 ký tự");
     }
     
-    // Check for SQL injection attacks if applicable
+    // Kiểm tra tấn công SQL injection nếu có thể áp dụng
     if (ContainsSqlInjection(query))
     {
-        throw new ToolExecutionException("Invalid query: contains potentially unsafe SQL");
+        throw new ToolExecutionException("Truy vấn không hợp lệ: chứa SQL có thể gây nguy hiểm");
     }
     
-    // Proceed with execution
+    // Tiếp tục thực thi
     // ...
 }
 ```
 
-#### 2. Kiểm Tra Ủy Quyền
+#### 2. Authorization Checks
 
-Triển khai kiểm tra ủy quyền đúng cách:
+Implement proper authorization checks:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // Lấy ngữ cảnh người dùng từ request
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // Kiểm tra người dùng có quyền cần thiết không
     if (!authorizationService.hasPermission(user, "documents:read")) {
-        throw new ToolExecutionException("User does not have permission to access documents");
+        throw new ToolExecutionException("Người dùng không có quyền truy cập tài liệu");
     }
     
-    // For specific resources, check access to that resource
+    // Với tài nguyên cụ thể, kiểm tra quyền truy cập tài nguyên đó
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
-        throw new ToolExecutionException("Access denied to the requested document");
+        throw new ToolExecutionException("Từ chối truy cập tài liệu yêu cầu");
     }
     
-    // Proceed with tool execution
+    // Tiếp tục thực thi công cụ
     // ...
 }
 ```
 
-#### 3. Xử Lý Dữ Liệu Nhạy Cảm
+#### 3. Sensitive Data Handling
 
-Xử lý dữ liệu nhạy cảm một cách cẩn thận:
+Handle sensitive data carefully:
 
 ```python
 class SecureDataTool(Tool):
@@ -702,56 +1154,56 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # Lấy dữ liệu người dùng
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # Lọc các trường nhạy cảm trừ khi được yêu cầu rõ ràng VÀ có quyền
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # Kiểm tra mức độ ủy quyền trong ngữ cảnh request
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # Tạo bản sao để tránh sửa đổi dữ liệu gốc
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # Ẩn các trường nhạy cảm cụ thể
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # Ẩn dữ liệu nhạy cảm lồng nhau
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## Thực Tiễn Kiểm Thử Công Cụ MCP
+## Testing Best Practices for MCP Tools
 
-Kiểm thử toàn diện đảm bảo các công cụ MCP hoạt động chính xác, xử lý các trường hợp biên và tích hợp đúng với hệ thống.
+Comprehensive testing ensures that MCP tools function correctly, handle edge cases, and integrate properly with the rest of the system.
 
-### Kiểm Thử Đơn Vị
+### Unit Testing
 
-#### 1. Kiểm Thử Từng Công Cụ Riêng Lẻ
+#### 1. Test Each Tool in Isolation
 
-Tạo các bài kiểm thử tập trung cho chức năng của từng công cụ:
+Create focused tests for each tool's functionality:
 
 ```csharp
 [Fact]
 public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 {
-    // Arrange
+    // Chuẩn bị
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("Seattle", 3))
-        .ReturnsAsync(new WeatherForecast(/* test data */));
+        .ReturnsAsync(new WeatherForecast(/* dữ liệu test */));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -763,10 +1215,10 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
         })
     );
     
-    // Act
+    // Thực thi
     var response = await tool.ExecuteAsync(request);
     
-    // Assert
+    // Kiểm tra
     Assert.NotNull(response);
     var result = JsonSerializer.Deserialize<WeatherForecast>(response.Result);
     Assert.Equal("Seattle", result.Location);
@@ -776,11 +1228,11 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 [Fact]
 public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 {
-    // Arrange
+    // Chuẩn bị
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("InvalidLocation", It.IsAny<int>()))
-        .ThrowsAsync(new LocationNotFoundException("Location not found"));
+        .ThrowsAsync(new LocationNotFoundException("Không tìm thấy vị trí"));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -792,36 +1244,36 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
         })
     );
     
-    // Act & Assert
+    // Thực thi & kiểm tra ngoại lệ
     var exception = await Assert.ThrowsAsync<ToolExecutionException>(
         () => tool.ExecuteAsync(request)
     );
     
-    Assert.Contains("Location not found", exception.Message);
+    Assert.Contains("Không tìm thấy vị trí", exception.Message);
 }
 ```
 
-#### 2. Kiểm Thử Xác Thực Schema
+#### 2. Schema Validation Testing
 
-Kiểm tra schema hợp lệ và thực thi đúng các ràng buộc:
+Test that schemas are valid and properly enforce constraints:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // Tạo instance công cụ
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // Lấy schema
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // Chuyển schema sang JSON để kiểm tra
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // Kiểm tra schema có phải JSONSchema hợp lệ
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // Kiểm tra tham số hợp lệ
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -829,14 +1281,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // Kiểm tra thiếu tham số bắt buộc
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // Kiểm tra kiểu tham số không hợp lệ
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -846,21 +1298,21 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. Kiểm Thử Xử Lý Lỗi
+#### 3. Error Handling Tests
 
-Tạo các bài kiểm thử cụ thể cho các điều kiện lỗi:
+Create specific tests for error conditions:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # Chuẩn bị
+    tool = ApiTool(timeout=0.1)  # Thời gian timeout rất ngắn
     
-    # Mock a request that will time out
+    # Giả lập một request bị timeout
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Lâu hơn timeout
         )
         
         request = ToolRequest(
@@ -868,19 +1320,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Thực thi & kiểm tra ngoại lệ
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # Kiểm tra thông báo ngoại lệ
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # Chuẩn bị
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # Giả lập phản hồi bị giới hạn tốc độ
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -894,27 +1346,27 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Thực thi & kiểm tra ngoại lệ
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # Kiểm tra ngoại lệ chứa thông tin giới hạn tốc độ
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### Kiểm Thử Tích Hợp
+### Integration Testing
 
-#### 1. Kiểm Thử Chuỗi Công Cụ
+#### 1. Tool Chain Testing
 
-Kiểm thử các công cụ hoạt động cùng nhau theo các kết hợp dự kiến:
+Test tools working together in expected combinations:
 
 ```csharp
 [Fact]
 public async Task DataProcessingWorkflow_CompletesSuccessfully()
 {
-    // Arrange
+    // Chuẩn bị
     var dataFetchTool = new DataFetchTool(mockDataService.Object);
     var analysisTools = new DataAnalysisTool(mockAnalysisService.Object);
     var visualizationTool = new DataVisualizationTool(mockVisualizationService.Object);
@@ -926,30 +1378,31 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
     
     var workflowExecutor = new WorkflowExecutor(toolRegistry);
     
-    // Act
-    var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
-        new ToolCall("dataFetch", new { source = "sales2023" }),
-        new ToolCall("dataAnalysis", ctx => new { 
+    // Thực thi
+var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
+    new ToolCall("dataFetch", new { source = "sales2023" }),
+    new ToolCall("dataAnalysis", ctx =>
+        new { 
             data = ctx.GetResult("dataFetch"),
             analysis = "trend" 
         }),
-        new ToolCall("dataVisualize", ctx => new {
-            analysisResult = ctx.GetResult("dataAnalysis"),
-            type = "line-chart"
-        })
-    });
-    
-    // Assert
-    Assert.NotNull(result);
-    Assert.True(result.Success);
-    Assert.NotNull(result.GetResult("dataVisualize"));
-    Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
+    new ToolCall("dataVisualize", ctx => new {
+        analysisResult = ctx.GetResult("dataAnalysis"),
+        type = "line-chart"
+    })
+});
+
+// Kiểm tra
+Assert.NotNull(result);
+Assert.True(result.Success);
+Assert.NotNull(result.GetResult("dataVisualize"));
+Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
 }
 ```
 
-#### 2. Kiểm Thử Máy Chủ MCP
+#### 2. MCP Server Testing
 
-Kiểm thử máy chủ MCP với việc đăng ký và thực thi đầy đủ các công cụ:
+Test the MCP server with full tool registration and execution:
 
 ```java
 @SpringBootTest
@@ -964,7 +1417,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // Kiểm tra endpoint khám phá công cụ
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -975,7 +1428,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // Tạo yêu cầu công cụ
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -985,7 +1438,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // Gửi yêu cầu và kiểm tra phản hồi
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -995,17 +1448,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // Tạo yêu cầu công cụ không hợp lệ
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // Thiếu tham số "b"
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // Gửi yêu cầu và kiểm tra phản hồi lỗi
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1015,32 +1468,32 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. Kiểm Thử Toàn Bộ
+#### 3. End-to-End Testing
 
-Kiểm thử quy trình làm việc hoàn chỉnh từ lời nhắc mô hình đến thực thi công cụ:
+Test complete workflows from model prompt to tool execution:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # Chuẩn bị - Thiết lập client MCP và mô hình giả lập
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # Mô phỏng phản hồi của mô hình
     mock_model = MockLanguageModel([
         MockResponse(
-            "What's the weather in Seattle?",
+            "Thời tiết ở Seattle thế nào?",
             tool_calls=[{
                 "tool_name": "weatherForecast",
                 "parameters": {"location": "Seattle", "days": 3}
             }]
         ),
         MockResponse(
-            "Here's the weather forecast for Seattle:\n- Today: 65°F, Partly Cloudy\n- Tomorrow: 68°F, Sunny\n- Day after: 62°F, Rain",
+            "Dưới đây là dự báo thời tiết cho Seattle:\n- Hôm nay: 65°F, Trời có mây một phần\n- Ngày mai: 68°F, Trời nắng\n- Ngày kế tiếp: 62°F, Mưa",
             tool_calls=[]
         )
     ])
     
-    # Mock weather tool response
+    # Mô phỏng phản hồi công cụ thời tiết
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1048,41 +1501,41 @@ async def test_model_interaction_with_tool():
                 "result": {
                     "location": "Seattle",
                     "forecast": [
-                        {"date": "2023-06-01", "temperature": 65, "conditions": "Partly Cloudy"},
-                        {"date": "2023-06-02", "temperature": 68, "conditions": "Sunny"},
-                        {"date": "2023-06-03", "temperature": 62, "conditions": "Rain"}
+                        {"date": "2023-06-01", "temperature": 65, "conditions": "Trời có mây một phần"},
+                        {"date": "2023-06-02", "temperature": 68, "conditions": "Trời nắng"},
+                        {"date": "2023-06-03", "temperature": 62, "conditions": "Mưa"}
                     ]
                 }
             }
         )
         
-        # Act
+        # Thực thi
         response = await mcp_client.send_prompt(
-            "What's the weather in Seattle?",
+            "Thời tiết ở Seattle thế nào?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # Kiểm tra
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
-        assert "Sunny" in response.generated_text
-        assert "Rain" in response.generated_text
+        assert "Trời nắng" in response.generated_text
+        assert "Mưa" in response.generated_text
         assert len(response.tool_calls) == 1
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### Kiểm Thử Hiệu Suất
+### Performance Testing
 
-#### 1. Kiểm Thử Tải
+#### 1. Load Testing
 
-Kiểm thử khả năng xử lý các yêu cầu đồng thời của máy chủ MCP:
+Test how many concurrent requests your MCP server can handle:
 
 ```csharp
 [Fact]
 public async Task McpServer_HandlesHighConcurrency()
 {
-    // Arrange
+    // Chuẩn bị
     var server = new McpServer(
         name: "TestServer",
         version: "1.0",
@@ -1094,7 +1547,7 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var client = new McpClient("http://localhost:5000");
     
-    // Act
+    // Thực thi
     var tasks = new List<Task<McpResponse>>();
     for (int i = 0; i < 1000; i++)
     {
@@ -1103,15 +1556,15 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var results = await Task.WhenAll(tasks);
     
-    // Assert
+    // Kiểm tra
     Assert.Equal(1000, results.Length);
     Assert.All(results, r => Assert.NotNull(r));
 }
 ```
 
-#### 2. Kiểm Thử Căng Thẳng
+#### 2. Stress Testing
 
-Kiểm thử hệ thống dưới tải cực đoan:
+Test the system under extreme load:
 
 ```java
 @Test
@@ -1120,14 +1573,14 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // Thiết lập JMeter để kiểm tra tải
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // Cấu hình kế hoạch kiểm tra JMeter
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
-    TestPlan testPlan = new TestPlan("MCP Server Stress Test");
+    // Tạo kế hoạch kiểm tra, nhóm luồng, bộ lấy mẫu, v.v.
+    TestPlan testPlan = new TestPlan("Kiểm tra tải MCP Server");
     testPlanTree.add(testPlan);
     
     ThreadGroup threadGroup = new ThreadGroup();
@@ -1138,7 +1591,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // Thêm bộ lấy mẫu HTTP cho việc thực thi công cụ
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1149,58 +1602,58 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // Thêm các bộ lắng nghe
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // Chạy kiểm tra
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // Xác nhận kết quả
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // Thời gian phản hồi trung bình < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // Phần trăm 90 < 500ms
 }
 ```
 
-#### 3. Giám Sát và Phân Tích Hiệu Suất
+#### 3. Monitoring and Profiling
 
-Thiết lập giám sát để phân tích hiệu suất dài hạn:
+Set up monitoring for long-term performance analysis:
 
 ```python
-# Configure monitoring for an MCP server
+# Cấu hình giám sát cho MCP server
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Thiết lập các chỉ số Prometheus
     prometheus_metrics = {
-        "request_count": Counter("mcp_requests_total", "Total MCP requests"),
+        "request_count": Counter("mcp_requests_total", "Tổng số yêu cầu MCP"),
         "request_latency": Histogram(
             "mcp_request_duration_seconds", 
-            "Request duration in seconds",
+            "Thời gian xử lý yêu cầu tính bằng giây",
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_execution_count": Counter(
             "mcp_tool_executions_total", 
-            "Tool execution count",
+            "Số lần thực thi công cụ",
             labelnames=["tool_name"]
         ),
         "tool_execution_latency": Histogram(
             "mcp_tool_duration_seconds", 
-            "Tool execution duration in seconds",
+            "Thời gian thực thi công cụ tính bằng giây",
             labelnames=["tool_name"],
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_errors": Counter(
             "mcp_tool_errors_total",
-            "Tool execution errors",
+            "Lỗi trong quá trình thực thi công cụ",
             labelnames=["tool_name", "error_type"]
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # Thêm middleware để đo thời gian và ghi lại các chỉ số
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # Mở endpoint để xuất các chỉ số
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1208,29 +1661,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## Mẫu Thiết Kế Quy Trình MCP
+## MCP Workflow Design Patterns
 
-Các quy trình MCP được thiết kế tốt giúp cải thiện hiệu quả, độ tin cậy và khả năng bảo trì. Dưới đây là các mẫu chính cần tuân theo:
+Well-designed MCP workflows improve efficiency, reliability, and maintainability. Here are key patterns to follow:
 
-### 1. Mẫu Chuỗi Công Cụ
+### 1. Chain of Tools Pattern
 
-Kết nối nhiều công cụ theo chuỗi, trong đó đầu ra của công cụ trước là đầu vào cho công cụ tiếp theo:
+Connect multiple tools in a sequence where each tool's output becomes the input for the next:
 
 ```python
-# Python Chain of Tools implementation
+# Triển khai chuỗi công cụ trong Python
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # Danh sách tên công cụ sẽ thực thi theo thứ tự
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # Thực thi từng công cụ trong chuỗi, truyền kết quả trước đó làm đầu vào
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # Lưu kết quả và dùng làm đầu vào cho công cụ tiếp theo
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1239,7 +1692,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# Ví dụ sử dụng
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1253,9 +1706,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Mẫu Bộ Phân Phối
+### 2. Dispatcher Pattern
 
-Sử dụng một công cụ trung tâm để phân phối đến các công cụ chuyên biệt dựa trên đầu vào:
+Use a central tool that dispatches to specialized tools based on input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1268,7 +1721,7 @@ public class ContentDispatcherTool : IMcpTool
     }
     
     public string Name => "contentProcessor";
-    public string Description => "Processes content of various types";
+    public string Description => "Xử lý nội dung các loại khác nhau";
     
     public object GetSchema()
     {
@@ -1295,10 +1748,10 @@ public class ContentDispatcherTool : IMcpTool
         var contentType = request.Parameters.GetProperty("contentType").GetString();
         var operation = request.Parameters.GetProperty("operation").GetString();
         
-        // Determine which specialized tool to use
+        // Xác định công cụ chuyên biệt cần sử dụng
         string targetTool = DetermineTargetTool(contentType, operation);
         
-        // Forward to the specialized tool
+        // Chuyển tiếp đến công cụ chuyên biệt
         var specializedResponse = await _mcpClient.ExecuteToolAsync(
             targetTool,
             new { content, options = GetOptionsForTool(targetTool, operation) }
@@ -1315,29 +1768,42 @@ public class ContentDispatcherTool : IMcpTool
             ("text", "analyze") => "textAnalyzer",
             ("html", _) => "htmlProcessor",
             ("markdown", _) => "markdownProcessor",
-            ("csv", _) => "csvProcessor",
-            ("code", _) => "codeAnalyzer",
-            _ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
-        };
-    }
-    
-    private object GetOptionsForTool(string toolName, string operation)
-    {
-        // Return appropriate options for each specialized tool
-        return toolName switch
-        {
-            "textSummarizer" => new { length = "medium" },
-            "htmlProcessor" => new { cleanUp = true, operation },
-            // Options for other tools...
-            _ => new { }
-        };
-    }
+            ("csv", _) =>
+QUY TẮC QUAN TRỌNG:
+1. KHÔNG thêm '''markdown hoặc bất kỳ thẻ nào khác quanh bản dịch
+2. Đảm bảo bản dịch không quá máy móc
+3. Dịch cả phần chú thích
+4. Tệp này được viết theo định dạng Markdown - không xử lý như XML hoặc HTML
+5. Không dịch:
+   - [!NOTE], [!WARNING], [!TIP], [!IMPORTANT], [!CAUTION]
+   - Tên biến, tên hàm, tên lớp
+   - Các chỗ giữ chỗ như @@INLINE_CODE_x@@ hoặc @@CODE_BLOCK_x@@
+   - URL hoặc đường dẫn
+6. Giữ nguyên tất cả định dạng markdown gốc
+7. Chỉ trả về nội dung đã dịch mà không thêm thẻ hay định dạng nào khác
+Vui lòng viết kết quả từ trái sang phải.
+("code", _) => "codeAnalyzer",
+_ => throw new ToolExecutionException($"Không có công cụ nào phù hợp cho {contentType}/{operation}")
+};
+}
+
+private object GetOptionsForTool(string toolName, string operation)
+{
+// Trả về các tùy chọn phù hợp cho từng công cụ chuyên biệt
+return toolName switch
+{
+    "textSummarizer" => new { length = "medium" },
+    "htmlProcessor" => new { cleanUp = true, operation },
+    // Tùy chọn cho các công cụ khác...
+    _ => new { }
+};
+}
 }
 ```
 
-### 3. Mẫu Xử Lý Song Song
+### 3. Parallel Processing Pattern
 
-Thực thi nhiều công cụ đồng thời để tăng hiệu quả:
+Execute multiple tools simultaneously for efficiency:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1348,11 +1814,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // Bước 1: Lấy metadata của bộ dữ liệu (đồng bộ)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // Bước 2: Khởi chạy nhiều phân tích song song
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1374,25 +1840,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // Chờ tất cả các tác vụ song song hoàn thành
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // Chờ hoàn tất
         
-        // Step 3: Combine results
+        // Bước 3: Kết hợp kết quả
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // Bước 4: Tạo báo cáo tóm tắt
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // Trả về kết quả toàn bộ quy trình
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1403,9 +1869,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Mẫu Phục Hồi Lỗi
+### 4. Error Recovery Pattern
 
-Triển khai các phương án dự phòng nhẹ nhàng khi công cụ gặp lỗi:
+Implement graceful fallbacks for tool failures:
 
 ```python
 class ResilientWorkflow:
@@ -1414,7 +1880,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # Thử công cụ chính trước
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1422,12 +1888,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
-            logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
+            # Ghi lại lỗi
+            logging.warning(f"Công cụ chính '{primary_tool}' thất bại: {str(e)}")
             
-            # Fall back to secondary tool
+            # Chuyển sang công cụ dự phòng
             try:
-                # Might need to transform parameters for fallback tool
+                # Có thể cần điều chỉnh tham số cho công cụ dự phòng
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1438,30 +1904,30 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
-                logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
+                # Cả hai công cụ đều thất bại
+                logging.error(f"Cả công cụ chính và dự phòng đều thất bại. Lỗi dự phòng: {str(fallback_error)}")
                 raise WorkflowExecutionException(
-                    f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
+                    f"Quy trình thất bại: lỗi chính: {str(e)}; lỗi dự phòng: {str(fallback_error)}"
                 )
     
     def _adapt_parameters(self, params, from_tool, to_tool):
-        """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        """Điều chỉnh tham số giữa các công cụ nếu cần"""
+        # Cách thực hiện phụ thuộc vào từng công cụ cụ thể
+        # Ở ví dụ này, chúng ta chỉ trả về tham số gốc
         return params
 
-# Example usage
+# Ví dụ sử dụng
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # API thời tiết chính (trả phí)
+        "basicWeatherService",    # API thời tiết dự phòng (miễn phí)
         {"location": location}
     )
 ```
 
-### 5. Mẫu Kết Hợp Quy Trình
+### 5. Workflow Composition Pattern
 
-Xây dựng các quy trình phức tạp bằng cách kết hợp các quy trình đơn giản hơn:
+Build complex workflows by composing simpler ones:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1481,10 +1947,10 @@ public class CompositeWorkflow : IWorkflow
         {
             var workflowResult = await workflow.ExecuteAsync(context);
             
-            // Store each workflow's result
+            // Lưu kết quả của từng workflow
             results[workflow.Name] = workflowResult;
             
-            // Update context with the result for the next workflow
+            // Cập nhật context với kết quả cho workflow tiếp theo
             context = context.WithResult(workflow.Name, workflowResult);
         }
         
@@ -1492,10 +1958,10 @@ public class CompositeWorkflow : IWorkflow
     }
     
     public string Name => "CompositeWorkflow";
-    public string Description => "Executes multiple workflows in sequence";
+    public string Description => "Thực thi nhiều workflow theo thứ tự";
 }
 
-// Example usage
+// Ví dụ sử dụng
 var documentWorkflow = new CompositeWorkflow(new IWorkflow[] {
     new DocumentFetchWorkflow(),
     new DocumentProcessingWorkflow(),
@@ -1508,44 +1974,44 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# Kiểm Thử Máy Chủ MCP: Thực Tiễn Tốt Nhất và Mẹo Hàng Đầu
+# Testing MCP Servers: Best Practices and Top Tips
 
-## Tổng Quan
+## Overview
 
-Kiểm thử là một khía cạnh quan trọng trong việc phát triển các máy chủ MCP đáng tin cậy và chất lượng cao. Hướng dẫn này cung cấp các thực tiễn tốt nhất và mẹo toàn diện để kiểm thử máy chủ MCP trong suốt vòng đời phát triển, từ kiểm thử đơn vị đến kiểm thử tích hợp và xác thực đầu-cuối.
+Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
 
-## Tại Sao Kiểm Thử Quan Trọng Với Máy Chủ MCP
+## Why Testing Matters for MCP Servers
 
-Máy chủ MCP đóng vai trò trung gian quan trọng giữa các mô hình AI và ứng dụng khách. Kiểm thử kỹ lưỡng đảm bảo:
+MCP servers serve as crucial middleware between AI models and client applications. Thorough testing ensures:
 
-- Độ tin cậy trong môi trường sản xuất
-- Xử lý chính xác các yêu cầu và phản hồi
-- Triển khai đúng các đặc tả MCP
-- Khả năng chịu lỗi và xử lý các trường hợp biên
-- Hiệu suất ổn định dưới các mức tải khác nhau
+- Reliability in production environments
+- Accurate handling of requests and responses
+- Proper implementation of MCP specifications
+- Resilience against failures and edge cases
+- Consistent performance under various loads
 
-## Kiểm Thử Đơn Vị Cho Máy Chủ MCP
+## Unit Testing for MCP Servers
 
-### Kiểm Thử Đơn Vị (Nền Tảng)
+### Unit Testing (Foundation)
 
-Kiểm thử đơn vị xác minh các thành phần riêng lẻ của máy chủ MCP một cách độc lập.
+Unit tests verify individual components of your MCP server in isolation.
 
-#### Những Gì Cần Kiểm Thử
+#### What to Test
 
-1. **Bộ Xử Lý Tài Nguyên**: Kiểm thử logic của từng bộ xử lý tài nguyên riêng biệt
-2. **Triển Khai Công Cụ**: Xác minh hành vi công cụ với các đầu vào khác nhau
-3. **Mẫu Lời Nhắc**: Đảm bảo mẫu lời nhắc hiển thị đúng
-4. **Xác Thực Schema**: Kiểm thử logic xác thực tham số
-5. **Xử Lý Lỗi**: Xác minh phản hồi lỗi với đầu vào không hợp lệ
+1. **Resource Handlers**: Test each resource handler's logic independently
+2. **Tool Implementations**: Verify tool behavior with various inputs
+3. **Prompt Templates**: Ensure prompt templates render correctly
+4. **Schema Validation**: Test parameter validation logic
+5. **Error Handling**: Verify error responses for invalid inputs
 
-#### Thực Tiễn Tốt Nhất Cho Kiểm Thử Đơn Vị
+#### Best Practices for Unit Testing
 
 ```csharp
-// Example unit test for a calculator tool in C#
+// Ví dụ unit test cho công cụ calculator trong C#
 [Fact]
 public async Task CalculatorTool_Add_ReturnsCorrectSum()
 {
-    // Arrange
+    // Chuẩn bị
     var calculator = new CalculatorTool();
     var parameters = new Dictionary<string, object>
     {
@@ -1554,19 +2020,19 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
         ["b"] = 7
     };
     
-    // Act
+    // Thực thi
     var response = await calculator.ExecuteAsync(parameters);
     var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
     
-    // Assert
+    // Kiểm tra
     Assert.Equal(12, result.Value);
 }
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# Ví dụ unit test cho công cụ calculator trong Python
 def test_calculator_tool_add():
-    # Arrange
+    # Chuẩn bị
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -1574,34 +2040,34 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # Thực thi
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # Kiểm tra
     assert result["value"] == 12
 ```
 
-### Kiểm Thử Tích Hợp (Lớp Trung Gian)
+### Integration Testing (Middle Layer)
 
-Kiểm thử tích hợp xác minh sự tương tác giữa các thành phần của máy chủ MCP.
+Integration tests verify interactions between components of your MCP server.
 
-#### Những Gì Cần Kiểm Thử
+#### What to Test
 
-1. **Khởi Tạo Máy Chủ**: Kiểm thử khởi động máy chủ với các cấu hình khác nhau
-2. **Đăng Ký Đường Dẫn**: Xác minh tất cả các điểm cuối được đăng ký chính xác
-3. **Xử Lý Yêu Cầu**: Kiểm thử toàn bộ chu trình yêu cầu-phản hồi
-4. **Phân Tán Lỗi**: Đảm bảo lỗi được xử lý đúng qua các thành phần
-5. **Xác Thực & Ủy Quyền**: Kiểm thử các cơ chế bảo mật
+1. **Server Initialization**: Test server startup with various configurations
+2. **Route Registration**: Verify all endpoints are correctly registered
+3. **Request Processing**: Test the full request-response cycle
+4. **Error Propagation**: Ensure errors are properly handled across components
+5. **Authentication & Authorization**: Test security mechanisms
 
-#### Thực Tiễn Tốt Nhất Cho Kiểm Thử Tích Hợp
+#### Best Practices for Integration Testing
 
 ```csharp
-// Example integration test for MCP server in C#
+// Ví dụ integration test cho server MCP trong C#
 [Fact]
 public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 {
-    // Arrange
+    // Chuẩn bị
     var server = new McpServer();
     server.RegisterTool(new CalculatorTool());
     await server.StartAsync();
@@ -1617,40 +2083,40 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
         }
     };
     
-    // Act
+    // Thực thi
     var response = await server.ProcessRequestAsync(request);
     
-    // Assert
+    // Kiểm tra
     Assert.NotNull(response);
     Assert.Equal(McpStatusCodes.Success, response.StatusCode);
-    // Additional assertions for response content
+    // Các kiểm tra bổ sung cho nội dung phản hồi
     
-    // Cleanup
+    // Dọn dẹp
     await server.StopAsync();
 }
 ```
 
-### Kiểm Thử Đầu-cuối (Lớp Trên Cùng)
+### End-to-End Testing (Top Layer)
 
-Kiểm thử đầu-cuối xác minh hành vi toàn bộ hệ thống từ khách đến máy chủ.
+End-to-end tests verify the complete system behavior from client to server.
 
-#### Những Gì Cần Kiểm Thử
+#### What to Test
 
-1. **Giao Tiếp Khách-Máy Chủ**: Kiểm thử chu trình yêu cầu-phản hồi hoàn chỉnh
-2. **SDK Khách Thực Tế**: Kiểm thử với các triển khai khách thực tế
-3. **Hiệu Suất Dưới Tải**: Xác minh hành vi với nhiều yêu cầu đồng thời
-4. **Phục Hồi Lỗi**: Kiểm thử khả năng phục hồi hệ thống sau lỗi
-5. **Thao Tác Dài Hạn**: Xác minh xử lý luồng dữ liệu và các thao tác kéo dài
+1. **Client-Server Communication**: Test complete request-response cycles
+2. **Real Client SDKs**: Test with actual client implementations
+3. **Performance Under Load**: Verify behavior with multiple concurrent requests
+4. **Error Recovery**: Test system recovery from failures
+5. **Long-Running Operations**: Verify handling of streaming and long operations
 
-#### Thực Tiễn Tốt Nhất Cho Kiểm Thử Đầu-cuối
+#### Best Practices for E2E Testing
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// Ví dụ E2E test với client trong TypeScript
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // Khởi động server trong môi trường test
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -1659,36 +2125,36 @@ describe('MCP Server E2E Tests', () => {
     await stopTestServer();
   });
   
-  test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+  test('Client có thể gọi công cụ calculator và nhận kết quả đúng', async () => {
+    // Thực thi
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // Kiểm tra
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
 });
 ```
 
-## Chiến Lược Giả Lập Cho Kiểm Thử MCP
+## Mocking Strategies for MCP Testing
 
-Giả lập là cần thiết để cô lập các thành phần trong quá trình kiểm thử.
+Mocking is essential for isolating components during testing.
 
-### Các Thành Phần Cần Giả Lập
+### Components to Mock
 
-1. **Mô Hình AI Bên Ngoài**: Giả lập phản hồi mô hình để kiểm thử có thể dự đoán
-2. **Dịch Vụ Bên Ngoài**: Giả lập các API phụ thuộc (cơ sở dữ liệu, dịch vụ bên thứ ba)
-3. **Dịch Vụ Xác Thực**: Giả lập nhà cung cấp định danh
-4. **Nhà Cung Cấp Tài Nguyên**: Giả lập các bộ xử lý tài nguyên tốn kém
+1. **External AI Models**: Mock model responses for predictable testing
+2. **External Services**: Mock API dependencies (databases, third-party services)
+3. **Authentication Services**: Mock identity providers
+4. **Resource Providers**: Mock expensive resource handlers
 
-### Ví Dụ: Giả Lập Phản Hồi Mô Hình AI
+### Example: Mocking an AI Model Response
 
 ```csharp
-// C# example with Moq
+// Ví dụ C# với Moq
 var mockModel = new Mock<ILanguageModel>();
 mockModel
     .Setup(m => m.GenerateResponseAsync(
@@ -1703,48 +2169,48 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# Ví dụ Python với unittest.mock
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
+    # Cấu hình mock
     mock_model.return_value.generate_response.return_value = {
         "text": "Mocked model response",
         "finish_reason": "completed"
     }
     
-    # Use mock in test
+    # Sử dụng mock trong test
     server = McpServer(model_client=mock_model)
-    # Continue with test
+    # Tiếp tục với test
 ```
 
-## Kiểm Thử Hiệu Suất
+## Performance Testing
 
-Kiểm thử hiệu suất rất quan trọng cho các máy chủ MCP trong môi trường sản xuất.
+Performance testing is crucial for production MCP servers.
 
-### Những Gì Cần Đo Lường
+### What to Measure
 
-1. **Độ Trễ**: Thời gian phản hồi cho các yêu cầu
-2. **Thông Lượng**: Số yêu cầu xử lý mỗi giây
-3. **Sử Dụng Tài Nguyên**: CPU, bộ nhớ, mạng
-4. **Xử Lý Đồng Thời**: Hành vi dưới các yêu cầu song song
-5. **Đặc Tính Mở Rộng**: Hiệu suất khi tải tăng
+1. **Latency**: Response time for requests
+2. **Throughput**: Requests handled per second
+3. **Resource Utilization**: CPU, memory, network usage
+4. **Concurrency Handling**: Behavior under parallel requests
+5. **Scaling Characteristics**: Performance as load increases
 
-### Công Cụ Kiểm Thử Hiệu Suất
+### Tools for Performance Testing
 
-- **k6**: Công cụ kiểm thử tải mã nguồn mở
-- **JMeter**: Kiểm thử hiệu suất toàn diện
-- **Locust**: Kiểm thử tải dựa trên Python
-- **Azure Load Testing**: Kiểm thử hiệu suất trên đám mây
+- **k6**: Open-source load testing tool
+- **JMeter**: Comprehensive performance testing
+- **Locust**: Python-based load testing
+- **Azure Load Testing**: Cloud-based performance testing
 
-### Ví Dụ: Kiểm Thử Tải Cơ Bản Với k6
+### Example: Basic Load Test with k6
 
 ```javascript
-// k6 script for load testing MCP server
+// k6 script để kiểm thử tải cho MCP server
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10 virtual users
+  vus: 10,  // 10 người dùng ảo
   duration: '30s',
 };
 
@@ -1768,26 +2234,26 @@ export default function () {
   const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
   
   check(res, {
-    'status is 200': (r) => r.status === 200,
-    'response time < 500ms': (r) => r.timings.duration < 500,
+    'status là 200': (r) => r.status === 200,
+    'thời gian phản hồi < 500ms': (r) => r.timings.duration < 500,
   });
   
   sleep(1);
 }
 ```
 
-## Tự Động Hóa Kiểm Thử Cho Máy Chủ MCP
+## Test Automation for MCP Servers
 
-Tự động hóa kiểm thử giúp đảm bảo chất lượng nhất quán và rút ngắn vòng phản hồi.
+Automating your tests ensures consistent quality and faster feedback loops.
 
-### Tích Hợp CI/CD
+### CI/CD Integration
 
-1. **Chạy Kiểm Thử Đơn Vị Khi Có Pull Request**: Đảm bảo thay đổi mã không làm hỏng chức năng hiện có
-2. **Kiểm Thử Tích Hợp Trong Môi Trường Staging**: Chạy kiểm thử tích hợp trong môi trường tiền sản xuất
-3. **Duy Trì Chuẩn Hiệu Suất**: Giữ các chuẩn hiệu suất để phát hiện suy giảm
-4. **Quét Bảo Mật**: Tự động kiểm thử bảo mật trong pipeline
+1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
+2. **Integration Tests in Staging**: Run integration tests in pre-production environments
+3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
+4. **Security Scans**: Automate security testing as part of the pipeline
 
-### Ví Dụ Pipeline CI (GitHub Actions)
+### Example CI Pipeline (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -1805,15 +2271,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Set up Runtime
+    - name: Thiết lập Runtime
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '8.0.x'
     
-    - name: Restore dependencies
+    - name: Khôi phục phụ thuộc
       run: dotnet restore
     
-    - name: Build
+    - name: Xây dựng
       run: dotnet build --no-restore
     
     - name: Unit Tests
@@ -1826,78 +2292,99 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## Kiểm Thử Tuân Thủ Đặc Tả MCP
+## Testing for Compliance with MCP Specification
 
-Xác minh máy chủ của bạn triển khai đúng đặc tả MCP.
+Verify your server correctly implements the MCP specification.
 
-### Các Lĩnh Vực Tuân Thủ Chính
+### Key Compliance Areas
 
-1. **Các Điểm Cuối API**: Kiểm thử các điểm cuối bắt buộc (/resources, /tools, v.v.)
-2. **Định Dạng Yêu Cầu/Phản Hồi**: Xác thực tuân thủ schema
-3. **Mã Lỗi**: Xác minh mã trạng thái đúng cho các tình huống khác nhau
-4. **Loại Nội Dung**: Kiểm thử xử lý các loại nội dung khác nhau
-5. **Luồng Xác Thực**: Xác minh cơ chế xác thực tuân thủ đặc tả
+1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
+2. **Request/Response Format**: Validate schema compliance
+3. **Error Codes**: Verify correct status codes for various scenarios
+4. **Content Types**: Test handling of different content types
+5. **Authentication Flow**: Verify spec-compliant auth mechanisms
 
-### Bộ Kiểm Thử Tuân Thủ
+### Compliance Test Suite
 
 ```csharp
 [Fact]
 public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 {
-    // Arrange
+    // Chuẩn bị
     var client = new HttpClient();
     client.DefaultRequestHeaders.Add("Authorization", "Bearer test-token");
     
-    // Act
+    // Thực thi
     var response = await client.GetAsync("http://localhost:5000/api/resources");
     var content = await response.Content.ReadAsStringAsync();
-    var resources = JsonSerializer.Deserialize<ResourceList>(content);
-    
-    // Assert
-    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-    Assert.NotNull(resources);
-    Assert.All(resources.Resources, resource => 
-    {
-        Assert.NotNull(resource.Id);
-        Assert.NotNull(resource.Type);
-        // Additional schema validation
-    });
+    var resources = JsonSerializer.Deserialize
+
+// Assert
+Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+Assert.NotNull(resources);
+Assert.All(resources.Resources, resource => 
+{
+    Assert.NotNull(resource.Id);
+    Assert.NotNull(resource.Type);
+    // Kiểm tra thêm về schema
+});
 }
 ```
 
-## 10 Mẹo Hàng Đầu Cho Kiểm Thử Máy Chủ MCP Hiệu Quả
+## 10 mẹo hàng đầu để kiểm thử MCP Server hiệu quả
 
-1. **Kiểm Thử Định Nghĩa Công Cụ Riêng Biệt**: Xác minh schema độc lập với logic công cụ
-2. **Sử Dụng Kiểm Thử Tham Số**: Kiểm thử công cụ với nhiều đầu vào khác nhau, bao gồm các trường hợp biên
-3. **Kiểm Tra Phản Hồi Lỗi**: Xác minh xử lý lỗi đúng cho mọi điều kiện lỗi có thể xảy ra
-4. **Kiểm Thử Logic Ủy Quyền**: Đảm bảo kiểm soát truy cập đúng cho các vai trò người dùng khác nhau
-5. **Giám Sát Độ Bao Phủ Kiểm Thử**: Hướng tới độ bao phủ cao cho các đoạn mã quan trọng
-6. **Kiểm Thử Phản Hồi Luồng**: Xác minh xử lý đúng nội dung luồng
-7. **Mô Phỏng Sự Cố Mạng**: Kiểm thử hành vi dưới điều kiện mạng kém
-8. **Kiểm Thử Giới Hạn Tài Nguyên**: Xác minh hành vi khi đạt giới hạn quota hoặc tốc độ
-9. **Tự Động Hóa Kiểm Thử Hồi Quy**: Xây dựng bộ kiểm thử chạy mỗi khi có thay đổi mã
-10. **Tài Liệu Hóa Các Trường Hợp Kiểm Thử**: Duy trì tài liệu rõ ràng về các kịch bản kiểm thử
+1. **Kiểm thử định nghĩa công cụ riêng biệt**: Xác minh các định nghĩa schema độc lập với logic công cụ  
+2. **Sử dụng kiểm thử tham số hóa**: Kiểm thử công cụ với nhiều đầu vào khác nhau, bao gồm cả các trường hợp biên  
+3. **Kiểm tra phản hồi lỗi**: Đảm bảo xử lý lỗi đúng cho tất cả các điều kiện lỗi có thể xảy ra  
+4. **Kiểm thử logic phân quyền**: Đảm bảo kiểm soát truy cập chính xác cho các vai trò người dùng khác nhau  
+5. **Theo dõi độ bao phủ kiểm thử**: Hướng tới độ bao phủ cao cho các đoạn mã quan trọng  
+6. **Kiểm thử phản hồi dạng streaming**: Xác minh xử lý đúng nội dung streaming  
+7. **Mô phỏng sự cố mạng**: Kiểm thử hành vi khi mạng yếu hoặc không ổn định  
+8. **Kiểm thử giới hạn tài nguyên**: Xác minh hành vi khi đạt đến hạn mức hoặc giới hạn tốc độ  
+9. **Tự động hóa kiểm thử hồi quy**: Xây dựng bộ kiểm thử chạy tự động mỗi khi có thay đổi mã  
+10. **Ghi chép các trường hợp kiểm thử**: Duy trì tài liệu rõ ràng về các kịch bản kiểm thử  
 
-## Những Sai Lầm Thường Gặp Khi Kiểm Thử
+## Những sai lầm phổ biến khi kiểm thử
 
-- **Quá phụ thuộc vào kiểm thử đường dẫn thuận lợi**: Hãy chắc chắn kiểm thử kỹ các trường hợp lỗi
-- **Bỏ qua kiểm thử hiệu suất**: Xác định điểm nghẽn trước khi ảnh hưởng đến sản xuất
-- **Chỉ kiểm thử riêng lẻ**: Kết hợp kiểm thử đơn vị, tích hợp và đầu-cuối
-- **Bao phủ API không đầy đủ**: Đảm bảo tất cả điểm cuối và tính năng được kiểm thử
-- **Môi trường kiểm thử không nhất quán**: Sử dụng container để đảm bảo môi trường kiểm thử đồng nhất
+- **Quá phụ thuộc vào kiểm thử đường chính (happy path)**: Hãy chắc chắn kiểm thử kỹ các trường hợp lỗi  
+- **Bỏ qua kiểm thử hiệu năng**: Phát hiện các điểm nghẽn trước khi ảnh hưởng đến môi trường sản xuất  
+- **Chỉ kiểm thử riêng lẻ**: Kết hợp kiểm thử đơn vị, tích hợp và end-to-end  
+- **Bao phủ API không đầy đủ**: Đảm bảo tất cả các endpoint và tính năng đều được kiểm thử  
+- **Môi trường kiểm thử không đồng nhất**: Sử dụng container để đảm bảo môi trường kiểm thử nhất quán  
 
-## Kết Luận
+## Kết luận
 
-Chiến lược kiểm thử toàn diện là yếu tố thiết yếu để phát triển các máy chủ MCP đáng tin cậy và chất lượng cao. Bằng cách áp dụng các thực tiễn và mẹo được trình bày trong hướng dẫn này, bạn có thể đảm bảo các triển khai MCP của mình đạt tiêu chuẩn cao nhất về chất lượng, độ tin cậy và hiệu suất.
+Một chiến lược kiểm thử toàn diện là điều cần thiết để phát triển các MCP server đáng tin cậy và chất lượng cao. Bằng cách áp dụng các thực hành và mẹo tốt nhất được trình bày trong hướng dẫn này, bạn có thể đảm bảo các triển khai MCP của mình đạt tiêu chuẩn cao nhất về chất lượng, độ tin cậy và hiệu suất.
 
-## Những Điểm Chính Cần Nhớ
+## Những điểm chính cần nhớ
 
-1. **Thiết Kế Công Cụ**: Tuân theo nguyên tắc trách nhiệm đơn, sử dụng tiêm phụ thuộc và thiết kế để có thể kết hợp
-2. **Thiết Kế Schema**: Tạo schema rõ ràng, có tài liệu đầy đủ với các ràng buộc xác thực phù hợp
-3. **Xử Lý Lỗi**: Triển khai xử lý lỗi nhẹ nhàng, phản hồi lỗi có cấu trúc và logic thử lại
-4. **Hiệu Suất**: Sử dụng bộ
-5. Hãy cân nhắc tham gia các khóa học nâng cao về các chủ đề MCP cụ thể, chẳng hạn như tích hợp đa phương thức hoặc tích hợp ứng dụng doanh nghiệp.  
-6. Thử nghiệm xây dựng các công cụ và quy trình làm việc MCP của riêng bạn dựa trên các nguyên tắc đã học qua [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+1. **Thiết kế công cụ**: Tuân theo nguyên tắc trách nhiệm đơn, sử dụng dependency injection và thiết kế để dễ kết hợp  
+2. **Thiết kế schema**: Tạo schema rõ ràng, có tài liệu đầy đủ và các ràng buộc xác thực hợp lý  
+3. **Xử lý lỗi**: Triển khai xử lý lỗi mượt mà, phản hồi lỗi có cấu trúc và logic thử lại  
+4. **Hiệu năng**: Sử dụng caching, xử lý bất đồng bộ và giới hạn tài nguyên  
+5. **Bảo mật**: Áp dụng kiểm tra đầu vào kỹ lưỡng, kiểm tra phân quyền và xử lý dữ liệu nhạy cảm  
+6. **Kiểm thử**: Tạo bộ kiểm thử đơn vị, tích hợp và end-to-end toàn diện  
+7. **Mẫu quy trình làm việc**: Áp dụng các mẫu đã được chứng minh như chuỗi, bộ điều phối và xử lý song song  
+
+## Bài tập
+
+Thiết kế một công cụ MCP và quy trình làm việc cho hệ thống xử lý tài liệu mà:
+
+1. Nhận tài liệu ở nhiều định dạng khác nhau (PDF, DOCX, TXT)  
+2. Trích xuất văn bản và thông tin chính từ tài liệu  
+3. Phân loại tài liệu theo loại và nội dung  
+4. Tạo bản tóm tắt cho mỗi tài liệu  
+
+Triển khai schema công cụ, xử lý lỗi và mẫu quy trình làm việc phù hợp nhất với kịch bản này. Hãy cân nhắc cách bạn sẽ kiểm thử triển khai này.
+
+## Tài nguyên
+
+1. Tham gia cộng đồng MCP trên [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) để cập nhật các phát triển mới nhất  
+2. Đóng góp vào các dự án mã nguồn mở [MCP projects](https://github.com/modelcontextprotocol)  
+3. Áp dụng các nguyên tắc MCP trong các sáng kiến AI của tổ chức bạn  
+4. Khám phá các triển khai MCP chuyên biệt cho ngành của bạn  
+5. Cân nhắc tham gia các khóa học nâng cao về các chủ đề MCP cụ thể, như tích hợp đa phương thức hoặc tích hợp ứng dụng doanh nghiệp  
+6. Thử nghiệm xây dựng công cụ và quy trình MCP của riêng bạn dựa trên các nguyên tắc học được qua [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
 Tiếp theo: Các thực hành tốt nhất [case studies](../09-CaseStudy/README.md)
 

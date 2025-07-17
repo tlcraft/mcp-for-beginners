@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T03:59:15+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T05:36:12+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "el"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Επισκόπηση
 
-Αυτό το μάθημα εστιάζει στο πώς να συμμετέχετε στην κοινότητα MCP, να συνεισφέρετε στο οικοσύστημα MCP και να ακολουθείτε βέλτιστες πρακτικές για συνεργατική ανάπτυξη. Η κατανόηση του τρόπου συμμετοχής σε ανοιχτού κώδικα έργα MCP είναι απαραίτητη για όσους θέλουν να διαμορφώσουν το μέλλον αυτής της τεχνολογίας.
+Αυτό το μάθημα εστιάζει στο πώς να συμμετέχετε στην κοινότητα MCP, να συνεισφέρετε στο οικοσύστημα MCP και να ακολουθείτε βέλτιστες πρακτικές για συνεργατική ανάπτυξη. Η κατανόηση του τρόπου συμμετοχής σε έργα ανοιχτού κώδικα MCP είναι απαραίτητη για όσους θέλουν να διαμορφώσουν το μέλλον αυτής της τεχνολογίας.
 
 ## Στόχοι Μάθησης
 
@@ -19,8 +19,9 @@ CO_OP_TRANSLATOR_METADATA:
 - Κατανοείτε τη δομή της κοινότητας και του οικοσυστήματος MCP
 - Συμμετέχετε αποτελεσματικά σε φόρουμ και συζητήσεις της κοινότητας MCP
 - Συνεισφέρετε σε αποθετήρια ανοιχτού κώδικα MCP
-- Δημιουργείτε και μοιράζεστε προσαρμοσμένα εργαλεία MCP
-- Ακολουθείτε βέλτιστες πρακτικές για ανάπτυξη και συνεργασία στο MCP
+- Δημιουργείτε και μοιράζεστε προσαρμοσμένα εργαλεία και servers MCP
+- Ακολουθείτε βέλτιστες πρακτικές για ανάπτυξη και συνεργασία MCP
+- Ανακαλύπτετε πόρους και πλαίσια της κοινότητας για ανάπτυξη MCP
 
 ## Το Οικοσύστημα της Κοινότητας MCP
 
@@ -28,27 +29,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Κύρια Στοιχεία της Κοινότητας
 
-1. **Διαχειριστές Πρωτοκόλλου**: Η Microsoft και άλλοι οργανισμοί που διατηρούν τις βασικές προδιαγραφές MCP και τις αναφορικές υλοποιήσεις
-2. **Προγραμματιστές Εργαλείων**: Άτομα και ομάδες που δημιουργούν εργαλεία MCP
+1. **Διαχειριστές Πυρήνα Πρωτοκόλλου**: Η επίσημη [Model Context Protocol GitHub οργάνωση](https://github.com/modelcontextprotocol) διαχειρίζεται τις βασικές προδιαγραφές MCP και τις αναφορικές υλοποιήσεις
+2. **Αναπτυξιακές Ομάδες Εργαλείων**: Άτομα και ομάδες που δημιουργούν εργαλεία και servers MCP
 3. **Πάροχοι Ενσωμάτωσης**: Εταιρείες που ενσωματώνουν το MCP στα προϊόντα και τις υπηρεσίες τους
 4. **Τελικοί Χρήστες**: Προγραμματιστές και οργανισμοί που χρησιμοποιούν το MCP στις εφαρμογές τους
 5. **Συνεισφέροντες**: Μέλη της κοινότητας που προσφέρουν κώδικα, τεκμηρίωση ή άλλους πόρους
 
-### Πόροι Κοινότητας
+### Πόροι της Κοινότητας
 
 #### Επίσημα Κανάλια
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub Οργάνωση](https://github.com/modelcontextprotocol)
+- [MCP Τεκμηρίωση](https://modelcontextprotocol.io/)
+- [MCP Προδιαγραφή](https://modelcontextprotocol.io/docs/specification)
+- [GitHub Συζητήσεις](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Αποθετήριο Παραδειγμάτων & Servers MCP](https://github.com/modelcontextprotocol/servers)
 
-#### Πόροι που Δημιουργούνται από την Κοινότητα
+#### Πόροι που Οδηγούνται από την Κοινότητα
 
-- Υλοποιήσεις SDK για συγκεκριμένες γλώσσες
-- Υλοποιήσεις server και βιβλιοθήκες εργαλείων
-- Αναρτήσεις σε blogs και εκπαιδευτικά άρθρα
-- Φόρουμ κοινότητας και συζητήσεις στα κοινωνικά δίκτυα
+- [MCP Clients](https://modelcontextprotocol.io/clients) - Λίστα πελατών που υποστηρίζουν ενσωματώσεις MCP
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Αναπτυσσόμενη λίστα servers MCP που έχουν δημιουργηθεί από την κοινότητα
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Επιμελημένη λίστα servers MCP
+- [PulseMCP](https://www.pulsemcp.com/) - Κέντρο κοινότητας & ενημερωτικό δελτίο για την ανακάλυψη πόρων MCP
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - Συνδεθείτε με προγραμματιστές MCP
+- Υλοποιήσεις SDK ανά γλώσσα
+- Αναρτήσεις σε blogs και tutorials
 
 ## Συνεισφορά στο MCP
 
@@ -59,178 +64,89 @@ CO_OP_TRANSLATOR_METADATA:
 1. **Συνεισφορές Κώδικα**:
    - Βελτιώσεις στον πυρήνα του πρωτοκόλλου
    - Διορθώσεις σφαλμάτων
-   - Υλοποιήσεις εργαλείων
-   - Βιβλιοθήκες πελάτη/server σε διάφορες γλώσσες
+   - Υλοποιήσεις εργαλείων και servers
+   - Βιβλιοθήκες πελατών/servers σε διάφορες γλώσσες
 
 2. **Τεκμηρίωση**:
    - Βελτίωση υπάρχουσας τεκμηρίωσης
-   - Δημιουργία εκπαιδευτικών οδηγών και tutorials
+   - Δημιουργία tutorials και οδηγών
    - Μετάφραση τεκμηρίωσης
    - Δημιουργία παραδειγμάτων και δειγματικών εφαρμογών
 
 3. **Υποστήριξη Κοινότητας**:
-   - Απάντηση σε ερωτήσεις σε φόρουμ
+   - Απαντήσεις σε ερωτήσεις σε φόρουμ και συζητήσεις
    - Δοκιμές και αναφορά προβλημάτων
    - Οργάνωση εκδηλώσεων κοινότητας
    - Καθοδήγηση νέων συνεισφερόντων
 
 ### Διαδικασία Συνεισφοράς: Πυρήνας Πρωτοκόλλου
 
-Για να συνεισφέρετε στον πυρήνα του πρωτοκόλλου MCP ή στις επίσημες υλοποιήσεις:
+Για να συνεισφέρετε στον πυρήνα του MCP ή στις επίσημες υλοποιήσεις, ακολουθήστε τις αρχές από τις [επίσημες οδηγίες συνεισφοράς](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### Παράδειγμα .NET: Συνεισφορά σε Βελτίωση Πρωτοκόλλου
+1. **Απλότητα και Μινιμαλισμός**: Η προδιαγραφή MCP διατηρεί υψηλό επίπεδο για την προσθήκη νέων εννοιών. Είναι πιο εύκολο να προσθέσεις κάτι σε μια προδιαγραφή παρά να το αφαιρέσεις.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **Συγκεκριμένη Προσέγγιση**: Οι αλλαγές στην προδιαγραφή πρέπει να βασίζονται σε συγκεκριμένες προκλήσεις υλοποίησης, όχι σε υποθετικές ιδέες.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **Στάδια Πρότασης**:
+   - Ορισμός: Εξερευνήστε το πρόβλημα, επιβεβαιώστε ότι και άλλοι χρήστες MCP αντιμετωπίζουν παρόμοιο ζήτημα
+   - Πρωτότυπο: Δημιουργήστε ένα παράδειγμα λύσης και δείξτε την πρακτική εφαρμογή της
+   - Γραφή: Βάσει του πρωτοτύπου, γράψτε μια πρόταση προδιαγραφής
+
+### Ρύθμιση Περιβάλλοντος Ανάπτυξης
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Παράδειγμα Java: Συνεισφορά σε Διόρθωση Σφάλματος
+### Παράδειγμα: Συνεισφορά Διόρθωσης Σφάλματος
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Παράδειγμα Python: Συνεισφορά Νέου Εργαλείου στη Βιβλιοθήκη Standard
+### Παράδειγμα: Συνεισφορά Νέου Εργαλείου στη Βιβλιοθήκη Standard
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -405,8 +321,8 @@ class CsvProcessingTool(Tool):
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,13 +343,31 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Δημιουργία και Κοινοποίηση Προσαρμοσμένων Εργαλείων MCP
+## Δημιουργία και Κοινοποίηση Servers MCP
 
-Ένας από τους πιο πολύτιμους τρόπους να συνεισφέρετε στο οικοσύστημα MCP είναι δημιουργώντας και μοιράζοντας προσαρμοσμένα εργαλεία.
+Ένας από τους πιο πολύτιμους τρόπους να συνεισφέρετε στο οικοσύστημα MCP είναι δημιουργώντας και μοιράζοντας προσαρμοσμένους servers MCP. Η κοινότητα έχει ήδη αναπτύξει εκατοντάδες servers για διάφορες υπηρεσίες και χρήσεις.
 
-### Ανάπτυξη Εργαλείων για Κοινοποίηση
+### Πλαίσια Ανάπτυξης Servers MCP
 
-#### Παράδειγμα .NET: Δημιουργία Πακέτου Εργαλείου για Κοινοποίηση
+Υπάρχουν αρκετά πλαίσια που απλοποιούν την ανάπτυξη servers MCP:
+
+1. **Επίσημα SDKs**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **Πλαίσια Κοινότητας**:
+   - [MCP-Framework](https://mcp-framework.com/) - Δημιουργήστε servers MCP με κομψότητα και ταχύτητα σε TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Servers MCP με οδηγίες μέσω annotations σε Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Πλαίσιο Java για servers MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Αρχικό project Next.js για servers MCP
+
+### Ανάπτυξη Κοινοποιήσιμων Εργαλείων
+
+#### Παράδειγμα .NET: Δημιουργία Πακέτου Κοινοποιήσιμου Εργαλείου
 
 ```csharp
 // Create a new .NET library project
@@ -642,7 +574,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Παράδειγμα Python: Δημοσίευση Πακέτου στο PyPI
+#### Παράδειγμα Python: Δημοσίευση Πακέτου PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -759,12 +691,12 @@ class SentimentAnalysisTool(Tool):
 2. **Διαχείριση Σφαλμάτων**:
    - Υλοποιήστε αξιόπιστη διαχείριση σφαλμάτων
    - Παρέχετε χρήσιμα μηνύματα σφάλματος
-   - Αντιμετωπίστε με ευελιξία ακραίες περιπτώσεις
+   - Αντιμετωπίστε περιπτώσεις άκρων με ευελιξία
 
 3. **Επιδόσεις**:
    - Βελτιστοποιήστε για ταχύτητα και χρήση πόρων
    - Υλοποιήστε caching όπου χρειάζεται
-   - Λάβετε υπόψη τη δυνατότητα κλιμάκωσης
+   - Λάβετε υπόψη την κλιμάκωση
 
 4. **Ασφάλεια**:
    - Χρησιμοποιήστε ασφαλή API keys και αυθεντικοποίηση
@@ -773,7 +705,7 @@ class SentimentAnalysisTool(Tool):
 
 5. **Δοκιμές**:
    - Συμπεριλάβετε εκτενή κάλυψη δοκιμών
-   - Δοκιμάστε με διαφορετικούς τύπους εισόδων και ακραίες περιπτώσεις
+   - Δοκιμάστε με διαφορετικούς τύπους εισόδων και περιπτώσεις άκρων
    - Τεκμηριώστε τις διαδικασίες δοκιμών
 
 ## Συνεργασία Κοινότητας και Βέλτιστες Πρακτικές
@@ -782,7 +714,7 @@ class SentimentAnalysisTool(Tool):
 
 ### Κανάλια Επικοινωνίας
 
-- GitHub Issues και Discussions
+- GitHub Issues και Συζητήσεις
 - Microsoft Tech Community
 - Κανάλια Discord και Slack
 - Stack Overflow (ετικέτα: `model-context-protocol` ή `mcp`)
@@ -802,8 +734,8 @@ class SentimentAnalysisTool(Tool):
 Κατά την ανάπτυξη για MCP:
 
 1. **Έκδοση Πρωτοκόλλου**: Τηρήστε την έκδοση πρωτοκόλλου MCP που υποστηρίζει το εργαλείο σας
-2. **Συμβατότητα Πελάτη**: Λάβετε υπόψη την οπισθοδρομική συμβατότητα
-3. **Συμβατότητα Server**: Ακολουθήστε τις οδηγίες υλοποίησης server
+2. **Συμβατότητα Πελατών**: Λάβετε υπόψη την οπισθοδρομική συμβατότητα
+3. **Συμβατότητα Servers**: Ακολουθήστε τις οδηγίες υλοποίησης servers
 4. **Καταστροφικές Αλλαγές**: Τεκμηριώστε σαφώς τυχόν καταστροφικές αλλαγές
 
 ## Παράδειγμα Κοινοτικού Έργου: MCP Tool Registry
@@ -892,16 +824,16 @@ async def delete_tool(tool_name: str):
 - Η κοινότητα MCP είναι ποικιλόμορφη και καλωσορίζει διάφορους τύπους συνεισφορών
 - Η συνεισφορά στο MCP μπορεί να περιλαμβάνει από βελτιώσεις στον πυρήνα του πρωτοκόλλου μέχρι προσαρμοσμένα εργαλεία
 - Η τήρηση των οδηγιών συνεισφοράς αυξάνει τις πιθανότητες αποδοχής του PR σας
-- Η δημιουργία και κοινοποίηση εργαλείων MCP είναι ένας πολύτιμος τρόπος για να ενισχύσετε το οικοσύστημα
+- Η δημιουργία και κοινοποίηση εργαλείων MCP είναι ένας πολύτιμος τρόπος βελτίωσης του οικοσυστήματος
 - Η συνεργασία της κοινότητας είναι απαραίτητη για την ανάπτυξη και βελτίωση του MCP
 
 ## Άσκηση
 
-1. Εντοπίστε έναν τομέα στο οικοσύστημα MCP όπου μπορείτε να συνεισφέρετε βάσει των δεξιοτήτων και των ενδιαφερόντων σας
-2. Κάντε fork το αποθετήριο MCP και ρυθμίστε ένα τοπικό περιβάλλον ανάπτυξης
+1. Εντοπίστε έναν τομέα στο οικοσύστημα MCP όπου μπορείτε να συνεισφέρετε βάσει των δεξιοτήτων και ενδιαφερόντων σας
+2. Κάντε fork το αποθετήριο MCP και ρυθμίστε τοπικό περιβάλλον ανάπτυξης
 3. Δημιουργήστε μια μικρή βελτίωση, διόρθωση σφάλματος ή εργαλείο που θα ωφελήσει την κοινότητα
 4. Τεκμηριώστε τη συνεισφορά σας με κατάλληλες δοκιμές και τεκμηρίωση
-5. Υποβάλετε ένα pull request στο κατάλληλο αποθετήριο
+5. Υποβάλετε pull request στο κατάλληλο αποθετήριο
 
 ## Πρόσθετοι Πόροι
 

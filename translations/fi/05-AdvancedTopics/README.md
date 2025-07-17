@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "748c61250d4a326206b72b28f6154615",
-  "translation_date": "2025-07-13T23:45:30+00:00",
+  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
+  "translation_date": "2025-07-17T06:53:40+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "fi"
 }
 -->
 # Edistyneet aiheet MCP:ssä
 
-Tässä luvussa käsitellään sarjaa edistyneitä aiheita Model Context Protocolin (MCP) toteutuksessa, mukaan lukien monimodaalinen integraatio, skaalautuvuus, turvallisuuden parhaat käytännöt ja yritysintegrointi. Nämä aiheet ovat keskeisiä, kun rakennetaan vankkoja ja tuotantovalmiita MCP-sovelluksia, jotka pystyvät vastaamaan nykyaikaisten tekoälyjärjestelmien vaatimuksiin.
+Tässä luvussa käsitellään useita edistyneitä aiheita Model Context Protocolin (MCP) toteutuksessa, kuten monimodaalinen integraatio, skaalautuvuus, turvallisuuden parhaat käytännöt ja yritysintegrointi. Nämä aiheet ovat keskeisiä, kun rakennetaan vankkoja ja tuotantovalmiita MCP-sovelluksia, jotka pystyvät vastaamaan nykyaikaisten tekoälyjärjestelmien vaatimuksiin.
 
 ## Yleiskatsaus
 
-Tässä oppitunnissa perehdytään edistyneisiin käsitteisiin Model Context Protocolin toteutuksessa, keskittyen monimodaaliseen integraatioon, skaalautuvuuteen, turvallisuuden parhaisiin käytäntöihin ja yritysintegrointiin. Nämä aiheet ovat välttämättömiä tuotantotason MCP-sovellusten rakentamisessa, jotka pystyvät käsittelemään monimutkaisia vaatimuksia yritysympäristöissä.
+Tässä oppitunnissa perehdytään edistyneisiin MCP-toteutuksen käsitteisiin, keskittyen monimodaaliseen integraatioon, skaalautuvuuteen, turvallisuuden parhaisiin käytäntöihin ja yritysintegrointiin. Nämä aiheet ovat välttämättömiä tuotantotason MCP-sovellusten rakentamisessa, jotka pystyvät käsittelemään monimutkaisia vaatimuksia yritysympäristöissä.
 
 ## Oppimistavoitteet
 
@@ -37,23 +37,23 @@ Oppitunnin lopussa osaat:
 | [5.6 Sampling](./mcp-sampling/README.md) | Otanta | Opettele työskentelemään otannan kanssa |
 | [5.7 Scaling](./mcp-scaling/README.md) | Skaalaus | Opettele skaalauksesta |
 | [5.8 Security](./mcp-security/README.md) | Turvallisuus | Suojaa MCP-palvelimesi |
-| [5.9 Web Search sample](./web-search-mcp/README.md) | Web-haku MCP | Python MCP -palvelin ja asiakas, jotka integroivat SerpAPI:n reaaliaikaiseen web-, uutis-, tuotehakuun ja kysymys-vastaus -toimintoihin. Demonstroi monityökalujen orkestrointia, ulkoisten API:en integraatiota ja vankkaa virheenkäsittelyä. |
+| [5.9 Web Search sample](./web-search-mcp/README.md) | Verkkohaku MCP | Python MCP -palvelin ja asiakas, jotka integroivat SerpAPI:n reaaliaikaiseen web-, uutis-, tuotehakuun ja kysymys-vastaus -toimintoihin. Demonstroi monityökalujen orkestrointia, ulkoisten API:en integraatiota ja vankkaa virheenkäsittelyä. |
 | [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Suoratoisto | Reaaliaikainen datan suoratoisto on nykymaailmassa välttämätöntä, kun yritykset ja sovellukset tarvitsevat välitöntä pääsyä tietoihin tehdäkseen oikea-aikaisia päätöksiä. |
-| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web-haku | Reaaliaikainen web-haku: miten MCP muuttaa reaaliaikaista web-hakua tarjoamalla standardoidun lähestymistavan kontekstinhallintaan tekoälymallien, hakukoneiden ja sovellusten välillä. |
+| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Verkkohaku | Reaaliaikainen verkkohaku ja miten MCP muuttaa sitä tarjoamalla standardoidun lähestymistavan kontekstinhallintaan tekoälymallien, hakukoneiden ja sovellusten välillä. |
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID -todennus | Microsoft Entra ID tarjoaa vahvan pilvipohjaisen identiteetin ja pääsynhallinnan ratkaisun, joka varmistaa, että vain valtuutetut käyttäjät ja sovellukset voivat olla vuorovaikutuksessa MCP-palvelimesi kanssa. |
-| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry -integraatio | Opi, miten Model Context Protocol -palvelimet integroidaan Azure AI Foundry -agenttien kanssa, mahdollistaen tehokkaan työkalujen orkestroinnin ja yritysten tekoälyominaisuudet standardoitujen ulkoisten tietolähteiden yhteyksien avulla. |
+| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry -integraatio | Opi, miten Model Context Protocol -palvelimet integroidaan Azure AI Foundry -agenttien kanssa, mahdollistaen tehokkaan työkalujen orkestroinnin ja yritysten tekoälyominaisuudet standardoitujen ulkoisten tietolähdeyhteyksien avulla. |
 
 ## Lisäviitteet
 
 Ajantasaisimman tiedon saamiseksi edistyneistä MCP-aiheista, tutustu:
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP-dokumentaatio](https://modelcontextprotocol.io/)
+- [MCP-spesifikaatio](https://spec.modelcontextprotocol.io/)
+- [GitHub-repositorio](https://github.com/modelcontextprotocol)
 
 ## Keskeiset opit
 
-- Monimodaaliset MCP-toteutukset laajentavat tekoälyn kykyjä tekstinkäsittelyn ulkopuolelle
-- Skaalautuvuus on välttämätöntä yrityskäyttöönotossa ja siihen voidaan vastata horisontaalisella ja vertikaalisella skaalaamisella
+- Monimodaaliset MCP-toteutukset laajentavat tekoälyn kyvykkyyksiä tekstinkäsittelyn ulkopuolelle
+- Skaalautuvuus on välttämätöntä yrityskäyttöönotossa ja sitä voidaan toteuttaa vaakasuoralla ja pystysuoralla skaalaamisella
 - Kattavat turvallisuustoimenpiteet suojaavat dataa ja varmistavat asianmukaisen pääsynhallinnan
 - Yritysintegrointi alustoihin kuten Azure OpenAI ja Microsoft AI Foundry parantaa MCP:n kyvykkyyksiä
 - Edistyneet MCP-toteutukset hyötyvät optimoiduista arkkitehtuureista ja huolellisesta resurssien hallinnasta
@@ -63,15 +63,15 @@ Ajantasaisimman tiedon saamiseksi edistyneistä MCP-aiheista, tutustu:
 Suunnittele yritystason MCP-toteutus tiettyä käyttötapausta varten:
 
 1. Määrittele monimodaaliset vaatimukset käyttötapauksellesi
-2. Laadi tarvittavat turvallisuusvalvontatoimet arkaluonteisen datan suojaamiseksi
-3. Suunnittele skaalautuva arkkitehtuuri, joka pystyy käsittelemään vaihtelevaa kuormitusta
+2. Laadi turvallisuusvalvontatoimet arkaluonteisen datan suojaamiseksi
+3. Suunnittele skaalautuva arkkitehtuuri, joka kestää vaihtelevan kuormituksen
 4. Suunnittele integraatiopisteet yritysten tekoälyjärjestelmiin
-5. Dokumentoi mahdolliset suorituskyvyn pullonkaulat ja niiden lieventämisstrategiat
+5. Dokumentoi mahdolliset suorituskyvyn pullonkaulat ja niiden lieventämiskeinot
 
 ## Lisäresurssit
 
-- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI -dokumentaatio](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry -dokumentaatio](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:35:58+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T06:57:59+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "fi"
 }
@@ -13,7 +13,7 @@ Tässä oppaassa näytetään, miten Model Context Protocol (MCP) -palvelimet in
 
 ## Johdanto
 
-Model Context Protocol (MCP) on avoin standardi, joka mahdollistaa tekoälysovellusten turvallisen yhteyden ulkoisiin tietolähteisiin ja työkaluihin. Kun MCP integroidaan Azure AI Foundryn kanssa, agentit voivat käyttää ja olla vuorovaikutuksessa erilaisten ulkoisten palveluiden, API:en ja tietolähteiden kanssa yhtenäisellä tavalla.
+Model Context Protocol (MCP) on avoin standardi, joka mahdollistaa tekoälysovellusten turvallisen yhteyden ulkoisiin tietolähteisiin ja työkaluihin. Kun MCP integroidaan Azure AI Foundryn kanssa, agentit voivat käyttää ja olla vuorovaikutuksessa eri ulkoisten palveluiden, API:en ja tietolähteiden kanssa yhtenäisellä tavalla.
 
 Tämä integraatio yhdistää MCP:n työkaluekosysteemin joustavuuden Azure AI Foundryn vankan agenttikehyksen kanssa, tarjoten yritystason tekoälyratkaisuja laajoilla räätälöintimahdollisuuksilla.
 
@@ -24,7 +24,7 @@ Tämä integraatio yhdistää MCP:n työkaluekosysteemin joustavuuden Azure AI F
 Oppaan lopussa osaat:
 
 - Ymmärtää Model Context Protocolin ja sen hyödyt
-- Määrittää MCP-palvelimet Azure AI Foundryn agenteille
+- Määrittää MCP-palvelimet käytettäväksi Azure AI Foundryn agenttien kanssa
 - Luoda ja konfiguroida agentteja MCP-työkalujen integroinnilla
 - Toteuttaa käytännön esimerkkejä oikeilla MCP-palvelimilla
 - Käsitellä työkalujen vastauksia ja lähdeviitteitä agenttikeskusteluissa
@@ -33,16 +33,16 @@ Oppaan lopussa osaat:
 
 Varmista ennen aloittamista, että sinulla on:
 
-- Azure-tilaus, jossa on AI Foundryn käyttöoikeus
+- Azure-tilaus, jossa on pääsy AI Foundryyn
 - Python 3.10+ tai .NET 8.0+
 - Azure CLI asennettuna ja konfiguroituna
 - Tarvittavat oikeudet AI-resurssien luomiseen
 
 ## Mikä on Model Context Protocol (MCP)?
 
-Model Context Protocol on standardoitu tapa, jolla tekoälysovellukset voivat yhdistää ulkoisiin tietolähteisiin ja työkaluihin. Keskeisiä etuja ovat:
+Model Context Protocol on standardoitu tapa, jolla tekoälysovellukset voivat yhdistää ulkoisiin tietolähteisiin ja työkaluihin. Keskeiset hyödyt ovat:
 
-- **Standardoitu integraatio**: Yhtenäinen rajapinta eri työkaluille ja palveluille
+- **Standardoitu integraatio**: Johdonmukainen rajapinta eri työkaluille ja palveluille
 - **Turvallisuus**: Turvalliset todennus- ja valtuutusmekanismit
 - **Joustavuus**: Tuki erilaisille tietolähteille, API:lle ja räätälöidyille työkaluilla
 - **Laajennettavuus**: Helppo lisätä uusia ominaisuuksia ja integraatioita
@@ -353,7 +353,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 2. Työkalukutsujen epäonnistumiset
 - Tarkista työkalun argumentit ja muotoilu
-- Huomioi palvelinkohtaiset vaatimukset
+- Selvitä palvelinkohtaiset vaatimukset
 - Toteuta asianmukainen virheenkäsittely
 
 ### 3. Suorituskykyongelmat
@@ -385,7 +385,7 @@ Lisätukea ja kysymyksiä varten:
 
 ## Mitä seuraavaksi
 
-- [6. Yhteisön panokset](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
