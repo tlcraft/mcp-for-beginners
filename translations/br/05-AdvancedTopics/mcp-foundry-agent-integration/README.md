@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:33:48+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T01:07:38+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "br"
 }
@@ -372,7 +372,7 @@ Para aprimorar ainda mais sua integração MCP:
 
 ## Recursos Adicionais
 
-- [Documentação Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- [Documentação do Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
 - [Exemplos do Model Context Protocol](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
 - [Visão Geral dos Agentes Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [Especificação MCP](https://spec.modelcontextprotocol.io/)
@@ -380,12 +380,12 @@ Para aprimorar ainda mais sua integração MCP:
 ## Suporte
 
 Para suporte adicional e dúvidas:
-- Consulte a [documentação Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- Consulte a [documentação do Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
 - Verifique os [recursos da comunidade MCP](https://modelcontextprotocol.io/)
 
 ## O que vem a seguir
 
-- [6. Contribuições da Comunidade](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Aviso Legal**:  
 Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

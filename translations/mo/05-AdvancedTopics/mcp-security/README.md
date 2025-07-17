@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:36:11+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-16T23:58:33+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "mo"
 }
@@ -13,32 +13,51 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 介紹
 
-在本課程中，我們將探討 MCP 實作的安全最佳實務。我們會涵蓋身份驗證與授權、資料保護、安全的工具執行，以及遵守資料隱私法規。
+Model Context Protocol (MCP) 由於其提供大型語言模型（LLM）存取資料和工具的角色，因此需要特定的安全考量。本課程將根據官方 MCP 指南及既有的安全模式，探討 MCP 實作的安全最佳實務。
+
+MCP 遵循關鍵的安全原則，以確保互動的安全與可信：
+
+- **用戶同意與控制**：在存取任何資料或執行操作前，必須取得用戶明確同意。提供清楚的控制權限，讓用戶決定分享哪些資料及授權哪些行為。
+  
+- **資料隱私**：用戶資料僅能在明確同意下被揭露，且必須受到適當的存取控制保護。防範未經授權的資料傳輸。
+  
+- **工具安全**：在調用任何工具前，必須取得用戶明確同意。用戶應清楚了解每個工具的功能，並且必須強制執行嚴格的安全邊界。
 
 ## 學習目標
 
 完成本課程後，您將能夠：
 
 - 為 MCP 伺服器實作安全的身份驗證與授權機制。
-- 使用加密和安全儲存保護敏感資料。
-- 透過適當的存取控制確保工具的安全執行。
+- 使用加密與安全儲存保護敏感資料。
+- 確保工具的安全執行並實施適當的存取控制。
 - 應用資料保護與隱私合規的最佳實務。
+- 識別並減輕常見的 MCP 安全漏洞，如混淆代理問題、Token 轉發及會話劫持。
 
 ## 身份驗證與授權
 
-身份驗證與授權是保護 MCP 伺服器安全的關鍵。身份驗證回答「你是誰？」的問題，而授權則回答「你能做什麼？」。
+身份驗證與授權是保護 MCP 伺服器安全的關鍵。身份驗證回答「你是誰？」的問題，而授權回答「你能做什麼？」。
 
-讓我們來看看如何使用 .NET 和 Java 在 MCP 伺服器中實作安全的身份驗證與授權。
+根據 MCP 安全規範，以下是重要的安全考量：
+
+1. **Token 驗證**：MCP 伺服器不得接受未明確為該 MCP 伺服器簽發的任何 Token。「Token 轉發」是明確禁止的反模式。
+
+2. **授權驗證**：實作授權的 MCP 伺服器必須驗證所有進入的請求，且不得使用會話作為身份驗證手段。
+
+3. **安全的會話管理**：若使用會話來維持狀態，MCP 伺服器必須使用安全且非決定性的會話 ID，且該 ID 需由安全的隨機數產生器生成。會話 ID 應綁定用戶特定資訊。
+
+4. **明確的用戶同意**：對於代理伺服器，MCP 實作必須在轉發至第三方授權伺服器前，取得用戶對每個動態註冊客戶端的同意。
+
+以下示範如何使用 .NET 與 Java 實作 MCP 伺服器的安全身份驗證與授權。
 
 ### .NET 身份整合
 
-ASP .NET Core Identity 提供了一個強大的框架來管理使用者身份驗證與授權。我們可以將它整合到 MCP 伺服器中，以保護工具和資源的存取。
+ASP .NET Core Identity 提供強大的框架來管理用戶身份驗證與授權。我們可以將其整合到 MCP 伺服器中，以保護工具和資源的存取。
 
-整合 ASP.NET Core Identity 與 MCP 伺服器時，有幾個核心概念需要了解：
+整合 ASP.NET Core Identity 與 MCP 伺服器時需理解的核心概念包括：
 
-- **Identity 配置**：設定 ASP.NET Core Identity，包含使用者角色和聲明。聲明是關於使用者的一項資訊，例如其角色或權限，如「Admin」或「User」。
-- **JWT 身份驗證**：使用 JSON Web Tokens (JWT) 來實現安全的 API 存取。JWT 是一種標準，用於在雙方之間以 JSON 物件安全傳輸資訊，因為它是數位簽章的，可以被驗證和信任。
-- **授權政策**：定義政策以根據使用者角色控制對特定工具的存取。MCP 使用授權政策來決定哪些使用者可以根據其角色和聲明存取哪些工具。
+- **身份設定**：設定 ASP.NET Core Identity，包含用戶角色與聲明。聲明是關於用戶的資訊，例如角色或權限，如「Admin」或「User」。
+- **JWT 身份驗證**：使用 JSON Web Tokens (JWT) 進行安全的 API 存取。JWT 是一種以 JSON 物件安全傳輸資訊的標準，因為它經過數位簽章，可被驗證與信任。
+- **授權政策**：定義政策以根據用戶角色控制對特定工具的存取。MCP 使用授權政策來決定哪些用戶可根據其角色與聲明存取哪些工具。
 
 ```csharp
 public class SecureMcpStartup
@@ -109,24 +128,24 @@ public class SecureMcpStartup
 }
 ```
 
-在上述程式碼中，我們：
+上述程式碼中，我們：
 
-- 配置了 ASP.NET Core Identity 以管理使用者。
-- 設定了 JWT 身份驗證以確保 API 的安全存取，指定了令牌驗證參數，包括發行者、受眾和簽名金鑰。
-- 定義了授權政策，根據使用者角色控制工具存取。例如，「CanUseAdminTools」政策要求使用者擁有「Admin」角色，而「CanUseBasic」政策則要求使用者已通過身份驗證。
-- 註冊了具有特定授權需求的 MCP 工具，確保只有擁有適當角色的使用者才能存取。
+- 設定了 ASP.NET Core Identity 以管理用戶。
+- 設定 JWT 身份驗證以確保 API 存取安全，指定了 Token 驗證參數，包括發行者、受眾與簽章金鑰。
+- 定義授權政策以根據用戶角色控制工具存取。例如，「CanUseAdminTools」政策要求用戶擁有「Admin」角色，而「CanUseBasic」政策要求用戶已通過身份驗證。
+- 註冊 MCP 工具並設定特定授權需求，確保只有具適當角色的用戶能存取。
 
 ### Java Spring Security 整合
 
-對於 Java，我們將使用 Spring Security 來實作 MCP 伺服器的安全身份驗證與授權。Spring Security 提供了一個完整的安全框架，能與 Spring 應用程式無縫整合。
+對於 Java，我們將使用 Spring Security 來實作 MCP 伺服器的安全身份驗證與授權。Spring Security 提供完整的安全框架，能無縫整合至 Spring 應用。
 
-這裡的核心概念包括：
+核心概念包括：
 
-- **Spring Security 配置**：設定身份驗證與授權的安全配置。
-- **OAuth2 資源伺服器**：使用 OAuth2 來安全存取 MCP 工具。OAuth2 是一個授權框架，允許第三方服務交換存取令牌以安全存取 API。
-- **安全攔截器**：實作安全攔截器以強制執行工具執行的存取控制。
-- **基於角色的存取控制**：使用角色來控制對特定工具和資源的存取。
-- **安全註解**：使用註解來保護方法和端點。
+- **Spring Security 設定**：設定身份驗證與授權的安全配置。
+- **OAuth2 資源伺服器**：使用 OAuth2 來安全存取 MCP 工具。OAuth2 是一個授權框架，允許第三方服務交換存取 Token 以安全存取 API。
+- **安全攔截器**：實作安全攔截器以強制工具執行的存取控制。
+- **基於角色的存取控制**：使用角色來控制對特定工具與資源的存取。
+- **安全註解**：使用註解來保護方法與端點。
 
 ```java
 @Configuration
@@ -178,20 +197,20 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-在上述程式碼中，我們：
+上述程式碼中，我們：
 
-- 配置了 Spring Security 以保護 MCP 端點，允許公開存取工具發現功能，但執行工具時需要身份驗證。
-- 使用 OAuth2 作為資源伺服器來處理 MCP 工具的安全存取。
-- 實作了安全攔截器，在允許存取特定工具前檢查使用者角色和權限。
-- 定義了基於角色的存取控制，限制對管理工具和敏感資料的存取。
+- 設定 Spring Security 以保護 MCP 端點，允許公開存取工具發現，但執行工具時需身份驗證。
+- 使用 OAuth2 作為資源伺服器，處理對 MCP 工具的安全存取。
+- 實作安全攔截器，在允許存取特定工具前檢查用戶角色與權限。
+- 定義基於角色的存取控制，限制對管理工具及敏感資料的存取。
 
 ## 資料保護與隱私
 
-資料保護對於確保敏感資訊的安全處理至關重要。這包括保護個人識別資訊 (PII)、財務資料及其他敏感資訊，避免未經授權的存取和外洩。
+資料保護對於確保敏感資訊安全處理至關重要。這包括保護個人識別資訊（PII）、財務資料及其他敏感資訊，防止未經授權的存取與外洩。
 
 ### Python 資料保護範例
 
-讓我們來看一個如何使用加密和 PII 偵測在 Python 中實作資料保護的範例。
+以下示範如何在 Python 中使用加密與 PII 偵測來實作資料保護。
 
 ```python
 from mcp_server import McpServer
@@ -327,16 +346,71 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-在上述程式碼中，我們：
+上述程式碼中，我們：
 
-- 實作了 `PiiDetector` 類別，用於掃描文字和參數中的個人識別資訊 (PII)。
-- 建立了 `EncryptionService` 類別，使用 `cryptography` 函式庫來處理敏感資料的加密與解密。
-- 定義了 `secure_tool` 裝飾器，包裹工具執行流程以檢查 PII、記錄存取並在需要時加密敏感資料。
-- 將 `secure_tool` 裝飾器應用於範例工具 (`SecureCustomerDataTool`)，確保其安全處理敏感資料。
+- 實作 `PiiDetector` 類別，用於掃描文字與參數中的個人識別資訊（PII）。
+- 建立 `EncryptionService` 類別，使用 `cryptography` 函式庫處理敏感資料的加密與解密。
+- 定義 `secure_tool` 裝飾器，包裹工具執行流程，檢查 PII、記錄存取並在需要時加密敏感資料。
+- 對範例工具 (`SecureCustomerDataTool`) 應用 `secure_tool` 裝飾器，確保其安全處理敏感資料。
+
+## MCP 特定安全風險
+
+根據官方 MCP 安全文件，MCP 實作者應注意以下特定安全風險：
+
+### 1. 混淆代理問題（Confused Deputy Problem）
+
+此漏洞發生於 MCP 伺服器作為第三方 API 代理時，攻擊者可能利用 MCP 伺服器與這些 API 之間的信任關係進行攻擊。
+
+**緩解措施：**
+- 使用靜態客戶端 ID 的 MCP 代理伺服器，必須在轉發至第三方授權伺服器前，取得用戶對每個動態註冊客戶端的同意。
+- 對授權請求實作正確的 OAuth 流程，包含 PKCE（Proof Key for Code Exchange）。
+- 嚴格驗證重定向 URI 與客戶端識別碼。
+
+### 2. Token 轉發漏洞
+
+Token 轉發發生於 MCP 伺服器接受來自 MCP 用戶端的 Token，卻未驗證該 Token 是否正確簽發給 MCP 伺服器，並將其轉發至下游 API。
+
+### 風險
+- 繞過安全控管（如速率限制、請求驗證）
+- 責任追蹤與稽核問題
+- 信任邊界違反
+- 未來相容性風險
+
+**緩解措施：**
+- MCP 伺服器不得接受未明確簽發給該 MCP 伺服器的任何 Token。
+- 始終驗證 Token 的受眾聲明，確保與預期服務相符。
+
+### 3. 會話劫持
+
+當未經授權者取得會話 ID 並利用它冒充原始用戶時，可能導致未經授權的操作。
+
+**緩解措施：**
+- 實作授權的 MCP 伺服器必須驗證所有進入請求，且不得使用會話作為身份驗證。
+- 使用安全且非決定性的會話 ID，由安全隨機數產生器生成。
+- 使用類似 `<user_id>:<session_id>` 的格式將會話 ID 綁定至用戶特定資訊。
+- 實施適當的會話過期與輪替政策。
+
+## MCP 額外安全最佳實務
+
+除了核心 MCP 安全考量外，建議實施以下額外安全措施：
+
+- **始終使用 HTTPS**：加密客戶端與伺服器間的通訊，防止 Token 被攔截。
+- **實作基於角色的存取控制（RBAC）**：不僅檢查用戶是否已驗證，還要檢查其授權範圍。
+- **監控與稽核**：記錄所有身份驗證事件，以偵測並回應可疑活動。
+- **處理速率限制與節流**：實作指數退避與重試機制，優雅地應對速率限制。
+- **安全儲存 Token**：使用系統安全儲存機制或安全金鑰管理服務，安全保存存取 Token 與刷新 Token。
+- **考慮使用 API 管理服務**：如 Azure API Management，可自動處理多項安全議題，包括身份驗證、授權與速率限制。
+
+## 參考資料
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## 接下來的內容
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

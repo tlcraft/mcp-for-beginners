@@ -1,236 +1,152 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T03:57:29+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T00:42:19+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "pa"
 }
 -->
-# Community and Contributions
+# ਕਮਿਊਨਿਟੀ ਅਤੇ ਯੋਗਦਾਨ
 
-## Overview
+## ਝਲਕ
 
-ਇਸ ਪਾਠ ਵਿੱਚ MCP ਕਮਿਊਨਿਟੀ ਨਾਲ ਕਿਵੇਂ ਜੁੜਨਾ ਹੈ, MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣਾ ਹੈ, ਅਤੇ ਸਹਿਯੋਗੀ ਵਿਕਾਸ ਲਈ ਵਧੀਆ ਅਭਿਆਸਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨੀ ਹੈ, ਇਸ 'ਤੇ ਧਿਆਨ ਦਿੱਤਾ ਗਿਆ ਹੈ। ਖੁੱਲ੍ਹੇ ਸਰੋਤ ਵਾਲੇ MCP ਪ੍ਰੋਜੈਕਟਾਂ ਵਿੱਚ ਭਾਗ ਲੈਣਾ ਸਮਝਣਾ ਉਹਨਾਂ ਲਈ ਜਰੂਰੀ ਹੈ ਜੋ ਇਸ ਤਕਨਾਲੋਜੀ ਦੇ ਭਵਿੱਖ ਨੂੰ ਆਕਾਰ ਦੇਣਾ ਚਾਹੁੰਦੇ ਹਨ।
+ਇਸ ਪਾਠ ਵਿੱਚ MCP ਕਮਿਊਨਿਟੀ ਨਾਲ ਕਿਵੇਂ ਜੁੜਨਾ ਹੈ, MCP ਪਰਿਸਰ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣਾ ਹੈ, ਅਤੇ ਸਹਿਯੋਗੀ ਵਿਕਾਸ ਲਈ ਵਧੀਆ ਅਭਿਆਸਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨੀ ਹੈ, ਇਸ 'ਤੇ ਧਿਆਨ ਦਿੱਤਾ ਗਿਆ ਹੈ। ਖੁੱਲ੍ਹੇ ਸਰੋਤ ਵਾਲੇ MCP ਪ੍ਰੋਜੈਕਟਾਂ ਵਿੱਚ ਭਾਗ ਲੈਣਾ ਸਮਝਣਾ ਉਹਨਾਂ ਲਈ ਜਰੂਰੀ ਹੈ ਜੋ ਇਸ ਤਕਨਾਲੋਜੀ ਦੇ ਭਵਿੱਖ ਨੂੰ ਆਕਾਰ ਦੇਣਾ ਚਾਹੁੰਦੇ ਹਨ।
 
-## Learning Objectives
+## ਸਿੱਖਣ ਦੇ ਉਦੇਸ਼
 
 ਇਸ ਪਾਠ ਦੇ ਅੰਤ ਤੱਕ, ਤੁਸੀਂ ਸਮਰੱਥ ਹੋਵੋਗੇ:
-- MCP ਕਮਿਊਨਿਟੀ ਅਤੇ ਇਕੋਸਿਸਟਮ ਦੀ ਬਣਤਰ ਨੂੰ ਸਮਝਣਾ
+- MCP ਕਮਿਊਨਿਟੀ ਅਤੇ ਪਰਿਸਰ ਦੀ ਬਣਤਰ ਨੂੰ ਸਮਝਣਾ
 - MCP ਕਮਿਊਨਿਟੀ ਫੋਰਮਾਂ ਅਤੇ ਚਰਚਾਵਾਂ ਵਿੱਚ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਭਾਗ ਲੈਣਾ
 - MCP ਖੁੱਲ੍ਹੇ ਸਰੋਤ ਰਿਪੋਜ਼ਟਰੀਜ਼ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣਾ
-- ਕਸਟਮ MCP ਟੂਲ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝਾ ਕਰਨਾ
+- ਕਸਟਮ MCP ਟੂਲ ਅਤੇ ਸਰਵਰ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝੇ ਕਰਨਾ
 - MCP ਵਿਕਾਸ ਅਤੇ ਸਹਿਯੋਗ ਲਈ ਵਧੀਆ ਅਭਿਆਸਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨੀ
+- MCP ਵਿਕਾਸ ਲਈ ਕਮਿਊਨਿਟੀ ਸਰੋਤ ਅਤੇ ਫਰੇਮਵਰਕਾਂ ਦੀ ਖੋਜ ਕਰਨੀ
 
-## The MCP Community Ecosystem
+## MCP ਕਮਿਊਨਿਟੀ ਪਰਿਸਰ
 
-MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਵੱਖ-ਵੱਖ ਹਿੱਸੇਦਾਰ ਅਤੇ ਭਾਗੀਦਾਰ ਹੁੰਦੇ ਹਨ ਜੋ ਪ੍ਰੋਟੋਕੋਲ ਨੂੰ ਅੱਗੇ ਵਧਾਉਣ ਲਈ ਮਿਲ ਕੇ ਕੰਮ ਕਰਦੇ ਹਨ।
+MCP ਪਰਿਸਰ ਵਿੱਚ ਵੱਖ-ਵੱਖ ਹਿੱਸੇਦਾਰ ਅਤੇ ਭਾਗੀਦਾਰ ਸ਼ਾਮਲ ਹਨ ਜੋ ਪ੍ਰੋਟੋਕੋਲ ਨੂੰ ਅੱਗੇ ਵਧਾਉਣ ਲਈ ਮਿਲ ਕੇ ਕੰਮ ਕਰਦੇ ਹਨ।
 
-### Key Community Components
+### ਮੁੱਖ ਕਮਿਊਨਿਟੀ ਹਿੱਸੇ
 
-1. **Core Protocol Maintainers**: Microsoft ਅਤੇ ਹੋਰ ਸੰਗਠਨ ਜੋ ਮੁੱਖ MCP ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਅਤੇ ਰੈਫਰੈਂਸ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨਾਂ ਦੀ ਦੇਖਭਾਲ ਕਰਦੇ ਹਨ  
-2. **Tool Developers**: ਉਹ ਵਿਅਕਤੀ ਅਤੇ ਟੀਮਾਂ ਜੋ MCP ਟੂਲ ਬਣਾਉਂਦੇ ਹਨ  
-3. **Integration Providers**: ਕੰਪਨੀਆਂ ਜੋ MCP ਨੂੰ ਆਪਣੇ ਉਤਪਾਦਾਂ ਅਤੇ ਸੇਵਾਵਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਦੀਆਂ ਹਨ  
-4. **End Users**: ਵਿਕਾਸਕਾਰ ਅਤੇ ਸੰਗਠਨ ਜੋ MCP ਨੂੰ ਆਪਣੇ ਐਪਲੀਕੇਸ਼ਨਾਂ ਵਿੱਚ ਵਰਤਦੇ ਹਨ  
-5. **Contributors**: ਕਮਿਊਨਿਟੀ ਮੈਂਬਰ ਜੋ ਕੋਡ, ਦਸਤਾਵੇਜ਼, ਜਾਂ ਹੋਰ ਸਰੋਤਾਂ ਵਿੱਚ ਯੋਗਦਾਨ ਪਾਉਂਦੇ ਹਨ  
+1. **ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ ਮੈਨਟੇਨਰਜ਼**: ਅਧਿਕਾਰਕ [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) MCP ਦੇ ਮੁੱਖ ਵਿਸ਼ੇਸ਼ਣਾਂ ਅਤੇ ਰੈਫਰੈਂਸ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨਾਂ ਦੀ ਦੇਖਭਾਲ ਕਰਦਾ ਹੈ
+2. **ਟੂਲ ਡਿਵੈਲਪਰਜ਼**: ਉਹ ਵਿਅਕਤੀ ਅਤੇ ਟੀਮਾਂ ਜੋ MCP ਟੂਲ ਅਤੇ ਸਰਵਰ ਬਣਾਉਂਦੇ ਹਨ
+3. **ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਪ੍ਰੋਵਾਈਡਰਜ਼**: ਕੰਪਨੀਆਂ ਜੋ MCP ਨੂੰ ਆਪਣੇ ਉਤਪਾਦਾਂ ਅਤੇ ਸੇਵਾਵਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਦੀਆਂ ਹਨ
+4. **ਅੰਤਮ ਉਪਭੋਗਤਾ**: ਡਿਵੈਲਪਰ ਅਤੇ ਸੰਗਠਨ ਜੋ MCP ਨੂੰ ਆਪਣੇ ਐਪਲੀਕੇਸ਼ਨਾਂ ਵਿੱਚ ਵਰਤਦੇ ਹਨ
+5. **ਯੋਗਦਾਨਕਾਰ**: ਕਮਿਊਨਿਟੀ ਮੈਂਬਰ ਜੋ ਕੋਡ, ਦਸਤਾਵੇਜ਼, ਜਾਂ ਹੋਰ ਸਰੋਤਾਂ ਵਿੱਚ ਯੋਗਦਾਨ ਪਾਉਂਦੇ ਹਨ
 
-### Community Resources
+### ਕਮਿਊਨਿਟੀ ਸਰੋਤ
 
-#### Official Channels
+#### ਅਧਿਕਾਰਕ ਚੈਨਲ
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)  
-- [MCP Documentation](https://modelcontextprotocol.io/)  
-- [MCP Specification](https://spec.modelcontextprotocol.io/)  
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)  
+- [MCP GitHub Organization](https://github.com/modelcontextprotocol)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://modelcontextprotocol.io/docs/specification)
+- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP Examples & Servers Repository](https://github.com/modelcontextprotocol/servers)
 
-#### Community-Driven Resources
+#### ਕਮਿਊਨਿਟੀ-ਚਲਾਏ ਸਰੋਤ
 
-- ਭਾਸ਼ਾ-ਵਿਸ਼ੇਸ਼ SDK ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ  
-- ਸਰਵਰ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਅਤੇ ਟੂਲ ਲਾਇਬ੍ਰੇਰੀਜ਼  
-- ਬਲੌਗ ਪੋਸਟਾਂ ਅਤੇ ਟਿਊਟੋਰਿਯਲ  
-- ਕਮਿਊਨਿਟੀ ਫੋਰਮ ਅਤੇ ਸੋਸ਼ਲ ਮੀਡੀਆ ਚਰਚਾਵਾਂ  
+- [MCP Clients](https://modelcontextprotocol.io/clients) - MCP ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਨੂੰ ਸਹਿਯੋਗ ਦੇਣ ਵਾਲੇ ਕਲਾਇੰਟਾਂ ਦੀ ਸੂਚੀ
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - ਕਮਿਊਨਿਟੀ ਵੱਲੋਂ ਵਿਕਸਿਤ MCP ਸਰਵਰਾਂ ਦੀ ਵਧ ਰਹੀ ਸੂਚੀ
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - MCP ਸਰਵਰਾਂ ਦੀ ਚੁਣੀ ਹੋਈ ਸੂਚੀ
+- [PulseMCP](https://www.pulsemcp.com/) - MCP ਸਰੋਤਾਂ ਦੀ ਖੋਜ ਲਈ ਕਮਿਊਨਿਟੀ ਹੱਬ ਅਤੇ ਨਿਊਜ਼ਲੈਟਰ
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - MCP ਡਿਵੈਲਪਰਾਂ ਨਾਲ ਜੁੜੋ
+- ਭਾਸ਼ਾ-ਵਿਸ਼ੇਸ਼ SDK ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ
+- ਬਲੌਗ ਪੋਸਟਾਂ ਅਤੇ ਟਿਊਟੋਰਿਯਲ
 
-## Contributing to MCP
+## MCP ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣਾ
 
-### Types of Contributions
+### ਯੋਗਦਾਨ ਦੇ ਕਿਸਮਾਂ
 
-MCP ਇਕੋਸਿਸਟਮ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਦੇ ਯੋਗਦਾਨਾਂ ਦਾ ਸਵਾਗਤ ਕਰਦਾ ਹੈ:
+MCP ਪਰਿਸਰ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਦੇ ਯੋਗਦਾਨਾਂ ਦਾ ਸਵਾਗਤ ਕਰਦਾ ਹੈ:
 
-1. **Code Contributions**:  
-   - ਮੁੱਖ ਪ੍ਰੋਟੋਕੋਲ ਵਿੱਚ ਸੁਧਾਰ  
-   - ਬੱਗ ਫਿਕਸ  
-   - ਟੂਲ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ  
-   - ਵੱਖ-ਵੱਖ ਭਾਸ਼ਾਵਾਂ ਵਿੱਚ ਕਲਾਇੰਟ/ਸਰਵਰ ਲਾਇਬ੍ਰੇਰੀਜ਼  
+1. **ਕੋਡ ਯੋਗਦਾਨ**:
+   - ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ ਸੁਧਾਰ
+   - ਬੱਗ ਫਿਕਸ
+   - ਟੂਲ ਅਤੇ ਸਰਵਰ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ
+   - ਵੱਖ-ਵੱਖ ਭਾਸ਼ਾਵਾਂ ਵਿੱਚ ਕਲਾਇੰਟ/ਸਰਵਰ ਲਾਇਬ੍ਰੇਰੀਜ਼
 
-2. **Documentation**:  
-   - ਮੌਜੂਦਾ ਦਸਤਾਵੇਜ਼ਾਂ ਨੂੰ ਸੁਧਾਰਨਾ  
-   - ਟਿਊਟੋਰਿਯਲ ਅਤੇ ਗਾਈਡ ਬਣਾਉਣਾ  
-   - ਦਸਤਾਵੇਜ਼ਾਂ ਦਾ ਅਨੁਵਾਦ ਕਰਨਾ  
-   - ਉਦਾਹਰਣਾਂ ਅਤੇ ਨਮੂਨਾ ਐਪਲੀਕੇਸ਼ਨਾਂ ਬਣਾਉਣਾ  
+2. **ਦਸਤਾਵੇਜ਼ੀਕਰਨ**:
+   - ਮੌਜੂਦਾ ਦਸਤਾਵੇਜ਼ਾਂ ਨੂੰ ਸੁਧਾਰਨਾ
+   - ਟਿਊਟੋਰਿਯਲ ਅਤੇ ਗਾਈਡ ਬਣਾਉਣਾ
+   - ਦਸਤਾਵੇਜ਼ਾਂ ਦਾ ਅਨੁਵਾਦ ਕਰਨਾ
+   - ਉਦਾਹਰਣਾਂ ਅਤੇ ਨਮੂਨਾ ਐਪਲੀਕੇਸ਼ਨਾਂ ਬਣਾਉਣਾ
 
-3. **Community Support**:  
-   - ਫੋਰਮਾਂ 'ਤੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦੇਣਾ  
-   - ਟੈਸਟਿੰਗ ਅਤੇ ਸਮੱਸਿਆਵਾਂ ਦੀ ਰਿਪੋਰਟਿੰਗ  
-   - ਕਮਿਊਨਿਟੀ ਇਵੈਂਟਾਂ ਦਾ ਆਯੋਜਨ  
-   - ਨਵੇਂ ਯੋਗਦਾਨਕਾਰਾਂ ਦੀ ਮਦਦ ਕਰਨਾ  
+3. **ਕਮਿਊਨਿਟੀ ਸਹਿਯੋਗ**:
+   - ਫੋਰਮਾਂ ਅਤੇ ਚਰਚਾਵਾਂ ਵਿੱਚ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦੇਣਾ
+   - ਟੈਸਟਿੰਗ ਅਤੇ ਸਮੱਸਿਆਵਾਂ ਦੀ ਰਿਪੋਰਟਿੰਗ
+   - ਕਮਿਊਨਿਟੀ ਇਵੈਂਟਾਂ ਦਾ ਆਯੋਜਨ
+   - ਨਵੇਂ ਯੋਗਦਾਨਕਾਰਾਂ ਦੀ ਮਦਦ ਕਰਨਾ
 
-### Contribution Process: Core Protocol
+### ਯੋਗਦਾਨ ਪ੍ਰਕਿਰਿਆ: ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ
 
-ਮੁੱਖ MCP ਪ੍ਰੋਟੋਕੋਲ ਜਾਂ ਅਧਿਕਾਰਤ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨਾਂ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਲਈ:
+ਕੋਰ MCP ਪ੍ਰੋਟੋਕੋਲ ਜਾਂ ਅਧਿਕਾਰਕ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨਾਂ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਲਈ, [ਅਧਿਕਾਰਕ ਯੋਗਦਾਨ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) ਵਿੱਚ ਦਿੱਤੇ ਸਿਧਾਂਤਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ:
 
-#### .NET Example: Contributing a Protocol Enhancement
+1. **ਸਾਦਗੀ ਅਤੇ ਘੱਟੋ-ਘੱਟਤਾ**: MCP ਵਿਸ਼ੇਸ਼ਣ ਵਿੱਚ ਨਵੇਂ ਵਿਚਾਰ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਉੱਚ ਮਿਆਰ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ। ਕਿਸੇ ਵਿਸ਼ੇਸ਼ਣ ਵਿੱਚ ਚੀਜ਼ਾਂ ਸ਼ਾਮਲ ਕਰਨਾ ਹਟਾਉਣ ਨਾਲੋਂ ਆਸਾਨ ਹੁੰਦਾ ਹੈ।
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **ਠੋਸ ਦ੍ਰਿਸ਼ਟੀਕੋਣ**: ਵਿਸ਼ੇਸ਼ਣ ਬਦਲਾਅ ਖਾਸ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਚੁਣੌਤੀਆਂ 'ਤੇ ਆਧਾਰਿਤ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ, ਨਾ ਕਿ ਅਟਕਲਾਂ 'ਤੇ।
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **ਪ੍ਰਸਤਾਵ ਦੇ ਪੜਾਅ**:
+   - ਪਰਿਭਾਸ਼ਿਤ ਕਰੋ: ਸਮੱਸਿਆ ਦੇ ਖੇਤਰ ਦੀ ਖੋਜ ਕਰੋ, ਇਹ ਪੱਕਾ ਕਰੋ ਕਿ ਹੋਰ MCP ਉਪਭੋਗਤਾ ਵੀ ਇਸ ਸਮੱਸਿਆ ਦਾ ਸਾਹਮਣਾ ਕਰਦੇ ਹਨ
+   - ਪ੍ਰੋਟੋਟਾਈਪ: ਇੱਕ ਉਦਾਹਰਣ ਹੱਲ ਬਣਾਓ ਅਤੇ ਇਸ ਦੀ ਪ੍ਰਯੋਗਿਕਤਾ ਦਿਖਾਓ
+   - ਲਿਖੋ: ਪ੍ਰੋਟੋਟਾਈਪ ਦੇ ਆਧਾਰ 'ਤੇ ਵਿਸ਼ੇਸ਼ਣ ਪ੍ਰਸਤਾਵ ਲਿਖੋ
+
+### ਵਿਕਾਸ ਵਾਤਾਵਰਣ ਸੈਟਅੱਪ
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Java Example: Contributing a Bug Fix
+### ਉਦਾਹਰਣ: ਬੱਗ ਫਿਕਸ ਵਿੱਚ ਯੋਗਦਾਨ
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Python Example: Contributing a New Tool to the Standard Library
+### ਉਦਾਹਰਣ: ਸਟੈਂਡਰਡ ਲਾਇਬ੍ਰੇਰੀ ਲਈ ਨਵਾਂ ਟੂਲ ਯੋਗਦਾਨ
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,23 +306,23 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Contribution Guidelines
+### ਯੋਗਦਾਨ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼
 
 MCP ਪ੍ਰੋਜੈਕਟਾਂ ਵਿੱਚ ਸਫਲ ਯੋਗਦਾਨ ਦੇਣ ਲਈ:
 
-1. **Start Small**: ਦਸਤਾਵੇਜ਼, ਬੱਗ ਫਿਕਸ, ਜਾਂ ਛੋਟੇ ਸੁਧਾਰਾਂ ਨਾਲ ਸ਼ੁਰੂ ਕਰੋ  
-2. **Follow the Style Guide**: ਪ੍ਰੋਜੈਕਟ ਦੀ ਕੋਡਿੰਗ ਸ਼ੈਲੀ ਅਤੇ ਰਿਵਾਜਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ  
-3. **Write Tests**: ਆਪਣੇ ਕੋਡ ਯੋਗਦਾਨਾਂ ਲਈ ਯੂਨਿਟ ਟੈਸਟ ਸ਼ਾਮਲ ਕਰੋ  
-4. **Document Your Work**: ਨਵੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਜਾਂ ਬਦਲਾਵਾਂ ਲਈ ਸਾਫ਼ ਦਸਤਾਵੇਜ਼ ਬਣਾਓ  
-5. **Submit Targeted PRs**: ਪੂਲ ਰਿਕਵੇਸਟ ਨੂੰ ਇੱਕ ਹੀ ਮੁੱਦੇ ਜਾਂ ਵਿਸ਼ੇਸ਼ਤਾ 'ਤੇ ਕੇਂਦਰਿਤ ਰੱਖੋ  
-6. **Engage with Feedback**: ਆਪਣੇ ਯੋਗਦਾਨਾਂ 'ਤੇ ਮਿਲਣ ਵਾਲੇ ਫੀਡਬੈਕ ਦਾ ਜਵਾਬ ਦਿਓ  
+1. **ਛੋਟੇ ਤੋਂ ਸ਼ੁਰੂ ਕਰੋ**: ਦਸਤਾਵੇਜ਼ੀਕਰਨ, ਬੱਗ ਫਿਕਸ, ਜਾਂ ਛੋਟੇ ਸੁਧਾਰਾਂ ਨਾਲ ਸ਼ੁਰੂਆਤ ਕਰੋ
+2. **ਸਟਾਈਲ ਗਾਈਡ ਦੀ ਪਾਲਣਾ ਕਰੋ**: ਪ੍ਰੋਜੈਕਟ ਦੀ ਕੋਡਿੰਗ ਸਟਾਈਲ ਅਤੇ ਰਿਵਾਜਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ
+3. **ਟੈਸਟ ਲਿਖੋ**: ਆਪਣੇ ਕੋਡ ਯੋਗਦਾਨ ਲਈ ਯੂਨਿਟ ਟੈਸਟ ਸ਼ਾਮਲ ਕਰੋ
+4. **ਆਪਣਾ ਕੰਮ ਦਸਤਾਵੇਜ਼ ਕਰੋ**: ਨਵੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਜਾਂ ਬਦਲਾਅ ਲਈ ਸਾਫ਼ ਦਸਤਾਵੇਜ਼ ਸ਼ਾਮਲ ਕਰੋ
+5. **ਲਕੜੀ-ਵਿਸ਼ੇਸ਼ PR ਸਬਮਿਟ ਕਰੋ**: ਪੂਲ ਰਿਕਵੇਸਟਾਂ ਨੂੰ ਇੱਕ ਹੀ ਸਮੱਸਿਆ ਜਾਂ ਵਿਸ਼ੇਸ਼ਤਾ 'ਤੇ ਕੇਂਦਰਿਤ ਰੱਖੋ
+6. **ਫੀਡਬੈਕ ਨਾਲ ਜੁੜੇ ਰਹੋ**: ਆਪਣੇ ਯੋਗਦਾਨਾਂ 'ਤੇ ਮਿਲਣ ਵਾਲੇ ਫੀਡਬੈਕ ਦਾ ਜਵਾਬ ਦਿਓ
 
-### Example Contribution Workflow
+### ਉਦਾਹਰਣ ਯੋਗਦਾਨ ਵਰਕਫਲੋ
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,13 +343,31 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Creating and Sharing Custom MCP Tools
+## MCP ਸਰਵਰ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝਾ ਕਰਨਾ
 
-MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਦਾ ਸਭ ਤੋਂ ਕੀਮਤੀ ਤਰੀਕਾ ਕਸਟਮ ਟੂਲ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝਾ ਕਰਨਾ ਹੈ।
+MCP ਪਰਿਸਰ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਦੇ ਸਭ ਤੋਂ ਕੀਮਤੀ ਤਰੀਕਿਆਂ ਵਿੱਚੋਂ ਇੱਕ ਹੈ ਕਸਟਮ MCP ਸਰਵਰ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝਾ ਕਰਨਾ। ਕਮਿਊਨਿਟੀ ਨੇ ਪਹਿਲਾਂ ਹੀ ਵੱਖ-ਵੱਖ ਸੇਵਾਵਾਂ ਅਤੇ ਵਰਤੋਂ ਦੇ ਕੇਸਾਂ ਲਈ ਸੈਂਕੜੇ ਸਰਵਰ ਵਿਕਸਿਤ ਕੀਤੇ ਹਨ।
 
-### Developing Shareable Tools
+### MCP ਸਰਵਰ ਵਿਕਾਸ ਫਰੇਮਵਰਕ
 
-#### .NET Example: Creating a Shareable Tool Package
+MCP ਸਰਵਰ ਵਿਕਾਸ ਨੂੰ ਆਸਾਨ ਬਣਾਉਣ ਲਈ ਕਈ ਫਰੇਮਵਰਕ ਉਪਲਬਧ ਹਨ:
+
+1. **ਅਧਿਕਾਰਕ SDKs**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **ਕਮਿਊਨਿਟੀ ਫਰੇਮਵਰਕ**:
+   - [MCP-Framework](https://mcp-framework.com/) - TypeScript ਵਿੱਚ ਸੁੰਦਰਤਾ ਅਤੇ ਤੇਜ਼ੀ ਨਾਲ MCP ਸਰਵਰ ਬਣਾਓ
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - ਜਾਵਾ ਨਾਲ ਐਨੋਟੇਸ਼ਨ-ਚਲਿਤ MCP ਸਰਵਰ
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - MCP ਸਰਵਰਾਂ ਲਈ ਜਾਵਾ ਫਰੇਮਵਰਕ
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP ਸਰਵਰਾਂ ਲਈ ਸ਼ੁਰੂਆਤੀ Next.js ਪ੍ਰੋਜੈਕਟ
+
+### ਸਾਂਝੇ ਕਰਨ ਯੋਗ ਟੂਲ ਵਿਕਸਿਤ ਕਰਨਾ
+
+#### .NET ਉਦਾਹਰਣ: ਸਾਂਝਾ ਕਰਨ ਯੋਗ ਟੂਲ ਪੈਕੇਜ ਬਣਾਉਣਾ
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +473,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java Example: Creating a Maven Package for Tools
+#### ਜਾਵਾ ਉਦਾਹਰਣ: ਟੂਲਾਂ ਲਈ Maven ਪੈਕੇਜ ਬਣਾਉਣਾ
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +574,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Python Example: Publishing a PyPI Package
+#### ਪਾਇਥਨ ਉਦਾਹਰਣ: PyPI ਪੈਕੇਜ ਪ੍ਰਕਾਸ਼ਿਤ ਕਰਨਾ
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,68 +679,68 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Sharing Best Practices
+### ਵਧੀਆ ਅਭਿਆਸ ਸਾਂਝੇ ਕਰਨਾ
 
-ਜਦੋਂ MCP ਟੂਲ ਕਮਿਊਨਿਟੀ ਨਾਲ ਸਾਂਝੇ ਕੀਤੇ ਜਾਣ:
+ਜਦ MCP ਟੂਲ ਕਮਿਊਨਿਟੀ ਨਾਲ ਸਾਂਝੇ ਕੀਤੇ ਜਾਣ:
 
-1. **Complete Documentation**:  
-   - ਉਦੇਸ਼, ਵਰਤੋਂ ਅਤੇ ਉਦਾਹਰਣਾਂ ਦਸਤਾਵੇਜ਼ ਕਰੋ  
-   - ਪੈਰਾਮੀਟਰ ਅਤੇ ਰਿਟਰਨ ਵੈਲਿਊਜ਼ ਦੀ ਵਿਆਖਿਆ ਕਰੋ  
-   - ਕਿਸੇ ਵੀ ਬਾਹਰੀ ਨਿਰਭਰਤਾਵਾਂ ਨੂੰ ਦਸਤਾਵੇਜ਼ ਕਰੋ  
+1. **ਪੂਰੀ ਦਸਤਾਵੇਜ਼ੀਕਰਨ**:
+   - ਉਦੇਸ਼, ਵਰਤੋਂ ਅਤੇ ਉਦਾਹਰਣ ਦਸਤਾਵੇਜ਼ ਕਰੋ
+   - ਪੈਰਾਮੀਟਰ ਅਤੇ ਰਿਟਰਨ ਮੁੱਲ ਸਮਝਾਓ
+   - ਕਿਸੇ ਵੀ ਬਾਹਰੀ ਨਿਰਭਰਤਾਵਾਂ ਨੂੰ ਦਸਤਾਵੇਜ਼ ਕਰੋ
 
-2. **Error Handling**:  
-   - ਮਜ਼ਬੂਤ ਗਲਤੀ ਸੰਭਾਲ ਲਾਗੂ ਕਰੋ  
-   - ਲਾਭਦਾਇਕ ਗਲਤੀ ਸੁਨੇਹੇ ਦਿਓ  
-   - ਕਠਿਨ ਸਥਿਤੀਆਂ ਨੂੰ ਸੁਚੱਜੇ ਤਰੀਕੇ ਨਾਲ ਸੰਭਾਲੋ  
+2. **ਗਲਤੀ ਸੰਭਾਲ**:
+   - ਮਜ਼ਬੂਤ ਗਲਤੀ ਸੰਭਾਲ ਲਾਗੂ ਕਰੋ
+   - ਲਾਭਦਾਇਕ ਗਲਤੀ ਸੁਨੇਹੇ ਦਿਓ
+   - ਕਿਨਾਰੇ ਦੇ ਕੇਸਾਂ ਨੂੰ ਸੁਚੱਜੇ ਤਰੀਕੇ ਨਾਲ ਸੰਭਾਲੋ
 
-3. **Performance Considerations**:  
-   - ਗਤੀ ਅਤੇ ਸਰੋਤਾਂ ਦੀ ਵਰਤੋਂ ਦੋਹਾਂ ਲਈ ਅਪਟੀਮਾਈਜ਼ ਕਰੋ  
-   - ਜਦੋਂ ਲੋੜ ਹੋਵੇ ਕੈਸ਼ਿੰਗ ਲਾਗੂ ਕਰੋ  
-   - ਸਕੇਲਬਿਲਟੀ ਦਾ ਧਿਆਨ ਰੱਖੋ  
+3. **ਕਾਰਗੁਜ਼ਾਰੀ ਦੇ ਵਿਚਾਰ**:
+   - ਗਤੀ ਅਤੇ ਸਰੋਤ ਵਰਤੋਂ ਦੋਹਾਂ ਲਈ ਅਪਟੀਮਾਈਜ਼ ਕਰੋ
+   - ਜਦੋਂ ਲੋੜ ਹੋਵੇ ਕੈਸ਼ਿੰਗ ਲਾਗੂ ਕਰੋ
+   - ਸਕੇਲਬਿਲਟੀ ਦਾ ਧਿਆਨ ਰੱਖੋ
 
-4. **Security**:  
-   - ਸੁਰੱਖਿਅਤ API ਕੁੰਜੀਆਂ ਅਤੇ ਪ੍ਰਮਾਣਿਕਤਾ ਵਰਤੋਂ  
-   - ਇਨਪੁੱਟ ਦੀ ਜਾਂਚ ਅਤੇ ਸਾਫ਼-ਸੁਥਰਾ ਕਰਨਾ  
-   - ਬਾਹਰੀ API ਕਾਲਾਂ ਲਈ ਰੇਟ ਲਿਮਿਟਿੰਗ ਲਾਗੂ ਕਰੋ  
+4. **ਸੁਰੱਖਿਆ**:
+   - ਸੁਰੱਖਿਅਤ API ਕੁੰਜੀਆਂ ਅਤੇ ਪ੍ਰਮਾਣਿਕਤਾ ਵਰਤੋਂ
+   - ਇਨਪੁੱਟ ਦੀ ਜਾਂਚ ਅਤੇ ਸਫਾਈ ਕਰੋ
+   - ਬਾਹਰੀ API ਕਾਲਾਂ ਲਈ ਰੇਟ ਲਿਮਿਟਿੰਗ ਲਾਗੂ ਕਰੋ
 
-5. **Testing**:  
-   - ਵਿਸਤ੍ਰਿਤ ਟੈਸਟ ਕਵਰੇਜ ਸ਼ਾਮਲ ਕਰੋ  
-   - ਵੱਖ-ਵੱਖ ਇਨਪੁੱਟ ਕਿਸਮਾਂ ਅਤੇ ਕਠਿਨ ਸਥਿਤੀਆਂ ਨਾਲ ਟੈਸਟ ਕਰੋ  
-   - ਟੈਸਟ ਪ੍ਰਕਿਰਿਆਵਾਂ ਨੂੰ ਦਸਤਾਵੇਜ਼ ਕਰੋ  
+5. **ਟੈਸਟਿੰਗ**:
+   - ਵਿਸਤ੍ਰਿਤ ਟੈਸਟ ਕਵਰੇਜ ਸ਼ਾਮਲ ਕਰੋ
+   - ਵੱਖ-ਵੱਖ ਇਨਪੁੱਟ ਕਿਸਮਾਂ ਅਤੇ ਕਿਨਾਰੇ ਦੇ ਕੇਸਾਂ ਨਾਲ ਟੈਸਟ ਕਰੋ
+   - ਟੈਸਟ ਪ੍ਰਕਿਰਿਆਵਾਂ ਦਸਤਾਵੇਜ਼ ਕਰੋ
 
-## Community Collaboration and Best Practices
+## ਕਮਿਊਨਿਟੀ ਸਹਿਯੋਗ ਅਤੇ ਵਧੀਆ ਅਭਿਆਸ
 
-ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਸਹਿਯੋਗ MCP ਇਕੋਸਿਸਟਮ ਦੀ ਤਰੱਕੀ ਲਈ ਬਹੁਤ ਜਰੂਰੀ ਹੈ।
+ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਸਹਿਯੋਗ MCP ਪਰਿਸਰ ਦੀ ਤਰੱਕੀ ਲਈ ਬਹੁਤ ਜਰੂਰੀ ਹੈ।
 
-### Communication Channels
+### ਸੰਚਾਰ ਚੈਨਲ
 
-- GitHub Issues ਅਤੇ Discussions  
-- Microsoft Tech Community  
-- Discord ਅਤੇ Slack ਚੈਨਲ  
-- Stack Overflow (ਟੈਗ: `model-context-protocol` ਜਾਂ `mcp`)  
+- GitHub Issues ਅਤੇ Discussions
+- Microsoft Tech Community
+- Discord ਅਤੇ Slack ਚੈਨਲ
+- Stack Overflow (ਟੈਗ: `model-context-protocol` ਜਾਂ `mcp`)
 
-### Code Reviews
+### ਕੋਡ ਸਮੀਖਿਆ
 
 ਜਦ MCP ਯੋਗਦਾਨਾਂ ਦੀ ਸਮੀਖਿਆ ਕਰਦੇ ਹੋ:
 
-1. **Clarity**: ਕੀ ਕੋਡ ਸਪਸ਼ਟ ਅਤੇ ਚੰਗੀ ਤਰ੍ਹਾਂ ਦਸਤਾਵੇਜ਼ਿਤ ਹੈ?  
-2. **Correctness**: ਕੀ ਇਹ ਉਮੀਦ ਅਨੁਸਾਰ ਕੰਮ ਕਰਦਾ ਹੈ?  
-3. **Consistency**: ਕੀ ਇਹ ਪ੍ਰੋਜੈਕਟ ਦੇ ਰਿਵਾਜਾਂ ਦੀ ਪਾਲਣਾ ਕਰਦਾ ਹੈ?  
-4. **Completeness**: ਕੀ ਟੈਸਟ ਅਤੇ ਦਸਤਾਵੇਜ਼ ਸ਼ਾਮਲ ਹਨ?  
-5. **Security**: ਕੀ ਕੋਈ ਸੁਰੱਖਿਆ ਸੰਬੰਧੀ ਚਿੰਤਾਵਾਂ ਹਨ?  
+1. **ਸਪਸ਼ਟਤਾ**: ਕੀ ਕੋਡ ਸਪਸ਼ਟ ਅਤੇ ਚੰਗੀ ਤਰ੍ਹਾਂ ਦਸਤਾਵੇਜ਼ਿਤ ਹੈ?
+2. **ਸਹੀਤਾ**: ਕੀ ਇਹ ਉਮੀਦ ਅਨੁਸਾਰ ਕੰਮ ਕਰਦਾ ਹੈ?
+3. **ਸਮਰੂਪਤਾ**: ਕੀ ਇਹ ਪ੍ਰੋਜੈਕਟ ਦੇ ਰਿਵਾਜਾਂ ਦੀ ਪਾਲਣਾ ਕਰਦਾ ਹੈ?
+4. **ਪੂਰਨਤਾ**: ਕੀ ਟੈਸਟ ਅਤੇ ਦਸਤਾਵੇਜ਼ ਸ਼ਾਮਲ ਹਨ?
+5. **ਸੁਰੱਖਿਆ**: ਕੀ ਕੋਈ ਸੁਰੱਖਿਆ ਸੰਬੰਧੀ ਚਿੰਤਾਵਾਂ ਹਨ?
 
-### Version Compatibility
+### ਵਰਜਨ ਅਨੁਕੂਲਤਾ
 
-MCP ਲਈ ਵਿਕਾਸ ਕਰਦੇ ਸਮੇਂ:
+ਜਦ MCP ਲਈ ਵਿਕਾਸ ਕਰਦੇ ਹੋ:
 
-1. **Protocol Versioning**: ਆਪਣੇ ਟੂਲ ਲਈ MCP ਪ੍ਰੋਟੋਕੋਲ ਵਰਜਨ ਦੀ ਪਾਲਣਾ ਕਰੋ  
-2. **Client Compatibility**: ਪਿਛਲੇ ਵਰਜਨਾਂ ਨਾਲ ਅਨੁਕੂਲਤਾ ਦਾ ਧਿਆਨ ਰੱਖੋ  
-3. **Server Compatibility**: ਸਰਵਰ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼ਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ  
-4. **Breaking Changes**: ਕਿਸੇ ਵੀ ਤੋੜ-ਮੋੜ ਵਾਲੇ ਬਦਲਾਵਾਂ ਨੂੰ ਸਪਸ਼ਟ ਤੌਰ 'ਤੇ ਦਸਤਾਵੇਜ਼ ਕਰੋ  
+1. **ਪ੍ਰੋਟੋਕੋਲ ਵਰਜਨਿੰਗ**: ਆਪਣੇ ਟੂਲ ਦੁਆਰਾ ਸਹਿਯੋਗੀ MCP ਪ੍ਰੋਟੋਕੋਲ ਵਰਜਨ ਦੀ ਪਾਲਣਾ ਕਰੋ
+2. **ਕਲਾਇੰਟ ਅਨੁਕੂਲਤਾ**: ਪਿਛਲੇ ਵਰਜਨਾਂ ਨਾਲ ਅਨੁਕੂਲਤਾ ਦਾ ਧਿਆਨ ਰੱਖੋ
+3. **ਸਰਵਰ ਅਨੁਕੂਲਤਾ**: ਸਰਵਰ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼ਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ
+4. **ਤੋੜ-ਮੋੜ ਵਾਲੇ ਬਦਲਾਅ**: ਕਿਸੇ ਵੀ ਤੋੜ-ਮੋੜ ਵਾਲੇ ਬਦਲਾਅ ਨੂੰ ਸਪਸ਼ਟ ਤੌਰ 'ਤੇ ਦਸਤਾਵੇਜ਼ ਕਰੋ
 
-## Example Community Project: MCP Tool Registry
+## ਉਦਾਹਰਣ ਕਮਿਊਨਿਟੀ ਪ੍ਰੋਜੈਕਟ: MCP ਟੂਲ ਰਜਿਸਟਰੀ
 
-ਇੱਕ ਮਹੱਤਵਪੂਰਨ ਕਮਿਊਨਿਟੀ ਯੋਗਦਾਨ MCP ਟੂਲਾਂ ਲਈ ਇੱਕ ਪਬਲਿਕ ਰਜਿਸਟਰੀ ਵਿਕਸਿਤ ਕਰਨਾ ਹੋ ਸਕਦਾ ਹੈ।
+ਇੱਕ ਮਹੱਤਵਪੂਰਨ ਕਮਿਊਨਿਟੀ ਯੋਗਦਾਨ MCP ਟੂਲਾਂ ਲਈ ਇੱਕ ਜਨਤਕ ਰਜਿਸਟਰੀ ਵਿਕਸਿਤ ਕਰਨਾ ਹੋ ਸਕਦਾ ਹੈ।
 
 ```python
 # Example schema for a community tool registry API
@@ -887,25 +819,30 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Key Takeaways
+## ਮੁੱਖ ਗੱਲਾਂ
 
-- MCP ਕਮਿਊਨਿਟੀ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਦੇ ਯੋਗਦਾਨਾਂ ਦਾ ਸਵਾਗਤ ਕਰਦੀ ਹੈ  
-- MCP ਵਿੱਚ ਯੋਗਦਾਨ ਮੁੱਖ ਪ੍ਰੋਟੋਕੋਲ ਸੁਧਾਰਾਂ ਤੋਂ ਲੈ ਕੇ ਕਸਟਮ ਟੂਲ ਤੱਕ ਹੋ ਸਕਦਾ ਹੈ  
-- ਯੋਗਦਾਨ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼ਾਂ ਦੀ ਪਾਲਣਾ ਤੁਹਾਡੇ PR ਦੇ ਮਨਜ਼ੂਰ ਹੋਣ ਦੇ ਮੌਕੇ ਵਧਾਉਂਦੀ ਹੈ  
-- MCP ਟੂਲ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝਾ ਕਰਨਾ ਇਕੋਸਿਸਟਮ ਨੂੰ ਮਜ਼ਬੂਤ ਕਰਨ ਦਾ ਕੀਮਤੀ ਤਰੀਕਾ ਹੈ  
-- ਕਮਿਊਨਿਟੀ ਸਹਿਯੋਗ MCP ਦੀ ਵਾਧਾ ਅਤੇ ਸੁਧਾਰ ਲਈ ਜਰੂਰੀ ਹੈ  
+- MCP ਕਮਿਊਨਿਟੀ ਵਿਭਿੰਨ ਹੈ ਅਤੇ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਦੇ ਯੋਗਦਾਨਾਂ ਦਾ ਸਵਾਗਤ ਕਰਦੀ ਹੈ
+- MCP ਵਿੱਚ ਯੋਗਦਾਨ ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ ਸੁਧਾਰਾਂ ਤੋਂ ਲੈ ਕੇ ਕਸਟਮ ਟੂਲਾਂ ਤੱਕ ਹੋ ਸਕਦਾ ਹੈ
+- ਯੋਗਦਾਨ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼ਾਂ ਦੀ ਪਾਲਣਾ ਤੁਹਾਡੇ PR ਨੂੰ ਮਨਜ਼ੂਰ ਹੋਣ ਦੇ ਮੌਕੇ ਵਧਾਉਂਦੀ ਹੈ
+- MCP ਟੂਲ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝਾ ਕਰਨਾ ਪਰਿਸਰ ਨੂੰ ਮਜ਼ਬੂਤ ਕਰਨ ਦਾ ਕੀਮਤੀ ਤਰੀਕਾ ਹੈ
+- ਕਮਿਊਨਿਟੀ ਸਹਿਯੋਗ MCP ਦੇ ਵਿਕਾਸ ਅਤੇ ਸੁਧਾਰ ਲਈ ਜਰੂਰੀ ਹੈ
 
-## Exercise
+## ਅਭਿਆਸ
 
-1. MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਆਪਣੀਆਂ ਹੁਨਰਾਂ ਅਤੇ ਦਿਲਚਸਪੀ ਦੇ ਅਧਾਰ 'ਤੇ ਕੋਈ ਖੇਤਰ ਚੁਣੋ ਜਿੱਥੇ ਤੁਸੀਂ ਯੋਗਦਾਨ ਦੇ ਸਕੋ  
-2. MCP ਰਿਪੋਜ਼ਟਰੀ ਨੂੰ ਫੋਰਕ ਕਰੋ ਅਤੇ ਆਪਣਾ ਲੋਕਲ ਵਿਕਾਸ ਵਾਤਾਵਰਣ ਸੈੱਟ ਕਰੋ  
-3. ਇੱਕ ਛੋਟਾ ਸੁਧਾਰ, ਬੱਗ ਫਿਕਸ, ਜਾਂ ਟੂਲ ਬਣਾਓ ਜੋ ਕਮਿਊਨਿਟੀ ਲਈ ਲਾਭਦਾਇਕ ਹੋਵੇ  
-4. ਆਪਣੇ ਯੋਗਦਾਨ ਨੂੰ ਢੰਗ ਨਾਲ ਟੈਸਟ ਅਤੇ ਦਸਤਾਵੇਜ਼ ਕਰੋ  
-5. ਸਹੀ ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਪੂਲ ਰਿਕਵੇਸਟ ਸਬਮਿਟ ਕਰੋ  
+1. MCP ਪਰਿਸਰ ਵਿੱਚ ਆਪਣੀਆਂ ਹੁਨਰਾਂ ਅਤੇ ਦਿਲਚਸਪੀ ਦੇ ਅਧਾਰ 'ਤੇ ਕੋਈ ਖੇਤਰ ਚੁਣੋ ਜਿੱਥੇ ਤੁਸੀਂ ਯੋਗਦਾਨ ਦੇ ਸਕੋ
+2. MCP ਰਿਪੋਜ਼ਟਰੀ ਨੂੰ ਫੋਰਕ ਕਰੋ ਅਤੇ ਆਪਣਾ ਲੋਕਲ ਵਿਕਾਸ ਵਾਤਾਵਰਣ ਸੈਟਅੱਪ ਕਰੋ
+3. ਇੱਕ ਛੋਟਾ ਸੁਧਾਰ, ਬੱਗ ਫਿਕਸ, ਜਾਂ ਟੂਲ ਬਣਾਓ ਜੋ ਕਮਿਊਨਿਟੀ ਲਈ ਲਾਭਦਾਇਕ ਹੋਵੇ
+4. ਆਪਣੇ ਯੋਗਦਾਨ ਨੂੰ ਢੰਗ ਨਾਲ ਟੈਸਟ ਅਤੇ ਦਸਤਾਵੇਜ਼ ਕਰੋ
+5. ਸਬੰਧਤ ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਪੂਲ ਰਿਕਵੇਸਟ ਸਬਮਿਟ ਕਰੋ
 
-## Additional Resources
+## ਵਾਧੂ ਸਰੋਤ
 
 - [MCP Community Projects](https://github.com/topics/model-context-protocol)
 
+
+---
+
+ਅਗਲਾ: [Lessons from Early Adoption](../07-L
+
 **ਅਸਵੀਕਾਰੋਪਣ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

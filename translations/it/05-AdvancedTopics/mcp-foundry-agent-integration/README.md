@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:34:00+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T01:18:38+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "it"
 }
@@ -13,11 +13,11 @@ Questa guida mostra come integrare i server Model Context Protocol (MCP) con gli
 
 ## Introduzione
 
-Model Context Protocol (MCP) è uno standard aperto che consente alle applicazioni AI di connettersi in modo sicuro a fonti di dati esterne e strumenti. Integrandolo con Azure AI Foundry, MCP permette agli agenti di accedere e interagire con vari servizi esterni, API e fonti di dati in modo standardizzato.
+Model Context Protocol (MCP) è uno standard aperto che consente alle applicazioni AI di connettersi in modo sicuro a fonti di dati esterne e strumenti. Integrato con Azure AI Foundry, MCP permette agli agenti di accedere e interagire con vari servizi esterni, API e fonti di dati in modo standardizzato.
 
 Questa integrazione unisce la flessibilità dell’ecosistema di strumenti MCP con il solido framework agenti di Azure AI Foundry, offrendo soluzioni AI di livello enterprise con ampie possibilità di personalizzazione.
 
-**Nota:** Se vuoi utilizzare MCP nel servizio Azure AI Foundry Agent, attualmente sono supportate solo le seguenti regioni: westus, westus2, uaenorth, southindia e switzerlandnorth
+**Nota:** Se vuoi usare MCP nel servizio Azure AI Foundry Agent, attualmente sono supportate solo le seguenti regioni: westus, westus2, uaenorth, southindia e switzerlandnorth
 
 ## Obiettivi di Apprendimento
 
@@ -358,7 +358,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 3. Problemi di Prestazioni
 - Ottimizza la frequenza delle chiamate agli strumenti
-- Implementa caching dove appropriato
+- Implementa caching dove opportuno
 - Monitora i tempi di risposta del server
 
 ## Passi Successivi
@@ -385,7 +385,7 @@ Per supporto aggiuntivo e domande:
 
 ## Cosa c’è dopo
 
-- [6. Contributi della Community](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Disclaimer**:  
 Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

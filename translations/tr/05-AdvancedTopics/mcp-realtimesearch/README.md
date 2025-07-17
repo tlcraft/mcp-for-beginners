@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:03:16+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T01:29:47+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "tr"
 }
 -->
 ## Kod Örnekleri Uyarısı
 
-> **Önemli Not**: Aşağıdaki kod örnekleri, Model Context Protocol (MCP) ile web arama işlevselliğinin entegrasyonunu göstermektedir. Resmi MCP SDK'larının kalıplarını ve yapısını takip etmelerine rağmen, eğitim amaçlı olarak basitleştirilmiştir.
+> **Önemli Not**: Aşağıdaki kod örnekleri, Model Context Protocol (MCP) ile web arama işlevselliğinin entegrasyonunu göstermektedir. Resmi MCP SDK'larının kalıplarını ve yapısını takip etmelerine rağmen, eğitim amaçlı olarak basitleştirilmişlerdir.
 > 
 > Bu örnekler şunları göstermektedir:
 > 
-> 1. **Python Uygulaması**: Harici bir arama API'sine bağlanan ve web arama aracı sağlayan bir FastMCP sunucu uygulaması. Bu örnek, [resmi MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) kalıplarını takip ederek uygun yaşam döngüsü yönetimi, bağlam işleme ve araç uygulamasını göstermektedir. Sunucu, üretim dağıtımları için eski SSE taşıma yönteminin yerini alan önerilen Streamable HTTP taşımasını kullanır.
+> 1. **Python Uygulaması**: Harici bir arama API'sine bağlanan ve web arama aracı sağlayan bir FastMCP sunucu uygulaması. Bu örnek, [resmi MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) kalıplarını takip ederek uygun yaşam döngüsü yönetimi, bağlam işleme ve araç uygulamasını göstermektedir. Sunucu, üretim dağıtımları için eski SSE taşıma yönteminin yerini alan önerilen Streamable HTTP taşımasını kullanmaktadır.
 > 
-> 2. **JavaScript Uygulaması**: [resmi MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) içindeki FastMCP kalıbını kullanan, uygun araç tanımları ve istemci bağlantılarıyla bir arama sunucusu oluşturmak için TypeScript/JavaScript uygulaması. Oturum yönetimi ve bağlam koruma için en güncel önerilen kalıpları takip eder.
+> 2. **JavaScript Uygulaması**: [resmi MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) içindeki FastMCP kalıbını kullanan TypeScript/JavaScript uygulaması; uygun araç tanımları ve istemci bağlantıları ile bir arama sunucusu oluşturur. Oturum yönetimi ve bağlam koruma için en güncel önerilen kalıpları takip eder.
 > 
 > Bu örnekler, üretim kullanımı için ek hata yönetimi, kimlik doğrulama ve özel API entegrasyon kodu gerektirebilir. Gösterilen arama API uç noktaları (`https://api.search-service.example/search`) yer tutucudur ve gerçek arama hizmeti uç noktaları ile değiştirilmelidir.
 > 
@@ -39,7 +39,7 @@ Temelde, Model Context Protocol, AI modelleri, uygulamalar ve servisler arasınd
 
 ### Web Arama Entegrasyon Kalıpları
 
-MCP'yi web aramayla entegre ederken birkaç kalıp ortaya çıkar:
+MCP'yi web arama ile entegre ederken birkaç kalıp ortaya çıkar:
 
 #### 1. Doğrudan Arama Sağlayıcı Entegrasyonu
 
@@ -69,7 +69,7 @@ graph LR
 
 Bu kalıp, arama sorgularını birden çok MCP uyumlu arama sağlayıcısına dağıtır; her biri farklı içerik türleri veya arama yeteneklerinde uzmanlaşabilir ve birleşik bir bağlam korunur.
 
-#### 3. Bağlamla Zenginleştirilmiş Arama Zinciri
+#### 3. Bağlam Destekli Arama Zinciri
 
 ```mermaid
 graph LR
@@ -83,7 +83,7 @@ graph LR
     Server --> |Final Results + Updated Context| Client
 ```
 
-Bu kalıpta, arama süreci birden çok aşamaya bölünür ve her adımda bağlam zenginleştirilir; böylece sonuçlar aşamalı olarak daha alakalı hale gelir.
+Bu kalıpta, arama süreci birden çok aşamaya bölünür ve her adımda bağlam zenginleştirilir; böylece giderek daha alakalı sonuçlar elde edilir.
 
 ### Arama Bağlamı Bileşenleri
 
@@ -97,14 +97,14 @@ MCP tabanlı web aramada bağlam genellikle şunları içerir:
 - **Zamansal Bağlam**: Zaman bazlı alaka faktörleri
 - **Kaynak Tercihleri**: Güvenilen veya tercih edilen bilgi kaynakları
 
-## Kullanım Alanları ve Uygulamalar
+## Kullanım Senaryoları ve Uygulamalar
 
 ### Araştırma ve Bilgi Toplama
 
 MCP, araştırma iş akışlarını şu şekillerde geliştirir:
 
-- Araştırma bağlamını arama oturumları boyunca korur
-- Daha sofistike ve bağlama uygun sorgulara olanak tanır
+- Arama oturumları boyunca araştırma bağlamını korur
+- Daha sofistike ve bağlamsal olarak alakalı sorgulara olanak tanır
 - Çok kaynaklı arama federasyonunu destekler
 - Arama sonuçlarından bilgi çıkarımını kolaylaştırır
 
@@ -114,7 +114,7 @@ MCP destekli arama, haber takibi için avantajlar sunar:
 
 - Ortaya çıkan haberlerin neredeyse gerçek zamanlı keşfi
 - İlgili bilgilerin bağlamsal filtrelenmesi
-- Birden çok kaynaktan konu ve varlık takibi
+- Birden çok kaynakta konu ve varlık takibi
 - Kullanıcı bağlamına dayalı kişiselleştirilmiş haber uyarıları
 
 ### AI Destekli Tarama ve Araştırma
@@ -143,7 +143,7 @@ Geleceğin MCP aramasını şekillendirecek ortaya çıkan teknolojiler:
 
 1. **Sinirsel Arama Mimarileri**: MCP için optimize edilmiş gömme tabanlı arama sistemleri  
 2. **Kişiselleştirilmiş Arama Bağlamı**: Bireysel kullanıcı arama alışkanlıklarının zamanla öğrenilmesi  
-3. **Bilgi Grafiği Entegrasyonu**: Alan spesifik bilgi grafiklerinin sağladığı bağlamsal arama iyileştirmeleri  
+3. **Bilgi Grafiği Entegrasyonu**: Alan spesifik bilgi grafiklerinin bağlamsal aramayı güçlendirmesi  
 4. **Çapraz Modlu Bağlam**: Farklı arama modları arasında bağlamın korunması  
 
 ## Uygulamalı Alıştırmalar  
@@ -208,13 +208,13 @@ MCP tabanlı web arama çözümleri uygularken, MCP spesifikasyonundan şu önem
 
 4. **Açık Dokümantasyon**: MCP tabanlı arama uygulamanızın yetenekleri, sınırlamaları ve güvenlik hususları hakkında açık dokümantasyon sağlayın; MCP spesifikasyonundaki uygulama rehberlerine uyun.  
 
-5. **Sağlam Onay Akışları**: Özellikle harici web kaynaklarıyla etkileşimde bulunan araçlar için, her aracın ne yaptığını açıkça açıklayan ve kullanımını yetkilendirmeden önce onay isteyen sağlam onay ve yetkilendirme akışları oluşturun.  
+5. **Sağlam Onay Akışları**: Özellikle harici web kaynaklarıyla etkileşimde bulunan araçlar için, her aracın ne yaptığını açıkça açıklayan ve kullanımını yetkilendirmeden önce onay alan sağlam onay ve yetkilendirme akışları oluşturun.  
 
 MCP güvenlik ve güvenilirlik konularının tam detayları için [resmi dokümantasyona](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety) bakınız.  
 
 ## Sonraki Adımlar  
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

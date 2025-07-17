@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:34:29+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T01:30:36+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "tr"
 }
@@ -15,7 +15,7 @@ Bu rehber, Model Context Protocol (MCP) sunucularını Azure AI Foundry ajanlar�
 
 Model Context Protocol (MCP), yapay zeka uygulamalarının dış veri kaynakları ve araçlara güvenli bir şekilde bağlanmasını sağlayan açık bir standarttır. Azure AI Foundry ile entegre edildiğinde, MCP ajanların çeşitli dış hizmetlere, API’lere ve veri kaynaklarına standart bir şekilde erişip etkileşimde bulunmasına olanak tanır.
 
-Bu entegrasyon, MCP’nin araç ekosisteminin esnekliğini Azure AI Foundry’nin sağlam ajan çerçevesiyle birleştirerek, geniş özelleştirme imkanları sunan kurumsal düzeyde yapay zeka çözümleri sağlar.
+Bu entegrasyon, MCP’nin araç ekosisteminin esnekliğini Azure AI Foundry’nin sağlam ajan çerçevesiyle birleştirerek, kapsamlı özelleştirme imkanları sunan kurumsal düzeyde yapay zeka çözümleri sağlar.
 
 **Not:** MCP’yi Azure AI Foundry Agent Service içinde kullanmak isterseniz, şu anda yalnızca şu bölgeler desteklenmektedir: westus, westus2, uaenorth, southindia ve switzerlandnorth
 
@@ -25,7 +25,7 @@ Bu rehberin sonunda şunları yapabileceksiniz:
 
 - Model Context Protocol’ü ve faydalarını anlamak
 - Azure AI Foundry ajanlarıyla kullanmak üzere MCP sunucularını kurmak
-- MCP araç entegrasyonuyla ajanlar oluşturup yapılandırmak
+- MCP araç entegrasyonlu ajanlar oluşturup yapılandırmak
 - Gerçek MCP sunucuları kullanarak pratik örnekler uygulamak
 - Ajan konuşmalarında araç yanıtları ve atıfları yönetmek
 
@@ -44,8 +44,8 @@ Model Context Protocol, yapay zeka uygulamalarının dış veri kaynakları ve a
 
 - **Standartlaştırılmış Entegrasyon**: Farklı araçlar ve hizmetler arasında tutarlı arayüz
 - **Güvenlik**: Güvenli kimlik doğrulama ve yetkilendirme mekanizmaları
-- **Esneklik**: Çeşitli veri kaynakları, API’ler ve özel araçlar desteği
-- **Genişletilebilirlik**: Yeni yetenekler ve entegrasyonların kolayca eklenebilmesi
+- **Esneklik**: Çeşitli veri kaynakları, API’ler ve özel araçları destekler
+- **Genişletilebilirlik**: Yeni yetenekler ve entegrasyonlar kolayca eklenebilir
 
 ## Azure AI Foundry ile MCP Kurulumu
 
@@ -352,7 +352,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Ağ bağlantısını sağlayın
 
 ### 2. Araç Çağrısı Hataları
-- Araç argümanlarını ve biçimlendirmeyi gözden geçirin
+- Araç argümanları ve biçimlendirmesini gözden geçirin
 - Sunucuya özgü gereksinimleri kontrol edin
 - Doğru hata yönetimi uygulayın
 
@@ -367,7 +367,7 @@ MCP entegrasyonunuzu daha da geliştirmek için:
 
 1. **Özel MCP Sunucuları Keşfedin**: Kendi MCP sunucularınızı kurarak özel veri kaynakları oluşturun
 2. **Gelişmiş Güvenlik Uygulayın**: OAuth2 veya özel kimlik doğrulama mekanizmaları ekleyin
-3. **İzleme ve Analitik**: Araç kullanımını kaydetmek ve izlemek için sistemler kurun
+3. **İzleme ve Analitik**: Araç kullanımını kaydetme ve izleme sistemleri kurun
 4. **Çözümünüzü Ölçeklendirin**: Yük dengeleme ve dağıtık MCP sunucu mimarilerini değerlendirin
 
 ## Ek Kaynaklar
@@ -383,9 +383,9 @@ Ek destek ve sorular için:
 - [Azure AI Foundry dokümantasyonunu](https://learn.microsoft.com/azure/ai-foundry/) inceleyin
 - [MCP topluluk kaynaklarını](https://modelcontextprotocol.io/) kontrol edin
 
-## Sonraki
+## Sonraki Konu
 
-- [6. Topluluk Katkıları](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-07-13T15:10:57+00:00",
+  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
+  "translation_date": "2025-07-16T23:53:23+00:00",
   "source_file": "study_guide.md",
   "language_code": "mo"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 倉庫概覽
 
-Model Context Protocol (MCP) 是一套標準化的框架，用於 AI 模型與客戶端應用程式之間的互動。本倉庫提供完整課程，包含 C#、Java、JavaScript、Python 及 TypeScript 的實作範例，適合 AI 開發者、系統架構師及軟體工程師使用。
+Model Context Protocol (MCP) 是一套標準化的框架，用於 AI 模型與客戶端應用程式之間的互動。最初由 Anthropic 創建，現由更廣泛的 MCP 社群透過官方 GitHub 組織維護。本倉庫提供完整課程，包含 C#、Java、JavaScript、Python 和 TypeScript 的實作範例，適合 AI 開發者、系統架構師及軟體工程師使用。
 
 ## 視覺化課程地圖
 
@@ -38,10 +38,11 @@ mindmap
     03. Getting Started
       ::icon(fa fa-rocket)
       (First Server)
-      (First Client)
+      (Client)
       (LLM Client)
       (VS Code Integration)
       (SSE Server)
+      (HTTP Streaming)
       (AI Toolkit)
       (Testing)
       (Deployment)
@@ -53,17 +54,27 @@ mindmap
       (Sample Projects)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
+      (Context Engineering)
+      (Foundry Integration)
       (Multi-modal AI)
-      (Scaling)
-      (Enterprise Integration)
-      (Azure Integration)
-      (OAuth2)
+      (OAuth2 Demo)
+      (Real-time Search)
+      (Streaming)
       (Root Contexts)
+      (Routing)
+      (Sampling)
+      (Scaling)
+      (Security)
+      (Entra ID)
+      (Web Search)
+      
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (Feedback)
+      (MCP Clients)
+      (MCP Servers)
+      (Image Generation)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
       (Real-world Examples)
@@ -76,9 +87,10 @@ mindmap
       (Resilience)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (Solution Architectures)
-      (Deployment Blueprints)
-      (Project Walkthroughs)
+      (API Management)
+      (Travel Agent)
+      (Azure DevOps)
+      (Documentation MCP)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
       (AI Toolkit Integration)
@@ -93,7 +105,7 @@ mindmap
 1. **介紹 (00-Introduction/)**
    - Model Context Protocol 概述
    - 為何 AI 流程中標準化至關重要
-   - 實際應用案例與效益
+   - 實際應用案例與優勢
 
 2. **核心概念 (01-CoreConcepts/)**
    - 客戶端-伺服器架構
@@ -105,11 +117,20 @@ mindmap
    - 安全實作最佳做法
    - 認證與授權策略
 
-4. **入門指南 (03-GettingStarted/)**
+4. **快速入門 (03-GettingStarted/)**
    - 環境設定與配置
    - 建立基本 MCP 伺服器與客戶端
    - 與現有應用整合
-   - 包含首次伺服器、首次客戶端、LLM 客戶端、VS Code 整合、SSE 伺服器、AI 工具包、測試與部署等子章節
+   - 包含章節：
+     - 首個伺服器實作
+     - 客戶端開發
+     - LLM 客戶端整合
+     - VS Code 整合
+     - Server-Sent Events (SSE) 伺服器
+     - HTTP 串流
+     - AI 工具包整合
+     - 測試策略
+     - 部署指南
 
 5. **實務實作 (04-PracticalImplementation/)**
    - 跨語言 SDK 使用
@@ -118,19 +139,30 @@ mindmap
    - 範例專案與實作示範
 
 6. **進階主題 (05-AdvancedTopics/)**
-   - 多模態 AI 工作流程與擴充性
-   - 安全擴展策略
-   - MCP 在企業生態系中的應用
-   - 專題包括 Azure 整合、多模態、OAuth2、根上下文、路由、取樣、擴展、安全性、網路搜尋整合與串流等
+   - 上下文工程技術
+   - Foundry 代理整合
+   - 多模態 AI 工作流程
+   - OAuth2 認證示範
+   - 即時搜尋功能
+   - 即時串流
+   - Root contexts 實作
+   - 路由策略
+   - 取樣技術
+   - 擴展方法
+   - 安全性考量
+   - Entra ID 安全整合
+   - 網路搜尋整合
 
 7. **社群貢獻 (06-CommunityContributions/)**
    - 如何貢獻程式碼與文件
    - 透過 GitHub 協作
    - 社群驅動的改進與回饋
+   - 使用多種 MCP 客戶端（Claude Desktop、Cline、VSCode）
+   - 使用熱門 MCP 伺服器，包括影像生成
 
 8. **早期採用經驗 (07-LessonsfromEarlyAdoption/)**
-   - 實際案例與成功故事
-   - MCP 解決方案的建置與部署
+   - 真實世界實作與成功案例
+   - 建置與部署 MCP 解決方案
    - 趨勢與未來發展路線圖
 
 9. **最佳實務 (08-BestPractices/)**
@@ -139,39 +171,23 @@ mindmap
    - 測試與韌性策略
 
 10. **案例研究 (09-CaseStudy/)**
-    - 深入探討 MCP 解決方案架構
-    - 部署藍圖與整合建議
-    - 附註圖表與專案導覽
+    - 案例研究：Azure API 管理整合
+    - 案例研究：旅遊代理實作
+    - 案例研究：Azure DevOps 與 YouTube 整合
+    - 詳細文件的實作範例
 
 11. **實作工作坊 (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - 結合 MCP 與 Microsoft AI Toolkit for VS Code 的完整實作工作坊
-    - 建構連結 AI 模型與實務工具的智慧應用
+    - 結合 MCP 與 AI 工具包的完整實作工作坊
+    - 建立連結 AI 模型與現實工具的智慧應用
     - 涵蓋基礎、客製伺服器開發與生產部署策略的實務模組
+    - 以實驗室方式學習，附逐步指引
 
-## 範例專案
+## 附加資源
 
-倉庫包含多個示範 MCP 實作的範例專案，涵蓋不同程式語言：
+倉庫包含輔助資源：
 
-### 基本 MCP 計算器範例
-- C# MCP 伺服器範例
-- Java MCP 計算器
-- JavaScript MCP 示範
-- Python MCP 伺服器
-- TypeScript MCP 範例
-
-### 進階 MCP 計算器專案
-- 進階 C# 範例
-- Java 容器應用範例
-- JavaScript 進階範例
-- Python 複雜實作
-- TypeScript 容器範例
-
-## 其他資源
-
-倉庫還包含輔助資源：
-
-- **Images 資料夾**：課程中使用的圖表與插圖
-- **翻譯**：多語言支援與文件自動翻譯
+- **Images 資料夾**：存放課程中使用的圖表與插圖
+- **翻譯**：多語言支援，包含文件的自動翻譯
 - **官方 MCP 資源**：
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
@@ -179,19 +195,72 @@ mindmap
 
 ## 如何使用本倉庫
 
-1. **循序學習**：依序閱讀章節（00 至 10），獲得系統化學習體驗。
+1. **依序學習**：依章節順序（00 至 10）進行，獲得系統化學習體驗。
 2. **語言專注**：若偏好特定程式語言，可瀏覽對應語言的範例目錄。
-3. **實務入門**：從「入門指南」開始，設定環境並建立第一個 MCP 伺服器與客戶端。
+3. **實務入門**：從「快速入門」章節開始，設定環境並建立首個 MCP 伺服器與客戶端。
 4. **進階探索**：熟悉基礎後，深入進階主題擴展知識。
-5. **社群互動**：加入 [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4)，與專家及開發者交流。
+5. **社群互動**：透過 GitHub 討論與 Discord 頻道加入 MCP 社群，與專家及開發者交流。
 
-## 貢獻指南
+## MCP 客戶端與工具
 
-歡迎社群貢獻本倉庫。請參考社群貢獻章節了解如何參與。
+課程涵蓋多種 MCP 客戶端與工具：
+
+1. **官方客戶端**：
+   - Claude Desktop
+   - VSCode 中的 Claude
+   - Claude API
+
+2. **社群客戶端**：
+   - Cline（終端機版）
+   - Cursor（程式碼編輯器）
+   - ChatMCP
+   - Windsurf
+
+3. **MCP 管理工具**：
+   - MCP CLI
+   - MCP Manager
+   - MCP Linker
+   - MCP Router
+
+## 熱門 MCP 伺服器
+
+倉庫介紹多款 MCP 伺服器，包括：
+
+1. **官方參考伺服器**：
+   - Filesystem
+   - Fetch
+   - Memory
+   - Sequential Thinking
+
+2. **影像生成**：
+   - Azure OpenAI DALL-E 3
+   - Stable Diffusion WebUI
+   - Replicate
+
+3. **開發工具**：
+   - Git MCP
+   - Terminal Control
+   - Code Assistant
+
+4. **專用伺服器**：
+   - Salesforce
+   - Microsoft Teams
+   - Jira 與 Confluence
+
+## 貢獻
+
+本倉庫歡迎社群貢獻。請參考「社群貢獻」章節，了解如何有效參與 MCP 生態系。
+
+## 更新紀錄
+
+| 日期 | 變更內容 |
+|------|---------|
+| 2025 年 7 月 16 日 | - 更新倉庫結構以反映最新內容<br>- 新增 MCP 客戶端與工具章節<br>- 新增熱門 MCP 伺服器章節<br>- 更新視覺化課程地圖，涵蓋所有現有主題<br>- 強化進階主題章節，包含所有專門領域<br>- 更新案例研究，反映實際範例<br>- 明確說明 MCP 由 Anthropic 創建 |
+| 2025 年 6 月 11 日 | - 初版學習指南建立<br>- 新增視覺化課程地圖<br>- 概述倉庫結構<br>- 包含範例專案與附加資源 |
 
 ---
 
-*本學習指南於 2025 年 6 月 11 日製作，內容反映當時倉庫狀態，後續可能有所更新。*
+*本學習指南於 2025 年 7 月 16 日更新，內容反映該日期的倉庫狀態。倉庫內容可能於此後持續更新。*
 
 **免責聲明**：  
 本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

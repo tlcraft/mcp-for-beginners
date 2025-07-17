@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T03:53:51+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-16T23:31:34+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "ar"
 }
@@ -19,17 +19,18 @@ CO_OP_TRANSLATOR_METADATA:
 - فهم هيكل مجتمع MCP ونظامه البيئي
 - المشاركة بفعالية في منتديات ومناقشات مجتمع MCP
 - المساهمة في مستودعات MCP مفتوحة المصدر
-- إنشاء ومشاركة أدوات MCP مخصصة
-- اتباع أفضل الممارسات لتطوير MCP والتعاون
+- إنشاء ومشاركة أدوات وخوادم MCP مخصصة
+- اتباع أفضل الممارسات لتطوير MCP والتعاون فيه
+- اكتشاف موارد وأُطُر المجتمع لتطوير MCP
 
 ## نظام مجتمع MCP البيئي
 
-يتكون نظام MCP البيئي من مكونات ومشاركين مختلفين يعملون معًا لتطوير البروتوكول.
+يتكون نظام MCP البيئي من مكونات ومشاركين متنوعين يعملون معًا لتطوير البروتوكول.
 
 ### المكونات الرئيسية للمجتمع
 
-1. **صانعو البروتوكول الأساسي**: مايكروسوفت ومنظمات أخرى تحافظ على مواصفات MCP الأساسية والتنفيذات المرجعية
-2. **مطوروا الأدوات**: الأفراد والفرق التي تنشئ أدوات MCP
+1. **صيانة البروتوكول الأساسي**: منظمة [Model Context Protocol GitHub الرسمية](https://github.com/modelcontextprotocol) تدير المواصفات الأساسية لـ MCP والتنفيذات المرجعية
+2. **مطوروا الأدوات**: الأفراد والفرق التي تنشئ أدوات وخوادم MCP
 3. **مزودو التكامل**: الشركات التي تدمج MCP في منتجاتها وخدماتها
 4. **المستخدمون النهائيون**: المطورون والمنظمات التي تستخدم MCP في تطبيقاتهم
 5. **المساهمون**: أعضاء المجتمع الذين يساهمون بالكود، التوثيق، أو موارد أخرى
@@ -38,17 +39,21 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### القنوات الرسمية
 
-- [مستودع MCP على GitHub](https://github.com/modelcontextprotocol)
+- [منظمة MCP على GitHub](https://github.com/modelcontextprotocol)
 - [توثيق MCP](https://modelcontextprotocol.io/)
-- [مواصفات MCP](https://spec.modelcontextprotocol.io/)
+- [مواصفات MCP](https://modelcontextprotocol.io/docs/specification)
 - [مناقشات GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [مستودع أمثلة وخوادم MCP](https://github.com/modelcontextprotocol/servers)
 
 #### الموارد التي يقودها المجتمع
 
-- تنفيذات SDK بلغات محددة
-- تنفيذات الخوادم ومكتبات الأدوات
+- [عملاء MCP](https://modelcontextprotocol.io/clients) - قائمة بالعملاء الذين يدعمون تكامل MCP
+- [خوادم MCP المجتمعية](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - قائمة متزايدة من خوادم MCP التي طورها المجتمع
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - قائمة مختارة من خوادم MCP
+- [PulseMCP](https://www.pulsemcp.com/) - مركز المجتمع والنشرة الإخبارية لاكتشاف موارد MCP
+- [خادم Discord](https://discord.gg/jHEGxQu2a5) - تواصل مع مطوري MCP
+- تنفيذات SDK حسب اللغة
 - منشورات المدونات والدروس التعليمية
-- منتديات المجتمع ومناقشات وسائل التواصل الاجتماعي
 
 ## المساهمة في MCP
 
@@ -59,7 +64,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. **مساهمات الكود**:
    - تحسينات البروتوكول الأساسي
    - إصلاحات الأخطاء
-   - تنفيذ الأدوات
+   - تنفيذات الأدوات والخوادم
    - مكتبات العميل/الخادم بلغات مختلفة
 
 2. **التوثيق**:
@@ -69,168 +74,79 @@ CO_OP_TRANSLATOR_METADATA:
    - إنشاء أمثلة وتطبيقات نموذجية
 
 3. **دعم المجتمع**:
-   - الإجابة على الأسئلة في المنتديات
-   - اختبار والإبلاغ عن المشكلات
+   - الإجابة على الأسئلة في المنتديات والمناقشات
+   - اختبار والإبلاغ عن المشاكل
    - تنظيم فعاليات المجتمع
    - توجيه المساهمين الجدد
 
 ### عملية المساهمة: البروتوكول الأساسي
 
-للمساهمة في بروتوكول MCP الأساسي أو التنفيذات الرسمية:
+للمساهمة في بروتوكول MCP الأساسي أو التنفيذات الرسمية، اتبع المبادئ التالية من [إرشادات المساهمة الرسمية](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### مثال .NET: المساهمة في تحسين البروتوكول
+1. **البساطة والحد الأدنى**: تحافظ مواصفات MCP على معايير عالية لإضافة مفاهيم جديدة. من الأسهل إضافة أشياء إلى المواصفة من إزالتها.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **النهج الملموس**: يجب أن تستند تغييرات المواصفة إلى تحديات تنفيذ محددة، وليس أفكارًا تخمينية.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **مراحل الاقتراح**:
+   - التعريف: استكشاف مساحة المشكلة، والتحقق من أن مستخدمي MCP الآخرين يواجهون مشكلة مماثلة
+   - النموذج الأولي: بناء حل نموذجي وعرض تطبيقه العملي
+   - الكتابة: بناءً على النموذج الأولي، كتابة اقتراح المواصفة
+
+### إعداد بيئة التطوير
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### مثال Java: المساهمة في إصلاح خطأ
+### مثال: المساهمة بإصلاح خطأ
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### مثال Python: المساهمة بأداة جديدة في المكتبة القياسية
+### مثال: المساهمة بأداة جديدة لمكتبة المعايير
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -396,7 +312,7 @@ class CsvProcessingTool(Tool):
 
 1. **ابدأ صغيرًا**: ابدأ بالتوثيق، إصلاح الأخطاء، أو تحسينات صغيرة
 2. **اتبع دليل الأسلوب**: التزم بأسلوب الترميز واتفاقيات المشروع
-3. **اكتب اختبارات**: أضف اختبارات وحدة لمساهماتك البرمجية
+3. **اكتب اختبارات**: أدرج اختبارات وحدات لمساهماتك البرمجية
 4. **وثق عملك**: أضف توثيقًا واضحًا للميزات أو التغييرات الجديدة
 5. **قدّم طلبات سحب مركزة**: اجعل طلبات السحب تركز على مشكلة أو ميزة واحدة
 6. **تفاعل مع الملاحظات**: كن متجاوبًا مع الملاحظات على مساهماتك
@@ -405,8 +321,8 @@ class CsvProcessingTool(Tool):
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,9 +343,27 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## إنشاء ومشاركة أدوات MCP مخصصة
+## إنشاء ومشاركة خوادم MCP
 
-واحدة من أكثر الطرق قيمة للمساهمة في نظام MCP البيئي هي إنشاء ومشاركة أدوات مخصصة.
+واحدة من أكثر الطرق قيمة للمساهمة في نظام MCP البيئي هي إنشاء ومشاركة خوادم MCP مخصصة. لقد طور المجتمع بالفعل مئات الخوادم لخدمات وحالات استخدام مختلفة.
+
+### أُطُر تطوير خوادم MCP
+
+تتوفر عدة أُطُر لتبسيط تطوير خوادم MCP:
+
+1. **SDKs الرسمية**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **أُطُر المجتمع**:
+   - [MCP-Framework](https://mcp-framework.com/) - بناء خوادم MCP بأناقة وسرعة باستخدام TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - خوادم MCP مدفوعة بالتعليقات التوضيحية باستخدام Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - إطار عمل Java لخوادم MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - مشروع بداية Next.js لخوادم MCP
 
 ### تطوير أدوات قابلة للمشاركة
 
@@ -642,7 +574,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### مثال Python: نشر حزمة على PyPI
+#### مثال Python: نشر حزمة PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -753,37 +685,37 @@ class SentimentAnalysisTool(Tool):
 
 1. **توثيق كامل**:
    - وثق الغرض، الاستخدام، والأمثلة
-   - اشرح المعاملات وقيم الإرجاع
-   - وثق أي تبعيات خارجية
+   - شرح المعاملات وقيم الإرجاع
+   - توثيق أي تبعيات خارجية
 
 2. **معالجة الأخطاء**:
-   - نفذ معالجة أخطاء قوية
-   - قدم رسائل خطأ مفيدة
-   - تعامل مع الحالات الحدية بسلاسة
+   - تنفيذ معالجة أخطاء قوية
+   - توفير رسائل خطأ مفيدة
+   - التعامل مع الحالات الحدية بسلاسة
 
 3. **اعتبارات الأداء**:
-   - حسّن السرعة واستهلاك الموارد
-   - نفذ التخزين المؤقت عند الحاجة
-   - ضع في اعتبارك قابلية التوسع
+   - تحسين السرعة واستهلاك الموارد
+   - تنفيذ التخزين المؤقت عند الحاجة
+   - مراعاة قابلية التوسع
 
 4. **الأمان**:
-   - استخدم مفاتيح API ومصادقة آمنة
-   - تحقق من صحة المدخلات ونقّحها
-   - نفذ تحديد معدل للطلبات الخارجية
+   - استخدام مفاتيح API ومصادقة آمنة
+   - التحقق من صحة المدخلات وتنقيتها
+   - تنفيذ تحديد المعدل للطلبات الخارجية
 
 5. **الاختبار**:
-   - شمل تغطية اختبار شاملة
-   - اختبر مع أنواع مدخلات مختلفة وحالات حدية
-   - وثق إجراءات الاختبار
+   - تضمين تغطية اختبار شاملة
+   - اختبار مع أنواع مدخلات مختلفة وحالات حدية
+   - توثيق إجراءات الاختبار
 
 ## التعاون المجتمعي وأفضل الممارسات
 
 التعاون الفعال هو مفتاح ازدهار نظام MCP البيئي.
 
-### قنوات التواصل
+### قنوات الاتصال
 
 - قضايا ومناقشات GitHub
-- مجتمع مايكروسوفت التقني
+- مجتمع Microsoft Tech
 - قنوات Discord وSlack
 - Stack Overflow (الوسم: `model-context-protocol` أو `mcp`)
 
@@ -794,7 +726,7 @@ class SentimentAnalysisTool(Tool):
 1. **الوضوح**: هل الكود واضح وموثق جيدًا؟
 2. **الصحة**: هل يعمل كما هو متوقع؟
 3. **الاتساق**: هل يتبع اتفاقيات المشروع؟
-4. **الشمولية**: هل تشمل الاختبارات والتوثيق؟
+4. **الشمولية**: هل تتضمن الاختبارات والتوثيق؟
 5. **الأمان**: هل هناك أي مخاوف أمنية؟
 
 ### توافق الإصدارات
@@ -890,7 +822,7 @@ async def delete_tool(tool_name: str):
 ## النقاط الرئيسية
 
 - مجتمع MCP متنوع ويرحب بأنواع مختلفة من المساهمات
-- يمكن أن تتراوح المساهمات في MCP من تحسينات البروتوكول الأساسي إلى الأدوات المخصصة
+- يمكن أن تتراوح المساهمة في MCP من تحسينات البروتوكول الأساسي إلى الأدوات المخصصة
 - اتباع إرشادات المساهمة يزيد من فرص قبول طلب السحب الخاص بك
 - إنشاء ومشاركة أدوات MCP طريقة قيمة لتعزيز النظام البيئي
 - التعاون المجتمعي ضروري لنمو وتحسين MCP
@@ -898,10 +830,10 @@ async def delete_tool(tool_name: str):
 ## التمرين
 
 1. حدد مجالًا في نظام MCP البيئي يمكنك المساهمة فيه بناءً على مهاراتك واهتماماتك
-2. قم بعمل Fork لمستودع MCP وأعد بيئة تطوير محلية
+2. قم بعمل Fork لمستودع MCP وأعد إعداد بيئة تطوير محلية
 3. أنشئ تحسينًا صغيرًا، إصلاح خطأ، أو أداة تفيد المجتمع
 4. وثق مساهمتك مع اختبارات وتوثيق مناسب
-5. قدّم طلب سحب إلى المستودع المناسب
+5. قدم طلب سحب إلى المستودع المناسب
 
 ## موارد إضافية
 
@@ -910,7 +842,7 @@ async def delete_tool(tool_name: str):
 
 ---
 
-التالي: [الدروس من التبني المبكر](../07-LessonsfromEarlyAdoption/README.md)
+التالي: [دروس من التبني المبكر](../07-LessonsfromEarlyAdoption/README.md)
 
 **إخلاء المسؤولية**:  
 تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.
