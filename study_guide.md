@@ -197,6 +197,8 @@ The repository includes supporting resources:
 The curriculum covers various MCP clients and tools:
 
 1. **Official Clients**:
+   - Visual Studio Code 
+   - MCP in Visual Studio Code
    - Claude Desktop
    - Claude in VSCode 
    - Claude API
