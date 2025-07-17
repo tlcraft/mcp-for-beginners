@@ -237,7 +237,7 @@ In the preceding code we've:
 
 Great, for our next step, let's list the capbilities on the server.
 
-### -2 List server capabilities
+### -2- List server capabilities
 
 Now we will connect to the server and ask for its capabilities:
 

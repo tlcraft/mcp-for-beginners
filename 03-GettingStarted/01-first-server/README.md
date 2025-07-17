@@ -316,6 +316,9 @@ Add the following complete configuration to your *pom.xml* file:
     </repositories>
 </project>
 ```
+### -2- Create project
+
+Now that you have your SDK installed, let's create a project next:
 
 ### TypeScript
 
@@ -340,6 +343,7 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+###  -3- Create project files 
 ### TypeScript
 
 Create a *package.json* with the following content:
@@ -398,6 +402,8 @@ dotnet add package Microsoft.Extensions.Hosting
 ### Java
 
 For Java Spring Boot projects, the project structure is created automatically.
+
+### -4- Create server code 
 
 ### TypeScript
 
@@ -818,7 +824,7 @@ public static class CalculatorTool
 
 The tools have already been created in the previous step.
 
-### -6 Final code
+### -6- Final code
 
 Let's add the last code we need so the server can start:
 
