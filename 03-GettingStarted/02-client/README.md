@@ -459,7 +459,7 @@ In the preceding code, we've:
 - Called a resource called `greeting` using `read_resource`.
 - Invoked a tool called `add` using `call_tool`.
 
-### C#
+### .NET
 
 1. Let's add some code to call a tool:
 
@@ -671,8 +671,110 @@ Also, check this link for how to invoke [prompts and resources](https://github.c
 
 ## Solution
 
-[Solution](./solution/README.md)
+The **solution folder** contains complete, ready-to-run client implementations that demonstrate all the concepts covered in this tutorial. Each solution includes both client and server code organized in separate, self-contained projects.
 
+### 📁 Solution Structure
+
+The solution directory is organized by programming language:
+
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 What Each Solution Includes
+
+Each language-specific solution provides:
+
+- **Complete client implementation** with all features from the tutorial
+- **Working project structure** with proper dependencies and configuration
+- **Build and run scripts** for easy setup and execution
+- **Detailed README** with language-specific instructions
+- **Error handling** and result processing examples
+
+### 📖 Using the Solutions
+
+1. **Navigate to your preferred language folder**:
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **Follow the README instructions** in each folder for:
+   - Installing dependencies
+   - Building the project
+   - Running the client
+
+3. **Example output** you should see:
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+For complete documentation and step-by-step instructions, see: **[📖 Solution Documentation](./solution/README.md)**
+
+## 🎯 Complete Examples
+
+We've provided complete, working client implementations for all programming languages covered in this tutorial. These examples demonstrate the full functionality described above and can be used as reference implementations or starting points for your own projects.
+
+### Available Complete Examples
+
+| Language | File | Description |
+|----------|------|-------------|
+| **Java** | [`client_example_java.java`](./client_example_java.java) | Complete Java client using SSE transport with comprehensive error handling |
+| **C#** | [`client_example_csharp.cs`](./client_example_csharp.cs) | Complete C# client using stdio transport with automatic server startup |
+| **TypeScript** | [`client_example_typescript.ts`](./client_example_typescript.ts) | Complete TypeScript client with full MCP protocol support |
+| **Python** | [`client_example_python.py`](./client_example_python.py) | Complete Python client using async/await patterns |
+
+Each complete example includes:
+
+- ✅ **Connection establishment** and error handling
+- ✅ **Server discovery** (tools, resources, prompts where applicable)
+- ✅ **Calculator operations** (add, subtract, multiply, divide, help)
+- ✅ **Result processing** and formatted output
+- ✅ **Comprehensive error handling**
+- ✅ **Clean, documented code** with step-by-step comments
+
+### Getting Started with Complete Examples
+
+1. **Choose your preferred language** from the table above
+2. **Review the complete example file** to understand the full implementation
+3. **Run the example** following the instructions in [`complete_examples.md`](./complete_examples.md)
+4. **Modify and extend** the example for your specific use case
+
+For detailed documentation about running and customizing these examples, see: **[📖 Complete Examples Documentation](./complete_examples.md)**
+
+### 💡 Solution vs. Complete Examples
+
+| **Solution Folder** | **Complete Examples** |
+|--------------------|--------------------- |
+| Full project structure with build files | Single-file implementations |
+| Ready-to-run with dependencies | Focused code examples |
+| Production-like setup | Educational reference |
+| Language-specific tooling | Cross-language comparison |
+
+Both approaches are valuable - use the **solution folder** for complete projects and the **complete examples** for learning and reference.
 ## Key Takeaways
 
 The key takeaways for this chapter is the following about clients:
