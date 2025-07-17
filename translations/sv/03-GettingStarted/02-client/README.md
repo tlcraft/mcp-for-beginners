@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6f267185e24b1274dd3535d65dd1787",
-  "translation_date": "2025-07-17T06:17:14+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T09:03:12+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "sv"
 }
 -->
 # Skapa en klient
 
-Klienter är anpassade applikationer eller skript som kommunicerar direkt med en MCP-server för att begära resurser, verktyg och prompts. Till skillnad från att använda inspektörsverktyget, som erbjuder ett grafiskt gränssnitt för att interagera med servern, gör det att skriva din egen klient möjligt att ha programmatisk och automatiserad interaktion. Detta gör det möjligt för utvecklare att integrera MCP-funktioner i sina egna arbetsflöden, automatisera uppgifter och bygga skräddarsydda lösningar anpassade efter specifika behov.
+Klienter är anpassade applikationer eller skript som kommunicerar direkt med en MCP Server för att begära resurser, verktyg och prompts. Till skillnad från att använda inspektörsverktyget, som erbjuder ett grafiskt gränssnitt för att interagera med servern, möjliggör det att skriva en egen klient programmatisk och automatiserad interaktion. Detta gör det möjligt för utvecklare att integrera MCP-funktioner i sina egna arbetsflöden, automatisera uppgifter och bygga skräddarsydda lösningar anpassade efter specifika behov.
 
 ## Översikt
 
-Den här lektionen introducerar konceptet klienter inom Model Context Protocol (MCP)-ekosystemet. Du kommer att lära dig hur du skriver din egen klient och får den att ansluta till en MCP-server.
+Den här lektionen introducerar konceptet klienter inom Model Context Protocol (MCP)-ekosystemet. Du kommer att lära dig hur du skriver din egen klient och får den att ansluta till en MCP Server.
 
 ## Lärandemål
 
-I slutet av denna lektion kommer du att kunna:
+I slutet av denna lektion ska du kunna:
 
 - Förstå vad en klient kan göra.
 - Skriva din egen klient.
@@ -27,7 +27,7 @@ I slutet av denna lektion kommer du att kunna:
 
 För att skriva en klient behöver du göra följande:
 
-- **Importera rätt bibliotek**. Du kommer att använda samma bibliotek som tidigare, men med andra konstruktioner.
+- **Importera rätt bibliotek**. Du kommer att använda samma bibliotek som tidigare, men med olika konstruktioner.
 - **Instansiera en klient**. Detta innebär att skapa en klientinstans och ansluta den till vald transportmetod.
 - **Bestäm vilka resurser som ska listas**. Din MCP-server har resurser, verktyg och prompts, du behöver bestämma vilka som ska listas.
 - **Integrera klienten i en värdapplikation**. När du känner till serverns kapabiliteter behöver du integrera detta i din värdapplikation så att om en användare skriver en prompt eller annan kommando anropas motsvarande serverfunktion.
@@ -36,7 +36,7 @@ Nu när vi på en övergripande nivå förstår vad vi ska göra, låt oss titta
 
 ### Ett exempel på klient
 
-Låt oss titta på detta exempel på klient:
+Låt oss titta på detta exempel på en klient:
 
 ### TypeScript
 
@@ -92,7 +92,7 @@ I koden ovan:
 - Skapar en klientinstans och ansluter den med stdio som transport.
 - Listar prompts, resurser och verktyg och anropar dem alla.
 
-Där har du det, en klient som kan kommunicera med en MCP-server.
+Där har du det, en klient som kan kommunicera med en MCP Server.
 
 Låt oss ta god tid i nästa övningsavsnitt och bryta ner varje kodsnutt och förklara vad som händer.
 
@@ -102,7 +102,7 @@ Som sagt ovan, låt oss ta tid på oss att förklara koden, och koda gärna med 
 
 ### -1- Importera biblioteken
 
-Låt oss importera de bibliotek vi behöver, vi kommer att behöva referenser till en klient och till vår valda transportprotokoll, stdio. stdio är ett protokoll för saker som ska köras på din lokala maskin. SSE är ett annat transportprotokoll som vi kommer att visa i framtida kapitel men det är ditt andra alternativ. För nu, låt oss fortsätta med stdio.
+Låt oss importera de bibliotek vi behöver, vi kommer behöva referenser till en klient och till vår valda transportprotokoll, stdio. stdio är ett protokoll för saker som ska köras på din lokala maskin. SSE är ett annat transportprotokoll som vi kommer visa i framtida kapitel men det är ditt andra alternativ. För nu, låt oss fortsätta med stdio.
 
 ### TypeScript
 
@@ -169,7 +169,7 @@ await client.connect(transport);
 
 I koden ovan har vi:
 
-- Skapat en stdio-transportinstans. Notera hur den specificerar kommando och argument för hur servern ska hittas och startas, eftersom det är något vi behöver göra när vi skapar klienten.
+- Skapat en stdio transportinstans. Notera hur den specificerar kommando och argument för hur servern ska hittas och startas, eftersom det är något vi behöver göra när vi skapar klienten.
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -260,7 +260,7 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 I koden ovan har vi:
 
 - Importerat de nödvändiga biblioteken.
-- Skapat en stdio-transport och en klient `mcpClient`. Den senare använder vi för att lista och anropa funktioner på MCP-servern.
+- Skapat en stdio transport och en klient `mcpClient`. Den senare använder vi för att lista och anropa funktioner på MCP Servern.
 
 Observera att i "Arguments" kan du antingen peka på *.csproj* eller på den körbara filen.
 
@@ -298,7 +298,7 @@ I koden ovan har vi:
 
 ### -3- Lista serverns funktioner
 
-Nu har vi en klient som kan ansluta om programmet körs. Men den listar inte faktiskt dess funktioner, så låt oss göra det härnäst:
+Nu har vi en klient som kan ansluta om programmet körs. Men den listar inte faktiskt dess funktioner, så låt oss göra det nu:
 
 ### TypeScript
 
@@ -359,7 +359,7 @@ I koden ovan har vi:
 - Använt `ping()` för att verifiera att anslutningen till servern fungerar.
 - `ListToolsResult` innehåller information om alla verktyg inklusive deras namn, beskrivningar och inmatningsscheman.
 
-Bra, nu har vi fångat alla funktioner. Nu är frågan när använder vi dem? Den här klienten är ganska enkel, enkel i den meningen att vi behöver anropa funktionerna explicit när vi vill använda dem. I nästa kapitel kommer vi att skapa en mer avancerad klient som har tillgång till sin egen stora språkmodell, LLM. Men för nu, låt oss se hur vi kan anropa funktionerna på servern:
+Bra, nu har vi fångat alla funktioner. Nu är frågan när använder vi dem? Den här klienten är ganska enkel, enkel i den meningen att vi behöver anropa funktionerna explicit när vi vill använda dem. I nästa kapitel kommer vi skapa en mer avancerad klient som har tillgång till sin egen stora språkmodell, LLM. Men för nu, låt oss se hur vi kan anropa funktionerna på servern:
 
 ### -4- Anropa funktioner
 
@@ -468,7 +468,7 @@ I koden ovan har vi:
 - Anropat en resurs som heter `greeting` med `read_resource`.
 - Anropat ett verktyg som heter `add` med `call_tool`.
 
-### C#
+### .NET
 
 1. Låt oss lägga till lite kod för att anropa ett verktyg:
 
@@ -555,7 +555,7 @@ Först, se till att din MCP-server körs på `http://localhost:8080`. Kör sedan
 ./mvnw exec:java -Dexec.mainClass="com.microsoft.mcp.sample.client.SDKClient"
 ```
 
-Alternativt kan du köra hela klientprojektet som finns i lösningsmappen `03-GettingStarted\02-client\solution\java`:
+Alternativt kan du köra det kompletta klientprojektet som finns i lösningsmappen `03-GettingStarted\02-client\solution\java`:
 
 ```bash
 # Navigate to the solution directory
@@ -570,7 +570,7 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 I denna uppgift ska du använda det du lärt dig om att skapa en klient men skapa en egen klient.
 
-Här är en server du kan använda som du behöver anropa via din klientkod, se om du kan lägga till fler funktioner till servern för att göra den mer intressant.
+Här är en server du kan använda som du behöver anropa via din klientkod, se om du kan lägga till fler funktioner på servern för att göra den mer intressant.
 
 ### TypeScript
 
@@ -680,31 +680,132 @@ Kolla även denna länk för hur du anropar [prompts och resurser](https://githu
 
 ## Lösning
 
-[Lösning](./solution/README.md)
+**Lösningsmappen** innehåller kompletta, färdiga klientimplementationer som demonstrerar alla koncept som täcks i denna handledning. Varje lösning inkluderar både klient- och serverkod organiserad i separata, självständiga projekt.
 
-## Viktiga insikter
+### 📁 Lösningsstruktur
 
-De viktigaste insikterna från detta kapitel om klienter är:
+Lösningskatalogen är organiserad efter programmeringsspråk:
 
-- Kan användas både för att upptäcka och anropa funktioner på servern.
-- Kan starta en server samtidigt som den startar sig själv (som i detta kapitel) men klienter kan också ansluta till redan körande servrar.
-- Är ett utmärkt sätt att testa serverfunktioner bredvid alternativ som Inspektören, som beskrevs i föregående kapitel.
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 Vad varje lösning innehåller
+
+Varje språk-specifik lösning erbjuder:
+
+- **Fullständig klientimplementation** med alla funktioner från handledningen
+- **Fungerande projektstruktur** med korrekta beroenden och konfiguration
+- **Bygg- och körskript** för enkel installation och körning
+- **Detaljerad README** med språk-specifika instruktioner
+- **Felhantering** och exempel på resultatbearbetning
+
+### 📖 Använda lösningarna
+
+1. **Navigera till din föredragna språk-mapp**:
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **Följ README-instruktionerna** i varje mapp för:
+   - Installation av beroenden
+   - Bygga projektet
+   - Köra klienten
+
+3. **Exempelutdata** du bör se:
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+För fullständig dokumentation och steg-för-steg-instruktioner, se: **[📖 Lösningsdokumentation](./solution/README.md)**
+
+## 🎯 Kompletta exempel
+
+Vi har tillhandahållit kompletta, fungerande klientimplementationer för alla programmeringsspråk som täcks i denna handledning. Dessa exempel visar hela funktionaliteten som beskrivs ovan och kan användas som referensimplementationer eller startpunkter för dina egna projekt.
+
+### Tillgängliga kompletta exempel
+
+| Språk    | Fil                          | Beskrivning                                                  |
+|----------|------------------------------|--------------------------------------------------------------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java)       | Komplett Java-klient med SSE-transport och omfattande felhantering |
+| **C#**   | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs)       | Komplett C#-klient med stdio-transport och automatisk serverstart |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Komplett TypeScript-klient med full MCP-protokollsupport       |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py)       | Komplett Python-klient med async/await-mönster                 |
+
+Varje komplett exempel innehåller:
+
+- ✅ **Anslutningsupprättande** och felhantering
+- ✅ **Serverupptäckt** (verktyg, resurser, prompts där tillämpligt)
+- ✅ **Kalkylatoroperationer** (addera, subtrahera, multiplicera, dividera, hjälp)
+- ✅ **Resultatbearbetning** och formaterad utskrift
+- ✅ **Omfattande felhantering**
+- ✅ **Ren, dokumenterad kod** med steg-för-steg-kommentarer
+
+### Kom igång med kompletta exempel
+
+1. **Välj ditt föredragna språk** från tabellen ovan
+2. **Granska den kompletta exempel-filen** för att förstå hela implementationen
+3. **Kör exemplet** enligt instruktionerna i [`complete_examples.md`](./complete_examples.md)
+4. **Modifiera och utöka** exemplet för ditt specifika användningsfall
+
+För detaljerad dokumentation om hur du kör och anpassar dessa exempel, se: **[📖 Kompletta exempel-dokumentation](./complete_examples.md)**
+
+### 💡 Lösning vs. Kompletta exempel
+
+| **Lösningsmapp**           | **Kompletta exempel**          |
+|---------------------------|-------------------------------|
+| Full projektstruktur med byggfiler | Enkelfilsimplementationer          |
+| Färdiga att köra med beroenden | Fokuserade kodexempel             |
+| Produktionslik setup       | Pedagogisk referens             |
+| Språk-specifika verktyg   | Jämförelse mellan språk         |
+Båda metoderna är värdefulla – använd **solution folder** för kompletta projekt och **complete examples** för lärande och referens.  
+## Viktiga punkter
+
+De viktigaste punkterna för detta kapitel om klienter är följande:
+
+- Kan användas både för att upptäcka och anropa funktioner på servern.  
+- Kan starta en server samtidigt som den startar sig själv (som i detta kapitel), men klienter kan också ansluta till redan igångvarande servrar.  
+- Är ett utmärkt sätt att testa serverns kapabiliteter jämfört med alternativ som Inspector, som beskrevs i föregående kapitel.  
 
 ## Ytterligare resurser
 
-- [Bygga klienter i MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Exempel
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## Vad händer härnäst
 
-- Nästa: [Skapa en klient med en LLM](../03-llm-client/README.md)
+- Nästa: [Creating a client with an LLM](../03-llm-client/README.md)
 
 **Ansvarsfriskrivning**:  
 Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

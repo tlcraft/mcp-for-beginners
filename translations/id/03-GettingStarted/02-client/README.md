@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6f267185e24b1274dd3535d65dd1787",
-  "translation_date": "2025-07-17T07:55:29+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T09:07:56+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "id"
 }
 -->
 # Membuat client
 
-Client adalah aplikasi kustom atau skrip yang berkomunikasi langsung dengan MCP Server untuk meminta sumber daya, alat, dan prompt. Berbeda dengan menggunakan alat inspector yang menyediakan antarmuka grafis untuk berinteraksi dengan server, menulis client sendiri memungkinkan interaksi secara programatik dan otomatis. Ini memungkinkan pengembang mengintegrasikan kemampuan MCP ke dalam alur kerja mereka, mengotomatisasi tugas, dan membangun solusi kustom yang disesuaikan dengan kebutuhan spesifik.
+Client adalah aplikasi atau skrip kustom yang berkomunikasi langsung dengan MCP Server untuk meminta sumber daya, alat, dan prompt. Berbeda dengan menggunakan alat inspector yang menyediakan antarmuka grafis untuk berinteraksi dengan server, menulis client sendiri memungkinkan interaksi secara programatik dan otomatis. Ini memungkinkan pengembang mengintegrasikan kemampuan MCP ke dalam alur kerja mereka, mengotomatisasi tugas, dan membangun solusi kustom sesuai kebutuhan spesifik.
 
 ## Gambaran Umum
 
-Pelajaran ini memperkenalkan konsep client dalam ekosistem Model Context Protocol (MCP). Anda akan belajar cara menulis client sendiri dan menghubungkannya ke MCP Server.
+Pelajaran ini memperkenalkan konsep client dalam ekosistem Model Context Protocol (MCP). Kamu akan belajar cara menulis client sendiri dan menghubungkannya ke MCP Server.
 
 ## Tujuan Pembelajaran
 
-Pada akhir pelajaran ini, Anda akan mampu:
+Pada akhir pelajaran ini, kamu akan mampu:
 
 - Memahami apa yang dapat dilakukan oleh client.
-- Menulis client Anda sendiri.
-- Menghubungkan dan menguji client dengan server MCP untuk memastikan server berfungsi sesuai harapan.
+- Menulis client sendiri.
+- Menghubungkan dan menguji client dengan MCP server untuk memastikan server berfungsi sesuai harapan.
 
-## Apa saja yang diperlukan untuk menulis client?
+## Apa saja yang perlu dilakukan untuk menulis client?
 
-Untuk menulis client, Anda perlu melakukan hal berikut:
+Untuk menulis client, kamu perlu melakukan hal-hal berikut:
 
-- **Impor pustaka yang tepat**. Anda akan menggunakan pustaka yang sama seperti sebelumnya, hanya dengan konstruksi yang berbeda.
+- **Impor pustaka yang tepat**. Kamu akan menggunakan pustaka yang sama seperti sebelumnya, hanya saja dengan konstruksi yang berbeda.
 - **Buat instance client**. Ini melibatkan pembuatan instance client dan menghubungkannya ke metode transportasi yang dipilih.
-- **Tentukan sumber daya apa yang akan didaftar**. Server MCP Anda menyediakan sumber daya, alat, dan prompt, Anda perlu memutuskan mana yang akan didaftar.
-- **Integrasikan client ke aplikasi host**. Setelah mengetahui kemampuan server, Anda perlu mengintegrasikan ini ke aplikasi host sehingga jika pengguna mengetik prompt atau perintah lain, fitur server yang sesuai akan dipanggil.
+- **Tentukan sumber daya apa yang akan didaftarkan**. MCP server menyediakan sumber daya, alat, dan prompt, kamu perlu memutuskan mana yang akan didaftarkan.
+- **Integrasikan client ke aplikasi host**. Setelah mengetahui kemampuan server, kamu perlu mengintegrasikan ini ke aplikasi host sehingga jika pengguna mengetik prompt atau perintah lain, fitur server yang sesuai akan dipanggil.
 
 Setelah kita memahami secara garis besar apa yang akan dilakukan, mari kita lihat contoh berikut.
 
@@ -86,11 +86,11 @@ const result = await client.callTool({
 });
 ```
 
-Dalam kode sebelumnya kita:
+Dalam kode di atas kita:
 
 - Mengimpor pustaka
 - Membuat instance client dan menghubungkannya menggunakan stdio sebagai transport.
-- Mendaftar prompt, sumber daya, dan alat lalu memanggil semuanya.
+- Mendaftarkan prompt, sumber daya, dan alat lalu memanggil semuanya.
 
 Itulah client yang dapat berkomunikasi dengan MCP Server.
 
@@ -98,11 +98,11 @@ Mari kita luangkan waktu di bagian latihan berikutnya untuk membahas setiap poto
 
 ## Latihan: Menulis client
 
-Seperti yang sudah disebutkan, mari kita jelaskan kode ini dengan detail, dan silakan ikuti kodenya jika Anda mau.
+Seperti yang sudah disebutkan, mari kita jelaskan kode ini dengan detail, dan silakan ikuti sambil coding jika ingin.
 
 ### -1- Mengimpor pustaka
 
-Mari kita impor pustaka yang dibutuhkan, kita akan membutuhkan referensi ke client dan protokol transportasi yang dipilih, yaitu stdio. stdio adalah protokol untuk hal-hal yang dijalankan di mesin lokal Anda. SSE adalah protokol transportasi lain yang akan kita tunjukkan di bab berikutnya, tapi itu adalah opsi lain. Untuk sekarang, mari lanjutkan dengan stdio.
+Mari kita impor pustaka yang dibutuhkan, kita akan membutuhkan referensi ke client dan protokol transportasi yang dipilih, yaitu stdio. stdio adalah protokol untuk hal-hal yang dijalankan di mesin lokalmu. SSE adalah protokol transportasi lain yang akan kita tunjukkan di bab berikutnya, tapi itu adalah opsi lain. Untuk sekarang, mari lanjutkan dengan stdio.
 
 ### TypeScript
 
@@ -130,7 +130,7 @@ using ModelContextProtocol.Protocol.Transport;
 
 ### Java
 
-Untuk Java, Anda akan membuat client yang terhubung ke MCP server dari latihan sebelumnya. Menggunakan struktur proyek Java Spring Boot yang sama dari [Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java), buat kelas Java baru bernama `SDKClient` di folder `src/main/java/com/microsoft/mcp/sample/client/` dan tambahkan impor berikut:
+Untuk Java, kamu akan membuat client yang terhubung ke MCP server dari latihan sebelumnya. Menggunakan struktur proyek Java Spring Boot yang sama dari [Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java), buat kelas Java baru bernama `SDKClient` di folder `src/main/java/com/microsoft/mcp/sample/client/` dan tambahkan impor berikut:
 
 ```java
 import java.util.Map;
@@ -167,7 +167,7 @@ const client = new Client(
 await client.connect(transport);
 ```
 
-Dalam kode sebelumnya kita:
+Dalam kode di atas kita telah:
 
 - Membuat instance transport stdio. Perhatikan bagaimana ia menentukan command dan args untuk menemukan dan menjalankan server karena ini perlu dilakukan saat membuat client.
 
@@ -223,7 +223,7 @@ if __name__ == "__main__":
     asyncio.run(run())
 ```
 
-Dalam kode sebelumnya kita:
+Dalam kode di atas kita telah:
 
 - Mengimpor pustaka yang dibutuhkan
 - Membuat objek parameter server yang akan digunakan untuk menjalankan server agar client dapat terhubung.
@@ -257,12 +257,12 @@ var clientTransport = new StdioClientTransport(new()
 await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 ```
 
-Dalam kode sebelumnya kita:
+Dalam kode di atas kita telah:
 
 - Mengimpor pustaka yang dibutuhkan.
 - Membuat transport stdio dan client `mcpClient`. Client ini akan digunakan untuk mendaftar dan memanggil fitur di MCP Server.
 
-Catatan, pada "Arguments", Anda bisa menunjuk ke *.csproj* atau ke executable.
+Catatan, pada "Arguments", kamu bisa menunjuk ke *.csproj* atau ke executable.
 
 ### Java
 
@@ -289,7 +289,7 @@ public class SDKClient {
 }
 ```
 
-Dalam kode sebelumnya kita:
+Dalam kode di atas kita telah:
 
 - Membuat metode main yang mengatur transport SSE mengarah ke `http://localhost:8080` tempat MCP server berjalan.
 - Membuat kelas client yang menerima transport sebagai parameter konstruktor.
@@ -298,7 +298,7 @@ Dalam kode sebelumnya kita:
 
 ### -3- Mendaftar fitur server
 
-Sekarang, kita sudah memiliki client yang dapat terhubung saat program dijalankan. Namun, client belum mendaftar fitur-fiturnya, mari lakukan itu sekarang:
+Sekarang kita sudah punya client yang bisa terhubung jika program dijalankan. Namun, client belum menampilkan fitur-fiturnya, mari lakukan itu sekarang:
 
 ### TypeScript
 
@@ -340,7 +340,7 @@ foreach (var tool in await client.ListToolsAsync())
 }
 ```
 
-Di atas adalah contoh bagaimana kita dapat mendaftar alat di server. Untuk setiap alat, kita cetak namanya.
+Di atas adalah contoh bagaimana kita bisa mendaftar alat di server. Untuk setiap alat, kita cetak namanya.
 
 ### Java
 
@@ -353,10 +353,10 @@ System.out.println("Available Tools = " + toolsList);
 client.ping();
 ```
 
-Dalam kode sebelumnya kita:
+Dalam kode di atas kita telah:
 
 - Memanggil `listTools()` untuk mendapatkan semua alat yang tersedia dari MCP server.
-- Menggunakan `ping()` untuk memverifikasi koneksi ke server berfungsi.
+- Menggunakan `ping()` untuk memverifikasi koneksi ke server.
 - `ListToolsResult` berisi informasi tentang semua alat termasuk nama, deskripsi, dan skema inputnya.
 
 Bagus, sekarang kita sudah mendapatkan semua fitur. Pertanyaannya, kapan kita menggunakannya? Client ini cukup sederhana, artinya kita harus memanggil fitur secara eksplisit saat membutuhkannya. Di bab berikutnya, kita akan membuat client yang lebih canggih yang memiliki akses ke model bahasa besar (LLM) sendiri. Untuk sekarang, mari lihat bagaimana memanggil fitur di server:
@@ -391,7 +391,7 @@ const promptResult = await client.getPrompt({
 })
 ```
 
-Dalam kode sebelumnya kita:
+Dalam kode di atas kita:
 
 - Membaca sumber daya, kita memanggil sumber daya dengan `readResource()` dan menentukan `uri`. Ini kira-kira seperti ini di sisi server:
 
@@ -421,7 +421,7 @@ Dalam kode sebelumnya kita:
     });
     ```
 
-- Mendapatkan prompt, untuk mendapatkan prompt, panggil `getPrompt()` dengan `name` dan `arguments`. Kode servernya seperti ini:
+- Mendapatkan prompt, untuk mendapatkan prompt, kamu panggil `getPrompt()` dengan `name` dan `arguments`. Kode servernya seperti ini:
 
     ```typescript
     server.prompt(
@@ -439,7 +439,7 @@ Dalam kode sebelumnya kita:
     );
     ```
 
-    dan kode client Anda akan terlihat seperti ini agar sesuai dengan yang dideklarasikan di server:
+    dan kode client yang dihasilkan akan seperti ini agar sesuai dengan deklarasi di server:
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -463,12 +463,12 @@ result = await session.call_tool("add", arguments={"a": 1, "b": 7})
 print(result.content)
 ```
 
-Dalam kode sebelumnya kita:
+Dalam kode di atas kita telah:
 
 - Memanggil sumber daya bernama `greeting` menggunakan `read_resource`.
 - Memanggil alat bernama `add` menggunakan `call_tool`.
 
-### C#
+### .NET
 
 1. Mari tambahkan kode untuk memanggil alat:
 
@@ -506,7 +506,7 @@ CallToolResult resultHelp = client.callTool(new CallToolRequest("help", Map.of()
 System.out.println("Help = " + resultHelp);
 ```
 
-Dalam kode sebelumnya kita:
+Dalam kode di atas kita telah:
 
 - Memanggil beberapa alat kalkulator menggunakan metode `callTool()` dengan objek `CallToolRequest`.
 - Setiap panggilan alat menentukan nama alat dan `Map` argumen yang dibutuhkan alat tersebut.
@@ -519,7 +519,7 @@ Untuk menjalankan client, ketik perintah berikut di terminal:
 
 ### TypeScript
 
-Tambahkan entri berikut ke bagian "scripts" di *package.json* Anda:
+Tambahkan entri berikut ke bagian "scripts" di *package.json*:
 
 ```json
 "client": "tsx && node build/client.js"
@@ -531,7 +531,7 @@ npm run client
 
 ### Python
 
-Jalankan client dengan perintah berikut:
+Panggil client dengan perintah berikut:
 
 ```sh
 python client.py
@@ -545,7 +545,7 @@ dotnet run
 
 ### Java
 
-Pastikan MCP server Anda berjalan di `http://localhost:8080`. Kemudian jalankan client:
+Pastikan MCP server berjalan di `http://localhost:8080`. Kemudian jalankan client:
 
 ```bash
 # Build you project
@@ -555,7 +555,7 @@ Pastikan MCP server Anda berjalan di `http://localhost:8080`. Kemudian jalankan 
 ./mvnw exec:java -Dexec.mainClass="com.microsoft.mcp.sample.client.SDKClient"
 ```
 
-Sebagai alternatif, Anda bisa menjalankan proyek client lengkap yang disediakan di folder solusi `03-GettingStarted\02-client\solution\java`:
+Atau, kamu bisa menjalankan proyek client lengkap yang disediakan di folder solusi `03-GettingStarted\02-client\solution\java`:
 
 ```bash
 # Navigate to the solution directory
@@ -568,9 +568,9 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## Tugas
 
-Dalam tugas ini, Anda akan menggunakan apa yang telah dipelajari untuk membuat client Anda sendiri.
+Dalam tugas ini, kamu akan menggunakan apa yang sudah dipelajari untuk membuat client sendiri.
 
-Berikut adalah server yang bisa Anda gunakan dan panggil melalui kode client Anda, coba tambahkan lebih banyak fitur ke server agar lebih menarik.
+Berikut server yang bisa kamu gunakan dan harus dipanggil melalui kode client-mu, coba tambahkan lebih banyak fitur ke server agar lebih menarik.
 
 ### TypeScript
 
@@ -674,37 +674,138 @@ public static class CalculatorTool
 }
 ```
 
-Lihat proyek ini untuk melihat bagaimana Anda bisa [menambahkan prompt dan sumber daya](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
+Lihat proyek ini untuk cara [menambahkan prompt dan sumber daya](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
 
 Juga, cek tautan ini untuk cara memanggil [prompt dan sumber daya](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
 
 ## Solusi
 
-[Solusi](./solution/README.md)
+**Folder solusi** berisi implementasi client lengkap yang siap dijalankan dan mendemonstrasikan semua konsep yang dibahas dalam tutorial ini. Setiap solusi mencakup kode client dan server yang diorganisasi dalam proyek terpisah dan mandiri.
 
+### 📁 Struktur Solusi
+
+Direktori solusi diorganisasi berdasarkan bahasa pemrograman:
+
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 Apa yang Termasuk di Setiap Solusi
+
+Setiap solusi spesifik bahasa menyediakan:
+
+- **Implementasi client lengkap** dengan semua fitur dari tutorial
+- **Struktur proyek yang berfungsi** dengan dependensi dan konfigurasi yang tepat
+- **Skrip build dan run** untuk setup dan eksekusi mudah
+- **README detail** dengan instruksi spesifik bahasa
+- **Penanganan error** dan contoh pemrosesan hasil
+
+### 📖 Menggunakan Solusi
+
+1. **Masuk ke folder bahasa pilihanmu**:
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **Ikuti instruksi README** di setiap folder untuk:
+   - Menginstal dependensi
+   - Membangun proyek
+   - Menjalankan client
+
+3. **Contoh output** yang akan kamu lihat:
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+Untuk dokumentasi lengkap dan instruksi langkah demi langkah, lihat: **[📖 Dokumentasi Solusi](./solution/README.md)**
+
+## 🎯 Contoh Lengkap
+
+Kami menyediakan implementasi client lengkap dan berfungsi untuk semua bahasa pemrograman yang dibahas dalam tutorial ini. Contoh ini menunjukkan seluruh fungsi yang dijelaskan di atas dan dapat digunakan sebagai referensi atau titik awal untuk proyekmu sendiri.
+
+### Contoh Lengkap yang Tersedia
+
+| Bahasa | File | Deskripsi |
+|--------|------|-----------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | Client Java lengkap menggunakan transport SSE dengan penanganan error menyeluruh |
+| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | Client C# lengkap menggunakan transport stdio dengan startup server otomatis |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Client TypeScript lengkap dengan dukungan penuh protokol MCP |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | Client Python lengkap menggunakan pola async/await |
+
+Setiap contoh lengkap mencakup:
+
+- ✅ **Pembuatan koneksi** dan penanganan error
+- ✅ **Penemuan server** (alat, sumber daya, prompt jika ada)
+- ✅ **Operasi kalkulator** (tambah, kurang, kali, bagi, bantuan)
+- ✅ **Pemrosesan hasil** dan output terformat
+- ✅ **Penanganan error menyeluruh**
+- ✅ **Kode bersih dan terdokumentasi** dengan komentar langkah demi langkah
+
+### Memulai dengan Contoh Lengkap
+
+1. **Pilih bahasa yang kamu inginkan** dari tabel di atas
+2. **Tinjau file contoh lengkap** untuk memahami implementasi penuh
+3. **Jalankan contoh** sesuai instruksi di [`complete_examples.md`](./complete_examples.md)
+4. **Modifikasi dan kembangkan** contoh sesuai kebutuhanmu
+
+Untuk dokumentasi lengkap tentang menjalankan dan menyesuaikan contoh ini, lihat: **[📖 Dokumentasi Contoh Lengkap](./complete_examples.md)**
+
+### 💡 Solusi vs. Contoh Lengkap
+
+| **Folder Solusi** | **Contoh Lengkap** |
+|-------------------|--------------------|
+| Struktur proyek lengkap dengan file build | Implementasi satu file |
+| Siap dijalankan dengan dependensi | Contoh kode fokus |
+| Setup seperti produksi | Referensi edukasi |
+| Tooling spesifik bahasa | Perbandingan lintas bahasa |
+Kedua pendekatan sama-sama berharga - gunakan **folder solution** untuk proyek lengkap dan **complete examples** untuk belajar dan referensi.  
 ## Poin Penting
 
-Poin penting dari bab ini tentang client adalah:
+Poin penting dari bab ini tentang klien adalah sebagai berikut:
 
-- Dapat digunakan untuk menemukan dan memanggil fitur di server.
-- Dapat memulai server saat client dijalankan (seperti di bab ini) tapi client juga bisa terhubung ke server yang sudah berjalan.
-- Merupakan cara yang bagus untuk menguji kemampuan server selain alternatif seperti Inspector yang dijelaskan di bab sebelumnya.
+- Dapat digunakan untuk menemukan dan memanggil fitur di server.  
+- Dapat memulai server saat klien itu sendiri berjalan (seperti di bab ini), tapi klien juga bisa terhubung ke server yang sudah berjalan.  
+- Merupakan cara yang bagus untuk menguji kemampuan server selain alternatif seperti Inspector yang dijelaskan di bab sebelumnya.  
 
 ## Sumber Tambahan
 
-- [Membangun client di MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Contoh
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## Selanjutnya
 
-- Selanjutnya: [Membuat client dengan LLM](../03-llm-client/README.md)
+- Selanjutnya: [Creating a client with an LLM](../03-llm-client/README.md)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

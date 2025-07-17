@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6f267185e24b1274dd3535d65dd1787",
-  "translation_date": "2025-07-17T07:42:11+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T09:07:13+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "vi"
 }
 -->
 # Tạo một client
 
-Client là các ứng dụng hoặc script tùy chỉnh giao tiếp trực tiếp với MCP Server để yêu cầu tài nguyên, công cụ và prompt. Khác với việc sử dụng công cụ inspector, vốn cung cấp giao diện đồ họa để tương tác với server, việc viết client riêng cho phép tương tác theo cách lập trình và tự động hóa. Điều này giúp các nhà phát triển tích hợp khả năng của MCP vào quy trình làm việc của họ, tự động hóa các tác vụ và xây dựng các giải pháp tùy chỉnh phù hợp với nhu cầu cụ thể.
+Client là các ứng dụng tùy chỉnh hoặc script giao tiếp trực tiếp với MCP Server để yêu cầu tài nguyên, công cụ và prompt. Khác với việc sử dụng công cụ inspector, vốn cung cấp giao diện đồ họa để tương tác với server, việc viết client riêng cho phép tương tác theo cách lập trình và tự động hóa. Điều này giúp các nhà phát triển tích hợp khả năng của MCP vào quy trình làm việc của họ, tự động hóa các tác vụ và xây dựng các giải pháp tùy chỉnh phù hợp với nhu cầu cụ thể.
 
 ## Tổng quan
 
@@ -17,13 +17,13 @@ Bài học này giới thiệu khái niệm về client trong hệ sinh thái Mo
 
 ## Mục tiêu học tập
 
-Kết thúc bài học này, bạn sẽ có thể:
+Sau bài học này, bạn sẽ có thể:
 
 - Hiểu client có thể làm gì.
-- Viết client riêng của bạn.
+- Viết client của riêng bạn.
 - Kết nối và kiểm tra client với MCP server để đảm bảo server hoạt động như mong đợi.
 
-## Viết một client cần những gì?
+## Những gì cần làm để viết một client?
 
 Để viết một client, bạn cần thực hiện các bước sau:
 
@@ -34,7 +34,7 @@ Kết thúc bài học này, bạn sẽ có thể:
 
 Bây giờ, khi đã hiểu tổng quan những gì sẽ làm, hãy xem ví dụ tiếp theo.
 
-### Ví dụ về client
+### Ví dụ về một client
 
 Hãy xem ví dụ client sau:
 
@@ -98,7 +98,7 @@ Hãy dành thời gian ở phần bài tập tiếp theo để phân tích từn
 
 ## Bài tập: Viết một client
 
-Như đã nói, hãy cùng nhau phân tích mã, và bạn có thể code theo nếu muốn.
+Như đã nói ở trên, hãy dành thời gian giải thích mã, và bạn có thể code theo nếu muốn.
 
 ### -1- Import các thư viện
 
@@ -147,7 +147,7 @@ Tiếp theo, chúng ta sẽ khởi tạo.
 
 ### -2- Khởi tạo client và transport
 
-Bạn cần tạo một instance của transport và một instance client:
+Chúng ta cần tạo một instance của transport và một instance của client:
 
 ### TypeScript
 
@@ -178,7 +178,7 @@ Trong đoạn mã trên, chúng ta đã:
     });
     ```
 
-- Khởi tạo client với tên và phiên bản.
+- Khởi tạo client bằng cách đặt tên và phiên bản.
 
     ```typescript
     const client = new Client(
@@ -228,7 +228,7 @@ Trong đoạn mã trên, chúng ta đã:
 - Import các thư viện cần thiết
 - Khởi tạo một đối tượng tham số server để dùng chạy server, từ đó client có thể kết nối.
 - Định nghĩa phương thức `run` gọi `stdio_client` để bắt đầu phiên client.
-- Tạo điểm vào chương trình, gọi `asyncio.run` với phương thức `run`.
+- Tạo điểm vào chương trình, cung cấp `run` cho `asyncio.run`.
 
 ### .NET
 
@@ -291,14 +291,14 @@ public class SDKClient {
 
 Trong đoạn mã trên, chúng ta đã:
 
-- Tạo phương thức main thiết lập SSE transport trỏ đến `http://localhost:8080` nơi MCP server sẽ chạy.
+- Tạo phương thức main thiết lập SSE transport trỏ đến `http://localhost:8080` nơi MCP server chạy.
 - Tạo lớp client nhận transport làm tham số constructor.
 - Trong phương thức `run`, tạo client MCP đồng bộ sử dụng transport và khởi tạo kết nối.
 - Sử dụng SSE (Server-Sent Events) phù hợp cho giao tiếp HTTP với MCP server Java Spring Boot.
 
 ### -3- Liệt kê các tính năng của server
 
-Bây giờ, client có thể kết nối khi chương trình chạy. Tuy nhiên, nó chưa liệt kê các tính năng, hãy làm điều đó:
+Bây giờ, chúng ta đã có client có thể kết nối khi chạy chương trình. Tuy nhiên, nó chưa liệt kê các tính năng, hãy làm điều đó tiếp theo:
 
 ### TypeScript
 
@@ -329,7 +329,7 @@ for tool in tools.tools:
     print("Tool: ", tool.name)
 ```
 
-Ở đây, chúng ta liệt kê các tài nguyên có sẵn bằng `list_resources()` và công cụ bằng `list_tools`, rồi in ra.
+Ở đây, chúng ta liệt kê các tài nguyên có sẵn bằng `list_resources()` và công cụ bằng `list_tools` rồi in ra.
 
 ### .NET
 
@@ -340,7 +340,7 @@ foreach (var tool in await client.ListToolsAsync())
 }
 ```
 
-Ví dụ trên cho thấy cách liệt kê các công cụ trên server. Với mỗi công cụ, ta in ra tên của nó.
+Đây là ví dụ cách liệt kê các công cụ trên server. Với mỗi công cụ, ta in ra tên của nó.
 
 ### Java
 
@@ -359,11 +359,11 @@ Trong đoạn mã trên, chúng ta đã:
 - Dùng `ping()` để kiểm tra kết nối với server.
 - `ListToolsResult` chứa thông tin về tất cả công cụ, bao gồm tên, mô tả và schema đầu vào.
 
-Tuyệt vời, giờ chúng ta đã lấy được tất cả tính năng. Vậy khi nào dùng chúng? Client này khá đơn giản, bạn cần gọi rõ ràng từng tính năng khi muốn dùng. Ở chương tiếp theo, chúng ta sẽ tạo client nâng cao hơn có tích hợp mô hình ngôn ngữ lớn (LLM). Còn bây giờ, hãy xem cách gọi các tính năng trên server:
+Tuyệt vời, giờ chúng ta đã lấy được tất cả tính năng. Vậy khi nào dùng chúng? Client này khá đơn giản, nghĩa là bạn phải gọi rõ ràng các tính năng khi cần. Ở chương tiếp theo, chúng ta sẽ tạo client nâng cao hơn có tích hợp mô hình ngôn ngữ lớn (LLM). Còn bây giờ, hãy xem cách gọi các tính năng trên server:
 
 ### -4- Gọi các tính năng
 
-Để gọi tính năng, bạn cần đảm bảo truyền đúng tham số và trong một số trường hợp, tên tính năng cần gọi.
+Để gọi các tính năng, bạn cần đảm bảo truyền đúng đối số và trong một số trường hợp, tên của tính năng cần gọi.
 
 ### TypeScript
 
@@ -391,7 +391,7 @@ const promptResult = await client.getPrompt({
 })
 ```
 
-Trong đoạn mã trên, chúng ta:
+Trong đoạn mã trên, chúng ta đã:
 
 - Đọc một tài nguyên, gọi `readResource()` với `uri`. Đây là cách server xử lý:
 
@@ -439,7 +439,7 @@ Trong đoạn mã trên, chúng ta:
     );
     ```
 
-    Và mã client tương ứng sẽ như sau để khớp với server:
+    Và mã client tương ứng sẽ như sau để khớp với khai báo trên server:
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -468,7 +468,7 @@ Trong đoạn mã trên, chúng ta đã:
 - Gọi tài nguyên `greeting` bằng `read_resource`.
 - Gọi công cụ `add` bằng `call_tool`.
 
-### C#
+### .NET
 
 1. Thêm mã gọi một công cụ:
 
@@ -479,7 +479,7 @@ Trong đoạn mã trên, chúng ta đã:
       cancellationToken:CancellationToken.None);
   ```
 
-2. Để in kết quả, đây là mã xử lý:
+2. Để in kết quả, đây là đoạn mã xử lý:
 
   ```csharp
   Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
@@ -509,8 +509,8 @@ System.out.println("Help = " + resultHelp);
 Trong đoạn mã trên, chúng ta đã:
 
 - Gọi nhiều công cụ tính toán bằng phương thức `callTool()` với các đối tượng `CallToolRequest`.
-- Mỗi lần gọi công cụ chỉ định tên công cụ và một `Map` các tham số cần thiết.
-- Các công cụ server yêu cầu tên tham số cụ thể (như "a", "b" cho các phép toán).
+- Mỗi lần gọi công cụ chỉ định tên công cụ và một `Map` các đối số cần thiết.
+- Các công cụ trên server yêu cầu tên tham số cụ thể (như "a", "b" cho các phép toán).
 - Kết quả trả về là các đối tượng `CallToolResult` chứa phản hồi từ server.
 
 ### -5- Chạy client
@@ -531,7 +531,7 @@ npm run client
 
 ### Python
 
-Gọi client bằng lệnh sau:
+Gọi client với lệnh sau:
 
 ```sh
 python client.py
@@ -545,7 +545,7 @@ dotnet run
 
 ### Java
 
-Đảm bảo MCP server đang chạy tại `http://localhost:8080`. Sau đó chạy client:
+Đầu tiên, đảm bảo MCP server đang chạy tại `http://localhost:8080`. Sau đó chạy client:
 
 ```bash
 # Build you project
@@ -555,7 +555,7 @@ dotnet run
 ./mvnw exec:java -Dexec.mainClass="com.microsoft.mcp.sample.client.SDKClient"
 ```
 
-Hoặc bạn có thể chạy toàn bộ dự án client trong thư mục giải pháp `03-GettingStarted\02-client\solution\java`:
+Ngoài ra, bạn có thể chạy toàn bộ dự án client có sẵn trong thư mục giải pháp `03-GettingStarted\02-client\solution\java`:
 
 ```bash
 # Navigate to the solution directory
@@ -568,9 +568,9 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## Bài tập
 
-Trong bài tập này, bạn sẽ sử dụng kiến thức đã học để tạo client riêng.
+Trong bài tập này, bạn sẽ sử dụng kiến thức đã học để tạo một client của riêng bạn.
 
-Dưới đây là một server bạn có thể dùng, bạn cần gọi nó qua client của mình, thử thêm các tính năng cho server để làm nó thú vị hơn.
+Dưới đây là một server bạn có thể dùng và gọi qua client, thử xem bạn có thể thêm tính năng gì để server thú vị hơn không.
 
 ### TypeScript
 
@@ -680,21 +680,123 @@ Ngoài ra, xem liên kết này để biết cách gọi [prompt và tài nguyê
 
 ## Giải pháp
 
-[Giải pháp](./solution/README.md)
+**Thư mục giải pháp** chứa các triển khai client hoàn chỉnh, sẵn sàng chạy, minh họa tất cả các khái niệm trong hướng dẫn này. Mỗi giải pháp bao gồm mã client và server được tổ chức trong các dự án riêng biệt, độc lập.
+
+### 📁 Cấu trúc giải pháp
+
+Thư mục giải pháp được tổ chức theo ngôn ngữ lập trình:
+
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 Mỗi giải pháp bao gồm
+
+Mỗi giải pháp theo ngôn ngữ cung cấp:
+
+- **Triển khai client hoàn chỉnh** với tất cả tính năng trong hướng dẫn
+- **Cấu trúc dự án hoạt động** với các phụ thuộc và cấu hình phù hợp
+- **Script build và chạy** để dễ dàng thiết lập và thực thi
+- **README chi tiết** với hướng dẫn riêng cho từng ngôn ngữ
+- **Xử lý lỗi** và ví dụ xử lý kết quả
+
+### 📖 Sử dụng các giải pháp
+
+1. **Đi đến thư mục ngôn ngữ bạn chọn**:
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **Theo dõi hướng dẫn trong README** ở mỗi thư mục để:
+   - Cài đặt phụ thuộc
+   - Build dự án
+   - Chạy client
+
+3. **Ví dụ đầu ra bạn sẽ thấy**:
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+Để xem tài liệu đầy đủ và hướng dẫn từng bước, xem: **[📖 Tài liệu giải pháp](./solution/README.md)**
+
+## 🎯 Ví dụ hoàn chỉnh
+
+Chúng tôi cung cấp các triển khai client hoàn chỉnh, hoạt động cho tất cả ngôn ngữ lập trình được đề cập trong hướng dẫn này. Các ví dụ này minh họa đầy đủ chức năng đã mô tả và có thể dùng làm tham khảo hoặc điểm khởi đầu cho dự án của bạn.
+
+### Ví dụ hoàn chỉnh có sẵn
+
+| Ngôn ngữ | Tệp | Mô tả |
+|----------|------|-------------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | Client Java hoàn chỉnh sử dụng SSE transport với xử lý lỗi toàn diện |
+| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | Client C# hoàn chỉnh sử dụng stdio transport với tự động khởi động server |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Client TypeScript hoàn chỉnh hỗ trợ đầy đủ giao thức MCP |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | Client Python hoàn chỉnh sử dụng async/await |
+
+Mỗi ví dụ hoàn chỉnh bao gồm:
+
+- ✅ **Thiết lập kết nối** và xử lý lỗi
+- ✅ **Khám phá server** (công cụ, tài nguyên, prompt nếu có)
+- ✅ **Các phép toán máy tính** (cộng, trừ, nhân, chia, trợ giúp)
+- ✅ **Xử lý kết quả** và xuất ra định dạng đẹp
+- ✅ **Xử lý lỗi toàn diện**
+- ✅ **Mã sạch, có chú thích chi tiết từng bước**
+
+### Bắt đầu với ví dụ hoàn chỉnh
+
+1. **Chọn ngôn ngữ bạn muốn** trong bảng trên
+2. **Xem qua tệp ví dụ hoàn chỉnh** để hiểu toàn bộ triển khai
+3. **Chạy ví dụ** theo hướng dẫn trong [`complete_examples.md`](./complete_examples.md)
+4. **Chỉnh sửa và mở rộng** ví dụ cho trường hợp sử dụng của bạn
+
+Để xem tài liệu chi tiết về cách chạy và tùy chỉnh các ví dụ này, xem: **[📖 Tài liệu ví dụ hoàn chỉnh](./complete_examples.md)**
+
+### 💡 Giải pháp so với ví dụ hoàn chỉnh
+
+| **Thư mục Giải pháp** | **Ví dụ Hoàn chỉnh** |
+|-----------------------|---------------------|
+| Cấu trúc dự án đầy đủ với file build | Triển khai mã đơn file |
+| Sẵn sàng chạy với phụ thuộc | Ví dụ mã tập trung |
+| Thiết lập giống môi trường sản xuất | Tham khảo giáo dục |
+| Công cụ riêng cho từng ngôn ngữ | So sánh đa ngôn ngữ |
+Cả hai phương pháp đều có giá trị - sử dụng **thư mục solution** cho các dự án hoàn chỉnh và **ví dụ hoàn chỉnh** để học tập và tham khảo.
 
 ## Những điểm chính cần nhớ
 
-Điểm chính của chương này về client là:
+Những điểm chính của chương này về client như sau:
 
-- Có thể dùng để khám phá và gọi các tính năng trên server.
-- Có thể khởi động server khi client khởi động (như trong chương này) hoặc kết nối đến server đang chạy.
-- Là cách tuyệt vời để thử nghiệm khả năng server bên cạnh các lựa chọn khác như Inspector đã mô tả trong chương trước.
+- Có thể được sử dụng để cả khám phá và gọi các tính năng trên server.
+- Có thể khởi động một server trong khi chính nó cũng khởi động (như trong chương này), nhưng client cũng có thể kết nối với các server đang chạy.
+- Là một cách tuyệt vời để thử nghiệm khả năng của server bên cạnh các lựa chọn khác như Inspector đã được mô tả trong chương trước.
 
 ## Tài nguyên bổ sung
 
-- [Xây dựng client trong MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
 
-## Mẫu
+## Ví dụ mẫu
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
@@ -704,7 +806,7 @@ Ngoài ra, xem liên kết này để biết cách gọi [prompt và tài nguyê
 
 ## Tiếp theo
 
-- Tiếp theo: [Tạo client với LLM](../03-llm-client/README.md)
+- Tiếp theo: [Creating a client with an LLM](../03-llm-client/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

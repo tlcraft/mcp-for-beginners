@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6f267185e24b1274dd3535d65dd1787",
-  "translation_date": "2025-07-17T08:22:44+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T09:08:57+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "tl"
 }
@@ -28,8 +28,8 @@ Sa pagtatapos ng araling ito, magagawa mong:
 Para makasulat ng kliyente, kailangan mong gawin ang mga sumusunod:
 
 - **I-import ang tamang mga library**. Gagamitin mo ang parehong library tulad ng dati, ngunit iba ang mga konstrukto.
-- **Gumawa ng instance ng kliyente**. Kasama dito ang paglikha ng isang kliyente at pagkonekta nito sa napiling paraan ng transport.
-- **Pumili kung anong mga resources ang ililista**. Ang iyong MCP server ay may mga resources, tools, at prompts, kailangan mong piliin kung alin ang ililista.
+- **Gumawa ng instance ng kliyente**. Kasama dito ang paglikha ng client instance at pagkonekta nito sa napiling paraan ng transport.
+- **Pumili kung anong mga resources ang ililista**. Ang iyong MCP server ay may mga resources, tools, at prompts; kailangan mong piliin kung alin ang ililista.
 - **Isama ang kliyente sa host application**. Kapag alam mo na ang mga kakayahan ng server, kailangan mong isama ito sa iyong host application upang kapag nag-type ang user ng prompt o ibang command, ma-trigger ang kaukulang feature ng server.
 
 Ngayon na naiintindihan natin sa pangkalahatan ang gagawin, tingnan natin ang isang halimbawa.
@@ -90,11 +90,11 @@ Sa code na ito:
 
 - In-import ang mga library
 - Gumawa ng instance ng kliyente at ikinonekta ito gamit ang stdio bilang transport.
-- Inilista ang mga prompts, resources, at tools at tinawag ang mga ito.
+- Inilista ang prompts, resources, at tools at tinawag ang mga ito.
 
 Ayan, isang kliyente na kayang makipag-usap sa isang MCP Server.
 
-Maglaan tayo ng oras sa susunod na bahagi ng ehersisyo upang himayin ang bawat bahagi ng code at ipaliwanag ang nangyayari.
+Maglaan tayo ng oras sa susunod na bahagi ng ehersisyo upang himayin ang bawat bahagi ng code at ipaliwanag ang mga nangyayari.
 
 ## Ehersisyo: Pagsulat ng kliyente
 
@@ -102,7 +102,7 @@ Tulad ng sinabi sa itaas, maglaan tayo ng oras sa pagpapaliwanag ng code, at mal
 
 ### -1- I-import ang mga library
 
-I-import natin ang mga kinakailangang library, kakailanganin natin ang mga reference sa kliyente at sa napiling transport protocol, ang stdio. Ang stdio ay isang protocol para sa mga bagay na tatakbo sa iyong lokal na makina. Ang SSE ay isa pang transport protocol na ipapakita natin sa mga susunod na kabanata, pero iyon ang isa pang opsyon mo. Sa ngayon, magpatuloy tayo gamit ang stdio.
+I-import natin ang mga kinakailangang library, kakailanganin natin ang mga reference sa kliyente at sa napiling transport protocol, ang stdio. Ang stdio ay isang protocol para sa mga bagay na tatakbo sa iyong lokal na makina. Ang SSE ay isa pang transport protocol na ipapakita natin sa mga susunod na kabanata, ngunit iyon ang isa pang opsyon mo. Sa ngayon, magpatuloy tayo gamit ang stdio.
 
 ### TypeScript
 
@@ -169,7 +169,7 @@ await client.connect(transport);
 
 Sa code na ito:
 
-- Gumawa tayo ng stdio transport instance. Pansinin kung paano nito tinutukoy ang command at args para hanapin at simulan ang server dahil ito ang kailangan nating gawin habang ginagawa ang kliyente.
+- Gumawa tayo ng stdio transport instance. Pansinin kung paano nito tinutukoy ang command at args para hanapin at simulan ang server dahil ito ay kailangan natin sa paggawa ng kliyente.
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -227,7 +227,7 @@ Sa code na ito:
 
 - In-import ang mga kinakailangang library
 - Nag-instansya ng server parameters object na gagamitin para patakbuhin ang server upang makakonekta tayo dito gamit ang kliyente.
-- Nagdeklara ng method na `run` na tumatawag naman sa `stdio_client` na nagsisimula ng client session.
+- Nagdeklara ng method na `run` na tumatawag sa `stdio_client` na nagsisimula ng client session.
 - Gumawa ng entry point kung saan ibinibigay ang `run` method sa `asyncio.run`.
 
 ### .NET
@@ -260,7 +260,7 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 Sa code na ito:
 
 - In-import ang mga kinakailangang library.
-- Gumawa ng stdio transport at isang kliyente na `mcpClient`. Ito ang gagamitin natin para ilista at tawagin ang mga feature sa MCP Server.
+- Gumawa ng stdio transport at kliyente na `mcpClient`. Ito ang gagamitin natin para ilista at tawagin ang mga feature ng MCP Server.
 
 Tandaan, sa "Arguments", maaari kang tumukoy sa *.csproj* o sa executable.
 
@@ -408,7 +408,7 @@ Sa code na ito:
     );
     ```
 
-    Ang `uri` na `file://example.txt` ay tumutugma sa `file://{name}` sa server. Ang `example.txt` ay imapa sa `name`.
+    Ang `uri` na `file://example.txt` ay tumutugma sa `file://{name}` sa server. Ang `example.txt` ay mapupunta sa `name`.
 
 - Tumawag ng tool, tinawag ito sa pamamagitan ng pagtukoy ng `name` at `arguments` nito tulad nito:
 
@@ -439,7 +439,7 @@ Sa code na ito:
     );
     ```
 
-    Kaya ang kliyente mo ay ganito ang itsura para tumugma sa deklarasyon sa server:
+    Kaya ang client code mo ay ganito para tumugma sa deklarasyon sa server:
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -468,7 +468,7 @@ Sa code na ito:
 - Tinawag ang resource na `greeting` gamit ang `read_resource`.
 - Tinawag ang tool na `add` gamit ang `call_tool`.
 
-### C#
+### .NET
 
 1. Magdagdag tayo ng code para tumawag ng tool:
 
@@ -479,7 +479,7 @@ Sa code na ito:
       cancellationToken:CancellationToken.None);
   ```
 
-1. Para iprint ang resulta, narito ang code para gawin iyon:
+1. Para ipakita ang resulta, narito ang code para gawin iyon:
 
   ```csharp
   Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
@@ -508,9 +508,9 @@ System.out.println("Help = " + resultHelp);
 
 Sa code na ito:
 
-- Tinawag ang maraming calculator tools gamit ang `callTool()` method na may `CallToolRequest` objects.
-- Bawat tawag sa tool ay nagtutukoy ng pangalan ng tool at isang `Map` ng mga argumento na kailangan ng tool.
-- Ang mga tool sa server ay nangangailangan ng partikular na pangalan ng parameter (tulad ng "a", "b" para sa mga operasyon sa matematika).
+- Tinawag ang iba't ibang calculator tools gamit ang `callTool()` method na may `CallToolRequest` objects.
+- Bawat tawag sa tool ay nagtutukoy ng pangalan ng tool at isang `Map` ng mga argumentong kailangan ng tool.
+- Inaasahan ng mga tool sa server ang mga partikular na pangalan ng parameter (tulad ng "a", "b" para sa mga operasyon sa matematika).
 - Ang mga resulta ay ibinabalik bilang `CallToolResult` objects na naglalaman ng tugon mula sa server.
 
 ### -5- Patakbuhin ang kliyente
@@ -531,7 +531,7 @@ npm run client
 
 ### Python
 
-Patakbuhin ang kliyente gamit ang utos na ito:
+Patakbuhin ang kliyente gamit ang sumusunod na utos:
 
 ```sh
 python client.py
@@ -545,7 +545,7 @@ dotnet run
 
 ### Java
 
-Siguraduhing tumatakbo ang iyong MCP server sa `http://localhost:8080`. Pagkatapos patakbuhin ang kliyente:
+Siguraduhing tumatakbo ang iyong MCP server sa `http://localhost:8080`. Pagkatapos, patakbuhin ang kliyente:
 
 ```bash
 # Build you project
@@ -566,9 +566,9 @@ cd 03-GettingStarted/02-client/solution/java
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## Takdang-Aralin
+## Takdang Aralin
 
-Sa takdang-aralin na ito, gagamitin mo ang mga natutunan mo sa paggawa ng kliyente ngunit gagawa ka ng sarili mong kliyente.
+Sa takdang araling ito, gagamitin mo ang mga natutunan mo sa paggawa ng kliyente ngunit gagawa ka ng sarili mong kliyente.
 
 Narito ang isang server na maaari mong gamitin na kailangang tawagin gamit ang iyong client code, tingnan kung kaya mong magdagdag ng higit pang mga feature sa server upang maging mas kawili-wili ito.
 
@@ -674,25 +674,127 @@ public static class CalculatorTool
 }
 ```
 
-Tingnan ang proyektong ito para makita kung paano [magdagdag ng prompts at resources](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
+Tingnan ang proyektong ito para makita kung paano ka makakapagdagdag ng [prompts at resources](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
 
-Suriin din ang link na ito para sa kung paano tawagin ang [prompts at resources](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
+Gayundin, tingnan ang link na ito para sa kung paano tawagin ang [prompts at resources](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
 
 ## Solusyon
 
-[Solusyon](./solution/README.md)
+Ang **solution folder** ay naglalaman ng kumpleto at handang patakbuhin na mga implementasyon ng kliyente na nagpapakita ng lahat ng konseptong tinalakay sa tutorial na ito. Bawat solusyon ay may kasamang client at server code na nakaayos sa magkakahiwalay at self-contained na mga proyekto.
 
-## Mahahalagang Punto
+### 📁 Istruktura ng Solusyon
 
-Ang mga mahahalagang punto para sa kabanatang ito tungkol sa mga kliyente ay:
+Ang direktoryo ng solusyon ay nakaayos ayon sa programming language:
 
-- Maaari silang gamitin upang tuklasin at tawagin ang mga feature sa server.
-- Maaari silang magsimula ng server habang nagsisimula rin ang sarili nila (tulad ng sa kabanatang ito) ngunit maaari ring kumonekta ang mga kliyente sa mga tumatakbong server.
-- Isang mahusay na paraan upang subukan ang mga kakayahan ng server bilang alternatibo sa Inspector tulad ng ipinaliwanag sa nakaraang kabanata.
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 Ano ang Nilalaman ng Bawat Solusyon
+
+Bawat solusyon na nakatuon sa isang wika ay nagbibigay ng:
+
+- **Kumpletong implementasyon ng kliyente** na may lahat ng feature mula sa tutorial
+- **Gumaganang istruktura ng proyekto** na may tamang dependencies at configuration
+- **Mga script para sa pag-build at pagpapatakbo** para sa madaling setup at execution
+- **Detalyadong README** na may mga tagubilin na nakatuon sa wika
+- **Pag-handle ng error** at mga halimbawa ng pagproseso ng resulta
+
+### 📖 Paggamit ng mga Solusyon
+
+1. **Pumunta sa folder ng nais mong wika**:
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **Sundin ang mga tagubilin sa README** sa bawat folder para sa:
+   - Pag-install ng dependencies
+   - Pag-build ng proyekto
+   - Pagpapatakbo ng kliyente
+
+3. **Halimbawa ng output** na dapat mong makita:
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+Para sa kumpletong dokumentasyon at step-by-step na mga tagubilin, tingnan: **[📖 Solution Documentation](./solution/README.md)**
+
+## 🎯 Kumpletong Mga Halimbawa
+
+Nagbigay kami ng kumpleto at gumaganang mga implementasyon ng kliyente para sa lahat ng programming language na tinalakay sa tutorial na ito. Ipinapakita ng mga halimbawang ito ang buong functionality na inilarawan sa itaas at maaaring gamitin bilang reference implementations o panimulang punto para sa iyong sariling mga proyekto.
+
+### Mga Available na Kumpletong Halimbawa
+
+| Wika     | File                          | Deskripsyon                                                  |
+|----------|-------------------------------|--------------------------------------------------------------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java)       | Kumpletong Java client gamit ang SSE transport na may komprehensibong pag-handle ng error |
+| **C#**   | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs)       | Kumpletong C# client gamit ang stdio transport na may awtomatikong pagsisimula ng server |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Kumpletong TypeScript client na may buong suporta sa MCP protocol |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py)       | Kumpletong Python client gamit ang async/await na pattern |
+
+Bawat kumpletong halimbawa ay may kasamang:
+
+- ✅ **Pagkonekta at pag-handle ng error**
+- ✅ **Pagdiskubre ng server** (tools, resources, prompts kung saan naaangkop)
+- ✅ **Mga operasyon sa calculator** (add, subtract, multiply, divide, help)
+- ✅ **Pagproseso ng resulta** at nakaayos na output
+- ✅ **Komprehensibong pag-handle ng error**
+- ✅ **Malinis at dokumentadong code** na may step-by-step na mga komento
+
+### Pagsisimula sa Kumpletong Mga Halimbawa
+
+1. **Piliin ang nais mong wika** mula sa talahanayan sa itaas
+2. **Suriin ang kumpletong halimbawa ng file** upang maunawaan ang buong implementasyon
+3. **Patakbuhin ang halimbawa** ayon sa mga tagubilin sa [`complete_examples.md`](./complete_examples.md)
+4. **I-modify at palawakin** ang halimbawa para sa iyong partikular na gamit
+
+Para sa detalyadong dokumentasyon tungkol sa pagpapatakbo at pag-customize ng mga halimbawang ito, tingnan: **[📖 Complete Examples Documentation](./complete_examples.md)**
+
+### 💡 Solusyon kumpara sa Kumpletong Mga Halimbawa
+
+| **Solution Folder**               | **Kumpletong Mga Halimbawa**          |
+|---------------------------------|-------------------------------------|
+| Buong istruktura ng proyekto na may mga build file | Mga implementasyon sa iisang file |
+| Handang patakbuhin na may dependencies | Nakatuon sa mga halimbawa ng code |
+| Setup na parang production       | Pang-edukasyon na reference        |
+| Tooling na nakatuon sa wika      | Paghahambing sa iba't ibang wika   |
+Parehong mahalaga ang dalawang paraan - gamitin ang **solution folder** para sa mga kumpletong proyekto at ang **complete examples** para sa pag-aaral at sanggunian.
+
+## Mga Pangunahing Punto
+
+Ang mga pangunahing punto para sa kabanatang ito tungkol sa mga client ay ang mga sumusunod:
+
+- Maaaring gamitin upang tuklasin at tawagan ang mga tampok sa server.
+- Maaaring magsimula ng server habang nagsisimula rin ang sarili nitong proseso (tulad sa kabanatang ito) ngunit maaaring kumonekta ang mga client sa mga tumatakbong server.
+- Isang mahusay na paraan upang subukan ang kakayahan ng server kasabay ng mga alternatibo tulad ng Inspector na ipinaliwanag sa nakaraang kabanata.
 
 ## Karagdagang Mga Sanggunian
 
-- [Pagbuo ng mga kliyente sa MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Mga Halimbawa
 
@@ -704,7 +806,7 @@ Ang mga mahahalagang punto para sa kabanatang ito tungkol sa mga kliyente ay:
 
 ## Ano ang Susunod
 
-- Susunod: [Paglikha ng kliyente na may LLM](../03-llm-client/README.md)
+- Susunod: [Creating a client with an LLM](../03-llm-client/README.md)
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

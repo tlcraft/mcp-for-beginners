@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6f267185e24b1274dd3535d65dd1787",
-  "translation_date": "2025-07-17T06:43:31+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T09:04:44+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "no"
 }
 -->
 # Lage en klient
 
-Klienter er tilpassede applikasjoner eller skript som kommuniserer direkte med en MCP-server for å be om ressurser, verktøy og prompts. I motsetning til å bruke inspeksjonsverktøyet, som gir et grafisk grensesnitt for å samhandle med serveren, gir det å skrive din egen klient mulighet for programmatiske og automatiserte interaksjoner. Dette gjør det mulig for utviklere å integrere MCP-funksjonalitet i egne arbeidsflyter, automatisere oppgaver og bygge skreddersydde løsninger tilpasset spesifikke behov.
+Klienter er tilpassede applikasjoner eller skript som kommuniserer direkte med en MCP-server for å be om ressurser, verktøy og prompts. I motsetning til å bruke inspektørverktøyet, som gir et grafisk grensesnitt for å samhandle med serveren, gir det å skrive din egen klient mulighet for programmerbar og automatisert interaksjon. Dette gjør det mulig for utviklere å integrere MCP-funksjonalitet i egne arbeidsflyter, automatisere oppgaver og bygge skreddersydde løsninger tilpasset spesifikke behov.
 
 ## Oversikt
 
@@ -30,7 +30,7 @@ For å skrive en klient må du gjøre følgende:
 - **Importere riktige biblioteker**. Du vil bruke det samme biblioteket som før, men med andre konstruksjoner.
 - **Opprette en klientinstans**. Dette innebærer å lage en klientinstans og koble den til valgt transportmetode.
 - **Bestemme hvilke ressurser som skal listes**. MCP-serveren din har ressurser, verktøy og prompts, og du må bestemme hvilke som skal listes.
-- **Integrere klienten i en vertsapplikasjon**. Når du kjenner til serverens funksjoner, må du integrere dette i vertsapplikasjonen slik at når en bruker skriver en prompt eller annen kommando, blir tilsvarende serverfunksjon kalt.
+- **Integrere klienten i en vertsapplikasjon**. Når du kjenner til serverens funksjonalitet, må du integrere dette i vertsapplikasjonen slik at når en bruker skriver en prompt eller annen kommando, blir tilsvarende serverfunksjon kalt.
 
 Nå som vi har en overordnet forståelse av hva vi skal gjøre, la oss se på et eksempel.
 
@@ -94,7 +94,7 @@ I koden over har vi:
 
 Der har du det, en klient som kan kommunisere med en MCP-server.
 
-La oss ta oss god tid i neste øvelse og gå gjennom hver kodebit for å forklare hva som skjer.
+La oss ta oss tid i neste øvelse til å gå gjennom hver kodebit og forklare hva som skjer.
 
 ## Øvelse: Skrive en klient
 
@@ -130,7 +130,7 @@ using ModelContextProtocol.Protocol.Transport;
 
 ### Java
 
-For Java skal du lage en klient som kobler til MCP-serveren fra forrige øvelse. Bruk samme Java Spring Boot-prosjektstruktur som i [Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java), opprett en ny Java-klasse kalt `SDKClient` i mappen `src/main/java/com/microsoft/mcp/sample/client/` og legg til følgende imports:
+For Java skal du lage en klient som kobler til MCP-serveren fra forrige øvelse. Bruk samme Java Spring Boot-prosjektstruktur fra [Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java), opprett en ny Java-klasse kalt `SDKClient` i mappen `src/main/java/com/microsoft/mcp/sample/client/` og legg til følgende imports:
 
 ```java
 import java.util.Map;
@@ -169,7 +169,7 @@ await client.connect(transport);
 
 I koden over har vi:
 
-- Opprettet en stdio transportinstans. Legg merke til hvordan den spesifiserer kommando og argumenter for hvordan serveren skal startes, noe vi trenger når vi lager klienten.
+- Opprettet en stdio transportinstans. Merk hvordan den spesifiserer kommando og argumenter for hvordan serveren skal startes, noe vi trenger når vi lager klienten.
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -298,7 +298,7 @@ I koden over har vi:
 
 ### -3- Liste serverfunksjonene
 
-Nå har vi en klient som kan koble til når programmet kjøres. Men den lister ikke funksjonene sine ennå, så la oss gjøre det:
+Nå har vi en klient som kan koble til når programmet kjøres. Men den lister ikke funksjonene, så la oss gjøre det nå:
 
 ### TypeScript
 
@@ -359,7 +359,7 @@ I koden over har vi:
 - Brukt `ping()` for å verifisere at tilkoblingen til serveren fungerer.
 - `ListToolsResult` inneholder informasjon om alle verktøy, inkludert navn, beskrivelser og input-skjemaer.
 
-Flott, nå har vi hentet alle funksjonene. Spørsmålet er når bruker vi dem? Denne klienten er ganske enkel, i den forstand at vi må kalle funksjonene eksplisitt når vi ønsker det. I neste kapittel skal vi lage en mer avansert klient som har tilgang til sin egen store språkmodell, LLM. For nå, la oss se hvordan vi kan kalle funksjonene på serveren:
+Flott, nå har vi hentet alle funksjonene. Spørsmålet er når bruker vi dem? Denne klienten er ganske enkel, i den forstand at vi må eksplisitt kalle funksjonene når vi ønsker det. I neste kapittel lager vi en mer avansert klient som har tilgang til sin egen store språkmodell, LLM. For nå, la oss se hvordan vi kan kalle funksjonene på serveren:
 
 ### -4- Kalle funksjoner
 
@@ -408,7 +408,7 @@ I koden over har vi:
     );
     ```
 
-    Vår `uri`-verdi `file://example.txt` matcher `file://{name}` på serveren. `example.txt` blir da mappet til `name`.
+    Vår `uri`-verdi `file://example.txt` matcher `file://{name}` på serveren. `example.txt` blir mappet til `name`.
 
 - Kalt et verktøy ved å spesifisere `name` og `arguments` slik:
 
@@ -468,7 +468,7 @@ I koden over har vi:
 - Kalt en ressurs kalt `greeting` med `read_resource`.
 - Kalt et verktøy kalt `add` med `call_tool`.
 
-### C#
+### .NET
 
 1. La oss legge til kode for å kalle et verktøy:
 
@@ -479,7 +479,7 @@ I koden over har vi:
       cancellationToken:CancellationToken.None);
   ```
 
-1. For å skrive ut resultatet, her er kode for å håndtere det:
+1. For å skrive ut resultatet, her er kode for det:
 
   ```csharp
   Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
@@ -676,35 +676,136 @@ public static class CalculatorTool
 
 Se dette prosjektet for å se hvordan du kan [legge til prompts og ressurser](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
 
-Sjekk også denne lenken for hvordan du kan kalle [prompts og ressurser](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
+Sjekk også denne lenken for hvordan du kaller [prompts og ressurser](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
 
 ## Løsning
 
-[Løsning](./solution/README.md)
+**Løsningsmappen** inneholder komplette, kjørbare klientimplementasjoner som demonstrerer alle konseptene dekket i denne veiledningen. Hver løsning inkluderer både klient- og serverkode organisert i separate, selvstendige prosjekter.
 
+### 📁 Løsningsstruktur
+
+Løsningsmappen er organisert etter programmeringsspråk:
+
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 Hva hver løsning inkluderer
+
+Hver språkspesifikke løsning tilbyr:
+
+- **Fullstendig klientimplementasjon** med alle funksjoner fra veiledningen
+- **Fungerende prosjektstruktur** med riktige avhengigheter og konfigurasjon
+- **Bygge- og kjøre-skript** for enkel oppsett og kjøring
+- **Detaljert README** med språkspesifikke instruksjoner
+- **Feilhåndtering** og eksempler på resultatbehandling
+
+### 📖 Bruke løsningene
+
+1. **Naviger til ønsket språkmappe**:
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **Følg README-instruksjonene** i hver mappe for:
+   - Installere avhengigheter
+   - Bygge prosjektet
+   - Kjøre klienten
+
+3. **Eksempelutdata** du bør se:
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+For full dokumentasjon og steg-for-steg instruksjoner, se: **[📖 Løsningsdokumentasjon](./solution/README.md)**
+
+## 🎯 Fullstendige eksempler
+
+Vi har levert komplette, fungerende klientimplementasjoner for alle programmeringsspråk som dekkes i denne veiledningen. Disse eksemplene demonstrerer full funksjonalitet som beskrevet ovenfor og kan brukes som referanseimplementasjoner eller utgangspunkt for egne prosjekter.
+
+### Tilgjengelige fullstendige eksempler
+
+| Språk    | Fil                          | Beskrivelse                                                      |
+|----------|------------------------------|-----------------------------------------------------------------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java)         | Komplett Java-klient med SSE-transport og omfattende feilhåndtering |
+| **C#**   | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs)         | Komplett C#-klient med stdio-transport og automatisk serverstart |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Komplett TypeScript-klient med full MCP-protokollstøtte          |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py)         | Komplett Python-klient med async/await-mønstre                   |
+
+Hvert komplett eksempel inkluderer:
+
+- ✅ **Etablering av tilkobling** og feilhåndtering
+- ✅ **Serveroppdagelse** (verktøy, ressurser, prompts der det er aktuelt)
+- ✅ **Kalkulatoroperasjoner** (addere, subtrahere, multiplisere, dividere, hjelp)
+- ✅ **Resultatbehandling** og formatert utskrift
+- ✅ **Omfattende feilhåndtering**
+- ✅ **Ren, dokumentert kode** med steg-for-steg kommentarer
+
+### Komme i gang med fullstendige eksempler
+
+1. **Velg ønsket språk** fra tabellen over
+2. **Gå gjennom komplett eksempel-fil** for å forstå full implementasjon
+3. **Kjør eksempelet** etter instruksjonene i [`complete_examples.md`](./complete_examples.md)
+4. **Endre og utvid** eksempelet for ditt spesifikke brukstilfelle
+
+For detaljert dokumentasjon om kjøring og tilpasning av disse eksemplene, se: **[📖 Fullstendige eksempler dokumentasjon](./complete_examples.md)**
+
+### 💡 Løsning vs. fullstendige eksempler
+
+| **Løsningsmappe**           | **Fullstendige eksempler**          |
+|-----------------------------|-----------------------------------|
+| Full prosjektstruktur med bygge-filer | Enkeltfil-implementasjoner          |
+| Klar til kjøring med avhengigheter | Fokusert kodeeksempler             |
+| Produksjonslignende oppsett | Pedagogisk referanse               |
+| Språkspesifikk verktøykjede | Sammenligning på tvers av språk    |
+Begge tilnærmingene er verdifulle – bruk **solution folder** for komplette prosjekter og **complete examples** for læring og referanse.  
 ## Viktige punkter
 
-De viktigste punktene for dette kapitlet om klienter er:
+De viktigste punktene for dette kapitlet om klienter er følgende:
 
-- Kan brukes både for å oppdage og kalle funksjoner på serveren.
-- Kan starte en server samtidig som den starter seg selv (som i dette kapittelet), men klienter kan også koble til allerede kjørende servere.
-- Er en flott måte å teste serverfunksjonalitet på, ved siden av alternativer som Inspector, som ble beskrevet i forrige kapittel.
+- Kan brukes både for å oppdage og kalle funksjoner på serveren.  
+- Kan starte en server samtidig som den starter seg selv (som i dette kapittelet), men klienter kan også koble seg til allerede kjørende servere.  
+- Er en flott måte å teste serverens funksjonalitet på, ved siden av alternativer som Inspector, slik det ble beskrevet i forrige kapittel.  
 
 ## Ekstra ressurser
 
-- [Bygge klienter i MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Eksempler
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## Hva kommer nå
 
-- Neste: [Lage en klient med en LLM](../03-llm-client/README.md)
+- Neste: [Creating a client with an LLM](../03-llm-client/README.md)
 
 **Ansvarsfraskrivelse**:  
 Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
