@@ -116,9 +116,14 @@ catch (Exception ex)
     Console.WriteLine($"Stack trace: {ex.StackTrace}");
 }
 
-/**
- * Extract the text result from a tool call response
- */
+/// <summary>
+/// Extracts the text result from a tool call response object.
+/// </summary>
+/// <param name="result">The result object, which may contain text content or other data.</param>
+/// <returns>
+/// A string containing the extracted text if found, a serialized representation of the result if no text is found, 
+/// or a fallback string if serialization fails.
+/// </returns>
 static string ExtractTextResult(object result)
 {
     try
