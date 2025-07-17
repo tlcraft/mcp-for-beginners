@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "748c61250d4a326206b72b28f6154615",
-  "translation_date": "2025-07-13T23:45:56+00:00",
+  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
+  "translation_date": "2025-07-17T07:22:54+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "he"
 }
 -->
 # נושאים מתקדמים ב-MCP
 
-פרק זה מיועד לכסות סדרת נושאים מתקדמים ביישום Model Context Protocol (MCP), כולל אינטגרציה מולטי-מודלית, מדרגיות, שיטות עבודה מומלצות לאבטחה ואינטגרציה ארגונית. נושאים אלה חיוניים לבניית יישומי MCP יציבים ומוכנים לפרודקשן שיכולים לעמוד בדרישות של מערכות AI מודרניות.
+פרק זה עוסק בסדרה של נושאים מתקדמים ביישום Model Context Protocol (MCP), כולל אינטגרציה מולטי-מודלית, מדרגיות, שיטות עבודה מומלצות לאבטחה ואינטגרציה ארגונית. נושאים אלה חיוניים לבניית יישומי MCP יציבים ומוכנים לפרודקשן שיכולים לעמוד בדרישות של מערכות AI מודרניות.
 
 ## סקירה כללית
 
@@ -28,7 +28,7 @@ CO_OP_TRANSLATOR_METADATA:
 ## שיעורים ופרויקטים לדוגמה
 
 | קישור | כותרת | תיאור |
-|------|-------|-------------|
+|-------|--------|---------|
 | [5.1 Integration with Azure](./mcp-integration/README.md) | אינטגרציה עם Azure | למדו כיצד לשלב את שרת ה-MCP שלכם ב-Azure |
 | [5.2 Multi modal sample](./mcp-multi-modality/README.md) | דוגמאות מולטי-מודליות ב-MCP | דוגמאות לתגובות קול, תמונה ומולטי-מודליות |
 | [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | דמו OAuth2 ב-MCP | אפליקציית Spring Boot מינימלית המציגה OAuth2 עם MCP, הן כשרת הרשאה והן כשרת משאבים. מדגים הנפקת טוקנים מאובטחת, נקודות קצה מוגנות, פריסת Azure Container Apps ואינטגרציה עם ניהול API. |
@@ -40,8 +40,8 @@ CO_OP_TRANSLATOR_METADATA:
 | [5.9 Web Search sample](./web-search-mcp/README.md) | חיפוש אינטרנט ב-MCP | שרת ולקוח MCP בפייתון המשולבים עם SerpAPI לחיפוש אינטרנט, חדשות, מוצרים ושאלות ותשובות בזמן אמת. מדגים תזמור כלים מרובה, אינטגרציה עם API חיצוני וטיפול שגיאות חזק. |
 | [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | סטרימינג | סטרימינג בזמן אמת הפך לחיוני בעולם הנתונים של היום, שבו עסקים ויישומים זקוקים לגישה מיידית למידע לקבלת החלטות בזמן. |
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | חיפוש אינטרנט בזמן אמת | כיצד MCP משנה את חיפוש האינטרנט בזמן אמת על ידי מתן גישה סטנדרטית לניהול הקשר בין מודלי AI, מנועי חיפוש ויישומים. |
-| [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | אימות Entra ID | Microsoft Entra ID מספק פתרון ניהול זהויות וגישה מבוסס ענן חזק, המסייע להבטיח שרק משתמשים ואפליקציות מורשים יוכלו לתקשר עם שרת ה-MCP שלכם. |
-| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | אינטגרציה עם Azure AI Foundry | למדו כיצד לשלב שרתי Model Context Protocol עם סוכני Azure AI Foundry, המאפשרים תזמור כלים חזק ויכולות AI ארגוניות עם חיבורי מקור נתונים חיצוניים סטנדרטיים. |
+| [5.12 Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | אימות Entra ID | Microsoft Entra ID מספק פתרון חזק לניהול זהויות וגישה מבוסס ענן, המסייע להבטיח שרק משתמשים ואפליקציות מורשים יוכלו לתקשר עם שרת ה-MCP שלכם. |
+| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | אינטגרציה עם Azure AI Foundry | למדו כיצד לשלב שרתי Model Context Protocol עם סוכני Azure AI Foundry, המאפשרים תזמור כלים חזק ויכולות AI ארגוניות עם חיבורי מקורות נתונים חיצוניים סטנדרטיים. |
 
 ## הפניות נוספות
 
@@ -62,10 +62,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 תכנן יישום MCP ברמת ארגון למקרה שימוש ספציפי:
 
-1. זהה דרישות מולטי-מודליות למקרה השימוש שלך
-2. פרט את בקרות האבטחה הנדרשות להגנה על נתונים רגישים
-3. עצב ארכיטקטורה מדרגית שיכולה להתמודד עם עומסים משתנים
-4. תכנן נקודות אינטגרציה עם מערכות AI ארגוניות
+1. זהה דרישות מולטי-מודליות למקרה השימוש שלך  
+2. פרט את בקרות האבטחה הנדרשות להגנה על נתונים רגישים  
+3. עצב ארכיטקטורה מדרגית שיכולה להתמודד עם עומסים משתנים  
+4. תכנן נקודות אינטגרציה עם מערכות AI ארגוניות  
 5. תעד צווארי בקבוק פוטנציאליים בביצועים ואסטרטגיות הפחתה
 
 ## משאבים נוספים

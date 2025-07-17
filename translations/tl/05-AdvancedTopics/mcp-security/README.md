@@ -1,44 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:42:37+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-17T08:19:11+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "tl"
 }
 -->
 # Security Best Practices
 
-Mahalaga ang seguridad para sa mga implementasyon ng MCP, lalo na sa mga enterprise na kapaligiran. Kailangan tiyakin na ang mga tools at datos ay protektado laban sa hindi awtorisadong pag-access, paglabag sa datos, at iba pang banta sa seguridad.
+Mahalaga ang seguridad para sa mga implementasyon ng MCP, lalo na sa mga enterprise na kapaligiran. Kailangan tiyakin na ang mga tools at datos ay protektado laban sa hindi awtorisadong pag-access, paglabag sa datos, at iba pang mga banta sa seguridad.
 
-## Panimula
+## Introduction
 
-Sa araling ito, tatalakayin natin ang mga pinakamahusay na kasanayan sa seguridad para sa mga implementasyon ng MCP. Saklaw nito ang authentication at authorization, proteksyon ng datos, ligtas na pagpapatakbo ng mga tool, at pagsunod sa mga regulasyon sa privacy ng datos.
+Ang Model Context Protocol (MCP) ay nangangailangan ng partikular na mga konsiderasyon sa seguridad dahil sa papel nito sa pagbibigay ng access ng LLMs sa datos at mga tools. Tatalakayin sa araling ito ang mga pinakamahusay na kasanayan sa seguridad para sa mga implementasyon ng MCP batay sa opisyal na mga gabay ng MCP at mga napatunayang pattern sa seguridad.
 
-## Mga Layunin sa Pagkatuto
+Sinasunod ng MCP ang mga pangunahing prinsipyo ng seguridad upang matiyak ang ligtas at mapagkakatiwalaang mga interaksyon:
+
+- **Pahintulot at Kontrol ng User**: Dapat magbigay ang mga user ng malinaw na pahintulot bago ma-access ang anumang datos o maisagawa ang mga operasyon. Magbigay ng malinaw na kontrol kung anong datos ang ibabahagi at kung aling mga aksyon ang pinahihintulutan.
+  
+- **Pribasiya ng Datos**: Ang datos ng user ay dapat ilantad lamang kung may malinaw na pahintulot at dapat protektahan gamit ang angkop na mga kontrol sa pag-access. Siguraduhing ligtas laban sa hindi awtorisadong pagpapadala ng datos.
+  
+- **Kaligtasan ng Tool**: Bago gamitin ang anumang tool, kinakailangan ang malinaw na pahintulot ng user. Dapat malinaw sa mga user ang bawat functionality ng tool, at dapat ipatupad ang matibay na mga hangganan sa seguridad.
+
+## Learning Objectives
 
 Sa pagtatapos ng araling ito, magagawa mong:
 
-- Magpatupad ng ligtas na mekanismo ng authentication at authorization para sa mga MCP server.
+- Magpatupad ng ligtas na mekanismo para sa authentication at authorization para sa mga MCP server.
 - Protektahan ang sensitibong datos gamit ang encryption at ligtas na imbakan.
-- Siguraduhin ang ligtas na pagpapatakbo ng mga tool gamit ang tamang kontrol sa pag-access.
-- Ipatupad ang mga pinakamahusay na kasanayan para sa proteksyon ng datos at pagsunod sa privacy.
+- Siguraduhin ang ligtas na pagpapatupad ng mga tool gamit ang tamang mga kontrol sa pag-access.
+- Ipatupad ang mga pinakamahusay na kasanayan para sa proteksyon ng datos at pagsunod sa pribasiya.
+- Tukuyin at pigilan ang mga karaniwang kahinaan sa seguridad ng MCP tulad ng confused deputy problems, token passthrough, at session hijacking.
 
-## Authentication at Authorization
+## Authentication and Authorization
 
-Mahalaga ang authentication at authorization para sa seguridad ng mga MCP server. Sinusagot ng authentication ang tanong na "Sino ka?" habang sinasagot naman ng authorization ang "Ano ang kaya mong gawin?".
+Mahalaga ang authentication at authorization para sa seguridad ng mga MCP server. Sinusagot ng authentication ang tanong na "Sino ka?" habang sinasagot ng authorization ang "Ano ang kaya mong gawin?".
+
+Ayon sa MCP security specification, ito ang mga kritikal na konsiderasyon sa seguridad:
+
+1. **Token Validation**: HINDI DAPAT tumanggap ang mga MCP server ng anumang token na hindi tahasang inilabas para sa MCP server. Ang "token passthrough" ay isang tahasang ipinagbabawal na anti-pattern.
+
+2. **Authorization Verification**: Ang mga MCP server na nagpapatupad ng authorization ay DAPAT suriin ang lahat ng papasok na kahilingan at HINDI DAPAT gumamit ng sessions para sa authentication.
+
+3. **Secure Session Management**: Kapag gumagamit ng sessions para sa estado, DAPAT gumamit ang mga MCP server ng ligtas, hindi deterministic na session IDs na nilikha gamit ang secure random number generators. DAPAT i-bind ang session IDs sa impormasyon na tukoy sa user.
+
+4. **Explicit User Consent**: Para sa mga proxy server, DAPAT kumuha ang mga implementasyon ng MCP ng pahintulot ng user para sa bawat dynamically registered client bago ipasa sa third-party authorization servers.
 
 Tingnan natin ang mga halimbawa kung paano magpatupad ng ligtas na authentication at authorization sa mga MCP server gamit ang .NET at Java.
 
 ### .NET Identity Integration
 
-Nagbibigay ang ASP .NET Core Identity ng matibay na framework para sa pamamahala ng user authentication at authorization. Maaari natin itong isama sa mga MCP server upang maprotektahan ang pag-access sa mga tool at resources.
+Nagbibigay ang ASP .NET Core Identity ng matibay na framework para sa pamamahala ng authentication at authorization ng user. Maaari natin itong isama sa mga MCP server upang maprotektahan ang access sa mga tools at resources.
 
-May ilang pangunahing konsepto na kailangang maunawaan kapag isinama ang ASP.NET Core Identity sa mga MCP server, tulad ng:
+May ilang pangunahing konsepto na kailangan nating maunawaan kapag isinama ang ASP.NET Core Identity sa mga MCP server, tulad ng:
 
-- **Identity Configuration**: Pagsasaayos ng ASP.NET Core Identity kasama ang mga user roles at claims. Ang claim ay isang piraso ng impormasyon tungkol sa user, tulad ng kanilang role o mga permiso, halimbawa "Admin" o "User".
-- **JWT Authentication**: Paggamit ng JSON Web Tokens (JWT) para sa ligtas na pag-access sa API. Ang JWT ay isang standard para sa ligtas na pagpapadala ng impormasyon sa pagitan ng mga partido bilang isang JSON object, na maaaring mapatunayan at pagkatiwalaan dahil ito ay digitally signed.
-- **Authorization Policies**: Pagdeklara ng mga polisiya upang kontrolin ang pag-access sa mga partikular na tool base sa mga user role. Ginagamit ng MCP ang mga authorization policies upang tukuyin kung aling mga user ang maaaring mag-access ng mga tool base sa kanilang mga role at claim.
+- **Identity Configuration**: Pagsasaayos ng ASP.NET Core Identity gamit ang mga user roles at claims. Ang claim ay isang piraso ng impormasyon tungkol sa user, tulad ng kanilang role o mga pahintulot, halimbawa "Admin" o "User".
+- **JWT Authentication**: Paggamit ng JSON Web Tokens (JWT) para sa ligtas na access sa API. Ang JWT ay isang standard para sa ligtas na pagpapadala ng impormasyon sa pagitan ng mga partido bilang isang JSON object, na maaaring beripikahin at pagkatiwalaan dahil ito ay digitally signed.
+- **Authorization Policies**: Pagdeklara ng mga polisiya upang kontrolin ang access sa mga partikular na tool base sa mga user roles. Ginagamit ng MCP ang mga authorization policies upang tukuyin kung aling mga user ang maaaring maka-access sa mga tool base sa kanilang mga role at claim.
 
 ```csharp
 public class SecureMcpStartup
@@ -111,21 +130,21 @@ public class SecureMcpStartup
 
 Sa naunang code, ginawa natin ang mga sumusunod:
 
-- Na-configure ang ASP.NET Core Identity para sa pamamahala ng user.
-- Na-set up ang JWT authentication para sa ligtas na pag-access sa API. Tinukoy natin ang mga token validation parameters, kabilang ang issuer, audience, at signing key.
-- Na-define ang mga authorization policies upang kontrolin ang pag-access sa mga tool base sa mga user role. Halimbawa, ang polisiya na "CanUseAdminTools" ay nangangailangan na ang user ay may "Admin" role, habang ang "CanUseBasic" policy ay nangangailangan na ang user ay authenticated.
-- Na-rehistro ang mga MCP tool na may partikular na mga pangangailangan sa authorization, na tinitiyak na tanging mga user na may tamang role lamang ang makaka-access sa mga ito.
+- Naka-configure ang ASP.NET Core Identity para sa pamamahala ng user.
+- Naka-set up ang JWT authentication para sa ligtas na access sa API. Tinukoy natin ang mga parameter para sa token validation, kabilang ang issuer, audience, at signing key.
+- Naka-deklara ang mga authorization policies upang kontrolin ang access sa mga tool base sa mga user roles. Halimbawa, ang polisiya na "CanUseAdminTools" ay nangangailangan na ang user ay may "Admin" role, habang ang "CanUseBasic" policy ay nangangailangan na ang user ay authenticated.
+- Nairehistro ang mga MCP tools na may partikular na mga pangangailangan sa authorization, na tinitiyak na tanging ang mga user na may angkop na mga role lamang ang makaka-access sa mga ito.
 
 ### Java Spring Security Integration
 
-Para sa Java, gagamitin natin ang Spring Security upang magpatupad ng ligtas na authentication at authorization para sa mga MCP server. Nagbibigay ang Spring Security ng komprehensibong security framework na seamless na nakikipag-integrate sa mga Spring application.
+Para sa Java, gagamit tayo ng Spring Security upang ipatupad ang ligtas na authentication at authorization para sa mga MCP server. Nagbibigay ang Spring Security ng komprehensibong security framework na seamless na nakikipag-integrate sa mga Spring application.
 
 Ang mga pangunahing konsepto dito ay:
 
 - **Spring Security Configuration**: Pagsasaayos ng mga security configuration para sa authentication at authorization.
-- **OAuth2 Resource Server**: Paggamit ng OAuth2 para sa ligtas na pag-access sa mga MCP tool. Ang OAuth2 ay isang authorization framework na nagpapahintulot sa mga third-party na serbisyo na magpalitan ng access tokens para sa ligtas na pag-access sa API.
-- **Security Interceptors**: Pagpapatupad ng mga security interceptor upang ipatupad ang mga kontrol sa pag-access sa pagpapatakbo ng mga tool.
-- **Role-Based Access Control**: Paggamit ng mga role upang kontrolin ang pag-access sa mga partikular na tool at resources.
+- **OAuth2 Resource Server**: Paggamit ng OAuth2 para sa ligtas na access sa mga MCP tool. Ang OAuth2 ay isang authorization framework na nagpapahintulot sa mga third-party na serbisyo na magpalitan ng access tokens para sa ligtas na access sa API.
+- **Security Interceptors**: Pagpapatupad ng mga security interceptor upang ipatupad ang mga kontrol sa pag-access sa pagpapatupad ng tool.
+- **Role-Based Access Control**: Paggamit ng mga role upang kontrolin ang access sa mga partikular na tool at resources.
 - **Security Annotations**: Paggamit ng mga annotation upang siguraduhin ang seguridad ng mga method at endpoints.
 
 ```java
@@ -180,16 +199,16 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Sa naunang code, ginawa natin ang mga sumusunod:
 
-- Na-configure ang Spring Security upang maprotektahan ang mga MCP endpoint, pinapayagan ang pampublikong pag-access sa tool discovery habang kinakailangan ang authentication para sa pagpapatakbo ng mga tool.
-- Ginamit ang OAuth2 bilang resource server upang pangasiwaan ang ligtas na pag-access sa mga MCP tool.
-- Naipatupad ang security interceptor upang ipatupad ang mga kontrol sa pag-access sa pagpapatakbo ng mga tool, sinusuri ang mga user role at permiso bago payagan ang pag-access sa mga partikular na tool.
-- Na-define ang role-based access control upang limitahan ang pag-access sa mga admin tool at sensitibong datos base sa mga user role.
+- Naka-configure ang Spring Security upang protektahan ang mga MCP endpoint, pinapayagan ang pampublikong access sa tool discovery habang kinakailangan ang authentication para sa pagpapatupad ng tool.
+- Ginamit ang OAuth2 bilang resource server upang pangasiwaan ang ligtas na access sa mga MCP tool.
+- Ipinatupad ang security interceptor upang ipatupad ang mga kontrol sa pag-access sa pagpapatupad ng tool, sinusuri ang mga user role at pahintulot bago payagan ang access sa mga partikular na tool.
+- Naka-deklara ang role-based access control upang limitahan ang access sa mga admin tool at sensitibong datos base sa mga user role.
 
-## Proteksyon ng Datos at Privacy
+## Data Protection and Privacy
 
 Mahalaga ang proteksyon ng datos upang matiyak na ang sensitibong impormasyon ay hinahawakan nang ligtas. Kasama dito ang pagprotekta sa personally identifiable information (PII), financial data, at iba pang sensitibong impormasyon mula sa hindi awtorisadong pag-access at paglabag.
 
-### Halimbawa ng Proteksyon ng Datos sa Python
+### Python Data Protection Example
 
 Tingnan natin ang isang halimbawa kung paano magpatupad ng proteksyon ng datos sa Python gamit ang encryption at PII detection.
 
@@ -331,10 +350,65 @@ Sa naunang code, ginawa natin ang mga sumusunod:
 
 - Nagpatupad ng `PiiDetector` class upang i-scan ang teksto at mga parameter para sa personally identifiable information (PII).
 - Nilikha ang `EncryptionService` class upang pangasiwaan ang encryption at decryption ng sensitibong datos gamit ang `cryptography` library.
-- Na-define ang `secure_tool` decorator na bumabalot sa pagpapatakbo ng tool upang suriin ang PII, mag-log ng pag-access, at i-encrypt ang sensitibong datos kung kinakailangan.
+- Nagdeklara ng `secure_tool` decorator na bumabalot sa pagpapatupad ng tool upang suriin ang PII, mag-log ng access, at i-encrypt ang sensitibong datos kung kinakailangan.
 - Inilapat ang `secure_tool` decorator sa isang sample tool (`SecureCustomerDataTool`) upang matiyak na ligtas nitong hinahawakan ang sensitibong datos.
 
-## Ano ang susunod
+## MCP-Specific Security Risks
+
+Ayon sa opisyal na dokumentasyon ng seguridad ng MCP, may mga partikular na panganib sa seguridad na dapat malaman ng mga implementer ng MCP:
+
+### 1. Confused Deputy Problem
+
+Nangyayari ang kahinaang ito kapag ang MCP server ay kumikilos bilang proxy sa mga third-party API, na posibleng payagan ang mga attacker na samantalahin ang pinagkakatiwalaang relasyon sa pagitan ng MCP server at ng mga API na ito.
+
+**Mitigation:**
+- Ang mga MCP proxy server na gumagamit ng static client IDs ay DAPAT kumuha ng pahintulot ng user para sa bawat dynamically registered client bago ipasa sa third-party authorization servers.
+- Ipatupad ang tamang OAuth flow gamit ang PKCE (Proof Key for Code Exchange) para sa mga authorization request.
+- Mahigpit na beripikahin ang redirect URIs at mga client identifier.
+
+### 2. Token Passthrough Vulnerabilities
+
+Nangyayari ang token passthrough kapag tumatanggap ang MCP server ng mga token mula sa MCP client nang hindi beripikado na ang mga token ay tamang inilabas para sa MCP server at ipinapasa ito sa mga downstream API.
+
+### Mga Panganib
+- Pag-iwas sa mga kontrol sa seguridad (pagbypass sa rate limiting, request validation)
+- Mga isyu sa pananagutan at audit trail
+- Paglabag sa trust boundary
+- Mga panganib sa pagiging compatible sa hinaharap
+
+**Mitigation:**
+- HINDI DAPAT tumanggap ang mga MCP server ng anumang token na hindi tahasang inilabas para sa MCP server.
+- Laging beripikahin ang mga audience claim ng token upang matiyak na tumutugma ito sa inaasahang serbisyo.
+
+### 3. Session Hijacking
+
+Nangyayari ito kapag ang isang hindi awtorisadong partido ay nakakakuha ng session ID at ginagamit ito upang magpanggap bilang orihinal na kliyente, na posibleng magdulot ng hindi awtorisadong mga aksyon.
+
+**Mitigation:**
+- Ang mga MCP server na nagpapatupad ng authorization ay DAPAT suriin ang lahat ng papasok na kahilingan at HINDI DAPAT gumamit ng sessions para sa authentication.
+- Gumamit ng ligtas, hindi deterministic na session IDs na nilikha gamit ang secure random number generators.
+- I-bind ang session IDs sa impormasyon na tukoy sa user gamit ang key format na tulad ng `<user_id>:<session_id>`.
+- Ipatupad ang tamang mga polisiya para sa expiration at rotation ng session.
+
+## Additional Security Best Practices for MCP
+
+Bukod sa mga pangunahing konsiderasyon sa seguridad ng MCP, isaalang-alang ang pagpapatupad ng mga sumusunod na karagdagang kasanayan sa seguridad:
+
+- **Laging gumamit ng HTTPS**: I-encrypt ang komunikasyon sa pagitan ng client at server upang maprotektahan ang mga token mula sa interception.
+- **Ipatupad ang Role-Based Access Control (RBAC)**: Huwag lang suriin kung ang user ay authenticated; suriin din kung ano ang pinahihintulutan nilang gawin.
+- **Mag-monitor at mag-audit**: I-log ang lahat ng authentication events upang matukoy at matugunan ang mga kahina-hinalang aktibidad.
+- **Pangasiwaan ang rate limiting at throttling**: Ipatupad ang exponential backoff at retry logic upang maayos na mahawakan ang mga rate limit.
+- **Ligtas na imbakan ng token**: Itago ang access tokens at refresh tokens nang ligtas gamit ang mga mekanismo ng secure storage ng sistema o mga secure key management service.
+- **Isaalang-alang ang paggamit ng API Management**: Ang mga serbisyo tulad ng Azure API Management ay maaaring awtomatikong pangasiwaan ang maraming isyu sa seguridad, kabilang ang authentication, authorization, at rate limiting.
+
+## References
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
+
+## What's next
 
 - [5.9 Web search](../web-search-mcp/README.md)
 

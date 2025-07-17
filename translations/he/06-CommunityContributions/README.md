@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:01:17+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T07:17:44+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "he"
 }
@@ -19,8 +19,9 @@ CO_OP_TRANSLATOR_METADATA:
 - להבין את מבנה קהילת MCP והאקוסיסטם שלה
 - להשתתף בצורה אפקטיבית בפורומים ובדיונים של קהילת MCP
 - לתרום למאגרי הקוד הפתוחים של MCP
-- ליצור ולשתף כלים מותאמים אישית ל-MCP
+- ליצור ולשתף כלים ושרתים מותאמים אישית של MCP
 - לעקוב אחרי שיטות עבודה מומלצות לפיתוח ושיתוף פעולה ב-MCP
+- לגלות משאבים ומסגרות קהילתיות לפיתוח MCP
 
 ## האקוסיסטם של קהילת MCP
 
@@ -28,27 +29,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### רכיבים מרכזיים בקהילה
 
-1. **אחראים על הפרוטוקול המרכזי**: מיקרוסופט וארגונים נוספים שמתחזקים את המפרטים המרכזיים של MCP ואת מימושי הייחוס
-2. **מפתחי כלים**: יחידים וצוותים שיוצרים כלים ל-MCP
+1. **אחראי תחזוקת הפרוטוקול המרכזי**: הארגון הרשמי [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) שומר על המפרטים המרכזיים של MCP ומימושים רפרנסיים
+2. **מפתחי כלים**: יחידים וצוותים שיוצרים כלים ושרתים ל-MCP
 3. **ספקי אינטגרציה**: חברות שמשלבות את MCP במוצרים ובשירותים שלהן
 4. **משתמשי קצה**: מפתחים וארגונים שמשתמשים ב-MCP באפליקציות שלהם
 5. **תורמים**: חברי הקהילה שתורמים קוד, תיעוד או משאבים אחרים
 
-### משאבי קהילה
+### משאבים קהילתיים
 
 #### ערוצים רשמיים
 
-- [מאגר GitHub של MCP](https://github.com/modelcontextprotocol)
+- [ארגון MCP ב-GitHub](https://github.com/modelcontextprotocol)
 - [תיעוד MCP](https://modelcontextprotocol.io/)
-- [מפרט MCP](https://spec.modelcontextprotocol.io/)
+- [מפרט MCP](https://modelcontextprotocol.io/docs/specification)
 - [דיונים ב-GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [מאגר דוגמאות ושרתים של MCP](https://github.com/modelcontextprotocol/servers)
 
 #### משאבים מונעים על ידי הקהילה
 
+- [לקוחות MCP](https://modelcontextprotocol.io/clients) - רשימת לקוחות התומכים באינטגרציות MCP
+- [שרתים קהילתיים של MCP](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - רשימה מתפתחת של שרתים שפותחו על ידי הקהילה
+- [שרתים מעולים של MCP](https://github.com/wong2/awesome-mcp-servers) - רשימה מסוננת של שרתים ל-MCP
+- [PulseMCP](https://www.pulsemcp.com/) - מרכז קהילתי וניוזלטר לגילוי משאבים של MCP
+- [שרת Discord](https://discord.gg/jHEGxQu2a5) - התחבר עם מפתחי MCP
 - מימושי SDK בשפות שונות
-- מימושי שרת וספריות כלים
 - פוסטים בבלוג ומדריכים
-- פורומים של הקהילה ודיונים ברשתות החברתיות
 
 ## תרומה ל-MCP
 
@@ -59,7 +64,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. **תרומות קוד**:
    - שיפורים בפרוטוקול המרכזי
    - תיקוני באגים
-   - מימושי כלים
+   - מימושים של כלים ושרתים
    - ספריות לקוח/שרת בשפות שונות
 
 2. **תיעוד**:
@@ -68,169 +73,80 @@ CO_OP_TRANSLATOR_METADATA:
    - תרגום תיעוד
    - יצירת דוגמאות ואפליקציות לדוגמה
 
-3. **תמיכה בקהילה**:
-   - מענה לשאלות בפורומים
+3. **תמיכה קהילתית**:
+   - מענה לשאלות בפורומים ובדיונים
    - בדיקות ודיווח על בעיות
-   - ארגון אירועי קהילה
+   - ארגון אירועים קהילתיים
    - חונכות לתורמים חדשים
 
 ### תהליך התרומה: פרוטוקול מרכזי
 
-כדי לתרום לפרוטוקול המרכזי של MCP או למימושים הרשמיים:
+כדי לתרום לפרוטוקול המרכזי של MCP או למימושים הרשמיים, יש לעקוב אחרי העקרונות מתוך [הנחיות התרומה הרשמיות](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### דוגמה ב-.NET: תרומה לשיפור בפרוטוקול
+1. **פשטות ומינימליזם**: מפרט MCP שומר על רף גבוה להוספת רעיונות חדשים. קל יותר להוסיף דברים למפרט מאשר להסיר אותם.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **גישה קונקרטית**: שינויים במפרט צריכים להתבסס על אתגרים מימושיים ספציפיים, לא על רעיונות ספקולטיביים.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **שלבי הצעה**:
+   - הגדרה: חקור את תחום הבעיה, וודא שמשתמשים אחרים ב-MCP מתמודדים עם אותה בעיה
+   - אבטיפוס: בנה פתרון לדוגמה והדגם את היישום המעשי שלו
+   - כתיבה: בהתבסס על האבטיפוס, כתוב הצעת מפרט
+
+### הגדרת סביבת פיתוח
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### דוגמה ב-Java: תרומה לתיקון באג
+### דוגמה: תרומת תיקון באג
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### דוגמה ב-Python: תרומה של כלי חדש לספרייה הסטנדרטית
+### דוגמה: תרומת כלי חדש לספרייה הסטנדרטית
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -397,16 +313,16 @@ class CsvProcessingTool(Tool):
 1. **התחל בקטן**: התחל בתיעוד, תיקוני באגים או שיפורים קטנים
 2. **עקוב אחרי מדריך הסגנון**: שמור על סגנון הקוד והקונבנציות של הפרויקט
 3. **כתוב בדיקות**: כלול בדיקות יחידה לתרומות הקוד שלך
-4. **תעד את העבודה שלך**: הוסף תיעוד ברור לתכונות או שינויים חדשים
+4. **תעד את עבודתך**: הוסף תיעוד ברור לתכונות או שינויים חדשים
 5. **הגש PR ממוקד**: שמור על בקשות משיכה ממוקדות בבעיה או תכונה אחת
 6. **היה מעורב במשוב**: הגיב למשוב על התרומות שלך
 
-### דוגמה לזרימת עבודה לתרומה
+### דוגמת זרימת עבודה לתרומה
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,13 +343,31 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## יצירה ושיתוף של כלים מותאמים ל-MCP
+## יצירה ושיתוף של שרתי MCP
 
-אחת הדרכים החשובות לתרום לאקוסיסטם של MCP היא ליצור ולשתף כלים מותאמים אישית.
+אחת הדרכים החשובות לתרום לאקוסיסטם של MCP היא ליצור ולשתף שרתי MCP מותאמים אישית. הקהילה כבר פיתחה מאות שרתים לשירותים ומקרי שימוש שונים.
+
+### מסגרות לפיתוח שרתי MCP
+
+מספר מסגרות זמינות להקל על פיתוח שרתי MCP:
+
+1. **SDK רשמיים**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **מסגרות קהילתיות**:
+   - [MCP-Framework](https://mcp-framework.com/) - בניית שרתי MCP באלגנטיות ובמהירות ב-TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - שרתי MCP מבוססי אנוטציות ב-Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - מסגרת Java לשרתי MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - פרויקט התחלתי לשרתי MCP ב-Next.js
 
 ### פיתוח כלים לשיתוף
 
-#### דוגמה ב-.NET: יצירת חבילת כלים לשיתוף
+#### דוגמה ב-.NET: יצירת חבילת כלי לשיתוף
 
 ```csharp
 // Create a new .NET library project
@@ -757,13 +689,13 @@ class SentimentAnalysisTool(Tool):
    - תעד תלות חיצונית במידת הצורך
 
 2. **טיפול בשגיאות**:
-   - יישם טיפול שגיאות אמין
+   - יישם טיפול שגיאות חזק
    - ספק הודעות שגיאה מועילות
    - התמודד עם מקרים קיצוניים בצורה נאותה
 
 3. **שיקולי ביצועים**:
    - אופטימיזציה למהירות ולשימוש במשאבים
-   - יישום מטמון במידת הצורך
+   - יישום מטמון כשמתאים
    - התייחסות לסקלביליות
 
 4. **אבטחה**:
@@ -776,7 +708,7 @@ class SentimentAnalysisTool(Tool):
    - בדוק עם סוגי קלט שונים ומקרים קיצוניים
    - תעד את נהלי הבדיקה
 
-## שיתוף פעולה בקהילה ושיטות עבודה מומלצות
+## שיתוף פעולה קהילתי ושיטות עבודה מומלצות
 
 שיתוף פעולה אפקטיבי הוא המפתח לאקוסיסטם MCP משגשג.
 
@@ -785,7 +717,7 @@ class SentimentAnalysisTool(Tool):
 - נושאים ודיונים ב-GitHub
 - Microsoft Tech Community
 - ערוצי Discord ו-Slack
-- Stack Overflow (תג: `model-context-protocol` או `mcp`)
+- Stack Overflow (תגיות: `model-context-protocol` או `mcp`)
 
 ### סקירות קוד
 
@@ -803,12 +735,12 @@ class SentimentAnalysisTool(Tool):
 
 1. **גרסת פרוטוקול**: שמור על גרסת הפרוטוקול שהכלי שלך תומך בה
 2. **תאימות לקוח**: התחשב בתאימות לאחור
-3. **תאימות שרת**: עקוב אחרי הנחיות מימוש השרת
-4. **שינויים משבשים**: תעד בבירור כל שינוי משבש
+3. **תאימות שרת**: עקוב אחרי הנחיות מימוש שרת
+4. **שינויים שבורים**: תעד בבירור כל שינוי שבור
 
-## דוגמה לפרויקט קהילתי: רישום כלים ל-MCP
+## דוגמת פרויקט קהילתי: רישום כלי MCP
 
-תרומה חשובה לקהילה יכולה להיות פיתוח רישום ציבורי לכלי MCP.
+תרומה קהילתית חשובה יכולה להיות פיתוח רישום ציבורי לכלי MCP.
 
 ```python
 # Example schema for a community tool registry API
@@ -887,25 +819,25 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## נקודות מרכזיות
+## נקודות מפתח
 
 - קהילת MCP מגוונת ומקבלת סוגים שונים של תרומות
 - תרומה ל-MCP יכולה לנוע משיפורים בפרוטוקול המרכזי ועד לכלים מותאמים אישית
 - עקיבה אחרי הנחיות התרומה משפרת את הסיכוי שה-PR שלך יתקבל
 - יצירה ושיתוף של כלים ל-MCP היא דרך חשובה לשפר את האקוסיסטם
-- שיתוף פעולה בקהילה חיוני לצמיחה ולשיפור של MCP
+- שיתוף פעולה קהילתי חיוני לצמיחה ולשיפור של MCP
 
 ## תרגיל
 
-1. זהה תחום באקוסיסטם של MCP שבו תוכל לתרום בהתאם לכישורים ולתחומי העניין שלך
-2. בצע Fork למאגר MCP והקם סביבת פיתוח מקומית
+1. זהה תחום באקוסיסטם של MCP שבו תוכל לתרום בהתבסס על הכישורים והתחביבים שלך
+2. בצע Fork למאגר MCP והגדר סביבת פיתוח מקומית
 3. צור שיפור קטן, תיקון באג או כלי שיתרום לקהילה
 4. תעד את התרומה שלך עם בדיקות ותיעוד מתאימים
 5. הגש בקשת משיכה למאגר המתאים
 
 ## משאבים נוספים
 
-- [פרויקטים של קהילת MCP](https://github.com/topics/model-context-protocol)
+- [פרויקטים קהילתיים של MCP](https://github.com/topics/model-context-protocol)
 
 
 ---

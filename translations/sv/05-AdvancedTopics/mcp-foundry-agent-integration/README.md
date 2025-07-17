@@ -1,27 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:35:14+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T06:17:00+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sv"
 }
 -->
 # Model Context Protocol (MCP) Integration med Azure AI Foundry
 
-Denna guide visar hur du integrerar Model Context Protocol (MCP) servrar med Azure AI Foundry-agenter, vilket möjliggör kraftfull verktygsorkestrering och AI-lösningar för företag.
+Denna guide visar hur du integrerar Model Context Protocol (MCP) servrar med Azure AI Foundry-agenter, vilket möjliggör kraftfull verktygsorkestrering och företagsinriktade AI-funktioner.
 
 ## Introduktion
 
 Model Context Protocol (MCP) är en öppen standard som gör det möjligt för AI-applikationer att säkert ansluta till externa datakällor och verktyg. När MCP integreras med Azure AI Foundry kan agenter få tillgång till och interagera med olika externa tjänster, API:er och datakällor på ett standardiserat sätt.
 
-Denna integration kombinerar flexibiliteten i MCP:s verktygsekosystem med Azure AI Foundrys robusta agentramverk, vilket ger AI-lösningar i företagsklass med omfattande anpassningsmöjligheter.
+Denna integration kombinerar flexibiliteten i MCP:s verktygsekosystem med Azure AI Foundrys robusta agentramverk, vilket ger företagsklassade AI-lösningar med omfattande anpassningsmöjligheter.
 
 **Note:** Om du vill använda MCP i Azure AI Foundry Agent Service stöds för närvarande endast följande regioner: westus, westus2, uaenorth, southindia och switzerlandnorth
 
 ## Lärandemål
 
-I slutet av denna guide kommer du att kunna:
+Efter att ha gått igenom denna guide kommer du att kunna:
 
 - Förstå Model Context Protocol och dess fördelar
 - Sätta upp MCP-servrar för användning med Azure AI Foundry-agenter
@@ -47,18 +47,18 @@ Model Context Protocol är ett standardiserat sätt för AI-applikationer att an
 - **Flexibilitet**: Stöd för olika datakällor, API:er och anpassade verktyg
 - **Utbyggbarhet**: Lätt att lägga till nya funktioner och integrationer
 
-## Konfigurera MCP med Azure AI Foundry
+## Sätta upp MCP med Azure AI Foundry
 
 ### Miljökonfiguration
 
 Välj din föredragna utvecklingsmiljö:
 
-- [Python-implementation](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
-- [.NET-implementation](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [Python Implementation](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [.NET Implementation](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
 
 ---
 
-## Python-implementation
+## Python Implementation
 
 ***Note*** Du kan köra denna [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
@@ -187,7 +187,7 @@ with project_client:
 
 ---
 
-## .NET-implementation
+## .NET Implementation
 
 ***Note*** Du kan köra denna [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
@@ -381,11 +381,11 @@ För att ytterligare förbättra din MCP-integration:
 
 För ytterligare support och frågor:
 - Granska [Azure AI Foundry-dokumentationen](https://learn.microsoft.com/azure/ai-foundry/)
-- Kolla in [MCP community resources](https://modelcontextprotocol.io/)
+- Kolla in [MCP community-resurser](https://modelcontextprotocol.io/)
 
 ## Vad händer härnäst
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

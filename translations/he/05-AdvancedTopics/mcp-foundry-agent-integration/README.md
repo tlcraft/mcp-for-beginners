@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:36:25+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T07:27:10+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "he"
 }
 -->
-# אינטגרציה של Model Context Protocol (MCP) עם Azure AI Foundry
+# אינטגרציה של פרוטוקול הקשר למודל (MCP) עם Azure AI Foundry
 
-מדריך זה מציג כיצד לשלב שרתי Model Context Protocol (MCP) עם סוכני Azure AI Foundry, ומאפשר תזמור כלים מתקדם ויכולות AI ארגוניות.
+מדריך זה מציג כיצד לשלב שרתי Model Context Protocol (MCP) עם סוכני Azure AI Foundry, ומאפשר תזמור כלים חזק ויכולות AI ארגוניות.
 
 ## מבוא
 
-Model Context Protocol (MCP) הוא תקן פתוח המאפשר לאפליקציות AI להתחבר בצורה מאובטחת למקורות נתונים וכלים חיצוניים. בשילוב עם Azure AI Foundry, MCP מאפשר לסוכנים לגשת ולפעול מול שירותים, APIs ומקורות נתונים חיצוניים שונים בצורה סטנדרטית.
+Model Context Protocol (MCP) הוא תקן פתוח המאפשר לאפליקציות AI להתחבר בצורה מאובטחת למקורות נתונים וכלים חיצוניים. בשילוב עם Azure AI Foundry, MCP מאפשר לסוכנים לגשת ולפעול עם שירותים, APIs ומקורות נתונים חיצוניים שונים בצורה סטנדרטית.
 
 שילוב זה מחבר בין הגמישות של מערכת הכלים של MCP לבין מסגרת הסוכנים החזקה של Azure AI Foundry, ומספק פתרונות AI ברמת ארגון עם אפשרויות התאמה נרחבות.
 
@@ -23,7 +23,7 @@ Model Context Protocol (MCP) הוא תקן פתוח המאפשר לאפליקצ�
 
 בסיום מדריך זה תוכל:
 
-- להבין את Model Context Protocol ואת יתרונותיו
+- להבין את פרוטוקול הקשר למודל ואת יתרונותיו
 - להגדיר שרתי MCP לשימוש עם סוכני Azure AI Foundry
 - ליצור ולהגדיר סוכנים עם אינטגרציה של כלי MCP
 - ליישם דוגמאות מעשיות עם שרתי MCP אמיתיים
@@ -310,7 +310,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 בעת הגדרת כלי MCP לסוכן שלך, ניתן לציין מספר פרמטרים חשובים:
 
-### קונפיגורציה ב-Python
+### קונפיגורציית Python
 
 ```python
 mcp_tool = McpTool(
@@ -320,7 +320,7 @@ mcp_tool = McpTool(
 )
 ```
 
-### קונפיגורציה ב-.NET
+### קונפיגורציית .NET
 
 ```csharp
 MCPToolDefinition mcpTool = new(
@@ -385,7 +385,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## מה הלאה
 
-- [6. תרומות מהקהילה](../../06-CommunityContributions/README.md)
+- [5.14 הנדסת הקשר MCP](../mcp-contextengineering/README.md)
 
 **כתב ויתור**:  
 מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

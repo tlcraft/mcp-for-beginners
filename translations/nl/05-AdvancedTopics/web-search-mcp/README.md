@@ -1,22 +1,22 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-07-14T03:40:43+00:00",
+  "original_hash": "151265c9a2124d7c53e04d16ee3fb73b",
+  "translation_date": "2025-07-17T07:10:55+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "nl"
 }
 -->
 # Les: Een Web Search MCP Server Bouwen
 
-Dit hoofdstuk laat zien hoe je een realistische AI-agent bouwt die integreert met externe API's, verschillende datatypes verwerkt, fouten afhandelt en meerdere tools orkestreert—alles in een productieklare opzet. Je zult zien:
+Dit hoofdstuk laat zien hoe je een realistische AI-agent bouwt die integreert met externe API's, verschillende datatypes verwerkt, fouten afhandelt en meerdere tools orkestreert—alles in een productieklare opzet. Je leert:
 
 - **Integratie met externe API's die authenticatie vereisen**
 - **Omgaan met diverse datatypes van meerdere eindpunten**
 - **Robuuste foutafhandeling en logstrategieën**
-- **Multi-tool orkestratie in één enkele server**
+- **Multi-tool orkestratie in één server**
 
-Aan het einde heb je praktische ervaring met patronen en best practices die essentieel zijn voor geavanceerde AI- en LLM-gestuurde applicaties.
+Aan het einde heb je praktische ervaring met patronen en best practices die essentieel zijn voor geavanceerde AI- en LLM-gestuurde toepassingen.
 
 ## Introductie
 
@@ -34,11 +34,11 @@ Aan het einde van deze les kun je:
 
 ## Web Search MCP Server
 
-Deze sectie introduceert de architectuur en functies van de Web Search MCP Server. Je ziet hoe FastMCP en SerpAPI samen worden gebruikt om LLM-mogelijkheden uit te breiden met realtime webdata.
+In dit gedeelte wordt de architectuur en functionaliteit van de Web Search MCP Server geïntroduceerd. Je ziet hoe FastMCP en SerpAPI samen worden gebruikt om LLM-mogelijkheden uit te breiden met realtime webdata.
 
 ### Overzicht
 
-Deze implementatie bevat vier tools die de mogelijkheid van MCP tonen om diverse, externe API-gedreven taken veilig en efficiënt af te handelen:
+Deze implementatie bevat vier tools die laten zien hoe MCP diverse, externe API-gedreven taken veilig en efficiënt kan afhandelen:
 
 - **general_search**: Voor brede webresultaten
 - **news_search**: Voor recente nieuwsberichten
@@ -46,10 +46,9 @@ Deze implementatie bevat vier tools die de mogelijkheid van MCP tonen om diverse
 - **qna**: Voor vraag-en-antwoordfragmenten
 
 ### Kenmerken
-- **Codevoorbeelden**: Bevat taalspecifieke codeblokken voor Python (en eenvoudig uitbreidbaar naar andere talen) met inklapbare secties voor overzichtelijkheid
+- **Codevoorbeelden**: Bevat taalspecifieke codeblokken voor Python (en eenvoudig uitbreidbaar naar andere talen) met codepivots voor duidelijkheid
 
-<details>  
-<summary>Python</summary>  
+### Python
 
 ```python
 # Example usage of the general_search tool
@@ -67,16 +66,16 @@ async def run_search():
             result = await session.call_tool("general_search", arguments={"query": "open source LLMs"})
             print(result)
 ```
-</details>
 
-Voordat je de client start, is het handig om te begrijpen wat de server doet. Het bestand [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) implementeert de MCP-server, die tools voor web-, nieuws-, productzoekopdrachten en Q&A aanbiedt door integratie met SerpAPI. Het verwerkt binnenkomende verzoeken, beheert API-aanroepen, parseert antwoorden en retourneert gestructureerde resultaten aan de client.
+---
+
+Voordat je de client start, is het handig om te begrijpen wat de server doet. Het bestand [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) implementeert de MCP-server en biedt tools voor web-, nieuws-, productzoekopdrachten en Q&A door integratie met SerpAPI. Het verwerkt binnenkomende verzoeken, beheert API-aanroepen, parseert antwoorden en retourneert gestructureerde resultaten aan de client.
 
 Je kunt de volledige implementatie bekijken in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
 Hier is een kort voorbeeld van hoe de server een tool definieert en registreert:
 
-<details>  
-<summary>Python Server</summary> 
+### Python Server
 
 ```python
 # server.py (excerpt)
@@ -91,17 +90,18 @@ server.add_tool(Tool("general_search", general_search))
 if __name__ == "__main__":
     server.run()
 ```
-</details>
 
-- **Integratie met externe API**: Toont veilige omgang met API-sleutels en externe verzoeken
-- **Gestructureerde data parsing**: Laat zien hoe API-antwoorden worden omgezet naar LLM-vriendelijke formaten
+---
+
+- **Integratie met externe API's**: Laat zien hoe API-sleutels en externe verzoeken veilig worden afgehandeld
+- **Gestructureerde data parsing**: Toont hoe API-antwoorden worden omgezet naar LLM-vriendelijke formaten
 - **Foutafhandeling**: Robuuste foutafhandeling met passende logging
 - **Interactieve client**: Bevat zowel geautomatiseerde tests als een interactieve modus voor testen
 - **Contextbeheer**: Maakt gebruik van MCP Context voor logging en het volgen van verzoeken
 
 ## Vereisten
 
-Voordat je begint, zorg dat je omgeving correct is ingesteld door de volgende stappen te volgen. Dit zorgt ervoor dat alle afhankelijkheden zijn geïnstalleerd en je API-sleutels correct zijn geconfigureerd voor een soepele ontwikkeling en testing.
+Voordat je begint, zorg dat je omgeving correct is ingesteld door deze stappen te volgen. Dit zorgt ervoor dat alle afhankelijkheden zijn geïnstalleerd en je API-sleutels correct zijn geconfigureerd voor een soepele ontwikkeling en testing.
 
 - Python 3.8 of hoger
 - SerpAPI API-sleutel (Meld je aan op [SerpAPI](https://serpapi.com/) - gratis tier beschikbaar)
@@ -120,7 +120,7 @@ uv pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-2. Maak een `.env` bestand aan in de projectroot met je SerpAPI-sleutel:
+2. Maak een `.env`-bestand aan in de projectroot met je SerpAPI-sleutel:
 
 ```
 SERPAPI_KEY=your_serpapi_key_here
@@ -132,7 +132,7 @@ De Web Search MCP Server is het kernonderdeel dat tools aanbiedt voor web-, nieu
 
 Je kunt de volledige implementatie bekijken in [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
-### De Server Starten
+### Server starten
 
 Om de MCP-server te starten, gebruik je het volgende commando:
 
@@ -140,18 +140,18 @@ Om de MCP-server te starten, gebruik je het volgende commando:
 python server.py
 ```
 
-De server draait als een stdio-gebaseerde MCP-server waar de client direct verbinding mee kan maken.
+De server draait dan als een stdio-gebaseerde MCP-server waar de client direct verbinding mee kan maken.
 
-### Client Modi
+### Client-modi
 
 De client (`client.py`) ondersteunt twee modi om met de MCP-server te communiceren:
 
-- **Normale modus**: Voert geautomatiseerde tests uit die alle tools gebruiken en hun antwoorden verifiëren. Dit is handig om snel te controleren of de server en tools naar behoren werken.
-- **Interactieve modus**: Start een menu-gestuurde interface waarin je handmatig tools kunt selecteren en aanroepen, eigen zoekopdrachten kunt invoeren en resultaten realtime kunt bekijken. Ideaal om de mogelijkheden van de server te verkennen en met verschillende invoer te experimenteren.
+- **Normale modus**: Voert geautomatiseerde tests uit die alle tools aanroepen en hun antwoorden verifiëren. Dit is handig om snel te controleren of de server en tools naar behoren werken.
+- **Interactieve modus**: Start een menu-gestuurde interface waarin je handmatig tools kunt selecteren en aanroepen, eigen zoekopdrachten kunt invoeren en resultaten realtime kunt bekijken. Ideaal om de mogelijkheden van de server te verkennen en te experimenteren met verschillende invoer.
 
 Je kunt de volledige implementatie bekijken in [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
-### De Client Starten
+### Client draaien
 
 Om de geautomatiseerde tests uit te voeren (dit start automatisch de server):
 
@@ -165,15 +165,14 @@ Of start in interactieve modus:
 python client.py --interactive
 ```
 
-### Testen met Verschillende Methoden
+### Testen met verschillende methoden
 
-Er zijn verschillende manieren om de tools van de server te testen en ermee te interacteren, afhankelijk van je behoeften en workflow.
+Er zijn meerdere manieren om de tools van de server te testen en ermee te werken, afhankelijk van je behoeften en workflow.
 
-#### Eigen Testscripts Schrijven met de MCP Python SDK
-Je kunt ook je eigen testscripts bouwen met de MCP Python SDK:
+#### Eigen test-scripts schrijven met de MCP Python SDK
+Je kunt ook je eigen test-scripts bouwen met de MCP Python SDK:
 
-<details>
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -193,19 +192,20 @@ async def test_custom_query():
                                            arguments={"query": "your custom query"})
             # Process the result
 ```
-</details>
 
-In deze context betekent een "testscript" een eigen Python-programma dat je schrijft om als client voor de MCP-server te fungeren. In plaats van een formele unittests, laat dit script je programmatisch verbinding maken met de server, een van de tools aanroepen met parameters naar keuze en de resultaten inspecteren. Deze aanpak is handig voor:
+---
+
+In deze context betekent een "test-script" een eigen Python-programma dat je schrijft om als client voor de MCP-server te fungeren. In plaats van een formele unittest, laat dit script je programmatisch verbinding maken met de server, een van de tools aanroepen met parameters naar keuze en de resultaten inspecteren. Deze aanpak is handig voor:
 - Prototypen en experimenteren met tool-aanroepen
 - Valideren hoe de server reageert op verschillende invoer
 - Automatiseren van herhaalde tool-aanroepen
 - Eigen workflows of integraties bouwen bovenop de MCP-server
 
-Je kunt testscripts gebruiken om snel nieuwe zoekopdrachten uit te proberen, toolgedrag te debuggen of als startpunt voor geavanceerdere automatisering. Hieronder een voorbeeld van hoe je de MCP Python SDK gebruikt om zo’n script te maken:
+Je kunt test-scripts gebruiken om snel nieuwe zoekopdrachten uit te proberen, toolgedrag te debuggen of als startpunt voor geavanceerdere automatisering. Hieronder een voorbeeld van hoe je de MCP Python SDK gebruikt om zo’n script te maken:
 
 ## Toolbeschrijvingen
 
-Je kunt de volgende tools gebruiken die door de server worden aangeboden om verschillende soorten zoekopdrachten en queries uit te voeren. Elke tool wordt hieronder beschreven met zijn parameters en voorbeeldgebruik.
+Je kunt de volgende tools gebruiken die de server aanbiedt om verschillende soorten zoekopdrachten en queries uit te voeren. Elke tool wordt hieronder beschreven met zijn parameters en voorbeeldgebruik.
 
 Deze sectie geeft details over elke beschikbare tool en hun parameters.
 
@@ -217,8 +217,7 @@ Voert een algemene webzoekopdracht uit en retourneert geformatteerde resultaten.
 
 Je kunt `general_search` aanroepen vanuit je eigen script met de MCP Python SDK, of interactief via de Inspector of de interactieve clientmodus. Hier is een codevoorbeeld met de SDK:
 
-<details>
-<summary>Python Voorbeeld</summary>
+# [Python Voorbeeld](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -235,9 +234,10 @@ async def run_general_search():
             result = await session.call_tool("general_search", arguments={"query": "latest AI trends"})
             print(result)
 ```
-</details>
 
-Of in interactieve modus, selecteer `general_search` in het menu en voer je zoekopdracht in wanneer daarom wordt gevraagd.
+---
+
+Of in interactieve modus, selecteer `general_search` in het menu en voer je zoekopdracht in wanneer daarom gevraagd wordt.
 
 **Parameters:**
 - `query` (string): De zoekopdracht
@@ -258,8 +258,7 @@ Zoekt naar recente nieuwsartikelen gerelateerd aan een zoekopdracht.
 
 Je kunt `news_search` aanroepen vanuit je eigen script met de MCP Python SDK, of interactief via de Inspector of de interactieve clientmodus. Hier is een codevoorbeeld met de SDK:
 
-<details>
-<summary>Python Voorbeeld</summary>
+# [Python Voorbeeld](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -276,9 +275,10 @@ async def run_news_search():
             result = await session.call_tool("news_search", arguments={"query": "AI policy updates"})
             print(result)
 ```
-</details>
 
-Of in interactieve modus, selecteer `news_search` in het menu en voer je zoekopdracht in wanneer daarom wordt gevraagd.
+---
+
+Of in interactieve modus, selecteer `news_search` in het menu en voer je zoekopdracht in wanneer daarom gevraagd wordt.
 
 **Parameters:**
 - `query` (string): De zoekopdracht
@@ -299,8 +299,7 @@ Zoekt naar producten die overeenkomen met een zoekopdracht.
 
 Je kunt `product_search` aanroepen vanuit je eigen script met de MCP Python SDK, of interactief via de Inspector of de interactieve clientmodus. Hier is een codevoorbeeld met de SDK:
 
-<details>
-<summary>Python Voorbeeld</summary>
+# [Python Voorbeeld](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -317,9 +316,10 @@ async def run_product_search():
             result = await session.call_tool("product_search", arguments={"query": "best AI gadgets 2025"})
             print(result)
 ```
-</details>
 
-Of in interactieve modus, selecteer `product_search` in het menu en voer je zoekopdracht in wanneer daarom wordt gevraagd.
+---
+
+Of in interactieve modus, selecteer `product_search` in het menu en voer je zoekopdracht in wanneer daarom gevraagd wordt.
 
 **Parameters:**
 - `query` (string): De productzoekopdracht
@@ -340,8 +340,7 @@ Geeft directe antwoorden op vragen van zoekmachines.
 
 Je kunt `qna` aanroepen vanuit je eigen script met de MCP Python SDK, of interactief via de Inspector of de interactieve clientmodus. Hier is een codevoorbeeld met de SDK:
 
-<details>
-<summary>Python Voorbeeld</summary>
+# [Python Voorbeeld](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -358,9 +357,10 @@ async def run_qna():
             result = await session.call_tool("qna", arguments={"question": "what is artificial intelligence"})
             print(result)
 ```
-</details>
 
-Of in interactieve modus, selecteer `qna` in het menu en voer je vraag in wanneer daarom wordt gevraagd.
+---
+
+Of in interactieve modus, selecteer `qna` in het menu en voer je vraag in wanneer daarom gevraagd wordt.
 
 **Parameters:**
 - `question` (string): De vraag waarvoor je een antwoord zoekt
@@ -377,10 +377,9 @@ Of in interactieve modus, selecteer `qna` in het menu en voer je vraag in wannee
 
 Deze sectie bevat codefragmenten en verwijzingen voor de server- en clientimplementaties.
 
-<details>
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
-Bekijk [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) en [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) voor volledige implementatiedetails.
+Zie [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) en [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) voor volledige implementatiedetails.
 
 ```python
 # Example snippet from server.py:
@@ -388,45 +387,46 @@ import os
 import httpx
 # ...existing code...
 ```
-</details>
+
+---
 
 ## Geavanceerde Concepten in Deze Les
 
 Voordat je begint met bouwen, zijn hier enkele belangrijke geavanceerde concepten die door dit hoofdstuk heen terugkomen. Ze begrijpen helpt je om beter te volgen, ook als ze nieuw voor je zijn:
 
 - **Multi-tool Orkestratie**: Dit betekent dat je meerdere verschillende tools (zoals websearch, nieuwssearch, productsearch en Q&A) binnen één MCP-server draait. Zo kan je server verschillende taken aan, niet slechts één.
-- **API Rate Limit Afhandeling**: Veel externe API's (zoals SerpAPI) beperken hoeveel verzoeken je in een bepaalde tijd kunt doen. Goede code controleert deze limieten en gaat er netjes mee om, zodat je app niet crasht als je de limiet bereikt.
+- **API Rate Limit Afhandeling**: Veel externe API's (zoals SerpAPI) beperken hoeveel verzoeken je in een bepaalde tijd mag doen. Goede code controleert deze limieten en gaat er netjes mee om, zodat je app niet crasht als je de limiet bereikt.
 - **Gestructureerde Data Parsing**: API-antwoorden zijn vaak complex en genest. Dit concept gaat over het omzetten van die antwoorden naar schone, makkelijk te gebruiken formaten die vriendelijk zijn voor LLM's of andere programma's.
-- **Foutherstel**: Soms gaat er iets mis—misschien faalt het netwerk, of geeft de API niet terug wat je verwacht. Foutherstel betekent dat je code deze problemen aankan en toch nuttige feedback geeft, in plaats van te crashen.
-- **Parameter Validatie**: Dit gaat over het controleren of alle invoer voor je tools correct en veilig is. Het omvat het instellen van standaardwaarden en het controleren van types, wat helpt bugs en verwarring te voorkomen.
+- **Foutherstel**: Soms gaat er iets mis—bijvoorbeeld een netwerkfout of een onverwacht API-antwoord. Foutherstel betekent dat je code deze problemen kan opvangen en toch nuttige feedback geeft, in plaats van te crashen.
+- **Parameter Validatie**: Dit gaat over het controleren of alle invoer voor je tools correct en veilig is. Inclusief het instellen van standaardwaarden en het controleren van types, wat helpt bugs en verwarring te voorkomen.
 
-Deze sectie helpt je om veelvoorkomende problemen te diagnosticeren en op te lossen die je kunt tegenkomen bij het werken met de Web Search MCP Server. Als je fouten of onverwacht gedrag ervaart, biedt deze troubleshooting-sectie oplossingen voor de meest voorkomende problemen. Bekijk deze tips eerst—ze lossen vaak snel problemen op zonder extra hulp.
+Deze sectie helpt je om veelvoorkomende problemen te herkennen en op te lossen die je kunt tegenkomen bij het werken met de Web Search MCP Server. Als je fouten of onverwacht gedrag ervaart, biedt deze troubleshooting-sectie oplossingen voor de meest voorkomende issues. Bekijk deze tips eerst—ze lossen vaak problemen snel op.
 
 ## Problemen Oplossen
 
-Bij het werken met de Web Search MCP Server kun je af en toe problemen tegenkomen—dit is normaal bij ontwikkeling met externe API's en nieuwe tools. Deze sectie biedt praktische oplossingen voor de meest voorkomende problemen, zodat je snel weer verder kunt. Als je een fout tegenkomt, begin hier: de onderstaande tips behandelen de problemen die de meeste gebruikers ervaren en kunnen vaak je probleem oplossen zonder extra hulp.
+Bij het werken met de Web Search MCP Server kun je af en toe problemen tegenkomen—dat is normaal bij het ontwikkelen met externe API's en nieuwe tools. Deze sectie geeft praktische oplossingen voor de meest voorkomende problemen, zodat je snel weer verder kunt. Als je een fout tegenkomt, begin hier: de onderstaande tips behandelen de issues die de meeste gebruikers ervaren en kunnen vaak je probleem oplossen zonder extra hulp.
 
 ### Veelvoorkomende Problemen
 
-Hieronder staan enkele van de meest voorkomende problemen die gebruikers tegenkomen, met duidelijke uitleg en stappen om ze op te lossen:
+Hieronder staan enkele van de meest voorkomende problemen met duidelijke uitleg en stappen om ze op te lossen:
 
-1. **Ontbrekende SERPAPI_KEY in .env bestand**
-   - Als je de foutmelding `SERPAPI_KEY environment variable not found` ziet, betekent dit dat je applicatie de API-sleutel voor SerpAPI niet kan vinden. Maak een bestand `.env` aan in je projectroot (als die nog niet bestaat) en voeg een regel toe zoals `SERPAPI_KEY=je_serpapi_sleutel_hier`. Vervang `je_serpapi_sleutel_hier` door je echte sleutel van de SerpAPI-website.
+1. **Ontbrekende SERPAPI_KEY in .env-bestand**
+   - Als je de foutmelding `SERPAPI_KEY environment variable not found` ziet, betekent dit dat je applicatie de API-sleutel voor SerpAPI niet kan vinden. Maak een bestand `.env` aan in je projectroot (als dat nog niet bestaat) en voeg een regel toe zoals `SERPAPI_KEY=je_serpapi_sleutel_hier`. Vervang `je_serpapi_sleutel_hier` door je echte sleutel van de SerpAPI-website.
 
 2. **Module niet gevonden fouten**
-   - Fouten zoals `ModuleNotFoundError: No module named 'httpx'` geven aan dat een vereiste Python-pakket ontbreekt. Dit gebeurt meestal als je niet alle afhankelijkheden hebt geïnstalleerd. Los dit op door `pip install -r requirements.txt` in je terminal te draaien om alles te installeren wat je project nodig heeft.
+   - Fouten zoals `ModuleNotFoundError: No module named 'httpx'` geven aan dat een benodigde Python-package ontbreekt. Dit gebeurt meestal als je niet alle dependencies hebt geïnstalleerd. Los dit op door in je terminal `pip install -r requirements.txt` te draaien om alles te installeren wat je project nodig heeft.
 
 3. **Verbindingsproblemen**
-   - Als je een fout krijgt zoals `Error during client execution`, betekent dit vaak dat de client geen verbinding kan maken met de server, of dat de server niet draait zoals verwacht. Controleer of zowel client als server compatibele versies zijn, en dat `server.py` aanwezig is en draait in de juiste map. Het herstarten van zowel server als client kan ook helpen.
+   - Als je een fout krijgt zoals `Error during client execution`, betekent dit vaak dat de client geen verbinding kan maken met de server, of dat de server niet draait zoals verwacht. Controleer of zowel client als server compatibele versies zijn en dat `server.py` aanwezig is en draait in de juiste map. Het herstarten van zowel server als client kan ook helpen.
 
-4. **SerpAPI fouten**
-   - De melding `Search API returned error status: 401` betekent dat je SerpAPI-sleutel ontbreekt, onjuist is of verlopen. Ga naar je SerpAPI-dashboard, controleer je sleutel en werk je `.env` bestand bij indien nodig. Als je sleutel correct is maar je ziet deze fout nog steeds, controleer dan of je gratis tier niet is opgebruikt.
+4. **SerpAPI-fouten**
+   - De melding `Search API returned error status: 401` betekent dat je SerpAPI-sleutel ontbreekt, onjuist is of verlopen. Ga naar je SerpAPI-dashboard, controleer je sleutel en werk je `.env`-bestand bij indien nodig. Als je sleutel correct is maar je ziet deze fout nog steeds, controleer dan of je gratis tier niet is opgebruikt.
 
-### Debug Modus
+### Debug-modus
 
-Standaard logt de app alleen belangrijke informatie. Wil je meer details zien over wat er gebeurt (bijvoorbeeld om lastige problemen te diagnosticeren), dan kun je DEBUG-modus inschakelen. Dit toont veel meer over elke stap die de app neemt.
+Standaard logt de app alleen belangrijke informatie. Wil je meer details zien over wat er gebeurt (bijvoorbeeld om lastige problemen te diagnosticeren), dan kun je de DEBUG-modus inschakelen. Hiermee zie je veel meer over elke stap die de app neemt.
 
-**Voorbeeld: Normale Output**
+**Voorbeeld: Normale output**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:24,123 - __main__ - INFO - Successfully called general_search
@@ -435,7 +435,7 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-**Voorbeeld: DEBUG Output**
+**Voorbeeld: DEBUG-output**
 ```plaintext
 2025-06-01 10:15:23,456 - __main__ - INFO - Calling general_search with params: {'query': 'open source LLMs'}
 2025-06-01 10:15:23,457 - httpx - DEBUG - HTTP Request: GET https://serpapi.com/search ...
@@ -446,11 +446,10 @@ GENERAL_SEARCH RESULTS:
 ... (search results here) ...
 ```
 
-Let op hoe DEBUG-modus extra regels toont over HTTP-verzoeken, antwoorden en andere interne details. Dit kan erg handig zijn bij het oplossen van problemen.
+Let op hoe de DEBUG-modus extra regels toont over HTTP-verzoeken, antwoorden en andere interne details. Dit is erg handig bij het oplossen van problemen.
+Om de DEBUG-modus in te schakelen, stel je het logniveau in op DEBUG bovenaan je `client.py` of `server.py`:
 
-Om DEBUG-modus in te schakelen, zet je het logniveau op DEBUG bovenaan je `client.py` of `server.py`:
-
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 # At the top of your client.py or server.py
@@ -460,11 +459,12 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 ```
-</details>
 
 ---
 
-## Wat nu
+---
+
+## Wat volgt
 
 - [5.10 Real Time Streaming](../mcp-realtimestreaming/README.md)
 

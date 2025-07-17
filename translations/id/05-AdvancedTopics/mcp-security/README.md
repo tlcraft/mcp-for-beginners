@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:42:11+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-17T07:52:47+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "id"
 }
@@ -13,30 +13,49 @@ Keamanan sangat penting untuk implementasi MCP, terutama di lingkungan perusahaa
 
 ## Pendahuluan
 
-Dalam pelajaran ini, kita akan membahas praktik terbaik keamanan untuk implementasi MCP. Kita akan membahas autentikasi dan otorisasi, perlindungan data, eksekusi alat yang aman, serta kepatuhan terhadap regulasi privasi data.
+Model Context Protocol (MCP) memerlukan pertimbangan keamanan khusus karena perannya dalam memberikan akses LLM ke data dan alat. Pelajaran ini membahas praktik terbaik keamanan untuk implementasi MCP berdasarkan pedoman resmi MCP dan pola keamanan yang sudah mapan.
+
+MCP mengikuti prinsip keamanan utama untuk memastikan interaksi yang aman dan dapat dipercaya:
+
+- **Persetujuan dan Kontrol Pengguna**: Pengguna harus memberikan persetujuan eksplisit sebelum data diakses atau operasi dilakukan. Berikan kontrol yang jelas atas data apa yang dibagikan dan tindakan apa yang diizinkan.
+  
+- **Privasi Data**: Data pengguna hanya boleh dibuka dengan persetujuan eksplisit dan harus dilindungi dengan kontrol akses yang tepat. Lindungi dari transmisi data yang tidak sah.
+  
+- **Keamanan Alat**: Sebelum memanggil alat apa pun, diperlukan persetujuan eksplisit dari pengguna. Pengguna harus memahami dengan jelas fungsi setiap alat, dan batasan keamanan yang kuat harus diterapkan.
 
 ## Tujuan Pembelajaran
 
-Pada akhir pelajaran ini, Anda akan mampu:
+Setelah menyelesaikan pelajaran ini, Anda akan dapat:
 
 - Menerapkan mekanisme autentikasi dan otorisasi yang aman untuk server MCP.
 - Melindungi data sensitif menggunakan enkripsi dan penyimpanan yang aman.
 - Memastikan eksekusi alat yang aman dengan kontrol akses yang tepat.
 - Menerapkan praktik terbaik untuk perlindungan data dan kepatuhan privasi.
+- Mengidentifikasi dan mengatasi kerentanan keamanan MCP umum seperti masalah confused deputy, token passthrough, dan pembajakan sesi.
 
 ## Autentikasi dan Otorisasi
 
 Autentikasi dan otorisasi sangat penting untuk mengamankan server MCP. Autentikasi menjawab pertanyaan "Siapa Anda?" sedangkan otorisasi menjawab "Apa yang bisa Anda lakukan?".
 
+Menurut spesifikasi keamanan MCP, berikut adalah pertimbangan keamanan yang krusial:
+
+1. **Validasi Token**: Server MCP TIDAK BOLEH menerima token yang tidak secara eksplisit diterbitkan untuk server MCP tersebut. "Token passthrough" adalah pola anti yang dilarang keras.
+
+2. **Verifikasi Otorisasi**: Server MCP yang menerapkan otorisasi HARUS memverifikasi semua permintaan masuk dan TIDAK BOLEH menggunakan sesi untuk autentikasi.
+
+3. **Manajemen Sesi yang Aman**: Saat menggunakan sesi untuk menyimpan status, server MCP HARUS menggunakan ID sesi yang aman dan tidak deterministik yang dihasilkan dengan generator angka acak yang aman. ID sesi SEBAIKNYA diikat ke informasi spesifik pengguna.
+
+4. **Persetujuan Pengguna Eksplisit**: Untuk server proxy, implementasi MCP HARUS mendapatkan persetujuan pengguna untuk setiap klien yang terdaftar secara dinamis sebelum meneruskan ke server otorisasi pihak ketiga.
+
 Mari kita lihat contoh bagaimana menerapkan autentikasi dan otorisasi yang aman di server MCP menggunakan .NET dan Java.
 
-### Integrasi .NET Identity
+### Integrasi Identitas .NET
 
 ASP .NET Core Identity menyediakan kerangka kerja yang kuat untuk mengelola autentikasi dan otorisasi pengguna. Kita dapat mengintegrasikannya dengan server MCP untuk mengamankan akses ke alat dan sumber daya.
 
-Ada beberapa konsep inti yang perlu kita pahami saat mengintegrasikan ASP.NET Core Identity dengan server MCP, yaitu:
+Ada beberapa konsep inti yang perlu dipahami saat mengintegrasikan ASP.NET Core Identity dengan server MCP, yaitu:
 
-- **Konfigurasi Identity**: Menyiapkan ASP.NET Core Identity dengan peran pengguna dan klaim. Klaim adalah informasi tentang pengguna, seperti peran atau izin mereka, misalnya "Admin" atau "User".
+- **Konfigurasi Identitas**: Menyiapkan ASP.NET Core Identity dengan peran dan klaim pengguna. Klaim adalah informasi tentang pengguna, seperti peran atau izin mereka, misalnya "Admin" atau "User".
 - **Autentikasi JWT**: Menggunakan JSON Web Tokens (JWT) untuk akses API yang aman. JWT adalah standar untuk mengirimkan informasi secara aman antar pihak dalam bentuk objek JSON, yang dapat diverifikasi dan dipercaya karena ditandatangani secara digital.
 - **Kebijakan Otorisasi**: Mendefinisikan kebijakan untuk mengontrol akses ke alat tertentu berdasarkan peran pengguna. MCP menggunakan kebijakan otorisasi untuk menentukan pengguna mana yang dapat mengakses alat mana berdasarkan peran dan klaim mereka.
 
@@ -109,12 +128,12 @@ public class SecureMcpStartup
 }
 ```
 
-Dalam kode di atas, kita telah:
+Dalam kode sebelumnya, kita telah:
 
 - Mengonfigurasi ASP.NET Core Identity untuk manajemen pengguna.
 - Menyiapkan autentikasi JWT untuk akses API yang aman. Kita menentukan parameter validasi token, termasuk issuer, audience, dan signing key.
 - Mendefinisikan kebijakan otorisasi untuk mengontrol akses ke alat berdasarkan peran pengguna. Misalnya, kebijakan "CanUseAdminTools" mengharuskan pengguna memiliki peran "Admin", sedangkan kebijakan "CanUseBasic" mengharuskan pengguna sudah terautentikasi.
-- Mendaftarkan alat MCP dengan persyaratan otorisasi tertentu, memastikan hanya pengguna dengan peran yang sesuai yang dapat mengaksesnya.
+- Mendaftarkan alat MCP dengan persyaratan otorisasi spesifik, memastikan hanya pengguna dengan peran yang sesuai yang dapat mengaksesnya.
 
 ### Integrasi Java Spring Security
 
@@ -124,7 +143,7 @@ Konsep inti di sini adalah:
 
 - **Konfigurasi Spring Security**: Menyiapkan konfigurasi keamanan untuk autentikasi dan otorisasi.
 - **OAuth2 Resource Server**: Menggunakan OAuth2 untuk akses aman ke alat MCP. OAuth2 adalah kerangka kerja otorisasi yang memungkinkan layanan pihak ketiga menukar token akses untuk akses API yang aman.
-- **Security Interceptors**: Menerapkan interceptor keamanan untuk menegakkan kontrol akses pada eksekusi alat.
+- **Interceptor Keamanan**: Menerapkan interceptor keamanan untuk menegakkan kontrol akses pada eksekusi alat.
 - **Kontrol Akses Berbasis Peran**: Menggunakan peran untuk mengontrol akses ke alat dan sumber daya tertentu.
 - **Anotasi Keamanan**: Menggunakan anotasi untuk mengamankan metode dan endpoint.
 
@@ -178,7 +197,7 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 }
 ```
 
-Dalam kode di atas, kita telah:
+Dalam kode sebelumnya, kita telah:
 
 - Mengonfigurasi Spring Security untuk mengamankan endpoint MCP, memungkinkan akses publik untuk penemuan alat sambil mengharuskan autentikasi untuk eksekusi alat.
 - Menggunakan OAuth2 sebagai resource server untuk menangani akses aman ke alat MCP.
@@ -187,7 +206,7 @@ Dalam kode di atas, kita telah:
 
 ## Perlindungan Data dan Privasi
 
-Perlindungan data sangat penting untuk memastikan bahwa informasi sensitif ditangani dengan aman. Ini termasuk melindungi informasi identitas pribadi (PII), data keuangan, dan informasi sensitif lainnya dari akses tidak sah dan kebocoran.
+Perlindungan data sangat penting untuk memastikan informasi sensitif ditangani dengan aman. Ini termasuk melindungi informasi identitas pribadi (PII), data keuangan, dan informasi sensitif lainnya dari akses tidak sah dan kebocoran.
 
 ### Contoh Perlindungan Data dengan Python
 
@@ -327,12 +346,67 @@ class SecureCustomerDataTool(Tool):
         return ToolResponse(result={"status": "success"})
 ```
 
-Dalam kode di atas, kita telah:
+Dalam kode sebelumnya, kita telah:
 
-- Menerapkan kelas `PiiDetector` untuk memindai teks dan parameter guna mendeteksi informasi identitas pribadi (PII).
+- Menerapkan kelas `PiiDetector` untuk memindai teks dan parameter mencari informasi identitas pribadi (PII).
 - Membuat kelas `EncryptionService` untuk menangani enkripsi dan dekripsi data sensitif menggunakan pustaka `cryptography`.
 - Mendefinisikan dekorator `secure_tool` yang membungkus eksekusi alat untuk memeriksa PII, mencatat akses, dan mengenkripsi data sensitif jika diperlukan.
 - Menerapkan dekorator `secure_tool` pada alat contoh (`SecureCustomerDataTool`) untuk memastikan alat tersebut menangani data sensitif dengan aman.
+
+## Risiko Keamanan Khusus MCP
+
+Menurut dokumentasi keamanan resmi MCP, ada risiko keamanan spesifik yang harus diperhatikan oleh para pengembang MCP:
+
+### 1. Masalah Confused Deputy
+
+Kerentanan ini terjadi ketika server MCP bertindak sebagai proxy ke API pihak ketiga, yang memungkinkan penyerang mengeksploitasi hubungan kepercayaan antara server MCP dan API tersebut.
+
+**Mitigasi:**
+- Server proxy MCP yang menggunakan client ID statis HARUS mendapatkan persetujuan pengguna untuk setiap klien yang terdaftar secara dinamis sebelum meneruskan ke server otorisasi pihak ketiga.
+- Terapkan alur OAuth yang tepat dengan PKCE (Proof Key for Code Exchange) untuk permintaan otorisasi.
+- Validasi URI pengalihan dan pengenal klien dengan ketat.
+
+### 2. Kerentanan Token Passthrough
+
+Token passthrough terjadi ketika server MCP menerima token dari klien MCP tanpa memvalidasi bahwa token tersebut diterbitkan dengan benar untuk server MCP dan meneruskannya ke API hilir.
+
+### Risiko
+- Penghindaran kontrol keamanan (melewati pembatasan laju, validasi permintaan)
+- Masalah akuntabilitas dan jejak audit
+- Pelanggaran batas kepercayaan
+- Risiko kompatibilitas di masa depan
+
+**Mitigasi:**
+- Server MCP TIDAK BOLEH menerima token yang tidak secara eksplisit diterbitkan untuk server MCP.
+- Selalu validasi klaim audience token untuk memastikan sesuai dengan layanan yang diharapkan.
+
+### 3. Pembajakan Sesi
+
+Ini terjadi ketika pihak tidak berwenang mendapatkan ID sesi dan menggunakannya untuk menyamar sebagai klien asli, yang berpotensi menyebabkan tindakan tidak sah.
+
+**Mitigasi:**
+- Server MCP yang menerapkan otorisasi HARUS memverifikasi semua permintaan masuk dan TIDAK BOLEH menggunakan sesi untuk autentikasi.
+- Gunakan ID sesi yang aman dan tidak deterministik yang dihasilkan dengan generator angka acak yang aman.
+- Ikat ID sesi ke informasi spesifik pengguna menggunakan format kunci seperti `<user_id>:<session_id>`.
+- Terapkan kebijakan kedaluwarsa dan rotasi sesi yang tepat.
+
+## Praktik Keamanan Tambahan untuk MCP
+
+Selain pertimbangan keamanan inti MCP, pertimbangkan untuk menerapkan praktik keamanan tambahan berikut:
+
+- **Selalu gunakan HTTPS**: Enkripsi komunikasi antara klien dan server untuk melindungi token dari penyadapan.
+- **Terapkan Kontrol Akses Berbasis Peran (RBAC)**: Jangan hanya memeriksa apakah pengguna sudah terautentikasi; periksa juga apa yang mereka diizinkan lakukan.
+- **Pantau dan audit**: Catat semua kejadian autentikasi untuk mendeteksi dan merespons aktivitas mencurigakan.
+- **Tangani pembatasan laju dan throttling**: Terapkan exponential backoff dan logika retry untuk menangani batasan laju dengan baik.
+- **Simpan token dengan aman**: Simpan token akses dan token refresh dengan aman menggunakan mekanisme penyimpanan aman sistem atau layanan manajemen kunci yang aman.
+- **Pertimbangkan menggunakan Manajemen API**: Layanan seperti Azure API Management dapat menangani banyak masalah keamanan secara otomatis, termasuk autentikasi, otorisasi, dan pembatasan laju.
+
+## Referensi
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## Selanjutnya
 

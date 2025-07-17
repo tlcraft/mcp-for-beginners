@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:36:13+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T07:12:37+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "nl"
 }
 -->
 # Model Context Protocol (MCP) Integratie met Azure AI Foundry
 
-Deze handleiding laat zien hoe je Model Context Protocol (MCP) servers integreert met Azure AI Foundry agents, waardoor krachtige toolorkestratie en enterprise AI-mogelijkheden mogelijk worden.
+Deze gids laat zien hoe je Model Context Protocol (MCP) servers integreert met Azure AI Foundry agents, waardoor krachtige toolorkestratie en enterprise AI-mogelijkheden mogelijk worden.
 
 ## Introductie
 
@@ -21,7 +21,7 @@ Deze integratie combineert de flexibiliteit van MCP’s tool-ecosysteem met het 
 
 ## Leerdoelen
 
-Aan het einde van deze handleiding kun je:
+Aan het einde van deze gids kun je:
 
 - Het Model Context Protocol en de voordelen ervan begrijpen
 - MCP-servers opzetten voor gebruik met Azure AI Foundry agents
@@ -221,7 +221,7 @@ PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCreden
 MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
 ```
 
-### 5. Agent aanmaken met MCP Tools
+### 5. Agent aanmaken met MCP-tools
 
 ```csharp
 PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
@@ -367,7 +367,7 @@ Om je MCP-integratie verder te verbeteren:
 
 1. **Ontdek aangepaste MCP-servers**: Bouw je eigen MCP-servers voor eigen databronnen
 2. **Implementeer geavanceerde beveiliging**: Voeg OAuth2 of aangepaste authenticatiemechanismen toe
-3. **Monitoren en analyse**: Implementeer logging en monitoring voor toolgebruik
+3. **Monitor en analyseer**: Implementeer logging en monitoring voor toolgebruik
 4. **Schaal je oplossing**: Overweeg load balancing en gedistribueerde MCP-serverarchitecturen
 
 ## Aanvullende bronnen
@@ -385,7 +385,7 @@ Voor extra ondersteuning en vragen:
 
 ## Wat nu
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Disclaimer**:  
 Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

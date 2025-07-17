@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:00:45+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T06:48:43+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "fi"
 }
@@ -15,12 +15,13 @@ Tässä oppitunnissa keskitytään siihen, miten osallistua MCP-yhteisöön, teh
 
 ## Oppimistavoitteet
 
-Oppitunnin lopussa osaat:
+Oppitunnin lopuksi osaat:
 - Ymmärtää MCP-yhteisön ja ekosysteemin rakenteen
 - Osallistua tehokkaasti MCP-yhteisön foorumeihin ja keskusteluihin
 - Tehdä kontribuutioita MCP:n avoimen lähdekoodin repositorioihin
-- Luoda ja jakaa omia MCP-työkaluja
+- Luoda ja jakaa omia MCP-työkaluja ja -palvelimia
 - Noudattaa MCP-kehityksen ja yhteistyön parhaita käytäntöjä
+- Löytää yhteisön resursseja ja kehyksiä MCP-kehitykseen
 
 ## MCP-yhteisön ekosysteemi
 
@@ -28,27 +29,31 @@ MCP-ekosysteemi koostuu erilaisista osista ja toimijoista, jotka työskentelevä
 
 ### Keskeiset yhteisön osat
 
-1. **Core Protocol Maintainers**: Microsoft ja muut organisaatiot, jotka ylläpitävät MCP:n ydinspezifikaatioita ja referenssitoteutuksia
-2. **Tool Developers**: Yksilöt ja tiimit, jotka luovat MCP-työkaluja
-3. **Integration Providers**: Yritykset, jotka integroivat MCP:n omiin tuotteisiinsa ja palveluihinsa
-4. **End Users**: Kehittäjät ja organisaatiot, jotka käyttävät MCP:tä sovelluksissaan
-5. **Contributors**: Yhteisön jäsenet, jotka tuottavat koodia, dokumentaatiota tai muita resursseja
+1. **Core Protocol Maintainers**: Virallinen [Model Context Protocol GitHub -organisaatio](https://github.com/modelcontextprotocol) ylläpitää MCP:n ydinspezifikaatioita ja referenssitoteutuksia
+2. **Työkalujen kehittäjät**: Yksilöt ja tiimit, jotka luovat MCP-työkaluja ja -palvelimia
+3. **Integraatiotoimittajat**: Yritykset, jotka integroivat MCP:n tuotteisiinsa ja palveluihinsa
+4. **Loppukäyttäjät**: Kehittäjät ja organisaatiot, jotka käyttävät MCP:tä sovelluksissaan
+5. **Kontribuuttorit**: Yhteisön jäsenet, jotka tuottavat koodia, dokumentaatiota tai muita resursseja
 
 ### Yhteisön resurssit
 
 #### Viralliset kanavat
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP GitHub -organisaatio](https://github.com/modelcontextprotocol)
+- [MCP-dokumentaatio](https://modelcontextprotocol.io/)
+- [MCP-spesifikaatio](https://modelcontextprotocol.io/docs/specification)
+- [GitHub-keskustelut](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP-esimerkit ja palvelimet -repositorio](https://github.com/modelcontextprotocol/servers)
 
 #### Yhteisön ylläpitämät resurssit
 
-- Kielenmukaiset SDK-toteutukset
-- Palvelintoteutukset ja työkalukirjastot
+- [MCP Clients](https://modelcontextprotocol.io/clients) – Lista MCP-integraatioita tukevista asiakkaista
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) – Kasvava lista yhteisön kehittämistä MCP-palvelimista
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) – Kuratoitu lista MCP-palvelimista
+- [PulseMCP](https://www.pulsemcp.com/) – Yhteisön keskus ja uutiskirje MCP-resurssien löytämiseen
+- [Discord-palvelin](https://discord.gg/jHEGxQu2a5) – Yhteys MCP-kehittäjiin
+- Kieli- ja SDK-toteutukset
 - Blogikirjoitukset ja opetusmateriaalit
-- Yhteisöfoorumit ja sosiaalisen median keskustelut
 
 ## Kontribuointi MCP:hen
 
@@ -59,178 +64,89 @@ MCP-ekosysteemi ottaa vastaan monenlaisia kontribuutioita:
 1. **Koodikontribuutiot**:
    - Ydinspezifikaation parannukset
    - Virheenkorjaukset
-   - Työkalutoteutukset
+   - Työkalujen ja palvelimien toteutukset
    - Asiakas- ja palvelinkirjastot eri kielillä
 
 2. **Dokumentaatio**:
    - Olemassa olevan dokumentaation parantaminen
    - Opetusmateriaalien ja ohjeiden luominen
    - Dokumentaation kääntäminen
-   - Esimerkkien ja näytesovellusten tekeminen
+   - Esimerkkien ja mallisovellusten tekeminen
 
 3. **Yhteisön tuki**:
-   - Kysymyksiin vastaaminen foorumeilla
+   - Kysymyksiin vastaaminen foorumeilla ja keskusteluissa
    - Testaus ja ongelmien raportointi
    - Yhteisötapahtumien järjestäminen
    - Uusien kontribuuttoreiden mentorointi
 
 ### Kontribuutioprosessi: Core Protocol
 
-Jos haluat tehdä kontribuution MCP:n ydinspezifikaatioon tai virallisiin toteutuksiin:
+Jos haluat tehdä kontribuution MCP:n ydinspezifikaatioon tai virallisiin toteutuksiin, noudata näitä periaatteita [virallisista ohjeista](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### .NET-esimerkki: Protokollaparannuksen tekeminen
+1. **Yksinkertaisuus ja minimalismi**: MCP-spesifikaatio pitää korkean riman uusien käsitteiden lisäämiselle. On helpompaa lisätä asioita kuin poistaa niitä.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **Konkreettinen lähestymistapa**: Spesifikaatiomuutosten tulee perustua konkreettisiin toteutusongelmiin, ei spekulatiivisiin ideoihin.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **Ehdotuksen vaiheet**:
+   - Määrittele: Tutki ongelma-aluetta, varmista että muut MCP-käyttäjät kohtaavat saman haasteen
+   - Prototyyppi: Rakenna esimerkkiratkaisu ja näytä sen käytännön soveltuvuus
+   - Kirjoita: Prototyypin pohjalta kirjoita spesifikaatioehdotus
+
+### Kehitysympäristön asennus
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Java-esimerkki: Virheenkorjauksen tekeminen
+### Esimerkki: Virheenkorjauksen kontribuointi
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Python-esimerkki: Uuden työkalun lisääminen standardikirjastoon
+### Esimerkki: Uuden työkalun lisääminen standardikirjastoon
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -398,15 +314,15 @@ Onnistuneen kontribuution tekemiseksi MCP-projekteihin:
 2. **Noudata tyyliopasta**: Seuraa projektin koodauskäytäntöjä ja konventioita
 3. **Kirjoita testit**: Lisää yksikkötestit koodikontribuutioillesi
 4. **Dokumentoi työsi**: Lisää selkeä dokumentaatio uusista ominaisuuksista tai muutoksista
-5. **Lähetä kohdennetut PR:t**: Pidä pull requestit keskittyneinä yhteen ongelmaan tai ominaisuuteen
-6. **Ole vuorovaikutuksessa palautteen kanssa**: Vastaa aktiivisesti saamasi palautteeseen
+5. **Lähetä kohdennettuja PR:itä**: Pidä pull requestit keskittyneinä yhteen ongelmaan tai ominaisuuteen
+6. **Ole vuorovaikutteinen palautteen kanssa**: Vastaa rakentavasti saamasi palautteeseen
 
-### Esimerkki kontribuutiotyövirrasta
+### Esimerkkityönkulku kontribuutiolle
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,9 +343,27 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Omien MCP-työkalujen luominen ja jakaminen
+## MCP-palvelimien luominen ja jakaminen
 
-Yksi arvokkaimmista tavoista osallistua MCP-ekosysteemiin on luoda ja jakaa omia työkaluja.
+Yksi arvokkaimmista tavoista osallistua MCP-ekosysteemiin on luoda ja jakaa omia MCP-palvelimia. Yhteisö on jo kehittänyt satoja palvelimia erilaisiin palveluihin ja käyttötarkoituksiin.
+
+### MCP-palvelinkehityskehykset
+
+Useita kehyksiä on saatavilla MCP-palvelimien kehityksen helpottamiseksi:
+
+1. **Viralliset SDK:t**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **Yhteisön kehittämät kehykset**:
+   - [MCP-Framework](https://mcp-framework.com/) – Rakenna MCP-palvelimia tyylikkäästi ja nopeasti TypeScriptillä
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) – Annotaatiopohjaiset MCP-palvelimet Javalla
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) – Java-kehys MCP-palvelimille
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) – Aloitusprojekti Next.js:llä MCP-palvelimille
 
 ### Jaettavien työkalujen kehittäminen
 
@@ -747,19 +679,19 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Parhaiden käytäntöjen jakaminen
+### Parhaat käytännöt jakamiseen
 
 Kun jaat MCP-työkaluja yhteisön kanssa:
 
 1. **Täydellinen dokumentaatio**:
-   - Kuvaa työkalun tarkoitus, käyttö ja esimerkit
+   - Kuvaa tarkoitus, käyttö ja esimerkit
    - Selitä parametrit ja palautusarvot
-   - Dokumentoi mahdolliset ulkoiset riippuvuudet
+   - Dokumentoi ulkoiset riippuvuudet
 
 2. **Virheenkäsittely**:
    - Toteuta luotettava virheenkäsittely
    - Tarjoa hyödylliset virheilmoitukset
-   - Käsittele poikkeustilanteet sujuvasti
+   - Käsittele reunatapaukset huolellisesti
 
 3. **Suorituskyky**:
    - Optimoi sekä nopeuden että resurssien käytön kannalta
@@ -769,7 +701,7 @@ Kun jaat MCP-työkaluja yhteisön kanssa:
 4. **Turvallisuus**:
    - Käytä turvallisia API-avaimia ja autentikointia
    - Varmista ja puhdista syötteet
-   - Toteuta rajapyyntirajoitukset ulkoisille API-kutsuille
+   - Toteuta rajoitukset ulkoisille API-kutsuille
 
 5. **Testaus**:
    - Sisällytä kattava testikattavuus
@@ -799,7 +731,7 @@ Kun arvioit MCP-kontribuutioita:
 
 ### Versioyhteensopivuus
 
-Kun kehität MCP:lle:
+MCP-kehityksessä:
 
 1. **Protokollan versiointi**: Noudata MCP-protokollan versiota, jota työkalusi tukee
 2. **Asiakasyhteensopivuus**: Huomioi taaksepäin yhteensopivuus
@@ -891,8 +823,8 @@ async def delete_tool(tool_name: str):
 
 - MCP-yhteisö on monimuotoinen ja ottaa vastaan erilaisia kontribuutioita
 - MCP:hen voi tehdä kontribuutioita ydinspezifikaation parannuksista omiin työkaluihin
-- Kontribuutiot ohjeiden mukaan parantavat PR:n hyväksymismahdollisuuksia
-- MCP-työkalujen luominen ja jakaminen on arvokas tapa kehittää ekosysteemiä
+- Kontribuutiot ohjeiden mukaan parantavat PR:ien hyväksymismahdollisuuksia
+- MCP-työkalujen luominen ja jakaminen rikastuttaa ekosysteemiä
 - Yhteisön yhteistyö on välttämätöntä MCP:n kasvulle ja kehitykselle
 
 ## Harjoitus
@@ -900,7 +832,7 @@ async def delete_tool(tool_name: str):
 1. Tunnista MCP-ekosysteemistä alue, johon voisit omien taitojesi ja kiinnostuksesi perusteella tehdä kontribuution
 2. Forkkaa MCP-repositorio ja ota käyttöön paikallinen kehitysympäristö
 3. Tee pieni parannus, virheenkorjaus tai työkalu, josta yhteisö hyötyy
-4. Dokumentoi kontribuutiosi asianmukaisilla testeillä ja dokumentaatiolla
+4. Dokumentoi kontribuutosi asianmukaisin testeineen ja dokumentaationa
 5. Lähetä pull request oikeaan repositorioon
 
 ## Lisäresurssit
@@ -913,4 +845,4 @@ async def delete_tool(tool_name: str):
 Seuraava: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

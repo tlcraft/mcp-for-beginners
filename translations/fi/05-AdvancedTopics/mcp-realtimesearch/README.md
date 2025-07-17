@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:08:35+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T06:56:53+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "fi"
 }
 -->
 ## Koodiesimerkkien vastuuvapauslauseke
 
-> **Tärkeä huomio**: Alla olevat koodiesimerkit havainnollistavat Model Context Protocolin (MCP) integrointia verkkohakutoiminnallisuuteen. Vaikka ne noudattavat virallisten MCP SDK:iden rakenteita ja malleja, ne on yksinkertaistettu opetustarkoituksiin.
+> **Tärkeä huomio**: Alla olevat koodiesimerkit demonstroivat Model Context Protocolin (MCP) integrointia verkkohakutoiminnallisuuteen. Vaikka ne noudattavat virallisten MCP SDK:iden rakenteita ja malleja, ne on yksinkertaistettu opetustarkoituksiin.
 > 
 > Nämä esimerkit esittelevät:
 > 
-> 1. **Python-toteutus**: FastMCP-palvelimen toteutus, joka tarjoaa verkkohakutyökalun ja yhdistää ulkoiseen hakupalvelun API:in. Tämä esimerkki demonstroi oikeaa elinkaaren hallintaa, kontekstin käsittelyä ja työkalun toteutusta noudattaen [virallisen MCP Python SDK:n](https://github.com/modelcontextprotocol/python-sdk) malleja. Palvelin käyttää suositeltua Streamable HTTP -kuljetusta, joka on korvannut vanhemman SSE-kuljetuksen tuotantokäytössä.
+> 1. **Python-toteutus**: FastMCP-palvelimen toteutus, joka tarjoaa verkkohakutyökalun ja yhdistää ulkoiseen hakupalvelun API:in. Tämä esimerkki havainnollistaa elinkaaren hallintaa, kontekstin käsittelyä ja työkalun toteutusta noudattaen [virallisen MCP Python SDK:n](https://github.com/modelcontextprotocol/python-sdk) malleja. Palvelin käyttää suositeltua Streamable HTTP -kuljetusta, joka on korvannut vanhemman SSE-kuljetuksen tuotantokäytössä.
 > 
-> 2. **JavaScript-toteutus**: TypeScript/JavaScript-toteutus FastMCP-mallilla [virallisesta MCP TypeScript SDK:sta](https://github.com/modelcontextprotocol/typescript-sdk), jolla luodaan hakupalvelin asianmukaisilla työkalumäärittelyillä ja asiakasyhteyksillä. Se noudattaa uusimpia suositeltuja malleja istunnon hallinnassa ja kontekstin säilyttämisessä.
+> 2. **JavaScript-toteutus**: TypeScript/JavaScript-toteutus FastMCP-mallilla [virallisen MCP TypeScript SDK:n](https://github.com/modelcontextprotocol/typescript-sdk) pohjalta, jolla luodaan hakupalvelin asianmukaisilla työkalumäärittelyillä ja asiakasyhteyksillä. Toteutus noudattaa uusimpia suosituksia istunnon hallinnasta ja kontekstin säilyttämisestä.
 > 
-> Näissä esimerkeissä tarvitaan tuotantokäyttöön lisävirheenkäsittelyä, autentikointia ja tarkkaa API-integraatiokoodia. Näytetyt hakupalvelun API-päätepisteet (`https://api.search-service.example/search`) ovat paikkamerkkejä, jotka tulee korvata todellisilla hakupalvelun osoitteilla.
+> Näissä esimerkeissä tarvitaan tuotantokäyttöön lisävirheenkäsittelyä, autentikointia ja tarkempaa API-integraatiokoodia. Näytetyt hakupalvelun API-päätepisteet (`https://api.search-service.example/search`) ovat paikkamerkkejä, jotka tulee korvata todellisilla hakupalvelun osoitteilla.
 > 
-> Täydelliset toteutustiedot ja ajantasaisimmat lähestymistavat löytyvät [virallisesta MCP-spesifikaatiosta](https://spec.modelcontextprotocol.io/) ja SDK-dokumentaatiosta.
+> Täydelliset toteutustiedot ja ajantasaiset lähestymistavat löytyvät [virallisesta MCP-spesifikaatiosta](https://spec.modelcontextprotocol.io/) ja SDK-dokumentaatiosta.
 
 ## Keskeiset käsitteet
 
 ### Model Context Protocol (MCP) -kehys
 
-Perustana Model Context Protocol tarjoaa standardoidun tavan AI-mallien, sovellusten ja palveluiden väliseen kontekstin vaihtoon. Reaaliaikaisessa verkkohakussa tämä kehys on välttämätön yhtenäisten, monivaiheisten hakukokemusten luomiseksi. Keskeisiä osia ovat:
+MCP tarjoaa perustan AI-mallien, sovellusten ja palveluiden väliselle standardoidulle kontekstin vaihdolle. Reaaliaikaisessa verkkohakussa tämä kehys on välttämätön yhtenäisten, monivaiheisten hakukokemusten luomiseksi. Keskeisiä osia ovat:
 
 1. **Asiakas-palvelin-arkkitehtuuri**: MCP erottaa selkeästi hakukyselyjen pyytäjät (asiakkaat) ja hakupalvelimet (tarjoajat), mahdollistaen joustavat käyttöönotot.
 
@@ -35,11 +35,11 @@ Perustana Model Context Protocol tarjoaa standardoidun tavan AI-mallien, sovellu
 
 4. **Työkalumäärittelyt**: Hakutoiminnot tarjotaan standardoituna työkaluna, jolla on selkeät parametrit ja palautusarvot.
 
-5. **Suoratoistotuki**: Protokolla tukee tulosten suoratoistoa, mikä on olennaista reaaliaikaisessa haussa, jossa tulokset voivat saapua vaiheittain.
+5. **Streaming-tuki**: Protokolla tukee tulosten suoratoistoa, mikä on olennaista reaaliaikaisessa haussa, jossa tulokset voivat saapua vaiheittain.
 
 ### Verkkohakuintegraation mallit
 
-Kun MCP integroidaan verkkohakuun, esiin nousee useita malleja:
+MCP:n yhdistäminen verkkohakuun noudattaa useita malleja:
 
 #### 1. Suora hakupalveluntarjoajan integraatio
 
@@ -53,7 +53,7 @@ graph LR
 
 Tässä mallissa MCP-palvelin kommunikoi suoraan yhden tai useamman hakupalvelun API:n kanssa, muuntaen MCP-pyynnöt API-kohtaisiksi kutsuiksi ja muotoillen vastaukset MCP-muotoon.
 
-#### 2. Yhdistetty haku kontekstin säilytyksellä
+#### 2. Hajautettu haku kontekstin säilytyksellä
 
 ```mermaid
 graph LR
@@ -67,7 +67,7 @@ graph LR
     Federation --> |Aggregated MCP Response| Client
 ```
 
-Tämä malli jakaa hakukyselyt useille MCP-yhteensopiville hakupalveluille, jotka voivat erikoistua eri sisältötyyppeihin tai hakutoimintoihin, säilyttäen kuitenkin yhtenäisen kontekstin.
+Tämä malli jakaa hakukyselyt useille MCP-yhteensopiville hakupalveluntarjoajille, jotka voivat erikoistua eri sisältötyyppeihin tai hakutoimintoihin, säilyttäen kuitenkin yhtenäisen kontekstin.
 
 #### 3. Kontekstilla rikastettu hakuketju
 
@@ -121,16 +121,16 @@ MCP-pohjainen haku tarjoaa etuja uutisseurannassa:
 
 MCP avaa uusia mahdollisuuksia AI-avusteiseen selaamiseen:
 
-- Kontekstuaaliset hakuehdotukset nykyisen selaustoiminnan perusteella
+- Kontekstuaaliset hakuehdotukset selaimen nykyisen toiminnan perusteella
 - Saumaton verkkohaku ja LLM-pohjaisten avustajien yhdistäminen
 - Monivaiheinen hakujen tarkentaminen säilyttäen konteksti
 - Parannettu faktantarkistus ja tiedon varmistus
 
 ## Tulevaisuuden suuntaukset ja innovaatiot
 
-### MCP:n kehitys verkkohauissa
+### MCP:n kehitys verkkohakussa
 
-Tulevaisuudessa MCP:n odotetaan kehittyvän vastaamaan:
+Tulevaisuudessa MCP:n odotetaan kehittyvän vastaamaan muun muassa:
 
 - **Monimodaalinen haku**: Tekstin, kuvan, äänen ja videon haun yhdistäminen säilyttäen konteksti
 - **Hajautettu haku**: Tuen tarjoaminen hajautetuille ja yhdistetyille hakuekosysteemeille
@@ -191,7 +191,7 @@ Tämän moduulin suorittamisen jälkeen osaat:
 
 - Ymmärtää reaaliaikaisen verkkohakujen perusteet ja haasteet  
 - Selittää, miten Model Context Protocol (MCP) parantaa reaaliaikaista verkkohakua  
-- Toteuttaa MCP-pohjaisia hakuratkaisuja suosituilla kehyksillä ja API:lla  
+- Toteuttaa MCP-pohjaisia hakuratkaisuja suosituilla kehyksillä ja API:illa  
 - Suunnitella ja ottaa käyttöön skaalautuvia, suorituskykyisiä hakurakenteita MCP:llä  
 - Soveltaa MCP-konsepteja erilaisiin käyttötapauksiin, kuten semanttiseen hakuun, tutkimusavustukseen ja tekoälyavusteiseen selaamiseen  
 - Arvioida MCP-pohjaisen haun nousevia trendejä ja tulevia innovaatioita  
@@ -202,19 +202,19 @@ Kun toteutat MCP-pohjaisia verkkohakuratkaisuja, muista nämä MCP-spesifikaatio
 
 1. **Käyttäjän suostumus ja hallinta**: Käyttäjien on annettava selkeä suostumus ja ymmärrettävä kaikki tietojen käyttö ja toiminnot. Tämä on erityisen tärkeää verkkohakujen toteutuksissa, jotka voivat käyttää ulkoisia tietolähteitä.  
 
-2. **Tietosuoja**: Varmista hakukyselyjen ja tulosten asianmukainen käsittely, erityisesti jos ne voivat sisältää arkaluonteista tietoa. Toteuta asianmukaiset käyttöoikeudet käyttäjätietojen suojaamiseksi.  
+2. **Tietosuoja**: Varmista hakukyselyjen ja -tulosten asianmukainen käsittely, erityisesti jos ne voivat sisältää arkaluonteista tietoa. Toteuta asianmukaiset käyttöoikeudet käyttäjätietojen suojaamiseksi.  
 
 3. **Työkalujen turvallisuus**: Toteuta asianmukainen valtuutus ja validointi hakutyökaluille, sillä ne voivat aiheuttaa turvallisuusriskejä mielivaltaisen koodin suorittamisen kautta. Työkalujen toimintakuvausten tulee olla epäluotettavia, ellei ne ole peräisin luotettavalta palvelimelta.  
 
 4. **Selkeä dokumentaatio**: Tarjoa selkeää dokumentaatiota MCP-pohjaisen hakutoteutuksesi ominaisuuksista, rajoituksista ja turvallisuusnäkökohdista MCP-spesifikaation toteutusohjeiden mukaisesti.  
 
-5. **Vahvat suostumusprosessit**: Rakenna vahvat suostumus- ja valtuutusprosessit, jotka selkeästi kertovat, mitä kukin työkalu tekee ennen sen käytön hyväksymistä, erityisesti työkaluissa, jotka käyttävät ulkoisia verkkoresursseja.  
+5. **Vahvat suostumusprosessit**: Rakenna vahvat suostumus- ja valtuutusprosessit, jotka selkeästi kertovat, mitä kukin työkalu tekee ennen sen käyttöoikeuden myöntämistä, erityisesti työkaluissa, jotka käyttävät ulkoisia verkkoresursseja.  
 
-MCP:n turvallisuus- ja luottamusnäkökohtien täydelliset tiedot löytyvät [virallisesta dokumentaatiosta](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).  
+MCP:n turvallisuus- ja luottamusnäkökohdista löydät täydelliset tiedot [virallisesta dokumentaatiosta](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).  
 
 ## Mitä seuraavaksi
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

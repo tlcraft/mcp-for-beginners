@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:06:03+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T06:16:11+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "sv"
 }
 -->
 ## Ansvarsfriskrivning för kodexempel
 
-> **Viktig notering**: Kodexemplen nedan visar hur Model Context Protocol (MCP) kan integreras med webbsökfunktionalitet. Även om de följer mönster och strukturer från de officiella MCP SDK:erna, har de förenklats för utbildningsändamål.
+> **Viktig notering**: Kodexemplen nedan visar hur Model Context Protocol (MCP) integreras med webbsökfunktionalitet. Även om de följer mönster och strukturer från de officiella MCP SDK:erna, har de förenklats för utbildningsändamål.
 > 
 > Dessa exempel visar:
 > 
-> 1. **Python-implementation**: En FastMCP-server som tillhandahåller ett webbsökningsverktyg och kopplar till en extern sök-API. Detta exempel demonstrerar korrekt hantering av livscykel, kontexthantering och verktygsimplementering enligt mönstren i [officiella MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk). Servern använder den rekommenderade Streamable HTTP-transporten som ersatt den äldre SSE-transporten för produktionsmiljöer.
+> 1. **Python-implementation**: En FastMCP-server som tillhandahåller ett webbsökningsverktyg och kopplar till en extern sök-API. Exemplet demonstrerar korrekt hantering av livscykel, kontexthantering och verktygsimplementering enligt mönstren i [den officiella MCP Python SDK:n](https://github.com/modelcontextprotocol/python-sdk). Servern använder den rekommenderade Streamable HTTP-transporten som ersatt den äldre SSE-transporten för produktionsmiljöer.
 > 
-> 2. **JavaScript-implementation**: En TypeScript/JavaScript-implementation som använder FastMCP-mönstret från [officiella MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) för att skapa en sökserver med korrekta verktygsdefinitioner och klientanslutningar. Den följer de senaste rekommenderade mönstren för sessionshantering och kontextbevarande.
+> 2. **JavaScript-implementation**: En TypeScript/JavaScript-implementation som använder FastMCP-mönstret från [den officiella MCP TypeScript SDK:n](https://github.com/modelcontextprotocol/typescript-sdk) för att skapa en sökserver med korrekta verktygsdefinitioner och klientanslutningar. Den följer de senaste rekommenderade mönstren för sessionshantering och kontextbevarande.
 > 
 > Dessa exempel kräver ytterligare felhantering, autentisering och specifik API-integration för produktionsanvändning. De visade sök-API-endpunkterna (`https://api.search-service.example/search`) är platshållare och måste ersättas med faktiska söktjänstendpunkter.
 > 
-> För fullständiga implementationsdetaljer och de mest aktuella metoderna, vänligen se [officiella MCP-specifikationen](https://spec.modelcontextprotocol.io/) och SDK-dokumentationen.
+> För fullständiga implementationsdetaljer och de mest aktuella metoderna, vänligen se [den officiella MCP-specifikationen](https://spec.modelcontextprotocol.io/) och SDK-dokumentationen.
 
 ## Kärnkoncept
 
 ### Model Context Protocol (MCP)-ramverket
 
-I grunden tillhandahåller Model Context Protocol ett standardiserat sätt för AI-modeller, applikationer och tjänster att utbyta kontext. Inom realtidswebbsökning är detta ramverk avgörande för att skapa sammanhängande sökupplevelser med flera steg. Nyckelkomponenter inkluderar:
+I grunden tillhandahåller Model Context Protocol ett standardiserat sätt för AI-modeller, applikationer och tjänster att utbyta kontext. Inom realtidswebbsökning är detta ramverk avgörande för att skapa sammanhängande sökupplevelser över flera steg. Nyckelkomponenter inkluderar:
 
 1. **Klient-server-arkitektur**: MCP etablerar en tydlig separation mellan sökklienter (förfrågare) och sökservrar (leverantörer), vilket möjliggör flexibla distributionsmodeller.
 
@@ -33,11 +33,11 @@ I grunden tillhandahåller Model Context Protocol ett standardiserat sätt för 
 
 3. **Kontexthantering**: MCP definierar strukturerade metoder för att bevara, uppdatera och utnyttja sökkontext över flera interaktioner.
 
-4. **Verksdefinitions**: Sökkapaciteter exponeras som standardiserade verktyg med väldefinierade parametrar och returvärden.
+4. **Verktygsdefinitioner**: Sökkapaciteter exponeras som standardiserade verktyg med väldefinierade parametrar och returvärden.
 
 5. **Streamingstöd**: Protokollet stödjer strömmande resultat, vilket är viktigt för realtidssökning där resultat kan komma successivt.
 
-### Mönster för integration av webbsökning
+### Integrationsmönster för webbsökning
 
 När MCP integreras med webbsökning framträder flera mönster:
 
@@ -105,14 +105,14 @@ MCP förbättrar forskningsarbetsflöden genom att:
 
 - Bevara forskningskontext över söksessioner
 - Möjliggöra mer sofistikerade och kontextuellt relevanta frågor
-- Stödja federerad sökning från flera källor
+- Stödja federerad sökning över flera källor
 - Underlätta kunskapsutvinning från sökresultat
 
 ### Realtidsnyheter och trendövervakning
 
 MCP-drivna sökningar erbjuder fördelar för nyhetsövervakning:
 
-- Nära realtidsupptäckt av framväxande nyhetshändelser
+- Nära realtidsupptäckt av nya nyhetshändelser
 - Kontextuell filtrering av relevant information
 - Spårning av ämnen och entiteter över flera källor
 - Personliga nyhetsaviseringar baserade på användarkontext
@@ -132,10 +132,10 @@ MCP skapar nya möjligheter för AI-förstärkt surfning:
 
 Framöver förväntas MCP utvecklas för att hantera:
 
-- **Multimodal sökning**: Integrera text-, bild-, ljud- och videosökning med bevarad kontext
-- **Decentraliserad sökning**: Stödja distribuerade och federerade sökekosystem
-- **Söksekretess**: Kontextmedvetna sekretessbevarande sökmetoder  
-- **Frågeförståelse**: Djup semantisk tolkning av naturliga språkfrågor vid sökning  
+- **Multimodal sökning**: Integrering av text-, bild-, ljud- och videosökning med bevarad kontext
+- **Decentraliserad sökning**: Stöd för distribuerade och federerade sökekosystem
+- **Sökintegritet**: Kontextmedvetna sekretessbevarande sökmetoder  
+- **Frågeförståelse**: Djup semantisk analys av naturliga språkfrågor vid sökning  
 
 ### Potentiella teknologiska framsteg
 
@@ -181,13 +181,13 @@ Avancerad övning som täcker:
 - [Bing Web Search API Documentation](https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview) - Microsofts webbsöks-API  
 - [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - Googles programmerbara sökmotor  
 - [SerpAPI Documentation](https://serpapi.com/search-api) - API för sökmotorresultatsidor  
-- [Meilisearch Documentation](https://www.meilisearch.com/docs) - Öppen källkodssökmotor  
+- [Meilisearch Documentation](https://www.meilisearch.com/docs) - Öppen källkod sökmotor  
 - [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - Distribuerad sök- och analysmotor  
 - [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Bygga applikationer med LLMs  
 
 ## Lärandemål
 
-Genom att slutföra denna modul kommer du att kunna:
+Genom att slutföra denna modul kommer du att kunna:  
 
 - Förstå grunderna i realtidswebbsökning och dess utmaningar  
 - Förklara hur Model Context Protocol (MCP) förbättrar realtidswebbsökning  
@@ -198,7 +198,7 @@ Genom att slutföra denna modul kommer du att kunna:
 
 ### Överväganden kring tillit och säkerhet
 
-När du implementerar MCP-baserade webbsöklösningar, kom ihåg dessa viktiga principer från MCP-specifikationen:
+När du implementerar MCP-baserade webbsökslösningar, kom ihåg dessa viktiga principer från MCP-specifikationen:  
 
 1. **Användarsamtycke och kontroll**: Användare måste uttryckligen samtycka till och förstå all dataåtkomst och alla operationer. Detta är särskilt viktigt för webbsöksimplementationer som kan komma åt externa datakällor.  
 
@@ -214,7 +214,7 @@ För fullständiga detaljer om MCP:s säkerhets- och tillitsöverväganden, se [
 
 ## Vad händer härnäst
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

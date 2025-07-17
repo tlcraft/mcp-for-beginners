@@ -1,43 +1,62 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:41:11+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-17T06:55:12+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "fi"
 }
 -->
 # Turvallisuuden parhaat käytännöt
 
-Turvallisuus on ratkaisevan tärkeää MCP-ratkaisuissa, erityisesti yritysympäristöissä. On tärkeää varmistaa, että työkalut ja tiedot ovat suojattuja luvattomalta käytöltä, tietomurroilta ja muilta turvallisuusuhkilta.
+Turvallisuus on ratkaisevan tärkeää MCP-toteutuksissa, erityisesti yritysympäristöissä. On tärkeää varmistaa, että työkalut ja tiedot ovat suojattuja luvattomalta käytöltä, tietomurroilta ja muilta turvallisuusuhkilta.
 
 ## Johdanto
 
-Tässä oppitunnissa käsittelemme MCP-ratkaisujen turvallisuuden parhaita käytäntöjä. Käymme läpi todennuksen ja valtuutuksen, tietosuojaa, työkalujen turvallista suorittamista sekä tietosuojalainsäädännön noudattamista.
+Model Context Protocol (MCP) vaatii erityisiä turvallisuusnäkökohtia, koska se tarjoaa LLM-malleille pääsyn tietoihin ja työkaluihin. Tässä oppitunnissa käsitellään MCP-toteutusten turvallisuuden parhaita käytäntöjä virallisten MCP-ohjeiden ja vakiintuneiden turvallisuusmallien pohjalta.
+
+MCP noudattaa keskeisiä turvallisuusperiaatteita varmistaakseen turvalliset ja luotettavat vuorovaikutukset:
+
+- **Käyttäjän suostumus ja hallinta**: Käyttäjän on annettava nimenomainen suostumus ennen kuin mitään tietoja käytetään tai toimintoja suoritetaan. Tarjoa selkeä hallinta siitä, mitä tietoja jaetaan ja mitkä toimet ovat sallittuja.
+  
+- **Tietosuoja**: Käyttäjätiedot tulee paljastaa vain nimenomaisella suostumuksella ja suojata asianmukaisin käyttöoikeuksin. Estä luvaton tiedonsiirto.
+  
+- **Työkalujen turvallisuus**: Ennen työkalun kutsumista vaaditaan käyttäjän nimenomainen suostumus. Käyttäjien tulee ymmärtää kunkin työkalun toiminnallisuus, ja tiukat turvallisuusrajat on toteutettava.
 
 ## Oppimistavoitteet
 
-Oppitunnin lopussa osaat:
+Tämän oppitunnin jälkeen osaat:
 
 - Toteuttaa turvalliset todennus- ja valtuutusmekanismit MCP-palvelimille.
-- Suojata arkaluonteiset tiedot salauksen ja turvallisen tallennuksen avulla.
-- Varmistaa työkalujen turvallisen suorittamisen asianmukaisilla käyttöoikeuksilla.
-- Soveltaa parhaita käytäntöjä tietosuojan ja yksityisyyden suojaamiseksi.
+- Suojata arkaluontoiset tiedot salauksella ja turvallisella tallennuksella.
+- Varmistaa työkalujen turvallisen suorittamisen asianmukaisin käyttöoikeuksin.
+- Soveltaa parhaita käytäntöjä tietosuojaan ja tietosuojavaatimusten noudattamiseen.
+- Tunnistaa ja ehkäistä yleisiä MCP-turvallisuusongelmia, kuten confused deputy -ongelma, token passthrough ja istunnon kaappaus.
 
 ## Todennus ja valtuutus
 
-Todennus ja valtuutus ovat olennaisia MCP-palvelimien suojaamisessa. Todennus vastaa kysymykseen "Kuka sinä olet?" ja valtuutus kysymykseen "Mitä voit tehdä?".
+Todennus ja valtuutus ovat olennaisia MCP-palvelimien suojaamisessa. Todennus vastaa kysymykseen "Kuka olet?" ja valtuutus kysymykseen "Mitä voit tehdä?".
 
-Tarkastellaan esimerkkejä siitä, miten toteuttaa turvallinen todennus ja valtuutus MCP-palvelimilla .NET- ja Java-ympäristöissä.
+MCP:n turvallisuusmäärittelyn mukaan nämä ovat kriittisiä turvallisuusnäkökohtia:
+
+1. **Tokenin validointi**: MCP-palvelimet EIVÄT SAA HYVÄKSYÄ mitään tokeneita, joita ei ole nimenomaisesti myönnetty kyseiselle MCP-palvelimelle. "Token passthrough" on nimenomaan kielletty anti-malli.
+
+2. **Valtuutuksen tarkistus**: MCP-palvelimet, jotka toteuttavat valtuutuksen, TÄYTYY tarkistaa kaikki saapuvat pyynnöt, eikä niiden tule käyttää istuntoja todennukseen.
+
+3. **Turvallinen istunnonhallinta**: Käytettäessä istuntoja tilan hallintaan MCP-palvelimien TÄYTYY käyttää turvallisia, ei-deterministisiä istuntotunnuksia, jotka on luotu turvallisilla satunnaislukugeneraattoreilla. Istuntotunnukset TULISI sitoa käyttäjäkohtaisiin tietoihin.
+
+4. **Nimenomainen käyttäjän suostumus**: Välityspalvelimissa MCP-toteutusten TÄYTYY hankkia käyttäjän suostumus jokaiselle dynaamisesti rekisteröidylle asiakkaalle ennen pyyntöjen välittämistä kolmannen osapuolen valtuutuspalvelimille.
+
+Katsotaan esimerkkejä siitä, miten toteuttaa turvallinen todennus ja valtuutus MCP-palvelimissa .NET- ja Java-ympäristöissä.
 
 ### .NET Identity -integraatio
 
-ASP .NET Core Identity tarjoaa vankan kehyksen käyttäjien todennuksen ja valtuutuksen hallintaan. Voimme integroida sen MCP-palvelimiin työkalujen ja resurssien suojaamiseksi.
+ASP .NET Core Identity tarjoaa vankan kehyksen käyttäjien todennuksen ja valtuutuksen hallintaan. Voimme integroida sen MCP-palvelimiin työkalujen ja resurssien turvallisen käytön varmistamiseksi.
 
-Integroinnissa ASP.NET Core Identityyn MCP-palvelimilla on ymmärrettävä muutamia keskeisiä käsitteitä:
+Tässä muutamia keskeisiä käsitteitä, jotka on hyvä ymmärtää ASP.NET Core Identityn integroinnissa MCP-palvelimiin:
 
-- **Identity-konfiguraatio**: ASP.NET Core Identityn määrittäminen käyttäjärooleineen ja -väitteineen. Väite on tieto käyttäjästä, kuten rooli tai käyttöoikeus, esimerkiksi "Admin" tai "User".
-- **JWT-todennus**: JSON Web Tokenien (JWT) käyttö turvalliseen API-käyttöön. JWT on standardi tietojen turvalliseen siirtoon osapuolten välillä JSON-objektina, joka voidaan varmentaa ja johon voidaan luottaa, koska se on digitaalisesti allekirjoitettu.
+- **Identityn konfigurointi**: ASP.NET Core Identityn määrittäminen käyttäjärooleineen ja -väitteineen. Väite on tieto käyttäjästä, kuten rooli tai käyttöoikeus, esimerkiksi "Admin" tai "User".
+- **JWT-todennus**: JSON Web Tokenien (JWT) käyttö turvalliseen API-pääsyyn. JWT on standardi tietojen turvalliseen siirtoon osapuolten välillä JSON-objektina, joka voidaan varmentaa ja johon voidaan luottaa, koska se on digitaalisesti allekirjoitettu.
 - **Valtuutuspolitiikat**: Politiikkojen määrittely, joilla hallitaan pääsyä tiettyihin työkaluihin käyttäjäroolien perusteella. MCP käyttää valtuutuspolitiikkoja määrittämään, ketkä käyttäjät pääsevät mihinkin työkaluihin rooliensa ja väitteidensä perusteella.
 
 ```csharp
@@ -111,10 +130,10 @@ public class SecureMcpStartup
 
 Edellisessä koodissa olemme:
 
-- Määrittäneet ASP.NET Core Identityn käyttäjähallintaa varten.
-- Ottaneet käyttöön JWT-todennuksen turvallista API-käyttöä varten. Määrittelimme tokenin validointiparametrit, kuten julkaisijan, vastaanottajan ja allekirjoitusavaimen.
-- Määrittäneet valtuutuspolitiikat työkalujen käyttöoikeuksien hallintaan käyttäjäroolien perusteella. Esimerkiksi "CanUseAdminTools" -politiikka vaatii käyttäjältä "Admin"-roolin, kun taas "CanUseBasic" -politiikka edellyttää käyttäjän olevan todennettu.
-- Rekisteröineet MCP-työkalut tietyillä valtuutusvaatimuksilla varmistaen, että vain oikeilla rooleilla varustetut käyttäjät pääsevät niihin käsiksi.
+- Konfiguroineet ASP.NET Core Identityn käyttäjähallintaa varten.
+- Määrittäneet JWT-todennuksen turvallista API-pääsyä varten. Määrittelimme tokenin validointiparametrit, kuten julkaisijan, vastaanottajan ja allekirjoitusavaimen.
+- Määritelleet valtuutuspolitiikat työkalujen käyttöoikeuksien hallintaan käyttäjäroolien perusteella. Esimerkiksi "CanUseAdminTools" -politiikka vaatii käyttäjältä "Admin"-roolin, kun taas "CanUseBasic" -politiikka edellyttää käyttäjän olevan todennettu.
+- Rekisteröineet MCP-työkaluja, joilla on erityiset valtuutusvaatimukset, varmistaen että vain oikeilla rooleilla varustetut käyttäjät pääsevät niihin käsiksi.
 
 ### Java Spring Security -integraatio
 
@@ -122,10 +141,10 @@ Javassa käytämme Spring Securityä toteuttamaan turvallisen todennuksen ja val
 
 Keskeiset käsitteet ovat:
 
-- **Spring Security -konfiguraatio**: Turvallisuusasetusten määrittäminen todennusta ja valtuutusta varten.
-- **OAuth2 Resource Server**: OAuth2:n käyttö MCP-työkalujen turvalliseen käyttöön. OAuth2 on valtuutuskehys, joka mahdollistaa kolmansien osapuolien vaihtavan käyttöoikeustokenit turvalliseen API-käyttöön.
-- **Turvallisuusinterseptorit**: Turvallisuusinterseptorien toteutus käyttöoikeuksien valvomiseksi työkalujen suorittamisessa.
-- **Roolipohjainen käyttöoikeuksien hallinta**: Roolien käyttö pääsyn hallintaan tiettyihin työkaluihin ja resursseihin.
+- **Spring Securityn konfigurointi**: Turvallisuusasetusten määrittäminen todennusta ja valtuutusta varten.
+- **OAuth2-resurssipalvelin**: OAuth2:n käyttö MCP-työkalujen turvalliseen käyttöön. OAuth2 on valtuutuskehys, joka mahdollistaa kolmansien osapuolien vaihtaa käyttöoikeustokeneita turvallista API-pääsyä varten.
+- **Turvallisuusinterseptorit**: Turvallisuusinterseptorien toteutus työkalujen käytön valvontaan.
+- **Roolipohjainen pääsynhallinta**: Roolien käyttö pääsyn rajoittamiseen tiettyihin työkaluihin ja resursseihin.
 - **Turvallisuusannotaatiot**: Annotaatiot metodien ja päätepisteiden suojaamiseen.
 
 ```java
@@ -180,18 +199,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Edellisessä koodissa olemme:
 
-- Määrittäneet Spring Securityn suojaamaan MCP-päätepisteitä, sallien julkisen pääsyn työkalujen löytämiseen, mutta vaadimme todennuksen työkalujen suorittamiseen.
+- Konfiguroineet Spring Securityn suojaamaan MCP-päätepisteitä, sallien julkisen pääsyn työkalujen löytämiseen, mutta vaativat todennuksen työkalujen suorittamiseen.
 - Käyttäneet OAuth2:ta resurssipalvelimena MCP-työkalujen turvallisen käytön hallintaan.
-- Toteuttaneet turvallisuusinterseptorin, joka valvoo käyttöoikeuksia työkalujen suorittamisessa tarkistamalla käyttäjäroolit ja -oikeudet ennen pääsyn myöntämistä tiettyihin työkaluihin.
-- Määrittäneet roolipohjaisen käyttöoikeuksien hallinnan rajoittamaan pääsyä ylläpitäjätyökaluihin ja arkaluonteisiin tietoihin käyttäjäroolien perusteella.
+- Toteuttaneet turvallisuusinterseptorin, joka valvoo pääsyä työkalujen suorittamiseen tarkistamalla käyttäjäroolit ja -oikeudet ennen pääsyn myöntämistä.
+- Määritelleet roolipohjaisen pääsynhallinnan rajoittamaan pääsyä ylläpitäjätyökaluihin ja arkaluontoisiin tietoihin käyttäjäroolien perusteella.
 
 ## Tietosuoja ja yksityisyys
 
-Tietosuoja on ratkaisevan tärkeää, jotta arkaluonteisia tietoja käsitellään turvallisesti. Tämä sisältää henkilötietojen (PII), taloustietojen ja muiden arkaluonteisten tietojen suojaamisen luvattomalta käytöltä ja tietomurroilta.
+Tietosuoja on ratkaisevan tärkeää arkaluontoisten tietojen turvallisessa käsittelyssä. Tämä koskee henkilötietoja (PII), taloustietoja ja muita arkaluontoisia tietoja, jotka on suojattava luvattomalta käytöltä ja tietomurroilta.
 
 ### Python-esimerkki tietosuojasta
 
-Tarkastellaan esimerkkiä tietosuojan toteuttamisesta Pythonilla salauksen ja PII-tunnistuksen avulla.
+Katsotaan esimerkki tietosuojan toteuttamisesta Pythonilla salauksen ja PII-tunnistuksen avulla.
 
 ```python
 from mcp_server import McpServer
@@ -330,13 +349,68 @@ class SecureCustomerDataTool(Tool):
 Edellisessä koodissa olemme:
 
 - Toteuttaneet `PiiDetector`-luokan, joka skannaa tekstiä ja parametreja henkilötietojen (PII) varalta.
-- Luoneet `EncryptionService`-luokan, joka hoitaa arkaluonteisten tietojen salauksen ja purkamisen käyttäen `cryptography`-kirjastoa.
-- Määrittäneet `secure_tool`-koristelijan, joka käärii työkalun suorituksen tarkistaen PII:n, kirjaa käytön ja salaa arkaluonteiset tiedot tarvittaessa.
-- Käyttäneet `secure_tool`-koristelijaa esimerkkityökalussa (`SecureCustomerDataTool`) varmistaaksemme, että se käsittelee arkaluonteiset tiedot turvallisesti.
+- Luoneet `EncryptionService`-luokan, joka hoitaa arkaluontoisten tietojen salauksen ja purun `cryptography`-kirjaston avulla.
+- Määritelleet `secure_tool`-koristelijan, joka käärii työkalun suorituksen tarkistaen PII:n, kirjaa käytön ja salaa arkaluontoiset tiedot tarvittaessa.
+- Käyttäneet `secure_tool`-koristelijaa esimerkkityökalussa (`SecureCustomerDataTool`) varmistaaksemme, että se käsittelee arkaluontoisia tietoja turvallisesti.
+
+## MCP-kohtaiset turvallisuusriskit
+
+Virallisen MCP-turvallisuusdokumentaation mukaan MCP-toteuttajien tulee olla tietoisia seuraavista erityisistä turvallisuusriskeistä:
+
+### 1. Confused Deputy -ongelma
+
+Tämä haavoittuvuus ilmenee, kun MCP-palvelin toimii välityspalvelimena kolmansien osapuolten API:ille, mikä voi antaa hyökkääjille mahdollisuuden hyödyntää MCP-palvelimen ja näiden API:iden välistä luottamussuhdetta.
+
+**Ehkäisy:**
+- MCP-välityspalvelimien, jotka käyttävät staattisia asiakastunnuksia, TÄYTYY hankkia käyttäjän suostumus jokaiselle dynaamisesti rekisteröidylle asiakkaalle ennen pyyntöjen välittämistä kolmannen osapuolen valtuutuspalvelimille.
+- Toteuta asianmukainen OAuth-prosessi PKCE:n (Proof Key for Code Exchange) kanssa valtuutuspyyntöihin.
+- Tarkista tiukasti uudelleenohjaus-URI:t ja asiakastunnukset.
+
+### 2. Token Passthrough -haavoittuvuudet
+
+Token passthrough tapahtuu, kun MCP-palvelin hyväksyy tokeneita MCP-asiakkaalta ilman, että se varmistaa, että tokenit on myönnetty oikein kyseiselle MCP-palvelimelle, ja välittää ne edelleen alaspäin oleville API:ille.
+
+### Riskit
+- Turvallisuusvalvonnan kiertäminen (esim. rajoitusten ja pyyntöjen validoinnin ohittaminen)
+- Vastuu- ja auditointiongelmat
+- Luottamusrajojen rikkominen
+- Tulevaisuuden yhteensopivuusongelmat
+
+**Ehkäisy:**
+- MCP-palvelimet EIVÄT SAA HYVÄKSYÄ mitään tokeneita, joita ei ole nimenomaisesti myönnetty kyseiselle MCP-palvelimelle.
+- Varmista aina tokenin vastaanottajaväitteiden (audience claims) vastaavuus odotettuun palveluun.
+
+### 3. Istunnon kaappaus
+
+Tämä tapahtuu, kun luvaton osapuoli saa haltuunsa istuntotunnuksen ja käyttää sitä esiintyäkseen alkuperäisenä asiakkaana, mikä voi johtaa luvattomiin toimiin.
+
+**Ehkäisy:**
+- MCP-palvelimet, jotka toteuttavat valtuutuksen, TÄYTYY tarkistaa kaikki saapuvat pyynnöt, eikä niiden tule käyttää istuntoja todennukseen.
+- Käytä turvallisia, ei-deterministisiä istuntotunnuksia, jotka on luotu turvallisilla satunnaislukugeneraattoreilla.
+- Sido istuntotunnukset käyttäjäkohtaisiin tietoihin esimerkiksi muodossa `<user_id>:<session_id>`.
+- Toteuta asianmukaiset istunnon vanhentumis- ja kierrätyskäytännöt.
+
+## Lisäturvallisuuden parhaat käytännöt MCP:lle
+
+Ydinturvallisuusnäkökohtien lisäksi harkitse seuraavia lisäkäytäntöjä:
+
+- **Käytä aina HTTPS-yhteyttä**: Salaa asiakas- ja palvelinvälinen liikenne suojataksesi tokeneita sieppaukselta.
+- **Toteuta roolipohjainen pääsynhallinta (RBAC)**: Älä pelkästään tarkista, onko käyttäjä todennettu, vaan myös mitä hän saa tehdä.
+- **Seuraa ja auditoi**: Kirjaa kaikki todennustapahtumat epäilyttävän toiminnan havaitsemiseksi ja siihen reagoimiseksi.
+- **Käsittele rajoitukset ja kuormituksen hallinta**: Toteuta eksponentiaalinen takaisinotto ja uudelleenyritykset rajoitusten hallintaan.
+- **Säilytä tokenit turvallisesti**: Tallenna käyttö- ja päivitystokenit turvallisesti järjestelmän suojausmekanismeilla tai avainhallintapalveluilla.
+- **Harkitse API-hallinnan käyttöä**: Palvelut kuten Azure API Management voivat hoitaa monia turvallisuusasioita automaattisesti, mukaan lukien todennus, valtuutus ja kuormituksen hallinta.
+
+## Viitteet
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## Mitä seuraavaksi
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
