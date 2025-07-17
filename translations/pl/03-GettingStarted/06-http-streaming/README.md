@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-13T20:37:56+00:00",
+  "original_hash": "40b1bbffdb8ce6812bf6e701cad876b6",
+  "translation_date": "2025-07-17T18:31:51+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "pl"
 }
 -->
 # HTTPS Streaming z Model Context Protocol (MCP)
 
-Ten rozdział zawiera kompleksowy przewodnik po implementacji bezpiecznego, skalowalnego i działającego w czasie rzeczywistym streamingu z użyciem Model Context Protocol (MCP) przez HTTPS. Omawia motywację do streamingu, dostępne mechanizmy transportu, jak zaimplementować streamowalny HTTP w MCP, najlepsze praktyki bezpieczeństwa, migrację z SSE oraz praktyczne wskazówki dotyczące tworzenia własnych aplikacji streamingowych MCP.
+Ten rozdział zawiera kompleksowy przewodnik po implementacji bezpiecznego, skalowalnego i działającego w czasie rzeczywistym streamingu z wykorzystaniem Model Context Protocol (MCP) przez HTTPS. Omawia motywację do streamingu, dostępne mechanizmy transportu, jak zaimplementować streamowalny HTTP w MCP, najlepsze praktyki bezpieczeństwa, migrację z SSE oraz praktyczne wskazówki dotyczące tworzenia własnych aplikacji streamingowych MCP.
 
 ## Mechanizmy transportu i streaming w MCP
 
-Ta sekcja bada różne mechanizmy transportu dostępne w MCP oraz ich rolę w umożliwianiu funkcji streamingu dla komunikacji w czasie rzeczywistym między klientami a serwerami.
+W tej sekcji przyjrzymy się różnym mechanizmmom transportu dostępnym w MCP oraz ich roli w umożliwianiu streamingu dla komunikacji w czasie rzeczywistym między klientami a serwerami.
 
 ### Czym jest mechanizm transportu?
 
-Mechanizm transportu definiuje, jak dane są wymieniane między klientem a serwerem. MCP obsługuje różne typy transportu, aby dopasować się do różnych środowisk i wymagań:
+Mechanizm transportu definiuje sposób wymiany danych między klientem a serwerem. MCP obsługuje różne typy transportu, aby dopasować się do różnych środowisk i wymagań:
 
-- **stdio**: Standardowe wejście/wyjście, odpowiednie dla narzędzi lokalnych i opartych na CLI. Proste, ale nie nadaje się do weba czy chmury.
+- **stdio**: Standardowe wejście/wyjście, odpowiednie dla narzędzi lokalnych i CLI. Proste, ale nie nadaje się do weba czy chmury.
 - **SSE (Server-Sent Events)**: Pozwala serwerom wysyłać aktualizacje w czasie rzeczywistym do klientów przez HTTP. Dobre dla interfejsów webowych, ale ograniczone pod względem skalowalności i elastyczności.
 - **Streamable HTTP**: Nowoczesny transport streamingowy oparty na HTTP, wspierający powiadomienia i lepszą skalowalność. Zalecany dla większości produkcyjnych i chmurowych zastosowań.
 
 ### Tabela porównawcza
 
-Spójrz na poniższą tabelę porównawczą, aby zrozumieć różnice między tymi mechanizmami transportu:
+Spójrz na poniższą tabelę, aby zrozumieć różnice między tymi mechanizmami transportu:
 
 | Transport         | Aktualizacje w czasie rzeczywistym | Streaming | Skalowalność | Przypadek użycia          |
 |-------------------|------------------------------------|-----------|--------------|---------------------------|
@@ -35,7 +35,7 @@ Spójrz na poniższą tabelę porównawczą, aby zrozumieć różnice między ty
 
 > **Tip:** Wybór odpowiedniego transportu wpływa na wydajność, skalowalność i doświadczenie użytkownika. **Streamable HTTP** jest zalecany dla nowoczesnych, skalowalnych i gotowych na chmurę aplikacji.
 
-Zwróć uwagę na transporty stdio i SSE, które poznawałeś w poprzednich rozdziałach oraz na to, że streamowalny HTTP jest transportem omawianym w tym rozdziale.
+Zwróć uwagę na transporty stdio i SSE, które poznawałeś w poprzednich rozdziałach oraz na to, że streamowalny HTTP jest tematem tego rozdziału.
 
 ## Streaming: koncepcje i motywacja
 
@@ -58,19 +58,18 @@ Oto, co warto wiedzieć o streamingu na wysokim poziomie:
 Powody stosowania streamingu to:
 
 - Użytkownicy otrzymują natychmiastową informację zwrotną, nie tylko na końcu.
-- Umożliwia aplikacje działające w czasie rzeczywistym i responsywne UI.
-- Bardziej efektywne wykorzystanie zasobów sieci i obliczeniowych.
+- Umożliwia aplikacje w czasie rzeczywistym i responsywne UI.
+- Bardziej efektywne wykorzystanie zasobów sieci i obliczeń.
 
-### Prosty przykład: serwer i klient HTTP streaming
+### Prosty przykład: serwer i klient HTTP streamingowy
 
 Oto prosty przykład implementacji streamingu:
 
-<details>
-<summary>Python</summary>
+## Python
 
 **Serwer (Python, używając FastAPI i StreamingResponse):**
-<details>
-<summary>Python</summary>
+
+### Python
 
 ```python
 from fastapi import FastAPI
@@ -89,11 +88,10 @@ def stream():
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 ```
 
-</details>
 
 **Klient (Python, używając requests):**
-<details>
-<summary>Python</summary>
+
+### Python
 
 ```python
 import requests
@@ -104,7 +102,6 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
             print(line.decode())
 ```
 
-</details>
 
 Ten przykład pokazuje serwer wysyłający serię wiadomości do klienta w miarę ich dostępności, zamiast czekać na wszystkie wiadomości.
 
@@ -117,10 +114,7 @@ Ten przykład pokazuje serwer wysyłający serię wiadomości do klienta w miar�
 - Klient musi przetwarzać odpowiedź jako strumień (`stream=True` w requests).
 - Content-Type to zwykle `text/event-stream` lub `application/octet-stream`.
 
-</details>
-
-<details>
-<summary>Java</summary>
+## Java
 
 **Serwer (Java, używając Spring Boot i Server-Sent Events):**
 
@@ -192,16 +186,15 @@ public class CalculatorClientApplication implements CommandLineRunner {
 - `delayElements()` symuluje czas przetwarzania między zdarzeniami
 - Zdarzenia mogą mieć typy (`info`, `result`) dla lepszej obsługi po stronie klienta
 
-</details>
 
 ### Porównanie: klasyczny streaming vs streaming MCP
 
 Różnice między klasycznym streamingiem a streamingiem w MCP można przedstawić tak:
 
-| Cecha                  | Klasyczny HTTP Streaming         | MCP Streaming (Powiadomienia)      |
-|------------------------|---------------------------------|-----------------------------------|
-| Główna odpowiedź       | Podzielona na fragmenty          | Jedna, na końcu                   |
-| Aktualizacje postępu   | Wysyłane jako fragmenty danych   | Wysyłane jako powiadomienia       |
+| Cecha                  | Klasyczny HTTP Streaming         | Streaming MCP (Powiadomienia)     |
+|------------------------|---------------------------------|----------------------------------|
+| Główna odpowiedź       | Podzielona na fragmenty          | Pojedyncza, na końcu             |
+| Aktualizacje postępu   | Wysyłane jako fragmenty danych   | Wysyłane jako powiadomienia      |
 | Wymagania klienta      | Musi przetwarzać strumień        | Musi implementować handler wiadomości |
 | Przypadek użycia       | Duże pliki, strumienie tokenów AI| Postęp, logi, informacje w czasie rzeczywistym |
 
@@ -211,7 +204,7 @@ Dodatkowo, oto kilka kluczowych różnic:
 
 - **Wzorzec komunikacji:**
    - Klasyczny HTTP streaming: używa prostego kodowania transferu chunked do wysyłania danych w kawałkach
-   - MCP streaming: używa strukturalnego systemu powiadomień z protokołem JSON-RPC
+   - Streaming MCP: używa strukturalnego systemu powiadomień z protokołem JSON-RPC
 
 - **Format wiadomości:**
    - Klasyczny HTTP: zwykły tekst z podziałem na linie
@@ -227,7 +220,7 @@ Dodatkowo, oto kilka kluczowych różnic:
 
 ### Rekomendacje
 
-Oto kilka zaleceń dotyczących wyboru między klasycznym streamingiem (jako endpoint pokazany powyżej pod `/stream`) a streamingiem przez MCP:
+Oto kilka zaleceń dotyczących wyboru między klasycznym streamingiem (endpoint `/stream` pokazany powyżej) a streamingiem przez MCP:
 
 - **Dla prostych potrzeb streamingowych:** Klasyczny HTTP streaming jest łatwiejszy do implementacji i wystarczający dla podstawowych zastosowań.
 
@@ -239,7 +232,7 @@ Oto kilka zaleceń dotyczących wyboru między klasycznym streamingiem (jako end
 
 Widziałeś już rekomendacje i porównania dotyczące różnic między klasycznym streamingiem a streamingiem w MCP. Teraz przejdźmy do szczegółów, jak dokładnie możesz wykorzystać streaming w MCP.
 
-Zrozumienie, jak streaming działa w ramach MCP, jest kluczowe do budowania responsywnych aplikacji, które dostarczają użytkownikom informacje zwrotne w czasie rzeczywistym podczas długotrwałych operacji.
+Zrozumienie, jak działa streaming w ramach MCP, jest kluczowe do budowania responsywnych aplikacji, które dostarczają użytkownikom informacje zwrotne w czasie rzeczywistym podczas długotrwałych operacji.
 
 W MCP streaming nie polega na wysyłaniu głównej odpowiedzi w kawałkach, lecz na wysyłaniu **powiadomień** do klienta podczas przetwarzania żądania przez narzędzie. Powiadomienia mogą zawierać aktualizacje postępu, logi lub inne zdarzenia.
 
@@ -249,11 +242,11 @@ Główny wynik jest nadal wysyłany jako pojedyncza odpowiedź. Jednak powiadomi
 
 ## Czym jest powiadomienie?
 
-Powiedzieliśmy „Powiadomienie” – co to oznacza w kontekście MCP?
+Mówiliśmy o "powiadomieniu" – co to oznacza w kontekście MCP?
 
 Powiadomienie to wiadomość wysyłana z serwera do klienta, informująca o postępie, statusie lub innych zdarzeniach podczas długotrwałej operacji. Powiadomienia zwiększają przejrzystość i poprawiają doświadczenie użytkownika.
 
-Na przykład klient powinien wysłać powiadomienie, gdy zostanie nawiązane początkowe połączenie z serwerem.
+Na przykład klient powinien wysłać powiadomienie po nawiązaniu początkowego połączenia z serwerem.
 
 Powiadomienie wygląda tak jako wiadomość JSON:
 
@@ -284,30 +277,27 @@ Aby włączyć logowanie, serwer musi aktywować tę funkcję/możliwość w nas
 
 Istnieją różne typy powiadomień:
 
-| Poziom     | Opis                           | Przykładowe zastosowanie        |
-|------------|--------------------------------|--------------------------------|
+| Poziom     | Opis                          | Przykładowe zastosowanie        |
+|------------|-------------------------------|--------------------------------|
 | debug      | Szczegółowe informacje debugowania | Punkty wejścia/wyjścia funkcji |
-| info       | Ogólne komunikaty informacyjne | Aktualizacje postępu operacji   |
-| notice     | Normalne, ale istotne zdarzenia | Zmiany konfiguracji             |
-| warning    | Warunki ostrzegawcze           | Użycie przestarzałej funkcji    |
-| error      | Warunki błędów                | Niepowodzenia operacji          |
-| critical   | Warunki krytyczne             | Awaria komponentu systemu       |
-| alert      | Konieczność natychmiastowego działania | Wykryto uszkodzenie danych    |
-| emergency  | System jest nieużyteczny       | Całkowita awaria systemu        |
+| info       | Ogólne komunikaty informacyjne | Aktualizacje postępu operacji  |
+| notice     | Normalne, ale istotne zdarzenia | Zmiany konfiguracji            |
+| warning    | Warunki ostrzegawcze           | Użycie przestarzałej funkcji   |
+| error      | Warunki błędów                 | Niepowodzenia operacji         |
+| critical   | Warunki krytyczne              | Awaria komponentu systemu      |
+| alert      | Konieczność natychmiastowego działania | Wykryto uszkodzenie danych   |
+| emergency  | System jest nieużyteczny       | Całkowita awaria systemu       |
+
 
 ## Implementacja powiadomień w MCP
 
-Aby zaimplementować powiadomienia w MCP, musisz skonfigurować zarówno serwer, jak i klienta do obsługi aktualizacji w czasie rzeczywistym. Pozwala to Twojej aplikacji na dostarczanie natychmiastowej informacji zwrotnej użytkownikom podczas długotrwałych operacji.
+Aby zaimplementować powiadomienia w MCP, musisz skonfigurować zarówno serwer, jak i klienta do obsługi aktualizacji w czasie rzeczywistym. Pozwala to Twojej aplikacji na natychmiastowe informowanie użytkowników podczas długotrwałych operacji.
 
 ### Po stronie serwera: wysyłanie powiadomień
 
 Zacznijmy od strony serwera. W MCP definiujesz narzędzia, które mogą wysyłać powiadomienia podczas przetwarzania żądań. Serwer używa obiektu kontekstu (zwykle `ctx`), aby wysyłać wiadomości do klienta.
 
-<details>
-<summary>Python</summary>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -320,18 +310,13 @@ async def process_files(message: str, ctx: Context) -> TextContent:
 
 W powyższym przykładzie narzędzie `process_files` wysyła trzy powiadomienia do klienta podczas przetwarzania każdego pliku. Metoda `ctx.info()` służy do wysyłania komunikatów informacyjnych.
 
-</details>
-
 Dodatkowo, aby włączyć powiadomienia, upewnij się, że Twój serwer używa transportu streamingowego (np. `streamable-http`), a klient implementuje handler wiadomości do obsługi powiadomień. Oto jak skonfigurować serwer do używania transportu `streamable-http`:
 
 ```python
 mcp.run(transport="streamable-http")
 ```
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 [Tool("A tool that sends progress notifications")]
@@ -360,14 +345,11 @@ await builder
     .RunAsync();
 ```
 
-</details>
-
 ### Po stronie klienta: odbieranie powiadomień
 
 Klient musi zaimplementować handler wiadomości, który będzie przetwarzał i wyświetlał powiadomienia w momencie ich nadejścia.
 
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 async def message_handler(message):
@@ -386,10 +368,7 @@ async with ClientSession(
 
 W powyższym kodzie funkcja `message_handler` sprawdza, czy nadchodząca wiadomość jest powiadomieniem. Jeśli tak, wypisuje powiadomienie; w przeciwnym razie przetwarza je jako zwykłą wiadomość serwera. Zwróć też uwagę, że `ClientSession` jest inicjalizowana z `message_handler`, aby obsługiwać przychodzące powiadomienia.
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 // Define a message handler
@@ -420,8 +399,6 @@ await client.InitializeAsync();
 
 W tym przykładzie .NET funkcja `MessageHandler` sprawdza, czy nadchodząca wiadomość jest powiadomieniem. Jeśli tak, wypisuje powiadomienie; w przeciwnym razie przetwarza je jako zwykłą wiadomość serwera. `ClientSession` jest inicjalizowana z handlerem wiadomości przez `ClientSessionOptions`.
 
-</details>
-
 Aby włączyć powiadomienia, upewnij się, że Twój serwer używa transportu streamingowego (np. `streamable-http`), a klient implementuje handler wiadomości do obsługi powiadomień.
 
 ## Powiadomienia o postępie i scenariusze
@@ -446,19 +423,19 @@ Powiadomienia o postępie to wiadomości wysyłane w czasie rzeczywistym z serwe
 Powiadomienia o postępie są ważne z kilku powodów:
 
 - **Lepsze doświadczenie użytkownika:** Użytkownicy widzą aktualizacje w trakcie pracy, a nie tylko na końcu.
-- **Informacja zwrotna w czasie rzeczywistym:** Klienci mogą wyświetlać paski postępu lub logi, co sprawia, że aplikacja wydaje się bardziej responsywna.
-- **Łatwiejsze debugowanie i monitorowanie:** Deweloperzy i użytkownicy mogą zobaczyć, gdzie proces może być wolny lub zablokowany.
+- **Informacja zwrotna w czasie rzeczywistym:** Klient może wyświetlać paski postępu lub logi, co sprawia, że aplikacja jest bardziej responsywna.
+- **Łatwiejsze debugowanie i monitorowanie:** Deweloperzy i użytkownicy mogą zobaczyć, gdzie proces może się opóźniać lub utknąć.
 
 ### Jak zaimplementować powiadomienia o postępie
 
 Oto jak możesz zaimplementować powiadomienia o postępie w MCP:
 
-- **Po stronie serwera:** Używaj `ctx.info()` lub `ctx.log()`, aby wysyłać powiadomienia podczas przetwarzania każdego elementu. Wysyła to wiadomość do klienta przed gotowym wynikiem głównym.
-- **Po stronie klienta:** Zaimplementuj handler wiadomości, który nasłuchuje i wyświetla powiadomienia w momencie ich nadejścia. Handler rozróżnia powiadomienia od wyniku końcowego.
+- **Po stronie serwera:** Używaj `ctx.info()` lub `ctx.log()`, aby wysyłać powiadomienia podczas przetwarzania każdego elementu. Wysyła to wiadomość do klienta przed gotowym wynikiem.
+- **Po stronie klienta:** Zaimplementuj handler wiadomości, który nasłuchuje i wyświetla powiadomienia w momencie ich nadejścia. Handler rozróżnia powiadomienia i wynik końcowy.
 
 **Przykład serwera:**
 
-<summary>Python</summary>
+## Python
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -469,12 +446,10 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-</details>
 
 **Przykład klienta:**
 
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 async def message_handler(message):
@@ -484,47 +459,30 @@ async def message_handler(message):
         print("SERVER MESSAGE:", message)
 ```
 
-</details>
 
-## Rozważania dotyczące bezpieczeństwa
+## Aspekty bezpieczeństwa
 
-Podczas implementacji serwerów MCP z wykorzystaniem transportów opartych na HTTP, bezpieczeństwo staje się kluczową kwestią, wymagającą uwagi na różne wektory ataków oraz mechanizmy ochronne.
+Podczas implementacji serwerów MCP z transportami opartymi na HTTP, bezpieczeństwo staje się kluczową kwestią wymagającą uwagi na wiele wektorów ataku i mechanizmów ochronnych.
 
 ### Przegląd
 
-Bezpieczeństwo jest niezwykle ważne przy udostępnianiu serwerów MCP przez HTTP. Streamable HTTP wprowadza nowe powierzchnie ataku i wymaga starannej konfiguracji.
+Bezpieczeństwo jest krytyczne przy udostępnianiu serwerów MCP przez HTTP. Streamable HTTP wprowadza nowe powierzchnie ataku i wymaga starannej konfiguracji.
 
 ### Kluczowe punkty
-- **Walidacja nagłówka Origin**: Zawsze sprawdzaj nagłówek `Origin`, aby zapobiec atakom DNS rebinding.
-- **Powiązanie z localhost**: Podczas lokalnego rozwoju wiąż serwery z `localhost`, aby nie wystawiać ich na publiczny internet.
+- **Walidacja nagłówka Origin**: Zawsze weryfikuj nagłówek `Origin`, aby zapobiec atakom DNS rebinding.
+- **Więzywanie do localhost**: Podczas lokalnego rozwoju wiąż serwery do `localhost`, aby nie były dostępne publicznie.
 - **Uwierzytelnianie**: Wdrażaj uwierzytelnianie (np. klucze API, OAuth) w środowiskach produkcyjnych.
-- **CORS**: Konfiguruj polityki Cross-Origin Resource Sharing (CORS), aby ograniczyć dostęp.
-- **HTTPS**: W środowisku produkcyjnym korzystaj z HTTPS, aby szyfrować ruch.
-
-### Najlepsze praktyki
-- Nigdy nie ufaj przychodzącym żądaniom bez ich weryfikacji.
-- Loguj i monitoruj wszystkie dostępy oraz błędy.
-- Regularnie aktualizuj zależności, aby załatać luki bezpieczeństwa.
-
-### Wyzwania
-- Zachowanie równowagi między bezpieczeństwem a łatwością rozwoju
-- Zapewnienie kompatybilności z różnymi środowiskami klienckimi
-
-
-## Aktualizacja z SSE do Streamable HTTP
-
-Dla aplikacji korzystających obecnie z Server-Sent Events (SSE), migracja do Streamable HTTP oferuje rozszerzone możliwości i lepszą długoterminową stabilność implementacji MCP.
 
 ### Dlaczego warto zaktualizować?
 
-Istnieją dwa główne powody, aby przejść z SSE na Streamable HTTP:
+Istnieją dwa ważne powody, aby przejść z SSE na Streamable HTTP:
 
-- Streamable HTTP zapewnia lepszą skalowalność, kompatybilność oraz bogatsze wsparcie powiadomień niż SSE.
-- Jest to rekomendowany transport dla nowych aplikacji MCP.
+- Streamable HTTP oferuje lepszą skalowalność, kompatybilność oraz bogatsze wsparcie powiadomień niż SSE.
+- Jest to zalecany transport dla nowych aplikacji MCP.
 
 ### Kroki migracji
 
-Oto jak możesz przeprowadzić migrację z SSE do Streamable HTTP w swoich aplikacjach MCP:
+Oto jak możesz przeprowadzić migrację z SSE na Streamable HTTP w swoich aplikacjach MCP:
 
 - **Zaktualizuj kod serwera**, aby używał `transport="streamable-http"` w `mcp.run()`.
 - **Zaktualizuj kod klienta**, aby korzystał z `streamablehttp_client` zamiast klienta SSE.
@@ -540,60 +498,60 @@ Zaleca się utrzymanie kompatybilności z istniejącymi klientami SSE podczas mi
 
 ### Wyzwania
 
-Podczas migracji zwróć uwagę na następujące kwestie:
+Podczas migracji zwróć uwagę na następujące wyzwania:
 
-- Upewnienie się, że wszyscy klienci zostali zaktualizowani
+- Zapewnienie aktualizacji wszystkich klientów
 - Radzenie sobie z różnicami w dostarczaniu powiadomień
 
-## Rozważania dotyczące bezpieczeństwa
+## Aspekty bezpieczeństwa
 
-Bezpieczeństwo powinno być priorytetem przy implementacji każdego serwera, zwłaszcza gdy używa się transportów HTTP, takich jak Streamable HTTP w MCP.
+Bezpieczeństwo powinno być priorytetem przy implementacji każdego serwera, zwłaszcza gdy używa się transportów opartych na HTTP, takich jak Streamable HTTP w MCP.
 
-Podczas implementacji serwerów MCP z transportami opartymi na HTTP, bezpieczeństwo staje się kluczową kwestią, wymagającą uwagi na różne wektory ataków oraz mechanizmy ochronne.
+Podczas implementacji serwerów MCP z transportami HTTP bezpieczeństwo staje się kluczową kwestią, wymagającą uwagi na różne wektory ataków i mechanizmy ochronne.
 
 ### Przegląd
 
-Bezpieczeństwo jest niezwykle ważne przy udostępnianiu serwerów MCP przez HTTP. Streamable HTTP wprowadza nowe powierzchnie ataku i wymaga starannej konfiguracji.
+Bezpieczeństwo jest kluczowe przy udostępnianiu serwerów MCP przez HTTP. Streamable HTTP wprowadza nowe powierzchnie ataku i wymaga starannej konfiguracji.
 
-Oto kilka kluczowych kwestii dotyczących bezpieczeństwa:
+Oto najważniejsze kwestie związane z bezpieczeństwem:
 
-- **Walidacja nagłówka Origin**: Zawsze sprawdzaj nagłówek `Origin`, aby zapobiec atakom DNS rebinding.
-- **Powiązanie z localhost**: Podczas lokalnego rozwoju wiąż serwery z `localhost`, aby nie wystawiać ich na publiczny internet.
+- **Weryfikacja nagłówka Origin**: Zawsze sprawdzaj nagłówek `Origin`, aby zapobiec atakom DNS rebinding.
+- **Powiązanie z localhost**: Podczas lokalnego rozwoju wiąż serwery z `localhost`, aby nie były dostępne publicznie.
 - **Uwierzytelnianie**: Wdrażaj uwierzytelnianie (np. klucze API, OAuth) w środowiskach produkcyjnych.
 - **CORS**: Konfiguruj polityki Cross-Origin Resource Sharing (CORS), aby ograniczyć dostęp.
-- **HTTPS**: W środowisku produkcyjnym korzystaj z HTTPS, aby szyfrować ruch.
+- **HTTPS**: W środowisku produkcyjnym korzystaj z HTTPS do szyfrowania ruchu.
 
 ### Najlepsze praktyki
 
-Dodatkowo, oto kilka najlepszych praktyk przy implementacji zabezpieczeń w serwerze streamingowym MCP:
+Dodatkowo, oto kilka najlepszych praktyk przy implementacji bezpieczeństwa w serwerze streamingowym MCP:
 
-- Nigdy nie ufaj przychodzącym żądaniom bez ich weryfikacji.
+- Nigdy nie ufaj przychodzącym żądaniom bez weryfikacji.
 - Loguj i monitoruj wszystkie dostępy oraz błędy.
 - Regularnie aktualizuj zależności, aby załatać luki bezpieczeństwa.
 
 ### Wyzwania
 
-Podczas implementacji zabezpieczeń w serwerach streamingowych MCP napotkasz następujące wyzwania:
+Podczas wdrażania bezpieczeństwa w serwerach streamingowych MCP napotkasz następujące wyzwania:
 
 - Zachowanie równowagi między bezpieczeństwem a łatwością rozwoju
-- Zapewnienie kompatybilności z różnymi środowiskami klienckimi
+- Zapewnienie kompatybilności z różnymi środowiskami klientów
 
 ### Zadanie: Zbuduj własną aplikację streamingową MCP
 
-**Scenariusz:**
-Zbuduj serwer i klienta MCP, gdzie serwer przetwarza listę elementów (np. plików lub dokumentów) i wysyła powiadomienie dla każdego przetworzonego elementu. Klient powinien wyświetlać każde powiadomienie w momencie jego nadejścia.
+**Scenariusz:**  
+Zbuduj serwer i klient MCP, gdzie serwer przetwarza listę elementów (np. plików lub dokumentów) i wysyła powiadomienie dla każdego przetworzonego elementu. Klient powinien wyświetlać każde powiadomienie w momencie jego nadejścia.
 
 **Kroki:**
 
 1. Zaimplementuj narzędzie serwerowe, które przetwarza listę i wysyła powiadomienia dla każdego elementu.
-2. Zaimplementuj klienta z obsługą wiadomości, który wyświetla powiadomienia w czasie rzeczywistym.
-3. Przetestuj swoją implementację, uruchamiając serwer i klienta oraz obserwując powiadomienia.
+2. Zaimplementuj klienta z obsługą wiadomości, który wyświetla powiadomienia na żywo.
+3. Przetestuj implementację, uruchamiając serwer i klienta, i obserwuj powiadomienia.
 
 [Solution](./solution/README.md)
 
 ## Dalsza lektura i co dalej?
 
-Aby kontynuować naukę MCP streaming i poszerzyć swoją wiedzę, ta sekcja zawiera dodatkowe zasoby oraz sugestie kolejnych kroków do budowy bardziej zaawansowanych aplikacji.
+Aby kontynuować naukę o streamingu MCP i poszerzyć wiedzę, ta sekcja zawiera dodatkowe materiały oraz sugestie kolejnych kroków do tworzenia bardziej zaawansowanych aplikacji.
 
 ### Dalsza lektura
 
@@ -604,9 +562,9 @@ Aby kontynuować naukę MCP streaming i poszerzyć swoją wiedzę, ta sekcja zaw
 
 ### Co dalej?
 
-- Spróbuj zbudować bardziej zaawansowane narzędzia MCP wykorzystujące streaming do analiz w czasie rzeczywistym, czatu lub edycji współdzielonej.
-- Zbadaj integrację MCP streaming z frameworkami frontendowymi (React, Vue itp.) dla aktualizacji UI na żywo.
+- Spróbuj zbudować bardziej zaawansowane narzędzia MCP wykorzystujące streaming do analiz w czasie rzeczywistym, czatu lub współdzielonej edycji.
+- Zbadaj integrację streamingu MCP z frameworkami frontendowymi (React, Vue itp.) dla aktualizacji UI na żywo.
 - Następny temat: [Utilising AI Toolkit for VSCode](../07-aitk/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

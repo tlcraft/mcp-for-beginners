@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T10:14:47+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T19:11:56+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sw"
 }
 -->
 # SSE Server
 
-SSE (Server Sent Events) ni kiwango cha usambazaji wa data kutoka kwa seva kwenda kwa mteja, kinachowezesha seva kusukuma masasisho ya wakati halisi kwa wateja kupitia HTTP. Hii ni muhimu hasa kwa programu zinazohitaji masasisho ya moja kwa moja, kama vile programu za mazungumzo, arifa, au vyanzo vya data vya wakati halisi. Pia, seva yako inaweza kutumika na wateja wengi kwa wakati mmoja kwani inaishi kwenye seva inayoweza kuendeshwa mahali popote, kwa mfano katika wingu.
+SSE (Server Sent Events) ni kiwango cha kusambaza data kutoka kwa server kwenda kwa mteja, kinachowezesha server kusukuma masasisho ya wakati halisi kwa wateja kupitia HTTP. Hii ni muhimu hasa kwa programu zinazohitaji masasisho ya moja kwa moja, kama vile programu za mazungumzo, arifa, au vyanzo vya data vya wakati halisi. Pia, server yako inaweza kutumika na wateja wengi kwa wakati mmoja kwani inaishi kwenye server inayoweza kuendeshwa mahali popote, kwa mfano kwenye wingu.
 
 ## Muhtasari
 
@@ -25,10 +25,10 @@ Mwisho wa somo hili, utaweza:
 
 ## SSE, jinsi inavyofanya kazi
 
-SSE ni mojawapo ya aina mbili za usafirishaji zinazotegemewa. Tayari umeona aina ya kwanza stdio ikitumika katika masomo yaliyopita. Tofauti ni kama ifuatavyo:
+SSE ni mojawapo ya aina mbili za usafirishaji zinazotumika. Tayari umeona aina ya kwanza stdio ikitumika katika masomo yaliyopita. Tofauti ni kama ifuatavyo:
 
 - SSE inahitaji kushughulikia mambo mawili; muunganisho na ujumbe.
-- Kwa kuwa hii ni seva inayoweza kuishi mahali popote, unahitaji hilo liakisi jinsi unavyofanya kazi na zana kama Inspector na Visual Studio Code. Hii inamaanisha badala ya kuelekeza jinsi ya kuanzisha seva, unalenga sehemu ya mwisho (endpoint) ambapo inaweza kuanzisha muunganisho. Angalia mfano wa msimbo hapa chini:
+- Kwa kuwa hii ni server inayoweza kuishi mahali popote, unahitaji hilo liakisi jinsi unavyofanya kazi na zana kama Inspector na Visual Studio Code. Hii inamaanisha badala ya kuelekeza jinsi ya kuanzisha server, unalenga kwenye sehemu ya mwisho (endpoint) ambapo muunganisho unaweza kuanzishwa. Angalia mfano wa msimbo hapa chini:
 
 ### TypeScript
 
@@ -55,7 +55,7 @@ app.post("/messages", async (req: Request, res: Response) => {
 
 Katika msimbo uliotangulia:
 
-- `/sse` imewekwa kama njia (route). Wakati ombi linapotumwa kwenye njia hii, mfano mpya wa usafirishaji huundwa na seva *inaunganishwa* kwa kutumia usafirishaji huu.
+- `/sse` imewekwa kama njia (route). Wakati ombi linapotumwa kwenye njia hii, mfano mpya wa usafirishaji huundwa na server *inaunganishwa* kwa kutumia usafirishaji huu
 - `/messages`, hii ni njia inayoshughulikia ujumbe unaoingia.
 
 ### Python
@@ -77,11 +77,11 @@ app = Starlette(
 
 ```
 
-Katika msimbo uliotangulia tumefanya:
+Katika msimbo uliotangulia tunafanya:
 
-- Kuunda mfano wa seva ya ASGI (tukitumia Starlette hasa) na kuweka njia ya kawaida `/`
+- Kuunda mfano wa server ya ASGI (kutumia Starletter hasa) na kuweka njia ya msingi `/`
 
-  Kinachotokea nyuma ya pazia ni kwamba njia `/sse` na `/messages` zimewekwa kushughulikia miunganisho na ujumbe mtawalia. Sehemu nyingine za programu, kama kuongeza vipengele kama zana, hufanyika kama ilivyo kwa seva za stdio.
+  Kinachotokea nyuma ya pazia ni kwamba njia `/sse` na `/messages` zimewekwa kushughulikia muunganisho na ujumbe mtawalia. Sehemu nyingine za programu, kama kuongeza vipengele kama zana, hufanyika kama ilivyo kwa server za stdio.
 
 ### .NET    
 
@@ -99,23 +99,24 @@ Katika msimbo uliotangulia tumefanya:
     app.MapMcp();
     ```
 
-    Kuna njia mbili zinazotusaidia kutoka kwa seva ya wavuti hadi seva ya wavuti inayounga mkono SSE na hizo ni:
+    Kuna njia mbili zinazotusaidia kutoka kwa server ya wavuti hadi server inayounga mkono SSE na hizo ni:
 
     - `AddMcpServer`, njia hii huongeza uwezo.
     - `MapMcp`, hii huongeza njia kama `/SSE` na `/messages`.
+```
 
-Sasa tunapojua kidogo zaidi kuhusu SSE, hebu tujenge seva ya SSE.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Zoef: Kuunda SSE Server
+## Exercise: Creating an SSE Server
 
-Ili kuunda seva yetu, tunapaswa kuzingatia mambo mawili:
+To create our server, we need to keep two things in mind:
 
-- Tunahitaji kutumia seva ya wavuti kufungua sehemu za mwisho kwa muunganisho na ujumbe.
-- Kujenga seva yetu kama kawaida tunavyofanya kwa kutumia zana, rasilimali na maelekezo tulipokuwa tunatumia stdio.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Unda mfano wa seva
+### -1- Create a server instance
 
-Ili kuunda seva yetu, tunatumia aina zile zile kama stdio. Hata hivyo, kwa usafirishaji, tunapaswa kuchagua SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-Katika msimbo uliotangulia tumefanya:
+In the preceding code we've:
 
-- Kuunda mfano wa seva.
-- Kueleza app kwa kutumia fremu ya wavuti express.
-- Kuunda variable ya transports ambayo tutatumia kuhifadhi miunganisho inayokuja.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-Katika msimbo uliotangulia tumefanya:
+In the preceding code we've:
 
-- Kuleta maktaba tunazohitaji na Starlette (fremu ya ASGI) imeingizwa.
-- Kuunda mfano wa seva ya MCP `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-Hadi sasa, tumefanya:
+At this point, we've:
 
-- Kuunda app ya wavuti
-- Kuongeza msaada kwa vipengele vya MCP kupitia `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Hebu tuongeze njia zinazohitajika sasa.
+Let's add the needed routes next.
 
-### -2- Ongeza njia
+### -2- Add routes
 
-Hebu tuongeze njia zinazoshughulikia muunganisho na ujumbe unaoingia:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-Katika msimbo uliotangulia tumeeleza:
+In the preceding code we've defined:
 
-- Njia `/sse` inayounda usafirishaji wa aina SSE na hatimaye kuita `connect` kwenye seva ya MCP.
-- Njia `/messages` inayoshughulikia ujumbe unaoingia.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-Katika msimbo uliotangulia tumefanya:
+In the preceding code we've:
 
-- Kuunda mfano wa app ya ASGI kwa kutumia fremu ya Starlette. Kama sehemu ya hilo tumeipatia `mcp.sse_app()` kwenye orodha ya njia zake. Hii husababisha kuwekwa kwa njia `/sse` na `/messages` kwenye mfano wa app.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Tumeongeza mstari mmoja wa msimbo mwishoni `add.MapMcp()` hii inamaanisha sasa tuna njia `/SSE` na `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Hebu tuongeze uwezo kwa seva sasa.
+Let's add capabilties to the server next.
 
-### -3- Kuongeza uwezo wa seva
+### -3- Adding server capabilities
 
-Sasa tunapokuwa tumefafanua kila kitu maalum cha SSE, hebu tuongeze uwezo wa seva kama zana, maelekezo na rasilimali.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Hivi ndivyo unavyoweza kuongeza zana kwa mfano. Zana hii maalum huunda zana iitwayo "random-joke" inayopiga API ya Chuck Norris na kurudisha jibu la JSON.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Sasa seva yako ina zana moja.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Hebu tuunde zana kwanza, kwa hili tutaunda faili *Tools.cs* yenye maudhui yafuatayo:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Hapa tumeongeza yafuatayo:
+  Here we've added the following:
 
-  - Kuunda darasa `Tools` lenye dekoreta `McpServerToolType`.
-  - Kueleza zana `AddNumbers` kwa kupamba njia na `McpServerTool`. Pia tumeweka vigezo na utekelezaji.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Hebu tumie darasa `Tools` tulilounda hivi karibuni:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Tumeongeza wito wa `WithTools` unaoeleza `Tools` kama darasa lenye zana. Hiyo ni yote, tuko tayari.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Nzuri, tuna seva inayotumia SSE, hebu tujaribu sasa.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Zoef: Kutatua matatizo ya SSE Server kwa Inspector
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector ni zana nzuri tuliyoiona katika somo lililopita [Creating your first server](/03-GettingStarted/01-first-server/README.md). Hebu tuone kama tunaweza kuitumia Inspector hapa pia:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Kuendesha inspector
+### -1- Running the inspector
 
-Ili kuendesha inspector, kwanza lazima seva ya SSE iwe inafanya kazi, basi tufanye hivyo sasa:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Endesha seva
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Ili kuendesha inspector, kwanza lazima seva ya SSE iwe inafanya kazi, basi tufan
     uvicorn server:app
     ```
 
-    Angalia jinsi tunavyotumia executable `uvicorn` inayosakinishwa tulipotumia `pip install "mcp[cli]"`. Kuandika `server:app` inamaanisha tunajaribu kuendesha faili `server.py` na kuwa na mfano wa Starlette uitwao `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,42 +447,42 @@ Ili kuendesha inspector, kwanza lazima seva ya SSE iwe inafanya kazi, basi tufan
     dotnet run
     ```
 
-    Hii inapaswa kuanzisha seva. Ili kuingiliana nayo unahitaji terminal mpya.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Endesha inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Endesha hii katika dirisha tofauti la terminal tofauti na ile seva inayoendeshwa. Pia kumbuka, unahitaji kurekebisha amri hapa chini ili ifae URL ambapo seva yako inaendeshwa.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Kuendesha inspector ni sawa katika mazingira yote. Angalia jinsi badala ya kupitisha njia ya faili ya seva na amri ya kuanzisha seva, tunapita URL ambapo seva inaendeshwa na pia tunaeleza njia `/sse`.
+    Kuendesha inspector ni sawa katika mazingira yote ya utekelezaji. Angalia jinsi badala ya kutoa njia ya server yetu na amri ya kuanzisha server, tunatoa URL ambapo server inaendesha na pia tunaelekeza njia `/sse`.
 
-### -2- Jaribu zana
+### -2- Kuangalia zana
 
-Unganisha seva kwa kuchagua SSE kwenye droplist na jaza sehemu ya url ambapo seva yako inaendeshwa, kwa mfano http:localhost:4321/sse. Sasa bonyeza kitufe cha "Connect". Kama awali, chagua kuorodhesha zana, chagua zana na toa thamani za kuingiza. Unapaswa kuona matokeo kama ifuatavyo:
+Unganisha server kwa kuchagua SSE kwenye orodha ya kushuka na jaza sehemu ya url ambapo server yako inaendesha, kwa mfano http:localhost:4321/sse. Sasa bonyeza kitufe cha "Connect". Kama awali, chagua kuorodhesha zana, chagua zana na toa thamani za kuingiza. Unapaswa kuona matokeo kama ifuatavyo:
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sw.png)
 
-Nzuri, unaweza kufanya kazi na inspector, hebu tuone jinsi ya kufanya kazi na Visual Studio Code sasa.
+Nzuri, umeweza kufanya kazi na inspector, sasa tuchunguze jinsi ya kufanya kazi na Visual Studio Code.
 
 ## Kazi ya Nyumbani
 
-Jaribu kujenga seva yako na uwezo zaidi. Angalia [ukurasa huu](https://api.chucknorris.io/) kwa mfano, kuongeza zana inayopiga API. Uamuzi ni wako jinsi seva inavyopaswa kuonekana. Furahia :)
+Jaribu kujenga server yako na uwezo zaidi. Angalia [ukurasa huu](https://api.chucknorris.io/) ili, kwa mfano, kuongeza zana inayopiga API. Uamuzi wa muonekano wa server uko mikononi mwako. Furahia :)
 
 ## Suluhisho
 
 [Suluhisho](./solution/README.md) Hapa kuna suluhisho linalowezekana lenye msimbo unaofanya kazi.
 
-## Muhimu Kukumbuka
+## Muhimu wa Kumbuka
 
-Muhimu kukumbuka kutoka sura hii ni yafuatayo:
+Muhimu wa kukumbuka kutoka sura hii ni yafuatayo:
 
-- SSE ni usafirishaji wa pili unaotegemewa baada ya stdio.
-- Ili kuunga mkono SSE, unahitaji kusimamia miunganisho na ujumbe unaoingia kwa kutumia fremu ya wavuti.
-- Unaweza kutumia Inspector na Visual Studio Code kutumia seva ya SSE, kama vile seva za stdio. Kumbuka jinsi inavyotofautiana kidogo kati ya stdio na SSE. Kwa SSE, unahitaji kuanzisha seva kando kisha kuendesha zana yako ya inspector. Kwa zana ya inspector, pia kuna tofauti kidogo kwamba unahitaji kueleza URL.
+- SSE ni usafirishaji wa pili unaounga mkono baada ya stdio.
+- Ili kuunga mkono SSE, unahitaji kusimamia muunganisho na ujumbe unaoingia kwa kutumia mfumo wa wavuti.
+- Unaweza kutumia Inspector na Visual Studio Code kutumia server ya SSE, kama vile server za stdio. Angalia jinsi inavyotofautiana kidogo kati ya stdio na SSE. Kwa SSE, unahitaji kuanzisha server kando kisha kuendesha zana yako ya inspector. Kwa zana ya inspector, pia kuna tofauti kidogo kwamba unahitaji kubainisha URL.
 
 ## Sampuli
 
@@ -495,7 +496,7 @@ Muhimu kukumbuka kutoka sura hii ni yafuatayo:
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Nini Kifuatacho
+## Kinachofuata
 
 - Ifuatayo: [HTTP Streaming with MCP (Streamable HTTP)](../06-http-streaming/README.md)
 

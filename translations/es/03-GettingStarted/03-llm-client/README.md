@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-16T22:08:35+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T17:23:20+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "es"
 }
 -->
-# Creando un cliente con LLM
+# Crear un cliente con LLM
 
 Hasta ahora, has visto cómo crear un servidor y un cliente. El cliente ha podido llamar explícitamente al servidor para listar sus herramientas, recursos y prompts. Sin embargo, no es un enfoque muy práctico. Tu usuario vive en la era agentiva y espera usar prompts y comunicarse con un LLM para hacerlo. Para tu usuario, no importa si usas MCP o no para almacenar tus capacidades, pero sí esperan usar lenguaje natural para interactuar. Entonces, ¿cómo resolvemos esto? La solución es agregar un LLM al cliente.
 
@@ -39,7 +39,7 @@ Así es como el cliente interactuará con el servidor:
 
 Genial, ahora que entendemos cómo podemos hacer esto a alto nivel, probémoslo en el siguiente ejercicio.
 
-## Ejercicio: Creando un cliente con un LLM
+## Ejercicio: Crear un cliente con un LLM
 
 En este ejercicio, aprenderemos a agregar un LLM a nuestro cliente.
 
@@ -246,7 +246,7 @@ En el código anterior hemos:
 
 Genial, para el siguiente paso, listemos las capacidades en el servidor.
 
-### -2 Listar capacidades del servidor
+### -2- Listar capacidades del servidor
 
 Ahora nos conectaremos al servidor y pediremos sus capacidades:
 
@@ -293,7 +293,7 @@ for tool in tools.tools:
 
 Esto es lo que añadimos:
 
-- Listar recursos y herramientas e imprimirlos. Para las herramientas también listamos `inputSchema` que usaremos más adelante.
+- Listar recursos y herramientas y mostrarlos. Para las herramientas también listamos `inputSchema` que usaremos más adelante.
 
 ### .NET
 
@@ -459,7 +459,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 En el código anterior hemos:
 
 - Creado una función `ConvertFrom` que recibe nombre, descripción y esquema de entrada.
-- Definido funcionalidad que crea una FunctionDefinition que se pasa a un ChatCompletionsDefinition. Este último es algo que el LLM puede entender.
+- Definido funcionalidad que crea una `FunctionDefinition` que se pasa a un `ChatCompletionsDefinition`. Esto último es algo que el LLM puede entender.
 
 1. Veamos cómo podemos actualizar código existente para aprovechar esta función:
 
@@ -489,7 +489,7 @@ En el código anterior hemos:
 
         return toolDefinitions;
     }
-    ```    
+    ```
 
     En el código anterior, hemos:
 
@@ -528,7 +528,7 @@ En el código anterior hemos:
 - El framework maneja automáticamente la conversión de esquemas de herramientas y llamadas a funciones detrás de escena
 - Este enfoque elimina la conversión manual de herramientas - LangChain4j maneja toda la complejidad de convertir herramientas MCP a un formato compatible con LLM
 
-Genial, ahora estamos listos para manejar cualquier solicitud de usuario, así que abordemos eso a continuación.
+Genial, ahora estamos listos para manejar solicitudes de usuario, así que abordemos eso a continuación.
 
 ### -4- Manejar solicitud de prompt del usuario
 
@@ -568,7 +568,7 @@ En esta parte del código, manejaremos las solicitudes del usuario.
     En el código anterior:
 
     - Añadimos un método `callTools`.
-    - El método toma una respuesta del LLM y verifica qué herramientas han sido llamadas, si es que alguna:
+    - El método recibe una respuesta del LLM y verifica qué herramientas han sido llamadas, si es que alguna:
 
         ```typescript
         for (const tool_call of tool_calls) {
@@ -862,7 +862,7 @@ client.connectToServer(transport);
 
 ### .NET
 
-1. Mostremos algo de código para hacer una solicitud de prompt a un LLM:
+1. Mostremos código para hacer una solicitud de prompt a un LLM:
 
     ```csharp
     var tools = await GetMcpTools();
@@ -903,7 +903,7 @@ client.connectToServer(transport);
     - Construido un objeto de opciones especificando modelo y herramientas.
     - Realizado una solicitud hacia el LLM.
 
-1. Un último paso, veamos si el LLM piensa que deberíamos llamar a una función:
+1. Un último paso, veamos si el LLM piensa que debemos llamar a una función:
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -1139,7 +1139,7 @@ public class LangChain4jClient {
 
 ## Tarea
 
-Toma el código del ejercicio y amplía el servidor con algunas herramientas más. Luego crea un cliente con un LLM, como en el ejercicio, y pruébalo con diferentes prompts para asegurarte de que todas las herramientas de tu servidor se llamen dinámicamente. Esta forma de construir un cliente significa que el usuario final tendrá una gran experiencia, ya que podrá usar prompts en lugar de comandos exactos del cliente y no tendrá que preocuparse por qué servidor MCP está siendo llamado.
+Toma el código del ejercicio y amplía el servidor con más herramientas. Luego crea un cliente con un LLM, como en el ejercicio, y pruébalo con diferentes prompts para asegurarte de que todas las herramientas de tu servidor se llamen dinámicamente. Esta forma de construir un cliente significa que el usuario final tendrá una gran experiencia, ya que podrá usar prompts en lugar de comandos exactos del cliente y no tendrá que preocuparse por qué servidor MCP se está llamando.
 
 ## Solución
 

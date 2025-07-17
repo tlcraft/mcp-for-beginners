@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T12:11:14+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T19:31:40+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "hr"
 }
 -->
 # Kreiranje klijenta s LLM-om
 
-Do sada ste vidjeli kako kreirati server i klijenta. Klijent je mogao eksplicitno pozivati server da bi dobio popis njegovih alata, resursa i promptova. Međutim, to nije baš praktičan pristup. Vaš korisnik živi u eri agenata i očekuje da koristi promptove i komunicira s LLM-om kako bi to postigao. Za vašeg korisnika nije važno koristite li MCP ili ne za pohranu svojih mogućnosti, ali očekuju da koriste prirodni jezik za interakciju. Kako to riješiti? Rješenje je dodati LLM klijentu.
+Do sada ste vidjeli kako kreirati server i klijenta. Klijent je mogao eksplicitno pozivati server da bi dobio popis njegovih alata, resursa i promptova. Međutim, to nije baš praktičan pristup. Vaš korisnik živi u eri agenata i očekuje da koristi promptove i komunicira s LLM-om kako bi to postigao. Za vašeg korisnika nije važno koristite li MCP za pohranu svojih mogućnosti, ali očekuju da koriste prirodni jezik za interakciju. Kako to riješiti? Rješenje je dodati LLM klijentu.
 
 ## Pregled
 
-U ovoj lekciji fokusiramo se na dodavanje LLM-a vašem klijentu i pokazujemo kako to pruža puno bolje iskustvo za vašeg korisnika.
+U ovoj lekciji fokusiramo se na dodavanje LLM-a vašem klijentu i pokazujemo kako to pruža puno bolje korisničko iskustvo.
 
 ## Ciljevi učenja
 
@@ -25,7 +25,7 @@ Do kraja ove lekcije moći ćete:
 
 ## Pristup
 
-Pokušajmo razumjeti pristup koji trebamo primijeniti. Dodavanje LLM-a zvuči jednostavno, ali hoćemo li to zaista napraviti?
+Pokušajmo razumjeti pristup koji trebamo poduzeti. Dodavanje LLM-a zvuči jednostavno, ali hoćemo li to zaista napraviti?
 
 Evo kako će klijent komunicirati sa serverom:
 
@@ -96,7 +96,7 @@ U prethodnom kodu smo:
 
 - Uvezli potrebne biblioteke
 - Kreirali klasu s dva člana, `client` i `openai`, koji će nam pomoći upravljati klijentom i komunicirati s LLM-om.
-- Konfigurirali našu LLM instancu da koristi GitHub modele postavljanjem `baseUrl` na inference API.
+- Konfigurirali naš LLM primjerak da koristi GitHub modele postavljanjem `baseUrl` na inference API.
 
 ### Python
 
@@ -239,14 +239,14 @@ U prethodnom kodu smo:
 
 - **Dodali LangChain4j ovisnosti**: Potrebne za MCP integraciju, službeni OpenAI klijent i podršku za GitHub modele
 - **Uvezli LangChain4j biblioteke**: Za MCP integraciju i funkcionalnost OpenAI chat modela
-- **Kreirali `ChatLanguageModel`**: Konfiguriran da koristi GitHub modele s vašim GitHub tokenom
+- **Kreirali `ChatLanguageModel`**: Konfiguriran za korištenje GitHub modela s vašim GitHub tokenom
 - **Postavili HTTP transport**: Koristeći Server-Sent Events (SSE) za povezivanje s MCP serverom
 - **Kreirali MCP klijenta**: Koji će upravljati komunikacijom sa serverom
-- **Iskoristili ugrađenu MCP podršku LangChain4j-a**: Koja pojednostavljuje integraciju između LLM-ova i MCP servera
+- **Iskoristili ugrađenu MCP podršku LangChain4j-a**: Koja pojednostavljuje integraciju između LLM-a i MCP servera
 
 Odlično, za sljedeći korak, nabrojimo mogućnosti na serveru.
 
-### -2 Nabrojavanje mogućnosti servera
+### -2- Nabrajanje mogućnosti servera
 
 Sada ćemo se povezati sa serverom i zatražiti njegove mogućnosti:
 
@@ -272,7 +272,7 @@ async run() {
 U prethodnom kodu smo:
 
 - Dodali kod za povezivanje sa serverom, `connectToServer`.
-- Kreirali metodu `run` koja upravlja tijekom aplikacije. Do sada samo nabraja alate, ali uskoro ćemo dodati još funkcionalnosti.
+- Kreirali metodu `run` koja upravlja tijekom aplikacije. Do sada samo nabraja alate, ali uskoro ćemo dodati još.
 
 ### Python
 
@@ -339,7 +339,7 @@ ToolProvider toolProvider = McpToolProvider.builder()
 
 U prethodnom kodu smo:
 
-- Kreirali `McpToolProvider` koji automatski otkriva i registrira sve alate s MCP servera
+- Kreirali `McpToolProvider` koji automatski pronalazi i registrira sve alate s MCP servera
 - Provider alata interno upravlja konverzijom između MCP shema alata i LangChain4j formata alata
 - Ovaj pristup uklanja potrebu za ručnim nabrajanjem i konverzijom alata
 
@@ -398,7 +398,7 @@ Sljedeći korak nakon nabrajanja mogućnosti servera je pretvoriti ih u format k
 
 ### Python
 
-1. Prvo, kreirajmo sljedeću funkciju za konverziju:
+1. Prvo, kreirajmo sljedeću funkciju za konverziju
 
     ```python
     def convert_to_llm_tool(tool):
@@ -420,7 +420,7 @@ Sljedeći korak nakon nabrajanja mogućnosti servera je pretvoriti ih u format k
 
     U funkciji `convert_to_llm_tools` uzimamo MCP alat i pretvaramo ga u format koji LLM može razumjeti.
 
-1. Zatim ažurirajmo naš klijentski kod da iskoristi ovu funkciju na sljedeći način:
+1. Zatim ažurirajmo naš klijentski kod da koristi ovu funkciju ovako:
 
     ```python
     for tool in tools.tools:
@@ -433,7 +433,7 @@ Sljedeći korak nakon nabrajanja mogućnosti servera je pretvoriti ih u format k
 
 ### .NET
 
-1. Dodajmo kod za pretvaranje MCP odgovora alata u format koji LLM može razumjeti
+1. Dodajmo kod za pretvaranje MCP odgovora u format koji LLM može razumjeti
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -459,7 +459,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 U prethodnom kodu smo:
 
 - Kreirali funkciju `ConvertFrom` koja prima ime, opis i ulaznu shemu.
-- Definirali funkcionalnost koja kreira `FunctionDefinition` koji se prosljeđuje `ChatCompletionsDefinition`. Ovo zadnje LLM može razumjeti.
+- Definirali funkcionalnost koja kreira `FunctionDefinition` koja se prosljeđuje `ChatCompletionsDefinition`. Ovo zadnje LLM može razumjeti.
 
 1. Pogledajmo kako možemo ažurirati postojeći kod da iskoristimo ovu funkciju:
 
@@ -855,7 +855,7 @@ client.connectToServer(transport);
         print("TOOLS result: ", result.content)
     ```
 
-    Eto, to je bio zadnji korak, u gornjem kodu:
+    Eto, to je zadnji korak, u gornjem kodu:
 
     - Pozivamo MCP alat preko `call_tool` koristeći funkciju koju je LLM odlučio pozvati na temelju prompta.
     - Ispisujemo rezultat poziva alata na MCP server.
@@ -903,7 +903,7 @@ client.connectToServer(transport);
     - Kreirali objekt opcija s modelom i alatima.
     - Poslali zahtjev prema LLM-u.
 
-1. Još jedan korak, provjerimo misli li LLM da trebamo pozvati funkciju:
+1. Još jedan korak, provjerimo misli li LLM da treba pozvati funkciju:
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -1084,7 +1084,7 @@ U prethodnom kodu smo:
   - Pozivanjem odgovarajućih MCP alata na temelju odluke LLM-a
   - Upravljanjem tijekom razgovora između LLM-a i MCP servera
 - Metoda `bot.chat()` vraća odgovore prirodnim jezikom koji mogu uključivati rezultate izvršenja MCP alata
-- Ovaj pristup pruža besprijekorno korisničko iskustvo gdje korisnici ne moraju znati o MCP implementaciji u pozadini
+- Ovaj pristup pruža besprijekorno korisničko iskustvo gdje korisnici ne moraju znati o pozadini MCP implementacije
 
 Kompletan primjer koda:
 
@@ -1154,7 +1154,7 @@ Uzmi kod iz vježbe i proširi server s još nekoliko alata. Zatim kreiraj klije
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
+- [JavaScript Calculator](../../../../03-GettingStarted/samples/javascript)
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
@@ -1165,4 +1165,4 @@ Uzmi kod iz vježbe i proširi server s još nekoliko alata. Zatim kreiraj klije
 - Sljedeće: [Konzumiranje servera koristeći Visual Studio Code](../04-vscode/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

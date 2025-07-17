@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-16T21:58:49+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T18:23:44+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "pt"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Bem-vindo aos seus primeiros passos com o Model Context Protocol (MCP)! Quer seja novo no MCP ou queira aprofundar o seu conhecimento, este guia irá acompanhá-lo no processo essencial de configuração e desenvolvimento. Vai descobrir como o MCP permite uma integração fluida entre modelos de IA e aplicações, e aprenderá a preparar rapidamente o seu ambiente para construir e testar soluções baseadas em MCP.
 
-> TLDR; Se desenvolve aplicações de IA, sabe que pode adicionar ferramentas e outros recursos ao seu LLM (modelo de linguagem de grande dimensão), para tornar o LLM mais informado. No entanto, se colocar essas ferramentas e recursos num servidor, as capacidades da aplicação e do servidor podem ser usadas por qualquer cliente com ou sem um LLM.
+> TLDR; Se desenvolve aplicações de IA, sabe que pode adicionar ferramentas e outros recursos ao seu LLM (modelo de linguagem grande), para tornar o LLM mais informado. No entanto, se colocar essas ferramentas e recursos num servidor, as capacidades da aplicação e do servidor podem ser usadas por qualquer cliente com ou sem um LLM.
 
 ## Visão Geral
 
 Esta lição fornece orientações práticas para configurar ambientes MCP e construir as suas primeiras aplicações MCP. Vai aprender a configurar as ferramentas e frameworks necessários, construir servidores MCP básicos, criar aplicações anfitriãs e testar as suas implementações.
 
-O Model Context Protocol (MCP) é um protocolo aberto que standardiza a forma como as aplicações fornecem contexto aos LLMs. Pense no MCP como uma porta USB-C para aplicações de IA – oferece uma forma standard de ligar modelos de IA a diferentes fontes de dados e ferramentas.
+O Model Context Protocol (MCP) é um protocolo aberto que padroniza a forma como as aplicações fornecem contexto aos LLMs. Pense no MCP como uma porta USB-C para aplicações de IA – oferece uma forma padronizada de ligar modelos de IA a diferentes fontes de dados e ferramentas.
 
 ## Objetivos de Aprendizagem
 
@@ -30,7 +30,7 @@ No final desta lição, será capaz de:
 
 ## Configurar o Seu Ambiente MCP
 
-Antes de começar a trabalhar com MCP, é importante preparar o seu ambiente de desenvolvimento e compreender o fluxo de trabalho básico. Esta secção irá guiá-lo pelos passos iniciais para garantir um início tranquilo com MCP.
+Antes de começar a trabalhar com MCP, é importante preparar o seu ambiente de desenvolvimento e compreender o fluxo básico de trabalho. Esta secção irá guiá-lo pelos passos iniciais para garantir um início tranquilo com MCP.
 
 ### Pré-requisitos
 
@@ -95,7 +95,7 @@ Antes de começar a testar o seu servidor MCP, é importante compreender as ferr
 
 O MCP fornece ferramentas para ajudar a testar e depurar os seus servidores:
 
-- **Ferramenta Inspector**, esta interface gráfica permite-lhe ligar ao seu servidor e testar as suas ferramentas, prompts e recursos.
+- **Inspector tool**, esta interface gráfica permite-lhe ligar ao seu servidor e testar as suas ferramentas, prompts e recursos.
 - **curl**, pode também ligar ao seu servidor usando uma ferramenta de linha de comandos como o curl ou outros clientes que possam criar e executar comandos HTTP.
 
 ### Usar o MCP Inspector
@@ -111,7 +111,7 @@ O [MCP Inspector](https://github.com/modelcontextprotocol/inspector) é uma ferr
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Quando executar os comandos acima, o MCP Inspector irá abrir uma interface web local no seu navegador. Pode esperar ver um painel que mostra os seus servidores MCP registados, as ferramentas, recursos e prompts disponíveis. A interface permite testar interativamente a execução de ferramentas, inspecionar metadados do servidor e ver respostas em tempo real, facilitando a validação e depuração das suas implementações MCP.
+Quando executar os comandos acima, o MCP Inspector irá abrir uma interface web local no seu navegador. Pode esperar ver um painel que mostra os seus servidores MCP registados, as ferramentas, recursos e prompts disponíveis. A interface permite testar interativamente a execução das ferramentas, inspecionar metadados do servidor e ver respostas em tempo real, facilitando a validação e depuração das suas implementações MCP.
 
 Aqui está uma captura de ecrã do aspeto que pode ter:
 
@@ -122,7 +122,7 @@ Aqui está uma captura de ecrã do aspeto que pode ter:
 | Problema | Possível Solução |
 |----------|------------------|
 | Ligação recusada | Verifique se o servidor está a correr e se a porta está correta |
-| Erros na execução da ferramenta | Reveja a validação de parâmetros e o tratamento de erros |
+| Erros na execução da ferramenta | Reveja a validação dos parâmetros e o tratamento de erros |
 | Falhas de autenticação | Verifique as chaves API e permissões |
 | Erros de validação do esquema | Assegure que os parâmetros correspondem ao esquema definido |
 | Servidor não inicia | Verifique conflitos de porta ou dependências em falta |
@@ -163,7 +163,7 @@ Um servidor MCP pode, por exemplo:
 
 ## Exercício: Criar um servidor
 
-Para criar um servidor, precisa de seguir estes passos:
+Para criar um servidor, precisa seguir estes passos:
 
 - Instalar o SDK MCP.
 - Criar um projeto e configurar a estrutura do projeto.
@@ -326,6 +326,10 @@ Adicione a seguinte configuração completa ao seu ficheiro *pom.xml*:
 </project>
 ```
 
+### -2- Criar projeto
+
+Agora que tem o SDK instalado, vamos criar um projeto:
+
 ### TypeScript
 
 ```sh
@@ -349,6 +353,7 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+### -3- Criar ficheiros do projeto  
 ### TypeScript
 
 Crie um *package.json* com o seguinte conteúdo:
@@ -390,7 +395,7 @@ Crie um *tsconfig.json* com o seguinte conteúdo:
 
 ### Python
 
-Crie um ficheiro *server.py*
+Crie um ficheiro *server.py*  
 ```sh
 touch server.py
 ```
@@ -407,6 +412,8 @@ dotnet add package Microsoft.Extensions.Hosting
 ### Java
 
 Para projetos Java Spring Boot, a estrutura do projeto é criada automaticamente.
+
+### -4- Criar código do servidor
 
 ### TypeScript
 
@@ -491,7 +498,7 @@ public class McpServerApplication {
 }
 ```
 
-Crie o serviço de calculadora *src/main/java/com/microsoft/mcp/sample/server/service/CalculatorService.java*:
+Crie o serviço calculator *src/main/java/com/microsoft/mcp/sample/server/service/CalculatorService.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.service;
@@ -808,7 +815,7 @@ def get_greeting(name: str) -> str:
 No código acima definimos:
 
 - Uma ferramenta `add` que recebe os parâmetros `a` e `p`, ambos inteiros.
-- Criámos um recurso chamado `greeting` que recebe o parâmetro `name`.
+- Um recurso chamado `greeting` que recebe o parâmetro `name`.
 
 ### .NET
 
@@ -827,7 +834,7 @@ public static class CalculatorTool
 
 As ferramentas já foram criadas no passo anterior.
 
-### -6 Código final
+### -6- Código final
 
 Vamos adicionar o último código necessário para que o servidor possa arrancar:
 
@@ -1003,7 +1010,7 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 ### -8- Executar usando o inspector
 
-O inspector é uma ótima ferramenta que pode iniciar o seu servidor e permite-lhe interagir com ele para testar se está a funcionar. Vamos iniciá-lo:
+O inspector é uma ótima ferramenta que pode arrancar o seu servidor e permite-lhe interagir com ele para testar se funciona. Vamos iniciá-lo:
 
 > [!NOTE]
 > Pode parecer diferente no campo "command" pois contém o comando para executar um servidor com o seu runtime específico.
@@ -1026,8 +1033,8 @@ No entanto, não implementa todos os métodos disponíveis na ferramenta, por is
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
-```
-Se estiver a usar uma ferramenta ou IDE que permite configurar comandos e argumentos para executar scripts, 
+```  
+Se estiver a usar uma ferramenta ou IDE que permite configurar comandos e argumentos para executar scripts,  
 certifique-se de definir `python` no campo `Command` e `server.py` como `Arguments`. Isto garante que o script é executado corretamente.
 
 ### .NET
@@ -1041,7 +1048,7 @@ npx @modelcontextprotocol/inspector dotnet run
 
 ### Java
 
-Assegure-se de que o servidor de calculadora está a correr
+Certifique-se que o servidor calculator está a correr  
 Depois execute o inspector:
 
 ```cmd
@@ -1050,8 +1057,8 @@ npx @modelcontextprotocol/inspector
 
 Na interface web do inspector:
 
-1. Selecione "SSE" como tipo de transporte
-2. Defina a URL para: `http://localhost:8080/sse`
+1. Selecione "SSE" como tipo de transporte  
+2. Defina a URL para: `http://localhost:8080/sse`  
 3. Clique em "Connect"
 
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.pt.png)
@@ -1070,7 +1077,7 @@ Deverá ver a seguinte interface de utilizador:
 
   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.pt.png)
 
-1. Selecione "Tools" e "listTools", deverá ver "Add" aparecer, selecione "Add" e preencha os valores dos parâmetros.
+1. Selecione "Tools" e "listTools", deverá aparecer "Add", selecione "Add" e preencha os valores dos parâmetros.
 
   Deverá ver a seguinte resposta, ou seja, um resultado da ferramenta "add":
 
@@ -1082,19 +1089,19 @@ Parabéns, conseguiu criar e executar o seu primeiro servidor!
 
 O MCP fornece SDKs oficiais para várias linguagens:
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Mantido em colaboração com a Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Mantido em colaboração com a Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - A implementação oficial em TypeScript
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - A implementação oficial em Python
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - A implementação oficial em Kotlin
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Mantido em colaboração com a Microsoft  
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Mantido em colaboração com a Spring AI  
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementação oficial em TypeScript  
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementação oficial em Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - A implementação oficial em Kotlin  
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Mantido em colaboração com a Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - A implementação oficial em Rust
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - A implementação oficial em Rust  
 
 ## Principais pontos
 
 - Configurar um ambiente de desenvolvimento MCP é simples com SDKs específicos para cada linguagem  
 - Construir servidores MCP envolve criar e registar ferramentas com esquemas claros  
-- Testar e depurar são essenciais para implementações MCP fiáveis
+- Testar e depurar são essenciais para implementações MCP fiáveis  
 
 ## Exemplos
 
@@ -1102,7 +1109,7 @@ O MCP fornece SDKs oficiais para várias linguagens:
 - [Calculadora .Net](../../../../03-GettingStarted/samples/csharp)  
 - [Calculadora JavaScript](../samples/javascript/README.md)  
 - [Calculadora TypeScript](../samples/typescript/README.md)  
-- [Calculadora Python](../../../../03-GettingStarted/samples/python)
+- [Calculadora Python](../../../../03-GettingStarted/samples/python)  
 
 ## Tarefa
 
@@ -1111,21 +1118,21 @@ Crie um servidor MCP simples com uma ferramenta à sua escolha:
 1. Implemente a ferramenta na sua linguagem preferida (.NET, Java, Python ou JavaScript).  
 2. Defina os parâmetros de entrada e os valores de retorno.  
 3. Execute a ferramenta inspector para garantir que o servidor funciona como esperado.  
-4. Teste a implementação com vários inputs.
+4. Teste a implementação com vários inputs.  
 
 ## Solução
 
-[Solução](./solution/README.md)
+[Solução](./solution/README.md)  
 
 ## Recursos adicionais
 
-- [Construir agentes usando Model Context Protocol na Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [MCP remoto com Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [Agente MCP OpenAI .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Criar Agentes usando Model Context Protocol no Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
+- [MCP Remoto com Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
+- [Agente MCP OpenAI .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## O que vem a seguir
 
 Seguinte: [Introdução aos Clientes MCP](../02-client/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T01:08:38+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T18:27:37+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "br"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Até agora, você viu como criar um servidor e um cliente. O cliente conseguiu chamar o servidor explicitamente para listar suas ferramentas, recursos e prompts. No entanto, essa não é uma abordagem muito prática. Seu usuário vive na era dos agentes e espera usar prompts e se comunicar com um LLM para isso. Para seu usuário, não importa se você usa MCP ou não para armazenar suas capacidades, mas ele espera usar linguagem natural para interagir. Então, como resolvemos isso? A solução é adicionar um LLM ao cliente.
 
-## Visão geral
+## Visão Geral
 
 Nesta lição, focamos em adicionar um LLM ao seu cliente e mostramos como isso proporciona uma experiência muito melhor para seu usuário.
 
-## Objetivos de aprendizagem
+## Objetivos de Aprendizagem
 
 Ao final desta lição, você será capaz de:
 
@@ -41,7 +41,7 @@ Veja como o cliente irá interagir com o servidor:
 
 ## Exercício: Criando um cliente com um LLM
 
-Neste exercício, aprenderemos a adicionar um LLM ao nosso cliente.
+Neste exercício, vamos aprender a adicionar um LLM ao nosso cliente.
 
 ## Autenticação usando Token de Acesso Pessoal do GitHub
 
@@ -51,7 +51,7 @@ Criar um token do GitHub é um processo simples. Veja como fazer:
 - Navegue até Configurações de Desenvolvedor – Role para baixo e clique em Configurações de Desenvolvedor.
 - Selecione Tokens de Acesso Pessoal – Clique em Tokens de acesso pessoal e depois em Gerar novo token.
 - Configure seu Token – Adicione uma nota para referência, defina uma data de expiração e selecione os escopos (permissões) necessários.
-- Gere e copie o token – Clique em Gerar token e certifique-se de copiá-lo imediatamente, pois não poderá vê-lo novamente.
+- Gere e Copie o Token – Clique em Gerar token e certifique-se de copiá-lo imediatamente, pois não poderá vê-lo novamente.
 
 ### -1- Conectar ao servidor
 
@@ -96,7 +96,7 @@ No código acima nós:
 
 - Importamos as bibliotecas necessárias
 - Criamos uma classe com dois membros, `client` e `openai`, que nos ajudarão a gerenciar um cliente e interagir com um LLM, respectivamente.
-- Configuramos nossa instância do LLM para usar os Modelos do GitHub definindo `baseUrl` para apontar para a API de inferência.
+- Configuramos nossa instância de LLM para usar os Modelos do GitHub definindo `baseUrl` para apontar para a API de inferência.
 
 ### Python
 
@@ -242,11 +242,11 @@ No código acima nós:
 - **Criamos um `ChatLanguageModel`**: Configurado para usar os Modelos do GitHub com seu token do GitHub
 - **Configuramos o transporte HTTP**: Usando Server-Sent Events (SSE) para conectar ao servidor MCP
 - **Criamos um cliente MCP**: Que irá gerenciar a comunicação com o servidor
-- **Usamos o suporte MCP embutido do LangChain4j**: Que simplifica a integração entre LLMs e servidores MCP
+- **Usamos o suporte nativo do LangChain4j para MCP**: Que simplifica a integração entre LLMs e servidores MCP
 
 Ótimo, para o próximo passo, vamos listar as capacidades no servidor.
 
-### -2 Listar capacidades do servidor
+### -2- Listar capacidades do servidor
 
 Agora vamos conectar ao servidor e pedir suas capacidades:
 
@@ -271,8 +271,8 @@ async run() {
 
 No código acima nós:
 
-- Adicionamos código para conectar ao servidor, `connectToServer`.
-- Criamos um método `run` responsável por gerenciar o fluxo do nosso app. Até agora ele apenas lista as ferramentas, mas adicionaremos mais em breve.
+- Adicionamos o código para conectar ao servidor, `connectToServer`.
+- Criamos um método `run` responsável por gerenciar o fluxo do nosso app. Até agora ele apenas lista as ferramentas, mas logo adicionaremos mais funcionalidades.
 
 ### Python
 
@@ -418,7 +418,7 @@ O próximo passo após listar as capacidades do servidor é convertê-las para u
         return tool_schema
     ```
 
-    Na função acima `convert_to_llm_tools` pegamos uma resposta de ferramenta MCP e a convertemos para um formato que o LLM entende.
+    Na função `convert_to_llm_tools` acima, pegamos uma resposta de ferramenta MCP e a convertemos para um formato que o LLM entende.
 
 1. Em seguida, vamos atualizar nosso código cliente para usar essa função assim:
 
@@ -433,7 +433,7 @@ O próximo passo após listar as capacidades do servidor é convertê-las para u
 
 ### .NET
 
-1. Vamos adicionar código para converter a resposta da ferramenta MCP em algo que o LLM entenda
+1. Vamos adicionar código para converter a resposta da ferramenta MCP para algo que o LLM entenda
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -461,7 +461,7 @@ No código acima nós:
 - Criamos uma função `ConvertFrom` que recebe nome, descrição e esquema de entrada.
 - Definimos a funcionalidade que cria uma FunctionDefinition que é passada para um ChatCompletionsDefinition. Este último é algo que o LLM entende.
 
-1. Vamos ver como podemos atualizar algum código existente para aproveitar essa função acima:
+1. Vamos ver como podemos atualizar um código existente para aproveitar essa função:
 
     ```csharp
     async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -489,11 +489,11 @@ No código acima nós:
 
         return toolDefinitions;
     }
-    ```
+    ```    
 
     No código acima, nós:
 
-    - Atualizamos a função para converter a resposta da ferramenta MCP em uma ferramenta LLM. Vamos destacar o código que adicionamos:
+    - Atualizamos a função para converter a resposta da ferramenta MCP para uma ferramenta LLM. Vamos destacar o código que adicionamos:
 
         ```csharp
         JsonElement propertiesElement;
@@ -596,7 +596,7 @@ Nesta parte do código, vamos tratar as solicitações dos usuários.
         // TODO  
         ```
 
-1. Atualize o método `run` para incluir chamadas ao LLM e chamar `callTools`:
+1. Atualize o método `run` para incluir chamadas ao LLM e para o método `callTools`:
 
     ```typescript
 
@@ -1139,13 +1139,13 @@ Parabéns, você conseguiu!
 
 ## Tarefa
 
-Pegue o código do exercício e adicione mais ferramentas ao servidor. Depois, crie um cliente com um LLM, como no exercício, e teste com diferentes prompts para garantir que todas as ferramentas do seu servidor sejam chamadas dinamicamente. Essa forma de construir um cliente significa que o usuário final terá uma ótima experiência, pois poderá usar prompts em vez de comandos exatos do cliente, sem perceber que um servidor MCP está sendo chamado.
+Pegue o código do exercício e adicione mais ferramentas ao servidor. Depois, crie um cliente com um LLM, como no exercício, e teste com diferentes prompts para garantir que todas as ferramentas do servidor sejam chamadas dinamicamente. Essa forma de construir um cliente garante que o usuário final tenha uma ótima experiência, pois poderá usar prompts em vez de comandos exatos do cliente, sem precisar saber que um servidor MCP está sendo chamado.
 
 ## Solução
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Principais aprendizados
+## Principais Lições
 
 - Adicionar um LLM ao seu cliente oferece uma forma melhor para os usuários interagirem com servidores MCP.
 - É necessário converter a resposta do servidor MCP para algo que o LLM possa entender.
@@ -1158,7 +1158,7 @@ Pegue o código do exercício e adicione mais ferramentas ao servidor. Depois, c
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## Recursos adicionais
+## Recursos Adicionais
 
 ## O que vem a seguir
 

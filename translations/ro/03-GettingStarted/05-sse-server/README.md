@@ -1,34 +1,34 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T11:19:46+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T19:23:10+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "ro"
 }
 -->
-# Server SSE
+# SSE Server
 
-SSE (Server Sent Events) este un standard pentru streaming de la server către client, permițând serverelor să trimită actualizări în timp real către clienți prin HTTP. Acest lucru este deosebit de util pentru aplicații care necesită actualizări live, cum ar fi aplicațiile de chat, notificările sau fluxurile de date în timp real. De asemenea, serverul tău poate fi folosit de mai mulți clienți simultan, deoarece rulează pe un server care poate fi găzduit, de exemplu, în cloud.
+SSE (Server Sent Events) este un standard pentru streaming de la server la client, permițând serverelor să trimită actualizări în timp real către clienți prin HTTP. Acest lucru este deosebit de util pentru aplicații care necesită actualizări live, cum ar fi aplicațiile de chat, notificările sau fluxurile de date în timp real. De asemenea, serverul tău poate fi folosit de mai mulți clienți simultan, deoarece rulează pe un server care poate fi găzduit, de exemplu, în cloud.
 
 ## Prezentare generală
 
-Această lecție acoperă cum să construiești și să consumi servere SSE.
+Această lecție explică cum să construiești și să consumi servere SSE.
 
 ## Obiective de învățare
 
 La finalul acestei lecții, vei putea:
 
 - Să construiești un server SSE.
-- Să depanezi un server SSE folosind Inspector.
+- Să depanezi un server SSE folosind Inspectorul.
 - Să consumi un server SSE folosind Visual Studio Code.
 
 ## SSE, cum funcționează
 
 SSE este unul dintre cele două tipuri de transport suportate. Ai văzut deja primul, stdio, folosit în lecțiile anterioare. Diferența este următoarea:
 
-- SSE necesită să gestionezi două lucruri: conexiunea și mesajele.
-- Deoarece acest server poate rula oriunde, trebuie să reflectezi acest lucru în modul în care lucrezi cu unelte precum Inspector și Visual Studio Code. Asta înseamnă că, în loc să specifici cum să pornești serverul, indici punctul final (endpoint) unde se poate stabili conexiunea. Vezi exemplul de cod de mai jos:
+- SSE necesită să gestionezi două aspecte: conexiunea și mesajele.
+- Deoarece acest server poate rula oriunde, trebuie să reflectezi acest lucru în modul în care lucrezi cu unelte precum Inspectorul și Visual Studio Code. Asta înseamnă că, în loc să specifici cum să pornești serverul, indici punctul final (endpoint-ul) unde se poate stabili conexiunea. Vezi exemplul de cod de mai jos:
 
 ### TypeScript
 
@@ -103,19 +103,20 @@ app = Starlette(
 
     - `AddMcpServer`, această metodă adaugă capabilități.
     - `MapMcp`, aceasta adaugă rute precum `/SSE` și `/messages`.
+```
 
-Acum că știm puțin mai multe despre SSE, să construim un server SSE.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Exercițiu: Crearea unui server SSE
+## Exercise: Creating an SSE Server
 
-Pentru a crea serverul, trebuie să ținem cont de două lucruri:
+To create our server, we need to keep two things in mind:
 
-- Trebuie să folosim un server web pentru a expune punctele finale pentru conexiune și mesaje.
-- Construim serverul așa cum am făcut cu stdio, folosind unelte, resurse și prompturi.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Crearea unei instanțe de server
+### -1- Create a server instance
 
-Pentru a crea serverul, folosim aceleași tipuri ca la stdio. Totuși, pentru transport, trebuie să alegem SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-În codul de mai sus am:
+In the preceding code we've:
 
-- Creat o instanță de server.
-- Definit o aplicație folosind framework-ul web express.
-- Creat o variabilă transports pe care o vom folosi pentru a stoca conexiunile primite.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-În codul de mai sus am:
+In the preceding code we've:
 
-- Importat bibliotecile necesare, inclusiv Starlette (un framework ASGI).
-- Creat o instanță de server MCP numită `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-Până acum am:
+At this point, we've:
 
-- Creat o aplicație web.
-- Adăugat suport pentru funcționalitățile MCP prin `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Următorul pas este să adăugăm rutele necesare.
+Let's add the needed routes next.
 
-### -2- Adăugarea rutelor
+### -2- Add routes
 
-Să adăugăm rutele care gestionează conexiunea și mesajele primite:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-În codul de mai sus am definit:
+In the preceding code we've defined:
 
-- O rută `/sse` care instanțiază un transport de tip SSE și apelează `connect` pe serverul MCP.
-- O rută `/messages` care se ocupă de mesajele primite.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-În codul de mai sus am:
+In the preceding code we've:
 
-- Creat o instanță de aplicație ASGI folosind framework-ul Starlette. Ca parte a acesteia, am trecut `mcp.sse_app()` în lista de rute. Astfel, se montează rutele `/sse` și `/messages` pe instanța aplicației.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Am adăugat o linie de cod la final `add.MapMcp()`, ceea ce înseamnă că acum avem rutele `/SSE` și `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Următorul pas este să adăugăm capabilități serverului.
+Let's add capabilties to the server next.
 
-### -3- Adăugarea capabilităților serverului
+### -3- Adding server capabilities
 
-Acum că am definit tot ce ține de SSE, să adăugăm capabilități serverului, cum ar fi unelte, prompturi și resurse.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Iată cum poți adăuga o unealtă, de exemplu. Această unealtă creează o unealtă numită "random-joke" care apelează o API Chuck Norris și returnează un răspuns JSON.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Acum serverul tău are o unealtă.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Să creăm mai întâi câteva unelte, pentru asta vom crea un fișier *Tools.cs* cu următorul conținut:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Aici am adăugat următoarele:
+  Here we've added the following:
 
-  - Am creat o clasă `Tools` cu decoratorul `McpServerToolType`.
-  - Am definit o unealtă `AddNumbers` decorând metoda cu `McpServerTool`. Am furnizat și parametrii și implementarea.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Să folosim clasa `Tools` pe care tocmai am creat-o:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Am adăugat un apel la `WithTools` care specifică `Tools` ca fiind clasa care conține uneltele. Gata, suntem pregătiți.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Perfect, avem un server care folosește SSE, să-l testăm acum.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Exercițiu: Depanarea unui server SSE cu Inspector
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector este un instrument excelent pe care l-am văzut în lecția anterioară [Crearea primului tău server](/03-GettingStarted/01-first-server/README.md). Să vedem dacă îl putem folosi și aici:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Pornirea inspectorului
+### -1- Running the inspector
 
-Pentru a porni inspectorul, trebuie mai întâi să ai un server SSE pornit, așa că să facem asta:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Pornește serverul
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Pentru a porni inspectorul, trebuie mai întâi să ai un server SSE pornit, aș
     uvicorn server:app
     ```
 
-    Observă cum folosim executabilul `uvicorn` care se instalează când am tastat `pip install "mcp[cli]"`. Tastarea `server:app` înseamnă că încercăm să rulăm fișierul `server.py` și să avem o instanță Starlette numită `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,30 +447,30 @@ Pentru a porni inspectorul, trebuie mai întâi să ai un server SSE pornit, aș
     dotnet run
     ```
 
-    Acest lucru ar trebui să pornească serverul. Pentru a interacționa cu el, ai nevoie de un terminal nou.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Pornește inspectorul
+1. Run the inspector
 
     > ![NOTE]
-    > Rulează acest lucru într-o fereastră de terminal separată față de cea în care rulează serverul. De asemenea, trebuie să ajustezi comanda de mai jos pentru a se potrivi cu URL-ul unde rulează serverul tău.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Pornirea inspectorului arată la fel în toate mediile de rulare. Observă că, în loc să trecem o cale către server și o comandă pentru pornirea serverului, trecem URL-ul unde serverul rulează și specificăm ruta `/sse`.
+    Rularea inspectorului arată la fel în toate mediile de execuție. Observă cum, în loc să trecem o cale către serverul nostru și o comandă pentru pornirea serverului, trecem URL-ul unde serverul rulează și specificăm ruta `/sse`.
 
 ### -2- Testarea uneltei
 
-Conectează serverul selectând SSE în lista derulantă și completează câmpul URL cu adresa unde rulează serverul tău, de exemplu http:localhost:4321/sse. Apoi apasă butonul "Connect". Ca înainte, selectează să listezi uneltele, alege o unealtă și oferă valorile de intrare. Ar trebui să vezi un rezultat ca în imaginea de mai jos:
+Conectează serverul selectând SSE din lista derulantă și completează câmpul URL cu adresa unde rulează serverul tău, de exemplu http:localhost:4321/sse. Acum apasă butonul „Connect”. Ca și înainte, selectează să listezi uneltele, alege o unealtă și oferă valorile de intrare. Ar trebui să vezi un rezultat ca în imaginea de mai jos:
 
-![Server SSE rulând în inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.ro.png)
+![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.ro.png)
 
 Perfect, poți lucra cu inspectorul, să vedem acum cum putem lucra cu Visual Studio Code.
 
-## Temă
+## Tema
 
-Încearcă să extinzi serverul cu mai multe capabilități. Vezi [această pagină](https://api.chucknorris.io/) pentru a adăuga, de exemplu, o unealtă care apelează o API. Tu decizi cum ar trebui să arate serverul. Distracție plăcută :)
+Încearcă să extinzi serverul cu mai multe funcționalități. Vezi [această pagină](https://api.chucknorris.io/) pentru a adăuga, de exemplu, o unealtă care apelează un API. Tu decizi cum ar trebui să arate serverul. Distracție plăcută :)
 
 ## Soluție
 
@@ -481,15 +482,15 @@ Concluziile cheie din acest capitol sunt următoarele:
 
 - SSE este al doilea tip de transport suportat, pe lângă stdio.
 - Pentru a suporta SSE, trebuie să gestionezi conexiunile și mesajele primite folosind un framework web.
-- Poți folosi atât Inspector, cât și Visual Studio Code pentru a consuma un server SSE, la fel ca serverele stdio. Observă că există mici diferențe între stdio și SSE. Pentru SSE, trebuie să pornești serverul separat și apoi să rulezi instrumentul inspector. Pentru inspector, există și diferențe în sensul că trebuie să specifici URL-ul.
+- Poți folosi atât Inspectorul, cât și Visual Studio Code pentru a consuma un server SSE, la fel ca în cazul serverelor stdio. Observă cum există mici diferențe între stdio și SSE. Pentru SSE, trebuie să pornești serverul separat și apoi să rulezi unealta inspector. Pentru unealta inspector, există și diferențe în sensul că trebuie să specifici URL-ul.
 
 ## Exemple
 
-- [Calculator Java](../samples/java/calculator/README.md)
-- [Calculator .Net](../../../../03-GettingStarted/samples/csharp)
-- [Calculator JavaScript](../samples/javascript/README.md)
-- [Calculator TypeScript](../samples/typescript/README.md)
-- [Calculator Python](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python) 
 
 ## Resurse suplimentare
 

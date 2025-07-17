@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-13T20:50:52+00:00",
+  "original_hash": "40b1bbffdb8ce6812bf6e701cad876b6",
+  "translation_date": "2025-07-17T19:16:40+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "cs"
 }
 -->
 # HTTPS streamování s Model Context Protocol (MCP)
 
-Tato kapitola poskytuje komplexní návod na implementaci bezpečného, škálovatelného a real-time streamování pomocí Model Context Protocol (MCP) přes HTTPS. Pokrývá motivaci pro streamování, dostupné transportní mechanismy, jak implementovat streamovatelné HTTP v MCP, bezpečnostní doporučení, migraci ze SSE a praktické rady pro tvorbu vlastních streamovacích aplikací MCP.
+Tato kapitola nabízí komplexní průvodce implementací bezpečného, škálovatelného a real-time streamování pomocí Model Context Protocol (MCP) přes HTTPS. Pokrývá motivaci pro streamování, dostupné transportní mechanismy, jak implementovat streamovatelné HTTP v MCP, bezpečnostní doporučení, migraci ze SSE a praktické rady pro tvorbu vlastních streamovacích aplikací MCP.
 
 ## Transportní mechanismy a streamování v MCP
 
@@ -35,7 +35,7 @@ Podívejte se na následující tabulku, která ukazuje rozdíly mezi těmito tr
 
 > **Tip:** Výběr správného transportu ovlivňuje výkon, škálovatelnost a uživatelský zážitek. **Streamable HTTP** je doporučeno pro moderní, škálovatelné a cloud-ready aplikace.
 
-Všimněte si transportů stdio a SSE, které jste viděli v předchozích kapitolách, a jak streamable HTTP je transport, který je pokryt v této kapitole.
+Všimněte si transportů stdio a SSE, které jste viděli v předchozích kapitolách, a jak streamovatelné HTTP je transport, který je pokryt v této kapitole.
 
 ## Streamování: Koncepty a motivace
 
@@ -57,7 +57,7 @@ Zde je, co byste měli o streamování vědět na vysoké úrovni:
 
 Důvody pro použití streamování jsou následující:
 
-- Uživatelé dostávají okamžitou zpětnou vazbu, ne jen na konci.
+- Uživatelé dostávají zpětnou vazbu okamžitě, ne až na konci.
 - Umožňuje real-time aplikace a responzivní UI.
 - Efektivnější využití síťových a výpočetních zdrojů.
 
@@ -65,12 +65,11 @@ Důvody pro použití streamování jsou následující:
 
 Zde je jednoduchý příklad, jak lze streamování implementovat:
 
-<details>
-<summary>Python</summary>
+## Python
 
 **Server (Python, používající FastAPI a StreamingResponse):**
-<details>
-<summary>Python</summary>
+
+### Python
 
 ```python
 from fastapi import FastAPI
@@ -89,11 +88,10 @@ def stream():
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 ```
 
-</details>
 
 **Klient (Python, používající requests):**
-<details>
-<summary>Python</summary>
+
+### Python
 
 ```python
 import requests
@@ -104,7 +102,6 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
             print(line.decode())
 ```
 
-</details>
 
 Tento příklad ukazuje server, který posílá klientovi sérii zpráv, jakmile jsou k dispozici, místo čekání na všechny zprávy najednou.
 
@@ -117,10 +114,7 @@ Tento příklad ukazuje server, který posílá klientovi sérii zpráv, jakmile
 - Klient musí zpracovávat odpověď jako stream (`stream=True` v requests).
 - Content-Type je obvykle `text/event-stream` nebo `application/octet-stream`.
 
-</details>
-
-<details>
-<summary>Java</summary>
+## Java
 
 **Server (Java, používající Spring Boot a Server-Sent Events):**
 
@@ -188,21 +182,19 @@ public class CalculatorClientApplication implements CommandLineRunner {
 **Poznámky k implementaci v Javě:**
 - Používá reaktivní stack Spring Boot s `Flux` pro streamování
 - `ServerSentEvent` poskytuje strukturované streamování událostí s typy událostí
-- `WebClient` s `bodyToFlux()` umožňuje reaktivní příjem streamu
+- `WebClient` s `bodyToFlux()` umožňuje reaktivní konzumaci streamu
 - `delayElements()` simuluje čas zpracování mezi událostmi
 - Události mohou mít typy (`info`, `result`) pro lepší zpracování na klientovi
 
-</details>
-
 ### Porovnání: Klasické streamování vs MCP streamování
 
-Rozdíly mezi klasickým streamováním a streamováním v MCP lze znázornit takto:
+Rozdíly mezi klasickým způsobem streamování a tím, jak funguje streamování v MCP, lze znázornit takto:
 
-| Vlastnost              | Klasické HTTP streamování       | MCP streamování (notifikace)       |
-|------------------------|--------------------------------|-----------------------------------|
-| Hlavní odpověď         | Chunkovaná                     | Jedna, na konci                   |
+| Vlastnost              | Klasické HTTP streamování      | MCP streamování (notifikace)       |
+|------------------------|-------------------------------|-----------------------------------|
+| Hlavní odpověď         | Chunked (po částech)           | Jedna, na konci                   |
 | Aktualizace průběhu    | Posílány jako datové chunky    | Posílány jako notifikace          |
-| Požadavky na klienta   | Musí zpracovat stream          | Musí implementovat message handler|
+| Požadavky na klienta   | Musí zpracovávat stream        | Musí implementovat message handler|
 | Použití                | Velké soubory, AI token stream | Průběh, logy, real-time zpětná vazba|
 
 ### Klíčové rozdíly
@@ -213,7 +205,7 @@ Dále zde jsou některé klíčové rozdíly:
    - Klasické HTTP streamování: Používá jednoduché chunked transfer encoding pro odesílání dat po částech
    - MCP streamování: Používá strukturovaný systém notifikací s JSON-RPC protokolem
 
-- **Formát zpráv:**
+- **Formát zprávy:**
    - Klasické HTTP: Prostý text s novými řádky
    - MCP: Strukturované objekty LoggingMessageNotification s metadaty
 
@@ -237,21 +229,21 @@ Některé doporučení při rozhodování mezi klasickým streamováním (jako e
 
 ## Streamování v MCP
 
-Takže jste viděli některá doporučení a porovnání rozdílů mezi klasickým streamováním a streamováním v MCP. Pojďme se podrobněji podívat, jak můžete streamování v MCP využít.
+Viděli jste už některá doporučení a porovnání rozdílů mezi klasickým streamováním a streamováním v MCP. Pojďme se podrobněji podívat, jak přesně můžete využít streamování v MCP.
 
 Pochopení, jak streamování funguje v rámci MCP, je klíčové pro tvorbu responzivních aplikací, které poskytují uživatelům real-time zpětnou vazbu během dlouhotrvajících operací.
 
-V MCP streamování neznamená posílání hlavní odpovědi po částech, ale odesílání **notifikací** klientovi během zpracování požadavku. Tyto notifikace mohou obsahovat aktualizace průběhu, logy nebo jiné události.
+V MCP nejde o odesílání hlavní odpovědi po částech, ale o posílání **notifikací** klientovi během zpracování požadavku. Tyto notifikace mohou obsahovat aktualizace průběhu, logy nebo jiné události.
 
 ### Jak to funguje
 
-Hlavní výsledek je stále odeslán jako jedna odpověď. Nicméně notifikace mohou být posílány jako samostatné zprávy během zpracování a tím aktualizovat klienta v reálném čase. Klient musí být schopen tyto notifikace zpracovat a zobrazit.
+Hlavní výsledek je stále odeslán jako jedna odpověď. Nicméně notifikace mohou být posílány jako samostatné zprávy během zpracování a tím klienta aktualizovat v reálném čase. Klient musí být schopen tyto notifikace zpracovat a zobrazit.
 
 ## Co je notifikace?
 
 Řekli jsme "notifikace", co to znamená v kontextu MCP?
 
-Notifikace je zpráva odeslaná ze serveru klientovi, která informuje o průběhu, stavu nebo jiných událostech během dlouhotrvající operace. Notifikace zlepšují transparentnost a uživatelský zážitek.
+Notifikace je zpráva odeslaná ze serveru klientovi, která informuje o průběhu, stavu nebo jiných událostech během dlouhotrvající operace. Notifikace zvyšují transparentnost a zlepšují uživatelský zážitek.
 
 Například klient by měl poslat notifikaci, jakmile je navázáno počáteční spojení se serverem.
 
@@ -303,11 +295,7 @@ Pro implementaci notifikací v MCP je potřeba nastavit jak serverovou, tak klie
 
 Začněme serverovou částí. V MCP definujete nástroje, které mohou během zpracování požadavků odesílat notifikace. Server používá kontextový objekt (obvykle `ctx`) k odesílání zpráv klientovi.
 
-<details>
-<summary>Python</summary>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -318,9 +306,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-V předchozím příkladu nástroj `process_files` odesílá klientovi tři notifikace během zpracování každého souboru. Metoda `ctx.info()` slouží k odesílání informačních zpráv.
-
-</details>
+V předchozím příkladu nástroj `process_files` odesílá tři notifikace klientovi během zpracování každého souboru. Metoda `ctx.info()` slouží k odesílání informačních zpráv.
 
 Dále, aby notifikace fungovaly, ujistěte se, že server používá streamovací transport (např. `streamable-http`) a klient implementuje message handler pro zpracování notifikací. Zde je, jak nastavit server pro použití transportu `streamable-http`:
 
@@ -328,10 +314,7 @@ Dále, aby notifikace fungovaly, ujistěte se, že server používá streamovac�
 mcp.run(transport="streamable-http")
 ```
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 [Tool("A tool that sends progress notifications")]
@@ -360,14 +343,11 @@ await builder
     .RunAsync();
 ```
 
-</details>
-
 ### Klientská část: Příjem notifikací
 
 Klient musí implementovat message handler, který zpracovává a zobrazuje notifikace, jakmile přicházejí.
 
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 async def message_handler(message):
@@ -386,10 +366,7 @@ async with ClientSession(
 
 V předchozím kódu funkce `message_handler` kontroluje, zda je příchozí zpráva notifikací. Pokud ano, vypíše ji; jinak ji zpracuje jako běžnou serverovou zprávu. Také si všimněte, jak je `ClientSession` inicializována s `message_handler` pro zpracování příchozích notifikací.
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 // Define a message handler
@@ -420,8 +397,6 @@ await client.InitializeAsync();
 
 V tomto .NET příkladu funkce `MessageHandler` kontroluje, zda je příchozí zpráva notifikací. Pokud ano, vypíše ji; jinak ji zpracuje jako běžnou serverovou zprávu. `ClientSession` je inicializována s message handlerem přes `ClientSessionOptions`.
 
-</details>
-
 Pro povolení notifikací se ujistěte, že server používá streamovací transport (např. `streamable-http`) a klient implementuje message handler pro zpracování notifikací.
 
 ## Notifikace průběhu a scénáře
@@ -446,7 +421,7 @@ Notifikace průběhu jsou real-time zprávy odesílané ze serveru klientovi bě
 Notifikace průběhu jsou důležité z několika důvodů:
 
 - **Lepší uživatelský zážitek:** Uživatelé vidí aktualizace během práce, ne jen na konci.
-- **Real-time zpětná vazba:** Klienti mohou zobrazovat progress bary nebo logy, což dělá aplikaci responzivnější.
+- **Real-time zpětná vazba:** Klienti mohou zobrazovat progress bary nebo logy, což dělá aplikaci responzivní.
 - **Snazší ladění a monitoring:** Vývojáři i uživatelé vidí, kde může být proces pomalý nebo zablokovaný.
 
 ### Jak implementovat notifikace průběhu
@@ -456,9 +431,9 @@ Zde je, jak můžete implementovat notifikace průběhu v MCP:
 - **Na serveru:** Použijte `ctx.info()` nebo `ctx.log()` k odesílání notifikací při zpracování každé položky. Tím se klientovi pošle zpráva ještě před tím, než je hlavní výsledek připraven.
 - **Na klientovi:** Implementujte message handler, který poslouchá a zobrazuje notifikace, jakmile přicházejí. Tento handler rozlišuje mezi notifikacemi a finálním výsledkem.
 
-**Příklad serveru:**
+**Serverový příklad:**
 
-<summary>Python</summary>
+## Python
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -469,12 +444,10 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-</details>
 
-**Příklad klienta:**
+**Klientský příklad:**
 
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 async def message_handler(message):
@@ -484,88 +457,85 @@ async def message_handler(message):
         print("SERVER MESSAGE:", message)
 ```
 
-</details>
 
 ## Bezpečnostní aspekty
 
-Při implementaci MCP serverů s HTTP přenosem je bezpečnost zásadní otázkou, která vyžaduje pečlivou pozornost vůči různým útokům a ochranným mechanismům.
+Při implementaci MCP serverů s HTTP-based transporty je bezpečnost zásadní otázkou, která vyžaduje pečlivou pozornost vůči různým útokům a ochranným mechanismům.
 
 ### Přehled
 
-Bezpečnost je klíčová při zpřístupňování MCP serverů přes HTTP. Streamable HTTP přináší nové možnosti útoků a vyžaduje pečlivé nastavení.
+Bezpečnost je klíčová při zpřístupňování MCP serverů přes HTTP. Streamable HTTP přináší nové možnosti útoků a vyžaduje pečlivou konfiguraci.
 
-### Hlavní body
-- **Validace hlavičky Origin**: Vždy ověřujte hlavičku `Origin`, abyste zabránili DNS rebinding útokům.
-- **Vazba na localhost**: Pro lokální vývoj svazujte servery na `localhost`, aby nebyly přístupné z veřejného internetu.
-- **Autentizace**: Pro produkční nasazení implementujte autentizaci (např. API klíče, OAuth).
+### Klíčové body
+- **Validace hlavičky Origin**: Vždy ověřujte hlavičku `Origin`, aby se zabránilo DNS rebinding útokům.
+- **Vazba na localhost**: Pro lokální vývoj bindujte servery na `localhost`, aby nebyly veřejně dostupné.
+- **Autentizace**: Implementujte autentizaci (např. API klíče, OAuth) pro produkční nasazení.
 - **CORS**: Nastavte politiky Cross-Origin Resource Sharing (CORS) pro omezení přístupu.
-- **HTTPS**: V produkci používejte HTTPS pro šifrování komunikace.
+- **HTTPS**: Používejte HTTPS v produkci pro šifrování komunikace.
 
 ### Doporučené postupy
-- Nikdy nevěřte příchozím požadavkům bez ověření.
+- Nikdy nevěřte příchozím požadavkům bez validace.
 - Logujte a monitorujte veškerý přístup a chyby.
-- Pravidelně aktualizujte závislosti kvůli opravám bezpečnostních chyb.
+- Pravidelně aktualizujte závislosti kvůli bezpečnostním záplatám.
 
 ### Výzvy
 - Vyvážení bezpečnosti a jednoduchosti vývoje
 - Zajištění kompatibility s různými klientskými prostředími
 
-
 ## Přechod ze SSE na Streamable HTTP
 
-Pro aplikace, které aktuálně používají Server-Sent Events (SSE), přechod na Streamable HTTP přináší lepší možnosti a dlouhodobější udržitelnost MCP implementací.
+Pro aplikace, které aktuálně
+### Proč upgradovat?
 
-### Proč přecházet?
-
-Existují dva hlavní důvody pro přechod ze SSE na Streamable HTTP:
+Existují dva přesvědčivé důvody, proč přejít ze SSE na Streamable HTTP:
 
 - Streamable HTTP nabízí lepší škálovatelnost, kompatibilitu a bohatší podporu notifikací než SSE.
-- Je doporučeným přenosem pro nové MCP aplikace.
+- Je doporučeným transportem pro nové MCP aplikace.
 
 ### Kroky migrace
 
-Jak migrovat ze SSE na Streamable HTTP ve vašich MCP aplikacích:
+Zde je návod, jak migrovat ze SSE na Streamable HTTP ve vašich MCP aplikacích:
 
 - **Aktualizujte serverový kód** tak, aby používal `transport="streamable-http"` v `mcp.run()`.
 - **Aktualizujte klientský kód** tak, aby používal `streamablehttp_client` místo SSE klienta.
 - **Implementujte zpracování zpráv** v klientovi pro zpracování notifikací.
-- **Otestujte kompatibilitu** s existujícími nástroji a workflow.
+- **Otestujte kompatibilitu** s existujícími nástroji a pracovními postupy.
 
-### Zachování kompatibility
+### Udržování kompatibility
 
-Doporučuje se během migrace zachovat kompatibilitu se stávajícími SSE klienty. Některé strategie:
+Během migrace se doporučuje zachovat kompatibilitu se stávajícími SSE klienty. Zde jsou některé strategie:
 
-- Podporujte oba přenosy, SSE i Streamable HTTP, na různých koncových bodech.
-- Postupně migrujte klienty na nový přenos.
+- Můžete podporovat oba transporty, SSE i Streamable HTTP, spuštěním na různých koncových bodech.
+- Postupně migrujte klienty na nový transport.
 
 ### Výzvy
 
-Při migraci je potřeba řešit:
+Při migraci je třeba řešit následující výzvy:
 
-- Zajištění, že všichni klienti budou aktualizováni
-- Řešení rozdílů v doručování notifikací
+- Zajistit, aby všichni klienti byli aktualizováni
+- Řešit rozdíly v doručování notifikací
 
 ## Bezpečnostní aspekty
 
-Bezpečnost by měla být prioritou při implementaci jakéhokoliv serveru, zvláště při použití HTTP přenosů jako Streamable HTTP v MCP.
+Bezpečnost by měla být nejvyšší prioritou při implementaci jakéhokoli serveru, zejména při použití HTTP transportů jako je Streamable HTTP v MCP.
 
-Při implementaci MCP serverů s HTTP přenosem je bezpečnost zásadní otázkou, která vyžaduje pečlivou pozornost vůči různým útokům a ochranným mechanismům.
+Při implementaci MCP serverů s HTTP transporty je bezpečnost klíčová a vyžaduje pečlivou pozornost vůči různým útokům a ochranným mechanismům.
 
 ### Přehled
 
-Bezpečnost je klíčová při zpřístupňování MCP serverů přes HTTP. Streamable HTTP přináší nové možnosti útoků a vyžaduje pečlivé nastavení.
+Bezpečnost je zásadní při zpřístupňování MCP serverů přes HTTP. Streamable HTTP přináší nové bezpečnostní rizika a vyžaduje pečlivé nastavení.
 
-Zde jsou některé klíčové bezpečnostní aspekty:
+Zde jsou klíčové bezpečnostní aspekty:
 
 - **Validace hlavičky Origin**: Vždy ověřujte hlavičku `Origin`, abyste zabránili DNS rebinding útokům.
-- **Vazba na localhost**: Pro lokální vývoj svazujte servery na `localhost`, aby nebyly přístupné z veřejného internetu.
+- **Vazba na localhost**: Pro lokální vývoj bindujte servery na `localhost`, aby nebyly přístupné z veřejného internetu.
 - **Autentizace**: Pro produkční nasazení implementujte autentizaci (např. API klíče, OAuth).
 - **CORS**: Nastavte politiky Cross-Origin Resource Sharing (CORS) pro omezení přístupu.
 - **HTTPS**: V produkci používejte HTTPS pro šifrování komunikace.
 
 ### Doporučené postupy
 
-Dále zde jsou některé doporučené postupy pro zabezpečení vašeho MCP streaming serveru:
+Navíc zde jsou některé osvědčené postupy pro zabezpečení vašeho MCP streaming serveru:
 
 - Nikdy nevěřte příchozím požadavkům bez ověření.
 - Logujte a monitorujte veškerý přístup a chyby.
@@ -573,14 +543,14 @@ Dále zde jsou některé doporučené postupy pro zabezpečení vašeho MCP stre
 
 ### Výzvy
 
-Při zabezpečení MCP streaming serverů narazíte na tyto výzvy:
+Při implementaci bezpečnosti v MCP streaming serverech narazíte na tyto výzvy:
 
-- Vyvážení bezpečnosti a jednoduchosti vývoje
-- Zajištění kompatibility s různými klientskými prostředími
+- Najít rovnováhu mezi bezpečností a snadností vývoje
+- Zajistit kompatibilitu s různými klientskými prostředími
 
 ### Zadání: Vytvořte vlastní streamingovou MCP aplikaci
 
-**Scénář:**
+**Scénář:**  
 Vytvořte MCP server a klienta, kde server zpracovává seznam položek (např. soubory nebo dokumenty) a pro každou zpracovanou položku odesílá notifikaci. Klient by měl zobrazovat každou notifikaci ihned po jejím přijetí.
 
 **Kroky:**
@@ -589,7 +559,7 @@ Vytvořte MCP server a klienta, kde server zpracovává seznam položek (např. 
 2. Implementujte klienta se zpracovatelem zpráv, který bude notifikace zobrazovat v reálném čase.
 3. Otestujte implementaci spuštěním serveru i klienta a sledujte notifikace.
 
-[Řešení](./solution/README.md)
+[Solution](./solution/README.md)
 
 ## Další čtení a co dál?
 
@@ -604,9 +574,9 @@ Pokračujte ve svém poznávání MCP streamingu a rozšiřujte své znalosti po
 
 ### Co dál?
 
-- Vyzkoušejte tvorbu pokročilejších MCP nástrojů využívajících streaming pro analýzy v reálném čase, chat nebo kolaborativní editaci.
-- Prozkoumejte integraci MCP streamingu s frontendovými frameworky (React, Vue apod.) pro živé aktualizace uživatelského rozhraní.
+- Zkuste vytvořit pokročilejší MCP nástroje využívající streaming pro analýzy v reálném čase, chat nebo kolaborativní editaci.
+- Prozkoumejte integraci MCP streamingu s frontendovými frameworky (React, Vue apod.) pro živé aktualizace UI.
 - Další krok: [Využití AI Toolkit pro VSCode](../07-aitk/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

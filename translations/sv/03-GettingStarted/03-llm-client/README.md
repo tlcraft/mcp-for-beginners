@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T06:18:21+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T18:46:09+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sv"
 }
@@ -37,7 +37,7 @@ Så här kommer klienten att interagera med servern:
 
 1. Hantera en användarprompt genom att skicka den till LLM tillsammans med de verktyg som klienten listat.
 
-Bra, nu när vi förstår hur vi kan göra detta på en övergripande nivå, låt oss prova i övningen nedan.
+Bra, nu när vi förstår hur vi kan göra detta på en övergripande nivå, låt oss prova detta i övningen nedan.
 
 ## Övning: Skapa en klient med en LLM
 
@@ -237,16 +237,16 @@ public class LangChain4jClient {
 
 I koden ovan har vi:
 
-- **Lagt till LangChain4j-beroenden**: Nödvändiga för MCP-integration, OpenAI officiella klient och stöd för GitHub Models
+- **Lagt till LangChain4j-beroenden**: Nödvändiga för MCP-integration, OpenAI officiella klient och GitHub Models-stöd
 - **Importerat LangChain4j-biblioteken**: För MCP-integration och OpenAI chat-modellfunktionalitet
 - **Skapat en `ChatLanguageModel`**: Konfigurerad att använda GitHub Models med din GitHub-token
 - **Satt upp HTTP-transport**: Med Server-Sent Events (SSE) för att ansluta till MCP-servern
 - **Skapat en MCP-klient**: Som hanterar kommunikationen med servern
-- **Använt LangChain4j:s inbyggda MCP-stöd**: Vilket förenklar integrationen mellan LLMs och MCP-servrar
+- **Använt LangChain4j:s inbyggda MCP-stöd**: Vilket förenklar integrationen mellan LLM och MCP-servrar
 
 Bra, för nästa steg, låt oss lista kapabiliteterna på servern.
 
-### -2 Lista serverkapabiliteter
+### -2- Lista serverns kapabiliteter
 
 Nu ansluter vi till servern och frågar efter dess kapabiliteter:
 
@@ -343,9 +343,9 @@ I koden ovan har vi:
 - Verktygsleverantören hanterar konverteringen mellan MCP-verktygsscheman och LangChain4j:s verktygsformat internt
 - Detta tillvägagångssätt abstraherar bort den manuella listningen och konverteringen av verktyg
 
-### -3- Konvertera serverkapabiliteter till LLM-verktyg
+### -3- Konvertera serverns kapabiliteter till LLM-verktyg
 
-Nästa steg efter att ha listat serverkapabiliteter är att konvertera dem till ett format som LLM förstår. När vi gjort det kan vi tillhandahålla dessa kapabiliteter som verktyg till vår LLM.
+Nästa steg efter att ha listat serverns kapabiliteter är att konvertera dem till ett format som LLM förstår. När vi gjort det kan vi tillhandahålla dessa kapabiliteter som verktyg till vår LLM.
 
 ### TypeScript
 
@@ -378,7 +378,7 @@ Nästa steg efter att ha listat serverkapabiliteter är att konvertera dem till 
 
     Koden ovan tar ett svar från MCP-servern och konverterar det till ett verktygsdefinitionsformat som LLM kan förstå.
 
-1. Låt oss uppdatera `run`-metoden för att lista serverkapabiliteter:
+1. Låt oss uppdatera `run`-metoden för att lista serverns kapabiliteter:
 
     ```typescript
     async run() {
@@ -459,7 +459,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 I koden ovan har vi:
 
 - Skapat en funktion `ConvertFrom` som tar namn, beskrivning och input-schema.
-- Definierat funktionalitet som skapar en FunctionDefinition som skickas till en ChatCompletionsDefinition. Det senare är något LLM kan förstå.
+- Definierat funktionalitet som skapar en FunctionDefinition som skickas till en ChatCompletionsDefinition. Det senare är något som LLM kan förstå.
 
 1. Låt oss se hur vi kan uppdatera befintlig kod för att dra nytta av denna funktion:
 
@@ -504,7 +504,7 @@ I koden ovan har vi:
         toolDefinitions.Add(def);
         ```
 
-        Input-schemat är en del av verktygssvaret men finns under attributet "properties", så vi behöver extrahera det. Dessutom anropar vi nu `ConvertFrom` med verktygsdetaljerna. Nu när vi gjort det tunga jobbet, låt oss se hur anropet kommer samman när vi hanterar en användarprompt nästa.
+        Input-schemat är en del av verktygssvaret men finns under attributet "properties", så vi behöver extrahera det. Dessutom anropar vi nu `ConvertFrom` med verktygsdetaljerna. Nu när vi gjort det tunga jobbet, låt oss se hur anropet kommer samman när vi hanterar en användarprompt nästa steg.
 
 ### Java
 
@@ -528,7 +528,7 @@ I koden ovan har vi:
 - Ramverket hanterar automatiskt verktygsschema-konvertering och funktionsanrop bakom kulisserna
 - Detta tillvägagångssätt eliminerar manuell verktygskonvertering – LangChain4j hanterar all komplexitet med att konvertera MCP-verktyg till LLM-kompatibelt format
 
-Bra, vi är nu redo att hantera användarförfrågningar, så låt oss ta itu med det.
+Bra, vi är nu redo att hantera användarförfrågningar, så låt oss ta itu med det nästa.
 
 ### -4- Hantera användarprompt
 
@@ -632,7 +632,7 @@ I denna del av koden kommer vi att hantera användarförfrågningar.
     });
     ```
 
-Bra, här är hela koden:
+Bra, här är hela koden i sin helhet:
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -857,12 +857,12 @@ client.connectToServer(transport);
 
     Där, det var sista steget, i koden ovan:
 
-    - Anropar vi ett MCP-verktyg via `call_tool` med en funktion som LLM tyckte vi skulle anropa baserat på vår prompt.
+    - Anropar vi ett MCP-verktyg via `call_tool` med en funktion som LLM ansåg att vi skulle anropa baserat på vår prompt.
     - Skriver ut resultatet av verktygsanropet till MCP-servern.
 
 ### .NET
 
-1. Låt oss visa lite kod för att göra en LLM-promptförfrågan:
+1. Här är lite kod för att göra en LLM-promptförfrågan:
 
     ```csharp
     var tools = await GetMcpTools();
@@ -931,7 +931,7 @@ client.connectToServer(transport);
     - Loopat igenom en lista med funktionsanrop.
     - För varje verktygsanrop, parsar vi ut namn och argument och anropar verktyget på MCP-servern med MCP-klienten. Slutligen skriver vi ut resultaten.
 
-Här är hela koden:
+Här är koden i sin helhet:
 
 ```csharp
 using Azure;
@@ -1080,7 +1080,7 @@ I koden ovan har vi:
 
 - Använt enkla prompts med naturligt språk för att interagera med MCP-serverns verktyg
 - LangChain4j-ramverket hanterar automatiskt:
-  - Konvertering av användarprompts till verktygsanrop vid behov
+  - Konvertering av användarprompts till verktygsanrop när det behövs
   - Anrop av lämpliga MCP-verktyg baserat på LLM:s beslut
   - Hantering av konversationsflödet mellan LLM och MCP-server
 - Metoden `bot.chat()` returnerar svar på naturligt språk som kan inkludera resultat från MCP-verktygsutföranden
@@ -1139,7 +1139,7 @@ Bra, du klarade det!
 
 ## Uppgift
 
-Ta koden från övningen och bygg ut servern med fler verktyg. Skapa sedan en klient med en LLM, som i övningen, och testa med olika prompts för att säkerställa att alla dina serververktyg anropas dynamiskt. Detta sätt att bygga en klient innebär att slutanvändaren får en fantastisk användarupplevelse eftersom de kan använda prompts istället för exakta klientkommandon och är ovetande om att någon MCP-server anropas.
+Ta koden från övningen och bygg ut servern med fler verktyg. Skapa sedan en klient med en LLM, som i övningen, och testa med olika prompts för att säkerställa att alla dina serververktyg anropas dynamiskt. Detta sätt att bygga en klient ger en fantastisk användarupplevelse eftersom användaren kan använda prompts istället för exakta klientkommandon och är omedveten om att någon MCP-server anropas.
 
 ## Lösning
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T07:44:19+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T19:02:16+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "vi"
 }
@@ -13,7 +13,7 @@ SSE (Server Sent Events) là một chuẩn để truyền dữ liệu từ serve
 
 ## Tổng quan
 
-Bài học này sẽ hướng dẫn cách xây dựng và sử dụng SSE Server.
+Bài học này hướng dẫn cách xây dựng và sử dụng SSE Server.
 
 ## Mục tiêu học tập
 
@@ -25,10 +25,10 @@ Sau bài học này, bạn sẽ có thể:
 
 ## SSE, cách hoạt động
 
-SSE là một trong hai loại transport được hỗ trợ. Bạn đã từng thấy loại đầu tiên là stdio được sử dụng trong các bài học trước. Sự khác biệt như sau:
+SSE là một trong hai loại giao thức truyền tải được hỗ trợ. Bạn đã từng thấy loại đầu tiên là stdio được sử dụng trong các bài học trước. Sự khác biệt như sau:
 
 - SSE yêu cầu bạn xử lý hai việc: kết nối và tin nhắn.
-- Vì đây là một server có thể chạy ở bất kỳ đâu, bạn cần điều chỉnh cách làm việc với các công cụ như Inspector và Visual Studio Code sao cho phù hợp. Điều này có nghĩa là thay vì chỉ cách khởi động server, bạn sẽ chỉ đến endpoint nơi có thể thiết lập kết nối. Xem ví dụ mã dưới đây:
+- Vì đây là server có thể chạy ở bất kỳ đâu, bạn cần điều chỉnh cách làm việc với các công cụ như Inspector và Visual Studio Code sao cho phù hợp. Điều này có nghĩa là thay vì chỉ cách khởi động server, bạn sẽ chỉ đến endpoint nơi server có thể thiết lập kết nối. Xem ví dụ mã dưới đây:
 
 ### TypeScript
 
@@ -55,8 +55,8 @@ app.post("/messages", async (req: Request, res: Response) => {
 
 Trong đoạn mã trên:
 
-- `/sse` được thiết lập làm route. Khi có yêu cầu đến route này, một instance transport mới được tạo và server *kết nối* qua transport này.
-- `/messages` là route xử lý các tin nhắn đến.
+- `/sse` được thiết lập làm route. Khi có yêu cầu đến route này, một phiên bản transport mới được tạo và server *kết nối* qua transport này.
+- `/messages` là route xử lý các tin nhắn gửi đến.
 
 ### Python
 
@@ -77,11 +77,11 @@ app = Starlette(
 
 ```
 
-Trong đoạn mã trên:
+Trong đoạn mã trên, chúng ta:
 
-- Tạo một instance server ASGI (cụ thể dùng Starlette) và gắn route mặc định `/`.
+- Tạo một instance của ASGI server (cụ thể dùng Starlette) và mount route mặc định `/`
 
-  Ở phía sau, các route `/sse` và `/messages` được thiết lập để xử lý kết nối và tin nhắn tương ứng. Phần còn lại của ứng dụng, như thêm các tính năng, công cụ, vẫn hoạt động như với server stdio.
+  Ở phía sau, các route `/sse` và `/messages` được thiết lập để xử lý kết nối và tin nhắn tương ứng. Phần còn lại của ứng dụng, như thêm các tính năng hay công cụ, được thực hiện tương tự như với các server stdio.
 
 ### .NET    
 
@@ -99,23 +99,24 @@ Trong đoạn mã trên:
     app.MapMcp();
     ```
 
-    Có hai phương thức giúp chuyển từ web server sang web server hỗ trợ SSE:
+    Có hai phương thức giúp chuyển từ web server sang web server hỗ trợ SSE là:
 
-    - `AddMcpServer`, phương thức này thêm các khả năng.
+    - `AddMcpServer`, phương thức này thêm các khả năng cần thiết.
     - `MapMcp`, phương thức này thêm các route như `/SSE` và `/messages`.
+```
 
-Bây giờ khi đã hiểu thêm về SSE, hãy cùng xây dựng một SSE server.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Bài tập: Tạo SSE Server
+## Exercise: Creating an SSE Server
 
-Để tạo server, cần lưu ý hai điều:
+To create our server, we need to keep two things in mind:
 
-- Cần dùng web server để mở các endpoint cho kết nối và tin nhắn.
-- Xây dựng server như bình thường với các công cụ, tài nguyên và prompt khi dùng stdio.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Tạo instance server
+### -1- Create a server instance
 
-Để tạo server, ta dùng cùng loại như với stdio. Tuy nhiên, với transport, ta chọn SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-Trong đoạn mã trên, ta đã:
+In the preceding code we've:
 
-- Tạo một instance server.
-- Định nghĩa app sử dụng framework web express.
-- Tạo biến transports để lưu các kết nối đến.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-Trong đoạn mã trên, ta đã:
+In the preceding code we've:
 
-- Import các thư viện cần thiết, trong đó có Starlette (một framework ASGI).
-- Tạo instance MCP server `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-Ở bước này, ta đã:
+At this point, we've:
 
-- Tạo ứng dụng web.
-- Thêm hỗ trợ cho các tính năng MCP qua `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Tiếp theo, ta sẽ thêm các route cần thiết.
+Let's add the needed routes next.
 
-### -2- Thêm các route
+### -2- Add routes
 
-Tiếp theo, ta thêm các route xử lý kết nối và tin nhắn đến:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-Trong đoạn mã trên, ta đã định nghĩa:
+In the preceding code we've defined:
 
-- Route `/sse` tạo một transport kiểu SSE và gọi `connect` trên MCP server.
-- Route `/messages` xử lý các tin nhắn đến.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-Trong đoạn mã trên, ta đã:
+In the preceding code we've:
 
-- Tạo instance app ASGI dùng framework Starlette. Trong đó, ta truyền `mcp.sse_app()` vào danh sách route, từ đó gắn các route `/sse` và `/messages` lên app.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Ta đã thêm dòng `add.MapMcp()` ở cuối, nghĩa là giờ đã có các route `/SSE` và `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Tiếp theo, ta sẽ thêm các khả năng cho server.
+Let's add capabilties to the server next.
 
-### -3- Thêm khả năng cho server
+### -3- Adding server capabilities
 
-Khi đã định nghĩa xong các phần riêng của SSE, ta thêm các khả năng như công cụ, prompt và tài nguyên.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Ví dụ cách thêm một công cụ. Công cụ này tạo một tool gọi là "random-joke" dùng API của Chuck Norris và trả về kết quả JSON.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Giờ server của bạn đã có một công cụ.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -291,7 +292,7 @@ import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-// Create an MCP server
+// Tạo một MCP server
 const server = new McpServer({
   name: "example-server",
   version: "1.0.0",
@@ -349,10 +350,10 @@ mcp = FastMCP("My App")
 
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """Cộng hai số"""
     return a + b
 
-# Mount the SSE server to the existing ASGI server
+# Mount SSE server vào server ASGI hiện có
 app = Starlette(
     routes=[
         Mount('/', app=mcp.sse_app()),
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Trước tiên, tạo một số công cụ, ta sẽ tạo file *Tools.cs* với nội dung sau:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -380,10 +381,10 @@ app = Starlette(
       
       }
 
-      [McpServerTool, Description("Add two numbers together.")]
+      [McpServerTool, Description("Cộng hai số lại với nhau.")]
       public async Task<string> AddNumbers(
-          [Description("The first number")] int a,
-          [Description("The second number")] int b)
+          [Description("Số thứ nhất")] int a,
+          [Description("Số thứ hai")] int b)
       {
           return (a + b).ToString();
       }
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Ở đây ta đã:
+  Here we've added the following:
 
-  - Tạo lớp `Tools` với decorator `McpServerToolType`.
-  - Định nghĩa công cụ `AddNumbers` bằng cách trang trí phương thức với `McpServerTool`. Đồng thời cung cấp tham số và phần cài đặt.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Sử dụng lớp `Tools` vừa tạo:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Ta đã thêm gọi `WithTools` chỉ định `Tools` là lớp chứa các công cụ. Vậy là xong, ta đã sẵn sàng.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Tuyệt vời, ta đã có server dùng SSE, giờ hãy thử chạy nó.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Bài tập: Gỡ lỗi SSE Server với Inspector
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector là công cụ rất hữu ích mà ta đã thấy trong bài học trước [Creating your first server](/03-GettingStarted/01-first-server/README.md). Hãy xem ta có thể dùng Inspector ở đây không:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Chạy inspector
+### -1- Running the inspector
 
-Để chạy inspector, trước tiên bạn phải có server SSE đang chạy, vậy ta làm như sau:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Chạy server
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Inspector là công cụ rất hữu ích mà ta đã thấy trong bài học tr
     uvicorn server:app
     ```
 
-    Lưu ý ta dùng executable `uvicorn` được cài khi gõ `pip install "mcp[cli]"`. Việc gõ `server:app` nghĩa là ta chạy file `server.py` và trong đó có instance Starlette tên `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,22 +447,22 @@ Inspector là công cụ rất hữu ích mà ta đã thấy trong bài học tr
     dotnet run
     ```
 
-    Lệnh này sẽ khởi động server. Để tương tác với nó, bạn cần mở một terminal mới.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Chạy inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Chạy lệnh này trong cửa sổ terminal khác với nơi server đang chạy. Lưu ý bạn cần chỉnh sửa lệnh dưới đây cho phù hợp với URL server của bạn.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Việc chạy inspector giống nhau ở tất cả runtime. Lưu ý thay vì truyền đường dẫn đến server và lệnh khởi động server, ta truyền URL server đang chạy và chỉ định route `/sse`.
+    Việc chạy inspector trông giống nhau trên tất cả các runtime. Lưu ý thay vì truyền đường dẫn đến server và lệnh khởi động server, ta truyền URL nơi server đang chạy và chỉ định route `/sse`.
 
-### -2- Thử công cụ
+### -2- Thử nghiệm công cụ
 
-Kết nối server bằng cách chọn SSE trong danh sách thả xuống và điền URL server đang chạy, ví dụ http:localhost:4321/sse. Bấm nút "Connect". Như trước, chọn list tools, chọn một công cụ và nhập giá trị đầu vào. Bạn sẽ thấy kết quả như hình dưới:
+Kết nối server bằng cách chọn SSE trong danh sách thả xuống và điền URL nơi server của bạn đang chạy, ví dụ http:localhost:4321/sse. Bấm nút "Connect". Như trước, chọn danh sách công cụ, chọn một công cụ và nhập giá trị đầu vào. Bạn sẽ thấy kết quả như hình dưới:
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.vi.png)
 
@@ -469,7 +470,7 @@ Tuyệt vời, bạn đã có thể làm việc với inspector, giờ hãy xem 
 
 ## Bài tập
 
-Hãy thử mở rộng server với nhiều khả năng hơn. Tham khảo [trang này](https://api.chucknorris.io/) để, ví dụ, thêm công cụ gọi API. Bạn quyết định server sẽ như thế nào. Chúc vui :)
+Hãy thử mở rộng server của bạn với nhiều tính năng hơn. Tham khảo [trang này](https://api.chucknorris.io/) để, ví dụ, thêm một công cụ gọi API. Bạn quyết định server sẽ trông như thế nào. Chúc bạn vui :)
 
 ## Giải pháp
 
@@ -479,9 +480,9 @@ Hãy thử mở rộng server với nhiều khả năng hơn. Tham khảo [trang
 
 Những điểm chính trong chương này là:
 
-- SSE là loại transport thứ hai được hỗ trợ bên cạnh stdio.
-- Để hỗ trợ SSE, bạn cần quản lý kết nối và tin nhắn đến bằng framework web.
-- Bạn có thể dùng cả Inspector và Visual Studio Code để sử dụng SSE server, giống như với stdio server. Lưu ý có một số khác biệt nhỏ giữa stdio và SSE. Với SSE, bạn cần khởi động server riêng rồi mới chạy công cụ inspector. Với inspector, bạn cũng cần chỉ định URL server.
+- SSE là loại giao thức thứ hai được hỗ trợ bên cạnh stdio.
+- Để hỗ trợ SSE, bạn cần quản lý các kết nối và tin nhắn đến bằng một framework web.
+- Bạn có thể dùng cả Inspector và Visual Studio Code để sử dụng SSE server, giống như với các server stdio. Lưu ý có một số khác biệt nhỏ giữa stdio và SSE. Với SSE, bạn cần khởi động server riêng biệt rồi mới chạy công cụ inspector. Với inspector, bạn cũng cần chỉ định URL.
 
 ## Mẫu ví dụ
 
@@ -500,4 +501,4 @@ Những điểm chính trong chương này là:
 - Tiếp theo: [HTTP Streaming with MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

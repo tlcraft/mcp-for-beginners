@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T10:13:06+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T19:09:51+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sw"
 }
 -->
-# Kuanzia na MCP
+# Kuanzisha na MCP
 
 Karibu kwenye hatua zako za kwanza na Model Context Protocol (MCP)! Iwe wewe ni mpya kwa MCP au unatafuta kuongeza uelewa wako, mwongozo huu utakuelekeza kupitia mchakato muhimu wa usanidi na maendeleo. Utagundua jinsi MCP inavyorahisisha muunganisho kati ya mifano ya AI na programu, na kujifunza jinsi ya kuandaa mazingira yako haraka kwa ajili ya kujenga na kujaribu suluhisho zinazotumia MCP.
 
-> TLDR; Ikiwa unajenga programu za AI, unajua kuwa unaweza kuongeza zana na rasilimali nyingine kwenye LLM yako (mfano mkubwa wa lugha), ili kufanya LLM iwe na maarifa zaidi. Hata hivyo, ikiwa utaweka zana na rasilimali hizo kwenye seva, uwezo wa programu na seva unaweza kutumiwa na mteja yeyote akiwa na au bila LLM.
+> TLDR; Ikiwa unajenga programu za AI, unajua kuwa unaweza kuongeza zana na rasilimali nyingine kwenye LLM yako (mfano mkubwa wa lugha), ili kufanya LLM iwe na maarifa zaidi. Hata hivyo, ikiwa utaweka zana na rasilimali hizo kwenye seva, uwezo wa programu na seva unaweza kutumika na mteja yeyote akiwa na au bila LLM.
 
 ## Muhtasari
 
@@ -36,7 +36,7 @@ Kabla ya kuanza kufanya kazi na MCP, ni muhimu kuandaa mazingira yako ya maendel
 
 Kabla ya kuingia kwenye maendeleo ya MCP, hakikisha una:
 
-- **Mazingira ya Maendeleo**: Kwa lugha uliyoiamua kutumia (C#, Java, Python, TypeScript, au JavaScript)
+- **Mazingira ya Maendeleo**: Kwa lugha uliyoiamua (C#, Java, Python, TypeScript, au JavaScript)
 - **IDE/Mhariri**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, au mhariri wa kisasa wa msimbo wowote
 - **Wasimamizi wa Pakiti**: NuGet, Maven/Gradle, pip, au npm/yarn
 - **Vifunguo vya API**: Kwa huduma zozote za AI unazopanga kutumia katika programu zako za mwenyeji
@@ -47,7 +47,7 @@ Seva ya MCP kawaida inajumuisha:
 
 - **Usanidi wa Seva**: Kusanidi bandari, uthibitishaji, na mipangilio mingine
 - **Rasilimali**: Data na muktadha unaopatikana kwa LLMs
-- **Zana**: Uwezo wa kufanya kazi ambazo mifano inaweza kuitisha
+- **Zana**: Uwezo ambao mifano inaweza kuitisha
 - **Maelekezo**: Violezo vya kuunda au kupanga maandishi
 
 Hapa kuna mfano rahisi kwa TypeScript:
@@ -93,14 +93,14 @@ Katika msimbo uliotangulia tulifanya:
 
 Kabla ya kuanza kupima seva yako ya MCP, ni muhimu kuelewa zana zinazopatikana na mbinu bora za kutatua matatizo. Kupima kwa ufanisi kunahakikisha seva yako inafanya kazi kama inavyotarajiwa na kukusaidia haraka kubaini na kutatua matatizo. Sehemu inayofuata inaelezea mbinu zinazopendekezwa za kuthibitisha utekelezaji wako wa MCP.
 
-MCP inatoa zana za kusaidia kupima na kutatua matatizo ya seva zako:
+MCP hutoa zana za kusaidia kupima na kutatua matatizo ya seva zako:
 
 - **Zana ya Inspector**, kiolesura hiki cha picha kinakuwezesha kuungana na seva yako na kupima zana, maelekezo na rasilimali zako.
 - **curl**, pia unaweza kuungana na seva yako kwa kutumia zana ya mstari wa amri kama curl au wateja wengine wanaoweza kuunda na kuendesha amri za HTTP.
 
 ### Kutumia MCP Inspector
 
-[MCP Inspector](https://github.com/modelcontextprotocol/inspector) ni zana ya kuona na kupima inayokusaidia:
+[MCP Inspector](https://github.com/modelcontextprotocol/inspector) ni zana ya majaribio ya kuona inayokusaidia:
 
 1. **Kubaini Uwezo wa Seva**: Kugundua moja kwa moja rasilimali, zana, na maelekezo yanayopatikana
 2. **Kupima Utekelezaji wa Zana**: Jaribu vigezo tofauti na uone majibu kwa wakati halisi
@@ -121,13 +121,13 @@ Hapa kuna picha ya skrini inavyoweza kuonekana:
 
 | Tatizo | Suluhisho Linawezekana |
 |-------|------------------------|
-| Muunganisho umekataliwa | Hakikisha seva inaendeshwa na bandari ni sahihi |
+| Muunganisho umekataliwa | Hakikisha seva inaendesha na bandari ni sahihi |
 | Makosa ya utekelezaji wa zana | Kagua uthibitishaji wa vigezo na usimamizi wa makosa |
 | Kushindwa kwa uthibitishaji | Hakikisha funguo za API na ruhusa ni sahihi |
 | Makosa ya uthibitishaji wa skimu | Hakikisha vigezo vinaendana na skimu iliyobainishwa |
 | Seva haianzi | Angalia migongano ya bandari au utegemezi uliokosekana |
 | Makosa ya CORS | Sanidi vichwa vya CORS vinavyofaa kwa maombi ya asili tofauti |
-| Masuala ya uthibitishaji | Hakikisha tokeni ni halali na ruhusa ni sahihi |
+| Matatizo ya uthibitishaji | Hakikisha tokeni ni halali na ruhusa ni sahihi |
 
 ## Maendeleo ya Kiasili
 
@@ -145,7 +145,7 @@ npm run start
 
 ## Kujenga Seva Yako ya Kwanza ya MCP
 
-Tumezungumzia [Misingi ya Msingi](/01-CoreConcepts/README.md) katika somo lililopita, sasa ni wakati wa kutumia maarifa hayo.
+Tumejadili [Misingi ya Msingi](/01-CoreConcepts/README.md) katika somo lililopita, sasa ni wakati wa kutumia maarifa hayo.
 
 ### Seva inaweza kufanya nini
 
@@ -326,6 +326,10 @@ Ongeza usanidi kamili ufuatao kwenye faili yako *pom.xml*:
 </project>
 ```
 
+### -2- Unda mradi
+
+Sasa umeweka SDK yako, hebu tuunde mradi:
+
 ### TypeScript
 
 ```sh
@@ -349,6 +353,7 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+### -3- Unda faili za mradi  
 ### TypeScript
 
 Unda *package.json* yenye maudhui yafuatayo:
@@ -390,14 +395,14 @@ Unda *tsconfig.json* yenye maudhui yafuatayo:
 
 ### Python
 
-Unda faili *server.py*
+Unda faili *server.py*  
 ```sh
 touch server.py
 ```
 
 ### .NET
 
-Sakinisha vifurushi vya NuGet vinavyohitajika:
+Sakinisha pakiti za NuGet zinazohitajika:
 
 ```sh
 dotnet add package ModelContextProtocol --prerelease
@@ -407,6 +412,8 @@ dotnet add package Microsoft.Extensions.Hosting
 ### Java
 
 Kwa miradi ya Java Spring Boot, muundo wa mradi huundwa moja kwa moja.
+
+### -4- Andika msimbo wa seva
 
 ### TypeScript
 
@@ -812,7 +819,7 @@ Katika msimbo uliotangulia tumefanya:
 
 ### .NET
 
-Ongeza hii kwenye faili yako ya Program.cs:
+Ongeza hii kwenye faili yako Program.cs:
 
 ```csharp
 [McpServerToolType]
@@ -827,7 +834,7 @@ public static class CalculatorTool
 
 Zana tayari zimetengenezwa katika hatua iliyopita.
 
-### -6 Msimbo wa mwisho
+### -6- Msimbo wa mwisho
 
 Tuweke msimbo wa mwisho unaohitajika ili seva ianze:
 
@@ -908,7 +915,7 @@ if __name__ == "__main__":
 
 ### .NET
 
-Unda faili la Program.cs lenye maudhui yafuatayo:
+Unda faili Program.cs yenye maudhui yafuatayo:
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -940,7 +947,7 @@ public static class CalculatorTool
 
 ### Java
 
-Darasa lako kuu la programu linapaswa kuonekana kama hili:
+Darasa lako kamili la programu kuu linapaswa kuonekana hivi:
 
 ```java
 // McpServerApplication.java
@@ -1026,8 +1033,8 @@ Hata hivyo, haitekelezi njia zote zinazopatikana kwenye zana hiyo hivyo unashaur
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
-```
-Ikiwa unatumia zana au IDE inayoruhusu kusanidi amri na hoja za kuendesha skiripti, hakikisha kuweka `python` kwenye sehemu ya `Command` na `server.py` kama `Arguments`. Hii inahakikisha skiripti inaendeshwa ipasavyo.
+```  
+Ikiwa unatumia zana au IDE inayokuruhusu kusanidi amri na hoja za kuendesha skiripti, hakikisha kuweka `python` kwenye sehemu ya `Command` na `server.py` kama `Arguments`. Hii inahakikisha skiripti inaendeshwa ipasavyo.
 
 ### .NET
 
@@ -1040,7 +1047,7 @@ npx @modelcontextprotocol/inspector dotnet run
 
 ### Java
 
-Hakikisha seva yako ya calculator inaendeshwa
+Hakikisha seva yako ya calculator inaendesha  
 Kisha endesha inspector:
 
 ```cmd
@@ -1055,7 +1062,7 @@ Katika kiolesura cha wavuti cha inspector:
 
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.sw.png)
 
-**Sasa umeunganishwa na seva**
+**Sasa umeunganishwa na seva**  
 **Sehemu ya majaribio ya seva ya Java imekamilika sasa**
 
 Sehemu inayofuata ni kuhusu kuingiliana na seva.
@@ -1064,7 +1071,7 @@ Unapaswa kuona kiolesura cha mtumiaji kama hiki:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sw.png)
 
-1. Unganisha na seva kwa kubonyeza kitufe cha Connect
+1. Unganisha na seva kwa kubonyeza kitufe cha Connect  
   Ukishaunda muunganisho na seva, sasa unapaswa kuona yafuatayo:
 
   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.sw.png)
@@ -1079,52 +1086,52 @@ Hongera, umefanikiwa kuunda na kuendesha seva yako ya kwanza!
 
 ### SDK Rasmi
 
-MCP inatoa SDK rasmi kwa lugha mbalimbali:
+MCP hutoa SDK rasmi kwa lugha mbalimbali:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Inasimamiwa kwa ushirikiano na Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Inasimamiwa kwa ushirikiano na Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Utekelezaji rasmi wa TypeScript
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Utekelezaji rasmi wa Python
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Utekelezaji rasmi wa Kotlin
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Inasimamiwa kwa ushirikiano na Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Utekelezaji rasmi wa Rust
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Utekelezaji rasmi wa Kotlin  
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Inadumishwa kwa ushirikiano na Loopwork AI  
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Utekelezaji rasmi wa Rust  
 
-## Muhimu Kuu
+## Muhimu Kuelewa
 
-- Kuanzisha mazingira ya maendeleo ya MCP ni rahisi kwa kutumia SDK za lugha maalum
-- Kujenga seva za MCP kunahusisha kuunda na kusajili zana zenye miundo wazi
-- Kupima na kutatua matatizo ni muhimu kwa utekelezaji wa MCP unaotegemewa
+- Kuanzisha mazingira ya maendeleo ya MCP ni rahisi kwa kutumia SDK maalum za lugha  
+- Kujenga seva za MCP kunahusisha kuunda na kusajili zana zenye miundo wazi  
+- Kupima na kutatua matatizo ni muhimu kwa utekelezaji wa MCP unaotegemewa  
 
 ## Sampuli
 
-- [Kalkuleta ya Java](../samples/java/calculator/README.md)
-- [Kalkuleta ya .Net](../../../../03-GettingStarted/samples/csharp)
-- [Kalkuleta ya JavaScript](../samples/javascript/README.md)
-- [Kalkuleta ya TypeScript](../samples/typescript/README.md)
-- [Kalkuleta ya Python](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
-## Kazi ya Nyumbani
+## Kazi
 
-Tengeneza seva rahisi ya MCP na zana unayopendelea:
+Tengeneza seva rahisi ya MCP na zana unayochagua:
 
-1. Tekeleza zana hiyo kwa lugha unayopendelea (.NET, Java, Python, au JavaScript).
-2. Eleza vigezo vya kuingiza na thamani za kurudisha.
-3. Endesha zana ya ukaguzi kuhakikisha seva inafanya kazi kama inavyotarajiwa.
-4. Jaribu utekelezaji kwa kuingiza data mbalimbali.
+1. Tekeleza zana hiyo kwa lugha unayopendelea (.NET, Java, Python, au JavaScript).  
+2. Eleza vigezo vya ingizo na thamani za kurudisha.  
+3. Endesha zana ya ukaguzi kuhakikisha seva inafanya kazi kama inavyotarajiwa.  
+4. Jaribu utekelezaji kwa aina mbalimbali za ingizo.  
 
 ## Suluhisho
 
-[Suluhisho](./solution/README.md)
+[Suluhisho](./solution/README.md)  
 
 ## Rasilimali Zaidi
 
-- [Jenga Maajenti kwa kutumia Model Context Protocol kwenye Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [MCP ya Mbali na Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [Maajenti wa .NET OpenAI MCP](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Jenga Wakala kwa kutumia Model Context Protocol kwenye Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
+- [MCP ya Mbali na Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
+- [Wakala wa .NET OpenAI MCP](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## Kinachofuata
 
-Ifuatayo: [Kuanzia na Wateja wa MCP](../02-client/README.md)
+Kinachofuata: [Kuanzia na Wateja wa MCP](../02-client/README.md)
 
-**Kiarifu cha Msamaha**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna wajibu wowote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

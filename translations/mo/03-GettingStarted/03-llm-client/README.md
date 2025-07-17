@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T00:01:35+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T17:47:45+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "mo"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概述
 
-本課程將專注於如何在客戶端加入 LLM，並展示這如何為使用者帶來更佳的體驗。
+本課程將著重於如何在客戶端加入 LLM，並展示這如何為使用者帶來更佳的體驗。
 
 ## 學習目標
 
@@ -41,7 +41,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 練習：建立帶有 LLM 的客戶端
 
-在本練習中，我們將學習如何在客戶端加入 LLM。
+在這個練習中，我們將學習如何在客戶端加入 LLM。
 
 ## 使用 GitHub 個人存取權杖進行驗證
 
@@ -50,7 +50,7 @@ CO_OP_TRANSLATOR_METADATA:
 - 前往 GitHub 設定 – 點擊右上角的個人頭像，選擇「Settings」。
 - 進入開發者設定 – 向下捲動並點擊「Developer Settings」。
 - 選擇個人存取權杖 – 點擊「Personal access tokens」，然後選擇「Generate new token」。
-- 設定權杖 – 新增備註以便識別，設定過期日期，並選擇所需的權限範圍。
+- 設定權杖 – 新增備註、設定過期日期，並選擇所需的權限範圍。
 - 產生並複製權杖 – 點擊「Generate token」，並務必立即複製，因為之後無法再次查看。
 
 ### -1- 連接伺服器
@@ -246,9 +246,9 @@ public class LangChain4jClient {
 
 很好，接下來讓我們列出伺服器上的功能。
 
-### -2 列出伺服器功能
+### -2- 列出伺服器功能
 
-現在我們將連接伺服器並請求其功能列表：
+現在我們將連接伺服器並請求其功能：
 
 ### TypeScript
 
@@ -272,7 +272,7 @@ async run() {
 在上述程式碼中，我們：
 
 - 新增了連接伺服器的程式碼 `connectToServer`。
-- 建立一個 `run` 方法負責處理應用程式流程，目前僅列出工具，稍後會加入更多功能。
+- 建立一個 `run` 方法，負責處理應用程式流程。目前僅列出工具，稍後會加入更多功能。
 
 ### Python
 
@@ -321,7 +321,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
 在上述程式碼中，我們：
 
 - 列出了 MCP 伺服器上可用的工具
-- 對每個工具列出名稱、描述及其結構，後者將用於稍後呼叫工具
+- 對每個工具列出名稱、描述及其結構。後者將用於稍後呼叫工具。
 
 ### Java
 
@@ -339,9 +339,9 @@ ToolProvider toolProvider = McpToolProvider.builder()
 
 在上述程式碼中，我們：
 
-- 建立了 `McpToolProvider`，自動發現並註冊 MCP 伺服器上的所有工具
+- 建立了一個 `McpToolProvider`，自動發現並註冊 MCP 伺服器上的所有工具
 - 工具提供者會在內部處理 MCP 工具結構與 LangChain4j 工具格式的轉換
-- 這種方式抽象化了手動列出工具和轉換的過程
+- 這種方式省略了手動列出工具和轉換的步驟
 
 ### -3- 將伺服器功能轉換為 LLM 工具
 
@@ -376,7 +376,7 @@ ToolProvider toolProvider = McpToolProvider.builder()
 
     ```
 
-    上述程式碼將 MCP 伺服器的回應轉換成 LLM 能理解的工具定義格式。
+    上述程式碼將 MCP 伺服器的回應轉換成 LLM 可理解的工具定義格式。
 
 1. 接著更新 `run` 方法以列出伺服器功能：
 
@@ -429,11 +429,11 @@ ToolProvider toolProvider = McpToolProvider.builder()
         functions.append(convert_to_llm_tool(tool))
     ```
 
-    這裡我們呼叫 `convert_to_llm_tool`，將 MCP 工具回應轉換成稍後可提供給 LLM 的格式。
+    這裡我們呼叫 `convert_to_llm_tool`，將 MCP 工具回應轉換成稍後可傳給 LLM 的格式。
 
 ### .NET
 
-1. 新增程式碼將 MCP 工具回應轉換成 LLM 可理解的格式：
+1. 新增程式碼，將 MCP 工具回應轉換成 LLM 可理解的格式：
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -458,8 +458,8 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 
 在上述程式碼中，我們：
 
-- 建立 `ConvertFrom` 函式，接收名稱、描述和輸入結構。
-- 定義功能，建立 `FunctionDefinition` 並傳入 `ChatCompletionsDefinition`，後者是 LLM 可理解的格式。
+- 建立了 `ConvertFrom` 函式，接收名稱、描述和輸入結構。
+- 定義功能，建立一個 `FunctionDefinition`，並傳給 `ChatCompletionsDefinition`，後者是 LLM 可理解的格式。
 
 1. 接著更新現有程式碼以使用此函式：
 
@@ -493,7 +493,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 
     在上述程式碼中，我們：
 
-    - 更新函式以將 MCP 工具回應轉換為 LLM 工具。以下是新增的程式碼：
+    - 更新函式以將 MCP 工具回應轉換為 LLM 工具。重點程式碼如下：
 
         ```csharp
         JsonElement propertiesElement;
@@ -504,7 +504,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
         toolDefinitions.Add(def);
         ```
 
-        輸入結構位於工具回應的「properties」屬性中，因此需要提取。此外，我們現在使用工具細節呼叫 `ConvertFrom`。完成這些繁重工作後，接下來看看如何在處理使用者提示時整合這些呼叫。
+        輸入結構是工具回應的一部分，位於 "properties" 屬性中，因此需要提取。此外，我們現在使用工具細節呼叫 `ConvertFrom`。完成這些繁重工作後，接下來看看如何在處理使用者提示時整合這些呼叫。
 
 ### Java
 
@@ -523,10 +523,10 @@ Bot bot = AiServices.builder(Bot.class)
 
 在上述程式碼中，我們：
 
-- 定義一個簡單的 `Bot` 介面，用於自然語言互動
+- 定義了一個簡單的 `Bot` 介面，用於自然語言互動
 - 使用 LangChain4j 的 `AiServices` 自動將 LLM 與 MCP 工具提供者綁定
-- 框架自動處理工具結構轉換與函式呼叫
-- 這種方式免除了手動轉換工具的麻煩，LangChain4j 負責將 MCP 工具轉換成 LLM 相容格式
+- 框架自動處理工具結構轉換和函式呼叫
+- 這種方式省略了手動轉換工具的步驟，LangChain4j 負責將 MCP 工具轉換成 LLM 相容格式
 
 很好，我們已準備好處理使用者請求，接下來來實作這部分。
 
@@ -536,7 +536,7 @@ Bot bot = AiServices.builder(Bot.class)
 
 ### TypeScript
 
-1. 新增一個方法用來呼叫 LLM：
+1. 新增一個方法，用來呼叫 LLM：
 
     ```typescript
     async callTools(
@@ -567,7 +567,7 @@ Bot bot = AiServices.builder(Bot.class)
 
     在上述程式碼中，我們：
 
-    - 新增 `callTools` 方法。
+    - 新增了 `callTools` 方法。
     - 該方法接收 LLM 回應，檢查是否有工具被呼叫：
 
         ```typescript
@@ -838,7 +838,7 @@ client.connectToServer(transport);
 
     - 將從 MCP 伺服器取得並轉換的函式傳給 LLM。
     - 呼叫 LLM 並帶入這些函式。
-    - 檢查結果，判斷是否有函式需要呼叫。
+    - 檢查結果，判斷是否需要呼叫函式。
     - 最後傳入要呼叫的函式陣列。
 
 1. 最後，更新主要程式碼：
@@ -855,10 +855,10 @@ client.connectToServer(transport);
         print("TOOLS result: ", result.content)
     ```
 
-    這是最後一步，我們：
+    這是最後一步，在上述程式碼中，我們：
 
     - 使用 LLM 判斷應呼叫的函式，透過 `call_tool` 呼叫 MCP 工具。
-    - 印出工具呼叫結果。
+    - 印出呼叫 MCP 伺服器工具的結果。
 
 ### .NET
 
@@ -900,10 +900,10 @@ client.connectToServer(transport);
 
     - 從 MCP 伺服器取得工具，`var tools = await GetMcpTools()`。
     - 定義使用者提示 `userMessage`。
-    - 建立包含模型與工具的選項物件。
+    - 建立包含模型和工具的選項物件。
     - 向 LLM 發出請求。
 
-1. 最後，判斷 LLM 是否建議呼叫函式：
+1. 最後一步，判斷 LLM 是否建議呼叫函式：
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -929,7 +929,7 @@ client.connectToServer(transport);
     在上述程式碼中，我們：
 
     - 迴圈處理函式呼叫清單。
-    - 對每個工具呼叫，解析名稱與參數，並使用 MCP 客戶端呼叫 MCP 伺服器上的工具，最後印出結果。
+    - 對每個工具呼叫，解析名稱和參數，並使用 MCP 客戶端呼叫 MCP 伺服器上的工具，最後印出結果。
 
 完整程式碼如下：
 
@@ -1080,13 +1080,13 @@ try {
 
 - 使用簡單的自然語言提示與 MCP 伺服器工具互動
 - LangChain4j 框架自動處理：
-  - 將使用者提示轉換為工具呼叫（如有需要）
+  - 必要時將使用者提示轉換為工具呼叫
   - 根據 LLM 判斷呼叫適當的 MCP 工具
   - 管理 LLM 與 MCP 伺服器間的對話流程
-- `bot.chat()` 方法回傳自然語言回應，可能包含 MCP 工具執行結果
+- `bot.chat()` 方法回傳可能包含 MCP 工具執行結果的自然語言回應
 - 這種方式提供無縫的使用者體驗，使用者無需了解底層 MCP 實作細節
 
-完整範例程式碼：
+完整程式碼範例：
 
 ```java
 public class LangChain4jClient {
@@ -1139,7 +1139,7 @@ public class LangChain4jClient {
 
 ## 作業
 
-使用練習中的程式碼，擴充伺服器並加入更多工具。接著建立一個帶有 LLM 的客戶端，像練習中一樣，並用不同提示測試，確保所有伺服器工具都能動態被呼叫。這種建立客戶端的方式能讓最終使用者擁有極佳的體驗，因為他們能使用提示語，而非精確的客戶端指令，且不需知道背後有 MCP 伺服器被呼叫。
+使用練習中的程式碼，擴充伺服器，加入更多工具。然後像練習中一樣建立帶有 LLM 的客戶端，並用不同提示測試，確保所有伺服器工具都能動態被呼叫。這種建立客戶端的方式能讓最終使用者擁有極佳的體驗，因為他們能使用提示語，而非精確的客戶端指令，且不需知道背後有 MCP 伺服器被呼叫。
 
 ## 解答
 

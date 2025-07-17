@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T07:27:51+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T18:57:39+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "he"
 }
@@ -28,7 +28,7 @@ Model Context Protocol (MCP) הוא פרוטוקול פתוח שמאחד את ה
 - ליצור אפליקציות מארחות שמתחברות לשרתי MCP
 - לבדוק ולפתור תקלות ביישומי MCP
 
-## הקמת סביבת ה-MCP שלכם
+## הקמת סביבת MCP שלכם
 
 לפני שתתחילו לעבוד עם MCP, חשוב להכין את סביבת הפיתוח ולהבין את זרימת העבודה הבסיסית. בסעיף זה נדריך אתכם בשלבי ההתקנה הראשוניים כדי להבטיח התחלה חלקה עם MCP.
 
@@ -123,16 +123,16 @@ npx @modelcontextprotocol/inspector node build/index.js
 | בעיה | פתרון אפשרי |
 |-------|-------------------|
 | חיבור נדחה | בדקו אם השרת פועל והפורט נכון |
-| שגיאות בהפעלת כלים | בדקו את תקינות הפרמטרים וטיפול בשגיאות |
-| כשלי אימות | ודאו את מפתחות ה-API וההרשאות |
+| שגיאות בהפעלת כלים | בדקו את אימות הפרמטרים וטיפול בשגיאות |
+| כשל באימות | ודאו שמפתחות ה-API והרשאות תקינים |
 | שגיאות באימות סכימה | ודאו שהפרמטרים תואמים לסכימה המוגדרת |
 | השרת לא מתחיל | בדקו קונפליקטים בפורט או תלות חסרה |
 | שגיאות CORS | הגדירו כותרות CORS מתאימות לבקשות חוצות מקור |
-| בעיות אימות | בדקו את תוקף הטוקן וההרשאות |
+| בעיות אימות | בדקו את תוקף הטוקן והרשאות |
 
 ## פיתוח מקומי
 
-לצורך פיתוח ובדיקה מקומיים, ניתן להריץ שרתי MCP ישירות על המחשב שלכם:
+לצורך פיתוח ובדיקה מקומית, ניתן להריץ שרתי MCP ישירות על המחשב שלכם:
 
 1. **הפעלת תהליך השרת**: הריצו את אפליקציית שרת ה-MCP שלכם  
 2. **הגדרת רשת**: ודאו שהשרת נגיש בפורט הצפוי  
@@ -327,6 +327,10 @@ rm -rf src/test/java
 </project>
 ```
 
+### -2- יצירת פרויקט
+
+כעת כשיש לכם את ה-SDK מותקן, בואו ניצור פרויקט:
+
 ### TypeScript
 
 ```sh
@@ -350,6 +354,7 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+### -3- יצירת קבצי פרויקט  
 ### TypeScript
 
 צרו קובץ *package.json* עם התוכן הבא:
@@ -407,7 +412,9 @@ dotnet add package Microsoft.Extensions.Hosting
 
 ### Java
 
-לפרויקטים של Java Spring Boot, מבנה הפרויקט נוצר אוטומטית.
+לפרויקטים ב-Java Spring Boot, מבנה הפרויקט נוצר אוטומטית.
+
+### -4- כתיבת קוד השרת
 
 ### TypeScript
 
@@ -425,7 +432,7 @@ const server = new McpServer({
 });
 ```
 
-עכשיו יש לכם שרת, אבל הוא לא עושה הרבה, בואו נשפר את זה.
+כעת יש לכם שרת, אבל הוא לא עושה הרבה, בואו נשפר את זה.
 
 ### Python
 
@@ -780,7 +787,7 @@ server.resource(
 }
 ```
 
-המשאב שלכם ניגש אליו דרך המחרוזת "greeting", מקבל פרמטר `name` ומחזיר תגובה דומה לזו של הכלי:
+המשאב שלכם נגיש דרך המחרוזת "greeting", מקבל פרמטר `name` ומחזיר תגובה דומה לכלי:
 
 ```typescript
 {
@@ -806,10 +813,10 @@ def get_greeting(name: str) -> str:
     return f"Hello, {name}!"
 ```
 
-בקוד שלמעלה:
+בקוד שלמעלה הגדרנו:
 
-- הגדרנו כלי `add` שמקבל פרמטרים `a` ו-`p`, שניהם מספרים שלמים.  
-- יצרנו משאב בשם `greeting` שמקבל פרמטר `name`.
+- כלי בשם `add` שמקבל פרמטרים `a` ו-`p`, שניהם מספרים שלמים.  
+- משאב בשם `greeting` שמקבל פרמטר `name`.
 
 ### .NET
 
@@ -984,7 +991,7 @@ npm run build
 mcp run server.py
 ```
 
-> כדי להשתמש ב-MCP Inspector, השתמשו בפקודה `mcp dev server.py` שמפעילה אוטומטית את ה-Inspector ומספקת את טוקן הסשן הנדרש. אם מריצים `mcp run server.py`, תצטרכו להפעיל את ה-Inspector ידנית ולהגדיר את החיבור.
+> כדי להשתמש ב-MCP Inspector, השתמשו ב-`mcp dev server.py` שמפעיל אוטומטית את ה-Inspector ומספק את טוקן הסשן הנדרש. אם משתמשים ב-`mcp run server.py`, תצטרכו להפעיל את ה-Inspector ידנית ולהגדיר את החיבור.
 
 ### .NET
 
@@ -1002,7 +1009,7 @@ dotnet run
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### -8- הרצה עם ה-Inspector
+### -8- הפעלה באמצעות ה-Inspector
 
 ה-Inspector הוא כלי מצוין שיכול להפעיל את השרת שלכם ומאפשר לכם לתקשר איתו כדי לבדוק שהוא עובד. בואו נתחיל:
 
@@ -1017,7 +1024,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 או הוסיפו זאת ל-*package.json* שלכם כך: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` ואז הריצו `npm run inspect`
 
-פייתון עוטף כלי Node.js בשם inspector. אפשר לקרוא לכלי הזה כך:
+Python עוטף כלי Node.js בשם inspector. אפשר לקרוא לכלי הזה כך:
 
 ```sh
 mcp dev server.py
@@ -1029,7 +1036,7 @@ mcp dev server.py
 npx @modelcontextprotocol/inspector mcp run server.py
 ```  
 אם אתם משתמשים בכלי או IDE שמאפשר להגדיר פקודות וארגומנטים להרצת סקריפטים,  
-ודאו שהשדה `Command` מוגדר ל-`python` ו-`Arguments` ל-`server.py`. זה מבטיח שהסקריפט ירוץ כראוי.
+ודאו שהגדרתם `python` בשדה `Command` ו-`server.py` כ-`Arguments`. זה מבטיח שהסקריפט ירוץ כראוי.
 
 ### .NET
 
@@ -1058,11 +1065,11 @@ npx @modelcontextprotocol/inspector
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.he.png)
 
 **כעת אתם מחוברים לשרת**  
-**חלק בדיקת שרת ה-Java הושלם**
+**חלק הבדיקה של שרת ה-Java הושלם**
 
 החלק הבא עוסק באינטראקציה עם השרת.
 
-אתם אמורים לראות את ממשק המשתמש הבא:
+עליכם לראות את ממשק המשתמש הבא:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.he.png)
 
@@ -1071,13 +1078,13 @@ npx @modelcontextprotocol/inspector
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.he.png)
 
-2. בחרו ב-"Tools" ואז ב-"listTools", אתם אמורים לראות את "Add", בחרו ב-"Add" ומלאו את ערכי הפרמטרים.
+1. בחרו ב-"Tools" ואז ב-"listTools", אמור להופיע "Add", בחרו ב-"Add" ומלאו את ערכי הפרמטרים.
 
    תקבלו את התגובה הבאה, כלומר תוצאה מהפעלת הכלי "add":
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.he.png)
 
-מזל טוב, הצלחתם ליצור ולהריץ את השרת הראשון שלכם!
+כל הכבוד, הצלחתם ליצור ולהפעיל את השרת הראשון שלכם!
 
 ### SDKs רשמיים
 
@@ -1086,47 +1093,47 @@ MCP מספק SDKs רשמיים למספר שפות:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - מתוחזק בשיתוף עם Microsoft  
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - מתוחזק בשיתוף עם Spring AI  
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - מימוש רשמי ב-TypeScript  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - מימוש רשמי בפייתון  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - מימוש רשמי בקוטלין
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - מתוחזק בשיתוף פעולה עם Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - המימוש הרשמי ב-Rust  
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - מימוש רשמי בפייתון
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - המימוש הרשמי של Kotlin  
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - מתוחזק בשיתוף עם Loopwork AI  
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - המימוש הרשמי של Rust  
 
 ## נקודות מפתח
 
-- הקמת סביבת פיתוח ל-MCP היא פשוטה עם SDKים ספציפיים לשפה  
+- הקמת סביבת פיתוח ל-MCP היא פשוטה עם SDKים ייעודיים לשפות  
 - בניית שרתי MCP כוללת יצירה ורישום של כלים עם סכימות ברורות  
 - בדיקות וניפוי שגיאות הם חיוניים למימושים אמינים של MCP  
 
 ## דוגמאות
 
-- [מחשבון Java](../samples/java/calculator/README.md)  
-- [מחשבון .Net](../../../../03-GettingStarted/samples/csharp)  
-- [מחשבון JavaScript](../samples/javascript/README.md)  
-- [מחשבון TypeScript](../samples/typescript/README.md)  
-- [מחשבון Python](../../../../03-GettingStarted/samples/python)  
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## משימה
 
-צרו שרת MCP פשוט עם כלי לבחירתכם:
+צור שרת MCP פשוט עם כלי לבחירתך:
 
-1. מימשו את הכלי בשפת התכנות המועדפת עליכם (.NET, Java, Python או JavaScript).  
-2. הגדירו פרמטרי קלט וערכי החזרה.  
-3. הריצו את כלי הבודק כדי לוודא שהשרת פועל כמצופה.  
-4. בדקו את המימוש עם קלטים שונים.  
+1. מימש את הכלי בשפת התכנות המועדפת עליך (.NET, Java, Python או JavaScript).  
+2. הגדר פרמטרי קלט וערכי החזרה.  
+3. הרץ את כלי הבדיקה (inspector) כדי לוודא שהשרת פועל כמצופה.  
+4. בדוק את המימוש עם קלטים שונים.  
 
 ## פתרון
 
-[פתרון](./solution/README.md)  
+[Solution](./solution/README.md)  
 
 ## משאבים נוספים
 
-- [בניית סוכנים באמצעות Model Context Protocol ב-Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [MCP מרוחק עם Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [סוכן MCP של .NET OpenAI](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## מה הלאה
 
-הבא: [התחלת עבודה עם לקוחות MCP](../02-client/README.md)
+הבא: [Getting Started with MCP Clients](../02-client/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו צריך להיחשב כמקור הסמכות. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

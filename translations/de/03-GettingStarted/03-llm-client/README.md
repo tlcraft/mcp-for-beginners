@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-16T22:18:12+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T17:30:31+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "de"
 }
 -->
 # Erstellen eines Clients mit LLM
 
-Bisher hast du gesehen, wie man einen Server und einen Client erstellt. Der Client konnte den Server explizit aufrufen, um dessen Tools, Ressourcen und Prompts aufzulisten. Das ist jedoch keine sehr praktische Vorgehensweise. Dein Nutzer lebt im Zeitalter der Agenten und erwartet, Prompts zu verwenden und mit einem LLM zu kommunizieren, um dies zu tun. Für deinen Nutzer ist es egal, ob du MCP nutzt, um deine Fähigkeiten zu speichern, aber sie erwarten, natürliche Sprache zur Interaktion zu verwenden. Wie lösen wir das? Die Lösung besteht darin, dem Client ein LLM hinzuzufügen.
+Bisher hast du gesehen, wie man einen Server und einen Client erstellt. Der Client konnte den Server explizit aufrufen, um dessen Tools, Ressourcen und Prompts aufzulisten. Das ist jedoch keine sehr praktische Vorgehensweise. Dein Nutzer lebt im Zeitalter der Agenten und erwartet, Prompts zu verwenden und mit einem LLM zu kommunizieren. Für deinen Nutzer ist es egal, ob du MCP nutzt, um deine Fähigkeiten zu speichern, aber sie erwarten, natürliche Sprache zur Interaktion zu verwenden. Wie lösen wir das? Die Lösung besteht darin, dem Client ein LLM hinzuzufügen.
 
 ## Überblick
 
-In dieser Lektion konzentrieren wir uns darauf, ein LLM zu deinem Client hinzuzufügen und zeigen, wie dies eine deutlich bessere Erfahrung für deinen Nutzer bietet.
+In dieser Lektion konzentrieren wir uns darauf, ein LLM zu deinem Client hinzuzufügen und zeigen, wie dies eine deutlich bessere Nutzererfahrung ermöglicht.
 
 ## Lernziele
 
@@ -39,7 +39,7 @@ So wird der Client mit dem Server interagieren:
 
 Super, jetzt verstehen wir auf hoher Ebene, wie wir das machen können. Lass uns das im folgenden Übungsteil ausprobieren.
 
-## Übung: Einen Client mit einem LLM erstellen
+## Übung: Erstellen eines Clients mit einem LLM
 
 In dieser Übung lernen wir, wie man ein LLM zu unserem Client hinzufügt.
 
@@ -50,7 +50,7 @@ Das Erstellen eines GitHub-Tokens ist ein einfacher Prozess. So geht’s:
 - Gehe zu GitHub Einstellungen – Klicke auf dein Profilbild oben rechts und wähle Einstellungen.
 - Navigiere zu Entwickler-Einstellungen – Scrolle nach unten und klicke auf Entwickler-Einstellungen.
 - Wähle Personal Access Tokens – Klicke auf Personal Access Tokens und dann auf Neuen Token generieren.
-- Konfiguriere deinen Token – Füge eine Notiz zur Referenz hinzu, setze ein Ablaufdatum und wähle die notwendigen Berechtigungen (Scopes) aus.
+- Konfiguriere deinen Token – Füge eine Notiz zur Referenz hinzu, setze ein Ablaufdatum und wähle die notwendigen Berechtigungen (Scopes).
 - Generiere und kopiere den Token – Klicke auf Token generieren und kopiere ihn sofort, da du ihn später nicht mehr sehen kannst.
 
 ### -1- Verbindung zum Server herstellen
@@ -242,7 +242,7 @@ Im obigen Code haben wir:
 - **Ein `ChatLanguageModel` erstellt**: Konfiguriert zur Nutzung von GitHub-Modellen mit deinem GitHub-Token
 - **HTTP-Transport eingerichtet**: Mit Server-Sent Events (SSE) zur Verbindung mit dem MCP-Server
 - **Einen MCP-Client erstellt**: Der die Kommunikation mit dem Server übernimmt
-- **LangChain4j eingebaute MCP-Unterstützung verwendet**: Die die Integration zwischen LLMs und MCP-Servern vereinfacht
+- **LangChain4j’s eingebaute MCP-Unterstützung verwendet**: Die die Integration zwischen LLMs und MCP-Servern vereinfacht
 
 Super, als nächstes listen wir die Fähigkeiten auf dem Server auf.
 
@@ -291,7 +291,7 @@ for tool in tools.tools:
     print("Tool", tool.inputSchema["properties"])
 ```
 
-Das haben wir hinzugefügt:
+Folgendes haben wir hinzugefügt:
 
 - Ressourcen und Tools aufgelistet und ausgegeben. Für Tools listen wir auch das `inputSchema`, das wir später verwenden.
 
@@ -349,7 +349,7 @@ Der nächste Schritt nach dem Auflisten der Serverfähigkeiten ist, diese in ein
 
 ### TypeScript
 
-1. Füge den folgenden Code hinzu, um die Antwort vom MCP-Server in ein Tool-Format zu konvertieren, das das LLM nutzen kann:
+1. Füge folgenden Code hinzu, um die Antwort vom MCP-Server in ein Tool-Format umzuwandeln, das das LLM nutzen kann:
 
     ```typescript
     openAiToolAdapter(tool: {
@@ -398,7 +398,7 @@ Der nächste Schritt nach dem Auflisten der Serverfähigkeiten ist, diese in ein
 
 ### Python
 
-1. Zuerst erstellen wir die folgende Konverterfunktion:
+1. Zuerst erstellen wir folgende Konverter-Funktion:
 
     ```python
     def convert_to_llm_tool(tool):
@@ -420,7 +420,7 @@ Der nächste Schritt nach dem Auflisten der Serverfähigkeiten ist, diese in ein
 
     In der Funktion `convert_to_llm_tools` nehmen wir eine MCP-Tool-Antwort und wandeln sie in ein Format um, das das LLM versteht.
 
-1. Als Nächstes aktualisieren wir unseren Client-Code, um diese Funktion zu nutzen:
+1. Aktualisiere dann unseren Client-Code, um diese Funktion zu nutzen:
 
     ```python
     for tool in tools.tools:
@@ -433,7 +433,7 @@ Der nächste Schritt nach dem Auflisten der Serverfähigkeiten ist, diese in ein
 
 ### .NET
 
-1. Fügen wir Code hinzu, um die MCP-Tool-Antwort in etwas umzuwandeln, das das LLM versteht:
+1. Fügen wir Code hinzu, um die MCP-Tool-Antwort in ein Format zu konvertieren, das das LLM versteht:
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -493,7 +493,7 @@ Im obigen Code haben wir:
 
     Im obigen Code haben wir:
 
-    - Die Funktion aktualisiert, um die MCP-Tool-Antwort in ein LLM-Tool umzuwandeln. Hier der hinzugefügte Code:
+    - Die Funktion aktualisiert, um die MCP-Tool-Antwort in ein LLM-Tool umzuwandeln. Hier der relevante Code:
 
         ```csharp
         JsonElement propertiesElement;
@@ -504,7 +504,7 @@ Im obigen Code haben wir:
         toolDefinitions.Add(def);
         ```
 
-        Das Input-Schema ist Teil der Tool-Antwort, befindet sich aber im Attribut „properties“, das wir extrahieren müssen. Außerdem rufen wir jetzt `ConvertFrom` mit den Tool-Details auf. Nachdem wir die schwere Arbeit erledigt haben, sehen wir uns an, wie der Aufruf zusammenkommt, wenn wir als Nächstes einen Nutzer-Prompt verarbeiten.
+        Das Input-Schema ist Teil der Tool-Antwort, aber im Attribut „properties“, daher müssen wir es extrahieren. Außerdem rufen wir jetzt `ConvertFrom` mit den Tool-Details auf. Nachdem wir die schwere Arbeit erledigt haben, sehen wir uns an, wie der Aufruf zusammenkommt, wenn wir als Nächstes einen Nutzer-Prompt verarbeiten.
 
 ### Java
 
@@ -784,7 +784,7 @@ client.connectToServer(transport);
     import json
     ```
 
-1. Als Nächstes fügen wir die Funktion hinzu, die das LLM aufruft:
+1. Fügen wir die Funktion hinzu, die das LLM aufruft:
 
     ```python
     # llm
@@ -841,7 +841,7 @@ client.connectToServer(transport);
     - Das Ergebnis geprüft, um zu sehen, welche Funktionen wir aufrufen sollten, falls vorhanden.
     - Schließlich ein Array von Funktionen zum Aufrufen übergeben.
 
-1. Letzter Schritt, wir aktualisieren unseren Hauptcode:
+1. Letzter Schritt, aktualisieren wir unseren Hauptcode:
 
     ```python
     prompt = "Add 2 to 20"
@@ -903,7 +903,7 @@ client.connectToServer(transport);
     - Ein Optionsobjekt mit Modell und Tools erstellt.
     - Eine Anfrage an das LLM gestellt.
 
-1. Ein letzter Schritt, prüfen wir, ob das LLM denkt, dass wir eine Funktion aufrufen sollten:
+1. Ein letzter Schritt: Prüfen, ob das LLM meint, wir sollten eine Funktion aufrufen:
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -929,7 +929,7 @@ client.connectToServer(transport);
     Im obigen Code haben wir:
 
     - Über eine Liste von Funktionsaufrufen iteriert.
-    - Für jeden Tool-Aufruf Name und Argumente geparst und das Tool auf dem MCP-Server mit dem MCP-Client aufgerufen. Zum Schluss die Ergebnisse ausgegeben.
+    - Für jeden Tool-Aufruf Name und Argumente extrahiert und das Tool auf dem MCP-Server mit dem MCP-Client aufgerufen. Zum Schluss die Ergebnisse ausgegeben.
 
 Hier der vollständige Code:
 
@@ -1139,7 +1139,7 @@ Super, du hast es geschafft!
 
 ## Aufgabe
 
-Nimm den Code aus der Übung und erweitere den Server um weitere Tools. Erstelle dann einen Client mit einem LLM, wie in der Übung, und teste ihn mit verschiedenen Prompts, um sicherzustellen, dass alle Server-Tools dynamisch aufgerufen werden. Diese Art, einen Client zu bauen, sorgt für eine großartige Nutzererfahrung, da Nutzer Prompts verwenden können, statt exakte Client-Befehle, und nichts von einem MCP-Server mitbekommen.
+Nimm den Code aus der Übung und erweitere den Server um weitere Tools. Erstelle dann einen Client mit einem LLM, wie in der Übung, und teste ihn mit verschiedenen Prompts, um sicherzustellen, dass alle Server-Tools dynamisch aufgerufen werden. Diese Art, einen Client zu bauen, sorgt für eine großartige Nutzererfahrung, da Nutzer Prompts verwenden können, statt exakte Client-Befehle, und dabei keine Kenntnis vom MCP-Server haben müssen.
 
 ## Lösung
 
@@ -1147,7 +1147,7 @@ Nimm den Code aus der Übung und erweitere den Server um weitere Tools. Erstelle
 
 ## Wichtige Erkenntnisse
 
-- Ein LLM zum Client hinzuzufügen bietet eine bessere Möglichkeit für Nutzer, mit MCP-Servern zu interagieren.
+- Das Hinzufügen eines LLM zu deinem Client bietet eine bessere Möglichkeit für Nutzer, mit MCP-Servern zu interagieren.
 - Du musst die MCP-Server-Antwort in ein Format umwandeln, das das LLM versteht.
 
 ## Beispiele
@@ -1162,7 +1162,7 @@ Nimm den Code aus der Übung und erweitere den Server um weitere Tools. Erstelle
 
 ## Was kommt als Nächstes
 
-- Nächstes: [Einen Server mit Visual Studio Code konsumieren](../04-vscode/README.md)
+- Nächstes Thema: [Einen Server mit Visual Studio Code konsumieren](../04-vscode/README.md)
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

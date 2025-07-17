@@ -1,42 +1,42 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T06:43:59+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T18:49:23+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "no"
 }
 -->
 # Komme i gang med MCP
 
-Velkommen til dine første steg med Model Context Protocol (MCP)! Enten du er ny til MCP eller ønsker å fordype deg, vil denne guiden lede deg gjennom det grunnleggende oppsettet og utviklingsprosessen. Du vil lære hvordan MCP muliggjør sømløs integrasjon mellom AI-modeller og applikasjoner, og hvordan du raskt kan gjøre miljøet ditt klart for å bygge og teste MCP-baserte løsninger.
+Velkommen til dine første steg med Model Context Protocol (MCP)! Enten du er ny til MCP eller ønsker å utdype forståelsen din, vil denne guiden lede deg gjennom den essensielle oppsett- og utviklingsprosessen. Du vil oppdage hvordan MCP muliggjør sømløs integrasjon mellom AI-modeller og applikasjoner, og lære hvordan du raskt får miljøet ditt klart for å bygge og teste MCP-drevne løsninger.
 
-> TLDR; Hvis du bygger AI-apper, vet du at du kan legge til verktøy og andre ressurser til LLM-en (large language model) for å gjøre den mer kunnskapsrik. Men hvis du plasserer disse verktøyene og ressursene på en server, kan appen og serverens funksjonalitet brukes av hvilken som helst klient med eller uten en LLM.
+> TLDR; Hvis du bygger AI-apper, vet du at du kan legge til verktøy og andre ressurser til LLM-en (large language model) for å gjøre LLM-en mer kunnskapsrik. Men hvis du plasserer disse verktøyene og ressursene på en server, kan appen og serverens funksjonalitet brukes av hvilken som helst klient med eller uten en LLM.
 
 ## Oversikt
 
-Denne leksjonen gir praktisk veiledning for å sette opp MCP-miljøer og bygge dine første MCP-applikasjoner. Du vil lære hvordan du setter opp nødvendige verktøy og rammeverk, bygger grunnleggende MCP-servere, lager vertsapplikasjoner og tester implementasjonene dine.
+Denne leksjonen gir praktisk veiledning for å sette opp MCP-miljøer og bygge dine første MCP-applikasjoner. Du vil lære hvordan du setter opp nødvendige verktøy og rammeverk, bygger grunnleggende MCP-servere, lager vertsapplikasjoner og tester implementeringene dine.
 
 Model Context Protocol (MCP) er en åpen protokoll som standardiserer hvordan applikasjoner gir kontekst til LLM-er. Tenk på MCP som en USB-C-port for AI-applikasjoner – den gir en standardisert måte å koble AI-modeller til ulike datakilder og verktøy.
 
 ## Læringsmål
 
-Etter denne leksjonen skal du kunne:
+Etter denne leksjonen vil du kunne:
 
 - Sette opp utviklingsmiljøer for MCP i C#, Java, Python, TypeScript og JavaScript
 - Bygge og distribuere grunnleggende MCP-servere med tilpassede funksjoner (ressurser, prompts og verktøy)
 - Lage vertsapplikasjoner som kobler til MCP-servere
-- Teste og feilsøke MCP-implementasjoner
+- Teste og feilsøke MCP-implementeringer
 
 ## Sette opp MCP-miljøet ditt
 
-Før du begynner å jobbe med MCP, er det viktig å forberede utviklingsmiljøet ditt og forstå den grunnleggende arbeidsflyten. Denne delen vil veilede deg gjennom de første oppsettsstegene for å sikre en smidig start med MCP.
+Før du begynner å jobbe med MCP, er det viktig å forberede utviklingsmiljøet ditt og forstå den grunnleggende arbeidsflyten. Denne delen vil veilede deg gjennom de innledende oppsettsstegene for å sikre en smidig start med MCP.
 
 ### Forutsetninger
 
 Før du går i gang med MCP-utvikling, sørg for at du har:
 
-- **Utviklingsmiljø**: For det valgte språket (C#, Java, Python, TypeScript eller JavaScript)
+- **Utviklingsmiljø**: For det valgte språket ditt (C#, Java, Python, TypeScript eller JavaScript)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm eller en moderne kodeeditor
 - **Pakkebehandlere**: NuGet, Maven/Gradle, pip eller npm/yarn
 - **API-nøkler**: For eventuelle AI-tjenester du planlegger å bruke i vertsapplikasjonene dine
@@ -91,19 +91,19 @@ I koden over har vi:
 
 ## Testing og feilsøking
 
-Før du begynner å teste MCP-serveren din, er det viktig å forstå tilgjengelige verktøy og beste praksis for feilsøking. Effektiv testing sikrer at serveren oppfører seg som forventet og hjelper deg raskt med å identifisere og løse problemer. Følgende seksjon beskriver anbefalte metoder for å validere MCP-implementasjonen din.
+Før du begynner å teste MCP-serveren din, er det viktig å forstå tilgjengelige verktøy og beste praksis for feilsøking. Effektiv testing sikrer at serveren oppfører seg som forventet og hjelper deg raskt med å identifisere og løse problemer. Følgende seksjon skisserer anbefalte tilnærminger for å validere MCP-implementeringen din.
 
 MCP tilbyr verktøy som hjelper deg med å teste og feilsøke serverne dine:
 
 - **Inspector-verktøyet**, et grafisk grensesnitt som lar deg koble til serveren og teste verktøy, prompts og ressurser.
-- **curl**, du kan også koble til serveren via kommandolinjeverktøy som curl eller andre klienter som kan lage og kjøre HTTP-kommandoer.
+- **curl**, du kan også koble til serveren ved hjelp av et kommandolinjeverktøy som curl eller andre klienter som kan lage og kjøre HTTP-kommandoer.
 
 ### Bruke MCP Inspector
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) er et visuelt testverktøy som hjelper deg med å:
 
 1. **Oppdage serverfunksjoner**: Automatisk finne tilgjengelige ressurser, verktøy og prompts
-2. **Teste verktøyutførelse**: Prøve ulike parametere og se svar i sanntid
+2. **Teste verktøykjøring**: Prøve ulike parametere og se svar i sanntid
 3. **Se servermetadata**: Undersøke serverinfo, skjemaer og konfigurasjoner
 
 ```bash
@@ -111,20 +111,20 @@ MCP tilbyr verktøy som hjelper deg med å teste og feilsøke serverne dine:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Når du kjører kommandoene over, vil MCP Inspector starte et lokalt webgrensesnitt i nettleseren din. Du kan forvente å se et dashbord som viser dine registrerte MCP-servere, deres tilgjengelige verktøy, ressurser og prompts. Grensesnittet lar deg interaktivt teste verktøyutførelse, inspisere servermetadata og se svar i sanntid, noe som gjør det enklere å validere og feilsøke MCP-serverimplementasjonene dine.
+Når du kjører kommandoene over, vil MCP Inspector starte et lokalt webgrensesnitt i nettleseren din. Du kan forvente å se et dashbord som viser dine registrerte MCP-servere, deres tilgjengelige verktøy, ressurser og prompts. Grensesnittet lar deg interaktivt teste verktøykjøring, inspisere servermetadata og se svar i sanntid, noe som gjør det enklere å validere og feilsøke MCP-serverimplementeringene dine.
 
 Her er et skjermbilde av hvordan det kan se ut:
 
 ![](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.no.png)
 
-## Vanlige oppsettsproblemer og løsninger
+## Vanlige oppsettproblemer og løsninger
 
 | Problem | Mulig løsning |
 |---------|---------------|
 | Tilkobling nektet | Sjekk om serveren kjører og at porten er korrekt |
-| Feil ved verktøyutførelse | Gå gjennom parameter-validering og feilhåndtering |
+| Feil ved verktøykjøring | Gå gjennom parameter-validering og feilhåndtering |
 | Autentiseringsfeil | Verifiser API-nøkler og tillatelser |
-| Skjemavalideringsfeil | Sørg for at parametere samsvarer med definert skjema |
+| Skjemavalideringsfeil | Sørg for at parametrene samsvarer med definert skjema |
 | Server starter ikke | Sjekk for portkonflikter eller manglende avhengigheter |
 | CORS-feil | Konfigurer riktige CORS-headere for kryss-opprinnelsesforespørsler |
 | Autentiseringsproblemer | Verifiser tokenets gyldighet og tillatelser |
@@ -145,11 +145,11 @@ npm run start
 
 ## Bygge din første MCP-server
 
-Vi har dekket [Kjernebegreper](/01-CoreConcepts/README.md) i en tidligere leksjon, nå er det på tide å bruke den kunnskapen.
+Vi har dekket [Kjernebegreper](/01-CoreConcepts/README.md) i en tidligere leksjon, nå er det på tide å sette kunnskapen ut i praksis.
 
 ### Hva en server kan gjøre
 
-Før vi begynner å skrive kode, la oss minne oss på hva en server kan gjøre:
+Før vi begynner å skrive kode, la oss minne oss selv på hva en server kan gjøre:
 
 En MCP-server kan for eksempel:
 
@@ -326,6 +326,10 @@ Legg til følgende komplette konfigurasjon i *pom.xml*-filen din:
 </project>
 ```
 
+### -2- Opprett prosjekt
+
+Nå som du har installert SDK-en, la oss opprette et prosjekt:
+
 ### TypeScript
 
 ```sh
@@ -349,6 +353,7 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+### -3- Opprett prosjektfiler  
 ### TypeScript
 
 Lag en *package.json* med følgende innhold:
@@ -390,8 +395,7 @@ Lag en *tsconfig.json* med følgende innhold:
 
 ### Python
 
-Lag en fil *server.py*
-
+Lag en fil *server.py*  
 ```sh
 touch server.py
 ```
@@ -408,6 +412,8 @@ dotnet add package Microsoft.Extensions.Hosting
 ### Java
 
 For Java Spring Boot-prosjekter opprettes prosjektstrukturen automatisk.
+
+### -4- Lag serverkode
 
 ### TypeScript
 
@@ -464,7 +470,7 @@ await builder.Build().RunAsync();
 
 ### Java
 
-For Java, lag kjernekomponentene til serveren. Først, endre hovedapplikasjonsklassen:
+For Java, lag kjernekomponentene for serveren. Først, endre hovedapplikasjonsklassen:
 
 *src/main/java/com/microsoft/mcp/sample/server/McpServerApplication.java*:
 
@@ -780,7 +786,7 @@ Verktøyet ditt tar parametrene `a` og `b` og kjører en funksjon som produserer
 }
 ```
 
-Ressursen din nås gjennom strengen "greeting", tar parameteren `name` og produserer et lignende svar som verktøyet:
+Ressursen din nås gjennom strengen "greeting" og tar parameteren `name` og produserer et lignende svar som verktøyet:
 
 ```typescript
 {
@@ -1004,7 +1010,7 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 ### -8- Kjør med inspector
 
-Inspector er et flott verktøy som kan starte serveren din og lar deg samhandle med den slik at du kan teste at den fungerer. La oss starte den:
+Inspector er et flott verktøy som kan starte serveren din og lar deg interagere med den slik at du kan teste at den fungerer. La oss starte den:
 
 > [!NOTE]
 > Det kan se annerledes ut i "command"-feltet siden det inneholder kommandoen for å kjøre en server med din spesifikke runtime.
@@ -1017,7 +1023,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 eller legg det til i *package.json* slik: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` og kjør deretter `npm run inspect`
 
-Python bruker et Node.js-verktøy kalt inspector. Det er mulig å kalle dette verktøyet slik:
+Python pakker inn et Node.js-verktøy kalt inspector. Det er mulig å kalle dette verktøyet slik:
 
 ```sh
 mcp dev server.py
@@ -1058,7 +1064,7 @@ I inspector-webgrensesnittet:
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.no.png)
 
 **Du er nå koblet til serveren**  
-**Testseksjonen for Java-serveren er nå fullført**
+**Java-servertestingen er nå fullført**
 
 Neste seksjon handler om å samhandle med serveren.
 
@@ -1071,7 +1077,7 @@ Du bør se følgende brukergrensesnitt:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.no.png)
 
-1. Velg "Tools" og "listTools", du bør se "Add" dukke opp, velg "Add" og fyll inn parameterverdiene.
+2. Velg "Tools" og "listTools", du bør se "Add" dukke opp, velg "Add" og fyll inn parameterverdiene.
 
    Du bør se følgende svar, altså et resultat fra "add"-verktøyet:
 
@@ -1087,15 +1093,15 @@ MCP tilbyr offisielle SDK-er for flere språk:
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Vedlikeholdes i samarbeid med Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Den offisielle TypeScript-implementasjonen
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Den offisielle Python-implementasjonen
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Den offisielle Kotlin-implementasjonen
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Den offisielle Kotlin-implementeringen  
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Vedlikeholdes i samarbeid med Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Den offisielle Rust-implementeringen
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Den offisielle Rust-implementeringen  
 
 ## Viktige punkter
 
 - Å sette opp et MCP-utviklingsmiljø er enkelt med språkspesifikke SDK-er  
 - Å bygge MCP-servere innebærer å lage og registrere verktøy med tydelige skjemaer  
-- Testing og feilsøking er avgjørende for pålitelige MCP-implementasjoner
+- Testing og feilsøking er avgjørende for pålitelige MCP-implementasjoner  
 
 ## Eksempler
 
@@ -1103,26 +1109,26 @@ MCP tilbyr offisielle SDK-er for flere språk:
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
 - [JavaScript Calculator](../samples/javascript/README.md)  
 - [TypeScript Calculator](../samples/typescript/README.md)  
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## Oppgave
 
 Lag en enkel MCP-server med et verktøy du velger:
 
 1. Implementer verktøyet i ditt foretrukne språk (.NET, Java, Python eller JavaScript).  
-2. Definer inputparametere og returverdier.  
+2. Definer input-parametere og returverdier.  
 3. Kjør inspector-verktøyet for å sikre at serveren fungerer som forventet.  
-4. Test implementeringen med ulike inputverdier.
+4. Test implementeringen med ulike inputverdier.  
 
 ## Løsning
 
-[Løsning](./solution/README.md)
+[Løsning](./solution/README.md)  
 
-## Ytterligere ressurser
+## Ekstra ressurser
 
 - [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
 - [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## Hva skjer videre
 

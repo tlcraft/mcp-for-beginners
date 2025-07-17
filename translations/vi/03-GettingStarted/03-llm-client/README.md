@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T07:43:27+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T19:01:42+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "vi"
 }
 -->
 # Tạo client với LLM
 
-Cho đến nay, bạn đã biết cách tạo một server và một client. Client có thể gọi server một cách rõ ràng để liệt kê các công cụ, tài nguyên và prompt của nó. Tuy nhiên, đây không phải là cách tiếp cận thực tế. Người dùng của bạn đang sống trong thời đại agentic và mong muốn sử dụng prompt và giao tiếp với một LLM để làm điều đó. Với người dùng, họ không quan tâm bạn có dùng MCP để lưu trữ khả năng hay không, nhưng họ mong muốn tương tác bằng ngôn ngữ tự nhiên. Vậy làm thế nào để giải quyết vấn đề này? Giải pháp là thêm một LLM vào client.
+Cho đến nay, bạn đã biết cách tạo một server và một client. Client có thể gọi server một cách rõ ràng để liệt kê các công cụ, tài nguyên và prompt của nó. Tuy nhiên, đây không phải là cách tiếp cận thực tế. Người dùng của bạn đang sống trong thời đại agentic và mong muốn sử dụng prompt và giao tiếp với một LLM để làm điều đó. Với người dùng, họ không quan tâm bạn có dùng MCP để lưu trữ khả năng hay không, nhưng họ mong muốn sử dụng ngôn ngữ tự nhiên để tương tác. Vậy làm thế nào để giải quyết vấn đề này? Giải pháp là thêm một LLM vào client.
 
 ## Tổng quan
 
-Trong bài học này, chúng ta tập trung vào việc thêm một LLM vào client và cho thấy cách điều này mang lại trải nghiệm tốt hơn nhiều cho người dùng.
+Trong bài học này, chúng ta tập trung vào việc thêm một LLM vào client và cho thấy cách này mang lại trải nghiệm tốt hơn nhiều cho người dùng.
 
 ## Mục tiêu học tập
 
@@ -33,9 +33,9 @@ Hãy cùng hiểu cách tiếp cận mà chúng ta cần thực hiện. Thêm m�
 
 2. Liệt kê các khả năng, prompt, tài nguyên và công cụ, sau đó lưu lại schema của chúng.
 
-3. Thêm một LLM và truyền các khả năng đã lưu cùng schema theo định dạng mà LLM hiểu được.
+3. Thêm một LLM và truyền các khả năng đã lưu cùng schema theo định dạng mà LLM hiểu.
 
-4. Xử lý prompt của người dùng bằng cách chuyển nó cho LLM cùng với các công cụ mà client đã liệt kê.
+4. Xử lý prompt của người dùng bằng cách truyền nó cho LLM cùng với các công cụ được client liệt kê.
 
 Tuyệt vời, giờ chúng ta đã hiểu cách thực hiện ở mức độ tổng quát, hãy thử làm trong bài tập dưới đây.
 
@@ -50,12 +50,12 @@ Tạo token GitHub là một quá trình đơn giản. Đây là cách bạn có
 - Vào GitHub Settings – Nhấn vào ảnh đại diện của bạn ở góc trên bên phải và chọn Settings.
 - Điều hướng đến Developer Settings – Kéo xuống và nhấn vào Developer Settings.
 - Chọn Personal Access Tokens – Nhấn vào Personal access tokens rồi chọn Generate new token.
-- Cấu hình Token của bạn – Thêm ghi chú để tham khảo, đặt ngày hết hạn và chọn các phạm vi (quyền) cần thiết.
+- Cấu hình Token – Thêm ghi chú để tham khảo, đặt ngày hết hạn và chọn các phạm vi (quyền) cần thiết.
 - Tạo và sao chép Token – Nhấn Generate token, và nhớ sao chép ngay vì bạn sẽ không thể xem lại.
 
-### -1- Kết nối với server
+### -1- Kết nối đến server
 
-Trước tiên, hãy tạo client của chúng ta:
+Hãy tạo client trước:
 
 ### TypeScript
 
@@ -156,7 +156,7 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 
 ### Java
 
-Trước tiên, bạn cần thêm các dependencies LangChain4j vào file `pom.xml`. Thêm các dependencies này để kích hoạt tích hợp MCP và hỗ trợ GitHub Models:
+Trước tiên, bạn cần thêm các dependencies LangChain4j vào file `pom.xml`. Thêm các dependencies này để hỗ trợ tích hợp MCP và GitHub Models:
 
 ```xml
 <properties>
@@ -240,15 +240,15 @@ Trong đoạn mã trên, chúng ta đã:
 - **Thêm dependencies LangChain4j**: Cần thiết cho tích hợp MCP, client chính thức OpenAI và hỗ trợ GitHub Models
 - **Import các thư viện LangChain4j**: Dùng cho tích hợp MCP và chức năng chat model OpenAI
 - **Tạo một `ChatLanguageModel`**: Cấu hình để sử dụng GitHub Models với token GitHub của bạn
-- **Thiết lập HTTP transport**: Sử dụng Server-Sent Events (SSE) để kết nối với server MCP
+- **Thiết lập HTTP transport**: Sử dụng Server-Sent Events (SSE) để kết nối tới server MCP
 - **Tạo một client MCP**: Để xử lý giao tiếp với server
 - **Sử dụng hỗ trợ MCP tích hợp sẵn của LangChain4j**: Giúp đơn giản hóa việc tích hợp giữa LLM và server MCP
 
-Tuyệt vời, bước tiếp theo, chúng ta sẽ liệt kê các khả năng trên server.
+Tuyệt vời, bước tiếp theo, hãy liệt kê các khả năng trên server.
 
 ### -2- Liệt kê khả năng của server
 
-Bây giờ chúng ta sẽ kết nối với server và yêu cầu các khả năng của nó:
+Bây giờ chúng ta sẽ kết nối đến server và yêu cầu các khả năng của nó:
 
 ### TypeScript
 
@@ -271,7 +271,7 @@ async run() {
 
 Trong đoạn mã trên, chúng ta đã:
 
-- Thêm mã để kết nối với server, `connectToServer`.
+- Thêm mã để kết nối đến server, `connectToServer`.
 - Tạo một phương thức `run` chịu trách nhiệm xử lý luồng ứng dụng. Hiện tại nó chỉ liệt kê các công cụ nhưng chúng ta sẽ thêm nhiều hơn sau.
 
 ### Python
@@ -345,11 +345,11 @@ Trong đoạn mã trên, chúng ta đã:
 
 ### -3- Chuyển đổi khả năng server thành công cụ LLM
 
-Bước tiếp theo sau khi liệt kê khả năng server là chuyển đổi chúng sang định dạng mà LLM hiểu được. Khi làm xong, chúng ta có thể cung cấp các khả năng này như các công cụ cho LLM.
+Bước tiếp theo sau khi liệt kê khả năng server là chuyển đổi chúng sang định dạng mà LLM hiểu. Khi làm xong, chúng ta có thể cung cấp các khả năng này như công cụ cho LLM.
 
 ### TypeScript
 
-1. Thêm đoạn mã sau để chuyển đổi phản hồi từ MCP Server sang định dạng công cụ mà LLM có thể sử dụng:
+1. Thêm đoạn mã sau để chuyển đổi phản hồi từ MCP Server sang định dạng công cụ mà LLM có thể dùng:
 
     ```typescript
     openAiToolAdapter(tool: {
@@ -429,7 +429,7 @@ Bước tiếp theo sau khi liệt kê khả năng server là chuyển đổi ch
         functions.append(convert_to_llm_tool(tool))
     ```
 
-    Ở đây, chúng ta thêm lời gọi `convert_to_llm_tool` để chuyển đổi phản hồi công cụ MCP thành thứ có thể cung cấp cho LLM sau này.
+    Ở đây, chúng ta thêm lời gọi `convert_to_llm_tool` để chuyển đổi phản hồi công cụ MCP thành thứ có thể truyền cho LLM sau này.
 
 ### .NET
 
@@ -458,7 +458,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 
 Trong đoạn mã trên, chúng ta đã:
 
-- Tạo hàm `ConvertFrom` nhận vào tên, mô tả và input schema.
+- Tạo hàm `ConvertFrom` nhận tên, mô tả và input schema.
 - Định nghĩa chức năng tạo `FunctionDefinition` được truyền vào `ChatCompletionsDefinition`. Phần sau là thứ mà LLM có thể hiểu.
 
 1. Cập nhật một số mã hiện có để tận dụng hàm trên:
@@ -489,11 +489,11 @@ Trong đoạn mã trên, chúng ta đã:
 
         return toolDefinitions;
     }
-    ```
+    ```    
 
-    Trong đoạn mã trên, chúng ta đã:
+Trong đoạn mã trên, chúng ta đã:
 
-    - Cập nhật hàm để chuyển đổi phản hồi công cụ MCP thành công cụ LLM. Hãy chú ý đoạn mã thêm vào:
+- Cập nhật hàm để chuyển đổi phản hồi công cụ MCP thành công cụ LLM. Hãy chú ý đoạn mã thêm vào:
 
         ```csharp
         JsonElement propertiesElement;
@@ -523,16 +523,16 @@ Bot bot = AiServices.builder(Bot.class)
 
 Trong đoạn mã trên, chúng ta đã:
 
-- Định nghĩa một interface `Bot` đơn giản cho tương tác ngôn ngữ tự nhiên
-- Sử dụng `AiServices` của LangChain4j để tự động liên kết LLM với MCP tool provider
+- Định nghĩa interface đơn giản `Bot` cho tương tác ngôn ngữ tự nhiên
+- Dùng `AiServices` của LangChain4j để tự động liên kết LLM với MCP tool provider
 - Framework tự động xử lý chuyển đổi schema công cụ và gọi hàm phía sau
 - Cách tiếp cận này loại bỏ việc chuyển đổi công cụ thủ công - LangChain4j xử lý toàn bộ phức tạp khi chuyển đổi công cụ MCP sang định dạng tương thích LLM
 
-Tuyệt vời, giờ chúng ta đã sẵn sàng xử lý các yêu cầu từ người dùng, hãy làm phần đó tiếp theo.
+Tuyệt vời, giờ chúng ta đã sẵn sàng xử lý các yêu cầu người dùng, hãy làm phần đó tiếp theo.
 
 ### -4- Xử lý yêu cầu prompt của người dùng
 
-Trong phần mã này, chúng ta sẽ xử lý các yêu cầu từ người dùng.
+Phần này trong mã sẽ xử lý các yêu cầu từ người dùng.
 
 ### TypeScript
 
@@ -568,7 +568,7 @@ Trong phần mã này, chúng ta sẽ xử lý các yêu cầu từ người dù
     Trong đoạn mã trên, chúng ta:
 
     - Thêm phương thức `callTools`.
-    - Phương thức này nhận phản hồi từ LLM và kiểm tra xem công cụ nào được gọi, nếu có:
+    - Phương thức này nhận phản hồi từ LLM và kiểm tra xem có công cụ nào được gọi không:
 
         ```typescript
         for (const tool_call of tool_calls) {
@@ -855,9 +855,9 @@ client.connectToServer(transport);
         print("TOOLS result: ", result.content)
     ```
 
-    Ở đây, bước cuối cùng là:
+    Đây là bước cuối cùng, trong đoạn mã trên chúng ta:
 
-    - Gọi một công cụ MCP qua `call_tool` sử dụng hàm mà LLM cho rằng nên gọi dựa trên prompt.
+    - Gọi công cụ MCP qua `call_tool` sử dụng hàm mà LLM cho rằng cần gọi dựa trên prompt.
     - In kết quả gọi công cụ tới MCP Server.
 
 ### .NET
@@ -898,12 +898,12 @@ client.connectToServer(transport);
 
     Trong đoạn mã trên, chúng ta đã:
 
-    - Lấy các công cụ từ server MCP, `var tools = await GetMcpTools()`.
+    - Lấy các công cụ từ MCP server, `var tools = await GetMcpTools()`.
     - Định nghĩa prompt người dùng `userMessage`.
     - Tạo đối tượng options chỉ định model và công cụ.
     - Gửi yêu cầu tới LLM.
 
-1. Bước cuối cùng, kiểm tra xem LLM có nghĩ nên gọi hàm nào không:
+1. Bước cuối cùng, kiểm tra xem LLM có nghĩ cần gọi hàm nào không:
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -929,9 +929,9 @@ client.connectToServer(transport);
     Trong đoạn mã trên, chúng ta đã:
 
     - Lặp qua danh sách các lời gọi hàm.
-    - Với mỗi lời gọi công cụ, phân tích tên và tham số rồi gọi công cụ trên server MCP bằng client MCP. Cuối cùng in kết quả.
+    - Với mỗi lời gọi công cụ, phân tích tên và tham số rồi gọi công cụ trên MCP server bằng client MCP. Cuối cùng in kết quả.
 
-Đây là mã đầy đủ:
+Đây là toàn bộ mã:
 
 ```csharp
 using Azure;
@@ -1078,13 +1078,13 @@ try {
 
 Trong đoạn mã trên, chúng ta đã:
 
-- Sử dụng prompt ngôn ngữ tự nhiên đơn giản để tương tác với công cụ trên server MCP
+- Dùng prompt ngôn ngữ tự nhiên đơn giản để tương tác với công cụ MCP server
 - Framework LangChain4j tự động xử lý:
   - Chuyển đổi prompt người dùng thành lời gọi công cụ khi cần
   - Gọi các công cụ MCP phù hợp dựa trên quyết định của LLM
-  - Quản lý luồng hội thoại giữa LLM và server MCP
+  - Quản lý luồng hội thoại giữa LLM và MCP server
 - Phương thức `bot.chat()` trả về phản hồi ngôn ngữ tự nhiên có thể bao gồm kết quả từ việc thực thi công cụ MCP
-- Cách tiếp cận này mang lại trải nghiệm liền mạch cho người dùng, họ không cần biết về việc gọi server MCP bên dưới
+- Cách tiếp cận này mang lại trải nghiệm liền mạch cho người dùng, họ không cần biết về việc gọi MCP server phía sau
 
 Ví dụ mã hoàn chỉnh:
 
@@ -1139,7 +1139,7 @@ Tuyệt vời, bạn đã làm được!
 
 ## Bài tập về nhà
 
-Lấy mã từ bài tập và xây dựng server với nhiều công cụ hơn. Sau đó tạo một client với LLM như trong bài tập và thử nghiệm với các prompt khác nhau để đảm bảo tất cả công cụ trên server được gọi một cách động. Cách xây dựng client này giúp người dùng cuối có trải nghiệm tuyệt vời vì họ có thể dùng prompt thay vì các lệnh client chính xác và không cần biết có server MCP nào được gọi.
+Lấy mã từ bài tập và xây dựng server với nhiều công cụ hơn. Sau đó tạo một client với LLM như trong bài tập và thử với các prompt khác nhau để đảm bảo tất cả công cụ trên server được gọi một cách động. Cách xây dựng client này giúp người dùng cuối có trải nghiệm tuyệt vời vì họ có thể dùng prompt thay vì các lệnh client chính xác và không cần biết có MCP server được gọi phía sau.
 
 ## Giải pháp
 
@@ -1147,8 +1147,8 @@ Lấy mã từ bài tập và xây dựng server với nhiều công cụ hơn. 
 
 ## Những điểm chính cần nhớ
 
-- Thêm một LLM vào client giúp người dùng tương tác với server MCP tốt hơn.
-- Bạn cần chuyển đổi phản hồi từ server MCP thành thứ mà LLM có thể hiểu.
+- Thêm một LLM vào client giúp người dùng tương tác tốt hơn với MCP Server.
+- Bạn cần chuyển đổi phản hồi từ MCP Server thành thứ mà LLM có thể hiểu.
 
 ## Mẫu ví dụ
 
@@ -1156,7 +1156,7 @@ Lấy mã từ bài tập và xây dựng server với nhiều công cụ hơn. 
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Python Calculator](../../../../03-GettingStarted/samples/python) 
 
 ## Tài nguyên bổ sung
 

@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T08:24:02+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T19:08:56+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "tl"
 }
 -->
 # Paglikha ng kliyente gamit ang LLM
 
-Sa ngayon, nakita mo na kung paano gumawa ng server at kliyente. Ang kliyente ay nakakapag-tawag sa server nang direkta para ilista ang mga tools, resources, at prompts nito. Ngunit, hindi ito gaanong praktikal na paraan. Ang iyong user ay nabubuhay sa panahon ng agentic at inaasahan nilang gumamit ng prompts at makipag-ugnayan sa isang LLM para gawin ito. Para sa iyong user, hindi mahalaga kung gagamit ka ng MCP o hindi para i-store ang iyong mga kakayahan, pero inaasahan nilang makipag-interact gamit ang natural na wika. Paano natin ito sosolusyunan? Ang solusyon ay ang pagdagdag ng LLM sa kliyente.
+Sa ngayon, nakita mo na kung paano gumawa ng server at kliyente. Ang kliyente ay nakakapag-tawag sa server nang direkta upang ilista ang mga tools, resources, at prompts nito. Ngunit, hindi ito gaanong praktikal na paraan. Ang iyong user ay nabubuhay sa panahon ng agentic at inaasahan nilang gumamit ng prompts at makipag-ugnayan sa isang LLM para gawin ito. Para sa iyong user, hindi mahalaga kung gagamit ka ng MCP o hindi para i-store ang iyong mga kakayahan, ngunit inaasahan nilang gumamit ng natural na wika sa pakikipag-ugnayan. Paano natin ito sosolusyunan? Ang solusyon ay ang pagdagdag ng LLM sa kliyente.
 
 ## Pangkalahatang-ideya
 
@@ -21,11 +21,11 @@ Sa pagtatapos ng araling ito, magagawa mong:
 
 - Gumawa ng kliyente na may LLM.
 - Makipag-ugnayan nang maayos sa MCP server gamit ang LLM.
-- Magbigay ng mas magandang karanasan sa end user sa bahagi ng kliyente.
+- Magbigay ng mas magandang karanasan para sa end user sa bahagi ng kliyente.
 
 ## Paraan
 
-Subukan nating unawain ang paraan na kailangan nating gawin. Ang pagdagdag ng LLM ay parang simple, pero gagawin ba talaga natin ito?
+Subukan nating unawain ang paraan na kailangan nating gawin. Ang pagdagdag ng LLM ay tila simple, pero gagawin ba talaga natin ito?
 
 Ganito makikipag-ugnayan ang kliyente sa server:
 
@@ -96,7 +96,7 @@ Sa naunang code ay:
 
 - In-import ang mga kinakailangang libraries
 - Gumawa ng klase na may dalawang miyembro, `client` at `openai` na tutulong sa atin na pamahalaan ang kliyente at makipag-ugnayan sa LLM.
-- In-configure ang ating LLM instance para gamitin ang GitHub Models sa pamamagitan ng pagtatakda ng `baseUrl` na tumutukoy sa inference API.
+- Kinonpigura ang ating LLM instance upang gamitin ang GitHub Models sa pamamagitan ng pagtatakda ng `baseUrl` na tumutukoy sa inference API.
 
 ### Python
 
@@ -239,14 +239,14 @@ Sa naunang code ay:
 
 - **Nagdagdag ng LangChain4j dependencies**: Kinakailangan para sa MCP integration, opisyal na OpenAI client, at suporta sa GitHub Models
 - **In-import ang LangChain4j libraries**: Para sa MCP integration at OpenAI chat model functionality
-- **Gumawa ng `ChatLanguageModel`**: In-configure para gamitin ang GitHub Models gamit ang iyong GitHub token
+- **Gumawa ng `ChatLanguageModel`**: Kinonpigura upang gamitin ang GitHub Models gamit ang iyong GitHub token
 - **Nagsaayos ng HTTP transport**: Gamit ang Server-Sent Events (SSE) para kumonekta sa MCP server
 - **Gumawa ng MCP client**: Na siyang hahawak ng komunikasyon sa server
 - **Gumamit ng built-in MCP support ng LangChain4j**: Na nagpapadali ng integrasyon sa pagitan ng LLMs at MCP servers
 
 Maganda, para sa susunod na hakbang, ilista natin ang mga kakayahan sa server.
 
-### -2 Ilahad ang mga kakayahan ng server
+### -2- Ilista ang mga kakayahan ng server
 
 Ngayon ay kokonekta tayo sa server at hihingin ang mga kakayahan nito:
 
@@ -291,7 +291,7 @@ for tool in tools.tools:
     print("Tool", tool.inputSchema["properties"])
 ```
 
-Narito ang idinagdag natin:
+Ito ang mga idinagdag natin:
 
 - Paglilista ng mga resources at tools at pag-print ng mga ito. Para sa tools, nililista rin natin ang `inputSchema` na gagamitin natin mamaya.
 
@@ -321,7 +321,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
 Sa naunang code ay:
 
 - Nilista ang mga tools na available sa MCP Server
-- Para sa bawat tool, nilista ang pangalan, deskripsyon, at schema nito. Ang huli ay gagamitin natin para tawagin ang mga tools sa lalong madaling panahon.
+- Para sa bawat tool, nilista ang pangalan, deskripsyon, at schema nito. Ang huli ay gagamitin natin para tawagin ang mga tools mamaya.
 
 ### Java
 
@@ -345,7 +345,7 @@ Sa naunang code ay:
 
 ### -3- I-convert ang mga kakayahan ng server sa mga tool ng LLM
 
-Susunod na hakbang pagkatapos ilista ang mga kakayahan ng server ay i-convert ang mga ito sa format na naiintindihan ng LLM. Kapag nagawa na natin ito, maibibigay natin ang mga kakayahang ito bilang mga tool sa ating LLM.
+Susunod na hakbang pagkatapos ilista ang mga kakayahan ng server ay i-convert ang mga ito sa format na naiintindihan ng LLM. Kapag nagawa na ito, maibibigay natin ang mga kakayahang ito bilang mga tool sa ating LLM.
 
 ### TypeScript
 
@@ -429,11 +429,11 @@ Susunod na hakbang pagkatapos ilista ang mga kakayahan ng server ay i-convert an
         functions.append(convert_to_llm_tool(tool))
     ```
 
-    Dito, nagdagdag tayo ng tawag sa `convert_to_llm_tool` para i-convert ang MCP tool response sa bagay na maipapasa natin sa LLM mamaya.
+    Dito, nagdagdag tayo ng tawag sa `convert_to_llm_tool` para i-convert ang MCP tool response sa isang bagay na maipapasok natin sa LLM mamaya.
 
 ### .NET
 
-1. Magdagdag tayo ng code para i-convert ang MCP tool response sa format na naiintindihan ng LLM
+1. Idagdag natin ang code para i-convert ang MCP tool response sa format na naiintindihan ng LLM
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -461,7 +461,7 @@ Sa naunang code ay:
 - Gumawa ng function na `ConvertFrom` na tumatanggap ng pangalan, deskripsyon, at input schema.
 - Nagdefine ng functionality na lumilikha ng FunctionDefinition na ipinapasa sa ChatCompletionsDefinition. Ang huli ay naiintindihan ng LLM.
 
-1. Tingnan natin kung paano natin ma-update ang ilang umiiral na code para magamit ang function na ito:
+1. Tingnan natin kung paano natin ma-update ang ilang existing na code para magamit ang function na ito:
 
     ```csharp
     async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -493,7 +493,7 @@ Sa naunang code ay:
 
     Sa naunang code ay:
 
-    - In-update ang function para i-convert ang MCP tool response sa LLM tool. Narito ang bahagi ng code na idinagdag:
+    - In-update ang function para i-convert ang MCP tool response sa LLM tool. Itatampok natin ang idinagdag na code:
 
         ```csharp
         JsonElement propertiesElement;
@@ -504,7 +504,7 @@ Sa naunang code ay:
         toolDefinitions.Add(def);
         ```
 
-        Ang input schema ay bahagi ng tool response pero nasa "properties" attribute, kaya kailangan natin itong kunin. Bukod dito, tinawag natin ang `ConvertFrom` gamit ang detalye ng tool. Ngayon na nagawa na natin ang mabigat na bahagi, tingnan natin kung paano ito pinagsama habang hinahandle ang prompt ng user.
+        Ang input schema ay bahagi ng tool response pero nasa "properties" attribute, kaya kailangan natin itong kunin. Bukod dito, tinawag na natin ang `ConvertFrom` gamit ang detalye ng tool. Ngayon na nagawa na natin ang mabigat na trabaho, tingnan natin kung paano ito pinagsama habang hinahandle natin ang user prompt.
 
 ### Java
 
@@ -526,7 +526,7 @@ Sa naunang code ay:
 - Nagdefine ng simpleng `Bot` interface para sa natural language interactions
 - Ginamit ang LangChain4j's `AiServices` para awtomatikong i-bind ang LLM sa MCP tool provider
 - Awtomatikong hinahandle ng framework ang tool schema conversion at function calling sa likod ng eksena
-- Inaalis ng paraang ito ang manual na conversion ng tools - ang LangChain4j ang humahawak sa lahat ng komplikasyon ng pag-convert ng MCP tools sa LLM-compatible format
+- Ang paraang ito ay nag-aalis ng manual na conversion ng tools - ang LangChain4j ang humahawak sa lahat ng komplikasyon ng pag-convert ng MCP tools sa LLM-compatible na format
 
 Maganda, handa na tayo para harapin ang mga kahilingan ng user, kaya gawin natin iyon sa susunod.
 
@@ -568,7 +568,7 @@ Sa bahaging ito ng code, haharapin natin ang mga kahilingan ng user.
     Sa naunang code ay:
 
     - Nagdagdag ng method na `callTools`.
-    - Tinitingnan ng method ang response ng LLM para malaman kung anong mga tools ang tinawag, kung meron man:
+    - Tinitingnan ng method kung anong mga tools ang tinawag base sa sagot ng LLM, kung meron man:
 
         ```typescript
         for (const tool_call of tool_calls) {
@@ -581,7 +581,7 @@ Sa bahaging ito ng code, haharapin natin ang mga kahilingan ng user.
         }
         ```
 
-    - Tinatawag ang tool, kung sinasabi ng LLM na dapat itong tawagin:
+    - Tinatawag ang tool kung sinasabi ng LLM na dapat itong tawagin:
 
         ```typescript
         // 2. Call the server's tool 
@@ -596,7 +596,7 @@ Sa bahaging ito ng code, haharapin natin ang mga kahilingan ng user.
         // TODO  
         ```
 
-1. I-update ang `run` method para isama ang tawag sa LLM at ang pagtawag sa `callTools`:
+1. I-update ang `run` method para isama ang tawag sa LLM at ang `callTools`:
 
     ```typescript
 
@@ -632,7 +632,7 @@ Sa bahaging ito ng code, haharapin natin ang mga kahilingan ng user.
     });
     ```
 
-Maganda, ilista natin ang buong code:
+Maganda, narito ang buong code:
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -773,7 +773,7 @@ client.connectToServer(transport);
 
 ### Python
 
-1. Magdagdag tayo ng ilang imports na kailangan para tawagin ang LLM
+1. Magdagdag tayo ng mga import na kailangan para tawagin ang LLM
 
     ```python
     # llm
@@ -784,7 +784,7 @@ client.connectToServer(transport);
     import json
     ```
 
-1. Sunod, idagdag natin ang function na tatawag sa LLM:
+1. Sunod, idagdag ang function na tatawag sa LLM:
 
     ```python
     # llm
@@ -838,7 +838,7 @@ client.connectToServer(transport);
 
     - Ipinasa natin ang mga functions na nakuha natin mula sa MCP server at na-convert sa LLM.
     - Tinawag natin ang LLM gamit ang mga functions na iyon.
-    - Sinusuri natin ang resulta para malaman kung anong functions ang dapat tawagin, kung meron man.
+    - Sinusuri natin ang resulta para makita kung anong functions ang dapat tawagin, kung meron man.
     - Sa huli, ipinapasa natin ang array ng mga functions na tatawagin.
 
 1. Panghuling hakbang, i-update natin ang main code:
@@ -857,12 +857,12 @@ client.connectToServer(transport);
 
     Ayan, iyon ang panghuling hakbang, sa code sa itaas ay:
 
-    - Tinatawag ang MCP tool gamit ang `call_tool` gamit ang function na inisip ng LLM na dapat tawagin base sa prompt.
-    - Ipiniprint ang resulta ng tawag sa tool sa MCP Server.
+    - Tinawag ang MCP tool gamit ang `call_tool` gamit ang function na inisip ng LLM na dapat tawagin base sa prompt.
+    - Ipinrint ang resulta ng tawag sa tool sa MCP Server.
 
 ### .NET
 
-1. Ipakita natin ang code para sa LLM prompt request:
+1. Ipakita natin ang code para sa paggawa ng LLM prompt request:
 
     ```csharp
     var tools = await GetMcpTools();
@@ -929,7 +929,7 @@ client.connectToServer(transport);
     Sa naunang code ay:
 
     - Nag-loop sa listahan ng function calls.
-    - Para sa bawat tawag sa tool, kinukuha ang pangalan at mga argumento at tinatawagan ang tool sa MCP server gamit ang MCP client. Sa huli, ipiniprint ang mga resulta.
+    - Para sa bawat tawag sa tool, kinukuha ang pangalan at mga argumento at tinatawagan ang tool sa MCP server gamit ang MCP client. Sa huli, ipinrint ang mga resulta.
 
 Narito ang buong code:
 
@@ -1135,11 +1135,11 @@ public class LangChain4jClient {
 }
 ```
 
-Magaling, nagawa mo na!
+Magaling, nagawa mo!
 
 ## Takdang-Aralin
 
-Kunin ang code mula sa ehersisyo at palawakin ang server gamit ang mas maraming tools. Pagkatapos, gumawa ng kliyente na may LLM, tulad sa ehersisyo, at subukan ito gamit ang iba't ibang prompts upang matiyak na lahat ng iyong server tools ay natatawag nang dinamiko. Ang ganitong paraan ng paggawa ng kliyente ay nangangahulugan na magkakaroon ng mahusay na karanasan ang end user dahil nagagamit nila ang prompts, sa halip na eksaktong mga command ng kliyente, at hindi nila kailangang malaman kung may MCP server na tinatawag.
+Kunin ang code mula sa ehersisyo at palawakin ang server gamit ang mas maraming tools. Pagkatapos, gumawa ng kliyente na may LLM, tulad sa ehersisyo, at subukan ito gamit ang iba't ibang prompts upang matiyak na lahat ng iyong server tools ay natatawag nang dinamiko. Ang ganitong paraan ng paggawa ng kliyente ay nangangahulugan na magkakaroon ng mahusay na karanasan ang end user dahil nagagamit nila ang prompts, sa halip na eksaktong mga utos ng kliyente, at hindi nila kailangang malaman kung may MCP server na tinatawag.
 
 ## Solusyon
 
@@ -1148,7 +1148,7 @@ Kunin ang code mula sa ehersisyo at palawakin ang server gamit ang mas maraming 
 ## Mahahalagang Punto
 
 - Ang pagdagdag ng LLM sa iyong kliyente ay nagbibigay ng mas magandang paraan para makipag-ugnayan ang mga user sa MCP Servers.
-- Kailangan mong i-convert ang response ng MCP Server sa format na naiintindihan ng LLM.
+- Kailangan mong i-convert ang response ng MCP Server sa isang bagay na naiintindihan ng LLM.
 
 ## Mga Halimbawa
 
@@ -1165,4 +1165,4 @@ Kunin ang code mula sa ehersisyo at palawakin ang server gamit ang mas maraming 
 - Susunod: [Paggamit ng server gamit ang Visual Studio Code](../04-vscode/README.md)
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

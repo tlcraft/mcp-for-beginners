@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T12:10:35+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T19:30:20+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "hr"
 }
@@ -34,7 +34,7 @@ Prije nego što započnete rad s MCP-om, važno je pripremiti razvojno okruženj
 
 ### Preduvjeti
 
-Prije nego što se upustite u razvoj MCP-a, provjerite imate li:
+Prije nego što se upustite u razvoj s MCP-om, provjerite imate li:
 
 - **Razvojno okruženje**: Za odabrani programski jezik (C#, Java, Python, TypeScript ili JavaScript)
 - **IDE/Uređivač**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm ili bilo koji suvremeni uređivač koda
@@ -91,7 +91,7 @@ U prethodnom kodu smo:
 
 ## Testiranje i otklanjanje pogrešaka
 
-Prije nego što započnete s testiranjem MCP poslužitelja, važno je razumjeti dostupne alate i najbolje prakse za otklanjanje pogrešaka. Učinkovito testiranje osigurava da se poslužitelj ponaša kako se očekuje i pomaže vam brzo identificirati i riješiti probleme. Sljedeći odjeljak opisuje preporučene pristupe za provjeru vaše MCP implementacije.
+Prije nego što započnete testiranje svog MCP poslužitelja, važno je razumjeti dostupne alate i najbolje prakse za otklanjanje pogrešaka. Učinkovito testiranje osigurava da se poslužitelj ponaša kako se očekuje i pomaže vam brzo identificirati i riješiti probleme. Sljedeći odjeljak opisuje preporučene pristupe za provjeru vaše MCP implementacije.
 
 MCP pruža alate koji vam pomažu u testiranju i otklanjanju pogrešaka poslužitelja:
 
@@ -111,9 +111,9 @@ MCP pruža alate koji vam pomažu u testiranju i otklanjanju pogrešaka posluži
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Kada pokrenete gore navedene naredbe, MCP Inspector će pokrenuti lokalno web sučelje u vašem pregledniku. Možete očekivati nadzornu ploču koja prikazuje vaše registrirane MCP poslužitelje, njihove dostupne alate, resurse i promptove. Sučelje vam omogućuje interaktivno testiranje izvršavanja alata, pregled metapodataka poslužitelja i prikaz odgovora u stvarnom vremenu, što olakšava provjeru i otklanjanje pogrešaka u vašim MCP implementacijama.
+Kada pokrenete gore navedene naredbe, MCP Inspector će otvoriti lokalno web sučelje u vašem pregledniku. Možete očekivati nadzornu ploču koja prikazuje vaše registrirane MCP poslužitelje, njihove dostupne alate, resurse i promptove. Sučelje vam omogućuje interaktivno testiranje izvršavanja alata, pregled metapodataka poslužitelja i prikaz odgovora u stvarnom vremenu, što olakšava provjeru i otklanjanje pogrešaka u vašim MCP implementacijama.
 
-Evo snimka zaslona kako to može izgledati:
+Evo snimke zaslona kako to može izgledati:
 
 ![](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.hr.png)
 
@@ -175,7 +175,7 @@ Za kreiranje poslužitelja trebate slijediti ove korake:
 Ovo se malo razlikuje ovisno o odabranom runtime-u, pa odaberite jedan od dolje navedenih:
 
 > [!NOTE]
-> Za Python ćemo prvo kreirati strukturu projekta, a zatim instalirati ovisnosti.
+> Za Python prvo ćemo kreirati strukturu projekta, a zatim instalirati ovisnosti.
 
 ### TypeScript
 
@@ -326,6 +326,10 @@ Dodajte sljedeću kompletnu konfiguraciju u svoj *pom.xml*:
 </project>
 ```
 
+### -2- Kreiranje projekta
+
+Sada kada ste instalirali SDK, kreirajmo projekt:
+
 ### TypeScript
 
 ```sh
@@ -349,6 +353,7 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+### -3- Kreiranje datoteka projekta  
 ### TypeScript
 
 Kreirajte *package.json* s ovim sadržajem:
@@ -391,6 +396,7 @@ Kreirajte *tsconfig.json* s ovim sadržajem:
 ### Python
 
 Kreirajte datoteku *server.py*
+
 ```sh
 touch server.py
 ```
@@ -407,6 +413,8 @@ dotnet add package Microsoft.Extensions.Hosting
 ### Java
 
 Za Java Spring Boot projekte, struktura projekta se kreira automatski.
+
+### -4- Pisanje koda poslužitelja
 
 ### TypeScript
 
@@ -827,7 +835,7 @@ public static class CalculatorTool
 
 Alati su već kreirani u prethodnom koraku.
 
-### -6 Završni kod
+### -6- Završni kod
 
 Dodajmo posljednji kod koji je potreban da se poslužitelj može pokrenuti:
 
@@ -1026,7 +1034,8 @@ Međutim, ne implementira sve metode dostupne u alatu, stoga se preporučuje izr
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
-```  
+```
+
 Ako koristite alat ili IDE koji omogućuje konfiguraciju naredbi i argumenata za pokretanje skripti,  
 pobrinite se da u polju `Command` postavite `python`, a u `Arguments` `server.py`. To osigurava ispravan rad skripte.
 
@@ -1048,7 +1057,7 @@ Zatim pokrenite inspector:
 npx @modelcontextprotocol/inspector
 ```
 
-U web sučelju inspectora:
+U web sučelju Inspectora:
 
 1. Odaberite "SSE" kao tip transporta
 2. Postavite URL na: `http://localhost:8080/sse`
@@ -1086,46 +1095,46 @@ MCP pruža službene SDK-ove za više jezika:
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Održava se u suradnji sa Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Službena TypeScript implementacija
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Službena Python implementacija
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Službena Kotlin implementacija
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Održava se u suradnji s Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Službena Rust implementacija
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Službena Kotlin implementacija  
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Održava se u suradnji s Loopwork AI  
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Službena Rust implementacija  
 
 ## Ključne napomene
 
-- Postavljanje MCP razvojne okoline je jednostavno uz SDK-ove specifične za jezik
-- Izgradnja MCP servera uključuje kreiranje i registraciju alata s jasnim shemama
-- Testiranje i otklanjanje pogrešaka su ključni za pouzdane MCP implementacije
+- Postavljanje MCP razvojne okoline je jednostavno uz SDK-ove specifične za jezik  
+- Izgradnja MCP servera uključuje kreiranje i registraciju alata s jasnim shemama  
+- Testiranje i ispravljanje pogrešaka su ključni za pouzdane MCP implementacije  
 
 ## Primjeri
 
-- [Java Kalkulator](../samples/java/calculator/README.md)
-- [.Net Kalkulator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Kalkulator](../samples/javascript/README.md)
-- [TypeScript Kalkulator](../samples/typescript/README.md)
-- [Python Kalkulator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## Zadatak
 
 Napravite jednostavan MCP server s alatom po vašem izboru:
 
-1. Implementirajte alat u željenom programskom jeziku (.NET, Java, Python ili JavaScript).
-2. Definirajte ulazne parametre i povratne vrijednosti.
-3. Pokrenite alat za inspekciju kako biste provjerili radi li server kako treba.
-4. Testirajte implementaciju s različitim ulazima.
+1. Implementirajte alat u željenom jeziku (.NET, Java, Python ili JavaScript).  
+2. Definirajte ulazne parametre i povratne vrijednosti.  
+3. Pokrenite alat za inspekciju kako biste provjerili radi li server kako treba.  
+4. Testirajte implementaciju s različitim ulazima.  
 
 ## Rješenje
 
-[Rješenje](./solution/README.md)
+[Rješenje](./solution/README.md)  
 
 ## Dodatni resursi
 
-- [Izgradnja agenata koristeći Model Context Protocol na Azureu](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Remote MCP s Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Izgradnja agenata koristeći Model Context Protocol na Azureu](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
+- [Remote MCP s Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## Što slijedi
 
 Sljedeće: [Uvod u MCP klijente](../02-client/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

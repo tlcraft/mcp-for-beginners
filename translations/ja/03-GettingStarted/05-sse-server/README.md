@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-16T21:39:07+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T17:59:08+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "ja"
 }
 -->
 # SSEサーバー
 
-SSE（Server Sent Events）は、サーバーからクライアントへのストリーミングの標準であり、サーバーがHTTPを通じてリアルタイムの更新をクライアントにプッシュすることを可能にします。これは、チャットアプリケーション、通知、リアルタイムデータフィードなど、ライブアップデートが必要なアプリケーションに特に役立ちます。また、サーバーはクラウド上などどこかで実行できるため、複数のクライアントが同時に利用することも可能です。
+SSE（Server Sent Events）は、サーバーからクライアントへのストリーミングの標準であり、サーバーがHTTPを通じてリアルタイムの更新をクライアントにプッシュすることを可能にします。これはチャットアプリケーション、通知、リアルタイムデータフィードなど、ライブアップデートが必要なアプリケーションに特に有用です。また、サーバーはクラウドなどのどこかで実行されるサーバー上に存在するため、複数のクライアントが同時に利用できます。
 
 ## 概要
 
-このレッスンでは、SSEサーバーの構築と利用方法について学びます。
+このレッスンでは、SSEサーバーの構築と利用方法について説明します。
 
 ## 学習目標
 
@@ -27,8 +27,8 @@ SSE（Server Sent Events）は、サーバーからクライアントへのス�
 
 SSEはサポートされている2つのトランスポートタイプのうちの一つです。前のレッスンで使ったstdioが最初のタイプでした。違いは以下の通りです：
 
-- SSEでは、接続とメッセージの2つを扱う必要があります。
-- サーバーはどこにでも存在できるため、InspectorやVisual Studio Codeのようなツールの使い方にもそれが反映されます。つまり、サーバーの起動方法を指定するのではなく、接続を確立できるエンドポイントを指定します。以下の例コードを参照してください。
+- SSEでは接続とメッセージの2つを扱う必要があります。
+- このサーバーはどこにでも存在できるため、InspectorやVisual Studio Codeのようなツールの使い方にもそれが反映されます。つまり、サーバーの起動方法を指定する代わりに、接続を確立できるエンドポイントを指定します。以下の例コードを参照してください。
 
 ### TypeScript
 
@@ -56,7 +56,7 @@ app.post("/messages", async (req: Request, res: Response) => {
 上記のコードでは：
 
 - `/sse`がルートとして設定されています。このルートにリクエストが来ると、新しいトランスポートインスタンスが作成され、サーバーはこのトランスポートを使って*接続*します。
-- `/messages`は、受信メッセージを処理するルートです。
+- `/messages`は受信メッセージを処理するルートです。
 
 ### Python
 
@@ -81,7 +81,7 @@ app = Starlette(
 
 - ASGIサーバーのインスタンス（特にStarletteを使用）を作成し、デフォルトルート`/`にマウントしています。
 
-  裏側では、`/sse`と`/messages`のルートがそれぞれ接続とメッセージの処理に設定されています。その他の機能追加はstdioサーバーと同様に行います。
+  裏側では、`/sse`と`/messages`のルートがそれぞれ接続とメッセージの処理に設定されています。その他の機能追加はstdioサーバーと同様に行われます。
 
 ### .NET    
 
@@ -99,23 +99,24 @@ app = Starlette(
     app.MapMcp();
     ```
 
-    WebサーバーからSSE対応のWebサーバーにするための2つのメソッドがあります：
+    WebサーバーからSSE対応のWebサーバーに移行するのに役立つ2つのメソッドがあります：
 
     - `AddMcpServer`：機能を追加します。
     - `MapMcp`：`/SSE`や`/messages`のようなルートを追加します。
+```
 
-SSEについて少し理解できたので、次にSSEサーバーを構築してみましょう。
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## 演習：SSEサーバーの作成
+## Exercise: Creating an SSE Server
 
-サーバーを作成するにあたり、以下の2点を意識します：
+To create our server, we need to keep two things in mind:
 
-- 接続とメッセージ用のエンドポイントを公開するためにWebサーバーを使う。
-- stdioを使っていた時と同様に、ツールやリソース、プロンプトを使ってサーバーを構築する。
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- サーバーインスタンスの作成
+### -1- Create a server instance
 
-サーバーを作成するには、stdioと同じ型を使います。ただし、トランスポートはSSEを選択します。
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-上記のコードでは：
+In the preceding code we've:
 
-- サーバーインスタンスを作成しました。
-- Webフレームワークexpressを使ってアプリを定義しました。
-- 受信接続を保存するためのtransports変数を作成しました。
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-上記のコードでは：
+In the preceding code we've:
 
-- 必要なライブラリをインポートし、Starlette（ASGIフレームワーク）を取り込みました。
-- MCPサーバーインスタンス`mcp`を作成しました。
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-この時点で：
+At this point, we've:
 
-- Webアプリを作成しました。
-- `AddMcpServer`を使ってMCP機能のサポートを追加しました。
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-次に必要なルートを追加しましょう。
+Let's add the needed routes next.
 
-### -2- ルートの追加
+### -2- Add routes
 
-接続と受信メッセージを処理するルートを追加します：
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-上記のコードでは：
+In the preceding code we've defined:
 
-- `/sse`ルートを定義し、SSEタイプのトランスポートをインスタンス化し、MCPサーバーの`connect`を呼び出しています。
-- `/messages`ルートは受信メッセージを処理します。
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-上記のコードでは：
+In the preceding code we've:
 
-- Starletteフレームワークを使ってASGIアプリインスタンスを作成しました。その際、`mcp.sse_app()`をルートリストに渡しています。これにより、アプリインスタンスに`/sse`と`/messages`のルートがマウントされます。
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-最後に`add.MapMcp()`を追加しました。これで`/SSE`と`/messages`のルートが利用可能になります。
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-次にサーバーに機能を追加しましょう。
+Let's add capabilties to the server next.
 
-### -3- サーバー機能の追加
+### -3- Adding server capabilities
 
-SSE固有の設定ができたので、ツールやプロンプト、リソースなどのサーバー機能を追加します。
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-例えば、ツールを追加する方法はこうです。このツールは"random-joke"という名前で、Chuck NorrisのAPIを呼び出し、JSONレスポンスを返します。
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-これでサーバーに1つのツールが追加されました。
+Now your server has one tool.
 
 ### TypeScript
 
@@ -291,7 +292,7 @@ import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-// Create an MCP server
+// MCPサーバーを作成
 const server = new McpServer({
   name: "example-server",
   version: "1.0.0",
@@ -316,11 +317,11 @@ app.post("/messages", async (req: Request, res: Response) => {
   if (transport) {
     await transport.handlePostMessage(req, res);
   } else {
-    res.status(400).send("No transport found for sessionId");
+    res.status(400).send("sessionIdに対応するトランスポートが見つかりません");
   }
 });
 
-server.tool("random-joke", "A joke returned by the chuck norris api", {}, async () => {
+server.tool("random-joke", "chuck norris APIから取得したジョーク", {}, async () => {
   const response = await fetch("https://api.chucknorris.io/jokes/random");
   const data = await response.json();
 
@@ -349,10 +350,10 @@ mcp = FastMCP("My App")
 
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """2つの数字を足す"""
     return a + b
 
-# Mount the SSE server to the existing ASGI server
+# 既存のASGIサーバーにSSEサーバーをマウント
 app = Starlette(
     routes=[
         Mount('/', app=mcp.sse_app()),
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. まずツールを作成します。*Tools.cs*というファイルを作成し、以下の内容を記述します：
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -380,10 +381,10 @@ app = Starlette(
       
       }
 
-      [McpServerTool, Description("Add two numbers together.")]
+      [McpServerTool, Description("2つの数字を足し合わせます。")]
       public async Task<string> AddNumbers(
-          [Description("The first number")] int a,
-          [Description("The second number")] int b)
+          [Description("最初の数字")] int a,
+          [Description("2番目の数字")] int b)
       {
           return (a + b).ToString();
       }
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  ここでは以下を行いました：
+  Here we've added the following:
 
-  - `McpServerToolType`デコレーターを付けた`Tools`クラスを作成。
-  - `McpServerTool`デコレーターを付けた`AddNumbers`ツールを定義。パラメーターと実装も提供しています。
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. 作成した`Tools`クラスを活用します：
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  `WithTools`を呼び出し、ツールを含むクラスとして`Tools`を指定しました。これで準備完了です。
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-素晴らしい、SSEを使ったサーバーができました。次は実際に動かしてみましょう。
+Great, we have a server using SSE, let's take it for a spin next.
 
-## 演習：InspectorでSSEサーバーをデバッグする
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspectorは前のレッスン[最初のサーバーを作成する](/03-GettingStarted/01-first-server/README.md)で紹介した便利なツールです。ここでも使えるか試してみましょう：
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Inspectorの起動
+### -1- Running the inspector
 
-Inspectorを使うには、まずSSEサーバーが起動している必要があります。では起動しましょう：
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. サーバーを起動する
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Inspectorを使うには、まずSSEサーバーが起動している必要が�
     uvicorn server:app
     ```
 
-    `pip install "mcp[cli]"`でインストールされる`uvicorn`実行ファイルを使っている点に注目してください。`server:app`は`server.py`ファイルを実行し、その中のStarletteインスタンス`app`を使うことを意味します。
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,42 +447,42 @@ Inspectorを使うには、まずSSEサーバーが起動している必要が�
     dotnet run
     ```
 
-    これでサーバーが起動します。操作するには新しいターミナルが必要です。
+    This should start the server. To interface with it you need a new terminal.
 
-1. Inspectorを起動する
+1. Run the inspector
 
     > ![NOTE]
-    > サーバーを起動しているターミナルとは別のウィンドウで実行してください。また、以下のコマンドはサーバーのURLに合わせて調整が必要です。
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Inspectorの起動はどのランタイムでも同じです。サーバーのパスや起動コマンドを渡す代わりに、サーバーが動いているURLと`/sse`ルートを指定している点に注目してください。
+    Inspectorの実行はすべてのランタイムで同じように見えます。サーバーのパスや起動コマンドを渡す代わりに、サーバーが動作しているURLと`/sse`ルートを指定している点に注目してください。
 
-### -2- ツールを試す
+### -2- ツールの試用
 
-ドロップリストからSSEを選択し、サーバーが動いているURL（例：`http:localhost:4321/sse`）を入力して「Connect」ボタンを押します。前回同様、ツール一覧を表示し、ツールを選択して入力値を渡します。以下のような結果が表示されるはずです：
+ドロップリストからSSEを選択し、サーバーが動作しているURL（例： http:localhost:4321/sse）を入力してサーバーに接続します。前回と同様にツールの一覧を取得し、ツールを選択して入力値を提供してください。以下のような結果が表示されるはずです：
 
 ![Inspectorで動作中のSSEサーバー](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.ja.png)
 
-素晴らしい、Inspectorで操作できました。次はVisual Studio Codeでの使い方を見てみましょう。
+素晴らしいです。Inspectorでの操作ができました。次にVisual Studio Codeでの操作方法を見てみましょう。
 
 ## 課題
 
-サーバーにさらに機能を追加してみてください。例えば[こちらのページ](https://api.chucknorris.io/)を参考にAPIを呼び出すツールを追加するのも良いでしょう。サーバーの形は自由に決めてください。楽しんでくださいね :)
+サーバーにさらに機能を追加してみてください。例えば、[このページ](https://api.chucknorris.io/)を参考にAPIを呼び出すツールを追加するなど、サーバーの形は自由に決めて構いません。楽しんでください :)
 
 ## 解答例
 
-[解答例](./solution/README.md) 動作するコードの一例です。
+[解答例](./solution/README.md) 動作するコードを含む一例です。
 
 ## まとめ
 
 この章の重要なポイントは以下の通りです：
 
-- SSEはstdioに次ぐ2つ目のサポートされているトランスポートです。
-- SSEをサポートするには、Webフレームワークを使って接続とメッセージを管理する必要があります。
-- InspectorやVisual Studio Codeを使ってstdioサーバーと同様にSSEサーバーを利用できます。ただしstdioとSSEでは少し違いがあります。SSEではサーバーを別途起動してからInspectorを実行します。またInspectorではURLを指定する必要があります。
+- SSEはstdioに次ぐ2番目のサポートされているトランスポートです。
+- SSEをサポートするには、Webフレームワークを使って接続とメッセージの管理が必要です。
+- InspectorやVisual Studio Codeを使ってstdioサーバーと同様にSSEサーバーを利用できます。ただしstdioとSSEでは少し違いがあります。SSEではサーバーを別途起動してからInspectorツールを実行します。またInspectorツールではURLを指定する必要があります。
 
 ## サンプル
 
@@ -495,9 +496,9 @@ Inspectorを使うには、まずSSEサーバーが起動している必要が�
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## 次に学ぶこと
+## 次に進む
 
-- 次へ：[MCPによるHTTPストリーミング（Streamable HTTP）](../06-http-streaming/README.md)
+- 次へ: [MCPによるHTTPストリーミング（Streamable HTTP）](../06-http-streaming/README.md)
 
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

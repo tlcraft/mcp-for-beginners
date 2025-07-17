@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T06:59:31+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T18:53:10+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "fi"
 }
@@ -13,7 +13,7 @@ Tähän asti olet nähnyt, miten luodaan palvelin ja asiakas. Asiakas on pystyny
 
 ## Yleiskatsaus
 
-Tässä oppitunnissa keskitymme LLM:n lisäämiseen asiakkaaseen ja näytämme, miten tämä tarjoaa käyttäjällesi paljon paremman käyttökokemuksen.
+Tässä oppitunnissa keskitymme LLM:n lisäämiseen asiakkaaseen ja näytämme, miten se tarjoaa käyttäjälle paljon paremman käyttökokemuksen.
 
 ## Oppimistavoitteet
 
@@ -96,7 +96,7 @@ Edellisessä koodissa olemme:
 
 - Tuoneet tarvittavat kirjastot
 - Luoneet luokan, jossa on kaksi jäsentä, `client` ja `openai`, jotka auttavat hallitsemaan asiakasta ja vuorovaikuttamaan LLM:n kanssa.
-- Konfiguroineet LLM-instanssin käyttämään GitHub-malleja asettamalla `baseUrl` osoittamaan inference API:iin.
+- Määrittäneet LLM-instanssin käyttämään GitHub-malleja asettamalla `baseUrl` osoittamaan inference API:iin.
 
 ### Python
 
@@ -238,15 +238,15 @@ public class LangChain4jClient {
 Edellisessä koodissa olemme:
 
 - **Lisänneet LangChain4j-riippuvuudet**: Tarvitaan MCP-integraatioon, OpenAI:n viralliseen asiakkaaseen ja GitHub-mallien tukeen
-- **Tuoneet LangChain4j-kirjastot**: MCP-integraatiota ja OpenAI-chat-mallin toiminnallisuutta varten
-- **Luoneet `ChatLanguageModel`-instanssin**: Konfiguroitu käyttämään GitHub-malleja GitHub-tokenillasi
+- **Tuoneet LangChain4j-kirjastot**: MCP-integraatiota ja OpenAI-chat-mallin toimintaa varten
+- **Luoneet `ChatLanguageModel`-instanssin**: Määritetty käyttämään GitHub-malleja GitHub-tokenillasi
 - **Määrittäneet HTTP-siirron**: Käyttäen Server-Sent Events (SSE) -tekniikkaa MCP-palvelimeen yhdistämiseen
 - **Luoneet MCP-asiakkaan**: Joka hoitaa viestinnän palvelimen kanssa
-- **Käyttäneet LangChain4j:n sisäänrakennettua MCP-tukea**: Joka yksinkertaistaa LLM:n ja MCP-palvelimien integraatiota
+- **Käyttäneet LangChain4j:n sisäänrakennettua MCP-tukea**: Joka yksinkertaistaa LLM:n ja MCP-palvelimen integraatiota
 
 Hienoa, seuraavaksi listataan palvelimen kyvyt.
 
-### -2 Listaa palvelimen kyvyt
+### -2- Listaa palvelimen kyvyt
 
 Yhdistetään nyt palvelimeen ja kysytään sen kyvyt:
 
@@ -340,7 +340,7 @@ ToolProvider toolProvider = McpToolProvider.builder()
 Edellisessä koodissa olemme:
 
 - Luoneet `McpToolProvider`-luokan, joka automaattisesti löytää ja rekisteröi kaikki MCP-palvelimen työkalut
-- Työkaluntarjoaja hoitaa MCP-työkaluskeemojen ja LangChain4j:n työkalumuodon muunnoksen sisäisesti
+- Työkaluntarjoaja hoitaa MCP-työkaluskeemojen ja LangChain4j:n työkalumuodon välisen muunnoksen sisäisesti
 - Tämä lähestymistapa poistaa manuaalisen työkalulistauksen ja muunnoksen tarpeen
 
 ### -3- Muunna palvelimen kyvyt LLM-työkaluiksi
@@ -376,7 +376,7 @@ Seuraava askel palvelimen kykyjen listaamisen jälkeen on muuntaa ne LLM:n ymmä
 
     ```
 
-    Yllä oleva koodi ottaa MCP-palvelimen vastauksen ja muuntaa sen LLM:n ymmärtämään työkalumäärittelyyn.
+    Yllä oleva koodi ottaa MCP-palvelimen vastauksen ja muuntaa sen LLM:n ymmärtämään työkalumäärittelymuotoon.
 
 1. Päivitetään seuraavaksi `run`-metodi listaamaan palvelimen kyvyt:
 
@@ -459,7 +459,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 Edellisessä koodissa olemme:
 
 - Luoneet funktion `ConvertFrom`, joka ottaa nimen, kuvauksen ja syöteskeeman.
-- Määritelleet toiminnallisuuden, joka luo `FunctionDefinition`-objektin, joka välitetään `ChatCompletionsDefinition`-objektille. Tämä jälkimmäinen on LLM:n ymmärtämä.
+- Määritelleet toiminnallisuuden, joka luo `FunctionDefinition`-olion, joka välitetään `ChatCompletionsDefinition`-oliolle. Tämä on LLM:n ymmärtämä muoto.
 
 1. Päivitetään olemassa olevaa koodia hyödyntämään tätä funktiota:
 
@@ -632,7 +632,7 @@ Tässä koodin osassa käsittelemme käyttäjän pyyntöjä.
     });
     ```
 
-Hienoa, tässä koko koodi:
+Hienoa, listataan koko koodi:
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -839,7 +839,7 @@ client.connectToServer(transport);
     - Antaneet LLM:lle funktiot, jotka löysimme MCP-palvelimelta ja muunsimme.
     - Kutsuneet LLM:ää näillä funktioilla.
     - Tarkastelleet tulosta nähdäksesi, mitä funktioita pitäisi kutsua, jos yhtään.
-    - Lopuksi välitämme listan funktioista, jotka pitää kutsua.
+    - Lopuksi välitämme listan kutsuttavista funktioista.
 
 1. Viimeinen vaihe, päivitetään pääkoodi:
 
@@ -857,7 +857,7 @@ client.connectToServer(transport);
 
     Siinä se, viimeisessä vaiheessa:
 
-    - Kutsumme MCP-työkalua `call_tool`-funktion kautta käyttäen funktiota, jonka LLM ehdotti kehotteen perusteella.
+    - Kutsumme MCP-työkalua `call_tool`-funktiolla käyttäen LLM:n ehdottamaa funktiota kehotteen perusteella.
     - Tulostamme työkalukutsun tuloksen MCP-palvelimelle.
 
 ### .NET
@@ -900,10 +900,10 @@ client.connectToServer(transport);
 
     - Hainneet työkalut MCP-palvelimelta, `var tools = await GetMcpTools()`.
     - Määritelleet käyttäjän kehotteen `userMessage`.
-    - Rakentaneet options-objektin, jossa määritellään malli ja työkalut.
+    - Rakentaneet options-olion, jossa määritellään malli ja työkalut.
     - Tehty pyyntö LLM:lle.
 
-1. Viimeinen vaihe, tarkistetaan, pitääkö LLM:n mielestä kutsua funktiota:
+1. Vielä yksi vaihe, tarkistetaan, pitääkö LLM:n mielestä kutsua funktiota:
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -928,7 +928,7 @@ client.connectToServer(transport);
 
     Edellisessä koodissa olemme:
 
-    - Käyneet läpi listan funktiokutsuja.
+    - Käyneet läpi listan funktiokutsuista.
     - Jokaiselle työkalukutsulle purkaneet nimen ja argumentit ja kutsuneet työkalua MCP-palvelimella MCP-asiakkaan avulla. Lopuksi tulostamme tulokset.
 
 Tässä koko koodi:
@@ -1139,7 +1139,7 @@ Hienoa, sait sen tehtyä!
 
 ## Tehtävä
 
-Ota harjoituksen koodi ja laajenna palvelinta lisäämällä siihen enemmän työkaluja. Luo sitten asiakas, jossa on LLM, kuten harjoituksessa, ja testaa sitä erilaisilla kehotteilla varmistaaksesi, että kaikki palvelimen työkalut kutsutaan dynaamisesti. Tämä tapa rakentaa asiakas takaa, että loppukäyttäjällä on erinomainen käyttökokemus, koska he voivat käyttää kehotteita tarkkojen asiakaskomentojen sijaan eivätkä huomaa MCP-palvelimen kutsuja.
+Ota harjoituksen koodi ja laajenna palvelinta lisäämällä siihen enemmän työkaluja. Luo sitten asiakas, jossa on LLM, kuten harjoituksessa, ja testaa sitä erilaisilla kehotteilla varmistaaksesi, että kaikki palvelimen työkalut kutsutaan dynaamisesti. Tällä tavalla rakennettu asiakas tarjoaa loppukäyttäjälle erinomaisen käyttökokemuksen, koska he voivat käyttää kehotteita tarkkojen asiakaskomentojen sijaan eivätkä huomaa MCP-palvelimen kutsuja.
 
 ## Ratkaisu
 

@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T07:00:21+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T18:53:43+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "fi"
 }
 -->
 # SSE-palvelin
 
-SSE (Server Sent Events) on standardi palvelimelta asiakkaalle tapahtuvaan suoratoistoon, joka mahdollistaa palvelimien lähettää reaaliaikaisia päivityksiä asiakkaille HTTP:n yli. Tämä on erityisen hyödyllistä sovelluksissa, jotka tarvitsevat live-päivityksiä, kuten chat-sovellukset, ilmoitukset tai reaaliaikaiset tietovirrat. Lisäksi palvelintasi voi käyttää useampi asiakas samanaikaisesti, koska se toimii palvelimella, joka voi sijaita esimerkiksi pilvessä.
+SSE (Server Sent Events) on standardi palvelimelta asiakkaalle tapahtuvaan suoratoistoon, joka mahdollistaa palvelimien työntää reaaliaikaisia päivityksiä asiakkaille HTTP:n yli. Tämä on erityisen hyödyllistä sovelluksissa, jotka tarvitsevat live-päivityksiä, kuten chat-sovellukset, ilmoitukset tai reaaliaikaiset tietovirrat. Lisäksi palvelintasi voi käyttää useampi asiakas samanaikaisesti, koska se toimii palvelimella, joka voi sijaita esimerkiksi pilvessä.
 
 ## Yleiskatsaus
 
@@ -25,9 +25,9 @@ Oppitunnin lopussa osaat:
 
 ## SSE, miten se toimii
 
-SSE on yksi kahdesta tuetusta siirtotavasta. Olet jo nähnyt ensimmäisen, stdio:n, käytön aiemmissa oppitunneissa. Erot ovat seuraavat:
+SSE on yksi kahdesta tuetusta siirtotavasta. Olet jo nähnyt ensimmäisen, stdio:n, käytössä aiemmissa oppitunneissa. Erot ovat seuraavat:
 
-- SSE vaatii, että hallitset kahta asiaa: yhteyden ja viestit.
+- SSE vaatii, että hallitset kahta asiaa; yhteyden ja viestit.
 - Koska kyseessä on palvelin, joka voi sijaita missä tahansa, tämä täytyy ottaa huomioon työskennellessäsi työkalujen, kuten Inspectorin ja Visual Studio Coden, kanssa. Tämä tarkoittaa, että sen sijaan, että kerrot miten palvelin käynnistetään, osoitat sen sijainnin, johon yhteys voidaan muodostaa. Katso alla oleva esimerkkikoodi:
 
 ### TypeScript
@@ -55,7 +55,7 @@ app.post("/messages", async (req: Request, res: Response) => {
 
 Edellisessä koodissa:
 
-- `/sse` on määritelty reitiksi. Kun tähän reittiin tehdään pyyntö, luodaan uusi siirto-instanssi ja palvelin *yhdistää* tämän siirron avulla.
+- `/sse` on määritelty reitiksi. Kun tähän reittiin tehdään pyyntö, luodaan uusi siirtotapaus ja palvelin *yhdistää* tämän siirtotavan avulla.
 - `/messages` on reitti, joka käsittelee saapuvat viestit.
 
 ### Python
@@ -79,7 +79,7 @@ app = Starlette(
 
 Edellisessä koodissa:
 
-- Luodaan ASGI-palvelimen instanssi (käytetään erityisesti Starlettea) ja liitetään oletusreitti `/`.
+- Luodaan ASGI-palvelimen instanssi (tässä käytetään erityisesti Starlettea) ja liitetään oletusreitti `/`
 
   Taustalla reitit `/sse` ja `/messages` on määritelty käsittelemään yhteyksiä ja viestejä vastaavasti. Loput sovelluksesta, kuten työkalujen lisääminen, tapahtuu kuten stdio-palvelimissa.
 
@@ -99,23 +99,24 @@ Edellisessä koodissa:
     app.MapMcp();
     ```
 
-    On kaksi metodia, jotka auttavat siirtymään web-palvelimesta SSE:tä tukevaksi web-palvelimeksi:
+    On kaksi metodia, jotka auttavat siirtymään web-palvelimesta SSE:tä tukevaksi web-palvelimeksi, ja ne ovat:
 
-    - `AddMcpServer`, tämä metodi lisää ominaisuuksia.
+    - `AddMcpServer`, tämä metodi lisää toiminnallisuuksia.
     - `MapMcp`, tämä lisää reitit kuten `/SSE` ja `/messages`.
+```
 
-Nyt kun tiedämme hieman enemmän SSE:stä, rakennetaan seuraavaksi SSE-palvelin.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Harjoitus: SSE-palvelimen luominen
+## Exercise: Creating an SSE Server
 
-Palvelinta luodessamme on pidettävä mielessä kaksi asiaa:
+To create our server, we need to keep two things in mind:
 
-- Tarvitsemme web-palvelimen, joka tarjoaa päätepisteet yhteyksille ja viesteille.
-- Rakennamme palvelimen kuten tavallisesti käyttäen työkaluja, resursseja ja kehotteita, kuten stdio-palvelimissa.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Luo palvelininstanssi
+### -1- Create a server instance
 
-Palvelimen luomiseksi käytämme samoja tyyppejä kuin stdio:ssa. Siirron osalta valitsemme kuitenkin SSE:n.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-Edellisessä koodissa olemme:
+In the preceding code we've:
 
-- Luoneet palvelininstanssin.
-- Määritelleet sovelluksen käyttäen web-kehystä express.
-- Luoneet muuttujan transports, johon tallennamme saapuvat yhteydet.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-Edellisessä koodissa olemme:
+In the preceding code we've:
 
-- Tuoneet tarvittavat kirjastot, mukaan lukien Starlette (ASGI-kehys).
-- Luoneet MCP-palvelininstanssin `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -169,19 +170,19 @@ builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
-// TODO: add routes 
+// TODO: lisää reitit 
 ```
 
-Tässä vaiheessa olemme:
+At this point, we've:
 
-- Luoneet web-sovelluksen.
-- Lisänneet tuen MCP-ominaisuuksille `AddMcpServer`-metodilla.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Lisätään seuraavaksi tarvittavat reitit.
+Let's add the needed routes next.
 
-### -2- Lisää reitit
+### -2- Add routes
 
-Lisätään reitit, jotka käsittelevät yhteyden ja saapuvat viestit:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-Edellisessä koodissa olemme määritelleet:
+In the preceding code we've defined:
 
-- `/sse`-reitin, joka luo SSE-tyyppisen siirron ja kutsuu MCP-palvelimen `connect`-metodia.
-- `/messages`-reitin, joka huolehtii saapuvista viesteistä.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-Edellisessä koodissa olemme:
+In the preceding code we've:
 
-- Luoneet ASGI-sovellusinstanssin Starlette-kehyksellä. Osana tätä välitämme `mcp.sse_app()` reittilistalle, mikä liittää `/sse` ja `/messages` reitit sovellusinstanssiin.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Olemme lisänneet lopussa rivin `add.MapMcp()`, mikä tarkoittaa, että meillä on nyt reitit `/SSE` ja `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Lisätään seuraavaksi palvelimen ominaisuuksia.
+Let's add capabilties to the server next.
 
-### -3- Palvelimen ominaisuuksien lisääminen
+### -3- Adding server capabilities
 
-Nyt kun SSE-spesifiset asiat on määritelty, lisätään palvelimelle ominaisuuksia kuten työkaluja, kehotteita ja resursseja.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,18 +270,18 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Näin voit lisätä esimerkiksi työkalun. Tämä tietty työkalu luo työkalun nimeltä "random-joke", joka kutsuu Chuck Norris -API:a ja palauttaa JSON-vastauksen.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
 ```python
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """Lisää kaksi lukua yhteen"""
     return a + b
 ```
 
-Nyt palvelimellasi on yksi työkalu.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -291,7 +292,7 @@ import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-// Create an MCP server
+// Luo MCP-palvelin
 const server = new McpServer({
   name: "example-server",
   version: "1.0.0",
@@ -320,7 +321,7 @@ app.post("/messages", async (req: Request, res: Response) => {
   }
 });
 
-server.tool("random-joke", "A joke returned by the chuck norris api", {}, async () => {
+server.tool("random-joke", "Chuck Norris -API:n palauttama vitsi", {}, async () => {
   const response = await fetch("https://api.chucknorris.io/jokes/random");
   const data = await response.json();
 
@@ -349,10 +350,10 @@ mcp = FastMCP("My App")
 
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """Lisää kaksi lukua yhteen"""
     return a + b
 
-# Mount the SSE server to the existing ASGI server
+# Liitä SSE-palvelin olemassa olevaan ASGI-palvelimeen
 app = Starlette(
     routes=[
         Mount('/', app=mcp.sse_app()),
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Luodaan ensin työkaluja, tähän luomme tiedoston *Tools.cs* seuraavalla sisällöllä:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -380,10 +381,10 @@ app = Starlette(
       
       }
 
-      [McpServerTool, Description("Add two numbers together.")]
+      [McpServerTool, Description("Lisää kaksi lukua yhteen.")]
       public async Task<string> AddNumbers(
-          [Description("The first number")] int a,
-          [Description("The second number")] int b)
+          [Description("Ensimmäinen luku")] int a,
+          [Description("Toinen luku")] int b)
       {
           return (a + b).ToString();
       }
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Tässä olemme lisänneet:
+  Here we've added the following:
 
-  - Luoneet luokan `Tools`, jossa on `McpServerToolType`-koriste.
-  - Määritelleet työkalun `AddNumbers` koristellen metodin `McpServerTool`-attribuutilla. Olemme myös määritelleet parametrit ja toteutuksen.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Hyödynnetään juuri luotua `Tools`-luokkaa:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Olemme lisänneet kutsun `WithTools`, joka määrittelee `Tools`-luokan sisältämään työkalut. Siinä kaikki, olemme valmiita.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Hienoa, meillä on SSE-palvelin, kokeillaan sitä seuraavaksi.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Harjoitus: SSE-palvelimen debuggaus Inspectorilla
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector on loistava työkalu, jonka näimme aiemmassa oppitunnissa [Ensimmäisen palvelimen luominen](/03-GettingStarted/01-first-server/README.md). Katsotaan, voimmeko käyttää Inspector-työkalua myös tässä:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Inspectorin käynnistäminen
+### -1- Running the inspector
 
-Inspectorin käynnistämiseksi sinun täytyy ensin saada SSE-palvelin käyntiin, tehdään se ensin:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Käynnistä palvelin
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Inspectorin käynnistämiseksi sinun täytyy ensin saada SSE-palvelin käyntiin,
     uvicorn server:app
     ```
 
-    Huomaa, että käytämme suoritettavaa tiedostoa `uvicorn`, joka asennetaan, kun kirjoitit `pip install "mcp[cli]"`. Kirjoittamalla `server:app` tarkoitetaan, että yritämme ajaa tiedostoa `server.py`, jossa on Starlette-instanssi nimeltä `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,42 +447,42 @@ Inspectorin käynnistämiseksi sinun täytyy ensin saada SSE-palvelin käyntiin,
     dotnet run
     ```
 
-    Tämä käynnistää palvelimen. Palvelimen kanssa kommunikointiin tarvitset uuden terminaalin.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Käynnistä inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Käynnistä tämä eri terminaalissa kuin missä palvelin on käynnissä. Huomaa myös, että sinun täytyy muokata alla olevaa komentoa vastaamaan URL-osoitetta, jossa palvelimesi toimii.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Inspectorin käynnistäminen näyttää samalta kaikissa ympäristöissä. Huomaa, että sen sijaan, että antaisit polun palvelimeen ja komennon palvelimen käynnistämiseksi, annat URL-osoitteen, jossa palvelin toimii, ja määrität myös `/sse`-reitin.
+    Inspectorin käyttö näyttää samalta kaikissa ajoympäristöissä. Huomaa, että sen sijaan, että antaisit polun palvelimelle ja komennon palvelimen käynnistämiseen, annat URL-osoitteen, jossa palvelin on käynnissä, ja määrität myös `/sse`-reititteen.
 
 ### -2- Työkalun kokeilu
 
-Yhdistä palvelimeen valitsemalla pudotusvalikosta SSE ja täytä URL-kenttään palvelimesi osoite, esimerkiksi http:localhost:4321/sse. Klikkaa "Connect"-painiketta. Valitse kuten ennenkin listaa työkaluja, valitse työkalu ja anna syötteet. Näet tuloksen kuten alla:
+Yhdistä palvelimeen valitsemalla SSE pudotusvalikosta ja täytä url-kenttään palvelimesi osoite, esimerkiksi http:localhost:4321/sse. Klikkaa sitten "Connect"-painiketta. Valitse kuten aiemmin työkalujen listaaminen, valitse työkalu ja anna syötteet. Näet tuloksen alla olevan kuvan kaltaisena:
 
 ![SSE-palvelin käynnissä inspectorissa](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.fi.png)
 
-Hienoa, pystyt työskentelemään inspectorin kanssa, katsotaan seuraavaksi miten voit työskennellä Visual Studio Coden kanssa.
+Hienoa, osaat käyttää inspectoria, katsotaan seuraavaksi miten voit työskennellä Visual Studio Coden kanssa.
 
 ## Tehtävä
 
-Yritä rakentaa palvelimesi lisäämällä siihen enemmän ominaisuuksia. Katso [tästä sivusta](https://api.chucknorris.io/) esimerkiksi, miten lisäät työkalun, joka kutsuu API:a. Sinä päätät, miltä palvelimen tulisi näyttää. Hauskaa tekemistä :)
+Yritä laajentaa palvelintasi lisäämällä toiminnallisuuksia. Katso [tältä sivulta](https://api.chucknorris.io/) esimerkiksi, miten lisäät työkalun, joka kutsuu API:a. Sinä päätät, miltä palvelimen tulisi näyttää. Hauskaa koodausta :)
 
 ## Ratkaisu
 
-[Ratkaisu](./solution/README.md) Tässä on mahdollinen ratkaisu toimivalla koodilla.
+[Ratkaisu](./solution/README.md) Tässä on yksi mahdollinen ratkaisu toimivalla koodilla.
 
 ## Tärkeimmät opit
 
 Tämän luvun tärkeimmät opit ovat:
 
-- SSE on toinen stdio:n rinnalla tuetuista siirtotavoista.
+- SSE on toinen stdio:n lisäksi tuetuista siirtotavoista.
 - SSE:n tukemiseksi sinun täytyy hallita saapuvia yhteyksiä ja viestejä web-kehyksen avulla.
-- Voit käyttää sekä Inspectoria että Visual Studio Codea SSE-palvelimen kuluttamiseen, aivan kuten stdio-palvelimissa. Huomaa, että stdio:n ja SSE:n välillä on pieniä eroja. SSE:n kanssa palvelin täytyy käynnistää erikseen ja sen jälkeen käynnistää inspector-työkalu. Inspector-työkalussa on myös eroavaisuuksia, sillä sinun täytyy määrittää URL-osoite.
+- Voit käyttää sekä Inspectoria että Visual Studio Codea SSE-palvelimen kuluttamiseen, aivan kuten stdio-palvelimissa. Huomaa, että stdio:n ja SSE:n välillä on pieniä eroja. SSE:n kanssa palvelin täytyy käynnistää erikseen ja sen jälkeen suorittaa inspector-työkalu. Inspector-työkalussa on myös eroavaisuuksia, sillä URL-osoite täytyy määrittää.
 
 ## Esimerkit
 
@@ -489,7 +490,7 @@ Tämän luvun tärkeimmät opit ovat:
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Python Calculator](../../../../03-GettingStarted/samples/python) 
 
 ## Lisäresurssit
 
@@ -497,7 +498,7 @@ Tämän luvun tärkeimmät opit ovat:
 
 ## Mitä seuraavaksi
 
-- Seuraavaksi: [HTTP Streaming MCP:llä (Streamable HTTP)](../06-http-streaming/README.md)
+- Seuraavaksi: [HTTP Streaming with MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

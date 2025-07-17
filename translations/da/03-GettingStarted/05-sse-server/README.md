@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T06:32:23+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T18:49:01+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "da"
 }
 -->
 # SSE Server
 
-SSE (Server Sent Events) er en standard for server-til-klient streaming, som gør det muligt for servere at sende realtidsopdateringer til klienter over HTTP. Det er især nyttigt for applikationer, der kræver live-opdateringer, såsom chatapplikationer, notifikationer eller realtidsdatafeeds. Din server kan også bruges af flere klienter samtidig, da den kører på en server, som for eksempel kan være placeret i skyen.
+SSE (Server Sent Events) er en standard for server-til-klient streaming, som gør det muligt for servere at sende realtidsopdateringer til klienter over HTTP. Dette er særligt nyttigt for applikationer, der kræver live-opdateringer, såsom chatapplikationer, notifikationer eller realtidsdatafeeds. Din server kan også bruges af flere klienter samtidig, da den kører på en server, som for eksempel kan være placeret i skyen.
 
 ## Oversigt
 
@@ -81,7 +81,7 @@ I koden ovenfor:
 
 - Opretter vi en instans af en ASGI-server (specifikt med Starlette) og monterer standardruten `/`.
 
-  Bag kulisserne bliver rutene `/sse` og `/messages` sat op til at håndtere henholdsvis forbindelser og beskeder. Resten af appen, som at tilføje funktioner som værktøjer, foregår som med stdio-servere.
+  Bag kulisserne bliver ruterne `/sse` og `/messages` sat op til at håndtere henholdsvis forbindelser og beskeder. Resten af appen, som at tilføje funktioner som værktøjer, foregår som med stdio-servere.
 
 ### .NET    
 
@@ -99,23 +99,24 @@ I koden ovenfor:
     app.MapMcp();
     ```
 
-Der er to metoder, der hjælper os med at gå fra en webserver til en webserver, der understøtter SSE, og det er:
+    Der er to metoder, der hjælper os med at gå fra en webserver til en webserver, der understøtter SSE, og det er:
 
-- `AddMcpServer`, denne metode tilføjer funktionalitet.
-- `MapMcp`, denne tilføjer ruter som `/SSE` og `/messages`.
+    - `AddMcpServer`, denne metode tilføjer funktionalitet.
+    - `MapMcp`, denne tilføjer ruter som `/SSE` og `/messages`.
+```
 
-Nu hvor vi ved lidt mere om SSE, lad os bygge en SSE-server.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Øvelse: Oprette en SSE-server
+## Exercise: Creating an SSE Server
 
-For at oprette vores server skal vi huske to ting:
+To create our server, we need to keep two things in mind:
 
-- Vi skal bruge en webserver til at eksponere endpoints for forbindelse og beskeder.
-- Bygge vores server som vi normalt gør med værktøjer, ressourcer og prompts, som vi gjorde med stdio.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Opret en serverinstans
+### -1- Create a server instance
 
-For at oprette vores server bruger vi de samme typer som med stdio. Men til transporten skal vi vælge SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-I koden ovenfor har vi:
+In the preceding code we've:
 
-- Oprettet en serverinstans.
-- Defineret en app ved hjælp af webframeworket express.
-- Oprettet en variabel transports, som vi bruger til at gemme indkommende forbindelser.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-I koden ovenfor har vi:
+In the preceding code we've:
 
-- Importeret de biblioteker, vi skal bruge, herunder Starlette (et ASGI-framework).
-- Oprettet en MCP-serverinstans `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-På dette tidspunkt har vi:
+At this point, we've:
 
-- Oprettet en webapp.
-- Tilføjet understøttelse for MCP-funktioner via `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Lad os tilføje de nødvendige ruter næste.
+Let's add the needed routes next.
 
-### -2- Tilføj ruter
+### -2- Add routes
 
-Lad os tilføje ruter, der håndterer forbindelsen og indkommende beskeder:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-I koden ovenfor har vi defineret:
+In the preceding code we've defined:
 
-- En `/sse`-rute, der opretter en transport af typen SSE og til sidst kalder `connect` på MCP-serveren.
-- En `/messages`-rute, der håndterer indkommende beskeder.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-I koden ovenfor har vi:
+In the preceding code we've:
 
-- Oprettet en ASGI-appinstans ved hjælp af Starlette-frameworket. Som en del af det sender vi `mcp.sse_app()` til dens liste over ruter. Det resulterer i, at `/sse` og `/messages` ruter monteres på app-instansen.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Vi har tilføjet en linje kode til sidst `add.MapMcp()`, hvilket betyder, at vi nu har ruterne `/SSE` og `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Lad os tilføje funktionalitet til serveren næste.
+Let's add capabilties to the server next.
 
-### -3- Tilføj serverfunktioner
+### -3- Adding server capabilities
 
-Nu hvor vi har defineret alt det, der er specifikt for SSE, lad os tilføje serverfunktioner som værktøjer, prompts og ressourcer.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Her kan du se, hvordan du tilføjer et værktøj for eksempel. Dette specifikke værktøj opretter et værktøj kaldet "random-joke", som kalder en Chuck Norris API og returnerer et JSON-svar.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Nu har din server ét værktøj.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -291,7 +292,7 @@ import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-// Create an MCP server
+// Opret en MCP-server
 const server = new McpServer({
   name: "example-server",
   version: "1.0.0",
@@ -352,7 +353,7 @@ def add(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
-# Mount the SSE server to the existing ASGI server
+# Monter SSE-serveren på den eksisterende ASGI-server
 app = Starlette(
     routes=[
         Mount('/', app=mcp.sse_app()),
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Lad os først oprette nogle værktøjer, til dette opretter vi en fil *Tools.cs* med følgende indhold:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Her har vi tilføjet følgende:
+  Here we've added the following:
 
-  - Oprettet en klasse `Tools` med dekoratøren `McpServerToolType`.
-  - Defineret et værktøj `AddNumbers` ved at dekorere metoden med `McpServerTool`. Vi har også angivet parametre og en implementering.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Lad os bruge `Tools`-klassen, vi lige har oprettet:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Vi har tilføjet et kald til `WithTools`, som angiver `Tools` som klassen, der indeholder værktøjerne. Det er det, vi er klar.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Fint, vi har en server, der bruger SSE, lad os prøve den af.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Øvelse: Fejlsøgning af en SSE-server med Inspector
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector er et fantastisk værktøj, som vi så i en tidligere lektion [Creating your first server](/03-GettingStarted/01-first-server/README.md). Lad os se, om vi kan bruge Inspector her også:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Køre inspector
+### -1- Running the inspector
 
-For at køre inspector skal du først have en SSE-server kørende, så lad os gøre det:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Start serveren
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ For at køre inspector skal du først have en SSE-server kørende, så lad os g�
     uvicorn server:app
     ```
 
-    Bemærk, hvordan vi bruger eksekverbaren `uvicorn`, som installeres, når vi skriver `pip install "mcp[cli]"`. At skrive `server:app` betyder, at vi prøver at køre filen `server.py`, som indeholder en Starlette-instans kaldet `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,30 +447,30 @@ For at køre inspector skal du først have en SSE-server kørende, så lad os g�
     dotnet run
     ```
 
-    Dette burde starte serveren. For at interagere med den skal du åbne et nyt terminalvindue.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Kør inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Kør dette i et separat terminalvindue fra det, hvor serveren kører. Bemærk også, at du skal tilpasse kommandoen nedenfor, så den passer til URL’en, hvor din server kører.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    At køre inspector ser ens ud i alle runtime-miljøer. Bemærk, at i stedet for at angive en sti til vores server og en kommando til at starte serveren, angiver vi URL’en, hvor serveren kører, og vi specificerer også `/sse`-ruten.
+    At køre inspector ser ens ud i alle runtime-miljøer. Bemærk, hvordan vi i stedet for at angive en sti til vores server og en kommando til at starte serveren, i stedet angiver URL’en, hvor serveren kører, og vi specificerer også `/sse`-ruten.
 
-### -2- Prøv værktøjet
+### -2- Afprøvning af værktøjet
 
-Forbind til serveren ved at vælge SSE i dropdown-menuen og udfyld URL-feltet med adressen, hvor din server kører, for eksempel http:localhost:4321/sse. Klik derefter på "Connect"-knappen. Som før, vælg at liste værktøjer, vælg et værktøj og angiv inputværdier. Du skulle gerne se et resultat som nedenfor:
+Forbind til serveren ved at vælge SSE i dropdown-menuen og udfyld URL-feltet med adressen, hvor din server kører, for eksempel http:localhost:4321/sse. Klik derefter på "Connect"-knappen. Som før, vælg at liste værktøjer, vælg et værktøj og indtast inputværdier. Du skulle gerne se et resultat som nedenfor:
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.da.png)
 
-Fint, du kan arbejde med inspector, lad os se, hvordan vi kan arbejde med Visual Studio Code næste.
+Fint, du kan arbejde med inspector, lad os se, hvordan vi kan arbejde med Visual Studio Code næste gang.
 
 ## Opgave
 
-Prøv at bygge din server ud med flere funktioner. Se [denne side](https://api.chucknorris.io/) for eksempelvis at tilføje et værktøj, der kalder en API. Du bestemmer, hvordan serveren skal se ud. God fornøjelse :)
+Prøv at udbygge din server med flere funktioner. Se [denne side](https://api.chucknorris.io/) for eksempelvis at tilføje et værktøj, der kalder en API. Du bestemmer, hvordan serveren skal se ud. God fornøjelse :)
 
 ## Løsning
 
@@ -481,7 +482,7 @@ De vigtigste pointer fra dette kapitel er:
 
 - SSE er den anden understøttede transport ved siden af stdio.
 - For at understøtte SSE skal du håndtere indkommende forbindelser og beskeder ved hjælp af et webframework.
-- Du kan bruge både Inspector og Visual Studio Code til at bruge en SSE-server, ligesom med stdio-servere. Bemærk, at det adskiller sig lidt mellem stdio og SSE. For SSE skal du starte serveren separat og derefter køre dit inspector-værktøj. For inspector-værktøjet er der også forskelle, idet du skal angive URL’en.
+- Du kan bruge både Inspector og Visual Studio Code til at bruge en SSE-server, ligesom med stdio-servere. Bemærk, hvordan det adskiller sig lidt mellem stdio og SSE. For SSE skal du starte serveren separat og derefter køre dit inspector-værktøj. For inspector-værktøjet er der også forskelle, idet du skal angive URL’en.
 
 ## Eksempler
 
@@ -489,7 +490,7 @@ De vigtigste pointer fra dette kapitel er:
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Python Calculator](../../../../03-GettingStarted/samples/python) 
 
 ## Yderligere ressourcer
 

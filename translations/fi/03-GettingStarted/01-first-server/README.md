@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T06:58:46+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T18:51:31+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "fi"
 }
 -->
 # MCP:n Aloittaminen
 
-Tervetuloa ensimmäisille askelillesi Model Context Protocolin (MCP) parissa! Olitpa sitten uusi MCP:n käyttäjä tai haluat syventää osaamistasi, tämä opas ohjaa sinut olennaisen asennuksen ja kehitysprosessin läpi. Opit, miten MCP mahdollistaa saumattoman integraation tekoälymallien ja sovellusten välillä, ja miten saat nopeasti ympäristösi valmiiksi MCP-pohjaisten ratkaisujen rakentamiseen ja testaamiseen.
+Tervetuloa ensimmäisille askelillesi Model Context Protocolin (MCP) parissa! Olitpa sitten uusi MCP:n käyttäjä tai haluat syventää osaamistasi, tämä opas ohjaa sinut olennaisen asennuksen ja kehitysprosessin läpi. Opit, miten MCP mahdollistaa saumattoman integraation AI-mallien ja sovellusten välillä, ja miten saat nopeasti ympäristösi valmiiksi MCP-pohjaisten ratkaisujen rakentamiseen ja testaamiseen.
 
-> TLDR; Jos rakennat tekoälysovelluksia, tiedät, että voit lisätä työkaluja ja muita resursseja LLM:ääsi (laajaa kielimallia) varten, jotta LLM olisi tietävämpi. Jos kuitenkin sijoitat nämä työkalut ja resurssit palvelimelle, sovelluksen ja palvelimen ominaisuuksia voi käyttää mikä tahansa asiakas, LLM:n kanssa tai ilman.
+> TLDR; Jos rakennat AI-sovelluksia, tiedät, että voit lisätä työkaluja ja muita resursseja LLM:ääsi (laajaa kielimallia) varten, jotta LLM olisi tietävämpi. Jos kuitenkin sijoitat nämä työkalut ja resurssit palvelimelle, sovelluksen ja palvelimen ominaisuuksia voi käyttää mikä tahansa asiakas, jolla on tai ei ole LLM:ää.
 
 ## Yleiskatsaus
 
 Tässä oppitunnissa saat käytännön ohjeita MCP-ympäristöjen pystyttämiseen ja ensimmäisten MCP-sovellusten rakentamiseen. Opit asentamaan tarvittavat työkalut ja kehykset, rakentamaan perus MCP-palvelimia, luomaan isäntäsovelluksia ja testaamaan toteutuksiasi.
 
-Model Context Protocol (MCP) on avoin protokolla, joka standardisoi sen, miten sovellukset tarjoavat kontekstia LLM:ille. Ajattele MCP:tä kuin USB-C-porttina tekoälysovelluksille – se tarjoaa standardoidun tavan yhdistää tekoälymallit erilaisiin tietolähteisiin ja työkaluihin.
+Model Context Protocol (MCP) on avoin protokolla, joka standardisoi, miten sovellukset tarjoavat kontekstia LLM:ille. Ajattele MCP:tä kuin USB-C-porttina AI-sovelluksille – se tarjoaa standardoidun tavan yhdistää AI-mallit erilaisiin tietolähteisiin ja työkaluihin.
 
 ## Oppimistavoitteet
 
@@ -30,7 +30,7 @@ Tämän oppitunnin jälkeen osaat:
 
 ## MCP-ympäristön Pystyttäminen
 
-Ennen kuin aloitat MCP:n parissa työskentelyn, on tärkeää valmistella kehitysympäristösi ja ymmärtää perus työnkulku. Tässä osiossa käydään läpi alkuasetukset, jotta MCP:n kanssa aloittaminen sujuu vaivattomasti.
+Ennen kuin aloitat MCP:n parissa työskentelyn, on tärkeää valmistella kehitysympäristösi ja ymmärtää perus työnkulku. Tässä osiossa käydään läpi alkuasetukset, jotta MCP:n kanssa aloittaminen sujuu mutkattomasti.
 
 ### Esivaatimukset
 
@@ -39,7 +39,7 @@ Ennen MCP-kehitykseen ryhtymistä varmista, että sinulla on:
 - **Kehitysympäristö**: Valitsemallesi kielelle (C#, Java, Python, TypeScript tai JavaScript)
 - **IDE/Editori**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm tai mikä tahansa nykyaikainen koodieditori
 - **Paketinhallintaohjelmat**: NuGet, Maven/Gradle, pip tai npm/yarn
-- **API-avaimet**: Kaikille tekoälypalveluille, joita aiot käyttää isäntäsovelluksissasi
+- **API-avaimet**: Kaikille AI-palveluille, joita aiot käyttää isäntäsovelluksissasi
 
 ## Perusrakenne MCP-palvelimelle
 
@@ -50,7 +50,7 @@ MCP-palvelin sisältää tyypillisesti:
 - **Työkalut**: Toiminnallisuudet, joita mallit voivat kutsua
 - **Kehotteet**: Mallipohjat tekstin luomiseen tai jäsentämiseen
 
-Tässä on yksinkertaistettu esimerkki TypeScriptillä:
+Tässä yksinkertaistettu esimerkki TypeScriptillä:
 
 ```typescript
 import { Server, Tool, Resource } from "@modelcontextprotocol/typescript-server-sdk";
@@ -91,18 +91,18 @@ Edellisessä koodissa me:
 
 ## Testaus ja Virheenkorjaus
 
-Ennen kuin aloitat MCP-palvelimesi testaamisen, on tärkeää ymmärtää käytettävissä olevat työkalut ja parhaat käytännöt virheenkorjaukseen. Tehokas testaus varmistaa, että palvelimesi toimii odotetusti ja auttaa sinua nopeasti tunnistamaan ja korjaamaan ongelmat. Seuraavassa osiossa käydään läpi suositellut menetelmät MCP-toteutuksesi validointiin.
+Ennen MCP-palvelimesi testaamista on tärkeää ymmärtää käytettävissä olevat työkalut ja parhaat käytännöt virheenkorjaukseen. Tehokas testaus varmistaa, että palvelimesi toimii odotetusti ja auttaa sinua nopeasti tunnistamaan ja korjaamaan ongelmat. Seuraavassa osiossa esitellään suositellut menetelmät MCP-toteutuksesi validointiin.
 
 MCP tarjoaa työkaluja palvelimien testaamiseen ja virheenkorjaukseen:
 
-- **Inspector-työkalu**, tämä graafinen käyttöliittymä mahdollistaa palvelimeesi yhdistämisen ja työkalujen, kehotteiden sekä resurssien testaamisen.
+- **Inspector-työkalu**, tämä graafinen käyttöliittymä mahdollistaa yhteyden palvelimeesi ja työkalujen, kehotteiden sekä resurssien testaamisen.
 - **curl**, voit myös yhdistää palvelimeesi komentorivityökalulla kuten curl tai muilla asiakasohjelmilla, jotka pystyvät luomaan ja suorittamaan HTTP-komentoja.
 
 ### MCP Inspectorin Käyttö
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) on visuaalinen testausväline, joka auttaa sinua:
 
-1. **Palvelimen ominaisuuksien löytämisessä**: Havaitsee automaattisesti saatavilla olevat resurssit, työkalut ja kehotteet
+1. **Palvelimen ominaisuuksien löytämisessä**: Havaitsee automaattisesti käytettävissä olevat resurssit, työkalut ja kehotteet
 2. **Työkalujen suorittamisen testaamisessa**: Kokeile eri parametreja ja näe vastaukset reaaliajassa
 3. **Palvelimen metatietojen tarkastelussa**: Tutki palvelimen tietoja, skeemoja ja asetuksia
 
@@ -111,7 +111,7 @@ MCP tarjoaa työkaluja palvelimien testaamiseen ja virheenkorjaukseen:
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Kun suoritat yllä olevat komennot, MCP Inspector avaa paikallisen web-käyttöliittymän selaimessasi. Näet kojelaudan, jossa näkyvät rekisteröidyt MCP-palvelimesi, niiden käytettävissä olevat työkalut, resurssit ja kehotteet. Käyttöliittymä mahdollistaa työkalujen suorittamisen interaktiivisen testauksen, palvelimen metatietojen tarkastelun ja reaaliaikaisten vastausten seuraamisen, mikä helpottaa MCP-palvelintoteutustesi validointia ja virheenkorjausta.
+Kun suoritat yllä olevat komennot, MCP Inspector käynnistää paikallisen web-käyttöliittymän selaimessasi. Näet kojelaudan, joka näyttää rekisteröidyt MCP-palvelimesi, niiden käytettävissä olevat työkalut, resurssit ja kehotteet. Käyttöliittymä mahdollistaa työkalujen suorittamisen interaktiivisen testauksen, palvelimen metatietojen tarkastelun ja reaaliaikaisten vastausten seuraamisen, mikä helpottaa MCP-palvelintoteutustesi validointia ja virheenkorjausta.
 
 Tässä on kuvakaappaus miltä se voi näyttää:
 
@@ -156,7 +156,7 @@ MCP-palvelin voi esimerkiksi:
 - Käyttää paikallisia tiedostoja ja tietokantoja
 - Yhdistää etä-API:hin
 - Suorittaa laskutoimituksia
-- Integroituu muihin työkaluihin ja palveluihin
+- Integroitua muihin työkaluihin ja palveluihin
 - Tarjota käyttöliittymän vuorovaikutukseen
 
 Hienoa, nyt kun tiedämme mitä voimme tehdä, aloitetaan koodaus.
@@ -326,6 +326,10 @@ Lisää seuraava täydellinen konfiguraatio *pom.xml*-tiedostoosi:
 </project>
 ```
 
+### -2- Luo projekti
+
+Nyt kun SDK on asennettu, luodaan projekti:
+
 ### TypeScript
 
 ```sh
@@ -348,6 +352,8 @@ pip install "mcp[cli]"
 cd calculator-server
 ./mvnw clean install -DskipTests
 ```
+
+### -3- Luo projektitiedostot
 
 ### TypeScript
 
@@ -408,6 +414,8 @@ dotnet add package Microsoft.Extensions.Hosting
 ### Java
 
 Java Spring Boot -projekteissa projektirakenne luodaan automaattisesti.
+
+### -4- Kirjoita palvelinkoodi
 
 ### TypeScript
 
@@ -638,7 +646,7 @@ public class CalculatorService {
 }
 ```
 
-**Valinnaiset komponentit tuotantovalmiille palvelulle:**
+**Valinnaiset komponentit tuotantovalmiiseen palveluun:**
 
 Luo käynnistyskonfiguraatio *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
 
@@ -806,10 +814,10 @@ def get_greeting(name: str) -> str:
     return f"Hello, {name}!"
 ```
 
-Edellisessä koodissa me:
+Edellisessä koodissa olemme:
 
-- Määrittelimme työkalun `add`, joka ottaa parametrit `a` ja `p`, molemmat kokonaislukuja.
-- Loimme resurssin nimeltä `greeting`, joka ottaa parametrin `name`.
+- Määritelleet työkalun `add`, joka ottaa parametrit `a` ja `p`, molemmat kokonaislukuja.
+- Luoneet resurssin nimeltä `greeting`, joka ottaa parametrin `name`.
 
 ### .NET
 
@@ -828,7 +836,7 @@ public static class CalculatorTool
 
 Työkalut on jo luotu edellisessä vaiheessa.
 
-### -6 Lopullinen koodi
+### -6- Lopullinen koodi
 
 Lisätään viimeiset koodit, jotta palvelin voi käynnistyä:
 
@@ -840,7 +848,7 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-Tässä on koko koodi:
+Tässä koko koodi:
 
 ```typescript
 // index.ts
@@ -968,7 +976,7 @@ public class McpServerApplication {
 }
 ```
 
-### -7- Palvelimen testaaminen
+### -7- Testaa palvelin
 
 Käynnistä palvelin seuraavalla komennolla:
 
@@ -1002,9 +1010,9 @@ dotnet run
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### -8- Käynnistäminen inspectorin avulla
+### -8- Käynnistä inspectorin avulla
 
-Inspector on loistava työkalu, joka voi käynnistää palvelimesi ja antaa sinun olla vuorovaikutuksessa sen kanssa, jotta voit testata sen toimivuuden. Käynnistetään se:
+Inspector on erinomainen työkalu, joka voi käynnistää palvelimesi ja antaa sinun olla vuorovaikutuksessa sen kanssa, jotta voit testata sen toimivuuden. Käynnistetään se:
 
 > [!NOTE]
 > Komento-kenttä saattaa näyttää erilaiselta, koska se sisältää palvelimen käynnistyskomennon juuri sinun ajoympäristöllesi.
@@ -1023,13 +1031,13 @@ Python käyttää Node.js-työkalua nimeltä inspector. Työkalua voi kutsua nä
 mcp dev server.py
 ```
 
-Kuitenkin se ei toteuta kaikkia työkalun metodeja, joten suosittelemme ajamaan Node.js-työkalun suoraan alla olevan esimerkin mukaisesti:
+Kuitenkin se ei toteuta kaikkia työkalun tarjoamia metodeja, joten suosittelemme ajamaan Node.js-työkalun suoraan näin:
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
-```  
-Jos käytät työkalua tai IDE:tä, joka sallii komentojen ja argumenttien määrittämisen skriptien ajamiseen,  
-muista asettaa `python` Komento-kenttään ja `server.py` Argumenteiksi. Tämä varmistaa skriptin oikean suorituksen.
+```
+
+Jos käytät työkalua tai IDE:tä, joka sallii komentojen ja argumenttien määrittämisen skriptien ajamiseen, varmista että `Command`-kenttään on asetettu `python` ja `Arguments`-kenttään `server.py`. Näin skripti toimii oikein.
 
 ### .NET
 
@@ -1042,7 +1050,7 @@ npx @modelcontextprotocol/inspector dotnet run
 
 ### Java
 
-Varmista, että laskinpalvelimesi on käynnissä  
+Varmista, että laskinpalvelimesi on käynnissä
 Käynnistä inspector:
 
 ```cmd
@@ -1058,16 +1066,16 @@ Inspectorin web-käyttöliittymässä:
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.fi.png)
 
 **Olet nyt yhteydessä palvelimeen**  
-**Javan palvelimen testausosio on nyt valmis**
+**Java-palvelimen testausosio on nyt valmis**
 
 Seuraava osio käsittelee vuorovaikutusta palvelimen kanssa.
 
-Sinun pitäisi nähdä seuraava käyttöliittymä:
+Näet seuraavan käyttöliittymän:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.fi.png)
 
 1. Yhdistä palvelimeen valitsemalla Connect-painike  
-   Kun olet yhdistänyt palvelimeen, näet seuraavan:
+   Kun olet yhdistänyt palvelimeen, näet seuraavaa:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.fi.png)
 
@@ -1083,11 +1091,11 @@ Onneksi olkoon, olet onnistuneesti luonut ja käynnistänyt ensimmäisen palveli
 
 MCP tarjoaa viralliset SDK:t useille kielille:
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) – Ylläpidetty yhteistyössä Microsoftin kanssa
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) – Ylläpidetty yhteistyössä Spring AI:n kanssa
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) – Ylläpidetään yhteistyössä Microsoftin kanssa
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) – Ylläpidetään yhteistyössä Spring AI:n kanssa
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) – Virallinen TypeScript-toteutus
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) – Virallinen Python-toteutus
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) – Virallinen Kotlin-toteutus
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Virallinen Kotlin-toteutus
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Ylläpidetty yhteistyössä Loopwork AI:n kanssa
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Virallinen Rust-toteutus
 
@@ -1111,7 +1119,7 @@ Luo yksinkertainen MCP-palvelin valitsemallasi työkalulla:
 
 1. Toteuta työkalu haluamallasi kielellä (.NET, Java, Python tai JavaScript).
 2. Määrittele syöteparametrit ja palautusarvot.
-3. Suorita inspector-työkalu varmistaaksesi, että palvelin toimii odotetusti.
+3. Käynnistä inspector-työkalu varmistaaksesi, että palvelin toimii odotetusti.
 4. Testaa toteutus erilaisilla syötteillä.
 
 ## Ratkaisu
@@ -1126,7 +1134,7 @@ Luo yksinkertainen MCP-palvelin valitsemallasi työkalulla:
 
 ## Mitä seuraavaksi
 
-Seuraava: [Getting Started with MCP Clients](../02-client/README.md)
+Seuraavaksi: [Getting Started with MCP Clients](../02-client/README.md)
 
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T10:48:56+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T19:18:09+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "cs"
 }
@@ -13,11 +13,11 @@ SSE (Server Sent Events) je standard pro streamování ze serveru na klienta, kt
 
 ## Přehled
 
-Tato lekce pokrývá, jak vytvořit a používat SSE servery.
+Tato lekce se zabývá tím, jak vytvořit a používat SSE servery.
 
 ## Cíle učení
 
-Na konci této lekce budete schopni:
+Na konci této lekce budete umět:
 
 - Vytvořit SSE server.
 - Ladit SSE server pomocí Inspectoru.
@@ -55,8 +55,8 @@ app.post("/messages", async (req: Request, res: Response) => {
 
 V předchozím kódu:
 
-- `/sse` je nastavená jako routa. Když přijde požadavek na tuto routu, vytvoří se nová instance transportu a server se pomocí tohoto transportu *připojí*.
-- `/messages` je routa, která zpracovává příchozí zprávy.
+- `/sse` je nastavená jako trasa. Když přijde požadavek na tuto trasu, vytvoří se nová instance transportu a server se pomocí tohoto transportu *připojí*.
+- `/messages` je trasa, která zpracovává příchozí zprávy.
 
 ### Python
 
@@ -79,9 +79,9 @@ app = Starlette(
 
 V předchozím kódu:
 
-- Vytvoříme instanci ASGI serveru (konkrétně pomocí Starlette) a připojíme výchozí routu `/`.
+- Vytvoříme instanci ASGI serveru (konkrétně pomocí Starlette) a připojíme výchozí trasu `/`.
 
-  Co se děje na pozadí je, že routy `/sse` a `/messages` jsou nastaveny pro zpracování připojení a zpráv. Zbytek aplikace, jako přidávání funkcí jako nástroje, probíhá stejně jako u stdio serverů.
+  Co se děje na pozadí, je to, že trasy `/sse` a `/messages` jsou nastaveny pro zpracování připojení a zpráv. Zbytek aplikace, jako přidávání funkcí a nástrojů, funguje stejně jako u stdio serverů.
 
 ### .NET    
 
@@ -99,23 +99,24 @@ V předchozím kódu:
     app.MapMcp();
     ```
 
-Existují dvě metody, které nám pomáhají přejít od webového serveru k webovému serveru podporujícímu SSE, a to:
+    Existují dvě metody, které nám pomáhají přejít od webového serveru k webovému serveru podporujícímu SSE, a to:
 
-- `AddMcpServer`, tato metoda přidává potřebné schopnosti.
-- `MapMcp`, tato přidává routy jako `/SSE` a `/messages`.
+    - `AddMcpServer`, tato metoda přidává potřebné schopnosti.
+    - `MapMcp`, tato přidává trasy jako `/SSE` a `/messages`.
+```
 
-Teď, když už víme trochu víc o SSE, pojďme si postavit SSE server.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Cvičení: Vytvoření SSE serveru
+## Exercise: Creating an SSE Server
 
-Pro vytvoření našeho serveru musíme mít na paměti dvě věci:
+To create our server, we need to keep two things in mind:
 
-- Musíme použít webový server, který zpřístupní endpointy pro připojení a zprávy.
-- Server postavíme stejně jako obvykle s nástroji, zdroji a výzvami, jak jsme to dělali u stdio.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Vytvoření instance serveru
+### -1- Create a server instance
 
-Pro vytvoření serveru použijeme stejné typy jako u stdio. Pro transport ale musíme zvolit SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-V předchozím kódu jsme:
+In the preceding code we've:
 
-- Vytvořili instanci serveru.
-- Definovali aplikaci pomocí webového frameworku express.
-- Vytvořili proměnnou transports, kterou použijeme k ukládání příchozích připojení.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-V předchozím kódu jsme:
+In the preceding code we've:
 
-- Naimportovali knihovny, které budeme potřebovat, včetně Starlette (ASGI framework).
-- Vytvořili instanci MCP serveru `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -169,19 +170,19 @@ builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
-// TODO: add routes 
+// TODO: přidat trasy 
 ```
 
-V tomto bodě jsme:
+At this point, we've:
 
-- Vytvořili webovou aplikaci.
-- Přidali podporu pro MCP funkce pomocí `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Pojďme teď přidat potřebné routy.
+Let's add the needed routes next.
 
-### -2- Přidání rout
+### -2- Add routes
 
-Přidáme routy, které budou zpracovávat připojení a příchozí zprávy:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -201,17 +202,17 @@ app.post("/messages", async (req: Request, res: Response) => {
   if (transport) {
     await transport.handlePostMessage(req, res);
   } else {
-    res.status(400).send('No transport found for sessionId');
+    res.status(400).send('Nenalezen žádný transport pro sessionId');
   }
 });
 
 app.listen(3001);
 ```
 
-V předchozím kódu jsme definovali:
+In the preceding code we've defined:
 
-- `/sse` routu, která vytvoří transport typu SSE a zavolá `connect` na MCP serveru.
-- `/messages` routu, která se stará o příchozí zprávy.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-V předchozím kódu jsme:
+In the preceding code we've:
 
-- Vytvořili instanci ASGI aplikace pomocí frameworku Starlette. Součástí je předání `mcp.sse_app()` do seznamu rout, což připojí `/sse` a `/messages` routy k aplikaci.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,18 +242,18 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Přidali jsme na konec řádek `add.MapMcp()`, což znamená, že nyní máme routy `/SSE` a `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Pojďme teď přidat schopnosti serveru.
+Let's add capabilties to the server next.
 
-### -3- Přidání schopností serveru
+### -3- Adding server capabilities
 
-Nyní, když máme definováno vše specifické pro SSE, přidáme schopnosti serveru jako nástroje, výzvy a zdroje.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
 ```typescript
-server.tool("random-joke", "A joke returned by the chuck norris api", {},
+server.tool("random-joke", "Vtip vrácený API Chucka Norrise", {},
   async () => {
     const response = await fetch("https://api.chucknorris.io/jokes/random");
     const data = await response.json();
@@ -269,18 +270,18 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Tady je příklad, jak přidat nástroj. Tento konkrétní nástroj vytvoří nástroj s názvem "random-joke", který volá Chuck Norris API a vrací JSON odpověď.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
 ```python
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """Sečte dvě čísla"""
     return a + b
 ```
 
-Teď má váš server jeden nástroj.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -291,7 +292,7 @@ import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-// Create an MCP server
+// Vytvoření MCP serveru
 const server = new McpServer({
   name: "example-server",
   version: "1.0.0",
@@ -316,11 +317,11 @@ app.post("/messages", async (req: Request, res: Response) => {
   if (transport) {
     await transport.handlePostMessage(req, res);
   } else {
-    res.status(400).send("No transport found for sessionId");
+    res.status(400).send("Nenalezen žádný transport pro sessionId");
   }
 });
 
-server.tool("random-joke", "A joke returned by the chuck norris api", {}, async () => {
+server.tool("random-joke", "Vtip vrácený API Chucka Norrise", {}, async () => {
   const response = await fetch("https://api.chucknorris.io/jokes/random");
   const data = await response.json();
 
@@ -349,10 +350,10 @@ mcp = FastMCP("My App")
 
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """Sečte dvě čísla"""
     return a + b
 
-# Mount the SSE server to the existing ASGI server
+# Připojení SSE serveru k existujícímu ASGI serveru
 app = Starlette(
     routes=[
         Mount('/', app=mcp.sse_app()),
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Nejprve vytvoříme nějaké nástroje, pro to vytvoříme soubor *Tools.cs* s následujícím obsahem:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -380,10 +381,10 @@ app = Starlette(
       
       }
 
-      [McpServerTool, Description("Add two numbers together.")]
+      [McpServerTool, Description("Sečte dvě čísla dohromady.")]
       public async Task<string> AddNumbers(
-          [Description("The first number")] int a,
-          [Description("The second number")] int b)
+          [Description("První číslo")] int a,
+          [Description("Druhé číslo")] int b)
       {
           return (a + b).ToString();
       }
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Zde jsme přidali:
+  Here we've added the following:
 
-  - Vytvořili třídu `Tools` s dekorátorem `McpServerToolType`.
-  - Definovali nástroj `AddNumbers` pomocí dekorátoru `McpServerTool` u metody. Také jsme specifikovali parametry a implementaci.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Nyní využijeme třídu `Tools`, kterou jsme právě vytvořili:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Přidali jsme volání `WithTools`, které specifikuje třídu `Tools` jako obsahující nástroje. To je vše, jsme připraveni.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Skvěle, máme server používající SSE, pojďme si ho teď vyzkoušet.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Cvičení: Ladění SSE serveru pomocí Inspectoru
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector je skvělý nástroj, který jsme viděli v předchozí lekci [Vytvoření vašeho prvního serveru](/03-GettingStarted/01-first-server/README.md). Podívejme se, jestli ho můžeme použít i zde:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Spuštění Inspectoru
+### -1- Running the inspector
 
-Pro spuštění Inspectoru musíte mít nejprve spuštěný SSE server, pojďme to tedy udělat:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Spusťte server
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Pro spuštění Inspectoru musíte mít nejprve spuštěný SSE server, pojďme 
     uvicorn server:app
     ```
 
-    Všimněte si, že používáme spustitelný soubor `uvicorn`, který se nainstaluje při zadání `pip install "mcp[cli]"`. Zadání `server:app` znamená, že se snažíme spustit soubor `server.py` a že tento soubor obsahuje instanci Starlette s názvem `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,42 +447,42 @@ Pro spuštění Inspectoru musíte mít nejprve spuštěný SSE server, pojďme 
     dotnet run
     ```
 
-    Tím by se měl server spustit. Pro komunikaci s ním budete potřebovat nové terminálové okno.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Spusťte Inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Spusťte tento příkaz v samostatném terminálovém okně, než ve kterém běží server. Také si upravte níže uvedený příkaz tak, aby odpovídal URL, na kterém váš server běží.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Spuštění Inspectoru vypadá ve všech runtime stejně. Všimněte si, že místo předání cesty k serveru a příkazu pro jeho spuštění předáváme URL, kde server běží, a také specifikujeme `/sse` routu.
+    Spuštění inspectoru vypadá ve všech runtimech stejně. Všimněte si, že místo předávání cesty k serveru a příkazu pro jeho spuštění předáváme URL, kde server běží, a také specifikujeme trasu `/sse`.
 
 ### -2- Vyzkoušení nástroje
 
-Připojte se k serveru výběrem SSE v rozbalovacím seznamu a vyplňte pole URL, kde váš server běží, například http://localhost:4321/sse. Poté klikněte na tlačítko "Connect". Stejně jako dříve vyberte možnost zobrazit nástroje, vyberte nástroj a zadejte vstupní hodnoty. Měli byste vidět výsledek jako níže:
+Připojte se k serveru výběrem SSE v rozbalovacím seznamu a vyplňte pole URL, kde váš server běží, například http:localhost:4321/sse. Poté klikněte na tlačítko "Connect". Stejně jako dříve vyberte možnost vypsat nástroje, zvolte nástroj a zadejte vstupní hodnoty. Měli byste vidět výsledek jako níže:
 
 ![SSE Server běžící v inspectoru](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.cs.png)
 
-Skvěle, umíte pracovat s Inspector, pojďme se podívat, jak pracovat s Visual Studio Code.
+Skvělé, umíte pracovat s inspector, pojďme se podívat, jak pracovat s Visual Studio Code.
 
 ## Zadání
 
-Zkuste rozšířit svůj server o další schopnosti. Podívejte se na [tuto stránku](https://api.chucknorris.io/), kde můžete například přidat nástroj, který volá API. Vy rozhodnete, jak bude server vypadat. Bavte se :)
+Zkuste rozšířit svůj server o další funkce. Podívejte se na [tuto stránku](https://api.chucknorris.io/), kde můžete například přidat nástroj, který volá API. Rozhodněte, jak by měl server vypadat. Bavte se :)
 
 ## Řešení
 
 [Řešení](./solution/README.md) Zde je možné řešení s funkčním kódem.
 
-## Klíčové poznatky
+## Hlavní poznatky
 
-Klíčové poznatky z této kapitoly jsou:
+Hlavní poznatky z této kapitoly jsou:
 
 - SSE je druhý podporovaný transport vedle stdio.
 - Pro podporu SSE musíte spravovat příchozí připojení a zprávy pomocí webového frameworku.
-- Pro konzumaci SSE serveru můžete použít jak Inspector, tak Visual Studio Code, stejně jako u stdio serverů. Všimněte si, že se trochu liší způsob práce mezi stdio a SSE. U SSE musíte server spustit samostatně a pak spustit Inspector. U Inspectoru je také potřeba specifikovat URL.
+- K používání SSE serveru můžete využít jak Inspector, tak Visual Studio Code, stejně jako u stdio serverů. Všimněte si, že se to trochu liší mezi stdio a SSE. U SSE musíte server spustit samostatně a pak spustit inspector. U inspectoru je také potřeba specifikovat URL.
 
 ## Ukázky
 

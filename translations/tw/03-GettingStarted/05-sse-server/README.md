@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-16T21:08:24+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T17:55:22+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "tw"
 }
@@ -25,10 +25,10 @@ SSE（Server Sent Events）是一種伺服器到客戶端的串流標準，允�
 
 ## SSE 運作原理
 
-SSE 是兩種支援的傳輸類型之一。您之前的課程已經看過第一種 stdio 的使用。兩者的差異如下：
+SSE 是兩種支援的傳輸類型之一。您之前的課程已經看過第一種 stdio 的使用方式。兩者的差異如下：
 
 - SSE 需要您處理兩件事：連線與訊息。
-- 由於這是可以部署在任何地方的伺服器，您需要在使用 Inspector 和 Visual Studio Code 等工具時反映這點。也就是說，您不再是指定如何啟動伺服器，而是指定可建立連線的端點。請參考以下範例程式碼：
+- 由於這是可以部署在任何地方的伺服器，您需要在使用 Inspector 和 Visual Studio Code 等工具時反映這點。也就是說，您不再是指定如何啟動伺服器，而是指定可建立連線的端點。以下是範例程式碼：
 
 ### TypeScript
 
@@ -55,7 +55,7 @@ app.post("/messages", async (req: Request, res: Response) => {
 
 在上述程式碼中：
 
-- `/sse` 被設定為路由。當有請求到此路由時，會建立一個新的傳輸實例，伺服器會透過此傳輸進行*連線*。
+- `/sse` 被設定為路由。當有請求到此路由時，會建立新的傳輸實例，伺服器會透過此傳輸 *連線*。
 - `/messages` 是處理傳入訊息的路由。
 
 ### Python
@@ -79,9 +79,9 @@ app = Starlette(
 
 在上述程式碼中，我們：
 
-- 建立一個 ASGI 伺服器實例（特別使用 Starlette）並掛載預設路由 `/`。
+- 建立一個 ASGI 伺服器實例（特別使用 Starlette），並掛載預設路由 `/`
 
-  背後的運作是 `/sse` 和 `/messages` 路由分別用來處理連線和訊息。其餘應用程式功能，如加入工具，則與 stdio 伺服器相同。
+  背後的運作是將 `/sse` 和 `/messages` 路由分別設定來處理連線與訊息。其餘應用程式功能，例如加入工具，則與 stdio 伺服器相同。
 
 ### .NET    
 
@@ -99,23 +99,24 @@ app = Starlette(
     app.MapMcp();
     ```
 
-    有兩個方法幫助我們從一般的網頁伺服器轉成支援 SSE 的伺服器：
+    有兩個方法幫助我們從一般的網頁伺服器轉成支援 SSE 的網頁伺服器：
 
-    - `AddMcpServer`，此方法加入相關功能。
-    - `MapMcp`，此方法加入像是 `/SSE` 和 `/messages` 的路由。
+    - `AddMcpServer`，此方法新增相關功能。
+    - `MapMcp`，此方法新增像是 `/SSE` 和 `/messages` 的路由。
+```
 
-現在我們對 SSE 有更多了解了，接下來來建立一個 SSE 伺服器。
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## 練習：建立 SSE 伺服器
+## Exercise: Creating an SSE Server
 
-建立伺服器時，我們需要記住兩件事：
+To create our server, we need to keep two things in mind:
 
-- 需要使用網頁伺服器來公開連線與訊息的端點。
-- 建立伺服器時，像使用 stdio 一樣使用工具、資源和提示。
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- 建立伺服器實例
+### -1- Create a server instance
 
-建立伺服器時，我們使用與 stdio 相同的類型，但傳輸方式需選擇 SSE。
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-在上述程式碼中，我們：
+In the preceding code we've:
 
-- 建立了伺服器實例。
-- 使用 express 建立應用程式。
-- 建立一個 transports 變數，用來儲存傳入的連線。
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-在上述程式碼中，我們：
+In the preceding code we've:
 
-- 匯入所需的函式庫，並引入 Starlette（ASGI 框架）。
-- 建立 MCP 伺服器實例 `mcp`。
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-此時，我們已經：
+At this point, we've:
 
-- 建立了網頁應用程式。
-- 透過 `AddMcpServer` 加入 MCP 功能支援。
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-接下來加入必要的路由。
+Let's add the needed routes next.
 
-### -2- 加入路由
+### -2- Add routes
 
-接著加入處理連線與傳入訊息的路由：
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-在上述程式碼中，我們定義了：
+In the preceding code we've defined:
 
-- `/sse` 路由，建立 SSE 類型的傳輸，並呼叫 MCP 伺服器的 `connect`。
-- `/messages` 路由，處理傳入訊息。
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-在上述程式碼中，我們：
+In the preceding code we've:
 
-- 使用 Starlette 框架建立 ASGI 應用程式實例，並將 `mcp.sse_app()` 傳入路由列表，這會在應用程式實例上掛載 `/sse` 和 `/messages` 路由。
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-我們在最後加入了一行 `add.MapMcp()`，這表示現在有 `/SSE` 和 `/messages` 路由。
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-接下來為伺服器加入功能。
+Let's add capabilties to the server next.
 
-### -3- 加入伺服器功能
+### -3- Adding server capabilities
 
-現在 SSE 相關設定完成，接著加入工具、提示和資源等伺服器功能。
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-以下示範如何加入一個工具。這個工具名為 "random-joke"，會呼叫 Chuck Norris API 並回傳 JSON 回應。
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-現在您的伺服器有一個工具了。
+Now your server has one tool.
 
 ### TypeScript
 
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. 先建立一些工具，為此我們建立一個檔案 *Tools.cs*，內容如下：
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  這裡我們做了以下事情：
+  Here we've added the following:
 
-  - 建立一個帶有 `McpServerToolType` 裝飾器的 `Tools` 類別。
-  - 定義一個工具 `AddNumbers`，使用 `McpServerTool` 裝飾方法，並提供參數與實作。
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. 接著使用剛建立的 `Tools` 類別：
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  我們加入了 `WithTools` 呼叫，指定 `Tools` 為包含工具的類別。就這樣，準備完成。
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-太棒了，我們有一個使用 SSE 的伺服器，接下來來試試看。
+Great, we have a server using SSE, let's take it for a spin next.
 
-## 練習：使用 Inspector 偵錯 SSE 伺服器
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector 是一個很棒的工具，我們在之前的課程 [建立您的第一個伺服器](/03-GettingStarted/01-first-server/README.md) 中已經看過。現在看看是否也能用在這裡：
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- 執行 Inspector
+### -1- Running the inspector
 
-要執行 Inspector，您必須先啟動 SSE 伺服器，接著：
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. 啟動伺服器
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Inspector 是一個很棒的工具，我們在之前的課程 [建立您的第�
     uvicorn server:app
     ```
 
-    注意我們使用了 `uvicorn` 可執行檔，這是在執行 `pip install "mcp[cli]"` 時安裝的。`server:app` 表示我們嘗試執行 `server.py` 檔案，且該檔案中有一個名為 `app` 的 Starlette 實例。
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,42 +447,42 @@ Inspector 是一個很棒的工具，我們在之前的課程 [建立您的第�
     dotnet run
     ```
 
-    這樣應該會啟動伺服器。要與它互動，您需要開啟另一個終端機視窗。
+    This should start the server. To interface with it you need a new terminal.
 
-1. 執行 Inspector
+1. Run the inspector
 
     > ![NOTE]
-    > 請在與伺服器不同的終端機視窗執行此指令。並且請根據您的伺服器 URL 調整以下指令。
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    在所有執行環境中，執行 Inspector 的方式相同。注意，我們不是傳入伺服器的路徑和啟動指令，而是傳入伺服器運行的 URL，並指定 `/sse` 路由。
+    執行 inspector 在所有執行環境中看起來都相同。請注意，我們不是傳入伺服器的路徑和啟動伺服器的指令，而是傳入伺服器運行的 URL，並且指定 `/sse` 路由。
 
 ### -2- 試用工具
 
-在下拉選單中選擇 SSE，並填入您的伺服器 URL，例如 http:localhost:4321/sse。接著點擊「Connect」按鈕。和之前一樣，選擇列出工具、選擇工具並輸入參數。您應該會看到如下結果：
+在下拉選單中選擇 SSE，並填入伺服器運行的 URL，例如 http:localhost:4321/sse。接著點擊「Connect」按鈕。和之前一樣，選擇列出工具、選擇工具並輸入參數。您應該會看到如下結果：
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.tw.png)
 
-太棒了，您已能使用 Inspector，接下來看看如何使用 Visual Studio Code。
+太棒了，您已經能使用 inspector，接下來讓我們看看如何使用 Visual Studio Code。
 
 ## 作業
 
-嘗試為您的伺服器加入更多功能。參考 [這個網站](https://api.chucknorris.io/) 來新增一個呼叫 API 的工具。伺服器的樣貌由您決定，祝您玩得開心 :)
+嘗試為您的伺服器增加更多功能。參考 [此頁面](https://api.chucknorris.io/) 來新增呼叫 API 的工具。伺服器的樣貌由您決定。祝您玩得愉快 :)
 
 ## 解答
 
-[解答](./solution/README.md) 這裡有一個可運作的範例程式碼解答。
+[解答](./solution/README.md) 這裡有一個可運作的範例解答。
 
 ## 重要重點
 
 本章節的重點如下：
 
-- SSE 是繼 stdio 之後支援的第二種傳輸方式。
-- 支援 SSE 需要使用網頁框架管理傳入的連線與訊息。
-- 您可以使用 Inspector 和 Visual Studio Code 來使用 SSE 伺服器，就像 stdio 伺服器一樣。注意 stdio 與 SSE 之間有些差異。SSE 需要先啟動伺服器，再執行 Inspector 工具。Inspector 工具也需要指定 URL。
+- SSE 是繼 stdio 之後第二種支援的傳輸方式。
+- 支援 SSE 需要使用網頁框架管理連線與訊息。
+- 您可以使用 Inspector 和 Visual Studio Code 來使用 SSE 伺服器，就像 stdio 伺服器一樣。請注意 stdio 與 SSE 之間的差異。SSE 需要先啟動伺服器，然後再執行 inspector 工具。使用 inspector 時，也需要指定 URL。
 
 ## 範例
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T00:01:05+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T17:46:14+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "mo"
 }
@@ -15,9 +15,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 概覽
 
-本課程提供實務指導，教你如何設定 MCP 環境並建立第一個 MCP 應用。你將學會如何安裝必要工具和框架、建立基本 MCP 伺服器、創建主機應用程式，並測試你的實作。
+本課程提供實務指導，教你如何設定 MCP 環境並建立第一個 MCP 應用。你將學會如何安裝必要工具與框架、建立基本 MCP 伺服器、創建主機應用程式，並測試你的實作。
 
-Model Context Protocol (MCP) 是一個開放協議，標準化應用程式如何向 LLM 提供上下文。可以把 MCP 想像成 AI 應用的 USB-C 連接埠——它提供一種標準化方式，將 AI 模型連接到不同的資料來源和工具。
+Model Context Protocol (MCP) 是一個開放協議，標準化應用程式如何向 LLM 提供上下文。可以把 MCP 想像成 AI 應用的 USB-C 連接埠——提供一種標準化方式，將 AI 模型連接到不同的資料來源和工具。
 
 ## 學習目標
 
@@ -30,11 +30,11 @@ Model Context Protocol (MCP) 是一個開放協議，標準化應用程式如何
 
 ## 設定你的 MCP 環境
 
-開始使用 MCP 之前，準備好開發環境並了解基本工作流程非常重要。本節將引導你完成初始設定步驟，確保你能順利開始 MCP 開發。
+開始使用 MCP 前，準備好開發環境並了解基本工作流程非常重要。本節將引導你完成初始設定步驟，確保你能順利開始 MCP 開發。
 
 ### 先決條件
 
-在投入 MCP 開發前，請確保你已具備：
+開始 MCP 開發前，請確保你已具備：
 
 - **開發環境**：選擇的程式語言（C#、Java、Python、TypeScript 或 JavaScript）
 - **IDE/編輯器**：Visual Studio、Visual Studio Code、IntelliJ、Eclipse、PyCharm 或任何現代程式碼編輯器
@@ -45,7 +45,7 @@ Model Context Protocol (MCP) 是一個開放協議，標準化應用程式如何
 
 一個 MCP 伺服器通常包含：
 
-- **伺服器設定**：設定埠號、驗證及其他參數
+- **伺服器設定**：設定埠號、認證及其他參數
 - **資源**：提供給 LLM 的資料與上下文
 - **工具**：模型可調用的功能
 - **提示**：用於生成或結構化文字的範本
@@ -84,19 +84,19 @@ server.start();
 
 在上述程式碼中，我們：
 
-- 從 MCP TypeScript SDK 匯入必要的類別。
+- 從 MCP TypeScript SDK 匯入必要類別。
 - 建立並設定新的 MCP 伺服器實例。
 - 註冊一個自訂工具（`calculator`）及其處理函式。
 - 啟動伺服器，開始監聽 MCP 請求。
 
 ## 測試與除錯
 
-在開始測試 MCP 伺服器前，了解可用工具和除錯最佳實踐很重要。有效的測試能確保伺服器行為符合預期，並幫助你快速找出並解決問題。以下章節將介紹驗證 MCP 實作的推薦方法。
+開始測試 MCP 伺服器前，了解可用工具與除錯最佳實務很重要。有效的測試能確保伺服器行為符合預期，並幫助你快速找出並解決問題。以下章節將介紹驗證 MCP 實作的推薦方法。
 
 MCP 提供以下工具協助你測試與除錯伺服器：
 
-- **Inspector 工具**：這個圖形介面讓你連接伺服器，測試工具、提示和資源。
-- **curl**：你也可以使用 curl 或其他能執行 HTTP 命令的命令列工具連接伺服器。
+- **Inspector 工具**：此圖形介面讓你連接伺服器，測試工具、提示和資源。
+- **curl**：你也可以使用 curl 或其他能執行 HTTP 命令的客戶端連接伺服器。
 
 ### 使用 MCP Inspector
 
@@ -111,7 +111,7 @@ MCP 提供以下工具協助你測試與除錯伺服器：
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-執行上述指令後，MCP Inspector 會在瀏覽器中啟動本地網頁介面。你會看到一個儀表板，顯示已註冊的 MCP 伺服器及其可用的工具、資源和提示。介面允許你互動式測試工具執行、檢查伺服器元資料並查看即時回應，讓你更輕鬆驗證與除錯 MCP 伺服器實作。
+執行上述指令後，MCP Inspector 會在瀏覽器啟動本地網頁介面。你會看到一個儀表板，顯示已註冊的 MCP 伺服器及其可用的工具、資源和提示。介面允許你互動式測試工具執行、檢查伺服器元資料並查看即時回應，讓你更輕鬆驗證與除錯 MCP 伺服器實作。
 
 以下是介面截圖範例：
 
@@ -123,11 +123,11 @@ npx @modelcontextprotocol/inspector node build/index.js
 |-------|-------------------|
 | 連線被拒絕 | 確認伺服器是否啟動且埠號正確 |
 | 工具執行錯誤 | 檢查參數驗證與錯誤處理 |
-| 驗證失敗 | 確認 API 金鑰與權限 |
+| 認證失敗 | 驗證 API 金鑰與權限 |
 | 結構驗證錯誤 | 確保參數符合定義的結構 |
 | 伺服器無法啟動 | 檢查埠號衝突或缺少相依套件 |
 | CORS 錯誤 | 設定正確的跨來源請求標頭 |
-| 驗證問題 | 確認令牌有效性與權限 |
+| 認證問題 | 驗證令牌有效性與權限 |
 
 ## 本地開發
 
@@ -149,21 +149,21 @@ npm run start
 
 ### 伺服器能做什麼
 
-在開始寫程式碼前，先回顧一下伺服器能做的事：
+在開始寫程式碼前，先回顧伺服器能做的事：
 
 MCP 伺服器可以：
 
-- 存取本地檔案和資料庫
+- 存取本地檔案與資料庫
 - 連接遠端 API
 - 執行運算
-- 整合其他工具和服務
-- 提供用戶介面供互動
+- 整合其他工具與服務
+- 提供使用者介面供互動
 
-很好，既然知道能做什麼，現在開始寫程式吧。
+很好，既然知道伺服器能做什麼，我們開始寫程式吧。
 
 ## 練習：建立伺服器
 
-建立伺服器需要遵循以下步驟：
+建立伺服器需依序完成以下步驟：
 
 - 安裝 MCP SDK。
 - 建立專案並設定專案結構。
@@ -172,7 +172,7 @@ MCP 伺服器可以：
 
 ### -1- 安裝 SDK
 
-根據你選擇的執行環境，安裝方式略有不同，請選擇以下其中一種：
+依你選擇的執行環境略有不同，請選擇以下其中一個：
 
 > [!NOTE]
 > Python 版本會先建立專案結構，再安裝相依套件。
@@ -326,6 +326,10 @@ rm -rf src/test/java
 </project>
 ```
 
+### -2- 建立專案
+
+安裝好 SDK 後，接著建立專案：
+
 ### TypeScript
 
 ```sh
@@ -348,6 +352,8 @@ pip install "mcp[cli]"
 cd calculator-server
 ./mvnw clean install -DskipTests
 ```
+
+### -3- 建立專案檔案
 
 ### TypeScript
 
@@ -390,14 +396,15 @@ cd calculator-server
 
 ### Python
 
-建立檔案 *server.py*  
+建立 *server.py* 檔案：
+
 ```sh
 touch server.py
 ```
 
 ### .NET
 
-安裝所需的 NuGet 套件：
+安裝所需 NuGet 套件：
 
 ```sh
 dotnet add package ModelContextProtocol --prerelease
@@ -408,9 +415,11 @@ dotnet add package Microsoft.Extensions.Hosting
 
 Java Spring Boot 專案的結構會自動建立。
 
+### -4- 撰寫伺服器程式碼
+
 ### TypeScript
 
-建立檔案 *index.ts*，並加入以下程式碼：
+建立 *index.ts* 檔案，加入以下程式碼：
 
 ```typescript
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -424,7 +433,7 @@ const server = new McpServer({
 });
 ```
 
-現在你有一個伺服器，但功能還很有限，讓我們來完善它。
+現在你有一個伺服器，但功能還很簡單，我們來加強它。
 
 ### Python
 
@@ -463,7 +472,7 @@ await builder.Build().RunAsync();
 
 ### Java
 
-Java 版本，建立核心伺服器元件。首先，修改主應用程式類別：
+Java 版本請建立核心伺服器元件。首先，修改主應用程式類別：
 
 *src/main/java/com/microsoft/mcp/sample/server/McpServerApplication.java*：
 
@@ -827,9 +836,9 @@ public static class CalculatorTool
 
 工具已在前一步驟建立。
 
-### -6 最終程式碼
+### -6- 完整程式碼
 
-加入最後的程式碼，讓伺服器能啟動：
+加入最後所需程式碼，讓伺服器能啟動：
 
 ### TypeScript
 
@@ -1003,7 +1012,7 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 ### -8- 使用 Inspector 執行
 
-Inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與之互動，方便測試功能。現在啟動它：
+Inspector 是一個很棒的工具，可以啟動你的伺服器並讓你互動測試。現在啟動它：
 
 > [!NOTE]
 > 「command」欄位的指令可能會因你的執行環境而異。
@@ -1014,7 +1023,7 @@ Inspector 是一個很棒的工具，可以啟動你的伺服器並讓你與之�
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-或將其加入 *package.json*，如下：`"inspector": "npx @modelcontextprotocol/inspector node build/index.js"`，然後執行 `npm run inspect`
+或將指令加入 *package.json*，例如 `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"`，然後執行 `npm run inspect`
 
 Python 版本包裝了一個 Node.js 工具 inspector，可以這樣呼叫：
 
@@ -1022,13 +1031,13 @@ Python 版本包裝了一個 Node.js 工具 inspector，可以這樣呼叫：
 mcp dev server.py
 ```
 
-不過它並未實作該工具的所有方法，建議直接執行 Node.js 工具，如下：
+不過它並未實作所有工具方法，建議直接執行 Node.js 工具，如下：
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
-```  
-如果你使用的工具或 IDE 允許設定執行指令與參數，  
-請確保在「Command」欄位填寫 `python`，在「Arguments」欄位填寫 `server.py`，以確保腳本正確執行。
+```
+
+如果你使用的工具或 IDE 允許設定執行指令與參數，請確保在「Command」欄位填寫 `python`，在「Arguments」欄位填寫 `server.py`，以確保腳本正確執行。
 
 ### .NET
 
@@ -1041,8 +1050,7 @@ npx @modelcontextprotocol/inspector dotnet run
 
 ### Java
 
-確保你的計算器伺服器正在執行，  
-然後啟動 Inspector：
+確保計算器伺服器正在執行，然後啟動 Inspector：
 
 ```cmd
 npx @modelcontextprotocol/inspector
@@ -1070,11 +1078,11 @@ npx @modelcontextprotocol/inspector
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.mo.png)
 
-2. 選擇「Tools」並點擊「listTools」，你會看到「Add」工具，選擇「Add」並填入參數值。
+2. 選擇「Tools」並點選「listTools」，你會看到「Add」工具，點選「Add」並填入參數值。
 
-   你會看到以下回應，也就是「add」工具的結果：
+你會看到以下回應，也就是「add」工具的結果：
 
-   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.mo.png)
+![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.mo.png)
 
 恭喜，你已成功建立並執行你的第一個伺服器！
 
@@ -1093,7 +1101,7 @@ MCP 提供多種語言的官方 SDK：
 ## 主要重點
 
 - 使用特定語言的 SDK，設定 MCP 開發環境非常簡單
-- 建立 MCP 伺服器時，需要創建並註冊具有明確結構的工具
+- 建立 MCP 伺服器需要創建並註冊具備明確結構的工具
 - 測試與除錯對於穩定的 MCP 實作至關重要
 
 ## 範例
@@ -1128,4 +1136,4 @@ MCP 提供多種語言的官方 SDK：
 下一步：[MCP 用戶端入門](../02-client/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T07:56:33+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T19:04:08+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "id"
 }
 -->
 # Membuat client dengan LLM
 
-Sejauh ini, Anda telah melihat cara membuat server dan client. Client dapat memanggil server secara eksplisit untuk menampilkan daftar tools, resources, dan prompts yang tersedia. Namun, pendekatan ini kurang praktis. Pengguna Anda hidup di era agentik dan mengharapkan bisa menggunakan prompt serta berkomunikasi dengan LLM untuk melakukannya. Bagi pengguna Anda, mereka tidak peduli apakah Anda menggunakan MCP atau tidak untuk menyimpan kapabilitas Anda, tapi mereka mengharapkan bisa berinteraksi menggunakan bahasa alami. Jadi, bagaimana kita menyelesaikan ini? Solusinya adalah dengan menambahkan LLM ke client.
+Sejauh ini, Anda telah melihat bagaimana membuat server dan client. Client dapat memanggil server secara eksplisit untuk menampilkan daftar tools, resources, dan prompts yang tersedia. Namun, pendekatan ini kurang praktis. Pengguna Anda hidup di era agentik dan mengharapkan dapat menggunakan prompt serta berkomunikasi dengan LLM untuk melakukannya. Bagi pengguna Anda, mereka tidak peduli apakah Anda menggunakan MCP atau tidak untuk menyimpan kapabilitas Anda, tapi mereka mengharapkan bisa berinteraksi menggunakan bahasa alami. Jadi, bagaimana kita menyelesaikannya? Solusinya adalah dengan menambahkan LLM ke client.
 
 ## Gambaran Umum
 
@@ -17,7 +17,7 @@ Dalam pelajaran ini kita fokus pada penambahan LLM ke client dan menunjukkan bag
 
 ## Tujuan Pembelajaran
 
-Pada akhir pelajaran ini, Anda akan mampu:
+Pada akhir pelajaran ini, Anda akan dapat:
 
 - Membuat client dengan LLM.
 - Berinteraksi secara mulus dengan server MCP menggunakan LLM.
@@ -37,7 +37,7 @@ Berikut cara client akan berinteraksi dengan server:
 
 1. Menangani prompt pengguna dengan meneruskannya ke LLM bersama dengan tools yang terdaftar di client.
 
-Bagus, sekarang kita sudah paham bagaimana cara melakukannya secara garis besar, mari kita coba dalam latihan berikut.
+Bagus, sekarang kita sudah memahami secara garis besar bagaimana melakukannya, mari kita coba dalam latihan berikut.
 
 ## Latihan: Membuat client dengan LLM
 
@@ -246,9 +246,9 @@ Dalam kode di atas kita telah:
 
 Bagus, untuk langkah berikutnya, mari kita tampilkan kapabilitas yang ada di server.
 
-### -2 Menampilkan kapabilitas server
+### -2- Menampilkan kapabilitas server
 
-Sekarang kita akan menghubungkan ke server dan meminta daftar kapabilitasnya:
+Sekarang kita akan menghubungkan ke server dan meminta kapabilitasnya:
 
 ### TypeScript
 
@@ -340,8 +340,8 @@ ToolProvider toolProvider = McpToolProvider.builder()
 Dalam kode di atas kita telah:
 
 - Membuat `McpToolProvider` yang secara otomatis menemukan dan mendaftarkan semua tools dari server MCP
-- Penyedia tool ini menangani konversi antara skema tool MCP dan format tool LangChain4j secara internal
-- Pendekatan ini menghilangkan kebutuhan listing dan konversi tool secara manual
+- Tool provider menangani konversi antara skema tool MCP dan format tool LangChain4j secara internal
+- Pendekatan ini menghilangkan proses manual listing dan konversi tools
 
 ### -3- Mengonversi kapabilitas server menjadi tools LLM
 
@@ -489,11 +489,11 @@ Dalam kode di atas kita telah:
 
         return toolDefinitions;
     }
-    ```
+    ```    
 
-    Dalam kode di atas, kita:
+Dalam kode di atas, kita telah:
 
-    - Memperbarui fungsi untuk mengonversi respons tool MCP menjadi tool LLM. Berikut bagian kode yang kita tambahkan:
+- Memperbarui fungsi untuk mengonversi respons tool MCP menjadi tool LLM. Berikut bagian kode yang kita tambahkan:
 
         ```csharp
         JsonElement propertiesElement;
@@ -504,7 +504,7 @@ Dalam kode di atas kita telah:
         toolDefinitions.Add(def);
         ```
 
-        Skema input adalah bagian dari respons tool tapi ada di atribut "properties", jadi kita perlu mengekstraknya. Selanjutnya, kita memanggil `ConvertFrom` dengan detail tool. Setelah pekerjaan berat selesai, mari kita lihat bagaimana pemanggilan ini berjalan saat kita menangani prompt pengguna.
+        Skema input adalah bagian dari respons tool tapi ada di atribut "properties", jadi kita perlu mengekstraknya. Selanjutnya, kita memanggil `ConvertFrom` dengan detail tool. Setelah pekerjaan berat ini selesai, mari kita lihat bagaimana pemanggilan ini berjalan saat kita menangani prompt pengguna.
 
 ### Java
 
@@ -596,7 +596,7 @@ Di bagian kode ini, kita akan menangani permintaan dari pengguna.
         // TODO  
         ```
 
-1. Perbarui metode `run` untuk memasukkan pemanggilan LLM dan `callTools`:
+1. Perbarui metode `run` untuk menyertakan pemanggilan LLM dan memanggil `callTools`:
 
     ```typescript
 
@@ -837,7 +837,7 @@ client.connectToServer(transport);
     Dalam kode di atas kita telah:
 
     - Meneruskan fungsi-fungsi yang kita temukan di server MCP dan sudah dikonversi ke LLM.
-    - Memanggil LLM dengan fungsi-fungsi tersebut.
+    - Kemudian memanggil LLM dengan fungsi-fungsi tersebut.
     - Memeriksa hasil untuk melihat fungsi apa yang harus dipanggil, jika ada.
     - Terakhir, meneruskan array fungsi yang harus dipanggil.
 
@@ -862,7 +862,7 @@ client.connectToServer(transport);
 
 ### .NET
 
-1. Berikut contoh kode untuk melakukan permintaan prompt ke LLM:
+1. Berikut contoh kode untuk melakukan permintaan prompt LLM:
 
     ```csharp
     var tools = await GetMcpTools();
@@ -1139,7 +1139,7 @@ Bagus, Anda berhasil!
 
 ## Tugas
 
-Ambil kode dari latihan dan kembangkan server dengan beberapa tools tambahan. Kemudian buat client dengan LLM, seperti di latihan, dan uji dengan berbagai prompt untuk memastikan semua tools server Anda dapat dipanggil secara dinamis. Cara membangun client seperti ini membuat pengguna akhir mendapatkan pengalaman yang hebat karena mereka bisa menggunakan prompt, bukan perintah client yang tepat, dan tidak perlu tahu ada server MCP yang dipanggil.
+Ambil kode dari latihan dan kembangkan server dengan beberapa tools tambahan. Kemudian buat client dengan LLM, seperti pada latihan, dan uji dengan berbagai prompt untuk memastikan semua tools server Anda dapat dipanggil secara dinamis. Cara membangun client seperti ini membuat pengguna akhir mendapatkan pengalaman yang hebat karena mereka bisa menggunakan prompt, bukan perintah client yang tepat, dan tidak perlu tahu ada server MCP yang dipanggil.
 
 ## Solusi
 
@@ -1156,13 +1156,13 @@ Ambil kode dari latihan dan kembangkan server dengan beberapa tools tambahan. Ke
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Python Calculator](../../../../03-GettingStarted/samples/python) 
 
 ## Sumber Tambahan
 
 ## Selanjutnya
 
-- Selanjutnya: [Menggunakan server dengan Visual Studio Code](../04-vscode/README.md)
+- Berikutnya: [Menggunakan server dengan Visual Studio Code](../04-vscode/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T10:30:13+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T19:12:19+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "hu"
 }
 -->
 # MCP használatának megkezdése
 
-Üdvözlünk az első lépéseidnél a Model Context Protocol (MCP) használatában! Akár új vagy az MCP-ben, akár mélyíteni szeretnéd a tudásod, ez az útmutató végigvezet a legfontosabb beállításokon és fejlesztési folyamatokon. Megtudhatod, hogyan teszi lehetővé az MCP az AI modellek és alkalmazások zökkenőmentes integrációját, és megtanulhatod, hogyan készítheted elő gyorsan a környezeted MCP-alapú megoldások építéséhez és teszteléséhez.
+Üdvözlünk az első lépéseidnél a Model Context Protocol (MCP) használatában! Akár új vagy az MCP-ben, akár mélyebb ismeretekre vágysz, ez az útmutató végigvezet a legfontosabb beállításokon és fejlesztési folyamatokon. Megtudhatod, hogyan teszi lehetővé az MCP az AI modellek és alkalmazások zökkenőmentes integrációját, és hogyan készítheted elő gyorsan a környezeted MCP-alapú megoldások építéséhez és teszteléséhez.
 
-> TLDR; Ha AI alkalmazásokat fejlesztesz, tudod, hogy eszközöket és egyéb erőforrásokat adhatsz hozzá a LLM-hez (nagy nyelvi modell), hogy az tudásgazdagabb legyen. Azonban ha ezeket az eszközöket és erőforrásokat egy szerveren helyezed el, az alkalmazás és a szerver képességeit bármely kliens használhatja LLM-mel vagy anélkül.
+> TLDR; Ha AI alkalmazásokat fejlesztesz, tudod, hogy eszközöket és egyéb erőforrásokat adhatsz a LLM-hez (nagy nyelvi modell), hogy az tudásosabb legyen. Ha azonban ezeket az eszközöket és erőforrásokat egy szerveren helyezed el, az alkalmazás és a szerver képességeit bármely kliens használhatja LLM-mel vagy anélkül.
 
 ## Áttekintés
 
@@ -30,25 +30,25 @@ A lecke végére képes leszel:
 
 ## MCP környezet beállítása
 
-Mielőtt elkezdenéd az MCP-vel való munkát, fontos előkészíteni a fejlesztői környezetet és megérteni az alapvető munkafolyamatot. Ez a rész végigvezet az első beállítási lépéseken, hogy gördülékenyen indulhass az MCP-vel.
+Mielőtt elkezdenéd az MCP-vel való munkát, fontos előkészíteni a fejlesztői környezetet és megérteni az alapvető munkafolyamatot. Ez a rész végigvezet az első beállítási lépéseken, hogy zökkenőmentesen indulhass az MCP-vel.
 
 ### Előfeltételek
 
 Mielőtt belevágnál az MCP fejlesztésbe, győződj meg róla, hogy rendelkezel:
 
-- **Fejlesztői környezet**: A választott nyelvhez (C#, Java, Python, TypeScript vagy JavaScript)
-- **IDE/Szerkesztő**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm vagy bármilyen modern kódszerkesztő
+- **Fejlesztői környezet**: a választott nyelvhez (C#, Java, Python, TypeScript vagy JavaScript)
+- **IDE/Szerkesztő**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm vagy bármely modern kódszerkesztő
 - **Csomagkezelők**: NuGet, Maven/Gradle, pip vagy npm/yarn
-- **API kulcsok**: Bármilyen AI szolgáltatáshoz, amit a hoszt alkalmazásaidban használni szeretnél
+- **API kulcsok**: bármely AI szolgáltatáshoz, amit a hoszt alkalmazásaidban használsz
 
 ## Alap MCP szerver felépítés
 
 Egy MCP szerver általában tartalmazza:
 
-- **Szerver konfiguráció**: Port, hitelesítés és egyéb beállítások
-- **Erőforrások**: Adatok és kontextus, amelyeket a LLM-ek elérhetnek
-- **Eszközök**: Funkciók, amelyeket a modellek meghívhatnak
-- **Promptok**: Szöveg generálására vagy strukturálására szolgáló sablonok
+- **Szerver konfiguráció**: port, hitelesítés és egyéb beállítások
+- **Erőforrások**: adatok és kontextus, amelyeket a LLM-ek elérhetnek
+- **Eszközök**: funkciók, amelyeket a modellek meghívhatnak
+- **Promptok**: sablonok szöveg generálásához vagy strukturálásához
 
 Íme egy egyszerűsített példa TypeScript-ben:
 
@@ -87,31 +87,31 @@ A fenti kódban:
 - Importáljuk a szükséges osztályokat az MCP TypeScript SDK-ból.
 - Létrehozunk és konfigurálunk egy új MCP szerver példányt.
 - Regisztrálunk egy egyedi eszközt (`calculator`) egy kezelő függvénnyel.
-- Elindítjuk a szervert, hogy figyelje a bejövő MCP kéréseket.
+- Elindítjuk a szervert, hogy fogadja az MCP kéréseket.
 
 ## Tesztelés és hibakeresés
 
-Mielőtt elkezdenéd tesztelni az MCP szerveredet, fontos megismerni a rendelkezésre álló eszközöket és a hibakeresés legjobb gyakorlatait. A hatékony tesztelés biztosítja, hogy a szerver a várakozásoknak megfelelően működjön, és segít gyorsan azonosítani és megoldani a problémákat. A következő rész ajánlott módszereket ismertet az MCP megvalósításod ellenőrzésére.
+Mielőtt elkezdenéd tesztelni az MCP szerveredet, fontos megismerni a rendelkezésre álló eszközöket és a hibakeresés legjobb gyakorlatait. A hatékony tesztelés biztosítja, hogy a szerver a várakozásoknak megfelelően működjön, és segít gyorsan azonosítani és megoldani a problémákat. A következő rész ajánlott módszereket ismertet az MCP megvalósításod ellenőrzéséhez.
 
 Az MCP eszközöket kínál a szerverek teszteléséhez és hibakereséséhez:
 
-- **Inspector eszköz**, ez a grafikus felület lehetővé teszi, hogy csatlakozz a szerveredhez, és teszteld az eszközeidet, promptjaidat és erőforrásaidat.
+- **Inspector eszköz**, ez a grafikus felület lehetővé teszi, hogy csatlakozz a szerveredhez, és teszteld az eszközöket, promptokat és erőforrásokat.
 - **curl**, parancssori eszközzel is csatlakozhatsz a szerverhez, vagy más klienssel, amely HTTP parancsokat tud létrehozni és futtatni.
 
 ### MCP Inspector használata
 
 Az [MCP Inspector](https://github.com/modelcontextprotocol/inspector) egy vizuális tesztelő eszköz, amely segít:
 
-1. **Szerver képességek felfedezése**: Automatikusan felismeri az elérhető erőforrásokat, eszközöket és promptokat
-2. **Eszközök futtatásának tesztelése**: Különböző paraméterek kipróbálása és valós idejű válaszok megtekintése
-3. **Szerver metaadatainak megtekintése**: Szerver információk, sémák és konfigurációk vizsgálata
+1. **Szerver képességek felfedezése**: automatikusan felismeri az elérhető erőforrásokat, eszközöket és promptokat
+2. **Eszköz végrehajtás tesztelése**: különböző paraméterek kipróbálása és valós idejű válaszok megtekintése
+3. **Szerver metaadatok megtekintése**: szerver információk, sémák és konfigurációk vizsgálata
 
 ```bash
 # ex TypeScript, installing and running MCP Inspector
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-A fenti parancsok futtatásakor az MCP Inspector elindít egy helyi webes felületet a böngésződben. Egy irányítópultot fogsz látni, amely megjeleníti a regisztrált MCP szervereidet, azok elérhető eszközeit, erőforrásait és promptjait. A felület lehetővé teszi az eszközök interaktív tesztelését, a szerver metaadatainak megtekintését és a valós idejű válaszok megjelenítését, így könnyebbé téve az MCP szerver implementációk ellenőrzését és hibakeresését.
+A fenti parancsok futtatásakor az MCP Inspector elindít egy helyi webes felületet a böngésződben. Egy irányítópultot fogsz látni, amely megjeleníti a regisztrált MCP szervereidet, azok elérhető eszközeit, erőforrásait és promptjait. Az interfész lehetővé teszi az eszközök interaktív tesztelését, a szerver metaadatainak megtekintését és a valós idejű válaszok megjelenítését, így könnyebbé téve az MCP szerver megvalósítások ellenőrzését és hibakeresését.
 
 Íme egy képernyőkép arról, hogyan nézhet ki:
 
@@ -122,20 +122,20 @@ A fenti parancsok futtatásakor az MCP Inspector elindít egy helyi webes felül
 | Probléma | Lehetséges megoldás |
 |----------|---------------------|
 | Kapcsolat elutasítva | Ellenőrizd, hogy a szerver fut-e és a port helyes-e |
-| Eszköz futtatási hibák | Nézd át a paraméterek ellenőrzését és a hibakezelést |
+| Eszköz végrehajtási hibák | Nézd át a paraméter ellenőrzést és a hibakezelést |
 | Hitelesítési hibák | Ellenőrizd az API kulcsokat és jogosultságokat |
-| Séma ellenőrzési hibák | Győződj meg róla, hogy a paraméterek megfelelnek a definiált sémának |
-| Szerver nem indul | Ellenőrizd a portütközéseket vagy hiányzó függőségeket |
-| CORS hibák | Állíts be megfelelő CORS fejléceket a keresztforrásos kérésekhez |
+| Séma érvényesítési hibák | Győződj meg róla, hogy a paraméterek megfelelnek a definiált sémának |
+| Szerver nem indul | Ellenőrizd a port ütközéseket vagy hiányzó függőségeket |
+| CORS hibák | Állíts be megfelelő CORS fejléceket a cross-origin kérésekhez |
 | Hitelesítési problémák | Ellenőrizd a token érvényességét és jogosultságait |
 
 ## Helyi fejlesztés
 
 Helyi fejlesztéshez és teszteléshez közvetlenül a gépeden is futtathatod az MCP szervereket:
 
-1. **Indítsd el a szerver folyamatot**: Futtasd az MCP szerver alkalmazásodat
-2. **Hálózat beállítása**: Győződj meg róla, hogy a szerver elérhető a várt porton
-3. **Csatlakoztasd a klienseket**: Használj helyi kapcsolódási URL-eket, például `http://localhost:3000`
+1. **Indítsd el a szerver folyamatot**: futtasd az MCP szerver alkalmazásodat
+2. **Hálózat beállítása**: győződj meg róla, hogy a szerver elérhető a várt porton
+3. **Csatlakoztasd a klienseket**: használj helyi kapcsolati URL-eket, például `http://localhost:3000`
 
 ```bash
 # Example: Running a TypeScript MCP server locally
@@ -143,9 +143,9 @@ npm run start
 # Server running at http://localhost:3000
 ```
 
-## Első MCP szervered felépítése
+## Első MCP szervered elkészítése
 
-Korábban már áttekintettük a [Core concepts](/01-CoreConcepts/README.md) alapfogalmakat, most pedig ideje alkalmazni a tudást.
+Korábban már áttekintettük a [Core concepts](/01-CoreConcepts/README.md) alapfogalmakat, most ideje alkalmazni a tudást.
 
 ### Mit tud egy szerver
 
@@ -159,7 +159,7 @@ Egy MCP szerver például képes:
 - Integrálódni más eszközökkel és szolgáltatásokkal
 - Felhasználói felületet biztosítani az interakcióhoz
 
-Remek, most, hogy tudjuk, mit tehet, kezdjünk neki a kódolásnak.
+Remek, most, hogy tudjuk, mit tudunk vele kezdeni, kezdjünk el kódolni.
 
 ## Gyakorlat: Szerver létrehozása
 
@@ -175,7 +175,7 @@ A szerver létrehozásához kövesd az alábbi lépéseket:
 Ez kicsit eltér a választott futtatókörnyezettől függően, válassz az alábbiak közül:
 
 > [!NOTE]
-> Python esetén először létrehozzuk a projekt struktúráját, majd telepítjük a függőségeket.
+> Python esetén először létrehozzuk a projekt struktúrát, majd telepítjük a függőségeket.
 
 ### TypeScript
 
@@ -326,6 +326,10 @@ Add hozzá a következő teljes konfigurációt a *pom.xml* fájlodhoz:
 </project>
 ```
 
+### -2- Projekt létrehozása
+
+Miután telepítetted az SDK-t, hozzuk létre a projektet:
+
 ### TypeScript
 
 ```sh
@@ -348,6 +352,8 @@ pip install "mcp[cli]"
 cd calculator-server
 ./mvnw clean install -DskipTests
 ```
+
+### -3- Projektfájlok létrehozása
 
 ### TypeScript
 
@@ -391,6 +397,7 @@ Hozz létre egy *tsconfig.json* fájlt a következő tartalommal:
 ### Python
 
 Hozz létre egy *server.py* fájlt
+
 ```sh
 touch server.py
 ```
@@ -407,6 +414,8 @@ dotnet add package Microsoft.Extensions.Hosting
 ### Java
 
 Java Spring Boot projektek esetén a projekt struktúra automatikusan létrejön.
+
+### -4- Szerverkód létrehozása
 
 ### TypeScript
 
@@ -639,7 +648,7 @@ public class CalculatorService {
 
 **Opcionális komponensek egy éles környezethez:**
 
-Hozz létre egy startup konfigurációt *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
+Hozd létre az indítási konfigurációt *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.config;
@@ -664,7 +673,7 @@ public class StartupConfig {
 }
 ```
 
-Hozz létre egy health controllert *src/main/java/com/microsoft/mcp/sample/server/controller/HealthController.java*:
+Hozd létre az egészségügyi kontrollert *src/main/java/com/microsoft/mcp/sample/server/controller/HealthController.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.controller;
@@ -690,7 +699,7 @@ public class HealthController {
 }
 ```
 
-Hozz létre egy kivétel kezelőt *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
+Hozd létre a kivételkezelőt *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.exception;
@@ -769,7 +778,7 @@ server.resource(
 );
 ```
 
-Az eszközöd paramétereket vesz át `a` és `b` néven, és egy olyan függvényt futtat, amely a következő formátumú választ ad:
+Az eszközöd paramétereket vesz `a` és `b`, és egy olyan függvényt futtat, amely a következő formátumú választ ad:
 
 ```typescript
 {
@@ -827,9 +836,9 @@ public static class CalculatorTool
 
 Az eszközök már létre lettek hozva az előző lépésben.
 
-### -6 Végleges kód
+### -6- Végleges kód
 
-Add hozzá a szükséges utolsó kódot, hogy a szerver elindulhasson:
+Adjuk hozzá a szükséges utolsó kódot, hogy a szerver elindulhasson:
 
 ### TypeScript
 
@@ -983,7 +992,7 @@ npm run build
 mcp run server.py
 ```
 
-> Az MCP Inspector használatához használd a `mcp dev server.py` parancsot, amely automatikusan elindítja az Inspectort és biztosítja a szükséges proxy munkamenet tokent. Ha a `mcp run server.py` parancsot használod, manuálisan kell elindítanod az Inspectort és beállítanod a kapcsolatot.
+> Az MCP Inspector használatához használd a `mcp dev server.py` parancsot, amely automatikusan elindítja az Inspectort és biztosítja a szükséges proxy session tokent. Ha a `mcp run server.py` parancsot használod, manuálisan kell elindítanod az Inspectort és beállítanod a kapcsolatot.
 
 ### .NET
 
@@ -1003,10 +1012,10 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 ### -8- Futtatás az Inspectorral
 
-Az Inspector egy nagyszerű eszköz, amely elindítja a szerveredet, és lehetővé teszi, hogy interakcióba lépj vele, így tesztelheted a működését. Indítsuk el:
+Az Inspector egy nagyszerű eszköz, amely elindítja a szervered, és lehetővé teszi, hogy interakcióba lépj vele, így tesztelheted, hogy működik-e. Indítsuk el:
 
 > [!NOTE]
-> A "command" mezőben eltérő lehet a parancs, mert az adott futtatókörnyezethez tartozó szerver indítási parancsot tartalmazza.
+> A "command" mezőben eltérő lehet a parancs, mert az a te futtatókörnyezetedhez tartozó szerver indítási parancsot tartalmazza.
 
 ### TypeScript
 
@@ -1014,21 +1023,22 @@ Az Inspector egy nagyszerű eszköz, amely elindítja a szerveredet, és lehető
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Vagy add hozzá a *package.json*-hoz így: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"`, majd futtasd az `npm run inspect` parancsot.
+Vagy add hozzá a *package.json*-hoz így: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"`, majd futtasd a `npm run inspect` parancsot.
 
-A Python egy Node.js eszközt, az inspectort csomagolja be. Lehetőség van az eszköz közvetlen hívására így:
+A Python egy Node.js eszközt, az inspectort csomagolja be. Lehet hívni ezt az eszközt így:
 
 ```sh
 mcp dev server.py
 ```
 
-Azonban nem valósít meg minden elérhető metódust, ezért ajánlott közvetlenül a Node.js eszközt futtatni az alábbi módon:
+Azonban nem valósít meg minden elérhető metódust, ezért ajánlott közvetlenül a Node.js eszközt futtatni így:
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
-```  
+```
+
 Ha olyan eszközt vagy IDE-t használsz, amely lehetővé teszi a parancsok és argumentumok konfigurálását szkriptek futtatásához,  
-állítsd be a `python`-t a `Command` mezőben, és a `server.py`-t az `Arguments` mezőben. Ez biztosítja a helyes futtatást.
+állítsd be a `python`-t a `Command` mezőbe, és a `server.py`-t az `Arguments` mezőbe. Ez biztosítja a helyes futtatást.
 
 ### .NET
 
@@ -1048,7 +1058,7 @@ Ezután indítsd el az Inspectort:
 npx @modelcontextprotocol/inspector
 ```
 
-Az inspector webes felületén:
+Az Inspector webes felületén:
 
 1. Válaszd az "SSE" szállítási típust
 2. Állítsd be az URL-t: `http://localhost:8080/sse`
@@ -1057,50 +1067,49 @@ Az inspector webes felületén:
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.hu.png)
 
 **Most már csatlakoztál a szerverhez**  
-**A Java szerver tesztelési szakasza ezzel befejeződött**
+**A Java szerver tesztelési szakasza most befejeződött**
 
-A következő rész a szerverrel való interakcióról szól.
 
-A következő felhasználói felületet kell
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - A Loopwork AI-val közösen karbantartva  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Az hivatalos Rust implementáció  
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - A hivatalos Kotlin megvalósítás
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - A Loopwork AI-val együttműködésben karbantartva
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - A hivatalos Rust megvalósítás
 
 ## Főbb tanulságok
 
-- Az MCP fejlesztői környezet beállítása egyszerű a nyelvspecifikus SDK-kkal  
-- MCP szerverek építése eszközök létrehozásával és regisztrálásával történik, egyértelmű sémákkal  
-- A tesztelés és hibakeresés elengedhetetlen a megbízható MCP megvalósításhoz  
+- Az MCP fejlesztői környezet beállítása egyszerű a nyelvspecifikus SDK-kkal
+- MCP szerverek építése eszközök létrehozását és regisztrálását jelenti egyértelmű sémákkal
+- A tesztelés és hibakeresés elengedhetetlen a megbízható MCP megvalósításhoz
 
 ## Példák
 
-- [Java Számológép](../samples/java/calculator/README.md)  
-- [.Net Számológép](../../../../03-GettingStarted/samples/csharp)  
-- [JavaScript Számológép](../samples/javascript/README.md)  
-- [TypeScript Számológép](../samples/typescript/README.md)  
-- [Python Számológép](../../../../03-GettingStarted/samples/python)  
+- [Java Számológép](../samples/java/calculator/README.md)
+- [.Net Számológép](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Számológép](../samples/javascript/README.md)
+- [TypeScript Számológép](../samples/typescript/README.md)
+- [Python Számológép](../../../../03-GettingStarted/samples/python)
 
 ## Feladat
 
 Hozz létre egy egyszerű MCP szervert egy általad választott eszközzel:
 
-1. Valósítsd meg az eszközt a kedvenc nyelveden (.NET, Java, Python vagy JavaScript).  
-2. Határozd meg a bemeneti paramétereket és a visszatérési értékeket.  
-3. Futtasd az inspector eszközt, hogy megbizonyosodj róla, a szerver a vártak szerint működik.  
-4. Teszteld a megvalósítást különböző bemenetekkel.  
+1. Valósítsd meg az eszközt a kedvenc nyelveden (.NET, Java, Python vagy JavaScript).
+2. Határozd meg a bemeneti paramétereket és a visszatérési értékeket.
+3. Futtasd az inspector eszközt, hogy megbizonyosodj róla, a szerver a vártak szerint működik.
+4. Teszteld a megvalósítást különböző bemenetekkel.
 
 ## Megoldás
 
-[Megoldás](./solution/README.md)  
+[Solution](./solution/README.md)
 
 ## További források
 
-- [Ügynökök építése Model Context Protocol segítségével az Azure-on](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [Távoli MCP Azure Container Apps segítségével (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [.NET OpenAI MCP Ügynök](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
+- [Ügynökök építése a Model Context Protocol segítségével Azure-on](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Távoli MCP Azure Container Apps segítségével (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Ügynök](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Mi következik
 
 Következő: [MCP kliensek használatának megkezdése](../02-client/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T07:55:51+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T19:02:44+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "id"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Selamat datang di langkah pertama Anda dengan Model Context Protocol (MCP)! Baik Anda baru mengenal MCP atau ingin memperdalam pemahaman, panduan ini akan membimbing Anda melalui proses pengaturan dan pengembangan yang penting. Anda akan menemukan bagaimana MCP memungkinkan integrasi mulus antara model AI dan aplikasi, serta belajar cara cepat menyiapkan lingkungan untuk membangun dan menguji solusi berbasis MCP.
 
-> TLDR; Jika Anda membuat aplikasi AI, Anda tahu bahwa Anda bisa menambahkan alat dan sumber daya lain ke LLM (large language model), agar LLM menjadi lebih berpengetahuan. Namun jika Anda menempatkan alat dan sumber daya tersebut di server, kemampuan aplikasi dan server dapat digunakan oleh klien mana pun dengan/ tanpa LLM.
+> TLDR; Jika Anda membangun aplikasi AI, Anda tahu bahwa Anda bisa menambahkan alat dan sumber daya lain ke LLM (large language model), agar LLM menjadi lebih berpengetahuan. Namun jika Anda menempatkan alat dan sumber daya tersebut di server, kemampuan aplikasi dan server dapat digunakan oleh klien mana pun dengan/atau tanpa LLM.
 
 ## Ikhtisar
 
 Pelajaran ini memberikan panduan praktis tentang cara menyiapkan lingkungan MCP dan membangun aplikasi MCP pertama Anda. Anda akan belajar cara menyiapkan alat dan kerangka kerja yang diperlukan, membangun server MCP dasar, membuat aplikasi host, dan menguji implementasi Anda.
 
-Model Context Protocol (MCP) adalah protokol terbuka yang menstandarisasi cara aplikasi menyediakan konteks ke LLM. Bayangkan MCP seperti port USB-C untuk aplikasi AI - menyediakan cara standar untuk menghubungkan model AI ke berbagai sumber data dan alat.
+Model Context Protocol (MCP) adalah protokol terbuka yang menstandarisasi cara aplikasi menyediakan konteks ke LLM. Anggap MCP seperti port USB-C untuk aplikasi AI - menyediakan cara standar untuk menghubungkan model AI ke berbagai sumber data dan alat.
 
 ## Tujuan Pembelajaran
 
@@ -47,7 +47,7 @@ Server MCP biasanya mencakup:
 
 - **Konfigurasi Server**: Pengaturan port, autentikasi, dan pengaturan lainnya
 - **Sumber Daya**: Data dan konteks yang tersedia untuk LLM
-- **Alat**: Fungsi yang dapat dipanggil oleh model
+- **Alat**: Fungsionalitas yang dapat dipanggil oleh model
 - **Prompt**: Template untuk menghasilkan atau menyusun teks
 
 Berikut contoh sederhana dalam TypeScript:
@@ -122,7 +122,7 @@ Berikut tangkapan layar tampilannya:
 | Masalah | Solusi yang Mungkin |
 |---------|---------------------|
 | Koneksi ditolak | Periksa apakah server berjalan dan port sudah benar |
-| Kesalahan eksekusi alat | Tinjau validasi parameter dan penanganan kesalahan |
+| Kesalahan eksekusi alat | Tinjau validasi parameter dan penanganan error |
 | Gagal autentikasi | Verifikasi API key dan izin akses |
 | Kesalahan validasi skema | Pastikan parameter sesuai dengan skema yang ditentukan |
 | Server tidak mulai | Periksa konflik port atau dependensi yang hilang |
@@ -326,6 +326,10 @@ Tambahkan konfigurasi lengkap berikut ke file *pom.xml* Anda:
 </project>
 ```
 
+### -2- Buat Proyek
+
+Setelah SDK terinstal, mari buat proyek:
+
 ### TypeScript
 
 ```sh
@@ -349,6 +353,7 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+### -3- Buat File Proyek  
 ### TypeScript
 
 Buat *package.json* dengan isi berikut:
@@ -390,7 +395,7 @@ Buat *tsconfig.json* dengan isi berikut:
 
 ### Python
 
-Buat file *server.py*
+Buat file *server.py*  
 ```sh
 touch server.py
 ```
@@ -408,6 +413,8 @@ dotnet add package Microsoft.Extensions.Hosting
 
 Untuk proyek Java Spring Boot, struktur proyek dibuat secara otomatis.
 
+### -4- Buat Kode Server
+
 ### TypeScript
 
 Buat file *index.ts* dan tambahkan kode berikut:
@@ -424,7 +431,7 @@ const server = new McpServer({
 });
 ```
 
-Sekarang Anda sudah punya server, tapi belum banyak fungsi, mari kita perbaiki.
+Sekarang Anda sudah punya server, tapi belum banyak fungsi, mari perbaiki itu.
 
 ### Python
 
@@ -690,7 +697,7 @@ public class HealthController {
 }
 ```
 
-Buat penangkap pengecualian *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
+Buat penangkap exception *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.exception;
@@ -743,7 +750,7 @@ Spring Boot MCP Application
 
 </details>
 
-### -5- Menambahkan alat dan sumber daya
+### -5- Menambahkan Alat dan Sumber Daya
 
 Tambahkan alat dan sumber daya dengan menambahkan kode berikut:
 
@@ -827,9 +834,9 @@ public static class CalculatorTool
 
 Alat sudah dibuat pada langkah sebelumnya.
 
-### -6 Kode akhir
+### -6- Kode Akhir
 
-Mari tambahkan kode terakhir yang diperlukan agar server dapat mulai berjalan:
+Mari tambahkan kode terakhir yang diperlukan agar server dapat berjalan:
 
 ### TypeScript
 
@@ -967,7 +974,7 @@ public class McpServerApplication {
 }
 ```
 
-### -7- Uji server
+### -7- Uji Server
 
 Mulai server dengan perintah berikut:
 
@@ -1001,12 +1008,12 @@ dotnet run
 java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 ```
 
-### -8- Jalankan menggunakan inspector
+### -8- Jalankan dengan Inspector
 
-Inspector adalah alat hebat yang dapat memulai server Anda dan memungkinkan Anda berinteraksi dengannya sehingga Anda dapat menguji apakah server berjalan dengan baik. Mari kita mulai:
+Inspector adalah alat hebat yang dapat memulai server Anda dan memungkinkan Anda berinteraksi dengannya untuk menguji apakah server berjalan dengan baik. Mari jalankan:
 
 > [!NOTE]
-> tampilan di bidang "command" mungkin berbeda karena berisi perintah untuk menjalankan server dengan runtime spesifik Anda.
+> tampilan di bidang "command" mungkin berbeda karena berisi perintah menjalankan server dengan runtime spesifik Anda.
 
 ### TypeScript
 
@@ -1086,42 +1093,42 @@ MCP menyediakan SDK resmi untuk berbagai bahasa:
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Dipelihara bekerja sama dengan Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementasi resmi TypeScript
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementasi resmi Python
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Implementasi resmi Kotlin
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Dipelihara bekerja sama dengan Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementasi resmi Rust
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Implementasi resmi Kotlin  
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Dipelihara bersama Loopwork AI  
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementasi resmi Rust  
 
 ## Poin Penting
 
-- Menyiapkan lingkungan pengembangan MCP mudah dengan SDK khusus bahasa
-- Membangun server MCP melibatkan pembuatan dan pendaftaran tools dengan skema yang jelas
-- Pengujian dan debugging penting untuk implementasi MCP yang andal
+- Menyiapkan lingkungan pengembangan MCP mudah dengan SDK khusus bahasa  
+- Membangun server MCP melibatkan pembuatan dan pendaftaran tools dengan skema yang jelas  
+- Pengujian dan debugging penting untuk implementasi MCP yang andal  
 
 ## Contoh
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## Tugas
 
 Buat server MCP sederhana dengan tool pilihan Anda:
 
-1. Implementasikan tool dalam bahasa favorit Anda (.NET, Java, Python, atau JavaScript).
-2. Tentukan parameter input dan nilai kembalian.
-3. Jalankan alat inspector untuk memastikan server berjalan sesuai harapan.
-4. Uji implementasi dengan berbagai input.
+1. Implementasikan tool menggunakan bahasa favorit Anda (.NET, Java, Python, atau JavaScript).  
+2. Tentukan parameter input dan nilai kembalian.  
+3. Jalankan alat inspector untuk memastikan server berjalan sesuai harapan.  
+4. Uji implementasi dengan berbagai input.  
 
 ## Solusi
 
-[Solution](./solution/README.md)
+[Solution](./solution/README.md)  
 
 ## Sumber Tambahan
 
-- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## Selanjutnya
 

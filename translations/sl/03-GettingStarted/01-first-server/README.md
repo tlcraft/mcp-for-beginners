@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T12:25:18+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T19:32:28+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sl"
 }
@@ -30,11 +30,11 @@ Na koncu te lekcije boste znali:
 
 ## Nastavitev MCP okolja
 
-Preden začnete delati z MCP, je pomembno, da pripravite razvojno okolje in razumete osnovni potek dela. Ta razdelek vas bo vodil skozi začetne korake nastavitve, da bo vaš začetek z MCP potekal gladko.
+Preden začnete delati z MCP, je pomembno, da pripravite razvojno okolje in razumete osnovni potek dela. Ta razdelek vas bo vodil skozi začetne korake, da zagotovite nemoten začetek z MCP.
 
 ### Predpogoji
 
-Preden se lotite razvoja z MCP, poskrbite, da imate:
+Preden se lotite razvoja MCP, poskrbite, da imate:
 
 - **Razvojno okolje**: Za izbrani programski jezik (C#, Java, Python, TypeScript ali JavaScript)
 - **IDE/Urejevalnik**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm ali kateri koli sodoben urejevalnik kode
@@ -102,9 +102,9 @@ MCP ponuja orodja, ki vam pomagajo testirati in odpravljati napake na strežniki
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) je vizualno orodje za testiranje, ki vam pomaga:
 
-1. **Odkriti zmogljivosti strežnika**: Samodejno zazna razpoložljive vire, orodja in pozive
-2. **Testirati izvajanje orodij**: Preizkusite različne parametre in si oglejte odzive v realnem času
-3. **Pregledati metapodatke strežnika**: Preverite informacije o strežniku, sheme in nastavitve
+1. **Odkriti zmogljivosti strežnika**: Samodejno zaznati razpoložljive vire, orodja in pozive
+2. **Testirati izvajanje orodij**: Preizkusiti različne parametre in videti odzive v realnem času
+3. **Pregledati metapodatke strežnika**: Preveriti informacije o strežniku, sheme in nastavitve
 
 ```bash
 # ex TypeScript, installing and running MCP Inspector
@@ -120,7 +120,7 @@ Tukaj je posnetek zaslona, kako to lahko izgleda:
 ## Pogoste težave pri nastavitvi in rešitve
 
 | Težava | Možna rešitev |
-|--------|--------------|
+|--------|---------------|
 | Povezava zavrnjena | Preverite, ali strežnik teče in ali je vrata pravilno nastavljena |
 | Napake pri izvajanju orodij | Preverite preverjanje parametrov in obravnavo napak |
 | Napake pri avtentikaciji | Preverite API ključe in dovoljenja |
@@ -326,6 +326,10 @@ Dodajte naslednjo celotno konfiguracijo v datoteko *pom.xml*:
 </project>
 ```
 
+### -2- Ustvarjanje projekta
+
+Ko imate nameščen SDK, ustvarimo projekt:
+
 ### TypeScript
 
 ```sh
@@ -349,9 +353,11 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+### -3- Ustvarjanje datotek projekta
+
 ### TypeScript
 
-Ustvarite datoteko *package.json* z naslednjo vsebino:
+Ustvarite *package.json* z naslednjo vsebino:
 
 ```json
 {
@@ -368,7 +374,7 @@ Ustvarite datoteko *package.json* z naslednjo vsebino:
 }
 ```
 
-Ustvarite datoteko *tsconfig.json* z naslednjo vsebino:
+Ustvarite *tsconfig.json* z naslednjo vsebino:
 
 ```json
 {
@@ -407,7 +413,9 @@ dotnet add package Microsoft.Extensions.Hosting
 
 ### Java
 
-Za Java Spring Boot projekte se struktura projekta ustvari samodejno.
+Za Java Spring Boot projekte je struktura projekta ustvarjena samodejno.
+
+### -4- Pisanje kode strežnika
 
 ### TypeScript
 
@@ -425,7 +433,7 @@ const server = new McpServer({
 });
 ```
 
-Zdaj imate strežnik, vendar ne počne veliko, popravimo to.
+Zdaj imate strežnik, vendar ne počne veliko, to bomo popravili.
 
 ### Python
 
@@ -638,7 +646,7 @@ public class CalculatorService {
 }
 ```
 
-**Neobvezne komponente za produkcijsko pripravljeno storitev:**
+**Neobvezne komponente za produkcijsko storitev:**
 
 Ustvarite konfiguracijo zagona *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
 
@@ -813,7 +821,7 @@ V zgornji kodi smo:
 
 ### .NET
 
-Dodajte to v svojo datoteko Program.cs:
+Dodajte to v datoteko Program.cs:
 
 ```csharp
 [McpServerToolType]
@@ -828,7 +836,7 @@ public static class CalculatorTool
 
 Orodja so bila že ustvarjena v prejšnjem koraku.
 
-### -6 Končna koda
+### -6- Končna koda
 
 Dodajmo še zadnjo kodo, da se strežnik lahko zažene:
 
@@ -941,7 +949,7 @@ public static class CalculatorTool
 
 ### Java
 
-Vaša glavna aplikacijska razrednica naj izgleda takole:
+Vaša popolna glavna aplikacijska razrednica naj izgleda takole:
 
 ```java
 // McpServerApplication.java
@@ -1007,7 +1015,7 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 Inspector je odlično orodje, ki lahko zažene vaš strežnik in vam omogoči interakcijo z njim, da preverite, ali deluje. Zaženimo ga:
 
 > [!NOTE]
-> V polju "command" je lahko drugačen ukaz, saj vsebuje ukaz za zagon strežnika z vašim specifičnim runtime-om.
+> V polju "command" se lahko prikaže drugačen ukaz, saj vsebuje ukaz za zagon strežnika z vašim specifičnim okoljem.
 
 ### TypeScript
 
@@ -1015,7 +1023,7 @@ Inspector je odlično orodje, ki lahko zažene vaš strežnik in vam omogoči in
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-ali ga dodajte v *package.json* tako: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` in nato zaženite `npm run inspect`
+Lahko ga dodate tudi v *package.json* kot `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` in nato zaženete `npm run inspect`
 
 Python uporablja orodje Node.js, imenovano inspector. Možno je klicati to orodje tako:
 
@@ -1027,9 +1035,9 @@ Vendar ne podpira vseh metod, zato je priporočljivo, da orodje Node.js zaženet
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
-```  
-Če uporabljate orodje ali IDE, ki omogoča konfiguracijo ukazov in argumentov za zagon skript,  
-poskrbite, da je v polju `Command` nastavljen `python`, v polju `Arguments` pa `server.py`. Tako bo skripta pravilno zagnana.
+```
+
+Če uporabljate orodje ali IDE, ki omogoča konfiguracijo ukazov in argumentov za zagon skript, poskrbite, da je v polju `Command` nastavljen `python`, v polju `Arguments` pa `server.py`. Tako bo skripta pravilno zagnana.
 
 ### .NET
 
@@ -1042,8 +1050,7 @@ npx @modelcontextprotocol/inspector dotnet run
 
 ### Java
 
-Prepričajte se, da vaš kalkulator strežnik teče.  
-Nato zaženite inspector:
+Prepričajte se, da vaš kalkulator strežnik teče. Nato zaženite inspector:
 
 ```cmd
 npx @modelcontextprotocol/inspector
@@ -1058,7 +1065,7 @@ V spletni vmesnik inspectorja:
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.sl.png)
 
 **Sedaj ste povezani s strežnikom**  
-**Testiranje Java strežnika je zaključeno**
+**Testiranje Java strežnika je zdaj zaključeno**
 
 Naslednji razdelek govori o interakciji s strežnikom.
 
@@ -1067,11 +1074,11 @@ Videti bi morali naslednji uporabniški vmesnik:
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sl.png)
 
 1. Povežite se s strežnikom s klikom na gumb Connect  
-   Ko se povežete, bi morali videti naslednje:
+   Ko se povežete, boste videli naslednje:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.sl.png)
 
-1. Izberite "Tools" in "listTools", prikazati bi se moral "Add", izberite "Add" in vnesite vrednosti parametrov.
+2. Izberite "Tools" in "listTools", prikazati bi se moral "Add", izberite "Add" in vnesite vrednosti parametrov.
 
    Videli boste naslednji odgovor, torej rezultat orodja "add":
 
@@ -1087,13 +1094,13 @@ MCP ponuja uradne SDK-je za več programskih jezikov:
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - vzdrževan v sodelovanju s Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - uradna TypeScript implementacija
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - uradna Python implementacija
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - uradna Kotlin implementacija
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Uradna implementacija za Kotlin
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Vzdrževano v sodelovanju z Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Uradna Rust implementacija
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Uradna implementacija za Rust
 
-## Ključne ugotovitve
+## Glavne ugotovitve
 
-- Nastavitev MCP razvojnega okolja je enostavna z jezikovno specifičnimi SDK-ji
+- Nastavitev razvojnega okolja za MCP je enostavna z jezikovno specifičnimi SDK-ji
 - Gradnja MCP strežnikov vključuje ustvarjanje in registracijo orodij s jasnimi shemami
 - Testiranje in odpravljanje napak sta ključna za zanesljive MCP implementacije
 
@@ -1129,4 +1136,4 @@ Ustvarite preprost MCP strežnik z orodjem po vaši izbiri:
 Naslednje: [Začetek z MCP klienti](../02-client/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

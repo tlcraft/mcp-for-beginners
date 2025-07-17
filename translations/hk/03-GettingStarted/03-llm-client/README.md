@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-16T21:17:41+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T17:52:13+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "hk"
 }
@@ -96,7 +96,7 @@ class MCPClient {
 
 - 匯入所需的函式庫
 - 建立一個包含兩個成員的類別，`client` 和 `openai`，分別用來管理客戶端和與 LLM 互動
-- 配置 LLM 實例，透過設定 `baseUrl` 指向推論 API，使用 GitHub Models
+- 設定 LLM 實例，使用 GitHub Models，將 `baseUrl` 指向推理 API
 
 ### Python
 
@@ -239,14 +239,14 @@ public class LangChain4jClient {
 
 - **加入 LangChain4j 依賴**：用於 MCP 整合、OpenAI 官方客戶端及 GitHub Models 支援
 - **匯入 LangChain4j 函式庫**：用於 MCP 整合和 OpenAI 聊天模型功能
-- **建立 `ChatLanguageModel`**：配置為使用 GitHub Models 並帶入你的 GitHub 權杖
+- **建立 `ChatLanguageModel`**：設定使用 GitHub Models 並帶入你的 GitHub 權杖
 - **設定 HTTP 傳輸**：使用 Server-Sent Events (SSE) 連接 MCP 伺服器
 - **建立 MCP 客戶端**：負責與伺服器通訊
 - **使用 LangChain4j 內建的 MCP 支援**：簡化 LLM 與 MCP 伺服器的整合
 
 很好，接下來讓我們列出伺服器上的功能。
 
-### -2 列出伺服器功能
+### -2- 列出伺服器功能
 
 現在我們將連接伺服器並請求其功能：
 
@@ -293,7 +293,7 @@ for tool in tools.tools:
 
 我們新增了：
 
-- 列出資源和工具並印出。對工具也列出了 `inputSchema`，稍後會用到。
+- 列出資源和工具並印出。對工具，我們也列出了 `inputSchema`，稍後會用到。
 
 ### .NET
 
@@ -341,7 +341,7 @@ ToolProvider toolProvider = McpToolProvider.builder()
 
 - 建立了 `McpToolProvider`，自動發現並註冊 MCP 伺服器上的所有工具
 - 工具提供者會在內部處理 MCP 工具結構與 LangChain4j 工具格式的轉換
-- 這種方式抽象化了手動列出工具和轉換的流程
+- 這種方式抽象化了手動列出工具和轉換的過程
 
 ### -3- 將伺服器功能轉換為 LLM 工具
 
@@ -376,9 +376,9 @@ ToolProvider toolProvider = McpToolProvider.builder()
 
     ```
 
-    上述程式碼將 MCP 伺服器的回應轉換成 LLM 能理解的工具定義格式。
+    上述程式碼將 MCP 伺服器的回應轉換成 LLM 可理解的工具定義格式。
 
-2. 接著更新 `run` 方法，列出伺服器功能：
+2. 接著更新 `run` 方法以列出伺服器功能：
 
     ```typescript
     async run() {
@@ -429,11 +429,11 @@ ToolProvider toolProvider = McpToolProvider.builder()
         functions.append(convert_to_llm_tool(tool))
     ```
 
-    這裡我們呼叫 `convert_to_llm_tool`，將 MCP 工具回應轉換成稍後可餵給 LLM 的格式。
+    這裡我們呼叫 `convert_to_llm_tool`，將 MCP 工具回應轉換成可供 LLM 使用的格式。
 
 ### .NET
 
-1. 新增程式碼，將 MCP 工具回應轉換成 LLM 可理解的格式：
+1. 新增程式碼將 MCP 工具回應轉換成 LLM 可理解的格式：
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -461,7 +461,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 - 建立了 `ConvertFrom` 函式，接收名稱、描述和輸入結構。
 - 定義功能，建立 `FunctionDefinition`，並傳入 `ChatCompletionsDefinition`，後者是 LLM 可理解的格式。
 
-2. 接著看看如何更新現有程式碼以利用此函式：
+2. 接著更新現有程式碼以使用此函式：
 
     ```csharp
     async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -504,7 +504,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
         toolDefinitions.Add(def);
         ```
 
-        輸入結構是工具回應的一部分，但在 "properties" 屬性中，因此需要提取。此外，我們現在使用工具細節呼叫 `ConvertFrom`。完成這些繁重工作後，接下來看看如何在處理使用者提示時整合這些呼叫。
+        輸入結構位於工具回應的 "properties" 屬性中，因此需要提取。此外，我們現在使用工具細節呼叫 `ConvertFrom`。完成這些後，接下來看看如何在處理使用者提示時整合這些呼叫。
 
 ### Java
 
@@ -526,9 +526,9 @@ Bot bot = AiServices.builder(Bot.class)
 - 定義了一個簡單的 `Bot` 介面，用於自然語言互動
 - 使用 LangChain4j 的 `AiServices` 自動將 LLM 與 MCP 工具提供者綁定
 - 框架自動處理工具結構轉換和函式呼叫
-- 這種方式免除了手動轉換工具的麻煩，LangChain4j 負責將 MCP 工具轉成 LLM 相容格式
+- 這種方式免除了手動轉換工具的麻煩，LangChain4j 負責將 MCP 工具轉換成 LLM 相容格式
 
-很好，我們已準備好處理使用者請求，接下來來處理這部分。
+很好，我們已準備好處理使用者請求，接下來來實作。
 
 ### -4- 處理使用者提示請求
 
@@ -536,7 +536,7 @@ Bot bot = AiServices.builder(Bot.class)
 
 ### TypeScript
 
-1. 新增一個方法，用來呼叫 LLM：
+1. 新增一個方法用來呼叫 LLM：
 
     ```typescript
     async callTools(
@@ -841,7 +841,7 @@ client.connectToServer(transport);
     - 檢查結果，判斷是否有函式需要呼叫。
     - 最後傳入要呼叫的函式陣列。
 
-3. 最後，更新主程式碼：
+3. 最後更新主程式碼：
 
     ```python
     prompt = "Add 2 to 20"
@@ -855,9 +855,9 @@ client.connectToServer(transport);
         print("TOOLS result: ", result.content)
     ```
 
-    這是最後一步，我們：
+    在上述程式碼中，我們：
 
-    - 使用 LLM 判斷應呼叫的函式，透過 `call_tool` 呼叫 MCP 工具。
+    - 根據 LLM 判斷應呼叫的函式，透過 `call_tool` 呼叫 MCP 工具。
     - 印出工具呼叫結果。
 
 ### .NET
@@ -1083,7 +1083,7 @@ try {
   - 需要時將使用者提示轉換為工具呼叫
   - 根據 LLM 判斷呼叫適當的 MCP 工具
   - 管理 LLM 與 MCP 伺服器間的對話流程
-- `bot.chat()` 方法回傳可能包含 MCP 工具執行結果的自然語言回應
+- `bot.chat()` 方法回傳自然語言回應，可能包含 MCP 工具執行結果
 - 這種方式提供無縫的使用者體驗，使用者無需了解底層 MCP 實作
 
 完整範例程式碼：
@@ -1139,7 +1139,7 @@ public class LangChain4jClient {
 
 ## 作業
 
-使用練習中的程式碼，擴充伺服器，加入更多工具。然後像練習中一樣建立帶有 LLM 的客戶端，並用不同提示測試，確保所有伺服器工具都能動態被呼叫。這種建立客戶端的方式，讓最終使用者能透過提示語使用，而非精確的客戶端指令，且不需知道背後有 MCP 伺服器被呼叫，帶來極佳的使用體驗。
+使用練習中的程式碼，擴充伺服器，加入更多工具。然後像練習中一樣建立帶有 LLM 的客戶端，並用不同提示測試，確保所有伺服器工具都能動態被呼叫。這種建立客戶端的方式，讓最終使用者能透過提示語使用，而不需精確輸入客戶端指令，且不必知道背後有 MCP 伺服器被呼叫，帶來極佳的使用體驗。
 
 ## 解答
 
@@ -1148,7 +1148,7 @@ public class LangChain4jClient {
 ## 重要重點
 
 - 在客戶端加入 LLM，能提供使用者更好的 MCP 伺服器互動方式。
-- 你需要將 MCP 伺服器的回應轉換成 LLM 能理解的格式。
+- 你需要將 MCP 伺服器回應轉換成 LLM 能理解的格式。
 
 ## 範例
 
@@ -1165,4 +1165,4 @@ public class LangChain4jClient {
 - 下一課：[使用 Visual Studio Code 消費伺服器](../04-vscode/README.md)
 
 **免責聲明**：  
-本文件乃使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。
+本文件乃使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。
