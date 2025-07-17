@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6f267185e24b1274dd3535d65dd1787",
-  "translation_date": "2025-07-17T08:08:03+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T09:08:31+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "ms"
 }
 -->
 # Membina klien
 
-Klien adalah aplikasi atau skrip khusus yang berkomunikasi secara langsung dengan MCP Server untuk meminta sumber, alat, dan arahan. Berbeza dengan menggunakan alat pemeriksa yang menyediakan antara muka grafik untuk berinteraksi dengan server, menulis klien sendiri membolehkan interaksi secara programatik dan automatik. Ini membolehkan pembangun mengintegrasikan keupayaan MCP ke dalam aliran kerja mereka sendiri, mengautomasikan tugasan, dan membina penyelesaian khusus yang disesuaikan dengan keperluan tertentu.
+Klien adalah aplikasi atau skrip khusus yang berkomunikasi secara langsung dengan MCP Server untuk meminta sumber, alat, dan arahan. Berbeza dengan menggunakan alat pemeriksa yang menyediakan antara muka grafik untuk berinteraksi dengan pelayan, menulis klien anda sendiri membolehkan interaksi secara programatik dan automatik. Ini membolehkan pembangun mengintegrasikan keupayaan MCP ke dalam aliran kerja mereka sendiri, mengautomasikan tugasan, dan membina penyelesaian khusus yang disesuaikan dengan keperluan tertentu.
 
 ## Gambaran Keseluruhan
 
-Pelajaran ini memperkenalkan konsep klien dalam ekosistem Model Context Protocol (MCP). Anda akan belajar cara menulis klien sendiri dan menyambungkannya ke MCP Server.
+Pelajaran ini memperkenalkan konsep klien dalam ekosistem Model Context Protocol (MCP). Anda akan belajar cara menulis klien anda sendiri dan menyambungkannya ke MCP Server.
 
 ## Objektif Pembelajaran
 
@@ -21,18 +21,18 @@ Menjelang akhir pelajaran ini, anda akan dapat:
 
 - Memahami apa yang boleh dilakukan oleh klien.
 - Menulis klien anda sendiri.
-- Menyambung dan menguji klien dengan MCP server untuk memastikan ia berfungsi seperti yang dijangkakan.
+- Menyambung dan menguji klien dengan pelayan MCP untuk memastikan ia berfungsi seperti yang dijangkakan.
 
 ## Apa yang terlibat dalam menulis klien?
 
 Untuk menulis klien, anda perlu melakukan perkara berikut:
 
 - **Import perpustakaan yang betul**. Anda akan menggunakan perpustakaan yang sama seperti sebelum ini, cuma dengan struktur yang berbeza.
-- **Mewujudkan instans klien**. Ini melibatkan penciptaan instans klien dan menyambungkannya ke kaedah pengangkutan yang dipilih.
-- **Memutuskan sumber apa yang hendak disenaraikan**. MCP server anda mempunyai sumber, alat dan arahan, anda perlu memutuskan yang mana satu untuk disenaraikan.
-- **Mengintegrasikan klien ke dalam aplikasi hos**. Setelah anda mengetahui keupayaan server, anda perlu mengintegrasikannya ke dalam aplikasi hos supaya jika pengguna menaip arahan atau perintah lain, ciri server yang sepadan akan dipanggil.
+- **Buat instans klien**. Ini melibatkan penciptaan instans klien dan menyambungkannya ke kaedah pengangkutan yang dipilih.
+- **Tentukan sumber apa yang hendak disenaraikan**. Pelayan MCP anda mempunyai sumber, alat dan arahan, anda perlu memutuskan yang mana satu hendak disenaraikan.
+- **Integrasikan klien ke dalam aplikasi hos**. Setelah anda mengetahui keupayaan pelayan, anda perlu mengintegrasikannya ke dalam aplikasi hos supaya jika pengguna menaip arahan atau perintah lain, ciri pelayan yang sepadan akan dipanggil.
 
-Sekarang kita sudah faham secara umum apa yang akan kita lakukan, mari kita lihat contoh seterusnya.
+Sekarang kita sudah faham secara umum apa yang akan dilakukan, mari kita lihat contoh seterusnya.
 
 ### Contoh klien
 
@@ -86,19 +86,19 @@ const result = await client.callTool({
 });
 ```
 
-Dalam kod di atas kita:
+Dalam kod di atas kami:
 
 - Mengimport perpustakaan
-- Mencipta instans klien dan menyambungkannya menggunakan stdio sebagai pengangkutan.
+- Membuat instans klien dan menyambungkannya menggunakan stdio sebagai pengangkutan.
 - Menyenaraikan arahan, sumber dan alat serta memanggil kesemuanya.
 
 Itulah dia, klien yang boleh berkomunikasi dengan MCP Server.
 
-Mari kita luangkan masa dalam bahagian latihan seterusnya untuk menguraikan setiap potongan kod dan menerangkan apa yang sedang berlaku.
+Mari kita luangkan masa dalam bahagian latihan seterusnya untuk menguraikan setiap potongan kod dan terangkan apa yang sedang berlaku.
 
 ## Latihan: Menulis klien
 
-Seperti yang disebutkan tadi, mari kita luangkan masa untuk menerangkan kod, dan anda boleh ikut menulis kod jika mahu.
+Seperti yang disebutkan tadi, mari kita luangkan masa untuk menerangkan kod, dan jangan segan untuk menulis kod bersama jika anda mahu.
 
 ### -1- Import perpustakaan
 
@@ -130,7 +130,7 @@ using ModelContextProtocol.Protocol.Transport;
 
 ### Java
 
-Untuk Java, anda akan mencipta klien yang menyambung ke MCP server dari latihan sebelumnya. Menggunakan struktur projek Java Spring Boot yang sama dari [Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java), cipta kelas Java baru bernama `SDKClient` dalam folder `src/main/java/com/microsoft/mcp/sample/client/` dan tambah import berikut:
+Untuk Java, anda akan membuat klien yang menyambung ke MCP server dari latihan sebelumnya. Menggunakan struktur projek Java Spring Boot yang sama dari [Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java), buat kelas Java baru bernama `SDKClient` dalam folder `src/main/java/com/microsoft/mcp/sample/client/` dan tambah import berikut:
 
 ```java
 import java.util.Map;
@@ -145,9 +145,9 @@ import io.modelcontextprotocol.spec.McpSchema.ListToolsResult;
 
 Mari kita teruskan ke penciptaan instans.
 
-### -2- Mewujudkan instans klien dan pengangkutan
+### -2- Membuat instans klien dan pengangkutan
 
-Kita perlu mencipta instans pengangkutan dan instans klien kita:
+Kita perlu membuat instans pengangkutan dan instans klien kita:
 
 ### TypeScript
 
@@ -167,9 +167,9 @@ const client = new Client(
 await client.connect(transport);
 ```
 
-Dalam kod di atas kita telah:
+Dalam kod di atas kami telah:
 
-- Mencipta instans pengangkutan stdio. Perhatikan bagaimana ia menentukan command dan args untuk mencari dan memulakan server kerana itu adalah sesuatu yang perlu kita lakukan semasa mencipta klien.
+- Membuat instans pengangkutan stdio. Perhatikan bagaimana ia menentukan command dan args untuk mencari dan memulakan pelayan kerana itu adalah sesuatu yang perlu kita lakukan semasa membuat klien.
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -178,7 +178,7 @@ Dalam kod di atas kita telah:
     });
     ```
 
-- Mewujudkan klien dengan memberikan nama dan versi.
+- Membuat instans klien dengan memberikan nama dan versi.
 
     ```typescript
     const client = new Client(
@@ -223,12 +223,12 @@ if __name__ == "__main__":
     asyncio.run(run())
 ```
 
-Dalam kod di atas kita telah:
+Dalam kod di atas kami telah:
 
 - Mengimport perpustakaan yang diperlukan
-- Mewujudkan objek parameter server kerana kita akan menggunakannya untuk menjalankan server supaya kita boleh menyambung kepadanya dengan klien kita.
+- Membuat objek parameter pelayan kerana kita akan menggunakannya untuk menjalankan pelayan supaya kita boleh menyambung kepadanya dengan klien kita.
 - Mendefinisikan kaedah `run` yang seterusnya memanggil `stdio_client` yang memulakan sesi klien.
-- Mencipta titik masuk di mana kita menyediakan kaedah `run` kepada `asyncio.run`.
+- Membuat titik masuk di mana kita menyediakan kaedah `run` kepada `asyncio.run`.
 
 ### .NET
 
@@ -257,12 +257,12 @@ var clientTransport = new StdioClientTransport(new()
 await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 ```
 
-Dalam kod di atas kita telah:
+Dalam kod di atas kami telah:
 
 - Mengimport perpustakaan yang diperlukan.
-- Mencipta pengangkutan stdio dan mencipta klien `mcpClient`. Ini adalah sesuatu yang akan kita gunakan untuk menyenaraikan dan memanggil ciri pada MCP Server.
+- Membuat pengangkutan stdio dan klien `mcpClient`. Yang terakhir ini akan kita gunakan untuk menyenaraikan dan memanggil ciri pada MCP Server.
 
-Nota, dalam "Arguments", anda boleh menunjuk kepada *.csproj* atau kepada fail boleh laku.
+Nota, dalam "Arguments", anda boleh menunjuk kepada *.csproj* atau kepada executable.
 
 ### Java
 
@@ -289,14 +289,14 @@ public class SDKClient {
 }
 ```
 
-Dalam kod di atas kita telah:
+Dalam kod di atas kami telah:
 
-- Mencipta kaedah main yang menyediakan pengangkutan SSE menunjuk ke `http://localhost:8080` di mana MCP server kita akan berjalan.
-- Mencipta kelas klien yang mengambil pengangkutan sebagai parameter konstruktor.
-- Dalam kaedah `run`, kita mencipta klien MCP secara sinkron menggunakan pengangkutan dan memulakan sambungan.
+- Membuat kaedah utama yang menyediakan pengangkutan SSE menunjuk ke `http://localhost:8080` di mana MCP server kita akan berjalan.
+- Membuat kelas klien yang mengambil pengangkutan sebagai parameter konstruktor.
+- Dalam kaedah `run`, kami membuat klien MCP secara sinkron menggunakan pengangkutan dan memulakan sambungan.
 - Menggunakan pengangkutan SSE (Server-Sent Events) yang sesuai untuk komunikasi berasaskan HTTP dengan MCP server Java Spring Boot.
 
-### -3- Menyenaraikan ciri server
+### -3- Menyenaraikan ciri pelayan
 
 Sekarang, kita mempunyai klien yang boleh menyambung jika program dijalankan. Namun, ia tidak menyenaraikan ciri-cirinya, jadi mari kita lakukan itu sekarang:
 
@@ -340,7 +340,7 @@ foreach (var tool in await client.ListToolsAsync())
 }
 ```
 
-Di atas adalah contoh bagaimana kita boleh menyenaraikan alat pada server. Untuk setiap alat, kita kemudian mencetak namanya.
+Di atas adalah contoh bagaimana kita boleh menyenaraikan alat pada pelayan. Untuk setiap alat, kita kemudian mencetak namanya.
 
 ### Java
 
@@ -353,17 +353,17 @@ System.out.println("Available Tools = " + toolsList);
 client.ping();
 ```
 
-Dalam kod di atas kita telah:
+Dalam kod di atas kami telah:
 
 - Memanggil `listTools()` untuk mendapatkan semua alat yang tersedia dari MCP server.
-- Menggunakan `ping()` untuk mengesahkan bahawa sambungan ke server berfungsi.
-- `ListToolsResult` mengandungi maklumat tentang semua alat termasuk nama, penerangan, dan skema input mereka.
+- Menggunakan `ping()` untuk mengesahkan bahawa sambungan ke pelayan berfungsi.
+- `ListToolsResult` mengandungi maklumat tentang semua alat termasuk nama, deskripsi, dan skema input mereka.
 
-Bagus, sekarang kita telah menangkap semua ciri. Soalannya, bila kita gunakan mereka? Klien ini agak mudah, maksudnya kita perlu memanggil ciri-ciri itu secara eksplisit apabila kita mahu. Dalam bab seterusnya, kita akan mencipta klien yang lebih maju yang mempunyai akses kepada model bahasa besar sendiri, LLM. Buat masa ini, mari lihat bagaimana kita boleh memanggil ciri pada server:
+Bagus, sekarang kita telah menangkap semua ciri. Soalannya bila kita menggunakannya? Klien ini agak mudah, maksudnya kita perlu memanggil ciri-ciri itu secara eksplisit apabila kita mahu menggunakannya. Dalam bab seterusnya, kita akan membuat klien yang lebih maju yang mempunyai akses kepada model bahasa besar sendiri, LLM. Buat masa ini, mari lihat bagaimana kita boleh memanggil ciri pada pelayan:
 
 ### -4- Memanggil ciri
 
-Untuk memanggil ciri, kita perlu pastikan kita menyatakan argumen yang betul dan dalam beberapa kes nama apa yang kita cuba panggil.
+Untuk memanggil ciri, kita perlu memastikan kita menentukan argumen yang betul dan dalam beberapa kes nama apa yang kita cuba panggil.
 
 ### TypeScript
 
@@ -391,9 +391,9 @@ const promptResult = await client.getPrompt({
 })
 ```
 
-Dalam kod di atas kita:
+Dalam kod di atas kami:
 
-- Membaca sumber, kita panggil sumber dengan memanggil `readResource()` dan menyatakan `uri`. Ini kemungkinan besar kelihatan seperti ini di sisi server:
+- Membaca sumber, kita panggil sumber dengan memanggil `readResource()` dengan menentukan `uri`. Ini kemungkinan besar kelihatan seperti ini di sisi pelayan:
 
     ```typescript
     server.resource(
@@ -408,9 +408,9 @@ Dalam kod di atas kita:
     );
     ```
 
-    Nilai `uri` kita `file://example.txt` sepadan dengan `file://{name}` pada server. `example.txt` akan dipetakan kepada `name`.
+    Nilai `uri` kami `file://example.txt` sepadan dengan `file://{name}` pada pelayan. `example.txt` akan dipetakan kepada `name`.
 
-- Memanggil alat, kita panggil dengan menyatakan `name` dan `arguments` seperti berikut:
+- Memanggil alat, kita panggil dengan menentukan `name` dan `arguments` seperti berikut:
 
     ```typescript
     const result = await client.callTool({
@@ -421,7 +421,7 @@ Dalam kod di atas kita:
     });
     ```
 
-- Mendapatkan arahan, untuk mendapatkan arahan, anda panggil `getPrompt()` dengan `name` dan `arguments`. Kod server kelihatan seperti ini:
+- Mendapatkan arahan, untuk mendapatkan arahan, anda panggil `getPrompt()` dengan `name` dan `arguments`. Kod pelayan kelihatan seperti ini:
 
     ```typescript
     server.prompt(
@@ -439,7 +439,7 @@ Dalam kod di atas kita:
     );
     ```
 
-    dan kod klien anda yang terhasil kelihatan seperti ini untuk sepadan dengan apa yang diisytiharkan pada server:
+    dan kod klien anda yang terhasil kelihatan seperti ini untuk sepadan dengan apa yang diisytiharkan pada pelayan:
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -463,12 +463,12 @@ result = await session.call_tool("add", arguments={"a": 1, "b": 7})
 print(result.content)
 ```
 
-Dalam kod di atas, kita telah:
+Dalam kod di atas, kami telah:
 
 - Memanggil sumber bernama `greeting` menggunakan `read_resource`.
 - Memanggil alat bernama `add` menggunakan `call_tool`.
 
-### C#
+### .NET
 
 1. Mari kita tambah kod untuk memanggil alat:
 
@@ -506,12 +506,12 @@ CallToolResult resultHelp = client.callTool(new CallToolRequest("help", Map.of()
 System.out.println("Help = " + resultHelp);
 ```
 
-Dalam kod di atas kita telah:
+Dalam kod di atas kami telah:
 
 - Memanggil beberapa alat kalkulator menggunakan kaedah `callTool()` dengan objek `CallToolRequest`.
-- Setiap panggilan alat menyatakan nama alat dan `Map` argumen yang diperlukan oleh alat tersebut.
-- Alat server mengharapkan nama parameter tertentu (seperti "a", "b" untuk operasi matematik).
-- Keputusan dikembalikan sebagai objek `CallToolResult` yang mengandungi respons dari server.
+- Setiap panggilan alat menentukan nama alat dan `Map` argumen yang diperlukan oleh alat tersebut.
+- Alat pelayan mengharapkan nama parameter tertentu (seperti "a", "b" untuk operasi matematik).
+- Keputusan dikembalikan sebagai objek `CallToolResult` yang mengandungi respons dari pelayan.
 
 ### -5- Menjalankan klien
 
@@ -568,9 +568,9 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## Tugasan
 
-Dalam tugasan ini, anda akan menggunakan apa yang telah anda pelajari dalam membina klien tetapi mencipta klien anda sendiri.
+Dalam tugasan ini, anda akan menggunakan apa yang telah anda pelajari dalam membina klien tetapi membina klien anda sendiri.
 
-Ini adalah server yang boleh anda gunakan yang perlu anda panggil melalui kod klien anda, cuba lihat jika anda boleh menambah lebih banyak ciri pada server untuk menjadikannya lebih menarik.
+Ini adalah pelayan yang boleh anda gunakan yang perlu anda panggil melalui kod klien anda, cuba lihat jika anda boleh menambah lebih banyak ciri pada pelayan untuk menjadikannya lebih menarik.
 
 ### TypeScript
 
@@ -680,19 +680,121 @@ Juga, semak pautan ini untuk cara memanggil [arahan dan sumber](https://github.c
 
 ## Penyelesaian
 
-[Penyelesaian](./solution/README.md)
+**Folder penyelesaian** mengandungi pelaksanaan klien lengkap yang sedia untuk dijalankan yang menunjukkan semua konsep yang dibincangkan dalam tutorial ini. Setiap penyelesaian merangkumi kod klien dan pelayan yang diatur dalam projek berasingan dan berdiri sendiri.
+
+### 📁 Struktur Penyelesaian
+
+Direktori penyelesaian diatur mengikut bahasa pengaturcaraan:
+
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 Apa yang Termasuk dalam Setiap Penyelesaian
+
+Setiap penyelesaian khusus bahasa menyediakan:
+
+- **Pelaksanaan klien lengkap** dengan semua ciri dari tutorial
+- **Struktur projek yang berfungsi** dengan kebergantungan dan konfigurasi yang betul
+- **Skrip bina dan jalankan** untuk persediaan dan pelaksanaan mudah
+- **README terperinci** dengan arahan khusus bahasa
+- **Pengendalian ralat** dan contoh pemprosesan hasil
+
+### 📖 Menggunakan Penyelesaian
+
+1. **Navigasi ke folder bahasa pilihan anda**:
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **Ikuti arahan README** dalam setiap folder untuk:
+   - Memasang kebergantungan
+   - Membina projek
+   - Menjalankan klien
+
+3. **Contoh output** yang anda akan lihat:
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+Untuk dokumentasi lengkap dan arahan langkah demi langkah, lihat: **[📖 Dokumentasi Penyelesaian](./solution/README.md)**
+
+## 🎯 Contoh Lengkap
+
+Kami telah menyediakan pelaksanaan klien lengkap yang berfungsi untuk semua bahasa pengaturcaraan yang dibincangkan dalam tutorial ini. Contoh-contoh ini menunjukkan fungsi penuh yang diterangkan di atas dan boleh digunakan sebagai rujukan pelaksanaan atau titik permulaan untuk projek anda sendiri.
+
+### Contoh Lengkap Tersedia
+
+| Bahasa   | Fail                        | Penerangan                                               |
+|----------|-----------------------------|----------------------------------------------------------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | Klien Java lengkap menggunakan pengangkutan SSE dengan pengendalian ralat menyeluruh |
+| **C#**   | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | Klien C# lengkap menggunakan pengangkutan stdio dengan permulaan pelayan automatik |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Klien TypeScript lengkap dengan sokongan penuh protokol MCP |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | Klien Python lengkap menggunakan corak async/await |
+
+Setiap contoh lengkap merangkumi:
+
+- ✅ **Penubuhan sambungan** dan pengendalian ralat
+- ✅ **Penemuan pelayan** (alat, sumber, arahan jika berkenaan)
+- ✅ **Operasi kalkulator** (tambah, tolak, darab, bahagi, bantuan)
+- ✅ **Pemprosesan hasil** dan output yang diformatkan
+- ✅ **Pengendalian ralat menyeluruh**
+- ✅ **Kod yang bersih dan didokumentasi** dengan komen langkah demi langkah
+
+### Memulakan dengan Contoh Lengkap
+
+1. **Pilih bahasa pilihan anda** dari jadual di atas
+2. **Semak fail contoh lengkap** untuk memahami pelaksanaan penuh
+3. **Jalankan contoh** mengikut arahan dalam [`complete_examples.md`](./complete_examples.md)
+4. **Ubah suai dan kembangkan** contoh untuk kes penggunaan khusus anda
+
+Untuk dokumentasi terperinci tentang menjalankan dan menyesuaikan contoh ini, lihat: **[📖 Dokumentasi Contoh Lengkap](./complete_examples.md)**
+
+### 💡 Penyelesaian vs. Contoh Lengkap
+
+| **Folder Penyelesaian** | **Contoh Lengkap**          |
+|-------------------------|-----------------------------|
+| Struktur projek penuh dengan fail bina | Pelaksanaan fail tunggal |
+| Sedia untuk dijalankan dengan kebergantungan | Contoh kod fokus |
+| Persediaan seperti produksi | Rujukan pendidikan |
+| Alat khusus bahasa | Perbandingan lintas bahasa |
+Kedua-dua pendekatan adalah berharga - gunakan **folder penyelesaian** untuk projek lengkap dan **contoh lengkap** untuk pembelajaran dan rujukan.
 
 ## Perkara Penting
 
 Perkara penting untuk bab ini mengenai klien adalah seperti berikut:
 
-- Boleh digunakan untuk mencari dan memanggil ciri pada server.
-- Boleh memulakan server semasa ia memulakan dirinya sendiri (seperti dalam bab ini) tetapi klien juga boleh menyambung ke server yang sedang berjalan.
-- Merupakan cara yang baik untuk menguji keupayaan server berbanding alternatif seperti Inspector seperti yang diterangkan dalam bab sebelumnya.
+- Boleh digunakan untuk mencari dan memanggil ciri pada pelayan.
+- Boleh memulakan pelayan semasa ia memulakan dirinya sendiri (seperti dalam bab ini) tetapi klien juga boleh menyambung ke pelayan yang sedang berjalan.
+- Merupakan cara yang baik untuk menguji keupayaan pelayan berbanding alternatif seperti Inspector seperti yang diterangkan dalam bab sebelumnya.
 
 ## Sumber Tambahan
 
-- [Membina klien dalam MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Contoh
 
@@ -704,7 +806,7 @@ Perkara penting untuk bab ini mengenai klien adalah seperti berikut:
 
 ## Apa Seterusnya
 
-- Seterusnya: [Membina klien dengan LLM](../03-llm-client/README.md)
+- Seterusnya: [Creating a client with an LLM](../03-llm-client/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

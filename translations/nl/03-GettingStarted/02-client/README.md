@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6f267185e24b1274dd3535d65dd1787",
-  "translation_date": "2025-07-17T07:12:55+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T09:06:03+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "nl"
 }
 -->
 # Een client maken
 
-Clients zijn aangepaste applicaties of scripts die rechtstreeks communiceren met een MCP Server om resources, tools en prompts op te vragen. In tegenstelling tot het gebruik van de inspector tool, die een grafische interface biedt om met de server te communiceren, maakt het schrijven van je eigen client programmatische en geautomatiseerde interacties mogelijk. Dit stelt ontwikkelaars in staat om MCP-functionaliteiten te integreren in hun eigen workflows, taken te automatiseren en maatwerkoplossingen te bouwen die zijn afgestemd op specifieke behoeften.
+Clients zijn aangepaste applicaties of scripts die rechtstreeks communiceren met een MCP Server om resources, tools en prompts op te vragen. In tegenstelling tot het gebruik van de inspector tool, die een grafische interface biedt om met de server te communiceren, maakt het schrijven van je eigen client programmatische en geautomatiseerde interacties mogelijk. Dit stelt ontwikkelaars in staat om MCP-functionaliteiten te integreren in hun eigen workflows, taken te automatiseren en maatwerkoplossingen te bouwen die aansluiten bij specifieke behoeften.
 
 ## Overzicht
 
@@ -32,7 +32,7 @@ Om een client te schrijven, moet je het volgende doen:
 - **Bepalen welke resources je wilt weergeven**. Je MCP server heeft resources, tools en prompts; je moet beslissen welke je wilt tonen.
 - **De client integreren in een hostapplicatie**. Zodra je de mogelijkheden van de server kent, moet je deze integreren in je hostapplicatie zodat wanneer een gebruiker een prompt of ander commando invoert, de bijbehorende serverfunctie wordt aangeroepen.
 
-Nu we op hoofdlijnen begrijpen wat we gaan doen, bekijken we als volgende een voorbeeld.
+Nu we op hoofdlijnen begrijpen wat we gaan doen, bekijken we als volgende stap een voorbeeld.
 
 ### Een voorbeeldclient
 
@@ -102,7 +102,7 @@ Zoals hierboven gezegd, nemen we de tijd om de code uit te leggen, en voel je vr
 
 ### -1- Libraries importeren
 
-Laten we de benodigde libraries importeren. We hebben referenties nodig naar een client en naar ons gekozen transportprotocol, stdio. stdio is een protocol voor toepassingen die lokaal op je machine draaien. SSE is een ander transportprotocol dat we in toekomstige hoofdstukken zullen laten zien, maar dat is je andere optie. Voor nu gaan we verder met stdio.
+Laten we de benodigde libraries importeren. We hebben referenties nodig naar een client en naar ons gekozen transportprotocol, stdio. stdio is een protocol voor toepassingen die lokaal op je machine draaien. SSE is een ander transportprotocol dat we in toekomstige hoofdstukken zullen behandelen, maar dat is je andere optie. Voor nu gaan we verder met stdio.
 
 ### TypeScript
 
@@ -225,9 +225,9 @@ if __name__ == "__main__":
 
 In bovenstaande code hebben we:
 
-- De benodigde libraries geïmporteerd.
+- De benodigde libraries geïmporteerd
 - Een server parameters object geïnstantieerd, dat we gebruiken om de server te starten zodat we er met onze client verbinding mee kunnen maken.
-- Een methode `run` gedefinieerd die op zijn beurt `stdio_client` aanroept om een client sessie te starten.
+- Een methode `run` gedefinieerd die op zijn beurt `stdio_client` aanroept, wat een client sessie start.
 - Een entry point gemaakt waar we de `run` methode aan `asyncio.run` meegeven.
 
 ### .NET
@@ -298,7 +298,7 @@ In bovenstaande code hebben we:
 
 ### -3- De serverfeatures weergeven
 
-Nu hebben we een client die verbinding kan maken als het programma wordt uitgevoerd. Echter, hij toont nog niet de features, dat doen we nu:
+Nu hebben we een client die verbinding kan maken als het programma wordt uitgevoerd. Maar hij toont nog niet de features, dat doen we nu:
 
 ### TypeScript
 
@@ -329,7 +329,7 @@ for tool in tools.tools:
     print("Tool: ", tool.name)
 ```
 
-Hier lijsten we de beschikbare resources met `list_resources()` en tools met `list_tools` en printen deze uit.
+Hier lijsten we de beschikbare resources met `list_resources()` en tools met `list_tools` en printen ze uit.
 
 ### .NET
 
@@ -356,14 +356,14 @@ client.ping();
 In bovenstaande code hebben we:
 
 - `listTools()` aangeroepen om alle beschikbare tools van de MCP server op te halen.
-- `ping()` gebruikt om te verifiëren dat de verbinding met de server werkt.
+- `ping()` gebruikt om te controleren of de verbinding met de server werkt.
 - `ListToolsResult` bevat informatie over alle tools, inclusief namen, beschrijvingen en input schema’s.
 
-Geweldig, nu hebben we alle features binnengehaald. De vraag is: wanneer gebruiken we ze? Deze client is vrij eenvoudig, in die zin dat we de features expliciet moeten aanroepen wanneer we ze willen gebruiken. In het volgende hoofdstuk maken we een geavanceerdere client die toegang heeft tot een eigen large language model (LLM). Voor nu kijken we hoe we de features op de server kunnen aanroepen:
+Geweldig, nu hebben we alle features binnen. De vraag is: wanneer gebruiken we ze? Deze client is vrij eenvoudig, in die zin dat we de features expliciet moeten aanroepen wanneer we ze willen gebruiken. In het volgende hoofdstuk maken we een geavanceerdere client die toegang heeft tot een eigen large language model (LLM). Voor nu bekijken we hoe we de features op de server kunnen aanroepen:
 
 ### -4- Features aanroepen
 
-Om features aan te roepen moeten we de juiste argumenten opgeven en in sommige gevallen de naam van wat we willen aanroepen.
+Om features aan te roepen moeten we de juiste argumenten meegeven en in sommige gevallen de naam van wat we willen aanroepen.
 
 ### TypeScript
 
@@ -410,7 +410,7 @@ In bovenstaande code:
 
     Onze `uri` waarde `file://example.txt` komt overeen met `file://{name}` op de server. `example.txt` wordt gemapt naar `name`.
 
-- Roepen we een tool aan door de `name` en `arguments` op te geven, zoals:
+- Roepen we een tool aan door de `name` en `arguments` mee te geven, zoals:
 
     ```typescript
     const result = await client.callTool({
@@ -439,7 +439,7 @@ In bovenstaande code:
     );
     ```
 
-    En je clientcode ziet er daarom zo uit om overeen te komen met wat op de server is gedeclareerd:
+    En je clientcode ziet er daarom zo uit om overeen te komen met wat op de server is gedefinieerd:
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -468,7 +468,7 @@ In bovenstaande code hebben we:
 - Een resource `greeting` aangeroepen met `read_resource`.
 - Een tool `add` aangeroepen met `call_tool`.
 
-### C#
+### .NET
 
 1. Laten we wat code toevoegen om een tool aan te roepen:
 
@@ -545,7 +545,7 @@ dotnet run
 
 ### Java
 
-Zorg eerst dat je MCP server draait op `http://localhost:8080`. Voer daarna de client uit:
+Zorg eerst dat je MCP server draait op `http://localhost:8080`. Voer dan de client uit:
 
 ```bash
 # Build you project
@@ -676,35 +676,136 @@ public static class CalculatorTool
 
 Bekijk dit project om te zien hoe je [prompts en resources kunt toevoegen](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
 
-Bekijk ook deze link voor hoe je [prompts en resources kunt aanroepen](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
+Bekijk ook deze link voor hoe je [prompts en resources aanroept](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
 
 ## Oplossing
 
-[Oplossing](./solution/README.md)
+De **solution folder** bevat complete, kant-en-klare clientimplementaties die alle concepten uit deze tutorial demonstreren. Elke oplossing bevat zowel client- als servercode, georganiseerd in aparte, zelfstandige projecten.
 
+### 📁 Oplossingsstructuur
+
+De solution directory is georganiseerd per programmeertaal:
+
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 Wat elke oplossing bevat
+
+Elke taal-specifieke oplossing biedt:
+
+- **Volledige clientimplementatie** met alle features uit de tutorial
+- **Werkende projectstructuur** met juiste dependencies en configuratie
+- **Build- en run-scripts** voor eenvoudige setup en uitvoering
+- **Uitgebreide README** met taal-specifieke instructies
+- **Foutafhandeling** en voorbeelden van resultaatverwerking
+
+### 📖 Gebruik van de oplossingen
+
+1. **Navigeer naar de map van je voorkeurstaal**:
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **Volg de README instructies** in elke map voor:
+   - Dependencies installeren
+   - Project bouwen
+   - Client uitvoeren
+
+3. **Voorbeeldoutput** die je zou moeten zien:
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+Voor volledige documentatie en stapsgewijze instructies, zie: **[📖 Solution Documentation](./solution/README.md)**
+
+## 🎯 Complete Voorbeelden
+
+We hebben complete, werkende clientimplementaties geleverd voor alle programmeertalen die in deze tutorial aan bod komen. Deze voorbeelden tonen de volledige functionaliteit zoals hierboven beschreven en kunnen gebruikt worden als referentie of startpunt voor je eigen projecten.
+
+### Beschikbare Complete Voorbeelden
+
+| Taal     | Bestand                      | Beschrijving                                                  |
+|----------|-----------------------------|---------------------------------------------------------------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java)       | Complete Java client met SSE transport en uitgebreide foutafhandeling |
+| **C#**   | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs)       | Complete C# client met stdio transport en automatische serverstart |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Complete TypeScript client met volledige MCP protocol ondersteuning |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py)     | Complete Python client met async/await patronen                |
+
+Elke complete voorbeeld bevat:
+
+- ✅ **Verbindingsopbouw** en foutafhandeling
+- ✅ **Serverontdekking** (tools, resources, prompts waar van toepassing)
+- ✅ **Rekenmachinebewerkingen** (optellen, aftrekken, vermenigvuldigen, delen, hulp)
+- ✅ **Resultaatverwerking** en geformatteerde output
+- ✅ **Uitgebreide foutafhandeling**
+- ✅ **Schone, gedocumenteerde code** met stap-voor-stap commentaar
+
+### Aan de slag met complete voorbeelden
+
+1. **Kies je voorkeurstaal** uit de bovenstaande tabel
+2. **Bekijk het complete voorbeeldbestand** om de volledige implementatie te begrijpen
+3. **Voer het voorbeeld uit** volgens de instructies in [`complete_examples.md`](./complete_examples.md)
+4. **Pas het voorbeeld aan en breid het uit** voor je eigen gebruik
+
+Voor gedetailleerde documentatie over het uitvoeren en aanpassen van deze voorbeelden, zie: **[📖 Complete Examples Documentation](./complete_examples.md)**
+
+### 💡 Oplossing vs. Complete Voorbeelden
+
+| **Solution Folder**           | **Complete Voorbeelden**          |
+|------------------------------|----------------------------------|
+| Volledige projectstructuur met buildbestanden | Enkelvoudige bestandsimplementaties |
+| Klaar om te draaien met dependencies | Gericht op codevoorbeelden       |
+| Productie-achtige setup       | Educatieve referentie             |
+| Taal-specifieke tooling       | Taaloverstijgende vergelijking  
+Beide benaderingen zijn waardevol - gebruik de **solution folder** voor complete projecten en de **complete examples** voor leren en referentie.  
 ## Belangrijkste punten
 
-De belangrijkste punten uit dit hoofdstuk over clients zijn:
+De belangrijkste punten van dit hoofdstuk over clients zijn:
 
-- Ze kunnen worden gebruikt om zowel features op de server te ontdekken als aan te roepen.
-- Ze kunnen een server starten terwijl ze zelf opstarten (zoals in dit hoofdstuk), maar clients kunnen ook verbinding maken met reeds draaiende servers.
-- Ze zijn een uitstekende manier om servermogelijkheden te testen naast alternatieven zoals de Inspector, zoals in het vorige hoofdstuk beschreven.
+- Kunnen worden gebruikt om zowel functies op de server te ontdekken als aan te roepen.  
+- Kunnen een server starten terwijl ze zelf opstarten (zoals in dit hoofdstuk), maar clients kunnen ook verbinding maken met reeds draaiende servers.  
+- Zijn een uitstekende manier om servermogelijkheden te testen naast alternatieven zoals de Inspector, zoals beschreven in het vorige hoofdstuk.  
 
-## Extra bronnen
+## Aanvullende bronnen
 
-- [Clients bouwen in MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Voorbeelden
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## Wat volgt
 
-- Volgende: [Een client maken met een LLM](../03-llm-client/README.md)
+- Volgende: [Creating a client with an LLM](../03-llm-client/README.md)
 
 **Disclaimer**:  
 Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
