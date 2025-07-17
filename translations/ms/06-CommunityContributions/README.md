@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:02:05+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T07:59:57+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "ms"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Gambaran Keseluruhan
 
-Pelajaran ini memfokuskan kepada cara untuk berinteraksi dengan komuniti MCP, menyumbang kepada ekosistem MCP, dan mengikuti amalan terbaik untuk pembangunan secara kolaboratif. Memahami cara untuk mengambil bahagian dalam projek MCP sumber terbuka adalah penting bagi mereka yang ingin membentuk masa depan teknologi ini.
+Pelajaran ini memfokuskan kepada cara untuk berinteraksi dengan komuniti MCP, menyumbang kepada ekosistem MCP, dan mengikuti amalan terbaik untuk pembangunan secara kolaboratif. Memahami cara untuk mengambil bahagian dalam projek sumber terbuka MCP adalah penting bagi mereka yang ingin membentuk masa depan teknologi ini.
 
 ## Objektif Pembelajaran
 
@@ -19,8 +19,9 @@ Menjelang akhir pelajaran ini, anda akan dapat:
 - Memahami struktur komuniti dan ekosistem MCP
 - Mengambil bahagian dengan berkesan dalam forum dan perbincangan komuniti MCP
 - Menyumbang kepada repositori sumber terbuka MCP
-- Mencipta dan berkongsi alat MCP tersuai
+- Mencipta dan berkongsi alat dan pelayan MCP tersuai
 - Mengikuti amalan terbaik untuk pembangunan dan kerjasama MCP
+- Menemui sumber dan rangka kerja komuniti untuk pembangunan MCP
 
 ## Ekosistem Komuniti MCP
 
@@ -28,8 +29,8 @@ Ekosistem MCP terdiri daripada pelbagai komponen dan peserta yang bekerjasama un
 
 ### Komponen Utama Komuniti
 
-1. **Penjaga Protokol Teras**: Microsoft dan organisasi lain yang menyelenggara spesifikasi teras MCP dan pelaksanaan rujukan
-2. **Pembangun Alat**: Individu dan pasukan yang mencipta alat MCP
+1. **Penjaga Protokol Teras**: [Organisasi GitHub Model Context Protocol rasmi](https://github.com/modelcontextprotocol) menyelenggara spesifikasi teras MCP dan pelaksanaan rujukan
+2. **Pembangun Alat**: Individu dan pasukan yang mencipta alat dan pelayan MCP
 3. **Penyedia Integrasi**: Syarikat yang mengintegrasikan MCP ke dalam produk dan perkhidmatan mereka
 4. **Pengguna Akhir**: Pembangun dan organisasi yang menggunakan MCP dalam aplikasi mereka
 5. **Penyumbang**: Ahli komuniti yang menyumbang kod, dokumentasi, atau sumber lain
@@ -38,28 +39,32 @@ Ekosistem MCP terdiri daripada pelbagai komponen dan peserta yang bekerjasama un
 
 #### Saluran Rasmi
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Organisasi GitHub MCP](https://github.com/modelcontextprotocol)
+- [Dokumentasi MCP](https://modelcontextprotocol.io/)
+- [Spesifikasi MCP](https://modelcontextprotocol.io/docs/specification)
+- [Perbincangan GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Repositori Contoh & Pelayan MCP](https://github.com/modelcontextprotocol/servers)
 
 #### Sumber Dipacu Komuniti
 
-- Pelaksanaan SDK mengikut bahasa tertentu
-- Pelaksanaan pelayan dan perpustakaan alat
+- [Klien MCP](https://modelcontextprotocol.io/clients) - Senarai klien yang menyokong integrasi MCP
+- [Pelayan MCP Komuniti](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Senarai pelayan MCP yang dibangunkan oleh komuniti yang semakin berkembang
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Senarai pelayan MCP yang dikurasi
+- [PulseMCP](https://www.pulsemcp.com/) - Pusat komuniti & surat berita untuk menemui sumber MCP
+- [Pelayan Discord](https://discord.gg/jHEGxQu2a5) - Berhubung dengan pembangun MCP
+- Pelaksanaan SDK mengikut bahasa
 - Catatan blog dan tutorial
-- Forum komuniti dan perbincangan media sosial
 
 ## Menyumbang kepada MCP
 
 ### Jenis Sumbangan
 
-Ekosistem MCP mengalu-alukan pelbagai jenis sumbangan:
+Ekosistem MCP menerima pelbagai jenis sumbangan:
 
 1. **Sumbangan Kod**:
    - Penambahbaikan protokol teras
    - Pembetulan pepijat
-   - Pelaksanaan alat
+   - Pelaksanaan alat dan pelayan
    - Perpustakaan klien/pelayan dalam pelbagai bahasa
 
 2. **Dokumentasi**:
@@ -69,168 +74,79 @@ Ekosistem MCP mengalu-alukan pelbagai jenis sumbangan:
    - Mencipta contoh dan aplikasi sampel
 
 3. **Sokongan Komuniti**:
-   - Menjawab soalan di forum
+   - Menjawab soalan di forum dan perbincangan
    - Menguji dan melaporkan isu
    - Menganjurkan acara komuniti
    - Membimbing penyumbang baru
 
 ### Proses Sumbangan: Protokol Teras
 
-Untuk menyumbang kepada protokol teras MCP atau pelaksanaan rasmi:
+Untuk menyumbang kepada protokol teras MCP atau pelaksanaan rasmi, ikut prinsip dari [garis panduan menyumbang rasmi](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### Contoh .NET: Menyumbang Penambahbaikan Protokol
+1. **Kesederhanaan dan Minimalisme**: Spesifikasi MCP mengekalkan piawaian tinggi untuk menambah konsep baru. Lebih mudah untuk menambah sesuatu ke spesifikasi daripada mengeluarkannya.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **Pendekatan Konkret**: Perubahan spesifikasi harus berdasarkan cabaran pelaksanaan yang spesifik, bukan idea spekulatif.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **Tahap Cadangan**:
+   - Definisi: Terokai ruang masalah, sahkan bahawa pengguna MCP lain menghadapi isu yang sama
+   - Prototaip: Bina penyelesaian contoh dan tunjukkan aplikasi praktikalnya
+   - Penulisan: Berdasarkan prototaip, tulis cadangan spesifikasi
+
+### Persediaan Persekitaran Pembangunan
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Contoh Java: Menyumbang Pembetulan Pepijat
+### Contoh: Menyumbang Pembetulan Pepijat
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Contoh Python: Menyumbang Alat Baru ke Perpustakaan Standard
+### Contoh: Menyumbang Alat Baru ke Perpustakaan Standard
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -398,15 +314,15 @@ Untuk membuat sumbangan yang berjaya kepada projek MCP:
 2. **Ikuti Panduan Gaya**: Patuhi gaya pengekodan dan konvensyen projek
 3. **Tulis Ujian**: Sertakan ujian unit untuk sumbangan kod anda
 4. **Dokumentasikan Kerja Anda**: Tambah dokumentasi jelas untuk ciri baru atau perubahan
-5. **Hantar PR yang Fokus**: Pastikan pull request tertumpu pada satu isu atau ciri sahaja
+5. **Hantar PR yang Fokus**: Pastikan permintaan tarik tertumpu pada satu isu atau ciri sahaja
 6. **Libatkan Diri dengan Maklum Balas**: Responsif terhadap maklum balas pada sumbangan anda
 
 ### Contoh Aliran Kerja Sumbangan
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,9 +343,27 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Mencipta dan Berkongsi Alat MCP Tersuai
+## Mencipta dan Berkongsi Pelayan MCP
 
-Salah satu cara paling bernilai untuk menyumbang kepada ekosistem MCP adalah dengan mencipta dan berkongsi alat tersuai.
+Salah satu cara paling berharga untuk menyumbang kepada ekosistem MCP adalah dengan mencipta dan berkongsi pelayan MCP tersuai. Komuniti telah membangunkan ratusan pelayan untuk pelbagai perkhidmatan dan kes penggunaan.
+
+### Rangka Kerja Pembangunan Pelayan MCP
+
+Beberapa rangka kerja tersedia untuk memudahkan pembangunan pelayan MCP:
+
+1. **SDK Rasmi**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **Rangka Kerja Komuniti**:
+   - [MCP-Framework](https://mcp-framework.com/) - Bina pelayan MCP dengan elegan dan pantas menggunakan TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Pelayan MCP berasaskan anotasi dengan Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Rangka kerja Java untuk pelayan MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Projek permulaan Next.js untuk pelayan MCP
 
 ### Membangunkan Alat yang Boleh Dikongsi
 
@@ -763,7 +695,7 @@ Apabila berkongsi alat MCP dengan komuniti:
 
 3. **Pertimbangan Prestasi**:
    - Optimumkan untuk kelajuan dan penggunaan sumber
-   - Laksanakan caching apabila sesuai
+   - Laksanakan caching bila sesuai
    - Pertimbangkan kebolehsuaian
 
 4. **Keselamatan**:
@@ -889,10 +821,10 @@ async def delete_tool(tool_name: str):
 
 ## Perkara Penting
 
-- Komuniti MCP adalah pelbagai dan mengalu-alukan pelbagai jenis sumbangan
+- Komuniti MCP adalah pelbagai dan menerima pelbagai jenis sumbangan
 - Menyumbang kepada MCP boleh merangkumi penambahbaikan protokol teras hingga alat tersuai
 - Mengikuti garis panduan sumbangan meningkatkan peluang PR anda diterima
-- Mencipta dan berkongsi alat MCP adalah cara bernilai untuk memperkaya ekosistem
+- Mencipta dan berkongsi alat MCP adalah cara berharga untuk memperkaya ekosistem
 - Kerjasama komuniti penting untuk pertumbuhan dan penambahbaikan MCP
 
 ## Latihan
@@ -901,16 +833,16 @@ async def delete_tool(tool_name: str):
 2. Fork repositori MCP dan sediakan persekitaran pembangunan tempatan
 3. Cipta penambahbaikan kecil, pembetulan pepijat, atau alat yang memberi manfaat kepada komuniti
 4. Dokumentasikan sumbangan anda dengan ujian dan dokumentasi yang sesuai
-5. Hantar pull request ke repositori yang sesuai
+5. Hantar permintaan tarik ke repositori yang sesuai
 
 ## Sumber Tambahan
 
-- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+- [Projek Komuniti MCP](https://github.com/topics/model-context-protocol)
 
 
 ---
 
-Seterusnya: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+Seterusnya: [Pelajaran dari Penggunaan Awal](../07-LessonsfromEarlyAdoption/README.md)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

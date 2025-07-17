@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:36:39+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T07:41:54+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "vi"
 }
@@ -26,14 +26,14 @@ Sau khi hoàn thành hướng dẫn này, bạn sẽ có thể:
 - Hiểu về Model Context Protocol và lợi ích của nó
 - Thiết lập các máy chủ MCP để sử dụng với các agent Azure AI Foundry
 - Tạo và cấu hình agent với tích hợp công cụ MCP
-- Triển khai các ví dụ thực tế sử dụng máy chủ MCP thật
+- Triển khai các ví dụ thực tế sử dụng các máy chủ MCP thật
 - Xử lý phản hồi công cụ và trích dẫn trong các cuộc hội thoại của agent
 
 ## Yêu cầu trước
 
 Trước khi bắt đầu, hãy đảm bảo bạn có:
 
-- Một tài khoản Azure với quyền truy cập AI Foundry
+- Một đăng ký Azure với quyền truy cập AI Foundry
 - Python 3.10+ hoặc .NET 8.0+
 - Azure CLI đã được cài đặt và cấu hình
 - Quyền phù hợp để tạo tài nguyên AI
@@ -42,7 +42,7 @@ Trước khi bắt đầu, hãy đảm bảo bạn có:
 
 Model Context Protocol là một phương thức chuẩn hóa để các ứng dụng AI kết nối với các nguồn dữ liệu và công cụ bên ngoài. Các lợi ích chính bao gồm:
 
-- **Tích hợp chuẩn hóa**: Giao diện nhất quán cho các công cụ và dịch vụ khác nhau
+- **Tích hợp chuẩn hóa**: Giao diện nhất quán giữa các công cụ và dịch vụ khác nhau
 - **Bảo mật**: Cơ chế xác thực và ủy quyền an toàn
 - **Linh hoạt**: Hỗ trợ nhiều nguồn dữ liệu, API và công cụ tùy chỉnh
 - **Mở rộng**: Dễ dàng thêm các tính năng và tích hợp mới
@@ -352,7 +352,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Đảm bảo kết nối mạng ổn định
 
 ### 2. Lỗi gọi công cụ
-- Kiểm tra các tham số và định dạng gọi công cụ
+- Kiểm tra các tham số và định dạng của công cụ
 - Xem xét các yêu cầu riêng của máy chủ
 - Thực hiện xử lý lỗi phù hợp
 
@@ -367,7 +367,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 1. **Khám phá các máy chủ MCP tùy chỉnh**: Xây dựng máy chủ MCP riêng cho các nguồn dữ liệu độc quyền
 2. **Triển khai bảo mật nâng cao**: Thêm OAuth2 hoặc các cơ chế xác thực tùy chỉnh
-3. **Giám sát và phân tích**: Thực hiện ghi log và giám sát việc sử dụng công cụ
+3. **Giám sát và phân tích**: Thực hiện ghi nhật ký và giám sát việc sử dụng công cụ
 4. **Mở rộng giải pháp**: Xem xét cân bằng tải và kiến trúc máy chủ MCP phân tán
 
 ## Tài nguyên bổ sung
@@ -385,7 +385,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ## Tiếp theo
 
-- [6. Đóng góp từ cộng đồng](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

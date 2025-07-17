@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-07-13T15:17:03+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T08:12:31+00:00",
   "source_file": "study_guide.md",
   "language_code": "tl"
 }
@@ -13,7 +13,7 @@ Ang gabay na ito ay nagbibigay ng pangkalahatang ideya tungkol sa istruktura at 
 
 ## Pangkalahatang-ideya ng Repository
 
-Ang Model Context Protocol (MCP) ay isang standard na framework para sa pakikipag-ugnayan sa pagitan ng mga AI model at mga client application. Ang repository na ito ay naglalaman ng komprehensibong kurikulum na may mga praktikal na halimbawa ng code sa C#, Java, JavaScript, Python, at TypeScript, na idinisenyo para sa mga AI developer, system architect, at software engineer.
+Ang Model Context Protocol (MCP) ay isang standard na framework para sa pakikipag-ugnayan sa pagitan ng mga AI model at mga client application. Orihinal itong ginawa ng Anthropic, at ngayon ay pinamamahalaan ng mas malawak na MCP community sa pamamagitan ng opisyal na GitHub organization. Ang repository na ito ay naglalaman ng komprehensibong kurikulum na may mga hands-on na halimbawa ng code sa C#, Java, JavaScript, Python, at TypeScript, na idinisenyo para sa mga AI developer, system architect, at software engineer.
 
 ## Visual Curriculum Map
 
@@ -38,10 +38,11 @@ mindmap
     03. Getting Started
       ::icon(fa fa-rocket)
       (First Server)
-      (First Client)
+      (Client)
       (LLM Client)
       (VS Code Integration)
       (SSE Server)
+      (HTTP Streaming)
       (AI Toolkit)
       (Testing)
       (Deployment)
@@ -53,17 +54,27 @@ mindmap
       (Sample Projects)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
+      (Context Engineering)
+      (Foundry Integration)
       (Multi-modal AI)
-      (Scaling)
-      (Enterprise Integration)
-      (Azure Integration)
-      (OAuth2)
+      (OAuth2 Demo)
+      (Real-time Search)
+      (Streaming)
       (Root Contexts)
+      (Routing)
+      (Sampling)
+      (Scaling)
+      (Security)
+      (Entra ID)
+      (Web Search)
+      
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (Feedback)
+      (MCP Clients)
+      (MCP Servers)
+      (Image Generation)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
       (Real-world Examples)
@@ -76,9 +87,10 @@ mindmap
       (Resilience)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (Solution Architectures)
-      (Deployment Blueprints)
-      (Project Walkthroughs)
+      (API Management)
+      (Travel Agent)
+      (Azure DevOps)
+      (Documentation MCP)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
       (AI Toolkit Integration)
@@ -88,7 +100,7 @@ mindmap
 
 ## Istruktura ng Repository
 
-Ang repository ay nakaayos sa sampung pangunahing seksyon, bawat isa ay tumutokoy sa iba't ibang aspeto ng MCP:
+Ang repository ay nakaayos sa sampung pangunahing seksyon, bawat isa ay tumutok sa iba't ibang aspeto ng MCP:
 
 1. **Introduction (00-Introduction/)**
    - Pangkalahatang ideya ng Model Context Protocol
@@ -96,82 +108,86 @@ Ang repository ay nakaayos sa sampung pangunahing seksyon, bawat isa ay tumutoko
    - Mga praktikal na gamit at benepisyo
 
 2. **Core Concepts (01-CoreConcepts/)**
-   - Arkitektura ng client-server
+   - Client-server architecture
    - Pangunahing bahagi ng protocol
    - Mga pattern ng messaging sa MCP
 
 3. **Security (02-Security/)**
    - Mga banta sa seguridad sa mga sistemang batay sa MCP
-   - Mga pinakamahusay na kasanayan para sa pag-secure ng mga implementasyon
+   - Pinakamahuhusay na kasanayan para sa pag-secure ng mga implementasyon
    - Mga estratehiya sa authentication at authorization
 
 4. **Getting Started (03-GettingStarted/)**
    - Pagsasaayos at konfigurasyon ng environment
    - Paggawa ng mga basic MCP server at client
    - Integrasyon sa mga umiiral na aplikasyon
-   - Mga subseksyon para sa unang server, unang client, LLM client, VS Code integration, SSE server, AI Toolkit, testing, at deployment
+   - Kasama ang mga seksyon para sa:
+     - Unang implementasyon ng server
+     - Pag-develop ng client
+     - Integrasyon ng LLM client
+     - Integrasyon sa VS Code
+     - Server-Sent Events (SSE) server
+     - HTTP streaming
+     - Integrasyon ng AI Toolkit
+     - Mga estratehiya sa testing
+     - Mga gabay sa deployment
 
 5. **Practical Implementation (04-PracticalImplementation/)**
    - Paggamit ng SDKs sa iba't ibang programming language
-   - Mga teknik sa debugging, testing, at validation
+   - Pag-debug, testing, at validation techniques
    - Paggawa ng reusable prompt templates at workflows
-   - Mga sample na proyekto na may mga halimbawa ng implementasyon
+   - Mga sample projects na may mga halimbawa ng implementasyon
 
 6. **Advanced Topics (05-AdvancedTopics/)**
-   - Multi-modal AI workflows at extensibility
-   - Mga secure na estratehiya sa scaling
-   - MCP sa mga enterprise ecosystem
-   - Mga espesyal na paksa kabilang ang Azure integration, multi-modality, OAuth2, root contexts, routing, sampling, scaling, security, web search integration, at streaming.
+   - Mga teknik sa context engineering
+   - Integrasyon ng foundry agent
+   - Multi-modal AI workflows
+   - Mga demo ng OAuth2 authentication
+   - Real-time search capabilities
+   - Real-time streaming
+   - Implementasyon ng root contexts
+   - Mga estratehiya sa routing
+   - Sampling techniques
+   - Mga paraan ng scaling
+   - Mga konsiderasyon sa seguridad
+   - Integrasyon ng Entra ID security
+   - Integrasyon ng web search
 
 7. **Community Contributions (06-CommunityContributions/)**
    - Paano mag-ambag ng code at dokumentasyon
    - Pakikipagtulungan sa pamamagitan ng GitHub
    - Mga pagpapabuti at feedback mula sa komunidad
+   - Paggamit ng iba't ibang MCP clients (Claude Desktop, Cline, VSCode)
+   - Paggamit ng mga kilalang MCP servers kabilang ang image generation
 
 8. **Lessons from Early Adoption (07-LessonsfromEarlyAdoption/)**
    - Mga totoong implementasyon at kwento ng tagumpay
    - Paggawa at pag-deploy ng mga solusyong batay sa MCP
-   - Mga trend at roadmap para sa hinaharap
+   - Mga uso at roadmap para sa hinaharap
 
 9. **Best Practices (08-BestPractices/)**
-   - Pag-tune ng performance at optimization
-   - Pagdidisenyo ng fault-tolerant na mga MCP system
+   - Pag-tune at pag-optimize ng performance
+   - Pagdidisenyo ng fault-tolerant na MCP systems
    - Mga estratehiya sa testing at resilience
 
 10. **Case Studies (09-CaseStudy/)**
-    - Malalimang pag-aaral sa mga arkitektura ng MCP solution
-    - Mga blueprint sa deployment at mga tip sa integrasyon
-    - Mga annotated na diagram at walkthrough ng proyekto
+    - Case study: Integrasyon ng Azure API Management
+    - Case study: Implementasyon ng travel agent
+    - Case study: Integrasyon ng Azure DevOps sa YouTube
+    - Mga halimbawa ng implementasyon na may detalyadong dokumentasyon
 
 11. **Hands-on Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Komprehensibong hands-on workshop na pinagsasama ang MCP at Microsoft AI Toolkit para sa VS Code
+    - Komprehensibong hands-on workshop na pinagsasama ang MCP at AI Toolkit
     - Paggawa ng matatalinong aplikasyon na nag-uugnay ng AI models sa mga totoong gamit
-    - Mga praktikal na module na sumasaklaw sa mga pundamental, custom server development, at mga estratehiya sa production deployment
+    - Mga praktikal na module na sumasaklaw sa mga pundasyon, custom server development, at mga estratehiya sa production deployment
+    - Lab-based na paraan ng pag-aaral na may step-by-step na mga tagubilin
 
-## Mga Sample na Proyekto
-
-Kasama sa repository ang iba't ibang sample na proyekto na nagpapakita ng implementasyon ng MCP sa iba't ibang programming language:
-
-### Basic MCP Calculator Samples
-- C# MCP Server Example
-- Java MCP Calculator
-- JavaScript MCP Demo
-- Python MCP Server
-- TypeScript MCP Example
-
-### Advanced MCP Calculator Projects
-- Advanced C# Sample
-- Java Container App Example
-- JavaScript Advanced Sample
-- Python Complex Implementation
-- TypeScript Container Sample
-
-## Karagdagang Resources
+## Karagdagang Mga Resources
 
 Kasama sa repository ang mga sumusuportang resources:
 
 - **Images folder**: Naglalaman ng mga diagram at ilustrasyon na ginamit sa buong kurikulum
-- **Translations**: Suporta sa maraming wika gamit ang automated na pagsasalin ng dokumentasyon
+- **Translations**: Suporta sa maraming wika na may automated na pagsasalin ng dokumentasyon
 - **Opisyal na MCP Resources**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
@@ -183,15 +199,70 @@ Kasama sa repository ang mga sumusuportang resources:
 2. **Pokus sa Partikular na Wika**: Kung interesado ka sa isang partikular na programming language, tingnan ang mga sample directories para sa mga implementasyon sa iyong gustong wika.
 3. **Praktikal na Implementasyon**: Magsimula sa seksyong "Getting Started" para i-setup ang iyong environment at gumawa ng unang MCP server at client.
 4. **Mas Malalim na Pagsisid**: Kapag komportable ka na sa mga batayan, tuklasin ang mga advanced topics para palawakin ang iyong kaalaman.
-5. **Pakikilahok sa Komunidad**: Sumali sa [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) para makipag-ugnayan sa mga eksperto at kapwa developer.
+5. **Pakikilahok sa Komunidad**: Sumali sa MCP community sa pamamagitan ng GitHub discussions at Discord channels para makipag-ugnayan sa mga eksperto at kapwa developer.
 
-## Pag-aambag
+## MCP Clients at Mga Tools
 
-Malugod na tinatanggap ng repository na ito ang mga kontribusyon mula sa komunidad. Tingnan ang seksyong Community Contributions para sa gabay kung paano mag-ambag.
+Sinasaklaw ng kurikulum ang iba't ibang MCP clients at tools:
+
+1. **Opisyal na Clients**:
+   - Visual Studio Code
+   - MCP sa Visual Studio Code
+   - Claude Desktop
+   - Claude sa VSCode
+   - Claude API
+
+2. **Community Clients**:
+   - Cline (terminal-based)
+   - Cursor (code editor)
+   - ChatMCP
+   - Windsurf
+
+3. **Mga Tool para sa Pamamahala ng MCP**:
+   - MCP CLI
+   - MCP Manager
+   - MCP Linker
+   - MCP Router
+
+## Mga Kilalang MCP Servers
+
+Ipinapakilala ng repository ang iba't ibang MCP servers, kabilang ang:
+
+1. **Opisyal na Reference Servers**:
+   - Filesystem
+   - Fetch
+   - Memory
+   - Sequential Thinking
+
+2. **Image Generation**:
+   - Azure OpenAI DALL-E 3
+   - Stable Diffusion WebUI
+   - Replicate
+
+3. **Mga Development Tools**:
+   - Git MCP
+   - Terminal Control
+   - Code Assistant
+
+4. **Mga Espesyal na Server**:
+   - Salesforce
+   - Microsoft Teams
+   - Jira & Confluence
+
+## Pag-ambag
+
+Malugod na tinatanggap ng repository na ito ang mga kontribusyon mula sa komunidad. Tingnan ang seksyong Community Contributions para sa mga gabay kung paano epektibong makapag-ambag sa MCP ecosystem.
+
+## Changelog
+
+| Petsa | Mga Pagbabago |
+|-------|---------------|
+| Hulyo 16, 2025 | - In-update ang istruktura ng repository upang ipakita ang kasalukuyang nilalaman<br>- Idinagdag ang seksyon ng MCP Clients at Tools<br>- Idinagdag ang seksyon ng Popular MCP Servers<br>- In-update ang Visual Curriculum Map na may lahat ng kasalukuyang paksa<br>- Pinalawak ang Advanced Topics na seksyon na may lahat ng espesyal na larangan<br>- In-update ang Case Studies upang ipakita ang mga totoong halimbawa<br>- Nilinaw ang pinagmulan ng MCP bilang gawa ng Anthropic |
+| Hunyo 11, 2025 | - Unang paglikha ng gabay sa pag-aaral<br>- Idinagdag ang Visual Curriculum Map<br>- Inilatag ang istruktura ng repository<br>- Kasama ang mga sample projects at karagdagang resources |
 
 ---
 
-*Ang gabay na ito ay ginawa noong Hunyo 11, 2025, at nagbibigay ng pangkalahatang ideya ng repository hanggang sa petsang iyon. Maaaring may mga pagbabago o update sa nilalaman ng repository mula noon.*
+*Ang gabay na ito ay na-update noong Hulyo 16, 2025, at nagbibigay ng pangkalahatang ideya ng repository hanggang sa petsang iyon. Maaring ma-update ang nilalaman ng repository pagkatapos ng petsang ito.*
 
 **Paalala**:  
 Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

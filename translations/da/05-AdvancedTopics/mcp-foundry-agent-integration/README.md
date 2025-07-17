@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:35:29+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T06:29:57+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "da"
 }
@@ -13,7 +13,7 @@ Denne vejledning viser, hvordan man integrerer Model Context Protocol (MCP) serv
 
 ## Introduktion
 
-Model Context Protocol (MCP) er en åben standard, der gør det muligt for AI-applikationer sikkert at forbinde til eksterne datakilder og værktøjer. Når MCP integreres med Azure AI Foundry, kan agenter få adgang til og interagere med forskellige eksterne tjenester, API’er og datakilder på en standardiseret måde.
+Model Context Protocol (MCP) er en åben standard, der gør det muligt for AI-applikationer sikkert at forbinde til eksterne datakilder og værktøjer. Når det integreres med Azure AI Foundry, giver MCP agenter adgang til og mulighed for at interagere med forskellige eksterne tjenester, API’er og datakilder på en standardiseret måde.
 
 Denne integration kombinerer fleksibiliteten i MCP’s værktøjsøkosystem med Azure AI Foundrys robuste agentrammeværk og leverer AI-løsninger i virksomhedsklasse med omfattende tilpasningsmuligheder.
 
@@ -43,7 +43,7 @@ Før du går i gang, skal du sikre dig, at du har:
 Model Context Protocol er en standardiseret måde for AI-applikationer at forbinde til eksterne datakilder og værktøjer. Vigtige fordele inkluderer:
 
 - **Standardiseret integration**: Ensartet grænseflade på tværs af forskellige værktøjer og tjenester  
-- **Sikkerhed**: Sikker autentificering og autorisation  
+- **Sikkerhed**: Sikker autentificering og autorisationsmekanismer  
 - **Fleksibilitet**: Understøttelse af forskellige datakilder, API’er og brugerdefinerede værktøjer  
 - **Udvidelsesmuligheder**: Let at tilføje nye funktioner og integrationer  
 
@@ -347,7 +347,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ## Fejlfinding af almindelige problemer
 
 ### 1. Forbindelsesproblemer  
-- Kontroller, at MCP-serverens URL er tilgængelig  
+- Bekræft, at MCP-serverens URL er tilgængelig  
 - Tjek autentificeringsoplysninger  
 - Sørg for netværksforbindelse  
 
@@ -385,7 +385,7 @@ For yderligere support og spørgsmål:
 
 ## Hvad er det næste
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

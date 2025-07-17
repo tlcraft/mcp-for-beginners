@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:34:42+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T05:46:29+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "el"
 }
 -->
-# Ενσωμάτωση Model Context Protocol (MCP) με Azure AI Foundry
+# Model Context Protocol (MCP) Ενσωμάτωση με Azure AI Foundry
 
 Αυτός ο οδηγός δείχνει πώς να ενσωματώσετε τους διακομιστές Model Context Protocol (MCP) με τους agents του Azure AI Foundry, επιτρέποντας ισχυρή ορχήστρωση εργαλείων και δυνατότητες AI για επιχειρήσεις.
 
@@ -17,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Αυτή η ενσωμάτωση συνδυάζει την ευελιξία του οικοσυστήματος εργαλείων του MCP με το ισχυρό πλαίσιο agents του Azure AI Foundry, προσφέροντας λύσεις AI επιπέδου επιχείρησης με εκτεταμένες δυνατότητες προσαρμογής.
 
-**Note:** Εάν θέλετε να χρησιμοποιήσετε το MCP στην υπηρεσία Azure AI Foundry Agent, προς το παρόν υποστηρίζονται μόνο οι εξής περιοχές: westus, westus2, uaenorth, southindia και switzerlandnorth
+**Note:** Εάν θέλετε να χρησιμοποιήσετε MCP στην υπηρεσία Azure AI Foundry Agent, προς το παρόν υποστηρίζονται μόνο οι εξής περιοχές: westus, westus2, uaenorth, southindia και switzerlandnorth
 
 ## Στόχοι Μάθησης
 
@@ -62,7 +62,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ***Note*** Μπορείτε να εκτελέσετε αυτό το [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
-### 1. Εγκατάσταση Απαιτούμενων Πακέτων
+### 1. Εγκατάσταση Απαραίτητων Πακέτων
 
 ```bash
 pip install azure-ai-projects -U
@@ -80,7 +80,7 @@ from azure.identity import DefaultAzureCredential
 from azure.ai.agents.models import McpTool, RequiredMcpToolCall, SubmitToolApprovalAction, ToolApproval
 ```
 
-### 3. Διαμόρφωση Ρυθμίσεων MCP
+### 3. Ρύθμιση Παραμέτρων MCP
 
 ```python
 mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/api/mcp")
@@ -191,7 +191,7 @@ with project_client:
 
 ***Note*** Μπορείτε να εκτελέσετε αυτό το [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
-### 1. Εγκατάσταση Απαιτούμενων Πακέτων
+### 1. Εγκατάσταση Απαραίτητων Πακέτων
 
 ```csharp
 #r "nuget: Azure.AI.Agents.Persistent, 1.1.0-beta.4"
@@ -205,7 +205,7 @@ using Azure.AI.Agents.Persistent;
 using Azure.Identity;
 ```
 
-### 3. Διαμόρφωση Ρυθμίσεων
+### 3. Ρύθμιση Παραμέτρων
 
 ```csharp
 var projectEndpoint = "https://your-project-endpoint.services.ai.azure.com/api/projects/your-project";
@@ -347,13 +347,13 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 ## Αντιμετώπιση Συνηθισμένων Προβλημάτων
 
 ### 1. Προβλήματα Σύνδεσης
-- Επαληθεύστε ότι το URL του διακομιστή MCP είναι προσβάσιμο
+- Επαληθεύστε ότι το URL του MCP server είναι προσβάσιμο
 - Ελέγξτε τα διαπιστευτήρια πιστοποίησης
 - Βεβαιωθείτε για τη δικτυακή συνδεσιμότητα
 
 ### 2. Αποτυχίες Κλήσεων Εργαλείων
-- Επανεξετάστε τα ορίσματα και τη μορφοποίηση των κλήσεων εργαλείων
-- Ελέγξτε τις απαιτήσεις του διακομιστή
+- Ελέγξτε τα ορίσματα και τη μορφοποίηση των κλήσεων εργαλείων
+- Εξετάστε τις απαιτήσεις του συγκεκριμένου διακομιστή
 - Υλοποιήστε σωστή διαχείριση σφαλμάτων
 
 ### 3. Προβλήματα Απόδοσης
@@ -365,10 +365,10 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 Για να βελτιώσετε περαιτέρω την ενσωμάτωση MCP:
 
-1. **Εξερευνήστε Προσαρμοσμένους Διακομιστές MCP**: Δημιουργήστε δικούς σας διακομιστές MCP για ιδιόκτητες πηγές δεδομένων
+1. **Εξερευνήστε Προσαρμοσμένους MCP Servers**: Δημιουργήστε δικούς σας MCP servers για ιδιόκτητες πηγές δεδομένων
 2. **Υλοποιήστε Προηγμένη Ασφάλεια**: Προσθέστε OAuth2 ή προσαρμοσμένους μηχανισμούς πιστοποίησης
-3. **Παρακολούθηση και Αναλύσεις**: Υλοποιήστε καταγραφή και παρακολούθηση χρήσης εργαλείων
-4. **Κλιμάκωση της Λύσης σας**: Σκεφτείτε ισορροπία φορτίου και κατανεμημένες αρχιτεκτονικές διακομιστών MCP
+3. **Παρακολούθηση και Αναλύσεις**: Υλοποιήστε logging και monitoring για τη χρήση εργαλείων
+4. **Κλιμάκωση της Λύσης σας**: Σκεφτείτε ισορροπία φορτίου και κατανεμημένες αρχιτεκτονικές MCP servers
 
 ## Πρόσθετοι Πόροι
 
@@ -381,11 +381,11 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 Για επιπλέον υποστήριξη και ερωτήσεις:
 - Ανατρέξτε στην [τεκμηρίωση Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- Ελέγξτε τους [πόρους της κοινότητας MCP](https://modelcontextprotocol.io/)
+- Εξετάστε τους [πόρους της κοινότητας MCP](https://modelcontextprotocol.io/)
 
 ## Τι ακολουθεί
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

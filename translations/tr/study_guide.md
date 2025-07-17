@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-17T01:22:42+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T05:31:22+00:00",
   "source_file": "study_guide.md",
   "language_code": "tr"
 }
 -->
-# Model Context Protocol (MCP) Yeni Başlayanlar için - Çalışma Rehberi
+# Yeni Başlayanlar için Model Context Protocol (MCP) - Çalışma Rehberi
 
-Bu çalışma rehberi, "Model Context Protocol (MCP) Yeni Başlayanlar için" müfredatının depo yapısı ve içeriği hakkında genel bir bakış sunar. Depoyu verimli bir şekilde gezmek ve mevcut kaynaklardan en iyi şekilde yararlanmak için bu rehberi kullanabilirsiniz.
+Bu çalışma rehberi, "Yeni Başlayanlar için Model Context Protocol (MCP)" müfredatının depo yapısı ve içeriği hakkında genel bir bakış sunar. Depoyu verimli bir şekilde gezmek ve mevcut kaynaklardan en iyi şekilde yararlanmak için bu rehberi kullanın.
 
 ## Depo Genel Bakış
 
-Model Context Protocol (MCP), yapay zeka modelleri ile istemci uygulamalar arasındaki etkileşimler için standartlaştırılmış bir çerçevedir. İlk olarak Anthropic tarafından oluşturulan MCP, artık resmi GitHub organizasyonu aracılığıyla geniş MCP topluluğu tarafından sürdürülmektedir. Bu depo, AI geliştiricileri, sistem mimarları ve yazılım mühendisleri için C#, Java, JavaScript, Python ve TypeScript dillerinde uygulamalı kod örnekleri içeren kapsamlı bir müfredat sunar.
+Model Context Protocol (MCP), yapay zeka modelleri ile istemci uygulamalar arasındaki etkileşimler için standartlaştırılmış bir çerçevedir. İlk olarak Anthropic tarafından oluşturulan MCP, artık resmi GitHub organizasyonu aracılığıyla geniş MCP topluluğu tarafından sürdürülmektedir. Bu depo, yapay zeka geliştiricileri, sistem mimarları ve yazılım mühendisleri için C#, Java, JavaScript, Python ve TypeScript dillerinde uygulamalı kod örnekleri içeren kapsamlı bir müfredat sunar.
 
 ## Görsel Müfredat Haritası
 
@@ -100,11 +100,11 @@ mindmap
 
 ## Depo Yapısı
 
-Depo, MCP’nin farklı yönlerine odaklanan on ana bölüm halinde düzenlenmiştir:
+Depo, MCP’nin farklı yönlerine odaklanan on ana bölüme ayrılmıştır:
 
 1. **Giriş (00-Introduction/)**
    - Model Context Protocol’e genel bakış
-   - AI süreçlerinde standartlaşmanın önemi
+   - Yapay zeka süreçlerinde standartlaşmanın önemi
    - Pratik kullanım senaryoları ve faydalar
 
 2. **Temel Kavramlar (01-CoreConcepts/)**
@@ -141,7 +141,7 @@ Depo, MCP’nin farklı yönlerine odaklanan on ana bölüm halinde düzenlenmi�
 6. **İleri Konular (05-AdvancedTopics/)**
    - Bağlam mühendisliği teknikleri
    - Foundry ajan entegrasyonu
-   - Çok modlu AI iş akışları
+   - Çok modlu yapay zeka iş akışları
    - OAuth2 kimlik doğrulama demoları
    - Gerçek zamanlı arama özellikleri
    - Gerçek zamanlı akış
@@ -162,7 +162,7 @@ Depo, MCP’nin farklı yönlerine odaklanan on ana bölüm halinde düzenlenmi�
 
 8. **Erken Benimsemeden Alınan Dersler (07-LessonsfromEarlyAdoption/)**
    - Gerçek dünya uygulamaları ve başarı hikayeleri
-   - MCP tabanlı çözümlerin oluşturulması ve dağıtımı
+   - MCP tabanlı çözümlerin geliştirilmesi ve dağıtımı
    - Trendler ve gelecek yol haritası
 
 9. **En İyi Uygulamalar (08-BestPractices/)**
@@ -178,7 +178,7 @@ Depo, MCP’nin farklı yönlerine odaklanan on ana bölüm halinde düzenlenmi�
 
 11. **Uygulamalı Atölye (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - MCP ile AI Toolkit’i birleştiren kapsamlı uygulamalı atölye
-    - AI modelleri ile gerçek dünya araçlarını birleştiren akıllı uygulamalar geliştirme
+    - Yapay zeka modellerini gerçek dünya araçlarıyla birleştiren akıllı uygulamalar geliştirme
     - Temeller, özel sunucu geliştirme ve üretim dağıtım stratejilerini kapsayan pratik modüller
     - Adım adım talimatlarla laboratuvar tabanlı öğrenme yaklaşımı
 
@@ -196,7 +196,7 @@ Depo, destekleyici kaynaklar içerir:
 ## Bu Depo Nasıl Kullanılır
 
 1. **Sıralı Öğrenme**: Yapılandırılmış bir öğrenme deneyimi için bölümleri sırayla (00’dan 10’a kadar) takip edin.
-2. **Dil Odaklı İnceleme**: Belirli bir programlama diliyle ilgileniyorsanız, tercih ettiğiniz dildeki uygulamalar için örnek dizinlerini keşfedin.
+2. **Dil Odaklı İnceleme**: Belirli bir programlama diliyle ilgileniyorsanız, örnekler klasörlerinde tercih ettiğiniz dildeki uygulamalara göz atın.
 3. **Pratik Uygulama**: Ortamınızı kurmak ve ilk MCP sunucu ile istemcinizi oluşturmak için "Başlarken" bölümünden başlayın.
 4. **İleri Düzey Keşif**: Temelleri öğrendikten sonra bilgilerinizi genişletmek için ileri konulara dalın.
 5. **Topluluk Katılımı**: MCP topluluğuna GitHub tartışmaları ve Discord kanalları aracılığıyla katılarak uzmanlar ve diğer geliştiricilerle bağlantı kurun.
@@ -206,6 +206,8 @@ Depo, destekleyici kaynaklar içerir:
 Müfredat, çeşitli MCP istemcileri ve araçlarını kapsar:
 
 1. **Resmi İstemciler**:
+   - Visual Studio Code
+   - Visual Studio Code içindeki MCP
    - Claude Desktop
    - VSCode içindeki Claude
    - Claude API
@@ -249,18 +251,18 @@ Depo, çeşitli MCP sunucularını tanıtır:
 
 ## Katkıda Bulunma
 
-Bu depo, topluluk katkılarına açıktır. MCP ekosistemine etkili katkı sağlamak için Topluluk Katkıları bölümündeki rehbere bakabilirsiniz.
+Bu depo, topluluk katkılarına açıktır. MCP ekosistemine etkili katkı sağlamak için Topluluk Katkıları bölümüne bakabilirsiniz.
 
 ## Değişiklik Günlüğü
 
 | Tarih | Değişiklikler |
 |-------|---------------|
-| 16 Temmuz 2025 | - Mevcut içeriği yansıtacak şekilde depo yapısı güncellendi<br>- MCP İstemcileri ve Araçları bölümü eklendi<br>- Popüler MCP Sunucuları bölümü eklendi<br>- Tüm güncel konuları içeren Görsel Müfredat Haritası güncellendi<br>- İleri Konular bölümü tüm uzmanlık alanlarıyla genişletildi<br>- Vaka Çalışmaları gerçek örneklerle güncellendi<br>- MCP’nin Anthropic tarafından oluşturulduğu netleştirildi |
-| 11 Haziran 2025 | - Çalışma rehberi ilk kez oluşturuldu<br>- Görsel Müfredat Haritası eklendi<br>- Depo yapısı ana hatlarıyla belirtildi<br>- Örnek projeler ve ek kaynaklar dahil edildi |
+| 16 Temmuz 2025 | - Depo yapısı güncellenerek mevcut içerik yansıtıldı<br>- MCP İstemcileri ve Araçları bölümü eklendi<br>- Popüler MCP Sunucuları bölümü eklendi<br>- Tüm güncel konuları içeren Görsel Müfredat Haritası güncellendi<br>- İleri Konular bölümü tüm uzmanlık alanlarıyla genişletildi<br>- Vaka Çalışmaları gerçek örneklerle güncellendi<br>- MCP’nin Anthropic tarafından oluşturulduğu netleştirildi |
+| 11 Haziran 2025 | - Çalışma rehberi ilk kez oluşturuldu<br>- Görsel Müfredat Haritası eklendi<br>- Depo yapısı özetlendi<br>- Örnek projeler ve ek kaynaklar dahil edildi |
 
 ---
 
 *Bu çalışma rehberi 16 Temmuz 2025 tarihinde güncellenmiş olup, o tarihteki depo içeriğinin genel bir özetini sunmaktadır. Depo içeriği bu tarihten sonra güncellenmiş olabilir.*
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

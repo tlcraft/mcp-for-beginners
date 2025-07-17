@@ -1,44 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:41:59+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-17T07:39:22+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "vi"
 }
 -->
-# Thực hành bảo mật tốt nhất
+# Thực Tiễn Tốt Nhất Về Bảo Mật
 
-Bảo mật là yếu tố then chốt trong các triển khai MCP, đặc biệt trong môi trường doanh nghiệp. Việc đảm bảo các công cụ và dữ liệu được bảo vệ khỏi truy cập trái phép, rò rỉ dữ liệu và các mối đe dọa bảo mật khác là rất quan trọng.
+Bảo mật là yếu tố then chốt đối với các triển khai MCP, đặc biệt trong môi trường doanh nghiệp. Việc đảm bảo các công cụ và dữ liệu được bảo vệ khỏi truy cập trái phép, rò rỉ dữ liệu và các mối đe dọa bảo mật khác là rất quan trọng.
 
 ## Giới thiệu
 
-Trong bài học này, chúng ta sẽ tìm hiểu các thực hành bảo mật tốt nhất cho các triển khai MCP. Chúng ta sẽ đề cập đến xác thực và phân quyền, bảo vệ dữ liệu, thực thi công cụ an toàn, và tuân thủ các quy định về bảo mật dữ liệu.
+Model Context Protocol (MCP) đòi hỏi các cân nhắc bảo mật đặc thù do vai trò của nó trong việc cung cấp cho LLM quyền truy cập vào dữ liệu và công cụ. Bài học này sẽ khám phá các thực tiễn bảo mật tốt nhất cho các triển khai MCP dựa trên hướng dẫn chính thức của MCP và các mẫu bảo mật đã được thiết lập.
+
+MCP tuân theo các nguyên tắc bảo mật chính để đảm bảo các tương tác an toàn và đáng tin cậy:
+
+- **Sự đồng ý và kiểm soát của người dùng**: Người dùng phải cung cấp sự đồng ý rõ ràng trước khi bất kỳ dữ liệu nào được truy cập hoặc các thao tác được thực hiện. Cung cấp quyền kiểm soát rõ ràng về dữ liệu được chia sẻ và các hành động được phép.
+  
+- **Bảo mật dữ liệu cá nhân**: Dữ liệu người dùng chỉ được tiết lộ khi có sự đồng ý rõ ràng và phải được bảo vệ bằng các cơ chế kiểm soát truy cập phù hợp. Ngăn chặn việc truyền dữ liệu trái phép.
+  
+- **An toàn công cụ**: Trước khi gọi bất kỳ công cụ nào, cần có sự đồng ý rõ ràng từ người dùng. Người dùng cần hiểu rõ chức năng của từng công cụ, đồng thời phải áp dụng các ranh giới bảo mật chặt chẽ.
 
 ## Mục tiêu học tập
 
-Sau bài học này, bạn sẽ có thể:
+Sau bài học này, bạn sẽ có khả năng:
 
-- Triển khai các cơ chế xác thực và phân quyền an toàn cho các máy chủ MCP.
-- Bảo vệ dữ liệu nhạy cảm bằng cách sử dụng mã hóa và lưu trữ an toàn.
+- Triển khai các cơ chế xác thực và ủy quyền an toàn cho các máy chủ MCP.
+- Bảo vệ dữ liệu nhạy cảm bằng mã hóa và lưu trữ an toàn.
 - Đảm bảo thực thi công cụ an toàn với các kiểm soát truy cập phù hợp.
-- Áp dụng các thực hành tốt nhất để bảo vệ dữ liệu và tuân thủ quy định về quyền riêng tư.
+- Áp dụng các thực tiễn tốt nhất về bảo vệ dữ liệu và tuân thủ quyền riêng tư.
+- Nhận diện và giảm thiểu các lỗ hổng bảo mật phổ biến của MCP như vấn đề confused deputy, token passthrough và chiếm đoạt phiên làm việc.
 
-## Xác thực và phân quyền
+## Xác thực và Ủy quyền
 
-Xác thực và phân quyền là yếu tố thiết yếu để bảo vệ các máy chủ MCP. Xác thực trả lời câu hỏi "Bạn là ai?" trong khi phân quyền trả lời "Bạn có thể làm gì?".
+Xác thực và ủy quyền là yếu tố thiết yếu để bảo vệ các máy chủ MCP. Xác thực trả lời câu hỏi "Bạn là ai?" trong khi ủy quyền trả lời "Bạn có thể làm gì?".
 
-Hãy cùng xem ví dụ về cách triển khai xác thực và phân quyền an toàn trên các máy chủ MCP sử dụng .NET và Java.
+Theo đặc tả bảo mật MCP, các điểm sau là những cân nhắc bảo mật quan trọng:
+
+1. **Xác thực token**: Máy chủ MCP KHÔNG ĐƯỢC chấp nhận bất kỳ token nào không được cấp phát rõ ràng cho máy chủ MCP. "Token passthrough" là một mẫu chống được cấm rõ ràng.
+
+2. **Kiểm tra ủy quyền**: Các máy chủ MCP có triển khai ủy quyền PHẢI xác minh tất cả các yêu cầu đến và KHÔNG ĐƯỢC sử dụng phiên làm phương thức xác thực.
+
+3. **Quản lý phiên an toàn**: Khi sử dụng phiên để lưu trạng thái, máy chủ MCP PHẢI sử dụng ID phiên an toàn, không xác định được trước, được tạo ra bằng bộ sinh số ngẫu nhiên an toàn. ID phiên NÊN được liên kết với thông tin người dùng cụ thể.
+
+4. **Sự đồng ý rõ ràng của người dùng**: Đối với các máy chủ proxy, các triển khai MCP PHẢI lấy sự đồng ý của người dùng cho từng client được đăng ký động trước khi chuyển tiếp đến các máy chủ ủy quyền bên thứ ba.
+
+Hãy xem ví dụ về cách triển khai xác thực và ủy quyền an toàn trong các máy chủ MCP sử dụng .NET và Java.
 
 ### Tích hợp .NET Identity
 
-ASP .NET Core Identity cung cấp một khung làm việc mạnh mẽ để quản lý xác thực và phân quyền người dùng. Chúng ta có thể tích hợp nó với các máy chủ MCP để bảo vệ quyền truy cập vào công cụ và tài nguyên.
+ASP .NET Core Identity cung cấp một khung làm việc mạnh mẽ để quản lý xác thực và ủy quyền người dùng. Chúng ta có thể tích hợp nó với các máy chủ MCP để bảo vệ quyền truy cập vào công cụ và tài nguyên.
 
 Có một số khái niệm cốt lõi cần hiểu khi tích hợp ASP.NET Core Identity với các máy chủ MCP, cụ thể:
 
-- **Cấu hình Identity**: Thiết lập ASP.NET Core Identity với các vai trò và quyền của người dùng. Một quyền (claim) là một thông tin về người dùng, ví dụ như vai trò hoặc quyền hạn của họ như "Admin" hoặc "User".
-- **Xác thực JWT**: Sử dụng JSON Web Tokens (JWT) để truy cập API an toàn. JWT là một chuẩn để truyền thông tin an toàn giữa các bên dưới dạng đối tượng JSON, có thể được xác minh và tin cậy vì nó được ký số.
-- **Chính sách phân quyền**: Định nghĩa các chính sách để kiểm soát quyền truy cập vào các công cụ cụ thể dựa trên vai trò người dùng. MCP sử dụng các chính sách phân quyền để xác định người dùng nào có thể truy cập công cụ nào dựa trên vai trò và quyền của họ.
+- **Cấu hình Identity**: Thiết lập ASP.NET Core Identity với các vai trò và claims của người dùng. Claim là một thông tin về người dùng, ví dụ như vai trò hoặc quyền hạn, như "Admin" hoặc "User".
+- **Xác thực JWT**: Sử dụng JSON Web Tokens (JWT) để truy cập API an toàn. JWT là tiêu chuẩn truyền tải thông tin an toàn giữa các bên dưới dạng đối tượng JSON, có thể được xác minh và tin cậy vì được ký số.
+- **Chính sách ủy quyền**: Định nghĩa các chính sách để kiểm soát quyền truy cập vào các công cụ dựa trên vai trò người dùng. MCP sử dụng các chính sách ủy quyền để xác định người dùng nào có thể truy cập công cụ nào dựa trên vai trò và claims của họ.
 
 ```csharp
 public class SecureMcpStartup
@@ -112,21 +131,21 @@ public class SecureMcpStartup
 Trong đoạn mã trên, chúng ta đã:
 
 - Cấu hình ASP.NET Core Identity để quản lý người dùng.
-- Thiết lập xác thực JWT để truy cập API an toàn. Chúng ta đã chỉ định các tham số xác thực token, bao gồm nhà phát hành, đối tượng và khóa ký.
-- Định nghĩa các chính sách phân quyền để kiểm soát quyền truy cập công cụ dựa trên vai trò người dùng. Ví dụ, chính sách "CanUseAdminTools" yêu cầu người dùng có vai trò "Admin", trong khi chính sách "CanUseBasic" yêu cầu người dùng đã xác thực.
-- Đăng ký các công cụ MCP với các yêu cầu phân quyền cụ thể, đảm bảo chỉ những người dùng có vai trò phù hợp mới có thể truy cập.
+- Thiết lập xác thực JWT để truy cập API an toàn. Chúng ta đã chỉ định các tham số xác thực token, bao gồm issuer, audience và khóa ký.
+- Định nghĩa các chính sách ủy quyền để kiểm soát quyền truy cập công cụ dựa trên vai trò người dùng. Ví dụ, chính sách "CanUseAdminTools" yêu cầu người dùng có vai trò "Admin", trong khi chính sách "CanUseBasic" yêu cầu người dùng đã xác thực.
+- Đăng ký các công cụ MCP với các yêu cầu ủy quyền cụ thể, đảm bảo chỉ người dùng có vai trò phù hợp mới có thể truy cập.
 
 ### Tích hợp Java Spring Security
 
-Đối với Java, chúng ta sẽ sử dụng Spring Security để triển khai xác thực và phân quyền an toàn cho các máy chủ MCP. Spring Security cung cấp một khung bảo mật toàn diện tích hợp mượt mà với các ứng dụng Spring.
+Đối với Java, chúng ta sẽ sử dụng Spring Security để triển khai xác thực và ủy quyền an toàn cho các máy chủ MCP. Spring Security cung cấp một khung bảo mật toàn diện tích hợp mượt mà với các ứng dụng Spring.
 
 Các khái niệm cốt lõi ở đây bao gồm:
 
-- **Cấu hình Spring Security**: Thiết lập cấu hình bảo mật cho xác thực và phân quyền.
-- **OAuth2 Resource Server**: Sử dụng OAuth2 để truy cập an toàn các công cụ MCP. OAuth2 là một khung phân quyền cho phép các dịch vụ bên thứ ba trao đổi token truy cập để truy cập API an toàn.
-- **Bộ chặn bảo mật (Security Interceptors)**: Triển khai các bộ chặn bảo mật để thực thi kiểm soát truy cập khi chạy công cụ.
+- **Cấu hình Spring Security**: Thiết lập cấu hình bảo mật cho xác thực và ủy quyền.
+- **OAuth2 Resource Server**: Sử dụng OAuth2 để truy cập an toàn các công cụ MCP. OAuth2 là khung ủy quyền cho phép dịch vụ bên thứ ba trao đổi token truy cập để truy cập API an toàn.
+- **Bộ chặn bảo mật (Security Interceptors)**: Triển khai các bộ chặn bảo mật để thực thi kiểm soát truy cập khi thực thi công cụ.
 - **Kiểm soát truy cập dựa trên vai trò**: Sử dụng vai trò để kiểm soát quyền truy cập vào các công cụ và tài nguyên cụ thể.
-- **Chú thích bảo mật (Security Annotations)**: Sử dụng các chú thích để bảo vệ các phương thức và điểm cuối.
+- **Chú thích bảo mật (Security Annotations)**: Sử dụng chú thích để bảo vệ các phương thức và điểm cuối.
 
 ```java
 @Configuration
@@ -180,14 +199,14 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Trong đoạn mã trên, chúng ta đã:
 
-- Cấu hình Spring Security để bảo vệ các điểm cuối MCP, cho phép truy cập công khai để khám phá công cụ trong khi yêu cầu xác thực để thực thi công cụ.
-- Sử dụng OAuth2 làm resource server để xử lý truy cập an toàn vào các công cụ MCP.
+- Cấu hình Spring Security để bảo vệ các điểm cuối MCP, cho phép truy cập công khai vào việc khám phá công cụ trong khi yêu cầu xác thực để thực thi công cụ.
+- Sử dụng OAuth2 như một resource server để xử lý truy cập an toàn vào các công cụ MCP.
 - Triển khai bộ chặn bảo mật để thực thi kiểm soát truy cập khi thực thi công cụ, kiểm tra vai trò và quyền của người dùng trước khi cho phép truy cập các công cụ cụ thể.
-- Định nghĩa kiểm soát truy cập dựa trên vai trò để giới hạn quyền truy cập vào các công cụ quản trị và dữ liệu nhạy cảm dựa trên vai trò người dùng.
+- Định nghĩa kiểm soát truy cập dựa trên vai trò để giới hạn truy cập vào các công cụ quản trị và dữ liệu nhạy cảm dựa trên vai trò người dùng.
 
-## Bảo vệ dữ liệu và quyền riêng tư
+## Bảo vệ dữ liệu và Quyền riêng tư
 
-Bảo vệ dữ liệu là điều thiết yếu để đảm bảo thông tin nhạy cảm được xử lý một cách an toàn. Điều này bao gồm bảo vệ thông tin cá nhân nhận dạng được (PII), dữ liệu tài chính và các thông tin nhạy cảm khác khỏi truy cập trái phép và rò rỉ.
+Bảo vệ dữ liệu là yếu tố quan trọng để đảm bảo thông tin nhạy cảm được xử lý một cách an toàn. Điều này bao gồm bảo vệ thông tin cá nhân nhận dạng được (PII), dữ liệu tài chính và các thông tin nhạy cảm khác khỏi truy cập trái phép và rò rỉ.
 
 ### Ví dụ bảo vệ dữ liệu trong Python
 
@@ -329,14 +348,69 @@ class SecureCustomerDataTool(Tool):
 
 Trong đoạn mã trên, chúng ta đã:
 
-- Triển khai lớp `PiiDetector` để quét văn bản và tham số tìm thông tin cá nhân nhận dạng được (PII).
+- Triển khai lớp `PiiDetector` để quét văn bản và tham số nhằm phát hiện thông tin cá nhân nhận dạng được (PII).
 - Tạo lớp `EncryptionService` để xử lý mã hóa và giải mã dữ liệu nhạy cảm sử dụng thư viện `cryptography`.
-- Định nghĩa decorator `secure_tool` để bao bọc việc thực thi công cụ, kiểm tra PII, ghi lại truy cập và mã hóa dữ liệu nhạy cảm nếu cần.
-- Áp dụng decorator `secure_tool` cho một công cụ mẫu (`SecureCustomerDataTool`) để đảm bảo công cụ xử lý dữ liệu nhạy cảm một cách an toàn.
+- Định nghĩa decorator `secure_tool` bao bọc việc thực thi công cụ để kiểm tra PII, ghi lại truy cập và mã hóa dữ liệu nhạy cảm nếu cần.
+- Áp dụng decorator `secure_tool` cho một công cụ mẫu (`SecureCustomerDataTool`) để đảm bảo nó xử lý dữ liệu nhạy cảm một cách an toàn.
+
+## Các rủi ro bảo mật đặc thù của MCP
+
+Theo tài liệu bảo mật chính thức của MCP, có một số rủi ro bảo mật mà người triển khai MCP cần lưu ý:
+
+### 1. Vấn đề Confused Deputy
+
+Lỗ hổng này xảy ra khi máy chủ MCP đóng vai trò proxy cho các API bên thứ ba, có thể cho phép kẻ tấn công lợi dụng mối quan hệ tin cậy giữa máy chủ MCP và các API này.
+
+**Giải pháp:**
+- Các máy chủ proxy MCP sử dụng client ID tĩnh PHẢI lấy sự đồng ý của người dùng cho từng client được đăng ký động trước khi chuyển tiếp đến các máy chủ ủy quyền bên thứ ba.
+- Triển khai đúng quy trình OAuth với PKCE (Proof Key for Code Exchange) cho các yêu cầu ủy quyền.
+- Kiểm tra chặt chẽ các URI chuyển hướng và định danh client.
+
+### 2. Lỗ hổng Token Passthrough
+
+Token passthrough xảy ra khi máy chủ MCP chấp nhận token từ client MCP mà không xác thực rằng token đó được cấp phát hợp lệ cho máy chủ MCP và chuyển tiếp chúng đến các API hạ nguồn.
+
+### Rủi ro
+- Vượt qua các kiểm soát bảo mật (bỏ qua giới hạn tần suất, kiểm tra yêu cầu)
+- Vấn đề trách nhiệm và theo dõi kiểm toán
+- Vi phạm ranh giới tin cậy
+- Rủi ro tương thích trong tương lai
+
+**Giải pháp:**
+- Máy chủ MCP KHÔNG ĐƯỢC chấp nhận bất kỳ token nào không được cấp phát rõ ràng cho máy chủ MCP.
+- Luôn xác thực các claim audience của token để đảm bảo chúng phù hợp với dịch vụ mong đợi.
+
+### 3. Chiếm đoạt phiên làm việc (Session Hijacking)
+
+Xảy ra khi bên không được phép lấy được ID phiên và sử dụng nó để giả mạo client gốc, có thể dẫn đến các hành động trái phép.
+
+**Giải pháp:**
+- Các máy chủ MCP có triển khai ủy quyền PHẢI xác minh tất cả các yêu cầu đến và KHÔNG ĐƯỢC sử dụng phiên làm phương thức xác thực.
+- Sử dụng ID phiên an toàn, không xác định được trước, được tạo bằng bộ sinh số ngẫu nhiên an toàn.
+- Liên kết ID phiên với thông tin người dùng cụ thể theo định dạng khóa như `<user_id>:<session_id>`.
+- Triển khai chính sách hết hạn và xoay vòng phiên hợp lý.
+
+## Các thực tiễn bảo mật bổ sung cho MCP
+
+Ngoài các cân nhắc bảo mật cốt lõi của MCP, hãy xem xét triển khai các thực tiễn bảo mật bổ sung sau:
+
+- **Luôn sử dụng HTTPS**: Mã hóa giao tiếp giữa client và server để bảo vệ token khỏi bị chặn.
+- **Triển khai Kiểm soát truy cập dựa trên vai trò (RBAC)**: Không chỉ kiểm tra người dùng đã xác thực mà còn kiểm tra họ được phép làm gì.
+- **Giám sát và kiểm toán**: Ghi lại tất cả sự kiện xác thực để phát hiện và phản ứng với các hoạt động đáng ngờ.
+- **Xử lý giới hạn tần suất và điều tiết**: Triển khai cơ chế lùi dần theo cấp số nhân và logic thử lại để xử lý giới hạn tần suất một cách linh hoạt.
+- **Lưu trữ token an toàn**: Lưu trữ token truy cập và token làm mới một cách an toàn bằng các cơ chế lưu trữ bảo mật của hệ thống hoặc dịch vụ quản lý khóa an toàn.
+- **Xem xét sử dụng API Management**: Các dịch vụ như Azure API Management có thể xử lý nhiều vấn đề bảo mật tự động, bao gồm xác thực, ủy quyền và giới hạn tần suất.
+
+## Tài liệu tham khảo
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## Tiếp theo
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-16T23:31:17+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T05:19:14+00:00",
   "source_file": "study_guide.md",
   "language_code": "ar"
 }
@@ -189,9 +189,9 @@ mindmap
 - **مجلد الصور**: يحتوي على مخططات ورسوم توضيحية مستخدمة في المنهج
 - **الترجمات**: دعم متعدد اللغات مع ترجمات آلية للوثائق
 - **الموارد الرسمية لـ MCP**:
-  - [MCP Documentation](https://modelcontextprotocol.io/)
-  - [MCP Specification](https://spec.modelcontextprotocol.io/)
-  - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+  - [توثيق MCP](https://modelcontextprotocol.io/)
+  - [مواصفات MCP](https://spec.modelcontextprotocol.io/)
+  - [مستودع MCP على GitHub](https://github.com/modelcontextprotocol)
 
 ## كيفية استخدام هذا المستودع
 
@@ -206,13 +206,15 @@ mindmap
 يغطي المنهج عملاء وأدوات MCP المتنوعة:
 
 1. **العملاء الرسميون**:
+   - Visual Studio Code
+   - MCP في Visual Studio Code
    - Claude Desktop
    - Claude في VSCode
    - Claude API
 
 2. **عملاء المجتمع**:
-   - Cline (مبني على الطرفية)
-   - Cursor (محرر الشيفرة)
+   - Cline (واجهة طرفية)
+   - Cursor (محرر شيفرة)
    - ChatMCP
    - Windsurf
 
@@ -263,4 +265,4 @@ mindmap
 *تم تحديث هذا الدليل في 16 يوليو 2025، ويقدم نظرة عامة على المستودع حتى ذلك التاريخ. قد يتم تحديث محتوى المستودع بعد هذا التاريخ.*
 
 **إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:02:20+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T08:13:00+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "tl"
 }
@@ -11,25 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Pangkalahatang-ideya
 
-Tinututukan ng araling ito kung paano makilahok sa komunidad ng MCP, mag-ambag sa ekosistema ng MCP, at sundin ang mga pinakamahusay na kasanayan para sa kolaboratibong pag-unlad. Mahalaga ang pag-unawa kung paano makibahagi sa mga open-source na proyekto ng MCP para sa mga nais hubugin ang hinaharap ng teknolohiyang ito.
+Tinututukan ng araling ito kung paano makilahok sa MCP community, mag-ambag sa MCP ecosystem, at sundin ang mga pinakamahusay na kasanayan para sa kolaboratibong pag-unlad. Mahalaga ang pag-unawa kung paano makibahagi sa mga open-source na proyekto ng MCP para sa mga nais hubugin ang hinaharap ng teknolohiyang ito.
 
 ## Mga Layunin sa Pagkatuto
 
 Sa pagtatapos ng araling ito, magagawa mong:
-- Maunawaan ang estruktura ng komunidad at ekosistema ng MCP
-- Epektibong makilahok sa mga forum at talakayan ng komunidad ng MCP
+- Maunawaan ang estruktura ng MCP community at ecosystem
+- Epektibong makilahok sa mga forum at talakayan ng MCP community
 - Mag-ambag sa mga open-source na repositoryo ng MCP
-- Gumawa at magbahagi ng mga custom na kasangkapan para sa MCP
+- Gumawa at magbahagi ng mga custom na MCP tools at servers
 - Sundin ang mga pinakamahusay na kasanayan sa pag-develop at kolaborasyon sa MCP
+- Tuklasin ang mga mapagkukunan at framework ng komunidad para sa pag-develop ng MCP
 
-## Ang Ekosistema ng Komunidad ng MCP
+## Ang MCP Community Ecosystem
 
-Binubuo ang ekosistema ng MCP ng iba't ibang bahagi at kalahok na nagtutulungan upang paunlarin ang protocol.
+Binubuo ang MCP ecosystem ng iba't ibang bahagi at kalahok na nagtutulungan upang paunlarin ang protocol.
 
 ### Pangunahing Bahagi ng Komunidad
 
-1. **Core Protocol Maintainers**: Microsoft at iba pang mga organisasyon na nagpapanatili ng pangunahing mga espesipikasyon at reference implementations ng MCP
-2. **Tool Developers**: Mga indibidwal at koponan na lumilikha ng mga kasangkapan para sa MCP
+1. **Core Protocol Maintainers**: Ang opisyal na [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) ang nangangalaga sa mga pangunahing MCP specifications at reference implementations
+2. **Tool Developers**: Mga indibidwal at koponan na lumilikha ng MCP tools at servers
 3. **Integration Providers**: Mga kumpanya na nag-iintegrate ng MCP sa kanilang mga produkto at serbisyo
 4. **End Users**: Mga developer at organisasyon na gumagamit ng MCP sa kanilang mga aplikasyon
 5. **Contributors**: Mga miyembro ng komunidad na nag-aambag ng code, dokumentasyon, o iba pang mga mapagkukunan
@@ -38,29 +39,33 @@ Binubuo ang ekosistema ng MCP ng iba't ibang bahagi at kalahok na nagtutulungan 
 
 #### Opisyal na Mga Channel
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP GitHub Organization](https://github.com/modelcontextprotocol)
 - [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [MCP Specification](https://modelcontextprotocol.io/docs/specification)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP Examples & Servers Repository](https://github.com/modelcontextprotocol/servers)
 
 #### Mga Mapagkukunang Pinapatakbo ng Komunidad
 
-- Mga implementasyon ng SDK na nakatuon sa partikular na wika
-- Mga implementasyon ng server at mga library ng kasangkapan
+- [MCP Clients](https://modelcontextprotocol.io/clients) - Listahan ng mga client na sumusuporta sa MCP integrations
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Lumalawak na listahan ng mga MCP server na ginawa ng komunidad
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Piniling listahan ng mga MCP server
+- [PulseMCP](https://www.pulsemcp.com/) - Sentro ng komunidad at newsletter para sa pagtuklas ng mga MCP resources
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - Makipag-ugnayan sa mga MCP developer
+- Mga language-specific SDK implementations
 - Mga blog post at tutorial
-- Mga forum ng komunidad at talakayan sa social media
 
 ## Pag-aambag sa MCP
 
 ### Mga Uri ng Ambag
 
-Tinatanggap ng ekosistema ng MCP ang iba't ibang uri ng ambag:
+Tinatanggap ng MCP ecosystem ang iba't ibang uri ng ambag:
 
 1. **Code Contributions**:
    - Mga pagpapahusay sa core protocol
    - Pag-aayos ng mga bug
-   - Implementasyon ng mga kasangkapan
-   - Mga client/server library sa iba't ibang wika
+   - Implementasyon ng mga tool at server
+   - Mga client/server libraries sa iba't ibang wika
 
 2. **Dokumentasyon**:
    - Pagpapabuti ng kasalukuyang dokumentasyon
@@ -69,168 +74,79 @@ Tinatanggap ng ekosistema ng MCP ang iba't ibang uri ng ambag:
    - Paggawa ng mga halimbawa at sample na aplikasyon
 
 3. **Suporta sa Komunidad**:
-   - Pagsagot sa mga tanong sa mga forum
+   - Pagsagot sa mga tanong sa mga forum at talakayan
    - Pagsubok at pag-uulat ng mga isyu
    - Pag-oorganisa ng mga kaganapan ng komunidad
    - Pagtuturo sa mga bagong contributor
 
 ### Proseso ng Pag-aambag: Core Protocol
 
-Para mag-ambag sa core MCP protocol o opisyal na mga implementasyon:
+Para mag-ambag sa core MCP protocol o opisyal na implementasyon, sundin ang mga prinsipyo mula sa [opisyal na contributing guidelines](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### Halimbawa sa .NET: Pag-aambag ng Pagpapahusay sa Protocol
+1. **Simplicity and Minimalism**: Mataas ang pamantayan ng MCP specification sa pagdagdag ng mga bagong konsepto. Mas madali ang magdagdag kaysa mag-alis.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **Concrete Approach**: Ang mga pagbabago sa specification ay dapat nakabase sa mga tiyak na hamon sa implementasyon, hindi sa mga haka-haka.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **Mga Yugto ng Proposal**:
+   - Define: Suriin ang problema, tiyakin na may kaparehong isyu ang ibang MCP user
+   - Prototype: Gumawa ng halimbawa ng solusyon at ipakita ang praktikal na aplikasyon nito
+   - Write: Batay sa prototype, isulat ang proposal para sa specification
+
+### Setup ng Development Environment
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Halimbawa sa Java: Pag-aambag ng Pag-aayos ng Bug
+### Halimbawa: Pag-aambag ng Bug Fix
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Halimbawa sa Python: Pag-aambag ng Bagong Kasangkapan sa Standard Library
+### Halimbawa: Pag-aambag ng Bagong Tool sa Standard Library
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -395,18 +311,18 @@ class CsvProcessingTool(Tool):
 Para maging matagumpay ang iyong ambag sa mga proyekto ng MCP:
 
 1. **Magsimula sa Maliit**: Simulan sa dokumentasyon, pag-aayos ng bug, o maliliit na pagpapahusay
-2. **Sundin ang Style Guide**: Sumunod sa coding style at mga konbensyon ng proyekto
-3. **Sumulat ng Mga Test**: Isama ang unit tests para sa iyong mga code contribution
-4. **Idokumento ang Iyong Trabaho**: Magdagdag ng malinaw na dokumentasyon para sa mga bagong tampok o pagbabago
+2. **Sundin ang Style Guide**: Sumunod sa coding style at mga convention ng proyekto
+3. **Sumulat ng Tests**: Isama ang unit tests para sa iyong mga code contribution
+4. **Idokumento ang Iyong Gawain**: Magdagdag ng malinaw na dokumentasyon para sa mga bagong tampok o pagbabago
 5. **Mag-submit ng Targeted PRs**: Panatilihing nakatuon ang pull requests sa isang isyu o tampok lamang
-6. **Makipag-ugnayan sa Feedback**: Maging bukas at tumugon sa mga puna tungkol sa iyong mga ambag
+6. **Makipag-ugnayan sa Feedback**: Maging bukas at tumugon sa mga puna sa iyong mga ambag
 
 ### Halimbawa ng Workflow sa Pag-aambag
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,11 +343,29 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Paggawa at Pagbabahagi ng Custom na Mga Kasangkapan sa MCP
+## Paggawa at Pagbabahagi ng MCP Servers
 
-Isa sa mga pinakamahalagang paraan upang mag-ambag sa ekosistema ng MCP ay ang paggawa at pagbabahagi ng mga custom na kasangkapan.
+Isa sa pinakamahalagang paraan ng pag-ambag sa MCP ecosystem ay ang paggawa at pagbabahagi ng mga custom MCP servers. Marami nang MCP server ang nagawa ng komunidad para sa iba't ibang serbisyo at gamit.
 
-### Pagbuo ng Mga Kasangkapang Maaaring Ibahagi
+### Mga Framework para sa Pag-develop ng MCP Server
+
+May ilang framework na makakatulong upang mapadali ang pag-develop ng MCP server:
+
+1. **Opisyal na SDKs**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **Mga Framework ng Komunidad**:
+   - [MCP-Framework](https://mcp-framework.com/) - Gumawa ng MCP servers nang mabilis at elegante gamit ang TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Annotation-driven MCP servers gamit ang Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java framework para sa MCP servers
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Starter Next.js project para sa MCP servers
+
+### Pag-develop ng Mga Tool na Maibabahagi
 
 #### Halimbawa sa .NET: Paggawa ng Shareable Tool Package
 
@@ -541,7 +473,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Halimbawa sa Java: Paggawa ng Maven Package para sa Mga Kasangkapan
+#### Halimbawa sa Java: Paggawa ng Maven Package para sa Mga Tool
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -747,23 +679,23 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Pagbabahagi ng Mga Pinakamahusay na Kasanayan
+### Mga Pinakamahusay na Kasanayan sa Pagbabahagi
 
-Kapag nagbabahagi ng mga kasangkapan ng MCP sa komunidad:
+Kapag nagbabahagi ng MCP tools sa komunidad:
 
 1. **Kumpletong Dokumentasyon**:
    - Idokumento ang layunin, paggamit, at mga halimbawa
    - Ipaliwanag ang mga parameter at mga return value
-   - Idokumento ang anumang mga panlabas na dependency
+   - Idokumento ang anumang external dependencies
 
 2. **Pag-handle ng Error**:
-   - Magpatupad ng matibay na pag-handle ng error
+   - Magpatupad ng matibay na error handling
    - Magbigay ng kapaki-pakinabang na mga mensahe ng error
    - Maayos na hawakan ang mga edge case
 
 3. **Mga Pagsasaalang-alang sa Performance**:
-   - I-optimize para sa bilis at paggamit ng mga resources
-   - Magpatupad ng caching kung angkop
+   - I-optimize para sa bilis at paggamit ng resources
+   - Gumamit ng caching kung angkop
    - Isaalang-alang ang scalability
 
 4. **Seguridad**:
@@ -773,12 +705,12 @@ Kapag nagbabahagi ng mga kasangkapan ng MCP sa komunidad:
 
 5. **Pagsusuri**:
    - Isama ang komprehensibong test coverage
-   - Subukan gamit ang iba't ibang uri ng input at mga edge case
+   - Subukan gamit ang iba't ibang uri ng input at edge cases
    - Idokumento ang mga pamamaraan ng pagsusuri
 
 ## Kolaborasyon ng Komunidad at Mga Pinakamahusay na Kasanayan
 
-Mahalaga ang epektibong kolaborasyon para sa isang masiglang ekosistema ng MCP.
+Mahalaga ang epektibong kolaborasyon para sa isang masiglang MCP ecosystem.
 
 ### Mga Channel ng Komunikasyon
 
@@ -791,24 +723,24 @@ Mahalaga ang epektibong kolaborasyon para sa isang masiglang ekosistema ng MCP.
 
 Kapag nire-review ang mga ambag sa MCP:
 
-1. **Kalidad ng Pagkakaunawa**: Malinaw ba at maayos ang dokumentasyon ng code?
-2. **Tama ba ang Pag-andar**: Gumagana ba ito ayon sa inaasahan?
-3. **Pagkakapare-pareho**: Sumusunod ba ito sa mga konbensyon ng proyekto?
-4. **Kumpleto ba**: Kasama ba ang mga test at dokumentasyon?
+1. **Kalinawan**: Malinaw at maayos ba ang dokumentasyon ng code?
+2. **Katatagan**: Gumagana ba ito ayon sa inaasahan?
+3. **Pagkakapare-pareho**: Sumusunod ba ito sa mga convention ng proyekto?
+4. **Kumpletong Saklaw**: Kasama ba ang mga tests at dokumentasyon?
 5. **Seguridad**: Mayroon bang mga isyu sa seguridad?
 
-### Pagkakatugma ng Bersyon
+### Compatibility ng Bersyon
 
 Kapag nagde-develop para sa MCP:
 
-1. **Protocol Versioning**: Sundin ang bersyon ng MCP protocol na sinusuportahan ng iyong kasangkapan
+1. **Protocol Versioning**: Sundin ang bersyon ng MCP protocol na sinusuportahan ng iyong tool
 2. **Client Compatibility**: Isaalang-alang ang backward compatibility
 3. **Server Compatibility**: Sundin ang mga patnubay sa implementasyon ng server
-4. **Mga Breaking Changes**: Idokumento nang malinaw ang anumang mga breaking changes
+4. **Breaking Changes**: Idokumento nang malinaw ang anumang breaking changes
 
 ## Halimbawa ng Proyektong Pangkomunidad: MCP Tool Registry
 
-Isang mahalagang ambag sa komunidad ay ang pagbuo ng pampublikong registry para sa mga kasangkapan ng MCP.
+Isang mahalagang ambag sa komunidad ay ang paggawa ng pampublikong registry para sa mga MCP tool.
 
 ```python
 # Example schema for a community tool registry API
@@ -887,21 +819,21 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Mga Pangunahing Aral
+## Mga Pangunahing Punto
 
-- Ang komunidad ng MCP ay magkakaiba at tumatanggap ng iba't ibang uri ng ambag
-- Ang pag-aambag sa MCP ay maaaring mula sa pagpapahusay ng core protocol hanggang sa mga custom na kasangkapan
+- Iba-iba ang MCP community at tinatanggap ang iba't ibang uri ng ambag
+- Ang pag-aambag sa MCP ay maaaring mula sa pagpapahusay ng core protocol hanggang sa paggawa ng custom tools
 - Ang pagsunod sa mga patnubay sa pag-aambag ay nagpapataas ng tsansa na tanggapin ang iyong PR
-- Ang paggawa at pagbabahagi ng mga kasangkapan ng MCP ay mahalagang paraan upang paunlarin ang ekosistema
-- Mahalaga ang kolaborasyon ng komunidad para sa paglago at pagpapabuti ng MCP
+- Ang paggawa at pagbabahagi ng MCP tools ay mahalagang paraan upang paunlarin ang ecosystem
+- Mahalaga ang kolaborasyon ng komunidad para sa paglago at pagbuti ng MCP
 
 ## Ehersisyo
 
-1. Tukuyin ang isang bahagi sa ekosistema ng MCP kung saan maaari kang mag-ambag base sa iyong kakayahan at interes
-2. I-fork ang MCP repository at mag-set up ng lokal na development environment
-3. Gumawa ng maliit na pagpapahusay, pag-aayos ng bug, o kasangkapan na makakatulong sa komunidad
-4. Idokumento ang iyong ambag kasama ang tamang mga test at dokumentasyon
-5. Mag-submit ng pull request sa angkop na repositoryo
+1. Tukuyin ang isang bahagi ng MCP ecosystem kung saan maaari kang mag-ambag base sa iyong kakayahan at interes
+2. I-fork ang MCP repository at i-setup ang lokal na development environment
+3. Gumawa ng maliit na pagpapahusay, pag-aayos ng bug, o tool na makakatulong sa komunidad
+4. Idokumento ang iyong ambag kasama ang mga angkop na tests at dokumentasyon
+5. Mag-submit ng pull request sa tamang repositoryo
 
 ## Karagdagang Mga Mapagkukunan
 

@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:07:43+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T06:42:29+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "no"
 }
 -->
 ## Ansvarsfraskrivelse for kodeeksempler
 
-> **Viktig merknad**: Kodeeksemplene nedenfor viser integrasjon av Model Context Protocol (MCP) med websøksfunksjonalitet. Selv om de følger mønstrene og strukturene i de offisielle MCP SDK-ene, er de forenklet for pedagogiske formål.
+> **Viktig merknad**: Kodeeksemplene nedenfor viser integrasjon av Model Context Protocol (MCP) med websøke-funksjonalitet. Selv om de følger mønstrene og strukturene i de offisielle MCP SDK-ene, er de forenklet for pedagogiske formål.
 > 
 > Disse eksemplene viser:
 > 
-> 1. **Python-implementering**: En FastMCP-server som tilbyr et websøksverktøy og kobler til en ekstern søke-API. Dette eksempelet demonstrerer riktig håndtering av levetid, kontekstbehandling og verktøyimplementering i tråd med mønstrene i [den offisielle MCP Python SDK-en](https://github.com/modelcontextprotocol/python-sdk). Serveren bruker den anbefalte Streamable HTTP-transporten, som har erstattet den eldre SSE-transporten for produksjonsdistribusjoner.
+> 1. **Python-implementasjon**: En FastMCP-server som tilbyr et websøkeverktøy og kobler til en ekstern søke-API. Dette eksempelet demonstrerer riktig håndtering av levetid, kontekstbehandling og verktøyimplementasjon i tråd med mønstrene i [den offisielle MCP Python SDK-en](https://github.com/modelcontextprotocol/python-sdk). Serveren bruker den anbefalte Streamable HTTP-transporten, som har erstattet den eldre SSE-transporten for produksjonsbruk.
 > 
-> 2. **JavaScript-implementering**: En TypeScript/JavaScript-implementering som bruker FastMCP-mønsteret fra [den offisielle MCP TypeScript SDK-en](https://github.com/modelcontextprotocol/typescript-sdk) for å lage en søkeserver med riktige verktøydefinisjoner og klienttilkoblinger. Den følger de nyeste anbefalte mønstrene for sesjonshåndtering og kontekstbevaring.
+> 2. **JavaScript-implementasjon**: En TypeScript/JavaScript-implementasjon som bruker FastMCP-mønsteret fra [den offisielle MCP TypeScript SDK-en](https://github.com/modelcontextprotocol/typescript-sdk) for å lage en søkeserver med riktige verktøydefinisjoner og klienttilkoblinger. Den følger de nyeste anbefalte mønstrene for sesjonshåndtering og kontekstbevaring.
 > 
 > Disse eksemplene krever ytterligere feilhåndtering, autentisering og spesifikk API-integrasjonskode for produksjonsbruk. Søke-API-endepunktene som vises (`https://api.search-service.example/search`) er plassholdere og må erstattes med faktiske søketjenesteendepunkter.
 > 
@@ -25,9 +25,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Model Context Protocol (MCP)-rammeverket
 
-Grunnleggende gir Model Context Protocol en standardisert måte for AI-modeller, applikasjoner og tjenester å utveksle kontekst på. I sanntidssøk på nettet er dette rammeverket avgjørende for å skape sammenhengende, flertrinns søkeopplevelser. Nøkkelkomponenter inkluderer:
+Grunnleggende gir Model Context Protocol en standardisert måte for AI-modeller, applikasjoner og tjenester å utveksle kontekst på. I sanntid websøking er dette rammeverket avgjørende for å skape sammenhengende, flertrinns søkeopplevelser. Nøkkelkomponenter inkluderer:
 
-1. **Klient-server-arkitektur**: MCP etablerer en tydelig separasjon mellom søkeklienter (forespørrere) og søkeservere (tilbydere), noe som muliggjør fleksible distribusjonsmodeller.
+1. **Klient-server-arkitektur**: MCP etablerer en tydelig separasjon mellom søkeklienter (forespørrere) og søkeservere (tilbydere), noe som gir fleksible distribusjonsmodeller.
 
 2. **JSON-RPC-kommunikasjon**: Protokollen bruker JSON-RPC for meldingsutveksling, noe som gjør den kompatibel med webteknologier og enkel å implementere på tvers av plattformer.
 
@@ -35,7 +35,7 @@ Grunnleggende gir Model Context Protocol en standardisert måte for AI-modeller,
 
 4. **Verktøydefinisjoner**: Søkemuligheter eksponeres som standardiserte verktøy med veldefinerte parametere og returverdier.
 
-5. **Strømmestøtte**: Protokollen støtter strømming av resultater, noe som er essensielt for sanntidssøk der resultater kan komme gradvis.
+5. **Streaming-støtte**: Protokollen støtter strømming av resultater, essensielt for sanntidssøk der resultater kan komme gradvis.
 
 ### Integrasjonsmønstre for websøking
 
@@ -51,7 +51,7 @@ graph LR
     Server --> |MCP Response| Client
 ```
 
-I dette mønsteret grensesnittet MCP-serveren direkte mot en eller flere søke-API-er, oversetter MCP-forespørsler til API-spesifikke kall og formaterer resultatene som MCP-svar.
+I dette mønsteret kobler MCP-serveren direkte til en eller flere søke-API-er, oversetter MCP-forespørsler til API-spesifikke kall og formaterer resultatene som MCP-svar.
 
 #### 2. Føderert søk med kontekstbevaring
 
@@ -83,7 +83,7 @@ graph LR
     Server --> |Final Results + Updated Context| Client
 ```
 
-I dette mønsteret deles søkeprosessen opp i flere trinn, hvor konteksten berikes i hvert steg, noe som resulterer i stadig mer relevante resultater.
+I dette mønsteret deles søkeprosessen opp i flere trinn, hvor konteksten berikes i hvert steg, noe som gir gradvis mer relevante resultater.
 
 ### Komponenter i søkekontekst
 
@@ -94,7 +94,7 @@ I MCP-basert websøking inkluderer kontekst vanligvis:
 - **Interaksjonshistorikk**: Hvilke resultater som ble klikket på, tid brukt på resultater
 - **Søkeparametere**: Filtre, sorteringsrekkefølge og andre søkemodifikatorer
 - **Domene-kunnskap**: Fagspesifikk kontekst relevant for søket
-- **Tidsmessig kontekst**: Tidsbaserte relevansfaktorer
+- **Tidskontekst**: Tidsbaserte relevansfaktorer
 - **Kildepreferanser**: Foretrukne eller pålitelige informasjonskilder
 
 ## Bruksområder og anvendelser
@@ -104,7 +104,7 @@ I MCP-basert websøking inkluderer kontekst vanligvis:
 MCP forbedrer forskningsarbeidsflyter ved å:
 
 - Bevare forskningskontekst på tvers av søkeøkter
-- Muliggjøre mer sofistikerte og kontekstrelevante søkespørringer
+- Muliggjøre mer sofistikerte og kontekstrelevante spørringer
 - Støtte fler-kilde søkeføderasjon
 - Legge til rette for kunnskapsutvinning fra søkeresultater
 
@@ -141,7 +141,7 @@ Fremover forventer vi at MCP vil utvikle seg for å håndtere:
 
 Nye teknologier som vil forme fremtiden for MCP-søk:
 
-1. **Neurale søkarkitekturer**: Søkesystemer basert på innebyggede representasjoner, optimalisert for MCP  
+1. **Nevrale søkearkitekturer**: Innebyggingsbaserte søkesystemer optimalisert for MCP  
 2. **Personlig søkekontekst**: Læring av individuelle brukermønstre over tid  
 3. **Integrasjon av kunnskapsgraf**: Kontekstualisert søk forbedret med domenespesifikke kunnskapsgrafer  
 4. **Tverrmodal kontekst**: Opprettholde kontekst på tvers av ulike søkemodaliteter
@@ -187,7 +187,7 @@ Avansert øvelse som dekker:
 
 ## Læringsmål
 
-Etter å ha fullført dette modulen vil du kunne:
+Etter å ha fullført denne modulen vil du kunne:
 
 - Forstå grunnprinsippene for sanntidssøk på nettet og utfordringene knyttet til dette  
 - Forklare hvordan Model Context Protocol (MCP) forbedrer sanntidssøk på nettet  
@@ -196,7 +196,7 @@ Etter å ha fullført dette modulen vil du kunne:
 - Anvende MCP-konsepter på ulike bruksområder, inkludert semantisk søk, forskningsassistanse og AI-forsterket nettlesing  
 - Vurdere nye trender og fremtidige innovasjoner innen MCP-baserte søketeknologier
 
-### Tillit og sikkerhet
+### Vurderinger rundt tillit og sikkerhet
 
 Når du implementerer MCP-baserte nettsøkeløsninger, husk disse viktige prinsippene fra MCP-spesifikasjonen:
 
@@ -204,17 +204,17 @@ Når du implementerer MCP-baserte nettsøkeløsninger, husk disse viktige prinsi
 
 2. **Datapersonvern**: Sørg for korrekt håndtering av søkespørringer og resultater, spesielt når de kan inneholde sensitiv informasjon. Implementer passende tilgangskontroller for å beskytte brukerdata.
 
-3. **Verktøysikkerhet**: Implementer riktig autorisasjon og validering for søkeverktøy, da de kan utgjøre sikkerhetsrisikoer gjennom kjøring av vilkårlig kode. Beskrivelser av verktøyatferd bør ikke anses som pålitelige med mindre de kommer fra en betrodd server.
+3. **Verktøysikkerhet**: Implementer riktig autorisasjon og validering for søkeverktøy, da de kan utgjøre sikkerhetsrisikoer gjennom vilkårlig kodekjøring. Beskrivelser av verktøyatferd bør anses som upålitelige med mindre de kommer fra en betrodd server.
 
 4. **Tydelig dokumentasjon**: Gi klar dokumentasjon om muligheter, begrensninger og sikkerhetshensyn ved din MCP-baserte søkeimplementasjon, i tråd med retningslinjene i MCP-spesifikasjonen.
 
-5. **Robuste samtykkeflyt**: Bygg robuste samtykke- og autorisasjonsflyter som tydelig forklarer hva hvert verktøy gjør før bruk godkjennes, spesielt for verktøy som interagerer med eksterne nettressurser.
+5. **Robuste samtykkeflyt**: Bygg robuste samtykke- og autorisasjonsflyter som tydelig forklarer hva hvert verktøy gjør før bruk, spesielt for verktøy som interagerer med eksterne nettressurser.
 
-For fullstendige detaljer om MCP-sikkerhet og tillits- og sikkerhetshensyn, se [offisiell dokumentasjon](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
+For fullstendige detaljer om MCP-sikkerhet og tillitsvurderinger, se [offisiell dokumentasjon](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
 
-## Hva nå
+## Hva skjer videre
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Ansvarsfraskrivelse**:  
 Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

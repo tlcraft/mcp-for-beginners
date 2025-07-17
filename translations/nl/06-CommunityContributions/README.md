@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:01:02+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T07:05:00+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "nl"
 }
@@ -19,36 +19,41 @@ Aan het einde van deze les kun je:
 - De structuur van de MCP-community en het ecosysteem begrijpen
 - Effectief deelnemen aan MCP-communityforums en discussies
 - Bijdragen aan MCP open-source repositories
-- Eigen MCP-tools maken en delen
+- Eigen MCP-tools en servers maken en delen
 - Beste praktijken volgen voor MCP-ontwikkeling en samenwerking
+- Communitybronnen en frameworks voor MCP-ontwikkeling ontdekken
 
 ## Het MCP Community Ecosysteem
 
 Het MCP-ecosysteem bestaat uit verschillende componenten en deelnemers die samenwerken om het protocol te verbeteren.
 
-### Belangrijke Community Componenten
+### Belangrijke Communitycomponenten
 
-1. **Core Protocol Maintainers**: Microsoft en andere organisaties die de kern MCP-specificaties en referentie-implementaties onderhouden  
-2. **Tool Developers**: Individuen en teams die MCP-tools ontwikkelen  
-3. **Integration Providers**: Bedrijven die MCP integreren in hun producten en diensten  
-4. **End Users**: Ontwikkelaars en organisaties die MCP gebruiken in hun applicaties  
-5. **Contributors**: Communityleden die code, documentatie of andere middelen bijdragen  
+1. **Core Protocol Maintainers**: De officiële [Model Context Protocol GitHub organisatie](https://github.com/modelcontextprotocol) beheert de kern MCP-specificaties en referentie-implementaties  
+2. **Toolontwikkelaars**: Individuen en teams die MCP-tools en servers ontwikkelen  
+3. **Integratieproviders**: Bedrijven die MCP integreren in hun producten en diensten  
+4. **Eindgebruikers**: Ontwikkelaars en organisaties die MCP gebruiken in hun applicaties  
+5. **Bijdragers**: Communityleden die code, documentatie of andere middelen bijdragen  
 
 ### Communitybronnen
 
 #### Officiële Kanalen
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)  
+- [MCP GitHub Organisatie](https://github.com/modelcontextprotocol)  
 - [MCP Documentatie](https://modelcontextprotocol.io/)  
-- [MCP Specificatie](https://spec.modelcontextprotocol.io/)  
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)  
+- [MCP Specificatie](https://modelcontextprotocol.io/docs/specification)  
+- [GitHub Discussies](https://github.com/orgs/modelcontextprotocol/discussions)  
+- [MCP Voorbeelden & Servers Repository](https://github.com/modelcontextprotocol/servers)  
 
 #### Community-gedreven Bronnen
 
+- [MCP Clients](https://modelcontextprotocol.io/clients) - Lijst van clients die MCP-integraties ondersteunen  
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Groeiende lijst van door de community ontwikkelde MCP-servers  
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Geselecteerde lijst van MCP-servers  
+- [PulseMCP](https://www.pulsemcp.com/) - Community hub & nieuwsbrief voor het ontdekken van MCP-bronnen  
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - Verbinding maken met MCP-ontwikkelaars  
 - Taal-specifieke SDK-implementaties  
-- Serverimplementaties en toolbibliotheken  
 - Blogposts en tutorials  
-- Communityforums en discussies op sociale media  
 
 ## Bijdragen aan MCP
 
@@ -59,7 +64,7 @@ Het MCP-ecosysteem verwelkomt verschillende soorten bijdragen:
 1. **Codebijdragen**:  
    - Verbeteringen aan het core protocol  
    - Bugfixes  
-   - Toolimplementaties  
+   - Implementaties van tools en servers  
    - Client/server bibliotheken in verschillende talen  
 
 2. **Documentatie**:  
@@ -69,168 +74,77 @@ Het MCP-ecosysteem verwelkomt verschillende soorten bijdragen:
    - Maken van voorbeelden en voorbeeldapplicaties  
 
 3. **Community Support**:  
-   - Vragen beantwoorden op forums  
+   - Vragen beantwoorden op forums en discussies  
    - Testen en problemen rapporteren  
    - Organiseren van community-evenementen  
    - Begeleiden van nieuwe bijdragers  
 
-### Bijdragingsproces: Core Protocol
+### Bijdrageproces: Core Protocol
 
-Om bij te dragen aan het core MCP-protocol of officiële implementaties:
+Om bij te dragen aan het core MCP-protocol of officiële implementaties, volg je de principes uit de [officiële bijdrage-richtlijnen](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### .NET Voorbeeld: Bijdragen aan een Protocolverbetering
+1. **Eenvoud en Minimalisme**: De MCP-specificatie hanteert een hoge standaard voor het toevoegen van nieuwe concepten. Het is makkelijker om iets toe te voegen dan om het weer te verwijderen.  
+2. **Concrete Aanpak**: Wijzigingen in de specificatie moeten gebaseerd zijn op concrete implementatie-uitdagingen, niet op speculatieve ideeën.  
+3. **Fasen van een Voorstel**:  
+   - Definieer: Onderzoek het probleemgebied en bevestig dat andere MCP-gebruikers hetzelfde probleem ervaren  
+   - Prototype: Bouw een voorbeeldoplossing en toon de praktische toepassing aan  
+   - Schrijf: Schrijf op basis van het prototype een specificatievoorstel  
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+### Ontwikkelomgeving Opzetten
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Java Voorbeeld: Bijdragen aan een Bugfix
+### Voorbeeld: Bijdragen van een Bugfix
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Python Voorbeeld: Bijdragen aan een Nieuwe Tool voor de Standaardbibliotheek
+### Voorbeeld: Bijdragen van een Nieuwe Tool aan de Standaardbibliotheek
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -392,21 +306,21 @@ class CsvProcessingTool(Tool):
 
 ### Richtlijnen voor Bijdragen
 
-Om succesvol bij te dragen aan MCP-projecten:
+Om een succesvolle bijdrage te leveren aan MCP-projecten:
 
 1. **Begin Klein**: Start met documentatie, bugfixes of kleine verbeteringen  
-2. **Volg de Stijlrichtlijnen**: Houd je aan de codeerstijl en conventies van het project  
+2. **Volg de Stijlregels**: Houd je aan de codeerstijl en conventies van het project  
 3. **Schrijf Tests**: Voeg unittests toe voor je codebijdragen  
 4. **Documenteer Je Werk**: Voeg duidelijke documentatie toe voor nieuwe functies of wijzigingen  
 5. **Dien Gerichte PR’s In**: Houd pull requests gericht op één issue of functie  
 6. **Ga in op Feedback**: Reageer actief op feedback over je bijdragen  
 
-### Voorbeeld van een Bijdragingsworkflow
+### Voorbeeld van een Bijdragetraject
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +329,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,9 +341,27 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Eigen MCP-tools Maken en Delen
+## MCP Servers Maken en Delen
 
-Een van de meest waardevolle manieren om bij te dragen aan het MCP-ecosysteem is door eigen tools te maken en te delen.
+Een van de meest waardevolle manieren om bij te dragen aan het MCP-ecosysteem is door het maken en delen van eigen MCP-servers. De community heeft al honderden servers ontwikkeld voor diverse diensten en toepassingen.
+
+### Frameworks voor MCP Serverontwikkeling
+
+Er zijn verschillende frameworks beschikbaar die het ontwikkelen van MCP-servers vereenvoudigen:
+
+1. **Officiële SDK’s**:  
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)  
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)  
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)  
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)  
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)  
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)  
+
+2. **Community Frameworks**:  
+   - [MCP-Framework](https://mcp-framework.com/) - Bouw MCP-servers snel en elegant in TypeScript  
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Annotatie-gestuurde MCP-servers met Java  
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java-framework voor MCP-servers  
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Starterproject voor MCP-servers met Next.js  
 
 ### Ontwikkelen van Deelbare Tools
 
@@ -768,7 +698,7 @@ Bij het delen van MCP-tools met de community:
 
 4. **Beveiliging**:  
    - Gebruik veilige API-sleutels en authenticatie  
-   - Valideer en reinig invoer  
+   - Valideer en saniteer invoer  
    - Implementeer rate limiting voor externe API-aanroepen  
 
 5. **Testen**:  
@@ -782,16 +712,16 @@ Effectieve samenwerking is essentieel voor een bloeiend MCP-ecosysteem.
 
 ### Communicatiekanalen
 
-- GitHub Issues en Discussions  
+- GitHub Issues en Discussies  
 - Microsoft Tech Community  
 - Discord- en Slack-kanalen  
 - Stack Overflow (tag: `model-context-protocol` of `mcp`)  
 
 ### Code Reviews
 
-Bij het reviewen van MCP-bijdragen:
+Bij het beoordelen van MCP-bijdragen:
 
-1. **Duidelijkheid**: Is de code duidelijk en goed gedocumenteerd?  
+1. **Duidelijkheid**: Is de code helder en goed gedocumenteerd?  
 2. **Correctheid**: Werkt het zoals verwacht?  
 3. **Consistentie**: Volgt het de projectconventies?  
 4. **Volledigheid**: Zijn tests en documentatie inbegrepen?  
@@ -801,10 +731,10 @@ Bij het reviewen van MCP-bijdragen:
 
 Bij het ontwikkelen voor MCP:
 
-1. **Protocolversies**: Houd je aan de MCP-protocolversie die je tool ondersteunt  
+1. **Protocolversiebeheer**: Houd je aan de MCP-protocolversie die je tool ondersteunt  
 2. **Clientcompatibiliteit**: Houd rekening met backward compatibility  
-3. **Servercompatibiliteit**: Volg de richtlijnen voor serverimplementaties  
-4. **Breaking Changes**: Documenteer duidelijk eventuele brekende wijzigingen  
+3. **Servercompatibiliteit**: Volg richtlijnen voor serverimplementaties  
+4. **Brekende Wijzigingen**: Documenteer brekende wijzigingen duidelijk  
 
 ## Voorbeeld Communityproject: MCP Tool Registry
 
@@ -890,14 +820,14 @@ async def delete_tool(tool_name: str):
 ## Belangrijkste Punten
 
 - De MCP-community is divers en verwelkomt verschillende soorten bijdragen  
-- Bijdragen aan MCP kan variëren van core protocolverbeteringen tot eigen tools  
-- Het volgen van richtlijnen vergroot de kans dat je PR wordt geaccepteerd  
-- Eigen MCP-tools maken en delen is een waardevolle manier om het ecosysteem te versterken  
-- Samenwerking in de community is essentieel voor groei en verbetering van MCP  
+- Bijdragen aan MCP kunnen variëren van core protocol verbeteringen tot custom tools  
+- Het volgen van bijdrage-richtlijnen vergroot de kans dat je PR wordt geaccepteerd  
+- Het maken en delen van MCP-tools is een waardevolle manier om het ecosysteem te versterken  
+- Samenwerking binnen de community is essentieel voor groei en verbetering van MCP  
 
 ## Oefening
 
-1. Bepaal een gebied binnen het MCP-ecosysteem waar jij een bijdrage kunt leveren op basis van je vaardigheden en interesses  
+1. Identificeer een gebied binnen het MCP-ecosysteem waar jij een bijdrage kunt leveren op basis van je vaardigheden en interesses  
 2. Fork de MCP-repository en zet een lokale ontwikkelomgeving op  
 3. Maak een kleine verbetering, bugfix of tool die de community ten goede komt  
 4. Documenteer je bijdrage met de juiste tests en documentatie  

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-14T05:02:58+00:00",
+  "original_hash": "80e5c8949af5af0f401fce6f905990aa",
+  "translation_date": "2025-07-17T05:38:51+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "el"
 }
@@ -11,16 +11,64 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Επισκόπηση
 
-Αυτό το μάθημα εστιάζει σε προχωρημένες βέλτιστες πρακτικές για την ανάπτυξη, τον έλεγχο και την υλοποίηση MCP servers και λειτουργιών σε παραγωγικά περιβάλλοντα. Καθώς τα οικοσυστήματα MCP γίνονται πιο πολύπλοκα και σημαντικά, η τήρηση καθιερωμένων προτύπων εξασφαλίζει αξιοπιστία, ευκολία συντήρησης και διαλειτουργικότητα. Το μάθημα συγκεντρώνει πρακτική γνώση από πραγματικές υλοποιήσεις MCP για να σας καθοδηγήσει στη δημιουργία στιβαρών, αποδοτικών servers με αποτελεσματικούς πόρους, prompts και εργαλεία.
+Αυτό το μάθημα εστιάζει σε προχωρημένες βέλτιστες πρακτικές για την ανάπτυξη, τον έλεγχο και την ανάπτυξη MCP servers και λειτουργιών σε παραγωγικά περιβάλλοντα. Καθώς τα οικοσυστήματα MCP γίνονται πιο πολύπλοκα και σημαντικά, η τήρηση καθιερωμένων προτύπων εξασφαλίζει αξιοπιστία, ευκολία συντήρησης και διαλειτουργικότητα. Το μάθημα αυτό συγκεντρώνει πρακτική γνώση από πραγματικές υλοποιήσεις MCP για να σας καθοδηγήσει στη δημιουργία στιβαρών, αποδοτικών servers με αποτελεσματικούς πόρους, προτροπές και εργαλεία.
 
 ## Στόχοι Μάθησης
 
 Στο τέλος αυτού του μαθήματος, θα μπορείτε να:
-- Εφαρμόζετε βέλτιστες πρακτικές του κλάδου στο σχεδιασμό MCP servers και λειτουργιών
+- Εφαρμόζετε βέλτιστες πρακτικές της βιομηχανίας στο σχεδιασμό MCP servers και λειτουργιών
 - Δημιουργείτε ολοκληρωμένες στρατηγικές δοκιμών για MCP servers
 - Σχεδιάζετε αποδοτικά, επαναχρησιμοποιήσιμα πρότυπα ροής εργασίας για σύνθετες εφαρμογές MCP
 - Υλοποιείτε σωστή διαχείριση σφαλμάτων, καταγραφή και παρατηρησιμότητα σε MCP servers
 - Βελτιστοποιείτε τις υλοποιήσεις MCP για απόδοση, ασφάλεια και ευκολία συντήρησης
+
+## Βασικές Αρχές MCP
+
+Πριν εμβαθύνετε σε συγκεκριμένες πρακτικές υλοποίησης, είναι σημαντικό να κατανοήσετε τις βασικές αρχές που καθοδηγούν την αποτελεσματική ανάπτυξη MCP:
+
+1. **Τυποποιημένη Επικοινωνία**: Το MCP βασίζεται στο JSON-RPC 2.0, παρέχοντας ένα συνεπές φορμάτ για αιτήματα, απαντήσεις και διαχείριση σφαλμάτων σε όλες τις υλοποιήσεις.
+
+2. **Σχεδιασμός με επίκεντρο τον χρήστη**: Πάντα να δίνετε προτεραιότητα στη συγκατάθεση, τον έλεγχο και τη διαφάνεια προς τον χρήστη στις υλοποιήσεις MCP.
+
+3. **Ασφάλεια Πρώτα**: Εφαρμόστε ισχυρά μέτρα ασφαλείας, όπως αυθεντικοποίηση, εξουσιοδότηση, επικύρωση και περιορισμό ρυθμού.
+
+4. **Μοντέρνα Αρχιτεκτονική**: Σχεδιάστε τους MCP servers με modular προσέγγιση, όπου κάθε εργαλείο και πόρος έχει σαφή και εστιασμένο σκοπό.
+
+5. **Κατάσταση Συνδέσεων**: Εκμεταλλευτείτε την ικανότητα του MCP να διατηρεί κατάσταση ανάμεσα σε πολλαπλά αιτήματα για πιο συνεκτικές και με επίγνωση συμφραζομένων αλληλεπιδράσεις.
+
+## Επίσημες Βέλτιστες Πρακτικές MCP
+
+Οι παρακάτω βέλτιστες πρακτικές προέρχονται από την επίσημη τεκμηρίωση του Model Context Protocol:
+
+### Βέλτιστες Πρακτικές Ασφαλείας
+
+1. **Συγκατάθεση και Έλεγχος Χρήστη**: Πάντα απαιτείτε ρητή συγκατάθεση του χρήστη πριν από την πρόσβαση σε δεδομένα ή την εκτέλεση λειτουργιών. Παρέχετε σαφή έλεγχο για το ποια δεδομένα κοινοποιούνται και ποιες ενέργειες επιτρέπονται.
+
+2. **Απόρρητο Δεδομένων**: Εκθέτετε δεδομένα χρήστη μόνο με ρητή συγκατάθεση και τα προστατεύετε με κατάλληλους ελέγχους πρόσβασης. Προστατέψτε από μη εξουσιοδοτημένη μετάδοση δεδομένων.
+
+3. **Ασφάλεια Εργαλείων**: Απαιτείτε ρητή συγκατάθεση πριν την κλήση οποιουδήποτε εργαλείου. Διασφαλίστε ότι οι χρήστες κατανοούν τη λειτουργία κάθε εργαλείου και επιβάλετε ισχυρά όρια ασφαλείας.
+
+4. **Έλεγχος Δικαιωμάτων Εργαλείων**: Ρυθμίστε ποια εργαλεία επιτρέπεται να χρησιμοποιεί ένα μοντέλο κατά τη διάρκεια μιας συνεδρίας, εξασφαλίζοντας πρόσβαση μόνο σε ρητά εξουσιοδοτημένα εργαλεία.
+
+5. **Αυθεντικοποίηση**: Απαιτείστε σωστή αυθεντικοποίηση πριν την παροχή πρόσβασης σε εργαλεία, πόρους ή ευαίσθητες λειτουργίες, χρησιμοποιώντας API keys, OAuth tokens ή άλλες ασφαλείς μεθόδους.
+
+6. **Επικύρωση Παραμέτρων**: Εφαρμόστε επικύρωση για όλες τις κλήσεις εργαλείων ώστε να αποτρέψετε κακόβουλη ή λανθασμένη είσοδο που θα φτάσει στις υλοποιήσεις εργαλείων.
+
+7. **Περιορισμός Ρυθμού**: Υλοποιήστε περιορισμό ρυθμού για να αποτρέψετε κατάχρηση και να εξασφαλίσετε δίκαιη χρήση των πόρων του server.
+
+### Βέλτιστες Πρακτικές Υλοποίησης
+
+1. **Διαπραγμάτευση Δυνατοτήτων**: Κατά τη σύνδεση, ανταλλάξτε πληροφορίες για υποστηριζόμενες λειτουργίες, εκδόσεις πρωτοκόλλου, διαθέσιμα εργαλεία και πόρους.
+
+2. **Σχεδιασμός Εργαλείων**: Δημιουργήστε εστιασμένα εργαλεία που κάνουν καλά ένα πράγμα, αντί για μονολιθικά εργαλεία που διαχειρίζονται πολλαπλές ανησυχίες.
+
+3. **Διαχείριση Σφαλμάτων**: Υλοποιήστε τυποποιημένα μηνύματα και κωδικούς σφαλμάτων για να βοηθήσετε στη διάγνωση προβλημάτων, να χειριστείτε αποτυχίες ομαλά και να παρέχετε χρήσιμα σχόλια.
+
+4. **Καταγραφή**: Ρυθμίστε δομημένα logs για έλεγχο, αποσφαλμάτωση και παρακολούθηση των αλληλεπιδράσεων του πρωτοκόλλου.
+
+5. **Παρακολούθηση Προόδου**: Για λειτουργίες μεγάλης διάρκειας, αναφέρετε ενημερώσεις προόδου ώστε να υποστηρίζονται ευέλικτα περιβάλλοντα χρήστη.
+
+6. **Ακύρωση Αιτημάτων**: Επιτρέψτε στους πελάτες να ακυρώνουν αιτήματα που βρίσκονται σε εξέλιξη και δεν χρειάζονται πλέον ή καθυστερούν υπερβολικά.
 
 ## Πρόσθετες Αναφορές
 
@@ -28,16 +76,16 @@ CO_OP_TRANSLATOR_METADATA:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
+- [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
-## Καλύτερες Πρακτικές Ανάπτυξης Εργαλείων MCP
+## Παραδείγματα Πρακτικής Υλοποίησης
 
-### Αρχιτεκτονικές Αρχές
+### Βέλτιστες Πρακτικές Σχεδιασμού Εργαλείων
 
 #### 1. Αρχή Μοναδικής Ευθύνης
 
-Κάθε λειτουργία MCP πρέπει να έχει σαφή και εστιασμένο σκοπό. Αντί να δημιουργείτε μονολιθικά εργαλεία που προσπαθούν να καλύψουν πολλαπλές ανησυχίες, αναπτύξτε εξειδικευμένα εργαλεία που διαπρέπουν σε συγκεκριμένες εργασίες.
+Κάθε εργαλείο MCP πρέπει να έχει σαφή και εστιασμένο σκοπό. Αντί να δημιουργείτε μονολιθικά εργαλεία που προσπαθούν να καλύψουν πολλαπλές λειτουργίες, αναπτύξτε εξειδικευμένα εργαλεία που διαπρέπουν σε συγκεκριμένες εργασίες.
 
-**Καλό Παράδειγμα:**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -75,7 +123,8 @@ public class WeatherForecastTool : ITool
             Required = new[] { "location" }
         };
     }
-      public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
     {
         var location = parameters["location"].ToString();
         var days = parameters.ContainsKey("days") 
@@ -95,76 +144,477 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**Κακό Παράδειγμα:**
-```csharp
-// A tool trying to do too many things
-public class WeatherToolSuite : ITool
-{
-    public string Name => "weather";
-    public string Description => "Weather-related functionality";
+#### 2. Συνεπής Διαχείριση Σφαλμάτων
+
+Υλοποιήστε ισχυρή διαχείριση σφαλμάτων με ενημερωτικά μηνύματα και κατάλληλους μηχανισμούς ανάκτησης.
+
+```python
+# Python example with comprehensive error handling
+class DataQueryTool:
+    def get_name(self):
+        return "dataQuery"
+        
+    def get_description(self):
+        return "Queries data from specified database tables"
     
-    public ToolDefinition GetDefinition()
-    {
-        return new ToolDefinition
-        {
-            Name = Name,
-            Description = Description,
-            Parameters = new Dictionary<string, ParameterDefinition>
-            {
-                ["action"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "Weather action to perform",
-                    Enum = new[] { "forecast", "history", "alerts", "radar" }
-                },
-                ["location"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "City or location name"
-                },
-                // Many more properties for different actions...
-            },
-            required = new[] { "action", "location" }
-        };
+    async def execute(self, parameters):
+        try:
+            # Parameter validation
+            if "query" not in parameters:
+                raise ToolParameterError("Missing required parameter: query")
+                
+            query = parameters["query"]
+            
+            # Security validation
+            if self._contains_unsafe_sql(query):
+                raise ToolSecurityError("Query contains potentially unsafe SQL")
+            
+            try:
+                # Database operation with timeout
+                async with timeout(10):  # 10 second timeout
+                    result = await self._database.execute_query(query)
+                    
+                return ToolResponse(
+                    content=[TextContent(json.dumps(result))]
+                )
+            except asyncio.TimeoutError:
+                raise ToolExecutionError("Database query timed out after 10 seconds")
+            except DatabaseConnectionError as e:
+                # Connection errors might be transient
+                self._log_error("Database connection error", e)
+                raise ToolExecutionError(f"Database connection error: {str(e)}")
+            except DatabaseQueryError as e:
+                # Query errors are likely client errors
+                self._log_error("Database query error", e)
+                raise ToolExecutionError(f"Invalid query: {str(e)}")
+                
+        except ToolError:
+            # Let tool-specific errors pass through
+            raise
+        except Exception as e:
+            # Catch-all for unexpected errors
+            self._log_error("Unexpected error in DataQueryTool", e)
+            raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
+    
+    def _contains_unsafe_sql(self, query):
+        # Implementation of SQL injection detection
+        pass
+        
+    def _log_error(self, message, error):
+        # Implementation of error logging
+        pass
+```
+
+#### 3. Επικύρωση Παραμέτρων
+
+Πάντα επικυρώνετε διεξοδικά τις παραμέτρους για να αποτρέψετε κακόβουλη ή λανθασμένη είσοδο.
+
+```javascript
+// JavaScript/TypeScript example with detailed parameter validation
+class FileOperationTool {
+  getName() {
+    return "fileOperation";
+  }
+  
+  getDescription() {
+    return "Performs file operations like read, write, and delete";
+  }
+  
+  getDefinition() {
+    return {
+      name: this.getName(),
+      description: this.getDescription(),
+      parameters: {
+        operation: {
+          type: "string",
+          description: "Operation to perform",
+          enum: ["read", "write", "delete"]
+        },
+        path: {
+          type: "string",
+          description: "File path (must be within allowed directories)"
+        },
+        content: {
+          type: "string",
+          description: "Content to write (only for write operation)",
+          optional: true
+        }
+      },
+      required: ["operation", "path"]
+    };
+  }
+  
+  async execute(parameters) {
+    // 1. Validate parameter presence
+    if (!parameters.operation) {
+      throw new ToolError("Missing required parameter: operation");
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
-    {
-        // Complex conditional logic to handle different actions
-        var action = request.Parameters.GetProperty("action").GetString();
-        var location = request.Parameters.GetProperty("location").GetString();
+    if (!parameters.path) {
+      throw new ToolError("Missing required parameter: path");
+    }
+    
+    // 2. Validate parameter types
+    if (typeof parameters.operation !== "string") {
+      throw new ToolError("Parameter 'operation' must be a string");
+    }
+    
+    if (typeof parameters.path !== "string") {
+      throw new ToolError("Parameter 'path' must be a string");
+    }
+    
+    // 3. Validate parameter values
+    const validOperations = ["read", "write", "delete"];
+    if (!validOperations.includes(parameters.operation)) {
+      throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
+    }
+    
+    // 4. Validate content presence for write operation
+    if (parameters.operation === "write" && !parameters.content) {
+      throw new ToolError("Content parameter is required for write operation");
+    }
+    
+    // 5. Path safety validation
+    if (!this.isPathWithinAllowedDirectories(parameters.path)) {
+      throw new ToolError("Access denied: path is outside of allowed directories");
+    }
+    
+    // Implementation based on validated parameters
+    // ...
+  }
+  
+  isPathWithinAllowedDirectories(path) {
+    // Implementation of path safety check
+    // ...
+  }
+}
+```
+
+### Παραδείγματα Υλοποίησης Ασφαλείας
+
+#### 1. Αυθεντικοποίηση και Εξουσιοδότηση
+
+```java
+// Java example with authentication and authorization
+public class SecureDataAccessTool implements Tool {
+    private final AuthenticationService authService;
+    private final AuthorizationService authzService;
+    private final DataService dataService;
+    
+    // Dependency injection
+    public SecureDataAccessTool(
+            AuthenticationService authService,
+            AuthorizationService authzService,
+            DataService dataService) {
+        this.authService = authService;
+        this.authzService = authzService;
+        this.dataService = dataService;
+    }
+    
+    @Override
+    public String getName() {
+        return "secureDataAccess";
+    }
+    
+    @Override
+    public ToolResponse execute(ToolRequest request) {
+        // 1. Extract authentication context
+        String authToken = request.getContext().getAuthToken();
         
-        switch (action)
-        {
-            case "forecast":
-                // Forecast logic
-                break;
-            case "history":
-                // Historical data logic
-                break;
-            // More cases...
-            default:
-                throw new ToolExecutionException($"Unknown action: {action}");
+        // 2. Authenticate user
+        UserIdentity user;
+        try {
+            user = authService.validateToken(authToken);
+        } catch (AuthenticationException e) {
+            return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // Result processing
+        // 3. Check authorization for the specific operation
+        String dataId = request.getParameters().get("dataId").getAsString();
+        String operation = request.getParameters().get("operation").getAsString();
+        
+        boolean isAuthorized = authzService.isAuthorized(user, "data:" + dataId, operation);
+        if (!isAuthorized) {
+            return ToolResponse.error("Access denied: Insufficient permissions for this operation");
+        }
+        
+        // 4. Proceed with authorized operation
+        try {
+            switch (operation) {
+                case "read":
+                    Object data = dataService.getData(dataId, user.getId());
+                    return ToolResponse.success(data);
+                case "update":
+                    JsonNode newData = request.getParameters().get("newData");
+                    dataService.updateData(dataId, newData, user.getId());
+                    return ToolResponse.success("Data updated successfully");
+                default:
+                    return ToolResponse.error("Unsupported operation: " + operation);
+            }
+        } catch (Exception e) {
+            return ToolResponse.error("Operation failed: " + e.getMessage());
+        }
+    }
+}
+```
+
+#### 2. Περιορισμός Ρυθμού
+
+```csharp
+// C# rate limiting implementation
+public class RateLimitingMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly IMemoryCache _cache;
+    private readonly ILogger<RateLimitingMiddleware> _logger;
+    
+    // Configuration options
+    private readonly int _maxRequestsPerMinute;
+    
+    public RateLimitingMiddleware(
+        RequestDelegate next,
+        IMemoryCache cache,
+        ILogger<RateLimitingMiddleware> logger,
+        IConfiguration config)
+    {
+        _next = next;
+        _cache = cache;
+        _logger = logger;
+        _maxRequestsPerMinute = config.GetValue<int>("RateLimit:MaxRequestsPerMinute", 60);
+    }
+    
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // 1. Get client identifier (API key or user ID)
+        string clientId = GetClientIdentifier(context);
+        
+        // 2. Get rate limiting key for this minute
+        string cacheKey = $"rate_limit:{clientId}:{DateTime.UtcNow:yyyyMMddHHmm}";
+        
+        // 3. Check current request count
+        if (!_cache.TryGetValue(cacheKey, out int requestCount))
+        {
+            requestCount = 0;
+        }
+        
+        // 4. Enforce rate limit
+        if (requestCount >= _maxRequestsPerMinute)
+        {
+            _logger.LogWarning("Rate limit exceeded for client {ClientId}", clientId);
+            
+            context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+            context.Response.Headers.Add("Retry-After", "60");
+            
+            await context.Response.WriteAsJsonAsync(new
+            {
+                error = "Rate limit exceeded",
+                message = "Too many requests. Please try again later.",
+                retryAfterSeconds = 60
+            });
+            
+            return;
+        }
+        
+        // 5. Increment request count
+        _cache.Set(cacheKey, requestCount + 1, TimeSpan.FromMinutes(2));
+        
+        // 6. Add rate limit headers
+        context.Response.Headers.Add("X-RateLimit-Limit", _maxRequestsPerMinute.ToString());
+        context.Response.Headers.Add("X-RateLimit-Remaining", (_maxRequestsPerMinute - requestCount - 1).ToString());
+        
+        // 7. Continue with the request
+        await _next(context);
+    }
+    
+    private string GetClientIdentifier(HttpContext context)
+    {
+        // Implementation to extract API key or user ID
         // ...
     }
 }
 ```
 
-#### 2. Εισαγωγή Εξαρτήσεων και Δυνατότητα Δοκιμών
+## Βέλτιστες Πρακτικές Δοκιμών
 
-Σχεδιάστε τα εργαλεία ώστε να λαμβάνουν τις εξαρτήσεις τους μέσω εισαγωγής στον constructor, καθιστώντας τα δοκιμάσιμα και παραμετροποιήσιμα:
+### 1. Μονάδες Δοκιμών Εργαλείων MCP
+
+Πάντα δοκιμάζετε τα εργαλεία σας απομονωμένα, χρησιμοποιώντας mocks για εξωτερικές εξαρτήσεις:
+
+```typescript
+// TypeScript example of a tool unit test
+describe('WeatherForecastTool', () => {
+  let tool: WeatherForecastTool;
+  let mockWeatherService: jest.Mocked<IWeatherService>;
+  
+  beforeEach(() => {
+    // Create a mock weather service
+    mockWeatherService = {
+      getForecasts: jest.fn()
+    } as any;
+    
+    // Create the tool with the mock dependency
+    tool = new WeatherForecastTool(mockWeatherService);
+  });
+  
+  it('should return weather forecast for a location', async () => {
+    // Arrange
+    const mockForecast = {
+      location: 'Seattle',
+      forecasts: [
+        { date: '2025-07-16', temperature: 72, conditions: 'Sunny' },
+        { date: '2025-07-17', temperature: 68, conditions: 'Partly Cloudy' },
+        { date: '2025-07-18', temperature: 65, conditions: 'Rain' }
+      ]
+    };
+    
+    mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
+    
+    // Act
+    const response = await tool.execute({
+      location: 'Seattle',
+      days: 3
+    });
+    
+    // Assert
+    expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
+    expect(response.content[0].text).toContain('Seattle');
+    expect(response.content[0].text).toContain('Sunny');
+  });
+  
+  it('should handle errors from the weather service', async () => {
+    // Arrange
+    mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
+    
+    // Act & Assert
+    await expect(tool.execute({
+      location: 'Seattle',
+      days: 3
+    })).rejects.toThrow('Weather service error: Service unavailable');
+  });
+});
+```
+
+### 2. Ολοκληρωμένες Δοκιμές
+
+Δοκιμάστε ολόκληρη τη ροή από τα αιτήματα του πελάτη μέχρι τις απαντήσεις του server:
+
+```python
+# Python integration test example
+@pytest.mark.asyncio
+async def test_mcp_server_integration():
+    # Start a test server
+    server = McpServer()
+    server.register_tool(WeatherForecastTool(MockWeatherService()))
+    await server.start(port=5000)
+    
+    try:
+        # Create a client
+        client = McpClient("http://localhost:5000")
+        
+        # Test tool discovery
+        tools = await client.discover_tools()
+        assert "weatherForecast" in [t.name for t in tools]
+        
+        # Test tool execution
+        response = await client.execute_tool("weatherForecast", {
+            "location": "Seattle",
+            "days": 3
+        })
+        
+        # Verify response
+        assert response.status_code == 200
+        assert "Seattle" in response.content[0].text
+        assert len(json.loads(response.content[0].text)["forecasts"]) == 3
+        
+    finally:
+        # Clean up
+        await server.stop()
+```
+
+## Βελτιστοποίηση Απόδοσης
+
+### 1. Στρατηγικές Caching
+
+Υλοποιήστε κατάλληλο caching για να μειώσετε την καθυστέρηση και τη χρήση πόρων:
+
+```csharp
+// C# example with caching
+public class CachedWeatherTool : ITool
+{
+    private readonly IWeatherService _weatherService;
+    private readonly IDistributedCache _cache;
+    private readonly ILogger<CachedWeatherTool> _logger;
+    
+    public CachedWeatherTool(
+        IWeatherService weatherService,
+        IDistributedCache cache,
+        ILogger<CachedWeatherTool> logger)
+    {
+        _weatherService = weatherService;
+        _cache = cache;
+        _logger = logger;
+    }
+    
+    public string Name => "weatherForecast";
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    {
+        var location = parameters["location"].ToString();
+        var days = Convert.ToInt32(parameters.GetValueOrDefault("days", 3));
+        
+        // Create cache key
+        string cacheKey = $"weather:{location}:{days}";
+        
+        // Try to get from cache
+        string cachedForecast = await _cache.GetStringAsync(cacheKey);
+        if (!string.IsNullOrEmpty(cachedForecast))
+        {
+            _logger.LogInformation("Cache hit for weather forecast: {Location}", location);
+            return new ToolResponse
+            {
+                Content = new List<ContentItem>
+                {
+                    new TextContent(cachedForecast)
+                }
+            };
+        }
+        
+        // Cache miss - get from service
+        _logger.LogInformation("Cache miss for weather forecast: {Location}", location);
+        var forecast = await _weatherService.GetForecastAsync(location, days);
+        string forecastJson = JsonSerializer.Serialize(forecast);
+        
+        // Store in cache (weather forecasts valid for 1 hour)
+        await _cache.SetStringAsync(
+            cacheKey,
+            forecastJson,
+            new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1)
+            });
+        
+        return new ToolResponse
+        {
+            Content = new List<ContentItem>
+            {
+                new TextContent(forecastJson)
+            }
+        };
+    }
+}
+
+#### 2. Dependency Injection and Testability
+
+Design tools to receive their dependencies through constructor injection, making them testable and configurable:
 
 ```java
-// Java example with dependency injection
+// Παράδειγμα Java με dependency injection
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // Εξαρτήσεις που εισάγονται μέσω constructor
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -174,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // Υλοποίηση εργαλείου
     // ...
 }
 ```
 
-#### 3. Συνθετά Εργαλεία
+#### 3. Composable Tools
 
-Σχεδιάστε εργαλεία που μπορούν να συνδυαστούν μεταξύ τους για τη δημιουργία πιο σύνθετων ροών εργασίας:
+Design tools that can be composed together to create more complex workflows:
 
 ```python
-# Python example showing composable tools
+# Παράδειγμα Python που δείχνει συνθέσιμα εργαλεία
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # Υλοποίηση...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # Αυτό το εργαλείο μπορεί να χρησιμοποιεί αποτελέσματα από το dataFetch
     async def execute_async(self, request):
-        # Implementation...
+        # Υλοποίηση...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # Αυτό το εργαλείο μπορεί να χρησιμοποιεί αποτελέσματα από το dataAnalysis
     async def execute_async(self, request):
-        # Implementation...
+        # Υλοποίηση...
         pass
 
-# These tools can be used independently or as part of a workflow
+# Αυτά τα εργαλεία μπορούν να χρησιμοποιηθούν ανεξάρτητα ή ως μέρος ροής εργασίας
 ```
 
-### Καλύτερες Πρακτικές Σχεδιασμού Σχήματος
+### Schema Design Best Practices
 
-Το σχήμα είναι η σύμβαση μεταξύ του μοντέλου και του εργαλείου σας. Τα καλά σχεδιασμένα σχήματα οδηγούν σε καλύτερη χρηστικότητα εργαλείων.
+The schema is the contract between the model and your tool. Well-designed schemas lead to better tool usability.
 
-#### 1. Σαφείς Περιγραφές Παραμέτρων
+#### 1. Clear Parameter Descriptions
 
-Πάντα να περιλαμβάνετε περιγραφικές πληροφορίες για κάθε παράμετρο:
+Always include descriptive information for each parameter:
 
 ```csharp
 public object GetSchema()
@@ -228,25 +678,25 @@ public object GetSchema()
         properties = new {
             query = new { 
                 type = "string", 
-                description = "Search query text. Use precise keywords for better results." 
+                description = "Κείμενο αναζήτησης. Χρησιμοποιήστε ακριβείς λέξεις-κλειδιά για καλύτερα αποτελέσματα." 
             },
             filters = new {
                 type = "object",
-                description = "Optional filters to narrow down search results",
+                description = "Προαιρετικά φίλτρα για περιορισμό των αποτελεσμάτων αναζήτησης",
                 properties = new {
                     dateRange = new { 
                         type = "string", 
-                        description = "Date range in format YYYY-MM-DD:YYYY-MM-DD" 
+                        description = "Εύρος ημερομηνιών σε μορφή YYYY-MM-DD:YYYY-MM-DD" 
                     },
                     category = new { 
                         type = "string", 
-                        description = "Category name to filter by" 
+                        description = "Όνομα κατηγορίας για φιλτράρισμα" 
                     }
                 }
             },
             limit = new { 
                 type = "integer", 
-                description = "Maximum number of results to return (1-50)",
+                description = "Μέγιστος αριθμός αποτελεσμάτων προς επιστροφή (1-50)",
                 default = 10
             }
         },
@@ -255,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. Περιορισμοί Επικύρωσης
+#### 2. Validation Constraints
 
-Περιλάβετε περιορισμούς επικύρωσης για να αποτρέψετε μη έγκυρες εισόδους:
+Include validation constraints to prevent invalid inputs:
 
 ```java
 Map<String, Object> getSchema() {
@@ -266,25 +716,25 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // Ιδιότητα email με επικύρωση μορφής
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
-    email.put("description", "User email address");
+    email.put("description", "Διεύθυνση email χρήστη");
     
-    // Age property with numeric constraints
+    // Ιδιότητα ηλικίας με αριθμητικούς περιορισμούς
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
-    age.put("description", "User age in years");
+    age.put("description", "Ηλικία χρήστη σε έτη");
     
-    // Enumerated property
+    // Ιδιότητα με προκαθορισμένες τιμές
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
     subscription.put("default", "free");
-    subscription.put("description", "Subscription tier");
+    subscription.put("description", "Επίπεδο συνδρομής");
     
     properties.put("email", email);
     properties.put("age", age);
@@ -297,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Συνεπείς Δομές Επιστροφής
+#### 3. Consistent Return Structures
 
-Διατηρήστε συνέπεια στις δομές απάντησης για να διευκολύνετε την ερμηνεία των αποτελεσμάτων από τα μοντέλα:
+Maintain consistency in your response structures to make it easier for models to interpret results:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # Επεξεργασία αιτήματος
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # Επιστροφή πάντα συνεπούς δομής
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -328,7 +778,7 @@ async def execute_async(self, request):
         )
     
 def _format_item(self, item):
-    """Ensures each item has a consistent structure"""
+    """Εξασφαλίζει ότι κάθε στοιχείο έχει συνεπή δομή"""
     return {
         "id": item.id,
         "title": item.title,
@@ -338,13 +788,13 @@ def _format_item(self, item):
     }
 ```
 
-### Διαχείριση Σφαλμάτων
+### Error Handling
 
-Η στιβαρή διαχείριση σφαλμάτων είναι κρίσιμη για τα εργαλεία MCP ώστε να διατηρούν την αξιοπιστία.
+Robust error handling is crucial for MCP tools to maintain reliability.
 
-#### 1. Ομαλή Διαχείριση Σφαλμάτων
+#### 1. Graceful Error Handling
 
-Διαχειριστείτε τα σφάλματα σε κατάλληλα επίπεδα και παρέχετε ενημερωτικά μηνύματα:
+Handle errors at appropriate levels and provide informative messages:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -362,39 +812,39 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
         }
         catch (FileNotFoundException)
         {
-            throw new ToolExecutionException($"File not found: {fileId}");
+            throw new ToolExecutionException($"Το αρχείο δεν βρέθηκε: {fileId}");
         }
         catch (UnauthorizedAccessException)
         {
-            throw new ToolExecutionException("You don't have permission to access this file");
+            throw new ToolExecutionException("Δεν έχετε δικαίωμα πρόσβασης σε αυτό το αρχείο");
         }
         catch (Exception ex) when (ex is IOException || ex is TimeoutException)
         {
-            _logger.LogError(ex, "Error accessing file {FileId}", fileId);
-            throw new ToolExecutionException("Error accessing file: The service is temporarily unavailable");
+            _logger.LogError(ex, "Σφάλμα κατά την πρόσβαση στο αρχείο {FileId}", fileId);
+            throw new ToolExecutionException("Σφάλμα πρόσβασης αρχείου: Η υπηρεσία είναι προσωρινά μη διαθέσιμη");
         }
     }
     catch (JsonException)
     {
-        throw new ToolExecutionException("Invalid file ID format");
+        throw new ToolExecutionException("Μη έγκυρη μορφή αναγνωριστικού αρχείου");
     }
     catch (Exception ex)
     {
-        _logger.LogError(ex, "Unexpected error in FileAccessTool");
-        throw new ToolExecutionException("An unexpected error occurred");
+        _logger.LogError(ex, "Απρόβλεπτο σφάλμα στο FileAccessTool");
+        throw new ToolExecutionException("Παρουσιάστηκε απρόβλεπτο σφάλμα");
     }
 }
 ```
 
-#### 2. Δομημένες Απαντήσεις Σφαλμάτων
+#### 2. Structured Error Responses
 
-Επιστρέψτε δομημένες πληροφορίες σφαλμάτων όπου είναι δυνατόν:
+Return structured error information when possible:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // Υλοποίηση
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -412,45 +862,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
-        throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
+        // Επαναρίψη άλλων εξαιρέσεων ως ToolExecutionException
+        throw new ToolExecutionException("Η εκτέλεση του εργαλείου απέτυχε: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. Λογική Επανάληψης
+#### 3. Retry Logic
 
-Υλοποιήστε κατάλληλη λογική επανάληψης για παροδικά σφάλματα:
+Implement appropriate retry logic for transient failures:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # δευτερόλεπτα
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # Κλήση εξωτερικού API
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
-                raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
+                raise ToolExecutionException(f"Η λειτουργία απέτυχε μετά από {max_retries} προσπάθειες: {str(e)}")
                 
-            # Exponential backoff
+            # Εκθετική καθυστέρηση
             delay = base_delay * (2 ** (retry_count - 1))
-            logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
+            logging.warning(f"Προσωρινό σφάλμα, επανάληψη σε {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
-            raise ToolExecutionException(f"Operation failed: {str(e)}")
+            # Μη προσωρινό σφάλμα, δεν επαναλαμβάνουμε
+            raise ToolExecutionException(f"Η λειτουργία απέτυχε: {str(e)}")
 ```
 
-### Βελτιστοποίηση Απόδοσης
+### Performance Optimization
 
-#### 1. Cache
+#### 1. Caching
 
-Υλοποιήστε caching για δαπανηρές λειτουργίες:
+Implement caching for expensive operations:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -458,29 +908,25 @@ public class CachedDataTool : IMcpTool
     private readonly IDatabase _database;
     private readonly IMemoryCache _cache;
     
-    public CachedDataTool(IDatabase database, IMemoryCache cache)
-    {
-        _database = database;
-        _cache = cache;
-    }
-    
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+    public CachedDataTool(IDatabase database,
+
+ExecuteAsync(ToolRequest request)
     {
         var query = request.Parameters.GetProperty("query").GetString();
         
-        // Create cache key based on parameters
+        // Δημιουργία κλειδιού cache βάσει των παραμέτρων
         var cacheKey = $"data_query_{ComputeHash(query)}";
         
-        // Try to get from cache first
+        // Προσπάθεια ανάκτησης από cache πρώτα
         if (_cache.TryGetValue(cacheKey, out var cachedResult))
         {
             return new ToolResponse { Result = cachedResult };
         }
         
-        // Cache miss - perform actual query
+        // Cache miss - εκτέλεση πραγματικού ερωτήματος
         var result = await _database.QueryAsync(query);
         
-        // Store in cache with expiration
+        // Αποθήκευση στην cache με χρόνο λήξης
         var cacheOptions = new MemoryCacheEntryOptions()
             .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
             
@@ -491,14 +937,14 @@ public class CachedDataTool : IMcpTool
     
     private string ComputeHash(string input)
     {
-        // Implementation to generate stable hash for cache key
+        // Υλοποίηση για δημιουργία σταθερού hash για το κλειδί cache
     }
 }
 ```
 
-#### 2. Ασύγχρονη Επεξεργασία
+#### 2. Asynchronous Processing
 
-Χρησιμοποιήστε ασύγχρονα προγραμματιστικά πρότυπα για λειτουργίες που εξαρτώνται από I/O:
+Use asynchronous programming patterns for I/O-bound operations:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -509,23 +955,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // Για εργασίες μεγάλης διάρκειας, επιστρέφουμε άμεσα ένα ID επεξεργασίας
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // Ξεκινάμε ασύγχρονη επεξεργασία
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // Εκτέλεση εργασίας μεγάλης διάρκειας
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // Ενημέρωση κατάστασης (συνήθως αποθηκεύεται σε βάση δεδομένων)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // Επιστροφή άμεσης απάντησης με το ID της διαδικασίας
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -534,7 +980,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // Συνοδευτικό εργαλείο για έλεγχο κατάστασης
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -547,35 +993,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Περιορισμός Πόρων
+#### 3. Resource Throttling
 
-Υλοποιήστε περιορισμό πόρων για να αποτρέψετε υπερφόρτωση:
+Implement resource throttling to prevent overload:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # Επιτρέπονται 5 αιτήματα ανά δευτερόλεπτο
+            bucket_size=10        # Επιτρέπονται εκρήξεις έως 10 αιτήματα
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # Έλεγχος αν μπορούμε να προχωρήσουμε ή πρέπει να περιμένουμε
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # Αν η αναμονή είναι πολύ μεγάλη
                 raise ToolExecutionException(
-                    f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
+                    f"Το όριο ρυθμού ξεπεράστηκε. Παρακαλώ δοκιμάστε ξανά σε {delay:.1f} δευτερόλεπτα."
                 )
             else:
-                # Wait for the appropriate delay time
+                # Περιμένουμε τον κατάλληλο χρόνο καθυστέρησης
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # Καταναλώνουμε ένα token και προχωράμε με το αίτημα
         self.rate_limiter.consume()
         
-        # Call API
+        # Κλήση API
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -593,7 +1039,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # Υπολογισμός χρόνου μέχρι να είναι διαθέσιμο το επόμενο token
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -605,86 +1051,86 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # Προσθήκη νέων tokens βάσει του χρόνου που πέρασε
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### Καλύτερες Πρακτικές Ασφάλειας
+### Security Best Practices
 
-#### 1. Επικύρωση Εισόδων
+#### 1. Input Validation
 
-Πάντα επικυρώνετε διεξοδικά τις παραμέτρους εισόδου:
+Always validate input parameters thoroughly:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 {
-    // Validate parameters exist
+    // Επαλήθευση ύπαρξης παραμέτρων
     if (!request.Parameters.TryGetProperty("query", out var queryProp))
     {
-        throw new ToolExecutionException("Missing required parameter: query");
+        throw new ToolExecutionException("Λείπει η απαιτούμενη παράμετρος: query");
     }
     
-    // Validate correct type
+    // Επαλήθευση σωστού τύπου
     if (queryProp.ValueKind != JsonValueKind.String)
     {
-        throw new ToolExecutionException("Query parameter must be a string");
+        throw new ToolExecutionException("Η παράμετρος query πρέπει να είναι συμβολοσειρά");
     }
     
     var query = queryProp.GetString();
     
-    // Validate string content
+    // Επαλήθευση περιεχομένου συμβολοσειράς
     if (string.IsNullOrWhiteSpace(query))
     {
-        throw new ToolExecutionException("Query parameter cannot be empty");
+        throw new ToolExecutionException("Η παράμετρος query δεν μπορεί να είναι κενή");
     }
     
     if (query.Length > 500)
     {
-        throw new ToolExecutionException("Query parameter exceeds maximum length of 500 characters");
+        throw new ToolExecutionException("Η παράμετρος query υπερβαίνει το μέγιστο μήκος των 500 χαρακτήρων");
     }
     
-    // Check for SQL injection attacks if applicable
+    // Έλεγχος για επιθέσεις SQL injection αν ισχύει
     if (ContainsSqlInjection(query))
     {
-        throw new ToolExecutionException("Invalid query: contains potentially unsafe SQL");
+        throw new ToolExecutionException("Μη έγκυρο query: περιέχει πιθανώς μη ασφαλές SQL");
     }
     
-    // Proceed with execution
+    // Προχωράμε με την εκτέλεση
     // ...
 }
 ```
 
-#### 2. Έλεγχοι Εξουσιοδότησης
+#### 2. Authorization Checks
 
-Υλοποιήστε σωστούς ελέγχους εξουσιοδότησης:
+Implement proper authorization checks:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // Λήψη context χρήστη από το αίτημα
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // Έλεγχος αν ο χρήστης έχει τα απαιτούμενα δικαιώματα
     if (!authorizationService.hasPermission(user, "documents:read")) {
-        throw new ToolExecutionException("User does not have permission to access documents");
+        throw new ToolExecutionException("Ο χρήστης δεν έχει δικαίωμα πρόσβασης στα έγγραφα");
     }
     
-    // For specific resources, check access to that resource
+    // Για συγκεκριμένους πόρους, έλεγχος πρόσβασης σε αυτόν τον πόρο
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
-        throw new ToolExecutionException("Access denied to the requested document");
+        throw new ToolExecutionException("Άρνηση πρόσβασης στο ζητούμενο έγγραφο");
     }
     
-    // Proceed with tool execution
+    // Προχωράμε με την εκτέλεση του εργαλείου
     // ...
 }
 ```
 
-#### 3. Διαχείριση Ευαίσθητων Δεδομένων
+#### 3. Sensitive Data Handling
 
-Διαχειριστείτε προσεκτικά τα ευαίσθητα δεδομένα:
+Handle sensitive data carefully:
 
 ```python
 class SecureDataTool(Tool):
@@ -702,52 +1148,52 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # Λήψη δεδομένων χρήστη
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # Φιλτράρισμα ευαίσθητων πεδίων εκτός αν ζητηθεί ρητά ΚΑΙ υπάρχει εξουσιοδότηση
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # Έλεγχος επιπέδου εξουσιοδότησης στο context του αιτήματος
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # Δημιουργία αντιγράφου για να μην τροποποιηθεί το αρχικό
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # Απόκρυψη συγκεκριμένων ευαίσθητων πεδίων
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # Απόκρυψη εμφωλευμένων ευαίσθητων δεδομένων
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## Καλύτερες Πρακτικές Δοκιμών για Εργαλεία MCP
+## Testing Best Practices for MCP Tools
 
-Οι ολοκληρωμένες δοκιμές εξασφαλίζουν ότι τα εργαλεία MCP λειτουργούν σωστά, διαχειρίζονται ακραίες περιπτώσεις και ενσωματώνονται ομαλά με το υπόλοιπο σύστημα.
+Comprehensive testing ensures that MCP tools function correctly, handle edge cases, and integrate properly with the rest of the system.
 
-### Μονάδα Δοκιμών
+### Unit Testing
 
-#### 1. Δοκιμάστε Κάθε Εργαλείο Ξεχωριστά
+#### 1. Test Each Tool in Isolation
 
-Δημιουργήστε εστιασμένες δοκιμές για τη λειτουργικότητα κάθε εργαλείου:
+Create focused tests for each tool's functionality:
 
 ```csharp
 [Fact]
 public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 {
-    // Arrange
+    // Προετοιμασία
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("Seattle", 3))
@@ -763,10 +1209,10 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
         })
     );
     
-    // Act
+    // Εκτέλεση
     var response = await tool.ExecuteAsync(request);
     
-    // Assert
+    // Έλεγχος
     Assert.NotNull(response);
     var result = JsonSerializer.Deserialize<WeatherForecast>(response.Result);
     Assert.Equal("Seattle", result.Location);
@@ -776,7 +1222,7 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 [Fact]
 public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 {
-    // Arrange
+    // Προετοιμασία
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("InvalidLocation", It.IsAny<int>()))
@@ -792,7 +1238,7 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
         })
     );
     
-    // Act & Assert
+    // Εκτέλεση & Έλεγχος
     var exception = await Assert.ThrowsAsync<ToolExecutionException>(
         () => tool.ExecuteAsync(request)
     );
@@ -801,27 +1247,27 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. Δοκιμές Επικύρωσης Σχήματος
+#### 2. Schema Validation Testing
 
-Ελέγξτε ότι τα σχήματα είναι έγκυρα και επιβάλλουν σωστά τους περιορισμούς:
+Test that schemas are valid and properly enforce constraints:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // Δημιουργία instance εργαλείου
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // Λήψη schema
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // Μετατροπή schema σε JSON για επικύρωση
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // Επικύρωση schema ως έγκυρο JSONSchema
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // Δοκιμή έγκυρων παραμέτρων
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -829,14 +1275,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // Δοκιμή έλλειψης απαιτούμενης παραμέτρου
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // Δοκιμή μη έγκυρου τύπου παραμέτρου
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -846,21 +1292,21 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. Δοκιμές Διαχείρισης Σφαλμάτων
+#### 3. Error Handling Tests
 
-Δημιουργήστε συγκεκριμένες δοκιμές για καταστάσεις σφαλμάτων:
+Create specific tests for error conditions:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # Προετοιμασία
+    tool = ApiTool(timeout=0.1)  # Πολύ μικρό timeout
     
-    # Mock a request that will time out
+    # Mock ενός αιτήματος που θα υπερβεί το timeout
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Μεγαλύτερο από το timeout
         )
         
         request = ToolRequest(
@@ -868,19 +1314,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Εκτέλεση & Έλεγχος
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # Έλεγχος μηνύματος εξαίρεσης
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # Προετοιμασία
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # Mock απάντησης με περιορισμό ρυθμού
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -894,27 +1340,27 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Εκτέλεση & Έλεγχος
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # Έλεγχος ότι η εξαίρεση περιέχει πληροφορίες για το όριο ρυθμού
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### Ολοκληρωμένες Δοκιμές
+### Integration Testing
 
-#### 1. Δοκιμές Αλυσίδας Εργαλείων
+#### 1. Tool Chain Testing
 
-Δοκιμάστε εργαλεία που λειτουργούν μαζί σε αναμενόμενους συνδυασμούς:
+Test tools working together in expected combinations:
 
 ```csharp
 [Fact]
 public async Task DataProcessingWorkflow_CompletesSuccessfully()
 {
-    // Arrange
+    // Προετοιμασία
     var dataFetchTool = new DataFetchTool(mockDataService.Object);
     var analysisTools = new DataAnalysisTool(mockAnalysisService.Object);
     var visualizationTool = new DataVisualizationTool(mockVisualizationService.Object);
@@ -926,30 +1372,31 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
     
     var workflowExecutor = new WorkflowExecutor(toolRegistry);
     
-    // Act
-    var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
-        new ToolCall("dataFetch", new { source = "sales2023" }),
-        new ToolCall("dataAnalysis", ctx => new { 
+    // Εκτέλεση
+var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
+    new ToolCall("dataFetch", new { source = "sales2023" }),
+    new ToolCall("dataAnalysis", ctx =>
+        new { 
             data = ctx.GetResult("dataFetch"),
             analysis = "trend" 
         }),
-        new ToolCall("dataVisualize", ctx => new {
-            analysisResult = ctx.GetResult("dataAnalysis"),
-            type = "line-chart"
-        })
-    });
-    
-    // Assert
-    Assert.NotNull(result);
-    Assert.True(result.Success);
-    Assert.NotNull(result.GetResult("dataVisualize"));
-    Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
+    new ToolCall("dataVisualize", ctx => new {
+        analysisResult = ctx.GetResult("dataAnalysis"),
+        type = "line-chart"
+    })
+});
+
+// Επιβεβαίωση
+Assert.NotNull(result);
+Assert.True(result.Success);
+Assert.NotNull(result.GetResult("dataVisualize"));
+Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
 }
 ```
 
-#### 2. Δοκιμές MCP Server
+#### 2. MCP Server Testing
 
-Δοκιμάστε τον MCP server με πλήρη εγγραφή και εκτέλεση εργαλείων:
+Test the MCP server with full tool registration and execution:
 
 ```java
 @SpringBootTest
@@ -964,7 +1411,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // Δοκιμή του endpoint ανακάλυψης εργαλείων
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -975,7 +1422,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // Δημιουργία αιτήματος εργαλείου
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -985,7 +1432,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // Αποστολή αιτήματος και επαλήθευση απάντησης
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -995,17 +1442,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // Δημιουργία μη έγκυρου αιτήματος εργαλείου
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // Λείπει η παράμετρος "b"
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // Αποστολή αιτήματος και επαλήθευση απάντησης λάθους
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1015,32 +1462,32 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. Δοκιμές Από Άκρο σε Άκρο
+#### 3. End-to-End Testing
 
-Δοκιμάστε πλήρεις ροές εργασίας από το prompt του μοντέλου μέχρι την εκτέλεση εργαλείου:
+Test complete workflows from model prompt to tool execution:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # Προετοιμασία - Ρύθμιση πελάτη MCP και mock μοντέλου
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # Mock απαντήσεις μοντέλου
     mock_model = MockLanguageModel([
         MockResponse(
-            "What's the weather in Seattle?",
+            "Ποιος είναι ο καιρός στο Σιάτλ;",
             tool_calls=[{
                 "tool_name": "weatherForecast",
                 "parameters": {"location": "Seattle", "days": 3}
             }]
         ),
         MockResponse(
-            "Here's the weather forecast for Seattle:\n- Today: 65°F, Partly Cloudy\n- Tomorrow: 68°F, Sunny\n- Day after: 62°F, Rain",
+            "Αυτή είναι η πρόγνωση καιρού για το Σιάτλ:\n- Σήμερα: 65°F, Μερικώς Συννεφιασμένος\n- Αύριο: 68°F, Ηλιόλουστος\n- Μεθαύριο: 62°F, Βροχή",
             tool_calls=[]
         )
     ])
     
-    # Mock weather tool response
+    # Mock απάντηση εργαλείου καιρού
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1056,14 +1503,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # Εκτέλεση
         response = await mcp_client.send_prompt(
-            "What's the weather in Seattle?",
+            "Ποιος είναι ο καιρός στο Σιάτλ;",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # Επιβεβαίωση
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1072,17 +1519,17 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### Δοκιμές Απόδοσης
+### Performance Testing
 
-#### 1. Δοκιμές Φόρτου
+#### 1. Load Testing
 
-Δοκιμάστε πόσα ταυτόχρονα αιτήματα μπορεί να διαχειριστεί ο MCP server σας:
+Test how many concurrent requests your MCP server can handle:
 
 ```csharp
 [Fact]
 public async Task McpServer_HandlesHighConcurrency()
 {
-    // Arrange
+    // Προετοιμασία
     var server = new McpServer(
         name: "TestServer",
         version: "1.0",
@@ -1094,7 +1541,7 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var client = new McpClient("http://localhost:5000");
     
-    // Act
+    // Εκτέλεση
     var tasks = new List<Task<McpResponse>>();
     for (int i = 0; i < 1000; i++)
     {
@@ -1103,15 +1550,15 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var results = await Task.WhenAll(tasks);
     
-    // Assert
+    // Επιβεβαίωση
     Assert.Equal(1000, results.Length);
     Assert.All(results, r => Assert.NotNull(r));
 }
 ```
 
-#### 2. Δοκιμές Πίεσης
+#### 2. Stress Testing
 
-Δοκιμάστε το σύστημα υπό ακραίο φόρτο:
+Test the system under extreme load:
 
 ```java
 @Test
@@ -1120,13 +1567,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // Ρύθμιση JMeter για δοκιμή φόρτου
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // Διαμόρφωση σχεδίου δοκιμής JMeter
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // Δημιουργία σχεδίου δοκιμής, ομάδας νημάτων, δεικτών κλπ.
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1138,7 +1585,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // Προσθήκη HTTP sampler για εκτέλεση εργαλείου
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1149,58 +1596,58 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // Προσθήκη ακροατών
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // Εκτέλεση δοκιμής
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // Επαλήθευση αποτελεσμάτων
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // Μέσος χρόνος απόκρισης < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90ο εκατοστημόριο < 500ms
 }
 ```
 
-#### 3. Παρακολούθηση και Προφίλ
+#### 3. Monitoring and Profiling
 
-Ρυθμίστε παρακολούθηση για μακροχρόνια ανάλυση απόδοσης:
+Set up monitoring for long-term performance analysis:
 
 ```python
-# Configure monitoring for an MCP server
+# Ρύθμιση παρακολούθησης για έναν MCP server
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Ρύθμιση μετρικών Prometheus
     prometheus_metrics = {
-        "request_count": Counter("mcp_requests_total", "Total MCP requests"),
+        "request_count": Counter("mcp_requests_total", "Συνολικές αιτήσεις MCP"),
         "request_latency": Histogram(
             "mcp_request_duration_seconds", 
-            "Request duration in seconds",
+            "Διάρκεια αιτήσεων σε δευτερόλεπτα",
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_execution_count": Counter(
             "mcp_tool_executions_total", 
-            "Tool execution count",
+            "Αριθμός εκτελέσεων εργαλείων",
             labelnames=["tool_name"]
         ),
         "tool_execution_latency": Histogram(
             "mcp_tool_duration_seconds", 
-            "Tool execution duration in seconds",
+            "Διάρκεια εκτέλεσης εργαλείων σε δευτερόλεπτα",
             labelnames=["tool_name"],
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_errors": Counter(
             "mcp_tool_errors_total",
-            "Tool execution errors",
+            "Σφάλματα εκτέλεσης εργαλείων",
             labelnames=["tool_name", "error_type"]
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # Προσθήκη middleware για μέτρηση χρόνου και καταγραφή μετρικών
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # Έκθεση endpoint μετρικών
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1208,29 +1655,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## Πρότυπα Σχεδιασμού Ροών Εργασίας MCP
+## MCP Workflow Design Patterns
 
-Οι καλά σχεδιασμένες ροές εργασίας MCP βελτιώνουν την αποδοτικότητα, την αξιοπιστία και την ευκολία συντήρησης. Ακολουθούν βασικά πρότυπα που πρέπει να ακολουθείτε:
+Well-designed MCP workflows improve efficiency, reliability, and maintainability. Here are key patterns to follow:
 
-### 1. Πρότυπο Αλυσίδας Εργαλείων
+### 1. Chain of Tools Pattern
 
-Συνδέστε πολλαπλά εργαλεία σε σειρά όπου η έξοδος του ενός γίνεται είσοδος για το επόμενο:
+Connect multiple tools in a sequence where each tool's output becomes the input for the next:
 
 ```python
-# Python Chain of Tools implementation
+# Υλοποίηση αλυσίδας εργαλείων σε Python
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # Λίστα με ονόματα εργαλείων προς εκτέλεση διαδοχικά
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # Εκτέλεση κάθε εργαλείου στην αλυσίδα, περνώντας το προηγούμενο αποτέλεσμα
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # Αποθήκευση αποτελέσματος και χρήση ως είσοδο για το επόμενο εργαλείο
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1239,7 +1686,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# Παράδειγμα χρήσης
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1253,9 +1700,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Πρότυπο Dispatcher
+### 2. Dispatcher Pattern
 
-Χρησιμοποιήστε ένα κεντρικό εργαλείο που αναθέτει σε εξειδικευμένα εργαλεία βάσει της εισόδου:
+Use a central tool that dispatches to specialized tools based on input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1268,7 +1715,7 @@ public class ContentDispatcherTool : IMcpTool
     }
     
     public string Name => "contentProcessor";
-    public string Description => "Processes content of various types";
+    public string Description => "Επεξεργάζεται περιεχόμενο διαφόρων τύπων";
     
     public object GetSchema()
     {
@@ -1295,10 +1742,10 @@ public class ContentDispatcherTool : IMcpTool
         var contentType = request.Parameters.GetProperty("contentType").GetString();
         var operation = request.Parameters.GetProperty("operation").GetString();
         
-        // Determine which specialized tool to use
+        // Καθορισμός ποιο εξειδικευμένο εργαλείο θα χρησιμοποιηθεί
         string targetTool = DetermineTargetTool(contentType, operation);
         
-        // Forward to the specialized tool
+        // Προώθηση στο εξειδικευμένο εργαλείο
         var specializedResponse = await _mcpClient.ExecuteToolAsync(
             targetTool,
             new { content, options = GetOptionsForTool(targetTool, operation) }
@@ -1315,29 +1762,78 @@ public class ContentDispatcherTool : IMcpTool
             ("text", "analyze") => "textAnalyzer",
             ("html", _) => "htmlProcessor",
             ("markdown", _) => "markdownProcessor",
-            ("csv", _) => "csvProcessor",
-            ("code", _) => "codeAnalyzer",
-            _ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
-        };
-    }
-    
-    private object GetOptionsForTool(string toolName, string operation)
-    {
-        // Return appropriate options for each specialized tool
-        return toolName switch
-        {
-            "textSummarizer" => new { length = "medium" },
-            "htmlProcessor" => new { cleanUp = true, operation },
-            // Options for other tools...
-            _ => new { }
-        };
-    }
+            ("csv", _) =>
+# csvProcessor
+
+Αυτό το εργαλείο επιτρέπει την εύκολη επεξεργασία αρχείων CSV με διάφορες λειτουργίες.
+
+## Χαρακτηριστικά
+
+- Φόρτωση και ανάλυση αρχείων CSV
+- Φιλτράρισμα δεδομένων βάσει κριτηρίων
+- Εξαγωγή των επεξεργασμένων δεδομένων σε νέο αρχείο CSV
+- Υποστήριξη για αρχεία με διαφορετικά διαχωριστικά
+
+## Παραδείγματα χρήσης
+
+```python
+# Φόρτωση αρχείου CSV
+data = csvProcessor.load('@@INLINE_CODE_1@@')
+
+# Φιλτράρισμα γραμμών όπου η τιμή στη στήλη 'age' είναι μεγαλύτερη από 30
+filtered_data = csvProcessor.filter(data, column='age', condition='>30')
+
+# Εξαγωγή των φιλτραρισμένων δεδομένων
+csvProcessor.export(filtered_data, 'filtered_output.csv')
+```
+
+## Σημαντικές Σημειώσεις
+
+[!NOTE] Βεβαιωθείτε ότι το αρχείο CSV έχει σωστή μορφοποίηση πριν το φορτώσετε.
+
+[!WARNING] Η λειτουργία φιλτραρίσματος δεν υποστηρίζει σύνθετες εκφράσεις.
+
+[!TIP] Χρησιμοποιήστε τη μέθοδο `preview()` για να δείτε τα πρώτα 5 αρχεία πριν την εξαγωγή.
+
+## Συχνές Ερωτήσεις
+
+**Πώς μπορώ να αλλάξω το διαχωριστικό πεδίων;**
+
+Μπορείτε να ορίσετε το διαχωριστικό κατά τη φόρτωση του αρχείου:
+
+```python
+data = csvProcessor.load('@@INLINE_CODE_2@@', delimiter=';')
+```
+
+**Τι μορφές αρχείων υποστηρίζονται;**
+
+Το εργαλείο υποστηρίζει μόνο αρχεία CSV με κωδικοποίηση UTF-8.
+
+## Υποστήριξη
+
+Για περισσότερη βοήθεια, επισκεφθείτε την επίσημη σελίδα τεκμηρίωσης ή επικοινωνήστε με την ομάδα υποστήριξης.
+("code", _) => "codeAnalyzer",
+_ => throw new ToolExecutionException($"Δεν υπάρχει διαθέσιμο εργαλείο για {contentType}/{operation}")
+};
+}
+
+private object GetOptionsForTool(string toolName, string operation)
+{
+// Επιστρέφει τις κατάλληλες επιλογές για κάθε εξειδικευμένο εργαλείο
+return toolName switch
+{
+    "textSummarizer" => new { length = "medium" },
+    "htmlProcessor" => new { cleanUp = true, operation },
+    // Επιλογές για άλλα εργαλεία...
+    _ => new { }
+};
+}
 }
 ```
 
-### 3. Πρότυπο Παράλληλης Επεξεργασίας
+### 3. Parallel Processing Pattern
 
-Εκτελέστε πολλαπλά εργαλεία ταυτόχρονα για αποδοτικότητα:
+Execute multiple tools simultaneously for efficiency:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1348,11 +1844,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // Βήμα 1: Ανάκτηση μεταδεδομένων συνόλου δεδομένων (συγχρονισμένα)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // Βήμα 2: Εκκίνηση πολλαπλών αναλύσεων παράλληλα
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1374,25 +1870,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // Αναμονή για την ολοκλήρωση όλων των παράλληλων εργασιών
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // Αναμονή για ολοκλήρωση
         
-        // Step 3: Combine results
+        // Βήμα 3: Συνδυασμός αποτελεσμάτων
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // Βήμα 4: Δημιουργία συνοπτικής αναφοράς
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // Επιστροφή ολοκληρωμένου αποτελέσματος ροής εργασίας
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1403,9 +1899,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Πρότυπο Ανάκτησης από Σφάλματα
+### 4. Error Recovery Pattern
 
-Υλοποιήστε ομαλές εναλλακτικές λύσεις για αποτυχίες εργαλείων:
+Implement graceful fallbacks for tool failures:
 
 ```python
 class ResilientWorkflow:
@@ -1414,7 +1910,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # Προσπάθεια με το κύριο εργαλείο πρώτα
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1422,12 +1918,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
-            logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
+            # Καταγραφή αποτυχίας
+            logging.warning(f"Το κύριο εργαλείο '{primary_tool}' απέτυχε: {str(e)}")
             
-            # Fall back to secondary tool
+            # Εναλλακτική χρήση δευτερεύοντος εργαλείου
             try:
-                # Might need to transform parameters for fallback tool
+                # Ίσως χρειαστεί προσαρμογή παραμέτρων για το εφεδρικό εργαλείο
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1438,30 +1934,30 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
-                logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
+                # Απέτυχαν και τα δύο εργαλεία
+                logging.error(f"Απέτυχαν και τα δύο εργαλεία. Σφάλμα εφεδρείας: {str(fallback_error)}")
                 raise WorkflowExecutionException(
-                    f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
+                    f"Η ροή εργασίας απέτυχε: σφάλμα κύριου εργαλείου: {str(e)}; σφάλμα εφεδρείας: {str(fallback_error)}"
                 )
     
     def _adapt_parameters(self, params, from_tool, to_tool):
-        """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        """Προσαρμογή παραμέτρων μεταξύ διαφορετικών εργαλείων αν χρειάζεται"""
+        # Η υλοποίηση εξαρτάται από τα συγκεκριμένα εργαλεία
+        # Σε αυτό το παράδειγμα, απλά επιστρέφουμε τις αρχικές παραμέτρους
         return params
 
-# Example usage
+# Παράδειγμα χρήσης
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # Κύριο (επί πληρωμή) API καιρού
+        "basicWeatherService",    # Εφεδρικό (δωρεάν) API καιρού
         {"location": location}
     )
 ```
 
-### 5. Πρότυπο Σύνθεσης Ροών Εργασίας
+### 5. Workflow Composition Pattern
 
-Δημιουργήστε σύνθετες ροές εργασίας συνθέτοντας απλούστερες:
+Build complex workflows by composing simpler ones:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1481,10 +1977,10 @@ public class CompositeWorkflow : IWorkflow
         {
             var workflowResult = await workflow.ExecuteAsync(context);
             
-            // Store each workflow's result
+            // Αποθήκευση του αποτελέσματος κάθε ροής εργασίας
             results[workflow.Name] = workflowResult;
             
-            // Update context with the result for the next workflow
+            // Ενημέρωση του context με το αποτέλεσμα για την επόμενη ροή εργασίας
             context = context.WithResult(workflow.Name, workflowResult);
         }
         
@@ -1492,10 +1988,10 @@ public class CompositeWorkflow : IWorkflow
     }
     
     public string Name => "CompositeWorkflow";
-    public string Description => "Executes multiple workflows in sequence";
+    public string Description => "Εκτελεί πολλαπλές ροές εργασίας διαδοχικά";
 }
 
-// Example usage
+// Παράδειγμα χρήσης
 var documentWorkflow = new CompositeWorkflow(new IWorkflow[] {
     new DocumentFetchWorkflow(),
     new DocumentProcessingWorkflow(),
@@ -1508,44 +2004,44 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# Δοκιμές MCP Servers: Καλύτερες Πρακτικές και Κορυφαίες Συμβουλές
+# Testing MCP Servers: Best Practices and Top Tips
 
-## Επισκόπηση
+## Overview
 
-Οι δοκιμές είναι κρίσιμο στοιχείο για την ανάπτυξη αξιόπιστων, υψηλής ποιότητας MCP servers. Αυτός ο οδηγός παρέχει ολοκληρωμένες βέλτιστες πρακτικές και συμβουλές για τον έλεγχο των MCP servers σας καθ’ όλη τη διάρκεια του κύκλου ανάπτυξης, από δοκιμές μονάδας μέχρι ολοκληρωμένες και end-to-end δοκιμές.
+Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
 
-## Γιατί οι Δοκιμές Είναι Σημαντικές για MCP Servers
+## Why Testing Matters for MCP Servers
 
-Οι MCP servers λειτουργούν ως κρίσιμο middleware μεταξύ AI μοντέλων και εφαρμογών πελατών. Ο λεπτομερής έλεγχος εξασφαλίζει:
+MCP servers serve as crucial middleware between AI models and client applications. Thorough testing ensures:
 
-- Αξιοπιστία σε παραγωγικά περιβάλλοντα
-- Ακριβή διαχείριση αιτημάτων και απαντήσεων
-- Σωστή υλοποίηση των προδιαγραφών MCP
-- Ανθεκτικότητα σε αποτυχίες και ακραίες περιπτώσεις
-- Συνεπή απόδοση υπό διάφορα φορτία
+- Reliability in production environments
+- Accurate handling of requests and responses
+- Proper implementation of MCP specifications
+- Resilience against failures and edge cases
+- Consistent performance under various loads
 
-## Δοκιμές Μονάδας για MCP Servers
+## Unit Testing for MCP Servers
 
-### Δοκιμές Μονάδας (Βάση)
+### Unit Testing (Foundation)
 
-Οι δοκιμές μονάδας επαληθεύουν μεμονωμένα στοιχεία του MCP server σας σε απομόνωση.
+Unit tests verify individual components of your MCP server in isolation.
 
-#### Τι να Δοκιμάσετε
+#### What to Test
 
-1. **Resource Handlers**: Δοκιμάστε ξεχωριστά τη λογική κάθε resource handler
-2. **Υλοποιήσεις Εργαλείων**: Επαληθεύστε τη συμπεριφορά εργαλείων με διάφορες εισόδους
-3. **Πρότυπα Prompt**: Βεβαιωθείτε ότι τα πρότυπα prompt αποδίδονται σωστά
-4. **Επικύρωση Σχήματος**: Δοκιμάστε τη λογική επικύρωσης παραμέτρων
-5. **Διαχείριση Σφαλμάτων**: Επαληθεύστε τις απαντήσεις σφαλμάτων για μη έγκυρες εισόδους
+1. **Resource Handlers**: Test each resource handler's logic independently
+2. **Tool Implementations**: Verify tool behavior with various inputs
+3. **Prompt Templates**: Ensure prompt templates render correctly
+4. **Schema Validation**: Test parameter validation logic
+5. **Error Handling**: Verify error responses for invalid inputs
 
-#### Καλύτερες Πρακτικές για Δοκιμές Μονάδας
+#### Best Practices for Unit Testing
 
 ```csharp
-// Example unit test for a calculator tool in C#
+// Παράδειγμα unit test για εργαλείο αριθμομηχανής σε C#
 [Fact]
 public async Task CalculatorTool_Add_ReturnsCorrectSum()
 {
-    // Arrange
+    // Προετοιμασία
     var calculator = new CalculatorTool();
     var parameters = new Dictionary<string, object>
     {
@@ -1554,19 +2050,19 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
         ["b"] = 7
     };
     
-    // Act
+    // Εκτέλεση
     var response = await calculator.ExecuteAsync(parameters);
     var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
     
-    // Assert
+    // Έλεγχος
     Assert.Equal(12, result.Value);
 }
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# Παράδειγμα unit test για εργαλείο αριθμομηχανής σε Python
 def test_calculator_tool_add():
-    # Arrange
+    # Προετοιμασία
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -1574,34 +2070,34 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # Εκτέλεση
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # Έλεγχος
     assert result["value"] == 12
 ```
 
-### Ολοκληρωμένες Δοκιμές (Μεσαίο Επίπεδο)
+### Integration Testing (Middle Layer)
 
-Οι ολοκληρωμένες δοκιμές επαληθεύουν τις αλληλεπιδράσεις μεταξύ των στοιχείων του MCP server σας.
+Integration tests verify interactions between components of your MCP server.
 
-#### Τι να Δοκιμάσετε
+#### What to Test
 
-1. **Εκκίνηση Server**: Δοκιμάστε την εκκίνηση του server με διάφορες ρυθμίσεις
-2. **Εγγραφή Διαδρομών**: Επαληθεύστε ότι όλα τα endpoints είναι σωστά καταχωρημένα
-3. **Επεξεργασία Αιτημάτων**: Δοκιμάστε τον πλήρη κύκλο αίτησης-απόκρισης
-4. **Διασπορά Σφαλμάτων**: Βεβαιωθείτε ότι τα σφάλματα διαχειρίζονται σωστά μεταξύ των στοιχείων
-5. **Πιστοποίηση & Εξουσιοδότηση**: Δοκιμάστε τους μηχανισμούς ασφάλειας
+1. **Server Initialization**: Test server startup with various configurations
+2. **Route Registration**: Verify all endpoints are correctly registered
+3. **Request Processing**: Test the full request-response cycle
+4. **Error Propagation**: Ensure errors are properly handled across components
+5. **Authentication & Authorization**: Test security mechanisms
 
-#### Καλύτερες Πρακτικές για Ολοκληρωμένες Δοκιμές
+#### Best Practices for Integration Testing
 
 ```csharp
-// Example integration test for MCP server in C#
+// Παράδειγμα integration test για MCP server σε C#
 [Fact]
 public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 {
-    // Arrange
+    // Προετοιμασία
     var server = new McpServer();
     server.RegisterTool(new CalculatorTool());
     await server.StartAsync();
@@ -1617,40 +2113,40 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
         }
     };
     
-    // Act
+    // Εκτέλεση
     var response = await server.ProcessRequestAsync(request);
     
-    // Assert
+    // Έλεγχος
     Assert.NotNull(response);
     Assert.Equal(McpStatusCodes.Success, response.StatusCode);
-    // Additional assertions for response content
+    // Επιπλέον έλεγχοι για το περιεχόμενο της απόκρισης
     
-    // Cleanup
+    // Καθαρισμός
     await server.StopAsync();
 }
 ```
 
-### Δοκιμές Από Άκρο σε Άκρο (Ανώτερο Επίπεδο)
+### End-to-End Testing (Top Layer)
 
-Οι δοκιμές από άκρο σε άκρο επαληθεύουν τη συμπεριφορά ολόκληρου του συστήματος από τον πελάτη μέχρι τον server.
+End-to-end tests verify the complete system behavior from client to server.
 
-#### Τι να Δοκιμάσετε
+#### What to Test
 
-1. **Επικοινωνία Πελάτη-Server**: Δοκιμάστε πλήρεις κύκλους αίτησης-απόκρισης
-2. **Πραγματικά SDK Πελατών**: Δοκιμάστε με πραγματικές υλοποιήσεις πελατών
-3. **Απόδοση Υπό Φόρτο**: Επαληθεύστε τη συμπεριφορά με πολλαπλά ταυτόχρονα αιτήματα
-4. **Ανάκτηση από Σφάλματα**: Δοκιμάστε την ανάκτηση του συστήματος από αποτυχίες
-5. **Μακροχρόνιες Λειτουργίες**: Επαληθεύστε τη διαχείριση streaming και μακροχρόνιων λειτουργιών
+1. **Client-Server Communication**: Test complete request-response cycles
+2. **Real Client SDKs**: Test with actual client implementations
+3. **Performance Under Load**: Verify behavior with multiple concurrent requests
+4. **Error Recovery**: Test system recovery from failures
+5. **Long-Running Operations**: Verify handling of streaming and long operations
 
-#### Καλύτερες Πρακτικές για E2E Δοκιμές
+#### Best Practices for E2E Testing
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// Παράδειγμα E2E test με client σε TypeScript
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // Εκκίνηση server σε περιβάλλον δοκιμών
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -1659,36 +2155,36 @@ describe('MCP Server E2E Tests', () => {
     await stopTestServer();
   });
   
-  test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+  test('Ο client μπορεί να καλέσει το εργαλείο αριθμομηχανής και να λάβει σωστό αποτέλεσμα', async () => {
+    // Εκτέλεση
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // Έλεγχος
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
 });
 ```
 
-## Στρατηγικές Mocking για Δοκιμές MCP
+## Mocking Strategies for MCP Testing
 
-Το mocking είναι απαραίτητο για την απομόνωση στοιχείων κατά τις δοκιμές.
+Mocking is essential for isolating components during testing.
 
-### Στοιχεία προς Mock
+### Components to Mock
 
-1. **Εξωτερικά AI Μοντέλα**: Mock απαντήσεις μοντέλων για προβλέψιμες δοκιμές
-2. **Εξωτερικές Υπηρεσίες**: Mock εξαρτήσεις API (βάσεις δεδομένων, υπηρεσίες τρίτων)
-3. **Υπηρεσίες Πιστοποίησης**: Mock παρόχους ταυτότητας
-4. **Πάροχοι Πόρων**: Mock δαπανηρούς resource handlers
+1. **External AI Models**: Mock model responses for predictable testing
+2. **External Services**: Mock API dependencies (databases, third-party services)
+3. **Authentication Services**: Mock identity providers
+4. **Resource Providers**: Mock expensive resource handlers
 
-### Παράδειγμα: Mocking Απάντησης AI Μοντέλου
+### Example: Mocking an AI Model Response
 
 ```csharp
-// C# example with Moq
+// Παράδειγμα C# με Moq
 var mockModel = new Mock<ILanguageModel>();
 mockModel
     .Setup(m => m.GenerateResponseAsync(
@@ -1703,48 +2199,48 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# Παράδειγμα Python με unittest.mock
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
+    # Διαμόρφωση mock
     mock_model.return_value.generate_response.return_value = {
         "text": "Mocked model response",
         "finish_reason": "completed"
     }
     
-    # Use mock in test
+    # Χρήση mock στο τεστ
     server = McpServer(model_client=mock_model)
-    # Continue with test
+    # Συνέχεια με το τεστ
 ```
 
-## Δοκιμές Απόδοσης
+## Performance Testing
 
-Οι δοκιμές απόδοσης είναι κρίσιμες για παραγωγικούς MCP servers.
+Performance testing is crucial for production MCP servers.
 
-### Τι να Μετρήσετε
+### What to Measure
 
-1. **Καθυστέρηση**: Χρόνος απόκρισης αιτημάτων
-2. **Διαμετακόμιση**: Αιτήματα που διαχειρίζονται ανά δευτερόλεπτο
-3. **Χρήση Πόρων**: Χρήση CPU, μνήμης, δικτύου
-4. **Διαχείριση Ταυτόχρονης Πρόσβασης**: Συμπεριφορά υπό παράλληλα αιτήματα
-5. **Χαρακτηριστικά Κλιμάκωσης**: Απόδοση καθώς αυξάνεται το φορτίο
+1. **Latency**: Response time for requests
+2. **Throughput**: Requests handled per second
+3. **Resource Utilization**: CPU, memory, network usage
+4. **Concurrency Handling**: Behavior under parallel requests
+5. **Scaling Characteristics**: Performance as load increases
 
-### Εργαλεία για Δοκιμές Απόδοσης
+### Tools for Performance Testing
 
-- **k6**: Εργαλείο ανοικτού κώδικα για δοκιμές φόρτου
-- **JMeter**: Ολοκληρωμένες δοκιμές απόδοσης
-- **Locust**: Δοκιμές φόρτου βασισμένες σε Python
-- **Azure Load Testing**: Cloud-based δοκιμές απόδοσης
+- **k6**: Open-source load testing tool
+- **JMeter**: Comprehensive performance testing
+- **Locust**: Python-based load testing
+- **Azure Load Testing**: Cloud-based performance testing
 
-### Παράδειγμα: Βασική Δοκιμή Φόρτου με k6
+### Example: Basic Load Test with k6
 
 ```javascript
-// k6 script for load testing MCP server
+// k6 script για δοκιμές φόρτου στον MCP server
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10 virtual users
+  vus: 10,  // 10 εικονικοί χρήστες
   duration: '30s',
 };
 
@@ -1776,18 +2272,18 @@ export default function () {
 }
 ```
 
-## Αυτοματοποίηση Δοκιμών για MCP Servers
+## Test Automation for MCP Servers
 
-Η αυτοματοποίηση των δοκιμών εξασφαλίζει συνεπή ποιότητα και ταχύτερη ανατροφοδότηση.
+Automating your tests ensures consistent quality and faster feedback loops.
 
-### Ενσωμάτωση CI/CD
+### CI/CD Integration
 
-1. **Εκτέλεση Δοκιμών Μονάδας σε Pull Requests**: Εξασφαλίστε ότι οι αλλαγές κώδικα δεν σπάνε υπάρχουσα λειτουργικότητα
-2. **Ολοκληρωμένες Δοκιμές σε Staging**: Εκτελέστε ολοκληρωμένες δοκιμές σε προπαραγωγικά περιβάλλοντα
-3. **Βάσεις Απόδοσης**: Διατηρήστε benchmarks απόδοσης για να εντοπίζετε παλινδρομήσεις
-4. **Σαρώσεις Ασφαλείας**: Αυτοματοποιήστε τις δοκιμές ασφάλειας ως μέρος της ροής
+1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
+2. **Integration Tests in Staging**: Run integration tests in pre-production environments
+3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
+4. **Security Scans**: Automate security testing as part of the pipeline
 
-### Παράδειγμα CI Pipeline (GitHub Actions)
+### Example CI Pipeline (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -1826,20 +2322,101 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## Δοκιμές Συμμόρφωσης με την Προδιαγραφή MCP
+## Testing for Compliance with MCP Specification
 
-Επαληθεύστε ότι ο server σας υλοποιεί σωστά την προδιαγραφή MCP.
+Verify your server correctly implements the MCP specification.
 
-### Κύριοι Τομείς Συμμόρφωσης
+### Key Compliance Areas
 
-1. **API Endpoints**: Δοκιμάστε τα απαιτούμενα endpoints (/resources, /tools, κλπ.)
-2. **Μορφή Αιτήσεων/Απαντήσεων**: Επικυρώστε τη συμμόρφωση με το σχήμα
-3. **Κωδικοί Σφαλμάτων**: Επαληθεύστε σωστούς κωδικούς κατάστασης για διάφορα σενάρια
-4
-5. Σκεφτείτε να παρακολουθήσετε προχωρημένα μαθήματα σε συγκεκριμένα θέματα MCP, όπως η πολυτροπική ενσωμάτωση ή η ενσωμάτωση επιχειρησιακών εφαρμογών.  
-6. Πειραματιστείτε με τη δημιουργία των δικών σας εργαλείων και ροών εργασίας MCP χρησιμοποιώντας τις αρχές που μάθατε μέσα από το [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
+2. **Request/Response Format**: Validate schema compliance
+3. **Error Codes**: Verify correct status codes for various scenarios
+4. **Content Types**: Test handling of different content types
+5. **Authentication Flow**: Verify spec-compliant auth mechanisms
 
-Επόμενο: Καλές πρακτικές [case studies](../09-CaseStudy/README.md)
+### Compliance Test Suite
+
+```csharp
+[Fact]
+public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
+{
+    // Προετοιμασία
+    var client = new HttpClient();
+    client.DefaultRequestHeaders.Add("Authorization", "Bearer test-token");
+    
+    // Εκτέλεση
+    var response = await client.GetAsync("http://localhost:5000/api/resources");
+    var content = await response.Content.ReadAsStringAsync();
+    var resources = JsonSerializer.Deserialize
+
+// Assert  
+Assert.Equal(HttpStatusCode.OK, response.StatusCode);  
+Assert.NotNull(resources);  
+Assert.All(resources.Resources, resource =>  
+{  
+    Assert.NotNull(resource.Id);  
+    Assert.NotNull(resource.Type);  
+    // Πρόσθετος έλεγχος σχήματος  
+});  
+}  
+```
+
+## Κορυφαίες 10 Συμβουλές για Αποτελεσματικό Testing MCP Server
+
+1. **Δοκιμάστε ξεχωριστά τους ορισμούς εργαλείων**: Επαληθεύστε τους ορισμούς του σχήματος ανεξάρτητα από τη λογική του εργαλείου  
+2. **Χρησιμοποιήστε παραμετροποιημένες δοκιμές**: Δοκιμάστε τα εργαλεία με ποικιλία εισόδων, συμπεριλαμβανομένων ακραίων περιπτώσεων  
+3. **Ελέγξτε τις απαντήσεις σφαλμάτων**: Επαληθεύστε τη σωστή διαχείριση σφαλμάτων για όλες τις πιθανές συνθήκες σφάλματος  
+4. **Δοκιμάστε τη λογική εξουσιοδότησης**: Βεβαιωθείτε για τον σωστό έλεγχο πρόσβασης ανάλογα με τους ρόλους των χρηστών  
+5. **Παρακολουθήστε την κάλυψη των δοκιμών**: Στοχεύστε σε υψηλή κάλυψη του κώδικα κρίσιμων διαδρομών  
+6. **Δοκιμάστε απαντήσεις ροής (streaming)**: Επαληθεύστε τη σωστή διαχείριση περιεχομένου ροής  
+7. **Προσομοιώστε προβλήματα δικτύου**: Δοκιμάστε τη συμπεριφορά υπό κακές συνθήκες δικτύου  
+8. **Δοκιμάστε τα όρια πόρων**: Επαληθεύστε τη συμπεριφορά όταν φτάνετε σε όρια ποσοστώσεων ή ρυθμών  
+9. **Αυτοματοποιήστε τις δοκιμές παλινδρόμησης**: Δημιουργήστε ένα σύνολο που εκτελείται σε κάθε αλλαγή κώδικα  
+10. **Τεκμηριώστε τις περιπτώσεις δοκιμών**: Διατηρήστε σαφή τεκμηρίωση των σεναρίων δοκιμών  
+
+## Συνηθισμένα Σφάλματα στις Δοκιμές
+
+- **Υπερβολική εξάρτηση από το «ευτυχές μονοπάτι»**: Φροντίστε να δοκιμάζετε διεξοδικά τις περιπτώσεις σφαλμάτων  
+- **Παράβλεψη των δοκιμών απόδοσης**: Εντοπίστε τα σημεία συμφόρησης πριν επηρεάσουν την παραγωγή  
+- **Δοκιμές μόνο σε απομόνωση**: Συνδυάστε μονάδες, ολοκλήρωση και end-to-end δοκιμές  
+- **Ατελής κάλυψη API**: Βεβαιωθείτε ότι όλα τα endpoints και οι λειτουργίες δοκιμάζονται  
+- **Ασυνεπή περιβάλλοντα δοκιμών**: Χρησιμοποιήστε containers για να εξασφαλίσετε συνεπή περιβάλλοντα δοκιμών  
+
+## Συμπέρασμα
+
+Μια ολοκληρωμένη στρατηγική δοκιμών είναι απαραίτητη για την ανάπτυξη αξιόπιστων, υψηλής ποιότητας MCP servers. Εφαρμόζοντας τις βέλτιστες πρακτικές και συμβουλές που περιγράφονται σε αυτόν τον οδηγό, μπορείτε να διασφαλίσετε ότι οι υλοποιήσεις MCP πληρούν τα υψηλότερα πρότυπα ποιότητας, αξιοπιστίας και απόδοσης.  
+
+## Βασικά Σημεία
+
+1. **Σχεδιασμός εργαλείων**: Ακολουθήστε την αρχή της μοναδικής ευθύνης, χρησιμοποιήστε dependency injection και σχεδιάστε για συνθετότητα  
+2. **Σχεδιασμός σχήματος**: Δημιουργήστε σαφή, καλά τεκμηριωμένα σχήματα με κατάλληλους περιορισμούς επικύρωσης  
+3. **Διαχείριση σφαλμάτων**: Υλοποιήστε ομαλή διαχείριση σφαλμάτων, δομημένες απαντήσεις σφαλμάτων και λογική επανάληψης  
+4. **Απόδοση**: Χρησιμοποιήστε caching, ασύγχρονη επεξεργασία και περιορισμό πόρων  
+5. **Ασφάλεια**: Εφαρμόστε αυστηρή επικύρωση εισόδων, ελέγχους εξουσιοδότησης και διαχείριση ευαίσθητων δεδομένων  
+6. **Δοκιμές**: Δημιουργήστε ολοκληρωμένες μονάδες, ολοκλήρωσης και end-to-end δοκιμές  
+7. **Πρότυπα ροής εργασίας**: Εφαρμόστε καθιερωμένα πρότυπα όπως αλυσίδες, dispatchers και παράλληλη επεξεργασία  
+
+## Άσκηση
+
+Σχεδιάστε ένα εργαλείο MCP και ροή εργασίας για ένα σύστημα επεξεργασίας εγγράφων που:
+
+1. Αποδέχεται έγγραφα σε πολλαπλές μορφές (PDF, DOCX, TXT)  
+2. Εξάγει κείμενο και βασικές πληροφορίες από τα έγγραφα  
+3. Κατηγοριοποιεί τα έγγραφα ανά τύπο και περιεχόμενο  
+4. Δημιουργεί περίληψη για κάθε έγγραφο  
+
+Υλοποιήστε τα σχήματα εργαλείων, τη διαχείριση σφαλμάτων και ένα πρότυπο ροής εργασίας που ταιριάζει καλύτερα σε αυτό το σενάριο. Σκεφτείτε πώς θα δοκιμάζατε αυτή την υλοποίηση.  
+
+## Πόροι
+
+1. Ενταχθείτε στην κοινότητα MCP στο [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) για να μένετε ενημερωμένοι με τις τελευταίες εξελίξεις  
+2. Συνεισφέρετε σε open-source [MCP projects](https://github.com/modelcontextprotocol)  
+3. Εφαρμόστε τις αρχές MCP στις δικές σας πρωτοβουλίες AI οργανισμού  
+4. Εξερευνήστε εξειδικευμένες υλοποιήσεις MCP για τον κλάδο σας  
+5. Σκεφτείτε να παρακολουθήσετε προχωρημένα μαθήματα σε συγκεκριμένα θέματα MCP, όπως πολυμορφική ενσωμάτωση ή ενσωμάτωση επιχειρησιακών εφαρμογών  
+6. Πειραματιστείτε με τη δημιουργία δικών σας εργαλείων και ροών εργασίας MCP χρησιμοποιώντας τις αρχές που μάθατε μέσα από το [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+
+Επόμενο: Καλές Πρακτικές [case studies](../09-CaseStudy/README.md)
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

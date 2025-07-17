@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "748c61250d4a326206b72b28f6154615",
-  "translation_date": "2025-07-13T23:45:44+00:00",
+  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
+  "translation_date": "2025-07-17T07:09:21+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "nl"
 }
 -->
 # Geavanceerde onderwerpen in MCP
 
-Dit hoofdstuk behandelt een reeks geavanceerde onderwerpen in de implementatie van het Model Context Protocol (MCP), waaronder multi-modale integratie, schaalbaarheid, beveiligingsrichtlijnen en enterprise-integratie. Deze onderwerpen zijn cruciaal voor het bouwen van robuuste en productieklare MCP-toepassingen die kunnen voldoen aan de eisen van moderne AI-systemen.
+Dit hoofdstuk behandelt een reeks geavanceerde onderwerpen in de implementatie van Model Context Protocol (MCP), waaronder multi-modale integratie, schaalbaarheid, beveiligingsrichtlijnen en enterprise-integratie. Deze onderwerpen zijn cruciaal voor het bouwen van robuuste en productieklare MCP-toepassingen die kunnen voldoen aan de eisen van moderne AI-systemen.
 
 ## Overzicht
 
-Deze les verkent geavanceerde concepten in de implementatie van het Model Context Protocol, met de nadruk op multi-modale integratie, schaalbaarheid, beveiligingsrichtlijnen en enterprise-integratie. Deze onderwerpen zijn essentieel voor het bouwen van productieklare MCP-toepassingen die complexe eisen in enterprise-omgevingen aankunnen.
+Deze les verkent geavanceerde concepten in de implementatie van Model Context Protocol, met de nadruk op multi-modale integratie, schaalbaarheid, beveiligingsrichtlijnen en enterprise-integratie. Deze onderwerpen zijn essentieel voor het bouwen van productieklare MCP-toepassingen die complexe eisen in enterprise-omgevingen aankunnen.
 
 ## Leerdoelen
 
@@ -29,17 +29,17 @@ Aan het einde van deze les kun je:
 
 | Link | Titel | Beschrijving |
 |------|-------|--------------|
-| [5.1 Integration with Azure](./mcp-integration/README.md) | Integratie met Azure | Leer hoe je jouw MCP Server op Azure integreert |
+| [5.1 Integration with Azure](./mcp-integration/README.md) | Integratie met Azure | Leer hoe je jouw MCP-server integreert op Azure |
 | [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP Multi-modale voorbeelden | Voorbeelden voor audio-, beeld- en multi-modale respons |
 | [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimale Spring Boot-app die OAuth2 met MCP toont, zowel als Authorization als Resource Server. Demonstreert veilige tokenuitgifte, beveiligde endpoints, Azure Container Apps-deployment en API Management-integratie. |
 | [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root contexts | Leer meer over root context en hoe je deze implementeert |
 | [5.5 Routing](./mcp-routing/README.md) | Routing | Leer verschillende soorten routing |
 | [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Leer hoe je met sampling werkt |
 | [5.7 Scaling](./mcp-scaling/README.md) | Schalen | Leer over schalen |
-| [5.8 Security](./mcp-security/README.md) | Beveiliging | Beveilig je MCP Server |
+| [5.8 Security](./mcp-security/README.md) | Beveiliging | Beveilig je MCP-server |
 | [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP-server en client die integreren met SerpAPI voor realtime web-, nieuws-, productzoekopdrachten en Q&A. Demonstreert multi-tool orchestratie, externe API-integratie en robuuste foutafhandeling. |
 | [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | Realtime datastreaming is essentieel geworden in de huidige datagedreven wereld, waar bedrijven en applicaties directe toegang tot informatie nodig hebben om tijdig beslissingen te nemen. |
-| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | Realtime websearch: hoe MCP realtime websearch transformeert door een gestandaardiseerde aanpak te bieden voor contextbeheer over AI-modellen, zoekmachines en applicaties heen. |
+| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | Realtime websearch: hoe MCP realtime websearch transformeert door een gestandaardiseerde aanpak van contextbeheer over AI-modellen, zoekmachines en applicaties heen te bieden. |
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Authenticatie | Microsoft Entra ID biedt een robuuste cloudgebaseerde oplossing voor identiteits- en toegangsbeheer, waarmee wordt gegarandeerd dat alleen geautoriseerde gebruikers en applicaties met jouw MCP-server kunnen communiceren. |
 | [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Integratie | Leer hoe je Model Context Protocol-servers integreert met Azure AI Foundry-agents, wat krachtige toolorchestratie en enterprise AI-mogelijkheden mogelijk maakt met gestandaardiseerde verbindingen naar externe databronnen. |
 
@@ -54,7 +54,7 @@ Voor de meest actuele informatie over geavanceerde MCP-onderwerpen, raadpleeg:
 
 - Multi-modale MCP-implementaties breiden AI-mogelijkheden uit voorbij tekstverwerking
 - Schaalbaarheid is essentieel voor enterprise-implementaties en kan worden aangepakt via horizontaal en verticaal schalen
-- Uitgebreide beveiligingsmaatregelen beschermen data en zorgen voor juiste toegangscontrole
+- Uitgebreide beveiligingsmaatregelen beschermen data en zorgen voor correcte toegangscontrole
 - Enterprise-integratie met platforms zoals Azure OpenAI en Microsoft AI Foundry versterkt MCP-mogelijkheden
 - Geavanceerde MCP-implementaties profiteren van geoptimaliseerde architecturen en zorgvuldig resourcebeheer
 

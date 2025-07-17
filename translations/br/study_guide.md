@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-17T01:00:54+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T05:29:14+00:00",
   "source_file": "study_guide.md",
   "language_code": "br"
 }
@@ -180,7 +180,7 @@ O repositório está organizado em dez seções principais, cada uma focada em d
     - Workshop prático completo combinando MCP com AI Toolkit
     - Construção de aplicações inteligentes que conectam modelos de IA com ferramentas do mundo real
     - Módulos práticos cobrindo fundamentos, desenvolvimento de servidor customizado e estratégias de implantação em produção
-    - Abordagem de aprendizado baseada em laboratório com instruções passo a passo
+    - Abordagem de aprendizado em laboratório com instruções passo a passo
 
 ## Recursos Adicionais
 
@@ -206,6 +206,8 @@ O repositório inclui recursos de apoio:
 O currículo aborda diversos clientes e ferramentas MCP:
 
 1. **Clientes Oficiais**:
+   - Visual Studio Code
+   - MCP no Visual Studio Code
    - Claude Desktop
    - Claude no VSCode
    - Claude API
@@ -256,7 +258,7 @@ Este repositório recebe contribuições da comunidade. Veja a seção Contribui
 | Data | Alterações |
 |------|------------|
 | 16 de julho de 2025 | - Atualizada a estrutura do repositório para refletir o conteúdo atual<br>- Adicionada seção Clientes e Ferramentas MCP<br>- Adicionada seção Servidores MCP Populares<br>- Atualizado o Mapa Visual do Currículo com todos os tópicos atuais<br>- Aprimorada a seção Tópicos Avançados com todas as áreas especializadas<br>- Atualizados Estudos de Caso para refletir exemplos reais<br>- Esclarecida a origem do MCP como criado pela Anthropic |
-| 11 de junho de 2025 | - Criação inicial do guia de estudo<br>- Adicionado Mapa Visual do Currículo<br>- Estrutura do repositório delineada<br>- Inclusos projetos de exemplo e recursos adicionais |
+| 11 de junho de 2025 | - Criação inicial do guia de estudo<br>- Adicionado Mapa Visual do Currículo<br>- Estruturado o repositório<br>- Incluídos projetos de exemplo e recursos adicionais |
 
 ---
 

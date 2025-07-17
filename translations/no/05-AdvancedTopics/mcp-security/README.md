@@ -1,19 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:40:55+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-17T06:40:47+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "no"
 }
 -->
-# Sikkerhetsrutiner
+# Sikkerhets beste praksis
 
-Sikkerhet er avgjørende for MCP-implementasjoner, spesielt i bedriftsmiljøer. Det er viktig å sørge for at verktøy og data er beskyttet mot uautorisert tilgang, datainnbrudd og andre sikkerhetstrusler.
+Sikkerhet er avgjørende for MCP-implementasjoner, spesielt i bedriftsmiljøer. Det er viktig å sikre at verktøy og data er beskyttet mot uautorisert tilgang, datainnbrudd og andre sikkerhetstrusler.
 
 ## Introduksjon
 
-I denne leksjonen skal vi utforske sikkerhetsrutiner for MCP-implementasjoner. Vi vil dekke autentisering og autorisasjon, databeskyttelse, sikker kjøring av verktøy og overholdelse av personvernregler.
+Model Context Protocol (MCP) krever spesifikke sikkerhetshensyn på grunn av sin rolle i å gi LLM-er tilgang til data og verktøy. Denne leksjonen utforsker sikkerhets beste praksis for MCP-implementasjoner basert på offisielle MCP-retningslinjer og etablerte sikkerhetsmønstre.
+
+MCP følger viktige sikkerhetsprinsipper for å sikre trygge og pålitelige interaksjoner:
+
+- **Brukersamtykke og kontroll**: Brukere må gi eksplisitt samtykke før noen data blir aksessert eller operasjoner utført. Gi tydelig kontroll over hvilke data som deles og hvilke handlinger som er autorisert.
+  
+- **Datapersonvern**: Brukerdata skal kun eksponeres med eksplisitt samtykke og må beskyttes med passende tilgangskontroller. Beskytt mot uautorisert datatransmisjon.
+  
+- **Verktøysikkerhet**: Før et verktøy kalles, kreves eksplisitt brukersamtykke. Brukere bør ha en klar forståelse av hvert verktøys funksjonalitet, og robuste sikkerhetsgrenser må håndheves.
 
 ## Læringsmål
 
@@ -21,22 +29,33 @@ Etter denne leksjonen skal du kunne:
 
 - Implementere sikre autentiserings- og autorisasjonsmekanismer for MCP-servere.
 - Beskytte sensitiv data ved hjelp av kryptering og sikker lagring.
-- Sikre at verktøy kjøres trygt med riktige tilgangskontroller.
+- Sikre trygg kjøring av verktøy med riktige tilgangskontroller.
 - Anvende beste praksis for databeskyttelse og personvern.
+- Identifisere og redusere vanlige MCP-sikkerhetssårbarheter som confused deputy-problemer, token passthrough og session hijacking.
 
 ## Autentisering og autorisasjon
 
-Autentisering og autorisasjon er essensielt for å sikre MCP-servere. Autentisering svarer på spørsmålet «Hvem er du?», mens autorisasjon svarer på «Hva kan du gjøre?».
+Autentisering og autorisasjon er essensielt for å sikre MCP-servere. Autentisering svarer på spørsmålet "Hvem er du?" mens autorisasjon svarer på "Hva kan du gjøre?".
 
-La oss se på eksempler på hvordan man kan implementere sikker autentisering og autorisasjon i MCP-servere ved bruk av .NET og Java.
+I henhold til MCPs sikkerhetsspesifikasjon er disse kritiske sikkerhetshensyn:
+
+1. **Token-validering**: MCP-servere MÅ IKKE akseptere noen tokens som ikke eksplisitt er utstedt for MCP-serveren. "Token passthrough" er et eksplisitt forbudt antipattern.
+
+2. **Autorisasjonsverifisering**: MCP-servere som implementerer autorisasjon MÅ verifisere alle innkommende forespørsler og MÅ IKKE bruke sesjoner for autentisering.
+
+3. **Sikker sesjonshåndtering**: Når sesjoner brukes for tilstand, MÅ MCP-servere bruke sikre, ikke-deterministiske sesjons-IDer generert med sikre tilfeldige tallgeneratorer. Sesjons-IDer BØR knyttes til brukerspesifikk informasjon.
+
+4. **Eksplisitt brukersamtykke**: For proxy-servere MÅ MCP-implementasjoner innhente brukersamtykke for hver dynamisk registrerte klient før videresending til tredjeparts autorisasjonsservere.
+
+La oss se på eksempler på hvordan man implementerer sikker autentisering og autorisasjon i MCP-servere ved bruk av .NET og Java.
 
 ### .NET Identity-integrasjon
 
 ASP .NET Core Identity tilbyr et robust rammeverk for håndtering av brukerautentisering og autorisasjon. Vi kan integrere det med MCP-servere for å sikre tilgang til verktøy og ressurser.
 
-Det er noen grunnleggende konsepter vi må forstå når vi integrerer ASP.NET Core Identity med MCP-servere, nemlig:
+Noen kjernebegreper vi må forstå når vi integrerer ASP.NET Core Identity med MCP-servere er:
 
-- **Identity-konfigurasjon**: Sette opp ASP.NET Core Identity med brukerroller og claims. En claim er en informasjon om brukeren, som for eksempel deres rolle eller tillatelser, som «Admin» eller «User».
+- **Identity-konfigurasjon**: Sette opp ASP.NET Core Identity med brukerroller og claims. En claim er en informasjon om brukeren, som for eksempel deres rolle eller tillatelser, som "Admin" eller "User".
 - **JWT-autentisering**: Bruke JSON Web Tokens (JWT) for sikker API-tilgang. JWT er en standard for sikker overføring av informasjon mellom parter som et JSON-objekt, som kan verifiseres og stoles på fordi det er digitalt signert.
 - **Autorisasjonspolicyer**: Definere policyer for å kontrollere tilgang til spesifikke verktøy basert på brukerroller. MCP bruker autorisasjonspolicyer for å avgjøre hvilke brukere som kan få tilgang til hvilke verktøy basert på deres roller og claims.
 
@@ -113,19 +132,19 @@ I koden over har vi:
 
 - Konfigurert ASP.NET Core Identity for brukerstyring.
 - Satt opp JWT-autentisering for sikker API-tilgang. Vi spesifiserte token-valideringsparametere, inkludert issuer, audience og signeringsnøkkel.
-- Definert autorisasjonspolicyer for å kontrollere tilgang til verktøy basert på brukerroller. For eksempel krever policyen «CanUseAdminTools» at brukeren har rollen «Admin», mens «CanUseBasic» krever at brukeren er autentisert.
+- Definert autorisasjonspolicyer for å kontrollere tilgang til verktøy basert på brukerroller. For eksempel krever policyen "CanUseAdminTools" at brukeren har "Admin"-rollen, mens "CanUseBasic" krever at brukeren er autentisert.
 - Registrert MCP-verktøy med spesifikke autorisasjonskrav, slik at kun brukere med riktige roller får tilgang.
 
 ### Java Spring Security-integrasjon
 
 For Java bruker vi Spring Security for å implementere sikker autentisering og autorisasjon for MCP-servere. Spring Security tilbyr et omfattende sikkerhetsrammeverk som integreres sømløst med Spring-applikasjoner.
 
-Kjernebegrepene her er:
+Kjernebegreper her er:
 
 - **Spring Security-konfigurasjon**: Sette opp sikkerhetskonfigurasjoner for autentisering og autorisasjon.
 - **OAuth2 Resource Server**: Bruke OAuth2 for sikker tilgang til MCP-verktøy. OAuth2 er et autorisasjonsrammeverk som lar tredjepartstjenester utveksle tilgangstokener for sikker API-tilgang.
-- **Sikkerhetsinterceptorer**: Implementere sikkerhetsinterceptorer for å håndheve tilgangskontroller ved kjøring av verktøy.
-- **Rollebasert tilgangskontroll**: Bruke roller for å styre tilgang til spesifikke verktøy og ressurser.
+- **Sikkerhetsinterceptorer**: Implementere sikkerhetsinterceptorer for å håndheve tilgangskontroller ved verktøykjøring.
+- **Rollebasert tilgangskontroll**: Bruke roller for å kontrollere tilgang til spesifikke verktøy og ressurser.
 - **Sikkerhetsannotasjoner**: Bruke annotasjoner for å sikre metoder og endepunkter.
 
 ```java
@@ -180,18 +199,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 I koden over har vi:
 
-- Konfigurert Spring Security for å sikre MCP-endepunkter, med offentlig tilgang til verktøysøk, men krav om autentisering for kjøring av verktøy.
+- Konfigurert Spring Security for å sikre MCP-endepunkter, med offentlig tilgang til verktøyoppdagelse, men krever autentisering for verktøykjøring.
 - Brukt OAuth2 som resource server for å håndtere sikker tilgang til MCP-verktøy.
-- Implementert en sikkerhetsinterceptor for å håndheve tilgangskontroller ved kjøring av verktøy, som sjekker brukerroller og tillatelser før tilgang gis til spesifikke verktøy.
+- Implementert en sikkerhetsinterceptor for å håndheve tilgangskontroller ved verktøykjøring, som sjekker brukerroller og tillatelser før tilgang gis til spesifikke verktøy.
 - Definert rollebasert tilgangskontroll for å begrense tilgang til admin-verktøy og sensitiv data basert på brukerroller.
 
 ## Databeskyttelse og personvern
 
-Databeskyttelse er avgjørende for å sikre at sensitiv informasjon håndteres trygt. Dette inkluderer beskyttelse av personlig identifiserbar informasjon (PII), økonomiske data og annen sensitiv informasjon mot uautorisert tilgang og lekkasjer.
+Databeskyttelse er avgjørende for å sikre at sensitiv informasjon håndteres trygt. Dette inkluderer beskyttelse av personlig identifiserbar informasjon (PII), finansielle data og annen sensitiv informasjon mot uautorisert tilgang og brudd.
 
 ### Python-eksempel på databeskyttelse
 
-La oss se på et eksempel på hvordan man kan implementere databeskyttelse i Python ved bruk av kryptering og PII-deteksjon.
+La oss se på et eksempel på hvordan man implementerer databeskyttelse i Python ved bruk av kryptering og PII-deteksjon.
 
 ```python
 from mcp_server import McpServer
@@ -331,10 +350,65 @@ I koden over har vi:
 
 - Implementert en `PiiDetector`-klasse for å skanne tekst og parametere etter personlig identifiserbar informasjon (PII).
 - Opprettet en `EncryptionService`-klasse for å håndtere kryptering og dekryptering av sensitiv data ved hjelp av `cryptography`-biblioteket.
-- Definert en `secure_tool`-dekoratør som pakker inn verktøykjøring for å sjekke etter PII, logge tilgang og kryptere sensitiv data ved behov.
-- Brukt `secure_tool`-dekoratøren på et eksempelverktøy (`SecureCustomerDataTool`) for å sikre at det håndterer sensitiv data på en trygg måte.
+- Definert en `secure_tool`-dekoratør som pakker inn verktøykjøring for å sjekke etter PII, logge tilgang og kryptere sensitiv data om nødvendig.
+- Brukt `secure_tool`-dekoratøren på et eksempelverktøy (`SecureCustomerDataTool`) for å sikre at det håndterer sensitiv data på en sikker måte.
 
-## Hva nå
+## MCP-spesifikke sikkerhetsrisikoer
+
+I følge den offisielle MCP-sikkerhetsdokumentasjonen finnes det spesifikke sikkerhetsrisikoer som MCP-implementatører bør være oppmerksomme på:
+
+### 1. Confused Deputy-problemet
+
+Denne sårbarheten oppstår når en MCP-server fungerer som en proxy til tredjeparts-APIer, noe som potensielt kan tillate angripere å utnytte det tillitsfulle forholdet mellom MCP-serveren og disse APIene.
+
+**Tiltak:**
+- MCP-proxy-servere som bruker statiske klient-IDer MÅ innhente brukersamtykke for hver dynamisk registrerte klient før videresending til tredjeparts autorisasjonsservere.
+- Implementer korrekt OAuth-flow med PKCE (Proof Key for Code Exchange) for autorisasjonsforespørsler.
+- Strengt valider redirect-URIer og klientidentifikatorer.
+
+### 2. Token Passthrough-sårbarheter
+
+Token passthrough oppstår når en MCP-server aksepterer tokens fra en MCP-klient uten å validere at tokenene er riktig utstedt til MCP-serveren, og videresender dem til nedstrøms APIer.
+
+### Risikoer
+- Omgåelse av sikkerhetskontroller (unngåelse av rate limiting, forespørselsvalidering)
+- Problemer med ansvarlighet og revisjonsspor
+- Brudd på tillitsgrenser
+- Fremtidige kompatibilitetsrisikoer
+
+**Tiltak:**
+- MCP-servere MÅ IKKE akseptere noen tokens som ikke eksplisitt er utstedt for MCP-serveren.
+- Alltid valider token audience claims for å sikre at de samsvarer med forventet tjeneste.
+
+### 3. Session Hijacking
+
+Dette skjer når en uautorisert part får tak i en sesjons-ID og bruker den til å utgi seg for å være den opprinnelige klienten, noe som kan føre til uautoriserte handlinger.
+
+**Tiltak:**
+- MCP-servere som implementerer autorisasjon MÅ verifisere alle innkommende forespørsler og MÅ IKKE bruke sesjoner for autentisering.
+- Bruk sikre, ikke-deterministiske sesjons-IDer generert med sikre tilfeldige tallgeneratorer.
+- Knytt sesjons-IDer til brukerspesifikk informasjon med et nøkkelformat som `<user_id>:<session_id>`.
+- Implementer riktige retningslinjer for sesjonsutløp og rotasjon.
+
+## Ytterligere sikkerhets beste praksis for MCP
+
+I tillegg til de grunnleggende MCP-sikkerhetshensynene, bør du vurdere å implementere disse ekstra sikkerhetspraksisene:
+
+- **Bruk alltid HTTPS**: Krypter kommunikasjonen mellom klient og server for å beskytte tokens mot avlytting.
+- **Implementer rollebasert tilgangskontroll (RBAC)**: Ikke bare sjekk om en bruker er autentisert; sjekk hva de har autorisasjon til å gjøre.
+- **Overvåk og revider**: Logg alle autentiseringshendelser for å oppdage og reagere på mistenkelig aktivitet.
+- **Håndter rate limiting og throttling**: Implementer eksponentiell backoff og retry-logikk for å håndtere ratebegrensninger på en smidig måte.
+- **Sikker tokenlagring**: Lagre tilgangs- og refresh-tokens sikkert ved bruk av systemets sikre lagringsmekanismer eller sikre nøkkelhåndteringstjenester.
+- **Vurder bruk av API Management**: Tjenester som Azure API Management kan håndtere mange sikkerhetsaspekter automatisk, inkludert autentisering, autorisasjon og rate limiting.
+
+## Referanser
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
+
+## Hva er neste
 
 - [5.9 Web search](../web-search-mcp/README.md)
 

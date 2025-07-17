@@ -1,26 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "748c61250d4a326206b72b28f6154615",
-  "translation_date": "2025-07-13T23:45:18+00:00",
+  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
+  "translation_date": "2025-07-17T06:39:22+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "no"
 }
 -->
 # Avanserte emner i MCP
 
-Dette kapitlet tar for seg en rekke avanserte temaer innen implementering av Model Context Protocol (MCP), inkludert multimodal integrasjon, skalerbarhet, sikkerhetsrutiner og integrasjon i bedriftsmiljøer. Disse temaene er viktige for å bygge robuste og produksjonsklare MCP-applikasjoner som kan møte kravene til moderne AI-systemer.
+Dette kapitlet dekker en rekke avanserte temaer innen implementering av Model Context Protocol (MCP), inkludert multimodal integrasjon, skalerbarhet, sikkerhetsrutiner og bedriftsintegrasjon. Disse temaene er avgjørende for å bygge robuste og produksjonsklare MCP-applikasjoner som kan møte kravene til moderne AI-systemer.
 
 ## Oversikt
 
-Denne leksjonen utforsker avanserte konsepter i implementeringen av Model Context Protocol, med fokus på multimodal integrasjon, skalerbarhet, sikkerhetsrutiner og bedriftsintegrasjon. Disse temaene er avgjørende for å utvikle produksjonsklare MCP-applikasjoner som kan håndtere komplekse krav i bedriftsmiljøer.
+Denne leksjonen utforsker avanserte konsepter i implementeringen av Model Context Protocol, med fokus på multimodal integrasjon, skalerbarhet, sikkerhetsrutiner og bedriftsintegrasjon. Disse temaene er viktige for å utvikle produksjonsklare MCP-applikasjoner som kan håndtere komplekse krav i bedriftsmiljøer.
 
 ## Læringsmål
 
 Etter denne leksjonen skal du kunne:
 
 - Implementere multimodale funksjoner innen MCP-rammeverk
-- Designe skalerbare MCP-arkitekturer for krevende scenarioer
+- Designe skalerbare MCP-arkitekturer for krevende scenarier
 - Anvende sikkerhetsrutiner i tråd med MCPs sikkerhetsprinsipper
 - Integrere MCP med bedrifts-AI-systemer og rammeverk
 - Optimalisere ytelse og pålitelighet i produksjonsmiljøer
@@ -32,8 +32,8 @@ Etter denne leksjonen skal du kunne:
 | [5.1 Integration with Azure](./mcp-integration/README.md) | Integrasjon med Azure | Lær hvordan du integrerer MCP-serveren din på Azure |
 | [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP multimodale eksempler | Eksempler på lyd, bilde og multimodale svar |
 | [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2-demo | Minimal Spring Boot-app som viser OAuth2 med MCP, både som autorisasjons- og ressursserver. Demonstrerer sikker tokenutstedelse, beskyttede endepunkter, distribusjon på Azure Container Apps og integrasjon med API Management. |
-| [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root contexts | Lær mer om root context og hvordan du implementerer dem |
-| [5.5 Routing](./mcp-routing/README.md) | Routing | Lær om ulike typer routing |
+| [5.4 Root Contexts](./mcp-root-contexts/README.md) | Rotkontekster | Lær mer om rotkontekst og hvordan du implementerer dem |
+| [5.5 Routing](./mcp-routing/README.md) | Rutestyring | Lær om ulike typer rutestyring |
 | [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Lær hvordan du jobber med sampling |
 | [5.7 Scaling](./mcp-scaling/README.md) | Skalering | Lær om skalering |
 | [5.8 Security](./mcp-security/README.md) | Sikkerhet | Sikre MCP-serveren din |
@@ -60,10 +60,10 @@ For den mest oppdaterte informasjonen om avanserte MCP-temaer, se:
 
 ## Øvelse
 
-Design en MCP-implementering på bedriftsnivå for et spesifikt brukstilfelle:
+Design en MCP-implementering på bedriftsnivå for et spesifikt bruksområde:
 
-1. Identifiser multimodale krav for ditt brukstilfelle
-2. Skisser sikkerhetstiltak som trengs for å beskytte sensitiv data
+1. Identifiser multimodale krav for ditt bruksområde
+2. Skisser sikkerhetskontroller som trengs for å beskytte sensitiv data
 3. Design en skalerbar arkitektur som kan håndtere varierende belastning
 4. Planlegg integrasjonspunkter med bedrifts-AI-systemer
 5. Dokumenter potensielle ytelsesflaskehalser og strategier for å redusere dem
@@ -75,7 +75,7 @@ Design en MCP-implementering på bedriftsnivå for et spesifikt brukstilfelle:
 
 ---
 
-## Hva skjer videre
+## Hva nå
 
 - [5.1 MCP Integration](./mcp-integration/README.md)
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:37:17+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T08:22:28+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "tl"
 }
@@ -13,7 +13,7 @@ Ipinapakita ng gabay na ito kung paano i-integrate ang Model Context Protocol (M
 
 ## Panimula
 
-Ang Model Context Protocol (MCP) ay isang bukas na pamantayan na nagpapahintulot sa mga AI application na ligtas na kumonekta sa mga panlabas na pinagkukunan ng data at mga tool. Kapag na-integrate sa Azure AI Foundry, pinapayagan ng MCP ang mga agent na ma-access at makipag-ugnayan sa iba't ibang panlabas na serbisyo, API, at pinagkukunan ng data sa isang standardized na paraan.
+Ang Model Context Protocol (MCP) ay isang bukas na pamantayan na nagpapahintulot sa mga AI application na ligtas na kumonekta sa mga panlabas na pinagkukunan ng datos at mga tool. Kapag na-integrate sa Azure AI Foundry, pinapayagan ng MCP ang mga agent na ma-access at makipag-ugnayan sa iba't ibang panlabas na serbisyo, API, at pinagkukunan ng datos sa isang standardized na paraan.
 
 Pinagsasama ng integrasyong ito ang kakayahang umangkop ng MCP tool ecosystem at ang matibay na agent framework ng Azure AI Foundry, na nagbibigay ng enterprise-grade AI solutions na may malawak na kakayahan sa pag-customize.
 
@@ -31,7 +31,7 @@ Sa pagtatapos ng gabay na ito, magagawa mong:
 
 ## Mga Kinakailangan
 
-Bago magsimula, tiyaking mayroon kang:
+Bago magsimula, siguraduhing mayroon kang:
 
 - Isang Azure subscription na may access sa AI Foundry
 - Python 3.10+ o .NET 8.0+
@@ -40,14 +40,14 @@ Bago magsimula, tiyaking mayroon kang:
 
 ## Ano ang Model Context Protocol (MCP)?
 
-Ang Model Context Protocol ay isang standardized na paraan para sa mga AI application na kumonekta sa mga panlabas na pinagkukunan ng data at mga tool. Kabilang sa mga pangunahing benepisyo nito ang:
+Ang Model Context Protocol ay isang standardized na paraan para sa mga AI application na kumonekta sa mga panlabas na pinagkukunan ng datos at mga tool. Kabilang sa mga pangunahing benepisyo nito ang:
 
 - **Standardized Integration**: Pare-parehong interface sa iba't ibang tool at serbisyo
-- **Security**: Ligtas na mga mekanismo ng authentication at authorization
-- **Flexibility**: Suporta para sa iba't ibang pinagkukunan ng data, API, at custom na mga tool
+- **Seguridad**: Ligtas na authentication at authorization na mga mekanismo
+- **Kakayahang Umangkop**: Suporta para sa iba't ibang pinagkukunan ng datos, API, at custom na mga tool
 - **Extensibility**: Madaling magdagdag ng mga bagong kakayahan at integrasyon
 
-## Pagsasaayos ng MCP sa Azure AI Foundry
+## Pag-setup ng MCP sa Azure AI Foundry
 
 ### Pag-configure ng Kapaligiran
 
@@ -60,7 +60,7 @@ Pumili ng iyong nais na development environment:
 
 ## Python Implementation
 
-***Note*** Maaari mong patakbuhin ang [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) na ito
+***Note*** Maaari mong patakbuhin ang [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
 
 ### 1. I-install ang Mga Kinakailangang Package
 
@@ -189,7 +189,7 @@ with project_client:
 
 ## .NET Implementation
 
-***Note*** Maaari mong patakbuhin ang [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) na ito
+***Note*** Maaari mong patakbuhin ang [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
 
 ### 1. I-install ang Mga Kinakailangang Package
 
@@ -348,8 +348,8 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 1. Mga Isyu sa Koneksyon
 - Siguraduhing naa-access ang MCP server URL
-- Suriin ang mga kredensyal sa authentication
-- Tiyaking may koneksyon sa network
+- Suriin ang mga authentication credentials
+- Tiyakin ang koneksyon sa network
 
 ### 2. Mga Pagkabigo sa Pagtawag ng Tool
 - Suriin ang mga argumento at format ng tool
@@ -365,9 +365,9 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 Para lalo pang pagandahin ang iyong MCP integration:
 
-1. **Suriin ang Custom MCP Servers**: Gumawa ng sarili mong MCP servers para sa proprietary na pinagkukunan ng data
+1. **Suriin ang Custom MCP Servers**: Gumawa ng sarili mong MCP servers para sa proprietary na pinagkukunan ng datos
 2. **Magpatupad ng Advanced Security**: Magdagdag ng OAuth2 o custom na mga mekanismo ng authentication
-3. **Subaybayan at Mag-analisa**: Magpatupad ng logging at monitoring para sa paggamit ng tool
+3. **Mag-monitor at Mag-analisa**: Magpatupad ng logging at monitoring para sa paggamit ng tool
 4. **I-scale ang Iyong Solusyon**: Isaalang-alang ang load balancing at distributed MCP server architectures
 
 ## Karagdagang Mga Mapagkukunan
@@ -385,7 +385,7 @@ Para sa karagdagang suporta at mga tanong:
 
 ## Ano ang susunod
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:35:43+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T06:43:20+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "no"
 }
 -->
 # Model Context Protocol (MCP) Integrasjon med Azure AI Foundry
 
-Denne veiledningen viser hvordan du integrerer Model Context Protocol (MCP) servere med Azure AI Foundry-agenter, noe som muliggjør kraftig verktøyorchestrering og AI-funksjonalitet for bedrifter.
+Denne veiledningen viser hvordan du integrerer Model Context Protocol (MCP) servere med Azure AI Foundry-agenter, noe som muliggjør kraftig verktøyorchestrering og AI-løsninger for bedrifter.
 
 ## Introduksjon
 
@@ -43,7 +43,7 @@ Før du begynner, sørg for at du har:
 Model Context Protocol er en standardisert måte for AI-applikasjoner å koble til eksterne datakilder og verktøy. Viktige fordeler inkluderer:
 
 - **Standardisert integrasjon**: Konsistent grensesnitt på tvers av ulike verktøy og tjenester
-- **Sikkerhet**: Sikker autentisering og autorisasjonsmekanismer
+- **Sikkerhet**: Sikker autentisering og autorisasjon
 - **Fleksibilitet**: Støtte for ulike datakilder, API-er og tilpassede verktøy
 - **Utvidbarhet**: Enkel å legge til nye funksjoner og integrasjoner
 
@@ -331,7 +331,7 @@ MCPToolDefinition mcpTool = new(
 
 ## Autentisering og headere
 
-Begge implementasjonene støtter egendefinerte headere for autentisering:
+Begge implementasjonene støtter tilpassede headere for autentisering:
 
 ### Python
 ```python
@@ -353,11 +353,11 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 2. Feil ved verktøysamtaler
 - Gå gjennom verktøyargumenter og formatering
-- Sjekk server-spesifikke krav
+- Sjekk serverspesifikke krav
 - Implementer riktig feilhåndtering
 
 ### 3. Ytelsesproblemer
-- Optimaliser frekvensen av verktøysamtaler
+- Optimaliser hyppigheten av verktøysamtaler
 - Bruk caching der det er hensiktsmessig
 - Overvåk responstider fra serveren
 
@@ -365,8 +365,8 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 For å forbedre MCP-integrasjonen ytterligere:
 
-1. **Utforsk egendefinerte MCP-servere**: Bygg dine egne MCP-servere for proprietære datakilder
-2. **Implementer avansert sikkerhet**: Legg til OAuth2 eller egendefinerte autentiseringsmekanismer
+1. **Utforsk tilpassede MCP-servere**: Bygg dine egne MCP-servere for proprietære datakilder
+2. **Implementer avansert sikkerhet**: Legg til OAuth2 eller tilpassede autentiseringsmekanismer
 3. **Overvåking og analyse**: Implementer logging og overvåking av verktøybruk
 4. **Skaler løsningen din**: Vurder lastbalansering og distribuerte MCP-serverarkitekturer
 
@@ -374,7 +374,7 @@ For å forbedre MCP-integrasjonen ytterligere:
 
 - [Azure AI Foundry Dokumentasjon](https://learn.microsoft.com/azure/ai-foundry/)
 - [Model Context Protocol Eksempler](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
-- [Oversikt over Azure AI Foundry-agenter](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [Azure AI Foundry Agenter Oversikt](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [MCP Spesifikasjon](https://spec.modelcontextprotocol.io/)
 
 ## Support
@@ -385,7 +385,7 @@ For ytterligere støtte og spørsmål:
 
 ## Hva nå
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Ansvarsfraskrivelse**:  
 Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

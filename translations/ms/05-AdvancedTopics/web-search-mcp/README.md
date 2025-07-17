@@ -1,22 +1,22 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-07-14T03:42:46+00:00",
+  "original_hash": "151265c9a2124d7c53e04d16ee3fb73b",
+  "translation_date": "2025-07-17T08:05:53+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "ms"
 }
 -->
 # Pelajaran: Membangun Pelayan MCP Carian Web
 
-Bab ini menunjukkan cara membina agen AI dunia sebenar yang mengintegrasikan dengan API luaran, mengendalikan pelbagai jenis data, menguruskan ralat, dan mengatur pelbagai alat—semuanya dalam format sedia untuk produksi. Anda akan melihat:
+Bab ini menunjukkan cara membina agen AI dunia sebenar yang berintegrasi dengan API luaran, mengendalikan pelbagai jenis data, menguruskan ralat, dan mengatur pelbagai alat—semuanya dalam format sedia produksi. Anda akan melihat:
 
 - **Integrasi dengan API luaran yang memerlukan pengesahan**
 - **Mengendalikan pelbagai jenis data dari pelbagai titik akhir**
 - **Strategi pengendalian ralat dan pencatatan yang kukuh**
 - **Pengurusan pelbagai alat dalam satu pelayan**
 
-Menjelang akhir, anda akan mempunyai pengalaman praktikal dengan corak dan amalan terbaik yang penting untuk aplikasi AI dan LLM yang maju.
+Pada akhirnya, anda akan mempunyai pengalaman praktikal dengan corak dan amalan terbaik yang penting untuk aplikasi AI dan LLM yang maju.
 
 ## Pengenalan
 
@@ -24,32 +24,31 @@ Dalam pelajaran ini, anda akan belajar cara membina pelayan dan klien MCP lanjut
 
 ## Objektif Pembelajaran
 
-Menjelang akhir pelajaran ini, anda akan dapat:
+Pada akhir pelajaran ini, anda akan dapat:
 
 - Mengintegrasikan API luaran (seperti SerpAPI) dengan selamat ke dalam pelayan MCP
 - Melaksanakan pelbagai alat untuk carian web, berita, produk, dan soal jawab
-- Memparsing dan memformat data berstruktur untuk penggunaan LLM
+- Mengurai dan memformat data berstruktur untuk penggunaan LLM
 - Mengendalikan ralat dan mengurus had kadar API dengan berkesan
 - Membina dan menguji klien MCP automatik dan interaktif
 
 ## Pelayan MCP Carian Web
 
-Bahagian ini memperkenalkan seni bina dan ciri-ciri Pelayan MCP Carian Web. Anda akan melihat bagaimana FastMCP dan SerpAPI digunakan bersama untuk memperluaskan keupayaan LLM dengan data web masa nyata.
+Bahagian ini memperkenalkan seni bina dan ciri Pelayan MCP Carian Web. Anda akan melihat bagaimana FastMCP dan SerpAPI digunakan bersama untuk memperluaskan keupayaan LLM dengan data web masa nyata.
 
 ### Gambaran Keseluruhan
 
 Pelaksanaan ini menampilkan empat alat yang mempamerkan kebolehan MCP untuk mengendalikan tugasan berasaskan API luaran yang pelbagai dengan selamat dan cekap:
 
-- **general_search**: Untuk keputusan web umum
+- **general_search**: Untuk keputusan web yang luas
 - **news_search**: Untuk tajuk berita terkini
 - **product_search**: Untuk data e-dagang
 - **qna**: Untuk petikan soal jawab
 
 ### Ciri-ciri
-- **Contoh Kod**: Termasuk blok kod khusus bahasa untuk Python (dan mudah diperluaskan ke bahasa lain) menggunakan bahagian boleh lipat untuk kejelasan
+- **Contoh Kod**: Termasuk blok kod khusus bahasa untuk Python (dan mudah diperluas ke bahasa lain) menggunakan pivot kod untuk kejelasan
 
-<details>  
-<summary>Python</summary>  
+### Python
 
 ```python
 # Example usage of the general_search tool
@@ -67,16 +66,16 @@ async def run_search():
             result = await session.call_tool("general_search", arguments={"query": "open source LLMs"})
             print(result)
 ```
-</details>
 
-Sebelum menjalankan klien, adalah berguna untuk memahami apa yang dilakukan oleh pelayan. Fail [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) melaksanakan pelayan MCP, mendedahkan alat untuk carian web, berita, produk, dan soal jawab dengan mengintegrasikan SerpAPI. Ia mengendalikan permintaan masuk, mengurus panggilan API, memparsing respons, dan mengembalikan hasil berstruktur kepada klien.
+---
+
+Sebelum menjalankan klien, adalah berguna untuk memahami apa yang dilakukan oleh pelayan. Fail [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) melaksanakan pelayan MCP, mendedahkan alat untuk carian web, berita, produk, dan soal jawab dengan mengintegrasikan SerpAPI. Ia mengendalikan permintaan masuk, mengurus panggilan API, mengurai respons, dan mengembalikan hasil berstruktur kepada klien.
 
 Anda boleh menyemak pelaksanaan penuh dalam [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
 Berikut adalah contoh ringkas bagaimana pelayan mentakrif dan mendaftar alat:
 
-<details>  
-<summary>Pelayan Python</summary> 
+### Pelayan Python
 
 ```python
 # server.py (excerpt)
@@ -91,10 +90,11 @@ server.add_tool(Tool("general_search", general_search))
 if __name__ == "__main__":
     server.run()
 ```
-</details>
+
+---
 
 - **Integrasi API Luaran**: Menunjukkan pengendalian kunci API dan permintaan luaran dengan selamat
-- **Parsing Data Berstruktur**: Menunjukkan cara menukar respons API ke format mesra LLM
+- **Penguraian Data Berstruktur**: Menunjukkan cara menukar respons API ke format mesra LLM
 - **Pengendalian Ralat**: Pengendalian ralat yang kukuh dengan pencatatan yang sesuai
 - **Klien Interaktif**: Termasuk ujian automatik dan mod interaktif untuk pengujian
 - **Pengurusan Konteks**: Memanfaatkan MCP Context untuk pencatatan dan penjejakan permintaan
@@ -128,7 +128,7 @@ SERPAPI_KEY=your_serpapi_key_here
 
 ## Penggunaan
 
-Pelayan MCP Carian Web adalah komponen teras yang mendedahkan alat untuk carian web, berita, produk, dan soal jawab dengan mengintegrasikan SerpAPI. Ia mengendalikan permintaan masuk, mengurus panggilan API, memparsing respons, dan mengembalikan hasil berstruktur kepada klien.
+Pelayan MCP Carian Web adalah komponen teras yang mendedahkan alat untuk carian web, berita, produk, dan soal jawab dengan mengintegrasikan SerpAPI. Ia mengendalikan permintaan masuk, mengurus panggilan API, mengurai respons, dan mengembalikan hasil berstruktur kepada klien.
 
 Anda boleh menyemak pelaksanaan penuh dalam [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py).
 
@@ -146,8 +146,8 @@ Pelayan akan berjalan sebagai pelayan MCP berasaskan stdio yang boleh disambungk
 
 Klien (`client.py`) menyokong dua mod untuk berinteraksi dengan pelayan MCP:
 
-- **Mod Normal**: Menjalankan ujian automatik yang menguji semua alat dan mengesahkan respons mereka. Ini berguna untuk memeriksa dengan cepat bahawa pelayan dan alat berfungsi seperti yang dijangka.
-- **Mod Interaktif**: Memulakan antara muka berasaskan menu di mana anda boleh memilih dan memanggil alat secara manual, memasukkan pertanyaan tersuai, dan melihat hasil secara masa nyata. Ini sesuai untuk meneroka keupayaan pelayan dan bereksperimen dengan input yang berbeza.
+- **Mod Normal**: Menjalankan ujian automatik yang menguji semua alat dan mengesahkan respons mereka. Ini berguna untuk memeriksa dengan cepat bahawa pelayan dan alat berfungsi seperti yang dijangkakan.
+- **Mod Interaktif**: Memulakan antara muka menu di mana anda boleh memilih dan memanggil alat secara manual, memasukkan pertanyaan tersuai, dan melihat hasil secara masa nyata. Ini sesuai untuk meneroka keupayaan pelayan dan bereksperimen dengan input yang berbeza.
 
 Anda boleh menyemak pelaksanaan penuh dalam [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py).
 
@@ -172,8 +172,7 @@ Terdapat beberapa cara untuk menguji dan berinteraksi dengan alat yang disediaka
 #### Menulis Skrip Ujian Tersuai dengan MCP Python SDK
 Anda juga boleh membina skrip ujian anda sendiri menggunakan MCP Python SDK:
 
-<details>
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -193,7 +192,8 @@ async def test_custom_query():
                                            arguments={"query": "your custom query"})
             # Process the result
 ```
-</details>
+
+---
 
 Dalam konteks ini, "skrip ujian" bermaksud program Python tersuai yang anda tulis untuk bertindak sebagai klien bagi pelayan MCP. Daripada menjadi ujian unit formal, skrip ini membolehkan anda menyambung secara programatik ke pelayan, memanggil mana-mana alat dengan parameter pilihan anda, dan memeriksa hasilnya. Pendekatan ini berguna untuk:
 - Membuat prototaip dan bereksperimen dengan panggilan alat
@@ -217,8 +217,7 @@ Melakukan carian web umum dan mengembalikan hasil yang diformat.
 
 Anda boleh memanggil `general_search` dari skrip anda sendiri menggunakan MCP Python SDK, atau secara interaktif menggunakan Inspector atau mod klien interaktif. Berikut adalah contoh kod menggunakan SDK:
 
-<details>
-<summary>Contoh Python</summary>
+# [Contoh Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -235,7 +234,8 @@ async def run_general_search():
             result = await session.call_tool("general_search", arguments={"query": "latest AI trends"})
             print(result)
 ```
-</details>
+
+---
 
 Sebagai alternatif, dalam mod interaktif, pilih `general_search` dari menu dan masukkan pertanyaan anda apabila diminta.
 
@@ -258,8 +258,7 @@ Mencari artikel berita terkini berkaitan dengan pertanyaan.
 
 Anda boleh memanggil `news_search` dari skrip anda sendiri menggunakan MCP Python SDK, atau secara interaktif menggunakan Inspector atau mod klien interaktif. Berikut adalah contoh kod menggunakan SDK:
 
-<details>
-<summary>Contoh Python</summary>
+# [Contoh Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -276,7 +275,8 @@ async def run_news_search():
             result = await session.call_tool("news_search", arguments={"query": "AI policy updates"})
             print(result)
 ```
-</details>
+
+---
 
 Sebagai alternatif, dalam mod interaktif, pilih `news_search` dari menu dan masukkan pertanyaan anda apabila diminta.
 
@@ -299,8 +299,7 @@ Mencari produk yang sepadan dengan pertanyaan.
 
 Anda boleh memanggil `product_search` dari skrip anda sendiri menggunakan MCP Python SDK, atau secara interaktif menggunakan Inspector atau mod klien interaktif. Berikut adalah contoh kod menggunakan SDK:
 
-<details>
-<summary>Contoh Python</summary>
+# [Contoh Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -317,7 +316,8 @@ async def run_product_search():
             result = await session.call_tool("product_search", arguments={"query": "best AI gadgets 2025"})
             print(result)
 ```
-</details>
+
+---
 
 Sebagai alternatif, dalam mod interaktif, pilih `product_search` dari menu dan masukkan pertanyaan anda apabila diminta.
 
@@ -340,8 +340,7 @@ Mendapatkan jawapan langsung kepada soalan dari enjin carian.
 
 Anda boleh memanggil `qna` dari skrip anda sendiri menggunakan MCP Python SDK, atau secara interaktif menggunakan Inspector atau mod klien interaktif. Berikut adalah contoh kod menggunakan SDK:
 
-<details>
-<summary>Contoh Python</summary>
+# [Contoh Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -358,7 +357,8 @@ async def run_qna():
             result = await session.call_tool("qna", arguments={"question": "what is artificial intelligence"})
             print(result)
 ```
-</details>
+
+---
 
 Sebagai alternatif, dalam mod interaktif, pilih `qna` dari menu dan masukkan soalan anda apabila diminta.
 
@@ -377,8 +377,7 @@ Sebagai alternatif, dalam mod interaktif, pilih `qna` dari menu dan masukkan soa
 
 Bahagian ini menyediakan petikan kod dan rujukan untuk pelaksanaan pelayan dan klien.
 
-<details>
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 Lihat [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) dan [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) untuk butiran pelaksanaan penuh.
 
@@ -388,7 +387,8 @@ import os
 import httpx
 # ...existing code...
 ```
-</details>
+
+---
 
 ## Konsep Lanjutan dalam Pelajaran Ini
 
@@ -396,8 +396,8 @@ Sebelum anda mula membina, berikut adalah beberapa konsep lanjutan penting yang 
 
 - **Pengurusan Pelbagai Alat**: Ini bermaksud menjalankan beberapa alat berbeza (seperti carian web, carian berita, carian produk, dan soal jawab) dalam satu pelayan MCP. Ia membolehkan pelayan anda mengendalikan pelbagai tugasan, bukan hanya satu.
 - **Pengendalian Had Kadar API**: Banyak API luaran (seperti SerpAPI) mengehadkan berapa banyak permintaan yang boleh anda buat dalam tempoh tertentu. Kod yang baik akan memeriksa had ini dan mengendalikannya dengan baik, supaya aplikasi anda tidak rosak jika anda mencapai had.
-- **Parsing Data Berstruktur**: Respons API sering kompleks dan bersarang. Konsep ini berkaitan dengan menukar respons tersebut menjadi format yang bersih dan mudah digunakan yang mesra untuk LLM atau program lain.
-- **Pemulihan Ralat**: Kadang-kadang berlaku masalah—mungkin rangkaian gagal, atau API tidak mengembalikan apa yang anda jangka. Pemulihan ralat bermaksud kod anda boleh mengendalikan masalah ini dan masih memberikan maklum balas berguna, bukannya terhenti.
+- **Penguraian Data Berstruktur**: Respons API sering kompleks dan bersarang. Konsep ini berkaitan dengan menukar respons tersebut menjadi format yang bersih dan mudah digunakan yang mesra untuk LLM atau program lain.
+- **Pemulihan Ralat**: Kadang-kadang berlaku masalah—mungkin rangkaian gagal, atau API tidak mengembalikan apa yang anda jangkakan. Pemulihan ralat bermaksud kod anda boleh mengendalikan masalah ini dan masih memberikan maklum balas berguna, bukannya terhenti.
 - **Pengesahan Parameter**: Ini berkaitan dengan memeriksa bahawa semua input kepada alat anda adalah betul dan selamat digunakan. Ia termasuk menetapkan nilai lalai dan memastikan jenis data betul, yang membantu mengelakkan pepijat dan kekeliruan.
 
 Bahagian ini akan membantu anda mendiagnosis dan menyelesaikan masalah biasa yang mungkin anda hadapi semasa bekerja dengan Pelayan MCP Carian Web. Jika anda menghadapi ralat atau tingkah laku yang tidak dijangka semasa bekerja dengan Pelayan MCP Carian Web, bahagian penyelesaian masalah ini menyediakan penyelesaian untuk isu yang paling biasa. Semak petua ini sebelum mendapatkan bantuan lanjut—ia sering menyelesaikan masalah dengan cepat.
@@ -413,18 +413,18 @@ Berikut adalah beberapa masalah yang paling kerap dihadapi pengguna, bersama den
 1. **Kunci SERPAPI_KEY hilang dalam fail .env**
    - Jika anda melihat ralat `SERPAPI_KEY environment variable not found`, ini bermakna aplikasi anda tidak dapat mencari kunci API yang diperlukan untuk mengakses SerpAPI. Untuk membetulkannya, buat fail bernama `.env` di akar projek anda (jika belum ada) dan tambah baris seperti `SERPAPI_KEY=your_serpapi_key_here`. Pastikan anda menggantikan `your_serpapi_key_here` dengan kunci sebenar anda dari laman web SerpAPI.
 
-2. **Ralat modul tidak dijumpai**
-   - Ralat seperti `ModuleNotFoundError: No module named 'httpx'` menunjukkan bahawa pakej Python yang diperlukan tidak dipasang. Ini biasanya berlaku jika anda belum memasang semua kebergantungan. Untuk menyelesaikannya, jalankan `pip install -r requirements.txt` di terminal anda untuk memasang semua yang diperlukan oleh projek anda.
+2. **Ralat modul tidak ditemui**
+   - Ralat seperti `ModuleNotFoundError: No module named 'httpx'` menunjukkan bahawa pakej Python yang diperlukan tidak dipasang. Ini biasanya berlaku jika anda belum memasang semua kebergantungan. Untuk menyelesaikannya, jalankan `pip install -r requirements.txt` dalam terminal anda untuk memasang semua yang diperlukan oleh projek anda.
 
 3. **Masalah sambungan**
-   - Jika anda mendapat ralat seperti `Error during client execution`, ini sering bermakna klien tidak dapat menyambung ke pelayan, atau pelayan tidak berjalan seperti yang dijangka. Semak semula bahawa klien dan pelayan adalah versi yang serasi, dan bahawa `server.py` ada dan berjalan di direktori yang betul. Memulakan semula kedua-dua pelayan dan klien juga boleh membantu.
+   - Jika anda mendapat ralat seperti `Error during client execution`, ini sering bermakna klien tidak dapat menyambung ke pelayan, atau pelayan tidak berjalan seperti yang dijangkakan. Semak semula bahawa klien dan pelayan adalah versi yang serasi, dan bahawa `server.py` ada dan berjalan di direktori yang betul. Memulakan semula kedua-dua pelayan dan klien juga boleh membantu.
 
 4. **Ralat SerpAPI**
    - Melihat `Search API returned error status: 401` bermakna kunci SerpAPI anda hilang, salah, atau telah tamat tempoh. Pergi ke papan pemuka SerpAPI anda, sahkan kunci anda, dan kemas kini fail `.env` jika perlu. Jika kunci anda betul tetapi anda masih melihat ralat ini, periksa sama ada pelan percuma anda telah habis kuota.
 
 ### Mod Debug
 
-Secara lalai, aplikasi hanya mencatat maklumat penting. Jika anda mahu melihat lebih banyak butiran tentang apa yang sedang berlaku (contohnya, untuk mendiagnosis masalah yang sukar), anda boleh mengaktifkan mod DEBUG. Ini akan menunjukkan lebih banyak maklumat tentang setiap langkah yang diambil oleh aplikasi.
+Secara lalai, aplikasi hanya mencatat maklumat penting. Jika anda mahu melihat lebih banyak butiran tentang apa yang sedang berlaku (contohnya, untuk mendiagnosis masalah yang rumit), anda boleh mengaktifkan mod DEBUG. Ini akan menunjukkan lebih banyak maklumat tentang setiap langkah yang diambil oleh aplikasi.
 
 **Contoh: Output Normal**
 ```plaintext
@@ -447,10 +447,9 @@ GENERAL_SEARCH RESULTS:
 ```
 
 Perhatikan bagaimana mod DEBUG termasuk baris tambahan tentang permintaan HTTP, respons, dan butiran dalaman lain. Ini sangat membantu untuk penyelesaian masalah.
+Untuk mengaktifkan mod DEBUG, tetapkan tahap logging kepada DEBUG di bahagian atas `client.py` atau `server.py` anda:
 
-Untuk mengaktifkan mod DEBUG, tetapkan tahap pencatatan ke DEBUG di bahagian atas `client.py` atau `server.py` anda:
-
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 # At the top of your client.py or server.py
@@ -460,11 +459,12 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 ```
-</details>
 
 ---
 
-## Apa seterusnya
+---
+
+## Apa yang seterusnya
 
 - [5.10 Penstriman Masa Sebenar](../mcp-realtimestreaming/README.md)
 

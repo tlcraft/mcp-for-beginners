@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:12:29+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T08:07:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "ms"
 }
 -->
 ## Penafian Contoh Kod
 
-> **Nota Penting**: Contoh kod di bawah menunjukkan integrasi Model Context Protocol (MCP) dengan fungsi carian web. Walaupun ia mengikuti corak dan struktur SDK MCP rasmi, ia telah dipermudahkan untuk tujuan pendidikan.
+> **Nota Penting**: Contoh kod di bawah menunjukkan integrasi Model Context Protocol (MCP) dengan fungsi carian web. Walaupun ia mengikuti corak dan struktur SDK MCP rasmi, ia telah dipermudahkan untuk tujuan pembelajaran.
 > 
 > Contoh-contoh ini mempamerkan:
 > 
-> 1. **Pelaksanaan Python**: Pelaksanaan pelayan FastMCP yang menyediakan alat carian web dan berhubung dengan API carian luaran. Contoh ini menunjukkan pengurusan jangka hayat yang betul, pengendalian konteks, dan pelaksanaan alat mengikut corak [SDK Python MCP rasmi](https://github.com/modelcontextprotocol/python-sdk). Pelayan menggunakan pengangkutan HTTP Streamable yang disyorkan, yang telah menggantikan pengangkutan SSE lama untuk penggunaan produksi.
+> 1. **Pelaksanaan Python**: Pelaksanaan pelayan FastMCP yang menyediakan alat carian web dan menyambung ke API carian luaran. Contoh ini menunjukkan pengurusan jangka hayat yang betul, pengendalian konteks, dan pelaksanaan alat mengikut corak [SDK Python MCP rasmi](https://github.com/modelcontextprotocol/python-sdk). Pelayan menggunakan pengangkutan HTTP Streamable yang disyorkan, yang telah menggantikan pengangkutan SSE lama untuk penggunaan produksi.
 > 
 > 2. **Pelaksanaan JavaScript**: Pelaksanaan TypeScript/JavaScript menggunakan corak FastMCP dari [SDK TypeScript MCP rasmi](https://github.com/modelcontextprotocol/typescript-sdk) untuk mencipta pelayan carian dengan definisi alat dan sambungan klien yang betul. Ia mengikuti corak terkini yang disyorkan untuk pengurusan sesi dan pemeliharaan konteks.
 > 
@@ -67,7 +67,7 @@ graph LR
     Federation --> |Aggregated MCP Response| Client
 ```
 
-Corak ini mengagihkan pertanyaan carian ke pelbagai penyedia carian yang serasi MCP, masing-masing mungkin mengkhusus dalam jenis kandungan atau keupayaan carian yang berbeza, sambil mengekalkan konteks yang bersatu.
+Corak ini mengagihkan pertanyaan carian ke beberapa penyedia carian yang serasi MCP, masing-masing mungkin mengkhusus dalam jenis kandungan atau keupayaan carian yang berbeza, sambil mengekalkan konteks yang bersatu.
 
 #### 3. Rantaian Carian Dipertingkatkan Konteks
 
@@ -103,12 +103,12 @@ Dalam carian web berasaskan MCP, konteks biasanya merangkumi:
 
 MCP meningkatkan aliran kerja penyelidikan dengan:
 
-- Mengekalkan konteks penyelidikan merentasi sesi carian
+- Memelihara konteks penyelidikan merentasi sesi carian
 - Membolehkan pertanyaan yang lebih canggih dan relevan secara kontekstual
 - Menyokong federasi carian pelbagai sumber
 - Memudahkan pengekstrakan pengetahuan dari hasil carian
 
-### Pemantauan Berita dan Tren Masa Nyata
+### Pemantauan Berita dan Trend Masa Nyata
 
 Carian berkuasa MCP menawarkan kelebihan untuk pemantauan berita:
 
@@ -126,7 +126,7 @@ MCP mencipta kemungkinan baru untuk pelayaran dipertingkatkan AI:
 - Penapisan carian berbilang pusingan dengan konteks yang dikekalkan
 - Peningkatan pemeriksaan fakta dan pengesahan maklumat
 
-## Tren dan Inovasi Masa Depan
+## Trend dan Inovasi Masa Depan
 
 ### Evolusi MCP dalam Carian Web
 
@@ -157,7 +157,7 @@ Dalam latihan ini, anda akan belajar untuk:
 
 ### Latihan 2: Membangunkan Pembantu Penyelidikan dengan Carian MCP  
 
-Bina aplikasi lengkap yang:  
+Cipta aplikasi lengkap yang:  
 - Memproses soalan penyelidikan dalam bahasa semula jadi  
 - Melakukan carian web dengan kesedaran konteks  
 - Mensintesis maklumat dari pelbagai sumber  
@@ -168,7 +168,7 @@ Bina aplikasi lengkap yang:
 Latihan lanjutan yang merangkumi:  
 - Penghantaran pertanyaan berasaskan konteks ke pelbagai enjin carian  
 - Pengurutan dan penggabungan keputusan  
-- Penghapusan pendua kontekstual bagi hasil carian  
+- Penghapusan penduaan keputusan carian secara kontekstual  
 - Pengendalian metadata khusus sumber  
 
 ## Sumber Tambahan  
@@ -202,7 +202,7 @@ Apabila melaksanakan penyelesaian carian web berasaskan MCP, ingat prinsip penti
 
 1. **Persetujuan dan Kawalan Pengguna**: Pengguna mesti memberi persetujuan secara jelas dan memahami semua akses data dan operasi. Ini amat penting untuk pelaksanaan carian web yang mungkin mengakses sumber data luaran.  
 
-2. **Privasi Data**: Pastikan pengendalian yang sesuai bagi pertanyaan carian dan hasil, terutamanya jika mengandungi maklumat sensitif. Laksanakan kawalan akses yang sesuai untuk melindungi data pengguna.  
+2. **Privasi Data**: Pastikan pengendalian yang sesuai terhadap pertanyaan carian dan keputusan, terutamanya jika mengandungi maklumat sensitif. Laksanakan kawalan akses yang sesuai untuk melindungi data pengguna.  
 
 3. **Keselamatan Alat**: Laksanakan kebenaran dan pengesahan yang betul untuk alat carian, kerana ia berpotensi menjadi risiko keselamatan melalui pelaksanaan kod sewenang-wenangnya. Penerangan tingkah laku alat harus dianggap tidak dipercayai kecuali diperoleh dari pelayan yang dipercayai.  
 
@@ -214,7 +214,7 @@ Untuk maklumat lengkap mengenai keselamatan dan pertimbangan kepercayaan MCP, ru
 
 ## Apa seterusnya  
 
-- [5.11 Pengesahan Entra ID untuk Pelayan Model Context Protocol](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

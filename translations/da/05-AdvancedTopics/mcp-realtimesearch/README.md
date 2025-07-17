@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:06:54+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T06:29:06+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "da"
 }
@@ -25,11 +25,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Model Context Protocol (MCP) Framework
 
-Grundlæggende tilbyder Model Context Protocol en standardiseret måde for AI-modeller, applikationer og tjenester til at udveksle kontekst. I realtidswebsøgning er dette framework essentielt for at skabe sammenhængende, flertrins søgeoplevelser. Nøglekomponenter inkluderer:
+Grundlæggende tilbyder Model Context Protocol en standardiseret måde for AI-modeller, applikationer og tjenester til at udveksle kontekst. I realtids web-søgning er dette framework essentielt for at skabe sammenhængende, flertrins søgeoplevelser. Nøglekomponenter inkluderer:
 
-1. **Klient-server-arkitektur**: MCP etablerer en klar adskillelse mellem søgeklienter (forespørgere) og søgeservere (udbydere), hvilket muliggør fleksible implementeringsmodeller.
+1. **Klient-server arkitektur**: MCP etablerer en klar adskillelse mellem søgeklienter (forespørgere) og søgeservere (udbydere), hvilket muliggør fleksible implementeringsmodeller.
 
-2. **JSON-RPC-kommunikation**: Protokollen bruger JSON-RPC til beskedudveksling, hvilket gør den kompatibel med webteknologier og nem at implementere på tværs af platforme.
+2. **JSON-RPC kommunikation**: Protokollen bruger JSON-RPC til beskedudveksling, hvilket gør den kompatibel med webteknologier og nem at implementere på tværs af platforme.
 
 3. **Kontekststyring**: MCP definerer strukturerede metoder til at vedligeholde, opdatere og udnytte søgekontekst på tværs af flere interaktioner.
 
@@ -37,9 +37,9 @@ Grundlæggende tilbyder Model Context Protocol en standardiseret måde for AI-mo
 
 5. **Streaming-understøttelse**: Protokollen understøtter streaming af resultater, hvilket er essentielt for realtidsøgning, hvor resultater kan ankomme løbende.
 
-### Integrationsmønstre for websøgningsintegration
+### Integrationsmønstre for web-søgning
 
-Når MCP integreres med websøgningsfunktioner, opstår flere mønstre:
+Når MCP integreres med web-søgning, opstår flere mønstre:
 
 #### 1. Direkte integration med søgeudbyder
 
@@ -87,15 +87,15 @@ Her opdeles søgeprocessen i flere trin, hvor konteksten beriges ved hvert trin,
 
 ### Søgekontekstkomponenter
 
-I MCP-baseret websøgningskontekst indgår typisk:
+I MCP-baseret web-søgning inkluderer konteksten typisk:
 
 - **Forespørgselslog**: Tidligere søgeforespørgsler i sessionen
 - **Brugerpræferencer**: Sprog, region, sikker søgning-indstillinger
 - **Interaktionshistorik**: Hvilke resultater der blev klikket på, tid brugt på resultater
 - **Søgeparametre**: Filtre, sorteringsrækkefølge og andre søgemodifikatorer
 - **Domæneviden**: Emnespecifik kontekst relevant for søgningen
-- **Tidsmæssig kontekst**: Relevansfaktorer baseret på tid
-- **Kildepræferencer**: Betroede eller foretrukne informationskilder
+- **Tidsmæssig kontekst**: Relevans baseret på tid
+- **Kildepræferencer**: Foretrukne eller betroede informationskilder
 
 ## Anvendelsestilfælde og applikationer
 
@@ -122,13 +122,13 @@ MCP-drevet søgning giver fordele til nyhedsovervågning:
 MCP åbner nye muligheder for AI-forstærket browsing:
 
 - Kontekstuelle søgeforslag baseret på aktuel browseraktivitet
-- Sømløs integration af websøgningsfunktioner med LLM-drevne assistenter
+- Sømløs integration af web-søgning med LLM-drevne assistenter
 - Flertrins søgeforfining med bevaret kontekst
 - Forbedret faktatjek og informationsverifikation
 
 ## Fremtidige tendenser og innovationer
 
-### Udvikling af MCP i websøgningsmiljøer
+### Udvikling af MCP i web-søgning
 
 Fremadrettet forventes MCP at udvikle sig til at håndtere:
 
@@ -182,25 +182,25 @@ Avanceret øvelse, der dækker:
 - [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - Googles programmerbare søgemaskine  
 - [SerpAPI Documentation](https://serpapi.com/search-api) - API til søgemaskinens resultatside  
 - [Meilisearch Documentation](https://www.meilisearch.com/docs) - Open source søgemaskine  
-- [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - Distribueret søge- og analyseengine  
+- [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - Distribueret søge- og analysemotor  
 - [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Byg applikationer med LLM’er  
 
 ## Læringsmål  
 
 Ved at gennemføre dette modul vil du kunne:  
 
-- Forstå grundprincipperne for realtids websøgning og de tilhørende udfordringer  
-- Forklare, hvordan Model Context Protocol (MCP) forbedrer realtids websøgningsmuligheder  
+- Forstå grundprincipperne for realtids websøgning og dens udfordringer  
+- Forklare hvordan Model Context Protocol (MCP) forbedrer realtids websøgningsmuligheder  
 - Implementere MCP-baserede søgeløsninger ved hjælp af populære frameworks og API’er  
 - Designe og implementere skalerbare, højtydende søgearkitekturer med MCP  
 - Anvende MCP-koncepter til forskellige anvendelsestilfælde, herunder semantisk søgning, forskningsassistance og AI-forstærket browsing  
-- Vurdere nye trends og fremtidige innovationer inden for MCP-baserede søgeteknologier  
+- Vurdere nye tendenser og fremtidige innovationer inden for MCP-baserede søgeteknologier  
 
 ### Overvejelser om tillid og sikkerhed  
 
 Når du implementerer MCP-baserede websøgninger, skal du huske disse vigtige principper fra MCP-specifikationen:  
 
-1. **User Consent and Control**: Brugere skal eksplicit give samtykke til og forstå alle dataadgang og operationer. Dette er særligt vigtigt for websøgningsimplementeringer, der kan tilgå eksterne datakilder.  
+1. **User Consent and Control**: Brugere skal eksplicit give samtykke til og forstå alle dataadgange og operationer. Dette er særligt vigtigt for websøgningsimplementeringer, der kan tilgå eksterne datakilder.  
 
 2. **Data Privacy**: Sørg for korrekt håndtering af søgeforespørgsler og resultater, især når de kan indeholde følsomme oplysninger. Implementer passende adgangskontroller for at beskytte brugerdata.  
 
@@ -210,11 +210,11 @@ Når du implementerer MCP-baserede websøgninger, skal du huske disse vigtige pr
 
 5. **Robust Consent Flows**: Byg robuste samtykke- og autorisationsflows, der tydeligt forklarer, hvad hvert værktøj gør, før det autoriseres, især for værktøjer, der interagerer med eksterne webressourcer.  
 
-For fuldstændige oplysninger om MCP-sikkerhed og tillids- og sikkerhedsovervejelser, se den [officielle dokumentation](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).  
+For fulde detaljer om MCP-sikkerhed og tillids- og sikkerhedsovervejelser, se den [officielle dokumentation](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).  
 
 ## Hvad er det næste  
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
