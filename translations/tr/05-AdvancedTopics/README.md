@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "748c61250d4a326206b72b28f6154615",
-  "translation_date": "2025-07-13T23:44:08+00:00",
+  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
+  "translation_date": "2025-07-17T01:27:11+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "tr"
 }
 -->
 # MCP'de İleri Konular
 
-Bu bölüm, Model Context Protocol (MCP) uygulamasında çok modlu entegrasyon, ölçeklenebilirlik, güvenlik en iyi uygulamaları ve kurumsal entegrasyon gibi bir dizi ileri konuyu ele almayı amaçlamaktadır. Bu konular, modern yapay zeka sistemlerinin gereksinimlerini karşılayabilen sağlam ve üretime hazır MCP uygulamaları geliştirmek için kritik öneme sahiptir.
+Bu bölüm, Model Context Protocol (MCP) uygulamasında çok modlu entegrasyon, ölçeklenebilirlik, güvenlik en iyi uygulamaları ve kurumsal entegrasyon gibi bir dizi ileri konuyu ele almaktadır. Bu konular, modern yapay zeka sistemlerinin taleplerini karşılayabilen sağlam ve üretime hazır MCP uygulamaları geliştirmek için kritik öneme sahiptir.
 
 ## Genel Bakış
 
-Bu ders, Model Context Protocol uygulamasında çok modlu entegrasyon, ölçeklenebilirlik, güvenlik en iyi uygulamaları ve kurumsal entegrasyon gibi ileri kavramları inceler. Bu konular, kurumsal ortamlarda karmaşık gereksinimleri karşılayabilen üretim kalitesinde MCP uygulamaları oluşturmak için gereklidir.
+Bu ders, Model Context Protocol uygulamasında çok modlu entegrasyon, ölçeklenebilirlik, güvenlik en iyi uygulamaları ve kurumsal entegrasyon gibi ileri kavramları incelemektedir. Bu konular, kurumsal ortamlarda karmaşık gereksinimleri karşılayabilen üretim kalitesinde MCP uygulamaları oluşturmak için gereklidir.
 
 ## Öğrenme Hedefleri
 
@@ -37,25 +37,25 @@ Bu dersin sonunda şunları yapabileceksiniz:
 | [5.6 Sampling](./mcp-sampling/README.md) | Örnekleme | Örnekleme ile nasıl çalışılacağını öğrenin |
 | [5.7 Scaling](./mcp-scaling/README.md) | Ölçeklendirme | Ölçeklendirme hakkında bilgi edinin |
 | [5.8 Security](./mcp-security/README.md) | Güvenlik | MCP Sunucunuzu güvence altına alın |
-| [5.9 Web Search sample](./web-search-mcp/README.md) | Web Arama MCP | SerpAPI ile gerçek zamanlı web, haber, ürün araması ve Soru-Cevap entegrasyonu yapan Python MCP sunucu ve istemcisi. Çoklu araç orkestrasyonu, dış API entegrasyonu ve sağlam hata yönetimini gösterir. |
+| [5.9 Web Search sample](./web-search-mcp/README.md) | Web Arama MCP | SerpAPI ile gerçek zamanlı web, haber, ürün araması ve Soru-Cevap entegrasyonu yapan Python MCP sunucu ve istemcisi. Çoklu araç orkestrasyonu, harici API entegrasyonu ve sağlam hata yönetimini gösterir. |
 | [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Akış | Gerçek zamanlı veri akışı, işletmelerin ve uygulamaların zamanında kararlar alabilmek için anında bilgiye erişim gerektirdiği günümüz veri odaklı dünyasında vazgeçilmez hale gelmiştir. |
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Arama | MCP'nin AI modelleri, arama motorları ve uygulamalar arasında bağlam yönetimi için standart bir yaklaşım sunarak gerçek zamanlı web aramasını nasıl dönüştürdüğünü öğrenin. |
-| [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Kimlik Doğrulama | Microsoft Entra ID, yalnızca yetkili kullanıcıların ve uygulamaların MCP sunucunuzla etkileşimde bulunmasını sağlayan güçlü bulut tabanlı kimlik ve erişim yönetimi çözümü sunar. |
-| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Entegrasyonu | Model Context Protocol sunucularını Azure AI Foundry ajanlarıyla entegre etmeyi öğrenin; bu sayede güçlü araç orkestrasyonu ve standartlaştırılmış dış veri kaynağı bağlantılarıyla kurumsal yapay zeka yetenekleri sağlanır. |
+| [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Kimlik Doğrulaması | Microsoft Entra ID, yalnızca yetkili kullanıcıların ve uygulamaların MCP sunucunuzla etkileşimde bulunmasını sağlamak için güçlü bulut tabanlı kimlik ve erişim yönetimi çözümü sunar. |
+| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Entegrasyonu | Model Context Protocol sunucularını Azure AI Foundry ajanlarıyla entegre etmeyi öğrenin; bu sayede güçlü araç orkestrasyonu ve standartlaştırılmış harici veri kaynağı bağlantılarıyla kurumsal yapay zeka yetenekleri sağlanır. |
 
 ## Ek Kaynaklar
 
 İleri MCP konuları hakkında en güncel bilgi için şu kaynaklara bakabilirsiniz:
-- [MCP Dokümantasyonu](https://modelcontextprotocol.io/)
-- [MCP Spesifikasyonu](https://spec.modelcontextprotocol.io/)
-- [GitHub Deposu](https://github.com/modelcontextprotocol)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Önemli Noktalar
 
 - Çok modlu MCP uygulamaları, yapay zekanın metin işleme dışındaki yeteneklerini genişletir
 - Ölçeklenebilirlik, kurumsal dağıtımlar için kritik olup yatay ve dikey ölçeklendirme ile sağlanabilir
 - Kapsamlı güvenlik önlemleri verileri korur ve doğru erişim kontrolünü garanti eder
-- Azure OpenAI ve Microsoft AI Foundry gibi platformlarla kurumsal entegrasyon MCP yeteneklerini artırır
+- Azure OpenAI ve Microsoft AI Foundry gibi platformlarla kurumsal entegrasyon, MCP yeteneklerini artırır
 - İleri MCP uygulamaları, optimize edilmiş mimariler ve dikkatli kaynak yönetimi ile fayda sağlar
 
 ## Alıştırma
@@ -70,14 +70,14 @@ Belirli bir kullanım senaryosu için kurumsal düzeyde bir MCP uygulaması tasa
 
 ## Ek Kaynaklar
 
-- [Azure OpenAI Dokümantasyonu](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
-- [Microsoft AI Foundry Dokümantasyonu](https://learn.microsoft.com/en-us/ai-services/)
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Microsoft AI Foundry Documentation](https://learn.microsoft.com/en-us/ai-services/)
 
 ---
 
 ## Sonraki Adım
 
-- [5.1 MCP Entegrasyonu](./mcp-integration/README.md)
+- [5.1 MCP Integration](./mcp-integration/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

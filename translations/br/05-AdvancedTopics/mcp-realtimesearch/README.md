@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:00:44+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T01:07:00+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "br"
 }
@@ -25,7 +25,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### O Framework Model Context Protocol (MCP)
 
-Na sua essência, o Model Context Protocol fornece uma forma padronizada para que modelos de IA, aplicações e serviços troquem contexto. Na busca em tempo real na web, esse framework é essencial para criar experiências de busca coerentes e com múltiplas interações. Os componentes principais incluem:
+Na sua base, o Model Context Protocol oferece uma forma padronizada para que modelos de IA, aplicações e serviços troquem contexto. Na busca em tempo real na web, esse framework é essencial para criar experiências de busca coerentes e com múltiplas interações. Os componentes principais incluem:
 
 1. **Arquitetura Cliente-Servidor**: O MCP estabelece uma separação clara entre clientes de busca (solicitantes) e servidores de busca (provedores), permitindo modelos de implantação flexíveis.
 
@@ -33,7 +33,7 @@ Na sua essência, o Model Context Protocol fornece uma forma padronizada para qu
 
 3. **Gerenciamento de Contexto**: O MCP define métodos estruturados para manter, atualizar e aproveitar o contexto de busca ao longo de múltiplas interações.
 
-4. **Definições de Ferramentas**: As capacidades de busca são expostas como ferramentas padronizadas com parâmetros e valores de retorno bem definidos.
+4. **Definições de Ferramentas**: Capacidades de busca são expostas como ferramentas padronizadas com parâmetros e valores de retorno bem definidos.
 
 5. **Suporte a Streaming**: O protocolo suporta resultados em streaming, essencial para buscas em tempo real onde os resultados podem chegar progressivamente.
 
@@ -161,7 +161,7 @@ Crie uma aplicação completa que:
 - Processa perguntas de pesquisa em linguagem natural  
 - Realiza buscas na web com consciência de contexto  
 - Sintetiza informações de múltiplas fontes  
-- Apresenta os resultados de pesquisa de forma organizada  
+- Apresenta os resultados de pesquisa organizados  
 
 ### Exercício 3: Implementando Federação de Busca Multi-Fonte com MCP  
 
@@ -169,7 +169,7 @@ Exercício avançado que aborda:
 - Envio de consultas com consciência de contexto para múltiplos motores de busca  
 - Ranqueamento e agregação de resultados  
 - Deduplicação contextual dos resultados de busca  
-- Tratamento de metadados específicos de cada fonte  
+- Tratamento de metadados específicos das fontes  
 
 ## Recursos Adicionais  
 
@@ -214,7 +214,7 @@ Para detalhes completos sobre segurança e considerações de confiança no MCP,
 
 ## Próximos passos  
 
-- [5.11 Autenticação Entra ID para Servidores Model Context Protocol](../mcp-security-entra/README.md)
+- [5.12 Autenticação Entra ID para Servidores Model Context Protocol](../mcp-security-entra/README.md)
 
 **Aviso Legal**:  
 Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

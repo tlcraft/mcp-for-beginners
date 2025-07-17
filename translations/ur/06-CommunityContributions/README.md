@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T03:54:21+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-16T23:42:00+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "ur"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## جائزہ
 
-یہ سبق MCP کمیونٹی کے ساتھ کیسے منسلک ہونا ہے، MCP ماحولیاتی نظام میں کیسے حصہ ڈالنا ہے، اور مشترکہ ترقی کے بہترین طریقوں کی پیروی کیسے کرنی ہے، پر مرکوز ہے۔ اوپن سورس MCP پروجیکٹس میں حصہ لینا ان لوگوں کے لیے ضروری ہے جو اس ٹیکنالوجی کے مستقبل کو تشکیل دینا چاہتے ہیں۔
+یہ سبق MCP کمیونٹی کے ساتھ کیسے منسلک ہوں، MCP ماحولیاتی نظام میں کیسے حصہ ڈالیں، اور مشترکہ ترقی کے بہترین طریقوں کی پیروی کیسے کریں، پر مرکوز ہے۔ اوپن سورس MCP پروجیکٹس میں حصہ لینا ان لوگوں کے لیے ضروری ہے جو اس ٹیکنالوجی کے مستقبل کو تشکیل دینا چاہتے ہیں۔
 
 ## سیکھنے کے مقاصد
 
@@ -19,8 +19,9 @@ CO_OP_TRANSLATOR_METADATA:
 - MCP کمیونٹی اور ماحولیاتی نظام کی ساخت کو سمجھیں
 - MCP کمیونٹی فورمز اور مباحثوں میں مؤثر طریقے سے حصہ لیں
 - MCP اوپن سورس ریپوزٹریز میں تعاون کریں
-- اپنی مرضی کے مطابق MCP ٹولز بنائیں اور شیئر کریں
+- اپنی مرضی کے مطابق MCP ٹولز اور سرورز بنائیں اور شیئر کریں
 - MCP کی ترقی اور تعاون کے بہترین طریقوں کی پیروی کریں
+- MCP ترقی کے لیے کمیونٹی وسائل اور فریم ورکس دریافت کریں
 
 ## MCP کمیونٹی ماحولیاتی نظام
 
@@ -28,27 +29,31 @@ MCP ماحولیاتی نظام مختلف اجزاء اور شرکاء پر م�
 
 ### اہم کمیونٹی اجزاء
 
-1. **کور پروٹوکول مینٹینرز**: Microsoft اور دیگر تنظیمیں جو کور MCP وضاحتیں اور حوالہ جاتی نفاذ کو برقرار رکھتی ہیں  
-2. **ٹول ڈویلپرز**: افراد اور ٹیمیں جو MCP ٹولز بناتی ہیں  
+1. **کور پروٹوکول مینٹینرز**: سرکاری [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) MCP کی بنیادی وضاحتیں اور حوالہ جاتی نفاذ کو برقرار رکھتی ہے  
+2. **ٹول ڈویلپرز**: افراد اور ٹیمیں جو MCP ٹولز اور سرورز بناتی ہیں  
 3. **انٹیگریشن فراہم کنندگان**: کمپنیاں جو MCP کو اپنے مصنوعات اور خدمات میں شامل کرتی ہیں  
 4. **اختتامی صارفین**: ڈویلپرز اور تنظیمیں جو MCP کو اپنی ایپلیکیشنز میں استعمال کرتی ہیں  
-5. **تعاون کرنے والے**: کمیونٹی کے ارکان جو کوڈ، دستاویزات، یا دیگر وسائل فراہم کرتے ہیں  
+5. **تعاون کرنے والے**: کمیونٹی کے ارکان جو کوڈ، دستاویزات، یا دیگر وسائل میں حصہ ڈالتے ہیں  
 
 ### کمیونٹی وسائل
 
 #### سرکاری چینلز
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)  
+- [MCP GitHub Organization](https://github.com/modelcontextprotocol)  
 - [MCP Documentation](https://modelcontextprotocol.io/)  
-- [MCP Specification](https://spec.modelcontextprotocol.io/)  
+- [MCP Specification](https://modelcontextprotocol.io/docs/specification)  
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)  
+- [MCP Examples & Servers Repository](https://github.com/modelcontextprotocol/servers)  
 
 #### کمیونٹی کی جانب سے چلائے جانے والے وسائل
 
+- [MCP Clients](https://modelcontextprotocol.io/clients) - MCP انٹیگریشنز کی حمایت کرنے والے کلائنٹس کی فہرست  
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - کمیونٹی کی جانب سے تیار کردہ MCP سرورز کی بڑھتی ہوئی فہرست  
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - منتخب شدہ MCP سرورز کی فہرست  
+- [PulseMCP](https://www.pulsemcp.com/) - MCP وسائل دریافت کرنے کے لیے کمیونٹی ہب اور نیوز لیٹر  
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - MCP ڈویلپرز سے رابطہ قائم کریں  
 - زبان مخصوص SDK نفاذ  
-- سرور نفاذ اور ٹول لائبریریاں  
 - بلاگ پوسٹس اور ٹیوٹوریلز  
-- کمیونٹی فورمز اور سوشل میڈیا مباحثے  
 
 ## MCP میں تعاون
 
@@ -59,8 +64,8 @@ MCP ماحولیاتی نظام مختلف قسم کے تعاون کا خیرم�
 1. **کوڈ تعاون**:  
    - کور پروٹوکول میں بہتریاں  
    - بگ فکسز  
-   - ٹول نفاذ  
-   - مختلف زبانوں میں کلائنٹ/سرور لائبریریاں  
+   - ٹول اور سرور کے نفاذ  
+   - مختلف زبانوں میں کلائنٹ/سرور لائبریریز  
 
 2. **دستاویزات**:  
    - موجودہ دستاویزات کو بہتر بنانا  
@@ -69,168 +74,77 @@ MCP ماحولیاتی نظام مختلف قسم کے تعاون کا خیرم�
    - مثالیں اور نمونہ ایپلیکیشنز بنانا  
 
 3. **کمیونٹی سپورٹ**:  
-   - فورمز پر سوالات کے جواب دینا  
-   - مسائل کی جانچ اور رپورٹنگ  
+   - فورمز اور مباحثوں میں سوالات کے جواب دینا  
+   - ٹیسٹنگ اور مسائل کی رپورٹنگ  
    - کمیونٹی ایونٹس کا انعقاد  
    - نئے تعاون کرنے والوں کی رہنمائی  
 
 ### تعاون کا عمل: کور پروٹوکول
 
-کور MCP پروٹوکول یا سرکاری نفاذ میں تعاون کے لیے:
+کور MCP پروٹوکول یا سرکاری نفاذ میں تعاون کے لیے، [سرکاری تعاون کے رہنما اصول](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) کی پیروی کریں:
 
-#### .NET مثال: پروٹوکول میں بہتری کا تعاون
+1. **سادگی اور کم از کم ہونا**: MCP وضاحت میں نئے تصورات شامل کرنے کے لیے سخت معیار ہوتا ہے۔ چیزیں شامل کرنا نکالنے سے آسان ہوتا ہے۔  
+2. **مخصوص نقطہ نظر**: وضاحت میں تبدیلیاں مخصوص نفاذ کے چیلنجز کی بنیاد پر ہونی چاہئیں، قیاسی خیالات پر نہیں۔  
+3. **تجویز کے مراحل**:  
+   - تعریف کریں: مسئلے کی جگہ کو دریافت کریں، تصدیق کریں کہ دوسرے MCP صارفین کو بھی ایسا مسئلہ درپیش ہے  
+   - پروٹوٹائپ بنائیں: ایک مثال حل تیار کریں اور اس کے عملی اطلاق کو دکھائیں  
+   - تحریر کریں: پروٹوٹائپ کی بنیاد پر وضاحت کی تجویز لکھیں  
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+### ترقیاتی ماحول کی ترتیب
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### جاوا مثال: بگ فکس میں تعاون
+### مثال: بگ فکس میں تعاون
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### پائتھون مثال: اسٹینڈرڈ لائبریری میں نیا ٹول شامل کرنا
+### مثال: اسٹینڈرڈ لائبریری میں نیا ٹول شامل کرنا
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -398,15 +312,15 @@ MCP پروجیکٹس میں کامیاب تعاون کے لیے:
 2. **اسٹائل گائیڈ کی پیروی کریں**: پروجیکٹ کے کوڈنگ اسٹائل اور روایات کی پابندی کریں  
 3. **ٹیسٹ لکھیں**: اپنے کوڈ تعاون کے لیے یونٹ ٹیسٹ شامل کریں  
 4. **اپنے کام کی دستاویزات بنائیں**: نئی خصوصیات یا تبدیلیوں کے لیے واضح دستاویزات شامل کریں  
-5. **مخصوص PRs جمع کروائیں**: پل ریکویسٹ کو ایک مسئلہ یا فیچر تک محدود رکھیں  
+5. **مخصوص PRs جمع کروائیں**: پل ریکویسٹ کو ایک مسئلہ یا خصوصیت تک محدود رکھیں  
 6. **رائے کے ساتھ مشغول ہوں**: اپنے تعاون پر ملنے والی رائے کا جواب دیں  
 
 ### تعاون کی مثال ورک فلو
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +329,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,9 +341,27 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## اپنی مرضی کے MCP ٹولز بنانا اور شیئر کرنا
+## MCP سرورز بنانا اور شیئر کرنا
 
-MCP ماحولیاتی نظام میں تعاون کرنے کے سب سے قیمتی طریقوں میں سے ایک اپنی مرضی کے مطابق ٹولز بنانا اور شیئر کرنا ہے۔
+MCP ماحولیاتی نظام میں تعاون کرنے کے سب سے قیمتی طریقوں میں سے ایک اپنی مرضی کے مطابق MCP سرورز بنانا اور شیئر کرنا ہے۔ کمیونٹی نے مختلف خدمات اور استعمال کے کیسز کے لیے سینکڑوں سرورز تیار کیے ہیں۔
+
+### MCP سرور ترقیاتی فریم ورکس
+
+MCP سرور کی ترقی کو آسان بنانے کے لیے کئی فریم ورکس دستیاب ہیں:
+
+1. **سرکاری SDKs**:  
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)  
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)  
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)  
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)  
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)  
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)  
+
+2. **کمیونٹی فریم ورکس**:  
+   - [MCP-Framework](https://mcp-framework.com/) - TypeScript میں MCP سرورز کو خوبصورتی اور تیزی سے بنائیں  
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Java کے ساتھ اینوٹیشن پر مبنی MCP سرورز  
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - MCP سرورز کے لیے Java فریم ورک  
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP سرورز کے لیے ابتدائی Next.js پروجیکٹ  
 
 ### شیئر کرنے کے قابل ٹولز تیار کرنا
 
@@ -541,7 +471,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### جاوا مثال: ٹولز کے لیے Maven پیکیج بنانا
+#### Java مثال: ٹولز کے لیے Maven پیکیج بنانا
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +572,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### پائتھون مثال: PyPI پیکیج شائع کرنا
+#### Python مثال: PyPI پیکیج شائع کرنا
 
 ```python
 # Directory structure for a PyPI package:
@@ -759,12 +689,12 @@ class SentimentAnalysisTool(Tool):
 2. **ایرر ہینڈلنگ**:  
    - مضبوط ایرر ہینڈلنگ نافذ کریں  
    - مفید ایرر پیغامات فراہم کریں  
-   - ایج کیسز کو مناسب طریقے سے سنبھالیں  
+   - ایج کیسز کو مؤثر طریقے سے سنبھالیں  
 
 3. **کارکردگی کے پہلو**:  
    - رفتار اور وسائل کے استعمال دونوں کے لیے بہتر بنائیں  
    - جہاں مناسب ہو کیشنگ نافذ کریں  
-   - اسکیل ایبلٹی کو مدنظر رکھیں  
+   - توسیع پذیری کو مدنظر رکھیں  
 
 4. **سیکیورٹی**:  
    - محفوظ API کیز اور توثیق استعمال کریں  
@@ -791,8 +721,8 @@ class SentimentAnalysisTool(Tool):
 
 MCP تعاون کا جائزہ لیتے وقت:
 
-1. **وضاحت**: کیا کوڈ واضح اور اچھی دستاویزات کے ساتھ ہے؟  
-2. **درستی**: کیا یہ توقع کے مطابق کام کرتا ہے؟  
+1. **وضاحت**: کیا کوڈ واضح اور اچھی دستاویزی ہے؟  
+2. **درستگی**: کیا یہ توقع کے مطابق کام کرتا ہے؟  
 3. **تسلسل**: کیا یہ پروجیکٹ کی روایات کی پیروی کرتا ہے؟  
 4. **مکمل پن**: کیا ٹیسٹ اور دستاویزات شامل ہیں؟  
 5. **سیکیورٹی**: کیا کوئی سیکیورٹی خدشات ہیں؟  
@@ -801,9 +731,9 @@ MCP تعاون کا جائزہ لیتے وقت:
 
 MCP کے لیے ترقی کرتے وقت:
 
-1. **پروٹوکول ورژننگ**: اپنے ٹول کے مطابق MCP پروٹوکول ورژن کی پابندی کریں  
+1. **پروٹوکول ورژننگ**: اپنے ٹول کے MCP پروٹوکول ورژن کی پابندی کریں  
 2. **کلائنٹ مطابقت**: پچھلے ورژنز کے ساتھ مطابقت کو مدنظر رکھیں  
-3. **سرور مطابقت**: سرور نفاذ کے رہنما اصولوں کی پیروی کریں  
+3. **سرور مطابقت**: سرور نفاذ کے رہنما اصول کی پیروی کریں  
 4. **بریکنگ چینجز**: کسی بھی بریکنگ تبدیلی کو واضح طور پر دستاویز کریں  
 
 ## کمیونٹی پروجیکٹ کی مثال: MCP ٹول رجسٹری
@@ -891,15 +821,15 @@ async def delete_tool(tool_name: str):
 
 - MCP کمیونٹی متنوع ہے اور مختلف قسم کے تعاون کا خیرمقدم کرتی ہے  
 - MCP میں تعاون کور پروٹوکول کی بہتری سے لے کر اپنی مرضی کے ٹولز تک ہو سکتا ہے  
-- تعاون کے رہنما اصولوں کی پیروی آپ کے PR کے قبول ہونے کے امکانات کو بہتر بناتی ہے  
+- تعاون کے رہنما اصول کی پیروی آپ کے PR کے قبول ہونے کے امکانات کو بہتر بناتی ہے  
 - MCP ٹولز بنانا اور شیئر کرنا ماحولیاتی نظام کو بہتر بنانے کا قیمتی طریقہ ہے  
 - کمیونٹی تعاون MCP کی ترقی اور بہتری کے لیے ضروری ہے  
 
 ## مشق
 
-1. MCP ماحولیاتی نظام میں اپنی مہارت اور دلچسپیوں کی بنیاد پر تعاون کا ایک شعبہ منتخب کریں  
-2. MCP ریپوزٹری کو فورک کریں اور لوکل ڈیولپمنٹ ماحول قائم کریں  
-3. کمیونٹی کے فائدے کے لیے ایک چھوٹی بہتری، بگ فکس، یا ٹول بنائیں  
+1. MCP ماحولیاتی نظام میں اپنی مہارت اور دلچسپی کی بنیاد پر تعاون کا ایک شعبہ منتخب کریں  
+2. MCP ریپوزٹری کو فورک کریں اور لوکل ترقیاتی ماحول ترتیب دیں  
+3. کمیونٹی کے لیے فائدہ مند ایک چھوٹا بہتری، بگ فکس، یا ٹول بنائیں  
 4. اپنے تعاون کو مناسب ٹیسٹ اور دستاویزات کے ساتھ دستاویز کریں  
 5. متعلقہ ریپوزٹری میں پل ریکویسٹ جمع کروائیں  
 

@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:01:31+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T01:17:49+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "it"
 }
 -->
 ## Disclaimer sugli Esempi di Codice
 
-> **Nota Importante**: Gli esempi di codice riportati di seguito mostrano l’integrazione del Model Context Protocol (MCP) con la funzionalità di ricerca web. Pur seguendo i modelli e le strutture degli SDK ufficiali MCP, sono stati semplificati a scopo didattico.
+> **Nota Importante**: Gli esempi di codice riportati di seguito mostrano l'integrazione del Model Context Protocol (MCP) con la funzionalità di ricerca web. Pur seguendo i modelli e le strutture degli SDK ufficiali MCP, sono stati semplificati a scopo didattico.
 > 
 > Questi esempi illustrano:
 > 
-> 1. **Implementazione in Python**: Un server FastMCP che fornisce uno strumento di ricerca web e si collega a un’API di ricerca esterna. Questo esempio dimostra una corretta gestione del ciclo di vita, del contesto e l’implementazione dello strumento seguendo i modelli del [SDK Python ufficiale MCP](https://github.com/modelcontextprotocol/python-sdk). Il server utilizza il trasporto HTTP Streamable raccomandato, che ha sostituito il precedente trasporto SSE per le distribuzioni in produzione.
+> 1. **Implementazione in Python**: Un server FastMCP che fornisce uno strumento di ricerca web e si collega a un'API di ricerca esterna. Questo esempio dimostra una corretta gestione del ciclo di vita, del contesto e l’implementazione dello strumento seguendo i modelli del [SDK Python ufficiale MCP](https://github.com/modelcontextprotocol/python-sdk). Il server utilizza il trasporto HTTP Streamable raccomandato, che ha sostituito il precedente trasporto SSE per le distribuzioni in produzione.
 > 
 > 2. **Implementazione in JavaScript**: Un’implementazione in TypeScript/JavaScript che utilizza il pattern FastMCP dal [SDK TypeScript ufficiale MCP](https://github.com/modelcontextprotocol/typescript-sdk) per creare un server di ricerca con definizioni corrette degli strumenti e connessioni client. Segue i modelli più recenti raccomandati per la gestione delle sessioni e la conservazione del contesto.
 > 
@@ -51,7 +51,7 @@ graph LR
     Server --> |MCP Response| Client
 ```
 
-In questo modello, il server MCP interagisce direttamente con una o più API di ricerca, traducendo le richieste MCP in chiamate specifiche API e formattando i risultati come risposte MCP.
+In questo modello, il server MCP interagisce direttamente con una o più API di ricerca, traducendo le richieste MCP in chiamate specifiche alle API e formattando i risultati come risposte MCP.
 
 #### 2. Ricerca Federata con Conservazione del Contesto
 
@@ -130,16 +130,16 @@ MCP apre nuove possibilità per la navigazione potenziata dall’AI:
 
 ### Evoluzione di MCP nella Ricerca Web
 
-Guardando al futuro, ci aspettiamo che MCP evolva per affrontare:
+Guardando al futuro, prevediamo che MCP evolverà per affrontare:
 
 - **Ricerca Multimodale**: Integrazione di ricerca testuale, immagini, audio e video con contesto preservato
 - **Ricerca Decentralizzata**: Supporto a ecosistemi di ricerca distribuiti e federati
 - **Privacy della Ricerca**: Meccanismi di ricerca che preservano la privacy e sono consapevoli del contesto  
-- **Comprensione della Query**: Analisi semantica profonda delle query di ricerca in linguaggio naturale
+- **Comprensione delle Query**: Analisi semantica profonda delle query di ricerca in linguaggio naturale
 
 ### Potenziali Progressi Tecnologici
 
-Tecnologie emergenti che plasmeranno il futuro della ricerca MCP:
+Tecnologie emergenti che modelleranno il futuro della ricerca MCP:
 
 1. **Architetture di Ricerca Neurale**: Sistemi di ricerca basati su embedding ottimizzati per MCP  
 2. **Contesto di Ricerca Personalizzato**: Apprendimento dei modelli di ricerca individuali degli utenti nel tempo  
@@ -161,7 +161,7 @@ Crea un’applicazione completa che:
 - Elabora domande di ricerca in linguaggio naturale  
 - Esegue ricerche web consapevoli del contesto  
 - Sintetizza informazioni da più fonti  
-- Presenta risultati di ricerca organizzati
+- Presenta i risultati della ricerca in modo organizzato
 
 ### Esercizio 3: Implementare una Federazione di Ricerca Multi-Sorgente con MCP
 
@@ -169,7 +169,7 @@ Esercizio avanzato che copre:
 - Invio contestuale di query a più motori di ricerca  
 - Classifica e aggregazione dei risultati  
 - Deduplicazione contestuale dei risultati di ricerca  
-- Gestione dei metadati specifici delle sorgenti
+- Gestione dei metadata specifici delle sorgenti
 
 ## Risorse Aggiuntive
 
@@ -181,7 +181,7 @@ Esercizio avanzato che copre:
 - [Bing Web Search API Documentation](https://learn.microsoft.com/en-us/bing/search-apis/bing-web-search/overview) - API di ricerca web di Microsoft  
 - [Google Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) - Motore di ricerca programmabile di Google  
 - [SerpAPI Documentation](https://serpapi.com/search-api) - API per le pagine dei risultati dei motori di ricerca  
-- [Meilisearch Documentation](https://www.meilisearch.com/docs) - Motore di ricerca open source  
+- [Meilisearch Documentation](https://www.meilisearch.com/docs) - Motore di ricerca open-source  
 - [Elasticsearch Documentation](https://www.elastic.co/guide/index.html) - Motore di ricerca e analisi distribuito  
 - [LangChain Documentation](https://python.langchain.com/docs/get_started/introduction) - Costruire applicazioni con LLM
 
@@ -193,18 +193,18 @@ Completando questo modulo, sarai in grado di:
 - Spiegare come il Model Context Protocol (MCP) potenzia le capacità di ricerca web in tempo reale  
 - Implementare soluzioni di ricerca basate su MCP utilizzando framework e API popolari  
 - Progettare e distribuire architetture di ricerca scalabili e ad alte prestazioni con MCP  
-- Applicare i concetti MCP a vari casi d’uso, inclusa la ricerca semantica, l’assistenza alla ricerca e la navigazione aumentata dall’IA  
+- Applicare i concetti MCP a diversi casi d’uso, inclusa la ricerca semantica, l’assistenza alla ricerca e la navigazione potenziata dall’AI  
 - Valutare le tendenze emergenti e le innovazioni future nelle tecnologie di ricerca basate su MCP
 
 ### Considerazioni su Fiducia e Sicurezza
 
-Quando implementi soluzioni di ricerca web basate su MCP, ricorda questi principi importanti dalla specifica MCP:
+Quando implementi soluzioni di ricerca web basate su MCP, tieni a mente questi principi importanti dalla specifica MCP:
 
 1. **Consenso e Controllo dell’Utente**: Gli utenti devono fornire un consenso esplicito e comprendere tutte le operazioni e gli accessi ai dati. Questo è particolarmente importante per le implementazioni di ricerca web che possono accedere a fonti di dati esterne.
 
 2. **Privacy dei Dati**: Assicurati di gestire correttamente le query di ricerca e i risultati, specialmente quando possono contenere informazioni sensibili. Implementa controlli di accesso adeguati per proteggere i dati degli utenti.
 
-3. **Sicurezza degli Strumenti**: Implementa autorizzazioni e validazioni corrette per gli strumenti di ricerca, poiché rappresentano potenziali rischi di sicurezza tramite l’esecuzione di codice arbitrario. Le descrizioni del comportamento degli strumenti devono essere considerate non affidabili a meno che non provengano da un server di fiducia.
+3. **Sicurezza degli Strumenti**: Implementa autorizzazioni e validazioni appropriate per gli strumenti di ricerca, poiché rappresentano potenziali rischi di sicurezza tramite l’esecuzione di codice arbitrario. Le descrizioni del comportamento degli strumenti devono essere considerate non affidabili a meno che non provengano da un server di fiducia.
 
 4. **Documentazione Chiara**: Fornisci una documentazione chiara sulle capacità, limitazioni e considerazioni di sicurezza della tua implementazione di ricerca basata su MCP, seguendo le linee guida della specifica MCP.
 
@@ -214,7 +214,7 @@ Per dettagli completi su sicurezza e considerazioni di fiducia MCP, consulta la 
 
 ## Cosa c’è dopo
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Autenticazione Entra ID per i Server Model Context Protocol](../mcp-security-entra/README.md)
 
 **Disclaimer**:  
 Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
