@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:37:47+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T10:29:05+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "hu"
 }
 -->
 # Model Context Protocol (MCP) integráció az Azure AI Foundry-val
 
-Ez az útmutató bemutatja, hogyan lehet integrálni a Model Context Protocol (MCP) szervereket az Azure AI Foundry ügynökeivel, lehetővé téve a hatékony eszközök összehangolását és vállalati szintű AI képességeket.
+Ez az útmutató bemutatja, hogyan lehet integrálni a Model Context Protocol (MCP) szervereket az Azure AI Foundry ügynökeivel, lehetővé téve a hatékony eszközkoordinációt és vállalati szintű mesterséges intelligencia képességeket.
 
 ## Bevezetés
 
-A Model Context Protocol (MCP) egy nyílt szabvány, amely lehetővé teszi az AI alkalmazások számára, hogy biztonságosan csatlakozzanak külső adatforrásokhoz és eszközökhöz. Az Azure AI Foundry-val való integráció során az MCP lehetővé teszi az ügynökök számára, hogy szabványos módon hozzáférjenek és kommunikáljanak különféle külső szolgáltatásokkal, API-kkal és adatforrásokkal.
+A Model Context Protocol (MCP) egy nyílt szabvány, amely lehetővé teszi az AI alkalmazások számára, hogy biztonságosan csatlakozzanak külső adatforrásokhoz és eszközökhöz. Az Azure AI Foundry-val való integráció során az MCP lehetővé teszi az ügynökök számára, hogy szabványos módon hozzáférjenek és kommunikáljanak különböző külső szolgáltatásokkal, API-kkal és adatforrásokkal.
 
-Ez az integráció ötvözi az MCP eszközök ökoszisztémájának rugalmasságát az Azure AI Foundry robusztus ügynök keretrendszerével, így vállalati szintű AI megoldásokat kínál széles körű testreszabási lehetőségekkel.
+Ez az integráció ötvözi az MCP eszközök ökoszisztémájának rugalmasságát az Azure AI Foundry robusztus ügynökkeretével, így vállalati szintű AI megoldásokat kínál széles körű testreszabási lehetőségekkel.
 
 **Megjegyzés:** Ha az MCP-t az Azure AI Foundry Agent Service-ben szeretnéd használni, jelenleg csak a következő régiók támogatottak: westus, westus2, uaenorth, southindia és switzerlandnorth
 
@@ -25,15 +25,15 @@ Az útmutató végére képes leszel:
 
 - Megérteni a Model Context Protocol működését és előnyeit
 - Beállítani MCP szervereket az Azure AI Foundry ügynökeivel való használathoz
-- Ügynököket létrehozni és konfigurálni MCP eszköz integrációval
+- Ügynököket létrehozni és konfigurálni MCP eszközintegrációval
 - Gyakorlati példákat megvalósítani valódi MCP szerverek használatával
-- Kezelni az eszközök válaszait és hivatkozásait az ügynöki beszélgetések során
+- Kezelni az eszközválaszokat és hivatkozásokat az ügynöki beszélgetések során
 
 ## Előfeltételek
 
 A kezdés előtt győződj meg róla, hogy rendelkezel:
 
-- Azure előfizetéssel, amelyhez hozzáférsz az AI Foundry-hoz
+- Azure előfizetéssel, amely hozzáférést biztosít az AI Foundry-hoz
 - Python 3.10+ vagy .NET 8.0+ környezettel
 - Telepített és konfigurált Azure CLI-vel
 - Megfelelő jogosultságokkal AI erőforrások létrehozásához
@@ -43,7 +43,7 @@ A kezdés előtt győződj meg róla, hogy rendelkezel:
 A Model Context Protocol egy szabványosított módja annak, hogy az AI alkalmazások külső adatforrásokhoz és eszközökhöz csatlakozzanak. Fő előnyei:
 
 - **Szabványosított integráció**: Egységes felület különböző eszközök és szolgáltatások között
-- **Biztonság**: Biztonságos hitelesítési és jogosultságkezelési mechanizmusok
+- **Biztonság**: Biztonságos hitelesítési és engedélyezési mechanizmusok
 - **Rugalmasság**: Támogatja a különféle adatforrásokat, API-kat és egyedi eszközöket
 - **Bővíthetőség**: Könnyen hozzáadhatók új funkciók és integrációk
 
@@ -351,13 +351,13 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 - Nézd át a hitelesítési adatokat
 - Győződj meg a hálózati kapcsolat meglétéről
 
-### 2. Eszköz hívás hibák
+### 2. Eszközhívás hibák
 - Vizsgáld meg az eszköz argumentumait és formátumát
 - Ellenőrizd a szerver specifikus követelményeket
-- Alkalmazz megfelelő hibakezelést
+- Valósíts meg megfelelő hibakezelést
 
 ### 3. Teljesítmény problémák
-- Optimalizáld az eszköz hívások gyakoriságát
+- Optimalizáld az eszközhívások gyakoriságát
 - Használj gyorsítótárazást, ahol indokolt
 - Figyeld a szerver válaszidejét
 
@@ -366,8 +366,8 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 Az MCP integrációd további fejlesztéséhez:
 
 1. **Ismerd meg az egyedi MCP szervereket**: Építs saját MCP szervereket saját adatforrásokhoz
-2. **Valósíts meg fejlett biztonságot**: Adj hozzá OAuth2 vagy egyedi hitelesítési megoldásokat
-3. **Monitorozás és elemzés**: Vezess be naplózást és monitorozást az eszközhasználathoz
+2. **Valósíts meg fejlett biztonságot**: Adj hozzá OAuth2 vagy egyedi hitelesítési mechanizmusokat
+3. **Monitorozás és elemzés**: Valósíts meg naplózást és monitorozást az eszközhasználathoz
 4. **Skálázd megoldásodat**: Gondolkodj terheléselosztásban és elosztott MCP szerver architektúrákban
 
 ## További források
@@ -385,7 +385,7 @@ További támogatásért és kérdések esetén:
 
 ## Mi következik
 
-- [6. Közösségi hozzájárulások](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

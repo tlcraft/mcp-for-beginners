@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:02:57+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T10:17:39+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "hu"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Áttekintés
 
-Ez a lecke arra fókuszál, hogyan lehet bekapcsolódni az MCP közösségbe, hozzájárulni az MCP ökoszisztémához, és követni a legjobb gyakorlatokat az együttműködéses fejlesztés során. Az MCP nyílt forráskódú projektjeiben való részvétel megértése elengedhetetlen azok számára, akik formálni szeretnék ennek a technológiának a jövőjét.
+Ez a lecke arra fókuszál, hogyan lehet bekapcsolódni az MCP közösségbe, hozzájárulni az MCP ökoszisztémához, és követni a legjobb gyakorlatokat az együttműködés során. Az MCP nyílt forráskódú projektjeiben való részvétel megértése elengedhetetlen azok számára, akik formálni szeretnék ennek a technológiának a jövőjét.
 
 ## Tanulási célok
 
@@ -19,36 +19,41 @@ A lecke végére képes leszel:
 - Megérteni az MCP közösség és ökoszisztéma felépítését
 - Hatékonyan részt venni az MCP közösségi fórumokon és vitákban
 - Hozzájárulni az MCP nyílt forráskódú tárolóihoz
-- Egyedi MCP eszközöket készíteni és megosztani
+- Egyedi MCP eszközöket és szervereket létrehozni és megosztani
 - Követni az MCP fejlesztési és együttműködési legjobb gyakorlatokat
+- Felfedezni a közösségi erőforrásokat és keretrendszereket az MCP fejlesztéshez
 
 ## Az MCP közösségi ökoszisztéma
 
 Az MCP ökoszisztéma különböző összetevőkből és résztvevőkből áll, akik együtt dolgoznak a protokoll fejlesztésén.
 
-### Fő közösségi elemek
+### Kulcsfontosságú közösségi elemek
 
-1. **Core Protocol Maintainers**: A Microsoft és más szervezetek, amelyek az MCP alap specifikációit és referencia implementációit tartják karban
-2. **Tool Developers**: Egyének és csapatok, akik MCP eszközöket fejlesztenek
-3. **Integration Providers**: Vállalatok, amelyek az MCP-t termékeikbe és szolgáltatásaikba integrálják
-4. **End Users**: Fejlesztők és szervezetek, akik MCP-t használnak alkalmazásaikban
-5. **Contributors**: Közösségi tagok, akik kódot, dokumentációt vagy egyéb erőforrásokat adnak hozzá
+1. **Core Protocol Maintainers**: Az hivatalos [Model Context Protocol GitHub szervezet](https://github.com/modelcontextprotocol) tartja karban az MCP alap specifikációit és referencia implementációit
+2. **Eszközfejlesztők**: Egyének és csapatok, akik MCP eszközöket és szervereket készítenek
+3. **Integrációs szolgáltatók**: Cégek, amelyek az MCP-t beépítik termékeikbe és szolgáltatásaikba
+4. **Végfelhasználók**: Fejlesztők és szervezetek, akik MCP-t használnak alkalmazásaikban
+5. **Hozzájárulók**: Közösségi tagok, akik kódot, dokumentációt vagy egyéb erőforrásokat adnak hozzá
 
-### Közösségi források
+### Közösségi erőforrások
 
 #### Hivatalos csatornák
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [MCP GitHub szervezet](https://github.com/modelcontextprotocol)
+- [MCP dokumentáció](https://modelcontextprotocol.io/)
+- [MCP specifikáció](https://modelcontextprotocol.io/docs/specification)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP példák és szerverek tárolója](https://github.com/modelcontextprotocol/servers)
 
-#### Közösség által kezelt források
+#### Közösség által vezérelt erőforrások
 
+- [MCP kliensek](https://modelcontextprotocol.io/clients) – MCP integrációkat támogató kliensek listája
+- [Közösségi MCP szerverek](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) – Folyamatosan bővülő közösségi MCP szerverek listája
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) – Válogatott MCP szerverek listája
+- [PulseMCP](https://www.pulsemcp.com/) – Közösségi központ és hírlevél MCP erőforrások felfedezéséhez
+- [Discord szerver](https://discord.gg/jHEGxQu2a5) – Kapcsolódj MCP fejlesztőkhöz
 - Nyelvspecifikus SDK implementációk
-- Szerver implementációk és eszközkönyvtárak
 - Blogbejegyzések és oktatóanyagok
-- Közösségi fórumok és közösségi média viták
 
 ## Hozzájárulás az MCP-hez
 
@@ -59,7 +64,7 @@ Az MCP ökoszisztéma különféle hozzájárulásokat fogad el:
 1. **Kód hozzájárulások**:
    - Core protokoll fejlesztések
    - Hibajavítások
-   - Eszköz implementációk
+   - Eszköz- és szerver implementációk
    - Kliens/szerver könyvtárak különböző nyelveken
 
 2. **Dokumentáció**:
@@ -69,168 +74,79 @@ Az MCP ökoszisztéma különféle hozzájárulásokat fogad el:
    - Példák és mintapéldányok készítése
 
 3. **Közösségi támogatás**:
-   - Kérdések megválaszolása fórumokon
+   - Kérdések megválaszolása fórumokon és vitákban
    - Tesztelés és hibajelentés
    - Közösségi események szervezése
    - Új hozzájárulók mentorálása
 
-### Hozzájárulási folyamat: Core Protocol
+### Hozzájárulási folyamat: Core protokoll
 
-Ha a core MCP protokollhoz vagy hivatalos implementációkhoz szeretnél hozzájárulni:
+Az MCP core protokollhoz vagy hivatalos implementációkhoz való hozzájáruláshoz kövesd az [hivatalos hozzájárulási irányelveket](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### .NET példa: Protokoll fejlesztés hozzájárulása
+1. **Egyszerűség és minimalizmus**: Az MCP specifikáció magas követelményeket támaszt új fogalmak bevezetésénél. Könnyebb valamit hozzáadni, mint eltávolítani.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **Konkrét megközelítés**: A specifikáció változtatásai konkrét implementációs problémákra kell, hogy épüljenek, nem spekulatív ötletekre.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **Egy javaslat szakaszai**:
+   - Definiálás: Vizsgáld meg a problémát, és ellenőrizd, hogy más MCP felhasználók is találkoznak-e hasonlóval
+   - Prototípus: Készíts egy példamegoldást, és mutasd be annak gyakorlati alkalmazását
+   - Írás: A prototípus alapján írd meg a specifikációs javaslatot
+
+### Fejlesztői környezet beállítása
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Java példa: Hibajavítás hozzájárulása
+### Példa: Hibajavítás hozzájárulása
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Python példa: Új eszköz hozzájárulása a standard könyvtárhoz
+### Példa: Új eszköz hozzájárulása a standard könyvtárhoz
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -392,21 +308,21 @@ class CsvProcessingTool(Tool):
 
 ### Hozzájárulási irányelvek
 
-A sikeres hozzájáruláshoz az MCP projektekhez:
+Sikeres hozzájáruláshoz az MCP projektekhez:
 
 1. **Kezdj kicsiben**: Dokumentációval, hibajavításokkal vagy kisebb fejlesztésekkel kezdj
 2. **Kövesd a stílus útmutatót**: Tartsd be a projekt kódolási stílusát és konvencióit
-3. **Írj teszteket**: Minden kódhoz adj egységteszteket
-4. **Dokumentáld a munkádat**: Egyértelmű dokumentációt adj az új funkciókhoz vagy változtatásokhoz
+3. **Írj teszteket**: Kódodhoz adj egységteszteket
+4. **Dokumentáld a munkádat**: Adj világos dokumentációt az új funkciókról vagy változásokról
 5. **Célzott PR-eket küldj**: A pull requestek egyetlen problémára vagy funkcióra fókuszáljanak
-6. **Légy nyitott a visszajelzésekre**: Reagálj a hozzájárulásodra érkező visszajelzésekre
+6. **Légy nyitott a visszajelzésekre**: Válaszolj a hozzászólásokra és javaslatokra
 
 ### Példa hozzájárulási munkafolyamat
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,13 +343,31 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Egyedi MCP eszközök készítése és megosztása
+## MCP szerverek létrehozása és megosztása
 
-Az egyik legértékesebb módja az MCP ökoszisztéma támogatásának az egyedi eszközök készítése és megosztása.
+Az egyik legértékesebb módja az MCP ökoszisztéma támogatásának, ha egyedi MCP szervereket hozol létre és osztasz meg. A közösség már több száz szervert fejlesztett különböző szolgáltatásokhoz és felhasználási esetekhez.
+
+### MCP szerver fejlesztési keretrendszerek
+
+Számos keretrendszer áll rendelkezésre az MCP szerverfejlesztés egyszerűsítésére:
+
+1. **Hivatalos SDK-k**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **Közösségi keretrendszerek**:
+   - [MCP-Framework](https://mcp-framework.com/) – MCP szerverek gyors és elegáns fejlesztése TypeScript-ben
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) – Annotáció alapú MCP szerverek Java-ban
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) – Java keretrendszer MCP szerverekhez
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) – Kezdő Next.js projekt MCP szerverekhez
 
 ### Megosztható eszközök fejlesztése
 
-#### .NET példa: Megosztható eszköz csomag készítése
+#### .NET példa: Megosztható eszközcsomag létrehozása
 
 ```csharp
 // Create a new .NET library project
@@ -761,9 +693,9 @@ MCP eszközök megosztásakor a közösséggel:
    - Adj hasznos hibaüzeneteket
    - Kezeld szépen a szélsőséges eseteket
 
-3. **Teljesítmény szempontok**:
+3. **Teljesítmény**:
    - Optimalizáld a sebességet és az erőforrás-használatot
-   - Használj gyorsítótárazást, ha indokolt
+   - Használj cache-elést, ha indokolt
    - Gondolj a skálázhatóságra
 
 4. **Biztonság**:
@@ -808,7 +740,7 @@ MCP fejlesztésekor:
 
 ## Példa közösségi projekt: MCP eszközregiszter
 
-Egy fontos közösségi hozzájárulás lehet egy nyilvános regiszter fejlesztése az MCP eszközökhöz.
+Fontos közösségi hozzájárulás lehet egy nyilvános regiszter fejlesztése az MCP eszközökhöz.
 
 ```python
 # Example schema for a community tool registry API
@@ -890,9 +822,9 @@ async def delete_tool(tool_name: str):
 ## Főbb tanulságok
 
 - Az MCP közösség sokszínű, és különféle hozzájárulásokat fogad el
-- Az MCP-hez való hozzájárulás a core protokoll fejlesztésektől az egyedi eszközökig terjedhet
+- Az MCP-hez való hozzájárulás a core protokoll fejlesztéstől az egyedi eszközökig terjedhet
 - A hozzájárulási irányelvek követése növeli a PR elfogadásának esélyét
-- Egyedi MCP eszközök készítése és megosztása értékes módja az ökoszisztéma fejlesztésének
+- MCP eszközök létrehozása és megosztása értékes módja az ökoszisztéma fejlesztésének
 - A közösségi együttműködés elengedhetetlen az MCP növekedéséhez és fejlődéséhez
 
 ## Gyakorlat
@@ -903,14 +835,14 @@ async def delete_tool(tool_name: str):
 4. Dokumentáld a hozzájárulásodat megfelelő tesztekkel és dokumentációval
 5. Küldj pull requestet a megfelelő tárolóba
 
-## További források
+## További erőforrások
 
-- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+- [MCP közösségi projektek](https://github.com/topics/model-context-protocol)
 
 
 ---
 
-Következő: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+Következő: [Tanulságok a korai bevezetésből](../07-LessonsfromEarlyAdoption/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

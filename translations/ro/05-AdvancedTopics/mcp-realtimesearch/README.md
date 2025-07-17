@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:17:53+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T11:16:05+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "ro"
 }
 -->
-## Declarație privind exemplele de cod
+## Declarație privind Exemplele de Cod
 
-> **Notă importantă**: Exemplele de cod de mai jos demonstrează integrarea Model Context Protocol (MCP) cu funcționalitatea de căutare web. Deși urmează modelele și structurile SDK-urilor oficiale MCP, acestea au fost simplificate în scopuri educaționale.
+> **Notă Importantă**: Exemplele de cod de mai jos demonstrează integrarea Model Context Protocol (MCP) cu funcționalitatea de căutare web. Deși urmează modelele și structurile SDK-urilor oficiale MCP, acestea au fost simplificate în scopuri educaționale.
 > 
 > Aceste exemple ilustrează:
 > 
@@ -17,17 +17,17 @@ CO_OP_TRANSLATOR_METADATA:
 > 
 > 2. **Implementare JavaScript**: O implementare în TypeScript/JavaScript folosind modelul FastMCP din [SDK-ul oficial MCP pentru TypeScript](https://github.com/modelcontextprotocol/typescript-sdk) pentru a crea un server de căutare cu definiții corecte ale instrumentelor și conexiuni client. Urmează cele mai recente modele recomandate pentru gestionarea sesiunilor și păstrarea contextului.
 > 
-> Aceste exemple necesită gestionare suplimentară a erorilor, autentificare și cod specific de integrare API pentru utilizare în producție. Endpoint-urile API de căutare afișate (`https://api.search-service.example/search`) sunt doar exemple și trebuie înlocuite cu endpoint-uri reale ale serviciilor de căutare.
+> Aceste exemple necesită gestionare suplimentară a erorilor, autentificare și cod specific de integrare API pentru utilizare în producție. Endpoint-urile API de căutare afișate (`https://api.search-service.example/search`) sunt doar exemplificative și trebuie înlocuite cu endpoint-uri reale ale serviciilor de căutare.
 > 
 > Pentru detalii complete de implementare și cele mai actualizate metode, vă rugăm să consultați [specificația oficială MCP](https://spec.modelcontextprotocol.io/) și documentația SDK-urilor.
 
-## Concepte de bază
+## Concepte de Bază
 
 ### Framework-ul Model Context Protocol (MCP)
 
-La bază, Model Context Protocol oferă o metodă standardizată prin care modelele AI, aplicațiile și serviciile pot schimba context. În căutarea web în timp real, acest framework este esențial pentru crearea unor experiențe coerente de căutare pe mai multe interacțiuni. Componentele cheie includ:
+La bază, Model Context Protocol oferă o metodă standardizată pentru schimbul de context între modele AI, aplicații și servicii. În căutarea web în timp real, acest framework este esențial pentru crearea unor experiențe coerente de căutare pe mai multe interacțiuni. Componentele cheie includ:
 
-1. **Arhitectură Client-Server**: MCP stabilește o separare clară între clienții de căutare (cei care solicită) și serverele de căutare (furnizorii), permițând modele flexibile de implementare.
+1. **Arhitectură Client-Server**: MCP stabilește o separare clară între clienții de căutare (solicitatori) și serverele de căutare (furnizori), permițând modele flexibile de implementare.
 
 2. **Comunicare JSON-RPC**: Protocolul folosește JSON-RPC pentru schimbul de mesaje, făcându-l compatibil cu tehnologiile web și ușor de implementat pe diverse platforme.
 
@@ -35,13 +35,13 @@ La bază, Model Context Protocol oferă o metodă standardizată prin care model
 
 4. **Definiții de Instrumente**: Capacitățile de căutare sunt expuse ca instrumente standardizate cu parametri și valori de retur bine definite.
 
-5. **Suport pentru Streaming**: Protocolul suportă transmiterea în flux a rezultatelor, esențială pentru căutarea în timp real unde rezultatele pot sosi progresiv.
+5. **Suport pentru Streaming**: Protocolul suportă transmiterea rezultatelor în flux, esențială pentru căutarea în timp real unde rezultatele pot sosi progresiv.
 
-### Modele de integrare a căutării web
+### Modele de Integrare a Căutării Web
 
 La integrarea MCP cu căutarea web, apar mai multe modele:
 
-#### 1. Integrare directă cu furnizorul de căutare
+#### 1. Integrare Directă cu Furnizorul de Căutare
 
 ```mermaid
 graph LR
@@ -53,7 +53,7 @@ graph LR
 
 În acest model, serverul MCP interacționează direct cu una sau mai multe API-uri de căutare, traducând cererile MCP în apeluri specifice API-ului și formatează rezultatele ca răspunsuri MCP.
 
-#### 2. Căutare federată cu păstrarea contextului
+#### 2. Căutare Federată cu Păstrarea Contextului
 
 ```mermaid
 graph LR
@@ -69,7 +69,7 @@ graph LR
 
 Acest model distribuie interogările de căutare către mai mulți furnizori compatibili MCP, fiecare specializat potențial în diferite tipuri de conținut sau capabilități de căutare, menținând în același timp un context unificat.
 
-#### 3. Lanț de căutare îmbunătățit cu context
+#### 3. Lanț de Căutare Îmbunătățit cu Context
 
 ```mermaid
 graph LR
@@ -85,30 +85,30 @@ graph LR
 
 În acest model, procesul de căutare este împărțit în mai multe etape, contextul fiind îmbogățit la fiecare pas, rezultând rezultate din ce în ce mai relevante.
 
-### Componente ale contextului de căutare
+### Componente ale Contextului de Căutare
 
 În căutarea web bazată pe MCP, contextul include de obicei:
 
-- **Istoricul interogărilor**: Interogările anterioare din sesiune
-- **Preferințele utilizatorului**: Limbă, regiune, setări de căutare sigură
-- **Istoricul interacțiunilor**: Rezultatele pe care utilizatorul le-a accesat, timpul petrecut pe rezultate
-- **Parametrii de căutare**: Filtre, ordonări și alți modificatori de căutare
-- **Cunoștințe de domeniu**: Context specific subiectului relevant pentru căutare
-- **Context temporal**: Factori de relevanță în funcție de timp
-- **Preferințe de sursă**: Surse de informații de încredere sau preferate
+- **Istoricul Interogărilor**: Interogările anterioare din sesiune
+- **Preferințele Utilizatorului**: Limba, regiunea, setările de căutare sigură
+- **Istoricul Interacțiunilor**: Rezultatele pe care utilizatorul le-a accesat, timpul petrecut pe rezultate
+- **Parametrii de Căutare**: Filtre, ordonări și alți modificatori de căutare
+- **Cunoștințe de Domeniu**: Context specific subiectului relevant pentru căutare
+- **Context Temporal**: Factori de relevanță în funcție de timp
+- **Preferințe de Sursă**: Surse de informații de încredere sau preferate
 
-## Cazuri de utilizare și aplicații
+## Cazuri de Utilizare și Aplicații
 
-### Cercetare și colectare de informații
+### Cercetare și Colectare de Informații
 
 MCP îmbunătățește fluxurile de lucru de cercetare prin:
 
 - Păstrarea contextului de cercetare pe parcursul sesiunilor de căutare
-- Permițând interogări mai sofisticate și relevante contextual
-- Susținerea căutării federate pe mai multe surse
+- Permițând interogări mai sofisticate și contextual relevante
+- Susținerea căutării federate multi-sursă
 - Facilitarea extragerii de cunoștințe din rezultatele căutării
 
-### Monitorizarea știrilor și tendințelor în timp real
+### Monitorizarea Știrilor și Tendințelor în Timp Real
 
 Căutarea alimentată de MCP oferă avantaje pentru monitorizarea știrilor:
 
@@ -117,24 +117,24 @@ Căutarea alimentată de MCP oferă avantaje pentru monitorizarea știrilor:
 - Urmărirea subiectelor și entităților pe mai multe surse
 - Alarme personalizate de știri bazate pe contextul utilizatorului
 
-### Navigare și cercetare augmentată de AI
+### Navigare și Cercetare Augmentată de AI
 
 MCP creează noi posibilități pentru navigarea augmentată de AI:
 
 - Sugestii de căutare contextuale bazate pe activitatea curentă din browser
-- Integrare fluidă a căutării web cu asistenți alimentați de LLM
-- Rafinare a căutării pe mai multe interacțiuni cu păstrarea contextului
+- Integrare fără întreruperi a căutării web cu asistenți alimentați de LLM
+- Rafinare multi-turn a căutării cu context păstrat
 - Verificare și validare îmbunătățite a faptelor și informațiilor
 
-## Tendințe și inovații viitoare
+## Tendințe și Inovații Viitoare
 
-### Evoluția MCP în căutarea web
+### Evoluția MCP în Căutarea Web
 
 Privind spre viitor, anticipăm că MCP va evolua pentru a aborda:
 
-- **Căutare multimodală**: Integrarea căutării text, imagine, audio și video cu context păstrat
-- **Căutare descentralizată**: Susținerea ecosistemelor de căutare distribuită și federată
-- **Confidențialitatea căutării**: Mecanisme de căutare care păstrează confidențialitatea, adaptate contextului  
+- **Căutare Multimodală**: Integrarea căutării text, imagine, audio și video cu context păstrat
+- **Căutare Decentralizată**: Susținerea ecosistemelor de căutare distribuită și federată
+- **Confidențialitatea căutării**: Mecanisme de căutare care păstrează confidențialitatea și sunt conștiente de context  
 - **Înțelegerea interogărilor**: Analiză semantică profundă a interogărilor de căutare în limbaj natural
 
 ### Posibile progrese tehnologice
@@ -142,7 +142,7 @@ Privind spre viitor, anticipăm că MCP va evolua pentru a aborda:
 Tehnologii emergente care vor modela viitorul căutării MCP:
 
 1. **Arhitecturi de căutare neurală**: Sisteme de căutare bazate pe embedding-uri, optimizate pentru MCP  
-2. **Context de căutare personalizat**: Învățarea tiparelor de căutare individuale ale utilizatorilor în timp  
+2. **Context de căutare personalizat**: Învățarea tiparelor individuale de căutare ale utilizatorilor în timp  
 3. **Integrarea graficelor de cunoștințe**: Căutare contextuală îmbunătățită prin grafice de cunoștințe specifice domeniului  
 4. **Context cross-modal**: Menținerea contextului între diferite modalități de căutare
 
@@ -152,21 +152,21 @@ Tehnologii emergente care vor modela viitorul căutării MCP:
 
 În acest exercițiu vei învăța să:  
 - Configurezi un mediu de căutare MCP de bază  
-- Implementezi gestionarea contextului pentru căutarea pe web  
-- Testezi și validezi păstrarea contextului pe parcursul iterărilor de căutare
+- Implementezi handleri de context pentru căutarea pe web  
+- Testezi și validezi păstrarea contextului pe parcursul iterațiilor de căutare
 
 ### Exercițiul 2: Construirea unui asistent de cercetare cu MCP Search
 
 Creează o aplicație completă care:  
 - Procesează întrebări de cercetare în limbaj natural  
-- Efectuează căutări web contextuale  
-- Sintetizează informații din surse multiple  
+- Efectuează căutări web conștiente de context  
+- Sintetizează informații din mai multe surse  
 - Prezintă rezultatele cercetării într-un mod organizat
 
 ### Exercițiul 3: Implementarea unei federări de căutare multi-sursă cu MCP
 
 Exercițiu avansat care acoperă:  
-- Trimiterea interogărilor contextuale către mai multe motoare de căutare  
+- Trimiterea interogărilor conștiente de context către mai multe motoare de căutare  
 - Clasarea și agregarea rezultatelor  
 - Deduplicarea contextuală a rezultatelor căutării  
 - Gestionarea metadatelor specifice surselor
@@ -187,7 +187,7 @@ Exercițiu avansat care acoperă:
 
 ## Rezultate așteptate
 
-După finalizarea acestui modul vei putea să:  
+După finalizarea acestui modul, vei putea să:  
 
 - Înțelegi fundamentele căutării web în timp real și provocările acesteia  
 - Explici cum Model Context Protocol (MCP) îmbunătățește capabilitățile căutării web în timp real  
@@ -214,7 +214,7 @@ Pentru detalii complete despre securitatea și considerațiile de încredere MCP
 
 ## Ce urmează
 
-- [5.11 Autentificare Entra ID pentru serverele Model Context Protocol](../mcp-security-entra/README.md)
+- [5.12 Autentificare Entra ID pentru serverele Model Context Protocol](../mcp-security-entra/README.md)
 
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

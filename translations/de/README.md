@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5067c45550201d577437ed7315a51307",
-  "translation_date": "2025-07-16T22:10:07+00:00",
+  "original_hash": "35fe22b9167cb7be62fddbcf53a255f4",
+  "translation_date": "2025-07-17T09:33:52+00:00",
   "source_file": "README.md",
   "language_code": "de"
 }
@@ -35,11 +35,11 @@ Folge diesen Schritten, um mit diesen Ressourcen zu starten:
 
 # 🚀 Model Context Protocol (MCP) Lehrplan für Einsteiger
 
-## **Lerne MCP mit praxisnahen Code-Beispielen in C#, Java, JavaScript, Python und TypeScript**
+## **Lerne MCP mit praxisnahen Codebeispielen in C#, Java, JavaScript, Python und TypeScript**
 
 ## 🧠 Überblick über den Model Context Protocol Lehrplan
 
-Das **Model Context Protocol (MCP)** ist ein modernes Framework, das darauf ausgelegt ist, die Interaktionen zwischen KI-Modellen und Client-Anwendungen zu standardisieren. Dieser Open-Source-Lehrplan bietet einen strukturierten Lernpfad mit praktischen Code-Beispielen und realen Anwendungsfällen in beliebten Programmiersprachen wie C#, Java, JavaScript, TypeScript und Python.
+Das **Model Context Protocol (MCP)** ist ein modernes Framework, das darauf ausgelegt ist, die Interaktionen zwischen KI-Modellen und Client-Anwendungen zu standardisieren. Dieser Open-Source-Lehrplan bietet einen strukturierten Lernpfad mit praktischen Codebeispielen und realen Anwendungsfällen in beliebten Programmiersprachen wie C#, Java, JavaScript, TypeScript und Python.
 
 Egal, ob du KI-Entwickler, Systemarchitekt oder Softwareingenieur bist – dieser Leitfaden ist deine umfassende Ressource, um die Grundlagen von MCP und Implementierungsstrategien zu meistern.
 
@@ -48,7 +48,7 @@ Egal, ob du KI-Entwickler, Systemarchitekt oder Softwareingenieur bist – diese
 - 📘 [MCP Dokumentation](https://modelcontextprotocol.io/) – Ausführliche Tutorials und Benutzerhandbücher  
 - 📜 [MCP Spezifikation](https://modelcontextprotocol.io/docs/) – Protokollarchitektur und technische Referenzen  
 - 📜 [Ursprüngliche MCP Spezifikation](https://spec.modelcontextprotocol.io/) – Legacy technische Referenzen (können zusätzliche Details enthalten)  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-Source SDKs, Tools und Code-Beispiele
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-Source SDKs, Tools und Codebeispiele  
 - 🌐 [MCP Community](https://github.com/orgs/modelcontextprotocol/discussions) – Diskutiere mit und trage zur Community bei
 
 ## Sei dabei bei den MCP Dev Days am 29. und 30. Juli 2025
@@ -66,11 +66,11 @@ Du kannst die MCP Dev Days verfolgen, indem du dich auf unserer Eventseite anmel
 
 #### Tag 1: MCP Produktivität, DevTools & Community
 
-Dreht sich darum, Entwickler zu befähigen, MCP in ihren Entwicklungsworkflow einzubinden und die großartige MCP-Community zu feiern. Wir werden von Community-Mitgliedern und Partnern wie Arcade, Block, Okta und Neon begleitet, um zu sehen, wie sie mit Microsoft zusammenarbeiten, um ein offenes, erweiterbares MCP-Ökosystem zu gestalten.  
+Dreht sich darum, Entwickler zu befähigen, MCP in ihren Entwicklungsworkflow zu integrieren und die großartige MCP-Community zu feiern. Wir werden von Community-Mitgliedern und Partnern wie Arcade, Block, Okta und Neon begleitet, um zu sehen, wie sie mit Microsoft zusammenarbeiten, um ein offenes, erweiterbares MCP-Ökosystem zu gestalten.  
 Echte Demos mit VS Code, Visual Studio, GitHub Copilot und beliebten Community-Tools  
 Praktische, kontextbasierte Entwicklungsworkflows  
 Community-geführte Sessions und Einblicke  
-Egal, ob du gerade erst mit MCP anfängst oder bereits damit arbeitest – Tag 1 liefert Inspiration und umsetzbare Erkenntnisse.
+Egal, ob du gerade erst mit MCP beginnst oder bereits damit arbeitest – Tag 1 liefert Inspiration und umsetzbare Erkenntnisse.
 
 #### Tag 2: MCP Server mit Vertrauen bauen
 
@@ -96,7 +96,7 @@ Wenn du Entwickler, Tool-Hersteller oder KI-Produktstratege bist, bietet dieser 
 | 00 | Einführung in MCP | Überblick über das Model Context Protocol und seine Bedeutung in KI-Pipelines | [Mehr lesen](./00-Introduction/README.md) |
 | 01 | Kernkonzepte erklärt | Tiefgehende Erkundung der zentralen MCP-Konzepte | [Mehr lesen](./01-CoreConcepts/README.md) |
 | 02 | Sicherheit in MCP | Sicherheitsbedrohungen und Best Practices | [Mehr lesen](./02-Security/README.md) |
-| 03 | Erste Schritte mit MCP | Einrichtung der Umgebung, einfache Server/Clients, Integration | [Mehr lesen](./03-GettingStarted/README.md) |
+| 03 | Erste Schritte mit MCP | Einrichtung der Umgebung, grundlegende Server/Clients, Integration | [Mehr lesen](./03-GettingStarted/README.md) |
 | **Modul 3: Bau deines ersten Servers & Clients** | | | |
 | 3.1 | Erster Server | Erstelle deinen ersten MCP-Server | [Anleitung](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | Erster Client | Entwickle einen einfachen MCP-Client | [Anleitung](./03-GettingStarted/02-client/README.md) |
@@ -104,7 +104,7 @@ Wenn du Entwickler, Tool-Hersteller oder KI-Produktstratege bist, bietet dieser 
 | 3.4 | VS Code Integration | Nutzung von MCP-Servern in VS Code | [Anleitung](./03-GettingStarted/04-vscode/README.md) |
 | 3.5 | SSE Server | Erstelle Server mit Server-Sent Events | [Anleitung](./03-GettingStarted/05-sse-server/README.md) |
 | 3.6 | HTTP Streaming | Implementiere HTTP-Streaming in MCP | [Anleitung](./03-GettingStarted/06-http-streaming/README.md) |
-| 3.7 | AI Toolkit | Nutzung des AI Toolkits mit MCP | [Anleitung](./03-GettingStarted/07-aitk/README.md) |
+| 3.7 | AI Toolkit | Verwendung des AI Toolkits mit MCP | [Anleitung](./03-GettingStarted/07-aitk/README.md) |
 | 3.8 | Testing | Teste deine MCP-Server-Implementierung | [Anleitung](./03-GettingStarted/08-testing/README.md) |
 | 3.9 | Deployment | Setze MCP-Server produktiv ein | [Anleitung](./03-GettingStarted/09-deployment/README.md) |
 | **Modul 4-5: Praktisch & Fortgeschritten** | | | |
@@ -127,8 +127,8 @@ Wenn du Entwickler, Tool-Hersteller oder KI-Produktstratege bist, bietet dieser 
 | **Modul 6-10: Community & Best Practices** | | | |
 | 06 | Community Contributions | Wie man zum MCP-Ökosystem beiträgt | [Guide](./06-CommunityContributions/README.md) |
 | 07 | Insights from Early Adoption | Praxisberichte aus der frühen Nutzung | [Guide](./07-LessonsFromEarlyAdoption/README.md) |
-| 08 | Best Practices for MCP | Leistung, Fehlertoleranz, Resilienz | [Guide](./08-BestPractices/README.md) |
-| 09 | MCP Case Studies | Praktische Anwendungsbeispiele | [Guide](./09-CaseStudy/README.md) |
+| 08 | Best Practices for MCP | Performance, Fehlertoleranz, Resilienz | [Guide](./08-BestPractices/README.md) |
+| 09 | MCP Case Studies | Praxisnahe Implementierungsbeispiele | [Guide](./09-CaseStudy/README.md) |
 | 10 | Hands-on Workshop | Aufbau eines MCP Servers mit AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
 ### 💻 Beispielprojekte mit Code
@@ -161,7 +161,7 @@ Um das Beste aus diesem Curriculum herauszuholen, solltest du Folgendes mitbring
 - Grundkenntnisse in mindestens einer der folgenden Programmiersprachen: C#, Java, JavaScript, Python oder TypeScript  
 - Verständnis des Client-Server-Modells und von APIs  
 - Vertrautheit mit REST- und HTTP-Konzepten  
-- (Optional) Grundwissen in AI/ML-Konzepten  
+- (Optional) Grundkenntnisse in AI/ML-Konzepten  
 
 - Teilnahme an unseren Community-Diskussionen zur Unterstützung
 
@@ -181,7 +181,7 @@ Ein umfassender [Lernleitfaden](./study_guide.md) steht zur Verfügung, um dir d
 
 ### Änderungsprotokoll
 
-Wir führen ein detailliertes [Änderungsprotokoll](./changelog.md), das alle wichtigen Aktualisierungen der Curriculummaterialien dokumentiert, darunter:
+Wir führen ein detailliertes [Changelog](./changelog.md), das alle wichtigen Aktualisierungen der Curriculummaterialien dokumentiert, darunter:
 
 - Neue Inhalte  
 - Strukturänderungen  
@@ -208,10 +208,10 @@ Dieser Inhalt steht unter der **MIT License**. Für die Bedingungen siehe die [L
 
 ## 🤝 Beitragsrichtlinien
 
-Dieses Projekt freut sich über Beiträge und Vorschläge. Die meisten Beiträge erfordern, dass du einer Contributor License Agreement (CLA) zustimmst, die bestätigt, dass du die Rechte besitzt und tatsächlich gewährst, dass wir deine Beiträge nutzen dürfen. Details findest du unter  
+Dieses Projekt freut sich über Beiträge und Vorschläge. Die meisten Beiträge erfordern, dass du einer Contributor License Agreement (CLA) zustimmst, in der du bestätigst, dass du die Rechte besitzt und tatsächlich gewährst, dass wir deine Beiträge nutzen dürfen. Details findest du unter  
 <https://cla.opensource.microsoft.com>.
 
-Wenn du eine Pull-Anfrage einreichst, prüft ein CLA-Bot automatisch, ob du eine CLA bereitstellen musst, und kennzeichnet die PR entsprechend (z. B. Statusprüfung, Kommentar). Folge einfach den Anweisungen des Bots. Dies musst du nur einmal für alle Repositories mit unserer CLA tun.
+Wenn du eine Pull-Anfrage einreichst, prüft ein CLA-Bot automatisch, ob du eine CLA bereitstellen musst, und versieht die PR entsprechend (z. B. Statusprüfung, Kommentar). Folge einfach den Anweisungen des Bots. Dies musst du nur einmal für alle Repositories mit unserer CLA tun.
 
 Dieses Projekt hat den [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) übernommen.  
 Weitere Informationen findest du in den [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) oder kontaktiere [opencode@microsoft.com](mailto:opencode@microsoft.com) bei weiteren Fragen oder Anmerkungen.
@@ -224,7 +224,6 @@ Das Repository ist wie folgt organisiert:
 - **images/**: Diagramme und Illustrationen, die im Curriculum verwendet werden  
 - **translations/**: Mehrsprachige Unterstützung mit automatischen Übersetzungen  
 - **translated_images/**: Lokalisierte Versionen von Diagrammen und Illustrationen  
-- **alternative_layouts/**: Verschiedene Präsentationsformate für die Curriculum-Inhalte  
 - **study_guide.md**: Umfassender Leitfaden zur Navigation im Repository  
 - **changelog.md**: Aufzeichnung aller wichtigen Änderungen an den Curriculummaterialien  
 - **mcp.json**: Konfigurationsdatei für die MCP-Spezifikation  
@@ -251,9 +250,8 @@ Unser Team bietet weitere Kurse an! Schau dir an:
 
 ## ™️ Markenzeichen-Hinweis
 
-Dieses Projekt kann Marken oder Logos von Projekten, Produkten oder Dienstleistungen enthalten. Die autorisierte Nutzung von Microsoft-Marken oder -Logos unterliegt den  
-[Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Die Verwendung von Microsoft-Marken oder -Logos in modifizierten Versionen dieses Projekts darf keine Verwirrung stiften oder eine Microsoft-Unterstützung suggerieren.  
+Dieses Projekt kann Marken oder Logos von Projekten, Produkten oder Dienstleistungen enthalten. Die autorisierte Nutzung von Microsoft-Marken oder -Logos unterliegt den [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) und muss diesen entsprechen.  
+Die Verwendung von Microsoft-Marken oder -Logos in modifizierten Versionen dieses Projekts darf nicht zu Verwechslungen führen oder eine Microsoft-Unterstützung suggerieren.  
 Die Nutzung von Marken oder Logos Dritter unterliegt den jeweiligen Richtlinien dieser Dritten.
 
 **Haftungsausschluss**:  

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-16T21:52:03+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T09:56:29+00:00",
   "source_file": "study_guide.md",
   "language_code": "pt"
 }
@@ -13,7 +13,7 @@ Este guia de estudo oferece uma visão geral da estrutura e conteúdo do reposit
 
 ## Visão Geral do Repositório
 
-O Model Context Protocol (MCP) é um framework padronizado para interações entre modelos de IA e aplicações cliente. Inicialmente criado pela Anthropic, o MCP é agora mantido pela comunidade mais ampla do MCP através da organização oficial no GitHub. Este repositório oferece um currículo abrangente com exemplos práticos de código em C#, Java, JavaScript, Python e TypeScript, destinado a desenvolvedores de IA, arquitetos de sistemas e engenheiros de software.
+O Model Context Protocol (MCP) é um framework padronizado para interações entre modelos de IA e aplicações cliente. Inicialmente criado pela Anthropic, o MCP é agora mantido pela comunidade mais ampla do MCP através da organização oficial no GitHub. Este repositório oferece um currículo completo com exemplos práticos de código em C#, Java, JavaScript, Python e TypeScript, destinado a desenvolvedores de IA, arquitetos de sistemas e engenheiros de software.
 
 ## Mapa Visual do Currículo
 
@@ -124,7 +124,7 @@ O repositório está organizado em dez secções principais, cada uma focada em 
    - Inclui secções para:
      - Primeira implementação de servidor
      - Desenvolvimento de cliente
-     - Integração de cliente LLM
+     - Integração com cliente LLM
      - Integração com VS Code
      - Servidor Server-Sent Events (SSE)
      - Streaming HTTP
@@ -136,11 +136,11 @@ O repositório está organizado em dez secções principais, cada uma focada em 
    - Utilização de SDKs em várias linguagens de programação
    - Técnicas de debugging, testes e validação
    - Criação de templates reutilizáveis de prompts e workflows
-   - Projetos de exemplo com casos de implementação
+   - Projetos de exemplo com exemplos de implementação
 
 6. **Tópicos Avançados (05-AdvancedTopics/)**
    - Técnicas de engenharia de contexto
-   - Integração com agentes Foundry
+   - Integração com agente Foundry
    - Workflows multimodais de IA
    - Demonstrações de autenticação OAuth2
    - Capacidades de pesquisa em tempo real
@@ -179,14 +179,14 @@ O repositório está organizado em dez secções principais, cada uma focada em 
 11. **Workshop Prático (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Workshop prático abrangente combinando MCP com AI Toolkit
     - Construção de aplicações inteligentes que ligam modelos de IA a ferramentas do mundo real
-    - Módulos práticos cobrindo fundamentos, desenvolvimento de servidores personalizados e estratégias de deployment em produção
+    - Módulos práticos cobrindo fundamentos, desenvolvimento de servidor personalizado e estratégias de deployment em produção
     - Abordagem de aprendizagem baseada em laboratórios com instruções passo a passo
 
 ## Recursos Adicionais
 
 O repositório inclui recursos de apoio:
 
-- **Pasta de imagens**: Contém diagramas e ilustrações usados ao longo do currículo
+- **Pasta de Imagens**: Contém diagramas e ilustrações usadas ao longo do currículo
 - **Traduções**: Suporte multilíngue com traduções automáticas da documentação
 - **Recursos Oficiais MCP**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
@@ -206,6 +206,8 @@ O repositório inclui recursos de apoio:
 O currículo cobre vários clientes e ferramentas MCP:
 
 1. **Clientes Oficiais**:
+   - Visual Studio Code
+   - MCP no Visual Studio Code
    - Claude Desktop
    - Claude no VSCode
    - Claude API
@@ -255,7 +257,7 @@ Este repositório acolhe contribuições da comunidade. Consulte a secção Cont
 
 | Data | Alterações |
 |------|------------|
-| 16 de julho de 2025 | - Atualizada a estrutura do repositório para refletir o conteúdo atual<br>- Adicionada secção Clientes e Ferramentas MCP<br>- Adicionada secção Servidores MCP Populares<br>- Atualizado o Mapa Visual do Currículo com todos os tópicos atuais<br>- Reforçada a secção Tópicos Avançados com todas as áreas especializadas<br>- Atualizados os Estudos de Caso para refletir exemplos reais<br>- Clarificada a origem do MCP como criado pela Anthropic |
+| 16 de julho de 2025 | - Estrutura do repositório atualizada para refletir o conteúdo atual<br>- Adicionada secção Clientes e Ferramentas MCP<br>- Adicionada secção Servidores MCP Populares<br>- Mapa Visual do Currículo atualizado com todos os tópicos atuais<br>- Secção Tópicos Avançados ampliada com todas as áreas especializadas<br>- Estudos de Caso atualizados para refletir exemplos reais<br>- Clarificada a origem do MCP como criado pela Anthropic |
 | 11 de junho de 2025 | - Criação inicial do guia de estudo<br>- Adicionado Mapa Visual do Currículo<br>- Estrutura do repositório delineada<br>- Incluídos projetos de exemplo e recursos adicionais |
 
 ---

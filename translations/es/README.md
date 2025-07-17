@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5067c45550201d577437ed7315a51307",
-  "translation_date": "2025-07-16T22:01:07+00:00",
+  "original_hash": "35fe22b9167cb7be62fddbcf53a255f4",
+  "translation_date": "2025-07-17T09:31:44+00:00",
   "source_file": "README.md",
   "language_code": "es"
 }
 -->
-![MCP-para-principiantes](../../translated_images/mcp-beginners.2ce2b317996369ff66c5b72e25eff9d4288ab2741fc70c0b4e523d1ae1e249fd.es.png) 
+![MCP-for-beginners](../../translated_images/mcp-beginners.2ce2b317996369ff66c5b72e25eff9d4288ab2741fc70c0b4e523d1ae1e249fd.es.png) 
 
 [![GitHub contributors](https://img.shields.io/github/contributors/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/graphs/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/issues)
@@ -33,31 +33,31 @@ Sigue estos pasos para comenzar a usar estos recursos:
 
 [Francés](../fr/README.md) | [Español](./README.md) | [Alemán](../de/README.md) | [Ruso](../ru/README.md) | [Árabe](../ar/README.md) | [Persa (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chino (Simplificado)](../zh/README.md) | [Chino (Tradicional, Macao)](../mo/README.md) | [Chino (Tradicional, Hong Kong)](../hk/README.md) | [Chino (Tradicional, Taiwán)](../tw/README.md) | [Japonés](../ja/README.md) | [Coreano](../ko/README.md) | [Hindi](../hi/README.md) | [Bengalí](../bn/README.md) | [Maratí](../mr/README.md) | [Nepalí](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portugués (Portugal)](../pt/README.md) | [Portugués (Brasil)](../br/README.md) | [Italiano](../it/README.md) | [Polaco](../pl/README.md) | [Turco](../tr/README.md) | [Griego](../el/README.md) | [Tailandés](../th/README.md) | [Sueco](../sv/README.md) | [Danés](../da/README.md) | [Noruego](../no/README.md) | [Finlandés](../fi/README.md) | [Neerlandés](../nl/README.md) | [Hebreo](../he/README.md) | [Vietnamita](../vi/README.md) | [Indonesio](../id/README.md) | [Malayo](../ms/README.md) | [Tagalo (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Húngaro](../hu/README.md) | [Checo](../cs/README.md) | [Eslovaco](../sk/README.md) | [Rumano](../ro/README.md) | [Búlgaro](../bg/README.md) | [Serbio (Cirílico)](../sr/README.md) | [Croata](../hr/README.md) | [Esloveno](../sl/README.md) | [Ucraniano](../uk/README.md) | [Birmano (Myanmar)](../my/README.md)
 
-# 🚀 Currículo del Model Context Protocol (MCP) para Principiantes
+# 🚀 Currículo del Protocolo de Contexto de Modelo (MCP) para Principiantes
 
 ## **Aprende MCP con ejemplos prácticos en C#, Java, JavaScript, Python y TypeScript**
 
-## 🧠 Resumen del Currículo del Model Context Protocol
+## 🧠 Resumen del Currículo del Protocolo de Contexto de Modelo
 
-El **Model Context Protocol (MCP)** es un marco innovador diseñado para estandarizar las interacciones entre modelos de IA y aplicaciones cliente. Este currículo de código abierto ofrece una ruta de aprendizaje estructurada, con ejemplos prácticos de código y casos de uso reales, en lenguajes de programación populares como C#, Java, JavaScript, TypeScript y Python.
+El **Protocolo de Contexto de Modelo (MCP)** es un marco innovador diseñado para estandarizar las interacciones entre modelos de IA y aplicaciones cliente. Este currículo de código abierto ofrece una ruta de aprendizaje estructurada, con ejemplos prácticos de código y casos de uso reales, en lenguajes de programación populares como C#, Java, JavaScript, TypeScript y Python.
 
-Ya seas desarrollador de IA, arquitecto de sistemas o ingeniero de software, esta guía es tu recurso completo para dominar los fundamentos y estrategias de implementación de MCP.
+Ya seas desarrollador de IA, arquitecto de sistemas o ingeniero de software, esta guía es tu recurso completo para dominar los fundamentos y las estrategias de implementación de MCP.
 
 ## 🔗 Recursos Oficiales de MCP
 
 - 📘 [Documentación MCP](https://modelcontextprotocol.io/) – Tutoriales detallados y guías de usuario  
 - 📜 [Especificación MCP](https://modelcontextprotocol.io/docs/) – Arquitectura del protocolo y referencias técnicas  
 - 📜 [Especificación Original MCP](https://spec.modelcontextprotocol.io/) – Referencias técnicas heredadas (puede contener detalles adicionales)  
-- 🧑‍💻 [Repositorio MCP en GitHub](https://github.com/modelcontextprotocol) – SDKs, herramientas y ejemplos de código open-source  
+- 🧑‍💻 [Repositorio MCP en GitHub](https://github.com/modelcontextprotocol) – SDKs, herramientas y ejemplos de código de código abierto  
 - 🌐 [Comunidad MCP](https://github.com/orgs/modelcontextprotocol/discussions) – Únete a las discusiones y contribuye a la comunidad
 
 ## Únete a MCP Dev Days 29-30 de julio de 2025
 
-Prepárate para dos días de profundo conocimiento técnico, conexión con la comunidad y aprendizaje práctico en MCP Dev Days, un evento virtual dedicado al Model Context Protocol (MCP), el estándar emergente que conecta modelos de IA con las herramientas que utilizan.
+Prepárate para dos días de profundo conocimiento técnico, conexión con la comunidad y aprendizaje práctico en MCP Dev Days, un evento virtual dedicado al Protocolo de Contexto de Modelo (MCP), el estándar emergente que conecta modelos de IA con las herramientas que utilizan.
 
 ➡️ [Regístrate en MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Puedes ver MCP Dev Days registrándote en nuestra página del evento: https://aka.ms/mcpdevdays. Desde ahí, podrás unirte a la transmisión en vivo por YouTube o Twitch. Todo el contenido será grabado y estará disponible después en el canal de Microsoft Developer en YouTube. El código fuente de las demos también estará disponible en GitHub.
+Puedes ver MCP Dev Days registrándote en nuestra página del evento: https://aka.ms/mcpdevdays. Desde ahí, podrás unirte a una transmisión en vivo en YouTube o Twitch. Todo el contenido queda grabado y estará disponible después en el canal de Microsoft Developer en YouTube. El código fuente de las demos también estará disponible en GitHub.
 
 ### Detalles del Evento
 - Fechas: 29 de julio (Día 1) y 30 de julio (Día 2)
@@ -66,7 +66,7 @@ Puedes ver MCP Dev Days registrándote en nuestra página del evento: https://ak
 
 #### Día 1: Productividad MCP, DevTools y Comunidad
 
-Se centra en empoderar a los desarrolladores para usar MCP en su flujo de trabajo y celebrar la increíble comunidad MCP. Contaremos con la participación de miembros de la comunidad y socios como Arcade, Block, Okta y Neon para mostrar cómo colaboran con Microsoft para crear un ecosistema MCP abierto y extensible. Demos reales en VS Code, Visual Studio, GitHub Copilot y herramientas populares de la comunidad  
+Se centra en empoderar a los desarrolladores para usar MCP en su flujo de trabajo y celebrar la increíble comunidad MCP. Contaremos con miembros de la comunidad y socios como Arcade, Block, Okta y Neon para mostrar cómo colaboran con Microsoft para crear un ecosistema MCP abierto y extensible. Demos reales en VS Code, Visual Studio, GitHub Copilot y herramientas populares de la comunidad  
 Flujos de trabajo prácticos y orientados al contexto  
 Sesiones e ideas lideradas por la comunidad  
 Ya sea que estés comenzando con MCP o ya estés desarrollando con él, el Día 1 te inspirará y te dejará aprendizajes prácticos.
@@ -92,7 +92,7 @@ Si eres desarrollador, creador de herramientas o estratega de productos de IA, e
 | Módulo | Tema | Descripción | Enlace |
 |--------|-------|-------------|--------|
 | **Módulos 1-3: Fundamentos** | | | |
-| 00 | Introducción a MCP | Visión general del Model Context Protocol y su importancia en pipelines de IA | [Leer más](./00-Introduction/README.md) |
+| 00 | Introducción a MCP | Visión general del Protocolo de Contexto de Modelo y su importancia en pipelines de IA | [Leer más](./00-Introduction/README.md) |
 | 01 | Conceptos Básicos Explicados | Exploración profunda de los conceptos centrales de MCP | [Leer más](./01-CoreConcepts/README.md) |
 | 02 | Seguridad en MCP | Amenazas de seguridad y mejores prácticas | [Leer más](./02-Security/README.md) |
 | 03 | Primeros Pasos con MCP | Configuración del entorno, servidores/clientes básicos, integración | [Leer más](./03-GettingStarted/README.md) |
@@ -110,9 +110,9 @@ Si eres desarrollador, creador de herramientas o estratega de productos de IA, e
 | 04 | Implementación Práctica | SDKs, depuración, pruebas, plantillas reutilizables de prompts | [Leer más](./04-PracticalImplementation/README.md) |
 | 05 | Temas Avanzados en MCP | IA multimodal, escalabilidad, uso empresarial | [Leer más](./05-AdvancedTopics/README.md) |
 | 5.1 | Integración con Azure | Integración MCP con Azure | [Guía](./05-AdvancedTopics/mcp-integration/README.md) |
-| 5.2 | Multimodalidad | Trabajo con múltiples modalidades | [Guía](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.2 | Multimodalidad | Trabajando con múltiples modalidades | [Guía](./05-AdvancedTopics/mcp-multi-modality/README.md) |
 | 5.3 | Demo OAuth2 | Implementa autenticación OAuth2 | [Guía](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
-| 5.4 | Contextos Raíz | Comprende e implementa contextos raíz | [Guía](./05-AdvancedTopics/mcp-root-contexts/README.md) |
+| 5.4 | Contextos Raíz | Entiende e implementa contextos raíz | [Guía](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | Enrutamiento | Estrategias de enrutamiento MCP | [Guía](./05-AdvancedTopics/mcp-routing/README.md) |
 | 5.6 | Muestreo | Técnicas de muestreo en MCP | [Guía](./05-AdvancedTopics/mcp-sampling/README.md) |
 | 5.7 | Escalabilidad | Escala implementaciones MCP | [Guía](./05-AdvancedTopics/mcp-scaling/README.md) |
@@ -208,13 +208,13 @@ Este contenido está licenciado bajo la **Licencia MIT**. Para términos y condi
 ## 🤝 Directrices para Contribuir
 
 Este proyecto acepta contribuciones y sugerencias. La mayoría de las contribuciones requieren que aceptes un
-Acuerdo de Licencia de Contribuidor (CLA) declarando que tienes el derecho y realmente otorgas
+Acuerdo de Licencia de Contribuidor (CLA) declarando que tienes el derecho y efectivamente otorgas
 los derechos para usar tu contribución. Para más detalles, visita  
 <https://cla.opensource.microsoft.com>.
 
 Cuando envíes un pull request, un bot de CLA determinará automáticamente si necesitas proporcionar
 un CLA y marcará el PR apropiadamente (por ejemplo, verificación de estado, comentario). Solo sigue las instrucciones
-que te dé el bot. Solo tendrás que hacer esto una vez para todos los repositorios que usan nuestro CLA.
+del bot. Solo tendrás que hacer esto una vez para todos los repositorios que usan nuestro CLA.
 
 Este proyecto ha adoptado el [Código de Conducta de Código Abierto de Microsoft](https://opensource.microsoft.com/codeofconduct/).
 Para más información, consulta las [Preguntas Frecuentes del Código de Conducta](https://opensource.microsoft.com/codeofconduct/faq/) o
@@ -224,13 +224,12 @@ contacta a [opencode@microsoft.com](mailto:opencode@microsoft.com) para cualquie
 
 El repositorio está organizado de la siguiente manera:
 
-- **Plan de Estudios Principal (00-10)**: Contenido principal organizado en diez módulos secuenciales  
-- **images/**: Diagramas e ilustraciones usados a lo largo del plan de estudios  
+- **Currículo Principal (00-10)**: Contenido principal organizado en diez módulos secuenciales  
+- **images/**: Diagramas e ilustraciones usados a lo largo del currículo  
 - **translations/**: Soporte multilingüe con traducciones automáticas  
 - **translated_images/**: Versiones localizadas de diagramas e ilustraciones  
-- **alternative_layouts/**: Diferentes formatos de presentación del contenido del plan de estudios  
 - **study_guide.md**: Guía completa para navegar el repositorio  
-- **changelog.md**: Registro de todos los cambios importantes en los materiales del plan de estudios  
+- **changelog.md**: Registro de todos los cambios importantes en los materiales del currículo  
 - **mcp.json**: Archivo de configuración para la especificación MCP  
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Documentos de gobernanza del proyecto
 
@@ -258,7 +257,7 @@ El repositorio está organizado de la siguiente manera:
 
 Este proyecto puede contener marcas registradas o logotipos de proyectos, productos o servicios. El uso autorizado de marcas o logotipos de Microsoft está sujeto y debe seguir las  
 [Directrices de Marca y Uso de Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-El uso de marcas o logotipos de Microsoft en versiones modificadas de este proyecto no debe causar confusión ni implicar patrocinio por parte de Microsoft.  
+El uso de marcas o logotipos de Microsoft en versiones modificadas de este proyecto no debe causar confusión ni implicar patrocinio de Microsoft.  
 Cualquier uso de marcas o logotipos de terceros está sujeto a las políticas de esos terceros.
 
 **Aviso legal**:  

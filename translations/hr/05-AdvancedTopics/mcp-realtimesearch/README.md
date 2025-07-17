@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:20:33+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T12:08:40+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "hr"
 }
@@ -67,7 +67,7 @@ graph LR
     Federation --> |Aggregated MCP Response| Client
 ```
 
-Ovaj obrazac raspoređuje upite za pretraživanje preko više MCP-kompatibilnih pružatelja pretraživanja, od kojih se svaki može specijalizirati za različite vrste sadržaja ili mogućnosti pretraživanja, dok se održava jedinstveni kontekst.
+Ovaj obrazac raspoređuje upite za pretraživanje preko više MCP-kompatibilnih pružatelja pretraživanja, od kojih svaki može biti specijaliziran za različite vrste sadržaja ili mogućnosti pretraživanja, dok se održava jedinstveni kontekst.
 
 #### 3. Lanac pretraživanja s poboljšanim kontekstom
 
@@ -91,7 +91,7 @@ U MCP-baziranom web pretraživanju, kontekst obično uključuje:
 
 - **Povijest upita**: Prethodni upiti u sesiji
 - **Korisničke postavke**: Jezik, regija, postavke sigurnog pretraživanja
-- **Povijest interakcija**: Koje su rezultate korisnici kliknuli, vrijeme provedeno na rezultatima
+- **Povijest interakcija**: Koji su rezultati kliknuti, vrijeme provedeno na rezultatima
 - **Parametri pretraživanja**: Filtri, redoslijedi sortiranja i drugi modifikatori pretraživanja
 - **Stručno znanje**: Kontekst specifičan za temu relevantnu za pretraživanje
 - **Vremenski kontekst**: Faktori relevantnosti vezani uz vrijeme
@@ -123,7 +123,7 @@ MCP otvara nove mogućnosti za AI-podržano pregledavanje:
 
 - Kontekstualni prijedlozi pretraživanja temeljeni na trenutnoj aktivnosti preglednika
 - Besprijekorna integracija web pretraživanja s asistentima pokretanim velikim jezičnim modelima (LLM)
-- Višekratno usavršavanje pretraživanja uz očuvani kontekst
+- Višekratno usavršavanje pretraživanja uz održavanje konteksta
 - Poboljšano provjeravanje činjenica i verifikacija informacija
 
 ## Budući trendovi i inovacije
@@ -148,7 +148,7 @@ Nove tehnologije koje će oblikovati budućnost MCP pretraživanja:
 
 ## Praktične vježbe
 
-### Vježba 1: Postavljanje osnovnog MCP pretraživačkog tijeka
+### Vježba 1: Postavljanje osnovnog MCP pretraživačkog sustava
 
 U ovoj vježbi naučit ćete kako:  
 - Konfigurirati osnovno MCP pretraživačko okruženje  
@@ -193,7 +193,7 @@ Nakon završetka ovog modula moći ćete:
 - Objasniti kako Model Context Protocol (MCP) poboljšava mogućnosti pretraživanja u stvarnom vremenu  
 - Implementirati pretraživačka rješenja temeljena na MCP koristeći popularne okvire i API-je  
 - Dizajnirati i implementirati skalabilne, visokoučinkovite arhitekture pretraživanja s MCP-om  
-- Primijeniti MCP koncepte u različitim slučajevima upotrebe uključujući semantičko pretraživanje, asistenciju u istraživanju i AI-poboljšano pregledavanje  
+- Primijeniti MCP koncepte u različitim slučajevima upotrebe uključujući semantičko pretraživanje, asistenciju u istraživanju i AI-podržano pregledavanje  
 - Procijeniti nove trendove i buduće inovacije u tehnologijama pretraživanja temeljenim na MCP-u
 
 ### Razmatranja o povjerenju i sigurnosti
@@ -214,7 +214,7 @@ Za potpune detalje o sigurnosti i povjerenju u MCP, pogledajte [službenu dokume
 
 ## Što slijedi
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

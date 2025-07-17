@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5067c45550201d577437ed7315a51307",
-  "translation_date": "2025-07-16T20:59:24+00:00",
+  "original_hash": "35fe22b9167cb7be62fddbcf53a255f4",
+  "translation_date": "2025-07-17T09:44:55+00:00",
   "source_file": "README.md",
   "language_code": "tw"
 }
@@ -51,13 +51,13 @@ CO_OP_TRANSLATOR_METADATA:
 - 🧑‍💻 [MCP GitHub 儲存庫](https://github.com/modelcontextprotocol) – 開源 SDK、工具與程式碼範例
 - 🌐 [MCP 社群](https://github.com/orgs/modelcontextprotocol/discussions) – 參與討論並貢獻社群
 
-## 加入我們，參加 2025 年 7 月 29-30 日的 MCP Dev Days
+## 加入我們，參加 2025 年 7 月 29-30 日的 MCP 開發者日
 
-準備好參加為期兩天的深入技術分享、社群交流與實作學習，MCP Dev Days 是一場專注於 Model Context Protocol (MCP) 的線上活動，這是連結 AI 模型與其依賴工具的新興標準。
+準備好參加為期兩天的深入技術分享、社群交流與實作學習，MCP 開發者日是一場專注於 Model Context Protocol (MCP) 的線上活動 — 這個新興標準連結 AI 模型與其依賴的工具。
 
-➡️ [註冊 MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+➡️ [註冊 MCP 開發者日](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-你可以透過活動頁面 https://aka.ms/mcpdevdays 註冊觀看 MCP Dev Days，屆時可在 YouTube 或 Twitch 觀看直播。所有內容皆有錄影，活動結束後會上傳至 Microsoft Developer YouTube 頻道。示範程式碼也會同步發布在 GitHub。
+你可以透過活動頁面 https://aka.ms/mcpdevdays 註冊觀看 MCP 開發者日，屆時可在 YouTube 或 Twitch 觀看直播。所有內容皆會錄製，並於活動後上傳至 Microsoft Developer YouTube 頻道。示範程式碼也會在 GitHub 上提供。
 
 ### 活動詳情
 - 日期：7 月 29 日（第一天）及 7 月 30 日（第二天）
@@ -66,21 +66,21 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### 第一天：MCP 生產力、開發工具與社群
 
-專注於協助開發者將 MCP 融入開發流程，並慶祝精彩的 MCP 社群。我們將邀請 Arcade、Block、Okta 和 Neon 等社群成員與合作夥伴，分享他們如何與 Microsoft 合作，打造開放且可擴充的 MCP 生態系。實際示範涵蓋 VS Code、Visual Studio、GitHub Copilot 及熱門社群工具。
+專注於協助開發者將 MCP 融入開發流程，並慶祝精彩的 MCP 社群。我們將邀請社群成員與合作夥伴如 Arcade、Block、Okta 和 Neon，一同展示他們如何與 Microsoft 合作，打造開放且可擴充的 MCP 生態系。實際示範涵蓋 VS Code、Visual Studio、GitHub Copilot 及熱門社群工具。
 - 實務且情境導向的開發流程
 - 社群主導的議程與見解
-無論你是 MCP 新手或已在使用 MCP，第一天都將帶來啟發與可執行的收穫。
+無論你是剛接觸 MCP 或已在使用，第一天都將帶來靈感與可執行的收穫。
 
 #### 第二天：自信打造 MCP 伺服器
 
-專為 MCP 建置者設計，深入探討 MCP 伺服器的實作策略與最佳實務，並將 MCP 整合到 AI 工作流程中。
+專為 MCP 建置者設計，深入探討 MCP 伺服器的實作策略與最佳實務，並將 MCP 整合到你的 AI 工作流程中。
 
 ### 主題包括：
 
 - 建立 MCP 伺服器並整合至代理體驗
 - 以提示驅動的開發
 - 安全最佳實務
-- 使用 Functions、ACA 和 API Management 等組件
+- 使用 Functions、ACA 和 API 管理等組件
 - 註冊表對齊與工具（第一方與第三方）
 
 如果你是開發者、工具建置者或 AI 產品策略師，這一天將充滿你打造可擴展、安全且未來導向 MCP 解決方案所需的洞見。
@@ -95,10 +95,10 @@ CO_OP_TRANSLATOR_METADATA:
 | 00 | MCP 簡介 | Model Context Protocol 概述及其在 AI 流程中的重要性 | [閱讀更多](./00-Introduction/README.md) |
 | 01 | 核心概念解析 | 深入探討 MCP 的核心概念 | [閱讀更多](./01-CoreConcepts/README.md) |
 | 02 | MCP 安全性 | 安全威脅與最佳實務 | [閱讀更多](./02-Security/README.md) |
-| 03 | MCP 入門 | 環境設定、基本伺服器/客戶端、整合 | [閱讀更多](./03-GettingStarted/README.md) |
+| 03 | MCP 入門 | 環境設定、基礎伺服器/客戶端、整合 | [閱讀更多](./03-GettingStarted/README.md) |
 | **模組 3：打造你的第一個伺服器與客戶端** | | | |
 | 3.1 | 第一個伺服器 | 建立你的第一個 MCP 伺服器 | [指南](./03-GettingStarted/01-first-server/README.md) |
-| 3.2 | 第一個客戶端 | 開發基本的 MCP 客戶端 | [指南](./03-GettingStarted/02-client/README.md) |
+| 3.2 | 第一個客戶端 | 開發基礎 MCP 客戶端 | [指南](./03-GettingStarted/02-client/README.md) |
 | 3.3 | 搭配大型語言模型的客戶端 | 整合大型語言模型 | [指南](./03-GettingStarted/03-llm-client/README.md) |
 | 3.4 | VS Code 整合 | 在 VS Code 中使用 MCP 伺服器 | [指南](./03-GettingStarted/04-vscode/README.md) |
 | 3.5 | SSE 伺服器 | 使用 Server-Sent Events 建立伺服器 | [指南](./03-GettingStarted/05-sse-server/README.md) |
@@ -132,12 +132,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 💻 範例程式專案
 
-#### 基本 MCP 計算機範例
+#### 基本 MCP 計算器範例
 
 | 語言 | 說明 | 連結 |
 |----------|-------------|------|
 | C# | MCP 伺服器範例 | [查看程式碼](./03-GettingStarted/samples/csharp/README.md) |
-| Java | MCP 計算機 | [查看程式碼](./03-GettingStarted/samples/java/calculator/README.md) |
+| Java | MCP 計算器 | [查看程式碼](./03-GettingStarted/samples/java/calculator/README.md) |
 | JavaScript | MCP 示範 | [查看程式碼](./03-GettingStarted/samples/javascript/README.md) |
 | Python | MCP 伺服器 | [查看程式碼](../../03-GettingStarted/samples/python/mcp_calculator_server.py) |
 | TypeScript | MCP 範例 | [查看程式碼](./03-GettingStarted/samples/typescript/README.md) |
@@ -147,10 +147,10 @@ CO_OP_TRANSLATOR_METADATA:
 | 語言 | 說明 | 連結 |
 |----------|-------------|------|
 | C# | 進階範例 | [查看程式碼](./04-PracticalImplementation/samples/csharp/README.md) |
-| Java | Container App 範例 | [查看程式碼](./04-PracticalImplementation/samples/java/containerapp/README.md) |
+| Java | 容器應用範例 | [查看程式碼](./04-PracticalImplementation/samples/java/containerapp/README.md) |
 | JavaScript | 進階範例 | [查看程式碼](./04-PracticalImplementation/samples/javascript/README.md) |
 | Python | 複雜實作 | [查看程式碼](../../04-PracticalImplementation/samples/python/mcp_sample.py) |
-| TypeScript | Container 範例 | [查看程式碼](./04-PracticalImplementation/samples/typescript/README.md) |
+| TypeScript | 容器範例 | [查看程式碼](./04-PracticalImplementation/samples/typescript/README.md) |
 
 
 ## 🎯 學習 MCP 的先決條件
@@ -170,7 +170,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 學習指南
 
-提供完整的[學習指南](./study_guide.md)，幫助您有效掌握本儲存庫內容。指南包含：
+提供一份完整的[學習指南](./study_guide.md)，幫助您有效掌握本儲存庫內容。指南包含：
 
 - 視覺化課程地圖，展示所有涵蓋主題
 - 各儲存庫區塊的詳細說明
@@ -180,7 +180,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 變更紀錄
 
-我們維護詳細的[變更紀錄](./changelog.md)，追蹤課程材料的所有重要更新，包括：
+我們維護一份詳細的[變更紀錄](./changelog.md)，追蹤課程材料的所有重要更新，包括：
 
 - 新增內容
 - 結構調整
@@ -207,14 +207,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🤝 貢獻指南
 
-本專案歡迎貢獻與建議。大多數貢獻需您同意
+本專案歡迎貢獻與建議。大多數貢獻需您同意一份
 貢獻者授權協議（CLA），聲明您有權利且確實授權我們
-使用您的貢獻。詳情請參閱
+使用您的貢獻。詳情請參閱 
 <https://cla.opensource.microsoft.com>。
 
 當您提交 Pull Request 時，CLA 機器人會自動判斷您是否需要提供
 CLA，並適當標示 PR（例如狀態檢查、留言）。請依照機器人指示操作。
-您只需在所有使用我們 CLA 的儲存庫中執行一次。
+您只需在所有使用我們 CLA 的儲存庫中完成一次此程序。
 
 本專案已採用 [Microsoft 開源行為準則](https://opensource.microsoft.com/codeofconduct/)。
 更多資訊請參閱 [行為準則常見問題](https://opensource.microsoft.com/codeofconduct/faq/) 或
@@ -222,20 +222,19 @@ CLA，並適當標示 PR（例如狀態檢查、留言）。請依照機器人�
 
 ## 📂 儲存庫結構
 
-本儲存庫組織如下：
+本儲存庫結構如下：
 
 - **核心課程 (00-10)**：主要內容，分為十個連續模組
 - **images/**：課程中使用的圖表與插圖
 - **translations/**：多語言支援與自動翻譯
 - **translated_images/**：本地化的圖表與插圖版本
-- **alternative_layouts/**：課程內容的不同呈現格式
 - **study_guide.md**：完整的儲存庫導覽指南
 - **changelog.md**：課程材料所有重要變更紀錄
 - **mcp.json**：MCP 規格的設定檔
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**：專案治理文件
 
 ## 🎒 其他課程
-我們團隊還製作其他課程！歡迎參考：
+我們團隊還製作了其他課程！歡迎參考：
 
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)

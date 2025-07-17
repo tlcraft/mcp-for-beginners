@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:05:19+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T12:14:52+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "sl"
 }
@@ -18,9 +18,10 @@ Ta lekcija se osredotoča na to, kako sodelovati v MCP skupnosti, prispevati k M
 Do konca te lekcije boste znali:
 - Razumeti strukturo MCP skupnosti in ekosistema
 - Učinkovito sodelovati v MCP forumih in razpravah
-- Prispevati v odprtokodne repozitorije MCP
-- Ustvarjati in deliti prilagojena MCP orodja
-- Slediti najboljšim praksam za razvoj in sodelovanje v MCP
+- Prispevati v odprtokodne MCP repozitorije
+- Ustvarjati in deliti prilagojena MCP orodja in strežnike
+- Slediti najboljšim praksam za razvoj in sodelovanje pri MCP
+- Odkriti skupnostne vire in ogrodja za razvoj MCP
 
 ## MCP ekosistem skupnosti
 
@@ -28,8 +29,8 @@ MCP ekosistem sestavljajo različni deli in udeleženci, ki skupaj napredujejo p
 
 ### Ključni deli skupnosti
 
-1. **Vzdrževalci jedrnega protokola**: Microsoft in druge organizacije, ki vzdržujejo osnovne specifikacije MCP in referenčne implementacije  
-2. **Razvijalci orodij**: Posamezniki in ekipe, ki ustvarjajo MCP orodja  
+1. **Vzdrževalci jedrnega protokola**: Uradna [Model Context Protocol GitHub organizacija](https://github.com/modelcontextprotocol) vzdržuje osnovne MCP specifikacije in referenčne implementacije  
+2. **Razvijalci orodij**: Posamezniki in ekipe, ki ustvarjajo MCP orodja in strežnike  
 3. **Ponudniki integracij**: Podjetja, ki MCP vključujejo v svoje izdelke in storitve  
 4. **Končni uporabniki**: Razvijalci in organizacije, ki uporabljajo MCP v svojih aplikacijah  
 5. **Prispevkarji**: Člani skupnosti, ki prispevajo kodo, dokumentacijo ali druge vire  
@@ -38,17 +39,21 @@ MCP ekosistem sestavljajo različni deli in udeleženci, ki skupaj napredujejo p
 
 #### Uradni kanali
 
-- [MCP GitHub repozitorij](https://github.com/modelcontextprotocol)  
+- [MCP GitHub organizacija](https://github.com/modelcontextprotocol)  
 - [MCP dokumentacija](https://modelcontextprotocol.io/)  
-- [MCP specifikacija](https://spec.modelcontextprotocol.io/)  
+- [MCP specifikacija](https://modelcontextprotocol.io/docs/specification)  
 - [GitHub razprave](https://github.com/orgs/modelcontextprotocol/discussions)  
+- [Repozitorij primerov in strežnikov MCP](https://github.com/modelcontextprotocol/servers)  
 
 #### Viri, ki jih vodi skupnost
 
-- SDK implementacije za različne programske jezike  
-- Implementacije strežnikov in knjižnice orodij  
+- [MCP klienti](https://modelcontextprotocol.io/clients) - seznam klientov, ki podpirajo MCP integracije  
+- [Skupnostni MCP strežniki](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - naraščajoči seznam MCP strežnikov, ki jih razvija skupnost  
+- [Awesome MCP strežniki](https://github.com/wong2/awesome-mcp-servers) - skrbno izbran seznam MCP strežnikov  
+- [PulseMCP](https://www.pulsemcp.com/) - skupnostni hub in bilten za odkrivanje MCP virov  
+- [Discord strežnik](https://discord.gg/jHEGxQu2a5) - povezovanje z MCP razvijalci  
+- SDK implementacije za različne jezike  
 - Blogi in vodiči  
-- Forumi skupnosti in razprave na družbenih omrežjih  
 
 ## Prispevanje k MCP
 
@@ -59,178 +64,87 @@ MCP ekosistem sprejema različne vrste prispevkov:
 1. **Prispevki kode**:  
    - Izboljšave jedrnega protokola  
    - Popravki napak  
-   - Implementacije orodij  
-   - Knjižnice za odjemalce/strežnike v različnih jezikih  
+   - Implementacije orodij in strežnikov  
+   - Knjižnice za klient/strežnik v različnih jezikih  
 
 2. **Dokumentacija**:  
-   - Izboljšave obstoječe dokumentacije  
+   - Izboljševanje obstoječe dokumentacije  
    - Ustvarjanje vodičev in navodil  
    - Prevodi dokumentacije  
-   - Primeri in vzorčne aplikacije  
+   - Ustvarjanje primerov in vzorčnih aplikacij  
 
 3. **Podpora skupnosti**:  
-   - Odgovarjanje na vprašanja na forumih  
+   - Odgovarjanje na vprašanja na forumih in v razpravah  
    - Testiranje in poročanje o težavah  
-   - Organizacija dogodkov skupnosti  
+   - Organizacija skupnostnih dogodkov  
    - Mentorstvo novim prispevkarjem  
 
 ### Postopek prispevanja: jedrni protokol
 
-Za prispevanje k jedrnemu MCP protokolu ali uradnim implementacijam:
+Za prispevanje k jedrnemu MCP protokolu ali uradnim implementacijam sledite načelom iz [uradnih smernic za prispevanje](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### Primer .NET: prispevanje izboljšave protokola
+1. **Preprostost in minimalizem**: MCP specifikacija postavlja visoke zahteve za dodajanje novih konceptov. Lažje je nekaj dodati kot odstraniti.  
+2. **Konkretni pristop**: Spremembe specifikacije naj temeljijo na konkretnih implementacijskih izzivih, ne na špekulativnih idejah.  
+3. **Faze predloga**:  
+   - Določitev: Raziskovanje problema, preverjanje, ali imajo drugi uporabniki MCP podoben izziv  
+   - Prototip: Izdelava primerne rešitve in prikaz njene praktične uporabe  
+   - Pisanje: Na podlagi prototipa napisati predlog specifikacije  
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+### Nastavitev razvojnega okolja
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Primer Java: prispevanje popravka napake
+### Primer: prispevanje popravka napake
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Primer Python: prispevanje novega orodja v standardno knjižnico
+### Primer: prispevanje novega orodja v standardno knjižnico
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,23 +304,23 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Smernice za prispevke
+### Smernice za prispevanje
 
-Da bo vaš prispevek k MCP projektom uspešen:
+Za uspešen prispevek k MCP projektom:
 
-1. **Začnite z majhnim**: Najprej se lotite dokumentacije, popravkov napak ali manjših izboljšav  
-2. **Sledite slogovnim pravilom**: Upoštevajte slog in konvencije projekta  
+1. **Začnite z majhnim**: Začnite z dokumentacijo, popravki napak ali manjšimi izboljšavami  
+2. **Sledite slogovnim smernicam**: Upoštevajte slog in konvencije projekta  
 3. **Pišite teste**: Vključite enotne teste za svoje prispevke kode  
-4. **Dokumentirajte svoje delo**: Jasno opišite nove funkcionalnosti ali spremembe  
-5. **Pošiljajte ciljno usmerjene PR-je**: Pull request naj se osredotoča na eno težavo ali funkcijo  
-6. **Sodelujte pri povratnih informacijah**: Bodite odzivni na komentarje glede vaših prispevkov  
+4. **Dokumentirajte svoje delo**: Dodajte jasno dokumentacijo za nove funkcije ali spremembe  
+5. **Pošiljajte ciljno usmerjene PR-je**: Pull requesti naj se osredotočajo na eno težavo ali funkcijo  
+6. **Sodelujte pri povratnih informacijah**: Bodite odzivni na povratne informacije glede vaših prispevkov  
 
-### Primer poteka prispevka
+### Primer poteka prispevanja
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +329,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,13 +341,31 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Ustvarjanje in deljenje prilagojenih MCP orodij
+## Ustvarjanje in deljenje MCP strežnikov
 
-Eden najbolj dragocenih načinov prispevka k MCP ekosistemu je ustvarjanje in deljenje prilagojenih orodij.
+Eden najpomembnejših načinov prispevanja k MCP ekosistemu je ustvarjanje in deljenje prilagojenih MCP strežnikov. Skupnost je že razvila na stotine strežnikov za različne storitve in primere uporabe.
 
-### Razvijanje orodij za deljenje
+### Ogrodja za razvoj MCP strežnikov
 
-#### Primer .NET: ustvarjanje paketa orodij za deljenje
+Na voljo je več ogrodij, ki poenostavijo razvoj MCP strežnikov:
+
+1. **Uradni SDK-ji**:  
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)  
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)  
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)  
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)  
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)  
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)  
+
+2. **Skupnostna ogrodja**:  
+   - [MCP-Framework](https://mcp-framework.com/) - gradnja MCP strežnikov elegantno in hitro v TypeScriptu  
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - MCP strežniki z uporabo anotacij v Javi  
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java ogrodje za MCP strežnike  
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - začetni projekt Next.js za MCP strežnike  
+
+### Razvijanje deljivih orodij
+
+#### Primer .NET: ustvarjanje deljivega paketa orodij
 
 ```csharp
 // Create a new .NET library project
@@ -747,22 +677,22 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Deljenje najboljših praks
+### Najboljše prakse za deljenje
 
 Pri deljenju MCP orodij s skupnostjo:
 
 1. **Popolna dokumentacija**:  
-   - Opišite namen, uporabo in primere  
-   - Razložite parametre in vrnjene vrednosti  
+   - Dokumentirajte namen, uporabo in primere  
+   - Pojasnite parametre in vrnjene vrednosti  
    - Dokumentirajte morebitne zunanje odvisnosti  
 
 2. **Ravnanje z napakami**:  
-   - Implementirajte zanesljivo obravnavo napak  
+   - Implementirajte robustno obravnavo napak  
    - Zagotovite koristna sporočila o napakah  
-   - Pravilno obravnavajte robne primere  
+   - Učinkovito obravnavajte robne primere  
 
 3. **Upoštevanje zmogljivosti**:  
-   - Optimizirajte hitrost in porabo virov  
+   - Optimizirajte za hitrost in porabo virov  
    - Uporabite predpomnjenje, kjer je primerno  
    - Razmislite o skalabilnosti  
 
@@ -789,7 +719,7 @@ Učinkovito sodelovanje je ključ do uspevajočega MCP ekosistema.
 
 ### Pregledi kode
 
-Pri pregledu prispevkov za MCP:
+Pri pregledu MCP prispevkov upoštevajte:
 
 1. **Jasnost**: Je koda jasna in dobro dokumentirana?  
 2. **Pravilnost**: Ali deluje kot je pričakovano?  
@@ -801,8 +731,8 @@ Pri pregledu prispevkov za MCP:
 
 Pri razvoju za MCP:
 
-1. **Verzioniranje protokola**: Upoštevajte različico MCP protokola, ki jo vaše orodje podpira  
-2. **Združljivost odjemalcev**: Upoštevajte združljivost z nazaj  
+1. **Verzija protokola**: Upoštevajte različico MCP protokola, ki jo vaše orodje podpira  
+2. **Združljivost klientov**: Upoštevajte združljivost nazaj  
 3. **Združljivost strežnikov**: Sledite smernicam za implementacijo strežnikov  
 4. **Prelomne spremembe**: Jasno dokumentirajte vse prelomne spremembe  
 
@@ -891,14 +821,14 @@ async def delete_tool(tool_name: str):
 
 - MCP skupnost je raznolika in sprejema različne vrste prispevkov  
 - Prispevanje k MCP zajema od izboljšav jedrnega protokola do prilagojenih orodij  
-- Sledenje smernicam za prispevke povečuje možnosti za sprejem vašega PR-ja  
+- Sledenje smernicam za prispevanje povečuje možnosti za sprejem vašega PR  
 - Ustvarjanje in deljenje MCP orodij je dragocen način za izboljšanje ekosistema  
-- Sodelovanje skupnosti je bistveno za rast in razvoj MCP  
+- Sodelovanje skupnosti je ključno za rast in razvoj MCP  
 
 ## Vaja
 
 1. Izberite področje v MCP ekosistemu, kjer lahko prispevate glede na svoje znanje in interese  
-2. Naredite fork MCP repozitorija in nastavite lokalno razvojno okolje  
+2. Razvejajte MCP repozitorij in nastavite lokalno razvojno okolje  
 3. Ustvarite manjšo izboljšavo, popravilo napake ali orodje, ki bo koristilo skupnosti  
 4. Dokumentirajte svoj prispevek z ustreznimi testi in dokumentacijo  
 5. Pošljite pull request v ustrezen repozitorij  
@@ -913,4 +843,4 @@ async def delete_tool(tool_name: str):
 Naslednje: [Lekcije iz zgodnje uporabe](../07-LessonsfromEarlyAdoption/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

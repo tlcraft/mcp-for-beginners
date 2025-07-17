@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:03:57+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T11:08:10+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "ro"
 }
@@ -19,38 +19,43 @@ La finalul acestei lecții, vei putea:
 - Înțelege structura comunității și ecosistemului MCP
 - Participa eficient în forumurile și discuțiile comunității MCP
 - Contribui la depozitele open-source MCP
-- Crea și împărtăși unelte personalizate MCP
+- Crea și partaja unelte și servere MCP personalizate
 - Urma cele mai bune practici pentru dezvoltarea și colaborarea MCP
+- Descoperi resurse și cadre comunitare pentru dezvoltarea MCP
 
 ## Ecosistemul Comunității MCP
 
-Ecosistemul MCP este format din diverse componente și participanți care lucrează împreună pentru a avansa protocolul.
+Ecosistemul MCP este format din diverse componente și participanți care colaborează pentru a avansa protocolul.
 
 ### Componente cheie ale comunității
 
-1. **Menținătorii protocolului de bază**: Microsoft și alte organizații care mențin specificațiile de bază MCP și implementările de referință
-2. **Dezvoltatori de unelte**: Persoane și echipe care creează unelte MCP
+1. **Menținătorii protocolului de bază**: Organizația oficială [Model Context Protocol GitHub](https://github.com/modelcontextprotocol) gestionează specificațiile de bază MCP și implementările de referință
+2. **Dezvoltatori de unelte**: Persoane și echipe care creează unelte și servere MCP
 3. **Furnizori de integrare**: Companii care integrează MCP în produsele și serviciile lor
 4. **Utilizatori finali**: Dezvoltatori și organizații care folosesc MCP în aplicațiile lor
-5. **Contribuitori**: Membri ai comunității care contribuie cu cod, documentație sau alte resurse
+5. **Contribuitori**: Membri ai comunității care adaugă cod, documentație sau alte resurse
 
-### Resurse ale comunității
+### Resurse comunitare
 
 #### Canale oficiale
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Organizația MCP pe GitHub](https://github.com/modelcontextprotocol)
+- [Documentația MCP](https://modelcontextprotocol.io/)
+- [Specificația MCP](https://modelcontextprotocol.io/docs/specification)
+- [Discuții GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Depozitul Exemple & Servere MCP](https://github.com/modelcontextprotocol/servers)
 
 #### Resurse conduse de comunitate
 
+- [Clienți MCP](https://modelcontextprotocol.io/clients) - Listă de clienți care suportă integrări MCP
+- [Servere MCP Comunitare](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Listă în creștere de servere MCP dezvoltate de comunitate
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Listă selectivă de servere MCP
+- [PulseMCP](https://www.pulsemcp.com/) - Hub comunitar și newsletter pentru descoperirea resurselor MCP
+- [Server Discord](https://discord.gg/jHEGxQu2a5) - Conectează-te cu dezvoltatorii MCP
 - Implementări SDK specifice limbajelor
-- Implementări de server și biblioteci de unelte
 - Articole de blog și tutoriale
-- Forumuri comunitare și discuții pe rețele sociale
 
-## Contribuind la MCP
+## Contribuția la MCP
 
 ### Tipuri de contribuții
 
@@ -59,7 +64,7 @@ Ecosistemul MCP primește cu brațele deschise diverse tipuri de contribuții:
 1. **Contribuții de cod**:
    - Îmbunătățiri ale protocolului de bază
    - Corectarea erorilor
-   - Implementări de unelte
+   - Implementări de unelte și servere
    - Biblioteci client/server în diferite limbaje
 
 2. **Documentație**:
@@ -69,168 +74,79 @@ Ecosistemul MCP primește cu brațele deschise diverse tipuri de contribuții:
    - Crearea de exemple și aplicații demonstrative
 
 3. **Suport comunitar**:
-   - Răspunsuri la întrebări pe forumuri
-   - Testarea și raportarea problemelor
+   - Răspunsuri la întrebări în forumuri și discuții
+   - Testare și raportare de probleme
    - Organizarea de evenimente comunitare
    - Mentorat pentru noii contribuitori
 
 ### Procesul de contribuție: Protocolul de bază
 
-Pentru a contribui la protocolul MCP de bază sau la implementările oficiale:
+Pentru a contribui la protocolul MCP de bază sau la implementările oficiale, urmează principiile din [ghidul oficial de contribuție](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### Exemplu .NET: Contribuind cu o îmbunătățire a protocolului
+1. **Simplitate și minimalism**: Specificația MCP menține un standard ridicat pentru adăugarea de concepte noi. Este mai ușor să adaugi lucruri într-o specificație decât să le elimini.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **Abordare concretă**: Modificările specificației trebuie să se bazeze pe provocări concrete de implementare, nu pe idei speculative.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **Etapele unei propuneri**:
+   - Definire: Explorează problema, validează că și alți utilizatori MCP întâmpină aceeași situație
+   - Prototip: Construiește o soluție exemplu și demonstrează aplicabilitatea practică
+   - Scriere: Pe baza prototipului, redactează o propunere de specificație
+
+### Configurarea mediului de dezvoltare
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Exemplu Java: Contribuind cu o corectare de bug
+### Exemplu: Contribuind cu o corectare de bug
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Exemplu Python: Contribuind cu o unealtă nouă în biblioteca standard
+### Exemplu: Contribuind cu o unealtă nouă în biblioteca standard
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,23 +306,23 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Ghidul de contribuție
+### Ghid pentru contribuții
 
 Pentru a face o contribuție reușită la proiectele MCP:
 
-1. **Începe cu pași mici**: Începe cu documentație, corectări de bug-uri sau mici îmbunătățiri
-2. **Urmărește ghidul de stil**: Respectă stilul de cod și convențiile proiectului
+1. **Începe cu pași mici**: Începe cu documentație, corectări de bug-uri sau îmbunătățiri mici
+2. **Respectă ghidul de stil**: Urmează stilul de cod și convențiile proiectului
 3. **Scrie teste**: Include teste unitare pentru contribuțiile tale de cod
 4. **Documentează-ți munca**: Adaugă documentație clară pentru funcționalități noi sau modificări
 5. **Trimite PR-uri țintite**: Menține pull request-urile concentrate pe o singură problemă sau funcționalitate
-6. **Răspunde la feedback**: Fii receptiv la feedback-ul primit pentru contribuțiile tale
+6. **Răspunde la feedback**: Fii receptiv la comentariile primite asupra contribuțiilor tale
 
-### Exemplu de flux de lucru pentru contribuție
+### Exemplu de flux de lucru pentru contribuții
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,13 +343,31 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Crearea și împărtășirea uneltelor personalizate MCP
+## Crearea și partajarea serverelor MCP
 
-Una dintre cele mai valoroase modalități de a contribui la ecosistemul MCP este crearea și împărtășirea uneltelor personalizate.
+Una dintre cele mai valoroase modalități de a contribui la ecosistemul MCP este crearea și partajarea serverelor MCP personalizate. Comunitatea a dezvoltat deja sute de servere pentru diverse servicii și cazuri de utilizare.
+
+### Cadre pentru dezvoltarea serverelor MCP
+
+Există mai multe cadre disponibile pentru a simplifica dezvoltarea serverelor MCP:
+
+1. **SDK-uri oficiale**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **Cadre comunitare**:
+   - [MCP-Framework](https://mcp-framework.com/) - Construiește servere MCP cu eleganță și viteză în TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Servere MCP bazate pe adnotări în Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Cadru Java pentru servere MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Proiect starter Next.js pentru servere MCP
 
 ### Dezvoltarea uneltelor partajabile
 
-#### Exemplu .NET: Crearea unui pachet de unelte partajabil
+#### Exemplu .NET: Crearea unui pachet de unelte partajabile
 
 ```csharp
 // Create a new .NET library project
@@ -747,9 +679,9 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Împărtășirea celor mai bune practici
+### Partajarea celor mai bune practici
 
-Când împărtășești unelte MCP cu comunitatea:
+Când partajezi unelte MCP cu comunitatea:
 
 1. **Documentație completă**:
    - Documentează scopul, modul de utilizare și exemplele
@@ -768,12 +700,12 @@ Când împărtășești unelte MCP cu comunitatea:
 
 4. **Securitate**:
    - Folosește chei API și autentificare securizate
-   - Validează și sanitizează inputurile
+   - Validează și curăță datele de intrare
    - Implementează limitarea ratei pentru apelurile API externe
 
 5. **Testare**:
    - Include o acoperire completă a testelor
-   - Testează cu diferite tipuri de input și cazuri limită
+   - Testează cu diferite tipuri de intrări și cazuri limită
    - Documentează procedurile de testare
 
 ## Colaborarea comunitară și cele mai bune practici
@@ -782,7 +714,7 @@ Colaborarea eficientă este cheia unui ecosistem MCP prosper.
 
 ### Canale de comunicare
 
-- Issues și Discussions pe GitHub
+- Issues și Discuții pe GitHub
 - Microsoft Tech Community
 - Canale Discord și Slack
 - Stack Overflow (tag: `model-context-protocol` sau `mcp`)
@@ -793,7 +725,7 @@ Când revizuiești contribuțiile MCP:
 
 1. **Claritate**: Codul este clar și bine documentat?
 2. **Corectitudine**: Funcționează conform așteptărilor?
-3. **Consistență**: Urmează convențiile proiectului?
+3. **Consistență**: Respectă convențiile proiectului?
 4. **Completitudine**: Sunt incluse teste și documentație?
 5. **Securitate**: Există probleme de securitate?
 
@@ -803,8 +735,8 @@ Când dezvolți pentru MCP:
 
 1. **Versionarea protocolului**: Respectă versiunea protocolului MCP pe care o suportă unealta ta
 2. **Compatibilitatea clientului**: Ia în considerare compatibilitatea inversă
-3. **Compatibilitatea serverului**: Urmează ghidurile de implementare server
-4. **Modificări incompatibile**: Documentează clar orice modificări care rup compatibilitatea
+3. **Compatibilitatea serverului**: Urmează ghidurile de implementare a serverului
+4. **Modificări incompatibile**: Documentează clar orice schimbări care rup compatibilitatea
 
 ## Proiect comunitar exemplu: Registrul uneltelor MCP
 
@@ -890,9 +822,9 @@ async def delete_tool(tool_name: str):
 ## Concluzii cheie
 
 - Comunitatea MCP este diversă și primește cu deschidere diferite tipuri de contribuții
-- Contribuțiile la MCP pot varia de la îmbunătățiri ale protocolului de bază până la unelte personalizate
+- Contribuțiile pot varia de la îmbunătățiri ale protocolului de bază până la unelte personalizate
 - Urmarea ghidurilor de contribuție crește șansele ca PR-ul tău să fie acceptat
-- Crearea și împărtășirea uneltelor MCP este o modalitate valoroasă de a îmbunătăți ecosistemul
+- Crearea și partajarea uneltelor MCP este o modalitate valoroasă de a îmbunătăți ecosistemul
 - Colaborarea comunitară este esențială pentru creșterea și dezvoltarea MCP
 
 ## Exercițiu
@@ -905,12 +837,12 @@ async def delete_tool(tool_name: str):
 
 ## Resurse suplimentare
 
-- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+- [Proiecte comunitare MCP](https://github.com/topics/model-context-protocol)
 
 
 ---
 
-Următorul: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+Următorul: [Lecții din adopția timpurie](../07-LessonsfromEarlyAdoption/README.md)
 
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

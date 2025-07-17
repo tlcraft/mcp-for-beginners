@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:44:55+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-17T12:21:18+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "sl"
 }
@@ -13,32 +13,51 @@ Varnost je ključnega pomena za implementacije MCP, še posebej v poslovnih okol
 
 ## Uvod
 
-V tej lekciji bomo raziskali najboljše varnostne prakse za implementacije MCP. Obravnavali bomo avtentikacijo in avtorizacijo, zaščito podatkov, varno izvajanje orodij ter skladnost z zakonodajo o varstvu podatkov.
+Model Context Protocol (MCP) zahteva posebne varnostne premisleke zaradi svoje vloge pri zagotavljanju dostopa LLM-jem do podatkov in orodij. Ta lekcija raziskuje najboljše varnostne prakse za implementacije MCP na podlagi uradnih smernic MCP in uveljavljenih varnostnih vzorcev.
+
+MCP sledi ključnim varnostnim načelom za zagotavljanje varnih in zaupanja vrednih interakcij:
+
+- **Soglasje in nadzor uporabnika**: Uporabniki morajo dati izrecno soglasje, preden se dostopajo podatki ali izvajajo operacije. Zagotovite jasen nadzor nad tem, kateri podatki se delijo in katere akcije so pooblaščene.
+  
+- **Zasebnost podatkov**: Uporabniški podatki naj bodo razkriti le z izrecnim soglasjem in zaščiteni z ustreznimi kontrolami dostopa. Zaščitite pred nepooblaščenim prenosom podatkov.
+  
+- **Varnost orodij**: Pred uporabo kateregakoli orodja je potrebno izrecno soglasje uporabnika. Uporabniki naj imajo jasno razumevanje funkcionalnosti vsakega orodja, hkrati pa morajo biti vzpostavljene trdne varnostne meje.
 
 ## Cilji učenja
 
 Ob koncu te lekcije boste znali:
 
-- Uvesti varne mehanizme avtentikacije in avtorizacije za MCP strežnike.
+- Implementirati varne mehanizme avtentikacije in avtorizacije za MCP strežnike.
 - Zaščititi občutljive podatke z uporabo šifriranja in varnega shranjevanja.
 - Zagotoviti varno izvajanje orodij z ustreznimi kontrolami dostopa.
 - Uporabiti najboljše prakse za zaščito podatkov in skladnost z zakonodajo o zasebnosti.
+- Prepoznati in omiliti pogoste varnostne ranljivosti MCP, kot so problemi z zmedo pooblaščenca, prenos žetonov in prevzem sej.
 
 ## Avtentikacija in avtorizacija
 
 Avtentikacija in avtorizacija sta ključni za varovanje MCP strežnikov. Avtentikacija odgovarja na vprašanje "Kdo ste?", medtem ko avtorizacija odgovarja na vprašanje "Kaj lahko počnete?".
 
-Poglejmo primere, kako uvesti varno avtentikacijo in avtorizacijo v MCP strežnikih z uporabo .NET in Jave.
+Po varnostni specifikaciji MCP so to ključni varnostni premisleki:
+
+1. **Preverjanje žetonov**: MCP strežniki NE SMEJO sprejemati žetonov, ki niso bili izrecno izdani za MCP strežnik. "Token passthrough" je izrecno prepovedan anti-vzorec.
+
+2. **Preverjanje avtorizacije**: MCP strežniki, ki izvajajo avtorizacijo, MORAJO preveriti vse dohodne zahteve in NE SMEJO uporabljati sej za avtentikacijo.
+
+3. **Varnostno upravljanje sej**: Pri uporabi sej za stanje MORAJO MCP strežniki uporabljati varne, nedeterministične ID-je sej, ustvarjene z varnimi generatorji naključnih števil. ID-ji sej NAJ bodo vezani na uporabniško specifične informacije.
+
+4. **Izrecno soglasje uporabnika**: Za proxy strežnike MORAJO implementacije MCP pridobiti soglasje uporabnika za vsakega dinamično registriranega odjemalca, preden posredujejo tretjim avtorizacijskim strežnikom.
+
+Poglejmo primere, kako implementirati varno avtentikacijo in avtorizacijo v MCP strežnikih z uporabo .NET in Jave.
 
 ### Integracija .NET Identity
 
 ASP .NET Core Identity ponuja robusten okvir za upravljanje avtentikacije in avtorizacije uporabnikov. Lahko ga integriramo z MCP strežniki za varovanje dostopa do orodij in virov.
 
-Pri integraciji ASP.NET Core Identity z MCP strežniki moramo razumeti nekaj osnovnih pojmov:
+Nekaj osnovnih konceptov, ki jih moramo razumeti pri integraciji ASP.NET Core Identity z MCP strežniki:
 
-- **Identity konfiguracija**: Nastavitev ASP.NET Core Identity z uporabniškimi vlogami in trditvami (claims). Trditev je podatek o uporabniku, na primer njegova vloga ali dovoljenja, kot so "Admin" ali "User".
-- **JWT avtentikacija**: Uporaba JSON Web Tokenov (JWT) za varen dostop do API-jev. JWT je standard za varno prenašanje informacij med strankami kot JSON objekt, ki ga je mogoče preveriti in mu zaupati, saj je digitalno podpisan.
-- **Avtorizacijske politike**: Določanje politik za nadzor dostopa do določenih orodij glede na uporabniške vloge. MCP uporablja avtorizacijske politike za določanje, kateri uporabniki lahko dostopajo do katerih orodij glede na njihove vloge in trditve.
+- **Konfiguracija Identity**: Nastavitev ASP.NET Core Identity z uporabniškimi vlogami in zahtevki (claims). Zahtevek je podatek o uporabniku, na primer njegova vloga ali dovoljenja, kot so "Admin" ali "User".
+- **JWT avtentikacija**: Uporaba JSON Web Tokenov (JWT) za varen dostop do API-jev. JWT je standard za varen prenos informacij med strankami kot JSON objekt, ki ga je mogoče preveriti in mu zaupati, ker je digitalno podpisan.
+- **Avtorizacijske politike**: Določanje politik za nadzor dostopa do določenih orodij glede na uporabniške vloge. MCP uporablja avtorizacijske politike za določanje, kateri uporabniki lahko dostopajo do katerih orodij glede na njihove vloge in zahtevke.
 
 ```csharp
 public class SecureMcpStartup
@@ -118,15 +137,15 @@ V zgornji kodi smo:
 
 ### Integracija Java Spring Security
 
-Za Javo bomo uporabili Spring Security za implementacijo varne avtentikacije in avtorizacije za MCP strežnike. Spring Security ponuja celovit varnostni okvir, ki se brezhibno integrira s Spring aplikacijami.
+Za Javo bomo uporabili Spring Security za implementacijo varne avtentikacije in avtorizacije MCP strežnikov. Spring Security ponuja celovit varnostni okvir, ki se brezhibno integrira s Spring aplikacijami.
 
-Osnovni pojmi so:
+Osnovni koncepti so:
 
 - **Konfiguracija Spring Security**: Nastavitev varnostnih konfiguracij za avtentikacijo in avtorizacijo.
 - **OAuth2 Resource Server**: Uporaba OAuth2 za varen dostop do MCP orodij. OAuth2 je okvir za avtorizacijo, ki omogoča tretjim storitvam izmenjavo dostopnih žetonov za varen dostop do API-jev.
 - **Varnostni interceptorji**: Implementacija varnostnih interceptorjev za uveljavljanje kontrol dostopa pri izvajanju orodij.
 - **Nadzor dostopa na podlagi vlog**: Uporaba vlog za nadzor dostopa do določenih orodij in virov.
-- **Varnostne anotacije**: Uporaba anotacij za zaščito metod in končnih točk.
+- **Varnostne anotacije**: Uporaba anotacij za varovanje metod in končnih točk.
 
 ```java
 @Configuration
@@ -180,18 +199,18 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 V zgornji kodi smo:
 
-- Konfigurirali Spring Security za varovanje MCP končnih točk, omogočili javni dostop do odkrivanja orodij, medtem ko je za izvajanje orodij potrebna avtentikacija.
+- Konfigurirali Spring Security za varovanje MCP končnih točk, omogočajoč javni dostop do odkrivanja orodij, medtem ko je za izvajanje orodij potrebna avtentikacija.
 - Uporabili OAuth2 kot resource server za upravljanje varnega dostopa do MCP orodij.
-- Implementirali varnostni interceptor za uveljavljanje kontrol dostopa pri izvajanju orodij, ki preverja uporabniške vloge in dovoljenja pred dovoljenjem dostopa do določenih orodij.
+- Implementirali varnostni interceptor za uveljavljanje kontrol dostopa pri izvajanju orodij, preverjajoč uporabniške vloge in dovoljenja pred dovoljenjem dostopa do določenih orodij.
 - Določili nadzor dostopa na podlagi vlog za omejitev dostopa do administratorskih orodij in občutljivih podatkov glede na uporabniške vloge.
 
 ## Zaščita podatkov in zasebnost
 
-Zaščita podatkov je ključna za zagotavljanje, da se občutljive informacije obravnavajo varno. To vključuje zaščito osebnih podatkov (PII), finančnih podatkov in drugih občutljivih informacij pred nepooblaščenim dostopom in uhajanjem.
+Zaščita podatkov je ključna za zagotavljanje, da se občutljive informacije obravnavajo varno. To vključuje zaščito osebno prepoznavnih informacij (PII), finančnih podatkov in drugih občutljivih informacij pred nepooblaščenim dostopom in uhajanjem.
 
 ### Primer zaščite podatkov v Pythonu
 
-Poglejmo primer, kako uvesti zaščito podatkov v Pythonu z uporabo šifriranja in zaznavanja PII.
+Poglejmo primer, kako implementirati zaščito podatkov v Pythonu z uporabo šifriranja in zaznavanja PII.
 
 ```python
 from mcp_server import McpServer
@@ -329,14 +348,69 @@ class SecureCustomerDataTool(Tool):
 
 V zgornji kodi smo:
 
-- Implementirali razred `PiiDetector` za pregledovanje besedila in parametrov glede osebnih podatkov (PII).
+- Implementirali razred `PiiDetector` za pregledovanje besedila in parametrov glede osebno prepoznavnih informacij (PII).
 - Ustvarili razred `EncryptionService` za upravljanje šifriranja in dešifriranja občutljivih podatkov z uporabo knjižnice `cryptography`.
 - Določili dekorator `secure_tool`, ki ovije izvajanje orodja, da preveri PII, beleži dostop in po potrebi šifrira občutljive podatke.
 - Uporabili dekorator `secure_tool` na vzorčnem orodju (`SecureCustomerDataTool`), da zagotovimo varno ravnanje z občutljivimi podatki.
+
+## Specifična varnostna tveganja MCP
+
+Po uradni MCP varnostni dokumentaciji obstajajo specifična varnostna tveganja, ki jih morajo izvajalci MCP poznati:
+
+### 1. Problem zmedenega pooblaščenca (Confused Deputy)
+
+Ta ranljivost nastane, ko MCP strežnik deluje kot proxy do API-jev tretjih oseb, kar lahko napadalcem omogoči izkoriščanje zaupanja med MCP strežnikom in temi API-ji.
+
+**Omilitev:**
+- MCP proxy strežniki, ki uporabljajo statične ID-je odjemalcev, MORAJO pridobiti soglasje uporabnika za vsakega dinamično registriranega odjemalca, preden posredujejo tretjim avtorizacijskim strežnikom.
+- Implementirajte ustrezen OAuth potek z PKCE (Proof Key for Code Exchange) za avtorizacijske zahteve.
+- Strogo preverjajte URI-je za preusmeritev in identifikatorje odjemalcev.
+
+### 2. Ranljivosti pri prenosu žetonov (Token Passthrough)
+
+Prenos žetonov nastane, ko MCP strežnik sprejema žetone od MCP odjemalca brez preverjanja, ali so bili ti žetoni pravilno izdani za MCP strežnik, in jih posreduje naprej do API-jev.
+
+### Tveganja
+- Obhod varnostnih kontrol (obhod omejitev hitrosti, preverjanja zahtev)
+- Težave z odgovornostjo in revizijsko sledjo
+- Kršitve mej zaupanja
+- Tveganja za združljivost v prihodnosti
+
+**Omilitev:**
+- MCP strežniki NE SMEJO sprejemati žetonov, ki niso bili izrecno izdani za MCP strežnik.
+- Vedno preverjajte zahtevke občinstva žetona, da se ujemajo z pričakovano storitvijo.
+
+### 3. Prevzem sej (Session Hijacking)
+
+Do tega pride, ko nepooblaščena oseba pridobi ID seje in ga uporabi za ponarejanje izvirnega odjemalca, kar lahko vodi do nepooblaščenih dejanj.
+
+**Omilitev:**
+- MCP strežniki, ki izvajajo avtorizacijo, MORAJO preveriti vse dohodne zahteve in NE SMEJO uporabljati sej za avtentikacijo.
+- Uporabljajte varne, nedeterministične ID-je sej, ustvarjene z varnimi generatorji naključnih števil.
+- Vežite ID-je sej na uporabniško specifične informacije z uporabo formata ključa, kot je `<user_id>:<session_id>`.
+- Implementirajte ustrezne politike poteka in rotacije sej.
+
+## Dodatne najboljše varnostne prakse za MCP
+
+Poleg osnovnih varnostnih premislekov MCP razmislite o implementaciji naslednjih dodatnih varnostnih praks:
+
+- **Vedno uporabljajte HTTPS**: Šifrirajte komunikacijo med odjemalcem in strežnikom, da zaščitite žetone pred prestrezanjem.
+- **Implementirajte nadzor dostopa na podlagi vlog (RBAC)**: Ne preverjajte le, ali je uporabnik avtenticiran, ampak tudi, kaj je pooblaščen početi.
+- **Spremljajte in revidirajte**: Beležite vse dogodke avtentikacije za odkrivanje in odzivanje na sumljive aktivnosti.
+- **Upravljajte omejitve hitrosti in zadrževanje**: Implementirajte eksponentno vračanje in logiko ponovnega poskusa za prijazno obravnavo omejitev hitrosti.
+- **Varno shranjujte žetone**: Dostopne in osvežitvene žetone shranjujte varno z uporabo sistemskih mehanizmov za varno shranjevanje ali storitev za upravljanje ključev.
+- **Razmislite o uporabi upravljanja API-jev**: Storitve, kot je Azure API Management, lahko samodejno obravnavajo številne varnostne vidike, vključno z avtentikacijo, avtorizacijo in omejevanjem hitrosti.
+
+## Viri
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## Kaj sledi
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

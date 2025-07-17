@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-16T22:01:42+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T09:32:50+00:00",
   "source_file": "study_guide.md",
   "language_code": "es"
 }
 -->
-# Protocolo de Contexto de Modelo (MCP) para Principiantes - Guía de Estudio
+# Model Context Protocol (MCP) para Principiantes - Guía de Estudio
 
-Esta guía de estudio ofrece una visión general de la estructura y el contenido del repositorio para el currículo "Protocolo de Contexto de Modelo (MCP) para Principiantes". Usa esta guía para navegar el repositorio de manera eficiente y aprovechar al máximo los recursos disponibles.
+Esta guía de estudio ofrece una visión general de la estructura y el contenido del repositorio para el currículo "Model Context Protocol (MCP) para Principiantes". Usa esta guía para navegar el repositorio de manera eficiente y aprovechar al máximo los recursos disponibles.
 
 ## Resumen del Repositorio
 
-El Protocolo de Contexto de Modelo (MCP) es un marco estandarizado para las interacciones entre modelos de IA y aplicaciones cliente. Inicialmente creado por Anthropic, MCP ahora es mantenido por la comunidad más amplia de MCP a través de la organización oficial en GitHub. Este repositorio ofrece un currículo completo con ejemplos prácticos de código en C#, Java, JavaScript, Python y TypeScript, diseñado para desarrolladores de IA, arquitectos de sistemas e ingenieros de software.
+El Model Context Protocol (MCP) es un marco estandarizado para las interacciones entre modelos de IA y aplicaciones cliente. Creado inicialmente por Anthropic, MCP ahora es mantenido por la comunidad más amplia a través de la organización oficial en GitHub. Este repositorio ofrece un currículo completo con ejemplos prácticos en C#, Java, JavaScript, Python y TypeScript, diseñado para desarrolladores de IA, arquitectos de sistemas e ingenieros de software.
 
 ## Mapa Visual del Currículo
 
@@ -100,11 +100,11 @@ mindmap
 
 ## Estructura del Repositorio
 
-El repositorio está organizado en diez secciones principales, cada una enfocada en diferentes aspectos de MCP:
+El repositorio está organizado en diez secciones principales, cada una enfocada en diferentes aspectos del MCP:
 
 1. **Introducción (00-Introduction/)**
-   - Visión general del Protocolo de Contexto de Modelo
-   - Por qué la estandarización es importante en las canalizaciones de IA
+   - Visión general del Model Context Protocol
+   - Por qué la estandarización es importante en los pipelines de IA
    - Casos de uso prácticos y beneficios
 
 2. **Conceptos Básicos (01-CoreConcepts/)**
@@ -126,7 +126,7 @@ El repositorio está organizado en diez secciones principales, cada una enfocada
      - Desarrollo de cliente
      - Integración de cliente LLM
      - Integración con VS Code
-     - Servidor de Server-Sent Events (SSE)
+     - Servidor Server-Sent Events (SSE)
      - Streaming HTTP
      - Integración con AI Toolkit
      - Estrategias de pruebas
@@ -206,6 +206,8 @@ El repositorio incluye recursos complementarios:
 El currículo cubre varios clientes y herramientas MCP:
 
 1. **Clientes Oficiales**:
+   - Visual Studio Code
+   - MCP en Visual Studio Code
    - Claude Desktop
    - Claude en VSCode
    - Claude API
@@ -249,7 +251,7 @@ El repositorio presenta varios servidores MCP, incluyendo:
 
 ## Contribuciones
 
-Este repositorio da la bienvenida a las contribuciones de la comunidad. Consulta la sección de Contribuciones de la Comunidad para obtener orientación sobre cómo contribuir de manera efectiva al ecosistema MCP.
+Este repositorio da la bienvenida a las contribuciones de la comunidad. Consulta la sección de Contribuciones de la Comunidad para obtener orientación sobre cómo contribuir eficazmente al ecosistema MCP.
 
 ## Registro de Cambios
 

@@ -1,33 +1,33 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:37:31+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T10:12:07+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sw"
 }
 -->
-# Muunganisho wa Itifaki ya Muktadha wa Mfano (MCP) na Azure AI Foundry
+# Model Context Protocol (MCP) Kuunganishwa na Azure AI Foundry
 
-Mwongozo huu unaonyesha jinsi ya kuunganisha seva za Model Context Protocol (MCP) na maajenti wa Azure AI Foundry, kuruhusu upangaji mzuri wa zana na uwezo wa AI wa biashara.
+Mwongozo huu unaonyesha jinsi ya kuunganisha seva za Model Context Protocol (MCP) na mawakala wa Azure AI Foundry, kuwezesha usimamizi mzuri wa zana na uwezo wa AI wa biashara.
 
 ## Utangulizi
 
-Model Context Protocol (MCP) ni kiwango wazi kinachowezesha programu za AI kuunganishwa kwa usalama na vyanzo vya data na zana za nje. Inapoingizwa na Azure AI Foundry, MCP inaruhusu maajenti kufikia na kuingiliana na huduma mbalimbali za nje, API, na vyanzo vya data kwa njia iliyopangwa.
+Model Context Protocol (MCP) ni kiwango wazi kinachowezesha programu za AI kuungana kwa usalama na vyanzo vya data na zana za nje. Wakati ikijiunga na Azure AI Foundry, MCP huruhusu mawakala kufikia na kuingiliana na huduma mbalimbali za nje, API, na vyanzo vya data kwa njia iliyopangwa.
 
-Muunganisho huu unachanganya unyumbufu wa mfumo wa zana za MCP na mfumo thabiti wa maajenti wa Azure AI Foundry, ukitoa suluhisho za AI za kiwango cha biashara zenye uwezo mkubwa wa kubinafsisha.
+Muunganiko huu unachanganya unyumbufu wa mfumo wa zana za MCP na mfumo thabiti wa mawakala wa Azure AI Foundry, ukitoa suluhisho za AI za kiwango cha biashara zenye uwezo mkubwa wa kubinafsisha.
 
-**Note:** Ikiwa unataka kutumia MCP katika Huduma ya Maajenti ya Azure AI Foundry, kwa sasa maeneo yafuatayo tu yanasaidiwa: westus, westus2, uaenorth, southindia na switzerlandnorth
+**Note:** Ikiwa unataka kutumia MCP katika Huduma ya Mawakala ya Azure AI Foundry, kwa sasa maeneo yafuatayo pekee yanasaidiwa: westus, westus2, uaenorth, southindia na switzerlandnorth
 
 ## Malengo ya Kujifunza
 
 Mwisho wa mwongozo huu, utaweza:
 
 - Kuelewa Model Context Protocol na faida zake
-- Kuweka seva za MCP kwa matumizi na maajenti wa Azure AI Foundry
-- Kuunda na kusanidi maajenti kwa muunganisho wa zana za MCP
+- Kuweka seva za MCP kwa matumizi na mawakala wa Azure AI Foundry
+- Kuunda na kusanidi mawakala kwa kuunganishwa kwa zana za MCP
 - Kutekeleza mifano halisi kwa kutumia seva za MCP
-- Kushughulikia majibu ya zana na marejeo katika mazungumzo ya maajenti
+- Kushughulikia majibu ya zana na marejeo katika mazungumzo ya mawakala
 
 ## Mahitaji ya Awali
 
@@ -40,12 +40,12 @@ Kabla ya kuanza, hakikisha una:
 
 ## Model Context Protocol (MCP) ni Nini?
 
-Model Context Protocol ni njia iliyopangwa kwa programu za AI kuunganishwa na vyanzo vya data na zana za nje. Faida kuu ni:
+Model Context Protocol ni njia iliyopangwa kwa programu za AI kuungana na vyanzo vya data na zana za nje. Faida kuu ni:
 
-- **Muunganisho wa Kiwango**: Kiolesura kinacholingana kwa zana na huduma mbalimbali
+- **Muunganisho wa Kiwango**: Kiolesura kinacholingana kwa zana na huduma tofauti
 - **Usalama**: Mbinu salama za uthibitishaji na idhini
 - **Unyumbufu**: Msaada kwa vyanzo mbalimbali vya data, API, na zana maalum
-- **Uwezo wa Kuongezeka**: Rahisi kuongeza uwezo na muunganisho mpya
+- **Uwezo wa Kuongezeka**: Rahisi kuongeza uwezo mpya na muunganisho
 
 ## Kuweka MCP na Azure AI Foundry
 
@@ -221,7 +221,7 @@ PersistentAgentsClient agentClient = new(projectEndpoint, new DefaultAzureCreden
 MCPToolDefinition mcpTool = new(mcpServerLabel, mcpServerUrl);
 ```
 
-### 5. Unda Mjaaji na Zana za MCP
+### 5. Unda Mwakala na Zana za MCP
 
 ```csharp
 PersistentAgent agent = await agentClient.Administration.CreateAgentAsync(
@@ -308,7 +308,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 ## Chaguzi za Usanidi wa Zana za MCP
 
-Unapoweka zana za MCP kwa mjaaji wako, unaweza kubainisha vigezo kadhaa muhimu:
+Unaposanidi zana za MCP kwa wakala wako, unaweza kubainisha vigezo kadhaa muhimu:
 
 ### Usanidi wa Python
 
@@ -331,7 +331,7 @@ MCPToolDefinition mcpTool = new(
 
 ## Uthibitishaji na Vichwa vya Habari
 
-Utekelezaji wote wawili unaunga mkono vichwa vya habari maalum kwa uthibitishaji:
+Matoleo yote mawili yanaunga mkono vichwa vya habari maalum kwa uthibitishaji:
 
 ### Python
 ```python
@@ -367,14 +367,14 @@ Ili kuboresha zaidi muunganisho wako wa MCP:
 
 1. **Chunguza Seva Maalum za MCP**: Jenga seva zako za MCP kwa vyanzo vya data vya kipekee
 2. **Tekeleza Usalama wa Juu**: Ongeza OAuth2 au mbinu maalum za uthibitishaji
-3. **Fuatilia na Uchambuzi**: Tekeleza uandikishaji na ufuatiliaji wa matumizi ya zana
+3. **Fuatilia na Tathmini**: Tekeleza uandikishaji na ufuatiliaji wa matumizi ya zana
 4. **Panua Suluhisho Lako**: Fikiria usawazishaji mzigo na usanifu wa seva za MCP zilizosambazwa
 
 ## Rasilimali Zaidi
 
 - [Nyaraka za Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
 - [Mifano ya Model Context Protocol](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
-- [Muhtasari wa Maajenti wa Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [Muhtasari wa Mawakala wa Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [Maelezo ya MCP](https://spec.modelcontextprotocol.io/)
 
 ## Msaada
@@ -385,7 +385,7 @@ Kwa msaada zaidi na maswali:
 
 ## Nini Kifuatacho
 
-- [6. Michango ya Jamii](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
-**Kiarifu cha Kutotegemea**:  
+**Kiarifu cha Msamaha**:  
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

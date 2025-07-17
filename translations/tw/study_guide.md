@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-16T21:00:07+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T09:45:47+00:00",
   "source_file": "study_guide.md",
   "language_code": "tw"
 }
 -->
 # Model Context Protocol (MCP) 初學者學習指南
 
-本學習指南概述了「Model Context Protocol (MCP) 初學者」課程的倉庫結構與內容。請利用此指南有效瀏覽倉庫，充分發揮資源的價值。
+本學習指南概述了「Model Context Protocol (MCP) 初學者」課程的倉庫結構與內容，幫助你有效瀏覽倉庫並充分利用現有資源。
 
 ## 倉庫概覽
 
@@ -104,8 +104,8 @@ mindmap
 
 1. **介紹 (00-Introduction/)**
    - Model Context Protocol 概述
-   - AI 流程中標準化的重要性
-   - 實際應用案例與效益
+   - 為何 AI 流程中標準化至關重要
+   - 實際應用案例與優勢
 
 2. **核心概念 (01-CoreConcepts/)**
    - 客戶端-伺服器架構
@@ -117,7 +117,7 @@ mindmap
    - 安全實作最佳做法
    - 認證與授權策略
 
-4. **快速入門 (03-GettingStarted/)**
+4. **入門指南 (03-GettingStarted/)**
    - 環境設定與配置
    - 建立基本 MCP 伺服器與客戶端
    - 與現有應用整合
@@ -130,9 +130,9 @@ mindmap
      - HTTP 串流
      - AI 工具包整合
      - 測試策略
-     - 部署指引
+     - 部署指南
 
-5. **實務實作 (04-PracticalImplementation/)**
+5. **實務應用 (04-PracticalImplementation/)**
    - 跨語言 SDK 使用
    - 除錯、測試與驗證技巧
    - 製作可重用的提示模板與工作流程
@@ -158,14 +158,14 @@ mindmap
    - 透過 GitHub 協作
    - 社群驅動的改進與回饋
    - 使用各種 MCP 客戶端（Claude Desktop、Cline、VSCode）
-   - 使用熱門 MCP 伺服器，包括影像生成
+   - 搭配熱門 MCP 伺服器（含影像生成）
 
 8. **早期採用經驗 (07-LessonsfromEarlyAdoption/)**
-   - 真實世界的實作與成功案例
-   - 建置與部署 MCP 解決方案
+   - 實際案例與成功故事
+   - MCP 解決方案的建置與部署
    - 趨勢與未來發展路線圖
 
-9. **最佳實務 (08-BestPractices/)**
+9. **最佳實踐 (08-BestPractices/)**
    - 效能調校與優化
    - 設計容錯的 MCP 系統
    - 測試與韌性策略
@@ -178,9 +178,9 @@ mindmap
 
 11. **實作工作坊 (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - 結合 MCP 與 AI 工具包的完整實作工作坊
-    - 建立連結 AI 模型與現實工具的智慧應用
+    - 建構連結 AI 模型與現實工具的智慧應用
     - 涵蓋基礎、客製伺服器開發與生產部署策略的實務模組
-    - 以實驗室方式學習，附逐步指引
+    - 以實驗室方式逐步引導學習
 
 ## 附加資源
 
@@ -197,17 +197,19 @@ mindmap
 
 1. **循序學習**：依序閱讀章節（00 至 10），獲得系統化學習體驗。
 2. **語言專注**：若偏好特定程式語言，可瀏覽對應語言的範例目錄。
-3. **實務操作**：從「快速入門」開始，設定環境並建立首個 MCP 伺服器與客戶端。
+3. **實務入門**：從「入門指南」開始，設定環境並建立首個 MCP 伺服器與客戶端。
 4. **進階探索**：熟悉基礎後，深入進階主題擴展知識。
-5. **社群互動**：透過 GitHub 討論與 Discord 頻道加入 MCP 社群，與專家及開發者交流。
+5. **社群互動**：透過 GitHub 討論區與 Discord 頻道加入 MCP 社群，與專家及開發者交流。
 
 ## MCP 客戶端與工具
 
 課程涵蓋多種 MCP 客戶端與工具：
 
 1. **官方客戶端**：
+   - Visual Studio Code
+   - MCP 在 Visual Studio Code 中的整合
    - Claude Desktop
-   - VSCode 中的 Claude
+   - Claude 在 VSCode 中的整合
    - Claude API
 
 2. **社群客戶端**：
@@ -247,9 +249,9 @@ mindmap
    - Microsoft Teams
    - Jira & Confluence
 
-## 貢獻
+## 貢獻指南
 
-本倉庫歡迎社群貢獻。請參考「社群貢獻」章節，了解如何有效參與 MCP 生態系。
+歡迎社群貢獻本倉庫。請參考「社群貢獻」章節，了解如何有效參與 MCP 生態系。
 
 ## 更新紀錄
 

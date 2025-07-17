@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T03:52:34+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T09:18:21+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "en"
 }
@@ -19,8 +19,9 @@ By the end of this lesson, you will be able to:
 - Understand the structure of the MCP community and ecosystem
 - Participate effectively in MCP community forums and discussions
 - Contribute to MCP open-source repositories
-- Create and share custom MCP tools
+- Create and share custom MCP tools and servers
 - Follow best practices for MCP development and collaboration
+- Discover community resources and frameworks for MCP development
 
 ## The MCP Community Ecosystem
 
@@ -28,8 +29,8 @@ The MCP ecosystem includes various components and participants working together 
 
 ### Key Community Components
 
-1. **Core Protocol Maintainers**: Microsoft and other organizations responsible for maintaining the core MCP specifications and reference implementations  
-2. **Tool Developers**: Individuals and teams who build MCP tools  
+1. **Core Protocol Maintainers**: The official [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) manages the core MCP specifications and reference implementations  
+2. **Tool Developers**: Individuals and teams who build MCP tools and servers  
 3. **Integration Providers**: Companies that incorporate MCP into their products and services  
 4. **End Users**: Developers and organizations using MCP in their applications  
 5. **Contributors**: Community members who contribute code, documentation, or other resources  
@@ -38,29 +39,33 @@ The MCP ecosystem includes various components and participants working together 
 
 #### Official Channels
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)  
+- [MCP GitHub Organization](https://github.com/modelcontextprotocol)  
 - [MCP Documentation](https://modelcontextprotocol.io/)  
-- [MCP Specification](https://spec.modelcontextprotocol.io/)  
+- [MCP Specification](https://modelcontextprotocol.io/docs/specification)  
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)  
+- [MCP Examples & Servers Repository](https://github.com/modelcontextprotocol/servers)  
 
 #### Community-Driven Resources
 
+- [MCP Clients](https://modelcontextprotocol.io/clients) – A list of clients supporting MCP integrations  
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) – An expanding list of community-developed MCP servers  
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) – Curated list of MCP servers  
+- [PulseMCP](https://www.pulsemcp.com/) – Community hub and newsletter for discovering MCP resources  
+- [Discord Server](https://discord.gg/jHEGxQu2a5) – Connect with MCP developers  
 - Language-specific SDK implementations  
-- Server implementations and tool libraries  
 - Blog posts and tutorials  
-- Community forums and social media discussions  
 
 ## Contributing to MCP
 
 ### Types of Contributions
 
-The MCP ecosystem welcomes a variety of contributions:
+The MCP ecosystem welcomes many kinds of contributions:
 
 1. **Code Contributions**:  
    - Enhancements to the core protocol  
    - Bug fixes  
-   - Tool implementations  
-   - Client/server libraries in different languages  
+   - Tool and server implementations  
+   - Client/server libraries in various languages  
 
 2. **Documentation**:  
    - Improving existing docs  
@@ -69,168 +74,77 @@ The MCP ecosystem welcomes a variety of contributions:
    - Creating examples and sample applications  
 
 3. **Community Support**:  
-   - Answering questions on forums  
+   - Answering questions on forums and discussions  
    - Testing and reporting issues  
    - Organizing community events  
    - Mentoring new contributors  
 
 ### Contribution Process: Core Protocol
 
-To contribute to the core MCP protocol or official implementations:
+To contribute to the core MCP protocol or official implementations, follow these principles from the [official contributing guidelines](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### .NET Example: Contributing a Protocol Enhancement
+1. **Simplicity and Minimalism**: The MCP specification holds a high standard for adding new concepts. It’s easier to add features than to remove them later.  
+2. **Concrete Approach**: Changes to the specification should be driven by real implementation challenges, not just theoretical ideas.  
+3. **Stages of a Proposal**:  
+   - Define: Explore the problem and confirm that other MCP users face the same issue  
+   - Prototype: Build a working example to demonstrate the solution  
+   - Write: Based on the prototype, draft a specification proposal  
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+### Development Environment Setup
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Java Example: Contributing a Bug Fix
+### Example: Contributing a Bug Fix
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Python Example: Contributing a New Tool to the Standard Library
+### Example: Contributing a New Tool to the Standard Library
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -394,9 +308,9 @@ class CsvProcessingTool(Tool):
 
 To make a successful contribution to MCP projects:
 
-1. **Start Small**: Begin with documentation, bug fixes, or minor enhancements  
+1. **Start Small**: Begin with documentation, bug fixes, or minor improvements  
 2. **Follow the Style Guide**: Stick to the project’s coding style and conventions  
-3. **Write Tests**: Include unit tests for your code contributions  
+3. **Write Tests**: Include unit tests for your code changes  
 4. **Document Your Work**: Provide clear documentation for new features or changes  
 5. **Submit Targeted PRs**: Keep pull requests focused on a single issue or feature  
 6. **Engage with Feedback**: Respond constructively to feedback on your contributions  
@@ -405,8 +319,8 @@ To make a successful contribution to MCP projects:
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +329,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,9 +341,27 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Creating and Sharing Custom MCP Tools
+## Creating and Sharing MCP Servers
 
-One of the most valuable ways to contribute to the MCP ecosystem is by creating and sharing custom tools.
+One of the most valuable ways to contribute to the MCP ecosystem is by creating and sharing custom MCP servers. The community has already built hundreds of servers for various services and use cases.
+
+### MCP Server Development Frameworks
+
+Several frameworks are available to simplify MCP server development:
+
+1. **Official SDKs**:  
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)  
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)  
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)  
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)  
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)  
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)  
+
+2. **Community Frameworks**:  
+   - [MCP-Framework](https://mcp-framework.com/) – Build MCP servers quickly and elegantly in TypeScript  
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) – Annotation-driven MCP servers in Java  
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) – Java framework for MCP servers  
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) – Starter Next.js project for MCP servers  
 
 ### Developing Shareable Tools
 
@@ -753,18 +683,18 @@ When sharing MCP tools with the community:
 
 1. **Complete Documentation**:  
    - Explain the purpose, usage, and provide examples  
-   - Clarify parameters and return values  
+   - Describe parameters and return values  
    - Document any external dependencies  
 
 2. **Error Handling**:  
    - Implement robust error handling  
-   - Provide helpful error messages  
+   - Provide clear error messages  
    - Gracefully handle edge cases  
 
 3. **Performance Considerations**:  
    - Optimize for speed and resource efficiency  
    - Use caching where appropriate  
-   - Consider scalability  
+   - Plan for scalability  
 
 4. **Security**:  
    - Use secure API keys and authentication  
@@ -772,7 +702,7 @@ When sharing MCP tools with the community:
    - Implement rate limiting for external API calls  
 
 5. **Testing**:  
-   - Include thorough test coverage  
+   - Provide thorough test coverage  
    - Test with various input types and edge cases  
    - Document testing procedures  
 
@@ -785,7 +715,7 @@ Effective collaboration is essential for a thriving MCP ecosystem.
 - GitHub Issues and Discussions  
 - Microsoft Tech Community  
 - Discord and Slack channels  
-- Stack Overflow (tag: `model-context-protocol` or `mcp`)  
+- Stack Overflow (tags: `model-context-protocol` or `mcp`)  
 
 ### Code Reviews
 
@@ -795,7 +725,7 @@ When reviewing MCP contributions, consider:
 2. **Correctness**: Does it work as intended?  
 3. **Consistency**: Does it follow project conventions?  
 4. **Completeness**: Are tests and documentation included?  
-5. **Security**: Are there any security concerns?  
+5. **Security**: Are there any security issues?  
 
 ### Version Compatibility
 
@@ -803,7 +733,7 @@ When developing for MCP:
 
 1. **Protocol Versioning**: Follow the MCP protocol version your tool supports  
 2. **Client Compatibility**: Keep backward compatibility in mind  
-3. **Server Compatibility**: Adhere to server implementation guidelines  
+3. **Server Compatibility**: Follow server implementation guidelines  
 4. **Breaking Changes**: Clearly document any breaking changes  
 
 ## Example Community Project: MCP Tool Registry
@@ -891,9 +821,9 @@ async def delete_tool(tool_name: str):
 
 - The MCP community is diverse and welcomes many types of contributions  
 - Contributions can range from core protocol improvements to custom tools  
-- Following contribution guidelines increases the likelihood your PR will be accepted  
-- Creating and sharing MCP tools is a great way to enhance the ecosystem  
-- Collaboration within the community is vital for MCP’s growth and improvement  
+- Following contribution guidelines increases the chances your PR will be accepted  
+- Creating and sharing MCP tools is a great way to strengthen the ecosystem  
+- Collaboration is vital for MCP’s growth and improvement  
 
 ## Exercise
 
@@ -913,4 +843,4 @@ async def delete_tool(tool_name: str):
 Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

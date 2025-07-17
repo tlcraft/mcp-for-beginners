@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-16T22:10:46+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T09:34:50+00:00",
   "source_file": "study_guide.md",
   "language_code": "de"
 }
@@ -15,7 +15,7 @@ Dieser Lernleitfaden bietet einen Überblick über die Struktur und den Inhalt d
 
 Das Model Context Protocol (MCP) ist ein standardisiertes Framework für die Interaktion zwischen KI-Modellen und Client-Anwendungen. Ursprünglich von Anthropic entwickelt, wird MCP heute von der breiteren MCP-Community über die offizielle GitHub-Organisation gepflegt. Dieses Repository bietet einen umfassenden Lehrplan mit praxisnahen Codebeispielen in C#, Java, JavaScript, Python und TypeScript, der sich an KI-Entwickler, Systemarchitekten und Softwareingenieure richtet.
 
-## Visuelle Lernübersicht
+## Visuelle Lehrplanübersicht
 
 ```mermaid
 mindmap
@@ -107,7 +107,7 @@ Das Repository ist in zehn Hauptabschnitte gegliedert, die jeweils unterschiedli
    - Warum Standardisierung in KI-Pipelines wichtig ist
    - Praktische Anwendungsfälle und Vorteile
 
-2. **Kernkonzepte (01-CoreConcepts/)**
+2. **Grundlagen (01-CoreConcepts/)**
    - Client-Server-Architektur
    - Wichtige Protokollkomponenten
    - Messaging-Muster im MCP
@@ -115,7 +115,7 @@ Das Repository ist in zehn Hauptabschnitte gegliedert, die jeweils unterschiedli
 3. **Sicherheit (02-Security/)**
    - Sicherheitsbedrohungen in MCP-basierten Systemen
    - Best Practices zur Absicherung von Implementierungen
-   - Strategien für Authentifizierung und Autorisierung
+   - Authentifizierungs- und Autorisierungsstrategien
 
 4. **Erste Schritte (03-GettingStarted/)**
    - Einrichtung und Konfiguration der Umgebung
@@ -139,7 +139,7 @@ Das Repository ist in zehn Hauptabschnitte gegliedert, die jeweils unterschiedli
    - Beispielprojekte mit Implementierungsbeispielen
 
 6. **Fortgeschrittene Themen (05-AdvancedTopics/)**
-   - Techniken des Context Engineering
+   - Techniken des Context Engineerings
    - Integration von Foundry Agents
    - Multimodale KI-Workflows
    - OAuth2-Authentifizierungsdemos
@@ -158,7 +158,7 @@ Das Repository ist in zehn Hauptabschnitte gegliedert, die jeweils unterschiedli
    - Zusammenarbeit über GitHub
    - Community-getriebene Verbesserungen und Feedback
    - Nutzung verschiedener MCP-Clients (Claude Desktop, Cline, VSCode)
-   - Arbeiten mit populären MCP-Servern inklusive Bildgenerierung
+   - Arbeit mit beliebten MCP-Servern inklusive Bildgenerierung
 
 8. **Erfahrungen aus der frühen Nutzung (07-LessonsfromEarlyAdoption/)**
    - Praxisnahe Implementierungen und Erfolgsgeschichten
@@ -166,7 +166,7 @@ Das Repository ist in zehn Hauptabschnitte gegliedert, die jeweils unterschiedli
    - Trends und zukünftige Roadmap
 
 9. **Best Practices (08-BestPractices/)**
-   - Performance-Optimierung und Feinabstimmung
+   - Performance-Optimierung und Tuning
    - Entwurf fehlertoleranter MCP-Systeme
    - Test- und Resilienzstrategien
 
@@ -178,9 +178,9 @@ Das Repository ist in zehn Hauptabschnitte gegliedert, die jeweils unterschiedli
 
 11. **Praktischer Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Umfassender praktischer Workshop zur Kombination von MCP mit AI Toolkit
-    - Entwicklung intelligenter Anwendungen, die KI-Modelle mit realen Werkzeugen verbinden
+    - Entwicklung intelligenter Anwendungen, die KI-Modelle mit realen Tools verbinden
     - Praxisorientierte Module zu Grundlagen, individueller Serverentwicklung und Produktions-Deployment
-    - Lab-basierter Lernansatz mit Schritt-für-Schritt-Anleitungen
+    - Laborgestütztes Lernen mit Schritt-für-Schritt-Anleitungen
 
 ## Zusätzliche Ressourcen
 
@@ -198,7 +198,7 @@ Das Repository enthält unterstützende Materialien:
 1. **Sequenzielles Lernen**: Folge den Kapiteln in der Reihenfolge (00 bis 10) für ein strukturiertes Lernerlebnis.
 2. **Sprachspezifischer Fokus**: Wenn du dich für eine bestimmte Programmiersprache interessierst, erkunde die Sample-Verzeichnisse für Implementierungen in deiner bevorzugten Sprache.
 3. **Praktische Umsetzung**: Beginne mit dem Abschnitt „Erste Schritte“, um deine Umgebung einzurichten und deinen ersten MCP-Server und -Client zu erstellen.
-4. **Fortgeschrittene Vertiefung**: Sobald du die Grundlagen beherrschst, tauche in die fortgeschrittenen Themen ein, um dein Wissen zu erweitern.
+4. **Fortgeschrittene Erkundung**: Sobald du die Grundlagen beherrschst, tauche in die fortgeschrittenen Themen ein, um dein Wissen zu vertiefen.
 5. **Community-Engagement**: Tritt der MCP-Community über GitHub-Diskussionen und Discord-Kanäle bei, um dich mit Experten und anderen Entwicklern auszutauschen.
 
 ## MCP-Clients und Tools
@@ -206,6 +206,8 @@ Das Repository enthält unterstützende Materialien:
 Der Lehrplan behandelt verschiedene MCP-Clients und Tools:
 
 1. **Offizielle Clients**:
+   - Visual Studio Code
+   - MCP in Visual Studio Code
    - Claude Desktop
    - Claude in VSCode
    - Claude API
@@ -255,12 +257,12 @@ Dieses Repository freut sich über Beiträge aus der Community. Siehe den Abschn
 
 | Datum         | Änderungen                                                                                              |
 |---------------|-------------------------------------------------------------------------------------------------------|
-| 16. Juli 2025 | - Aktualisierte Repository-Struktur zur Abbildung des aktuellen Inhalts<br>- Abschnitt MCP Clients und Tools hinzugefügt<br>- Abschnitt Beliebte MCP-Server hinzugefügt<br>- Visuelle Lernübersicht mit allen aktuellen Themen erweitert<br>- Fortgeschrittene Themen um alle Spezialbereiche ergänzt<br>- Fallstudien mit aktuellen Beispielen aktualisiert<br>- Herkunft von MCP als von Anthropic erstellt klargestellt |
-| 11. Juni 2025 | - Erste Erstellung des Lernleitfadens<br>- Visuelle Lernübersicht hinzugefügt<br>- Repository-Struktur skizziert<br>- Beispielprojekte und zusätzliche Ressourcen aufgenommen |
+| 16. Juli 2025 | - Aktualisierte Repository-Struktur zur Abbildung des aktuellen Inhalts<br>- Abschnitt MCP Clients und Tools hinzugefügt<br>- Abschnitt Beliebte MCP-Server hinzugefügt<br>- Visuelle Lehrplanübersicht mit allen aktuellen Themen erweitert<br>- Fortgeschrittene Themen um alle Spezialbereiche ergänzt<br>- Fallstudien mit aktuellen Beispielen aktualisiert<br>- Herkunft von MCP als von Anthropic erstellt klargestellt |
+| 11. Juni 2025 | - Erste Erstellung des Lernleitfadens<br>- Visuelle Lehrplanübersicht hinzugefügt<br>- Repository-Struktur skizziert<br>- Beispielprojekte und zusätzliche Ressourcen aufgenommen |
 
 ---
 
-*Dieser Lernleitfaden wurde am 16. Juli 2025 aktualisiert und bietet einen Überblick über das Repository zu diesem Zeitpunkt. Der Inhalt des Repositories kann nach diesem Datum aktualisiert werden.*
+*Dieser Lernleitfaden wurde am 16. Juli 2025 aktualisiert und bietet einen Überblick über das Repository zum damaligen Zeitpunkt. Der Inhalt des Repositories kann nach diesem Datum aktualisiert worden sein.*
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
