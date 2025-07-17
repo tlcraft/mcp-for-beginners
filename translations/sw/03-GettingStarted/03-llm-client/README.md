@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T10:13:56+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T19:11:25+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sw"
 }
@@ -13,21 +13,21 @@ Hadi sasa, umeona jinsi ya kuunda seva na mteja. Mteja amekuwa na uwezo wa kuita
 
 ## Muhtasari
 
-Katika somo hili tunazingatia kuongeza LLM kwenye mteja wako na kuonyesha jinsi hii inavyotoa uzoefu bora zaidi kwa mtumiaji wako.
+Katika somo hili tunazingatia kuongeza LLM kwenye mteja wako na kuonyesha jinsi hii inavyotoa uzoefu bora kwa mtumiaji wako.
 
 ## Malengo ya Kujifunza
 
 Mwisho wa somo hili, utaweza:
 
 - Kuunda mteja mwenye LLM.
-- Kuungana kwa urahisi na seva ya MCP kwa kutumia LLM.
+- Kuunganishwa kwa urahisi na seva ya MCP kwa kutumia LLM.
 - Kutoa uzoefu bora kwa mtumiaji upande wa mteja.
 
 ## Mbinu
 
-Hebu tujifunze mbinu tunayotakiwa kuchukua. Kuongeza LLM inaonekana rahisi, lakini je, tutafanya hivyo kweli?
+Hebu tujifunze mbinu tunayohitaji kuchukua. Kuongeza LLM inaonekana rahisi, lakini je, tutafanya hivyo kweli?
 
-Hivi ndivyo mteja atakavyowasiliana na seva:
+Hivi ndivyo mteja atavyowasiliana na seva:
 
 1. Kuanzisha muunganisho na seva.
 
@@ -41,14 +41,14 @@ Nzuri, sasa tunaelewa jinsi ya kufanya hili kwa kiwango cha juu, hebu tujaribu k
 
 ## Zoezi: Kuunda mteja mwenye LLM
 
-Katika zoezi hili, tutajifunza jinsi ya kuongeza LLM kwenye mteja wetu.
+Katika zoezi hili, tutajifunza kuongeza LLM kwenye mteja wetu.
 
 ## Uthibitishaji kwa kutumia GitHub Personal Access Token
 
-Kuunda tokeni ya GitHub ni mchakato rahisi. Hivi ndivyo unavyoweza kufanya:
+Kuunda tokeni ya GitHub ni mchakato rahisi. Hapa ni jinsi unavyoweza kufanya hivyo:
 
 - Nenda kwenye GitHub Settings – Bonyeza picha yako ya wasifu upande wa juu kulia na chagua Settings.
-- Nenda kwenye Developer Settings – Skrolli chini na bonyeza Developer Settings.
+- Elekea kwenye Developer Settings – Skrolli chini na bonyeza Developer Settings.
 - Chagua Personal Access Tokens – Bonyeza Personal access tokens kisha Generate new token.
 - Sanidi Tokeni Yako – Ongeza maelezo kwa kumbukumbu, weka tarehe ya kumalizika, na chagua idhini zinazohitajika (permissions).
 - Tengeneza na Nakili Tokeni – Bonyeza Generate token, na hakikisha unakili mara moja, kwa sababu hutakuwa na nafasi ya kuiona tena.
@@ -240,13 +240,13 @@ Katika msimbo uliotangulia tume:
 - **Kuongeza utegemezi wa LangChain4j**: Unaohitajika kwa ushirikiano wa MCP, mteja rasmi wa OpenAI, na msaada wa GitHub Models
 - **Kuleta maktaba za LangChain4j**: Kwa ushirikiano wa MCP na utendaji wa mfano wa mazungumzo wa OpenAI
 - **Kuunda `ChatLanguageModel`**: Iliyosanidiwa kutumia GitHub Models na tokeni yako ya GitHub
-- **Kuweka usafirishaji wa HTTP**: Kutumia Server-Sent Events (SSE) kuungana na seva ya MCP
+- **Kusanidi usafirishaji wa HTTP**: Kutumia Server-Sent Events (SSE) kuungana na seva ya MCP
 - **Kuunda mteja wa MCP**: Atakayesimamia mawasiliano na seva
-- **Kutumia msaada wa MCP uliopo ndani ya LangChain4j**: Ambayo inarahisisha ushirikiano kati ya LLMs na seva za MCP
+- **Kutumia msaada wa MCP uliopo ndani ya LangChain4j**: Unaorahisisha ushirikiano kati ya LLMs na seva za MCP
 
-Nzuri, kwa hatua yetu inayofuata, hebu tuorodheshe uwezo wa seva.
+Nzuri, kwa hatua yetu inayofuata, hebu tuorodheshe uwezo kwenye seva.
 
-### -2 Orodha ya uwezo wa seva
+### -2- Orodhesha uwezo wa seva
 
 Sasa tutaungana na seva na kuomba uwezo wake:
 
@@ -321,7 +321,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
 Katika msimbo uliotangulia tume:
 
 - Kuweka orodha ya zana zinazopatikana kwenye MCP Server
-- Kwa kila zana, kuorodhesha jina, maelezo na muundo wake. Hii ya mwisho ni kitu ambacho tutatumia kuitumia zana hivi karibuni.
+- Kwa kila zana, kuorodhesha jina, maelezo na muundo wake. Hii ni kitu ambacho tutatumia kuitumia zana hivi karibuni.
 
 ### Java
 
@@ -376,7 +376,7 @@ Hatua inayofuata baada ya kuorodhesha uwezo wa seva ni kubadilisha kuwa muundo u
 
     ```
 
-    Msimbo huu unachukua jibu kutoka MCP Server na kuubadilisha kuwa muundo wa zana unaoeleweka na LLM.
+    Msimbo huu unachukua jibu kutoka MCP Server na kubadilisha kuwa muundo wa zana unaoeleweka na LLM.
 
 1. Sasa tuboreshe njia ya `run` kuorodhesha uwezo wa seva:
 
@@ -418,7 +418,7 @@ Hatua inayofuata baada ya kuorodhesha uwezo wa seva ni kubadilisha kuwa muundo u
         return tool_schema
     ```
 
-    Katika kazi ya `convert_to_llm_tools` tunachukua jibu la zana ya MCP na kuibadilisha kuwa muundo unaoeleweka na LLM.
+    Katika kazi ya `convert_to_llm_tools` tunachukua jibu la zana ya MCP na kulibadilisha kuwa muundo unaoeleweka na LLM.
 
 1. Kisha, tuboreshe msimbo wetu wa mteja kutumia kazi hii kama ifuatavyo:
 
@@ -433,7 +433,7 @@ Hatua inayofuata baada ya kuorodhesha uwezo wa seva ni kubadilisha kuwa muundo u
 
 ### .NET
 
-1. Tuweke msimbo wa kubadilisha jibu la zana ya MCP kuwa kitu LLM inaelewa
+1. Tuweke msimbo wa kubadilisha jibu la zana ya MCP kuwa kitu ambacho LLM inaelewa
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -459,9 +459,9 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 Katika msimbo uliotangulia tume:
 
 - Kuunda kazi `ConvertFrom` inayopokea jina, maelezo na muundo wa ingizo.
-- Kueleza utendaji unaounda `FunctionDefinition` inayopitishwa kwa `ChatCompletionsDefinition`. Hii ya mwisho ni kitu LLM inaelewa.
+- Kueleza utendaji unaounda `FunctionDefinition` inayopitishwa kwa `ChatCompletionsDefinition`. Hii ni kitu ambacho LLM inaelewa.
 
-1. Hebu tuone jinsi tunavyoweza kuboresha msimbo uliopo kutumia kazi hii:
+1. Hebu tuone jinsi tunavyoweza kuboresha baadhi ya misimbo iliyopo kutumia kazi hii:
 
     ```csharp
     async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -504,7 +504,7 @@ Katika msimbo uliotangulia, tume:
         toolDefinitions.Add(def);
         ```
 
-    Muundo wa ingizo ni sehemu ya jibu la zana lakini kwenye sifa ya "properties", hivyo tunahitaji kuuchukua. Zaidi ya hayo, sasa tunaita `ConvertFrom` na maelezo ya zana. Sasa tumefanya kazi ngumu, hebu tuone jinsi wito unavyoungana tunaposhughulikia maelekezo ya mtumiaji.
+    Muundo wa ingizo ni sehemu ya jibu la zana lakini kwenye sifa ya "properties", hivyo tunahitaji kutoa. Zaidi ya hayo, sasa tunaita `ConvertFrom` na maelezo ya zana. Sasa tumefanya kazi ngumu, hebu tuone jinsi wito unavyoungana tunaposhughulikia maelekezo ya mtumiaji.
 
 ### Java
 
@@ -525,7 +525,7 @@ Katika msimbo uliotangulia tume:
 
 - Kueleza interface rahisi ya `Bot` kwa mawasiliano ya lugha ya asili
 - Kutumia `AiServices` ya LangChain4j kuunganisha moja kwa moja LLM na mtoa zana wa MCP
-- Mfumo unasimamia moja kwa moja uongofu wa muundo wa zana na wito wa kazi nyuma ya pazia
+- Mfumo unashughulikia moja kwa moja uongofu wa muundo wa zana na wito wa kazi nyuma ya pazia
 - Mbinu hii inaondoa uongofu wa mikono wa zana - LangChain4j inasimamia ugumu wote wa kubadilisha zana za MCP kuwa muundo unaolingana na LLM
 
 Nzuri, sasa tumejiandaa kushughulikia maombi ya mtumiaji, basi tuanze na hilo.
@@ -836,10 +836,10 @@ client.connectToServer(transport);
 
 Katika msimbo uliotangulia tume:
 
-- Kupitisha kazi zetu, tulizopata kwenye seva ya MCP na kuzibadilisha, kwa LLM.
+- Kupitisha kazi zetu, tulizozipata kwenye seva ya MCP na kuzibadilisha, kwa LLM.
 - Kuita LLM na kazi hizo.
 - Kagua matokeo kuona ni kazi gani tunapaswa kuitisha, kama zipo.
-- Mwisho, tunapitisha orodha ya kazi za kuitisha.
+- Mwisho, tunapita orodha ya kazi za kuitisha.
 
 1. Hatua ya mwisho, tuboreshe msimbo wetu mkuu:
 
@@ -855,7 +855,7 @@ Katika msimbo uliotangulia tume:
         print("TOOLS result: ", result.content)
     ```
 
-Hapo, hiyo ilikuwa hatua ya mwisho, katika msimbo huu tuko:
+Hapo, hiyo ilikuwa hatua ya mwisho, katika msimbo huu tume:
 
 - Kuita zana ya MCP kupitia `call_tool` kwa kutumia kazi ambayo LLM iliona inapaswa kuitwa kulingana na maelekezo yetu.
 - Kuchapisha matokeo ya wito wa zana kwa seva ya MCP.
@@ -900,7 +900,7 @@ Katika msimbo uliotangulia tume:
 
 - Kupata zana kutoka seva ya MCP, `var tools = await GetMcpTools()`.
 - Kueleza maelekezo ya mtumiaji `userMessage`.
-- Kuunda chaguo linaloelezea mfano na zana.
+- Kuunda chaguo linaloeleza mfano na zana.
 - Kufanya ombi kwa LLM.
 
 1. Hatua ya mwisho, tuone kama LLM inadhani tunapaswa kuita kazi:
@@ -1079,7 +1079,7 @@ try {
 Katika msimbo uliotangulia tume:
 
 - Kutumia maelekezo rahisi ya lugha ya asili kuwasiliana na zana za seva ya MCP
-- Mfumo wa LangChain4j unasimamia moja kwa moja:
+- Mfumo wa LangChain4j unashughulikia moja kwa moja:
   - Kubadilisha maelekezo ya mtumiaji kuwa wito wa zana inapohitajika
   - Kuita zana zinazofaa za MCP kulingana na uamuzi wa LLM
   - Kusimamia mtiririko wa mazungumzo kati ya LLM na seva ya MCP
@@ -1139,16 +1139,16 @@ Nzuri, umefanikiwa!
 
 ## Kazi ya Nyumbani
 
-Chukua msimbo kutoka zoezi na uendeleze seva na zana zaidi. Kisha unda mteja mwenye LLM, kama ilivyo kwenye zoezi, na ujaribu kwa maelekezo tofauti kuhakikisha zana zote za seva zinaitwa kwa njia ya mabadiliko. Njia hii ya kujenga mteja inamaanisha mtumiaji wa mwisho atapata uzoefu mzuri kwani wanaweza kutumia maelekezo badala ya amri kamili za mteja, na hawatambui kama seva ya MCP inaitwa.
+Chukua msimbo kutoka kwenye zoezi na uendeleze seva na zana zaidi. Kisha unda mteja mwenye LLM, kama ilivyo kwenye zoezi, na ujaribu kwa maelekezo tofauti kuhakikisha zana zote za seva zinaitwa kwa njia ya mabadiliko. Njia hii ya kujenga mteja inamaanisha mtumiaji wa mwisho atapata uzoefu mzuri kwani wanaweza kutumia maelekezo badala ya amri kamili za mteja, na hawatambui kama seva ya MCP inaitwa.
 
 ## Suluhisho
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Muhimu Kumbuka
+## Muhimu Kukumbuka
 
 - Kuongeza LLM kwenye mteja wako kunatoa njia bora kwa watumiaji kuwasiliana na seva za MCP.
-- Unahitaji kubadilisha jibu la seva ya MCP kuwa kitu LLM inaweza kuelewa.
+- Unahitaji kubadilisha jibu la seva ya MCP kuwa kitu ambacho LLM inaelewa.
 
 ## Sampuli
 
@@ -1164,5 +1164,5 @@ Chukua msimbo kutoka zoezi na uendeleze seva na zana zaidi. Kisha unda mteja mwe
 
 - Ifuatayo: [Kutumia seva kwa kutumia Visual Studio Code](../04-vscode/README.md)
 
-**Kiarifu cha Msamaha**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

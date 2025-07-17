@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-16T22:08:07+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T17:21:50+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "es"
 }
@@ -326,6 +326,10 @@ Agrega la siguiente configuración completa a tu archivo *pom.xml*:
 </project>
 ```
 
+### -2- Crear proyecto
+
+Ahora que tienes instalado el SDK, vamos a crear un proyecto:
+
 ### TypeScript
 
 ```sh
@@ -349,6 +353,7 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+### -3- Crear archivos del proyecto  
 ### TypeScript
 
 Crea un *package.json* con el siguiente contenido:
@@ -408,6 +413,8 @@ dotnet add package Microsoft.Extensions.Hosting
 ### Java
 
 Para proyectos Java Spring Boot, la estructura del proyecto se crea automáticamente.
+
+### -4- Crear código del servidor
 
 ### TypeScript
 
@@ -828,7 +835,7 @@ public static class CalculatorTool
 
 Las herramientas ya fueron creadas en el paso anterior.
 
-### -6 Código final
+### -6- Código final
 
 Agreguemos el código final que necesitamos para que el servidor pueda arrancar:
 
@@ -1007,7 +1014,7 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 El inspector es una gran herramienta que puede iniciar tu servidor y te permite interactuar con él para probar que funciona. Vamos a iniciarlo:
 
 > [!NOTE]
-> Puede verse diferente en el campo "command" ya que contiene el comando para ejecutar un servidor con tu runtime específico.
+> Puede que se vea diferente en el campo "command" ya que contiene el comando para ejecutar un servidor con tu runtime específico.
 
 ### TypeScript
 
@@ -1015,7 +1022,7 @@ El inspector es una gran herramienta que puede iniciar tu servidor y te permite 
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-o agrégalo a tu *package.json* así: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` y luego ejecuta `npm run inspect`
+O agrégalo a tu *package.json* así: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` y luego ejecuta `npm run inspect`
 
 Python envuelve una herramienta Node.js llamada inspector. Es posible llamar a dicha herramienta así:
 
@@ -1052,7 +1059,7 @@ npx @modelcontextprotocol/inspector
 En la interfaz web del inspector:
 
 1. Selecciona "SSE" como tipo de transporte  
-2. Establece la URL a: `http://localhost:8080/sse`  
+2. Configura la URL a: `http://localhost:8080/sse`  
 3. Haz clic en "Connect"
 
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.es.png)
@@ -1083,46 +1090,46 @@ Deberías ver la siguiente interfaz de usuario:
 
 MCP ofrece SDKs oficiales para varios lenguajes:
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Mantenido en colaboración con Microsoft  
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Mantenido en colaboración con Spring AI  
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementación oficial en TypeScript  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementación oficial en Python  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Implementación oficial en Kotlin
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Mantenido en colaboración con Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Mantenido en colaboración con Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementación oficial en TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementación oficial en Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - La implementación oficial en Kotlin  
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Mantenido en colaboración con Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - La implementación oficial en Rust
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - La implementación oficial en Rust  
 
 ## Puntos clave
 
-- Configurar un entorno de desarrollo MCP es sencillo con los SDK específicos para cada lenguaje  
+- Configurar un entorno de desarrollo MCP es sencillo con SDKs específicos para cada lenguaje  
 - Construir servidores MCP implica crear y registrar herramientas con esquemas claros  
-- Probar y depurar son pasos esenciales para implementaciones MCP confiables
+- Probar y depurar son pasos esenciales para implementaciones MCP confiables  
 
 ## Ejemplos
 
-- [Calculadora en Java](../samples/java/calculator/README.md)  
-- [Calculadora en .Net](../../../../03-GettingStarted/samples/csharp)  
-- [Calculadora en JavaScript](../samples/javascript/README.md)  
-- [Calculadora en TypeScript](../samples/typescript/README.md)  
-- [Calculadora en Python](../../../../03-GettingStarted/samples/python)
+- [Calculadora Java](../samples/java/calculator/README.md)  
+- [Calculadora .Net](../../../../03-GettingStarted/samples/csharp)  
+- [Calculadora JavaScript](../samples/javascript/README.md)  
+- [Calculadora TypeScript](../samples/typescript/README.md)  
+- [Calculadora Python](../../../../03-GettingStarted/samples/python)  
 
 ## Tarea
 
 Crea un servidor MCP simple con una herramienta de tu elección:
 
-1. Implementa la herramienta en el lenguaje que prefieras (.NET, Java, Python o JavaScript).  
+1. Implementa la herramienta en tu lenguaje preferido (.NET, Java, Python o JavaScript).  
 2. Define los parámetros de entrada y los valores de retorno.  
 3. Ejecuta la herramienta inspector para asegurarte de que el servidor funcione correctamente.  
-4. Prueba la implementación con diferentes entradas.
+4. Prueba la implementación con diferentes entradas.  
 
 ## Solución
 
-[Solución](./solution/README.md)
+[Solución](./solution/README.md)  
 
 ## Recursos adicionales
 
 - [Construir agentes usando Model Context Protocol en Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
 - [MCP remoto con Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [Agente MCP OpenAI para .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Agente MCP OpenAI para .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## Qué sigue
 

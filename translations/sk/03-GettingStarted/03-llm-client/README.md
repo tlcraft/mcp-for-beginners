@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T11:04:04+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T19:20:11+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sk"
 }
@@ -33,7 +33,7 @@ Takto bude klient komunikovať so serverom:
 
 1. Získa zoznam schopností, promptov, zdrojov a nástrojov a uloží ich schému.
 
-1. Pridá LLM a odovzdá uložené schopnosti a ich schému v tvare, ktorému LLM rozumie.
+1. Pridá LLM a odovzdá uložené schopnosti a ich schému v tvare, ktorý LLM rozumie.
 
 1. Spracuje používateľský prompt tak, že ho pošle LLM spolu s nástrojmi, ktoré klient získal.
 
@@ -47,7 +47,7 @@ V tomto cvičení sa naučíme, ako pridať LLM do nášho klienta.
 
 Vytvorenie GitHub tokenu je jednoduchý proces. Tu je návod, ako na to:
 
-- Prejdite do nastavení GitHub – Kliknite na svoj profilový obrázok v pravom hornom rohu a vyberte Nastavenia.
+- Prejdite do nastavení GitHubu – Kliknite na svoj profilový obrázok v pravom hornom rohu a vyberte Nastavenia.
 - Prejdite do Developer Settings – Posuňte sa nadol a kliknite na Developer Settings.
 - Vyberte Personal Access Tokens – Kliknite na Personal access tokens a potom na Generate new token.
 - Nakonfigurujte svoj token – Pridajte poznámku pre referenciu, nastavte dátum vypršania platnosti a vyberte potrebné oprávnenia (scopes).
@@ -248,7 +248,7 @@ Skvelé, v ďalšom kroku si vypíšeme schopnosti servera.
 
 ### -2- Výpis schopností servera
 
-Teraz sa pripojíme k serveru a požiadame ho o jeho schopnosti:
+Teraz sa pripojíme k serveru a požiadame o jeho schopnosti:
 
 ### TypeScript
 
@@ -341,7 +341,7 @@ V predchádzajúcom kóde sme:
 
 - Vytvorili `McpToolProvider`, ktorý automaticky objavuje a registruje všetky nástroje zo servera MCP
 - Poskytovateľ nástrojov interné spracováva konverziu medzi MCP schémami nástrojov a formátom nástrojov LangChain4j
-- Tento prístup eliminuje manuálny výpis a konverziu nástrojov
+- Tento prístup abstrahuje manuálny výpis a konverziu nástrojov
 
 ### -3- Konverzia schopností servera na nástroje LLM
 
@@ -420,7 +420,7 @@ V predchádzajúcom kóde sme:
 
     Vo funkcii `convert_to_llm_tools` preberáme odpoveď MCP nástroja a konvertujeme ju do formátu, ktorému LLM rozumie.
 
-1. Potom aktualizujme náš klientsky kód, aby využíval túto funkciu takto:
+1. Potom aktualizujme kód klienta, aby využíval túto funkciu takto:
 
     ```python
     for tool in tools.tools:
@@ -429,7 +429,7 @@ V predchádzajúcom kóde sme:
         functions.append(convert_to_llm_tool(tool))
     ```
 
-    Tu pridávame volanie `convert_to_llm_tool`, aby sme MCP odpoveď nástroja premenili na formát, ktorý môžeme neskôr poslať LLM.
+    Tu voláme `convert_to_llm_tool`, aby sme MCP odpoveď premenili na formát, ktorý môžeme neskôr poslať LLM.
 
 ### .NET
 
@@ -504,7 +504,7 @@ V predchádzajúcom kóde sme:
         toolDefinitions.Add(def);
         ```
 
-        Vstupná schéma je súčasťou odpovede nástroja, ale v atribúte "properties", takže ju musíme extrahovať. Následne voláme `ConvertFrom` s detailmi nástroja. Teraz, keď máme túto ťažkú prácu za sebou, pozrime sa, ako to spolu funguje pri spracovaní používateľského promptu.
+        Vstupná schéma je súčasťou odpovede nástroja, ale v atribúte "properties", takže ju musíme extrahovať. Následne voláme `ConvertFrom` s detailmi nástroja. Teraz, keď máme túto ťažkú prácu hotovú, pozrime sa, ako to funguje pri spracovaní používateľského promptu.
 
 ### Java
 
@@ -837,9 +837,9 @@ client.connectToServer(transport);
     V predchádzajúcom kóde sme:
 
     - Odovzdali funkcie, ktoré sme našli na MCP serveri a konvertovali, LLM.
-    - Potom sme zavolali LLM s týmito funkciami.
-    - Následne kontrolujeme výsledok, aby sme zistili, ktoré funkcie by sme mali volať, ak vôbec.
-    - Nakoniec odovzdávame pole funkcií na volanie.
+    - Zavolali LLM s týmito funkciami.
+    - Skontrolovali výsledok, aby sme zistili, ktoré funkcie by sme mali volať, ak vôbec.
+    - Nakoniec sme odovzdali pole funkcií na volanie.
 
 1. Posledný krok, aktualizujme hlavný kód:
 
@@ -855,9 +855,9 @@ client.connectToServer(transport);
         print("TOOLS result: ", result.content)
     ```
 
-    Toto bol posledný krok, v kóde vyššie:
+    Hotovo, v kóde vyššie:
 
-    - Voláme MCP nástroj cez `call_tool` pomocou funkcie, ktorú LLM vyhodnotil ako potrebné zavolať na základe promptu.
+    - Voláme MCP nástroj cez `call_tool` pomocou funkcie, ktorú LLM vyhodnotil ako potrebnú na základe promptu.
     - Vytlačíme výsledok volania nástroja na MCP server.
 
 ### .NET
@@ -903,7 +903,7 @@ client.connectToServer(transport);
     - Vytvorili objekt možností so špecifikáciou modelu a nástrojov.
     - Vykonali požiadavku na LLM.
 
-1. Posledný krok, pozrime sa, či LLM navrhuje zavolať nejakú funkciu:
+1. Posledný krok, pozrime sa, či LLM navrhuje volať nejakú funkciu:
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -1084,7 +1084,7 @@ V predchádzajúcom kóde sme:
   - Volanie príslušných MCP nástrojov na základe rozhodnutia LLM
   - Riadenie konverzačného toku medzi LLM a MCP serverom
 - Metóda `bot.chat()` vracia odpovede v prirodzenom jazyku, ktoré môžu obsahovať výsledky vykonania MCP nástrojov
-- Tento prístup poskytuje plynulý používateľský zážitok, kde používatelia nemusia vedieť o podkladovej implementácii MCP
+- Tento prístup poskytuje plynulý používateľský zážitok, kde používatelia nemusia vedieť o pozadí MCP implementácie
 
 Kompletný príklad kódu:
 
@@ -1139,7 +1139,7 @@ Skvelé, podarilo sa vám to!
 
 ## Zadanie
 
-Použite kód z cvičenia a rozšírte server o ďalšie nástroje. Potom vytvorte klienta s LLM, ako v cvičení, a otestujte ho s rôznymi promptmi, aby ste sa uistili, že všetky nástroje servera sa volajú dynamicky. Tento spôsob vytvárania klienta znamená, že koncový používateľ bude mať skvelý zážitok, pretože môže používať prompty namiesto presných príkazov klienta a nebude si musieť uvedomovať, že sa volá MCP server.
+Použite kód z cvičenia a rozšírte server o ďalšie nástroje. Potom vytvorte klienta s LLM, ako v cvičení, a otestujte ho s rôznymi promptmi, aby ste sa uistili, že všetky nástroje servera sa volajú dynamicky. Tento spôsob vytvárania klienta zabezpečí, že koncový používateľ bude mať skvelý zážitok, pretože môže používať prompty namiesto presných príkazov klienta a nebude si musieť uvedomovať, že sa volá MCP server.
 
 ## Riešenie
 
@@ -1147,7 +1147,7 @@ Použite kód z cvičenia a rozšírte server o ďalšie nástroje. Potom vytvor
 
 ## Kľúčové poznatky
 
-- Pridanie LLM do klienta poskytuje lepší spôsob, ako môžu používatelia komunikovať s MCP servermi.
+- Pridanie LLM do klienta poskytuje lepší spôsob, ako môžu používatelia komunikovať so servermi MCP.
 - Je potrebné konvertovať odpoveď MCP servera do formátu, ktorému LLM rozumie.
 
 ## Ukážky

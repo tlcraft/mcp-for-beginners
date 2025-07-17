@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T10:31:58+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T19:15:42+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "hu"
 }
 -->
 # SSE Szerver
 
-Az SSE (Server Sent Events) egy szabvány a szerver-kliens közötti adatfolyamra, amely lehetővé teszi, hogy a szerverek valós idejű frissítéseket küldjenek a klienseknek HTTP-n keresztül. Ez különösen hasznos olyan alkalmazásoknál, amelyek élő frissítéseket igényelnek, például csevegőalkalmazások, értesítések vagy valós idejű adatfolyamok esetén. Emellett a szerveredet egyszerre több kliens is használhatja, mivel a szerver bárhol, például a felhőben is futhat.
+Az SSE (Server Sent Events) egy szabvány a szerver-kliens közötti adatfolyamra, amely lehetővé teszi, hogy a szerverek valós idejű frissítéseket küldjenek a klienseknek HTTP-n keresztül. Ez különösen hasznos olyan alkalmazásoknál, amelyek élő frissítéseket igényelnek, például csevegőalkalmazások, értesítések vagy valós idejű adatfolyamok esetén. Emellett a szerveredet egyszerre több kliens is használhatja, mivel a szerver bárhol, például a felhőben is futtatható.
 
 ## Áttekintés
 
@@ -28,7 +28,7 @@ A lecke végére képes leszel:
 Az SSE az egyik támogatott adatátviteli típus. Az előző leckékben már láttad az elsőt, a stdio-t. A különbség a következő:
 
 - Az SSE esetén két dolgot kell kezelned: a kapcsolatot és az üzeneteket.
-- Mivel ez egy szerver, ami bárhol futhat, ezt tükröznie kell annak, ahogyan az Inspectorral és a Visual Studio Code-dal dolgozol. Ez azt jelenti, hogy nem a szerver indítását mutatod meg, hanem azt az végpontot, ahol a kapcsolat létrejöhet. Lásd az alábbi példakódot:
+- Mivel ez egy szerver, ami bárhol élhet, ezt tükröznie kell annak, ahogyan az Inspectorral és a Visual Studio Code-dal dolgozol. Ez azt jelenti, hogy nem azt mutatjuk meg, hogyan indítsd el a szervert, hanem azt az végpontot adod meg, ahol a kapcsolat létrejöhet. Lásd az alábbi példakódot:
 
 ### TypeScript
 
@@ -56,7 +56,7 @@ app.post("/messages", async (req: Request, res: Response) => {
 A fenti kódban:
 
 - A `/sse` útvonal van beállítva. Amikor erre az útvonalra érkezik kérés, létrejön egy új transport példány, és a szerver ezen a transporton *kapcsolódik*.
-- A `/messages` útvonal kezeli a bejövő üzeneteket.
+- A `/messages` az az útvonal, amely kezeli a bejövő üzeneteket.
 
 ### Python
 
@@ -81,7 +81,7 @@ A fenti kódban:
 
 - Létrehozunk egy ASGI szerver példányt (konkrétan Starlette-et használva), és felcsatoljuk az alapértelmezett `/` útvonalat.
 
-  A háttérben a `/sse` és `/messages` útvonalak kezelik a kapcsolatokat és az üzeneteket. A többi funkció, például eszközök hozzáadása, ugyanúgy működik, mint a stdio szervereknél.
+  A háttérben a `/sse` és a `/messages` útvonalak vannak beállítva, hogy kezeljék a kapcsolatokat és az üzeneteket. A többi funkció, például eszközök hozzáadása, ugyanúgy működik, mint a stdio szervereknél.
 
 ### .NET    
 
@@ -102,20 +102,21 @@ A fenti kódban:
     Két metódus segít abban, hogy egy web szerverből SSE-t támogató web szervert készítsünk:
 
     - `AddMcpServer`, ez a metódus hozzáadja a képességeket.
-    - `MapMcp`, ez hozzáadja az olyan útvonalakat, mint a `/SSE` és `/messages`.
+    - `MapMcp`, ez hozzáadja az olyan útvonalakat, mint a `/SSE` és a `/messages`.
+```
 
-Most, hogy már többet tudunk az SSE-ről, építsünk egy SSE szervert.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Gyakorlat: SSE szerver létrehozása
+## Exercise: Creating an SSE Server
 
-A szerver létrehozásakor két dolgot kell szem előtt tartanunk:
+To create our server, we need to keep two things in mind:
 
-- Web szervert kell használnunk, hogy elérhetővé tegyük a kapcsolat és az üzenetek végpontjait.
-- A szervert úgy építsük fel, ahogy azt stdio használatakor tettük, eszközökkel, erőforrásokkal és promptokkal.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Szerver példány létrehozása
+### -1- Create a server instance
 
-A szerver létrehozásához ugyanazokat a típusokat használjuk, mint stdio esetén, de a transport típusa SSE kell legyen.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-A fenti kódban:
+In the preceding code we've:
 
-- Létrehoztunk egy szerver példányt.
-- Definiáltunk egy appot az express web keretrendszerrel.
-- Létrehoztunk egy transports változót, amiben a bejövő kapcsolatokat tároljuk.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-A fenti kódban:
+In the preceding code we've:
 
-- Importáltuk a szükséges könyvtárakat, köztük a Starlette-et (egy ASGI keretrendszer).
-- Létrehoztunk egy MCP szerver példányt `mcp` néven.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-Eddig:
+At this point, we've:
 
-- Létrehoztunk egy web appot.
-- Hozzáadtuk az MCP funkciók támogatását az `AddMcpServer` segítségével.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Most adjuk hozzá a szükséges útvonalakat.
+Let's add the needed routes next.
 
-### -2- Útvonalak hozzáadása
+### -2- Add routes
 
-Adjunk hozzá útvonalakat, amelyek kezelik a kapcsolatot és a bejövő üzeneteket:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-A fenti kódban definiáltuk:
+In the preceding code we've defined:
 
-- Az `/sse` útvonalat, amely létrehoz egy SSE típusú transportot, és meghívja az MCP szerveren a `connect` metódust.
-- A `/messages` útvonalat, amely kezeli a bejövő üzeneteket.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-A fenti kódban:
+In the preceding code we've:
 
-- Létrehoztunk egy ASGI app példányt a Starlette keretrendszerrel. Ennek részeként átadtuk az `mcp.sse_app()`-ot az útvonalak listájának, ami az `/sse` és `/messages` útvonalakat csatolja az apphoz.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Hozzáadtunk egy sort a végén: `add.MapMcp()`, ami azt jelenti, hogy most már elérhetőek a `/SSE` és `/messages` útvonalak.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Most adjunk képességeket a szerverhez.
+Let's add capabilties to the server next.
 
-### -3- Szerver képességek hozzáadása
+### -3- Adding server capabilities
 
-Most, hogy minden SSE specifikus rész megvan, adjunk hozzá szerver képességeket, mint eszközök, promptok és erőforrások.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Így adhatsz például hozzá egy eszközt. Ez az eszköz egy "random-joke" nevű eszközt hoz létre, amely egy Chuck Norris API-t hív meg, és JSON választ ad vissza.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Most a szerverednek van egy eszköze.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -291,7 +292,7 @@ import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-// Create an MCP server
+// MCP szerver létrehozása
 const server = new McpServer({
   name: "example-server",
   version: "1.0.0",
@@ -320,7 +321,7 @@ app.post("/messages", async (req: Request, res: Response) => {
   }
 });
 
-server.tool("random-joke", "A joke returned by the chuck norris api", {}, async () => {
+server.tool("random-joke", "A chuck norris API által visszaadott vicc", {}, async () => {
   const response = await fetch("https://api.chucknorris.io/jokes/random");
   const data = await response.json();
 
@@ -349,10 +350,10 @@ mcp = FastMCP("My App")
 
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """Két szám összeadása"""
     return a + b
 
-# Mount the SSE server to the existing ASGI server
+# Az SSE szerver felcsatolása a meglévő ASGI szerverre
 app = Starlette(
     routes=[
         Mount('/', app=mcp.sse_app()),
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Először hozzunk létre néhány eszközt, ehhez készítsünk egy *Tools.cs* fájlt a következő tartalommal:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -380,10 +381,10 @@ app = Starlette(
       
       }
 
-      [McpServerTool, Description("Add two numbers together.")]
+      [McpServerTool, Description("Két szám összeadása.")]
       public async Task<string> AddNumbers(
-          [Description("The first number")] int a,
-          [Description("The second number")] int b)
+          [Description("Az első szám")] int a,
+          [Description("A második szám")] int b)
       {
           return (a + b).ToString();
       }
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Itt a következőket tettük:
+  Here we've added the following:
 
-  - Létrehoztunk egy `Tools` osztályt az `McpServerToolType` dekorátorral.
-  - Definiáltunk egy `AddNumbers` eszközt, amelyet a `McpServerTool` dekorátorral láttunk el. Paramétereket és implementációt is megadtunk.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Használjuk a most létrehozott `Tools` osztályt:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Hozzáadtunk egy hívást a `WithTools`-hoz, amely megadja, hogy a `Tools` osztály tartalmazza az eszközöket. Ennyi, készen vagyunk.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Szuper, van egy SSE-t használó szerverünk, próbáljuk ki!
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Gyakorlat: SSE szerver hibakeresése Inspectorral
+## Exercise: Debugging an SSE Server with Inspector
 
-Az Inspector egy nagyszerű eszköz, amit az előző leckében már láttunk [Első szerver létrehozása](/03-GettingStarted/01-first-server/README.md). Nézzük meg, használhatjuk-e itt is:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Az inspector futtatása
+### -1- Running the inspector
 
-Az inspector futtatásához először egy SSE szervernek kell futnia, csináljuk meg ezt:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Indítsd el a szervert
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Az inspector futtatásához először egy SSE szervernek kell futnia, csináljuk
     uvicorn server:app
     ```
 
-    Figyeld meg, hogy az `uvicorn` futtatható fájlt használjuk, amely települ, amikor beírtuk a `pip install "mcp[cli]"` parancsot. A `server:app` azt jelenti, hogy a `server.py` fájlt futtatjuk, amelyben van egy `app` nevű Starlette példány.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,30 +447,30 @@ Az inspector futtatásához először egy SSE szervernek kell futnia, csináljuk
     dotnet run
     ```
 
-    Ez elindítja a szervert. A szerverrel való kommunikációhoz új terminálra lesz szükséged.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Indítsd el az inspectort
+1. Run the inspector
 
     > ![NOTE]
-    > Ezt egy külön terminál ablakban futtasd, mint ahol a szerver fut. Ne felejtsd el módosítani az alábbi parancsot, hogy illeszkedjen a szervered URL-jéhez.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Az inspector futtatása minden környezetben ugyanúgy néz ki. Figyeld meg, hogy ahelyett, hogy a szerver elérési útját és indítási parancsát adnánk meg, itt az URL-t adjuk meg, ahol a szerver fut, és megadjuk az `/sse` útvonalat is.
+    Az inspector futtatása minden környezetben ugyanúgy néz ki. Figyeld meg, hogy ahelyett, hogy a szerver elindításához parancsot adnánk meg, most a szerver URL-jét adjuk meg, és megadjuk a `/sse` útvonalat.
 
 ### -2- Az eszköz kipróbálása
 
-Csatlakozz a szerverhez az SSE kiválasztásával a legördülő menüből, és írd be a szervered URL-jét, például http:localhost:4321/sse. Ezután kattints a "Connect" gombra. Ahogy korábban, válaszd ki az eszközök listázását, válassz egy eszközt, és adj meg bemeneti értékeket. Az eredmény valahogy így fog kinézni:
+Csatlakozz a szerverhez az SSE kiválasztásával a legördülő menüből, és írd be a szervered URL-jét, például http:localhost:4321/sse. Ezután kattints a "Connect" gombra. Ahogy korábban, válaszd ki az eszközök listázását, válassz egy eszközt, és adj meg bemeneti értékeket. Az eredmény a következőhöz hasonló lesz:
 
 ![SSE szerver fut az inspectorban](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.hu.png)
 
-Szuper, tudsz dolgozni az inspectorral, nézzük meg, hogyan használhatjuk a Visual Studio Code-ot.
+Remek, sikerült az inspectorral dolgoznod, nézzük meg, hogyan használhatod a Visual Studio Code-ot.
 
 ## Feladat
 
-Próbáld meg továbbfejleszteni a szervered több képességgel. Nézd meg [ezt az oldalt](https://api.chucknorris.io/), hogy például hozzáadj egy eszközt, ami egy API-t hív meg. Te döntöd el, hogyan nézzen ki a szervered. Jó szórakozást :)
+Próbáld meg továbbfejleszteni a szerveredet több funkcióval. Nézd meg [ezt az oldalt](https://api.chucknorris.io/), hogy például hozzáadj egy olyan eszközt, ami egy API-t hív meg. Te döntöd el, hogyan nézzen ki a szerver. Jó szórakozást :)
 
 ## Megoldás
 
@@ -479,9 +480,9 @@ Próbáld meg továbbfejleszteni a szervered több képességgel. Nézd meg [ezt
 
 A fejezet legfontosabb tanulságai:
 
-- Az SSE a második támogatott adatátviteli típus a stdio mellett.
-- Az SSE támogatásához web keretrendszert kell használnod a bejövő kapcsolatok és üzenetek kezelésére.
-- Az SSE szervereket ugyanúgy használhatod Inspectorral és Visual Studio Code-dal, mint a stdio szervereket. Figyeld meg, hogy a stdio és az SSE között van némi különbség: SSE esetén külön kell indítani a szervert, majd az inspector eszközt. Az inspector esetén meg kell adni az URL-t is.
+- Az SSE a második támogatott adatátviteli mód a stdio mellett.
+- Az SSE támogatásához kezelni kell a bejövő kapcsolatokat és üzeneteket egy webes keretrendszer segítségével.
+- Az SSE szervert ugyanúgy használhatod Inspectorral és Visual Studio Code-dal, mint a stdio szervereket. Figyeld meg, hogy a stdio és az SSE között van némi különbség: az SSE esetén külön kell indítani a szervert, majd futtatni az inspector eszközt. Az inspector esetén meg kell adni az URL-t is.
 
 ## Minták
 
@@ -489,7 +490,7 @@ A fejezet legfontosabb tanulságai:
 - [.Net Számológép](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Számológép](../samples/javascript/README.md)
 - [TypeScript Számológép](../samples/typescript/README.md)
-- [Python Számológép](../../../../03-GettingStarted/samples/python)
+- [Python Számológép](../../../../03-GettingStarted/samples/python) 
 
 ## További források
 
@@ -500,4 +501,4 @@ A fejezet legfontosabb tanulságai:
 - Következő: [HTTP Streaming MCP-vel (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

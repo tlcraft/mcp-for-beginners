@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T01:31:58+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T18:35:07+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "tr"
 }
@@ -27,7 +27,7 @@ Bu dersin sonunda şunları yapabileceksiniz:
 
 Almamız gereken yaklaşımı anlamaya çalışalım. Bir LLM eklemek basit görünüyor, ama gerçekten bunu yapacak mıyız?
 
-İstemci sunucuyla şöyle etkileşim kuracak:
+İstemci sunucuyla şu şekilde etkileşim kuracak:
 
 1. Sunucu ile bağlantı kurmak.
 
@@ -37,7 +37,7 @@ Almamız gereken yaklaşımı anlamaya çalışalım. Bir LLM eklemek basit gör
 
 1. Kullanıcı istemini, istemcinin listelediği araçlarla birlikte LLM’ye ileterek işlemek.
 
-Harika, şimdi yüksek seviyede nasıl yapacağımızı anladık, aşağıdaki alıştırmada bunu deneyelim.
+Harika, şimdi bunu yüksek seviyede nasıl yapabileceğimizi anladık, aşağıdaki alıştırmada bunu deneyelim.
 
 ## Alıştırma: LLM ile bir istemci oluşturma
 
@@ -49,7 +49,7 @@ GitHub tokenı oluşturmak basit bir işlemdir. İşte nasıl yapacağınız:
 
 - GitHub Ayarlarına gidin – Sağ üst köşedeki profil resminize tıklayın ve Ayarlar’ı seçin.
 - Geliştirici Ayarlarına gidin – Aşağı kaydırın ve Geliştirici Ayarları’na tıklayın.
-- Kişisel Erişim Tokenlarını seçin – Kişisel erişim tokenlarına tıklayın ve ardından Yeni token oluştur’a tıklayın.
+- Kişisel Erişim Tokenlarını seçin – Kişisel erişim tokenlarına tıklayın ve ardından Yeni token oluşturun.
 - Tokenınızı yapılandırın – Referans için bir not ekleyin, bir son kullanma tarihi belirleyin ve gerekli kapsamları (izinleri) seçin.
 - Tokenı oluşturun ve kopyalayın – Token oluştur’a tıklayın ve hemen kopyalayın, çünkü tekrar göremeyeceksiniz.
 
@@ -248,7 +248,7 @@ Harika, bir sonraki adım olarak sunucudaki yetenekleri listeleyelim.
 
 ### -2- Sunucu yeteneklerini listeleme
 
-Şimdi sunucuya bağlanacağız ve yeteneklerini soracağız:
+Şimdi sunucuya bağlanıp yeteneklerini isteyeceğiz:
 
 ### TypeScript
 
@@ -378,7 +378,7 @@ Sunucu yeteneklerini listeledikten sonra, bunları LLM’nin anlayacağı bir fo
 
     Yukarıdaki kod, MCP Sunucusundan gelen yanıtı LLM’nin anlayabileceği bir araç tanımı formatına dönüştürür.
 
-1. Sonra, `run` metodunu sunucu yeteneklerini listeleyecek şekilde güncelleyelim:
+1. Sonra `run` metodunu sunucu yeteneklerini listeleyecek şekilde güncelleyelim:
 
     ```typescript
     async run() {
@@ -420,7 +420,7 @@ Sunucu yeteneklerini listeledikten sonra, bunları LLM’nin anlayacağı bir fo
 
     Yukarıdaki `convert_to_llm_tools` fonksiyonunda, MCP araç yanıtını LLM’nin anlayabileceği bir formata dönüştürüyoruz.
 
-1. Sonra, istemci kodumuzu bu fonksiyonu kullanacak şekilde güncelleyelim:
+1. Sonra istemci kodumuzu bu fonksiyonu kullanacak şekilde güncelleyelim:
 
     ```python
     for tool in tools.tools:
@@ -459,9 +459,9 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 Yukarıdaki kodda:
 
 - İsim, açıklama ve giriş şemasını alan `ConvertFrom` fonksiyonu oluşturduk.
-- Bu fonksiyon, LLM’nin anlayabileceği bir `FunctionDefinition` oluşturuyor ve bunu `ChatCompletionsDefinition`'a geçiriyor.
+- Bu fonksiyon, LLM’nin anlayabileceği bir `FunctionDefinition` oluşturuyor ve bunu `ChatCompletionsDefinition`’a geçiriyor.
 
-1. Mevcut kodu bu fonksiyonu kullanacak şekilde nasıl güncelleyebileceğimize bakalım:
+1. Mevcut kodu bu fonksiyondan faydalanacak şekilde nasıl güncelleyebileceğimize bakalım:
 
     ```csharp
     async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -493,7 +493,7 @@ Yukarıdaki kodda:
 
     Yukarıdaki kodda:
 
-    - MCP araç yanıtını LLM aracına dönüştürmek için fonksiyonu güncelledik. Eklediğimiz kodu vurgulayalım:
+    - MCP araç yanıtını LLM aracına dönüştüren fonksiyonu güncelledik. Eklediğimiz kodu vurgulayalım:
 
         ```csharp
         JsonElement propertiesElement;
@@ -504,7 +504,7 @@ Yukarıdaki kodda:
         toolDefinitions.Add(def);
         ```
 
-        Giriş şeması araç yanıtının bir parçası ancak "properties" özelliği altında, bu yüzden çıkarmamız gerekiyor. Ayrıca, `ConvertFrom` fonksiyonunu araç detaylarıyla çağırıyoruz. Artık ağır işleri yaptık, kullanıcı istemini işlerken çağrının nasıl birleştiğine bakalım.
+        Giriş şeması araç yanıtının bir parçası ancak "properties" özelliğinde, bu yüzden çıkarmamız gerekiyor. Ayrıca, `ConvertFrom` fonksiyonunu araç detaylarıyla çağırıyoruz. Ağır işi yaptık, şimdi kullanıcı istemini işlerken çağrının nasıl birleştiğine bakalım.
 
 ### Java
 
@@ -524,11 +524,11 @@ Bot bot = AiServices.builder(Bot.class)
 Yukarıdaki kodda:
 
 - Doğal dil etkileşimleri için basit bir `Bot` arayüzü tanımladık
-- LangChain4j’nin `AiServices` özelliğini kullanarak LLM’yi MCP araç sağlayıcısıyla otomatik olarak bağladık
-- Framework, araç şeması dönüşümü ve fonksiyon çağrısını otomatik olarak arka planda yönetiyor
+- LangChain4j’nin `AiServices` özelliğini kullanarak LLM’yi MCP araç sağlayıcı ile otomatik olarak bağladık
+- Framework, araç şeması dönüşümü ve fonksiyon çağrısını arka planda otomatik olarak yönetiyor
 - Bu yaklaşım manuel araç dönüşümünü ortadan kaldırıyor - LangChain4j MCP araçlarını LLM uyumlu formata dönüştürmenin tüm karmaşıklığını hallediyor
 
-Harika, şimdi kullanıcı isteklerini işlemeye hazırız, bunu ele alalım.
+Harika, şimdi kullanıcı isteklerini işlemeye hazırız, bunu da ele alalım.
 
 ### -4- Kullanıcı istemi isteğini işleme
 
@@ -581,7 +581,7 @@ Bu kod bölümünde kullanıcı isteklerini işleyeceğiz.
         }
         ```
 
-    - LLM bir aracı çağırması gerektiğini belirtirse, aracı çağırır:
+    - LLM çağrılması gerektiğini belirtirse aracı çağırır:
 
         ```typescript
         // 2. Call the server's tool 
@@ -632,7 +632,7 @@ Bu kod bölümünde kullanıcı isteklerini işleyeceğiz.
     });
     ```
 
-Harika, kodun tamamını listeleyelim:
+Harika, kodun tamamı şöyle:
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -784,7 +784,7 @@ client.connectToServer(transport);
     import json
     ```
 
-1. Sonra, LLM’yi çağıracak fonksiyonu ekleyelim:
+1. Sonra LLM’yi çağıracak fonksiyonu ekleyelim:
 
     ```python
     # llm
@@ -838,7 +838,7 @@ client.connectToServer(transport);
 
     - MCP sunucusunda bulduğumuz ve dönüştürdüğümüz fonksiyonları LLM’ye geçtik.
     - Ardından LLM’yi bu fonksiyonlarla çağırdık.
-    - Sonuçları inceleyip hangi fonksiyonların çağrılması gerektiğine baktık.
+    - Sonucu inceleyip hangi fonksiyonların çağrılması gerektiğine baktık.
     - Son olarak çağrılacak fonksiyonların bir dizisini geçtik.
 
 1. Son adım olarak ana kodumuzu güncelleyelim:
@@ -857,7 +857,7 @@ client.connectToServer(transport);
 
     İşte son adım, yukarıdaki kodda:
 
-    - LLM’nin çağırmamız gerektiğini düşündüğü fonksiyonu kullanarak MCP aracını `call_tool` ile çağırıyoruz.
+    - LLM’nin çağrılması gerektiğini düşündüğü fonksiyona göre `call_tool` ile MCP aracını çağırıyoruz.
     - Araç çağrısının sonucunu MCP Sunucusuna yazdırıyoruz.
 
 ### .NET
@@ -899,11 +899,11 @@ client.connectToServer(transport);
     Yukarıdaki kodda:
 
     - MCP sunucusundan araçları aldık, `var tools = await GetMcpTools()`.
-    - Bir kullanıcı istemi tanımladık `userMessage`.
-    - Model ve araçları belirten bir seçenekler nesnesi oluşturduk.
-    - LLM’ye bir istek yaptık.
+    - Bir kullanıcı istemi tanımladık, `userMessage`.
+    - Model ve araçları belirten bir seçenek nesnesi oluşturduk.
+    - LLM’ye istek yaptık.
 
-1. Son bir adım, LLM’nin bir fonksiyon çağırmamız gerektiğini düşünüp düşünmediğine bakalım:
+1. Son olarak, LLM’nin bir fonksiyon çağrısı yapmamız gerektiğini düşünüp düşünmediğine bakalım:
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -928,10 +928,10 @@ client.connectToServer(transport);
 
     Yukarıdaki kodda:
 
-    - Fonksiyon çağrıları listesini döngüye aldık.
+    - Fonksiyon çağrıları listesini döngüyle gezdik.
     - Her araç çağrısı için isim ve argümanları ayrıştırdık ve MCP istemcisini kullanarak MCP sunucusundaki aracı çağırdık. Sonuçları yazdırdık.
 
-Kodun tamamı:
+Kodun tamamı şöyle:
 
 ```csharp
 using Azure;
@@ -1079,11 +1079,11 @@ try {
 Yukarıdaki kodda:
 
 - MCP sunucu araçlarıyla etkileşim için basit doğal dil istemleri kullandık
-- LangChain4j framework otomatik olarak:
-  - Kullanıcı istemlerini gerektiğinde araç çağrılarına dönüştürür
-  - LLM’nin kararına göre uygun MCP araçlarını çağırır
-  - LLM ile MCP sunucusu arasındaki konuşma akışını yönetir
-- `bot.chat()` metodu, MCP araçlarının çalıştırılma sonuçlarını içerebilen doğal dil yanıtları döner
+- LangChain4j framework’ü otomatik olarak şunları yapıyor:
+  - Kullanıcı istemlerini gerektiğinde araç çağrılarına dönüştürmek
+  - LLM’nin kararına göre uygun MCP araçlarını çağırmak
+  - LLM ile MCP sunucusu arasındaki konuşma akışını yönetmek
+- `bot.chat()` metodu, MCP araçlarının çalıştırılmasından elde edilen sonuçları içerebilen doğal dil yanıtları döner
 - Bu yaklaşım, kullanıcıların altta yatan MCP uygulamasını bilmeden sorunsuz bir deneyim yaşamasını sağlar
 
 Tam kod örneği:
@@ -1165,4 +1165,4 @@ Alıştırmadaki kodu alın ve sunucuyu birkaç araçla genişletin. Sonra alı�
 - Sonraki: [Visual Studio Code kullanarak bir sunucu tüketmek](../04-vscode/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

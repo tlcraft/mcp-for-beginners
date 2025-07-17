@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-16T22:40:40+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T18:32:47+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "pl"
 }
 -->
 # Tworzenie klienta z LLM
 
-Do tej pory widziałeś, jak stworzyć serwer i klienta. Klient mógł wywołać serwer w sposób jawny, aby wyświetlić jego narzędzia, zasoby i prompt’y. Jednak to nie jest zbyt praktyczne podejście. Twój użytkownik żyje w erze agentów i oczekuje, że będzie korzystał z promptów i komunikował się z LLM, aby to zrobić. Dla użytkownika nie ma znaczenia, czy używasz MCP do przechowywania swoich możliwości, ale oczekuje, że będzie mógł korzystać z naturalnego języka do interakcji. Jak więc to rozwiązać? Rozwiązaniem jest dodanie LLM do klienta.
+Do tej pory widziałeś, jak stworzyć serwer i klienta. Klient mógł wywołać serwer bezpośrednio, aby wyświetlić jego narzędzia, zasoby i prompt’y. Jednak to nie jest zbyt praktyczne podejście. Twój użytkownik żyje w erze agentów i oczekuje, że będzie korzystał z promptów i komunikował się z LLM, aby to zrobić. Dla użytkownika nie ma znaczenia, czy używasz MCP do przechowywania swoich możliwości, ale oczekuje, że będzie mógł korzystać z naturalnego języka do interakcji. Jak więc to rozwiązać? Rozwiązaniem jest dodanie LLM do klienta.
 
 ## Przegląd
 
@@ -51,7 +51,7 @@ Utworzenie tokena GitHub to prosty proces. Oto jak to zrobić:
 - Przejdź do Developer Settings – Przewiń w dół i kliknij Developer Settings.
 - Wybierz Personal Access Tokens – Kliknij Personal access tokens, a następnie Generate new token.
 - Skonfiguruj swój token – Dodaj notatkę dla odniesienia, ustaw datę wygaśnięcia i wybierz potrzebne zakresy (uprawnienia).
-- Wygeneruj i skopiuj token – Kliknij Generate token i upewnij się, że od razu go skopiujesz, ponieważ później nie będzie już widoczny.
+- Wygeneruj i skopiuj token – Kliknij Generate token i natychmiast go skopiuj, ponieważ nie będziesz mógł go zobaczyć ponownie.
 
 ### -1- Połącz się z serwerem
 
@@ -248,7 +248,7 @@ W powyższym kodzie:
 
 ### -2- Wylistuj możliwości serwera
 
-Teraz połączymy się z serwerem i zapytamy o jego możliwości:
+Teraz połączymy się z serwerem i poprosimy o jego możliwości:
 
 ### TypeScript
 
@@ -349,7 +349,7 @@ Kolejnym krokiem po wylistowaniu możliwości serwera jest konwersja ich do form
 
 ### TypeScript
 
-1. Dodaj poniższy kod, aby przekonwertować odpowiedź z serwera MCP na format narzędzia, które LLM może użyć:
+1. Dodaj poniższy kod, aby przekonwertować odpowiedź z serwera MCP na format narzędzia, którego może użyć LLM:
 
     ```typescript
     openAiToolAdapter(tool: {
@@ -376,7 +376,7 @@ Kolejnym krokiem po wylistowaniu możliwości serwera jest konwersja ich do form
 
     ```
 
-    Powyższy kod pobiera odpowiedź z serwera MCP i konwertuje ją na definicję narzędzia w formacie zrozumiałym dla LLM.
+    Powyższy kod pobiera odpowiedź z serwera MCP i konwertuje ją na definicję narzędzia zrozumiałą dla LLM.
 
 1. Następnie zaktualizuj metodę `run`, aby wylistować możliwości serwera:
 
@@ -420,7 +420,7 @@ Kolejnym krokiem po wylistowaniu możliwości serwera jest konwersja ich do form
 
     W funkcji `convert_to_llm_tools` bierzemy odpowiedź narzędzia MCP i konwertujemy ją do formatu zrozumiałego dla LLM.
 
-1. Następnie zaktualizujmy kod klienta, aby wykorzystać tę funkcję w ten sposób:
+1. Następnie zaktualizujmy kod klienta, aby korzystał z tej funkcji w ten sposób:
 
     ```python
     for tool in tools.tools:
@@ -504,7 +504,7 @@ W powyższym kodzie:
         toolDefinitions.Add(def);
         ```
 
-        Schemat wejściowy jest częścią odpowiedzi narzędzia, ale w atrybucie "properties", więc musimy go wyodrębnić. Ponadto teraz wywołujemy `ConvertFrom` z detalami narzędzia. Po wykonaniu tej ciężkiej pracy zobaczmy, jak wywołanie wygląda podczas obsługi promptu użytkownika.
+        Schemat wejściowy jest częścią odpowiedzi narzędzia, ale znajduje się w atrybucie "properties", więc musimy go wyodrębnić. Ponadto teraz wywołujemy `ConvertFrom` z detalami narzędzia. Po wykonaniu tej ciężkiej pracy zobaczmy, jak to wywołanie działa, gdy obsługujemy prompt użytkownika.
 
 ### Java
 
@@ -536,7 +536,7 @@ W tej części kodu zajmiemy się obsługą zapytań użytkownika.
 
 ### TypeScript
 
-1. Dodaj metodę, która będzie używana do wywoływania naszego LLM:
+1. Dodaj metodę, która będzie wywoływać nasze LLM:
 
     ```typescript
     async callTools(
@@ -596,7 +596,7 @@ W tej części kodu zajmiemy się obsługą zapytań użytkownika.
         // TODO  
         ```
 
-1. Zaktualizuj metodę `run`, aby uwzględnić wywołania LLM i wywołanie `callTools`:
+1. Zaktualizuj metodę `run`, aby uwzględniała wywołania LLM i `callTools`:
 
     ```typescript
 
@@ -1135,11 +1135,11 @@ public class LangChain4jClient {
 }
 ```
 
-Świetnie, udało się!
+Świetnie, udało Ci się!
 
 ## Zadanie
 
-Weź kod z ćwiczenia i rozbuduj serwer o więcej narzędzi. Następnie stwórz klienta z LLM, tak jak w ćwiczeniu, i przetestuj go różnymi promptami, aby upewnić się, że wszystkie narzędzia serwera są wywoływane dynamicznie. Ten sposób budowania klienta zapewnia użytkownikowi świetne doświadczenie, ponieważ może korzystać z promptów zamiast dokładnych poleceń klienta i nie musi wiedzieć o wywoływaniu serwera MCP.
+Weź kod z ćwiczenia i rozbuduj serwer o więcej narzędzi. Następnie stwórz klienta z LLM, tak jak w ćwiczeniu, i przetestuj go z różnymi promptami, aby upewnić się, że wszystkie narzędzia serwera są wywoływane dynamicznie. Ten sposób budowania klienta zapewnia użytkownikowi świetne doświadczenie, ponieważ może korzystać z promptów zamiast dokładnych poleceń klienta i nie musi wiedzieć o wywoływaniu serwera MCP.
 
 ## Rozwiązanie
 
@@ -1162,7 +1162,7 @@ Weź kod z ćwiczenia i rozbuduj serwer o więcej narzędzi. Następnie stwórz 
 
 ## Co dalej
 
-- Następny temat: [Korzystanie z serwera za pomocą Visual Studio Code](../04-vscode/README.md)
+- Następny krok: [Korzystanie z serwera za pomocą Visual Studio Code](../04-vscode/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

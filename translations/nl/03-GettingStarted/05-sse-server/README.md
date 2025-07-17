@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T07:14:54+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T18:56:37+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "nl"
 }
@@ -13,15 +13,15 @@ SSE (Server Sent Events) is een standaard voor server-naar-client streaming, waa
 
 ## Overzicht
 
-Deze les behandelt hoe je SSE-servers bouwt en gebruikt.
+Deze les behandelt hoe je SSE Servers bouwt en gebruikt.
 
 ## Leerdoelen
 
 Aan het einde van deze les kun je:
 
-- Een SSE-server bouwen.
-- Een SSE-server debuggen met de Inspector.
-- Een SSE-server gebruiken met Visual Studio Code.
+- Een SSE Server bouwen.
+- Een SSE Server debuggen met behulp van de Inspector.
+- Een SSE Server gebruiken met Visual Studio Code.
 
 ## SSE, hoe het werkt
 
@@ -79,9 +79,9 @@ app = Starlette(
 
 In bovenstaande code:
 
-- Maken we een instantie van een ASGI-server (specifiek met Starlette) en mounten we de standaardroute `/`.
+- Maken we een instantie van een ASGI-server aan (specifiek met Starlette) en mounten de standaardroute `/`
 
-  Wat er achter de schermen gebeurt, is dat de routes `/sse` en `/messages` worden ingesteld om respectievelijk verbindingen en berichten af te handelen. De rest van de app, zoals het toevoegen van functies zoals tools, werkt zoals bij stdio-servers.
+  Wat achter de schermen gebeurt, is dat de routes `/sse` en `/messages` worden ingesteld om respectievelijk verbindingen en berichten af te handelen. De rest van de app, zoals het toevoegen van functies zoals tools, werkt hetzelfde als bij stdio-servers.
 
 ### .NET    
 
@@ -99,23 +99,24 @@ In bovenstaande code:
     app.MapMcp();
     ```
 
-    Er zijn twee methoden die ons helpen van een webserver naar een webserver met SSE-ondersteuning te gaan, namelijk:
+    Er zijn twee methoden die ons helpen om van een webserver een webserver te maken die SSE ondersteunt, namelijk:
 
     - `AddMcpServer`, deze methode voegt functionaliteiten toe.
     - `MapMcp`, deze voegt routes toe zoals `/SSE` en `/messages`.
+```
 
-Nu we iets meer weten over SSE, laten we een SSE-server bouwen.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Oefening: Een SSE-server maken
+## Exercise: Creating an SSE Server
 
-Om onze server te maken, moeten we twee dingen in gedachten houden:
+To create our server, we need to keep two things in mind:
 
-- We moeten een webserver gebruiken om eindpunten voor verbinding en berichten bloot te stellen.
-- We bouwen onze server zoals we normaal doen met tools, resources en prompts, zoals we deden bij stdio.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Maak een serverinstantie aan
+### -1- Create a server instance
 
-Om onze server te maken, gebruiken we dezelfde types als bij stdio. Voor het transport kiezen we echter SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-In bovenstaande code hebben we:
+In the preceding code we've:
 
-- Een serverinstantie aangemaakt.
-- Een app gedefinieerd met het webframework express.
-- Een transports-variabele gemaakt om binnenkomende verbindingen op te slaan.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-In bovenstaande code hebben we:
+In the preceding code we've:
 
-- De benodigde libraries geïmporteerd, waaronder Starlette (een ASGI-framework).
-- Een MCP-serverinstantie `mcp` aangemaakt.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-Op dit punt hebben we:
+At this point, we've:
 
-- Een webapp gemaakt.
-- Ondersteuning voor MCP-functies toegevoegd via `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Laten we nu de benodigde routes toevoegen.
+Let's add the needed routes next.
 
-### -2- Routes toevoegen
+### -2- Add routes
 
-Laten we routes toevoegen die de verbinding en binnenkomende berichten afhandelen:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-In bovenstaande code hebben we:
+In the preceding code we've defined:
 
-- Een `/sse` route gedefinieerd die een transport van het type SSE aanmaakt en uiteindelijk `connect` aanroept op de MCP-server.
-- Een `/messages` route die binnenkomende berichten afhandelt.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-In bovenstaande code hebben we:
+In the preceding code we've:
 
-- Een ASGI-app instantie gemaakt met het Starlette-framework. Daarbij geven we `mcp.sse_app()` mee aan de lijst met routes. Dit mount uiteindelijk een `/sse` en `/messages` route op de app-instantie.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-We hebben één regel code toegevoegd aan het einde: `add.MapMcp()`. Dit betekent dat we nu de routes `/SSE` en `/messages` hebben.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Laten we nu functionaliteiten aan de server toevoegen.
+Let's add capabilties to the server next.
 
-### -3- Serverfunctionaliteiten toevoegen
+### -3- Adding server capabilities
 
-Nu we alles SSE-specifiek hebben gedefinieerd, voegen we serverfunctionaliteiten toe zoals tools, prompts en resources.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Hier zie je hoe je bijvoorbeeld een tool kunt toevoegen. Deze specifieke tool maakt een tool genaamd "random-joke" die een Chuck Norris API aanroept en een JSON-response teruggeeft.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Je server heeft nu één tool.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -291,7 +292,7 @@ import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-// Create an MCP server
+// Maak een MCP server aan
 const server = new McpServer({
   name: "example-server",
   version: "1.0.0",
@@ -352,7 +353,7 @@ def add(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
-# Mount the SSE server to the existing ASGI server
+# Mount de SSE server op de bestaande ASGI server
 app = Starlette(
     routes=[
         Mount('/', app=mcp.sse_app()),
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Laten we eerst wat tools maken, hiervoor maken we een bestand *Tools.cs* met de volgende inhoud:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Hier hebben we het volgende toegevoegd:
+  Here we've added the following:
 
-  - Een klasse `Tools` gemaakt met de decorator `McpServerToolType`.
-  - Een tool `AddNumbers` gedefinieerd door de methode te decoreren met `McpServerTool`. We hebben ook parameters en een implementatie toegevoegd.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Laten we de zojuist gemaakte `Tools` klasse gebruiken:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  We hebben een aanroep toegevoegd aan `WithTools` die `Tools` specificeert als de klasse met de tools. Dat is alles, we zijn klaar.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Geweldig, we hebben een server die SSE gebruikt, laten we deze nu uitproberen.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Oefening: Een SSE-server debuggen met Inspector
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector is een geweldige tool die we in een eerdere les [Je eerste server maken](/03-GettingStarted/01-first-server/README.md) hebben gezien. Laten we kijken of we de Inspector ook hier kunnen gebruiken:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- De inspector starten
+### -1- Running the inspector
 
-Om de inspector te starten, moet je eerst een SSE-server draaien, dus laten we dat doen:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Start de server
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Om de inspector te starten, moet je eerst een SSE-server draaien, dus laten we d
     uvicorn server:app
     ```
 
-    Let op dat we de executable `uvicorn` gebruiken die wordt geïnstalleerd wanneer we `pip install "mcp[cli]"` typen. `server:app` betekent dat we proberen een bestand `server.py` te draaien met een Starlette-instantie genaamd `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,26 +447,26 @@ Om de inspector te starten, moet je eerst een SSE-server draaien, dus laten we d
     dotnet run
     ```
 
-    Dit zou de server moeten starten. Om ermee te communiceren heb je een nieuw terminalvenster nodig.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Start de inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Voer dit uit in een apart terminalvenster dan waar de server draait. Let ook op dat je het onderstaande commando moet aanpassen aan de URL waar jouw server draait.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Het starten van de inspector ziet er in alle runtimes hetzelfde uit. Let op dat we in plaats van een pad naar onze server en een commando om de server te starten, nu de URL doorgeven waar de server draait en ook de `/sse` route specificeren.
+    Het draaien van de inspector ziet er in alle runtimes hetzelfde uit. Let op dat we in plaats van een pad naar onze server en een commando om de server te starten, nu de URL doorgeven waar de server draait en ook de `/sse` route specificeren.
 
 ### -2- De tool uitproberen
 
-Verbind met de server door in de keuzelijst SSE te selecteren en vul het url-veld in waar je server draait, bijvoorbeeld http:localhost:4321/sse. Klik nu op de knop "Connect". Selecteer zoals eerder een tool, geef invoerwaarden op en je zou een resultaat moeten zien zoals hieronder:
+Verbind de server door in de keuzelijst SSE te selecteren en vul het url-veld in waar je server draait, bijvoorbeeld http:localhost:4321/sse. Klik nu op de knop "Connect". Selecteer vervolgens om tools te tonen, kies een tool en geef invoerwaarden op. Je zou een resultaat moeten zien zoals hieronder:
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.nl.png)
 
-Geweldig, je kunt met de inspector werken, laten we nu kijken hoe je met Visual Studio Code kunt werken.
+Geweldig, je kunt met de inspector werken, laten we nu kijken hoe je met Visual Studio Code aan de slag kunt.
 
 ## Opdracht
 
@@ -481,7 +482,7 @@ De belangrijkste punten uit dit hoofdstuk zijn:
 
 - SSE is het tweede ondersteunde transport naast stdio.
 - Om SSE te ondersteunen, moet je binnenkomende verbindingen en berichten beheren met een webframework.
-- Je kunt zowel Inspector als Visual Studio Code gebruiken om een SSE-server te gebruiken, net als bij stdio-servers. Let op dat het iets anders werkt dan bij stdio. Voor SSE moet je de server apart opstarten en daarna de inspector-tool draaien. Voor de inspector-tool moet je ook de URL specificeren.
+- Je kunt zowel Inspector als Visual Studio Code gebruiken om een SSE server te gebruiken, net als bij stdio servers. Let op dat het iets anders werkt tussen stdio en SSE. Voor SSE moet je de server apart opstarten en daarna je inspector tool draaien. Voor de inspector tool zijn er ook verschillen, omdat je de URL moet specificeren.
 
 ## Voorbeelden
 
@@ -489,7 +490,7 @@ De belangrijkste punten uit dit hoofdstuk zijn:
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python) 
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Extra bronnen
 

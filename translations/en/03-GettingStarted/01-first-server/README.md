@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T09:27:17+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T17:17:00+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "en"
 }
@@ -325,6 +325,9 @@ Add the following complete configuration to your *pom.xml* file:
     </repositories>
 </project>
 ```
+### -2- Create project
+
+Now that you have your SDK installed, let's create a project next:
 
 ### TypeScript
 
@@ -349,6 +352,7 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+###  -3- Create project files 
 ### TypeScript
 
 Create a *package.json* with the following content:
@@ -407,6 +411,8 @@ dotnet add package Microsoft.Extensions.Hosting
 ### Java
 
 For Java Spring Boot projects, the project structure is created automatically.
+
+### -4- Create server code 
 
 ### TypeScript
 
@@ -827,7 +833,7 @@ public static class CalculatorTool
 
 The tools have already been created in the previous step.
 
-### -6 Final code
+### -6- Final code
 
 Let's add the last code we need so the server can start:
 
@@ -1086,15 +1092,15 @@ MCP provides official SDKs for multiple languages:
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Maintained in collaboration with Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - The official TypeScript implementation
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - The official Python implementation
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - The official Kotlin implementation
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - The official Kotlin implementation  
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Maintained in collaboration with Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - The official Rust implementation
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - The official Rust implementation  
 
 ## Key Takeaways
 
 - Setting up an MCP development environment is simple with language-specific SDKs  
 - Building MCP servers involves creating and registering tools with well-defined schemas  
-- Testing and debugging are crucial for reliable MCP implementations
+- Testing and debugging are crucial for reliable MCP implementations  
 
 ## Samples
 
@@ -1102,7 +1108,7 @@ MCP provides official SDKs for multiple languages:
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
 - [JavaScript Calculator](../samples/javascript/README.md)  
 - [TypeScript Calculator](../samples/typescript/README.md)  
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## Assignment
 
@@ -1111,21 +1117,21 @@ Create a simple MCP server with a tool of your choice:
 1. Implement the tool in your preferred language (.NET, Java, Python, or JavaScript).  
 2. Define input parameters and return values.  
 3. Run the inspector tool to verify the server works as expected.  
-4. Test the implementation with different inputs.
+4. Test the implementation with different inputs.  
 
 ## Solution
 
-[Solution](./solution/README.md)
+[Solution](./solution/README.md)  
 
 ## Additional Resources
 
 - [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
 - [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## What's next
 
 Next: [Getting Started with MCP Clients](../02-client/README.md)
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

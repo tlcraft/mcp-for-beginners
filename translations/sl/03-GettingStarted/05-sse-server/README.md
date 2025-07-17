@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T12:26:50+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T19:34:52+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sl"
 }
 -->
 # SSE strežnik
 
-SSE (Server Sent Events) je standard za pretakanje podatkov s strežnika na odjemalca, ki omogoča strežnikom, da prek HTTP-ja pošiljajo posodobitve v realnem času. To je še posebej uporabno za aplikacije, ki potrebujejo sprotne posodobitve, kot so klepetalnice, obvestila ali podatkovni tokovi v realnem času. Poleg tega lahko vaš strežnik uporablja več odjemalcev hkrati, saj teče na strežniku, ki je lahko na primer v oblaku.
+SSE (Server Sent Events) je standard za pretakanje podatkov s strežnika na odjemalca, ki omogoča strežnikom, da prek HTTP-ja pošiljajo posodobitve v realnem času. To je še posebej uporabno za aplikacije, ki potrebujejo žive posodobitve, kot so klepetalnice, obvestila ali podatkovni tokovi v realnem času. Poleg tega lahko vaš strežnik uporablja več odjemalcev hkrati, saj teče na strežniku, ki je lahko na primer v oblaku.
 
 ## Pregled
 
@@ -17,7 +17,7 @@ Ta lekcija prikazuje, kako zgraditi in uporabljati SSE strežnike.
 
 ## Cilji učenja
 
-Na koncu te lekcije boste znali:
+Do konca te lekcije boste znali:
 
 - Zgraditi SSE strežnik.
 - Odpravljati napake SSE strežnika z uporabo Inspectorja.
@@ -28,7 +28,7 @@ Na koncu te lekcije boste znali:
 SSE je ena izmed dveh podprtih vrst transporta. Prvo ste že videli v prejšnjih lekcijah, ko smo uporabljali stdio. Razlika je naslednja:
 
 - SSE zahteva, da upravljate dve stvari; povezavo in sporočila.
-- Ker je to strežnik, ki lahko teče kjerkoli, mora to odražati tudi način dela z orodji, kot sta Inspector in Visual Studio Code. To pomeni, da namesto da bi pokazali, kako zagnati strežnik, pokažete na končno točko, kjer se lahko vzpostavi povezava. Spodaj je primer kode:
+- Ker je to strežnik, ki lahko teče kjerkoli, mora to odražati tudi način dela z orodji, kot sta Inspector in Visual Studio Code. To pomeni, da namesto navodil, kako zagnati strežnik, navedete končno točko, kjer se lahko vzpostavi povezava. Spodaj je primer kode:
 
 ### TypeScript
 
@@ -79,9 +79,9 @@ app = Starlette(
 
 V zgornji kodi:
 
-- Ustvarimo instanco ASGI strežnika (natančneje Starlette) in namestimo privzeto pot `/`.
+- Ustvarimo instanco ASGI strežnika (natančneje Starlette) in namestimo privzeto pot `/`
 
-  Za kulisami so poti `/sse` in `/messages` nastavljene za upravljanje povezav in sporočil. Ostali del aplikacije, kot je dodajanje funkcij in orodij, poteka kot pri stdio strežnikih.
+  Za kulisami so poti `/sse` in `/messages` nastavljene za upravljanje povezav in sporočil. Preostali del aplikacije, kot je dodajanje funkcij in orodij, poteka podobno kot pri stdio strežnikih.
 
 ### .NET    
 
@@ -101,21 +101,22 @@ V zgornji kodi:
 
     Obstajata dve metodi, ki nam pomagata preiti iz spletnega strežnika na spletni strežnik s podporo SSE:
 
-    - `AddMcpServer`, ta metoda doda zmogljivosti.
+    - `AddMcpServer`, ta metoda doda potrebne zmogljivosti.
     - `MapMcp`, ta doda poti, kot so `/SSE` in `/messages`.
+```
 
-Zdaj, ko vemo nekaj več o SSE, pa zgradimo SSE strežnik.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Vaja: Ustvarjanje SSE strežnika
+## Exercise: Creating an SSE Server
 
-Za ustvarjanje strežnika moramo upoštevati dve stvari:
+To create our server, we need to keep two things in mind:
 
-- Potrebujemo spletni strežnik, ki bo izpostavil končne točke za povezavo in sporočila.
-- Strežnik zgradimo kot običajno, z orodji, viri in pozivi, kot smo to počeli pri stdio.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Ustvarjanje instance strežnika
+### -1- Create a server instance
 
-Za ustvarjanje strežnika uporabimo iste tipe kot pri stdio, vendar moramo za transport izbrati SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-V zgornji kodi smo:
+In the preceding code we've:
 
-- Ustvarili instanco strežnika.
-- Definirali aplikacijo z uporabo spletnega ogrodja express.
-- Ustvarili spremenljivko transports, kamor bomo shranjevali dohodne povezave.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-V zgornji kodi smo:
+In the preceding code we've:
 
-- Uvozili potrebne knjižnice, med njimi Starlette (ASGI ogrodje).
-- Ustvarili MCP strežnik `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-Do tega trenutka smo:
+At this point, we've:
 
-- Ustvarili spletno aplikacijo.
-- Dodali podporo za MCP funkcije preko `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Nato dodajmo potrebne poti.
+Let's add the needed routes next.
 
-### -2- Dodajanje poti
+### -2- Add routes
 
-Dodajmo poti, ki upravljajo povezave in dohodna sporočila:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-V zgornji kodi smo definirali:
+In the preceding code we've defined:
 
-- Pot `/sse`, ki ustvari transport tipa SSE in pokliče `connect` na MCP strežniku.
-- Pot `/messages`, ki skrbi za dohodna sporočila.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-V zgornji kodi smo:
+In the preceding code we've:
 
-- Ustvarili instanco ASGI aplikacije z ogrodjem Starlette. Pri tem smo v seznam poti dodali `mcp.sse_app()`, kar namesti poti `/sse` in `/messages` v aplikacijo.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Na koncu smo dodali vrstico `add.MapMcp()`, kar pomeni, da imamo zdaj poti `/SSE` in `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Nato dodajmo strežniške zmogljivosti.
+Let's add capabilties to the server next.
 
-### -3- Dodajanje zmogljivosti strežnika
+### -3- Adding server capabilities
 
-Zdaj, ko imamo vse, kar je specifično za SSE, dodajmo strežniške zmogljivosti, kot so orodja, pozivi in viri.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Tukaj je primer, kako dodati orodje. To orodje ustvari orodje z imenom "random-joke", ki kliče Chuck Norris API in vrne JSON odgovor.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Zdaj ima vaš strežnik eno orodje.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -291,7 +292,7 @@ import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-// Create an MCP server
+// Ustvarimo MCP strežnik
 const server = new McpServer({
   name: "example-server",
   version: "1.0.0",
@@ -352,7 +353,7 @@ def add(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
-# Mount the SSE server to the existing ASGI server
+# Namestitev SSE strežnika na obstoječi ASGI strežnik
 app = Starlette(
     routes=[
         Mount('/', app=mcp.sse_app()),
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Najprej ustvarimo nekaj orodij, za to bomo ustvarili datoteko *Tools.cs* z naslednjo vsebino:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Tukaj smo naredili naslednje:
+  Here we've added the following:
 
-  - Ustvarili razred `Tools` z dekoratorjem `McpServerToolType`.
-  - Definirali orodje `AddNumbers` z dekoratorjem `McpServerTool`. Prav tako smo podali parametre in implementacijo.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Nato uporabimo razred `Tools`, ki smo ga pravkar ustvarili:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Dodali smo klic `WithTools`, ki določa `Tools` kot razred, ki vsebuje orodja. To je vse, pripravljeni smo.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Odlično, imamo strežnik, ki uporablja SSE, poglejmo ga v akciji.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Vaja: Odpravljanje napak SSE strežnika z Inspectorjem
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector je odlično orodje, ki smo ga spoznali v prejšnji lekciji [Creating your first server](/03-GettingStarted/01-first-server/README.md). Preverimo, ali ga lahko uporabimo tudi tukaj:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Zagon Inspectorja
+### -1- Running the inspector
 
-Za zagon Inspectorja morate najprej imeti zagnan SSE strežnik, zato ga najprej zaženimo:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Zaženite strežnik
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Za zagon Inspectorja morate najprej imeti zagnan SSE strežnik, zato ga najprej 
     uvicorn server:app
     ```
 
-    Opazite, da uporabljamo izvršljivo datoteko `uvicorn`, ki se namesti, ko zaženemo `pip install "mcp[cli]"`. Z ukazom `server:app` poskušamo zagnati datoteko `server.py`, ki vsebuje Starlette instanco z imenom `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,30 +447,30 @@ Za zagon Inspectorja morate najprej imeti zagnan SSE strežnik, zato ga najprej 
     dotnet run
     ```
 
-    To bi moralo zagnati strežnik. Za delo z njim potrebujete nov terminal.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Zaženite Inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Zaženite to v ločenem terminalskem oknu, ločeno od tistega, kjer teče strežnik. Prav tako prilagodite spodnji ukaz, da ustreza URL-ju, kjer vaš strežnik teče.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Zagon Inspectorja je enak v vseh okoljih. Opazite, da namesto da bi podali pot do strežnika in ukaz za zagon, podamo URL, kjer strežnik teče, in določimo pot `/sse`.
+    Zagon inspectorja je enak v vseh okoljih. Opazite, da namesto da bi podali pot do strežnika in ukaz za zagon strežnika, podamo URL, kjer strežnik teče, in določimo pot `/sse`.
 
-### -2- Preizkus orodja
+### -2- Preizkušanje orodja
 
-Povežite se s strežnikom tako, da v spustnem seznamu izberete SSE in v polje za URL vpišete naslov, kjer vaš strežnik teče, na primer http:localhost:4321/sse. Nato kliknite gumb "Connect". Kot prej izberite seznam orodij, izberite orodje in vnesite vhodne vrednosti. Rezultat bi moral biti podoben spodnjemu:
+Povežite strežnik tako, da v spustnem seznamu izberete SSE in v polje za URL vnesete naslov, kjer vaš strežnik teče, na primer http:localhost:4321/sse. Nato kliknite gumb "Connect". Kot prej, izberite seznam orodij, izberite orodje in vnesite vhodne vrednosti. Rezultat bi moral biti podoben spodnjemu:
 
-![SSE strežnik, ki teče v inspectorju](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sl.png)
+![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sl.png)
 
-Odlično, lahko delate z Inspectorjem, poglejmo zdaj, kako delati z Visual Studio Code.
+Odlično, uspelo vam je delati z inspectorjem, poglejmo zdaj, kako lahko delate z Visual Studio Code.
 
 ## Naloga
 
-Poskusite razširiti svoj strežnik z več zmogljivostmi. Oglejte si [to stran](https://api.chucknorris.io/), da na primer dodate orodje, ki kliče API. Odločite se, kako naj strežnik izgleda. Zabavajte se :)
+Poskusite razširiti svoj strežnik z več funkcionalnostmi. Oglejte si [to stran](https://api.chucknorris.io/), da na primer dodate orodje, ki kliče API. Vi odločite, kako naj strežnik izgleda. Zabavajte se :)
 
 ## Rešitev
 
@@ -481,7 +482,7 @@ Ključne ugotovitve iz tega poglavja so:
 
 - SSE je drugi podprti transport poleg stdio.
 - Za podporo SSE morate upravljati dohodne povezave in sporočila z uporabo spletnega ogrodja.
-- Za uporabo SSE strežnika lahko uporabite tako Inspector kot Visual Studio Code, podobno kot pri stdio strežnikih. Opazite, da se nekoliko razlikuje način dela med stdio in SSE. Pri SSE morate strežnik zagnati ločeno in nato zagnati Inspector. Pri Inspectorju je tudi razlika, da morate navesti URL.
+- Za uporabo SSE strežnika lahko uporabite tako Inspector kot Visual Studio Code, podobno kot pri stdio strežnikih. Opazite, da se nekoliko razlikuje med stdio in SSE. Pri SSE morate strežnik zagnati ločeno in nato zagnati inspector. Pri inspectorju je tudi razlika, da morate navesti URL.
 
 ## Primeri
 
@@ -500,4 +501,4 @@ Ključne ugotovitve iz tega poglavja so:
 - Naslednje: [HTTP Streaming with MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

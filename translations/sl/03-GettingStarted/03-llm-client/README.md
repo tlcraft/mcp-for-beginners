@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T12:26:01+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T19:34:21+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "sl"
 }
 -->
 # Ustvarjanje odjemalca z LLM
 
-Do zdaj ste videli, kako ustvariti strežnik in odjemalca. Odjemalec je lahko izrecno poklical strežnik, da je naštel njegove orodja, vire in pozive. Vendar to ni najbolj praktičen pristop. Vaš uporabnik živi v dobi agentov in pričakuje, da bo uporabljal pozive ter komuniciral z LLM. Za vašega uporabnika ni pomembno, ali uporabljate MCP za shranjevanje svojih zmogljivosti, pričakuje pa, da bo lahko komuniciral v naravnem jeziku. Kako torej to rešimo? Rešitev je dodajanje LLM v odjemalca.
+Do zdaj ste videli, kako ustvariti strežnik in odjemalca. Odjemalec je lahko izrecno poklical strežnik, da je naštel njegove orodja, vire in pozive. Vendar to ni najbolj praktičen pristop. Vaš uporabnik živi v dobi agentnosti in pričakuje, da bo uporabljal pozive in komuniciral z LLM za to. Za vašega uporabnika ni pomembno, ali uporabljate MCP za shranjevanje svojih zmogljivosti, pričakuje pa, da bo lahko komuniciral v naravnem jeziku. Kako torej to rešimo? Rešitev je dodajanje LLM v odjemalca.
 
 ## Pregled
 
-V tej lekciji se osredotočamo na dodajanje LLM v vaš odjemalec in pokažemo, kako to uporabniku omogoča veliko boljšo izkušnjo.
+V tej lekciji se osredotočamo na dodajanje LLM v vaš odjemalec in prikazujemo, kako to zagotavlja veliko boljšo izkušnjo za vašega uporabnika.
 
 ## Cilji učenja
 
@@ -37,13 +37,13 @@ Tako bo odjemalec komuniciral s strežnikom:
 
 1. Obdeluje uporabniški poziv tako, da ga posreduje LLM skupaj z orodji, ki jih je odjemalec naštel.
 
-Odlično, zdaj ko razumemo, kako to narediti na visoki ravni, poskusimo v spodnji vaji.
+Odlično, zdaj ko razumemo, kako to lahko naredimo na visoki ravni, poskusimo to v spodnji vaji.
 
 ## Vaja: Ustvarjanje odjemalca z LLM
 
 V tej vaji se bomo naučili, kako dodati LLM v naš odjemalec.
 
-## Avtentikacija z GitHub osebni dostopni žeton
+## Avtentikacija z GitHub osebno dostopno kodo
 
 Ustvarjanje GitHub žetona je preprost postopek. Tako ga lahko naredite:
 
@@ -96,7 +96,7 @@ V zgornji kodi smo:
 
 - Uvozili potrebne knjižnice
 - Ustvarili razred z dvema članoma, `client` in `openai`, ki nam pomagata upravljati odjemalca in komunicirati z LLM.
-- Konfigurirali naš LLM primerek, da uporablja GitHub modele tako, da smo nastavili `baseUrl` na inference API.
+- Konfigurirali naš LLM primerek za uporabo GitHub modelov tako, da smo nastavili `baseUrl`, ki kaže na inference API.
 
 ### Python
 
@@ -156,7 +156,7 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 
 ### Java
 
-Najprej morate v datoteko `pom.xml` dodati odvisnosti LangChain4j. Dodajte te odvisnosti za omogočanje integracije MCP in podpore GitHub modelom:
+Najprej morate dodati odvisnosti LangChain4j v vašo datoteko `pom.xml`. Dodajte te odvisnosti za omogočanje integracije MCP in podpore GitHub modelom:
 
 ```xml
 <properties>
@@ -246,9 +246,9 @@ V zgornji kodi smo:
 
 Odlično, za naslednji korak pa naštimo zmogljivosti strežnika.
 
-### -2 Naštejmo zmogljivosti strežnika
+### -2- Naštejmo zmogljivosti strežnika
 
-Zdaj se bomo povezali s strežnikom in povprašali po njegovih zmogljivostih:
+Zdaj se bomo povezali s strežnikom in zahtevali njegove zmogljivosti:
 
 ### TypeScript
 
@@ -272,7 +272,7 @@ async run() {
 V zgornji kodi smo:
 
 - Dodali kodo za povezavo s strežnikom, `connectToServer`.
-- Ustvarili metodo `run`, ki upravlja potek aplikacije. Do zdaj samo navaja orodja, kmalu pa bomo dodali še več.
+- Ustvarili metodo `run`, ki upravlja potek aplikacije. Do zdaj samo našteje orodja, kmalu pa bomo dodali še več.
 
 ### Python
 
@@ -341,7 +341,7 @@ V zgornji kodi smo:
 
 - Ustvarili `McpToolProvider`, ki samodejno odkrije in registrira vsa orodja s MCP strežnika
 - Ponudnik orodij interno upravlja pretvorbo med MCP orodnimi shemami in formatom orodij LangChain4j
-- Ta pristop odpravlja ročno naštetje in pretvorbo orodij
+- Ta pristop odpravlja ročno naštevanje in pretvorbo orodij
 
 ### -3- Pretvorba zmogljivosti strežnika v LLM orodja
 
@@ -398,7 +398,7 @@ Naslednji korak po naštetju zmogljivosti strežnika je njihova pretvorba v form
 
 ### Python
 
-1. Najprej ustvarimo naslednjo funkcijo za pretvorbo
+1. Najprej ustvarimo naslednjo pretvorno funkcijo:
 
     ```python
     def convert_to_llm_tool(tool):
@@ -433,7 +433,7 @@ Naslednji korak po naštetju zmogljivosti strežnika je njihova pretvorba v form
 
 ### .NET
 
-1. Dodajmo kodo za pretvorbo odgovora MCP orodja v nekaj, kar LLM razume
+1. Dodajmo kodo za pretvorbo odgovora MCP orodja v nekaj, kar LLM razume:
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -461,7 +461,7 @@ V zgornji kodi smo:
 - Ustvarili funkcijo `ConvertFrom`, ki sprejme ime, opis in vhodni shematski opis.
 - Določili funkcionalnost, ki ustvari `FunctionDefinition`, ki se posreduje `ChatCompletionsDefinition`. To je nekaj, kar LLM razume.
 
-1. Poglejmo, kako lahko posodobimo obstoječo kodo, da izkoristimo to funkcijo:
+1. Posodobimo obstoječo kodo, da izkoristimo to funkcijo:
 
     ```csharp
     async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -493,7 +493,7 @@ V zgornji kodi smo:
 
     V zgornji kodi smo:
 
-    - Posodobili funkcijo, da pretvori odgovor MCP orodja v LLM orodje. Izpostavimo dodano kodo:
+    - Posodobili funkcijo za pretvorbo odgovora MCP orodja v LLM orodje. Izpostavimo dodano kodo:
 
         ```csharp
         JsonElement propertiesElement;
@@ -525,7 +525,7 @@ V zgornji kodi smo:
 
 - Določili preprost vmesnik `Bot` za interakcije v naravnem jeziku
 - Uporabili LangChain4j `AiServices`, da samodejno povežemo LLM s ponudnikom MCP orodij
-- Okvir samodejno upravlja pretvorbo shem orodij in klic funkcij v ozadju
+- Okvir samodejno upravlja pretvorbo shem orodij in klice funkcij v ozadju
 - Ta pristop odpravlja ročno pretvorbo orodij – LangChain4j poskrbi za vso kompleksnost pretvorbe MCP orodij v format, združljiv z LLM
 
 Odlično, zdaj smo pripravljeni za obdelavo uporabniških zahtev, zato se lotimo tega.
@@ -773,7 +773,7 @@ client.connectToServer(transport);
 
 ### Python
 
-1. Dodajmo nekaj uvozov, potrebnih za klic LLM
+1. Dodajmo nekaj uvozov, potrebnih za klic LLM:
 
     ```python
     # llm
@@ -836,7 +836,7 @@ client.connectToServer(transport);
 
     V zgornji kodi smo:
 
-    - Posredovali naše funkcije, ki smo jih našli na MCP strežniku in pretvorili, LLM.
+    - Posredovali naše funkcije, ki smo jih našli na MCP strežniku in jih pretvorili, LLM.
     - Nato smo poklicali LLM s temi funkcijami.
     - Nato pregledujemo rezultat, da vidimo, katere funkcije bi morali klicati, če sploh.
     - Na koncu posredujemo seznam funkcij za klic.
@@ -857,12 +857,12 @@ client.connectToServer(transport);
 
     To je bil zadnji korak, v zgornji kodi:
 
-    - Kličemo MCP orodje preko `call_tool` z uporabo funkcije, za katero je LLM menil, da jo moramo poklicati glede na naš poziv.
+    - Kličemo MCP orodje preko `call_tool` z uporabo funkcije, za katero je LLM menil, da jo je treba poklicati glede na naš poziv.
     - Izpisujemo rezultat klica orodja na MCP strežnik.
 
 ### .NET
 
-1. Pokažimo kodo za poizvedbo LLM poziva:
+1. Prikažimo kodo za izvedbo LLM poziva:
 
     ```csharp
     var tools = await GetMcpTools();
@@ -929,7 +929,7 @@ client.connectToServer(transport);
     V zgornji kodi smo:
 
     - Zanka skozi seznam klicev funkcij.
-    - Za vsak klic orodja razčlenimo ime in argumente ter pokličemo orodje na MCP strežniku z uporabo MCP odjemalca. Na koncu izpišemo rezultate.
+    - Za vsak klic orodja izvlečemo ime in argumente ter pokličemo orodje na MCP strežniku z uporabo MCP odjemalca. Na koncu izpišemo rezultate.
 
 Tukaj je koda v celoti:
 
@@ -1084,7 +1084,7 @@ V zgornji kodi smo:
   - Klic ustreznih MCP orodij na podlagi odločitve LLM
   - Upravljanje poteka pogovora med LLM in MCP strežnikom
 - Metoda `bot.chat()` vrača odgovore v naravnem jeziku, ki lahko vključujejo rezultate izvajanja MCP orodij
-- Ta pristop omogoča brezhibno uporabniško izkušnjo, kjer uporabniki ne potrebujejo vedeti za podlago MCP implementacije
+- Ta pristop omogoča nemoteno uporabniško izkušnjo, kjer uporabniki ne potrebujejo poznavanja podlage MCP implementacije
 
 Celoten primer kode:
 
@@ -1139,7 +1139,7 @@ Odlično, uspelo vam je!
 
 ## Naloga
 
-Vzemite kodo iz vaje in razširite strežnik z nekaj dodatnimi orodji. Nato ustvarite odjemalca z LLM, kot v vaji, in ga preizkusite z različnimi pozivi, da zagotovite, da se vsa orodja strežnika dinamično kličejo. Ta način ustvarjanja odjemalca pomeni, da bo končni uporabnik imel odlično uporabniško izkušnjo, saj lahko uporablja pozive namesto natančnih ukazov odjemalca in ne bo vedel, da se kliče MCP strežnik.
+Vzemite kodo iz vaje in razširite strežnik z nekaj dodatnimi orodji. Nato ustvarite odjemalca z LLM, kot v vaji, in ga preizkusite z različnimi pozivi, da zagotovite, da se vsa vaša strežniška orodja dinamično kličejo. Ta način ustvarjanja odjemalca pomeni, da bo končni uporabnik imel odlično uporabniško izkušnjo, saj lahko uporablja pozive namesto natančnih ukazov odjemalca in ne bo vedel, da se kliče MCP strežnik.
 
 ## Rešitev
 

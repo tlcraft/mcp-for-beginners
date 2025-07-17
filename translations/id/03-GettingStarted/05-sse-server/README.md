@@ -1,27 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T07:57:14+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T19:04:31+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "id"
 }
 -->
-# Server SSE
+# SSE Server
 
-SSE (Server Sent Events) adalah standar untuk streaming dari server ke klien, memungkinkan server mengirim pembaruan real-time ke klien melalui HTTP. Ini sangat berguna untuk aplikasi yang membutuhkan pembaruan langsung, seperti aplikasi chat, notifikasi, atau feed data real-time. Selain itu, server Anda dapat digunakan oleh banyak klien secara bersamaan karena berjalan di server yang bisa ditempatkan di cloud misalnya.
+SSE (Server Sent Events) adalah standar untuk streaming dari server ke klien, memungkinkan server mengirim pembaruan waktu nyata ke klien melalui HTTP. Ini sangat berguna untuk aplikasi yang membutuhkan pembaruan langsung, seperti aplikasi chat, notifikasi, atau feed data waktu nyata. Selain itu, server Anda dapat digunakan oleh banyak klien secara bersamaan karena berjalan di server yang bisa ditempatkan di cloud misalnya.
 
-## Gambaran Umum
+## Ikhtisar
 
-Pelajaran ini membahas cara membangun dan menggunakan Server SSE.
+Pelajaran ini membahas cara membangun dan menggunakan SSE Server.
 
 ## Tujuan Pembelajaran
 
-Di akhir pelajaran ini, Anda akan dapat:
+Pada akhir pelajaran ini, Anda akan dapat:
 
-- Membangun Server SSE.
-- Debug Server SSE menggunakan Inspector.
-- Menggunakan Server SSE dengan Visual Studio Code.
+- Membangun SSE Server.
+- Debug SSE Server menggunakan Inspector.
+- Menggunakan SSE Server dengan Visual Studio Code.
 
 ## SSE, cara kerjanya
 
@@ -55,7 +55,7 @@ app.post("/messages", async (req: Request, res: Response) => {
 
 Dalam kode di atas:
 
-- `/sse` disiapkan sebagai route. Ketika ada permintaan ke route ini, instance transport baru dibuat dan server *menghubungkan* menggunakan transport ini.
+- `/sse` disiapkan sebagai route. Ketika ada permintaan ke route ini, sebuah instance transport baru dibuat dan server *menghubungkan* menggunakan transport ini
 - `/messages`, ini adalah route yang menangani pesan masuk.
 
 ### Python
@@ -81,7 +81,7 @@ Dalam kode di atas kita:
 
 - Membuat instance server ASGI (menggunakan Starlette secara khusus) dan memasang route default `/`
 
-  Yang terjadi di belakang layar adalah route `/sse` dan `/messages` disiapkan untuk menangani koneksi dan pesan secara terpisah. Sisanya, seperti menambahkan fitur seperti tools, berjalan seperti pada server stdio.
+  Yang terjadi di belakang layar adalah route `/sse` dan `/messages` disiapkan untuk menangani koneksi dan pesan secara berurutan. Sisanya, seperti menambahkan fitur seperti tools, dilakukan seperti pada server stdio.
 
 ### .NET    
 
@@ -99,23 +99,24 @@ Dalam kode di atas kita:
     app.MapMcp();
     ```
 
-    Ada dua metode yang membantu kita beralih dari web server biasa ke web server yang mendukung SSE, yaitu:
+    Ada dua metode yang membantu kita beralih dari web server ke web server yang mendukung SSE, yaitu:
 
     - `AddMcpServer`, metode ini menambahkan kemampuan.
     - `MapMcp`, ini menambahkan route seperti `/SSE` dan `/messages`.
+```
 
-Sekarang setelah kita tahu sedikit lebih banyak tentang SSE, mari kita buat server SSE.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Latihan: Membuat Server SSE
+## Exercise: Creating an SSE Server
 
-Untuk membuat server, kita perlu mengingat dua hal:
+To create our server, we need to keep two things in mind:
 
-- Kita perlu menggunakan web server untuk membuka endpoint untuk koneksi dan pesan.
-- Bangun server seperti biasa dengan tools, resources, dan prompts seperti saat menggunakan stdio.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Membuat instance server
+### -1- Create a server instance
 
-Untuk membuat server, kita menggunakan tipe yang sama seperti pada stdio. Namun, untuk transport, kita harus memilih SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-Dalam kode di atas kita telah:
+In the preceding code we've:
 
-- Membuat instance server.
-- Mendefinisikan app menggunakan framework web express.
-- Membuat variabel transports yang akan kita gunakan untuk menyimpan koneksi masuk.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-Dalam kode di atas kita telah:
+In the preceding code we've:
 
-- Mengimpor library yang dibutuhkan dengan Starlette (framework ASGI) dimasukkan.
-- Membuat instance server MCP `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-Pada titik ini, kita telah:
+At this point, we've:
 
-- Membuat web app
-- Menambahkan dukungan fitur MCP melalui `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Selanjutnya, mari tambahkan route yang dibutuhkan.
+Let's add the needed routes next.
 
-### -2- Menambahkan route
+### -2- Add routes
 
-Mari tambahkan route yang menangani koneksi dan pesan masuk:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-Dalam kode di atas kita telah mendefinisikan:
+In the preceding code we've defined:
 
-- Route `/sse` yang membuat instance transport tipe SSE dan memanggil `connect` pada server MCP.
-- Route `/messages` yang menangani pesan masuk.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-Dalam kode di atas kita telah:
+In the preceding code we've:
 
-- Membuat instance app ASGI menggunakan framework Starlette. Sebagai bagian dari itu kita melewatkan `mcp.sse_app()` ke daftar route-nya. Ini akan memasang route `/sse` dan `/messages` pada instance app.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Kita menambahkan satu baris kode di akhir `add.MapMcp()` yang berarti sekarang kita memiliki route `/SSE` dan `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Selanjutnya, mari tambahkan kemampuan ke server.
+Let's add capabilties to the server next.
 
-### -3- Menambahkan kemampuan server
+### -3- Adding server capabilities
 
-Sekarang setelah semua yang spesifik untuk SSE sudah didefinisikan, mari tambahkan kemampuan server seperti tools, prompts, dan resources.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Berikut cara menambahkan sebuah tool misalnya. Tool ini membuat tool bernama "random-joke" yang memanggil API Chuck Norris dan mengembalikan respons JSON.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Sekarang server Anda memiliki satu tool.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Mari buat beberapa tools terlebih dahulu, untuk ini kita buat file *Tools.cs* dengan isi berikut:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Di sini kita telah menambahkan:
+  Here we've added the following:
 
-  - Membuat kelas `Tools` dengan dekorator `McpServerToolType`.
-  - Mendefinisikan tool `AddNumbers` dengan mendekorasi metode menggunakan `McpServerTool`. Kita juga menyediakan parameter dan implementasi.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Mari gunakan kelas `Tools` yang baru dibuat:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Kita menambahkan pemanggilan `WithTools` yang menentukan `Tools` sebagai kelas yang berisi tools. Selesai, kita siap.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Bagus, kita sudah punya server menggunakan SSE, mari coba jalankan.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Latihan: Debug Server SSE dengan Inspector
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector adalah alat yang bagus yang sudah kita lihat di pelajaran sebelumnya [Membuat server pertama Anda](/03-GettingStarted/01-first-server/README.md). Mari kita lihat apakah kita bisa menggunakan Inspector di sini juga:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Menjalankan inspector
+### -1- Running the inspector
 
-Untuk menjalankan inspector, Anda harus sudah menjalankan server SSE, jadi mari lakukan itu dulu:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Jalankan server
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Untuk menjalankan inspector, Anda harus sudah menjalankan server SSE, jadi mari 
     uvicorn server:app
     ```
 
-    Perhatikan kita menggunakan executable `uvicorn` yang terinstal saat mengetik `pip install "mcp[cli]"`. Mengetik `server:app` berarti kita mencoba menjalankan file `server.py` yang memiliki instance Starlette bernama `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,30 +447,30 @@ Untuk menjalankan inspector, Anda harus sudah menjalankan server SSE, jadi mari 
     dotnet run
     ```
 
-    Ini akan memulai server. Untuk berinteraksi dengan server, Anda perlu membuka terminal baru.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Jalankan inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Jalankan ini di jendela terminal terpisah dari tempat server berjalan. Juga perhatikan, Anda perlu menyesuaikan perintah di bawah agar sesuai dengan URL tempat server Anda berjalan.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Menjalankan inspector terlihat sama di semua runtime. Perhatikan bahwa alih-alih melewatkan path ke server dan perintah untuk memulai server, kita melewatkan URL tempat server berjalan dan juga menentukan route `/sse`.
+    Menjalankan inspector terlihat sama di semua runtime. Perhatikan bahwa alih-alih memberikan path ke server dan perintah untuk memulai server, kita memberikan URL tempat server berjalan dan juga menentukan route `/sse`.
 
 ### -2- Mencoba tool
 
-Hubungkan server dengan memilih SSE di dropdown dan isi field url dengan alamat tempat server Anda berjalan, misalnya http:localhost:4321/sse. Sekarang klik tombol "Connect". Seperti sebelumnya, pilih untuk menampilkan daftar tools, pilih sebuah tool dan masukkan nilai input. Anda akan melihat hasil seperti di bawah:
+Hubungkan server dengan memilih SSE di daftar dropdown dan isi kolom url dengan alamat server Anda berjalan, misalnya http:localhost:4321/sse. Sekarang klik tombol "Connect". Seperti sebelumnya, pilih untuk menampilkan daftar tools, pilih sebuah tool dan masukkan nilai input. Anda akan melihat hasil seperti di bawah:
 
-![Server SSE berjalan di inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.id.png)
+![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.id.png)
 
-Bagus, Anda bisa bekerja dengan inspector, sekarang mari lihat cara menggunakan Visual Studio Code.
+Bagus, Anda sudah bisa bekerja dengan inspector, sekarang mari kita lihat bagaimana cara bekerja dengan Visual Studio Code.
 
 ## Tugas
 
-Cobalah membangun server Anda dengan lebih banyak kemampuan. Lihat [halaman ini](https://api.chucknorris.io/) untuk, misalnya, menambahkan tool yang memanggil API. Anda tentukan seperti apa servernya. Selamat bersenang-senang :)
+Cobalah membangun server Anda dengan kemampuan lebih banyak. Lihat [halaman ini](https://api.chucknorris.io/) untuk, misalnya, menambahkan tool yang memanggil API. Anda tentukan seperti apa servernya. Selamat mencoba :)
 
 ## Solusi
 
@@ -477,19 +478,19 @@ Cobalah membangun server Anda dengan lebih banyak kemampuan. Lihat [halaman ini]
 
 ## Poin Penting
 
-Poin penting dari bab ini adalah:
+Poin penting dari bab ini adalah sebagai berikut:
 
-- SSE adalah transport kedua yang didukung setelah stdio.
+- SSE adalah transport kedua yang didukung selain stdio.
 - Untuk mendukung SSE, Anda perlu mengelola koneksi masuk dan pesan menggunakan framework web.
-- Anda dapat menggunakan Inspector dan Visual Studio Code untuk menggunakan server SSE, sama seperti server stdio. Perhatikan ada sedikit perbedaan antara stdio dan SSE. Untuk SSE, Anda perlu memulai server secara terpisah lalu menjalankan alat inspector. Untuk alat inspector, ada juga perbedaan bahwa Anda harus menentukan URL.
+- Anda dapat menggunakan Inspector dan Visual Studio Code untuk menggunakan SSE server, sama seperti server stdio. Perhatikan perbedaannya sedikit antara stdio dan SSE. Untuk SSE, Anda perlu menjalankan server secara terpisah lalu menjalankan alat inspector Anda. Untuk alat inspector, ada juga perbedaan bahwa Anda harus menentukan URL.
 
-## Contoh
+## Contoh 
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Python Calculator](../../../../03-GettingStarted/samples/python) 
 
 ## Sumber Tambahan
 

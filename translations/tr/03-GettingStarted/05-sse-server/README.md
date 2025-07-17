@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T01:32:39+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T18:35:34+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "tr"
 }
 -->
 # SSE Sunucusu
 
-SSE (Server Sent Events), sunucudan istemciye gerçek zamanlı veri akışı sağlayan bir standarttır ve sunucuların HTTP üzerinden istemcilere anlık güncellemeler göndermesine olanak tanır. Bu, sohbet uygulamaları, bildirimler veya gerçek zamanlı veri akışları gibi canlı güncellemeler gerektiren uygulamalar için özellikle faydalıdır. Ayrıca, sunucunuz bulutta bir yerde çalıştırılabilir ve aynı anda birden fazla istemci tarafından kullanılabilir.
+SSE (Server Sent Events), sunucudan istemciye gerçek zamanlı veri akışı için standart bir yöntemdir ve sunucuların HTTP üzerinden istemcilere anlık güncellemeler göndermesini sağlar. Bu, özellikle sohbet uygulamaları, bildirimler veya gerçek zamanlı veri akışları gibi canlı güncellemelerin gerektiği uygulamalarda faydalıdır. Ayrıca, sunucunuz bulutta bir yerde çalıştırılabilir ve aynı anda birden fazla istemci tarafından kullanılabilir.
 
 ## Genel Bakış
 
-Bu ders, SSE Sunucularının nasıl oluşturulacağını ve kullanılacağını kapsar.
+Bu ders, SSE Sunucularının nasıl oluşturulup kullanıldığını ele alır.
 
 ## Öğrenme Hedefleri
 
@@ -27,8 +27,8 @@ Bu dersin sonunda şunları yapabileceksiniz:
 
 SSE, desteklenen iki taşıma türünden biridir. Önceki derslerde stdio kullanımını görmüştünüz. Aralarındaki farklar şunlardır:
 
-- SSE, bağlantı ve mesajları yönetmenizi gerektirir.
-- Bu sunucu herhangi bir yerde çalışabilir, bu yüzden Inspector ve Visual Studio Code gibi araçlarla çalışırken bunu göz önünde bulundurmalısınız. Yani, sunucuyu nasıl başlatacağınızı göstermek yerine, bağlantı kurulacak uç noktayı belirtirsiniz. Aşağıdaki örnek koda bakın:
+- SSE, iki şeyi yönetmenizi gerektirir; bağlantı ve mesajlar.
+- Bu sunucu herhangi bir yerde çalışabileceği için, Inspector ve Visual Studio Code gibi araçlarla çalışırken bunu yansıtmanız gerekir. Yani, sunucuyu nasıl başlatacağınızı göstermek yerine, bağlantı kurulabilecek uç noktayı belirtirsiniz. Aşağıdaki örnek koda bakın:
 
 ### TypeScript
 
@@ -55,7 +55,7 @@ app.post("/messages", async (req: Request, res: Response) => {
 
 Yukarıdaki kodda:
 
-- `/sse` bir rota olarak ayarlanmıştır. Bu rotaya bir istek geldiğinde yeni bir taşıma örneği oluşturulur ve sunucu bu taşıma ile *bağlanır*.
+- `/sse` bir rota olarak ayarlanmıştır. Bu rotaya bir istek yapıldığında, yeni bir taşıma örneği oluşturulur ve sunucu bu taşıma ile *bağlanır*.
 - `/messages`, gelen mesajları işleyen rotadır.
 
 ### Python
@@ -79,9 +79,9 @@ app = Starlette(
 
 Yukarıdaki kodda:
 
-- Bir ASGI sunucu örneği (özellikle Starlette kullanılarak) oluşturulur ve varsayılan rota `/` mount edilir.
+- Bir ASGI sunucusu örneği oluşturulur (özellikle Starlette kullanılarak) ve varsayılan rota `/` üzerine monte edilir.
 
-  Arkada `/sse` ve `/messages` rotalarının sırasıyla bağlantılar ve mesajlar için ayarlandığını unutmayın. Diğer uygulama özellikleri, stdio sunucularında olduğu gibi eklenir.
+  Arkada olanlar şudur: `/sse` ve `/messages` rotaları sırasıyla bağlantıları ve mesajları yönetmek için ayarlanır. Uygulamanın geri kalanı, örneğin araç eklemek gibi özellikler, stdio sunucularında olduğu gibi yapılır.
 
 ### .NET    
 
@@ -101,21 +101,22 @@ Yukarıdaki kodda:
 
     Web sunucusundan SSE destekleyen bir web sunucusuna geçmemize yardımcı olan iki yöntem vardır:
 
-    - `AddMcpServer`, bu yöntem özellikleri ekler.
+    - `AddMcpServer`, bu yöntem yetenekler ekler.
     - `MapMcp`, bu da `/SSE` ve `/messages` gibi rotaları ekler.
+```
 
-Artık SSE hakkında biraz daha bilgi sahibi olduğumuza göre, bir SSE sunucusu oluşturalım.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Alıştırma: Bir SSE Sunucusu Oluşturma
+## Exercise: Creating an SSE Server
 
-Sunucumuzu oluştururken iki şeyi akılda tutmalıyız:
+To create our server, we need to keep two things in mind:
 
-- Bağlantı ve mesajlar için uç noktaları açmak üzere bir web sunucusu kullanmalıyız.
-- Sunucumuzu, stdio kullanırken yaptığımız gibi araçlar, kaynaklar ve istemlerle normal şekilde oluşturmalıyız.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Sunucu örneği oluşturma
+### -1- Create a server instance
 
-Sunucumuzu oluşturmak için stdio ile kullandığımız aynı türleri kullanıyoruz. Ancak taşıma için SSE seçmeliyiz.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-Yukarıdaki kodda:
+In the preceding code we've:
 
-- Bir sunucu örneği oluşturduk.
-- express web framework kullanarak bir uygulama tanımladık.
-- Gelen bağlantıları saklamak için kullanacağımız bir transports değişkeni oluşturduk.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-Yukarıdaki kodda:
+In the preceding code we've:
 
-- İhtiyacımız olan kütüphaneleri içe aktardık, Starlette (bir ASGI framework) dahil edildi.
-- Bir MCP sunucu örneği `mcp` oluşturduk.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -169,19 +170,19 @@ builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
-// TODO: add routes 
+// TODO: rotalar ekle 
 ```
 
-Bu noktada:
+At this point, we've:
 
-- Bir web uygulaması oluşturduk.
-- `AddMcpServer` ile MCP özellikleri için destek ekledik.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Şimdi gerekli rotaları ekleyelim.
+Let's add the needed routes next.
 
-### -2- Rotaları ekleme
+### -2- Add routes
 
-Bağlantı ve gelen mesajları yönetecek rotaları ekleyelim:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -201,17 +202,17 @@ app.post("/messages", async (req: Request, res: Response) => {
   if (transport) {
     await transport.handlePostMessage(req, res);
   } else {
-    res.status(400).send('No transport found for sessionId');
+    res.status(400).send('sessionId için taşıma bulunamadı');
   }
 });
 
 app.listen(3001);
 ```
 
-Yukarıdaki kodda:
+In the preceding code we've defined:
 
-- SSE türünde bir taşıma örneği oluşturan ve MCP sunucusunda `connect` çağrısı yapan `/sse` rotası tanımlandı.
-- Gelen mesajları işleyen `/messages` rotası tanımlandı.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-Yukarıdaki kodda:
+In the preceding code we've:
 
-- Starlette framework kullanarak bir ASGI uygulama örneği oluşturduk. `mcp.sse_app()`'i rotalar listesine ekledik. Bu, uygulama örneğinde `/sse` ve `/messages` rotalarının mount edilmesini sağlar.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,18 +242,18 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Son satıra `add.MapMcp()` satırını ekledik, bu sayede `/SSE` ve `/messages` rotalarımız oldu.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Şimdi sunucuya özellikler ekleyelim.
+Let's add capabilties to the server next.
 
-### -3- Sunucu özellikleri ekleme
+### -3- Adding server capabilities
 
-Artık SSE'ye özgü her şeyi tanımladığımıza göre, araçlar, istemler ve kaynaklar gibi sunucu özelliklerini ekleyelim.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
 ```typescript
-server.tool("random-joke", "A joke returned by the chuck norris api", {},
+server.tool("random-joke", "Chuck Norris API tarafından döndürülen bir şaka", {},
   async () => {
     const response = await fetch("https://api.chucknorris.io/jokes/random");
     const data = await response.json();
@@ -269,18 +270,18 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Örneğin, bir araç nasıl eklenir gösteriliyor. Bu özel araç, "random-joke" adında bir araç oluşturur, Chuck Norris API'sini çağırır ve JSON yanıtı döner.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
 ```python
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """İki sayıyı toplar"""
     return a + b
 ```
 
-Artık sunucunuzda bir araç var.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -291,7 +292,7 @@ import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-// Create an MCP server
+// MCP sunucusu oluştur
 const server = new McpServer({
   name: "example-server",
   version: "1.0.0",
@@ -316,11 +317,11 @@ app.post("/messages", async (req: Request, res: Response) => {
   if (transport) {
     await transport.handlePostMessage(req, res);
   } else {
-    res.status(400).send("No transport found for sessionId");
+    res.status(400).send("sessionId için taşıma bulunamadı");
   }
 });
 
-server.tool("random-joke", "A joke returned by the chuck norris api", {}, async () => {
+server.tool("random-joke", "Chuck Norris API tarafından döndürülen bir şaka", {}, async () => {
   const response = await fetch("https://api.chucknorris.io/jokes/random");
   const data = await response.json();
 
@@ -349,10 +350,10 @@ mcp = FastMCP("My App")
 
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """İki sayıyı toplar"""
     return a + b
 
-# Mount the SSE server to the existing ASGI server
+# Mevcut ASGI sunucusuna SSE sunucusunu monte et
 app = Starlette(
     routes=[
         Mount('/', app=mcp.sse_app()),
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Öncelikle bazı araçlar oluşturalım, bunun için *Tools.cs* adlı bir dosya oluşturup aşağıdaki içeriği ekleyelim:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -380,10 +381,10 @@ app = Starlette(
       
       }
 
-      [McpServerTool, Description("Add two numbers together.")]
+      [McpServerTool, Description("İki sayıyı toplar.")]
       public async Task<string> AddNumbers(
-          [Description("The first number")] int a,
-          [Description("The second number")] int b)
+          [Description("Birinci sayı")] int a,
+          [Description("İkinci sayı")] int b)
       {
           return (a + b).ToString();
       }
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Burada şunları yaptık:
+  Here we've added the following:
 
-  - `McpServerToolType` dekoratörü ile `Tools` sınıfı oluşturuldu.
-  - `McpServerTool` dekoratörü ile `AddNumbers` aracı tanımlandı. Parametreler ve uygulama sağlandı.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Az önce oluşturduğumuz `Tools` sınıfını kullanalım:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  `WithTools` çağrısı ekledik ve araçların bulunduğu sınıf olarak `Tools` belirtildi. Hepsi bu, hazırız.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Harika, SSE kullanan bir sunucumuz var, şimdi onu deneyelim.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Alıştırma: Inspector ile SSE Sunucusunu Hata Ayıklama
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector, önceki derste gördüğümüz harika bir araçtır [İlk sunucunuzu oluşturma](/03-GettingStarted/01-first-server/README.md). Burada da Inspector kullanabilir miyiz bakalım:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Inspector'ı çalıştırma
+### -1- Running the inspector
 
-Inspector'ı çalıştırmak için önce bir SSE sunucusunun çalışıyor olması gerekir, o halde bunu yapalım:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Sunucuyu çalıştırın
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Inspector'ı çalıştırmak için önce bir SSE sunucusunun çalışıyor olmas
     uvicorn server:app
     ```
 
-    `pip install "mcp[cli]"` komutunu yazdığınızda kurulan `uvicorn` çalıştırılabilir dosyasını kullandığımıza dikkat edin. `server:app` yazmak, `server.py` dosyasını çalıştırmaya ve içinde `app` adlı bir Starlette örneği olmasını beklemeye karşılık gelir.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,22 +447,22 @@ Inspector'ı çalıştırmak için önce bir SSE sunucusunun çalışıyor olmas
     dotnet run
     ```
 
-    Bu sunucuyu başlatmalıdır. Sunucu ile etkileşim için yeni bir terminal açmanız gerekir.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Inspector'ı çalıştırın
+1. Run the inspector
 
     > ![NOTE]
-    > Bunu, sunucunun çalıştığı terminalden farklı bir terminal penceresinde çalıştırın. Ayrıca, aşağıdaki komutu sunucunuzun çalıştığı URL'ye göre ayarlamanız gerektiğini unutmayın.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Inspector'ı çalıştırmak tüm çalışma zamanlarında aynıdır. Sunucuyu başlatmak için bir yol ve komut vermek yerine, sunucunun çalıştığı URL'yi ve `/sse` rotasını belirttiğimize dikkat edin.
+    Inspector'ı çalıştırmak tüm çalışma ortamlarında aynıdır. Sunucuyu başlatmak için bir yol ve komut vermek yerine, sunucunun çalıştığı URL'yi ve ayrıca `/sse` rotasını belirttiğimize dikkat edin.
 
-### -2- Aracı deneme
+### -2- Aracı denemek
 
-Sunucuya bağlanmak için açılır listeden SSE'yi seçin ve sunucunuzun çalıştığı URL'yi, örneğin http:localhost:4321/sse, url alanına girin. Ardından "Connect" düğmesine tıklayın. Önceki gibi, araçları listeleyin, bir araç seçin ve giriş değerlerini sağlayın. Aşağıdaki gibi bir sonuç görmelisiniz:
+Sunucuya bağlanmak için açılır listeden SSE'yi seçin ve sunucunuzun çalıştığı URL alanını doldurun, örneğin http:localhost:4321/sse. Ardından "Connect" butonuna tıklayın. Önceki gibi, araçları listelemeyi seçin, bir araç seçin ve giriş değerlerini sağlayın. Aşağıdaki gibi bir sonuç görmelisiniz:
 
 ![Inspector'da çalışan SSE Sunucusu](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.tr.png)
 
@@ -485,11 +486,11 @@ Bu bölümden çıkarılacak önemli noktalar şunlardır:
 
 ## Örnekler
 
-- [Java Hesap Makinesi](../samples/java/calculator/README.md)
-- [.Net Hesap Makinesi](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Hesap Makinesi](../samples/javascript/README.md)
-- [TypeScript Hesap Makinesi](../samples/typescript/README.md)
-- [Python Hesap Makinesi](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python) 
 
 ## Ek Kaynaklar
 
@@ -500,4 +501,4 @@ Bu bölümden çıkarılacak önemli noktalar şunlardır:
 - Sonraki: [MCP ile HTTP Akışı (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T09:27:53+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T17:18:26+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "en"
 }
@@ -94,7 +94,7 @@ class MCPClient {
 
 In the preceding code we've:
 
-- Imported the necessary libraries.
+- Imported the necessary libraries
 - Created a class with two members, `client` and `openai`, that will help us manage a client and interact with an LLM respectively.
 - Configured our LLM instance to use GitHub Models by setting `baseUrl` to point to the inference API.
 
@@ -130,8 +130,8 @@ if __name__ == "__main__":
 
 In the preceding code we've:
 
-- Imported the necessary libraries for MCP.
-- Created a client.
+- Imported the necessary libraries for MCP
+- Created a client
 
 ### .NET
 
@@ -237,16 +237,16 @@ public class LangChain4jClient {
 
 In the preceding code we've:
 
-- **Added LangChain4j dependencies**: Required for MCP integration, OpenAI official client, and GitHub Models support.
-- **Imported the LangChain4j libraries**: For MCP integration and OpenAI chat model functionality.
-- **Created a `ChatLanguageModel`**: Configured to use GitHub Models with your GitHub token.
-- **Set up HTTP transport**: Using Server-Sent Events (SSE) to connect to the MCP server.
-- **Created an MCP client**: That will handle communication with the server.
-- **Used LangChain4j's built-in MCP support**: Which simplifies integration between LLMs and MCP servers.
+- **Added LangChain4j dependencies**: Required for MCP integration, OpenAI official client, and GitHub Models support
+- **Imported the LangChain4j libraries**: For MCP integration and OpenAI chat model functionality
+- **Created a `ChatLanguageModel`**: Configured to use GitHub Models with your GitHub token
+- **Set up HTTP transport**: Using Server-Sent Events (SSE) to connect to the MCP server
+- **Created an MCP client**: That will handle communication with the server
+- **Used LangChain4j's built-in MCP support**: Which simplifies integration between LLMs and MCP servers
 
 Great, for our next step, let's list the capabilities on the server.
 
-### -2 List server capabilities
+### -2- List server capabilities
 
 Now we will connect to the server and ask for its capabilities:
 
@@ -293,7 +293,7 @@ for tool in tools.tools:
 
 Here's what we added:
 
-- Listing resources and tools and printed them. For tools, we also list `inputSchema` which we use later.
+- Listed resources and tools and printed them. For tools, we also list `inputSchema` which we use later.
 
 ### .NET
 
@@ -320,7 +320,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
 
 In the preceding code we've:
 
-- Listed the tools available on the MCP Server.
+- Listed the tools available on the MCP Server
 - For each tool, listed name, description, and its schema. The latter is something we will use to call the tools shortly.
 
 ### Java
@@ -339,9 +339,9 @@ ToolProvider toolProvider = McpToolProvider.builder()
 
 In the preceding code we've:
 
-- Created a `McpToolProvider` that automatically discovers and registers all tools from the MCP server.
-- The tool provider handles the conversion between MCP tool schemas and LangChain4j's tool format internally.
-- This approach abstracts away the manual tool listing and conversion process.
+- Created a `McpToolProvider` that automatically discovers and registers all tools from the MCP server
+- The tool provider handles the conversion between MCP tool schemas and LangChain4j's tool format internally
+- This approach abstracts away the manual tool listing and conversion process
 
 ### -3- Convert server capabilities to LLM tools
 
@@ -398,7 +398,7 @@ The next step after listing server capabilities is to convert them into a format
 
 ### Python
 
-1. First, let's create the following converter function:
+1. First, let's create the following converter function
 
     ```python
     def convert_to_llm_tool(tool):
@@ -433,7 +433,7 @@ The next step after listing server capabilities is to convert them into a format
 
 ### .NET
 
-1. Let's add code to convert the MCP tool response to something the LLM can understand:
+1. Let's add code to convert the MCP tool response to something the LLM can understand
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -523,10 +523,10 @@ Bot bot = AiServices.builder(Bot.class)
 
 In the preceding code we've:
 
-- Defined a simple `Bot` interface for natural language interactions.
-- Used LangChain4j's `AiServices` to automatically bind the LLM with the MCP tool provider.
-- The framework automatically handles tool schema conversion and function calling behind the scenes.
-- This approach eliminates manual tool conversion - LangChain4j handles all the complexity of converting MCP tools to an LLM-compatible format.
+- Defined a simple `Bot` interface for natural language interactions
+- Used LangChain4j's `AiServices` to automatically bind the LLM with the MCP tool provider
+- The framework automatically handles tool schema conversion and function calling behind the scenes
+- This approach eliminates manual tool conversion - LangChain4j handles all the complexity of converting MCP tools to an LLM-compatible format
 
 Great, we're now set up to handle any user requests, so let's tackle that next.
 
@@ -773,7 +773,7 @@ client.connectToServer(transport);
 
 ### Python
 
-1. Let's add some imports needed to call an LLM:
+1. Let's add some imports needed to call an LLM
 
     ```python
     # llm
@@ -837,7 +837,7 @@ client.connectToServer(transport);
     In the preceding code we've:
 
     - Passed our functions, that we found on the MCP server and converted, to the LLM.
-    - Then we called the LLM with those functions.
+    - Then we called the LLM with said functions.
     - Then, we're inspecting the result to see what functions we should call, if any.
     - Finally, we pass an array of functions to call.
 
@@ -1078,13 +1078,13 @@ try {
 
 In the preceding code we've:
 
-- Used simple natural language prompts to interact with the MCP server tools.
+- Used simple natural language prompts to interact with the MCP server tools
 - The LangChain4j framework automatically handles:
-  - Converting user prompts to tool calls when needed.
-  - Calling the appropriate MCP tools based on the LLM's decision.
-  - Managing the conversation flow between the LLM and MCP server.
-- The `bot.chat()` method returns natural language responses that may include results from MCP tool executions.
-- This approach provides a seamless user experience where users don't need to know about the underlying MCP implementation.
+  - Converting user prompts to tool calls when needed
+  - Calling the appropriate MCP tools based on the LLM's decision
+  - Managing the conversation flow between the LLM and MCP server
+- The `bot.chat()` method returns natural language responses that may include results from MCP tool executions
+- This approach provides a seamless user experience where users don't need to know about the underlying MCP implementation
 
 Complete code example:
 

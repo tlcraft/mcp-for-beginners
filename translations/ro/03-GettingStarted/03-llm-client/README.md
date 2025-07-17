@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T11:18:50+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T19:22:35+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "ro"
 }
@@ -33,9 +33,9 @@ Iată cum va interacționa clientul cu serverul:
 
 1. Listează capabilitățile, prompturile, resursele și uneltele, și salvează schema acestora.
 
-1. Adaugă un LLM și transmite capabilitățile salvate și schema lor într-un format pe care LLM-ul îl înțelege.
+1. Adaugă un LLM și transmite capabilitățile salvate și schema lor într-un format pe care LLM îl înțelege.
 
-1. Gestionează un prompt de la utilizator trimițându-l către LLM împreună cu uneltele listate de client.
+1. Gestionează un prompt al utilizatorului trimițându-l către LLM împreună cu uneltele listate de client.
 
 Perfect, acum că înțelegem cum putem face asta la nivel înalt, să încercăm în exercițiul de mai jos.
 
@@ -51,7 +51,7 @@ Crearea unui token GitHub este un proces simplu. Iată cum poți face asta:
 - Navighează la Developer Settings – Derulează în jos și apasă pe Developer Settings.
 - Selectează Personal Access Tokens – Apasă pe Personal access tokens și apoi pe Generate new token.
 - Configurează tokenul – Adaugă o notă pentru referință, setează o dată de expirare și selectează permisiunile necesare (scopes).
-- Generează și copiază tokenul – Apasă pe Generate token și asigură-te că îl copiezi imediat, deoarece nu vei mai putea să-l vezi din nou.
+- Generează și copiază tokenul – Apasă Generate token și asigură-te că îl copiezi imediat, deoarece nu vei mai putea să-l vezi din nou.
 
 ### -1- Conectarea la server
 
@@ -95,7 +95,7 @@ class MCPClient {
 În codul de mai sus am:
 
 - Importat bibliotecile necesare
-- Creat o clasă cu doi membri, `client` și `openai`, care ne vor ajuta să gestionăm clientul și să interacționăm cu un LLM, respectiv.
+- Creat o clasă cu doi membri, `client` și `openai`, care ne vor ajuta să gestionăm un client și să interacționăm cu un LLM, respectiv.
 - Configurat instanța LLM să folosească GitHub Models setând `baseUrl` către API-ul de inferență.
 
 ### Python
@@ -246,7 +246,7 @@ public class LangChain4jClient {
 
 Perfect, pentru pasul următor, să listăm capabilitățile serverului.
 
-### -2 Listarea capabilităților serverului
+### -2- Listarea capabilităților serverului
 
 Acum ne vom conecta la server și îi vom cere capabilitățile:
 
@@ -341,15 +341,15 @@ ToolProvider toolProvider = McpToolProvider.builder()
 
 - Creat un `McpToolProvider` care descoperă și înregistrează automat toate uneltele de pe serverul MCP
 - Providerul de unelte gestionează conversia între schemele uneltelor MCP și formatul uneltelor LangChain4j intern
-- Această abordare elimină procesul manual de listare și conversie a uneltelor
+- Această abordare elimină necesitatea listării și conversiei manuale a uneltelor
 
 ### -3- Convertirea capabilităților serverului în unelte LLM
 
-Următorul pas după listarea capabilităților serverului este să le convertim într-un format pe care LLM-ul îl înțelege. Odată ce facem asta, putem oferi aceste capabilități ca unelte LLM-ului nostru.
+Următorul pas după listarea capabilităților serverului este să le convertim într-un format pe care LLM îl înțelege. Odată ce facem asta, putem oferi aceste capabilități ca unelte LLM-ului nostru.
 
 ### TypeScript
 
-1. Adaugă următorul cod pentru a converti răspunsul de la serverul MCP într-un format de unealtă pe care LLM-ul îl poate folosi:
+1. Adaugă următorul cod pentru a converti răspunsul de la serverul MCP într-un format de unealtă pe care LLM îl poate folosi:
 
     ```typescript
     openAiToolAdapter(tool: {
@@ -376,7 +376,7 @@ Următorul pas după listarea capabilităților serverului este să le convertim
 
     ```
 
-    Codul de mai sus ia un răspuns de la serverul MCP și îl convertește într-un format de definiție a unei unelte pe care LLM-ul îl poate înțelege.
+    Codul de mai sus ia un răspuns de la serverul MCP și îl convertește într-un format de definiție a unei unelte pe care LLM îl poate înțelege.
 
 1. Să actualizăm metoda `run` pentru a lista capabilitățile serverului:
 
@@ -398,7 +398,7 @@ Următorul pas după listarea capabilităților serverului este să le convertim
 
 ### Python
 
-1. Mai întâi, să creăm următoarea funcție convertor:
+1. Mai întâi, să creăm următoarea funcție convertor
 
     ```python
     def convert_to_llm_tool(tool):
@@ -418,7 +418,7 @@ Următorul pas după listarea capabilităților serverului este să le convertim
         return tool_schema
     ```
 
-    În funcția `convert_to_llm_tools` de mai sus, luăm un răspuns de la o unealtă MCP și îl convertim într-un format pe care LLM-ul îl poate înțelege.
+    În funcția `convert_to_llm_tools` de mai sus, luăm un răspuns de la o unealtă MCP și îl convertim într-un format pe care LLM îl poate înțelege.
 
 1. Apoi, să actualizăm codul clientului pentru a folosi această funcție astfel:
 
@@ -433,7 +433,7 @@ Următorul pas după listarea capabilităților serverului este să le convertim
 
 ### .NET
 
-1. Să adăugăm cod pentru a converti răspunsul uneltei MCP într-un format pe care LLM-ul îl poate înțelege
+1. Să adăugăm cod pentru a converti răspunsul uneltei MCP într-un format pe care LLM îl poate înțelege
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -489,7 +489,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 
         return toolDefinitions;
     }
-    ```    
+    ```
 
     În codul de mai sus am:
 
@@ -504,7 +504,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
         toolDefinitions.Add(def);
         ```
 
-        Schema de input face parte din răspunsul uneltei, dar se află în atributul "properties", deci trebuie extrasă. Mai mult, acum apelăm `ConvertFrom` cu detaliile uneltei. Acum că am făcut partea grea, să vedem cum se leagă apelul când gestionăm un prompt de la utilizator.
+        Schema de input face parte din răspunsul uneltei, dar în atributul "properties", așa că trebuie să o extragem. Mai mult, acum apelăm `ConvertFrom` cu detaliile uneltei. Acum că am făcut partea grea, să vedem cum se leagă apelul când gestionăm un prompt al utilizatorului.
 
 ### Java
 
@@ -857,7 +857,7 @@ client.connectToServer(transport);
 
     Asta a fost pasul final, în codul de mai sus:
 
-    - Apelăm o unealtă MCP prin `call_tool` folosind o funcție pe care LLM-ul a considerat că trebuie să o apelăm pe baza promptului.
+    - Apelăm o unealtă MCP prin `call_tool` folosind o funcție pe care LLM a considerat că trebuie să o apelăm pe baza promptului.
     - Afișăm rezultatul apelului uneltei către serverul MCP.
 
 ### .NET
@@ -898,8 +898,8 @@ client.connectToServer(transport);
 
     În codul de mai sus am:
 
-    - Preluat uneltele de pe serverul MCP, `var tools = await GetMcpTools()`.
-    - Definit un prompt de utilizator `userMessage`.
+    - Obținut uneltele de pe serverul MCP, `var tools = await GetMcpTools()`.
+    - Definit un prompt al utilizatorului `userMessage`.
     - Creat un obiect de opțiuni specificând modelul și uneltele.
     - Făcut o cerere către LLM.
 
@@ -929,7 +929,7 @@ client.connectToServer(transport);
     În codul de mai sus am:
 
     - Iterat prin lista de apeluri de funcții.
-    - Pentru fiecare apel de unealtă, extragem numele și argumentele și apelăm unealta pe serverul MCP folosind clientul MCP. În final afișăm rezultatele.
+    - Pentru fiecare apel de unealtă, am extras numele și argumentele și am apelat unealta pe serverul MCP folosind clientul MCP. În final, afișăm rezultatele.
 
 Iată codul complet:
 
@@ -1084,7 +1084,7 @@ try {
   - Apelarea uneltelor MCP corespunzătoare pe baza deciziei LLM
   - Gestionarea fluxului conversației între LLM și serverul MCP
 - Metoda `bot.chat()` returnează răspunsuri în limbaj natural care pot include rezultate din execuțiile uneltelor MCP
-- Această abordare oferă o experiență fluidă utilizatorului, care nu trebuie să știe despre implementarea MCP din spate
+- Această abordare oferă o experiență fluidă utilizatorului, care nu trebuie să cunoască detalii despre implementarea MCP
 
 Exemplu complet de cod:
 
@@ -1139,7 +1139,7 @@ Perfect, ai reușit!
 
 ## Tema
 
-Ia codul din exercițiu și extinde serverul cu mai multe unelte. Apoi creează un client cu un LLM, ca în exercițiu, și testează-l cu diferite prompturi pentru a te asigura că toate uneltele serverului sunt apelate dinamic. Această metodă de construire a unui client înseamnă că utilizatorul final va avea o experiență excelentă, deoarece poate folosi prompturi în loc de comenzi exacte ale clientului și nu va ști că un server MCP este apelat.
+Ia codul din exercițiu și extinde serverul cu mai multe unelte. Apoi creează un client cu un LLM, ca în exercițiu, și testează-l cu diferite prompturi pentru a te asigura că toate uneltele serverului sunt apelate dinamic. Această metodă de construire a unui client asigură o experiență excelentă utilizatorului final, care poate folosi prompturi în loc de comenzi exacte ale clientului și nu trebuie să știe că un server MCP este apelat.
 
 ## Soluție
 
@@ -1148,7 +1148,7 @@ Ia codul din exercițiu și extinde serverul cu mai multe unelte. Apoi creează 
 ## Concluzii cheie
 
 - Adăugarea unui LLM la client oferă o modalitate mai bună pentru utilizatori de a interacționa cu serverele MCP.
-- Trebuie să convertești răspunsul serverului MCP într-un format pe care LLM-ul îl poate înțelege.
+- Trebuie să convertești răspunsul serverului MCP într-un format pe care LLM îl poate înțelege.
 
 ## Exemple
 
@@ -1156,13 +1156,13 @@ Ia codul din exercițiu și extinde serverul cu mai multe unelte. Apoi creează 
 - [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python) 
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## Resurse suplimentare
 
 ## Ce urmează
 
-- Următorul pas: [Consumarea unui server folosind Visual Studio Code](../04-vscode/README.md)
+- Următorul pas: [Consumul unui server folosind Visual Studio Code](../04-vscode/README.md)
 
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

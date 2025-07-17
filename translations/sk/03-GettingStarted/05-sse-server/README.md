@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T11:05:00+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T19:20:44+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "sk"
 }
 -->
 # SSE Server
 
-SSE (Server Sent Events) je štandard pre streamovanie zo servera na klienta, ktorý umožňuje serverom posielať klientom aktualizácie v reálnom čase cez HTTP. Je to obzvlášť užitočné pre aplikácie, ktoré potrebujú živé aktualizácie, ako sú chatové aplikácie, notifikácie alebo dátové toky v reálnom čase. Navyše váš server môže súčasne používať viac klientov, keďže beží na serveri, ktorý môže byť napríklad umiestnený v cloude.
+SSE (Server Sent Events) je štandard pre streamovanie zo servera na klienta, ktorý umožňuje serverom posielať klientom aktualizácie v reálnom čase cez HTTP. Je to obzvlášť užitočné pre aplikácie vyžadujúce živé aktualizácie, ako sú chatové aplikácie, notifikácie alebo dátové toky v reálnom čase. Navyše váš server môže súčasne používať viac klientov, keďže beží na serveri, ktorý môže byť napríklad umiestnený v cloude.
 
 ## Prehľad
 
-Táto lekcia pokrýva, ako vytvoriť a používať SSE servery.
+Táto lekcia sa zaoberá tým, ako vytvoriť a používať SSE servery.
 
 ## Ciele učenia
 
 Na konci tejto lekcie budete vedieť:
 
 - Vytvoriť SSE server.
-- Ladenie SSE servera pomocou Inspectoru.
+- Ladenie SSE servera pomocou Inspector.
 - Používať SSE server vo Visual Studio Code.
 
 ## SSE, ako to funguje
 
-SSE je jeden z dvoch podporovaných typov transportu. Prvý ste už videli v predchádzajúcich lekciách, kde sa používalo stdio. Rozdiel je nasledovný:
+SSE je jeden z dvoch podporovaných typov transportu. Prvý ste už videli v predchádzajúcich lekciách, kde sa používal stdio. Rozdiel je nasledovný:
 
 - SSE vyžaduje, aby ste riešili dve veci: pripojenie a správy.
 - Keďže ide o server, ktorý môže bežať kdekoľvek, musíte to zohľadniť pri práci s nástrojmi ako Inspector a Visual Studio Code. To znamená, že namiesto toho, aby ste ukazovali, ako spustiť server, ukazujete na endpoint, kde sa môže nadviazať pripojenie. Pozrite si príklad kódu nižšie:
@@ -81,7 +81,7 @@ V predchádzajúcom kóde:
 
 - Vytvoríme inštanciu ASGI servera (konkrétne pomocou Starlette) a pripojíme predvolenú trasu `/`.
 
-  Za scénou sa nastavia trasy `/sse` a `/messages` na spracovanie pripojení a správ. Zvyšok aplikácie, ako pridávanie funkcií, nástrojov, prebieha rovnako ako pri stdio serveroch.
+  Za scénou sa nastavia trasy `/sse` a `/messages` na spracovanie pripojení a správ. Zvyšok aplikácie, ako napríklad pridávanie funkcií a nástrojov, funguje rovnako ako pri stdio serveroch.
 
 ### .NET    
 
@@ -99,23 +99,24 @@ V predchádzajúcom kóde:
     app.MapMcp();
     ```
 
-    Existujú dve metódy, ktoré nám pomáhajú prejsť z webového servera na webový server podporujúci SSE:
+    Existujú dve metódy, ktoré nám pomáhajú prejsť z webového servera na webový server podporujúci SSE, a to:
 
     - `AddMcpServer`, táto metóda pridáva potrebné schopnosti.
     - `MapMcp`, táto pridáva trasy ako `/SSE` a `/messages`.
+```
 
-Teraz, keď už vieme o SSE trochu viac, poďme si vytvoriť SSE server.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Cvičenie: Vytvorenie SSE servera
+## Exercise: Creating an SSE Server
 
-Pri vytváraní servera musíme mať na pamäti dve veci:
+To create our server, we need to keep two things in mind:
 
-- Potrebujeme použiť webový server na sprístupnenie endpointov pre pripojenie a správy.
-- Server postavíme tak, ako sme zvyknutí pri stdio, s nástrojmi, zdrojmi a promptami.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Vytvorenie inštancie servera
+### -1- Create a server instance
 
-Na vytvorenie servera použijeme rovnaké typy ako pri stdio, avšak pre transport zvolíme SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-V predchádzajúcom kóde sme:
+In the preceding code we've:
 
-- Vytvorili inštanciu servera.
-- Definovali aplikáciu pomocou webového frameworku express.
-- Vytvorili premennú transports, kde budeme ukladať prichádzajúce pripojenia.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-V predchádzajúcom kóde sme:
+In the preceding code we've:
 
-- Naimportovali knižnice, ktoré budeme potrebovať, vrátane Starlette (ASGI framework).
-- Vytvorili inštanciu MCP servera `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-V tomto bode sme:
+At this point, we've:
 
-- Vytvorili webovú aplikáciu.
-- Pridali podporu pre MCP funkcie cez `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Teraz pridajme potrebné trasy.
+Let's add the needed routes next.
 
-### -2- Pridanie trás
+### -2- Add routes
 
-Pridajme trasy, ktoré budú spracovávať pripojenie a prichádzajúce správy:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-V predchádzajúcom kóde sme definovali:
+In the preceding code we've defined:
 
-- Trasou `/sse`, ktorá vytvára transport typu SSE a nakoniec volá `connect` na MCP serveri.
-- Trasou `/messages`, ktorá spracováva prichádzajúce správy.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-V predchádzajúcom kóde sme:
+In the preceding code we've:
 
-- Vytvorili ASGI aplikáciu pomocou frameworku Starlette. Pri tom sme do zoznamu trás pridali `mcp.sse_app()`, čo pripojí trasy `/sse` a `/messages` k aplikácii.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Pridali sme na konci riadok `add.MapMcp()`, čo znamená, že teraz máme trasy `/SSE` a `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Teraz pridajme serveru schopnosti.
+Let's add capabilties to the server next.
 
-### -3- Pridanie schopností servera
+### -3- Adding server capabilities
 
-Keď už máme všetko špecifické pre SSE definované, pridajme schopnosti servera ako nástroje, prompty a zdroje.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Tu je príklad, ako pridať nástroj. Tento konkrétny nástroj vytvára nástroj s názvom "random-joke", ktorý volá Chuck Norris API a vracia JSON odpoveď.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Teraz má váš server jeden nástroj.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Najprv si vytvorme nejaké nástroje, na to vytvoríme súbor *Tools.cs* s nasledujúcim obsahom:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Tu sme pridali:
+  Here we've added the following:
 
-  - Vytvorili triedu `Tools` s dekorátorom `McpServerToolType`.
-  - Definovali nástroj `AddNumbers` pomocou dekorátora `McpServerTool`. Tiež sme poskytli parametre a implementáciu.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Teraz využijeme triedu `Tools`, ktorú sme práve vytvorili:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Pridali sme volanie `WithTools`, ktoré špecifikuje triedu `Tools` ako obsahujúcu nástroje. To je všetko, sme pripravení.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Skvelé, máme server používajúci SSE, poďme si ho teraz vyskúšať.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Cvičenie: Ladenie SSE servera pomocou Inspectoru
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector je skvelý nástroj, ktorý sme videli v predchádzajúcej lekcii [Creating your first server](/03-GettingStarted/01-first-server/README.md). Pozrime sa, či ho môžeme použiť aj tu:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Spustenie Inspectoru
+### -1- Running the inspector
 
-Na spustenie Inspectoru musíte mať najprv bežiaci SSE server, tak ho spustíme:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Spustite server
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Na spustenie Inspectoru musíte mať najprv bežiaci SSE server, tak ho spustím
     uvicorn server:app
     ```
 
-    Všimnite si, že používame spustiteľný súbor `uvicorn`, ktorý sa nainštaluje po zadaní `pip install "mcp[cli]"`. Zadanie `server:app` znamená, že sa snažíme spustiť súbor `server.py` a použiť v ňom inštanciu Starlette s názvom `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,30 +447,30 @@ Na spustenie Inspectoru musíte mať najprv bežiaci SSE server, tak ho spustím
     dotnet run
     ```
 
-    Toto by malo spustiť server. Na komunikáciu s ním potrebujete nový terminál.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Spustite Inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Spustite to v inom terminálovom okne, než kde beží server. Tiež si upravte príkaz nižšie podľa URL, kde váš server beží.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Spustenie Inspectoru vyzerá rovnako vo všetkých runtime. Všimnite si, že namiesto zadania cesty k serveru a príkazu na jeho spustenie zadávame URL, kde server beží, a tiež špecifikujeme trasu `/sse`.
+    Spustenie inspectora vyzerá rovnako vo všetkých runtime prostrediach. Všimnite si, že namiesto zadania cesty k serveru a príkazu na jeho spustenie zadávame URL, kde server beží, a zároveň špecifikujeme trasu `/sse`.
 
 ### -2- Vyskúšanie nástroja
 
-Pripojte sa k serveru výberom SSE v rozbaľovacom zozname a vyplňte pole URL, kde váš server beží, napríklad http:localhost:4321/sse. Potom kliknite na tlačidlo "Connect". Ako predtým, vyberte možnosť zobraziť nástroje, vyberte nástroj a zadajte vstupné hodnoty. Mali by ste vidieť výsledok ako na obrázku nižšie:
+Pripojte sa k serveru výberom SSE v rozbaľovacom zozname a vyplňte pole s URL adresou, kde váš server beží, napríklad http:localhost:4321/sse. Potom kliknite na tlačidlo "Connect". Ako predtým, vyberte možnosť zobraziť zoznam nástrojov, vyberte nástroj a zadajte vstupné hodnoty. Mali by ste vidieť výsledok ako na obrázku nižšie:
 
 ![SSE Server running in inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.sk.png)
 
-Skvelé, dokážete pracovať s Inspectorom, poďme sa pozrieť, ako pracovať s Visual Studio Code.
+Skvelé, viete pracovať s inspectorom, pozrime sa teraz, ako pracovať s Visual Studio Code.
 
 ## Zadanie
 
-Skúste rozšíriť svoj server o ďalšie schopnosti. Pozrite si [túto stránku](https://api.chucknorris.io/), kde môžete napríklad pridať nástroj, ktorý volá API. Vy rozhodnete, ako bude server vyzerať. Prajeme veľa zábavy :)
+Skúste rozšíriť svoj server o ďalšie funkcie. Pozrite si [túto stránku](https://api.chucknorris.io/), kde môžete napríklad pridať nástroj, ktorý volá API. Vy rozhodnete, ako bude server vyzerať. Prajeme veľa zábavy :)
 
 ## Riešenie
 
@@ -477,11 +478,11 @@ Skúste rozšíriť svoj server o ďalšie schopnosti. Pozrite si [túto stránk
 
 ## Kľúčové poznatky
 
-Hlavné poznatky z tejto kapitoly sú:
+Hlavné body z tejto kapitoly sú:
 
 - SSE je druhý podporovaný transport vedľa stdio.
 - Na podporu SSE musíte spravovať prichádzajúce pripojenia a správy pomocou webového frameworku.
-- Na používanie SSE servera môžete použiť Inspector aj Visual Studio Code, rovnako ako pri stdio serveroch. Všimnite si však rozdiely medzi stdio a SSE. Pri SSE musíte server spustiť samostatne a potom spustiť Inspector. Pri Inspectorovi je tiež potrebné špecifikovať URL.
+- Na používanie SSE servera môžete použiť Inspector aj Visual Studio Code, rovnako ako pri stdio serveroch. Všimnite si, že medzi stdio a SSE sú malé rozdiely. Pri SSE musíte server spustiť samostatne a potom spustiť inspector. Pri inspectore je tiež potrebné špecifikovať URL.
 
 ## Ukážky
 
@@ -495,7 +496,7 @@ Hlavné poznatky z tejto kapitoly sú:
 
 - [SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 
-## Čo ďalej
+## Čo bude ďalej
 
 - Ďalej: [HTTP Streaming with MCP (Streamable HTTP)](../06-http-streaming/README.md)
 

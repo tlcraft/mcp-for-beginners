@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T08:10:04+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T19:06:54+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "ms"
 }
 -->
 # Pelayan SSE
 
-SSE (Server Sent Events) adalah standard untuk penstriman dari pelayan ke klien, membolehkan pelayan menghantar kemas kini masa nyata kepada klien melalui HTTP. Ini sangat berguna untuk aplikasi yang memerlukan kemas kini langsung, seperti aplikasi sembang, notifikasi, atau suapan data masa nyata. Selain itu, pelayan anda boleh digunakan oleh pelbagai klien serentak kerana ia dijalankan pada pelayan yang boleh ditempatkan di awan contohnya.
+SSE (Server Sent Events) adalah standard untuk penstriman dari pelayan ke klien, membolehkan pelayan menghantar kemas kini masa nyata kepada klien melalui HTTP. Ini sangat berguna untuk aplikasi yang memerlukan kemas kini langsung, seperti aplikasi sembang, pemberitahuan, atau suapan data masa nyata. Selain itu, pelayan anda boleh digunakan oleh pelbagai klien serentak kerana ia dijalankan pada pelayan yang boleh ditempatkan di awan contohnya.
 
 ## Gambaran Keseluruhan
 
@@ -55,7 +55,7 @@ app.post("/messages", async (req: Request, res: Response) => {
 
 Dalam kod di atas:
 
-- `/sse` ditetapkan sebagai laluan. Apabila permintaan dibuat ke laluan ini, satu contoh pengangkutan baru dibuat dan pelayan *menyambung* menggunakan pengangkutan ini.
+- `/sse` ditetapkan sebagai laluan. Apabila permintaan dibuat ke laluan ini, satu instans pengangkutan baru dibuat dan pelayan *berhubung* menggunakan pengangkutan ini
 - `/messages`, ini adalah laluan yang mengendalikan mesej masuk.
 
 ### Python
@@ -79,9 +79,9 @@ app = Starlette(
 
 Dalam kod di atas kami:
 
-- Membuat satu contoh pelayan ASGI (menggunakan Starlette secara khusus) dan memasang laluan lalai `/`
+- Membuat instans pelayan ASGI (menggunakan Starlette secara khusus) dan memasang laluan lalai `/`
 
-  Apa yang berlaku di belakang tabir ialah laluan `/sse` dan `/messages` disediakan untuk mengendalikan sambungan dan mesej masing-masing. Bahagian lain aplikasi, seperti menambah ciri seperti alat, berlaku seperti dengan pelayan stdio.
+  Apa yang berlaku di belakang tabir ialah laluan `/sse` dan `/messages` disediakan untuk mengendalikan sambungan dan mesej masing-masing. Bahagian lain aplikasi, seperti menambah ciri seperti alat, berlaku seperti pada pelayan stdio.
 
 ### .NET    
 
@@ -103,19 +103,20 @@ Dalam kod di atas kami:
 
     - `AddMcpServer`, kaedah ini menambah keupayaan.
     - `MapMcp`, ini menambah laluan seperti `/SSE` dan `/messages`.
+```
 
-Sekarang kita sudah tahu sedikit tentang SSE, mari bina pelayan SSE seterusnya.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Latihan: Mencipta Pelayan SSE
+## Exercise: Creating an SSE Server
 
-Untuk mencipta pelayan kita, kita perlu ingat dua perkara:
+To create our server, we need to keep two things in mind:
 
-- Kita perlu menggunakan pelayan web untuk mendedahkan titik akhir bagi sambungan dan mesej.
-- Membina pelayan kita seperti biasa dengan alat, sumber dan arahan ketika menggunakan stdio.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Cipta contoh pelayan
+### -1- Create a server instance
 
-Untuk mencipta pelayan kita, kita menggunakan jenis yang sama seperti dengan stdio. Namun, untuk pengangkutan, kita perlu memilih SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-Dalam kod di atas kami telah:
+In the preceding code we've:
 
-- Mencipta contoh pelayan.
-- Mendefinisikan aplikasi menggunakan rangka kerja web express.
-- Mencipta pembolehubah transports yang akan digunakan untuk menyimpan sambungan masuk.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-Dalam kod di atas kami telah:
+In the preceding code we've:
 
-- Mengimport perpustakaan yang diperlukan dengan Starlette (rangka kerja ASGI) dimasukkan.
-- Mencipta contoh pelayan MCP `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-Pada ketika ini, kami telah:
+At this point, we've:
 
-- Mencipta aplikasi web
-- Menambah sokongan untuk ciri MCP melalui `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Mari tambah laluan yang diperlukan seterusnya.
+Let's add the needed routes next.
 
-### -2- Tambah laluan
+### -2- Add routes
 
-Mari tambah laluan yang mengendalikan sambungan dan mesej masuk:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-Dalam kod di atas kami telah mentakrifkan:
+In the preceding code we've defined:
 
-- Laluan `/sse` yang mencipta pengangkutan jenis SSE dan akhirnya memanggil `connect` pada pelayan MCP.
-- Laluan `/messages` yang mengendalikan mesej masuk.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-Dalam kod di atas kami telah:
+In the preceding code we've:
 
-- Mencipta contoh aplikasi ASGI menggunakan rangka kerja Starlette. Sebahagian daripadanya kami menghantar `mcp.sse_app()` ke senarai laluan. Ini akan memasang laluan `/sse` dan `/messages` pada contoh aplikasi.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Kami telah menambah satu baris kod di akhir `add.MapMcp()` yang bermaksud kami kini mempunyai laluan `/SSE` dan `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Mari tambah keupayaan pada pelayan seterusnya.
+Let's add capabilties to the server next.
 
-### -3- Menambah keupayaan pelayan
+### -3- Adding server capabilities
 
-Sekarang kita sudah mentakrifkan semua yang khusus untuk SSE, mari tambah keupayaan pelayan seperti alat, arahan dan sumber.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Ini cara anda boleh menambah alat contohnya. Alat khusus ini mencipta alat bernama "random-joke" yang memanggil API Chuck Norris dan mengembalikan respons JSON.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-Sekarang pelayan anda mempunyai satu alat.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Mari kita cipta beberapa alat dahulu, untuk ini kita akan cipta fail *Tools.cs* dengan kandungan berikut:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Di sini kami telah menambah:
+  Here we've added the following:
 
-  - Mencipta kelas `Tools` dengan dekorator `McpServerToolType`.
-  - Mendefinisikan alat `AddNumbers` dengan mendekorasi kaedah menggunakan `McpServerTool`. Kami juga menyediakan parameter dan pelaksanaan.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Mari gunakan kelas `Tools` yang baru kita cipta:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Kami telah menambah panggilan kepada `WithTools` yang menentukan `Tools` sebagai kelas yang mengandungi alat-alat tersebut. Itu sahaja, kita sudah bersedia.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Bagus, kita ada pelayan menggunakan SSE, mari cuba jalankan seterusnya.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Latihan: Menyahpepijat Pelayan SSE dengan Inspector
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector adalah alat hebat yang kita lihat dalam pelajaran sebelum ini [Mencipta pelayan pertama anda](/03-GettingStarted/01-first-server/README.md). Mari lihat jika kita boleh gunakan Inspector di sini juga:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Menjalankan inspector
+### -1- Running the inspector
 
-Untuk menjalankan inspector, anda mesti mempunyai pelayan SSE yang sedang berjalan, jadi mari lakukan itu dahulu:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Jalankan pelayan 
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Untuk menjalankan inspector, anda mesti mempunyai pelayan SSE yang sedang berjal
     uvicorn server:app
     ```
 
-    Perhatikan bagaimana kita menggunakan executable `uvicorn` yang dipasang apabila kita menaip `pip install "mcp[cli]"`. Mengetik `server:app` bermaksud kita cuba jalankan fail `server.py` dan ia mempunyai contoh Starlette bernama `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,26 +447,26 @@ Untuk menjalankan inspector, anda mesti mempunyai pelayan SSE yang sedang berjal
     dotnet run
     ```
 
-    Ini sepatutnya memulakan pelayan. Untuk berinteraksi dengannya anda perlukan terminal baru.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Jalankan inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Jalankan ini di tetingkap terminal berasingan daripada tempat pelayan berjalan. Juga ambil perhatian, anda perlu sesuaikan arahan di bawah mengikut URL di mana pelayan anda berjalan.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    Menjalankan inspector kelihatan sama di semua runtime. Perhatikan bagaimana kita bukannya menghantar laluan ke pelayan dan arahan untuk memulakan pelayan, kita sebaliknya menghantar URL di mana pelayan berjalan dan juga menentukan laluan `/sse`.
+    Menjalankan inspector kelihatan sama dalam semua persekitaran. Perhatikan bagaimana kita bukannya memberikan laluan ke pelayan dan arahan untuk memulakan pelayan, sebaliknya kita berikan URL di mana pelayan dijalankan dan juga nyatakan laluan `/sse`.
 
 ### -2- Mencuba alat
 
-Sambungkan pelayan dengan memilih SSE dalam senarai dropdown dan isi medan url di mana pelayan anda berjalan, contohnya http:localhost:4321/sse. Kemudian klik butang "Connect". Seperti sebelum ini, pilih untuk menyenaraikan alat, pilih alat dan berikan nilai input. Anda sepatutnya melihat hasil seperti di bawah:
+Sambungkan pelayan dengan memilih SSE dalam senarai dropdown dan isi medan url di mana pelayan anda dijalankan, contohnya http:localhost:4321/sse. Kemudian klik butang "Connect". Seperti sebelum ini, pilih untuk menyenaraikan alat, pilih alat dan berikan nilai input. Anda akan melihat hasil seperti di bawah:
 
 ![Pelayan SSE berjalan dalam inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.ms.png)
 
-Bagus, anda boleh bekerja dengan inspector, mari lihat bagaimana kita boleh bekerja dengan Visual Studio Code seterusnya.
+Bagus, anda sudah boleh bekerja dengan inspector, mari kita lihat bagaimana kita boleh bekerja dengan Visual Studio Code pula.
 
 ## Tugasan
 
@@ -477,11 +478,11 @@ Cuba bina pelayan anda dengan lebih banyak keupayaan. Lihat [laman ini](https://
 
 ## Perkara Penting
 
-Perkara penting dari bab ini adalah seperti berikut:
+Perkara penting yang boleh diambil dari bab ini adalah seperti berikut:
 
 - SSE adalah pengangkutan kedua yang disokong selepas stdio.
 - Untuk menyokong SSE, anda perlu mengurus sambungan masuk dan mesej menggunakan rangka kerja web.
-- Anda boleh menggunakan kedua-dua Inspector dan Visual Studio Code untuk menggunakan pelayan SSE, sama seperti pelayan stdio. Perhatikan bagaimana ia berbeza sedikit antara stdio dan SSE. Untuk SSE, anda perlu memulakan pelayan secara berasingan dan kemudian jalankan alat inspector anda. Untuk alat inspector, terdapat juga beberapa perbezaan di mana anda perlu menentukan URL.
+- Anda boleh menggunakan kedua-dua Inspector dan Visual Studio Code untuk menggunakan pelayan SSE, sama seperti pelayan stdio. Perhatikan sedikit perbezaan antara stdio dan SSE. Untuk SSE, anda perlu memulakan pelayan secara berasingan dan kemudian jalankan alat inspector anda. Untuk alat inspector, terdapat juga beberapa perbezaan di mana anda perlu menentukan URL.
 
 ## Contoh 
 
@@ -500,4 +501,4 @@ Perkara penting dari bab ini adalah seperti berikut:
 - Seterusnya: [HTTP Streaming dengan MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

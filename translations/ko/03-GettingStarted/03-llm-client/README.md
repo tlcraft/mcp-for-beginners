@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-16T21:49:47+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T18:01:54+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "ko"
 }
@@ -13,19 +13,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 개요
 
-이번 수업에서는 클라이언트에 LLM을 추가하는 방법에 집중하며, 이것이 사용자에게 훨씬 더 나은 경험을 제공하는 방법을 보여줍니다.
+이번 강의에서는 클라이언트에 LLM을 추가하는 방법에 집중하며, 이것이 사용자에게 훨씬 더 나은 경험을 제공하는 방법을 보여줍니다.
 
 ## 학습 목표
 
-이 수업이 끝나면 다음을 할 수 있습니다:
+이 강의를 마치면 다음을 할 수 있습니다:
 
-- LLM이 포함된 클라이언트를 생성하기
-- LLM을 사용해 MCP 서버와 원활하게 상호작용하기
-- 클라이언트 측에서 더 나은 최종 사용자 경험 제공하기
+- LLM이 포함된 클라이언트를 생성할 수 있습니다.
+- LLM을 사용해 MCP 서버와 원활하게 상호작용할 수 있습니다.
+- 클라이언트 측에서 더 나은 최종 사용자 경험을 제공할 수 있습니다.
 
 ## 접근 방법
 
-우리가 취해야 할 접근 방식을 이해해 봅시다. LLM을 추가하는 것은 간단해 보이지만 실제로 어떻게 할까요?
+어떤 접근 방식을 취해야 하는지 이해해 봅시다. LLM을 추가하는 것은 간단해 보이지만 실제로 어떻게 할까요?
 
 클라이언트가 서버와 상호작용하는 방식은 다음과 같습니다:
 
@@ -37,9 +37,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 사용자 프롬프트를 LLM에 전달하고, 클라이언트가 나열한 도구와 함께 처리합니다.
 
-좋습니다, 이제 높은 수준에서 어떻게 할 수 있는지 이해했으니 아래 연습 문제에서 직접 시도해 봅시다.
+좋습니다. 이제 높은 수준에서 어떻게 할 수 있는지 이해했으니, 아래 연습 문제에서 직접 시도해 봅시다.
 
-## 연습: LLM이 포함된 클라이언트 생성
+## 연습 문제: LLM이 포함된 클라이언트 생성
 
 이번 연습에서는 클라이언트에 LLM을 추가하는 방법을 배웁니다.
 
@@ -47,13 +47,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 GitHub 토큰 생성은 간단한 과정입니다. 다음과 같이 하세요:
 
-- GitHub 설정으로 이동 – 오른쪽 상단 프로필 사진을 클릭하고 설정(Settings)을 선택합니다.
-- 개발자 설정으로 이동 – 아래로 스크롤하여 Developer Settings를 클릭합니다.
-- 개인 액세스 토큰 선택 – Personal access tokens를 클릭한 후 Generate new token을 선택합니다.
+- GitHub 설정으로 이동 – 오른쪽 상단 프로필 사진을 클릭하고 설정을 선택합니다.
+- 개발자 설정으로 이동 – 아래로 스크롤하여 개발자 설정을 클릭합니다.
+- 개인 액세스 토큰 선택 – 개인 액세스 토큰을 클릭한 후 새 토큰 생성을 선택합니다.
 - 토큰 구성 – 참고용 메모를 추가하고 만료 날짜를 설정한 뒤 필요한 권한(스코프)을 선택합니다.
-- 토큰 생성 및 복사 – Generate token을 클릭하고, 다시 볼 수 없으니 즉시 복사하세요.
+- 토큰 생성 및 복사 – 토큰 생성을 클릭하고, 다시 볼 수 없으니 즉시 복사하세요.
 
-### -1- 서버에 연결하기
+### -1- 서버에 연결
 
 먼저 클라이언트를 만들어 봅시다:
 
@@ -95,7 +95,7 @@ class MCPClient {
 위 코드에서는:
 
 - 필요한 라이브러리를 임포트했습니다.
-- `client`와 `openai` 두 멤버를 가진 클래스를 생성하여 클라이언트 관리와 LLM 상호작용을 돕도록 했습니다.
+- `client`와 `openai`라는 두 멤버를 가진 클래스를 생성하여 클라이언트 관리와 LLM 상호작용을 돕도록 했습니다.
 - `baseUrl`을 추론 API로 설정하여 GitHub 모델을 사용하도록 LLM 인스턴스를 구성했습니다.
 
 ### Python
@@ -244,11 +244,11 @@ public class LangChain4jClient {
 - **MCP 클라이언트 생성**: 서버와의 통신을 담당합니다.
 - **LangChain4j 내장 MCP 지원 사용**: LLM과 MCP 서버 간 통합을 간소화합니다.
 
-좋습니다, 다음 단계로 서버의 기능을 나열해 봅시다.
+좋습니다. 다음 단계로 서버의 기능을 나열해 봅시다.
 
-### -2- 서버 기능 나열하기
+### -2- 서버 기능 나열
 
-이제 서버에 연결해 기능을 요청해 봅시다:
+이제 서버에 연결하고 기능을 요청해 봅시다:
 
 ### TypeScript
 
@@ -271,7 +271,7 @@ async run() {
 
 위 코드에서는:
 
-- 서버에 연결하는 `connectToServer` 메서드를 추가했습니다.
+- 서버에 연결하는 `connectToServer` 코드를 추가했습니다.
 - 앱 흐름을 처리하는 `run` 메서드를 만들었으며, 현재는 도구만 나열하지만 곧 더 추가할 예정입니다.
 
 ### Python
@@ -340,10 +340,10 @@ ToolProvider toolProvider = McpToolProvider.builder()
 위 코드에서는:
 
 - MCP 서버에서 모든 도구를 자동으로 발견하고 등록하는 `McpToolProvider`를 생성했습니다.
-- 도구 제공자는 MCP 도구 스키마와 LangChain4j 도구 형식 간 변환을 내부적으로 처리합니다.
+- 도구 공급자는 MCP 도구 스키마와 LangChain4j 도구 형식 간 변환을 내부적으로 처리합니다.
 - 이 방법은 수동 도구 나열과 변환 과정을 추상화합니다.
 
-### -3- 서버 기능을 LLM 도구로 변환하기
+### -3- 서버 기능을 LLM 도구로 변환
 
 서버 기능을 나열한 다음 단계는 이를 LLM이 이해할 수 있는 형식으로 변환하는 것입니다. 이렇게 하면 LLM에 도구로 제공할 수 있습니다.
 
@@ -378,7 +378,7 @@ ToolProvider toolProvider = McpToolProvider.builder()
 
     위 코드는 MCP 서버 응답을 받아 LLM이 이해할 수 있는 도구 정의 형식으로 변환합니다.
 
-1. 다음으로 `run` 메서드를 업데이트해 서버 기능을 나열하도록 합니다:
+1. 다음으로 `run` 메서드를 업데이트하여 서버 기능을 나열하도록 합니다:
 
     ```typescript
     async run() {
@@ -394,7 +394,7 @@ ToolProvider toolProvider = McpToolProvider.builder()
     }
     ```
 
-    위 코드에서는 `run` 메서드를 업데이트해 결과를 순회하며 각 항목에 대해 `openAiToolAdapter`를 호출합니다.
+    위 코드에서는 `run` 메서드를 수정해 결과를 순회하며 각 항목에 대해 `openAiToolAdapter`를 호출합니다.
 
 ### Python
 
@@ -418,7 +418,7 @@ ToolProvider toolProvider = McpToolProvider.builder()
         return tool_schema
     ```
 
-    위 함수 `convert_to_llm_tools`는 MCP 도구 응답을 받아 LLM이 이해할 수 있는 형식으로 변환합니다.
+    위 `convert_to_llm_tools` 함수는 MCP 도구 응답을 받아 LLM이 이해할 수 있는 형식으로 변환합니다.
 
 1. 다음으로 클라이언트 코드를 업데이트해 이 함수를 활용합니다:
 
@@ -459,7 +459,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 위 코드에서는:
 
 - 이름, 설명, 입력 스키마를 받아 `ConvertFrom` 함수를 만들었습니다.
-- 이 함수는 LLM이 이해할 수 있는 `FunctionDefinition`을 생성해 `ChatCompletionsDefinition`에 전달합니다.
+- 이 함수는 `FunctionDefinition`을 생성하며, 이는 `ChatCompletionsDefinition`에 전달되어 LLM이 이해할 수 있는 형식입니다.
 
 1. 기존 코드를 업데이트해 이 함수를 활용하는 방법을 살펴봅시다:
 
@@ -504,7 +504,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
         toolDefinitions.Add(def);
         ```
 
-        입력 스키마는 도구 응답의 "properties" 속성에 포함되어 있어 추출해야 합니다. 그리고 도구 세부 정보와 함께 `ConvertFrom`을 호출합니다. 이제 무거운 작업은 끝났으니, 다음으로 사용자 프롬프트를 처리하는 부분을 살펴봅시다.
+        입력 스키마는 도구 응답의 "properties" 속성에 포함되어 있어 추출해야 합니다. 이후 도구 세부 정보와 함께 `ConvertFrom`을 호출합니다. 이제 무거운 작업은 끝났으니, 다음으로 사용자 프롬프트를 처리하는 부분을 살펴봅시다.
 
 ### Java
 
@@ -524,19 +524,19 @@ Bot bot = AiServices.builder(Bot.class)
 위 코드에서는:
 
 - 자연어 상호작용을 위한 간단한 `Bot` 인터페이스를 정의했습니다.
-- LangChain4j의 `AiServices`를 사용해 LLM과 MCP 도구 제공자를 자동으로 바인딩했습니다.
+- LangChain4j의 `AiServices`를 사용해 LLM과 MCP 도구 공급자를 자동으로 바인딩했습니다.
 - 프레임워크가 도구 스키마 변환과 함수 호출을 자동으로 처리합니다.
-- 이 방법은 수동 도구 변환을 없애고 MCP 도구를 LLM 호환 형식으로 변환하는 복잡성을 LangChain4j가 모두 처리합니다.
+- 이 방법은 수동 도구 변환을 없애고, MCP 도구를 LLM 호환 형식으로 변환하는 복잡성을 LangChain4j가 모두 처리합니다.
 
-좋습니다, 이제 사용자 요청을 처리할 준비가 되었으니 다음으로 넘어갑시다.
+좋습니다. 이제 사용자 요청을 처리할 준비가 되었으니, 다음으로 넘어갑시다.
 
-### -4- 사용자 프롬프트 요청 처리하기
+### -4- 사용자 프롬프트 요청 처리
 
-이번에는 사용자 요청을 처리하는 코드를 작성합니다.
+이 부분에서는 사용자 요청을 처리합니다.
 
 ### TypeScript
 
-1. LLM을 호출하는 메서드를 추가하세요:
+1. LLM을 호출하는 데 사용할 메서드를 추가하세요:
 
     ```typescript
     async callTools(
@@ -632,7 +632,7 @@ Bot bot = AiServices.builder(Bot.class)
     });
     ```
 
-좋습니다, 전체 코드를 살펴봅시다:
+전체 코드를 한 번에 보면 다음과 같습니다:
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -862,7 +862,7 @@ client.connectToServer(transport);
 
 ### .NET
 
-1. LLM 프롬프트 요청 코드를 살펴봅시다:
+1. LLM 프롬프트 요청을 처리하는 코드를 살펴봅시다:
 
     ```csharp
     var tools = await GetMcpTools();
@@ -903,7 +903,7 @@ client.connectToServer(transport);
     - 모델과 도구를 지정하는 옵션 객체를 생성했습니다.
     - LLM에 요청을 보냈습니다.
 
-1. 마지막으로 LLM이 함수 호출을 해야 하는지 확인하는 코드를 봅시다:
+1. 마지막으로 LLM이 함수 호출을 해야 하는지 판단하는 부분입니다:
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -1139,7 +1139,7 @@ public class LangChain4jClient {
 
 ## 과제
 
-연습 문제의 코드를 가져와 서버에 더 많은 도구를 추가해 보세요. 그런 다음 연습처럼 LLM이 포함된 클라이언트를 만들고 다양한 프롬프트로 테스트해 서버의 모든 도구가 동적으로 호출되는지 확인하세요. 이렇게 클라이언트를 구축하면 최종 사용자가 정확한 클라이언트 명령어 대신 프롬프트를 사용해 MCP 서버 호출을 의식하지 않고도 훌륭한 사용자 경험을 누릴 수 있습니다.
+연습 문제의 코드를 가져와 서버에 더 많은 도구를 추가해 보세요. 그런 다음 연습 문제처럼 LLM이 포함된 클라이언트를 만들고 다양한 프롬프트로 테스트해 서버의 모든 도구가 동적으로 호출되는지 확인하세요. 이렇게 클라이언트를 구축하면 최종 사용자가 정확한 클라이언트 명령어 대신 프롬프트를 사용해 훌륭한 사용자 경험을 누릴 수 있으며, MCP 서버 호출 여부를 신경 쓰지 않아도 됩니다.
 
 ## 솔루션
 
@@ -1147,7 +1147,7 @@ public class LangChain4jClient {
 
 ## 주요 내용 정리
 
-- 클라이언트에 LLM을 추가하면 사용자가 MCP 서버와 상호작용하는 더 나은 방법을 제공합니다.
+- 클라이언트에 LLM을 추가하면 사용자가 MCP 서버와 더 나은 방식으로 상호작용할 수 있습니다.
 - MCP 서버 응답을 LLM이 이해할 수 있는 형식으로 변환해야 합니다.
 
 ## 샘플
@@ -1165,4 +1165,4 @@ public class LangChain4jClient {
 - 다음: [Visual Studio Code를 사용해 서버 소비하기](../04-vscode/README.md)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

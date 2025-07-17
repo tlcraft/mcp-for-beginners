@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T06:44:39+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T18:50:36+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "no"
 }
 -->
 # Lage en klient med LLM
 
-Så langt har du sett hvordan man lager en server og en klient. Klienten har kunnet kalle serveren eksplisitt for å liste opp verktøy, ressurser og prompts. Men dette er ikke en særlig praktisk tilnærming. Brukeren din lever i en agentisk tidsalder og forventer å bruke prompts og kommunisere med en LLM for å gjøre dette. For brukeren din spiller det ingen rolle om du bruker MCP eller ikke for å lagre funksjonalitetene dine, men de forventer å kunne bruke naturlig språk for å samhandle. Så hvordan løser vi dette? Løsningen er å legge til en LLM i klienten.
+Så langt har du sett hvordan man lager en server og en klient. Klienten har kunnet kalle serveren eksplisitt for å liste opp verktøy, ressurser og prompts. Men dette er ikke en særlig praktisk tilnærming. Brukeren din lever i en agentisk tidsalder og forventer å bruke prompts og kommunisere med en LLM for å gjøre dette. For brukeren din spiller det ingen rolle om du bruker MCP eller ikke for å lagre funksjonalitetene dine, men de forventer å kunne bruke naturlig språk for å samhandle. Hvordan løser vi dette? Løsningen er å legge til en LLM i klienten.
 
 ## Oversikt
 
@@ -96,7 +96,7 @@ I koden over har vi:
 
 - Importert nødvendige biblioteker
 - Laget en klasse med to medlemmer, `client` og `openai`, som hjelper oss med å administrere en klient og samhandle med en LLM.
-- Konfigurert LLM-instansen vår til å bruke GitHub Models ved å sette `baseUrl` til inferens-API-en.
+- Konfigurert LLM-instansen vår til å bruke GitHub Models ved å sette `baseUrl` til inferens-APIet.
 
 ### Python
 
@@ -246,7 +246,7 @@ I koden over har vi:
 
 Flott, neste steg er å liste opp funksjonalitetene på serveren.
 
-### -2 Liste serverfunksjonaliteter
+### -2- Liste serverfunksjonaliteter
 
 Nå skal vi koble til serveren og spørre om dens funksjonaliteter:
 
@@ -272,7 +272,7 @@ async run() {
 I koden over har vi:
 
 - Lagt til kode for å koble til serveren, `connectToServer`.
-- Opprettet en `run`-metode som håndterer appens flyt. Så langt lister den bare verktøyene, men vi vil legge til mer snart.
+- Opprettet en `run`-metode som håndterer appens flyt. Så langt lister den bare opp verktøy, men vi vil snart legge til mer.
 
 ### Python
 
@@ -345,7 +345,7 @@ I koden over har vi:
 
 ### -3- Konverter serverfunksjonaliteter til LLM-verktøy
 
-Neste steg etter å ha listet serverfunksjonalitetene er å konvertere dem til et format som LLM-en forstår. Når vi har gjort det, kan vi tilby disse funksjonalitetene som verktøy til LLM-en.
+Neste steg etter å ha listet opp serverfunksjonaliteter er å konvertere dem til et format som LLM-en forstår. Når vi har gjort det, kan vi tilby disse funksjonalitetene som verktøy til LLM-en.
 
 ### TypeScript
 
@@ -378,7 +378,7 @@ Neste steg etter å ha listet serverfunksjonalitetene er å konvertere dem til e
 
     Koden over tar en respons fra MCP-serveren og konverterer den til et verktøydefinisjonsformat som LLM-en forstår.
 
-1. La oss oppdatere `run`-metoden for å liste serverfunksjonalitetene:
+1. La oss oppdatere `run`-metoden for å liste opp serverfunksjonaliteter:
 
     ```typescript
     async run() {
@@ -504,7 +504,7 @@ I koden over har vi:
         toolDefinitions.Add(def);
         ```
 
-        Input-skjemaet er en del av verktøyresponsen, men ligger under "properties"-attributtet, så vi må hente det ut. Videre kaller vi nå `ConvertFrom` med verktøydetaljene. Nå som vi har gjort det tunge arbeidet, la oss se hvordan det hele henger sammen når vi håndterer en brukerprompt.
+        Input-skjemaet er en del av verktøyresponsen, men ligger under "properties"-attributtet, så vi må hente det ut. Videre kaller vi nå `ConvertFrom` med verktøydetaljene. Nå som vi har gjort det tunge arbeidet, la oss se hvordan dette fungerer når vi håndterer en brukerprompt.
 
 ### Java
 
@@ -596,7 +596,7 @@ I denne delen av koden skal vi håndtere brukerforespørsler.
         // TODO  
         ```
 
-1. Oppdater `run`-metoden for å inkludere kall til LLM og kalle `callTools`:
+1. Oppdater `run`-metoden til å inkludere kall til LLM og `callTools`:
 
     ```typescript
 
@@ -901,7 +901,7 @@ client.connectToServer(transport);
     - Hentet verktøy fra MCP-serveren, `var tools = await GetMcpTools()`.
     - Definert en brukerprompt `userMessage`.
     - Konstruert et options-objekt som spesifiserer modell og verktøy.
-    - Sendt en forespørsel til LLM-en.
+    - Gjort en forespørsel til LLM-en.
 
 1. Et siste steg, la oss se om LLM-en mener vi bør kalle en funksjon:
 
@@ -1139,7 +1139,7 @@ Flott, du klarte det!
 
 ## Oppgave
 
-Ta koden fra øvelsen og bygg ut serveren med flere verktøy. Lag deretter en klient med en LLM, som i øvelsen, og test den med forskjellige prompts for å sikre at alle serververktøyene dine blir kalt dynamisk. Denne måten å bygge en klient på gir sluttbrukeren en god opplevelse, siden de kan bruke naturlige språk-prompts i stedet for eksakte klientkommandoer, og de trenger ikke å vite at en MCP-server blir kalt.
+Ta koden fra øvelsen og bygg ut serveren med flere verktøy. Lag deretter en klient med en LLM, som i øvelsen, og test den med ulike prompts for å sikre at alle serververktøyene dine blir kalt dynamisk. Denne måten å bygge en klient på gir sluttbrukeren en god opplevelse, siden de kan bruke naturlige språk-prompts i stedet for eksakte klientkommandoer, og de trenger ikke å vite at en MCP-server blir kalt.
 
 ## Løsning
 

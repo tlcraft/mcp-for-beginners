@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-16T21:37:55+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T17:55:46+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "ja"
 }
@@ -23,30 +23,30 @@ Model Context Protocol（MCP）は、アプリケーションがLLMにコンテ�
 
 このレッスンを終える頃には、以下ができるようになります：
 
-- C#、Java、Python、TypeScript、JavaScriptでのMCP開発環境のセットアップ
+- C#, Java, Python, TypeScript, JavaScriptでのMCP開発環境のセットアップ
 - カスタム機能（リソース、プロンプト、ツール）を備えた基本的なMCPサーバーの構築とデプロイ
 - MCPサーバーに接続するホストアプリケーションの作成
 - MCP実装のテストとデバッグ
 
 ## MCP環境のセットアップ
 
-MCPの作業を始める前に、開発環境を整え、基本的なワークフローを理解することが重要です。このセクションでは、スムーズにMCPを始めるための初期設定手順を案内します。
+MCPの開発を始める前に、開発環境を整え、基本的なワークフローを理解することが重要です。このセクションでは、スムーズにMCPを始めるための初期設定手順を案内します。
 
 ### 前提条件
 
 MCP開発に入る前に、以下を準備してください：
 
-- **開発環境**：選択した言語（C#、Java、Python、TypeScript、JavaScript）用
+- **開発環境**：選択した言語（C#, Java, Python, TypeScript, JavaScript）用
 - **IDE/エディター**：Visual Studio、Visual Studio Code、IntelliJ、Eclipse、PyCharm、または任意のモダンなコードエディター
 - **パッケージマネージャー**：NuGet、Maven/Gradle、pip、npm/yarn
-- **APIキー**：ホストアプリケーションで使用予定のAIサービス用
+- **APIキー**：ホストアプリケーションで使用する予定のAIサービス用
 
-## 基本的なMCPサーバー構造
+## 基本的なMCPサーバー構成
 
 MCPサーバーは通常、以下の要素で構成されます：
 
 - **サーバー設定**：ポート、認証、その他の設定
-- **リソース**：LLMに提供されるデータやコンテキスト
+- **リソース**：LLMに提供するデータやコンテキスト
 - **ツール**：モデルが呼び出せる機能
 - **プロンプト**：テキスト生成や構造化のためのテンプレート
 
@@ -87,31 +87,31 @@ server.start();
 - MCP TypeScript SDKから必要なクラスをインポートしています。
 - 新しいMCPサーバーインスタンスを作成し設定しています。
 - カスタムツール（`calculator`）をハンドラー関数とともに登録しています。
-- MCPリクエストの受信を開始するためにサーバーを起動しています。
+- サーバーを起動し、MCPリクエストの受信を開始しています。
 
 ## テストとデバッグ
 
-MCPサーバーのテストを始める前に、利用可能なツールやデバッグのベストプラクティスを理解することが重要です。効果的なテストはサーバーの期待通りの動作を保証し、問題の早期発見と解決に役立ちます。以下のセクションでは、MCP実装の検証に推奨される方法を紹介します。
+MCPサーバーのテストを始める前に、利用可能なツールとデバッグのベストプラクティスを理解することが重要です。効果的なテストはサーバーの期待通りの動作を保証し、問題の早期発見と解決に役立ちます。以下のセクションでは、MCP実装の検証に推奨される方法を紹介します。
 
 MCPはサーバーのテストとデバッグを支援するツールを提供しています：
 
-- **Inspectorツール**：グラフィカルなインターフェースで、サーバーに接続しツール、プロンプト、リソースをテストできます。
-- **curl**：コマンドラインツールcurlやHTTPコマンドを作成・実行できる他のクライアントを使ってサーバーに接続可能です。
+- **Inspectorツール**：グラフィカルなインターフェースでサーバーに接続し、ツール、プロンプト、リソースをテスト可能
+- **curl**：curlなどのコマンドラインツールやHTTPコマンドを実行できるクライアントでサーバーに接続可能
 
 ### MCP Inspectorの使い方
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)は、以下のことを支援するビジュアルテストツールです：
 
-1. **サーバー機能の発見**：利用可能なリソース、ツール、プロンプトを自動検出
+1. **サーバー機能の検出**：利用可能なリソース、ツール、プロンプトを自動検出
 2. **ツール実行のテスト**：さまざまなパラメーターを試し、リアルタイムで応答を確認
-3. **サーバーメタデータの表示**：サーバー情報、スキーマ、設定の確認
+3. **サーバーメタデータの表示**：サーバー情報、スキーマ、設定を確認
 
 ```bash
 # ex TypeScript, installing and running MCP Inspector
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-上記コマンドを実行すると、MCP Inspectorがブラウザでローカルのウェブインターフェースを起動します。登録済みのMCPサーバーや利用可能なツール、リソース、プロンプトのダッシュボードが表示されます。インターフェースを使ってツールの実行を対話的にテストしたり、サーバーメタデータを調査したり、リアルタイムの応答を確認したりできるため、MCPサーバーの実装検証とデバッグが容易になります。
+上記コマンドを実行すると、MCP Inspectorがブラウザでローカルのウェブインターフェースを起動します。登録済みのMCPサーバーや利用可能なツール、リソース、プロンプトのダッシュボードが表示されます。インターフェースを使ってツールの実行を対話的にテストしたり、サーバーメタデータを検査したり、リアルタイムの応答を確認できるため、MCPサーバーの実装検証とデバッグが容易になります。
 
 以下はその画面例です：
 
@@ -127,7 +127,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 | スキーマ検証エラー | パラメーターが定義されたスキーマに合っているか確認 |
 | サーバーが起動しない | ポートの競合や依存関係の不足をチェック |
 | CORSエラー | クロスオリジンリクエスト用の適切なCORSヘッダーを設定 |
-| 認証問題 | トークンの有効性や権限を確認 |
+| 認証関連の問題 | トークンの有効性や権限を確認 |
 
 ## ローカル開発
 
@@ -145,9 +145,9 @@ npm run start
 
 ## 最初のMCPサーバーを作る
 
-前のレッスンで[コアコンセプト](/01-CoreConcepts/README.md)を学びました。ここからはその知識を実際に活用していきましょう。
+前回のレッスンで[コアコンセプト](/01-CoreConcepts/README.md)を学びました。ここからはその知識を実際に活用していきましょう。
 
-### サーバーができること
+### サーバーでできること
 
 コードを書く前に、サーバーが何をできるかを改めて確認しましょう：
 
@@ -157,16 +157,16 @@ MCPサーバーは例えば：
 - リモートAPIに接続
 - 計算処理を実行
 - 他のツールやサービスと連携
-- ユーザーインターフェースを提供
+- ユーザーインターフェースを提供して対話可能にする
 
-さあ、できることがわかったので、コードを書き始めましょう。
+これで何ができるか分かったので、さっそくコーディングを始めましょう。
 
 ## 演習：サーバーの作成
 
 サーバーを作成するには、以下の手順を踏みます：
 
-- MCP SDKをインストール
-- プロジェクトを作成し構成を整える
+- MCP SDKをインストールする
+- プロジェクトを作成し、構成を整える
 - サーバーコードを書く
 - サーバーをテストする
 
@@ -326,6 +326,10 @@ rm -rf src/test/java
 </project>
 ```
 
+### -2- プロジェクト作成
+
+SDKをインストールしたら、次にプロジェクトを作成します：
+
 ### TypeScript
 
 ```sh
@@ -348,6 +352,8 @@ pip install "mcp[cli]"
 cd calculator-server
 ./mvnw clean install -DskipTests
 ```
+
+### -3- プロジェクトファイル作成
 
 ### TypeScript
 
@@ -390,7 +396,8 @@ cd calculator-server
 
 ### Python
 
-*server.py*ファイルを作成
+*server.py*ファイルを作成：
+
 ```sh
 touch server.py
 ```
@@ -407,6 +414,8 @@ dotnet add package Microsoft.Extensions.Hosting
 ### Java
 
 Java Spring Bootプロジェクトはプロジェクト構造が自動生成されます。
+
+### -4- サーバーコード作成
 
 ### TypeScript
 
@@ -745,7 +754,7 @@ Spring Boot MCP Application
 
 ### -5- ツールとリソースの追加
 
-以下のコードを追加してツールとリソースを作成します：
+以下のコードを追加してツールとリソースを追加します：
 
 ### TypeScript
 
@@ -779,7 +788,7 @@ server.resource(
 }
 ```
 
-リソースは文字列"greeting"でアクセスされ、パラメーター`name`を受け取り、ツールと似たレスポンスを生成します：
+リソースは文字列"greeting"でアクセスされ、パラメーター`name`を受け取り、ツールと似た形式のレスポンスを生成します：
 
 ```typescript
 {
@@ -807,8 +816,8 @@ def get_greeting(name: str) -> str:
 
 上記コードでは：
 
-- パラメーター`a`と`p`（どちらも整数）を受け取るツール`add`を定義
-- パラメーター`name`を受け取るリソース`greeting`を作成
+- パラメーター`a`と`p`（どちらも整数）を受け取る`add`ツールを定義
+- `name`パラメーターを受け取る`greeting`リソースを作成
 
 ### .NET
 
@@ -983,7 +992,7 @@ npm run build
 mcp run server.py
 ```
 
-> MCP Inspectorを使う場合は、`mcp dev server.py`を使うとInspectorが自動起動し、必要なプロキシセッショントークンが提供されます。`mcp run server.py`を使う場合は、Inspectorを手動で起動し接続設定を行う必要があります。
+> MCP Inspectorを使う場合は、`mcp dev server.py`を使うとInspectorが自動起動し、必要なプロキシセッショントークンが提供されます。`mcp run server.py`を使う場合は、Inspectorを手動で起動し接続設定が必要です。
 
 ### .NET
 
@@ -1003,10 +1012,10 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 ### -8- Inspectorを使って実行
 
-Inspectorはサーバーを起動し、対話的に操作して動作確認ができる便利なツールです。起動しましょう：
+Inspectorはサーバーを起動し、対話的に操作して動作確認できる便利なツールです。起動しましょう：
 
 > [!NOTE]
-> 「command」フィールドの表示は、使用しているランタイムに応じたサーバー起動コマンドが表示されるため異なる場合があります。
+> "command"フィールドの表示は、使用しているランタイムに応じたサーバー起動コマンドが表示されるため異なる場合があります。
 
 ### TypeScript
 
@@ -1016,19 +1025,19 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 または*package.json*に `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` を追加し、`npm run inspect`で実行可能です。
 
-PythonはNode.jsツールのinspectorをラップしています。以下のように呼び出せます：
+PythonはNode.jsのinspectorツールをラップしています。以下のように呼び出せます：
 
 ```sh
 mcp dev server.py
 ```
 
-ただし、すべてのメソッドを実装していないため、Node.jsツールを直接実行することを推奨します：
+ただし、全ての機能が実装されていないため、Node.jsツールを直接実行することを推奨します：
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
 ```
 
-スクリプト実行用のコマンドや引数を設定できるツールやIDEを使う場合は、`Command`に`python`、`Arguments`に`server.py`を設定してください。これでスクリプトが正しく実行されます。
+スクリプト実行用のコマンドや引数を設定できるツールやIDEを使う場合は、`Command`に`python`、`Arguments`に`server.py`を設定してください。これで正しくスクリプトが実行されます。
 
 ### .NET
 
@@ -1056,7 +1065,7 @@ Inspectorのウェブインターフェースで：
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.ja.png)
 
 **これでサーバーに接続されました**  
-**Javaサーバーテストのセクションは完了です**
+**Javaサーバーテストのセクションはここで完了です**
 
 次のセクションはサーバーとの対話についてです。
 
@@ -1064,14 +1073,15 @@ Inspectorのウェブインターフェースで：
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ja.png)
 
-1. 「Connect」ボタンを押してサーバーに接続
+1. 「Connect」ボタンを押してサーバーに接続  
   接続後、以下の画面が表示されます：
 
   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ja.png)
 
-1. 「Tools」から「listTools」を選択すると、「Add」が表示されます。「Add」を選び、パラメーターを入力してください。
+1. 「Tools」から「listTools」を選択し、「Add」が表示されるのを確認。  
+   「Add」を選び、パラメーター値を入力してください。
 
-  以下のようなレスポンスが返ってきます。これは「add」ツールの結果です：
+  以下のようなレスポンスが返ってくるはずです。これは「add」ツールの結果です：
 
   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.ja.png)
 
@@ -1085,15 +1095,15 @@ MCPは複数の言語向けに公式SDKを提供しています：
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Spring AIと共同でメンテナンス
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - 公式TypeScript実装
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - 公式Python実装
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - 公式Kotlin実装
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AIと共同でメンテナンスされています
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - 公式のKotlin実装
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AIと共同でメンテナンス
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - 公式のRust実装
 
 ## 重要なポイント
 
-- 言語別SDKを使えば、MCP開発環境のセットアップは簡単です
-- MCPサーバーの構築は、明確なスキーマを持つツールの作成と登録が必要です
-- 信頼性の高いMCP実装には、テストとデバッグが欠かせません
+- 言語別SDKを使えば、MCPの開発環境構築は簡単
+- MCPサーバーの構築は、明確なスキーマを持つツールの作成と登録が必要
+- 信頼性の高いMCP実装には、テストとデバッグが不可欠
 
 ## サンプル
 
@@ -1107,10 +1117,10 @@ MCPは複数の言語向けに公式SDKを提供しています：
 
 お好きなツールを使ってシンプルなMCPサーバーを作成してください：
 
-1. お好みの言語（.NET、Java、Python、またはJavaScript）でツールを実装します。
-2. 入力パラメータと戻り値を定義します。
-3. インスペクターツールを実行して、サーバーが意図した通りに動作することを確認します。
-4. さまざまな入力で実装をテストします。
+1. お好みの言語（.NET、Java、Python、またはJavaScript）でツールを実装する。
+2. 入力パラメーターと戻り値を定義する。
+3. inspectorツールを実行して、サーバーが意図した通りに動作することを確認する。
+4. さまざまな入力で実装をテストする。
 
 ## 解答例
 
@@ -1118,13 +1128,13 @@ MCPは複数の言語向けに公式SDKを提供しています：
 
 ## 追加リソース
 
-- [AzureでModel Context Protocolを使ったエージェントの構築](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [Azure Container Appsを使ったリモートMCP（Node.js/TypeScript/JavaScript）](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [.NET OpenAI MCPエージェント](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Build Agents using Model Context Protocol on Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Remote MCP with Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## 次に進む
 
-次へ: [MCPクライアントの始め方](../02-client/README.md)
+次へ: [Getting Started with MCP Clients](../02-client/README.md)
 
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

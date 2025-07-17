@@ -1,27 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-16T23:49:52+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T17:39:23+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "ur"
 }
 -->
 # MCP کے ساتھ شروعات
 
-Model Context Protocol (MCP) کے ساتھ اپنے پہلے قدموں پر خوش آمدید! چاہے آپ MCP میں نئے ہوں یا اپنی سمجھ کو گہرا کرنا چاہتے ہوں، یہ رہنما آپ کو ضروری سیٹ اپ اور ترقیاتی عمل سے گزاریگا۔ آپ جانیں گے کہ MCP کس طرح AI ماڈلز اور ایپلیکیشنز کے درمیان آسان انضمام ممکن بناتا ہے، اور سیکھیں گے کہ MCP سے چلنے والے حل بنانے اور ٹیسٹ کرنے کے لیے اپنا ماحول جلدی کیسے تیار کیا جائے۔
+Model Context Protocol (MCP) کے ساتھ اپنے پہلے قدموں پر خوش آمدید! چاہے آپ MCP میں نئے ہوں یا اپنی سمجھ کو گہرا کرنا چاہتے ہوں، یہ رہنما آپ کو ضروری سیٹ اپ اور ترقیاتی عمل سے گزاریگا۔ آپ جانیں گے کہ MCP کس طرح AI ماڈلز اور ایپلیکیشنز کے درمیان آسان انضمام ممکن بناتا ہے، اور سیکھیں گے کہ MCP سے چلنے والے حل بنانے اور ٹیسٹ کرنے کے لیے اپنا ماحول کیسے جلدی تیار کیا جائے۔
 
-> TLDR; اگر آپ AI ایپس بناتے ہیں، تو آپ جانتے ہیں کہ آپ اپنے LLM (بڑے زبان ماڈل) میں ٹولز اور دیگر وسائل شامل کر سکتے ہیں تاکہ LLM زیادہ معلوماتی بن جائے۔ تاہم اگر آپ یہ ٹولز اور وسائل سرور پر رکھیں، تو ایپ اور سرور کی صلاحیتیں کسی بھی کلائنٹ کے ذریعے LLM کے ساتھ یا بغیر استعمال کی جا سکتی ہیں۔
+> TLDR; اگر آپ AI ایپس بناتے ہیں، تو آپ جانتے ہیں کہ آپ اپنے LLM (large language model) میں ٹولز اور دیگر وسائل شامل کر سکتے ہیں تاکہ LLM زیادہ معلوماتی بن جائے۔ تاہم اگر آپ یہ ٹولز اور وسائل سرور پر رکھیں، تو ایپ اور سرور کی صلاحیتیں کسی بھی کلائنٹ کے ذریعے LLM کے ساتھ یا بغیر استعمال کی جا سکتی ہیں۔
 
 ## جائزہ
 
-یہ سبق MCP ماحولیات کو سیٹ اپ کرنے اور اپنی پہلی MCP ایپلیکیشنز بنانے کے بارے میں عملی رہنمائی فراہم کرتا ہے۔ آپ سیکھیں گے کہ ضروری ٹولز اور فریم ورکس کیسے سیٹ اپ کریں، بنیادی MCP سرورز بنائیں، ہوسٹ ایپلیکیشنز تخلیق کریں، اور اپنی امپلیمنٹیشنز کو ٹیسٹ کریں۔
+یہ سبق MCP ماحولیات کو سیٹ اپ کرنے اور اپنی پہلی MCP ایپلیکیشنز بنانے کے لیے عملی رہنمائی فراہم کرتا ہے۔ آپ سیکھیں گے کہ ضروری ٹولز اور فریم ورکس کیسے سیٹ اپ کریں، بنیادی MCP سرورز بنائیں، ہوسٹ ایپلیکیشنز تخلیق کریں، اور اپنی امپلیمنٹیشنز کو ٹیسٹ کریں۔
 
-Model Context Protocol (MCP) ایک کھلا پروٹوکول ہے جو ایپلیکیشنز کو LLMs کو کانٹیکسٹ فراہم کرنے کے طریقہ کار کو معیاری بناتا ہے۔ MCP کو AI ایپلیکیشنز کے لیے USB-C پورٹ سمجھیں — یہ AI ماڈلز کو مختلف ڈیٹا ذرائع اور ٹولز سے جوڑنے کا معیاری طریقہ فراہم کرتا ہے۔
+Model Context Protocol (MCP) ایک کھلا پروٹوکول ہے جو ایپلیکیشنز کو LLMs کو کانٹیکسٹ فراہم کرنے کے طریقے کو معیاری بناتا ہے۔ MCP کو AI ایپلیکیشنز کے لیے USB-C پورٹ سمجھیں — یہ AI ماڈلز کو مختلف ڈیٹا ذرائع اور ٹولز سے جوڑنے کا معیاری طریقہ فراہم کرتا ہے۔
 
 ## سیکھنے کے مقاصد
 
-اس سبق کے اختتام تک، آپ قابل ہوں گے:
+اس سبق کے آخر تک، آپ قابل ہوں گے:
 
 - C#, Java, Python, TypeScript، اور JavaScript میں MCP کے لیے ترقیاتی ماحول سیٹ اپ کرنا
 - کسٹم خصوصیات (وسائل، پرامپٹس، اور ٹولز) کے ساتھ بنیادی MCP سرورز بنانا اور تعینات کرنا
@@ -34,7 +34,7 @@ MCP کے ساتھ کام شروع کرنے سے پہلے، اپنے ترقیات
 
 ### ضروریات
 
-MCP کی ترقی میں غوطہ لگانے سے پہلے، یقینی بنائیں کہ آپ کے پاس ہے:
+MCP کی ترقی میں غوطہ لگانے سے پہلے، یقینی بنائیں کہ آپ کے پاس موجود ہیں:
 
 - **ترقیاتی ماحول**: اپنی منتخب زبان (C#, Java, Python, TypeScript، یا JavaScript) کے لیے
 - **IDE/ایڈیٹر**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm، یا کوئی جدید کوڈ ایڈیٹر
@@ -47,7 +47,7 @@ MCP کی ترقی میں غوطہ لگانے سے پہلے، یقینی بنائ
 
 - **سرور کنفیگریشن**: پورٹ، توثیق، اور دیگر ترتیبات کا سیٹ اپ
 - **وسائل**: ڈیٹا اور کانٹیکسٹ جو LLMs کو دستیاب کرائے جاتے ہیں
-- **ٹولز**: وہ فنکشنز جو ماڈلز کال کر سکتے ہیں
+- **ٹولز**: وہ فنکشنالٹی جو ماڈلز کال کر سکتے ہیں
 - **پرامپٹس**: متن بنانے یا ترتیب دینے کے لیے ٹیمپلیٹس
 
 یہاں TypeScript میں ایک سادہ مثال ہے:
@@ -102,7 +102,7 @@ MCP آپ کے سرورز کو ٹیسٹ اور ڈیبگ کرنے میں مدد ک
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) ایک بصری ٹیسٹنگ ٹول ہے جو آپ کی مدد کرتا ہے:
 
-1. **سرور کی صلاحیتوں کا پتہ لگائیں**: دستیاب وسائل، ٹولز، اور پرامپٹس کو خودکار طریقے سے دریافت کریں
+1. **سرور کی صلاحیتوں کا پتہ لگائیں**: دستیاب وسائل، ٹولز، اور پرامپٹس خودکار طریقے سے دریافت کریں
 2. **ٹول کے نفاذ کا ٹیسٹ کریں**: مختلف پیرامیٹرز آزما کر حقیقی وقت میں جوابات دیکھیں
 3. **سرور میٹا ڈیٹا دیکھیں**: سرور کی معلومات، اسکیمہ، اور کنفیگریشنز کا جائزہ لیں
 
@@ -133,7 +133,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 مقامی ترقی اور ٹیسٹنگ کے لیے، آپ اپنے کمپیوٹر پر براہ راست MCP سرورز چلا سکتے ہیں:
 
-1. **سرور پروسیس شروع کریں**: اپنی MCP سرور ایپلیکیشن چلائیں
+1. **سرور پراسیس شروع کریں**: اپنی MCP سرور ایپلیکیشن چلائیں
 2. **نیٹ ورکنگ کنفیگر کریں**: یقینی بنائیں کہ سرور متوقع پورٹ پر قابل رسائی ہے
 3. **کلائنٹس سے جڑیں**: `http://localhost:3000` جیسے مقامی کنکشن URLs استعمال کریں
 
@@ -145,7 +145,7 @@ npm run start
 
 ## اپنی پہلی MCP سرور بنانا
 
-ہم نے پچھلے سبق میں [Core concepts](/01-CoreConcepts/README.md) کا احاطہ کیا، اب وقت ہے کہ اس علم کو عملی جامہ پہنائیں۔
+ہم نے پچھلے سبق میں [Core concepts](/01-CoreConcepts/README.md) کا احاطہ کیا ہے، اب وقت ہے کہ اس علم کو عملی جامہ پہنائیں۔
 
 ### سرور کیا کر سکتا ہے
 
@@ -159,7 +159,7 @@ npm run start
 - دیگر ٹولز اور سروسز کے ساتھ انضمام کرنا
 - تعامل کے لیے یوزر انٹرفیس فراہم کرنا
 
-زبردست، اب جب کہ ہم جانتے ہیں کہ ہم اس کے لیے کیا کر سکتے ہیں، تو چلیں کوڈنگ شروع کرتے ہیں۔
+زبردست، اب جب کہ ہم جانتے ہیں کہ ہم اس کے لیے کیا کر سکتے ہیں، آئیے کوڈنگ شروع کریں۔
 
 ## مشق: سرور بنانا
 
@@ -172,7 +172,7 @@ npm run start
 
 ### -1- SDK انسٹال کریں
 
-یہ آپ کے منتخب رن ٹائم کے مطابق تھوڑا مختلف ہوتا ہے، لہٰذا نیچے دیے گئے رن ٹائمز میں سے ایک منتخب کریں:
+یہ آپ کے منتخب رن ٹائم کے مطابق تھوڑا مختلف ہو سکتا ہے، لہٰذا نیچے دیے گئے رن ٹائمز میں سے ایک منتخب کریں:
 
 > [!NOTE]
 > Python کے لیے، ہم پہلے پروجیکٹ کی ساخت بنائیں گے اور پھر dependencies انسٹال کریں گے۔
@@ -203,7 +203,7 @@ cd McpCalculatorServer
 
 ### Java
 
-Java کے لیے، Spring Boot پروجیکٹ بنائیں:
+Java کے لیے، ایک Spring Boot پروجیکٹ بنائیں:
 
 ```bash
 curl https://start.spring.io/starter.zip \
@@ -326,6 +326,10 @@ rm -rf src/test/java
 </project>
 ```
 
+### -2- پروجیکٹ بنائیں
+
+اب جب کہ آپ نے SDK انسٹال کر لیا ہے، اگلا قدم پروجیکٹ بنانا ہے:
+
 ### TypeScript
 
 ```sh
@@ -348,6 +352,8 @@ pip install "mcp[cli]"
 cd calculator-server
 ./mvnw clean install -DskipTests
 ```
+
+### -3- پروجیکٹ فائلز بنائیں
 
 ### TypeScript
 
@@ -390,7 +396,8 @@ cd calculator-server
 
 ### Python
 
-*server.py* فائل بنائیں
+ایک فائل *server.py* بنائیں
+
 ```sh
 touch server.py
 ```
@@ -408,9 +415,11 @@ dotnet add package Microsoft.Extensions.Hosting
 
 Java Spring Boot پروجیکٹس کے لیے، پروجیکٹ کی ساخت خود بخود بن جاتی ہے۔
 
+### -4- سرور کا کوڈ بنائیں
+
 ### TypeScript
 
-*index.ts* فائل بنائیں اور درج ذیل کوڈ شامل کریں:
+ایک فائل *index.ts* بنائیں اور درج ذیل کوڈ شامل کریں:
 
 ```typescript
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -424,7 +433,7 @@ const server = new McpServer({
 });
 ```
 
-اب آپ کے پاس سرور ہے، لیکن یہ زیادہ کچھ نہیں کرتا، آئیے اسے بہتر بنائیں۔
+اب آپ کے پاس ایک سرور ہے، لیکن یہ زیادہ کچھ نہیں کرتا، آئیے اسے بہتر بنائیں۔
 
 ### Python
 
@@ -745,7 +754,7 @@ Spring Boot MCP Application
 
 ### -5- ایک ٹول اور ایک ریسورس شامل کرنا
 
-مندرجہ ذیل کوڈ شامل کرکے ایک ٹول اور ایک ریسورس شامل کریں:
+مندرجہ ذیل کوڈ شامل کر کے ایک ٹول اور ایک ریسورس شامل کریں:
 
 ### TypeScript
 
@@ -769,7 +778,7 @@ server.resource(
 );
 ```
 
-آپ کا ٹول پیرامیٹرز `a` اور `b` لیتا ہے اور ایک فنکشن چلاتا ہے جو درج ذیل فارم میں جواب دیتا ہے:
+آپ کا ٹول پیرامیٹرز `a` اور `b` لیتا ہے اور ایک فنکشن چلاتا ہے جو درج ذیل شکل میں جواب دیتا ہے:
 
 ```typescript
 {
@@ -812,7 +821,7 @@ def get_greeting(name: str) -> str:
 
 ### .NET
 
-اسے اپنے Program.cs فائل میں شامل کریں:
+اسے اپنی Program.cs فائل میں شامل کریں:
 
 ```csharp
 [McpServerToolType]
@@ -839,7 +848,7 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-مکمل کوڈ یہ ہے:
+یہاں مکمل کوڈ ہے:
 
 ```typescript
 // index.ts
@@ -908,7 +917,7 @@ if __name__ == "__main__":
 
 ### .NET
 
-Program.cs فائل بنائیں اور درج ذیل مواد شامل کریں:
+ایک Program.cs فائل بنائیں جس میں درج ذیل مواد ہو:
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -1003,7 +1012,7 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 ### -8- Inspector کے ذریعے چلائیں
 
-Inspector ایک زبردست ٹول ہے جو آپ کے سرور کو شروع کرتا ہے اور آپ کو اس کے ساتھ تعامل کرنے دیتا ہے تاکہ آپ ٹیسٹ کر سکیں کہ یہ کام کر رہا ہے۔ آئیے اسے شروع کرتے ہیں:
+Inspector ایک زبردست ٹول ہے جو آپ کے سرور کو شروع کرتا ہے اور آپ کو اس کے ساتھ تعامل کرنے دیتا ہے تاکہ آپ ٹیسٹ کر سکیں کہ یہ کام کر رہا ہے۔ آئیے اسے شروع کریں:
 
 > [!NOTE]
 > "command" فیلڈ میں یہ مختلف نظر آ سکتا ہے کیونکہ اس میں آپ کے مخصوص رن ٹائم کے لیے سرور چلانے کا کمانڈ ہوتا ہے۔
@@ -1041,7 +1050,7 @@ npx @modelcontextprotocol/inspector dotnet run
 
 ### Java
 
-یقینی بنائیں کہ آپ کا کیلکولیٹر سرور چل رہا ہے۔
+یقینی بنائیں کہ آپ کا کیلکولیٹر سرور چل رہا ہے  
 پھر inspector چلائیں:
 
 ```cmd
@@ -1050,13 +1059,13 @@ npx @modelcontextprotocol/inspector
 
 Inspector ویب انٹرفیس میں:
 
-1. "SSE" کو ٹرانسپورٹ ٹائپ کے طور پر منتخب کریں
-2. URL کو سیٹ کریں: `http://localhost:8080/sse`
+1. "SSE" کو ٹرانسپورٹ ٹائپ کے طور پر منتخب کریں  
+2. URL سیٹ کریں: `http://localhost:8080/sse`  
 3. "Connect" پر کلک کریں
 
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.ur.png)
 
-**آپ اب سرور سے جُڑ چکے ہیں**
+**آپ اب سرور سے جُڑ چکے ہیں**  
 **Java سرور ٹیسٹنگ سیکشن مکمل ہو چکا ہے**
 
 اگلا سیکشن سرور کے ساتھ تعامل کے بارے میں ہے۔
@@ -1065,12 +1074,12 @@ Inspector ویب انٹرفیس میں:
 
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ur.png)
 
-1. "Connect" بٹن کو منتخب کرکے سرور سے جڑیں
-  جڑنے کے بعد، آپ کو درج ذیل نظر آئے گا:
+1. "Connect" بٹن کو منتخب کر کے سرور سے جڑیں  
+  جڑنے کے بعد آپ کو درج ذیل نظر آئے گا:
 
   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ur.png)
 
-1. "Tools" اور "listTools" منتخب کریں، آپ کو "Add" نظر آئے گا، "Add" کو منتخب کریں اور پیرامیٹر ویلیوز بھریں۔
+1. "Tools" اور "listTools" منتخب کریں، آپ کو "Add" نظر آئے گا، "Add" کو منتخب کریں اور پیرامیٹرز کی ویلیوز بھریں۔
 
   آپ کو درج ذیل جواب نظر آئے گا، یعنی "add" ٹول کا نتیجہ:
 
@@ -1082,50 +1091,49 @@ Inspector ویب انٹرفیس میں:
 
 MCP متعدد زبانوں کے لیے سرکاری SDKs فراہم کرتا ہے:
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Microsoft کے تعاون سے مینٹینڈ
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Spring AI کے تعاون سے مینٹینڈ
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - سرکاری TypeScript امپلیمنٹیشن
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - سرکاری Python امپلیمنٹیشن
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - سرکاری Kotlin امپلیمنٹیشن
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AI کے ساتھ تعاون میں برقرار رکھا گیا  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Rust کی سرکاری امپلیمنٹیشن  
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Microsoft کے تعاون سے مینٹین کیا جاتا ہے  
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Spring AI کے تعاون سے مینٹین کیا جاتا ہے  
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - سرکاری Type
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - سرکاری Kotlin نفاذ
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AI کے تعاون سے برقرار رکھا گیا
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - سرکاری Rust نفاذ
 
 ## اہم نکات
 
-- MCP ڈیولپمنٹ ماحول کی ترتیب زبان مخصوص SDKs کے ساتھ آسان ہے  
-- MCP سرورز بنانے کے لیے واضح اسکیموں کے ساتھ ٹولز تخلیق اور رجسٹر کرنا شامل ہے  
-- قابل اعتماد MCP امپلیمنٹیشن کے لیے ٹیسٹنگ اور ڈیبگنگ ضروری ہے  
+- MCP ڈیولپمنٹ ماحول کی ترتیب زبان مخصوص SDKs کے ساتھ آسان ہے
+- MCP سرورز بنانے کے لیے واضح اسکیموں کے ساتھ ٹولز تخلیق اور رجسٹر کرنا شامل ہے
+- قابل اعتماد MCP نفاذ کے لیے ٹیسٹنگ اور ڈیبگنگ ضروری ہے
 
 ## نمونے
 
-- [Java Calculator](../samples/java/calculator/README.md)  
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
-- [JavaScript Calculator](../samples/javascript/README.md)  
-- [TypeScript Calculator](../samples/typescript/README.md)  
-- [Python Calculator](../../../../03-GettingStarted/samples/python)  
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## اسائنمنٹ
 
 اپنی پسند کے ٹول کے ساتھ ایک سادہ MCP سرور بنائیں:
 
-1. اپنے پسندیدہ زبان (.NET, Java, Python, یا JavaScript) میں ٹول کو امپلیمنٹ کریں۔  
-2. ان پٹ پیرامیٹرز اور ریٹرن ویلیوز کی تعریف کریں۔  
-3. انسپکٹر ٹول چلائیں تاکہ سرور کی درست کارکردگی کو یقینی بنایا جا سکے۔  
-4. مختلف ان پٹس کے ساتھ امپلیمنٹیشن کا ٹیسٹ کریں۔  
+1. اپنے پسندیدہ زبان (.NET, Java, Python, یا JavaScript) میں ٹول نافذ کریں۔
+2. ان پٹ پیرامیٹرز اور ریٹرن ویلیوز کی تعریف کریں۔
+3. سرور کی درست کارکردگی کے لیے inspector ٹول چلائیں۔
+4. مختلف ان پٹس کے ساتھ نفاذ کی جانچ کریں۔
 
 ## حل
 
-[Solution](./solution/README.md)  
+[Solution](./solution/README.md)
 
 ## اضافی وسائل
 
-- [Azure پر Model Context Protocol کے ذریعے ایجنٹس بنائیں](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [Azure Container Apps کے ساتھ Remote MCP (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
+- [Azure پر Model Context Protocol کے ذریعے ایجنٹس بنائیں](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Azure Container Apps کے ساتھ Remote MCP (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## آگے کیا ہے
 
 اگلا: [MCP کلائنٹس کے ساتھ شروعات](../02-client/README.md)
 
 **دستخطی نوٹ**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

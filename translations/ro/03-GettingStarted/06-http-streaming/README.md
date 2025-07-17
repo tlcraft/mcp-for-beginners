@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-13T20:52:18+00:00",
+  "original_hash": "40b1bbffdb8ce6812bf6e701cad876b6",
+  "translation_date": "2025-07-17T19:21:47+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "ro"
 }
 -->
 # Streaming HTTPS cu Model Context Protocol (MCP)
 
-Acest capitol oferă un ghid complet pentru implementarea streaming-ului securizat, scalabil și în timp real folosind Model Context Protocol (MCP) prin HTTPS. Sunt abordate motivația pentru streaming, mecanismele de transport disponibile, cum să implementezi HTTP streamabil în MCP, bune practici de securitate, migrarea de la SSE și sfaturi practice pentru construirea propriilor aplicații MCP cu streaming.
+Acest capitol oferă un ghid complet pentru implementarea streaming-ului securizat, scalabil și în timp real folosind Model Context Protocol (MCP) prin HTTPS. Sunt abordate motivația pentru streaming, mecanismele de transport disponibile, cum să implementezi HTTP streamabil în MCP, bune practici de securitate, migrarea de la SSE și recomandări practice pentru construirea propriilor aplicații MCP cu streaming.
 
 ## Mecanisme de Transport și Streaming în MCP
 
@@ -19,7 +19,7 @@ Această secțiune explorează diferitele mecanisme de transport disponibile în
 
 Un mecanism de transport definește modul în care datele sunt schimbate între client și server. MCP suportă mai multe tipuri de transport pentru a se potrivi diferitelor medii și cerințe:
 
-- **stdio**: Intrare/ieșire standard, potrivit pentru unelte locale și CLI. Simplu, dar nu este potrivit pentru web sau cloud.
+- **stdio**: Intrare/ieșire standard, potrivit pentru unelte locale și bazate pe CLI. Simplu, dar nepotrivit pentru web sau cloud.
 - **SSE (Server-Sent Events)**: Permite serverelor să trimită actualizări în timp real către clienți prin HTTP. Bun pentru interfețe web, dar limitat în scalabilitate și flexibilitate.
 - **Streamable HTTP**: Transport modern bazat pe HTTP pentru streaming, suportând notificări și o scalabilitate mai bună. Recomandat pentru majoritatea scenariilor de producție și cloud.
 
@@ -41,7 +41,7 @@ Rețineți mecanismele stdio și SSE prezentate în capitolele anterioare și cu
 
 Înțelegerea conceptelor fundamentale și a motivațiilor din spatele streaming-ului este esențială pentru implementarea unor sisteme eficiente de comunicare în timp real.
 
-**Streaming-ul** este o tehnică în programarea de rețea care permite trimiterea și primirea datelor în bucăți mici, gestionabile sau ca o succesiune de evenimente, în loc să se aștepte ca întregul răspuns să fie gata. Acest lucru este util mai ales pentru:
+**Streaming-ul** este o tehnică în programarea de rețea care permite trimiterea și primirea datelor în bucăți mici, gestionabile sau ca o secvență de evenimente, în loc să se aștepte ca întregul răspuns să fie gata. Acest lucru este util mai ales pentru:
 
 - Fișiere sau seturi mari de date.
 - Actualizări în timp real (ex: chat, bare de progres).
@@ -57,20 +57,19 @@ Iată ce trebuie să știi despre streaming la nivel înalt:
 
 Motivele pentru utilizarea streaming-ului sunt următoarele:
 
-- Utilizatorii primesc feedback imediat, nu doar la final
-- Permite aplicații în timp real și interfețe responsive
-- Folosește mai eficient resursele de rețea și calcul
+- Utilizatorii primesc feedback imediat, nu doar la final.
+- Permite aplicații în timp real și interfețe responsive.
+- Folosește mai eficient resursele de rețea și calcul.
 
 ### Exemplu simplu: Server și client HTTP streaming
 
 Iată un exemplu simplu despre cum poate fi implementat streaming-ul:
 
-<details>
-<summary>Python</summary>
+## Python
 
 **Server (Python, folosind FastAPI și StreamingResponse):**
-<details>
-<summary>Python</summary>
+
+### Python
 
 ```python
 from fastapi import FastAPI
@@ -89,11 +88,9 @@ def stream():
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 ```
 
-</details>
-
 **Client (Python, folosind requests):**
-<details>
-<summary>Python</summary>
+
+### Python
 
 ```python
 import requests
@@ -104,9 +101,7 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
             print(line.decode())
 ```
 
-</details>
-
-Acest exemplu demonstrează un server care trimite o serie de mesaje către client pe măsură ce devin disponibile, în loc să aștepte ca toate mesajele să fie gata.
+Acest exemplu demonstrează un server care trimite o serie de mesaje către client pe măsură ce acestea devin disponibile, în loc să aștepte ca toate mesajele să fie gata.
 
 **Cum funcționează:**
 - Serverul transmite fiecare mesaj pe măsură ce este gata.
@@ -114,13 +109,10 @@ Acest exemplu demonstrează un server care trimite o serie de mesaje către clie
 
 **Cerințe:**
 - Serverul trebuie să folosească un răspuns de tip streaming (ex: `StreamingResponse` în FastAPI).
-- Clientul trebuie să proceseze răspunsul ca un stream (`stream=True` în requests).
+- Clientul trebuie să proceseze răspunsul ca un flux (`stream=True` în requests).
 - Content-Type este de obicei `text/event-stream` sau `application/octet-stream`.
 
-</details>
-
-<details>
-<summary>Java</summary>
+## Java
 
 **Server (Java, folosind Spring Boot și Server-Sent Events):**
 
@@ -192,18 +184,16 @@ public class CalculatorClientApplication implements CommandLineRunner {
 - `delayElements()` simulează timpul de procesare între evenimente
 - Evenimentele pot avea tipuri (`info`, `result`) pentru o gestionare mai bună de către client
 
-</details>
-
 ### Comparație: Streaming clasic vs Streaming MCP
 
 Diferențele dintre modul clasic de streaming și cel din MCP pot fi ilustrate astfel:
 
 | Caracteristică         | Streaming HTTP Clasic          | Streaming MCP (Notificări)         |
 |-----------------------|-------------------------------|-----------------------------------|
-| Răspuns principal      | Fragmentat                    | Unic, la final                    |
-| Actualizări de progres | Trimise ca fragmente de date | Trimise ca notificări             |
-| Cerințe client         | Trebuie să proceseze stream-ul | Trebuie să implementeze un handler de mesaje |
-| Caz de utilizare       | Fișiere mari, fluxuri de token AI | Progres, loguri, feedback în timp real |
+| Răspuns principal      | În bucăți (chunked)            | Unic, la final                    |
+| Actualizări de progres | Trimise ca bucăți de date      | Trimise ca notificări             |
+| Cerințe client         | Trebuie să proceseze fluxul    | Trebuie să implementeze handler de mesaje |
+| Caz de utilizare       | Fișiere mari, fluxuri de tokeni AI | Progres, jurnale, feedback în timp real |
 
 ### Diferențe cheie observate
 
@@ -214,20 +204,20 @@ Mai mult, iată câteva diferențe importante:
    - Streaming MCP: Folosește un sistem structurat de notificări cu protocol JSON-RPC
 
 - **Formatul mesajelor:**
-   - HTTP clasic: Fragmente text simple cu linii noi
+   - HTTP clasic: Bucăți de text simplu cu linii noi
    - MCP: Obiecte structurate LoggingMessageNotification cu metadate
 
 - **Implementarea clientului:**
    - HTTP clasic: Client simplu care procesează răspunsuri streaming
-   - MCP: Client mai sofisticat cu un handler de mesaje pentru a procesa diferite tipuri de mesaje
+   - MCP: Client mai sofisticat cu handler de mesaje pentru a procesa tipuri diferite de mesaje
 
 - **Actualizări de progres:**
    - HTTP clasic: Progresul face parte din fluxul principal de răspuns
-   - MCP: Progresul este trimis prin mesaje de notificare separate, în timp ce răspunsul principal vine la final
+   - MCP: Progresul este trimis prin mesaje de notificare separate, iar răspunsul principal vine la final
 
 ### Recomandări
 
-Iată câteva recomandări privind alegerea între implementarea streaming-ului clasic (ca endpoint-ul prezentat mai sus folosind `/stream`) și streaming-ul prin MCP:
+Există câteva recomandări privind alegerea între implementarea streaming-ului clasic (ca endpoint-ul `/stream` prezentat mai sus) și streaming-ul prin MCP.
 
 - **Pentru nevoi simple de streaming:** Streaming-ul HTTP clasic este mai simplu de implementat și suficient pentru cerințe de bază.
 
@@ -237,11 +227,11 @@ Iată câteva recomandări privind alegerea între implementarea streaming-ului 
 
 ## Streaming în MCP
 
-Ok, ai văzut până acum recomandări și comparații privind diferențele dintre streaming-ul clasic și cel în MCP. Hai să intrăm în detalii despre cum poți folosi streaming-ul în MCP.
+Ok, ai văzut până acum recomandări și comparații între streaming-ul clasic și cel în MCP. Hai să intrăm în detalii despre cum poți folosi streaming-ul în MCP.
 
 Înțelegerea modului în care funcționează streaming-ul în cadrul MCP este esențială pentru construirea unor aplicații responsive care oferă feedback în timp real utilizatorilor în timpul operațiunilor de durată lungă.
 
-În MCP, streaming-ul nu înseamnă trimiterea răspunsului principal în bucăți, ci trimiterea de **notificări** către client în timp ce o unealtă procesează o cerere. Aceste notificări pot include actualizări de progres, loguri sau alte evenimente.
+În MCP, streaming-ul nu înseamnă trimiterea răspunsului principal în bucăți, ci trimiterea de **notificări** către client în timp ce o unealtă procesează o cerere. Aceste notificări pot include actualizări de progres, jurnale sau alte evenimente.
 
 ### Cum funcționează
 
@@ -251,9 +241,9 @@ Rezultatul principal este încă trimis ca un răspuns unic. Totuși, notificăr
 
 Am spus „Notificare”, ce înseamnă asta în contextul MCP?
 
-O notificare este un mesaj trimis de la server către client pentru a informa despre progres, stare sau alte evenimente în timpul unei operațiuni de durată lungă. Notificările îmbunătățesc transparența și experiența utilizatorului.
+O notificare este un mesaj trimis de server către client pentru a informa despre progres, stare sau alte evenimente în timpul unei operațiuni de durată lungă. Notificările îmbunătățesc transparența și experiența utilizatorului.
 
-De exemplu, clientul trebuie să trimită o notificare odată ce handshake-ul inițial cu serverul a fost realizat.
+De exemplu, clientul trebuie să trimită o notificare odată ce s-a realizat handshake-ul inițial cu serverul.
 
 O notificare arată astfel ca mesaj JSON:
 
@@ -267,7 +257,7 @@ O notificare arată astfel ca mesaj JSON:
 }
 ```
 
-Notificările aparțin unui topic în MCP denumit ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
+Notificările aparțin unui topic în MCP numit ["Logging"](https://modelcontextprotocol.io/specification/draft/server/utilities/logging).
 
 Pentru a activa logging-ul, serverul trebuie să îl activeze ca funcționalitate/capabilitate astfel:
 
@@ -288,26 +278,22 @@ Există diferite tipuri de notificări:
 |-----------|-------------------------------|-------------------------------|
 | debug     | Informații detaliate pentru depanare | Puncte de intrare/ieșire din funcții |
 | info      | Mesaje informaționale generale | Actualizări de progres         |
-| notice    | Evenimente normale, dar semnificative | Schimbări de configurare       |
+| notice    | Evenimente normale, dar semnificative | Modificări de configurare     |
 | warning   | Condiții de avertizare         | Utilizarea unei funcționalități depreciate |
-| error     | Condiții de eroare             | Eșecuri în operațiuni          |
+| error     | Condiții de eroare             | Eșecuri în operațiuni         |
 | critical  | Condiții critice               | Defecțiuni ale componentelor sistemului |
-| alert     | Acțiune imediată necesară      | Detectare corupție de date     |
+| alert     | Acțiune imediată necesară      | Detectare corupție de date    |
 | emergency | Sistemul este inutilizabil     | Defecțiune completă a sistemului |
 
 ## Implementarea notificărilor în MCP
 
-Pentru a implementa notificările în MCP, trebuie să configurezi atât partea de server, cât și clientul pentru a gestiona actualizările în timp real. Astfel, aplicația ta poate oferi feedback imediat utilizatorilor în timpul operațiunilor de durată lungă.
+Pentru a implementa notificările în MCP, trebuie să configurezi atât partea de server, cât și pe cea de client pentru a gestiona actualizările în timp real. Astfel, aplicația ta poate oferi feedback imediat utilizatorilor în timpul operațiunilor de durată lungă.
 
 ### Partea de server: Trimiterea notificărilor
 
 Să începem cu partea de server. În MCP, definești unelte care pot trimite notificări în timp ce procesează cereri. Serverul folosește obiectul context (de obicei `ctx`) pentru a trimite mesaje către client.
 
-<details>
-<summary>Python</summary>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -320,18 +306,13 @@ async def process_files(message: str, ctx: Context) -> TextContent:
 
 În exemplul de mai sus, unealta `process_files` trimite trei notificări către client pe măsură ce procesează fiecare fișier. Metoda `ctx.info()` este folosită pentru a trimite mesaje informaționale.
 
-</details>
-
-De asemenea, pentru a activa notificările, asigură-te că serverul folosește un transport de tip streaming (cum ar fi `streamable-http`) și clientul implementează un handler de mesaje pentru a procesa notificările. Iată cum poți configura serverul să folosească transportul `streamable-http`:
+În plus, pentru a activa notificările, asigură-te că serverul folosește un transport de tip streaming (ex: `streamable-http`) și clientul implementează un handler de mesaje pentru a procesa notificările. Iată cum poți configura serverul să folosească transportul `streamable-http`:
 
 ```python
 mcp.run(transport="streamable-http")
 ```
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 [Tool("A tool that sends progress notifications")]
@@ -350,7 +331,7 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 
 În acest exemplu .NET, unealta `ProcessFiles` este decorată cu atributul `Tool` și trimite trei notificări către client pe măsură ce procesează fiecare fișier. Metoda `ctx.Info()` este folosită pentru a trimite mesaje informaționale.
 
-Pentru a activa notificările în serverul tău MCP .NET, asigură-te că folosești un transport de tip streaming:
+Pentru a activa notificările în serverul tău MCP .NET, asigură-te că folosești un transport de streaming:
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -360,14 +341,11 @@ await builder
     .RunAsync();
 ```
 
-</details>
-
 ### Partea de client: Primirea notificărilor
 
 Clientul trebuie să implementeze un handler de mesaje pentru a procesa și afișa notificările pe măsură ce sosesc.
 
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 async def message_handler(message):
@@ -384,12 +362,9 @@ async with ClientSession(
 ) as session:
 ```
 
-În codul de mai sus, funcția `message_handler` verifică dacă mesajul primit este o notificare. Dacă da, îl afișează; altfel, îl procesează ca un mesaj obișnuit de la server. De asemenea, observă cum `ClientSession` este inițializat cu `message_handler` pentru a gestiona notificările primite.
+În codul de mai sus, funcția `message_handler` verifică dacă mesajul primit este o notificare. Dacă da, îl afișează; altfel, îl procesează ca mesaj normal de server. De asemenea, observă cum `ClientSession` este inițializat cu `message_handler` pentru a gestiona notificările primite.
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 // Define a message handler
@@ -418,17 +393,15 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-În acest exemplu .NET, funcția `MessageHandler` verifică dacă mesajul primit este o notificare. Dacă da, îl afișează; altfel, îl procesează ca un mesaj obișnuit de la server. `ClientSession` este inițializat cu handler-ul de mesaje prin `ClientSessionOptions`.
+În acest exemplu .NET, funcția `MessageHandler` verifică dacă mesajul primit este o notificare. Dacă da, îl afișează; altfel, îl procesează ca mesaj normal de server. `ClientSession` este inițializat cu handler-ul de mesaje prin `ClientSessionOptions`.
 
-</details>
-
-Pentru a activa notificările, asigură-te că serverul folosește un transport de tip streaming (cum ar fi `streamable-http`) și clientul implementează un handler de mesaje pentru a procesa notificările.
+Pentru a activa notificările, asigură-te că serverul folosește un transport de streaming (ex: `streamable-http`) și clientul implementează un handler de mesaje pentru a procesa notificările.
 
 ## Notificări de progres & scenarii
 
 Această secțiune explică conceptul de notificări de progres în MCP, de ce sunt importante și cum să le implementezi folosind Streamable HTTP. Vei găsi și o sarcină practică pentru a-ți consolida înțelegerea.
 
-Notificările de progres sunt mesaje în timp real trimise de server către client în timpul operațiunilor de durată lungă. În loc să aștepte ca întregul proces să se termine, serverul ține clientul la curent cu stadiul curent. Acest lucru îmbunătățește transparența, experiența utilizatorului și facilitează depanarea.
+Notificările de progres sunt mesaje în timp real trimise de server către client în timpul operațiunilor de durată lungă. În loc să aștepte finalizarea întregului proces, serverul ține clientul la curent cu stadiul curent. Acest lucru îmbunătățește transparența, experiența utilizatorului și facilitează depanarea.
 
 **Exemplu:**
 
@@ -446,7 +419,7 @@ Notificările de progres sunt mesaje în timp real trimise de server către clie
 Notificările de progres sunt esențiale din mai multe motive:
 
 - **Experiență mai bună pentru utilizator:** Utilizatorii văd actualizări pe măsură ce munca avansează, nu doar la final.
-- **Feedback în timp real:** Clienții pot afișa bare de progres sau loguri, făcând aplicația să pară mai receptivă.
+- **Feedback în timp real:** Clienții pot afișa bare de progres sau jurnale, făcând aplicația să pară mai receptivă.
 - **Depanare și monitorizare mai ușoară:** Dezvoltatorii și utilizatorii pot vedea unde un proces este lent sau blocat.
 
 ### Cum să implementezi notificările de progres
@@ -458,7 +431,7 @@ Iată cum poți implementa notificările de progres în MCP:
 
 **Exemplu server:**
 
-<summary>Python</summary>
+## Python
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -469,12 +442,9 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-</details>
+**Exemplu client:**
 
-**Exemplu Client:**
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 async def message_handler(message):
@@ -484,37 +454,33 @@ async def message_handler(message):
         print("SERVER MESSAGE:", message)
 ```
 
-</details>
+## Considerații de securitate
 
-## Considerații de Securitate
-
-Atunci când implementezi servere MCP cu transporturi bazate pe HTTP, securitatea devine o preocupare esențială care necesită atenție atentă la multiple vectori de atac și mecanisme de protecție.
+Atunci când implementezi servere MCP cu transporturi bazate pe HTTP, securitatea devine o preocupare majoră care necesită atenție atentă la multiple vectori de atac și mecanisme de protecție.
 
 ### Prezentare generală
 
-Securitatea este critică atunci când expui servere MCP prin HTTP. Streamable HTTP introduce noi suprafețe de atac și necesită o configurare atentă.
+Securitatea este critică când expui servere MCP prin HTTP. Streamable HTTP introduce noi suprafețe de atac și necesită configurare atentă.
 
 ### Puncte cheie
-- **Validarea antetului Origin**: Verifică întotdeauna antetul `Origin` pentru a preveni atacurile de tip DNS rebinding.
-- **Legarea la localhost**: Pentru dezvoltare locală, leagă serverele la `localhost` pentru a evita expunerea lor pe internetul public.
-- **Autentificare**: Implementează autentificare (de ex. chei API, OAuth) pentru implementările în producție.
-- **CORS**: Configurează politicile Cross-Origin Resource Sharing (CORS) pentru a restricționa accesul.
-- **HTTPS**: Folosește HTTPS în producție pentru a cripta traficul.
+- **Validarea header-ului Origin:** Verifică întotdeauna header-ul `Origin` pentru a preveni atacurile de tip DNS rebinding.
+- **Legarea la localhost:** Pentru dezvoltare locală, leagă serverele la `localhost` pentru a evita expunerea publică.
+- **Autentificare:** Implementează autentificare (ex: chei API, OAuth) pentru mediile de producție.
+- **CORS:** Configurează politicile Cross-Origin Resource Sharing pentru a restricționa accesul.
+- **HTTPS:** Folosește HTTPS în producție pentru criptarea traficului.
 
-### Cele mai bune practici
+### Bune practici
 - Nu avea încredere în cererile primite fără validare.
 - Înregistrează și monitorizează toate accesările și erorile.
-- Actualizează regulat dependențele pentru a remedia vulnerabilitățile de securitate.
+- Actualizează regulat dependențele pentru a remedia vulnerabilități de securitate.
 
 ### Provocări
 - Echilibrarea securității cu ușurința dezvoltării
 - Asigurarea compatibilității cu diverse medii client
 
-
 ## Actualizarea de la SSE la Streamable HTTP
 
 Pentru aplicațiile care folosesc în prezent Server-Sent Events (SSE), migrarea la Streamable HTTP oferă capabilități îmbunătățite și o sustenabilitate mai bună pe termen lung pentru implementările MCP.
-
 ### De ce să faci upgrade?
 
 Există două motive convingătoare pentru a face upgrade de la SSE la Streamable HTTP:
@@ -522,7 +488,7 @@ Există două motive convingătoare pentru a face upgrade de la SSE la Streamabl
 - Streamable HTTP oferă o scalabilitate mai bună, compatibilitate și suport mai bogat pentru notificări decât SSE.
 - Este transportul recomandat pentru noile aplicații MCP.
 
-### Pași pentru migrare
+### Pașii migrației
 
 Iată cum poți migra de la SSE la Streamable HTTP în aplicațiile tale MCP:
 
@@ -540,26 +506,26 @@ Se recomandă să menții compatibilitatea cu clienții SSE existenți pe durata
 
 ### Provocări
 
-Asigură-te că abordezi următoarele provocări în timpul migrării:
+Asigură-te că abordezi următoarele provocări în timpul migrației:
 
-- Asigurarea că toți clienții sunt actualizați
+- Actualizarea tuturor clienților
 - Gestionarea diferențelor în livrarea notificărilor
 
-## Considerații de Securitate
+## Considerații de securitate
 
-Securitatea trebuie să fie o prioritate de top când implementezi orice server, mai ales când folosești transporturi bazate pe HTTP precum Streamable HTTP în MCP.
+Securitatea trebuie să fie o prioritate majoră atunci când implementezi orice server, mai ales când folosești transporturi bazate pe HTTP, cum este Streamable HTTP în MCP.
 
 Atunci când implementezi servere MCP cu transporturi bazate pe HTTP, securitatea devine o preocupare esențială care necesită atenție atentă la multiple vectori de atac și mecanisme de protecție.
 
 ### Prezentare generală
 
-Securitatea este critică atunci când expui servere MCP prin HTTP. Streamable HTTP introduce noi suprafețe de atac și necesită o configurare atentă.
+Securitatea este critică când expui servere MCP prin HTTP. Streamable HTTP introduce noi suprafețe de atac și necesită o configurare atentă.
 
-Iată câteva considerații cheie de securitate:
+Iată câteva aspecte cheie legate de securitate:
 
-- **Validarea antetului Origin**: Verifică întotdeauna antetul `Origin` pentru a preveni atacurile de tip DNS rebinding.
+- **Validarea header-ului Origin**: Verifică întotdeauna header-ul `Origin` pentru a preveni atacurile de tip DNS rebinding.
 - **Legarea la localhost**: Pentru dezvoltare locală, leagă serverele la `localhost` pentru a evita expunerea lor pe internetul public.
-- **Autentificare**: Implementează autentificare (de ex. chei API, OAuth) pentru implementările în producție.
+- **Autentificare**: Implementează autentificare (de ex. chei API, OAuth) pentru mediile de producție.
 - **CORS**: Configurează politicile Cross-Origin Resource Sharing (CORS) pentru a restricționa accesul.
 - **HTTPS**: Folosește HTTPS în producție pentru a cripta traficul.
 
@@ -591,7 +557,7 @@ Construiește un server și un client MCP unde serverul procesează o listă de 
 
 [Solution](./solution/README.md)
 
-## Lecturi suplimentare & Ce urmează?
+## Lecturi suplimentare și ce urmează?
 
 Pentru a-ți continua parcursul cu streaming-ul MCP și a-ți extinde cunoștințele, această secțiune oferă resurse suplimentare și pași sugerați pentru construirea unor aplicații mai avansate.
 
@@ -600,7 +566,7 @@ Pentru a-ți continua parcursul cu streaming-ul MCP și a-ți extinde cunoștin�
 - [Microsoft: Introducere în HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Microsoft: CORS în ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
-- [Python requests: Cereri streaming](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
+- [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
 
 ### Ce urmează?
 

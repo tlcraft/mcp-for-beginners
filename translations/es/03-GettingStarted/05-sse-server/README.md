@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-16T22:09:08+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T17:23:49+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "es"
 }
@@ -55,7 +55,7 @@ app.post("/messages", async (req: Request, res: Response) => {
 
 En el código anterior:
 
-- `/sse` está configurado como una ruta. Cuando se hace una solicitud a esta ruta, se crea una nueva instancia de transporte y el servidor se *conecta* usando este transporte.
+- `/sse` está configurado como una ruta. Cuando se hace una solicitud a esta ruta, se crea una nueva instancia de transporte y el servidor *se conecta* usando este transporte.
 - `/messages` es la ruta que maneja los mensajes entrantes.
 
 ### Python
@@ -81,7 +81,7 @@ En el código anterior:
 
 - Creamos una instancia de un servidor ASGI (usando específicamente Starlette) y montamos la ruta por defecto `/`.
 
-  Lo que sucede detrás de escena es que las rutas `/sse` y `/messages` se configuran para manejar conexiones y mensajes respectivamente. El resto de la aplicación, como agregar características como herramientas, funciona igual que con servidores stdio.
+  Lo que sucede detrás de escena es que las rutas `/sse` y `/messages` se configuran para manejar conexiones y mensajes respectivamente. El resto de la aplicación, como agregar funcionalidades o herramientas, funciona igual que con servidores stdio.
 
 ### .NET    
 
@@ -99,23 +99,24 @@ En el código anterior:
     app.MapMcp();
     ```
 
-    Hay dos métodos que nos ayudan a pasar de un servidor web a un servidor web que soporta SSE y son:
+    Hay dos métodos que nos ayudan a pasar de un servidor web a un servidor web que soporta SSE, y son:
 
     - `AddMcpServer`, este método añade capacidades.
     - `MapMcp`, este añade rutas como `/SSE` y `/messages`.
+```
 
-Ahora que sabemos un poco más sobre SSE, construyamos un servidor SSE.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## Ejercicio: Creando un servidor SSE
+## Exercise: Creating an SSE Server
 
-Para crear nuestro servidor, debemos tener en cuenta dos cosas:
+To create our server, we need to keep two things in mind:
 
-- Necesitamos usar un servidor web para exponer endpoints para la conexión y los mensajes.
-- Construir nuestro servidor como normalmente lo hacemos con herramientas, recursos y prompts cuando usábamos stdio.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Crear una instancia del servidor
+### -1- Create a server instance
 
-Para crear nuestro servidor, usamos los mismos tipos que con stdio. Sin embargo, para el transporte, debemos elegir SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-En el código anterior hemos:
+In the preceding code we've:
 
-- Creado una instancia del servidor.
-- Definido una app usando el framework web express.
-- Creado una variable transports que usaremos para almacenar las conexiones entrantes.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-En el código anterior hemos:
+In the preceding code we've:
 
-- Importado las librerías que necesitaremos, incluyendo Starlette (un framework ASGI).
-- Creado una instancia del servidor MCP llamada `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -169,19 +170,19 @@ builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
-// TODO: add routes 
+// TODO: agregar rutas 
 ```
 
-En este punto, hemos:
+At this point, we've:
 
-- Creado una aplicación web.
-- Añadido soporte para las características MCP mediante `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-Ahora agreguemos las rutas necesarias.
+Let's add the needed routes next.
 
-### -2- Añadir rutas
+### -2- Add routes
 
-Agreguemos las rutas que manejan la conexión y los mensajes entrantes:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -201,17 +202,17 @@ app.post("/messages", async (req: Request, res: Response) => {
   if (transport) {
     await transport.handlePostMessage(req, res);
   } else {
-    res.status(400).send('No transport found for sessionId');
+    res.status(400).send('No se encontró transporte para sessionId');
   }
 });
 
 app.listen(3001);
 ```
 
-En el código anterior hemos definido:
+In the preceding code we've defined:
 
-- Una ruta `/sse` que instancia un transporte de tipo SSE y termina llamando a `connect` en el servidor MCP.
-- Una ruta `/messages` que se encarga de los mensajes entrantes.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-En el código anterior hemos:
+In the preceding code we've:
 
-- Creado una instancia de la app ASGI usando el framework Starlette. Como parte de esto, pasamos `mcp.sse_app()` a su lista de rutas. Esto monta las rutas `/sse` y `/messages` en la instancia de la app.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,18 +242,18 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-Hemos añadido una línea de código al final `add.MapMcp()`, esto significa que ahora tenemos las rutas `/SSE` y `/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-Ahora agreguemos capacidades al servidor.
+Let's add capabilties to the server next.
 
-### -3- Añadiendo capacidades al servidor
+### -3- Adding server capabilities
 
-Ahora que tenemos todo lo específico de SSE definido, añadamos capacidades al servidor como herramientas, prompts y recursos.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
 ```typescript
-server.tool("random-joke", "A joke returned by the chuck norris api", {},
+server.tool("random-joke", "Un chiste devuelto por la API de Chuck Norris", {},
   async () => {
     const response = await fetch("https://api.chucknorris.io/jokes/random");
     const data = await response.json();
@@ -269,18 +270,18 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-Aquí puedes ver cómo añadir una herramienta, por ejemplo. Esta herramienta específica crea una llamada "random-joke" que consulta una API de Chuck Norris y devuelve una respuesta JSON.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
 ```python
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """Suma dos números"""
     return a + b
 ```
 
-Ahora tu servidor tiene una herramienta.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -291,7 +292,7 @@ import express from "express";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
 
-// Create an MCP server
+// Crear un servidor MCP
 const server = new McpServer({
   name: "example-server",
   version: "1.0.0",
@@ -316,11 +317,11 @@ app.post("/messages", async (req: Request, res: Response) => {
   if (transport) {
     await transport.handlePostMessage(req, res);
   } else {
-    res.status(400).send("No transport found for sessionId");
+    res.status(400).send("No se encontró transporte para sessionId");
   }
 });
 
-server.tool("random-joke", "A joke returned by the chuck norris api", {}, async () => {
+server.tool("random-joke", "Un chiste devuelto por la API de Chuck Norris", {}, async () => {
   const response = await fetch("https://api.chucknorris.io/jokes/random");
   const data = await response.json();
 
@@ -349,10 +350,10 @@ mcp = FastMCP("My App")
 
 @mcp.tool()
 def add(a: int, b: int) -> int:
-    """Add two numbers"""
+    """Suma dos números"""
     return a + b
 
-# Mount the SSE server to the existing ASGI server
+# Montar el servidor SSE en el servidor ASGI existente
 app = Starlette(
     routes=[
         Mount('/', app=mcp.sse_app()),
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. Primero, creemos algunas herramientas, para esto crearemos un archivo *Tools.cs* con el siguiente contenido:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -380,10 +381,10 @@ app = Starlette(
       
       }
 
-      [McpServerTool, Description("Add two numbers together.")]
+      [McpServerTool, Description("Suma dos números.")]
       public async Task<string> AddNumbers(
-          [Description("The first number")] int a,
-          [Description("The second number")] int b)
+          [Description("El primer número")] int a,
+          [Description("El segundo número")] int b)
       {
           return (a + b).ToString();
       }
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  Aquí hemos añadido lo siguiente:
+  Here we've added the following:
 
-  - Creado una clase `Tools` con el decorador `McpServerToolType`.
-  - Definido una herramienta `AddNumbers` decorando el método con `McpServerTool`. También proporcionamos parámetros e implementación.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. Ahora usemos la clase `Tools` que acabamos de crear:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  Hemos añadido una llamada a `WithTools` que especifica `Tools` como la clase que contiene las herramientas. Eso es todo, estamos listos.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-Genial, tenemos un servidor usando SSE, probémoslo a continuación.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## Ejercicio: Depurando un servidor SSE con Inspector
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector es una gran herramienta que vimos en una lección anterior [Creando tu primer servidor](/03-GettingStarted/01-first-server/README.md). Veamos si podemos usar el Inspector aquí también:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- Ejecutando el inspector
+### -1- Running the inspector
 
-Para ejecutar el inspector, primero debes tener un servidor SSE corriendo, así que hagámoslo:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. Ejecuta el servidor
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Para ejecutar el inspector, primero debes tener un servidor SSE corriendo, así 
     uvicorn server:app
     ```
 
-    Observa que usamos el ejecutable `uvicorn` que se instala cuando escribimos `pip install "mcp[cli]"`. Escribir `server:app` significa que intentamos ejecutar un archivo `server.py` que tenga una instancia Starlette llamada `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,12 +447,12 @@ Para ejecutar el inspector, primero debes tener un servidor SSE corriendo, así 
     dotnet run
     ```
 
-    Esto debería iniciar el servidor. Para interactuar con él necesitas una nueva terminal.
+    This should start the server. To interface with it you need a new terminal.
 
-1. Ejecuta el inspector
+1. Run the inspector
 
     > ![NOTE]
-    > Ejecuta esto en una ventana de terminal separada de donde está corriendo el servidor. También ten en cuenta que debes ajustar el comando a continuación para que coincida con la URL donde corre tu servidor.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
@@ -461,15 +462,15 @@ Para ejecutar el inspector, primero debes tener un servidor SSE corriendo, así 
 
 ### -2- Probando la herramienta
 
-Conecta el servidor seleccionando SSE en la lista desplegable y completa el campo de URL donde corre tu servidor, por ejemplo http:localhost:4321/sse. Ahora haz clic en el botón "Connect". Como antes, selecciona listar herramientas, elige una herramienta y proporciona valores de entrada. Deberías ver un resultado como el siguiente:
+Conéctate al servidor seleccionando SSE en la lista desplegable y completa el campo de URL donde tu servidor está corriendo, por ejemplo http:localhost:4321/sse. Ahora haz clic en el botón "Connect". Como antes, selecciona listar herramientas, elige una herramienta y proporciona los valores de entrada. Deberías ver un resultado como el siguiente:
 
 ![Servidor SSE corriendo en inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.es.png)
 
-Genial, puedes trabajar con el inspector, veamos ahora cómo trabajar con Visual Studio Code.
+Genial, puedes trabajar con el inspector, ahora veamos cómo trabajar con Visual Studio Code.
 
 ## Tarea
 
-Intenta ampliar tu servidor con más capacidades. Consulta [esta página](https://api.chucknorris.io/) para, por ejemplo, añadir una herramienta que llame a una API. Tú decides cómo debe ser el servidor. ¡Diviértete! :)
+Intenta ampliar tu servidor con más funcionalidades. Consulta [esta página](https://api.chucknorris.io/) para, por ejemplo, agregar una herramienta que llame a una API. Tú decides cómo debe ser el servidor. ¡Diviértete! :)
 
 ## Solución
 
@@ -480,8 +481,8 @@ Intenta ampliar tu servidor con más capacidades. Consulta [esta página](https:
 Los puntos clave de este capítulo son los siguientes:
 
 - SSE es el segundo transporte soportado junto a stdio.
-- Para soportar SSE, necesitas gestionar conexiones y mensajes entrantes usando un framework web.
-- Puedes usar tanto Inspector como Visual Studio Code para consumir un servidor SSE, igual que con servidores stdio. Nota que hay algunas diferencias entre stdio y SSE. Para SSE, necesitas iniciar el servidor por separado y luego ejecutar la herramienta inspector. Para el inspector, también hay diferencias en que debes especificar la URL.
+- Para soportar SSE, necesitas gestionar conexiones entrantes y mensajes usando un framework web.
+- Puedes usar tanto Inspector como Visual Studio Code para consumir un servidor SSE, igual que con servidores stdio. Nota que hay algunas diferencias entre stdio y SSE. Para SSE, necesitas iniciar el servidor por separado y luego ejecutar tu herramienta inspector. Para la herramienta inspector, también hay diferencias en que debes especificar la URL.
 
 ## Ejemplos
 

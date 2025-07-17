@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fbe345ba124324648cfb3aef9a9120b8",
-  "translation_date": "2025-07-13T20:28:23+00:00",
+  "original_hash": "40b1bbffdb8ce6812bf6e701cad876b6",
+  "translation_date": "2025-07-17T17:46:52+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "mo"
 }
 -->
 # 使用 Model Context Protocol (MCP) 的 HTTPS 串流
 
-本章提供了使用 HTTPS 透過 Model Context Protocol (MCP) 實現安全、可擴展且即時串流的完整指南。內容涵蓋串流的動機、可用的傳輸機制、如何在 MCP 中實作可串流的 HTTP、安全最佳實踐、從 SSE 遷移，以及建立自訂串流 MCP 應用的實務指引。
+本章提供了使用 HTTPS 透過 Model Context Protocol (MCP) 實現安全、可擴展且即時串流的完整指南。內容涵蓋串流的動機、可用的傳輸機制、如何在 MCP 中實作可串流的 HTTP、安全最佳實踐、從 SSE 遷移，以及建立自有串流 MCP 應用的實務指引。
 
 ## MCP 中的傳輸機制與串流
 
-本節探討 MCP 中可用的不同傳輸機制，以及它們在實現客戶端與伺服器之間即時通訊串流功能上的角色。
+本節探討 MCP 中可用的不同傳輸機制，以及它們在實現客戶端與伺服器間即時通訊串流功能上的角色。
 
 ### 什麼是傳輸機制？
 
@@ -25,17 +25,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 比較表
 
-請參考下表，了解這些傳輸機制的差異：
+請參考下表了解這些傳輸機制的差異：
 
-| 傳輸機制          | 即時更新       | 串流       | 擴展性       | 使用場景                 |
-|-------------------|----------------|------------|--------------|--------------------------|
-| stdio             | 否             | 否         | 低           | 本地 CLI 工具            |
-| SSE               | 是             | 是         | 中           | 網頁、即時更新           |
-| Streamable HTTP   | 是             | 是         | 高           | 雲端、多客戶端           |
+| 傳輸機制          | 即時更新       | 串流       | 擴展性       | 使用場景                |
+|-------------------|----------------|------------|--------------|-------------------------|
+| stdio             | 否             | 否         | 低           | 本地 CLI 工具           |
+| SSE               | 是             | 是         | 中           | 網頁、即時更新          |
+| Streamable HTTP   | 是             | 是         | 高           | 雲端、多客戶端          |
 
 > **提示：** 選擇合適的傳輸機制會影響效能、擴展性與使用者體驗。**Streamable HTTP** 是現代、可擴展且適合雲端應用的推薦選擇。
 
-請注意前幾章介紹過的 stdio 和 SSE 傳輸機制，以及本章所涵蓋的 Streamable HTTP 傳輸。
+請注意前幾章介紹過的 stdio 與 SSE 傳輸機制，以及本章所涵蓋的 Streamable HTTP 傳輸。
 
 ## 串流：概念與動機
 
@@ -47,7 +47,7 @@ CO_OP_TRANSLATOR_METADATA:
 - 即時更新（例如聊天、進度條）。
 - 長時間運算，需持續向使用者回報狀態。
 
-以下是串流的高階重點：
+串流的高階重點如下：
 
 - 資料逐步傳送，而非一次全部送出。
 - 客戶端可即時處理接收到的資料。
@@ -65,12 +65,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 以下是一個簡單的串流實作範例：
 
-<details>
-<summary>Python</summary>
+## Python
 
-**伺服器 (Python，使用 FastAPI 與 StreamingResponse)：**
-<details>
-<summary>Python</summary>
+**伺服器端 (Python，使用 FastAPI 與 StreamingResponse)：**
+
+### Python
 
 ```python
 from fastapi import FastAPI
@@ -89,11 +88,10 @@ def stream():
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 ```
 
-</details>
 
 **客戶端 (Python，使用 requests)：**
-<details>
-<summary>Python</summary>
+
+### Python
 
 ```python
 import requests
@@ -104,9 +102,8 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
             print(line.decode())
 ```
 
-</details>
 
-此範例示範伺服器在訊息可用時即逐一傳送給客戶端，而非等待所有訊息準備好後一次傳送。
+此範例示範伺服器在訊息可用時即逐一傳送給客戶端，而非等待所有訊息準備好後一次送出。
 
 **運作方式：**
 - 伺服器在每則訊息準備好時即產生（yield）。
@@ -117,12 +114,9 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
 - 客戶端必須以串流方式處理回應（requests 中設定 `stream=True`）。
 - Content-Type 通常為 `text/event-stream` 或 `application/octet-stream`。
 
-</details>
+## Java
 
-<details>
-<summary>Java</summary>
-
-**伺服器 (Java，使用 Spring Boot 與 Server-Sent Events)：**
+**伺服器端 (Java，使用 Spring Boot 與 Server-Sent Events)：**
 
 ```java
 @RestController
@@ -192,8 +186,6 @@ public class CalculatorClientApplication implements CommandLineRunner {
 - `delayElements()` 模擬事件間的處理時間
 - 事件可帶有類型（如 `info`、`result`）以利客戶端處理
 
-</details>
-
 ### 比較：傳統串流 vs MCP 串流
 
 傳統串流與 MCP 串流的差異可用下表說明：
@@ -205,7 +197,7 @@ public class CalculatorClientApplication implements CommandLineRunner {
 | 客戶端需求             | 必須處理串流                | 必須實作訊息處理器            |
 | 使用場景               | 大型檔案、AI 令牌串流       | 進度、日誌、即時回饋          |
 
-### 主要差異說明
+### 主要差異
 
 此外，還有以下關鍵差異：
 
@@ -225,19 +217,19 @@ public class CalculatorClientApplication implements CommandLineRunner {
    - 傳統 HTTP：進度包含在主要回應串流中
    - MCP：進度透過獨立通知訊息傳送，主要回應於結束時送出
 
-### 建議事項
+### 建議
 
-在選擇實作傳統串流（如前述使用 `/stream` 的端點）或 MCP 串流時，我們有以下建議：
+在選擇實作傳統串流（如前述 `/stream` 端點）或 MCP 串流時，我們有以下建議：
 
 - **簡單串流需求：** 傳統 HTTP 串流較易實作，適合基本串流需求。
 - **複雜互動應用：** MCP 串流提供更結構化的方式，含豐富元資料，且通知與最終結果分離。
-- **AI 應用：** MCP 的通知系統特別適合長時間運算的 AI 任務，可持續向使用者回報進度。
+- **AI 應用：** MCP 的通知系統特別適合長時間運算的 AI 任務，能持續向使用者回報進度。
 
 ## MCP 中的串流
 
-到目前為止，你已看到關於傳統串流與 MCP 串流的比較與建議。接下來深入說明如何在 MCP 中利用串流。
+你已經看到傳統串流與 MCP 串流的比較與建議，接下來深入說明如何在 MCP 中利用串流。
 
-理解 MCP 框架內串流的運作方式，對於建立在長時間運算中能即時回饋使用者的回應式應用至關重要。
+理解 MCP 框架內的串流運作，對於打造在長時間運算中能即時回饋使用者的回應式應用至關重要。
 
 在 MCP 中，串流並非將主要回應分塊傳送，而是在工具處理請求時，向客戶端發送**通知**。這些通知可包含進度更新、日誌或其他事件。
 
@@ -249,11 +241,11 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 我們提到「通知」，在 MCP 中這是什麼意思？
 
-通知是伺服器向客戶端發送的訊息，用以告知長時間運算中的進度、狀態或其他事件。通知提升透明度與使用者體驗。
+通知是伺服器向客戶端發送的訊息，用以告知長時間操作中的進度、狀態或其他事件。通知提升透明度與使用者體驗。
 
-例如，客戶端應在與伺服器完成初始握手後發送通知。
+例如，客戶端在與伺服器完成初始握手後，應該會收到一則通知。
 
-通知的 JSON 格式如下：
+通知的 JSON 訊息範例如下：
 
 ```json
 {
@@ -278,7 +270,7 @@ public class CalculatorClientApplication implements CommandLineRunner {
 ```
 
 > [!NOTE]
-> 根據所使用的 SDK，日誌功能可能預設啟用，或需在伺服器設定中明確啟用。
+> 根據所使用的 SDK，日誌功能可能預設啟用，或需在伺服器設定中明確開啟。
 
 通知有不同類型：
 
@@ -289,23 +281,19 @@ public class CalculatorClientApplication implements CommandLineRunner {
 | notice     | 正常但重要事件               | 設定變更                    |
 | warning    | 警告狀況                    | 使用已棄用功能              |
 | error      | 錯誤狀況                    | 操作失敗                    |
-| critical   | 致命狀況                    | 系統元件故障                |
+| critical   | 關鍵狀況                    | 系統元件故障                |
 | alert      | 必須立即採取行動            | 偵測到資料損毀              |
-| emergency  | 系統無法使用                | 完全系統故障                |
+| emergency  | 系統無法使用                | 完整系統故障                |
 
 ## 在 MCP 中實作通知
 
-要在 MCP 中實作通知，需同時設定伺服器與客戶端以處理即時更新。這讓應用能在長時間運算中即時回饋使用者。
+要在 MCP 中實作通知，需同時設定伺服器與客戶端以處理即時更新。這讓應用能在長時間操作中即時回饋使用者。
 
 ### 伺服器端：發送通知
 
-先從伺服器端開始。在 MCP 中，你定義的工具可在處理請求時發送通知。伺服器使用上下文物件（通常為 `ctx`）向客戶端發送訊息。
+先從伺服器端開始。在 MCP 中，你定義的工具可在處理請求時發送通知。伺服器使用上下文物件（通常是 `ctx`）向客戶端發送訊息。
 
-<details>
-<summary>Python</summary>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -318,18 +306,13 @@ async def process_files(message: str, ctx: Context) -> TextContent:
 
 上述範例中，`process_files` 工具在處理每個檔案時會發送三則通知給客戶端。`ctx.info()` 方法用於發送資訊訊息。
 
-</details>
-
 此外，為啟用通知，請確保伺服器使用串流傳輸（如 `streamable-http`），且客戶端實作訊息處理器以處理通知。以下示範如何設定伺服器使用 `streamable-http` 傳輸：
 
 ```python
 mcp.run(transport="streamable-http")
 ```
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 [Tool("A tool that sends progress notifications")]
@@ -346,9 +329,9 @@ public async Task<TextContent> ProcessFiles(string message, ToolContext ctx)
 }
 ```
 
-此 .NET 範例中，`ProcessFiles` 工具以 `Tool` 屬性標註，並在處理每個檔案時發送三則通知給客戶端。`ctx.Info()` 方法用於發送資訊訊息。
+此 .NET 範例中，`ProcessFiles` 工具以 `Tool` 屬性標註，並在處理每個檔案時發送三則通知。`ctx.Info()` 方法用於發送資訊訊息。
 
-要在 .NET MCP 伺服器中啟用通知，請確保使用串流傳輸：
+要在 .NET MCP 伺服器啟用通知，請確保使用串流傳輸：
 
 ```csharp
 var builder = McpBuilder.Create();
@@ -358,14 +341,11 @@ await builder
     .RunAsync();
 ```
 
-</details>
-
 ### 客戶端：接收通知
 
-客戶端必須實作訊息處理器，以接收並顯示到達的通知。
+客戶端必須實作訊息處理器，來處理並顯示接收到的通知。
 
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 async def message_handler(message):
@@ -382,12 +362,9 @@ async with ClientSession(
 ) as session:
 ```
 
-上述程式碼中，`message_handler` 函式會檢查傳入訊息是否為通知。若是，則印出通知；否則當作一般伺服器訊息處理。並注意 `ClientSession` 初始化時帶入 `message_handler`，以處理接收的通知。
+上述程式碼中，`message_handler` 函式會檢查傳入訊息是否為通知。若是，則印出通知；否則當作一般伺服器訊息處理。並且注意 `ClientSession` 是以 `message_handler` 初始化，以處理接收的通知。
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 // Define a message handler
@@ -416,17 +393,15 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-此 .NET 範例中，`MessageHandler` 函式會檢查傳入訊息是否為通知。若是，則印出通知；否則當作一般伺服器訊息處理。`ClientSession` 透過 `ClientSessionOptions` 初始化並帶入訊息處理器。
-
-</details>
+此 .NET 範例中，`MessageHandler` 函式會檢查傳入訊息是否為通知。若是，則印出通知；否則當作一般伺服器訊息處理。`ClientSession` 透過 `ClientSessionOptions` 以訊息處理器初始化。
 
 要啟用通知，請確保伺服器使用串流傳輸（如 `streamable-http`），且客戶端實作訊息處理器以處理通知。
 
 ## 進度通知與應用場景
 
-本節說明 MCP 中進度通知的概念、重要性，以及如何使用 Streamable HTTP 實作。你也會看到一個實務練習以加深理解。
+本節說明 MCP 中進度通知的概念、重要性，以及如何使用 Streamable HTTP 實作。並提供實務練習以加深理解。
 
-進度通知是伺服器在長時間運算過程中，向客戶端即時發送的訊息。伺服器不必等整個流程完成，便能持續更新客戶端當前狀態。這提升透明度、使用者體驗，並方便除錯。
+進度通知是伺服器在長時間操作中，向客戶端即時發送的訊息。伺服器不必等整個流程完成，便能持續更新目前狀態。這提升透明度、使用者體驗，並方便除錯。
 
 **範例：**
 
@@ -443,20 +418,20 @@ await client.InitializeAsync();
 
 進度通知的重要性包括：
 
-- **提升使用者體驗：** 使用者能隨時看到工作進展，而非僅在結束時。
-- **即時回饋：** 客戶端可顯示進度條或日誌，讓應用感覺更有回應性。
-- **方便除錯與監控：** 開發者與使用者能看到流程中可能的瓶頸或卡住點。
+- **提升使用者體驗：** 使用者能看到工作進展，而非僅在結束時。
+- **即時回饋：** 客戶端可顯示進度條或日誌，讓應用更具回應性。
+- **方便除錯與監控：** 開發者與使用者能了解流程卡在哪裡。
 
 ### 如何實作進度通知
 
 以下是 MCP 中實作進度通知的方法：
 
 - **伺服器端：** 使用 `ctx.info()` 或 `ctx.log()` 在處理每個項目時發送通知。這會在主要結果準備好前，先向客戶端發送訊息。
-- **客戶端：** 實作訊息處理器，監聽並顯示到達的通知。此處理器能區分通知與最終結果。
+- **客戶端：** 實作訊息處理器，監聽並顯示接收到的通知。此處理器能區分通知與最終結果。
 
 **伺服器範例：**
 
-<summary>Python</summary>
+## Python
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -467,12 +442,10 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-</details>
 
-**Client 範例：**
+**客戶端範例：**
 
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 async def message_handler(message):
@@ -482,22 +455,21 @@ async def message_handler(message):
         print("SERVER MESSAGE:", message)
 ```
 
-</details>
 
 ## 安全性考量
 
-在使用基於 HTTP 的傳輸實作 MCP 伺服器時，安全性是首要關注點，需要仔細防範多種攻擊向量並採取保護措施。
+在使用基於 HTTP 的傳輸實作 MCP 伺服器時，安全性是首要考量，需謹慎防範多種攻擊向量並採取保護措施。
 
 ### 概述
 
-當 MCP 伺服器透過 HTTP 暴露時，安全性至關重要。Streamable HTTP 引入了新的攻擊面，必須謹慎配置。
+當 MCP 伺服器透過 HTTP 對外提供服務時，安全性至關重要。Streamable HTTP 帶來新的攻擊面，需謹慎設定。
 
 ### 重要要點
-- **Origin Header 驗證**：務必驗證 `Origin` 標頭，以防止 DNS 重綁定攻擊。
-- **綁定 localhost**：本地開發時，將伺服器綁定到 `localhost`，避免暴露於公共網路。
-- **身份驗證**：生產環境部署時，實作身份驗證（例如 API 金鑰、OAuth）。
-- **CORS**：設定跨來源資源共享（CORS）政策以限制存取。
-- **HTTPS**：生產環境使用 HTTPS 以加密流量。
+- **Origin 標頭驗證**：務必驗證 `Origin` 標頭，防止 DNS 重綁定攻擊。
+- **本機綁定**：開發時將伺服器綁定於 `localhost`，避免暴露於公網。
+- **認證**：生產環境實作認證（如 API 金鑰、OAuth）。
+- **CORS**：設定跨來源資源共享政策以限制存取。
+- **HTTPS**：生產環境使用 HTTPS 加密流量。
 
 ### 最佳實踐
 - 不要信任未經驗證的請求。
@@ -505,24 +477,22 @@ async def message_handler(message):
 - 定期更新相依套件以修補安全漏洞。
 
 ### 挑戰
-- 在安全性與開發便利性間取得平衡
-- 確保與各種客戶端環境的相容性
-
+- 在安全與開發便利間取得平衡
+- 確保與各種客戶端環境相容
 
 ## 從 SSE 升級到 Streamable HTTP
 
-對於目前使用 Server-Sent Events (SSE) 的應用程式，遷移到 Streamable HTTP 可提供更強大的功能與更長遠的可維護性。
-
+對於目前使用 Server-Sent Events (SSE) 的應用，遷移到 Streamable HTTP 可提供更強大的功能與更長遠的可維護性，提升 MCP 實作的效能與彈性。
 ### 為什麼要升級？
 
-升級 SSE 至 Streamable HTTP 有兩大理由：
+從 SSE 升級到 Streamable HTTP 有兩個重要原因：
 
-- Streamable HTTP 比 SSE 提供更佳的擴展性、相容性及更豐富的通知支援。
+- Streamable HTTP 提供比 SSE 更佳的擴展性、相容性以及更豐富的通知支援。
 - 它是新 MCP 應用程式推薦使用的傳輸方式。
 
 ### 遷移步驟
 
-以下是將 MCP 應用程式從 SSE 遷移到 Streamable HTTP 的方法：
+以下是在 MCP 應用程式中從 SSE 遷移到 Streamable HTTP 的方法：
 
 - **更新伺服器程式碼**，在 `mcp.run()` 中使用 `transport="streamable-http"`。
 - **更新客戶端程式碼**，改用 `streamablehttp_client` 取代 SSE 客戶端。
@@ -531,39 +501,39 @@ async def message_handler(message):
 
 ### 維持相容性
 
-建議在遷移過程中維持與現有 SSE 客戶端的相容性。以下是一些策略：
+建議在遷移過程中保持與現有 SSE 客戶端的相容性。以下是一些策略：
 
-- 可同時支援 SSE 與 Streamable HTTP，分別在不同端點運行。
-- 逐步將客戶端遷移至新傳輸方式。
+- 可同時支援 SSE 與 Streamable HTTP，分別在不同端點運行兩種傳輸。
+- 逐步將客戶端遷移到新傳輸方式。
 
 ### 挑戰
 
 遷移時需注意以下挑戰：
 
-- 確保所有客戶端都完成更新
+- 確保所有客戶端都已更新
 - 處理通知傳遞上的差異
 
 ## 安全性考量
 
-實作任何伺服器時，安全性都應是首要任務，尤其是使用像 Streamable HTTP 這類基於 HTTP 的 MCP 傳輸。
+實作任何伺服器時，安全性都應是首要考量，尤其是在 MCP 中使用基於 HTTP 的傳輸如 Streamable HTTP。
 
-在使用基於 HTTP 的傳輸實作 MCP 伺服器時，安全性是首要關注點，需要仔細防範多種攻擊向量並採取保護措施。
+當使用基於 HTTP 的傳輸實作 MCP 伺服器時，安全性成為極為重要的議題，需要仔細防範多種攻擊向量並採取保護措施。
 
 ### 概述
 
-當 MCP 伺服器透過 HTTP 暴露時，安全性至關重要。Streamable HTTP 引入了新的攻擊面，必須謹慎配置。
+當 MCP 伺服器透過 HTTP 對外提供服務時，安全性至關重要。Streamable HTTP 引入了新的攻擊面，需謹慎配置。
 
-以下是一些重要的安全性考量：
+以下是一些主要的安全性考量：
 
-- **Origin Header 驗證**：務必驗證 `Origin` 標頭，以防止 DNS 重綁定攻擊。
-- **綁定 localhost**：本地開發時，將伺服器綁定到 `localhost`，避免暴露於公共網路。
-- **身份驗證**：生產環境部署時，實作身份驗證（例如 API 金鑰、OAuth）。
+- **Origin 標頭驗證**：務必驗證 `Origin` 標頭，以防止 DNS 重綁定攻擊。
+- **本機綁定**：開發階段請將伺服器綁定在 `localhost`，避免暴露於公網。
+- **身份驗證**：正式部署時實作身份驗證（例如 API 金鑰、OAuth）。
 - **CORS**：設定跨來源資源共享（CORS）政策以限制存取。
 - **HTTPS**：生產環境使用 HTTPS 以加密流量。
 
 ### 最佳實踐
 
-此外，實作 MCP 串流伺服器時，建議遵循以下最佳實踐：
+此外，實作 MCP 串流伺服器安全性時，建議遵循以下最佳實踐：
 
 - 不要信任未經驗證的請求。
 - 記錄並監控所有存取與錯誤。
@@ -571,15 +541,15 @@ async def message_handler(message):
 
 ### 挑戰
 
-在實作 MCP 串流伺服器的安全性時，會面臨以下挑戰：
+在實作 MCP 串流伺服器安全性時，會面臨以下挑戰：
 
 - 在安全性與開發便利性間取得平衡
 - 確保與各種客戶端環境的相容性
 
-### 作業：建立你自己的串流 MCP 應用程式
+### 作業：打造你自己的串流 MCP 應用程式
 
 **情境：**  
-建立一個 MCP 伺服器與客戶端，伺服器會處理一份項目清單（例如檔案或文件），並在處理每個項目時發送通知。客戶端應即時顯示每則通知。
+建立一個 MCP 伺服器與客戶端，伺服器處理一份項目清單（例如檔案或文件），並在處理每個項目時發送通知。客戶端應即時顯示每則通知。
 
 **步驟：**
 
@@ -591,7 +561,7 @@ async def message_handler(message):
 
 ## 延伸閱讀與後續步驟
 
-為了持續學習 MCP 串流並擴展知識，本節提供額外資源與建議的後續行動，協助你打造更進階的應用程式。
+為了繼續深入 MCP 串流的學習並擴展知識，本節提供額外資源與建議的後續行動，幫助你打造更進階的應用程式。
 
 ### 延伸閱讀
 
@@ -604,7 +574,7 @@ async def message_handler(message):
 
 - 嘗試打造更進階的 MCP 工具，利用串流實現即時分析、聊天或協同編輯功能。
 - 探索將 MCP 串流整合至前端框架（React、Vue 等），實現即時 UI 更新。
-- 下一步：[利用 VSCode 的 AI 工具包](../07-aitk/README.md)
+- 下一步：[Utilising AI Toolkit for VSCode](../07-aitk/README.md)
 
 **免責聲明**：  
 本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

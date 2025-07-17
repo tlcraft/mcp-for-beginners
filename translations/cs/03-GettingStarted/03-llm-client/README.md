@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T10:48:03+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T19:17:31+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "cs"
 }
@@ -47,11 +47,11 @@ V tomto cvičení se naučíme přidat LLM do našeho klienta.
 
 Vytvoření GitHub tokenu je jednoduchý proces. Zde je návod, jak na to:
 
-- Přejděte do GitHub Nastavení – Klikněte na svůj profilový obrázek v pravém horním rohu a vyberte Nastavení.
+- Přejděte do nastavení GitHubu – Klikněte na svůj profilový obrázek v pravém horním rohu a vyberte Nastavení.
 - Přejděte do Developer Settings – Sjeďte dolů a klikněte na Developer Settings.
 - Vyberte Personal Access Tokens – Klikněte na Personal access tokens a poté na Generate new token.
-- Nakonfigurujte svůj token – Přidejte poznámku pro orientaci, nastavte datum vypršení platnosti a vyberte potřebná oprávnění (scopes).
-- Vygenerujte a zkopírujte token – Klikněte na Generate token a nezapomeňte ho hned zkopírovat, protože ho už znovu neuvidíte.
+- Nakonfigurujte svůj token – Přidejte poznámku pro orientaci, nastavte datum vypršení platnosti a vyberte potřebné oprávnění (scopes).
+- Vygenerujte a zkopírujte token – Klikněte na Generate token a nezapomeňte ho ihned zkopírovat, protože ho už znovu neuvidíte.
 
 ### -1- Připojení ke serveru
 
@@ -246,7 +246,7 @@ V předchozím kódu jsme:
 
 Skvěle, jako další krok si vylistujeme schopnosti serveru.
 
-### -2 Vypsání schopností serveru
+### -2- Vylistování schopností serveru
 
 Nyní se připojíme k serveru a požádáme ho o jeho schopnosti:
 
@@ -272,7 +272,7 @@ async run() {
 V předchozím kódu jsme:
 
 - Přidali kód pro připojení k serveru, `connectToServer`.
-- Vytvořili metodu `run`, která řídí tok naší aplikace. Zatím pouze vypisuje nástroje, ale brzy přidáme další funkce.
+- Vytvořili metodu `run`, která řídí tok aplikace. Zatím pouze vypisuje nástroje, ale brzy přidáme další funkce.
 
 ### Python
 
@@ -321,7 +321,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
 V předchozím kódu jsme:
 
 - Vypsali nástroje dostupné na MCP serveru
-- Pro každý nástroj vypsali jméno, popis a jeho schéma. To použijeme později pro volání nástrojů.
+- Pro každý nástroj vypsali jméno, popis a jeho schéma. To použijeme k volání nástrojů později.
 
 ### Java
 
@@ -340,12 +340,12 @@ ToolProvider toolProvider = McpToolProvider.builder()
 V předchozím kódu jsme:
 
 - Vytvořili `McpToolProvider`, který automaticky objeví a zaregistruje všechny nástroje z MCP serveru
-- Poskytovatel nástrojů interně zajišťuje převod mezi MCP schématy nástrojů a formátem nástrojů LangChain4j
+- Poskytovatel nástrojů interně zajišťuje převod mezi MCP schématy nástrojů a formátem LangChain4j
 - Tento přístup abstrahuje manuální výpis a převod nástrojů
 
 ### -3- Převod schopností serveru na nástroje LLM
 
-Dalším krokem po vypsání schopností serveru je převést je do formátu, kterému LLM rozumí. Jakmile to uděláme, můžeme tyto schopnosti předat jako nástroje našemu LLM.
+Dalším krokem po vylistování schopností serveru je převést je do formátu, kterému LLM rozumí. Jakmile to uděláme, můžeme tyto schopnosti předat jako nástroje našemu LLM.
 
 ### TypeScript
 
@@ -420,7 +420,7 @@ Dalším krokem po vypsání schopností serveru je převést je do formátu, kt
 
     Ve funkci `convert_to_llm_tools` převedeme odpověď MCP nástroje do formátu, kterému LLM rozumí.
 
-1. Poté aktualizujme kód klienta, aby tuto funkci využíval:
+1. Dále aktualizujme kód klienta, aby tuto funkci využíval:
 
     ```python
     for tool in tools.tools:
@@ -504,7 +504,7 @@ V předchozím kódu jsme:
         toolDefinitions.Add(def);
         ```
 
-        Vstupní schéma je součástí odpovědi nástroje, ale v atributu "properties", takže ho musíme extrahovat. Dále voláme `ConvertFrom` s detaily nástroje. Nyní, když máme těžkou práci za sebou, podívejme se, jak to funguje při zpracování uživatelského promptu.
+        Vstupní schéma je součástí odpovědi nástroje, ale v atributu "properties", takže ho musíme extrahovat. Dále nyní voláme `ConvertFrom` s detaily nástroje. Tím jsme udělali hlavní část práce, teď uvidíme, jak to funguje při zpracování uživatelského promptu.
 
 ### Java
 
@@ -524,7 +524,7 @@ Bot bot = AiServices.builder(Bot.class)
 V předchozím kódu jsme:
 
 - Definovali jednoduché rozhraní `Bot` pro interakci v přirozeném jazyce
-- Použili LangChain4j `AiServices` pro automatické propojení LLM s poskytovatelem nástrojů MCP
+- Použili LangChain4j `AiServices` k automatickému propojení LLM s poskytovatelem MCP nástrojů
 - Framework automaticky zajišťuje převod schémat nástrojů a volání funkcí na pozadí
 - Tento přístup eliminuje manuální převod nástrojů – LangChain4j zvládá veškerou složitost převodu MCP nástrojů do formátu kompatibilního s LLM
 
@@ -581,7 +581,7 @@ V této části kódu budeme zpracovávat uživatelské požadavky.
         }
         ```
 
-    - Volá nástroj, pokud LLM naznačí, že by měl být volán:
+    - Volá nástroj, pokud LLM naznačí, že by měl být zavolán:
 
         ```typescript
         // 2. Call the server's tool 
@@ -838,8 +838,8 @@ client.connectToServer(transport);
 
     - Předali funkce, které jsme našli na MCP serveru a převedli, LLM.
     - Poté jsme zavolali LLM s těmito funkcemi.
-    - Následně kontrolujeme výsledek, abychom zjistili, které funkce bychom měli volat, pokud nějaké.
-    - Nakonec předáváme pole funkcí k volání.
+    - Následně kontrolujeme výsledek, abychom zjistili, které funkce bychom měli zavolat, pokud nějaké.
+    - Nakonec předáváme pole funkcí k zavolání.
 
 1. Poslední krok, aktualizujme hlavní kód:
 
@@ -855,14 +855,14 @@ client.connectToServer(transport);
         print("TOOLS result: ", result.content)
     ```
 
-    Tímto jsme dokončili poslední krok, v kódu výše:
+    Tady je poslední krok, v kódu výše:
 
-    - Voláme MCP nástroj přes `call_tool` pomocí funkce, kterou LLM vyhodnotilo jako vhodnou k volání na základě promptu.
+    - Voláme MCP nástroj přes `call_tool` pomocí funkce, kterou LLM vyhodnotil jako vhodnou k zavolání na základě promptu.
     - Vypisujeme výsledek volání nástroje na MCP server.
 
 ### .NET
 
-1. Ukážeme kód pro provedení LLM promptu:
+1. Ukážeme kód pro provedení požadavku na LLM prompt:
 
     ```csharp
     var tools = await GetMcpTools();
@@ -903,7 +903,7 @@ client.connectToServer(transport);
     - Vytvořili objekt možností s modelem a nástroji.
     - Odeslali požadavek na LLM.
 
-1. Poslední krok, zjistíme, zda LLM navrhuje volání funkce:
+1. Poslední krok, zjistíme, zda LLM navrhuje zavolat nějakou funkci:
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -929,7 +929,7 @@ client.connectToServer(transport);
     V předchozím kódu jsme:
 
     - Prošli seznam volání funkcí.
-    - Pro každé volání nástroje rozparsovali jméno a argumenty a zavolali nástroj na MCP serveru pomocí MCP klienta. Nakonec vypisujeme výsledky.
+    - Pro každé volání nástroje jsme rozparsovali jméno a argumenty a zavolali nástroj na MCP serveru pomocí MCP klienta. Nakonec jsme vytiskli výsledky.
 
 Zde je kompletní kód:
 
@@ -1135,11 +1135,11 @@ public class LangChain4jClient {
 }
 ```
 
-Skvěle, zvládli jste to!
+Skvěle, zvládl jste to!
 
 ## Zadání
 
-Vezměte kód z cvičení a rozšiřte server o další nástroje. Poté vytvořte klienta s LLM, jako v cvičení, a otestujte ho s různými promptami, abyste se ujistili, že všechny nástroje serveru jsou volány dynamicky. Tento způsob vytváření klienta zajistí skvělý uživatelský zážitek, protože uživatelé mohou používat prompty místo přesných příkazů klienta a nemusí vědět o volání MCP serveru.
+Vezměte kód z cvičení a rozšiřte server o další nástroje. Poté vytvořte klienta s LLM, jako v cvičení, a otestujte ho s různými promptami, abyste se ujistili, že všechny nástroje serveru jsou volány dynamicky. Tento způsob vytváření klienta znamená, že koncový uživatel bude mít skvělý uživatelský zážitek, protože může používat prompty místo přesných příkazů klienta a nebude si muset být vědom volání MCP serveru.
 
 ## Řešení
 
@@ -1147,7 +1147,7 @@ Vezměte kód z cvičení a rozšiřte server o další nástroje. Poté vytvoř
 
 ## Hlavní poznatky
 
-- Přidání LLM do klienta poskytuje lepší způsob, jak uživatelé komunikují s MCP servery.
+- Přidání LLM do klienta poskytuje lepší způsob, jak uživatelé mohou komunikovat s MCP servery.
 - Je potřeba převést odpověď MCP serveru do formátu, kterému LLM rozumí.
 
 ## Ukázky
@@ -1165,4 +1165,4 @@ Vezměte kód z cvičení a rozšiřte server o další nástroje. Poté vytvoř
 - Další: [Použití serveru ve Visual Studio Code](../04-vscode/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

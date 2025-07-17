@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6b1152afb5d4cb9a4175044694fd02ca",
-  "translation_date": "2025-07-17T07:29:34+00:00",
+  "original_hash": "a8831b194cb5ece750355e99434b7154",
+  "translation_date": "2025-07-17T18:59:40+00:00",
   "source_file": "03-GettingStarted/05-sse-server/README.md",
   "language_code": "he"
 }
 -->
 # שרת SSE
 
-SSE (Server Sent Events) הוא תקן לשידור מידע מהשרת ללקוח בזמן אמת, המאפשר לשרתים לדחוף עדכונים בזמן אמת ללקוחות דרך HTTP. זה שימושי במיוחד לאפליקציות שדורשות עדכונים חיים, כמו אפליקציות צ'אט, התראות או זרמי נתונים בזמן אמת. בנוסף, השרת שלך יכול לשמש מספר לקוחות בו זמנית מכיוון שהוא פועל על שרת שניתן להריץ אותו במקום כלשהו בענן, למשל.
+SSE (Server Sent Events) הוא תקן לשידור נתונים מהשרת ללקוח בזמן אמת, המאפשר לשרתים לדחוף עדכונים בזמן אמת ללקוחות דרך HTTP. זה שימושי במיוחד לאפליקציות שדורשות עדכונים חיים, כמו אפליקציות צ'אט, התראות או זרמי נתונים בזמן אמת. בנוסף, השרת שלך יכול לשמש מספר לקוחות בו זמנית מכיוון שהוא פועל על שרת שניתן להריץ אותו במקום כלשהו בענן, לדוגמה.
 
 ## סקירה כללית
 
-השיעור הזה עוסק בבניית וצריכת שרתי SSE.
+השיעור הזה מסביר כיצד לבנות ולצרוך שרתי SSE.
 
 ## מטרות הלמידה
 
@@ -79,7 +79,7 @@ app = Starlette(
 
 בקוד שלמעלה:
 
-- יצרנו מופע של שרת ASGI (בעזרת Starlette ספציפית) והתקנו את הנתיב ברירת המחדל `/`.
+- יוצרים מופע של שרת ASGI (במיוחד באמצעות Starlette) ומרכיבים את הנתיב ברירת המחדל `/`
 
   מה שקורה מאחורי הקלעים הוא שהנתיבים `/sse` ו-`/messages` מוגדרים לטיפול בחיבורים ובהודעות בהתאמה. שאר האפליקציה, כמו הוספת תכונות וכלים, מתבצעת כמו בשרתי stdio.
 
@@ -101,21 +101,22 @@ app = Starlette(
 
     יש שתי שיטות שעוזרות לנו לעבור משרת ווב לשרת ווב התומך ב-SSE והן:
 
-    - `AddMcpServer`, שיטה שמוסיפה יכולות.
+    - `AddMcpServer`, שיטה זו מוסיפה יכולות.
     - `MapMcp`, שמוסיפה נתיבים כמו `/SSE` ו-`/messages`.
+```
 
-עכשיו כשאנחנו יודעים קצת יותר על SSE, בואו נבנה שרת SSE.
+Now that we know a little bit more about SSE, let's build an SSE server next.
 
-## תרגיל: יצירת שרת SSE
+## Exercise: Creating an SSE Server
 
-כדי ליצור את השרת שלנו, עלינו לזכור שני דברים:
+To create our server, we need to keep two things in mind:
 
-- עלינו להשתמש בשרת ווב כדי לחשוף נקודות קצה לחיבור ולהודעות.
-- לבנות את השרת כמו שאנחנו רגילים עם כלים, משאבים והנחיות כשעבדנו עם stdio.
+- We need to use a web server to expose endpoints for connection and messages.
+- Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- יצירת מופע שרת
+### -1- Create a server instance
 
-כדי ליצור את השרת, נשתמש באותם סוגים כמו ב-stdio. עם זאת, עבור ההעברה, נבחר ב-SSE.
+To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
 ### TypeScript
 
@@ -135,11 +136,11 @@ const app = express();
 const transports: {[sessionId: string]: SSEServerTransport} = {};
 ```
 
-בקוד שלמעלה:
+In the preceding code we've:
 
-- יצרנו מופע שרת.
-- הגדרנו אפליקציה באמצעות מסגרת הווב express.
-- יצרנו משתנה transports שבו נשמור חיבורים נכנסים.
+- Created a server instance.
+- Defined an app using the web framework express.
+- Created a transports variable that we will use to store incoming connections.
 
 ### Python
 
@@ -152,10 +153,10 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("My App")
 ```
 
-בקוד שלמעלה:
+In the preceding code we've:
 
-- ייבאנו את הספריות שנצטרך, כולל Starlette (מסגרת ASGI).
-- יצרנו מופע שרת MCP בשם `mcp`.
+- Imported the libraries we're going to need with Starlette (an ASGI framework) being pulled in.
+- Created an MCP server instance `mcp`.
 
 ### .NET
 
@@ -172,16 +173,16 @@ var app = builder.Build();
 // TODO: add routes 
 ```
 
-בשלב זה:
+At this point, we've:
 
-- יצרנו אפליקציית ווב.
-- הוספנו תמיכה בתכונות MCP דרך `AddMcpServer`.
+- Created a web app
+- Added support for MCP features through `AddMcpServer`.
 
-בואו נוסיף את הנתיבים הדרושים.
+Let's add the needed routes next.
 
-### -2- הוספת נתיבים
+### -2- Add routes
 
-נוסיף נתיבים שמטפלים בחיבור ובהודעות נכנסות:
+Let's add routes next that handle the connection and incoming messages:
 
 ### TypeScript
 
@@ -208,10 +209,10 @@ app.post("/messages", async (req: Request, res: Response) => {
 app.listen(3001);
 ```
 
-בקוד שלמעלה הגדרנו:
+In the preceding code we've defined:
 
-- נתיב `/sse` שיוצר מופע של העברה מסוג SSE ומבצע קריאה ל-`connect` על שרת MCP.
-- נתיב `/messages` שמטפל בהודעות נכנסות.
+- An `/sse` route that instantiates a transport of type SSE and ends up calling `connect` on the MCP server.
+- A `/messages` route that takes care of incoming messages.
 
 ### Python
 
@@ -223,9 +224,9 @@ app = Starlette(
 )
 ```
 
-בקוד שלמעלה:
+In the preceding code we've:
 
-- יצרנו מופע אפליקציית ASGI באמצעות מסגרת Starlette. כחלק מזה העברנו לנתיבים את `mcp.sse_app()`. זה מוביל להתקנת נתיבים `/sse` ו-`/messages` על מופע האפליקציה.
+- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
 
 ### .NET
 
@@ -241,13 +242,13 @@ var app = builder.Build();
 app.MapMcp();
 ```
 
-הוספנו שורת קוד אחת בסוף `add.MapMcp()` שמשמעותה שיש לנו עכשיו נתיבים `/SSE` ו-`/messages`.
+We've added one line of code at the end `add.MapMcp()` this means we now have routes `/SSE` and `/messages`. 
 
-נעבור להוספת יכולות לשרת.
+Let's add capabilties to the server next.
 
-### -3- הוספת יכולות לשרת
+### -3- Adding server capabilities
 
-כעת כשיש לנו את כל ההגדרות הספציפיות ל-SSE, נוסיף לשרת יכולות כמו כלים, הנחיות ומשאבים.
+Now that we've got everything SSE specific defined, let's add server capabilities like tools, prompts and resources.
 
 ### TypeScript
 
@@ -269,7 +270,7 @@ server.tool("random-joke", "A joke returned by the chuck norris api", {},
 );
 ```
 
-כך ניתן להוסיף כלי לדוגמה. הכלי הזה יוצר כלי בשם "random-joke" שקורא ל-API של Chuck Norris ומחזיר תגובת JSON.
+Here's how you can add a tool for example. This specific tool creates a tool call "random-joke" that calls a Chuck Norris API and returns a JSON response.
 
 ### Python
 
@@ -280,7 +281,7 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
-כעת לשרת שלך יש כלי אחד.
+Now your server has one tool.
 
 ### TypeScript
 
@@ -362,7 +363,7 @@ app = Starlette(
 
 ### .NET
 
-1. ניצור קודם כל כמה כלים, לשם כך ניצור קובץ *Tools.cs* עם התוכן הבא:
+1. Let's create some tools first, for this we will create a file *Tools.cs* with the following content:
 
   ```csharp
   using System.ComponentModel;
@@ -391,12 +392,12 @@ app = Starlette(
   }
   ```
 
-  כאן הוספנו את הדברים הבאים:
+  Here we've added the following:
 
-  - יצרנו מחלקה `Tools` עם הדקורטור `McpServerToolType`.
-  - הגדרנו כלי `AddNumbers` על ידי קישוט המתודה עם `McpServerTool`. בנוסף סיפקנו פרמטרים ומימוש.
+  - Created a class `Tools` with the decorator `McpServerToolType`.
+  - Defined a tool `AddNumbers` by decorating the method with `McpServerTool`. We've also provided parameters and an implementation.
 
-1. נשתמש במחלקת `Tools` שיצרנו:
+1. Let's leverage the `Tools` class we just created:
 
   ```csharp
   var builder = WebApplication.CreateBuilder(args);
@@ -412,19 +413,19 @@ app = Starlette(
   app.MapMcp();
   ```
 
-  הוספנו קריאה ל-`WithTools` שמציינת את `Tools` כמחלקה שמכילה את הכלים. זהו, אנחנו מוכנים.
+  We've added a call to `WithTools` that specifies `Tools` as the class containing the tools. That's it, we're ready.
 
-מעולה, יש לנו שרת שמשתמש ב-SSE, בואו ננסה אותו.
+Great, we have a server using SSE, let's take it for a spin next.
 
-## תרגיל: דיבוג שרת SSE עם Inspector
+## Exercise: Debugging an SSE Server with Inspector
 
-Inspector הוא כלי מצוין שראינו בשיעור קודם [יצירת השרת הראשון שלך](/03-GettingStarted/01-first-server/README.md). בואו נראה אם נוכל להשתמש ב-Inspector גם כאן:
+Inspector is a great tool that we saw in a previous lesson [Creating your first server](/03-GettingStarted/01-first-server/README.md). Let's see if we can use the Inspector even here:
 
-### -1- הפעלת ה-Inspector
+### -1- Running the inspector
 
-כדי להפעיל את ה-Inspector, קודם כל חייב להיות שרת SSE פועל, אז נעשה זאת עכשיו:
+To run the inspector, you first must have an SSE server running, so let's do that next:
 
-1. הפעל את השרת
+1. Run the server 
 
     ### TypeScript
 
@@ -438,7 +439,7 @@ Inspector הוא כלי מצוין שראינו בשיעור קודם [יציר�
     uvicorn server:app
     ```
 
-    שים לב שאנחנו משתמשים בקובץ ההרצה `uvicorn` שהותקן כשהרצנו `pip install "mcp[cli]"`. הקלדת `server:app` משמעותה שאנחנו מנסים להריץ את הקובץ `server.py` שבו יש מופע Starlette בשם `app`.
+    Note how we use the executable `uvicorn` that's installed when we typed `pip install "mcp[cli]"`. Typing `server:app` means we're trying to run a file `server.py` and for it to have a Starlette instance called `app`. 
 
     ### .NET
 
@@ -446,26 +447,26 @@ Inspector הוא כלי מצוין שראינו בשיעור קודם [יציר�
     dotnet run
     ```
 
-    זה אמור להפעיל את השרת. כדי לתקשר איתו תצטרך טרמינל חדש.
+    This should start the server. To interface with it you need a new terminal.
 
-1. הפעל את ה-Inspector
+1. Run the inspector
 
     > ![NOTE]
-    > הפעל זאת בחלון טרמינל נפרד מזה שבו השרת פועל. שים לב, יש להתאים את הפקודה למטה לכתובת ה-URL שבה השרת שלך פועל.
+    > Run this in a separate terminal window than the server is running in. Also note, you need to adjust the below command to fit the URL where your server runs.
 
     ```sh
     npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
     ```
 
-    הפעלת ה-Inspector דומה בכל הסביבות. שים לב שבמקום להעביר נתיב לשרת ופקודה להפעלתו, מעבירים את כתובת ה-URL שבה השרת פועל ומציינים גם את הנתיב `/sse`.
+    הפעלת ה-inspector נראית זהה בכל סביבות הריצה. שים לב שבמקום להעביר נתיב לשרת שלנו ופקודה להפעלת השרת, אנו מעבירים את ה-URL שבו השרת פועל ומציינים גם את הנתיב `/sse`.
 
-### -2- ניסיון הכלי
+### -2- ניסוי בכלי
 
-התחבר לשרת על ידי בחירת SSE ברשימת הבחירה ומלא את שדה ה-URL שבו השרת שלך פועל, למשל http:localhost:4321/sse. עכשיו לחץ על כפתור "Connect". כמו קודם, בחר ברשימת הכלים, בחר כלי וספק ערכי קלט. אמור להופיע תוצאה כמו בתמונה למטה:
+התחבר לשרת על ידי בחירת SSE ברשימת הבחירה ומלא את שדה ה-URL שבו השרת שלך פועל, לדוגמה http:localhost:4321/sse. עכשיו לחץ על כפתור "Connect". כמו קודם, בחר ברשימת הכלים, בחר כלי וספק ערכי קלט. תראה תוצאה כמו בתמונה למטה:
 
-![שרת SSE פועל ב-Inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.he.png)
+![שרת SSE פועל ב-inspector](../../../../translated_images/sse-inspector.d86628cc597b8fae807a31d3d6837842f5f9ee1bcc6101013fa0c709c96029ad.he.png)
 
-מעולה, אתה יכול לעבוד עם ה-Inspector, בוא נראה איך לעבוד עם Visual Studio Code.
+מעולה, אתה יכול לעבוד עם ה-inspector, בוא נראה איך לעבוד עם Visual Studio Code בהמשך.
 
 ## משימה
 
@@ -477,11 +478,11 @@ Inspector הוא כלי מצוין שראינו בשיעור קודם [יציר�
 
 ## נקודות מפתח
 
-הנקודות החשובות מפרק זה הן:
+הנקודות המרכזיות בפרק זה הן:
 
-- SSE הוא סוג ההעברה השני הנתמך לצד stdio.
+- SSE הוא סוג ההעברה השני הנתמך אחרי stdio.
 - כדי לתמוך ב-SSE, עליך לנהל חיבורים והודעות נכנסות באמצעות מסגרת ווב.
-- ניתן להשתמש גם ב-Inspector וגם ב-Visual Studio Code לצריכת שרת SSE, בדיוק כמו בשרתי stdio. שים לב שיש הבדלים קטנים בין stdio ל-SSE. ב-SSE יש להפעיל את השרת בנפרד ואז להפעיל את כלי ה-Inspector. בנוסף, בכלי ה-Inspector יש לציין את כתובת ה-URL.
+- ניתן להשתמש גם ב-Inspector וגם ב-Visual Studio Code לצריכת שרת SSE, בדיוק כמו שרתי stdio. שים לב שיש הבדלים קלים בין stdio ל-SSE. ב-SSE, יש להפעיל את השרת בנפרד ואז להריץ את כלי ה-inspector. בנוסף, בכלי ה-inspector יש צורך לציין את ה-URL.
 
 ## דוגמאות
 
@@ -500,4 +501,4 @@ Inspector הוא כלי מצוין שראינו בשיעור קודם [יציר�
 - הבא: [HTTP Streaming עם MCP (Streamable HTTP)](../06-http-streaming/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו צריך להיחשב כמקור הסמכות. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

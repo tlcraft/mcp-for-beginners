@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "abd0832467d9738f53a3b4f0797e5f8d",
-  "translation_date": "2025-07-17T10:30:58+00:00",
+  "original_hash": "343235ad6c122033c549a677913443f9",
+  "translation_date": "2025-07-17T19:15:13+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "hu"
 }
 -->
 # Ügyfél létrehozása LLM-mel
 
-Eddig láttad, hogyan lehet szervert és ügyfelet létrehozni. Az ügyfél képes volt explicit módon hívni a szervert, hogy listázza az eszközeit, erőforrásait és promptjait. Ez azonban nem túl praktikus megközelítés. A felhasználód az ügynöki korszakban él, és azt várja el, hogy promptokat használjon, és természetes nyelven kommunikáljon egy LLM-mel. A felhasználód számára nem számít, hogy MCP-t használsz-e a képességek tárolására, de azt elvárja, hogy természetes nyelven tudjon interakcióba lépni. Hogyan oldjuk meg ezt? A megoldás, hogy LLM-et adunk az ügyfélhez.
+Eddig láttad, hogyan lehet szervert és ügyfelet létrehozni. Az ügyfél képes volt explicit módon hívni a szervert, hogy listázza az eszközeit, erőforrásait és promptjait. Ez azonban nem túl praktikus megközelítés. A felhasználód az ügynöki korszakban él, és azt várja el, hogy promptokat használjon, és természetes nyelven kommunikáljon egy LLM-mel. A felhasználónak nem számít, hogy MCP-t használsz-e a képességek tárolására, de azt elvárja, hogy természetes nyelven tudjon interakcióba lépni. Hogyan oldjuk meg ezt? A megoldás, hogy LLM-et adunk az ügyfélhez.
 
 ## Áttekintés
 
@@ -49,7 +49,7 @@ GitHub token létrehozása egyszerű folyamat. Így csinálhatod:
 
 - Menj a GitHub Beállításokhoz – Kattints a profilképedre a jobb felső sarokban, majd válaszd a Beállításokat.
 - Navigálj a Fejlesztői beállításokhoz – Görgess le és kattints a Fejlesztői beállításokra.
-- Válaszd a Személyes hozzáférési tokeneket – Kattints a Személyes hozzáférési tokenekre, majd a Új token generálása gombra.
+- Válaszd a Személyes hozzáférési tokeneket – Kattints a Személyes hozzáférési tokenekre, majd az Új token generálása gombra.
 - Állítsd be a tokent – Adj meg egy megjegyzést, állíts be lejárati dátumot, és válaszd ki a szükséges jogosultságokat.
 - Generáld és másold ki a tokent – Kattints a Token generálása gombra, és azonnal másold ki, mert később nem fogod látni újra.
 
@@ -94,8 +94,8 @@ class MCPClient {
 
 A fenti kódban:
 
-- Importáltuk a szükséges könyvtárakat
-- Létrehoztunk egy osztályt két taggal, `client` és `openai`, amelyek segítenek az ügyfél kezelésében és az LLM-mel való interakcióban.
+- Betöltöttük a szükséges könyvtárakat
+- Létrehoztunk egy osztályt két taggal, `client` és `openai`, amelyek segítenek az ügyfél kezelésében és az LLM-mel való kommunikációban.
 - Beállítottuk az LLM példányunkat, hogy GitHub Modelleket használjon, a `baseUrl`-t az inference API-ra mutatva.
 
 ### Python
@@ -130,7 +130,7 @@ if __name__ == "__main__":
 
 A fenti kódban:
 
-- Importáltuk az MCP-hez szükséges könyvtárakat
+- Betöltöttük az MCP-hez szükséges könyvtárakat
 - Létrehoztunk egy ügyfelet
 
 ### .NET
@@ -156,7 +156,7 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 
 ### Java
 
-Először add hozzá a LangChain4j függőségeket a `pom.xml` fájlodhoz. Ezek a függőségek szükségesek az MCP integrációhoz és a GitHub Modellek támogatásához:
+Először add hozzá a LangChain4j függőségeket a `pom.xml` fájlodhoz. Ezek engedélyezik az MCP integrációt és a GitHub Modellek támogatását:
 
 ```xml
 <properties>
@@ -238,15 +238,15 @@ public class LangChain4jClient {
 A fenti kódban:
 
 - **Hozzáadtuk a LangChain4j függőségeket**: Szükségesek az MCP integrációhoz, az OpenAI hivatalos klienshez és a GitHub Modellek támogatásához
-- **Importáltuk a LangChain4j könyvtárakat**: MCP integrációhoz és OpenAI chat modell funkciókhoz
+- **Betöltöttük a LangChain4j könyvtárakat**: MCP integrációhoz és OpenAI chat modell funkciókhoz
 - **Létrehoztunk egy `ChatLanguageModel`-t**: Beállítva, hogy GitHub Modelleket használjon a GitHub tokeneddel
-- **Beállítottuk az HTTP transportot**: Server-Sent Events (SSE) használatával az MCP szerverhez való kapcsolódáshoz
+- **Beállítottuk az HTTP kapcsolatot**: Server-Sent Events (SSE) használatával az MCP szerverhez való kapcsolódáshoz
 - **Létrehoztunk egy MCP ügyfelet**: Ami kezeli a kommunikációt a szerverrel
 - **Használtuk a LangChain4j beépített MCP támogatását**: Ami leegyszerűsíti az LLM-ek és MCP szerverek közötti integrációt
 
 Remek, a következő lépésként listázzuk a szerver képességeit.
 
-### -2- A szerver képességeinek listázása
+### -2- Szerver képességek listázása
 
 Most kapcsolódunk a szerverhez, és lekérdezzük a képességeit:
 
@@ -271,7 +271,7 @@ async run() {
 
 A fenti kódban:
 
-- Hozzáadtunk egy `connectToServer` metódust a szerverhez való kapcsolódáshoz.
+- Hozzáadtuk a szerverhez való kapcsolódás kódját, `connectToServer`.
 - Létrehoztunk egy `run` metódust, ami kezeli az alkalmazás folyamatát. Egyelőre csak az eszközöket listázza, de hamarosan bővítjük.
 
 ### Python
@@ -293,7 +293,7 @@ for tool in tools.tools:
 
 Amit hozzáadtunk:
 
-- Listázzuk az erőforrásokat és eszközöket, majd kiírtuk őket. Az eszközöknél az `inputSchema`-t is listázzuk, amit később használunk.
+- Listáztuk az erőforrásokat és eszközöket, majd kiírtuk őket. Az eszközöknél az `inputSchema`-t is listázzuk, amit később használunk.
 
 ### .NET
 
@@ -321,7 +321,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
 A fenti kódban:
 
 - Listáztuk az MCP szerveren elérhető eszközöket
-- Minden eszköznél listáztuk a nevet, leírást és a sémát. Ez utóbbit később az eszközök hívásához használjuk.
+- Minden eszköznél megjelenítettük a nevét, leírását és sémáját. Ez utóbbit később az eszközök hívásához használjuk.
 
 ### Java
 
@@ -341,11 +341,11 @@ A fenti kódban:
 
 - Létrehoztunk egy `McpToolProvider`-t, ami automatikusan felfedezi és regisztrálja az összes eszközt az MCP szerverről
 - Az eszköz szolgáltató belsőleg kezeli az MCP eszköz sémák és a LangChain4j eszköz formátum közötti átalakítást
-- Ez a megközelítés elrejti az eszközök kézi listázását és átalakítását
+- Ez a megközelítés elrejti az eszközök manuális listázását és átalakítását
 
-### -3- A szerver képességeinek átalakítása LLM eszközökké
+### -3- Szerver képességek átalakítása LLM eszközökké
 
-A következő lépés a szerver képességeinek átalakítása olyan formátumba, amit az LLM megért. Miután ezt megtesszük, ezeket a képességeket eszközként tudjuk átadni az LLM-nek.
+A következő lépés a szerver képességek átalakítása olyan formátumba, amit az LLM megért. Miután ez megvan, ezeket az eszközöket átadhatjuk az LLM-nek.
 
 ### TypeScript
 
@@ -418,7 +418,7 @@ A következő lépés a szerver képességeinek átalakítása olyan formátumba
         return tool_schema
     ```
 
-    A `convert_to_llm_tools` függvényben az MCP eszköz válaszát alakítjuk át olyan formátumba, amit az LLM megért.
+    A `convert_to_llm_tools` függvény az MCP eszköz válaszát olyan formátumba alakítja, amit az LLM megért.
 
 1. Ezután frissítsük az ügyfél kódját, hogy használja ezt a függvényt:
 
@@ -433,7 +433,7 @@ A következő lépés a szerver képességeinek átalakítása olyan formátumba
 
 ### .NET
 
-1. Adjunk hozzá kódot, ami az MCP eszköz választ olyan formátumba alakítja, amit az LLM megért:
+1. Adjunk hozzá kódot, ami az MCP eszköz válaszát olyan formátumba alakítja, amit az LLM megért:
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -489,11 +489,11 @@ A fenti kódban:
 
         return toolDefinitions;
     }
-    ```    
+    ```
 
-A fenti kódban:
+    A fenti kódban:
 
-- Frissítettük a függvényt, hogy az MCP eszköz választ LLM eszközzé alakítsa. Emeljük ki a hozzáadott kódot:
+    - Frissítettük a függvényt, hogy az MCP eszköz válaszát LLM eszközzé alakítsa. Kiemeljük a hozzáadott kódot:
 
         ```csharp
         JsonElement propertiesElement;
@@ -504,7 +504,7 @@ A fenti kódban:
         toolDefinitions.Add(def);
         ```
 
-        Az input séma az eszköz válasz része, de a "properties" attribútumban van, ezért ki kell nyerni. Ezután meghívjuk a `ConvertFrom`-t az eszköz adataival. Most, hogy a nehezét elvégeztük, nézzük meg, hogyan kezeljük a felhasználói promptot.
+        Az input séma az eszköz válasz része, de a "properties" attribútumban, ezért ki kell nyerni. Ezután meghívjuk a `ConvertFrom`-t az eszköz adataival. Most, hogy elvégeztük a nehezét, nézzük meg, hogyan kezeljük a felhasználói promptot.
 
 ### Java
 
@@ -526,7 +526,7 @@ A fenti kódban:
 - Definiáltunk egy egyszerű `Bot` interfészt természetes nyelvű interakciókhoz
 - Használtuk a LangChain4j `AiServices`-ét, hogy automatikusan összekösse az LLM-et az MCP eszköz szolgáltatóval
 - A keretrendszer automatikusan kezeli az eszköz séma átalakítást és a funkcióhívásokat a háttérben
-- Ez a megközelítés megszünteti a kézi eszköz átalakítást – a LangChain4j kezeli az MCP eszközök LLM-kompatibilis formátumba konvertálásának összetettségét
+- Ez a megközelítés megszünteti a manuális eszköz átalakítást – a LangChain4j kezeli az MCP eszközök LLM-kompatibilis formátumba konvertálásának összetettségét
 
 Remek, most már készen állunk a felhasználói kérések kezelésére, nézzük meg azt.
 
@@ -1139,7 +1139,7 @@ Gratulálok, sikerült!
 
 ## Feladat
 
-Vedd elő a gyakorlat kódját, és bővítsd ki a szervert további eszközökkel. Ezután hozz létre egy LLM-mel rendelkező ügyfelet, mint a gyakorlatban, és teszteld különböző promptokkal, hogy megbizonyosodj róla, hogy az összes szerver eszköz dinamikusan meghívásra kerül. Ez az ügyfél építési mód nagyszerű felhasználói élményt biztosít, mert a felhasználók promptokat használhatnak, nem pedig pontos ügyfél parancsokat, és nem kell tudniuk az MCP szerver hívásairól.
+Vedd elő a gyakorlat kódját, és bővítsd ki a szervert további eszközökkel. Ezután hozz létre egy LLM-mel rendelkező ügyfelet, ahogy a gyakorlatban, és teszteld különböző promptokkal, hogy megbizonyosodj róla, hogy a szerver összes eszköze dinamikusan meghívásra kerül. Ez az ügyfélépítési mód nagyszerű felhasználói élményt biztosít, mert a felhasználók promptokat használhatnak, nem pedig pontos kliens parancsokat, és nem kell tudniuk az MCP szerver hívásairól.
 
 ## Megoldás
 
@@ -1147,8 +1147,8 @@ Vedd elő a gyakorlat kódját, és bővítsd ki a szervert további eszközökk
 
 ## Főbb tanulságok
 
-- Az LLM hozzáadása az ügyfélhez jobb módot kínál a felhasználóknak az MCP szerverekkel való interakcióra.
-- Az MCP szerver válaszát át kell alakítani olyan formátumba, amit az LLM megért.
+- LLM hozzáadása az ügyfélhez jobb módot kínál a felhasználóknak az MCP szerverekkel való interakcióra.
+- Az MCP szerver válaszát olyan formátumba kell alakítani, amit az LLM megért.
 
 ## Minták
 

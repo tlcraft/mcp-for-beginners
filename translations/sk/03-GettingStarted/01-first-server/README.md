@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd0fdbbbebbef2b6b179ceba21d82ed2",
-  "translation_date": "2025-07-17T11:03:19+00:00",
+  "original_hash": "fa635ae747c9b4d5c2f61c6c46cb695f",
+  "translation_date": "2025-07-17T19:18:33+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sk"
 }
 -->
 # Začíname s MCP
 
-Vitajte pri vašich prvých krokoch s Model Context Protocol (MCP)! Či už ste v MCP nováčik alebo chcete prehĺbiť svoje znalosti, tento sprievodca vás prevedie základným nastavením a vývojovým procesom. Objavíte, ako MCP umožňuje bezproblémovú integráciu medzi AI modelmi a aplikáciami, a naučíte sa, ako rýchlo pripraviť svoje prostredie na tvorbu a testovanie riešení poháňaných MCP.
+Vitajte pri vašich prvých krokoch s Model Context Protocol (MCP)! Či už ste v MCP nováčik alebo chcete prehĺbiť svoje znalosti, tento návod vás prevedie základným nastavením a vývojovým procesom. Objavíte, ako MCP umožňuje bezproblémovú integráciu medzi AI modelmi a aplikáciami, a naučíte sa, ako rýchlo pripraviť svoje prostredie na tvorbu a testovanie riešení poháňaných MCP.
 
 > TLDR; Ak vytvárate AI aplikácie, viete, že môžete pridať nástroje a ďalšie zdroje do vášho LLM (large language model), aby bol model múdrejší. Ak však tieto nástroje a zdroje umiestnite na server, aplikácia a schopnosti servera môžu využívať akýkoľvek klient s LLM alebo bez neho.
 
 ## Prehľad
 
-Táto lekcia poskytuje praktické návody na nastavenie MCP prostredí a tvorbu vašich prvých MCP aplikácií. Naučíte sa, ako nastaviť potrebné nástroje a frameworky, vytvoriť základné MCP servery, vytvoriť hostiteľské aplikácie a testovať vaše implementácie.
+Táto lekcia poskytuje praktické pokyny na nastavenie MCP prostredí a tvorbu vašich prvých MCP aplikácií. Naučíte sa, ako nastaviť potrebné nástroje a frameworky, vytvoriť základné MCP servery, vytvoriť hostiteľské aplikácie a testovať vaše implementácie.
 
 Model Context Protocol (MCP) je otvorený protokol, ktorý štandardizuje spôsob, akým aplikácie poskytujú kontext LLM. Predstavte si MCP ako USB-C port pre AI aplikácie – poskytuje štandardizovaný spôsob pripojenia AI modelov k rôznym zdrojom dát a nástrojom.
 
@@ -159,7 +159,7 @@ MCP server môže napríklad:
 - Integrovať sa s inými nástrojmi a službami
 - Poskytovať používateľské rozhranie na interakciu
 
-Skvelé, keď už vieme, čo všetko môžeme, poďme na kódovanie.
+Skvelé, keď už vieme, čo všetko môžeme robiť, poďme na kódovanie.
 
 ## Cvičenie: Vytvorenie servera
 
@@ -175,7 +175,7 @@ Na vytvorenie servera je potrebné nasledovať tieto kroky:
 Toto sa mierne líši podľa zvoleného runtime, vyberte si jeden z nasledujúcich:
 
 > [!NOTE]
-> Pre Python najskôr vytvoríme štruktúru projektu a potom nainštalujeme závislosti.
+> Pre Python najprv vytvoríme štruktúru projektu a potom nainštalujeme závislosti.
 
 ### TypeScript
 
@@ -326,6 +326,10 @@ Pridajte nasledujúcu kompletnú konfiguráciu do súboru *pom.xml*:
 </project>
 ```
 
+### -2- Vytvorenie projektu
+
+Keď máte SDK nainštalované, vytvorme projekt:
+
 ### TypeScript
 
 ```sh
@@ -349,9 +353,11 @@ cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
+### -3- Vytvorenie súborov projektu
+
 ### TypeScript
 
-Vytvorte súbor *package.json* s týmto obsahom:
+Vytvorte *package.json* so nasledovným obsahom:
 
 ```json
 {
@@ -368,7 +374,7 @@ Vytvorte súbor *package.json* s týmto obsahom:
 }
 ```
 
-Vytvorte súbor *tsconfig.json* s týmto obsahom:
+Vytvorte *tsconfig.json* so nasledovným obsahom:
 
 ```json
 {
@@ -409,6 +415,8 @@ dotnet add package Microsoft.Extensions.Hosting
 
 Pre Java Spring Boot projekty sa štruktúra vytvorí automaticky.
 
+### -4- Napísanie serverového kódu
+
 ### TypeScript
 
 Vytvorte súbor *index.ts* a pridajte nasledujúci kód:
@@ -425,7 +433,7 @@ const server = new McpServer({
 });
 ```
 
-Teraz máte server, ale ešte toho veľa nerobí, poďme to napraviť.
+Teraz máte server, ale ešte toho veľa nerobí, poďme to zmeniť.
 
 ### Python
 
@@ -464,7 +472,7 @@ await builder.Build().RunAsync();
 
 ### Java
 
-Pre Javu vytvorte základné serverové komponenty. Najskôr upravte hlavnú aplikačnú triedu:
+Pre Javu vytvorte základné serverové komponenty. Najprv upravte hlavnú aplikačnú triedu:
 
 *src/main/java/com/microsoft/mcp/sample/server/McpServerApplication.java*:
 
@@ -492,7 +500,7 @@ public class McpServerApplication {
 }
 ```
 
-Vytvorte službu kalkulačky *src/main/java/com/microsoft/mcp/sample/server/service/CalculatorService.java*:
+Vytvorte kalkulačnú službu *src/main/java/com/microsoft/mcp/sample/server/service/CalculatorService.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.service;
@@ -640,7 +648,7 @@ public class CalculatorService {
 
 **Voliteľné komponenty pre produkčný servis:**
 
-Vytvorte konfiguračný súbor spustenia *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
+Vytvorte konfiguračný súbor *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.config;
@@ -665,7 +673,7 @@ public class StartupConfig {
 }
 ```
 
-Vytvorte kontrolér zdravia *src/main/java/com/microsoft/mcp/sample/server/controller/HealthController.java*:
+Vytvorte health controller *src/main/java/com/microsoft/mcp/sample/server/controller/HealthController.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.controller;
@@ -691,7 +699,7 @@ public class HealthController {
 }
 ```
 
-Vytvorte spracovanie výnimiek *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
+Vytvorte exception handler *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.exception;
@@ -909,7 +917,7 @@ if __name__ == "__main__":
 
 ### .NET
 
-Vytvorte súbor Program.cs s nasledujúcim obsahom:
+Vytvorte súbor Program.cs so nasledovným obsahom:
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -984,7 +992,7 @@ npm run build
 mcp run server.py
 ```
 
-> Na použitie MCP Inspector použite `mcp dev server.py`, ktorý automaticky spustí Inspector a poskytne potrebný proxy session token. Ak používate `mcp run server.py`, budete musieť Inspector spustiť manuálne a nakonfigurovať pripojenie.
+> Pre použitie MCP Inspector použite `mcp dev server.py`, ktorý automaticky spustí Inspector a poskytne potrebný proxy session token. Ak používate `mcp run server.py`, budete musieť Inspector spustiť manuálne a nakonfigurovať pripojenie.
 
 ### .NET
 
@@ -1015,7 +1023,7 @@ Inspector je skvelý nástroj, ktorý dokáže spustiť váš server a umožní 
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-alebo pridajte do vášho *package.json* takto: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` a potom spustite `npm run inspect`
+alebo ho pridajte do *package.json* takto: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` a potom spustite `npm run inspect`
 
 Python používa Node.js nástroj s názvom inspector. Je možné tento nástroj volať takto:
 
@@ -1028,8 +1036,8 @@ Avšak nepodporuje všetky metódy dostupné v nástroji, preto sa odporúča sp
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
 ```
-Ak používate nástroj alebo IDE, ktoré umožňuje konfigurovať príkazy a argumenty na spúšťanie skriptov, 
-uistite sa, že v poli `Command` máte nastavené `python` a v poli `Arguments` `server.py`. Tým zabezpečíte správne spustenie skriptu.
+
+Ak používate nástroj alebo IDE, ktoré umožňuje konfigurovať príkazy a argumenty pre spúšťanie skriptov, uistite sa, že v poli `Command` máte nastavené `python` a v poli `Arguments` `server.py`. Tým zabezpečíte správne spustenie skriptu.
 
 ### .NET
 
@@ -1042,14 +1050,14 @@ npx @modelcontextprotocol/inspector dotnet run
 
 ### Java
 
-Uistite sa, že váš kalkulačný server beží.
+Uistite sa, že kalkulačný server beží  
 Potom spustite inspector:
 
 ```cmd
 npx @modelcontextprotocol/inspector
 ```
 
-V inspektorovom webovom rozhraní:
+V inspector webovom rozhraní:
 
 1. Vyberte "SSE" ako typ prenosu
 2. Nastavte URL na: `http://localhost:8080/sse`
@@ -1087,8 +1095,8 @@ MCP poskytuje oficiálne SDK pre viaceré jazyky:
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Udržiavané v spolupráci so Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Oficiálna TypeScript implementácia
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Oficiálna Python implementácia
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Oficiálna Kotlin implementácia
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Udržiavaný v spolupráci s Loopwork AI
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Oficiálna implementácia v Kotlin
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Udržiavané v spolupráci s Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Oficiálna implementácia v Rust
 
 ## Kľúčové poznatky
