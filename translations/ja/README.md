@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5067c45550201d577437ed7315a51307",
-  "translation_date": "2025-07-16T21:29:16+00:00",
+  "original_hash": "35fe22b9167cb7be62fddbcf53a255f4",
+  "translation_date": "2025-07-17T05:22:08+00:00",
   "source_file": "README.md",
   "language_code": "ja"
 }
@@ -31,7 +31,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### GitHub Actionによるサポート（自動化＆常に最新）
 
-[フランス語](../fr/README.md) | [スペイン語](../es/README.md) | [ドイツ語](../de/README.md) | [ロシア語](../ru/README.md) | [アラビア語](../ar/README.md) | [ペルシャ語（ファルシ）](../fa/README.md) | [ウルドゥー語](../ur/README.md) | [中国語（簡体字）](../zh/README.md) | [中国語（繁体字、マカオ）](../mo/README.md) | [中国語（繁体字、香港）](../hk/README.md) | [中国語（繁体字、台湾）](../tw/README.md) | [日本語](./README.md) | [韓国語](../ko/README.md) | [ヒンディー語](../hi/README.md) | [ベンガル語](../bn/README.md) | [マラーティー語](../mr/README.md) | [ネパール語](../ne/README.md) | [パンジャブ語（グルムキー）](../pa/README.md) | [ポルトガル語（ポルトガル）](../pt/README.md) | [ポルトガル語（ブラジル）](../br/README.md) | [イタリア語](../it/README.md) | [ポーランド語](../pl/README.md) | [トルコ語](../tr/README.md) | [ギリシャ語](../el/README.md) | [タイ語](../th/README.md) | [スウェーデン語](../sv/README.md) | [デンマーク語](../da/README.md) | [ノルウェー語](../no/README.md) | [フィンランド語](../fi/README.md) | [オランダ語](../nl/README.md) | [ヘブライ語](../he/README.md) | [ベトナム語](../vi/README.md) | [インドネシア語](../id/README.md) | [マレー語](../ms/README.md) | [タガログ語（フィリピン）](../tl/README.md) | [スワヒリ語](../sw/README.md) | [ハンガリー語](../hu/README.md) | [チェコ語](../cs/README.md) | [スロバキア語](../sk/README.md) | [ルーマニア語](../ro/README.md) | [ブルガリア語](../bg/README.md) | [セルビア語（キリル）](../sr/README.md) | [クロアチア語](../hr/README.md) | [スロベニア語](../sl/README.md) | [ウクライナ語](../uk/README.md) | [ビルマ語（ミャンマー）](../my/README.md)
+[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](./README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md) | [Ukrainian](../uk/README.md) | [Burmese (Myanmar)](../my/README.md)
 
 # 🚀 Model Context Protocol (MCP) 初心者向けカリキュラム
 
@@ -51,22 +51,22 @@ AI開発者、システムアーキテクト、ソフトウェアエンジニア
 - 🧑‍💻 [MCP GitHubリポジトリ](https://github.com/modelcontextprotocol) – オープンソースのSDK、ツール、コードサンプル  
 - 🌐 [MCPコミュニティ](https://github.com/orgs/modelcontextprotocol/discussions) – 議論に参加し、コミュニティに貢献しよう
 
-## 2025年7月29-30日に開催されるMCP Dev Daysに参加しよう
+## 2025年7月29-30日 MCP Dev Daysに参加しよう
 
 MCP Dev Daysは、AIモデルとそれを支えるツールをつなぐ新しい標準であるModel Context Protocol (MCP)に特化したバーチャルイベントです。2日間にわたり、深い技術的洞察、コミュニティとの交流、実践的な学びを提供します。
 
-➡️ [MCP Dev Daysの登録はこちら](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+➡️ [MCP Dev Daysに登録する](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-MCP Dev Daysはイベントページ https://aka.ms/mcpdevdays から登録すると視聴可能です。YouTubeやTwitchでのライブ配信に参加でき、すべてのコンテンツは録画され、後日Microsoft DeveloperのYouTubeチャンネルで視聴可能です。デモのソースコードもGitHubで公開されます。
+MCP Dev Daysはイベントページ https://aka.ms/mcpdevdays で登録すると視聴可能です。YouTubeやTwitchでのライブ配信に参加でき、すべてのコンテンツは録画され、後日Microsoft DeveloperのYouTubeチャンネルで視聴可能です。デモのソースコードもGitHubで公開されます。
 
 ### イベント詳細
 - 日程：7月29日（1日目）＆7月30日（2日目）
 - 時間：毎日午前9時（PST）
-- 場所：オンライン – どこからでも参加可能！
+- 場所：オンライン - どこからでも参加可能！
 
 #### 1日目：MCPの生産性、開発ツール、コミュニティ
 
-開発者がMCPを開発ワークフローに活用できるよう支援し、素晴らしいMCPコミュニティを祝います。Arcade、Block、Okta、Neonなどのコミュニティメンバーやパートナーと共に、Microsoftと協力してオープンで拡張可能なMCPエコシステムを形作る様子を紹介。VS Code、Visual Studio、GitHub Copilot、人気のコミュニティツールを使った実践的なデモや、コンテキストに基づく開発ワークフロー、コミュニティ主導のセッションや洞察もあります。MCPを始めたばかりの方も、すでに活用している方も、1日目は刺激と実践的なヒントが満載です。
+開発者がMCPを開発ワークフローに活用できるよう支援し、素晴らしいMCPコミュニティを祝います。Arcade、Block、Okta、Neonなどのコミュニティメンバーやパートナーと共に、Microsoftと協力してオープンで拡張可能なMCPエコシステムを形作る様子を紹介。VS Code、Visual Studio、GitHub Copilot、人気のコミュニティツールを使った実践的なデモや、コンテキストに基づく開発ワークフロー、コミュニティ主導のセッションや洞察もあります。MCPを始めたばかりの方も、すでに使っている方も、1日目はインスピレーションと実践的なヒントが満載です。
 
 #### 2日目：自信を持ってMCPサーバーを構築しよう
 
@@ -75,7 +75,7 @@ MCPの構築者向けに、MCPサーバーの実装戦略やベストプラク�
 ### トピック例：
 
 - MCPサーバーの構築とエージェント体験への統合
-- プロンプト駆動型開発
+- プロンプト駆動開発
 - セキュリティのベストプラクティス
 - Functions、ACA、API Managementなどのビルディングブロックの活用
 - レジストリの整合性とツール（1P + 3P）
@@ -139,26 +139,26 @@ MCPの構築者向けに、MCPサーバーの実装戦略やベストプラク�
 | Python | MCP サーバー | [コードを見る](../../03-GettingStarted/samples/python/mcp_calculator_server.py) |
 | TypeScript | MCP の例 | [コードを見る](./03-GettingStarted/samples/typescript/README.md) |
 
-#### 高度な MCP 実装例
+#### 高度な MCP 実装
 
 | 言語 | 説明 | リンク |
 |----------|-------------|------|
 | C# | 高度なサンプル | [コードを見る](./04-PracticalImplementation/samples/csharp/README.md) |
 | Java | コンテナアプリの例 | [コードを見る](./04-PracticalImplementation/samples/java/containerapp/README.md) |
 | JavaScript | 高度なサンプル | [コードを見る](./04-PracticalImplementation/samples/javascript/README.md) |
-| Python | 複雑な実装例 | [コードを見る](../../04-PracticalImplementation/samples/python/mcp_sample.py) |
+| Python | 複雑な実装 | [コードを見る](../../04-PracticalImplementation/samples/python/mcp_sample.py) |
 | TypeScript | コンテナサンプル | [コードを見る](./04-PracticalImplementation/samples/typescript/README.md) |
 
 ## 🎯 MCP 学習の前提条件
 
 このカリキュラムを最大限に活用するために、以下の知識があると良いでしょう：
 
-- C#, Java, JavaScript, Python, TypeScript のいずれかの基本的なプログラミング知識
+- C#, Java, JavaScript, Python, または TypeScript のいずれかの基本的なプログラミング知識
 - クライアント・サーバーモデルと API の理解
 - REST や HTTP の基本概念の理解
 - （任意）AI/ML の基礎知識
 
-- サポートのためにコミュニティディスカッションに参加すること
+- コミュニティディスカッションへの参加によるサポート
 
 ## 📚 学習ガイドとリソース
 
@@ -166,7 +166,7 @@ MCPの構築者向けに、MCPサーバーの実装戦略やベストプラク�
 
 ### 学習ガイド
 
-包括的な[学習ガイド](./study_guide.md)が用意されており、リポジトリの活用方法をわかりやすく説明しています。内容は以下の通りです：
+包括的な[学習ガイド](./study_guide.md)が用意されており、リポジトリの活用をサポートします。内容は以下の通りです：
 
 - すべてのトピックを示したビジュアルカリキュラムマップ
 - 各セクションの詳細な内訳
@@ -176,16 +176,16 @@ MCPの構築者向けに、MCPサーバーの実装戦略やベストプラク�
 
 ### 変更履歴
 
-カリキュラム資料の重要な更新を追跡する詳細な[変更履歴](./changelog.md)を管理しています。内容には以下が含まれます：
+カリキュラム資料の重要な更新を追跡する詳細な[変更履歴](./changelog.md)を管理しています。内容は以下を含みます：
 
 - 新規コンテンツの追加
 - 構造の変更
-- 機能の改善
+- 機能改善
 - ドキュメントの更新
 
 ## 🛠️ このカリキュラムを効果的に使うには
 
-各レッスンには以下が含まれています：
+各レッスンには以下が含まれます：
 
 1. MCP の概念をわかりやすく解説  
 2. 複数言語でのライブコード例  
@@ -194,7 +194,7 @@ MCPの構築者向けに、MCPサーバーの実装戦略やベストプラク�
 
 ## 🌟 コミュニティへの感謝
 
-Microsoft Valued Professional の [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) さんによる重要なコードサンプルのご提供に感謝します。
+Microsoft Valued Professional の [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) に重要なコードサンプルの提供で感謝します。
 
 ## 📜 ライセンス情報
 
@@ -202,23 +202,22 @@ Microsoft Valued Professional の [Shivam Goyal](https://www.linkedin.com/in/shi
 
 ## 🤝 貢献ガイドライン
 
-このプロジェクトは貢献や提案を歓迎しています。ほとんどの貢献には、貢献物の使用権を当方に付与することを宣言する Contributor License Agreement (CLA) への同意が必要です。詳細は  
+このプロジェクトは貢献や提案を歓迎します。ほとんどの貢献には、貢献物の使用権を当方に付与することを宣言する Contributor License Agreement (CLA) への同意が必要です。詳細は  
 <https://cla.opensource.microsoft.com> をご覧ください。
 
-プルリクエストを送ると、CLA ボットが自動的に CLA の提出が必要かどうかを判定し、PR に適切な表示（ステータスチェックやコメント）を行います。ボットの指示に従ってください。CLA の提出は当方のすべてのリポジトリで一度だけ行えば十分です。
+プルリクエストを送ると、CLA ボットが自動的に CLA の提出が必要か判定し、PR に適切な表示（ステータスチェックやコメント）を行います。ボットの指示に従ってください。CLA は当方のすべてのリポジトリで一度だけ提出すれば済みます。
 
-このプロジェクトは [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) を採用しています。詳細は [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) をご覧いただくか、質問やコメントは [opencode@microsoft.com](mailto:opencode@microsoft.com) までご連絡ください。
+このプロジェクトは [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) を採用しています。詳細は [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) をご覧いただくか、質問があれば [opencode@microsoft.com](mailto:opencode@microsoft.com) までご連絡ください。
 
 ## 📂 リポジトリ構成
 
-リポジトリの構成は以下の通りです：
+リポジトリは以下のように構成されています：
 
 - **Core Curriculum (00-10)**: 10の連続モジュールで構成されたメインコンテンツ
 - **images/**: カリキュラム全体で使用される図やイラスト
 - **translations/**: 多言語対応の自動翻訳ファイル
-- **translated_images/**: 図やイラストのローカライズ版
-- **alternative_layouts/**: カリキュラム内容の別形式レイアウト
-- **study_guide.md**: リポジトリの活用方法をまとめた包括的ガイド
+- **translated_images/**: ローカライズされた図やイラスト
+- **study_guide.md**: リポジトリの活用を支援する包括的ガイド
 - **changelog.md**: カリキュラム資料の重要な変更履歴
 - **mcp.json**: MCP 仕様の設定ファイル
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: プロジェクト運営に関するドキュメント
@@ -232,20 +231,20 @@ Microsoft Valued Professional の [Shivam Goyal](https://www.linkedin.com/in/shi
 - [初心者向け生成AI](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [初心者向け機械学習](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 - [初心者向けデータサイエンス](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-- [初心者向けAI](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+- [初心者向け AI](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
 - [初心者向けサイバーセキュリティ](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
 - [初心者向けウェブ開発](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [初心者向けIoT](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [初心者向けXR開発](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI ペアプログラミングのための GitHub Copilot マスター講座](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [C#/.NET 開発者向け GitHub Copilot マスター講座](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [初心者向け IoT](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [初心者向け XR 開発](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI ペアプログラミングのための GitHub Copilot マスター](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [C#/.NET 開発者向け GitHub Copilot マスター](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [自分だけの Copilot アドベンチャーを選ぼう](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 ## ™️ 商標に関する注意
 
 このプロジェクトには、プロジェクト名、製品名、サービス名の商標やロゴが含まれている場合があります。Microsoft の商標やロゴの使用は、[Microsoft の商標およびブランドガイドライン](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) に従う必要があります。  
-Microsoft の商標やロゴを改変したバージョンで使用する場合は、混同を招いたり Microsoft の後援を示唆したりしてはいけません。  
+Microsoft の商標やロゴを改変したバージョンで使用する場合は、混乱を招いたり Microsoft の後援を示唆したりしないようにしてください。  
 第三者の商標やロゴの使用は、それぞれの第三者のポリシーに従います。
 
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

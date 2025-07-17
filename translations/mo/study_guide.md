@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-16T23:53:23+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T05:21:51+00:00",
   "source_file": "study_guide.md",
   "language_code": "mo"
 }
 -->
 # Model Context Protocol (MCP) 初學者學習指南
 
-本學習指南概述了「Model Context Protocol (MCP) 初學者」課程的倉庫結構與內容。請利用此指南有效瀏覽倉庫，充分利用現有資源。
+本學習指南概述了「Model Context Protocol (MCP) 初學者」課程的倉庫結構與內容。請利用此指南有效瀏覽倉庫，充分發揮資源的價值。
 
 ## 倉庫概覽
 
-Model Context Protocol (MCP) 是一套標準化的框架，用於 AI 模型與客戶端應用程式之間的互動。最初由 Anthropic 創建，現由更廣泛的 MCP 社群透過官方 GitHub 組織維護。本倉庫提供完整課程，包含 C#、Java、JavaScript、Python 和 TypeScript 的實作範例，適合 AI 開發者、系統架構師及軟體工程師使用。
+Model Context Protocol (MCP) 是一套標準化的框架，用於 AI 模型與客戶端應用程式之間的互動。最初由 Anthropic 創建，現由更廣泛的 MCP 社群透過官方 GitHub 組織共同維護。本倉庫提供完整課程，包含 C#、Java、JavaScript、Python 及 TypeScript 的實作範例，適合 AI 開發者、系統架構師及軟體工程師使用。
 
 ## 視覺化課程地圖
 
@@ -105,7 +105,7 @@ mindmap
 1. **介紹 (00-Introduction/)**
    - Model Context Protocol 概述
    - 為何 AI 流程中標準化至關重要
-   - 實際應用案例與優勢
+   - 實際應用案例與效益
 
 2. **核心概念 (01-CoreConcepts/)**
    - 客戶端-伺服器架構
@@ -157,13 +157,13 @@ mindmap
    - 如何貢獻程式碼與文件
    - 透過 GitHub 協作
    - 社群驅動的改進與回饋
-   - 使用多種 MCP 客戶端（Claude Desktop、Cline、VSCode）
+   - 使用各種 MCP 客戶端（Claude Desktop、Cline、VSCode）
    - 使用熱門 MCP 伺服器，包括影像生成
 
 8. **早期採用經驗 (07-LessonsfromEarlyAdoption/)**
-   - 真實世界實作與成功案例
+   - 實際案例與成功故事
    - 建置與部署 MCP 解決方案
-   - 趨勢與未來發展路線圖
+   - 趨勢與未來路線圖
 
 9. **最佳實務 (08-BestPractices/)**
    - 效能調校與優化
@@ -195,9 +195,9 @@ mindmap
 
 ## 如何使用本倉庫
 
-1. **依序學習**：依章節順序（00 至 10）進行，獲得系統化學習體驗。
+1. **循序學習**：依序閱讀章節（00 至 10），獲得系統化學習體驗。
 2. **語言專注**：若偏好特定程式語言，可瀏覽對應語言的範例目錄。
-3. **實務入門**：從「快速入門」章節開始，設定環境並建立首個 MCP 伺服器與客戶端。
+3. **實務操作**：從「快速入門」開始，設定環境並建立首個 MCP 伺服器與客戶端。
 4. **進階探索**：熟悉基礎後，深入進階主題擴展知識。
 5. **社群互動**：透過 GitHub 討論與 Discord 頻道加入 MCP 社群，與專家及開發者交流。
 
@@ -206,12 +206,14 @@ mindmap
 課程涵蓋多種 MCP 客戶端與工具：
 
 1. **官方客戶端**：
+   - Visual Studio Code
+   - MCP 在 Visual Studio Code 中的整合
    - Claude Desktop
-   - VSCode 中的 Claude
+   - Claude 在 VSCode 中的整合
    - Claude API
 
 2. **社群客戶端**：
-   - Cline（終端機版）
+   - Cline（終端機介面）
    - Cursor（程式碼編輯器）
    - ChatMCP
    - Windsurf
@@ -245,18 +247,18 @@ mindmap
 4. **專用伺服器**：
    - Salesforce
    - Microsoft Teams
-   - Jira 與 Confluence
+   - Jira & Confluence
 
-## 貢獻
+## 貢獻指南
 
-本倉庫歡迎社群貢獻。請參考「社群貢獻」章節，了解如何有效參與 MCP 生態系。
+本倉庫歡迎社群貢獻。請參考「社群貢獻」章節，了解如何有效參與 MCP 生態系的建設。
 
 ## 更新紀錄
 
 | 日期 | 變更內容 |
 |------|---------|
-| 2025 年 7 月 16 日 | - 更新倉庫結構以反映最新內容<br>- 新增 MCP 客戶端與工具章節<br>- 新增熱門 MCP 伺服器章節<br>- 更新視覺化課程地圖，涵蓋所有現有主題<br>- 強化進階主題章節，包含所有專門領域<br>- 更新案例研究，反映實際範例<br>- 明確說明 MCP 由 Anthropic 創建 |
-| 2025 年 6 月 11 日 | - 初版學習指南建立<br>- 新增視覺化課程地圖<br>- 概述倉庫結構<br>- 包含範例專案與附加資源 |
+| 2025年7月16日 | - 更新倉庫結構以反映最新內容<br>- 新增 MCP 客戶端與工具章節<br>- 新增熱門 MCP 伺服器章節<br>- 更新視覺化課程地圖，涵蓋所有現有主題<br>- 強化進階主題章節，包含所有專門領域<br>- 更新案例研究，反映實際範例<br>- 明確說明 MCP 由 Anthropic 創建 |
+| 2025年6月11日 | - 初版學習指南建立<br>- 新增視覺化課程地圖<br>- 概述倉庫結構<br>- 包含範例專案與附加資源 |
 
 ---
 

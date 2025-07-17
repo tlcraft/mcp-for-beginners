@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-17T01:11:09+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T05:30:09+00:00",
   "source_file": "study_guide.md",
   "language_code": "it"
 }
@@ -13,7 +13,7 @@ Questa guida di studio offre una panoramica della struttura e del contenuto del 
 
 ## Panoramica del Repository
 
-Il Model Context Protocol (MCP) è un framework standardizzato per le interazioni tra modelli AI e applicazioni client. Inizialmente creato da Anthropic, MCP è ora mantenuto dalla più ampia comunità MCP tramite l’organizzazione ufficiale su GitHub. Questo repository offre un curriculum completo con esempi pratici di codice in C#, Java, JavaScript, Python e TypeScript, pensato per sviluppatori AI, architetti di sistema e ingegneri del software.
+Il Model Context Protocol (MCP) è un framework standardizzato per le interazioni tra modelli AI e applicazioni client. Inizialmente creato da Anthropic, MCP è ora mantenuto dalla comunità più ampia attraverso l’organizzazione ufficiale su GitHub. Questo repository offre un curriculum completo con esempi pratici di codice in C#, Java, JavaScript, Python e TypeScript, pensato per sviluppatori AI, architetti di sistema e ingegneri del software.
 
 ## Mappa Visiva del Curriculum
 
@@ -147,7 +147,7 @@ Il repository è organizzato in dieci sezioni principali, ognuna focalizzata su 
    - Streaming in tempo reale
    - Implementazione di root contexts
    - Strategie di routing
-   - Tecniche di sampling
+   - Tecniche di campionamento
    - Approcci di scaling
    - Considerazioni sulla sicurezza
    - Integrazione sicurezza Entra ID
@@ -166,7 +166,7 @@ Il repository è organizzato in dieci sezioni principali, ognuna focalizzata su 
    - Tendenze e roadmap futura
 
 9. **Best Practice (08-BestPractices/)**
-   - Ottimizzazione e tuning delle performance
+   - Ottimizzazione e tuning delle prestazioni
    - Progettazione di sistemi MCP fault-tolerant
    - Strategie di testing e resilienza
 
@@ -180,7 +180,7 @@ Il repository è organizzato in dieci sezioni principali, ognuna focalizzata su 
     - Workshop pratico completo che combina MCP con AI Toolkit
     - Costruzione di applicazioni intelligenti che collegano modelli AI con strumenti reali
     - Moduli pratici che coprono fondamentali, sviluppo server personalizzati e strategie di deployment in produzione
-    - Approccio di apprendimento basato su laboratori con istruzioni passo-passo
+    - Approccio di apprendimento basato su laboratori con istruzioni passo passo
 
 ## Risorse Aggiuntive
 
@@ -195,17 +195,19 @@ Il repository include risorse di supporto:
 
 ## Come Usare Questo Repository
 
-1. **Apprendimento Sequenziale**: Segui i capitoli in ordine (da 00 a 10) per un’esperienza di apprendimento strutturata.
-2. **Focus sul Linguaggio**: Se ti interessa un linguaggio di programmazione specifico, esplora le directory dei sample per le implementazioni nella tua lingua preferita.
+1. **Apprendimento Sequenziale**: Segui i capitoli in ordine (da 00 a 10) per un percorso di apprendimento strutturato.
+2. **Focus sul Linguaggio**: Se ti interessa un linguaggio specifico, esplora le directory dei sample per implementazioni nella tua lingua preferita.
 3. **Implementazione Pratica**: Inizia dalla sezione "Primi Passi" per configurare l’ambiente e creare il tuo primo server e client MCP.
 4. **Esplorazione Avanzata**: Una volta acquisiti i concetti base, approfondisci gli argomenti avanzati per ampliare le tue conoscenze.
-5. **Coinvolgimento nella Comunità**: Unisciti alla comunità MCP tramite le discussioni su GitHub e i canali Discord per connetterti con esperti e altri sviluppatori.
+5. **Coinvolgimento nella Comunità**: Unisciti alla comunità MCP tramite discussioni su GitHub e canali Discord per connetterti con esperti e altri sviluppatori.
 
 ## Client e Strumenti MCP
 
 Il curriculum copre vari client e strumenti MCP:
 
 1. **Client Ufficiali**:
+   - Visual Studio Code
+   - MCP in Visual Studio Code
    - Claude Desktop
    - Claude in VSCode
    - Claude API
@@ -263,4 +265,4 @@ Questo repository accoglie contributi dalla comunità. Consulta la sezione Contr
 *Questa guida di studio è stata aggiornata il 16 luglio 2025 e fornisce una panoramica del repository a quella data. Il contenuto del repository potrebbe essere aggiornato successivamente.*
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
