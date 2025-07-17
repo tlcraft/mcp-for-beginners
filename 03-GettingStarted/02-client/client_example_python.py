@@ -112,7 +112,20 @@ class MCPCalculatorClient:
             print(f"  Error listing resources: {e}")
 
     def extract_text_result(self, result) -> str:
-        """Extract text content from tool result"""
+        """
+        Extract text content from a tool result object.
+
+        This method attempts to extract the text content from the `content` attribute
+        of the result object. If no text content is found, it falls back to converting
+        the result to a string. If an error occurs during extraction, it returns "No result".
+
+        Args:
+            result: The result object returned by a tool, which may contain a `content` attribute
+                    with text or other types of data.
+
+        Returns:
+            A string representing the extracted text content, or a fallback string if no text is found.
+        """
         try:
             if hasattr(result, 'content') and result.content:
                 for content_item in result.content:
