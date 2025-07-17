@@ -56,12 +56,11 @@ The reasons for using streaming are the following:
 
 Here's a simple example of how streaming can be implemented:
 
-<details>
-<summary>Python</summary>
+## Python 
 
 **Server (Python, using FastAPI and StreamingResponse):**
-<details>
-<summary>Python</summary>
+
+### Python
 
 ```python
 from fastapi import FastAPI
@@ -80,11 +79,10 @@ def stream():
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 ```
 
-</details>
 
 **Client (Python, using requests):**
-<details>
-<summary>Python</summary>
+
+### Python
 
 ```python
 import requests
@@ -95,7 +93,6 @@ with requests.get("http://localhost:8000/stream", stream=True) as r:
             print(line.decode())
 ```
 
-</details>
 
 This example demonstrates a server sending a series of messages to the client as they become available, rather than waiting for all messages to be ready.
 
@@ -108,10 +105,7 @@ This example demonstrates a server sending a series of messages to the client as
 - The client must process the response as a stream (`stream=True` in requests).
 - Content-Type is usually `text/event-stream` or `application/octet-stream`.
 
-</details>
-
-<details>
-<summary>Java</summary>
+## Java
 
 **Server (Java, using Spring Boot and Server-Sent Events):**
 
@@ -183,7 +177,6 @@ public class CalculatorClientApplication implements CommandLineRunner {
 - `delayElements()` simulates processing time between events
 - Events can have types (`info`, `result`) for better client handling
 
-</details>
 
 ### Comparison: Classic Streaming vs MCP Streaming
 
@@ -296,11 +289,7 @@ To implement notifications in MCP, you need to set up both the server and client
 
 Let's start with the server side. In MCP, you define tools that can send notifications while processing requests. The server uses the context object (usually `ctx`) to send messages to the client.
 
-<details>
-<summary>Python</summary>
-
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -313,7 +302,6 @@ async def process_files(message: str, ctx: Context) -> TextContent:
 
 In the preceding example, the `process_files` tool sends three notifications to the client as it processes each file. The `ctx.info()` method is used to send informational messages.
 
-</details>
 
 Additionally, to enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications. Here's how you can set up the server to use the `streamable-http` transport:
 
@@ -321,10 +309,7 @@ Additionally, to enable notifications, ensure your server uses a streaming trans
 mcp.run(transport="streamable-http")
 ```
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 [Tool("A tool that sends progress notifications")]
@@ -353,14 +338,11 @@ await builder
     .RunAsync();
 ```
 
-</details>
-
 ### Client-side: Receiving Notifications
 
 The client must implement a message handler to process and display notifications as they arrive.
 
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 async def message_handler(message):
@@ -379,10 +361,7 @@ async with ClientSession(
 
 In the preceding code, the `message_handler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. Also note how the `ClientSession` is initialized with the `message_handler` to handle incoming notifications.
 
-</details>
-
-<details>
-<summary>.NET</summary>
+### .NET
 
 ```csharp
 // Define a message handler
@@ -412,8 +391,6 @@ await client.InitializeAsync();
 ```
 
 In this .NET example, the `MessageHandler` function checks if the incoming message is a notification. If it is, it prints the notification; otherwise, it processes it as a regular server message. The `ClientSession` is initialized with the message handler via the `ClientSessionOptions`.
-
-</details>
 
 To enable notifications, ensure your server uses a streaming transport (like `streamable-http`) and your client implements a message handler to process notifications.
 
@@ -451,8 +428,7 @@ Here's how you can implement progress notifications in MCP:
 
 **Server Example:**
 
-<details>
-<summary>Python</summary>
+## Python
 
 ```python
 @mcp.tool(description="A tool that sends progress notifications")
@@ -463,12 +439,10 @@ async def process_files(message: str, ctx: Context) -> TextContent:
     return TextContent(type="text", text=f"Done: {message}")
 ```
 
-</details>
 
 **Client Example:**
 
-<details>
-<summary>Python</summary>
+### Python
 
 ```python
 async def message_handler(message):
@@ -478,7 +452,6 @@ async def message_handler(message):
         print("SERVER MESSAGE:", message)
 ```
 
-</details>
 
 ## Security Considerations
 

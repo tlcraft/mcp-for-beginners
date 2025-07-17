@@ -95,6 +95,7 @@ In the preceding code we:
 
     - `AddMcpServer`, this method adds capabilities.
     - `MapMcp`, this adds routes like `/SSE` and `/messages`.
+```
 
 Now that we know a little bit more about SSE, let's build an SSE server next.
 
