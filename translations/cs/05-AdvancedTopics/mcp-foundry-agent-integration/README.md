@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:38:03+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T10:46:12+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "cs"
 }
@@ -13,7 +13,7 @@ Tento průvodce ukazuje, jak integrovat servery Model Context Protocol (MCP) s a
 
 ## Úvod
 
-Model Context Protocol (MCP) je otevřený standard, který umožňuje AI aplikacím bezpečně se připojovat k externím datovým zdrojům a nástrojům. Po integraci s Azure AI Foundry umožňuje MCP agentům přístup a interakci s různými externími službami, API a datovými zdroji jednotným způsobem.
+Model Context Protocol (MCP) je otevřený standard, který umožňuje AI aplikacím bezpečně se připojit k externím datovým zdrojům a nástrojům. Po integraci s Azure AI Foundry umožňuje MCP agentům přístup a interakci s různými externími službami, API a datovými zdroji jednotným způsobem.
 
 Tato integrace kombinuje flexibilitu ekosystému nástrojů MCP s robustním rámcem agentů Azure AI Foundry, čímž poskytuje podniková AI řešení s rozsáhlými možnostmi přizpůsobení.
 
@@ -53,12 +53,12 @@ Model Context Protocol je standardizovaný způsob, jak mohou AI aplikace přist
 
 Vyberte si preferované vývojové prostředí:
 
-- [Implementace v Pythonu](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
-- [Implementace v .NET](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [Python Implementation](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [.NET Implementation](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
 
 ---
 
-## Implementace v Pythonu
+## Python Implementation
 
 ***Note*** Tento [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) můžete spustit
 
@@ -187,7 +187,7 @@ with project_client:
 
 ---
 
-## Implementace v .NET
+## .NET Implementation
 
 ***Note*** Tento [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) můžete spustit
 
@@ -310,7 +310,7 @@ await foreach (PersistentThreadMessage threadMessage in messages)
 
 Při konfiguraci MCP nástrojů pro vaše agenty můžete specifikovat několik důležitých parametrů:
 
-### Konfigurace v Pythonu
+### Python konfigurace
 
 ```python
 mcp_tool = McpTool(
@@ -320,7 +320,7 @@ mcp_tool = McpTool(
 )
 ```
 
-### Konfigurace v .NET
+### .NET konfigurace
 
 ```csharp
 MCPToolDefinition mcpTool = new(
@@ -372,20 +372,20 @@ Pro další vylepšení integrace MCP:
 
 ## Další zdroje
 
-- [Dokumentace Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- [Ukázky Model Context Protocol](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
-- [Přehled agentů Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/agents/)
-- [Specifikace MCP](https://spec.modelcontextprotocol.io/)
+- [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-foundry/)
+- [Model Context Protocol Samples](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
+- [Azure AI Foundry Agents Overview](https://learn.microsoft.com/azure/ai-foundry/agents/)
+- [MCP Specification](https://spec.modelcontextprotocol.io/)
 
 ## Podpora
 
 Pro další podporu a dotazy:
 - Prohlédněte si [dokumentaci Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- Navštivte [komunitní zdroje MCP](https://modelcontextprotocol.io/)
+- Navštivte [MCP komunitní zdroje](https://modelcontextprotocol.io/)
 
 ## Co dál
 
-- [6. Příspěvky komunity](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

@@ -1,45 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T01:21:31+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T12:23:14+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "sl"
 }
 -->
 ## Opozorilo glede primerov kode
 
-> **Pomembna opomba**: Spodnji primeri kode prikazujejo integracijo Model Context Protocol (MCP) z iskalno funkcionalnostjo na spletu. Čeprav sledijo vzorcem in strukturam uradnih MCP SDK-jev, so poenostavljeni za izobraževalne namene.
+> **Pomembna opomba**: spodnji primeri kode prikazujejo integracijo Model Context Protocol (MCP) z iskalno funkcionalnostjo na spletu. Čeprav sledijo vzorcem in strukturam uradnih MCP SDK-jev, so poenostavljeni za izobraževalne namene.
 > 
 > Ti primeri prikazujejo:
 > 
-> 1. **Implementacija v Pythonu**: Implementacija strežnika FastMCP, ki zagotavlja orodje za spletno iskanje in se povezuje z zunanjim iskalnim API-jem. Ta primer prikazuje pravilno upravljanje življenjske dobe, ravnanje s kontekstom in implementacijo orodja v skladu z vzorci [uradnega MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk). Strežnik uporablja priporočeni Streamable HTTP transport, ki je nadomestil starejši SSE transport za produkcijske namestitve.
+> 1. **Implementacija v Pythonu**: implementacija strežnika FastMCP, ki zagotavlja orodje za spletno iskanje in se povezuje z zunanjim iskalnim API-jem. Ta primer prikazuje pravilno upravljanje življenjske dobe, ravnanje s kontekstom in implementacijo orodja v skladu z vzorci [uradnega MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk). Strežnik uporablja priporočeni Streamable HTTP transport, ki je nadomestil starejši SSE transport za produkcijske namestitve.
 > 
-> 2. **Implementacija v JavaScriptu**: Implementacija v TypeScript/JavaScriptu, ki uporablja vzorec FastMCP iz [uradnega MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) za ustvarjanje iskalnega strežnika s pravilnimi definicijami orodij in povezavami s klienti. Sledi najnovejšim priporočilom za upravljanje sej in ohranjanje konteksta.
+> 2. **Implementacija v JavaScriptu**: implementacija v TypeScript/JavaScriptu, ki uporablja vzorec FastMCP iz [uradnega MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) za ustvarjanje iskalnega strežnika s pravilnimi definicijami orodij in povezavami s klienti. Sledi najnovejšim priporočilom za upravljanje sej in ohranjanje konteksta.
 > 
 > Ti primeri bi za produkcijsko uporabo zahtevali dodatno obravnavo napak, avtentikacijo in specifično integracijo API-jev. Prikazani iskalni API končni točki (`https://api.search-service.example/search`) so nadomestni in jih je treba zamenjati z dejanskimi končnimi točkami iskalnih storitev.
 > 
 > Za popolne podrobnosti implementacije in najnovejše pristope si oglejte [uradno MCP specifikacijo](https://spec.modelcontextprotocol.io/) in dokumentacijo SDK.
 
-## Osnovni koncepti
+## Osnovni pojmi
 
 ### Okvir Model Context Protocol (MCP)
 
-Model Context Protocol na osnovi zagotavlja standardiziran način izmenjave konteksta med AI modeli, aplikacijami in storitvami. Pri iskanju v realnem času na spletu je ta okvir ključnega pomena za ustvarjanje koherentnih, večkrožnih iskalnih izkušenj. Ključne sestavine vključujejo:
+Model Context Protocol na osnovni ravni zagotavlja standardiziran način izmenjave konteksta med AI modeli, aplikacijami in storitvami. Pri iskanju v realnem času na spletu je ta okvir ključnega pomena za ustvarjanje koherentnih, večkrožnih iskalnih izkušenj. Ključne sestavine vključujejo:
 
-1. **Arhitektura klient-strežnik**: MCP vzpostavlja jasno ločnico med iskalnimi klienti (zahtevki) in iskalnimi strežniki (ponudniki), kar omogoča prilagodljive modele nameščanja.
+1. **Arhitektura klient-strežnik**: MCP vzpostavi jasno ločnico med iskalnimi klienti (zahtevki) in iskalnimi strežniki (ponudniki), kar omogoča prilagodljive modele nameščanja.
 
-2. **JSON-RPC komunikacija**: Protokol uporablja JSON-RPC za izmenjavo sporočil, kar omogoča združljivost s spletnimi tehnologijami in enostavno implementacijo na različnih platformah.
+2. **JSON-RPC komunikacija**: protokol uporablja JSON-RPC za izmenjavo sporočil, kar omogoča združljivost s spletnimi tehnologijami in enostavno implementacijo na različnih platformah.
 
 3. **Upravljanje konteksta**: MCP definira strukturirane metode za vzdrževanje, posodabljanje in izkoriščanje iskalnega konteksta skozi več interakcij.
 
-4. **Definicije orodij**: Iskalne zmogljivosti so predstavljene kot standardizirana orodja z jasno določenimi parametri in vrnjenimi vrednostmi.
+4. **Definicije orodij**: iskalne zmogljivosti so predstavljene kot standardizirana orodja z jasno določenimi parametri in vrnjenimi vrednostmi.
 
-5. **Podpora za pretakanje**: Protokol podpira pretakanje rezultatov, kar je bistveno za iskanje v realnem času, kjer rezultati lahko prihajajo postopoma.
+5. **Podpora za pretakanje**: protokol podpira pretakanje rezultatov, kar je bistveno za iskanje v realnem času, kjer rezultati lahko prihajajo postopoma.
 
 ### Vzorci integracije spletnega iskanja
 
-Pri integraciji MCP z iskanjem na spletu se pojavi več vzorcev:
+Pri integraciji MCP z iskanjem na spletu se pojavijo različni vzorci:
 
 #### 1. Neposredna integracija ponudnika iskanja
 
@@ -51,7 +51,7 @@ graph LR
     Server --> |MCP Response| Client
 ```
 
-V tem vzorcu MCP strežnik neposredno komunicira z enim ali več iskalnimi API-ji, prevaja MCP zahteve v API-specifične klice in rezultate oblikuje kot MCP odgovore.
+V tem vzorcu MCP strežnik neposredno komunicira z enim ali več iskalnimi API-ji, prevaja MCP zahteve v API-specifične klice in oblikuje rezultate kot MCP odgovore.
 
 #### 2. Federirano iskanje z ohranjanjem konteksta
 
@@ -69,7 +69,7 @@ graph LR
 
 Ta vzorec razporeja iskalne poizvedbe med več MCP-kompatibilnimi ponudniki iskanja, ki se lahko specializirajo za različne vrste vsebin ali iskalnih zmogljivosti, hkrati pa ohranja enoten kontekst.
 
-#### 3. Iskalni niz z izboljšanim kontekstom
+#### 3. Iskalni verižni proces z izboljšanim kontekstom
 
 ```mermaid
 graph LR
@@ -87,15 +87,15 @@ V tem vzorcu je iskalni proces razdeljen na več stopenj, pri čemer se kontekst
 
 ### Sestavine iskalnega konteksta
 
-V MCP-podprtih spletnih iskanjih kontekst običajno vključuje:
+V MCP-podprtem spletnem iskanju kontekst običajno vključuje:
 
-- **Zgodovina poizvedb**: Prejšnje iskalne poizvedbe v seji
-- **Uporabniške nastavitve**: Jezik, regija, nastavitve varnega iskanja
-- **Zgodovina interakcij**: Kateri rezultati so bili kliknjeni, čas preživet na rezultatih
-- **Iskalni parametri**: Filtri, vrstni redi in drugi iskalni modifikatorji
-- **Področje znanja**: Specifičen kontekst glede na temo iskanja
-- **Časovni kontekst**: Časovno odvisni dejavniki relevantnosti
-- **Nastavitve virov**: Zaupanja vredni ali prednostni viri informacij
+- **Zgodovina poizvedb**: prejšnje iskalne poizvedbe v seji
+- **Uporabniške nastavitve**: jezik, regija, nastavitve varnega iskanja
+- **Zgodovina interakcij**: kateri rezultati so bili kliknjeni, čas preživet na rezultatih
+- **Iskalni parametri**: filtri, vrstni redi in drugi iskalni modifikatorji
+- **Področje znanja**: specifičen kontekst glede na temo iskanja
+- **Časovni kontekst**: časovno odvisni dejavniki relevantnosti
+- **Nastavitve virov**: zaupanja vredni ali prednostni viri informacij
 
 ## Primeri uporabe in aplikacije
 
@@ -110,12 +110,12 @@ MCP izboljšuje raziskovalne delovne tokove z:
 
 ### Spremljanje novic in trendov v realnem času
 
-Iskanje, podprto z MCP, ponuja prednosti pri spremljanju novic:
+Iskanje, podprto z MCP, ponuja prednosti za spremljanje novic:
 
 - Odkritje novic v skoraj realnem času
 - Kontekstualno filtriranje relevantnih informacij
 - Sledenje temam in entitetam preko več virov
-- Personalizirana obvestila o novicah na podlagi uporabniškega konteksta
+- Personalizirana obvestila o novicah glede na uporabniški kontekst
 
 ### Brskanje in raziskovanje z AI podporo
 
@@ -132,8 +132,8 @@ MCP odpira nove možnosti za brskanje z AI podporo:
 
 V prihodnosti pričakujemo, da se bo MCP razvijal za reševanje:
 
-- **Multimodalno iskanje**: Integracija iskanja po besedilu, slikah, zvoku in videu z ohranjenim kontekstom
-- **Decentralizirano iskanje**: Podpora za distribuirane in federirane iskalne ekosisteme
+- **Multimodalno iskanje**: integracija iskanja po besedilu, slikah, zvoku in videu z ohranjenim kontekstom
+- **Decentralizirano iskanje**: podpora za distribuirane in federirane iskalne ekosisteme
 - **Zasebnost iskanja**: Mehanizmi iskanja, ki ohranjajo zasebnost in upoštevajo kontekst  
 - **Razumevanje poizvedb**: Globoka semantična analiza naravnih jezikovnih iskalnih poizvedb
 
@@ -194,7 +194,7 @@ Z dokončanjem tega modula boste sposobni:
 - Implementirati rešitve iskanja na osnovi MCP z uporabo priljubljenih ogrodij in API-jev  
 - Načrtovati in uvajati razširljive, zmogljive arhitekture iskanja z MCP  
 - Uporabiti koncepte MCP v različnih primerih uporabe, vključno s semantičnim iskanjem, raziskovalno pomočjo in brskanjem, podprtim z AI  
-- Oceniti nove trende in prihodnje inovacije v tehnologijah iskanja na osnovi MCP
+- Oceniti nastajajoče trende in prihodnje inovacije v tehnologijah iskanja na osnovi MCP
 
 ### Premisleki o zaupanju in varnosti
 
@@ -208,13 +208,13 @@ Pri implementaciji spletnih iskalnih rešitev na osnovi MCP upoštevajte nasledn
 
 4. **Jasna dokumentacija**: Zagotovite jasno dokumentacijo o zmogljivostih, omejitvah in varnostnih premislekih vaše MCP implementacije, v skladu z navodili iz MCP specifikacije.
 
-5. **Robustni postopki privolitve**: Zgradite robustne postopke za privolitev in avtorizacijo, ki jasno pojasnijo, kaj posamezno orodje počne, preden dovolijo njegovo uporabo, še posebej za orodja, ki komunicirajo z zunanjimi spletnimi viri.
+5. **Robustni postopki privolitve**: Zgradite robustne postopke privolitve in avtorizacije, ki jasno pojasnijo, kaj posamezno orodje počne, preden dovolijo njegovo uporabo, še posebej za orodja, ki dostopajo do zunanjih spletnih virov.
 
 Za popolne podrobnosti o varnosti in premislekih o zaupanju MCP si oglejte [uradno dokumentacijo](https://modelcontextprotocol.io/specification/2025-03-26#security-and-trust-%26-safety).
 
 ## Kaj sledi
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

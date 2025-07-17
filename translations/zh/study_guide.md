@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-16T20:50:47+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T09:41:06+00:00",
   "source_file": "study_guide.md",
   "language_code": "zh"
 }
 -->
-# 面向初学者的模型上下文协议（MCP）学习指南
+# Model Context Protocol (MCP) 初学者学习指南
 
-本学习指南概述了“面向初学者的模型上下文协议（MCP）”课程的仓库结构和内容。请使用本指南高效浏览仓库，充分利用可用资源。
+本学习指南概述了“Model Context Protocol (MCP) 初学者”课程的仓库结构和内容。请使用本指南高效浏览仓库，充分利用现有资源。
 
 ## 仓库概览
 
-模型上下文协议（MCP）是一个用于 AI 模型与客户端应用之间交互的标准化框架。最初由 Anthropic 创建，现由更广泛的 MCP 社区通过官方 GitHub 组织维护。本仓库提供了全面的课程内容，包含 C#、Java、JavaScript、Python 和 TypeScript 的实战代码示例，面向 AI 开发者、系统架构师和软件工程师。
+Model Context Protocol (MCP) 是一个用于 AI 模型与客户端应用交互的标准化框架。最初由 Anthropic 创建，现由更广泛的 MCP 社区通过官方 GitHub 组织维护。本仓库提供了涵盖 C#、Java、JavaScript、Python 和 TypeScript 的实战代码示例的完整课程，面向 AI 开发者、系统架构师和软件工程师。
 
 ## 课程视觉地图
 
@@ -103,7 +103,7 @@ mindmap
 仓库分为十个主要部分，每部分聚焦 MCP 的不同方面：
 
 1. **介绍 (00-Introduction/)**
-   - 模型上下文协议概述
+   - Model Context Protocol 概述
    - AI 流水线中标准化的重要性
    - 实际应用场景与优势
 
@@ -126,14 +126,14 @@ mindmap
      - 客户端开发
      - LLM 客户端集成
      - VS Code 集成
-     - 服务器推送事件（SSE）服务器
+     - 服务器推送事件 (SSE) 服务器
      - HTTP 流式传输
      - AI 工具包集成
      - 测试策略
      - 部署指南
 
 5. **实战实现 (04-PracticalImplementation/)**
-   - 跨多种编程语言使用 SDK
+   - 跨语言 SDK 使用
    - 调试、测试与验证技巧
    - 设计可复用的提示模板和工作流
    - 示例项目及实现案例
@@ -162,7 +162,7 @@ mindmap
 
 8. **早期采用经验 (07-LessonsfromEarlyAdoption/)**
    - 真实案例与成功故事
-   - 构建和部署基于 MCP 的解决方案
+   - MCP 解决方案的构建与部署
    - 发展趋势与未来路线图
 
 9. **最佳实践 (08-BestPractices/)**
@@ -186,8 +186,8 @@ mindmap
 
 仓库还包含支持资源：
 
-- **Images 文件夹**：包含课程中使用的图表和插图
-- **翻译**：多语言支持，自动翻译文档
+- **Images 文件夹**：课程中使用的图表和插图
+- **翻译**：多语言支持，包含文档的自动翻译
 - **官方 MCP 资源**：
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
@@ -197,7 +197,7 @@ mindmap
 
 1. **按顺序学习**：依次阅读章节（00 到 10），获得系统化学习体验。
 2. **语言专项**：如果关注特定编程语言，可浏览对应语言的示例目录。
-3. **实战入门**：从“入门指南”开始，搭建环境，创建第一个 MCP 服务器和客户端。
+3. **实战入门**：从“入门指南”开始，搭建环境并创建第一个 MCP 服务器和客户端。
 4. **深入探索**：掌握基础后，深入高级主题，拓展知识面。
 5. **社区互动**：通过 GitHub 讨论和 Discord 频道加入 MCP 社区，连接专家和开发者。
 
@@ -206,8 +206,10 @@ mindmap
 课程涵盖多种 MCP 客户端和工具：
 
 1. **官方客户端**：
+   - Visual Studio Code
+   - MCP 在 Visual Studio Code 中的集成
    - Claude Desktop
-   - VSCode 中的 Claude
+   - Claude 在 VSCode 中的集成
    - Claude API
 
 2. **社区客户端**：
@@ -242,14 +244,14 @@ mindmap
    - Terminal Control
    - Code Assistant
 
-4. **专业服务器**：
+4. **专用服务器**：
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
 
 ## 贡献指南
 
-欢迎社区贡献代码和文档。请参阅社区贡献章节，了解如何有效参与 MCP 生态系统建设。
+欢迎社区贡献代码和文档。请参阅社区贡献章节，了解如何有效参与 MCP 生态系统。
 
 ## 更新日志
 
@@ -260,7 +262,7 @@ mindmap
 
 ---
 
-*本学习指南更新于 2025 年 7 月 16 日，内容反映该日期的仓库概况。仓库内容可能在此日期之后有所更新。*
+*本学习指南于 2025 年 7 月 16 日更新，内容反映该日期的仓库概况。仓库内容可能在此日期之后有所变动。*
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

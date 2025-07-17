@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:42:53+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-17T10:09:00+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "sw"
 }
@@ -13,7 +13,15 @@ Usalama ni muhimu sana kwa utekelezaji wa MCP, hasa katika mazingira ya biashara
 
 ## Utangulizi
 
-Katika somo hili, tutaangazia mazuri ya usalama kwa utekelezaji wa MCP. Tutajadili uthibitishaji na idhini, ulinzi wa data, utekelezaji salama wa zana, na ufuataji wa kanuni za faragha ya data.
+Model Context Protocol (MCP) inahitaji kuzingatia masuala maalum ya usalama kutokana na jukumu lake la kutoa LLMs ufikiaji wa data na zana. Somo hili linachunguza mazoea bora ya usalama kwa utekelezaji wa MCP kulingana na miongozo rasmi ya MCP na mifumo ya usalama iliyothibitishwa.
+
+MCP inafuata kanuni muhimu za usalama kuhakikisha mwingiliano salama na wa kuaminika:
+
+- **Idhini na Udhibiti wa Mtumiaji**: Watumiaji lazima wape idhini wazi kabla data yoyote kuonekana au shughuli kufanyika. Toa udhibiti wazi juu ya data inayoshirikiwa na hatua zinazoruhusiwa.
+  
+- **Faragha ya Data**: Data za mtumiaji zinapaswa kuonyeshwa tu kwa idhini wazi na lazima zilindwe kwa udhibiti sahihi wa upatikanaji. Linda dhidi ya usafirishaji wa data usioidhinishwa.
+  
+- **Usalama wa Zana**: Kabla ya kuitumia zana yoyote, idhini wazi ya mtumiaji inahitajika. Watumiaji wanapaswa kuelewa vizuri jinsi kila zana inavyofanya kazi, na mipaka thabiti ya usalama lazima itekelezwe.
 
 ## Malengo ya Kujifunza
 
@@ -21,24 +29,35 @@ Mwisho wa somo hili, utaweza:
 
 - Kutekeleza mbinu salama za uthibitishaji na idhini kwa seva za MCP.
 - Kulinda data nyeti kwa kutumia usimbaji fiche na uhifadhi salama.
-- Kuhakikisha utekelezaji salama wa zana kwa kudhibiti upatikanaji ipasavyo.
-- Kutumia mazuri ya ulinzi wa data na ufuataji wa faragha.
+- Kuhakikisha utekelezaji salama wa zana kwa udhibiti sahihi wa upatikanaji.
+- Kutumia mazoea bora ya ulinzi wa data na kufuata sheria za faragha.
+- Kutambua na kupunguza hatari za usalama za MCP kama matatizo ya confused deputy, token passthrough, na udukuzi wa vikao.
 
 ## Uthibitishaji na Idhini
 
 Uthibitishaji na idhini ni muhimu kwa usalama wa seva za MCP. Uthibitishaji hujibu swali "Wewe ni nani?" wakati idhini hujibu "Unaweza kufanya nini?".
 
+Kulingana na maelezo ya usalama ya MCP, haya ni mambo muhimu ya kuzingatia:
+
+1. **Uthibitishaji wa Tokeni**: Seva za MCP HAZIKUBALI tokeni zozote ambazo hazikutolewa wazi kwa seva ya MCP. "Token passthrough" ni mfano wa tabia inayoruhusiwa kabisa.
+
+2. **Uhakiki wa Idhini**: Seva za MCP zinazotekeleza idhini LAZIMU zihakikishe maombi yote yanayoingia na HAZITUMII vikao kwa uthibitishaji.
+
+3. **Usimamizi Salama wa Vikao**: Wakati wa kutumia vikao kwa ajili ya hali, seva za MCP LAZIMU zitumie vitambulisho vya kikao visivyo na utabiri vinavyotengenezwa kwa jenereta salama za nambari za nasibu. Vitambulisho vya vikao VINAPASWA kuunganishwa na taarifa za mtumiaji binafsi.
+
+4. **Idhini Wazi ya Mtumiaji**: Kwa seva za wakala, utekelezaji wa MCP LAZIMU upate idhini ya mtumiaji kwa kila mteja aliyejiandikisha kwa nguvu kabla ya kupeleka kwa seva za idhini za wahusika wa tatu.
+
 Tuchunguze mifano ya jinsi ya kutekeleza uthibitishaji na idhini salama kwenye seva za MCP kwa kutumia .NET na Java.
 
 ### Muunganisho wa .NET Identity
 
-ASP .NET Core Identity hutoa mfumo thabiti wa kusimamia uthibitishaji na idhini ya watumiaji. Tunaweza kuunganisha na seva za MCP ili kulinda upatikanaji wa zana na rasilimali.
+ASP .NET Core Identity hutoa mfumo thabiti wa kusimamia uthibitishaji na idhini ya watumiaji. Tunaweza kuunganisha na seva za MCP ili kulinda ufikiaji wa zana na rasilimali.
 
-Kuna dhana kuu tunazohitaji kuelewa tunapounganisha ASP.NET Core Identity na seva za MCP, ambazo ni:
+Kuna dhana kuu tunazohitaji kuelewa tunapounganisha ASP.NET Core Identity na seva za MCP, yaani:
 
-- **Usanidi wa Identity**: Kuweka ASP.NET Core Identity na majukumu na madai ya watumiaji. Dadai ni kipande cha taarifa kuhusu mtumiaji, kama jukumu lao au ruhusa, kwa mfano "Admin" au "User".
-- **Uthibitishaji wa JWT**: Kutumia JSON Web Tokens (JWT) kwa upatikanaji salama wa API. JWT ni kiwango cha kusafirisha taarifa kwa usalama kati ya pande kama kitu cha JSON, ambacho kinaweza kuthibitishwa na kuaminika kwa sababu kimesainiwa kidijitali.
-- **Sera za Idhini**: Kuweka sera za kudhibiti upatikanaji wa zana maalum kulingana na majukumu ya watumiaji. MCP hutumia sera za idhini kuamua ni watumiaji gani wanaweza kufikia zana gani kulingana na majukumu na madai yao.
+- **Usanidi wa Identity**: Kuweka ASP.NET Core Identity na majukumu na madai ya watumiaji. Dadai ni kipande cha taarifa kuhusu mtumiaji, kama jukumu au ruhusa, mfano "Admin" au "User".
+- **Uthibitishaji wa JWT**: Kutumia JSON Web Tokens (JWT) kwa ufikiaji salama wa API. JWT ni kiwango cha kusafirisha taarifa kwa usalama kati ya pande kama kitu cha JSON, ambacho kinaweza kuthibitishwa na kuaminika kwa sababu kimesainiwa kidijitali.
+- **Sera za Idhini**: Kuweka sera za kudhibiti ufikiaji wa zana maalum kulingana na majukumu ya watumiaji. MCP hutumia sera za idhini kuamua ni watumiaji gani wanaweza kufikia zana gani kulingana na majukumu na madai yao.
 
 ```csharp
 public class SecureMcpStartup
@@ -112,21 +131,21 @@ public class SecureMcpStartup
 Katika msimbo uliotangulia, tumefanya:
 
 - Kusanidi ASP.NET Core Identity kwa usimamizi wa watumiaji.
-- Kuweka uthibitishaji wa JWT kwa upatikanaji salama wa API. Tulibainisha vigezo vya uthibitishaji wa tokeni, ikiwa ni pamoja na mtengenezaji, hadhira, na ufunguo wa kusaini.
-- Kuweka sera za idhini kudhibiti upatikanaji wa zana kulingana na majukumu ya watumiaji. Kwa mfano, sera ya "CanUseAdminTools" inahitaji mtumiaji kuwa na jukumu la "Admin", wakati sera ya "CanUseBasic" inahitaji mtumiaji kuthibitishwa.
-- Kusajili zana za MCP na mahitaji maalum ya idhini, kuhakikisha kuwa ni watumiaji wenye majukumu sahihi tu wanaoweza kuzifikia.
+- Kuweka uthibitishaji wa JWT kwa ufikiaji salama wa API. Tulielezea vigezo vya uthibitishaji wa tokeni, ikiwa ni pamoja na mtengenezaji, hadhira, na ufunguo wa kusaini.
+- Kuweka sera za idhini kudhibiti ufikiaji wa zana kulingana na majukumu ya watumiaji. Kwa mfano, sera ya "CanUseAdminTools" inahitaji mtumiaji kuwa na jukumu la "Admin", wakati sera ya "CanUseBasic" inahitaji mtumiaji kuthibitishwa.
+- Kusajili zana za MCP na mahitaji maalum ya idhini, kuhakikisha kuwa watumiaji wenye majukumu sahihi tu ndio wanaweza kuzitumia.
 
 ### Muunganisho wa Java Spring Security
 
-Kwa Java, tutatumia Spring Security kutekeleza uthibitishaji na idhini salama kwa seva za MCP. Spring Security hutoa mfumo kamili wa usalama unaoendana vizuri na programu za Spring.
+Kwa Java, tutatumia Spring Security kutekeleza uthibitishaji na idhini salama kwa seva za MCP. Spring Security hutoa mfumo kamili wa usalama unaounganishwa kwa urahisi na programu za Spring.
 
 Dhana kuu hapa ni:
 
 - **Usanidi wa Spring Security**: Kuweka usanidi wa usalama kwa uthibitishaji na idhini.
-- **OAuth2 Resource Server**: Kutumia OAuth2 kwa upatikanaji salama wa zana za MCP. OAuth2 ni mfumo wa idhini unaoruhusu huduma za watu wengine kubadilishana tokeni za upatikanaji kwa upatikanaji salama wa API.
-- **Security Interceptors**: Kutekeleza vizingiti vya usalama ili kutekeleza udhibiti wa upatikanaji kwenye utekelezaji wa zana.
-- **Udhibiti wa Upatikanaji kwa Misingi ya Majukumu**: Kutumia majukumu kudhibiti upatikanaji wa zana na rasilimali maalum.
-- **Maelezo ya Usalama (Security Annotations)**: Kutumia maelezo ili kulinda mbinu na vituo vya mwisho.
+- **OAuth2 Resource Server**: Kutumia OAuth2 kwa ufikiaji salama wa zana za MCP. OAuth2 ni mfumo wa idhini unaoruhusu huduma za wahusika wa tatu kubadilishana tokeni za ufikiaji kwa API salama.
+- **Vizuizi vya Usalama**: Kutekeleza vizuizi vya usalama ili kulazimisha udhibiti wa ufikiaji kwenye utekelezaji wa zana.
+- **Udhibiti wa Ufikiaji Kulingana na Majukumu**: Kutumia majukumu kudhibiti ufikiaji wa zana na rasilimali maalum.
+- **Maelezo ya Usalama**: Kutumia maelezo (annotations) kulinda mbinu na sehemu za mwisho.
 
 ```java
 @Configuration
@@ -180,10 +199,10 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 Katika msimbo uliotangulia, tumefanya:
 
-- Kusanidi Spring Security kulinda vituo vya MCP, kuruhusu upatikanaji wa umma kwa ugunduzi wa zana huku tukihitaji uthibitishaji kwa utekelezaji wa zana.
-- Kutumia OAuth2 kama seva ya rasilimali kushughulikia upatikanaji salama wa zana za MCP.
-- Kutekeleza kizingiti cha usalama ili kutekeleza udhibiti wa upatikanaji kwenye utekelezaji wa zana, ukikagua majukumu na ruhusa za mtumiaji kabla ya kuruhusu upatikanaji wa zana maalum.
-- Kuweka udhibiti wa upatikanaji kwa misingi ya majukumu ili kupunguza upatikanaji wa zana za wasimamizi na data nyeti kulingana na majukumu ya watumiaji.
+- Kusanidi Spring Security kulinda sehemu za MCP, kuruhusu ufikiaji wa umma kwa ugunduzi wa zana huku kuhitaji uthibitishaji kwa utekelezaji wa zana.
+- Kutumia OAuth2 kama seva ya rasilimali kushughulikia ufikiaji salama wa zana za MCP.
+- Kutekeleza kizuizi cha usalama kulazimisha udhibiti wa ufikiaji kwenye utekelezaji wa zana, ukikagua majukumu na ruhusa za mtumiaji kabla ya kuruhusu ufikiaji wa zana maalum.
+- Kuweka udhibiti wa ufikiaji kulingana na majukumu ili kupunguza ufikiaji wa zana za wasimamizi na data nyeti kulingana na majukumu ya watumiaji.
 
 ## Ulinzi wa Data na Faragha
 
@@ -191,7 +210,7 @@ Ulinzi wa data ni muhimu kuhakikisha kuwa taarifa nyeti zinashughulikiwa kwa usa
 
 ### Mfano wa Ulinzi wa Data kwa Python
 
-Tuchunguze mfano wa jinsi ya kutekeleza ulinzi wa data kwa Python kwa kutumia usimbaji fiche na utambuzi wa PII.
+Tuchunguze mfano wa jinsi ya kutekeleza ulinzi wa data kwa Python kwa kutumia usimbaji fiche na kugundua PII.
 
 ```python
 from mcp_server import McpServer
@@ -331,12 +350,67 @@ Katika msimbo uliotangulia, tumefanya:
 
 - Kutekeleza darasa la `PiiDetector` kuchambua maandishi na vigezo kwa taarifa za mtu binafsi (PII).
 - Kuunda darasa la `EncryptionService` kushughulikia usimbaji fiche na ufichaji wa data nyeti kwa kutumia maktaba ya `cryptography`.
-- Kuweka dekoreta ya `secure_tool` inayozunguka utekelezaji wa zana ili kuangalia PII, kurekodi upatikanaji, na kusimba data nyeti ikiwa inahitajika.
-- Kutumia dekoreta ya `secure_tool` kwenye zana ya mfano (`SecureCustomerDataTool`) kuhakikisha inashughulikia data nyeti kwa usalama.
+- Kuweka dekoreta `secure_tool` inayozunguka utekelezaji wa zana ili kuangalia PII, kurekodi ufikiaji, na kusimba data nyeti ikiwa inahitajika.
+- Kutumia dekoreta `secure_tool` kwenye zana ya mfano (`SecureCustomerDataTool`) kuhakikisha inashughulikia data nyeti kwa usalama.
+
+## Hatari Maalum za Usalama za MCP
+
+Kulingana na nyaraka rasmi za usalama za MCP, kuna hatari maalum za usalama ambazo watekelezaji wa MCP wanapaswa kuzijua:
+
+### 1. Tatizo la Confused Deputy
+
+Udhaifu huu hutokea wakati seva ya MCP inafanya kazi kama wakala kwa API za wahusika wa tatu, na kuweza kuruhusu wadukuzi kutumia uhusiano wa kuaminika kati ya seva ya MCP na API hizo.
+
+**Kupunguza:**
+- Seva za wakala za MCP zinazotumia vitambulisho vya mteja vya kudumu LAZIMU zipate idhini ya mtumiaji kwa kila mteja aliyejiandikisha kwa nguvu kabla ya kupeleka kwa seva za idhini za wahusika wa tatu.
+- Tekeleza mzunguko sahihi wa OAuth na PKCE (Proof Key for Code Exchange) kwa maombi ya idhini.
+- Hakiki kwa ukali URI za kuhamisha na vitambulisho vya mteja.
+
+### 2. Udhaifu wa Token Passthrough
+
+Token passthrough hutokea wakati seva ya MCP inakubali tokeni kutoka kwa mteja wa MCP bila kuthibitisha kuwa tokeni hizo zilitolewa kwa seva ya MCP na kuzipitisha kwa API za chini.
+
+### Hatari
+- Kuepuka udhibiti wa usalama (kupita mipaka ya kasi, uthibitishaji wa maombi)
+- Masuala ya uwajibikaji na kumbukumbu za ukaguzi
+- Kuvunja mipaka ya kuaminika
+- Hatari za usaidizi wa baadaye
+
+**Kupunguza:**
+- Seva za MCP HAZIKUBALI tokeni zozote ambazo hazikutolewa wazi kwa seva ya MCP.
+- Daima hakiki madai ya hadhira ya tokeni kuhakikisha yanaendana na huduma inayotarajiwa.
+
+### 3. Udukuzi wa Vikao
+
+Hutokea wakati mtu asiyeidhinishwa anapata kitambulisho cha kikao na kukitumia kuiga mteja halali, jambo linaloweza kusababisha hatua zisizoidhinishwa.
+
+**Kupunguza:**
+- Seva za MCP zinazotekeleza idhini LAZIMU zihakikishe maombi yote yanayoingia na HAZITUMII vikao kwa uthibitishaji.
+- Tumia vitambulisho vya vikao visivyo na utabiri vinavyotengenezwa kwa jenereta salama za nambari za nasibu.
+- Unganisha vitambulisho vya vikao na taarifa za mtumiaji kwa kutumia muundo wa ufunguo kama `<user_id>:<session_id>`.
+- Tekeleza sera sahihi za kumaliza na kuzungusha vikao.
+
+## Mazoea Zaidi Bora ya Usalama kwa MCP
+
+Zaidi ya mambo ya msingi ya usalama ya MCP, zingatia kutekeleza mazoea haya ya ziada ya usalama:
+
+- **Daima tumia HTTPS**: Sambaza mawasiliano kati ya mteja na seva kwa usimbaji fiche kulinda tokeni dhidi ya kukamatwa.
+- **Tekeleza Udhibiti wa Ufikiaji Kulingana na Majukumu (RBAC)**: Usichunguze tu kama mtumiaji amethibitishwa; chunguza ni nini anaruhusiwa kufanya.
+- **Fuatilia na fanya ukaguzi**: Rekodi matukio yote ya uthibitishaji kugundua na kujibu shughuli za kutiliwa shaka.
+- **Shughulikia mipaka ya kasi na kupunguza mzigo**: Tekeleza kurudi nyuma kwa mzunguko na mantiki ya jaribio tena kushughulikia mipaka ya kasi kwa upole.
+- **Hifadhi tokeni kwa usalama**: Hifadhi tokeni za ufikiaji na tokeni za upya kwa kutumia mifumo salama ya kuhifadhi au huduma salama za usimamizi wa funguo.
+- **Fikiria kutumia Usimamizi wa API**: Huduma kama Azure API Management zinaweza kushughulikia masuala mengi ya usalama moja kwa moja, ikiwa ni pamoja na uthibitishaji, idhini, na mipaka ya kasi.
+
+## Marejeleo
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## Nini Kifuatacho
 
-- [5.9 Utafutaji wa wavuti](../web-search-mcp/README.md)
+- [5.9 Web search](../web-search-mcp/README.md)
 
-**Kiarifu cha Kutotegemea**:  
+**Kiarifu cha Msamaha**:  
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

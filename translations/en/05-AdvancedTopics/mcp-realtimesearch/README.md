@@ -1,45 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "eb12652eb7bd17f2193b835a344425c6",
-  "translation_date": "2025-07-14T00:44:55+00:00",
+  "original_hash": "333a03e51f90bdf3e6f1ba1694c73f36",
+  "translation_date": "2025-07-17T09:25:56+00:00",
   "source_file": "05-AdvancedTopics/mcp-realtimesearch/README.md",
   "language_code": "en"
 }
 -->
 ## Code Examples Disclaimer
 
-> **Important Note**: The code examples below demonstrate how to integrate the Model Context Protocol (MCP) with web search functionality. While they follow the patterns and structures of the official MCP SDKs, they have been simplified for learning purposes.
+> **Important Note**: The code examples below demonstrate how to integrate the Model Context Protocol (MCP) with web search functionality. While they follow the patterns and structures of the official MCP SDKs, they have been simplified for educational purposes.
 > 
-> These examples include:
+> These examples showcase:
 > 
-> 1. **Python Implementation**: A FastMCP server that provides a web search tool and connects to an external search API. This example shows proper lifespan management, context handling, and tool implementation following the patterns of the [official MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk). The server uses the recommended Streamable HTTP transport, which has replaced the older SSE transport for production use.
+> 1. **Python Implementation**: A FastMCP server that provides a web search tool and connects to an external search API. This example demonstrates proper lifespan management, context handling, and tool implementation following the patterns of the [official MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk). The server uses the recommended Streamable HTTP transport, which has replaced the older SSE transport for production deployments.
 > 
 > 2. **JavaScript Implementation**: A TypeScript/JavaScript example using the FastMCP pattern from the [official MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) to create a search server with proper tool definitions and client connections. It follows the latest recommended patterns for session management and context preservation.
 > 
-> These examples would need additional error handling, authentication, and specific API integration code for production deployment. The search API endpoints shown (`https://api.search-service.example/search`) are placeholders and should be replaced with actual search service URLs.
+> These examples would require additional error handling, authentication, and specific API integration code for production use. The search API endpoints shown (`https://api.search-service.example/search`) are placeholders and should be replaced with actual search service endpoints.
 > 
-> For full implementation details and the latest best practices, please refer to the [official MCP specification](https://spec.modelcontextprotocol.io/) and SDK documentation.
+> For complete implementation details and the most current approaches, please refer to the [official MCP specification](https://spec.modelcontextprotocol.io/) and SDK documentation.
 
 ## Core Concepts
 
 ### The Model Context Protocol (MCP) Framework
 
-At its core, the Model Context Protocol provides a standardized way for AI models, applications, and services to share context. In real-time web search, this framework is crucial for creating coherent, multi-turn search experiences. Key elements include:
+At its core, the Model Context Protocol provides a standardized way for AI models, applications, and services to exchange context. In real-time web search, this framework is essential for creating coherent, multi-turn search experiences. Key components include:
 
-1. **Client-Server Architecture**: MCP clearly separates search clients (requesters) from search servers (providers), enabling flexible deployment options.
+1. **Client-Server Architecture**: MCP establishes a clear separation between search clients (requesters) and search servers (providers), allowing for flexible deployment models.
 
-2. **JSON-RPC Communication**: The protocol uses JSON-RPC for message exchange, making it compatible with web technologies and easy to implement across platforms.
+2. **JSON-RPC Communication**: The protocol uses JSON-RPC for message exchange, making it compatible with web technologies and easy to implement across different platforms.
 
-3. **Context Management**: MCP defines structured methods to maintain, update, and utilize search context across multiple interactions.
+3. **Context Management**: MCP defines structured methods for maintaining, updating, and leveraging search context across multiple interactions.
 
-4. **Tool Definitions**: Search capabilities are exposed as standardized tools with clearly defined parameters and return values.
+4. **Tool Definitions**: Search capabilities are exposed as standardized tools with well-defined parameters and return values.
 
-5. **Streaming Support**: The protocol supports streaming results, which is essential for real-time search where results may arrive incrementally.
+5. **Streaming Support**: The protocol supports streaming results, which is essential for real-time search where results may arrive progressively.
 
 ### Web Search Integration Patterns
 
-When integrating MCP with web search, several common patterns emerge:
+When integrating MCP with web search, several patterns emerge:
 
 #### 1. Direct Search Provider Integration
 
@@ -51,7 +51,7 @@ graph LR
     Server --> |MCP Response| Client
 ```
 
-In this pattern, the MCP server directly connects to one or more search APIs, translating MCP requests into API-specific calls and formatting the responses as MCP-compliant results.
+In this pattern, the MCP server directly interfaces with one or more search APIs, translating MCP requests into API-specific calls and formatting the results as MCP responses.
 
 #### 2. Federated Search with Context Preservation
 
@@ -67,7 +67,7 @@ graph LR
     Federation --> |Aggregated MCP Response| Client
 ```
 
-This pattern distributes search queries across multiple MCP-compatible search providers, each possibly specializing in different content types or search capabilities, while maintaining a unified context.
+This pattern distributes search queries across multiple MCP-compatible search providers, each potentially specializing in different types of content or search capabilities, while maintaining a unified context.
 
 #### 3. Context-Enhanced Search Chain
 
@@ -83,7 +83,7 @@ graph LR
     Server --> |Final Results + Updated Context| Client
 ```
 
-Here, the search process is split into multiple stages, with context being enriched at each step, leading to progressively more relevant results.
+In this pattern, the search process is divided into multiple stages, with context being enriched at each step, resulting in progressively more relevant results.
 
 ### Search Context Components
 
@@ -92,7 +92,7 @@ In MCP-based web search, context typically includes:
 - **Query History**: Previous search queries within the session
 - **User Preferences**: Language, region, safe search settings
 - **Interaction History**: Which results were clicked, time spent on results
-- **Search Parameters**: Filters, sort orders, and other modifiers
+- **Search Parameters**: Filters, sort orders, and other search modifiers
 - **Domain Knowledge**: Subject-specific context relevant to the search
 - **Temporal Context**: Time-based relevance factors
 - **Source Preferences**: Trusted or preferred information sources
@@ -101,25 +101,25 @@ In MCP-based web search, context typically includes:
 
 ### Research and Information Gathering
 
-MCP improves research workflows by:
+MCP enhances research workflows by:
 
 - Preserving research context across search sessions
-- Enabling more sophisticated and context-aware queries
+- Enabling more sophisticated and contextually relevant queries
 - Supporting multi-source search federation
 - Facilitating knowledge extraction from search results
 
 ### Real-Time News and Trend Monitoring
 
-MCP-powered search offers benefits for news monitoring:
+MCP-powered search offers advantages for news monitoring:
 
-- Near-real-time discovery of breaking news stories
+- Near-real-time discovery of emerging news stories
 - Contextual filtering of relevant information
 - Topic and entity tracking across multiple sources
 - Personalized news alerts based on user context
 
 ### AI-Augmented Browsing and Research
 
-MCP opens new possibilities for AI-augmented browsing:
+MCP creates new possibilities for AI-augmented browsing:
 
 - Contextual search suggestions based on current browser activity
 - Seamless integration of web search with LLM-powered assistants
@@ -130,10 +130,10 @@ MCP opens new possibilities for AI-augmented browsing:
 
 ### Evolution of MCP in Web Search
 
-Looking forward, MCP is expected to evolve to support:
+Looking ahead, we expect MCP to evolve to address:
 
 - **Multimodal Search**: Integrating text, image, audio, and video search with preserved context
-- **Decentralized Search**: Enabling distributed and federated search ecosystems
+- **Decentralized Search**: Supporting distributed and federated search ecosystems
 - **Search Privacy**: Context-aware privacy-preserving search methods  
 - **Query Understanding**: Deep semantic analysis of natural language search queries  
 
@@ -214,7 +214,7 @@ For full details on MCP security and trust considerations, see the [official doc
 
 ## What's next  
 
-- [5.11 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
+- [5.12 Entra ID Authentication for Model Context Protocol Servers](../mcp-security-entra/README.md)
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

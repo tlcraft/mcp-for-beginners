@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:06:03+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T12:53:41+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "uk"
 }
@@ -19,8 +19,9 @@ CO_OP_TRANSLATOR_METADATA:
 - Розуміти структуру спільноти та екосистеми MCP
 - Ефективно брати участь у форумах та обговореннях спільноти MCP
 - Робити внески у відкриті репозиторії MCP
-- Створювати та ділитися власними інструментами MCP
+- Створювати та ділитися власними інструментами та серверами MCP
 - Дотримуватися найкращих практик розробки та співпраці в MCP
+- Знаходити ресурси та фреймворки спільноти для розробки MCP
 
 ## Екосистема спільноти MCP
 
@@ -28,27 +29,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Основні компоненти спільноти
 
-1. **Основні підтримувачі протоколу**: Microsoft та інші організації, які підтримують основні специфікації MCP та еталонні реалізації
-2. **Розробники інструментів**: окремі особи та команди, які створюють інструменти MCP
-3. **Провайдери інтеграції**: компанії, що інтегрують MCP у свої продукти та сервіси
+1. **Основні підтримувачі протоколу**: офіційна [GitHub організація Model Context Protocol](https://github.com/modelcontextprotocol) підтримує основні специфікації MCP та референсні реалізації
+2. **Розробники інструментів**: окремі особи та команди, які створюють інструменти та сервери MCP
+3. **Провайдери інтеграцій**: компанії, що інтегрують MCP у свої продукти та сервіси
 4. **Кінцеві користувачі**: розробники та організації, які використовують MCP у своїх додатках
-5. **Внесники**: члени спільноти, які роблять внески у вигляді коду, документації або інших ресурсів
+5. **Внесники**: члени спільноти, які роблять внески у код, документацію або інші ресурси
 
 ### Ресурси спільноти
 
 #### Офіційні канали
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [MCP GitHub організація](https://github.com/modelcontextprotocol)
+- [Документація MCP](https://modelcontextprotocol.io/)
+- [Специфікація MCP](https://modelcontextprotocol.io/docs/specification)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Репозиторій прикладів та серверів MCP](https://github.com/modelcontextprotocol/servers)
 
 #### Ресурси, створені спільнотою
 
-- SDK для різних мов програмування
-- Серверні реалізації та бібліотеки інструментів
+- [Клієнти MCP](https://modelcontextprotocol.io/clients) – список клієнтів, які підтримують інтеграції MCP
+- [Сервери MCP спільноти](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) – зростаючий список серверів MCP, розроблених спільнотою
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) – кураторський список серверів MCP
+- [PulseMCP](https://www.pulsemcp.com/) – хаб спільноти та розсилка для пошуку ресурсів MCP
+- [Discord сервер](https://discord.gg/jHEGxQu2a5) – спілкування з розробниками MCP
+- SDK реалізації для різних мов
 - Блоги та навчальні матеріали
-- Форуми спільноти та обговорення в соціальних мережах
 
 ## Внесок у MCP
 
@@ -56,11 +61,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Екосистема MCP вітає різні типи внесків:
 
-1. **Внески коду**:
+1. **Внески у код**:
    - Покращення основного протоколу
    - Виправлення помилок
-   - Реалізація інструментів
-   - Клієнтські/серверні бібліотеки для різних мов
+   - Реалізації інструментів та серверів
+   - Бібліотеки клієнтів/серверів на різних мовах
 
 2. **Документація**:
    - Покращення існуючої документації
@@ -69,168 +74,79 @@ CO_OP_TRANSLATOR_METADATA:
    - Створення прикладів та демонстраційних додатків
 
 3. **Підтримка спільноти**:
-   - Відповіді на питання на форумах
+   - Відповіді на питання на форумах та в обговореннях
    - Тестування та звітування про проблеми
    - Організація подій спільноти
    - Наставництво нових учасників
 
 ### Процес внеску: Основний протокол
 
-Щоб зробити внесок у основний протокол MCP або офіційні реалізації:
+Щоб зробити внесок у основний протокол MCP або офіційні реалізації, дотримуйтесь принципів із [офіційних рекомендацій щодо внесків](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-#### Приклад .NET: Внесок у покращення протоколу
+1. **Простота та мінімалізм**: Специфікація MCP встановлює високі вимоги до додавання нових концепцій. Легше додати щось у специфікацію, ніж видалити.
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **Конкретний підхід**: Зміни у специфікації мають базуватися на конкретних проблемах реалізації, а не на спекулятивних ідеях.
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **Етапи пропозиції**:
+   - Визначення: дослідити проблему, підтвердити, що інші користувачі MCP мають подібну проблему
+   - Прототипування: створити приклад рішення та показати його практичне застосування
+   - Написання: на основі прототипу написати пропозицію до специфікації
+
+### Налаштування середовища розробки
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Приклад Java: Внесок у виправлення помилки
+### Приклад: Внесок виправлення помилки
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Приклад Python: Внесок у новий інструмент до стандартної бібліотеки
+### Приклад: Внесок нового інструменту до стандартної бібліотеки
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,13 +306,13 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Керівництво для внесків
+### Рекомендації щодо внесків
 
-Щоб успішно зробити внесок у проекти MCP:
+Щоб зробити успішний внесок у проекти MCP:
 
 1. **Починайте з малого**: починайте з документації, виправлень помилок або невеликих покращень
 2. **Дотримуйтесь стилю коду**: дотримуйтесь стилю коду та конвенцій проекту
-3. **Пишіть тести**: додавайте модульні тести для своїх внесків
+3. **Пишіть тести**: додавайте юніт-тести для своїх змін
 4. **Документуйте свою роботу**: додавайте чітку документацію для нових функцій або змін
 5. **Надсилайте цільові PR**: тримайте pull request сфокусованими на одній проблемі або функції
 6. **Взаємодійте з відгуками**: будьте відкриті до зворотного зв’язку щодо ваших внесків
@@ -405,8 +321,8 @@ class CsvProcessingTool(Tool):
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,13 +343,31 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## Створення та поширення власних інструментів MCP
+## Створення та поширення серверів MCP
 
-Один із найцінніших способів зробити внесок у екосистему MCP — це створювати та ділитися власними інструментами.
+Один із найцінніших способів зробити внесок у екосистему MCP — створювати та ділитися власними серверами MCP. Спільнота вже розробила сотні серверів для різних сервісів і випадків використання.
+
+### Фреймворки для розробки серверів MCP
+
+Існує кілька фреймворків, які спрощують розробку серверів MCP:
+
+1. **Офіційні SDK**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **Фреймворки спільноти**:
+   - [MCP-Framework](https://mcp-framework.com/) – створення серверів MCP з елегантністю та швидкістю на TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) – сервери MCP на Java з анотаціями
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) – Java фреймворк для серверів MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) – стартовий проект Next.js для серверів MCP
 
 ### Розробка інструментів для спільного використання
 
-#### Приклад .NET: Створення пакету інструментів для спільного використання
+#### Приклад .NET: створення пакету інструментів для спільного використання
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +473,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Приклад Java: Створення Maven-пакету для інструментів
+#### Приклад Java: створення Maven пакету для інструментів
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +574,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Приклад Python: Публікація пакету на PyPI
+#### Приклад Python: публікація пакету на PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,7 +679,7 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Найкращі практики поширення
+### Рекомендації щодо поширення
 
 При поширенні інструментів MCP у спільноті:
 
@@ -761,18 +693,18 @@ class SentimentAnalysisTool(Tool):
    - Надавайте корисні повідомлення про помилки
    - Коректно обробляйте крайні випадки
 
-3. **Питання продуктивності**:
+3. **Продуктивність**:
    - Оптимізуйте швидкість та використання ресурсів
    - Використовуйте кешування, коли це доречно
-   - Враховуйте масштабованість
+   - Плануйте масштабованість
 
 4. **Безпека**:
-   - Використовуйте безпечні API-ключі та автентифікацію
+   - Використовуйте безпечні API ключі та автентифікацію
    - Перевіряйте та очищуйте вхідні дані
    - Впроваджуйте обмеження частоти запитів до зовнішніх API
 
 5. **Тестування**:
-   - Забезпечте всебічне покриття тестами
+   - Забезпечте повне покриття тестами
    - Тестуйте з різними типами вхідних даних та крайніми випадками
    - Документуйте процедури тестування
 
@@ -784,14 +716,14 @@ class SentimentAnalysisTool(Tool):
 
 - GitHub Issues та Discussions
 - Microsoft Tech Community
-- Канали Discord та Slack
+- Discord та Slack канали
 - Stack Overflow (теги: `model-context-protocol` або `mcp`)
 
 ### Перегляд коду
 
 Під час перегляду внесків у MCP звертайте увагу на:
 
-1. **Зрозумілість**: чи є код зрозумілим і добре документованим?
+1. **Зрозумілість**: чи код зрозумілий і добре документований?
 2. **Коректність**: чи працює він як очікується?
 3. **Послідовність**: чи дотримується він конвенцій проекту?
 4. **Повнота**: чи включені тести та документація?
@@ -799,12 +731,12 @@ class SentimentAnalysisTool(Tool):
 
 ### Сумісність версій
 
-Під час розробки для MCP:
+При розробці для MCP:
 
 1. **Версії протоколу**: дотримуйтесь версії протоколу MCP, яку підтримує ваш інструмент
 2. **Сумісність клієнтів**: враховуйте зворотну сумісність
-3. **Сумісність серверів**: дотримуйтесь рекомендацій щодо серверних реалізацій
-4. **Значні зміни**: чітко документуйте будь-які сумісні зламні зміни
+3. **Сумісність серверів**: дотримуйтесь рекомендацій щодо реалізації серверів
+4. **Значні зміни**: чітко документуйте будь-які несумісні зміни
 
 ## Приклад спільнотного проекту: Реєстр інструментів MCP
 
@@ -891,7 +823,7 @@ async def delete_tool(tool_name: str):
 
 - Спільнота MCP різноманітна і вітає різні типи внесків
 - Внески можуть охоплювати від покращень основного протоколу до створення власних інструментів
-- Дотримання керівництва для внесків підвищує шанси на прийняття вашого PR
+- Дотримання рекомендацій щодо внесків підвищує шанси на прийняття вашого PR
 - Створення та поширення інструментів MCP — цінний спосіб розвивати екосистему
 - Співпраця у спільноті є необхідною для зростання та вдосконалення MCP
 
@@ -901,16 +833,16 @@ async def delete_tool(tool_name: str):
 2. Форкніть репозиторій MCP та налаштуйте локальне середовище розробки
 3. Створіть невелике покращення, виправлення помилки або інструмент, який буде корисним для спільноти
 4. Документуйте свій внесок з відповідними тестами та документацією
-5. Надішліть pull request до відповідного репозиторію
+5. Надішліть pull request у відповідний репозиторій
 
 ## Додаткові ресурси
 
-- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+- [Проекти спільноти MCP](https://github.com/topics/model-context-protocol)
 
 
 ---
 
-Далі: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+Далі: [Уроки з раннього впровадження](../07-LessonsfromEarlyAdoption/README.md)
 
 **Відмова від відповідальності**:  
 Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.

@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a607d4febc94caee9a12b77795f7fc9a",
-  "translation_date": "2025-07-13T15:17:33+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T10:17:14+00:00",
   "source_file": "study_guide.md",
   "language_code": "hu"
 }
 -->
 # Model Context Protocol (MCP) kezdőknek – Tanulmányi útmutató
 
-Ez a tanulmányi útmutató áttekintést nyújt a tárház felépítéséről és tartalmáról a „Model Context Protocol (MCP) kezdőknek” tananyaghoz. Használd ezt az útmutatót a tárház hatékonyabb böngészéséhez és a rendelkezésre álló erőforrások maximális kihasználásához.
+Ez a tanulmányi útmutató áttekintést nyújt a "Model Context Protocol (MCP) kezdőknek" tananyag tárházának felépítéséről és tartalmáról. Használd ezt az útmutatót a tárház hatékonyabb böngészéséhez és a rendelkezésre álló erőforrások maximális kihasználásához.
 
 ## Tárház áttekintése
 
-A Model Context Protocol (MCP) egy szabványosított keretrendszer az AI modellek és kliensalkalmazások közötti kommunikációhoz. Ez a tárház átfogó tananyagot kínál gyakorlati kódpéldákkal C#, Java, JavaScript, Python és TypeScript nyelveken, amelyeket AI fejlesztők, rendszertervezők és szoftvermérnökök számára készítettek.
+A Model Context Protocol (MCP) egy szabványosított keretrendszer az AI modellek és kliensalkalmazások közötti interakciókhoz. Eredetileg az Anthropic hozta létre, az MCP-t ma már a szélesebb MCP közösség tartja karban az hivatalos GitHub szervezet keretében. Ez a tárház átfogó tananyagot kínál gyakorlati kódpéldákkal C#, Java, JavaScript, Python és TypeScript nyelveken, amelyeket AI fejlesztők, rendszertervezők és szoftvermérnökök számára készítettek.
 
 ## Vizualizált tananyag térkép
 
@@ -38,10 +38,11 @@ mindmap
     03. Getting Started
       ::icon(fa fa-rocket)
       (First Server)
-      (First Client)
+      (Client)
       (LLM Client)
       (VS Code Integration)
       (SSE Server)
+      (HTTP Streaming)
       (AI Toolkit)
       (Testing)
       (Deployment)
@@ -53,17 +54,27 @@ mindmap
       (Sample Projects)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
+      (Context Engineering)
+      (Foundry Integration)
       (Multi-modal AI)
-      (Scaling)
-      (Enterprise Integration)
-      (Azure Integration)
-      (OAuth2)
+      (OAuth2 Demo)
+      (Real-time Search)
+      (Streaming)
       (Root Contexts)
+      (Routing)
+      (Sampling)
+      (Scaling)
+      (Security)
+      (Entra ID)
+      (Web Search)
+      
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (Feedback)
+      (MCP Clients)
+      (MCP Servers)
+      (Image Generation)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
       (Real-world Examples)
@@ -76,9 +87,10 @@ mindmap
       (Resilience)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (Solution Architectures)
-      (Deployment Blueprints)
-      (Project Walkthroughs)
+      (API Management)
+      (Travel Agent)
+      (Azure DevOps)
+      (Documentation MCP)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
       (AI Toolkit Integration)
@@ -109,7 +121,16 @@ A tárház tíz fő részre tagolódik, amelyek mindegyike az MCP különböző 
    - Környezet beállítása és konfigurálása
    - Egyszerű MCP szerverek és kliensek létrehozása
    - Integráció meglévő alkalmazásokkal
-   - Alkategóriák: első szerver, első kliens, LLM kliens, VS Code integráció, SSE szerver, AI Toolkit, tesztelés és telepítés
+   - Tartalmazza a következő részeket:
+     - Első szerver implementáció
+     - Kliens fejlesztés
+     - LLM kliens integráció
+     - VS Code integráció
+     - Server-Sent Events (SSE) szerver
+     - HTTP streaming
+     - AI Toolkit integráció
+     - Tesztelési stratégiák
+     - Telepítési irányelvek
 
 5. **Gyakorlati megvalósítás (04-PracticalImplementation/)**
    - SDK-k használata különböző programozási nyelveken
@@ -118,20 +139,31 @@ A tárház tíz fő részre tagolódik, amelyek mindegyike az MCP különböző 
    - Minta projektek megvalósítási példákkal
 
 6. **Haladó témák (05-AdvancedTopics/)**
-   - Többmodalitású AI munkafolyamatok és bővíthetőség
-   - Biztonságos skálázási stratégiák
-   - MCP vállalati ökoszisztémákban
-   - Speciális témák, mint Azure integráció, többmodalitás, OAuth2, root context-ek, routing, mintavételezés, skálázás, biztonság, webes keresés integráció és streaming
+   - Kontextus mérnöki technikák
+   - Foundry agent integráció
+   - Többmodalitású AI munkafolyamatok
+   - OAuth2 hitelesítési demók
+   - Valós idejű keresési funkciók
+   - Valós idejű streaming
+   - Root context-ek megvalósítása
+   - Routing stratégiák
+   - Mintavételezési technikák
+   - Skálázási megközelítések
+   - Biztonsági szempontok
+   - Entra ID biztonsági integráció
+   - Webes keresés integrációja
 
 7. **Közösségi hozzájárulások (06-CommunityContributions/)**
-   - Kód és dokumentáció hozzájárulásának módjai
+   - Hogyan járulhatsz hozzá kóddal és dokumentációval
    - Együttműködés GitHub-on keresztül
-   - Közösségi fejlesztések és visszajelzések
+   - Közösség által vezérelt fejlesztések és visszajelzések
+   - Különböző MCP kliensek használata (Claude Desktop, Cline, VSCode)
+   - Népszerű MCP szerverekkel való munka, beleértve a képgenerálást is
 
-8. **Tanulságok a korai alkalmazásból (07-LessonsfromEarlyAdoption/)**
+8. **Korai alkalmazás tanulságai (07-LessonsfromEarlyAdoption/)**
    - Valós megvalósítások és sikertörténetek
    - MCP-alapú megoldások építése és telepítése
-   - Trendek és jövőbeli irányok
+   - Trendek és jövőbeli fejlesztési irányok
 
 9. **Legjobb gyakorlatok (08-BestPractices/)**
    - Teljesítményhangolás és optimalizálás
@@ -139,59 +171,98 @@ A tárház tíz fő részre tagolódik, amelyek mindegyike az MCP különböző 
    - Tesztelési és ellenálló képesség stratégiák
 
 10. **Esettanulmányok (09-CaseStudy/)**
-    - Mélyebb elemzések MCP megoldás architektúrákról
-    - Telepítési tervek és integrációs tippek
-    - Jegyzetelt diagramok és projektbemutatók
+    - Esettanulmány: Azure API Management integráció
+    - Esettanulmány: Utazási ügynök megvalósítás
+    - Esettanulmány: Azure DevOps integráció YouTube-bal
+    - Megvalósítási példák részletes dokumentációval
 
 11. **Gyakorlati workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Átfogó gyakorlati workshop, amely az MCP-t a Microsoft AI Toolkit-jével kombinálja VS Code-hoz
+    - Átfogó gyakorlati workshop az MCP és AI Toolkit kombinálásával
     - Intelligens alkalmazások építése, amelyek összekapcsolják az AI modelleket a valós eszközökkel
     - Gyakorlati modulok az alapoktól a saját szerver fejlesztésén át a termelési telepítésig
-
-## Minta projektek
-
-A tárház több minta projektet tartalmaz, amelyek bemutatják az MCP megvalósítását különböző programozási nyelveken:
-
-### Alap MCP számológép minták
-- C# MCP szerver példa
-- Java MCP számológép
-- JavaScript MCP demó
-- Python MCP szerver
-- TypeScript MCP példa
-
-### Haladó MCP számológép projektek
-- Haladó C# példa
-- Java konténer alkalmazás példa
-- JavaScript haladó példa
-- Python összetett megvalósítás
-- TypeScript konténer példa
+    - Laboratóriumi tanulási megközelítés lépésről lépésre
 
 ## További források
 
-A tárház tartalmaz további támogató anyagokat:
+A tárház tartalmaz kiegészítő anyagokat is:
 
-- **Képek mappa**: Diagramok és illusztrációk a tananyagban
-- **Fordítások**: Többnyelvű támogatás automatikus dokumentáció fordításokkal
+- **Képek mappa**: Diagramok és illusztrációk, amelyeket a tananyag során használnak
+- **Fordítások**: Többnyelvű támogatás, automatikus dokumentáció fordításokkal
 - **Hivatalos MCP források**:
-  - [MCP dokumentáció](https://modelcontextprotocol.io/)
-  - [MCP specifikáció](https://spec.modelcontextprotocol.io/)
+  - [MCP Dokumentáció](https://modelcontextprotocol.io/)
+  - [MCP Specifikáció](https://spec.modelcontextprotocol.io/)
   - [MCP GitHub tárház](https://github.com/modelcontextprotocol)
 
 ## Hogyan használd ezt a tárházat
 
 1. **Sorrendben tanulás**: Kövesd a fejezeteket sorrendben (00-tól 10-ig) a strukturált tanulás érdekében.
-2. **Nyelvspecifikus fókusz**: Ha egy adott programozási nyelv érdekel, nézd meg a minták könyvtárait a választott nyelv megvalósításaiért.
-3. **Gyakorlati megvalósítás**: Kezdd az „Első lépések” résszel, hogy beállítsd a környezeted és elkészítsd az első MCP szerveredet és kliensedet.
-4. **Haladó felfedezés**: Ha már magabiztos vagy az alapokban, mélyedj el a haladó témákban a tudásod bővítéséhez.
-5. **Közösségi részvétel**: Csatlakozz az [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) szerverhez, hogy kapcsolatba léphess szakértőkkel és fejlesztőtársaiddal.
+2. **Nyelvspecifikus fókusz**: Ha egy adott programozási nyelv érdekel, nézd meg a mintakönyvtárakat a választott nyelv megvalósításaiért.
+3. **Gyakorlati megvalósítás**: Kezdd az "Első lépések" résszel, hogy beállítsd a környezeted és elkészítsd az első MCP szervered és kliensed.
+4. **Haladó témák felfedezése**: Amint magabiztos vagy az alapokban, merülj el a haladó témákban a tudásod bővítéséhez.
+5. **Közösségi részvétel**: Csatlakozz az MCP közösséghez GitHub beszélgetéseken és Discord csatornákon, hogy kapcsolatba léphess szakértőkkel és fejlesztőtársakkal.
+
+## MCP kliensek és eszközök
+
+A tananyag különböző MCP klienseket és eszközöket mutat be:
+
+1. **Hivatalos kliensek**:
+   - Visual Studio Code
+   - MCP a Visual Studio Code-ban
+   - Claude Desktop
+   - Claude VSCode-ban
+   - Claude API
+
+2. **Közösségi kliensek**:
+   - Cline (terminál alapú)
+   - Cursor (kódszerkesztő)
+   - ChatMCP
+   - Windsurf
+
+3. **MCP kezelő eszközök**:
+   - MCP CLI
+   - MCP Manager
+   - MCP Linker
+   - MCP Router
+
+## Népszerű MCP szerverek
+
+A tárház bemutat különféle MCP szervereket, többek között:
+
+1. **Hivatalos referencia szerverek**:
+   - Filesystem
+   - Fetch
+   - Memory
+   - Sequential Thinking
+
+2. **Képgenerálás**:
+   - Azure OpenAI DALL-E 3
+   - Stable Diffusion WebUI
+   - Replicate
+
+3. **Fejlesztői eszközök**:
+   - Git MCP
+   - Terminal Control
+   - Code Assistant
+
+4. **Speciális szerverek**:
+   - Salesforce
+   - Microsoft Teams
+   - Jira & Confluence
 
 ## Hozzájárulás
 
-Ez a tárház szívesen fogadja a közösség hozzájárulásait. A Közösségi hozzájárulások részben találsz útmutatást a beküldésekhez.
+Ez a tárház szívesen fogadja a közösség hozzájárulásait. A Közösségi hozzájárulások részben találsz útmutatást arról, hogyan járulhatsz hozzá hatékonyan az MCP ökoszisztémához.
+
+## Változásnapló
+
+| Dátum | Változások |
+|-------|------------|
+| 2025. július 16. | - A tárház szerkezetének frissítése a jelenlegi tartalomnak megfelelően<br>- MCP kliensek és eszközök szekció hozzáadva<br>- Népszerű MCP szerverek szekció hozzáadva<br>- Vizualizált tananyag térkép frissítése az összes aktuális témával<br>- Haladó témák szekció bővítése minden speciális területtel<br>- Esettanulmányok frissítése valós példákkal<br>- Az MCP eredetének tisztázása, mint az Anthropic által létrehozott |
+| 2025. június 11. | - A tanulmányi útmutató kezdeti létrehozása<br>- Vizualizált tananyag térkép hozzáadása<br>- A tárház szerkezetének vázolása<br>- Minta projektek és további források beillesztése |
 
 ---
 
-*Ez a tanulmányi útmutató 2025. június 11-én készült, és a tárház ezen időpontbeli állapotát tükrözi. Azóta a tárház tartalma frissülhetett.*
+*Ez a tanulmányi útmutató 2025. július 16-án frissült, és az akkori állapot szerinti áttekintést nyújtja a tárházról. A tárház tartalma a későbbiekben frissülhet.*
 
 **Jogi nyilatkozat**:  
 Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

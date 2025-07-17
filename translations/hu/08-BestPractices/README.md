@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "10d7df03cff1fa3cf3c56dc06e82ba79",
-  "translation_date": "2025-07-14T05:12:02+00:00",
+  "original_hash": "80e5c8949af5af0f401fce6f905990aa",
+  "translation_date": "2025-07-17T10:20:31+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "hu"
 }
@@ -22,22 +22,70 @@ A lecke végére képes leszel:
 - Megfelelő hibakezelést, naplózást és megfigyelhetőséget megvalósítani MCP szerverekben
 - Optimalizálni az MCP megvalósításokat teljesítmény, biztonság és karbantarthatóság szempontjából
 
+## MCP Alapelvek
+
+Mielőtt a konkrét megvalósítási gyakorlatokba mélyednénk, fontos megérteni azokat az alapelveket, amelyek az eredményes MCP fejlesztést irányítják:
+
+1. **Standardizált Kommunikáció**: Az MCP a JSON-RPC 2.0-t használja alapként, amely egységes formátumot biztosít a kérések, válaszok és hibakezelés számára minden megvalósításban.
+
+2. **Felhasználó-központú Tervezés**: Mindig helyezd előtérbe a felhasználói beleegyezést, kontrollt és átláthatóságot az MCP megvalósításaidban.
+
+3. **Biztonság Elsőként**: Erős biztonsági intézkedéseket alkalmazz, beleértve az autentikációt, jogosultságkezelést, validációt és a sebességkorlátozást.
+
+4. **Moduláris Architektúra**: Tervezd MCP szervereidet moduláris megközelítéssel, ahol minden eszköznek és erőforrásnak világos, fókuszált célja van.
+
+5. **Állapotmegőrző Kapcsolatok**: Használd ki az MCP képességét, hogy több kérésen át megőrizze az állapotot, így koherensebb és kontextusérzékenyebb interakciókat biztosítva.
+
+## Hivatalos MCP Legjobb Gyakorlatok
+
+Az alábbi legjobb gyakorlatok az hivatalos Model Context Protocol dokumentációból származnak:
+
+### Biztonsági Legjobb Gyakorlatok
+
+1. **Felhasználói Beleegyezés és Kontroll**: Mindig kérj kifejezett felhasználói beleegyezést az adatok eléréséhez vagy műveletek végrehajtásához. Biztosíts világos kontrollt arról, hogy milyen adatokat osztanak meg és mely műveletek engedélyezettek.
+
+2. **Adatvédelem**: Csak kifejezett beleegyezéssel tedd elérhetővé a felhasználói adatokat, és védd azokat megfelelő hozzáférés-ellenőrzéssel. Védj az illetéktelen adatátvitel ellen.
+
+3. **Eszközbiztonság**: Minden eszköz meghívása előtt kérj kifejezett felhasználói beleegyezést. Biztosítsd, hogy a felhasználók megértsék az eszközök működését, és érvényesíts erős biztonsági határokat.
+
+4. **Eszköz Jogosultságkezelés**: Állítsd be, hogy egy modell mely eszközöket használhatja egy munkamenet során, biztosítva, hogy csak kifejezetten engedélyezett eszközök legyenek elérhetők.
+
+5. **Autentikáció**: Mielőtt hozzáférést adsz eszközökhöz, erőforrásokhoz vagy érzékeny műveletekhez, kérj megfelelő autentikációt API kulcsokkal, OAuth tokenekkel vagy más biztonságos hitelesítési módszerekkel.
+
+6. **Paraméter Validáció**: Minden eszköz meghívásánál érvényesíts validációt, hogy megakadályozd a hibás vagy rosszindulatú bemenetek eljutását az eszközmegvalósításokhoz.
+
+7. **Sebességkorlátozás**: Vezess be sebességkorlátozást a visszaélések megelőzésére és a szerver erőforrások igazságos használatának biztosítására.
+
+### Megvalósítási Legjobb Gyakorlatok
+
+1. **Képesség Egyeztetés**: A kapcsolat létrehozásakor cseréljetek információt a támogatott funkciókról, protokoll verziókról, elérhető eszközökről és erőforrásokról.
+
+2. **Eszköz Tervezés**: Készíts fókuszált eszközöket, amelyek egy dolgot jól csinálnak, ahelyett, hogy monolitikus eszközök több feladatot próbálnának kezelni.
+
+3. **Hibakezelés**: Valósíts meg szabványosított hibaüzeneteket és kódokat, hogy segítsék a problémák diagnosztizálását, a hibák elegáns kezelését és a hasznos visszajelzést.
+
+4. **Naplózás**: Állíts be strukturált naplókat az auditáláshoz, hibakereséshez és a protokoll interakciók megfigyeléséhez.
+
+5. **Folyamatkövetés**: Hosszú futású műveleteknél jelentess előrehaladási frissítéseket a reszponzív felhasználói felületek érdekében.
+
+6. **Kérés Megszakítás**: Engedélyezd a klienseknek, hogy megszakítsák a már nem szükséges vagy túl hosszú ideig tartó folyamatban lévő kéréseket.
+
 ## További Hivatkozások
 
-A legfrissebb MCP legjobb gyakorlatokért tekintsd meg:
+A legfrissebb információkért az MCP legjobb gyakorlatokról, tekintsd meg:
 - [MCP Dokumentáció](https://modelcontextprotocol.io/)
 - [MCP Specifikáció](https://spec.modelcontextprotocol.io/)
 - [GitHub Tároló](https://github.com/modelcontextprotocol)
+- [Biztonsági Legjobb Gyakorlatok](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
-## MCP Eszközfejlesztési Legjobb Gyakorlatok
+## Gyakorlati Megvalósítási Példák
 
-### Architektúrális Elvek
+### Eszköz Tervezési Legjobb Gyakorlatok
 
 #### 1. Egyetlen Felelősség Elve
 
-Minden MCP funkciónak egyértelmű, fókuszált céllal kell rendelkeznie. Ahelyett, hogy monolitikus eszközöket hoznál létre, amelyek több problémát próbálnak kezelni, fejlessz specializált eszközöket, amelyek egy adott feladatban kiválóak.
+Minden MCP eszköznek világos, fókuszált céllal kell rendelkeznie. Ahelyett, hogy monolitikus eszközöket hoznál létre, amelyek több feladatot próbálnak kezelni, fejlessz specializált eszközöket, amelyek egy adott feladatban kiemelkedőek.
 
-**Jó Példa:**
 ```csharp
 // A focused tool that does one thing well
 public class WeatherForecastTool : ITool
@@ -75,7 +123,8 @@ public class WeatherForecastTool : ITool
             Required = new[] { "location" }
         };
     }
-      public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
     {
         var location = parameters["location"].ToString();
         var days = parameters.ContainsKey("days") 
@@ -95,76 +144,477 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-**Rossz Példa:**
-```csharp
-// A tool trying to do too many things
-public class WeatherToolSuite : ITool
-{
-    public string Name => "weather";
-    public string Description => "Weather-related functionality";
+#### 2. Következetes Hibakezelés
+
+Valósíts meg robusztus hibakezelést informatív hibaüzenetekkel és megfelelő helyreállítási mechanizmusokkal.
+
+```python
+# Python example with comprehensive error handling
+class DataQueryTool:
+    def get_name(self):
+        return "dataQuery"
+        
+    def get_description(self):
+        return "Queries data from specified database tables"
     
-    public ToolDefinition GetDefinition()
-    {
-        return new ToolDefinition
-        {
-            Name = Name,
-            Description = Description,
-            Parameters = new Dictionary<string, ParameterDefinition>
-            {
-                ["action"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "Weather action to perform",
-                    Enum = new[] { "forecast", "history", "alerts", "radar" }
-                },
-                ["location"] = new ParameterDefinition
-                {
-                    Type = ParameterType.String,
-                    Description = "City or location name"
-                },
-                // Many more properties for different actions...
-            },
-            required = new[] { "action", "location" }
-        };
+    async def execute(self, parameters):
+        try:
+            # Parameter validation
+            if "query" not in parameters:
+                raise ToolParameterError("Missing required parameter: query")
+                
+            query = parameters["query"]
+            
+            # Security validation
+            if self._contains_unsafe_sql(query):
+                raise ToolSecurityError("Query contains potentially unsafe SQL")
+            
+            try:
+                # Database operation with timeout
+                async with timeout(10):  # 10 second timeout
+                    result = await self._database.execute_query(query)
+                    
+                return ToolResponse(
+                    content=[TextContent(json.dumps(result))]
+                )
+            except asyncio.TimeoutError:
+                raise ToolExecutionError("Database query timed out after 10 seconds")
+            except DatabaseConnectionError as e:
+                # Connection errors might be transient
+                self._log_error("Database connection error", e)
+                raise ToolExecutionError(f"Database connection error: {str(e)}")
+            except DatabaseQueryError as e:
+                # Query errors are likely client errors
+                self._log_error("Database query error", e)
+                raise ToolExecutionError(f"Invalid query: {str(e)}")
+                
+        except ToolError:
+            # Let tool-specific errors pass through
+            raise
+        except Exception as e:
+            # Catch-all for unexpected errors
+            self._log_error("Unexpected error in DataQueryTool", e)
+            raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
+    
+    def _contains_unsafe_sql(self, query):
+        # Implementation of SQL injection detection
+        pass
+        
+    def _log_error(self, message, error):
+        # Implementation of error logging
+        pass
+```
+
+#### 3. Paraméter Validáció
+
+Mindig alaposan validáld a paramétereket, hogy megakadályozd a hibás vagy rosszindulatú bemeneteket.
+
+```javascript
+// JavaScript/TypeScript example with detailed parameter validation
+class FileOperationTool {
+  getName() {
+    return "fileOperation";
+  }
+  
+  getDescription() {
+    return "Performs file operations like read, write, and delete";
+  }
+  
+  getDefinition() {
+    return {
+      name: this.getName(),
+      description: this.getDescription(),
+      parameters: {
+        operation: {
+          type: "string",
+          description: "Operation to perform",
+          enum: ["read", "write", "delete"]
+        },
+        path: {
+          type: "string",
+          description: "File path (must be within allowed directories)"
+        },
+        content: {
+          type: "string",
+          description: "Content to write (only for write operation)",
+          optional: true
+        }
+      },
+      required: ["operation", "path"]
+    };
+  }
+  
+  async execute(parameters) {
+    // 1. Validate parameter presence
+    if (!parameters.operation) {
+      throw new ToolError("Missing required parameter: operation");
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
-    {
-        // Complex conditional logic to handle different actions
-        var action = request.Parameters.GetProperty("action").GetString();
-        var location = request.Parameters.GetProperty("location").GetString();
+    if (!parameters.path) {
+      throw new ToolError("Missing required parameter: path");
+    }
+    
+    // 2. Validate parameter types
+    if (typeof parameters.operation !== "string") {
+      throw new ToolError("Parameter 'operation' must be a string");
+    }
+    
+    if (typeof parameters.path !== "string") {
+      throw new ToolError("Parameter 'path' must be a string");
+    }
+    
+    // 3. Validate parameter values
+    const validOperations = ["read", "write", "delete"];
+    if (!validOperations.includes(parameters.operation)) {
+      throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
+    }
+    
+    // 4. Validate content presence for write operation
+    if (parameters.operation === "write" && !parameters.content) {
+      throw new ToolError("Content parameter is required for write operation");
+    }
+    
+    // 5. Path safety validation
+    if (!this.isPathWithinAllowedDirectories(parameters.path)) {
+      throw new ToolError("Access denied: path is outside of allowed directories");
+    }
+    
+    // Implementation based on validated parameters
+    // ...
+  }
+  
+  isPathWithinAllowedDirectories(path) {
+    // Implementation of path safety check
+    // ...
+  }
+}
+```
+
+### Biztonsági Megvalósítási Példák
+
+#### 1. Autentikáció és Jogosultságkezelés
+
+```java
+// Java example with authentication and authorization
+public class SecureDataAccessTool implements Tool {
+    private final AuthenticationService authService;
+    private final AuthorizationService authzService;
+    private final DataService dataService;
+    
+    // Dependency injection
+    public SecureDataAccessTool(
+            AuthenticationService authService,
+            AuthorizationService authzService,
+            DataService dataService) {
+        this.authService = authService;
+        this.authzService = authzService;
+        this.dataService = dataService;
+    }
+    
+    @Override
+    public String getName() {
+        return "secureDataAccess";
+    }
+    
+    @Override
+    public ToolResponse execute(ToolRequest request) {
+        // 1. Extract authentication context
+        String authToken = request.getContext().getAuthToken();
         
-        switch (action)
-        {
-            case "forecast":
-                // Forecast logic
-                break;
-            case "history":
-                // Historical data logic
-                break;
-            // More cases...
-            default:
-                throw new ToolExecutionException($"Unknown action: {action}");
+        // 2. Authenticate user
+        UserIdentity user;
+        try {
+            user = authService.validateToken(authToken);
+        } catch (AuthenticationException e) {
+            return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // Result processing
+        // 3. Check authorization for the specific operation
+        String dataId = request.getParameters().get("dataId").getAsString();
+        String operation = request.getParameters().get("operation").getAsString();
+        
+        boolean isAuthorized = authzService.isAuthorized(user, "data:" + dataId, operation);
+        if (!isAuthorized) {
+            return ToolResponse.error("Access denied: Insufficient permissions for this operation");
+        }
+        
+        // 4. Proceed with authorized operation
+        try {
+            switch (operation) {
+                case "read":
+                    Object data = dataService.getData(dataId, user.getId());
+                    return ToolResponse.success(data);
+                case "update":
+                    JsonNode newData = request.getParameters().get("newData");
+                    dataService.updateData(dataId, newData, user.getId());
+                    return ToolResponse.success("Data updated successfully");
+                default:
+                    return ToolResponse.error("Unsupported operation: " + operation);
+            }
+        } catch (Exception e) {
+            return ToolResponse.error("Operation failed: " + e.getMessage());
+        }
+    }
+}
+```
+
+#### 2. Sebességkorlátozás
+
+```csharp
+// C# rate limiting implementation
+public class RateLimitingMiddleware
+{
+    private readonly RequestDelegate _next;
+    private readonly IMemoryCache _cache;
+    private readonly ILogger<RateLimitingMiddleware> _logger;
+    
+    // Configuration options
+    private readonly int _maxRequestsPerMinute;
+    
+    public RateLimitingMiddleware(
+        RequestDelegate next,
+        IMemoryCache cache,
+        ILogger<RateLimitingMiddleware> logger,
+        IConfiguration config)
+    {
+        _next = next;
+        _cache = cache;
+        _logger = logger;
+        _maxRequestsPerMinute = config.GetValue<int>("RateLimit:MaxRequestsPerMinute", 60);
+    }
+    
+    public async Task InvokeAsync(HttpContext context)
+    {
+        // 1. Get client identifier (API key or user ID)
+        string clientId = GetClientIdentifier(context);
+        
+        // 2. Get rate limiting key for this minute
+        string cacheKey = $"rate_limit:{clientId}:{DateTime.UtcNow:yyyyMMddHHmm}";
+        
+        // 3. Check current request count
+        if (!_cache.TryGetValue(cacheKey, out int requestCount))
+        {
+            requestCount = 0;
+        }
+        
+        // 4. Enforce rate limit
+        if (requestCount >= _maxRequestsPerMinute)
+        {
+            _logger.LogWarning("Rate limit exceeded for client {ClientId}", clientId);
+            
+            context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+            context.Response.Headers.Add("Retry-After", "60");
+            
+            await context.Response.WriteAsJsonAsync(new
+            {
+                error = "Rate limit exceeded",
+                message = "Too many requests. Please try again later.",
+                retryAfterSeconds = 60
+            });
+            
+            return;
+        }
+        
+        // 5. Increment request count
+        _cache.Set(cacheKey, requestCount + 1, TimeSpan.FromMinutes(2));
+        
+        // 6. Add rate limit headers
+        context.Response.Headers.Add("X-RateLimit-Limit", _maxRequestsPerMinute.ToString());
+        context.Response.Headers.Add("X-RateLimit-Remaining", (_maxRequestsPerMinute - requestCount - 1).ToString());
+        
+        // 7. Continue with the request
+        await _next(context);
+    }
+    
+    private string GetClientIdentifier(HttpContext context)
+    {
+        // Implementation to extract API key or user ID
         // ...
     }
 }
 ```
 
-#### 2. Függőség Befecskendezés és Tesztelhetőség
+## Tesztelési Legjobb Gyakorlatok
 
-Tervezd meg az eszközöket úgy, hogy a függőségeiket konstruktor injekción keresztül kapják meg, így tesztelhetőek és konfigurálhatóak lesznek:
+### 1. Egységtesztelés MCP Eszközökhöz
+
+Mindig teszteld az eszközeidet izoláltan, külső függőségeket mockolva:
+
+```typescript
+// TypeScript example of a tool unit test
+describe('WeatherForecastTool', () => {
+  let tool: WeatherForecastTool;
+  let mockWeatherService: jest.Mocked<IWeatherService>;
+  
+  beforeEach(() => {
+    // Create a mock weather service
+    mockWeatherService = {
+      getForecasts: jest.fn()
+    } as any;
+    
+    // Create the tool with the mock dependency
+    tool = new WeatherForecastTool(mockWeatherService);
+  });
+  
+  it('should return weather forecast for a location', async () => {
+    // Arrange
+    const mockForecast = {
+      location: 'Seattle',
+      forecasts: [
+        { date: '2025-07-16', temperature: 72, conditions: 'Sunny' },
+        { date: '2025-07-17', temperature: 68, conditions: 'Partly Cloudy' },
+        { date: '2025-07-18', temperature: 65, conditions: 'Rain' }
+      ]
+    };
+    
+    mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
+    
+    // Act
+    const response = await tool.execute({
+      location: 'Seattle',
+      days: 3
+    });
+    
+    // Assert
+    expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
+    expect(response.content[0].text).toContain('Seattle');
+    expect(response.content[0].text).toContain('Sunny');
+  });
+  
+  it('should handle errors from the weather service', async () => {
+    // Arrange
+    mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
+    
+    // Act & Assert
+    await expect(tool.execute({
+      location: 'Seattle',
+      days: 3
+    })).rejects.toThrow('Weather service error: Service unavailable');
+  });
+});
+```
+
+### 2. Integrációs Tesztelés
+
+Teszteld a teljes folyamatot a kliens kéréseitől a szerver válaszáig:
+
+```python
+# Python integration test example
+@pytest.mark.asyncio
+async def test_mcp_server_integration():
+    # Start a test server
+    server = McpServer()
+    server.register_tool(WeatherForecastTool(MockWeatherService()))
+    await server.start(port=5000)
+    
+    try:
+        # Create a client
+        client = McpClient("http://localhost:5000")
+        
+        # Test tool discovery
+        tools = await client.discover_tools()
+        assert "weatherForecast" in [t.name for t in tools]
+        
+        # Test tool execution
+        response = await client.execute_tool("weatherForecast", {
+            "location": "Seattle",
+            "days": 3
+        })
+        
+        # Verify response
+        assert response.status_code == 200
+        assert "Seattle" in response.content[0].text
+        assert len(json.loads(response.content[0].text)["forecasts"]) == 3
+        
+    finally:
+        # Clean up
+        await server.stop()
+```
+
+## Teljesítmény Optimalizálás
+
+### 1. Gyorsítótárazási Stratégiák
+
+Alkalmazz megfelelő gyorsítótárazást a késleltetés és az erőforrás-felhasználás csökkentésére:
+
+```csharp
+// C# example with caching
+public class CachedWeatherTool : ITool
+{
+    private readonly IWeatherService _weatherService;
+    private readonly IDistributedCache _cache;
+    private readonly ILogger<CachedWeatherTool> _logger;
+    
+    public CachedWeatherTool(
+        IWeatherService weatherService,
+        IDistributedCache cache,
+        ILogger<CachedWeatherTool> logger)
+    {
+        _weatherService = weatherService;
+        _cache = cache;
+        _logger = logger;
+    }
+    
+    public string Name => "weatherForecast";
+    
+    public async Task<ToolResponse> ExecuteAsync(IDictionary<string, object> parameters)
+    {
+        var location = parameters["location"].ToString();
+        var days = Convert.ToInt32(parameters.GetValueOrDefault("days", 3));
+        
+        // Create cache key
+        string cacheKey = $"weather:{location}:{days}";
+        
+        // Try to get from cache
+        string cachedForecast = await _cache.GetStringAsync(cacheKey);
+        if (!string.IsNullOrEmpty(cachedForecast))
+        {
+            _logger.LogInformation("Cache hit for weather forecast: {Location}", location);
+            return new ToolResponse
+            {
+                Content = new List<ContentItem>
+                {
+                    new TextContent(cachedForecast)
+                }
+            };
+        }
+        
+        // Cache miss - get from service
+        _logger.LogInformation("Cache miss for weather forecast: {Location}", location);
+        var forecast = await _weatherService.GetForecastAsync(location, days);
+        string forecastJson = JsonSerializer.Serialize(forecast);
+        
+        // Store in cache (weather forecasts valid for 1 hour)
+        await _cache.SetStringAsync(
+            cacheKey,
+            forecastJson,
+            new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(1)
+            });
+        
+        return new ToolResponse
+        {
+            Content = new List<ContentItem>
+            {
+                new TextContent(forecastJson)
+            }
+        };
+    }
+}
+
+#### 2. Dependency Injection and Testability
+
+Design tools to receive their dependencies through constructor injection, making them testable and configurable:
 
 ```java
-// Java example with dependency injection
+// Java példa függőség-injektálással
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // Függőségek konstruktoron keresztül injektálva
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -174,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // Eszköz megvalósítása
     // ...
 }
 ```
 
-#### 3. Összeilleszthető Eszközök
+#### 3. Composable Tools
 
-Tervezd meg az eszközöket úgy, hogy egymással összekapcsolhatóak legyenek, így összetettebb munkafolyamatokat hozhatsz létre:
+Design tools that can be composed together to create more complex workflows:
 
 ```python
-# Python example showing composable tools
+# Python példa összetett eszközökre
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # Megvalósítás...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # Ez az eszköz használhatja a dataFetch eszköz eredményeit
     async def execute_async(self, request):
-        # Implementation...
+        # Megvalósítás...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # Ez az eszköz használhatja a dataAnalysis eszköz eredményeit
     async def execute_async(self, request):
-        # Implementation...
+        # Megvalósítás...
         pass
 
-# These tools can be used independently or as part of a workflow
+# Ezek az eszközök önállóan vagy munkafolyamat részeként is használhatók
 ```
 
-### Sématervezési Legjobb Gyakorlatok
+### Schema Design Best Practices
 
-A séma a modell és az eszköz közötti szerződés. A jól megtervezett sémák jobb eszközhasználhatósághoz vezetnek.
+The schema is the contract between the model and your tool. Well-designed schemas lead to better tool usability.
 
-#### 1. Egyértelmű Paraméterleírások
+#### 1. Clear Parameter Descriptions
 
-Mindig adj részletes leírást minden paraméterhez:
+Always include descriptive information for each parameter:
 
 ```csharp
 public object GetSchema()
@@ -228,25 +678,25 @@ public object GetSchema()
         properties = new {
             query = new { 
                 type = "string", 
-                description = "Search query text. Use precise keywords for better results." 
+                description = "Keresési lekérdezés szövege. Használj pontos kulcsszavakat a jobb eredményekért." 
             },
             filters = new {
                 type = "object",
-                description = "Optional filters to narrow down search results",
+                description = "Opcionális szűrők a keresési eredmények szűkítéséhez",
                 properties = new {
                     dateRange = new { 
                         type = "string", 
-                        description = "Date range in format YYYY-MM-DD:YYYY-MM-DD" 
+                        description = "Dátumtartomány formátumban ÉÉÉÉ-HH-NN:ÉÉÉÉ-HH-NN" 
                     },
                     category = new { 
                         type = "string", 
-                        description = "Category name to filter by" 
+                        description = "Szűrés kategória szerint" 
                     }
                 }
             },
             limit = new { 
                 type = "integer", 
-                description = "Maximum number of results to return (1-50)",
+                description = "Visszaadott eredmények maximális száma (1-50)",
                 default = 10
             }
         },
@@ -255,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. Érvényesítési Korlátozások
+#### 2. Validation Constraints
 
-Adj meg érvényesítési korlátokat, hogy megakadályozd a hibás bemeneteket:
+Include validation constraints to prevent invalid inputs:
 
 ```java
 Map<String, Object> getSchema() {
@@ -266,25 +716,25 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // Email tulajdonság formátum validációval
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
-    email.put("description", "User email address");
+    email.put("description", "Felhasználó email címe");
     
-    // Age property with numeric constraints
+    // Kor tulajdonság numerikus korlátokkal
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
-    age.put("description", "User age in years");
+    age.put("description", "Felhasználó életkora években");
     
-    // Enumerated property
+    // Enumerált tulajdonság
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
     subscription.put("default", "free");
-    subscription.put("description", "Subscription tier");
+    subscription.put("description", "Előfizetési szint");
     
     properties.put("email", email);
     properties.put("age", age);
@@ -297,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Következetes Visszatérési Struktúrák
+#### 3. Consistent Return Structures
 
-Tartsd következetesen a válaszstruktúrákat, hogy a modellek könnyebben értelmezhessék az eredményeket:
+Maintain consistency in your response structures to make it easier for models to interpret results:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # Kérés feldolgozása
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # Mindig egységes struktúrát adj vissza
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -328,7 +778,7 @@ async def execute_async(self, request):
         )
     
 def _format_item(self, item):
-    """Ensures each item has a consistent structure"""
+    """Biztosítja, hogy minden elem egységes struktúrájú legyen"""
     return {
         "id": item.id,
         "title": item.title,
@@ -338,13 +788,13 @@ def _format_item(self, item):
     }
 ```
 
-### Hibakezelés
+### Error Handling
 
-A megbízható hibakezelés kulcsfontosságú az MCP eszközök megbízhatóságának fenntartásához.
+Robust error handling is crucial for MCP tools to maintain reliability.
 
-#### 1. Kíméletes Hibakezelés
+#### 1. Graceful Error Handling
 
-Kezeld a hibákat a megfelelő szinteken, és adj informatív üzeneteket:
+Handle errors at appropriate levels and provide informative messages:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -362,39 +812,39 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
         }
         catch (FileNotFoundException)
         {
-            throw new ToolExecutionException($"File not found: {fileId}");
+            throw new ToolExecutionException($"Fájl nem található: {fileId}");
         }
         catch (UnauthorizedAccessException)
         {
-            throw new ToolExecutionException("You don't have permission to access this file");
+            throw new ToolExecutionException("Nincs jogosultságod a fájl eléréséhez");
         }
         catch (Exception ex) when (ex is IOException || ex is TimeoutException)
         {
-            _logger.LogError(ex, "Error accessing file {FileId}", fileId);
-            throw new ToolExecutionException("Error accessing file: The service is temporarily unavailable");
+            _logger.LogError(ex, "Hiba a fájl elérésekor {FileId}", fileId);
+            throw new ToolExecutionException("Hiba a fájl elérésekor: A szolgáltatás ideiglenesen nem elérhető");
         }
     }
     catch (JsonException)
     {
-        throw new ToolExecutionException("Invalid file ID format");
+        throw new ToolExecutionException("Érvénytelen fájlazonosító formátum");
     }
     catch (Exception ex)
     {
-        _logger.LogError(ex, "Unexpected error in FileAccessTool");
-        throw new ToolExecutionException("An unexpected error occurred");
+        _logger.LogError(ex, "Váratlan hiba a FileAccessTool-ban");
+        throw new ToolExecutionException("Váratlan hiba történt");
     }
 }
 ```
 
-#### 2. Strukturált Hibaválaszok
+#### 2. Structured Error Responses
 
-Lehetőség szerint adj vissza strukturált hibainformációkat:
+Return structured error information when possible:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // Megvalósítás
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -412,45 +862,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
-        throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
+        // Egyéb kivételek újradobása ToolExecutionException-ként
+        throw new ToolExecutionException("Az eszköz végrehajtása sikertelen: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. Újrapróbálkozási Logika
+#### 3. Retry Logic
 
-Valósíts meg megfelelő újrapróbálkozási logikát átmeneti hibák esetén:
+Implement appropriate retry logic for transient failures:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # másodperc
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # Külső API hívás
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
-                raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
+                raise ToolExecutionException(f"Művelet sikertelen {max_retries} próbálkozás után: {str(e)}")
                 
-            # Exponential backoff
+            # Exponenciális visszavárakozás
             delay = base_delay * (2 ** (retry_count - 1))
-            logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
+            logging.warning(f"Átmeneti hiba, újrapróbálkozás {delay} mp múlva: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
-            raise ToolExecutionException(f"Operation failed: {str(e)}")
+            # Nem átmeneti hiba, nem próbálkozunk újra
+            raise ToolExecutionException(f"Művelet sikertelen: {str(e)}")
 ```
 
-### Teljesítményoptimalizálás
+### Performance Optimization
 
-#### 1. Gyorsítótárazás
+#### 1. Caching
 
-Valósíts meg gyorsítótárazást költséges műveletekhez:
+Implement caching for expensive operations:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -464,41 +914,43 @@ public class CachedDataTool : IMcpTool
         _cache = cache;
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+    public async Task
+
+ExecuteAsync(ToolRequest request)
+{
+    var query = request.Parameters.GetProperty("query").GetString();
+    
+    // Cache kulcs létrehozása a paraméterek alapján
+    var cacheKey = $"data_query_{ComputeHash(query)}";
+    
+    // Először próbáljuk meg lekérni a cache-ből
+    if (_cache.TryGetValue(cacheKey, out var cachedResult))
     {
-        var query = request.Parameters.GetProperty("query").GetString();
-        
-        // Create cache key based on parameters
-        var cacheKey = $"data_query_{ComputeHash(query)}";
-        
-        // Try to get from cache first
-        if (_cache.TryGetValue(cacheKey, out var cachedResult))
-        {
-            return new ToolResponse { Result = cachedResult };
-        }
-        
-        // Cache miss - perform actual query
-        var result = await _database.QueryAsync(query);
-        
-        // Store in cache with expiration
-        var cacheOptions = new MemoryCacheEntryOptions()
-            .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
-            
-        _cache.Set(cacheKey, JsonSerializer.SerializeToElement(result), cacheOptions);
-        
-        return new ToolResponse { Result = JsonSerializer.SerializeToElement(result) };
+        return new ToolResponse { Result = cachedResult };
     }
     
-    private string ComputeHash(string input)
-    {
-        // Implementation to generate stable hash for cache key
-    }
+    // Cache hiány - tényleges lekérdezés végrehajtása
+    var result = await _database.QueryAsync(query);
+    
+    // Tárolás a cache-ben lejárati idővel
+    var cacheOptions = new MemoryCacheEntryOptions()
+        .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
+        
+    _cache.Set(cacheKey, JsonSerializer.SerializeToElement(result), cacheOptions);
+    
+    return new ToolResponse { Result = JsonSerializer.SerializeToElement(result) };
+}
+
+private string ComputeHash(string input)
+{
+    // Megvalósítás a stabil hash generálásához a cache kulcshoz
+}
 }
 ```
 
-#### 2. Aszinkron Feldolgozás
+#### 2. Asynchronous Processing
 
-Használj aszinkron programozási mintákat I/O-kötött műveletekhez:
+Use asynchronous programming patterns for I/O-bound operations:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -509,23 +961,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // Hosszú futású műveletek esetén azonnal visszaadunk egy feldolgozási azonosítót
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // Aszinkron feldolgozás indítása
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // Hosszú futású művelet végrehajtása
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // Állapot frissítése (általában adatbázisban tárolva)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // Azonnali válasz visszaadása a feldolgozási azonosítóval
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -534,7 +986,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // Kísérő állapot lekérdező eszköz
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -547,35 +999,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Erőforrás Korlátozás
+#### 3. Resource Throttling
 
-Valósíts meg erőforrás-korlátozást a túlterhelés elkerülésére:
+Implement resource throttling to prevent overload:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # Másodpercenként 5 kérés engedélyezett
+            bucket_size=10        # Maximum 10 kérés hirtelen megugrása engedélyezett
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # Ellenőrizzük, hogy folytathatjuk-e vagy várnunk kell
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # Ha a várakozás túl hosszú
                 raise ToolExecutionException(
-                    f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
+                    f"Átviteli korlát túllépve. Kérjük, próbálja újra {delay:.1f} másodperc múlva."
                 )
             else:
-                # Wait for the appropriate delay time
+                # Várakozás a megfelelő ideig
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # Token elfogyasztása és a kérés folytatása
         self.rate_limiter.consume()
         
-        # Call API
+        # API hívás
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -593,7 +1045,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # Számítsuk ki, mennyi idő múlva lesz új token
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -605,86 +1057,86 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # Új tokenek hozzáadása az eltelt idő alapján
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### Biztonsági Legjobb Gyakorlatok
+### Security Best Practices
 
-#### 1. Bemeneti Érvényesítés
+#### 1. Input Validation
 
-Mindig alaposan ellenőrizd a bemeneti paramétereket:
+Always validate input parameters thoroughly:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 {
-    // Validate parameters exist
+    // Ellenőrizzük, hogy a paraméterek léteznek-e
     if (!request.Parameters.TryGetProperty("query", out var queryProp))
     {
-        throw new ToolExecutionException("Missing required parameter: query");
+        throw new ToolExecutionException("Hiányzó kötelező paraméter: query");
     }
     
-    // Validate correct type
+    // Ellenőrizzük a helyes típust
     if (queryProp.ValueKind != JsonValueKind.String)
     {
-        throw new ToolExecutionException("Query parameter must be a string");
+        throw new ToolExecutionException("A query paraméternek string típusúnak kell lennie");
     }
     
     var query = queryProp.GetString();
     
-    // Validate string content
+    // Ellenőrizzük a string tartalmát
     if (string.IsNullOrWhiteSpace(query))
     {
-        throw new ToolExecutionException("Query parameter cannot be empty");
+        throw new ToolExecutionException("A query paraméter nem lehet üres");
     }
     
     if (query.Length > 500)
     {
-        throw new ToolExecutionException("Query parameter exceeds maximum length of 500 characters");
+        throw new ToolExecutionException("A query paraméter hossza nem haladhatja meg az 500 karaktert");
     }
     
-    // Check for SQL injection attacks if applicable
+    // Ellenőrizzük SQL injection támadásokra, ha releváns
     if (ContainsSqlInjection(query))
     {
-        throw new ToolExecutionException("Invalid query: contains potentially unsafe SQL");
+        throw new ToolExecutionException("Érvénytelen lekérdezés: potenciálisan veszélyes SQL-t tartalmaz");
     }
     
-    // Proceed with execution
+    // Folytassuk a végrehajtást
     // ...
 }
 ```
 
-#### 2. Jogosultság Ellenőrzések
+#### 2. Authorization Checks
 
-Valósíts meg megfelelő jogosultság-ellenőrzéseket:
+Implement proper authorization checks:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // Felhasználói kontextus lekérése a kérésből
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // Ellenőrizzük, hogy a felhasználónak megvan-e a szükséges jogosultsága
     if (!authorizationService.hasPermission(user, "documents:read")) {
-        throw new ToolExecutionException("User does not have permission to access documents");
+        throw new ToolExecutionException("A felhasználónak nincs jogosultsága a dokumentumok eléréséhez");
     }
     
-    // For specific resources, check access to that resource
+    // Egyes erőforrások esetén ellenőrizzük a hozzáférést az adott erőforráshoz
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
-        throw new ToolExecutionException("Access denied to the requested document");
+        throw new ToolExecutionException("Hozzáférés megtagadva a kért dokumentumhoz");
     }
     
-    // Proceed with tool execution
+    // Folytassuk az eszköz végrehajtását
     // ...
 }
 ```
 
-#### 3. Érzékeny Adatok Kezelése
+#### 3. Sensitive Data Handling
 
-Kezeld az érzékeny adatokat körültekintően:
+Handle sensitive data carefully:
 
 ```python
 class SecureDataTool(Tool):
@@ -702,56 +1154,56 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # Felhasználói adatok lekérése
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # Érzékeny mezők szűrése, kivéve ha kifejezetten kérték ÉS jogosultak vagyunk rá
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # Jogosultsági szint ellenőrzése a kérés kontextusában
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # Másolat készítése, hogy ne módosítsuk az eredetit
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # Konkrét érzékeny mezők kitakarása
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # Beágyazott érzékeny adatok kitakarása
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## MCP Eszközök Tesztelési Legjobb Gyakorlatai
+## Testing Best Practices for MCP Tools
 
-Az átfogó tesztelés biztosítja, hogy az MCP eszközök helyesen működjenek, kezeljék a szélsőséges eseteket, és megfelelően integrálódjanak a rendszer többi részével.
+Comprehensive testing ensures that MCP tools function correctly, handle edge cases, and integrate properly with the rest of the system.
 
-### Egységtesztelés
+### Unit Testing
 
-#### 1. Minden Eszközt Izoláltan Tesztelj
+#### 1. Test Each Tool in Isolation
 
-Készíts fókuszált teszteket minden eszköz funkciójára:
+Create focused tests for each tool's functionality:
 
 ```csharp
 [Fact]
 public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 {
-    // Arrange
+    // Előkészítés
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("Seattle", 3))
-        .ReturnsAsync(new WeatherForecast(/* test data */));
+        .ReturnsAsync(new WeatherForecast(/* tesztadatok */));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -763,10 +1215,10 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
         })
     );
     
-    // Act
+    // Végrehajtás
     var response = await tool.ExecuteAsync(request);
     
-    // Assert
+    // Ellenőrzés
     Assert.NotNull(response);
     var result = JsonSerializer.Deserialize<WeatherForecast>(response.Result);
     Assert.Equal("Seattle", result.Location);
@@ -776,11 +1228,11 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 [Fact]
 public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 {
-    // Arrange
+    // Előkészítés
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("InvalidLocation", It.IsAny<int>()))
-        .ThrowsAsync(new LocationNotFoundException("Location not found"));
+        .ThrowsAsync(new LocationNotFoundException("Helyszín nem található"));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -792,36 +1244,36 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
         })
     );
     
-    // Act & Assert
+    // Végrehajtás és ellenőrzés
     var exception = await Assert.ThrowsAsync<ToolExecutionException>(
         () => tool.ExecuteAsync(request)
     );
     
-    Assert.Contains("Location not found", exception.Message);
+    Assert.Contains("Helyszín nem található", exception.Message);
 }
 ```
 
-#### 2. Séma Érvényesítési Tesztek
+#### 2. Schema Validation Testing
 
-Teszteld, hogy a sémák érvényesek és megfelelően érvényesítik a korlátokat:
+Test that schemas are valid and properly enforce constraints:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // Eszköz példány létrehozása
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // Sém lekérése
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // Séma JSON formátumba konvertálása validáláshoz
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // Ellenőrizzük, hogy a séma érvényes JSONSchema-e
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // Érvényes paraméterek tesztelése
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -829,14 +1281,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // Hiányzó kötelező paraméter tesztelése
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // Érvénytelen paramétertípus tesztelése
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -846,21 +1298,21 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. Hibakezelési Tesztek
+#### 3. Error Handling Tests
 
-Készíts specifikus teszteket hibás állapotokra:
+Create specific tests for error conditions:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # Előkészítés
+    tool = ApiTool(timeout=0.1)  # Nagyon rövid időkorlát
     
-    # Mock a request that will time out
+    # Mock kérés, ami időtúllépést okoz
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Hosszabb, mint az időkorlát
         )
         
         request = ToolRequest(
@@ -868,19 +1320,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Végrehajtás és ellenőrzés
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # Ellenőrizzük a kivétel üzenetét
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # Előkészítés
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # Mock válasz, ami rate limitet jelez
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -894,27 +1346,27 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Végrehajtás és ellenőrzés
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # Ellenőrizzük, hogy a kivétel tartalmazza a rate limit információt
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### Integrációs Tesztelés
+### Integration Testing
 
-#### 1. Eszközlánc Tesztelés
+#### 1. Tool Chain Testing
 
-Teszteld az eszközök együttműködését a várt kombinációkban:
+Test tools working together in expected combinations:
 
 ```csharp
 [Fact]
 public async Task DataProcessingWorkflow_CompletesSuccessfully()
 {
-    // Arrange
+    // Előkészítés
     var dataFetchTool = new DataFetchTool(mockDataService.Object);
     var analysisTools = new DataAnalysisTool(mockAnalysisService.Object);
     var visualizationTool = new DataVisualizationTool(mockVisualizationService.Object);
@@ -926,30 +1378,31 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
     
     var workflowExecutor = new WorkflowExecutor(toolRegistry);
     
-    // Act
-    var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
-        new ToolCall("dataFetch", new { source = "sales2023" }),
-        new ToolCall("dataAnalysis", ctx => new { 
+    // Végrehajtás
+var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
+    new ToolCall("dataFetch", new { source = "sales2023" }),
+    new ToolCall("dataAnalysis", ctx =>
+        new { 
             data = ctx.GetResult("dataFetch"),
             analysis = "trend" 
         }),
-        new ToolCall("dataVisualize", ctx => new {
-            analysisResult = ctx.GetResult("dataAnalysis"),
-            type = "line-chart"
-        })
-    });
-    
-    // Assert
-    Assert.NotNull(result);
-    Assert.True(result.Success);
-    Assert.NotNull(result.GetResult("dataVisualize"));
-    Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
+    new ToolCall("dataVisualize", ctx => new {
+        analysisResult = ctx.GetResult("dataAnalysis"),
+        type = "line-chart"
+    })
+});
+
+// Ellenőrzés
+Assert.NotNull(result);
+Assert.True(result.Success);
+Assert.NotNull(result.GetResult("dataVisualize"));
+Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
 }
 ```
 
-#### 2. MCP Szerver Tesztelés
+#### 2. MCP Server Testing
 
-Teszteld az MCP szervert teljes eszközregisztrációval és végrehajtással:
+Test the MCP server with full tool registration and execution:
 
 ```java
 @SpringBootTest
@@ -964,7 +1417,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // Teszteld az eszköz-felderítő végpontot
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -975,7 +1428,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // Eszközkérés létrehozása
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -985,7 +1438,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // Kérés elküldése és válasz ellenőrzése
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -995,17 +1448,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // Érvénytelen eszközkérés létrehozása
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // Hiányzó "b" paraméter
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // Kérés elküldése és hibaválasz ellenőrzése
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1015,32 +1468,32 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. Végponttól Végpontig Tesztelés
+#### 3. End-to-End Testing
 
-Teszteld a teljes munkafolyamatot a modell promptjától az eszköz végrehajtásáig:
+Test complete workflows from model prompt to tool execution:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # Előkészítés - MCP kliens és mock modell beállítása
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # Mock modell válaszok
     mock_model = MockLanguageModel([
         MockResponse(
-            "What's the weather in Seattle?",
+            "Mi az időjárás Seattle-ben?",
             tool_calls=[{
                 "tool_name": "weatherForecast",
                 "parameters": {"location": "Seattle", "days": 3}
             }]
         ),
         MockResponse(
-            "Here's the weather forecast for Seattle:\n- Today: 65°F, Partly Cloudy\n- Tomorrow: 68°F, Sunny\n- Day after: 62°F, Rain",
+            "Íme a seattle-i időjárás-előrejelzés:\n- Ma: 65°F, részben felhős\n- Holnap: 68°F, napos\n- Holnapután: 62°F, eső",
             tool_calls=[]
         )
     ])
     
-    # Mock weather tool response
+    # Mock időjárás eszköz válasz
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1048,41 +1501,41 @@ async def test_model_interaction_with_tool():
                 "result": {
                     "location": "Seattle",
                     "forecast": [
-                        {"date": "2023-06-01", "temperature": 65, "conditions": "Partly Cloudy"},
-                        {"date": "2023-06-02", "temperature": 68, "conditions": "Sunny"},
-                        {"date": "2023-06-03", "temperature": 62, "conditions": "Rain"}
+                        {"date": "2023-06-01", "temperature": 65, "conditions": "Részben felhős"},
+                        {"date": "2023-06-02", "temperature": 68, "conditions": "Napos"},
+                        {"date": "2023-06-03", "temperature": 62, "conditions": "Eső"}
                     ]
                 }
             }
         )
         
-        # Act
+        # Végrehajtás
         response = await mcp_client.send_prompt(
-            "What's the weather in Seattle?",
+            "Mi az időjárás Seattle-ben?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # Ellenőrzés
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
-        assert "Sunny" in response.generated_text
-        assert "Rain" in response.generated_text
+        assert "Napos" in response.generated_text
+        assert "Eső" in response.generated_text
         assert len(response.tool_calls) == 1
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### Teljesítmény Tesztelés
+### Performance Testing
 
-#### 1. Terheléses Tesztelés
+#### 1. Load Testing
 
-Teszteld, hány egyidejű kérést képes kezelni az MCP szervered:
+Test how many concurrent requests your MCP server can handle:
 
 ```csharp
 [Fact]
 public async Task McpServer_HandlesHighConcurrency()
 {
-    // Arrange
+    // Előkészítés
     var server = new McpServer(
         name: "TestServer",
         version: "1.0",
@@ -1094,7 +1547,7 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var client = new McpClient("http://localhost:5000");
     
-    // Act
+    // Végrehajtás
     var tasks = new List<Task<McpResponse>>();
     for (int i = 0; i < 1000; i++)
     {
@@ -1103,15 +1556,15 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var results = await Task.WhenAll(tasks);
     
-    // Assert
+    // Ellenőrzés
     Assert.Equal(1000, results.Length);
     Assert.All(results, r => Assert.NotNull(r));
 }
 ```
 
-#### 2. Stressz Tesztelés
+#### 2. Stress Testing
 
-Teszteld a rendszert extrém terhelés alatt:
+Test the system under extreme load:
 
 ```java
 @Test
@@ -1120,13 +1573,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // JMeter beállítása stresszteszthez
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // JMeter tesztterv konfigurálása
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // Tesztterv, szálcsoport, mintavételezők létrehozása stb.
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1138,7 +1591,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // HTTP mintavételező hozzáadása az eszköz végrehajtáshoz
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1149,58 +1602,58 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // Hallgatók hozzáadása
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // Teszt futtatása
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // Eredmények ellenőrzése
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // Átlagos válaszidő < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90. percentilis < 500ms
 }
 ```
 
-#### 3. Megfigyelés és Profilozás
+#### 3. Monitoring and Profiling
 
-Állíts be megfigyelést a hosszú távú teljesítmény elemzéshez:
+Set up monitoring for long-term performance analysis:
 
 ```python
-# Configure monitoring for an MCP server
+# MCP szerver monitorozásának beállítása
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Prometheus metrikák beállítása
     prometheus_metrics = {
-        "request_count": Counter("mcp_requests_total", "Total MCP requests"),
+        "request_count": Counter("mcp_requests_total", "Összes MCP kérés"),
         "request_latency": Histogram(
             "mcp_request_duration_seconds", 
-            "Request duration in seconds",
+            "Kérés időtartama másodpercben",
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_execution_count": Counter(
             "mcp_tool_executions_total", 
-            "Tool execution count",
+            "Eszköz végrehajtások száma",
             labelnames=["tool_name"]
         ),
         "tool_execution_latency": Histogram(
             "mcp_tool_duration_seconds", 
-            "Tool execution duration in seconds",
+            "Eszköz végrehajtás időtartama másodpercben",
             labelnames=["tool_name"],
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_errors": Counter(
             "mcp_tool_errors_total",
-            "Tool execution errors",
+            "Eszköz végrehajtási hibák",
             labelnames=["tool_name", "error_type"]
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # Middleware hozzáadása az időméréshez és metrikák rögzítéséhez
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # Metrikák végpontjának kitettsége
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1208,29 +1661,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP Munkafolyamat Tervezési Minták
+## MCP Workflow Design Patterns
 
-A jól megtervezett MCP munkafolyamatok javítják a hatékonyságot, megbízhatóságot és karbantarthatóságot. Íme a legfontosabb minták:
+Well-designed MCP workflows improve efficiency, reliability, and maintainability. Here are key patterns to follow:
 
-### 1. Eszközlánc Minta
+### 1. Chain of Tools Pattern
 
-Kapcsolj össze több eszközt sorban úgy, hogy az egyik eszköz kimenete a következő bemenete legyen:
+Connect multiple tools in a sequence where each tool's output becomes the input for the next:
 
 ```python
-# Python Chain of Tools implementation
+# Python láncolt eszközök megvalósítása
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # Az eszközök neveinek listája, amelyeket sorban kell végrehajtani
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # Minden eszköz végrehajtása a láncban, az előző eredmény átadásával
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # Eredmény tárolása és bemenetként használata a következő eszközhöz
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1239,7 +1692,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# Példa használat
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1253,9 +1706,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Központi Elosztó Minta
+### 2. Dispatcher Pattern
 
-Használj egy központi eszközt, amely a bemenet alapján specializált eszközökhöz irányít:
+Use a central tool that dispatches to specialized tools based on input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1268,7 +1721,7 @@ public class ContentDispatcherTool : IMcpTool
     }
     
     public string Name => "contentProcessor";
-    public string Description => "Processes content of various types";
+    public string Description => "Különböző típusú tartalmak feldolgozása";
     
     public object GetSchema()
     {
@@ -1295,10 +1748,10 @@ public class ContentDispatcherTool : IMcpTool
         var contentType = request.Parameters.GetProperty("contentType").GetString();
         var operation = request.Parameters.GetProperty("operation").GetString();
         
-        // Determine which specialized tool to use
+        // Meghatározza, melyik specializált eszközt használja
         string targetTool = DetermineTargetTool(contentType, operation);
         
-        // Forward to the specialized tool
+        // Továbbítja a kérést a specializált eszköznek
         var specializedResponse = await _mcpClient.ExecuteToolAsync(
             targetTool,
             new { content, options = GetOptionsForTool(targetTool, operation) }
@@ -1315,29 +1768,68 @@ public class ContentDispatcherTool : IMcpTool
             ("text", "analyze") => "textAnalyzer",
             ("html", _) => "htmlProcessor",
             ("markdown", _) => "markdownProcessor",
-            ("csv", _) => "csvProcessor",
+            ("csv", _) =>
+# csvProcessor használati útmutató
+
+Ez a modul lehetővé teszi CSV fájlok egyszerű feldolgozását és elemzését.
+
+## Főbb funkciók
+
+- CSV fájlok beolvasása és soronkénti feldolgozása
+- Adatok szűrése és rendezése
+- Egyszerű statisztikai műveletek végrehajtása
+
+## Használat
+
+```python
+from csvProcessor import read_csv, filter_data
+
+# CSV fájl beolvasása
+data = read_csv('adatok.csv')
+
+# Adatok szűrése bizonyos feltételek alapján
+filtered = filter_data(data, lambda row: int(row['kor']) > 18)
+
+# Eredmények kiírása
+for row in filtered:
+    print(row)
+```
+
+## Megjegyzések
+
+- [!NOTE] A modul csak jól formázott CSV fájlokat támogat.
+- [!WARNING] Nagy méretű fájlok esetén a feldolgozás lassú lehet.
+- [!TIP] Használj generátorokat a memóriahatékony feldolgozáshoz.
+
+## Hibakezelés
+
+A modul kivételeket dob, ha a fájl nem található vagy hibás formátumú.
+
+## További információk
+
+Látogass el a hivatalos dokumentációra a részletes leírásért és példákért.
             ("code", _) => "codeAnalyzer",
-            _ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
+            _ => throw new ToolExecutionException($"Nincs elérhető eszköz a(z) {contentType}/{operation} számára")
         };
     }
     
     private object GetOptionsForTool(string toolName, string operation)
     {
-        // Return appropriate options for each specialized tool
+        // Visszaadja a megfelelő beállításokat az egyes speciális eszközökhöz
         return toolName switch
         {
             "textSummarizer" => new { length = "medium" },
             "htmlProcessor" => new { cleanUp = true, operation },
-            // Options for other tools...
+            // Egyéb eszközök beállításai...
             _ => new { }
         };
     }
 }
 ```
 
-### 3. Párhuzamos Feldolgozás Minta
+### 3. Parallel Processing Pattern
 
-Futtass több eszközt egyszerre a hatékonyság érdekében:
+Execute multiple tools simultaneously for efficiency:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1348,11 +1840,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // 1. lépés: Adatkészlet metaadatainak lekérése (szinkron)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // 2. lépés: Több elemzés párhuzamos indítása
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1374,25 +1866,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // Várakozás az összes párhuzamos feladat befejezésére
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // Várakozás a befejezésre
         
-        // Step 3: Combine results
+        // 3. lépés: Eredmények összevonása
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // 4. lépés: Összefoglaló jelentés generálása
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // Teljes munkafolyamat eredményének visszaadása
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1403,9 +1895,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Hibajavító Minta
+### 4. Error Recovery Pattern
 
-Valósíts meg kíméletes visszaesési megoldásokat eszközhibák esetén:
+Implement graceful fallbacks for tool failures:
 
 ```python
 class ResilientWorkflow:
@@ -1414,7 +1906,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # Először a fő eszközt próbáljuk meg
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1422,12 +1914,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
-            logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
+            # Hibát naplózunk
+            logging.warning(f"A fő eszköz '{primary_tool}' hibát adott: {str(e)}")
             
-            # Fall back to secondary tool
+            # Visszatérés a tartalék eszközhöz
             try:
-                # Might need to transform parameters for fallback tool
+                # Lehet, hogy át kell alakítani a paramétereket a tartalék eszközhöz
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1438,30 +1930,30 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
-                logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
+                # Mindkét eszköz hibát adott
+                logging.error(f"Mind a fő, mind a tartalék eszköz hibát adott. Tartalék hiba: {str(fallback_error)}")
                 raise WorkflowExecutionException(
-                    f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
+                    f"A munkafolyamat sikertelen: fő hiba: {str(e)}; tartalék hiba: {str(fallback_error)}"
                 )
     
     def _adapt_parameters(self, params, from_tool, to_tool):
-        """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        """Paraméterek átalakítása különböző eszközök között, ha szükséges"""
+        # Ez az implementáció az adott eszközöktől függ
+        # Ebben a példában egyszerűen visszaadjuk az eredeti paramétereket
         return params
 
-# Example usage
+# Példa használat
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # Elsődleges (fizetős) időjárás API
+        "basicWeatherService",    # Tartalék (ingyenes) időjárás API
         {"location": location}
     )
 ```
 
-### 5. Munkafolyamat Összeállítás Minta
+### 5. Workflow Composition Pattern
 
-Építs összetett munkafolyamatokat egyszerűbbek összeillesztésével:
+Build complex workflows by composing simpler ones:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1481,10 +1973,10 @@ public class CompositeWorkflow : IWorkflow
         {
             var workflowResult = await workflow.ExecuteAsync(context);
             
-            // Store each workflow's result
+            // Minden munkafolyamat eredményének tárolása
             results[workflow.Name] = workflowResult;
             
-            // Update context with the result for the next workflow
+            // A kontextus frissítése az eredménnyel a következő munkafolyamathoz
             context = context.WithResult(workflow.Name, workflowResult);
         }
         
@@ -1492,10 +1984,10 @@ public class CompositeWorkflow : IWorkflow
     }
     
     public string Name => "CompositeWorkflow";
-    public string Description => "Executes multiple workflows in sequence";
+    public string Description => "Több munkafolyamat egymás utáni végrehajtása";
 }
 
-// Example usage
+// Példa használat
 var documentWorkflow = new CompositeWorkflow(new IWorkflow[] {
     new DocumentFetchWorkflow(),
     new DocumentProcessingWorkflow(),
@@ -1508,44 +2000,44 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# MCP Szerverek Tesztelése: Legjobb Gyakorlatok és Legfontosabb Tippek
+# Testing MCP Servers: Best Practices and Top Tips
 
-## Áttekintés
+## Overview
 
-A tesztelés kritikus része a megbízható, magas minőségű MCP szerverek fejlesztésének. Ez az útmutató átfogó legjobb gyakorlatokat és tippeket nyújt az MCP szerverek fejlesztési ciklus alatti teszteléséhez, az egységtesztektől az integrációs teszteken át a végponttól végpontig történő validációig.
+Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
 
-## Miért Fontos a Tesztelés az MCP Szervereknél
+## Why Testing Matters for MCP Servers
 
-Az MCP szerverek kulcsfontosságú köztes rétegként szolgálnak az AI modellek és az ügyfélalkalmazások között. Az alapos tesztelés biztosítja:
+MCP servers serve as crucial middleware between AI models and client applications. Thorough testing ensures:
 
-- Megbízhatóságot éles környezetben
-- Pontos kérés- és válaszkezelést
-- Az MCP specifikációk helyes megvalósítását
-- Ellenállóképességet hibák és szélsőséges esetek ellen
-- Következetes teljesítményt különböző terhelések alatt
+- Reliability in production environments
+- Accurate handling of requests and responses
+- Proper implementation of MCP specifications
+- Resilience against failures and edge cases
+- Consistent performance under various loads
 
-## Egységtesztelés MCP Szerverekhez
+## Unit Testing for MCP Servers
 
-### Egységtesztelés (Alap)
+### Unit Testing (Foundation)
 
-Az egységtesztek az MCP szerver egyes komponenseit izoláltan ellenőrzik.
+Unit tests verify individual components of your MCP server in isolation.
 
-#### Mit Tesztelj
+#### What to Test
 
-1. **Erőforrás Kezelők**: Teszteld minden erőforrás kezelő logikáját külön-külön
-2. **Eszköz Megvalósítások**: Ellenőrizd az eszközök viselkedését különböző bemenetekkel
-3. **Prompt Sablonok**: Győződj meg róla, hogy a prompt sablonok helyesen jelennek meg
-4. **Séma Érvényesítés**: Teszteld a paraméterek érvényesítési logikáját
-5. **Hibakezelés**: Ellenőrizd a hibaválaszokat hibás bemenetek esetén
+1. **Resource Handlers**: Test each resource handler's logic independently
+2. **Tool Implementations**: Verify tool behavior with various inputs
+3. **Prompt Templates**: Ensure prompt templates render correctly
+4. **Schema Validation**: Test parameter validation logic
+5. **Error Handling**: Verify error responses for invalid inputs
 
-#### Egységtesztelési Legjobb Gyakorlatok
+#### Best Practices for Unit Testing
 
 ```csharp
-// Example unit test for a calculator tool in C#
+// Példa egységteszt egy számológép eszközhöz C#-ban
 [Fact]
 public async Task CalculatorTool_Add_ReturnsCorrectSum()
 {
-    // Arrange
+    // Előkészítés
     var calculator = new CalculatorTool();
     var parameters = new Dictionary<string, object>
     {
@@ -1554,19 +2046,19 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
         ["b"] = 7
     };
     
-    // Act
+    // Végrehajtás
     var response = await calculator.ExecuteAsync(parameters);
     var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
     
-    // Assert
+    // Ellenőrzés
     Assert.Equal(12, result.Value);
 }
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# Példa egységteszt egy számológép eszközhöz Pythonban
 def test_calculator_tool_add():
-    # Arrange
+    # Előkészítés
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -1574,34 +2066,34 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # Végrehajtás
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # Ellenőrzés
     assert result["value"] == 12
 ```
 
-### Integrációs Tesztelés (Középső Réteg)
+### Integration Testing (Middle Layer)
 
-Az integrációs tesztek az MCP szerver komponenseinek együttműködését ellenőrzik.
+Integration tests verify interactions between components of your MCP server.
 
-#### Mit Tesztelj
+#### What to Test
 
-1. **Szerver Indítás**: Teszteld a szerver indítását különböző konfigurációkkal
-2. **Útvonal Regisztráció**: Ellenőrizd, hogy minden végpont helyesen regisztrálva van
-3. **Kérés Feldolgozás**: Teszteld a teljes kérés-válasz ciklust
-4. **Hibák Terjedése**: Győződj meg róla, hogy a hibák megfelelően kezelődnek a komponensek között
-5. **Hitelesítés és Jogosultság**: Teszteld a biztonsági mechanizmusokat
+1. **Server Initialization**: Test server startup with various configurations
+2. **Route Registration**: Verify all endpoints are correctly registered
+3. **Request Processing**: Test the full request-response cycle
+4. **Error Propagation**: Ensure errors are properly handled across components
+5. **Authentication & Authorization**: Test security mechanisms
 
-#### Integrációs Tesztelési Legjobb Gyakorlatok
+#### Best Practices for Integration Testing
 
 ```csharp
-// Example integration test for MCP server in C#
+// Példa integrációs teszt MCP szerverhez C#-ban
 [Fact]
 public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 {
-    // Arrange
+    // Előkészítés
     var server = new McpServer();
     server.RegisterTool(new CalculatorTool());
     await server.StartAsync();
@@ -1617,40 +2109,40 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
         }
     };
     
-    // Act
+    // Végrehajtás
     var response = await server.ProcessRequestAsync(request);
     
-    // Assert
+    // Ellenőrzés
     Assert.NotNull(response);
     Assert.Equal(McpStatusCodes.Success, response.StatusCode);
-    // Additional assertions for response content
+    // További ellenőrzések a válasz tartalmára
     
-    // Cleanup
+    // Takarítás
     await server.StopAsync();
 }
 ```
 
-### Végponttól Végpontig Tesztelés (Felső Réteg)
+### End-to-End Testing (Top Layer)
 
-A végponttól végpontig tesztek a teljes rendszer viselkedését ellenőrzik az ügyféltől a szerverig.
+End-to-end tests verify the complete system behavior from client to server.
 
-#### Mit Tesztelj
+#### What to Test
 
-1. **Ügyfél-Szerver Kommunikáció**: Teszteld a teljes kérés-válasz ciklust
-2. **Valódi Ügyfél SDK-k**: Tesztelj valódi ügyfél implementációkkal
-3. **Teljesítmény Terhelés Alatt**: Ellenőrizd a viselkedést több egyidejű kérés esetén
-4. **Hibajavítás**: Teszteld a rendszer helyreállását hibákból
-5. **Hosszú Műveletek**: Ellenőrizd a streaming és hosszú műveletek kezelését
+1. **Client-Server Communication**: Test complete request-response cycles
+2. **Real Client SDKs**: Test with actual client implementations
+3. **Performance Under Load**: Verify behavior with multiple concurrent requests
+4. **Error Recovery**: Test system recovery from failures
+5. **Long-Running Operations**: Verify handling of streaming and long operations
 
-#### Végponttól Végpontig Tesztelési Legjobb Gyakorlatok
+#### Best Practices for E2E Testing
 
 ```typescript
-// Example E2E test with a client in TypeScript
-describe('MCP Server E2E Tests', () => {
+// Példa E2E teszt klienssel TypeScript-ben
+describe('MCP Server E2E Tesztek', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // Szerver indítása teszt környezetben
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -1659,43 +2151,43 @@ describe('MCP Server E2E Tests', () => {
     await stopTestServer();
   });
   
-  test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+  test('A kliens képes meghívni a calculator eszközt és helyes eredményt kap', async () => {
+    // Végrehajtás
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // Ellenőrzés
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
 });
 ```
 
-## Mockolási Stratégiák MCP Teszteléshez
+## Mocking Strategies for MCP Testing
 
-A mockolás elengedhetetlen a komponensek izolált teszteléséhez.
+Mocking is essential for isolating components during testing.
 
-### Mockolandó Komponensek
+### Components to Mock
 
-1. **Külső AI Modellek**: Mockold a modell válaszokat kiszámítható teszteléshez
-2. **Külső Szolgáltatások**: Mockold az API függőségeket (adatbázisok, harmadik féltől származó szolgáltatások)
-3. **Hitelesítési Szolgáltatók**: Mockold az identitás szolgáltatókat
-4. **Erőforrás Szolgáltatók**: Mockold a költséges erőforrás kezelőket
+1. **External AI Models**: Mock model responses for predictable testing
+2. **External Services**: Mock API dependencies (databases, third-party services)
+3. **Authentication Services**: Mock identity providers
+4. **Resource Providers**: Mock expensive resource handlers
 
-### Példa: AI Modell Válasz Mockolása
+### Example: Mocking an AI Model Response
 
 ```csharp
-// C# example with Moq
+// C# példa Moq használatával
 var mockModel = new Mock<ILanguageModel>();
 mockModel
     .Setup(m => m.GenerateResponseAsync(
         It.IsAny<string>(),
         It.IsAny<McpRequestContext>()))
     .ReturnsAsync(new ModelResponse { 
-        Text = "Mocked model response",
+        Text = "Mockolt modell válasz",
         FinishReason = FinishReason.Completed
     });
 
@@ -1703,48 +2195,48 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# Python példa unittest.mock használatával
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
+    # Mock konfigurálása
     mock_model.return_value.generate_response.return_value = {
-        "text": "Mocked model response",
+        "text": "Mockolt modell válasz",
         "finish_reason": "completed"
     }
     
-    # Use mock in test
+    # Mock használata a tesztben
     server = McpServer(model_client=mock_model)
-    # Continue with test
+    # Teszt folytatása
 ```
 
-## Teljesítmény Tesztelés
+## Performance Testing
 
-A teljesítmény tesztelés kulcsfontosságú az éles MCP szervereknél.
+Performance testing is crucial for production MCP servers.
 
-### Mit Mérj
+### What to Measure
 
-1. **Késleltetés**: A válaszidő kérésekre
-2. **Áteresztőképesség**: Másodpercenként kezelt kérések száma
-3. **Erőforrás Használat**: CPU, memória, hálózat kihasználtság
-4. **Párhuzamosság Kezelése**: Viselkedés párhuzamos kérések alatt
-5. **Skálázódási Jellemzők**: Teljesítmény terhelés növekedésével
+1. **Latency**: Response time for requests
+2. **Throughput**: Requests handled per second
+3. **Resource Utilization**: CPU, memory, network usage
+4. **Concurrency Handling**: Behavior under parallel requests
+5. **Scaling Characteristics**: Performance as load increases
 
-### Teljesítmény Tesztelő Eszközök
+### Tools for Performance Testing
 
-- **k6**: Nyílt forráskódú terhelés tesztelő eszköz
-- **JMeter**: Átfogó teljesítmény tesztelés
-- **Locust**: Python alapú terhelés tesztelő
-- **Azure Load Testing**: Felhő alapú teljesítmény tesztelés
+- **k6**: Open-source load testing tool
+- **JMeter**: Comprehensive performance testing
+- **Locust**: Python-based load testing
+- **Azure Load Testing**: Cloud-based performance testing
 
-### Példa: Alap Terhelés Teszt k6-tal
+### Example: Basic Load Test with k6
 
 ```javascript
-// k6 script for load testing MCP server
+// k6 szkript MCP szerver terheléses teszteléséhez
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10 virtual users
+  vus: 10,  // 10 virtuális felhasználó
   duration: '30s',
 };
 
@@ -1768,29 +2260,29 @@ export default function () {
   const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
   
   check(res, {
-    'status is 200': (r) => r.status === 200,
-    'response time < 500ms': (r) => r.timings.duration < 500,
+    'status 200-as': (r) => r.status === 200,
+    'válaszidő < 500ms': (r) => r.timings.duration < 500,
   });
   
   sleep(1);
 }
 ```
 
-## Teszt Automatizálás MCP Szerverekhez
+## Test Automation for MCP Servers
 
-A tesztek automatizálása biztosítja a következetes minőséget és gyorsabb visszacsatolást.
+Automating your tests ensures consistent quality and faster feedback loops.
 
-### CI/CD Integráció
+### CI/CD Integration
 
-1. **Egységtesztek futtatása Pull Request-eknél**: Biztosítsd, hogy a kódváltozások ne törjék meg a meglévő funkciókat
-2. **Integrációs Tesztek Staging Környezetben**: Futtasd az integrációs teszteket elő-éles környezetben
-3. **Teljesítmény Alapvonalak**: Tarts fenn teljesítmény mérőszámokat a regressziók elkerülésére
-4. **Biztonsági Vizsgálatok**: Automatizáld a biztonsági teszteket a folyamat részeként
+1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
+2. **Integration Tests in Staging**: Run integration tests in pre-production environments
+3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
+4. **Security Scans**: Automate security testing as part of the pipeline
 
-### Példa CI Pipeline (GitHub Actions)
+### Example CI Pipeline (GitHub Actions)
 
 ```yaml
-name: MCP Server Tests
+name: MCP Server Tesztek
 
 on:
   push:
@@ -1805,75 +2297,121 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Set up Runtime
+    - name: Futási környezet beállítása
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '8.0.x'
     
-    - name: Restore dependencies
+    - name: Függőségek visszaállítása
       run: dotnet restore
     
-    - name: Build
+    - name: Fordítás
       run: dotnet build --no-restore
     
-    - name: Unit Tests
+    - name: Egységtesztek
       run: dotnet test --no-build --filter Category=Unit
     
-    - name: Integration Tests
+    - name: Integrációs tesztek
       run: dotnet test --no-build --filter Category=Integration
       
-    - name: Performance Tests
+    - name: Teljesítménytesztek
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## MCP Specifikációnak Való Megfelelés Tesztelése
+## Testing for Compliance with MCP Specification
 
-Ellenőrizd, hogy a szervered helyesen valósítja meg az MCP specifikációt.
+Verify your server correctly implements the MCP specification.
 
-### Fő Megfelelőségi Területek
+### Key Compliance Areas
 
-1. **API Végpontok**: Teszteld a kötelező végpontokat (/resources, /tools, stb.)
-2. **Kérés/Válasz Formátum**: Érvényesítsd a séma megfelelést
-3. **Hibakódok**: Ellenőrizd a helyes státuszkódokat különböző esetekben
-4. **Tartalomtípusok**: Teszteld a különböző tartalomtípusok kezelését
-5. **Hitelesítési Folyamat**: Ellenőrizd a specifikációnak megfelelő hitelesítési mechanizmusokat
+1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
+2. **Request/Response Format**: Validate schema compliance
+3. **Error Codes**: Verify correct status codes for various scenarios
+4. **Content Types**: Test handling of different content types
+5. **Authentication Flow**: Verify spec-compliant auth mechanisms
 
-### Megfelelőségi Tesztcsomag
+### Compliance Test Suite
 
 ```csharp
 [Fact]
 public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 {
-    // Arrange
+    // Előkészítés
     var client = new HttpClient();
     client.DefaultRequestHeaders.Add("Authorization", "Bearer test-token");
     
-    // Act
+    // Végrehajtás
     var response = await client.GetAsync("http://localhost:5000/api/resources");
     var content = await response.Content.ReadAsStringAsync();
-    var resources = JsonSerializer.Deserialize<ResourceList>(content);
-    
-    // Assert
-    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-    Assert.NotNull(resources);
-    Assert.All(resources.Resources, resource => 
-    {
-        Assert.NotNull(resource.Id);
-        Assert.NotNull(resource.Type);
-        // Additional schema validation
-    });
+    var resources = JsonSerializer.Deserialize
+
+// Assert
+Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+Assert.NotNull(resources);
+Assert.All(resources.Resources, resource => 
+{
+    Assert.NotNull(resource.Id);
+    Assert.NotNull(resource.Type);
+    // További sémaellenőrzés
+});
 }
-```
 
-## Top 10 Tipp Hatékony MCP Szerver Teszteléshez
+## Top 10 tipp hatékony MCP szerverteszteléshez
 
-1. **Teszteld külön az eszköz definíciókat**: Ellenőrizd a séma definíciókat az eszköz logikától függetlenül
-2. **Használj paraméterezett teszteket**: Teszteld az eszközöket különféle bemenetekkel, beleértve a szélsőséges eseteket is
-3. **Ellenőrizd a hibaválaszokat**: Győződj meg a helyes hibakezelésről minden le
-5. Érdemes lehet haladó kurzusokat is elvégezni bizonyos MCP témákban, például a többmodális integráció vagy a vállalati alkalmazásintegráció területén.  
-6. Kísérletezz saját MCP eszközök és munkafolyamatok építésével a [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) során elsajátított elvek alapján.  
+1. **Teszteld külön a Tool definíciókat**: Ellenőrizd a séma definíciókat a tool logikájától függetlenül  
+2. **Használj paraméterezett teszteket**: Teszteld a toolokat különböző bemenetekkel, beleértve a szélsőséges eseteket is  
+3. **Ellenőrizd a hibaválaszokat**: Győződj meg róla, hogy minden lehetséges hibakörülmény megfelelően kezelve van  
+4. **Teszteld az engedélyezési logikát**: Biztosítsd a megfelelő hozzáférés-ellenőrzést különböző felhasználói szerepköröknél  
+5. **Figyeld a tesztlefedettséget**: Törekedj a kritikus kódrészek magas lefedettségére  
+6. **Teszteld a streaming válaszokat**: Ellenőrizd a streaming tartalom helyes kezelését  
+7. **Szimulálj hálózati problémákat**: Teszteld a viselkedést gyenge hálózati körülmények között  
+8. **Teszteld az erőforrás-korlátokat**: Vizsgáld meg a viselkedést kvóták vagy sebességkorlátok elérésekor  
+9. **Automatizáld a regressziós teszteket**: Építs olyan tesztcsomagot, ami minden kódváltozás után lefut  
+10. **Dokumentáld a teszteseteket**: Tarts fenn világos dokumentációt a tesztforgatókönyvekről  
 
-Következő: Legjobb gyakorlatok [esettanulmányok](../09-CaseStudy/README.md)
+## Gyakori tesztelési buktatók
+
+- **Túlzott támaszkodás a sikeres útvonal tesztelésére**: Ügyelj arra, hogy a hibás eseteket is alaposan teszteld  
+- **A teljesítménytesztelés figyelmen kívül hagyása**: Azonosítsd a szűk keresztmetszeteket, mielőtt azok a termelésben problémát okoznának  
+- **Csak izolált tesztelés**: Kombináld az egység-, integrációs és end-to-end teszteket  
+- **Hiányos API lefedettség**: Biztosítsd, hogy minden végpont és funkció tesztelve legyen  
+- **Inkonzisztens tesztkörnyezetek**: Használj konténereket a tesztkörnyezetek egységességének biztosítására  
+
+## Összefoglalás
+
+Egy átfogó tesztelési stratégia elengedhetetlen a megbízható, magas minőségű MCP szerverek fejlesztéséhez. A jelen útmutatóban bemutatott legjobb gyakorlatok és tippek alkalmazásával biztosíthatod, hogy MCP megvalósításaid a legmagasabb minőségi, megbízhatósági és teljesítménybeli elvárásoknak megfeleljenek.
+
+## Főbb tanulságok
+
+1. **Tool tervezés**: Kövesd az egység felelősség elvét, használj dependency injection-t, és tervezz komponálhatóságra  
+2. **Sémaztervezés**: Készíts világos, jól dokumentált sémákat megfelelő validációs korlátokkal  
+3. **Hibakezelés**: Valósíts meg kifinomult hibakezelést, strukturált hibaválaszokat és újrapróbálkozási logikát  
+4. **Teljesítmény**: Használj cache-elést, aszinkron feldolgozást és erőforrás-korlátozást  
+5. **Biztonság**: Alkalmazz alapos bemeneti validációt, jogosultság-ellenőrzést és érzékeny adatok kezelését  
+6. **Tesztelés**: Készíts átfogó egység-, integrációs és end-to-end teszteket  
+7. **Munkafolyamat minták**: Alkalmazz bevált mintákat, mint láncok, diszpécserek és párhuzamos feldolgozás  
+
+## Gyakorlat
+
+Tervezzen egy MCP toolt és munkafolyamatot egy dokumentumfeldolgozó rendszerhez, amely:
+
+1. Több formátumú dokumentumokat fogad (PDF, DOCX, TXT)  
+2. Kinyeri a szöveget és a kulcsfontosságú információkat a dokumentumokból  
+3. Osztályozza a dokumentumokat típus és tartalom szerint  
+4. Összefoglalót készít minden dokumentumról  
+
+Valósítsa meg a tool sémákat, hibakezelést és egy munkafolyamat mintát, amely a legjobban illik ehhez a feladathoz. Gondolja át, hogyan tesztelné ezt a megvalósítást.
+
+## Források
+
+1. Csatlakozzon az MCP közösséghez az [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) oldalon, hogy naprakész legyen a legújabb fejlesztésekről  
+2. Vegyen részt nyílt forráskódú [MCP projektekben](https://github.com/modelcontextprotocol)  
+3. Alkalmazza az MCP elveket saját szervezete AI kezdeményezéseiben  
+4. Fedezze fel az iparágára szabott MCP megvalósításokat  
+5. Fontolja meg haladó tanfolyamok elvégzését specifikus MCP témákban, például multimodális integráció vagy vállalati alkalmazásintegráció  
+6. Kísérletezzen saját MCP toolok és munkafolyamatok építésével a [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) útmutató alapján  
+
+Következő: Best Practices [esettanulmányok](../09-CaseStudy/README.md)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

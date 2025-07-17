@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6f267185e24b1274dd3535d65dd1787",
-  "translation_date": "2025-07-16T22:39:44+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T09:59:41+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "pl"
 }
 -->
 # Tworzenie klienta
 
-Klienci to niestandardowe aplikacje lub skrypty, które komunikują się bezpośrednio z serwerem MCP, aby żądać zasobów, narzędzi i promptów. W przeciwieństwie do korzystania z narzędzia inspektora, które zapewnia graficzny interfejs do interakcji z serwerem, napisanie własnego klienta pozwala na programowe i zautomatyzowane działania. Umożliwia to deweloperom integrację możliwości MCP z własnymi procesami pracy, automatyzację zadań oraz tworzenie niestandardowych rozwiązań dostosowanych do konkretnych potrzeb.
+Klienci to niestandardowe aplikacje lub skrypty, które komunikują się bezpośrednio z serwerem MCP, aby żądać zasobów, narzędzi i promptów. W przeciwieństwie do korzystania z narzędzia inspektora, które oferuje graficzny interfejs do interakcji z serwerem, napisanie własnego klienta pozwala na programowe i zautomatyzowane działania. Umożliwia to deweloperom integrację możliwości MCP z własnymi procesami pracy, automatyzację zadań oraz tworzenie niestandardowych rozwiązań dopasowanych do konkretnych potrzeb.
 
 ## Przegląd
 
@@ -29,7 +29,7 @@ Aby napisać klienta, musisz wykonać następujące kroki:
 
 - **Zaimportować odpowiednie biblioteki**. Będziesz używać tej samej biblioteki co wcześniej, ale innych konstrukcji.
 - **Utworzyć instancję klienta**. Oznacza to stworzenie instancji klienta i połączenie jej z wybraną metodą transportu.
-- **Zdecydować, które zasoby wyświetlić**. Twój serwer MCP oferuje zasoby, narzędzia i promptów, musisz zdecydować, które z nich chcesz wyświetlić.
+- **Zdecydować, które zasoby wyświetlić**. Twój serwer MCP oferuje zasoby, narzędzia i prompt, musisz zdecydować, które z nich wyświetlić.
 - **Zintegrować klienta z aplikacją hosta**. Gdy poznasz możliwości serwera, musisz zintegrować klienta z aplikacją hosta, tak aby po wpisaniu promptu lub innej komendy przez użytkownika, wywoływana była odpowiednia funkcja serwera.
 
 Teraz, gdy mamy ogólne pojęcie, co zamierzamy zrobić, przyjrzyjmy się przykładowemu klientowi.
@@ -225,10 +225,10 @@ if __name__ == "__main__":
 
 W powyższym kodzie:
 
-- Zaimportowano potrzebne biblioteki.
-- Utworzono obiekt parametrów serwera, który posłuży do uruchomienia serwera, aby klient mógł się z nim połączyć.
-- Zdefiniowano metodę `run`, która wywołuje `stdio_client`, rozpoczynając sesję klienta.
-- Utworzono punkt wejścia, gdzie metoda `run` jest przekazywana do `asyncio.run`.
+- Zaimportowano potrzebne biblioteki
+- Utworzono obiekt parametrów serwera, którego użyjemy do uruchomienia serwera, aby móc się z nim połączyć klientem.
+- Zdefiniowano metodę `run`, która wywołuje `stdio_client`, rozpoczynającą sesję klienta.
+- Utworzono punkt wejścia, gdzie przekazujemy metodę `run` do `asyncio.run`.
 
 ### .NET
 
@@ -260,7 +260,7 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 W powyższym kodzie:
 
 - Zaimportowano potrzebne biblioteki.
-- Utworzono transport stdio oraz klienta `mcpClient`. Ten ostatni posłuży do wyświetlania i wywoływania funkcji na serwerze MCP.
+- Utworzono transport stdio oraz klienta `mcpClient`. Ten ostatni będzie używany do listowania i wywoływania funkcji na serwerze MCP.
 
 Uwaga, w "Arguments" możesz wskazać albo plik *.csproj*, albo plik wykonywalny.
 
@@ -359,11 +359,11 @@ W powyższym kodzie:
 - Użyto `ping()`, aby zweryfikować, że połączenie z serwerem działa.
 - `ListToolsResult` zawiera informacje o wszystkich narzędziach, w tym ich nazwy, opisy i schematy wejściowe.
 
-Świetnie, mamy teraz wszystkie funkcje. Pytanie brzmi: kiedy ich używać? Ten klient jest dość prosty, co oznacza, że musimy wywoływać funkcje jawnie, gdy ich potrzebujemy. W kolejnym rozdziale stworzymy bardziej zaawansowanego klienta, który będzie miał dostęp do własnego dużego modelu językowego (LLM). Na razie zobaczmy, jak wywołać funkcje na serwerze:
+Świetnie, mamy teraz wszystkie funkcje. Pytanie brzmi: kiedy ich używać? Ten klient jest dość prosty, co oznacza, że musimy wywoływać funkcje explicite, gdy ich potrzebujemy. W kolejnym rozdziale stworzymy bardziej zaawansowanego klienta, który będzie miał dostęp do własnego dużego modelu językowego (LLM). Na razie jednak zobaczmy, jak wywołać funkcje na serwerze:
 
 ### -4- Wywoływanie funkcji
 
-Aby wywołać funkcje, musimy podać odpowiednie argumenty, a w niektórych przypadkach także nazwę wywoływanej funkcji.
+Aby wywołać funkcje, musimy podać odpowiednie argumenty, a w niektórych przypadkach nazwę tego, co chcemy wywołać.
 
 ### TypeScript
 
@@ -410,7 +410,7 @@ W powyższym kodzie:
 
     Nasza wartość `uri` `file://example.txt` odpowiada `file://{name}` na serwerze. `example.txt` zostanie przypisane do `name`.
 
-- Wywołujemy narzędzie, podając jego `name` oraz `arguments` w ten sposób:
+- Wywołujemy narzędzie, podając jego `name` i `arguments` w ten sposób:
 
     ```typescript
     const result = await client.callTool({
@@ -421,7 +421,7 @@ W powyższym kodzie:
     });
     ```
 
-- Pobieramy prompt, wywołując `getPrompt()` z `name` i `arguments`. Kod po stronie serwera wygląda tak:
+- Pobieramy prompt, wywołując `getPrompt()` z `name` i `arguments`. Kod serwera wygląda tak:
 
     ```typescript
     server.prompt(
@@ -468,7 +468,7 @@ W powyższym kodzie:
 - Wywołano zasób o nazwie `greeting` za pomocą `read_resource`.
 - Wywołano narzędzie o nazwie `add` za pomocą `call_tool`.
 
-### C#
+### .NET
 
 1. Dodajmy kod do wywołania narzędzia:
 
@@ -479,7 +479,7 @@ W powyższym kodzie:
       cancellationToken:CancellationToken.None);
   ```
 
-1. Aby wypisać wynik, oto kod do obsługi tego:
+2. Aby wypisać wynik, oto kod do obsługi tego:
 
   ```csharp
   Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
@@ -570,7 +570,7 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 W tym zadaniu wykorzystasz zdobytą wiedzę do stworzenia własnego klienta.
 
-Oto serwer, którego możesz użyć i wywołać go za pomocą swojego klienta. Spróbuj dodać więcej funkcji do serwera, aby był ciekawszy.
+Oto serwer, którego możesz użyć i do którego musisz się odwołać za pomocą swojego klienta. Spróbuj dodać więcej funkcji do serwera, aby był ciekawszy.
 
 ### TypeScript
 
@@ -674,25 +674,127 @@ public static class CalculatorTool
 }
 ```
 
-Zobacz ten projekt, aby dowiedzieć się, jak [dodawać promptów i zasobów](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
+Zobacz ten projekt, aby dowiedzieć się, jak [dodawać prompt i zasoby](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
 
-Sprawdź także ten link, aby dowiedzieć się, jak wywoływać [prompty i zasoby](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
+Sprawdź też ten link, aby dowiedzieć się, jak wywoływać [prompt i zasoby](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
 
 ## Rozwiązanie
 
-[Rozwiązanie](./solution/README.md)
+**Folder rozwiązania** zawiera kompletne, gotowe do uruchomienia implementacje klienta, które demonstrują wszystkie koncepcje omówione w tym tutorialu. Każde rozwiązanie zawiera zarówno kod klienta, jak i serwera, zorganizowany w osobnych, samodzielnych projektach.
+
+### 📁 Struktura rozwiązania
+
+Katalog rozwiązania jest zorganizowany według języka programowania:
+
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 Co zawiera każde rozwiązanie
+
+Każde rozwiązanie specyficzne dla języka oferuje:
+
+- **Kompletną implementację klienta** ze wszystkimi funkcjami z tutoriala
+- **Działającą strukturę projektu** z odpowiednimi zależnościami i konfiguracją
+- **Skrypty do budowania i uruchamiania** dla łatwej konfiguracji i wykonania
+- **Szczegółowy README** z instrukcjami specyficznymi dla języka
+- **Przykłady obsługi błędów** i przetwarzania wyników
+
+### 📖 Korzystanie z rozwiązań
+
+1. **Przejdź do folderu z wybranym językiem**:
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **Postępuj zgodnie z instrukcjami w README** w każdym folderze, aby:
+   - Zainstalować zależności
+   - Zbudować projekt
+   - Uruchomić klienta
+
+3. **Przykładowy wynik**, który powinieneś zobaczyć:
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+Pełną dokumentację i instrukcje krok po kroku znajdziesz w: **[📖 Dokumentacja rozwiązania](./solution/README.md)**
+
+## 🎯 Kompleksowe przykłady
+
+Udostępniliśmy kompletne, działające implementacje klienta dla wszystkich języków programowania omawianych w tym tutorialu. Przykłady te demonstrują pełną funkcjonalność opisaną powyżej i mogą służyć jako wzorce lub punkty wyjścia do własnych projektów.
+
+### Dostępne kompletne przykłady
+
+| Język    | Plik                          | Opis                                                        |
+|----------|-------------------------------|-------------------------------------------------------------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java)       | Kompletny klient Java używający transportu SSE z obsługą błędów |
+| **C#**   | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs)       | Kompletny klient C# używający transportu stdio z automatycznym uruchamianiem serwera |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Kompletny klient TypeScript z pełnym wsparciem protokołu MCP |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py)       | Kompletny klient Python używający wzorców async/await         |
+
+Każdy kompletny przykład zawiera:
+
+- ✅ **Nawiązanie połączenia** i obsługę błędów
+- ✅ **Odkrywanie serwera** (narzędzia, zasoby, prompt tam gdzie dotyczy)
+- ✅ **Operacje kalkulatora** (dodawanie, odejmowanie, mnożenie, dzielenie, pomoc)
+- ✅ **Przetwarzanie wyników** i formatowany output
+- ✅ **Kompleksową obsługę błędów**
+- ✅ **Czysty, udokumentowany kod** z komentarzami krok po kroku
+
+### Jak zacząć z kompletnymi przykładami
+
+1. **Wybierz preferowany język** z powyższej tabeli
+2. **Przejrzyj kompletny plik przykładu**, aby zrozumieć pełną implementację
+3. **Uruchom przykład** zgodnie z instrukcjami w [`complete_examples.md`](./complete_examples.md)
+4. **Modyfikuj i rozszerzaj** przykład pod kątem własnych potrzeb
+
+Szczegółową dokumentację dotyczącą uruchamiania i dostosowywania tych przykładów znajdziesz w: **[📖 Dokumentacja kompletnych przykładów](./complete_examples.md)**
+
+### 💡 Rozwiązanie vs. Kompleksowe przykłady
+
+| **Folder rozwiązania**       | **Kompleksowe przykłady**       |
+|------------------------------|--------------------------------|
+| Pełna struktura projektu z plikami budowania | Implementacje w pojedynczych plikach |
+| Gotowe do uruchomienia z zależnościami | Skoncentrowane przykłady kodu |
+| Konfiguracja produkcyjna     | Materiały edukacyjne           |
+| Narzędzia specyficzne dla języka | Porównanie międzyjęzykowe       |
+Oba podejścia są wartościowe – używaj **folderu rozwiązania** do kompletnych projektów, a **kompletnych przykładów** do nauki i odniesienia.
 
 ## Najważniejsze wnioski
 
-Najważniejsze informacje dotyczące klientów w tym rozdziale to:
+Najważniejsze wnioski z tego rozdziału dotyczą klientów:
 
-- Mogą służyć zarówno do odkrywania, jak i wywoływania funkcji na serwerze.
-- Mogą uruchomić serwer podczas własnego startu (jak w tym rozdziale), ale klienci mogą też łączyć się z już działającymi serwerami.
-- To świetny sposób na przetestowanie możliwości serwera obok alternatyw, takich jak Inspektor, opisany w poprzednim rozdziale.
+- Mogą być używane zarówno do odkrywania, jak i wywoływania funkcji na serwerze.
+- Mogą uruchomić serwer podczas własnego startu (tak jak w tym rozdziale), ale klienci mogą też łączyć się z już działającymi serwerami.
+- To świetny sposób na przetestowanie możliwości serwera obok alternatyw, takich jak Inspector, opisany w poprzednim rozdziale.
 
 ## Dodatkowe zasoby
 
-- [Tworzenie klientów w MCP](https://modelcontextprotocol.io/quickstart/client)
+- [Budowanie klientów w MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Przykłady
 
@@ -704,7 +806,7 @@ Najważniejsze informacje dotyczące klientów w tym rozdziale to:
 
 ## Co dalej
 
-- Następny rozdział: [Tworzenie klienta z LLM](../03-llm-client/README.md)
+- Następny: [Tworzenie klienta z LLM](../03-llm-client/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5067c45550201d577437ed7315a51307",
-  "translation_date": "2025-07-16T21:51:23+00:00",
+  "original_hash": "35fe22b9167cb7be62fddbcf53a255f4",
+  "translation_date": "2025-07-17T09:55:39+00:00",
   "source_file": "README.md",
   "language_code": "pt"
 }
@@ -55,7 +55,7 @@ Seja você um desenvolvedor de IA, arquiteto de sistemas ou engenheiro de softwa
 
 Prepare-se para dois dias de conhecimento técnico aprofundado, ligação à comunidade e aprendizagem prática no MCP Dev Days, um evento virtual dedicado ao Model Context Protocol (MCP) — o padrão emergente que liga modelos de IA às ferramentas que utilizam.
 
-➡️ [Registe-se no MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+➡️ [Registe-se para o MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
 Pode assistir ao MCP Dev Days registando-se na nossa página do evento: https://aka.ms/mcpdevdays. A partir daí, poderá juntar-se a uma transmissão ao vivo no YouTube ou Twitch. Todo o conteúdo será gravado e ficará disponível posteriormente no canal Microsoft Developer no YouTube. O código-fonte das demonstrações também estará disponível no GitHub.
 
@@ -69,7 +69,7 @@ Pode assistir ao MCP Dev Days registando-se na nossa página do evento: https://
 Focado em capacitar os desenvolvedores a usar MCP no seu fluxo de trabalho e celebrar a incrível comunidade MCP. Teremos a participação de membros da comunidade e parceiros como Arcade, Block, Okta e Neon para mostrar como colaboram com a Microsoft para moldar um ecossistema MCP aberto e extensível. Demonstrações reais em VS Code, Visual Studio, GitHub Copilot e ferramentas populares da comunidade  
 Fluxos de trabalho práticos e orientados por contexto  
 Sessões e insights liderados pela comunidade  
-Quer esteja a começar com MCP ou já a desenvolver com ele, o Dia 1 vai inspirar e oferecer dicas práticas.
+Quer esteja a começar com MCP ou já a desenvolver com ele, o Dia 1 preparará o terreno com inspiração e dicas práticas.
 
 #### Dia 2: Construa Servidores MCP com Confiança
 
@@ -83,7 +83,7 @@ Destinado a construtores MCP. Vamos aprofundar estratégias de implementação e
 - Uso de blocos de construção como Functions, ACA e API Management  
 - Alinhamento de registos e ferramentas (1P + 3P)
 
-Se é desenvolvedor, construtor de ferramentas ou estratega de produtos de IA, este dia está repleto dos insights necessários para criar soluções MCP escaláveis, seguras e preparadas para o futuro.
+Se é desenvolvedor, construtor de ferramentas ou estratega de produtos de IA, este dia está repleto dos insights necessários para construir soluções MCP escaláveis, seguras e preparadas para o futuro.
 
 ## 🧭 Visão Geral do Currículo MCP
 
@@ -96,7 +96,7 @@ Se é desenvolvedor, construtor de ferramentas ou estratega de produtos de IA, e
 | 01 | Conceitos Básicos Explicados | Exploração aprofundada dos conceitos centrais do MCP | [Ler mais](./01-CoreConcepts/README.md) |
 | 02 | Segurança no MCP | Ameaças de segurança e melhores práticas | [Ler mais](./02-Security/README.md) |
 | 03 | Começar com MCP | Configuração do ambiente, servidores/clientes básicos, integração | [Ler mais](./03-GettingStarted/README.md) |
-| **Módulo 3: Construindo o Seu Primeiro Servidor & Cliente** | | | |
+| **Módulo 3: Construir o Seu Primeiro Servidor & Cliente** | | | |
 | 3.1 | Primeiro Servidor | Crie o seu primeiro servidor MCP | [Guia](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | Primeiro Cliente | Desenvolva um cliente MCP básico | [Guia](./03-GettingStarted/02-client/README.md) |
 | 3.3 | Cliente com LLM | Integre modelos de linguagem de grande escala | [Guia](./03-GettingStarted/03-llm-client/README.md) |
@@ -105,13 +105,13 @@ Se é desenvolvedor, construtor de ferramentas ou estratega de produtos de IA, e
 | 3.6 | Streaming HTTP | Implemente streaming HTTP no MCP | [Guia](./03-GettingStarted/06-http-streaming/README.md) |
 | 3.7 | AI Toolkit | Use o AI Toolkit com MCP | [Guia](./03-GettingStarted/07-aitk/README.md) |
 | 3.8 | Testes | Teste a sua implementação de servidor MCP | [Guia](./03-GettingStarted/08-testing/README.md) |
-| 3.9 | Deployment | Faça o deploy dos servidores MCP para produção | [Guia](./03-GettingStarted/09-deployment/README.md) |
+| 3.9 | Deploy | Faça o deploy dos servidores MCP para produção | [Guia](./03-GettingStarted/09-deployment/README.md) |
 | **Módulos 4-5: Prático & Avançado** | | | |
 | 04 | Implementação Prática | SDKs, debugging, testes, templates reutilizáveis de prompts | [Ler mais](./04-PracticalImplementation/README.md) |
 | 05 | Tópicos Avançados no MCP | IA multimodal, escalabilidade, uso empresarial | [Ler mais](./05-AdvancedTopics/README.md) |
-| 5.1 | Integração com Azure | Integração MCP com Azure | [Guia](./05-AdvancedTopics/mcp-integration/README.md) |
+| 5.1 | Integração Azure | Integração MCP com Azure | [Guia](./05-AdvancedTopics/mcp-integration/README.md) |
 | 5.2 | Multimodalidade | Trabalhar com múltiplas modalidades | [Guia](./05-AdvancedTopics/mcp-multi-modality/README.md) |
-| 5.3 | Demonstração OAuth2 | Implementar autenticação OAuth2 | [Guia](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+| 5.3 | Demo OAuth2 | Implementar autenticação OAuth2 | [Guia](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
 | 5.4 | Contextos Raiz | Compreender e implementar contextos raiz | [Guia](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | Roteamento | Estratégias de roteamento MCP | [Guia](./05-AdvancedTopics/mcp-routing/README.md) |
 | 5.6 | Amostragem | Técnicas de amostragem no MCP | [Guia](./05-AdvancedTopics/mcp-sampling/README.md) |
@@ -128,7 +128,7 @@ Se é desenvolvedor, construtor de ferramentas ou estratega de produtos de IA, e
 | 07 | Lições da Adoção Inicial | Histórias de implementação no mundo real | [Guia](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | Boas Práticas para MCP | Performance, tolerância a falhas, resiliência | [Guia](./08-BestPractices/README.md) |
 | 09 | Estudos de Caso MCP | Exemplos práticos de implementação | [Guia](./09-CaseStudy/README.md) |
-| 10 | Workshop Prático | Construção de um Servidor MCP com AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
+| 10 | Workshop Prático | Construção de um Servidor MCP com AI Toolkit | [Laboratório](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
 ### 💻 Projetos de Código de Exemplo
 
@@ -147,10 +147,10 @@ Se é desenvolvedor, construtor de ferramentas ou estratega de produtos de IA, e
 | Linguagem | Descrição | Link |
 |----------|-------------|------|
 | C# | Exemplo Avançado | [Ver Código](./04-PracticalImplementation/samples/csharp/README.md) |
-| Java | Exemplo de App em Container | [Ver Código](./04-PracticalImplementation/samples/java/containerapp/README.md) |
+| Java | Exemplo de Aplicação Container | [Ver Código](./04-PracticalImplementation/samples/java/containerapp/README.md) |
 | JavaScript | Exemplo Avançado | [Ver Código](./04-PracticalImplementation/samples/javascript/README.md) |
 | Python | Implementação Complexa | [Ver Código](../../04-PracticalImplementation/samples/python/mcp_sample.py) |
-| TypeScript | Exemplo em Container | [Ver Código](./04-PracticalImplementation/samples/typescript/README.md) |
+| TypeScript | Exemplo Container | [Ver Código](./04-PracticalImplementation/samples/typescript/README.md) |
 
 
 ## 🎯 Pré-requisitos para Aprender MCP
@@ -166,11 +166,11 @@ Para tirar o máximo proveito deste currículo, deve ter:
 
 ## 📚 Guia de Estudo & Recursos
 
-Este repositório inclui vários recursos para ajudar na sua navegação e aprendizagem eficaz:
+Este repositório inclui vários recursos para ajudar na sua aprendizagem e navegação eficaz:
 
 ### Guia de Estudo
 
-Um [Guia de Estudo](./study_guide.md) completo está disponível para ajudar a navegar neste repositório de forma eficaz. O guia inclui:
+Um [Guia de Estudo](./study_guide.md) abrangente está disponível para o ajudar a navegar neste repositório de forma eficaz. O guia inclui:
 
 - Um mapa visual do currículo com todos os tópicos abordados  
 - Descrição detalhada de cada secção do repositório  
@@ -185,7 +185,7 @@ Mantemos um [Registo de Alterações](./changelog.md) detalhado que acompanha to
 - Novos conteúdos adicionados  
 - Alterações estruturais  
 - Melhorias de funcionalidades  
-- Atualizações na documentação
+- Atualizações de documentação
 
 ## 🛠️ Como Usar Este Currículo de Forma Eficaz
 
@@ -212,9 +212,9 @@ Acordo de Licença de Contribuidor (CLA) declarando que tem o direito e efetivam
 os direitos para usar a sua contribuição. Para detalhes, visite  
 <https://cla.opensource.microsoft.com>.
 
-Quando submeter um pull request, um bot CLA determinará automaticamente se precisa fornecer  
+Quando submeter um pull request, um bot CLA determinará automaticamente se precisa de fornecer  
 um CLA e marcará o PR adequadamente (ex.: verificação de estado, comentário). Basta seguir as instruções  
-fornecidas pelo bot. Só precisará fazer isto uma vez para todos os repositórios que usam o nosso CLA.
+fornecidas pelo bot. Só precisará de fazer isto uma vez para todos os repositórios que usam o nosso CLA.
 
 Este projeto adotou o [Código de Conduta de Código Aberto da Microsoft](https://opensource.microsoft.com/codeofconduct/).  
 Para mais informações, consulte as [FAQ do Código de Conduta](https://opensource.microsoft.com/codeofconduct/faq/) ou  
@@ -228,8 +228,7 @@ O repositório está organizado da seguinte forma:
 - **images/**: Diagramas e ilustrações usados ao longo do currículo  
 - **translations/**: Suporte multilíngue com traduções automáticas  
 - **translated_images/**: Versões localizadas de diagramas e ilustrações  
-- **alternative_layouts/**: Formatos alternativos de apresentação do conteúdo do currículo  
-- **study_guide.md**: Guia completo para navegar no repositório  
+- **study_guide.md**: Guia abrangente para navegar no repositório  
 - **changelog.md**: Registo de todas as alterações significativas nos materiais do currículo  
 - **mcp.json**: Ficheiro de configuração para a especificação MCP  
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Documentos de governação do projeto
@@ -253,11 +252,11 @@ A nossa equipa produz outros cursos! Veja:
 - [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
 
 
-## ™️ Aviso de Marca Registada
+## ™️ Aviso de Marca
 
-Este projeto pode conter marcas registadas ou logótipos de projetos, produtos ou serviços. O uso autorizado das marcas ou logótipos da Microsoft está sujeito e deve seguir as  
+Este projeto pode conter marcas registadas ou logótipos de projetos, produtos ou serviços. O uso autorizado das marcas ou logótipos Microsoft está sujeito e deve seguir as  
 [Diretrizes de Marcas e Identidade da Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-O uso de marcas ou logótipos da Microsoft em versões modificadas deste projeto não deve causar confusão nem implicar patrocínio da Microsoft.  
+O uso de marcas ou logótipos Microsoft em versões modificadas deste projeto não deve causar confusão nem implicar patrocínio da Microsoft.  
 Qualquer uso de marcas ou logótipos de terceiros está sujeito às políticas desses terceiros.
 
 **Aviso Legal**:  

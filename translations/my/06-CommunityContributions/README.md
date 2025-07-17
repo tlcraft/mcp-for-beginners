@@ -1,236 +1,152 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3c6e23d98c958565f6adee083b173ba0",
-  "translation_date": "2025-07-14T04:05:36+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T12:30:26+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "my"
 }
 -->
 # Community and Contributions
 
-## အနှစ်ချုပ်
+## Overview
 
-ဒီသင်ခန်းစာမှာ MCP အသိုင်းအဝိုင်းနဲ့ ပူးပေါင်းဆောင်ရွက်ပုံ၊ MCP ပတ်ဝန်းကျင်ထဲမှာ အထောက်အကူပြုပုံနဲ့ ပူးပေါင်းဖွံ့ဖြိုးတိုးတက်ရေးအတွက် အကောင်းဆုံး လမ်းညွှန်ချက်တွေကို လေ့လာမှာဖြစ်ပါတယ်။ MCP open-source ပရောဂျက်တွေမှာ ပါဝင်ဆောင်ရွက်နည်းကို နားလည်ထားခြင်းက ဒီနည်းပညာရဲ့ အနာဂတ်ကို ဖန်တီးလိုသူတွေအတွက် အရေးကြီးပါတယ်။
+ဒီသင်ခန်းစာမှာ MCP community နဲ့ ဘယ်လိုပူးပေါင်းဆောင်ရွက်ရမယ်၊ MCP ecosystem ကို ဘယ်လိုထောက်ပံ့ပေးရမယ်၊ နှင့် ပူးပေါင်းဖွံ့ဖြိုးတိုးတက်မှုအတွက် အကောင်းဆုံးလမ်းညွှန်ချက်တွေကို လိုက်နာရမယ်ဆိုတာကို အဓိကထားပြောပြမှာဖြစ်ပါတယ်။ MCP open-source project တွေမှာ ပါဝင်ဆောင်ရွက်နည်းကို နားလည်ထားခြင်းက ဒီနည်းပညာရဲ့ အနာဂတ်ကို ဖန်တီးလိုသူတွေအတွက် အရေးကြီးပါတယ်။
 
-## သင်ယူရမည့် ရည်မှန်းချက်များ
+## Learning Objectives
 
-ဒီသင်ခန်းစာပြီးဆုံးချိန်မှာ သင်သည်
-- MCP အသိုင်းအဝိုင်းနဲ့ ပတ်ဝန်းကျင်ဖွဲ့စည်းပုံကို နားလည်နိုင်မည်
-- MCP အသိုင်းအဝိုင်းဖိုရမ်များနှင့် ဆွေးနွေးပွဲများတွင် ထိရောက်စွာ ပါဝင်ဆောင်ရွက်နိုင်မည်
-- MCP open-source repository များတွင် အထောက်အကူပြုနိုင်မည်
-- ကိုယ်ပိုင် MCP ကိရိယာများ ဖန်တီးပြီး မျှဝေနိုင်မည်
-- MCP ဖွံ့ဖြိုးတိုးတက်ရေးနှင့် ပူးပေါင်းဆောင်ရွက်မှုအတွက် အကောင်းဆုံး လမ်းညွှန်ချက်များကို လိုက်နာနိုင်မည်
+ဒီသင်ခန်းစာပြီးဆုံးတဲ့အချိန်မှာ သင်မှာရရှိနိုင်မယ့် အတတ်ပညာတွေကတော့ -
+- MCP community နဲ့ ecosystem ရဲ့ ဖွဲ့စည်းပုံကို နားလည်ခြင်း
+- MCP community forum နဲ့ ဆွေးနွေးပွဲတွေမှာ ထိရောက်စွာ ပါဝင်ဆောင်ရွက်ခြင်း
+- MCP open-source repository တွေကို ထောက်ပံ့ပေးခြင်း
+- ကိုယ်ပိုင် MCP tools နဲ့ servers တွေ ဖန်တီးပြီး မျှဝေခြင်း
+- MCP ဖွံ့ဖြိုးတိုးတက်မှုနဲ့ ပူးပေါင်းဆောင်ရွက်မှုအတွက် အကောင်းဆုံးလမ်းညွှန်ချက်တွေကို လိုက်နာခြင်း
+- MCP ဖွံ့ဖြိုးတိုးတက်မှုအတွက် community resource နဲ့ framework တွေ ရှာဖွေတွေ့ရှိခြင်း
 
-## MCP အသိုင်းအဝိုင်း ပတ်ဝန်းကျင်
+## The MCP Community Ecosystem
 
-MCP ပတ်ဝန်းကျင်မှာ protocol ကို တိုးတက်အောင် လုပ်ဆောင်နေကြတဲ့ အစိတ်အပိုင်းများနဲ့ ပါဝင်သူများစွာ ပါဝင်ပါတယ်။
+MCP ecosystem က protocol ကို တိုးတက်အောင် လုပ်ဆောင်နေတဲ့ အစိတ်အပိုင်းတွေနဲ့ ပါဝင်သူတွေ အမျိုးမျိုးပါဝင်တဲ့ စနစ်တစ်ခုဖြစ်ပါတယ်။
 
-### အဓိက အသိုင်းအဝိုင်း အစိတ်အပိုင်းများ
+### Key Community Components
 
-1. **Core Protocol Maintainers**: Microsoft နဲ့ အခြားအဖွဲ့အစည်းများ၊ MCP core specification နဲ့ reference implementation များကို ထိန်းသိမ်းသူများ
-2. **Tool Developers**: MCP ကိရိယာများ ဖန်တီးသူများနှင့် အဖွဲ့များ
-3. **Integration Providers**: MCP ကို သူတို့ထုတ်ကုန်များနှင့် ဝန်ဆောင်မှုများထဲတွင် ပေါင်းစပ်သုံးစွဲသူ ကုမ္ပဏီများ
-4. **End Users**: MCP ကို သူတို့ application များတွင် အသုံးပြုသူ developer များနှင့် အဖွဲ့အစည်းများ
-5. **Contributors**: ကုဒ်၊ စာရွက်စာတမ်း၊ သို့မဟုတ် အခြားအရင်းအမြစ်များ ပံ့ပိုးပေးသူ အသိုင်းအဝိုင်း အဖွဲ့ဝင်များ
+1. **Core Protocol Maintainers**: တရားဝင် [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) က MCP core specification နဲ့ reference implementation တွေကို ထိန်းသိမ်းစောင့်ရှောက်နေသူများ
+2. **Tool Developers**: MCP tools နဲ့ servers တွေ ဖန်တီးသူများနှင့် အဖွဲ့များ
+3. **Integration Providers**: MCP ကို သူတို့ထုတ်ကုန်နဲ့ ဝန်ဆောင်မှုတွေထဲသို့ ပေါင်းစည်းသုံးစွဲသူ ကုမ္ပဏီများ
+4. **End Users**: MCP ကို သူတို့ application တွေမှာ အသုံးပြုသူ developer များနှင့် အဖွဲ့အစည်းများ
+5. **Contributors**: ကုဒ်၊ စာရွက်စာတမ်း၊ သို့မဟုတ် အခြား resource များကို ပံ့ပိုးထောက်ပံ့သူ community အဖွဲ့ဝင်များ
 
-### အသိုင်းအဝိုင်း အရင်းအမြစ်များ
+### Community Resources
 
-#### တရားဝင် ချန်နယ်များ
+#### Official Channels
 
-- [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+- [MCP GitHub Organization](https://github.com/modelcontextprotocol)
 - [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [MCP Specification](https://modelcontextprotocol.io/docs/specification)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP Examples & Servers Repository](https://github.com/modelcontextprotocol/servers)
 
-#### အသိုင်းအဝိုင်း ဦးဆောင် ထောက်ပံ့မှုများ
+#### Community-Driven Resources
 
+- [MCP Clients](https://modelcontextprotocol.io/clients) - MCP integration များကို ထောက်ပံ့တဲ့ client များစာရင်း
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - community မှ ဖန်တီးထားတဲ့ MCP servers များ စုစည်းတိုးတက်နေသောစာရင်း
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - MCP servers များကို စုစည်းထားသော curated စာရင်း
+- [PulseMCP](https://www.pulsemcp.com/) - MCP resource တွေ ရှာဖွေရန် community hub နဲ့ newsletter
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - MCP developer တွေနဲ့ ဆက်သွယ်ရန်
 - ဘာသာစကားအလိုက် SDK implementation များ
-- ဆာဗာ implementation များနှင့် ကိရိယာစာကြည့်တိုက်များ
 - ဘလော့ဂ်ပို့စ်များနှင့် သင်ခန်းစာများ
-- အသိုင်းအဝိုင်းဖိုရမ်များနှင့် လူမှုမီဒီယာ ဆွေးနွေးပွဲများ
 
-## MCP တွင် ပံ့ပိုးဆောင်ရွက်ခြင်း
+## Contributing to MCP
 
-### ပံ့ပိုးမှု အမျိုးအစားများ
+### Types of Contributions
 
-MCP ပတ်ဝန်းကျင်မှာ အမျိုးမျိုးသော ပံ့ပိုးမှုများကို လက်ခံပါတယ်-
+MCP ecosystem မှာ အမျိုးမျိုးသော ပံ့ပိုးမှုများကို ကြိုဆိုပါတယ် -
 
-1. **ကုဒ် ပံ့ပိုးမှုများ**:
+1. **Code Contributions**:
    - Core protocol တိုးတက်မှုများ
-   - အမှားပြင်ဆင်မှုများ
-   - ကိရိယာများ အကောင်အထည်ဖော်ခြင်း
-   - ဘာသာစကားအမျိုးမျိုးဖြင့် client/server စာကြည့်တိုက်များ
+   - Bug ပြင်ဆင်မှုများ
+   - Tool နဲ့ server implementation များ
+   - client/server libraries များကို ဘာသာစကားအမျိုးမျိုးဖြင့် ဖန်တီးခြင်း
 
-2. **စာရွက်စာတမ်းများ**:
+2. **Documentation**:
    - ရှိပြီးသား စာရွက်စာတမ်းများ တိုးတက်အောင် ပြုပြင်ခြင်း
    - သင်ခန်းစာများနှင့် လမ်းညွှန်များ ဖန်တီးခြင်း
    - စာရွက်စာတမ်းများ ဘာသာပြန်ခြင်း
    - ဥပမာများနှင့် နမူနာ application များ ဖန်တီးခြင်း
 
-3. **အသိုင်းအဝိုင်း ထောက်ပံ့မှု**:
-   - ဖိုရမ်များတွင် မေးခွန်းများ ဖြေကြားခြင်း
+3. **Community Support**:
+   - forum နဲ့ ဆွေးနွေးပွဲများမှာ မေးခွန်းများကို ဖြေကြားခြင်း
    - စမ်းသပ်ပြီး ပြဿနာများကို အစီရင်ခံခြင်း
-   - အသိုင်းအဝိုင်း အခမ်းအနားများ စီစဉ်ခြင်း
+   - community event များ စီစဉ်ခြင်း
    - အသစ်ဝင်လာသူများကို လမ်းညွှန်ပေးခြင်း
 
-### ပံ့ပိုးမှု လုပ်ငန်းစဉ်: Core Protocol
+### Contribution Process: Core Protocol
 
-Core MCP protocol သို့မဟုတ် တရားဝင် implementation များတွင် ပံ့ပိုးရန်-
+core MCP protocol သို့မဟုတ် တရားဝင် implementation များကို ပံ့ပိုးရန် [official contributing guidelines](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) မှ အောက်ပါ 원칙များကို လိုက်နာပါ -
 
-#### .NET ဥပမာ: Protocol တိုးတက်မှု ပံ့ပိုးခြင်း
+1. **Simplicity and Minimalism**: MCP specification မှာ အသစ်ထည့်သွင်းရာမှာ အရမ်းတိကျပြီး ရိုးရှင်းမှုကို ဦးစားပေးပါတယ်။ specification မှာ အရာတွေ ထည့်သွင်းရတာ ပိုလွယ်ကူပြီး ဖယ်ရှားရတာ ပိုခက်ခဲပါတယ်။
 
-```csharp
-// Example contribution to MCP protocol: Adding support for binary data streams
-// This would be part of a pull request to the core MCP repository
+2. **Concrete Approach**: specification ပြောင်းလဲမှုတွေကို အကြံပေးရာမှာ သက်ဆိုင်ရာ implementation ပြဿနာတွေကို အခြေခံရမယ်၊ အကြံဉာဏ်အလွဲအလွန် မဟုတ်ရပါ။
 
-namespace Microsoft.Mcp.Protocol
-{
-    // New interface for binary data handling in MCP
-    public interface IBinaryDataHandler
-    {
-        /// <summary>
-        /// Processes a binary data stream
-        /// </summary>
-        /// <param name="binaryDataStream">The binary data stream to process</param>
-        /// <param name="metadata">Metadata about the binary data</param>
-        /// <returns>A result indicating the processing outcome</returns>
-        Task<BinaryProcessingResult> ProcessBinaryDataAsync(
-            Stream binaryDataStream, 
-            BinaryDataMetadata metadata);
-    }
-    
-    // New metadata class for binary data
-    public class BinaryDataMetadata
-    {
-        /// <summary>
-        /// MIME type of the binary data
-        /// </summary>
-        public string ContentType { get; set; }
-        
-        /// <summary>
-        /// Size of the binary data in bytes
-        /// </summary>
-        public long ContentLength { get; set; }
-        
-        /// <summary>
-        /// Optional filename for the binary data
-        /// </summary>
-        public string Filename { get; set; }
-        
-        /// <summary>
-        /// Additional metadata as key-value pairs
-        /// </summary>
-        public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-    }
-    
-    // Result class for binary processing
-    public class BinaryProcessingResult
-    {
-        /// <summary>
-        /// Whether the processing was successful
-        /// </summary>
-        public bool Success { get; set; }
-        
-        /// <summary>
-        /// Any error message if processing failed
-        /// </summary>
-        public string ErrorMessage { get; set; }
-        
-        /// <summary>
-        /// Results of the processing as key-value pairs
-        /// </summary>
-        public IDictionary<string, object> Results { get; set; } = new Dictionary<string, object>();
-    }
-}
+3. **Stages of a Proposal**:
+   - Define: ပြဿနာကို ရှာဖွေပြီး MCP အသုံးပြုသူများအနေနဲ့ တူညီတဲ့ ပြဿနာရှိမရှိ စစ်ဆေးခြင်း
+   - Prototype: နမူနာဖြေရှင်းချက် တည်ဆောက်ပြီး လက်တွေ့အသုံးချမှုကို ပြသခြင်း
+   - Write: prototype အပေါ် အခြေခံပြီး specification proposal ရေးသားခြင်း
+
+### Development Environment Setup
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
+cd modelcontextprotocol
+
+# Install dependencies
+npm install
+
+# For schema changes, validate and generate schema.json:
+npm run check:schema:ts
+npm run generate:schema
+
+# For documentation changes
+npm run check:docs
+npm run format
+
+# Preview documentation locally (optional):
+npm run serve:docs
 ```
 
-#### Java ဥပမာ: အမှားပြင်ဆင်မှု ပံ့ပိုးခြင်း
+### Example: Contributing a Bug Fix
 
-```java
-package com.mcp.tools;
-
-// Original code with bug
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Bug: This doesn't properly validate nested objects
-        // Original implementation:
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Other methods...
+```javascript
+// Original code with bug in the typescript-sdk
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Bug: Missing property validation
+  // Current implementation:
+  const hasName = 'name' in resource;
+  const hasSchema = 'schema' in resource;
+  
+  return hasName && hasSchema;
 }
 
 // Fixed implementation in a contribution
-public class ToolParameterValidator {
-    public boolean validateParameters(Map<String, Object> parameters, Object schema) {
-        if (schema == null) {
-            return true; // No schema means no validation needed
-        }
-        
-        // Get required properties from schema
-        List<String> required = new ArrayList<>();
-        if (schema instanceof Map) {
-            Map<String, Object> schemaMap = (Map<String, Object>) schema;
-            if (schemaMap.containsKey("required") && schemaMap.get("required") instanceof List) {
-                required = (List<String>) schemaMap.get("required");
-            }
-        }
-        
-        // Check for required properties
-        for (String requiredProp : required) {
-            if (!parameters.containsKey(requiredProp)) {
-                return false; // Missing required property
-            }
-        }
-        
-        // Validate each parameter against schema
-        for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-            
-            if (!validateSingleParameter(key, value, schema)) {
-                return false;
-            }
-            
-            // Handle nested objects recursively
-            if (value instanceof Map && getPropertySchema(key, schema) instanceof Map) {
-                Map<String, Object> nestedParams = (Map<String, Object>) value;
-                Object nestedSchema = getPropertySchema(key, schema);
-                
-                if (!validateParameters(nestedParams, nestedSchema)) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-    
-    // Helper method to get schema for a specific property
-    private Object getPropertySchema(String propertyName, Object schema) {
-        // Implementation details
-        return null; // Placeholder
-    }
-    
-    // Other methods...
+export function validateResource(resource: unknown): resource is MCPResource {
+  if (!resource || typeof resource !== 'object') {
+    return false;
+  }
+  
+  // Improved validation
+  const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
+  const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
+  const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
+  
+  return hasName && hasSchema && hasDescription;
 }
 ```
 
-#### Python ဥပမာ: Standard Library အတွက် ကိရိယာအသစ် ပံ့ပိုးခြင်း
+### Example: Contributing a New Tool to the Standard Library
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -390,23 +306,23 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### ပံ့ပိုးမှု လမ်းညွှန်ချက်များ
+### Contribution Guidelines
 
-MCP ပရောဂျက်များတွင် အောင်မြင်စွာ ပံ့ပိုးရန်-
+MCP project များတွင် အောင်မြင်စွာ ပံ့ပိုးမှု ပေးရန် -
 
-1. **သေးငယ်စွာ စတင်ပါ**: စာရွက်စာတမ်း၊ အမှားပြင်ဆင်မှု သို့မဟုတ် သေးငယ်သော တိုးတက်မှုများဖြင့် စတင်ပါ
-2. **စတိုင်လ်လမ်းညွှန်ကို လိုက်နာပါ**: ပရောဂျက်၏ ကုဒ်ရေးစနစ်နှင့် စည်းကမ်းများကို လိုက်နာပါ
-3. **စမ်းသပ်မှုများ ရေးပါ**: သင့်ကုဒ်ပံ့ပိုးမှုများအတွက် unit test များ ထည့်သွင်းပါ
-4. **သင့်အလုပ်ကို စာရွက်စာတမ်းပြုစုပါ**: အသစ်ထည့်သွင်းသည့် လုပ်ဆောင်ချက်များ သို့မဟုတ် ပြောင်းလဲမှုများအတွက် ရှင်းလင်းသော စာရွက်စာတမ်း ထည့်သွင်းပါ
-5. **ရည်ရွယ်ချက်တိတိရှိသော PR များ တင်ပါ**: Pull request များကို တစ်ခုချင်းစီ အကြောင်းအရာ သို့မဟုတ် လုပ်ဆောင်ချက်တစ်ခုအပေါ် အာရုံစိုက်ထားပါ
-6. **တုံ့ပြန်ချက်များနှင့် ပူးပေါင်းဆောင်ရွက်ပါ**: သင့်ပံ့ပိုးမှုများအပေါ် တုံ့ပြန်ချက်များကို အမြန်တုံ့ပြန်ပါ
+1. **Start Small**: စာရွက်စာတမ်း၊ bug ပြင်ဆင်ခြင်း သို့မဟုတ် သေးငယ်တဲ့ တိုးတက်မှုများနဲ့ စတင်ပါ
+2. **Follow the Style Guide**: project ရဲ့ coding style နဲ့ စည်းကမ်းများကို လိုက်နာပါ
+3. **Write Tests**: သင့်ကုဒ်အတွက် unit test များ ထည့်သွင်းပါ
+4. **Document Your Work**: အသစ်ထည့်သွင်းသည့် features သို့မဟုတ် ပြောင်းလဲမှုများအတွက် ရှင်းလင်းသော စာရွက်စာတမ်း ထည့်သွင်းပါ
+5. **Submit Targeted PRs**: pull request များကို တစ်ခုချင်းစီ ပြဿနာ သို့မဟုတ် feature တစ်ခုအပေါ် အာရုံစိုက်ထားပါ
+6. **Engage with Feedback**: သင့်ပံ့ပိုးမှုများအပေါ် ရရှိသော တုံ့ပြန်ချက်များကို တုံ့ပြန်ပါ
 
-### ပံ့ပိုးမှု လုပ်ငန်းစဉ် ဥပမာ
+### Example Contribution Workflow
 
 ```bash
 # Clone the repository
-git clone https://github.com/microsoft/mcp-for-beginners.git
-cd mcp-for-beginners
+git clone https://github.com/modelcontextprotocol/typescript-sdk.git
+cd typescript-sdk
 
 # Create a new branch for your contribution
 git checkout -b feature/my-contribution
@@ -415,12 +331,10 @@ git checkout -b feature/my-contribution
 # ...
 
 # Run tests to ensure your changes don't break existing functionality
-dotnet test  # For .NET
-mvn test     # For Java
-pytest       # For Python
+npm test
 
 # Commit your changes with a descriptive message
-git commit -am "Add support for binary data streams in the protocol"
+git commit -am "Fix validation in resource handler"
 
 # Push your branch to your fork
 git push origin feature/my-contribution
@@ -429,13 +343,31 @@ git push origin feature/my-contribution
 # Then engage with feedback and iterate on your PR as needed
 ```
 
-## ကိုယ်ပိုင် MCP ကိရိယာများ ဖန်တီးပြီး မျှဝေခြင်း
+## Creating and Sharing MCP Servers
 
-MCP ပတ်ဝန်းကျင်ကို တိုးတက်အောင် ဆောင်ရွက်နိုင်တဲ့ အကောင်းဆုံး နည်းလမ်းတစ်ခုက ကိုယ်ပိုင် ကိရိယာများ ဖန်တီးပြီး မျှဝေခြင်း ဖြစ်ပါတယ်။
+MCP ecosystem ကို ပံ့ပိုးပေးနိုင်တဲ့ အကောင်းဆုံးနည်းလမ်းတစ်ခုက ကိုယ်ပိုင် MCP servers များ ဖန်တီးပြီး မျှဝေခြင်းဖြစ်ပါတယ်။ community က အမျိုးမျိုးသော ဝန်ဆောင်မှုများနှင့် အသုံးပြုမှုများအတွက် ရာနှုန်းများစွာသော server များ ဖန်တီးပြီးသားဖြစ်ပါတယ်။
 
-### မျှဝေဖို့ ကိရိယာများ ဖန်တီးခြင်း
+### MCP Server Development Frameworks
 
-#### .NET ဥပမာ: မျှဝေဖို့ ကိရိယာ package ဖန်တီးခြင်း
+MCP server ဖန်တီးရာမှာ လွယ်ကူစေဖို့ framework များ အများအပြား ရရှိနိုင်ပါတယ် -
+
+1. **Official SDKs**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+
+2. **Community Frameworks**:
+   - [MCP-Framework](https://mcp-framework.com/) - TypeScript ဖြင့် MCP servers ကို လှပမြန်ဆန်စွာ တည်ဆောက်ရန်
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Java ဖြင့် annotation-driven MCP servers
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - MCP servers အတွက် Java framework
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP servers အတွက် starter Next.js project
+
+### Developing Shareable Tools
+
+#### .NET Example: Creating a Shareable Tool Package
 
 ```csharp
 // Create a new .NET library project
@@ -541,7 +473,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java ဥပမာ: ကိရိယာများအတွက် Maven package ဖန်တီးခြင်း
+#### Java Example: Creating a Maven Package for Tools
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -642,7 +574,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Python ဥပမာ: PyPI package ထုတ်ဝေခြင်း
+#### Python Example: Publishing a PyPI Package
 
 ```python
 # Directory structure for a PyPI package:
@@ -747,68 +679,68 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### မျှဝေမှုအတွက် အကောင်းဆုံး လမ်းညွှန်ချက်များ
+### Sharing Best Practices
 
-MCP ကိရိယာများကို အသိုင်းအဝိုင်းနှင့် မျှဝေရာတွင်-
+MCP tools များကို community နဲ့ မျှဝေရာမှာ -
 
-1. **စာရွက်စာတမ်း ပြည့်စုံမှု**:
-   - ရည်ရွယ်ချက်၊ အသုံးပြုနည်းနှင့် ဥပမာများ ဖော်ပြပါ
-   - ပါရာမီတာများနှင့် ပြန်လည်ထုတ်ပေးမှုများ ရှင်းပြပါ
-   - ပြင်ပ အားထားမှုများကို ဖော်ပြပါ
+1. **Complete Documentation**:
+   - ရည်ရွယ်ချက်၊ အသုံးပြုနည်းနဲ့ ဥပမာများကို စာရွက်စာတမ်းထဲ ဖော်ပြပါ
+   - parameter များနဲ့ return value များကို ရှင်းလင်းရေးသားပါ
+   - အပြင်အဆင်လိုအပ်ချက်များကိုလည်း ဖော်ပြပါ
 
-2. **အမှားကိုင်တွယ်မှု**:
-   - ခိုင်မာသော အမှားကိုင်တွယ်မှု ထည့်သွင်းပါ
-   - အသုံးဝင်သော အမှားစာသားများ ပေးပါ
+2. **Error Handling**:
+   - ခိုင်မာသော error handling ကို အကောင်အထည်ဖော်ပါ
+   - အသုံးဝင်သော error message များ ပေးပါ
    - အထူးအခြေအနေများကို သေချာစွာ ကိုင်တွယ်ပါ
 
-3. **စွမ်းဆောင်ရည် စဉ်းစားမှု**:
-   - အမြန်နှုန်းနှင့် အရင်းအမြစ် အသုံးပြုမှုကို တိုးတက်အောင် ပြုလုပ်ပါ
-   - လိုအပ်သလို caching ကို ထည့်သွင်းပါ
-   - တိုးချဲ့နိုင်မှုကို စဉ်းစားပါ
+3. **Performance Considerations**:
+   - မြန်နှုန်းနဲ့ resource အသုံးပြုမှုကို တိုးတက်အောင် optimize လုပ်ပါ
+   - လိုအပ်သလို caching ကို အသုံးပြုပါ
+   - scalability ကို စဉ်းစားပါ
 
-4. **လုံခြုံရေး**:
-   - လုံခြုံသော API key များနှင့် authentication ကို အသုံးပြုပါ
+4. **Security**:
+   - API key များနဲ့ authentication ကို လုံခြုံစွာ အသုံးပြုပါ
    - input များကို စစ်ဆေးပြီး သန့်ရှင်းစေပါ
-   - ပြင်ပ API ခေါ်ဆိုမှုများအတွက် rate limiting ကို ထည့်သွင်းပါ
+   - အပြင် API ခေါ်ဆိုမှုများအတွက် rate limiting ကို ထည့်သွင်းပါ
 
-5. **စမ်းသပ်မှု**:
-   - ပြည့်စုံသော စမ်းသပ်မှုများ ထည့်သွင်းပါ
-   - input အမျိုးမျိုးနှင့် အထူးအခြေအနေများဖြင့် စမ်းသပ်ပါ
-   - စမ်းသပ်မှု လုပ်ငန်းစဉ်များကို စာရွက်စာတမ်းပြုစုပါ
+5. **Testing**:
+   - စုံလင်သော test coverage ပါဝင်စေရန်
+   - input အမျိုးမျိုးနဲ့ အထူးအခြေအနေများကို စမ်းသပ်ပါ
+   - test လုပ်နည်းများကို စာရွက်စာတမ်းထဲ ဖော်ပြပါ
 
-## အသိုင်းအဝိုင်း ပူးပေါင်းဆောင်ရွက်မှုနှင့် အကောင်းဆုံး လမ်းညွှန်ချက်များ
+## Community Collaboration and Best Practices
 
-ထိရောက်သော ပူးပေါင်းဆောင်ရွက်မှုက MCP ပတ်ဝန်းကျင် တိုးတက်မှုအတွက် အဓိကဖြစ်ပါတယ်။
+ထိရောက်သော ပူးပေါင်းဆောင်ရွက်မှုက MCP ecosystem တိုးတက်မှုအတွက် အဓိကဖြစ်ပါတယ်။
 
-### ဆက်သွယ်ရေး ချန်နယ်များ
+### Communication Channels
 
-- GitHub Issues နှင့် Discussions
+- GitHub Issues နဲ့ Discussions
 - Microsoft Tech Community
-- Discord နှင့် Slack ချန်နယ်များ
+- Discord နဲ့ Slack channel များ
 - Stack Overflow (tag: `model-context-protocol` သို့မဟုတ် `mcp`)
 
-### ကုဒ် ပြန်လည်သုံးသပ်ခြင်း
+### Code Reviews
 
-MCP ပံ့ပိုးမှုများကို ပြန်လည်သုံးသပ်ရာတွင်-
+MCP ပံ့ပိုးမှုများကို ပြန်လည်သုံးသပ်ရာမှာ -
 
-1. **ရှင်းလင်းမှု**: ကုဒ်သည် ရှင်းလင်းပြီး စာရွက်စာတမ်းကောင်းပါသလား?
-2. **မှန်ကန်မှု**: မျှော်မှန်းသလို လုပ်ဆောင်နိုင်ပါသလား?
-3. **ညီညွတ်မှု**: ပရောဂျက် စည်းကမ်းများနှင့် ကိုက်ညီပါသလား?
-4. **ပြည့်စုံမှု**: စမ်းသပ်မှုများနှင့် စာရွက်စာတမ်းများ ပါဝင်ပါသလား?
-5. **လုံခြုံရေး**: လုံခြုံရေးဆိုင်ရာ ပြဿနာများ ရှိပါသလား?
+1. **Clarity**: ကုဒ်က ရှင်းလင်းပြီး စာရွက်စာတမ်းကောင်းပါသလား?
+2. **Correctness**: မျှော်မှန်းထားသလို အလုပ်လုပ်ပါသလား?
+3. **Consistency**: project စည်းကမ်းများနဲ့ ကိုက်ညီပါသလား?
+4. **Completeness**: test နဲ့ စာရွက်စာတမ်း ပါဝင်ပါသလား?
+5. **Security**: လုံခြုံရေးဆိုင်ရာ ပြဿနာများ ရှိပါသလား?
 
-### ဗားရှင်း ကိုက်ညီမှု
+### Version Compatibility
 
-MCP အတွက် ဖွံ့ဖြိုးရာတွင်-
+MCP အတွက် ဖွံ့ဖြိုးတိုးတက်မှုလုပ်ရာမှာ -
 
-1. **Protocol Versioning**: သင့်ကိရိယာထောက်ပံ့သည့် MCP protocol ဗားရှင်းကို လိုက်နာပါ
-2. **Client Compatibility**: နောက်ပြန်ကိုက်ညီမှုကို စဉ်းစားပါ
-3. **Server Compatibility**: ဆာဗာ implementation လမ်းညွှန်ချက်များကို လိုက်နာပါ
-4. **Breaking Changes**: မည်သည့် breaking change မဆို ရှင်းလင်းစွာ စာရွက်စာတမ်းပြုစုပါ
+1. **Protocol Versioning**: သင့် tool က ထောက်ပံ့တဲ့ MCP protocol version ကို လိုက်နာပါ
+2. **Client Compatibility**: နောက်ပြန်လိုက်လျောညီထွေမှုကို စဉ်းစားပါ
+3. **Server Compatibility**: server implementation လမ်းညွှန်ချက်များကို လိုက်နာပါ
+4. **Breaking Changes**: ပြောင်းလဲမှုကြီးများကို ရှင်းလင်းစွာ စာရွက်စာတမ်းထဲ ဖော်ပြပါ
 
-## အသိုင်းအဝိုင်း ပရောဂျက် ဥပမာ: MCP Tool Registry
+## Example Community Project: MCP Tool Registry
 
-အသိုင်းအဝိုင်းအတွက် အရေးကြီးသော ပံ့ပိုးမှုတစ်ခုမှာ MCP ကိရိယာများအတွက် ပြည်သူ့ မှတ်တမ်းစာရင်း တည်ဆောက်ခြင်း ဖြစ်နိုင်ပါသည်။
+အရေးကြီးတဲ့ community ပံ့ပိုးမှုတစ်ခုက MCP tools များအတွက် public registry တည်ဆောက်ခြင်း ဖြစ်နိုင်ပါတယ်။
 
 ```python
 # Example schema for a community tool registry API
@@ -887,23 +819,23 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## အဓိက သင်ခန်းစာများ
+## Key Takeaways
 
-- MCP အသိုင်းအဝိုင်းမှာ မတူညီတဲ့ ပံ့ပိုးမှုအမျိုးမျိုးကို လက်ခံပါတယ်
-- MCP ကို ပံ့ပိုးခြင်းမှာ core protocol တိုးတက်မှုမှ ကိုယ်ပိုင်ကိရိယာများထိ အကျယ်တဝင့် ပါဝင်နိုင်ပါတယ်
-- ပံ့ပိုးမှု လမ်းညွှန်ချက်များကို လိုက်နာခြင်းက သင့် PR ကို လက်ခံခံရနိုင်မှုကို တိုးတက်စေပါသည်
-- MCP ကိရိယာများ ဖန်တီးပြီး မျှဝေခြင်းက ပတ်ဝန်းကျင်တိုးတက်မှုအတွက် အဖိုးတန်နည်းလမ်းတစ်ခုဖြစ်သည်
-- အသိုင်းအဝိုင်း ပူးပေါင်းဆောင်ရွက်မှုက MCP တိုးတက်မှုနှင့် တိုးချဲ့မှုအတွက် အရေးကြီးပါသည်
+- MCP community က အမျိုးမျိုးသော ပံ့ပိုးမှုများကို ကြိုဆိုပါတယ်
+- MCP ကို ပံ့ပိုးခြင်းက core protocol တိုးတက်မှုမှ ကိုယ်ပိုင် tools ဖန်တီးခြင်းအထိ ဖြစ်နိုင်ပါတယ်
+- contribution guideline များကို လိုက်နာခြင်းက သင့် PR ကို လက်ခံခံရနိုင်မှုကို တိုးတက်စေပါတယ်
+- MCP tools များ ဖန်တီးပြီး မျှဝေခြင်းက ecosystem ကို တိုးတက်စေတဲ့ အရေးကြီးသော နည်းလမ်းတစ်ခုဖြစ်ပါတယ်
+- community ပူးပေါင်းဆောင်ရွက်မှုက MCP ရဲ့ ကြီးထွားတိုးတက်မှုအတွက် မရှိမဖြစ်လိုအပ်ပါတယ်
 
-## လေ့ကျင့်ခန်း
+## Exercise
 
-1. သင့်ကျွမ်းကျင်မှုနှင့် စိတ်ဝင်စားမှုအရ MCP ပတ်ဝန်းကျင်တွင် ပံ့ပိုးနိုင်မည့် နေရာတစ်ခုကို ရှာဖွေပါ
-2. MCP repository ကို fork လုပ်ပြီး ဒေသခံ ဖွံ့ဖြိုးရေး ပတ်ဝန်းကျင် တည်ဆောက်ပါ
-3. အသိုင်းအဝိုင်းအတွက် အကျိုးရှိမည့် သေးငယ်သော တိုးတက်မှု၊ အမှားပြင်ဆင်မှု သို့မဟုတ် ကိရိယာတစ်ခု ဖန်တီးပါ
-4. သင့်ပံ့ပိုးမှုကို သင့်တော်သော စမ်းသပ်မှုများနှင့် စာရွက်စာတမ်းများဖြင့် မှတ်တမ်းတင်ပါ
-5. သင့်ပံ့ပိုးမှုကို သင့်တော်သော repository သို့ pull request တင်ပါ
+1. သင့်ကျွမ်းကျင်မှုနဲ့ စိတ်ဝင်စားမှုအရ MCP ecosystem မှာ ပံ့ပိုးနိုင်မယ့် နေရာတစ်ခု ရှာဖွေပါ
+2. MCP repository ကို fork လုပ်ပြီး ကိုယ်ပိုင် local development environment တည်ဆောက်ပါ
+3. community အတွက် အကျိုးရှိမယ့် သေးငယ်တဲ့ တိုးတက်မှု၊ bug ပြင်ဆင်မှု သို့မဟုတ် tool တစ်ခု ဖန်တီးပါ
+4. သင့်ပံ့ပိုးမှုကို သေချာသော test နဲ့ စာရွက်စာတမ်းဖြင့် မှတ်တမ်းတင်ပါ
+5. သင့်ပံ့ပိုးမှုကို သင့်တော်သော repository သို့ pull request ဖြင့် တင်ပြပါ
 
-## အပိုဆောင်း အရင်းအမြစ်များ
+## Additional Resources
 
 - [MCP Community Projects](https://github.com/topics/model-context-protocol)
 
@@ -913,4 +845,4 @@ async def delete_tool(tool_name: str):
 Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
 **အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

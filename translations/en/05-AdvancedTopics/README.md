@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "748c61250d4a326206b72b28f6154615",
-  "translation_date": "2025-07-13T23:39:13+00:00",
+  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
+  "translation_date": "2025-07-17T09:23:25+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "en"
 }
 -->
 # Advanced Topics in MCP 
 
-This chapter covers a range of advanced topics in Model Context Protocol (MCP) implementation, including multi-modal integration, scalability, security best practices, and enterprise integration. These subjects are vital for building robust, production-ready MCP applications that meet the demands of modern AI systems.
+This chapter covers a range of advanced topics in Model Context Protocol (MCP) implementation, including multi-modal integration, scalability, security best practices, and enterprise integration. These topics are essential for building robust, production-ready MCP applications that meet the demands of modern AI systems.
 
 ## Overview
 
@@ -30,7 +30,7 @@ By the end of this lesson, you will be able to:
 | Link | Title | Description |
 |------|-------|-------------|
 | [5.1 Integration with Azure](./mcp-integration/README.md) | Integrate with Azure | Learn how to integrate your MCP Server on Azure |
-| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP Multi modal samples  | Samples for audio, image and multi modal response |
+| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP Multi modal samples  | Samples for audio, image, and multi-modal responses |
 | [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimal Spring Boot app demonstrating OAuth2 with MCP, both as Authorization and Resource Server. Shows secure token issuance, protected endpoints, Azure Container Apps deployment, and API Management integration. |
 | [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root contexts  | Learn more about root contexts and how to implement them |
 | [5.5 Routing](./mcp-routing/README.md) | Routing | Explore different types of routing |
@@ -45,7 +45,7 @@ By the end of this lesson, you will be able to:
 
 ## Additional References
 
-For the latest information on advanced MCP topics, refer to:  
+For the latest information on advanced MCP topics, see:  
 - [MCP Documentation](https://modelcontextprotocol.io/)  
 - [MCP Specification](https://spec.modelcontextprotocol.io/)  
 - [GitHub Repository](https://github.com/modelcontextprotocol)  
@@ -66,7 +66,7 @@ Design an enterprise-grade MCP implementation for a specific use case:
 2. Outline the security controls needed to protect sensitive data  
 3. Design a scalable architecture that can handle varying loads  
 4. Plan integration points with enterprise AI systems  
-5. Document potential performance bottlenecks and mitigation strategies  
+5. Document potential performance bottlenecks and strategies to mitigate them  
 
 ## Additional Resources
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5067c45550201d577437ed7315a51307",
-  "translation_date": "2025-07-16T21:09:36+00:00",
+  "original_hash": "35fe22b9167cb7be62fddbcf53a255f4",
+  "translation_date": "2025-07-17T09:42:58+00:00",
   "source_file": "README.md",
   "language_code": "hk"
 }
@@ -51,13 +51,13 @@ CO_OP_TRANSLATOR_METADATA:
 - 🧑‍💻 [MCP GitHub 倉庫](https://github.com/modelcontextprotocol) – 開源 SDK、工具及程式碼範例
 - 🌐 [MCP 社群](https://github.com/orgs/modelcontextprotocol/discussions) – 參與討論並貢獻社群
 
-## 加入我們 2025 年 7 月 29-30 日的 MCP Dev Days
+## 加入我們，參加 2025 年 7 月 29-30 日的 MCP Dev Days
 
-準備好參加為期兩天的深入技術分享、社群交流及實作學習 MCP Dev Days，這是一個專注於 Model Context Protocol (MCP) 的線上活動 — 這個新興標準連結 AI 模型與其依賴的工具。
+準備好參加為期兩天的深入技術分享、社群交流及實作學習 MCP Dev Days，這是一個專注於 Model Context Protocol (MCP) 的線上活動 — MCP 是連結 AI 模型與其依賴工具的新興標準。
 
-➡️ [註冊 MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+➡️ [報名 MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-你可以透過活動頁面 https://aka.ms/mcpdevdays 註冊觀看 MCP Dev Days。屆時可在 YouTube 或 Twitch 觀看直播。所有內容均會錄製並於事後上傳至 Microsoft Developer YouTube 頻道。示範程式碼也會在 GitHub 上提供。
+你可以透過活動頁面 https://aka.ms/mcpdevdays 註冊觀看 MCP Dev Days。註冊後可在 YouTube 或 Twitch 觀看直播。所有內容均有錄影，活動結束後會上傳至 Microsoft Developer YouTube 頻道。示範程式碼也會在 GitHub 上提供。
 
 ### 活動詳情
 - 日期：7 月 29 日（第一天）及 7 月 30 日（第二天）
@@ -66,10 +66,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### 第一天：MCP 生產力、開發工具與社群
 
-專注於幫助開發者將 MCP 融入開發流程，並慶祝精彩的 MCP 社群。我們將邀請社群成員及合作夥伴如 Arcade、Block、Okta 和 Neon，分享他們如何與 Microsoft 合作打造開放且可擴展的 MCP 生態系。實際示範涵蓋 VS Code、Visual Studio、GitHub Copilot 及熱門社群工具。
+專注於幫助開發者將 MCP 融入開發流程，並慶祝精彩的 MCP 社群。我們將邀請 Arcade、Block、Okta 和 Neon 等社群成員及合作夥伴，分享他們如何與 Microsoft 合作，打造開放且可擴展的 MCP 生態系。實際示範涵蓋 VS Code、Visual Studio、GitHub Copilot 及熱門社群工具。
 實用且以情境為導向的開發流程
 社群主導的議程與見解
-無論你是剛接觸 MCP 或已在使用，第一天都會帶來啟發與可行的收穫。
+無論你是剛接觸 MCP 還是已經在使用，第一天都會帶來啟發與可行的收穫。
 
 #### 第二天：自信打造 MCP 伺服器
 
@@ -80,10 +80,10 @@ CO_OP_TRANSLATOR_METADATA:
 - 建立 MCP 伺服器並整合至代理體驗
 - 以提示驅動的開發
 - 安全最佳實踐
-- 使用 Functions、ACA 及 API 管理等組件
+- 使用 Functions、ACA 和 API 管理等組件
 - 註冊表對齊與工具（第一方 + 第三方）
 
-如果你是開發者、工具建構者或 AI 產品策略師，這一天將充滿你打造可擴展、安全且未來導向 MCP 解決方案所需的洞見。
+如果你是開發者、工具建構者或 AI 產品策略師，這一天將充滿你打造可擴展、安全且面向未來的 MCP 解決方案所需的洞見。
 
 ## 🧭 MCP 課程總覽
 
@@ -112,12 +112,12 @@ CO_OP_TRANSLATOR_METADATA:
 | 5.1 | Azure 整合 | MCP 與 Azure 的整合 | [指南](./05-AdvancedTopics/mcp-integration/README.md) |
 | 5.2 | 多模態 | 多種模態的應用 | [指南](./05-AdvancedTopics/mcp-multi-modality/README.md) |
 | 5.3 | OAuth2 示範 | 實作 OAuth2 認證 | [指南](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
-| 5.4 | Root Contexts | 理解並實作 root contexts | [指南](./05-AdvancedTopics/mcp-root-contexts/README.md) |
+| 5.4 | 根上下文 | 理解並實作根上下文 | [指南](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | 路由 | MCP 路由策略 | [指南](./05-AdvancedTopics/mcp-routing/README.md) |
 | 5.6 | 取樣 | MCP 中的取樣技術 | [指南](./05-AdvancedTopics/mcp-sampling/README.md) |
 | 5.7 | 擴展 | MCP 實作的擴展方法 | [指南](./05-AdvancedTopics/mcp-scaling/README.md) |
 | 5.8 | 安全性 | 進階安全考量 | [指南](./05-AdvancedTopics/mcp-security/README.md) |
-| 5.9 | 網路搜尋 | 實作網路搜尋功能 | [指南](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 5.9 | 網頁搜尋 | 實作網頁搜尋功能 | [指南](./05-AdvancedTopics/web-search-mcp/README.md) |
 | 5.10 | 即時串流 | 建立即時串流功能 | [指南](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
 | 5.11 | 即時搜尋 | 實作即時搜尋 | [指南](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
 | 5.12 | Entra ID 認證 | 使用 Microsoft Entra ID 進行身份驗證 | [指南](./05-AdvancedTopics/mcp-security-entra/README.md) |
@@ -166,11 +166,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 📚 學習指南與資源
 
-本儲存庫包含多項資源，協助你有效學習與導航：
+本儲存庫包含多項資源，幫助你有效學習與導航：
 
 ### 學習指南
 
-提供一份完整的[學習指南](./study_guide.md)，幫助你有效掌握本儲存庫內容。指南包含：
+提供一份完整的[學習指南](./study_guide.md)，協助你有效掌握本儲存庫內容。指南包含：
 
 - 視覺化課程地圖，展示所有涵蓋主題
 - 各儲存庫區塊的詳細說明
@@ -178,9 +178,9 @@ CO_OP_TRANSLATOR_METADATA:
 - 針對不同技能層級的推薦學習路徑
 - 補充學習旅程的額外資源
 
-### 變更紀錄
+### 更新紀錄
 
-我們維護一份詳細的[變更紀錄](./changelog.md)，追蹤課程材料的所有重要更新，包括：
+我們維護一份詳細的[更新紀錄](./changelog.md)，追蹤課程材料的所有重要更新，包括：
 
 - 新增內容
 - 結構調整
@@ -192,14 +192,14 @@ CO_OP_TRANSLATOR_METADATA:
 本指南中的每堂課包含：
 
 1. 清晰的 MCP 概念說明  
-2. 多種語言的即時程式碼範例  
+2. 多種語言的即時程式範例  
 3. 實作 MCP 應用的練習題  
 4. 進階學習者的額外資源
 
 
 ## 🌟 社群感謝
 
-感謝 Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) 貢獻重要的程式碼範例。
+感謝 Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) 貢獻重要的程式範例。 
 
 ## 📜 授權資訊
 
@@ -208,27 +208,26 @@ CO_OP_TRANSLATOR_METADATA:
 ## 🤝 貢獻指南
 
 本專案歡迎貢獻與建議。大多數貢獻需同意
-貢獻者授權協議（Contributor License Agreement, CLA），聲明你有權利且確實授權我們
+貢獻者授權協議（CLA），聲明你有權利且確實授權我們
 使用你的貢獻。詳情請參閱
 <https://cla.opensource.microsoft.com>。
 
-當你提交 Pull Request 時，CLA 機器人會自動判斷是否需要你提供
+當你提交 pull request 時，CLA 機器人會自動判斷是否需要你提供
 CLA，並適當標示 PR（例如狀態檢查、留言）。請依照機器人指示操作。
 你只需在所有使用我們 CLA 的儲存庫中完成一次。
 
 本專案已採用 [Microsoft 開源行為準則](https://opensource.microsoft.com/codeofconduct/)。
 更多資訊請參閱 [行為準則常見問題](https://opensource.microsoft.com/codeofconduct/faq/) 或
-聯絡 [opencode@microsoft.com](mailto:opencode@microsoft.com) 提問。
+聯絡 [opencode@microsoft.com](mailto:opencode@microsoft.com) 以獲得進一步協助。
 
 ## 📂 儲存庫結構
 
 本儲存庫結構如下：
 
-- **核心課程 (00-10)**：十個連續模組的主要內容
+- **核心課程 (00-10)**：主要內容，分為十個連續模組
 - **images/**：課程中使用的圖表與插圖
 - **translations/**：多語言支援與自動翻譯
 - **translated_images/**：本地化的圖表與插圖版本
-- **alternative_layouts/**：課程內容的不同呈現格式
 - **study_guide.md**：完整的儲存庫導航指南
 - **changelog.md**：課程材料所有重要變更紀錄
 - **mcp.json**：MCP 規格的設定檔

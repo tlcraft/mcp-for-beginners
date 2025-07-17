@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5067c45550201d577437ed7315a51307",
-  "translation_date": "2025-07-16T22:30:46+00:00",
+  "original_hash": "35fe22b9167cb7be62fddbcf53a255f4",
+  "translation_date": "2025-07-17T09:58:23+00:00",
   "source_file": "README.md",
   "language_code": "pl"
 }
@@ -21,10 +21,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-Wykonaj te kroki, aby zacząć korzystać z tych zasobów:
+Wykonaj te kroki, aby rozpocząć korzystanie z tych zasobów:
 1. **Zrób fork repozytorium**: Kliknij [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Sklonuj repozytorium**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Dołącz do Azure AI Foundry Discord i poznaj ekspertów oraz innych deweloperów**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Dołącz do Azure AI Foundry Discord i poznaj ekspertów oraz innych programistów**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Wsparcie wielojęzyczne
@@ -39,9 +39,9 @@ Wykonaj te kroki, aby zacząć korzystać z tych zasobów:
 
 ## 🧠 Przegląd programu nauczania Model Context Protocol
 
-**Model Context Protocol (MCP)** to nowoczesny framework zaprojektowany, aby ustandaryzować interakcje między modelami AI a aplikacjami klienckimi. Ten otwarty program nauczania oferuje uporządkowaną ścieżkę nauki, zawierającą praktyczne przykłady kodu i rzeczywiste przypadki użycia, w popularnych językach programowania takich jak C#, Java, JavaScript, TypeScript i Python.
+**Model Context Protocol (MCP)** to nowoczesny framework zaprojektowany, aby ustandaryzować interakcje między modelami AI a aplikacjami klienckimi. Ten otwarty program nauczania oferuje uporządkowaną ścieżkę nauki, zawierającą praktyczne przykłady kodu i rzeczywiste zastosowania, w popularnych językach programowania takich jak C#, Java, JavaScript, TypeScript i Python.
 
-Niezależnie od tego, czy jesteś deweloperem AI, architektem systemów czy inżynierem oprogramowania, ten przewodnik jest Twoim kompleksowym źródłem wiedzy o podstawach MCP i strategiach implementacji.
+Niezależnie od tego, czy jesteś programistą AI, architektem systemów czy inżynierem oprogramowania, ten przewodnik jest Twoim kompleksowym źródłem wiedzy o podstawach MCP i strategiach implementacji.
 
 ## 🔗 Oficjalne zasoby MCP
 
@@ -61,12 +61,12 @@ Możesz oglądać MCP Dev Days, rejestrując się na naszej stronie wydarzenia: 
 
 ### Szczegóły wydarzenia
 - Daty: 29 lipca (Dzień 1) i 30 lipca (Dzień 2)
-- Godzina: codziennie od 9:00 AM PST
+- Godzina: codziennie od 9:00 PST
 - Miejsce: Online – dołącz z dowolnego miejsca!
 
 #### Dzień 1: Produktywność MCP, narzędzia deweloperskie i społeczność
 
-Skupia się na umożliwieniu deweloperom korzystania z MCP w ich codziennej pracy oraz na świętowaniu niesamowitej społeczności MCP. Dołączą do nas członkowie społeczności i partnerzy tacy jak Arcade, Block, Okta i Neon, aby pokazać, jak współpracują z Microsoftem, tworząc otwarty, rozszerzalny ekosystem MCP. Pokazy na żywo w VS Code, Visual Studio, GitHub Copilot i popularnych narzędziach społecznościowych  
+Skupia się na umożliwieniu programistom korzystania z MCP w ich codziennej pracy oraz świętowaniu niesamowitej społeczności MCP. Dołączą do nas członkowie społeczności i partnerzy tacy jak Arcade, Block, Okta i Neon, aby pokazać, jak współpracują z Microsoftem, tworząc otwarty, rozszerzalny ekosystem MCP. Pokazy na żywo w VS Code, Visual Studio, GitHub Copilot i popularnych narzędziach społecznościowych  
 Praktyczne, kontekstowe workflow deweloperskie  
 Sesje prowadzone przez społeczność i cenne spostrzeżenia  
 Niezależnie od tego, czy dopiero zaczynasz z MCP, czy już z nim pracujesz, Dzień 1 dostarczy inspiracji i praktycznych wskazówek.
@@ -77,13 +77,13 @@ Przeznaczony dla twórców MCP. Zagłębimy się w strategie implementacji i naj
 
 ### Tematy obejmują:
 
-- Budowanie serwerów MCP i integracja ich z doświadczeniami agentów
+- Budowa serwerów MCP i integracja ich z doświadczeniami agentów
 - Rozwój oparty na promptach
 - Najlepsze praktyki bezpieczeństwa
 - Wykorzystanie elementów takich jak Functions, ACA i API Management
 - Wyrównanie rejestru i narzędzia (1P + 3P)
 
-Jeśli jesteś deweloperem, twórcą narzędzi lub strategiem produktów AI, ten dzień jest pełen wiedzy potrzebnej do budowy skalowalnych, bezpiecznych i gotowych na przyszłość rozwiązań MCP.
+Jeśli jesteś programistą, twórcą narzędzi lub strategiem produktów AI, ten dzień jest pełen wiedzy potrzebnej do budowy skalowalnych, bezpiecznych i gotowych na przyszłość rozwiązań MCP.
 
 ## 🧭 Przegląd programu nauczania MCP
 
@@ -93,7 +93,7 @@ Jeśli jesteś deweloperem, twórcą narzędzi lub strategiem produktów AI, ten
 |--------|-------|-------------|------|
 | **Moduły 1-3: Podstawy** | | | |
 | 00 | Wprowadzenie do MCP | Przegląd Model Context Protocol i jego znaczenia w pipeline’ach AI | [Czytaj więcej](./00-Introduction/README.md) |
-| 01 | Wyjaśnienie podstawowych koncepcji | Dogłębne omówienie kluczowych koncepcji MCP | [Czytaj więcej](./01-CoreConcepts/README.md) |
+| 01 | Wyjaśnienie podstawowych pojęć | Dogłębne omówienie kluczowych koncepcji MCP | [Czytaj więcej](./01-CoreConcepts/README.md) |
 | 02 | Bezpieczeństwo w MCP | Zagrożenia bezpieczeństwa i najlepsze praktyki | [Czytaj więcej](./02-Security/README.md) |
 | 03 | Pierwsze kroki z MCP | Konfiguracja środowiska, podstawowe serwery/klienci, integracja | [Czytaj więcej](./03-GettingStarted/README.md) |
 | **Moduł 3: Budowa pierwszego serwera i klienta** | | | |
@@ -104,7 +104,7 @@ Jeśli jesteś deweloperem, twórcą narzędzi lub strategiem produktów AI, ten
 | 3.5 | Serwer SSE | Twórz serwery wykorzystujące Server-Sent Events | [Przewodnik](./03-GettingStarted/05-sse-server/README.md) |
 | 3.6 | Strumieniowanie HTTP | Implementuj strumieniowanie HTTP w MCP | [Przewodnik](./03-GettingStarted/06-http-streaming/README.md) |
 | 3.7 | AI Toolkit | Korzystaj z AI Toolkit z MCP | [Przewodnik](./03-GettingStarted/07-aitk/README.md) |
-| 3.8 | Testowanie | Testuj implementację serwera MCP | [Przewodnik](./03-GettingStarted/08-testing/README.md) |
+| 3.8 | Testowanie | Testuj swoją implementację serwera MCP | [Przewodnik](./03-GettingStarted/08-testing/README.md) |
 | 3.9 | Wdrożenie | Wdróż serwery MCP do produkcji | [Przewodnik](./03-GettingStarted/09-deployment/README.md) |
 | **Moduły 4-5: Praktyczne i zaawansowane** | | | |
 | 04 | Praktyczna implementacja | SDK, debugowanie, testowanie, wielokrotnego użytku szablony promptów | [Czytaj więcej](./04-PracticalImplementation/README.md) |
@@ -116,7 +116,7 @@ Jeśli jesteś deweloperem, twórcą narzędzi lub strategiem produktów AI, ten
 | 5.5 | Routing | Strategie routingu MCP | [Przewodnik](./05-AdvancedTopics/mcp-routing/README.md) |
 | 5.6 | Sampling | Techniki próbkowania w MCP | [Przewodnik](./05-AdvancedTopics/mcp-sampling/README.md) |
 | 5.7 | Skalowanie | Skalowanie implementacji MCP | [Przewodnik](./05-AdvancedTopics/mcp-scaling/README.md) |
-| 5.8 | Bezpieczeństwo | Zaawansowane zagadnienia bezpieczeństwa | [Przewodnik](./05-AdvancedTopics/mcp-security/README.md) |
+| 5.8 | Bezpieczeństwo | Zaawansowane aspekty bezpieczeństwa | [Przewodnik](./05-AdvancedTopics/mcp-security/README.md) |
 | 5.9 | Wyszukiwanie w sieci | Implementacja funkcji wyszukiwania w sieci | [Przewodnik](./05-AdvancedTopics/web-search-mcp/README.md) |
 | 5.10 | Strumieniowanie w czasie rzeczywistym | Budowa funkcjonalności strumieniowania na żywo | [Przewodnik](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
 | 5.11 | Wyszukiwanie w czasie rzeczywistym | Implementacja wyszukiwania w czasie rzeczywistym | [Przewodnik](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
@@ -203,18 +203,17 @@ Podziękowania dla Microsoft Valued Professional [Shivam Goyal](https://www.link
 
 ## 📜 Informacje o licencji
 
-Ta zawartość jest udostępniona na licencji **MIT License**. Warunki licencji znajdziesz w pliku [LICENSE](../../LICENSE).
+Ta zawartość jest objęta licencją **MIT License**. Warunki licencji znajdziesz w pliku [LICENSE](../../LICENSE).
 
 ## 🤝 Zasady współpracy
 
 Ten projekt zachęca do współpracy i sugestii. Większość wkładów wymaga zgody na
 Contributor License Agreement (CLA), w którym oświadczasz, że masz prawo i faktycznie udzielasz nam
-praw do korzystania z Twojego wkładu. Szczegóły znajdziesz pod adresem
+praw do korzystania z Twojego wkładu. Szczegóły znajdziesz na stronie 
 <https://cla.opensource.microsoft.com>.
 
 Po przesłaniu pull requesta, bot CLA automatycznie sprawdzi, czy musisz dostarczyć
-CLA i odpowiednio oznaczy PR (np. status, komentarz). Wystarczy, że wykonasz instrukcje
-podane przez bota. Robisz to tylko raz dla wszystkich repozytoriów korzystających z naszego CLA.
+CLA i odpowiednio oznaczy PR (np. status, komentarz). Wystarczy, że wykonasz te kroki raz dla wszystkich repozytoriów korzystających z naszego CLA.
 
 Projekt przyjął [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 Więcej informacji znajdziesz w [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) lub
@@ -228,7 +227,6 @@ Repozytorium jest zorganizowane następująco:
 - **images/**: Diagramy i ilustracje używane w całym programie nauczania
 - **translations/**: Wsparcie wielojęzyczne z automatycznymi tłumaczeniami
 - **translated_images/**: Zlokalizowane wersje diagramów i ilustracji
-- **alternative_layouts/**: Różne formaty prezentacji treści programu nauczania
 - **study_guide.md**: Kompleksowy przewodnik po repozytorium
 - **changelog.md**: Rejestr wszystkich istotnych zmian w materiałach programu nauczania
 - **mcp.json**: Plik konfiguracyjny specyfikacji MCP
@@ -257,8 +255,8 @@ Nasz zespół tworzy także inne kursy! Sprawdź:
 
 Ten projekt może zawierać znaki towarowe lub logotypy projektów, produktów lub usług. Autoryzowane użycie znaków towarowych lub logotypów Microsoft podlega i musi być zgodne z
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Użycie znaków towarowych lub logotypów Microsoft w zmodyfikowanych wersjach tego projektu nie może powodować nieporozumień ani sugerować sponsorowania przez Microsoft.
+Użycie znaków towarowych lub logotypów Microsoft w zmodyfikowanych wersjach tego projektu nie może wprowadzać w błąd ani sugerować sponsorowania przez Microsoft.
 Wszelkie użycie znaków towarowych lub logotypów stron trzecich podlega politykom tych stron.
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

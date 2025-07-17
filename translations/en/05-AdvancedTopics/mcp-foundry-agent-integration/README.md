@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:29:08+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T09:26:35+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "en"
 }
@@ -358,7 +358,7 @@ mcpToolResource.UpdateHeader("SuperSecret", "123456");
 
 ### 3. Performance Issues
 - Optimize tool call frequency
-- Implement caching where appropriate
+- Use caching where appropriate
 - Monitor server response times
 
 ## Next Steps
@@ -379,13 +379,13 @@ To further improve your MCP integration:
 
 ## Support
 
-For additional support and questions:
+For additional help and questions:
 - Review the [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-foundry/)
 - Check the [MCP community resources](https://modelcontextprotocol.io/)
 
 ## What's next 
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

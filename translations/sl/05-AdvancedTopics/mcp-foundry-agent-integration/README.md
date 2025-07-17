@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:39:32+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T12:24:14+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sl"
 }
@@ -35,7 +35,7 @@ Pred začetkom poskrbite, da imate:
 
 - Azure naročnino z dostopom do AI Foundry
 - Python 3.10+ ali .NET 8.0+
-- Azure CLI nameščen in konfiguriran
+- Nameščen in konfiguriran Azure CLI
 - Ustrezna dovoljenja za ustvarjanje AI virov
 
 ## Kaj je Model Context Protocol (MCP)?
@@ -87,7 +87,7 @@ mcp_server_url = os.environ.get("MCP_SERVER_URL", "https://learn.microsoft.com/a
 mcp_server_label = os.environ.get("MCP_SERVER_LABEL", "mslearn")
 ```
 
-### 4. Inicializirajte projektnega klienta
+### 4. Inicializirajte projektni odjemalec
 
 ```python
 project_client = AIProjectClient(
@@ -381,11 +381,11 @@ Za nadaljnje izboljšanje vaše MCP integracije:
 
 Za dodatno podporo in vprašanja:
 - Preglejte [dokumentacijo Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- Preverite [MCP skupnostne vire](https://modelcontextprotocol.io/)
+- Oglejte si [MCP skupnostne vire](https://modelcontextprotocol.io/)
 
 ## Kaj sledi
 
-- [6. Community Contributions](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

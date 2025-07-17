@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-16T22:31:31+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T09:59:22+00:00",
   "source_file": "study_guide.md",
   "language_code": "pl"
 }
@@ -100,14 +100,14 @@ mindmap
 
 ## Struktura repozytorium
 
-Repozytorium jest podzielone na dziesięć głównych sekcji, z których każda skupia się na różnych aspektach MCP:
+Repozytorium jest podzielone na dziesięć głównych sekcji, z których każda skupia się na innym aspekcie MCP:
 
 1. **Wprowadzenie (00-Introduction/)**
    - Przegląd Model Context Protocol
    - Dlaczego standaryzacja jest ważna w pipeline’ach AI
    - Praktyczne zastosowania i korzyści
 
-2. **Podstawowe koncepcje (01-CoreConcepts/)**
+2. **Podstawowe pojęcia (01-CoreConcepts/)**
    - Architektura klient-serwer
    - Kluczowe elementy protokołu
    - Wzorce komunikacji w MCP
@@ -186,7 +186,7 @@ Repozytorium jest podzielone na dziesięć głównych sekcji, z których każda 
 
 Repozytorium zawiera materiały wspierające:
 
-- **Folder Images**: Zawiera diagramy i ilustracje używane w całym programie nauczania
+- **Folder z obrazami**: Zawiera diagramy i ilustracje używane w całym programie nauczania
 - **Tłumaczenia**: Wsparcie wielojęzyczne z automatycznymi tłumaczeniami dokumentacji
 - **Oficjalne zasoby MCP**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
@@ -195,10 +195,10 @@ Repozytorium zawiera materiały wspierające:
 
 ## Jak korzystać z tego repozytorium
 
-1. **Nauka sekwencyjna**: Przechodź przez rozdziały po kolei (od 00 do 10), aby uzyskać uporządkowaną ścieżkę nauki.
+1. **Nauka krok po kroku**: Przechodź przez rozdziały po kolei (od 00 do 10), aby uzyskać uporządkowaną ścieżkę nauki.
 2. **Skupienie na konkretnym języku**: Jeśli interesuje Cię konkretny język programowania, sprawdź katalogi z przykładami implementacji w wybranym języku.
 3. **Praktyczna implementacja**: Zacznij od sekcji „Pierwsze kroki”, aby skonfigurować środowisko i stworzyć swój pierwszy serwer i klient MCP.
-4. **Zaawansowane eksploracje**: Gdy opanujesz podstawy, zagłęb się w zaawansowane tematy, aby poszerzyć wiedzę.
+4. **Zaawansowane zagadnienia**: Gdy opanujesz podstawy, zagłęb się w tematy zaawansowane, aby poszerzyć wiedzę.
 5. **Zaangażowanie społeczności**: Dołącz do społeczności MCP poprzez dyskusje na GitHubie i kanały Discord, aby nawiązać kontakt z ekspertami i innymi deweloperami.
 
 ## Klienci i narzędzia MCP
@@ -206,6 +206,8 @@ Repozytorium zawiera materiały wspierające:
 Program nauczania obejmuje różne klientów i narzędzia MCP:
 
 1. **Oficjalni klienci**:
+   - Visual Studio Code
+   - MCP w Visual Studio Code
    - Claude Desktop
    - Claude w VSCode
    - Claude API
@@ -249,7 +251,7 @@ Repozytorium przedstawia różne serwery MCP, w tym:
 
 ## Wkład w projekt
 
-To repozytorium zachęca społeczność do współtworzenia. Zobacz sekcję Wkład społeczności, aby dowiedzieć się, jak skutecznie wnosić swój wkład w ekosystem MCP.
+To repozytorium zachęca społeczność do współtworzenia. Zobacz sekcję Wkład społeczności, aby dowiedzieć się, jak skutecznie wspierać ekosystem MCP.
 
 ## Dziennik zmian
 
@@ -263,4 +265,4 @@ To repozytorium zachęca społeczność do współtworzenia. Zobacz sekcję Wkł
 *Ten przewodnik nauki został zaktualizowany 16 lipca 2025 i przedstawia przegląd repozytorium na ten dzień. Zawartość repozytorium może być aktualizowana po tej dacie.*
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

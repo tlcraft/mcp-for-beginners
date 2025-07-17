@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7a11a5dcf2f9fdf6392f5a4545cf005e",
-  "translation_date": "2025-07-14T03:21:58+00:00",
+  "original_hash": "151265c9a2124d7c53e04d16ee3fb73b",
+  "translation_date": "2025-07-17T09:25:01+00:00",
   "source_file": "05-AdvancedTopics/web-search-mcp/README.md",
   "language_code": "en"
 }
@@ -11,16 +11,16 @@ CO_OP_TRANSLATOR_METADATA:
 
 This chapter shows you how to build a real-world AI agent that integrates with external APIs, handles various data types, manages errors, and coordinates multiple tools—all in a production-ready setup. You'll learn about:
 
-- **Integrating with external APIs that require authentication**
-- **Handling diverse data types from multiple endpoints**
-- **Robust error handling and logging strategies**
+- **Integrating external APIs that require authentication**
+- **Handling diverse data from multiple endpoints**
+- **Robust error handling and logging techniques**
 - **Orchestrating multiple tools within a single server**
 
-By the end, you'll gain practical experience with patterns and best practices essential for advanced AI and LLM-powered applications.
+By the end, you'll gain hands-on experience with patterns and best practices essential for advanced AI and LLM-powered applications.
 
 ## Introduction
 
-In this lesson, you'll learn how to build an advanced MCP server and client that extend LLM capabilities with real-time web data using SerpAPI. This is a key skill for creating dynamic AI agents that can access up-to-date information from the web.
+In this lesson, you'll learn how to build an advanced MCP server and client that enhance LLM capabilities with real-time web data using SerpAPI. This skill is crucial for creating dynamic AI agents that can access up-to-date information from the web.
 
 ## Learning Objectives
 
@@ -46,10 +46,9 @@ This implementation includes four tools that demonstrate MCP's ability to secure
 - **qna**: For question-and-answer snippets
 
 ### Features
-- **Code Examples**: Contains language-specific code blocks for Python (and easily extendable to other languages) using collapsible sections for clarity
+- **Code Examples**: Language-specific code blocks for Python (and easily extendable to other languages) using code pivots for clarity
 
-<details>  
-<summary>Python</summary>  
+### Python
 
 ```python
 # Example usage of the general_search tool
@@ -67,7 +66,8 @@ async def run_search():
             result = await session.call_tool("general_search", arguments={"query": "open source LLMs"})
             print(result)
 ```
-</details>
+
+---
 
 Before running the client, it’s useful to understand what the server does. The [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) file implements the MCP server, exposing tools for web, news, product search, and Q&A by integrating with SerpAPI. It handles incoming requests, manages API calls, parses responses, and returns structured results to the client.
 
@@ -75,8 +75,7 @@ You can review the full implementation in [`server.py`](../../../../05-AdvancedT
 
 Here is a brief example of how the server defines and registers a tool:
 
-<details>  
-<summary>Python Server</summary> 
+### Python Server
 
 ```python
 # server.py (excerpt)
@@ -91,7 +90,8 @@ server.add_tool(Tool("general_search", general_search))
 if __name__ == "__main__":
     server.run()
 ```
-</details>
+
+---
 
 - **External API Integration**: Shows secure handling of API keys and external requests
 - **Structured Data Parsing**: Demonstrates how to convert API responses into LLM-friendly formats
@@ -172,8 +172,7 @@ There are several ways to test and interact with the tools provided by the serve
 #### Writing Custom Test Scripts with the MCP Python SDK
 You can also build your own test scripts using the MCP Python SDK:
 
-<details>
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -193,7 +192,8 @@ async def test_custom_query():
                                            arguments={"query": "your custom query"})
             # Process the result
 ```
-</details>
+
+---
 
 In this context, a "test script" means a custom Python program you write to act as a client for the MCP server. Instead of a formal unit test, this script lets you programmatically connect to the server, call any of its tools with parameters you choose, and inspect the results. This approach is useful for:
 - Prototyping and experimenting with tool calls
@@ -217,8 +217,7 @@ Performs a general web search and returns formatted results.
 
 You can call `general_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
 
-<details>
-<summary>Python Example</summary>
+# [Python Example](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -235,7 +234,8 @@ async def run_general_search():
             result = await session.call_tool("general_search", arguments={"query": "latest AI trends"})
             print(result)
 ```
-</details>
+
+---
 
 Alternatively, in interactive mode, select `general_search` from the menu and enter your query when prompted.
 
@@ -258,8 +258,7 @@ Searches for recent news articles related to a query.
 
 You can call `news_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
 
-<details>
-<summary>Python Example</summary>
+# [Python Example](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -276,7 +275,8 @@ async def run_news_search():
             result = await session.call_tool("news_search", arguments={"query": "AI policy updates"})
             print(result)
 ```
-</details>
+
+---
 
 Alternatively, in interactive mode, select `news_search` from the menu and enter your query when prompted.
 
@@ -299,8 +299,7 @@ Searches for products matching a query.
 
 You can call `product_search` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
 
-<details>
-<summary>Python Example</summary>
+# [Python Example](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -317,7 +316,8 @@ async def run_product_search():
             result = await session.call_tool("product_search", arguments={"query": "best AI gadgets 2025"})
             print(result)
 ```
-</details>
+
+---
 
 Alternatively, in interactive mode, select `product_search` from the menu and enter your query when prompted.
 
@@ -340,8 +340,7 @@ Gets direct answers to questions from search engines.
 
 You can call `qna` from your own script using the MCP Python SDK, or interactively using the Inspector or the interactive client mode. Here is a code example using the SDK:
 
-<details>
-<summary>Python Example</summary>
+# [Python Example](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 from mcp import ClientSession, StdioServerParameters
@@ -358,7 +357,8 @@ async def run_qna():
             result = await session.call_tool("qna", arguments={"question": "what is artificial intelligence"})
             print(result)
 ```
-</details>
+
+---
 
 Alternatively, in interactive mode, select `qna` from the menu and enter your question when prompted.
 
@@ -377,8 +377,7 @@ Alternatively, in interactive mode, select `qna` from the menu and enter your qu
 
 This section provides code snippets and references for the server and client implementations.
 
-<details>
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 See [`server.py`](../../../../05-AdvancedTopics/web-search-mcp/server.py) and [`client.py`](../../../../05-AdvancedTopics/web-search-mcp/client.py) for full implementation details.
 
@@ -388,7 +387,8 @@ import os
 import httpx
 # ...existing code...
 ```
-</details>
+
+---
 
 ## Advanced Concepts in This Lesson
 
@@ -396,7 +396,7 @@ Before you start building, here are some important advanced concepts that will a
 
 - **Multi-tool Orchestration**: Running several different tools (like web search, news search, product search, and Q&A) within a single MCP server. This lets your server handle a variety of tasks, not just one.
 - **API Rate Limit Handling**: Many external APIs (like SerpAPI) limit how many requests you can make in a certain time. Good code checks for these limits and handles them gracefully, so your app doesn’t break if you hit a limit.
-- **Structured Data Parsing**: API responses are often complex and nested. This means turning those responses into clean, easy-to-use formats that are friendly for LLMs or other programs.
+- **Structured Data Parsing**: API responses are often complex and nested. This means converting those responses into clean, easy-to-use formats that are friendly for LLMs or other programs.
 - **Error Recovery**: Sometimes things go wrong—maybe the network fails, or the API doesn’t return what you expect. Error recovery means your code can handle these problems and still provide useful feedback instead of crashing.
 - **Parameter Validation**: Checking that all inputs to your tools are correct and safe to use. This includes setting default values and ensuring the types are right, which helps prevent bugs and confusion.
 
@@ -424,7 +424,7 @@ Below are some of the most frequent problems users encounter, along with clear e
 
 ### Debug Mode
 
-By default, the app logs only important information. If you want to see more details about what’s happening (for example, to diagnose tricky issues), you can enable DEBUG mode. This will show you much more about each step the app is taking.
+By default, the app logs only important information. If you want to see more details about what’s happening (for example, to diagnose tricky issues), you can enable DEBUG mode. This will show you much more about each step the app takes.
 
 **Example: Normal Output**
 ```plaintext
@@ -447,10 +447,9 @@ GENERAL_SEARCH RESULTS:
 ```
 
 Notice how DEBUG mode includes extra lines about HTTP requests, responses, and other internal details. This can be very helpful for troubleshooting.
-
 To enable DEBUG mode, set the logging level to DEBUG at the top of your `client.py` or `server.py`:
 
-<summary>Python</summary>
+# [Python](../../../../05-AdvancedTopics/web-search-mcp)
 
 ```python
 # At the top of your client.py or server.py
@@ -460,7 +459,8 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 ```
-</details>
+
+---
 
 ---
 

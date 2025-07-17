@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c3cfe4aea89b10982730d95b8d23cbca",
-  "translation_date": "2025-07-16T14:38:17+00:00",
+  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
+  "translation_date": "2025-07-17T11:02:00+00:00",
   "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
   "language_code": "sk"
 }
 -->
 # Integrácia Model Context Protocol (MCP) s Azure AI Foundry
 
-Tento návod ukazuje, ako integrovať servery Model Context Protocol (MCP) s agentmi Azure AI Foundry, čím umožníte výkonnú orchestráciu nástrojov a podnikové AI riešenia.
+Tento návod ukazuje, ako integrovať servery Model Context Protocol (MCP) s agentmi Azure AI Foundry, čím umožníte pokročilú orchestráciu nástrojov a podnikové AI funkcie.
 
 ## Úvod
 
-Model Context Protocol (MCP) je otvorený štandard, ktorý umožňuje AI aplikáciám bezpečne sa pripájať k externým dátovým zdrojom a nástrojom. Po integrácii s Azure AI Foundry umožňuje MCP agentom pristupovať a komunikovať s rôznymi externými službami, API a dátovými zdrojmi štandardizovaným spôsobom.
+Model Context Protocol (MCP) je otvorený štandard, ktorý umožňuje AI aplikáciám bezpečne sa pripájať k externým dátovým zdrojom a nástrojom. Po integrácii s Azure AI Foundry umožňuje MCP agentom pristupovať a interagovať s rôznymi externými službami, API a dátovými zdrojmi štandardizovaným spôsobom.
 
 Táto integrácia spája flexibilitu ekosystému nástrojov MCP s robustným rámcom agentov Azure AI Foundry, čím poskytuje podnikové AI riešenia s rozsiahlymi možnosťami prispôsobenia.
 
@@ -21,7 +21,7 @@ Táto integrácia spája flexibilitu ekosystému nástrojov MCP s robustným rá
 
 ## Ciele učenia
 
-Po prečítaní tohto návodu budete schopní:
+Na konci tohto návodu budete schopní:
 
 - Pochopiť Model Context Protocol a jeho výhody
 - Nastaviť MCP servery pre použitie s agentmi Azure AI Foundry
@@ -53,14 +53,14 @@ Model Context Protocol je štandardizovaný spôsob, ako sa AI aplikácie pripá
 
 Vyberte si preferované vývojové prostredie:
 
-- [Python Implementácia](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
-- [.NET Implementácia](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [Python implementácia](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
+- [.NET implementácia](../../../../05-AdvancedTopics/mcp-foundry-agent-integration)
 
 ---
 
-## Python Implementácia
+## Python implementácia
 
-***Note*** Tento [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) môžete spustiť
+***Note*** Tento [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) môžete spustiť priamo
 
 ### 1. Inštalácia potrebných balíčkov
 
@@ -187,9 +187,9 @@ with project_client:
 
 ---
 
-## .NET Implementácia
+## .NET implementácia
 
-***Note*** Tento [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) môžete spustiť
+***Note*** Tento [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) môžete spustiť priamo
 
 ### 1. Inštalácia potrebných balíčkov
 
@@ -372,8 +372,8 @@ Pre ďalšie vylepšenie integrácie MCP:
 
 ## Dodatočné zdroje
 
-- [Azure AI Foundry Dokumentácia](https://learn.microsoft.com/azure/ai-foundry/)
-- [Model Context Protocol Príklady](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
+- [Dokumentácia Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
+- [Príklady Model Context Protocol](https://learn.microsoft.com/azure/ai-foundry/agents/how-to/tools/model-context-protocol-samples)
 - [Prehľad agentov Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/agents/)
 - [Špecifikácia MCP](https://spec.modelcontextprotocol.io/)
 
@@ -381,11 +381,11 @@ Pre ďalšie vylepšenie integrácie MCP:
 
 Pre ďalšiu podporu a otázky:
 - Prezrite si [dokumentáciu Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/)
-- Skontrolujte [MCP komunitné zdroje](https://modelcontextprotocol.io/)
+- Skontrolujte [komunitné zdroje MCP](https://modelcontextprotocol.io/)
 
 ## Čo ďalej
 
-- [6. Príspevky komunity](../../06-CommunityContributions/README.md)
+- [5.14 MCP Context Engineering](../mcp-contextengineering/README.md)
 
 **Vyhlásenie o zodpovednosti**:  
 Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

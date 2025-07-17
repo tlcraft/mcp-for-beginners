@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "77bfab7090f987a5b9fe078f50dbda13",
-  "translation_date": "2025-07-16T21:10:15+00:00",
+  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
+  "translation_date": "2025-07-17T09:43:54+00:00",
   "source_file": "study_guide.md",
   "language_code": "hk"
 }
@@ -130,7 +130,7 @@ mindmap
      - HTTP 串流
      - AI 工具包整合
      - 測試策略
-     - 部署指引
+     - 部署指南
 
 5. **Practical Implementation (04-PracticalImplementation/)**
    - 跨語言 SDK 使用
@@ -195,8 +195,8 @@ mindmap
 
 ## 如何使用本倉庫
 
-1. **循序學習**：依章節順序（00 至 10）學習，建立系統性知識。
-2. **語言專注**：若偏好特定程式語言，可瀏覽對應語言的範例目錄。
+1. **循序學習**：依章節順序（00 至 10）進行，獲得系統化學習體驗。
+2. **語言專注**：若偏好特定程式語言，可瀏覽 samples 目錄中該語言的實作範例。
 3. **實務入門**：從「Getting Started」章節開始，設定環境並建立首個 MCP 伺服器與客戶端。
 4. **進階探索**：熟悉基礎後，深入進階主題擴展知識。
 5. **社群互動**：透過 GitHub 討論與 Discord 頻道加入 MCP 社群，與專家及開發者交流。
@@ -206,8 +206,10 @@ mindmap
 課程涵蓋多種 MCP 客戶端與工具：
 
 1. **官方客戶端**：
+   - Visual Studio Code
+   - MCP 在 Visual Studio Code 中的整合
    - Claude Desktop
-   - VSCode 內的 Claude
+   - Claude 在 VSCode 中的整合
    - Claude API
 
 2. **社群客戶端**：
@@ -249,13 +251,13 @@ mindmap
 
 ## 貢獻指南
 
-本倉庫歡迎社群貢獻。請參考 Community Contributions 章節，了解如何有效參與 MCP 生態系統的建設。
+歡迎社群貢獻本倉庫。請參考 Community Contributions 章節，了解如何有效參與 MCP 生態系。
 
 ## 更新紀錄
 
 | 日期 | 變更內容 |
 |------|---------|
-| 2025 年 7 月 16 日 | - 更新倉庫結構以反映最新內容<br>- 新增 MCP 客戶端與工具章節<br>- 新增熱門 MCP 伺服器章節<br>- 更新視覺化課程地圖，涵蓋所有現有主題<br>- 強化進階主題章節，包含所有專業領域<br>- 更新案例研究，反映實際範例<br>- 明確標示 MCP 由 Anthropic 創建 |
+| 2025 年 7 月 16 日 | - 更新倉庫結構以反映最新內容<br>- 新增 MCP 客戶端與工具章節<br>- 新增熱門 MCP 伺服器章節<br>- 更新視覺化課程地圖，涵蓋所有現有主題<br>- 強化進階主題章節，包含所有專業領域<br>- 更新案例研究，反映實際範例<br>- 明確說明 MCP 由 Anthropic 創建 |
 | 2025 年 6 月 11 日 | - 初版學習指南建立<br>- 新增視覺化課程地圖<br>- 概述倉庫結構<br>- 包含範例專案與附加資源 |
 
 ---
@@ -263,4 +265,4 @@ mindmap
 *本學習指南於 2025 年 7 月 16 日更新，內容反映該日期的倉庫狀態。倉庫內容可能於此後持續更新。*
 
 **免責聲明**：  
-本文件乃使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

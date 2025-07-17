@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6f267185e24b1274dd3535d65dd1787",
-  "translation_date": "2025-07-16T20:57:12+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T09:41:34+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "zh"
 }
 -->
 # 创建客户端
 
-客户端是与 MCP 服务器直接通信以请求资源、工具和提示的自定义应用程序或脚本。与使用提供图形界面与服务器交互的检查器工具不同，编写自己的客户端可以实现程序化和自动化的交互。这使开发者能够将 MCP 功能集成到自己的工作流程中，自动化任务，并构建针对特定需求的定制解决方案。
+客户端是与 MCP 服务器直接通信以请求资源、工具和提示的自定义应用程序或脚本。与使用提供图形界面的检查器工具不同，编写自己的客户端可以实现程序化和自动化的交互。这使开发者能够将 MCP 功能集成到自己的工作流程中，自动化任务，并构建针对特定需求的定制解决方案。
 
 ## 概述
 
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **导入正确的库**。你将使用之前相同的库，只是使用不同的构造。
 - **实例化客户端**。这包括创建客户端实例并连接到所选的传输方式。
 - **决定列出哪些资源**。你的 MCP 服务器包含资源、工具和提示，你需要决定列出哪些。
-- **将客户端集成到宿主应用中**。一旦了解服务器的功能，就需要将客户端集成到宿主应用中，这样当用户输入提示或其他命令时，就会调用相应的服务器功能。
+- **将客户端集成到宿主应用中**。一旦了解服务器的功能，就需要将客户端集成到宿主应用中，以便用户输入提示或其他命令时，能够调用相应的服务器功能。
 
 了解了整体流程后，接下来让我们看一个示例。
 
@@ -86,7 +86,7 @@ const result = await client.callTool({
 });
 ```
 
-在上面的代码中，我们：
+在上述代码中，我们：
 
 - 导入了库
 - 创建了客户端实例，并使用 stdio 作为传输方式连接
@@ -94,7 +94,7 @@ const result = await client.callTool({
 
 这就是一个可以与 MCP 服务器通信的客户端。
 
-接下来，我们将在练习部分详细拆解每段代码，解释其作用。
+接下来，我们将在练习部分逐步拆解代码片段，详细解释每一步。
 
 ## 练习：编写客户端
 
@@ -102,7 +102,7 @@ const result = await client.callTool({
 
 ### -1- 导入库
 
-先导入所需的库，我们需要引用客户端和所选的传输协议 stdio。stdio 是用于本地机器运行的协议。SSE 是另一种传输协议，我们将在后续章节介绍，但目前先用 stdio。
+导入所需的库，我们需要引用客户端和所选的传输协议 stdio。stdio 是用于本地机器运行的协议。SSE 是另一种传输协议，我们将在后续章节介绍，但目前先用 stdio。
 
 ### TypeScript
 
@@ -167,9 +167,9 @@ const client = new Client(
 await client.connect(transport);
 ```
 
-在上面的代码中，我们：
+在上述代码中，我们：
 
-- 创建了一个 stdio 传输实例。注意它指定了启动服务器的命令和参数，因为创建客户端时需要启动服务器。
+- 创建了 stdio 传输实例。注意它指定了启动服务器的命令和参数，因为创建客户端时需要启动服务器。
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -223,11 +223,11 @@ if __name__ == "__main__":
     asyncio.run(run())
 ```
 
-在上面的代码中，我们：
+在上述代码中，我们：
 
 - 导入了所需库
 - 实例化了服务器参数对象，用于运行服务器以便客户端连接
-- 定义了一个 `run` 方法，调用 `stdio_client` 启动客户端会话
+- 定义了 `run` 方法，调用 `stdio_client` 启动客户端会话
 - 创建了入口点，使用 `asyncio.run` 调用 `run` 方法
 
 ### .NET
@@ -257,7 +257,7 @@ var clientTransport = new StdioClientTransport(new()
 await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 ```
 
-在上面的代码中，我们：
+在上述代码中，我们：
 
 - 导入了所需库
 - 创建了 stdio 传输和客户端 `mcpClient`，后者用于列出和调用 MCP 服务器上的功能
@@ -289,16 +289,16 @@ public class SDKClient {
 }
 ```
 
-在上面的代码中，我们：
+在上述代码中，我们：
 
-- 创建了一个 main 方法，设置了指向 `http://localhost:8080` 的 SSE 传输，MCP 服务器将在此运行
-- 创建了一个客户端类，构造函数接收传输参数
+- 创建了主方法，设置了指向 `http://localhost:8080` 的 SSE 传输，MCP 服务器将在此运行
+- 创建了客户端类，构造函数接收传输参数
 - 在 `run` 方法中，使用传输创建同步 MCP 客户端并初始化连接
-- 使用了适合 Java Spring Boot MCP 服务器的 SSE（服务器发送事件）传输
+- 使用 SSE（服务器发送事件）传输，适合基于 HTTP 的 Java Spring Boot MCP 服务器通信
 
 ### -3- 列出服务器功能
 
-现在我们有了可以连接的客户端，但它还没有列出服务器功能，接下来实现这一点：
+现在客户端可以连接服务器了，但还没有列出功能，接下来实现它：
 
 ### TypeScript
 
@@ -329,7 +329,7 @@ for tool in tools.tools:
     print("Tool: ", tool.name)
 ```
 
-这里我们列出了可用的资源 `list_resources()` 和工具 `list_tools`，并打印出来。
+这里列出了可用的资源 `list_resources()` 和工具 `list_tools`，并打印出来。
 
 ### .NET
 
@@ -340,7 +340,7 @@ foreach (var tool in await client.ListToolsAsync())
 }
 ```
 
-上面是列出服务器工具的示例。对于每个工具，我们打印其名称。
+上面示例展示了如何列出服务器上的工具，并打印每个工具的名称。
 
 ### Java
 
@@ -353,7 +353,7 @@ System.out.println("Available Tools = " + toolsList);
 client.ping();
 ```
 
-在上面的代码中，我们：
+在上述代码中，我们：
 
 - 调用了 `listTools()` 获取 MCP 服务器上的所有工具
 - 使用 `ping()` 验证与服务器的连接是否正常
@@ -391,7 +391,7 @@ const promptResult = await client.getPrompt({
 })
 ```
 
-在上面的代码中，我们：
+在上述代码中，我们：
 
 - 读取资源，通过调用 `readResource()` 并指定 `uri`。服务器端大致如下：
 
@@ -410,7 +410,7 @@ const promptResult = await client.getPrompt({
 
     我们的 `uri` 值 `file://example.txt` 匹配服务器端的 `file://{name}`，`example.txt` 会映射到 `name`。
 
-- 调用工具，通过指定其 `name` 和 `arguments`：
+- 调用工具，通过指定工具的 `name` 和 `arguments`：
 
     ```typescript
     const result = await client.callTool({
@@ -463,12 +463,12 @@ result = await session.call_tool("add", arguments={"a": 1, "b": 7})
 print(result.content)
 ```
 
-在上面的代码中，我们：
+在上述代码中，我们：
 
 - 使用 `read_resource` 调用了名为 `greeting` 的资源
 - 使用 `call_tool` 调用了名为 `add` 的工具
 
-### C#
+### .NET
 
 1. 添加调用工具的代码：
 
@@ -479,7 +479,7 @@ print(result.content)
       cancellationToken:CancellationToken.None);
   ```
 
-2. 打印结果的代码：
+2. 打印结果的代码示例：
 
   ```csharp
   Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
@@ -506,7 +506,7 @@ CallToolResult resultHelp = client.callTool(new CallToolRequest("help", Map.of()
 System.out.println("Help = " + resultHelp);
 ```
 
-在上面的代码中，我们：
+在上述代码中，我们：
 
 - 使用 `callTool()` 方法和 `CallToolRequest` 对象调用了多个计算器工具
 - 每个工具调用都指定了工具名称和所需参数的 `Map`
@@ -545,7 +545,7 @@ dotnet run
 
 ### Java
 
-确保 MCP 服务器运行在 `http://localhost:8080`，然后运行客户端：
+首先确保 MCP 服务器运行在 `http://localhost:8080`，然后运行客户端：
 
 ```bash
 # Build you project
@@ -570,7 +570,7 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 本任务中，你将运用所学创建自己的客户端。
 
-这里有一个服务器，你需要通过客户端代码调用它，试着为服务器添加更多功能，使其更有趣。
+这里有一个服务器供你调用，尝试为服务器添加更多功能，使其更有趣。
 
 ### TypeScript
 
@@ -680,31 +680,133 @@ public static class CalculatorTool
 
 ## 解决方案
 
-[解决方案](./solution/README.md)
+**解决方案文件夹**包含完整、可运行的客户端实现，演示本教程涵盖的所有概念。每个解决方案包含客户端和服务器代码，分别组织在独立的项目中。
 
-## 关键要点
+### 📁 解决方案结构
 
-本章关于客户端的关键要点如下：
+解决方案目录按编程语言组织：
 
-- 可用于发现和调用服务器上的功能。
-- 可以在启动自身时启动服务器（如本章所示），也可以连接到已运行的服务器。
-- 是测试服务器功能的好方法，除了前章介绍的 Inspector 之外的另一种选择。
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 每个解决方案包含内容
+
+每个语言特定的解决方案提供：
+
+- **完整的客户端实现**，涵盖教程中的所有功能
+- **可用的项目结构**，包含正确的依赖和配置
+- **构建和运行脚本**，方便设置和执行
+- **详细的 README**，包含语言特定的说明
+- **错误处理**和结果处理示例
+
+### 📖 使用解决方案
+
+1. **进入你偏好的语言文件夹**：
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **按照每个文件夹中的 README 指南操作**：
+   - 安装依赖
+   - 构建项目
+   - 运行客户端
+
+3. **你应该看到的示例输出**：
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+完整文档和分步说明请参见：**[📖 解决方案文档](./solution/README.md)**
+
+## 🎯 完整示例
+
+我们提供了涵盖本教程所有编程语言的完整、可运行客户端实现。这些示例展示了上述全部功能，可作为参考实现或项目起点。
+
+### 可用的完整示例
+
+| 语言 | 文件 | 描述 |
+|------|------|------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | 使用 SSE 传输的完整 Java 客户端，包含全面的错误处理 |
+| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | 使用 stdio 传输的完整 C# 客户端，支持自动启动服务器 |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | 支持完整 MCP 协议的 TypeScript 客户端 |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | 使用 async/await 模式的完整 Python 客户端 |
+
+每个完整示例包含：
+
+- ✅ **连接建立**及错误处理
+- ✅ **服务器发现**（工具、资源、提示）
+- ✅ **计算器操作**（加、减、乘、除、帮助）
+- ✅ **结果处理**及格式化输出
+- ✅ **全面的错误处理**
+- ✅ **清晰、带注释的代码**，逐步说明
+
+### 使用完整示例入门
+
+1. **从上表选择你偏好的语言**
+2. **查看完整示例文件，了解完整实现**
+3. **按照 [`complete_examples.md`](./complete_examples.md) 中的说明运行示例**
+4. **根据需要修改和扩展示例**
+
+详细的运行和定制文档请参见：**[📖 完整示例文档](./complete_examples.md)**
+
+### 💡 解决方案与完整示例对比
+
+| **解决方案文件夹** | **完整示例** |
+|--------------------|--------------|
+| 完整项目结构，含构建文件 | 单文件实现 |
+| 依赖齐全，开箱即用 | 代码示例聚焦功能 |
+| 生产环境级别配置 | 教学参考用途 |
+| 语言特定工具链支持 | 跨语言对比 |
+两种方法都有价值——使用**solution folder**来存放完整项目，使用**complete examples**进行学习和参考。
+
+## 主要收获
+
+本章关于客户端的主要收获如下：
+
+- 可以用来发现和调用服务器上的功能。
+- 可以在启动自身的同时启动服务器（如本章所示），但客户端也可以连接到已运行的服务器。
+- 是测试服务器功能的好方法，类似于上一章中介绍的 Inspector。
 
 ## 额外资源
 
-- [在 MCP 中构建客户端](https://modelcontextprotocol.io/quickstart/client)
+- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## 示例
 
-- [Java 计算器](../samples/java/calculator/README.md)
-- [.Net 计算器](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript 计算器](../samples/javascript/README.md)
-- [TypeScript 计算器](../samples/typescript/README.md)
-- [Python 计算器](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
 
 ## 接下来
 
-- 下一章：[使用 LLM 创建客户端](../03-llm-client/README.md)
+- 下一步：[Creating a client with an LLM](../03-llm-client/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

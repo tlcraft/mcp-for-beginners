@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5067c45550201d577437ed7315a51307",
-  "translation_date": "2025-07-16T20:50:10+00:00",
+  "original_hash": "35fe22b9167cb7be62fddbcf53a255f4",
+  "translation_date": "2025-07-17T09:40:12+00:00",
   "source_file": "README.md",
   "language_code": "zh"
 }
@@ -53,11 +53,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 加入我们，参加 2025 年 7 月 29-30 日的 MCP 开发者日
 
-准备好参加为期两天的深度技术分享、社区交流和实战学习吧！MCP 开发者日是一个专注于 Model Context Protocol (MCP) 的线上活动，MCP 是连接 AI 模型与其依赖工具的新兴标准。
+准备好参加为期两天的深度技术分享、社区交流和实战学习吧！MCP 开发者日是一个专注于 Model Context Protocol（MCP）的线上活动，致力于推动 AI 模型与其依赖工具之间的标准化连接。
 
 ➡️ [注册 MCP 开发者日](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-你可以通过我们的活动页面 https://aka.ms/mcpdevdays 注册观看 MCP 开发者日直播。届时可通过 YouTube 或 Twitch 观看直播。所有内容都会录制并在微软开发者 YouTube 频道上发布。演示的源代码也会在 GitHub 上提供。
+你可以通过我们的活动页面 https://aka.ms/mcpdevdays 注册观看 MCP 开发者日直播。届时可通过 YouTube 或 Twitch 观看直播。所有内容都会录制并在微软开发者 YouTube 频道上发布。演示的源码也会在 GitHub 上提供。
 
 ### 活动详情
 - 日期：7 月 29 日（第一天）和 7 月 30 日（第二天）
@@ -100,13 +100,13 @@ CO_OP_TRANSLATOR_METADATA:
 | 3.2 | 第一个客户端 | 开发基础 MCP 客户端 | [指南](./03-GettingStarted/02-client/README.md) |
 | 3.3 | 带 LLM 的客户端 | 集成大型语言模型 | [指南](./03-GettingStarted/03-llm-client/README.md) |
 | 3.4 | VS Code 集成 | 在 VS Code 中使用 MCP 服务器 | [指南](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | SSE 服务器 | 使用 Server-Sent Events 创建服务器 | [指南](./03-GettingStarted/05-sse-server/README.md) |
+| 3.5 | SSE 服务器 | 使用服务器发送事件创建服务器 | [指南](./03-GettingStarted/05-sse-server/README.md) |
 | 3.6 | HTTP 流式传输 | 实现 MCP 中的 HTTP 流式传输 | [指南](./03-GettingStarted/06-http-streaming/README.md) |
 | 3.7 | AI 工具包 | 使用 AI 工具包配合 MCP | [指南](./03-GettingStarted/07-aitk/README.md) |
 | 3.8 | 测试 | 测试你的 MCP 服务器实现 | [指南](./03-GettingStarted/08-testing/README.md) |
 | 3.9 | 部署 | 将 MCP 服务器部署到生产环境 | [指南](./03-GettingStarted/09-deployment/README.md) |
 | **模块 4-5：实用与高级** | | | |
-| 04 | 实践实现 | SDK、调试、测试、可复用提示模板 | [阅读更多](./04-PracticalImplementation/README.md) |
+| 04 | 实用实现 | SDK、调试、测试、可复用提示模板 | [阅读更多](./04-PracticalImplementation/README.md) |
 | 05 | MCP 高级主题 | 多模态 AI、扩展性、企业应用 | [阅读更多](./05-AdvancedTopics/README.md) |
 | 5.1 | Azure 集成 | MCP 与 Azure 集成 | [指南](./05-AdvancedTopics/mcp-integration/README.md) |
 | 5.2 | 多模态 | 多模态处理 | [指南](./05-AdvancedTopics/mcp-multi-modality/README.md) |
@@ -161,7 +161,7 @@ CO_OP_TRANSLATOR_METADATA:
 - 熟悉 REST 和 HTTP 概念
 - （可选）具备 AI/ML 相关背景知识
 
-- 加入我们的社区讨论以获得支持
+- 加入我们的社区讨论以获取支持
 
 ## 📚 学习指南与资源
 
@@ -188,7 +188,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🛠️ 如何高效使用本课程
 
-本指南中的每节课都包含：
+本指南中的每节课均包含：
 
 1. 清晰的 MCP 概念讲解  
 2. 多语言的实时代码示例  
@@ -196,35 +196,34 @@ CO_OP_TRANSLATOR_METADATA:
 4. 面向高级学习者的额外资源
 
 
-## 🌟 社区致谢
+## 🌟 社区感谢
 
 感谢 Microsoft 资深专家 [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) 贡献了重要的代码示例。
 
 ## 📜 许可信息
 
-本内容采用 **MIT 许可证** 许可。有关条款和条件，请参见 [LICENSE](../../LICENSE)。
+本内容采用 **MIT 许可证** 许可。条款详情请参见 [LICENSE](../../LICENSE)。
 
 ## 🤝 贡献指南
 
 本项目欢迎贡献和建议。大多数贡献需要你同意一份贡献者许可协议（CLA），声明你有权且确实授予我们使用你贡献的权利。详情请访问  
 <https://cla.opensource.microsoft.com>。
 
-当你提交拉取请求时，CLA 机器人会自动判断你是否需要提供 CLA，并相应地标注 PR（例如状态检查、评论）。只需按照机器人提供的指示操作即可。你在所有使用我们 CLA 的仓库中只需完成一次。
+当你提交拉取请求时，CLA 机器人会自动判断你是否需要提供 CLA，并相应地标注 PR（如状态检查、评论）。只需按照机器人指示操作即可。你只需在所有使用我们 CLA 的仓库中完成一次。
 
 本项目采用了 [Microsoft 开源行为准则](https://opensource.microsoft.com/codeofconduct/)。  
-更多信息请参见 [行为准则常见问题](https://opensource.microsoft.com/codeofconduct/faq/) 或通过邮件联系 [opencode@microsoft.com](mailto:opencode@microsoft.com) 以获取更多问题或反馈。
+更多信息请参见 [行为准则常见问题](https://opensource.microsoft.com/codeofconduct/faq/) 或联系 [opencode@microsoft.com](mailto:opencode@microsoft.com) 以获取额外问题或反馈。
 
 ## 📂 仓库结构
 
 仓库结构如下：
 
-- **核心课程 (00-10)**：按顺序组织的十个模块的主要内容
+- **核心课程 (00-10)**：主内容，分为十个顺序模块
 - **images/**：课程中使用的图表和插图
 - **translations/**：多语言支持及自动翻译
 - **translated_images/**：本地化的图表和插图
-- **alternative_layouts/**：课程内容的不同展示格式
 - **study_guide.md**：全面的仓库导航指南
-- **changelog.md**：课程材料所有重要变更记录
+- **changelog.md**：课程材料的重要变更记录
 - **mcp.json**：MCP 规范配置文件
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**：项目治理文档
 
@@ -250,9 +249,9 @@ CO_OP_TRANSLATOR_METADATA:
 ## ™️ 商标声明
 
 本项目可能包含项目、产品或服务的商标或标识。微软商标或标识的授权使用须遵守并符合  
-[Microsoft 商标与品牌指南](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)。  
-在本项目的修改版本中使用微软商标或标识不得引起混淆或暗示微软的赞助。  
+[微软商标与品牌指南](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)。  
+在本项目的修改版本中使用微软商标或标识不得引起混淆或暗示微软赞助。  
 任何第三方商标或标识的使用均须遵守相应第三方的政策。
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

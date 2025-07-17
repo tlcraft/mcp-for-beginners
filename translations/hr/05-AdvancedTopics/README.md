@@ -1,26 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "748c61250d4a326206b72b28f6154615",
-  "translation_date": "2025-07-13T23:48:41+00:00",
+  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
+  "translation_date": "2025-07-17T12:04:56+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "hr"
 }
 -->
 # Napredne teme u MCP-u
 
-Ovo poglavlje pokriva niz naprednih tema u implementaciji Model Context Protocola (MCP), uključujući multimodalnu integraciju, skalabilnost, najbolje sigurnosne prakse i integraciju u poslovna okruženja. Ove teme su ključne za izgradnju robusnih i spremnih za produkciju MCP aplikacija koje mogu zadovoljiti zahtjeve suvremenih AI sustava.
+Ovo poglavlje obuhvaća niz naprednih tema u implementaciji Model Context Protocola (MCP), uključujući multimodalnu integraciju, skalabilnost, najbolje sigurnosne prakse i integraciju u poslovna okruženja. Ove teme su ključne za izgradnju robusnih i spremnih za produkciju MCP aplikacija koje mogu zadovoljiti zahtjeve suvremenih AI sustava.
 
 ## Pregled
 
-Ova lekcija istražuje napredne koncepte u implementaciji Model Context Protocola, s fokusom na multimodalnu integraciju, skalabilnost, najbolje sigurnosne prakse i integraciju u poslovna okruženja. Ove teme su neophodne za izgradnju MCP aplikacija proizvodne razine koje mogu podnijeti složene zahtjeve u poslovnim okruženjima.
+Ova lekcija istražuje napredne koncepte u implementaciji Model Context Protocola, s naglaskom na multimodalnu integraciju, skalabilnost, najbolje sigurnosne prakse i integraciju u poslovna okruženja. Ove teme su neophodne za izradu MCP aplikacija proizvodne razine koje mogu podnijeti složene zahtjeve u poslovnim okruženjima.
 
 ## Ciljevi učenja
 
 Na kraju ove lekcije moći ćete:
 
 - Implementirati multimodalne mogućnosti unutar MCP okvira
-- Dizajnirati skalabilne MCP arhitekture za scenarije s velikim opterećenjem
+- Dizajnirati skalabilne MCP arhitekture za zahtjevne scenarije
 - Primijeniti najbolje sigurnosne prakse usklađene s MCP sigurnosnim principima
 - Integrirati MCP s poslovnim AI sustavima i okvirima
 - Optimizirati performanse i pouzdanost u produkcijskim okruženjima
@@ -55,18 +55,18 @@ Za najnovije informacije o naprednim MCP temama, pogledajte:
 - Multimodalne MCP implementacije proširuju AI mogućnosti izvan obrade teksta
 - Skalabilnost je ključna za poslovne implementacije i može se postići horizontalnim i vertikalnim skaliranjem
 - Sveobuhvatne sigurnosne mjere štite podatke i osiguravaju pravilnu kontrolu pristupa
-- Integracija u poslovna okruženja s platformama poput Azure OpenAI i Microsoft AI Foundry unapređuje MCP mogućnosti
+- Integracija u poslovna okruženja s platformama poput Azure OpenAI i Microsoft AI Foundry povećava MCP mogućnosti
 - Napredne MCP implementacije imaju koristi od optimiziranih arhitektura i pažljivog upravljanja resursima
 
 ## Vježba
 
 Dizajnirajte MCP implementaciju poslovne razine za specifičan slučaj upotrebe:
 
-1. Identificirajte multimodalne zahtjeve za vaš slučaj upotrebe
+1. Identificirajte multimodalne zahtjeve za svoj slučaj upotrebe
 2. Nacrtajte sigurnosne kontrole potrebne za zaštitu osjetljivih podataka
 3. Dizajnirajte skalabilnu arhitekturu koja može podnijeti varijabilno opterećenje
 4. Planirajte točke integracije s poslovnim AI sustavima
-5. Dokumentirajte potencijalne uska grla u performansama i strategije za njihovo ublažavanje
+5. Dokumentirajte moguće uska grla u performansama i strategije za njihovo ublažavanje
 
 ## Dodatni resursi
 
@@ -80,4 +80,4 @@ Dizajnirajte MCP implementaciju poslovne razine za specifičan slučaj upotrebe:
 - [5.1 MCP Integration](./mcp-integration/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

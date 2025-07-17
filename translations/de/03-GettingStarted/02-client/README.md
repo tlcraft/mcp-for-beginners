@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6f267185e24b1274dd3535d65dd1787",
-  "translation_date": "2025-07-16T22:17:17+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T09:35:11+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "de"
 }
 -->
 # Einen Client erstellen
 
-Clients sind benutzerdefinierte Anwendungen oder Skripte, die direkt mit einem MCP-Server kommunizieren, um Ressourcen, Werkzeuge und Prompts anzufordern. Im Gegensatz zum Einsatz des Inspector-Tools, das eine grafische Oberfläche für die Interaktion mit dem Server bietet, ermöglicht das Schreiben eines eigenen Clients programmatische und automatisierte Interaktionen. Dadurch können Entwickler MCP-Funktionen in ihre eigenen Arbeitsabläufe integrieren, Aufgaben automatisieren und maßgeschneiderte Lösungen für spezifische Anforderungen erstellen.
+Clients sind maßgeschneiderte Anwendungen oder Skripte, die direkt mit einem MCP-Server kommunizieren, um Ressourcen, Werkzeuge und Prompts anzufordern. Im Gegensatz zum Inspector-Tool, das eine grafische Oberfläche für die Interaktion mit dem Server bietet, ermöglicht das Schreiben eines eigenen Clients programmatische und automatisierte Interaktionen. Dadurch können Entwickler MCP-Funktionen in ihre eigenen Arbeitsabläufe integrieren, Aufgaben automatisieren und maßgeschneiderte Lösungen für spezifische Anforderungen erstellen.
 
 ## Überblick
 
@@ -27,7 +27,7 @@ Am Ende dieser Lektion wirst du in der Lage sein:
 
 Um einen Client zu schreiben, musst du Folgendes tun:
 
-- **Die richtigen Bibliotheken importieren**. Du verwendest dieselbe Bibliothek wie zuvor, nur mit anderen Konstrukten.
+- **Die richtigen Bibliotheken importieren**. Du verwendest dieselbe Bibliothek wie zuvor, nur andere Konstrukte.
 - **Einen Client instanziieren**. Dabei erstellst du eine Client-Instanz und verbindest sie mit der gewählten Transportmethode.
 - **Entscheiden, welche Ressourcen aufgelistet werden sollen**. Dein MCP-Server bietet Ressourcen, Werkzeuge und Prompts – du musst entscheiden, welche davon du auflisten möchtest.
 - **Den Client in eine Host-Anwendung integrieren**. Sobald du die Fähigkeiten des Servers kennst, musst du den Client in deine Host-Anwendung einbinden, sodass bei Eingabe eines Prompts oder Befehls durch den Nutzer die entsprechende Serverfunktion aufgerufen wird.
@@ -102,7 +102,7 @@ Wie oben gesagt, nehmen wir uns Zeit, den Code zu erklären, und du kannst gerne
 
 ### -1- Bibliotheken importieren
 
-Lass uns die benötigten Bibliotheken importieren. Wir brauchen Referenzen zu einem Client und zu unserem gewählten Transportprotokoll, stdio. stdio ist ein Protokoll für Anwendungen, die lokal auf deinem Rechner laufen. SSE ist ein weiteres Transportprotokoll, das wir in späteren Kapiteln zeigen werden, aber das ist deine andere Option. Für den Moment machen wir mit stdio weiter.
+Lass uns die benötigten Bibliotheken importieren. Wir brauchen Referenzen auf einen Client und auf unser gewähltes Transportprotokoll, stdio. stdio ist ein Protokoll für Programme, die lokal auf deinem Rechner laufen. SSE ist ein weiteres Transportprotokoll, das wir in späteren Kapiteln zeigen werden, aber das ist deine andere Option. Für den Moment bleiben wir bei stdio.
 
 ### TypeScript
 
@@ -130,7 +130,7 @@ using ModelContextProtocol.Protocol.Transport;
 
 ### Java
 
-Für Java erstellst du einen Client, der sich mit dem MCP-Server aus der vorherigen Übung verbindet. Verwende die gleiche Java Spring Boot Projektstruktur aus [Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java), erstelle eine neue Java-Klasse namens `SDKClient` im Ordner `src/main/java/com/microsoft/mcp/sample/client/` und füge folgende Importe hinzu:
+Für Java erstellst du einen Client, der sich mit dem MCP-Server aus der vorherigen Übung verbindet. Verwende dieselbe Java Spring Boot Projektstruktur aus [Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java), erstelle eine neue Java-Klasse namens `SDKClient` im Ordner `src/main/java/com/microsoft/mcp/sample/client/` und füge folgende Importe hinzu:
 
 ```java
 import java.util.Map;
@@ -169,7 +169,7 @@ await client.connect(transport);
 
 Im obigen Code haben wir:
 
-- Eine stdio-Transportinstanz erstellt. Beachte, wie hier Befehl und Argumente angegeben werden, um den Server zu finden und zu starten – das ist notwendig, wenn wir den Client erstellen.
+- Eine stdio-Transportinstanz erstellt. Beachte, wie hier Befehl und Argumente angegeben werden, um den Server zu finden und zu starten – das ist etwas, das wir beim Erstellen des Clients brauchen.
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -260,7 +260,7 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 Im obigen Code haben wir:
 
 - Die benötigten Bibliotheken importiert.
-- Einen stdio-Transport erstellt und einen Client `mcpClient` erzeugt. Letzteren verwenden wir, um Funktionen auf dem MCP-Server aufzulisten und aufzurufen.
+- Einen stdio-Transport erstellt und einen Client `mcpClient` instanziiert. Letzteren verwenden wir, um Funktionen auf dem MCP-Server aufzulisten und aufzurufen.
 
 Hinweis: Bei "Arguments" kannst du entweder auf die *.csproj* oder auf die ausführbare Datei verweisen.
 
@@ -293,12 +293,12 @@ Im obigen Code haben wir:
 
 - Eine main-Methode erstellt, die einen SSE-Transport einrichtet, der auf `http://localhost:8080` zeigt, wo unser MCP-Server läuft.
 - Eine Client-Klasse erstellt, die den Transport als Konstruktorparameter erhält.
-- In der `run`-Methode einen synchronen MCP-Client mit dem Transport erzeugt und die Verbindung initialisiert.
-- SSE (Server-Sent Events) als Transport verwendet, das sich für HTTP-basierte Kommunikation mit Java Spring Boot MCP-Servern eignet.
+- In der `run`-Methode einen synchronen MCP-Client mit dem Transport erstellt und die Verbindung initialisiert.
+- SSE (Server-Sent Events) als Transport verwendet, was sich für HTTP-basierte Kommunikation mit Java Spring Boot MCP-Servern eignet.
 
 ### -3- Server-Funktionen auflisten
 
-Jetzt haben wir einen Client, der sich verbinden kann, wenn das Programm ausgeführt wird. Allerdings listet er seine Funktionen noch nicht auf, das machen wir jetzt:
+Jetzt haben wir einen Client, der sich verbinden kann, wenn das Programm ausgeführt wird. Allerdings listet er noch nicht die Funktionen auf, das machen wir jetzt:
 
 ### TypeScript
 
@@ -357,9 +357,9 @@ Im obigen Code haben wir:
 
 - `listTools()` aufgerufen, um alle verfügbaren Werkzeuge vom MCP-Server zu erhalten.
 - `ping()` verwendet, um zu überprüfen, ob die Verbindung zum Server funktioniert.
-- Das `ListToolsResult` enthält Informationen über alle Werkzeuge, einschließlich ihrer Namen, Beschreibungen und Eingabeschemata.
+- Das `ListToolsResult` enthält Informationen über alle Werkzeuge, einschließlich Namen, Beschreibungen und Eingabeschemata.
 
-Super, jetzt haben wir alle Funktionen erfasst. Die Frage ist: Wann verwenden wir sie? Dieser Client ist recht einfach, das heißt, wir müssen die Funktionen explizit aufrufen, wenn wir sie brauchen. Im nächsten Kapitel erstellen wir einen fortgeschritteneren Client, der Zugriff auf ein eigenes großes Sprachmodell (LLM) hat. Für den Moment schauen wir uns an, wie wir die Funktionen auf dem Server aufrufen können:
+Super, jetzt haben wir alle Funktionen erfasst. Die Frage ist: Wann verwenden wir sie? Dieser Client ist ziemlich einfach, das heißt, wir müssen die Funktionen explizit aufrufen, wenn wir sie brauchen. Im nächsten Kapitel erstellen wir einen fortgeschritteneren Client, der Zugriff auf ein eigenes großes Sprachmodell (LLM) hat. Für den Moment schauen wir uns an, wie wir die Funktionen auf dem Server aufrufen können:
 
 ### -4- Funktionen aufrufen
 
@@ -468,9 +468,9 @@ Im obigen Code haben wir:
 - Eine Ressource namens `greeting` mit `read_resource` aufgerufen.
 - Ein Werkzeug namens `add` mit `call_tool` ausgeführt.
 
-### C#
+### .NET
 
-1. Fügen wir etwas Code hinzu, um ein Werkzeug aufzurufen:
+1. Fügen wir Code hinzu, um ein Werkzeug aufzurufen:
 
   ```csharp
   var result = await mcpClient.CallToolAsync(
@@ -479,7 +479,7 @@ Im obigen Code haben wir:
       cancellationToken:CancellationToken.None);
   ```
 
-1. Um das Ergebnis auszugeben, hier etwas Code, der das übernimmt:
+1. Um das Ergebnis auszugeben, hier ein Beispielcode:
 
   ```csharp
   Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
@@ -513,7 +513,7 @@ Im obigen Code haben wir:
 - Die Server-Werkzeuge erwarten bestimmte Parameternamen (wie "a", "b" für mathematische Operationen).
 - Ergebnisse werden als `CallToolResult`-Objekte zurückgegeben, die die Antwort vom Server enthalten.
 
-### -5- Den Client ausführen
+### -5- Client ausführen
 
 Um den Client auszuführen, gib folgenden Befehl im Terminal ein:
 
@@ -680,31 +680,132 @@ Schau dir auch diesen Link an, um zu sehen, wie man [Prompts und Ressourcen aufr
 
 ## Lösung
 
-[Lösung](./solution/README.md)
+Der **Lösungsordner** enthält vollständige, sofort ausführbare Client-Implementierungen, die alle in diesem Tutorial behandelten Konzepte demonstrieren. Jede Lösung umfasst sowohl Client- als auch Server-Code, organisiert in separaten, eigenständigen Projekten.
 
+### 📁 Lösungsstruktur
+
+Das Lösungsverzeichnis ist nach Programmiersprachen organisiert:
+
+```
+solution/
+├── typescript/          # TypeScript client with npm/Node.js setup
+│   ├── package.json     # Dependencies and scripts
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── src/             # Source code
+├── java/                # Java Spring Boot client project
+│   ├── pom.xml          # Maven configuration
+│   ├── src/             # Java source files
+│   └── mvnw            # Maven wrapper
+├── python/              # Python client implementation
+│   ├── client.py        # Main client code
+│   ├── server.py        # Compatible server
+│   └── README.md        # Python-specific instructions
+├── dotnet/              # .NET client project
+│   ├── dotnet.csproj    # Project configuration
+│   ├── Program.cs       # Main client code
+│   └── dotnet.sln       # Solution file
+└── server/              # Additional .NET server implementation
+    ├── Program.cs       # Server code
+    └── server.csproj    # Server project file
+```
+
+### 🚀 Was jede Lösung beinhaltet
+
+Jede sprachspezifische Lösung bietet:
+
+- **Vollständige Client-Implementierung** mit allen Funktionen aus dem Tutorial
+- **Funktionierende Projektstruktur** mit korrekten Abhängigkeiten und Konfiguration
+- **Build- und Ausführungsskripte** für einfache Einrichtung und Ausführung
+- **Detaillierte README** mit sprachspezifischen Anweisungen
+- **Fehlerbehandlung** und Beispiele zur Ergebnisverarbeitung
+
+### 📖 Nutzung der Lösungen
+
+1. **Navigiere in den Ordner deiner bevorzugten Sprache**:
+   ```bash
+   cd solution/typescript/    # For TypeScript
+   cd solution/java/          # For Java
+   cd solution/python/        # For Python
+   cd solution/dotnet/        # For .NET
+   ```
+
+2. **Folge den README-Anweisungen** in jedem Ordner für:
+   - Installation der Abhängigkeiten
+   - Projekt bauen
+   - Client ausführen
+
+3. **Beispielausgabe, die du sehen solltest**:
+   ```text
+   Prompt: Please review this code: console.log("hello");
+   Resource template: file
+   Tool result: { content: [ { type: 'text', text: '9' } ] }
+   ```
+
+Für vollständige Dokumentation und Schritt-für-Schritt-Anleitungen siehe: **[📖 Lösungsdokumentation](./solution/README.md)**
+
+## 🎯 Vollständige Beispiele
+
+Wir haben vollständige, funktionierende Client-Implementierungen für alle in diesem Tutorial behandelten Programmiersprachen bereitgestellt. Diese Beispiele zeigen die volle Funktionalität und können als Referenz oder Ausgangspunkt für eigene Projekte genutzt werden.
+
+### Verfügbare vollständige Beispiele
+
+| Sprache   | Datei                          | Beschreibung                                                      |
+|-----------|--------------------------------|------------------------------------------------------------------|
+| **Java**  | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java)       | Vollständiger Java-Client mit SSE-Transport und umfassender Fehlerbehandlung |
+| **C#**    | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs)       | Vollständiger C#-Client mit stdio-Transport und automatischem Serverstart |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Vollständiger TypeScript-Client mit vollständiger MCP-Protokollunterstützung |
+| **Python**| [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py)       | Vollständiger Python-Client mit async/await-Pattern              |
+
+Jedes vollständige Beispiel enthält:
+
+- ✅ **Verbindungsaufbau** und Fehlerbehandlung
+- ✅ **Servererkennung** (Werkzeuge, Ressourcen, Prompts, wo zutreffend)
+- ✅ **Rechenoperationen** (addieren, subtrahieren, multiplizieren, dividieren, Hilfe)
+- ✅ **Ergebnisverarbeitung** und formatierte Ausgabe
+- ✅ **Umfassende Fehlerbehandlung**
+- ✅ **Sauberen, dokumentierten Code** mit Schritt-für-Schritt-Kommentaren
+
+### Einstieg mit vollständigen Beispielen
+
+1. **Wähle deine bevorzugte Sprache** aus der obigen Tabelle
+2. **Sieh dir die vollständige Beispieldatei an**, um die komplette Implementierung zu verstehen
+3. **Führe das Beispiel aus** gemäß den Anweisungen in [`complete_examples.md`](./complete_examples.md)
+4. **Passe das Beispiel an und erweitere es** für deinen speziellen Anwendungsfall
+
+Für detaillierte Dokumentation zum Ausführen und Anpassen dieser Beispiele siehe: **[📖 Dokumentation zu vollständigen Beispielen](./complete_examples.md)**
+
+### 💡 Lösung vs. vollständige Beispiele
+
+| **Lösungsordner**               | **Vollständige Beispiele**          |
+|--------------------------------|-----------------------------------|
+| Vollständige Projektstruktur mit Build-Dateien | Einzeldatei-Implementierungen       |
+| Sofort ausführbar mit Abhängigkeiten | Fokus auf Codebeispiele             |
+| Produktionsähnliche Umgebung    | Lehrreiche Referenz                 |
+| Sprachspezifische Werkzeuge     | Sprachübergreifender Vergleich     |
+Beide Ansätze sind wertvoll – nutze den **solution folder** für komplette Projekte und die **complete examples** zum Lernen und als Referenz.  
 ## Wichtige Erkenntnisse
 
-Die wichtigsten Erkenntnisse dieses Kapitels zu Clients sind:
+Die wichtigsten Erkenntnisse dieses Kapitels zum Thema Clients sind:
 
-- Sie können sowohl verwendet werden, um Funktionen auf dem Server zu entdecken als auch aufzurufen.
-- Sie können einen Server starten, während sie selbst starten (wie in diesem Kapitel), aber Clients können sich auch mit bereits laufenden Servern verbinden.
-- Sie sind eine großartige Möglichkeit, Serverfunktionen zu testen, neben Alternativen wie dem Inspector, wie im vorherigen Kapitel beschrieben.
+- Können sowohl zur Entdeckung als auch zur Ausführung von Funktionen auf dem Server verwendet werden.  
+- Können einen Server starten, während sie selbst starten (wie in diesem Kapitel), aber Clients können sich auch mit bereits laufenden Servern verbinden.  
+- Sind eine großartige Möglichkeit, Serverfunktionen neben Alternativen wie dem Inspector zu testen, wie im vorherigen Kapitel beschrieben.  
 
 ## Zusätzliche Ressourcen
 
-- [Clients in MCP erstellen](https://modelcontextprotocol.io/quickstart/client)
+- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
 
 ## Beispiele
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Java Calculator](../samples/java/calculator/README.md)  
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
+- [JavaScript Calculator](../samples/javascript/README.md)  
+- [TypeScript Calculator](../samples/typescript/README.md)  
+- [Python Calculator](../../../../03-GettingStarted/samples/python)  
 
 ## Was kommt als Nächstes
 
-- Nächstes Kapitel: [Einen Client mit einem LLM erstellen](../03-llm-client/README.md)
+- Nächstes: [Creating a client with an LLM](../03-llm-client/README.md)
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

@@ -1,44 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:43:07+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-17T10:25:09+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "hu"
 }
 -->
 # Biztonsági legjobb gyakorlatok
 
-A biztonság kiemelten fontos az MCP megvalósításoknál, különösen vállalati környezetben. Fontos biztosítani, hogy az eszközök és az adatok védve legyenek illetéktelen hozzáférés, adatlopás és egyéb biztonsági fenyegetések ellen.
+A biztonság kulcsfontosságú az MCP megvalósításoknál, különösen vállalati környezetben. Fontos biztosítani, hogy az eszközök és az adatok védve legyenek illetéktelen hozzáférés, adatlopás és egyéb biztonsági fenyegetések ellen.
 
 ## Bevezetés
 
-Ebben a leckében áttekintjük az MCP megvalósítások biztonsági legjobb gyakorlatait. Foglalkozunk az autentikációval és autorizációval, az adatok védelmével, az eszközök biztonságos futtatásával, valamint az adatvédelmi szabályozásoknak való megfeleléssel.
+A Model Context Protocol (MCP) speciális biztonsági megfontolásokat igényel, mivel LLM-ek számára biztosít hozzáférést adatokhoz és eszközökhöz. Ez a lecke az MCP megvalósítások biztonsági legjobb gyakorlatait tárgyalja az MCP hivatalos irányelvei és bevált biztonsági minták alapján.
+
+Az MCP követi a kulcsfontosságú biztonsági elveket a biztonságos és megbízható interakciók érdekében:
+
+- **Felhasználói beleegyezés és kontroll**: A felhasználóknak kifejezett beleegyezést kell adniuk, mielőtt bármilyen adatot elérnének vagy műveletet végeznének. Egyértelmű kontrollt kell biztosítani arról, hogy milyen adatokat osztanak meg és mely műveletek engedélyezettek.
+  
+- **Adatvédelem**: A felhasználói adatokat csak kifejezett beleegyezéssel szabad megosztani, és megfelelő hozzáférés-ellenőrzéssel kell védeni. Meg kell akadályozni az illetéktelen adatátvitelt.
+  
+- **Eszközbiztonság**: Mielőtt bármilyen eszközt meghívnánk, kifejezett felhasználói beleegyezés szükséges. A felhasználóknak tisztában kell lenniük az egyes eszközök működésével, és szigorú biztonsági határokat kell érvényesíteni.
 
 ## Tanulási célok
 
 A lecke végére képes leszel:
 
-- Biztonságos autentikációs és autorizációs mechanizmusokat megvalósítani MCP szerverekhez.
+- Biztonságos hitelesítési és jogosultságkezelési mechanizmusokat megvalósítani MCP szerverekhez.
 - Érzékeny adatokat titkosítással és biztonságos tárolással védeni.
-- Biztosítani az eszközök biztonságos futtatását megfelelő hozzáférés-ellenőrzéssel.
-- Alkalmazni az adatvédelem és adatvédelmi megfelelés legjobb gyakorlatait.
+- Biztosítani az eszközök biztonságos végrehajtását megfelelő hozzáférés-ellenőrzéssel.
+- Alkalmazni a legjobb gyakorlatokat az adatvédelem és adatvédelmi megfelelés érdekében.
+- Azonosítani és mérsékelni az MCP gyakori biztonsági sebezhetőségeit, mint például a confused deputy problémát, token passthrough-t és munkamenet eltérítést.
 
-## Autentikáció és autorizáció
+## Hitelesítés és jogosultságkezelés
 
-Az autentikáció és autorizáció elengedhetetlen az MCP szerverek biztonságához. Az autentikáció arra a kérdésre válaszol, hogy „Ki vagy?”, míg az autorizáció arra, hogy „Mit tehetsz?”.
+A hitelesítés és jogosultságkezelés elengedhetetlen az MCP szerverek biztonságához. A hitelesítés arra a kérdésre válaszol, hogy „Ki vagy?”, míg a jogosultságkezelés arra, hogy „Mit tehetsz?”.
 
-Nézzük meg, hogyan valósítható meg biztonságos autentikáció és autorizáció MCP szervereken .NET és Java környezetben.
+Az MCP biztonsági specifikációja szerint ezek kritikus biztonsági szempontok:
+
+1. **Token érvényesítés**: Az MCP szerverek NEM fogadhatnak el olyan tokeneket, amelyeket nem kifejezetten az MCP szerver számára bocsátottak ki. A „token passthrough” kifejezetten tiltott anti-minta.
+
+2. **Jogosultság ellenőrzés**: Az MCP szerverek, amelyek jogosultságkezelést valósítanak meg, MINDEN bejövő kérést ellenőrizniük kell, és NEM használhatnak munkameneteket hitelesítésre.
+
+3. **Biztonságos munkamenet-kezelés**: Állapotkezeléshez használt munkamenetek esetén az MCP szervereknek biztonságos, nem determinisztikus munkamenet-azonosítókat kell használniuk, amelyeket biztonságos véletlenszám-generátorokkal hoznak létre. A munkamenet-azonosítókat FEL KELL kötni felhasználó-specifikus adatokhoz.
+
+4. **Kifejezett felhasználói beleegyezés**: Proxy szerverek esetén az MCP megvalósításoknak minden dinamikusan regisztrált kliens esetén be kell szerezniük a felhasználó beleegyezését, mielőtt továbbítanák harmadik fél jogosultságkezelő szervereihez.
+
+Nézzük meg, hogyan valósítható meg biztonságos hitelesítés és jogosultságkezelés MCP szerverekben .NET és Java környezetben.
 
 ### .NET Identity integráció
 
-Az ASP .NET Core Identity egy megbízható keretrendszer a felhasználói autentikáció és autorizáció kezelésére. Integrálhatjuk MCP szerverekkel, hogy biztonságossá tegyük az eszközökhöz és erőforrásokhoz való hozzáférést.
+Az ASP .NET Core Identity egy robusztus keretrendszer a felhasználói hitelesítés és jogosultságkezelés kezelésére. Integrálhatjuk MCP szerverekkel az eszközök és erőforrások biztonságos eléréséhez.
 
 Néhány alapvető fogalom, amit meg kell értenünk az ASP.NET Core Identity MCP szerverekkel való integrálásakor:
 
-- **Identity konfiguráció**: Az ASP.NET Core Identity beállítása felhasználói szerepkörökkel és jogosultságokkal. A jogosultság (claim) egy információ a felhasználóról, például a szerepköre vagy engedélyei, mint például „Admin” vagy „User”.
-- **JWT autentikáció**: JSON Web Tokenek (JWT) használata a biztonságos API-hozzáféréshez. A JWT egy szabvány az információk biztonságos továbbítására JSON objektumként, amely digitálisan aláírt, így ellenőrizhető és megbízható.
-- **Autorizációs szabályok**: Szabályok meghatározása a hozzáférés szabályozására adott eszközökhöz a felhasználói szerepkörök alapján. Az MCP autorizációs szabályokat használ annak eldöntésére, hogy mely felhasználók férhetnek hozzá mely eszközökhöz a szerepköreik és jogosultságaik alapján.
+- **Identity konfiguráció**: Az ASP.NET Core Identity beállítása felhasználói szerepkörökkel és jogosultságokkal. Egy jogosultság (claim) egy információ a felhasználóról, például a szerepköre vagy engedélyei, például „Admin” vagy „User”.
+- **JWT hitelesítés**: JSON Web Tokenek (JWT) használata a biztonságos API hozzáféréshez. A JWT egy szabvány az információ biztonságos továbbítására JSON objektumként, amely digitálisan aláírt, így ellenőrizhető és megbízható.
+- **Jogosultságkezelési szabályok**: Szabályok definiálása az eszközökhöz való hozzáférés szabályozására felhasználói szerepkörök alapján. Az MCP jogosultságkezelési szabályokat használ annak meghatározására, hogy mely felhasználók férhetnek hozzá mely eszközökhöz szerepköreik és jogosultságaik alapján.
 
 ```csharp
 public class SecureMcpStartup
@@ -112,20 +131,20 @@ public class SecureMcpStartup
 A fenti kódban:
 
 - Beállítottuk az ASP.NET Core Identity-t a felhasználókezeléshez.
-- Konfiguráltuk a JWT autentikációt a biztonságos API-hozzáféréshez. Megadtuk a token érvényesítési paramétereit, beleértve a kibocsátót, a célközönséget és az aláíró kulcsot.
-- Meghatároztuk az autorizációs szabályokat az eszközökhöz való hozzáférés szabályozására a felhasználói szerepkörök alapján. Például a „CanUseAdminTools” szabály megköveteli, hogy a felhasználó „Admin” szerepkörrel rendelkezzen, míg a „CanUseBasic” szabály megköveteli, hogy a felhasználó hitelesített legyen.
-- Regisztráltuk az MCP eszközöket specifikus autorizációs követelményekkel, biztosítva, hogy csak a megfelelő szerepkörrel rendelkező felhasználók férhessenek hozzájuk.
+- Konfiguráltuk a JWT hitelesítést a biztonságos API hozzáféréshez. Megadtuk a token érvényesítési paramétereket, beleértve a kibocsátót, a közönséget és az aláírási kulcsot.
+- Meghatároztuk a jogosultságkezelési szabályokat az eszközökhöz való hozzáférés szabályozására felhasználói szerepkörök alapján. Például a „CanUseAdminTools” szabály megköveteli, hogy a felhasználó „Admin” szerepkörrel rendelkezzen, míg a „CanUseBasic” szabály megköveteli, hogy a felhasználó hitelesített legyen.
+- Regisztráltuk az MCP eszközöket specifikus jogosultsági követelményekkel, biztosítva, hogy csak a megfelelő szerepkörrel rendelkező felhasználók férhessenek hozzájuk.
 
 ### Java Spring Security integráció
 
-Java esetén a Spring Security-t használjuk az MCP szerverek biztonságos autentikációjához és autorizációjához. A Spring Security egy átfogó biztonsági keretrendszer, amely zökkenőmentesen integrálódik a Spring alkalmazásokkal.
+Java esetén a Spring Security-t használjuk az MCP szerverek biztonságos hitelesítésének és jogosultságkezelésének megvalósításához. A Spring Security egy átfogó biztonsági keretrendszer, amely zökkenőmentesen integrálódik a Spring alkalmazásokkal.
 
-Az alapvető fogalmak:
+Az alapfogalmak:
 
-- **Spring Security konfiguráció**: Biztonsági beállítások konfigurálása autentikációhoz és autorizációhoz.
-- **OAuth2 erőforrás szerver**: OAuth2 használata az MCP eszközökhöz való biztonságos hozzáféréshez. Az OAuth2 egy autorizációs keretrendszer, amely lehetővé teszi harmadik fél szolgáltatások számára, hogy hozzáférési tokeneket cseréljenek biztonságos API-hozzáférés érdekében.
-- **Biztonsági interceptors**: Biztonsági interceptors megvalósítása az eszközök futtatásának hozzáférés-ellenőrzésére.
-- **Szerepkör alapú hozzáférés-vezérlés**: Szerepkörök használata az adott eszközökhöz és erőforrásokhoz való hozzáférés szabályozására.
+- **Spring Security konfiguráció**: Biztonsági beállítások konfigurálása hitelesítéshez és jogosultságkezeléshez.
+- **OAuth2 erőforrás szerver**: OAuth2 használata az MCP eszközökhöz való biztonságos hozzáféréshez. Az OAuth2 egy jogosultságkezelési keretrendszer, amely lehetővé teszi harmadik fél szolgáltatások számára, hogy hozzáférési tokeneket cseréljenek biztonságos API hozzáférés érdekében.
+- **Biztonsági interceptors**: Biztonsági interceptors megvalósítása az eszközök végrehajtásának hozzáférés-ellenőrzésére.
+- **Szerepkör alapú hozzáférés-vezérlés**: Szerepkörök használata az eszközökhöz és erőforrásokhoz való hozzáférés szabályozására.
 - **Biztonsági annotációk**: Annotációk használata metódusok és végpontok védelmére.
 
 ```java
@@ -180,14 +199,14 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 A fenti kódban:
 
-- Beállítottuk a Spring Security-t az MCP végpontok védelmére, lehetővé téve az eszközök felfedezéséhez a nyilvános hozzáférést, miközben az eszközök futtatásához hitelesítést követelünk meg.
+- Beállítottuk a Spring Security-t az MCP végpontok védelmére, lehetővé téve az eszközök felfedezéséhez a nyilvános hozzáférést, miközben az eszközök végrehajtásához hitelesítést követelünk meg.
 - OAuth2-t használtunk erőforrás szerverként az MCP eszközökhöz való biztonságos hozzáférés kezelésére.
-- Megvalósítottunk egy biztonsági interceptort az eszközök futtatásának hozzáférés-ellenőrzésére, amely ellenőrzi a felhasználói szerepköröket és jogosultságokat, mielőtt engedélyezné a hozzáférést adott eszközökhöz.
+- Megvalósítottunk egy biztonsági interceptort az eszközök végrehajtásának hozzáférés-ellenőrzésére, amely ellenőrzi a felhasználói szerepköröket és jogosultságokat, mielőtt engedélyezné a hozzáférést adott eszközökhöz.
 - Meghatároztuk a szerepkör alapú hozzáférés-vezérlést, hogy korlátozzuk az adminisztrátori eszközökhöz és érzékeny adatokhoz való hozzáférést a felhasználói szerepkörök alapján.
 
 ## Adatvédelem és adatbiztonság
 
-Az adatvédelem kulcsfontosságú annak biztosításához, hogy az érzékeny információkat biztonságosan kezeljék. Ez magában foglalja a személyes azonosításra alkalmas információk (PII), pénzügyi adatok és egyéb érzékeny adatok védelmét az illetéktelen hozzáférés és adatlopás ellen.
+Az adatvédelem elengedhetetlen annak biztosításához, hogy az érzékeny információkat biztonságosan kezeljék. Ez magában foglalja a személyes azonosításra alkalmas információk (PII), pénzügyi adatok és egyéb érzékeny adatok védelmét az illetéktelen hozzáférés és adatlopás ellen.
 
 ### Python adatvédelmi példa
 
@@ -331,8 +350,63 @@ A fenti kódban:
 
 - Megvalósítottunk egy `PiiDetector` osztályt, amely szöveget és paramétereket vizsgál személyes azonosításra alkalmas információk (PII) után.
 - Létrehoztunk egy `EncryptionService` osztályt, amely kezeli az érzékeny adatok titkosítását és visszafejtését a `cryptography` könyvtár segítségével.
-- Definiáltunk egy `secure_tool` dekorátort, amely az eszköz futtatását körülveszi, hogy ellenőrizze a PII-t, naplózza a hozzáférést, és szükség esetén titkosítsa az érzékeny adatokat.
+- Definiáltunk egy `secure_tool` dekorátort, amely az eszköz végrehajtását becsomagolja, hogy ellenőrizze a PII-t, naplózza a hozzáférést, és szükség esetén titkosítsa az érzékeny adatokat.
 - Alkalmaztuk a `secure_tool` dekorátort egy mintapéldány eszközön (`SecureCustomerDataTool`), hogy biztosítsuk az érzékeny adatok biztonságos kezelését.
+
+## MCP-specifikus biztonsági kockázatok
+
+Az MCP hivatalos biztonsági dokumentációja szerint vannak olyan specifikus biztonsági kockázatok, amelyekre az MCP megvalósítóknak figyelniük kell:
+
+### 1. Confused Deputy probléma
+
+Ez a sebezhetőség akkor fordul elő, amikor egy MCP szerver proxyként működik harmadik fél API-k felé, ami lehetővé teheti a támadók számára, hogy kihasználják az MCP szerver és ezek az API-k közötti megbízható kapcsolatot.
+
+**Megelőzés:**
+- Az MCP proxy szerverek, amelyek statikus kliensazonosítókat használnak, MINDEN dinamikusan regisztrált kliens esetén be kell szerezniük a felhasználó beleegyezését, mielőtt továbbítanák a kérést harmadik fél jogosultságkezelő szervereihez.
+- Megfelelő OAuth folyamatot kell alkalmazni PKCE-vel (Proof Key for Code Exchange) az engedélykérésekhez.
+- Szigorúan ellenőrizni kell az átirányítási URI-kat és kliensazonosítókat.
+
+### 2. Token passthrough sebezhetőségek
+
+Token passthrough akkor fordul elő, amikor egy MCP szerver elfogad tokeneket egy MCP klienstől anélkül, hogy ellenőrizné, hogy a tokeneket megfelelően az MCP szerver számára bocsátották-e ki, majd továbbítja azokat downstream API-k felé.
+
+### Kockázatok
+- Biztonsági kontrollok megkerülése (pl. sebességkorlátozás, kérés-ellenőrzés kikerülése)
+- Felelősség és audit nyom problémák
+- Megbízhatósági határok megsértése
+- Jövőbeli kompatibilitási kockázatok
+
+**Megelőzés:**
+- Az MCP szerverek NEM fogadhatnak el olyan tokeneket, amelyeket nem kifejezetten az MCP szerver számára bocsátottak ki.
+- Mindig ellenőrizni kell a token közönség (audience) jogosultságait, hogy megfeleljenek a várt szolgáltatásnak.
+
+### 3. Munkamenet eltérítés
+
+Ez akkor fordul elő, amikor egy illetéktelen fél megszerzi a munkamenet-azonosítót, és azt használva megszemélyesíti az eredeti klienst, ami illetéktelen műveletekhez vezethet.
+
+**Megelőzés:**
+- Az MCP szerverek, amelyek jogosultságkezelést valósítanak meg, MINDEN bejövő kérést ellenőrizniük kell, és NEM használhatnak munkameneteket hitelesítésre.
+- Biztonságos, nem determinisztikus munkamenet-azonosítókat kell használni, amelyeket biztonságos véletlenszám-generátorokkal hoznak létre.
+- A munkamenet-azonosítókat felhasználó-specifikus adatokhoz kell kötni, például `<user_id>:<session_id>` formátumban.
+- Megfelelő munkamenet lejárati és forgatási szabályokat kell alkalmazni.
+
+## További biztonsági legjobb gyakorlatok MCP-hez
+
+Az MCP alapvető biztonsági megfontolásain túl érdemes megfontolni az alábbi további biztonsági gyakorlatokat:
+
+- **Mindig használj HTTPS-t**: Titkosítsd a kliens és szerver közötti kommunikációt, hogy megvédd a tokeneket az elfogástól.
+- **Alkalmazz szerepkör alapú hozzáférés-vezérlést (RBAC)**: Ne csak azt ellenőrizd, hogy a felhasználó hitelesített-e, hanem azt is, hogy milyen jogosultságai vannak.
+- **Figyelj és naplózz**: Rögzíts minden hitelesítési eseményt, hogy észleld és reagálj a gyanús tevékenységekre.
+- **Kezeld a sebességkorlátozást és a terheléscsökkentést**: Alkalmazz exponenciális visszalépést és újrapróbálkozási logikát a sebességkorlátok kezelése érdekében.
+- **Biztonságos token tárolás**: Tárold az elérési és frissítő tokeneket biztonságosan, rendszer szintű biztonságos tároló mechanizmusokkal vagy biztonságos kulcskezelő szolgáltatásokkal.
+- **Fontold meg API menedzsment használatát**: Olyan szolgáltatások, mint az Azure API Management, automatikusan kezelhetik sok biztonsági kérdést, beleértve a hitelesítést, jogosultságkezelést és sebességkorlátozást.
+
+## Hivatkozások
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## Mi következik
 

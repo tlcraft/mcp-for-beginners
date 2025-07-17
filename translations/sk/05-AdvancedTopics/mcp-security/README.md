@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "50d9cd44fa74ad04f716fe31daf0c850",
-  "translation_date": "2025-07-14T02:43:37+00:00",
+  "original_hash": "e363328861e6e00258187f731a773411",
+  "translation_date": "2025-07-17T10:59:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "sk"
 }
@@ -13,32 +13,51 @@ Bezpečnosť je kľúčová pre implementácie MCP, najmä v podnikových prostr
 
 ## Úvod
 
-V tejto lekcii preskúmame najlepšie bezpečnostné postupy pre implementácie MCP. Pokryjeme autentifikáciu a autorizáciu, ochranu dát, bezpečné spúšťanie nástrojov a dodržiavanie predpisov o ochrane osobných údajov.
+Model Context Protocol (MCP) vyžaduje špecifické bezpečnostné opatrenia vzhľadom na svoju úlohu poskytovať LLM prístup k dátam a nástrojom. Táto lekcia skúma najlepšie bezpečnostné postupy pre implementácie MCP na základe oficiálnych MCP smerníc a osvedčených bezpečnostných vzorov.
+
+MCP dodržiava kľúčové bezpečnostné princípy, aby zabezpečil bezpečnú a dôveryhodnú interakciu:
+
+- **Súhlas a kontrola používateľa**: Používatelia musia výslovne súhlasiť predtým, než sa pristúpi k dátam alebo vykonajú operácie. Poskytnite jasnú kontrolu nad tým, aké dáta sa zdieľajú a ktoré akcie sú povolené.
+  
+- **Ochrana súkromia dát**: Dáta používateľa by mali byť sprístupnené len s výslovným súhlasom a musia byť chránené vhodnými prístupovými kontrolami. Zabezpečte ochranu pred neoprávneným prenosom dát.
+  
+- **Bezpečnosť nástrojov**: Pred spustením akéhokoľvek nástroja je potrebný výslovný súhlas používateľa. Používatelia by mali mať jasné pochopenie funkčnosti každého nástroja a musia byť vynútené pevné bezpečnostné hranice.
 
 ## Ciele učenia
 
 Na konci tejto lekcie budete schopní:
 
 - Implementovať bezpečné mechanizmy autentifikácie a autorizácie pre MCP servery.
-- Chrániť citlivé údaje pomocou šifrovania a bezpečného ukladania.
-- Zabezpečiť bezpečné spúšťanie nástrojov s vhodnou kontrolou prístupu.
+- Chrániť citlivé dáta pomocou šifrovania a bezpečného ukladania.
+- Zabezpečiť bezpečné vykonávanie nástrojov s vhodnými prístupovými kontrolami.
 - Použiť najlepšie postupy na ochranu dát a dodržiavanie pravidiel ochrany súkromia.
+- Identifikovať a zmierniť bežné bezpečnostné zraniteľnosti MCP, ako sú problémy s „confused deputy“, token passthrough a únos relácie.
 
 ## Autentifikácia a autorizácia
 
 Autentifikácia a autorizácia sú nevyhnutné pre zabezpečenie MCP serverov. Autentifikácia odpovedá na otázku „Kto ste?“, zatiaľ čo autorizácia na otázku „Čo môžete robiť?“.
 
-Pozrime sa na príklady, ako implementovať bezpečnú autentifikáciu a autorizáciu v MCP serveroch pomocou .NET a Javy.
+Podľa bezpečnostnej špecifikácie MCP sú tieto aspekty kritické:
+
+1. **Validácia tokenov**: MCP servery NESMÚ akceptovať žiadne tokeny, ktoré neboli výslovne vydané pre daný MCP server. „Token passthrough“ je výslovne zakázaný anti-vzor.
+
+2. **Overovanie autorizácie**: MCP servery, ktoré implementujú autorizáciu, MUSIA overovať všetky prichádzajúce požiadavky a NESMÚ používať relácie na autentifikáciu.
+
+3. **Bezpečná správa relácií**: Pri používaní relácií na uchovávanie stavu MUSIA MCP servery používať bezpečné, nedeterministické ID relácií generované bezpečnými generátormi náhodných čísel. ID relácií by MALI byť viazané na informácie špecifické pre používateľa.
+
+4. **Výslovný súhlas používateľa**: Pre proxy servery MUSIA implementácie MCP získať súhlas používateľa pre každého dynamicky registrovaného klienta predtým, než požiadavky presmerujú na autorizáciu tretích strán.
+
+Pozrime sa na príklady, ako implementovať bezpečnú autentifikáciu a autorizáciu v MCP serveroch pomocou .NET a Java.
 
 ### Integrácia .NET Identity
 
 ASP .NET Core Identity poskytuje robustný rámec na správu autentifikácie a autorizácie používateľov. Môžeme ho integrovať s MCP servermi na zabezpečenie prístupu k nástrojom a zdrojom.
 
-Existujú základné koncepty, ktoré je potrebné pochopiť pri integrácii ASP.NET Core Identity s MCP servermi, a to:
+Existujú základné koncepty, ktoré je potrebné pochopiť pri integrácii ASP.NET Core Identity s MCP servermi:
 
-- **Konfigurácia Identity**: Nastavenie ASP.NET Core Identity s používateľskými rolami a nárokmi. Nárok je informácia o používateľovi, napríklad jeho rola alebo oprávnenia, napríklad „Admin“ alebo „User“.
+- **Konfigurácia Identity**: Nastavenie ASP.NET Core Identity s používateľskými rolami a nárokmi (claims). Nárok je informácia o používateľovi, napríklad jeho rola alebo oprávnenia, napríklad „Admin“ alebo „User“.
 - **JWT autentifikácia**: Použitie JSON Web Tokenov (JWT) na bezpečný prístup k API. JWT je štandard na bezpečný prenos informácií medzi stranami vo formáte JSON, ktorý je overiteľný a dôveryhodný, pretože je digitálne podpísaný.
-- **Autorizacné politiky**: Definovanie politík na kontrolu prístupu k špecifickým nástrojom na základe používateľských rolí. MCP používa autorizacné politiky na určenie, ktorí používatelia môžu pristupovať k akým nástrojom podľa ich rolí a nárokov.
+- **Autorizácia pomocou politík**: Definovanie politík na kontrolu prístupu k špecifickým nástrojom na základe rolí používateľov. MCP používa autorizáciu na základe politík, aby určil, ktorí používatelia môžu pristupovať k akým nástrojom podľa ich rolí a nárokov.
 
 ```csharp
 public class SecureMcpStartup
@@ -111,9 +130,9 @@ public class SecureMcpStartup
 
 V predchádzajúcom kóde sme:
 
-- Nakonfigurovali ASP.NET Core Identity na správu používateľov.
-- Nastavili JWT autentifikáciu pre bezpečný prístup k API. Špecifikovali sme parametre overovania tokenu, vrátane vydavateľa, publika a podpisového kľúča.
-- Definovali autorizacné politiky na kontrolu prístupu k nástrojom podľa používateľských rolí. Napríklad politika „CanUseAdminTools“ vyžaduje, aby používateľ mal rolu „Admin“, zatiaľ čo politika „CanUseBasic“ vyžaduje, aby bol používateľ autentifikovaný.
+- Nakonfigurovali ASP.NET Core Identity pre správu používateľov.
+- Nastavili JWT autentifikáciu pre bezpečný prístup k API. Špecifikovali sme parametre validácie tokenu vrátane vydavateľa, publika a podpisového kľúča.
+- Definovali politiky autorizácie na kontrolu prístupu k nástrojom podľa rolí používateľov. Napríklad politika „CanUseAdminTools“ vyžaduje, aby používateľ mal rolu „Admin“, zatiaľ čo politika „CanUseBasic“ vyžaduje, aby bol používateľ autentifikovaný.
 - Registrovali MCP nástroje so špecifickými požiadavkami na autorizáciu, čím sme zabezpečili, že k nim majú prístup len používatelia s príslušnými rolami.
 
 ### Integrácia Java Spring Security
@@ -124,7 +143,7 @@ Základné koncepty sú:
 
 - **Konfigurácia Spring Security**: Nastavenie bezpečnostných konfigurácií pre autentifikáciu a autorizáciu.
 - **OAuth2 Resource Server**: Použitie OAuth2 na bezpečný prístup k MCP nástrojom. OAuth2 je autorizačný rámec, ktorý umožňuje tretím stranám vymieňať prístupové tokeny na bezpečný prístup k API.
-- **Bezpečnostné interceptory**: Implementácia bezpečnostných interceptorov na vynucovanie kontrol prístupu pri spúšťaní nástrojov.
+- **Bezpečnostné interceptory**: Implementácia bezpečnostných interceptorov na vynútenie prístupových kontrol pri vykonávaní nástrojov.
 - **Riadenie prístupu na základe rolí**: Použitie rolí na kontrolu prístupu k špecifickým nástrojom a zdrojom.
 - **Bezpečnostné anotácie**: Použitie anotácií na zabezpečenie metód a endpointov.
 
@@ -180,10 +199,10 @@ public class McpSecurityInterceptor implements ToolExecutionInterceptor {
 
 V predchádzajúcom kóde sme:
 
-- Nakonfigurovali Spring Security na zabezpečenie MCP endpointov, pričom sme umožnili verejný prístup k objavovaniu nástrojov a vyžadovali autentifikáciu pre spúšťanie nástrojov.
+- Nakonfigurovali Spring Security na zabezpečenie MCP endpointov, umožňujúc verejný prístup k objavovaniu nástrojov a vyžadujúc autentifikáciu pre ich vykonávanie.
 - Použili OAuth2 ako resource server na spracovanie bezpečného prístupu k MCP nástrojom.
-- Implementovali bezpečnostný interceptor na vynucovanie kontrol prístupu pri spúšťaní nástrojov, kontrolujúc používateľské roly a oprávnenia pred povolením prístupu k špecifickým nástrojom.
-- Definovali riadenie prístupu na základe rolí na obmedzenie prístupu k administrátorským nástrojom a citlivým dátam podľa používateľských rolí.
+- Implementovali bezpečnostný interceptor na vynútenie prístupových kontrol pri vykonávaní nástrojov, kontrolujúc roly a oprávnenia používateľa pred povolením prístupu k špecifickým nástrojom.
+- Definovali riadenie prístupu na základe rolí na obmedzenie prístupu k administrátorským nástrojom a citlivým dátam podľa rolí používateľov.
 
 ## Ochrana dát a súkromie
 
@@ -331,12 +350,67 @@ V predchádzajúcom kóde sme:
 
 - Implementovali triedu `PiiDetector` na skenovanie textu a parametrov na osobné identifikovateľné informácie (PII).
 - Vytvorili triedu `EncryptionService` na šifrovanie a dešifrovanie citlivých dát pomocou knižnice `cryptography`.
-- Definovali dekorátor `secure_tool`, ktorý obalí spúšťanie nástroja, aby kontroloval PII, zaznamenával prístupy a v prípade potreby šifroval citlivé dáta.
+- Definovali dekorátor `secure_tool`, ktorý obalí vykonávanie nástroja, aby kontroloval PII, zaznamenával prístupy a šifroval citlivé dáta, ak je to potrebné.
 - Aplikovali dekorátor `secure_tool` na ukážkový nástroj (`SecureCustomerDataTool`), aby sme zabezpečili bezpečné spracovanie citlivých dát.
+
+## Špecifické bezpečnostné riziká MCP
+
+Podľa oficiálnej MCP bezpečnostnej dokumentácie existujú špecifické bezpečnostné riziká, o ktorých by mali implementátori MCP vedieť:
+
+### 1. Problém „confused deputy“
+
+Táto zraniteľnosť nastáva, keď MCP server funguje ako proxy pre API tretích strán, čo môže útočníkom umožniť zneužiť dôverný vzťah medzi MCP serverom a týmito API.
+
+**Zmiernenie:**
+- MCP proxy servery používajúce statické ID klienta MUSIA získať súhlas používateľa pre každého dynamicky registrovaného klienta pred presmerovaním na autorizáciu tretích strán.
+- Implementujte správny OAuth tok s PKCE (Proof Key for Code Exchange) pre autorizačné požiadavky.
+- Prísne validujte redirect URI a identifikátory klientov.
+
+### 2. Zraniteľnosti token passthrough
+
+Token passthrough nastáva, keď MCP server akceptuje tokeny od MCP klienta bez overenia, že tokeny boli správne vydané pre MCP server, a následne ich posiela ďalej do downstream API.
+
+### Riziká
+- Obchádzanie bezpečnostných kontrol (napr. obmedzenia počtu požiadaviek, validácie požiadaviek)
+- Problémy s účtovateľnosťou a auditom
+- Porušenie dôveryhodnostnej hranice
+- Riziká budúcej kompatibility
+
+**Zmiernenie:**
+- MCP servery NESMÚ akceptovať žiadne tokeny, ktoré neboli výslovne vydané pre daný MCP server.
+- Vždy validujte nároky publika tokenu, aby zodpovedali očakávanému servisu.
+
+### 3. Únos relácie
+
+K tomu dochádza, keď neoprávnená osoba získa ID relácie a použije ho na vydávanie sa za pôvodného klienta, čo môže viesť k neoprávneným akciám.
+
+**Zmiernenie:**
+- MCP servery, ktoré implementujú autorizáciu, MUSIA overovať všetky prichádzajúce požiadavky a NESMÚ používať relácie na autentifikáciu.
+- Používajte bezpečné, nedeterministické ID relácií generované bezpečnými generátormi náhodných čísel.
+- Viažte ID relácií na informácie špecifické pre používateľa pomocou formátu kľúča ako `<user_id>:<session_id>`.
+- Implementujte správne politiky vypršania platnosti a rotácie relácií.
+
+## Ďalšie bezpečnostné odporúčania pre MCP
+
+Okrem základných bezpečnostných opatrení MCP zvážte implementáciu týchto dodatočných bezpečnostných praktík:
+
+- **Vždy používajte HTTPS**: Šifrujte komunikáciu medzi klientom a serverom, aby ste ochránili tokeny pred zachytením.
+- **Implementujte riadenie prístupu na základe rolí (RBAC)**: Nekontrolujte len, či je používateľ autentifikovaný, ale aj čo má oprávnenie robiť.
+- **Monitorujte a auditujte**: Zaznamenávajte všetky autentifikačné udalosti na detekciu a reakciu na podozrivú aktivitu.
+- **Riešte obmedzovanie rýchlosti a throttling**: Implementujte exponenciálne spätné odklady a logiku opakovaných pokusov na hladké zvládanie limitov.
+- **Bezpečné ukladanie tokenov**: Ukladajte prístupové a obnovovacie tokeny bezpečne pomocou systémových bezpečných úložísk alebo služieb na správu kľúčov.
+- **Zvážte použitie API Management**: Služby ako Azure API Management môžu automaticky riešiť mnohé bezpečnostné otázky vrátane autentifikácie, autorizácie a obmedzovania rýchlosti.
+
+## Referencie
+
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
+- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
+- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
 
 ## Čo ďalej
 
 - [5.9 Web search](../web-search-mcp/README.md)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
