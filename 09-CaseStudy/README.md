@@ -1,4 +1,4 @@
-# MCP in Action: Real-World Case Studies 
+# MCP in Action: Real-World Case Studies
 
 The Model Context Protocol (MCP) is transforming how AI applications interact with data, tools, and services. This section presents real-world case studies that demonstrate practical applications of MCP in various enterprise scenarios.
 
@@ -74,6 +74,7 @@ This case study demonstrates how you can bring Microsoft Learn Docs directly int
 - Integrate MCP with GitHub workflows for continuous documentation validation
 
 The implementation includes:
+
 - Example `.vscode/mcp.json` configuration for easy setup
 - Screenshot-based walkthroughs of the in-editor experience
 - Tips for combining Copilot and MCP for maximum productivity
@@ -81,7 +82,9 @@ The implementation includes:
 This scenario is ideal for course authors, documentation writers, and developers who want to stay focused in their editor while working with docs, Copilot, and validation tools—all powered by MCP.
 
 ### 6. [APIM MCP Server Creation](./apimsample.md)
+
 This case study provides a step-by-step guide on how to create an MCP server using Azure API Management (APIM). It covers:
+
 - Setting up an MCP server in Azure API Management
 - Exposing API operations as MCP tools
 - Configuring policies for rate limiting and security
@@ -102,6 +105,5 @@ By studying these implementations, you can gain insights into architectural patt
 - [Playwright MCP Tool](https://github.com/microsoft/playwright-mcp)
 - [Microsoft Docs MCP Server](https://github.com/MicrosoftDocs/mcp)
 - [MCP Community Examples](https://github.com/microsoft/mcp)
-
 
 Next: Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
