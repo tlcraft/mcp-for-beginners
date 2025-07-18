@@ -7,6 +7,7 @@ This lesson focuses on advanced best practices for developing, testing, and depl
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
+
 - Apply industry best practices in MCP server and feature design
 - Create comprehensive testing strategies for MCP servers
 - Design efficient, reusable workflow patterns for complex MCP applications
@@ -64,6 +65,7 @@ The following best practices are derived from the official Model Context Protoco
 ## Additional References
 
 For the most up-to-date information on MCP best practices, refer to:
+
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
