@@ -34,7 +34,7 @@ Great, now we understand how we can do this at high level, let's try this out in
 
 In this exercise, we will learn to add an LLM to our client.
 
-## Authentication using GitHub Personal Access Token
+### Authentication using GitHub Personal Access Token
 
 Creating a GitHub token is a straightforward process. Here’s how you can do it:
 
@@ -48,7 +48,7 @@ Creating a GitHub token is a straightforward process. Here’s how you can do it
 
 Let's create our client first:
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -89,7 +89,7 @@ In the preceding code we've:
 - Create a class with two members, `client` and `openai` that will help us manage a client and interact with an LLM respectively.
 - Configured our LLM instance to use GitHub Models by setting `baseUrl` to point to the inference API.
 
-### Python
+#### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
@@ -124,7 +124,7 @@ In the preceding code we've:
 - Imported the needed libraries for MCP
 - Created a client
 
-### .NET
+#### .NET
 
 ```csharp
 using Azure;
@@ -145,7 +145,7 @@ var clientTransport = new StdioClientTransport(new()
 await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 ```
 
-### Java
+#### Java
 
 First, you'll need to add the LangChain4j dependencies to your `pom.xml` file. Add these dependencies to enable MCP integration and GitHub Models support:
 
@@ -235,13 +235,13 @@ In the preceding code we've:
 - **Created an MCP client**: That will handle communication with the server
 - **Used LangChain4j's built-in MCP support**: Which simplifies integration between LLMs and MCP servers
 
-Great, for our next step, let's list the capbilities on the server.
+Great, for our next step, let's list the capabilities on the server.
 
 ### -2- List server capabilities
 
 Now we will connect to the server and ask for its capabilities:
 
-### Typescript
+#### Typescript
 
 In the same class, add the following methods:
 
@@ -265,7 +265,7 @@ In the preceding code we've:
 - Added code for connecting to the server, `connectToServer`.
 - Created a `run` method responsible for handling our app flow. So far it only lists the tools but we will add more to it shortly.
 
-### Python
+#### Python
 
 ```python
 # List available resources
@@ -286,7 +286,7 @@ Here's what we added:
 
 - Listing resources and tools and printed them. For tools we also list `inputSchema` which we use later.
 
-### .NET
+#### .NET
 
 ```csharp
 async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -302,7 +302,7 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
         Console.WriteLine($"Tool description: {tool.Description}");
         Console.WriteLine($"Tool parameters: {tool.JsonSchema}");
 
-        // TODO: convert tool defintion from MCP tool to LLm tool     
+        // TODO: convert tool definition from MCP tool to LLm tool     
     }
 
     return toolDefinitions;
@@ -314,7 +314,7 @@ In the preceding code we've:
 - Listed the tools available on the MCP Server
 - For each tool, listed name, description and its schema. The latter is something we will use to call the tools shortly.
 
-### Java
+#### Java
 
 ```java
 // Create a tool provider that automatically discovers MCP tools
@@ -334,12 +334,11 @@ In the preceding code we've:
 - The tool provider handles the conversion between MCP tool schemas and LangChain4j's tool format internally
 - This approach abstracts away the manual tool listing and conversion process
 
-
 ### -3- Convert server capabilities to LLM tools
 
 Next step after listing server capabilities is to convert them into a format that the LLM understands. Once we do that, we can provide these capabilities as tools to our LLM.
 
-### TypeScript
+#### TypeScript
 
 1. Add the following code to convert response from MCP Server to a tool format the LLM can use:
 
@@ -388,7 +387,7 @@ Next step after listing server capabilities is to convert them into a format tha
 
     In the preceding code, we've update the `run` method to map through the result and for each entry call `openAiToolAdapter`.
 
-### Python
+#### Python
 
 1. First, let's create the following converter function
 
@@ -423,7 +422,7 @@ Next step after listing server capabilities is to convert them into a format tha
 
     Here, we're adding a call to `convert_to_llm_tool` to convert the MCP tool response to something we can feed the LLM later.
 
-### .NET
+#### .NET
 
 1. Let's add code to convert the MCP tool response to something the LLM can understand
 
@@ -496,7 +495,7 @@ In the preceding code we've:
 
         The input schema is part of the tool response but on the "properties" attribute, so we need to extract. Furthermore, we now call `ConvertFrom` with the tool details. Now we've done the heavy lifting, let's see how it call comes together as we handle a user prompt next.
 
-### Java
+#### Java
 
 ```java
 // Create a Bot interface for natural language interaction
@@ -524,7 +523,7 @@ Great, we're not set up to handle any user requests, so let's tackle that next.
 
 In this part of the code, we will handle user requests.
 
-### TypeScript
+#### TypeScript
 
 1. Add a method that will be used to call our LLM:
 
@@ -640,8 +639,6 @@ class MyClient {
             apiKey: process.env.GITHUB_TOKEN,
         });
 
-       
-        
         this.client = new Client(
             {
                 name: "example-client",
@@ -761,7 +758,7 @@ let client = new MyClient();
 client.connectToServer(transport);
 ```
 
-### Python
+#### Python
 
 1. Let's add some imports needed to call an LLM
 
@@ -829,7 +826,7 @@ client.connectToServer(transport);
     - Passed our functions, that we found on the MCP server and converted, to the LLM.
     - Then we called the LLM with said functions.
     - Then, we're inspecting the result to see what functions we should call, if any.
-    - Finally, we pass an array of functions to call. 
+    - Finally, we pass an array of functions to call.
 
 1. Final step, let's update our main code:
 
@@ -850,7 +847,7 @@ client.connectToServer(transport);
     - Calling an MCP tool via `call_tool` using a function that the LLM thought we should call based on our prompt.
     - Printing the result of the tool call to the MCP Server.
 
-### .NET
+#### .NET
 
 1. Let's show some code for doing an LLM prompt request:
 
@@ -1048,7 +1045,7 @@ for (int i = 0; i < response.ToolCalls.Count; i++)
 Console.WriteLine($"Assistant response: {content}");
 ```
 
-### Java
+#### Java
 
 ```java
 try {
@@ -1131,7 +1128,7 @@ Great, you did it!
 
 Take the code from the exercise and build out the server with some more tools. Then create a client with an LLM, like in the exercise, and test it out with different prompts to make sure all your server tools gets called dynamically. This way of building a client means the end user will have a great user experience as they're able to use prompts, instead of exact client commands, and be oblivious to any MCP server being called.
 
-## Solution 
+## Solution
 
 [Solution](/03-GettingStarted/03-llm-client/solution/README.md)
 
@@ -1140,13 +1137,13 @@ Take the code from the exercise and build out the server with some more tools. T
 - Adding an LLM to your client provides a better way for users to interact with MCP Servers.
 - You need to convert the MCP Server response to something the LLM can understand.
 
-## Samples 
+## Samples
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../samples/csharp/)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../samples/python/) 
+- [Python Calculator](../samples/python/)
 
 ## Additional Resources
 
