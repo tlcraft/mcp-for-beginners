@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
-  "translation_date": "2025-07-17T10:57:43+00:00",
+  "original_hash": "a5c1d9e9856024d23da4a65a847c75ac",
+  "translation_date": "2025-07-18T07:21:20+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "sk"
 }
@@ -36,16 +36,17 @@ Na konci tejto lekcie budete schopní:
 | [5.5 Routing](./mcp-routing/README.md) | Routing | Naučte sa rôzne typy routingu |
 | [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Naučte sa pracovať so samplingom |
 | [5.7 Scaling](./mcp-scaling/README.md) | Škálovanie | Naučte sa o škálovaní |
-| [5.8 Security](./mcp-security/README.md) | Bezpečnosť | Zabezpečte svoj MCP Server |
+| [5.8 Security](./mcp-security/README.md) | Bezpečnosť | Zaistite bezpečnosť vášho MCP Servera |
 | [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP server a klient integrujúci SerpAPI pre vyhľadávanie na webe, v správach, produktoch a Q&A v reálnom čase. Demonštruje orchestráciu viacerých nástrojov, integráciu externých API a robustné spracovanie chýb. |
-| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | Streaming dát v reálnom čase sa stal nevyhnutným v dnešnom dátovo orientovanom svete, kde firmy a aplikácie potrebujú okamžitý prístup k informáciám pre včasné rozhodovanie. |
-| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | Ako MCP mení vyhľadávanie na webe v reálnom čase tým, že poskytuje štandardizovaný prístup k správe kontextu naprieč AI modelmi, vyhľadávačmi a aplikáciami. |
+| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | Streaming dát v reálnom čase sa stal nevyhnutnosťou v dnešnom dátovo orientovanom svete, kde firmy a aplikácie potrebujú okamžitý prístup k informáciám pre včasné rozhodovanie. |
+| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | Ako MCP mení vyhľadávanie na webe v reálnom čase poskytovaním štandardizovaného prístupu k správe kontextu naprieč AI modelmi, vyhľadávačmi a aplikáciami. |
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID autentifikácia | Microsoft Entra ID poskytuje robustné cloudové riešenie pre správu identity a prístupu, ktoré zabezpečuje, že len autorizovaní používatelia a aplikácie môžu komunikovať s vaším MCP serverom. |
 | [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Integrácia Azure AI Foundry | Naučte sa, ako integrovať Model Context Protocol servery s Azure AI Foundry agentmi, čo umožňuje výkonnú orchestráciu nástrojov a podnikové AI schopnosti so štandardizovanými pripojeniami na externé zdroje dát. |
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | Context Engineering | Budúcnosť techník context engineering pre MCP servery, vrátane optimalizácie kontextu, dynamickej správy kontextu a stratégií efektívneho prompt engineeringu v rámci MCP frameworkov. |
 
 ## Ďalšie odkazy
 
-Pre najaktuálnejšie informácie o pokročilých témach MCP navštívte:
+Pre najaktuálnejšie informácie o pokročilých témach MCP sa obráťte na:
 - [MCP Dokumentácia](https://modelcontextprotocol.io/)
 - [MCP Špecifikácia](https://spec.modelcontextprotocol.io/)
 - [GitHub Repozitár](https://github.com/modelcontextprotocol)
@@ -80,4 +81,4 @@ Navrhnite podnikové MCP riešenie pre konkrétny prípad použitia:
 - [5.1 MCP Integration](./mcp-integration/README.md)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

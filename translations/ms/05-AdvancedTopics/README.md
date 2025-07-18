@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
-  "translation_date": "2025-07-17T08:04:26+00:00",
+  "original_hash": "a5c1d9e9856024d23da4a65a847c75ac",
+  "translation_date": "2025-07-18T07:19:54+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "ms"
 }
 -->
 # Topik Lanjutan dalam MCP
 
-Bab ini membincangkan beberapa topik lanjutan dalam pelaksanaan Model Context Protocol (MCP), termasuk integrasi multi-modal, kebolehsuaian, amalan keselamatan terbaik, dan integrasi perusahaan. Topik-topik ini penting untuk membina aplikasi MCP yang kukuh dan sedia untuk produksi yang dapat memenuhi keperluan sistem AI moden.
+Bab ini membincangkan beberapa topik lanjutan dalam pelaksanaan Model Context Protocol (MCP), termasuk integrasi multi-modal, kebolehsesuaian, amalan terbaik keselamatan, dan integrasi perusahaan. Topik-topik ini penting untuk membina aplikasi MCP yang kukuh dan sedia untuk produksi yang dapat memenuhi keperluan sistem AI moden.
 
 ## Gambaran Keseluruhan
 
-Pelajaran ini meneroka konsep lanjutan dalam pelaksanaan Model Context Protocol, dengan fokus pada integrasi multi-modal, kebolehsuaian, amalan keselamatan terbaik, dan integrasi perusahaan. Topik-topik ini penting untuk membina aplikasi MCP tahap produksi yang mampu menangani keperluan kompleks dalam persekitaran perusahaan.
+Pelajaran ini meneroka konsep lanjutan dalam pelaksanaan Model Context Protocol, dengan fokus pada integrasi multi-modal, kebolehsesuaian, amalan terbaik keselamatan, dan integrasi perusahaan. Topik-topik ini penting untuk membina aplikasi MCP tahap produksi yang mampu menangani keperluan kompleks dalam persekitaran perusahaan.
 
 ## Objektif Pembelajaran
 
@@ -21,7 +21,7 @@ Menjelang akhir pelajaran ini, anda akan dapat:
 
 - Melaksanakan keupayaan multi-modal dalam rangka kerja MCP
 - Mereka bentuk seni bina MCP yang boleh diskalakan untuk senario permintaan tinggi
-- Mengaplikasikan amalan keselamatan terbaik selaras dengan prinsip keselamatan MCP
+- Mengaplikasikan amalan terbaik keselamatan selaras dengan prinsip keselamatan MCP
 - Mengintegrasikan MCP dengan sistem dan rangka kerja AI perusahaan
 - Mengoptimumkan prestasi dan kebolehpercayaan dalam persekitaran produksi
 
@@ -35,25 +35,26 @@ Menjelang akhir pelajaran ini, anda akan dapat:
 | [5.4 Root Contexts](./mcp-root-contexts/README.md) | Konteks Root | Ketahui lebih lanjut tentang konteks root dan cara melaksanakannya |
 | [5.5 Routing](./mcp-routing/README.md) | Routing | Pelajari pelbagai jenis routing |
 | [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Pelajari cara bekerja dengan sampling |
-| [5.7 Scaling](./mcp-scaling/README.md) | Skalabiliti | Pelajari tentang skalabiliti |
+| [5.7 Scaling](./mcp-scaling/README.md) | Skala | Pelajari tentang skala |
 | [5.8 Security](./mcp-security/README.md) | Keselamatan | Amankan MCP Server anda |
 | [5.9 Web Search sample](./web-search-mcp/README.md) | Carian Web MCP | Server dan klien MCP Python yang mengintegrasi dengan SerpAPI untuk carian web, berita, produk, dan soal jawab masa nyata. Menunjukkan orkestrasi multi-alat, integrasi API luaran, dan pengendalian ralat yang kukuh. |
-| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Penstriman | Penstriman data masa nyata menjadi penting dalam dunia berasaskan data hari ini, di mana perniagaan dan aplikasi memerlukan akses segera kepada maklumat untuk membuat keputusan tepat pada masanya. |
+| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Penstriman | Penstriman data masa nyata telah menjadi penting dalam dunia berasaskan data hari ini, di mana perniagaan dan aplikasi memerlukan akses segera kepada maklumat untuk membuat keputusan tepat pada masanya. |
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Carian Web | Carian web masa nyata bagaimana MCP mengubah carian web masa nyata dengan menyediakan pendekatan standard untuk pengurusan konteks merentasi model AI, enjin carian, dan aplikasi. |
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Pengesahan Entra ID | Microsoft Entra ID menyediakan penyelesaian pengurusan identiti dan akses berasaskan awan yang kukuh, membantu memastikan hanya pengguna dan aplikasi yang dibenarkan dapat berinteraksi dengan server MCP anda. |
 | [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Integrasi Azure AI Foundry | Pelajari cara mengintegrasikan server Model Context Protocol dengan agen Azure AI Foundry, membolehkan orkestrasi alat yang berkuasa dan keupayaan AI perusahaan dengan sambungan sumber data luaran yang standard. |
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | Kejuruteraan Konteks | Peluang masa depan teknik kejuruteraan konteks untuk server MCP, termasuk pengoptimuman konteks, pengurusan konteks dinamik, dan strategi untuk kejuruteraan prompt yang berkesan dalam rangka kerja MCP. |
 
 ## Rujukan Tambahan
 
-Untuk maklumat terkini mengenai topik MCP lanjutan, rujuk:
+Untuk maklumat terkini mengenai topik lanjutan MCP, rujuk:
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Perkara Penting
 
-- Pelaksanaan MCP multi-modal memperluaskan keupayaan AI melebihi pemprosesan teks
-- Kebolehsuaian penting untuk penyebaran perusahaan dan boleh diatasi melalui penskalaan mendatar dan menegak
+- Pelaksanaan MCP multi-modal meluaskan keupayaan AI melebihi pemprosesan teks
+- Kebolehsesuaian penting untuk penyebaran perusahaan dan boleh ditangani melalui skala mendatar dan menegak
 - Langkah keselamatan menyeluruh melindungi data dan memastikan kawalan akses yang betul
 - Integrasi perusahaan dengan platform seperti Azure OpenAI dan Microsoft AI Foundry meningkatkan keupayaan MCP
 - Pelaksanaan MCP lanjutan mendapat manfaat daripada seni bina yang dioptimumkan dan pengurusan sumber yang teliti
@@ -75,7 +76,7 @@ Reka pelaksanaan MCP tahap perusahaan untuk kes penggunaan tertentu:
 
 ---
 
-## Apa seterusnya
+## Apa yang seterusnya
 
 - [5.1 MCP Integration](./mcp-integration/README.md)
 

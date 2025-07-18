@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
-  "translation_date": "2025-07-16T22:14:21+00:00",
+  "original_hash": "a5c1d9e9856024d23da4a65a847c75ac",
+  "translation_date": "2025-07-18T07:09:55+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "de"
 }
@@ -36,12 +36,13 @@ Am Ende dieser Lektion werden Sie in der Lage sein:
 | [5.5 Routing](./mcp-routing/README.md) | Routing | Lernen Sie verschiedene Arten des Routings kennen |
 | [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Lernen Sie, wie Sampling funktioniert |
 | [5.7 Scaling](./mcp-scaling/README.md) | Skalierung | Erfahren Sie mehr über Skalierung |
-| [5.8 Security](./mcp-security/README.md) | Sicherheit | Sichern Sie Ihren MCP-Server |
+| [5.8 Security](./mcp-security/README.md) | Sicherheit | Sichern Sie Ihren MCP-Server ab |
 | [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP-Server und Client, die SerpAPI für Echtzeit-Web-, Nachrichten-, Produkt-Suche und Q&A integrieren. Demonstriert Multi-Tool-Orchestrierung, externe API-Integration und robuste Fehlerbehandlung. |
 | [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | Echtzeit-Datenstreaming ist in der heutigen datengetriebenen Welt unverzichtbar, da Unternehmen und Anwendungen sofortigen Zugriff auf Informationen benötigen, um zeitnahe Entscheidungen zu treffen. |
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Websuche | Echtzeit-Websuche: Wie MCP die Echtzeit-Websuche durch einen standardisierten Ansatz für Kontextmanagement über KI-Modelle, Suchmaschinen und Anwendungen hinweg transformiert. |
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Authentifizierung | Microsoft Entra ID bietet eine robuste cloudbasierte Lösung für Identitäts- und Zugriffsmanagement, die sicherstellt, dass nur autorisierte Benutzer und Anwendungen mit Ihrem MCP-Server interagieren können. |
 | [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Integration | Lernen Sie, wie Sie Model Context Protocol-Server mit Azure AI Foundry Agents integrieren, um leistungsstarke Tool-Orchestrierung und Unternehmens-KI-Fähigkeiten mit standardisierten Verbindungen zu externen Datenquellen zu ermöglichen. |
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | Context Engineering | Die zukünftigen Möglichkeiten von Context Engineering-Techniken für MCP-Server, einschließlich Kontextoptimierung, dynamischem Kontextmanagement und Strategien für effektives Prompt Engineering innerhalb von MCP-Frameworks. |
 
 ## Zusätzliche Referenzen
 
@@ -80,4 +81,4 @@ Entwerfen Sie eine MCP-Implementierung auf Unternehmensniveau für einen spezifi
 - [5.1 MCP Integration](./mcp-integration/README.md)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
