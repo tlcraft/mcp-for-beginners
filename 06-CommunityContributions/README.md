@@ -7,6 +7,7 @@ This lesson focuses on how to engage with the MCP community, contribute to the M
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
+
 - Understand the structure of the MCP community and ecosystem
 - Participate effectively in MCP community forums and discussions
 - Contribute to MCP open-source repositories
@@ -829,7 +830,6 @@ async def delete_tool(tool_name: str):
 ## Additional Resources
 
 - [MCP Community Projects](https://github.com/topics/model-context-protocol)
-
 
 ---
 
