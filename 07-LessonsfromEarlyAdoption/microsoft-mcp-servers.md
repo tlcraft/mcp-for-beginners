@@ -162,7 +162,7 @@ For detailed Visual Studio setup instructions, see the [Visual Studio MCP docume
 
 Each MCP server comes with its own configuration requirements (connection strings, authentication, etc.), but the setup pattern is consistent across both IDEs.
 
-## Microsoft MCP Servers 🛠️
+## Lesson Learnt from Microsoft MCP Servers 🛠️
 
 ### 1. 📚 Microsoft Learn Docs MCP Server
 
@@ -414,6 +414,7 @@ As the MCP ecosystem continues to evolve, staying engaged with the community, ex
 - [Let's Learn – MCP Events](https://techcommunity.microsoft.com/blog/azuredevcommunityblog/lets-learn---mcp-events-a-beginners-guide-to-the-model-context-protocol/4429023)
 - [Awesome GitHub Copilot Customizations](https://github.com/awesome-copilot)
 - [C# MCP SDK](https://developer.microsoft.com/blog/microsoft-partners-with-anthropic-to-create-official-c-sdk-for-model-context-protocol)
+- [MCP Dev Days Live 29th/30th July or watch on Demand ](https://aka.ms/mcpdevdays)
 
 ## 🎯 Exercises
 
@@ -423,8 +424,6 @@ As the MCP ecosystem continues to evolve, staying engaged with the community, ex
 4. **Performance Analysis**: Compare the efficiency of using MCP servers versus traditional approaches for common development tasks.
 5. **Security Assessment**: Evaluate the security implications of using MCP servers in your development environment and propose best practices.
 
-
-[Register for MCP Dev Days 29th/30th July our watch on Demand ](https://aka.ms/mcpdevdays)
 
 Next:[Best Practices](../08-BestPractices/README.md)
 
