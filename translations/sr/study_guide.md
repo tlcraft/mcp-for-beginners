@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
-  "translation_date": "2025-07-17T11:41:02+00:00",
+  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
+  "translation_date": "2025-07-18T10:27:26+00:00",
   "source_file": "study_guide.md",
   "language_code": "sr"
 }
 -->
-# Model Context Protocol (MCP) за почетнике - Водич за учење
+# Протокол контекста модела (MCP) за почетнике - Водич за учење
 
-Овај водич пружа преглед структуре и садржаја репозиторијума за курс "Model Context Protocol (MCP) за почетнике". Користите овај водич за ефикасну навигацију кроз репозиторијум и максимално коришћење доступних ресурса.
+Овај водич пружа преглед структуре и садржаја репозиторијума за курс „Протокол контекста модела (MCP) за почетнике“. Користите овај водич за ефикасно сналажење у репозиторијуму и максимално коришћење доступних ресурса.
 
 ## Преглед репозиторијума
 
-Model Context Protocol (MCP) је стандардизован оквир за интеракције између AI модела и клијент апликација. Првобитно креиран од стране Anthropic-а, MCP сада одржава ширa заједница MCP-а кроз званичну GitHub организацију. Овај репозиторијум нуди свеобухватан курс са практичним примерима кода у C#, Java, JavaScript, Python и TypeScript, намењен AI програмерима, системским архитекта и софтверским инжењерима.
+Протокол контекста модела (MCP) је стандардизован оквир за интеракције између AI модела и клијент апликација. Првобитно га је креирала компанија Anthropic, а сада га одржава ширa заједница MCP кроз званичну GitHub организацију. Овај репозиторијум нуди свеобухватан курс са практичним примерима кода у C#, Java, JavaScript, Python и TypeScript, намењен AI програмерима, системским архитектама и софтверским инжењерима.
 
 ## Визуелна мапа курса
 
@@ -23,110 +23,134 @@ mindmap
     00. Introduction
       ::icon(fa fa-book)
       (Protocol Overview)
-      (Standardization)
-      (Use Cases)
+      (Standardization Benefits)
+      (Real-world Use Cases)
+      (AI Integration Fundamentals)
     01. Core Concepts
       ::icon(fa fa-puzzle-piece)
       (Client-Server Architecture)
       (Protocol Components)
       (Messaging Patterns)
+      (Transport Mechanisms)
     02. Security
       ::icon(fa fa-shield)
-      (Threat Models)
-      (Best Practices)
-      (Auth Strategies)
+      (AI-Specific Threats)
+      (Best Practices 2025)
+      (Azure Content Safety)
+      (Auth & Authorization)
+      (Microsoft Prompt Shields)
     03. Getting Started
       ::icon(fa fa-rocket)
-      (First Server)
-      (Client)
-      (LLM Client)
-      (VS Code Integration)
-      (SSE Server)
+      (First Server Implementation)
+      (Client Development)
+      (LLM Client Integration)
+      (VS Code Extensions)
+      (SSE Server Setup)
       (HTTP Streaming)
-      (AI Toolkit)
-      (Testing)
-      (Deployment)
+      (AI Toolkit Integration)
+      (Testing Frameworks)
+      (Deployment Strategies)
     04. Practical Implementation
       ::icon(fa fa-code)
-      (SDKs)
-      (Testing/Debugging)
+      (Multi-Language SDKs)
+      (Testing & Debugging)
       (Prompt Templates)
       (Sample Projects)
+      (Production Patterns)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
       (Context Engineering)
-      (Foundry Integration)
-      (Multi-modal AI)
-      (OAuth2 Demo)
+      (Foundry Agent Integration)
+      (Multi-modal AI Workflows)
+      (OAuth2 Authentication)
       (Real-time Search)
-      (Streaming)
+      (Streaming Protocols)
       (Root Contexts)
-      (Routing)
-      (Sampling)
-      (Scaling)
-      (Security)
-      (Entra ID)
-      (Web Search)
+      (Routing Strategies)
+      (Sampling Techniques)
+      (Scaling Solutions)
+      (Security Hardening)
+      (Entra ID Integration)
+      (Web Search MCP)
       
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (MCP Clients)
-      (MCP Servers)
-      (Image Generation)
+      (MCP Client Ecosystem)
+      (MCP Server Registry)
+      (Image Generation Tools)
+      (GitHub Collaboration)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
-      (Real-world Examples)
-      (Deployment Stories)
+      (Production Deployments)
+      (Microsoft MCP Servers)
+      (Azure MCP Service)
+      (Enterprise Case Studies)
       (Future Roadmap)
     08. Best Practices
       ::icon(fa fa-check)
-      (Performance)
+      (Performance Optimization)
       (Fault Tolerance)
-      (Resilience)
+      (System Resilience)
+      (Monitoring & Observability)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (API Management)
-      (Travel Agent)
-      (Azure DevOps)
+      (Azure API Management)
+      (AI Travel Agent)
+      (Azure DevOps Integration)
       (Documentation MCP)
+      (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
+      (MCP Server Fundamentals)
+      (Advanced Development)
       (AI Toolkit Integration)
-      (Custom Server Development)
       (Production Deployment)
+      (4-Lab Structure)
 ```
 
 ## Структура репозиторијума
 
-Репозиторијум је организован у десет главних секција, од којих се свака бави различитим аспектима MCP-а:
+Репозиторијум је организован у десет главних секција, од којих се свака бави различитим аспектима MCP:
 
 1. **Увод (00-Introduction/)**
-   - Преглед Model Context Protocol-а
+   - Преглед Протокола контекста модела
    - Зашто је стандардизација важна у AI процесима
    - Практични примери и предности
 
 2. **Основни појмови (01-CoreConcepts/)**
    - Клијент-сервер архитектура
    - Кључне компоненте протокола
-   - Обрасци размене порука у MCP-у
+   - Обрасци размене порука у MCP
 
 3. **Безбедност (02-Security/)**
-   - Безбедносне претње у системима заснованим на MCP-у
+   - Безбедносне претње у системима заснованим на MCP
    - Најбоље праксе за обезбеђење имплементација
    - Стратегије аутентификације и ауторизације
+   - **Свеобухватна безбедносна документација**:
+     - MCP Безбедносне најбоље праксе 2025
+     - Водич за имплементацију Azure Content Safety
+     - MCP безбедносне контроле и технике
+     - Брзи преглед најбољих пракси MCP
+   - **Кључне теме безбедности**:
+     - Напади убацивања упита и тровања алата
+     - Отмица сесија и проблеми „збуњеног заменика“
+     - Ранљивости у преносу токена
+     - Прекомерне дозволе и контролa приступа
+     - Безбедност ланца снабдевања AI компоненти
+     - Интеграција Microsoft Prompt Shields
 
 4. **Почетак рада (03-GettingStarted/)**
-   - Подешавање окружења и конфигурација
+   - Подешавање и конфигурација окружења
    - Креирање основних MCP сервера и клијената
    - Интеграција са постојећим апликацијама
-   - Укључује одељке за:
+   - Обухвата одељке за:
      - Прву имплементацију сервера
      - Развој клијента
      - Интеграцију LLM клијента
      - Интеграцију у VS Code
-     - Server-Sent Events (SSE) сервер
+     - Сервер-сент догађаје (SSE) сервер
      - HTTP стриминг
      - Интеграцију AI Toolkit-а
      - Стратегије тестирања
@@ -143,9 +167,9 @@ mindmap
    - Интеграција Foundry агента
    - Мултимодални AI радни токови
    - Демонстрације OAuth2 аутентификације
-   - Реал-тайм претрага
-   - Реал-тайм стриминг
-   - Имплементација root контекста
+   - Могућности претраге у реалном времену
+   - Стриминг у реалном времену
+   - Имплементација коренских контекста
    - Стратегије рутирања
    - Технике узорковања
    - Приступи скалирању
@@ -162,8 +186,19 @@ mindmap
 
 8. **Усвојене лекције (07-LessonsfromEarlyAdoption/)**
    - Имплементације из стварног света и успешне приче
-   - Изградња и деплојмент решења заснованих на MCP-у
-   - Трендови и будући планови
+   - Изградња и деплојмент решења заснованих на MCP
+   - Трендови и будућа мапа пута
+   - **Водич за Microsoft MCP сервере**: Свеобухватан водич за 10 продукцијски спремних Microsoft MCP сервера укључујући:
+     - Microsoft Learn Docs MCP Server
+     - Azure MCP Server (15+ специјализованих конектора)
+     - GitHub MCP Server
+     - Azure DevOps MCP Server
+     - MarkItDown MCP Server
+     - SQL Server MCP Server
+     - Playwright MCP Server
+     - Dev Box MCP Server
+     - Azure AI Foundry MCP Server
+     - Microsoft 365 Agents Toolkit MCP Server
 
 9. **Најбоље праксе (08-BestPractices/)**
    - Подешавање перформанси и оптимизација
@@ -171,33 +206,39 @@ mindmap
    - Стратегије тестирања и отпорности
 
 10. **Студије случаја (09-CaseStudy/)**
-    - Студија случаја: интеграција Azure API Management-а
-    - Студија случаја: имплементација туристичког агента
-    - Студија случаја: интеграција Azure DevOps-а са YouTube-ом
+    - Пример интеграције Azure API Management
+    - Пример имплементације туристичког агента
+    - Интеграција Azure DevOps са YouTube ажурирањима
+    - Примери имплементације MCP документације
     - Примери имплементације са детаљном документацијом
 
 11. **Практична радионица (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Свеобухватна практична радионица која комбинује MCP са AI Toolkit-ом
-    - Изградња интелигентних апликација које повезују AI моделе са алатима из стварног света
-    - Практични модули који покривају основе, развој прилагођених сервера и стратегије продукционог деплојмента
-    - Лабораторијски приступ учењу са корак по корак упутствима
+    - Изградња интелигентних апликација које повезују AI моделе са стварним алатима
+    - Практични модули који покривају основе, развој прилагођених сервера и стратегије продукцијског деплојмента
+    - **Структура лабораторије**:
+      - Лабораторија 1: Основе MCP сервера
+      - Лабораторија 2: Напредни развој MCP сервера
+      - Лабораторија 3: Интеграција AI Toolkit-а
+      - Лабораторија 4: Продукцијски деплојмент и скалирање
+    - Приступ учењу заснован на лабораторијама са корак по корак упутствима
 
 ## Додатни ресурси
 
-Репозиторијум садржи пратеће ресурсе:
+Репозиторијум укључује пратеће ресурсе:
 
 - **Фолдер са сликама**: Садржи дијаграме и илустрације коришћене кроз цео курс
-- **Преводи**: Подршка за више језика са аутоматизованим преводима документације
+- **Преводи**: Подршка за више језика са аутоматским преводима документације
 - **Званични MCP ресурси**:
-  - [MCP Documentation](https://modelcontextprotocol.io/)
-  - [MCP Specification](https://spec.modelcontextprotocol.io/)
-  - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+  - [MCP документација](https://modelcontextprotocol.io/)
+  - [MCP спецификација](https://spec.modelcontextprotocol.io/)
+  - [MCP GitHub репозиторијум](https://github.com/modelcontextprotocol)
 
 ## Како користити овај репозиторијум
 
 1. **Секвенцијално учење**: Пратите поглавља по реду (од 00 до 10) за структуриран процес учења.
 2. **Фокус на одређени језик**: Ако вас занима одређени програмски језик, истражите директоријуме са примерима за имплементације на жељеном језику.
-3. **Практична имплементација**: Почните са одељком "Почетак рада" да подесите окружење и направите први MCP сервер и клијента.
+3. **Практична имплементација**: Почните са одељком „Почетак рада“ да подесите окружење и направите први MCP сервер и клијента.
 4. **Напредна истраживања**: Када савладате основе, пређите на напредне теме да проширите своје знање.
 5. **Укључивање у заједницу**: Придружите се MCP заједници преко GitHub дискусија и Discord канала да бисте се повезали са стручњацима и другим програмерима.
 
@@ -218,7 +259,7 @@ mindmap
    - ChatMCP
    - Windsurf
 
-3. **Алатке за управљање MCP-ом**:
+3. **MCP алати за управљање**:
    - MCP CLI
    - MCP Manager
    - MCP Linker
@@ -228,23 +269,35 @@ mindmap
 
 Репозиторијум представља различите MCP сервере, укључујући:
 
-1. **Званични референтни сервери**:
+1. **Званични Microsoft MCP сервери**:
+   - Microsoft Learn Docs MCP Server
+   - Azure MCP Server (15+ специјализованих конектора)
+   - GitHub MCP Server
+   - Azure DevOps MCP Server
+   - MarkItDown MCP Server
+   - SQL Server MCP Server
+   - Playwright MCP Server
+   - Dev Box MCP Server
+   - Azure AI Foundry MCP Server
+   - Microsoft 365 Agents Toolkit MCP Server
+
+2. **Званични референтни сервери**:
    - Filesystem
    - Fetch
    - Memory
    - Sequential Thinking
 
-2. **Генерисање слика**:
+3. **Генерисање слика**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
 
-3. **Развојни алати**:
+4. **Алатке за развој**:
    - Git MCP
    - Terminal Control
    - Code Assistant
 
-4. **Специјализовани сервери**:
+5. **Специјализовани сервери**:
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
@@ -257,12 +310,13 @@ mindmap
 
 | Датум | Измене |
 |-------|---------|
-| 16. јул 2025. | - Ажурирана структура репозиторијума да одражава тренутни садржај<br>- Додат одељак MCP клијенти и алати<br>- Додат одељак Популарни MCP сервери<br>- Ажурирана Визуелна мапа курса са свим актуелним темама<br>- Побољшан одељак Напредне теме са свим специјализованим областима<br>- Ажуриране студије случаја са стварним примерима<br>- Појашњен MCP као протокол који је креирао Anthropic |
-| 11. јун 2025. | - Првобитно креирање водича за учење<br>- Додата Визуелна мапа курса<br>- Описана структура репозиторијума<br>- Укључени пример пројекти и додатни ресурси |
+| 18. јул 2025. | - Ажурирана структура репозиторијума са водичем за Microsoft MCP сервере<br>- Додат свеобухватан списак 10 продукцијски спремних Microsoft MCP сервера<br>- Побољшан одељак Популарни MCP сервери са званичним Microsoft MCP серверима<br>- Ажуриране Студије случаја са стварним примерима фајлова<br>- Додати детаљи о структури лабораторије за Практичну радионицу |
+| 16. јул 2025. | - Ажурирана структура репозиторијума да одражава тренутни садржај<br>- Додат одељак MCP клијенти и алати<br>- Додат одељак Популарни MCP сервери<br>- Ажурирана Визуелна мапа курса са свим тренутним темама<br>- Побољшан одељак Напредне теме са свим специјализованим областима<br>- Ажуриране Студије случаја са стварним примерима<br>- Појашњен MCP порекло као креиран од стране Anthropic |
+| 11. јун 2025. | - Почетно креирање водича за учење<br>- Додата Визуелна мапа курса<br>- Наглашена структура репозиторијума<br>- Укључени пример пројеката и додатни ресурси |
 
 ---
 
-*Овај водич за учење је ажуриран 16. јула 2025. и пружа преглед репозиторијума стања на тај датум. Садржај репозиторијума може бити ажуриран и након тог датума.*
+*Овај водич за учење је ажуриран 18. јула 2025. и пружа преглед репозиторијума стања на тај датум. Садржај репозиторијума може бити ажуриран и након тог датума.*
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

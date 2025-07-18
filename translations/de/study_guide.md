@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
-  "translation_date": "2025-07-17T09:34:50+00:00",
+  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
+  "translation_date": "2025-07-18T09:09:51+00:00",
   "source_file": "study_guide.md",
   "language_code": "de"
 }
@@ -23,79 +23,91 @@ mindmap
     00. Introduction
       ::icon(fa fa-book)
       (Protocol Overview)
-      (Standardization)
-      (Use Cases)
+      (Standardization Benefits)
+      (Real-world Use Cases)
+      (AI Integration Fundamentals)
     01. Core Concepts
       ::icon(fa fa-puzzle-piece)
       (Client-Server Architecture)
       (Protocol Components)
       (Messaging Patterns)
+      (Transport Mechanisms)
     02. Security
       ::icon(fa fa-shield)
-      (Threat Models)
-      (Best Practices)
-      (Auth Strategies)
+      (AI-Specific Threats)
+      (Best Practices 2025)
+      (Azure Content Safety)
+      (Auth & Authorization)
+      (Microsoft Prompt Shields)
     03. Getting Started
       ::icon(fa fa-rocket)
-      (First Server)
-      (Client)
-      (LLM Client)
-      (VS Code Integration)
-      (SSE Server)
+      (First Server Implementation)
+      (Client Development)
+      (LLM Client Integration)
+      (VS Code Extensions)
+      (SSE Server Setup)
       (HTTP Streaming)
-      (AI Toolkit)
-      (Testing)
-      (Deployment)
+      (AI Toolkit Integration)
+      (Testing Frameworks)
+      (Deployment Strategies)
     04. Practical Implementation
       ::icon(fa fa-code)
-      (SDKs)
-      (Testing/Debugging)
+      (Multi-Language SDKs)
+      (Testing & Debugging)
       (Prompt Templates)
       (Sample Projects)
+      (Production Patterns)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
       (Context Engineering)
-      (Foundry Integration)
-      (Multi-modal AI)
-      (OAuth2 Demo)
+      (Foundry Agent Integration)
+      (Multi-modal AI Workflows)
+      (OAuth2 Authentication)
       (Real-time Search)
-      (Streaming)
+      (Streaming Protocols)
       (Root Contexts)
-      (Routing)
-      (Sampling)
-      (Scaling)
-      (Security)
-      (Entra ID)
-      (Web Search)
+      (Routing Strategies)
+      (Sampling Techniques)
+      (Scaling Solutions)
+      (Security Hardening)
+      (Entra ID Integration)
+      (Web Search MCP)
       
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (MCP Clients)
-      (MCP Servers)
-      (Image Generation)
+      (MCP Client Ecosystem)
+      (MCP Server Registry)
+      (Image Generation Tools)
+      (GitHub Collaboration)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
-      (Real-world Examples)
-      (Deployment Stories)
+      (Production Deployments)
+      (Microsoft MCP Servers)
+      (Azure MCP Service)
+      (Enterprise Case Studies)
       (Future Roadmap)
     08. Best Practices
       ::icon(fa fa-check)
-      (Performance)
+      (Performance Optimization)
       (Fault Tolerance)
-      (Resilience)
+      (System Resilience)
+      (Monitoring & Observability)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (API Management)
-      (Travel Agent)
-      (Azure DevOps)
+      (Azure API Management)
+      (AI Travel Agent)
+      (Azure DevOps Integration)
       (Documentation MCP)
+      (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
+      (MCP Server Fundamentals)
+      (Advanced Development)
       (AI Toolkit Integration)
-      (Custom Server Development)
       (Production Deployment)
+      (4-Lab Structure)
 ```
 
 ## Repository-Struktur
@@ -107,7 +119,7 @@ Das Repository ist in zehn Hauptabschnitte gegliedert, die jeweils unterschiedli
    - Warum Standardisierung in KI-Pipelines wichtig ist
    - Praktische Anwendungsfälle und Vorteile
 
-2. **Grundlagen (01-CoreConcepts/)**
+2. **Kernkonzepte (01-CoreConcepts/)**
    - Client-Server-Architektur
    - Wichtige Protokollkomponenten
    - Messaging-Muster im MCP
@@ -116,13 +128,25 @@ Das Repository ist in zehn Hauptabschnitte gegliedert, die jeweils unterschiedli
    - Sicherheitsbedrohungen in MCP-basierten Systemen
    - Best Practices zur Absicherung von Implementierungen
    - Authentifizierungs- und Autorisierungsstrategien
+   - **Umfassende Sicherheitsdokumentation**:
+     - MCP Security Best Practices 2025
+     - Azure Content Safety Implementierungsleitfaden
+     - MCP Sicherheitskontrollen und Techniken
+     - MCP Best Practices Schnellreferenz
+   - **Wichtige Sicherheitsthemen**:
+     - Prompt Injection und Tool-Poisoning-Angriffe
+     - Session Hijacking und Confused Deputy-Probleme
+     - Token-Passthrough-Schwachstellen
+     - Übermäßige Berechtigungen und Zugriffskontrolle
+     - Lieferkettensicherheit für KI-Komponenten
+     - Integration von Microsoft Prompt Shields
 
 4. **Erste Schritte (03-GettingStarted/)**
    - Einrichtung und Konfiguration der Umgebung
    - Erstellung einfacher MCP-Server und -Clients
    - Integration in bestehende Anwendungen
    - Enthält Abschnitte zu:
-     - Erste Server-Implementierung
+     - Erste Serverimplementierung
      - Client-Entwicklung
      - LLM-Client-Integration
      - VS Code Integration
@@ -140,10 +164,10 @@ Das Repository ist in zehn Hauptabschnitte gegliedert, die jeweils unterschiedli
 
 6. **Fortgeschrittene Themen (05-AdvancedTopics/)**
    - Techniken des Context Engineerings
-   - Integration von Foundry Agents
+   - Foundry-Agent-Integration
    - Multimodale KI-Workflows
    - OAuth2-Authentifizierungsdemos
-   - Echtzeit-Suchfunktionen
+   - Echtzeitsuche
    - Echtzeit-Streaming
    - Implementierung von Root Contexts
    - Routing-Strategien
@@ -164,27 +188,44 @@ Das Repository ist in zehn Hauptabschnitte gegliedert, die jeweils unterschiedli
    - Praxisnahe Implementierungen und Erfolgsgeschichten
    - Aufbau und Deployment von MCP-basierten Lösungen
    - Trends und zukünftige Roadmap
+   - **Microsoft MCP Servers Guide**: Umfassender Leitfaden zu 10 produktionsreifen Microsoft MCP-Servern, darunter:
+     - Microsoft Learn Docs MCP Server
+     - Azure MCP Server (15+ spezialisierte Connectoren)
+     - GitHub MCP Server
+     - Azure DevOps MCP Server
+     - MarkItDown MCP Server
+     - SQL Server MCP Server
+     - Playwright MCP Server
+     - Dev Box MCP Server
+     - Azure AI Foundry MCP Server
+     - Microsoft 365 Agents Toolkit MCP Server
 
 9. **Best Practices (08-BestPractices/)**
-   - Performance-Optimierung und Tuning
+   - Performance-Tuning und Optimierung
    - Entwurf fehlertoleranter MCP-Systeme
    - Test- und Resilienzstrategien
 
 10. **Fallstudien (09-CaseStudy/)**
-    - Fallstudie: Azure API Management Integration
-    - Fallstudie: Reisebüro-Implementierung
-    - Fallstudie: Azure DevOps Integration mit YouTube
+    - Beispiel zur Integration von Azure API Management
+    - Beispielimplementierung eines Reisebüros
+    - Azure DevOps Integration mit YouTube-Updates
+    - Dokumentationsbeispiele für MCP-Implementierungen
     - Implementierungsbeispiele mit ausführlicher Dokumentation
 
 11. **Praktischer Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Umfassender praktischer Workshop zur Kombination von MCP mit AI Toolkit
     - Entwicklung intelligenter Anwendungen, die KI-Modelle mit realen Tools verbinden
-    - Praxisorientierte Module zu Grundlagen, individueller Serverentwicklung und Produktions-Deployment
-    - Laborgestütztes Lernen mit Schritt-für-Schritt-Anleitungen
+    - Praxisorientierte Module zu Grundlagen, individueller Serverentwicklung und Produktions-Deployment-Strategien
+    - **Lab-Struktur**:
+      - Lab 1: MCP Server Grundlagen
+      - Lab 2: Fortgeschrittene MCP Server Entwicklung
+      - Lab 3: AI Toolkit Integration
+      - Lab 4: Produktions-Deployment und Skalierung
+    - Lab-basiertes Lernen mit Schritt-für-Schritt-Anleitungen
 
 ## Zusätzliche Ressourcen
 
-Das Repository enthält unterstützende Materialien:
+Das Repository enthält unterstützende Ressourcen:
 
 - **Images-Ordner**: Enthält Diagramme und Illustrationen, die im Lehrplan verwendet werden
 - **Übersetzungen**: Mehrsprachige Unterstützung mit automatisierten Übersetzungen der Dokumentation
@@ -198,7 +239,7 @@ Das Repository enthält unterstützende Materialien:
 1. **Sequenzielles Lernen**: Folge den Kapiteln in der Reihenfolge (00 bis 10) für ein strukturiertes Lernerlebnis.
 2. **Sprachspezifischer Fokus**: Wenn du dich für eine bestimmte Programmiersprache interessierst, erkunde die Sample-Verzeichnisse für Implementierungen in deiner bevorzugten Sprache.
 3. **Praktische Umsetzung**: Beginne mit dem Abschnitt „Erste Schritte“, um deine Umgebung einzurichten und deinen ersten MCP-Server und -Client zu erstellen.
-4. **Fortgeschrittene Erkundung**: Sobald du die Grundlagen beherrschst, tauche in die fortgeschrittenen Themen ein, um dein Wissen zu vertiefen.
+4. **Fortgeschrittene Erkundung**: Sobald du mit den Grundlagen vertraut bist, tauche in die fortgeschrittenen Themen ein, um dein Wissen zu vertiefen.
 5. **Community-Engagement**: Tritt der MCP-Community über GitHub-Diskussionen und Discord-Kanäle bei, um dich mit Experten und anderen Entwicklern auszutauschen.
 
 ## MCP-Clients und Tools
@@ -228,23 +269,35 @@ Der Lehrplan behandelt verschiedene MCP-Clients und Tools:
 
 Das Repository stellt verschiedene MCP-Server vor, darunter:
 
-1. **Offizielle Referenzserver**:
+1. **Offizielle Microsoft MCP-Server**:
+   - Microsoft Learn Docs MCP Server
+   - Azure MCP Server (15+ spezialisierte Connectoren)
+   - GitHub MCP Server
+   - Azure DevOps MCP Server
+   - MarkItDown MCP Server
+   - SQL Server MCP Server
+   - Playwright MCP Server
+   - Dev Box MCP Server
+   - Azure AI Foundry MCP Server
+   - Microsoft 365 Agents Toolkit MCP Server
+
+2. **Offizielle Referenzserver**:
    - Filesystem
    - Fetch
    - Memory
    - Sequential Thinking
 
-2. **Bildgenerierung**:
+3. **Bildgenerierung**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
 
-3. **Entwicklungstools**:
+4. **Entwicklungstools**:
    - Git MCP
    - Terminal Control
    - Code Assistant
 
-4. **Spezialisierte Server**:
+5. **Spezialisierte Server**:
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
@@ -257,12 +310,13 @@ Dieses Repository freut sich über Beiträge aus der Community. Siehe den Abschn
 
 | Datum         | Änderungen                                                                                              |
 |---------------|-------------------------------------------------------------------------------------------------------|
-| 16. Juli 2025 | - Aktualisierte Repository-Struktur zur Abbildung des aktuellen Inhalts<br>- Abschnitt MCP Clients und Tools hinzugefügt<br>- Abschnitt Beliebte MCP-Server hinzugefügt<br>- Visuelle Lehrplanübersicht mit allen aktuellen Themen erweitert<br>- Fortgeschrittene Themen um alle Spezialbereiche ergänzt<br>- Fallstudien mit aktuellen Beispielen aktualisiert<br>- Herkunft von MCP als von Anthropic erstellt klargestellt |
+| 18. Juli 2025 | - Aktualisierte Repository-Struktur mit Microsoft MCP Servers Guide<br>- Umfassende Liste von 10 produktionsreifen Microsoft MCP-Servern hinzugefügt<br>- Beliebte MCP-Server-Sektion mit offiziellen Microsoft MCP-Servern erweitert<br>- Fallstudien-Sektion mit tatsächlichen Datei-Beispielen aktualisiert<br>- Details zur Lab-Struktur für den praktischen Workshop ergänzt |
+| 16. Juli 2025 | - Repository-Struktur an aktuellen Inhalt angepasst<br>- MCP Clients und Tools Abschnitt hinzugefügt<br>- Beliebte MCP-Server Sektion ergänzt<br>- Visuelle Lehrplanübersicht mit allen aktuellen Themen aktualisiert<br>- Fortgeschrittene Themen mit allen spezialisierten Bereichen erweitert<br>- Fallstudien mit tatsächlichen Beispielen aktualisiert<br>- Herkunft von MCP als von Anthropic erstellt klargestellt |
 | 11. Juni 2025 | - Erste Erstellung des Lernleitfadens<br>- Visuelle Lehrplanübersicht hinzugefügt<br>- Repository-Struktur skizziert<br>- Beispielprojekte und zusätzliche Ressourcen aufgenommen |
 
 ---
 
-*Dieser Lernleitfaden wurde am 16. Juli 2025 aktualisiert und bietet einen Überblick über das Repository zum damaligen Zeitpunkt. Der Inhalt des Repositories kann nach diesem Datum aktualisiert worden sein.*
+*Dieser Lernleitfaden wurde am 18. Juli 2025 aktualisiert und bietet einen Überblick über das Repository zu diesem Zeitpunkt. Der Inhalt des Repositories kann nach diesem Datum aktualisiert werden.*
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
-  "translation_date": "2025-07-17T10:17:14+00:00",
+  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
+  "translation_date": "2025-07-18T10:17:27+00:00",
   "source_file": "study_guide.md",
   "language_code": "hu"
 }
@@ -23,79 +23,91 @@ mindmap
     00. Introduction
       ::icon(fa fa-book)
       (Protocol Overview)
-      (Standardization)
-      (Use Cases)
+      (Standardization Benefits)
+      (Real-world Use Cases)
+      (AI Integration Fundamentals)
     01. Core Concepts
       ::icon(fa fa-puzzle-piece)
       (Client-Server Architecture)
       (Protocol Components)
       (Messaging Patterns)
+      (Transport Mechanisms)
     02. Security
       ::icon(fa fa-shield)
-      (Threat Models)
-      (Best Practices)
-      (Auth Strategies)
+      (AI-Specific Threats)
+      (Best Practices 2025)
+      (Azure Content Safety)
+      (Auth & Authorization)
+      (Microsoft Prompt Shields)
     03. Getting Started
       ::icon(fa fa-rocket)
-      (First Server)
-      (Client)
-      (LLM Client)
-      (VS Code Integration)
-      (SSE Server)
+      (First Server Implementation)
+      (Client Development)
+      (LLM Client Integration)
+      (VS Code Extensions)
+      (SSE Server Setup)
       (HTTP Streaming)
-      (AI Toolkit)
-      (Testing)
-      (Deployment)
+      (AI Toolkit Integration)
+      (Testing Frameworks)
+      (Deployment Strategies)
     04. Practical Implementation
       ::icon(fa fa-code)
-      (SDKs)
-      (Testing/Debugging)
+      (Multi-Language SDKs)
+      (Testing & Debugging)
       (Prompt Templates)
       (Sample Projects)
+      (Production Patterns)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
       (Context Engineering)
-      (Foundry Integration)
-      (Multi-modal AI)
-      (OAuth2 Demo)
+      (Foundry Agent Integration)
+      (Multi-modal AI Workflows)
+      (OAuth2 Authentication)
       (Real-time Search)
-      (Streaming)
+      (Streaming Protocols)
       (Root Contexts)
-      (Routing)
-      (Sampling)
-      (Scaling)
-      (Security)
-      (Entra ID)
-      (Web Search)
+      (Routing Strategies)
+      (Sampling Techniques)
+      (Scaling Solutions)
+      (Security Hardening)
+      (Entra ID Integration)
+      (Web Search MCP)
       
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (MCP Clients)
-      (MCP Servers)
-      (Image Generation)
+      (MCP Client Ecosystem)
+      (MCP Server Registry)
+      (Image Generation Tools)
+      (GitHub Collaboration)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
-      (Real-world Examples)
-      (Deployment Stories)
+      (Production Deployments)
+      (Microsoft MCP Servers)
+      (Azure MCP Service)
+      (Enterprise Case Studies)
       (Future Roadmap)
     08. Best Practices
       ::icon(fa fa-check)
-      (Performance)
+      (Performance Optimization)
       (Fault Tolerance)
-      (Resilience)
+      (System Resilience)
+      (Monitoring & Observability)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (API Management)
-      (Travel Agent)
-      (Azure DevOps)
+      (Azure API Management)
+      (AI Travel Agent)
+      (Azure DevOps Integration)
       (Documentation MCP)
+      (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
+      (MCP Server Fundamentals)
+      (Advanced Development)
       (AI Toolkit Integration)
-      (Custom Server Development)
       (Production Deployment)
+      (4-Lab Structure)
 ```
 
 ## Tárház felépítése
@@ -116,13 +128,25 @@ A tárház tíz fő részre tagolódik, amelyek mindegyike az MCP különböző 
    - Biztonsági fenyegetések MCP-alapú rendszerekben
    - Legjobb gyakorlatok a biztonságos megvalósításhoz
    - Hitelesítési és jogosultságkezelési stratégiák
+   - **Átfogó biztonsági dokumentáció**:
+     - MCP Security Best Practices 2025
+     - Azure Content Safety Implementation Guide
+     - MCP Security Controls and Techniques
+     - MCP Best Practices Quick Reference
+   - **Fontos biztonsági témák**:
+     - Prompt injekció és eszközmérgezéses támadások
+     - Munkamenet eltérítés és confused deputy problémák
+     - Token átengedési sebezhetőségek
+     - Túlzott jogosultságok és hozzáférés-ellenőrzés
+     - AI komponensek ellátási láncának biztonsága
+     - Microsoft Prompt Shields integráció
 
 4. **Első lépések (03-GettingStarted/)**
    - Környezet beállítása és konfigurálása
    - Egyszerű MCP szerverek és kliensek létrehozása
    - Integráció meglévő alkalmazásokkal
    - Tartalmazza a következő részeket:
-     - Első szerver implementáció
+     - Első szerver megvalósítása
      - Kliens fejlesztés
      - LLM kliens integráció
      - VS Code integráció
@@ -143,15 +167,15 @@ A tárház tíz fő részre tagolódik, amelyek mindegyike az MCP különböző 
    - Foundry agent integráció
    - Többmodalitású AI munkafolyamatok
    - OAuth2 hitelesítési demók
-   - Valós idejű keresési funkciók
+   - Valós idejű keresési képességek
    - Valós idejű streaming
    - Root context-ek megvalósítása
    - Routing stratégiák
    - Mintavételezési technikák
    - Skálázási megközelítések
-   - Biztonsági szempontok
+   - Biztonsági megfontolások
    - Entra ID biztonsági integráció
-   - Webes keresés integrációja
+   - Webes keresés integráció
 
 7. **Közösségi hozzájárulások (06-CommunityContributions/)**
    - Hogyan járulhatsz hozzá kóddal és dokumentációval
@@ -160,50 +184,67 @@ A tárház tíz fő részre tagolódik, amelyek mindegyike az MCP különböző 
    - Különböző MCP kliensek használata (Claude Desktop, Cline, VSCode)
    - Népszerű MCP szerverekkel való munka, beleértve a képgenerálást is
 
-8. **Korai alkalmazás tanulságai (07-LessonsfromEarlyAdoption/)**
+8. **Korai tapasztalatok tanulságai (07-LessonsfromEarlyAdoption/)**
    - Valós megvalósítások és sikertörténetek
    - MCP-alapú megoldások építése és telepítése
-   - Trendek és jövőbeli fejlesztési irányok
+   - Trendek és jövőbeli útiterv
+   - **Microsoft MCP szerverek útmutatója**: Átfogó útmutató 10 éles Microsoft MCP szerverhez, többek között:
+     - Microsoft Learn Docs MCP Server
+     - Azure MCP Server (15+ speciális csatlakozóval)
+     - GitHub MCP Server
+     - Azure DevOps MCP Server
+     - MarkItDown MCP Server
+     - SQL Server MCP Server
+     - Playwright MCP Server
+     - Dev Box MCP Server
+     - Azure AI Foundry MCP Server
+     - Microsoft 365 Agents Toolkit MCP Server
 
 9. **Legjobb gyakorlatok (08-BestPractices/)**
    - Teljesítményhangolás és optimalizálás
    - Hibabiztos MCP rendszerek tervezése
-   - Tesztelési és ellenálló képesség stratégiák
+   - Tesztelési és ellenállóképességi stratégiák
 
 10. **Esettanulmányok (09-CaseStudy/)**
-    - Esettanulmány: Azure API Management integráció
-    - Esettanulmány: Utazási ügynök megvalósítás
-    - Esettanulmány: Azure DevOps integráció YouTube-bal
+    - Azure API Management integrációs példa
+    - Utazási ügynök megvalósítási példa
+    - Azure DevOps integráció YouTube frissítésekkel
+    - Dokumentációs MCP megvalósítási példák
     - Megvalósítási példák részletes dokumentációval
 
 11. **Gyakorlati workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Átfogó gyakorlati workshop az MCP és AI Toolkit kombinálásával
     - Intelligens alkalmazások építése, amelyek összekapcsolják az AI modelleket a valós eszközökkel
-    - Gyakorlati modulok az alapoktól a saját szerver fejlesztésén át a termelési telepítésig
-    - Laboratóriumi tanulási megközelítés lépésről lépésre
+    - Gyakorlati modulok az alapoktól a testreszabott szerverfejlesztésen át a termelési telepítésig
+    - **Labor felépítése**:
+      - Labor 1: MCP szerver alapok
+      - Labor 2: Haladó MCP szerver fejlesztés
+      - Labor 3: AI Toolkit integráció
+      - Labor 4: Termelési telepítés és skálázás
+    - Labor-alapú tanulási megközelítés lépésről lépésre
 
 ## További források
 
-A tárház tartalmaz kiegészítő anyagokat is:
+A tárház tartalmaz további támogató anyagokat:
 
-- **Képek mappa**: Diagramok és illusztrációk, amelyeket a tananyag során használnak
+- **Képek mappa**: Diagramok és illusztrációk a tananyagban
 - **Fordítások**: Többnyelvű támogatás, automatikus dokumentáció fordításokkal
 - **Hivatalos MCP források**:
-  - [MCP Dokumentáció](https://modelcontextprotocol.io/)
-  - [MCP Specifikáció](https://spec.modelcontextprotocol.io/)
-  - [MCP GitHub tárház](https://github.com/modelcontextprotocol)
+  - [MCP Documentation](https://modelcontextprotocol.io/)
+  - [MCP Specification](https://spec.modelcontextprotocol.io/)
+  - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Hogyan használd ezt a tárházat
 
 1. **Sorrendben tanulás**: Kövesd a fejezeteket sorrendben (00-tól 10-ig) a strukturált tanulás érdekében.
-2. **Nyelvspecifikus fókusz**: Ha egy adott programozási nyelv érdekel, nézd meg a mintakönyvtárakat a választott nyelv megvalósításaiért.
-3. **Gyakorlati megvalósítás**: Kezdd az "Első lépések" résszel, hogy beállítsd a környezeted és elkészítsd az első MCP szervered és kliensed.
-4. **Haladó témák felfedezése**: Amint magabiztos vagy az alapokban, merülj el a haladó témákban a tudásod bővítéséhez.
-5. **Közösségi részvétel**: Csatlakozz az MCP közösséghez GitHub beszélgetéseken és Discord csatornákon, hogy kapcsolatba léphess szakértőkkel és fejlesztőtársakkal.
+2. **Nyelvspecifikus fókusz**: Ha egy adott programozási nyelv érdekel, nézd meg a mintakönyvtárakat a preferált nyelvű megvalósításokért.
+3. **Gyakorlati megvalósítás**: Kezdd az "Első lépések" résszel, hogy beállítsd a környezeted és elkészítsd az első MCP szerveredet és kliensedet.
+4. **Haladó felfedezés**: Amint magabiztos vagy az alapokban, merülj el a haladó témákban a tudásod bővítéséhez.
+5. **Közösségi részvétel**: Csatlakozz az MCP közösséghez GitHub beszélgetéseken és Discord csatornákon keresztül, hogy kapcsolatba léphess szakértőkkel és fejlesztőtársakkal.
 
 ## MCP kliensek és eszközök
 
-A tananyag különböző MCP klienseket és eszközöket mutat be:
+A tananyag különféle MCP klienseket és eszközöket mutat be:
 
 1. **Hivatalos kliensek**:
    - Visual Studio Code
@@ -218,7 +259,7 @@ A tananyag különböző MCP klienseket és eszközöket mutat be:
    - ChatMCP
    - Windsurf
 
-3. **MCP kezelő eszközök**:
+3. **MCP menedzsment eszközök**:
    - MCP CLI
    - MCP Manager
    - MCP Linker
@@ -228,23 +269,35 @@ A tananyag különböző MCP klienseket és eszközöket mutat be:
 
 A tárház bemutat különféle MCP szervereket, többek között:
 
-1. **Hivatalos referencia szerverek**:
+1. **Hivatalos Microsoft MCP szerverek**:
+   - Microsoft Learn Docs MCP Server
+   - Azure MCP Server (15+ speciális csatlakozóval)
+   - GitHub MCP Server
+   - Azure DevOps MCP Server
+   - MarkItDown MCP Server
+   - SQL Server MCP Server
+   - Playwright MCP Server
+   - Dev Box MCP Server
+   - Azure AI Foundry MCP Server
+   - Microsoft 365 Agents Toolkit MCP Server
+
+2. **Hivatalos referencia szerverek**:
    - Filesystem
    - Fetch
    - Memory
    - Sequential Thinking
 
-2. **Képgenerálás**:
+3. **Képgenerálás**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
 
-3. **Fejlesztői eszközök**:
+4. **Fejlesztői eszközök**:
    - Git MCP
    - Terminal Control
    - Code Assistant
 
-4. **Speciális szerverek**:
+5. **Speciális szerverek**:
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
@@ -257,12 +310,13 @@ Ez a tárház szívesen fogadja a közösség hozzájárulásait. A Közösségi
 
 | Dátum | Változások |
 |-------|------------|
-| 2025. július 16. | - A tárház szerkezetének frissítése a jelenlegi tartalomnak megfelelően<br>- MCP kliensek és eszközök szekció hozzáadva<br>- Népszerű MCP szerverek szekció hozzáadva<br>- Vizualizált tananyag térkép frissítése az összes aktuális témával<br>- Haladó témák szekció bővítése minden speciális területtel<br>- Esettanulmányok frissítése valós példákkal<br>- Az MCP eredetének tisztázása, mint az Anthropic által létrehozott |
-| 2025. június 11. | - A tanulmányi útmutató kezdeti létrehozása<br>- Vizualizált tananyag térkép hozzáadása<br>- A tárház szerkezetének vázolása<br>- Minta projektek és további források beillesztése |
+| 2025. július 18. | - Frissített tárház struktúra a Microsoft MCP szerverek útmutatójával<br>- Átfogó lista 10 éles Microsoft MCP szerverrel<br>- Népszerű MCP szerverek szekció bővítése hivatalos Microsoft MCP szerverekkel<br>- Esettanulmányok frissítése valós fájl példákkal<br>- Labor felépítésének részletezése a gyakorlati workshophoz |
+| 2025. július 16. | - Tárház struktúra frissítése a jelenlegi tartalomnak megfelelően<br>- MCP kliensek és eszközök szekció hozzáadása<br>- Népszerű MCP szerverek szekció hozzáadása<br>- Vizualizált tananyag térkép frissítése az összes aktuális témával<br>- Haladó témák bővítése minden speciális területtel<br>- Esettanulmányok frissítése valós példákra<br>- Az MCP eredetének tisztázása, mint az Anthropic által létrehozott |
+| 2025. június 11. | - A tanulmányi útmutató kezdeti létrehozása<br>- Vizualizált tananyag térkép hozzáadása<br>- Tárház struktúra vázolása<br>- Minta projektek és további források beillesztése |
 
 ---
 
-*Ez a tanulmányi útmutató 2025. július 16-án frissült, és az akkori állapot szerinti áttekintést nyújtja a tárházról. A tárház tartalma a későbbiekben frissülhet.*
+*Ez a tanulmányi útmutató 2025. július 18-án frissült, és a tárház ezen időpontbeli állapotát mutatja be. A tárház tartalma a későbbiekben frissülhet.*
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
-  "translation_date": "2025-07-17T07:59:35+00:00",
+  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
+  "translation_date": "2025-07-18T10:11:38+00:00",
   "source_file": "study_guide.md",
   "language_code": "ms"
 }
 -->
-# Model Context Protocol (MCP) untuk Pemula - Panduan Pembelajaran
+# Protokol Konteks Model (MCP) untuk Pemula - Panduan Pembelajaran
 
-Panduan pembelajaran ini memberikan gambaran keseluruhan tentang struktur dan kandungan repositori untuk kurikulum "Model Context Protocol (MCP) untuk Pemula". Gunakan panduan ini untuk menavigasi repositori dengan cekap dan memanfaatkan sumber yang tersedia dengan sebaiknya.
+Panduan pembelajaran ini memberikan gambaran keseluruhan tentang struktur dan kandungan repositori untuk kurikulum "Protokol Konteks Model (MCP) untuk Pemula". Gunakan panduan ini untuk menavigasi repositori dengan cekap dan memanfaatkan sumber yang tersedia dengan sebaiknya.
 
 ## Gambaran Keseluruhan Repositori
 
-Model Context Protocol (MCP) adalah rangka kerja standard untuk interaksi antara model AI dan aplikasi klien. Pada mulanya dicipta oleh Anthropic, MCP kini diselenggara oleh komuniti MCP yang lebih luas melalui organisasi rasmi GitHub. Repositori ini menyediakan kurikulum menyeluruh dengan contoh kod praktikal dalam C#, Java, JavaScript, Python, dan TypeScript, direka untuk pembangun AI, arkitek sistem, dan jurutera perisian.
+Protokol Konteks Model (MCP) adalah rangka kerja standard untuk interaksi antara model AI dan aplikasi klien. Pada mulanya dicipta oleh Anthropic, MCP kini diselenggara oleh komuniti MCP yang lebih luas melalui organisasi rasmi GitHub. Repositori ini menyediakan kurikulum menyeluruh dengan contoh kod praktikal dalam C#, Java, JavaScript, Python, dan TypeScript, direka untuk pembangun AI, arkitek sistem, dan jurutera perisian.
 
 ## Peta Kurikulum Visual
 
@@ -23,79 +23,91 @@ mindmap
     00. Introduction
       ::icon(fa fa-book)
       (Protocol Overview)
-      (Standardization)
-      (Use Cases)
+      (Standardization Benefits)
+      (Real-world Use Cases)
+      (AI Integration Fundamentals)
     01. Core Concepts
       ::icon(fa fa-puzzle-piece)
       (Client-Server Architecture)
       (Protocol Components)
       (Messaging Patterns)
+      (Transport Mechanisms)
     02. Security
       ::icon(fa fa-shield)
-      (Threat Models)
-      (Best Practices)
-      (Auth Strategies)
+      (AI-Specific Threats)
+      (Best Practices 2025)
+      (Azure Content Safety)
+      (Auth & Authorization)
+      (Microsoft Prompt Shields)
     03. Getting Started
       ::icon(fa fa-rocket)
-      (First Server)
-      (Client)
-      (LLM Client)
-      (VS Code Integration)
-      (SSE Server)
+      (First Server Implementation)
+      (Client Development)
+      (LLM Client Integration)
+      (VS Code Extensions)
+      (SSE Server Setup)
       (HTTP Streaming)
-      (AI Toolkit)
-      (Testing)
-      (Deployment)
+      (AI Toolkit Integration)
+      (Testing Frameworks)
+      (Deployment Strategies)
     04. Practical Implementation
       ::icon(fa fa-code)
-      (SDKs)
-      (Testing/Debugging)
+      (Multi-Language SDKs)
+      (Testing & Debugging)
       (Prompt Templates)
       (Sample Projects)
+      (Production Patterns)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
       (Context Engineering)
-      (Foundry Integration)
-      (Multi-modal AI)
-      (OAuth2 Demo)
+      (Foundry Agent Integration)
+      (Multi-modal AI Workflows)
+      (OAuth2 Authentication)
       (Real-time Search)
-      (Streaming)
+      (Streaming Protocols)
       (Root Contexts)
-      (Routing)
-      (Sampling)
-      (Scaling)
-      (Security)
-      (Entra ID)
-      (Web Search)
+      (Routing Strategies)
+      (Sampling Techniques)
+      (Scaling Solutions)
+      (Security Hardening)
+      (Entra ID Integration)
+      (Web Search MCP)
       
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (MCP Clients)
-      (MCP Servers)
-      (Image Generation)
+      (MCP Client Ecosystem)
+      (MCP Server Registry)
+      (Image Generation Tools)
+      (GitHub Collaboration)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
-      (Real-world Examples)
-      (Deployment Stories)
+      (Production Deployments)
+      (Microsoft MCP Servers)
+      (Azure MCP Service)
+      (Enterprise Case Studies)
       (Future Roadmap)
     08. Best Practices
       ::icon(fa fa-check)
-      (Performance)
+      (Performance Optimization)
       (Fault Tolerance)
-      (Resilience)
+      (System Resilience)
+      (Monitoring & Observability)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (API Management)
-      (Travel Agent)
-      (Azure DevOps)
+      (Azure API Management)
+      (AI Travel Agent)
+      (Azure DevOps Integration)
       (Documentation MCP)
+      (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
+      (MCP Server Fundamentals)
+      (Advanced Development)
       (AI Toolkit Integration)
-      (Custom Server Development)
       (Production Deployment)
+      (4-Lab Structure)
 ```
 
 ## Struktur Repositori
@@ -103,7 +115,7 @@ mindmap
 Repositori ini disusun kepada sepuluh bahagian utama, setiap satu memberi tumpuan kepada aspek berbeza MCP:
 
 1. **Pengenalan (00-Introduction/)**
-   - Gambaran keseluruhan Model Context Protocol
+   - Gambaran keseluruhan Protokol Konteks Model
    - Mengapa standardisasi penting dalam saluran AI
    - Kes penggunaan praktikal dan manfaat
 
@@ -116,6 +128,18 @@ Repositori ini disusun kepada sepuluh bahagian utama, setiap satu memberi tumpua
    - Ancaman keselamatan dalam sistem berasaskan MCP
    - Amalan terbaik untuk memastikan keselamatan pelaksanaan
    - Strategi pengesahan dan kebenaran
+   - **Dokumentasi Keselamatan Menyeluruh**:
+     - Amalan Terbaik Keselamatan MCP 2025
+     - Panduan Pelaksanaan Keselamatan Kandungan Azure
+     - Kawalan dan Teknik Keselamatan MCP
+     - Rujukan Pantas Amalan Terbaik MCP
+   - **Topik Keselamatan Utama**:
+     - Serangan suntikan prompt dan pencemaran alat
+     - Pengambilalihan sesi dan masalah wakil keliru
+     - Kelemahan laluan token
+     - Kebenaran berlebihan dan kawalan akses
+     - Keselamatan rantaian bekalan untuk komponen AI
+     - Integrasi Microsoft Prompt Shields
 
 4. **Memulakan (03-GettingStarted/)**
    - Persediaan dan konfigurasi persekitaran
@@ -141,9 +165,9 @@ Repositori ini disusun kepada sepuluh bahagian utama, setiap satu memberi tumpua
 6. **Topik Lanjutan (05-AdvancedTopics/)**
    - Teknik kejuruteraan konteks
    - Integrasi agen Foundry
-   - Aliran kerja AI pelbagai modaliti
+   - Aliran kerja AI pelbagai modal
    - Demo pengesahan OAuth2
-   - Keupayaan carian masa nyata
+   - Kebolehan carian masa nyata
    - Penstriman masa nyata
    - Pelaksanaan konteks akar
    - Strategi penghalaan
@@ -163,7 +187,18 @@ Repositori ini disusun kepada sepuluh bahagian utama, setiap satu memberi tumpua
 8. **Pengajaran dari Penggunaan Awal (07-LessonsfromEarlyAdoption/)**
    - Pelaksanaan dunia sebenar dan kisah kejayaan
    - Membina dan menyebarkan penyelesaian berasaskan MCP
-   - Trend dan peta jalan masa depan
+   - Tren dan peta jalan masa depan
+   - **Panduan Pelayan MCP Microsoft**: Panduan menyeluruh untuk 10 pelayan MCP Microsoft yang sedia untuk produksi termasuk:
+     - Pelayan MCP Microsoft Learn Docs
+     - Pelayan MCP Azure (15+ penyambung khusus)
+     - Pelayan MCP GitHub
+     - Pelayan MCP Azure DevOps
+     - Pelayan MCP MarkItDown
+     - Pelayan MCP SQL Server
+     - Pelayan MCP Playwright
+     - Pelayan MCP Dev Box
+     - Pelayan MCP Azure AI Foundry
+     - Pelayan MCP Microsoft 365 Agents Toolkit
 
 9. **Amalan Terbaik (08-BestPractices/)**
    - Penalaan prestasi dan pengoptimuman
@@ -171,15 +206,21 @@ Repositori ini disusun kepada sepuluh bahagian utama, setiap satu memberi tumpua
    - Strategi ujian dan ketahanan
 
 10. **Kajian Kes (09-CaseStudy/)**
-    - Kajian kes: Integrasi Azure API Management
-    - Kajian kes: Pelaksanaan ejen pelancongan
-    - Kajian kes: Integrasi Azure DevOps dengan YouTube
+    - Contoh integrasi Pengurusan API Azure
+    - Contoh pelaksanaan ejen pelancongan
+    - Integrasi Azure DevOps dengan kemas kini YouTube
+    - Contoh pelaksanaan MCP dokumentasi
     - Contoh pelaksanaan dengan dokumentasi terperinci
 
 11. **Bengkel Praktikal (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Bengkel praktikal menyeluruh menggabungkan MCP dengan AI Toolkit
     - Membina aplikasi pintar yang menghubungkan model AI dengan alat dunia sebenar
     - Modul praktikal merangkumi asas, pembangunan pelayan tersuai, dan strategi penyebaran produksi
+    - **Struktur Makmal**:
+      - Makmal 1: Asas Pelayan MCP
+      - Makmal 2: Pembangunan Pelayan MCP Lanjutan
+      - Makmal 3: Integrasi AI Toolkit
+      - Makmal 4: Penyebaran dan Penskalakan Produksi
     - Pendekatan pembelajaran berasaskan makmal dengan arahan langkah demi langkah
 
 ## Sumber Tambahan
@@ -203,7 +244,7 @@ Repositori ini termasuk sumber sokongan:
 
 ## Klien dan Alat MCP
 
-Kurikulum ini merangkumi pelbagai klien dan alat MCP:
+Kurikulum merangkumi pelbagai klien dan alat MCP:
 
 1. **Klien Rasmi**:
    - Visual Studio Code
@@ -228,28 +269,40 @@ Kurikulum ini merangkumi pelbagai klien dan alat MCP:
 
 Repositori ini memperkenalkan pelbagai pelayan MCP, termasuk:
 
-1. **Pelayan Rujukan Rasmi**:
+1. **Pelayan MCP Microsoft Rasmi**:
+   - Pelayan MCP Microsoft Learn Docs
+   - Pelayan MCP Azure (15+ penyambung khusus)
+   - Pelayan MCP GitHub
+   - Pelayan MCP Azure DevOps
+   - Pelayan MCP MarkItDown
+   - Pelayan MCP SQL Server
+   - Pelayan MCP Playwright
+   - Pelayan MCP Dev Box
+   - Pelayan MCP Azure AI Foundry
+   - Pelayan MCP Microsoft 365 Agents Toolkit
+
+2. **Pelayan Rujukan Rasmi**:
    - Filesystem
    - Fetch
    - Memory
    - Sequential Thinking
 
-2. **Penjanaan Imej**:
+3. **Penjanaan Imej**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
 
-3. **Alat Pembangunan**:
+4. **Alat Pembangunan**:
    - Git MCP
    - Terminal Control
    - Code Assistant
 
-4. **Pelayan Khusus**:
+5. **Pelayan Khusus**:
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
 
-## Menyumbang
+## Penyumbangan
 
 Repositori ini mengalu-alukan sumbangan daripada komuniti. Lihat bahagian Sumbangan Komuniti untuk panduan bagaimana menyumbang dengan berkesan kepada ekosistem MCP.
 
@@ -257,12 +310,13 @@ Repositori ini mengalu-alukan sumbangan daripada komuniti. Lihat bahagian Sumban
 
 | Tarikh | Perubahan |
 |--------|-----------|
-| 16 Julai, 2025 | - Struktur repositori dikemas kini untuk mencerminkan kandungan semasa<br>- Ditambah bahagian Klien dan Alat MCP<br>- Ditambah bahagian Pelayan MCP Popular<br>- Peta Kurikulum Visual dikemas kini dengan semua topik terkini<br>- Bahagian Topik Lanjutan diperkaya dengan semua bidang khusus<br>- Kajian Kes dikemas kini untuk mencerminkan contoh sebenar<br>- Penjelasan asal MCP sebagai ciptaan Anthropic |
-| 11 Jun, 2025 | - Penciptaan awal panduan pembelajaran<br>- Ditambah Peta Kurikulum Visual<br>- Garis besar struktur repositori<br>- Termasuk projek contoh dan sumber tambahan |
+| 18 Julai 2025 | - Dikemaskini struktur repositori untuk memasukkan Panduan Pelayan MCP Microsoft<br>- Ditambah senarai menyeluruh 10 pelayan MCP Microsoft yang sedia untuk produksi<br>- Diperbaiki bahagian Pelayan MCP Popular dengan Pelayan MCP Microsoft Rasmi<br>- Dikemaskini bahagian Kajian Kes dengan contoh fail sebenar<br>- Ditambah butiran Struktur Makmal untuk Bengkel Praktikal |
+| 16 Julai 2025 | - Dikemaskini struktur repositori mengikut kandungan semasa<br>- Ditambah bahagian Klien dan Alat MCP<br>- Ditambah bahagian Pelayan MCP Popular<br>- Dikemaskini Peta Kurikulum Visual dengan semua topik semasa<br>- Diperbaiki bahagian Topik Lanjutan dengan semua bidang khusus<br>- Dikemaskini Kajian Kes untuk mencerminkan contoh sebenar<br>- Menjelaskan asal usul MCP yang dicipta oleh Anthropic |
+| 11 Jun 2025 | - Penciptaan awal panduan pembelajaran<br>- Ditambah Peta Kurikulum Visual<br>- Disusun struktur repositori<br>- Termasuk projek contoh dan sumber tambahan |
 
 ---
 
-*Panduan pembelajaran ini dikemas kini pada 16 Julai, 2025, dan memberikan gambaran keseluruhan repositori sehingga tarikh tersebut. Kandungan repositori mungkin dikemas kini selepas tarikh ini.*
+*Panduan pembelajaran ini dikemaskini pada 18 Julai 2025, dan memberikan gambaran keseluruhan repositori sehingga tarikh tersebut. Kandungan repositori mungkin dikemaskini selepas tarikh ini.*
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
