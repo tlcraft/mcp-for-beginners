@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
-  "translation_date": "2025-07-17T12:04:56+00:00",
+  "original_hash": "a5c1d9e9856024d23da4a65a847c75ac",
+  "translation_date": "2025-07-18T07:22:38+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "hr"
 }
@@ -13,14 +13,14 @@ Ovo poglavlje obuhvaća niz naprednih tema u implementaciji Model Context Protoc
 
 ## Pregled
 
-Ova lekcija istražuje napredne koncepte u implementaciji Model Context Protocola, s naglaskom na multimodalnu integraciju, skalabilnost, najbolje sigurnosne prakse i integraciju u poslovna okruženja. Ove teme su neophodne za izradu MCP aplikacija proizvodne razine koje mogu podnijeti složene zahtjeve u poslovnim okruženjima.
+Ova lekcija istražuje napredne koncepte u implementaciji Model Context Protocola, s naglaskom na multimodalnu integraciju, skalabilnost, najbolje sigurnosne prakse i integraciju u poslovna okruženja. Ove teme su neophodne za izgradnju MCP aplikacija proizvodne razine koje mogu podnijeti složene zahtjeve u poslovnim okruženjima.
 
 ## Ciljevi učenja
 
 Na kraju ove lekcije moći ćete:
 
 - Implementirati multimodalne mogućnosti unutar MCP okvira
-- Dizajnirati skalabilne MCP arhitekture za zahtjevne scenarije
+- Dizajnirati skalabilne MCP arhitekture za scenarije s velikim opterećenjem
 - Primijeniti najbolje sigurnosne prakse usklađene s MCP sigurnosnim principima
 - Integrirati MCP s poslovnim AI sustavima i okvirima
 - Optimizirati performanse i pouzdanost u produkcijskim okruženjima
@@ -42,6 +42,7 @@ Na kraju ove lekcije moći ćete:
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web pretraživanje | Kako MCP transformira pretraživanje weba u stvarnom vremenu pružajući standardizirani pristup upravljanju kontekstom između AI modela, tražilica i aplikacija. |
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID autentikacija | Microsoft Entra ID pruža snažno rješenje za upravljanje identitetom i pristupom u oblaku, pomažući osigurati da samo ovlašteni korisnici i aplikacije mogu komunicirati s vašim MCP serverom. |
 | [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Integracija Azure AI Foundry | Naučite kako integrirati Model Context Protocol servere s Azure AI Foundry agentima, omogućujući snažnu orkestraciju alata i poslovne AI mogućnosti s standardiziranim vezama prema vanjskim izvorima podataka. |
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | Inženjering konteksta | Buduće mogućnosti tehnika inženjeringa konteksta za MCP servere, uključujući optimizaciju konteksta, dinamičko upravljanje kontekstom i strategije za učinkovito prompt inženjerstvo unutar MCP okvira. |
 
 ## Dodatne reference
 
@@ -62,11 +63,11 @@ Za najnovije informacije o naprednim MCP temama, pogledajte:
 
 Dizajnirajte MCP implementaciju poslovne razine za specifičan slučaj upotrebe:
 
-1. Identificirajte multimodalne zahtjeve za svoj slučaj upotrebe
+1. Identificirajte multimodalne zahtjeve za vaš slučaj upotrebe
 2. Nacrtajte sigurnosne kontrole potrebne za zaštitu osjetljivih podataka
 3. Dizajnirajte skalabilnu arhitekturu koja može podnijeti varijabilno opterećenje
 4. Planirajte točke integracije s poslovnim AI sustavima
-5. Dokumentirajte moguće uska grla u performansama i strategije za njihovo ublažavanje
+5. Dokumentirajte potencijalne uska grla u performansama i strategije za njihovo ublažavanje
 
 ## Dodatni resursi
 
@@ -80,4 +81,4 @@ Dizajnirajte MCP implementaciju poslovne razine za specifičan slučaj upotrebe:
 - [5.1 MCP Integration](./mcp-integration/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

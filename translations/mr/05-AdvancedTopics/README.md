@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
-  "translation_date": "2025-07-17T00:21:30+00:00",
+  "original_hash": "a5c1d9e9856024d23da4a65a847c75ac",
+  "translation_date": "2025-07-18T07:14:13+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "mr"
 }
@@ -27,21 +27,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## धडे आणि नमुना प्रकल्प
 
-| लिंक | शीर्षक | वर्णन |
+| Link | शीर्षक | वर्णन |
 |------|-------|-------------|
-| [5.1 Integration with Azure](./mcp-integration/README.md) | Azure सह एकत्रीकरण | तुमचा MCP सर्व्हर Azure वर कसा एकत्र करायचा ते शिका |
-| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP मल्टी-मोडल नमुने | ऑडिओ, प्रतिमा आणि मल्टी-मोडल प्रतिसादांसाठी नमुने |
-| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 डेमो | OAuth2 सह MCP दाखवणारे मिनिमल Spring Boot अॅप, जे Authorization आणि Resource Server दोन्ही म्हणून कार्य करते. सुरक्षित टोकन जारी करणे, संरक्षित एंडपॉइंट्स, Azure Container Apps तैनाती, आणि API Management एकत्रीकरण यांचे प्रदर्शन करते. |
-| [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root contexts | Root context बद्दल अधिक जाणून घ्या आणि त्याची अंमलबजावणी कशी करायची ते शिका |
-| [5.5 Routing](./mcp-routing/README.md) | Routing | विविध प्रकारच्या routing बद्दल शिका |
+| [5.1 Integration with Azure](./mcp-integration/README.md) | Azure सह एकत्रीकरण | Azure वर तुमचा MCP Server कसा एकत्रित करायचा ते शिका |
+| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP मल्टी मोडल नमुने | ऑडिओ, प्रतिमा आणि मल्टी मोडल प्रतिसादांसाठी नमुने |
+| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 डेमो | OAuth2 सह MCP दाखवणारे मिनिमल Spring Boot अॅप, ज्यात Authorization आणि Resource Server दोन्ही समाविष्ट आहेत. सुरक्षित टोकन जारी करणे, संरक्षित एंडपॉइंट्स, Azure Container Apps तैनाती, आणि API Management एकत्रीकरण यांचे प्रदर्शन करते. |
+| [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root contexts | Root context बद्दल अधिक जाणून घ्या आणि ते कसे अंमलात आणायचे ते शिका |
+| [5.5 Routing](./mcp-routing/README.md) | Routing | वेगवेगळ्या प्रकारच्या routing बद्दल शिका |
 | [5.6 Sampling](./mcp-sampling/README.md) | Sampling | Sampling कसे करायचे ते शिका |
 | [5.7 Scaling](./mcp-scaling/README.md) | Scaling | स्केलिंग बद्दल शिका |
-| [5.8 Security](./mcp-security/README.md) | Security | तुमचा MCP सर्व्हर सुरक्षित करा |
-| [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP सर्व्हर आणि क्लायंट जे SerpAPI सह रिअल-टाइम वेब, न्यूज, उत्पादन शोध आणि Q&A साठी एकत्रित आहेत. मल्टी-टूल ऑर्केस्ट्रेशन, बाह्य API एकत्रीकरण, आणि मजबूत त्रुटी हाताळणी यांचे प्रदर्शन करते. |
-| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | आजच्या डेटा-चालित जगात रिअल-टाइम डेटा स्ट्रीमिंग अत्यावश्यक झाले आहे, जिथे व्यवसाय आणि अनुप्रयोग त्वरित निर्णय घेण्यासाठी तत्काळ माहितीची गरज असते. |
+| [5.8 Security](./mcp-security/README.md) | Security | तुमचा MCP Server सुरक्षित करा |
+| [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP server आणि client जे SerpAPI सह रिअल-टाइम वेब, न्यूज, उत्पादन शोध आणि Q&A साठी एकत्रित आहेत. मल्टी-टूल ऑर्केस्ट्रेशन, बाह्य API एकत्रीकरण, आणि मजबूत त्रुटी हाताळणी यांचे प्रदर्शन करते. |
+| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | आजच्या डेटा-चालित जगात रिअल-टाइम डेटा स्ट्रीमिंग अत्यावश्यक झाले आहे, जिथे व्यवसाय आणि अनुप्रयोगांना त्वरित माहिती मिळणे आवश्यक आहे जेणेकरून ते वेळेवर निर्णय घेऊ शकतील. |
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | रिअल-टाइम वेब शोध कसा MCP द्वारे बदलतो, AI मॉडेल्स, शोध इंजिन्स आणि अनुप्रयोगांमध्ये संदर्भ व्यवस्थापनासाठी एक प्रमाणित दृष्टिकोन प्रदान करून. |
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Authentication | Microsoft Entra ID एक मजबूत क्लाउड-आधारित ओळख आणि प्रवेश व्यवस्थापन उपाय प्रदान करते, ज्यामुळे केवळ अधिकृत वापरकर्ते आणि अनुप्रयोग तुमच्या MCP सर्व्हरशी संवाद साधू शकतात याची खात्री होते. |
-| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Integration | Model Context Protocol सर्व्हरना Azure AI Foundry एजंट्ससह कसे एकत्र करायचे ते शिका, ज्यामुळे शक्तिशाली टूल ऑर्केस्ट्रेशन आणि एंटरप्राइझ AI क्षमता प्रमाणित बाह्य डेटा स्रोत कनेक्शन्ससह सक्षम होतात. |
+| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Integration | Model Context Protocol सर्व्हरना Azure AI Foundry एजंट्ससह कसे एकत्रित करायचे ते शिका, ज्यामुळे शक्तिशाली टूल ऑर्केस्ट्रेशन आणि एंटरप्राइझ AI क्षमता प्रमाणित बाह्य डेटा स्रोत कनेक्शन्ससह सक्षम होतात. |
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | Context Engineering | MCP सर्व्हरसाठी संदर्भ अभियांत्रिकी तंत्रज्ञानाची भविष्यातील संधी, ज्यात संदर्भ ऑप्टिमायझेशन, डायनॅमिक संदर्भ व्यवस्थापन, आणि MCP फ्रेमवर्कमध्ये प्रभावी प्रॉम्प्ट अभियांत्रिकीसाठी धोरणांचा समावेश आहे. |
 
 ## अतिरिक्त संदर्भ
 
@@ -52,11 +53,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## मुख्य मुद्दे
 
-- मल्टी-मोडल MCP अंमलबजावणी AI क्षमतांना फक्त मजकूर प्रक्रिया पलीकडे वाढवते
-- स्केलेबिलिटी एंटरप्राइझ तैनातीसाठी आवश्यक आहे आणि ते आडवे व उभे स्केलिंगद्वारे हाताळले जाऊ शकते
-- सर्वसमावेशक सुरक्षा उपाय डेटा संरक्षित करतात आणि योग्य प्रवेश नियंत्रण सुनिश्चित करतात
+- मल्टी-मोडल MCP अंमलबजावण्या AI क्षमतांना फक्त मजकूर प्रक्रिया पलीकडे वाढवतात
+- स्केलेबिलिटी एंटरप्राइझ तैनातीसाठी आवश्यक आहे आणि ते आडवे आणि उभे स्केलिंगद्वारे हाताळले जाऊ शकते
+- सर्वसमावेशक सुरक्षा उपाय डेटा संरक्षण करतात आणि योग्य प्रवेश नियंत्रण सुनिश्चित करतात
 - Azure OpenAI आणि Microsoft AI Foundry सारख्या प्लॅटफॉर्मसह एंटरप्राइझ एकत्रीकरण MCP क्षमतांना वाढवते
-- प्रगत MCP अंमलबजावणी ऑप्टिमाइझ्ड आर्किटेक्चर आणि काळजीपूर्वक संसाधन व्यवस्थापनामुळे फायदेशीर ठरते
+- प्रगत MCP अंमलबजावण्या ऑप्टिमायझ्ड आर्किटेक्चर आणि काळजीपूर्वक संसाधन व्यवस्थापनामुळे फायदेशीर ठरतात
 
 ## सराव
 
@@ -66,7 +67,7 @@ CO_OP_TRANSLATOR_METADATA:
 2. संवेदनशील डेटा संरक्षित करण्यासाठी आवश्यक सुरक्षा नियंत्रणांची रूपरेषा तयार करा
 3. वेगवेगळ्या लोडसाठी हाताळू शकणारे स्केलेबल आर्किटेक्चर डिझाइन करा
 4. एंटरप्राइझ AI प्रणालींसह एकत्रीकरणाचे बिंदू नियोजित करा
-5. संभाव्य कार्यक्षमता अडथळे आणि त्यांचे निराकरण यांची नोंद ठेवा
+5. संभाव्य कार्यक्षमता अडथळे आणि त्यांचे निराकरण धोरणे दस्तऐवजीकृत करा
 
 ## अतिरिक्त संसाधने
 

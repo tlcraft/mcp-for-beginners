@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
-  "translation_date": "2025-07-17T01:04:52+00:00",
+  "original_hash": "a5c1d9e9856024d23da4a65a847c75ac",
+  "translation_date": "2025-07-18T07:15:37+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "br"
 }
@@ -30,18 +30,19 @@ Ao final desta lição, você será capaz de:
 | Link | Título | Descrição |
 |------|--------|-----------|
 | [5.1 Integration with Azure](./mcp-integration/README.md) | Integração com Azure | Aprenda como integrar seu MCP Server no Azure |
-| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | Exemplos multimodais MCP | Exemplos para respostas em áudio, imagem e multimodais |
+| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | Exemplos multimodais MCP | Exemplos para respostas em áudio, imagem e multimodal |
 | [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | Demonstração MCP OAuth2 | Aplicação mínima em Spring Boot mostrando OAuth2 com MCP, tanto como Authorization quanto Resource Server. Demonstra emissão segura de tokens, endpoints protegidos, implantação no Azure Container Apps e integração com API Management. |
 | [5.4 Root Contexts](./mcp-root-contexts/README.md) | Contextos raiz | Saiba mais sobre contextos raiz e como implementá-los |
-| [5.5 Routing](./mcp-routing/README.md) | Roteamento | Aprenda os diferentes tipos de roteamento |
+| [5.5 Routing](./mcp-routing/README.md) | Roteamento | Aprenda diferentes tipos de roteamento |
 | [5.6 Sampling](./mcp-sampling/README.md) | Amostragem | Aprenda a trabalhar com amostragem |
 | [5.7 Scaling](./mcp-scaling/README.md) | Escalabilidade | Aprenda sobre escalabilidade |
 | [5.8 Security](./mcp-security/README.md) | Segurança | Proteja seu MCP Server |
-| [5.9 Web Search sample](./web-search-mcp/README.md) | Busca Web MCP | Servidor e cliente MCP em Python integrando com SerpAPI para busca em tempo real na web, notícias, produtos e Q&A. Demonstra orquestração multi-ferramentas, integração com APIs externas e tratamento robusto de erros. |
+| [5.9 Web Search sample](./web-search-mcp/README.md) | Busca Web MCP | Servidor e cliente MCP em Python integrando com SerpAPI para busca em tempo real na web, notícias, produtos e Q&A. Demonstra orquestração multi-ferramenta, integração com APIs externas e tratamento robusto de erros. |
 | [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | Streaming de dados em tempo real tornou-se essencial no mundo orientado a dados de hoje, onde empresas e aplicações precisam de acesso imediato à informação para tomar decisões rápidas. |
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Busca Web em tempo real | Como o MCP transforma a busca web em tempo real ao fornecer uma abordagem padronizada para gerenciamento de contexto entre modelos de IA, motores de busca e aplicações. |
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Autenticação Entra ID | Microsoft Entra ID oferece uma solução robusta de gerenciamento de identidade e acesso baseada em nuvem, garantindo que apenas usuários e aplicações autorizados possam interagir com seu servidor MCP. |
 | [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Integração Azure AI Foundry | Aprenda a integrar servidores Model Context Protocol com agentes Azure AI Foundry, possibilitando orquestração poderosa de ferramentas e capacidades de IA empresarial com conexões padronizadas a fontes externas de dados. |
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | Engenharia de Contexto | Oportunidades futuras das técnicas de engenharia de contexto para servidores MCP, incluindo otimização de contexto, gerenciamento dinâmico de contexto e estratégias para engenharia eficaz de prompts dentro dos frameworks MCP. |
 
 ## Referências Adicionais
 
@@ -50,10 +51,10 @@ Para as informações mais atualizadas sobre tópicos avançados de MCP, consult
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## Principais Lições
+## Principais Conclusões
 
 - Implementações multimodais MCP ampliam as capacidades de IA além do processamento de texto
-- Escalabilidade é essencial para implantações empresariais e pode ser abordada por meio de escalonamento horizontal e vertical
+- Escalabilidade é essencial para implantações empresariais e pode ser alcançada por meio de escalonamento horizontal e vertical
 - Medidas abrangentes de segurança protegem dados e garantem controle adequado de acesso
 - Integração empresarial com plataformas como Azure OpenAI e Microsoft AI Foundry potencializa as capacidades do MCP
 - Implementações avançadas de MCP se beneficiam de arquiteturas otimizadas e gerenciamento cuidadoso de recursos
@@ -63,8 +64,8 @@ Para as informações mais atualizadas sobre tópicos avançados de MCP, consult
 Projete uma implementação MCP de nível empresarial para um caso de uso específico:
 
 1. Identifique os requisitos multimodais para seu caso de uso
-2. Defina os controles de segurança necessários para proteger dados sensíveis
-3. Projete uma arquitetura escalável que suporte cargas variáveis
+2. Delineie os controles de segurança necessários para proteger dados sensíveis
+3. Projete uma arquitetura escalável que possa lidar com cargas variáveis
 4. Planeje pontos de integração com sistemas de IA empresariais
 5. Documente possíveis gargalos de desempenho e estratégias de mitigação
 

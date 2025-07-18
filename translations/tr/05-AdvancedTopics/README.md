@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
-  "translation_date": "2025-07-17T01:27:11+00:00",
+  "original_hash": "a5c1d9e9856024d23da4a65a847c75ac",
+  "translation_date": "2025-07-18T07:16:31+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "tr"
 }
@@ -13,7 +13,7 @@ Bu bölüm, Model Context Protocol (MCP) uygulamasında çok modlu entegrasyon, 
 
 ## Genel Bakış
 
-Bu ders, Model Context Protocol uygulamasında çok modlu entegrasyon, ölçeklenebilirlik, güvenlik en iyi uygulamaları ve kurumsal entegrasyon gibi ileri kavramları incelemektedir. Bu konular, kurumsal ortamlarda karmaşık gereksinimleri karşılayabilen üretim kalitesinde MCP uygulamaları oluşturmak için gereklidir.
+Bu ders, Model Context Protocol uygulamasında çok modlu entegrasyon, ölçeklenebilirlik, güvenlik en iyi uygulamaları ve kurumsal entegrasyon üzerine odaklanan ileri kavramları keşfetmektedir. Bu konular, kurumsal ortamlarda karmaşık gereksinimleri karşılayabilen üretim kalitesinde MCP uygulamaları oluşturmak için gereklidir.
 
 ## Öğrenme Hedefleri
 
@@ -40,8 +40,9 @@ Bu dersin sonunda şunları yapabileceksiniz:
 | [5.9 Web Search sample](./web-search-mcp/README.md) | Web Arama MCP | SerpAPI ile gerçek zamanlı web, haber, ürün araması ve Soru-Cevap entegrasyonu yapan Python MCP sunucu ve istemcisi. Çoklu araç orkestrasyonu, harici API entegrasyonu ve sağlam hata yönetimini gösterir. |
 | [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Akış | Gerçek zamanlı veri akışı, işletmelerin ve uygulamaların zamanında kararlar alabilmek için anında bilgiye erişim gerektirdiği günümüz veri odaklı dünyasında vazgeçilmez hale gelmiştir. |
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Arama | MCP'nin AI modelleri, arama motorları ve uygulamalar arasında bağlam yönetimi için standart bir yaklaşım sunarak gerçek zamanlı web aramasını nasıl dönüştürdüğünü öğrenin. |
-| [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Kimlik Doğrulaması | Microsoft Entra ID, yalnızca yetkili kullanıcıların ve uygulamaların MCP sunucunuzla etkileşimde bulunmasını sağlamak için güçlü bulut tabanlı kimlik ve erişim yönetimi çözümü sunar. |
+| [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Kimlik Doğrulaması | Microsoft Entra ID, yalnızca yetkili kullanıcıların ve uygulamaların MCP sunucunuzla etkileşime girmesini sağlamak için güçlü bulut tabanlı kimlik ve erişim yönetimi çözümü sunar. |
 | [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Entegrasyonu | Model Context Protocol sunucularını Azure AI Foundry ajanlarıyla entegre etmeyi öğrenin; bu sayede güçlü araç orkestrasyonu ve standartlaştırılmış harici veri kaynağı bağlantılarıyla kurumsal yapay zeka yetenekleri sağlanır. |
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | Bağlam Mühendisliği | MCP sunucuları için bağlam mühendisliği tekniklerinin gelecekteki fırsatları, bağlam optimizasyonu, dinamik bağlam yönetimi ve MCP çerçevelerinde etkili prompt mühendisliği stratejileri dahil. |
 
 ## Ek Kaynaklar
 
@@ -53,17 +54,17 @@ Bu dersin sonunda şunları yapabileceksiniz:
 ## Önemli Noktalar
 
 - Çok modlu MCP uygulamaları, yapay zekanın metin işleme dışındaki yeteneklerini genişletir
-- Ölçeklenebilirlik, kurumsal dağıtımlar için kritik olup yatay ve dikey ölçeklendirme ile sağlanabilir
-- Kapsamlı güvenlik önlemleri verileri korur ve doğru erişim kontrolünü garanti eder
-- Azure OpenAI ve Microsoft AI Foundry gibi platformlarla kurumsal entegrasyon, MCP yeteneklerini artırır
-- İleri MCP uygulamaları, optimize edilmiş mimariler ve dikkatli kaynak yönetimi ile fayda sağlar
+- Ölçeklenebilirlik, kurumsal dağıtımlar için kritik olup yatay ve dikey ölçeklendirme ile ele alınabilir
+- Kapsamlı güvenlik önlemleri verileri korur ve doğru erişim kontrolünü sağlar
+- Azure OpenAI ve Microsoft AI Foundry gibi platformlarla kurumsal entegrasyon MCP yeteneklerini artırır
+- İleri MCP uygulamaları, optimize edilmiş mimariler ve dikkatli kaynak yönetiminden fayda sağlar
 
 ## Alıştırma
 
 Belirli bir kullanım senaryosu için kurumsal düzeyde bir MCP uygulaması tasarlayın:
 
 1. Kullanım senaryonuz için çok modlu gereksinimleri belirleyin
-2. Hassas verileri korumak için gerekli güvenlik kontrollerini tasarlayın
+2. Hassas verileri korumak için gereken güvenlik kontrollerini tasarlayın
 3. Değişken yükleri karşılayabilecek ölçeklenebilir bir mimari planlayın
 4. Kurumsal yapay zeka sistemleri ile entegrasyon noktalarını planlayın
 5. Olası performans darboğazlarını ve çözüm stratejilerini belgeleyin
@@ -80,4 +81,4 @@ Belirli bir kullanım senaryosu için kurumsal düzeyde bir MCP uygulaması tasa
 - [5.1 MCP Integration](./mcp-integration/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

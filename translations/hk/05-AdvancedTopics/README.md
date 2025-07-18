@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
-  "translation_date": "2025-07-16T21:13:49+00:00",
+  "original_hash": "a5c1d9e9856024d23da4a65a847c75ac",
+  "translation_date": "2025-07-18T07:12:03+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "hk"
 }
@@ -38,10 +38,11 @@ CO_OP_TRANSLATOR_METADATA:
 | [5.7 Scaling](./mcp-scaling/README.md) | Scaling | 了解擴展相關知識 |
 | [5.8 Security](./mcp-security/README.md) | Security | 保護您的 MCP Server 安全 |
 | [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP 伺服器與客戶端整合 SerpAPI，實現即時網頁、新聞、產品搜尋及問答。展示多工具協調、外部 API 整合及強健的錯誤處理。 |
-| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | 即時資料串流在當今數據驅動的世界中變得不可或缺，企業與應用程式需要即時存取資訊以做出及時決策。 |
+| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming | 即時資料串流在現今數據驅動的世界中變得不可或缺，企業與應用程式需要即時存取資訊以做出及時決策。 |
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | 即時網頁搜尋，展示 MCP 如何透過標準化的上下文管理，整合 AI 模型、搜尋引擎與應用程式，改變即時網頁搜尋的方式。 |
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Authentication | Microsoft Entra ID 提供強大的雲端身份與存取管理解決方案，確保只有授權的使用者與應用程式能與您的 MCP 伺服器互動。 |
-| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Integration | 學習如何將 Model Context Protocol 伺服器與 Azure AI Foundry 代理整合，實現強大的工具協調及企業 AI 能力，並透過標準化的外部資料來源連接。 |
+| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Integration | 學習如何將 Model Context Protocol 伺服器與 Azure AI Foundry 代理整合，實現強大的工具協調及企業 AI 能力，並標準化外部資料來源連接。 |
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | Context Engineering | MCP 伺服器上下文工程技術的未來機會，包括上下文優化、動態上下文管理，以及 MCP 框架中有效提示工程的策略。 |
 
 ## 其他參考資料
 
@@ -50,10 +51,10 @@ CO_OP_TRANSLATOR_METADATA:
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 
-## 主要重點
+## 重要重點
 
 - 多模態 MCP 實作擴展 AI 能力，超越純文字處理
-- 可擴展性對企業部署至關重要，可透過水平與垂直擴展實現
+- 可擴展性對企業部署至關重要，可透過水平與垂直擴展來實現
 - 全面性的安全措施保護資料並確保適當的存取控制
 - 與 Azure OpenAI 及 Microsoft AI Foundry 等平台的企業整合提升 MCP 功能
 - 進階 MCP 實作受益於優化架構與謹慎的資源管理
@@ -62,7 +63,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 為特定使用案例設計企業級 MCP 實作：
 
-1. 確認您的使用案例所需的多模態需求
+1. 確認您的使用案例所需的多模態功能
 2. 概述保護敏感資料所需的安全控管
 3. 設計能應付不同負載的可擴展架構
 4. 規劃與企業 AI 系統的整合點
@@ -80,4 +81,4 @@ CO_OP_TRANSLATOR_METADATA:
 - [5.1 MCP Integration](./mcp-integration/README.md)
 
 **免責聲明**：  
-本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

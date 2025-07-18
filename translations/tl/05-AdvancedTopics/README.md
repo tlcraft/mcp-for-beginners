@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
-  "translation_date": "2025-07-17T08:17:50+00:00",
+  "original_hash": "a5c1d9e9856024d23da4a65a847c75ac",
+  "translation_date": "2025-07-18T07:20:11+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "tl"
 }
@@ -20,7 +20,7 @@ Tinutuklas ng araling ito ang mga advanced na konsepto sa pagpapatupad ng Model 
 Sa pagtatapos ng araling ito, magagawa mong:
 
 - Ipatupad ang mga multi-modal na kakayahan sa loob ng mga MCP framework
-- Magdisenyo ng scalable na mga arkitektura ng MCP para sa mga sitwasyong mataas ang pangangailangan
+- Magdisenyo ng scalable na mga arkitektura ng MCP para sa mga sitwasyong may mataas na pangangailangan
 - Ilapat ang mga pinakamahusay na kasanayan sa seguridad na naaayon sa mga prinsipyo ng seguridad ng MCP
 - Isama ang MCP sa mga enterprise AI system at framework
 - I-optimize ang performance at pagiging maaasahan sa mga kapaligirang pang-produksyon
@@ -38,10 +38,11 @@ Sa pagtatapos ng araling ito, magagawa mong:
 | [5.7 Scaling](./mcp-scaling/README.md) | Scaling  | Alamin ang tungkol sa scaling |
 | [5.8 Security](./mcp-security/README.md) | Security  | Siguraduhin ang seguridad ng iyong MCP Server |
 | [5.9 Web Search sample](./web-search-mcp/README.md) | Web Search MCP | Python MCP server at client na nakikipag-ugnayan sa SerpAPI para sa real-time na web, balita, paghahanap ng produkto, at Q&A. Ipinapakita ang multi-tool orchestration, integrasyon ng external API, at matibay na paghawak ng error. |
-| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming  | Ang real-time data streaming ay naging mahalaga sa mundo ngayon na pinapatakbo ng data, kung saan kailangan ng mga negosyo at aplikasyon ng agarang access sa impormasyon para makagawa ng napapanahong desisyon.|
+| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | Streaming  | Ang real-time data streaming ay naging mahalaga sa mundo ngayon na pinapagana ng data, kung saan kailangan ng mga negosyo at aplikasyon ng agarang access sa impormasyon para makagawa ng napapanahong desisyon.|
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | Paano binabago ng MCP ang real-time web search sa pamamagitan ng pagbibigay ng standardized na paraan sa pamamahala ng konteksto sa pagitan ng mga AI model, search engine, at aplikasyon.| 
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Authentication | Nagbibigay ang Microsoft Entra ID ng matibay na cloud-based na solusyon para sa identity at access management, na tumutulong tiyakin na tanging mga awtorisadong user at aplikasyon lamang ang makakagamit ng iyong MCP server.|
 | [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Integration | Alamin kung paano isama ang Model Context Protocol servers sa Azure AI Foundry agents, na nagpapahintulot ng makapangyarihang tool orchestration at enterprise AI capabilities gamit ang standardized na koneksyon sa mga external data source.|
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | Context Engineering | Ang mga oportunidad sa hinaharap ng mga teknik sa context engineering para sa MCP servers, kabilang ang context optimization, dynamic context management, at mga estratehiya para sa epektibong prompt engineering sa loob ng MCP frameworks.|
 
 ## Additional References
 
@@ -52,15 +53,15 @@ Para sa pinakabagong impormasyon tungkol sa mga advanced na paksa sa MCP, tingna
 
 ## Key Takeaways
 
-- Pinalalawak ng multi-modal MCP implementations ang kakayahan ng AI lampas sa pagproseso ng teksto
+- Pinalalawak ng multi-modal na pagpapatupad ng MCP ang kakayahan ng AI lampas sa pagproseso ng teksto
 - Mahalaga ang scalability para sa mga deployment sa enterprise at maaaring tugunan sa pamamagitan ng horizontal at vertical scaling
 - Pinoprotektahan ng komprehensibong mga hakbang sa seguridad ang data at tinitiyak ang tamang kontrol sa access
 - Pinapalakas ng enterprise integration sa mga platform tulad ng Azure OpenAI at Microsoft AI Foundry ang mga kakayahan ng MCP
-- Nakikinabang ang mga advanced na implementasyon ng MCP mula sa optimized na mga arkitektura at maingat na pamamahala ng mga resources
+- Nakikinabang ang mga advanced na pagpapatupad ng MCP mula sa optimized na mga arkitektura at maingat na pamamahala ng mga resources
 
 ## Exercise
 
-Magdisenyo ng enterprise-grade na implementasyon ng MCP para sa isang partikular na kaso ng paggamit:
+Magdisenyo ng enterprise-grade na pagpapatupad ng MCP para sa isang partikular na kaso ng paggamit:
 
 1. Tukuyin ang mga multi-modal na pangangailangan para sa iyong kaso ng paggamit
 2. Ilahad ang mga kontrol sa seguridad na kailangan para protektahan ang sensitibong data

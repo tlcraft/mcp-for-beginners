@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1949cb32394aeb1bdec8870f309005a3",
-  "translation_date": "2025-07-17T06:26:17+00:00",
+  "original_hash": "a5c1d9e9856024d23da4a65a847c75ac",
+  "translation_date": "2025-07-18T07:17:43+00:00",
   "source_file": "05-AdvancedTopics/README.md",
   "language_code": "da"
 }
@@ -30,7 +30,7 @@ Når du har gennemført denne lektion, vil du kunne:
 | Link | Titel | Beskrivelse |
 |------|-------|-------------|
 | [5.1 Integration with Azure](./mcp-integration/README.md) | Integrer med Azure | Lær hvordan du integrerer din MCP Server på Azure |
-| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP multimodale eksempler | Eksempler på lyd, billede og multimodale svar |
+| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCP Multimodale eksempler | Eksempler på lyd, billede og multimodale svar |
 | [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2 Demo | Minimal Spring Boot-app, der viser OAuth2 med MCP som både Authorization og Resource Server. Demonstrerer sikker token-udstedelse, beskyttede endpoints, deployment på Azure Container Apps og integration med API Management. |
 | [5.4 Root Contexts](./mcp-root-contexts/README.md) | Root contexts | Lær mere om root context og hvordan du implementerer dem |
 | [5.5 Routing](./mcp-routing/README.md) | Routing | Lær om forskellige typer routing |
@@ -42,6 +42,7 @@ Når du har gennemført denne lektion, vil du kunne:
 | [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | Web Search | Realtids web-søgning: hvordan MCP transformerer realtids web-søgning ved at tilbyde en standardiseret tilgang til kontekststyring på tværs af AI-modeller, søgemaskiner og applikationer. |
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Authentication | Microsoft Entra ID tilbyder en robust cloud-baseret identitets- og adgangsstyringsløsning, der sikrer, at kun autoriserede brugere og applikationer kan interagere med din MCP-server. |
 | [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Integration | Lær hvordan du integrerer Model Context Protocol-servere med Azure AI Foundry-agenter, hvilket muliggør kraftfuld værktøjsorkestrering og enterprise AI-funktioner med standardiserede forbindelser til eksterne datakilder. |
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | Context Engineering | Fremtidens muligheder inden for kontekstteknik for MCP-servere, herunder kontekstoptimering, dynamisk kontekststyring og strategier for effektiv prompt engineering inden for MCP-rammer. |
 
 ## Yderligere referencer
 
@@ -62,11 +63,11 @@ For den mest opdaterede information om avancerede MCP-emner, se:
 
 Design en enterprise-klasse MCP-implementering til et specifikt brugsscenarie:
 
-1. Identificer multimodale krav til dit brugsscenarie
-2. Skitser de sikkerhedskontroller, der er nødvendige for at beskytte følsomme data
-3. Design en skalerbar arkitektur, der kan håndtere varierende belastning
-4. Planlæg integrationspunkter med enterprise AI-systemer
-5. Dokumenter potentielle flaskehalse i ydeevnen og strategier til at afbøde dem
+1. Identificer multimodale krav til dit brugsscenarie  
+2. Skitser de sikkerhedskontroller, der er nødvendige for at beskytte følsomme data  
+3. Design en skalerbar arkitektur, der kan håndtere varierende belastning  
+4. Planlæg integrationspunkter med enterprise AI-systemer  
+5. Dokumenter potentielle flaskehalse i ydeevnen og strategier til at afbøde dem  
 
 ## Yderligere ressourcer
 
