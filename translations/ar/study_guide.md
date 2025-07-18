@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
-  "translation_date": "2025-07-17T05:19:14+00:00",
+  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
+  "translation_date": "2025-07-18T09:14:24+00:00",
   "source_file": "study_guide.md",
   "language_code": "ar"
 }
 -->
 # بروتوكول سياق النموذج (MCP) للمبتدئين - دليل الدراسة
 
-يوفر هذا الدليل نظرة عامة على هيكل ومستوى المحتوى في مستودع "بروتوكول سياق النموذج (MCP) للمبتدئين". استخدم هذا الدليل للتنقل داخل المستودع بكفاءة والاستفادة القصوى من الموارد المتاحة.
+يوفر هذا الدليل نظرة عامة على هيكل ومستوى المحتوى الخاص بمستودع "بروتوكول سياق النموذج (MCP) للمبتدئين". استخدم هذا الدليل للتنقل بكفاءة داخل المستودع والاستفادة القصوى من الموارد المتاحة.
 
 ## نظرة عامة على المستودع
 
@@ -23,79 +23,91 @@ mindmap
     00. Introduction
       ::icon(fa fa-book)
       (Protocol Overview)
-      (Standardization)
-      (Use Cases)
+      (Standardization Benefits)
+      (Real-world Use Cases)
+      (AI Integration Fundamentals)
     01. Core Concepts
       ::icon(fa fa-puzzle-piece)
       (Client-Server Architecture)
       (Protocol Components)
       (Messaging Patterns)
+      (Transport Mechanisms)
     02. Security
       ::icon(fa fa-shield)
-      (Threat Models)
-      (Best Practices)
-      (Auth Strategies)
+      (AI-Specific Threats)
+      (Best Practices 2025)
+      (Azure Content Safety)
+      (Auth & Authorization)
+      (Microsoft Prompt Shields)
     03. Getting Started
       ::icon(fa fa-rocket)
-      (First Server)
-      (Client)
-      (LLM Client)
-      (VS Code Integration)
-      (SSE Server)
+      (First Server Implementation)
+      (Client Development)
+      (LLM Client Integration)
+      (VS Code Extensions)
+      (SSE Server Setup)
       (HTTP Streaming)
-      (AI Toolkit)
-      (Testing)
-      (Deployment)
+      (AI Toolkit Integration)
+      (Testing Frameworks)
+      (Deployment Strategies)
     04. Practical Implementation
       ::icon(fa fa-code)
-      (SDKs)
-      (Testing/Debugging)
+      (Multi-Language SDKs)
+      (Testing & Debugging)
       (Prompt Templates)
       (Sample Projects)
+      (Production Patterns)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
       (Context Engineering)
-      (Foundry Integration)
-      (Multi-modal AI)
-      (OAuth2 Demo)
+      (Foundry Agent Integration)
+      (Multi-modal AI Workflows)
+      (OAuth2 Authentication)
       (Real-time Search)
-      (Streaming)
+      (Streaming Protocols)
       (Root Contexts)
-      (Routing)
-      (Sampling)
-      (Scaling)
-      (Security)
-      (Entra ID)
-      (Web Search)
+      (Routing Strategies)
+      (Sampling Techniques)
+      (Scaling Solutions)
+      (Security Hardening)
+      (Entra ID Integration)
+      (Web Search MCP)
       
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (MCP Clients)
-      (MCP Servers)
-      (Image Generation)
+      (MCP Client Ecosystem)
+      (MCP Server Registry)
+      (Image Generation Tools)
+      (GitHub Collaboration)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
-      (Real-world Examples)
-      (Deployment Stories)
+      (Production Deployments)
+      (Microsoft MCP Servers)
+      (Azure MCP Service)
+      (Enterprise Case Studies)
       (Future Roadmap)
     08. Best Practices
       ::icon(fa fa-check)
-      (Performance)
+      (Performance Optimization)
       (Fault Tolerance)
-      (Resilience)
+      (System Resilience)
+      (Monitoring & Observability)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (API Management)
-      (Travel Agent)
-      (Azure DevOps)
+      (Azure API Management)
+      (AI Travel Agent)
+      (Azure DevOps Integration)
       (Documentation MCP)
+      (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
+      (MCP Server Fundamentals)
+      (Advanced Development)
       (AI Toolkit Integration)
-      (Custom Server Development)
       (Production Deployment)
+      (4-Lab Structure)
 ```
 
 ## هيكل المستودع
@@ -116,6 +128,18 @@ mindmap
    - التهديدات الأمنية في أنظمة MCP
    - أفضل الممارسات لتأمين التنفيذات
    - استراتيجيات المصادقة والتفويض
+   - **توثيق أمني شامل**:
+     - أفضل ممارسات أمان MCP لعام 2025
+     - دليل تنفيذ أمان محتوى Azure
+     - ضوابط وتقنيات أمان MCP
+     - مرجع سريع لأفضل ممارسات MCP
+   - **المواضيع الأمنية الرئيسية**:
+     - هجمات حقن المطالبات وتسميم الأدوات
+     - اختطاف الجلسات ومشاكل الوكيل المشوش
+     - ثغرات تمرير الرموز
+     - الأذونات المفرطة والتحكم في الوصول
+     - أمان سلسلة التوريد لمكونات الذكاء الاصطناعي
+     - تكامل Microsoft Prompt Shields
 
 4. **البدء السريع (03-GettingStarted/)**
    - إعداد البيئة والتكوين
@@ -124,11 +148,11 @@ mindmap
    - يشمل أقسامًا لـ:
      - تنفيذ أول خادم
      - تطوير العميل
-     - دمج عميل LLM
-     - التكامل مع VS Code
+     - تكامل عميل LLM
+     - تكامل VS Code
      - خادم الأحداث المرسلة من الخادم (SSE)
      - البث عبر HTTP
-     - دمج مجموعة أدوات الذكاء الاصطناعي
+     - تكامل AI Toolkit
      - استراتيجيات الاختبار
      - إرشادات النشر
 
@@ -140,7 +164,7 @@ mindmap
 
 6. **المواضيع المتقدمة (05-AdvancedTopics/)**
    - تقنيات هندسة السياق
-   - دمج وكيل Foundry
+   - تكامل وكيل Foundry
    - سير عمل الذكاء الاصطناعي متعدد الوسائط
    - عروض توضيحية لمصادقة OAuth2
    - قدرات البحث في الوقت الحقيقي
@@ -150,11 +174,11 @@ mindmap
    - تقنيات العينة
    - أساليب التوسع
    - اعتبارات الأمان
-   - دمج أمان Entra ID
-   - دمج البحث على الويب
+   - تكامل أمان Entra ID
+   - تكامل البحث على الويب
 
 7. **مساهمات المجتمع (06-CommunityContributions/)**
-   - كيفية المساهمة بالشيفرة والوثائق
+   - كيفية المساهمة بالشيفرة والتوثيق
    - التعاون عبر GitHub
    - تحسينات المجتمع وردود الفعل
    - استخدام عملاء MCP المتنوعين (Claude Desktop، Cline، VSCode)
@@ -164,6 +188,17 @@ mindmap
    - تطبيقات واقعية وقصص نجاح
    - بناء ونشر حلول قائمة على MCP
    - الاتجاهات وخارطة الطريق المستقبلية
+   - **دليل خوادم Microsoft MCP**: دليل شامل لعشرة خوادم MCP جاهزة للإنتاج من Microsoft تشمل:
+     - خادم Microsoft Learn Docs MCP
+     - خادم Azure MCP (أكثر من 15 موصل متخصص)
+     - خادم GitHub MCP
+     - خادم Azure DevOps MCP
+     - خادم MarkItDown MCP
+     - خادم SQL Server MCP
+     - خادم Playwright MCP
+     - خادم Dev Box MCP
+     - خادم Azure AI Foundry MCP
+     - خادم Microsoft 365 Agents Toolkit MCP
 
 9. **أفضل الممارسات (08-BestPractices/)**
    - ضبط الأداء والتحسين
@@ -171,23 +206,29 @@ mindmap
    - استراتيجيات الاختبار والمرونة
 
 10. **دراسات حالة (09-CaseStudy/)**
-    - دراسة حالة: تكامل Azure API Management
-    - دراسة حالة: تنفيذ وكيل السفر
-    - دراسة حالة: تكامل Azure DevOps مع YouTube
+    - مثال على تكامل Azure API Management
+    - مثال على تنفيذ وكيل السفر
+    - تكامل Azure DevOps مع تحديثات YouTube
+    - أمثلة تنفيذ MCP مع التوثيق
     - أمثلة تنفيذية مع توثيق مفصل
 
 11. **ورشة عمل تطبيقية (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - ورشة عمل شاملة تجمع MCP مع مجموعة أدوات الذكاء الاصطناعي
+    - ورشة عمل شاملة تجمع بين MCP وAI Toolkit
     - بناء تطبيقات ذكية تربط نماذج الذكاء الاصطناعي بالأدوات الواقعية
     - وحدات عملية تغطي الأساسيات، تطوير الخادم المخصص، واستراتيجيات النشر الإنتاجي
-    - نهج تعليمي مع مختبرات تعليمية وتعليمات خطوة بخطوة
+    - **هيكل المختبر**:
+      - المختبر 1: أساسيات خادم MCP
+      - المختبر 2: تطوير خادم MCP المتقدم
+      - المختبر 3: تكامل AI Toolkit
+      - المختبر 4: النشر الإنتاجي والتوسع
+    - نهج تعليمي قائم على المختبرات مع تعليمات خطوة بخطوة
 
 ## موارد إضافية
 
-يحتوي المستودع على موارد داعمة:
+يتضمن المستودع موارد داعمة:
 
 - **مجلد الصور**: يحتوي على مخططات ورسوم توضيحية مستخدمة في المنهج
-- **الترجمات**: دعم متعدد اللغات مع ترجمات آلية للوثائق
+- **الترجمات**: دعم متعدد اللغات مع ترجمات آلية للتوثيق
 - **الموارد الرسمية لـ MCP**:
   - [توثيق MCP](https://modelcontextprotocol.io/)
   - [مواصفات MCP](https://spec.modelcontextprotocol.io/)
@@ -226,25 +267,37 @@ mindmap
 
 ## خوادم MCP الشهيرة
 
-يقدم المستودع عدة خوادم MCP، منها:
+يقدم المستودع مجموعة متنوعة من خوادم MCP، منها:
 
-1. **خوادم مرجعية رسمية**:
+1. **خوادم Microsoft MCP الرسمية**:
+   - خادم Microsoft Learn Docs MCP
+   - خادم Azure MCP (أكثر من 15 موصل متخصص)
+   - خادم GitHub MCP
+   - خادم Azure DevOps MCP
+   - خادم MarkItDown MCP
+   - خادم SQL Server MCP
+   - خادم Playwright MCP
+   - خادم Dev Box MCP
+   - خادم Azure AI Foundry MCP
+   - خادم Microsoft 365 Agents Toolkit MCP
+
+2. **خوادم مرجعية رسمية**:
    - Filesystem
    - Fetch
    - Memory
    - Sequential Thinking
 
-2. **توليد الصور**:
+3. **توليد الصور**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
 
-3. **أدوات التطوير**:
+4. **أدوات التطوير**:
    - Git MCP
    - Terminal Control
    - Code Assistant
 
-4. **خوادم متخصصة**:
+5. **خوادم متخصصة**:
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
@@ -257,12 +310,13 @@ mindmap
 
 | التاريخ | التغييرات |
 |---------|------------|
-| 16 يوليو 2025 | - تحديث هيكل المستودع ليعكس المحتوى الحالي<br>- إضافة قسم عملاء وأدوات MCP<br>- إضافة قسم خوادم MCP الشهيرة<br>- تحديث خريطة المنهج البصرية مع جميع المواضيع الحالية<br>- تعزيز قسم المواضيع المتقدمة بجميع المجالات المتخصصة<br>- تحديث دراسات الحالة لتعكس أمثلة فعلية<br>- توضيح أصل MCP كإنشاء من Anthropic |
+| 18 يوليو 2025 | - تحديث هيكل المستودع ليشمل دليل خوادم Microsoft MCP<br>- إضافة قائمة شاملة لعشرة خوادم MCP جاهزة للإنتاج من Microsoft<br>- تعزيز قسم خوادم MCP الشهيرة بخوادم Microsoft الرسمية<br>- تحديث قسم دراسات الحالة بأمثلة ملفات فعلية<br>- إضافة تفاصيل هيكل المختبر لورشة العمل التطبيقية |
+| 16 يوليو 2025 | - تحديث هيكل المستودع ليعكس المحتوى الحالي<br>- إضافة قسم عملاء وأدوات MCP<br>- إضافة قسم خوادم MCP الشهيرة<br>- تحديث خريطة المنهج البصرية بكل المواضيع الحالية<br>- تعزيز قسم المواضيع المتقدمة بجميع المجالات المتخصصة<br>- تحديث دراسات الحالة لتعكس أمثلة فعلية<br>- توضيح أن MCP تم إنشاؤه بواسطة Anthropic |
 | 11 يونيو 2025 | - الإنشاء الأولي لدليل الدراسة<br>- إضافة خريطة المنهج البصرية<br>- تحديد هيكل المستودع<br>- تضمين مشاريع نموذجية وموارد إضافية |
 
 ---
 
-*تم تحديث هذا الدليل في 16 يوليو 2025، ويقدم نظرة عامة على المستودع حتى ذلك التاريخ. قد يتم تحديث محتوى المستودع بعد هذا التاريخ.*
+*تم تحديث هذا الدليل في 18 يوليو 2025، ويقدم نظرة عامة على المستودع حتى ذلك التاريخ. قد يتم تحديث محتوى المستودع بعد هذا التاريخ.*
 
 **إخلاء المسؤولية**:  
 تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

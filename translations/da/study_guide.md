@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
-  "translation_date": "2025-07-17T06:21:32+00:00",
+  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
+  "translation_date": "2025-07-18T09:57:58+00:00",
   "source_file": "study_guide.md",
   "language_code": "da"
 }
 -->
 # Model Context Protocol (MCP) for Begyndere - Studieguide
 
-Denne studieguide giver en oversigt over repository-strukturen og indholdet for "Model Context Protocol (MCP) for Beginners"-pensum. Brug denne guide til effektivt at navigere i repository’et og få mest muligt ud af de tilgængelige ressourcer.
+Denne studieguide giver en oversigt over repository-strukturen og indholdet for "Model Context Protocol (MCP) for Beginners"-pensum. Brug denne guide til effektivt at navigere i repositoryet og få mest muligt ud af de tilgængelige ressourcer.
 
 ## Oversigt over Repository
 
@@ -23,101 +23,125 @@ mindmap
     00. Introduction
       ::icon(fa fa-book)
       (Protocol Overview)
-      (Standardization)
-      (Use Cases)
+      (Standardization Benefits)
+      (Real-world Use Cases)
+      (AI Integration Fundamentals)
     01. Core Concepts
       ::icon(fa fa-puzzle-piece)
       (Client-Server Architecture)
       (Protocol Components)
       (Messaging Patterns)
+      (Transport Mechanisms)
     02. Security
       ::icon(fa fa-shield)
-      (Threat Models)
-      (Best Practices)
-      (Auth Strategies)
+      (AI-Specific Threats)
+      (Best Practices 2025)
+      (Azure Content Safety)
+      (Auth & Authorization)
+      (Microsoft Prompt Shields)
     03. Getting Started
       ::icon(fa fa-rocket)
-      (First Server)
-      (Client)
-      (LLM Client)
-      (VS Code Integration)
-      (SSE Server)
+      (First Server Implementation)
+      (Client Development)
+      (LLM Client Integration)
+      (VS Code Extensions)
+      (SSE Server Setup)
       (HTTP Streaming)
-      (AI Toolkit)
-      (Testing)
-      (Deployment)
+      (AI Toolkit Integration)
+      (Testing Frameworks)
+      (Deployment Strategies)
     04. Practical Implementation
       ::icon(fa fa-code)
-      (SDKs)
-      (Testing/Debugging)
+      (Multi-Language SDKs)
+      (Testing & Debugging)
       (Prompt Templates)
       (Sample Projects)
+      (Production Patterns)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
       (Context Engineering)
-      (Foundry Integration)
-      (Multi-modal AI)
-      (OAuth2 Demo)
+      (Foundry Agent Integration)
+      (Multi-modal AI Workflows)
+      (OAuth2 Authentication)
       (Real-time Search)
-      (Streaming)
+      (Streaming Protocols)
       (Root Contexts)
-      (Routing)
-      (Sampling)
-      (Scaling)
-      (Security)
-      (Entra ID)
-      (Web Search)
+      (Routing Strategies)
+      (Sampling Techniques)
+      (Scaling Solutions)
+      (Security Hardening)
+      (Entra ID Integration)
+      (Web Search MCP)
       
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (MCP Clients)
-      (MCP Servers)
-      (Image Generation)
+      (MCP Client Ecosystem)
+      (MCP Server Registry)
+      (Image Generation Tools)
+      (GitHub Collaboration)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
-      (Real-world Examples)
-      (Deployment Stories)
+      (Production Deployments)
+      (Microsoft MCP Servers)
+      (Azure MCP Service)
+      (Enterprise Case Studies)
       (Future Roadmap)
     08. Best Practices
       ::icon(fa fa-check)
-      (Performance)
+      (Performance Optimization)
       (Fault Tolerance)
-      (Resilience)
+      (System Resilience)
+      (Monitoring & Observability)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (API Management)
-      (Travel Agent)
-      (Azure DevOps)
+      (Azure API Management)
+      (AI Travel Agent)
+      (Azure DevOps Integration)
       (Documentation MCP)
+      (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
+      (MCP Server Fundamentals)
+      (Advanced Development)
       (AI Toolkit Integration)
-      (Custom Server Development)
       (Production Deployment)
+      (4-Lab Structure)
 ```
 
 ## Repository-struktur
 
-Repository’et er organiseret i ti hovedsektioner, der hver især fokuserer på forskellige aspekter af MCP:
+Repositoryet er organiseret i ti hovedsektioner, der hver især fokuserer på forskellige aspekter af MCP:
 
-1. **Introduction (00-Introduction/)**
+1. **Introduktion (00-Introduction/)**
    - Oversigt over Model Context Protocol
    - Hvorfor standardisering er vigtigt i AI-pipelines
    - Praktiske anvendelsestilfælde og fordele
 
-2. **Core Concepts (01-CoreConcepts/)**
+2. **Kernebegreber (01-CoreConcepts/)**
    - Client-server arkitektur
-   - Centrale protokolkomponenter
+   - Vigtige protokolkomponenter
    - Messaging-mønstre i MCP
 
-3. **Security (02-Security/)**
+3. **Sikkerhed (02-Security/)**
    - Sikkerhedstrusler i MCP-baserede systemer
    - Bedste praksis for sikring af implementeringer
    - Autentificerings- og autorisationsstrategier
+   - **Omfattende sikkerhedsdokumentation**:
+     - MCP Security Best Practices 2025
+     - Azure Content Safety Implementation Guide
+     - MCP Security Controls and Techniques
+     - MCP Best Practices Quick Reference
+   - **Vigtige sikkerhedsemner**:
+     - Prompt injection og tool poisoning-angreb
+     - Session hijacking og confused deputy-problemer
+     - Token passthrough-sårbarheder
+     - Overdrevne tilladelser og adgangskontrol
+     - Supply chain-sikkerhed for AI-komponenter
+     - Microsoft Prompt Shields-integration
 
-4. **Getting Started (03-GettingStarted/)**
+4. **Kom godt i gang (03-GettingStarted/)**
    - Opsætning og konfiguration af miljø
    - Oprettelse af grundlæggende MCP-servere og klienter
    - Integration med eksisterende applikationer
@@ -130,64 +154,81 @@ Repository’et er organiseret i ti hovedsektioner, der hver især fokuserer på
      - HTTP streaming
      - AI Toolkit-integration
      - Teststrategier
-     - Udrulningsvejledninger
+     - Udrulningsvejledning
 
-5. **Practical Implementation (04-PracticalImplementation/)**
+5. **Praktisk implementering (04-PracticalImplementation/)**
    - Brug af SDK’er på tværs af forskellige programmeringssprog
    - Debugging, test og valideringsteknikker
    - Udformning af genanvendelige promptskabeloner og workflows
-   - Eksempler på projekter med implementeringer
+   - Eksempler på projekter med implementering
 
-6. **Advanced Topics (05-AdvancedTopics/)**
+6. **Avancerede emner (05-AdvancedTopics/)**
    - Context engineering-teknikker
    - Foundry agent-integration
    - Multi-modale AI-workflows
-   - OAuth2 autentificeringsdemoer
-   - Realtidssøgning
-   - Realtidsstreaming
+   - OAuth2-autentificeringsdemoer
+   - Real-time søgefunktioner
+   - Real-time streaming
    - Implementering af root contexts
    - Routing-strategier
    - Sampling-teknikker
    - Skaleringsmetoder
    - Sikkerhedsovervejelser
-   - Entra ID sikkerhedsintegration
-   - Websøgning-integration
+   - Entra ID-sikkerhedsintegration
+   - Websøgningsintegration
 
-7. **Community Contributions (06-CommunityContributions/)**
+7. **Fællesskabsbidrag (06-CommunityContributions/)**
    - Hvordan man bidrager med kode og dokumentation
    - Samarbejde via GitHub
    - Fællesskabsdrevne forbedringer og feedback
    - Brug af forskellige MCP-klienter (Claude Desktop, Cline, VSCode)
    - Arbejde med populære MCP-servere inklusive billedgenerering
 
-8. **Lessons from Early Adoption (07-LessonsfromEarlyAdoption/)**
+8. **Lektioner fra tidlig adoption (07-LessonsfromEarlyAdoption/)**
    - Virkelige implementeringer og succeshistorier
    - Opbygning og udrulning af MCP-baserede løsninger
    - Tendenser og fremtidig roadmap
+   - **Microsoft MCP Servers Guide**: Omfattende guide til 10 produktionsklare Microsoft MCP-servere, herunder:
+     - Microsoft Learn Docs MCP Server
+     - Azure MCP Server (15+ specialiserede connectors)
+     - GitHub MCP Server
+     - Azure DevOps MCP Server
+     - MarkItDown MCP Server
+     - SQL Server MCP Server
+     - Playwright MCP Server
+     - Dev Box MCP Server
+     - Azure AI Foundry MCP Server
+     - Microsoft 365 Agents Toolkit MCP Server
 
-9. **Best Practices (08-BestPractices/)**
+9. **Bedste praksis (08-BestPractices/)**
    - Performance-tuning og optimering
    - Design af fejltolerante MCP-systemer
    - Test- og robusthedsstrategier
 
-10. **Case Studies (09-CaseStudy/)**
-    - Case study: Azure API Management-integration
-    - Case study: Rejsebureau-implementering
-    - Case study: Azure DevOps-integration med YouTube
+10. **Case-studier (09-CaseStudy/)**
+    - Eksempel på integration med Azure API Management
+    - Eksempel på implementering af rejsebureau
+    - Azure DevOps-integration med YouTube-opdateringer
+    - Dokumentationsimplementering med MCP-eksempler
     - Implementeringseksempler med detaljeret dokumentation
 
-11. **Hands-on Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
+11. **Hands-on workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Omfattende hands-on workshop, der kombinerer MCP med AI Toolkit
     - Opbygning af intelligente applikationer, der forbinder AI-modeller med virkelige værktøjer
     - Praktiske moduler, der dækker grundlæggende, tilpasset serverudvikling og produktionsudrulningsstrategier
+    - **Lab-struktur**:
+      - Lab 1: MCP Server Fundamentals
+      - Lab 2: Advanced MCP Server Development
+      - Lab 3: AI Toolkit Integration
+      - Lab 4: Production Deployment and Scaling
     - Lab-baseret læring med trin-for-trin instruktioner
 
-## Yderligere Ressourcer
+## Yderligere ressourcer
 
-Repository’et indeholder understøttende ressourcer:
+Repositoryet indeholder understøttende ressourcer:
 
-- **Images folder**: Indeholder diagrammer og illustrationer brugt gennem pensum
-- **Translations**: Flersproget support med automatiserede oversættelser af dokumentation
+- **Images-mappe**: Indeholder diagrammer og illustrationer brugt gennem pensum
+- **Oversættelser**: Flersproget support med automatiserede oversættelser af dokumentation
 - **Officielle MCP-ressourcer**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
@@ -196,8 +237,8 @@ Repository’et indeholder understøttende ressourcer:
 ## Sådan bruger du dette repository
 
 1. **Sekventiel læring**: Følg kapitlerne i rækkefølge (00 til 10) for en struktureret læringsoplevelse.
-2. **Sprog-specifik fokus**: Hvis du er interesseret i et bestemt programmeringssprog, kan du udforske samples-mapperne for implementeringer i dit foretrukne sprog.
-3. **Praktisk implementering**: Start med sektionen "Getting Started" for at sætte dit miljø op og oprette din første MCP-server og klient.
+2. **Sprog-specifik fokus**: Hvis du er interesseret i et bestemt programmeringssprog, kan du udforske sample-mapperne for implementeringer i dit foretrukne sprog.
+3. **Praktisk implementering**: Start med sektionen "Kom godt i gang" for at sætte dit miljø op og oprette din første MCP-server og klient.
 4. **Avanceret udforskning**: Når du er fortrolig med det grundlæggende, kan du dykke ned i de avancerede emner for at udvide din viden.
 5. **Fællesskabsengagement**: Deltag i MCP-fællesskabet via GitHub-diskussioner og Discord-kanaler for at forbinde med eksperter og andre udviklere.
 
@@ -226,43 +267,56 @@ Pensum dækker forskellige MCP-klienter og værktøjer:
 
 ## Populære MCP-servere
 
-Repository’et introducerer forskellige MCP-servere, herunder:
+Repositoryet introducerer forskellige MCP-servere, herunder:
 
-1. **Officielle reference-servere**:
+1. **Officielle Microsoft MCP-servere**:
+   - Microsoft Learn Docs MCP Server
+   - Azure MCP Server (15+ specialiserede connectors)
+   - GitHub MCP Server
+   - Azure DevOps MCP Server
+   - MarkItDown MCP Server
+   - SQL Server MCP Server
+   - Playwright MCP Server
+   - Dev Box MCP Server
+   - Azure AI Foundry MCP Server
+   - Microsoft 365 Agents Toolkit MCP Server
+
+2. **Officielle reference-servere**:
    - Filesystem
    - Fetch
    - Memory
    - Sequential Thinking
 
-2. **Billedgenerering**:
+3. **Billedgenerering**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
 
-3. **Udviklingsværktøjer**:
+4. **Udviklingsværktøjer**:
    - Git MCP
    - Terminal Control
    - Code Assistant
 
-4. **Specialiserede servere**:
+5. **Specialiserede servere**:
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
 
 ## Bidrag
 
-Dette repository byder velkommen til bidrag fra fællesskabet. Se sektionen Community Contributions for vejledning i, hvordan du effektivt kan bidrage til MCP-økosystemet.
+Dette repository byder velkommen til bidrag fra fællesskabet. Se sektionen Fællesskabsbidrag for vejledning i, hvordan du effektivt kan bidrage til MCP-økosystemet.
 
-## Changelog
+## Ændringslog
 
-| Dato | Ændringer |
-|-------|-----------|
-| 16. juli 2025 | - Opdateret repository-struktur for at afspejle aktuelt indhold<br>- Tilføjet sektion om MCP-klienter og værktøjer<br>- Tilføjet sektion om populære MCP-servere<br>- Opdateret Visuelt Pensumkort med alle aktuelle emner<br>- Udvidet Avancerede Emner med alle specialiserede områder<br>- Opdateret Case Studies med faktiske eksempler<br>- Præciseret MCP’s oprindelse som skabt af Anthropic |
-| 11. juni 2025 | - Oprettelse af studieguide<br>- Tilføjet Visuelt Pensumkort<br>- Skitseret repository-struktur<br>- Inkluderet prøveprojekter og yderligere ressourcer |
+| Dato          | Ændringer                                                                                              |
+|---------------|------------------------------------------------------------------------------------------------------|
+| 18. juli 2025 | - Opdateret repository-struktur med Microsoft MCP Servers Guide<br>- Tilføjet omfattende liste over 10 produktionsklare Microsoft MCP-servere<br>- Udvidet sektionen Populære MCP-servere med Officielle Microsoft MCP-servere<br>- Opdateret Case Studies med faktiske fil-eksempler<br>- Tilføjet detaljer om Lab-struktur til Hands-on Workshop |
+| 16. juli 2025 | - Opdateret repository-struktur for at afspejle aktuelt indhold<br>- Tilføjet sektion MCP Clients and Tools<br>- Tilføjet sektion Populære MCP-servere<br>- Opdateret Visuelt Pensumkort med alle aktuelle emner<br>- Udvidet Avancerede emner med alle specialiserede områder<br>- Opdateret Case Studies med faktiske eksempler<br>- Præciseret MCP’s oprindelse som skabt af Anthropic |
+| 11. juni 2025 | - Oprindelig oprettelse af studieguide<br>- Tilføjet Visuelt Pensumkort<br>- Skitseret repository-struktur<br>- Inkluderet eksempler på projekter og yderligere ressourcer |
 
 ---
 
-*Denne studieguide blev opdateret den 16. juli 2025 og giver en oversigt over repository’et pr. denne dato. Repository-indhold kan blive opdateret efter denne dato.*
+*Denne studieguide blev opdateret den 18. juli 2025 og giver en oversigt over repositoryet pr. denne dato. Indholdet i repositoryet kan blive opdateret efter denne dato.*
 
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

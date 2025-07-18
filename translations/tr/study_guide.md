@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
-  "translation_date": "2025-07-17T05:31:22+00:00",
+  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
+  "translation_date": "2025-07-18T09:47:40+00:00",
   "source_file": "study_guide.md",
   "language_code": "tr"
 }
 -->
-# Yeni Başlayanlar için Model Context Protocol (MCP) - Çalışma Rehberi
+# Model Context Protocol (MCP) Yeni Başlayanlar için - Çalışma Rehberi
 
-Bu çalışma rehberi, "Yeni Başlayanlar için Model Context Protocol (MCP)" müfredatının depo yapısı ve içeriği hakkında genel bir bakış sunar. Depoyu verimli bir şekilde gezmek ve mevcut kaynaklardan en iyi şekilde yararlanmak için bu rehberi kullanın.
+Bu çalışma rehberi, "Model Context Protocol (MCP) Yeni Başlayanlar için" müfredatının depo yapısı ve içeriği hakkında genel bir bakış sunar. Depoyu verimli bir şekilde gezmek ve mevcut kaynaklardan en iyi şekilde yararlanmak için bu rehberi kullanın.
 
-## Depo Genel Bakış
+## Depo Genel Bakışı
 
-Model Context Protocol (MCP), yapay zeka modelleri ile istemci uygulamalar arasındaki etkileşimler için standartlaştırılmış bir çerçevedir. İlk olarak Anthropic tarafından oluşturulan MCP, artık resmi GitHub organizasyonu aracılığıyla geniş MCP topluluğu tarafından sürdürülmektedir. Bu depo, yapay zeka geliştiricileri, sistem mimarları ve yazılım mühendisleri için C#, Java, JavaScript, Python ve TypeScript dillerinde uygulamalı kod örnekleri içeren kapsamlı bir müfredat sunar.
+Model Context Protocol (MCP), yapay zeka modelleri ile istemci uygulamalar arasındaki etkileşimler için standartlaştırılmış bir çerçevedir. Başlangıçta Anthropic tarafından oluşturulan MCP, artık resmi GitHub organizasyonu aracılığıyla geniş MCP topluluğu tarafından sürdürülmektedir. Bu depo, AI geliştiricileri, sistem mimarları ve yazılım mühendisleri için C#, Java, JavaScript, Python ve TypeScript dillerinde uygulamalı kod örnekleri içeren kapsamlı bir müfredat sunar.
 
 ## Görsel Müfredat Haritası
 
@@ -23,79 +23,91 @@ mindmap
     00. Introduction
       ::icon(fa fa-book)
       (Protocol Overview)
-      (Standardization)
-      (Use Cases)
+      (Standardization Benefits)
+      (Real-world Use Cases)
+      (AI Integration Fundamentals)
     01. Core Concepts
       ::icon(fa fa-puzzle-piece)
       (Client-Server Architecture)
       (Protocol Components)
       (Messaging Patterns)
+      (Transport Mechanisms)
     02. Security
       ::icon(fa fa-shield)
-      (Threat Models)
-      (Best Practices)
-      (Auth Strategies)
+      (AI-Specific Threats)
+      (Best Practices 2025)
+      (Azure Content Safety)
+      (Auth & Authorization)
+      (Microsoft Prompt Shields)
     03. Getting Started
       ::icon(fa fa-rocket)
-      (First Server)
-      (Client)
-      (LLM Client)
-      (VS Code Integration)
-      (SSE Server)
+      (First Server Implementation)
+      (Client Development)
+      (LLM Client Integration)
+      (VS Code Extensions)
+      (SSE Server Setup)
       (HTTP Streaming)
-      (AI Toolkit)
-      (Testing)
-      (Deployment)
+      (AI Toolkit Integration)
+      (Testing Frameworks)
+      (Deployment Strategies)
     04. Practical Implementation
       ::icon(fa fa-code)
-      (SDKs)
-      (Testing/Debugging)
+      (Multi-Language SDKs)
+      (Testing & Debugging)
       (Prompt Templates)
       (Sample Projects)
+      (Production Patterns)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
       (Context Engineering)
-      (Foundry Integration)
-      (Multi-modal AI)
-      (OAuth2 Demo)
+      (Foundry Agent Integration)
+      (Multi-modal AI Workflows)
+      (OAuth2 Authentication)
       (Real-time Search)
-      (Streaming)
+      (Streaming Protocols)
       (Root Contexts)
-      (Routing)
-      (Sampling)
-      (Scaling)
-      (Security)
-      (Entra ID)
-      (Web Search)
+      (Routing Strategies)
+      (Sampling Techniques)
+      (Scaling Solutions)
+      (Security Hardening)
+      (Entra ID Integration)
+      (Web Search MCP)
       
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (MCP Clients)
-      (MCP Servers)
-      (Image Generation)
+      (MCP Client Ecosystem)
+      (MCP Server Registry)
+      (Image Generation Tools)
+      (GitHub Collaboration)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
-      (Real-world Examples)
-      (Deployment Stories)
+      (Production Deployments)
+      (Microsoft MCP Servers)
+      (Azure MCP Service)
+      (Enterprise Case Studies)
       (Future Roadmap)
     08. Best Practices
       ::icon(fa fa-check)
-      (Performance)
+      (Performance Optimization)
       (Fault Tolerance)
-      (Resilience)
+      (System Resilience)
+      (Monitoring & Observability)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (API Management)
-      (Travel Agent)
-      (Azure DevOps)
+      (Azure API Management)
+      (AI Travel Agent)
+      (Azure DevOps Integration)
       (Documentation MCP)
+      (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
+      (MCP Server Fundamentals)
+      (Advanced Development)
       (AI Toolkit Integration)
-      (Custom Server Development)
       (Production Deployment)
+      (4-Lab Structure)
 ```
 
 ## Depo Yapısı
@@ -104,7 +116,7 @@ Depo, MCP’nin farklı yönlerine odaklanan on ana bölüme ayrılmıştır:
 
 1. **Giriş (00-Introduction/)**
    - Model Context Protocol’e genel bakış
-   - Yapay zeka süreçlerinde standartlaşmanın önemi
+   - AI süreçlerinde standartlaşmanın önemi
    - Pratik kullanım senaryoları ve faydalar
 
 2. **Temel Kavramlar (01-CoreConcepts/)**
@@ -116,6 +128,18 @@ Depo, MCP’nin farklı yönlerine odaklanan on ana bölüme ayrılmıştır:
    - MCP tabanlı sistemlerde güvenlik tehditleri
    - Güvenli uygulamalar için en iyi uygulamalar
    - Kimlik doğrulama ve yetkilendirme stratejileri
+   - **Kapsamlı Güvenlik Dokümantasyonu**:
+     - MCP Güvenlik En İyi Uygulamaları 2025
+     - Azure İçerik Güvenliği Uygulama Rehberi
+     - MCP Güvenlik Kontrolleri ve Teknikleri
+     - MCP En İyi Uygulamalar Hızlı Referans
+   - **Önemli Güvenlik Konuları**:
+     - Prompt enjeksiyonu ve araç zehirleme saldırıları
+     - Oturum kaçırma ve confused deputy problemleri
+     - Token geçişi açıkları
+     - Aşırı izinler ve erişim kontrolü
+     - AI bileşenleri için tedarik zinciri güvenliği
+     - Microsoft Prompt Shields entegrasyonu
 
 4. **Başlarken (03-GettingStarted/)**
    - Ortam kurulumu ve yapılandırma
@@ -140,10 +164,10 @@ Depo, MCP’nin farklı yönlerine odaklanan on ana bölüme ayrılmıştır:
 
 6. **İleri Konular (05-AdvancedTopics/)**
    - Bağlam mühendisliği teknikleri
-   - Foundry ajan entegrasyonu
-   - Çok modlu yapay zeka iş akışları
+   - Foundry agent entegrasyonu
+   - Çok modlu AI iş akışları
    - OAuth2 kimlik doğrulama demoları
-   - Gerçek zamanlı arama özellikleri
+   - Gerçek zamanlı arama yetenekleri
    - Gerçek zamanlı akış
    - Root context uygulamaları
    - Yönlendirme stratejileri
@@ -162,24 +186,41 @@ Depo, MCP’nin farklı yönlerine odaklanan on ana bölüme ayrılmıştır:
 
 8. **Erken Benimsemeden Alınan Dersler (07-LessonsfromEarlyAdoption/)**
    - Gerçek dünya uygulamaları ve başarı hikayeleri
-   - MCP tabanlı çözümlerin geliştirilmesi ve dağıtımı
+   - MCP tabanlı çözümlerin oluşturulması ve dağıtımı
    - Trendler ve gelecek yol haritası
+   - **Microsoft MCP Sunucuları Rehberi**: 10 üretime hazır Microsoft MCP sunucusunu kapsayan kapsamlı rehber:
+     - Microsoft Learn Docs MCP Sunucusu
+     - Azure MCP Sunucusu (15+ özel bağlayıcı)
+     - GitHub MCP Sunucusu
+     - Azure DevOps MCP Sunucusu
+     - MarkItDown MCP Sunucusu
+     - SQL Server MCP Sunucusu
+     - Playwright MCP Sunucusu
+     - Dev Box MCP Sunucusu
+     - Azure AI Foundry MCP Sunucusu
+     - Microsoft 365 Agents Toolkit MCP Sunucusu
 
 9. **En İyi Uygulamalar (08-BestPractices/)**
-   - Performans ayarlama ve optimizasyon
+   - Performans ayarlamaları ve optimizasyon
    - Hata toleranslı MCP sistemleri tasarımı
    - Test ve dayanıklılık stratejileri
 
 10. **Vaka Çalışmaları (09-CaseStudy/)**
-    - Vaka çalışması: Azure API Management entegrasyonu
-    - Vaka çalışması: Seyahat acentesi uygulaması
-    - Vaka çalışması: Azure DevOps ve YouTube entegrasyonu
-    - Ayrıntılı dokümantasyonlu uygulama örnekleri
+    - Azure API Management entegrasyon örneği
+    - Seyahat acentesi uygulama örneği
+    - Azure DevOps entegrasyonu ve YouTube güncellemeleri
+    - Dokümantasyon MCP uygulama örnekleri
+    - Detaylı dokümantasyonlu uygulama örnekleri
 
 11. **Uygulamalı Atölye (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - MCP ile AI Toolkit’i birleştiren kapsamlı uygulamalı atölye
-    - Yapay zeka modellerini gerçek dünya araçlarıyla birleştiren akıllı uygulamalar geliştirme
+    - AI modelleri ile gerçek dünya araçlarını birleştiren akıllı uygulamalar geliştirme
     - Temeller, özel sunucu geliştirme ve üretim dağıtım stratejilerini kapsayan pratik modüller
+    - **Lab Yapısı**:
+      - Lab 1: MCP Sunucu Temelleri
+      - Lab 2: İleri MCP Sunucu Geliştirme
+      - Lab 3: AI Toolkit Entegrasyonu
+      - Lab 4: Üretim Dağıtımı ve Ölçeklendirme
     - Adım adım talimatlarla laboratuvar tabanlı öğrenme yaklaşımı
 
 ## Ek Kaynaklar
@@ -187,7 +228,7 @@ Depo, MCP’nin farklı yönlerine odaklanan on ana bölüme ayrılmıştır:
 Depo, destekleyici kaynaklar içerir:
 
 - **Images klasörü**: Müfredat boyunca kullanılan diyagramlar ve görseller
-- **Çeviriler**: Dokümantasyonun otomatik çok dilli çevirileri
+- **Çeviriler**: Dokümantasyonun çok dilli otomatik çevirileri
 - **Resmi MCP Kaynakları**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
@@ -196,9 +237,9 @@ Depo, destekleyici kaynaklar içerir:
 ## Bu Depo Nasıl Kullanılır
 
 1. **Sıralı Öğrenme**: Yapılandırılmış bir öğrenme deneyimi için bölümleri sırayla (00’dan 10’a kadar) takip edin.
-2. **Dil Odaklı İnceleme**: Belirli bir programlama diliyle ilgileniyorsanız, örnekler klasörlerinde tercih ettiğiniz dildeki uygulamalara göz atın.
+2. **Dil Odaklı İnceleme**: Belirli bir programlama diliyle ilgileniyorsanız, örnekler klasöründe tercih ettiğiniz dildeki uygulamalara göz atın.
 3. **Pratik Uygulama**: Ortamınızı kurmak ve ilk MCP sunucu ile istemcinizi oluşturmak için "Başlarken" bölümünden başlayın.
-4. **İleri Düzey Keşif**: Temelleri öğrendikten sonra bilgilerinizi genişletmek için ileri konulara dalın.
+4. **İleri Düzey Keşif**: Temelleri öğrendikten sonra bilgilerinizi genişletmek için ileri konulara geçin.
 5. **Topluluk Katılımı**: MCP topluluğuna GitHub tartışmaları ve Discord kanalları aracılığıyla katılarak uzmanlar ve diğer geliştiricilerle bağlantı kurun.
 
 ## MCP İstemcileri ve Araçları
@@ -228,41 +269,54 @@ Müfredat, çeşitli MCP istemcileri ve araçlarını kapsar:
 
 Depo, çeşitli MCP sunucularını tanıtır:
 
-1. **Resmi Referans Sunucuları**:
+1. **Resmi Microsoft MCP Sunucuları**:
+   - Microsoft Learn Docs MCP Sunucusu
+   - Azure MCP Sunucusu (15+ özel bağlayıcı)
+   - GitHub MCP Sunucusu
+   - Azure DevOps MCP Sunucusu
+   - MarkItDown MCP Sunucusu
+   - SQL Server MCP Sunucusu
+   - Playwright MCP Sunucusu
+   - Dev Box MCP Sunucusu
+   - Azure AI Foundry MCP Sunucusu
+   - Microsoft 365 Agents Toolkit MCP Sunucusu
+
+2. **Resmi Referans Sunucuları**:
    - Filesystem
    - Fetch
    - Memory
    - Sequential Thinking
 
-2. **Görüntü Oluşturma**:
+3. **Görüntü Oluşturma**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
 
-3. **Geliştirme Araçları**:
+4. **Geliştirme Araçları**:
    - Git MCP
    - Terminal Control
    - Code Assistant
 
-4. **Özel Sunucular**:
+5. **Özel Sunucular**:
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
 
 ## Katkıda Bulunma
 
-Bu depo, topluluk katkılarına açıktır. MCP ekosistemine etkili katkı sağlamak için Topluluk Katkıları bölümüne bakabilirsiniz.
+Bu depo, topluluk katkılarına açıktır. MCP ekosistemine etkili katkı sağlamak için Topluluk Katkıları bölümündeki rehbere bakabilirsiniz.
 
 ## Değişiklik Günlüğü
 
 | Tarih | Değişiklikler |
-|-------|---------------|
-| 16 Temmuz 2025 | - Depo yapısı güncellenerek mevcut içerik yansıtıldı<br>- MCP İstemcileri ve Araçları bölümü eklendi<br>- Popüler MCP Sunucuları bölümü eklendi<br>- Tüm güncel konuları içeren Görsel Müfredat Haritası güncellendi<br>- İleri Konular bölümü tüm uzmanlık alanlarıyla genişletildi<br>- Vaka Çalışmaları gerçek örneklerle güncellendi<br>- MCP’nin Anthropic tarafından oluşturulduğu netleştirildi |
+|-------|--------------|
+| 18 Temmuz 2025 | - Depo yapısı Microsoft MCP Sunucuları Rehberi’ni içerecek şekilde güncellendi<br>- 10 üretime hazır Microsoft MCP sunucusunun kapsamlı listesi eklendi<br>- Popüler MCP Sunucuları bölümü Resmi Microsoft MCP Sunucuları ile genişletildi<br>- Vaka Çalışmaları bölümü gerçek dosya örnekleriyle güncellendi<br>- Uygulamalı Atölye için Lab Yapısı detayları eklendi |
+| 16 Temmuz 2025 | - Depo yapısı mevcut içeriği yansıtacak şekilde güncellendi<br>- MCP İstemcileri ve Araçları bölümü eklendi<br>- Popüler MCP Sunucuları bölümü eklendi<br>- Görsel Müfredat Haritası tüm güncel konularla güncellendi<br>- İleri Konular bölümü tüm uzmanlık alanlarıyla genişletildi<br>- Vaka Çalışmaları gerçek örneklerle güncellendi<br>- MCP’nin Anthropic tarafından oluşturulduğu netleştirildi |
 | 11 Haziran 2025 | - Çalışma rehberi ilk kez oluşturuldu<br>- Görsel Müfredat Haritası eklendi<br>- Depo yapısı özetlendi<br>- Örnek projeler ve ek kaynaklar dahil edildi |
 
 ---
 
-*Bu çalışma rehberi 16 Temmuz 2025 tarihinde güncellenmiş olup, o tarihteki depo içeriğinin genel bir özetini sunmaktadır. Depo içeriği bu tarihten sonra güncellenmiş olabilir.*
+*Bu çalışma rehberi 18 Temmuz 2025 tarihinde güncellenmiş olup, o tarihteki depo içeriğinin genel bir özetini sunmaktadır. Depo içeriği bu tarihten sonra güncellenmiş olabilir.*
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

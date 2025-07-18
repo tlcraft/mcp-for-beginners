@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
-  "translation_date": "2025-07-17T05:24:07+00:00",
+  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
+  "translation_date": "2025-07-18T09:30:45+00:00",
   "source_file": "study_guide.md",
   "language_code": "bn"
 }
 -->
 # Model Context Protocol (MCP) for Beginners - স্টাডি গাইড
 
-এই স্টাডি গাইডটি "Model Context Protocol (MCP) for Beginners" কারিকুলামের জন্য রিপোজিটরির কাঠামো এবং বিষয়বস্তুর একটি সারসংক্ষেপ প্রদান করে। এই গাইডটি ব্যবহার করে রিপোজিটরিতে দক্ষতার সাথে নেভিগেট করুন এবং উপলব্ধ রিসোর্সগুলো থেকে সর্বোচ্চ সুবিধা নিন।
+এই স্টাডি গাইডটি "Model Context Protocol (MCP) for Beginners" কারিকুলামের জন্য রিপোজিটরির কাঠামো এবং বিষয়বস্তুর একটি সারসংক্ষেপ প্রদান করে। এই গাইডটি ব্যবহার করে আপনি রিপোজিটরিটি দক্ষতার সাথে নেভিগেট করতে পারবেন এবং উপলব্ধ রিসোর্সগুলো থেকে সর্বোচ্চ সুবিধা নিতে পারবেন।
 
 ## রিপোজিটরি ওভারভিউ
 
@@ -23,82 +23,94 @@ mindmap
     00. Introduction
       ::icon(fa fa-book)
       (Protocol Overview)
-      (Standardization)
-      (Use Cases)
+      (Standardization Benefits)
+      (Real-world Use Cases)
+      (AI Integration Fundamentals)
     01. Core Concepts
       ::icon(fa fa-puzzle-piece)
       (Client-Server Architecture)
       (Protocol Components)
       (Messaging Patterns)
+      (Transport Mechanisms)
     02. Security
       ::icon(fa fa-shield)
-      (Threat Models)
-      (Best Practices)
-      (Auth Strategies)
+      (AI-Specific Threats)
+      (Best Practices 2025)
+      (Azure Content Safety)
+      (Auth & Authorization)
+      (Microsoft Prompt Shields)
     03. Getting Started
       ::icon(fa fa-rocket)
-      (First Server)
-      (Client)
-      (LLM Client)
-      (VS Code Integration)
-      (SSE Server)
+      (First Server Implementation)
+      (Client Development)
+      (LLM Client Integration)
+      (VS Code Extensions)
+      (SSE Server Setup)
       (HTTP Streaming)
-      (AI Toolkit)
-      (Testing)
-      (Deployment)
+      (AI Toolkit Integration)
+      (Testing Frameworks)
+      (Deployment Strategies)
     04. Practical Implementation
       ::icon(fa fa-code)
-      (SDKs)
-      (Testing/Debugging)
+      (Multi-Language SDKs)
+      (Testing & Debugging)
       (Prompt Templates)
       (Sample Projects)
+      (Production Patterns)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
       (Context Engineering)
-      (Foundry Integration)
-      (Multi-modal AI)
-      (OAuth2 Demo)
+      (Foundry Agent Integration)
+      (Multi-modal AI Workflows)
+      (OAuth2 Authentication)
       (Real-time Search)
-      (Streaming)
+      (Streaming Protocols)
       (Root Contexts)
-      (Routing)
-      (Sampling)
-      (Scaling)
-      (Security)
-      (Entra ID)
-      (Web Search)
+      (Routing Strategies)
+      (Sampling Techniques)
+      (Scaling Solutions)
+      (Security Hardening)
+      (Entra ID Integration)
+      (Web Search MCP)
       
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (MCP Clients)
-      (MCP Servers)
-      (Image Generation)
+      (MCP Client Ecosystem)
+      (MCP Server Registry)
+      (Image Generation Tools)
+      (GitHub Collaboration)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
-      (Real-world Examples)
-      (Deployment Stories)
+      (Production Deployments)
+      (Microsoft MCP Servers)
+      (Azure MCP Service)
+      (Enterprise Case Studies)
       (Future Roadmap)
     08. Best Practices
       ::icon(fa fa-check)
-      (Performance)
+      (Performance Optimization)
       (Fault Tolerance)
-      (Resilience)
+      (System Resilience)
+      (Monitoring & Observability)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (API Management)
-      (Travel Agent)
-      (Azure DevOps)
+      (Azure API Management)
+      (AI Travel Agent)
+      (Azure DevOps Integration)
       (Documentation MCP)
+      (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
+      (MCP Server Fundamentals)
+      (Advanced Development)
       (AI Toolkit Integration)
-      (Custom Server Development)
       (Production Deployment)
+      (4-Lab Structure)
 ```
 
-## রিপোজিটরি স্ট্রাকচার
+## রিপোজিটরি কাঠামো
 
 রিপোজিটরিটি দশটি প্রধান সেকশনে বিভক্ত, প্রতিটি MCP-এর বিভিন্ন দিকের উপর ফোকাস করে:
 
@@ -116,6 +128,18 @@ mindmap
    - MCP-ভিত্তিক সিস্টেমে সিকিউরিটি হুমকি
    - সুরক্ষিত ইমপ্লিমেন্টেশনের সেরা অনুশীলন
    - অথেনটিকেশন এবং অথরাইজেশন কৌশল
+   - **সম্পূর্ণ সিকিউরিটি ডকুমেন্টেশন**:
+     - MCP Security Best Practices 2025
+     - Azure Content Safety Implementation Guide
+     - MCP Security Controls and Techniques
+     - MCP Best Practices Quick Reference
+   - **মূল সিকিউরিটি বিষয়সমূহ**:
+     - প্রম্পট ইনজেকশন এবং টুল পয়জনিং আক্রমণ
+     - সেশন হাইজ্যাকিং এবং কনফিউজড ডেপুটি সমস্যা
+     - টোকেন পাসথ্রু দুর্বলতা
+     - অতিরিক্ত অনুমতি এবং অ্যাক্সেস কন্ট্রোল
+     - AI কম্পোনেন্টের সাপ্লাই চেইন সিকিউরিটি
+     - Microsoft Prompt Shields ইন্টিগ্রেশন
 
 4. **Getting Started (03-GettingStarted/)**
    - পরিবেশ সেটআপ এবং কনফিগারেশন
@@ -126,11 +150,11 @@ mindmap
      - ক্লায়েন্ট ডেভেলপমেন্ট
      - LLM ক্লায়েন্ট ইন্টিগ্রেশন
      - VS Code ইন্টিগ্রেশন
-     - Server-Sent Events (SSE) সার্ভার
+     - সার্ভার-সেন্ট ইভেন্টস (SSE) সার্ভার
      - HTTP স্ট্রিমিং
      - AI Toolkit ইন্টিগ্রেশন
      - টেস্টিং কৌশল
-     - ডিপ্লয়মেন্ট নির্দেশিকা
+     - ডিপ্লয়মেন্ট গাইডলাইন
 
 5. **Practical Implementation (04-PracticalImplementation/)**
    - বিভিন্ন প্রোগ্রামিং ভাষায় SDK ব্যবহার
@@ -163,7 +187,18 @@ mindmap
 8. **Lessons from Early Adoption (07-LessonsfromEarlyAdoption/)**
    - বাস্তব জীবনের ইমপ্লিমেন্টেশন এবং সফলতার গল্প
    - MCP-ভিত্তিক সমাধান তৈরি এবং ডিপ্লয়মেন্ট
-   - ট্রেন্ড এবং ভবিষ্যৎ রোডম্যাপ
+   - প্রবণতা এবং ভবিষ্যৎ রোডম্যাপ
+   - **Microsoft MCP Servers Guide**: ১০টি প্রোডাকশন-রেডি Microsoft MCP সার্ভারের বিস্তৃত গাইড, যার মধ্যে রয়েছে:
+     - Microsoft Learn Docs MCP Server
+     - Azure MCP Server (১৫+ বিশেষায়িত কানেক্টর)
+     - GitHub MCP Server
+     - Azure DevOps MCP Server
+     - MarkItDown MCP Server
+     - SQL Server MCP Server
+     - Playwright MCP Server
+     - Dev Box MCP Server
+     - Azure AI Foundry MCP Server
+     - Microsoft 365 Agents Toolkit MCP Server
 
 9. **Best Practices (08-BestPractices/)**
    - পারফরম্যান্স টিউনিং এবং অপ্টিমাইজেশন
@@ -171,23 +206,29 @@ mindmap
    - টেস্টিং এবং রেজিলিয়েন্স কৌশল
 
 10. **Case Studies (09-CaseStudy/)**
-    - কেস স্টাডি: Azure API Management ইন্টিগ্রেশন
-    - কেস স্টাডি: ট্রাভেল এজেন্ট ইমপ্লিমেন্টেশন
-    - কেস স্টাডি: Azure DevOps এবং YouTube ইন্টিগ্রেশন
+    - Azure API Management ইন্টিগ্রেশন স্যাম্পল
+    - ট্রাভেল এজেন্ট ইমপ্লিমেন্টেশন স্যাম্পল
+    - Azure DevOps ইন্টিগ্রেশন সহ YouTube আপডেট
+    - ডকুমেন্টেশন MCP ইমপ্লিমেন্টেশন উদাহরণ
     - বিস্তারিত ডকুমেন্টেশনসহ ইমপ্লিমেন্টেশন উদাহরণ
 
 11. **Hands-on Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - MCP এবং AI Toolkit একত্রিত করে ব্যাপক হাতে কলমে ওয়ার্কশপ
     - AI মডেল এবং বাস্তব বিশ্বের টুলসের মধ্যে বুদ্ধিমান অ্যাপ্লিকেশন তৈরি
     - মৌলিক বিষয়, কাস্টম সার্ভার ডেভেলপমেন্ট, এবং প্রোডাকশন ডিপ্লয়মেন্ট কৌশল নিয়ে ব্যবহারিক মডিউল
-    - ধাপে ধাপে নির্দেশনাসহ ল্যাব-ভিত্তিক শেখার পদ্ধতি
+    - **ল্যাব কাঠামো**:
+      - ল্যাব ১: MCP সার্ভার মৌলিক বিষয়
+      - ল্যাব ২: উন্নত MCP সার্ভার ডেভেলপমেন্ট
+      - ল্যাব ৩: AI Toolkit ইন্টিগ্রেশন
+      - ল্যাব ৪: প্রোডাকশন ডিপ্লয়মেন্ট এবং স্কেলিং
+    - ধাপে ধাপে নির্দেশনা সহ ল্যাব-ভিত্তিক শেখার পদ্ধতি
 
 ## অতিরিক্ত রিসোর্স
 
 রিপোজিটরিতে সহায়ক রিসোর্স অন্তর্ভুক্ত:
 
 - **Images ফোল্ডার**: কারিকুলামের বিভিন্ন অংশে ব্যবহৃত ডায়াগ্রাম এবং চিত্রসমূহ
-- **Translations**: ডকুমেন্টেশনের স্বয়ংক্রিয় অনুবাদের মাধ্যমে বহু-ভাষা সমর্থন
+- **Translations**: ডকুমেন্টেশনের স্বয়ংক্রিয় অনুবাদসহ বহু-ভাষা সমর্থন
 - **অফিসিয়াল MCP রিসোর্স**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
@@ -195,11 +236,11 @@ mindmap
 
 ## এই রিপোজিটরি কীভাবে ব্যবহার করবেন
 
-1. **ক্রমিক শেখা**: একটি সংগঠিত শেখার অভিজ্ঞতার জন্য অধ্যায়গুলো (00 থেকে 10) অনুসরণ করুন।
-2. **ভাষা-নির্দিষ্ট ফোকাস**: যদি নির্দিষ্ট কোনো প্রোগ্রামিং ভাষায় আগ্রহী হন, তাহলে আপনার পছন্দের ভাষায় ইমপ্লিমেন্টেশন দেখতে স্যাম্পল ডিরেক্টরিগুলো অনুসন্ধান করুন।
+1. **ক্রমবদ্ধ শেখা**: একটি সংগঠিত শেখার অভিজ্ঞতার জন্য অধ্যায়গুলো (০০ থেকে ১০) অনুসরণ করুন।
+2. **ভাষা-নির্দিষ্ট ফোকাস**: যদি আপনি নির্দিষ্ট কোনো প্রোগ্রামিং ভাষায় আগ্রহী হন, তাহলে আপনার পছন্দের ভাষার ইমপ্লিমেন্টেশন স্যাম্পল ডিরেক্টরিগুলো অন্বেষণ করুন।
 3. **প্রায়োগিক ইমপ্লিমেন্টেশন**: পরিবেশ সেটআপ এবং প্রথম MCP সার্ভার ও ক্লায়েন্ট তৈরি করতে "Getting Started" সেকশন থেকে শুরু করুন।
-4. **উন্নত অনুসন্ধান**: মৌলিক বিষয়গুলো বুঝে গেলে, জ্ঞানের পরিধি বাড়াতে Advanced Topics-এ প্রবেশ করুন।
-5. **কমিউনিটি এনগেজমেন্ট**: MCP কমিউনিটির সাথে GitHub ডিসকাশন এবং Discord চ্যানেলের মাধ্যমে যুক্ত হয়ে বিশেষজ্ঞ এবং অন্যান্য ডেভেলপারদের সাথে যোগাযোগ করুন।
+4. **উন্নত অনুসন্ধান**: মৌলিক বিষয়গুলো বুঝে গেলে, আপনার জ্ঞান বাড়াতে উন্নত বিষয়গুলোতে প্রবেশ করুন।
+5. **কমিউনিটি এনগেজমেন্ট**: MCP কমিউনিটির সাথে GitHub আলোচনা এবং Discord চ্যানেলের মাধ্যমে যুক্ত হয়ে বিশেষজ্ঞ এবং অন্যান্য ডেভেলপারদের সাথে সংযোগ স্থাপন করুন।
 
 ## MCP ক্লায়েন্ট এবং টুলস
 
@@ -228,23 +269,35 @@ mindmap
 
 রিপোজিটরিতে বিভিন্ন MCP সার্ভার পরিচয় করানো হয়েছে, যার মধ্যে রয়েছে:
 
-1. **অফিসিয়াল রেফারেন্স সার্ভারসমূহ**:
+1. **অফিসিয়াল Microsoft MCP সার্ভারসমূহ**:
+   - Microsoft Learn Docs MCP Server
+   - Azure MCP Server (১৫+ বিশেষায়িত কানেক্টর)
+   - GitHub MCP Server
+   - Azure DevOps MCP Server
+   - MarkItDown MCP Server
+   - SQL Server MCP Server
+   - Playwright MCP Server
+   - Dev Box MCP Server
+   - Azure AI Foundry MCP Server
+   - Microsoft 365 Agents Toolkit MCP Server
+
+2. **অফিসিয়াল রেফারেন্স সার্ভারসমূহ**:
    - Filesystem
    - Fetch
    - Memory
    - Sequential Thinking
 
-2. **ইমেজ জেনারেশন**:
+3. **ইমেজ জেনারেশন**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
 
-3. **ডেভেলপমেন্ট টুলস**:
+4. **ডেভেলপমেন্ট টুলস**:
    - Git MCP
    - Terminal Control
    - Code Assistant
 
-4. **বিশেষায়িত সার্ভারসমূহ**:
+5. **বিশেষায়িত সার্ভারসমূহ**:
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
@@ -257,12 +310,13 @@ mindmap
 
 | তারিখ | পরিবর্তনসমূহ |
 |-------|--------------|
-| July 16, 2025 | - বর্তমান বিষয়বস্তুর প্রতিফলনে রিপোজিটরি স্ট্রাকচার আপডেট<br>- MCP ক্লায়েন্ট এবং টুলস সেকশন যোগ করা হয়েছে<br>- জনপ্রিয় MCP সার্ভার সেকশন যোগ করা হয়েছে<br>- সকল বর্তমান বিষয়বস্তু সহ ভিজ্যুয়াল কারিকুলাম ম্যাপ আপডেট<br>- সকল বিশেষায়িত ক্ষেত্রসহ Advanced Topics সেকশন উন্নত করা হয়েছে<br>- বাস্তব উদাহরণ প্রতিফলিত করতে Case Studies আপডেট করা হয়েছে<br>- MCP-এর উৎপত্তি Anthropic দ্বারা তৈরি হওয়া স্পষ্ট করা হয়েছে |
-| June 11, 2025 | - স্টাডি গাইডের প্রাথমিক সৃষ্টিকরণ<br>- ভিজ্যুয়াল কারিকুলাম ম্যাপ যোগ করা হয়েছে<br>- রিপোজিটরি স্ট্রাকচার আউটলাইন করা হয়েছে<br>- স্যাম্পল প্রজেক্ট এবং অতিরিক্ত রিসোর্স অন্তর্ভুক্ত করা হয়েছে |
+| জুলাই ১৮, ২০২৫ | - Microsoft MCP Servers Guide অন্তর্ভুক্ত করে রিপোজিটরি কাঠামো আপডেট<br>- ১০টি প্রোডাকশন-রেডি Microsoft MCP সার্ভারের বিস্তৃত তালিকা যোগ<br>- জনপ্রিয় MCP সার্ভার সেকশন অফিসিয়াল Microsoft MCP সার্ভারসহ উন্নত করা হয়েছে<br>- Case Studies সেকশন বাস্তব ফাইল উদাহরণসহ আপডেট<br>- Hands-on Workshop-এর জন্য ল্যাব কাঠামোর বিস্তারিত যোগ |
+| জুলাই ১৬, ২০২৫ | - বর্তমান বিষয়বস্তু প্রতিফলিত করতে রিপোজিটরি কাঠামো আপডেট<br>- MCP ক্লায়েন্ট এবং টুলস সেকশন যোগ<br>- জনপ্রিয় MCP সার্ভার সেকশন যোগ<br>- ভিজ্যুয়াল কারিকুলাম ম্যাপ বর্তমান বিষয়বস্তু সহ আপডেট<br>- উন্নত বিষয়সমূহ সেকশন সব বিশেষায়িত ক্ষেত্রসহ উন্নত করা হয়েছে<br>- Case Studies বাস্তব উদাহরণ সহ আপডেট<br>- MCP-এর উৎপত্তি Anthropic দ্বারা তৈরি হওয়া স্পষ্ট করা হয়েছে |
+| জুন ১১, ২০২৫ | - স্টাডি গাইডের প্রাথমিক সৃষ্টি<br>- ভিজ্যুয়াল কারিকুলাম ম্যাপ যোগ<br>- রিপোজিটরি কাঠামো রূপরেখা<br>- স্যাম্পল প্রজেক্ট এবং অতিরিক্ত রিসোর্স অন্তর্ভুক্ত |
 
 ---
 
-*এই স্টাডি গাইডটি July 16, 2025 তারিখে আপডেট করা হয়েছে এবং ঐ তারিখ পর্যন্ত রিপোজিটরির সারসংক্ষেপ প্রদান করে। তারপরে রিপোজিটরির বিষয়বস্তু আপডেট হতে পারে।*
+*এই স্টাডি গাইডটি জুলাই ১৮, ২০২৫ তারিখে আপডেট করা হয়েছে এবং ওই তারিখ পর্যন্ত রিপোজিটরির সারসংক্ষেপ প্রদান করে। তারপরে রিপোজিটরির বিষয়বস্তু আপডেট হতে পারে।*
 
 **অস্বীকৃতি**:  
 এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ গ্রহণ করার পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f321ea583cf087a94e47ee74c62b504",
-  "translation_date": "2025-07-17T11:22:28+00:00",
+  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
+  "translation_date": "2025-07-18T10:25:17+00:00",
   "source_file": "study_guide.md",
   "language_code": "bg"
 }
@@ -23,79 +23,91 @@ mindmap
     00. Introduction
       ::icon(fa fa-book)
       (Protocol Overview)
-      (Standardization)
-      (Use Cases)
+      (Standardization Benefits)
+      (Real-world Use Cases)
+      (AI Integration Fundamentals)
     01. Core Concepts
       ::icon(fa fa-puzzle-piece)
       (Client-Server Architecture)
       (Protocol Components)
       (Messaging Patterns)
+      (Transport Mechanisms)
     02. Security
       ::icon(fa fa-shield)
-      (Threat Models)
-      (Best Practices)
-      (Auth Strategies)
+      (AI-Specific Threats)
+      (Best Practices 2025)
+      (Azure Content Safety)
+      (Auth & Authorization)
+      (Microsoft Prompt Shields)
     03. Getting Started
       ::icon(fa fa-rocket)
-      (First Server)
-      (Client)
-      (LLM Client)
-      (VS Code Integration)
-      (SSE Server)
+      (First Server Implementation)
+      (Client Development)
+      (LLM Client Integration)
+      (VS Code Extensions)
+      (SSE Server Setup)
       (HTTP Streaming)
-      (AI Toolkit)
-      (Testing)
-      (Deployment)
+      (AI Toolkit Integration)
+      (Testing Frameworks)
+      (Deployment Strategies)
     04. Practical Implementation
       ::icon(fa fa-code)
-      (SDKs)
-      (Testing/Debugging)
+      (Multi-Language SDKs)
+      (Testing & Debugging)
       (Prompt Templates)
       (Sample Projects)
+      (Production Patterns)
     05. Advanced Topics
       ::icon(fa fa-graduation-cap)
       (Context Engineering)
-      (Foundry Integration)
-      (Multi-modal AI)
-      (OAuth2 Demo)
+      (Foundry Agent Integration)
+      (Multi-modal AI Workflows)
+      (OAuth2 Authentication)
       (Real-time Search)
-      (Streaming)
+      (Streaming Protocols)
       (Root Contexts)
-      (Routing)
-      (Sampling)
-      (Scaling)
-      (Security)
-      (Entra ID)
-      (Web Search)
+      (Routing Strategies)
+      (Sampling Techniques)
+      (Scaling Solutions)
+      (Security Hardening)
+      (Entra ID Integration)
+      (Web Search MCP)
       
     06. Community
       ::icon(fa fa-users)
       (Code Contributions)
       (Documentation)
-      (MCP Clients)
-      (MCP Servers)
-      (Image Generation)
+      (MCP Client Ecosystem)
+      (MCP Server Registry)
+      (Image Generation Tools)
+      (GitHub Collaboration)
     07. Early Adoption
       ::icon(fa fa-lightbulb)
-      (Real-world Examples)
-      (Deployment Stories)
+      (Production Deployments)
+      (Microsoft MCP Servers)
+      (Azure MCP Service)
+      (Enterprise Case Studies)
       (Future Roadmap)
     08. Best Practices
       ::icon(fa fa-check)
-      (Performance)
+      (Performance Optimization)
       (Fault Tolerance)
-      (Resilience)
+      (System Resilience)
+      (Monitoring & Observability)
     09. Case Studies
       ::icon(fa fa-file-text)
-      (API Management)
-      (Travel Agent)
-      (Azure DevOps)
+      (Azure API Management)
+      (AI Travel Agent)
+      (Azure DevOps Integration)
       (Documentation MCP)
+      (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
+      (MCP Server Fundamentals)
+      (Advanced Development)
       (AI Toolkit Integration)
-      (Custom Server Development)
       (Production Deployment)
+      (4-Lab Structure)
 ```
 
 ## Структура на хранилището
@@ -113,9 +125,21 @@ mindmap
    - Модели на съобщения в MCP
 
 3. **Сигурност (02-Security/)**
-   - Заплахи за сигурността в системи базирани на MCP
+   - Заплахи за сигурността в системи, базирани на MCP
    - Най-добри практики за защита на имплементациите
    - Стратегии за автентикация и авторизация
+   - **Изчерпателна документация за сигурността**:
+     - MCP Security Best Practices 2025
+     - Azure Content Safety Implementation Guide
+     - MCP Security Controls and Techniques
+     - MCP Best Practices Quick Reference
+   - **Ключови теми за сигурността**:
+     - Атаки чрез prompt injection и отравяне на инструменти
+     - Кражба на сесии и проблеми с confused deputy
+     - Уязвимости при token passthrough
+     - Прекомерни права и контрол на достъпа
+     - Сигурност на веригата за доставки за AI компоненти
+     - Интеграция с Microsoft Prompt Shields
 
 4. **Първи стъпки (03-GettingStarted/)**
    - Настройка и конфигурация на средата
@@ -126,7 +150,7 @@ mindmap
      - Разработка на клиент
      - Интеграция на LLM клиент
      - Интеграция с VS Code
-     - Сървър с Server-Sent Events (SSE)
+     - SSE (Server-Sent Events) сървър
      - HTTP стрийминг
      - Интеграция с AI Toolkit
      - Тестови стратегии
@@ -136,7 +160,7 @@ mindmap
    - Използване на SDK-та на различни програмни езици
    - Отстраняване на грешки, тестване и валидация
    - Създаване на многократно използваеми шаблони за prompt-и и работни потоци
-   - Примерни проекти с имплементации
+   - Примерни проекти с демонстрации на имплементации
 
 6. **Разширени теми (05-AdvancedTopics/)**
    - Техники за инженеринг на контекста
@@ -151,19 +175,30 @@ mindmap
    - Подходи за мащабиране
    - Сигурност и съображения
    - Интеграция със сигурността на Entra ID
-   - Интеграция с уеб търсене
+   - Интеграция на уеб търсене
 
 7. **Приноси от общността (06-CommunityContributions/)**
    - Как да допринасяте с код и документация
    - Сътрудничество чрез GitHub
-   - Подобрения и обратна връзка от общността
+   - Подобрения и обратна връзка, водени от общността
    - Използване на различни MCP клиенти (Claude Desktop, Cline, VSCode)
    - Работа с популярни MCP сървъри, включително за генериране на изображения
 
 8. **Уроци от ранното приемане (07-LessonsfromEarlyAdoption/)**
    - Реални имплементации и успешни истории
-   - Създаване и разгръщане на решения базирани на MCP
+   - Създаване и разгръщане на решения, базирани на MCP
    - Тенденции и бъдеща пътна карта
+   - **Ръководство за Microsoft MCP сървъри**: Изчерпателно ръководство за 10 производствени Microsoft MCP сървъра, включително:
+     - Microsoft Learn Docs MCP Server
+     - Azure MCP Server (над 15 специализирани конектора)
+     - GitHub MCP Server
+     - Azure DevOps MCP Server
+     - MarkItDown MCP Server
+     - SQL Server MCP Server
+     - Playwright MCP Server
+     - Dev Box MCP Server
+     - Azure AI Foundry MCP Server
+     - Microsoft 365 Agents Toolkit MCP Server
 
 9. **Най-добри практики (08-BestPractices/)**
    - Оптимизация и настройка на производителността
@@ -171,16 +206,22 @@ mindmap
    - Стратегии за тестване и устойчивост
 
 10. **Казуси (09-CaseStudy/)**
-    - Казус: Интеграция с Azure API Management
-    - Казус: Имплементация на туристически агент
-    - Казус: Интеграция на Azure DevOps с YouTube
-    - Примери за имплементации с подробна документация
+    - Пример за интеграция с Azure API Management
+    - Пример за имплементация на туристически агент
+    - Интеграция на Azure DevOps с ъпдейти от YouTube
+    - Примери за имплементация на MCP документация
+    - Имплементационни примери с подробна документация
 
 11. **Практически уъркшоп (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Изчерпателен практичен уъркшоп, комбиниращ MCP с AI Toolkit
+    - Изчерпателен практически уъркшоп, комбиниращ MCP с AI Toolkit
     - Създаване на интелигентни приложения, свързващи AI модели с реални инструменти
     - Практически модули, обхващащи основи, разработка на персонализиран сървър и стратегии за продукционно разгръщане
-    - Обучение чрез лабораторни упражнения с инструкции стъпка по стъпка
+    - **Структура на лабораториите**:
+      - Лаборатория 1: Основи на MCP сървъра
+      - Лаборатория 2: Разширена разработка на MCP сървър
+      - Лаборатория 3: Интеграция с AI Toolkit
+      - Лаборатория 4: Продукционно разгръщане и мащабиране
+    - Обучение чрез лаборатории с инструкции стъпка по стъпка
 
 ## Допълнителни ресурси
 
@@ -198,7 +239,7 @@ mindmap
 1. **Последователно учене**: Следвайте главите в ред (от 00 до 10) за структурирано обучение.
 2. **Фокус върху конкретен език**: Ако се интересувате от определен програмен език, разгледайте директориите със семпли за имплементации на предпочитания от вас език.
 3. **Практическа имплементация**: Започнете с раздела "Първи стъпки", за да настроите средата си и да създадете първия MCP сървър и клиент.
-4. **Разширено проучване**: След като усвоите основите, преминете към разширените теми, за да задълбочите знанията си.
+4. **Разширено изследване**: След като усвоите основите, преминете към разширените теми, за да разширите знанията си.
 5. **Ангажираност с общността**: Присъединете се към MCP общността чрез GitHub дискусии и Discord канали, за да се свържете с експерти и други разработчици.
 
 ## MCP клиенти и инструменти
@@ -228,28 +269,40 @@ mindmap
 
 Хранилището представя различни MCP сървъри, включително:
 
-1. **Официални референтни сървъри**:
+1. **Официални Microsoft MCP сървъри**:
+   - Microsoft Learn Docs MCP Server
+   - Azure MCP Server (над 15 специализирани конектора)
+   - GitHub MCP Server
+   - Azure DevOps MCP Server
+   - MarkItDown MCP Server
+   - SQL Server MCP Server
+   - Playwright MCP Server
+   - Dev Box MCP Server
+   - Azure AI Foundry MCP Server
+   - Microsoft 365 Agents Toolkit MCP Server
+
+2. **Официални референтни сървъри**:
    - Filesystem
    - Fetch
    - Memory
    - Sequential Thinking
 
-2. **Генериране на изображения**:
+3. **Генериране на изображения**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
 
-3. **Инструменти за разработка**:
+4. **Инструменти за разработка**:
    - Git MCP
    - Terminal Control
    - Code Assistant
 
-4. **Специализирани сървъри**:
+5. **Специализирани сървъри**:
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
 
-## Приноси
+## Принос
 
 Това хранилище приветства приноси от общността. Вижте раздела Приноси от общността за насоки как да допринасяте ефективно за MCP екосистемата.
 
@@ -257,12 +310,13 @@ mindmap
 
 | Дата | Промени |
 |------|---------|
-| 16 юли 2025 | - Актуализирана структура на хранилището, отразяваща текущото съдържание<br>- Добавен раздел MCP клиенти и инструменти<br>- Добавен раздел Популярни MCP сървъри<br>- Обновена визуална карта на учебната програма с всички текущи теми<br>- Разширен раздел Разширени теми с всички специализирани области<br>- Актуализирани казуси с реални примери<br>- Изяснен произход на MCP като създаден от Anthropic |
+| 18 юли 2025 | - Актуализирана структура на хранилището с включено Ръководство за Microsoft MCP сървъри<br>- Добавен изчерпателен списък с 10 производствени Microsoft MCP сървъра<br>- Подсилен раздел Популярни MCP сървъри с официални Microsoft MCP сървъри<br>- Обновен раздел Казуси с реални файлови примери<br>- Добавени детайли за структурата на лабораториите в Практическия уъркшоп |
+| 16 юли 2025 | - Актуализирана структура на хранилището, отразяваща текущото съдържание<br>- Добавен раздел MCP клиенти и инструменти<br>- Добавен раздел Популярни MCP сървъри<br>- Обновена визуална карта на учебната програма с всички текущи теми<br>- Подсилен раздел Разширени теми с всички специализирани области<br>- Обновени Казуси с реални примери<br>- Изяснен произход на MCP като създаден от Anthropic |
 | 11 юни 2025 | - Първоначално създаване на учебното ръководство<br>- Добавена визуална карта на учебната програма<br>- Описана структура на хранилището<br>- Включени примерни проекти и допълнителни ресурси |
 
 ---
 
-*Това учебно ръководство е актуализирано на 16 юли 2025 г. и предоставя преглед на хранилището към тази дата. Съдържанието на хранилището може да бъде обновявано след тази дата.*
+*Това учебно ръководство е актуализирано на 18 юли 2025 г. и предоставя преглед на хранилището към тази дата. Съдържанието на хранилището може да бъде обновявано след тази дата.*
 
 **Отказ от отговорност**:  
 Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.
