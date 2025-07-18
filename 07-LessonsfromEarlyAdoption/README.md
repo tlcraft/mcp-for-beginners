@@ -53,6 +53,7 @@ A multinational corporation implemented an MCP-based solution to standardize AI 
 - Easily switch between different AI models based on specific needs
 
 **Technical Implementation:**
+
 ```python
 # Python MCP server implementation for customer support
 import logging
@@ -125,6 +126,7 @@ A healthcare provider developed an MCP infrastructure to integrate multiple spec
 - Consistent prompt engineering for medical terminology
 
 **Technical Implementation:**
+
 ```csharp
 // C# MCP host application implementation in healthcare application
 using Microsoft.Extensions.DependencyInjection;
@@ -201,6 +203,7 @@ A financial institution implemented MCP to standardize their risk analysis proce
 - Maintained consistent data formatting across diverse systems
 
 **Technical Implementation:**
+
 ```java
 // Java MCP server for financial risk assessment
 import org.mcp.server.*;
@@ -249,6 +252,7 @@ Microsoft developed the [Playwright MCP server](https://github.com/microsoft/pla
 - Powers GitHub Copilot's Coding Agent with web browsing capabilities
 
 **Technical Implementation:**
+
 ```typescript
 // TypeScript: Registering Playwright browser automation tools in an MCP server
 import { createServer, ToolDefinition } from 'modelcontextprotocol';
@@ -283,13 +287,15 @@ server.tools.register(
 server.listen(8080);
 ```
 
-**Results:**  
+**Results:**
+
 - Enabled secure, programmatic browser automation for AI agents and LLMs
 - Reduced manual testing effort and improved test coverage for web applications
 - Provided a reusable, extensible framework for browser-based tool integration in enterprise environments
 - Powers GitHub Copilot's web browsing capabilities
 
-**References:**  
+**References:**
+
 - [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)
 - [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
 
@@ -309,6 +315,7 @@ Azure MCP Server ([https://aka.ms/azmcp](https://aka.ms/azmcp)) is Microsoft’s
 - Compliance with enterprise security and regulatory requirements
 
 **Technical Implementation:**
+
 ```yaml
 # Example: Azure MCP server deployment configuration (YAML)
 apiVersion: mcp.microsoft.com/v1
@@ -335,7 +342,7 @@ spec:
 ```
 
 **Results:**  
-- Reduced time-to-value for enterprise AI projects by providing ready-to-use, compliant MCP server platform
+- Reduced time-to-value for enterprise AI projects by providing a ready-to-use, compliant MCP server platform
 - Simplified integration of LLMs, tools, and enterprise data sources
 - Enhanced security, observability, and operational efficiency for MCP workloads
 - Improved code quality with Azure SDK best practices and current authentication patterns
@@ -345,36 +352,16 @@ spec:
 - [Azure MCP Server GitHub Repository](https://github.com/Azure/azure-mcp)
 - [Azure AI Services](https://azure.microsoft.com/en-us/products/ai-services/)
 
-### Case Study 6: NLWeb – Natural Language Web Interface Protocol
+## Case Study 6: NLWeb 
+MCP (Model Context Protocol) is an emerging protocol for Chatbots and AI assistants to interact with tools. Every NLWeb instance is also an MCP server, which supports one core method, ask, which is used to ask a website a question in natural language. The returned response leverages schema.org, a widely-used vocabulary for describing web data. Loosely speaking, MCP is NLWeb as Http is to HTML. NLWeb combines protocols, Schema.org formats, and sample code to help sites rapidly create these endpoints, benefiting both humans through conversational interfaces and machines through natural agent-to-agent interaction.
 
-NLWeb represents Microsoft's vision for establishing a foundational layer for the AI Web. Every NLWeb instance is also an MCP server, which supports one core method, `ask`, used to ask a website a question in natural language. The returned response leverages schema.org, a widely-used vocabulary for describing web data. Loosely speaking, MCP is to NLWeb as HTTP is to HTML.
-
-**Key Features:**
-- **Protocol Layer**: A simple protocol to interface with websites in natural language
-- **Schema.org Format**: Leverages JSON and schema.org for structured, machine-readable responses
-- **Community Implementation**: Straightforward implementation for sites that can be abstracted as lists of items (products, recipes, attractions, reviews, etc.)
-- **UI Widgets**: Pre-built user interface components for conversational interfaces
-
-**Architecture Components:**
-1. **Protocol**: Simple REST API for natural language queries to websites
-2. **Implementation**: Leverages existing markup and site structure for automated responses
-3. **UI Widgets**: Ready-to-use components for integrating conversational interfaces
-
-**Benefits:**
-- Enables both human-to-site and agent-to-agent interaction
-- Provides structured data responses that AI systems can easily process
-- Rapid deployment for sites with list-based content structures
-- Standardized approach to making websites AI-accessible
-
-**Results:**
-- Established foundation for AI-web interaction standards
-- Simplified creation of conversational interfaces for content sites
-- Enhanced discoverability and accessibility of web content for AI systems
-- Promoted interoperability between different AI agents and web services
-
+There are two distinct components to NLWeb.
+- A protocol, very simple to begin with, to interface with a site in natural language and a format, leveraging json and schema.org for the returned answer. See the documentation on the REST API for more details.
+- A straightforward implementation of (1) that leverages existing markup, for sites that can be abstracted as lists of items (products, recipes, attractions, reviews, etc.). Together with a set of user interface widgets, sites can easily provide conversational interfaces to their content. See the documentation on Life of a chat query for more details on how this works.
+ 
 **References:**  
-- [NLWeb GitHub Repository](https://github.com/microsoft/NlWeb)
-- [NLWeb Documentation](https://github.com/microsoft/NlWeb)
+- [Azure MCP Documentation](https://aka.ms/azmcp)
+- [NLWeb](https://github.com/microsoft/NlWeb)
 
 ### Case Study 7: Azure AI Foundry MCP Server – Enterprise AI Agent Integration
 
@@ -407,6 +394,7 @@ Azure AI Foundry MCP servers demonstrate how MCP can be used to orchestrate and 
 The Foundry MCP Playground offers a ready-to-use environment for experimenting with MCP servers and Azure AI Foundry integrations. Developers can quickly prototype, test, and evaluate AI models and agent workflows using resources from the Azure AI Foundry Catalog and Labs. The playground streamlines setup, provides sample projects, and supports collaborative development, making it easy to explore best practices and new scenarios with minimal overhead. It is especially useful for teams looking to validate ideas, share experiments, and accelerate learning without the need for complex infrastructure. By lowering the barrier to entry, the playground helps foster innovation and community contributions in the MCP and Azure AI Foundry ecosystem.
 
 **References:**
+
 - [Foundry MCP Playground GitHub Repository](https://github.com/azure-ai-foundry/foundry-mcp-playground)
 
 ### Case Study 9: Microsoft Learn Docs MCP Server – AI-Powered Documentation Access
@@ -447,6 +435,7 @@ The Microsoft Learn Docs MCP Server is a cloud-hosted service that provides AI a
 **Objective:** Create an MCP server that can route requests to multiple AI model providers based on specific criteria.
 
 **Requirements:**
+
 - Support at least three different model providers (e.g., OpenAI, Anthropic, local models)
 - Implement a routing mechanism based on request metadata
 - Create a configuration system for managing provider credentials
@@ -454,6 +443,7 @@ The Microsoft Learn Docs MCP Server is a cloud-hosted service that provides AI a
 - Build a simple dashboard for monitoring usage
 
 **Implementation Steps:**
+
 1. Set up the basic MCP server infrastructure
 2. Implement provider adapters for each AI model service
 3. Create the routing logic based on request attributes
@@ -468,6 +458,7 @@ The Microsoft Learn Docs MCP Server is a cloud-hosted service that provides AI a
 **Objective:** Develop an MCP-based system for managing, versioning, and deploying prompt templates across an organization.
 
 **Requirements:**
+
 - Create a centralized repository for prompt templates
 - Implement versioning and approval workflows
 - Build template testing capabilities with sample inputs
@@ -475,6 +466,7 @@ The Microsoft Learn Docs MCP Server is a cloud-hosted service that provides AI a
 - Create an API for template retrieval and deployment
 
 **Implementation Steps:**
+
 1. Design the database schema for template storage
 2. Create the core API for template CRUD operations
 3. Implement the versioning system
@@ -490,6 +482,7 @@ The Microsoft Learn Docs MCP Server is a cloud-hosted service that provides AI a
 **Objective:** Build a content generation platform that leverages MCP to provide consistent results across different content types.
 
 **Requirements:**
+
 - Support multiple content formats (blog posts, social media, marketing copy)
 - Implement template-based generation with customization options
 - Create a content review and feedback system
@@ -497,6 +490,7 @@ The Microsoft Learn Docs MCP Server is a cloud-hosted service that provides AI a
 - Support content versioning and iteration
 
 **Implementation Steps:**
+
 1. Set up the MCP client infrastructure
 2. Create templates for different content types
 3. Build the content generation pipeline
@@ -535,17 +529,18 @@ The Microsoft Learn Docs MCP Server is a cloud-hosted service that provides AI a
    - Standardized audit trails and explainability interfaces
    - Integration with emerging AI governance frameworks
 
-
-### MCP Solutions from Microsoft 
+### MCP Solutions from Microsoft
 
 Microsoft and Azure have developed several open-source repositories to help developers implement MCP in various scenarios:
 
 #### Microsoft Organization
+
 1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - A Playwright MCP server for browser automation and testing
 2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - A OneDrive MCP server implementation for local testing and community contribution
-3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb is a collection of open protocols and associated open source tools. Its main focus is establishing a foundational layer for the AI Web 
- 
+3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb is a collection of open protocols and associated open source tools. Its main focus is establishing a foundational layer for the AI Web
+
 #### Azure-Samples Organization
+
 1. [mcp](https://github.com/Azure-Samples/mcp) - Links to samples, tools, and resources for building and integrating MCP servers on Azure using multiple languages
 2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Reference MCP servers demonstrating authentication with the current Model Context Protocol specification
 3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Landing page for Remote MCP Server implementations in Azure Functions with links to language-specific repos
@@ -569,6 +564,7 @@ The [MCP Resources directory](https://github.com/microsoft/mcp/tree/main/Resourc
 These resources accelerate development, promote standardization, and help ensure best practices when building and deploying MCP-based solutions.
 
 #### MCP Resources Directory
+
 - [MCP Resources (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)
 
 ### Research Opportunities
