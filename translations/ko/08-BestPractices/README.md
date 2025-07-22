@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "80e5c8949af5af0f401fce6f905990aa",
-  "translation_date": "2025-07-16T21:44:28+00:00",
+  "original_hash": "0728873f4271f8c19105619921e830d9",
+  "translation_date": "2025-07-22T07:55:02+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "ko"
 }
@@ -11,80 +11,82 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 개요
 
-이 강의는 MCP 서버와 기능을 프로덕션 환경에서 개발, 테스트 및 배포할 때 적용할 수 있는 고급 모범 사례에 중점을 둡니다. MCP 생태계가 점점 복잡해지고 중요해짐에 따라, 검증된 패턴을 따르는 것이 신뢰성, 유지보수성, 상호운용성을 보장하는 데 필수적입니다. 이 강의는 실제 MCP 구현에서 얻은 실용적인 지혜를 모아, 효과적인 리소스, 프롬프트, 도구를 갖춘 견고하고 효율적인 서버를 만드는 데 도움을 드립니다.
+이 강의는 MCP 서버와 기능을 프로덕션 환경에서 개발, 테스트, 배포할 때의 고급 모범 사례에 중점을 둡니다. MCP 생태계가 점점 더 복잡하고 중요해짐에 따라, 확립된 패턴을 따르는 것은 신뢰성, 유지보수성, 상호운용성을 보장하는 데 필수적입니다. 이 강의는 실제 MCP 구현에서 얻은 실질적인 지혜를 통합하여, 효과적인 리소스, 프롬프트, 도구를 갖춘 견고하고 효율적인 서버를 만드는 데 도움을 줍니다.
 
 ## 학습 목표
 
-이 강의를 마치면 다음을 할 수 있습니다:
-- MCP 서버 및 기능 설계에 업계 모범 사례 적용
-- MCP 서버를 위한 포괄적인 테스트 전략 수립
-- 복잡한 MCP 애플리케이션을 위한 효율적이고 재사용 가능한 워크플로우 패턴 설계
-- MCP 서버에서 적절한 오류 처리, 로깅, 관측성 구현
-- 성능, 보안, 유지보수성을 고려한 MCP 구현 최적화
+이 강의를 마치면 다음을 수행할 수 있습니다:
+
+- MCP 서버와 기능 설계에서 업계 모범 사례를 적용
+- MCP 서버에 대한 포괄적인 테스트 전략 수립
+- 복잡한 MCP 애플리케이션을 위한 효율적이고 재사용 가능한 워크플로 패턴 설계
+- MCP 서버에서 적절한 오류 처리, 로깅, 가시성 구현
+- 성능, 보안, 유지보수성을 최적화한 MCP 구현
 
 ## MCP 핵심 원칙
 
-구체적인 구현 방법에 들어가기 전에, 효과적인 MCP 개발을 이끄는 핵심 원칙을 이해하는 것이 중요합니다:
+구체적인 구현 사례로 들어가기 전에, 효과적인 MCP 개발을 이끄는 핵심 원칙을 이해하는 것이 중요합니다:
 
-1. **표준화된 통신**: MCP는 JSON-RPC 2.0을 기반으로 하여 모든 구현에서 요청, 응답, 오류 처리를 일관된 형식으로 제공합니다.
+1. **표준화된 통신**: MCP는 JSON-RPC 2.0을 기반으로 하며, 모든 구현에서 요청, 응답, 오류 처리를 위한 일관된 형식을 제공합니다.
 
-2. **사용자 중심 설계**: 항상 사용자 동의, 제어, 투명성을 최우선으로 고려하세요.
+2. **사용자 중심 설계**: MCP 구현에서 항상 사용자 동의, 제어, 투명성을 우선시하십시오.
 
-3. **보안 우선**: 인증, 권한 부여, 검증, 속도 제한 등 강력한 보안 조치를 구현하세요.
+3. **보안 우선**: 인증, 권한 부여, 유효성 검사, 속도 제한을 포함한 강력한 보안 조치를 구현하십시오.
 
-4. **모듈화 아키텍처**: 각 도구와 리소스가 명확하고 집중된 목적을 갖도록 MCP 서버를 모듈화하여 설계하세요.
+4. **모듈형 아키텍처**: 각 도구와 리소스가 명확하고 집중된 목적을 가지도록 MCP 서버를 모듈형으로 설계하십시오.
 
-5. **상태 유지 연결**: 여러 요청에 걸쳐 상태를 유지하는 MCP의 기능을 활용해 더 일관되고 맥락을 인지하는 상호작용을 구현하세요.
+5. **상태 유지 연결**: 여러 요청에 걸쳐 상태를 유지할 수 있는 MCP의 기능을 활용하여 더 일관되고 컨텍스트를 고려한 상호작용을 만드십시오.
 
 ## 공식 MCP 모범 사례
 
-다음 모범 사례는 공식 Model Context Protocol 문서에서 발췌한 내용입니다:
+다음 모범 사례는 공식 Model Context Protocol 문서에서 파생되었습니다:
 
 ### 보안 모범 사례
 
-1. **사용자 동의 및 제어**: 데이터 접근이나 작업 수행 전에 항상 명시적인 사용자 동의를 요구하세요. 어떤 데이터가 공유되고 어떤 작업이 허용되는지 명확히 제어할 수 있도록 하세요.
+1. **사용자 동의와 제어**: 데이터를 액세스하거나 작업을 수행하기 전에 항상 명시적인 사용자 동의를 요구하십시오. 공유되는 데이터와 승인된 작업에 대해 명확한 제어를 제공하십시오.
 
-2. **데이터 프라이버시**: 명시적 동의가 있는 경우에만 사용자 데이터를 노출하고 적절한 접근 제어로 보호하세요. 무단 데이터 전송을 방지하세요.
+2. **데이터 프라이버시**: 명시적인 동의 없이 사용자 데이터를 노출하지 말고, 적절한 액세스 제어로 보호하십시오. 무단 데이터 전송을 방지하십시오.
 
-3. **도구 안전성**: 도구를 호출하기 전에 반드시 명시적 사용자 동의를 받으세요. 각 도구의 기능을 사용자가 이해하도록 하고, 강력한 보안 경계를 적용하세요.
+3. **도구 안전성**: 도구를 호출하기 전에 명시적인 사용자 동의를 요구하십시오. 각 도구의 기능을 사용자에게 명확히 이해시키고 강력한 보안 경계를 적용하십시오.
 
-4. **도구 권한 제어**: 세션 중 모델이 사용할 수 있는 도구를 구성하여 명시적으로 허가된 도구만 접근 가능하도록 하세요.
+4. **도구 권한 제어**: 세션 중 모델이 사용할 수 있는 도구를 구성하여 명시적으로 승인된 도구만 접근 가능하도록 하십시오.
 
-5. **인증**: API 키, OAuth 토큰 등 안전한 인증 방식을 통해 도구, 리소스, 민감한 작업에 접근하기 전에 적절한 인증을 요구하세요.
+5. **인증**: API 키, OAuth 토큰 또는 기타 안전한 인증 방법을 사용하여 도구, 리소스 또는 민감한 작업에 대한 액세스를 부여하기 전에 적절한 인증을 요구하십시오.
 
-6. **매개변수 검증**: 모든 도구 호출에 대해 검증을 시행하여 잘못되거나 악의적인 입력이 도구 구현에 도달하지 않도록 하세요.
+6. **매개변수 유효성 검사**: 도구 구현에 잘못된 입력이나 악의적인 입력이 전달되지 않도록 모든 도구 호출에 대해 유효성 검사를 적용하십시오.
 
-7. **속도 제한**: 남용을 방지하고 서버 자원의 공정한 사용을 보장하기 위해 속도 제한을 구현하세요.
+7. **속도 제한**: 남용을 방지하고 서버 리소스의 공정한 사용을 보장하기 위해 속도 제한을 구현하십시오.
 
 ### 구현 모범 사례
 
-1. **기능 협상**: 연결 설정 시 지원하는 기능, 프로토콜 버전, 사용 가능한 도구 및 리소스 정보를 교환하세요.
+1. **기능 협상**: 연결 설정 중 지원되는 기능, 프로토콜 버전, 사용 가능한 도구 및 리소스에 대한 정보를 교환하십시오.
 
-2. **도구 설계**: 여러 기능을 한꺼번에 처리하는 거대 도구 대신, 한 가지 작업에 집중하는 도구를 만드세요.
+2. **도구 설계**: 여러 문제를 처리하려는 거대한 도구 대신, 특정 작업에 특화된 도구를 만드십시오.
 
-3. **오류 처리**: 문제 진단, 실패 우아한 처리, 실행 가능한 피드백 제공을 위해 표준화된 오류 메시지와 코드를 구현하세요.
+3. **오류 처리**: 문제를 진단하고, 실패를 우아하게 처리하며, 실행 가능한 피드백을 제공할 수 있도록 표준화된 오류 메시지와 코드를 구현하십시오.
 
-4. **로깅**: 프로토콜 상호작용을 감사, 디버깅, 모니터링할 수 있도록 구조화된 로그를 설정하세요.
+4. **로깅**: 프로토콜 상호작용을 감사, 디버깅, 모니터링할 수 있도록 구조화된 로그를 구성하십시오.
 
-5. **진행 상황 추적**: 장시간 실행 작업에 대해 진행 상황 업데이트를 보고하여 반응성 높은 UI를 지원하세요.
+5. **진행 상황 추적**: 장시간 실행되는 작업의 경우, 진행 상황 업데이트를 보고하여 반응형 사용자 인터페이스를 가능하게 하십시오.
 
-6. **요청 취소**: 더 이상 필요 없거나 너무 오래 걸리는 진행 중인 요청을 클라이언트가 취소할 수 있도록 허용하세요.
+6. **요청 취소**: 더 이상 필요하지 않거나 너무 오래 걸리는 요청을 클라이언트가 취소할 수 있도록 허용하십시오.
 
 ## 추가 참고 자료
 
-최신 MCP 모범 사례 정보는 다음을 참고하세요:
+MCP 모범 사례에 대한 최신 정보를 확인하려면 다음을 참조하십시오:
+
 - [MCP Documentation](https://modelcontextprotocol.io/)
 - [MCP Specification](https://spec.modelcontextprotocol.io/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 - [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
-## 실용적 구현 예시
+## 실질적인 구현 예제
 
 ### 도구 설계 모범 사례
 
 #### 1. 단일 책임 원칙
 
-각 MCP 도구는 명확하고 집중된 목적을 가져야 합니다. 여러 기능을 한꺼번에 처리하려는 거대 도구 대신, 특정 작업에 특화된 도구를 개발하세요.
+각 MCP 도구는 명확하고 집중된 목적을 가져야 합니다. 여러 문제를 처리하려는 거대한 도구를 만드는 대신, 특정 작업에 특화된 도구를 개발하십시오.
 
 ```csharp
 // A focused tool that does one thing well
@@ -146,7 +148,7 @@ public class WeatherForecastTool : ITool
 
 #### 2. 일관된 오류 처리
 
-정보가 풍부한 오류 메시지와 적절한 복구 메커니즘을 갖춘 견고한 오류 처리를 구현하세요.
+정보 제공 오류 메시지와 적절한 복구 메커니즘을 갖춘 강력한 오류 처리를 구현하십시오.
 
 ```python
 # Python example with comprehensive error handling
@@ -205,9 +207,9 @@ class DataQueryTool:
         pass
 ```
 
-#### 3. 매개변수 검증
+#### 3. 매개변수 유효성 검사
 
-잘못되거나 악의적인 입력을 방지하기 위해 항상 매개변수를 철저히 검증하세요.
+항상 매개변수를 철저히 검증하여 잘못된 입력이나 악의적인 입력을 방지하십시오.
 
 ```javascript
 // JavaScript/TypeScript example with detailed parameter validation
@@ -290,7 +292,7 @@ class FileOperationTool {
 }
 ```
 
-### 보안 구현 예시
+### 보안 구현 예제
 
 #### 1. 인증 및 권한 부여
 
@@ -438,7 +440,7 @@ public class RateLimitingMiddleware
 
 ### 1. MCP 도구 단위 테스트
 
-외부 의존성을 모킹하여 도구를 독립적으로 항상 테스트하세요:
+외부 종속성을 모킹하여 도구를 독립적으로 테스트하십시오:
 
 ```typescript
 // TypeScript example of a tool unit test
@@ -496,7 +498,7 @@ describe('WeatherForecastTool', () => {
 
 ### 2. 통합 테스트
 
-클라이언트 요청부터 서버 응답까지 전체 흐름을 테스트하세요:
+클라이언트 요청에서 서버 응답까지의 전체 흐름을 테스트하십시오:
 
 ```python
 # Python integration test example
@@ -535,7 +537,7 @@ async def test_mcp_server_integration():
 
 ### 1. 캐싱 전략
 
-지연 시간과 자원 사용을 줄이기 위해 적절한 캐싱을 구현하세요:
+지연 시간과 리소스 사용량을 줄이기 위해 적절한 캐싱을 구현하십시오:
 
 ```csharp
 // C# example with caching
@@ -608,7 +610,7 @@ public class CachedWeatherTool : ITool
 Design tools to receive their dependencies through constructor injection, making them testable and configurable:
 
 ```java
-// 의존성 주입을 활용한 Java 예시
+// 의존성 주입을 활용한 Java 예제
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
@@ -634,7 +636,7 @@ public class CurrencyConversionTool implements Tool {
 Design tools that can be composed together to create more complex workflows:
 
 ```python
-# 조합 가능한 도구를 보여주는 Python 예시
+# Python 예제: 조합 가능한 도구
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
@@ -659,7 +661,7 @@ class DataVisualizationTool(Tool):
         # 구현...
         pass
 
-# 이 도구들은 독립적으로 또는 워크플로우의 일부로 사용 가능
+# 이 도구들은 독립적으로 또는 워크플로의 일부로 사용할 수 있음
 ```
 
 ### Schema Design Best Practices
@@ -678,7 +680,7 @@ public object GetSchema()
         properties = new {
             query = new { 
                 type = "string", 
-                description = "검색 쿼리 텍스트입니다. 더 나은 결과를 위해 정확한 키워드를 사용하세요." 
+                description = "검색 쿼리 텍스트. 더 나은 결과를 위해 정확한 키워드를 사용하세요." 
             },
             filters = new {
                 type = "object",
@@ -686,7 +688,7 @@ public object GetSchema()
                 properties = new {
                     dateRange = new { 
                         type = "string", 
-                        description = "날짜 범위 (형식: YYYY-MM-DD:YYYY-MM-DD)" 
+                        description = "날짜 범위 형식 YYYY-MM-DD:YYYY-MM-DD" 
                     },
                     category = new { 
                         type = "string", 
@@ -716,18 +718,18 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // 이메일 속성 및 형식 검증
+    // 이메일 속성: 형식 유효성 검사 포함
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
     email.put("description", "사용자 이메일 주소");
     
-    // 나이 속성 및 숫자 제약 조건
+    // 나이 속성: 숫자 제약 조건 포함
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
-    age.put("description", "사용자 나이 (년 단위)");
+    age.put("description", "사용자 나이 (연령)");
     
     // 열거형 속성
     Map<String, Object> subscription = new HashMap<>();
@@ -778,7 +780,7 @@ async def execute_async(self, request):
         )
     
 def _format_item(self, item):
-    """각 항목이 일관된 구조를 갖도록 보장"""
+    """각 항목이 일관된 구조를 가지도록 보장"""
     return {
         "id": item.id,
         "title": item.title,
@@ -820,18 +822,18 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
         }
         catch (Exception ex) when (ex is IOException || ex is TimeoutException)
         {
-            _logger.LogError(ex, "파일 접근 중 오류 발생 {FileId}", fileId);
-            throw new ToolExecutionException("파일 접근 오류: 서비스가 일시적으로 사용 불가합니다");
+            _logger.LogError(ex, "파일 {FileId} 접근 중 오류 발생", fileId);
+            throw new ToolExecutionException("파일 접근 오류: 서비스가 일시적으로 사용 불가능합니다");
         }
     }
     catch (JsonException)
     {
-        throw new ToolExecutionException("잘못된 파일 ID 형식입니다");
+        throw new ToolExecutionException("잘못된 파일 ID 형식");
     }
     catch (Exception ex)
     {
-        _logger.LogError(ex, "FileAccessTool에서 예상치 못한 오류 발생");
-        throw new ToolExecutionException("예상치 못한 오류가 발생했습니다");
+        _logger.LogError(ex, "FileAccessTool에서 예기치 않은 오류 발생");
+        throw new ToolExecutionException("예기치 않은 오류가 발생했습니다");
     }
 }
 ```
@@ -885,14 +887,14 @@ async def execute_async(self, request):
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
-                raise ToolExecutionException(f"{max_retries}회 시도 후 실패: {str(e)}")
+                raise ToolExecutionException(f"{max_retries}번 시도 후 작업 실패: {str(e)}")
                 
             # 지수 백오프
             delay = base_delay * (2 ** (retry_count - 1))
-            logging.warning(f"일시적 오류 발생, {delay}초 후 재시도: {str(e)}")
+            logging.warning(f"일시적 오류, {delay}초 후 재시도: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # 일시적 오류가 아닌 경우 재시도하지 않음
+            # 비일시적 오류, 재시도하지 않음
             raise ToolExecutionException(f"작업 실패: {str(e)}")
 ```
 
@@ -932,7 +934,7 @@ ExecuteAsync(ToolRequest request)
     // 캐시 미스 - 실제 쿼리 수행
     var result = await _database.QueryAsync(query);
     
-    // 만료 시간을 설정하여 캐시에 저장
+    // 만료 시간과 함께 캐시에 저장
     var cacheOptions = new MemoryCacheEntryOptions()
         .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
         
@@ -944,7 +946,6 @@ ExecuteAsync(ToolRequest request)
 private string ComputeHash(string input)
 {
     // 캐시 키를 위한 안정적인 해시 생성 구현
-}
 }
 ```
 
@@ -967,10 +968,10 @@ public class AsyncDocumentProcessingTool implements Tool {
         // 비동기 처리 시작
         CompletableFuture.runAsync(() -> {
             try {
-                // 장시간 작업 수행
+                // 장시간 실행되는 작업 수행
                 documentService.processDocument(documentId);
                 
-                // 상태 업데이트 (보통 데이터베이스에 저장됨)
+                // 상태 업데이트 (일반적으로 데이터베이스에 저장됨)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
@@ -986,7 +987,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // 상태 확인용 도구
+    // 상태 확인 도구
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -1008,23 +1009,23 @@ class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
             tokens_per_second=5,  # 초당 5개의 요청 허용
-            bucket_size=10        # 최대 10개의 버스트 허용
+            bucket_size=10        # 최대 10개의 요청 허용
         )
     
     async def execute_async(self, request):
-        # 진행 가능 여부 또는 대기 필요 여부 확인
+        # 진행 가능 여부 확인 또는 대기 필요 여부 확인
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # 대기 시간이 너무 길면
+            if delay > 2.0:  # 대기 시간이 너무 긴 경우
                 raise ToolExecutionException(
-                    f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
+                    f"요청 제한 초과. {delay:.1f}초 후 다시 시도하세요."
                 )
             else:
                 # 적절한 대기 시간 동안 대기
                 await asyncio.sleep(delay)
         
-        # 토큰 소비 후 요청 진행
+        # 토큰을 소비하고 요청 진행
         self.rate_limiter.consume()
         
         # API 호출
@@ -1045,7 +1046,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # 다음 토큰이 사용 가능해질 때까지 시간 계산
+            # 다음 토큰이 사용 가능해질 때까지의 시간 계산
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1078,7 +1079,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
         throw new ToolExecutionException("필수 매개변수 누락: query");
     }
     
-    // 올바른 타입인지 확인
+    // 올바른 유형 확인
     if (queryProp.ValueKind != JsonValueKind.String)
     {
         throw new ToolExecutionException("Query 매개변수는 문자열이어야 합니다");
@@ -1086,7 +1087,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
     
     var query = queryProp.GetString();
     
-    // 문자열 내용 검증
+    // 문자열 내용 확인
     if (string.IsNullOrWhiteSpace(query))
     {
         throw new ToolExecutionException("Query 매개변수는 비어 있을 수 없습니다");
@@ -1094,13 +1095,13 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
     
     if (query.Length > 500)
     {
-        throw new ToolExecutionException("Query 매개변수가 최대 길이 500자를 초과했습니다");
+        throw new ToolExecutionException("Query 매개변수가 최대 길이 500자를 초과합니다");
     }
     
-    // SQL 인젝션 공격 여부 확인 (해당되는 경우)
+    // SQL 삽입 공격 여부 확인 (적용 가능한 경우)
     if (ContainsSqlInjection(query))
     {
-        throw new ToolExecutionException("잘못된 쿼리: 잠재적으로 위험한 SQL 포함");
+        throw new ToolExecutionException("유효하지 않은 쿼리: 잠재적으로 안전하지 않은 SQL 포함");
     }
     
     // 실행 진행
@@ -1120,13 +1121,13 @@ public ToolResponse execute(ToolRequest request) {
     
     // 사용자가 필요한 권한을 가지고 있는지 확인
     if (!authorizationService.hasPermission(user, "documents:read")) {
-        throw new ToolExecutionException("사용자에게 문서 접근 권한이 없습니다");
+        throw new ToolExecutionException("사용자가 문서에 접근할 권한이 없습니다");
     }
     
-    // 특정 리소스에 대해 해당 리소스 접근 권한 확인
+    // 특정 리소스에 대해 해당 리소스에 대한 접근 확인
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
-        throw new ToolExecutionException("요청한 문서에 대한 접근이 거부되었습니다");
+        throw new ToolExecutionException("요청된 문서에 대한 접근이 거부되었습니다");
     }
     
     // 도구 실행 진행
@@ -1157,7 +1158,7 @@ class SecureDataTool(Tool):
         # 사용자 데이터 가져오기
         user_data = await self.user_service.get_user_data(user_id)
         
-        # 명시적으로 요청하고 권한이 없으면 민감한 필드 필터링
+        # 민감한 필드를 필터링 (명시적으로 요청되고 권한이 있는 경우 제외)
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
@@ -1169,16 +1170,16 @@ class SecureDataTool(Tool):
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # 원본을 변경하지 않도록 복사본 생성
+        # 원본을 수정하지 않도록 복사본 생성
         redacted = user_data.copy()
         
-        # 특정 민감 필드 가리기
+        # 특정 민감한 필드 숨김 처리
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # 중첩된 민감 데이터 가리기
+        # 중첩된 민감한 데이터 숨김 처리
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
@@ -1232,7 +1233,7 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("InvalidLocation", It.IsAny<int>()))
-        .ThrowsAsync(new LocationNotFoundException("Location not found"));
+        .ThrowsAsync(new LocationNotFoundException("위치를 찾을 수 없습니다"));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -1249,7 +1250,7 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
         () => tool.ExecuteAsync(request)
     );
     
-    Assert.Contains("Location not found", exception.Message);
+    Assert.Contains("위치를 찾을 수 없습니다", exception.Message);
 }
 ```
 
@@ -1266,10 +1267,10 @@ public void testSchemaValidation() {
     // 스키마 가져오기
     Object schema = searchTool.getSchema();
     
-    // 검증을 위해 스키마를 JSON으로 변환
+    // 스키마를 JSON으로 변환하여 검증
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // 스키마가 유효한 JSONSchema인지 검증
+    // 스키마가 유효한 JSONSchema인지 확인
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
@@ -1288,7 +1289,7 @@ public void testSchemaValidation() {
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // 잘못된 매개변수 타입 테스트
+    // 잘못된 매개변수 유형 테스트
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1308,11 +1309,11 @@ async def test_api_tool_handles_timeout():
     # 준비
     tool = ApiTool(timeout=0.1)  # 매우 짧은 타임아웃
     
-    # 타임아웃이 발생하는 요청 모킹
+    # 타임아웃이 발생할 요청 모의
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # 타임아웃보다 긴 대기
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # 타임아웃보다 긴 시간
         )
         
         request = ToolRequest(
@@ -1332,13 +1333,13 @@ async def test_api_tool_handles_rate_limiting():
     # 준비
     tool = ApiTool()
     
-    # 레이트 제한 응답 모킹
+    # 요청 제한 응답 모의
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
             status=429,
             headers={"Retry-After": "2"},
-            body=json.dumps({"error": "Rate limit exceeded"})
+            body=json.dumps({"error": "요청 제한 초과"})
         )
         
         request = ToolRequest(
@@ -1350,7 +1351,7 @@ async def test_api_tool_handles_rate_limiting():
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # 예외 메시지에 레이트 제한 정보 포함 여부 확인
+        # 예외에 요청 제한 정보 포함 여부 확인
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
@@ -1379,20 +1380,21 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
     var workflowExecutor = new WorkflowExecutor(toolRegistry);
     
     // 실행
+```markdown
 var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
     new ToolCall("dataFetch", new { source = "sales2023" }),
-    new ToolCall("dataAnalysis", ctx =>
-        new { 
-            data = ctx.GetResult("dataFetch"),
-            analysis = "trend" 
-        }),
+    new ToolCall("dataAnalysis", ctx =
+> new { 
+        data = ctx.GetResult("dataFetch"),
+        analysis = "trend" 
+    }),
     new ToolCall("dataVisualize", ctx => new {
         analysisResult = ctx.GetResult("dataAnalysis"),
         type = "line-chart"
     })
 });
 
-// 검증
+// 확인
 Assert.NotNull(result);
 Assert.True(result.Success);
 Assert.NotNull(result.GetResult("dataVisualize"));
@@ -1417,7 +1419,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // discovery 엔드포인트 테스트
+        // 도구 검색 엔드포인트 테스트
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1438,7 +1440,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // 요청 전송 및 응답 검증
+        // 요청 전송 및 응답 확인
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1455,10 +1457,10 @@ public class McpServerIntegrationTest {
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // "b" 파라미터 누락
+        // 누락된 매개변수 "b"
         request.put("parameters", parameters);
         
-        // 요청 전송 및 오류 응답 검증
+        // 요청 전송 및 오류 응답 확인
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1475,25 +1477,25 @@ Test complete workflows from model prompt to tool execution:
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # 준비 - MCP 클라이언트 및 모의 모델 설정
+    # 준비 - MCP 클라이언트 및 모형 설정
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # 모의 모델 응답 설정
+    # 모형 응답 모의
     mock_model = MockLanguageModel([
         MockResponse(
-            "What's the weather in Seattle?",
+            "시애틀의 날씨는 어떻습니까?",
             tool_calls=[{
                 "tool_name": "weatherForecast",
                 "parameters": {"location": "Seattle", "days": 3}
             }]
         ),
         MockResponse(
-            "Here's the weather forecast for Seattle:\n- Today: 65°F, Partly Cloudy\n- Tomorrow: 68°F, Sunny\n- Day after: 62°F, Rain",
+            "시애틀의 날씨 예보는 다음과 같습니다:\n- 오늘: 65°F, 부분적으로 흐림\n- 내일: 68°F, 맑음\n- 모레: 62°F, 비",
             tool_calls=[]
         )
     ])
     
-    # 모의 날씨 도구 응답
+    # 날씨 도구 응답 모의
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1511,12 +1513,12 @@ async def test_model_interaction_with_tool():
         
         # 실행
         response = await mcp_client.send_prompt(
-            "What's the weather in Seattle?",
+            "시애틀의 날씨는 어떻습니까?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # 검증
+        # 확인
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1556,7 +1558,7 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var results = await Task.WhenAll(tasks);
     
-    // 검증
+    // 확인
     Assert.Equal(1000, results.Length);
     Assert.All(results, r => Assert.NotNull(r));
 }
@@ -1573,14 +1575,14 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // JMeter를 이용한 부하 테스트 설정
+    // JMeter를 사용한 스트레스 테스트 설정
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // JMeter 테스트 플랜 구성
+    // JMeter 테스트 계획 구성
     HashTree testPlanTree = new HashTree();
     
-    // 테스트 플랜, 스레드 그룹, 샘플러 등 생성
-    TestPlan testPlan = new TestPlan("MCP Server Stress Test");
+    // 테스트 계획, 스레드 그룹, 샘플러 등 생성
+    TestPlan testPlan = new TestPlan("MCP 서버 스트레스 테스트");
     testPlanTree.add(testPlan);
     
     ThreadGroup threadGroup = new ThreadGroup();
@@ -1610,10 +1612,10 @@ public void testServerUnderStress() {
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // 결과 검증
+    // 결과 확인
     assertEquals(0, summaryReport.getErrorCount());
     assertTrue(summaryReport.getAverage() < 200); // 평균 응답 시간 < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90번째 백분위수 < 500ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90번째 백분위 < 500ms
 }
 ```
 
@@ -1622,14 +1624,14 @@ public void testServerUnderStress() {
 Set up monitoring for long-term performance analysis:
 
 ```python
-# MCP 서버 모니터링 설정
+# MCP 서버 모니터링 구성
 def configure_monitoring(server):
     # Prometheus 메트릭 설정
     prometheus_metrics = {
         "request_count": Counter("mcp_requests_total", "총 MCP 요청 수"),
         "request_latency": Histogram(
             "mcp_request_duration_seconds", 
-            "요청 처리 시간(초)",
+            "요청 지속 시간(초)",
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_execution_count": Counter(
@@ -1639,7 +1641,7 @@ def configure_monitoring(server):
         ),
         "tool_execution_latency": Histogram(
             "mcp_tool_duration_seconds", 
-            "도구 실행 시간(초)",
+            "도구 실행 지속 시간(초)",
             labelnames=["tool_name"],
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
@@ -1673,17 +1675,17 @@ Connect multiple tools in a sequence where each tool's output becomes the input 
 # Python 도구 체인 구현
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # 순차적으로 실행할 도구 이름 리스트
+        self.tools_chain = tools_chain  # 순서대로 실행할 도구 이름 목록
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # 체인 내 각 도구 실행, 이전 결과를 입력으로 전달
+            # 체인의 각 도구를 실행하며 이전 결과를 전달
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # 결과 저장 및 다음 도구 입력으로 사용
+            # 결과 저장 및 다음 도구를 위한 입력으로 사용
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1748,7 +1750,7 @@ public class ContentDispatcherTool : IMcpTool
         var contentType = request.Parameters.GetProperty("contentType").GetString();
         var operation = request.Parameters.GetProperty("operation").GetString();
         
-        // 어떤 전문 도구를 사용할지 결정
+        // 사용할 전문 도구 결정
         string targetTool = DetermineTargetTool(contentType, operation);
         
         // 전문 도구로 전달
@@ -1768,36 +1770,30 @@ public class ContentDispatcherTool : IMcpTool
             ("text", "analyze") => "textAnalyzer",
             ("html", _) => "htmlProcessor",
             ("markdown", _) => "markdownProcessor",
-            ("csv", _) =>
-IMPORTANT RULES:
-1. 번역문 주위에 '''markdown이나 다른 태그를 추가하지 마세요.
-2. 너무 직역하지 않도록 자연스럽게 번역하세요.
-3. 주석도 함께 번역하세요.
-4. 이 파일은 Markdown 형식으로 작성되었습니다 - XML이나 HTML로 처리하지 마세요.
-5. 다음 항목은 번역하지 마세요:
-   - [!NOTE], [!WARNING], [!TIP], [!IMPORTANT], [!CAUTION]
-   - 변수명, 함수명, 클래스명
-   - @@INLINE_CODE_x@@ 또는 @@CODE_BLOCK_x@@ 같은 플레이스홀더
-   - URL이나 경로
-6. 모든 원본 마크다운 서식을 그대로 유지하세요.
-7. 추가 태그나 마크업 없이 번역된 내용만 반환하세요.
-왼쪽에서 오른쪽으로 출력해 주세요.
+            ("csv", _) => "csvProcessor",
+            ("code", _) => "codeProcessor",
+            _ => throw new InvalidOperationException("지원되지 않는 콘텐츠 유형 또는 작업")
+        };
+    }
+}
+```
+"csvProcessor",
 ("code", _) => "codeAnalyzer",
-_ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
-};
-}
-
-private object GetOptionsForTool(string toolName, string operation)
-{
-// 각 전문 도구에 적합한 옵션 반환
-return toolName switch
-{
-    "textSummarizer" => new { length = "medium" },
-    "htmlProcessor" => new { cleanUp = true, operation },
-    // 다른 도구들의 옵션...
-    _ => new { }
-};
-}
+            _ => throw new ToolExecutionException($"해당 {contentType}/{operation}에 사용할 도구가 없습니다.")
+        };
+    }
+    
+    private object GetOptionsForTool(string toolName, string operation)
+    {
+        // 각 전문 도구에 적합한 옵션 반환
+        return toolName switch
+        {
+            "textSummarizer" => new { length = "medium" },
+            "htmlProcessor" => new { cleanUp = true, operation },
+            // 다른 도구에 대한 옵션...
+            _ => new { }
+        };
+    }
 }
 ```
 
@@ -1814,7 +1810,7 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // 1단계: 데이터셋 메타데이터 가져오기 (동기 처리)
+        // 1단계: 데이터셋 메타데이터 가져오기 (동기)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
@@ -1840,14 +1836,14 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // 모든 병렬 작업이 완료될 때까지 대기
+        // 모든 병렬 작업 완료 대기
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
         allAnalyses.join();  // 완료 대기
         
-        // 3단계: 결과 통합
+        // 3단계: 결과 결합
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
@@ -1858,7 +1854,7 @@ public class ParallelDataProcessingWorkflow {
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // 전체 워크플로우 결과 반환
+        // 전체 워크플로 결과 반환
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1880,7 +1876,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # 먼저 기본 도구 시도
+            # 우선 기본 도구 시도
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1888,10 +1884,10 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # 실패 로그 기록
+            # 실패 기록
             logging.warning(f"기본 도구 '{primary_tool}' 실패: {str(e)}")
             
-            # 보조 도구로 대체 시도
+            # 보조 도구로 대체
             try:
                 # 보조 도구에 맞게 매개변수 변환 필요할 수 있음
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
@@ -1907,16 +1903,16 @@ class ResilientWorkflow:
                 # 두 도구 모두 실패
                 logging.error(f"기본 및 보조 도구 모두 실패. 보조 도구 오류: {str(fallback_error)}")
                 raise WorkflowExecutionException(
-                    f"워크플로우 실패: 기본 오류: {str(e)}; 보조 오류: {str(fallback_error)}"
+                    f"워크플로 실패: 기본 오류: {str(e)}; 보조 오류: {str(fallback_error)}"
                 )
     
     def _adapt_parameters(self, params, from_tool, to_tool):
-        """필요 시 도구 간 매개변수 변환"""
-        # 구현은 특정 도구에 따라 다름
+        """도구 간 매개변수 변환 필요 시 처리"""
+        # 이 구현은 특정 도구에 따라 달라짐
         # 이 예제에서는 원래 매개변수를 그대로 반환
         return params
 
-# 사용 예시
+# 사용 예제
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
         "premiumWeatherService",  # 기본 (유료) 날씨 API
@@ -1947,10 +1943,10 @@ public class CompositeWorkflow : IWorkflow
         {
             var workflowResult = await workflow.ExecuteAsync(context);
             
-            // 각 워크플로우 결과 저장
+            // 각 워크플로 결과 저장
             results[workflow.Name] = workflowResult;
             
-            // 다음 워크플로우를 위해 컨텍스트에 결과 업데이트
+            // 다음 워크플로를 위해 결과로 컨텍스트 업데이트
             context = context.WithResult(workflow.Name, workflowResult);
         }
         
@@ -1958,10 +1954,10 @@ public class CompositeWorkflow : IWorkflow
     }
     
     public string Name => "CompositeWorkflow";
-    public string Description => "여러 워크플로우를 순차적으로 실행";
+    public string Description => "여러 워크플로를 순차적으로 실행";
 }
 
-// 사용 예시
+// 사용 예제
 var documentWorkflow = new CompositeWorkflow(new IWorkflow[] {
     new DocumentFetchWorkflow(),
     new DocumentProcessingWorkflow(),
@@ -2007,7 +2003,7 @@ Unit tests verify individual components of your MCP server in isolation.
 #### Best Practices for Unit Testing
 
 ```csharp
-// C#에서 계산기 도구에 대한 단위 테스트 예시
+// C#에서 계산기 도구에 대한 단위 테스트 예제
 [Fact]
 public async Task CalculatorTool_Add_ReturnsCorrectSum()
 {
@@ -2030,7 +2026,7 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
 ```
 
 ```python
-# Python에서 계산기 도구에 대한 단위 테스트 예시
+# Python에서 계산기 도구에 대한 단위 테스트 예제
 def test_calculator_tool_add():
     # 준비
     calculator = CalculatorTool()
@@ -2063,7 +2059,7 @@ Integration tests verify interactions between components of your MCP server.
 #### Best Practices for Integration Testing
 
 ```csharp
-// C#에서 MCP 서버에 대한 통합 테스트 예시
+// C#에서 MCP 서버에 대한 통합 테스트 예제
 [Fact]
 public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 {
@@ -2111,7 +2107,7 @@ End-to-end tests verify the complete system behavior from client to server.
 #### Best Practices for E2E Testing
 
 ```typescript
-// TypeScript에서 클라이언트를 이용한 E2E 테스트 예시
+// TypeScript에서 클라이언트를 사용한 E2E 테스트 예제
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
@@ -2125,7 +2121,7 @@ describe('MCP Server E2E Tests', () => {
     await stopTestServer();
   });
   
-  test('클라이언트가 calculator 도구를 호출하고 올바른 결과를 받는지', async () => {
+  test('클라이언트가 계산기 도구를 호출하고 올바른 결과를 얻을 수 있음', async () => {
     // 실행
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
@@ -2154,7 +2150,7 @@ Mocking is essential for isolating components during testing.
 ### Example: Mocking an AI Model Response
 
 ```csharp
-// C#에서 Moq 사용 예시
+// Moq를 사용한 C# 예제
 var mockModel = new Mock<ILanguageModel>();
 mockModel
     .Setup(m => m.GenerateResponseAsync(
@@ -2169,10 +2165,10 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python에서 unittest.mock 사용 예시
+# unittest.mock을 사용한 Python 예제
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # 모의 객체 설정
+    # 모의 객체 구성
     mock_model.return_value.generate_response.return_value = {
         "text": "Mocked model response",
         "finish_reason": "completed"
@@ -2205,12 +2201,12 @@ Performance testing is crucial for production MCP servers.
 ### Example: Basic Load Test with k6
 
 ```javascript
-// MCP 서버 부하 테스트용 k6 스크립트
+// MCP 서버에 대한 부하 테스트를 위한 k6 스크립트
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10명의 가상 사용자
+  vus: 10,  // 10개의 가상 사용자
   duration: '30s',
 };
 
@@ -2234,8 +2230,8 @@ export default function () {
   const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
   
   check(res, {
-    '상태 코드가 200인지': (r) => r.status === 200,
-    '응답 시간이 500ms 미만인지': (r) => r.timings.duration < 500,
+    '상태 코드가 200임': (r) => r.status === 200,
+    '응답 시간 < 500ms': (r) => r.timings.duration < 500,
   });
   
   sleep(1);
@@ -2276,7 +2272,7 @@ jobs:
       with:
         dotnet-version: '8.0.x'
     
-    - name: 의존성 복원
+    - name: 종속성 복원
       run: dotnet restore
     
     - name: 빌드
@@ -2319,73 +2315,62 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
     var content = await response.Content.ReadAsStringAsync();
     var resources = JsonSerializer.Deserialize
 
-// Assert
-Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-Assert.NotNull(resources);
-Assert.All(resources.Resources, resource => 
-{
-    Assert.NotNull(resource.Id);
-    Assert.NotNull(resource.Type);
-    // 추가 스키마 검증
-});
-}
+## MCP 서버 테스트를 효과적으로 수행하기 위한 10가지 팁
 
-## 효과적인 MCP 서버 테스트를 위한 10가지 핵심 팁
+1. **테스트 도구 정의를 개별적으로 검증**: 도구 로직과는 별도로 스키마 정의를 확인하세요.
+2. **매개변수화된 테스트 사용**: 다양한 입력값, 특히 극단적인 경우를 포함하여 도구를 테스트하세요.
+3. **오류 응답 확인**: 모든 가능한 오류 조건에 대해 적절한 오류 처리를 검증하세요.
+4. **권한 부여 로직 테스트**: 다양한 사용자 역할에 대한 적절한 접근 제어를 확인하세요.
+5. **테스트 커버리지 모니터링**: 중요한 경로 코드의 높은 커버리지를 목표로 하세요.
+6. **스트리밍 응답 테스트**: 스트리밍 콘텐츠를 적절히 처리하는지 확인하세요.
+7. **네트워크 문제 시뮬레이션**: 열악한 네트워크 조건에서의 동작을 테스트하세요.
+8. **리소스 제한 테스트**: 할당량이나 속도 제한에 도달했을 때의 동작을 검증하세요.
+9. **회귀 테스트 자동화**: 코드 변경 시마다 실행되는 테스트 스위트를 구축하세요.
+10. **테스트 케이스 문서화**: 테스트 시나리오를 명확히 문서화하세요.
 
-1. **툴 정의를 별도로 테스트하기**: 툴 로직과 별개로 스키마 정의를 검증하세요  
-2. **매개변수화된 테스트 사용하기**: 다양한 입력값과 경계값을 포함해 툴을 테스트하세요  
-3. **오류 응답 확인하기**: 모든 가능한 오류 상황에 대해 적절한 오류 처리가 이루어지는지 검증하세요  
-4. **권한 부여 로직 테스트하기**: 다양한 사용자 역할에 따른 접근 제어가 제대로 작동하는지 확인하세요  
-5. **테스트 커버리지 모니터링**: 핵심 경로 코드에 대해 높은 커버리지를 목표로 하세요  
-6. **스트리밍 응답 테스트하기**: 스트리밍 콘텐츠가 올바르게 처리되는지 검증하세요  
-7. **네트워크 문제 시뮬레이션**: 불안정한 네트워크 환경에서의 동작을 테스트하세요  
-8. **리소스 제한 테스트하기**: 할당량이나 속도 제한에 도달했을 때의 동작을 확인하세요  
-9. **회귀 테스트 자동화하기**: 코드 변경 시마다 실행되는 테스트 스위트를 구축하세요  
-10. **테스트 케이스 문서화하기**: 테스트 시나리오를 명확하게 문서화하여 관리하세요  
+## 일반적인 테스트 실수
 
-## 흔히 발생하는 테스트 실수
-
-- **정상 경로 테스트에만 의존하기**: 오류 상황도 꼼꼼히 테스트해야 합니다  
-- **성능 테스트 무시하기**: 프로덕션에 영향을 주기 전에 병목 현상을 찾아내세요  
-- **단독 테스트만 수행하기**: 단위, 통합, E2E 테스트를 조합해서 진행하세요  
-- **불완전한 API 커버리지**: 모든 엔드포인트와 기능을 빠짐없이 테스트하세요  
-- **일관성 없는 테스트 환경**: 컨테이너를 활용해 일관된 테스트 환경을 유지하세요  
+- **행복 경로 테스트에 지나치게 의존**: 오류 사례를 철저히 테스트하세요.
+- **성능 테스트 무시**: 프로덕션에 영향을 미치기 전에 병목 현상을 식별하세요.
+- **고립된 테스트만 수행**: 단위 테스트, 통합 테스트, E2E 테스트를 결합하세요.
+- **불완전한 API 커버리지**: 모든 엔드포인트와 기능을 테스트하세요.
+- **일관되지 않은 테스트 환경**: 컨테이너를 사용하여 일관된 테스트 환경을 유지하세요.
 
 ## 결론
 
-신뢰할 수 있고 고품질의 MCP 서버를 개발하려면 포괄적인 테스트 전략이 필수적입니다. 이 가이드에서 제시한 모범 사례와 팁을 적용하면 MCP 구현이 최고의 품질, 신뢰성, 성능 기준을 충족할 수 있습니다.
+포괄적인 테스트 전략은 신뢰할 수 있고 고품질의 MCP 서버를 개발하는 데 필수적입니다. 이 가이드에서 제시된 모범 사례와 팁을 구현함으로써 MCP 구현이 최고 수준의 품질, 신뢰성, 성능을 충족하도록 할 수 있습니다.
 
-## 주요 내용 정리
+## 주요 요점
 
-1. **툴 설계**: 단일 책임 원칙을 따르고, 의존성 주입을 활용하며, 조합 가능하도록 설계하세요  
-2. **스키마 설계**: 명확하고 잘 문서화된 스키마를 만들고 적절한 검증 제약 조건을 적용하세요  
-3. **오류 처리**: 우아한 오류 처리, 구조화된 오류 응답, 재시도 로직을 구현하세요  
-4. **성능**: 캐싱, 비동기 처리, 리소스 제한 기법을 활용하세요  
-5. **보안**: 철저한 입력 검증, 권한 확인, 민감 데이터 처리를 적용하세요  
-6. **테스트**: 포괄적인 단위, 통합, 엔드투엔드 테스트를 만드세요  
-7. **워크플로우 패턴**: 체인, 디스패처, 병렬 처리 같은 검증된 패턴을 적용하세요  
+1. **도구 설계**: 단일 책임 원칙을 따르고, 의존성 주입을 사용하며, 구성 가능성을 고려하여 설계하세요.
+2. **스키마 설계**: 명확하고 잘 문서화된 스키마를 생성하고 적절한 검증 제약을 추가하세요.
+3. **오류 처리**: 우아한 오류 처리, 구조화된 오류 응답, 재시도 로직을 구현하세요.
+4. **성능**: 캐싱, 비동기 처리, 리소스 제한을 활용하세요.
+5. **보안**: 철저한 입력 검증, 권한 확인, 민감한 데이터 처리를 적용하세요.
+6. **테스트**: 포괄적인 단위 테스트, 통합 테스트, 엔드투엔드 테스트를 작성하세요.
+7. **워크플로 패턴**: 체인, 디스패처, 병렬 처리와 같은 확립된 패턴을 적용하세요.
 
-## 연습 문제
+## 연습
 
-다음 요구사항을 가진 문서 처리 시스템용 MCP 툴과 워크플로우를 설계하세요:
+다음 시나리오에 적합한 MCP 도구와 워크플로를 설계하세요:
 
-1. PDF, DOCX, TXT 등 다양한 형식의 문서를 수락  
-2. 문서에서 텍스트와 주요 정보를 추출  
-3. 문서 유형과 내용을 기준으로 분류  
-4. 각 문서에 대한 요약 생성  
+1. 여러 형식(PDF, DOCX, TXT)의 문서를 수락합니다.
+2. 문서에서 텍스트와 주요 정보를 추출합니다.
+3. 문서를 유형과 내용별로 분류합니다.
+4. 각 문서의 요약을 생성합니다.
 
-이 시나리오에 적합한 툴 스키마, 오류 처리, 워크플로우 패턴을 구현하세요. 또한 이 구현을 어떻게 테스트할지 고려해 보세요.
+이 구현에 적합한 도구 스키마, 오류 처리, 워크플로 패턴을 설계하세요. 이 구현을 어떻게 테스트할지 고려하세요.
 
-## 참고 자료
+## 리소스
 
-1. 최신 개발 소식을 접하려면 [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs)에서 MCP 커뮤니티에 참여하세요  
-2. 오픈소스 [MCP 프로젝트](https://github.com/modelcontextprotocol)에 기여하세요  
-3. 조직 내 AI 이니셔티브에 MCP 원칙을 적용하세요  
-4. 산업별 특화된 MCP 구현 사례를 탐색하세요  
-5. 멀티모달 통합이나 엔터프라이즈 애플리케이션 통합 같은 특정 MCP 주제에 대한 고급 과정을 고려해 보세요  
-6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)을 통해 배운 원칙을 활용해 직접 MCP 툴과 워크플로우를 만들어 보세요  
+1. 최신 개발 정보를 얻기 위해 [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs)에 가입하세요.
+2. 오픈소스 [MCP 프로젝트](https://github.com/modelcontextprotocol)에 기여하세요.
+3. MCP 원칙을 귀하의 조직의 AI 이니셔티브에 적용하세요.
+4. 귀하의 산업에 특화된 MCP 구현을 탐색하세요.
+5. 멀티모달 통합 또는 엔터프라이즈 애플리케이션 통합과 같은 특정 MCP 주제에 대한 고급 과정을 고려하세요.
+6. [실습 랩](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)을 통해 배운 원칙을 사용하여 자체 MCP 도구와 워크플로를 실험적으로 구축하세요.
 
 다음: 모범 사례 [사례 연구](../09-CaseStudy/README.md)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

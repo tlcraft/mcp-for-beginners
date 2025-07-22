@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "73240f845b99df9401fffd21c09a5f7b",
-  "translation_date": "2025-07-16T21:35:04+00:00",
+  "original_hash": "f84eaea79c8fa9ab318a494f40891814",
+  "translation_date": "2025-07-22T07:49:02+00:00",
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "ja"
 }
 -->
 # エンタープライズ統合
 
-エンタープライズ環境でMCPサーバーを構築する際には、既存のAIプラットフォームやサービスと連携する必要がよくあります。このセクションでは、Azure OpenAIやMicrosoft AI FoundryなどのエンタープライズシステムとMCPを統合し、高度なAI機能やツールのオーケストレーションを実現する方法を解説します。
+エンタープライズ環境でMCPサーバーを構築する際、既存のAIプラットフォームやサービスと統合する必要があることがよくあります。このセクションでは、Azure OpenAIやMicrosoft AI FoundryのようなエンタープライズシステムとMCPを統合し、高度なAI機能やツールのオーケストレーションを実現する方法について説明します。
 
 ## はじめに
 
-このレッスンでは、Model Context Protocol（MCP）をエンタープライズAIシステム、特にAzure OpenAIとMicrosoft AI Foundryと統合する方法を学びます。これらの統合により、強力なAIモデルやツールを活用しつつ、MCPの柔軟性と拡張性を維持できます。
+このレッスンでは、Model Context Protocol (MCP) をエンタープライズAIシステムと統合する方法を学びます。特にAzure OpenAIとMicrosoft AI Foundryに焦点を当てます。これらの統合により、強力なAIモデルやツールを活用しながら、MCPの柔軟性と拡張性を維持することができます。
 
 ## 学習目標
 
-このレッスンを終える頃には、以下ができるようになります：
+このレッスンの終わりまでに、以下ができるようになります：
 
-- MCPをAzure OpenAIと統合し、そのAI機能を活用する。
-- Azure OpenAIを用いたMCPのツールオーケストレーションを実装する。
-- MCPとMicrosoft AI Foundryを組み合わせて高度なAIエージェント機能を実現する。
-- Azure Machine Learning（ML）を活用し、MLパイプラインの実行やモデルのMCPツールとしての登録を行う。
+- Azure OpenAIとMCPを統合し、そのAI機能を活用する。
+- Azure OpenAIを使用したMCPツールのオーケストレーションを実装する。
+- Microsoft AI FoundryとMCPを組み合わせ、高度なAIエージェント機能を実現する。
+- Azure Machine Learning (ML) を活用してMLパイプラインを実行し、モデルをMCPツールとして登録する。
 
-## Azure OpenAI統合
+## Azure OpenAIとの統合
 
-Azure OpenAIはGPT-4などの強力なAIモデルへのアクセスを提供します。MCPとAzure OpenAIを統合することで、これらのモデルを活用しつつ、MCPのツールオーケストレーションの柔軟性を保つことができます。
+Azure OpenAIは、GPT-4などの強力なAIモデルへのアクセスを提供します。MCPをAzure OpenAIと統合することで、これらのモデルを活用しながら、MCPのツールオーケストレーションの柔軟性を維持することができます。
 
-### C#実装
+### C# 実装
 
-このコードスニペットでは、Azure OpenAI SDKを使ってMCPとAzure OpenAIを統合する方法を示します。
+以下のコードスニペットでは、Azure OpenAI SDKを使用してMCPをAzure OpenAIと統合する方法を示します。
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -96,19 +96,19 @@ namespace EnterpriseIntegration
 
 上記のコードでは以下を行っています：
 
-- エンドポイント、デプロイメント名、APIキーを使ってAzure OpenAIクライアントを設定。
-- ツールサポート付きの補完を取得する`GetCompletionWithToolsAsync`メソッドを作成。
-- レスポンス内のツール呼び出しを処理。
+- エンドポイント、デプロイメント名、APIキーを使用してAzure OpenAIクライアントを設定。
+- ツールサポート付きで補完を取得するためのメソッド`GetCompletionWithToolsAsync`を作成。
+- レスポンス内でツール呼び出しを処理。
 
-実際のツール処理ロジックは、あなたのMCPサーバーの構成に応じて実装してください。
+実際のツール処理ロジックは、特定のMCPサーバー設定に基づいて実装することをお勧めします。
 
-## Microsoft AI Foundry統合
+## Microsoft AI Foundryとの統合
 
-Azure AI FoundryはAIエージェントの構築と展開のためのプラットフォームを提供します。MCPとAI Foundryを統合することで、その機能を活用しつつMCPの柔軟性を維持できます。
+Azure AI Foundryは、AIエージェントの構築とデプロイのためのプラットフォームを提供します。MCPをAI Foundryと統合することで、その機能を活用しながらMCPの柔軟性を維持することができます。
 
-以下のコードでは、MCPを使ってリクエストを処理し、ツール呼び出しをハンドリングするエージェント統合を開発しています。
+以下のコードでは、リクエストを処理し、MCPを使用してツール呼び出しを処理するエージェント統合を開発します。
 
-### Java実装
+### Java 実装
 
 ```java
 // Java AI Foundry Agent Integration
@@ -168,15 +168,15 @@ public class AIFoundryMcpBridge {
 
 上記のコードでは以下を行っています：
 
-- AI FoundryとMCPの両方と連携する`AIFoundryMcpBridge`クラスを作成。
-- AI Foundryエージェントのリクエストを処理する`processAgentRequest`メソッドを実装。
-- MCPクライアントを通じてツール呼び出しを実行し、その結果をAI Foundryエージェントに返却。
+- AI FoundryとMCPの両方と統合する`AIFoundryMcpBridge`クラスを作成。
+- AI Foundryエージェントリクエストを処理するメソッド`processAgentRequest`を実装。
+- MCPクライアントを介してツール呼び出しを実行し、その結果をAI Foundryエージェントに返す処理を実装。
 
-## MCPとAzure MLの統合
+## Azure MLとのMCP統合
 
-MCPとAzure Machine Learning（ML）を統合することで、Azureの強力なML機能を活用しつつ、MCPの柔軟性を保つことができます。この統合は、MLパイプラインの実行、モデルのツールとしての登録、計算リソースの管理に利用できます。
+Azure Machine Learning (ML) とMCPを統合することで、Azureの強力なML機能を活用しながらMCPの柔軟性を維持することができます。この統合により、MLパイプラインの実行、モデルのツールとしての登録、コンピュートリソースの管理が可能になります。
 
-### Python実装
+### Python 実装
 
 ```python
 # Python Azure AI Integration
@@ -303,14 +303,14 @@ class EnterpriseAiIntegration:
 上記のコードでは以下を行っています：
 
 - MCPとAzure MLを統合する`EnterpriseAiIntegration`クラスを作成。
-- MCPツールを使って入力データを処理し、Azure MLにMLパイプラインを送信する`execute_ml_pipeline`メソッドを実装。
-- Azure MLモデルをMCPツールとして登録する`register_ml_model_as_tool`メソッドを実装。必要なデプロイ環境や計算リソースの作成も含む。
-- Azure MLのデータ型をツール登録用のJSONスキーマ型にマッピング。
-- MLパイプラインの実行やモデル登録など、長時間かかる可能性のある処理を非同期プログラミングで扱う。
+- MCPツールを使用して入力データを処理し、Azure MLにMLパイプラインを送信する`execute_ml_pipeline`メソッドを実装。
+- Azure MLモデルをMCPツールとして登録する`register_ml_model_as_tool`メソッドを実装。この中で必要なデプロイ環境やコンピュートリソースを作成。
+- Azure MLのデータ型をJSONスキーマ型にマッピングしてツール登録を実現。
+- MLパイプラインの実行やモデル登録のような長時間実行される可能性のある操作を非同期プログラミングで処理。
 
-## 次に進む
+## 次のステップ
 
 - [5.2 マルチモダリティ](../mcp-multi-modality/README.md)
 
-**免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+**免責事項**:  
+この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。元の言語で記載された文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当方は責任を負いません。
