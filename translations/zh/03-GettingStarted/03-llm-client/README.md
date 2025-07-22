@@ -1,63 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "343235ad6c122033c549a677913443f9",
-  "translation_date": "2025-07-17T17:45:22+00:00",
+  "original_hash": "a656dbc7648e07da08eb4d1ffde4938e",
+  "translation_date": "2025-07-22T07:01:00+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "zh"
 }
 -->
 # 使用 LLM 创建客户端
 
-到目前为止，你已经了解了如何创建服务器和客户端。客户端能够显式调用服务器来列出其工具、资源和提示。然而，这种方法并不太实用。你的用户生活在智能代理时代，期望通过提示语与 LLM 进行交互。对用户来说，他们不关心你是否使用 MCP 来存储功能，但他们确实期望使用自然语言进行交互。那么我们该如何解决这个问题呢？解决方案是给客户端添加一个 LLM。
+到目前为止，你已经了解了如何创建服务器和客户端。客户端可以显式调用服务器以列出其工具、资源和提示。然而，这种方法并不十分实用。你的用户生活在代理时代，他们期望通过提示与 LLM 进行交互。对于用户来说，他们并不关心你是否使用 MCP 来存储功能，但他们确实希望通过自然语言进行交互。那么我们该如何解决这个问题呢？解决方案是为客户端添加一个 LLM。
 
 ## 概述
 
-本课将重点介绍如何给客户端添加 LLM，并展示这如何为用户带来更好的体验。
+在本课中，我们将重点讲解如何为客户端添加一个 LLM，并展示这如何为用户提供更好的体验。
 
 ## 学习目标
 
-完成本课后，你将能够：
+通过本课学习，你将能够：
 
 - 创建一个带有 LLM 的客户端。
 - 使用 LLM 无缝地与 MCP 服务器交互。
-- 在客户端提供更好的最终用户体验。
+- 在客户端为终端用户提供更好的体验。
 
 ## 方法
 
-让我们先了解需要采取的方法。添加 LLM 听起来很简单，但我们真的会这样做吗？
+让我们尝试理解需要采取的方法。添加一个 LLM 听起来很简单，但我们实际上会怎么做呢？
 
-客户端与服务器的交互方式如下：
+以下是客户端与服务器交互的方式：
 
 1. 建立与服务器的连接。
 
-2. 列出功能、提示、资源和工具，并保存它们的 schema。
+2. 列出功能、提示、资源和工具，并保存它们的模式。
 
-3. 添加 LLM，并以 LLM 能理解的格式传入保存的功能及其 schema。
+3. 添加一个 LLM，并以 LLM 能理解的格式传递保存的功能及其模式。
 
-4. 处理用户提示，将其与客户端列出的工具一起传递给 LLM。
+4. 通过将用户提示与客户端列出的工具一起传递给 LLM 来处理用户请求。
 
-很好，现在我们对整体流程有了了解，接下来让我们通过下面的练习来实践。
+很好，现在我们从高层次上理解了如何实现这一点，接下来让我们通过以下练习来尝试。
 
-## 练习：创建带有 LLM 的客户端
+## 练习：创建一个带有 LLM 的客户端
 
-在本练习中，我们将学习如何给客户端添加 LLM。
+在本练习中，我们将学习如何为客户端添加一个 LLM。
 
-## 使用 GitHub 个人访问令牌进行身份验证
+### 使用 GitHub 个人访问令牌进行身份验证
 
-创建 GitHub 令牌是一个简单的过程。操作步骤如下：
+创建 GitHub 令牌是一个简单的过程。以下是操作步骤：
 
-- 进入 GitHub 设置 – 点击右上角的头像，选择“Settings”。
+- 进入 GitHub 设置 – 点击右上角的个人头像并选择“Settings”。
 - 导航到开发者设置 – 向下滚动并点击“Developer Settings”。
 - 选择个人访问令牌 – 点击“Personal access tokens”，然后选择“Generate new token”。
-- 配置令牌 – 添加备注以便识别，设置过期时间，并选择所需的权限范围。
-- 生成并复制令牌 – 点击“Generate token”，并立即复制，因为之后无法再次查看。
+- 配置你的令牌 – 添加一个备注以供参考，设置过期日期，并选择必要的权限范围（scopes）。
+- 生成并复制令牌 – 点击“Generate token”，并确保立即复制，因为之后无法再次查看。
 
-### -1- 连接服务器
+### -1- 连接到服务器
 
-先创建我们的客户端：
+首先，让我们创建客户端：
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -92,13 +92,13 @@ class MCPClient {
 }
 ```
 
-在上述代码中我们：
+在上述代码中，我们：
 
-- 导入了所需的库
-- 创建了一个包含两个成员的类，`client` 和 `openai`，分别用于管理客户端和与 LLM 交互
-- 配置了 LLM 实例，使用 GitHub Models，将 `baseUrl` 指向推理 API
+- 导入了所需的库。
+- 创建了一个包含两个成员 `client` 和 `openai` 的类，用于管理客户端并与 LLM 交互。
+- 配置了 LLM 实例，通过设置 `baseUrl` 指向推理 API 来使用 GitHub 模型。
 
-### Python
+#### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
@@ -128,12 +128,12 @@ if __name__ == "__main__":
 
 ```
 
-在上述代码中我们：
+在上述代码中，我们：
 
-- 导入了 MCP 所需的库
-- 创建了一个客户端
+- 导入了 MCP 所需的库。
+- 创建了一个客户端。
 
-### .NET
+#### .NET
 
 ```csharp
 using Azure;
@@ -154,9 +154,9 @@ var clientTransport = new StdioClientTransport(new()
 await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 ```
 
-### Java
+#### Java
 
-首先，你需要在 `pom.xml` 文件中添加 LangChain4j 依赖。添加以下依赖以支持 MCP 集成和 GitHub Models：
+首先，你需要在 `pom.xml` 文件中添加 LangChain4j 的依赖项。添加这些依赖项以启用 MCP 集成和 GitHub 模型支持：
 
 ```xml
 <properties>
@@ -235,22 +235,22 @@ public class LangChain4jClient {
 }
 ```
 
-在上述代码中我们：
+在上述代码中，我们：
 
-- **添加了 LangChain4j 依赖**：用于 MCP 集成、OpenAI 官方客户端和 GitHub Models 支持
-- **导入了 LangChain4j 库**：支持 MCP 集成和 OpenAI 聊天模型功能
-- **创建了 `ChatLanguageModel`**：配置为使用带有 GitHub 令牌的 GitHub Models
-- **设置了 HTTP 传输**：使用服务器发送事件（SSE）连接 MCP 服务器
-- **创建了 MCP 客户端**：用于处理与服务器的通信
-- **使用了 LangChain4j 内置的 MCP 支持**：简化了 LLM 与 MCP 服务器的集成
+- **添加了 LangChain4j 依赖项**：用于 MCP 集成、OpenAI 官方客户端和 GitHub 模型支持。
+- **导入了 LangChain4j 库**：用于 MCP 集成和 OpenAI 聊天模型功能。
+- **创建了一个 `ChatLanguageModel`**：配置为使用 GitHub 模型并使用你的 GitHub 令牌。
+- **设置了 HTTP 传输**：通过服务器发送事件（SSE）连接到 MCP 服务器。
+- **创建了一个 MCP 客户端**：用于处理与服务器的通信。
+- **使用了 LangChain4j 的内置 MCP 支持**：简化了 LLM 和 MCP 服务器之间的集成。
 
-很好，下一步让我们列出服务器上的功能。
+很好，接下来我们将列出服务器上的功能。
 
 ### -2- 列出服务器功能
 
-现在我们连接服务器并请求其功能：
+现在我们将连接到服务器并请求其功能：
 
-### TypeScript
+#### TypeScript
 
 在同一个类中，添加以下方法：
 
@@ -269,12 +269,12 @@ async run() {
 }
 ```
 
-在上述代码中我们：
+在上述代码中，我们：
 
-- 添加了连接服务器的代码，`connectToServer`。
-- 创建了一个 `run` 方法，负责处理应用流程。目前它只列出了工具，稍后我们会添加更多内容。
+- 添加了用于连接服务器的代码 `connectToServer`。
+- 创建了一个 `run` 方法，用于处理应用程序流程。目前它只列出了工具，但我们很快会添加更多内容。
 
-### Python
+#### Python
 
 ```python
 # List available resources
@@ -291,11 +291,11 @@ for tool in tools.tools:
     print("Tool", tool.inputSchema["properties"])
 ```
 
-我们添加了：
+我们添加了以下内容：
 
-- 列出资源和工具并打印它们。对于工具，我们还列出了 `inputSchema`，后续会用到。
+- 列出了资源和工具并打印出来。对于工具，我们还列出了 `inputSchema`，稍后会用到。
 
-### .NET
+#### .NET
 
 ```csharp
 async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -311,19 +311,19 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
         Console.WriteLine($"Tool description: {tool.Description}");
         Console.WriteLine($"Tool parameters: {tool.JsonSchema}");
 
-        // TODO: convert tool defintion from MCP tool to LLm tool     
+        // TODO: convert tool definition from MCP tool to LLm tool     
     }
 
     return toolDefinitions;
 }
 ```
 
-在上述代码中我们：
+在上述代码中，我们：
 
-- 列出了 MCP 服务器上可用的工具
-- 对每个工具列出了名称、描述及其 schema。后者将在调用工具时使用。
+- 列出了 MCP 服务器上可用的工具。
+- 对于每个工具，列出了名称、描述及其模式。后者是我们稍后调用工具时会用到的内容。
 
-### Java
+#### Java
 
 ```java
 // Create a tool provider that automatically discovers MCP tools
@@ -337,17 +337,17 @@ ToolProvider toolProvider = McpToolProvider.builder()
 // - Managing tool execution and responses
 ```
 
-在上述代码中我们：
+在上述代码中，我们：
 
-- 创建了一个 `McpToolProvider`，自动发现并注册 MCP 服务器上的所有工具
-- 工具提供者内部处理 MCP 工具 schema 与 LangChain4j 工具格式之间的转换
-- 这种方式抽象了手动列出和转换工具的过程
+- 创建了一个 `McpToolProvider`，它会自动发现并注册 MCP 服务器上的所有工具。
+- 工具提供程序会在内部处理 MCP 工具模式和 LangChain4j 工具格式之间的转换。
+- 这种方法抽象了手动工具列出和转换的过程。
 
 ### -3- 将服务器功能转换为 LLM 工具
 
-列出服务器功能后，下一步是将它们转换为 LLM 能理解的格式。完成后，我们可以将这些功能作为工具提供给 LLM。
+列出服务器功能后，下一步是将其转换为 LLM 能理解的格式。一旦完成，我们就可以将这些功能作为工具提供给 LLM。
 
-### TypeScript
+#### TypeScript
 
 1. 添加以下代码，将 MCP 服务器的响应转换为 LLM 可用的工具格式：
 
@@ -376,9 +376,9 @@ ToolProvider toolProvider = McpToolProvider.builder()
 
     ```
 
-    上述代码将 MCP 服务器的响应转换为 LLM 能理解的工具定义格式。
+    上述代码将 MCP 服务器的响应转换为 LLM 可理解的工具定义格式。
 
-2. 接着更新 `run` 方法，列出服务器功能：
+1. 接下来更新 `run` 方法以列出服务器功能：
 
     ```typescript
     async run() {
@@ -394,11 +394,11 @@ ToolProvider toolProvider = McpToolProvider.builder()
     }
     ```
 
-    在上述代码中，我们更新了 `run` 方法，遍历结果并对每个条目调用 `openAiToolAdapter`。
+    在上述代码中，我们更新了 `run` 方法，遍历结果并为每个条目调用 `openAiToolAdapter`。
 
-### Python
+#### Python
 
-1. 先创建以下转换函数：
+1. 首先，创建以下转换函数：
 
     ```python
     def convert_to_llm_tool(tool):
@@ -418,9 +418,9 @@ ToolProvider toolProvider = McpToolProvider.builder()
         return tool_schema
     ```
 
-    在 `convert_to_llm_tools` 函数中，我们将 MCP 工具响应转换为 LLM 能理解的格式。
+    在上述 `convert_to_llm_tools` 函数中，我们将 MCP 工具响应转换为 LLM 可理解的格式。
 
-2. 接着更新客户端代码，调用该函数：
+1. 接下来，更新客户端代码以使用此函数：
 
     ```python
     for tool in tools.tools:
@@ -429,9 +429,9 @@ ToolProvider toolProvider = McpToolProvider.builder()
         functions.append(convert_to_llm_tool(tool))
     ```
 
-    这里，我们调用 `convert_to_llm_tool` 将 MCP 工具响应转换为后续传给 LLM 的格式。
+    在这里，我们添加了对 `convert_to_llm_tool` 的调用，将 MCP 工具响应转换为稍后可以提供给 LLM 的格式。
 
-### .NET
+#### .NET
 
 1. 添加代码，将 MCP 工具响应转换为 LLM 可理解的格式：
 
@@ -456,12 +456,12 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 }
 ```
 
-在上述代码中我们：
+在上述代码中，我们：
 
-- 创建了 `ConvertFrom` 函数，接收名称、描述和输入 schema。
-- 定义了创建 `FunctionDefinition` 的功能，该定义会传递给 `ChatCompletionsDefinition`，后者是 LLM 能理解的格式。
+- 创建了一个 `ConvertFrom` 函数，该函数接收名称、描述和输入模式。
+- 定义了一个功能，用于创建一个 `FunctionDefinition`，并将其传递给 `ChatCompletionsDefinition`，后者是 LLM 可理解的内容。
 
-2. 更新现有代码以利用上述函数：
+1. 接下来更新现有代码以利用上述函数：
 
     ```csharp
     async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -491,9 +491,9 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
     }
     ```
 
-    在上述代码中我们：
+    在上述代码中，我们：
 
-    - 更新了函数，将 MCP 工具响应转换为 LLM 工具。重点代码如下：
+    - 更新了函数以将 MCP 工具响应转换为 LLM 工具。以下是我们添加的代码：
 
         ```csharp
         JsonElement propertiesElement;
@@ -504,9 +504,9 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
         toolDefinitions.Add(def);
         ```
 
-        输入 schema 是工具响应的一部分，位于 “properties” 属性中，需要提取。此外，我们调用了带有工具详情的 `ConvertFrom`。完成这部分后，接下来看看如何处理用户提示。
+        输入模式是工具响应的一部分，但位于 "properties" 属性中，因此我们需要提取它。此外，我们现在使用工具详细信息调用 `ConvertFrom`。完成了这些繁重的工作后，接下来我们将处理用户提示。
 
-### Java
+#### Java
 
 ```java
 // Create a Bot interface for natural language interaction
@@ -521,22 +521,22 @@ Bot bot = AiServices.builder(Bot.class)
         .build();
 ```
 
-在上述代码中我们：
+在上述代码中，我们：
 
-- 定义了一个简单的 `Bot` 接口，用于自然语言交互
-- 使用 LangChain4j 的 `AiServices` 自动绑定 LLM 和 MCP 工具提供者
-- 框架自动处理工具 schema 转换和函数调用
-- 这种方式免去了手动转换工具的麻烦，LangChain4j 负责将 MCP 工具转换为 LLM 兼容格式
+- 定义了一个简单的 `Bot` 接口，用于自然语言交互。
+- 使用 LangChain4j 的 `AiServices` 自动将 LLM 与 MCP 工具提供程序绑定。
+- 框架自动处理工具模式转换和函数调用。
+- 这种方法消除了手动工具转换的复杂性——LangChain4j 处理了 MCP 工具到 LLM 兼容格式的所有转换。
 
-很好，我们已经准备好处理用户请求，接下来开始实现。
+很好，现在我们已经准备好处理用户请求，接下来让我们解决这个问题。
 
 ### -4- 处理用户提示请求
 
-这部分代码将处理用户请求。
+在代码的这一部分，我们将处理用户请求。
 
-### TypeScript
+#### TypeScript
 
-1. 添加一个方法，用于调用我们的 LLM：
+1. 添加一个用于调用 LLM 的方法：
 
     ```typescript
     async callTools(
@@ -565,10 +565,10 @@ Bot bot = AiServices.builder(Bot.class)
     }
     ```
 
-    在上述代码中我们：
+    在上述代码中，我们：
 
-    - 添加了 `callTools` 方法。
-    - 该方法接收 LLM 响应，检查是否调用了工具：
+    - 添加了一个 `callTools` 方法。
+    - 该方法接收 LLM 响应并检查是否有工具被调用：
 
         ```typescript
         for (const tool_call of tool_calls) {
@@ -581,7 +581,7 @@ Bot bot = AiServices.builder(Bot.class)
         }
         ```
 
-    - 如果 LLM 指示调用工具，则执行调用：
+    - 如果 LLM 指示调用工具，则调用工具：
 
         ```typescript
         // 2. Call the server's tool 
@@ -596,7 +596,7 @@ Bot bot = AiServices.builder(Bot.class)
         // TODO  
         ```
 
-2. 更新 `run` 方法，包含调用 LLM 和 `callTools`：
+1. 更新 `run` 方法以包含对 LLM 的调用和 `callTools` 的调用：
 
     ```typescript
 
@@ -632,7 +632,7 @@ Bot bot = AiServices.builder(Bot.class)
     });
     ```
 
-完整代码如下：
+很好，以下是完整代码：
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -650,8 +650,6 @@ class MyClient {
             apiKey: process.env.GITHUB_TOKEN,
         });
 
-       
-        
         this.client = new Client(
             {
                 name: "example-client",
@@ -771,9 +769,9 @@ let client = new MyClient();
 client.connectToServer(transport);
 ```
 
-### Python
+#### Python
 
-1. 添加调用 LLM 所需的导入：
+1. 添加一些调用 LLM 所需的导入：
 
     ```python
     # llm
@@ -784,7 +782,7 @@ client.connectToServer(transport);
     import json
     ```
 
-2. 添加调用 LLM 的函数：
+1. 接下来，添加调用 LLM 的函数：
 
     ```python
     # llm
@@ -834,14 +832,14 @@ client.connectToServer(transport);
         return functions_to_call
     ```
 
-    在上述代码中我们：
+    在上述代码中，我们：
 
-    - 将从 MCP 服务器获取并转换的函数传递给 LLM。
-    - 调用 LLM 并传入这些函数。
-    - 检查结果，判断是否需要调用函数。
-    - 最后传入需要调用的函数数组。
+    - 将从 MCP 服务器找到并转换的函数传递给 LLM。
+    - 调用 LLM 并传递这些函数。
+    - 检查结果以确定是否需要调用某些函数。
+    - 最后传递一个函数数组以供调用。
 
-3. 最后，更新主代码：
+1. 最后一步，更新主代码：
 
     ```python
     prompt = "Add 2 to 20"
@@ -855,14 +853,14 @@ client.connectToServer(transport);
         print("TOOLS result: ", result.content)
     ```
 
-    这就是最后一步，我们：
+    在上述代码中，我们：
 
-    - 通过 `call_tool` 调用 MCP 工具，使用 LLM 根据提示判断应调用的函数。
-    - 打印调用 MCP 服务器工具的结果。
+    - 使用 LLM 提示调用 MCP 工具，通过 `call_tool` 调用 LLM 认为应该调用的函数。
+    - 打印 MCP 服务器工具调用的结果。
 
-### .NET
+#### .NET
 
-1. 展示调用 LLM 提示请求的代码：
+1. 显示一些用于 LLM 提示请求的代码：
 
     ```csharp
     var tools = await GetMcpTools();
@@ -896,14 +894,14 @@ client.connectToServer(transport);
 
     ```
 
-    在上述代码中我们：
+    在上述代码中，我们：
 
-    - 从 MCP 服务器获取工具，`var tools = await GetMcpTools()`。
-    - 定义用户提示 `userMessage`。
-    - 构造包含模型和工具的选项对象。
-    - 向 LLM 发起请求。
+    - 从 MCP 服务器获取工具 `var tools = await GetMcpTools()`。
+    - 定义了一个用户提示 `userMessage`。
+    - 构造了一个指定模型和工具的选项对象。
+    - 向 LLM 发出了请求。
 
-2. 最后一步，判断 LLM 是否建议调用函数：
+1. 最后一步，检查 LLM 是否认为应该调用某个函数：
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -926,12 +924,12 @@ client.connectToServer(transport);
     }
     ```
 
-    在上述代码中我们：
+    在上述代码中，我们：
 
     - 遍历函数调用列表。
-    - 对每个工具调用，解析名称和参数，使用 MCP 客户端调用 MCP 服务器上的工具，最后打印结果。
+    - 对于每个工具调用，解析出名称和参数，并使用 MCP 客户端调用 MCP 服务器上的工具。最后打印结果。
 
-完整代码如下：
+以下是完整代码：
 
 ```csharp
 using Azure;
@@ -1058,7 +1056,7 @@ for (int i = 0; i < response.ToolCalls.Count; i++)
 Console.WriteLine($"Assistant response: {content}");
 ```
 
-### Java
+#### Java
 
 ```java
 try {
@@ -1076,15 +1074,15 @@ try {
 }
 ```
 
-在上述代码中我们：
+在上述代码中，我们：
 
-- 使用简单的自然语言提示与 MCP 服务器工具交互
+- 使用简单的自然语言提示与 MCP 服务器工具交互。
 - LangChain4j 框架自动处理：
-  - 在需要时将用户提示转换为工具调用
-  - 根据 LLM 决策调用相应的 MCP 工具
-  - 管理 LLM 与 MCP 服务器之间的对话流程
-- `bot.chat()` 方法返回可能包含 MCP 工具执行结果的自然语言响应
-- 这种方式为用户提供了无缝体验，用户无需了解底层 MCP 实现
+  - 在需要时将用户提示转换为工具调用。
+  - 根据 LLM 的决策调用适当的 MCP 工具。
+  - 管理 LLM 和 MCP 服务器之间的对话流程。
+- `bot.chat()` 方法返回自然语言响应，其中可能包括 MCP 工具执行的结果。
+- 这种方法提供了无缝的用户体验，用户无需了解底层的 MCP 实现。
 
 完整代码示例：
 
@@ -1135,20 +1133,20 @@ public class LangChain4jClient {
 }
 ```
 
-太棒了，你完成了！
+很好，你完成了！
 
-## 任务
+## 作业
 
-基于练习中的代码，扩展服务器，添加更多工具。然后像练习中那样创建一个带有 LLM 的客户端，使用不同的提示进行测试，确保服务器上的所有工具都能被动态调用。通过这种方式构建客户端，最终用户将获得极佳的体验，因为他们可以使用提示语，而非精确的客户端命令，并且无需关心是否调用了 MCP 服务器。
+使用练习中的代码，扩展服务器以添加更多工具。然后像练习中一样创建一个带有 LLM 的客户端，并使用不同的提示进行测试，确保所有服务器工具都能被动态调用。这种构建客户端的方式可以为终端用户提供极佳的用户体验，因为他们可以使用提示而不是精确的客户端命令，并且无需知道 MCP 服务器的存在。
 
 ## 解决方案
 
-[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
+[解决方案](/03-GettingStarted/03-llm-client/solution/README.md)
 
 ## 关键要点
 
-- 给客户端添加 LLM，为用户提供了更好的与 MCP 服务器交互方式。
-- 需要将 MCP 服务器响应转换为 LLM 能理解的格式。
+- 为客户端添加 LLM 为用户与 MCP 服务器交互提供了更好的方式。
+- 需要将 MCP 服务器的响应转换为 LLM 可理解的格式。
 
 ## 示例
 
@@ -1158,11 +1156,11 @@ public class LangChain4jClient {
 - [TypeScript 计算器](../samples/typescript/README.md)
 - [Python 计算器](../../../../03-GettingStarted/samples/python)
 
-## 额外资源
+## 其他资源
 
-## 接下来
+## 下一步
 
-- 下一步：[使用 Visual Studio Code 访问服务器](../04-vscode/README.md)
+- 下一步：[使用 Visual Studio Code 消费服务器](../04-vscode/README.md)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。我们不对因使用本翻译而产生的任何误解或误释承担责任。
+本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。

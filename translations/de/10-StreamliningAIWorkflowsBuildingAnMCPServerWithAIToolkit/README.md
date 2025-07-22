@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "787440926586cd064b0899fd1c514f52",
-  "translation_date": "2025-07-14T06:59:03+00:00",
+  "original_hash": "9c61ceb0227f07a85c9e809d3914f965",
+  "translation_date": "2025-07-22T08:36:33+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
   "language_code": "de"
 }
@@ -17,14 +17,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 🎯 Überblick
 
-Willkommen zum **Model Context Protocol (MCP) Workshop**! Dieser umfassende Praxis-Workshop vereint zwei wegweisende Technologien, um die Entwicklung von KI-Anwendungen zu revolutionieren:
+Willkommen zum **Model Context Protocol (MCP) Workshop**! Dieser umfassende Praxis-Workshop kombiniert zwei bahnbrechende Technologien, um die Entwicklung von KI-Anwendungen zu revolutionieren:
 
-- **🔗 Model Context Protocol (MCP)**: Ein offener Standard für nahtlose KI-Tool-Integration
-- **🛠️ AI Toolkit für Visual Studio Code (AITK)**: Microsofts leistungsstarke Erweiterung für KI-Entwicklung
+- **🔗 Model Context Protocol (MCP)**: Ein offener Standard für nahtlose Integration von KI-Tools
+- **🛠️ AI Toolkit für Visual Studio Code (AITK)**: Microsofts leistungsstarke Erweiterung für die KI-Entwicklung
 
-### 🎓 Was du lernen wirst
+### 🎓 Was Sie lernen werden
 
-Am Ende dieses Workshops beherrschst du den Aufbau intelligenter Anwendungen, die KI-Modelle mit realen Tools und Diensten verbinden. Von automatisierten Tests bis hin zu individuellen API-Integrationen erwirbst du praktische Fähigkeiten zur Lösung komplexer Geschäftsanforderungen.
+Am Ende dieses Workshops beherrschen Sie die Kunst, intelligente Anwendungen zu entwickeln, die KI-Modelle mit realen Tools und Diensten verbinden. Von automatisierten Tests bis hin zu benutzerdefinierten API-Integrationen erwerben Sie praktische Fähigkeiten, um komplexe geschäftliche Herausforderungen zu lösen.
 
 ## 🏗️ Technologiestack
 
@@ -33,166 +33,191 @@ Am Ende dieses Workshops beherrschst du den Aufbau intelligenter Anwendungen, di
 MCP ist das **„USB-C für KI“** – ein universeller Standard, der KI-Modelle mit externen Tools und Datenquellen verbindet.
 
 **✨ Hauptmerkmale:**
+
 - 🔄 **Standardisierte Integration**: Universelle Schnittstelle für KI-Tool-Verbindungen
 - 🏛️ **Flexible Architektur**: Lokale und entfernte Server über stdio/SSE-Transport
-- 🧰 **Umfangreiches Ökosystem**: Tools, Prompts und Ressourcen in einem Protokoll
-- 🔒 **Enterprise-Ready**: Eingebaute Sicherheit und Zuverlässigkeit
+- 🧰 **Reiches Ökosystem**: Tools, Prompts und Ressourcen in einem Protokoll
+- 🔒 **Unternehmensbereit**: Eingebaute Sicherheit und Zuverlässigkeit
 
 **🎯 Warum MCP wichtig ist:**
-Wie USB-C das Kabelchaos beseitigt hat, vereinfacht MCP die Komplexität von KI-Integrationen. Ein Protokoll, unendliche Möglichkeiten.
+Wie USB-C das Kabelchaos beseitigt hat, eliminiert MCP die Komplexität von KI-Integrationen. Ein Protokoll, unendliche Möglichkeiten.
 
 ### 🤖 AI Toolkit für Visual Studio Code (AITK)
 
-Microsofts Flaggschiff-Erweiterung für KI-Entwicklung, die VS Code in eine KI-Powerhouse verwandelt.
+Microsofts führende Erweiterung für die KI-Entwicklung, die VS Code in ein KI-Kraftpaket verwandelt.
 
 **🚀 Kernfunktionen:**
+
 - 📦 **Modellkatalog**: Zugriff auf Modelle von Azure AI, GitHub, Hugging Face, Ollama
 - ⚡ **Lokale Inferenz**: ONNX-optimierte CPU/GPU/NPU-Ausführung
 - 🏗️ **Agent Builder**: Visuelle Entwicklung von KI-Agenten mit MCP-Integration
-- 🎭 **Multimodal**: Unterstützung für Text, Bild und strukturierte Ausgaben
+- 🎭 **Multimodal**: Unterstützung für Text, Vision und strukturierte Ausgaben
 
 **💡 Vorteile für die Entwicklung:**
+
 - Modellbereitstellung ohne Konfiguration
 - Visuelles Prompt-Engineering
 - Echtzeit-Testumgebung
 - Nahtlose Integration von MCP-Servern
 
-## 📚 Lernpfad
+## 📚 Lernreise
 
-### [🚀 Modul 1: Grundlagen des AI Toolkit](./lab1/README.md)
+### [🚀 Modul 1: Grundlagen des AI Toolkits](./lab1/README.md)
+
 **Dauer**: 15 Minuten
-- 🛠️ Installation und Konfiguration des AI Toolkit für VS Code
-- 🗂️ Erkundung des Modellkatalogs (über 100 Modelle von GitHub, ONNX, OpenAI, Anthropic, Google)
-- 🎮 Beherrschung des interaktiven Playgrounds für Echtzeit-Modelltests
-- 🤖 Bau deines ersten KI-Agenten mit dem Agent Builder
+
+- 🛠️ Installation und Konfiguration des AI Toolkits für VS Code
+- 🗂️ Erkundung des Modellkatalogs (100+ Modelle von GitHub, ONNX, OpenAI, Anthropic, Google)
+- 🎮 Beherrschung des interaktiven Testbereichs für Echtzeit-Modelltests
+- 🤖 Erstellung Ihres ersten KI-Agenten mit dem Agent Builder
 - 📊 Bewertung der Modellleistung mit integrierten Metriken (F1, Relevanz, Ähnlichkeit, Kohärenz)
-- ⚡ Einführung in Batch-Verarbeitung und multimodale Unterstützung
+- ⚡ Lernen von Batch-Verarbeitung und multimodalen Unterstützungsmöglichkeiten
 
-**🎯 Lernziel**: Erstelle einen funktionalen KI-Agenten mit umfassendem Verständnis der AITK-Funktionen
+**🎯 Lernziel**: Erstellen eines funktionalen KI-Agenten mit umfassendem Verständnis der AITK-Funktionen
 
-### [🌐 Modul 2: MCP mit AI Toolkit Grundlagen](./lab2/README.md)
+### [🌐 Modul 2: Grundlagen von MCP mit AI Toolkit](./lab2/README.md)
+
 **Dauer**: 20 Minuten
+
 - 🧠 Beherrschung der Architektur und Konzepte des Model Context Protocol (MCP)
 - 🌐 Erkundung des MCP-Server-Ökosystems von Microsoft
-- 🤖 Bau eines Browser-Automatisierungsagenten mit Playwright MCP-Server
-- 🔧 Integration von MCP-Servern in den AI Toolkit Agent Builder
-- 📊 Konfiguration und Test von MCP-Tools innerhalb deiner Agenten
+- 🤖 Erstellung eines Browser-Automatisierungsagenten mit Playwright MCP-Server
+- 🔧 Integration von MCP-Servern mit dem AI Toolkit Agent Builder
+- 📊 Konfiguration und Test von MCP-Tools innerhalb Ihrer Agenten
 - 🚀 Export und Bereitstellung von MCP-gestützten Agenten für den Produktionseinsatz
 
-**🎯 Lernziel**: Setze einen KI-Agenten ein, der durch externe Tools via MCP erweitert wird
+**🎯 Lernziel**: Bereitstellung eines KI-Agenten, der durch externe Tools über MCP erweitert wird
 
 ### [🔧 Modul 3: Fortgeschrittene MCP-Entwicklung mit AI Toolkit](./lab3/README.md)
+
 **Dauer**: 20 Minuten
-- 💻 Erstellung eigener MCP-Server mit AI Toolkit
+
+- 💻 Erstellung benutzerdefinierter MCP-Server mit AI Toolkit
 - 🐍 Konfiguration und Nutzung des neuesten MCP Python SDK (v1.9.3)
-- 🔍 Einrichtung und Verwendung des MCP Inspectors zum Debuggen
-- 🛠️ Aufbau eines Weather MCP Servers mit professionellen Debugging-Workflows
-- 🧪 Debugging von MCP-Servern sowohl im Agent Builder als auch im Inspector
+- 🔍 Einrichtung und Nutzung des MCP Inspectors für Debugging
+- 🛠️ Erstellung eines Wetter-MCP-Servers mit professionellen Debugging-Workflows
+- 🧪 Debugging von MCP-Servern in Agent Builder- und Inspector-Umgebungen
 
-**🎯 Lernziel**: Entwickle und debugge eigene MCP-Server mit modernen Werkzeugen
+**🎯 Lernziel**: Entwicklung und Debugging benutzerdefinierter MCP-Server mit modernen Tools
 
-### [🐙 Modul 4: Praktische MCP-Entwicklung – Eigener GitHub Clone Server](./lab4/README.md)
+### [🐙 Modul 4: Praktische MCP-Entwicklung – Benutzerdefinierter GitHub Clone Server](./lab4/README.md)
+
 **Dauer**: 30 Minuten
-- 🏗️ Aufbau eines realen GitHub Clone MCP Servers für Entwicklungs-Workflows
-- 🔄 Implementierung intelligenter Repository-Klone mit Validierung und Fehlerbehandlung
+
+- 🏗️ Erstellung eines realen GitHub Clone MCP-Servers für Entwicklungs-Workflows
+- 🔄 Implementierung intelligenter Repository-Klonung mit Validierung und Fehlerbehandlung
 - 📁 Erstellung intelligenter Verzeichnisverwaltung und VS Code-Integration
-- 🤖 Nutzung des GitHub Copilot Agent Mode mit individuellen MCP-Tools
+- 🤖 Nutzung des GitHub Copilot Agent Mode mit benutzerdefinierten MCP-Tools
 - 🛡️ Anwendung von produktionsreifer Zuverlässigkeit und plattformübergreifender Kompatibilität
 
-**🎯 Lernziel**: Setze einen produktionsreifen MCP-Server ein, der echte Entwicklungs-Workflows optimiert
+**🎯 Lernziel**: Bereitstellung eines produktionsreifen MCP-Servers, der reale Entwicklungs-Workflows optimiert
 
-## 💡 Praxisanwendungen & Auswirkungen
+## 💡 Anwendungen & Auswirkungen in der Praxis
 
-### 🏢 Anwendungsfälle in Unternehmen
+### 🏢 Einsatzmöglichkeiten im Unternehmen
 
 #### 🔄 DevOps-Automatisierung
-Verwandle deinen Entwicklungsworkflow mit intelligenter Automatisierung:
-- **Intelligente Repository-Verwaltung**: KI-gestützte Code-Reviews und Merge-Entscheidungen
-- **Intelligente CI/CD**: Automatisierte Pipeline-Optimierung basierend auf Codeänderungen
-- **Issue-Triage**: Automatische Fehlerklassifizierung und Zuweisung
 
-#### 🧪 Revolution in der Qualitätssicherung
-Verbessere Tests mit KI-gestützter Automatisierung:
+Transformieren Sie Ihren Entwicklungs-Workflow mit intelligenter Automatisierung:
+
+- **Intelligente Repository-Verwaltung**: KI-gesteuerte Code-Überprüfung und Merge-Entscheidungen
+- **Intelligente CI/CD**: Automatische Optimierung von Pipelines basierend auf Codeänderungen
+- **Problem-Triage**: Automatische Klassifizierung und Zuweisung von Fehlern
+
+#### 🧪 Revolution der Qualitätssicherung
+
+Verbessern Sie Tests mit KI-gestützter Automatisierung:
+
 - **Intelligente Testgenerierung**: Automatische Erstellung umfassender Test-Suites
-- **Visuelle Regressionstests**: KI-gestützte Erkennung von UI-Änderungen
-- **Performance-Monitoring**: Proaktive Erkennung und Behebung von Problemen
+- **Visuelles Regressionstesten**: KI-gestützte Erkennung von UI-Änderungen
+- **Leistungsüberwachung**: Proaktive Identifizierung und Lösung von Problemen
 
-#### 📊 Intelligente Datenpipelines
-Baue intelligentere Datenverarbeitungs-Workflows:
+#### 📊 Intelligenz für Datenpipelines
+
+Erstellen Sie intelligentere Datenverarbeitungs-Workflows:
+
 - **Adaptive ETL-Prozesse**: Selbstoptimierende Datenumwandlungen
-- **Anomalieerkennung**: Echtzeit-Überwachung der Datenqualität
-- **Intelligente Steuerung**: Smarte Verwaltung von Datenflüssen
+- **Anomalieerkennung**: Echtzeitüberwachung der Datenqualität
+- **Intelligentes Routing**: Smarte Verwaltung des Datenflusses
 
 #### 🎧 Verbesserung der Kundenerfahrung
-Schaffe herausragende Kundeninteraktionen:
-- **Kontextbewusster Support**: KI-Agenten mit Zugriff auf Kundendaten
+
+Schaffen Sie außergewöhnliche Kundeninteraktionen:
+
+- **Kontextbewusster Support**: KI-Agenten mit Zugriff auf Kundenhistorie
 - **Proaktive Problemlösung**: Vorausschauender Kundenservice
-- **Multikanal-Integration**: Einheitliches KI-Erlebnis über verschiedene Plattformen
+- **Multi-Channel-Integration**: Einheitliches KI-Erlebnis über Plattformen hinweg
 
 ## 🛠️ Voraussetzungen & Einrichtung
 
 ### 💻 Systemanforderungen
 
-| Komponente           | Anforderung               | Hinweise               |
-|---------------------|---------------------------|-----------------------|
-| **Betriebssystem**   | Windows 10+, macOS 10.15+, Linux | Beliebiges modernes OS |
-| **Visual Studio Code** | Neueste stabile Version   | Für AITK erforderlich  |
-| **Node.js**          | v18.0+ und npm            | Für MCP-Server-Entwicklung |
-| **Python**           | 3.10+                     | Optional für Python MCP-Server |
-| **Arbeitsspeicher**  | Mindestens 8 GB RAM       | 16 GB empfohlen für lokale Modelle |
+| Komponente | Anforderung | Hinweise |
+|------------|-------------|----------|
+| **Betriebssystem** | Windows 10+, macOS 10.15+, Linux | Jedes moderne Betriebssystem |
+| **Visual Studio Code** | Neueste stabile Version | Erforderlich für AITK |
+| **Node.js** | v18.0+ und npm | Für die Entwicklung von MCP-Servern |
+| **Python** | 3.10+ | Optional für Python MCP-Server |
+| **Speicher** | Mindestens 8GB RAM | 16GB empfohlen für lokale Modelle |
 
 ### 🔧 Entwicklungsumgebung
 
-#### Empfohlene VS Code Erweiterungen
+#### Empfohlene VS Code-Erweiterungen
+
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
-- **GitHub Copilot** (GitHub.copilot) – Optional, aber hilfreich
+- **GitHub Copilot** (GitHub.copilot) - Optional, aber hilfreich
 
 #### Optionale Tools
+
 - **uv**: Moderner Python-Paketmanager
 - **MCP Inspector**: Visuelles Debugging-Tool für MCP-Server
-- **Playwright**: Für Web-Automatisierungsbeispiele
+- **Playwright**: Für Webautomatisierungsbeispiele
 
-## 🎖️ Lernergebnisse & Zertifizierungspfad
+## 🎖️ Lernziele & Zertifizierungspfad
 
-### 🏆 Checkliste für Kompetenzbeherrschung
+### 🏆 Kompetenz-Checkliste
 
-Mit Abschluss dieses Workshops erreichst du Expertise in:
+Durch den Abschluss dieses Workshops erreichen Sie Meisterschaft in:
 
 #### 🎯 Kernkompetenzen
-- [ ] **MCP-Protokoll-Beherrschung**: Tiefes Verständnis von Architektur und Implementierungsmustern
-- [ ] **AITK-Kompetenz**: Expertenwissen im Umgang mit AI Toolkit für schnelle Entwicklung
-- [ ] **Entwicklung eigener Server**: Aufbau, Bereitstellung und Wartung produktionsreifer MCP-Server
+
+- [ ] **MCP-Protokollbeherrschung**: Tiefes Verständnis der Architektur und Implementierungsmuster
+- [ ] **AITK-Fähigkeiten**: Expertenniveau in der Nutzung des AI Toolkits für schnelle Entwicklung
+- [ ] **Entwicklung benutzerdefinierter Server**: Aufbau, Bereitstellung und Wartung von produktionsreifen MCP-Servern
 - [ ] **Exzellente Tool-Integration**: Nahtlose Verbindung von KI mit bestehenden Entwicklungs-Workflows
-- [ ] **Anwendung von Problemlösungen**: Umsetzung des Gelernten bei realen Geschäftsproblemen
+- [ ] **Anwendung von Problemlösungen**: Anwendung der erlernten Fähigkeiten auf reale geschäftliche Herausforderungen
 
 #### 🔧 Technische Fähigkeiten
-- [ ] Einrichtung und Konfiguration von AI Toolkit in VS Code
-- [ ] Design und Implementierung eigener MCP-Server
-- [ ] Integration von GitHub-Modellen in MCP-Architektur
+
+- [ ] Einrichtung und Konfiguration des AI Toolkits in VS Code
+- [ ] Design und Implementierung benutzerdefinierter MCP-Server
+- [ ] Integration von GitHub-Modellen mit MCP-Architektur
 - [ ] Aufbau automatisierter Test-Workflows mit Playwright
 - [ ] Bereitstellung von KI-Agenten für den Produktionseinsatz
-- [ ] Debugging und Optimierung der MCP-Server-Performance
+- [ ] Debugging und Optimierung der MCP-Serverleistung
 
 #### 🚀 Erweiterte Fähigkeiten
+
 - [ ] Architektur von KI-Integrationen im Unternehmensmaßstab
-- [ ] Umsetzung von Sicherheitsbest-Practices für KI-Anwendungen
+- [ ] Implementierung von Sicherheitsbest-Practices für KI-Anwendungen
 - [ ] Design skalierbarer MCP-Server-Architekturen
-- [ ] Erstellung individueller Toolchains für spezifische Anwendungsbereiche
+- [ ] Erstellung benutzerdefinierter Toolchains für spezifische Domänen
 - [ ] Mentoring anderer in KI-nativer Entwicklung
 
 ## 📖 Zusätzliche Ressourcen
-- [MCP Specification](https://modelcontextprotocol.io/docs)
+
+- [MCP-Spezifikation](https://modelcontextprotocol.io/docs)
 - [AI Toolkit GitHub Repository](https://github.com/microsoft/vscode-ai-toolkit)
-- [Sample MCP Servers Collection](https://github.com/modelcontextprotocol/servers)
-- [Best Practices Guide](https://modelcontextprotocol.io/docs/best-practices)
+- [Sammlung von MCP-Servern](https://github.com/modelcontextprotocol/servers)
+- [Best-Practices-Leitfaden](https://modelcontextprotocol.io/docs/best-practices)
 
 ---
 
-**🚀 Bereit, deinen KI-Entwicklungsworkflow zu revolutionieren?**
+**🚀 Bereit, Ihren KI-Entwicklungs-Workflow zu revolutionieren?**
 
-Lass uns gemeinsam die Zukunft intelligenter Anwendungen mit MCP und AI Toolkit gestalten!
+Lassen Sie uns gemeinsam die Zukunft intelligenter Anwendungen mit MCP und AI Toolkit gestalten!
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.

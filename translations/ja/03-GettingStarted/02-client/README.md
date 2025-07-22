@@ -1,42 +1,42 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
-  "translation_date": "2025-07-17T09:46:49+00:00",
+  "original_hash": "22afa94e3912cd37af9ff20cf4aebc93",
+  "translation_date": "2025-07-22T07:51:23+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "ja"
 }
 -->
 # クライアントの作成
 
-クライアントは、MCPサーバーと直接通信してリソース、ツール、プロンプトを要求するカスタムアプリケーションやスクリプトです。サーバーと対話するためのグラフィカルインターフェースを提供するインスペクターツールとは異なり、自分でクライアントを書くことでプログラム的かつ自動化された操作が可能になります。これにより、開発者はMCPの機能を自分のワークフローに統合し、タスクを自動化し、特定のニーズに合わせたカスタムソリューションを構築できます。
+クライアントとは、MCPサーバーと直接通信してリソース、ツール、プロンプトをリクエストするカスタムアプリケーションやスクリプトのことです。サーバーと対話するためのグラフィカルインターフェースを提供するインスペクターツールを使用する場合とは異なり、自分でクライアントを作成することで、プログラム的かつ自動化された操作が可能になります。これにより、開発者はMCPの機能を自分のワークフローに統合し、タスクを自動化し、特定のニーズに合わせたカスタムソリューションを構築できます。
 
 ## 概要
 
-このレッスンでは、Model Context Protocol（MCP）エコシステム内のクライアントの概念を紹介します。自分でクライアントを書き、MCPサーバーに接続する方法を学びます。
+このレッスンでは、Model Context Protocol (MCP) エコシステム内でのクライアントの概念を紹介します。独自のクライアントを作成し、それをMCPサーバーに接続する方法を学びます。
 
 ## 学習目標
 
-このレッスンの終わりまでに、以下ができるようになります：
+このレッスンの終わりまでに、次のことができるようになります：
 
-- クライアントが何をできるか理解する。
-- 自分のクライアントを書く。
-- MCPサーバーに接続し、クライアントをテストしてサーバーが期待通りに動作することを確認する。
+- クライアントが何をできるかを理解する。
+- 独自のクライアントを作成する。
+- MCPサーバーに接続し、サーバーが期待通りに動作することを確認する。
 
-## クライアントを書くには何が必要か？
+## クライアント作成の手順
 
-クライアントを書くには、以下のことを行う必要があります：
+クライアントを作成するには、以下の手順を実行する必要があります：
 
-- **正しいライブラリをインポートする**。前回と同じライブラリを使いますが、使う構成が異なります。
-- **クライアントのインスタンスを作成する**。クライアントのインスタンスを作成し、選択したトランスポート方法に接続します。
-- **どのリソースをリストアップするか決める**。MCPサーバーにはリソース、ツール、プロンプトが用意されているので、どれをリストアップするか決めます。
-- **クライアントをホストアプリケーションに統合する**。サーバーの機能を把握したら、ユーザーがプロンプトやコマンドを入力した際に対応するサーバー機能が呼び出されるようにホストアプリケーションに統合します。
+- **適切なライブラリをインポートする**。以前と同じライブラリを使用しますが、異なる構造を使用します。
+- **クライアントをインスタンス化する**。クライアントインスタンスを作成し、選択したトランスポートメソッドに接続します。
+- **リストするリソースを決定する**。MCPサーバーにはリソース、ツール、プロンプトが用意されているため、どれをリストするかを決めます。
+- **クライアントをホストアプリケーションに統合する**。サーバーの機能を把握したら、ホストアプリケーションに統合し、ユーザーがプロンプトやコマンドを入力した際に対応するサーバー機能が呼び出されるようにします。
 
-大まかにやることがわかったので、次に例を見てみましょう。
+これで、全体的に何をするのかが理解できたので、次に例を見てみましょう。
 
 ### クライアントの例
 
-この例のクライアントを見てみましょう：
+以下はクライアントの例です：
 
 ### TypeScript
 
@@ -86,39 +86,39 @@ const result = await client.callTool({
 });
 ```
 
-上記のコードでは：
+上記のコードでは以下を行っています：
 
-- ライブラリをインポートしています
-- クライアントのインスタンスを作成し、stdioをトランスポートとして接続しています
-- プロンプト、リソース、ツールをリストアップし、それらをすべて呼び出しています
+- ライブラリをインポートする。
+- クライアントのインスタンスを作成し、stdioを使用して接続する。
+- プロンプト、リソース、ツールをリストし、それらをすべて呼び出す。
 
-これでMCPサーバーと通信できるクライアントができました。
+これで、MCPサーバーと通信できるクライアントが完成しました。
 
-次の演習セクションでは、コードの各スニペットをじっくり分解して説明します。
+次の演習セクションでは、コードスニペットを1つずつ分解して説明します。
 
-## 演習：クライアントを書く
+## 演習：クライアントの作成
 
-前述の通り、コードの説明に時間をかけましょう。もちろん、実際にコードを書きながら進めても構いません。
+前述の通り、コードを説明しながら進めていきます。可能であれば、コードを書きながら進めてください。
 
 ### -1- ライブラリのインポート
 
-必要なライブラリをインポートしましょう。クライアントと選択したトランスポートプロトコル（stdio）への参照が必要です。stdioはローカルマシン上で動作するもの向けのプロトコルです。SSEは別のトランスポートプロトコルで、今後の章で紹介しますが、今はstdioで進めます。
+必要なライブラリをインポートします。クライアントと選択したトランスポートプロトコル（今回はstdio）への参照が必要です。stdioはローカルマシン上で動作するものに適したプロトコルです。SSEは別のトランスポートプロトコルで、今後の章で紹介しますが、今回はstdioを使用します。
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 ```
 
-### Python
+#### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
 from mcp.client.stdio import stdio_client
 ```
 
-### .NET
+#### .NET
 
 ```csharp
 using Microsoft.Extensions.AI;
@@ -128,9 +128,9 @@ using ModelContextProtocol.Client;
 using ModelContextProtocol.Protocol.Transport;
 ```
 
-### Java
+#### Java
 
-Javaの場合、前の演習で使ったMCPサーバーに接続するクライアントを作成します。[Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java)のJava Spring Bootプロジェクト構成を使い、`src/main/java/com/microsoft/mcp/sample/client/`フォルダーに`SDKClient`という新しいJavaクラスを作成し、以下のインポートを追加してください：
+Javaでは、前回の演習で作成したMCPサーバーに接続するクライアントを作成します。Java Spring Bootプロジェクト構造を使用し、`src/main/java/com/microsoft/mcp/sample/client/`フォルダーに`SDKClient`という新しいJavaクラスを作成し、以下のインポートを追加します：
 
 ```java
 import java.util.Map;
@@ -143,13 +143,13 @@ import io.modelcontextprotocol.spec.McpSchema.CallToolResult;
 import io.modelcontextprotocol.spec.McpSchema.ListToolsResult;
 ```
 
-次はインスタンス化に進みます。
+次に、インスタンス化に進みます。
 
 ### -2- クライアントとトランスポートのインスタンス化
 
-トランスポートとクライアントのインスタンスを作成します：
+トランスポートのインスタンスとクライアントのインスタンスを作成する必要があります：
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 const transport = new StdioClientTransport({
@@ -167,9 +167,9 @@ const client = new Client(
 await client.connect(transport);
 ```
 
-上記のコードでは：
+上記のコードでは以下を行っています：
 
-- stdioトランスポートのインスタンスを作成しています。コマンドと引数でサーバーの起動方法を指定している点に注目してください。クライアント作成時に必要な処理です。
+- stdioトランスポートインスタンスを作成。サーバーを見つけて起動するためのコマンドと引数を指定する必要があることに注意してください。
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -178,7 +178,7 @@ await client.connect(transport);
     });
     ```
 
-- 名前とバージョンを指定してクライアントをインスタンス化しています。
+- 名前とバージョンを指定してクライアントをインスタンス化。
 
     ```typescript
     const client = new Client(
@@ -188,13 +188,13 @@ await client.connect(transport);
     });
     ```
 
-- クライアントを選択したトランスポートに接続しています。
+- 選択したトランスポートにクライアントを接続。
 
     ```typescript
     await client.connect(transport);
     ```
 
-### Python
+#### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
@@ -223,14 +223,14 @@ if __name__ == "__main__":
     asyncio.run(run())
 ```
 
-上記のコードでは：
+上記のコードでは以下を行っています：
 
-- 必要なライブラリをインポートしています
-- サーバーパラメーターオブジェクトをインスタンス化しています。これはサーバーを起動し、クライアントが接続するために使います。
-- `run`メソッドを定義し、その中で`stdio_client`を呼び出してクライアントセッションを開始しています。
-- エントリーポイントを作成し、`asyncio.run`に`run`メソッドを渡しています。
+- 必要なライブラリをインポート。
+- サーバーパラメータオブジェクトをインスタンス化。これを使用してサーバーを実行し、クライアントで接続できるようにします。
+- `run`メソッドを定義。このメソッドは`stdio_client`を呼び出し、クライアントセッションを開始します。
+- エントリーポイントを作成し、`asyncio.run`に`run`メソッドを提供。
 
-### .NET
+#### .NET
 
 ```dotnet
 using Microsoft.Extensions.AI;
@@ -257,14 +257,14 @@ var clientTransport = new StdioClientTransport(new()
 await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 ```
 
-上記のコードでは：
+上記のコードでは以下を行っています：
 
-- 必要なライブラリをインポートしています。
-- stdioトランスポートを作成し、`mcpClient`というクライアントを作成しています。これはMCPサーバーの機能をリストアップ・呼び出しに使います。
+- 必要なライブラリをインポート。
+- stdioトランスポートを作成し、クライアント`mcpClient`を作成。このクライアントを使用してMCPサーバーの機能をリストおよび呼び出します。
 
-注意：「Arguments」には*.csproj*ファイルか実行可能ファイルのどちらかを指定できます。
+「Arguments」には、*.csproj*または実行可能ファイルのいずれかを指定できます。
 
-### Java
+#### Java
 
 ```java
 public class SDKClient {
@@ -289,18 +289,18 @@ public class SDKClient {
 }
 ```
 
-上記のコードでは：
+上記のコードでは以下を行っています：
 
-- MCPサーバーが動作する`http://localhost:8080`を指すSSEトランスポートをセットアップするmainメソッドを作成しています。
-- トランスポートをコンストラクタパラメーターに取るクライアントクラスを作成しています。
-- `run`メソッド内でトランスポートを使って同期的なMCPクライアントを作成し、接続を初期化しています。
-- Java Spring Boot MCPサーバーとのHTTPベース通信に適したSSE（Server-Sent Events）トランスポートを使用しています。
+- `http://localhost:8080`で実行されるMCPサーバーを指すSSEトランスポートを設定するメインメソッドを作成。
+- トランスポートをコンストラクタパラメータとして受け取るクライアントクラスを作成。
+- `run`メソッド内で、トランスポートを使用して同期MCPクライアントを作成し、接続を初期化。
+- HTTPベースの通信に適したSSE（Server-Sent Events）トランスポートを使用。
 
-### -3- サーバー機能のリストアップ
+### -3- サーバー機能のリスト
 
-クライアントは接続できる状態になりましたが、まだ機能をリストアップしていません。次にそれを行いましょう：
+これで、プログラムを実行すればクライアントが接続できるようになりました。ただし、まだ機能をリストしていないので、次にそれを行います：
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 // List prompts
@@ -313,7 +313,7 @@ const resources = await client.listResources();
 const tools = await client.listTools();
 ```
 
-### Python
+#### Python
 
 ```python
 # List available resources
@@ -329,9 +329,9 @@ for tool in tools.tools:
     print("Tool: ", tool.name)
 ```
 
-ここでは利用可能なリソース（`list_resources()`）とツール（`list_tools`）をリストアップし、出力しています。
+ここでは、利用可能なリソースを`list_resources()`、ツールを`list_tools`でリストし、それらを出力しています。
 
-### .NET
+#### .NET
 
 ```dotnet
 foreach (var tool in await client.ListToolsAsync())
@@ -340,9 +340,9 @@ foreach (var tool in await client.ListToolsAsync())
 }
 ```
 
-上記はサーバー上のツールをリストアップする例です。各ツールの名前を出力しています。
+上記は、サーバー上のツールをリストする例です。各ツールについて、その名前を出力します。
 
-### Java
+#### Java
 
 ```java
 // List and demonstrate tools
@@ -353,19 +353,19 @@ System.out.println("Available Tools = " + toolsList);
 client.ping();
 ```
 
-上記のコードでは：
+上記のコードでは以下を行っています：
 
-- `listTools()`を呼び出してMCPサーバーから利用可能なツールを取得しています。
-- `ping()`でサーバーとの接続が正常か確認しています。
-- `ListToolsResult`にはツールの名前、説明、入力スキーマなどの情報が含まれています。
+- `listTools()`を呼び出して、MCPサーバーから利用可能なすべてのツールを取得。
+- `ping()`を使用して、サーバーへの接続が機能していることを確認。
+- `ListToolsResult`には、ツールの名前、説明、入力スキーマなどの情報が含まれています。
 
-これで全機能を取得できました。では、いつ使うのか？このクライアントはシンプルで、使いたい機能を明示的に呼び出す必要があります。次の章では、自身の大規模言語モデル（LLM）にアクセスできるより高度なクライアントを作成します。今はまずサーバーの機能を呼び出す方法を見てみましょう。
+これで、すべての機能をキャプチャしました。次に、それらをいつ使用するかという問題があります。このクライアントは非常にシンプルで、機能を使用する際には明示的に呼び出す必要があります。次の章では、独自の大規模言語モデル（LLM）にアクセスできるより高度なクライアントを作成します。今回は、サーバー上の機能をどのように呼び出すかを見てみましょう：
 
 ### -4- 機能の呼び出し
 
-機能を呼び出すには、正しい引数や場合によっては呼び出す名前を指定する必要があります。
+機能を呼び出すには、正しい引数と場合によっては呼び出す対象の名前を指定する必要があります。
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 
@@ -391,9 +391,9 @@ const promptResult = await client.getPrompt({
 })
 ```
 
-上記のコードでは：
+上記のコードでは以下を行っています：
 
-- リソースを読み込みます。`readResource()`を呼び出し、`uri`を指定しています。サーバー側はおそらく以下のようになっています：
+- リソースを読み取る。`readResource()`を呼び出し、`uri`を指定します。サーバー側では以下のように見えるはずです：
 
     ```typescript
     server.resource(
@@ -408,9 +408,9 @@ const promptResult = await client.getPrompt({
     );
     ```
 
-    `uri`の値`file://example.txt`はサーバー側の`file://{name}`にマッチし、`example.txt`が`name`にマッピングされます。
+    サーバー上の`file://{name}`に対して、クライアントの`uri`値`file://example.txt`が一致します。`example.txt`は`name`にマッピングされます。
 
-- ツールを呼び出します。`name`と`arguments`を指定して呼び出します：
+- ツールを呼び出す。`name`と`arguments`を指定して呼び出します：
 
     ```typescript
     const result = await client.callTool({
@@ -421,7 +421,7 @@ const promptResult = await client.getPrompt({
     });
     ```
 
-- プロンプトを取得します。`getPrompt()`に`name`と`arguments`を渡して呼び出します。サーバーコードは以下の通りです：
+- プロンプトを取得する。`getPrompt()`を`name`と`arguments`で呼び出します。サーバーコードは以下のようになります：
 
     ```typescript
     server.prompt(
@@ -439,7 +439,7 @@ const promptResult = await client.getPrompt({
     );
     ```
 
-    それに対応するクライアントコードは以下のようになります：
+    そのため、クライアントコードは以下のようになります：
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -450,7 +450,7 @@ const promptResult = await client.getPrompt({
     })
     ```
 
-### Python
+#### Python
 
 ```python
 # Read a resource
@@ -463,14 +463,14 @@ result = await session.call_tool("add", arguments={"a": 1, "b": 7})
 print(result.content)
 ```
 
-上記のコードでは：
+上記のコードでは以下を行っています：
 
-- `greeting`というリソースを`read_resource`で呼び出しています。
-- `add`というツールを`call_tool`で呼び出しています。
+- `read_resource`を使用して`greeting`というリソースを呼び出し。
+- `call_tool`を使用して`add`というツールを呼び出し。
 
-### .NET
+#### .NET
 
-1. ツールを呼び出すコードを追加しましょう：
+1. ツールを呼び出すコードを追加します：
 
   ```csharp
   var result = await mcpClient.CallToolAsync(
@@ -479,14 +479,14 @@ print(result.content)
       cancellationToken:CancellationToken.None);
   ```
 
-2. 結果を出力するコードは以下の通りです：
+1. 結果を出力するコードを追加します：
 
   ```csharp
   Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
   // Sum 4
   ```
 
-### Java
+#### Java
 
 ```java
 // Call various calculator tools
@@ -506,20 +506,20 @@ CallToolResult resultHelp = client.callTool(new CallToolRequest("help", Map.of()
 System.out.println("Help = " + resultHelp);
 ```
 
-上記のコードでは：
+上記のコードでは以下を行っています：
 
-- 複数の計算ツールを`callTool()`メソッドと`CallToolRequest`オブジェクトで呼び出しています。
-- 各ツール呼び出しはツール名と、そのツールが必要とする引数の`Map`を指定しています。
-- サーバーツールは特定のパラメーター名（例："a", "b"）を期待しています。
-- 結果はサーバーからのレスポンスを含む`CallToolResult`オブジェクトとして返されます。
+- `CallToolRequest`オブジェクトを使用して`callTool()`メソッドで複数の計算ツールを呼び出し。
+- 各ツール呼び出しで、ツール名とそのツールに必要な引数の`Map`を指定。
+- サーバーツールは特定のパラメータ名（例："a"、"b"）を期待。
+- 結果は、サーバーからの応答を含む`CallToolResult`オブジェクトとして返されます。
 
 ### -5- クライアントの実行
 
 クライアントを実行するには、ターミナルで以下のコマンドを入力します：
 
-### TypeScript
+#### TypeScript
 
-*package.json*の"scripts"セクションに以下を追加してください：
+*package.json*の"scripts"セクションに以下を追加：
 
 ```json
 "client": "tsx && node build/client.js"
@@ -529,7 +529,7 @@ System.out.println("Help = " + resultHelp);
 npm run client
 ```
 
-### Python
+#### Python
 
 以下のコマンドでクライアントを呼び出します：
 
@@ -537,15 +537,15 @@ npm run client
 python client.py
 ```
 
-### .NET
+#### .NET
 
 ```sh
 dotnet run
 ```
 
-### Java
+#### Java
 
-まず、MCPサーバーが`http://localhost:8080`で動作していることを確認してください。その後クライアントを実行します：
+まず、MCPサーバーが`http://localhost:8080`で実行されていることを確認します。その後、クライアントを実行します：
 
 ```bash
 # Build you project
@@ -555,7 +555,7 @@ dotnet run
 ./mvnw exec:java -Dexec.mainClass="com.microsoft.mcp.sample.client.SDKClient"
 ```
 
-または、ソリューションフォルダー`03-GettingStarted\02-client\solution\java`にある完全なクライアントプロジェクトを実行することもできます：
+または、`03-GettingStarted\02-client\solution\java`フォルダーにある完全なクライアントプロジェクトを実行します：
 
 ```bash
 # Navigate to the solution directory
@@ -568,9 +568,9 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 
 ## 課題
 
-この課題では、学んだことを活かして自分のクライアントを作成します。
+この課題では、学んだことを活用して独自のクライアントを作成します。
 
-以下のサーバーを使ってクライアントコードから呼び出してください。サーバーに機能を追加してより面白くしてみましょう。
+以下のサーバーを使用して、クライアントコードを通じて呼び出してください。また、サーバーにさらに多くの機能を追加して、より興味深いものにしてみてください。
 
 ### TypeScript
 
@@ -674,19 +674,19 @@ public static class CalculatorTool
 }
 ```
 
-このプロジェクトを参照して、[プロンプトやリソースの追加方法](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs)を確認してください。
+このプロジェクトを参照して、[プロンプトとリソースを追加する方法](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs)を確認してください。
 
-また、[プロンプトやリソースの呼び出し方法](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/)もチェックしてください。
+また、[プロンプトとリソースを呼び出す方法](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/)も確認してください。
 
-## ソリューション
+## 解答
 
-**ソリューションフォルダー**には、このチュートリアルで扱ったすべての概念を示す、完全で実行可能なクライアント実装が含まれています。各ソリューションはクライアントとサーバーのコードを別々の自己完結型プロジェクトとして整理しています。
+**solutionフォルダー**には、このチュートリアルで説明したすべての概念を示す、完全に実行可能なクライアント実装が含まれています。各ソリューションには、クライアントとサーバーのコードが別々の自己完結型プロジェクトとして整理されています。
 
-### 📁 ソリューション構成
+### 📁 ソリューション構造
 
 ソリューションディレクトリはプログラミング言語ごとに整理されています：
 
-```
+```text
 solution/
 ├── typescript/          # TypeScript client with npm/Node.js setup
 │   ├── package.json     # Dependencies and scripts
@@ -709,19 +709,20 @@ solution/
     └── server.csproj    # Server project file
 ```
 
-### 🚀 各ソリューションに含まれるもの
+### 🚀 各ソリューションに含まれる内容
 
-各言語別ソリューションには以下が含まれます：
+各言語固有のソリューションには以下が含まれます：
 
 - **チュートリアルのすべての機能を備えた完全なクライアント実装**
-- **適切な依存関係と設定を備えた動作するプロジェクト構成**
-- **簡単にセットアップ・実行できるビルドおよび実行スクリプト**
-- **言語別の詳細なREADME**
+- **適切な依存関係と設定を備えたプロジェクト構造**
+- **簡単にセットアップして実行できるビルドおよび実行スクリプト**
+- **言語固有の手順を記載した詳細なREADME**
 - **エラーハンドリングと結果処理の例**
 
-### 📖 ソリューションの使い方
+### 📖 ソリューションの使用方法
 
-1. **好みの言語フォルダーに移動**：
+1. **希望する言語フォルダーに移動**：
+
    ```bash
    cd solution/typescript/    # For TypeScript
    cd solution/java/          # For Java
@@ -735,66 +736,67 @@ solution/
    - クライアントの実行
 
 3. **期待される出力例**：
+
    ```text
    Prompt: Please review this code: console.log("hello");
    Resource template: file
    Tool result: { content: [ { type: 'text', text: '9' } ] }
    ```
 
-完全なドキュメントとステップバイステップの手順は、**[📖 ソリューションドキュメント](./solution/README.md)** を参照してください。
+完全なドキュメントと手順については、**[📖 ソリューションドキュメント](./solution/README.md)**を参照してください。
 
 ## 🎯 完全な例
 
-このチュートリアルで扱ったすべてのプログラミング言語向けに、完全で動作するクライアント実装を提供しています。これらの例は上記の機能をすべて示しており、リファレンス実装や自身のプロジェクトの出発点として利用できます。
+このチュートリアルで説明したすべての機能を示す、完全に動作するクライアント実装を提供しています。これらの例は、リファレンス実装または独自プロジェクトの出発点として使用できます。
 
 ### 利用可能な完全な例
 
 | 言語 | ファイル | 説明 |
-|------|---------|------|
-| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | SSEトランスポートを使った完全なJavaクライアント。包括的なエラーハンドリング付き |
-| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | stdioトランスポートを使った完全なC#クライアント。サーバー自動起動機能付き |
-| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | MCPプロトコル完全対応のTypeScriptクライアント |
-| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | async/awaitパターンを使った完全なPythonクライアント |
+|------|----------|------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | SSEトランスポートを使用した完全なJavaクライアント（包括的なエラーハンドリング付き） |
+| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | stdioトランスポートを使用した完全なC#クライアント（サーバーの自動起動機能付き） |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | MCPプロトコルを完全サポートするTypeScriptクライアント |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | 非同期/awaitパターンを使用した完全なPythonクライアント |
 
-各完全例には：
+各完全な例には以下が含まれます：
 
-- ✅ **接続確立とエラーハンドリング**
-- ✅ **サーバーの機能探索**（ツール、リソース、プロンプト）
-- ✅ **計算機能操作**（加算、減算、乗算、除算、ヘルプ）
-- ✅ **結果処理と整形出力**
+- ✅ **接続の確立**とエラーハンドリング
+- ✅ **サーバーの探索**（ツール、リソース、プロンプトなど）
+- ✅ **計算操作**（加算、減算、乗算、除算、ヘルプ）
+- ✅ **結果処理**とフォーマットされた出力
 - ✅ **包括的なエラーハンドリング**
-- ✅ **わかりやすくコメント付きのクリーンなコード**
+- ✅ **ステップごとのコメント付きのクリーンでドキュメント化されたコード**
 
-### 完全な例の始め方
+### 完全な例の開始方法
 
-1. 上の表から**好みの言語**を選ぶ
-2. 完全例ファイルを確認し、実装全体を理解する
-3. [`complete_examples.md`](./complete_examples.md)の指示に従って例を実行する
-4. 必要に応じて例を修正・拡張する
+1. **希望する言語を選択**し、上記の表から選択します。
+2. **完全な例ファイルを確認**し、実装全体を理解します。
+3. **[`complete_examples.md`](./complete_examples.md)の指示に従って例を実行**します。
+4. **例を修正および拡張**して、特定のユースケースに適応させます。
 
-これらの例の実行やカスタマイズに関する詳細なドキュメントは、**[📖 完全例ドキュメント](./complete_examples.md)** を参照してください。
+これらの例を実行およびカスタマイズする方法の詳細なドキュメントについては、**[📖 完全な例のドキュメント](./complete_examples.md)**を参照してください。
 
-### 💡 ソリューションと完全例の違い
+### 💡 ソリューションと完全な例の違い
 
 | **ソリューションフォルダー** | **完全な例** |
-|-----------------------------|-------------|
-| ビルドファイルを含む完全なプロジェクト構成 | 単一ファイルの実装例 |
-| 依存関係付きで即実行可能 | コード例に特化 |
-| 本番環境に近いセットアップ | 教育用リファレンス |
-| 言語固有のツールチェーン対応 | 複数言語の比較用 |
-両方のアプローチには価値があります。完全なプロジェクトには**solution folder**を、学習や参照には**complete examples**を使いましょう。
+|----------------------------|-------------|
+| ビルドファイルを含む完全なプロジェクト構造 | 単一ファイルの実装 |
+| 依存関係を含む実行可能な状態 | 教育的なリファレンス |
+| 本番環境に近いセットアップ | 言語間の比較が可能 |
+| 言語固有のツールを使用 | 学習目的に最適 |
+両方のアプローチには価値があります。**solution folder** は完全なプロジェクト向けに使用し、**complete examples** は学習や参考資料として活用してください。
 
 ## 重要なポイント
 
-この章でのクライアントに関する重要なポイントは以下の通りです：
+この章の重要なポイントは、クライアントに関する以下の内容です：
 
-- サーバーの機能を発見し、呼び出すための両方に使えます。
-- （この章のように）自分自身を起動しながらサーバーを起動することもできますが、クライアントは既に動作しているサーバーに接続することも可能です。
-- 前章で説明したInspectorのような代替手段と並んで、サーバーの機能を試すのに非常に便利な方法です。
+- サーバー上の機能を発見し、呼び出すために使用できます。
+- 自身が起動する際にサーバーを開始することができます（この章のように）。ただし、クライアントは既存のサーバーに接続することも可能です。
+- 前章で説明したInspectorのような代替手段と並んで、サーバーの機能をテストする優れた方法です。
 
 ## 追加リソース
 
-- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
+- [MCPでのクライアント構築](https://modelcontextprotocol.io/quickstart/client)
 
 ## サンプル
 
@@ -804,9 +806,9 @@ solution/
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 
-## 次に進む
+## 次は何をする？
 
-- 次へ: [Creating a client with an LLM](../03-llm-client/README.md)
+- 次: [LLMを使用したクライアントの作成](../03-llm-client/README.md)
 
-**免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+**免責事項**:  
+この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。元の言語で記載された文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当方は一切の責任を負いません。

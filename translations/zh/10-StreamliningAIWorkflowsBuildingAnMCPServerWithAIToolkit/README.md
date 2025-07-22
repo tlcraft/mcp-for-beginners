@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "787440926586cd064b0899fd1c514f52",
-  "translation_date": "2025-07-14T07:00:53+00:00",
+  "original_hash": "9c61ceb0227f07a85c9e809d3914f965",
+  "translation_date": "2025-07-22T07:01:34+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
   "language_code": "zh"
 }
 -->
-# 精简AI工作流程：使用AI Toolkit构建MCP服务器
+# 简化 AI 工作流：使用 AI 工具包构建 MCP 服务器
 
 [![MCP Version](https://img.shields.io/badge/MCP-1.9.3-blue.svg)](https://modelcontextprotocol.io/)
 [![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
@@ -15,184 +15,209 @@ CO_OP_TRANSLATOR_METADATA:
 
 ![logo](../../../translated_images/logo.ec93918ec338dadde1715c8aaf118079e0ed0502e9efdfcc84d6a0f4a9a70ae8.zh.png)
 
-## 🎯 概览
+## 🎯 概述
 
-欢迎参加**Model Context Protocol (MCP) 研讨会**！本次全面的实操研讨会结合了两项前沿技术，助力革新AI应用开发：
+欢迎参加 **模型上下文协议 (MCP) 工作坊**！这个全面的实践工作坊结合了两项前沿技术，旨在革新 AI 应用开发：
 
-- **🔗 Model Context Protocol (MCP)**：实现AI工具无缝集成的开放标准
-- **🛠️ AI Toolkit for Visual Studio Code (AITK)**：微软强大的AI开发扩展
+- **🔗 模型上下文协议 (MCP)**：一种开放标准，用于无缝连接 AI 工具
+- **🛠️ Visual Studio Code 的 AI 工具包 (AITK)**：微软强大的 AI 开发扩展
 
-### 🎓 你将学到什么
+### 🎓 学习目标
 
-完成本研讨会后，你将掌握构建智能应用的技巧，实现AI模型与现实工具和服务的桥接。从自动化测试到定制API集成，你将获得解决复杂业务难题的实用技能。
+通过本次工作坊，您将掌握构建智能应用的技能，这些应用能够将 AI 模型与现实世界的工具和服务相结合。从自动化测试到定制 API 集成，您将获得解决复杂业务挑战的实用技能。
 
 ## 🏗️ 技术栈
 
-### 🔌 Model Context Protocol (MCP)
+### 🔌 模型上下文协议 (MCP)
 
-MCP是AI领域的“USB-C”——连接AI模型与外部工具和数据源的通用标准。
+MCP 是 AI 的 **“USB-C”**——一种连接 AI 模型与外部工具和数据源的通用标准。
 
-**✨ 主要特点：**
-- 🔄 **标准化集成**：AI工具连接的统一接口
-- 🏛️ **灵活架构**：支持本地和远程服务器，通过stdio/SSE传输
-- 🧰 **丰富生态**：协议内集成工具、提示和资源
-- 🔒 **企业级保障**：内置安全性和可靠性
+**✨ 关键特性：**
 
-**🎯 MCP的重要性：**
-正如USB-C解决了线缆混乱，MCP简化了AI集成的复杂性。一个协议，无限可能。
+- 🔄 **标准化集成**：为 AI 工具连接提供通用接口
+- 🏛️ **灵活架构**：通过 stdio/SSE 传输支持本地和远程服务器
+- 🧰 **丰富生态系统**：协议内包含工具、提示和资源
+- 🔒 **企业级准备**：内置安全性和可靠性
 
-### 🤖 AI Toolkit for Visual Studio Code (AITK)
+**🎯 MCP 的重要性：**
+就像 USB-C 消除了线缆混乱，MCP 消除了 AI 集成的复杂性。一个协议，无限可能。
 
-微软旗舰级AI开发扩展，将VS Code打造成AI开发利器。
+### 🤖 Visual Studio Code 的 AI 工具包 (AITK)
+
+微软的旗舰 AI 开发扩展，将 VS Code 转变为 AI 开发的强大工具。
 
 **🚀 核心功能：**
-- 📦 **模型目录**：访问Azure AI、GitHub、Hugging Face、Ollama等模型
-- ⚡ **本地推理**：ONNX优化的CPU/GPU/NPU执行
-- 🏗️ **Agent Builder**：可视化AI代理开发，支持MCP集成
-- 🎭 **多模态支持**：文本、视觉及结构化输出
+
+- 📦 **模型目录**：访问来自 Azure AI、GitHub、Hugging Face、Ollama 的模型
+- ⚡ **本地推理**：支持 ONNX 优化的 CPU/GPU/NPU 执行
+- 🏗️ **代理构建器**：可视化 AI 代理开发，支持 MCP 集成
+- 🎭 **多模态支持**：支持文本、视觉和结构化输出
 
 **💡 开发优势：**
+
 - 零配置模型部署
 - 可视化提示工程
-- 实时测试沙盒
-- 无缝集成MCP服务器
+- 实时测试环境
+- 无缝集成 MCP 服务器
 
 ## 📚 学习路径
 
-### [🚀 模块1：AI Toolkit基础](./lab1/README.md)
-**时长**：15分钟
-- 🛠️ 安装并配置VS Code的AI Toolkit
-- 🗂️ 探索模型目录（涵盖GitHub、ONNX、OpenAI、Anthropic、Google的100+模型）
-- 🎮 掌握交互式沙盒，实现实时模型测试
-- 🤖 使用Agent Builder构建你的第一个AI代理
-- 📊 利用内置指标评估模型性能（F1、相关性、相似度、一致性）
+### [🚀 模块 1：AI 工具包基础](./lab1/README.md)
+
+**时长**：15 分钟
+
+- 🛠️ 安装并配置 Visual Studio Code 的 AI 工具包
+- 🗂️ 探索模型目录（100+ 来自 GitHub、ONNX、OpenAI、Anthropic、Google 的模型）
+- 🎮 掌握交互式测试环境，进行实时模型测试
+- 🤖 使用代理构建器构建您的第一个 AI 代理
+- 📊 使用内置指标（F1、相关性、相似性、一致性）评估模型性能
 - ⚡ 学习批处理和多模态支持功能
 
-**🎯 学习成果**：创建功能完善的AI代理，全面理解AITK能力
+**🎯 学习成果**：创建一个功能性 AI 代理，全面了解 AITK 的功能
 
-### [🌐 模块2：MCP与AI Toolkit基础](./lab2/README.md)
-**时长**：20分钟
-- 🧠 掌握Model Context Protocol (MCP)架构与概念
-- 🌐 探索微软的MCP服务器生态系统
-- 🤖 使用Playwright MCP服务器构建浏览器自动化代理
-- 🔧 将MCP服务器集成到AI Toolkit Agent Builder中
-- 📊 配置并测试代理中的MCP工具
-- 🚀 导出并部署基于MCP的代理用于生产环境
+### [🌐 模块 2：MCP 与 AI 工具包基础](./lab2/README.md)
 
-**🎯 学习成果**：部署一个通过MCP连接外部工具的AI代理
+**时长**：20 分钟
 
-### [🔧 模块3：AI Toolkit高级MCP开发](./lab3/README.md)
-**时长**：20分钟
-- 💻 使用AI Toolkit创建自定义MCP服务器
-- 🐍 配置并使用最新的MCP Python SDK（v1.9.3）
-- 🔍 设置并使用MCP Inspector进行调试
-- 🛠️ 构建具备专业调试流程的天气MCP服务器
-- 🧪 在Agent Builder和Inspector环境中调试MCP服务器
+- 🧠 掌握模型上下文协议 (MCP) 的架构和概念
+- 🌐 探索微软的 MCP 服务器生态系统
+- 🤖 使用 Playwright MCP 服务器构建一个浏览器自动化代理
+- 🔧 将 MCP 服务器集成到 AI 工具包代理构建器中
+- 📊 配置并测试代理中的 MCP 工具
+- 🚀 导出并部署支持 MCP 的代理以供生产使用
 
-**🎯 学习成果**：使用现代工具开发并调试自定义MCP服务器
+**🎯 学习成果**：部署一个通过 MCP 增强的 AI 代理，连接外部工具
 
-### [🐙 模块4：实战MCP开发 - 自定义GitHub克隆服务器](./lab4/README.md)
-**时长**：30分钟
-- 🏗️ 构建面向开发流程的真实GitHub克隆MCP服务器
-- 🔄 实现智能仓库克隆，包含校验和错误处理
-- 📁 创建智能目录管理及VS Code集成
-- 🤖 使用GitHub Copilot代理模式结合自定义MCP工具
+### [🔧 模块 3：使用 AI 工具包进行高级 MCP 开发](./lab3/README.md)
+
+**时长**：20 分钟
+
+- 💻 使用 AI 工具包创建自定义 MCP 服务器
+- 🐍 配置并使用最新的 MCP Python SDK (v1.9.3)
+- 🔍 设置并使用 MCP Inspector 进行调试
+- 🛠️ 构建一个天气 MCP 服务器，使用专业调试工作流
+- 🧪 在代理构建器和 Inspector 环境中调试 MCP 服务器
+
+**🎯 学习成果**：使用现代工具开发并调试自定义 MCP 服务器
+
+### [🐙 模块 4：实践 MCP 开发 - 定制 GitHub 克隆服务器](./lab4/README.md)
+
+**时长**：30 分钟
+
+- 🏗️ 构建一个真实世界的 GitHub 克隆 MCP 服务器，用于开发工作流
+- 🔄 实现智能仓库克隆，支持验证和错误处理
+- 📁 创建智能目录管理并集成 VS Code
+- 🤖 使用 GitHub Copilot 代理模式与定制 MCP 工具
 - 🛡️ 应用生产级可靠性和跨平台兼容性
 
-**🎯 学习成果**：部署生产级MCP服务器，优化真实开发流程
+**🎯 学习成果**：部署一个生产级 MCP 服务器，简化真实开发工作流
 
-## 💡 真实应用与影响
+## 💡 实际应用与影响
 
 ### 🏢 企业应用场景
 
-#### 🔄 DevOps自动化
-用智能自动化改造开发流程：
-- **智能仓库管理**：AI驱动的代码审查与合并决策
-- **智能CI/CD**：基于代码变更的自动化流水线优化
-- **问题分流**：自动化缺陷分类与指派
+#### 🔄 DevOps 自动化
 
-#### 🧪 质量保障革新
-用AI提升测试效率：
-- **智能测试生成**：自动创建全面测试套件
-- **视觉回归测试**：AI驱动的UI变更检测
-- **性能监控**：主动识别并解决问题
+通过智能自动化改造您的开发工作流：
+
+- **智能仓库管理**：AI 驱动的代码审查和合并决策
+- **智能 CI/CD**：基于代码变更的自动化管道优化
+- **问题分类**：自动化的错误分类和分配
+
+#### 🧪 质量保证革命
+
+通过 AI 驱动的自动化提升测试质量：
+
+- **智能测试生成**：自动创建全面的测试套件
+- **视觉回归测试**：AI 驱动的 UI 变化检测
+- **性能监控**：主动识别和解决问题
 
 #### 📊 数据管道智能化
-构建更智能的数据处理流程：
-- **自适应ETL流程**：自动优化数据转换
-- **异常检测**：实时监控数据质量
-- **智能路由**：智能管理数据流向
+
+构建更智能的数据处理工作流：
+
+- **自适应 ETL 流程**：自我优化的数据转换
+- **异常检测**：实时数据质量监控
+- **智能路由**：智能数据流管理
 
 #### 🎧 客户体验提升
-打造卓越客户互动：
-- **上下文感知支持**：AI代理访问客户历史
-- **主动问题解决**：预测性客户服务
-- **多渠道整合**：跨平台统一AI体验
 
-## 🛠️ 前提条件与环境搭建
+创造卓越的客户互动：
+
+- **上下文感知支持**：具有客户历史访问能力的 AI 代理
+- **主动问题解决**：预测性客户服务
+- **多渠道集成**：跨平台统一的 AI 体验
+
+## 🛠️ 先决条件与设置
 
 ### 💻 系统要求
 
 | 组件 | 要求 | 备注 |
-|-----------|-------------|-------|
-| **操作系统** | Windows 10+，macOS 10.15+，Linux | 任何现代操作系统 |
-| **Visual Studio Code** | 最新稳定版 | AITK必备 |
-| **Node.js** | v18.0+及npm | 用于MCP服务器开发 |
-| **Python** | 3.10+ | 可选，用于Python MCP服务器 |
-| **内存** | 最少8GB RAM | 本地模型推荐16GB |
+|------|------|------|
+| **操作系统** | Windows 10+、macOS 10.15+、Linux | 任意现代操作系统 |
+| **Visual Studio Code** | 最新稳定版本 | AITK 必需 |
+| **Node.js** | v18.0+ 和 npm | 用于 MCP 服务器开发 |
+| **Python** | 3.10+ | 可选，用于 Python MCP 服务器 |
+| **内存** | 至少 8GB RAM | 本地模型推荐 16GB |
 
 ### 🔧 开发环境
 
-#### 推荐VS Code扩展
-- **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
+#### 推荐的 VS Code 扩展
+
+- **AI 工具包** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
-- **Python Debugger** (ms-python.debugpy)
+- **Python 调试器** (ms-python.debugpy)
 - **GitHub Copilot** (GitHub.copilot) - 可选但有帮助
 
 #### 可选工具
-- **uv**：现代Python包管理器
-- **MCP Inspector**：MCP服务器的可视化调试工具
+
+- **uv**：现代 Python 包管理器
+- **MCP Inspector**：用于 MCP 服务器的可视化调试工具
 - **Playwright**：用于网页自动化示例
 
 ## 🎖️ 学习成果与认证路径
 
 ### 🏆 技能掌握清单
 
-完成本研讨会后，你将掌握：
+完成本次工作坊后，您将掌握以下技能：
 
 #### 🎯 核心能力
-- [ ] **MCP协议精通**：深入理解架构与实现模式
-- [ ] **AITK熟练使用**：快速开发的专家级技能
-- [ ] **自定义服务器开发**：构建、部署及维护生产级MCP服务器
-- [ ] **工具集成能力**：无缝连接AI与现有开发流程
+
+- [ ] **MCP 协议掌握**：深入理解架构和实现模式
+- [ ] **AITK 熟练度**：熟练使用 AI 工具包进行快速开发
+- [ ] **自定义服务器开发**：构建、部署和维护生产级 MCP 服务器
+- [ ] **工具集成能力**：无缝连接 AI 与现有开发工作流
 - [ ] **问题解决应用**：将所学技能应用于实际业务挑战
 
 #### 🔧 技术技能
-- [ ] 在VS Code中安装配置AI Toolkit
-- [ ] 设计并实现自定义MCP服务器
-- [ ] 将GitHub模型集成到MCP架构
-- [ ] 使用Playwright构建自动化测试流程
-- [ ] 部署生产环境AI代理
-- [ ] 调试并优化MCP服务器性能
+
+- [ ] 设置并配置 Visual Studio Code 的 AI 工具包
+- [ ] 设计并实现自定义 MCP 服务器
+- [ ] 将 GitHub 模型集成到 MCP 架构中
+- [ ] 使用 Playwright 构建自动化测试工作流
+- [ ] 部署 AI 代理以供生产使用
+- [ ] 调试并优化 MCP 服务器性能
 
 #### 🚀 高级能力
-- [ ] 架构企业级AI集成方案
-- [ ] 实施AI应用安全最佳实践
-- [ ] 设计可扩展的MCP服务器架构
-- [ ] 创建特定领域的定制工具链
-- [ ] 指导他人进行AI原生开发
+
+- [ ] 架构企业级 AI 集成
+- [ ] 实施 AI 应用的安全最佳实践
+- [ ] 设计可扩展的 MCP 服务器架构
+- [ ] 为特定领域创建定制工具链
+- [ ] 指导他人进行 AI 原生开发
 
 ## 📖 额外资源
-- [MCP规范](https://modelcontextprotocol.io/docs)
-- [AI Toolkit GitHub仓库](https://github.com/microsoft/vscode-ai-toolkit)
-- [MCP服务器示例合集](https://github.com/modelcontextprotocol/servers)
+
+- [MCP 规范](https://modelcontextprotocol.io/docs)
+- [AI 工具包 GitHub 仓库](https://github.com/microsoft/vscode-ai-toolkit)
+- [MCP 服务器示例集合](https://github.com/modelcontextprotocol/servers)
 - [最佳实践指南](https://modelcontextprotocol.io/docs/best-practices)
 
 ---
 
-**🚀 准备好革新你的AI开发流程了吗？**
+**🚀 准备好革新您的 AI 开发工作流了吗？**
 
-让我们携手用MCP和AI Toolkit共创智能应用的未来！
+让我们一起通过 MCP 和 AI 工具包构建智能应用的未来！
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原文档的原始语言版本为权威来源。对于关键信息，建议使用专业人工翻译。我们对因使用此翻译而引起的任何误解或误读不承担责任。
