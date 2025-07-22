@@ -161,21 +161,18 @@ To create a server, you need to follow these steps:
 - Write the server code.
 - Test the server.
 
-### -1- Install the SDK
+### -1- Create project
 
-This differs a little bit depending your chosen runtime, so choose one of the runtimes below:
-
-> [!NOTE]
-> For Python, we are going to first create the project structure and then install the dependencies.
-
-### TypeScript
+#### TypeScript
 
 ```sh
-npm install @modelcontextprotocol/sdk zod
-npm install -D @types/node typescript
+# Create project directory and initialize npm project
+mkdir calculator-server
+cd calculator-server
+npm init -y
 ```
 
-### Python
+#### Python
 
 ```sh
 # Create project dir
@@ -185,14 +182,14 @@ cd calculator-server
 code .
 ```
 
-### .NET
+#### .NET
 
 ```sh
 dotnet new console -n McpCalculatorServer
 cd McpCalculatorServer
 ```
 
-### Java
+#### Java
 
 For Java, create a Spring Boot project:
 
@@ -316,18 +313,23 @@ Add the following complete configuration to your *pom.xml* file:
     </repositories>
 </project>
 ```
-### -2- Create project
 
-Now that you have your SDK installed, let's create a project next:
+### -2- Add dependencies
 
-### TypeScript
+Now that you have your project created, let's add dependencies next:
+
+#### TypeScript
 
 ```sh
-mkdir src
-npm install -y
+# If not already installed, install TypeScript globally
+npm install typescript -g
+
+# Install the MCP SDK and Zod for schema validation
+npm install @modelcontextprotocol/sdk zod
+npm install -D @types/node typescript
 ```
 
-### Python
+#### Python
 
 ```sh
 # Create a virtual env and install dependencies
@@ -336,30 +338,41 @@ venv\Scripts\activate
 pip install "mcp[cli]"
 ```
 
-### Java
+#### Java
 
 ```bash
 cd calculator-server
 ./mvnw clean install -DskipTests
 ```
 
-###  -3- Create project files 
-### TypeScript
+### -3- Create project files
 
-Create a *package.json* with the following content:
+#### TypeScript
+
+Open the *package.json* file and replace the content with the following to ensure you can build and run the server:
 
 ```json
 {
-   "type": "module",
-   "bin": {
-     "weather": "./build/index.js"
-   },
-   "scripts": {
-     "build": "tsc && node build/index.js"
-   },
-   "files": [
-     "build"
-   ]
+  "name": "calculator-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "tsc && node ./build/index.js",
+    "build": "tsc && node ./build/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A simple calculator server using Model Context Protocol",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.16.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "typescript": "^5.8.3"
+  }
 }
 ```
 
@@ -383,14 +396,22 @@ Create a *tsconfig.json* with the following content:
 }
 ```
 
-### Python
+Create a directory for your source code:
+
+```sh
+mkdir src
+touch src/index.ts
+```
+
+#### Python
 
 Create a file *server.py*
+
 ```sh
 touch server.py
 ```
 
-### .NET
+#### .NET
 
 Install the required NuGet packages:
 
@@ -399,13 +420,13 @@ dotnet add package ModelContextProtocol --prerelease
 dotnet add package Microsoft.Extensions.Hosting
 ```
 
-### Java
+#### Java
 
 For Java Spring Boot projects, the project structure is created automatically.
 
-### -4- Create server code 
+### -4- Create server code
 
-### TypeScript
+#### TypeScript
 
 Create a file *index.ts* and add the following code:
 
@@ -416,14 +437,14 @@ import { z } from "zod";
  
 // Create an MCP server
 const server = new McpServer({
-  name: "Demo",
+  name: "Calculator MCP Server",
   version: "1.0.0"
 });
 ```
 
 Now you have a server, but it doesn't do much, let' fix that.
 
-### Python
+#### Python
 
 ```python
 # server.py
@@ -433,7 +454,7 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("Demo")
 ```
 
-### .NET
+#### .NET
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -458,7 +479,7 @@ await builder.Build().RunAsync();
 // add features
 ```
 
-### Java
+#### Java
 
 For Java, create the core server components. First, modify the main application class:
 
@@ -744,10 +765,11 @@ Spring Boot MCP Application
 
 Add a tool and a resource by adding the following code:
 
-### TypeScript
+#### TypeScript
 
 ```typescript
-  server.tool("add",
+server.tool(
+  "add",
   { a: z.number(), b: z.number() },
   async ({ a, b }) => ({
     content: [{ type: "text", text: String(a + b) }]
@@ -785,7 +807,7 @@ Your resource is accessed through a string "greeting" and takes a parameter `nam
 }
 ```
 
-### Python
+#### Python
 
 ```python
 # Add an addition tool
@@ -807,7 +829,7 @@ In the preceding code we've:
 - Defined a tool `add` that takes parameters `a` and `p`, both integers.
 - Created a resource called `greeting` that takes parameter `name`.
 
-### .NET
+#### .NET
 
 Add this to your Program.cs file:
 
@@ -820,7 +842,7 @@ public static class CalculatorTool
 }
 ```
 
-### Java
+#### Java
 
 The tools have already been created in the previous step.
 
@@ -828,7 +850,7 @@ The tools have already been created in the previous step.
 
 Let's add the last code we need so the server can start:
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 // Start receiving messages on stdin and sending messages on stdout
@@ -846,12 +868,13 @@ import { z } from "zod";
 
 // Create an MCP server
 const server = new McpServer({
-  name: "Demo",
+  name: "Calculator MCP Server",
   version: "1.0.0"
 });
 
 // Add an addition tool
-server.tool("add",
+server.tool(
+  "add",
   { a: z.number(), b: z.number() },
   async ({ a, b }) => ({
     content: [{ type: "text", text: String(a + b) }]
@@ -872,10 +895,10 @@ server.resource(
 
 // Start receiving messages on stdin and sending messages on stdout
 const transport = new StdioServerTransport();
-await server.connect(transport);
+server.connect(transport);
 ```
 
-### Python
+#### Python
 
 ```python
 # server.py
@@ -903,7 +926,7 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
-### .NET
+#### .NET
 
 Create a Program.cs file with the following content:
 
@@ -935,7 +958,7 @@ public static class CalculatorTool
 }
 ```
 
-### Java
+#### Java
 
 Your complete main application class should look like this:
 
@@ -968,13 +991,13 @@ public class McpServerApplication {
 
 Start the server with the following command:
 
-### TypeScript
+#### TypeScript
 
 ```sh
 npm run build
 ```
 
-### Python
+#### Python
 
 ```sh
 mcp run server.py
@@ -982,7 +1005,7 @@ mcp run server.py
 
 > To use MCP Inspector, use `mcp dev server.py` which automatically launches the Inspector and provides the required proxy session token. If using `mcp run server.py`, you’ll need to manually start the Inspector and configure the connection.
 
-### .NET
+#### .NET
 
 Make sure you're in your project directory:
 
@@ -991,7 +1014,7 @@ cd McpCalculatorServer
 dotnet run
 ```
 
-### Java
+#### Java
 
 ```bash
 ./mvnw clean install -DskipTests
@@ -1005,7 +1028,7 @@ The inspector is a great tool that can start up your server and lets you interac
 > [!NOTE]
 > it might look different in the "command" field as it contains the command for running a server with your specific runtime/
 
-### TypeScript
+#### TypeScript
 
 ```sh
 npx @modelcontextprotocol/inspector node build/index.js
@@ -1024,10 +1047,11 @@ However, it doesn't implement all the methods available on the tool so you're re
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
 ```
+
 If you're using a tool or IDE that allows you to configure commands and arguments for running scripts, 
 make sure to set `python` in the `Command` field and `server.py` as `Arguments`. This ensures the script runs correctly.
 
-### .NET
+#### .NET
 
 Make sure you're in your project directory:
 
@@ -1036,7 +1060,7 @@ cd McpCalculatorServer
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-### Java
+#### Java
 
 Ensure you calculator server is running
 The run the inspector:

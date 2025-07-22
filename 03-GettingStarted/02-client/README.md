@@ -5,7 +5,7 @@ Clients are custom applications or scripts that communicate directly with an MCP
 ## Overview
 
 This lesson introduces the concept of clients within the Model Context Protocol (MCP) ecosystem. You'll learn how to write your own client and have it connect to an MCP Server.
- 
+
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
@@ -95,21 +95,21 @@ As said above, let's take our time explaining the code, and by all means code al
 
 Let's import the libraries we need, we will need references to a client and to our chosen transport protocol, stdio. stdio is a protocol for things meant to run on your local machine. SSE is another transport protocol we will show in future chapters but that's your other option. For now though, let's continue with stdio. 
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 ```
 
-### Python
+#### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
 from mcp.client.stdio import stdio_client
 ```
 
-### .NET
+#### .NET
 
 ```csharp
 using Microsoft.Extensions.AI;
@@ -119,7 +119,7 @@ using ModelContextProtocol.Client;
 using ModelContextProtocol.Protocol.Transport;
 ```
 
-### Java
+#### Java
 
 For Java, you'll create a client that connects to the MCP server from the previous exercise. Using the same Java Spring Boot project structure from [Getting Started with MCP Server](../01-first-server/solution/java), create a new Java class called `SDKClient` in the `src/main/java/com/microsoft/mcp/sample/client/` folder and add the following imports:
 
@@ -140,7 +140,7 @@ Let's move on to instantiation.
 
 We will need to create an instance of the transport and that of our client:
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 const transport = new StdioClientTransport({
@@ -160,7 +160,7 @@ await client.connect(transport);
 
 In the preceding code we've:
 
-- Created an stdio transport instance. Note how it specifices command and args for how to find and start up the server as that's something we will need to do as we create the client.
+- Created an stdio transport instance. Note how it specifies command and args for how to find and start up the server as that's something we will need to do as we create the client.
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -185,7 +185,7 @@ In the preceding code we've:
     await client.connect(transport);
     ```
 
-### Python
+#### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
@@ -218,10 +218,10 @@ In the preceding code we've:
 
 - Imported the needed libraries
 - Instantiated a server parameters object as we will use this to run the server so we can connect to it with our client.
-- Defined a method `run` that in turn calls `stdio_client` which starts a client session. 
+- Defined a method `run` that in turn calls `stdio_client` which starts a client session.
 - Created an entry point where we provide the `run` method to `asyncio.run`.
 
-### .NET
+#### .NET
 
 ```dotnet
 using Microsoft.Extensions.AI;
@@ -255,7 +255,7 @@ In the preceding code we've:
 
 Note, in "Arguments", you can either point to the *.csproj* or to the executable.
 
-### Java
+#### Java
 
 ```java
 public class SDKClient {
@@ -291,7 +291,7 @@ In the preceding code we've:
 
 Now, we have a client that can connect to should the program be run. However, it doesn't actually list its features so let's do that next:
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 // List prompts
@@ -304,7 +304,7 @@ const resources = await client.listResources();
 const tools = await client.listTools();
 ```
 
-### Python
+#### Python
 
 ```python
 # List available resources
@@ -322,7 +322,7 @@ for tool in tools.tools:
 
 Here we list the available resources, `list_resources()` and tools, `list_tools` and print them out.
 
-### .NET
+#### .NET
 
 ```dotnet
 foreach (var tool in await client.ListToolsAsync())
@@ -333,7 +333,7 @@ foreach (var tool in await client.ListToolsAsync())
 
 Above is an example how we can list the tools on the server. For each tool, we then print out its name.
 
-### Java
+#### Java
 
 ```java
 // List and demonstrate tools
@@ -356,7 +356,7 @@ Great, now we've captures all the features. Now the question is when do we use t
 
 To invoke the features we need to ensure we specify the correct arguments and in some cases the name of what we're trying to invoke.
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 
@@ -441,7 +441,7 @@ In the preceding code we:
     })
     ```
 
-### Python
+#### Python
 
 ```python
 # Read a resource
@@ -459,7 +459,7 @@ In the preceding code, we've:
 - Called a resource called `greeting` using `read_resource`.
 - Invoked a tool called `add` using `call_tool`.
 
-### .NET
+#### .NET
 
 1. Let's add some code to call a tool:
 
@@ -477,7 +477,7 @@ In the preceding code, we've:
   // Sum 4
   ```
 
-### Java
+#### Java
 
 ```java
 // Call various calculator tools
@@ -508,7 +508,7 @@ In the preceding code we've:
 
 To run the client, type the following command in the terminal:
 
-### TypeScript
+#### TypeScript
 
 Add the following entry to your "scripts" section in *package.json*:
 
@@ -520,7 +520,7 @@ Add the following entry to your "scripts" section in *package.json*:
 npm run client
 ```
 
-### Python
+#### Python
 
 Call the client with the following command:
 
@@ -528,13 +528,13 @@ Call the client with the following command:
 python client.py
 ```
 
-### .NET
+#### .NET
 
 ```sh
 dotnet run
 ```
 
-### Java
+#### Java
 
 First, ensure your MCP server is running on `http://localhost:8080`. Then run the client:
 
@@ -677,7 +677,7 @@ The **solution folder** contains complete, ready-to-run client implementations t
 
 The solution directory is organized by programming language:
 
-```
+```text
 solution/
 ├── typescript/          # TypeScript client with npm/Node.js setup
 │   ├── package.json     # Dependencies and scripts
@@ -713,6 +713,7 @@ Each language-specific solution provides:
 ### 📖 Using the Solutions
 
 1. **Navigate to your preferred language folder**:
+
    ```bash
    cd solution/typescript/    # For TypeScript
    cd solution/java/          # For Java
@@ -726,6 +727,7 @@ Each language-specific solution provides:
    - Running the client
 
 3. **Example output** you should see:
+
    ```text
    Prompt: Please review this code: console.log("hello");
    Resource template: file
@@ -775,6 +777,7 @@ For detailed documentation about running and customizing these examples, see: **
 | Language-specific tooling | Cross-language comparison |
 
 Both approaches are valuable - use the **solution folder** for complete projects and the **complete examples** for learning and reference.
+
 ## Key Takeaways
 
 The key takeaways for this chapter is the following about clients:
@@ -787,15 +790,14 @@ The key takeaways for this chapter is the following about clients:
 
 - [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
 
-## Samples 
+## Samples
 
 - [Java Calculator](../samples/java/calculator/README.md)
 - [.Net Calculator](../samples/csharp/)
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../samples/python/) 
+- [Python Calculator](../samples/python/)
 
 ## What's Next
 
 - Next: [Creating a client with an LLM](../03-llm-client/README.md)
-

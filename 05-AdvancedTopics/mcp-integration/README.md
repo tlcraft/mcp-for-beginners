@@ -21,7 +21,7 @@ Azure OpenAI provides access to powerful AI models like GPT-4 and others. Integr
 
 ### C# Implementation
 
-In this code snippet, we demonstrate how to integrate MCP with Azure OpenAI using the Azure OpenAI SDK. 
+In this code snippet, we demonstrate how to integrate MCP with Azure OpenAI using the Azure OpenAI SDK.
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -156,6 +156,7 @@ public class AIFoundryMcpBridge {
     }
 }
 ```
+
 In the preceding code, we've:
 
 - Created an `AIFoundryMcpBridge` class that integrates with both AI Foundry and MCP.
