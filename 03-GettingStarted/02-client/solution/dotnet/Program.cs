@@ -4,7 +4,7 @@ using ModelContextProtocol.Client;
 
 var builder = Host.CreateApplicationBuilder(args);
 
-builder.Configuration
+builder.Configuration 
     .AddEnvironmentVariables()
     .AddUserSecrets<Program>();
 
