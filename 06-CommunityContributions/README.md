@@ -1,5 +1,9 @@
 # Community and Contributions
 
+[![How to Contribute to MCP: Tools, Docs, Code and More](../images/video-thumbnails/07.png)](https://youtu.be/v1pvCYAWpRE)
+
+_(Click the image above to view video of this lesson)_
+
 ## Overview
 
 This lesson focuses on how to engage with the MCP community, contribute to the MCP ecosystem, and follow best practices for collaborative development. Understanding how to participate in open-source MCP projects is essential for those looking to shape the future of this technology.

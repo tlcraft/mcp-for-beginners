@@ -1,5 +1,9 @@
 # 🌟 Lessons from Early Adopters
 
+[![Lessons from MCP Early Adopters](../images/video-thumbnails/08.png)](https://youtu.be/jds7dSmNptE)
+
+_(Click the image above to view video of this lesson)_
+
 ## 🎯 What This Module Covers
 
 This module explores how real organizations and developers are leveraging the Model Context Protocol (MCP) to solve actual challenges and drive innovation. Through detailed case studies, hands-on projects### Case Study 5: Azure MCP – Enterprise-Grade Model Context Protocol as a Service

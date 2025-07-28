@@ -1,5 +1,9 @@
 # MCP Development Best Practices
 
+[![MCP Development Best Practices](../images/video-thumbnails/09.png)](https://youtu.be/W56H9W7x-ao)
+
+_(Click the image above to view video of this lesson)_
+
 ## Overview
 
 This lesson focuses on advanced best practices for developing, testing, and deploying MCP servers and features in production environments. As MCP ecosystems grow in complexity and importance, following established patterns ensures reliability, maintainability, and interoperability. This lesson consolidates practical wisdom gained from real-world MCP implementations to guide you in creating robust, efficient servers with effective resources, prompts, and tools.

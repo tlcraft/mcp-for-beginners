@@ -1,5 +1,9 @@
 # MCP in Action: Real-World Case Studies
 
+[![MCP in Action: Real-World Case Studies](../images/video-thumbnails/10.png)](https://youtu.be/IxshWb2Az5w)
+
+_(Click the image above to view video of this lesson)_
+
 The Model Context Protocol (MCP) is transforming how AI applications interact with data, tools, and services. This section presents real-world case studies that demonstrate practical applications of MCP in various enterprise scenarios.
 
 ## Overview

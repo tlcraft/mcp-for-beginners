@@ -1,4 +1,8 @@
-# Advanced Topics in MCP 
+# Advanced Topics in MCP
+
+[![Advanced MCP: Secure, Scalable, and Multi-modal AI Agents](../images/video-thumbnails/06.png)](https://youtu.be/4yjmGvJzYdY)
+
+_(Click the image above to view video of this lesson)_
 
 This chapter covers a series of advanced topics in Model Context Protocol (MCP) implementation, including multi-modal integration, scalability, security best practices, and enterprise integration. These topics are crucial for building robust and production-ready MCP applications that can meet the demands of modern AI systems.
 
