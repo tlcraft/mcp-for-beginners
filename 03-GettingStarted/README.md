@@ -1,5 +1,9 @@
 ## Getting Started  
 
+[![Build Your First MCP Server](../images/video-thumbnails/04.png)](https://youtu.be/sNDZO9N4m9Y)
+
+_(Click the image above to view video of this lesson)_
+
 This section consists of several lessons:
 
 - **1 Your first server**, in this first lesson, you will learn how to create your first server and inspect it with the inspector tool, a valuable way to test and debug your server, [to the lesson](01-first-server/README.md)

@@ -8,6 +8,10 @@
 
 ## 🎯  Overview
 
+[![Build AI Agents in VS Code: 4 Hands-On Labs with MCP and AI Toolkit](../images/video-thumbnails/11.png)](https://youtu.be/r34Csn3rkeQ)
+
+_(Click the image above to view video of this lesson)_
+
 Welcome to the **Model Context Protocol (MCP) Workshop**! This comprehensive hands-on workshop combines two cutting-edge technologies to revolutionize AI application development:
 
 - **🔗 Model Context Protocol (MCP)**: An open standard for seamless AI-tool integration

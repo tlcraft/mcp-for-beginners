@@ -1,5 +1,9 @@
 # Practical Implementation
 
+[![How to Build, Test, and Deploy MCP Apps with Real Tools and Workflows](../images/video-thumbnails/05.png)](https://youtu.be/vCN9-mKBDfQ)
+
+_(Click the image above to view video of this lesson)_
+
 Practical implementation is where the power of the Model Context Protocol (MCP) becomes tangible. While understanding the theory and architecture behind MCP is important, the real value emerges when you apply these concepts to build, test, and deploy solutions that solve real-world problems. This chapter bridges the gap between conceptual knowledge and hands-on development, guiding you through the process of bringing MCP-based applications to life.
 
 Whether you are developing intelligent assistants, integrating AI into business workflows, or building custom tools for data processing, MCP provides a flexible foundation. Its language-agnostic design and official SDKs for popular programming languages make it accessible to a wide range of developers. By leveraging these SDKs, you can quickly prototype, iterate, and scale your solutions across different platforms and environments.
