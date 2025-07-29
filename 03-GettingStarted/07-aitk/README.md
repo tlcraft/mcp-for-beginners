@@ -38,8 +38,8 @@ Great, now that we understand the flow, let's configure an AI agent to leverage 
 
 ## Exercise: Consuming a server
 
-⚠️ **Note for macOS Users:**
-We're currently investigating an issue affecting dependency installation on macOS. As a result, macOS users won’t be able to complete this tutorial at this time. We’ll update the instructions as soon as a fix is available. Thank you for your patience and understanding!
+> [!WARNING]
+> Note for macOS Users. We're currently investigating an issue affecting dependency installation on macOS. As a result, macOS users won’t be able to complete this tutorial at this time. We’ll update the instructions as soon as a fix is available. Thank you for your patience and understanding!
 
 In this exercise, you will build, run, and enhance an AI agent with tools from a MCP server inside Visual Studio Code using the AI Toolkit.
 
