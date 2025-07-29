@@ -6,7 +6,7 @@
 cargo build
 ```
 
-## -3- Run the sample
+## -2- Run the sample
 
 ```bash
 cargo run
