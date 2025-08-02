@@ -124,10 +124,10 @@ graph TD
     H <--> J
     H <--> K
 
-    H -->|MCP Protocol| T1[MCP Server: Web Search]
-    H -->|MCP Protocol| T2[MCP Server: Calculator]
-    H -->|MCP Protocol| T3[MCP Server: Database Access]
-    H -->|MCP Protocol| T4[MCP Server: File System]
+    H -->|MCP Protocol| T1[MCP Server Tool 01: Web Search]
+    H -->|MCP Protocol| T2[MCP Server Tool 02: Calculator tool]
+    H -->|MCP Protocol| T3[MCP Server Tool 03: Database Access tool]
+    H -->|MCP Protocol| T4[MCP Server Tool 04: File System tool]
 
     style A fill:#f9d5e5,stroke:#333,stroke-width:2px
     style H fill:#eeeeee,stroke:#333,stroke-width:2px
@@ -146,13 +146,13 @@ graph TD
 
 MCP servers allow you to extend LLM capabilities by providing data and functionality. 
 
-Ready to try it out? Here are examples of creating a simple MCP server in different languages:
+Ready to try it out? Here are language and/or stack specific SDKs with examples of creating a simple MCP servers in different languages/stacks:
 
 - **Python Example**: https://github.com/modelcontextprotocol/python-sdk
 
 - **TypeScript Example**: https://github.com/modelcontextprotocol/typescript-sdk
 
-- **Java Example**: https://github.com/modelcontextprotocol/java-sdk
+- **Java with Spring Example**: https://github.com/modelcontextprotocol/java-sdk
 
 - **C#/.NET Example**: https://github.com/modelcontextprotocol/csharp-sdk
 
@@ -181,7 +181,7 @@ Beyond offering tools, MCP also facilitates access to knowledge. It enables appl
 
 An agent connecting to an MCP server automatically learns the server's available capabilities and accessible data through a standard format. This standardization enables dynamic tool availability. For example, adding a new MCP server to an agent’s system makes its functions immediately usable without requiring further customization of the agent's instructions.
 
-This streamlined integration aligns with the flow depicted in the mermaid diagram, where servers provide both tools and knowledge, ensuring seamless collaboration across systems. 
+This streamlined integration aligns with the flow depicted in the following diagram, where servers provide both tools and knowledge, ensuring seamless collaboration across systems. 
 
 ### 👉 Example: Scalable Agent Solution
 
@@ -214,7 +214,7 @@ graph TD
 
 ### 🔄 Advanced MCP Scenarios with Client-Side LLM Integration
 
-Beyond the basic MCP architecture, there are advanced scenarios where both client and server contain LLMs, enabling more sophisticated interactions:
+Beyond the basic MCP architecture, there are advanced scenarios where both client and server contain LLMs, enabling more sophisticated interactions. In the following diagram, **Client App** could be an IDE with a number of MCP tools available for user by the LLM:
 
 ```mermaid
 ---
