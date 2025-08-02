@@ -146,15 +146,15 @@ graph TD
 
 MCP servers allow you to extend LLM capabilities by providing data and functionality. 
 
-Ready to try it out? Here are language and/or stack specific SDKs with examples of creating a simple MCP servers in different languages/stacks:
+Ready to try it out? Here are language and/or stack specific SDKs with examples of creating simple MCP servers in different languages/stacks:
 
-- **Python Example**: https://github.com/modelcontextprotocol/python-sdk
+- **Python SDK**: https://github.com/modelcontextprotocol/python-sdk
 
-- **TypeScript Example**: https://github.com/modelcontextprotocol/typescript-sdk
+- **TypeScript SDK**: https://github.com/modelcontextprotocol/typescript-sdk
 
-- **Java with Spring Example**: https://github.com/modelcontextprotocol/java-sdk
+- **Java SDK**: https://github.com/modelcontextprotocol/java-sdk
 
-- **C#/.NET Example**: https://github.com/modelcontextprotocol/csharp-sdk
+- **C#/.NET SDK**: https://github.com/modelcontextprotocol/csharp-sdk
 
 
 ## 🌍 Real-World Use Cases for MCP
