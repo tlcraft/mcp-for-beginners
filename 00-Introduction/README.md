@@ -16,11 +16,11 @@ The **Model Context Protocol (MCP)** is an **open, standardized interface** that
 
 ## **🎯 Why Standardization in AI Matters**
 
-As generative AI applications become more complex, it's essential to adopt standards that ensure **scalability, extensibility**, and **maintainability**. MCP addresses these needs by:
+As generative AI applications become more complex, it's essential to adopt standards that ensure **scalability, extensibility**, **maintainability** and **avoiding vendor lock in**. MCP addresses these needs by:
 
 - Unifying model-tool integrations
 - Reducing brittle, one-off custom solutions
-- Allowing multiple models to coexist within one ecosystem
+- Allowing multiple models from different vendors to coexist within one ecosystem
 
 **Note:** While MCP bills itself as an open standard, there are no plans to standardize MCP through any existing standards bodies such as IEEE, IETF, W3C, ISO, or any other standards body.
 
@@ -81,60 +81,65 @@ MCP follows a **client-server model**, where:
 MCP servers operate in the following way:
 
 - **Request Flow**: 
-    1. The MCP Client sends a request to the AI Model running in an MCP Host.
-    2. The AI Model identifies when it needs external tools or data.
-    3. The model communicates with the MCP Server using the standardized protocol.
+    1. A request is sent to an AI model, perhaps by an end user, perhaps by some other software operating on behalf of an end user.
+    2. The MCP Client sends a request to the AI Model running in an MCP Host.
+    3. The AI Model identifies when it needs external tools or data.
+    4. The model communicates with the MCP Server using the standardized protocol.
 
-- **MCP Server Functionality**:
+- **MCP Host Functionality**:
     - Tool Registry: Maintains a catalog of available tools and their capabilities.
     - Authentication: Verifies permissions for tool access.
     - Request Handler: Processes incoming tool requests from the model.
     - Response Formatter: Structures tool outputs in a format the model can understand.
 
-- **Tool Execution**: 
-    - The server routes requests to the appropriate external tools
-    - Tools execute their specialized functions (search, calculation, database queries, etc.)
-    - Results are returned to the model in a consistent format.
+- **MCP Server Execution**: 
+    - The server routes requests to the appropriate external tools, each of which is implemented as an MCP server
+    - One or more MCP Server tools execute their specialized functions (search, calculation, database queries, etc.)
+    - Results are returned to the MCP Host in a consistent format, which, in turn returns the results to the model.
 
 - **Response Completion**: 
-    - The AI model incorporates tool outputs into its response.
+    - The AI model incorporates MCP Server tool outputs into its response.
     - The final response is sent back to the client application.
-
+    
 ```mermaid
 ---
-title: MCP Server Architecture and Component Interactions
-description: A diagram showing how AI models interact with MCP servers and various tools, depicting the request flow and server components including Tool Registry, Authentication, Request Handler, and Response Formatter
+title: MCP Architecture and Component Interactions
+description: A corrected diagram showing the AI model, MCP Host, MCP Servers (tools), and how the MCP protocol governs their interactions.
 ---
 graph TD
-    A[AI Model in MCP Host] <-->|MCP Protocol| B[MCP Server]
-    B <-->|Tool Interface| C[Tool 1: Web Search]
-    B <-->|Tool Interface| D[Tool 2: Calculator]
-    B <-->|Tool Interface| E[Tool 3: Database Access]
-    B <-->|Tool Interface| F[Tool 4: File System]
-    
-    Client[MCP Client/Application] -->|Sends Request| A
-    A -->|Returns Response| Client
-    
-    subgraph "MCP Server Components"
-        B
+    Client[MCP Client/Application] -->|Sends Request| A[AI Model]
+    A -->|Uses Tools via MCP| H[MCP Host]
+    A <-->|Receives Response| Client
+
+    subgraph "MCP Host Components"
+        H
         G[Tool Registry]
-        H[Authentication]
-        I[Request Handler]
-        J[Response Formatter]
+        I[Authentication]
+        J[Request Handler]
+        K[Response Formatter]
     end
-    
-    B <--> G
-    B <--> H
-    B <--> I
-    B <--> J
-    
+
+    H <--> G
+    H <--> I
+    H <--> J
+    H <--> K
+
+    H -->|MCP Protocol| T1[MCP Server: Web Search]
+    H -->|MCP Protocol| T2[MCP Server: Calculator]
+    H -->|MCP Protocol| T3[MCP Server: Database Access]
+    H -->|MCP Protocol| T4[MCP Server: File System]
+
     style A fill:#f9d5e5,stroke:#333,stroke-width:2px
-    style B fill:#eeeeee,stroke:#333,stroke-width:2px
+    style H fill:#eeeeee,stroke:#333,stroke-width:2px
     style Client fill:#d5e8f9,stroke:#333,stroke-width:2px
-    style C fill:#c2f0c2,stroke:#333,stroke-width:1px
-    style D fill:#c2f0c2,stroke:#333,stroke-width:1px
-    style E fill:#c2f0c2,stroke:#333,stroke-width:1px
-    style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
+    style G fill:#fffbe6,stroke:#333,stroke-width:1px
+    style I fill:#fffbe6,stroke:#333,stroke-width:1px
+    style J fill:#fffbe6,stroke:#333,stroke-width:1px
+    style K fill:#fffbe6,stroke:#333,stroke-width:1px
+    style T1 fill:#c2f0c2,stroke:#333,stroke-width:1px
+    style T2 fill:#c2f0c2,stroke:#333,stroke-width:1px
+    style T3 fill:#c2f0c2,stroke:#333,stroke-width:1px
+    style T4 fill:#c2f0c2,stroke:#333,stroke-width:1px
 ```
 
 ## 👨‍💻 How to Build an MCP Server (With Examples)
