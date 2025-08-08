@@ -107,9 +107,14 @@ title: MCP Architecture and Component Interactions
 description: A corrected diagram showing the AI model, MCP Host, MCP Servers (tools), and how the MCP protocol governs their interactions.
 ---
 graph TD
-    Client[MCP Client/Application] -->|Sends Request| A[AI Model]
-    A -->|Uses Tools via MCP| H[MCP Host]
-    A <-->|Receives Response| Client
+    Client[MCP Client/Application] -->|Sends Request| H[MCP Host]
+    H -->|Invokes| A[AI Model]
+    A -->|Tool Call Request| H
+    H -->|MCP Protocol| T1[MCP Server Tool 01: Web Search]
+    H -->|MCP Protocol| T2[MCP Server Tool 02: Calculator tool]
+    H -->|MCP Protocol| T3[MCP Server Tool 03: Database Access tool]
+    H -->|MCP Protocol| T4[MCP Server Tool 04: File System tool]
+    H -->|Sends Response| Client
 
     subgraph "MCP Host Components"
         H
@@ -123,11 +128,6 @@ graph TD
     H <--> I
     H <--> J
     H <--> K
-
-    H -->|MCP Protocol| T1[MCP Server Tool 01: Web Search]
-    H -->|MCP Protocol| T2[MCP Server Tool 02: Calculator tool]
-    H -->|MCP Protocol| T3[MCP Server Tool 03: Database Access tool]
-    H -->|MCP Protocol| T4[MCP Server Tool 04: File System tool]
 
     style A fill:#f9d5e5,stroke:#333,stroke-width:2px
     style H fill:#eeeeee,stroke:#333,stroke-width:2px
