@@ -80,27 +80,25 @@ MCP follows a **client-server model**, where:
 
 MCP servers operate in the following way:
 
-- **Request Flow**: 
-    1. A request is sent to an AI model, perhaps by an end user, perhaps by some other software operating on behalf of an end user.
-    2. The MCP Client sends a request to the AI Model running in an MCP Host.
-    3. The AI Model identifies when it needs external tools or data.
-    4. The model communicates with the MCP Server using the standardized protocol.
-
+- **Request Flow**:
+    1. A request is initiated by an end user or software acting on their behalf.
+    2. The **MCP Client** sends the request to an **MCP Host**, which manages the AI Model runtime.
+    3. The **AI Model**, running within the MCP Host, determines whether it needs access to external tools or data.
+    4. The **MCP Host**, not the model directly, communicates with the appropriate **MCP Server(s)** using the standardized protocol.
 - **MCP Host Functionality**:
-    - Tool Registry: Maintains a catalog of available tools and their capabilities.
-    - Authentication: Verifies permissions for tool access.
-    - Request Handler: Processes incoming tool requests from the model.
-    - Response Formatter: Structures tool outputs in a format the model can understand.
-
-- **MCP Server Execution**: 
-    - The server routes requests to the appropriate external tools, each of which is implemented as an MCP server
-    - One or more MCP Server tools execute their specialized functions (search, calculation, database queries, etc.)
-    - Results are returned to the MCP Host in a consistent format, which, in turn returns the results to the model.
-
-- **Response Completion**: 
-    - The AI model incorporates MCP Server tool outputs into its response.
-    - The final response is sent back to the client application.
+    - **Tool Registry**: Maintains a catalog of available tools and their capabilities.
+    - **Authentication**: Verifies permissions for tool access.
+    - **Request Handler**: Processes incoming tool requests from the model.
+    - **Response Formatter**: Structures tool outputs in a format the model can understand.
+- **MCP Server Execution**:
+    - The **MCP Host** routes tool calls to one or more **MCP Servers**, each exposing specialized functions (e.g., search, calculations, database queries).
+    - The **MCP Servers** perform their respective operations and return results to the **MCP Host** in a consistent format.
+    - The **MCP Host** formats and relays these results to the **AI Model**.
+- **Response Completion**:
+    - The **AI Model** incorporates the tool outputs into a final response.
+    - The **MCP Host** sends this response back to the **MCP Client**, which delivers it to the end user or calling software.
     
+
 ```mermaid
 ---
 title: MCP Architecture and Component Interactions
