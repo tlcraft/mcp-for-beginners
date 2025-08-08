@@ -83,7 +83,7 @@ MCP servers operate in the following way:
 - **Request Flow**:
     1. A request is initiated by an end user or software acting on their behalf.
     2. The **MCP Client** sends the request to an **MCP Host**, which manages the AI Model runtime.
-    3. The **AI Model**, running within the MCP Host, determines whether it needs access to external tools or data.
+    3. The **AI Model** receives the user prompt and may request access to external tools or data via one or more tool calls.
     4. The **MCP Host**, not the model directly, communicates with the appropriate **MCP Server(s)** using the standardized protocol.
 - **MCP Host Functionality**:
     - **Tool Registry**: Maintains a catalog of available tools and their capabilities.
@@ -102,7 +102,7 @@ MCP servers operate in the following way:
 ```mermaid
 ---
 title: MCP Architecture and Component Interactions
-description: A corrected diagram showing the AI model, MCP Host, MCP Servers (tools), and how the MCP protocol governs their interactions.
+description: A diagram showing the flows of the components in MCP.
 ---
 graph TD
     Client[MCP Client/Application] -->|Sends Request| H[MCP Host]
