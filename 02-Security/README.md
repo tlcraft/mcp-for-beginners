@@ -4,7 +4,7 @@
 
 _(Click the image above to view video of this lesson)_
 
-Because security is such an important aspect, we prioritize it as our second section. This is in keeping with the **Secure be design** principle of Microsoft's [Secure Future Iniative](https://www.microsoft.com/en-us/security/blog/2025/04/17/microsofts-secure-by-design-journey-one-year-of-success/).
+Because security is such an important aspect, we prioritize it as our second section. This is in keeping with the **Secure by design** principle of Microsoft's [Secure Future Initiative](https://www.microsoft.com/en-us/security/blog/2025/04/17/microsofts-secure-by-design-journey-one-year-of-success/).
 
 Adopting the Model Context Protocol (MCP) brings powerful new capabilities to AI-driven applications, but also introduces unique security challenges that extend beyond traditional software risks. In addition to established concerns like secure coding, least privilege, and supply chain security, MCP and AI workloads face new threats such as prompt injection, tool poisoning, dynamic tool modification, session hijacking, confused deputy attacks, and token passthrough vulnerabilities. These risks can lead to data exfiltration, privacy breaches, and unintended system behavior if not properly managed.
 
