@@ -608,8 +608,9 @@ public class CachedWeatherTool : ITool
         };
     }
 }
+'''
 
-#### 2. Dependency Injection and Testability
+#### 2. 依存性注入とテスト容易性
 
 Design tools to receive their dependencies through constructor injection, making them testable and configurable:
 
