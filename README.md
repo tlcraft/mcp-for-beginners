@@ -42,12 +42,9 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 - 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples
 - 🌐 [MCP Community](https://github.com/orgs/modelcontextprotocol/discussions) – Join discussions and contribute to the community
 
-## Join us for MCP Dev Days 29-30th July 2025 
-
-Get ready for two days of deep technical insight, community connection, and hands-on learning at MCP Dev Days, a virtual event dedicated to the Model Context Protocol (MCP) — the emerging standard that bridges AI models and the tools they rely on.
 
  ### ➡️Watch on Demand - MCP Dev Days
-
+Get ready for two days of deep technical insight, community connection, and hands-on learning at MCP Dev Days, a virtual event dedicated to the Model Context Protocol (MCP) — the emerging standard that bridges AI models and the tools they rely on.
 You can watch MCP Dev Days by registering on our event page: https://aka.ms/mcpdevdays. 
 
 #### Day 1: MCP Productivity, DevTools, & Community: 
