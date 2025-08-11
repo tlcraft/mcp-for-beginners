@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "4d9227937d6129b4e37bff679eade6fc",
-  "translation_date": "2025-08-07T08:20:58+00:00",
+  "original_hash": "0eff5e99d0b20253c51eb315e7e37dc1",
+  "translation_date": "2025-08-11T10:07:16+00:00",
   "source_file": "README.md",
   "language_code": "fr"
 }
@@ -29,7 +29,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
 
 #### Pris en charge via GitHub Action (Automatisé et toujours à jour)
 
-[Français](./README.md) | [Espagnol](../es/README.md) | [Allemand](../de/README.md) | [Russe](../ru/README.md) | [Arabe](../ar/README.md) | [Persan (Farsi)](../fa/README.md) | [Ourdou](../ur/README.md) | [Chinois (Simplifié)](../zh/README.md) | [Chinois (Traditionnel, Macao)](../mo/README.md) | [Chinois (Traditionnel, Hong Kong)](../hk/README.md) | [Chinois (Traditionnel, Taïwan)](../tw/README.md) | [Japonais](../ja/README.md) | [Coréen](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Népalais](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portugais (Portugal)](../pt/README.md) | [Portugais (Brésil)](../br/README.md) | [Italien](../it/README.md) | [Polonais](../pl/README.md) | [Turc](../tr/README.md) | [Grec](../el/README.md) | [Thaï](../th/README.md) | [Suédois](../sv/README.md) | [Danois](../da/README.md) | [Norvégien](../no/README.md) | [Finnois](../fi/README.md) | [Néerlandais](../nl/README.md) | [Hébreu](../he/README.md) | [Vietnamien](../vi/README.md) | [Indonésien](../id/README.md) | [Malais](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hongrois](../hu/README.md) | [Tchèque](../cs/README.md) | [Slovaque](../sk/README.md) | [Roumain](../ro/README.md) | [Bulgare](../bg/README.md) | [Serbe (Cyrillique)](../sr/README.md) | [Croate](../hr/README.md) | [Slovène](../sl/README.md) | [Ukrainien](../uk/README.md) | [Birman (Myanmar)](../my/README.md)
+ [Arabe](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgare](../bg/README.md) | [Birman (Myanmar)](../my/README.md) | [Chinois (Simplifié)](../zh/README.md) | [Chinois (Traditionnel, Hong Kong)](../hk/README.md) | [Chinois (Traditionnel, Macao)](../mo/README.md) | [Chinois (Traditionnel, Taïwan)](../tw/README.md) | [Croate](../hr/README.md) | [Tchèque](../cs/README.md) | [Danois](../da/README.md) | [Néerlandais](../nl/README.md) | [Finnois](../fi/README.md) | [Français](./README.md) | [Allemand](../de/README.md) | [Grec](../el/README.md) | [Hébreu](../he/README.md) | [Hindi](../hi/README.md) | [Hongrois](../hu/README.md) | [Indonésien](../id/README.md) | [Italien](../it/README.md) | [Japonais](../ja/README.md) | [Coréen](../ko/README.md) | [Malais](../ms/README.md) | [Marathi](../mr/README.md) | [Népalais](../ne/README.md) | [Norvégien](../no/README.md) | [Persan (Farsi)](../fa/README.md) | [Polonais](../pl/README.md) | [Portugais (Brésil)](../br/README.md) | [Portugais (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Roumain](../ro/README.md) | [Russe](../ru/README.md) | [Serbe (Cyrillique)](../sr/README.md) | [Slovaque](../sk/README.md) | [Slovène](../sl/README.md) | [Espagnol](../es/README.md) | [Swahili](../sw/README.md) | [Suédois](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thaïlandais](../th/README.md) | [Turc](../tr/README.md) | [Ukrainien](../uk/README.md) | [Ourdou](../ur/README.md) | [Vietnamien](../vi/README.md)
 
 # 🚀 Programme d'apprentissage du Model Context Protocol (MCP) pour débutants
 
@@ -44,29 +44,29 @@ Que vous soyez développeur IA, architecte système ou ingénieur logiciel, ce g
 ## 🔗 Ressources officielles sur MCP
 
 - 📘 [Documentation MCP](https://modelcontextprotocol.io/) – Tutoriels détaillés et guides d'utilisation  
-- 📜 [Spécification MCP](https://modelcontextprotocol.io/docs/) – Références techniques et architecture du protocole  
+- 📜 [Spécification MCP](https://modelcontextprotocol.io/docs/) – Architecture du protocole et références techniques  
 - 📜 [Spécification originale MCP](https://spec.modelcontextprotocol.io/) – Références techniques héritées (peut contenir des détails supplémentaires)  
 - 🧑‍💻 [Dépôt GitHub MCP](https://github.com/modelcontextprotocol) – SDKs open-source, outils et exemples de code
 - 🌐 [Communauté MCP](https://github.com/orgs/modelcontextprotocol/discussions) – Rejoignez les discussions et contribuez à la communauté
 
-## Rejoignez-nous pour les MCP Dev Days les 29 et 30 juillet 2025
+## Rejoignez-nous pour les MCP Dev Days les 29-30 juillet 2025 
 
 Préparez-vous pour deux jours d'approfondissement technique, de connexion communautaire et d'apprentissage pratique lors des MCP Dev Days, un événement virtuel dédié au Model Context Protocol (MCP) — la norme émergente qui relie les modèles d'IA et les outils qu'ils utilisent.
 
 ➡️ [Inscrivez-vous aux MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Vous pouvez suivre les MCP Dev Days en vous inscrivant sur notre page d'événement : https://aka.ms/mcpdevdays. De là, vous pourrez rejoindre un live stream sur YouTube ou Twitch. Tout le contenu sera enregistré et disponible par la suite sur la chaîne YouTube Microsoft Developer. Le code source des démonstrations sera également disponible sur GitHub.
+Vous pouvez suivre les MCP Dev Days en vous inscrivant sur notre page événement : https://aka.ms/mcpdevdays. De là, vous pourrez rejoindre un live stream sur YouTube ou Twitch. Tout le contenu sera enregistré et disponible par la suite sur la chaîne YouTube Microsoft Developer. Le code source des démonstrations sera également disponible sur GitHub.
 
 ### Détails de l'événement
 - Dates : 29 juillet (Jour 1) & 30 juillet (Jour 2)
 - Heure : 9h00 PST chaque jour
 - Où : En ligne – rejoignez depuis n'importe où !
 
-#### Jour 1 : Productivité MCP, outils de développement et communauté :
+#### Jour 1 : Productivité MCP, outils de développement et communauté : 
 
-Ce jour est consacré à l'autonomisation des développeurs pour utiliser MCP dans leur flux de travail et à la célébration de la communauté MCP. Nous serons rejoints par des membres de la communauté et des partenaires tels qu'Arcade, Block, Okta et Neon pour voir comment ils collaborent avec Microsoft pour façonner un écosystème MCP ouvert et extensible.  
-Démos réelles avec VS Code, Visual Studio, GitHub Copilot et outils communautaires populaires  
-Flux de travail pratiques et axés sur le contexte  
+Ce jour est consacré à l'autonomisation des développeurs pour utiliser MCP dans leur flux de travail et à la célébration de la communauté MCP. Nous serons rejoints par des membres de la communauté et des partenaires tels qu'Arcade, Block, Okta et Neon pour voir comment ils collaborent avec Microsoft pour façonner un écosystème MCP ouvert et extensible. 
+Démos réelles sur VS Code, Visual Studio, GitHub Copilot et outils communautaires populaires  
+Flux de travail pratiques et contextuels pour les développeurs  
 Sessions et perspectives dirigées par la communauté  
 Que vous débutiez avec MCP ou que vous construisiez déjà avec, le Jour 1 posera les bases avec inspiration et conseils pratiques.
 
@@ -82,7 +82,7 @@ Ce jour est destiné aux constructeurs MCP. Nous approfondirons les stratégies 
 - Utilisation de blocs de construction comme Functions, ACA et API Management
 - Alignement des registres et outils (1P + 3P)
 
-Si vous êtes développeur, créateur d'outils ou stratège produit IA, cette journée regorge d'informations pour construire des solutions MCP évolutives, sécurisées et prêtes pour l'avenir.
+Si vous êtes développeur, créateur d'outils ou stratège produit IA, cette journée regorge d'informations essentielles pour construire des solutions MCP évolutives, sécurisées et prêtes pour l'avenir.
 
 ## 🧭 Aperçu du programme MCP
 
@@ -146,10 +146,10 @@ Si vous êtes développeur, créateur d'outils ou stratège produit IA, cette jo
 | Langage | Description | Lien |
 |---------|-------------|------|
 | C# | Exemple Avancé | [Voir le Code](./04-PracticalImplementation/samples/csharp/README.md) |
-| Java | Exemple d'Application Conteneurisée | [Voir le Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
+| Java avec Spring | Exemple d'Application Conteneurisée | [Voir le Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
 | JavaScript | Exemple Avancé | [Voir le Code](./04-PracticalImplementation/samples/javascript/README.md) |
 | Python | Implémentation Complexe | [Voir le Code](../../04-PracticalImplementation/samples/python/mcp_sample.py) |
-| TypeScript | Exemple de Conteneur | [Voir le Code](./04-PracticalImplementation/samples/typescript/README.md) |
+| TypeScript | Exemple Conteneurisé | [Voir le Code](./04-PracticalImplementation/samples/typescript/README.md) |
 
 ## 🎯 Prérequis pour Apprendre MCP
 
@@ -191,7 +191,7 @@ Chaque leçon de ce guide inclut :
 
 1. Des explications claires des concepts MCP  
 2. Des exemples de code en direct dans plusieurs langages  
-3. Des exercices pour construire de véritables applications MCP  
+3. Des exercices pour construire de vraies applications MCP  
 4. Des ressources supplémentaires pour les apprenants avancés
 
 ## 🌟 Remerciements à la Communauté
@@ -205,16 +205,13 @@ Ce contenu est sous licence **MIT License**. Pour les termes et conditions, cons
 ## 🤝 Directives de Contribution
 
 Ce projet accueille les contributions et suggestions. La plupart des contributions nécessitent que vous acceptiez un
-Contrat de Licence de Contributeur (CLA) déclarant que vous avez le droit de, et que vous accordez effectivement, les droits d'utiliser votre contribution. Pour plus de détails, visitez 
+Contributor License Agreement (CLA) déclarant que vous avez le droit de, et que vous accordez effectivement, les droits nécessaires pour utiliser votre contribution. Pour plus de détails, visitez 
 <https://cla.opensource.microsoft.com>.
 
-Lorsque vous soumettez une pull request, un bot CLA déterminera automatiquement si vous devez fournir
-un CLA et annotera la PR en conséquence (par exemple, vérification de statut, commentaire). Suivez simplement les instructions
-fournies par le bot. Vous n'aurez besoin de le faire qu'une seule fois pour tous les dépôts utilisant notre CLA.
+Lorsque vous soumettez une pull request, un bot CLA déterminera automatiquement si vous devez fournir un CLA et annotera la PR en conséquence (par exemple, vérification de statut, commentaire). Suivez simplement les instructions fournies par le bot. Vous n'aurez besoin de le faire qu'une seule fois pour tous les dépôts utilisant notre CLA.
 
 Ce projet a adopté le [Code de Conduite Open Source de Microsoft](https://opensource.microsoft.com/codeofconduct/).
-Pour plus d'informations, consultez la [FAQ du Code de Conduite](https://opensource.microsoft.com/codeofconduct/faq/) ou
-contactez [opencode@microsoft.com](mailto:opencode@microsoft.com) pour toute question ou commentaire supplémentaire.
+Pour plus d'informations, consultez la [FAQ du Code de Conduite](https://opensource.microsoft.com/codeofconduct/faq/) ou contactez [opencode@microsoft.com](mailto:opencode@microsoft.com) pour toute question ou commentaire supplémentaire.
 
 ## 📂 Structure du Dépôt
 
@@ -225,7 +222,7 @@ Le dépôt est organisé comme suit :
 - **translations/** : Support multilingue avec traductions automatiques
 - **translated_images/** : Versions localisées des diagrammes et illustrations
 - **study_guide.md** : Guide complet pour naviguer dans le dépôt
-- **changelog.md** : Enregistrement de tous les changements significatifs dans les supports pédagogiques
+- **changelog.md** : Enregistrement de tous les changements significatifs des supports pédagogiques
 - **mcp.json** : Fichier de configuration pour la spécification MCP
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md** : Documents de gouvernance du projet
 
@@ -246,13 +243,13 @@ Notre équipe propose d'autres cours ! Découvrez :
 - [Développement XR pour Débutants](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Maîtriser GitHub Copilot pour le Pair Programming avec IA](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 - [Maîtriser GitHub Copilot pour les Développeurs C#/.NET](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [Choisissez Votre Aventure Copilot](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+- [Choisissez Votre Propre Aventure Copilot](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 ## ™️ Avis de Marque Déposée
 
-Ce projet peut contenir des marques ou logos pour des projets, produits ou services. L'utilisation autorisée des marques ou logos Microsoft est soumise aux [Directives de Marque & Logo de Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Ce projet peut contenir des marques ou logos pour des projets, produits ou services. L'utilisation autorisée des marques ou logos Microsoft est soumise aux [Directives sur les Marques et Logos de Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
 L'utilisation des marques ou logos Microsoft dans des versions modifiées de ce projet ne doit pas prêter à confusion ou impliquer un parrainage de Microsoft.
 Toute utilisation de marques ou logos tiers est soumise aux politiques de ces tiers.
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
