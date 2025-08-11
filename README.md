@@ -46,14 +46,9 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 
 Get ready for two days of deep technical insight, community connection, and hands-on learning at MCP Dev Days, a virtual event dedicated to the Model Context Protocol (MCP) — the emerging standard that bridges AI models and the tools they rely on.
 
-➡️ [Register for MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+ ### ➡️Watch on Demand - MCP Dev Days
 
-You can watch MCP Dev Days by registering on our event page: https://aka.ms/mcpdevdays. From there, you’ll be able to join a live stream on YouTube or Twitch. All of the content is recorded and will be available afterwards on the Microsoft Developer YouTube channel. Source code for the demos will be available on GitHub too.
-
-### Event Details
-- Dates: July 29 (Day 1) & July 30 (Day 2)
-- Time: 9:00 AM PST daily
-- Where: Online – join from anywhere!
+You can watch MCP Dev Days by registering on our event page: https://aka.ms/mcpdevdays. 
 
 #### Day 1: MCP Productivity, DevTools, & Community: 
 
