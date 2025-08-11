@@ -608,46 +608,352 @@ public class CachedWeatherTool : ITool
         };
     }
 }
-'''
+```
 
 #### 2. 依存性注入とテスト容易性
 
-Design tools to receive their dependencies through constructor injection, making them testable and configurable:
+コンストラクター インジェクションを通じて依存関係を受け取るツールを設計し、テストと構成を可能にします。:
 
-```
-
-ExecuteAsync(ToolRequest request)
-{
-    var query = request.Parameters.GetProperty("query").GetString();
+```java
+// Java example with dependency injection
+public class CurrencyConversionTool implements Tool {
+    private final ExchangeRateService exchangeService;
+    private final CacheService cacheService;
+    private final Logger logger;
     
-    // パラメータに基づいてキャッシュキーを作成
-    var cacheKey = $"data_query_{ComputeHash(query)}";
-    
-    // まずキャッシュから取得を試みる
-    if (_cache.TryGetValue(cacheKey, out var cachedResult))
-    {
-        return new ToolResponse { Result = cachedResult };
+    // Dependencies injected through constructor
+    public CurrencyConversionTool(
+            ExchangeRateService exchangeService,
+            CacheService cacheService,
+            Logger logger) {
+        this.exchangeService = exchangeService;
+        this.cacheService = cacheService;
+        this.logger = logger;
     }
     
-    // キャッシュミス - 実際のクエリを実行
-    var result = await _database.QueryAsync(query);
-    
-    // 有効期限付きでキャッシュに保存
-    var cacheOptions = new MemoryCacheEntryOptions()
-        .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
-        
-    _cache.Set(cacheKey, JsonSerializer.SerializeToElement(result), cacheOptions);
-    
-    return new ToolResponse { Result = JsonSerializer.SerializeToElement(result) };
-}
-
-private string ComputeHash(string input)
-{
-    // キャッシュキー用の安定したハッシュを生成する実装
+    // Tool implementation
+    // ...
 }
 ```
 
-#### 2. Asynchronous Processing
+#### 3. 構成可能なツール
+
+より複雑なワークフローを作成するために組み合わせることができる設計ツール:
+
+```python
+# Python example showing composable tools
+class DataFetchTool(Tool):
+    def get_name(self):
+        return "dataFetch"
+    
+    # Implementation...
+
+class DataAnalysisTool(Tool):
+    def get_name(self):
+        return "dataAnalysis"
+    
+    # This tool can use results from the dataFetch tool
+    async def execute_async(self, request):
+        # Implementation...
+        pass
+
+class DataVisualizationTool(Tool):
+    def get_name(self):
+        return "dataVisualize"
+    
+    # This tool can use results from the dataAnalysis tool
+    async def execute_async(self, request):
+        # Implementation...
+        pass
+
+# These tools can be used independently or as part of a workflow
+```
+
+### スキーマ設計のベストプラクティス
+
+スキーマはモデルとツールの間の契約です。適切に設計されたスキーマは、ツールの使いやすさを向上させます。
+
+#### 1. 明確なパラメータの説明
+
+各パラメータには必ず説明情報を含めてください。:
+
+```csharp
+public object GetSchema()
+{
+    return new {
+        type = "object",
+        properties = new {
+            query = new { 
+                type = "string", 
+                description = "Search query text. Use precise keywords for better results." 
+            },
+            filters = new {
+                type = "object",
+                description = "Optional filters to narrow down search results",
+                properties = new {
+                    dateRange = new { 
+                        type = "string", 
+                        description = "Date range in format YYYY-MM-DD:YYYY-MM-DD" 
+                    },
+                    category = new { 
+                        type = "string", 
+                        description = "Category name to filter by" 
+                    }
+                }
+            },
+            limit = new { 
+                type = "integer", 
+                description = "Maximum number of results to return (1-50)",
+                default = 10
+            }
+        },
+        required = new[] { "query" }
+    };
+}
+```
+
+#### 2. 検証制約
+
+無効な入力を防ぐための検証制約を含めます。:
+
+```java
+Map<String, Object> getSchema() {
+    Map<String, Object> schema = new HashMap<>();
+    schema.put("type", "object");
+    
+    Map<String, Object> properties = new HashMap<>();
+    
+    // Email property with format validation
+    Map<String, Object> email = new HashMap<>();
+    email.put("type", "string");
+    email.put("format", "email");
+    email.put("description", "User email address");
+    
+    // Age property with numeric constraints
+    Map<String, Object> age = new HashMap<>();
+    age.put("type", "integer");
+    age.put("minimum", 13);
+    age.put("maximum", 120);
+    age.put("description", "User age in years");
+    
+    // Enumerated property
+    Map<String, Object> subscription = new HashMap<>();
+    subscription.put("type", "string");
+    subscription.put("enum", Arrays.asList("free", "basic", "premium"));
+    subscription.put("default", "free");
+    subscription.put("description", "Subscription tier");
+    
+    properties.put("email", email);
+    properties.put("age", age);
+    properties.put("subscription", subscription);
+    
+    schema.put("properties", properties);
+    schema.put("required", Arrays.asList("email"));
+    
+    return schema;
+}
+```
+
+#### 3. 一貫したリターン構造
+
+モデルが結果を解釈しやすくするために、応答構造の一貫性を維持します。:
+
+```python
+async def execute_async(self, request):
+    try:
+        # Process request
+        results = await self._search_database(request.parameters["query"])
+        
+        # Always return a consistent structure
+        return ToolResponse(
+            result={
+                "matches": [self._format_item(item) for item in results],
+                "totalCount": len(results),
+                "queryTime": calculation_time_ms,
+                "status": "success"
+            }
+        )
+    except Exception as e:
+        return ToolResponse(
+            result={
+                "matches": [],
+                "totalCount": 0,
+                "queryTime": 0,
+                "status": "error",
+                "error": str(e)
+            }
+        )
+    
+def _format_item(self, item):
+    """Ensures each item has a consistent structure"""
+    return {
+        "id": item.id,
+        "title": item.title,
+        "summary": item.summary[:100] + "..." if len(item.summary) > 100 else item.summary,
+        "url": item.url,
+        "relevance": item.score
+    }
+```
+
+### エラー処理
+
+MCP ツールが信頼性を維持するには、堅牢なエラー処理が不可欠です。
+
+#### 1. 適切なエラー処理
+
+適切なレベルでエラーを処理し、情報メッセージを提供します。:
+
+```csharp
+public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+{
+    try
+    {
+        string fileId = request.Parameters.GetProperty("fileId").GetString();
+        
+        try
+        {
+            var fileData = await _fileService.GetFileAsync(fileId);
+            return new ToolResponse { 
+                Result = JsonSerializer.SerializeToElement(fileData) 
+            };
+        }
+        catch (FileNotFoundException)
+        {
+            throw new ToolExecutionException($"File not found: {fileId}");
+        }
+        catch (UnauthorizedAccessException)
+        {
+            throw new ToolExecutionException("You don't have permission to access this file");
+        }
+        catch (Exception ex) when (ex is IOException || ex is TimeoutException)
+        {
+            _logger.LogError(ex, "Error accessing file {FileId}", fileId);
+            throw new ToolExecutionException("Error accessing file: The service is temporarily unavailable");
+        }
+    }
+    catch (JsonException)
+    {
+        throw new ToolExecutionException("Invalid file ID format");
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex, "Unexpected error in FileAccessTool");
+        throw new ToolExecutionException("An unexpected error occurred");
+    }
+}
+```
+
+#### 2. 構造化されたエラー応答
+
+可能な場合は構造化されたエラー情報を返します。:
+
+```java
+@Override
+public ToolResponse execute(ToolRequest request) {
+    try {
+        // Implementation
+    } catch (Exception ex) {
+        Map<String, Object> errorResult = new HashMap<>();
+        
+        errorResult.put("success", false);
+        
+        if (ex instanceof ValidationException) {
+            ValidationException validationEx = (ValidationException) ex;
+            
+            errorResult.put("errorType", "validation");
+            errorResult.put("errorMessage", validationEx.getMessage());
+            errorResult.put("validationErrors", validationEx.getErrors());
+            
+            return new ToolResponse.Builder()
+                .setResult(errorResult)
+                .build();
+        }
+        
+        // Re-throw other exceptions as ToolExecutionException
+        throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
+    }
+}
+```
+
+#### 3. 再試行ロジック
+
+一時的な障害に対して適切な再試行ロジックを実装します。:
+
+```python
+async def execute_async(self, request):
+    max_retries = 3
+    retry_count = 0
+    base_delay = 1  # seconds
+    
+    while retry_count < max_retries:
+        try:
+            # Call external API
+            return await self._call_api(request.parameters)
+        except TransientError as e:
+            retry_count += 1
+            if retry_count >= max_retries:
+                raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
+                
+            # Exponential backoff
+            delay = base_delay * (2 ** (retry_count - 1))
+            logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
+            await asyncio.sleep(delay)
+        except Exception as e:
+            # Non-transient error, don't retry
+            raise ToolExecutionException(f"Operation failed: {str(e)}")
+```
+
+### パフォーマンスの最適化
+
+#### 1. キャッシング
+
+コストのかかる操作にキャッシュを実装します。:
+
+```csharp
+public class CachedDataTool : IMcpTool
+{
+    private readonly IDatabase _database;
+    private readonly IMemoryCache _cache;
+    
+    public CachedDataTool(IDatabase database, IMemoryCache cache)
+    {
+        _database = database;
+        _cache = cache;
+    }
+    
+    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+    {
+        var query = request.Parameters.GetProperty("query").GetString();
+        
+        // Create cache key based on parameters
+        var cacheKey = $"data_query_{ComputeHash(query)}";
+        
+        // Try to get from cache first
+        if (_cache.TryGetValue(cacheKey, out var cachedResult))
+        {
+            return new ToolResponse { Result = cachedResult };
+        }
+        
+        // Cache miss - perform actual query
+        var result = await _database.QueryAsync(query);
+        
+        // Store in cache with expiration
+        var cacheOptions = new MemoryCacheEntryOptions()
+            .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
+            
+        _cache.Set(cacheKey, JsonSerializer.SerializeToElement(result), cacheOptions);
+        
+        return new ToolResponse { Result = JsonSerializer.SerializeToElement(result) };
+    }
+    
+    private string ComputeHash(string input)
+    {
+        // Implementation to generate stable hash for cache key
+    }
+}
+```
+
+#### 2. 非同期処理
 
 Use asynchronous programming patterns for I/O-bound operations:
 
