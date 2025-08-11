@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2bbbcded256d46a24e3f448384a2b4a2",
-  "translation_date": "2025-07-28T23:24:15+00:00",
+  "original_hash": "85eb103a78a43a542f2890a3d7d62318",
+  "translation_date": "2025-08-11T09:44:15+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "zh"
 }
 -->
-# 模型上下文协议 (MCP) 简介：为什么它对可扩展的 AI 应用至关重要
+# 模型上下文协议 (MCP) 简介：为何它对可扩展的 AI 应用至关重要
 
 [![模型上下文协议简介](../../../translated_images/01.a467036d886b5fb5b9cf7b39bac0e743b6ca0a4a18a492de90061daaf0cc55f0.zh.png)](https://youtu.be/agBbdiOPLQA)
 
@@ -25,11 +25,13 @@ _（点击上方图片观看本课视频）_
 
 ## **🎯 为什么 AI 标准化很重要**
 
-随着生成式 AI 应用变得越来越复杂，采用能够确保**可扩展性、可扩展性**和**可维护性**的标准至关重要。MCP 通过以下方式满足这些需求：
+随着生成式 AI 应用变得越来越复杂，采用能够确保**可扩展性、可扩展性、可维护性**并**避免供应商锁定**的标准至关重要。MCP 通过以下方式满足这些需求：
 
 - 统一模型与工具的集成
 - 减少脆弱的、一次性的定制解决方案
-- 允许多个模型在一个生态系统中共存
+- 允许来自不同供应商的多个模型在一个生态系统中共存
+
+**注意：** 虽然 MCP 自称为一个开放标准，但目前没有计划通过任何现有的标准组织（如 IEEE、IETF、W3C、ISO 或其他标准组织）对 MCP 进行标准化。
 
 ---
 
@@ -50,19 +52,19 @@ _（点击上方图片观看本课视频）_
 
 在 MCP 出现之前，模型与工具的集成需要：
 
-- 每个工具-模型对的定制代码
-- 每个供应商的非标准化 API
+- 针对每个工具-模型对编写定制代码
+- 为每个供应商使用非标准化的 API
 - 因更新而频繁中断
 - 随着工具数量增加而难以扩展
 
 ### **✅ MCP 标准化的优势**
 
-| **优势**                  | **描述**                                                                        |
-|--------------------------|--------------------------------------------------------------------------------|
-| 互操作性                 | LLMs 能够无缝地与不同供应商的工具协作                                           |
-| 一致性                   | 在平台和工具之间实现统一的行为                                                  |
-| 可重用性                 | 一次构建的工具可以在多个项目和系统中使用                                         |
-| 加速开发                 | 通过使用标准化的即插即用接口减少开发时间                                         |
+| **优势**                  | **描述**                                                                      |
+|--------------------------|------------------------------------------------------------------------------|
+| 互操作性                 | LLM 能够无缝地与来自不同供应商的工具协作                                       |
+| 一致性                   | 在平台和工具之间实现统一的行为                                                |
+| 可重用性                 | 一次构建的工具可以在多个项目和系统中重复使用                                   |
+| 加速开发                 | 通过使用标准化的即插即用接口减少开发时间                                       |
 
 ---
 
@@ -85,102 +87,107 @@ MCP 遵循**客户端-服务器模型**，其中：
 
 ## MCP 服务器的工作原理
 
-MCP 服务器的操作方式如下：
+MCP 服务器的操作流程如下：
 
-- **请求流程**：  
-    1. MCP 客户端向运行在 MCP 主机上的 AI 模型发送请求。  
-    2. AI 模型识别何时需要外部工具或数据。  
-    3. 模型通过标准化协议与 MCP 服务器通信。
-
-- **MCP 服务器功能**：  
-    - 工具注册表：维护可用工具及其功能的目录。  
-    - 身份验证：验证工具访问权限。  
-    - 请求处理器：处理来自模型的工具请求。  
-    - 响应格式化器：将工具输出结构化为模型可理解的格式。
-
-- **工具执行**：  
-    - 服务器将请求路由到相应的外部工具。  
-    - 工具执行其专门功能（如搜索、计算、数据库查询等）。  
-    - 结果以一致的格式返回给模型。
-
-- **响应完成**：  
-    - AI 模型将工具输出整合到其响应中。  
-    - 最终响应返回给客户端应用。
+- **请求流程**：
+    1. 由终端用户或代表其操作的软件发起请求。
+    2. **MCP 客户端** 将请求发送到 **MCP 主机**，后者管理 AI 模型的运行时。
+    3. **AI 模型** 接收用户提示，并可能通过一个或多个工具调用请求访问外部工具或数据。
+    4. **MCP 主机**（而非模型本身）使用标准化协议与相应的 **MCP 服务器** 通信。
+- **MCP 主机功能**：
+    - **工具注册表**：维护可用工具及其功能的目录。
+    - **身份验证**：验证工具访问权限。
+    - **请求处理器**：处理来自模型的工具请求。
+    - **响应格式化器**：将工具输出结构化为模型可理解的格式。
+- **MCP 服务器执行**：
+    - **MCP 主机** 将工具调用路由到一个或多个 **MCP 服务器**，每个服务器提供特定功能（如搜索、计算、数据库查询）。
+    - **MCP 服务器** 执行各自的操作，并以一致的格式将结果返回给 **MCP 主机**。
+    - **MCP 主机** 格式化并将这些结果传递给 **AI 模型**。
+- **响应完成**：
+    - **AI 模型** 将工具输出整合到最终响应中。
+    - **MCP 主机** 将此响应发送回 **MCP 客户端**，后者将其交付给终端用户或调用软件。
 
 ```mermaid
 ---
-title: MCP Server Architecture and Component Interactions
-description: A diagram showing how AI models interact with MCP servers and various tools, depicting the request flow and server components including Tool Registry, Authentication, Request Handler, and Response Formatter
+title: MCP Architecture and Component Interactions
+description: A diagram showing the flows of the components in MCP.
 ---
 graph TD
-    A[AI Model in MCP Host] <-->|MCP Protocol| B[MCP Server]
-    B <-->|Tool Interface| C[Tool 1: Web Search]
-    B <-->|Tool Interface| D[Tool 2: Calculator]
-    B <-->|Tool Interface| E[Tool 3: Database Access]
-    B <-->|Tool Interface| F[Tool 4: File System]
-    
-    Client[MCP Client/Application] -->|Sends Request| A
-    A -->|Returns Response| Client
-    
-    subgraph "MCP Server Components"
-        B
+    Client[MCP Client/Application] -->|Sends Request| H[MCP Host]
+    H -->|Invokes| A[AI Model]
+    A -->|Tool Call Request| H
+    H -->|MCP Protocol| T1[MCP Server Tool 01: Web Search]
+    H -->|MCP Protocol| T2[MCP Server Tool 02: Calculator tool]
+    H -->|MCP Protocol| T3[MCP Server Tool 03: Database Access tool]
+    H -->|MCP Protocol| T4[MCP Server Tool 04: File System tool]
+    H -->|Sends Response| Client
+
+    subgraph "MCP Host Components"
+        H
         G[Tool Registry]
-        H[Authentication]
-        I[Request Handler]
-        J[Response Formatter]
+        I[Authentication]
+        J[Request Handler]
+        K[Response Formatter]
     end
-    
-    B <--> G
-    B <--> H
-    B <--> I
-    B <--> J
-    
+
+    H <--> G
+    H <--> I
+    H <--> J
+    H <--> K
+
     style A fill:#f9d5e5,stroke:#333,stroke-width:2px
-    style B fill:#eeeeee,stroke:#333,stroke-width:2px
+    style H fill:#eeeeee,stroke:#333,stroke-width:2px
     style Client fill:#d5e8f9,stroke:#333,stroke-width:2px
-    style C fill:#c2f0c2,stroke:#333,stroke-width:1px
-    style D fill:#c2f0c2,stroke:#333,stroke-width:1px
-    style E fill:#c2f0c2,stroke:#333,stroke-width:1px
-    style F fill:#c2f0c2,stroke:#333,stroke-width:1px    
+    style G fill:#fffbe6,stroke:#333,stroke-width:1px
+    style I fill:#fffbe6,stroke:#333,stroke-width:1px
+    style J fill:#fffbe6,stroke:#333,stroke-width:1px
+    style K fill:#fffbe6,stroke:#333,stroke-width:1px
+    style T1 fill:#c2f0c2,stroke:#333,stroke-width:1px
+    style T2 fill:#c2f0c2,stroke:#333,stroke-width:1px
+    style T3 fill:#c2f0c2,stroke:#333,stroke-width:1px
+    style T4 fill:#c2f0c2,stroke:#333,stroke-width:1px
 ```
 
 ## 👨‍💻 如何构建 MCP 服务器（附示例）
 
 MCP 服务器允许你通过提供数据和功能来扩展 LLM 的能力。
 
-准备好尝试了吗？以下是用不同语言创建简单 MCP 服务器的示例：
+准备好尝试了吗？以下是基于不同语言/技术栈的 SDK 示例，展示如何创建简单的 MCP 服务器：
 
-- **Python 示例**: https://github.com/modelcontextprotocol/python-sdk  
-- **TypeScript 示例**: https://github.com/modelcontextprotocol/typescript-sdk  
-- **Java 示例**: https://github.com/modelcontextprotocol/java-sdk  
-- **C#/.NET 示例**: https://github.com/modelcontextprotocol/csharp-sdk  
+- **Python SDK**: https://github.com/modelcontextprotocol/python-sdk
+
+- **TypeScript SDK**: https://github.com/modelcontextprotocol/typescript-sdk
+
+- **Java SDK**: https://github.com/modelcontextprotocol/java-sdk
+
+- **C#/.NET SDK**: https://github.com/modelcontextprotocol/csharp-sdk
 
 ---
 
 ## 🌍 MCP 的实际应用场景
 
-MCP 通过扩展 AI 的能力支持广泛的应用：
+通过扩展 AI 的能力，MCP 支持广泛的应用：
 
-| **应用场景**               | **描述**                                                                        |
-|---------------------------|--------------------------------------------------------------------------------|
-| 企业数据集成              | 将 LLMs 连接到数据库、CRM 或内部工具                                            |
-| 代理型 AI 系统            | 通过工具访问和决策工作流实现自主代理                                            |
-| 多模态应用                | 在单一 AI 应用中结合文本、图像和音频工具                                         |
-| 实时数据集成              | 将实时数据引入 AI 交互中，以提供更准确、最新的输出                                |
+| **应用场景**               | **描述**                                                                      |
+|---------------------------|------------------------------------------------------------------------------|
+| 企业数据集成              | 将 LLM 连接到数据库、CRM 或内部工具                                           |
+| 自主 AI 系统              | 启用具有工具访问和决策工作流的自主代理                                         |
+| 多模态应用                | 在单一统一的 AI 应用中结合文本、图像和音频工具                                 |
+| 实时数据集成              | 将实时数据引入 AI 交互中，以提供更准确、最新的输出                              |
 
 ### 🧠 MCP = AI 交互的通用标准
 
-模型上下文协议 (MCP) 是 AI 交互的通用标准，就像 USB-C 标准化了设备的物理连接一样。在 AI 领域，MCP 提供了一种一致的接口，使模型（客户端）能够无缝集成外部工具和数据提供者（服务器）。这消除了为每个 API 或数据源设计多样化定制协议的需求。
+模型上下文协议 (MCP) 就像 USB-C 在设备物理连接中实现标准化一样，MCP 为 AI 交互提供了一个一致的接口，使模型（客户端）能够无缝集成外部工具和数据提供者（服务器）。这消除了为每个 API 或数据源设计多样化定制协议的需求。
 
-在 MCP 下，兼容 MCP 的工具（称为 MCP 服务器）遵循统一的标准。这些服务器可以列出它们提供的工具或操作，并在 AI 代理请求时执行这些操作。支持 MCP 的 AI 代理平台能够通过此标准协议发现服务器提供的工具并调用它们。
+在 MCP 下，兼容 MCP 的工具（称为 MCP 服务器）遵循统一的标准。这些服务器可以列出它们提供的工具或操作，并在 AI 代理请求时执行这些操作。支持 MCP 的 AI 代理平台能够发现服务器提供的工具，并通过该标准协议调用它们。
 
 ### 💡 促进知识访问
 
-除了提供工具，MCP 还促进了知识访问。它通过将应用程序与各种数据源连接，为大型语言模型 (LLMs) 提供上下文。例如，一个 MCP 服务器可能代表公司的文档存储库，允许代理按需检索相关信息。另一个服务器可能处理特定操作，如发送电子邮件或更新记录。从代理的角度来看，这些只是它可以使用的工具——有些工具返回数据（知识上下文），而另一些执行操作。MCP 高效地管理了这两者。
+除了提供工具，MCP 还促进了知识访问。它通过将应用程序与各种数据源连接，为大型语言模型 (LLMs) 提供上下文。例如，一个 MCP 服务器可能代表公司的文档库，允许代理按需检索相关信息。另一个服务器可能处理特定操作，如发送电子邮件或更新记录。从代理的角度来看，这些只是它可以使用的工具——有些工具返回数据（知识上下文），而另一些则执行操作。MCP 高效地管理了这两者。
 
-连接到 MCP 服务器的代理可以通过标准格式自动了解服务器的可用功能和可访问数据。这种标准化实现了动态工具的可用性。例如，将一个新的 MCP 服务器添加到代理系统中，其功能可以立即使用，而无需进一步定制代理的指令。
+连接到 MCP 服务器的代理可以通过标准格式自动了解服务器的可用功能和可访问数据。这种标准化实现了动态工具的可用性。例如，在代理系统中添加一个新的 MCP 服务器后，其功能可以立即使用，而无需进一步定制代理的指令。
 
-这种简化的集成与 mermaid 图中描述的流程一致，服务器提供工具和知识，确保系统间的无缝协作。
+这种简化的集成与以下图示的流程一致，其中服务器提供工具和知识，确保系统间的无缝协作。
 
 ### 👉 示例：可扩展的代理解决方案
 
@@ -213,7 +220,7 @@ graph TD
 
 ### 🔄 客户端 LLM 集成的高级 MCP 场景
 
-除了基本的 MCP 架构，还有一些高级场景，其中客户端和服务器都包含 LLM，从而实现更复杂的交互：
+除了基本的 MCP 架构外，还有一些高级场景，其中客户端和服务器都包含 LLM，从而实现更复杂的交互。在下图中，**客户端应用** 可能是一个 IDE，提供多个 MCP 工具供 LLM 使用：
 
 ```mermaid
 ---
@@ -283,10 +290,10 @@ sequenceDiagram
 
 以下是使用 MCP 的实际优势：
 
-- **信息新鲜度**：模型可以访问超出其训练数据的最新信息  
-- **能力扩展**：模型可以利用专用工具完成其未训练的任务  
-- **减少幻觉**：外部数据源提供事实依据  
-- **隐私保护**：敏感数据可以保留在安全环境中，而不是嵌入到提示中  
+- **信息新鲜度**：模型可以访问超出其训练数据的最新信息
+- **能力扩展**：模型可以利用专用工具完成其未训练的任务
+- **减少幻觉**：外部数据源提供事实依据
+- **隐私保护**：敏感数据可以保留在安全环境中，而不是嵌入到提示中
 
 ---
 
@@ -294,19 +301,19 @@ sequenceDiagram
 
 以下是使用 MCP 的关键要点：
 
-- **MCP** 标准化了 AI 模型与工具和数据的交互  
-- 促进了**可扩展性、一致性和互操作性**  
-- MCP 有助于**减少开发时间、提高可靠性并扩展模型能力**  
-- 客户端-服务器架构**支持灵活、可扩展的 AI 应用**  
+- **MCP** 标准化了 AI 模型与工具和数据的交互方式
+- 促进了 **可扩展性、一致性和互操作性**
+- MCP 帮助 **减少开发时间、提高可靠性并扩展模型能力**
+- 客户端-服务器架构 **支持灵活、可扩展的 AI 应用**
 
 ---
 
 ## 🧠 练习
 
-思考一个你感兴趣构建的 AI 应用。
+思考一个你感兴趣的 AI 应用：
 
-- 哪些**外部工具或数据**可以增强其功能？  
-- MCP 如何使集成**更简单、更可靠**？  
+- 哪些**外部工具或数据**可以增强其功能？
+- MCP 如何使集成**更简单、更可靠**？
 
 ---
 
@@ -321,4 +328,4 @@ sequenceDiagram
 下一步：[第 1 章：核心概念](../01-CoreConcepts/README.md)
 
 **免责声明**：  
-本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们对因使用此翻译而产生的任何误解或误读不承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。虽然我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们对因使用此翻译而产生的任何误解或误读不承担责任。
