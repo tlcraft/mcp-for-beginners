@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f6fdbdb913f39bac8b50915c2bfede55",
-  "translation_date": "2025-08-11T10:01:44+00:00",
+  "original_hash": "57f7b15640bb96ef2f6f09003eec935e",
+  "translation_date": "2025-08-12T19:09:13+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "hk"
 }
 -->
 # 使用 LLM 創建客戶端
 
-到目前為止，你已經學會了如何創建伺服器和客戶端。客戶端可以顯式地調用伺服器來列出其工具、資源和提示。然而，這種方法並不太實用。你的用戶生活在代理時代，他們期望使用提示並與 LLM 進行交流。對於你的用戶來說，他們並不在意你是否使用 MCP 來存儲功能，但他們確實期望能夠使用自然語言進行互動。那麼，我們該如何解決這個問題呢？解決方案是將 LLM 添加到客戶端中。
+到目前為止，你已經學會了如何創建伺服器和客戶端。客戶端可以顯式地調用伺服器來列出其工具、資源和提示。然而，這種方法並不太實用。你的用戶生活在代理時代，他們期望通過提示和與 LLM 進行自然語言交流來完成操作。對於用戶來說，他們並不在意你是否使用 MCP 來存儲功能，但他們確實期望能夠用自然語言進行互動。那麼，我們該如何解決這個問題呢？解決方案就是在客戶端中添加一個 LLM。
 
 ## 概覽
 
-在這一課中，我們將專注於如何將 LLM 添加到客戶端，並展示這如何為用戶提供更好的體驗。
+在這節課中，我們將專注於如何在客戶端中添加 LLM，並展示這如何為用戶提供更好的體驗。
 
 ## 學習目標
 
@@ -21,41 +21,41 @@ CO_OP_TRANSLATOR_METADATA:
 
 - 創建一個包含 LLM 的客戶端。
 - 使用 LLM 無縫地與 MCP 伺服器互動。
-- 在客戶端提供更好的最終用戶體驗。
+- 在客戶端提供更好的終端用戶體驗。
 
 ## 方法
 
-讓我們試著理解需要採取的方法。添加 LLM 聽起來很簡單，但我們實際上會怎麼做呢？
+讓我們試著理解需要採取的方法。添加一個 LLM 聽起來很簡單，但我們實際上會怎麼做呢？
 
 以下是客戶端與伺服器交互的方式：
 
 1. 與伺服器建立連接。
 
-2. 列出功能、提示、資源和工具，並保存它們的結構。
+1. 列出功能、提示、資源和工具，並保存它們的結構。
 
-3. 添加一個 LLM，並以 LLM 能理解的格式傳遞保存的功能及其結構。
+1. 添加一個 LLM，並以 LLM 能理解的格式傳遞保存的功能及其結構。
 
-4. 通過將用戶提示與客戶端列出的工具一起傳遞給 LLM 來處理用戶提示。
+1. 通過將用戶提示與客戶端列出的工具一起傳遞給 LLM 來處理用戶提示。
 
-很好，現在我們已經了解了高層次的實現方式，讓我們在下面的練習中試試看。
+很好，現在我們從高層次上理解了如何實現，接下來讓我們在下面的練習中試試看。
 
-## 練習：使用 LLM 創建客戶端
+## 練習：創建一個包含 LLM 的客戶端
 
-在這個練習中，我們將學習如何將 LLM 添加到我們的客戶端。
+在這個練習中，我們將學習如何在客戶端中添加 LLM。
 
 ### 使用 GitHub Personal Access Token 進行身份驗證
 
-創建 GitHub Token 是一個簡單的過程。以下是步驟：
+創建 GitHub token 是一個簡單的過程。以下是步驟：
 
 - 前往 GitHub 設定 – 點擊右上角的個人頭像，選擇設定。
 - 導航到開發者設定 – 向下滾動並點擊開發者設定。
-- 選擇 Personal Access Tokens – 點擊 Personal Access Tokens，然後生成新 Token。
-- 配置你的 Token – 添加備註以供參考，設置過期日期，並選擇必要的範圍（權限）。
-- 生成並複製 Token – 點擊生成 Token，並確保立即複製，因為之後無法再次查看。
+- 選擇 Personal Access Tokens – 點擊 Personal Access Tokens，然後生成新 token。
+- 配置你的 token – 添加備註以供參考，設置過期日期，並選擇必要的範圍（權限）。
+- 生成並複製 token – 點擊生成 token，並立即複製，因為之後無法再次查看。
 
 ### -1- 連接到伺服器
 
-讓我們先創建客戶端：
+首先，讓我們創建客戶端：
 
 #### TypeScript
 
@@ -95,8 +95,8 @@ class MCPClient {
 在上述代碼中，我們：
 
 - 導入了所需的庫。
-- 創建了一個包含兩個成員的類，`client` 和 `openai`，分別幫助我們管理客戶端和與 LLM 交互。
-- 配置了 LLM 實例，通過設置 `baseUrl` 指向推理 API 來使用 GitHub 模型。
+- 創建了一個包含兩個成員的類，`client` 和 `openai`，分別用於管理客戶端和與 LLM 交互。
+- 配置了 LLM 實例，通過將 `baseUrl` 設置為推理 API 來使用 GitHub 模型。
 
 #### Python
 
@@ -239,10 +239,10 @@ public class LangChain4jClient {
 
 - **添加了 LangChain4j 依賴**：用於 MCP 集成、OpenAI 官方客戶端和 GitHub 模型支持。
 - **導入了 LangChain4j 庫**：用於 MCP 集成和 OpenAI 聊天模型功能。
-- **創建了一個 `ChatLanguageModel`**：配置為使用 GitHub 模型並使用你的 GitHub Token。
+- **創建了一個 `ChatLanguageModel`**：配置為使用 GitHub 模型並使用你的 GitHub token。
 - **設置了 HTTP 傳輸**：使用伺服器發送事件（SSE）連接到 MCP 伺服器。
 - **創建了一個 MCP 客戶端**：用於處理與伺服器的通信。
-- **使用 LangChain4j 的內建 MCP 支持**：簡化了 LLM 和 MCP 伺服器之間的集成。
+- **使用了 LangChain4j 的內置 MCP 支持**：簡化了 LLM 和 MCP 伺服器之間的集成。
 
 #### Rust
 
@@ -261,7 +261,7 @@ cargo init
 ```toml
 [dependencies]
 async-openai = { version = "0.29.0", features = ["byot"] }
-rmcp = { version = "0.3.0", features = ["client", "transport-child-process"] }
+rmcp = { version = "0.5.0", features = ["client", "transport-child-process"] }
 serde_json = "1.0.141"
 tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
 ```
@@ -319,12 +319,12 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-此代碼設置了一個基本的 Rust 應用程序，用於連接到 MCP 伺服器和 GitHub 模型進行 LLM 交互。
+此代碼設置了一個基本的 Rust 應用程序，用於連接 MCP 伺服器和 GitHub 模型進行 LLM 交互。
 
 > [!IMPORTANT]
-> 在運行應用程序之前，請確保使用你的 GitHub Token 設置 `OPENAI_API_KEY` 環境變量。
+> 在運行應用程序之前，請確保使用你的 GitHub token 設置 `OPENAI_API_KEY` 環境變量。
 
-很好，下一步，我們來列出伺服器上的功能。
+很好，接下來我們將列出伺服器上的功能。
 
 ### -2- 列出伺服器功能
 
@@ -351,7 +351,7 @@ async run() {
 
 在上述代碼中，我們：
 
-- 添加了連接到伺服器的代碼 `connectToServer`。
+- 添加了連接伺服器的代碼 `connectToServer`。
 - 創建了一個 `run` 方法，負責處理應用程序流程。目前它僅列出工具，但我們很快會添加更多內容。
 
 #### Python
@@ -420,12 +420,12 @@ ToolProvider toolProvider = McpToolProvider.builder()
 在上述代碼中，我們：
 
 - 創建了一個 `McpToolProvider`，自動發現並註冊 MCP 伺服器上的所有工具。
-- 工具提供程序內部處理 MCP 工具結構和 LangChain4j 工具格式之間的轉換。
+- 工具提供者內部處理 MCP 工具結構和 LangChain4j 工具格式之間的轉換。
 - 此方法抽象了手動工具列出和轉換過程。
 
 #### Rust
 
-從 MCP 伺服器檢索工具是通過 `list_tools` 方法完成的。在 `main` 函數中設置 MCP 客戶端後，添加以下代碼：
+從 MCP 伺服器檢索工具是通過 `list_tools` 方法完成的。在你的 `main` 函數中，設置 MCP 客戶端後，添加以下代碼：
 
 ```rust
 // Get MCP tool listing 
@@ -434,7 +434,7 @@ let tools = mcp_client.list_tools(Default::default()).await?;
 
 ### -3- 將伺服器功能轉換為 LLM 工具
 
-列出伺服器功能後，下一步是將其轉換為 LLM 能理解的格式。一旦完成，我們可以將這些功能作為工具提供給 LLM。
+列出伺服器功能後的下一步是將其轉換為 LLM 能理解的格式。一旦完成，我們就可以將這些功能作為工具提供給 LLM。
 
 #### TypeScript
 
@@ -507,7 +507,7 @@ let tools = mcp_client.list_tools(Default::default()).await?;
         return tool_schema
     ```
 
-    在上述函數 `convert_to_llm_tools` 中，我們將 MCP 工具響應轉換為 LLM 可理解的格式。
+    在上述 `convert_to_llm_tools` 函數中，我們將 MCP 工具響應轉換為 LLM 可理解的格式。
 
 1. 接下來，更新客戶端代碼以利用此函數：
 
@@ -518,11 +518,11 @@ let tools = mcp_client.list_tools(Default::default()).await?;
         functions.append(convert_to_llm_tool(tool))
     ```
 
-    在這裡，我們添加了一個調用 `convert_to_llm_tool` 的步驟，將 MCP 工具響應轉換為稍後可提供給 LLM 的內容。
+    在這裡，我們添加了一個調用 `convert_to_llm_tool` 的步驟，將 MCP 工具響應轉換為稍後可提供給 LLM 的格式。
 
 #### .NET
 
-1. 添加代碼將 MCP 工具響應轉換為 LLM 可理解的內容：
+1. 添加代碼將 MCP 工具響應轉換為 LLM 可理解的格式：
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -547,8 +547,8 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 
 在上述代碼中，我們：
 
-- 創建了一個函數 `ConvertFrom`，接受名稱、描述和輸入結構。
-- 定義了創建 FunctionDefinition 的功能，該功能被傳遞給 ChatCompletionsDefinition，後者是 LLM 可理解的內容。
+- 創建了一個 `ConvertFrom` 函數，接受名稱、描述和輸入結構。
+- 定義了創建 `FunctionDefinition` 的功能，該功能被傳遞給 `ChatCompletionsDefinition`，後者是 LLM 可理解的內容。
 
 1. 更新現有代碼以利用上述函數：
 
@@ -582,7 +582,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 
     在上述代碼中，我們：
 
-    - 更新函數以將 MCP 工具響應轉換為 LLM 工具。以下是我們添加的代碼：
+    - 更新了函數以將 MCP 工具響應轉換為 LLM 工具。以下是我們添加的代碼：
 
         ```csharp
         JsonElement propertiesElement;
@@ -593,7 +593,7 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
         toolDefinitions.Add(def);
         ```
 
-        輸入結構是工具響應的一部分，但位於 "properties" 屬性上，因此我們需要提取它。此外，我們現在使用工具詳細信息調用 `ConvertFrom`。完成了這些繁重的工作後，接下來我們將處理用戶提示。
+        輸入結構是工具響應的一部分，但位於 "properties" 屬性中，因此我們需要提取。此外，我們現在使用工具詳細信息調用 `ConvertFrom`。完成了這些繁重的工作後，接下來我們將處理用戶提示。
 
 #### Java
 
@@ -613,8 +613,8 @@ Bot bot = AiServices.builder(Bot.class)
 在上述代碼中，我們：
 
 - 定義了一個簡單的 `Bot` 接口，用於自然語言交互。
-- 使用 LangChain4j 的 `AiServices` 自動將 LLM 與 MCP 工具提供程序綁定。
-- 該框架自動處理工具結構轉換和函數調用。
+- 使用 LangChain4j 的 `AiServices` 自動將 LLM 與 MCP 工具提供者綁定。
+- 框架自動處理工具結構轉換和函數調用。
 - 此方法消除了手動工具轉換的需求——LangChain4j 處理了 MCP 工具到 LLM 兼容格式的所有複雜性。
 
 #### Rust
@@ -654,7 +654,7 @@ async fn format_tools(tools: &ListToolsResult) -> Result<Vec<Value>, Box<dyn Err
 }
 ```
 
-很好，我們現在已準備好處理任何用戶請求，接下來讓我們解決這個問題。
+很好，我們現在已準備好處理任何用戶請求，接下來讓我們解決這部分內容。
 
 ### -4- 處理用戶提示請求
 
@@ -693,7 +693,7 @@ async fn format_tools(tools: &ListToolsResult) -> Result<Vec<Value>, Box<dyn Err
 
     在上述代碼中，我們：
 
-    - 添加了一個方法 `callTools`。
+    - 添加了一個 `callTools` 方法。
     - 該方法檢查 LLM 響應中是否有工具被調用：
 
         ```typescript
@@ -962,8 +962,8 @@ client.connectToServer(transport);
 
     - 將我們從 MCP 伺服器發現並轉換的函數傳遞給 LLM。
     - 然後使用這些函數調用 LLM。
-    - 接著檢查結果，看看是否有需要調用的函數。
-    - 最後，我們傳遞一個函數數組進行調用。
+    - 接著檢查結果以查看是否需要調用任何函數。
+    - 最後，我們傳遞一個函數數組以供調用。
 
 1. 最後一步，更新主代碼：
 
@@ -1205,7 +1205,7 @@ try {
 - 使用簡單的自然語言提示與 MCP 伺服器工具交互。
 - LangChain4j 框架自動處理：
   - 將用戶提示轉換為工具調用（如有必要）。
-  - 根據 LLM 的決定調用適當的 MCP 工具。
+  - 根據 LLM 的決定調用相應的 MCP 工具。
   - 管理 LLM 和 MCP 伺服器之間的對話流程。
 - `bot.chat()` 方法返回自然語言響應，可能包括 MCP 工具執行的結果。
 - 此方法提供了一種無縫的用戶體驗，用戶無需了解底層的 MCP 實現。
@@ -1262,7 +1262,7 @@ public class LangChain4jClient {
 #### Rust
 
 這是主要的工作部分。我們將使用初始用戶提示調用 LLM，然後處理響應以查看是否需要調用任何工具。如果需要，我們將調用這些工具並繼續與 LLM 的對話，直到不再需要調用工具並獲得最終響應。
-我們將多次呼叫 LLM，因此讓我們定義一個函數來處理 LLM 的呼叫。將以下函數添加到你的 `main.rs` 文件中：
+我們將會多次呼叫 LLM，因此讓我們定義一個函數來處理 LLM 的呼叫。將以下函數添加到你的 `main.rs` 文件中：
 
 ```rust
 async fn call_llm(
@@ -1282,9 +1282,9 @@ async fn call_llm(
 }
 ```
 
-此函數接收 LLM 客戶端、一組消息（包括使用者提示）、來自 MCP 伺服器的工具，並向 LLM 發送請求，返回回應。
+這個函數會接收 LLM 客戶端、一個包含用戶提示的消息列表、來自 MCP 伺服器的工具，並向 LLM 發送請求，返回回應。
 
-LLM 的回應將包含一個 `choices` 陣列。我們需要處理結果以檢查是否存在任何 `tool_calls`。這讓我們知道 LLM 是否要求調用特定工具並提供參數。將以下代碼添加到你的 `main.rs` 文件底部，以定義一個函數來處理 LLM 的回應：
+LLM 的回應會包含一個 `choices` 陣列。我們需要處理這個結果，檢查是否存在任何 `tool_calls`。這樣我們就能知道 LLM 是否請求調用某個特定工具並附帶參數。將以下代碼添加到 `main.rs` 文件的底部，定義一個函數來處理 LLM 的回應：
 
 ```rust
 async fn process_llm_response(
@@ -1347,9 +1347,9 @@ async fn process_llm_response(
 }
 ```
 
-如果存在 `tool_calls`，它會提取工具信息，使用工具請求調用 MCP 伺服器，並將結果添加到對話消息中。然後，它繼續與 LLM 進行對話，並更新消息，包含助手的回應和工具調用結果。
+如果存在 `tool_calls`，它會提取工具信息，向 MCP 伺服器發送工具請求，並將結果添加到對話消息中。然後，它會繼續與 LLM 進行對話，並使用助手的回應和工具調用結果更新消息。
 
-為了提取 LLM 返回的 MCP 調用工具信息，我們將添加另一個輔助函數，以提取進行調用所需的所有內容。將以下代碼添加到你的 `main.rs` 文件底部：
+為了提取 LLM 返回的 MCP 調用所需的工具調用信息，我們將添加另一個輔助函數來提取進行調用所需的一切。將以下代碼添加到 `main.rs` 文件的底部：
 
 ```rust
 fn extract_tool_call_info(tool_call: &Value) -> Result<(String, String, String), Box<dyn Error>> {
@@ -1373,7 +1373,7 @@ fn extract_tool_call_info(tool_call: &Value) -> Result<(String, String, String),
 }
 ```
 
-所有部分都準備好後，我們現在可以處理初始使用者提示並呼叫 LLM。更新你的 `main` 函數以包含以下代碼：
+當所有部分都準備就緒後，我們現在可以處理初始用戶提示並呼叫 LLM。更新你的 `main` 函數以包含以下代碼：
 
 ```rust
 // LLM conversation with tool calls
@@ -1388,22 +1388,22 @@ process_llm_response(
 .await?;
 ```
 
-這將使用初始使用者提示查詢 LLM，要求計算兩個數字的總和，並處理回應以動態處理工具調用。
+這段代碼會使用初始用戶提示向 LLM 發送查詢，請求兩個數字的和，並處理回應以動態處理工具調用。
 
 太棒了，你完成了！
 
 ## 作業
 
-從練習中取出代碼，並擴展伺服器以包含更多工具。然後像練習中一樣創建一個帶有 LLM 的客戶端，並使用不同的提示進行測試，以確保所有伺服器工具都能被動態調用。這種構建客戶端的方式意味著最終使用者將擁有出色的使用體驗，因為他們能夠使用提示，而不是精確的客戶端命令，並且完全不需要知道 MCP 伺服器的存在。
+使用練習中的代碼，擴展伺服器以包含更多工具。然後，像練習中一樣，創建一個帶有 LLM 的客戶端，並使用不同的提示進行測試，確保所有伺服器工具都能被動態調用。這種構建客戶端的方式能為最終用戶提供出色的使用體驗，因為他們可以使用提示，而不是精確的客戶端命令，並且完全不需要知道 MCP 伺服器的存在。
 
 ## 解決方案
 
-[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
+[解決方案](/03-GettingStarted/03-llm-client/solution/README.md)
 
 ## 關鍵要點
 
-- 在客戶端中添加 LLM 提供了一種更好的方式讓使用者與 MCP 伺服器互動。
-- 你需要將 MCP 伺服器的回應轉換為 LLM 能理解的格式。
+- 在客戶端中添加 LLM 為用戶提供了一種更好的方式來與 MCP 伺服器互動。
+- 你需要將 MCP 伺服器的回應轉換為 LLM 能理解的內容。
 
 ## 範例
 
@@ -1421,4 +1421,4 @@ process_llm_response(
 - 下一步：[使用 Visual Studio Code 消費伺服器](../04-vscode/README.md)
 
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始語言的文件應被視為具權威性的來源。對於重要資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+本文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始語言的文件應被視為具權威性的來源。對於重要資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。

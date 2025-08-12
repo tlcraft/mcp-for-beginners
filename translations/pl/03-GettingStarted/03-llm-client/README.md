@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f6fdbdb913f39bac8b50915c2bfede55",
-  "translation_date": "2025-08-11T11:37:20+00:00",
+  "original_hash": "57f7b15640bb96ef2f6f09003eec935e",
+  "translation_date": "2025-08-12T19:22:11+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "pl"
 }
 -->
 # Tworzenie klienta z LLM
 
-Do tej pory widziałeś, jak stworzyć serwer i klienta. Klient mógł wywoływać serwer w sposób jawny, aby uzyskać listę jego narzędzi, zasobów i podpowiedzi. Jednak nie jest to zbyt praktyczne podejście. Twój użytkownik żyje w erze agentowej i oczekuje, że będzie mógł korzystać z podpowiedzi i komunikować się z LLM, aby to osiągnąć. Dla użytkownika nie ma znaczenia, czy używasz MCP do przechowywania swoich możliwości, ale oczekuje on interakcji w języku naturalnym. Jak więc to rozwiązać? Rozwiązaniem jest dodanie LLM do klienta.
+Do tej pory widziałeś, jak stworzyć serwer i klienta. Klient mógł wywoływać serwer w sposób jawny, aby uzyskać listę jego narzędzi, zasobów i podpowiedzi. Jednak takie podejście nie jest zbyt praktyczne. Twój użytkownik żyje w erze agentowej i oczekuje, że będzie mógł korzystać z podpowiedzi i komunikować się z LLM, aby to osiągnąć. Dla użytkownika nie ma znaczenia, czy używasz MCP do przechowywania swoich możliwości, ale oczekuje on interakcji w języku naturalnym. Jak więc to rozwiązać? Rozwiązaniem jest dodanie LLM do klienta.
 
 ## Przegląd
 
@@ -37,7 +37,7 @@ Oto jak klient będzie komunikował się z serwerem:
 
 1. Obsłuż podpowiedź użytkownika, przekazując ją do LLM wraz z narzędziami wymienionymi przez klienta.
 
-Świetnie, teraz rozumiemy, jak możemy to zrobić na wysokim poziomie, spróbujmy to zrealizować w poniższym ćwiczeniu.
+Świetnie, teraz rozumiemy, jak to zrobić na wysokim poziomie, spróbujmy to wdrożyć w poniższym ćwiczeniu.
 
 ## Ćwiczenie: Tworzenie klienta z LLM
 
@@ -49,9 +49,9 @@ Tworzenie tokena GitHub jest prostym procesem. Oto jak to zrobić:
 
 - Przejdź do ustawień GitHub – Kliknij na swoje zdjęcie profilowe w prawym górnym rogu i wybierz Ustawienia.
 - Przejdź do Ustawień Deweloperskich – Przewiń w dół i kliknij Ustawienia Deweloperskie.
-- Wybierz Personal Access Tokens – Kliknij na Personal Access Tokens, a następnie Generuj nowy token.
+- Wybierz Personal Access Tokens – Kliknij na Personal access tokens, a następnie Generuj nowy token.
 - Skonfiguruj swój token – Dodaj notatkę dla odniesienia, ustaw datę wygaśnięcia i wybierz niezbędne zakresy (uprawnienia).
-- Wygeneruj i skopiuj token – Kliknij Generuj token i upewnij się, że go natychmiast skopiujesz, ponieważ nie będziesz mógł go zobaczyć ponownie.
+- Wygeneruj i skopiuj token – Kliknij Generuj token i upewnij się, że go natychmiast skopiujesz, ponieważ później nie będziesz mógł go zobaczyć.
 
 ### -1- Połącz się z serwerem
 
@@ -261,7 +261,7 @@ Dodaj następujące zależności do swojego pliku `Cargo.toml`:
 ```toml
 [dependencies]
 async-openai = { version = "0.29.0", features = ["byot"] }
-rmcp = { version = "0.3.0", features = ["client", "transport-child-process"] }
+rmcp = { version = "0.5.0", features = ["client", "transport-child-process"] }
 serde_json = "1.0.141"
 tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
 ```
@@ -352,7 +352,7 @@ async run() {
 W powyższym kodzie:
 
 - Dodaliśmy kod do połączenia z serwerem, `connectToServer`.
-- Stworzyliśmy metodę `run`, odpowiedzialną za obsługę przepływu naszej aplikacji. Na razie tylko wypisuje narzędzia, ale wkrótce dodamy więcej.
+- Stworzyliśmy metodę `run`, odpowiedzialną za obsługę przepływu aplikacji. Na razie tylko wypisuje narzędzia, ale wkrótce dodamy więcej.
 
 #### Python
 
@@ -434,7 +434,7 @@ let tools = mcp_client.list_tools(Default::default()).await?;
 
 ### -3- Konwertuj możliwości serwera na narzędzia LLM
 
-Następnym krokiem po wypisaniu możliwości serwera jest ich konwersja na format zrozumiały dla LLM. Gdy to zrobimy, możemy udostępnić te możliwości jako narzędzia dla LLM.
+Następnym krokiem po wypisaniu możliwości serwera jest ich konwersja na format zrozumiały dla LLM. Po wykonaniu tego kroku możemy przekazać te możliwości jako narzędzia do LLM.
 
 #### TypeScript
 
@@ -518,7 +518,7 @@ Następnym krokiem po wypisaniu możliwości serwera jest ich konwersja na forma
         functions.append(convert_to_llm_tool(tool))
     ```
 
-    Tutaj dodajemy wywołanie `convert_to_llm_tool`, aby przekonwertować odpowiedź narzędzia MCP na coś, co możemy później przekazać LLM.
+    Tutaj dodajemy wywołanie `convert_to_llm_tool`, aby przekonwertować odpowiedź narzędzia MCP na coś, co możemy później przekazać do LLM.
 
 #### .NET
 
@@ -593,7 +593,7 @@ W powyższym kodzie:
         toolDefinitions.Add(def);
         ```
 
-        Schemat wejściowy jest częścią odpowiedzi narzędzia, ale znajduje się w atrybucie "properties", więc musimy go wyodrębnić. Ponadto teraz wywołujemy `ConvertFrom` z szczegółami narzędzia. Teraz, gdy wykonaliśmy ciężką pracę, zobaczmy, jak to wszystko się łączy, obsługując podpowiedź użytkownika w następnym kroku.
+        Schemat wejściowy jest częścią odpowiedzi narzędzia, ale znajduje się w atrybucie "properties", więc musimy go wyodrębnić. Następnie wywołujemy `ConvertFrom` z danymi narzędzia. Teraz, gdy wykonaliśmy ciężką pracę, zobaczmy, jak to wszystko się łączy, obsługując podpowiedź użytkownika w następnym kroku.
 
 #### Java
 
@@ -722,7 +722,7 @@ W tej części kodu obsłużymy żądania użytkownika.
         // TODO  
         ```
 
-1. Zaktualizuj metodę `run`, aby uwzględniała wywołania LLM i `callTools`:
+1. Zaktualizuj metodę `run`, aby uwzględniała wywołania do LLM i wywoływała `callTools`:
 
     ```typescript
 
@@ -1208,7 +1208,7 @@ W powyższym kodzie:
   - Wywoływanie odpowiednich narzędzi MCP na podstawie decyzji LLM.
   - Zarządzanie przepływem rozmowy między LLM a serwerem MCP.
 - Metoda `bot.chat()` zwraca odpowiedzi w języku naturalnym, które mogą zawierać wyniki z wykonania narzędzi MCP.
-- To podejście zapewnia płynne doświadczenie użytkownika, w którym użytkownicy nie muszą znać implementacji MCP.
+- To podejście zapewnia płynne doświadczenie użytkownika, w którym nie musi on znać implementacji MCP.
 
 Pełny przykład kodu:
 
@@ -1282,9 +1282,9 @@ async fn call_llm(
 }
 ```
 
-Ta funkcja przyjmuje klienta LLM, listę wiadomości (w tym zapytanie użytkownika), narzędzia z serwera MCP i wysyła żądanie do LLM, zwracając odpowiedź.
+Ta funkcja przyjmuje klienta LLM, listę wiadomości (w tym podpowiedź użytkownika), narzędzia z serwera MCP i wysyła żądanie do LLM, zwracając odpowiedź.
 
-Odpowiedź z LLM będzie zawierać tablicę `choices`. Musimy przetworzyć wynik, aby sprawdzić, czy są obecne jakiekolwiek `tool_calls`. To pozwala nam wiedzieć, że LLM żąda wywołania konkretnego narzędzia z argumentami. Dodaj poniższy kod na końcu swojego pliku `main.rs`, aby zdefiniować funkcję obsługującą odpowiedź LLM:
+Odpowiedź z LLM będzie zawierać tablicę `choices`. Musimy przetworzyć wynik, aby sprawdzić, czy są obecne jakiekolwiek `tool_calls`. Informuje nas to, że LLM żąda wywołania konkretnego narzędzia z argumentami. Dodaj poniższy kod na końcu swojego pliku `main.rs`, aby zdefiniować funkcję obsługującą odpowiedź LLM:
 
 ```rust
 async fn process_llm_response(
@@ -1373,7 +1373,7 @@ fn extract_tool_call_info(tool_call: &Value) -> Result<(String, String, String),
 }
 ```
 
-Mając wszystkie elementy na miejscu, możemy teraz obsłużyć początkowe zapytanie użytkownika i wywołać LLM. Zaktualizuj swoją funkcję `main`, aby zawierała poniższy kod:
+Mając wszystkie elementy na miejscu, możemy teraz obsłużyć początkową podpowiedź użytkownika i wywołać LLM. Zaktualizuj swoją funkcję `main`, aby zawierała poniższy kod:
 
 ```rust
 // LLM conversation with tool calls
@@ -1388,13 +1388,13 @@ process_llm_response(
 .await?;
 ```
 
-To zapyta LLM o początkowe zapytanie użytkownika dotyczące sumy dwóch liczb i przetworzy odpowiedź, aby dynamicznie obsłużyć wywołania narzędzi.
+To zapyta LLM o początkową podpowiedź użytkownika dotyczącą sumy dwóch liczb i przetworzy odpowiedź, aby dynamicznie obsłużyć wywołania narzędzi.
 
 Świetnie, udało się!
 
 ## Zadanie
 
-Weź kod z ćwiczenia i rozbuduj serwer o więcej narzędzi. Następnie stwórz klienta z LLM, tak jak w ćwiczeniu, i przetestuj go z różnymi zapytaniami, aby upewnić się, że wszystkie narzędzia serwera są dynamicznie wywoływane. Taki sposób budowania klienta zapewni użytkownikowi końcowemu świetne doświadczenie, ponieważ będzie mógł używać zapytań zamiast dokładnych poleceń klienta, nie zdając sobie sprawy, że jakikolwiek serwer MCP jest wywoływany.
+Weź kod z ćwiczenia i rozbuduj serwer o więcej narzędzi. Następnie stwórz klienta z LLM, tak jak w ćwiczeniu, i przetestuj go z różnymi podpowiedziami, aby upewnić się, że wszystkie narzędzia serwera są dynamicznie wywoływane. Taki sposób budowania klienta zapewnia użytkownikowi końcowemu świetne doświadczenie, ponieważ może używać podpowiedzi zamiast dokładnych poleceń klienta i nie musi wiedzieć o istnieniu serwera MCP.
 
 ## Rozwiązanie
 
@@ -1421,4 +1421,4 @@ Weź kod z ćwiczenia i rozbuduj serwer o więcej narzędzi. Następnie stwórz 
 - Następny krok: [Korzystanie z serwera za pomocą Visual Studio Code](../04-vscode/README.md)
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
