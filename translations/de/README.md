@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7b16d37e9b7c7f1bbf70fdb8c704fb5e",
-  "translation_date": "2025-08-11T12:49:37+00:00",
+  "original_hash": "46967980f5695582f9bd71024a37084b",
+  "translation_date": "2025-08-12T07:59:47+00:00",
   "source_file": "README.md",
   "language_code": "de"
 }
@@ -35,43 +35,43 @@ Folgen Sie diesen Schritten, um mit diesen Ressourcen zu beginnen:
 
 # 🚀 Model Context Protocol (MCP) Curriculum für Anfänger
 
-## **Lernen Sie MCP mit praktischen Codebeispielen in C#, Java, JavaScript, Python und TypeScript**
+## **Lernen Sie MCP mit praktischen Code-Beispielen in C#, Java, JavaScript, Python und TypeScript**
 
 ## 🧠 Überblick über das Model Context Protocol Curriculum
 
-Das **Model Context Protocol (MCP)** ist ein hochmodernes Framework, das Interaktionen zwischen KI-Modellen und Client-Anwendungen standardisiert. Dieses Open-Source-Curriculum bietet einen strukturierten Lernpfad mit praktischen Codebeispielen und realen Anwendungsfällen in beliebten Programmiersprachen wie C#, Java, JavaScript, TypeScript und Python.
+Das **Model Context Protocol (MCP)** ist ein hochmodernes Framework, das Interaktionen zwischen KI-Modellen und Client-Anwendungen standardisiert. Dieses Open-Source-Curriculum bietet einen strukturierten Lernpfad mit praktischen Code-Beispielen und realen Anwendungsfällen in beliebten Programmiersprachen wie C#, Java, JavaScript, TypeScript und Python.
 
-Egal, ob Sie KI-Entwickler, Systemarchitekt oder Softwareingenieur sind, dieser Leitfaden ist Ihre umfassende Ressource, um die Grundlagen und Implementierungsstrategien von MCP zu meistern.
+Egal, ob Sie KI-Entwickler, Systemarchitekt oder Software-Ingenieur sind, dieser Leitfaden ist Ihre umfassende Ressource, um die Grundlagen und Implementierungsstrategien von MCP zu meistern.
 
 ## 🔗 Offizielle MCP-Ressourcen
 
 - 📘 [MCP-Dokumentation](https://modelcontextprotocol.io/) – Detaillierte Tutorials und Benutzerhandbücher  
 - 📜 [MCP-Spezifikation](https://modelcontextprotocol.io/docs/) – Protokollarchitektur und technische Referenzen  
-- 📜 [Originale MCP-Spezifikation](https://spec.modelcontextprotocol.io/) – Legacy-technische Referenzen (können zusätzliche Details enthalten)  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-Source-SDKs, Tools und Codebeispiele
+- 📜 [Original MCP-Spezifikation](https://spec.modelcontextprotocol.io/) – Legacy-Technische Referenzen (können zusätzliche Details enthalten)  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-Source-SDKs, Tools und Code-Beispiele
 - 🌐 [MCP-Community](https://github.com/orgs/modelcontextprotocol/discussions) – Treten Sie Diskussionen bei und tragen Sie zur Community bei
 
 
- ### ➡️ On-Demand ansehen - MCP Dev Days
-Bereiten Sie sich auf zwei Tage voller technischer Einblicke, Community-Verbindungen und praktischen Lernens bei den MCP Dev Days vor, einem virtuellen Event, das dem Model Context Protocol (MCP) gewidmet ist – dem aufstrebenden Standard, der KI-Modelle und die Tools, auf die sie angewiesen sind, verbindet.
-Sie können die MCP Dev Days ansehen, indem Sie sich auf unserer Eventseite registrieren: https://aka.ms/mcpdevdays. 
+ ### ➡️On-Demand ansehen - MCP Dev Days
+Bereiten Sie sich auf zwei Tage voller technischer Einblicke, Community-Verbindungen und praktischen Lernens bei den MCP Dev Days vor, einer virtuellen Veranstaltung, die dem Model Context Protocol (MCP) gewidmet ist – dem aufkommenden Standard, der KI-Modelle und die Tools, auf die sie angewiesen sind, verbindet.
+Sie können die MCP Dev Days ansehen, indem Sie sich auf unserer Veranstaltungsseite registrieren: https://aka.ms/mcpdevdays. 
 
 #### Tag 1: MCP Produktivität, DevTools & Community: 
 
-Dreht sich darum, Entwickler zu befähigen, MCP in ihren Entwicklungsworkflow zu integrieren, und die großartige MCP-Community zu feiern. Wir werden von Community-Mitgliedern und Partnern wie Arcade, Block, Okta und Neon begleitet, um zu sehen, wie sie mit Microsoft zusammenarbeiten, um ein offenes, erweiterbares MCP-Ökosystem zu gestalten. 
+Dreht sich alles darum, Entwickler zu befähigen, MCP in ihren Entwicklungs-Workflow zu integrieren und die großartige MCP-Community zu feiern. Wir werden von Community-Mitgliedern und Partnern wie Arcade, Block, Okta und Neon begleitet, um zu sehen, wie sie mit Microsoft zusammenarbeiten, um ein offenes, erweiterbares MCP-Ökosystem zu gestalten. 
 - Echtzeit-Demos mit VS Code, Visual Studio, GitHub Copilot und beliebten Community-Tools
-- Praktische, kontextgesteuerte Entwicklungsworkflows
-- Community-geführte Sessions und Einblicke
+- Praktische, kontextgesteuerte Entwicklungs-Workflows
+- Community-geführte Sitzungen und Einblicke
 Egal, ob Sie gerade erst mit MCP beginnen oder bereits damit arbeiten, Tag 1 bietet Inspiration und umsetzbare Erkenntnisse.
 
 #### Tag 2: MCP-Server mit Vertrauen bauen
 
-Ist für MCP-Entwickler. Wir gehen tief in Implementierungsstrategien und Best Practices für die Erstellung von MCP-Servern und die Integration von MCP in Ihre KI-Workflows.
+Ist für MCP-Entwickler. Wir tauchen tief in Implementierungsstrategien und Best Practices für die Erstellung von MCP-Servern und die Integration von MCP in Ihre KI-Workflows ein.
 
 ### Themen umfassen:
 
 - MCP-Server erstellen und in Agentenerfahrungen integrieren
-- Prompt-gesteuerte Entwicklung
+- Entwicklung mit Prompts
 - Sicherheitsbest Practices
 - Nutzung von Bausteinen wie Funktionen, ACA und API-Management
 - Registry-Ausrichtung und Tools (1P + 3P)
@@ -86,7 +86,7 @@ Wenn Sie Entwickler, Tool-Ersteller oder KI-Produktstratege sind, ist dieser Tag
 |--------|-------|-------------|------|
 | **Modul 1-3: Grundlagen** | | | |
 | 00 | Einführung in MCP | Überblick über das Model Context Protocol und seine Bedeutung in KI-Pipelines | [Mehr erfahren](./00-Introduction/README.md) |
-| 01 | Kernkonzepte erklärt | Detaillierte Untersuchung der Kernkonzepte von MCP | [Mehr erfahren](./01-CoreConcepts/README.md) |
+| 01 | Kernkonzepte erklärt | Detaillierte Erkundung der Kernkonzepte von MCP | [Mehr erfahren](./01-CoreConcepts/README.md) |
 | 02 | Sicherheit in MCP | Sicherheitsbedrohungen und Best Practices | [Mehr erfahren](./02-Security/README.md) |
 | 03 | Erste Schritte mit MCP | Umgebungseinrichtung, grundlegende Server/Clients, Integration | [Mehr erfahren](./03-GettingStarted/README.md) |
 | **Modul 3: Erstellen Ihres ersten Servers & Clients** | | | |
@@ -100,10 +100,10 @@ Wenn Sie Entwickler, Tool-Ersteller oder KI-Produktstratege sind, ist dieser Tag
 | 3.8 | Testen | Testen Ihrer MCP-Server-Implementierung | [Anleitung](./03-GettingStarted/08-testing/README.md) |
 | 3.9 | Bereitstellung | Bereitstellung von MCP-Servern in der Produktion | [Anleitung](./03-GettingStarted/09-deployment/README.md) |
 | **Modul 4-5: Praktisch & Fortgeschritten** | | | |
-| 04 | Praktische Implementierung | SDKs, Debugging, Testen, wiederverwendbare Prompt-Vorlagen | [Mehr erfahren](./04-PracticalImplementation/README.md) |
-| 05 | Fortgeschrittene Themen in MCP | Multi-modale KI, Skalierung, Unternehmensanwendungen | [Mehr erfahren](./05-AdvancedTopics/README.md) |
+| 04 | Praktische Implementierung | SDKs, Debugging, Tests, wiederverwendbare Prompt-Vorlagen | [Mehr erfahren](./04-PracticalImplementation/README.md) |
+| 05 | Fortgeschrittene Themen in MCP | Multimodale KI, Skalierung, Unternehmensanwendungen | [Mehr erfahren](./05-AdvancedTopics/README.md) |
 | 5.1 | Azure-Integration | MCP-Integration mit Azure | [Anleitung](./05-AdvancedTopics/mcp-integration/README.md) |
-| 5.2 | Multi-Modality | Arbeiten mit mehreren Modalitäten | [Anleitung](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.2 | Multimodalität | Arbeiten mit mehreren Modalitäten | [Anleitung](./05-AdvancedTopics/mcp-multi-modality/README.md) |
 | 5.3 | OAuth2-Demo | Implementierung von OAuth2-Authentifizierung | [Anleitung](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
 | 5.4 | Root-Kontexte | Verständnis und Implementierung von Root-Kontexten | [Anleitung](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | Routing | MCP-Routing-Strategien | [Anleitung](./05-AdvancedTopics/mcp-routing/README.md) |
@@ -111,7 +111,7 @@ Wenn Sie Entwickler, Tool-Ersteller oder KI-Produktstratege sind, ist dieser Tag
 | 5.7 | Skalierung | Skalierung von MCP-Implementierungen | [Anleitung](./05-AdvancedTopics/mcp-scaling/README.md) |
 | 5.8 | Sicherheit | Fortgeschrittene Sicherheitsüberlegungen | [Anleitung](./05-AdvancedTopics/mcp-security/README.md) |
 | 5.9 | Websuche | Implementierung von Websuchfunktionen | [Anleitung](./05-AdvancedTopics/web-search-mcp/README.md) |
-| 5.10 | Echtzeit-Streaming | Aufbau von Echtzeit-Streaming-Funktionen | [Anleitung](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
+| 5.10 | Echtzeit-Streaming | Aufbau von Echtzeit-Streaming-Funktionalität | [Anleitung](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
 | 5.11 | Echtzeit-Suche | Implementierung von Echtzeit-Suche | [Anleitung](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
 | 5.12 | Entra ID Auth | Authentifizierung mit Microsoft Entra ID | [Anleitung](./05-AdvancedTopics/mcp-security-entra/README.md) |
 | 5.13 | Foundry-Integration | Integration mit Azure AI Foundry | [Anleitung](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
@@ -147,7 +147,7 @@ Wenn Sie Entwickler, Tool-Ersteller oder KI-Produktstratege sind, ist dieser Tag
 
 ## 🎯 Voraussetzungen für das Lernen von MCP
 
-Um das Beste aus diesem Lehrplan herauszuholen, sollten Sie Folgendes mitbringen:
+Um das Beste aus diesem Curriculum herauszuholen, sollten Sie Folgendes mitbringen:
 
 - Grundkenntnisse in mindestens einer der folgenden Programmiersprachen: C#, Java, JavaScript, Python oder TypeScript
 - Verständnis des Client-Server-Modells und von APIs
@@ -158,13 +158,13 @@ Um das Beste aus diesem Lehrplan herauszuholen, sollten Sie Folgendes mitbringen
 
 ## 📚 Lernleitfaden & Ressourcen
 
-Dieses Repository enthält mehrere Ressourcen, die Ihnen helfen, sich effektiv zurechtzufinden und zu lernen:
+Dieses Repository enthält mehrere Ressourcen, die Ihnen helfen, effektiv zu navigieren und zu lernen:
 
 ### Lernleitfaden
 
 Ein umfassender [Lernleitfaden](./study_guide.md) steht zur Verfügung, um Ihnen zu helfen, dieses Repository effektiv zu nutzen. Der Leitfaden enthält:
 
-- Eine visuelle Übersichtskarte des Lehrplans mit allen behandelten Themen
+- Eine visuelle Übersichtskarte des Curriculums mit allen behandelten Themen
 - Detaillierte Aufschlüsselung jedes Abschnitts des Repositorys
 - Anleitung zur Nutzung der Beispielprojekte
 - Empfohlene Lernpfade für verschiedene Fähigkeitsstufen
@@ -172,14 +172,14 @@ Ein umfassender [Lernleitfaden](./study_guide.md) steht zur Verfügung, um Ihnen
 
 ### Änderungsprotokoll
 
-Wir führen ein detailliertes [Änderungsprotokoll](./changelog.md), das alle wesentlichen Updates der Lehrmaterialien dokumentiert, einschließlich:
+Wir führen ein detailliertes [Änderungsprotokoll](./changelog.md), das alle wesentlichen Updates der Curriculum-Materialien dokumentiert, einschließlich:
 
 - Neue Inhalte
 - Strukturelle Änderungen
 - Verbesserungen von Funktionen
 - Aktualisierungen der Dokumentation
 
-## 🛠️ Effektive Nutzung dieses Lehrplans
+## 🛠️ Effektive Nutzung dieses Curriculums
 
 Jede Lektion in diesem Leitfaden enthält:
 
@@ -190,11 +190,11 @@ Jede Lektion in diesem Leitfaden enthält:
 
 ## 🌟 Dank an die Community
 
-Vielen Dank an Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) für die Bereitstellung wichtiger Codebeispiele.
+Vielen Dank an Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) für die Bereitstellung wichtiger Codebeispiele. 
 
 ## 📜 Lizenzinformationen
 
-Diese Inhalte sind unter der **MIT-Lizenz** lizenziert. Für die Bedingungen und Konditionen siehe [LICENSE](../../LICENSE).
+Dieses Material ist unter der **MIT-Lizenz** lizenziert. Für die Bedingungen siehe die [LICENSE](../../LICENSE).
 
 ## 🤝 Richtlinien für Beiträge
 
@@ -213,12 +213,12 @@ kontaktieren Sie [opencode@microsoft.com](mailto:opencode@microsoft.com) bei wei
 
 Das Repository ist wie folgt organisiert:
 
-- **Kernlehrplan (00-10)**: Die Hauptinhalte, organisiert in zehn aufeinanderfolgenden Modulen
-- **images/**: Diagramme und Illustrationen, die im Lehrplan verwendet werden
+- **Kerncurriculum (00-10)**: Der Hauptinhalt, organisiert in zehn aufeinanderfolgenden Modulen
+- **images/**: Diagramme und Illustrationen, die im gesamten Curriculum verwendet werden
 - **translations/**: Mehrsprachige Unterstützung mit automatisierten Übersetzungen
 - **translated_images/**: Lokalisierte Versionen von Diagrammen und Illustrationen
 - **study_guide.md**: Umfassender Leitfaden zur Navigation im Repository
-- **changelog.md**: Aufzeichnung aller wesentlichen Änderungen der Lehrmaterialien
+- **changelog.md**: Aufzeichnung aller wesentlichen Änderungen der Curriculum-Materialien
 - **mcp.json**: Konfigurationsdatei für MCP-Spezifikationen
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Dokumente zur Projektverwaltung
 
@@ -233,12 +233,12 @@ Unser Team bietet weitere Kurse an! Schauen Sie sich an:
 - [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 - [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 - [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
-- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [Cybersecurity für Anfänger](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+- [Webentwicklung für Anfänger](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+- [IoT für Anfänger](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [XR-Entwicklung für Anfänger](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot für KI-gestütztes Pair Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot für C#/.NET-Entwickler](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 ## ™️ Hinweis zu Marken
@@ -246,7 +246,7 @@ Unser Team bietet weitere Kurse an! Schauen Sie sich an:
 Dieses Projekt kann Marken oder Logos für Projekte, Produkte oder Dienstleistungen enthalten. Die autorisierte Nutzung von Microsoft
 Marken oder Logos unterliegt und muss den
 [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) folgen.
-Die Verwendung von Microsoft-Marken oder -Logos in modifizierten Versionen dieses Projekts darf keine Verwirrung stiften oder eine Unterstützung durch Microsoft implizieren.
+Die Verwendung von Microsoft-Marken oder Logos in modifizierten Versionen dieses Projekts darf keine Verwirrung stiften oder eine Unterstützung durch Microsoft implizieren.
 Die Verwendung von Marken oder Logos Dritter unterliegt den Richtlinien dieser Dritten.
 
 **Haftungsausschluss**:  

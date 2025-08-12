@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7b16d37e9b7c7f1bbf70fdb8c704fb5e",
-  "translation_date": "2025-08-11T12:54:21+00:00",
+  "original_hash": "46967980f5695582f9bd71024a37084b",
+  "translation_date": "2025-08-12T08:09:03+00:00",
   "source_file": "README.md",
   "language_code": "pl"
 }
@@ -41,7 +41,7 @@ Postępuj zgodnie z poniższymi krokami, aby rozpocząć korzystanie z tych zaso
 
 **Model Context Protocol (MCP)** to nowoczesne rozwiązanie mające na celu standaryzację interakcji między modelami AI a aplikacjami klienckimi. Ten otwarty program nauczania oferuje uporządkowaną ścieżkę edukacyjną, zawierającą praktyczne przykłady kodu i rzeczywiste przypadki użycia w popularnych językach programowania, takich jak C#, Java, JavaScript, TypeScript i Python.
 
-Niezależnie od tego, czy jesteś programistą AI, architektem systemów czy inżynierem oprogramowania, ten przewodnik jest kompleksowym źródłem wiedzy na temat podstaw MCP oraz strategii jego wdrażania.
+Niezależnie od tego, czy jesteś programistą AI, architektem systemów czy inżynierem oprogramowania, ten przewodnik jest kompleksowym źródłem wiedzy na temat podstaw MCP i strategii jego wdrażania.
 
 ## 🔗 Oficjalne zasoby MCP
 
@@ -49,7 +49,7 @@ Niezależnie od tego, czy jesteś programistą AI, architektem systemów czy in�
 - 📜 [Specyfikacja MCP](https://modelcontextprotocol.io/docs/) – Architektura protokołu i odniesienia techniczne  
 - 📜 [Oryginalna specyfikacja MCP](https://spec.modelcontextprotocol.io/) – Starsze odniesienia techniczne (mogą zawierać dodatkowe szczegóły)  
 - 🧑‍💻 [Repozytorium MCP na GitHub](https://github.com/modelcontextprotocol) – Otwarte SDK, narzędzia i przykłady kodu
-- 🌐 [Społeczność MCP](https://github.com/orgs/modelcontextprotocol/discussions) – Dołącz do dyskusji i wnieś swój wkład do społeczności
+- 🌐 [Społeczność MCP](https://github.com/orgs/modelcontextprotocol/discussions) – Dołącz do dyskusji i wnieś swój wkład w rozwój społeczności
 
 
  ### ➡️ Oglądaj na żądanie - MCP Dev Days
@@ -57,18 +57,18 @@ Przygotuj się na dwa dni pełne technicznych informacji, nawiązywania kontakt�
 
 Możesz obejrzeć MCP Dev Days, rejestrując się na naszej stronie wydarzenia: https://aka.ms/mcpdevdays. 
 
-#### Dzień 1: MCP Productivity, DevTools & Community: 
+#### Dzień 1: Produktywność MCP, narzędzia dla programistów i społeczność: 
 
 Skupia się na umożliwieniu programistom korzystania z MCP w ich codziennej pracy oraz na świętowaniu niesamowitej społeczności MCP. Dołączą do nas członkowie społeczności i partnerzy, tacy jak Arcade, Block, Okta i Neon, aby pokazać, jak współpracują z Microsoftem, kształtując otwarty, rozszerzalny ekosystem MCP. 
-- Pokazy rzeczywiste w VS Code, Visual Studio, GitHub Copilot i popularnych narzędziach społecznościowych
+- Pokazy rzeczywistych zastosowań w VS Code, Visual Studio, GitHub Copilot i popularnych narzędziach społecznościowych
 - Praktyczne, kontekstowe przepływy pracy dla programistów
-- Sesje prowadzone przez społeczność i wgląd w ich działania
+- Sesje prowadzone przez społeczność i cenne spostrzeżenia
 
 Niezależnie od tego, czy dopiero zaczynasz przygodę z MCP, czy już z nim pracujesz, Dzień 1 dostarczy inspiracji i praktycznych wskazówek.
 
 #### Dzień 2: Budowanie serwerów MCP z pewnością siebie
 
-Skierowany do twórców MCP. Zgłębimy strategie wdrażania i najlepsze praktyki dotyczące tworzenia serwerów MCP oraz integracji MCP w przepływach pracy AI.
+Skierowany do twórców MCP. Zgłębimy strategie wdrażania i najlepsze praktyki tworzenia serwerów MCP oraz integracji MCP w przepływach pracy AI.
 
 ### Tematy obejmują:
 
@@ -76,31 +76,31 @@ Skierowany do twórców MCP. Zgłębimy strategie wdrażania i najlepsze praktyk
 - Rozwój oparty na promptach
 - Najlepsze praktyki w zakresie bezpieczeństwa
 - Wykorzystanie elementów budulcowych, takich jak Functions, ACA i API Management
-- Wyrównanie rejestru i narzędzi (1P + 3P)
+- Dopasowanie rejestru i narzędzia (1P + 3P)
 
 Jeśli jesteś programistą, twórcą narzędzi lub strategiem produktów AI, ten dzień dostarczy Ci wiedzy potrzebnej do budowania skalowalnych, bezpiecznych i przyszłościowych rozwiązań MCP.
 
 ## 🧭 Przegląd programu nauczania MCP
 
-### 📚 Kompletny program nauczania
+### 📚 Struktura pełnego programu nauczania
 
 | Moduł | Temat | Opis | Link |
 |--------|-------|-------------|------|
 | **Moduł 1-3: Podstawy** | | | |
 | 00 | Wprowadzenie do MCP | Przegląd Model Context Protocol i jego znaczenia w procesach AI | [Czytaj więcej](./00-Introduction/README.md) |
-| 01 | Wyjaśnienie kluczowych koncepcji | Szczegółowe omówienie podstawowych koncepcji MCP | [Czytaj więcej](./01-CoreConcepts/README.md) |
+| 01 | Wyjaśnienie podstawowych pojęć | Szczegółowe omówienie kluczowych koncepcji MCP | [Czytaj więcej](./01-CoreConcepts/README.md) |
 | 02 | Bezpieczeństwo w MCP | Zagrożenia bezpieczeństwa i najlepsze praktyki | [Czytaj więcej](./02-Security/README.md) |
 | 03 | Pierwsze kroki z MCP | Konfiguracja środowiska, podstawowe serwery/klienci, integracja | [Czytaj więcej](./03-GettingStarted/README.md) |
 | **Moduł 3: Tworzenie pierwszego serwera i klienta** | | | |
 | 3.1 | Pierwszy serwer | Tworzenie pierwszego serwera MCP | [Przewodnik](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | Pierwszy klient | Tworzenie podstawowego klienta MCP | [Przewodnik](./03-GettingStarted/02-client/README.md) |
 | 3.3 | Klient z LLM | Integracja dużych modeli językowych | [Przewodnik](./03-GettingStarted/03-llm-client/README.md) |
-| 3.4 | Integracja z VS Code | Konsumpcja serwerów MCP w VS Code | [Przewodnik](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | Serwer SSE | Tworzenie serwerów wykorzystujących Server-Sent Events | [Przewodnik](./03-GettingStarted/05-sse-server/README.md) |
+| 3.4 | Integracja z VS Code | Korzystanie z serwerów MCP w VS Code | [Przewodnik](./03-GettingStarted/04-vscode/README.md) |
+| 3.5 | Serwer SSE | Tworzenie serwerów korzystających z Server-Sent Events | [Przewodnik](./03-GettingStarted/05-sse-server/README.md) |
 | 3.6 | Streaming HTTP | Implementacja streamingu HTTP w MCP | [Przewodnik](./03-GettingStarted/06-http-streaming/README.md) |
-| 3.7 | AI Toolkit | Korzystanie z AI Toolkit z MCP | [Przewodnik](./03-GettingStarted/07-aitk/README.md) |
+| 3.7 | Zestaw narzędzi AI | Korzystanie z zestawu narzędzi AI w MCP | [Przewodnik](./03-GettingStarted/07-aitk/README.md) |
 | 3.8 | Testowanie | Testowanie implementacji serwera MCP | [Przewodnik](./03-GettingStarted/08-testing/README.md) |
-| 3.9 | Wdrożenie | Wdrożenie serwerów MCP do produkcji | [Przewodnik](./03-GettingStarted/09-deployment/README.md) |
+| 3.9 | Wdrożenie | Wdrażanie serwerów MCP na produkcję | [Przewodnik](./03-GettingStarted/09-deployment/README.md) |
 | **Moduł 4-5: Praktyczne i zaawansowane** | | | |
 | 04 | Praktyczna implementacja | SDK, debugowanie, testowanie, wielokrotnego użytku szablony promptów | [Czytaj więcej](./04-PracticalImplementation/README.md) |
 | 05 | Zaawansowane tematy w MCP | AI wielomodalne, skalowanie, zastosowania korporacyjne | [Czytaj więcej](./05-AdvancedTopics/README.md) |
@@ -120,10 +120,10 @@ Jeśli jesteś programistą, twórcą narzędzi lub strategiem produktów AI, te
 | 5.14 | Inżynieria kontekstów | Techniki efektywnej inżynierii kontekstów | [Przewodnik](./05-AdvancedTopics/mcp-contextengineering/README.md) |
 | **Moduł 6-10: Społeczność i najlepsze praktyki** | | | |
 | 06 | Wkład społeczności | Jak przyczynić się do ekosystemu MCP | [Przewodnik](./06-CommunityContributions/README.md) |
-| 07 | Wnioski z wczesnego wdrożenia | Historie z rzeczywistych implementacji | [Przewodnik](./07-LessonsFromEarlyAdoption/README.md) |
+| 07 | Wnioski z wczesnej adopcji | Historie wdrożeń w rzeczywistości | [Przewodnik](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | Najlepsze praktyki dla MCP | Wydajność, odporność na błędy, niezawodność | [Przewodnik](./08-BestPractices/README.md) |
-| 09 | Studia przypadków MCP | Przykłady praktycznych implementacji | [Przewodnik](./09-CaseStudy/README.md) |
-| 10 | Warsztaty praktyczne | Tworzenie serwera MCP z AI Toolkit | [Laboratorium](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
+| 09 | Studia przypadków MCP | Praktyczne przykłady wdrożeń | [Przewodnik](./09-CaseStudy/README.md) |
+| 10 | Warsztaty praktyczne | Tworzenie serwera MCP z zestawem narzędzi AI | [Laboratorium](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
 ### 💻 Przykładowe projekty kodu
 
@@ -149,34 +149,34 @@ Jeśli jesteś programistą, twórcą narzędzi lub strategiem produktów AI, te
 
 ## 🎯 Wymagania wstępne do nauki MCP
 
-Aby w pełni skorzystać z tego programu nauczania, powinieneś posiadać:
+Aby w pełni skorzystać z tego programu nauczania, powinieneś:
 
-- Podstawową wiedzę programistyczną w co najmniej jednym z następujących języków: C#, Java, JavaScript, Python lub TypeScript
-- Zrozumienie modelu klient-serwer i API
-- Znajomość koncepcji REST i HTTP
-- (Opcjonalnie) Podstawy w zakresie AI/ML
+- Posiadać podstawową wiedzę programistyczną w co najmniej jednym z następujących języków: C#, Java, JavaScript, Python lub TypeScript
+- Rozumieć model klient-serwer i API
+- Być zaznajomionym z koncepcjami REST i HTTP
+- (Opcjonalnie) Mieć podstawy w zakresie AI/ML
 
-- Dołączenie do naszych dyskusji społecznościowych w celu uzyskania wsparcia
+- Dołączyć do naszych dyskusji społecznościowych, aby uzyskać wsparcie
 
 ## 📚 Przewodnik nauki i zasoby
 
-To repozytorium zawiera różne zasoby, które pomogą Ci efektywnie się uczyć:
+To repozytorium zawiera różnorodne zasoby, które pomogą Ci efektywnie się uczyć:
 
 ### Przewodnik nauki
 
-Dostępny jest kompleksowy [Przewodnik nauki](./study_guide.md), który pomoże Ci skutecznie poruszać się po tym repozytorium. Przewodnik zawiera:
+Dostępny jest kompleksowy [Przewodnik nauki](./study_guide.md), który pomoże Ci efektywnie korzystać z tego repozytorium. Przewodnik zawiera:
 
 - Wizualną mapę programu nauczania obejmującą wszystkie omawiane tematy
 - Szczegółowy podział każdej sekcji repozytorium
 - Wskazówki dotyczące korzystania z projektów przykładowych
-- Zalecane ścieżki nauki dla różnych poziomów umiejętności
+- Zalecane ścieżki nauki dla różnych poziomów zaawansowania
 - Dodatkowe zasoby uzupełniające Twoją naukę
 
 ### Dziennik zmian
 
-Prowadzimy szczegółowy [Dziennik zmian](./changelog.md), który śledzi wszystkie istotne aktualizacje materiałów programowych, w tym:
+Prowadzimy szczegółowy [Dziennik zmian](./changelog.md), który śledzi wszystkie istotne aktualizacje materiałów programu nauczania, w tym:
 
-- Dodanie nowej treści
+- Dodanie nowej zawartości
 - Zmiany strukturalne
 - Ulepszenia funkcji
 - Aktualizacje dokumentacji
@@ -196,33 +196,28 @@ Dziękujemy Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.co
 
 ## 📜 Informacje o licencji
 
-Treść ta jest licencjonowana na podstawie **MIT License**. Warunki i zasady znajdziesz w [LICENSE](../../LICENSE).
+Treści te są licencjonowane na podstawie **licencji MIT**. Warunki i zasady znajdziesz w [LICENSE](../../LICENSE).
 
 ## 🤝 Wytyczne dotyczące wkładu
 
-Ten projekt przyjmuje wkłady i sugestie. Większość wkładów wymaga od Ciebie zgody na
-Contributor License Agreement (CLA), deklarując, że masz prawo i faktycznie udzielasz nam
-prawa do korzystania z Twojego wkładu. Szczegóły znajdziesz na stronie 
+Ten projekt zachęca do wkładu i sugestii. Większość wkładów wymaga zgody na Umowę Licencyjną Współtwórcy (CLA), która potwierdza, że masz prawo i faktycznie udzielasz nam praw do korzystania z Twojego wkładu. Szczegóły znajdziesz na stronie 
 <https://cla.opensource.microsoft.com>.
 
-Gdy przesyłasz pull request, bot CLA automatycznie określi, czy musisz dostarczyć
-CLA i odpowiednio oznaczy PR (np. status check, komentarz). Po prostu postępuj zgodnie z instrukcjami
-podanymi przez bota. Musisz to zrobić tylko raz dla wszystkich repozytoriów korzystających z naszego CLA.
+Gdy przesyłasz pull request, bot CLA automatycznie określi, czy musisz dostarczyć CLA, i odpowiednio oznaczy PR (np. status check, komentarz). Wystarczy postępować zgodnie z instrukcjami bota. Musisz to zrobić tylko raz dla wszystkich repozytoriów korzystających z naszego CLA.
 
-Ten projekt przyjął [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-Więcej informacji znajdziesz w [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) lub
-skontaktuj się z [opencode@microsoft.com](mailto:opencode@microsoft.com) w przypadku dodatkowych pytań lub uwag.
+Ten projekt przyjął [Kodeks postępowania Microsoft Open Source](https://opensource.microsoft.com/codeofconduct/).
+Więcej informacji znajdziesz w [FAQ dotyczących kodeksu postępowania](https://opensource.microsoft.com/codeofconduct/faq/) lub skontaktuj się z [opencode@microsoft.com](mailto:opencode@microsoft.com) w przypadku dodatkowych pytań lub uwag.
 
 ## 📂 Struktura repozytorium
 
 Repozytorium jest zorganizowane w następujący sposób:
 
-- **Core Curriculum (00-10)**: Główna treść zorganizowana w dziesięć kolejnych modułów
+- **Główne materiały (00-10)**: Główna zawartość podzielona na dziesięć kolejnych modułów
 - **images/**: Diagramy i ilustracje używane w całym programie nauczania
 - **translations/**: Obsługa wielu języków z automatycznymi tłumaczeniami
-- **translated_images/**: Lokalizowane wersje diagramów i ilustracji
+- **translated_images/**: Zlokalizowane wersje diagramów i ilustracji
 - **study_guide.md**: Kompleksowy przewodnik po repozytorium
-- **changelog.md**: Rejestr wszystkich istotnych zmian w materiałach programowych
+- **changelog.md**: Rejestr wszystkich istotnych zmian w materiałach programu nauczania
 - **mcp.json**: Plik konfiguracyjny dla specyfikacji MCP
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Dokumenty dotyczące zarządzania projektem
 
@@ -237,7 +232,7 @@ Nasz zespół tworzy inne kursy! Sprawdź:
 - [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
 - [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 - [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
+- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
 - [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 - [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -247,10 +242,10 @@ Nasz zespół tworzy inne kursy! Sprawdź:
 
 ## ™️ Informacja o znakach towarowych
 
-Ten projekt może zawierać znaki towarowe lub logotypy projektów, produktów lub usług. Autoryzowane użycie znaków towarowych lub logotypów Microsoft podlega i musi być zgodne z
+Ten projekt może zawierać znaki towarowe lub logotypy projektów, produktów lub usług. Autoryzowane użycie znaków towarowych lub logotypów Microsoft podlega i musi być zgodne z 
 [Wytycznymi dotyczącymi znaków towarowych i marki Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
 Użycie znaków towarowych lub logotypów Microsoft w zmodyfikowanych wersjach tego projektu nie może powodować zamieszania ani sugerować sponsorowania przez Microsoft.
-Każde użycie znaków towarowych lub logotypów stron trzecich podlega politykom tych stron trzecich.
+Wszelkie użycie znaków towarowych lub logotypów stron trzecich podlega politykom tych stron trzecich.
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby zapewnić poprawność tłumaczenia, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za wiarygodne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby zapewnić dokładność, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za wiarygodne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

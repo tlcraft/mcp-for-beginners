@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "85eb103a78a43a542f2890a3d7d62318",
-  "translation_date": "2025-08-11T11:13:41+00:00",
+  "original_hash": "0df1ee78a6dd8300f3a040ca5b411c2e",
+  "translation_date": "2025-08-12T08:02:56+00:00",
   "source_file": "00-Introduction/README.md",
   "language_code": "de"
 }
@@ -13,19 +13,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 _(Klicken Sie auf das Bild oben, um das Video zu dieser Lektion anzusehen)_
 
-Generative KI-Anwendungen sind ein großer Fortschritt, da sie es den Nutzern oft ermöglichen, mit der App über natürliche Sprachbefehle zu interagieren. Doch je mehr Zeit und Ressourcen in solche Apps investiert werden, desto wichtiger wird es, Funktionen und Ressourcen so zu integrieren, dass sie leicht erweiterbar sind, mehrere Modelle unterstützen und verschiedene Modellbesonderheiten handhaben können. Kurz gesagt: Der Einstieg in die Entwicklung von generativen KI-Apps ist einfach, aber mit zunehmender Komplexität wird es notwendig, eine Architektur zu definieren und sich wahrscheinlich auf einen Standard zu stützen, um sicherzustellen, dass die Apps konsistent aufgebaut sind. Hier kommt MCP ins Spiel, um Ordnung zu schaffen und einen Standard bereitzustellen.
+Generative KI-Anwendungen sind ein großer Fortschritt, da sie oft ermöglichen, dass Benutzer mit der App über natürliche Sprachaufforderungen interagieren. Doch je mehr Zeit und Ressourcen in solche Apps investiert werden, desto wichtiger wird es, Funktionen und Ressourcen so zu integrieren, dass sie leicht erweiterbar sind, mehrere Modelle unterstützen und verschiedene Modellbesonderheiten handhaben können. Kurz gesagt: Der Einstieg in die Entwicklung von Gen-KI-Apps ist einfach, aber mit zunehmender Komplexität wird es notwendig, eine Architektur zu definieren und auf Standards zu setzen, um Konsistenz zu gewährleisten. Hier kommt MCP ins Spiel, um Ordnung zu schaffen und einen Standard bereitzustellen.
 
 ---
 
 ## **🔍 Was ist das Model Context Protocol (MCP)?**
 
-Das **Model Context Protocol (MCP)** ist eine **offene, standardisierte Schnittstelle**, die es großen Sprachmodellen (LLMs) ermöglicht, nahtlos mit externen Tools, APIs und Datenquellen zu interagieren. Es bietet eine konsistente Architektur, um die Funktionalität von KI-Modellen über ihre Trainingsdaten hinaus zu erweitern und so intelligentere, skalierbare und reaktionsfähigere KI-Systeme zu schaffen.
+Das **Model Context Protocol (MCP)** ist eine **offene, standardisierte Schnittstelle**, die es großen Sprachmodellen (LLMs) ermöglicht, nahtlos mit externen Tools, APIs und Datenquellen zu interagieren. Es bietet eine konsistente Architektur, um die Funktionalität von KI-Modellen über ihre Trainingsdaten hinaus zu erweitern und intelligentere, skalierbare und reaktionsfähigere KI-Systeme zu ermöglichen.
 
 ---
 
 ## **🎯 Warum Standardisierung in der KI wichtig ist**
 
-Mit zunehmender Komplexität generativer KI-Anwendungen wird es entscheidend, Standards zu übernehmen, die **Skalierbarkeit, Erweiterbarkeit**, **Wartbarkeit** und **Vermeidung von Anbieterabhängigkeit** gewährleisten. MCP erfüllt diese Anforderungen durch:
+Mit zunehmender Komplexität generativer KI-Anwendungen ist es entscheidend, Standards zu übernehmen, die **Skalierbarkeit, Erweiterbarkeit, Wartbarkeit** und **Vermeidung von Anbieterabhängigkeit** gewährleisten. MCP erfüllt diese Anforderungen durch:
 
 - Vereinheitlichung der Integration von Modellen und Tools
 - Reduzierung von anfälligen, einmaligen Sonderlösungen
@@ -41,8 +41,8 @@ Am Ende dieses Artikels werden Sie in der Lage sein:
 
 - **Model Context Protocol (MCP)** und seine Anwendungsfälle zu definieren
 - Verstehen, wie MCP die Kommunikation zwischen Modellen und Tools standardisiert
-- Die Kernkomponenten der MCP-Architektur zu identifizieren
-- Reale Anwendungen von MCP in Unternehmens- und Entwicklungsumgebungen zu erkunden
+- Die Kernkomponenten der MCP-Architektur identifizieren
+- Reale Anwendungen von MCP in Unternehmens- und Entwicklungsumgebungen erkunden
 
 ---
 
@@ -60,7 +60,7 @@ Vor MCP erforderte die Integration von Modellen mit Tools:
 ### **✅ Vorteile der MCP-Standardisierung**
 
 | **Vorteil**               | **Beschreibung**                                                                |
-|---------------------------|--------------------------------------------------------------------------------|
+|---------------------------|---------------------------------------------------------------------------------|
 | Interoperabilität         | LLMs arbeiten nahtlos mit Tools verschiedener Anbieter zusammen                 |
 | Konsistenz                | Einheitliches Verhalten über Plattformen und Tools hinweg                       |
 | Wiederverwendbarkeit      | Einmal erstellte Tools können in verschiedenen Projekten und Systemen genutzt werden |
@@ -90,22 +90,22 @@ MCP folgt einem **Client-Server-Modell**, bei dem:
 MCP-Server arbeiten wie folgt:
 
 - **Ablauf einer Anfrage**:
-    1. Eine Anfrage wird von einem Endnutzer oder einer Software, die in seinem Auftrag handelt, initiiert.
+    1. Eine Anfrage wird von einem Endbenutzer oder einer Software, die in seinem Auftrag handelt, initiiert.
     2. Der **MCP Client** sendet die Anfrage an einen **MCP Host**, der die KI-Modell-Laufzeit verwaltet.
-    3. Das **KI-Modell** erhält den Nutzer-Prompt und kann Zugriff auf externe Tools oder Daten über einen oder mehrere Tool-Aufrufe anfordern.
+    3. Das **KI-Modell** erhält die Benutzeraufforderung und kann Zugriff auf externe Tools oder Daten über einen oder mehrere Tool-Aufrufe anfordern.
     4. Der **MCP Host**, nicht das Modell direkt, kommuniziert mit den entsprechenden **MCP Servern** über das standardisierte Protokoll.
 - **Funktionen des MCP Hosts**:
     - **Tool-Registry**: Führt einen Katalog verfügbarer Tools und deren Funktionen.
     - **Authentifizierung**: Überprüft Berechtigungen für den Tool-Zugriff.
-    - **Request-Handler**: Verarbeitet eingehende Tool-Anfragen vom Modell.
-    - **Response-Formatter**: Formatiert Tool-Ausgaben in einem für das Modell verständlichen Format.
+    - **Anfrage-Handler**: Verarbeitet eingehende Tool-Anfragen vom Modell.
+    - **Antwort-Formatter**: Strukturiert Tool-Ausgaben in einem Format, das das Modell verstehen kann.
 - **Ausführung durch MCP-Server**:
-    - Der **MCP Host** leitet Tool-Aufrufe an einen oder mehrere **MCP Server** weiter, die spezialisierte Funktionen (z. B. Suche, Berechnungen, Datenbankabfragen) bereitstellen.
+    - Der **MCP Host** leitet Tool-Aufrufe an einen oder mehrere **MCP Server** weiter, die spezialisierte Funktionen bereitstellen (z. B. Suche, Berechnungen, Datenbankabfragen).
     - Die **MCP Server** führen ihre jeweiligen Operationen aus und senden Ergebnisse in einem konsistenten Format an den **MCP Host** zurück.
     - Der **MCP Host** formatiert und übermittelt diese Ergebnisse an das **KI-Modell**.
 - **Abschluss der Antwort**:
     - Das **KI-Modell** integriert die Tool-Ausgaben in eine endgültige Antwort.
-    - Der **MCP Host** sendet diese Antwort zurück an den **MCP Client**, der sie dem Endnutzer oder der aufrufenden Software liefert.
+    - Der **MCP Host** sendet diese Antwort zurück an den **MCP Client**, der sie dem Endbenutzer oder der aufrufenden Software liefert.
 
 ```mermaid
 ---
@@ -168,11 +168,11 @@ Bereit, es auszuprobieren? Hier sind sprach- und/oder stack-spezifische SDKs mit
 
 MCP ermöglicht eine Vielzahl von Anwendungen, indem es die Fähigkeiten von KI erweitert:
 
-| **Anwendung**               | **Beschreibung**                                                                |
-|-----------------------------|--------------------------------------------------------------------------------|
-| Integration von Unternehmensdaten | Verbindung von LLMs mit Datenbanken, CRMs oder internen Tools                 |
-| Agentische KI-Systeme       | Ermöglichung autonomer Agenten mit Tool-Zugriff und Entscheidungs-Workflows     |
-| Multimodale Anwendungen     | Kombination von Text-, Bild- und Audiotools in einer einzigen KI-App            |
+| **Anwendung**              | **Beschreibung**                                                                |
+|----------------------------|---------------------------------------------------------------------------------|
+| Unternehmensdatenintegration | Verbindung von LLMs mit Datenbanken, CRMs oder internen Tools                  |
+| Agentische KI-Systeme       | Ermöglichung autonomer Agenten mit Tool-Zugriff und Entscheidungsworkflows      |
+| Multimodale Anwendungen     | Kombination von Text-, Bild- und Audiotools in einer einzigen KI-App           |
 | Echtzeit-Datenintegration   | Einbindung von Live-Daten in KI-Interaktionen für genauere, aktuelle Ergebnisse |
 
 ---
@@ -181,7 +181,7 @@ MCP ermöglicht eine Vielzahl von Anwendungen, indem es die Fähigkeiten von KI 
 
 Das Model Context Protocol (MCP) fungiert als universeller Standard für KI-Interaktionen, ähnlich wie USB-C physische Verbindungen für Geräte standardisiert hat. In der Welt der KI bietet MCP eine konsistente Schnittstelle, die es Modellen (Clients) ermöglicht, nahtlos mit externen Tools und Datenanbietern (Servern) zu interagieren. Dies eliminiert die Notwendigkeit für diverse, maßgeschneiderte Protokolle für jede API oder Datenquelle.
 
-Unter MCP folgt ein MCP-kompatibles Tool (als MCP-Server bezeichnet) einem einheitlichen Standard. Diese Server können die von ihnen angebotenen Tools oder Aktionen auflisten und diese Aktionen ausführen, wenn sie von einem KI-Agenten angefordert werden. KI-Agentenplattformen, die MCP unterstützen, sind in der Lage, verfügbare Tools von den Servern zu entdecken und sie über dieses standardisierte Protokoll aufzurufen.
+Unter MCP folgt ein MCP-kompatibles Tool (als MCP-Server bezeichnet) einem einheitlichen Standard. Diese Server können die Tools oder Aktionen, die sie anbieten, auflisten und diese Aktionen ausführen, wenn sie von einem KI-Agenten angefordert werden. KI-Agentenplattformen, die MCP unterstützen, sind in der Lage, verfügbare Tools von den Servern zu entdecken und sie über dieses Standardprotokoll aufzurufen.
 
 ---
 
@@ -189,7 +189,7 @@ Unter MCP folgt ein MCP-kompatibles Tool (als MCP-Server bezeichnet) einem einhe
 
 Neben der Bereitstellung von Tools erleichtert MCP auch den Zugang zu Wissen. Es ermöglicht Anwendungen, Kontext für große Sprachmodelle (LLMs) bereitzustellen, indem sie mit verschiedenen Datenquellen verbunden werden. Beispielsweise könnte ein MCP-Server das Dokumentenarchiv eines Unternehmens darstellen und Agenten ermöglichen, relevante Informationen bei Bedarf abzurufen. Ein anderer Server könnte spezifische Aktionen wie das Versenden von E-Mails oder das Aktualisieren von Datensätzen ausführen. Aus Sicht des Agenten sind dies einfach Tools, die er nutzen kann – einige Tools liefern Daten (Wissenskontext), während andere Aktionen ausführen. MCP verwaltet beides effizient.
 
-Ein Agent, der sich mit einem MCP-Server verbindet, lernt automatisch die verfügbaren Funktionen und zugänglichen Daten des Servers durch ein standardisiertes Format kennen. Diese Standardisierung ermöglicht eine dynamische Tool-Verfügbarkeit. Beispielsweise macht das Hinzufügen eines neuen MCP-Servers zu einem Agentensystem dessen Funktionen sofort nutzbar, ohne dass weitere Anpassungen der Agenteninstruktionen erforderlich sind.
+Ein Agent, der sich mit einem MCP-Server verbindet, lernt automatisch die verfügbaren Funktionen und zugänglichen Daten des Servers durch ein standardisiertes Format kennen. Diese Standardisierung ermöglicht eine dynamische Tool-Verfügbarkeit. Beispielsweise macht das Hinzufügen eines neuen MCP-Servers zu einem Agentensystem dessen Funktionen sofort nutzbar, ohne dass weitere Anpassungen der Agentenanweisungen erforderlich sind.
 
 ---
 
@@ -224,7 +224,7 @@ graph TD
 
 ---
 
-### 🔄 Erweiterte MCP-Szenarien mit LLM-Integration auf der Client-Seite
+### 🔄 Erweiterte MCP-Szenarien mit Client-seitiger LLM-Integration
 
 Über die grundlegende MCP-Architektur hinaus gibt es erweiterte Szenarien, bei denen sowohl Client als auch Server LLMs enthalten, um komplexere Interaktionen zu ermöglichen. Im folgenden Diagramm könnte die **Client-App** eine IDE sein, die eine Reihe von MCP-Tools für die Nutzung durch das LLM bereitstellt:
 
