@@ -44,7 +44,7 @@ An MCP server typically includes:
 Here's a simplified example in TypeScript:
 
 ```typescript
-import { Server, Tool, Resource } from "@modelcontextprotocol/typescript-server-sdk";
+import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 
 // Create a new MCP server
 const server = new Server({
