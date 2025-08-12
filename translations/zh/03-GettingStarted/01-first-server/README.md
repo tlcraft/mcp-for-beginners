@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f644c579ec7e70669ea06e29b475c728",
-  "translation_date": "2025-08-12T21:02:48+00:00",
+  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
+  "translation_date": "2025-08-12T21:23:28+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "zh"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 欢迎踏上 Model Context Protocol (MCP) 的第一步！无论您是 MCP 的新手，还是希望深入了解的开发者，本指南将带您完成基本的设置和开发流程。您将了解 MCP 如何实现 AI 模型与应用程序之间的无缝集成，并学习如何快速准备环境以构建和测试基于 MCP 的解决方案。
 
-> 简而言之：如果您开发 AI 应用程序，您可能知道可以为 LLM（大型语言模型）添加工具和其他资源，以使其更智能。然而，如果将这些工具和资源放在服务器上，无论客户端是否使用 LLM，都可以利用这些应用程序和服务器的功能。
+> 简而言之：如果您开发 AI 应用程序，您可能知道可以为 LLM（大型语言模型）添加工具和其他资源，以使其更智能。然而，如果您将这些工具和资源放在服务器上，无论客户端是否使用 LLM，都可以利用该应用程序和服务器的功能。
 
 ## 概述
 
-本课程提供了设置 MCP 环境和构建第一个 MCP 应用程序的实用指导。您将学习如何设置必要的工具和框架，构建基本的 MCP 服务器，创建主机应用程序，并测试您的实现。
+本课程提供了有关设置 MCP 环境和构建第一个 MCP 应用程序的实用指导。您将学习如何设置必要的工具和框架，构建基本的 MCP 服务器，创建主机应用程序，并测试您的实现。
 
-Model Context Protocol (MCP) 是一个开放协议，它标准化了应用程序向 LLM 提供上下文的方式。可以将 MCP 想象成 AI 应用程序的 USB-C 接口——它为 AI 模型连接到不同的数据源和工具提供了标准化的方式。
+Model Context Protocol (MCP) 是一种开放协议，它标准化了应用程序向 LLM 提供上下文的方式。可以将 MCP 想象成 AI 应用程序的 USB-C 接口——它为 AI 模型连接到不同的数据源和工具提供了一种标准化的方式。
 
 ## 学习目标
 
@@ -30,14 +30,14 @@ Model Context Protocol (MCP) 是一个开放协议，它标准化了应用程序
 
 ## 设置您的 MCP 环境
 
-在开始使用 MCP 之前，准备开发环境并了解基本工作流程非常重要。本节将指导您完成初始设置步骤，以确保顺利开始使用 MCP。
+在开始使用 MCP 之前，准备好开发环境并了解基本工作流程非常重要。本节将指导您完成初始设置步骤，以确保顺利开始使用 MCP。
 
 ### 前置条件
 
 在开始 MCP 开发之前，请确保您具备以下条件：
 
 - **开发环境**：支持您选择的语言（C#、Java、Python、TypeScript 或 Rust）
-- **IDE/编辑器**：Visual Studio、Visual Studio Code、IntelliJ、Eclipse、PyCharm 或任何现代代码编辑器
+- **IDE/编辑器**：Visual Studio、Visual Studio Code、IntelliJ、Eclipse、PyCharm 或其他现代代码编辑器
 - **包管理器**：NuGet、Maven/Gradle、pip、npm/yarn 或 Cargo
 - **API 密钥**：用于主机应用程序中计划使用的任何 AI 服务
 
@@ -54,32 +54,70 @@ Model Context Protocol (MCP) 是一个开放协议，它标准化了应用程序
 
 ```typescript
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod";
 
-// Create a new MCP server
-const server = new Server({
-  port: 3000,
-  name: "Example MCP Server",
+// Create an MCP server
+const server = new McpServer({
+  name: "Demo",
   version: "1.0.0"
 });
 
-// Register a tool
-server.registerTool({
-  name: "calculator",
-  description: "Performs basic calculations",
-  parameters: {
-    expression: {
-      type: "string",
-      description: "The math expression to evaluate"
-    }
-  },
-  handler: async (params) => {
-    const result = eval(params.expression);
-    return { result };
-  }
-});
+// Add an addition tool
+server.tool("add",
+  { a: z.number(), b: z.number() },
+  async ({ a, b }) => ({
+    content: [{ type: "text", text: String(a + b) }]
+  })
+);
 
-// Start the server
-server.start();
+// Add a dynamic greeting resource
+server.resource(
+  "file",
+  // The 'list' parameter controls how the resource lists available files. Setting it to undefined disables listing for this resource.
+  new ResourceTemplate("file://{path}", { list: undefined }),
+  async (uri, { path }) => ({
+    contents: [{
+      uri: uri.href,
+      text: `File, ${path}!`
+    }]
+// Add a file resource that reads the file contents
+server.resource(
+  "file",
+  new ResourceTemplate("file://{path}", { list: undefined }),
+  async (uri, { path }) => {
+    let text;
+    try {
+      text = await fs.readFile(path, "utf8");
+    } catch (err) {
+      text = `Error reading file: ${err.message}`;
+    }
+    return {
+      contents: [{
+        uri: uri.href,
+        text
+      }]
+    };
+  }
+);
+
+server.prompt(
+  "review-code",
+  { code: z.string() },
+  ({ code }) => ({
+    messages: [{
+      role: "user",
+      content: {
+        type: "text",
+        text: `Please review this code:\n\n${code}`
+      }
+    }]
+  })
+);
+
+// Start receiving messages on stdin and sending messages on stdout
+const transport = new StdioServerTransport();
+await server.connect(transport);
 ```
 
 在上述代码中，我们：
@@ -91,12 +129,12 @@ server.start();
 
 ## 测试和调试
 
-在开始测试 MCP 服务器之前，了解可用工具和调试的最佳实践非常重要。有效的测试可以确保服务器按预期运行，并帮助您快速识别和解决问题。以下部分概述了验证 MCP 实现的推荐方法。
+在开始测试 MCP 服务器之前，了解可用的工具和调试的最佳实践非常重要。有效的测试可以确保您的服务器按预期运行，并帮助您快速识别和解决问题。以下部分概述了验证 MCP 实现的推荐方法。
 
 MCP 提供了一些工具来帮助您测试和调试服务器：
 
 - **Inspector 工具**：这个图形界面允许您连接到服务器并测试工具、提示和资源。
-- **curl**：您还可以使用命令行工具如 curl 或其他能够创建和运行 HTTP 命令的客户端连接到服务器。
+- **curl**：您还可以使用命令行工具（如 curl）或其他能够创建和运行 HTTP 命令的客户端连接到服务器。
 
 ### 使用 MCP Inspector
 
@@ -120,7 +158,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 ## 常见设置问题及解决方案
 
 | 问题 | 可能的解决方案 |
-|------|----------------|
+|-------|-------------------|
 | 连接被拒绝 | 检查服务器是否正在运行以及端口是否正确 |
 | 工具执行错误 | 检查参数验证和错误处理 |
 | 认证失败 | 验证 API 密钥和权限 |
@@ -149,7 +187,7 @@ npm run start
 
 ### 服务器可以做什么
 
-在开始编写代码之前，让我们回顾一下服务器的功能：
+在开始编写代码之前，让我们回顾一下服务器可以做什么：
 
 一个 MCP 服务器可以：
 
@@ -159,7 +197,7 @@ npm run start
 - 集成其他工具和服务
 - 提供用户交互界面
 
-很好，现在我们知道服务器的功能了，让我们开始编写代码吧。
+很好，现在我们知道服务器的功能了，开始编写代码吧。
 
 ## 练习：创建一个服务器
 
@@ -451,7 +489,7 @@ dotnet add package Microsoft.Extensions.Hosting
 
 #### Rust
 
-对于 Rust，当您运行 `cargo init` 时，会默认创建一个 *src/main.rs* 文件。打开该文件并删除默认代码。
+对于 Rust，当您运行 `cargo init` 时，默认会创建一个 *src/main.rs* 文件。打开该文件并删除默认代码。
 
 ### -4- 创建服务器代码
 
@@ -822,7 +860,7 @@ pub struct Calculator {
 }
 ```
 
-现在，我们可以实现 `Calculator` 结构体以创建服务器的新实例，并实现服务器处理程序以提供服务器信息。
+现在，我们可以实现 `Calculator` 结构体来创建服务器的新实例，并实现服务器处理程序以提供服务器信息。
 
 ```rust
 #[tool_router]
@@ -857,7 +895,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-现在服务器已设置好，可以提供基本信息。接下来，我们将添加一个工具来执行加法。
+服务器现在已设置为提供基本信息。接下来，我们将添加一个工具来执行加法。
 
 ### -5- 添加工具和资源
 
@@ -896,7 +934,7 @@ server.resource(
 }
 ```
 
-您的资源通过字符串 "greeting" 访问，接收参数 `name`，并生成类似工具的响应：
+您的资源通过字符串 "greeting" 访问，并接收参数 `name`，生成与工具类似的响应：
 
 ```typescript
 {
@@ -924,8 +962,8 @@ def get_greeting(name: str) -> str:
 
 在上述代码中，我们：
 
-- 定义了一个工具 `add`，接收参数 `a` 和 `p`，均为整数。
-- 创建了一个名为 `greeting` 的资源，接收参数 `name`。
+- 定义了一个工具 `add`，它接收参数 `a` 和 `p`，均为整数。
+- 创建了一个名为 `greeting` 的资源，它接收参数 `name`。
 
 #### .NET
 
@@ -942,7 +980,7 @@ public static class CalculatorTool
 
 #### Java
 
-工具已在前一步中创建。
+工具已在上一步中创建。
 
 #### Rust
 
@@ -960,7 +998,7 @@ async fn add(
 
 ### -6- 最终代码
 
-让我们添加最后的代码以启动服务器：
+让我们添加最后的代码，使服务器可以启动：
 
 #### TypeScript
 
@@ -1205,10 +1243,10 @@ cargo run
 
 ### -8- 使用 Inspector 运行
 
-Inspector 是一个非常棒的工具，可以启动您的服务器并与之交互，以便测试其功能。让我们启动它：
+Inspector 是一个很棒的工具，可以启动您的服务器并与之交互，以便测试其功能。让我们启动它：
 
 > [!NOTE]
-> 在 "command" 字段中可能会显示不同的内容，因为它包含运行服务器的特定运行时命令。
+> 在 "command" 字段中可能会显示不同的内容，因为它包含了运行服务器的特定运行时命令。
 
 #### TypeScript
 
@@ -1249,7 +1287,7 @@ npx @modelcontextprotocol/inspector dotnet run
 npx @modelcontextprotocol/inspector
 ```
 
-在 Inspector Web 界面中：
+在 Inspector 的 Web 界面中：
 
 1. 选择 "SSE" 作为传输类型
 2. 将 URL 设置为：`http://localhost:8080/sse`
@@ -1259,20 +1297,20 @@ npx @modelcontextprotocol/inspector
 **您现在已成功连接到服务器**  
 **Java服务器测试部分现已完成**
 
-接下来的部分是与服务器进行交互。
+接下来是与服务器交互的部分。
 
-您应该看到以下用户界面：
+您应该会看到以下用户界面：
 
 ![连接](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.zh.png)
 
 1. 通过选择“连接”按钮连接到服务器  
-   连接到服务器后，您应该看到以下内容：
+   连接到服务器后，您应该会看到以下内容：
 
    ![已连接](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.zh.png)
 
-2. 选择“工具”和“listTools”，您应该看到“添加”出现，选择“添加”并填写参数值。
+2. 选择“工具”和“listTools”，您应该会看到“添加”选项，选择“添加”并填写参数值。
 
-   您应该看到以下响应，即来自“添加”工具的结果：
+   您应该会看到以下响应，即来自“添加”工具的结果：
 
    ![运行添加工具的结果](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.zh.png)
 
@@ -1288,21 +1326,21 @@ npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-n
 
 ### 官方 SDK
 
-MCP 提供了多个语言的官方 SDK：
+MCP 提供了多种语言的官方 SDK：
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - 与 Microsoft 合作维护  
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - 与 Spring AI 合作维护  
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - 官方 TypeScript 实现  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - 官方 Python 实现  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - 官方 Kotlin 实现  
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - 与 Loopwork AI 合作维护  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - 官方 Rust 实现  
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - 与 Microsoft 合作维护
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - 与 Spring AI 合作维护
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - 官方 TypeScript 实现
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - 官方 Python 实现
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - 官方 Kotlin 实现
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - 与 Loopwork AI 合作维护
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - 官方 Rust 实现
 
 ## 关键要点
 
 - 使用语言特定的 SDK 设置 MCP 开发环境非常简单  
 - 构建 MCP 服务器需要创建并注册具有清晰架构的工具  
-- 测试和调试对于可靠的 MCP 实现至关重要  
+- 测试和调试对于可靠的 MCP 实现至关重要
 
 ## 示例
 
@@ -1311,7 +1349,7 @@ MCP 提供了多个语言的官方 SDK：
 - [JavaScript 计算器](../samples/javascript/README.md)  
 - [TypeScript 计算器](../samples/typescript/README.md)  
 - [Python 计算器](../../../../03-GettingStarted/samples/python)  
-- [Rust 计算器](../../../../03-GettingStarted/samples/rust)  
+- [Rust 计算器](../../../../03-GettingStarted/samples/rust)
 
 ## 作业
 
@@ -1320,7 +1358,7 @@ MCP 提供了多个语言的官方 SDK：
 1. 使用您喜欢的语言（.NET、Java、Python、TypeScript 或 Rust）实现工具。  
 2. 定义输入参数和返回值。  
 3. 运行检查工具以确保服务器正常工作。  
-4. 使用各种输入测试实现。  
+4. 使用各种输入测试实现。
 
 ## 解决方案
 
@@ -1329,12 +1367,12 @@ MCP 提供了多个语言的官方 SDK：
 ## 其他资源
 
 - [在 Azure 上使用 Model Context Protocol 构建代理](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [使用 Azure 容器应用程序远程 MCP（Node.js/TypeScript/JavaScript）](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [.NET OpenAI MCP 代理](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
+- [使用 Azure 容器应用程序远程 MCP (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
+- [.NET OpenAI MCP 代理](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## 下一步
 
-下一步：[MCP 客户端入门](../02-client/README.md)  
+下一步：[MCP 客户端入门](../02-client/README.md)
 
 **免责声明**：  
-本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们对因使用此翻译而产生的任何误解或误读不承担责任。
