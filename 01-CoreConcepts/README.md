@@ -119,7 +119,7 @@ Prompts in the Model Context Protocol (MCP) include various pre-defined template
 - **Pre-defined Interaction Patterns**: Standardized sequences of actions and responses that facilitate consistent and efficient communication.
 - **Specialized Conversation Templates**: Customizable templates tailored for specific types of conversations, ensuring relevant and contextually appropriate interactions.
 
-A prompt template can look like so:
+A prompt template could look like this:
 
 ```markdown
 Generate a product slogan based on the following {{product}} with the following {{keywords}}

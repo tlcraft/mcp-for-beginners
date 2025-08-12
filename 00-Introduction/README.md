@@ -16,7 +16,7 @@ The **Model Context Protocol (MCP)** is an **open, standardized interface** that
 
 ## **🎯 Why Standardization in AI Matters**
 
-As generative AI applications become more complex, it's essential to adopt standards that ensure **scalability, extensibility**, **maintainability** and **avoiding vendor lock in**. MCP addresses these needs by:
+As generative AI applications become more complex, it's essential to adopt standards that ensure **scalability, extensibility, maintainability,** and **avoiding vendor lock-in**. MCP addresses these needs by:
 
 - Unifying model-tool integrations
 - Reducing brittle, one-off custom solutions
