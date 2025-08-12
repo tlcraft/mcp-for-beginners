@@ -65,6 +65,7 @@ server.tool("add",
 // Add a dynamic greeting resource
 server.resource(
   "file",
+  // The 'list' parameter controls how the resource lists available files. Setting it to undefined disables listing for this resource.
   new ResourceTemplate("file://{path}", { list: undefined }),
   async (uri, { path }) => ({
     contents: [{
