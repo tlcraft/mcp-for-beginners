@@ -252,7 +252,7 @@ Add the following dependencies to your `Cargo.toml` file:
 ```toml
 [dependencies]
 async-openai = { version = "0.29.0", features = ["byot"] }
-rmcp = { version = "0.3.0", features = ["client", "transport-child-process"] }
+rmcp = { version = "0.5.0", features = ["client", "transport-child-process"] }
 serde_json = "1.0.141"
 tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
 ```

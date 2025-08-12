@@ -22,11 +22,13 @@ async fn main() -> Result<(), Box<dyn Error>> {
             .with_api_key(api_key),
     );
 
-    // Setup MCP client
+    // Setup MCP client (point to 01-first-server/solution/rust)
     let server_dir = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
-        .parent()
-        .unwrap()
-        .join("calculator-server");
+        .parent() // solution
+        .and_then(|p| p.parent()) // 03-llm-client
+        .and_then(|p| p.parent()) // 03-GettingStarted
+        .map(|p| p.join("01-first-server/solution/rust"))
+        .expect("Failed to resolve server directory path");
 
     let mcp_client = ()
         .serve(
@@ -142,7 +144,7 @@ async fn call_llm(
         .completions()
         .create_byot(json!({
             "messages": messages,
-            "model": "openai/gpt-4.1",
+            "model": "openai/gpt-5-mini",
             "tools": format_tools(tools).await?,
         }))
         .await?;

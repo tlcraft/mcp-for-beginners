@@ -82,7 +82,7 @@ async fn main() -> Result<(), RmcpError> {
         .await?;
 
     // Parse and display result
-    match &tool_result.content.first() {
+    match &tool_result.content.expect("REASON").first() {
         Some(content) => match &content.raw {
             rmcp::model::RawContent::Text(text_content) => {
                 println!("✅ Result: {}", text_content.text);
