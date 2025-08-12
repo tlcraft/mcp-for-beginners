@@ -26,7 +26,7 @@ Follow these steps to get started using these resources:
 
 # 🚀 Model Context Protocol (MCP) Curriculum for Beginners
 
-## **Learn MCP with Hands-on Code Examples in C#, Java, JavaScript, Python, and TypeScript**
+## **Learn MCP with Hands-on Code Examples in C#, Java, JavaScript, Rust, Python, and TypeScript**
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
 
