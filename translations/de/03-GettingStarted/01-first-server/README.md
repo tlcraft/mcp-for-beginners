@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c8f109d85a1583fcf18aea9378dc1074",
-  "translation_date": "2025-08-11T11:07:43+00:00",
+  "original_hash": "f644c579ec7e70669ea06e29b475c728",
+  "translation_date": "2025-08-12T21:09:47+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "de"
 }
 -->
 # Einstieg in MCP
 
-Willkommen zu Ihren ersten Schritten mit dem Model Context Protocol (MCP)! Egal, ob Sie neu bei MCP sind oder Ihr Wissen vertiefen möchten, dieser Leitfaden führt Sie durch die wesentlichen Schritte zur Einrichtung und Entwicklung. Sie erfahren, wie MCP eine nahtlose Integration zwischen KI-Modellen und Anwendungen ermöglicht, und lernen, wie Sie Ihre Umgebung schnell für die Entwicklung und das Testen von MCP-basierten Lösungen vorbereiten.
+Willkommen zu Ihren ersten Schritten mit dem Model Context Protocol (MCP)! Egal, ob Sie neu bei MCP sind oder Ihr Wissen vertiefen möchten, dieser Leitfaden führt Sie durch die grundlegende Einrichtung und den Entwicklungsprozess. Sie erfahren, wie MCP eine nahtlose Integration zwischen KI-Modellen und Anwendungen ermöglicht, und lernen, wie Sie Ihre Umgebung schnell für die Entwicklung und das Testen von MCP-basierten Lösungen vorbereiten.
 
-> Kurzfassung: Wenn Sie KI-Anwendungen entwickeln, wissen Sie, dass Sie Tools und andere Ressourcen zu Ihrem LLM (Large Language Model) hinzufügen können, um das LLM wissensreicher zu machen. Wenn Sie diese Tools und Ressourcen jedoch auf einem Server bereitstellen, können die App und die Serverfunktionen von jedem Client mit oder ohne LLM genutzt werden.
+> Kurzfassung: Wenn Sie KI-Anwendungen entwickeln, wissen Sie, dass Sie Tools und andere Ressourcen zu Ihrem LLM (Large Language Model) hinzufügen können, um das LLM wissensreicher zu machen. Wenn Sie diese Tools und Ressourcen jedoch auf einem Server platzieren, können die App und die Serverfunktionen von jedem Client mit oder ohne LLM genutzt werden.
 
 ## Überblick
 
-Diese Lektion bietet praktische Anleitungen zur Einrichtung von MCP-Umgebungen und zum Aufbau Ihrer ersten MCP-Anwendungen. Sie lernen, wie Sie die notwendigen Tools und Frameworks einrichten, grundlegende MCP-Server erstellen, Host-Anwendungen entwickeln und Ihre Implementierungen testen.
+Diese Lektion bietet praktische Anleitungen zur Einrichtung von MCP-Umgebungen und zum Erstellen Ihrer ersten MCP-Anwendungen. Sie lernen, wie Sie die erforderlichen Tools und Frameworks einrichten, grundlegende MCP-Server erstellen, Host-Anwendungen entwickeln und Ihre Implementierungen testen.
 
 Das Model Context Protocol (MCP) ist ein offenes Protokoll, das standardisiert, wie Anwendungen Kontext für LLMs bereitstellen. Stellen Sie sich MCP wie einen USB-C-Anschluss für KI-Anwendungen vor – es bietet eine standardisierte Möglichkeit, KI-Modelle mit verschiedenen Datenquellen und Tools zu verbinden.
 
@@ -53,7 +53,7 @@ Ein MCP-Server umfasst typischerweise:
 Hier ist ein vereinfachtes Beispiel in TypeScript:
 
 ```typescript
-import { Server, Tool, Resource } from "@modelcontextprotocol/typescript-server-sdk";
+import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 
 // Create a new MCP server
 const server = new Server({
@@ -84,19 +84,19 @@ server.start();
 
 Im obigen Code haben wir:
 
-- Die notwendigen Klassen aus dem MCP TypeScript SDK importiert.
+- Die erforderlichen Klassen aus dem MCP TypeScript SDK importiert.
 - Eine neue MCP-Serverinstanz erstellt und konfiguriert.
 - Ein benutzerdefiniertes Tool (`calculator`) mit einer Handler-Funktion registriert.
 - Den Server gestartet, um eingehende MCP-Anfragen zu empfangen.
 
 ## Testen und Debuggen
 
-Bevor Sie Ihren MCP-Server testen, ist es wichtig, die verfügbaren Tools und bewährten Verfahren für das Debuggen zu verstehen. Effektives Testen stellt sicher, dass sich Ihr Server wie erwartet verhält, und hilft Ihnen, Probleme schnell zu identifizieren und zu beheben. Der folgende Abschnitt beschreibt empfohlene Ansätze zur Validierung Ihrer MCP-Implementierung.
+Bevor Sie mit dem Testen Ihres MCP-Servers beginnen, ist es wichtig, die verfügbaren Tools und bewährten Verfahren für das Debuggen zu verstehen. Effektives Testen stellt sicher, dass sich Ihr Server wie erwartet verhält, und hilft Ihnen, Probleme schnell zu identifizieren und zu beheben. Der folgende Abschnitt beschreibt empfohlene Ansätze zur Validierung Ihrer MCP-Implementierung.
 
 MCP bietet Tools, die Ihnen beim Testen und Debuggen Ihrer Server helfen:
 
 - **Inspector-Tool**: Diese grafische Benutzeroberfläche ermöglicht es Ihnen, sich mit Ihrem Server zu verbinden und Tools, Prompts und Ressourcen zu testen.
-- **curl**: Sie können sich auch mit einem Befehlszeilentool wie curl oder anderen Clients verbinden, die HTTP-Befehle erstellen und ausführen können.
+- **curl**: Sie können sich auch mit einem Befehlszeilentool wie curl oder anderen Clients, die HTTP-Befehle ausführen können, mit Ihrem Server verbinden.
 
 ### Verwendung des MCP Inspectors
 
@@ -121,7 +121,7 @@ Hier ist ein Screenshot, wie es aussehen könnte:
 
 | Problem | Mögliche Lösung |
 |---------|-----------------|
-| Verbindung abgelehnt | Überprüfen Sie, ob der Server läuft und der Port korrekt ist |
+| Verbindung verweigert | Überprüfen Sie, ob der Server läuft und der Port korrekt ist |
 | Fehler bei der Toolausführung | Überprüfen Sie die Parameterüberprüfung und Fehlerbehandlung |
 | Authentifizierungsfehler | API-Schlüssel und Berechtigungen überprüfen |
 | Schema-Validierungsfehler | Sicherstellen, dass die Parameter dem definierten Schema entsprechen |
@@ -156,19 +156,19 @@ Ein MCP-Server kann beispielsweise:
 - Auf lokale Dateien und Datenbanken zugreifen
 - Sich mit entfernten APIs verbinden
 - Berechnungen durchführen
-- Mit anderen Tools und Diensten integriert werden
+- Mit anderen Tools und Diensten integrieren
 - Eine Benutzeroberfläche für Interaktionen bereitstellen
 
 Super, jetzt, da wir wissen, was wir damit machen können, fangen wir an zu programmieren.
 
-## Übung: Erstellen eines Servers
+## Übung: Einen Server erstellen
 
 Um einen Server zu erstellen, müssen Sie folgende Schritte ausführen:
 
-- Installieren Sie das MCP SDK.
-- Erstellen Sie ein Projekt und richten Sie die Projektstruktur ein.
-- Schreiben Sie den Servercode.
-- Testen Sie den Server.
+- Das MCP SDK installieren.
+- Ein Projekt erstellen und die Projektstruktur einrichten.
+- Den Servercode schreiben.
+- Den Server testen.
 
 ### -1- Projekt erstellen
 
@@ -200,7 +200,7 @@ cd McpCalculatorServer
 
 #### Java
 
-Für Java erstellen Sie ein Spring Boot-Projekt:
+Für Java ein Spring Boot-Projekt erstellen:
 
 ```bash
 curl https://start.spring.io/starter.zip \
@@ -214,7 +214,7 @@ curl https://start.spring.io/starter.zip \
   -o calculator-server.zip
 ```
 
-Entpacken Sie die ZIP-Datei:
+Zip-Datei extrahieren:
 
 ```bash
 unzip calculator-server.zip -d calculator-server
@@ -223,7 +223,7 @@ cd calculator-server
 rm -rf src/test/java
 ```
 
-Fügen Sie die folgende vollständige Konfiguration zu Ihrer *pom.xml*-Datei hinzu:
+Die folgende vollständige Konfiguration zu Ihrer *pom.xml* hinzufügen:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -471,7 +471,7 @@ const server = new McpServer({
 });
 ```
 
-Jetzt haben Sie einen Server, aber er macht noch nicht viel. Lassen Sie uns das beheben.
+Jetzt haben Sie einen Server, aber er macht noch nicht viel. Lassen Sie uns das ändern.
 
 #### Python
 
@@ -510,7 +510,7 @@ await builder.Build().RunAsync();
 
 #### Java
 
-Für Java erstellen Sie die Kernserverkomponenten. Bearbeiten Sie zunächst die Hauptanwendungsklasse:
+Für Java erstellen Sie die Kernserverkomponenten. Zuerst ändern Sie die Hauptanwendungsklasse:
 
 *src/main/java/com/microsoft/mcp/sample/server/McpServerApplication.java*:
 
@@ -790,7 +790,7 @@ Spring Boot MCP Application
 
 #### Rust
 
-Fügen Sie den folgenden Code oben in die Datei *src/main.rs* ein. Dies importiert die notwendigen Bibliotheken und Module für Ihren MCP-Server.
+Fügen Sie den folgenden Code an den Anfang der Datei *src/main.rs* hinzu. Dies importiert die erforderlichen Bibliotheken und Module für Ihren MCP-Server.
 
 ```rust
 use rmcp::{
@@ -822,7 +822,7 @@ pub struct Calculator {
 }
 ```
 
-Jetzt können wir die `Calculator`-Struktur implementieren, um eine neue Instanz des Servers zu erstellen, und den Server-Handler implementieren, um Serverinformationen bereitzustellen.
+Nun können wir die `Calculator`-Struktur implementieren, um eine neue Instanz des Servers zu erstellen und den Server-Handler zu implementieren, um Serverinformationen bereitzustellen.
 
 ```rust
 #[tool_router]
@@ -846,7 +846,7 @@ impl ServerHandler for Calculator {
 }
 ```
 
-Schließlich müssen wir die Hauptfunktion implementieren, um den Server zu starten. Diese Funktion erstellt eine Instanz der `Calculator`-Struktur und stellt sie über Standard-Ein-/Ausgabe bereit.
+Schließlich müssen wir die Hauptfunktion implementieren, um den Server zu starten. Diese Funktion erstellt eine Instanz der `Calculator`-Struktur und stellt sie über die Standard-Ein-/Ausgabe bereit.
 
 ```rust
 #[tokio::main]
@@ -886,7 +886,7 @@ server.resource(
 );
 ```
 
-Ihr Tool nimmt die Parameter `a` und `b` und führt eine Funktion aus, die eine Antwort in der Form erzeugt:
+Ihr Tool nimmt die Parameter `a` und `b` und führt eine Funktion aus, die eine Antwort in der folgenden Form erzeugt:
 
 ```typescript
 {
@@ -960,7 +960,7 @@ async fn add(
 
 ### -6- Finaler Code
 
-Fügen Sie den letzten Code hinzu, den wir benötigen, damit der Server gestartet werden kann:
+Fügen Sie den letzten Code hinzu, den wir benötigen, damit der Server starten kann:
 
 #### TypeScript
 
@@ -1176,7 +1176,7 @@ npm run build
 mcp run server.py
 ```
 
-> Um den MCP Inspector zu verwenden, nutzen Sie `mcp dev server.py`, das den Inspector automatisch startet und das erforderliche Proxy-Session-Token bereitstellt. Wenn Sie `mcp run server.py` verwenden, müssen Sie den Inspector manuell starten und die Verbindung konfigurieren.
+> Um den MCP Inspector zu verwenden, nutzen Sie `mcp dev server.py`, was den Inspector automatisch startet und das erforderliche Proxy-Session-Token bereitstellt. Wenn Sie `mcp run server.py` verwenden, müssen Sie den Inspector manuell starten und die Verbindung konfigurieren.
 
 #### .NET
 
@@ -1205,7 +1205,7 @@ cargo run
 
 ### -8- Mit dem Inspector ausführen
 
-Der Inspector ist ein großartiges Tool, das Ihren Server starten und Ihnen die Interaktion mit ihm ermöglichen kann, damit Sie testen können, ob er funktioniert. Starten wir ihn:
+Der Inspector ist ein großartiges Tool, das Ihren Server starten und Ihnen ermöglichen kann, mit ihm zu interagieren, um zu testen, ob er funktioniert. Lassen Sie uns ihn starten:
 
 > [!NOTE]
 > Es könnte im Feld "Befehl" anders aussehen, da es den Befehl zum Ausführen eines Servers mit Ihrer spezifischen Laufzeit enthält.
@@ -1251,9 +1251,9 @@ npx @modelcontextprotocol/inspector
 
 In der Weboberfläche des Inspectors:
 
-1. Wählen Sie "SSE" als Transporttyp aus.
+1. Wählen Sie "SSE" als Transporttyp
 2. Setzen Sie die URL auf: `http://localhost:8080/sse`
-3. Klicken Sie auf "Verbinden".
+3. Klicken Sie auf "Verbinden"
 ![Verbinden](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.de.png)
 
 **Sie sind jetzt mit dem Server verbunden**  
@@ -1270,17 +1270,17 @@ Sie sollten die folgende Benutzeroberfläche sehen:
 
    ![Verbunden](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.de.png)
 
-1. Wählen Sie "Tools" und "listTools". Sie sollten sehen, dass "Add" angezeigt wird. Wählen Sie "Add" aus und füllen Sie die Parameterwerte aus.
+1. Wählen Sie "Tools" und "listTools". Sie sollten "Add" sehen. Wählen Sie "Add" aus und füllen Sie die Parameterwerte aus.
 
-   Sie sollten die folgende Antwort sehen, d.h. ein Ergebnis des "Add"-Tools:
+   Sie sollten die folgende Antwort sehen, d. h. ein Ergebnis des "Add"-Tools:
 
    ![Ergebnis des Add-Tools](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.de.png)
 
-Herzlichen Glückwunsch, Sie haben erfolgreich Ihren ersten Server erstellt und ausgeführt!
+Glückwunsch, Sie haben erfolgreich Ihren ersten Server erstellt und ausgeführt!
 
 #### Rust
 
-Um den Rust-Server mit der MCP Inspector CLI auszuführen, verwenden Sie den folgenden Befehl:
+Um den Rust-Server mit dem MCP Inspector CLI auszuführen, verwenden Sie den folgenden Befehl:
 
 ```sh
 npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-name add --tool-arg a=1 b=2
@@ -1288,7 +1288,7 @@ npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-n
 
 ### Offizielle SDKs
 
-MCP stellt offizielle SDKs für mehrere Sprachen bereit:
+MCP bietet offizielle SDKs für mehrere Programmiersprachen:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - In Zusammenarbeit mit Microsoft gepflegt  
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - In Zusammenarbeit mit Spring AI gepflegt  
@@ -1328,13 +1328,13 @@ Erstellen Sie einen einfachen MCP-Server mit einem Tool Ihrer Wahl:
 
 ## Zusätzliche Ressourcen
 
-- [Erstellen von Agents mit Model Context Protocol auf Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
+- [Agents mit Model Context Protocol auf Azure erstellen](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
 - [Remote MCP mit Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## Was kommt als Nächstes?
 
-Weiter: [Erste Schritte mit MCP Clients](../02-client/README.md)  
+Weiter: [Erste Schritte mit MCP-Clients](../02-client/README.md)  
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
