@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ccdccbeb0247199f00a61a2fcd9e6ff8",
-  "translation_date": "2025-08-11T10:50:22+00:00",
+  "original_hash": "94c80ae71fb9971e9b57b51ab0912121",
+  "translation_date": "2025-08-12T19:16:12+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "pt"
 }
@@ -32,11 +32,11 @@ Para escrever um cliente, precisas de fazer o seguinte:
 - **Decidir quais recursos listar**. O teu servidor MCP vem com recursos, ferramentas e prompts; precisas decidir quais listar.
 - **Integrar o cliente numa aplicação anfitriã**. Depois de conheceres as capacidades do servidor, precisas de integrar isso na tua aplicação anfitriã para que, se um utilizador digitar um prompt ou outro comando, a funcionalidade correspondente do servidor seja invocada.
 
-Agora que entendemos, a um nível geral, o que vamos fazer, vamos ver um exemplo a seguir.
+Agora que entendemos, a um nível geral, o que vamos fazer, vejamos um exemplo a seguir.
 
 ### Um exemplo de cliente
 
-Vamos dar uma olhada neste exemplo de cliente:
+Vamos analisar este exemplo de cliente:
 
 ### TypeScript
 
@@ -89,7 +89,7 @@ const result = await client.callTool({
 No código acima:
 
 - Importamos as bibliotecas.
-- Criamos uma instância de cliente e conectamo-la usando stdio como transporte.
+- Criamos uma instância de um cliente e conectamo-lo usando stdio como transporte.
 - Listamos prompts, recursos e ferramentas e invocamo-los todos.
 
 E pronto, tens um cliente que pode comunicar com um Servidor MCP.
@@ -154,7 +154,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-rmcp = { version = "0.3.0", features = ["client", "transport-child-process"] }
+rmcp = { version = "0.5.0", features = ["client", "transport-child-process"] }
 serde_json = "1.0.141"
 tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
 ```
@@ -175,7 +175,7 @@ Vamos avançar para a instanciação.
 
 ### -2- Instanciar cliente e transporte
 
-Precisamos de criar uma instância do transporte e do nosso cliente:
+Precisamos de criar uma instância do transporte e outra do nosso cliente:
 
 #### TypeScript
 
@@ -197,7 +197,7 @@ await client.connect(transport);
 
 No código acima:
 
-- Criámos uma instância de transporte stdio. Nota como especifica o comando e os argumentos para localizar e iniciar o servidor, pois isso será necessário ao criar o cliente.
+- Criámos uma instância de transporte stdio. Nota como especifica o comando e os argumentos para localizar e iniciar o servidor, algo que precisaremos fazer ao criar o cliente.
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -320,8 +320,8 @@ public class SDKClient {
 No código acima:
 
 - Criámos um método principal que configura um transporte SSE apontando para `http://localhost:8080`, onde o nosso servidor MCP estará em execução.
-- Criámos uma classe cliente que recebe o transporte como parâmetro do construtor.
-- No método `run`, criamos um cliente MCP síncrono usando o transporte e inicializamos a conexão.
+- Criámos uma classe cliente que aceita o transporte como parâmetro do construtor.
+- No método `run`, criámos um cliente MCP síncrono usando o transporte e inicializámos a conexão.
 - Usámos o transporte SSE (Server-Sent Events), adequado para comunicação baseada em HTTP com servidores MCP Java Spring Boot.
 
 #### Rust
@@ -419,7 +419,7 @@ No código acima:
 - Usámos `ping()` para verificar se a conexão com o servidor está a funcionar.
 - O `ListToolsResult` contém informações sobre todas as ferramentas, incluindo os seus nomes, descrições e esquemas de entrada.
 
-Ótimo, agora capturámos todas as funcionalidades. A questão agora é: quando as usamos? Bem, este cliente é bastante simples, no sentido de que precisaremos chamar explicitamente as funcionalidades quando quisermos. No próximo capítulo, criaremos um cliente mais avançado que terá acesso ao seu próprio modelo de linguagem grande, LLM. Por agora, vamos ver como podemos invocar as funcionalidades no servidor:
+Ótimo, agora capturámos todas as funcionalidades. A questão agora é: quando as usamos? Bem, este cliente é bastante simples, no sentido de que precisaremos chamar explicitamente as funcionalidades quando quisermos. No próximo capítulo, criaremos um cliente mais avançado que terá acesso ao seu próprio modelo de linguagem grande, LLM. Por agora, vejamos como podemos invocar as funcionalidades no servidor:
 
 #### Rust
 
@@ -467,7 +467,7 @@ const promptResult = await client.getPrompt({
 
 No código acima:
 
-- Lemos um recurso, chamando o recurso com `readResource()` e especificando `uri`. Eis como isso provavelmente será no lado do servidor:
+- Lemos um recurso, chamando-o com `readResource()` e especificando `uri`. Eis como isso provavelmente será no lado do servidor:
 
     ```typescript
     server.resource(
@@ -513,7 +513,7 @@ No código acima:
     );
     ```
 
-    E o código do cliente correspondente será assim para coincidir com o que está declarado no servidor:
+    E o código do cliente correspondente será assim para corresponder ao que está declarado no servidor:
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -634,7 +634,7 @@ dotnet run
 
 #### Java
 
-Primeiro, garante que o teu servidor MCP está a ser executado em `http://localhost:8080`. Depois, executa o cliente:
+Primeiro, garante que o teu servidor MCP está a funcionar em `http://localhost:8080`. Depois, executa o cliente:
 
 ```bash
 # Build you project
@@ -780,11 +780,11 @@ Na [secção anterior](../../../../03-GettingStarted/01-first-server), aprendest
 
 ## Solução
 
-A **pasta de solução** contém implementações completas e prontas para executar de clientes que demonstram todos os conceitos abordados neste tutorial. Cada solução inclui código de cliente e servidor organizados em projetos separados e autónomos.
+A **pasta de soluções** contém implementações completas e prontas para executar de clientes que demonstram todos os conceitos abordados neste tutorial. Cada solução inclui código de cliente e servidor organizados em projetos separados e autossuficientes.
 
 ### 📁 Estrutura da Solução
 
-O diretório de solução está organizado por linguagem de programação:
+O diretório de soluções está organizado por linguagem de programação:
 
 ```text
 solution/
@@ -877,27 +877,27 @@ Cada exemplo completo inclui:
 1. **Escolha o seu idioma preferido** na tabela acima  
 2. **Revise o ficheiro de exemplo completo** para compreender a implementação completa  
 3. **Execute o exemplo** seguindo as instruções em [`complete_examples.md`](./complete_examples.md)  
-4. **Modifique e amplie** o exemplo para o seu caso de uso específico  
+4. **Modifique e expanda** o exemplo para o seu caso de uso específico  
 
-Para documentação detalhada sobre como executar e personalizar estes exemplos, consulte: **[📖 Documentação de Exemplos Completos](./complete_examples.md)**  
+Para documentação detalhada sobre como executar e personalizar estes exemplos, veja: **[📖 Documentação de Exemplos Completos](./complete_examples.md)**  
 
 ### 💡 Solução vs. Exemplos Completos
 
-| **Pasta de Solução**       | **Exemplos Completos**       |
-|----------------------------|-----------------------------|
+| **Pasta de Solução** | **Exemplos Completos** |
+|-----------------------|------------------------|
 | Estrutura completa do projeto com ficheiros de build | Implementações em ficheiro único |
-| Pronto para executar com dependências              | Exemplos de código focados       |
-| Configuração semelhante à produção                 | Referência educacional           |
-| Ferramentas específicas para cada linguagem        | Comparação entre linguagens      |
+| Pronto para executar com dependências | Exemplos de código focados |
+| Configuração semelhante a produção | Referência educacional |
+| Ferramentas específicas do idioma | Comparação entre idiomas |
 
-Ambas as abordagens são valiosas - utilize a **pasta de solução** para projetos completos e os **exemplos completos** para aprendizagem e referência.
+Ambas as abordagens são valiosas - use a **pasta de solução** para projetos completos e os **exemplos completos** para aprendizagem e referência.
 
-## Pontos-Chave
+## Principais Conclusões
 
-Os principais pontos deste capítulo sobre clientes são os seguintes:
+As principais conclusões deste capítulo sobre clientes são as seguintes:
 
 - Podem ser usados tanto para descobrir como para invocar funcionalidades no servidor.  
-- Podem iniciar um servidor enquanto se iniciam (como neste capítulo), mas também podem conectar-se a servidores já em execução.  
+- Podem iniciar um servidor enquanto se iniciam (como neste capítulo), mas os clientes também podem conectar-se a servidores já em execução.  
 - São uma ótima forma de testar as capacidades do servidor, além de alternativas como o Inspector, descrito no capítulo anterior.  
 
 ## Recursos Adicionais
@@ -918,4 +918,4 @@ Os principais pontos deste capítulo sobre clientes são os seguintes:
 - Próximo: [Criar um cliente com um LLM](../03-llm-client/README.md)  
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, é importante notar que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ccdccbeb0247199f00a61a2fcd9e6ff8",
-  "translation_date": "2025-08-11T10:15:25+00:00",
+  "original_hash": "94c80ae71fb9971e9b57b51ab0912121",
+  "translation_date": "2025-08-12T19:11:30+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "fr"
 }
@@ -25,12 +25,12 @@ Cette leçon introduit le concept de clients dans l'écosystème du Model Contex
 
 ## Que faut-il pour écrire un client ?
 
-Pour écrire un client, vous devrez faire ce qui suit :
+Pour écrire un client, vous devrez effectuer les étapes suivantes :
 
 - **Importer les bibliothèques appropriées**. Vous utiliserez la même bibliothèque que précédemment, mais avec des constructions différentes.
 - **Instancier un client**. Cela impliquera de créer une instance de client et de la connecter à la méthode de transport choisie.
 - **Décider des ressources à lister**. Votre serveur MCP dispose de ressources, outils et invites, vous devez décider lesquels lister.
-- **Intégrer le client à une application hôte**. Une fois que vous connaissez les capacités du serveur, vous devez intégrer cela à votre application hôte afin que, si un utilisateur tape une invite ou une autre commande, la fonctionnalité correspondante du serveur soit invoquée.
+- **Intégrer le client à une application hôte**. Une fois que vous connaissez les capacités du serveur, vous devez intégrer cela à votre application hôte afin que, si un utilisateur saisit une invite ou une autre commande, la fonctionnalité correspondante du serveur soit invoquée.
 
 Maintenant que nous comprenons à un niveau élevé ce que nous allons faire, passons à un exemple.
 
@@ -154,7 +154,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-rmcp = { version = "0.3.0", features = ["client", "transport-child-process"] }
+rmcp = { version = "0.5.0", features = ["client", "transport-child-process"] }
 serde_json = "1.0.141"
 tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
 ```
@@ -171,11 +171,11 @@ use rmcp::{
 use tokio::process::Command;
 ```
 
-Passons à l'instanciation.
+Passons maintenant à l'instanciation.
 
 ### -2- Instancier le client et le transport
 
-Nous devrons créer une instance du transport et celle de notre client :
+Nous devrons créer une instance du transport et une instance de notre client :
 
 #### TypeScript
 
@@ -322,7 +322,7 @@ Dans le code précédent, nous avons :
 - Créé une méthode principale qui configure un transport SSE pointant vers `http://localhost:8080`, où notre serveur MCP sera en cours d'exécution.
 - Créé une classe client qui prend le transport comme paramètre de constructeur.
 - Dans la méthode `run`, nous créons un client MCP synchrone en utilisant le transport et initialisons la connexion.
-- Utilisé le transport SSE (Server-Sent Events), adapté à la communication basée sur HTTP avec les serveurs MCP Java Spring Boot.
+- Utilisé le transport SSE (Server-Sent Events), qui est adapté à la communication basée sur HTTP avec les serveurs MCP Java Spring Boot.
 
 #### Rust
 
@@ -358,7 +358,7 @@ async fn main() -> Result<(), RmcpError> {
 
 ### -3- Lister les fonctionnalités du serveur
 
-Maintenant, nous avons un client qui peut se connecter si le programme est exécuté. Cependant, il ne liste pas encore ses fonctionnalités, alors faisons cela ensuite :
+Nous avons maintenant un client capable de se connecter si le programme est exécuté. Cependant, il ne liste pas encore ses fonctionnalités, alors faisons cela ensuite :
 
 #### TypeScript
 
@@ -389,7 +389,7 @@ for tool in tools.tools:
     print("Tool: ", tool.name)
 ```
 
-Ici, nous listons les ressources disponibles avec `list_resources()` et les outils avec `list_tools`, puis les affichons.
+Ici, nous listons les ressources disponibles avec `list_resources()` et les outils avec `list_tools`, puis nous les affichons.
 
 #### .NET
 
@@ -419,7 +419,7 @@ Dans le code précédent, nous avons :
 - Utilisé `ping()` pour vérifier que la connexion au serveur fonctionne.
 - Le `ListToolsResult` contient des informations sur tous les outils, y compris leurs noms, descriptions et schémas d'entrée.
 
-Super, nous avons capturé toutes les fonctionnalités. Maintenant, la question est : quand les utilisons-nous ? Eh bien, ce client est assez simple, dans le sens où nous devrons appeler explicitement les fonctionnalités lorsque nous en aurons besoin. Dans le prochain chapitre, nous créerons un client plus avancé qui aura accès à son propre modèle de langage (LLM). Pour l'instant, voyons comment nous pouvons invoquer les fonctionnalités sur le serveur :
+Super, nous avons capturé toutes les fonctionnalités. La question est maintenant : quand les utilisons-nous ? Eh bien, ce client est assez simple, dans le sens où nous devrons appeler explicitement les fonctionnalités lorsque nous en aurons besoin. Dans le prochain chapitre, nous créerons un client plus avancé qui aura accès à son propre modèle de langage (LLM). Pour l'instant, voyons comment nous pouvons invoquer les fonctionnalités sur le serveur :
 
 #### Rust
 
@@ -467,7 +467,7 @@ const promptResult = await client.getPrompt({
 
 Dans le code précédent, nous avons :
 
-- Lu une ressource en appelant `readResource()` en spécifiant `uri`. Voici à quoi cela ressemble probablement côté serveur :
+- Lu une ressource en appelant `readResource()` avec un `uri`. Voici à quoi cela ressemble probablement côté serveur :
 
     ```typescript
     server.resource(
@@ -664,7 +664,7 @@ cargo run
 
 ## Devoir
 
-Dans cet exercice, vous utiliserez ce que vous avez appris pour créer un client, mais cette fois, vous créerez votre propre client.
+Dans ce devoir, vous utiliserez ce que vous avez appris pour créer un client, mais cette fois, vous créerez votre propre client.
 
 Voici un serveur que vous pouvez utiliser et que vous devez appeler via votre code client. Essayez d'ajouter plus de fonctionnalités au serveur pour le rendre plus intéressant.
 
@@ -780,7 +780,7 @@ Dans la [section précédente](../../../../03-GettingStarted/01-first-server), v
 
 ## Solution
 
-Le **dossier solution** contient des implémentations complètes et prêtes à l'emploi de clients qui démontrent tous les concepts abordés dans ce tutoriel. Chaque solution inclut à la fois le code client et serveur organisés en projets distincts et autonomes.
+Le **dossier solution** contient des implémentations complètes et prêtes à l'emploi de clients qui démontrent tous les concepts abordés dans ce tutoriel. Chaque solution inclut à la fois le code client et serveur organisé en projets distincts et autonomes.
 
 ### 📁 Structure de la solution
 
@@ -848,7 +848,7 @@ Chaque solution spécifique à un langage fournit :
    Tool result: { content: [ { type: 'text', text: '9' } ] }
    ```
 
-Pour une documentation complète et des instructions pas à pas, consultez : **[📖 Documentation de la solution](./solution/README.md)**
+Pour une documentation complète et des instructions étape par étape, consultez : **[📖 Documentation de la solution](./solution/README.md)**
 
 ## 🎯 Exemples complets
 
@@ -883,18 +883,18 @@ Pour une documentation détaillée sur l'exécution et la personnalisation de ce
 
 ### 💡 Solution vs. Exemples complets
 
-| **Dossier Solution** | **Exemples Complets** |
+| **Dossier Solution** | **Exemples complets** |
 |--------------------|--------------------- |
-| Structure de projet complète avec fichiers de build | Implémentations en un seul fichier |
+| Structure de projet complète avec fichiers de build | Implémentations en fichier unique |
 | Prêt à exécuter avec dépendances | Exemples de code ciblés |
 | Configuration proche de la production | Référence éducative |
 | Outils spécifiques à la langue | Comparaison entre langages |
 
-Les deux approches sont précieuses - utilisez le **dossier solution** pour des projets complets et les **exemples complets** pour l'apprentissage et la référence.
+Les deux approches sont utiles - utilisez le **dossier solution** pour des projets complets et les **exemples complets** pour apprendre et vous référer.
 
-## Points clés à retenir
+## Points clés
 
-Les points clés à retenir pour ce chapitre concernant les clients sont les suivants :
+Les points clés de ce chapitre concernant les clients sont les suivants :
 
 - Peuvent être utilisés à la fois pour découvrir et invoquer des fonctionnalités sur le serveur.
 - Peuvent démarrer un serveur tout en se lançant eux-mêmes (comme dans ce chapitre), mais les clients peuvent également se connecter à des serveurs déjà en cours d'exécution.

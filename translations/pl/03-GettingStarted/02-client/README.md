@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ccdccbeb0247199f00a61a2fcd9e6ff8",
-  "translation_date": "2025-08-11T11:41:39+00:00",
+  "original_hash": "94c80ae71fb9971e9b57b51ab0912121",
+  "translation_date": "2025-08-12T19:23:16+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "pl"
 }
 -->
 # Tworzenie klienta
 
-Klienci to niestandardowe aplikacje lub skrypty, które komunikują się bezpośrednio z serwerem MCP w celu żądania zasobów, narzędzi i podpowiedzi. W przeciwieństwie do korzystania z narzędzia inspektora, które oferuje graficzny interfejs do interakcji z serwerem, napisanie własnego klienta umożliwia programistyczne i zautomatyzowane interakcje. Dzięki temu deweloperzy mogą integrować funkcje MCP z własnymi procesami, automatyzować zadania i budować niestandardowe rozwiązania dostosowane do konkretnych potrzeb.
+Klienci to niestandardowe aplikacje lub skrypty, które komunikują się bezpośrednio z serwerem MCP w celu żądania zasobów, narzędzi i podpowiedzi. W przeciwieństwie do korzystania z narzędzia inspektora, które zapewnia graficzny interfejs do interakcji z serwerem, napisanie własnego klienta umożliwia programistyczne i zautomatyzowane interakcje. Dzięki temu deweloperzy mogą integrować możliwości MCP z własnymi procesami, automatyzować zadania i budować niestandardowe rozwiązania dostosowane do konkretnych potrzeb.
 
 ## Przegląd
 
@@ -30,9 +30,9 @@ Aby napisać klienta, musisz wykonać następujące kroki:
 - **Zaimportować odpowiednie biblioteki**. Będziesz używać tej samej biblioteki co wcześniej, ale z innymi konstrukcjami.
 - **Utworzyć instancję klienta**. Obejmuje to stworzenie instancji klienta i połączenie jej z wybraną metodą transportu.
 - **Zdecydować, jakie zasoby wylistować**. Twój serwer MCP oferuje zasoby, narzędzia i podpowiedzi, musisz zdecydować, które z nich wylistować.
-- **Zintegrować klienta z aplikacją hostującą**. Gdy poznasz możliwości serwera, musisz zintegrować je z aplikacją hostującą, aby użytkownik mógł wywoływać odpowiednie funkcje serwera, wpisując podpowiedź lub inne polecenie.
+- **Zintegrować klienta z aplikacją hostującą**. Gdy poznasz możliwości serwera, musisz zintegrować je z aplikacją hostującą, aby w przypadku wpisania przez użytkownika podpowiedzi lub innego polecenia wywoływana była odpowiednia funkcja serwera.
 
-Teraz, gdy rozumiemy ogólny zarys tego, co zamierzamy zrobić, przejdźmy do przykładu.
+Teraz, gdy rozumiemy na wysokim poziomie, co zamierzamy zrobić, przejdźmy do przykładu.
 
 ### Przykładowy klient
 
@@ -154,7 +154,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-rmcp = { version = "0.3.0", features = ["client", "transport-child-process"] }
+rmcp = { version = "0.5.0", features = ["client", "transport-child-process"] }
 serde_json = "1.0.141"
 tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
 ```
@@ -290,7 +290,7 @@ W powyższym kodzie:
 - Zaimportowano potrzebne biblioteki.
 - Utworzono transport stdio i klienta `mcpClient`. Ten ostatni będzie używany do listowania i wywoływania funkcji na serwerze MCP.
 
-Uwaga: w "Arguments" możesz wskazać plik *.csproj* lub plik wykonywalny.
+Uwaga: w sekcji "Arguments" możesz wskazać plik *.csproj* lub plik wykonywalny.
 
 #### Java
 
@@ -419,7 +419,7 @@ W powyższym kodzie:
 - Użyto `ping()`, aby zweryfikować, czy połączenie z serwerem działa.
 - Obiekt `ListToolsResult` zawiera informacje o wszystkich narzędziach, w tym ich nazwach, opisach i schematach wejściowych.
 
-Świetnie, teraz mamy wszystkie funkcje. Pytanie brzmi, kiedy ich używamy? Ten klient jest dość prosty, w tym sensie, że musimy jawnie wywoływać funkcje, kiedy ich potrzebujemy. W następnym rozdziale stworzymy bardziej zaawansowanego klienta, który będzie miał dostęp do własnego dużego modelu językowego (LLM). Na razie jednak zobaczmy, jak możemy wywoływać funkcje na serwerze:
+Świetnie, teraz mamy wszystkie funkcje. Pytanie brzmi, kiedy ich używamy? Ten klient jest dość prosty, w tym sensie, że musimy jawnie wywoływać funkcje, gdy ich potrzebujemy. W następnym rozdziale stworzymy bardziej zaawansowanego klienta, który będzie miał dostęp do własnego dużego modelu językowego (LLM). Na razie jednak zobaczmy, jak możemy wywoływać funkcje na serwerze:
 
 #### Rust
 
@@ -437,7 +437,7 @@ println!("Available tools: {:?}", tools);
 
 ### -4- Wywoływanie funkcji
 
-Aby wywołać funkcje, musimy upewnić się, że podajemy poprawne argumenty, a w niektórych przypadkach nazwę tego, co próbujemy wywołać.
+Aby wywołać funkcje, musimy upewnić się, że określamy poprawne argumenty, a w niektórych przypadkach nazwę tego, co próbujemy wywołać.
 
 #### TypeScript
 
@@ -484,7 +484,7 @@ W powyższym kodzie:
 
     Nasza wartość `uri` `file://example.txt` odpowiada `file://{name}` na serwerze. `example.txt` zostanie przypisane do `name`.
 
-- Wywołujemy narzędzie, podając jego `name` i `arguments` w następujący sposób:
+- Wywołujemy narzędzie, podając jego `name` i `arguments`, jak poniżej:
 
     ```typescript
     const result = await client.callTool({
@@ -513,7 +513,7 @@ W powyższym kodzie:
     );
     ```
 
-    A twój kod klienta wygląda następująco, aby dopasować to, co zadeklarowano na serwerze:
+    W związku z tym kod klienta wygląda następująco, aby dopasować się do tego, co zadeklarowano na serwerze:
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -664,9 +664,9 @@ cargo run
 
 ## Zadanie
 
-W tym zadaniu wykorzystasz zdobytą wiedzę do stworzenia własnego klienta.
+W tym zadaniu wykorzystasz zdobytą wiedzę, aby stworzyć własnego klienta.
 
-Oto serwer, którego możesz użyć i który musisz wywołać za pomocą swojego kodu klienta. Spróbuj dodać więcej funkcji do serwera, aby uczynić go bardziej interesującym.
+Oto serwer, którego możesz użyć i który musisz wywołać za pomocą kodu klienta. Spróbuj dodać więcej funkcji do serwera, aby uczynić go bardziej interesującym.
 
 ### TypeScript
 
@@ -776,7 +776,7 @@ Sprawdź również ten link, aby dowiedzieć się, jak wywoływać [podpowiedzi 
 
 ### Rust
 
-W [poprzedniej sekcji](../../../../03-GettingStarted/01-first-server) nauczyłeś się, jak stworzyć prosty serwer MCP w Rust. Możesz kontynuować pracę nad tym projektem lub sprawdzić ten link, aby zobaczyć więcej przykładów serwerów MCP opartych na Rust: [Przykłady serwerów MCP](https://github.com/modelcontextprotocol/rust-sdk/tree/main/examples/servers)
+W [poprzedniej sekcji](../../../../03-GettingStarted/01-first-server) nauczyłeś się, jak stworzyć prosty serwer MCP w Rust. Możesz kontynuować jego rozwijanie lub sprawdzić ten link, aby zobaczyć więcej przykładów serwerów MCP opartych na Rust: [Przykłady serwerów MCP](https://github.com/modelcontextprotocol/rust-sdk/tree/main/examples/servers)
 
 ## Rozwiązanie
 
@@ -816,12 +816,12 @@ solution/
 
 ### 🚀 Co zawiera każde rozwiązanie
 
-Każde rozwiązanie specyficzne dla danego języka oferuje:
+Każde rozwiązanie specyficzne dla języka zawiera:
 
 - **Kompletną implementację klienta** z wszystkimi funkcjami opisanymi w samouczku.
 - **Działającą strukturę projektu** z odpowiednimi zależnościami i konfiguracją.
 - **Skrypty budowania i uruchamiania** dla łatwej konfiguracji i wykonania.
-- **Szczegółowy README** z instrukcjami specyficznymi dla języka.
+- **Szczegółowy plik README** z instrukcjami specyficznymi dla języka.
 - **Przykłady obsługi błędów** i przetwarzania wyników.
 
 ### 📖 Korzystanie z rozwiązań
@@ -852,49 +852,49 @@ Aby uzyskać pełną dokumentację i instrukcje krok po kroku, zobacz: **[📖 D
 
 ## 🎯 Kompletny przykład
 
-Udostępniliśmy kompletne, działające implementacje klientów dla wszystkich języków programowania omówionych w tym samouczku. Te przykłady demonstrują pełną funkcjonalność opisaną powyżej i mogą być używane jako implementacje referencyjne lub punkty wyjścia dla własnych projektów.
+Udostępniliśmy kompletne, działające implementacje klientów dla wszystkich języków programowania omówionych w tym samouczku. Te przykłady demonstrują pełną funkcjonalność opisaną powyżej i mogą być używane jako implementacje referencyjne lub punkty wyjścia do własnych projektów.
 
 ### Dostępne kompletne przykłady
 
-| Język | Plik | Opis |
-|-------|------|------|
-| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | Kompletny klient Java korzystający z transportu SSE z kompleksową obsługą błędów |
-| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | Kompletny klient C# korzystający z transportu stdio z automatycznym uruchamianiem serwera |
-| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Kompletny klient TypeScript z pełnym wsparciem protokołu MCP |
-| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | Kompletny klient Python korzystający z wzorców async/await |
-| **Rust** | [`client_example_rust.rs`](../../../../03-GettingStarted/02-client/client_example_rust.rs) | Kompletny klient Rust korzystający z Tokio do operacji asynchronicznych |
-Każdy kompletny przykład obejmuje:
+| Język       | Plik                              | Opis                                                                 |
+|-------------|-----------------------------------|----------------------------------------------------------------------|
+| **Java**    | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | Kompletny klient Java korzystający z transportu SSE z pełną obsługą błędów |
+| **C#**      | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | Kompletny klient C# korzystający z transportu stdio z automatycznym uruchamianiem serwera |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Kompletny klient TypeScript z pełnym wsparciem protokołu MCP         |
+| **Python**  | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | Kompletny klient Python korzystający z wzorców async/await           |
+| **Rust**    | [`client_example_rust.rs`](../../../../03-GettingStarted/02-client/client_example_rust.rs)     | Kompletny klient Rust korzystający z Tokio do operacji asynchronicznych |
+Każdy kompletny przykład zawiera:
 
 - ✅ **Nawiązywanie połączenia** i obsługę błędów  
-- ✅ **Odkrywanie serwera** (narzędzia, zasoby, podpowiedzi, jeśli dotyczy)  
+- ✅ **Odkrywanie serwera** (narzędzia, zasoby, podpowiedzi, gdzie to ma zastosowanie)  
 - ✅ **Operacje kalkulatora** (dodawanie, odejmowanie, mnożenie, dzielenie, pomoc)  
-- ✅ **Przetwarzanie wyników** i formatowanie wyjścia  
+- ✅ **Przetwarzanie wyników** i sformatowane wyjście  
 - ✅ **Kompleksową obsługę błędów**  
 - ✅ **Czysty, udokumentowany kod** z komentarzami krok po kroku  
 
-### Jak rozpocząć pracę z kompletnymi przykładami
+### Rozpoczęcie pracy z kompletnymi przykładami
 
 1. **Wybierz preferowany język** z tabeli powyżej  
 2. **Przejrzyj plik z kompletnym przykładem**, aby zrozumieć pełną implementację  
 3. **Uruchom przykład**, postępując zgodnie z instrukcjami w [`complete_examples.md`](./complete_examples.md)  
-4. **Zmodyfikuj i rozbuduj** przykład, aby dopasować go do swojego konkretnego przypadku użycia  
+4. **Zmodyfikuj i rozbuduj** przykład dla swojego konkretnego przypadku użycia  
 
 Szczegółową dokumentację dotyczącą uruchamiania i dostosowywania tych przykładów znajdziesz tutaj: **[📖 Dokumentacja Kompletnych Przykładów](./complete_examples.md)**  
 
 ### 💡 Rozwiązanie vs. Kompletny Przykład
 
 | **Folder Rozwiązania** | **Kompletny Przykład** |
-|-------------------------|-----------------------|
-| Pełna struktura projektu z plikami budowania | Implementacje w jednym pliku |
+|------------------------|-----------------------|
+| Pełna struktura projektu z plikami build | Implementacje w jednym pliku |
 | Gotowe do uruchomienia z zależnościami | Skoncentrowane przykłady kodu |
 | Konfiguracja przypominająca produkcyjną | Edukacyjny punkt odniesienia |
 | Narzędzia specyficzne dla języka | Porównanie między językami |
 
-Oba podejścia są wartościowe - użyj **folderu rozwiązania** dla kompletnych projektów, a **kompletnych przykładów** do nauki i odniesienia.
+Oba podejścia są wartościowe - używaj **folderu rozwiązania** dla kompletnych projektów, a **kompletnych przykładów** do nauki i odniesienia.
 
 ## Kluczowe Wnioski
 
-Najważniejsze wnioski z tego rozdziału dotyczące klientów to:
+Kluczowe wnioski z tego rozdziału dotyczące klientów to:
 
 - Mogą być używane zarówno do odkrywania, jak i wywoływania funkcji na serwerze.  
 - Mogą uruchamiać serwer podczas swojego startu (jak w tym rozdziale), ale klienci mogą również łączyć się z już działającymi serwerami.  
@@ -915,7 +915,7 @@ Najważniejsze wnioski z tego rozdziału dotyczące klientów to:
 
 ## Co Dalej
 
-- Następny krok: [Tworzenie klienta z użyciem LLM](../03-llm-client/README.md)  
+- Następny krok: [Tworzenie klienta z LLM](../03-llm-client/README.md)  
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego rodzimym języku powinien być uznawany za autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
