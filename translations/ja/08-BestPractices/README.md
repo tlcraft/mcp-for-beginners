@@ -2228,7 +2228,7 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 3. 自身の組織のAIイニシアチブにMCPの原則を適用する  
 4. 業界向けに特化したMCP実装を探求する  
 5. マルチモーダル統合やエンタープライズアプリケーション統合など、特定のMCPトピックに関する高度なコースを受講する  
-6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) を通じて学んだ原則を使い、自分自身のMCPツールやワークフローを構築してみる  
+6. [ハンズオンラボ](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) を通じて学んだ原則を使い、自分自身のMCPツールやワークフローを構築してみる  
 
 次: ベストプラクティス [ケーススタディ](../09-CaseStudy/README.md)  
 
