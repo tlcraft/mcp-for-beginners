@@ -1,30 +1,30 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f644c579ec7e70669ea06e29b475c728",
-  "translation_date": "2025-08-12T21:08:42+00:00",
+  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
+  "translation_date": "2025-08-12T21:29:20+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "es"
 }
 -->
 # Comenzando con MCP
 
-¡Bienvenido a tus primeros pasos con el Protocolo de Contexto de Modelos (MCP)! Ya sea que seas nuevo en MCP o busques profundizar tu comprensión, esta guía te llevará a través del proceso esencial de configuración y desarrollo. Descubrirás cómo MCP permite una integración fluida entre modelos de IA y aplicaciones, y aprenderás a preparar rápidamente tu entorno para construir y probar soluciones impulsadas por MCP.
+¡Bienvenido a tus primeros pasos con el Protocolo de Contexto de Modelos (MCP)! Ya sea que seas nuevo en MCP o busques profundizar tu comprensión, esta guía te llevará a través del proceso esencial de configuración y desarrollo. Descubrirás cómo MCP permite una integración fluida entre modelos de IA y aplicaciones, y aprenderás cómo preparar rápidamente tu entorno para construir y probar soluciones impulsadas por MCP.
 
-> Resumen: Si desarrollas aplicaciones de IA, sabes que puedes agregar herramientas y otros recursos a tu LLM (modelo de lenguaje grande) para hacerlo más inteligente. Sin embargo, si colocas esas herramientas y recursos en un servidor, las capacidades de la aplicación y el servidor pueden ser utilizadas por cualquier cliente con o sin un LLM.
+> Resumen rápido: Si desarrollas aplicaciones de IA, sabes que puedes agregar herramientas y otros recursos a tu LLM (modelo de lenguaje grande) para hacerlo más inteligente. Sin embargo, si colocas esas herramientas y recursos en un servidor, las capacidades de la aplicación y el servidor pueden ser utilizadas por cualquier cliente con o sin un LLM.
 
 ## Descripción general
 
 Esta lección proporciona orientación práctica sobre cómo configurar entornos MCP y construir tus primeras aplicaciones MCP. Aprenderás a configurar las herramientas y marcos necesarios, construir servidores MCP básicos, crear aplicaciones anfitrionas y probar tus implementaciones.
 
-El Protocolo de Contexto de Modelos (MCP) es un protocolo abierto que estandariza cómo las aplicaciones proporcionan contexto a los LLM. Piensa en MCP como un puerto USB-C para aplicaciones de IA: proporciona una forma estandarizada de conectar modelos de IA a diferentes fuentes de datos y herramientas.
+El Protocolo de Contexto de Modelos (MCP) es un protocolo abierto que estandariza cómo las aplicaciones proporcionan contexto a los LLMs. Piensa en MCP como un puerto USB-C para aplicaciones de IA: proporciona una forma estandarizada de conectar modelos de IA a diferentes fuentes de datos y herramientas.
 
 ## Objetivos de aprendizaje
 
-Al final de esta lección, serás capaz de:
+Al final de esta lección, podrás:
 
 - Configurar entornos de desarrollo para MCP en C#, Java, Python, TypeScript y Rust
-- Construir y desplegar servidores MCP básicos con características personalizadas (recursos, prompts y herramientas)
+- Construir y desplegar servidores MCP básicos con características personalizadas (recursos, indicaciones y herramientas)
 - Crear aplicaciones anfitrionas que se conecten a servidores MCP
 - Probar y depurar implementaciones de MCP
 
@@ -34,7 +34,7 @@ Antes de comenzar a trabajar con MCP, es importante preparar tu entorno de desar
 
 ### Requisitos previos
 
-Antes de sumergirte en el desarrollo con MCP, asegúrate de tener:
+Antes de sumergirte en el desarrollo de MCP, asegúrate de tener:
 
 - **Entorno de desarrollo**: Para el lenguaje que elijas (C#, Java, Python, TypeScript o Rust)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm o cualquier editor de código moderno
@@ -46,40 +46,78 @@ Antes de sumergirte en el desarrollo con MCP, asegúrate de tener:
 Un servidor MCP típicamente incluye:
 
 - **Configuración del servidor**: Configuración de puerto, autenticación y otros ajustes
-- **Recursos**: Datos y contexto disponibles para los LLM
+- **Recursos**: Datos y contexto disponibles para los LLMs
 - **Herramientas**: Funcionalidades que los modelos pueden invocar
-- **Prompts**: Plantillas para generar o estructurar texto
+- **Indicaciones**: Plantillas para generar o estructurar texto
 
-Aquí tienes un ejemplo simplificado en TypeScript:
+Aquí hay un ejemplo simplificado en TypeScript:
 
 ```typescript
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod";
 
-// Create a new MCP server
-const server = new Server({
-  port: 3000,
-  name: "Example MCP Server",
+// Create an MCP server
+const server = new McpServer({
+  name: "Demo",
   version: "1.0.0"
 });
 
-// Register a tool
-server.registerTool({
-  name: "calculator",
-  description: "Performs basic calculations",
-  parameters: {
-    expression: {
-      type: "string",
-      description: "The math expression to evaluate"
-    }
-  },
-  handler: async (params) => {
-    const result = eval(params.expression);
-    return { result };
-  }
-});
+// Add an addition tool
+server.tool("add",
+  { a: z.number(), b: z.number() },
+  async ({ a, b }) => ({
+    content: [{ type: "text", text: String(a + b) }]
+  })
+);
 
-// Start the server
-server.start();
+// Add a dynamic greeting resource
+server.resource(
+  "file",
+  // The 'list' parameter controls how the resource lists available files. Setting it to undefined disables listing for this resource.
+  new ResourceTemplate("file://{path}", { list: undefined }),
+  async (uri, { path }) => ({
+    contents: [{
+      uri: uri.href,
+      text: `File, ${path}!`
+    }]
+// Add a file resource that reads the file contents
+server.resource(
+  "file",
+  new ResourceTemplate("file://{path}", { list: undefined }),
+  async (uri, { path }) => {
+    let text;
+    try {
+      text = await fs.readFile(path, "utf8");
+    } catch (err) {
+      text = `Error reading file: ${err.message}`;
+    }
+    return {
+      contents: [{
+        uri: uri.href,
+        text
+      }]
+    };
+  }
+);
+
+server.prompt(
+  "review-code",
+  { code: z.string() },
+  ({ code }) => ({
+    messages: [{
+      role: "user",
+      content: {
+        type: "text",
+        text: `Please review this code:\n\n${code}`
+      }
+    }]
+  })
+);
+
+// Start receiving messages on stdin and sending messages on stdout
+const transport = new StdioServerTransport();
+await server.connect(transport);
 ```
 
 En el código anterior:
@@ -91,18 +129,18 @@ En el código anterior:
 
 ## Pruebas y depuración
 
-Antes de comenzar a probar tu servidor MCP, es importante comprender las herramientas disponibles y las mejores prácticas para la depuración. Las pruebas efectivas aseguran que tu servidor se comporte como se espera y te ayudan a identificar y resolver problemas rápidamente. La siguiente sección describe enfoques recomendados para validar tu implementación de MCP.
+Antes de comenzar a probar tu servidor MCP, es importante comprender las herramientas disponibles y las mejores prácticas para la depuración. Las pruebas efectivas garantizan que tu servidor se comporte como se espera y te ayudan a identificar y resolver problemas rápidamente. La siguiente sección describe enfoques recomendados para validar tu implementación de MCP.
 
 MCP proporciona herramientas para ayudarte a probar y depurar tus servidores:
 
-- **Herramienta Inspector**, una interfaz gráfica que te permite conectarte a tu servidor y probar tus herramientas, prompts y recursos.
+- **Herramienta Inspector**, una interfaz gráfica que te permite conectarte a tu servidor y probar tus herramientas, indicaciones y recursos.
 - **curl**, también puedes conectarte a tu servidor usando una herramienta de línea de comandos como curl u otros clientes que puedan crear y ejecutar comandos HTTP.
 
-### Usando MCP Inspector
+### Uso del Inspector MCP
 
-El [MCP Inspector](https://github.com/modelcontextprotocol/inspector) es una herramienta visual de pruebas que te ayuda a:
+El [Inspector MCP](https://github.com/modelcontextprotocol/inspector) es una herramienta de prueba visual que te ayuda a:
 
-1. **Descubrir capacidades del servidor**: Detectar automáticamente recursos, herramientas y prompts disponibles
+1. **Descubrir capacidades del servidor**: Detectar automáticamente recursos, herramientas e indicaciones disponibles
 2. **Probar ejecución de herramientas**: Probar diferentes parámetros y ver respuestas en tiempo real
 3. **Ver metadatos del servidor**: Examinar información del servidor, esquemas y configuraciones
 
@@ -111,11 +149,11 @@ El [MCP Inspector](https://github.com/modelcontextprotocol/inspector) es una her
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Cuando ejecutes los comandos anteriores, el MCP Inspector lanzará una interfaz web local en tu navegador. Deberías ver un panel que muestra tus servidores MCP registrados, sus herramientas, recursos y prompts disponibles. La interfaz te permite probar herramientas de manera interactiva, inspeccionar metadatos del servidor y ver respuestas en tiempo real, facilitando la validación y depuración de tus implementaciones de servidor MCP.
+Cuando ejecutes los comandos anteriores, el Inspector MCP lanzará una interfaz web local en tu navegador. Puedes esperar ver un panel que muestra tus servidores MCP registrados, sus herramientas, recursos e indicaciones disponibles. La interfaz te permite probar interactivamente la ejecución de herramientas, inspeccionar metadatos del servidor y ver respuestas en tiempo real, facilitando la validación y depuración de tus implementaciones de servidor MCP.
 
-Aquí tienes una captura de pantalla de cómo podría verse:
+Aquí hay una captura de pantalla de cómo podría verse:
 
-![Conexión al servidor MCP Inspector](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.es.png)
+![Conexión del servidor Inspector MCP](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.es.png)
 
 ## Problemas comunes de configuración y soluciones
 
@@ -123,7 +161,7 @@ Aquí tienes una captura de pantalla de cómo podría verse:
 |----------|------------------|
 | Conexión rechazada | Verifica si el servidor está en ejecución y el puerto es correcto |
 | Errores en la ejecución de herramientas | Revisa la validación de parámetros y el manejo de errores |
-| Fallos de autenticación | Verifica las claves API y los permisos |
+| Fallos de autenticación | Verifica las claves API y permisos |
 | Errores de validación de esquemas | Asegúrate de que los parámetros coincidan con el esquema definido |
 | El servidor no inicia | Revisa conflictos de puertos o dependencias faltantes |
 | Errores de CORS | Configura los encabezados CORS adecuados para solicitudes de origen cruzado |
@@ -145,25 +183,25 @@ npm run start
 
 ## Construyendo tu primer servidor MCP
 
-Hemos cubierto los [Conceptos básicos](/01-CoreConcepts/README.md) en una lección anterior, ahora es momento de poner ese conocimiento en práctica.
+Hemos cubierto [Conceptos básicos](/01-CoreConcepts/README.md) en una lección anterior, ahora es momento de poner ese conocimiento en práctica.
 
-### Qué puede hacer un servidor
+### Lo que puede hacer un servidor
 
-Antes de comenzar a escribir código, recordemos qué puede hacer un servidor:
+Antes de comenzar a escribir código, recordemos lo que puede hacer un servidor:
 
 Un servidor MCP puede, por ejemplo:
 
-- Acceder a archivos y bases de datos locales
+- Acceder a archivos locales y bases de datos
 - Conectarse a APIs remotas
 - Realizar cálculos
 - Integrarse con otras herramientas y servicios
 - Proporcionar una interfaz de usuario para la interacción
 
-Genial, ahora que sabemos lo que podemos hacer, comencemos a programar.
+Genial, ahora que sabemos lo que podemos hacer, comencemos a codificar.
 
 ## Ejercicio: Creando un servidor
 
-Para crear un servidor, necesitas seguir estos pasos:
+Para crear un servidor, debes seguir estos pasos:
 
 - Instalar el SDK de MCP.
 - Crear un proyecto y configurar la estructura del proyecto.
@@ -803,7 +841,7 @@ use rmcp::{
 use std::error::Error;
 ```
 
-El servidor de calculadora será simple y podrá sumar dos números. Crea una estructura para representar la solicitud de la calculadora.
+El servidor de calculadora será simple y podrá sumar dos números. Creemos una estructura para representar la solicitud de la calculadora.
 
 ```rust
 #[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
@@ -813,7 +851,7 @@ pub struct CalculatorRequest {
 }
 ```
 
-A continuación, crea una estructura para representar el servidor de la calculadora. Esta estructura contendrá el enrutador de herramientas, que se utiliza para registrar herramientas.
+A continuación, crea una estructura para representar el servidor de calculadora. Esta estructura contendrá el enrutador de herramientas, que se utiliza para registrar herramientas.
 
 ```rust
 #[derive(Debug, Clone)]
@@ -822,7 +860,7 @@ pub struct Calculator {
 }
 ```
 
-Ahora, podemos implementar la estructura `Calculator` para crear una nueva instancia del servidor e implementar el manejador del servidor para proporcionar información del servidor.
+Ahora podemos implementar la estructura `Calculator` para crear una nueva instancia del servidor e implementar el manejador del servidor para proporcionar información sobre el servidor.
 
 ```rust
 #[tool_router]
@@ -942,7 +980,7 @@ public static class CalculatorTool
 
 #### Java
 
-Las herramientas ya se han creado en el paso anterior.
+Las herramientas ya han sido creadas en el paso anterior.
 
 #### Rust
 
@@ -960,7 +998,7 @@ async fn add(
 
 ### -6- Código final
 
-Agreguemos el último código necesario para que el servidor pueda iniciarse:
+Agreguemos el último código necesario para que el servidor pueda iniciar:
 
 #### TypeScript
 
@@ -1176,7 +1214,7 @@ npm run build
 mcp run server.py
 ```
 
-> Para usar MCP Inspector, utiliza `mcp dev server.py`, que lanza automáticamente el Inspector y proporciona el token de sesión proxy requerido. Si usas `mcp run server.py`, necesitarás iniciar manualmente el Inspector y configurar la conexión.
+> Para usar el Inspector MCP, utiliza `mcp dev server.py`, que lanza automáticamente el Inspector y proporciona el token de sesión proxy requerido. Si usas `mcp run server.py`, necesitarás iniciar manualmente el Inspector y configurar la conexión.
 
 #### .NET
 
@@ -1208,7 +1246,7 @@ cargo run
 El inspector es una gran herramienta que puede iniciar tu servidor y te permite interactuar con él para probar que funciona. Vamos a iniciarlo:
 
 > [!NOTE]
-> Puede verse diferente en el campo "command" ya que contiene el comando para ejecutar un servidor con tu runtime específico.
+> Puede verse diferente en el campo "command" ya que contiene el comando para ejecutar un servidor con tu entorno específico.
 
 #### TypeScript
 
@@ -1216,15 +1254,15 @@ El inspector es una gran herramienta que puede iniciar tu servidor y te permite 
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-O agrégalo a tu *package.json* de esta manera: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` y luego ejecuta `npm run inspector`.
+O agrégalo a tu *package.json* así: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` y luego ejecuta `npm run inspector`.
 
-Python envuelve una herramienta de Node.js llamada inspector. Es posible llamar a dicha herramienta de esta manera:
+Python envuelve una herramienta Node.js llamada inspector. Es posible llamar a dicha herramienta así:
 
 ```sh
 mcp dev server.py
 ```
 
-Sin embargo, no implementa todos los métodos disponibles en la herramienta, por lo que se recomienda ejecutar directamente la herramienta de Node.js como se muestra a continuación:
+Sin embargo, no implementa todos los métodos disponibles en la herramienta, por lo que se recomienda ejecutar directamente la herramienta Node.js como se muestra a continuación:
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
@@ -1265,7 +1303,7 @@ Deberías ver la siguiente interfaz de usuario:
 
 ![Conectar](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.es.png)
 
-1. Conéctate al servidor seleccionando el botón "Conectar".  
+1. Conéctate al servidor seleccionando el botón Conectar.  
    Una vez conectado al servidor, deberías ver lo siguiente:
 
    ![Conectado](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.es.png)
@@ -1330,7 +1368,7 @@ Crea un servidor MCP simple con una herramienta de tu elección:
 
 - [Construir agentes usando Model Context Protocol en Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
 - [MCP remoto con Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [Agente MCP de OpenAI en .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
 ## ¿Qué sigue?
 
