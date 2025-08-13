@@ -1398,7 +1398,7 @@ process_llm_response(
 
 ## 解答
 
-[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
+[解答](/03-GettingStarted/03-llm-client/solution/README.md)
 
 ## 重要なポイント
 
