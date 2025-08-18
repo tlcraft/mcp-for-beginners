@@ -1,41 +1,41 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-07-13T20:15:11+00:00",
+  "original_hash": "69ba3bd502bd743233137bac5539c08b",
+  "translation_date": "2025-08-18T18:01:08+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "tr"
 }
 -->
 # Bu örneği çalıştırma
 
-`uv` kurmanız önerilir ancak zorunlu değildir, detaylar için [talimatlara](https://docs.astral.sh/uv/#highlights) bakabilirsiniz.
+`uv` yüklemeniz önerilir ancak zorunlu değildir, [talimatlara](https://docs.astral.sh/uv/#highlights) bakabilirsiniz.
 
-## -0- Sanal ortam oluşturma
+## -0- Sanal bir ortam oluşturun
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Sanal ortamı aktifleştirme
+## -1- Sanal ortamı etkinleştirin
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- Bağımlılıkları yükleme
+## -2- Bağımlılıkları yükleyin
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Örneği çalıştırma
+## -3- Örneği çalıştırın
 
 ```bash
-mcp run server.py
+uvicorn server:app
 ```
 
-## -4- Örneği test etme
+## -4- Örneği test edin
 
 Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki komutu çalıştırın:
 
@@ -43,16 +43,16 @@ Sunucu bir terminalde çalışırken, başka bir terminal açın ve aşağıdaki
 mcp dev server.py
 ```
 
-Bu, örneği test etmenize olanak sağlayan görsel arayüze sahip bir web sunucusunu başlatmalıdır.
+Bu, örneği test etmenize olanak tanıyan görsel bir arayüze sahip bir web sunucusunu başlatmalıdır.
 
 Sunucu bağlandıktan sonra:
 
-- araçları listelemeyi deneyin ve `add` komutunu, argüman olarak 2 ve 4 ile çalıştırın, sonuçta 6 görmelisiniz.
-- resources ve resource template kısmına gidin, get_greeting fonksiyonunu çağırın, bir isim yazın ve verdiğiniz isimle bir selamlama görmelisiniz.
+- Araçları listelemeyi deneyin ve `add` çalıştırın, argümanlar olarak 2 ve 4 girin, sonuçta 6'yı görmelisiniz.
+- Kaynaklara ve kaynak şablonuna gidin, get_greeting'i çağırın, bir isim yazın ve sağladığınız isimle bir selamlama görmelisiniz.
 
 ### CLI modunda test etme
 
-Çalıştırdığınız inspector aslında bir Node.js uygulamasıdır ve `mcp dev` bunun etrafında bir sarmalayıcıdır.
+Çalıştırdığınız denetleyici aslında bir Node.js uygulamasıdır ve `mcp dev` bunun etrafında bir sarmalayıcıdır.
 
 Aşağıdaki komutu çalıştırarak doğrudan CLI modunda başlatabilirsiniz:
 
@@ -60,7 +60,7 @@ Aşağıdaki komutu çalıştırarak doğrudan CLI modunda başlatabilirsiniz:
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Bu, sunucuda mevcut olan tüm araçları listeleyecektir. Aşağıdaki çıktıyı görmelisiniz:
+Bu, sunucuda mevcut olan tüm araçları listeleyecektir. Şu çıktıyı görmelisiniz:
 
 ```text
 {
@@ -97,7 +97,7 @@ Bir aracı çağırmak için şunu yazın:
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Aşağıdaki çıktıyı görmelisiniz:
+Şu çıktıyı görmelisiniz:
 
 ```text
 {
@@ -111,9 +111,9 @@ Aşağıdaki çıktıyı görmelisiniz:
 }
 ```
 
-> ![!TIP]
-> Inspector'ı tarayıcıda çalıştırmaktansa CLI modunda çalıştırmak genellikle çok daha hızlıdır.
-> Inspector hakkında daha fazla bilgi için [buraya](https://github.com/modelcontextprotocol/inspector) bakabilirsiniz.
+> [!TIP]
+> Denetleyiciyi tarayıcıda çalıştırmaktansa CLI modunda çalıştırmak genellikle çok daha hızlıdır.
+> Denetleyici hakkında daha fazla bilgi edinin [buradan](https://github.com/modelcontextprotocol/inspector).
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumlama durumunda sorumluluk kabul edilmez.
