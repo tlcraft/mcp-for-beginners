@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-13T18:01:48+00:00",
+  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
+  "translation_date": "2025-08-18T15:09:29+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "cs"
 }
 -->
 # Spuštění tohoto příkladu
 
-Doporučujeme nainstalovat `uv`, ale není to nutné, viz [návod](https://docs.astral.sh/uv/#highlights)
+Doporučuje se nainstalovat `uv`, ale není to nutné, viz [instrukce](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Vytvoření virtuálního prostředí
 
@@ -20,7 +20,7 @@ python -m venv venv
 ## -1- Aktivace virtuálního prostředí
 
 ```bash
-venv\Scrips\activate
+venv\Scripts\activate
 ```
 
 ## -2- Instalace závislostí
@@ -37,25 +37,25 @@ mcp run server.py
 
 ## -4- Testování příkladu
 
-Se spuštěným serverem v jednom terminálu otevřete další terminál a spusťte následující příkaz:
+S běžícím serverem v jednom terminálu otevřete další terminál a spusťte následující příkaz:
 
 ```bash
 mcp dev server.py
 ```
 
-Tím by se měl spustit webový server s vizuálním rozhraním, které vám umožní příklad otestovat.
+Tím by se měl spustit webový server s vizuálním rozhraním, které vám umožní testovat příklad.
 
 Jakmile je server připojen:
 
-- zkuste vypsat nástroje a spustit `add` s argumenty 2 a 4, v výsledku byste měli vidět 6.
+- zkuste vypsat nástroje a spustit `add` s argumenty 2 a 4, měli byste vidět výsledek 6.
 
-- přejděte na resources a resource template a zavolejte get_greeting, zadejte jméno a měli byste vidět pozdrav s vámi zadaným jménem.
+- přejděte na zdroje a šablonu zdrojů, zavolejte `get_greeting`, zadejte jméno a měli byste vidět pozdrav s uvedeným jménem.
 
-### Testování v CLI režimu
+### Testování v režimu CLI
 
-Inspector, který jste spustili, je vlastně Node.js aplikace a `mcp dev` je její obal.
+Inspektor, který jste spustili, je ve skutečnosti aplikace Node.js a `mcp dev` je obal kolem ní.
 
-Můžete ji spustit přímo v CLI režimu pomocí následujícího příkazu:
+Můžete ji spustit přímo v režimu CLI pomocí následujícího příkazu:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
@@ -92,7 +92,7 @@ Tím se vypíší všechny nástroje dostupné na serveru. Měli byste vidět n�
 }
 ```
 
-Pro vyvolání nástroje napište:
+Pro spuštění nástroje zadejte:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -112,9 +112,9 @@ Měli byste vidět následující výstup:
 }
 ```
 
-> ![!TIP]
-> Obvykle je mnohem rychlejší spustit inspector v CLI režimu než v prohlížeči.
-> Více o inspectoru si přečtěte [zde](https://github.com/modelcontextprotocol/inspector).
+> [!TIP]  
+> Obvykle je mnohem rychlejší spustit inspektor v režimu CLI než v prohlížeči.  
+> Více o inspektoru si můžete přečíst [zde](https://github.com/modelcontextprotocol/inspector).
 
-**Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+**Prohlášení:**  
+Tento dokument byl přeložen pomocí služby pro automatizovaný překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

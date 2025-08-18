@@ -1,94 +1,99 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
-  "translation_date": "2025-07-17T12:14:52+00:00",
+  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
+  "translation_date": "2025-08-18T18:02:29+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "sl"
 }
 -->
 # Skupnost in prispevki
 
+[![Kako prispevati k MCP: orodja, dokumentacija, koda in več](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.sl.png)](https://youtu.be/v1pvCYAWpRE)
+
+_(Kliknite na zgornjo sliko za ogled videa te lekcije)_
+
 ## Pregled
 
-Ta lekcija se osredotoča na to, kako sodelovati v MCP skupnosti, prispevati k MCP ekosistemu in slediti najboljšim praksam za skupinski razvoj. Razumevanje, kako sodelovati v odprtokodnih MCP projektih, je ključno za tiste, ki želijo soustvarjati prihodnost te tehnologije.
+Ta lekcija se osredotoča na to, kako sodelovati v MCP skupnosti, prispevati k MCP ekosistemu in slediti najboljšim praksam za sodelovalni razvoj. Razumevanje, kako sodelovati v odprtokodnih MCP projektih, je ključno za tiste, ki želijo oblikovati prihodnost te tehnologije.
 
 ## Cilji učenja
 
-Do konca te lekcije boste znali:
-- Razumeti strukturo MCP skupnosti in ekosistema
-- Učinkovito sodelovati v MCP forumih in razpravah
-- Prispevati v odprtokodne MCP repozitorije
-- Ustvarjati in deliti prilagojena MCP orodja in strežnike
-- Slediti najboljšim praksam za razvoj in sodelovanje pri MCP
-- Odkriti skupnostne vire in ogrodja za razvoj MCP
+Na koncu te lekcije boste lahko:
+
+- Razumeli strukturo MCP skupnosti in ekosistema
+- Učinkovito sodelovali v MCP forumih in razpravah
+- Prispevali k odprtokodnim MCP repozitorijem
+- Ustvarjali in delili prilagojena MCP orodja in strežnike
+- Sledili najboljšim praksam za MCP razvoj in sodelovanje
+- Odkrijte vire in okvirje skupnosti za MCP razvoj
 
 ## MCP ekosistem skupnosti
 
-MCP ekosistem sestavljajo različni deli in udeleženci, ki skupaj napredujejo protokol.
+MCP ekosistem sestavljajo različne komponente in udeleženci, ki skupaj delujejo za napredek protokola.
 
-### Ključni deli skupnosti
+### Ključne komponente skupnosti
 
-1. **Vzdrževalci jedrnega protokola**: Uradna [Model Context Protocol GitHub organizacija](https://github.com/modelcontextprotocol) vzdržuje osnovne MCP specifikacije in referenčne implementacije  
-2. **Razvijalci orodij**: Posamezniki in ekipe, ki ustvarjajo MCP orodja in strežnike  
-3. **Ponudniki integracij**: Podjetja, ki MCP vključujejo v svoje izdelke in storitve  
-4. **Končni uporabniki**: Razvijalci in organizacije, ki uporabljajo MCP v svojih aplikacijah  
-5. **Prispevkarji**: Člani skupnosti, ki prispevajo kodo, dokumentacijo ali druge vire  
+1. **Vzdrževalci osnovnega protokola**: Uradna [Model Context Protocol GitHub organizacija](https://github.com/modelcontextprotocol) vzdržuje osnovne MCP specifikacije in referenčne implementacije.
+2. **Razvijalci orodij**: Posamezniki in ekipe, ki ustvarjajo MCP orodja in strežnike.
+3. **Ponudniki integracij**: Podjetja, ki integrirajo MCP v svoje izdelke in storitve.
+4. **Končni uporabniki**: Razvijalci in organizacije, ki uporabljajo MCP v svojih aplikacijah.
+5. **Prispevalci**: Člani skupnosti, ki prispevajo kodo, dokumentacijo ali druge vire.
 
 ### Viri skupnosti
 
 #### Uradni kanali
 
-- [MCP GitHub organizacija](https://github.com/modelcontextprotocol)  
-- [MCP dokumentacija](https://modelcontextprotocol.io/)  
-- [MCP specifikacija](https://modelcontextprotocol.io/docs/specification)  
-- [GitHub razprave](https://github.com/orgs/modelcontextprotocol/discussions)  
-- [Repozitorij primerov in strežnikov MCP](https://github.com/modelcontextprotocol/servers)  
+- [MCP GitHub organizacija](https://github.com/modelcontextprotocol)
+- [MCP dokumentacija](https://modelcontextprotocol.io/)
+- [MCP specifikacija](https://modelcontextprotocol.io/docs/specification)
+- [GitHub razprave](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP primeri in repozitorij strežnikov](https://github.com/modelcontextprotocol/servers)
 
 #### Viri, ki jih vodi skupnost
 
-- [MCP klienti](https://modelcontextprotocol.io/clients) - seznam klientov, ki podpirajo MCP integracije  
-- [Skupnostni MCP strežniki](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - naraščajoči seznam MCP strežnikov, ki jih razvija skupnost  
-- [Awesome MCP strežniki](https://github.com/wong2/awesome-mcp-servers) - skrbno izbran seznam MCP strežnikov  
-- [PulseMCP](https://www.pulsemcp.com/) - skupnostni hub in bilten za odkrivanje MCP virov  
-- [Discord strežnik](https://discord.gg/jHEGxQu2a5) - povezovanje z MCP razvijalci  
-- SDK implementacije za različne jezike  
-- Blogi in vodiči  
+- [MCP odjemalci](https://modelcontextprotocol.io/clients) - Seznam odjemalcev, ki podpirajo MCP integracije.
+- [Skupnostni MCP strežniki](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Rastoči seznam strežnikov, ki jih je razvila skupnost.
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Kuriran seznam MCP strežnikov.
+- [PulseMCP](https://www.pulsemcp.com/) - Središče skupnosti in glasilo za odkrivanje MCP virov.
+- [Discord strežnik](https://discord.gg/jHEGxQu2a5) - Povežite se z MCP razvijalci.
+- Jezikovno specifične SDK implementacije.
+- Blog objave in vadnice.
 
 ## Prispevanje k MCP
 
 ### Vrste prispevkov
 
-MCP ekosistem sprejema različne vrste prispevkov:
+MCP ekosistem pozdravlja različne vrste prispevkov:
 
-1. **Prispevki kode**:  
-   - Izboljšave jedrnega protokola  
-   - Popravki napak  
-   - Implementacije orodij in strežnikov  
-   - Knjižnice za klient/strežnik v različnih jezikih  
+1. **Prispevki kode**:
+   - Izboljšave osnovnega protokola
+   - Popravki napak
+   - Implementacije orodij in strežnikov
+   - Knjižnice odjemalcev/strežnikov v različnih jezikih
 
-2. **Dokumentacija**:  
-   - Izboljševanje obstoječe dokumentacije  
-   - Ustvarjanje vodičev in navodil  
-   - Prevodi dokumentacije  
-   - Ustvarjanje primerov in vzorčnih aplikacij  
+2. **Dokumentacija**:
+   - Izboljšanje obstoječe dokumentacije
+   - Ustvarjanje vadnic in vodičev
+   - Prevajanje dokumentacije
+   - Ustvarjanje primerov in vzorčnih aplikacij
 
-3. **Podpora skupnosti**:  
-   - Odgovarjanje na vprašanja na forumih in v razpravah  
-   - Testiranje in poročanje o težavah  
-   - Organizacija skupnostnih dogodkov  
-   - Mentorstvo novim prispevkarjem  
+3. **Podpora skupnosti**:
+   - Odgovarjanje na vprašanja na forumih in razpravah
+   - Testiranje in poročanje o težavah
+   - Organizacija dogodkov skupnosti
+   - Mentorstvo novih prispevalcev
 
-### Postopek prispevanja: jedrni protokol
+### Postopek prispevanja: Osnovni protokol
 
-Za prispevanje k jedrnemu MCP protokolu ali uradnim implementacijam sledite načelom iz [uradnih smernic za prispevanje](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+Za prispevanje k osnovnemu MCP protokolu ali uradnim implementacijam sledite tem načelom iz [uradnih smernic za prispevanje](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-1. **Preprostost in minimalizem**: MCP specifikacija postavlja visoke zahteve za dodajanje novih konceptov. Lažje je nekaj dodati kot odstraniti.  
-2. **Konkretni pristop**: Spremembe specifikacije naj temeljijo na konkretnih implementacijskih izzivih, ne na špekulativnih idejah.  
-3. **Faze predloga**:  
-   - Določitev: Raziskovanje problema, preverjanje, ali imajo drugi uporabniki MCP podoben izziv  
-   - Prototip: Izdelava primerne rešitve in prikaz njene praktične uporabe  
-   - Pisanje: Na podlagi prototipa napisati predlog specifikacije  
+1. **Preprostost in minimalizem**: MCP specifikacija ohranja visoke standarde za dodajanje novih konceptov. Lažje je nekaj dodati v specifikacijo kot to odstraniti.
+2. **Konkretni pristop**: Spremembe specifikacije naj temeljijo na specifičnih izzivih implementacije, ne na špekulativnih idejah.
+3. **Faze predloga**:
+   - Definiraj: Razišči problematično področje, potrdi, da se drugi MCP uporabniki soočajo s podobno težavo.
+   - Prototip: Zgradi primer rešitve in pokaži njeno praktično uporabo.
+   - Napiši: Na podlagi prototipa napiši predlog specifikacije.
 
 ### Nastavitev razvojnega okolja
 
@@ -112,7 +117,7 @@ npm run format
 npm run serve:docs
 ```
 
-### Primer: prispevanje popravka napake
+### Primer: Prispevanje popravka napake
 
 ```javascript
 // Original code with bug in the typescript-sdk
@@ -144,7 +149,7 @@ export function validateResource(resource: unknown): resource is MCPResource {
 }
 ```
 
-### Primer: prispevanje novega orodja v standardno knjižnico
+### Primer: Prispevanje novega orodja v standardno knjižnico
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -308,14 +313,14 @@ class CsvProcessingTool(Tool):
 
 Za uspešen prispevek k MCP projektom:
 
-1. **Začnite z majhnim**: Začnite z dokumentacijo, popravki napak ali manjšimi izboljšavami  
-2. **Sledite slogovnim smernicam**: Upoštevajte slog in konvencije projekta  
-3. **Pišite teste**: Vključite enotne teste za svoje prispevke kode  
-4. **Dokumentirajte svoje delo**: Dodajte jasno dokumentacijo za nove funkcije ali spremembe  
-5. **Pošiljajte ciljno usmerjene PR-je**: Pull requesti naj se osredotočajo na eno težavo ali funkcijo  
-6. **Sodelujte pri povratnih informacijah**: Bodite odzivni na povratne informacije glede vaših prispevkov  
+1. **Začni z majhnim**: Začni z dokumentacijo, popravki napak ali manjšimi izboljšavami.
+2. **Sledi slogovnim smernicam**: Upoštevaj slog in konvencije projekta.
+3. **Napiši teste**: Vključi enotne teste za svoje prispevke kode.
+4. **Dokumentiraj svoje delo**: Dodaj jasno dokumentacijo za nove funkcije ali spremembe.
+5. **Pošlji ciljno usmerjene PR-je**: Ohrani pull requeste osredotočene na eno težavo ali funkcijo.
+6. **Odgovarjaj na povratne informacije**: Bodi odziven na povratne informacije o svojih prispevkih.
 
-### Primer poteka prispevanja
+### Primer delovnega toka prispevka
 
 ```bash
 # Clone the repository
@@ -343,29 +348,29 @@ git push origin feature/my-contribution
 
 ## Ustvarjanje in deljenje MCP strežnikov
 
-Eden najpomembnejših načinov prispevanja k MCP ekosistemu je ustvarjanje in deljenje prilagojenih MCP strežnikov. Skupnost je že razvila na stotine strežnikov za različne storitve in primere uporabe.
+Eden najbolj dragocenih načinov prispevanja k MCP ekosistemu je ustvarjanje in deljenje prilagojenih MCP strežnikov. Skupnost je že razvila na stotine strežnikov za različne storitve in primere uporabe.
 
-### Ogrodja za razvoj MCP strežnikov
+### Okvirji za razvoj MCP strežnikov
 
-Na voljo je več ogrodij, ki poenostavijo razvoj MCP strežnikov:
+Na voljo je več okvirjev za poenostavitev razvoja MCP strežnikov:
 
-1. **Uradni SDK-ji**:  
-   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)  
-   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)  
-   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)  
-   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)  
-   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)  
-   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)  
+1. **Uradni SDK-ji**:
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
-2. **Skupnostna ogrodja**:  
-   - [MCP-Framework](https://mcp-framework.com/) - gradnja MCP strežnikov elegantno in hitro v TypeScriptu  
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - MCP strežniki z uporabo anotacij v Javi  
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java ogrodje za MCP strežnike  
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - začetni projekt Next.js za MCP strežnike  
+2. **Okvirji skupnosti**:
+   - [MCP-Framework](https://mcp-framework.com/) - Gradite MCP strežnike elegantno in hitro v TypeScriptu.
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - MCP strežniki z Java anotacijami.
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java okvir za MCP strežnike.
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Začetni projekt Next.js za MCP strežnike.
 
-### Razvijanje deljivih orodij
+### Razvoj deljivih orodij
 
-#### Primer .NET: ustvarjanje deljivega paketa orodij
+#### .NET primer: Ustvarjanje deljivega paketa orodij
 
 ```csharp
 // Create a new .NET library project
@@ -471,7 +476,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Primer Java: ustvarjanje Maven paketa za orodja
+#### Java primer: Ustvarjanje Maven paketa za orodja
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -572,7 +577,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Primer Python: objava paketa na PyPI
+#### Python primer: Objavljanje PyPI paketa
 
 ```python
 # Directory structure for a PyPI package:
@@ -677,68 +682,68 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
-### Najboljše prakse za deljenje
+### Deljenje najboljših praks
 
 Pri deljenju MCP orodij s skupnostjo:
 
-1. **Popolna dokumentacija**:  
-   - Dokumentirajte namen, uporabo in primere  
-   - Pojasnite parametre in vrnjene vrednosti  
-   - Dokumentirajte morebitne zunanje odvisnosti  
+1. **Popolna dokumentacija**:
+   - Dokumentiraj namen, uporabo in primere.
+   - Pojasni parametre in povratne vrednosti.
+   - Dokumentiraj vse zunanje odvisnosti.
 
-2. **Ravnanje z napakami**:  
-   - Implementirajte robustno obravnavo napak  
-   - Zagotovite koristna sporočila o napakah  
-   - Učinkovito obravnavajte robne primere  
+2. **Obravnava napak**:
+   - Implementiraj robustno obravnavo napak.
+   - Zagotovi uporabna sporočila o napakah.
+   - Upoštevaj robne primere.
 
-3. **Upoštevanje zmogljivosti**:  
-   - Optimizirajte za hitrost in porabo virov  
-   - Uporabite predpomnjenje, kjer je primerno  
-   - Razmislite o skalabilnosti  
+3. **Učinkovitost**:
+   - Optimiziraj za hitrost in uporabo virov.
+   - Implementiraj predpomnjenje, kjer je primerno.
+   - Upoštevaj razširljivost.
 
-4. **Varnost**:  
-   - Uporabljajte varne API ključe in avtentikacijo  
-   - Validirajte in sanitizirajte vhodne podatke  
-   - Uvedite omejevanje hitrosti za zunanje API klice  
+4. **Varnost**:
+   - Uporabi varne API ključe in avtentikacijo.
+   - Validiraj in sanitiziraj vnose.
+   - Implementiraj omejevanje hitrosti za zunanje API klice.
 
-5. **Testiranje**:  
-   - Vključite obsežno testno pokritost  
-   - Testirajte z različnimi tipi vhodov in robnimi primeri  
-   - Dokumentirajte postopke testiranja  
+5. **Testiranje**:
+   - Vključi obsežno pokritost testov.
+   - Testiraj z različnimi tipi vhodov in robnimi primeri.
+   - Dokumentiraj postopke testiranja.
 
-## Sodelovanje skupnosti in najboljše prakse
+## Sodelovanje v skupnosti in najboljše prakse
 
-Učinkovito sodelovanje je ključ do uspevajočega MCP ekosistema.
+Učinkovito sodelovanje je ključno za uspešen MCP ekosistem.
 
 ### Komunikacijski kanali
 
-- GitHub Issues in Discussions  
-- Microsoft Tech Community  
-- Discord in Slack kanali  
-- Stack Overflow (oznake: `model-context-protocol` ali `mcp`)  
+- GitHub težave in razprave
+- Microsoft Tech Community
+- Discord in Slack kanali
+- Stack Overflow (oznaka: `model-context-protocol` ali `mcp`)
 
 ### Pregledi kode
 
-Pri pregledu MCP prispevkov upoštevajte:
+Pri pregledovanju MCP prispevkov:
 
-1. **Jasnost**: Je koda jasna in dobro dokumentirana?  
-2. **Pravilnost**: Ali deluje kot je pričakovano?  
-3. **Doslednost**: Ali sledi konvencijam projekta?  
-4. **Popolnost**: Ali so vključeni testi in dokumentacija?  
-5. **Varnost**: Ali obstajajo varnostne pomisleke?  
+1. **Jasnost**: Ali je koda jasna in dobro dokumentirana?
+2. **Pravilnost**: Ali deluje, kot je pričakovano?
+3. **Doslednost**: Ali sledi konvencijam projekta?
+4. **Popolnost**: Ali so vključeni testi in dokumentacija?
+5. **Varnost**: Ali obstajajo varnostni pomisleki?
 
 ### Združljivost različic
 
 Pri razvoju za MCP:
 
-1. **Verzija protokola**: Upoštevajte različico MCP protokola, ki jo vaše orodje podpira  
-2. **Združljivost klientov**: Upoštevajte združljivost nazaj  
-3. **Združljivost strežnikov**: Sledite smernicam za implementacijo strežnikov  
-4. **Prelomne spremembe**: Jasno dokumentirajte vse prelomne spremembe  
+1. **Različice protokola**: Upoštevaj različico MCP protokola, ki jo podpira tvoje orodje.
+2. **Združljivost odjemalcev**: Upoštevaj združljivost za nazaj.
+3. **Združljivost strežnikov**: Sledi smernicam za implementacijo strežnikov.
+4. **Prelomne spremembe**: Jasno dokumentiraj vse prelomne spremembe.
 
-## Primer skupnostnega projekta: MCP registracija orodij
+## Primer skupnostnega projekta: MCP register orodij
 
-Pomemben prispevek skupnosti bi lahko bil razvoj javnega registra MCP orodij.
+Pomemben prispevek skupnosti bi lahko bil razvoj javnega registra za MCP orodja.
 
 ```python
 # Example schema for a community tool registry API
@@ -817,30 +822,29 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Ključne ugotovitve
+## Ključne točke
 
-- MCP skupnost je raznolika in sprejema različne vrste prispevkov  
-- Prispevanje k MCP zajema od izboljšav jedrnega protokola do prilagojenih orodij  
-- Sledenje smernicam za prispevanje povečuje možnosti za sprejem vašega PR  
-- Ustvarjanje in deljenje MCP orodij je dragocen način za izboljšanje ekosistema  
-- Sodelovanje skupnosti je ključno za rast in razvoj MCP  
+- MCP skupnost je raznolika in pozdravlja različne vrste prispevkov.
+- Prispevanje k MCP lahko vključuje izboljšave osnovnega protokola ali prilagojena orodja.
+- Sledenje smernicam za prispevanje poveča možnosti za sprejetje tvojega PR.
+- Ustvarjanje in deljenje MCP orodij je dragocen način za izboljšanje ekosistema.
+- Sodelovanje v skupnosti je bistveno za rast in izboljšanje MCP.
 
 ## Vaja
 
-1. Izberite področje v MCP ekosistemu, kjer lahko prispevate glede na svoje znanje in interese  
-2. Razvejajte MCP repozitorij in nastavite lokalno razvojno okolje  
-3. Ustvarite manjšo izboljšavo, popravilo napake ali orodje, ki bo koristilo skupnosti  
-4. Dokumentirajte svoj prispevek z ustreznimi testi in dokumentacijo  
-5. Pošljite pull request v ustrezen repozitorij  
+1. Prepoznaj področje v MCP ekosistemu, kjer bi lahko prispeval glede na svoje veščine in interese.
+2. Forkaj MCP repozitorij in nastavi lokalno razvojno okolje.
+3. Ustvari majhno izboljšavo, popravek napake ali orodje, ki bi koristilo skupnosti.
+4. Dokumentiraj svoj prispevek z ustreznimi testi in dokumentacijo.
+5. Pošlji pull request v ustrezen repozitorij.
 
 ## Dodatni viri
 
-- [MCP skupnostni projekti](https://github.com/topics/model-context-protocol)  
-
+- [MCP skupnostni projekti](https://github.com/topics/model-context-protocol)
 
 ---
 
-Naslednje: [Lekcije iz zgodnje uporabe](../07-LessonsfromEarlyAdoption/README.md)
+Naprej: [Lekcije iz zgodnje uporabe](../07-LessonsfromEarlyAdoption/README.md)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovni prevod s strani človeškega prevajalca. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.

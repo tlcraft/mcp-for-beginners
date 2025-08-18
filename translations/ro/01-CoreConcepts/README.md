@@ -1,40 +1,59 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-13T16:22:31+00:00",
+  "original_hash": "0a6a7bcb289c024a91289e0444cb370b",
+  "translation_date": "2025-08-18T15:47:55+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "ro"
 }
 -->
-# 📖 Concepte de bază MCP: Stăpânirea Model Context Protocol pentru integrarea AI
+# Concepte de bază MCP: Stăpânirea Protocolului de Context al Modelului pentru Integrarea AI
 
-[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) este un cadru standardizat și puternic care optimizează comunicarea între Modelele Mari de Limbaj (LLM) și unelte, aplicații și surse de date externe. Acest ghid optimizat SEO te va conduce prin conceptele esențiale ale MCP, asigurându-te că înțelegi arhitectura client-server, componentele cheie, mecanismele de comunicare și cele mai bune practici de implementare.
+[![Concepte de bază MCP](../../../translated_images/02.8203e26c6fb5a797f38a10012061013ec66c95bb3260f6c9cfd2bf74b00860e1.ro.png)](https://youtu.be/earDzWGtE84)
+
+_(Faceți clic pe imaginea de mai sus pentru a viziona videoclipul acestei lecții)_
+
+[Model Context Protocol (MCP)](https://gi- **Consimțământ explicit al utilizatorului**: Toate accesările de date și operațiunile necesită aprobarea explicită a utilizatorului înainte de execuție. Utilizatorii trebuie să înțeleagă clar ce date vor fi accesate și ce acțiuni vor fi efectuate, având control detaliat asupra permisiunilor și autorizărilor.
+
+- **Protecția confidențialității datelor**: Datele utilizatorului sunt expuse doar cu consimțământ explicit și trebuie protejate prin controale de acces robuste pe tot parcursul ciclului de interacțiune. Implementările trebuie să prevină transmiterea neautorizată a datelor și să mențină limite stricte de confidențialitate.
+
+- **Siguranța execuției instrumentelor**: Fiecare invocare a unui instrument necesită consimțământ explicit al utilizatorului, cu o înțelegere clară a funcționalității, parametrilor și impactului potențial. Limitele de securitate robuste trebuie să prevină execuțiile neintenționate, nesigure sau malițioase ale instrumentelor.
+
+- **Securitatea stratului de transport**: Toate canalele de comunicare ar trebui să utilizeze mecanisme adecvate de criptare și autentificare. Conexiunile la distanță trebuie să implementeze protocoale de transport securizate și o gestionare corespunzătoare a acreditivelor.
+
+#### Ghiduri de implementare:
+
+- **Gestionarea permisiunilor**: Implementați sisteme de permisiuni detaliate care permit utilizatorilor să controleze ce servere, instrumente și resurse sunt accesibile.
+- **Autentificare și autorizare**: Utilizați metode de autentificare securizate (OAuth, chei API) cu gestionarea și expirarea corespunzătoare a tokenurilor.  
+- **Validarea intrărilor**: Validați toți parametrii și datele de intrare conform schemelor definite pentru a preveni atacurile de tip injecție.
+- **Jurnalizare audit**: Mențineți jurnale cuprinzătoare ale tuturor operațiunilor pentru monitorizarea securității și conformitate.
+
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io/specification/2025-06-18/) este un cadru standardizat și puternic care optimizează comunicarea între Modelele de Limbaj de Mari Dimensiuni (LLMs) și instrumentele, aplicațiile și sursele de date externe. Acest ghid vă va conduce prin conceptele de bază ale MCP, asigurându-vă că înțelegeți arhitectura client-server, componentele esențiale, mecanismele de comunicare și cele mai bune practici de implementare.
 
 ## Prezentare generală
 
-Această lecție explorează arhitectura fundamentală și componentele care alcătuiesc ecosistemul Model Context Protocol (MCP). Vei învăța despre arhitectura client-server, componentele principale și mecanismele de comunicare care susțin interacțiunile MCP.
+Această lecție explorează arhitectura fundamentală și componentele care alcătuiesc ecosistemul Model Context Protocol (MCP). Veți învăța despre arhitectura client-server, componentele cheie și mecanismele de comunicare care alimentează interacțiunile MCP.
 
-## 👩‍🎓 Obiective cheie de învățare
+## Obiectivele principale ale lecției
 
-La finalul acestei lecții, vei:
+Până la sfârșitul acestei lecții, veți:
 
 - Înțelege arhitectura client-server MCP.
-- Identifica rolurile și responsabilitățile Host-urilor, Client-ilor și Server-elor.
-- Analiza caracteristicile de bază care fac din MCP un strat flexibil de integrare.
-- Înțelege cum circulă informația în ecosistemul MCP.
+- Identifica rolurile și responsabilitățile gazdelor, clienților și serverelor.
+- Analiza caracteristicile de bază care fac din MCP un strat de integrare flexibil.
+- Învăța cum circulă informațiile în cadrul ecosistemului MCP.
 - Obține perspective practice prin exemple de cod în .NET, Java, Python și JavaScript.
 
-## 🔎 Arhitectura MCP: O privire mai detaliată
+## Arhitectura MCP: O privire mai profundă
 
-Ecosistemul MCP este construit pe un model client-server. Această structură modulară permite aplicațiilor AI să interacționeze eficient cu unelte, baze de date, API-uri și resurse contextuale. Să descompunem această arhitectură în componentele sale principale.
+Ecosistemul MCP este construit pe un model client-server. Această structură modulară permite aplicațiilor AI să interacționeze eficient cu instrumente, baze de date, API-uri și resurse contextuale. Să descompunem această arhitectură în componentele sale de bază.
 
-La bază, MCP urmează o arhitectură client-server în care o aplicație gazdă poate conecta mai mulți serveri:
+La bază, MCP urmează o arhitectură client-server în care o aplicație gazdă se poate conecta la mai multe servere:
 
 ```mermaid
 flowchart LR
     subgraph "Your Computer"
-        Host["Host with MCP VScode, IDEs, Tools)"]
+        Host["Host with MCP (Visual Studio, VS Code, IDEs, Tools)"]
         S1["MCP Server A"]
         S2["MCP Server B"]
         S3["MCP Server C"]
@@ -49,262 +68,587 @@ flowchart LR
     end
 ```
 
-- **MCP Hosts**: Programe precum VSCode, Claude Desktop, IDE-uri sau unelte AI care doresc să acceseze date prin MCP
-- **MCP Clients**: Clienți de protocol care mențin conexiuni 1:1 cu serverele
-- **MCP Servers**: Programe ușoare care expun fiecare capabilități specifice prin Model Context Protocol standardizat
-- **Surse locale de date**: Fișierele, bazele de date și serviciile de pe calculatorul tău la care serverele MCP pot accesa în siguranță
-- **Servicii la distanță**: Sisteme externe disponibile prin internet la care serverele MCP se pot conecta prin API-uri.
+- **Gazde MCP**: Programe precum VSCode, Claude Desktop, IDE-uri sau instrumente AI care doresc să acceseze date prin MCP.
+- **Clienți MCP**: Clienți de protocol care mențin conexiuni 1:1 cu serverele.
+- **Servere MCP**: Programe ușoare care expun fiecare capabilități specifice prin Protocolul de Context al Modelului standardizat.
+- **Surse de date locale**: Fișierele, bazele de date și serviciile computerului dvs. pe care serverele MCP le pot accesa în siguranță.
+- **Servicii la distanță**: Sisteme externe disponibile pe internet la care serverele MCP se pot conecta prin API-uri.
 
-Protocolul MCP este un standard în evoluție, poți vedea cele mai recente actualizări în [specificația protocolului](https://modelcontextprotocol.io/specification/2025-06-18/)
+Protocolul MCP este un standard în evoluție care folosește versiuni bazate pe date (format YYYY-MM-DD). Versiunea curentă a protocolului este **2025-06-18**. Puteți vedea cele mai recente actualizări ale [specificației protocolului](https://modelcontextprotocol.io/specification/2025-06-18/).
 
-### 1. Hosts
+### 1. Gazde
 
-În Model Context Protocol (MCP), Host-urile joacă un rol crucial ca interfața principală prin care utilizatorii interacționează cu protocolul. Host-urile sunt aplicații sau medii care inițiază conexiuni cu serverele MCP pentru a accesa date, unelte și prompturi. Exemple de Host-uri includ medii integrate de dezvoltare (IDE-uri) precum Visual Studio Code, unelte AI precum Claude Desktop sau agenți personalizați creați pentru sarcini specifice.
+În Model Context Protocol (MCP), **Gazdele** sunt aplicații AI care servesc drept interfața principală prin care utilizatorii interacționează cu protocolul. Gazdele coordonează și gestionează conexiunile la mai multe servere MCP prin crearea de clienți MCP dedicați pentru fiecare conexiune la server. Exemple de gazde includ:
 
-**Host-urile** sunt aplicații LLM care inițiază conexiuni. Ele:
+- **Aplicații AI**: Claude Desktop, Visual Studio Code, Claude Code.
+- **Mediile de dezvoltare**: IDE-uri și editoare de cod cu integrare MCP.  
+- **Aplicații personalizate**: Agenți AI și instrumente construite pentru scopuri specifice.
 
-- Execută sau interacționează cu modelele AI pentru a genera răspunsuri.
-- Inițiază conexiuni cu serverele MCP.
-- Gestionează fluxul conversației și interfața cu utilizatorul.
-- Controlează permisiunile și restricțiile de securitate.
-- Se ocupă de consimțământul utilizatorului pentru partajarea datelor și executarea uneltelor.
+**Gazdele** sunt aplicații care coordonează interacțiunile modelelor AI. Ele:
 
-### 2. Clients
+- **Orchestrează modelele AI**: Execută sau interacționează cu LLM-uri pentru a genera răspunsuri și a coordona fluxurile de lucru AI.
+- **Gestionează conexiunile clienților**: Creează și mențin un client MCP pentru fiecare conexiune la server MCP.
+- **Controlează interfața utilizatorului**: Gestionează fluxul conversației, interacțiunile utilizatorului și prezentarea răspunsurilor.  
+- **Aplică securitatea**: Controlează permisiunile, constrângerile de securitate și autentificarea.
+- **Gestionează consimțământul utilizatorului**: Administrează aprobarea utilizatorului pentru partajarea datelor și execuția instrumentelor.
 
-Client-ii sunt componente esențiale care facilitează interacțiunea dintre Host-uri și serverele MCP. Client-ii acționează ca intermediari, permițând Host-urilor să acceseze și să utilizeze funcționalitățile oferite de serverele MCP. Ei joacă un rol important în asigurarea unei comunicări fluide și a unui schimb eficient de date în arhitectura MCP.
+### 2. Clienți
 
-**Client-ii** sunt conectori în cadrul aplicației gazdă. Ei:
+**Clienții** sunt componente esențiale care mențin conexiuni dedicate unu-la-unu între Gazde și serverele MCP. Fiecare client MCP este instanțiat de Gazdă pentru a se conecta la un server MCP specific, asigurând canale de comunicare organizate și sigure. Mai mulți clienți permit Gazdelor să se conecteze simultan la mai multe servere.
 
-- Trimit cereri către servere cu prompturi/instrucțiuni.
-- Negociază capabilitățile cu serverele.
-- Gestionează cererile de execuție a uneltelor din partea modelelor.
-- Procesează și afișează răspunsurile către utilizatori.
+**Clienții** sunt componente de conectare în cadrul aplicației gazdă. Ei:
 
-### 3. Servers
+- **Comunicare prin protocol**: Trimit cereri JSON-RPC 2.0 către servere cu solicitări și instrucțiuni.
+- **Negocierea capabilităților**: Negociază caracteristicile suportate și versiunile protocolului cu serverele în timpul inițializării.
+- **Execuția instrumentelor**: Gestionează cererile de execuție a instrumentelor de la modele și procesează răspunsurile.
+- **Actualizări în timp real**: Gestionează notificările și actualizările în timp real de la servere.
+- **Procesarea răspunsurilor**: Procesează și formatează răspunsurile serverelor pentru afișarea către utilizatori.
 
-Serverele sunt responsabile pentru gestionarea cererilor venite de la clienții MCP și oferirea răspunsurilor adecvate. Ele administrează diverse operațiuni precum extragerea datelor, execuția uneltelor și generarea prompturilor. Serverele asigură o comunicare eficientă și fiabilă între clienți și Host-uri, menținând integritatea procesului de interacțiune.
+### 3. Servere
+
+**Serverele** sunt programe care oferă context, instrumente și capabilități clienților MCP. Ele pot fi executate local (pe aceeași mașină cu Gazda) sau la distanță (pe platforme externe) și sunt responsabile de gestionarea cererilor clienților și de furnizarea de răspunsuri structurate. Serverele expun funcționalități specifice prin Protocolul de Context al Modelului standardizat.
 
 **Serverele** sunt servicii care oferă context și capabilități. Ele:
 
-- Înregistrează funcționalitățile disponibile (resurse, prompturi, unelte)
-- Primesc și execută apeluri către unelte din partea clientului
-- Oferă informații contextuale pentru a îmbunătăți răspunsurile modelului
-- Returnează rezultatele către client
-- Mențin starea pe durata interacțiunilor, dacă este necesar
+- **Înregistrarea caracteristicilor**: Înregistrează și expun primitivele disponibile (resurse, solicitări, instrumente) către clienți.
+- **Procesarea cererilor**: Primesc și execută apeluri de instrumente, cereri de resurse și solicitări de prompturi de la clienți.
+- **Furnizarea contextului**: Oferă informații contextuale și date pentru a îmbunătăți răspunsurile modelului.
+- **Gestionarea stării**: Mențin starea sesiunii și gestionează interacțiunile cu stare, atunci când este necesar.
+- **Notificări în timp real**: Trimit notificări despre schimbările de capabilități și actualizări către clienții conectați.
 
-Serverele pot fi dezvoltate de oricine pentru a extinde capabilitățile modelului cu funcționalități specializate.
+Serverele pot fi dezvoltate de oricine pentru a extinde capabilitățile modelului cu funcționalități specializate și suportă scenarii de implementare atât locale, cât și la distanță.
 
-### 4. Caracteristici ale Serverelor
+### 4. Primitivele serverului
 
-Serverele din Model Context Protocol (MCP) oferă blocuri fundamentale care permit interacțiuni bogate între clienți, host-uri și modelele de limbaj. Aceste caracteristici sunt concepute pentru a îmbunătăți capabilitățile MCP prin oferirea de context structurat, unelte și prompturi.
+Serverele din Model Context Protocol (MCP) oferă trei **primitive** de bază care definesc elementele fundamentale pentru interacțiuni bogate între clienți, gazde și modele de limbaj. Aceste primitive specifică tipurile de informații contextuale și acțiuni disponibile prin protocol.
 
-Serverele MCP pot oferi oricare dintre următoarele caracteristici:
+Serverele MCP pot expune orice combinație a următoarelor trei primitive de bază:
 
-#### 📑 Resurse
+#### Resurse
 
-Resursele în Model Context Protocol (MCP) cuprind diverse tipuri de context și date care pot fi utilizate de utilizatori sau modele AI. Acestea includ:
+**Resursele** sunt surse de date care oferă informații contextuale aplicațiilor AI. Ele reprezintă conținut static sau dinamic care poate îmbunătăți înțelegerea și luarea deciziilor de către model:
 
-- **Date contextuale**: Informații și context pe care utilizatorii sau modelele AI le pot folosi pentru luarea deciziilor și executarea sarcinilor.
-- **Baze de cunoștințe și depozite de documente**: Colecții de date structurate și nestructurate, precum articole, manuale și lucrări de cercetare, care oferă informații valoroase.
-- **Fișiere și baze de date locale**: Date stocate local pe dispozitive sau în baze de date, accesibile pentru procesare și analiză.
-- **API-uri și servicii web**: Interfețe și servicii externe care oferă date și funcționalități suplimentare, permițând integrarea cu diverse resurse și unelte online.
+- **Date contextuale**: Informații structurate și context pentru consumul modelului AI.
+- **Baze de cunoștințe**: Repozitorii de documente, articole, manuale și lucrări de cercetare.
+- **Surse de date locale**: Fișiere, baze de date și informații ale sistemului local.  
+- **Date externe**: Răspunsuri API, servicii web și date ale sistemelor la distanță.
+- **Conținut dinamic**: Date în timp real care se actualizează în funcție de condițiile externe.
 
-Un exemplu de resursă poate fi un schelet de bază de date sau un fișier accesibil astfel:
+Resursele sunt identificate prin URI-uri și suportă descoperirea prin metodele `resources/list` și recuperarea prin `resources/read`:
 
 ```text
-file://log.txt
-database://schema
+file://documents/project-spec.md
+database://production/users/schema
+api://weather/current
 ```
 
-### 🤖 Prompturi
+#### Solicitări
 
-Prompturile în Model Context Protocol (MCP) includ diverse șabloane predefinite și modele de interacțiune concepute pentru a simplifica fluxurile de lucru ale utilizatorilor și a îmbunătăți comunicarea. Acestea includ:
+**Solicitările** sunt șabloane reutilizabile care ajută la structurarea interacțiunilor cu modelele de limbaj. Ele oferă modele standardizate de interacțiune și fluxuri de lucru șablonizate:
 
-- **Mesaje și fluxuri de lucru șablonate**: Mesaje și procese pre-structurate care ghidează utilizatorii prin sarcini și interacțiuni specifice.
-- **Modele de interacțiune predefinite**: Secvențe standardizate de acțiuni și răspunsuri care facilitează o comunicare consecventă și eficientă.
-- **Șabloane specializate de conversație**: Șabloane personalizabile adaptate pentru tipuri specifice de conversații, asigurând interacțiuni relevante și contextuale.
+- **Interacțiuni bazate pe șabloane**: Mesaje pre-structurate și inițiatoare de conversații.
+- **Șabloane de fluxuri de lucru**: Secvențe standardizate pentru sarcini și interacțiuni comune.
+- **Exemple few-shot**: Șabloane bazate pe exemple pentru instruirea modelului.
+- **Solicitări de sistem**: Solicitări fundamentale care definesc comportamentul și contextul modelului.
+- **Șabloane dinamice**: Solicitări parametrizate care se adaptează la contexte specifice.
 
-Un șablon de prompt poate arăta astfel:
+Solicitările suportă substituirea variabilelor și pot fi descoperite prin `prompts/list` și recuperate cu `prompts/get`:
 
 ```markdown
-Generate a product slogan based on the following {{product}} with the following {{keywords}}
+Generate a {{task_type}} for {{product}} targeting {{audience}} with the following requirements: {{requirements}}
 ```
 
-#### ⛏️ Unelte
+#### Instrumente
 
-Uneltele în Model Context Protocol (MCP) sunt funcții pe care modelul AI le poate executa pentru a îndeplini sarcini specifice. Aceste unelte sunt concepute pentru a extinde capabilitățile modelului AI prin oferirea de operațiuni structurate și de încredere. Aspectele cheie includ:
+**Instrumentele** sunt funcții executabile pe care modelele AI le pot invoca pentru a efectua acțiuni specifice. Ele reprezintă „verbele” ecosistemului MCP, permițând modelelor să interacționeze cu sisteme externe:
 
-- **Funcții pe care modelul AI le poate executa**: Uneltele sunt funcții executabile pe care modelul AI le poate invoca pentru a realiza diverse sarcini.
-- **Nume unic și descriere**: Fiecare unealtă are un nume distinct și o descriere detaliată care explică scopul și funcționalitatea sa.
-- **Parametri și rezultate**: Uneltele acceptă parametri specifici și returnează rezultate structurate, asigurând rezultate consistente și previzibile.
-- **Funcții discrete**: Uneltele realizează funcții discrete precum căutări web, calcule și interogări în baze de date.
+- **Funcții executabile**: Operațiuni discrete pe care modelele le pot invoca cu parametri specifici.
+- **Integrarea sistemelor externe**: Apeluri API, interogări de baze de date, operațiuni pe fișiere, calcule.
+- **Identitate unică**: Fiecare instrument are un nume distinct, o descriere și o schemă de parametri.
+- **I/O structurat**: Instrumentele acceptă parametri validați și returnează răspunsuri structurate, tipizate.
+- **Capabilități de acțiune**: Permit modelelor să efectueze acțiuni reale și să recupereze date live.
 
-Un exemplu de unealtă ar putea arăta astfel:
+Instrumentele sunt definite cu JSON Schema pentru validarea parametrilor și descoperite prin `tools/list` și executate prin `tools/call`:
 
 ```typescript
 server.tool(
-  "GetProducts",
+  "search_products", 
   {
-    pageSize: z.string().optional(),
-    pageCount: z.string().optional()
-  }, () => {
-    // return results from API
+    query: z.string().describe("Search query for products"),
+    category: z.string().optional().describe("Product category filter"),
+    max_results: z.number().default(10).describe("Maximum results to return")
+  }, 
+  async (params) => {
+    // Execute search and return structured results
+    return await productService.search(params);
   }
-)
+);
 ```
 
-## Caracteristici ale Clientului
+## Primitivele clientului
 
-În Model Context Protocol (MCP), clienții oferă mai multe caracteristici cheie serverelor, îmbunătățind funcționalitatea generală și interacțiunea în cadrul protocolului. Una dintre caracteristicile notabile este Sampling.
+În Model Context Protocol (MCP), **clienții** pot expune primitive care permit serverelor să solicite capabilități suplimentare de la aplicația gazdă. Aceste primitive de partea clientului permit implementări de server mai bogate și mai interactive, care pot accesa capabilitățile modelului AI și interacțiunile utilizatorului.
 
-### 👉 Sampling
+### Eșantionare
 
-- **Comportamente agentice inițiate de server**: Clienții permit serverelor să inițieze acțiuni sau comportamente specifice în mod autonom, sporind capabilitățile dinamice ale sistemului.
-- **Interacțiuni recursive cu LLM**: Această caracteristică permite interacțiuni recursive cu modelele mari de limbaj (LLM), facilitând procesarea mai complexă și iterativă a sarcinilor.
-- **Solicitarea de completări suplimentare ale modelului**: Serverele pot solicita completări suplimentare de la model, asigurând răspunsuri complete și relevante contextual.
+**Eșantionarea** permite serverelor să solicite completări ale modelului de limbaj din aplicația AI a clientului. Această primitivă permite serverelor să acceseze capabilitățile LLM fără a încorpora propriile dependențe de model:
 
-## Fluxul informației în MCP
+- **Acces independent de model**: Serverele pot solicita completări fără a include SDK-uri LLM sau a gestiona accesul la model.
+- **AI inițiat de server**: Permite serverelor să genereze autonom conținut folosind modelul AI al clientului.
+- **Interacțiuni recursive cu LLM**: Suportă scenarii complexe în care serverele au nevoie de asistență AI pentru procesare.
+- **Generare de conținut dinamic**: Permite serverelor să creeze răspunsuri contextuale folosind modelul gazdei.
 
-Model Context Protocol (MCP) definește un flux structurat de informații între host-uri, clienți, servere și modele. Înțelegerea acestui flux ajută la clarificarea modului în care cererile utilizatorilor sunt procesate și cum uneltele și datele externe sunt integrate în răspunsurile modelului.
+Eșantionarea este inițiată prin metoda `sampling/complete`, unde serverele trimit cereri de completare către clienți.
 
-- **Host-ul inițiază conexiunea**  
-  Aplicația gazdă (cum ar fi un IDE sau o interfață de chat) stabilește o conexiune către un server MCP, de obicei prin STDIO, WebSocket sau alt transport suportat.
+### Solicitare
+
+**Solicitarea** permite serverelor să ceară informații suplimentare sau confirmări de la utilizatori prin interfața clientului:
+
+- **Cereri de intrare ale utilizatorului**: Serverele pot solicita informații suplimentare atunci când sunt necesare pentru execuția instrumentelor.
+- **Dialoguri de confirmare**: Solicită aprobarea utilizatorului pentru operațiuni sensibile sau cu impact.
+- **Fluxuri de lucru interactive**: Permit serverelor să creeze interacțiuni pas cu pas cu utilizatorul.
+- **Colectare dinamică de parametri**: Adună parametri lipsă sau opționali în timpul execuției instrumentelor.
+
+Solicitările sunt realizate folosind metoda `elicitation/request` pentru a colecta intrările utilizatorului prin interfața clientului.
+
+### Jurnalizare
+
+**Jurnalizarea** permite serverelor să trimită mesaje de jurnal structurate către clienți pentru depanare, monitorizare și vizibilitate operațională:
+
+- **Suport pentru depanare**: Permite serverelor să furnizeze jurnale detaliate de execuție pentru depanare.
+- **Monitorizare operațională**: Trimite actualizări de stare și metrici de performanță către clienți.
+- **Raportare a erorilor**: Furnizează context detaliat al erorilor și informații de diagnostic.
+- **Urme de audit**: Creează jurnale cuprinzătoare ale operațiunilor și deciziilor serverului.
+
+Mesajele de jurnalizare sunt trimise către clienți pentru a oferi transparență în operațiunile serverului și pentru a facilita depanarea.
+
+## Fluxul de informații în MCP
+
+Model Context Protocol (MCP) definește un flux structurat de informații între gazde, clienți, servere și modele. Înțelegerea acestui flux ajută la clarificarea modului în care cererile utilizatorilor sunt procesate și cum instrumentele și datele externe sunt integrate în răspunsurile modelului.
+
+- **Gazda inițiază conexiunea**  
+  Aplicația gazdă (cum ar fi un IDE sau o interfață de chat) stabilește o conexiune la un server MCP, de obicei prin STDIO, WebSocket sau un alt transport suportat.
 
 - **Negocierea capabilităților**  
-  Clientul (încorporat în host) și serverul schimbă informații despre funcționalitățile, uneltele, resursele și versiunile protocolului suportate. Acest lucru asigură că ambele părți înțeleg ce capabilități sunt disponibile pentru sesiune.
+  Clientul (încorporat în gazdă) și serverul schimbă informații despre caracteristicile, instrumentele, resursele și versiunile protocolului suportate. Acest lucru asigură că ambele părți înțeleg ce capabilități sunt disponibile pentru sesiune.
 
 - **Cererea utilizatorului**  
-  Utilizatorul interacționează cu host-ul (de exemplu, introduce un prompt sau o comandă). Host-ul colectează această intrare și o transmite clientului pentru procesare.
+  Utilizatorul interacționează cu gazda (de exemplu, introduce un prompt sau o comandă). Gazda colectează această intrare și o transmite clientului pentru procesare.
 
-- **Utilizarea resurselor sau uneltelor**  
-  - Clientul poate solicita context sau resurse suplimentare de la server (cum ar fi fișiere, înregistrări din baze de date sau articole din baze de cunoștințe) pentru a îmbogăți înțelegerea modelului.
-  - Dacă modelul determină că este necesară o unealtă (de exemplu, pentru a prelua date, a efectua un calcul sau a apela un API), clientul trimite o cerere de invocare a uneltei către server, specificând numele uneltei și parametrii.
+- **Utilizarea resurselor sau instrumentelor**  
+  - Clientul poate solicita context suplimentar sau resurse de la server (cum ar fi fișiere, intrări din baze de date sau articole din baze de cunoștințe) pentru a îmbunătăți înțelegerea modelului.
+  - Dacă modelul determină că este necesar un instrument (de exemplu, pentru a prelua date, a efectua un calcul sau a apela un API), client
+- **Gestionarea ciclului de viață**: Se ocupă de inițializarea conexiunii, negocierea capabilităților și încheierea sesiunii între clienți și servere  
+- **Primitivele serverului**: Permite serverelor să ofere funcționalități de bază prin instrumente, resurse și șabloane  
+- **Primitivele clientului**: Permite serverelor să solicite completări de la LLM-uri, să obțină input de la utilizatori și să trimită mesaje de jurnal  
+- **Notificări în timp real**: Suportă notificări asincrone pentru actualizări dinamice fără a necesita interogări periodice  
 
-- **Execuția serverului**  
-  Serverul primește cererea pentru resursă sau unealtă, execută operațiunile necesare (cum ar fi rularea unei funcții, interogarea unei baze de date sau recuperarea unui fișier) și returnează rezultatele clientului într-un format structurat.
+#### Funcționalități cheie:
 
-- **Generarea răspunsului**  
-  Clientul integrează răspunsurile serverului (datele resurselor, rezultatele uneltelor etc.) în interacțiunea curentă cu modelul. Modelul folosește aceste informații pentru a genera un răspuns cuprinzător și relevant contextual.
+- **Negocierea versiunii protocolului**: Utilizează versiuni bazate pe date (YYYY-MM-DD) pentru a asigura compatibilitatea  
+- **Descoperirea capabilităților**: Clienții și serverele schimbă informații despre funcționalitățile suportate în timpul inițializării  
+- **Sesiuni cu stare**: Menține starea conexiunii pe parcursul mai multor interacțiuni pentru continuitatea contextului  
 
-- **Prezentarea rezultatului**  
-  Host-ul primește rezultatul final de la client și îl afișează utilizatorului, adesea incluzând atât textul generat de model, cât și orice rezultate din execuțiile uneltelor sau căutările în resurse.
+### Stratul de transport
 
-Acest flux permite MCP să susțină aplicații AI avansate, interactive și conștiente de context, conectând fără întreruperi modelele cu unelte și surse de date externe.
+**Stratul de transport** gestionează canalele de comunicare, încadrarea mesajelor și autentificarea între participanții MCP:
 
-## Detalii despre protocol
+#### Mecanisme de transport suportate:
 
-MCP (Model Context Protocol) este construit peste [JSON-RPC 2.0](https://www.jsonrpc.org/), oferind un format standardizat, independent de limbaj, pentru comunicarea între host-uri, clienți și servere. Această bază permite interacțiuni fiabile, structurate și extensibile pe diverse platforme și limbaje de programare.
+1. **Transport STDIO**:
+   - Utilizează fluxurile standard de intrare/ieșire pentru comunicarea directă între procese  
+   - Optimizat pentru procese locale pe aceeași mașină, fără costuri suplimentare de rețea  
+   - Utilizat frecvent pentru implementările locale ale serverelor MCP  
 
-### Caracteristici cheie ale protocolului
+2. **Transport HTTP Streamable**:
+   - Utilizează HTTP POST pentru mesaje de la client la server  
+   - Opțional, Server-Sent Events (SSE) pentru streaming de la server la client  
+   - Permite comunicarea cu servere la distanță prin rețele  
+   - Suportă autentificarea standard HTTP (tokenuri bearer, chei API, antete personalizate)  
+   - MCP recomandă OAuth pentru autentificare sigură bazată pe tokenuri  
 
-MCP extinde JSON-RPC 2.0 cu convenții suplimentare pentru invocarea uneltelor, accesul la resurse și gestionarea prompturilor. Suportă mai multe straturi de transport (STDIO, WebSocket, SSE) și permite o comunicare sigură, extensibilă și independentă de limbaj între componente.
+#### Abstracția transportului:
 
-#### 🧢 Protocol de bază
+Stratul de transport abstractizează detaliile de comunicare față de stratul de date, permițând utilizarea aceluiași format de mesaje JSON-RPC 2.0 pe toate mecanismele de transport. Această abstractizare permite aplicațiilor să comute fără probleme între servere locale și la distanță.
 
-- **Formatul mesajelor JSON-RPC**: Toate cererile și răspunsurile folosesc specificația JSON-RPC 2.0, asigurând o structură consecventă pentru apeluri de metode, parametri, rezultate și gestionarea erorilor.
-- **Conexiuni cu stare**: Sesiunile MCP mențin starea pe durata mai multor cereri, susținând conversații continue, acumularea contextului și gestionarea resurselor.
-- **Negocierea capabilităților**: În timpul stabilirii conexiunii, clienții și serverele schimbă informații despre funcționalitățile suportate, versiunile protocolului, uneltele și resursele disponibile. Acest lucru asigură că ambele părți înțeleg capabilitățile celuilalt și se pot adapta corespunzător.
+### Considerații de securitate
 
-#### ➕ Utilitare suplimentare
+Implementările MCP trebuie să respecte mai multe principii critice de securitate pentru a asigura interacțiuni sigure, de încredere și securizate în toate operațiunile protocolului:
 
-Mai jos sunt câteva utilitare și extensii ale protocolului pe care MCP le oferă pentru a îmbunătăți experiența dezvoltatorilor și a permite scenarii avansate:
+- **Consimțământul și controlul utilizatorului**: Utilizatorii trebuie să își dea consimțământul explicit înainte ca orice date să fie accesate sau operațiuni să fie efectuate. Aceștia trebuie să aibă control clar asupra datelor partajate și acțiunilor autorizate, susținut de interfețe intuitive pentru revizuirea și aprobarea activităților.
 
-- **Opțiuni de configurare**: MCP permite configurarea dinamică a parametrilor sesiunii, cum ar fi permisiunile uneltelor, accesul la resurse și setările modelului, adaptate fiecărei interacțiuni.
-- **Urmărirea progresului**: Operațiunile de durată lungă pot raporta actualizări de progres, permițând interfețe responsive și o experiență mai bună în timpul sarcinilor complexe.
-- **Anularea cererilor**: Clienții pot anula cererile aflate în curs, permițând utilizatorilor să întrerupă operațiuni care nu mai sunt necesare sau durează prea mult.
-- **Raportarea erorilor**: Mesajele și codurile de eroare standardizate ajută la diagnosticarea problemelor, gestionarea elegantă a eșecurilor și oferirea de feedback util utilizatorilor și dezvoltatorilor.
-- **Jurnalizare**: Atât clienții, cât și serverele pot emite jurnale structurate pentru audit, depanare și monitorizarea interacțiunilor protocolului.
+- **Confidențialitatea datelor**: Datele utilizatorilor trebuie expuse doar cu consimțământ explicit și protejate prin controale adecvate de acces. Implementările MCP trebuie să prevină transmiterea neautorizată a datelor și să asigure menținerea confidențialității pe parcursul tuturor interacțiunilor.
 
-Prin valorificarea acestor caracteristici, MCP asigură o comunicare robustă, sigură și flexibilă între modelele de limbaj și uneltele sau sursele de date externe.
+- **Siguranța instrumentelor**: Înainte de a invoca orice instrument, este necesar consimțământul explicit al utilizatorului. Utilizatorii trebuie să înțeleagă clar funcționalitatea fiecărui instrument, iar limitele de securitate robuste trebuie să fie aplicate pentru a preveni execuțiile neintenționate sau nesigure ale instrumentelor.
 
-### 🔐 Considerații de securitate
-
-Implementările MCP trebuie să respecte câteva principii cheie de securitate pentru a asigura interacțiuni sigure și de încredere:
-
-- **Consimțământul și controlul utilizatorului**: Utilizatorii trebuie să ofere consimțământ explicit înainte ca orice date să fie accesate sau operațiuni să fie efectuate. Ei trebuie să aibă un control clar asupra datelor partajate și acțiunilor autorizate, susținut de interfețe intuitive pentru revizuirea și aprobarea activităților.
-
-- **Confidențialitatea datelor**: Datele utilizatorilor trebuie expuse doar cu consimțământ explicit și trebuie protejate prin controale adecvate de acces. Implementările MCP trebuie să prevină transmiterea neautorizată a datelor și să asigure menținerea confidențialității pe tot parcursul interacțiunilor.
-
-- **Siguranța uneltelor**: Înainte de a invoca orice unealtă, este necesar consimțământul explicit al utilizatorului. Utilizatorii trebuie să înțeleagă clar funcționalitatea fiecărei unelte, iar limitele de securitate robuste trebuie aplicate pentru a preveni execuția neintenționată sau nesigură a uneltelor.
-
-Respectând aceste principii, MCP asigură că încrederea, confidențialitatea și siguranța utilizatorilor sunt menținute în toate interacțiunile protocolului.
+Prin respectarea acestor principii de securitate, MCP asigură menținerea încrederii, confidențialității și siguranței utilizatorilor în toate interacțiunile protocolului, oferind în același timp integrații puternice cu AI.
 
 ## Exemple de cod: Componente cheie
 
-Mai jos sunt exemple de cod în câteva limbaje populare care ilustrează cum să implementezi componente cheie ale serverului MCP și unelte.
+Mai jos sunt exemple de cod în mai multe limbaje de programare populare care ilustrează cum să implementați componentele și instrumentele cheie ale unui server MCP.
 
-### Exemplu .NET: Crearea unui server MCP simplu cu unelte
+### Exemplu .NET: Crearea unui server MCP simplu cu instrumente
 
-Iată un exemplu practic în .NET care demonstrează cum să implementezi un server MCP simplu
-MCP include mai multe concepte și mecanisme încorporate pentru gestionarea securității și autorizării pe tot parcursul protocolului:
+Iată un exemplu practic în .NET care demonstrează cum să implementați un server MCP simplu cu instrumente personalizate. Acest exemplu arată cum să definiți și să înregistrați instrumente, să gestionați cererile și să conectați serverul utilizând Model Context Protocol.
 
-1. **Controlul permisiunilor pentru unelte**:  
-  Clienții pot specifica ce unelte poate folosi un model în timpul unei sesiuni. Acest lucru asigură că doar uneltele autorizate explicit sunt accesibile, reducând riscul unor operațiuni neintenționate sau nesigure. Permisiunile pot fi configurate dinamic în funcție de preferințele utilizatorului, politicile organizației sau contextul interacțiunii.
+```csharp
+using System;
+using System.Threading.Tasks;
+using ModelContextProtocol.Server;
+using ModelContextProtocol.Server.Transport;
+using ModelContextProtocol.Server.Tools;
+
+public class WeatherServer
+{
+    public static async Task Main(string[] args)
+    {
+        // Create an MCP server
+        var server = new McpServer(
+            name: "Weather MCP Server",
+            version: "1.0.0"
+        );
+        
+        // Register our custom weather tool
+        server.AddTool<string, WeatherData>("weatherTool", 
+            description: "Gets current weather for a location",
+            execute: async (location) => {
+                // Call weather API (simplified)
+                var weatherData = await GetWeatherDataAsync(location);
+                return weatherData;
+            });
+        
+        // Connect the server using stdio transport
+        var transport = new StdioServerTransport();
+        await server.ConnectAsync(transport);
+        
+        Console.WriteLine("Weather MCP Server started");
+        
+        // Keep the server running until process is terminated
+        await Task.Delay(-1);
+    }
+    
+    private static async Task<WeatherData> GetWeatherDataAsync(string location)
+    {
+        // This would normally call a weather API
+        // Simplified for demonstration
+        await Task.Delay(100); // Simulate API call
+        return new WeatherData { 
+            Temperature = 72.5,
+            Conditions = "Sunny",
+            Location = location
+        };
+    }
+}
+
+public class WeatherData
+{
+    public double Temperature { get; set; }
+    public string Conditions { get; set; }
+    public string Location { get; set; }
+}
+```
+
+### Exemplu Java: Componentele unui server MCP
+
+Acest exemplu demonstrează același server MCP și înregistrarea instrumentelor ca în exemplul .NET de mai sus, dar implementat în Java.
+
+```java
+import io.modelcontextprotocol.server.McpServer;
+import io.modelcontextprotocol.server.McpToolDefinition;
+import io.modelcontextprotocol.server.transport.StdioServerTransport;
+import io.modelcontextprotocol.server.tool.ToolExecutionContext;
+import io.modelcontextprotocol.server.tool.ToolResponse;
+
+public class WeatherMcpServer {
+    public static void main(String[] args) throws Exception {
+        // Create an MCP server
+        McpServer server = McpServer.builder()
+            .name("Weather MCP Server")
+            .version("1.0.0")
+            .build();
+            
+        // Register a weather tool
+        server.registerTool(McpToolDefinition.builder("weatherTool")
+            .description("Gets current weather for a location")
+            .parameter("location", String.class)
+            .execute((ToolExecutionContext ctx) -> {
+                String location = ctx.getParameter("location", String.class);
+                
+                // Get weather data (simplified)
+                WeatherData data = getWeatherData(location);
+                
+                // Return formatted response
+                return ToolResponse.content(
+                    String.format("Temperature: %.1f°F, Conditions: %s, Location: %s", 
+                    data.getTemperature(), 
+                    data.getConditions(), 
+                    data.getLocation())
+                );
+            })
+            .build());
+        
+        // Connect the server using stdio transport
+        try (StdioServerTransport transport = new StdioServerTransport()) {
+            server.connect(transport);
+            System.out.println("Weather MCP Server started");
+            // Keep server running until process is terminated
+            Thread.currentThread().join();
+        }
+    }
+    
+    private static WeatherData getWeatherData(String location) {
+        // Implementation would call a weather API
+        // Simplified for example purposes
+        return new WeatherData(72.5, "Sunny", location);
+    }
+}
+
+class WeatherData {
+    private double temperature;
+    private String conditions;
+    private String location;
+    
+    public WeatherData(double temperature, String conditions, String location) {
+        this.temperature = temperature;
+        this.conditions = conditions;
+        this.location = location;
+    }
+    
+    public double getTemperature() {
+        return temperature;
+    }
+    
+    public String getConditions() {
+        return conditions;
+    }
+    
+    public String getLocation() {
+        return location;
+    }
+}
+```
+
+### Exemplu Python: Construirea unui server MCP
+
+În acest exemplu, arătăm cum să construiți un server MCP în Python. Sunt prezentate, de asemenea, două moduri diferite de a crea instrumente.
+
+```python
+#!/usr/bin/env python3
+import asyncio
+from mcp.server.fastmcp import FastMCP
+from mcp.server.transports.stdio import serve_stdio
+
+# Create a FastMCP server
+mcp = FastMCP(
+    name="Weather MCP Server",
+    version="1.0.0"
+)
+
+@mcp.tool()
+def get_weather(location: str) -> dict:
+    """Gets current weather for a location."""
+    # This would normally call a weather API
+    # Simplified for demonstration
+    return {
+        "temperature": 72.5,
+        "conditions": "Sunny",
+        "location": location
+    }
+
+# Alternative approach using a class
+class WeatherTools:
+    @mcp.tool()
+    def forecast(self, location: str, days: int = 1) -> dict:
+        """Gets weather forecast for a location for the specified number of days."""
+        # This would normally call a weather API forecast endpoint
+        # Simplified for demonstration
+        return {
+            "location": location,
+            "forecast": [
+                {"day": i+1, "temperature": 70 + i, "conditions": "Partly Cloudy"}
+                for i in range(days)
+            ]
+        }
+
+# Instantiate the class to register its tools
+weather_tools = WeatherTools()
+
+# Start the server using stdio transport
+if __name__ == "__main__":
+    asyncio.run(serve_stdio(mcp))
+```
+
+### Exemplu JavaScript: Crearea unui server MCP
+
+Acest exemplu arată cum să creați un server MCP în JavaScript și cum să înregistrați două instrumente legate de vreme.
+
+```javascript
+// Using the official Model Context Protocol SDK
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod"; // For parameter validation
+
+// Create an MCP server
+const server = new McpServer({
+  name: "Weather MCP Server",
+  version: "1.0.0"
+});
+
+// Define a weather tool
+server.tool(
+  "weatherTool",
+  {
+    location: z.string().describe("The location to get weather for")
+  },
+  async ({ location }) => {
+    // This would normally call a weather API
+    // Simplified for demonstration
+    const weatherData = await getWeatherData(location);
+    
+    return {
+      content: [
+        { 
+          type: "text", 
+          text: `Temperature: ${weatherData.temperature}°F, Conditions: ${weatherData.conditions}, Location: ${weatherData.location}` 
+        }
+      ]
+    };
+  }
+);
+
+// Define a forecast tool
+server.tool(
+  "forecastTool",
+  {
+    location: z.string(),
+    days: z.number().default(3).describe("Number of days for forecast")
+  },
+  async ({ location, days }) => {
+    // This would normally call a weather API
+    // Simplified for demonstration
+    const forecast = await getForecastData(location, days);
+    
+    return {
+      content: [
+        { 
+          type: "text", 
+          text: `${days}-day forecast for ${location}: ${JSON.stringify(forecast)}` 
+        }
+      ]
+    };
+  }
+);
+
+// Helper functions
+async function getWeatherData(location) {
+  // Simulate API call
+  return {
+    temperature: 72.5,
+    conditions: "Sunny",
+    location: location
+  };
+}
+
+async function getForecastData(location, days) {
+  // Simulate API call
+  return Array.from({ length: days }, (_, i) => ({
+    day: i + 1,
+    temperature: 70 + Math.floor(Math.random() * 10),
+    conditions: i % 2 === 0 ? "Sunny" : "Partly Cloudy"
+  }));
+}
+
+// Connect the server using stdio transport
+const transport = new StdioServerTransport();
+server.connect(transport).catch(console.error);
+
+console.log("Weather MCP Server started");
+```
+
+Acest exemplu JavaScript demonstrează cum să creați un client MCP care se conectează la un server, trimite un șablon și procesează răspunsul, inclusiv orice apeluri de instrumente efectuate.
+
+## Securitate și autorizare
+
+MCP include mai multe concepte și mecanisme încorporate pentru gestionarea securității și autorizării pe parcursul protocolului:
+
+1. **Controlul permisiunilor pentru instrumente**:  
+   Clienții pot specifica ce instrumente sunt permise unui model în timpul unei sesiuni. Acest lucru asigură că doar instrumentele autorizate explicit sunt accesibile, reducând riscul operațiunilor neintenționate sau nesigure. Permisiunile pot fi configurate dinamic pe baza preferințelor utilizatorului, politicilor organizaționale sau contextului interacțiunii.
 
 2. **Autentificare**:  
-  Serverele pot solicita autentificare înainte de a acorda acces la unelte, resurse sau operațiuni sensibile. Aceasta poate implica chei API, token-uri OAuth sau alte scheme de autentificare. O autentificare corectă garantează că doar clienții și utilizatorii de încredere pot apela capabilitățile serverului.
+   Serverele pot solicita autentificare înainte de a acorda acces la instrumente, resurse sau operațiuni sensibile. Acest lucru poate implica chei API, tokenuri OAuth sau alte scheme de autentificare. O autentificare corespunzătoare asigură că doar clienții și utilizatorii de încredere pot invoca capabilitățile serverului.
 
 3. **Validare**:  
-  Validarea parametrilor este aplicată pentru toate apelurile către unelte. Fiecare unealtă definește tipurile, formatele și constrângerile așteptate pentru parametrii săi, iar serverul validează cererile primite în consecință. Acest lucru previne ca input-uri incorecte sau malițioase să ajungă la implementările uneltelor și ajută la menținerea integrității operațiunilor.
+   Validarea parametrilor este aplicată pentru toate invocările de instrumente. Fiecare instrument definește tipurile, formatele și constrângerile așteptate pentru parametrii săi, iar serverul validează cererile primite în consecință. Acest lucru previne ca inputurile incorecte sau malițioase să ajungă la implementările instrumentelor și ajută la menținerea integrității operațiunilor.
 
 4. **Limitarea ratei**:  
-  Pentru a preveni abuzurile și a asigura o utilizare echitabilă a resurselor serverului, serverele MCP pot implementa limitarea ratei pentru apelurile către unelte și accesul la resurse. Limitele pot fi aplicate pe utilizator, pe sesiune sau global și ajută la protejarea împotriva atacurilor de tip denial-of-service sau consumului excesiv de resurse.
+   Pentru a preveni abuzurile și a asigura utilizarea echitabilă a resurselor serverului, serverele MCP pot implementa limitarea ratei pentru apelurile de instrumente și accesul la resurse. Limitele de rată pot fi aplicate per utilizator, per sesiune sau global și ajută la protejarea împotriva atacurilor de tip denial-of-service sau a consumului excesiv de resurse.
 
-Prin combinarea acestor mecanisme, MCP oferă o bază sigură pentru integrarea modelelor lingvistice cu unelte și surse de date externe, oferind utilizatorilor și dezvoltatorilor un control detaliat asupra accesului și utilizării.
+Prin combinarea acestor mecanisme, MCP oferă o fundație sigură pentru integrarea modelelor lingvistice cu instrumente și surse de date externe, oferind în același timp utilizatorilor și dezvoltatorilor un control detaliat asupra accesului și utilizării.
 
-## Mesaje de protocol
+## Mesaje ale protocolului și fluxul de comunicare
 
-Comunicarea MCP folosește mesaje JSON structurate pentru a facilita interacțiuni clare și fiabile între clienți, servere și modele. Tipurile principale de mesaje includ:
+Comunicarea MCP utilizează mesaje structurate **JSON-RPC 2.0** pentru a facilita interacțiuni clare și de încredere între gazde, clienți și servere. Protocolul definește tipare specifice de mesaje pentru diferite tipuri de operațiuni:
 
-- **Cerere client**  
-  Trimisă de client către server, acest mesaj include de obicei:
-  - Promptul sau comanda utilizatorului
-  - Istoricul conversației pentru context
-  - Configurarea și permisiunile uneltelor
-  - Orice metadate suplimentare sau informații despre sesiune
+### Tipuri de mesaje de bază:
 
-- **Răspuns model**  
-  Returnat de model (prin client), acest mesaj conține:
-  - Text generat sau completare bazată pe prompt și context
-  - Instrucțiuni opționale pentru apelarea unei unelte dacă modelul decide că este necesar
-  - Referințe către resurse sau context suplimentar, după caz
+#### **Mesaje de inițializare**
+- **Cererea `initialize`**: Stabilește conexiunea și negociază versiunea protocolului și capabilitățile  
+- **Răspunsul `initialize`**: Confirmă funcționalitățile suportate și informațiile serverului  
+- **`notifications/initialized`**: Semnalează că inițializarea este completă și sesiunea este pregătită  
 
-- **Cerere unealtă**  
-  Trimisă de client către server când o unealtă trebuie executată. Acest mesaj include:
-  - Numele uneltei care trebuie apelată
-  - Parametrii necesari uneltei (validați conform schemei uneltei)
-  - Informații contextuale sau identificatori pentru urmărirea cererii
+#### **Mesaje de descoperire**
+- **Cererea `tools/list`**: Descoperă instrumentele disponibile pe server  
+- **Cererea `resources/list`**: Listează resursele disponibile (surse de date)  
+- **Cererea `prompts/list`**: Recuperează șabloanele de prompturi disponibile  
 
-- **Răspuns unealtă**  
-  Returnat de server după executarea unei unelte. Acest mesaj oferă:
-  - Rezultatele execuției uneltei (date structurate sau conținut)
-  - Orice erori sau informații despre starea apelului dacă acesta a eșuat
-  - Opțional, metadate suplimentare sau jurnale legate de execuție
+#### **Mesaje de execuție**  
+- **Cererea `tools/call`**: Execută un instrument specific cu parametrii furnizați  
+- **Cererea `resources/read`**: Recuperează conținut dintr-o resursă specifică  
+- **Cererea `prompts/get`**: Obține un șablon de prompt cu parametri opționali  
 
-Aceste mesaje structurate asigură că fiecare pas din fluxul de lucru MCP este explicit, trasabil și extensibil, susținând scenarii avansate precum conversații multi-turn, concatenarea uneltelor și gestionarea robustă a erorilor.
+#### **Mesaje pe partea clientului**
+- **Cererea `sampling/complete`**: Serverul solicită completarea LLM de la client  
+- **`elicitation/request`**: Serverul solicită input de la utilizator prin interfața clientului  
+- **Mesaje de jurnalizare**: Serverul trimite mesaje structurate de jurnal către client  
 
-## Aspecte esențiale
+#### **Mesaje de notificare**
+- **`notifications/tools/list_changed`**: Serverul notifică clientul despre modificările instrumentelor  
+- **`notifications/resources/list_changed`**: Serverul notifică clientul despre modificările resurselor  
+- **`notifications/prompts/list_changed`**: Serverul notifică clientul despre modificările șabloanelor  
 
-- MCP folosește o arhitectură client-server pentru a conecta modelele cu capabilități externe
-- Ecosistemul este format din clienți, gazde, servere, unelte și surse de date
-- Comunicarea poate avea loc prin STDIO, SSE sau WebSockets
-- Uneltele sunt unitățile fundamentale de funcționalitate expuse modelelor
-- Protocoalele de comunicare structurate asigură interacțiuni consistente
+### Structura mesajelor:
+
+Toate mesajele MCP urmează formatul JSON-RPC 2.0 cu:  
+- **Mesaje de cerere**: Includ `id`, `method` și, opțional, `params`  
+- **Mesaje de răspuns**: Includ `id` și fie `result`, fie `error`  
+- **Mesaje de notificare**: Includ `method` și, opțional, `params` (fără `id` sau răspuns așteptat)  
+
+Această comunicare structurată asigură interacțiuni fiabile, trasabile și extensibile, sprijinind scenarii avansate precum actualizări în timp real, lanțuri de instrumente și gestionarea robustă a erorilor.
+
+## Concluzii cheie
+
+- **Arhitectură**: MCP utilizează o arhitectură client-server în care gazdele gestionează conexiuni multiple între clienți și servere  
+- **Participanți**: Ecosistemul include gazde (aplicații AI), clienți (conectori de protocol) și servere (furnizori de capabilități)  
+- **Mecanisme de transport**: Comunicarea suportă STDIO (local) și HTTP Streamable cu SSE opțional (la distanță)  
+- **Primitive de bază**: Serverele expun instrumente (funcții executabile), resurse (surse de date) și șabloane (template-uri)  
+- **Primitivele clientului**: Serverele pot solicita completări (LLM), inputuri (de la utilizatori) și jurnalizare de la clienți  
+- **Fundația protocolului**: Bazat pe JSON-RPC 2.0 cu versiuni bazate pe date (curent: 2025-06-18)  
+- **Capabilități în timp real**: Suportă notificări pentru actualizări dinamice și sincronizare în timp real  
+- **Securitate prioritară**: Consimțământ explicit al utilizatorului, protecția confidențialității datelor și transport securizat sunt cerințe de bază  
 
 ## Exercițiu
 
-Proiectează o unealtă MCP simplă care ar fi utilă în domeniul tău. Definește:
-1. Cum s-ar numi unealta
-2. Ce parametri ar accepta
-3. Ce rezultat ar returna
-4. Cum ar putea un model să folosească această unealtă pentru a rezolva problemele utilizatorilor
-
+Proiectați un instrument MCP simplu care ar fi util în domeniul dumneavoastră. Definiți:  
+1. Cum s-ar numi instrumentul  
+2. Ce parametri ar accepta  
+3. Ce output ar returna  
+4. Cum ar putea un model să utilizeze acest instrument pentru a rezolva problemele utilizatorilor  
 
 ---
 
 ## Ce urmează
 
-Următorul: [Capitolul 2: Securitate](../02-Security/README.md)
+Următorul capitol: [Capitolul 2: Securitate](../02-Security/README.md)  
 
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

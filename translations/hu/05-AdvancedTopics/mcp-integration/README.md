@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "73240f845b99df9401fffd21c09a5f7b",
-  "translation_date": "2025-07-17T10:24:54+00:00",
+  "original_hash": "f84eaea79c8fa9ab318a494f40891814",
+  "translation_date": "2025-08-18T14:30:09+00:00",
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "hu"
 }
 -->
-# Vállalati integráció
+# Vállalati Integráció
 
-MCP szerverek építésekor vállalati környezetben gyakran szükség van meglévő AI platformokkal és szolgáltatásokkal való integrációra. Ez a rész bemutatja, hogyan lehet az MCP-t vállalati rendszerekkel, például az Azure OpenAI-val és a Microsoft AI Foundry-val összekapcsolni, lehetővé téve fejlett AI képességek és eszközök összehangolását.
+Amikor MCP szervereket építünk vállalati környezetben, gyakran szükség van meglévő AI platformok és szolgáltatások integrálására. Ez a rész bemutatja, hogyan integrálható az MCP olyan vállalati rendszerekkel, mint az Azure OpenAI és a Microsoft AI Foundry, lehetővé téve fejlett AI képességek és eszközök összehangolását.
 
 ## Bevezetés
 
-Ebben a leckében megtanulod, hogyan integráld a Model Context Protocol-t (MCP) vállalati AI rendszerekkel, különös tekintettel az Azure OpenAI-ra és a Microsoft AI Foundry-ra. Ezek az integrációk lehetővé teszik, hogy kihasználd az erőteljes AI modellek és eszközök előnyeit, miközben megőrzöd az MCP rugalmasságát és bővíthetőségét.
+Ebben a leckében megtanulhatod, hogyan integrálható a Model Context Protocol (MCP) vállalati AI rendszerekkel, különös tekintettel az Azure OpenAI-ra és a Microsoft AI Foundry-ra. Ezek az integrációk lehetővé teszik, hogy erőteljes AI modelleket és eszközöket használj, miközben megőrzöd az MCP rugalmasságát és bővíthetőségét.
 
 ## Tanulási célok
 
 A lecke végére képes leszel:
 
-- Integrálni az MCP-t az Azure OpenAI-val az AI képességek kihasználásához.
-- Megvalósítani az MCP eszközök összehangolását az Azure OpenAI-val.
-- Összekapcsolni az MCP-t a Microsoft AI Foundry-val fejlett AI ügynök funkciókért.
-- Használni az Azure Machine Learning-et (ML) ML pipeline-ok futtatására és modellek MCP eszközként való regisztrálására.
+- Integrálni az MCP-t az Azure OpenAI-val, hogy kihasználhasd annak AI képességeit.
+- Megvalósítani MCP eszközök összehangolását az Azure OpenAI-val.
+- Kombinálni az MCP-t a Microsoft AI Foundry-val fejlett AI ügynök képességek érdekében.
+- Kihasználni az Azure Machine Learning (ML) lehetőségeit ML folyamatok végrehajtására és modellek MCP eszközként való regisztrálására.
 
-## Azure OpenAI integráció
+## Azure OpenAI Integráció
 
-Az Azure OpenAI hozzáférést biztosít erőteljes AI modellekhez, mint például a GPT-4 és mások. Az MCP integrálása az Azure OpenAI-val lehetővé teszi ezen modellek használatát, miközben megőrzi az MCP eszköz összehangolásának rugalmasságát.
+Az Azure OpenAI hozzáférést biztosít olyan erőteljes AI modellekhez, mint például a GPT-4 és mások. Az MCP integrálása az Azure OpenAI-val lehetővé teszi ezeknek a modelleknek a használatát, miközben megőrzi az MCP eszközök összehangolásának rugalmasságát.
 
-### C# megvalósítás
+### C# Implementáció
 
-Ebben a kódrészletben bemutatjuk, hogyan integrálhatod az MCP-t az Azure OpenAI-val az Azure OpenAI SDK használatával.
+Ebben a kódrészletben bemutatjuk, hogyan integrálható az MCP az Azure OpenAI-val az Azure OpenAI SDK használatával.
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -96,19 +96,19 @@ namespace EnterpriseIntegration
 
 A fenti kódban:
 
-- Beállítottuk az Azure OpenAI klienst az endpoint, a telepítés neve és az API kulcs megadásával.
-- Létrehoztunk egy `GetCompletionWithToolsAsync` metódust, amely eszköztámogatással kér be válaszokat.
-- Kezeltük az eszközhívásokat a válaszban.
+- Konfiguráltuk az Azure OpenAI klienst az endpoint, a telepítési név és az API kulcs segítségével.
+- Létrehoztunk egy `GetCompletionWithToolsAsync` nevű metódust, amely eszköztámogatással kér le kiegészítéseket.
+- Kezeltük az eszköz hívásokat a válaszban.
 
-Javasoljuk, hogy a tényleges eszközkezelési logikát a saját MCP szervered beállításai alapján valósítsd meg.
+Javasoljuk, hogy az eszközkezelési logikát a saját MCP szerver beállításaid alapján valósítsd meg.
 
-## Microsoft AI Foundry integráció
+## Microsoft AI Foundry Integráció
 
-Az Azure AI Foundry egy platform AI ügynökök építésére és telepítésére. Az MCP integrálása az AI Foundry-val lehetővé teszi képességeinek kihasználását, miközben megőrzi az MCP rugalmasságát.
+Az Azure AI Foundry egy platformot biztosít AI ügynökök létrehozására és telepítésére. Az MCP integrálása az AI Foundry-val lehetővé teszi annak képességeinek kihasználását, miközben megőrzi az MCP rugalmasságát.
 
-Az alábbi kódban egy olyan ügynök integrációt fejlesztünk, amely feldolgozza a kéréseket és kezeli az eszközhívásokat az MCP segítségével.
+Az alábbi kódban egy ügynök integrációt fejlesztünk, amely feldolgozza a kéréseket és kezeli az eszköz hívásokat MCP segítségével.
 
-### Java megvalósítás
+### Java Implementáció
 
 ```java
 // Java AI Foundry Agent Integration
@@ -168,15 +168,15 @@ public class AIFoundryMcpBridge {
 
 A fenti kódban:
 
-- Létrehoztunk egy `AIFoundryMcpBridge` osztályt, amely integrálja az AI Foundry-t és az MCP-t.
-- Megvalósítottunk egy `processAgentRequest` metódust, amely feldolgozza az AI Foundry ügynök kéréseit.
-- Kezeltük az eszközhívásokat az MCP kliensen keresztül, majd visszaküldtük az eredményeket az AI Foundry ügynöknek.
+- Létrehoztunk egy `AIFoundryMcpBridge` osztályt, amely integrál az AI Foundry-val és az MCP-vel.
+- Megvalósítottunk egy `processAgentRequest` nevű metódust, amely feldolgozza az AI Foundry ügynök kérését.
+- Kezeltük az eszköz hívásokat úgy, hogy azokat az MCP kliensen keresztül végrehajtjuk, majd az eredményeket visszaküldjük az AI Foundry ügynöknek.
 
 ## MCP integrálása az Azure ML-lel
 
-Az MCP integrálása az Azure Machine Learning-gel lehetővé teszi, hogy kihasználd az Azure erőteljes ML képességeit, miközben megőrzöd az MCP rugalmasságát. Ez az integráció használható ML pipeline-ok futtatására, modellek eszközként való regisztrálására és számítási erőforrások kezelésére.
+Az MCP integrálása az Azure Machine Learning (ML) rendszerrel lehetővé teszi az Azure erőteljes ML képességeinek kihasználását, miközben megőrzi az MCP rugalmasságát. Ez az integráció ML folyamatok végrehajtására, modellek eszközként való regisztrálására és számítási erőforrások kezelésére használható.
 
-### Python megvalósítás
+### Python Implementáció
 
 ```python
 # Python Azure AI Integration
@@ -303,14 +303,14 @@ class EnterpriseAiIntegration:
 A fenti kódban:
 
 - Létrehoztunk egy `EnterpriseAiIntegration` osztályt, amely integrálja az MCP-t az Azure ML-lel.
-- Megvalósítottunk egy `execute_ml_pipeline` metódust, amely bemeneti adatokat dolgoz fel MCP eszközök segítségével, majd ML pipeline-t indít az Azure ML-ben.
-- Megvalósítottunk egy `register_ml_model_as_tool` metódust, amely egy Azure ML modellt regisztrál MCP eszközként, beleértve a szükséges telepítési környezet és számítási erőforrások létrehozását.
-- Leképeztük az Azure ML adattípusokat JSON séma típusokra az eszközregisztrációhoz.
-- Aszinkron programozást alkalmaztunk a potenciálisan hosszú ideig tartó műveletek, mint az ML pipeline futtatás és modellregisztráció kezelésére.
+- Megvalósítottunk egy `execute_ml_pipeline` nevű metódust, amely bemeneti adatokat dolgoz fel MCP eszközök segítségével, majd ML folyamatot küld be az Azure ML-nek.
+- Megvalósítottunk egy `register_ml_model_as_tool` nevű metódust, amely egy Azure ML modellt regisztrál MCP eszközként, beleértve a szükséges telepítési környezet és számítási erőforrások létrehozását.
+- Leképeztük az Azure ML adat típusait JSON séma típusokra az eszköz regisztrációhoz.
+- Aszinkron programozást használtunk a potenciálisan hosszú ideig tartó műveletek, például ML folyamat végrehajtás és modell regisztráció kezelésére.
 
-## Mi következik
+## Hogyan tovább?
 
 - [5.2 Többmodalitás](../mcp-multi-modality/README.md)
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Felelősségkizárás**:  
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
