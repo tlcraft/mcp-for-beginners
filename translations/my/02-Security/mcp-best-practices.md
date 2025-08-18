@@ -1,108 +1,177 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "90bfc6f3be00e34f6124e2a24bf94167",
-  "translation_date": "2025-07-17T13:44:21+00:00",
+  "original_hash": "b2b9e15e78b9d9a2b3ff3e8fd7d1f434",
+  "translation_date": "2025-08-18T23:26:46+00:00",
   "source_file": "02-Security/mcp-best-practices.md",
   "language_code": "my"
 }
 -->
-# MCP လုံခြုံရေး အကောင်းဆုံး လေ့လာမှုများ
+# MCP လုံခြုံရေးအကောင်းဆုံးအလေ့အကျင့်များ 2025
 
-MCP ဆာဗာများနှင့်အလုပ်လုပ်ရာတွင် သင့်ဒေတာ၊ အဆောက်အအုံနှင့် အသုံးပြုသူများကို ကာကွယ်ရန် အောက်ပါ လုံခြုံရေး အကောင်းဆုံး လေ့လာမှုများကို လိုက်နာပါ။
+ဒီလမ်းညွှန်ချက်က **MCP Specification 2025-06-18** နဲ့ လက်ရှိစက်မှုလုပ်ငန်းစံချိန်စံညွှန်းများအပေါ်အခြေခံပြီး Model Context Protocol (MCP) စနစ်များကို အကောင်းဆုံးလုံခြုံရေးအလေ့အကျင့်များဖြင့် အကောင်အထည်ဖော်ရန်အတွက် အရေးကြီးသော လမ်းညွှန်ချက်များကို ဖော်ပြထားပါတယ်။ ဒီအလေ့အကျင့်တွေက ရိုးရာလုံခြုံရေးစိုးရိမ်မှုတွေနဲ့ MCP တပ်ဆင်မှုတွေအတွက် ထူးခြားတဲ့ AI-ဆိုင်ရာ ခြိမ်းခြောက်မှုတွေကိုပါ လက်ခံဖြေရှင်းပေးပါတယ်။
 
-1. **အချက်အလက် စစ်ဆေးခြင်း** - ထိုးထွင်းတိုက်ခိုက်မှုများနှင့် confused deputy ပြဿနာများကို ကာကွယ်ရန် အချက်အလက်များကို အမြဲ စစ်ဆေးပြီး သန့်ရှင်းစေပါ။
-2. **ဝင်ရောက်ခွင့် ထိန်းချုပ်မှု** - MCP ဆာဗာအတွက် မှန်ကန်သော အတည်ပြုခြင်းနှင့် ခွင့်ပြုချက်များကို အသေးစိတ် ထိန်းချုပ်ပါ။
-3. **လုံခြုံသော ဆက်သွယ်မှု** - MCP ဆာဗာနှင့် ဆက်သွယ်ရာတွင် HTTPS/TLS ကို အသုံးပြု၍ အထူးသတိထားရမည့် ဒေတာများအတွက် ထပ်မံ စာလုံးကူးခြင်း ထည့်သွင်းစဉ်းစားပါ။
-4. **နှုန်းထား ကန့်သတ်ခြင်း** - မတရားအသုံးပြုမှု၊ DoS တိုက်ခိုက်မှုများကို ကာကွယ်ရန်နှင့် အရင်းအမြစ် စီမံခန့်ခွဲမှုအတွက် နှုန်းထား ကန့်သတ်မှုကို အကောင်အထည်ဖော်ပါ။
-5. **မှတ်တမ်းတင်ခြင်းနှင့် စောင့်ကြည့်ခြင်း** - MCP ဆာဗာတွင် သံသယဖြစ်စေသော လှုပ်ရှားမှုများကို စောင့်ကြည့်ပြီး လုံးလုံးလေးလေး စစ်ဆေးမှု မှတ်တမ်းများကို ထည့်သွင်းပါ။
-6. **လုံခြုံသော သိမ်းဆည်းမှု** - အထူးသတိထားရမည့် ဒေတာများနှင့် လက်မှတ်များကို သင့်တော်သော စာလုံးကူးခြင်းဖြင့် ကာကွယ်ပါ။
-7. **Token စီမံခန့်ခွဲမှု** - Token passthrough အားနည်းချက်များကို ကာကွယ်ရန် မော်ဒယ်၏ အချက်အလက်များအားလုံးကို စစ်ဆေးပြီး သန့်ရှင်းစေပါ။
-8. **အစည်းအဝေး စီမံခန့်ခွဲမှု** - အစည်းအဝေး ခိုးယူခြင်းနှင့် အစည်းအဝေး တည်ငြိမ်မှု ချိုးဖောက်မှုများကို ကာကွယ်ရန် လုံခြုံသော အစည်းအဝေး စီမံခန့်ခွဲမှုကို အကောင်အထည်ဖော်ပါ။
-9. **ကိရိယာ အကောင်အထည်ဖော်မှု Isolation** - ကိရိယာများကို သီးခြား ပတ်ဝန်းကျင်များတွင် လည်ပတ်စေ၍ ထိခိုက်မှုဖြစ်ပါက အခြားနေရာသို့ ရွေ့ပြောင်းမှုကို ကာကွယ်ပါ။
-10. **ပုံမှန် လုံခြုံရေး စစ်ဆေးမှုများ** - MCP အကောင်အထည်ဖော်မှုများနှင့် မူလအရင်းအမြစ်များကို ပုံမှန် လုံခြုံရေး ပြန်လည်သုံးသပ်ပါ။
-11. **Prompt စစ်ဆေးခြင်း** - Prompt ထည့်သွင်းခြင်းနှင့် ထုတ်ပေးခြင်းများအားလုံးကို စစ်ဆေးပြီး prompt injection တိုက်ခိုက်မှုများကို ကာကွယ်ပါ။
-12. **အတည်ပြုခြင်း ကိုယ်စားလှယ်ပေးခြင်း** - ကိုယ်ပိုင် အတည်ပြုခြင်း မလုပ်ဘဲ ရှိပြီးသား အတည်ပြုသူများကို အသုံးပြုပါ။
-13. **ခွင့်ပြုချက် အကွာအဝေး သတ်မှတ်ခြင်း** - ကိရိယာနှင့် အရင်းအမြစ် တစ်ခုချင်းစီအတွက် အနည်းဆုံး ခွင့်ပြုချက် မူဝါဒအတိုင်း အသေးစိတ် ခွင့်ပြုချက်များကို ထည့်သွင်းပါ။
-14. **ဒေတာ လျော့နည်းစေခြင်း** - လုပ်ဆောင်ချက်တစ်ခုချင်းစီအတွက် လိုအပ်သည့် ဒေတာ အနည်းဆုံးကိုသာ ဖော်ပြ၍ အန္တရာယ်ကို လျော့နည်းစေပါ။
-15. **အလိုအလျောက် အားနည်းချက် စစ်ဆေးခြင်း** - MCP ဆာဗာများနှင့် မူလအရင်းအမြစ်များကို ပုံမှန် အားနည်းချက်များအတွက် စစ်ဆေးပါ။
+## အရေးကြီးသော လုံခြုံရေးလိုအပ်ချက်များ
 
-## MCP လုံခြုံရေး အကောင်းဆုံး လေ့လာမှုများအတွက် အထောက်အကူပြု အရင်းအမြစ်များ
+### မဖြစ်မနေလိုအပ်သော လုံခြုံရေးထိန်းချုပ်မှုများ (MUST Requirements)
 
-### အချက်အလက် စစ်ဆေးခြင်း
-- [OWASP Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)
-- [Preventing Prompt Injection in MCP](https://modelcontextprotocol.io/docs/guides/security)
-- [Azure Content Safety Implementation](./azure-content-safety-implementation.md)
+1. **Token အတည်ပြုခြင်း**: MCP server တွေဟာ **MUST NOT** MCP server ကိုယ်တိုင်အတွက် ထုတ်ပေးထားတဲ့ token မဟုတ်တဲ့ token များကို လက်ခံသင့်ပါဘူး။
+2. **ခွင့်ပြုချက်စစ်ဆေးခြင်း**: ခွင့်ပြုချက်စနစ်ကို အသုံးပြုတဲ့ MCP server တွေဟာ **MUST** ဝင်ရောက်လာတဲ့ request အားလုံးကို စစ်ဆေးရမယ်။ Authentication အတွက် session များကို **MUST NOT** အသုံးပြုသင့်ပါဘူး။
+3. **အသုံးပြုသူ၏ သဘောတူညီမှု**: Static client ID များကို အသုံးပြုတဲ့ MCP proxy server တွေဟာ dynamic client တစ်ခုစီအတွက် အသုံးပြုသူ၏ သဘောတူညီမှုကို **MUST** ရယူရမယ်။
+4. **လုံခြုံသော Session ID များ**: MCP server တွေဟာ လုံခြုံသော random number generator များကို အသုံးပြုပြီး cryptographically secure, non-deterministic session ID များကို **MUST** ဖန်တီးရမယ်။
 
-### ဝင်ရောက်ခွင့် ထိန်းချုပ်မှု
-- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
-- [Using Microsoft Entra ID with MCP Servers](https://den.dev/blog/mcp-server-auth-entra-id-session/)
-- [Azure API Management as Auth Gateway for MCP](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+## အဓိက လုံခြုံရေးအလေ့အကျင့်များ
 
-### လုံခြုံသော ဆက်သွယ်မှု
-- [Transport Layer Security (TLS) Best Practices](https://learn.microsoft.com/security/engineering/solving-tls)
-- [MCP Transport Security Guidelines](https://modelcontextprotocol.io/docs/concepts/transports)
-- [End-to-End Encryption for AI Workloads](https://learn.microsoft.com/azure/architecture/example-scenario/confidential/end-to-end-encryption)
+### 1. Input စစ်ဆေးခြင်းနှင့် သန့်စင်ခြင်း
+- **ကျယ်ကျယ်ပြန့်ပြန့် Input စစ်ဆေးခြင်း**: Injection attack, confused deputy problem, prompt injection vulnerability များကို ကာကွယ်နိုင်ရန် input အားလုံးကို စစ်ဆေးပြီး သန့်စင်ပါ။
+- **Parameter Schema အတည်ပြုခြင်း**: Tool parameter နဲ့ API input အားလုံးအတွက် strict JSON schema validation ကို အကောင်အထည်ဖော်ပါ။
+- **Content Filtering**: Microsoft Prompt Shields နဲ့ Azure Content Safety ကို အသုံးပြုပြီး malicious content များကို prompts နဲ့ responses မှ စစ်ထုတ်ပါ။
+- **Output သန့်စင်ခြင်း**: User သို့မဟုတ် downstream system များကို ပြသမည့် model output အားလုံးကို စစ်ဆေးပြီး သန့်စင်ပါ။
 
-### နှုန်းထား ကန့်သတ်ခြင်း
-- [API Rate Limiting Patterns](https://learn.microsoft.com/azure/architecture/patterns/rate-limiting-pattern)
-- [Implementing Token Bucket Rate Limiting](https://konghq.com/blog/engineering/how-to-design-a-scalable-rate-limiting-algorithm)
-- [Rate Limiting in Azure API Management](https://learn.microsoft.com/azure/api-management/rate-limit-policy)
+### 2. Authentication & Authorization အထူးပြုမှု
+- **အပြင် Identity Provider များ**: Microsoft Entra ID, OAuth 2.1 provider များလို အတည်ပြုထားသော identity provider များကို အသုံးပြုပါ။
+- **အသေးစိတ်ခွင့်ပြုချက်များ**: Least privilege principle ကိုလိုက်နာပြီး tool-specific permission များကို အကောင်အထည်ဖော်ပါ။
+- **Token Lifecycle Management**: Short-lived access token များကို secure rotation နဲ့ audience validation ဖြင့် အသုံးပြုပါ။
+- **Multi-Factor Authentication**: အုပ်ချုပ်ရေးအဆင့်ဝင်ရောက်မှုနဲ့ အထူးအရေးကြီးလုပ်ဆောင်မှုများအတွက် MFA ကိုလိုအပ်ပါ။
 
-### မှတ်တမ်းတင်ခြင်းနှင့် စောင့်ကြည့်ခြင်း
-- [Centralized Logging for AI Systems](https://learn.microsoft.com/azure/architecture/example-scenario/logging/centralized-logging)
-- [Audit Logging Best Practices](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)
-- [Azure Monitor for AI Workloads](https://learn.microsoft.com/azure/azure-monitor/overview)
+### 3. လုံခြုံသော ဆက်သွယ်မှု Protocol များ
+- **Transport Layer Security**: HTTPS/TLS 1.3 ကို MCP ဆက်သွယ်မှုအားလုံးအတွက် အသုံးပြုပါ။
+- **End-to-End Encryption**: အထူးအရေးကြီးသော ဒေတာများအတွက် encryption layer များကို ထပ်မံတိုးချဲ့ပါ။
+- **Certificate Management**: Certificate များကို အလိုအလျောက်သက်တမ်းတိုးစနစ်ဖြင့် စီမံပါ။
+- **Protocol Version Enforcement**: MCP protocol version (2025-06-18) ကို အသုံးပြုပြီး version negotiation ကို အကောင်အထည်ဖော်ပါ။
 
-### လုံခြုံသော သိမ်းဆည်းမှု
-- [Azure Key Vault for Credential Storage](https://learn.microsoft.com/azure/key-vault/general/basic-concepts)
-- [Encrypting Sensitive Data at Rest](https://learn.microsoft.com/security/engineering/data-encryption-at-rest)
-- [Use Secure Token Storage and Encrypt Tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
+### 4. Rate Limiting & Resource Protection
+- **Multi-layer Rate Limiting**: User, session, tool, resource အဆင့်များတွင် rate limiting ကို အကောင်အထည်ဖော်ပါ။
+- **Adaptive Rate Limiting**: Usage pattern နဲ့ threat indicator များအပေါ်မူတည်ပြီး machine learning-based rate limiting ကို အသုံးပြုပါ။
+- **Resource Quota Management**: Computational resource, memory usage, execution time အတွက် သင့်တော်သော ကန့်သတ်ချက်များကို သတ်မှတ်ပါ။
+- **DDoS Protection**: DDoS ကာကွယ်မှုနဲ့ traffic analysis စနစ်များကို တပ်ဆင်ပါ။
 
-### Token စီမံခန့်ခွဲမှု
-- [JWT Best Practices (RFC 8725)](https://datatracker.ietf.org/doc/html/rfc8725)
-- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
-- [Best Practices for Token Validation and Lifetime](https://learn.microsoft.com/entra/identity-platform/access-tokens)
+### 5. Logging & Monitoring
+- **Structured Audit Logging**: MCP operation, tool execution, security event များအတွက် အသေးစိတ် log များကို စီမံပါ။
+- **Real-time Security Monitoring**: SIEM system များကို AI-powered anomaly detection ဖြင့် တပ်ဆင်ပါ။
+- **Privacy-compliant Logging**: Data privacy စည်းမျဉ်းများနှင့် ကိုက်ညီစွာ log များကို စီမံပါ။
+- **Incident Response Integration**: Incident response workflow များနှင့် logging system များကို ချိတ်ဆက်ပါ။
 
-### အစည်းအဝေး စီမံခန့်ခွဲမှု
-- [OWASP Session Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html)
-- [MCP Session Handling Guidelines](https://modelcontextprotocol.io/docs/guides/security)
-- [Secure Session Design Patterns](https://learn.microsoft.com/security/engineering/session-security)
+### 6. Secure Storage Practices
+- **Hardware Security Modules**: Azure Key Vault, AWS CloudHSM လို HSM-backed key storage များကို အသုံးပြုပါ။
+- **Encryption Key Management**: Key rotation, segregation, access control များကို အကောင်အထည်ဖော်ပါ။
+- **Secrets Management**: API key, token, credential များကို secret management system များတွင် သိမ်းဆည်းပါ။
+- **Data Classification**: ဒေတာကို sensitivity အဆင့်အလိုက် ခွဲခြားပြီး သင့်တော်သော ကာကွယ်မှုများကို အကောင်အထည်ဖော်ပါ။
 
-### ကိရိယာ အကောင်အထည်ဖော်မှု Isolation
-- [Container Security Best Practices](https://learn.microsoft.com/azure/container-instances/container-instances-image-security)
-- [Implementing Process Isolation](https://learn.microsoft.com/windows/security/threat-protection/security-policy-settings/user-rights-assignment)
-- [Resource Limits for Containerized Applications](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)
+### 7. Token Management
+- **Token Passthrough Prevention**: Security control များကို ကျော်လွှားနိုင်သော token passthrough pattern များကို တားဆီးပါ။
+- **Audience Validation**: Token audience claim များကို MCP server identity နှင့် ကိုက်ညီစေပါ။
+- **Claims-based Authorization**: Token claim နဲ့ user attribute များအပေါ်မူတည်ပြီး ခွင့်ပြုချက်များကို အကောင်အထည်ဖော်ပါ။
+- **Token Binding**: Token များကို session, user, device specific ဖြစ်စေပါ။
 
-### ပုံမှန် လုံခြုံရေး စစ်ဆေးမှုများ
-- [Microsoft Security Development Lifecycle](https://www.microsoft.com/sdl)
-- [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/)
-- [Security Code Review Guidelines](https://owasp.org/www-pdf-archive/OWASP_Code_Review_Guide_v2.pdf)
+### 8. Secure Session Management
+- **Cryptographic Session IDs**: Secure random number generator များဖြင့် session ID များကို ဖန်တီးပါ။
+- **User-specific Binding**: Session ID များကို `<user_id>:<session_id>` format ဖြင့် user-specific binding လုပ်ပါ။
+- **Session Lifecycle Controls**: Session expiration, rotation, invalidation mechanism များကို အကောင်အထည်ဖော်ပါ။
+- **Session Security Headers**: HTTP security header များကို အသုံးပြုပါ။
 
-### Prompt စစ်ဆေးခြင်း
-- [Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
-- [Azure Content Safety for AI](https://learn.microsoft.com/azure/ai-services/content-safety/)
-- [Preventing Prompt Injection](https://github.com/microsoft/prompt-shield-js)
+### 9. AI-Specific Security Controls
+- **Prompt Injection Defense**: Microsoft Prompt Shields ကို spotlighting, delimiter, datamarking technique များဖြင့် အသုံးပြုပါ။
+- **Tool Poisoning Prevention**: Tool metadata ကို စစ်ဆေးပြီး dynamic ပြောင်းလဲမှုများကို စောင့်ကြည့်ပါ။
+- **Model Output Validation**: Model output များကို data leakage, harmful content, security policy ချိုးဖောက်မှုများအတွက် စစ်ဆေးပါ။
+- **Context Window Protection**: Context window poisoning နဲ့ manipulation attack များကို ကာကွယ်ပါ။
 
-### အတည်ပြုခြင်း ကိုယ်စားလှယ်ပေးခြင်း
-- [Microsoft Entra ID Integration](https://learn.microsoft.com/entra/identity-platform/v2-oauth2-auth-code-flow)
-- [OAuth 2.0 for MCP Services](https://learn.microsoft.com/security/engineering/solving-oauth)
-- [MCP Security Controls 2025](./mcp-security-controls-2025.md)
+### 10. Tool Execution Security
+- **Execution Sandboxing**: Tool execution များကို containerized, isolated environment များတွင် လုပ်ဆောင်ပါ။
+- **Privilege Separation**: Tool များကို အနည်းဆုံးလိုအပ်သော privilege ဖြင့် run ပါ။
+- **Network Isolation**: Tool execution environment များအတွက် network segmentation ကို အကောင်အထည်ဖော်ပါ။
+- **Execution Monitoring**: Tool execution များကို anomalous behavior, resource usage, security violation များအတွက် စောင့်ကြည့်ပါ။
 
-### ခွင့်ပြုချက် အကွာအဝေး သတ်မှတ်ခြင်း
-- [Secure Least-Privileged Access](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
-- [Role-Based Access Control (RBAC) Design](https://learn.microsoft.com/azure/role-based-access-control/overview)
-- [Tool-specific Authorization in MCP](https://modelcontextprotocol.io/docs/guides/best-practices)
+### 11. Continuous Security Validation
+- **Automated Security Testing**: CI/CD pipeline များတွင် security testing ကို ပေါင်းစပ်ပါ။
+- **Vulnerability Management**: Dependency, AI model, external service များကို အကြိမ်ကြိမ်စစ်ဆေးပါ။
+- **Penetration Testing**: MCP implementation များကို ပုံမှန် security assessment ပြုလုပ်ပါ။
+- **Security Code Reviews**: MCP-related code ပြောင်းလဲမှုများအတွက် mandatory security review များကို အကောင်အထည်ဖော်ပါ။
 
-### ဒေတာ လျော့နည်းစေခြင်း
-- [Data Protection by Design](https://learn.microsoft.com/compliance/regulatory/gdpr-data-protection-impact-assessments)
-- [AI Data Privacy Best Practices](https://learn.microsoft.com/legal/cognitive-services/openai/data-privacy)
-- [Implementing Privacy-enhancing Technologies](https://www.microsoft.com/security/blog/2021/07/13/microsofts-pet-project-privacy-enhancing-technologies-in-action/)
+### 12. AI Supply Chain Security
+- **Component Verification**: AI component (model, embedding, API) များ၏ provenance, integrity, security ကို စစ်ဆေးပါ။
+- **Dependency Management**: Software နဲ့ AI dependency များကို vulnerability tracking ဖြင့် စီမံပါ။
+- **Trusted Repositories**: Verified, trusted source များမှ AI model, library, tool များကို အသုံးပြုပါ။
+- **Supply Chain Monitoring**: AI service provider နဲ့ model repository များတွင် compromise ဖြစ်မှုများကို စောင့်ကြည့်ပါ။
 
-### အလိုအလျောက် အားနည်းချက် စစ်ဆေးခြင်း
-- [GitHub Advanced Security](https://github.com/security/advanced-security)
-- [DevSecOps Pipeline Implementation](https://learn.microsoft.com/azure/devops/migrate/security-validation-cicd-pipeline)
-- [Continuous Security Validation](https://www.microsoft.com/security/blog/2022/04/05/step-by-step-building-a-more-efficient-devsecops-environment/)
+## အဆင့်မြင့် လုံခြုံရေးပုံစံများ
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ပညာရှင်များ၏ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+### MCP အတွက် Zero Trust Architecture
+- **Never Trust, Always Verify**: MCP participant အားလုံးအတွက် အဆက်မပြတ် verification ကို အကောင်အထည်ဖော်ပါ။
+- **Micro-segmentation**: MCP component များကို network နဲ့ identity control များဖြင့် ခွဲခြားထားပါ။
+- **Conditional Access**: Context နဲ့ behavior အပေါ်မူတည်ပြီး risk-based access control ကို အကောင်အထည်ဖော်ပါ။
+- **Continuous Risk Assessment**: လက်ရှိခြိမ်းခြောက်မှုအချက်ပြများအပေါ်မူတည်ပြီး security posture ကို အဆက်မပြတ် အကဲဖြတ်ပါ။
+
+### Privacy-Preserving AI Implementation
+- **Data Minimization**: MCP operation တစ်ခုစီအတွက် လိုအပ်သော data အနည်းဆုံးကိုသာ ဖော်ပြပါ။
+- **Differential Privacy**: Sensitive data ကို process လုပ်ရာတွင် privacy-preserving technique များကို အသုံးပြုပါ။
+- **Homomorphic Encryption**: Encrypted data ပေါ်တွင် secure computation ပြုလုပ်ရန် advanced encryption technique များကို အသုံးပြုပါ။
+- **Federated Learning**: Data locality နဲ့ privacy ကို ထိန်းသိမ်းထားနိုင်သော distributed learning approach များကို အသုံးပြုပါ။
+
+### AI System များအတွက် Incident Response
+- **AI-Specific Incident Procedures**: AI နဲ့ MCP-specific ခြိမ်းခြောက်မှုများအတွက် incident response procedure များကို ဖွံ့ဖြိုးပါ။
+- **Automated Response**: AI security incident များအတွက် automated containment နဲ့ remediation ကို အကောင်အထည်ဖော်ပါ။
+- **Forensic Capabilities**: AI system compromise နဲ့ data breach များအတွက် forensic readiness ကို ထိန်းသိမ်းပါ။
+- **Recovery Procedures**: AI model poisoning, prompt injection attack, service compromise များမှ ပြန်လည်ထူထောင်ရေးလုပ်ငန်းစဉ်များကို သတ်မှတ်ပါ။
+
+## အကောင်အထည်ဖော်ရေးအရင်းအမြစ်များ & စံချိန်စံညွှန်းများ
+
+### Official MCP Documentation
+- [MCP Specification 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) - လက်ရှိ MCP protocol specification
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) - တရားဝင်လုံခြုံရေးလမ်းညွှန်ချက်
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization) - Authentication နဲ့ authorization ပုံစံများ
+- [MCP Transport Security](https://modelcontextprotocol.io/specification/2025-06-18/transports/) - Transport layer လုံခြုံရေးလိုအပ်ချက်များ
+
+### Microsoft Security Solutions
+- [Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) - Prompt injection ကာကွယ်မှု
+- [Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/) - AI content filtering
+- [Microsoft Entra ID](https://learn.microsoft.com/entra/identity-platform/v2-oauth2-auth-code-flow) - Identity နဲ့ access management
+- [Azure Key Vault](https://learn.microsoft.com/azure/key-vault/general/basic-concepts) - လုံခြုံသော secret management
+- [GitHub Advanced Security](https://github.com/security/advanced-security) - Supply chain နဲ့ code security scanning
+
+### Security Standards & Frameworks
+- [OAuth 2.1 Security Best Practices](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics) - လက်ရှိ OAuth လုံခြုံရေးလမ်းညွှန်ချက်
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/) - Web application လုံခြုံရေးအန္တရာယ်များ
+- [OWASP Top 10 for LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559) - AI-specific လုံခြုံရေးအန္တရာယ်များ
+- [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) - AI အန္တရာယ်စီမံခန့်ခွဲမှု
+- [ISO 27001:2022](https://www.iso.org/standard/27001) - သတင်းအချက်အလက်လုံခြုံရေးစနစ်
+
+### Implementation Guides & Tutorials
+- [Azure API Management as MCP Auth Gateway](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) - Enterprise authentication ပုံစံများ
+- [Microsoft Entra ID with MCP Servers](https://den.dev/blog/mcp-server-auth-entra-id-session/) - Identity provider integration
+- [Secure Token Storage Implementation](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2) - Token management အကောင်းဆုံးအလေ့အကျင့်
+- [End-to-End Encryption for AI](https://learn.microsoft.com/azure/architecture/example-scenario/confidential/end-to-end-encryption) - Encryption ပုံစံများ
+
+### Advanced Security Resources
+- [Microsoft Security Development Lifecycle](https://www.microsoft.com/sdl) - Secure development လုပ်ငန်းစဉ်များ
+- [AI Red Team Guidance](https://learn.microsoft.com/security/ai-red-team/) - AI-specific လုံခြုံရေးစမ်းသပ်မှု
+- [Threat Modeling for AI Systems](https://learn.microsoft.com/security/adoption/approach/threats-ai) - AI threat modeling နည်းလမ်း
+- [Privacy Engineering for AI](https://www.microsoft.com/security/blog/2021/07/13/microsofts-pet-project-privacy-enhancing-technologies-in-action/) - Privacy-preserving AI နည်းလမ်းများ
+
+### Compliance & Governance
+- [GDPR Compliance for AI](https://learn.microsoft.com/compliance/regulatory/gdpr-data-protection-impact-assessments) - AI စနစ်များအတွက် privacy စည်းမျဉ်းများ
+- [AI Governance Framework](https://learn.microsoft.com/azure/architecture/guide/responsible-ai/responsible-ai-overview) - AI တာဝန်ယူမှုအကောင်အထည်ဖော်မှု
+- [SOC 2 for AI Services](https://learn.microsoft.com/compliance/regulatory/offering-soc) - AI service provider များအတွက် လုံခြုံရေးထိန်းချုပ်မှု
+- [HIPAA Compliance for AI](https://learn.microsoft.com/compliance/regulatory/offering-hipaa-hitech) - Healthcare AI စနစ်များအတွက် လိုက်နာမှုလိုအပ်ချက်များ
+
+### DevSecOps & Automation
+- [DevSecOps Pipeline for AI](https://learn.microsoft.com/azure/devops/migrate/security-validation-cicd-pipeline) - Secure AI development pipeline များ
+- [Automated Security Testing](https://learn.microsoft.com/security/engineering/devsecops) - Continuous security validation
+- [Infrastructure as Code Security](https://learn.microsoft.com/security/engineering/infrastructure-security) - Secure infrastructure deployment
+- [Container Security for AI](https://learn.microsoft.com/azure/container-instances/container-instances-image-security) - AI workload containerization လုံခြုံရေး
+
+### Monitoring & Incident Response  
+- [Azure Monitor for AI Workloads](https://learn.microsoft.com/azure/azure-monitor/overview) - Monitoring solution များ
+- [AI Security Incident Response](https://learn.microsoft.com/security/compass/incident-response-playbooks) - AI-specific incident procedure များ
+- [SIEM for AI Systems](https://learn.microsoft.com/azure/sentinel/overview) - Security information နဲ့ event management
+- [Threat Intelligence for AI](https://learn.microsoft.com/security/compass/security-operations-videos-and-decks#threat-intelligence) - AI threat intelligence အရင်းအမြစ်များ
+
+## 🔄 အဆက်မပြတ်တိုးတ
+- **ကိရိယာ ဖွံ့ဖြိုးမှု**: MCP ecosystem အတွက် လုံခြုံရေး ကိရိယာများနှင့် စာကြည့်တိုက်များ ဖွံ့ဖြိုးပြီး မျှဝေပါ
+
+---
+
+*ဤစာရွက်စာတမ်းသည် MCP Specification 2025-06-18 အပေါ် အခြေခံ၍ 2025 ခုနှစ် အောက်တိုဘာလ 18 ရက်နေ့အထိ MCP လုံခြုံရေး အကောင်းဆုံး လေ့ကျင့်မှုများကို ပြန်လည်တင်ပြထားပါသည်။ လုံခြုံရေး လေ့ကျင့်မှုများကို ပရိုတိုကောနှင့် အန္တရာယ် ရင်ဆိုင်မှု အခြေအနေများ ပြောင်းလဲမှုအရ ပုံမှန် ပြန်လည်သုံးသပ်ပြီး အပ်ဒိတ်လုပ်ရန် လိုအပ်ပါသည်။*
+
+**ဝက်ဘ်ဆိုက်မှတ်ချက်**:  
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေပါသော်လည်း၊ အလိုအလျောက်ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို ကျေးဇူးပြု၍ သတိပြုပါ။ မူရင်းဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတည်သော ရင်းမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူသားဘာသာပြန်ဝန်ဆောင်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုမှားများ သို့မဟုတ် အဓိပ္ပာယ်မှားများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

@@ -1,85 +1,88 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "860935ff95d05b006d1d3323e8e3f9e8",
-  "translation_date": "2025-07-13T17:21:23+00:00",
+  "original_hash": "858362ce0118de3fec0f9114bf396101",
+  "translation_date": "2025-08-18T23:28:22+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "my"
 }
 -->
 ## စတင်ခြင်း  
 
-ဤအပိုင်းတွင် သင်ခန်းစာအချို့ ပါဝင်သည်-
+[![သင့်ရဲ့ ပထမဆုံး MCP Server တည်ဆောက်ခြင်း](../../../translated_images/04.0ea920069efd979a0b2dad51e72c1df7ead9c57b3305796068a6cee1f0dd6674.my.png)](https://youtu.be/sNDZO9N4m9Y)
 
-- **1 သင့်ပထမဆုံးဆာဗာ**၊ ပထမဆုံးသင်ခန်းစာတွင် သင့်ပထမဆုံးဆာဗာကို ဖန်တီးနည်းနှင့် inspector tool ဖြင့် စစ်ဆေးနည်းကို သင်ယူမည်ဖြစ်ပြီး၊ ၎င်းသည် သင့်ဆာဗာကို စမ်းသပ်ခြင်းနှင့် အမှားရှာဖွေရေးအတွက် အထောက်အကူပြုသည်၊ [သင်ခန်းစာသို့](01-first-server/README.md)
+_(ဤသင်ခန်းစာ၏ ဗီဒီယိုကို ကြည့်ရန် အထက်ပါ ပုံကို နှိပ်ပါ)_
 
-- **2 Client**၊ ဤသင်ခန်းစာတွင် သင့်ဆာဗာနှင့် ချိတ်ဆက်နိုင်သော client ကို ရေးသားနည်းကို သင်ယူမည်၊ [သင်ခန်းစာသို့](02-client/README.md)
+ဤအပိုင်းတွင် သင်ခန်းစာများစွာ ပါဝင်သည်-
 
-- **3 LLM ပါသော Client**၊ client ရေးသားရာတွင် LLM တစ်ခု ထည့်သွင်းခြင်းဖြင့် ဆာဗာနှင့် "ညှိနှိုင်း" ပြုလုပ်နိုင်သော ပိုမိုကောင်းမွန်သောနည်းလမ်း၊ [သင်ခန်းစာသို့](03-llm-client/README.md)
+- **1 သင့်ရဲ့ ပထမဆုံး server** - ပထမဆုံး သင်ခန်းစာတွင် သင့်ရဲ့ ပထမဆုံး server ကို တည်ဆောက်နည်းနှင့် inspector tool ကို အသုံးပြု၍ စစ်ဆေးနည်းကို သင်ယူမည်ဖြစ်သည်။ ဤ tool သည် server ကို စမ်းသပ်ခြင်းနှင့် အမှားရှာဖွေခြင်းအတွက် အထူးအသုံးဝင်သည်။ [သင်ခန်းစာသို့](01-first-server/README.md)
 
-- **4 Visual Studio Code တွင် GitHub Copilot Agent mode ဖြင့် ဆာဗာကို အသုံးပြုခြင်း**။ ဤနေရာတွင် MCP Server ကို Visual Studio Code အတွင်းမှ တိုက်ရိုက် လည်ပတ်ခြင်းကို ကြည့်ရှုမည်၊ [သင်ခန်းစာသို့](04-vscode/README.md)
+- **2 Client** - ဤသင်ခန်းစာတွင် သင့် server နှင့် ချိတ်ဆက်နိုင်သော client ကို ရေးသားနည်းကို သင်ယူမည်ဖြစ်သည်။ [သင်ခန်းစာသို့](02-client/README.md)
 
-- **5 SSE (Server Sent Events) မှ အသုံးပြုခြင်း** SSE သည် ဆာဗာမှ client သို့ တိုက်ရိုက် စီးဆင်းမှုများ ပေးပို့နိုင်သော စံချိန်စံညွှန်းဖြစ်သည်၊ HTTP မှတဆင့် အချိန်နှင့်တပြေးညီ အချက်အလက်များ ပေးပို့နိုင်သည် [သင်ခန်းစာသို့](05-sse-server/README.md)
+- **3 Client with LLM** - Client ကို ပိုမိုကောင်းမွန်စွာ ရေးသားရန် LLM ကို ထည့်သွင်းခြင်းဖြင့် server နှင့် "ညှိနှိုင်း" နိုင်စေမည့် နည်းလမ်းကို သင်ယူမည်ဖြစ်သည်။ [သင်ခန်းစာသို့](03-llm-client/README.md)
 
-- **6 MCP ဖြင့် HTTP Streaming (Streamable HTTP)**။ ခေတ်မီ HTTP streaming၊ တိုးတက်မှု အသိပေးချက်များနှင့် Streamable HTTP ကို အသုံးပြု၍ တိုးချဲ့နိုင်သော၊ အချိန်နှင့်တပြေးညီ MCP ဆာဗာများနှင့် client များ ဖန်တီးနည်းကို သင်ယူမည်၊ [သင်ခန်းစာသို့](06-http-streaming/README.md)
+- **4 Visual Studio Code တွင် GitHub Copilot Agent mode ဖြင့် server ကို အသုံးပြုခြင်း** - MCP Server ကို Visual Studio Code မှာ အလုပ်လုပ်စေခြင်းကို လေ့လာမည်ဖြစ်သည်။ [သင်ခန်းစာသို့](04-vscode/README.md)
 
-- **7 VSCode အတွက် AI Toolkit ကို အသုံးပြုခြင်း** MCP Clients နှင့် Servers များကို စမ်းသပ်ရန်နှင့် စစ်ဆေးရန် [သင်ခန်းစာသို့](07-aitk/README.md)
+- **5 SSE (Server Sent Events) မှ server ကို အသုံးပြုခြင်း** - SSE သည် server-to-client streaming အတွက် စံသတ်မှတ်ဖြစ်ပြီး HTTP မှတဆင့် client များကို အချိန်နှင့်တပြေးညီ update များကို push လုပ်နိုင်စေသည်။ [သင်ခန်းစာသို့](05-sse-server/README.md)
 
-- **8 စမ်းသပ်ခြင်း**။ ဤနေရာတွင် ဆာဗာနှင့် client များကို မတူညီသောနည်းလမ်းများဖြင့် စမ်းသပ်နည်းကို အထူးအာရုံစိုက်မည်၊ [သင်ခန်းစာသို့](08-testing/README.md)
+- **6 MCP ဖြင့် HTTP Streaming (Streamable HTTP)** - ခေတ်မီ HTTP streaming, progress notifications နှင့် Streamable HTTP ကို အသုံးပြု၍ MCP server နှင့် client များကို အကျိုးရှိစွာ တည်ဆောက်နည်းကို သင်ယူမည်ဖြစ်သည်။ [သင်ခန်းစာသို့](06-http-streaming/README.md)
 
-- **9 တပ်ဆင်ခြင်း**။ MCP ဖြေရှင်းချက်များကို တပ်ဆင်ရာတွင် မတူညီသောနည်းလမ်းများကို လေ့လာမည်၊ [သင်ခန်းစာသို့](09-deployment/README.md)
+- **7 VSCode အတွက် AI Toolkit ကို အသုံးပြုခြင်း** - MCP Clients နှင့် Servers ကို စမ်းသပ်ရန် AI Toolkit ကို အသုံးပြုနည်းကို လေ့လာမည်ဖြစ်သည်။ [သင်ခန်းစာသို့](07-aitk/README.md)
 
+- **8 စမ်းသပ်ခြင်း** - ဤအပိုင်းတွင် server နှင့် client ကို အမျိုးမျိုးသောနည်းလမ်းများဖြင့် စမ်းသပ်နည်းကို အထူးအာရုံစိုက်မည်ဖြစ်သည်။ [သင်ခန်းစာသို့](08-testing/README.md)
 
-Model Context Protocol (MCP) သည် LLM များအား context ပေးပို့ရာတွင် အသုံးပြုသော အဖွဲ့အစည်းတစ်ခုဖြစ်ပြီး၊ AI application များအတွက် USB-C port တစ်ခုကဲ့သို့ အမျိုးမျိုးသော ဒေတာရင်းမြစ်များနှင့် ကိရိယာများကို AI မော်ဒယ်များနှင့် ချိတ်ဆက်ပေးနိုင်သော စံချိန်စံညွှန်းတစ်ခုဖြစ်သည်။
+- **9 Deployment** - MCP solution များကို deploy လုပ်နည်းအမျိုးမျိုးကို လေ့လာမည်ဖြစ်သည်။ [သင်ခန်းစာသို့](09-deployment/README.md)
+
+Model Context Protocol (MCP) သည် LLM များကို context ပေးရန် application များအတွက် စံသတ်မှတ်ထားသော open protocol ဖြစ်သည်။ MCP ကို AI application များအတွက် USB-C port တစ်ခုလို စဉ်းစားနိုင်သည် - AI models များကို data sources နှင့် tools များနှင့် ချိတ်ဆက်ရန် စံနည်းလမ်းတစ်ခုကို ပေးသည်။
 
 ## သင်ယူရမည့် ရည်မှန်းချက်များ
 
-ဤသင်ခန်းစာပြီးဆုံးချိန်တွင် သင်သည်-
+ဤသင်ခန်းစာ၏ အဆုံးတွင် သင်သည်-
 
-- C#, Java, Python, TypeScript နှင့် JavaScript များအတွက် MCP ဖွံ့ဖြိုးရေးပတ်ဝန်းကျင်များ တပ်ဆင်နိုင်မည်
-- စိတ်ကြိုက် အင်္ဂါရပ်များ (resources, prompts, tools) ပါဝင်သည့် MCP ဆာဗာများ တည်ဆောက်ပြီး တပ်ဆင်နိုင်မည်
-- MCP ဆာဗာများနှင့် ချိတ်ဆက်နိုင်သော host application များ ဖန်တီးနိုင်မည်
-- MCP အကောင်အထည်ဖော်မှုများကို စမ်းသပ်ပြီး အမှားရှာဖွေနိုင်မည်
-- setup ပြဿနာများနှင့် ဖြေရှင်းနည်းများကို နားလည်နိုင်မည်
-- MCP အကောင်အထည်ဖော်မှုများကို လူကြိုက်များသော LLM ဝန်ဆောင်မှုများနှင့် ချိတ်ဆက်နိုင်မည်
+- C#, Java, Python, TypeScript, JavaScript များအတွက် MCP development environment များကို စတင်တပ်ဆင်နိုင်မည်
+- အထူး feature (resources, prompts, tools) များပါဝင်သော MCP server များကို တည်ဆောက်ပြီး deploy လုပ်နိုင်မည်
+- MCP server များနှင့် ချိတ်ဆက်နိုင်သော host application များကို ဖန်တီးနိုင်မည်
+- MCP implementation များကို စမ်းသပ်ပြီး အမှားရှာဖွေနိုင်မည်
+- အများဆုံးတွေ့ရသော setup အခက်အခဲများနှင့် ၎င်းတို့၏ ဖြေရှင်းနည်းများကို နားလည်နိုင်မည်
+- MCP implementation များကို လူကြိုက်များသော LLM service များနှင့် ချိတ်ဆက်နိုင်မည်
 
-## MCP ပတ်ဝန်းကျင် တပ်ဆင်ခြင်း
+## MCP Environment ကို တပ်ဆင်ခြင်း
 
-MCP နှင့် အလုပ်လုပ်ရန် မစတင်မီ သင့်ဖွံ့ဖြိုးရေးပတ်ဝန်းကျင်ကို ပြင်ဆင်ထားပြီး အခြေခံလုပ်ငန်းစဉ်ကို နားလည်ထားခြင်း အရေးကြီးသည်။ ဤအပိုင်းတွင် MCP ဖြင့် စတင်ရန် လိုအပ်သော အဆင့်များကို လမ်းညွှန်ပေးမည်။
+MCP နှင့် အလုပ်လုပ်ရန် မစတင်မီ သင့် development environment ကို ပြင်ဆင်ပြီး အခြေခံ workflow ကို နားလည်ရန် အရေးကြီးသည်။ ဤအပိုင်းတွင် MCP ကို စတင်အသုံးပြုရန် လိုအပ်သော အဆင့်များကို လမ်းညွှန်ပေးမည်ဖြစ်သည်။
 
 ### လိုအပ်ချက်များ
 
-MCP ဖွံ့ဖြိုးရေးကို စတင်ရန် မတိုင်မီ အောက်ပါအချက်များရှိရမည်-
+MCP development ကို စတင်မီ သင့်တွင် အောက်ပါအရာများရှိရန် လိုအပ်သည်-
 
-- **ဖွံ့ဖြိုးရေးပတ်ဝန်းကျင်** - သင့်ရွေးချယ်ထားသော ဘာသာစကား (C#, Java, Python, TypeScript, သို့မဟုတ် JavaScript)
-- **IDE/Editor** - Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm သို့မဟုတ် ခေတ်မီ ကုဒ်ရေးသားရေးကိရိယာတစ်ခုခု
-- **Package Managers** - NuGet, Maven/Gradle, pip, သို့မဟုတ် npm/yarn
-- **API Keys** - သင့် host application များတွင် အသုံးပြုမည့် AI ဝန်ဆောင်မှုများအတွက်
+- **Development Environment**: သင့်ရွေးချယ်ထားသော programming language (C#, Java, Python, TypeScript, JavaScript) အတွက်
+- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, သို့မဟုတ် ခေတ်မီ code editor များ
+- **Package Managers**: NuGet, Maven/Gradle, pip, npm/yarn
+- **API Keys**: Host application များတွင် အသုံးပြုမည့် AI service များအတွက်
 
 ### တရားဝင် SDK များ
 
-နောက်ထပ်အခန်းများတွင် Python, TypeScript, Java နှင့် .NET အသုံးပြု၍ ဖြေရှင်းချက်များကို တွေ့မြင်ရမည်။ အောက်တွင် တရားဝင်ထောက်ပံ့ထားသော SDK များအားလုံး ပါဝင်သည်။
+လာမည့်အခန်းများတွင် Python, TypeScript, Java, .NET ကို အသုံးပြု၍ တည်ဆောက်ထားသော solution များကို တွေ့ရမည်။ အောက်ပါသည် တရားဝင်ထောက်ခံထားသော SDK များဖြစ်သည်-
 
-MCP သည် ဘာသာစကားအမျိုးမျိုးအတွက် တရားဝင် SDK များကို ပံ့ပိုးပေးသည်-
+MCP သည် အမျိုးမျိုးသော programming language များအတွက် တရားဝင် SDK များကို ပေးသည်-
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Microsoft နှင့် ပူးပေါင်းထိန်းသိမ်းထားသည်
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Spring AI နှင့် ပူးပေါင်းထိန်းသိမ်းထားသည်
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - တရားဝင် TypeScript အကောင်အထည်ဖော်မှု
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - တရားဝင် Python အကောင်အထည်ဖော်မှု
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - တရားဝင် Kotlin အကောင်အထည်ဖော်မှု
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - တရားဝင် TypeScript implementation
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - တရားဝင် Python implementation
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - တရားဝင် Kotlin implementation
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AI နှင့် ပူးပေါင်းထိန်းသိမ်းထားသည်
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - တရားဝင် Rust အကောင်အထည်ဖော်မှု
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - တရားဝင် Rust implementation
 
-## အဓိက သင်ယူရမည့် အချက်များ
+## အဓိကအချက်များ
 
-- MCP ဖွံ့ဖြိုးရေးပတ်ဝန်းကျင် တပ်ဆင်ခြင်းသည် ဘာသာစကားအလိုက် SDK များဖြင့် လွယ်ကူသည်
-- MCP ဆာဗာများ တည်ဆောက်ရာတွင် ကိရိယာများကို ဖန်တီးပြီး schema များနှင့် မှတ်ပုံတင်ရမည်
-- MCP client များသည် ဆာဗာများနှင့် မော်ဒယ်များကို ချိတ်ဆက်ကာ တိုးချဲ့နိုင်သော လုပ်ဆောင်ချက်များကို အသုံးပြုသည်
-- စမ်းသပ်ခြင်းနှင့် အမှားရှာဖွေရေးသည် MCP အကောင်အထည်ဖော်မှုများအတွက် အရေးကြီးသည်
-- တပ်ဆင်ခြင်းရွေးချယ်စရာများမှာ ဒေသတွင်းဖွံ့ဖြိုးရေးမှ မိုးကောင်းကင်ပေါ်အခြေခံ ဖြေရှင်းချက်များအထိ ရှိသည်
+- MCP development environment ကို language-specific SDK များဖြင့် ရိုးရှင်းစွာ တပ်ဆင်နိုင်သည်
+- MCP server များကို tool များကို schema ရှင်းလင်းစွာ ဖော်ပြပြီး register လုပ်ခြင်းဖြင့် တည်ဆောက်သည်
+- MCP client များသည် server များနှင့် model များကို ချိတ်ဆက်ပြီး အကျိုးကျေးဇူးများကို ရယူသည်
+- MCP implementation များကို စမ်းသပ်ခြင်းနှင့် အမှားရှာဖွေခြင်းသည် ယုံကြည်စိတ်ချရသော အကောင်အထည်ဖော်မှုအတွက် အရေးကြီးသည်
+- Deployment ရွေးချယ်မှုများသည် local development မှ cloud-based solution များအထိ ကွဲပြားသည်
 
 ## လေ့ကျင့်ခြင်း
 
-ဤအပိုင်းရှိ အခန်းအားလုံးတွင် တွေ့မြင်ရမည့် လေ့ကျင့်ခန်းများနှင့် ကိုက်ညီသော နမူနာများ ရှိသည်။ ထို့အပြင် အခန်းတိုင်းတွင် ကိုယ်ပိုင် လေ့ကျင့်ခန်းများနှင့် တာဝန်များလည်း ပါဝင်သည်။
+ဤအပိုင်းတွင် ပါဝင်သော သင်ခန်းစာများ၏ လေ့ကျင့်ခန်းများနှင့် အတူ သင်ခန်းစာများကို ဖြည့်စွက်ပေးသော sample များရှိသည်-
 
 - [Java Calculator](./samples/java/calculator/README.md)
 - [.Net Calculator](../../../03-GettingStarted/samples/csharp)
@@ -87,15 +90,15 @@ MCP သည် ဘာသာစကားအမျိုးမျိုးအတွ
 - [TypeScript Calculator](./samples/typescript/README.md)
 - [Python Calculator](../../../03-GettingStarted/samples/python)
 
-## အပိုဆောင်း အရင်းအမြစ်များ
+## ထပ်ဆောင်းရင်းမြစ်များ
 
-- [Model Context Protocol ကို အသုံးပြု၍ Azure တွင် Agents တည်ဆောက်ခြင်း](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Azure တွင် Model Context Protocol ကို အသုံးပြု၍ Agent များ တည်ဆောက်ခြင်း](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
 - [Azure Container Apps (Node.js/TypeScript/JavaScript) ဖြင့် Remote MCP](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## နောက်တစ်ဆင့်
+## အခုနောက်
 
-နောက်တစ်ဆင့်- [သင့်ပထမဆုံး MCP Server ဖန်တီးခြင်း](01-first-server/README.md)
+နောက်တစ်ခု- [သင့်ရဲ့ ပထမဆုံး MCP Server တည်ဆောက်ခြင်း](01-first-server/README.md)
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းသည် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုမှုကြောင့် ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
+**ဝက်ဘ်ဆိုက်မှတ်ချက်**:  
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေပါသော်လည်း၊ အလိုအလျောက်ဘာသာပြန်ဆိုမှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်ပါသည်။ မူရင်းစာရွက်စာတမ်းကို ၎င်း၏ မူလဘာသာစကားဖြင့် အာဏာတည်သောရင်းမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များမှ ပြန်ဆိုမှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုမှားများ သို့မဟုတ် အဓိပ္ပာယ်မှားများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

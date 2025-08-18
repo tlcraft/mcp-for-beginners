@@ -1,90 +1,96 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "80e5c8949af5af0f401fce6f905990aa",
-  "translation_date": "2025-07-17T11:44:31+00:00",
+  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
+  "translation_date": "2025-08-18T21:34:23+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "sr"
 }
 -->
-# Најбоље праксе развоја MCP-а
+# MCP Најбоље Праксе Развоја
+
+[![MCP Најбоље Праксе Развоја](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.sr.png)](https://youtu.be/W56H9W7x-ao)
+
+_(Кликните на слику изнад да бисте погледали видео лекцију)_
 
 ## Преглед
 
-Ова лекција се фокусира на напредне најбоље праксе за развој, тестирање и имплементацију MCP сервера и функција у продукцијским окружењима. Како MCP екосистеми постају сложенији и важнији, праћење утврђених образаца обезбеђује поузданост, одрживост и међусобну повезивост. Ова лекција консолидује практична знања стечена кроз реалне MCP имплементације како би вас усмерила у креирању робусних, ефикасних сервера са ефикасним ресурсима, упутствима и алатима.
+Ова лекција се фокусира на напредне најбоље праксе за развој, тестирање и примену MCP сервера и функција у продукционим окружењима. Како MCP екосистеми постају све сложенији и значајнији, праћење утврђених образаца осигурава поузданост, одрживост и интероперабилност. Ова лекција обједињује практична искуства стечена из реалних MCP имплементација како би вас водила у креирању робусних, ефикасних сервера са ефективним ресурсима, упутствима и алатима.
 
 ## Циљеви учења
 
-До краја ове лекције моћи ћете да:
-- Примените индустријске најбоље праксе у дизајну MCP сервера и функција
-- Креирате свеобухватне стратегије тестирања MCP сервера
-- Дизајнирате ефикасне, поновно употребљиве шаблоне радних токова за сложене MCP апликације
+На крају ове лекције, бићете у могућности да:
+
+- Примените најбоље праксе из индустрије у дизајну MCP сервера и функција
+- Креирате свеобухватне стратегије тестирања за MCP сервере
+- Дизајнирате ефикасне, поново употребљиве обрасце рада за сложене MCP апликације
 - Имплементирате правилно руковање грешкама, логовање и посматрање у MCP серверима
 - Оптимизујете MCP имплементације за перформансе, безбедност и одрживост
 
-## Основни принципи MCP-а
+## Основни MCP Принципи
 
-Пре него што пређемо на конкретне праксе имплементације, важно је разумети основне принципе који воде ефикасан развој MCP-а:
+Пре него што се упустимо у специфичне праксе имплементације, важно је разумети основне принципе који воде ефикасан MCP развој:
 
-1. **Стандаризована комуникација**: MCP користи JSON-RPC 2.0 као основу, обезбеђујући конзистентан формат за захтеве, одговоре и руковање грешкама у свим имплементацијама.
+1. **Стандардизована комуникација**: MCP користи JSON-RPC 2.0 као основу, пружајући конзистентан формат за захтеве, одговоре и руковање грешкама у свим имплементацијама.
 
-2. **Дизајн усмерен ка кориснику**: Увек стављајте кориснички пристанак, контролу и транспарентност на прво место у вашим MCP имплементацијама.
+2. **Кориснички оријентисан дизајн**: Увек дајте приоритет пристанку корисника, контроли и транспарентности у вашим MCP имплементацијама.
 
-3. **Безбедност на првом месту**: Имплементирајте робусне безбедносне мере укључујући аутентификацију, ауторизацију, валидацију и ограничење броја захтева.
+3. **Безбедност на првом месту**: Имплементирајте робусне мере безбедности, укључујући аутентификацију, ауторизацију, валидацију и ограничење брзине.
 
-4. **Модуларна архитектура**: Дизајнирајте MCP сервере са модуларним приступом, где сваки алат и ресурс има јасну, фокусирајућу сврху.
+4. **Модуларна архитектура**: Дизајнирајте MCP сервере са модуларним приступом, где сваки алат и ресурс имају јасну, фокусирану сврху.
 
-5. **Стање везе**: Искористите могућност MCP-а да одржава стање кроз више захтева за кохерентније и контекстуално свесније интеракције.
+5. **Стање везе**: Искористите могућност MCP-а да одржава стање кроз више захтева за кохерентније и свесније интеракције.
 
-## Званичне најбоље праксе MCP-а
+## Званичне MCP Најбоље Праксе
 
-Следеће најбоље праксе потичу из званичне документације Model Context Protocol-а:
+Следеће најбоље праксе су изведене из званичне документације Model Context Protocol-а:
 
-### Најбоље праксе безбедности
+### Најбоље Праксе Безбедности
 
-1. **Кориснички пристанак и контрола**: Увек захтевајте јасан кориснички пристанак пре приступа подацима или извођења операција. Обезбедите јасну контролу над тим који подаци се деле и које акције су овлашћене.
+1. **Пристанак и контрола корисника**: Увек захтевајте експлицитан пристанак корисника пре приступања подацима или извршавања операција. Обезбедите јасну контролу над тим који подаци се деле и које акције су овлашћене.
 
-2. **Приватност података**: Излажите корисничке податке само уз јасан пристанак и заштитите их одговарајућим контролама приступа. Штитите се од неовлашћеног преноса података.
+2. **Приватност података**: Излажите корисничке податке само уз експлицитан пристанак и заштитите их одговарајућим контролама приступа. Спречите неовлашћен пренос података.
 
-3. **Безбедност алата**: Захтевајте јасан кориснички пристанак пре позивања било ког алата. Обезбедите да корисници разумеју функционалност сваког алата и спроведите робусне безбедносне границе.
+3. **Безбедност алата**: Захтевајте експлицитан пристанак корисника пре позивања било ког алата. Осигурајте да корисници разумеју функционалност сваког алата и примените робусне безбедносне границе.
 
-4. **Контрола дозвола алата**: Конфигуришите који алати су моделу дозвољени током сесије, осигуравајући да су доступни само јасно овлашћени алати.
+4. **Контрола дозвола алата**: Конфигуришите који алати су моделу доступни током сесије, осигуравајући да су доступни само експлицитно овлашћени алати.
 
-5. **Аутентификација**: Захтевајте исправну аутентификацију пре него што омогућите приступ алатима, ресурсима или осетљивим операцијама користећи API кључеве, OAuth токене или друге безбедне методе аутентификације.
+5. **Аутентификација**: Захтевајте одговарајућу аутентификацију пре него што одобрите приступ алатима, ресурсима или осетљивим операцијама користећи API кључеве, OAuth токене или друге сигурне методе аутентификације.
 
-6. **Валидација параметара**: Спроводите валидацију за све позиве алата како бисте спречили да неисправни или злонамерни уноси стигну до имплементација алата.
+6. **Валидација параметара**: Примените валидацију за све позиве алата како бисте спречили да неисправан или злонамеран унос дође до имплементације алата.
 
-7. **Ограничење броја захтева**: Имплементирајте ограничење броја захтева како бисте спречили злоупотребу и обезбедили фер коришћење ресурса сервера.
+7. **Ограничење брзине**: Имплементирајте ограничење брзине како бисте спречили злоупотребу и осигурали праведно коришћење серверских ресурса.
 
-### Најбоље праксе имплементације
+### Најбоље Праксе Имплементације
 
-1. **Неговање могућности**: Током успостављања везе, размењујте информације о подржаним функцијама, верзијама протокола, доступним алатима и ресурсима.
+1. **Преговарање о могућностима**: Током успостављања везе, размените информације о подржаним функцијама, верзијама протокола, доступним алатима и ресурсима.
 
-2. **Дизајн алата**: Креирајте фокусиране алате који једну ствар раде добро, уместо монолитних алата који покривају више области.
+2. **Дизајн алата**: Креирајте фокусиране алате који добро обављају један задатак, уместо монолитних алата који обрађују више аспеката.
 
-3. **Руковање грешкама**: Имплементирајте стандардизоване поруке о грешкама и кодове како бисте помогли у дијагностици проблема, благом руковању неуспесима и пружању корисних повратних информација.
+3. **Руковање грешкама**: Имплементирајте стандардизоване поруке о грешкама и кодове како бисте помогли у дијагностици проблема, руковали неуспесима на елегантан начин и пружили корисне повратне информације.
 
-4. **Логовање**: Конфигуришите структуриране логове за ревизију, отклањање грешака и праћење интеракција протокола.
+4. **Логовање**: Конфигуришите структуиране логове за ревизију, отклањање грешака и праћење интеракција протокола.
 
-5. **Праћење напретка**: За дуготрајне операције извештавајте о напретку како бисте омогућили одзивне корисничке интерфејсе.
+5. **Праћење напретка**: За дуготрајне операције, пријављујте ажурирања напретка како бисте омогућили одзивна корисничка сучеља.
 
-6. **Отказивање захтева**: Омогућите клијентима да отказују захтеве који су у току, а више нису потребни или трају предуго.
+6. **Отказивање захтева**: Омогућите клијентима да откажу захтеве који су у току, а који више нису потребни или трају предуго.
 
-## Додатне референце
+## Додатне Референце
 
-За најновије информације о најбољим праксама MCP-а, погледајте:
-- [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [GitHub Repository](https://github.com/modelcontextprotocol)
-- [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+За најновије информације о MCP најбољим праксама, погледајте:
 
-## Примери практичне имплементације
+- [MCP Документација](https://modelcontextprotocol.io/)
+- [MCP Спецификација](https://spec.modelcontextprotocol.io/)
+- [GitHub Репозиторијум](https://github.com/modelcontextprotocol)
+- [Најбоље Праксе Безбедности](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
-### Најбоље праксе дизајна алата
+## Практични Примери Имплементације
 
-#### 1. Принцип једне одговорности
+### Најбоље Праксе Дизајна Алатa
 
-Сваки MCP алат треба да има јасну, фокусирајућу сврху. Уместо да правите монолитне алате који покушавају да реше више проблема, развијајте специјализоване алате који одлично обављају одређене задатке.
+#### 1. Принцип Једне Одговорности
+
+Сваки MCP алат треба да има јасну, фокусирану сврху. Уместо креирања монолитних алата који покушавају да обрађују више аспеката, развијајте специјализоване алате који се истичу у специфичним задацима.
 
 ```csharp
 // A focused tool that does one thing well
@@ -144,9 +150,9 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-#### 2. Конзистентно руковање грешкама
+#### 2. Конзистентно Руковање Грешкама
 
-Имплементирајте робусно руковање грешкама са информативним порукама и одговарајућим механизмима опоравка.
+Имплементирајте робусно руковање грешкама са информативним порукама о грешкама и одговарајућим механизмима за опоравак.
 
 ```python
 # Python example with comprehensive error handling
@@ -205,9 +211,9 @@ class DataQueryTool:
         pass
 ```
 
-#### 3. Валидација параметара
+#### 3. Валидација Параметара
 
-Увек темељно валидајте параметре како бисте спречили неисправне или злонамерне уносе.
+Увек темељно валидирајте параметре како бисте спречили неисправан или злонамеран унос.
 
 ```javascript
 // JavaScript/TypeScript example with detailed parameter validation
@@ -290,9 +296,9 @@ class FileOperationTool {
 }
 ```
 
-### Примери имплементације безбедности
+### Примери Имплементације Безбедности
 
-#### 1. Аутентификација и ауторизација
+#### 1. Аутентификација и Ауторизација
 
 ```java
 // Java example with authentication and authorization
@@ -358,7 +364,7 @@ public class SecureDataAccessTool implements Tool {
 }
 ```
 
-#### 2. Ограничење броја захтева
+#### 2. Ограничење Брзине
 
 ```csharp
 // C# rate limiting implementation
@@ -434,11 +440,11 @@ public class RateLimitingMiddleware
 }
 ```
 
-## Најбоље праксе тестирања
+## Најбоље Праксе Тестирања
 
-### 1. Јединично тестирање MCP алата
+### 1. Јединично Тестирање MCP Алатa
 
-Увек тестирајте алате изоловано, користећи мокове за спољне зависности:
+Увек тестирајте своје алате изоловано, симулирајући спољне зависности:
 
 ```typescript
 // TypeScript example of a tool unit test
@@ -494,9 +500,9 @@ describe('WeatherForecastTool', () => {
 });
 ```
 
-### 2. Интеграционо тестирање
+### 2. Интеграционо Тестирање
 
-Тестирајте цео ток од захтева клијента до одговора сервера:
+Тестирајте комплетан ток од клијентских захтева до серверских одговора:
 
 ```python
 # Python integration test example
@@ -531,11 +537,11 @@ async def test_mcp_server_integration():
         await server.stop()
 ```
 
-## Оптимизација перформанси
+## Оптимизација Перформанси
 
-### 1. Стратегије кеширања
+### 1. Стратегије Кеширања
 
-Имплементирајте одговарајуће кеширање како бисте смањили латенцију и коришћење ресурса:
+Имплементирајте одговарајуће кеширање како бисте смањили кашњење и употребу ресурса:
 
 ```csharp
 // C# example with caching
@@ -602,19 +608,20 @@ public class CachedWeatherTool : ITool
         };
     }
 }
+```
 
-#### 2. Dependency Injection and Testability
+#### 2. Убризгавање Зависности и Тестабилност
 
-Design tools to receive their dependencies through constructor injection, making them testable and configurable:
+Дизајнирајте алате тако да примају своје зависности кроз убризгавање конструктора, чинећи их тестабилним и конфигурабилним:
 
 ```java
-// Јава пример са dependency injection
+// Java example with dependency injection
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Зависности унети кроз конструктор
+    // Dependencies injected through constructor
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -624,51 +631,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Имплементација алата
+    // Tool implementation
     // ...
 }
 ```
 
-#### 3. Composable Tools
+#### 3. Компоновани Алат
 
-Design tools that can be composed together to create more complex workflows:
+Дизајнирајте алате који могу бити компоновани заједно како би креирали сложеније токове рада:
 
 ```python
-# Python пример који показује састављиве алате
+# Python example showing composable tools
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Имплементација...
+    # Implementation...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # Овај алат може користити резултате из dataFetch алата
+    # This tool can use results from the dataFetch tool
     async def execute_async(self, request):
-        # Имплементација...
+        # Implementation...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # Овај алат може користити резултате из dataAnalysis алата
+    # This tool can use results from the dataAnalysis tool
     async def execute_async(self, request):
-        # Имплементација...
+        # Implementation...
         pass
 
-# Ови алати могу да се користе независно или као део радног тока
+# These tools can be used independently or as part of a workflow
 ```
 
-### Schema Design Best Practices
+### Најбоље Праксе Дизајна Шема
 
-The schema is the contract between the model and your tool. Well-designed schemas lead to better tool usability.
+Шема је уговор између модела и вашег алата. Добро дизајниране шеме воде до боље употребљивости алата.
 
-#### 1. Clear Parameter Descriptions
+#### 1. Јасни Опис Параметара
 
-Always include descriptive information for each parameter:
+Увек укључите описне информације за сваки параметар:
 
 ```csharp
 public object GetSchema()
@@ -678,25 +685,25 @@ public object GetSchema()
         properties = new {
             query = new { 
                 type = "string", 
-                description = "Текст претраживачког упита. Користите прецизне кључне речи за боље резултате." 
+                description = "Search query text. Use precise keywords for better results." 
             },
             filters = new {
                 type = "object",
-                description = "Опционални филтери за сужење резултата претраге",
+                description = "Optional filters to narrow down search results",
                 properties = new {
                     dateRange = new { 
                         type = "string", 
-                        description = "Опсег датума у формату YYYY-MM-DD:YYYY-MM-DD" 
+                        description = "Date range in format YYYY-MM-DD:YYYY-MM-DD" 
                     },
                     category = new { 
                         type = "string", 
-                        description = "Назив категорије за филтрирање" 
+                        description = "Category name to filter by" 
                     }
                 }
             },
             limit = new { 
                 type = "integer", 
-                description = "Максималан број резултата за враћање (1-50)",
+                description = "Maximum number of results to return (1-50)",
                 default = 10
             }
         },
@@ -705,9 +712,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. Validation Constraints
+#### 2. Ограничења Валидације
 
-Include validation constraints to prevent invalid inputs:
+Укључите ограничења валидације како бисте спречили неважеће уносе:
 
 ```java
 Map<String, Object> getSchema() {
@@ -716,25 +723,25 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email својство са валидацијом формата
+    // Email property with format validation
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
-    email.put("description", "Корисничка емаил адреса");
+    email.put("description", "User email address");
     
-    // Age својство са нумеричким ограничењима
+    // Age property with numeric constraints
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
-    age.put("description", "Корисничке године");
+    age.put("description", "User age in years");
     
-    // Енумерисано својство
+    // Enumerated property
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
     subscription.put("default", "free");
-    subscription.put("description", "Ниво претплате");
+    subscription.put("description", "Subscription tier");
     
     properties.put("email", email);
     properties.put("age", age);
@@ -747,17 +754,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Consistent Return Structures
+#### 3. Конзистентне Структуре Одговора
 
-Maintain consistency in your response structures to make it easier for models to interpret results:
+Одржавајте конзистентност у структурама одговора како би моделима било лакше да интерпретирају резултате:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Обрада захтева
+        # Process request
         results = await self._search_database(request.parameters["query"])
         
-        # Увек враћајте конзистентну структуру
+        # Always return a consistent structure
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -778,7 +785,7 @@ async def execute_async(self, request):
         )
     
 def _format_item(self, item):
-    """Обезбеђује да сваки елемент има конзистентну структуру"""
+    """Ensures each item has a consistent structure"""
     return {
         "id": item.id,
         "title": item.title,
@@ -788,13 +795,13 @@ def _format_item(self, item):
     }
 ```
 
-### Error Handling
+### Руковање Грешкама
 
-Robust error handling is crucial for MCP tools to maintain reliability.
+Робусно руковање грешкама је кључно за MCP алате како би одржали поузданост.
 
-#### 1. Graceful Error Handling
+#### 1. Елегантно Руковање Грешкама
 
-Handle errors at appropriate levels and provide informative messages:
+Руковање грешкама на одговарајућим нивоима и пружање информативних порука:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -812,39 +819,39 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
         }
         catch (FileNotFoundException)
         {
-            throw new ToolExecutionException($"Фајл није пронађен: {fileId}");
+            throw new ToolExecutionException($"File not found: {fileId}");
         }
         catch (UnauthorizedAccessException)
         {
-            throw new ToolExecutionException("Немате дозволу за приступ овом фајлу");
+            throw new ToolExecutionException("You don't have permission to access this file");
         }
         catch (Exception ex) when (ex is IOException || ex is TimeoutException)
         {
-            _logger.LogError(ex, "Грешка при приступу фајлу {FileId}", fileId);
-            throw new ToolExecutionException("Грешка при приступу фајлу: Услуга је привремено недоступна");
+            _logger.LogError(ex, "Error accessing file {FileId}", fileId);
+            throw new ToolExecutionException("Error accessing file: The service is temporarily unavailable");
         }
     }
     catch (JsonException)
     {
-        throw new ToolExecutionException("Неисправан формат ID фајла");
+        throw new ToolExecutionException("Invalid file ID format");
     }
     catch (Exception ex)
     {
-        _logger.LogError(ex, "Неочекивана грешка у FileAccessTool");
-        throw new ToolExecutionException("Догодила се неочекивана грешка");
+        _logger.LogError(ex, "Unexpected error in FileAccessTool");
+        throw new ToolExecutionException("An unexpected error occurred");
     }
 }
 ```
 
-#### 2. Structured Error Responses
+#### 2. Структурисани Одговори на Грешке
 
-Return structured error information when possible:
+Враћајте структурисане информације о грешкама кад год је могуће:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Имплементација
+        // Implementation
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -862,45 +869,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Поново баци друге изузетке као ToolExecutionException
-        throw new ToolExecutionException("Извршење алата није успело: " + ex.getMessage(), ex);
+        // Re-throw other exceptions as ToolExecutionException
+        throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. Retry Logic
+#### 3. Логика Поновног Покушаја
 
-Implement appropriate retry logic for transient failures:
+Имплементирајте одговарајућу логику поновног покушаја за привремене неуспехе:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # секунде
+    base_delay = 1  # seconds
     
     while retry_count < max_retries:
         try:
-            # Позив спољашњег API-ја
+            # Call external API
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
-                raise ToolExecutionException(f"Операција није успела након {max_retries} покушаја: {str(e)}")
+                raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
                 
-            # Експоненцијално одлагање
+            # Exponential backoff
             delay = base_delay * (2 ** (retry_count - 1))
-            logging.warning(f"Привремена грешка, покушавам поново за {delay}s: {str(e)}")
+            logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Непривремена грешка, не покушавај поново
-            raise ToolExecutionException(f"Операција није успела: {str(e)}")
+            # Non-transient error, don't retry
+            raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### Performance Optimization
+### Оптимизација Перформанси
 
-#### 1. Caching
+#### 1. Кеширање
 
-Implement caching for expensive operations:
+Имплементирајте кеширање за скупе операције:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -914,25 +921,23 @@ public class CachedDataTool : IMcpTool
         _cache = cache;
     }
     
-    public async Task
-
-ExecuteAsync(ToolRequest request)
+    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
     {
         var query = request.Parameters.GetProperty("query").GetString();
         
-        // Креирај кључ кеша на основу параметара
+        // Create cache key based on parameters
         var cacheKey = $"data_query_{ComputeHash(query)}";
         
-        // Прво покушај да се добије из кеша
+        // Try to get from cache first
         if (_cache.TryGetValue(cacheKey, out var cachedResult))
         {
             return new ToolResponse { Result = cachedResult };
         }
         
-        // Кеш није пронађен - изврши стварни упит
+        // Cache miss - perform actual query
         var result = await _database.QueryAsync(query);
         
-        // Сачувај у кеш са временом истека
+        // Store in cache with expiration
         var cacheOptions = new MemoryCacheEntryOptions()
             .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
             
@@ -943,14 +948,14 @@ ExecuteAsync(ToolRequest request)
     
     private string ComputeHash(string input)
     {
-        // Имплементација за генерисање стабилног хеша за кључ кеша
+        // Implementation to generate stable hash for cache key
     }
 }
 ```
 
-#### 2. Asynchronous Processing
+#### 2. Асинхроно Обрађивање
 
-Use asynchronous programming patterns for I/O-bound operations:
+Користите асинхроне програмске обрасце за операције које зависе од I/O:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -961,23 +966,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // За дуготрајне операције, одмах врати ID процеса
+        // For long-running operations, return a processing ID immediately
         String processId = UUID.randomUUID().toString();
         
-        // Покрени асинхрону обраду
+        // Start async processing
         CompletableFuture.runAsync(() -> {
             try {
-                // Изврши дуготрајну операцију
+                // Perform long-running operation
                 documentService.processDocument(documentId);
                 
-                // Ажурирај статус (обично се чува у бази података)
+                // Update status (would typically be stored in a database)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Врати одговор одмах са ID процеса
+        // Return immediate response with process ID
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -986,7 +991,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Пратећи алат за проверу статуса процеса
+    // Companion status check tool
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -999,35 +1004,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Resource Throttling
+#### 3. Ограничење Ресурса
 
-Implement resource throttling to prevent overload:
+Имплементирајте ограничење ресурса како бисте спречили преоптерећење:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Дозвољено 5 захтева у секунди
-            bucket_size=10        # Дозвољени налети до 10 захтева
+            tokens_per_second=5,  # Allow 5 requests per second
+            bucket_size=10        # Allow bursts up to 10 requests
         )
     
     async def execute_async(self, request):
-        # Провери да ли можемо наставити или морамо чекати
+        # Check if we can proceed or need to wait
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # Ако је време чекања превелико
+            if delay > 2.0:  # If wait is too long
                 raise ToolExecutionException(
-                    f"Прекорачен лимит захтева. Покушајте поново за {delay:.1f} секунди."
+                    f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
                 )
             else:
-                # Чекај одговарајуће време
+                # Wait for the appropriate delay time
                 await asyncio.sleep(delay)
         
-        # Потроши један токен и настави са захтевом
+        # Consume a token and proceed with the request
         self.rate_limiter.consume()
         
-        # Позови API
+        # Call API
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -1045,7 +1050,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Израчунај време до следећег доступног токена
+            # Calculate time until next token available
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1057,86 +1062,86 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Додај нове токене на основу протеклог времена
+        # Add new tokens based on elapsed time
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### Security Best Practices
+### Најбоље Праксе Безбедности
 
-#### 1. Input Validation
+#### 1. Валидација Уноса
 
-Always validate input parameters thoroughly:
+Увек темељно валидирајте улазне параметре:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 {
-    // Валидација да параметри постоје
+    // Validate parameters exist
     if (!request.Parameters.TryGetProperty("query", out var queryProp))
     {
-        throw new ToolExecutionException("Недостаје обавезан параметар: query");
+        throw new ToolExecutionException("Missing required parameter: query");
     }
     
-    // Валидација исправног типа
+    // Validate correct type
     if (queryProp.ValueKind != JsonValueKind.String)
     {
-        throw new ToolExecutionException("Параметар query мора бити стринг");
+        throw new ToolExecutionException("Query parameter must be a string");
     }
     
     var query = queryProp.GetString();
     
-    // Валидација садржаја стринга
+    // Validate string content
     if (string.IsNullOrWhiteSpace(query))
     {
-        throw new ToolExecutionException("Параметар query не може бити празан");
+        throw new ToolExecutionException("Query parameter cannot be empty");
     }
     
     if (query.Length > 500)
     {
-        throw new ToolExecutionException("Параметар query прелази максималну дужину од 500 карактера");
+        throw new ToolExecutionException("Query parameter exceeds maximum length of 500 characters");
     }
     
-    // Провера SQL инјекције ако је применљиво
+    // Check for SQL injection attacks if applicable
     if (ContainsSqlInjection(query))
     {
-        throw new ToolExecutionException("Неважећи упит: садржи потенцијално опасан SQL");
+        throw new ToolExecutionException("Invalid query: contains potentially unsafe SQL");
     }
     
-    // Настави са извршењем
+    // Proceed with execution
     // ...
 }
 ```
 
-#### 2. Authorization Checks
+#### 2. Провере Ауторизације
 
-Implement proper authorization checks:
+Имплементирајте одговарајуће провере ауторизације:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Узми кориснички контекст из захтева
+    // Get user context from request
     UserContext user = request.getContext().getUserContext();
     
-    // Провери да ли корисник има потребна овлашћења
+    // Check if user has required permissions
     if (!authorizationService.hasPermission(user, "documents:read")) {
-        throw new ToolExecutionException("Корисник нема дозволу за приступ документима");
+        throw new ToolExecutionException("User does not have permission to access documents");
     }
     
-    // За одређене ресурсе, провери приступ том ресурсу
+    // For specific resources, check access to that resource
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
-        throw new ToolExecutionException("Приступ траженом документу је одбијен");
+        throw new ToolExecutionException("Access denied to the requested document");
     }
     
-    // Настави са извршењем алата
+    // Proceed with tool execution
     // ...
 }
 ```
 
-#### 3. Sensitive Data Handling
+#### 3. Руковање Осетљивим Подацима
 
-Handle sensitive data carefully:
+Пажљиво рукујте осетљивим подацима:
 
 ```python
 class SecureDataTool(Tool):
@@ -1154,56 +1159,56 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Узми корисничке податке
+        # Get user data
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Филтрирај осетљива поља осим ако није изричито тражено И овлашћено
+        # Filter sensitive fields unless explicitly requested AND authorized
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Провера нивоа овлашћења у контексту захтева
+        # Check authorization level in request context
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Направи копију да не би мењао оригинал
+        # Create a copy to avoid modifying the original
         redacted = user_data.copy()
         
-        # Цртај одређена осетљива поља
+        # Redact specific sensitive fields
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Цртај угнежђене осетљиве податке
+        # Redact nested sensitive data
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## Testing Best Practices for MCP Tools
+## Најбоље Праксе Тестирања MCP Алатa
 
-Comprehensive testing ensures that MCP tools function correctly, handle edge cases, and integrate properly with the rest of the system.
+Свеобухватно тестирање осигурава да MCP алати функционишу исправно, обрађују граничне случајеве и правилно се интегришу са остатком система.
 
-### Unit Testing
+### Јединично Тестирање
 
-#### 1. Test Each Tool in Isolation
+#### 1. Тестирајте Сваки Алат Изоловано
 
-Create focused tests for each tool's functionality:
+Креирајте фокусиране тестове за функционалност сваког алата:
 
 ```csharp
 [Fact]
 public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 {
-    // Припрема
+    // Arrange
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("Seattle", 3))
-        .ReturnsAsync(new WeatherForecast(/* тест подаци */));
+        .ReturnsAsync(new WeatherForecast(/* test data */));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -1215,10 +1220,10 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
         })
     );
     
-    // Извршење
+    // Act
     var response = await tool.ExecuteAsync(request);
     
-    // Проверa
+    // Assert
     Assert.NotNull(response);
     var result = JsonSerializer.Deserialize<WeatherForecast>(response.Result);
     Assert.Equal("Seattle", result.Location);
@@ -1228,11 +1233,11 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 [Fact]
 public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 {
-    // Припрема
+    // Arrange
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("InvalidLocation", It.IsAny<int>()))
-        .ThrowsAsync(new LocationNotFoundException("Локација није пронађена"));
+        .ThrowsAsync(new LocationNotFoundException("Location not found"));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -1244,36 +1249,36 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
         })
     );
     
-    // Извршење и проверa
+    // Act & Assert
     var exception = await Assert.ThrowsAsync<ToolExecutionException>(
         () => tool.ExecuteAsync(request)
     );
     
-    Assert.Contains("Локација није пронађена", exception.Message);
+    Assert.Contains("Location not found", exception.Message);
 }
 ```
 
-#### 2. Schema Validation Testing
+#### 2. Тестирање Валидације Шема
 
-Test that schemas are valid and properly enforce constraints:
+Тестирајте да ли су шеме валидне и правилно примењују ограничења:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Креирај инстанцу алата
+    // Create tool instance
     SearchTool searchTool = new SearchTool();
     
-    // Узми шему
+    // Get schema
     Object schema = searchTool.getSchema();
     
-    // Конвертуј шему у JSON за валидацију
+    // Convert schema to JSON for validation
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Валидација да ли је шема валидан JSONSchema
+    // Validate schema is valid JSONSchema
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Тестирај валидне параметре
+    // Test valid parameters
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -1281,14 +1286,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Тестирај недостајући обавезан параметар
+    // Test missing required parameter
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Тестирај неважећи тип параметра
+    // Test invalid parameter type
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1298,21 +1303,21 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. Error Handling Tests
+#### 3. Тестови Руковања Грешкама
 
-Create specific tests for error conditions:
+Креирајте специфичне тестове за услове грешке:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Припрема
-    tool = ApiTool(timeout=0.1)  # Врло кратак тајмаут
+    # Arrange
+    tool = ApiTool(timeout=0.1)  # Very short timeout
     
-    # Мокирај захтев који ће истећи
+    # Mock a request that will time out
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Дуже од тајмаута
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
         )
         
         request = ToolRequest(
@@ -1320,19 +1325,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Извршење и проверa
+        # Act & Assert
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Провера поруке о грешци
+        # Verify exception message
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Припрема
+    # Arrange
     tool = ApiTool()
     
-    # Мокирај одговор са ограничењем брзине
+    # Mock a rate-limited response
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -1346,27 +1351,27 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Извршење и проверa
+        # Act & Assert
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Провера да ли изузетак садржи информације о ограничењу брзине
+        # Verify exception contains rate limit information
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### Integration Testing
+### Интеграционо Тестирање
 
-#### 1. Tool Chain Testing
+#### 1. Тестирање Ланца Алатa
 
-Test tools working together in expected combinations:
+Тестирајте алате који раде заједно у очекиваним комбинацијама:
 
 ```csharp
 [Fact]
 public async Task DataProcessingWorkflow_CompletesSuccessfully()
 {
-    // Припрема
+    // Arrange
     var dataFetchTool = new DataFetchTool(mockDataService.Object);
     var analysisTools = new DataAnalysisTool(mockAnalysisService.Object);
     var visualizationTool = new DataVisualizationTool(mockVisualizationService.Object);
@@ -1378,31 +1383,30 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
     
     var workflowExecutor = new WorkflowExecutor(toolRegistry);
     
-    // Извршење
-var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
-    new ToolCall("dataFetch", new { source = "sales2023" }),
-    new ToolCall("dataAnalysis", ctx =>
-        new { 
+    // Act
+    var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
+        new ToolCall("dataFetch", new { source = "sales2023" }),
+        new ToolCall("dataAnalysis", ctx => new { 
             data = ctx.GetResult("dataFetch"),
             analysis = "trend" 
         }),
-    new ToolCall("dataVisualize", ctx => new {
-        analysisResult = ctx.GetResult("dataAnalysis"),
-        type = "line-chart"
-    })
-});
-
-// Assert
-Assert.NotNull(result);
-Assert.True(result.Success);
-Assert.NotNull(result.GetResult("dataVisualize"));
-Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
+        new ToolCall("dataVisualize", ctx => new {
+            analysisResult = ctx.GetResult("dataAnalysis"),
+            type = "line-chart"
+        })
+    });
+    
+    // Assert
+    Assert.NotNull(result);
+    Assert.True(result.Success);
+    Assert.NotNull(result.GetResult("dataVisualize"));
+    Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
 }
 ```
 
-#### 2. MCP Server Testing
+#### 2. Тестирање MCP Сервера
 
-Test the MCP server with full tool registration and execution:
+Тестирајте MCP сервер са пуним регистровањем и извршавањем алата:
 
 ```java
 @SpringBootTest
@@ -1417,7 +1421,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Тестирање endpoint-а за откривање алата
+        // Test the discovery endpoint
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1428,7 +1432,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Креирање захтева за алат
+        // Create tool request
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -1438,7 +1442,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Слање захтева и провера одговора
+        // Send request and verify response
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1448,17 +1452,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Креирање неважећег захтева за алат
+        // Create invalid tool request
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Недостаје параметар "b"
+        // Missing parameter "b"
         request.put("parameters", parameters);
         
-        // Слање захтева и провера грешке у одговору
+        // Send request and verify error response
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1468,32 +1472,32 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. End-to-End Testing
+#### 3. Крајњи-Тестови
 
-Test complete workflows from model prompt to tool execution:
+Тестирајте комплетне токове рада од модела до извршења алата:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Припрема - подешавање MCP клијента и mock модела
+    # Arrange - Set up MCP client and mock model
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock одговори модела
+    # Mock model responses
     mock_model = MockLanguageModel([
         MockResponse(
-            "Какво је време у Сијетлу?",
+            "What's the weather in Seattle?",
             tool_calls=[{
                 "tool_name": "weatherForecast",
                 "parameters": {"location": "Seattle", "days": 3}
             }]
         ),
         MockResponse(
-            "Ево прогнозе времена за Сијетл:\n- Данас: 65°F, делимично облачно\n- Сутра: 68°F, сунчано\n- Прекосутра: 62°F, киша",
+            "Here's the weather forecast for Seattle:\n- Today: 65°F, Partly Cloudy\n- Tomorrow: 68°F, Sunny\n- Day after: 62°F, Rain",
             tool_calls=[]
         )
     ])
     
-    # Mock одговор алата за време
+    # Mock weather tool response
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1509,14 +1513,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Извршење
+        # Act
         response = await mcp_client.send_prompt(
-            "Какво је време у Сијетлу?",
+            "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Проверa
+        # Assert
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1525,17 +1529,17 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### Performance Testing
+### Тестирање Перформанси
 
-#### 1. Load Testing
+#### 1. Тестирање Оптерећења
 
-Test how many concurrent requests your MCP server can handle:
+Тестирајте колико истовремених захтева ваш MCP сервер може да обради:
 
 ```csharp
 [Fact]
 public async Task McpServer_HandlesHighConcurrency()
 {
-    // Припрема
+    // Arrange
     var server = new McpServer(
         name: "TestServer",
         version: "1.0",
@@ -1547,7 +1551,7 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var client = new McpClient("http://localhost:5000");
     
-    // Извршење
+    // Act
     var tasks = new List<Task<McpResponse>>();
     for (int i = 0; i < 1000; i++)
     {
@@ -1556,15 +1560,15 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var results = await Task.WhenAll(tasks);
     
-    // Проверa
+    // Assert
     Assert.Equal(1000, results.Length);
     Assert.All(results, r => Assert.NotNull(r));
 }
 ```
 
-#### 2. Stress Testing
+#### 2. Тестирање Стреса
 
-Test the system under extreme load:
+Тестирајте систем под екстремним оптерећењем:
 
 ```java
 @Test
@@ -1573,13 +1577,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Подешавање JMeter-а за стрес тестирање
+    // Set up JMeter for stress testing
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Конфигурисање плана теста у JMeter-у
+    // Configure JMeter test plan
     HashTree testPlanTree = new HashTree();
     
-    // Креирање плана теста, групе нити, узорака итд.
+    // Create test plan, thread group, samplers, etc.
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1591,7 +1595,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Додавање HTTP узорка за извршење алата
+    // Add HTTP sampler for tool execution
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1602,58 +1606,58 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Додавање слушалаца
+    // Add listeners
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Покретање теста
+    // Run test
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Валидација резултата
+    // Validate results
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Просечно време одговора < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90-ти перцентил < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
 }
 ```
 
-#### 3. Monitoring and Profiling
+#### 3. Надгледање и Профилисање
 
-Set up monitoring for long-term performance analysis:
+Поставите надгледање за дугорочну анализу перформанси:
 
 ```python
-# Конфигурисање мониторинга за MCP сервер
+# Configure monitoring for an MCP server
 def configure_monitoring(server):
-    # Подешавање Prometheus метрика
+    # Set up Prometheus metrics
     prometheus_metrics = {
-        "request_count": Counter("mcp_requests_total", "Укупно MCP захтева"),
+        "request_count": Counter("mcp_requests_total", "Total MCP requests"),
         "request_latency": Histogram(
             "mcp_request_duration_seconds", 
-            "Трајање захтева у секундама",
+            "Request duration in seconds",
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_execution_count": Counter(
             "mcp_tool_executions_total", 
-            "Број извршења алата",
+            "Tool execution count",
             labelnames=["tool_name"]
         ),
         "tool_execution_latency": Histogram(
             "mcp_tool_duration_seconds", 
-            "Трајање извршења алата у секундама",
+            "Tool execution duration in seconds",
             labelnames=["tool_name"],
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_errors": Counter(
             "mcp_tool_errors_total",
-            "Грешке приликом извршења алата",
+            "Tool execution errors",
             labelnames=["tool_name", "error_type"]
         )
     }
     
-    # Додавање middleware-а за мерење времена и снимање метрика
+    # Add middleware for timing and recording metrics
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Излагање endpoint-а за метрике
+    # Expose metrics endpoint
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1661,29 +1665,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP Workflow Design Patterns
+## Дизајн Образаца MCP Токова
 
-Well-designed MCP workflows improve efficiency, reliability, and maintainability. Here are key patterns to follow:
+Добро дизајнирани MCP токови побољшавају ефикасност, поузданост и одрживост. Ево кључних образаца које треба пратити:
 
-### 1. Chain of Tools Pattern
+### 1. Образац Ланца Алатa
 
-Connect multiple tools in a sequence where each tool's output becomes the input for the next:
+Повежите више алата у низу где излаз једног алата постаје улаз за следећи:
 
 ```python
-# Python имплементација ланца алата
+# Python Chain of Tools implementation
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # Листа имена алата који се извршавају у низу
+        self.tools_chain = tools_chain  # List of tool names to execute in sequence
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Извршавање сваког алата у ланцу, прослеђујући претходни резултат
+            # Execute each tool in the chain, passing previous result
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Чување резултата и коришћење као улаз за следећи алат
+            # Store result and use as input for next tool
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1692,7 +1696,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Пример коришћења
+# Example usage
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1706,9 +1710,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Dispatcher Pattern
+### 2. Образац Диспетчера
 
-Use a central tool that dispatches to specialized tools based on input:
+Користите централни алат који усмерава на специјализоване алате на основу уноса:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1721,7 +1725,7 @@ public class ContentDispatcherTool : IMcpTool
     }
     
     public string Name => "contentProcessor";
-    public string Description => "Обрађује садржај различитих типова";
+    public string Description => "Processes content of various types";
     
     public object GetSchema()
     {
@@ -1748,10 +1752,10 @@ public class ContentDispatcherTool : IMcpTool
         var contentType = request.Parameters.GetProperty("contentType").GetString();
         var operation = request.Parameters.GetProperty("operation").GetString();
         
-        // Одређивање који специјализовани алат ће се користити
+        // Determine which specialized tool to use
         string targetTool = DetermineTargetTool(contentType, operation);
         
-        // Прослеђивање специјализованом алату
+        // Forward to the specialized tool
         var specializedResponse = await _mcpClient.ExecuteToolAsync(
             targetTool,
             new { content, options = GetOptionsForTool(targetTool, operation) }
@@ -1768,42 +1772,29 @@ public class ContentDispatcherTool : IMcpTool
             ("text", "analyze") => "textAnalyzer",
             ("html", _) => "htmlProcessor",
             ("markdown", _) => "markdownProcessor",
-            ("csv", _) =>
-ВАЖНА ПРАВИЛА:
-1. НЕ ДОДАЈТЕ '''markdown или било какве друге ознаке око превода
-2. Водите рачуна да превод не звучи превише дословно
-3. Преведите и коментаре
-4. Овај фајл је написан у Markdown формату - немојте га третирати као XML или HTML
-5. Немојте преводити:
-   - [!NOTE], [!WARNING], [!TIP], [!IMPORTANT], [!CAUTION]
-   - Имена променљивих, имена функција, имена класа
-   - Плейсхолдере као што су @@INLINE_CODE_x@@ или @@CODE_BLOCK_x@@
-   - URL адресе или путеве
-6. Задржите сву оригиналну Markdown форматацију нетакнутом
-7. Вратите САМО преведени садржај без додатних ознака или формата
-Молимо вас да излаз пишете слева надесно.
+            ("csv", _) => "csvProcessor",
             ("code", _) => "codeAnalyzer",
-            _ => throw new ToolExecutionException($"Нема доступног алата за {contentType}/{operation}")
+            _ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
         };
     }
     
     private object GetOptionsForTool(string toolName, string operation)
     {
-        // Врати одговарајуће опције за сваки специјализовани алат
+        // Return appropriate options for each specialized tool
         return toolName switch
         {
             "textSummarizer" => new { length = "medium" },
             "htmlProcessor" => new { cleanUp = true, operation },
-            // Опције за друге алате...
+            // Options for other tools...
             _ => new { }
         };
     }
 }
 ```
 
-### 3. Parallel Processing Pattern
+### 3. Образац Паралелне Обраде
 
-Execute multiple tools simultaneously for efficiency:
+Извршавајте више алата истовремено ради ефикасности:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1814,11 +1805,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Корак 1: Преузми метаподатке скупа података (синхроно)
+        // Step 1: Fetch dataset metadata (synchronous)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Корак 2: Покрени више анализа паралелно
+        // Step 2: Launch multiple analyses in parallel
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1840,25 +1831,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Чекај да се све паралелне задатке заврше
+        // Wait for all parallel tasks to complete
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Чекај завршетак
+        allAnalyses.join();  // Wait for completion
         
-        // Корак 3: Комбинуј резултате
+        // Step 3: Combine results
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Корак 4: Генериши резиме извештаја
+        // Step 4: Generate summary report
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Врати комплетан резултат рада
+        // Return complete workflow result
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1869,9 +1860,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Error Recovery Pattern
+### 4. Образац Опоравка од Грешака
 
-Implement graceful fallbacks for tool failures:
+Имплементирајте елегантне резервне опције за неуспехе алата:
 
 ```python
 class ResilientWorkflow:
@@ -1880,7 +1871,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Прво покушај са примарним алатом
+            # Try primary tool first
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1888,12 +1879,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Забележи неуспех
-            logging.warning(f"Примарни алат '{primary_tool}' није успео: {str(e)}")
+            # Log the failure
+            logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
             
-            # Прелазак на резервни алат
+            # Fall back to secondary tool
             try:
-                # Можда је потребно прилагодити параметре за резервни алат
+                # Might need to transform parameters for fallback tool
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1904,30 +1895,30 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Оба алата нису успела
-                logging.error(f"И примарни и резервни алат нису успели. Грешка резервног: {str(fallback_error)}")
+                # Both tools failed
+                logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
                 raise WorkflowExecutionException(
-                    f"Извршење рада није успело: примарна грешка: {str(e)}; грешка резервног: {str(fallback_error)}"
+                    f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
                 )
     
     def _adapt_parameters(self, params, from_tool, to_tool):
-        """Прилагоди параметре између различитих алата ако је потребно"""
-        # Ова имплементација зависи од конкретних алата
-        # За овај пример вратићемо оригиналне параметре
+        """Adapt parameters between different tools if needed"""
+        # This implementation would depend on the specific tools
+        # For this example, we'll just return the original parameters
         return params
 
-# Пример коришћења
+# Example usage
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Примарни (плаћени) API за временску прогнозу
-        "basicWeatherService",    # Резервни (бесплатни) API за временску прогнозу
+        "premiumWeatherService",  # Primary (paid) weather API
+        "basicWeatherService",    # Fallback (free) weather API
         {"location": location}
     )
 ```
 
-### 5. Workflow Composition Pattern
+### 5. Образац Композиције Токова
 
-Build complex workflows by composing simpler ones:
+Изградите сложене токове рада компоновањем једноставнијих:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1947,10 +1938,10 @@ public class CompositeWorkflow : IWorkflow
         {
             var workflowResult = await workflow.ExecuteAsync(context);
             
-            // Сачувај резултат сваког рада
+            // Store each workflow's result
             results[workflow.Name] = workflowResult;
             
-            // Ажурирај context са резултатом за следећи рад
+            // Update context with the result for the next workflow
             context = context.WithResult(workflow.Name, workflowResult);
         }
         
@@ -1958,10 +1949,10 @@ public class CompositeWorkflow : IWorkflow
     }
     
     public string Name => "CompositeWorkflow";
-    public string Description => "Извршава више радних токова узастопно";
+    public string Description => "Executes multiple workflows in sequence";
 }
 
-// Пример коришћења
+// Example usage
 var documentWorkflow = new CompositeWorkflow(new IWorkflow[] {
     new DocumentFetchWorkflow(),
     new DocumentProcessingWorkflow(),
@@ -1974,286 +1965,39 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# Testing MCP Servers: Best Practices and Top Tips
+# Тестирање MCP Сервера: Најбоље Праксе и Савети
 
-## Overview
+## Преглед
 
-Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
+Тестирање је критичан аспект развоја поузданих, висококвалитетних MCP сервера. Овај водич пружа свеобухватне најбоље праксе и савете за тестирање ваших MCP сервера током целог животног циклуса развоја, од јединичних тестова до интеграционих тестова и крајњих валидација.
 
-## Why Testing Matters for MCP Servers
+## Зашто је Тестирање Важно за MCP Сервере
 
-MCP servers serve as crucial middleware between AI models and client applications. Thorough testing ensures:
+MCP сервери служе као кључни посредници између AI модела и клијентских апликација. Темељно тестирање осигурава:
 
-- Reliability in production environments
-- Accurate handling of requests and responses
-- Proper implementation of MCP specifications
-- Resilience against failures and edge cases
-- Consistent performance under various loads
+- Поузданост у продукционим окружењима
+- Прецизно руковање захтевима и одговорима
+- Правилну имплементацију MCP спецификација
+- Отпорност на неуспехе и граничне случајеве
+- Конзистентне перформансе под различитим оптерећењима
 
-## Unit Testing for MCP Servers
+## Јединично Тестирање за MCP Сервере
 
-### Unit Testing (Foundation)
+### Јединично Тестирање (Основни Слој)
 
-Unit tests verify individual components of your MCP server in isolation.
+Јединични тестови проверавају појединачне компоненте вашег MCP сервера у изолацији.
 
-#### What to Test
+#### Шта Тестирати
 
-1. **Resource Handlers**: Test each resource handler's logic independently
-2. **Tool Implementations**: Verify tool behavior with various inputs
-3. **Prompt Templates**: Ensure prompt templates render correctly
-4. **Schema Validation**: Test parameter validation logic
-5. **Error Handling**: Verify error responses for invalid inputs
+1. **Руковаоци Ресурса**: Тестирајте логику сваког руковаоца ресурса независно
+2. **Имплементације Алатa**: Проверите понашање алата са различитим уносима
+3. **Шаблони Упутстава**: Осигурајте да се шаблони упутстава правилно приказују
+4. **Валидација Шема**: Тестирајте логику валидације параметара
+5. **Руковање Грешкама**
+3. **Основне перформанс метрике**: Одржавајте референтне вредности перформанси како бисте открили регресије  
+4. **Безбедносно скенирање**: Аутоматизујте тестирање безбедности као део процеса  
 
-#### Best Practices for Unit Testing
-
-```csharp
-// Пример јединичног теста за калкулатор у C#
-[Fact]
-public async Task CalculatorTool_Add_ReturnsCorrectSum()
-{
-    // Припрема
-    var calculator = new CalculatorTool();
-    var parameters = new Dictionary<string, object>
-    {
-        ["operation"] = "add",
-        ["a"] = 5,
-        ["b"] = 7
-    };
-    
-    // Извршење
-    var response = await calculator.ExecuteAsync(parameters);
-    var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
-    
-    // Проверa
-    Assert.Equal(12, result.Value);
-}
-```
-
-```python
-# Пример јединичног теста за калкулатор у Python-у
-def test_calculator_tool_add():
-    # Припрема
-    calculator = CalculatorTool()
-    parameters = {
-        "operation": "add",
-        "a": 5,
-        "b": 7
-    }
-    
-    # Извршење
-    response = calculator.execute(parameters)
-    result = json.loads(response.content[0].text)
-    
-    # Проверa
-    assert result["value"] == 12
-```
-
-### Integration Testing (Middle Layer)
-
-Integration tests verify interactions between components of your MCP server.
-
-#### What to Test
-
-1. **Server Initialization**: Test server startup with various configurations
-2. **Route Registration**: Verify all endpoints are correctly registered
-3. **Request Processing**: Test the full request-response cycle
-4. **Error Propagation**: Ensure errors are properly handled across components
-5. **Authentication & Authorization**: Test security mechanisms
-
-#### Best Practices for Integration Testing
-
-```csharp
-// Пример интеграционог теста за MCP сервер у C#
-[Fact]
-public async Task Server_ProcessToolRequest_ReturnsValidResponse()
-{
-    // Припрема
-    var server = new McpServer();
-    server.RegisterTool(new CalculatorTool());
-    await server.StartAsync();
-    
-    var request = new McpRequest
-    {
-        Tool = "calculator",
-        Parameters = new Dictionary<string, object>
-        {
-            ["operation"] = "multiply",
-            ["a"] = 6,
-            ["b"] = 7
-        }
-    };
-    
-    // Извршење
-    var response = await server.ProcessRequestAsync(request);
-    
-    // Проверa
-    Assert.NotNull(response);
-    Assert.Equal(McpStatusCodes.Success, response.StatusCode);
-    // Додатне провере садржаја одговора
-    
-    // Чишћење
-    await server.StopAsync();
-}
-```
-
-### End-to-End Testing (Top Layer)
-
-End-to-end tests verify the complete system behavior from client to server.
-
-#### What to Test
-
-1. **Client-Server Communication**: Test complete request-response cycles
-2. **Real Client SDKs**: Test with actual client implementations
-3. **Performance Under Load**: Verify behavior with multiple concurrent requests
-4. **Error Recovery**: Test system recovery from failures
-5. **Long-Running Operations**: Verify handling of streaming and long operations
-
-#### Best Practices for E2E Testing
-
-```typescript
-// Пример E2E теста са клијентом у TypeScript-у
-describe('MCP Server E2E Tests', () => {
-  let client: McpClient;
-  
-  beforeAll(async () => {
-    // Покрени сервер у тест окружењу
-    await startTestServer();
-    client = new McpClient('http://localhost:5000');
-  });
-  
-  afterAll(async () => {
-    await stopTestServer();
-  });
-  
-  test('Client can invoke calculator tool and get correct result', async () => {
-    // Извршење
-    const response = await client.invokeToolAsync('calculator', {
-      operation: 'divide',
-      a: 20,
-      b: 4
-    });
-    
-    // Проверa
-    expect(response.statusCode).toBe(200);
-    expect(response.content[0].text).toContain('5');
-  });
-});
-```
-
-## Mocking Strategies for MCP Testing
-
-Mocking is essential for isolating components during testing.
-
-### Components to Mock
-
-1. **External AI Models**: Mock model responses for predictable testing
-2. **External Services**: Mock API dependencies (databases, third-party services)
-3. **Authentication Services**: Mock identity providers
-4. **Resource Providers**: Mock expensive resource handlers
-
-### Example: Mocking an AI Model Response
-
-```csharp
-// C# пример са Moq
-var mockModel = new Mock<ILanguageModel>();
-mockModel
-    .Setup(m => m.GenerateResponseAsync(
-        It.IsAny<string>(),
-        It.IsAny<McpRequestContext>()))
-    .ReturnsAsync(new ModelResponse { 
-        Text = "Mocked model response",
-        FinishReason = FinishReason.Completed
-    });
-
-var server = new McpServer(modelClient: mockModel.Object);
-```
-
-```python
-# Python пример са unittest.mock
-@patch('mcp_server.models.OpenAIModel')
-def test_with_mock_model(mock_model):
-    # Конфигуриши mock
-    mock_model.return_value.generate_response.return_value = {
-        "text": "Mocked model response",
-        "finish_reason": "completed"
-    }
-    
-    # Користи mock у тесту
-    server = McpServer(model_client=mock_model)
-    # Настави са тестом
-```
-
-## Performance Testing
-
-Performance testing is crucial for production MCP servers.
-
-### What to Measure
-
-1. **Latency**: Response time for requests
-2. **Throughput**: Requests handled per second
-3. **Resource Utilization**: CPU, memory, network usage
-4. **Concurrency Handling**: Behavior under parallel requests
-5. **Scaling Characteristics**: Performance as load increases
-
-### Tools for Performance Testing
-
-- **k6**: Open-source load testing tool
-- **JMeter**: Comprehensive performance testing
-- **Locust**: Python-based load testing
-- **Azure Load Testing**: Cloud-based performance testing
-
-### Example: Basic Load Test with k6
-
-```javascript
-// k6 скрипта за тестирање оптерећења MCP сервера
-import http from 'k6/http';
-import { check, sleep } from 'k6';
-
-export const options = {
-  vus: 10,  // 10 виртуелних корисника
-  duration: '30s',
-};
-
-export default function () {
-  const payload = JSON.stringify({
-    tool: 'calculator',
-    parameters: {
-      operation: 'add',
-      a: Math.floor(Math.random() * 100),
-      b: Math.floor(Math.random() * 100)
-    }
-  });
-
-  const params = {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer test-token'
-    },
-  };
-
-  const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
-  
-  check(res, {
-    'status is 200': (r) => r.status === 200,
-    'response time < 500ms': (r) => r.timings.duration < 500,
-  });
-  
-  sleep(1);
-}
-```
-
-## Test Automation for MCP Servers
-
-Automating your tests ensures consistent quality and faster feedback loops.
-
-### CI/CD Integration
-
-1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
-2. **Integration Tests in Staging**: Run integration tests in pre-production environments
-3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
-4. **Security Scans**: Automate security testing as part of the pipeline
-
-### Example CI Pipeline (GitHub Actions)
+### Пример CI Пипелине (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -2292,100 +2036,101 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## Testing for Compliance with MCP Specification
+## Тестирање усклађености са MCP спецификацијом  
 
-Verify your server correctly implements the MCP specification.
+Проверите да ли ваш сервер правилно имплементира MCP спецификацију.  
 
-### Key Compliance Areas
+### Кључне области усклађености  
 
-1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)
-2. **Request/Response Format**: Validate schema compliance
-3. **Error Codes**: Verify correct status codes for various scenarios
-4. **Content Types**: Test handling of different content types
-5. **Authentication Flow**: Verify spec-compliant auth mechanisms
+1. **API Ендпоинти**: Тестирајте обавезне ендпоинте (/resources, /tools, итд.)  
+2. **Формат захтева/одговора**: Потврдите усклађеност са шемом  
+3. **Кодови грешака**: Проверите исправне статус кодове за различите сценарије  
+4. **Типови садржаја**: Тестирајте руковање различитим типовима садржаја  
+5. **Аутентификациони ток**: Проверите механизме аутентификације у складу са спецификацијом  
 
-### Compliance Test Suite
+### Тестни пакет за усклађеност  
 
 ```csharp
 [Fact]
 public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 {
-    // Припрема
+    // Arrange
     var client = new HttpClient();
     client.DefaultRequestHeaders.Add("Authorization", "Bearer test-token");
     
-    // Извршење
+    // Act
     var response = await client.GetAsync("http://localhost:5000/api/resources");
     var content = await response.Content.ReadAsStringAsync();
-    var resources = JsonSerializer.Deserialize
-
-// Assert
-Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-Assert.NotNull(resources);
-Assert.All(resources.Resources, resource => 
-{
-    Assert.NotNull(resource.Id);
-    Assert.NotNull(resource.Type);
-    // Додатна валидација шеме
-});
+    var resources = JsonSerializer.Deserialize<ResourceList>(content);
+    
+    // Assert
+    Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    Assert.NotNull(resources);
+    Assert.All(resources.Resources, resource => 
+    {
+        Assert.NotNull(resource.Id);
+        Assert.NotNull(resource.Type);
+        // Additional schema validation
+    });
 }
+```
 
-## Топ 10 савета за ефикасно тестирање MCP сервера
+## Топ 10 савета за ефикасно тестирање MCP сервера  
 
-1. **Тестирајте дефиниције алата посебно**: Проверите дефиниције шеме независно од логике алата  
-2. **Користите параметризоване тестове**: Тестирајте алате са разним улазима, укључујући и ивичне случајеве  
-3. **Проверите одговоре на грешке**: Потврдите исправно руковање грешкама за све могуће услове грешака  
+1. **Одвојено тестирајте дефиниције алата**: Проверите дефиниције шема независно од логике алата  
+2. **Користите параметризоване тестове**: Тестирајте алате са различитим улазима, укључујући граничне случајеве  
+3. **Проверите одговоре на грешке**: Потврдите правилно руковање свим могућим условима грешке  
 4. **Тестирајте логику ауторизације**: Осигурајте правилну контролу приступа за различите корисничке улоге  
-5. **Пратите покривеност тестова**: Тежите високој покривености критичних делова кода  
-6. **Тестирајте стриминг одговоре**: Потврдите исправно руковање стриминг садржајем  
-7. **Симулирајте мрежне проблеме**: Тестирајте понашање у условима лоше мреже  
-8. **Тестирајте лимите ресурса**: Проверите понашање при достигању квота или ограничења брзине  
-9. **Аутоматизујте регресионе тестове**: Направите скуп тестова који се покрећу при свакој промени кода  
-10. **Документујте тест случајеве**: Одржавајте јасну документацију тест сценарија  
+5. **Пратите покривеност тестова**: Тежите високој покривености критичног кода  
+6. **Тестирајте стриминг одговоре**: Проверите правилно руковање стриминг садржајем  
+7. **Симулирајте проблеме са мрежом**: Тестирајте понашање у условима лоше мрежне конекције  
+8. **Тестирајте ограничења ресурса**: Проверите понашање при достизању квота или ограничења брзине  
+9. **Аутоматизујте регресионе тестове**: Направите пакет који се покреће при свакој промени кода  
+10. **Документирајте тест случајеве**: Одржавајте јасну документацију тест сценарија  
 
-## Уобичајене замке у тестирању
+## Уобичајене грешке у тестирању  
 
-- **Превелика ослањања на тестирање срећног пута**: Обавезно темељно тестирајте случајеве грешака  
-- **Игнорисање тестирања перформанси**: Препознајте уске грла пре него што утичу на продукцију  
+- **Претерано ослањање на тестирање "срећног пута"**: Осигурајте да темељно тестирате случајеве грешке  
+- **Игнорисање тестирања перформанси**: Идентификујте уска грла пре него што утичу на продукцију  
 - **Тестирање само у изолацији**: Комбинујте јединичне, интеграционе и E2E тестове  
-- **Непотпуна покривеност API-ја**: Осигурајте да су сви крајњи тачке и функције тестирани  
-- **Непоуздана тест окружења**: Користите контејнере за доследна тест окружења  
+- **Непотпуна покривеност API-ја**: Осигурајте да су сви ендпоинти и функције тестирани  
+- **Неконзистентна тестна окружења**: Користите контејнере за осигурање конзистентних тестних окружења  
 
-## Закључак
+## Закључак  
 
-Свеобухватна стратегија тестирања је кључна за развој поузданих и квалитетних MCP сервера. Применом најбољих пракси и савета из овог водича, можете осигурати да ваше MCP имплементације испуњавају највише стандарде квалитета, поузданости и перформанси.
+Свеобухватна стратегија тестирања је од суштинског значаја за развој поузданих, висококвалитетних MCP сервера. Применом најбољих пракси и савета из овог водича, можете осигурати да ваше MCP имплементације испуњавају највише стандарде квалитета, поузданости и перформанси.  
 
-## Кључне поуке
+## Кључни закључци  
 
-1. **Дизајн алата**: Пратите принцип једне одговорности, користите dependency injection и дизајнирајте за композитивност  
-2. **Дизајн шеме**: Креирајте јасне, добро документоване шеме са одговарајућим валидационим ограничењима  
-3. **Руковање грешкама**: Имплементирајте нежно руковање грешкама, структуиране одговоре на грешке и логику поновног покушаја  
-4. **Перформансе**: Користите кеширање, асинхроно процесирање и ограничење ресурса  
-5. **Безбедност**: Примените темељну валидацију улаза, провере ауторизације и руковање осетљивим подацима  
-6. **Тестирање**: Креирајте свеобухватне јединичне, интеграционе и end-to-end тестове  
-7. **Обрасци радног тока**: Примените проверене обрасце као што су ланци, dispatcher-и и паралелна обрада  
+1. **Дизајн алата**: Примените принцип једне одговорности, користите убризгавање зависности и дизајнирајте за композабилност  
+2. **Дизајн шема**: Направите јасне, добро документоване шеме са одговарајућим ограничењима валидације  
+3. **Руковање грешкама**: Имплементирајте елегантно руковање грешкама, структурисане одговоре на грешке и логику поновног покушаја  
+4. **Перформансе**: Користите кеширање, асинхрону обраду и ограничење ресурса  
+5. **Безбедност**: Примените темељну валидацију уноса, провере ауторизације и руковање осетљивим подацима  
+6. **Тестирање**: Направите свеобухватне јединичне, интеграционе и крајње тестове  
+7. **Шаблони радних токова**: Примените утврђене шаблоне као што су ланци, диспечери и паралелна обрада  
 
-## Вежба
+## Вежба  
 
-Дизајнирајте MCP алат и радни ток за систем обраде докумената који:
+Дизајнирајте MCP алат и радни ток за систем за обраду докумената који:  
 
 1. Прихвата документе у више формата (PDF, DOCX, TXT)  
-2. Извлачи текст и кључне информације из докумената  
-3. Класификује документе по типу и садржају  
-4. Генерише резиме за сваки документ  
+2. Екстрахује текст и кључне информације из докумената  
+3. Класификује документе према типу и садржају  
+4. Генерише резиме сваког документа  
 
-Имплементирајте шеме алата, руковање грешкама и образац радног тока који најбоље одговара овом сценарију. Размислите како бисте тестирали ову имплементацију.
+Имплементирајте шеме алата, руковање грешкама и шаблон радног тока који најбоље одговара овом сценарију. Размислите како бисте тестирали ову имплементацију.  
 
-## Ресурси
+## Ресурси  
 
-1. Придружите се MCP заједници на [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) да бисте били у току са најновијим развојем  
-2. Доприносите open-source [MCP пројектима](https://github.com/modelcontextprotocol)  
-3. Примените MCP принципе у AI иницијативама ваше организације  
+1. Придружите се MCP заједници на [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) како бисте били у току са најновијим дешавањима  
+2. Допринесите отвореним [MCP пројектима](https://github.com/modelcontextprotocol)  
+3. Примените MCP принципе у иницијативама ваше организације за AI  
 4. Истражите специјализоване MCP имплементације за вашу индустрију  
-5. Размотрите похађање напредних курсева о специфичним MCP темама, као што су мултимодална интеграција или интеграција предузећа  
-6. Експериментишите са креирањем сопствених MCP алата и радних токова користећи принципе научене кроз [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+5. Размотрите похађање напредних курсева о специфичним MCP темама, као што су мултимодална интеграција или интеграција у предузећима  
+6. Експериментишите са изградњом сопствених MCP алата и радних токова користећи принципе научене кроз [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-Следеће: Најбоље праксе [case studies](../09-CaseStudy/README.md)
+Следеће: Најбоље праксе [студије случаја](../09-CaseStudy/README.md)  
 
-**Одрицање одговорности**:  
-Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем услуге за превођење помоћу вештачке интелигенције [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да обезбедимо тачност, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на свом изворном језику треба сматрати ауторитативним извором. За критичне информације препоручује се професионални превод од стране људи. Не сносимо одговорност за било каква неспоразумевања или погрешна тумачења која могу произаћи из коришћења овог превода.

@@ -1,91 +1,190 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "baf3b041e5d939c4a1d8653632cc14f1",
-  "translation_date": "2025-07-17T13:09:42+00:00",
+  "original_hash": "245b03ae1e7973094fe82b8051ae0939",
+  "translation_date": "2025-08-18T20:34:26+00:00",
   "source_file": "changelog.md",
   "language_code": "ro"
 }
 -->
 # Jurnal de modificări: Curriculum MCP pentru Începători
 
-Acest document servește ca o evidență a tuturor modificărilor semnificative aduse curriculumului Model Context Protocol (MCP) pentru Începători. Modificările sunt documentate în ordine cronologică inversă (cele mai noi modificări primele).
+Acest document servește ca o evidență a tuturor modificărilor semnificative aduse curriculumului Model Context Protocol (MCP) pentru Începători. Modificările sunt documentate în ordine invers cronologică (cele mai recente modificări primele).
 
-## 16 iulie 2025
+## 18 August 2025
 
-### Îmbunătățiri README și Navigare
-- Navigarea curriculumului din README.md a fost complet redesenată
-- Etichetele `<details>` au fost înlocuite cu un format tabelar mai accesibil
-- Au fost create opțiuni alternative de layout în noul folder "alternative_layouts"
-- Au fost adăugate exemple de navigare bazate pe carduri, stil taburi și stil acordeon
-- Secțiunea despre structura repository-ului a fost actualizată pentru a include toate fișierele recente
-- Secțiunea „Cum să folosești acest curriculum” a fost îmbunătățită cu recomandări clare
-- Linkurile către specificațiile MCP au fost actualizate pentru a indica URL-urile corecte
-- A fost adăugată secțiunea Context Engineering (5.14) în structura curriculumului
+### Actualizare cuprinzătoare a documentației - Standardele MCP 2025-06-18
 
-### Actualizări Ghid de Studiu
-- Ghidul de studiu a fost complet revizuit pentru a se alinia cu structura curentă a repository-ului
-- Au fost adăugate secțiuni noi pentru MCP Clients and Tools și Popular MCP Servers
-- Harta vizuală a curriculumului a fost actualizată pentru a reflecta corect toate subiectele
-- Descrierile Temelor Avansate au fost îmbunătățite pentru a acoperi toate domeniile specializate
-- Secțiunea Studii de Caz a fost actualizată pentru a reflecta exemple reale
-- A fost adăugat acest jurnal de modificări cuprinzător
+#### Cele mai bune practici de securitate MCP (02-Security/) - Modernizare completă
+- **MCP-SECURITY-BEST-PRACTICES-2025.md**: Rescriere completă aliniată la Specificația MCP 2025-06-18
+  - **Cerințe obligatorii**: Adăugate cerințe explicite MUST/MUST NOT din specificația oficială cu indicatori vizuali clari
+  - **12 Practici de bază în securitate**: Restructurate dintr-o listă de 15 elemente în domenii de securitate cuprinzătoare
+    - Securitatea token-urilor și autentificarea cu integrarea unui furnizor extern de identitate
+    - Managementul sesiunilor și securitatea transportului cu cerințe criptografice
+    - Protecția împotriva amenințărilor specifice AI cu integrarea Microsoft Prompt Shields
+    - Controlul accesului și permisiunilor conform principiului privilegiului minim
+    - Siguranța conținutului și monitorizarea cu integrarea Azure Content Safety
+    - Securitatea lanțului de aprovizionare cu verificarea cuprinzătoare a componentelor
+    - Securitatea OAuth și prevenirea atacurilor Confused Deputy cu implementarea PKCE
+    - Răspuns la incidente și recuperare cu capabilități automatizate
+    - Conformitate și guvernanță cu aliniere la reglementări
+    - Controale avansate de securitate cu arhitectură zero trust
+    - Integrarea ecosistemului de securitate Microsoft cu soluții cuprinzătoare
+    - Evoluția continuă a securității cu practici adaptive
+  - **Soluții de securitate Microsoft**: Ghiduri de integrare îmbunătățite pentru Prompt Shields, Azure Content Safety, Entra ID și GitHub Advanced Security
+  - **Resurse de implementare**: Linkuri cuprinzătoare de resurse categorisite după Documentația oficială MCP, Soluții de securitate Microsoft, Standarde de securitate și Ghiduri de implementare
 
-### Contribuții Comunitare (06-CommunityContributions/)
-- Au fost adăugate informații detaliate despre serverele MCP pentru generarea de imagini
-- A fost adăugată o secțiune completă despre utilizarea Claude în VSCode
-- Au fost adăugate instrucțiuni pentru configurarea și utilizarea clientului terminal Cline
-- Secțiunea despre clientul MCP a fost actualizată pentru a include toate opțiunile populare de client
-- Exemplele de contribuții au fost îmbunătățite cu mostre de cod mai precise
+#### Controale avansate de securitate (02-Security/) - Implementare la nivel de întreprindere
+- **MCP-SECURITY-CONTROLS-2025.md**: Revizuire completă cu un cadru de securitate de nivel enterprise
+  - **9 Domenii de securitate cuprinzătoare**: Extinse de la controale de bază la un cadru detaliat pentru întreprinderi
+    - Autentificare și autorizare avansată cu integrarea Microsoft Entra ID
+    - Securitatea token-urilor și controale anti-passthrough cu validare cuprinzătoare
+    - Controale de securitate a sesiunilor cu prevenirea deturnării
+    - Controale de securitate specifice AI cu prevenirea injecției de prompturi și otrăvirii instrumentelor
+    - Prevenirea atacurilor Confused Deputy cu securitatea proxy OAuth
+    - Securitatea execuției instrumentelor cu sandboxing și izolare
+    - Controale de securitate ale lanțului de aprovizionare cu verificarea dependențelor
+    - Controale de monitorizare și detectare cu integrarea SIEM
+    - Răspuns la incidente și recuperare cu capabilități automatizate
+  - **Exemple de implementare**: Adăugate blocuri de configurare YAML detaliate și exemple de cod
+  - **Integrarea soluțiilor Microsoft**: Acoperire cuprinzătoare a serviciilor de securitate Azure, GitHub Advanced Security și managementul identității la nivel enterprise
 
-### Tematici Avansate (05-AdvancedTopics/)
-- Toate folderele cu teme specializate au fost organizate cu denumiri consistente
-- Au fost adăugate materiale și exemple pentru context engineering
-- A fost adăugată documentația pentru integrarea agentului Foundry
-- Documentația pentru integrarea securității Entra ID a fost îmbunătățită
+#### Subiecte avansate de securitate (05-AdvancedTopics/mcp-security/) - Implementare pregătită pentru producție
+- **README.md**: Rescriere completă pentru implementarea securității la nivel enterprise
+  - **Aliniere la specificația actuală**: Actualizat la Specificația MCP 2025-06-18 cu cerințe obligatorii de securitate
+  - **Autentificare îmbunătățită**: Integrarea Microsoft Entra ID cu exemple cuprinzătoare în .NET și Java Spring Security
+  - **Integrarea securității AI**: Implementarea Microsoft Prompt Shields și Azure Content Safety cu exemple detaliate în Python
+  - **Mitigarea amenințărilor avansate**: Exemple cuprinzătoare de implementare pentru
+    - Prevenirea atacurilor Confused Deputy cu PKCE și validarea consimțământului utilizatorului
+    - Prevenirea pasării token-urilor cu validarea audienței și gestionarea securizată a token-urilor
+    - Prevenirea deturnării sesiunilor cu legături criptografice și analiză comportamentală
+  - **Integrarea securității la nivel enterprise**: Monitorizarea Azure Application Insights, pipeline-uri de detectare a amenințărilor și securitatea lanțului de aprovizionare
+  - **Listă de verificare pentru implementare**: Controale de securitate obligatorii vs. recomandate cu beneficii ale ecosistemului de securitate Microsoft
 
-## 11 iunie 2025
+### Îmbunătățirea calității documentației și alinierea la standarde
+- **Referințe la specificații**: Actualizate toate referințele la Specificația MCP 2025-06-18
+- **Ecosistemul de securitate Microsoft**: Ghiduri de integrare îmbunătățite în întreaga documentație de securitate
+- **Implementare practică**: Adăugate exemple detaliate de cod în .NET, Java și Python cu modele enterprise
+- **Organizarea resurselor**: Categorisire cuprinzătoare a documentației oficiale, standardelor de securitate și ghidurilor de implementare
+- **Indicatori vizuali**: Marcaje clare ale cerințelor obligatorii vs. practicilor recomandate
 
-### Creare Inițială
-- A fost lansată prima versiune a curriculumului MCP pentru Începători
-- A fost creată structura de bază pentru toate cele 10 secțiuni principale
-- A fost implementată Harta Vizuală a Curriculumului pentru navigare
-- Au fost adăugate proiecte exemplu inițiale în mai multe limbaje de programare
+#### Concepte de bază (01-CoreConcepts/) - Modernizare completă
+- **Actualizare versiune protocol**: Actualizat pentru a face referire la Specificația MCP 2025-06-18 cu versiuni bazate pe date (format YYYY-MM-DD)
+- **Rafinarea arhitecturii**: Descrieri îmbunătățite ale gazdelor, clienților și serverelor pentru a reflecta modelele actuale de arhitectură MCP
+  - Gazdele definite clar ca aplicații AI care coordonează multiple conexiuni client MCP
+  - Clienții descriși ca conectori de protocol care mențin relații unu-la-unu cu serverele
+  - Serverele îmbunătățite cu scenarii de implementare locală vs. la distanță
+- **Restructurarea primitivelor**: Revizuire completă a primitivelor server și client
+  - Primitive server: Resurse (surse de date), Prompturi (șabloane), Instrumente (funcții executabile) cu explicații și exemple detaliate
+  - Primitive client: Sampling (completări LLM), Elicitation (input utilizator), Logging (debugging/monitorizare)
+  - Actualizat cu modelele actuale de descoperire (`*/list`), recuperare (`*/get`) și execuție (`*/call`)
+- **Arhitectura protocolului**: Introducerea unui model de arhitectură pe două straturi
+  - Strat de date: Fundație JSON-RPC 2.0 cu managementul ciclului de viață și primitive
+  - Strat de transport: STDIO (local) și HTTP streamabil cu SSE (transport la distanță)
+- **Cadru de securitate**: Principii cuprinzătoare de securitate incluzând consimțământ explicit al utilizatorului, protecția confidențialității datelor, siguranța execuției instrumentelor și securitatea stratului de transport
+- **Modele de comunicare**: Mesaje de protocol actualizate pentru a arăta fluxurile de inițializare, descoperire, execuție și notificare
+- **Exemple de cod**: Exemple multi-limbaj actualizate (.NET, Java, Python, JavaScript) pentru a reflecta modelele actuale ale SDK MCP
 
-### Începutul (03-GettingStarted/)
-- Au fost create primele exemple de implementare server
-- A fost adăugat ghid pentru dezvoltarea clientului
-- Au fost incluse instrucțiuni pentru integrarea clientului LLM
-- A fost adăugată documentația pentru integrarea în VS Code
-- Au fost implementate exemple de servere Server-Sent Events (SSE)
+#### Securitate (02-Security/) - Revizuire cuprinzătoare a securității  
+- **Aliniere la standarde**: Aliniere completă cu cerințele de securitate ale Specificației MCP 2025-06-18
+- **Evoluția autentificării**: Documentată evoluția de la servere OAuth personalizate la delegarea furnizorului extern de identitate (Microsoft Entra ID)
+- **Analiza amenințărilor specifice AI**: Acoperire îmbunătățită a vectorilor moderni de atac AI
+  - Scenarii detaliate de atac prin injecție de prompturi cu exemple din lumea reală
+  - Mecanisme de otrăvire a instrumentelor și modele de atac "rug pull"
+  - Otrăvirea ferestrei de context și atacuri de confuzie a modelului
+- **Soluții de securitate AI Microsoft**: Acoperire cuprinzătoare a ecosistemului de securitate Microsoft
+  - Prompt Shields AI cu detectare avansată, evidențiere și tehnici de delimitare
+  - Modele de integrare Azure Content Safety
+  - GitHub Advanced Security pentru protecția lanțului de aprovizionare
+- **Mitigarea amenințărilor avansate**: Controale de securitate detaliate pentru
+  - Deturnarea sesiunilor cu scenarii de atac specifice MCP și cerințe criptografice pentru ID-ul sesiunii
+  - Problemele Confused Deputy în scenarii proxy MCP cu cerințe explicite de consimțământ
+  - Vulnerabilitățile pasării token-urilor cu controale obligatorii de validare
+- **Securitatea lanțului de aprovizionare**: Acoperire extinsă a lanțului de aprovizionare AI incluzând modele de bază, servicii de embeddings, furnizori de context și API-uri terțe
+- **Securitate fundamentală**: Integrare îmbunătățită cu modele de securitate enterprise incluzând arhitectura zero trust și ecosistemul de securitate Microsoft
+- **Organizarea resurselor**: Linkuri cuprinzătoare de resurse categorisite după tip (Documentație oficială, Standarde, Cercetare, Soluții Microsoft, Ghiduri de implementare)
 
-### Concepte de Bază (01-CoreConcepts/)
-- A fost adăugată o explicație detaliată a arhitecturii client-server
-- A fost creată documentația pentru componentele cheie ale protocolului
-- Au fost documentate modelele de mesagerie în MCP
+### Îmbunătățiri ale calității documentației
+- **Obiective de învățare structurate**: Obiective de învățare îmbunătățite cu rezultate specifice și acționabile 
+- **Referințe încrucișate**: Adăugate linkuri între subiecte de securitate și concepte de bază conexe
+- **Informații actuale**: Actualizate toate referințele de date și linkurile la specificații conform standardelor actuale
+- **Ghiduri de implementare**: Adăugate ghiduri de implementare specifice și acționabile în toate secțiunile
 
-## 23 mai 2025
+## 16 Iulie 2025
 
-### Structura Repository-ului
-- Repository-ul a fost inițializat cu o structură de foldere de bază
-- Au fost create fișiere README pentru fiecare secțiune majoră
-- A fost configurată infrastructura pentru traduceri
-- Au fost adăugate resurse grafice și diagrame
+### Îmbunătățiri README și navigare
+- Redesign complet al navigării curriculumului în README.md
+- Înlocuite etichetele `<details>` cu format bazat pe tabel mai accesibil
+- Create opțiuni de layout alternative în noul folder "alternative_layouts"
+- Adăugate exemple de navigare în stil carduri, taburi și acordeon
+- Actualizată secțiunea de structură a depozitului pentru a include toate fișierele recente
+- Îmbunătățită secțiunea "Cum să folosești acest curriculum" cu recomandări clare
+- Actualizate linkurile la specificația MCP pentru a indica URL-urile corecte
+- Adăugată secțiunea de Inginerie Contextuală (5.14) în structura curriculumului
+
+### Actualizări ale ghidului de studiu
+- Revizuire completă a ghidului de studiu pentru alinierea la structura actuală a depozitului
+- Adăugate secțiuni noi pentru Clienți și Instrumente MCP și Servere MCP populare
+- Actualizată Harta Vizuală a Curriculumului pentru a reflecta toate subiectele
+- Îmbunătățite descrierile subiectelor avansate pentru a acoperi toate domeniile specializate
+- Actualizată secțiunea Studii de Caz pentru a reflecta exemple reale
+- Adăugat acest jurnal de modificări cuprinzător
+
+### Contribuții comunitare (06-CommunityContributions/)
+- Adăugate informații detaliate despre serverele MCP pentru generarea de imagini
+- Adăugată secțiune cuprinzătoare despre utilizarea Claude în VSCode
+- Adăugate instrucțiuni de configurare și utilizare pentru clientul terminal Cline
+- Actualizată secțiunea de clienți MCP pentru a include toate opțiunile populare
+- Îmbunătățite exemplele de contribuții cu mostre de cod mai precise
+
+### Subiecte avansate (05-AdvancedTopics/)
+- Organizate toate folderele de subiecte specializate cu denumiri consistente
+- Adăugate materiale și exemple de inginerie contextuală
+- Adăugată documentația de integrare a agentului Foundry
+- Îmbunătățită documentația de integrare a securității Entra ID
+
+## 11 Iunie 2025
+
+### Creare inițială
+- Lansată prima versiune a curriculumului MCP pentru Începători
+- Creată structura de bază pentru toate cele 10 secțiuni principale
+- Implementată Harta Vizuală a Curriculumului pentru navigare
+- Adăugate proiecte de probă inițiale în mai multe limbaje de programare
+
+### Început (03-GettingStarted/)
+- Create primele exemple de implementare a serverului
+- Adăugate ghiduri pentru dezvoltarea clienților
+- Incluse instrucțiuni de integrare a clienților LLM
+- Adăugată documentația de integrare VS Code
+- Implementate exemple de server Server-Sent Events (SSE)
+
+### Concepte de bază (01-CoreConcepts/)
+- Adăugată explicație detaliată a arhitecturii client-server
+- Creată documentația despre componentele cheie ale protocolului
+- Documentate modelele de mesagerie în MCP
+
+## 23 Mai 2025
+
+### Structura depozitului
+- Inițializat depozitul cu structura de foldere de bază
+- Create fișiere README pentru fiecare secțiune majoră
+- Configurată infrastructura de traducere
+- Adăugate resurse vizuale și diagrame
 
 ### Documentație
-- A fost creat README.md inițial cu o prezentare generală a curriculumului
-- Au fost adăugate fișierele CODE_OF_CONDUCT.md și SECURITY.md
-- A fost configurat SUPPORT.md cu îndrumări pentru obținerea ajutorului
-- A fost creată structura preliminară a ghidului de studiu
+- Creat README.md inițial cu o privire de ansamblu asupra curriculumului
+- Adăugate CODE_OF_CONDUCT.md și SECURITY.md
+- Configurat SUPPORT.md cu ghiduri pentru obținerea de ajutor
+- Creat structura preliminară a ghidului de studiu
 
-## 15 aprilie 2025
+## 15 Aprilie 2025
 
-### Planificare și Cadru
-- Planificarea inițială pentru curriculumul MCP pentru Începători
-- Au fost definite obiectivele de învățare și publicul țintă
-- A fost schițată structura curriculumului în 10 secțiuni
-- A fost dezvoltat cadrul conceptual pentru exemple și studii de caz
-- Au fost create prototipuri inițiale pentru conceptele cheie
+### Planificare și cadru
+- Planificare inițială pentru curriculumul MCP pentru Începători
+- Definite obiectivele de învățare și publicul țintă
+- Schițată structura în 10 secțiuni a curriculumului
+- Dezvoltat cadru conceptual pentru exemple și studii de caz
+- Create prototipuri inițiale pentru concepte cheie
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinarea responsabilității**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

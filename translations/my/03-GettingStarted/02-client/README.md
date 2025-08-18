@@ -1,42 +1,42 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
-  "translation_date": "2025-07-17T12:45:19+00:00",
+  "original_hash": "94c80ae71fb9971e9b57b51ab0912121",
+  "translation_date": "2025-08-18T23:37:03+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "my"
 }
 -->
 # Client တစ်ခု ဖန်တီးခြင်း
 
-Clients ဆိုသည်မှာ MCP Server နှင့် တိုက်ရိုက် ဆက်သွယ်၍ အရင်းအမြစ်များ၊ ကိရိယာများနှင့် prompt များကို တောင်းဆိုနိုင်သော စိတ်ကြိုက် application များ သို့မဟုတ် script များဖြစ်သည်။ Server နှင့် ဆက်သွယ်ရာတွင် graphical interface ပေးသော inspector tool ကို အသုံးပြုခြင်းနှင့် မတူဘဲ၊ ကိုယ်ပိုင် client ကို ရေးသားခြင်းဖြင့် ပရိုဂရမ်ရေးသားခြင်းနှင့် အလိုအလျောက်လုပ်ဆောင်မှုများ ပြုလုပ်နိုင်သည်။ ၎င်းက developer များအား MCP ၏ စွမ်းဆောင်ရည်များကို ကိုယ်ပိုင် workflow များထဲသို့ ပေါင်းစပ်နိုင်ရန်၊ အလုပ်များကို အလိုအလျောက်လုပ်ဆောင်ရန်နှင့် လိုအပ်ချက်အလိုက် စိတ်ကြိုက် ဖြေရှင်းချက်များ တည်ဆောက်ရန် အခွင့်အလမ်းပေးသည်။
+Client များသည် MCP Server နှင့်တိုက်ရိုက်ဆက်သွယ်ပြီး အရင်းအမြစ်များ၊ ကိရိယာများနှင့် prompt များကို တောင်းဆိုနိုင်သည့် အထူးဖန်တီးထားသော အက်ပ်လီကေးရှင်းများ သို့မဟုတ် စာရေးထားသော script များဖြစ်သည်။ Server နှင့် အပြန်အလှန်ဆက်သွယ်ရန် ဂရပ်ဖစ်အင်တာဖေ့စ်ကို ပံ့ပိုးပေးသည့် inspector tool ကို အသုံးပြုခြင်းနှင့် မတူဘဲ၊ ကိုယ်ပိုင် client ကိုရေးသားခြင်းဖြင့် အလိုအလျောက်လုပ်ဆောင်မှုများနှင့် ကိုယ်ပိုင် workflow များထဲသို့ MCP စွမ်းဆောင်ရည်များကို ပေါင်းစည်းနိုင်သည်။ ဒါကတော့ အထူးလိုအပ်ချက်များအတွက် အထူးပြုဖြေရှင်းချက်များ ဖန်တီးရန် ဖွံ့ဖြိုးသူများအတွက် အထောက်အကူဖြစ်စေသည်။
 
 ## အနှစ်ချုပ်
 
-ဤသင်ခန်းစာတွင် Model Context Protocol (MCP) ပတ်ဝန်းကျင်အတွင်း client များ၏ အယူအဆကို မိတ်ဆက်ပေးမည်ဖြစ်သည်။ ကိုယ်ပိုင် client ကို ဘယ်လိုရေးသားရမည်နှင့် MCP Server နှင့် ဘယ်လိုချိတ်ဆက်ရမည်ကို သင်ယူမည်ဖြစ်သည်။
+ဒီသင်ခန်းစာမှာ Model Context Protocol (MCP) စနစ်အတွင်း client များ၏ အကြံဉာဏ်ကို မိတ်ဆက်ပေးမှာဖြစ်ပါတယ်။ သင်၏ကိုယ်ပိုင် client ကိုရေးသားပြီး MCP Server တစ်ခုနှင့် ဆက်သွယ်ပုံကို သင်လေ့လာနိုင်ပါမည်။
 
-## သင်ယူရမည့် ရည်မှန်းချက်များ
+## သင်ခန်းစာရည်မှန်းချက်များ
 
-ဤသင်ခန်းစာအဆုံးသတ်သည်အထိ သင်သည် -
+ဒီသင်ခန်းစာအဆုံးတွင် သင်သည် အောက်ပါအရာများကို နားလည်နိုင်ပါမည်-
 
-- Client တစ်ခုက ဘာလုပ်နိုင်သည်ကို နားလည်နိုင်မည်။
-- ကိုယ်ပိုင် client ကို ရေးသားနိုင်မည်။
-- MCP server နှင့် client ကို ချိတ်ဆက်ပြီး စမ်းသပ်နိုင်မည်။
+- Client တစ်ခုက ဘာလုပ်ဆောင်နိုင်သလဲဆိုတာကို နားလည်ခြင်း။
+- ကိုယ်ပိုင် client ကိုရေးသားခြင်း။
+- MCP Server နှင့် client ကို ဆက်သွယ်ပြီး Server သည် မျှော်မှန်းထားသည့်အတိုင်း အလုပ်လုပ်နေကြောင်း စမ်းသပ်ခြင်း။
 
-## Client ရေးသားရာတွင် လိုအပ်သည့် အချက်များ
+## Client တစ်ခုရေးသားရန် ဘာတွေလိုအပ်သလဲ?
 
-Client ရေးသားရန်အတွက် အောက်ပါအချက်များ လိုအပ်ပါသည် -
+Client တစ်ခုရေးသားရန် သင်သည် အောက်ပါအဆင့်များကို လိုက်နာရမည်-
 
-- **မှန်ကန်သော library များကို import ပြုလုပ်ရန်**။ ယခင်က အသုံးပြုခဲ့သည့် library တူညီသော်လည်း ဖွဲ့စည်းပုံကွဲပြားမှုရှိသည်။
-- **Client instance တစ်ခု ဖန်တီးရန်**။ Client instance တစ်ခု ဖန်တီးပြီး ရွေးချယ်ထားသော transport method နှင့် ချိတ်ဆက်ရမည်။
-- **စာရင်းပြုစုမည့် အရင်းအမြစ်များကို ဆုံးဖြတ်ရန်**။ MCP server တွင် ရရှိနိုင်သည့် resources, tools နှင့် prompts များရှိပြီး၊ မည်သည်ကို စာရင်းပြုစုမည်ကို ဆုံးဖြတ်ရမည်။
-- **Client ကို host application နှင့် ပေါင်းစပ်ရန်**။ Server ၏ စွမ်းဆောင်ရည်များကို သိရှိပြီးနောက်၊ အသုံးပြုသူက prompt သို့မဟုတ် အမိန့်တစ်ခု ရိုက်ထည့်သည့်အခါ ဆက်စပ် server feature ကို ဖော်ဆောင်နိုင်ရန် host application ထဲသို့ ပေါင်းစပ်ရမည်။
+- **လိုအပ်သော library များကို သွင်းယူပါ**။ ယခင်က အသုံးပြုခဲ့သည့် library ကိုပင် အသုံးပြုမည်ဖြစ်ပြီး၊ သို့သော် အခြား construct များကို အသုံးပြုမည်ဖြစ်သည်။
+- **Client တစ်ခုကို ဖန်တီးပါ**။ ဒါကတော့ client instance တစ်ခုကို ဖန်တီးပြီး ရွေးချယ်ထားသော transport method နှင့် ဆက်သွယ်ရန် လိုအပ်ပါမည်။
+- **List ပြမည့် အရင်းအမြစ်များကို ဆုံးဖြတ်ပါ**။ သင့် MCP Server တွင် အရင်းအမြစ်များ၊ ကိရိယာများနှင့် prompt များ ပါဝင်ပြီး၊ သင်သည် မည်သည့်အရာကို list ပြမည်ဆိုတာ ဆုံးဖြတ်ရမည်။
+- **Client ကို host application နှင့် ပေါင်းစည်းပါ**။ Server ၏ စွမ်းဆောင်ရည်များကို သိရှိပြီးနောက်၊ သုံးစွဲသူက prompt သို့မဟုတ် အခြား command တစ်ခုကို ရိုက်ထည့်သည့်အခါ၊ ဆက်စပ်သော Server feature ကို ခေါ်ဆောင်နိုင်ရန် သင့် host application နှင့် ပေါင်းစည်းရမည်။
 
-အထက်ပါ အကြောင်းအရာများကို နားလည်သွားပြီဆိုရင် နောက်တစ်ဆင့် အကြောင်းအရာကို ဥပမာဖြင့် ကြည့်ကြရအောင်။
+အခုတော့ ကျွန်တော်တို့ ဘာလုပ်မယ်ဆိုတာ အထွေထွေသဘောတူပြီးဖြစ်တဲ့အတွက်၊ နောက်တစ်ဆင့်မှာ ဥပမာတစ်ခုကို ကြည့်ကြရအောင်။
 
-### Client ဥပမာတစ်ခု
+### Client တစ်ခု၏ ဥပမာ
 
-ဤ client ဥပမာကို ကြည့်ကြရအောင် -
+ဒီ client ဥပမာကို ကြည့်ကြရအောင်-
 
 ### TypeScript
 
@@ -86,39 +86,39 @@ const result = await client.callTool({
 });
 ```
 
-အထက်ပါ ကုဒ်တွင် -
+အထက်ပါ code တွင် ကျွန်တော်တို့-
 
-- Library များကို import ပြုလုပ်သည်။
-- Client instance တစ်ခု ဖန်တီးပြီး stdio ကို transport အဖြစ် အသုံးပြု၍ ချိတ်ဆက်သည်။
-- Prompts, resources နှင့် tools များကို စာရင်းပြုစုပြီး အားလုံးကို ဖော်ဆောင်သည်။
+- Library များကို သွင်းယူခဲ့သည်။
+- Client တစ်ခုကို ဖန်တီးပြီး stdio ကို transport အဖြစ် အသုံးပြု၍ ဆက်သွယ်ခဲ့သည်။
+- Prompt များ၊ အရင်းအမြစ်များနှင့် ကိရိယာများကို list ပြပြီး၊ အားလုံးကို ခေါ်ဆောင်ခဲ့သည်။
 
-ဒါဆိုရင် MCP Server နှင့် ဆက်သွယ်နိုင်သော client တစ်ခု ရှိသွားပြီဖြစ်သည်။
+ဒီတော့ MCP Server နှင့် ဆက်သွယ်နိုင်တဲ့ client တစ်ခု ရရှိသွားပါပြီ။
 
-နောက်တစ်ဆင့်တွင် ကုဒ်အပိုင်းအစ တစ်ခုချင်းစီကို ခွဲခြမ်းစိတ်ဖြာပြီး အကြောင်းအရာကို ရှင်းပြပါမည်။
+နောက်ထပ် exercise အပိုင်းတွင် code snippet တစ်ခုချင်းစီကို ခွဲခြမ်းစိတ်ဖြာပြီး ဘာတွေဖြစ်သွားတယ်ဆိုတာ ရှင်းပြကြရအောင်။
 
-## လေ့ကျင့်ခန်း - Client ရေးသားခြင်း
+## လေ့ကျင့်ခန်း: Client တစ်ခုရေးသားခြင်း
 
-အထက်တွင် ပြောခဲ့သလို ကုဒ်ကို နားလည်စွာ ရှင်းပြပြီး လိုလျှင် ကိုယ်တိုင်လည်း ရေးသားကြည့်ပါ။
+အထက်မှာ ပြောခဲ့သလို၊ code ကို ရှင်းပြရင်း သင်လည်း code ကို ရေးသားလိုက်နိုင်ပါတယ်။
 
-### -1- Library များကို import ပြုလုပ်ခြင်း
+### -1- Library များကို သွင်းယူခြင်း
 
-လိုအပ်သော library များကို import ပြုလုပ်ပါမည်။ Client နှင့် ရွေးချယ်ထားသော transport protocol stdio အတွက် ရည်ညွှန်းချက်များ လိုအပ်ပါသည်။ stdio သည် သင့် local machine ပေါ်တွင် run ရန် ရည်ရွယ်ထားသော protocol ဖြစ်သည်။ SSE သည် နောက်ပိုင်းအခန်းများတွင် ပြသမည့် transport protocol တစ်ခုဖြစ်ပြီး အခြားရွေးချယ်စရာဖြစ်သည်။ ယခုအခါတွင် stdio ဖြင့် ဆက်လက်လုပ်ဆောင်ကြမည်။
+လိုအပ်သော library များကို သွင်းယူကြရအောင်။ Client နှင့် ရွေးချယ်ထားသော transport protocol (stdio) ကို ရည်ညွှန်းရန် လိုအပ်ပါမည်။ stdio သည် သင့် local စက်ပေါ်တွင် အလုပ်လုပ်ရန် ရည်ရွယ်ထားသော protocol တစ်ခုဖြစ်သည်။ SSE သည် နောက်ပိုင်း chapter များတွင် ပြသမည့် အခြား transport protocol တစ်ခုဖြစ်သည်။ ယခုအချိန်တွင် stdio ဖြင့် ဆက်လက်လုပ်ဆောင်ကြရအောင်။
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 ```
 
-### Python
+#### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
 from mcp.client.stdio import stdio_client
 ```
 
-### .NET
+#### .NET
 
 ```csharp
 using Microsoft.Extensions.AI;
@@ -128,9 +128,9 @@ using ModelContextProtocol.Client;
 using ModelContextProtocol.Protocol.Transport;
 ```
 
-### Java
+#### Java
 
-Java အတွက် MCP server နှင့် ချိတ်ဆက်မည့် client ကို ယခင်လေ့ကျင့်ခန်းမှ Java Spring Boot project ဖွဲ့စည်းပုံကို အသုံးပြု၍ `src/main/java/com/microsoft/mcp/sample/client/` ဖိုလ်ဒါအတွင်း `SDKClient` ဆိုသော Java class အသစ်တစ်ခု ဖန်တီးပြီး အောက်ပါ import များ ထည့်သွင်းပါ။
+Java အတွက်တော့ ယခင် exercise မှ MCP Server နှင့် ဆက်သွယ်သည့် Java Spring Boot project ကို အသုံးပြုပါ။ `src/main/java/com/microsoft/mcp/sample/client/` folder တွင် `SDKClient` ဟုခေါ်သော Java class အသစ်တစ်ခု ဖန်တီးပြီး အောက်ပါ imports များကို ထည့်သွင်းပါ-
 
 ```java
 import java.util.Map;
@@ -143,13 +143,41 @@ import io.modelcontextprotocol.spec.McpSchema.CallToolResult;
 import io.modelcontextprotocol.spec.McpSchema.ListToolsResult;
 ```
 
-အခုတော့ instantiation ဆက်လုပ်ကြရအောင်။
+#### Rust
 
-### -2- Client နှင့် transport ကို instantiate ပြုလုပ်ခြင်း
+`Cargo.toml` ဖိုင်တွင် အောက်ပါ dependencies များကို ထည့်သွင်းရမည်။
 
-Transport နှင့် client instance များ ဖန်တီးရမည်။
+```toml
+[package]
+name = "calculator-client"
+version = "0.1.0"
+edition = "2024"
 
-### TypeScript
+[dependencies]
+rmcp = { version = "0.5.0", features = ["client", "transport-child-process"] }
+serde_json = "1.0.141"
+tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
+```
+
+ထို့နောက် သင့် client code တွင် လိုအပ်သော library များကို သွင်းယူနိုင်ပါသည်။
+
+```rust
+use rmcp::{
+    RmcpError,
+    model::CallToolRequestParam,
+    service::ServiceExt,
+    transport::{ConfigureCommandExt, TokioChildProcess},
+};
+use tokio::process::Command;
+```
+
+အခုတော့ instantiation ဆီသို့ ရောက်ကြရအောင်။
+
+### -2- Client နှင့် transport ကို ဖန်တီးခြင်း
+
+Transport နှင့် Client တို့၏ instance များကို ဖန်တီးရမည်-
+
+#### TypeScript
 
 ```typescript
 const transport = new StdioClientTransport({
@@ -167,9 +195,9 @@ const client = new Client(
 await client.connect(transport);
 ```
 
-အထက်ပါ ကုဒ်တွင် -
+အထက်ပါ code တွင် ကျွန်တော်တို့-
 
-- stdio transport instance တစ်ခု ဖန်တီးထားသည်။ Server ကို ရှာဖွေစတင်ရန် command နှင့် args များကို သတ်မှတ်ထားသည်။
+- stdio transport instance တစ်ခုကို ဖန်တီးခဲ့သည်။ Server ကို ရှာဖွေပြီး စတင်ရန် command နှင့် args များကို သတ်မှတ်ထားပုံကို သတိပြုပါ။
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -178,7 +206,7 @@ await client.connect(transport);
     });
     ```
 
-- Client ကို name နှင့် version ဖြင့် instantiate ပြုလုပ်ထားသည်။
+- Client တစ်ခုကို အမည်နှင့် version ဖြင့် ဖန်တီးခဲ့သည်။
 
     ```typescript
     const client = new Client(
@@ -188,13 +216,13 @@ await client.connect(transport);
     });
     ```
 
-- Client ကို ရွေးချယ်ထားသော transport နှင့် ချိတ်ဆက်ထားသည်။
+- Client ကို ရွေးချယ်ထားသော transport နှင့် ဆက်သွယ်ခဲ့သည်။
 
     ```typescript
     await client.connect(transport);
     ```
 
-### Python
+#### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
@@ -223,14 +251,14 @@ if __name__ == "__main__":
     asyncio.run(run())
 ```
 
-အထက်ပါ ကုဒ်တွင် -
+အထက်ပါ code တွင် ကျွန်တော်တို့-
 
-- လိုအပ်သော library များကို import ပြုလုပ်ထားသည်။
-- Server parameters object တစ်ခု instantiate ပြုလုပ်ထားသည်။ ၎င်းကို server run ရန် အသုံးပြုမည်။
-- `run` method တစ်ခု သတ်မှတ်ထားပြီး ၎င်းသည် `stdio_client` ကို ခေါ်၍ client session စတင်သည်။
-- `asyncio.run` ကို အသုံးပြု၍ entry point တစ်ခု ဖန်တီးထားသည်။
+- လိုအပ်သော library များကို သွင်းယူခဲ့သည်။
+- Server parameters object တစ်ခုကို ဖန်တီးခဲ့သည်။ Server ကို run လုပ်ပြီး client နှင့် ဆက်သွယ်ရန် အသုံးပြုမည်ဖြစ်သည်။
+- `stdio_client` ကို ခေါ်သည့် `run` method ကို သတ်မှတ်ခဲ့သည်။
+- `asyncio.run` ကို အသုံးပြု၍ `run` method ကို provide လုပ်ခဲ့သည်။
 
-### .NET
+#### .NET
 
 ```dotnet
 using Microsoft.Extensions.AI;
@@ -257,14 +285,14 @@ var clientTransport = new StdioClientTransport(new()
 await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 ```
 
-အထက်ပါ ကုဒ်တွင် -
+အထက်ပါ code တွင် ကျွန်တော်တို့-
 
-- လိုအပ်သော library များကို import ပြုလုပ်ထားသည်။
-- stdio transport တစ်ခု ဖန်တီးပြီး `mcpClient` ဆိုသော client တစ်ခု ဖန်တီးထားသည်။ ၎င်းကို MCP Server ၏ features များကို စာရင်းပြုစုခြင်းနှင့် ဖော်ဆောင်ရာတွင် အသုံးပြုမည်။
+- လိုအပ်သော library များကို သွင်းယူခဲ့သည်။
+- stdio transport တစ်ခုကို ဖန်တီးပြီး `mcpClient` ဟုခေါ်သော client တစ်ခုကို ဖန်တီးခဲ့သည်။ ယင်း client ကို MCP Server တွင် feature များကို list ပြရန်နှင့် invoke ပြုလုပ်ရန် အသုံးပြုမည်။
 
-မှတ်ချက် - "Arguments" တွင် *.csproj* သို့မဟုတ် executable ကို ရည်ညွှန်းနိုင်သည်။
+မှတ်ချက်- "Arguments" တွင် *.csproj* သို့မဟုတ် executable ကို ရည်ညွှန်းနိုင်သည်။
 
-### Java
+#### Java
 
 ```java
 public class SDKClient {
@@ -289,18 +317,50 @@ public class SDKClient {
 }
 ```
 
-အထက်ပါ ကုဒ်တွင် -
+အထက်ပါ code တွင် ကျွန်တော်တို့-
 
-- MCP server ရှိမည့် `http://localhost:8080` ကို ရည်ညွှန်းသည့် SSE transport ကို main method တွင် ဖန်တီးထားသည်။
-- Transport ကို constructor parameter အဖြစ် လက်ခံသည့် client class တစ်ခု ဖန်တီးထားသည်။
-- `run` method တွင် transport ဖြင့် synchronous MCP client တစ်ခု ဖန်တီးပြီး ချိတ်ဆက်မှု စတင်ထားသည်။
-- Java Spring Boot MCP servers နှင့် HTTP-based ဆက်သွယ်မှုအတွက် သင့်တော်သော SSE (Server-Sent Events) transport ကို အသုံးပြုထားသည်။
+- `http://localhost:8080` တွင် run လုပ်မည့် MCP Server ကို ရည်ညွှန်းသည့် SSE transport ကို သတ်မှတ်ခဲ့သည်။
+- Transport ကို constructor parameter အဖြစ် လက်ခံသည့် client class တစ်ခုကို ဖန်တီးခဲ့သည်။
+- `run` method တွင် transport ကို အသုံးပြု၍ synchronous MCP client တစ်ခုကို ဖန်တီးပြီး connection ကို initialize လုပ်ခဲ့သည်။
+- Java Spring Boot MCP Server များနှင့် HTTP-based ဆက်သွယ်မှုအတွက် သင့်လျော်သော SSE (Server-Sent Events) transport ကို အသုံးပြုခဲ့သည်။
 
-### -3- Server features များကို စာရင်းပြုစုခြင်း
+#### Rust
 
-ယခု client သည် program run လုပ်ပါက server နှင့် ချိတ်ဆက်နိုင်ပါသည်။ သို့သော် features များကို စာရင်းပြုစုခြင်း မရှိသေးပါ။ ထို့ကြောင့် အောက်ပါအတိုင်း ဆက်လုပ်ကြရအောင် -
+Server ကို စတင်ပြီး feature များကို list ပြရန်၊ main function တွင် client ကို initialize ပြုလုပ်နိုင်သည်။
 
-### TypeScript
+```rust
+async fn main() -> Result<(), RmcpError> {
+    // Assume the server is a sibling project named "calculator-server" in the same directory
+    let server_dir = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .expect("failed to locate workspace root")
+        .join("calculator-server");
+
+    let client = ()
+        .serve(
+            TokioChildProcess::new(Command::new("cargo").configure(|cmd| {
+                cmd.arg("run").current_dir(server_dir);
+            }))
+            .map_err(RmcpError::transport_creation::<TokioChildProcess>)?,
+        )
+        .await?;
+
+    // TODO: Initialize
+
+    // TODO: List tools
+
+    // TODO: Call add tool with arguments = {"a": 3, "b": 2}
+
+    client.cancel().await?;
+    Ok(())
+}
+```
+
+### -3- Server ၏ feature များကို list ပြခြင်း
+
+Client ကို run လုပ်သည့်အခါ Server ၏ feature များကို list ပြရန် လိုအပ်သည်။
+
+#### TypeScript
 
 ```typescript
 // List prompts
@@ -313,7 +373,7 @@ const resources = await client.listResources();
 const tools = await client.listTools();
 ```
 
-### Python
+#### Python
 
 ```python
 # List available resources
@@ -329,9 +389,9 @@ for tool in tools.tools:
     print("Tool: ", tool.name)
 ```
 
-ဒီမှာ available resources များ `list_resources()` နှင့် tools များ `list_tools` ကို စာရင်းပြုစုပြီး ထုတ်ပြထားသည်။
+ဒီမှာ `list_resources()` နှင့် `list_tools` ကို အသုံးပြု၍ ရရှိနိုင်သော အရင်းအမြစ်များနှင့် ကိရိယာများကို list ပြပြီး print ထုတ်ထားသည်။
 
-### .NET
+#### .NET
 
 ```dotnet
 foreach (var tool in await client.ListToolsAsync())
@@ -340,9 +400,9 @@ foreach (var tool in await client.ListToolsAsync())
 }
 ```
 
-အထက်ပါ ကုဒ်သည် server ပေါ်ရှိ tools များကို စာရင်းပြုစုနည်း ဥပမာဖြစ်သည်။ tool တစ်ခုချင်းစီအတွက် အမည်ကို ထုတ်ပြသည်။
+အထက်ပါမှာ Server ၏ tools များကို list ပြပုံကို ပြထားသည်။ Tool တစ်ခုချင်းစီအတွက် name ကို print ထုတ်ထားသည်။
 
-### Java
+#### Java
 
 ```java
 // List and demonstrate tools
@@ -353,19 +413,33 @@ System.out.println("Available Tools = " + toolsList);
 client.ping();
 ```
 
-အထက်ပါ ကုဒ်တွင် -
+အထက်ပါ code တွင် ကျွန်တော်တို့-
 
-- MCP server မှ ရရှိနိုင်သည့် tools များအား `listTools()` ဖြင့် ခေါ်ယူထားသည်။
-- Server နှင့် ချိတ်ဆက်မှုကို စစ်ဆေးရန် `ping()` ကို အသုံးပြုထားသည်။
-- `ListToolsResult` တွင် tools များ၏ အမည်၊ ဖော်ပြချက်နှင့် input schema များ ပါဝင်သည်။
+- MCP Server မှ ရရှိနိုင်သော tool များအားလုံးကို `listTools()` ဖြင့် ခေါ်ယူခဲ့သည်။
+- Server နှင့် connection အလုပ်လုပ်နေကြောင်း စစ်ဆေးရန် `ping()` ကို အသုံးပြုခဲ့သည်။
+- `ListToolsResult` တွင် tool များ၏ အမည်များ၊ ဖော်ပြချက်များနှင့် input schema များ ပါဝင်သည်။
 
-အဆင်ပြေပါပြီ။ ယခု features များကို ဘယ်အချိန်တွင် အသုံးပြုမလဲ? ဤ client သည် ရိုးရှင်းပြီး features များကို လိုချင်သည့်အခါ တိုက်ရိုက် ခေါ်ယူရမည်ဖြစ်သည်။ နောက်အခန်းတွင် ကိုယ်ပိုင် LLM ပါဝင်သည့် client တစ်ခု ဖန်တီးမည်ဖြစ်သည်။ ယခုအခါ server features များကို ဘယ်လို ဖော်ဆောင်မလဲ ကြည့်ကြရအောင်။
+အိုကေ၊ feature များအားလုံးကို ဖမ်းယူပြီးဖြစ်သည်။ အခုတော့ feature များကို ဘယ်အချိန်မှာ အသုံးပြုမလဲဆိုတာ စဉ်းစားရမည်။ Client တစ်ခုဟာ ရိုးရှင်းတဲ့ client ဖြစ်ပြီး၊ feature များကို အသုံးပြုလိုတဲ့အချိန်မှာသာ ခေါ်ဆောင်ရမည်။ နောက်အခန်းမှာတော့ ကိုယ်ပိုင် LLM (large language model) ရှိတဲ့ ပိုမိုတိုးတက်တဲ့ client တစ်ခုကို ဖန်တီးမှာဖြစ်ပါတယ်။ ယခုအချိန်တွင်တော့ Server ၏ feature များကို ဘယ်လို invoke ပြုလုပ်မလဲဆိုတာ ကြည့်ကြရအောင်-
 
-### -4- Features များကို ဖော်ဆောင်ခြင်း
+#### Rust
 
-Features များကို ဖော်ဆောင်ရန် မှန်ကန်သော arguments များနှင့် တချို့အခါတွင် ဖော်ဆောင်လိုသည့် အမည်ကို သတ်မှတ်ရမည်။
+Main function တွင် client ကို initialize ပြီးနောက် Server ကို initialize လုပ်ပြီး feature များကို list ပြနိုင်သည်။
 
-### TypeScript
+```rust
+// Initialize
+let server_info = client.peer_info();
+println!("Server info: {:?}", server_info);
+
+// List tools
+let tools = client.list_tools(Default::default()).await?;
+println!("Available tools: {:?}", tools);
+```
+
+### -4- Feature များကို invoke ပြုလုပ်ခြင်း
+
+Feature များကို invoke ပြုလုပ်ရန် သင့် arguments များနှင့် သတ်မှတ်ထားသော အမည်ကို မှန်ကန်စွာ သတ်မှတ်ရမည်။
+
+#### TypeScript
 
 ```typescript
 
@@ -391,9 +465,9 @@ const promptResult = await client.getPrompt({
 })
 ```
 
-အထက်ပါ ကုဒ်တွင် -
+အထက်ပါ code တွင် ကျွန်တော်တို့-
 
-- Resource တစ်ခုကို ဖတ်ရန် `readResource()` ကို `uri` ဖြင့် ခေါ်သည်။ Server ဘက်တွင် အောက်ပါအတိုင်း ဖြစ်နိုင်သည် -
+- Resource တစ်ခုကို ဖတ်ယူခဲ့သည်။ `readResource()` ကို `uri` ဖြင့် ခေါ်ယူခဲ့သည်။ Server ဘက်တွင် အောက်ပါအတိုင်း ဖြစ်နိုင်သည်-
 
     ```typescript
     server.resource(
@@ -408,9 +482,9 @@ const promptResult = await client.getPrompt({
     );
     ```
 
-    ကျွန်ုပ်တို့၏ `uri` တန်ဖိုး `file://example.txt` သည် server ၏ `file://{name}` နှင့် ကိုက်ညီသည်။ `example.txt` ကို `name` အဖြစ် သတ်မှတ်သည်။
+    Server တွင် `file://{name}` ဟု သတ်မှတ်ထားသော `uri` value `file://example.txt` နှင့် ကိုက်ညီသည်။ `example.txt` ကို `name` သို့ mapping ပြုလုပ်မည်။
 
-- Tool တစ်ခုကို ခေါ်ရန် `name` နှင့် `arguments` ဖြင့် ခေါ်သည် -
+- Tool တစ်ခုကို ခေါ်ယူခဲ့သည်။ `name` နှင့် `arguments` ကို သတ်မှတ်ပြီး ခေါ်ယူခဲ့သည်-
 
     ```typescript
     const result = await client.callTool({
@@ -421,7 +495,7 @@ const promptResult = await client.getPrompt({
     });
     ```
 
-- Prompt ရယူရန် `getPrompt()` ကို `name` နှင့် `arguments` ဖြင့် ခေါ်သည်။ Server ကုဒ်မှာ အောက်ပါအတိုင်း ဖြစ်သည် -
+- Prompt တစ်ခုကို ရယူခဲ့သည်။ `getPrompt()` ကို `name` နှင့် `arguments` ဖြင့် ခေါ်ယူခဲ့သည်။ Server code သည် အောက်ပါအတိုင်း ဖြစ်နိုင်သည်-
 
     ```typescript
     server.prompt(
@@ -439,7 +513,7 @@ const promptResult = await client.getPrompt({
     );
     ```
 
-    ထို့ကြောင့် client ကုဒ်မှာ server တွင် သတ်မှတ်ထားသည့်အတိုင်း ဖြစ်သည် -
+    Client code သည် Server တွင် သတ်မှတ်ထားသည့်အတိုင်း အောက်ပါအတိုင်း ဖြစ်ရမည်-
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -450,7 +524,7 @@ const promptResult = await client.getPrompt({
     })
     ```
 
-### Python
+#### Python
 
 ```python
 # Read a resource
@@ -463,14 +537,14 @@ result = await session.call_tool("add", arguments={"a": 1, "b": 7})
 print(result.content)
 ```
 
-အထက်ပါ ကုဒ်တွင် -
+အထက်ပါ code တွင် ကျွန်တော်တို့-
 
-- `greeting` ဆိုသော resource ကို `read_resource` ဖြင့် ခေါ်ယူထားသည်။
-- `add` ဆိုသော tool ကို `call_tool` ဖြင့် ဖော်ဆောင်ထားသည်။
+- `read_resource` ကို အသုံးပြု၍ `greeting` ဟုခေါ်သော resource ကို ခေါ်ယူခဲ့သည်။
+- `call_tool` ကို အသုံးပြု၍ `add` ဟုခေါ်သော tool ကို invoke ပြုလုပ်ခဲ့သည်။
 
-### .NET
+#### .NET
 
-1. Tool တစ်ခု ခေါ်ရန် ကုဒ် ထည့်ပါ -
+1. Tool တစ်ခုကို ခေါ်ယူရန် အောက်ပါ code ကို ထည့်သွင်းပါ-
 
   ```csharp
   var result = await mcpClient.CallToolAsync(
@@ -479,14 +553,14 @@ print(result.content)
       cancellationToken:CancellationToken.None);
   ```
 
-2. ရလဒ်ကို ထုတ်ပြရန် ကုဒ် -
+1. ရလဒ်ကို print ထုတ်ရန် အောက်ပါ code ကို အသုံးပြုပါ-
 
   ```csharp
   Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
   // Sum 4
   ```
 
-### Java
+#### Java
 
 ```java
 // Call various calculator tools
@@ -506,46 +580,61 @@ CallToolResult resultHelp = client.callTool(new CallToolRequest("help", Map.of()
 System.out.println("Help = " + resultHelp);
 ```
 
-အထက်ပါ ကုဒ်တွင် -
+အထက်ပါ code တွင် ကျွန်တော်တို့-
 
-- `callTool()` method ဖြင့် calculator tools များစွာကို `CallToolRequest` objects ဖြင့် ခေါ်ယူထားသည်။
-- Tool တစ်ခုချင်းစီသည် tool အမည်နှင့် လိုအပ်သော arguments များပါဝင်သည့် `Map` ကို သတ်မှတ်ထားသည်။
-- Server tools များသည် သတ်မှတ်ထားသော parameter အမည်များ (ဥပမာ "a", "b") ကို မျှော်လင့်သည်။
-- ရလဒ်များကို `CallToolResult` objects အဖြစ် ပြန်လည်ရရှိသည်။
+- `CallToolRequest` object များနှင့် tool များကို `callTool()` method ဖြင့် ခေါ်ယူခဲ့သည်။
+- Tool တစ်ခုချင်းစီအတွက် tool name နှင့် အဆိုပါ tool အတွက် လိုအပ်သော arguments များပါဝင်သည့် `Map` ကို သတ်မှတ်ခဲ့သည်။
+- Server tools များသည် အထူး parameter အမည်များ (ဥပမာ- "a", "b" စသည်) ကို မျှော်မှန်းထားသည်။
+- ရလဒ်များကို Server မှ ပြန်လာသော `CallToolResult` object များအဖြစ် ရရှိခဲ့သည်။
 
-### -5- Client ကို run ပြုလုပ်ခြင်း
+#### Rust
 
-Client ကို run မည်ဆိုလျှင် terminal တွင် အောက်ပါ command ကို ရိုက်ထည့်ပါ။
+```rust
+// Call add tool with arguments = {"a": 3, "b": 2}
+let a = 3;
+let b = 2;
+let tool_result = client
+    .call_tool(CallToolRequestParam {
+        name: "add".into(),
+        arguments: serde_json::json!({ "a": a, "b": b }).as_object().cloned(),
+    })
+    .await?;
+println!("Result of {:?} + {:?}: {:?}", a, b, tool_result);
+```
 
-### TypeScript
+### -5- Client ကို run လုပ်ခြင်း
 
-*package.json* ၏ "scripts" အပိုင်းတွင် အောက်ပါ entry ကို ထည့်ပါ -
+Client ကို run လုပ်ရန် terminal တွင် အောက်ပါ command ကို ရိုက်ထည့်ပါ-
+
+#### TypeScript
+
+*package.json* တွင် "scripts" အပိုင်းတွင် အောက်ပါ entry ကို ထည့်သွင်းပါ-
 
 ```json
-"client": "tsx && node build/client.js"
+"client": "tsc && node build/client.js"
 ```
 
 ```sh
 npm run client
 ```
 
-### Python
+#### Python
 
-Client ကို အောက်ပါ command ဖြင့် ခေါ်ပါ -
+Client ကို အောက်ပါ command ဖြင့် ခေါ်ပါ-
 
 ```sh
 python client.py
 ```
 
-### .NET
+#### .NET
 
 ```sh
 dotnet run
 ```
 
-### Java
+#### Java
 
-ပထမဦးဆုံး MCP server ကို `http://localhost:8080` တွင် run လုပ်ထားပါ။ ထို့နောက် client ကို run ပါ -
+ပထမဦးစွာ MCP Server ကို `http://localhost:8080` တွင် run လုပ်ထားပါ။ ထို့နောက် client ကို run လုပ်ပါ-
 
 ```bash
 # Build you project
@@ -555,7 +644,7 @@ dotnet run
 ./mvnw exec:java -Dexec.mainClass="com.microsoft.mcp.sample.client.SDKClient"
 ```
 
-အခြားနည်းလမ်းအဖြစ် `03-GettingStarted\02-client\solution\java` ဖိုလ်ဒါရှိ client project အား run လုပ်နိုင်ပါသည် -
+မဟုတ်ရင် `03-GettingStarted\02-client\solution\java` folder တွင် ပံ့ပိုးထားသော အပြည့်အစုံ client project ကို run လုပ်နိုင်သည်-
 
 ```bash
 # Navigate to the solution directory
@@ -566,11 +655,18 @@ cd 03-GettingStarted/02-client/solution/java
 java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
-## အလုပ်အပ်
+#### Rust
 
-ဤအလုပ်အပ်တွင် သင်သည် client ဖန်တီးခြင်းတွင် သင်ယူထားသည့် အရာများကို အသုံးပြုကာ ကိုယ်ပိုင် client တစ်ခု ဖန်တီးရမည်ဖြစ်သည်။
+```bash
+cargo fmt
+cargo run
+```
 
-သင်ခန်းစာတွင် အသုံးပြုနိုင်သည့် server တစ်ခု ရှိပြီး client ကနေ ခေါ်ဆိုရမည်။ Server ကို ပိုမိုစိတ်ဝင်စားဖွယ် ဖြစ်အောင် feature များ ထပ်မံ ထည့်သွင်းနိုင်မလား စမ်းကြည့်ပါ။
+## လုပ်ငန်းတာဝန်
+
+ဒီလုပ်ငန်းတာဝန်တွင် သင်သည် client တစ်ခု ဖန်တီးခြင်းအတွက် သင်လေ့လာခဲ့သည့်အရာများကို အသုံးပြုမည်ဖြစ်ပြီး ကိုယ်ပိုင် client တစ်ခုကို ဖန်တီးရမည်။
+
+အောက်ပါ Server ကို သင်၏ client code မှ ခေါ်ယူနိုင်ရန် အသုံးပြုပါ၊ Server ကို ပိုမိုစိတ်ဝင်စားစေရန် feature များကို ထည့်သွင်းကြည့်ပါ။
 
 ### TypeScript
 
@@ -674,19 +770,23 @@ public static class CalculatorTool
 }
 ```
 
-ဤ project တွင် [prompts နှင့် resources များ ထည့်သွင်းနည်း](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs) ကို ကြည့်ရှုနိုင်သည်။
+ဒီ project ကို ကြည့်ပါ- [add prompts and resources](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs)။
 
-ထို့အပြင် [prompts နှင့် resources များ ဖော်ဆောင်နည်း](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/) ကိုလည်း စစ်ဆေးပါ။
+ထို့အပြင် ဒီ link ကို ကြည့်ပါ- [prompts and resources](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/) ကို invoke ပြုလုပ်ပုံ။
+
+### Rust
+
+[ယခင်အပိုင်း](../../../../03-GettingStarted/01-first-server) တွင် MCP Server တစ်ခုကို Rust ဖြင့် ဖန်တီးပုံကို သင်လေ့လာခဲ့ပါသည်။ ထိုအပေါ် ဆက်လက်တည်ဆောက်နိုင်သလို၊ MCP Server Rust-based ဥပမာများအတွက် ဒီ link ကိုလည်း ကြည့်နိုင်သည်- [MCP Server Examples](https://github.com/modelcontextprotocol/rust-sdk/tree/main/examples/servers)
 
 ## ဖြေရှင်းချက်
 
-**solution folder** တွင် ဤသင်ခန်းစာတွင် ဖော်ပြထားသည့် အယူအဆများအားလုံးကို ပြသသည့် ပြည့်စုံပြီး အသုံးပြုနိုင်သော client implementation များ ပါဝင်သည်။ solution တစ်ခုစီတွင် client နှင့် server code များကို project များအလိုက် သီးခြား စီစဉ်ထားသည်။
+**solution folder** တွင် ဒီသင်ခန်းစာတွင် ဖော်ပြထားသည့် အကြံဉာဏ်အားလုံးကို ပြသသည့် client implementation များပါဝင်သည်။ Solution တစ်ခုစီတွင် client နှင့် server code များကို သီးခြားစီ စီစဉ်ထားသည်။
 
-### 📁 Solution ဖွဲ့စည်းပုံ
+### 📁 Solution Structure
 
-solution directory ကို programming language အလိုက် စီစဉ်ထားသည် -
+Solution directory ကို programming language အလိုက် စီစဉ်ထားသည်-
 
-```
+```text
 solution/
 ├── typescript/          # TypeScript client with npm/Node.js setup
 │   ├── package.json     # Dependencies and scripts
@@ -695,7 +795,7 @@ solution/
 ├── java/                # Java Spring Boot client project
 │   ├── pom.xml          # Maven configuration
 │   ├── src/             # Java source files
-│   └── mvnw            # Maven wrapper
+│   └── mvnw             # Maven wrapper
 ├── python/              # Python client implementation
 │   ├── client.py        # Main client code
 │   ├── server.py        # Compatible server
@@ -704,71 +804,65 @@ solution/
 │   ├── dotnet.csproj    # Project configuration
 │   ├── Program.cs       # Main client code
 │   └── dotnet.sln       # Solution file
+├── rust/                # Rust client implementation
+|  ├── Cargo.lock        # Cargo lock file
+|  ├── Cargo.toml        # Project configuration and dependencies
+|  ├── src               # Source code
+|  │   └── main.rs       # Main client code
 └── server/              # Additional .NET server implementation
     ├── Program.cs       # Server code
     └── server.csproj    # Server project file
 ```
 
-### 🚀 Solution တစ်ခုစီတွင် ပါဝင်သည့် အရာများ
+### 🚀 Solution တစ်ခုစီတွင် ပါဝင်သောအရာများ
 
-ဘာသာစကားအလိုက် solution တစ်ခုစီတွင် -
+Language-specific solution တစ်ခုစီတွင် အောက်ပါအရာများ ပါဝင်သည်-
 
-- **သင်ခန်းစာမှ features အားလုံးပါဝင်သည့် ပြည့်စုံ client implementation**
-- **မှန်ကန်သော dependencies နှင့် configuration ပါရှိသည့် project ဖွဲ့စည်းပုံ**
-- **တည်ဆောက်ခြင်းနှင့် run scripts များ**
-- **ဘာသာစကားအလိုက် အသေးစိတ် README**
-- **အမှားကိုင်တွယ်ခြင်းနှင့် ရလဒ်ကိုင်တွယ်ခြင်း ဥပမာများ**
+- **Client implementation အပြည့်အစုံ** (tutorial တွင်ဖော်ပြထားသည့် feature အားလုံးပါဝင်သည်)
+- **Project structure အလုပ်လုပ်စေမှု** (လိုအပ်သော dependencies နှင့် configuration များပါဝင်သည်)
+- **Build နှင့် run script များ** (setup နှင့် execution ကို လွယ်ကူစေသည်)
+- **README အသေးစိတ်** (language-specific လမ်းညွှန်ချက်များပါဝင်သည်)
+- **Error
+တစ်ခုချင်းစီသော နမူနာများတွင် ပါဝင်သည် -
 
-### 📖 Solution များကို အသုံးပြုခြင်း
+- ✅ **ချိတ်ဆက်မှု တည်ဆောက်ခြင်း** နှင့် အမှားကိုင်တွယ်မှု
+- ✅ **ဆာဗာ ရှာဖွေမှု** (ကိရိယာများ၊ အရင်းအမြစ်များ၊ လိုအပ်သော အကြံပြုချက်များ)
+- ✅ **ဂဏန်းတွက်စက် လုပ်ဆောင်ချက်များ** (ပေါင်းခြင်း၊ နုတ်ခြင်း၊ များခြင်း၊ ခွဲခြင်း၊ အကူအညီ)
+- ✅ **ရလဒ်ကို ကိုင်တွယ်ခြင်း** နှင့် ဖော်ပြထားသော အထွေထွေထုတ်လွှင့်မှု
+- ✅ **အကျုံးဝင်သော အမှားကိုင်တွယ်မှု**
+- ✅ **သန့်ရှင်းပြီး မှတ်ချက်ထည့်ထားသော ကုဒ်များ** (အဆင့်ဆင့် မှတ်ချက်များဖြင့်)
 
-1. သင်နှစ်သက်သော ဘာသာစကား folder သို့ သွားပါ -
+### နမူနာများဖြင့် စတင်ခြင်း
 
-   ```bash
-   cd solution/typescript/    # For TypeScript
-   cd solution/java/          # For Java
-   cd solution/python/        # For Python
-   cd solution/dotnet/        # For .NET
-   ```
+1. အထက်ပါဇယားမှ **သင့်နှစ်သက်သော ဘာသာစကား** ကို ရွေးချယ်ပါ  
+2. **နမူနာဖိုင်ကို ပြန်လည်သုံးသပ်ပါ** - အကောင်အထည်ဖော်မှုကို နားလည်ရန်  
+3. [`complete_examples.md`](./complete_examples.md) တွင် ဖော်ပြထားသော လမ်းညွှန်ချက်များအတိုင်း **နမူနာကို အကောင်အထည်ဖော်ပါ**  
+4. သင့်ရဲ့ အထူးလိုအပ်ချက်အတွက် **နမူနာကို ပြင်ဆင်ပြီး တိုးချဲ့ပါ**  
 
-2. folder တစ်ခုချင်းစီတွင် README အညွှန်းများကို လိုက်နာပါ -
+ဤနမူနာများကို အကောင်အထည်ဖော်ခြင်းနှင့် စိတ်ကြိုက်ပြင်ဆင်ခြင်းအကြောင်း အသေးစိတ်စာရွက်စာတမ်းများကို ဖတ်ရန် - **[📖 Complete Examples Documentation](./complete_examples.md)** ကို ကြည့်ပါ။
 
-   - Dependencies 설치ခြင်း
-   - Project တည်ဆောက်ခြင်း
-   - Client run ပြုလုပ်ခြင်း
+### 💡 Solution နှင့် Complete Examples အကြား ကွာခြားချက်
 
-3. ရရှိနိုင်သည့် output ဥပမာ -
+| **Solution Folder** | **Complete Examples** |
+|--------------------|--------------------- |
+| Build ဖိုင်များပါဝင်သော အပြည့်အစုံ Project ဖွဲ့စည်းမှု | Single-file အကောင်အထည်ဖော်မှုများ |
+| Dependencies ဖြင့် ချက်ချင်း အသုံးပြုနိုင် | အဓိကထားသော ကုဒ်နမူနာများ |
+| ထုတ်လုပ်မှုဆိုင်ရာ အခြေအနေများနှင့် ဆင်တူသော Setup | ပညာရေးဆိုင်ရာ ရည်ညွှန်းချက် |
+| ဘာသာစကားအလိုက် Tooling | ဘာသာစကားများကို နှိုင်းယှဉ်ခြင်း |
 
-   ```text
-   Prompt: Please review this code: console.log("hello");
-   Resource template: file
-   Tool result: { content: [ { type: 'text', text: '9' } ] }
-   ```
+နည်းလမ်းနှစ်မျိုးစလုံး အကျိုးရှိသည် - **Solution Folder** ကို အပြည့်အစုံ Project များအတွက် အသုံးပြုပါ၊ **Complete Examples** ကို သင်ယူမှုနှင့် ရည်ညွှန်းချက်အတွက် အသုံးပြုပါ။
 
-အသေးစိတ် စာရွက်စာတမ်းများနှင့် လမ်းညွှန်ချက်များအတွက် **[📖 Solution Documentation](./solution/README.md)** ကို ကြည့်ပါ။
+## အဓိက အချက်များ
 
-## 🎯 ပြည့်စုံသော ဥပမာများ
+ဤအခန်းအတွက် အဓိက အချက်များမှာ -
 
-ဤသင်ခန်းစာတွင် ဖော်ပြထားသည့် programming language အားလုံးအတွက် ပြည့်စုံပြီး အလုပ်လုပ်နိုင်သော client implementation များကို ပံ့ပိုးပေးထားသည်။ ဤဥပမာများသည် အထက်ဖော်ပြထားသည့် လုပ်ဆောင်ချက်များအားလုံးကို ပြသပြီး ကိုယ်ပိုင် project များအတွက် ကိုးကားနိုင်သည်။
+- Client များသည် ဆာဗာပေါ်တွင် လုပ်ဆောင်ချက်များကို ရှာဖွေခြင်းနှင့် ခေါ်ယူခြင်းနှစ်မျိုးလုံးအတွက် အသုံးပြုနိုင်သည်။
+- Client များသည် (ဤအခန်းတွင် ဖော်ပြထားသည့်အတိုင်း) ကိုယ်တိုင် စတင်စဉ် ဆာဗာကို စတင်နိုင်သလို၊ လည်ပတ်နေသော ဆာဗာများနှင့်လည်း ချိတ်ဆက်နိုင်သည်။
+- Client များသည် အခြားရွေးချယ်စရာများ (ဥပမာ - ယခင်အခန်းတွင် ဖော်ပြထားသည့် Inspector) နှင့်အတူ ဆာဗာ၏ စွမ်းရည်များကို စမ်းသပ်ရန် အကောင်းဆုံးနည်းလမ်းတစ်ခုဖြစ်သည်။
 
-### ရရှိနိုင်သည့် ပြည့်စုံသော ဥပမာများ
+## ထပ်မံလေ့လာရန် အရင်းအမြစ်များ
 
-| ဘာသာစကား | ဖိုင် | ဖော်ပြချက် |
-|----------|------|-------------|
-| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | SSE transport အသုံးပြု၍ comprehensive error handling ပါဝင်သည့် Java client ပြည့်စုံ |
-| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | stdio transport အသုံးပြု၍ server ကို အလိုအလျောက် စတင်နိုင်သော C# client ပြည့်စ
-နှစ်ခုလုံးနည်းလမ်းများမှာ တန်ဖိုးရှိပြီး - ပြည့်စုံသောပရောဂျက်များအတွက် **solution folder** ကို အသုံးပြုပါ၊ သင်ယူခြင်းနှင့် ကိုးကားရန်အတွက် **complete examples** ကို အသုံးပြုပါ။
-
-## အဓိကယူဆချက်များ
-
-ဤအခန်းအတွက် အဓိကယူဆချက်များမှာ client များအကြောင်းအောက်ပါအတိုင်းဖြစ်သည်-
-
-- ဆာဗာပေါ်ရှိ လုပ်ဆောင်ချက်များကို ရှာဖွေခြင်းနှင့် ခေါ်ယူခြင်းနှစ်ခုလုံးတွင် အသုံးပြုနိုင်သည်။
-- မိမိကိုယ်ကို စတင်သည့်အခါ ဆာဗာကို စတင်နိုင်သည် (ဤအခန်းကဲ့သို့) သို့သော် client များသည် လည်ပတ်နေသော ဆာဗာများနှင့်လည်း ချိတ်ဆက်နိုင်သည်။
-- ယခင်အခန်းတွင် ဖော်ပြခဲ့သည့် Inspector ကဲ့သို့သော အခြားရွေးချယ်စရာများနှင့် နှိုင်းယှဉ်၍ ဆာဗာ၏ စွမ်းဆောင်ရည်များကို စမ်းသပ်ရန် အလွန်ကောင်းမွန်သော နည်းလမ်းတစ်ခုဖြစ်သည်။
-
-## အပိုဆောင်းအရင်းအမြစ်များ
-
-- [Building clients in MCP](https://modelcontextprotocol.io/quickstart/client)
+- [MCP တွင် Client များ တည်ဆောက်ခြင်း](https://modelcontextprotocol.io/quickstart/client)
 
 ## နမူနာများ
 
@@ -777,10 +871,11 @@ solution/
 - [JavaScript Calculator](../samples/javascript/README.md)
 - [TypeScript Calculator](../samples/typescript/README.md)
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Rust Calculator](../../../../03-GettingStarted/samples/rust)
 
 ## နောက်တစ်ဆင့်
 
-- နောက်တစ်ဆင့်: [Creating a client with an LLM](../03-llm-client/README.md)
+- နောက်တစ်ဆင့်: [LLM ဖြင့် Client တစ်ခု ဖန်တီးခြင်း](../03-llm-client/README.md)
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+**ဝက်ဘ်ဆိုက်မှတ်ချက်**:  
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေသော်လည်း၊ အလိုအလျောက်ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းစာရွက်စာတမ်းကို ၎င်း၏ မူလဘာသာစကားဖြင့် အာဏာတည်သောရင်းမြစ်အဖြစ် သတ်မှတ်ပါ။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များမှ အတည်ပြုထားသော ဘာသာပြန်မှုကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုမှားများ သို့မဟုတ် အဓိပ္ပာယ်မှားများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
