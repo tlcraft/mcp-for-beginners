@@ -124,6 +124,7 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 | JavaScript | MCP Demo | [View Code](./03-GettingStarted/samples/javascript/README.md) |
 | Python | MCP Server | [View Code](./03-GettingStarted/samples/python/mcp_calculator_server.py) |
 | TypeScript | MCP Example | [View Code](./03-GettingStarted/samples/typescript/README.md) |
+| RUST | Container Sample | [View Code](.03-GettingStarted/samples/rust/README.md) |
 
 #### Advanced MCP Implementations
 
@@ -132,7 +133,7 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 | C# | Advanced Sample | [View Code](./04-PracticalImplementation/samples/csharp/README.md) |
 | Java with Spring | Container App Example | [View Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
 | JavaScript | Advanced Sample | [View Code](./04-PracticalImplementation/samples/javascript/README.md) |
-| Python | Complex Implementation | [View Code](./04-PracticalImplementation/samples/python/mcp_sample.py) |
+| Python | Complex Implementation | [View Code](./04-PracticalImplementation/samples/python/READMEmd) |
 | TypeScript | Container Sample | [View Code](./04-PracticalImplementation/samples/typescript/README.md) |
 
 
