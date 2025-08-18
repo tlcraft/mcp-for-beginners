@@ -1,26 +1,26 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-07-13T21:22:51+00:00",
+  "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
+  "translation_date": "2025-08-18T17:33:33+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "hr"
 }
 -->
 # Pokretanje ovog primjera
 
-Evo kako pokrenuti klasični HTTP streaming server i klijent, kao i MCP streaming server i klijent koristeći Python.
+Evo kako pokrenuti klasični HTTP streaming server i klijenta, kao i MCP streaming server i klijenta koristeći Python.
 
 ### Pregled
 
 - Postavit ćete MCP server koji šalje obavijesti o napretku klijentu dok obrađuje stavke.
 - Klijent će prikazivati svaku obavijest u stvarnom vremenu.
-- Ovaj vodič obuhvaća preduvjete, postavljanje, pokretanje i rješavanje problema.
+- Ovaj vodič pokriva preduvjete, postavljanje, pokretanje i rješavanje problema.
 
 ### Preduvjeti
 
 - Python 3.9 ili noviji
-- `mcp` Python paket (instalirajte s `pip install mcp`)
+- Python paket `mcp` (instalirajte pomoću `pip install mcp`)
 
 ### Instalacija i postavljanje
 
@@ -42,7 +42,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijent, kao i MCP streamin
 1. **Instalirajte potrebne ovisnosti:**
 
    ```pwsh
-   pip install "mcp[cli]"
+   pip install "mcp[cli]" fastapi requests
    ```
 
 ### Datoteke
@@ -80,7 +80,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijent, kao i MCP streamin
    python client.py
    ```
 
-2. Trebali biste vidjeti poruke koje se ispisuju redom:
+2. Trebali biste vidjeti poruke koje se ispisuju sekvencijalno:
 
    ```text
    Running classic HTTP streaming client...
@@ -116,7 +116,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijent, kao i MCP streamin
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Trebali biste vidjeti obavijesti ispisane u stvarnom vremenu dok server obrađuje svaku stavku:
+2. Trebali biste vidjeti obavijesti koje se ispisuju u stvarnom vremenu dok server obrađuje svaku stavku:
    ```
    Running MCP client...
    Starting client...
@@ -134,18 +134,18 @@ Evo kako pokrenuti klasični HTTP streaming server i klijent, kao i MCP streamin
 1. **Kreirajte MCP server koristeći FastMCP.**
 2. **Definirajte alat koji obrađuje listu i šalje obavijesti koristeći `ctx.info()` ili `ctx.log()`.**
 3. **Pokrenite server s `transport="streamable-http"`.**
-4. **Implementirajte klijenta s handlerom poruka koji prikazuje obavijesti čim stignu.**
+4. **Implementirajte klijenta s handlerom poruka za prikaz obavijesti čim stignu.**
 
 ### Pregled koda
-- Server koristi async funkcije i MCP kontekst za slanje ažuriranja napretka.
-- Klijent implementira async handler poruka za ispis obavijesti i konačnog rezultata.
+- Server koristi asinhrone funkcije i MCP kontekst za slanje ažuriranja o napretku.
+- Klijent implementira asinhroni handler poruka za ispis obavijesti i konačnog rezultata.
 
 ### Savjeti i rješavanje problema
 
-- Koristite `async/await` za neblokirajuće operacije.
-- Uvijek hvatajte iznimke i na serveru i na klijentu radi stabilnosti.
+- Koristite `async/await` za operacije koje ne blokiraju.
+- Uvijek obradite iznimke na serveru i klijentu radi veće pouzdanosti.
 - Testirajte s više klijenata kako biste vidjeli ažuriranja u stvarnom vremenu.
-- Ako naiđete na greške, provjerite verziju Pythona i jesu li sve ovisnosti instalirane.
+- Ako naiđete na greške, provjerite verziju Pythona i osigurajte da su sve ovisnosti instalirane.
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije proizašle iz korištenja ovog prijevoda.

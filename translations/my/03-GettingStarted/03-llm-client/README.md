@@ -1,63 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "343235ad6c122033c549a677913443f9",
-  "translation_date": "2025-07-17T19:38:30+00:00",
+  "original_hash": "57f7b15640bb96ef2f6f09003eec935e",
+  "translation_date": "2025-08-18T18:53:58+00:00",
   "source_file": "03-GettingStarted/03-llm-client/README.md",
   "language_code": "my"
 }
 -->
-# LLM ဖြင့် client တစ်ခု ဖန်တီးခြင်း
+# LLM အသုံးပြု၍ Client တစ်ခု ဖန်တီးခြင်း
 
-ယခုအထိ server နှင့် client တို့ကို ဘယ်လိုဖန်တီးရမယ်ဆိုတာ ကြည့်ရှုခဲ့ပါပြီ။ client က server ကို တိုက်ရိုက်ခေါ်ပြီး tools, resources နဲ့ prompts တွေကို စာရင်းပြုလုပ်နိုင်ခဲ့ပါတယ်။ သို့သော် ဒီနည်းလမ်းက အလွန်လက်တွေ့ကျမှုနည်းပါးပါတယ်။ သင့်အသုံးပြုသူက agentic အချိန်ခေတ်မှာ နေထိုင်ပြီး prompts တွေကို သုံးပြီး LLM နဲ့ ဆက်သွယ်ချင်ကြပါတယ်။ အသုံးပြုသူအနေဖြင့် MCP ကို သုံးမသုံးတာကို မစိုးရိမ်ပါဘူး၊ သဘာဝဘာသာစကားနဲ့ ဆက်သွယ်နိုင်ဖို့ကို မျှော်လင့်ကြပါတယ်။ ဒါဆို ဘယ်လိုဖြေရှင်းမလဲ? ဖြေရှင်းချက်က client ထဲမှာ LLM တစ်ခု ထည့်သွင်းပေးခြင်းဖြစ်ပါတယ်။
+ယခုအချိန်အထိ သင်သည် Server နှင့် Client တစ်ခုကို ဖန်တီးပုံကို ကြည့်ရှုခဲ့ပါပြီ။ Client သည် Server ကို တိုက်ရိုက်ခေါ်ဆိုပြီး Tools, Resources, နှင့် Prompts များကို စာရင်းပြုစုနိုင်ခဲ့သည်။ သို့သော်၊ ဤနည်းလမ်းသည် အလွယ်တကူအသုံးပြုနိုင်သော နည်းလမ်းမဟုတ်ပါ။ သင့်အသုံးပြုသူသည် Agentic Era တွင် နေထိုင်ပြီး Prompts များကို အသုံးပြုကာ LLM နှင့် ဆက်သွယ်ရန် မျှော်မှန်းထားသည်။ သင့်အသုံးပြုသူအတွက် MCP ကို အသုံးပြု၍ သင့်စွမ်းရည်များကို သိမ်းဆည်းထားသည်ဟု မသက်ဆိုင်သော်လည်း သဘာဝဘာသာစကားကို အသုံးပြု၍ ဆက်သွယ်နိုင်ရန် မျှော်လင့်ထားသည်။ ထို့ကြောင့် ဤပြဿနာကို မည်သို့ ဖြေရှင်းမည်နည်း။ ဖြေရှင်းချက်မှာ Client တွင် LLM ကို ထည့်သွင်းခြင်းဖြစ်သည်။
 
-## အနှစ်ချုပ်
+## အကျဉ်းချုပ်
 
-ဒီသင်ခန်းစာမှာ client ထဲမှာ LLM တစ်ခု ထည့်သွင်းပေးခြင်းကို အာရုံစိုက်ပြီး အသုံးပြုသူအတွက် ပိုမိုကောင်းမွန်တဲ့ အတွေ့အကြုံကို ဘယ်လိုပေးနိုင်မလဲ ဆိုတာ ပြသပေးမှာဖြစ်ပါတယ်။
+ဤသင်ခန်းစာတွင် Client တွင် LLM ကို ထည့်သွင်းခြင်းနှင့် သင့်အသုံးပြုသူအတွက် ပိုမိုကောင်းမွန်သော အတွေ့အကြုံကို ပေးနိုင်ပုံကို အဓိကထားဆွေးနွေးပါမည်။
 
 ## သင်ယူရမည့် ရည်မှန်းချက်များ
 
-ဒီသင်ခန်းစာအဆုံးသတ်တဲ့အချိန်မှာ သင်သည် -
+ဤသင်ခန်းစာ၏ နောက်ဆုံးတွင် သင်သည် အောက်ပါအရာများကို လုပ်ဆောင်နိုင်မည်ဖြစ်သည်-
 
-- LLM ပါဝင်တဲ့ client တစ်ခု ဖန်တီးနိုင်မည်။
-- LLM ကို အသုံးပြုပြီး MCP server နဲ့ ချိတ်ဆက်ဆက်သွယ်နိုင်မည်။
-- client ဘက်မှာ အသုံးပြုသူအတွက် ပိုမိုကောင်းမွန်တဲ့ အတွေ့အကြုံ ပေးနိုင်မည်။
+- LLM ပါဝင်သော Client တစ်ခု ဖန်တီးနိုင်ခြင်း။
+- MCP Server နှင့် LLM ကို အသုံးပြု၍ အဆင်ပြေစွာ ဆက်သွယ်နိုင်ခြင်း။
+- Client ဘက်တွင် အသုံးပြုသူအတွက် ပိုမိုကောင်းမွန်သော အတွေ့အကြုံ ပေးနိုင်ခြင်း။
 
-## နည်းလမ်း
+## လုပ်ဆောင်ရန် နည်းလမ်း
 
-လိုအပ်တဲ့ နည်းလမ်းကို နားလည်ကြည့်ကြရအောင်။ LLM ထည့်သွင်းတာက ရိုးရှင်းသလိုပဲ၊ ဒါပေမယ့် တကယ်လုပ်မလား?
+ကျွန်ုပ်တို့ လိုက်နာရမည့် နည်းလမ်းကို နားလည်ကြည့်ရှုကြပါစို့။ LLM ကို ထည့်သွင်းခြင်းသည် ရိုးရှင်းသလို ထင်ရနိုင်သော်လည်း အမှန်တကယ် လုပ်ဆောင်ရမည့်အရာများမှာ မည်သို့ဖြစ်မည်နည်း။
 
-client က server နဲ့ ဆက်သွယ်ပုံက ဒီလိုဖြစ်ပါမယ် -
+Client သည် Server နှင့် မည်သို့ ဆက်သွယ်မည်ဆိုသည်မှာ-
 
-1. server နဲ့ ချိတ်ဆက်မှု တည်ဆောက်ခြင်း။
+1. Server နှင့် ချိတ်ဆက်မှု တည်ဆောက်ပါ။
 
-1. capabilities, prompts, resources နဲ့ tools တွေကို စာရင်းပြုလုပ်ပြီး schema ကို သိမ်းဆည်းခြင်း။
+1. စွမ်းရည်များ၊ Prompts များ၊ Resources များနှင့် Tools များကို စာရင်းပြုစုပြီး ၎င်းတို့၏ Schema ကို သိမ်းဆည်းပါ။
 
-1. LLM တစ်ခု ထည့်သွင်းပြီး သိမ်းဆည်းထားတဲ့ capabilities နဲ့ schema ကို LLM နားလည်နိုင်တဲ့ ပုံစံဖြင့် ပေးပို့ခြင်း။
+1. LLM ကို ထည့်သွင်းပြီး သိမ်းဆည်းထားသော စွမ်းရည်များနှင့် ၎င်းတို့၏ Schema ကို LLM နားလည်နိုင်သော Format ဖြင့် ပေးပို့ပါ။
 
-1. အသုံးပြုသူ prompt ကို LLM ထံ ပေးပို့ပြီး client က စာရင်းပြုလုပ်ထားတဲ့ tools တွေနဲ့အတူ ကိုင်တွယ်ခြင်း။
+1. အသုံးပြုသူ၏ Prompt ကို LLM သို့ ပေးပို့ပြီး Client မှ စာရင်းပြုစုထားသော Tools များနှင့်အတူ ပေးပို့ပါ။
 
-အဆင်ပြေပြီ၊ အထက်ပါအဆင့်တွေကို နားလည်သွားပြီဆိုတော့ အောက်ပါ လေ့ကျင့်ခန်းမှာ လုပ်ကြည့်ကြရအောင်။
+အကောင်းဆုံး၊ ကျွန်ုပ်တို့သည် အဆင့်မြင့်အနေဖြင့် မည်သို့လုပ်ဆောင်ရမည်ကို နားလည်ခဲ့ပြီဖြစ်သည်။ အောက်ပါ လေ့ကျင့်ခန်းတွင် စမ်းသပ်ကြည့်ရအောင်။
 
-## လေ့ကျင့်ခန်း - LLM ပါဝင်တဲ့ client ဖန်တီးခြင်း
+## လေ့ကျင့်ခန်း- LLM ပါဝင်သော Client တစ်ခု ဖန်တီးခြင်း
 
-ဒီလေ့ကျင့်ခန်းမှာ client ထဲမှာ LLM တစ်ခု ထည့်သွင်းပုံကို သင်ယူပါမယ်။
+ဤလေ့ကျင့်ခန်းတွင် Client တွင် LLM ကို ထည့်သွင်းပုံကို သင်ယူပါမည်။
 
-## GitHub Personal Access Token ဖြင့် အတည်ပြုခြင်း
+### GitHub Personal Access Token အသုံးပြု၍ Authentication
 
-GitHub token ဖန်တီးခြင်းက ရိုးရှင်းတဲ့ လုပ်ငန်းစဉ်ပါ။ ဒီလိုလုပ်နိုင်ပါတယ် -
+GitHub Token တစ်ခု ဖန်တီးခြင်းသည် ရိုးရှင်းသော လုပ်ငန်းစဉ်တစ်ခုဖြစ်သည်။ ဤအတိုင်းလုပ်ဆောင်ပါ-
 
-- GitHub Settings သို့ သွားပါ – အပေါ်ညာဘက်က profile ပုံကို နှိပ်ပြီး Settings ကို ရွေးချယ်ပါ။
-- Developer Settings သို့ သွားပါ – အောက်သို့ ဆွဲချပြီး Developer Settings ကို နှိပ်ပါ။
-- Personal Access Tokens ကို ရွေးချယ်ပါ – Personal access tokens ကို နှိပ်ပြီး Generate new token ကို နှိပ်ပါ။
-- Token ကို ပြင်ဆင်ပါ – မှတ်ချက်တစ်ခု ထည့်ပြီး သက်တမ်းကုန်ဆုံးရက် သတ်မှတ်ပြီး လိုအပ်သော scopes (ခွင့်ပြုချက်များ) ကို ရွေးချယ်ပါ။
-- Token ကို ဖန်တီးပြီး ကူးယူပါ – Generate token ကို နှိပ်ပြီး ချက်ချင်း ကူးယူပါ၊ နောက်တစ်ကြိမ် မမြင်ရတော့ပါဘူး။
+- GitHub Settings သို့ သွားပါ – အပေါ်ယာဉ်ထောင့်ရှိ သင့်ပရိုဖိုင်ပုံကို နှိပ်ပြီး Settings ကို ရွေးပါ။
+- Developer Settings သို့ သွားပါ – အောက်သို့ Scroll လုပ်ပြီး Developer Settings ကို နှိပ်ပါ။
+- Personal Access Tokens ကို ရွေးပါ – Personal access tokens ကို နှိပ်ပြီး Generate new token ကို ရွေးပါ။
+- သင့် Token ကို Configure လုပ်ပါ – မှတ်စုတစ်ခု ထည့်ပါ၊ သက်တမ်းကုန်ဆုံးရက်ကို သတ်မှတ်ပါ၊ လိုအပ်သော Scopes (Permissions) များကို ရွေးပါ။
+- Token ကို Generate လုပ်ပြီး Copy လုပ်ပါ – Generate token ကို နှိပ်ပြီး ချက်ချင်း Copy လုပ်ပါ။ ထို့နောက် ၎င်းကို ထပ်မကြည့်နိုင်တော့ပါ။
 
-### -1- Server နဲ့ ချိတ်ဆက်ခြင်း
+### -1- Server နှင့် ချိတ်ဆက်ပါ
 
-client ကို ပထမဆုံး ဖန်တီးကြရအောင် -
+အရင်ဆုံး Client ကို ဖန်တီးကြည့်ရအောင်-
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -92,13 +92,13 @@ class MCPClient {
 }
 ```
 
-အထက်ပါ ကုဒ်မှာ -
+အထက်ပါ Code တွင်-
 
-- လိုအပ်တဲ့ libraries တွေကို import လုပ်ထားပါတယ်။
-- `client` နဲ့ `openai` ဆိုတဲ့ members နှစ်ခုပါဝင်တဲ့ class တစ်ခု ဖန်တီးထားပြီး client ကို စီမံခန့်ခွဲခြင်းနဲ့ LLM နဲ့ ဆက်သွယ်ခြင်းအတွက် အသုံးပြုမှာဖြစ်ပါတယ်။
-- LLM instance ကို GitHub Models သုံးဖို့ `baseUrl` ကို inference API ကိုညွှန်ပြအောင် ပြင်ဆင်ထားပါတယ်။
+- လိုအပ်သော Libraries များ Import လုပ်ထားသည်။
+- Client နှင့် LLM တစ်ခုနှင့် ဆက်သွယ်ရန် ကူညီမည့် `client` နှင့် `openai` ဆိုသော Members နှစ်ခုပါဝင်သော Class တစ်ခု ဖန်တီးထားသည်။
+- GitHub Models ကို အသုံးပြုရန် `baseUrl` ကို Inference API သို့ ညွှန်ထားပြီး LLM Instance ကို Configure လုပ်ထားသည်။
 
-### Python
+#### Python
 
 ```python
 from mcp import ClientSession, StdioServerParameters, types
@@ -128,12 +128,12 @@ if __name__ == "__main__":
 
 ```
 
-အထက်ပါ ကုဒ်မှာ -
+အထက်ပါ Code တွင်-
 
-- MCP အတွက် လိုအပ်တဲ့ libraries တွေကို import လုပ်ထားပါတယ်။
-- client တစ်ခု ဖန်တီးထားပါတယ်။
+- MCP အတွက် လိုအပ်သော Libraries များ Import လုပ်ထားသည်။
+- Client တစ်ခု ဖန်တီးထားသည်။
 
-### .NET
+#### .NET
 
 ```csharp
 using Azure;
@@ -154,9 +154,9 @@ var clientTransport = new StdioClientTransport(new()
 await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 ```
 
-### Java
+#### Java
 
-ပထမဦးဆုံး `pom.xml` ဖိုင်ထဲ LangChain4j dependencies တွေ ထည့်ရပါမယ်။ MCP integration နဲ့ GitHub Models ကို support ပေးဖို့ ဒီ dependencies တွေ ထည့်ပါ။
+အရင်ဆုံး LangChain4j Dependencies များကို `pom.xml` ဖိုင်တွင် ထည့်သွင်းရန် လိုအပ်ပါမည်။ MCP Integration နှင့် GitHub Models ကို Support လုပ်ရန် Dependencies များကို ထည့်သွင်းပါ-
 
 ```xml
 <properties>
@@ -193,7 +193,7 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 </dependencies>
 ```
 
-ပြီးရင် Java client class ကို ဖန်တီးပါ။
+ထို့နောက် Java Client Class ကို ဖန်တီးပါ-
 
 ```java
 import dev.langchain4j.mcp.McpToolProvider;
@@ -235,24 +235,104 @@ public class LangChain4jClient {
 }
 ```
 
-အထက်ပါ ကုဒ်မှာ -
+အထက်ပါ Code တွင်-
 
-- **LangChain4j dependencies တွေ ထည့်ထားပါတယ်** - MCP integration, OpenAI official client နဲ့ GitHub Models support အတွက်လိုအပ်တာတွေပါ။
-- **LangChain4j libraries တွေ import လုပ်ထားပါတယ်** - MCP integration နဲ့ OpenAI chat model အတွက်။
-- **`ChatLanguageModel` တစ်ခု ဖန်တီးထားပါတယ်** - GitHub Models ကို သင့် GitHub token နဲ့ အသုံးပြုဖို့ ပြင်ဆင်ထားပါတယ်။
-- **HTTP transport ကို Server-Sent Events (SSE) နဲ့ MCP server ကို ချိတ်ဆက်ဖို့ ပြင်ဆင်ထားပါတယ်**။
-- **MCP client တစ်ခု ဖန်တီးထားပါတယ်** - server နဲ့ ဆက်သွယ်မှုကို ကိုင်တွယ်ပေးမှာဖြစ်ပါတယ်။
-- **LangChain4j ရဲ့ MCP support ကို အသုံးပြုထားပါတယ်** - LLM နဲ့ MCP server တွေကို ပေါင်းစပ်ဖို့ လွယ်ကူစေပါတယ်။
+- **LangChain4j Dependencies များ ထည့်သွင်းထားသည်**: MCP Integration, OpenAI Official Client, နှင့် GitHub Models Support အတွက် လိုအပ်သည်။
+- **LangChain4j Libraries များ Import လုပ်ထားသည်**: MCP Integration နှင့် OpenAI Chat Model Functionality အတွက်။
+- **`ChatLanguageModel` တစ်ခု ဖန်တီးထားသည်**: GitHub Token ဖြင့် GitHub Models ကို အသုံးပြုရန် Configure လုပ်ထားသည်။
+- **HTTP Transport ကို Set Up လုပ်ထားသည်**: Server-Sent Events (SSE) ကို အသုံးပြု၍ MCP Server နှင့် ချိတ်ဆက်ရန်။
+- **MCP Client တစ်ခု ဖန်တီးထားသည်**: Server နှင့် ဆက်သွယ်မှုကို Handle လုပ်ရန်။
+- **LangChain4j Built-in MCP Support ကို အသုံးပြုထားသည်**: LLMs နှင့် MCP Servers အကြား Integration ကို ရိုးရှင်းစေသည်။
 
-အဆင်ပြေပြီ၊ နောက်တစ်ဆင့်မှာ server ရဲ့ capabilities တွေကို စာရင်းပြုလုပ်ကြရအောင်။
+#### Rust
 
-### -2- Server capabilities စာရင်းပြုလုပ်ခြင်း
+ဤဥပမာသည် Rust အခြေခံ MCP Server တစ်ခု ရှိသည်ဟု သတ်မှတ်ထားသည်။ MCP Server မရှိပါက [01-first-server](../01-first-server/README.md) သင်ခန်းစာကို ပြန်လည်ကြည့်ရှု၍ Server ကို ဖန်တီးပါ။
 
-ယခု server နဲ့ ချိတ်ဆက်ပြီး capabilities တွေကို မေးမြန်းကြမယ်။
+Rust MCP Server ရှိပြီးပါက Terminal ကို ဖွင့်ပြီး Server ရှိ Directory သို့ သွားပါ။ ထို့နောက် LLM Client Project အသစ်တစ်ခု ဖန်တီးရန် အောက်ပါ Command ကို Run လုပ်ပါ-
 
-### TypeScript
+```bash
+mkdir calculator-llmclient
+cd calculator-llmclient
+cargo init
+```
 
-အဲဒီ class ထဲမှာ အောက်ပါ method တွေ ထည့်ပါ။
+`Cargo.toml` ဖိုင်တွင် အောက်ပါ Dependencies များကို ထည့်သွင်းပါ-
+
+```toml
+[dependencies]
+async-openai = { version = "0.29.0", features = ["byot"] }
+rmcp = { version = "0.5.0", features = ["client", "transport-child-process"] }
+serde_json = "1.0.141"
+tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
+```
+
+> [!NOTE]
+> OpenAI အတွက် တရားဝင် Rust Library မရှိသေးပါ၊ သို့သော် `async-openai` crate သည် [Community Maintained Library](https://platform.openai.com/docs/libraries/rust#rust) တစ်ခုဖြစ်ပြီး အများအားဖြင့် အသုံးပြုနေသည်။
+
+`src/main.rs` ဖိုင်ကို ဖွင့်ပြီး အောက်ပါ Code ဖြင့် ၎င်း၏ Content ကို အစားထိုးပါ-
+
+```rust
+use async_openai::{Client, config::OpenAIConfig};
+use rmcp::{
+    RmcpError,
+    model::{CallToolRequestParam, ListToolsResult},
+    service::{RoleClient, RunningService, ServiceExt},
+    transport::{ConfigureCommandExt, TokioChildProcess},
+};
+use serde_json::{Value, json};
+use std::error::Error;
+use tokio::process::Command;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    // Initial message
+    let mut messages = vec![json!({"role": "user", "content": "What is the sum of 3 and 2?"})];
+
+    // Setup OpenAI client
+    let api_key = std::env::var("OPENAI_API_KEY")?;
+    let openai_client = Client::with_config(
+        OpenAIConfig::new()
+            .with_api_base("https://models.github.ai/inference/chat")
+            .with_api_key(api_key),
+    );
+
+    // Setup MCP client
+    let server_dir = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .unwrap()
+        .join("calculator-server");
+
+    let mcp_client = ()
+        .serve(
+            TokioChildProcess::new(Command::new("cargo").configure(|cmd| {
+                cmd.arg("run").current_dir(server_dir);
+            }))
+            .map_err(RmcpError::transport_creation::<TokioChildProcess>)?,
+        )
+        .await?;
+
+    // TODO: Get MCP tool listing 
+
+    // TODO: LLM conversation with tool calls
+
+    Ok(())
+}
+```
+
+ဤ Code သည် MCP Server နှင့် GitHub Models ကို LLM Interaction အတွက် ချိတ်ဆက်မည့် Rust Application အခြေခံကို Set Up လုပ်ထားသည်။
+
+> [!IMPORTANT]
+> Application ကို Run လုပ်မီ `OPENAI_API_KEY` Environment Variable ကို GitHub Token ဖြင့် Set လုပ်ထားပါ။
+
+အကောင်းဆုံး၊ နောက်တစ်ဆင့်တွင် Server ရှိ စွမ်းရည်များကို စာရင်းပြုစုကြည့်ရအောင်။
+
+### -2- Server စွမ်းရည်များ စာရင်းပြုစုခြင်း
+
+ယခုအခါ Server နှင့် ချိတ်ဆက်ပြီး ၎င်း၏ စွမ်းရည်များကို မေးမြန်းကြည့်ရအောင်-
+
+#### TypeScript
+
+အတန်းတစ်ခုအတွင်း အောက်ပါ Methods များကို ထည့်သွင်းပါ-
 
 ```typescript
 async connectToServer(transport: Transport) {
@@ -269,12 +349,12 @@ async run() {
 }
 ```
 
-အထက်ပါ ကုဒ်မှာ -
+အထက်ပါ Code တွင်-
 
-- server နဲ့ ချိတ်ဆက်ဖို့ `connectToServer` method ထည့်ထားပါတယ်။
-- app flow ကို ကိုင်တွယ်တဲ့ `run` method တစ်ခု ဖန်တီးထားပြီး ယခုအချိန်မှာ tools တွေကို စာရင်းပြုလုပ်တာသာ ပါဝင်ပါတယ်၊ နောက်ပိုင်းမှာ ပိုမိုတိုးချဲ့သွားမှာဖြစ်ပါတယ်။
+- Server နှင့် ချိတ်ဆက်ရန် `connectToServer` ကို ထည့်သွင်းထားသည်။
+- Tools များကို စာရင်းပြုစုရန် `run` Method တစ်ခု ဖန်တီးထားသည်။ ယခုအချိန်တွင် Tools များကိုသာ စာရင်းပြုစုထားပြီး နောက်ပိုင်းတွင် အခြား Functionality များကို ထည့်သွင်းမည်။
 
-### Python
+#### Python
 
 ```python
 # List available resources
@@ -291,11 +371,11 @@ for tool in tools.tools:
     print("Tool", tool.inputSchema["properties"])
 ```
 
-ဒီမှာ -
+အထက်ပါ Code တွင်-
 
-- resources နဲ့ tools တွေကို စာရင်းပြုလုပ်ပြီး print ထုတ်ထားပါတယ်။ tools အတွက် `inputSchema` ကိုလည်း စာရင်းပြုလုပ်ထားပြီး နောက်ပိုင်းမှာ အသုံးပြုမှာဖြစ်ပါတယ်။
+- Resources နှင့် Tools များကို စာရင်းပြုစုပြီး Print လုပ်ထားသည်။ Tools များအတွက် `inputSchema` ကိုလည်း စာရင်းပြုစုထားပြီး နောက်ပိုင်းတွင် အသုံးပြုမည်။
 
-### .NET
+#### .NET
 
 ```csharp
 async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -311,19 +391,19 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
         Console.WriteLine($"Tool description: {tool.Description}");
         Console.WriteLine($"Tool parameters: {tool.JsonSchema}");
 
-        // TODO: convert tool defintion from MCP tool to LLm tool     
+        // TODO: convert tool definition from MCP tool to LLm tool     
     }
 
     return toolDefinitions;
 }
 ```
 
-အထက်ပါ ကုဒ်မှာ -
+အထက်ပါ Code တွင်-
 
-- MCP Server ပေါ်မှာ ရရှိနိုင်တဲ့ tools တွေကို စာရင်းပြုလုပ်ထားပါတယ်။
-- tool တစ်ခုချင်းစီအတွက် name, description နဲ့ schema ကို စာရင်းပြုလုပ်ထားပါတယ်။ schema က tools တွေကို ခေါ်ဖို့ အသုံးပြုမှာဖြစ်ပါတယ်။
+- MCP Server တွင် ရရှိနိုင်သော Tools များကို စာရင်းပြုစုထားသည်။
+- Tool တစ်ခုစီအတွက် Name, Description, နှင့် Schema ကို စာရင်းပြုစုထားသည်။ Schema သည် နောက်ပိုင်းတွင် Tools များကို ခေါ်ဆိုရန် အသုံးပြုမည့် အရာဖြစ်သည်။
 
-### Java
+#### Java
 
 ```java
 // Create a tool provider that automatically discovers MCP tools
@@ -337,19 +417,28 @@ ToolProvider toolProvider = McpToolProvider.builder()
 // - Managing tool execution and responses
 ```
 
-အထက်ပါ ကုဒ်မှာ -
+အထက်ပါ Code တွင်-
 
-- MCP server က tools တွေကို အလိုအလျောက် ရှာဖွေပြီး မှတ်ပုံတင်ပေးတဲ့ `McpToolProvider` တစ်ခု ဖန်တီးထားပါတယ်။
-- tool provider က MCP tool schemas နဲ့ LangChain4j tool format အကြား ပြောင်းလဲပေးတာကို ကိုင်တွယ်ပေးပါတယ်။
-- ဒီနည်းလမ်းက tools တွေကို manual စာရင်းပြုလုပ်ခြင်းနဲ့ ပြောင်းလဲခြင်းကို ဖယ်ရှားပေးပါတယ်။
+- `McpToolProvider` တစ်ခု ဖန်တီးထားပြီး MCP Server မှ Tools များကို အလိုအလျောက် ရှာဖွေပြီး Register လုပ်ထားသည်။
+- Tool Provider သည် MCP Tool Schemas နှင့် LangChain4j Tool Format အကြား Conversion ကို အတွင်းပိုင်းတွင် Handle လုပ်ထားသည်။
+- ဤနည်းလမ်းသည် Tool Listing နှင့် Conversion Process ကို Manual လုပ်ဆောင်ရန် မလိုအပ်စေသည်။
 
-### -3- Server capabilities ကို LLM tools အဖြစ် ပြောင်းလဲခြင်း
+#### Rust
 
-server capabilities တွေကို စာရင်းပြုလုပ်ပြီးနောက် LLM နားလည်နိုင်တဲ့ ပုံစံသို့ ပြောင်းလဲရပါမယ်။ ပြောင်းလဲပြီးနောက် LLM ကို tools အဖြစ် ပေးနိုင်ပါပြီ။
+MCP Server မှ Tools များကို Retrieving လုပ်ရန် `list_tools` Method ကို အသုံးပြုပါ။ MCP Client ကို Set Up လုပ်ပြီးနောက် `main` Function တွင် အောက်ပါ Code ကို ထည့်သွင်းပါ-
 
-### TypeScript
+```rust
+// Get MCP tool listing 
+let tools = mcp_client.list_tools(Default::default()).await?;
+```
 
-1. MCP Server response ကို LLM သုံးနိုင်တဲ့ tool format သို့ ပြောင်းဖို့ အောက်ပါ code ကို ထည့်ပါ။
+### -3- Server စွမ်းရည်များကို LLM Tools သို့ Convert လုပ်ခြင်း
+
+Server စွမ်းရည်များကို LLM နားလည်နိုင်သော Format သို့ Convert လုပ်ရန် နောက်တစ်ဆင့်ဖြစ်သည်။ ၎င်းကို လုပ်ဆောင်ပြီးနောက် Tools များကို LLM သို့ ပေးပို့နိုင်မည်ဖြစ်သည်။
+
+#### TypeScript
+
+1. MCP Server Response ကို LLM နားလည်နိုင်သော Tool Definition Format သို့ Convert လုပ်ရန် အောက်ပါ Code ကို ထည့်သွင်းပါ-
 
     ```typescript
     openAiToolAdapter(tool: {
@@ -376,9 +465,9 @@ server capabilities တွေကို စာရင်းပြုလုပ်�
 
     ```
 
-    အထက်ပါ code က MCP Server response ကို LLM နားလည်နိုင်တဲ့ tool definition format သို့ ပြောင်းပေးပါတယ်။
+    အထက်ပါ Code သည် MCP Server Response ကို LLM နားလည်နိုင်သော Tool Definition Format သို့ Convert လုပ်သည်။
 
-1. `run` method ကို update လုပ်ပြီး server capabilities တွေကို စာရင်းပြုလုပ်ပါ။
+1. `run` Method ကို Update လုပ်ပြီး Server စွမ်းရည်များကို စာရင်းပြုစုပါ-
 
     ```typescript
     async run() {
@@ -394,11 +483,11 @@ server capabilities တွေကို စာရင်းပြုလုပ်�
     }
     ```
 
-    အထက်ပါ code မှာ `run` method ကို update လုပ်ပြီး result ကို map လုပ်ကာ entry တစ်ခုချင်းစီအတွက် `openAiToolAdapter` ကို ခေါ်ပါတယ်။
+    အထက်ပါ Code တွင် `run` Method ကို Update လုပ်ထားပြီး Result တစ်ခုစီအတွက် `openAiToolAdapter` ကို ခေါ်ဆိုထားသည်။
 
-### Python
+#### Python
 
-1. ပထမဦးဆုံး converter function ကို ဖန်တီးပါ။
+1. Converter Function တစ်ခု ဖန်တီးပါ-
 
     ```python
     def convert_to_llm_tool(tool):
@@ -418,9 +507,9 @@ server capabilities တွေကို စာရင်းပြုလုပ်�
         return tool_schema
     ```
 
-    `convert_to_llm_tools` function မှာ MCP tool response ကို LLM နားလည်နိုင်တဲ့ ပုံစံသို့ ပြောင်းပေးပါတယ်။
+    အထက်ပါ Function `convert_to_llm_tools` တွင် MCP Tool Response ကို LLM နားလည်နိုင်သော Format သို့ Convert လုပ်ထားသည်။
 
-1. client code ကို update လုပ်ပြီး ဒီ function ကို အသုံးပြုပါ။
+1. Client Code ကို Update လုပ်ပြီး Function ကို အသုံးပြုပါ-
 
     ```python
     for tool in tools.tools:
@@ -429,11 +518,11 @@ server capabilities တွေကို စာရင်းပြုလုပ်�
         functions.append(convert_to_llm_tool(tool))
     ```
 
-    ဒီမှာ MCP tool response ကို LLM သို့ ပေးပို့ဖို့ `convert_to_llm_tool` ကို ခေါ်သုံးထားပါတယ်။
+    ဤနေရာတွင် MCP Tool Response ကို LLM သို့ Feed လုပ်ရန် Convert လုပ်ထားသည်။
 
-### .NET
+#### .NET
 
-1. MCP tool response ကို LLM နားလည်နိုင်တဲ့ ပုံစံသို့ ပြောင်းဖို့ code ထည့်ပါ။
+1. MCP Tool Response ကို LLM နားလည်နိုင်သော Format သို့ Convert လုပ်ရန် Code ကို ထည့်သွင်းပါ-
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -456,12 +545,12 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 }
 ```
 
-အထက်ပါ code မှာ -
+အထက်ပါ Code တွင်-
 
-- `ConvertFrom` function တစ်ခု ဖန်တီးထားပြီး name, description နဲ့ input schema ကို လက်ခံပါတယ်။
-- FunctionDefinition တစ်ခု ဖန်တီးပြီး ChatCompletionsDefinition ထဲသို့ ပေးပို့ပါတယ်။ ChatCompletionsDefinition က LLM နားလည်နိုင်တဲ့ ပုံစံဖြစ်ပါတယ်။
+- `ConvertFrom` Function တစ်ခု ဖန်တီးထားပြီး Name, Description, နှင့် Input Schema ကို လက်ခံထားသည်။
+- FunctionDefinition တစ်ခု ဖန်တီးထားပြီး ChatCompletionsDefinition သို့ Pass လုပ်ထားသည်။ ChatCompletionsDefinition သည် LLM နားလည်နိုင်သော Format ဖြစ်သည်။
 
-1. ရှိပြီးသား code ကို update လုပ်ပြီး ဒီ function ကို အသုံးပြုပါ။
+1. ရှိပြီးသား Code ကို Update လုပ်ပြီး Function ကို အသုံးပြုပါ-
 
     ```csharp
     async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -491,22 +580,9 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
     }
     ```
 
-    အထက်ပါ code မှာ -
+    အထက်ပါ Code တွင် MCP Tool Response ကို LLM Tool သို့ Convert လုပ်ထားသည်။
 
-    - MCP tool response ကို LLM tool သို့ ပြောင်းဖို့ function ကို update လုပ်ထားပါတယ်။ ထည့်သွင်းထားတဲ့ code ကို အောက်မှာ ဖော်ပြထားပါတယ်။
-
-        ```csharp
-        JsonElement propertiesElement;
-        tool.JsonSchema.TryGetProperty("properties", out propertiesElement);
-
-        var def = ConvertFrom(tool.Name, tool.Description, propertiesElement);
-        Console.WriteLine($"Tool definition: {def}");
-        toolDefinitions.Add(def);
-        ```
-
-        input schema က tool response ရဲ့ "properties" attribute မှာ ပါဝင်တာကြောင့် ထုတ်ယူရပါတယ်။ ထို့နောက် `ConvertFrom` ကို tool အသေးစိတ်နဲ့ ခေါ်ပါတယ်။ အခုတော့ အလုပ်ကြီးပြီးပါပြီ၊ အသုံးပြုသူ prompt ကို ကိုင်တွယ်တဲ့ အဆင့်ကို ကြည့်ကြရအောင်။
-
-### Java
+#### Java
 
 ```java
 // Create a Bot interface for natural language interaction
@@ -521,22 +597,58 @@ Bot bot = AiServices.builder(Bot.class)
         .build();
 ```
 
-အထက်ပါ code မှာ -
+အထက်ပါ Code တွင်-
 
-- သဘာဝဘာသာစကားနဲ့ ဆက်သွယ်ဖို့ `Bot` interface ရိုးရှင်းတစ်ခု သတ်မှတ်ထားပါတယ်။
-- LangChain4j ရဲ့ `AiServices` ကို အသုံးပြုပြီး LLM နဲ့ MCP tool provider ကို အလိုအလျောက် ချိတ်ဆက်ထားပါတယ်။
-- framework က tool schema ပြောင်းလဲခြင်းနဲ့ function ခေါ်ခြင်းကို အလိုအလျောက် ကိုင်တွယ်ပေးပါတယ်။
-- ဒီနည်းလမ်းက manual tool conversion လုပ်စရာ မလိုတော့ဘဲ MCP tools တွေကို LLM နားလည်နိုင်တဲ့ ပုံစံသို့ ပြောင်းပေးတာကို လွယ်ကူစေပါတယ်။
+- Natural Language Interaction အတွက် `Bot` Interface တစ်ခု ဖန်တီးထားသည်။
+- LangChain4j Framework ကို အသုံးပြု၍ LLM နှင့် MCP Tool Provider ကို Bind လုပ်ထားသည်။
+- Framework သည် MCP Tools ကို LLM-Compatible Format သို့ Convert လုပ်ခြင်းနှင့် Function Calling ကို အလိုအလျောက် Handle လုပ်ထားသည်။
 
-အဆင်ပြေပြီ၊ အသုံးပြုသူ request တွေကို ကိုင်တွယ်ဖို့ ပြင်ဆင်ထားပြီဖြစ်တဲ့အတွက် နောက်တစ်ဆင့်ကို ဆက်လုပ်ကြရအောင်။
+#### Rust
 
-### -4- အသုံးပြုသူ prompt ကို ကိုင်တွယ်ခြင်း
+MCP Tool Response ကို LLM နားလည်နိုင်သော Format သို့ Convert လုပ်ရန် Helper Function တစ်ခု ထည့်သွင်းပါ။ `main.rs` ဖိုင်တွင် `main` Function အောက်တွင် ထည့်သွင်းပါ-
 
-ဒီအပိုင်းမှာ အသုံးပြုသူ request တွေကို ကိုင်တွယ်ပါမယ်။
+```rust
+async fn format_tools(tools: &ListToolsResult) -> Result<Vec<Value>, Box<dyn Error>> {
+    let tools_json = serde_json::to_value(tools)?;
+    let Some(tools_array) = tools_json.get("tools").and_then(|t| t.as_array()) else {
+        return Ok(vec![]);
+    };
 
-### TypeScript
+    let formatted_tools = tools_array
+        .iter()
+        .filter_map(|tool| {
+            let name = tool.get("name")?.as_str()?;
+            let description = tool.get("description")?.as_str()?;
+            let schema = tool.get("inputSchema")?;
 
-1. LLM ကို ခေါ်ဖို့ အသုံးပြုမယ့် method တစ်ခု ထည့်ပါ။
+            Some(json!({
+                "type": "function",
+                "function": {
+                    "name": name,
+                    "description": description,
+                    "parameters": {
+                        "type": "object",
+                        "properties": schema.get("properties").unwrap_or(&json!({})),
+                        "required": schema.get("required").unwrap_or(&json!([]))
+                    }
+                }
+            }))
+        })
+        .collect();
+
+    Ok(formatted_tools)
+}
+```
+
+အကောင်းဆုံး၊ ယခုအခါ User Requests ကို Handle လုပ်ရန် ပြုလုပ်ကြည့်ရအောင်။
+
+### -4- User Prompt Request ကို Handle လုပ်ခြင်း
+
+Code ၏ ဤအပိုင်းတွင် User Requests ကို Handle လုပ်ပါမည်။
+
+#### TypeScript
+
+1. LLM ကို ခေါ်ဆိုရန် အသုံးပြုမည့် Method တစ်ခု ထည့်သွင်းပါ-
 
     ```typescript
     async callTools(
@@ -565,10 +677,10 @@ Bot bot = AiServices.builder(Bot.class)
     }
     ```
 
-    အထက်ပါ code မှာ -
+    အထက်ပါ Code တွင်-
 
-    - `callTools` method ကို ထည့်သွင်းထားပါတယ်။
-    - method က LLM response ကို လက်ခံပြီး ဘယ် tools တွေ ခေါ်ထားသလဲ စစ်ဆေးပါတယ်။
+    - `callTools` Method ကို ထည့်သွင်းထားသည်။
+    - LLM Response ကို Tools များကို ခေါ်ဆိုရန် လိုအပ်ချက်ရှိ/မရှိ စစ်ဆေးထားသည်။
 
         ```typescript
         for (const tool_call of tool_calls) {
@@ -581,7 +693,7 @@ Bot bot = AiServices.builder(Bot.class)
         }
         ```
 
-    - LLM က tool တစ်ခု ခေါ်ဖို့ ပြောရင် tool ကို ခေါ်ပါတယ်။
+    - Tools များကို LLM မှ ခေါ်ဆိုရန် လိုအပ်ချက်ရှိပါက Tools ကို ခေါ်ဆိုထားသည်။
 
         ```typescript
         // 2. Call the server's tool 
@@ -596,7 +708,7 @@ Bot bot = AiServices.builder(Bot.class)
         // TODO  
         ```
 
-1. `run` method ကို update လုပ်ပြီး LLM ကို ခေါ်ခြင်းနဲ့ `callTools` ကို ခေါ်ဖို့ ထည့်ပါ။
+1. `run` Method ကို Update လုပ်ပြီး LLM ကို ခေါ်ဆိုပါ-
 
     ```typescript
 
@@ -632,7 +744,7 @@ Bot bot = AiServices.builder(Bot.class)
     });
     ```
 
-အဆင်ပြေပြီ၊ အကုန်လုံး code ကို ပြန်လည်ကြည့်ကြရအောင်။
+အကောင်းဆုံး၊ Code အပြည့်အစုံကို ကြည့်ရှုပါ-
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
@@ -650,8 +762,6 @@ class MyClient {
             apiKey: process.env.GITHUB_TOKEN,
         });
 
-       
-        
         this.client = new Client(
             {
                 name: "example-client",
@@ -771,9 +881,9 @@ let client = new MyClient();
 client.connectToServer(transport);
 ```
 
-### Python
+#### Python
 
-1. LLM ကို ခေါ်ဖို့ လိုအပ်တဲ့ imports တွေ ထည့်ပါ။
+1. LLM ကို ခေါ်ဆိုရန် လိုအပ်သော Imports များကို ထည့်သွင်းပါ-
 
     ```python
     # llm
@@ -784,7 +894,7 @@ client.connectToServer(transport);
     import json
     ```
 
-1. LLM ကို ခေါ်ဖို့ function ကို ထည့်ပါ။
+1. LLM ကို ခေါ်ဆိုမည့် Function ကို ထည့်သွင်းပါ-
 
     ```python
     # llm
@@ -834,14 +944,12 @@ client.connectToServer(transport);
         return functions_to_call
     ```
 
-    အထက်ပါ code မှာ -
+    အထက်ပါ Code တွင်-
 
-    - MCP server က tools တွေကို ရှာဖွေပြီး ပြောင်းလဲထားတဲ့ functions တွေကို LLM ထံ ပေးပို့ထားပါတယ်။
-    - LLM ကို functions တွေနဲ့ ခေါ်ထားပါတယ်။
-    - ရလဒ်ကို စစ်ဆေးပြီး ဘယ် functions တွေ ခေါ်ရမလဲ စစ်ဆေးပါတယ်။
-    - နောက်ဆုံးမှာ ခေါ်ရမယ့် functions များကို array အဖြစ် ပေးပို့ပါတယ်။
+    - MCP Server မှ ရရှိသော Functions များကို LLM သို့ Pass လုပ်ထားသည်။
+    - Functions များကို LLM Response အရ ခေါ်ဆိုထားသည်။
 
-1. နောက်ဆုံးအဆင့်မှာ main code ကို update လုပ်ပါ။
+1. Main Code ကို Update လုပ်ပါ-
 
     ```python
     prompt = "Add 2 to 20"
@@ -855,14 +963,14 @@ client.connectToServer(transport);
         print("TOOLS result: ", result.content)
     ```
 
-    အထက်ပါ code မှာ -
+    အထက်ပါ Code တွင်-
 
-    - LLM က ခေါ်ဖို့ ပြောတဲ့ function နဲ့ MCP tool ကို `call_tool` ဖြင့် ခေါ်ပါတယ်။
-    - MCP Server က tool call ရလဒ်ကို print ထုတ်ပါတယ်။
+    - MCP Server မှ Tools ကို LLM Response အရ ခေါ်ဆိုထားသည်။
+    - Tool Call Result ကို Print လုပ်ထားသည်။
 
-### .NET
+#### .NET
 
-1. LLM prompt request လုပ်ဖို့ code ကို ပြပါ။
+1. LLM Prompt Request ကို လုပ်ဆောင်ရန် Code ကို ထည့်သွင်းပါ-
 
     ```csharp
     var tools = await GetMcpTools();
@@ -896,14 +1004,13 @@ client.connectToServer(transport);
 
     ```
 
-    အထက်ပါ code မှာ -
+    အထက်ပါ Code တွင်-
 
-    - MCP server က tools တွေကို ရယူထားပါတယ်၊ `var tools = await GetMcpTools()`။
-    - အသုံးပြုသူ prompt `userMessage` ကို သတ်မှတ်ထားပါတယ်။
-    - model နဲ့ tools တွေ သတ်မှတ်ထားတဲ့ options object တစ်ခု ဖန်တီးထားပါတယ်။
-    - LLM ကို request တစ်ခု လုပ်ထားပါတယ်။
+    - MCP Server မှ Tools များကို Fetch လုပ်ထားသည်။
+    - User Prompt ကို သတ်မှတ်ထားသည်။
+    - Model နှင့် Tools ကို Specify လုပ်ထားသည်။
 
-1. နောက်ဆုံးအဆင့်မှာ LLM က function ခေါ်ဖို့ ပြောရင် စစ်ဆေးပါ။
+1. LLM Response အရ Function Call လုပ်ရန် Code ကို ထည့်သွင်းပါ-
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -926,12 +1033,12 @@ client.connectToServer(transport);
     }
     ```
 
-    အထက်ပါ code မှာ -
+    အထက်ပါ Code တွင်-
 
-    - function calls စာရင်းကို loop လုပ်ပြီး။
-    - tool call တစ်ခုချင်းစီအတွက် name နဲ့ arguments ကို ဖော်ထုတ်ပြီး MCP client ဖြင့် MCP server ကို ခေါ်ပါတယ်။ နောက်ဆုံးမှာ ရလဒ်ကို print ထုတ်ပါတယ်။
+    - Function Calls များကို Loop လုပ်ထားသည်။
+    - MCP Server မှ Tools ကို MCP Client အသုံးပြု၍ ခေါ်ဆိုထားသည်။
 
-အကုန်လုံး code ကို ပြန်လည်ကြည့်ပါ။
+Code အပြည့်အစုံ-
 
 ```csharp
 using Azure;
@@ -1058,7 +1165,7 @@ for (int i = 0; i < response.ToolCalls.Count; i++)
 Console.WriteLine($"Assistant response: {content}");
 ```
 
-### Java
+#### Java
 
 ```java
 try {
@@ -1076,17 +1183,12 @@ try {
 }
 ```
 
-အထက်ပါ code မှာ -
+အထက်ပါ Code တွင်-
 
-- သဘာဝဘာသာစကား prompt တွေကို MCP server tools နဲ့ ဆက်သွယ်ဖို့ အသုံးပြုထားပါတယ်။
-- LangChain4j framework က အလိုအလျောက် ကိုင်တွယ်ပေးတာတွေက -
-  - အသုံးပြုသူ prompt ကို tool call တွေသို့ ပြောင်းလဲခြင်း။
-  - LLM ရဲ့ ဆုံးဖြတ်ချက်အရ MCP tools ကို ခေါ်ခြင်း။
-  - LLM နဲ့ MCP server အကြား စကားပြောမှု flow ကို စီမံခန့်ခွဲခြင်း။
-- `bot.chat()` method က MCP tool အလုပ်လုပ်မှုရလဒ်ပါဝင်နိုင်တဲ့ သဘာဝဘာသာစကားဖြေကြားချက်တွေ ပြန်ပေးပါတယ်။
-- ဒီနည်းလမ်းက အသုံးပြုသူတွေကို MCP implementation အကြောင်း မသိဘဲ သဘာဝဘာသာစကားနဲ့ အဆင်ပြေစွာ အသုံးပြုနိုင်စေပါတယ်။
+- Natural Language Prompts ကို အသုံးပြု၍ MCP Server Tools နှင့် ဆက်သွယ်ထားသည်။
+- LangChain4j Framework သည် Tool Schema Conversion နှင့် Function Calling ကို အလိုအလျောက် Handle လုပ်ထားသည်။
 
-အပြည့်အစုံ code ဥပမာ -
+Code အပြည့်အစုံ-
 
 ```java
 public class LangChain4jClient {
@@ -1135,13 +1237,170 @@ public class LangChain4jClient {
 }
 ```
 
-အရမ်းကောင်းပါတယ်၊ သင်လုပ်နိုင်ပြီ!
+#### Rust
 
-## အလုပ်အပ်
+ဤနေရာတွင် အဓိကလုပ်ငန်းများကို ဆောင်ရွက်ပါမည်။ User Prompt ကို LLM သို့ ပေးပို့ပြီး Response ကို Process လုပ်ပါမည်။ Tools များကို ခေါ်ဆိုရန် လိုအပ်ပါက Tools များကို MCP Server မှ ခေါ်ဆိုပြီး Conversation
+အောက်ပါ Markdown ဖိုင်ကို မြန်မာဘာသာဖြင့် ဘာသာပြန်ထားသည် -
 
-လေ့ကျင့်ခန်းက code ကို ယူပြီး server ကို tools ပိုများအောင် တိုးချဲ့ပါ။ ပြီးရင် LLM ပါဝင်တဲ့ client တစ်ခု ဖန်တီးပြီး လေ့ကျင့်ခန်းလို prompts များနဲ့ စမ်းသပ်ကြည့်ပါ။ ဒီနည်းလမ်းနဲ့ client တစ်ခု ဖန်တီးခြင်းက အသုံးပြုသူအတွက် ပိုမိုကောင်းမွန်တဲ့ အတွေ့အကြုံ ပေးနိုင်မှာဖြစ်ပြီး prompts တွေကို သုံးပြီး MCP server tools တွေကို dynamic ခေါ်နိုင်မှာ ဖြစ်ပါတယ်။
+---
 
+ကျွန်တော်တို့ LLM ကို ခေါ်ယူမည့်အခါတွင် function တစ်ခုကို သတ်မှတ်လိုက်ရအောင်။ `main.rs` ဖိုင်ထဲတွင် အောက်ပါ function ကို ထည့်ပါ။
 
+```rust
+async fn call_llm(
+    client: &Client<OpenAIConfig>,
+    messages: &[Value],
+    tools: &ListToolsResult,
+) -> Result<Value, Box<dyn Error>> {
+    let response = client
+        .completions()
+        .create_byot(json!({
+            "messages": messages,
+            "model": "openai/gpt-4.1",
+            "tools": format_tools(tools).await?,
+        }))
+        .await?;
+    Ok(response)
+}
+```
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဒီ function က LLM client, user prompt ပါဝင်တဲ့ messages စာရင်း, MCP server မှ tools ကို ယူပြီး LLM ကို request ပို့ပြီး response ကို ပြန်ပေးပါမည်။
+
+LLM response မှာ `choices` array ပါဝင်မည်။ ဒီ result ကို process လုပ်ပြီး `tool_calls` ရှိမရှိ စစ်ဆေးရမည်။ ဒါက LLM က tools တစ်ခုကို arguments ဖြင့် ခေါ်ယူရန် တောင်းဆိုနေသည်ကို ပြသပါသည်။ LLM response ကို handle လုပ်ရန် function တစ်ခုကို သတ်မှတ်ရန် `main.rs` ဖိုင်အောက်ဆုံးတွင် အောက်ပါ code ကို ထည့်ပါ။
+
+```rust
+async fn process_llm_response(
+    llm_response: &Value,
+    mcp_client: &RunningService<RoleClient, ()>,
+    openai_client: &Client<OpenAIConfig>,
+    mcp_tools: &ListToolsResult,
+    messages: &mut Vec<Value>,
+) -> Result<(), Box<dyn Error>> {
+    let Some(message) = llm_response
+        .get("choices")
+        .and_then(|c| c.as_array())
+        .and_then(|choices| choices.first())
+        .and_then(|choice| choice.get("message"))
+    else {
+        return Ok(());
+    };
+
+    // Print content if available
+    if let Some(content) = message.get("content").and_then(|c| c.as_str()) {
+        println!("🤖 {}", content);
+    }
+
+    // Handle tool calls
+    if let Some(tool_calls) = message.get("tool_calls").and_then(|tc| tc.as_array()) {
+        messages.push(message.clone()); // Add assistant message
+
+        // Execute each tool call
+        for tool_call in tool_calls {
+            let (tool_id, name, args) = extract_tool_call_info(tool_call)?;
+            println!("⚡ Calling tool: {}", name);
+
+            let result = mcp_client
+                .call_tool(CallToolRequestParam {
+                    name: name.into(),
+                    arguments: serde_json::from_str::<Value>(&args)?.as_object().cloned(),
+                })
+                .await?;
+
+            // Add tool result to messages
+            messages.push(json!({
+                "role": "tool",
+                "tool_call_id": tool_id,
+                "content": serde_json::to_string_pretty(&result)?
+            }));
+        }
+
+        // Continue conversation with tool results
+        let response = call_llm(openai_client, messages, mcp_tools).await?;
+        Box::pin(process_llm_response(
+            &response,
+            mcp_client,
+            openai_client,
+            mcp_tools,
+            messages,
+        ))
+        .await?;
+    }
+    Ok(())
+}
+```
+
+`tool_calls` ရှိပါက tool အချက်အလက်ကို extract လုပ်ပြီး MCP server ကို tool request ဖြင့် ခေါ်ယူပါမည်။ ပြီးလျှင် conversation messages တွင် result ကို ထည့်ပြီး LLM နှင့် ဆက်လက်ပြောဆိုပါမည်။ messages တွင် assistant response နှင့် tool call results ကို update လုပ်ပါမည်။
+
+MCP calls အတွက် LLM response မှ tool call အချက်အလက်ကို extract လုပ်ရန် helper function တစ်ခုကို ထည့်ရန်လိုအပ်သည်။ အောက်ပါ code ကို `main.rs` ဖိုင်အောက်ဆုံးတွင် ထည့်ပါ။
+
+```rust
+fn extract_tool_call_info(tool_call: &Value) -> Result<(String, String, String), Box<dyn Error>> {
+    let tool_id = tool_call
+        .get("id")
+        .and_then(|id| id.as_str())
+        .unwrap_or("")
+        .to_string();
+    let function = tool_call.get("function").ok_or("Missing function")?;
+    let name = function
+        .get("name")
+        .and_then(|n| n.as_str())
+        .unwrap_or("")
+        .to_string();
+    let args = function
+        .get("arguments")
+        .and_then(|a| a.as_str())
+        .unwrap_or("{}")
+        .to_string();
+    Ok((tool_id, name, args))
+}
+```
+
+အပိုင်းအားလုံး ပြည့်စုံပြီးနောက် user prompt ကို handle လုပ်ပြီး LLM ကို ခေါ်ယူနိုင်ပါပြီ။ `main` function ကို update လုပ်ပြီး အောက်ပါ code ကို ထည့်ပါ။
+
+```rust
+// LLM conversation with tool calls
+let response = call_llm(&openai_client, &messages, &tools).await?;
+process_llm_response(
+    &response,
+    &mcp_client,
+    &openai_client,
+    &tools,
+    &mut messages,
+)
+.await?;
+```
+
+ဒီ code က user prompt ကို LLM ကို query လုပ်ပြီး tool calls ကို dynamic အနေနဲ့ handle လုပ်ပါမည်။
+
+အောင်မြင်ပါပြီ!
+
+## လုပ်ငန်းတာဝန်
+
+Exercise မှ code ကို ယူပြီး server ကို tools များဖြင့် တိုးချဲ့ပါ။ ပြီးလျှင် LLM ပါဝင်တဲ့ client တစ်ခုကို ဖန်တီးပြီး prompts များကို အသုံးပြု၍ server tools များကို dynamic အနေနဲ့ ခေါ်ယူနိုင်မည်ဖြစ်ကြောင်း စမ်းသပ်ပါ။ ဒီ client ဖန်တီးနည်းက end user အတွက် အလွန်ကောင်းမွန်တဲ့ user experience ကို ပေးနိုင်ပါမည်။ သူတို့သည် prompts ကိုသာ အသုံးပြုနိုင်ပြီး MCP server ကို ခေါ်ယူနေသည်ကို မသိလိုက်ပါ။
+
+## ဖြေရှင်းချက်
+
+[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
+
+## အဓိကအချက်များ
+
+- Client တွင် LLM ကို ထည့်သွင်းခြင်းက MCP Servers နှင့် ပိုမိုကောင်းမွန်သော အပြန်အလှန် ဆက်သွယ်မှုကို ပေးနိုင်သည်။
+- MCP Server response ကို LLM နားလည်နိုင်သော format သို့ ပြောင်းလဲရန် လိုအပ်သည်။
+
+## နမူနာများ
+
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Rust Calculator](../../../../03-GettingStarted/samples/rust)
+
+## အပိုဆောင်းအရင်းအမြစ်များ
+
+## နောက်တစ်ခု
+
+- နောက်တစ်ခု: [Visual Studio Code ကို အသုံးပြု၍ server ကို အသုံးပြုခြင်း](../04-vscode/README.md)
+
+**အကြောင်းကြားချက်**:  
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေပါသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းစာရွက်စာတမ်းကို ၎င်း၏ မူလဘာသာစကားဖြင့် အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များမှ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွတ်များ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

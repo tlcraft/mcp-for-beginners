@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-13T18:01:33+00:00",
+  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
+  "translation_date": "2025-08-18T14:08:59+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "sw"
 }
 -->
 # Kuendesha sampuli hii
 
-Unashauriwa kufunga `uv` lakini si lazima, angalia [maelekezo](https://docs.astral.sh/uv/#highlights)
+Unashauriwa kusakinisha `uv` lakini si lazima, angalia [maelekezo](https://docs.astral.sh/uv/#highlights)
 
-## -0- Tengeneza mazingira ya mtandaoni
+## -0- Unda mazingira halisi
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Washa mazingira ya mtandaoni
+## -1- Washa mazingira halisi
 
 ```bash
-venv\Scrips\activate
+venv\Scripts\activate
 ```
 
-## -2- Sakinisha utegemezi
+## -2- Sakinisha mahitaji
 
 ```bash
 pip install "mcp[cli]"
@@ -31,38 +31,37 @@ pip install "mcp[cli]"
 
 ## -3- Endesha sampuli
 
-
 ```bash
 mcp run server.py
 ```
 
 ## -4- Jaribu sampuli
 
-Wakati server iko hai kwenye terminal moja, fungua terminal nyingine na endesha amri ifuatayo:
+Ukiwa na seva inayoendelea kwenye terminal moja, fungua terminal nyingine na endesha amri ifuatayo:
 
 ```bash
 mcp dev server.py
 ```
 
-Hii inapaswa kuanzisha server ya wavuti yenye kiolesura cha kuona kinachokuwezesha kujaribu sampuli.
+Hii inapaswa kuanzisha seva ya wavuti yenye kiolesura cha kuona kinachokuwezesha kujaribu sampuli.
 
-Mara server itakapounganishwa:
+Mara seva inapounganishwa:
 
-- jaribu orodha ya zana na endesha `add`, kwa hoja 2 na 4, unapaswa kuona 6 kama matokeo.
+- jaribu kuorodhesha zana na endesha `add`, ukiwa na hoja 2 na 4, unapaswa kuona 6 kama matokeo.
 
-- nenda kwenye resources na resource template na piga get_greeting, andika jina na unapaswa kuona salamu yenye jina ulilotoa.
+- nenda kwenye rasilimali na kiolezo cha rasilimali na uite get_greeting, andika jina na unapaswa kuona salamu na jina ulilotoa.
 
-### Kupima kwa mode ya CLI
+### Kujaribu katika hali ya CLI
 
-Inspector uliyoendesha ni app ya Node.js na `mcp dev` ni kifuniko chake.
+Kikagua ulichokimbia ni programu ya Node.js na `mcp dev` ni kifuniko kinachozunguka programu hiyo.
 
-Unaweza kuianzisha moja kwa moja kwa mode ya CLI kwa kuendesha amri ifuatayo:
+Unaweza kuizindua moja kwa moja katika hali ya CLI kwa kuendesha amri ifuatayo:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Hii itaonyesha zana zote zinazopatikana kwenye server. Unapaswa kuona matokeo yafuatayo:
+Hii itatoa orodha ya zana zote zinazopatikana kwenye seva. Unapaswa kuona matokeo yafuatayo:
 
 ```text
 {
@@ -93,7 +92,7 @@ Hii itaonyesha zana zote zinazopatikana kwenye server. Unapaswa kuona matokeo ya
 }
 ```
 
-Ili kuitisha zana andika:
+Ili kuita chombo andika:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -114,8 +113,8 @@ Unapaswa kuona matokeo yafuatayo:
 ```
 
 > ![!TIP]
-> Kwa kawaida ni haraka zaidi kuendesha inspector kwa mode ya CLI kuliko kupitia kivinjari.
-> Soma zaidi kuhusu inspector [hapa](https://github.com/modelcontextprotocol/inspector).
+> Kwa kawaida ni haraka zaidi kuendesha kikagua katika hali ya CLI kuliko kwenye kivinjari.
+> Soma zaidi kuhusu kikagua [hapa](https://github.com/modelcontextprotocol/inspector).
 
-**Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kanusho**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

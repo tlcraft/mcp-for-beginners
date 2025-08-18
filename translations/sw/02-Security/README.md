@@ -1,248 +1,300 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "382fddb4ee4d9c1bdc806e2ee99b70c8",
-  "translation_date": "2025-07-17T10:15:08+00:00",
+  "original_hash": "1c767a35642f753127dc08545c25a290",
+  "translation_date": "2025-08-18T14:04:20+00:00",
   "source_file": "02-Security/README.md",
   "language_code": "sw"
 }
 -->
-# Mazoea Bora za Usalama
+# Usalama wa MCP: Ulinzi Kamili kwa Mifumo ya AI
 
-Kukubali Model Context Protocol (MCP) kunaleta uwezo mpya wenye nguvu kwa programu zinazoendeshwa na AI, lakini pia kunaleta changamoto za kipekee za usalama ambazo zinazidi hatari za kawaida za programu. Mbali na wasiwasi uliopo kama uandishi wa msimbo salama, ruhusa ndogo kabisa, na usalama wa mnyororo wa usambazaji, MCP na mzigo wa kazi wa AI wanakumbana na vitisho vipya kama sindano za maelekezo, sumu ya zana, mabadiliko ya zana kwa wakati halisi, udukuzi wa vikao, mashambulizi ya confused deputy, na udhaifu wa tokeni kupitishwa. Hatari hizi zinaweza kusababisha uvujaji wa data, ukiukaji wa faragha, na tabia zisizotarajiwa za mfumo ikiwa hazitadhibitiwa ipasavyo.
+[![MCP Security Best Practices](../../../translated_images/03.175aed6dedae133f9d41e49cefd0f0a9a39c3317e1eaa7ef7182696af7534308.sw.png)](https://youtu.be/88No8pw706o)
 
-Somo hili linachunguza hatari muhimu za usalama zinazohusiana na MCP—ikiwa ni pamoja na uthibitishaji, idhini, ruhusa nyingi sana, sindano isiyo ya moja kwa moja ya maelekezo, usalama wa vikao, matatizo ya confused deputy, udhaifu wa tokeni kupitishwa, na udhaifu wa mnyororo wa usambazaji—na linatoa udhibiti unaoweza kutekelezwa pamoja na mbinu bora za kuzizuia. Pia utajifunza jinsi ya kutumia suluhisho za Microsoft kama Prompt Shields, Azure Content Safety, na GitHub Advanced Security kuimarisha utekelezaji wako wa MCP. Kwa kuelewa na kutumia udhibiti huu, unaweza kupunguza kwa kiasi kikubwa uwezekano wa uvunjaji wa usalama na kuhakikisha mifumo yako ya AI inabaki imara na ya kuaminika.
+_(Bofya picha hapo juu kutazama video ya somo hili)_
 
-# Malengo ya Kujifunza
+Usalama ni msingi wa muundo wa mifumo ya AI, ndiyo sababu tunaupa kipaumbele kama sehemu yetu ya pili. Hii inalingana na kanuni ya Microsoft ya **Secure by Design** kutoka [Secure Future Initiative](https://www.microsoft.com/security/blog/2025/04/17/microsofts-secure-by-design-journey-one-year-of-success/).
+
+Model Context Protocol (MCP) inaleta uwezo mpya wenye nguvu kwa programu zinazoendeshwa na AI huku ikianzisha changamoto za kipekee za usalama zinazozidi hatari za programu za jadi. Mifumo ya MCP inakabiliwa na masuala ya usalama yaliyopo (kama usimbaji salama, upatikanaji wa chini kabisa, usalama wa mnyororo wa ugavi) pamoja na vitisho vipya vinavyohusiana na AI kama sindano ya maelekezo, uchafuzi wa zana, utekaji wa vikao, mashambulizi ya naibu aliyedanganywa, udhaifu wa kupitisha tokeni, na mabadiliko ya uwezo wa wakati halisi.
+
+Somo hili linachunguza hatari muhimu zaidi za usalama katika utekelezaji wa MCP—likijumuisha uthibitishaji, ruhusa, ruhusa kupita kiasi, sindano ya maelekezo isiyo ya moja kwa moja, usalama wa vikao, matatizo ya naibu aliyedanganywa, usimamizi wa tokeni, na udhaifu wa mnyororo wa ugavi. Utajifunza udhibiti wa vitendo na mbinu bora za kupunguza hatari hizi huku ukitumia suluhisho za Microsoft kama Prompt Shields, Azure Content Safety, na GitHub Advanced Security kuimarisha utekelezaji wa MCP.
+
+## Malengo ya Kujifunza
 
 Mwisho wa somo hili, utaweza:
 
-- Kutambua na kueleza hatari za kipekee za usalama zinazotokana na Model Context Protocol (MCP), ikiwa ni pamoja na sindano za maelekezo, sumu ya zana, ruhusa nyingi sana, udukuzi wa vikao, matatizo ya confused deputy, udhaifu wa tokeni kupitishwa, na udhaifu wa mnyororo wa usambazaji.
-- Kueleza na kutumia udhibiti madhubuti wa kupunguza hatari za usalama za MCP, kama vile uthibitishaji thabiti, ruhusa ndogo kabisa, usimamizi salama wa tokeni, udhibiti wa usalama wa vikao, na uhakiki wa mnyororo wa usambazaji.
-- Kuelewa na kutumia suluhisho za Microsoft kama Prompt Shields, Azure Content Safety, na GitHub Advanced Security kulinda MCP na mzigo wa kazi wa AI.
-- Kutambua umuhimu wa kuthibitisha metadata ya zana, kufuatilia mabadiliko ya wakati halisi, kujilinda dhidi ya mashambulizi ya sindano isiyo ya moja kwa moja ya maelekezo, na kuzuia udukuzi wa vikao.
-- Kuunganisha mbinu bora za usalama zilizothibitishwa—kama vile uandishi wa msimbo salama, kuimarisha seva, na usanifu wa zero trust—katika utekelezaji wako wa MCP ili kupunguza uwezekano na athari za uvunjaji wa usalama.
+- **Kutambua Vitisho Maalum vya MCP**: Kutambua hatari za kipekee za usalama katika mifumo ya MCP ikiwa ni pamoja na sindano ya maelekezo, uchafuzi wa zana, ruhusa kupita kiasi, utekaji wa vikao, matatizo ya naibu aliyedanganywa, udhaifu wa kupitisha tokeni, na hatari za mnyororo wa ugavi
+- **Kutumia Udhibiti wa Usalama**: Kutekeleza hatua madhubuti ikiwa ni pamoja na uthibitishaji thabiti, upatikanaji wa chini kabisa, usimamizi salama wa tokeni, udhibiti wa usalama wa vikao, na uhakiki wa mnyororo wa ugavi
+- **Kutumia Suluhisho za Usalama za Microsoft**: Kuelewa na kutumia Microsoft Prompt Shields, Azure Content Safety, na GitHub Advanced Security kwa ulinzi wa mzigo wa kazi wa MCP
+- **Kuthibitisha Usalama wa Zana**: Kutambua umuhimu wa uthibitishaji wa metadata ya zana, ufuatiliaji wa mabadiliko ya wakati halisi, na kujilinda dhidi ya mashambulizi ya sindano ya maelekezo isiyo ya moja kwa moja
+- **Kuunganisha Mbinu Bora**: Kuchanganya misingi ya usalama iliyowekwa (usimbaji salama, kuimarisha seva, uaminifu wa sifuri) na udhibiti maalum wa MCP kwa ulinzi kamili
 
-# Udhibiti wa Usalama wa MCP
+# Usanifu wa Usalama wa MCP na Udhibiti
 
-Mfumo wowote unaopata rasilimali muhimu unakumbana na changamoto za usalama. Changamoto hizi kwa kawaida zinaweza kushughulikiwa kwa kutumia udhibiti na dhana za msingi za usalama kwa usahihi. Kwa kuwa MCP ni kipengele kipya tu, maelezo yake yanabadilika kwa kasi na itakapoendelea kubadilika, hatimaye udhibiti wa usalama ndani yake utakua, kuruhusu muingiliano bora na usanifu wa usalama wa taasisi na mbinu bora zilizopo.
+Utekelezaji wa kisasa wa MCP unahitaji mbinu za usalama za tabaka zinazoshughulikia usalama wa programu za jadi na vitisho maalum vya AI. Maelezo ya MCP yanayoendelea kubadilika yanaendelea kuboresha udhibiti wake wa usalama, kuwezesha ujumuishaji bora na usanifu wa usalama wa biashara na mbinu bora zilizowekwa.
 
-Utafiti uliochapishwa katika [Microsoft Digital Defense Report](https://aka.ms/mddr) unaonyesha kuwa asilimia 98 ya uvunjaji uliripotiwa ungezuia kwa kutumia usafi mzuri wa usalama na kinga bora dhidi ya aina yoyote ya uvunjaji ni kupata usafi wako wa msingi wa usalama, mbinu bora za uandishi wa msimbo salama, na usalama wa mnyororo wa usambazaji kwa usahihi—mbinu hizi zilizojaribiwa na kuthibitishwa bado zina athari kubwa katika kupunguza hatari za usalama.
+Utafiti kutoka [Microsoft Digital Defense Report](https://aka.ms/mddr) unaonyesha kuwa **98% ya uvunjaji wa usalama ulioripotiwa ungeweza kuzuiwa na usafi wa usalama thabiti**. Mkakati bora wa ulinzi unachanganya mbinu za msingi za usalama na udhibiti maalum wa MCP—hatua za msingi za usalama zilizothibitishwa zinabaki kuwa zenye athari kubwa zaidi katika kupunguza hatari ya usalama kwa ujumla.
 
-Tuchunguze baadhi ya njia unazoweza kuanza kuzitatua hatari za usalama unapoanzisha MCP.
+## Mandhari ya Sasa ya Usalama
 
-> **Note:** Taarifa zifuatazo ni sahihi hadi **tarehe 29 Mei 2025**. Itifaki ya MCP inaendelea kubadilika, na utekelezaji wa baadaye unaweza kuleta mifumo mipya ya uthibitishaji na udhibiti. Kwa masasisho na mwongozo wa hivi karibuni, rejelea [MCP Specification](https://spec.modelcontextprotocol.io/) na [MCP GitHub repository](https://github.com/modelcontextprotocol) rasmi pamoja na [ukurasa wa mbinu bora za usalama](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices).
+> **Note:** Taarifa hii inaonyesha viwango vya usalama vya MCP hadi **Agosti 18, 2025**. Itifaki ya MCP inaendelea kubadilika haraka, na utekelezaji wa siku zijazo unaweza kuanzisha mifumo mipya ya uthibitishaji na udhibiti ulioboreshwa. Daima rejelea [MCP Specification](https://spec.modelcontextprotocol.io/), [MCP GitHub repository](https://github.com/modelcontextprotocol), na [nyaraka za mbinu bora za usalama](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) kwa mwongozo wa hivi karibuni.
 
-### Taarifa ya Tatizo  
-Maelezo ya awali ya MCP yalidhani kuwa waendelezaji wangeandika seva yao ya uthibitishaji. Hii ilihitaji uelewa wa OAuth na vizingiti vingine vya usalama vinavyohusiana. Seva za MCP zilifanya kazi kama Seva za Uidhinishaji za OAuth 2.0, zikisimamia uthibitishaji wa mtumiaji moja kwa moja badala ya kuurudisha kwa huduma ya nje kama Microsoft Entra ID. Kuanzia **26 Aprili 2025**, sasisho la maelezo ya MCP linaruhusu seva za MCP kurudisha uthibitishaji wa mtumiaji kwa huduma ya nje.
+### Mabadiliko ya Uthibitishaji wa MCP
 
-### Hatari
-- Mantiki isiyosahihi ya idhini kwenye seva ya MCP inaweza kusababisha kufichuliwa kwa data nyeti na udhibiti wa upatikanaji usio sahihi.
-- Uziizi wa tokeni za OAuth kwenye seva ya MCP ya ndani. Ikiwa zitaporwa, tokeni inaweza kutumika kuigiza seva ya MCP na kupata rasilimali na data kutoka kwa huduma ambayo tokeni ya OAuth ni kwa ajili yake.
+Maelezo ya MCP yamebadilika sana katika mbinu yake ya uthibitishaji na ruhusa:
 
-#### Token Passthrough  
-Tokeni kupitishwa kinyume kabisa na maelezo ya idhini kwa sababu inaleta hatari kadhaa za usalama, zikiwemo:
+- **Mbinu ya Awali**: Maelezo ya awali yalihitaji watengenezaji kutekeleza seva za uthibitishaji maalum, huku seva za MCP zikifanya kazi kama Seva za Ruhusa za OAuth 2.0 zinazodhibiti uthibitishaji wa watumiaji moja kwa moja
+- **Kiwango cha Sasa (2025-06-18)**: Maelezo yaliyosasishwa yanaruhusu seva za MCP kuhamishia uthibitishaji kwa watoa huduma wa kitambulisho wa nje (kama Microsoft Entra ID), kuboresha hali ya usalama na kupunguza ugumu wa utekelezaji
+- **Usalama wa Tabaka la Usafiri**: Msaada ulioboreshwa kwa mifumo salama ya usafiri na mifumo sahihi ya uthibitishaji kwa miunganisho ya ndani (STDIO) na ya mbali (Streamable HTTP)
 
-#### Kuepuka Udhibiti wa Usalama  
-Seva ya MCP au API za chini zinaweza kutekeleza udhibiti muhimu wa usalama kama vile kuweka kikomo cha kiwango, uthibitishaji wa maombi, au ufuatiliaji wa trafiki, ambazo hutegemea hadhira ya tokeni au vizingiti vingine vya cheti. Ikiwa wateja wanaweza kupata na kutumia tokeni moja kwa moja na API za chini bila seva ya MCP kuzikagua ipasavyo au kuhakikisha tokeni zimetolewa kwa huduma sahihi, wanapita udhibiti huu.
+## Usalama wa Uthibitishaji na Ruhusa
 
-#### Masuala ya Uwajibikaji na Rekodi za Ukaguzi  
-Seva ya MCP haitoweza kutambua au kutofautisha kati ya Wateja wa MCP wakati wateja wanapofanya maombi kwa tokeni ya upatikanaji iliyotolewa na huduma ya juu ambayo inaweza kuwa haieleweki kwa seva ya MCP.  
-Rekodi za seva ya rasilimali ya chini zinaweza kuonyesha maombi yanayoonekana kutoka chanzo tofauti na utambulisho tofauti, badala ya seva ya MCP inayotuma tokeni hizo.  
-Vitu hivi vyote vinafanya uchunguzi wa matukio, udhibiti, na ukaguzi kuwa vigumu zaidi.  
-Ikiwa seva ya MCP inapita tokeni bila kuthibitisha madai yao (mfano, majukumu, ruhusa, au hadhira) au metadata nyingine, mhalifu mwenye tokeni iliyoporwa anaweza kutumia seva kama wakala wa kuondoa data.
+### Changamoto za Sasa za Usalama
 
-#### Masuala ya Mipaka ya Uaminifu  
-Seva ya rasilimali ya chini hutoa uaminifu kwa vyombo maalum. Uaminifu huu unaweza kujumuisha dhana kuhusu asili au tabia za mteja. Kuvunja mipaka hii ya uaminifu kunaweza kusababisha matatizo yasiyotarajiwa.  
-Ikiwa tokeni inakubaliwa na huduma nyingi bila uthibitishaji sahihi, mdukuzi anayeathiri huduma moja anaweza kutumia tokeni hiyo kupata huduma nyingine zinazohusiana.
+Utekelezaji wa kisasa wa MCP unakabiliwa na changamoto kadhaa za uthibitishaji na ruhusa:
 
-#### Hatari ya Ulinganifu wa Baadaye  
-Hata kama seva ya MCP inaanza kama "wakala safi" leo, inaweza kuhitaji kuongeza udhibiti wa usalama baadaye. Kuanzia na utofauti sahihi wa hadhira ya tokeni kunarahisisha kuendeleza mfano wa usalama.
+### Hatari na Njia za Mashambulizi
 
-### Udhibiti wa Kupunguza Hatari
+- **Mantiki ya Ruhusa Iliyosanidi Vibaya**: Utekelezaji wa ruhusa usio sahihi katika seva za MCP unaweza kufichua data nyeti na kutumia vibaya udhibiti wa upatikanaji
+- **Kompromasi ya Tokeni ya OAuth**: Wizi wa tokeni za seva za MCP za ndani unawawezesha washambuliaji kujifanya seva na kufikia huduma za mnyororo wa chini
+- **Udhaifu wa Kupitisha Tokeni**: Ushughulikiaji usio sahihi wa tokeni unaunda njia za kupita udhibiti wa usalama na mapengo ya uwajibikaji
+- **Ruhusa Kupita Kiasi**: Seva za MCP zenye ruhusa nyingi zinakiuka kanuni za upatikanaji wa chini kabisa na kupanua nyuso za mashambulizi
 
-**Seva za MCP HAZIPASWI kukubali tokeni zozote ambazo hazikutolewa wazi kwa seva ya MCP**
+#### Kupitisha Tokeni: Muundo wa Hatari Muhimu
 
-- **Kagua na Imarisha Mantiki ya Idhini:** Fanya ukaguzi wa kina wa utekelezaji wa idhini kwenye seva yako ya MCP kuhakikisha kuwa watumiaji na wateja waliokusudiwa tu ndio wanaweza kupata rasilimali nyeti. Kwa mwongozo wa vitendo, angalia [Azure API Management Your Auth Gateway For MCP Servers | Microsoft Community Hub](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) na [Using Microsoft Entra ID To Authenticate With MCP Servers Via Sessions - Den Delimarsky](https://den.dev/blog/mcp-server-auth-entra-id-session/).
-- **Tekeleza Mbinu Salama za Tokeni:** Fuata [mbinu bora za Microsoft za uthibitishaji na muda wa tokeni](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens) ili kuzuia matumizi mabaya ya tokeni za upatikanaji na kupunguza hatari ya kurudia au kuibiwa tokeni.
-- **Linda Uhifadhi wa Tokeni:** Hifadhi tokeni kwa usalama kila wakati na tumia usimbaji fiche kuwalinda wakati wa kuhifadhi na kusafirisha. Kwa vidokezo vya utekelezaji, angalia [Use secure token storage and encrypt tokens](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2).
+**Kupitisha tokeni kunakatazwa wazi** katika maelezo ya sasa ya ruhusa ya MCP kutokana na athari kubwa za usalama:
 
-# Ruhusa Nyingi Sana kwa Seva za MCP
+##### Upitishaji wa Udhibiti wa Usalama
+- Seva za MCP na API za mnyororo wa chini zinatekeleza udhibiti muhimu wa usalama (kama kupunguza kasi, uthibitishaji wa maombi, ufuatiliaji wa trafiki) unaotegemea uthibitishaji sahihi wa tokeni
+- Matumizi ya moja kwa moja ya tokeni za mteja kwa API hupita ulinzi muhimu, kudhoofisha usanifu wa usalama
 
-### Taarifa ya Tatizo  
-Seva za MCP zinaweza kuwa zimepewa ruhusa nyingi sana kwa huduma/rasilimali wanayopata. Kwa mfano, seva ya MCP inayojumuishwa katika programu ya mauzo ya AI inayounganisha na hifadhi ya data ya taasisi inapaswa kuwa na ruhusa zilizopangwa kwa data ya mauzo tu na isiruhusiwe kupata faili zote katika hifadhi hiyo. Kurejelea kanuni ya ruhusa ndogo kabisa (moja ya kanuni za usalama za zamani zaidi), hakuna rasilimali inapaswa kuwa na ruhusa zaidi ya inavyohitajika kutekeleza kazi zilizokusudiwa. AI inaleta changamoto kubwa zaidi katika eneo hili kwa sababu ili kuifanya iwe rahisi kubadilika, inaweza kuwa vigumu kufafanua ruhusa halisi zinazohitajika.
+##### Changamoto za Uwajibikaji na Ukaguzi  
+- Seva za MCP haziwezi kutofautisha kati ya wateja wanaotumia tokeni zilizotolewa na mnyororo wa juu, kuvunja njia za ukaguzi
+- Magogo ya seva za rasilimali za mnyororo wa chini yanaonyesha asili ya maombi isiyo sahihi badala ya wapatanishi halisi wa seva za MCP
+- Uchunguzi wa matukio na ukaguzi wa kufuata unakuwa mgumu zaidi
 
-### Hatari  
-- Kutoa ruhusa nyingi sana kunaweza kuruhusu uvujaji au mabadiliko ya data ambayo seva ya MCP haikukusudiwa kuipata. Hii pia inaweza kuwa tatizo la faragha ikiwa data ni taarifa za mtu binafsi (PII).
+##### Hatari za Uvujaji wa Data
+- Madai ya tokeni yasiyothibitishwa yanawawezesha wahusika waovu wenye tokeni zilizoibiwa kutumia seva za MCP kama wakala wa uvujaji wa data
+- Ukiukaji wa mipaka ya uaminifu huruhusu mifumo ya upatikanaji isiyoidhinishwa inayopita udhibiti wa usalama uliokusudiwa
 
-### Udhibiti wa Kupunguza Hatari  
-- **Tekeleza Kanuni ya Ruhusa Ndogo Kabisa:** Toa seva ya MCP ruhusa ndogo tu zinazohitajika kufanya kazi zake. Kagua na sasisha ruhusa hizi mara kwa mara kuhakikisha hazizidi mahitaji. Kwa mwongozo wa kina, angalia [Secure least-privileged access](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access).
-- **Tumia Udhibiti wa Upatikanaji kwa Misingi ya Majukumu (RBAC):** Weka majukumu kwa seva ya MCP yaliyo na mipaka thabiti kwa rasilimali na vitendo maalum, kuepuka ruhusa pana au zisizohitajika.
-- **Fuatilia na Fanya Ukaguzi wa Ruhusa:** Fuatilia matumizi ya ruhusa kwa kuendelea na ukague rekodi za upatikanaji kugundua na kurekebisha ruhusa nyingi au zisizotumika haraka iwezekanavyo.
+##### Njia za Mashambulizi ya Huduma Nyingi
+- Tokeni zilizokompromasi zinazokubaliwa na huduma nyingi huruhusu harakati za upande katika mifumo iliyounganishwa
+- Dhana za uaminifu kati ya huduma zinaweza kuvunjwa wakati asili ya tokeni haiwezi kuthibitishwa
 
-# Mashambulizi ya Sindano Isiyo ya Moja kwa Moja ya Maelekezo
+### Udhibiti wa Usalama na Hatua za Kupunguza
 
-### Taarifa ya Tatizo
+**Mahitaji Muhimu ya Usalama:**
 
-Seva za MCP zilizo na madhumuni mabaya au zilizodukuliwa zinaweza kuleta hatari kubwa kwa kufichua data za wateja au kuruhusu vitendo visivyotarajiwa. Hatari hizi ni muhimu hasa katika mzigo wa kazi wa AI na MCP, ambapo:
+> **LAZIMA**: Seva za MCP **HAZIRUHUSIWI** kukubali tokeni zozote ambazo hazikutolewa mahsusi kwa seva ya MCP
 
-- **Mashambulizi ya Sindano za Maelekezo:** Wadukuzi huingiza maagizo mabaya ndani ya maelekezo au maudhui ya nje, na kusababisha mfumo wa AI kufanya vitendo visivyotarajiwa au kuvuja data nyeti. Jifunze zaidi: [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
-- **Sumu ya Zana:** Wadukuzi hubadilisha metadata ya zana (kama maelezo au vigezo) kuathiri tabia ya AI, labda kupita udhibiti wa usalama au kuondoa data. Maelezo: [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
-- **Sindano za Maelekezo za Mikoa Mbalimbali:** Maagizo mabaya huingizwa katika nyaraka, kurasa za wavuti, au barua pepe, ambazo kisha huchakatwa na AI, na kusababisha uvujaji au uathiri wa data.
-- **Mabadiliko ya Zana kwa Wakati Halisi (Rug Pulls):** Maelezo ya zana yanaweza kubadilishwa baada ya idhini ya mtumiaji, kuleta tabia mpya mbaya bila mtumiaji kujua.
+#### Udhibiti wa Uthibitishaji na Ruhusa
 
-Udhaifu huu unaonyesha umuhimu wa uthibitishaji thabiti, ufuatiliaji, na udhibiti wa usalama wakati wa kuingiza seva za MCP na zana katika mazingira yako. Kwa uchunguzi wa kina, angalia marejeleo yaliyotajwa hapo juu.
+- **Ukaguzi Mkali wa Ruhusa**: Fanya ukaguzi wa kina wa mantiki ya ruhusa ya seva za MCP ili kuhakikisha watumiaji na wateja waliokusudiwa pekee wanaweza kufikia rasilimali nyeti
+  - **Mwongozo wa Utekelezaji**: [Azure API Management kama Lango la Uthibitishaji kwa Seva za MCP](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+  - **Ujumuishaji wa Kitambulisho**: [Kutumia Microsoft Entra ID kwa Uthibitishaji wa Seva za MCP](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 
-![prompt-injection-lg-2048x1034](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.sw.png)
+- **Usimamizi Salama wa Tokeni**: Tekeleza [mbinu bora za uthibitishaji wa tokeni na mzunguko wa maisha za Microsoft](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens)
+  - Thibitisha madai ya tokeni ya hadhira yanalingana na kitambulisho cha seva ya MCP
+  - Tekeleza sera sahihi za mzunguko na muda wa tokeni
+  - Zuia mashambulizi ya kurudia tokeni na matumizi yasiyoidhinishwa
 
-**Sindano Isiyo ya Moja kwa Moja ya Maelekezo** (inayojulikana pia kama sindano ya maelekezo ya mikoa mbalimbali au XPIA) ni udhaifu mkubwa katika mifumo ya AI inayotengeneza maudhui, ikiwa ni pamoja na ile inayotumia Model Context Protocol (MCP). Katika shambulio hili, maagizo mabaya yamefichwa ndani ya maudhui ya nje—kama nyaraka, kurasa za wavuti, au barua pepe. Wakati mfumo wa AI unachakata maudhui haya, unaweza kufasiri maagizo yaliyofichwa kama amri halali za mtumiaji, na kusababisha vitendo visivyotarajiwa kama uvujaji wa data, uzalishaji wa maudhui hatarishi, au uathiri wa mwingiliano wa mtumiaji. Kwa maelezo ya kina na mifano halisi, angalia [Prompt Injection](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
+- **Hifadhi Salama ya Tokeni**: Hifadhi tokeni kwa usalama kwa usimbaji fiche wakati wa kupumzika na wakati wa usafiri
+  - **Mbinu Bora**: [Mwongozo wa Usimbaji Fiche na Hifadhi Salama ya Tokeni](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
 
-Aina hatari ya shambulio hili ni **Sumu ya Zana**. Hapa, wadukuzi huingiza maagizo mabaya katika metadata ya zana za MCP (kama maelezo au vigezo vya zana). Kwa kuwa mifano mikubwa ya lugha (LLMs) hutegemea metadata hii kuamua zana gani zitaitwa, maelezo yaliyodukuliwa yanaweza kudanganya mfano kufanya simu za zana zisizoruhusiwa au kupita udhibiti wa usalama. Mabadiliko haya mara nyingi hayaonekani kwa watumiaji wa mwisho lakini yanaweza kufasiriwa na kutekelezwa na mfumo wa AI. Hatari hii inaongezeka katika mazingira ya seva za MCP zilizo hifadhiwa, ambapo maelezo ya zana yanaweza kusasishwa baada ya idhini ya mtumiaji—hali inayojulikana kama "[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)". Katika hali kama hizi, zana iliyokuwa salama awali inaweza kubadilishwa baadaye kufanya vitendo vya uovu, kama uvujaji wa data au kubadilisha tabia ya mfumo, bila mtumiaji kujua. Kwa zaidi kuhusu njia hii ya shambulio, angalia [Tool Poisoning](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
+#### Utekelezaji wa Udhibiti wa Upatikanaji
 
-![tool-injection-lg-2048x1239 (1)](../../../translated_images/tool-injection.3b0b4a6b24de6befe7d3afdeae44138ef005881aebcfc84c6f61369ce31e3640.sw.png)
+- **Kanuni ya Upatikanaji wa Chini Kabisa**: Peana seva za MCP ruhusa ndogo tu zinazohitajika kwa utendaji uliokusudiwa
+  - Ukaguzi wa ruhusa mara kwa mara na masasisho ili kuzuia kuongezeka kwa ruhusa
+  - **Nyaraka za Microsoft**: [Upatikanaji Salama wa Chini Kabisa](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
 
-## Hatari  
-Vitendo visivyotarajiwa vya AI vina hatari mbalimbali za usalama zikiwemo uvujaji wa data na ukiukaji wa faragha.
+- **Udhibiti wa Upatikanaji wa Kulingana na Majukumu (RBAC)**: Tekeleza ugawaji wa majukumu ya kina
+  - Majukumu ya upeo kwa rasilimali na vitendo maalum
+  - Epuka ruhusa pana au zisizo za lazima zinazopanua nyuso za mashambulizi
 
-### Udhibiti wa Kupunguza Hatari  
-### Kutumia prompt shields kulinda dhidi ya mashambulizi ya Sindano Isiyo ya Moja kwa Moja ya Maelekezo  
------------------------------------------------------------------------------
+- **Ufuatiliaji Endelevu wa Ruhusa**: Tekeleza ukaguzi wa upatikanaji na ufuatiliaji unaoendelea
+  - Fuatilia mifumo ya matumizi ya ruhusa kwa hali isiyo ya kawaida
+  - Rekebisha mara moja ruhusa kupita kiasi au zisizotumika
 
-**AI Prompt Shields** ni suluhisho lililotengenezwa na Microsoft kulinda dhidi ya mashambulizi ya sindano za maelekezo ya moja kwa moja na isiyo ya moja kwa moja. Husaidia kwa:
+## Vitisho Maalum vya Usalama vya AI
 
-1.  **Kugundua na Kuchuja:** Prompt Shields hutumia algorithms za hali ya juu za kujifunza mashine na usindikaji wa lugha asilia kugundua na kuchuja maagizo mabaya yaliyofichwa katika maudhui ya nje, kama nyaraka, kurasa za wavuti, au barua pepe.
-    
-2.  **Spotlighting:** Mbinu hii husaidia mfumo wa AI kutofautisha kati ya maagizo halali ya mfumo na maingizo ya nje ambayo yanaweza kuwa hayana uaminifu. Kwa kubadilisha maandishi ya ingizo kwa njia inayofaa zaidi kwa mfano, Spotlighting huhakikisha AI inaweza kutambua na kupuuza maagizo mabaya.
-    
-3.  **
-Tatizo la confused deputy ni udhaifu wa usalama unaotokea wakati seva ya MCP inafanya kazi kama wakala kati ya wateja wa MCP na API za wahusika wengine. Udhaifu huu unaweza kutumiwa pale seva ya MCP inapotumia kitambulisho cha mteja cha kudumu kujiandikisha na seva ya idhini ya mhusika wa tatu ambayo haina msaada wa usajili wa mteja wa mabadiliko.
+### Mashambulizi ya Sindano ya Maelekezo na Udanganyifu wa Zana
 
-### Hatari
+Utekelezaji wa kisasa wa MCP unakabiliwa na njia za mashambulizi ya kisasa zinazohusiana na AI ambazo hatua za usalama za jadi haziwezi kushughulikia kikamilifu:
 
-- **Kupitisha idhini kwa kutumia cookie**: Ikiwa mtumiaji amewahi kujiandikisha kupitia seva ya wakala ya MCP, seva ya idhini ya mhusika wa tatu inaweza kuweka cookie ya idhini kwenye kivinjari cha mtumiaji. Mshambuliaji anaweza baadaye kutumia hili kwa kumtumia mtumiaji kiungo chenye maombi ya idhini yaliyoandaliwa yenye URI ya kuhamisha kwa madhumuni mabaya.
-- **Uziizi wa msimbo wa idhini**: Mtumiaji anapobofya kiungo chenye madhumuni mabaya, seva ya idhini ya mhusika wa tatu inaweza kuruka skrini ya idhini kutokana na kuwepo kwa cookie, na msimbo wa idhini unaweza kuhamishiwa seva ya mshambuliaji.
-- **Upatikanaji usioidhinishwa wa API**: Mshambuliaji anaweza kubadilisha msimbo wa idhini ulioporwa kwa tokeni za upatikanaji na kujifanya mtumiaji ili kupata API ya mhusika wa tatu bila idhini wazi.
+#### **Sindano ya Maelekezo Isiyo ya Moja kwa Moja (Sindano ya Maelekezo ya Nyanja Mbalimbali)**
 
-### Udhibiti wa kupunguza
+**Sindano ya Maelekezo Isiyo ya Moja kwa Moja** inawakilisha mojawapo ya udhaifu muhimu zaidi katika mifumo ya AI inayowezeshwa na MCP. Washambuliaji huingiza maelekezo ya uovu ndani ya maudhui ya nje—nyaraka, kurasa za wavuti, barua pepe, au vyanzo vya data—ambavyo mifumo ya AI baadaye huchakata kama maagizo halali.
 
-- **Mahitaji ya idhini wazi**: Seva za wakala za MCP zinazotumia vitambulisho vya mteja vya kudumu **Lazima** zipate idhini ya mtumiaji kwa kila mteja aliyejisajili kwa mabadiliko kabla ya kuwasilisha kwa seva za idhini za wahusika wa tatu.
-- **Utekelezaji sahihi wa OAuth**: Fuata mbinu bora za usalama za OAuth 2.1, ikiwa ni pamoja na kutumia changamoto za msimbo (PKCE) kwa maombi ya idhini ili kuzuia mashambulizi ya kukamata maombi.
-- **Uthibitishaji wa mteja**: Tekeleza uthibitishaji mkali wa URI za kuhamisha na vitambulisho vya mteja ili kuzuia matumizi mabaya na wahalifu.
+**Mazingira ya Mashambulizi:**
+- **Sindano ya Nyaraka**: Maelekezo ya uovu yaliyofichwa katika nyaraka zinazochakatwa ambayo husababisha vitendo visivyokusudiwa vya AI
+- **Unyonyaji wa Maudhui ya Wavuti**: Kurasa za wavuti zilizokompromasi zenye maelekezo yaliyopachikwa ambayo hudanganya tabia ya AI wakati wa kuchanganua
+- **Mashambulizi ya Barua Pepe**: Maelekezo ya uovu katika barua pepe ambayo husababisha wasaidizi wa AI kutoa taarifa au kufanya vitendo visivyoidhinishwa
+- **Uchafuzi wa Vyanzo vya Data**: Mifumo ya data au API zilizokompromasi zinazotoa maudhui yaliyochafuliwa kwa mifumo ya AI
 
-# Udhaifu wa Kupitisha Tokeni
+**Athari Halisi**: Mashambulizi haya yanaweza kusababisha uvujaji wa data, ukiukaji wa faragha, uzalishaji wa maudhui hatari, na udanganyifu wa mwingiliano wa watumiaji. Kwa uchambuzi wa kina, angalia [Sindano ya Maelekezo katika MCP (Simon Willison)](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
 
-### Taarifa ya tatizo
+![Prompt Injection Attack Diagram](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.sw.png)
 
-"Token passthrough" ni mtindo mbaya ambapo seva ya MCP inakubali tokeni kutoka kwa mteja wa MCP bila kuthibitisha kuwa tokeni hizo zilitolewa kwa seva ya MCP yenyewe, kisha "zinaipitisha" kwa API za chini. Tabia hii inakiuka wazi maelezo ya idhini ya MCP na kuleta hatari kubwa za usalama.
+#### **Mashambulizi ya Uchafuzi wa Zana**
 
-### Hatari
+**Uchafuzi wa Zana** unalenga metadata inayofafanua zana za MCP, ikitumia jinsi LLM zinavyotafsiri maelezo ya zana na vigezo kufanya maamuzi ya utekelezaji.
 
-- **Kupitisha udhibiti wa usalama**: Wateja wanaweza kupita udhibiti muhimu wa usalama kama vile ukomo wa kiwango, uthibitishaji wa maombi, au ufuatiliaji wa trafiki ikiwa wanaweza kutumia tokeni moja kwa moja na API za chini bila uthibitishaji sahihi.
-- **Masuala ya uwajibikaji na ufuatiliaji**: Seva ya MCP haitoweza kutambua au kutofautisha kati ya wateja wa MCP wakati wateja wanapotumia tokeni za upatikanaji zilizotolewa na seva za juu, na kufanya uchunguzi wa matukio na ukaguzi kuwa mgumu.
-- **Utoaji wa data bila idhini**: Ikiwa tokeni zinapitishwa bila uthibitishaji sahihi wa madai, mshambuliaji mwenye tokeni iliyoporwa anaweza kutumia seva kama wakala kwa ajili ya kutoa data bila idhini.
-- **Uvunjaji wa mipaka ya kuaminika**: Seva za rasilimali za chini zinaweza kuamini vyombo maalum kwa misingi ya asili au tabia. Kuvunja mipaka hii ya kuaminika kunaweza kusababisha matatizo yasiyotarajiwa ya usalama.
-- **Matumizi mabaya ya tokeni kwa huduma nyingi**: Ikiwa tokeni zinakubaliwa na huduma nyingi bila uthibitishaji sahihi, mshambuliaji anayeathiri huduma moja anaweza kutumia tokeni hiyo kupata huduma nyingine zinazohusiana.
+**Njia za Mashambulizi:**
+- **Udanganyifu wa Metadata**: Washambuliaji huingiza maelekezo ya uovu katika maelezo ya zana, ufafanuzi wa vigezo, au mifano ya matumizi
+- **Maelekezo Yasiyoonekana**: Maelekezo yaliyofichwa katika metadata ya zana ambayo huchakatwa na mifumo ya AI lakini hayaonekani kwa watumiaji wa binadamu
+- **Mabadiliko ya Zana ya Wakati Halisi ("Rug Pulls")**: Zana zilizokubaliwa na watumiaji hubadilishwa baadaye kufanya vitendo vya uovu bila ufahamu wa mtumiaji
+- **Sindano ya Vigezo**: Maudhui ya uovu yaliyopachikwa katika mifumo ya vigezo vya zana ambayo huathiri tabia ya modeli
 
-### Udhibiti wa kupunguza
+**Hatari za Seva Zinazohifadhiwa**: Seva za MCP za mbali zinawasilisha hatari zilizoongezeka kwani ufafanuzi wa zana unaweza kusasishwa baada ya idhini ya awali ya mtumiaji, kuunda hali ambapo zana zilizokuwa salama awali zinakuwa za uovu. Kwa uchambuzi wa kina, angalia [Mashambulizi ya Uchafuzi wa Zana (Invariant Labs)](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
 
-- **Uthibitishaji wa tokeni**: Seva za MCP **HAZIFAI** kukubali tokeni zozote ambazo hazikutolewa wazi kwa seva ya MCP yenyewe.
-- **Uthibitishaji wa hadhira**: Daima hakikisha tokeni zina madai ya hadhira inayolingana na utambulisho wa seva ya MCP.
-- **Usimamizi sahihi wa mzunguko wa tokeni**: Tekeleza tokeni za muda mfupi na mbinu sahihi za mzunguko wa tokeni ili kupunguza hatari ya wizi na matumizi mabaya ya tokeni.
+![Tool Injection Attack Diagram](../../../translated_images/tool-injection.3b0b4a6b24de6befe7d3afdeae44138ef005881aebcfc84c6f61369ce31e3640.sw.png)
 
-# Kunyakuliwa kwa Kikao
+#### **Njia za Mashambulizi ya AI Ziada**
 
-### Taarifa ya tatizo
+- **Sindano ya Maelekezo ya Nyanja Mbalimbali (XPIA)**: Mashambulizi ya kisasa yanayotumia maudhui kutoka nyanja nyingi kupita udhibiti wa usalama
+- **Mabadiliko ya Uwezo wa Wakati Halisi**: Mabadiliko ya uwezo wa zana yanayofanyika wakati halisi ambayo yanapita tathmini za usalama za awali
+- **Uchafuzi wa Dirisha la Muktadha**: Mashambulizi yanayodanganya madirisha makubwa ya muktadha kuficha maelekezo ya uovu
+- **Mashambulizi ya Kuchanganya Modeli**: Kutumia mapungufu ya modeli kuunda tabia zisizotabirika au zisizo salama
 
-Kunyakuliwa kwa kikao ni njia ya shambulizi ambapo mteja anapewa kitambulisho cha kikao na seva, na mtu asiyeidhinishwa anapata na kutumia kitambulisho hicho cha kikao kuigiza mteja halali na kufanya vitendo visivyoidhinishwa kwa niaba yake. Hili ni jambo la wasiwasi hasa kwa seva za HTTP zenye hali zinazoshughulikia maombi ya MCP.
+### Athari za Hatari za Usalama wa AI
 
-### Hatari
+**Athari Zenye Madhara Makubwa:**
+- **Uvujaji wa Data**: Upatikanaji usioidhinishwa na wizi wa data nyeti ya biashara au ya kibinafsi
+- **Ukiukaji wa Faragha**: Ufunuo wa taarifa zinazotambulika binafsi (PII) na data ya siri ya biashara  
+- **Udanganyifu wa Mfumo**: Mabadiliko yasiyokusudiwa kwa mifumo muhimu na mtiririko wa kazi
+- **Wizi wa Kitambulisho**: Kompromasi ya tokeni za uthibitishaji na hati za huduma
+- **Harakati za Upande**: Matumizi ya mifumo ya AI iliyokompromasi kama sehemu za kuanzia kwa mashambulizi makubwa ya mtandao
 
-- **Kuingizwa kwa amri za kunyakuwa kikao**: Mshambuliaji anayeweza kupata kitambulisho cha kikao anaweza kutuma matukio yenye madhumuni mabaya kwa seva inayoshirikiana hali ya kikao na seva ambayo mteja ameunganishwa nayo, na kusababisha vitendo hatari au kupata data nyeti.
-- **Kuigiza kunyakuliwa kwa kikao**: Mshambuliaji mwenye kitambulisho cha kikao aliyoporwa anaweza kuita moja kwa moja seva ya MCP, kupita uthibitishaji na kutendewa kama mtumiaji halali.
-- **Mtiririko wa data unaoweza kuendelea uliovunjika**: Seva inayounga mkono utoaji upya/mitiririko inayoweza kuendelea, mshambuliaji anaweza kukatisha ombi mapema, na kuufanya uendelee baadaye na mteja halali na maudhui yenye madhumuni mabaya.
+### Suluhisho za Usalama za Microsoft kwa AI
 
-### Udhibiti wa kupunguza
+#### **AI Prompt Shields: Ulinzi wa Juu Dhidi ya Mashambulizi ya Sindano**
 
-- **Uthibitishaji wa idhini**: Seva za MCP zinazotekeleza idhini **LAZIMA** zithibitishe maombi yote yanayoingia na **HAZIFAI** kutumia vikao kwa uthibitishaji.
-- **Vitambulisho salama vya kikao**: Seva za MCP **LAZIMA** zitumie vitambulisho salama, visivyo na mfuatano vinavyotengenezwa kwa jenereta salama za nambari za nasibu. Epuka vitambulisho vinavyoweza kutabirika au mfuatano.
-- **Kufunga kikao kwa mtumiaji binafsi**: Seva za MCP **ZINAPENDEKEZWA** kufunga vitambulisho vya kikao na taarifa za mtumiaji binafsi, kwa kuchanganya kitambulisho cha kikao na taarifa za mtumiaji aliyeidhinishwa (kama ID ya mtumiaji wa ndani) kwa muundo kama `
-<user_id>:<session_id>`.
-- **Muda wa kumalizika kwa kikao**: Tekeleza kumalizika na mzunguko sahihi wa vikao ili kupunguza dirisha la hatari ikiwa kitambulisho cha kikao kitavunjika.
-- **Usalama wa usafirishaji**: Daima tumia HTTPS kwa mawasiliano yote ili kuzuia kukamatwa kwa kitambulisho cha kikao.
+Microsoft **AI Prompt Shields** hutoa ulinzi kamili dhidi
+- **Uundaji wa Vikao Salama**: Tumia vitambulisho vya vikao visivyotabirika vilivyotengenezwa kwa njia salama ya kriptografia kwa kutumia jenereta za namba za bahati nasibu salama  
+- **Ufungaji wa Mtumiaji Maalum**: Funga vitambulisho vya vikao na taarifa maalum za mtumiaji kwa kutumia fomati kama `<user_id>:<session_id>` ili kuzuia matumizi mabaya ya vikao kati ya watumiaji  
+- **Usimamizi wa Mzunguko wa Vikao**: Tekeleza muda wa kuisha, mzunguko, na kufutwa kwa vikao ipasavyo ili kupunguza madirisha ya udhaifu  
+- **Usalama wa Usafirishaji**: Tumia HTTPS kwa lazima katika mawasiliano yote ili kuzuia kunaswa kwa vitambulisho vya vikao  
 
-# Usalama wa Mnyororo wa Ugavi
+### Tatizo la Naibu Aliyechanganyikiwa  
 
-Usalama wa mnyororo wa ugavi unabaki kuwa msingi katika enzi ya AI, lakini wigo wa kile kinachojumuisha mnyororo wako wa ugavi umeongezeka. Mbali na vifurushi vya kawaida vya msimbo, sasa lazima uhakikishe na kufuatilia kwa ukaribu vipengele vyote vinavyohusiana na AI, ikiwa ni pamoja na mifano ya msingi, huduma za embeddings, watoa muktadha, na API za wahusika wa tatu. Kila kimoja kinaweza kuleta udhaifu au hatari ikiwa hakidhibitiwi ipasavyo.
+**Tatizo la naibu aliyechanganyikiwa** hutokea pale ambapo seva za MCP zinapofanya kazi kama mawakala wa uthibitishaji kati ya wateja na huduma za wahusika wa tatu, na hivyo kuunda fursa za kupitisha mamlaka kupitia unyonyaji wa vitambulisho vya wateja vya static.  
 
-**Mazingira muhimu ya usalama wa mnyororo wa ugavi kwa AI na MCP:**
-- **Thibitisha vipengele vyote kabla ya kuunganisha:** Hii ni pamoja na maktaba za chanzo huria, mifano ya AI, vyanzo vya data, na API za nje. Daima hakikisha asili, leseni, na udhaifu unaojulikana.
-- **Dumisha njia salama za utoaji:** Tumia njia za CI/CD zilizo otomatiki zenye skanning ya usalama ili kugundua matatizo mapema. Hakikisha tu vitu vinavyoaminika vinawekwa kwenye uzalishaji.
-- **Fuatilia na ukague mara kwa mara:** Tekeleza ufuatiliaji endelevu wa utegemezi wote, ikiwa ni pamoja na mifano na huduma za data, kugundua udhaifu mpya au mashambulizi ya mnyororo wa ugavi.
-- **Tumia kanuni ya udhibiti wa upatikanaji mdogo:** Zuia upatikanaji wa mifano, data, na huduma kwa kile tu kinachohitajika kwa seva yako ya MCP kufanya kazi.
-- **Jibu haraka kwa vitisho:** Kuwa na mchakato wa kufunga au kubadilisha vipengele vilivyovamiwa, na kwa mzunguko wa siri au nyaraka ikiwa uvunjaji utagunduliwa.
+#### **Mbinu za Shambulio na Hatari**  
 
-[GitHub Advanced Security](https://github.com/security/advanced-security) hutoa vipengele kama skanning ya siri, skanning ya utegemezi, na uchambuzi wa CodeQL. Zana hizi zinaunganishwa na [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) na [Azure Repos](https://azure.microsoft.com/en-us/products/devops/repos/) kusaidia timu kugundua na kupunguza udhaifu katika msimbo na vipengele vya mnyororo wa ugavi wa AI.
+- **Kupitisha Idhini kwa Kutumia Vidakuzi**: Uthibitishaji wa awali wa mtumiaji huunda vidakuzi vya idhini ambavyo washambuliaji hutumia kupitia maombi ya idhini yenye URL za kuelekeza zilizotengenezwa kwa hila  
+- **Wizi wa Msimbo wa Idhini**: Vidakuzi vya idhini vilivyopo vinaweza kusababisha seva za idhini kuruka skrini za idhini, na kuelekeza misimbo kwa maeneo yanayodhibitiwa na washambuliaji  
+- **Ufikiaji wa API Usioidhinishwa**: Misimbo ya idhini iliyoporwa inaruhusu kubadilishana tokeni na kuiga watumiaji bila idhini ya wazi  
 
-Microsoft pia inatekeleza mbinu za kina za usalama wa mnyororo wa ugavi ndani kwa bidhaa zote. Jifunze zaidi katika [The Journey to Secure the Software Supply Chain at Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/).
+#### **Mikakati ya Kuzuia**  
 
-# Mbinu Bora za Usalama Zilizothibitishwa Zitakazoboresha Usalama wa Utekelezaji wa MCP Wako
+**Udhibiti wa Lazima:**  
+- **Mahitaji ya Idhini ya Wazi**: Seva za wakala za MCP zinazotumia vitambulisho vya wateja vya static **LAZIMA** zipate idhini ya mtumiaji kwa kila mteja aliyesajiliwa kwa njia ya nguvu  
+- **Utekelezaji wa Usalama wa OAuth 2.1**: Fuata mbinu bora za usalama za OAuth za sasa ikiwa ni pamoja na PKCE (Uthibitisho wa Ufunguo wa Kubadilisha Msimbo) kwa maombi yote ya idhini  
+- **Uthibitishaji Mkali wa Wateja**: Tekeleza uthibitishaji madhubuti wa URL za kuelekeza na vitambulisho vya wateja ili kuzuia unyonyaji  
 
-Utekelezaji wowote wa MCP unarithi hali ya usalama iliyopo ya mazingira ya shirika lako ambayo umejengwa juu yake, hivyo unapotafakari usalama wa MCP kama sehemu ya mifumo yako ya AI kwa ujumla, inashauriwa uangalie kuboresha hali yako ya usalama iliyopo. Udhibiti wa usalama ulioanzishwa una umuhimu mkubwa:
+### Udhaifu wa Kupitisha Tokeni  
 
--   Mbinu bora za uandishi wa msimbo salama katika programu yako ya AI - linda dhidi ya [OWASP Top 10](https://owasp.org/www-project-top-ten/), [OWASP Top 10 kwa LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559), tumia hifadhi salama kwa siri na tokeni, tekeleza mawasiliano salama ya mwisho hadi mwisho kati ya vipengele vyote vya programu, n.k.
--   Kuimarisha seva -- tumia MFA inapowezekana, endelea kusasisha viraka, ungana na mtoa huduma wa utambulisho wa mtu wa tatu kwa upatikanaji, n.k.
--   Weka vifaa, miundombinu na programu zikiwa na viraka vya kisasa
--   Ufuatiliaji wa usalama -- tekeleza uandikishaji na ufuatiliaji wa programu ya AI (ikiwa ni pamoja na wateja/seva za MCP) na tuma kumbukumbu hizo kwa SIEM kuu kwa kugundua shughuli zisizo za kawaida
--   Msingi wa kuamini sifuri -- tengeneza vipengele kwa kutumia udhibiti wa mtandao na utambulisho kwa njia ya mantiki ili kupunguza harakati za upande hadi upande ikiwa programu ya AI itavamiwa.
+**Kupitisha tokeni** ni muundo mbaya ambapo seva za MCP zinakubali tokeni za wateja bila uthibitishaji sahihi na kuzisambaza kwa API za chini, kinyume na vipimo vya idhini vya MCP.  
 
-# Muhimu Kuu
+#### **Athari za Kiusalama**  
 
-- Misingi ya usalama bado ni muhimu: Uandishi wa msimbo salama, upatikanaji mdogo, uthibitishaji wa mnyororo wa ugavi, na ufuatiliaji endelevu ni muhimu kwa MCP na mzigo wa AI.
-- MCP inaleta hatari mpya—kama vile kuingizwa kwa amri, sumu ya zana, kunyakuliwa kwa kikao, matatizo ya confused deputy, udhaifu wa kupitisha tokeni, na ruhusa nyingi—zinazohitaji udhibiti wa jadi na maalum wa AI.
-- Tumia mbinu thabiti za uthibitishaji, idhini, na usimamizi wa tokeni, ukitumia watoa huduma wa utambulisho wa nje kama Microsoft Entra ID inapowezekana.
-- Linda dhidi ya kuingizwa kwa amri isiyo ya moja kwa moja na sumu ya zana kwa kuthibitisha metadata ya zana, kufuatilia mabadiliko ya mabadiliko, na kutumia suluhisho kama Microsoft Prompt Shields.
-- Tekeleza usimamizi salama wa kikao kwa kutumia vitambulisho vya kikao visivyo na mfuatano, kufunga vikao na utambulisho wa mtumiaji, na kamwe usitumie vikao kwa uthibitishaji.
-- Zuia mashambulizi ya confused deputy kwa kuhitaji idhini wazi ya mtumiaji kwa kila mteja aliyejisajili kwa mabadiliko na kutekeleza mbinu bora za usalama za OAuth.
-- Epuka udhaifu wa kupitisha tokeni kwa kuhakikisha seva za MCP zinakubali tokeni zilizotolewa wazi kwao na kuthibitisha madai ya tokeni ipasavyo.
-- Tibu vipengele vyote katika mnyororo wako wa ugavi wa AI—ikiwa ni pamoja na mifano, embeddings, na watoa muktadha—kwa ukaribu sawa na utegemezi wa msimbo.
-- Endelea kufuatilia maelezo ya MCP yanayobadilika na changia jamii kusaidia kuunda viwango salama.
+- **Kupitisha Udhibiti**: Matumizi ya moja kwa moja ya tokeni za mteja kwa API hupuuza udhibiti muhimu wa kiwango, uthibitishaji, na ufuatiliaji  
+- **Uharibifu wa Njia za Ukaguzi**: Tokeni zilizotolewa na seva za juu hufanya utambulisho wa mteja kuwa mgumu, na hivyo kuvuruga uwezo wa uchunguzi wa matukio  
+- **Utoroshaji wa Data Kupitia Wakala**: Tokeni zisizothibitishwa huruhusu wahalifu kutumia seva kama mawakala wa kufikia data bila idhini  
+- **Uvunjaji wa Mipaka ya Uaminifu**: Dhana za uaminifu za huduma za chini zinaweza kuvunjwa pale ambapo asili ya tokeni haiwezi kuthibitishwa  
+- **Upanuzi wa Shambulio la Huduma Nyingi**: Tokeni zilizovurugwa zinazokubalika katika huduma nyingi huruhusu harakati za upande  
 
-# Rasilimali Zaidi
+#### **Udhibiti wa Usalama Unaohitajika**  
 
-## Rasilimali za Nje
-- [Microsoft Digital Defense Report](https://aka.ms/mddr)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
-- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
-- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
-- [Prompt Injection in MCP (Simon Willison)](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
-- [Tool Poisoning Attacks (Invariant Labs)](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
-- [Rug Pulls in MCP (Wiz Security)](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)
-- [Prompt Shields Documentation (Microsoft)](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-- [OWASP Top 10 for LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559)
+**Mahitaji Yasiyoweza Kujadiliwa:**  
+- **Uthibitishaji wa Tokeni**: Seva za MCP **HAZIRUHUSIWI** kukubali tokeni ambazo hazijatolewa mahsusi kwa seva ya MCP  
+- **Uhakiki wa Watazamaji**: Kila mara hakikisha madai ya watazamaji wa tokeni yanalingana na utambulisho wa seva ya MCP  
+- **Mzunguko Sahihi wa Tokeni**: Tekeleza tokeni za ufikiaji zenye muda mfupi na mbinu salama za mzunguko  
+
+## Usalama wa Mnyororo wa Ugavi kwa Mifumo ya AI  
+
+Usalama wa mnyororo wa ugavi umebadilika zaidi ya utegemezi wa programu za jadi na sasa unajumuisha mfumo mzima wa AI. Utekelezaji wa kisasa wa MCP lazima uthibitishe na kufuatilia kwa makini vipengele vyote vinavyohusiana na AI, kwani kila kimoja kinaweza kuanzisha udhaifu unaoweza kuhatarisha uadilifu wa mfumo.  
+
+### Vipengele Vilivyopanuliwa vya Mnyororo wa Ugavi wa AI  
+
+**Utegemezi wa Programu za Jadi:**  
+- Maktaba na mifumo ya chanzo huria  
+- Picha za kontena na mifumo ya msingi  
+- Zana za maendeleo na njia za ujenzi  
+- Vipengele vya miundombinu na huduma  
+
+**Vipengele Maalum vya Mnyororo wa Ugavi wa AI:**  
+- **Mifano ya Msingi**: Mifano iliyofunzwa awali kutoka kwa watoa huduma mbalimbali inayohitaji uthibitishaji wa asili  
+- **Huduma za Kuweka Misingi**: Huduma za nje za vektorizi na utafutaji wa maana  
+- **Watoa Muktadha**: Vyanzo vya data, hifadhidata za maarifa, na hazina za nyaraka  
+- **API za Wahusika wa Tatu**: Huduma za nje za AI, njia za ML, na sehemu za usindikaji wa data  
+- **Vifaa vya Mfano**: Uzito, usanidi, na aina za mifano zilizofunzwa upya  
+- **Vyanzo vya Data vya Mafunzo**: Seti za data zinazotumika kwa mafunzo na urekebishaji wa mifano  
+
+### Mkakati wa Kina wa Usalama wa Mnyororo wa Ugavi  
+
+#### **Uthibitishaji wa Vipengele na Uaminifu**  
+- **Uthibitishaji wa Asili**: Thibitisha asili, leseni, na uadilifu wa vipengele vyote vya AI kabla ya kuviunganisha  
+- **Tathmini ya Usalama**: Fanya uchunguzi wa udhaifu na mapitio ya usalama kwa mifano, vyanzo vya data, na huduma za AI  
+- **Uchambuzi wa Sifa**: Pima rekodi ya usalama na mazoea ya watoa huduma za AI  
+- **Uthibitishaji wa Uzingatiaji**: Hakikisha vipengele vyote vinakidhi mahitaji ya usalama na kanuni za shirika  
+
+#### **Njia Salama za Utekelezaji**  
+- **Usalama wa Kiotomatiki wa CI/CD**: Jumuisha uchunguzi wa usalama katika njia za utekelezaji kiotomatiki  
+- **Uadilifu wa Vifaa**: Tekeleza uthibitishaji wa kriptografia kwa vifaa vyote vilivyotumika (msimbo, mifano, usanidi)  
+- **Utekelezaji wa Hatua kwa Hatua**: Tumia mikakati ya utekelezaji wa hatua kwa hatua na uthibitishaji wa usalama katika kila hatua  
+- **Hifadhi za Vifaa Zenye Uaminifu**: Tumia tu vifaa kutoka kwenye hifadhi zilizothibitishwa na salama  
+
+#### **Ufuatiliaji Endelevu na Majibu**  
+- **Uchunguzi wa Utegemezi**: Ufuatiliaji wa udhaifu unaoendelea kwa utegemezi wote wa programu na vipengele vya AI  
+- **Ufuatiliaji wa Mfano**: Tathmini endelevu ya tabia ya mifano, mwelekeo wa utendaji, na hali zisizo za kawaida za usalama  
+- **Ufuatiliaji wa Afya ya Huduma**: Fuata hali ya huduma za nje za AI kwa upatikanaji, matukio ya usalama, na mabadiliko ya sera  
+- **Ujumuishaji wa Ujasusi wa Vitisho**: Jumuisha vyanzo vya vitisho vinavyohusiana na usalama wa AI na ML  
+
+#### **Udhibiti wa Ufikiaji na Upendeleo wa Chini Kabisa**  
+- **Ruhusa za Kiwango cha Kipengele**: Punguza ufikiaji wa mifano, data, na huduma kulingana na mahitaji ya biashara  
+- **Usimamizi wa Akaunti za Huduma**: Tekeleza akaunti za huduma maalum zenye ruhusa ndogo zinazohitajika  
+- **Ugawaji wa Mtandao**: Tenganisha vipengele vya AI na punguza ufikiaji wa mtandao kati ya huduma  
+- **Udhibiti wa Lango la API**: Tumia malango ya API yaliyosentralishwa kudhibiti na kufuatilia ufikiaji wa huduma za nje za AI  
+
+#### **Majibu ya Matukio na Urejeshaji**  
+- **Taratibu za Majibu ya Haraka**: Michakato iliyoanzishwa ya kurekebisha au kubadilisha vipengele vya AI vilivyohatarishwa  
+- **Mzunguko wa Kitambulisho**: Mifumo ya kiotomatiki ya kubadilisha siri, funguo za API, na vitambulisho vya huduma  
+- **Uwezo wa Kurejesha**: Uwezo wa kurudi haraka kwenye matoleo ya awali yaliyothibitishwa ya vipengele vya AI  
+- **Urejeshaji wa Uvunjaji wa Mnyororo wa Ugavi**: Taratibu maalum za kujibu uvunjaji wa huduma za AI za juu  
+
+...
+### **Suluhisho za Usalama za Microsoft**
+- [Microsoft Prompt Shields Documentation](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
+- [Huduma ya Usalama wa Maudhui ya Azure](https://learn.microsoft.com/azure/ai-services/content-safety/)
+- [Usalama wa Microsoft Entra ID](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
+- [Mbinu Bora za Usimamizi wa Tokeni za Azure](https://learn.microsoft.com/entra/identity-platform/access-tokens)
 - [GitHub Advanced Security](https://github.com/security/advanced-security)
-- [Azure DevOps](https://azure.microsoft.com/products/devops)
-- [Azure Repos](https://azure.microsoft.com/products/devops/repos/)
-- [The Journey to Secure the Software Supply Chain at Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/)
-- [Secure Least-Privileged Access (Microsoft)](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
-- [Best Practices for Token Validation and Lifetime](https://learn.microsoft.com/entra/identity-platform/access-tokens)
-- [Use Secure Token Storage and Encrypt Tokens (YouTube)](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
-- [Azure API Management as Auth Gateway for MCP](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
-- [Using Microsoft Entra ID to Authenticate with MCP Servers](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 
-## Nyaraka Zaidi za Usalama
+### **Miongozo ya Utekelezaji na Mafunzo**
+- [Azure API Management kama Lango la Uthibitishaji wa MCP](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+- [Uthibitishaji wa Microsoft Entra ID na Seva za MCP](https://den.dev/blog/mcp-server-auth-entra-id-session/)
+- [Uhifadhi Salama wa Tokeni na Usimbaji (Video)](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
 
-Kwa mwongozo wa kina zaidi wa usalama, tafadhali rejea nyaraka hizi:
+### **Usalama wa DevOps na Mnyororo wa Ugavi**
+- [Usalama wa Azure DevOps](https://azure.microsoft.com/products/devops)
+- [Usalama wa Azure Repos](https://azure.microsoft.com/products/devops/repos/)
+- [Safari ya Usalama wa Mnyororo wa Ugavi wa Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/)
 
-- [MCP Security Best Practices 2025](./mcp-security-best-practices-2025.md) - Orodha kamili ya mbinu bora za usalama kwa utekelezaji wa MCP
-- [Azure Content Safety Implementation](./azure-content-safety-implementation.md) - Mifano ya utekelezaji wa kuunganisha Azure Content Safety na seva za MCP
-- [MCP Security Controls 2025](./mcp-security-controls-2025.md) - Udhibiti na mbinu za usalama za hivi karibuni kwa usalama wa MCP
-- [MCP Best Practices](./mcp-best-practices.md) - Mwongozo wa haraka wa usalama wa MCP
+## **Nyaraka za Ziada za Usalama**
 
-### Ifuatayo
+Kwa mwongozo wa kina wa usalama, rejelea nyaraka maalum katika sehemu hii:
 
-Ifuatayo: [Sura ya 3: Kuanzia](../03-GettingStarted/README.md)
+- **[MCP Security Best Practices 2025](./mcp-security-best-practices-2025.md)** - Mbinu bora za usalama kamili kwa utekelezaji wa MCP  
+- **[Azure Content Safety Implementation](./azure-content-safety-implementation.md)** - Mifano ya utekelezaji wa vitendo kwa ujumuishaji wa Usalama wa Maudhui ya Azure  
+- **[MCP Security Controls 2025](./mcp-security-controls-2025.md)** - Udhibiti wa usalama wa hivi karibuni na mbinu za utekelezaji wa MCP  
+- **[MCP Best Practices Quick Reference](./mcp-best-practices.md)** - Mwongozo wa haraka wa mbinu muhimu za usalama wa MCP  
 
-**Kiarifu cha Msamaha**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+---
+
+## Kinachofuata
+
+Kinachofuata: [Sura ya 3: Kuanza](../03-GettingStarted/README.md)
+
+**Kanusho**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati asilia katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
