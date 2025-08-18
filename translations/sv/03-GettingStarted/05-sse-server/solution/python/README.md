@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-07-13T20:15:32+00:00",
+  "original_hash": "69ba3bd502bd743233137bac5539c08b",
+  "translation_date": "2025-08-18T14:58:08+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "sv"
 }
 -->
 # Köra detta exempel
 
-Det rekommenderas att du installerar `uv` men det är inte ett måste, se [instruktioner](https://docs.astral.sh/uv/#highlights)
+Det rekommenderas att installera `uv`, men det är inte ett krav, se [instruktioner](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Skapa en virtuell miljö
 
@@ -32,12 +32,12 @@ pip install "mcp[cli]"
 ## -3- Kör exemplet
 
 ```bash
-mcp run server.py
+uvicorn server:app
 ```
 
 ## -4- Testa exemplet
 
-Med servern igång i ett terminalfönster, öppna ett annat terminalfönster och kör följande kommando:
+Med servern igång i en terminal, öppna en annan terminal och kör följande kommando:
 
 ```bash
 mcp dev server.py
@@ -47,12 +47,12 @@ Detta bör starta en webbserver med ett visuellt gränssnitt som låter dig test
 
 När servern är ansluten:
 
-- prova att lista verktyg och kör `add` med argumenten 2 och 4, du bör se 6 som resultat.
-- gå till resources och resource template och anropa get_greeting, skriv in ett namn och du bör se en hälsning med det namn du angav.
+- försök lista verktyg och kör `add`, med argumenten 2 och 4, du bör se 6 som resultat.
+- gå till resurser och resursmall och anropa get_greeting, skriv in ett namn och du bör se en hälsning med det namn du angav.
 
 ### Testa i CLI-läge
 
-Inspektören du körde är egentligen en Node.js-app och `mcp dev` är ett omslag runt den.
+Inspektorn du körde är faktiskt en Node.js-app och `mcp dev` är ett omslag runt den.
 
 Du kan starta den direkt i CLI-läge genom att köra följande kommando:
 
@@ -60,7 +60,7 @@ Du kan starta den direkt i CLI-läge genom att köra följande kommando:
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Detta listar alla verktyg som finns tillgängliga på servern. Du bör se följande output:
+Detta kommer att lista alla verktyg som finns tillgängliga på servern. Du bör se följande output:
 
 ```text
 {
@@ -111,9 +111,9 @@ Du bör se följande output:
 }
 ```
 
-> ![!TIP]
-> Det går oftast mycket snabbare att köra inspektören i CLI-läge än i webbläsaren.
-> Läs mer om inspektören [här](https://github.com/modelcontextprotocol/inspector).
+> [!TIP]
+> Det är vanligtvis mycket snabbare att köra inspektorn i CLI-läge än i webbläsaren.
+> Läs mer om inspektorn [här](https://github.com/modelcontextprotocol/inspector).
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
