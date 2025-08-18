@@ -2,6 +2,109 @@
 
 This document serves as a record of all significant changes made to the Model Context Protocol (MCP) for Beginners curriculum. Changes are documented in reverse chronological order (newest changes first).
 
+## August 18, 2025
+
+### Security Documentation Comprehensive Update - MCP 2025-06-18 Standards
+
+#### MCP Security Best Practices (02-Security/) - Complete Modernization
+- **MCP-SECURITY-BEST-PRACTICES-2025.md**: Complete rewrite aligned with MCP Specification 2025-06-18
+  - **Mandatory Requirements**: Added explicit MUST/MUST NOT requirements from official specification with clear visual indicators
+  - **12 Core Security Practices**: Restructured from 15-item list to comprehensive security domains
+    - Token Security & Authentication with external identity provider integration
+    - Session Management & Transport Security with cryptographic requirements
+    - AI-Specific Threat Protection with Microsoft Prompt Shields integration
+    - Access Control & Permissions with principle of least privilege
+    - Content Safety & Monitoring with Azure Content Safety integration
+    - Supply Chain Security with comprehensive component verification
+    - OAuth Security & Confused Deputy Prevention with PKCE implementation
+    - Incident Response & Recovery with automated capabilities
+    - Compliance & Governance with regulatory alignment
+    - Advanced Security Controls with zero trust architecture
+    - Microsoft Security Ecosystem Integration with comprehensive solutions
+    - Continuous Security Evolution with adaptive practices
+  - **Microsoft Security Solutions**: Enhanced integration guidance for Prompt Shields, Azure Content Safety, Entra ID, and GitHub Advanced Security
+  - **Implementation Resources**: Categorized comprehensive resource links by Official MCP Documentation, Microsoft Security Solutions, Security Standards, and Implementation Guides
+
+#### Advanced Security Controls (02-Security/) - Enterprise Implementation
+- **MCP-SECURITY-CONTROLS-2025.md**: Complete overhaul with enterprise-grade security framework
+  - **9 Comprehensive Security Domains**: Expanded from basic controls to detailed enterprise framework
+    - Advanced Authentication & Authorization with Microsoft Entra ID integration
+    - Token Security & Anti-Passthrough Controls with comprehensive validation
+    - Session Security Controls with hijacking prevention
+    - AI-Specific Security Controls with prompt injection and tool poisoning prevention
+    - Confused Deputy Attack Prevention with OAuth proxy security
+    - Tool Execution Security with sandboxing and isolation
+    - Supply Chain Security Controls with dependency verification
+    - Monitoring & Detection Controls with SIEM integration
+    - Incident Response & Recovery with automated capabilities
+  - **Implementation Examples**: Added detailed YAML configuration blocks and code examples
+  - **Microsoft Solutions Integration**: Comprehensive coverage of Azure security services, GitHub Advanced Security, and enterprise identity management
+
+#### Advanced Topics Security (05-AdvancedTopics/mcp-security/) - Production-Ready Implementation
+- **README.md**: Complete rewrite for enterprise security implementation
+  - **Current Specification Alignment**: Updated to MCP Specification 2025-06-18 with mandatory security requirements
+  - **Enhanced Authentication**: Microsoft Entra ID integration with comprehensive .NET and Java Spring Security examples
+  - **AI Security Integration**: Microsoft Prompt Shields and Azure Content Safety implementation with detailed Python examples
+  - **Advanced Threat Mitigation**: Comprehensive implementation examples for
+    - Confused Deputy Attack Prevention with PKCE and user consent validation
+    - Token Passthrough Prevention with audience validation and secure token management
+    - Session Hijacking Prevention with cryptographic binding and behavioral analysis
+  - **Enterprise Security Integration**: Azure Application Insights monitoring, threat detection pipelines, and supply chain security
+  - **Implementation Checklist**: Clear mandatory vs. recommended security controls with Microsoft security ecosystem benefits
+
+### Documentation Quality & Standards Alignment
+- **Specification References**: Updated all references to current MCP Specification 2025-06-18
+- **Microsoft Security Ecosystem**: Enhanced integration guidance throughout all security documentation
+- **Practical Implementation**: Added detailed code examples in .NET, Java, and Python with enterprise patterns
+- **Resource Organization**: Comprehensive categorization of official documentation, security standards, and implementation guides
+- **Visual Indicators**: Clear marking of mandatory requirements vs. recommended practices
+
+## August 18, 2025
+
+### Major Protocol Standards Update - MCP 2025-06-18 Alignment
+
+#### Core Concepts (01-CoreConcepts/) - Complete Modernization
+- **Protocol Version Update**: Updated to reference current MCP Specification 2025-06-18 with date-based versioning (YYYY-MM-DD format)
+- **Architecture Refinement**: Enhanced descriptions of Hosts, Clients, and Servers to reflect current MCP architecture patterns
+  - Hosts now clearly defined as AI applications coordinating multiple MCP client connections
+  - Clients described as protocol connectors maintaining one-to-one server relationships
+  - Servers enhanced with local vs. remote deployment scenarios
+- **Primitive Restructuring**: Complete overhaul of server and client primitives
+  - Server Primitives: Resources (data sources), Prompts (templates), Tools (executable functions) with detailed explanations and examples
+  - Client Primitives: Sampling (LLM completions), Elicitation (user input), Logging (debugging/monitoring)
+  - Updated with current discovery (`*/list`), retrieval (`*/get`), and execution (`*/call`) method patterns
+- **Protocol Architecture**: Introduced two-layer architecture model
+  - Data Layer: JSON-RPC 2.0 foundation with lifecycle management and primitives
+  - Transport Layer: STDIO (local) and Streamable HTTP with SSE (remote) transport mechanisms
+- **Security Framework**: Comprehensive security principles including explicit user consent, data privacy protection, tool execution safety, and transport layer security
+- **Communication Patterns**: Updated protocol messages to show initialization, discovery, execution, and notification flows
+- **Code Examples**: Refreshed multi-language examples (.NET, Java, Python, JavaScript) to reflect current MCP SDK patterns
+
+#### Security (02-Security/) - Comprehensive Security Overhaul  
+- **Standards Alignment**: Full alignment with MCP Specification 2025-06-18 security requirements
+- **Authentication Evolution**: Documented evolution from custom OAuth servers to external identity provider delegation (Microsoft Entra ID)
+- **AI-Specific Threat Analysis**: Enhanced coverage of modern AI attack vectors
+  - Detailed prompt injection attack scenarios with real-world examples
+  - Tool poisoning mechanisms and "rug pull" attack patterns
+  - Context window poisoning and model confusion attacks
+- **Microsoft AI Security Solutions**: Comprehensive coverage of Microsoft security ecosystem
+  - AI Prompt Shields with advanced detection, spotlighting, and delimiter techniques
+  - Azure Content Safety integration patterns
+  - GitHub Advanced Security for supply chain protection
+- **Advanced Threat Mitigation**: Detailed security controls for
+  - Session hijacking with MCP-specific attack scenarios and cryptographic session ID requirements
+  - Confused deputy problems in MCP proxy scenarios with explicit consent requirements
+  - Token passthrough vulnerabilities with mandatory validation controls
+- **Supply Chain Security**: Expanded AI supply chain coverage including foundation models, embeddings services, context providers, and third-party APIs
+- **Foundation Security**: Enhanced integration with enterprise security patterns including zero trust architecture and Microsoft security ecosystem
+- **Resource Organization**: Categorized comprehensive resource links by type (Official Docs, Standards, Research, Microsoft Solutions, Implementation Guides)
+
+### Documentation Quality Improvements
+- **Structured Learning Objectives**: Enhanced learning objectives with specific, actionable outcomes 
+- **Cross-References**: Added links between related security and core concept topics
+- **Current Information**: Updated all date references and specification links to current standards
+- **Implementation Guidance**: Added specific, actionable implementation guidelines throughout both sections
+
 ## July 16, 2025
 
 ### README and Navigation Improvements
