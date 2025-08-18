@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "261078280431a58292789702da620407",
-  "translation_date": "2025-07-28T23:22:34+00:00",
+  "original_hash": "41f16dac486d2086a53bc644a01cbe42",
+  "translation_date": "2025-08-18T10:25:35+00:00",
   "source_file": "07-LessonsfromEarlyAdoption/README.md",
   "language_code": "zh"
 }
@@ -17,13 +17,13 @@ _（点击上方图片观看本课视频）_
 
 本模块探讨了真实的组织和开发者如何利用 Model Context Protocol (MCP) 来解决实际问题并推动创新。通过详细的案例研究和实践项目，您将了解 MCP 如何实现安全、可扩展的 AI 集成，将语言模型、工具和企业数据连接在一起。
 
-### 📚 MCP 实际应用
+### 📚 了解 MCP 的实际应用
 
-想了解这些原则如何应用于生产工具？请查看我们的 [**10 个正在改变开发者生产力的 Microsoft MCP 服务器**](microsoft-mcp-servers.md)，其中展示了您今天就可以使用的真实 Microsoft MCP 服务器。
+想看看这些原则如何应用于生产工具？请查看我们的 [**10 个正在改变开发者生产力的 Microsoft MCP 服务器**](microsoft-mcp-servers.md)，其中展示了您今天就可以使用的真实 Microsoft MCP 服务器。
 
 ## 概述
 
-本课程探讨了早期采用者如何利用 Model Context Protocol (MCP) 来解决现实中的挑战，并推动各行业的创新。通过详细的案例研究和实践项目，您将看到 MCP 如何通过统一框架实现标准化、安全且可扩展的 AI 集成，将大型语言模型、工具和企业数据连接起来。您将获得设计和构建基于 MCP 的解决方案的实践经验，学习经过验证的实施模式，并发现将 MCP 部署到生产环境中的最佳实践。本课程还重点介绍了新兴趋势、未来方向以及帮助您保持 MCP 技术及其生态系统前沿的开源资源。
+本课程探讨了早期采用者如何利用 Model Context Protocol (MCP) 来解决现实中的挑战，并推动各行业的创新。通过详细的案例研究和实践项目，您将看到 MCP 如何实现标准化、安全且可扩展的 AI 集成——在一个统一框架中连接大型语言模型、工具和企业数据。您将获得设计和构建基于 MCP 的解决方案的实践经验，学习经过验证的实施模式，并发现将 MCP 部署到生产环境中的最佳实践。本课程还重点介绍了新兴趋势、未来方向以及帮助您保持 MCP 技术及其生态系统前沿的开源资源。
 
 ## 学习目标
 
@@ -182,7 +182,7 @@ public class DiagnosticAssistant
 }
 ```
 
-**结果：** 为医生提供了改进的诊断建议，同时完全符合 HIPAA 合规性，并显著减少了系统间的上下文切换。
+**结果：** 为医生提供改进的诊断建议，同时完全符合 HIPAA 标准，并显著减少了系统间的上下文切换。
 
 ### 案例研究 3：金融服务风险分析
 
@@ -229,15 +229,15 @@ public class FinancialRiskMCPServer {
 
 ### 案例研究 4：Microsoft Playwright MCP 服务器用于浏览器自动化
 
-Microsoft 开发了 [Playwright MCP 服务器](https://github.com/microsoft/playwright-mcp)，通过 Model Context Protocol 实现安全、标准化的浏览器自动化。这个生产就绪的服务器允许 AI 代理和 LLM 在受控、可审计和可扩展的环境中与网络浏览器交互，支持自动化网页测试、数据提取和端到端工作流等用例。
+Microsoft 开发了 [Playwright MCP 服务器](https://github.com/microsoft/playwright-mcp)，通过 Model Context Protocol 实现安全、标准化的浏览器自动化。这个生产级服务器允许 AI 代理和 LLM 在受控、可审计和可扩展的环境中与网页浏览器交互，支持自动化网页测试、数据提取和端到端工作流等用例。
 
-> **🎯 生产就绪工具**
+> **🎯 生产级工具**
 > 
-> 本案例研究展示了一个您今天就可以使用的真实 MCP 服务器！了解更多关于 Playwright MCP 服务器及其他 9 个生产就绪 Microsoft MCP 服务器的信息，请查看我们的 [**Microsoft MCP 服务器指南**](microsoft-mcp-servers.md#8--playwright-mcp-server)。
+> 本案例展示了一个您今天就可以使用的真实 MCP 服务器！了解更多关于 Playwright MCP 服务器及其他 9 个生产级 Microsoft MCP 服务器的信息，请参阅我们的 [**Microsoft MCP 服务器指南**](microsoft-mcp-servers.md#8--playwright-mcp-server)。
 
 **主要功能：**
-- 将浏览器自动化功能（导航、表单填写、截图捕获等）作为 MCP 工具公开
-- 实现严格的访问控制和沙箱机制，防止未经授权的操作
+- 将浏览器自动化功能（导航、表单填写、截图捕获等）作为 MCP 工具暴露
+- 实现严格的访问控制和沙箱机制以防止未经授权的操作
 - 提供所有浏览器交互的详细审计日志
 - 支持与 Azure OpenAI 和其他 LLM 提供商集成，实现代理驱动的自动化
 - 为 GitHub Copilot 的编码代理提供网页浏览功能
@@ -281,9 +281,9 @@ server.listen(8080);
 **结果：**
 
 - 为 AI 代理和 LLM 实现了安全的程序化浏览器自动化
-- 减少了手动测试工作量，提高了 Web 应用的测试覆盖率
+- 减少了手动测试工作量，提高了网页应用的测试覆盖率
 - 提供了一个可重用、可扩展的框架，用于企业环境中的基于浏览器的工具集成
-- 支持 GitHub Copilot 的网页浏览功能
+- 为 GitHub Copilot 提供了网页浏览功能
 
 **参考资料：**
 
@@ -294,9 +294,9 @@ server.listen(8080);
 
 Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) 是 Microsoft 提供的企业级托管 Model Context Protocol 实现，旨在作为云服务提供可扩展、安全且合规的 MCP 服务器功能。Azure MCP 使组织能够快速部署、管理和集成 MCP 服务器与 Azure AI、数据和安全服务，从而减少运营开销并加速 AI 采用。
 
-> **🎯 生产就绪工具**
+> **🎯 生产级工具**
 > 
-> 这是一个您今天就可以使用的真实 MCP 服务器！了解更多关于 Azure AI Foundry MCP 服务器的信息，请查看我们的 [**Microsoft MCP 服务器指南**](microsoft-mcp-servers.md)。
+> 这是一个您今天就可以使用的真实 MCP 服务器！了解更多关于 Azure AI Foundry MCP 服务器的信息，请参阅我们的 [**Microsoft MCP 服务器指南**](microsoft-mcp-servers.md)。
 
 - 提供内置扩展、监控和安全功能的完全托管 MCP 服务器托管服务
 - 与 Azure OpenAI、Azure AI Search 和其他 Azure 服务的原生集成
@@ -341,10 +341,11 @@ spec:
 - [Azure MCP 文档](https://aka.ms/azmcp)  
 - [Azure MCP 服务器 GitHub 仓库](https://github.com/Azure/azure-mcp)  
 - [Azure AI 服务](https://azure.microsoft.com/en-us/products/ai-services/)  
+- [Microsoft MCP 中心](https://mcp.azure.com)  
 
 ### 案例研究 6：NLWeb
 
-MCP（Model Context Protocol）是一种新兴协议，用于让聊天机器人和 AI 助手与工具交互。每个 NLWeb 实例也是一个 MCP 服务器，支持一个核心方法 `ask`，用于以自然语言向网站提问。返回的响应利用了 schema.org，这是一种广泛使用的描述 Web 数据的词汇表。简单来说，MCP 之于 NLWeb 就像 Http 之于 HTML。NLWeb 结合了协议、Schema.org 格式和示例代码，帮助网站快速创建这些端点，从而通过对话界面为人类提供便利，同时通过自然的代理对代理交互为机器提供支持。
+MCP（Model Context Protocol）是一种新兴协议，用于让聊天机器人和 AI 助手与工具交互。每个 NLWeb 实例也是一个 MCP 服务器，支持一个核心方法 `ask`，用于以自然语言向网站提问。返回的响应利用了 schema.org，这是一种广泛使用的描述网页数据的词汇表。简单来说，MCP 之于 NLWeb 就像 Http 之于 HTML。NLWeb 结合了协议、Schema.org 格式和示例代码，帮助网站快速创建这些端点，从而通过对话界面为人类提供便利，并通过自然的代理间交互为机器提供支持。
 
 NLWeb 包含两个主要组件：
 - 一个简单的协议，用于以自然语言与网站交互，以及一种格式，利用 JSON 和 schema.org 返回答案。有关 REST API 的更多详细信息，请参阅文档。
@@ -356,11 +357,11 @@ NLWeb 包含两个主要组件：
 
 ### 案例研究 7：Azure AI Foundry MCP 服务器 – 企业 AI 代理集成
 
-Azure AI Foundry MCP 服务器展示了 MCP 如何在企业环境中编排和管理 AI 代理及工作流。通过将 MCP 与 Azure AI Foundry 集成，组织可以标准化代理交互，利用 Foundry 的工作流管理，并确保安全、可扩展的部署。
+Azure AI Foundry MCP 服务器展示了 MCP 如何用于在企业环境中编排和管理 AI 代理及工作流。通过将 MCP 与 Azure AI Foundry 集成，组织可以标准化代理交互，利用 Foundry 的工作流管理，并确保安全、可扩展的部署。
 
-> **🎯 生产就绪工具**
+> **🎯 生产级工具**
 > 
-> 这是一个您今天就可以使用的真实 MCP 服务器！了解更多关于 Azure AI Foundry MCP 服务器的信息，请查看我们的 [**Microsoft MCP 服务器指南**](microsoft-mcp-servers.md#9--azure-ai-foundry-mcp-server)。
+> 这是一个您今天就可以使用的真实 MCP 服务器！了解更多关于 Azure AI Foundry MCP 服务器的信息，请参阅我们的 [**Microsoft MCP 服务器指南**](microsoft-mcp-servers.md#9--azure-ai-foundry-mcp-server)。
 
 **主要功能：**
 - 全面访问 Azure 的 AI 生态系统，包括模型目录和部署管理
@@ -390,28 +391,28 @@ Foundry MCP Playground 提供了一个即用型环境，用于实验 MCP 服务�
 
 ### 案例研究 9：Microsoft Learn Docs MCP 服务器 – AI 驱动的文档访问
 
-Microsoft Learn Docs MCP 服务器是一个云托管服务，通过 Model Context Protocol 为 AI 助手提供实时访问官方 Microsoft 文档的能力。这个生产就绪的服务器连接到全面的 Microsoft Learn 生态系统，并支持对所有官方 Microsoft 来源的语义搜索。
-> **🎯 面向生产环境的工具**  
+Microsoft Learn Docs MCP 服务器是一个云托管服务，通过 Model Context Protocol 为 AI 助手提供实时访问官方 Microsoft 文档的能力。这个生产级服务器连接到全面的 Microsoft Learn 生态系统，并支持对所有官方 Microsoft 资源的语义搜索。
+> **🎯 适用于生产环境的工具**  
 >  
-> 这是一个您今天就可以使用的真正的 MCP 服务器！在我们的 [**Microsoft MCP 服务器指南**](microsoft-mcp-servers.md#1--microsoft-learn-docs-mcp-server) 中了解更多关于 Microsoft Learn Docs MCP 服务器的信息。
+> 这是一个可以立即使用的真实 MCP 服务器！在我们的 [**Microsoft MCP 服务器指南**](microsoft-mcp-servers.md#1--microsoft-learn-docs-mcp-server) 中了解更多信息。
 **主要功能：**
-- 实时访问官方 Microsoft 文档、Azure 文档和 Microsoft 365 文档
+- 实时访问官方微软文档、Azure文档和Microsoft 365文档
 - 高级语义搜索功能，能够理解上下文和意图
-- 随 Microsoft Learn 内容发布而始终保持最新
-- 覆盖范围广泛，包括 Microsoft Learn、Azure 文档和 Microsoft 365 资源
-- 返回最多 10 个高质量内容片段，附带文章标题和 URL
+- 随着Microsoft Learn内容发布，信息始终保持最新
+- 全面覆盖Microsoft Learn、Azure文档和Microsoft 365资源
+- 返回最多10个高质量内容片段，包括文章标题和URL
 
-**为什么这很重要：**
-- 解决 Microsoft 技术领域“过时的 AI 知识”问题
-- 确保 AI 助手能够访问最新的 .NET、C#、Azure 和 Microsoft 365 功能
-- 提供权威的第一方信息以生成准确的代码
-- 对于使用快速发展的 Microsoft 技术的开发者至关重要
+**为什么至关重要：**
+- 解决微软技术领域“过时的AI知识”问题
+- 确保AI助手能够访问最新的.NET、C#、Azure和Microsoft 365功能
+- 提供权威的一手信息以生成准确的代码
+- 对于使用快速发展的微软技术的开发者来说至关重要
 
 **结果：**
-- 显著提高 AI 生成的 Microsoft 技术代码的准确性
+- 显著提高AI生成的微软技术代码的准确性
 - 减少查找最新文档和最佳实践所花费的时间
 - 通过上下文感知的文档检索提升开发者生产力
-- 无需离开 IDE 即可无缝集成到开发工作流中
+- 无需离开IDE即可与开发工作流无缝集成
 
 **参考资料：**
 - [Microsoft Learn Docs MCP Server GitHub Repository](https://github.com/MicrosoftDocs/mcp)
@@ -419,155 +420,149 @@ Microsoft Learn Docs MCP 服务器是一个云托管服务，通过 Model Contex
 
 ## 实践项目
 
-### 项目 1：构建多提供商 MCP 服务器
+### 项目1：构建多提供商MCP服务器
 
-**目标：** 创建一个 MCP 服务器，根据特定条件将请求路由到多个 AI 模型提供商。
+**目标：** 创建一个MCP服务器，根据特定条件将请求路由到多个AI模型提供商。
 
 **需求：**
-
-- 支持至少三个不同的模型提供商（例如 OpenAI、Anthropic、本地模型）
+- 支持至少三个不同的模型提供商（例如OpenAI、Anthropic、本地模型）
 - 实现基于请求元数据的路由机制
-- 创建用于管理提供商凭据的配置系统
+- 创建一个配置系统以管理提供商凭证
 - 添加缓存以优化性能和成本
-- 构建一个简单的仪表板用于监控使用情况
+- 构建一个简单的仪表板以监控使用情况
 
 **实施步骤：**
-
-1. 设置基本的 MCP 服务器基础设施
-2. 为每个 AI 模型服务实现提供商适配器
+1. 设置基本的MCP服务器基础架构
+2. 为每个AI模型服务实现提供商适配器
 3. 创建基于请求属性的路由逻辑
 4. 添加频繁请求的缓存机制
 5. 开发监控仪表板
 6. 使用各种请求模式进行测试
 
-**技术选型：** 可选择 Python（或 .NET/Java/Python），使用 Redis 进行缓存，并选择一个简单的 Web 框架用于仪表板。
+**技术选择：** 可选择Python（.NET/Java/Python根据偏好），Redis用于缓存，以及一个简单的Web框架用于仪表板。
 
-### 项目 2：企业提示管理系统
+### 项目2：企业提示管理系统
 
-**目标：** 开发一个基于 MCP 的系统，用于在组织内管理、版本控制和部署提示模板。
+**目标：** 开发一个基于MCP的系统，用于管理、版本控制和部署组织内的提示模板。
 
 **需求：**
-
-- 创建一个集中式的提示模板存储库
+- 创建一个集中式提示模板存储库
 - 实现版本控制和审批工作流
 - 构建带有示例输入的模板测试功能
 - 开发基于角色的访问控制
-- 创建用于模板检索和部署的 API
+- 创建一个用于模板检索和部署的API
 
 **实施步骤：**
-
-1. 设计用于存储模板的数据库架构
-2. 创建用于模板 CRUD 操作的核心 API
+1. 设计用于模板存储的数据库架构
+2. 创建用于模板CRUD操作的核心API
 3. 实现版本控制系统
 4. 构建审批工作流
 5. 开发测试框架
-6. 创建一个简单的 Web 界面用于管理
-7. 与 MCP 服务器集成
+6. 创建一个简单的Web界面用于管理
+7. 与MCP服务器集成
 
-**技术选型：** 可选择后端框架、SQL 或 NoSQL 数据库，以及一个前端框架用于管理界面。
+**技术选择：** 可选择后端框架、SQL或NoSQL数据库，以及一个前端框架用于管理界面。
 
-### 项目 3：基于 MCP 的内容生成平台
+### 项目3：基于MCP的内容生成平台
 
-**目标：** 构建一个内容生成平台，利用 MCP 提供不同内容类型的一致结果。
+**目标：** 构建一个内容生成平台，利用MCP为不同内容类型提供一致的结果。
 
 **需求：**
-
 - 支持多种内容格式（博客文章、社交媒体、营销文案）
-- 实现基于模板的生成并支持自定义选项
+- 实现基于模板的生成并提供自定义选项
 - 创建内容审查和反馈系统
 - 跟踪内容性能指标
 - 支持内容版本控制和迭代
 
 **实施步骤：**
-
-1. 设置 MCP 客户端基础设施
+1. 设置MCP客户端基础架构
 2. 为不同内容类型创建模板
 3. 构建内容生成管道
 4. 实现审查系统
 5. 开发指标跟踪系统
 6. 创建用于模板管理和内容生成的用户界面
 
-**技术选型：** 可选择您偏好的编程语言、Web 框架和数据库系统。
+**技术选择：** 可选择的编程语言、Web框架和数据库系统。
 
-## MCP 技术的未来方向
+## MCP技术的未来方向
 
 ### 新兴趋势
 
-1. **多模态 MCP**
-   - 扩展 MCP 以标准化与图像、音频和视频模型的交互
+1. **多模态MCP**
+   - 扩展MCP以标准化与图像、音频和视频模型的交互
    - 开发跨模态推理能力
-   - 为不同模态制定标准化的提示格式
+   - 为不同模态制定标准化提示格式
 
-2. **联邦 MCP 基础设施**
-   - 分布式 MCP 网络，可在组织间共享资源
-   - 用于安全模型共享的标准化协议
+2. **联邦MCP基础架构**
+   - 分布式MCP网络，可在组织间共享资源
+   - 安全模型共享的标准化协议
    - 隐私保护计算技术
 
-3. **MCP 市场**
-   - 用于共享和货币化 MCP 模板和插件的生态系统
+3. **MCP市场**
+   - 用于共享和货币化MCP模板和插件的生态系统
    - 质量保证和认证流程
-   - 与模型市场的集成
+   - 与模型市场集成
 
-4. **面向边缘计算的 MCP**
-   - 为资源受限的边缘设备调整 MCP 标准
-   - 针对低带宽环境优化的协议
-   - 专为物联网生态系统设计的 MCP 实现
+4. **用于边缘计算的MCP**
+   - 针对资源受限的边缘设备优化MCP标准
+   - 低带宽环境的优化协议
+   - 专为物联网生态系统设计的MCP实现
 
 5. **监管框架**
-   - 开发用于合规的 MCP 扩展
-   - 标准化的审计记录和可解释性接口
-   - 与新兴 AI 治理框架的集成
+   - 开发用于监管合规的MCP扩展
+   - 标准化审计记录和可解释性接口
+   - 与新兴AI治理框架集成
 
-### 来自 Microsoft 的 MCP 解决方案
+### 来自微软的MCP解决方案
 
-Microsoft 和 Azure 开发了多个开源代码库，帮助开发者在各种场景中实现 MCP：
+微软和Azure开发了多个开源存储库，帮助开发者在各种场景中实现MCP：
 
-#### Microsoft 组织
+#### Microsoft组织
 
-1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - 用于浏览器自动化和测试的 Playwright MCP 服务器
-2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - 用于本地测试和社区贡献的 OneDrive MCP 服务器实现
-3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb 是一组开放协议及相关开源工具，主要关注为 AI Web 建立基础层
+1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - 用于浏览器自动化和测试的Playwright MCP服务器
+2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - 用于本地测试和社区贡献的OneDrive MCP服务器实现
+3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb是开放协议和相关开源工具的集合，主要关注建立AI Web的基础层
 
-#### Azure-Samples 组织
+#### Azure-Samples组织
 
-1. [mcp](https://github.com/Azure-Samples/mcp) - 提供在 Azure 上使用多种语言构建和集成 MCP 服务器的示例、工具和资源
-2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - 演示当前 Model Context Protocol 规范认证的参考 MCP 服务器
-3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - 使用 Azure Functions 实现的远程 MCP 服务器的语言特定代码库
-4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - 使用 Python 构建和部署自定义远程 MCP 服务器的快速入门模板
-5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - 使用 .NET/C# 构建和部署自定义远程 MCP 服务器的快速入门模板
-6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - 使用 TypeScript 构建和部署自定义远程 MCP 服务器的快速入门模板
-7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - 使用 Python 将 Azure API Management 作为远程 MCP 服务器的 AI 网关
-8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - 包括 MCP 功能的 APIM ❤️ AI 实验，集成 Azure OpenAI 和 AI Foundry
+1. [mcp](https://github.com/Azure-Samples/mcp) - 提供样例、工具和资源，用于使用多种语言在Azure上构建和集成MCP服务器
+2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - 展示当前模型上下文协议规范的认证参考MCP服务器
+3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - 使用Azure Functions实现远程MCP服务器的主页，包含语言特定的存储库链接
+4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - 使用Python构建和部署自定义远程MCP服务器的快速入门模板
+5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - 使用.NET/C#构建和部署自定义远程MCP服务器的快速入门模板
+6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - 使用TypeScript构建和部署自定义远程MCP服务器的快速入门模板
+7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - 使用Python将Azure API管理作为远程MCP服务器的AI网关
+8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - 包括MCP功能的APIM ❤️ AI实验，集成Azure OpenAI和AI Foundry
 
-这些代码库提供了各种 MCP 的实现、模板和资源，涵盖从基本服务器实现到认证、云部署和企业集成场景的广泛用例。
+这些存储库提供了各种实现、模板和资源，用于在不同编程语言和Azure服务中使用模型上下文协议。它们涵盖了从基本服务器实现到认证、云部署和企业集成场景的广泛用例。
 
-#### MCP 资源目录
+#### MCP资源目录
 
-官方 Microsoft MCP 仓库中的 [MCP 资源目录](https://github.com/microsoft/mcp/tree/main/Resources) 提供了一组精选的示例资源、提示模板和工具定义，用于 Model Context Protocol 服务器。这些资源旨在通过提供可重用的构建块和最佳实践示例，帮助开发者快速入门 MCP：
+官方微软MCP存储库中的[MCP资源目录](https://github.com/microsoft/mcp/tree/main/Resources)提供了一系列样例资源、提示模板和工具定义，用于模型上下文协议服务器。这些资源旨在帮助开发者快速入门MCP，提供可重用的构建模块和最佳实践示例，包括：
 
-- **提示模板：** 可直接使用的提示模板，适用于常见的 AI 任务和场景，可根据需要调整用于您的 MCP 服务器实现。
-- **工具定义：** 示例工具架构和元数据，用于标准化不同 MCP 服务器之间的工具集成和调用。
-- **资源示例：** 示例资源定义，用于在 MCP 框架内连接数据源、API 和外部服务。
-- **参考实现：** 实际示例，展示如何在真实 MCP 项目中构建和组织资源、提示和工具。
+- **提示模板：** 可用于常见AI任务和场景的现成提示模板，可根据自己的MCP服务器实现进行调整。
+- **工具定义：** 标准化工具集成和调用的示例工具架构和元数据。
+- **资源样例：** 用于在MCP框架中连接数据源、API和外部服务的示例资源定义。
+- **参考实现：** 展示如何在实际MCP项目中结构化和组织资源、提示和工具的实用样例。
 
-这些资源加速开发，促进标准化，并帮助确保在构建和部署基于 MCP 的解决方案时遵循最佳实践。
+这些资源加速开发，促进标准化，并帮助确保在构建和部署基于MCP的解决方案时采用最佳实践。
 
-#### MCP 资源目录
+#### MCP资源目录
 
-- [MCP Resources (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)
+- [MCP资源（样例提示、工具和资源定义）](https://github.com/microsoft/mcp/tree/main/Resources)
 
 ### 研究机会
 
-- MCP 框架内高效的提示优化技术
-- 多租户 MCP 部署的安全模型
-- 不同 MCP 实现的性能基准测试
-- MCP 服务器的形式化验证方法
+- MCP框架内高效提示优化技术
+- 多租户MCP部署的安全模型
+- 不同MCP实现的性能基准测试
+- MCP服务器的形式化验证方法
 
 ## 结论
 
-Model Context Protocol (MCP) 正在迅速塑造跨行业标准化、安全和可互操作的 AI 集成的未来。通过本课程中的案例研究和实践项目，您已经了解了早期采用者（包括 Microsoft 和 Azure）如何利用 MCP 解决实际问题，加速 AI 采用，并确保合规性、安全性和可扩展性。MCP 的模块化方法使组织能够在统一、可审计的框架中连接大型语言模型、工具和企业数据。随着 MCP 的不断发展，积极参与社区、探索开源资源并应用最佳实践将是构建稳健、面向未来的 AI 解决方案的关键。
+模型上下文协议（MCP）正在快速塑造跨行业标准化、安全和可互操作的AI集成的未来。通过本课程中的案例研究和实践项目，你已经看到早期采用者（包括微软和Azure）如何利用MCP解决现实世界的挑战，加速AI采用，并确保合规性、安全性和可扩展性。MCP的模块化方法使组织能够在统一、可审计的框架中连接大型语言模型、工具和企业数据。随着MCP的不断发展，积极参与社区、探索开源资源并应用最佳实践将是构建强大、面向未来的AI解决方案的关键。
 
-## 附加资源
+## 其他资源
 
 - [MCP Foundry GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)
 - [Foundry MCP Playground](https://github.com/azure-ai-foundry/foundry-mcp-playground)
@@ -590,12 +585,12 @@ Model Context Protocol (MCP) 正在迅速塑造跨行业标准化、安全和可
 
 ## 练习
 
-1. 分析一个案例研究，并提出替代的实现方法。
-2. 选择一个项目创意并创建详细的技术规范。
-3. 研究案例研究中未涵盖的行业，并概述 MCP 如何解决其特定挑战。
-4. 探索一个未来方向，并为支持该方向创建一个新的 MCP 扩展概念。
+1. 分析一个案例研究并提出替代的实施方法。
+2. 选择一个项目想法并创建详细的技术规范。
+3. 研究案例研究中未涉及的行业，并概述MCP如何解决其特定挑战。
+4. 探索一个未来方向并设计一个新的MCP扩展概念以支持该方向。
 
 下一步：[Microsoft MCP Server](../07-LessonsfromEarlyAdoption/microsoft-mcp-servers.md)
 
 **免责声明**：  
-本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。虽然我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们对因使用此翻译而产生的任何误解或误读不承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议使用专业人工翻译。对于因使用本翻译而引起的任何误解或误读，我们概不负责。
