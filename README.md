@@ -124,7 +124,7 @@ If you’re a developer, tool builder, or AI product strategist, this day is pac
 | JavaScript | MCP Demo | [View Code](./03-GettingStarted/samples/javascript/README.md) |
 | Python | MCP Server | [View Code](./03-GettingStarted/samples/python/mcp_calculator_server.py) |
 | TypeScript | MCP Example | [View Code](./03-GettingStarted/samples/typescript/README.md) |
-| RUST | Container Sample | [View Code](.03-GettingStarted/samples/rust/README.md) |
+| RUST | MCP Example | [View Code](./03-GettingStarted/samples/rust/README.md) |
 
 #### Advanced MCP Implementations
 
