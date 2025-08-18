@@ -1,270 +1,456 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e782fc6226cf5e2b5625b035d35e60a",
-  "translation_date": "2025-08-11T09:38:03+00:00",
+  "original_hash": "1c767a35642f753127dc08545c25a290",
+  "translation_date": "2025-08-18T10:27:49+00:00",
   "source_file": "02-Security/README.md",
   "language_code": "zh"
 }
 -->
-# 安全最佳实践
+# MCP安全：AI系统的全面保护
 
-[![MCP 安全最佳实践](../../../translated_images/03.175aed6dedae133f9d41e49cefd0f0a9a39c3317e1eaa7ef7182696af7534308.zh.png)](https://youtu.be/88No8pw706o)
+[![MCP安全最佳实践](../../../translated_images/03.175aed6dedae133f9d41e49cefd0f0a9a39c3317e1eaa7ef7182696af7534308.zh.png)](https://youtu.be/88No8pw706o)
 
 _（点击上方图片观看本课视频）_
 
-由于安全性是一个至关重要的方面，我们将其作为第二部分重点讨论。这符合微软 [安全未来计划](https://www.microsoft.com/en-us/security/blog/2025/04/17/microsofts-secure-by-design-journey-one-year-of-success/)中的 **安全设计原则**。
+安全性是AI系统设计的核心，因此我们将其作为第二部分的重点。这与微软的[安全未来计划](https://www.microsoft.com/security/blog/2025/04/17/microsofts-secure-by-design-journey-one-year-of-success/)中的**安全设计原则**保持一致。
 
-采用模型上下文协议（MCP）为 AI 驱动的应用程序带来了强大的新功能，但也引入了超越传统软件风险的独特安全挑战。除了已知的安全编码、最小权限和供应链安全等问题外，MCP 和 AI 工作负载还面临新的威胁，例如提示注入、工具污染、动态工具修改、会话劫持、混淆代理攻击以及令牌传递漏洞。如果管理不当，这些风险可能导致数据泄露、隐私侵犯以及系统行为异常。
+模型上下文协议（MCP）为AI驱动的应用程序带来了强大的新功能，同时也引入了超越传统软件风险的独特安全挑战。MCP系统不仅面临传统的安全问题（如安全编码、最小权限、供应链安全），还面临新的AI特定威胁，包括提示注入、工具污染、会话劫持、混淆代理攻击、令牌传递漏洞以及动态能力修改。
 
-本课将探讨与 MCP 相关的最重要的安全风险，包括身份验证、授权、权限过多、间接提示注入、会话安全、混淆代理问题、令牌传递漏洞以及供应链漏洞，并提供可操作的控制措施和最佳实践来减轻这些风险。您还将学习如何利用微软解决方案，例如 Prompt Shields、Azure 内容安全和 GitHub 高级安全功能来加强 MCP 的实施。通过理解和应用这些控制措施，您可以显著降低安全漏洞的可能性，确保您的 AI 系统保持稳健和可信。
+本课程将探讨MCP实施中最关键的安全风险——涵盖认证、授权、权限过度、间接提示注入、会话安全、混淆代理问题、令牌管理和供应链漏洞。您将学习可操作的控制措施和最佳实践，以减轻这些风险，同时利用微软解决方案（如Prompt Shields、Azure内容安全和GitHub高级安全）来增强您的MCP部署。
 
-# 学习目标
+## 学习目标
 
 完成本课后，您将能够：
 
-- 识别并解释模型上下文协议（MCP）引入的独特安全风险，包括提示注入、工具污染、权限过多、会话劫持、混淆代理问题、令牌传递漏洞以及供应链漏洞。
-- 描述并应用有效的 MCP 安全风险缓解控制措施，例如强大的身份验证、最小权限、安全令牌管理、会话安全控制以及供应链验证。
-- 理解并利用微软解决方案，例如 Prompt Shields、Azure 内容安全和 GitHub 高级安全功能来保护 MCP 和 AI 工作负载。
-- 认识到验证工具元数据、监控动态变化、防御间接提示注入攻击以及防止会话劫持的重要性。
-- 将已建立的安全最佳实践（例如安全编码、服务器加固和零信任架构）集成到您的 MCP 实施中，以减少安全漏洞的可能性和影响。
+- **识别MCP特定威胁**：了解MCP系统中的独特安全风险，包括提示注入、工具污染、权限过度、会话劫持、混淆代理问题、令牌传递漏洞和供应链风险
+- **应用安全控制措施**：实施有效的缓解措施，包括强大的认证、最小权限访问、安全令牌管理、会话安全控制和供应链验证
+- **利用微软安全解决方案**：理解并部署微软Prompt Shields、Azure内容安全和GitHub高级安全以保护MCP工作负载
+- **验证工具安全性**：认识工具元数据验证的重要性，监控动态变化，并防御间接提示注入攻击
+- **整合最佳实践**：结合既定的安全基础（如安全编码、服务器加固、零信任）与MCP特定控制措施，实现全面保护
 
-# MCP 安全控制
+# MCP安全架构与控制
 
-任何访问重要资源的系统都隐含着安全挑战。通常可以通过正确应用基本的安全控制和概念来解决这些挑战。由于 MCP 是一个新定义的协议，其规范正在快速变化并随着协议的发展而演变。最终，协议中的安全控制将会成熟，从而更好地与企业和已建立的安全架构及最佳实践集成。
+现代MCP实施需要分层的安全方法，既要解决传统软件安全问题，也要应对AI特定威胁。快速发展的MCP规范不断完善其安全控制措施，使其能够更好地与企业安全架构和既定最佳实践集成。
 
-根据 [微软数字防御报告](https://aka.ms/mddr) 发布的研究，98% 的报告漏洞可以通过强大的安全卫生措施来预防。防止任何类型漏洞的最佳保护措施是确保您的基础安全卫生、正确的安全编码最佳实践以及供应链安全——这些我们已经知道的经过验证的实践仍然对降低安全风险最具影响力。
+根据[微软数字防御报告](https://aka.ms/mddr)的研究，**98%的报告漏洞可以通过强大的安全卫生措施防止**。最有效的保护策略是将基础安全实践与MCP特定控制措施相结合——经过验证的基础安全措施仍然是降低整体安全风险的最有影响力的方法。
 
-让我们来看看在采用 MCP 时可以开始解决安全风险的一些方法。
+## 当前安全形势
 
-> **注意：** 以下信息截至 **2025 年 5 月 29 日** 是正确的。MCP 协议正在不断发展，未来的实施可能会引入新的身份验证模式和控制措施。有关最新更新和指导，请始终参考 [MCP 规范](https://spec.modelcontextprotocol.io/) 和官方 [MCP GitHub 仓库](https://github.com/modelcontextprotocol) 以及 [安全最佳实践页面](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)。
+> **注意**：此信息反映截至**2025年8月18日**的MCP安全标准。MCP协议正在快速发展，未来的实施可能会引入新的认证模式和增强的控制措施。请始终参考当前的[MCP规范](https://spec.modelcontextprotocol.io/)、[MCP GitHub仓库](https://github.com/modelcontextprotocol)和[安全最佳实践文档](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)以获取最新指导。
 
-### 问题陈述
-最初的 MCP 规范假设开发人员会编写自己的身份验证服务器。这需要了解 OAuth 和相关的安全约束。MCP 服务器充当 OAuth 2.0 授权服务器，直接管理所需的用户身份验证，而不是将其委托给外部服务，例如 Microsoft Entra ID。从 **2025 年 4 月 26 日** 起，MCP 规范的更新允许 MCP 服务器将用户身份验证委托给外部服务。
+### MCP认证的演变
 
-### 风险
-- MCP 服务器中的授权逻辑配置错误可能导致敏感数据暴露和访问控制应用不当。
-- 本地 MCP 服务器上的 OAuth 令牌被盗。如果被盗，令牌可以用来冒充 MCP 服务器并访问该令牌所对应服务的资源和数据。
+MCP规范在认证和授权方面经历了显著的演变：
 
-#### 令牌传递
-授权规范明确禁止令牌传递，因为它引入了许多安全风险，包括：
+- **初始方法**：早期规范要求开发人员实现自定义认证服务器，MCP服务器充当OAuth 2.0授权服务器，直接管理用户认证
+- **当前标准（2025-06-18）**：更新后的规范允许MCP服务器将认证委托给外部身份提供者（如Microsoft Entra ID），提高了安全性并降低了实施复杂性
+- **传输层安全**：增强了对本地（STDIO）和远程（可流式HTTP）连接的安全传输机制的支持，并采用适当的认证模式
 
-#### 安全控制规避
-MCP 服务器或下游 API 可能实施了依赖令牌受众或其他凭证约束的重要安全控制，例如速率限制、请求验证或流量监控。如果客户端可以直接使用令牌与下游 API 通信，而无需 MCP 服务器正确验证或确保令牌是为正确的服务签发的，则会绕过这些控制。
+## 认证与授权安全
 
-#### 责任和审计问题
-MCP 服务器无法识别或区分 MCP 客户端，因为客户端可能使用上游签发的访问令牌，而这些令牌对 MCP 服务器可能是不可见的。
-下游资源服务器的日志可能显示来自不同来源的请求，而不是实际转发令牌的 MCP 服务器。
-这两个因素使得事件调查、控制和审计更加困难。
-如果 MCP 服务器在转发令牌时未验证其声明（例如角色、权限或受众）或其他元数据，持有被盗令牌的恶意行为者可以利用服务器作为数据泄露的代理。
+### 当前安全挑战
 
-#### 信任边界问题
-下游资源服务器对特定实体授予信任。这种信任可能包括对来源或客户端行为模式的假设。打破这种信任边界可能导致意外问题。
-如果令牌在没有适当验证的情况下被多个服务接受，则攻击者可以通过破坏一个服务来使用令牌访问其他连接的服务。
+现代MCP实施面临多个认证和授权挑战：
 
-#### 未来兼容性风险
-即使 MCP 服务器今天作为“纯代理”开始，它可能需要在以后添加安全控制。从一开始就实施正确的令牌受众分离可以更容易地演变安全模型。
+### 风险与威胁向量
 
-### 缓解控制措施
+- **授权逻辑配置错误**：MCP服务器中的授权实现缺陷可能暴露敏感数据并错误地应用访问控制
+- **OAuth令牌泄露**：本地MCP服务器令牌被盗使攻击者能够冒充服务器并访问下游服务
+- **令牌传递漏洞**：不当的令牌处理会导致安全控制绕过和责任缺失
+- **权限过度**：权限过高的MCP服务器违反最小权限原则，扩大了攻击面
 
-**MCP 服务器不得接受任何未明确为 MCP 服务器签发的令牌**
+#### 令牌传递：一个关键的反模式
 
-- **审查并加强授权逻辑：** 仔细审计 MCP 服务器的授权实现，确保只有预期的用户和客户端可以访问敏感资源。有关实用指导，请参阅 [Azure API 管理：MCP 服务器的身份验证网关 | Microsoft 社区中心](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690) 和 [使用 Microsoft Entra ID 通过会话验证 MCP 服务器 - Den Delimarsky](https://den.dev/blog/mcp-server-auth-entra-id-session/)。
-- **实施安全令牌实践：** 遵循 [微软的令牌验证和生命周期最佳实践](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens)，以防止访问令牌的滥用并降低令牌重放或盗窃的风险。
-- **保护令牌存储：** 始终安全存储令牌，并使用加密保护其静态和传输中的安全性。有关实施技巧，请参阅 [使用安全令牌存储并加密令牌](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)。
+**令牌传递在当前MCP授权规范中被明确禁止**，因为它带来了严重的安全隐患：
 
-# MCP 服务器权限过多
+##### 安全控制规避
+- MCP服务器和下游API依赖于正确的令牌验证来实施关键的安全控制（如速率限制、请求验证、流量监控）
+- 客户端直接使用API令牌绕过了这些重要的保护措施，破坏了安全架构
 
-### 问题陈述
-MCP 服务器可能被授予了对其访问的服务/资源的过多权限。例如，一个属于 AI 销售应用程序的 MCP 服务器连接到企业数据存储时，其访问范围应仅限于销售数据，而不应允许访问存储中的所有文件。回到最小权限原则（最古老的安全原则之一），任何资源的权限都不应超过其执行预期任务所需的权限。AI 在这一领域带来了更大的挑战，因为为了使其具有灵活性，定义确切的权限需求可能具有挑战性。
+##### 责任与审计挑战  
+- MCP服务器无法区分使用上游签发令牌的客户端，破坏了审计轨迹
+- 下游资源服务器日志显示误导性的请求来源，而非实际的MCP服务器中介
+- 事件调查和合规审计变得更加困难
 
-### 风险
-- 授予过多权限可能允许 MCP 服务器访问或修改其不应访问的数据。这可能会成为隐私问题，尤其是当数据是个人身份信息（PII）时。
+##### 数据外泄风险
+- 未验证的令牌声明使得拥有被盗令牌的恶意行为者能够将MCP服务器作为代理进行数据外泄
+- 信任边界被破坏，允许未经授权的访问模式绕过预期的安全控制
 
-### 缓解控制措施
-- **应用最小权限原则：** 仅授予 MCP 服务器执行其所需任务的最低权限。定期审查并更新这些权限，确保它们不会超过所需范围。有关详细指导，请参阅 [安全的最小权限访问](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)。
-- **使用基于角色的访问控制（RBAC）：** 为 MCP 服务器分配严格限定到特定资源和操作的角色，避免广泛或不必要的权限。
-- **监控和审计权限：** 持续监控权限使用情况并审计访问日志，及时检测和修复过多或未使用的权限。
+##### 多服务攻击向量
+- 被多个服务接受的被盗令牌使得攻击者能够在连接的系统之间横向移动
+- 当令牌来源无法验证时，服务之间的信任假设可能被破坏
 
-# 间接提示注入攻击
+### 安全控制与缓解措施
 
-### 问题陈述
+**关键安全要求：**
 
-恶意或被破坏的 MCP 服务器可能通过暴露客户数据或启用意外操作引入重大风险。这些风险在基于 AI 和 MCP 的工作负载中尤为相关，例如：
+> **强制性**：MCP服务器**不得**接受任何未明确为MCP服务器签发的令牌
 
-- **提示注入攻击：** 攻击者在提示或外部内容中嵌入恶意指令，导致 AI 系统执行意外操作或泄露敏感数据。了解更多：[提示注入](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
-- **工具污染：** 攻击者操纵工具元数据（例如描述或参数），影响 AI 的行为，可能绕过安全控制或泄露数据。详情：[工具污染](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
-- **跨域提示注入：** 恶意指令嵌入到文档、网页或电子邮件中，然后由 AI 处理，导致数据泄露或操纵。
-- **动态工具修改（Rug Pulls）：** 工具定义在用户批准后可以被更改，引入新的恶意行为而用户无法察觉。
+#### 认证与授权控制
 
-这些漏洞强调了在将 MCP 服务器和工具集成到您的环境中时需要进行强大的验证、监控和安全控制。有关更深入的探讨，请参阅上述链接参考。
+- **严格的授权审查**：对MCP服务器的授权逻辑进行全面审计，以确保只有预期的用户和客户端可以访问敏感资源
+  - **实施指南**：[Azure API管理作为MCP服务器的认证网关](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+  - **身份集成**：[使用Microsoft Entra ID进行MCP服务器认证](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 
-![prompt-injection-lg-2048x1034](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.zh.png)
+- **安全令牌管理**：实施[微软的令牌验证和生命周期最佳实践](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens)
+  - 验证令牌受众声明与MCP服务器身份匹配
+  - 实施适当的令牌轮换和过期策略
+  - 防止令牌重放攻击和未经授权的使用
 
-**间接提示注入**（也称为跨域提示注入或 XPIA）是生成式 AI 系统（包括使用模型上下文协议 MCP 的系统）中的一个关键漏洞。在这种攻击中，恶意指令隐藏在外部内容中，例如文档、网页或电子邮件。当 AI 系统处理这些内容时，它可能将嵌入的指令解释为合法的用户命令，从而导致意外操作，例如数据泄露、生成有害内容或操纵用户交互。有关详细解释和真实案例，请参阅 [提示注入](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)。
+- **受保护的令牌存储**：使用静态和传输中的加密技术保护令牌存储
+  - **最佳实践**：[安全令牌存储和加密指南](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
 
-一种特别危险的攻击形式是 **工具污染**。在这里，攻击者将恶意指令注入 MCP 工具的元数据（例如工具描述或参数）。由于大型语言模型（LLM）依赖这些元数据来决定调用哪些工具，被破坏的描述可以欺骗模型执行未经授权的工具调用或绕过安全控制。这些操作通常对最终用户是不可见的，但可以被 AI 系统解释并执行。这种风险在托管 MCP 服务器环境中尤为突出，在这种环境中，工具定义可以在用户批准后更新——这种场景有时被称为“[rug pull](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)”。在这种情况下，之前安全的工具可能后来被修改为执行恶意操作，例如泄露数据或改变系统行为，而用户对此毫不知情。有关此攻击向量的更多信息，请参阅 [工具污染](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)。
+#### 访问控制实施
 
-![tool-injection-lg-2048x1239 (1)](../../../translated_images/tool-injection.3b0b4a6b24de6befe7d3afdeae44138ef005881aebcfc84c6f61369ce31e3640.zh.png)
+- **最小权限原则**：仅授予MCP服务器执行预期功能所需的最低权限
+  - 定期权限审查和更新以防止权限膨胀
+  - **微软文档**：[安全的最小权限访问](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
 
-## 风险
-意外的 AI 操作带来了多种安全风险，包括数据泄露和隐私侵犯。
+- **基于角色的访问控制（RBAC）**：实施细粒度的角色分配
+  - 将角色严格限定于特定资源和操作
+  - 避免扩展攻击面的广泛或不必要权限
 
-### 缓解控制措施
-### 使用 Prompt Shields 防御间接提示注入攻击
------------------------------------------------------------------------------
+- **持续权限监控**：实施持续的访问审计和监控
+  - 监控权限使用模式以发现异常
+  - 及时修复过度或未使用的权限
 
-**AI Prompt Shields** 是微软开发的一种解决方案，用于防御直接和间接提示注入攻击。它通过以下方式提供保护：
+## AI特定安全威胁
 
-1. **检测和过滤：** Prompt Shields 使用先进的机器学习算法和自然语言处理技术，检测并过滤嵌入在外部内容（如文档、网页或电子邮件）中的恶意指令。
-    
-2. **聚焦技术：** 该技术帮助 AI 系统区分有效的系统指令和潜在的不可信外部输入。通过以更相关的方式转换输入文本，聚焦技术确保 AI 能更好地识别并忽略恶意指令。
-    
-3. **分隔符和数据标记：** 在系统消息中包含分隔符明确标示输入文本的位置，帮助 AI 系统识别并分离用户输入与潜在有害的外部内容。数据标记扩展了这一概念，通过使用特殊标记突出显示可信和不可信数据的边界。
-    
-4. **持续监控和更新：** 微软持续监控并更新 Prompt Shields，以应对新的和不断发展的威胁。这种主动方法确保防御措施始终有效应对最新的攻击技术。
-5. **与 Azure 内容安全的集成：** Prompt Shields 是更广泛的 Azure AI 内容安全套件的一部分，该套件提供了额外的工具，用于检测越狱尝试、有害内容以及 AI 应用中的其他安全风险。
+### 提示注入与工具操控攻击
 
-您可以在 [Prompt Shields 文档](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) 中阅读更多关于 AI Prompt Shields 的信息。
+现代MCP实施面临复杂的AI特定攻击向量，传统安全措施无法完全应对：
 
-![prompt-shield-lg-2048x1328](../../../translated_images/prompt-shield.ff5b95be76e9c78c6ec0888206a4a6a0a5ab4bb787832a9eceef7a62fe0138d1.zh.png)
+#### **间接提示注入（跨域提示注入）**
 
+**间接提示注入**是MCP支持的AI系统中最关键的漏洞之一。攻击者将恶意指令嵌入外部内容（文档、网页、电子邮件或数据源），AI系统随后将其处理为合法命令。
 
-# 混淆代理问题
+**攻击场景：**
+- **基于文档的注入**：恶意指令隐藏在处理的文档中，触发意外的AI行为
+- **网页内容利用**：被攻击的网页包含嵌入的提示，当被抓取时操控AI行为
+- **基于电子邮件的攻击**：电子邮件中的恶意提示导致AI助手泄露信息或执行未经授权的操作
+- **数据源污染**：被攻击的数据库或API向AI系统提供受污染的内容
 
-### 问题描述
+**现实影响**：这些攻击可能导致数据外泄、隐私泄露、生成有害内容以及用户交互的操控。详细分析请参阅[Prompt Injection in MCP (Simon Willison)](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)。
 
-混淆代理问题是一种安全漏洞，当 MCP 服务器作为 MCP 客户端与第三方 API 之间的代理时可能发生。如果 MCP 服务器使用静态客户端 ID 来与不支持动态客户端注册的第三方授权服务器进行身份验证，则可能被利用。
+![提示注入攻击示意图](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.zh.png)
 
-### 风险
+#### **工具污染攻击**
 
-- **基于 Cookie 的同意绕过**：如果用户之前通过 MCP 代理服务器进行了身份验证，第三方授权服务器可能会在用户的浏览器中设置同意 Cookie。攻击者可以通过发送包含恶意重定向 URI 的授权请求链接来利用这一点。
-- **授权码窃取**：当用户点击恶意链接时，第三方授权服务器可能会因为现有的 Cookie 而跳过同意屏幕，授权码可能会被重定向到攻击者的服务器。
-- **未经授权的 API 访问**：攻击者可以用窃取的授权码交换访问令牌，冒充用户访问第三方 API，而无需明确批准。
+**工具污染**针对定义MCP工具的元数据，利用LLM解释工具描述和参数的方式来影响执行决策。
 
-### 缓解措施
+**攻击机制：**
+- **元数据操控**：攻击者将恶意指令注入工具描述、参数定义或使用示例
+- **隐形指令**：工具元数据中隐藏的提示被AI模型处理，但对人类用户不可见
+- **动态工具修改（“地毯拉动”）**：用户批准的工具随后被修改为执行恶意操作而用户毫不知情
+- **参数注入**：工具参数架构中嵌入的恶意内容影响模型行为
 
-- **明确的同意要求**：使用静态客户端 ID 的 MCP 代理服务器 **必须** 在转发到第三方授权服务器之前，为每个动态注册的客户端获取用户同意。
-- **正确的 OAuth 实现**：遵循 OAuth 2.1 的安全最佳实践，包括在授权请求中使用代码挑战（PKCE）以防止拦截攻击。
-- **客户端验证**：严格验证重定向 URI 和客户端标识符，以防止恶意行为者的利用。
+**托管服务器风险**：远程MCP服务器风险更高，因为工具定义可以在用户初次批准后更新，导致原本安全的工具变得恶意。详细分析请参阅[Tool Poisoning Attacks (Invariant Labs)](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)。
 
+![工具注入攻击示意图](../../../translated_images/tool-injection.3b0b4a6b24de6befe7d3afdeae44138ef005881aebcfc84c6f61369ce31e3640.zh.png)
 
-# 令牌透传漏洞
+#### **其他AI攻击向量**
 
-### 问题描述
+- **跨域提示注入（XPIA）**：利用多个域的内容绕过安全控制的复杂攻击
+- **动态能力修改**：实时更改工具能力，逃避初始安全评估
+- **上下文窗口污染**：操控大上下文窗口以隐藏恶意指令
+- **模型混淆攻击**：利用模型局限性制造不可预测或不安全行为
 
-“令牌透传”是一种反模式，其中 MCP 服务器接受来自 MCP 客户端的令牌，而不验证这些令牌是否正确地为 MCP 服务器本身颁发，然后将其“透传”到下游 API。这种做法明确违反了 MCP 授权规范，并引入了严重的安全风险。
+### AI安全风险影响
 
-### 风险
+**高影响后果：**
+- **数据外泄**：未经授权的访问和敏感企业或个人数据的盗窃
+- **隐私泄露**：暴露个人身份信息（PII）和机密业务数据  
+- **系统操控**：对关键系统和工作流程的意外修改
+- **凭证盗窃**：认证令牌和服务凭证的泄露
+- **横向移动**：利用被攻破的AI系统作为更广泛网络攻击的跳板
 
-- **安全控制规避**：如果客户端可以直接使用令牌与下游 API 交互而无需适当验证，则可能绕过重要的安全控制，例如速率限制、请求验证或流量监控。
-- **问责和审计问题**：当客户端使用上游颁发的访问令牌时，MCP 服务器将无法识别或区分 MCP 客户端，从而使事件调查和审计更加困难。
-- **数据泄露**：如果令牌在没有适当声明验证的情况下被透传，拥有被盗令牌的恶意行为者可能会利用服务器作为数据泄露的代理。
-- **信任边界破坏**：下游资源服务器可能会基于来源或行为模式对特定实体授予信任。破坏这种信任边界可能导致意外的安全问题。
-- **多服务令牌滥用**：如果多个服务在没有适当验证的情况下接受令牌，攻击者可能通过攻破一个服务来使用该令牌访问其他连接的服务。
+### 微软AI安全解决方案
 
-### 缓解措施
+#### **AI Prompt Shields：防御注入攻击的高级保护**
 
-- **令牌验证**：MCP 服务器 **不得** 接受任何未明确为其颁发的令牌。
-- **受众验证**：始终验证令牌是否具有与 MCP 服务器身份匹配的正确受众声明。
-- **正确的令牌生命周期管理**：实施短期访问令牌和适当的令牌轮换实践，以减少令牌被盗和滥用的风险。
+微软**AI Prompt Shields**通过多层安全防护提供对直接和间接提示注入攻击的全面防御：
 
+##### **核心保护机制：**
 
-# 会话劫持
+1. **高级检测与过滤**
+   - 机器学习算法和NLP技术检测外部内容中的恶意指令
+   - 实时分析文档、网页、电子邮件和数据源中的嵌入威胁
+   - 对合法与恶意提示模式的上下文理解
 
-### 问题描述
+2. **聚焦技术**  
+   - 区分可信系统指令与可能被攻破的外部输入
+   - 文本转换方法增强模型相关性，同时隔离恶意内容
+   - 帮助AI系统保持正确的指令层级，忽略注入的命令
 
-会话劫持是一种攻击方式，其中服务器向客户端提供会话 ID，而未经授权的一方获取并使用相同的会话 ID 冒充原始客户端，代表其执行未经授权的操作。这在处理 MCP 请求的有状态 HTTP 服务器中尤为令人担忧。
+3. **分隔符与数据标记系统**
+   - 明确定义可信系统消息与外部输入文本之间的边界
+   - 特殊标记突出显示可信与不可信数据源之间的边界
+   - 清晰分隔防止指令混淆和未经授权的命令执行
 
-### 风险
+4. **持续威胁情报**
+   - 微软持续监控新兴攻击模式并更新防御措施
+   - 主动威胁狩猎以发现新的注入技术和攻击向量
+   - 定期更新安全模型以保持对不断演变的威胁的有效性
 
-- **会话劫持提示注入**：攻击者获取会话 ID 后，可能向与客户端连接的服务器共享会话状态的服务器发送恶意事件，从而触发有害操作或访问敏感数据。
-- **会话劫持冒充**：拥有被盗会话 ID 的攻击者可以直接向 MCP 服务器发出调用，绕过身份验证并被视为合法用户。
-- **受损的可恢复流**：当服务器支持重新传递/可恢复流时，攻击者可能会提前终止请求，导致原始客户端稍后恢复时可能包含恶意内容。
+5. **Azure内容安全集成**
+   - 综合Azure AI内容安全套件的一部分
+   - 额外检测越狱尝试、有害内容和安全策略违规
+   - AI应用组件之间的统一安全控制
 
-### 缓解措施
+**实施资源**：[微软Prompt Shields文档](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
 
-- **授权验证**：实现授权的 MCP 服务器 **必须** 验证所有入站请求，并且 **不得** 使用会话进行身份验证。
-- **安全的会话 ID**：MCP 服务器 **必须** 使用安全的、非确定性的会话 ID，并通过安全随机数生成器生成。避免使用可预测或顺序的标识符。
-- **用户特定的会话绑定**：MCP 服务器 **应** 将会话 ID 绑定到用户特定信息，将会话 ID 与授权用户的唯一信息（如其内部用户 ID）结合使用，例如 `<user_id>:<session_id>` 格式。
-- **会话过期**：实施适当的会话过期和轮换，以限制会话 ID 被泄露后的漏洞窗口。
-- **传输安全**：始终使用 HTTPS 进行所有通信，以防止会话 ID 被拦截。
+![微软Prompt Shields保护](../../../translated_images/prompt-shield.ff5b95be76e9c78c6ec0888206a4a6a0a5ab4bb787832a9eceef7a62fe0138d1.zh.png)
 
 
-# 供应链安全
+## 高级MCP安全威胁
 
-在 AI 时代，供应链安全仍然至关重要，但供应链的范围已经扩大。除了传统的代码包外，您现在必须严格验证和监控所有与 AI 相关的组件，包括基础模型、嵌入服务、上下文提供者和第三方 API。如果管理不当，每个组件都可能引入漏洞或风险。
+### 会话劫持漏洞
 
-**AI 和 MCP 的关键供应链安全实践：**
-- **在集成前验证所有组件**：这不仅包括开源库，还包括 AI 模型、数据源和外部 API。始终检查来源、许可和已知漏洞。
-- **维护安全的部署管道**：使用集成安全扫描的自动化 CI/CD 管道，尽早发现问题。确保只有受信任的工件被部署到生产环境。
-- **持续监控和审计**：对所有依赖项（包括模型和数据服务）实施持续监控，以检测新漏洞或供应链攻击。
-- **应用最小权限和访问控制**：将对模型、数据和服务的访问限制为 MCP 服务器运行所需的最低权限。
-- **快速响应威胁**：制定补丁或替换受损组件的流程，并在检测到漏洞时轮换密钥或凭据。
+**会话劫持**是状态化MCP实施中的关键攻击向量，未经授权的方获取并滥用合法会话标识符以冒充客户端并执行未经授权的操作。
 
-[GitHub Advanced Security](https://github.com/security/advanced-security) 提供了诸如密钥扫描、依赖项扫描和 CodeQL 分析等功能。这些工具与 [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) 和 [Azure Repos](https://azure.microsoft.com/en-us/products/devops/repos/) 集成，帮助团队识别和缓解代码和 AI 供应链组件中的漏洞。
+#### **攻击场景与风险**
 
-微软还在所有产品中实施了广泛的供应链安全实践。了解更多信息，请参阅 [微软软件供应链安全之旅](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/)。
+- **会话劫持提示注入**：攻击者通过窃取的会话ID向共享会话状态的服务器注入恶意事件，可能触发有害行为或访问敏感数据
+- **直接冒充**：窃取的会话ID使攻击者能够直接调用MCP服务器，绕过认证，将其视为合法用户
+- **受损的可恢复流**：攻击者可以提前终止请求，导致合法客户端恢复时可能包含恶意内容
 
+#### **会话管理的安全控制**
 
-# 提升 MCP 实现安全性的既定安全最佳实践
+**关键要求：**
+- **授权验证**：实施授权的MCP服务器**必须**验证所有入站请求，并且**不得**依赖会话进行认证
+- **安全会话生成**：使用加密安全的、非确定性的会话 ID，通过安全的随机数生成器生成  
+- **用户绑定**：将会话 ID 与用户特定信息绑定，例如使用 `<user_id>:<session_id>` 格式，防止跨用户会话滥用  
+- **会话生命周期管理**：实施适当的过期、轮换和失效机制，以限制漏洞窗口  
+- **传输安全**：所有通信必须使用 HTTPS，防止会话 ID 被拦截  
 
-任何 MCP 实现都继承了其构建所在组织环境的现有安全态势，因此在考虑 MCP 作为整体 AI 系统组件的安全性时，建议提升整体现有的安全态势。以下既定的安全控制尤为重要：
+### 混淆代理问题
 
--   AI 应用中的安全编码最佳实践 - 防范 [OWASP Top 10](https://owasp.org/www-project-top-ten/)、[OWASP LLMs Top 10](https://genai.owasp.org/download/43299/?tmstv=1731900559)，使用安全金库存储密钥和令牌，在所有应用组件之间实现端到端的安全通信等。
--   服务器加固 - 尽可能使用 MFA，保持补丁更新，将服务器与第三方身份提供者集成以进行访问控制等。
--   保持设备、基础设施和应用程序的补丁更新
--   安全监控 - 实现 AI 应用（包括 MCP 客户端/服务器）的日志记录和监控，并将这些日志发送到中央 SIEM 以检测异常活动
--   零信任架构 - 通过网络和身份控制以逻辑方式隔离组件，最小化 AI 应用被攻破后的横向移动。
+**混淆代理问题**发生在 MCP 服务器作为客户端与第三方服务之间的认证代理时，攻击者可能通过利用静态客户端 ID 绕过授权。
 
-# 关键要点
+#### **攻击机制与风险**
 
-- 安全基础仍然至关重要：安全编码、最小权限、供应链验证和持续监控对于 MCP 和 AI 工作负载至关重要。
-- MCP 引入了新的风险——如提示注入、工具投毒、会话劫持、混淆代理问题、令牌透传漏洞和过度权限——需要传统和 AI 特定的控制措施。
-- 使用强大的身份验证、授权和令牌管理实践，尽可能利用外部身份提供者（如 Microsoft Entra ID）。
-- 通过验证工具元数据、监控动态变化以及使用 Microsoft Prompt Shields 等解决方案，防范间接提示注入和工具投毒。
-- 通过使用非确定性会话 ID、将会话绑定到用户身份以及绝不使用会话进行身份验证，实施安全的会话管理。
-- 通过为每个动态注册的客户端要求明确的用户同意并实施正确的 OAuth 安全实践，防止混淆代理攻击。
-- 避免令牌透传漏洞，确保 MCP 服务器仅接受明确为其颁发的令牌，并适当验证令牌声明。
-- 将 AI 供应链中的所有组件（包括模型、嵌入和上下文提供者）视为代码依赖项一样严格。
-- 紧跟不断发展的 MCP 规范，并为社区做出贡献以帮助制定安全标准。
+- **基于 Cookie 的同意绕过**：之前的用户认证会生成同意 Cookie，攻击者通过伪造的重定向 URI 发起恶意授权请求加以利用  
+- **授权码窃取**：现有的同意 Cookie 可能导致授权服务器跳过同意屏幕，将授权码重定向到攻击者控制的端点  
+- **未授权 API 访问**：窃取的授权码允许攻击者进行令牌交换并冒充用户，无需明确批准  
 
-# 其他资源
+#### **缓解策略**
 
-## 外部资源
-- [Microsoft Digital Defense Report](https://aka.ms/mddr)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
-- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
-- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
-- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
-- [Prompt Injection in MCP (Simon Willison)](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
-- [Tool Poisoning Attacks (Invariant Labs)](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
-- [Rug Pulls in MCP (Wiz Security)](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)
-- [Prompt Shields Documentation (Microsoft)](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
-- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
-- [OWASP Top 10 for LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559)
-- [GitHub Advanced Security](https://github.com/security/advanced-security)
-- [Azure DevOps](https://azure.microsoft.com/products/devops)
-- [Azure Repos](https://azure.microsoft.com/products/devops/repos/)
-- [微软软件供应链安全之旅](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/)
-- [Secure Least-Privileged Access (Microsoft)](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
-- [Best Practices for Token Validation and Lifetime](https://learn.microsoft.com/entra/identity-platform/access-tokens)
-- [Use Secure Token Storage and Encrypt Tokens (YouTube)](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
-- [Azure API Management as Auth Gateway for MCP](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
-- [Using Microsoft Entra ID to Authenticate with MCP Servers](https://den.dev/blog/mcp-server-auth-entra-id-session/)
+**强制性控制：**
+- **明确的用户同意要求**：使用静态客户端 ID 的 MCP 代理服务器**必须**为每个动态注册的客户端获取用户同意  
+- **OAuth 2.1 安全实施**：遵循当前 OAuth 安全最佳实践，包括在所有授权请求中使用 PKCE（代码交换证明密钥）  
+- **严格的客户端验证**：对重定向 URI 和客户端标识符进行严格验证，防止被利用  
 
-## 其他安全文档
+### 令牌透传漏洞  
 
-有关更详细的安全指南，请参阅以下文档：
+**令牌透传**是一种明确的反模式，MCP 服务器接受未经验证的客户端令牌并将其转发到下游 API，这违反了 MCP 授权规范。
 
-- [MCP 安全最佳实践 2025](./mcp-security-best-practices-2025.md) - MCP 实现的全面安全最佳实践列表
-- [Azure 内容安全实施](./azure-content-safety-implementation.md) - 将 Azure 内容安全与 MCP 服务器集成的实施示例
-- [MCP 安全控制 2025](./mcp-security-controls-2025.md) - 用于保护 MCP 部署的最新安全控制和技术
-- [MCP 最佳实践](./mcp-best-practices.md) - MCP 安全的快速参考指南
+#### **安全影响**
 
-### 下一步
+- **控制规避**：直接使用客户端到 API 的令牌绕过了关键的速率限制、验证和监控控制  
+- **审计轨迹破坏**：上游签发的令牌使得无法识别客户端，破坏了事件调查能力  
+- **基于代理的数据泄露**：未验证的令牌允许恶意行为者利用服务器作为代理进行未授权的数据访问  
+- **信任边界破坏**：当令牌来源无法验证时，下游服务的信任假设可能被破坏  
+- **多服务攻击扩展**：被攻破的令牌在多个服务间被接受，导致横向移动  
+
+#### **必要的安全控制**
+
+**不可协商的要求：**
+- **令牌验证**：MCP 服务器**不得**接受未明确为 MCP 服务器签发的令牌  
+- **受众验证**：始终验证令牌的受众声明是否与 MCP 服务器的身份匹配  
+- **正确的令牌生命周期管理**：实施短期访问令牌并采用安全的轮换机制  
+
+## AI 系统的供应链安全
+
+供应链安全已超越传统软件依赖，涵盖整个 AI 生态系统。现代 MCP 实现必须严格验证和监控所有与 AI 相关的组件，因为每个组件都可能引入潜在漏洞，危及系统完整性。
+
+### 扩展的 AI 供应链组件
+
+**传统软件依赖：**
+- 开源库和框架  
+- 容器镜像和基础系统  
+- 开发工具和构建流水线  
+- 基础设施组件和服务  
+
+**AI 特定的供应链元素：**
+- **基础模型**：来自不同提供商的预训练模型，需要验证其来源  
+- **嵌入服务**：外部向量化和语义搜索服务  
+- **上下文提供者**：数据源、知识库和文档存储库  
+- **第三方 API**：外部 AI 服务、机器学习流水线和数据处理端点  
+- **模型工件**：权重、配置和微调模型变体  
+- **训练数据源**：用于模型训练和微调的数据集  
+
+### 全面的供应链安全策略
+
+#### **组件验证与信任**
+- **来源验证**：在集成之前验证所有 AI 组件的来源、许可和完整性  
+- **安全评估**：对模型、数据源和 AI 服务进行漏洞扫描和安全审查  
+- **声誉分析**：评估 AI 服务提供商的安全记录和实践  
+- **合规性验证**：确保所有组件符合组织的安全和监管要求  
+
+#### **安全部署流水线**  
+- **自动化 CI/CD 安全**：在自动化部署流水线中集成安全扫描  
+- **工件完整性**：对所有部署的工件（代码、模型、配置）实施加密验证  
+- **分阶段部署**：采用渐进式部署策略，并在每个阶段进行安全验证  
+- **可信工件存储库**：仅从经过验证的安全工件注册表和存储库中部署  
+
+#### **持续监控与响应**
+- **依赖扫描**：对所有软件和 AI 组件依赖进行持续漏洞监控  
+- **模型监控**：持续评估模型行为、性能漂移和安全异常  
+- **服务健康跟踪**：监控外部 AI 服务的可用性、安全事件和策略变化  
+- **威胁情报集成**：结合针对 AI 和机器学习安全风险的威胁情报  
+
+#### **访问控制与最小权限**
+- **组件级权限**：根据业务需求限制对模型、数据和服务的访问  
+- **服务账户管理**：实施专用服务账户，并赋予最小必要权限  
+- **网络分段**：隔离 AI 组件并限制服务之间的网络访问  
+- **API 网关控制**：使用集中式 API 网关控制和监控对外部 AI 服务的访问  
+
+#### **事件响应与恢复**
+- **快速响应程序**：建立针对受损 AI 组件的修补或替换流程  
+- **凭据轮换**：自动化系统，用于轮换密钥、API 密钥和服务凭据  
+- **回滚能力**：能够快速恢复到之前已知的良好版本的 AI 组件  
+- **供应链漏洞恢复**：针对上游 AI 服务妥协的特定响应程序  
+
+### Microsoft 安全工具与集成
+
+**GitHub Advanced Security** 提供全面的供应链保护，包括：  
+- **密钥扫描**：自动检测存储库中的凭据、API 密钥和令牌  
+- **依赖扫描**：对开源依赖和库进行漏洞评估  
+- **CodeQL 分析**：静态代码分析以发现安全漏洞和编码问题  
+- **供应链洞察**：了解依赖的健康状况和安全状态  
+
+**Azure DevOps 和 Azure Repos 集成：**
+- 在 Microsoft 开发平台中无缝集成安全扫描  
+- 在 Azure Pipelines 中对 AI 工作负载进行自动化安全检查  
+- 强制执行安全 AI 组件部署的策略  
+
+**Microsoft 内部实践：**
+Microsoft 在所有产品中实施了广泛的供应链安全实践。了解更多关于 [Microsoft 软件供应链安全之旅](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/) 的信息。
+
+## 基础安全最佳实践
+
+MCP 的实现继承并构建在组织现有的安全基础之上。加强基础安全实践显著提升了 AI 系统和 MCP 部署的整体安全性。
+
+### 核心安全基础
+
+#### **安全开发实践**
+- **遵循 OWASP**：防范 [OWASP Top 10](https://owasp.org/www-project-top-ten/) 的 Web 应用漏洞  
+- **AI 特定保护**：实施 [OWASP Top 10 for LLMs](https://genai.owasp.org/download/43299/?tmstv=1731900559) 的控制措施  
+- **安全的密钥管理**：使用专用的密钥库存储令牌、API 密钥和敏感配置数据  
+- **端到端加密**：在所有应用组件和数据流中实施安全通信  
+- **输入验证**：严格验证所有用户输入、API 参数和数据源  
+
+#### **基础设施加固**
+- **多因素认证**：所有管理和服务账户必须启用 MFA  
+- **补丁管理**：对操作系统、框架和依赖进行自动化、及时的补丁更新  
+- **身份提供商集成**：通过企业身份提供商（Microsoft Entra ID、Active Directory）集中管理身份  
+- **网络分段**：逻辑隔离 MCP 组件，限制横向移动的可能性  
+- **最小权限原则**：为所有系统组件和账户分配最小必要权限  
+
+#### **安全监控与检测**
+- **全面日志记录**：详细记录 AI 应用活动，包括 MCP 客户端-服务器交互  
+- **SIEM 集成**：集中式安全信息和事件管理，用于异常检测  
+- **行为分析**：利用 AI 监控系统和用户行为中的异常模式  
+- **威胁情报**：集成外部威胁情报和妥协指标（IOCs）  
+- **事件响应**：定义明确的安全事件检测、响应和恢复程序  
+
+#### **零信任架构**
+- **永不信任，总是验证**：持续验证用户、设备和网络连接  
+- **微分段**：对单个工作负载和服务实施精细的网络控制  
+- **基于身份的安全**：基于经过验证的身份而非网络位置实施安全策略  
+- **持续风险评估**：根据当前上下文和行为动态评估安全态势  
+- **条件访问**：基于风险因素、位置和设备信任动态调整访问控制  
+
+### 企业集成模式
+
+#### **Microsoft 安全生态系统集成**
+- **Microsoft Defender for Cloud**：全面的云安全态势管理  
+- **Azure Sentinel**：云原生 SIEM 和 SOAR 功能，用于 AI 工作负载保护  
+- **Microsoft Entra ID**：企业身份和访问管理，支持条件访问策略  
+- **Azure Key Vault**：集中式密钥管理，支持硬件安全模块（HSM）  
+- **Microsoft Purview**：AI 数据源和工作流的数据治理与合规  
+
+#### **合规与治理**
+- **法规对齐**：确保 MCP 实现符合行业特定的合规要求（GDPR、HIPAA、SOC 2）  
+- **数据分类**：正确分类和处理 AI 系统处理的敏感数据  
+- **审计轨迹**：为合规性和取证调查提供全面的日志记录  
+- **隐私控制**：在 AI 系统架构中实施隐私设计原则  
+- **变更管理**：对 AI 系统修改进行安全审查的正式流程  
+
+这些基础实践为 MCP 特定的安全控制提供了坚实的安全基线，并为 AI 驱动的应用提供了全面的保护。
+
+## 关键安全要点
+
+- **分层安全方法**：结合基础安全实践（安全编码、最小权限、供应链验证、持续监控）与 AI 特定控制措施，实现全面保护  
+
+- **AI 特定威胁环境**：MCP 系统面临独特风险，包括提示注入、工具中毒、会话劫持、混淆代理问题、令牌透传漏洞和过度权限，这些都需要专门的缓解措施  
+
+- **认证与授权卓越**：使用外部身份提供商（Microsoft Entra ID）实施强大的认证，强制执行正确的令牌验证，绝不接受未明确为 MCP 服务器签发的令牌  
+
+- **AI 攻击防御**：部署 Microsoft Prompt Shields 和 Azure Content Safety 防御间接提示注入和工具中毒攻击，同时验证工具元数据并监控动态变化  
+
+- **会话与传输安全**：使用加密安全的、非确定性的会话 ID 绑定到用户身份，实施正确的会话生命周期管理，绝不将会话用于认证  
+
+- **OAuth 安全最佳实践**：通过动态注册客户端的明确用户同意、PKCE 的正确实施以及严格的重定向 URI 验证，防止混淆代理攻击  
+
+- **令牌安全原则**：避免令牌透传反模式，验证令牌受众声明，实施短期令牌并进行安全轮换，维护清晰的信任边界  
+
+- **全面的供应链安全**：将所有 AI 生态系统组件（模型、嵌入、上下文提供者、外部 API）视为传统软件依赖，实施同等的安全严格性  
+
+- **持续演进**：跟随快速发展的 MCP 规范，参与安全社区标准的制定，并在协议成熟时保持适应性安全态势  
+
+- **Microsoft 安全集成**：利用 Microsoft 的全面安全生态系统（Prompt Shields、Azure Content Safety、GitHub Advanced Security、Entra ID）增强 MCP 部署的保护  
+
+## 综合资源
+
+### **官方 MCP 安全文档**
+- [MCP 规范（当前版本：2025-06-18）](https://spec.modelcontextprotocol.io/specification/2025-06-18/)  
+- [MCP 安全最佳实践](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)  
+- [MCP 授权规范](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)  
+- [MCP GitHub 仓库](https://github.com/modelcontextprotocol)  
+
+### **安全标准与最佳实践**
+- [OAuth 2.0 安全最佳实践 (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)  
+- [OWASP Top 10 Web 应用安全](https://owasp.org/www-project-top-ten/)  
+- [OWASP Top 10 for Large Language Models](https://genai.owasp.org/download/43299/?tmstv=1731900559)  
+- [Microsoft 数字防御报告](https://aka.ms/mddr)  
+
+### **AI 安全研究与分析**
+- [MCP 中的提示注入（Simon Willison）](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)  
+- [工具中毒攻击（Invariant Labs）](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)  
+- [MCP 安全研究简报（Wiz Security）](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)  
+### **Microsoft 安全解决方案**
+- [Microsoft Prompt Shields 文档](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
+- [Azure 内容安全服务](https://learn.microsoft.com/azure/ai-services/content-safety/)
+- [Microsoft Entra ID 安全](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
+- [Azure 令牌管理最佳实践](https://learn.microsoft.com/entra/identity-platform/access-tokens)
+- [GitHub 高级安全](https://github.com/security/advanced-security)
+
+### **实施指南与教程**
+- [将 Azure API 管理用作 MCP 身份验证网关](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+- [使用 Microsoft Entra ID 进行 MCP 服务器身份验证](https://den.dev/blog/mcp-server-auth-entra-id-session/)
+- [安全令牌存储与加密（视频）](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
+
+### **DevOps 与供应链安全**
+- [Azure DevOps 安全](https://azure.microsoft.com/products/devops)
+- [Azure Repos 安全](https://azure.microsoft.com/products/devops/repos/)
+- [Microsoft 供应链安全之旅](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/)
+
+## **附加安全文档**
+
+有关全面的安全指导，请参考本部分中的以下专业文档：
+
+- **[MCP 安全最佳实践 2025](./mcp-security-best-practices-2025.md)** - MCP 实施的完整安全最佳实践
+- **[Azure 内容安全实施](./azure-content-safety-implementation.md)** - Azure 内容安全集成的实际实施示例  
+- **[MCP 安全控制 2025](./mcp-security-controls-2025.md)** - MCP 部署的最新安全控制和技术
+- **[MCP 最佳实践快速参考](./mcp-best-practices.md)** - MCP 安全实践的快速参考指南
+
+---
+
+## 下一步
 
 下一步：[第 3 章：入门](../03-GettingStarted/README.md)
 
 **免责声明**：  
-本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
+本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议使用专业人工翻译。对于因使用本翻译而引起的任何误解或误读，我们概不负责。
