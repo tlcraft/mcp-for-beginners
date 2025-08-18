@@ -24,7 +24,7 @@ pip install "mcp[cli]"
 
 
 ```bash
-mcp run server.py
+uvicorn server:app
 ```
 
 ## -4- Test the sample
