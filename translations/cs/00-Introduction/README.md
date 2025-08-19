@@ -31,7 +31,7 @@ Jak generativní AI aplikace nabývají na složitosti, je nezbytné přijmout s
 - Snižuje křehké, jednorázové vlastní řešení
 - Umožňuje koexistenci více modelů od různých dodavatelů v jednom ekosystému
 
-**Poznámka:** Ačkoliv se MCP prezentuje jako otevřený standard, neexistují žádné plány na jeho standardizaci prostřednictvím existujících standardizačních orgánů, jako jsou IEEE, IETF, W3C, ISO nebo jiné.
+**Poznámka:** Ačkoliv se MCP prezentuje jako otevřený standard, k datu této publikace nejsou veřejně oznámeny žádné plány na jeho standardizaci prostřednictvím existujících standardizačních orgánů, jako jsou IEEE, IETF, W3C, ISO nebo jiné. Situace se však může v budoucnu změnit; doporučujeme ověřit aktuální stav v oficiálních zdrojích.
 
 ---
 
