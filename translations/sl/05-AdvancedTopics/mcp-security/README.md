@@ -2,69 +2,46 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "997c7119766a69552e23d7d681316902",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T22:27:41+00:00",
-=======
-  "translation_date": "2025-08-18T17:48:03+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T18:12:32+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "sl"
 }
 -->
-# MCP Varnostne najboljše prakse - Napreden vodič za implementacijo
+# MCP Varnostne najboljše prakse - Napredni vodič za implementacijo
 
 > **Trenutni standard**: Ta vodič odraža varnostne zahteve [MCP Specifikacije 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) in uradne [MCP Varnostne najboljše prakse](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices).
 
-Varnost je ključnega pomena za MCP implementacije, še posebej v poslovnih okoljih. Ta napreden vodič raziskuje celovite varnostne prakse za produkcijske MCP implementacije, ki obravnavajo tako tradicionalne varnostne izzive kot tudi grožnje, specifične za umetno inteligenco, ki so edinstvene za Model Context Protocol.
+Varnost je ključnega pomena za MCP implementacije, še posebej v poslovnih okoljih. Ta napredni vodič raziskuje celovite varnostne prakse za produkcijske MCP implementacije, ki obravnavajo tako tradicionalne varnostne izzive kot tudi grožnje, specifične za umetno inteligenco, ki so edinstvene za Model Context Protocol.
 
 ## Uvod
 
-<<<<<<< HEAD
-Model Context Protocol (MCP) prinaša edinstvene varnostne izzive, ki presegajo tradicionalno programsko varnost. Ko sistemi umetne inteligence pridobijo dostop do orodij, podatkov in zunanjih storitev, se pojavijo novi napadi, kot so vbrizgavanje ukazov, zastrupitev orodij, ugrabitev sej, težave z zmedenim namestnikom in ranljivosti pri prenosu žetonov.
-=======
-Model Context Protocol (MCP) prinaša edinstvene varnostne izzive, ki presegajo tradicionalno programsko varnost. Ko sistemi umetne inteligence pridobijo dostop do orodij, podatkov in zunanjih storitev, se pojavijo novi napadi, kot so vbrizgavanje ukazov (prompt injection), zastrupitev orodij, ugrabitev sej, težave z zmedenim namestnikom (confused deputy problems) in ranljivosti pri prenosu žetonov.
->>>>>>> origin/main
+Model Context Protocol (MCP) prinaša edinstvene varnostne izzive, ki presegajo tradicionalno programsko varnost. Ko sistemi umetne inteligence pridobijo dostop do orodij, podatkov in zunanjih storitev, se pojavijo novi napadi, kot so vbrizgavanje ukazov (prompt injection), zastrupitev orodij (tool poisoning), prevzem sej (session hijacking), težave z zmedenim namestnikom (confused deputy problems) in ranljivosti pri prenosu žetonov (token passthrough vulnerabilities).
 
 Ta lekcija raziskuje napredne varnostne implementacije, ki temeljijo na najnovejši MCP specifikaciji (2025-06-18), Microsoftovih varnostnih rešitvah in uveljavljenih poslovnih varnostnih vzorcih.
 
-### **Osnovna varnostna načela**
+### **Osnovna načela varnosti**
 
-<<<<<<< HEAD
 **Iz MCP specifikacije (2025-06-18):**
 
 - **Izrecne prepovedi**: MCP strežniki **NE SMEJO** sprejemati žetonov, ki niso izdani zanje, in **NE SMEJO** uporabljati sej za avtentikacijo
-- **Obvezna preverjanja**: Vse dohodne zahteve **MORAJO** biti preverjene, uporabniško soglasje **MORA** biti pridobljeno za operacije proxy
-=======
-**Iz MCP Specifikacije (2025-06-18):**
-
-- **Izrecne prepovedi**: MCP strežniki **NE SMEJO** sprejemati žetonov, ki niso izdani zanje, in **NE SMEJO** uporabljati sej za avtentikacijo
 - **Obvezna preverjanja**: Vse dohodne zahteve **MORAJO** biti preverjene, uporabniško soglasje **MORA** biti pridobljeno za operacije prek proxyja
->>>>>>> origin/main
-- **Privzeta varnost**: Uvedite varnostne kontrole, ki so odporne na napake, z večplastnim pristopom
-- **Uporabniški nadzor**: Uporabniki morajo izrecno soglašati pred dostopom do podatkov ali izvajanjem orodij
+- **Privzeta varnost**: Uvedite varnostne kontrole, ki so varne v primeru napake, z večplastnim pristopom
+- **Uporabniški nadzor**: Uporabniki morajo podati izrecno soglasje pred dostopom do podatkov ali izvajanjem orodij
 
 ## Cilji učenja
 
 Do konca te napredne lekcije boste sposobni:
 
 - **Implementirati napredno avtentikacijo**: Uvesti integracijo zunanjih ponudnikov identitete z Microsoft Entra ID in varnostnimi vzorci OAuth 2.1
-- **Preprečiti napade, specifične za AI**: Zaščititi pred vbrizgavanjem ukazov, zastrupitvijo orodij in ugrabljanjem sej z uporabo Microsoft Prompt Shields in Azure Content Safety
+- **Preprečiti napade, specifične za AI**: Zaščititi pred vbrizgavanjem ukazov, zastrupitvijo orodij in prevzemom sej z uporabo Microsoft Prompt Shields in Azure Content Safety
 - **Uporabiti poslovno varnost**: Uvesti celovito beleženje, spremljanje in odzivanje na incidente za produkcijske MCP implementacije  
 - **Zavarovati izvajanje orodij**: Oblikovati izolirana okolja za izvajanje z ustreznimi kontrolami virov
-<<<<<<< HEAD
 - **Obravnavati MCP ranljivosti**: Prepoznati in omiliti težave z zmedenim namestnikom, ranljivosti pri prenosu žetonov in tveganja v dobavni verigi
-=======
-- **Nasloviti MCP ranljivosti**: Prepoznati in omiliti težave z zmedenim namestnikom, ranljivosti pri prenosu žetonov in tveganja v dobavni verigi
->>>>>>> origin/main
 - **Integrirati Microsoftovo varnost**: Izkoristiti Azure varnostne storitve in GitHub Advanced Security za celovito zaščito
 
 ## **OBVEZNE varnostne zahteve**
 
-<<<<<<< HEAD
 ### **Ključne zahteve iz MCP specifikacije (2025-06-18):**
-=======
-### **Ključne zahteve iz MCP Specifikacije (2025-06-18):**
->>>>>>> origin/main
 
 ```yaml
 Authentication & Authorization:
@@ -85,35 +62,20 @@ Session Management:
 
 ## Napredna avtentikacija in avtorizacija
 
-<<<<<<< HEAD
 Sodobne MCP implementacije koristijo evolucijo specifikacije proti delegaciji zunanjim ponudnikom identitete, kar bistveno izboljša varnostni položaj v primerjavi s prilagojenimi implementacijami avtentikacije.
 
 ### **Integracija z Microsoft Entra ID**
 
-Trenutna MCP specifikacija (2025-06-18) omogoča delegacijo zunanjim ponudnikom identitete, kot je Microsoft Entra ID, ki zagotavlja funkcije varnosti na ravni podjetja:
-
-**Varnostne prednosti:**
-- Večfaktorska avtentikacija (MFA) na ravni podjetja
-=======
-Sodobne MCP implementacije koristijo evolucijo specifikacije proti delegaciji zunanjim ponudnikom identitete, kar bistveno izboljša varnostno stanje v primerjavi s prilagojenimi implementacijami avtentikacije.
-
-### **Integracija Microsoft Entra ID**
-
 Trenutna MCP specifikacija (2025-06-18) omogoča delegacijo zunanjim ponudnikom identitete, kot je Microsoft Entra ID, ki zagotavlja varnostne funkcije na ravni podjetja:
 
 **Varnostne prednosti:**
-- Večstopenjska avtentikacija (MFA) na ravni podjetja
->>>>>>> origin/main
+- Večfaktorska avtentikacija (MFA) na ravni podjetja
 - Politike pogojnega dostopa, ki temeljijo na oceni tveganja
 - Centralizirano upravljanje življenjskega cikla identitete
 - Napredna zaščita pred grožnjami in zaznavanje anomalij
 - Skladnost s poslovnimi varnostnimi standardi
 
-<<<<<<< HEAD
 ### Implementacija .NET z Entra ID
-=======
-### .NET Implementacija z Entra ID
->>>>>>> origin/main
 
 Izboljšana implementacija, ki izkorišča Microsoftov varnostni ekosistem:
 
@@ -307,11 +269,7 @@ public class AuditLoggingService
 
 ### Java Spring Security z integracijo OAuth 2.1
 
-<<<<<<< HEAD
-Izboljšana implementacija Spring Security, ki sledi varnostnim vzorcem OAuth 2.1, kot jih zahteva MCP specifikacija:
-=======
 Izboljšana implementacija Spring Security, ki sledi varnostnim vzorcem OAuth 2.1, kot zahteva MCP specifikacija:
->>>>>>> origin/main
 
 ```java
 @Configuration
@@ -948,19 +906,11 @@ async def log_security_event(event_data: Dict):
     logging.info(f"MCP Security Event: {json.dumps(event_data, default=str)}")
 ```
 
-<<<<<<< HEAD
-## Napredno omilitev MCP varnostnih groženj
+## Napredno omilitev varnostnih groženj MCP
 
 ### **1. Preprečevanje napadov z zmedenim namestnikom**
 
 **Izboljšana implementacija v skladu z MCP specifikacijo (2025-06-18):**
-=======
-## Napredno omiljenje MCP varnostnih groženj
-
-### **1. Preprečevanje napadov z zmedenim namestnikom**
-
-**Izboljšana implementacija v skladu z MCP Specifikacijo (2025-06-18):**
->>>>>>> origin/main
 
 ```python
 import asyncio
@@ -1322,7 +1272,7 @@ class TokenPassthroughPrevention:
         return await self.sign_downstream_token(token_payload)
 ```
 
-### **3. Preprečevanje ugrabljanja sej**
+### **3. Preprečevanje prevzema sej**
 
 **Napredna varnost sej:**
 
@@ -1779,11 +1729,7 @@ class MCPSupplyChainSecurity:
 ### **Ključni kontrolni seznam implementacije**
 
 Avtentikacija in avtorizacija:
-<<<<<<< HEAD
-  Integracija zunanjih ponudnikov identitete (Microsoft Entra ID)
-=======
   Integracija zunanjega ponudnika identitete (Microsoft Entra ID)
->>>>>>> origin/main
   Preverjanje občinstva žetonov (OBVEZNO)
   Brez avtentikacije na podlagi sej
   Celovito preverjanje zahtev
@@ -1796,19 +1742,11 @@ Varnostni ukrepi za AI:
   
 Varnost sej:
   Kriptografsko varni ID-ji sej
-<<<<<<< HEAD
-  Vezava sej na uporabnika
-  Zaznavanje ugrabljanja sej
-  Uveljavljanje prenosa prek HTTPS
-  
-OAuth in varnost proxy:
-=======
   Povezava sej z uporabnikom
-  Zaznavanje ugrabljanja sej
+  Zaznavanje prevzema sej
   Uveljavljanje prenosa prek HTTPS
   
-OAuth in proxy varnost:
->>>>>>> origin/main
+OAuth in varnost proxyja:
   Implementacija PKCE (OAuth 2.1)
   Izrecno uporabniško soglasje za dinamične odjemalce
   Strogo preverjanje preusmeritvenih URI-jev
@@ -1818,33 +1756,21 @@ Poslovna integracija:
   Azure Key Vault za upravljanje skrivnosti
   Application Insights za spremljanje varnosti
   GitHub Advanced Security za dobavno verigo
-  Microsoft Defender za integracijo DevOps
+  Integracija Microsoft Defender za DevOps
 
 Spremljanje in odzivanje:
   Celovito beleženje varnostnih dogodkov
   Zaznavanje groženj v realnem času
-<<<<<<< HEAD
   Avtomatizirano odzivanje na incidente
-=======
-  Avtomatiziran odziv na incidente
->>>>>>> origin/main
   Opozarjanje na podlagi tveganja
 
 ### **Prednosti Microsoftovega varnostnega ekosistema**
 
-<<<<<<< HEAD
 - **Integrirana varnostna drža**: Poenotena varnost identitete, infrastrukture in aplikacij
 - **Napredna zaščita AI**: Obrambe, zasnovane za grožnje, specifične za AI  
 - **Skladnost na ravni podjetja**: Vgrajena podpora za regulativne zahteve in industrijske standarde
 - **Obveščanje o grožnjah**: Globalna integracija obveščanja o grožnjah za proaktivno zaščito
-- **Razširljiva arhitektura**: Razširljivost na ravni podjetja z ohranjenimi varnostnimi kontrolami
-=======
-- **Integrirana varnostna drža**: Poenotena varnost med identiteto, infrastrukturo in aplikacijami
-- **Napredna zaščita AI**: Obrambe, zasnovane posebej za grožnje, specifične za AI  
-- **Skladnost na ravni podjetja**: Vgrajena podpora za regulativne zahteve in industrijske standarde
-- **Obveščanje o grožnjah**: Globalna integracija obveščanja o grožnjah za proaktivno zaščito
 - **Razširljiva arhitektura**: Razširljivost na ravni podjetja z ohranjanjem varnostnih kontrol
->>>>>>> origin/main
 
 ### **Reference in viri**
 
@@ -1858,15 +1784,11 @@ Spremljanje in odzivanje:
 
 ---
 
-> **Varnostno obvestilo**: Ta napreden vodič za implementacijo odraža zahteve trenutne MCP specifikacije (2025-06-18). Vedno preverite najnovejšo uradno dokumentacijo in upoštevajte svoje specifične varnostne zahteve ter model groženj pri implementaciji teh kontrol.
+> **Varnostno obvestilo**: Ta napredni vodič za implementacijo odraža zahteve trenutne MCP specifikacije (2025-06-18). Vedno preverite najnovejšo uradno dokumentacijo in upoštevajte svoje specifične varnostne zahteve ter model groženj pri implementaciji teh kontrol.
 
 ## Kaj sledi
 
 - [5.9 Spletno iskanje](../web-search-mcp/README.md)
 
 **Omejitev odgovornosti**:  
-<<<<<<< HEAD
-Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da se zavedate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovni prevod s strani človeškega prevajalca. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
-=======
-Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
->>>>>>> origin/main
+Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.

@@ -2,80 +2,66 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T20:49:07+00:00",
-=======
-  "translation_date": "2025-08-18T16:03:58+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T16:34:04+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "ro"
 }
 -->
 # Rularea acestui exemplu
 
-Se recomandă să instalați `uv`, dar nu este obligatoriu, consultați [instrucțiunile](https://docs.astral.sh/uv/#highlights)
+Se recomandă instalarea `uv`, dar nu este obligatoriu, vezi [instrucțiuni](https://docs.astral.sh/uv/#highlights)
 
-## -0- Creați un mediu virtual
+## -0- Creează un mediu virtual
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Activați mediul virtual
+## -1- Activează mediul virtual
 
 ```bash
 venv\Scripts\activate
 ```
 
-## -2- Instalați dependențele
+## -2- Instalează dependențele
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- Rulați exemplul
+## -3- Rulează exemplul
 
 ```bash
 mcp run server.py
 ```
 
-## -4- Testați exemplul
+## -4- Testează exemplul
 
-Cu serverul pornit într-un terminal, deschideți un alt terminal și rulați următoarea comandă:
+Cu serverul pornit într-un terminal, deschide un alt terminal și rulează următoarea comandă:
 
 ```bash
 mcp dev server.py
 ```
 
-Aceasta ar trebui să pornească un server web cu o interfață vizuală care vă permite să testați exemplul.
+Aceasta ar trebui să pornească un server web cu o interfață vizuală care îți permite să testezi exemplul.
 
 Odată ce serverul este conectat:
 
-<<<<<<< HEAD
-- încercați să listați uneltele și să rulați `add`, cu argumentele 2 și 4, ar trebui să vedeți 6 în rezultat.
+- încearcă să listezi uneltele și rulează `add`, cu argumentele 2 și 4, ar trebui să vezi 6 în rezultat.
 
-- mergeți la resurse și șablonul de resurse și apelați get_greeting, introduceți un nume și ar trebui să vedeți un mesaj de salut cu numele pe care l-ați furnizat.
-=======
-- încercați să listați instrumentele și să rulați `add`, cu argumentele 2 și 4, ar trebui să vedeți 6 în rezultat.
-
-- mergeți la resurse și șablonul de resurse și apelați get_greeting, introduceți un nume și ar trebui să vedeți un salut cu numele pe care l-ați furnizat.
->>>>>>> origin/main
+- mergi la resurse și șablonul de resurse și apelează get_greeting, introdu un nume și ar trebui să vezi un mesaj de salut cu numele pe care l-ai furnizat.
 
 ### Testarea în modul CLI
 
-Inspectorul pe care l-ați rulat este de fapt o aplicație Node.js, iar `mcp dev` este un wrapper în jurul acesteia.
+Inspectorul pe care l-ai rulat este de fapt o aplicație Node.js, iar `mcp dev` este un wrapper în jurul acesteia.
 
-Îl puteți lansa direct în modul CLI rulând următoarea comandă:
+Poți să-l lansezi direct în modul CLI rulând următoarea comandă:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-<<<<<<< HEAD
-Aceasta va lista toate uneltele disponibile pe server. Ar trebui să vedeți următorul rezultat:
-=======
-Aceasta va lista toate instrumentele disponibile pe server. Ar trebui să vedeți următorul output:
->>>>>>> origin/main
+Aceasta va lista toate uneltele disponibile pe server. Ar trebui să vezi următorul output:
 
 ```text
 {
@@ -106,21 +92,13 @@ Aceasta va lista toate instrumentele disponibile pe server. Ar trebui să vedeț
 }
 ```
 
-<<<<<<< HEAD
-Pentru a invoca o unealtă, tastați:
-=======
-Pentru a apela un instrument, tastați:
->>>>>>> origin/main
+Pentru a invoca o unealtă, tastează:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-<<<<<<< HEAD
-Ar trebui să vedeți următorul rezultat:
-=======
-Ar trebui să vedeți următorul output:
->>>>>>> origin/main
+Ar trebui să vezi următorul output:
 
 ```text
 {
@@ -134,18 +112,9 @@ Ar trebui să vedeți următorul output:
 }
 ```
 
-<<<<<<< HEAD
-> ![!TIP]
-> De obicei, este mult mai rapid să rulați inspectorul în modul CLI decât în browser.
-> Citiți mai multe despre inspector [aici](https://github.com/modelcontextprotocol/inspector).
-
-**Declinarea responsabilității**:  
-Acest document a fost tradus utilizând serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
-=======
-> [!TIP]
-> De obicei, este mult mai rapid să rulați inspectorul în modul CLI decât în browser.
-> Citiți mai multe despre inspector [aici](https://github.com/modelcontextprotocol/inspector).
+> [!TIP]  
+> De obicei, este mult mai rapid să rulezi inspectorul în modul CLI decât în browser.  
+> Citește mai multe despre inspector [aici](https://github.com/modelcontextprotocol/inspector).
 
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
->>>>>>> origin/main

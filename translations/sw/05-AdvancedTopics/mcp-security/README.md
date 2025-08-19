@@ -2,82 +2,44 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "997c7119766a69552e23d7d681316902",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T18:57:31+00:00",
-=======
-  "translation_date": "2025-08-18T14:00:50+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T14:32:43+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "sw"
 }
 -->
-<<<<<<< HEAD
-# Mwongozo wa Utekelezaji wa Juu wa Usalama wa MCP
+# MCP Usalama Bora Zaidi - Mwongozo wa Utekelezaji wa Kiwango cha Juu
 
 > **Kiwango cha Sasa**: Mwongozo huu unazingatia mahitaji ya usalama ya [MCP Specification 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) na [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices).
 
-Usalama ni muhimu sana kwa utekelezaji wa MCP, hasa katika mazingira ya biashara. Mwongozo huu wa juu unachunguza mbinu za kina za usalama kwa ajili ya matumizi ya MCP katika uzalishaji, ukishughulikia changamoto za usalama wa jadi na vitisho maalum vya AI vinavyohusiana na Model Context Protocol.
-
-## Utangulizi
-
-Model Context Protocol (MCP) inaleta changamoto za kipekee za usalama zinazozidi zile za programu za kawaida. Kadri mifumo ya AI inavyopata zana, data, na huduma za nje, njia mpya za mashambulizi zinaibuka, zikiwemo prompt injection, tool poisoning, session hijacking, confused deputy problems, na token passthrough vulnerabilities.
-
-Somo hili linachunguza utekelezaji wa usalama wa juu kulingana na MCP Specification ya hivi karibuni (2025-06-18), suluhisho za usalama za Microsoft, na mifumo ya usalama ya biashara iliyoimarika.
-=======
-# MCP Usalama Bora - Mwongozo wa Utekelezaji wa Kiwango cha Juu
-
-> **Kiwango cha Sasa**: Mwongozo huu unazingatia mahitaji ya usalama ya [MCP Specification 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) na [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices).
-
-Usalama ni jambo muhimu kwa utekelezaji wa MCP, hasa katika mazingira ya biashara. Mwongozo huu wa kiwango cha juu unachunguza mbinu za kina za usalama kwa ajili ya matumizi ya MCP katika uzalishaji, ukishughulikia changamoto za usalama wa jadi na vitisho maalum vya AI vinavyohusiana na Model Context Protocol.
+Usalama ni jambo muhimu kwa utekelezaji wa MCP, hasa katika mazingira ya biashara. Mwongozo huu wa hali ya juu unachunguza mbinu za kina za usalama kwa ajili ya matumizi ya MCP katika uzalishaji, ukishughulikia changamoto za usalama wa jadi na vitisho maalum vya AI vinavyohusiana na Model Context Protocol.
 
 ## Utangulizi
 
 Model Context Protocol (MCP) inaleta changamoto za kipekee za usalama zinazozidi zile za programu za kawaida. Kadri mifumo ya AI inavyopata ufikiaji wa zana, data, na huduma za nje, njia mpya za mashambulizi huibuka, ikiwa ni pamoja na sindano ya maelekezo (prompt injection), uchafuzi wa zana (tool poisoning), utekaji wa vikao (session hijacking), matatizo ya naibu aliyedanganywa (confused deputy problems), na udhaifu wa upitishaji wa tokeni (token passthrough vulnerabilities).
 
-Somo hili linachunguza utekelezaji wa usalama wa hali ya juu kulingana na MCP Specification ya hivi karibuni (2025-06-18), suluhisho za usalama za Microsoft, na mifumo ya usalama ya biashara iliyoimarishwa.
->>>>>>> origin/main
+Somo hili linachunguza utekelezaji wa hali ya juu wa usalama kulingana na MCP specification ya hivi karibuni (2025-06-18), suluhisho za usalama za Microsoft, na mifumo ya usalama ya biashara iliyoimarishwa.
 
 ### **Kanuni za Msingi za Usalama**
 
 **Kutoka kwa MCP Specification (2025-06-18):**
 
-<<<<<<< HEAD
-- **Marufuku ya Moja kwa Moja**: MCP servers **HAIPASWI** kukubali tokeni ambazo hazijatolewa kwao, na **HAIPASWI** kutumia sessions kwa uthibitishaji
-- **Uthibitishaji wa Lazima**: Maombi yote yanayoingia **LAZIMA** yathibitishwe, na ridhaa ya mtumiaji **LAZIMA** ipatikane kwa shughuli za proxy
-- **Chaguo-msingi Salama**: Tekeleza udhibiti wa usalama wa kuaminika na mbinu za ulinzi wa kina
-- **Udhibiti wa Mtumiaji**: Watumiaji lazima watoe ridhaa ya wazi kabla ya kufikia data yoyote au kutekeleza zana
-
-## Malengo ya Kujifunza
-
-Ifikapo mwisho wa somo hili la juu, utaweza:
-
-- **Kutumia Uthibitishaji wa Juu**: Tekeleza ujumuishaji wa mtoa kitambulisho wa nje kwa kutumia Microsoft Entra ID na mifumo ya usalama ya OAuth 2.1  
-- **Kuzuia Mashambulizi Maalum ya AI**: Linda dhidi ya prompt injection, tool poisoning, na session hijacking kwa kutumia Microsoft Prompt Shields na Azure Content Safety  
-- **Kutumia Usalama wa Biashara**: Tekeleza ukaguzi wa kina, ufuatiliaji, na mwitikio wa matukio kwa matumizi ya MCP katika uzalishaji  
-- **Kulinda Utekelezaji wa Zana**: Buni mazingira ya utekelezaji yaliyotengwa na udhibiti sahihi wa rasilimali  
-- **Kushughulikia Udhaifu wa MCP**: Tambua na punguza confused deputy problems, token passthrough vulnerabilities, na hatari za mnyororo wa usambazaji  
-- **Kujumuisha Usalama wa Microsoft**: Tumia huduma za usalama za Azure na GitHub Advanced Security kwa ulinzi wa kina  
-
-## **Mahitaji ya Lazima ya Usalama**
-=======
-- **Marufuku ya Moja kwa Moja**: Seva za MCP **HAZIRUHUSIWI** kukubali tokeni ambazo hazijatolewa kwao, na **HAZIRUHUSIWI** kutumia vikao kwa uthibitishaji.
-- **Uthibitishaji wa Lazima**: Maombi yote yanayoingia **LAZIMA** yahakikishwe, na idhini ya mtumiaji **LAZIMA** ipatikane kwa shughuli za wakala.
-- **Chaguo-msingi Salama**: Tekeleza udhibiti wa usalama wa kushindwa kwa usalama kwa kutumia mbinu za ulinzi kwa kina.
-- **Udhibiti wa Mtumiaji**: Watumiaji lazima watoe idhini ya wazi kabla ya ufikiaji wowote wa data au utekelezaji wa zana.
+- **Marufuku ya Wazi**: Seva za MCP **HAZIRUHUSIWI** kukubali tokeni ambazo hazijatolewa kwao, na **HAZIRUHUSIWI** kutumia vikao kwa uthibitishaji  
+- **Uthibitishaji wa Lazima**: Maombi yote yanayoingia **LAZIMA** yathibitishwe, na idhini ya mtumiaji **LAZIMA** ipatikane kwa shughuli za wakala  
+- **Chaguo-msingi Salama**: Tekeleza udhibiti wa usalama wa kushindwa kwa usalama na mbinu za ulinzi kwa kina  
+- **Udhibiti wa Mtumiaji**: Watumiaji lazima watoe idhini ya wazi kabla ya ufikiaji wowote wa data au utekelezaji wa zana  
 
 ## Malengo ya Kujifunza
 
 Mwisho wa somo hili la hali ya juu, utaweza:
 
-- **Kutumia Uthibitishaji wa Juu**: Kutekeleza ujumuishaji wa mtoa kitambulisho wa nje kwa Microsoft Entra ID na mifumo ya usalama ya OAuth 2.1.
-- **Kuzuia Mashambulizi Maalum ya AI**: Kulinda dhidi ya sindano ya maelekezo, uchafuzi wa zana, na utekaji wa vikao kwa kutumia Microsoft Prompt Shields na Azure Content Safety.
-- **Kutumia Usalama wa Biashara**: Kutekeleza ukaguzi wa kina, ufuatiliaji, na mwitikio wa matukio kwa matumizi ya MCP katika uzalishaji.
-- **Kulinda Utekelezaji wa Zana**: Kubuni mazingira ya utekelezaji yaliyotengwa na udhibiti sahihi wa rasilimali.
-- **Kushughulikia Udhaifu wa MCP**: Kutambua na kupunguza matatizo ya naibu aliyedanganywa, udhaifu wa upitishaji wa tokeni, na hatari za mnyororo wa usambazaji.
-- **Kujumuisha Usalama wa Microsoft**: Kutumia huduma za usalama za Azure na GitHub Advanced Security kwa ulinzi wa kina.
+- **Kutumia Uthibitishaji wa Juu**: Kutekeleza ujumuishaji wa mtoa kitambulisho wa nje na Microsoft Entra ID na mifumo ya usalama ya OAuth 2.1  
+- **Kuzuia Mashambulizi Maalum ya AI**: Kulinda dhidi ya sindano ya maelekezo, uchafuzi wa zana, na utekaji wa vikao kwa kutumia Microsoft Prompt Shields na Azure Content Safety  
+- **Kutumia Usalama wa Biashara**: Kutekeleza ukaguzi wa kina, ufuatiliaji, na mwitikio wa matukio kwa matumizi ya MCP katika uzalishaji  
+- **Kulinda Utekelezaji wa Zana**: Kubuni mazingira ya utekelezaji yaliyotengwa na udhibiti sahihi wa rasilimali  
+- **Kushughulikia Udhaifu wa MCP**: Kutambua na kupunguza matatizo ya naibu aliyedanganywa, udhaifu wa upitishaji wa tokeni, na hatari za mnyororo wa usambazaji  
+- **Kujumuisha Usalama wa Microsoft**: Kutumia huduma za usalama za Azure na GitHub Advanced Security kwa ulinzi wa kina  
 
-## **MAHITAJI YA LAZIMA YA USALAMA**
->>>>>>> origin/main
+## **MAHITAJI YA LAZIMA YA Usalama**
 
 ### **Mahitaji Muhimu kutoka kwa MCP Specification (2025-06-18):**
 
@@ -100,33 +62,18 @@ Session Management:
 
 ## Uthibitishaji na Uidhinishaji wa Juu
 
-<<<<<<< HEAD
-Utekelezaji wa kisasa wa MCP unafaidika na mageuzi ya specifikeshini kuelekea kwa mtoa kitambulisho wa nje, kuboresha kwa kiasi kikubwa hali ya usalama ikilinganishwa na utekelezaji wa uthibitishaji wa kawaida.
+Utekelezaji wa kisasa wa MCP unafaidika na mageuzi ya specification kuelekea kwa mtoa kitambulisho wa nje, kuboresha kwa kiasi kikubwa hali ya usalama ikilinganishwa na utekelezaji wa uthibitishaji wa kawaida.
 
 ### **Ujumuishaji wa Microsoft Entra ID**
 
-MCP Specification ya sasa (2025-06-18) inaruhusu udelegeshaji kwa watoa kitambulisho wa nje kama Microsoft Entra ID, ikitoa vipengele vya usalama vya kiwango cha biashara:
+MCP specification ya sasa (2025-06-18) inaruhusu uidhinishaji kwa watoa kitambulisho wa nje kama Microsoft Entra ID, ikitoa vipengele vya usalama vya kiwango cha biashara:
 
 **Faida za Usalama:**
-- Uthibitishaji wa vipengele vingi (MFA) wa kiwango cha biashara  
+- Uthibitishaji wa viwango vingi (MFA) wa kiwango cha biashara  
 - Sera za ufikiaji wa masharti kulingana na tathmini ya hatari  
 - Usimamizi wa mzunguko wa maisha wa kitambulisho ulio kati  
 - Ulinzi wa hali ya juu dhidi ya vitisho na kugundua hali zisizo za kawaida  
 - Uzingatiaji wa viwango vya usalama vya biashara  
-=======
-Utekelezaji wa kisasa wa MCP unafaidika na mageuzi ya specifikationi kuelekea ugawaji wa mtoa kitambulisho wa nje, kuboresha kwa kiasi kikubwa hali ya usalama ikilinganishwa na utekelezaji wa uthibitishaji wa kawaida.
-
-### **Ujumuishaji wa Microsoft Entra ID**
-
-MCP Specification ya sasa (2025-06-18) inaruhusu ugawaji kwa watoa kitambulisho wa nje kama Microsoft Entra ID, ikitoa vipengele vya usalama vya kiwango cha biashara:
-
-**Faida za Usalama:**
-- Uthibitishaji wa viwango vingi (MFA) wa kiwango cha biashara.
-- Sera za ufikiaji wa masharti kulingana na tathmini ya hatari.
-- Usimamizi wa mzunguko wa maisha wa kitambulisho ulio kati.
-- Ulinzi wa hali ya juu dhidi ya vitisho na kugundua hali zisizo za kawaida.
-- Uzingatiaji wa viwango vya usalama vya biashara.
->>>>>>> origin/main
 
 ### Utekelezaji wa .NET na Entra ID
 
@@ -322,11 +269,7 @@ public class AuditLoggingService
 
 ### Ujumuishaji wa Java Spring Security na OAuth 2.1
 
-<<<<<<< HEAD
-Utekelezaji ulioboreshwa wa Spring Security ukifuata mifumo ya usalama ya OAuth 2.1 inayohitajika na MCP Specification:
-=======
-Utekelezaji wa Spring Security ulioboreshwa ukifuata mifumo ya usalama ya OAuth 2.1 inayotakiwa na MCP Specification:
->>>>>>> origin/main
+Utekelezaji wa Spring Security ulioboreshwa ukifuata mifumo ya usalama ya OAuth 2.1 inayohitajika na MCP specification:
 
 ```java
 @Configuration
@@ -575,15 +518,9 @@ public class AdvancedMcpSecurityInterceptor implements ToolExecutionInterceptor 
 }
 ```
 
-<<<<<<< HEAD
 ## Udhibiti wa Usalama Maalum wa AI na Suluhisho za Microsoft
 
-### **Ulinzi Dhidi ya Prompt Injection kwa Microsoft Prompt Shields**
-=======
-## Udhibiti Maalum wa Usalama wa AI na Suluhisho za Microsoft
-
 ### **Ulinzi Dhidi ya Sindano ya Maelekezo kwa Microsoft Prompt Shields**
->>>>>>> origin/main
 
 Utekelezaji wa kisasa wa MCP unakabiliwa na mashambulizi ya hali ya juu ya AI yanayohitaji ulinzi maalum:
 
@@ -969,15 +906,9 @@ async def log_security_event(event_data: Dict):
     logging.info(f"MCP Security Event: {json.dumps(event_data, default=str)}")
 ```
 
-<<<<<<< HEAD
-## Kupunguza Vitisho vya Juu vya Usalama wa MCP
-
-### **1. Kuzuia Mashambulizi ya Confused Deputy**
-=======
-## Kupunguza Vitisho vya Usalama vya MCP vya Kiwango cha Juu
+## Kupunguza Vitisho vya Usalama vya MCP vya Juu
 
 ### **1. Kuzuia Mashambulizi ya Naibu Aliyedanganywa**
->>>>>>> origin/main
 
 **Utekelezaji Ulioboreshwa Ukifuata MCP Specification (2025-06-18):**
 
@@ -1214,11 +1145,7 @@ async def secure_oauth_proxy_flow():
         return await exchange_code_for_tokens(authorization_code, code_verifier)
 ```
 
-<<<<<<< HEAD
-### **2. Kuzuia Token Passthrough**
-=======
 ### **2. Kuzuia Upitishaji wa Tokeni**
->>>>>>> origin/main
 
 **Utekelezaji wa Kina:**
 
@@ -1345,15 +1272,9 @@ class TokenPassthroughPrevention:
         return await self.sign_downstream_token(token_payload)
 ```
 
-<<<<<<< HEAD
-### **3. Kuzuia Session Hijacking**
-
-**Usalama wa Session wa Juu:**
-=======
 ### **3. Kuzuia Utekaji wa Vikao**
 
-**Usalama wa Vikao wa Kiwango cha Juu:**
->>>>>>> origin/main
+**Usalama wa Vikao wa Juu:**
 
 ```python
 import secrets
@@ -1733,8 +1654,6 @@ class MCPThreatDetectionPipeline:
         
         return detection_results
 ```
-<<<<<<< HEAD
-=======
 
 ### **Ujumuishaji wa Usalama wa Mnyororo wa Ugavi**
 
@@ -1822,7 +1741,7 @@ Udhibiti wa Usalama wa AI:
   Uthibitishaji wa maudhui ya matokeo  
 
 Usalama wa Vikao:
-  Vitambulisho vya vikao vilivyohakikishwa kwa njia ya kriptografia  
+  Vitambulisho vya vikao vilivyolindwa kwa njia ya kielektroniki  
   Ufungaji wa vikao kwa mtumiaji maalum  
   Kugundua utekaji wa vikao  
   Utekelezaji wa usafirishaji wa HTTPS  
@@ -1837,152 +1756,19 @@ Ujumuishaji wa Biashara:
   Azure Key Vault kwa usimamizi wa siri  
   Application Insights kwa ufuatiliaji wa usalama  
   GitHub Advanced Security kwa mnyororo wa usambazaji  
-  Ujumuishaji wa Microsoft Defender for DevOps  
+  Ujumuishaji wa Microsoft Defender kwa DevOps  
 
 Ufuatiliaji na Mwitikio:
   Ukaguzi wa kina wa matukio ya usalama  
   Kugundua vitisho kwa wakati halisi  
   Mwitikio wa matukio uliojiendesha  
-  Utoaji wa tahadhari kulingana na hatari  
+  Tahadhari kulingana na hatari  
 
 ### **Faida za Mfumo wa Usalama wa Microsoft**
 
-- **Msimamo wa Usalama Uliojumuishwa**: Usalama wa pamoja katika kitambulisho, miundombinu, na programu.  
-- **Ulinzi wa Juu wa AI**: Ulinzi maalum dhidi ya vitisho vya AI.  
-- **Uzingatiaji wa Biashara**: Usaidizi wa ndani kwa mahitaji ya udhibiti na viwango vya sekta.  
-- **Ujasusi wa Vitisho**: Ujumuishaji wa ujasusi wa vitisho vya kimataifa kwa ulinzi wa mapema.  
-- **Miundombinu Inayoweza Kupimika**: Upanuzi wa kiwango cha biashara huku ukidumisha udhibiti wa usalama.  
-
-### **Marejeleo na Rasilimali**
-
-- **[MCP Specification (2025-06-18)](https://spec.modelcontextprotocol.io/specification/2025-06-18/)**  
-- **[MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)**  
-- **[MCP Authorization Specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)**  
-- **[Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)**  
-- **[Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/)**  
-- **[OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)**  
-- **[OWASP Top 10 for Large Language Models](https://genai.owasp.org/)**  
-
----
-
-> **Tahadhari ya Usalama**: Mwongozo huu wa utekelezaji wa hali ya juu unazingatia mahitaji ya sasa ya MCP Specification (2025-06-18). Daima hakikisha dhidi ya nyaraka rasmi za hivi karibuni na zingatia mahitaji yako maalum ya usalama na mfano wa vitisho unapotekeleza udhibiti huu.
->>>>>>> origin/main
-
-### **Ujumuishaji wa Usalama wa Mnyororo wa Usambazaji**
-
-<<<<<<< HEAD
-```python
-class MCPSupplyChainSecurity:
-    """Comprehensive supply chain security for MCP implementations"""
-    
-    def __init__(self, github_token: str, defender_client):
-        self.github_token = github_token
-        self.defender_client = defender_client
-        self.sbom_analyzer = SoftwareBillOfMaterialsAnalyzer()
-        
-    async def validate_mcp_component_security(self, component: Dict) -> Dict:
-        """Validate security of MCP components before deployment"""
-        
-        validation_results = {
-            "component_name": component.get('name'),
-            "version": component.get('version'),
-            "source": component.get('source'),
-            "security_validated": False,
-            "vulnerabilities": [],
-            "compliance_status": {},
-            "recommendations": []
-        }
-        
-        try:
-            # 1. GitHub Advanced Security scanning
-            if component.get('source', '').startswith('https://github.com/'):
-                github_results = await self.scan_with_github_advanced_security(component)
-                validation_results["vulnerabilities"].extend(github_results['vulnerabilities'])
-                validation_results["compliance_status"]["github_security"] = github_results['status']
-            
-            # 2. Microsoft Defender for DevOps integration
-            defender_results = await self.scan_with_defender_for_devops(component)
-            validation_results["vulnerabilities"].extend(defender_results['vulnerabilities'])
-            validation_results["compliance_status"]["defender_security"] = defender_results['status']
-            
-            # 3. SBOM analysis
-            sbom_results = await self.sbom_analyzer.analyze_component(component)
-            validation_results["dependencies"] = sbom_results['dependencies']
-            validation_results["license_compliance"] = sbom_results['license_status']
-            
-            # 4. Signature verification
-            signature_valid = await self.verify_component_signature(component)
-            validation_results["signature_verified"] = signature_valid
-            
-            # 5. Reputation analysis
-            reputation_score = await self.analyze_component_reputation(component)
-            validation_results["reputation_score"] = reputation_score
-            
-            # Final validation decision
-            critical_vulns = [v for v in validation_results["vulnerabilities"] if v['severity'] == 'CRITICAL']
-            
-            validation_results["security_validated"] = (
-                len(critical_vulns) == 0 and
-                signature_valid and
-                reputation_score > 0.7 and
-                all(status == 'PASS' for status in validation_results["compliance_status"].values())
-            )
-            
-            if not validation_results["security_validated"]:
-                validation_results["recommendations"] = self.generate_security_recommendations(validation_results)
-            
-        except Exception as e:
-            validation_results["error"] = str(e)
-            validation_results["security_validated"] = False
-        
-        return validation_results
-```
-
-## Muhtasari wa Mbinu Bora na Miongozo ya Biashara
-
-### **Orodha Muhimu ya Utekelezaji**
-
-Uthibitishaji na Uidhinishaji:
-  Ujumuishaji wa mtoa kitambulisho wa nje (Microsoft Entra ID)  
-  Uthibitishaji wa hadhira ya tokeni (LAZIMA)  
-  Hakuna uthibitishaji wa msingi wa session  
-  Uthibitishaji wa maombi wa kina  
-
-Udhibiti wa Usalama wa AI:
-  Ujumuishaji wa Microsoft Prompt Shields  
-  Uchunguzi wa Azure Content Safety  
-  Kugundua tool poisoning  
-  Uthibitishaji wa maudhui ya matokeo  
-
-Usalama wa Session:
-  Kitambulisho cha session salama kwa njia ya cryptografia  
-  Ufungaji wa session kwa mtumiaji maalum  
-  Kugundua session hijacking  
-  Utekelezaji wa usafirishaji wa HTTPS  
-
-Usalama wa OAuth na Proxy:
-  Utekelezaji wa PKCE (OAuth 2.1)  
-  Ridhaa ya wazi ya mtumiaji kwa wateja wa dynamic  
-  Uthibitishaji mkali wa redirect URI  
-  Hakuna token passthrough (LAZIMA)  
-
-Ujumuishaji wa Biashara:
-  Azure Key Vault kwa usimamizi wa siri  
-  Application Insights kwa ufuatiliaji wa usalama  
-  GitHub Advanced Security kwa mnyororo wa usambazaji  
-  Ujumuishaji wa Microsoft Defender for DevOps  
-
-Ufuatiliaji na Mwitikio:
-  Ukaguzi wa kina wa matukio ya usalama  
-  Kugundua vitisho kwa wakati halisi  
-  Mwitikio wa matukio uliojiendesha  
-  Utoaji wa tahadhari kulingana na hatari  
-
-### **Faida za Mfumo wa Usalama wa Microsoft**
-
-- **Hali ya Usalama Iliyounganishwa**: Usalama uliounganishwa katika kitambulisho, miundombinu, na programu  
+- **Hali ya Usalama Iliyounganishwa**: Usalama wa pamoja katika kitambulisho, miundombinu, na programu  
 - **Ulinzi wa Juu wa AI**: Ulinzi maalum dhidi ya vitisho vya AI  
-- **Uzingatiaji wa Biashara**: Msaada wa ndani kwa mahitaji ya kisheria na viwango vya sekta  
+- **Uzingatiaji wa Biashara**: Msaada wa kujengwa kwa mahitaji ya kisheria na viwango vya sekta  
 - **Ujasusi wa Vitisho**: Ujumuishaji wa ujasusi wa vitisho vya kimataifa kwa ulinzi wa mapema  
 - **Miundombinu Inayoweza Kupimika**: Upanuzi wa kiwango cha biashara huku ukidumisha udhibiti wa usalama  
 
@@ -1998,17 +1784,11 @@ Ufuatiliaji na Mwitikio:
 
 ---
 
-> **Tahadhari ya Usalama**: Mwongozo huu wa utekelezaji wa juu unazingatia mahitaji ya sasa ya MCP Specification (2025-06-18). Daima hakikisha dhidi ya nyaraka rasmi za hivi karibuni na zingatia mahitaji yako maalum ya usalama na mfano wa vitisho unapotekeleza udhibiti huu.
+> **Tahadhari ya Usalama**: Mwongozo huu wa utekelezaji wa hali ya juu unazingatia mahitaji ya sasa ya MCP specification (2025-06-18). Daima hakikisha dhidi ya nyaraka rasmi za hivi karibuni na zingatia mahitaji yako maalum ya usalama na mfano wa vitisho unapotekeleza udhibiti huu.
 
-## Hatua Inayofuata
+## Nini Kifuatacho
 
-- [5.9 Utafutaji wa Wavuti](../web-search-mcp/README.md)
-
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
-=======
 - [5.9 Utafutaji wa Wavuti](../web-search-mcp/README.md)  
 
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati asilia katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
->>>>>>> origin/main
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kibinadamu ya kitaalamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

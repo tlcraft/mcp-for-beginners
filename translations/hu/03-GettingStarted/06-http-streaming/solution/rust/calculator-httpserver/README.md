@@ -2,16 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6240e78bb87f91bece16f8742472aeef",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T23:44:28+00:00",
-=======
-  "translation_date": "2025-08-18T19:04:57+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T15:16:30+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/rust/calculator-httpserver/README.md",
   "language_code": "hu"
 }
 -->
-# A példa futtatása
+# A minta futtatása
 
 ## -1- Telepítsd a függőségeket és építsd fel a projektet
 
@@ -19,15 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 cargo build
 ```
 
-## -2- Futtasd a példát
+## -2- Futtasd a mintát
 
 ```bash
 cargo run
 ```
 
-**Felelősség kizárása**:  
-<<<<<<< HEAD
-Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
-=======
-Ez a dokumentum az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
->>>>>>> origin/main
+**Felelősségkizárás**:  
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

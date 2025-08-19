@@ -2,11 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "0c243c6189393ed7468e470ef2090049",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T19:02:52+00:00",
-=======
-  "translation_date": "2025-08-18T14:06:40+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T14:38:31+00:00",
   "source_file": "02-Security/mcp-security-controls-2025.md",
   "language_code": "sw"
 }
@@ -15,29 +11,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 > **Kiwango cha Sasa**: Hati hii inaonyesha mahitaji ya usalama ya [MCP Specification 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) na [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) rasmi.
 
-<<<<<<< HEAD
 Model Context Protocol (MCP) imeimarika sana kwa udhibiti wa usalama ulioboreshwa unaoshughulikia vitisho vya jadi vya programu na vitisho maalum vya AI. Hati hii inatoa udhibiti wa kina wa usalama kwa utekelezaji salama wa MCP kuanzia Agosti 2025.
-=======
-Model Context Protocol (MCP) imeimarika sana na udhibiti wa usalama ulioboreshwa unaoshughulikia vitisho vya jadi vya programu na vitisho maalum vya AI. Hati hii inatoa udhibiti wa kina wa usalama kwa utekelezaji salama wa MCP kuanzia Agosti 2025.
->>>>>>> origin/main
 
 ## **MAHITAJI YA LAZIMA YA Usalama**
 
 ### **Mambo Muhimu Yanayokatazwa kutoka kwa MCP Specification:**
 
-> **IMEKATAZWA**: Seva za MCP **HAZIRUHUSIWI** kukubali tokeni zozote ambazo hazijatolewa mahsusi kwa seva ya MCP  
+> **IMEKATAZWA**: Seva za MCP **HAZIRUHUSIWI** kukubali tokeni zozote ambazo hazijatolewa wazi kwa seva ya MCP  
 >
 > **IMEKATAZWA**: Seva za MCP **HAZIRUHUSIWI** kutumia vikao kwa uthibitishaji  
 >
-<<<<<<< HEAD
 > **INAHITAJIKA**: Seva za MCP zinazotekeleza idhini **LAZIMA** kuthibitisha maombi yote yanayoingia  
 >
-> **LAZIMA**: Seva za wakala wa MCP zinazotumia vitambulisho vya mteja vya static **LAZIMA** kupata ridhaa ya mtumiaji kwa kila mteja aliyesajiliwa kwa njia ya nguvu  
-=======
-> **INAHITAJIKA**: Seva za MCP zinazotekeleza idhini **LAZIMA** zihakiki maombi yote yanayoingia  
->
-> **LAZIMA**: Seva za wakala wa MCP zinazotumia vitambulisho vya wateja vya static **LAZIMA** zipate idhini ya mtumiaji kwa kila mteja aliyesajiliwa kwa njia ya nguvu  
->>>>>>> origin/main
+> **LAZIMA**: Seva za wakala wa MCP zinazotumia vitambulisho vya wateja vya static **LAZIMA** kupata idhini ya mtumiaji kwa kila mteja aliyesajiliwa kwa njia ya nguvu  
 
 ---
 
@@ -45,38 +31,28 @@ Model Context Protocol (MCP) imeimarika sana na udhibiti wa usalama ulioboreshwa
 
 ### **Ujumuishaji wa Mtoa Utambulisho wa Nje**
 
-<<<<<<< HEAD
-**Kiwango cha Sasa cha MCP (2025-06-18)** kinaruhusu seva za MCP kuhamishia uthibitishaji kwa watoa utambulisho wa nje, hatua kubwa ya kuboresha usalama:
-=======
 **Kiwango cha Sasa cha MCP (2025-06-18)** kinaruhusu seva za MCP kuhamisha uthibitishaji kwa watoa utambulisho wa nje, hatua kubwa ya kuboresha usalama:
->>>>>>> origin/main
 
 **Faida za Usalama:**
 1. **Kuondoa Hatari za Uthibitishaji wa Kawaida**: Kupunguza hatari kwa kuepuka utekelezaji wa uthibitishaji wa kawaida  
 2. **Usalama wa Daraja la Biashara**: Kutumia watoa utambulisho waliothibitishwa kama Microsoft Entra ID na vipengele vya usalama vya hali ya juu  
-<<<<<<< HEAD
-3. **Usimamizi wa Utambulisho wa Kati**: Kurahisisha usimamizi wa mzunguko wa maisha ya mtumiaji, udhibiti wa ufikiaji, na ukaguzi wa kufuata  
-4. **Uthibitishaji wa Vipengele Vingi (MFA)**: Kurithi uwezo wa MFA kutoka kwa watoa utambulisho wa biashara  
-=======
-3. **Usimamizi wa Utambulisho wa Kati**: Kurahisisha usimamizi wa mzunguko wa maisha wa mtumiaji, udhibiti wa ufikiaji, na ukaguzi wa kufuata  
+3. **Usimamizi wa Utambulisho wa Kati**: Kurahisisha usimamizi wa mzunguko wa mtumiaji, udhibiti wa ufikiaji, na ukaguzi wa kufuata  
 4. **Uthibitishaji wa Vipengele Vingi**: Kurithi uwezo wa MFA kutoka kwa watoa utambulisho wa biashara  
->>>>>>> origin/main
 5. **Sera za Ufikiaji wa Masharti**: Kufaidika na udhibiti wa ufikiaji unaotegemea hatari na uthibitishaji unaobadilika  
 
 **Mahitaji ya Utekelezaji:**
-- **Uthibitishaji wa Hadhira ya Tokeni**: Hakikisha tokeni zote zimetolewa mahsusi kwa seva ya MCP  
+- **Uthibitishaji wa Hadhira ya Tokeni**: Hakikisha tokeni zote zimetolewa wazi kwa seva ya MCP  
 - **Uthibitishaji wa Mtoaji**: Thibitisha mtoaji wa tokeni unalingana na mtoa utambulisho anayetarajiwa  
 - **Uthibitishaji wa Saini**: Uthibitishaji wa kimaandishi wa uadilifu wa tokeni  
-- **Utekelezaji wa Muda wa Kuisha**: Utekelezaji mkali wa mipaka ya muda wa maisha ya tokeni  
-- **Uthibitishaji wa Upeo**: Hakikisha tokeni zina ruhusa zinazofaa kwa operesheni zinazohitajika  
+- **Utekelezaji wa Muda wa Kuisha**: Utekelezaji mkali wa mipaka ya muda wa tokeni  
+- **Uthibitishaji wa Upeo**: Hakikisha tokeni zina ruhusa zinazofaa kwa shughuli zinazohitajika  
 
 ### **Usalama wa Mantiki ya Idhini**
 
 **Udhibiti Muhimu:**
 - **Ukaguzi wa Idhini wa Kina**: Mapitio ya mara kwa mara ya usalama wa sehemu zote za maamuzi ya idhini  
-<<<<<<< HEAD
-- **Chaguo za Kawaida Salama**: Kataa ufikiaji pale ambapo mantiki ya idhini haiwezi kufanya uamuzi wa uhakika  
-- **Mipaka ya Ruhusa**: Kutenganisha wazi viwango tofauti vya upendeleo na ufikiaji wa rasilimali  
+- **Chaguo za Kawaida Salama**: Kataa ufikiaji wakati mantiki ya idhini haiwezi kufanya uamuzi wa uhakika  
+- **Mipaka ya Ruhusa**: Mgawanyo wazi kati ya viwango tofauti vya upendeleo na ufikiaji wa rasilimali  
 - **Kumbukumbu za Ukaguzi**: Kumbukumbu kamili za maamuzi yote ya idhini kwa ufuatiliaji wa usalama  
 - **Mapitio ya Mara kwa Mara ya Ufikiaji**: Uthibitishaji wa mara kwa mara wa ruhusa za watumiaji na mgawanyo wa upendeleo  
 
@@ -87,30 +63,11 @@ Model Context Protocol (MCP) imeimarika sana na udhibiti wa usalama ulioboreshwa
 **Kupitisha tokeni kunakatazwa wazi** katika MCP Authorization Specification kutokana na hatari kubwa za usalama:
 
 **Hatari za Usalama Zinazoshughulikiwa:**
-- **Kuzunguka Udhibiti**: Kupuuza udhibiti muhimu wa usalama kama upunguzaji wa kiwango, uthibitishaji wa maombi, na ufuatiliaji wa trafiki  
+- **Kuzunguka Udhibiti**: Kuepuka udhibiti muhimu wa usalama kama kupunguza kiwango, uthibitishaji wa maombi, na ufuatiliaji wa trafiki  
 - **Kuvunjika kwa Uwajibikaji**: Kufanya utambulisho wa mteja kuwa haiwezekani, kuharibu njia za ukaguzi na uchunguzi wa matukio  
-- **Uchimbaji wa Kivuli**: Kuruhusu wahusika waovu kutumia seva kama wakala wa ufikiaji wa data bila ruhusa  
+- **Uchimbaji wa Kivuli**: Kuruhusu wahusika wa uovu kutumia seva kama wakala wa ufikiaji wa data bila ruhusa  
 - **Uvunjaji wa Mipaka ya Uaminifu**: Kuvunja dhana za uaminifu wa huduma za chini kuhusu asili ya tokeni  
-- **Harakati za Kando**: Tokeni zilizodukuliwa katika huduma nyingi huruhusu upanuzi mpana wa mashambulizi  
-=======
-- **Chaguo za Kawaida Salama**: Kataa ufikiaji wakati mantiki ya idhini haiwezi kufanya uamuzi wa uhakika  
-- **Mipaka ya Ruhusa**: Kutenganisha wazi kati ya viwango tofauti vya upendeleo na ufikiaji wa rasilimali  
-- **Kumbukumbu za Ukaguzi**: Kumbukumbu kamili za maamuzi yote ya idhini kwa ufuatiliaji wa usalama  
-- **Mapitio ya Mara kwa Mara ya Ufikiaji**: Uthibitishaji wa mara kwa mara wa ruhusa za watumiaji na mgawanyo wa upendeleo  
-
-## 2. **Usalama wa Tokeni na Udhibiti wa Kuzuia Passthrough**
-
-### **Kuzuia Passthrough ya Tokeni**
-
-**Passthrough ya tokeni imekatazwa wazi** katika MCP Authorization Specification kutokana na hatari kubwa za usalama:
-
-**Hatari za Usalama Zinazoshughulikiwa:**
-- **Kupuuza Udhibiti**: Kuepuka udhibiti muhimu wa usalama kama kupunguza kiwango, uthibitishaji wa maombi, na ufuatiliaji wa trafiki  
-- **Kuvunjika kwa Uwajibikaji**: Kufanya utambulisho wa mteja kuwa haiwezekani, kuharibu njia za ukaguzi na uchunguzi wa matukio  
-- **Uchimbaji wa Kivuli**: Kuruhusu wahusika waovu kutumia seva kama wakala wa ufikiaji wa data bila ruhusa  
-- **Uvunjaji wa Mipaka ya Uaminifu**: Kuvunja dhana za uaminifu wa huduma za chini kuhusu asili ya tokeni  
-- **Harakati za Kando**: Tokeni zilizoharibika katika huduma nyingi huruhusu upanuzi mpana wa mashambulizi  
->>>>>>> origin/main
+- **Harakati za Kando**: Tokeni zilizovunjwa katika huduma nyingi huruhusu upanuzi mpana wa mashambulizi  
 
 **Udhibiti wa Utekelezaji:**
 ```yaml
@@ -132,14 +89,9 @@ Token Lifecycle Management:
 
 **Mbinu Bora:**
 - **Tokeni za Muda Mfupi**: Punguza dirisha la hatari kwa mzunguko wa mara kwa mara wa tokeni  
-<<<<<<< HEAD
-- **Utoaji wa Wakati Muafaka**: Toa tokeni tu pale zinapohitajika kwa operesheni maalum  
+- **Utoaji wa Wakati Muafaka**: Toa tokeni tu wakati zinahitajika kwa shughuli maalum  
 - **Uhifadhi Salama**: Tumia moduli za usalama wa vifaa (HSMs) au hifadhi salama za funguo  
-=======
-- **Utoaji wa Wakati Muafaka**: Toa tokeni tu inapohitajika kwa operesheni maalum  
-- **Hifadhi Salama**: Tumia moduli za usalama wa vifaa (HSMs) au hifadhi salama za funguo  
->>>>>>> origin/main
-- **Ufungaji wa Tokeni**: Funga tokeni kwa wateja, vikao, au operesheni maalum inapowezekana  
+- **Ufungaji wa Tokeni**: Funga tokeni kwa wateja, vikao, au shughuli maalum inapowezekana  
 - **Ufuatiliaji na Tahadhari**: Kugundua kwa wakati halisi matumizi mabaya ya tokeni au mifumo ya ufikiaji bila ruhusa  
 
 ## 3. **Udhibiti wa Usalama wa Vikao**
@@ -147,13 +99,9 @@ Token Lifecycle Management:
 ### **Kuzuia Utekaji wa Vikao**
 
 **Njia za Mashambulizi Zinazoshughulikiwa:**
-<<<<<<< HEAD
-- **Utekeaji wa Vikao kwa Kuingiza Maelekezo**: Matukio mabaya yanayowekwa katika hali ya vikao vilivyoshirikiwa  
-=======
-- **Utekeaji wa Vikao kwa Kuingiza Maagizo**: Matukio mabaya yanayowekwa katika hali ya vikao vilivyoshirikiwa  
->>>>>>> origin/main
-- **Kujifanya Vikao**: Matumizi yasiyoidhinishwa ya vitambulisho vya vikao vilivyoibiwa ili kupuuza uthibitishaji  
-- **Mashambulizi ya Mkusanyiko wa Mito Inayoweza Kuendelea**: Unyonyaji wa urejeshaji wa matukio yanayotumwa na seva kwa kuingiza maudhui mabaya  
+- **Utekeaji wa Vikao kwa Kuingiza Maelekezo**: Matukio ya uovu yaliyoingizwa katika hali ya vikao vilivyoshirikiwa  
+- **Kujifanya Vikao**: Matumizi yasiyoidhinishwa ya vitambulisho vya vikao vilivyoibiwa ili kuepuka uthibitishaji  
+- **Mashambulizi ya Mkusanyiko wa Mifumo**: Unyonyaji wa urejeshaji wa matukio yaliyotumwa na seva kwa kuingiza maudhui ya uovu  
 
 **Udhibiti wa Lazima wa Vikao:**
 ```yaml
@@ -178,37 +126,23 @@ Session Lifecycle:
 **Usalama wa Usafirishaji:**
 - **Utekelezaji wa HTTPS**: Mawasiliano yote ya vikao kupitia TLS 1.3  
 - **Sifa Salama za Vidakuzi**: HttpOnly, Secure, SameSite=Strict  
-- **Kuweka Pin ya Cheti**: Kwa miunganisho muhimu ili kuzuia mashambulizi ya MITM  
+- **Uwekaji wa Cheti**: Kwa miunganisho muhimu ili kuzuia mashambulizi ya MITM  
 
-<<<<<<< HEAD
 ### **Mazingatio ya Hali ya Kihifadhi vs Isiyohifadhi**
 
-**Kwa Utekelezaji wa Hali ya Kihifadhi:**
-=======
-### **Mazingatio ya Stateful vs Stateless**
-
-**Kwa Utekelezaji wa Stateful:**
->>>>>>> origin/main
+**Kwa Utekelezaji wa Kihifadhi:**
 - Hali ya vikao vilivyoshirikiwa inahitaji ulinzi wa ziada dhidi ya mashambulizi ya kuingiza  
 - Usimamizi wa vikao kwa msingi wa foleni unahitaji uthibitishaji wa uadilifu  
 - Seva nyingi zinahitaji usawazishaji salama wa hali ya vikao  
 
-<<<<<<< HEAD
-**Kwa Utekelezaji wa Hali Isiyohifadhi:**
-=======
-**Kwa Utekelezaji wa Stateless:**
->>>>>>> origin/main
+**Kwa Utekelezaji Usiohifadhi:**
 - Usimamizi wa vikao kwa msingi wa JWT au tokeni zinazofanana  
 - Uthibitishaji wa kimaandishi wa uadilifu wa hali ya vikao  
 - Kupunguza uso wa mashambulizi lakini inahitaji uthibitishaji thabiti wa tokeni  
 
 ## 4. **Udhibiti wa Usalama Maalum wa AI**
 
-<<<<<<< HEAD
 ### **Ulinzi Dhidi ya Kuingiza Maelekezo**
-=======
-### **Ulinzi Dhidi ya Kuingiza Maagizo**
->>>>>>> origin/main
 
 **Ujumuishaji wa Microsoft Prompt Shields:**
 ```yaml
@@ -229,15 +163,9 @@ Integration Points:
 ```
 
 **Udhibiti wa Utekelezaji:**
-<<<<<<< HEAD
 - **Usafi wa Ingizo**: Uthibitishaji wa kina na uchujaji wa maingizo yote ya watumiaji  
-- **Ufafanuzi wa Mipaka ya Maudhui**: Kutenganisha wazi kati ya maelekezo ya mfumo na maudhui ya mtumiaji  
+- **Ufafanuzi wa Mipaka ya Maudhui**: Mgawanyo wazi kati ya maelekezo ya mfumo na maudhui ya mtumiaji  
 - **Hierakia ya Maelekezo**: Sheria sahihi za kipaumbele kwa maelekezo yanayokinzana  
-=======
-- **Usafi wa Ingizo**: Uthibitishaji na uchujaji wa kina wa maingizo yote ya watumiaji  
-- **Ufafanuzi wa Mipaka ya Maudhui**: Kutenganisha wazi kati ya maagizo ya mfumo na maudhui ya mtumiaji  
-- **Hierarkia ya Maagizo**: Sheria sahihi za kipaumbele kwa maagizo yanayokinzana  
->>>>>>> origin/main
 - **Ufuatiliaji wa Matokeo**: Kugundua matokeo yanayoweza kuwa hatari au yaliyobadilishwa  
 
 ### **Kuzuia Uchafuzi wa Zana**
@@ -264,16 +192,11 @@ Tool Definition Protection:
     - "Automated alerting for suspicious modifications"
 ```
 
-<<<<<<< HEAD
 **Usimamizi wa Zana wa Kiadinamik:**
-- **Mifumo ya Idhini**: Ridhaa ya wazi ya mtumiaji kwa mabadiliko ya zana  
-=======
-**Usimamizi wa Zana wa Kielezo:**
 - **Mifumo ya Idhini**: Idhini ya wazi ya mtumiaji kwa mabadiliko ya zana  
->>>>>>> origin/main
 - **Uwezo wa Kurejesha**: Uwezo wa kurudi kwenye matoleo ya awali ya zana  
 - **Ukaguzi wa Mabadiliko**: Historia kamili ya mabadiliko ya ufafanuzi wa zana  
-- **Tathmini ya Hatari**: Tathmini ya kiotomatiki ya hali ya usalama wa zana  
+- **Tathmini ya Hatari**: Uthibitishaji wa kiotomatiki wa hali ya usalama wa zana  
 
 ## 5. **Kuzuia Mashambulizi ya Naibu Aliyechanganyikiwa**
 
@@ -296,24 +219,16 @@ Client Registration:
 ```
 
 **Mahitaji ya Utekelezaji:**
-<<<<<<< HEAD
-- **Uthibitishaji wa Ridhaa ya Mtumiaji**: Kamwe usiruke skrini za ridhaa kwa usajili wa mteja wa kiadinamik  
-=======
-- **Uthibitishaji wa Idhini ya Mtumiaji**: Kamwe usiruke skrini za idhini kwa usajili wa wateja wa nguvu  
->>>>>>> origin/main
+- **Uthibitishaji wa Idhini ya Mtumiaji**: Kamwe usiruke skrini za idhini kwa usajili wa wateja wa kiadinamik  
 - **Uthibitishaji wa URI ya Uelekezaji**: Uthibitishaji mkali wa msingi wa orodha nyeupe wa maeneo ya uelekezaji  
 - **Ulinzi wa Nambari ya Idhini**: Nambari za muda mfupi na utekelezaji wa matumizi moja  
 - **Uthibitishaji wa Utambulisho wa Mteja**: Uthibitishaji thabiti wa hati za mteja na metadata  
 
 ## 6. **Usalama wa Utekelezaji wa Zana**
 
-<<<<<<< HEAD
-### **Uwekaji wa Sanduku na Kutenganisha**
-=======
-### **Sandboxing na Kutenganisha**
->>>>>>> origin/main
+### **Uwekaji wa Sanduku na Kutengwa**
 
-**Kutenganisha kwa Msingi wa Kontena:**
+**Kutengwa kwa Msingi wa Kontena:**
 ```yaml
 Execution Environment:
   containerization: "Docker/Podman with security profiles"
@@ -330,21 +245,13 @@ Execution Environment:
     filesystem: "Read-only root with minimal writable areas"
 ```
 
-**Kutenganisha Mchakato:**
-- **Muktadha Tofauti wa Mchakato**: Kila utekelezaji wa zana katika nafasi ya mchakato iliyotenganishwa  
-<<<<<<< HEAD
-- **Mawasiliano ya Mchakato wa Ndani**: Mbinu salama za IPC na uthibitishaji  
-- **Ufuatiliaji wa Mchakato**: Uchambuzi wa tabia ya wakati wa kukimbia na kugundua hali isiyo ya kawaida  
+**Kutengwa kwa Mchakato:**
+- **Muktadha Tofauti wa Mchakato**: Kila utekelezaji wa zana katika nafasi ya mchakato iliyotengwa  
+- **Mawasiliano ya Kati ya Michakato**: Mbinu salama za IPC na uthibitishaji  
+- **Ufuatiliaji wa Mchakato**: Uchambuzi wa tabia wakati wa utekelezaji na kugundua hali zisizo za kawaida  
 - **Utekelezaji wa Rasilimali**: Mipaka madhubuti ya CPU, kumbukumbu, na operesheni za I/O  
 
 ### **Utekelezaji wa Upendeleo Mdogo**
-=======
-- **Mawasiliano ya Kati ya Michakato**: Mbinu salama za IPC na uthibitishaji  
-- **Ufuatiliaji wa Mchakato**: Uchambuzi wa tabia ya wakati wa kukimbia na kugundua hali isiyo ya kawaida  
-- **Utekelezaji wa Rasilimali**: Mipaka madhubuti ya CPU, kumbukumbu, na operesheni za I/O  
-
-### **Utekelezaji wa Upendeleo wa Chini**
->>>>>>> origin/main
 
 **Usimamizi wa Ruhusa:**
 ```yaml
@@ -406,11 +313,7 @@ AI Components:
 - **Ufuatiliaji wa Afya ya Utegemezi**: Tathmini endelevu ya utegemezi wote kwa masuala ya usalama  
 - **Ujumuishaji wa Ujasusi wa Vitisho**: Sasisho za wakati halisi kuhusu vitisho vya ugavi vinavyoibuka  
 - **Uchambuzi wa Tabia**: Kugundua tabia isiyo ya kawaida katika sehemu za nje  
-<<<<<<< HEAD
-- **Jibu la Kiotomatiki**: Kuzuia mara moja sehemu zilizodukuliwa  
-=======
-- **Jibu la Kiotomatiki**: Kuzuia mara moja sehemu zilizoharibika  
->>>>>>> origin/main
+- **Jibu la Kiotomatiki**: Kuzuia mara moja sehemu zilizoharibiwa  
 
 ## 8. **Udhibiti wa Ufuatiliaji na Kugundua**
 
@@ -442,18 +345,14 @@ Security Events:
 **Uchambuzi wa Tabia:**
 - **Uchambuzi wa Tabia ya Mtumiaji (UBA)**: Kugundua mifumo isiyo ya kawaida ya ufikiaji wa mtumiaji  
 - **Uchambuzi wa Tabia ya Kitu (EBA)**: Ufuatiliaji wa tabia ya seva ya MCP na zana  
-- **Kugundua Hali Isiyo ya Kawaida kwa Kujifunza Mashine**: Utambulisho unaotegemea AI wa vitisho vya usalama  
-- **Ulinganisho wa Ujasusi wa Vitisho**: Kulinganisha shughuli zilizogunduliwa dhidi ya mifumo ya mashambulizi inayojulikana  
+- **Kugundua Hali Isiyo ya Kawaida kwa Kujifunza kwa Mashine**: Utambulisho unaotegemea AI wa vitisho vya usalama  
+- **Ulinganishaji wa Ujasusi wa Vitisho**: Kulinganisha shughuli zilizogunduliwa dhidi ya mifumo ya mashambulizi inayojulikana  
 
 ## 9. **Jibu la Matukio na Urejeshaji**
 
 ### **Uwezo wa Jibu la Kiotomatiki**
 
-<<<<<<< HEAD
-**Hatua za Jibu la Haraka:**
-=======
 **Hatua za Jibu la Mara Moja:**
->>>>>>> origin/main
 ```yaml
 Threat Containment:
   session_management:
@@ -484,41 +383,24 @@ Recovery Procedures:
 - **Uhifadhi wa Njia za Ukaguzi**: Kumbukumbu zisizoweza kubadilishwa na uadilifu wa kimaandishi  
 - **Ukusanyaji wa Ushahidi**: Ukusanyaji wa kiotomatiki wa vifaa vya usalama vinavyohusika  
 - **Ujenzi wa Muda**: Mlolongo wa kina wa matukio yanayopelekea matukio ya usalama  
-<<<<<<< HEAD
-- **Tathmini ya Athari**: Kadiria upeo wa uvunjaji na ufichuzi wa data  
-=======
-- **Tathmini ya Athari**: Kadiria upeo wa uharibifu na ufichuzi wa data  
->>>>>>> origin/main
+- **Tathmini ya Athari**: Ukadiriaji wa upeo wa uvunjaji na kufichuliwa kwa data  
 
 ## **Kanuni Muhimu za Usanifu wa Usalama**
 
 ### **Ulinzi kwa Kina**
 - **Tabaka Nyingi za Usalama**: Hakuna sehemu moja ya kushindwa katika usanifu wa usalama  
 - **Udhibiti wa Ziada**: Hatua za usalama zinazofanana kwa kazi muhimu  
-<<<<<<< HEAD
-- **Mifumo ya Kawaida Salama**: Chaguo salama pale ambapo mifumo inakutana na makosa au mashambulizi  
+- **Mifumo Salama ya Kawaida**: Chaguo salama wakati mifumo inakutana na makosa au mashambulizi  
 
 ### **Utekelezaji wa Uaminifu Sifuri**
 - **Kamwe Usiamini, Kagua Kila Wakati**: Uthibitishaji endelevu wa vyombo vyote na maombi  
-- **Kanuni ya Upendeleo Mdogo**: Haki za ufikiaji za chini kabisa kwa sehemu zote  
-- **Mgawanyiko wa Ndani**: Udhibiti wa mtandao na ufikiaji wa granular  
-=======
-- **Mifumo Salama ya Kushindwa**: Chaguo salama wakati mifumo inakutana na makosa au mashambulizi  
-
-### **Utekelezaji wa Zero Trust**
-- **Kamwe Usiamini, Kagua Kila Wakati**: Uthibitishaji endelevu wa vyombo vyote na maombi  
-- **Kanuni ya Upendeleo wa Chini**: Haki za ufikiaji za kiwango cha chini kwa sehemu zote  
-- **Micro-Segmentation**: Udhibiti wa mtandao na ufikiaji wa granular  
->>>>>>> origin/main
+- **Kanuni ya Upendeleo Mdogo**: Haki za ufikiaji za kiwango cha chini kwa sehemu zote  
+- **Mgawanyo wa Ndani**: Udhibiti wa mtandao na ufikiaji wa granular  
 
 ### **Mageuzi Endelevu ya Usalama**
 - **Urekebishaji wa Mandhari ya Vitisho**: Sasisho za mara kwa mara kushughulikia vitisho vinavyoibuka  
 - **Ufanisi wa Udhibiti wa Usalama**: Tathmini endelevu na uboreshaji wa udhibiti  
-<<<<<<< HEAD
-- **Uzingatiaji wa Maelezo**: Ulinganifu na viwango vya usalama vya MCP vinavyoendelea kubadilika  
-=======
 - **Ufuataji wa Maelezo**: Ulinganifu na viwango vya usalama vya MCP vinavyoendelea kubadilika  
->>>>>>> origin/main
 
 ---
 
@@ -542,11 +424,7 @@ Recovery Procedures:
 
 ---
 
-<<<<<<< HEAD
 > **Muhimu**: Udhibiti huu wa usalama unaonyesha maelezo ya sasa ya MCP (2025-06-18). Kagua kila wakati dhidi ya [hati rasmi](https://spec.modelcontextprotocol.io/) kwani viwango vinaendelea kubadilika haraka.
-=======
-> **Muhimu**: Udhibiti huu wa usalama unaonyesha maelezo ya sasa ya MCP (2025-06-18). Kagua kila mara dhidi ya [hati rasmi](https://spec.modelcontextprotocol.io/) kwani viwango vinaendelea kubadilika haraka.
->>>>>>> origin/main
 
 **Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

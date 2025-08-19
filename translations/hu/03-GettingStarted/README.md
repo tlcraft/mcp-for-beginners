@@ -2,56 +2,36 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "858362ce0118de3fec0f9114bf396101",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T19:29:30+00:00",
-=======
-  "translation_date": "2025-08-18T14:36:58+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T15:08:55+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "hu"
 }
 -->
 ## Első lépések  
 
-[![Az első MCP szervered létrehozása](../../../translated_images/04.0ea920069efd979a0b2dad51e72c1df7ead9c57b3305796068a6cee1f0dd6674.hu.png)](https://youtu.be/sNDZO9N4m9Y)
+[![Építsd meg az első MCP szerveredet](../../../translated_images/04.0ea920069efd979a0b2dad51e72c1df7ead9c57b3305796068a6cee1f0dd6674.hu.png)](https://youtu.be/sNDZO9N4m9Y)
 
 _(Kattints a fenti képre a leckéhez tartozó videó megtekintéséhez)_
 
-Ez a rész több leckéből áll:
+Ez a rész több leckét tartalmaz:
 
-<<<<<<< HEAD
-- **1 Az első szervered**, ebben az első leckében megtanulod, hogyan hozd létre az első szervered, és hogyan vizsgáld meg az ellenőrző eszközzel, amely hasznos módja a szerver tesztelésének és hibakeresésének, [a leckéhez](01-first-server/README.md)
+- **1 Az első szervered**. Ebben az első leckében megtanulod, hogyan hozd létre az első szerveredet, és hogyan vizsgáld meg az ellenőrző eszközzel, amely hasznos módja a szerver tesztelésének és hibakeresésének, [a leckéhez](01-first-server/README.md)
 
-- **2 Kliens**, ebben a leckében megtanulod, hogyan írj egy klienst, amely csatlakozni tud a szerveredhez, [a leckéhez](02-client/README.md)
-
-- **3 Kliens LLM-mel**, egy még jobb módja a kliens írásának, ha hozzáadsz egy LLM-et, amely "tárgyalni" tud a szervereddel arról, hogy mit tegyen, [a leckéhez](03-llm-client/README.md)
-=======
-- **1 Az első szervered**. Ebben az első leckében megtanulod, hogyan hozd létre az első szervered, és hogyan vizsgáld meg az inspector eszközzel, amely hasznos módja a szerver tesztelésének és hibakeresésének, [a leckéhez](01-first-server/README.md)
-
-- **2 Kliens**. Ebben a leckében megtanulod, hogyan írj egy klienst, amely képes csatlakozni a szerveredhez, [a leckéhez](02-client/README.md)
+- **2 Kliens**. Ebben a leckében megtanulod, hogyan írj egy klienst, amely csatlakozni tud a szerveredhez, [a leckéhez](02-client/README.md)
 
 - **3 Kliens LLM-mel**. Még jobb módja a kliens írásának, ha hozzáadsz egy LLM-et, amely "tárgyalni" tud a szervereddel arról, hogy mit tegyen, [a leckéhez](03-llm-client/README.md)
->>>>>>> origin/main
 
 - **4 Szerver fogyasztása GitHub Copilot Agent módban a Visual Studio Code-ban**. Itt azt vizsgáljuk, hogyan futtassuk az MCP szerverünket a Visual Studio Code-on belül, [a leckéhez](04-vscode/README.md)
 
 - **5 Fogyasztás SSE (Server Sent Events) segítségével**. Az SSE egy szabvány a szerverről kliensre történő adatfolyamhoz, amely lehetővé teszi a szerverek számára, hogy valós idejű frissítéseket küldjenek a klienseknek HTTP-n keresztül, [a leckéhez](05-sse-server/README.md)
 
-<<<<<<< HEAD
 - **6 HTTP adatfolyam MCP-vel (Streamable HTTP)**. Ismerd meg a modern HTTP adatfolyamot, a haladási értesítéseket, és hogyan valósíts meg skálázható, valós idejű MCP szervereket és klienseket Streamable HTTP használatával, [a leckéhez](06-http-streaming/README.md)
-=======
-- **6 HTTP streaming MCP-vel (Streamable HTTP)**. Ismerd meg a modern HTTP streaminget, a haladás értesítéseket, és hogyan valósíts meg skálázható, valós idejű MCP szervereket és klienseket Streamable HTTP segítségével, [a leckéhez](06-http-streaming/README.md)
->>>>>>> origin/main
 
 - **7 AI Toolkit használata a VSCode-ban** MCP kliensek és szerverek fogyasztásához és teszteléséhez, [a leckéhez](07-aitk/README.md)
 
 - **8 Tesztelés**. Itt különösen arra koncentrálunk, hogyan tesztelhetjük a szerverünket és kliensünket különböző módokon, [a leckéhez](08-testing/README.md)
 
-<<<<<<< HEAD
 - **9 Telepítés**. Ez a fejezet az MCP megoldások különböző telepítési módjait vizsgálja, [a leckéhez](09-deployment/README.md)
-=======
-- **9 Telepítés**. Ez a fejezet különböző MCP megoldások telepítési módjait vizsgálja, [a leckéhez](09-deployment/README.md)
->>>>>>> origin/main
 
 
 A Model Context Protocol (MCP) egy nyílt protokoll, amely szabványosítja, hogyan biztosítanak az alkalmazások kontextust az LLM-ek számára. Gondolj az MCP-re úgy, mint egy USB-C portra az AI alkalmazások számára - szabványos módot kínál az AI modellek különböző adatforrásokhoz és eszközökhöz való csatlakoztatására.
@@ -75,11 +55,7 @@ Mielőtt elkezdenéd az MCP-vel való munkát, fontos, hogy előkészítsd a fej
 
 Mielőtt belevágnál az MCP fejlesztésbe, győződj meg róla, hogy rendelkezel:
 
-<<<<<<< HEAD
-- **Fejlesztési környezet**: A választott nyelvedhez (C#, Java, Python, TypeScript vagy JavaScript)
-=======
 - **Fejlesztési környezet**: A választott nyelvhez (C#, Java, Python, TypeScript vagy JavaScript)
->>>>>>> origin/main
 - **IDE/Szerkesztő**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm vagy bármely modern kódszerkesztő
 - **Csomagkezelők**: NuGet, Maven/Gradle, pip vagy npm/yarn
 - **API kulcsok**: Az AI szolgáltatásokhoz, amelyeket a host alkalmazásaidban tervezel használni
@@ -87,11 +63,7 @@ Mielőtt belevágnál az MCP fejlesztésbe, győződj meg róla, hogy rendelkeze
 
 ### Hivatalos SDK-k
 
-<<<<<<< HEAD
-A következő fejezetekben Python, TypeScript, Java és .NET megoldásokat fogsz látni. Íme az összes hivatalosan támogatott SDK.
-=======
 A következő fejezetekben Python, TypeScript, Java és .NET alapú megoldásokat fogsz látni. Íme az összes hivatalosan támogatott SDK.
->>>>>>> origin/main
 
 Az MCP több nyelvhez biztosít hivatalos SDK-kat:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Microsofttal együttműködésben karbantartva
@@ -105,18 +77,14 @@ Az MCP több nyelvhez biztosít hivatalos SDK-kat:
 ## Főbb tanulságok
 
 - Az MCP fejlesztési környezet beállítása egyszerű a nyelvspecifikus SDK-k segítségével
-- MCP szerverek építése eszközök létrehozását és egyértelmű sémák szerinti regisztrálását igényli
+- MCP szerverek építése eszközök létrehozását és egyértelmű sémák szerinti regisztrálását foglalja magában
 - MCP kliensek csatlakoznak szerverekhez és modellekhez, hogy kibővített képességeket használjanak
 - A tesztelés és hibakeresés elengedhetetlen a megbízható MCP implementációkhoz
 - A telepítési lehetőségek a helyi fejlesztéstől a felhőalapú megoldásokig terjednek
 
 ## Gyakorlás
 
-<<<<<<< HEAD
 Van egy mintagyűjteményünk, amely kiegészíti az összes fejezetben látott gyakorlatokat. Ezen kívül minden fejezet saját gyakorlatokat és feladatokat is tartalmaz.
-=======
-Van egy mintagyűjteményünk, amely kiegészíti az összes fejezetben látott gyakorlatokat. Ezenkívül minden fejezet saját gyakorlatokat és feladatokat is tartalmaz.
->>>>>>> origin/main
 
 - [Java Kalkulátor](./samples/java/calculator/README.md)
 - [.Net Kalkulátor](../../../03-GettingStarted/samples/csharp)
@@ -128,19 +96,11 @@ Van egy mintagyűjteményünk, amely kiegészíti az összes fejezetben látott 
 
 - [Ügynökök építése Model Context Protocol segítségével az Azure-on](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
 - [Távoli MCP az Azure Container Apps segítségével (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-<<<<<<< HEAD
-- [.NET OpenAI MCP Ügynök](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
-=======
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
->>>>>>> origin/main
 
 ## Mi következik?
 
 Következő: [Az első MCP szerver létrehozása](01-first-server/README.md)
 
 **Felelősségkizárás**:  
-<<<<<<< HEAD
 Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
-=======
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális, emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
->>>>>>> origin/main

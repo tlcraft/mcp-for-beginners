@@ -2,38 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5f1383103523fa822e1fec7ef81904d5",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T20:51:24+00:00",
-=======
-  "translation_date": "2025-08-18T16:07:02+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T16:36:02+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "ro"
 }
 -->
 # Streaming HTTPS cu Protocolul Model Context (MCP)
 
-<<<<<<< HEAD
 Acest capitol oferă un ghid cuprinzător pentru implementarea streaming-ului securizat, scalabil și în timp real folosind Protocolul Model Context (MCP) prin HTTPS. Acoperă motivația pentru streaming, mecanismele de transport disponibile, cum să implementezi HTTP streamabil în MCP, cele mai bune practici de securitate, migrarea de la SSE și sfaturi practice pentru construirea propriilor aplicații MCP de streaming.
-=======
-Acest capitol oferă un ghid cuprinzător pentru implementarea streaming-ului securizat, scalabil și în timp real utilizând Protocolul Model Context (MCP) prin HTTPS. Acesta acoperă motivația pentru streaming, mecanismele de transport disponibile, cum să implementați HTTP streamable în MCP, cele mai bune practici de securitate, migrarea de la SSE și sfaturi practice pentru construirea propriilor aplicații MCP de streaming.
->>>>>>> origin/main
 
 ## Mecanisme de Transport și Streaming în MCP
 
-Această secțiune explorează diferitele mecanisme de transport disponibile în MCP și rolul lor în activarea capacităților de streaming pentru comunicarea în timp real între clienți și servere.
+Această secțiune explorează diferitele mecanisme de transport disponibile în MCP și rolul lor în activarea capabilităților de streaming pentru comunicarea în timp real între clienți și servere.
 
 ### Ce este un Mecanism de Transport?
 
 Un mecanism de transport definește modul în care datele sunt schimbate între client și server. MCP suportă mai multe tipuri de transport pentru a se potrivi diferitelor medii și cerințe:
 
-- **stdio**: Intrare/ieșire standard, potrivit pentru instrumente locale și bazate pe CLI. Simplu, dar nepotrivit pentru web sau cloud.
+- **stdio**: Intrare/ieșire standard, potrivit pentru unelte locale și bazate pe CLI. Simplu, dar nepotrivit pentru web sau cloud.
 - **SSE (Server-Sent Events)**: Permite serverelor să trimită actualizări în timp real către clienți prin HTTP. Bun pentru interfețe web, dar limitat în scalabilitate și flexibilitate.
-<<<<<<< HEAD
 - **HTTP streamabil**: Transport modern bazat pe HTTP pentru streaming, care suportă notificări și o scalabilitate mai bună. Recomandat pentru majoritatea scenariilor de producție și cloud.
-=======
-- **Streamable HTTP**: Transport modern bazat pe HTTP pentru streaming, care suportă notificări și o scalabilitate mai bună. Recomandat pentru majoritatea scenariilor de producție și cloud.
->>>>>>> origin/main
 
 ### Tabel Comparativ
 
@@ -41,54 +29,31 @@ Consultați tabelul comparativ de mai jos pentru a înțelege diferențele dintr
 
 | Transport         | Actualizări în timp real | Streaming | Scalabilitate | Caz de utilizare         |
 |-------------------|--------------------------|-----------|---------------|--------------------------|
-| stdio             | Nu                       | Nu        | Scăzut        | Instrumente CLI locale   |
-<<<<<<< HEAD
+| stdio             | Nu                       | Nu        | Scăzut        | Unelte CLI locale        |
 | SSE               | Da                       | Da        | Mediu         | Web, actualizări în timp real |
-| HTTP streamabil   | Da                       | Da        | Ridicată      | Cloud, multi-client      |
+| HTTP streamabil   | Da                       | Da        | Ridicat       | Cloud, multi-client      |
 
 > **Sfat:** Alegerea transportului potrivit influențează performanța, scalabilitatea și experiența utilizatorului. **HTTP streamabil** este recomandat pentru aplicații moderne, scalabile și pregătite pentru cloud.
 
 Observați transporturile stdio și SSE prezentate în capitolele anterioare și cum HTTP streamabil este transportul acoperit în acest capitol.
-=======
-| SSE               | Da                       | Da        | Medie         | Web, actualizări în timp real |
-| Streamable HTTP   | Da                       | Da        | Ridicată      | Cloud, multi-client      |
-
-> **Tip:** Alegerea transportului potrivit influențează performanța, scalabilitatea și experiența utilizatorului. **Streamable HTTP** este recomandat pentru aplicații moderne, scalabile și pregătite pentru cloud.
-
-Observați transporturile stdio și SSE prezentate în capitolele anterioare și cum HTTP streamable este transportul acoperit în acest capitol.
->>>>>>> origin/main
 
 ## Streaming: Concepte și Motivație
 
 Înțelegerea conceptelor fundamentale și a motivațiilor din spatele streaming-ului este esențială pentru implementarea unor sisteme eficiente de comunicare în timp real.
 
-<<<<<<< HEAD
-**Streaming-ul** este o tehnică în programarea rețelelor care permite trimiterea și primirea datelor în bucăți mici și gestionabile sau ca o secvență de evenimente, în loc să aștepte ca un răspuns complet să fie gata. Acest lucru este util în special pentru:
+**Streaming-ul** este o tehnică în programarea rețelelor care permite trimiterea și primirea datelor în bucăți mici și gestionabile sau ca o secvență de evenimente, în loc să aștepți ca un răspuns complet să fie gata. Acest lucru este util în special pentru:
 
 - Fișiere sau seturi de date mari.
 - Actualizări în timp real (de exemplu, chat, bare de progres).
 - Calculuri de lungă durată unde dorești să informezi utilizatorul.
 
 Iată ce trebuie să știi despre streaming la un nivel înalt:
-=======
-**Streaming-ul** este o tehnică în programarea de rețea care permite trimiterea și primirea datelor în bucăți mici, gestionabile sau ca o secvență de evenimente, în loc să aștepte ca un răspuns complet să fie gata. Acest lucru este util în special pentru:
 
-- Fișiere sau seturi de date mari.
-- Actualizări în timp real (de exemplu, chat, bare de progres).
-- Calculuri de lungă durată unde doriți să țineți utilizatorul informat.
-
-Iată ce trebuie să știți despre streaming la un nivel înalt:
->>>>>>> origin/main
-
-- Datele sunt livrate progresiv, nu toate odată.
-- Clientul poate procesa datele pe măsură ce acestea sosesc.
+- Datele sunt livrate progresiv, nu toate deodată.
+- Clientul poate procesa datele pe măsură ce sosesc.
 - Reduce latența percepută și îmbunătățește experiența utilizatorului.
 
-<<<<<<< HEAD
 ### De ce să folosești streaming-ul?
-=======
-### De ce să folosiți streaming-ul?
->>>>>>> origin/main
 
 Motivele pentru utilizarea streaming-ului sunt următoarele:
 
@@ -102,11 +67,7 @@ Iată un exemplu simplu despre cum poate fi implementat streaming-ul:
 
 #### Python
 
-<<<<<<< HEAD
 **Server (Python, folosind FastAPI și StreamingResponse):**
-=======
-**Server (Python, utilizând FastAPI și StreamingResponse):**
->>>>>>> origin/main
 
 ```python
 from fastapi import FastAPI
@@ -125,11 +86,7 @@ def stream():
     return StreamingResponse(event_stream(), media_type="text/event-stream")
 ```
 
-<<<<<<< HEAD
 **Client (Python, folosind requests):**
-=======
-**Client (Python, utilizând requests):**
->>>>>>> origin/main
 
 ```python
 import requests
@@ -149,13 +106,13 @@ Acest exemplu demonstrează un server care trimite o serie de mesaje către clie
 
 **Cerințe:**
 
-- Serverul trebuie să utilizeze un răspuns de tip streaming (de exemplu, `StreamingResponse` în FastAPI).
+- Serverul trebuie să folosească un răspuns de tip streaming (de exemplu, `StreamingResponse` în FastAPI).
 - Clientul trebuie să proceseze răspunsul ca un flux (`stream=True` în requests).
 - Content-Type este de obicei `text/event-stream` sau `application/octet-stream`.
 
 #### Java
 
-**Server (Java, utilizând Spring Boot și Server-Sent Events):**
+**Server (Java, folosind Spring Boot și Server-Sent Events):**
 
 ```java
 @RestController
@@ -190,7 +147,7 @@ public class CalculatorController {
 }
 ```
 
-**Client (Java, utilizând Spring WebFlux WebClient):**
+**Client (Java, folosind Spring WebFlux WebClient):**
 
 ```java
 @SpringBootApplication
@@ -220,53 +177,37 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 **Note despre Implementarea în Java:**
 
-- Utilizează stiva reactivă a Spring Boot cu `Flux` pentru streaming.
+- Folosește stiva reactivă din Spring Boot cu `Flux` pentru streaming.
 - `ServerSentEvent` oferă streaming structurat de evenimente cu tipuri de evenimente.
-<<<<<<< HEAD
 - `WebClient` cu `bodyToFlux()` permite consumul reactiv al fluxului.
-=======
-- `WebClient` cu `bodyToFlux()` permite consumul reactiv al streaming-ului.
->>>>>>> origin/main
 - `delayElements()` simulează timpul de procesare între evenimente.
 - Evenimentele pot avea tipuri (`info`, `result`) pentru o gestionare mai bună pe partea clientului.
 
 ### Comparație: Streaming Clasic vs Streaming MCP
 
-<<<<<<< HEAD
 Diferențele dintre modul în care funcționează streaming-ul într-un mod "clasic" și modul în care funcționează în MCP pot fi descrise astfel:
-
-| Caracteristică          | Streaming HTTP Clasic       | Streaming MCP (Notificări)         |
-|-------------------------|-----------------------------|------------------------------------|
-| Răspuns principal       | Fragmentat                 | Unic, la final                    |
-| Actualizări de progres  | Trimise ca bucăți de date   | Trimise ca notificări             |
-| Cerințe client          | Trebuie să proceseze fluxul | Trebuie să implementeze un handler de mesaje |
-| Caz de utilizare        | Fișiere mari, fluxuri AI    | Progres, loguri, feedback în timp real |
-=======
-Diferențele dintre modul în care funcționează streaming-ul într-o manieră "clasică" și modul în care funcționează în MCP pot fi descrise astfel:
 
 | Caracteristică          | Streaming HTTP Clasic         | Streaming MCP (Notificări)         |
 |-------------------------|-------------------------------|-------------------------------------|
-| Răspuns principal       | În bucăți                     | Unic, la final                     |
-| Actualizări de progres  | Transmise ca bucăți de date   | Transmise ca notificări            |
-| Cerințe client          | Trebuie să proceseze fluxul   | Trebuie să implementeze un handler de mesaje |
+| Răspuns principal       | Fragmentat                   | Unic, la final                     |
+| Actualizări de progres  | Trimise ca bucăți de date     | Trimise ca notificări              |
+| Cerințe client          | Trebuie să proceseze fluxul  | Trebuie să implementeze un handler de mesaje |
 | Caz de utilizare        | Fișiere mari, fluxuri AI      | Progres, loguri, feedback în timp real |
->>>>>>> origin/main
 
 ### Diferențe Cheie Observate
 
-În plus, iată câteva diferențe cheie:
+Iată câteva diferențe cheie:
 
 - **Model de Comunicare:**
-<<<<<<< HEAD
-  - Streaming HTTP clasic: Utilizează codificarea simplă a transferului fragmentat pentru a trimite date în bucăți.
-  - Streaming MCP: Utilizează un sistem structurat de notificări cu protocol JSON-RPC.
+  - Streaming HTTP clasic: Folosește codificare simplă de transfer fragmentat pentru a trimite date în bucăți.
+  - Streaming MCP: Folosește un sistem structurat de notificări cu protocol JSON-RPC.
 
 - **Formatul Mesajului:**
   - HTTP Clasic: Bucăți de text simplu cu linii noi.
   - MCP: Obiecte structurate `LoggingMessageNotification` cu metadate.
 
 - **Implementarea Clientului:**
-  - HTTP Clasic: Client simplu care procesează răspunsuri de tip streaming.
+  - HTTP Clasic: Client simplu care procesează răspunsuri de streaming.
   - MCP: Client mai sofisticat cu un handler de mesaje pentru a procesa diferite tipuri de mesaje.
 
 - **Actualizări de Progres:**
@@ -275,54 +216,21 @@ Diferențele dintre modul în care funcționează streaming-ul într-o manieră 
 
 ### Recomandări
 
-Iată câteva recomandări când vine vorba de alegerea între implementarea streaming-ului clasic (ca un endpoint pe care l-am arătat mai sus folosind `/stream`) și alegerea streaming-ului prin MCP.
+Iată câteva recomandări pentru alegerea între implementarea streaming-ului clasic (ca un endpoint pe care l-am arătat mai sus folosind `/stream`) și streaming-ul prin MCP:
 
 - **Pentru nevoi simple de streaming:** Streaming-ul HTTP clasic este mai simplu de implementat și suficient pentru nevoi de bază.
 - **Pentru aplicații complexe și interactive:** Streaming-ul MCP oferă o abordare mai structurată, cu metadate mai bogate și separarea între notificări și rezultate finale.
 - **Pentru aplicații AI:** Sistemul de notificări al MCP este deosebit de util pentru sarcini AI de lungă durată, unde dorești să informezi utilizatorii despre progres.
-=======
-  - Streaming HTTP clasic: Utilizează codificarea simplă a transferului în bucăți pentru a trimite date.
-  - Streaming MCP: Utilizează un sistem structurat de notificări cu protocol JSON-RPC.
 
-- **Formatul Mesajului:**
-  - HTTP clasic: Bucăți de text simplu cu linii noi.
-  - MCP: Obiecte structurate `LoggingMessageNotification` cu metadate.
+## Streaming în MCP
 
-- **Implementarea Clientului:**
-  - HTTP clasic: Client simplu care procesează răspunsurile de streaming.
-  - MCP: Client mai sofisticat cu un handler de mesaje pentru a procesa diferite tipuri de mesaje.
-
-- **Actualizări de Progres:**
-  - HTTP clasic: Progresul face parte din fluxul principal de răspuns.
-  - MCP: Progresul este transmis prin mesaje de notificare separate, în timp ce răspunsul principal vine la final.
-
-### Recomandări
-
-Există câteva recomandări atunci când vine vorba de alegerea între implementarea streaming-ului clasic (ca endpoint-ul pe care vi l-am arătat mai sus folosind `/stream`) și alegerea streaming-ului prin MCP.
-
-- **Pentru nevoi simple de streaming:** Streaming-ul HTTP clasic este mai simplu de implementat și suficient pentru nevoi de bază.
-- **Pentru aplicații complexe și interactive:** Streaming-ul MCP oferă o abordare mai structurată, cu metadate mai bogate și separarea între notificări și rezultate finale.
-- **Pentru aplicații AI:** Sistemul de notificări al MCP este deosebit de util pentru sarcini AI de lungă durată, unde doriți să țineți utilizatorii informați despre progres.
-Există două motive convingătoare pentru a face upgrade de la SSE la HTTP Streamable:
-
-- HTTP Streamable oferă o scalabilitate mai bună, compatibilitate și suport mai bogat pentru notificări decât SSE.
-- Este transportul recomandat pentru aplicațiile MCP noi.
-
-### Pași de Migrare
->>>>>>> origin/main
-
-Iată cum poți migra de la SSE la HTTP Streamable în aplicațiile tale MCP:
-
-<<<<<<< HEAD
 Ok, ai văzut câteva recomandări și comparații până acum despre diferența dintre streaming-ul clasic și cel din MCP. Să intrăm în detaliu despre cum poți folosi streaming-ul în MCP.
-
-Înțelegerea modului în care funcționează streaming-ul în cadrul MCP este esențială pentru construirea aplicațiilor responsive care oferă feedback în timp real utilizatorilor în timpul operațiunilor de lungă durată.
 
 În MCP, streaming-ul nu înseamnă trimiterea răspunsului principal în bucăți, ci trimiterea de **notificări** către client în timp ce un instrument procesează o cerere. Aceste notificări pot include actualizări de progres, loguri sau alte evenimente.
 
 ### Cum funcționează
 
-Rezultatul principal este încă trimis ca un singur răspuns. Cu toate acestea, notificările pot fi trimise ca mesaje separate în timpul procesării, actualizând astfel clientul în timp real. Clientul trebuie să fie capabil să gestioneze și să afișeze aceste notificări.
+Rezultatul principal este tot trimis ca un singur răspuns. Cu toate acestea, notificările pot fi trimise ca mesaje separate în timpul procesării, actualizând astfel clientul în timp real. Clientul trebuie să fie capabil să gestioneze și să afișeze aceste notificări.
 
 ## Ce este o Notificare?
 
@@ -330,7 +238,7 @@ Am menționat "Notificare", ce înseamnă asta în contextul MCP?
 
 O notificare este un mesaj trimis de la server către client pentru a informa despre progres, stare sau alte evenimente în timpul unei operațiuni de lungă durată. Notificările îmbunătățesc transparența și experiența utilizatorului.
 
-De exemplu, un client trebuie să trimită o notificare odată ce strângerea de mână inițială cu serverul a fost realizată.
+De exemplu, un client ar trebui să trimită o notificare odată ce strângerea de mână inițială cu serverul a fost realizată.
 
 O notificare arată astfel ca mesaj JSON:
 
@@ -365,12 +273,12 @@ Există diferite tipuri de notificări:
 |------------|-------------------------------|----------------------------------|
 | debug      | Informații detaliate de depanare | Puncte de intrare/ieșire funcții |
 | info       | Mesaje generale informaționale | Actualizări de progres operațional |
-| notice     | Evenimente normale, dar semnificative | Schimbări de configurație       |
+| notice     | Evenimente normale dar semnificative | Schimbări de configurație       |
 | warning    | Condiții de avertizare         | Utilizarea unei funcții depășite |
-| error      | Condiții de eroare            | Eșecuri operaționale            |
-| critical   | Condiții critice              | Eșecuri ale componentelor sistemului |
-| alert      | Acțiune imediată necesară     | Detectarea coruperii datelor    |
-| emergency  | Sistem inutilizabil           | Eșec complet al sistemului      |
+| error      | Condiții de eroare             | Eșecuri operaționale             |
+| critical   | Condiții critice               | Eșecuri ale componentelor sistemului |
+| alert      | Acțiune imediată necesară      | Detectarea coruperii datelor     |
+| emergency  | Sistem inutilizabil            | Eșec complet al sistemului       |
 
 ## Implementarea Notificărilor în MCP
 
@@ -378,7 +286,7 @@ Pentru a implementa notificări în MCP, trebuie să configurezi atât partea de
 
 ### Partea de Server: Trimiterea Notificărilor
 
-Să începem cu partea de server. În MCP, definești instrumente care pot trimite notificări în timp ce procesează cereri. Serverul folosește obiectul context (de obicei `ctx`) pentru a trimite mesaje către client.
+Să începem cu partea de server. În MCP, definești unelte care pot trimite notificări în timp ce procesează cereri. Serverul folosește obiectul context (de obicei `ctx`) pentru a trimite mesaje către client.
 
 #### Python
 
@@ -393,7 +301,7 @@ async def process_files(message: str, ctx: Context) -> TextContent:
 
 În exemplul precedent, instrumentul `process_files` trimite trei notificări către client pe măsură ce procesează fiecare fișier. Metoda `ctx.info()` este utilizată pentru a trimite mesaje informaționale.
 
-De asemenea, pentru a activa notificările, asigură-te că serverul tău folosește un transport de tip streaming (cum ar fi `streamable-http`) și că clientul tău implementează un handler de mesaje pentru a procesa notificările. Iată cum poți configura serverul pentru a utiliza transportul `streamable-http`:
+De asemenea, pentru a activa notificările, asigură-te că serverul tău folosește un transport de tip streaming (cum ar fi `streamable-http`) și că clientul tău implementează un handler de mesaje pentru a procesa notificările. Iată cum poți configura serverul pentru a folosi transportul `streamable-http`:
 
 ```python
 mcp.run(transport="streamable-http")
@@ -449,7 +357,7 @@ async with ClientSession(
 ) as session:
 ```
 
-În codul precedent, funcția `message_handler` verifică dacă mesajul primit este o notificare. Dacă este, o afișează; altfel, o procesează ca pe un mesaj obișnuit de la server. De asemenea, observă cum `ClientSession` este inițializat cu `message_handler` pentru a gestiona notificările primite.
+În codul precedent, funcția `message_handler` verifică dacă mesajul primit este o notificare. Dacă este, o afișează; altfel, îl procesează ca pe un mesaj obișnuit de la server. De asemenea, observă cum `ClientSession` este inițializat cu `message_handler` pentru a gestiona notificările primite.
 
 #### .NET
 
@@ -480,13 +388,13 @@ await client.InitializeAsync();
 // Now the client will process notifications through the MessageHandler
 ```
 
-În acest exemplu .NET, funcția `MessageHandler` verifică dacă mesajul primit este o notificare. Dacă este, o afișează; altfel, o procesează ca pe un mesaj obișnuit de la server. `ClientSession` este inițializat cu handler-ul de mesaje prin `ClientSessionOptions`.
+În acest exemplu .NET, funcția `MessageHandler` verifică dacă mesajul primit este o notificare. Dacă este, o afișează; altfel, îl procesează ca pe un mesaj obișnuit de la server. `ClientSession` este inițializat cu handler-ul de mesaje prin `ClientSessionOptions`.
 
 Pentru a activa notificările, asigură-te că serverul tău folosește un transport de tip streaming (cum ar fi `streamable-http`) și că clientul tău implementează un handler de mesaje pentru a procesa notificările.
 
 ## Notificări de Progres și Scenarii
 
-Această secțiune explică conceptul de notificări de progres în MCP, de ce sunt importante și cum să le implementezi folosind HTTP streamabil. Vei găsi, de asemenea, o sarcină practică pentru a-ți consolida înțelegerea.
+Această secțiune explică conceptul de notificări de progres în MCP, de ce sunt importante și cum să le implementezi folosind HTTP streamabil. Vei găsi, de asemenea, un exercițiu practic pentru a-ți consolida înțelegerea.
 
 Notificările de progres sunt mesaje în timp real trimise de la server către client în timpul operațiunilor de lungă durată. În loc să aștepte finalizarea întregului proces, serverul ține clientul la curent cu starea curentă. Acest lucru îmbunătățește transparența, experiența utilizatorului și facilitează depanarea.
 
@@ -552,10 +460,10 @@ Securitatea este esențială atunci când expui servere MCP prin HTTP. HTTP stre
 ### Puncte Cheie
 
 - **Validarea Header-ului Origin:** Validează întotdeauna header-ul `Origin` pentru a preveni atacurile de tip DNS rebinding.
-- **Legare la Localhost:** Pentru dezvoltarea locală, leagă serverele de `localhost` pentru a evita expunerea lor pe internet.
-- **Autentificare:** Implementează autentificarea (de exemplu, chei API, OAuth) pentru implementările de producție.
+- **Legare la Localhost:** Pentru dezvoltare locală, leagă serverele de `localhost` pentru a evita expunerea lor pe internet.
+- **Autentificare:** Implementează autentificare (de exemplu, chei API, OAuth) pentru implementările de producție.
 - **CORS:** Configurează politici Cross-Origin Resource Sharing (CORS) pentru a restricționa accesul.
-- **HTTPS:** Utilizează HTTPS în producție pentru a cripta traficul.
+- **HTTPS:** Folosește HTTPS în producție pentru a cripta traficul.
 
 ### Cele Mai Bune Practici
 
@@ -570,86 +478,58 @@ Securitatea este esențială atunci când expui servere MCP prin HTTP. HTTP stre
 
 ## Actualizarea de la SSE la HTTP Streamabil
 
-Pentru aplicațiile care utilizează în prezent Server-Sent Events (SSE), migrarea la HTTP streamabil oferă capabilități îmbunătățite și o sustenabilitate mai bună pe termen lung pentru implementările MCP.
+Pentru aplicațiile care folosesc în prezent Server-Sent Events (SSE), migrarea la HTTP streamabil oferă capabilități îmbunătățite și o sustenabilitate mai bună pe termen lung pentru implementările MCP.
 
 ### De ce să faci upgrade?
 Există două motive convingătoare pentru a face upgrade de la SSE la Streamable HTTP:
 
-- Streamable HTTP oferă o scalabilitate mai bună, compatibilitate și suport mai bogat pentru notificări decât SSE.
+- Streamable HTTP oferă o scalabilitate mai bună, compatibilitate mai mare și suport mai bogat pentru notificări decât SSE.
 - Este transportul recomandat pentru noile aplicații MCP.
 
-### Pași pentru migrare
+### Pași de Migrare
 
 Iată cum poți migra de la SSE la Streamable HTTP în aplicațiile tale MCP:
 
-=======
->>>>>>> origin/main
 - **Actualizează codul serverului** pentru a utiliza `transport="streamable-http"` în `mcp.run()`.
 - **Actualizează codul clientului** pentru a utiliza `streamablehttp_client` în loc de clientul SSE.
 - **Implementează un handler de mesaje** în client pentru a procesa notificările.
-- **Testează compatibilitatea** cu instrumentele și fluxurile de lucru existente.
+- **Testează compatibilitatea** cu uneltele și fluxurile de lucru existente.
 
 ### Menținerea Compatibilității
 
-<<<<<<< HEAD
-Se recomandă menținerea compatibilității cu clienții SSE existenți pe parcursul procesului de migrare. Iată câteva strategii:
-
-- Poți suporta atât SSE, cât și Streamable HTTP, rulând ambele transporturi pe endpoint-uri diferite.
-- Migrează clienții treptat către noul transport.
-=======
 Se recomandă menținerea compatibilității cu clienții SSE existenți în timpul procesului de migrare. Iată câteva strategii:
 
-- Poți suporta atât SSE, cât și HTTP Streamable, rulând ambele transporturi pe endpoint-uri diferite.
+- Poți suporta atât SSE, cât și Streamable HTTP, rulând ambele transporturi pe endpoint-uri diferite.
 - Migrează treptat clienții către noul transport.
->>>>>>> origin/main
 
 ### Provocări
 
 Asigură-te că abordezi următoarele provocări în timpul migrării:
 
-- Asigurarea că toți clienții sunt actualizați
+- Actualizarea tuturor clienților
 - Gestionarea diferențelor în livrarea notificărilor
 
 ## Considerații de Securitate
 
-<<<<<<< HEAD
 Securitatea ar trebui să fie o prioritate principală atunci când implementezi orice server, mai ales când utilizezi transporturi bazate pe HTTP, cum ar fi Streamable HTTP în MCP.
 
-Când implementezi servere MCP cu transporturi bazate pe HTTP, securitatea devine o preocupare majoră care necesită atenție sporită la multiple vectori de atac și mecanisme de protecție.
-=======
-Securitatea ar trebui să fie o prioritate principală atunci când implementezi orice server, mai ales când utilizezi transporturi bazate pe HTTP, cum ar fi HTTP Streamable în MCP.
-
 Când implementezi servere MCP cu transporturi bazate pe HTTP, securitatea devine o preocupare esențială care necesită atenție la multiple vectori de atac și mecanisme de protecție.
->>>>>>> origin/main
 
 ### Prezentare Generală
 
-<<<<<<< HEAD
 Securitatea este esențială atunci când expui servere MCP prin HTTP. Streamable HTTP introduce noi suprafețe de atac și necesită o configurare atentă.
 
 Iată câteva considerații cheie de securitate:
 
-- **Validarea antetului Origin**: Validează întotdeauna antetul `Origin` pentru a preveni atacurile de tip DNS rebinding.
-- **Legarea la localhost**: Pentru dezvoltarea locală, leagă serverele la `localhost` pentru a evita expunerea lor pe internetul public.
-=======
-Securitatea este crucială atunci când expui servere MCP prin HTTP. HTTP Streamable introduce noi suprafețe de atac și necesită configurare atentă.
-
-Iată câteva considerații cheie de securitate:
-
 - **Validarea Header-ului Origin**: Validează întotdeauna header-ul `Origin` pentru a preveni atacurile de tip DNS rebinding.
-- **Binding pe Localhost**: Pentru dezvoltarea locală, leagă serverele de `localhost` pentru a evita expunerea lor pe internetul public.
->>>>>>> origin/main
+- **Binding pe Localhost**: Pentru dezvoltarea locală, configurează serverele să fie legate de `localhost` pentru a evita expunerea lor pe internetul public.
 - **Autentificare**: Implementează autentificare (de exemplu, chei API, OAuth) pentru implementările în producție.
 - **CORS**: Configurează politicile Cross-Origin Resource Sharing (CORS) pentru a restricționa accesul.
 - **HTTPS**: Utilizează HTTPS în producție pentru a cripta traficul.
 
 ### Cele Mai Bune Practici
 
-<<<<<<< HEAD
 În plus, iată câteva bune practici de urmat atunci când implementezi securitatea în serverul tău MCP de streaming:
-=======
-În plus, iată câteva bune practici de urmat atunci când implementezi securitatea în serverul MCP de streaming:
->>>>>>> origin/main
 
 - Nu avea încredere în cererile primite fără validare.
 - Loghează și monitorizează toate accesările și erorile.
@@ -662,17 +542,10 @@ Vei întâmpina unele provocări atunci când implementezi securitatea în serve
 - Echilibrarea securității cu ușurința dezvoltării
 - Asigurarea compatibilității cu diverse medii de client
 
-<<<<<<< HEAD
-### Sarcină: Construiește propria aplicație MCP de streaming
+### Sarcină: Construiește-ți Propria Aplicație MCP de Streaming
 
 **Scenariu:**
-Construiește un server și un client MCP în care serverul procesează o listă de elemente (de exemplu, fișiere sau documente) și trimite o notificare pentru fiecare element procesat. Clientul ar trebui să afișeze fiecare notificare pe măsură ce sosește.
-=======
-### Sarcină: Construiește Propria Aplicație MCP de Streaming
-
-**Scenariu:**
-Construiește un server și un client MCP unde serverul procesează o listă de elemente (de exemplu, fișiere sau documente) și trimite o notificare pentru fiecare element procesat. Clientul ar trebui să afișeze fiecare notificare pe măsură ce aceasta sosește.
->>>>>>> origin/main
+Construiește un server și un client MCP în care serverul procesează o listă de elemente (de exemplu, fișiere sau documente) și trimite o notificare pentru fiecare element procesat. Clientul ar trebui să afișeze fiecare notificare pe măsură ce aceasta sosește.
 
 **Pași:**
 
@@ -684,37 +557,20 @@ Construiește un server și un client MCP unde serverul procesează o listă de 
 
 ## Lecturi Suplimentare & Ce Urmează?
 
-<<<<<<< HEAD
-Pentru a-ți continua călătoria cu streaming-ul MCP și a-ți extinde cunoștințele, această secțiune oferă resurse suplimentare și pași sugerați pentru construirea unor aplicații mai avansate.
-=======
-Pentru a continua călătoria ta cu streaming-ul MCP și pentru a-ți extinde cunoștințele, această secțiune oferă resurse suplimentare și pași sugerați pentru construirea unor aplicații mai avansate.
->>>>>>> origin/main
+Pentru a-ți continua călătoria cu streaming-ul MCP și pentru a-ți extinde cunoștințele, această secțiune oferă resurse suplimentare și pași sugerați pentru construirea unor aplicații mai avansate.
 
 ### Lecturi Suplimentare
 
 - [Microsoft: Introducere în HTTP Streaming](https://learn.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430#streaming)
 - [Microsoft: Server-Sent Events (SSE)](https://learn.microsoft.com/azure/application-gateway/for-containers/server-sent-events?tabs=server-sent-events-gateway-api&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
 - [Microsoft: CORS în ASP.NET Core](https://learn.microsoft.com/aspnet/core/security/cors?view=aspnetcore-8.0&WT.mc_id=%3Fwt.mc_id%3DMVP_452430)
-<<<<<<< HEAD
-- [Python requests: Cereri de streaming](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
-=======
-- [Python requests: Streaming Requests](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
->>>>>>> origin/main
+- [Python requests: Cereri de Streaming](https://requests.readthedocs.io/en/latest/user/advanced/#streaming-requests)
 
 ### Ce Urmează?
 
-<<<<<<< HEAD
-- Încearcă să construiești instrumente MCP mai avansate care utilizează streaming-ul pentru analize în timp real, chat sau editare colaborativă.
-- Explorează integrarea streaming-ului MCP cu framework-uri frontend (React, Vue, etc.) pentru actualizări live ale interfeței.
-- Următorul pas: [Utilizarea AI Toolkit pentru VSCode](../07-aitk/README.md)
-
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea realizată de un profesionist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
-=======
-- Încearcă să construiești instrumente MCP mai avansate care utilizează streaming pentru analize în timp real, chat sau editare colaborativă.
+- Încearcă să construiești unelte MCP mai avansate care utilizează streaming pentru analize în timp real, chat sau editare colaborativă.
 - Explorează integrarea streaming-ului MCP cu framework-uri frontend (React, Vue, etc.) pentru actualizări live ale interfeței.
 - Următorul pas: [Utilizarea AI Toolkit pentru VSCode](../07-aitk/README.md)
 
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
->>>>>>> origin/main

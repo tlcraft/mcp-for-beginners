@@ -2,59 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f84eaea79c8fa9ab318a494f40891814",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T19:23:09+00:00",
-=======
-  "translation_date": "2025-08-18T14:30:09+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T15:01:50+00:00",
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "hu"
 }
 -->
 # Vállalati Integráció
 
-<<<<<<< HEAD
-Amikor MCP szervereket építünk vállalati környezetben, gyakran szükség van meglévő AI platformokkal és szolgáltatásokkal való integrációra. Ez a rész bemutatja, hogyan integrálható az MCP olyan vállalati rendszerekkel, mint az Azure OpenAI és a Microsoft AI Foundry, lehetővé téve fejlett AI képességek és eszközök összehangolását.
+Amikor MCP szervereket építünk vállalati környezetben, gyakran szükség van a meglévő AI platformokkal és szolgáltatásokkal való integrációra. Ez a rész bemutatja, hogyan integrálható az MCP olyan vállalati rendszerekkel, mint az Azure OpenAI és a Microsoft AI Foundry, lehetővé téve fejlett AI képességek és eszközök összehangolását.
 
 ## Bevezetés
 
 Ebben a leckében megtanulod, hogyan integrálható a Model Context Protocol (MCP) vállalati AI rendszerekkel, különös tekintettel az Azure OpenAI-ra és a Microsoft AI Foundry-ra. Ezek az integrációk lehetővé teszik, hogy erőteljes AI modelleket és eszközöket használj, miközben megőrzöd az MCP rugalmasságát és bővíthetőségét.
-=======
-Amikor MCP szervereket építünk vállalati környezetben, gyakran szükség van meglévő AI platformok és szolgáltatások integrálására. Ez a rész bemutatja, hogyan integrálható az MCP olyan vállalati rendszerekkel, mint az Azure OpenAI és a Microsoft AI Foundry, lehetővé téve fejlett AI képességek és eszközök összehangolását.
-
-## Bevezetés
-
-Ebben a leckében megtanulhatod, hogyan integrálható a Model Context Protocol (MCP) vállalati AI rendszerekkel, különös tekintettel az Azure OpenAI-ra és a Microsoft AI Foundry-ra. Ezek az integrációk lehetővé teszik, hogy erőteljes AI modelleket és eszközöket használj, miközben megőrzöd az MCP rugalmasságát és bővíthetőségét.
->>>>>>> origin/main
 
 ## Tanulási célok
 
 A lecke végére képes leszel:
 
 - Integrálni az MCP-t az Azure OpenAI-val, hogy kihasználhasd annak AI képességeit.
-<<<<<<< HEAD
 - Megvalósítani az MCP eszközök összehangolását az Azure OpenAI-val.
-=======
-- Megvalósítani MCP eszközök összehangolását az Azure OpenAI-val.
->>>>>>> origin/main
 - Kombinálni az MCP-t a Microsoft AI Foundry-val fejlett AI ügynök képességek érdekében.
 - Kihasználni az Azure Machine Learning (ML) lehetőségeit ML folyamatok végrehajtására és modellek MCP eszközként való regisztrálására.
 
-## Azure OpenAI Integráció
+## Azure OpenAI integráció
 
-<<<<<<< HEAD
-Az Azure OpenAI hozzáférést biztosít olyan erőteljes AI modellekhez, mint például a GPT-4 és mások. Az MCP és az Azure OpenAI integrációja lehetővé teszi, hogy ezeket a modelleket használd, miközben megőrzöd az MCP eszközök összehangolásának rugalmasságát.
+Az Azure OpenAI hozzáférést biztosít olyan erőteljes AI modellekhez, mint például a GPT-4 és mások. Az MCP és az Azure OpenAI integrációja lehetővé teszi ezeknek a modelleknek a használatát, miközben megőrzöd az MCP eszközök összehangolásának rugalmasságát.
 
-### C# Implementáció
+### C# megvalósítás
 
 Az alábbi kódrészlet bemutatja, hogyan integrálható az MCP az Azure OpenAI-val az Azure OpenAI SDK használatával.
-=======
-Az Azure OpenAI hozzáférést biztosít olyan erőteljes AI modellekhez, mint például a GPT-4 és mások. Az MCP integrálása az Azure OpenAI-val lehetővé teszi ezeknek a modelleknek a használatát, miközben megőrzi az MCP eszközök összehangolásának rugalmasságát.
-
-### C# Implementáció
-
-Ebben a kódrészletben bemutatjuk, hogyan integrálható az MCP az Azure OpenAI-val az Azure OpenAI SDK használatával.
->>>>>>> origin/main
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -120,30 +96,19 @@ namespace EnterpriseIntegration
 
 A fenti kódban:
 
-<<<<<<< HEAD
-- Konfiguráltuk az Azure OpenAI klienst az endpoint, a deployment név és az API kulcs megadásával.
+- Konfiguráltuk az Azure OpenAI klienst az endpoint, a telepítési név és az API kulcs megadásával.
 - Létrehoztunk egy `GetCompletionWithToolsAsync` metódust, amely eszköztámogatással kér le kiegészítéseket.
-=======
-- Konfiguráltuk az Azure OpenAI klienst az endpoint, a telepítési név és az API kulcs segítségével.
-- Létrehoztunk egy `GetCompletionWithToolsAsync` nevű metódust, amely eszköztámogatással kér le kiegészítéseket.
->>>>>>> origin/main
 - Kezeltük az eszköz hívásokat a válaszban.
 
 Javasoljuk, hogy az eszközkezelési logikát a saját MCP szerver beállításaid alapján valósítsd meg.
 
-## Microsoft AI Foundry Integráció
+## Microsoft AI Foundry integráció
 
-<<<<<<< HEAD
-Az Azure AI Foundry egy platformot biztosít AI ügynökök építésére és telepítésére. Az MCP és az AI Foundry integrációja lehetővé teszi, hogy kihasználd annak képességeit, miközben megőrzöd az MCP rugalmasságát.
+Az Azure AI Foundry egy platformot biztosít AI ügynökök építésére és telepítésére. Az MCP és az AI Foundry integrációja lehetővé teszi, hogy kihasználhasd annak képességeit, miközben megőrzöd az MCP rugalmasságát.
 
-Az alábbi kódban egy ügynök integrációt fejlesztünk, amely kéréseket dolgoz fel és kezeli az eszköz hívásokat MCP segítségével.
-=======
-Az Azure AI Foundry egy platformot biztosít AI ügynökök létrehozására és telepítésére. Az MCP integrálása az AI Foundry-val lehetővé teszi annak képességeinek kihasználását, miközben megőrzi az MCP rugalmasságát.
+Az alábbi kódban egy ügynök integrációt fejlesztünk, amely kéréseket dolgoz fel és eszköz hívásokat kezel az MCP segítségével.
 
-Az alábbi kódban egy ügynök integrációt fejlesztünk, amely feldolgozza a kéréseket és kezeli az eszköz hívásokat MCP segítségével.
->>>>>>> origin/main
-
-### Java Implementáció
+### Java megvalósítás
 
 ```java
 // Java AI Foundry Agent Integration
@@ -203,25 +168,15 @@ public class AIFoundryMcpBridge {
 
 A fenti kódban:
 
-<<<<<<< HEAD
-- Létrehoztunk egy `AIFoundryMcpBridge` osztályt, amely integrálódik mind az AI Foundry-val, mind az MCP-vel.
+- Létrehoztunk egy `AIFoundryMcpBridge` osztályt, amely integrálja az AI Foundry-t és az MCP-t.
 - Megvalósítottunk egy `processAgentRequest` metódust, amely feldolgozza az AI Foundry ügynök kéréseit.
-- Kezeltük az eszköz hívásokat azáltal, hogy azokat az MCP kliensen keresztül hajtjuk végre, majd az eredményeket visszaküldjük az AI Foundry ügynöknek.
-=======
-- Létrehoztunk egy `AIFoundryMcpBridge` osztályt, amely integrál az AI Foundry-val és az MCP-vel.
-- Megvalósítottunk egy `processAgentRequest` nevű metódust, amely feldolgozza az AI Foundry ügynök kérését.
-- Kezeltük az eszköz hívásokat úgy, hogy azokat az MCP kliensen keresztül végrehajtjuk, majd az eredményeket visszaküldjük az AI Foundry ügynöknek.
->>>>>>> origin/main
+- Kezeltük az eszköz hívásokat azáltal, hogy azokat az MCP kliensen keresztül hajtjuk végre, és az eredményeket visszaküldjük az AI Foundry ügynöknek.
 
 ## MCP integráció az Azure ML-lel
 
-<<<<<<< HEAD
-Az MCP és az Azure Machine Learning (ML) integrációja lehetővé teszi, hogy kihasználd az Azure erőteljes ML képességeit, miközben megőrzöd az MCP rugalmasságát. Ez az integráció használható ML folyamatok végrehajtására, modellek eszközként való regisztrálására és számítási erőforrások kezelésére.
-=======
-Az MCP integrálása az Azure Machine Learning (ML) rendszerrel lehetővé teszi az Azure erőteljes ML képességeinek kihasználását, miközben megőrzi az MCP rugalmasságát. Ez az integráció ML folyamatok végrehajtására, modellek eszközként való regisztrálására és számítási erőforrások kezelésére használható.
->>>>>>> origin/main
+Az MCP és az Azure Machine Learning (ML) integrációja lehetővé teszi, hogy kihasználhasd az Azure erőteljes ML képességeit, miközben megőrzöd az MCP rugalmasságát. Ez az integráció használható ML folyamatok végrehajtására, modellek eszközként való regisztrálására és számítási erőforrások kezelésére.
 
-### Python Implementáció
+### Python megvalósítás
 
 ```python
 # Python Azure AI Integration
@@ -348,21 +303,12 @@ class EnterpriseAiIntegration:
 A fenti kódban:
 
 - Létrehoztunk egy `EnterpriseAiIntegration` osztályt, amely integrálja az MCP-t az Azure ML-lel.
-<<<<<<< HEAD
 - Megvalósítottunk egy `execute_ml_pipeline` metódust, amely MCP eszközök segítségével dolgozza fel a bemeneti adatokat, és ML folyamatot küld be az Azure ML-nek.
 - Megvalósítottunk egy `register_ml_model_as_tool` metódust, amely egy Azure ML modellt regisztrál MCP eszközként, beleértve a szükséges telepítési környezet és számítási erőforrások létrehozását.
 - Leképeztük az Azure ML adattípusokat JSON séma típusokra az eszköz regisztrációhoz.
 - Aszinkron programozást használtunk a potenciálisan hosszú ideig tartó műveletek, például ML folyamatok végrehajtása és modellek regisztrálása kezelésére.
 
 ## Hogyan tovább
-=======
-- Megvalósítottunk egy `execute_ml_pipeline` nevű metódust, amely bemeneti adatokat dolgoz fel MCP eszközök segítségével, majd ML folyamatot küld be az Azure ML-nek.
-- Megvalósítottunk egy `register_ml_model_as_tool` nevű metódust, amely egy Azure ML modellt regisztrál MCP eszközként, beleértve a szükséges telepítési környezet és számítási erőforrások létrehozását.
-- Leképeztük az Azure ML adat típusait JSON séma típusokra az eszköz regisztrációhoz.
-- Aszinkron programozást használtunk a potenciálisan hosszú ideig tartó műveletek, például ML folyamat végrehajtás és modell regisztráció kezelésére.
-
-## Hogyan tovább?
->>>>>>> origin/main
 
 - [5.2 Többmodalitás](../mcp-multi-modality/README.md)
 

@@ -2,11 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "69ba3bd502bd743233137bac5539c08b",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T20:51:04+00:00",
-=======
-  "translation_date": "2025-08-18T16:06:06+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T16:35:51+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "ro"
 }
@@ -51,16 +47,12 @@ Aceasta ar trebui să pornească un server web cu o interfață vizuală care v�
 
 Odată ce serverul este conectat:
 
-- încercați să listați uneltele și să rulați `add`, cu argumentele 2 și 4; ar trebui să vedeți 6 în rezultat.
+- încercați să listați uneltele și să rulați `add`, cu argumentele 2 și 4, ar trebui să vedeți 6 în rezultat.
 - mergeți la resurse și șablonul de resurse și apelați get_greeting, introduceți un nume și ar trebui să vedeți un mesaj de salut cu numele pe care l-ați furnizat.
 
 ### Testarea în modul CLI
 
-<<<<<<< HEAD
 Inspectorul pe care l-ați rulat este de fapt o aplicație Node.js, iar `mcp dev` este un wrapper în jurul acesteia.
-=======
-Inspectorul pe care l-ați rulat este de fapt o aplicație Node.js, iar `mcp dev` este un wrapper pentru aceasta.
->>>>>>> origin/main
 
 Îl puteți lansa direct în modul CLI rulând următoarea comandă:
 
@@ -123,5 +115,5 @@ Ar trebui să vedeți următorul rezultat:
 > De obicei, este mult mai rapid să rulați inspectorul în modul CLI decât în browser.
 > Citiți mai multe despre inspector [aici](https://github.com/modelcontextprotocol/inspector).
 
-**Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinarea responsabilității**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea umană realizată de profesioniști. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

@@ -2,20 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5ffc7f32ed12664b640175f27f0a997a",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T23:46:08+00:00",
-=======
-  "translation_date": "2025-08-18T19:06:29+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T18:23:47+00:00",
   "source_file": "03-GettingStarted/samples/rust/README.md",
   "language_code": "sl"
 }
 -->
-# Vzorec
+To je vzorčni primer za MCP strežnik v programskem jeziku Rust
 
-To je vzorec za MCP strežnik v jeziku Rust.
-
-Tako izgleda del kalkulatorja:
+Tukaj je prikazan del kalkulatorja:
 
 ```rust
 #[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
@@ -78,10 +72,5 @@ cargo build
 cargo run
 ```
 
-<<<<<<< HEAD
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
-=======
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
->>>>>>> origin/main
+Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne odgovarjamo za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
