@@ -2,14 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T19:07:58+00:00",
+=======
   "translation_date": "2025-08-18T14:12:55+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "sw"
 }
 -->
+<<<<<<< HEAD
+# Kuendesha mfano huu
+
+Hapa kuna jinsi ya kuendesha seva na mteja wa kawaida wa HTTP streaming, pamoja na seva na mteja wa MCP streaming kwa kutumia Python.
+=======
 # Kuendesha sampuli hii
 
 Hivi ndivyo unavyoweza kuendesha seva na mteja wa kawaida wa HTTP streaming, pamoja na seva na mteja wa MCP streaming kwa kutumia Python.
+>>>>>>> origin/main
 
 ### Muhtasari
 
@@ -80,7 +90,11 @@ Hivi ndivyo unavyoweza kuendesha seva na mteja wa kawaida wa HTTP streaming, pam
    python client.py
    ```
 
+<<<<<<< HEAD
+2. Utapaswa kuona ujumbe unaotiririshwa ukichapishwa kwa mpangilio:
+=======
 2. Utaona ujumbe unaotiririshwa ukichapishwa kwa mpangilio:
+>>>>>>> origin/main
 
    ```text
    Running classic HTTP streaming client...
@@ -116,7 +130,11 @@ Hivi ndivyo unavyoweza kuendesha seva na mteja wa kawaida wa HTTP streaming, pam
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
+<<<<<<< HEAD
+2. Utapaswa kuona arifa zikichapishwa kwa wakati halisi wakati seva inachakata kila kipengee:
+=======
 2. Utaona arifa zikichapishwa kwa wakati halisi wakati seva inachakata kila kipengee:
+>>>>>>> origin/main
    ```
    Running MCP client...
    Starting client...
@@ -148,4 +166,8 @@ Hivi ndivyo unavyoweza kuendesha seva na mteja wa kawaida wa HTTP streaming, pam
 - Ikiwa unakutana na makosa, hakikisha toleo lako la Python na utegemezi wote vimesakinishwa.
 
 **Kanusho**:  
+<<<<<<< HEAD
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+=======
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+>>>>>>> origin/main

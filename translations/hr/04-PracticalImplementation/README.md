@@ -1,33 +1,28 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "83efa75a69bc831277263a6f1ae53669",
-  "translation_date": "2025-08-18T17:20:23+00:00",
+  "original_hash": "bb1ab5c924f58cf75ef1732d474f008a",
+  "translation_date": "2025-07-14T17:24:48+00:00",
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "hr"
 }
 -->
-# Praktična primjena
+# Praktična implementacija
 
-[![Kako izgraditi, testirati i implementirati MCP aplikacije koristeći stvarne alate i radne procese](../../../translated_images/05.64bea204e25ca891e3dd8b8f960d2170b9a000d8364305f57db3ec4a2c049a9a.hr.png)](https://youtu.be/vCN9-mKBDfQ)
+Praktična implementacija je mjesto gdje snaga Model Context Protocola (MCP) postaje opipljiva. Iako je važno razumjeti teoriju i arhitekturu MCP-a, prava vrijednost dolazi kada ove koncepte primijenite za izgradnju, testiranje i implementaciju rješenja koja rješavaju stvarne probleme. Ova poglavlja premošćuju jaz između konceptualnog znanja i praktičnog razvoja, vodeći vas kroz proces oživljavanja aplikacija temeljenih na MCP-u.
 
-_(Kliknite na sliku iznad za video lekciju)_
+Bilo da razvijate inteligentne asistente, integrirate AI u poslovne tokove rada ili gradite prilagođene alate za obradu podataka, MCP pruža fleksibilnu osnovu. Njegov dizajn neovisan o jeziku i službeni SDK-ovi za popularne programske jezike čine ga dostupnim širokom spektru programera. Korištenjem ovih SDK-ova možete brzo napraviti prototip, iterirati i skalirati svoja rješenja na različitim platformama i okruženjima.
 
-Praktična primjena je mjesto gdje snaga Model Context Protocola (MCP) postaje opipljiva. Iako je razumijevanje teorije i arhitekture MCP-a važno, prava vrijednost dolazi kada primijenite te koncepte za izgradnju, testiranje i implementaciju rješenja koja rješavaju stvarne probleme. Ovo poglavlje povezuje konceptualno znanje s praktičnim razvojem, vodeći vas kroz proces oživljavanja aplikacija temeljenih na MCP-u.
-
-Bilo da razvijate inteligentne asistente, integrirate AI u poslovne procese ili gradite prilagođene alate za obradu podataka, MCP pruža fleksibilnu osnovu. Njegov dizajn neovisan o jeziku i službeni SDK-ovi za popularne programske jezike čine ga dostupnim širokom spektru programera. Korištenjem ovih SDK-ova možete brzo prototipirati, iterirati i skalirati svoja rješenja na različitim platformama i okruženjima.
-
-U sljedećim odjeljcima pronaći ćete praktične primjere, uzorke koda i strategije implementacije koje pokazuju kako primijeniti MCP u C#, Java s Springom, TypeScriptu, JavaScriptu i Pythonu. Također ćete naučiti kako otkloniti pogreške i testirati MCP servere, upravljati API-ima i implementirati rješenja u oblaku koristeći Azure. Ovi praktični resursi osmišljeni su kako bi ubrzali vaše učenje i pomogli vam da s povjerenjem izgradite robusne MCP aplikacije spremne za produkciju.
+U sljedećim odjeljcima pronaći ćete praktične primjere, uzorke koda i strategije implementacije koje pokazuju kako primijeniti MCP u C#, Javi, TypeScriptu, JavaScriptu i Pythonu. Također ćete naučiti kako otklanjati pogreške i testirati MCP servere, upravljati API-jima i implementirati rješenja u oblaku koristeći Azure. Ovi praktični resursi osmišljeni su da ubrzaju vaše učenje i pomognu vam samouvjereno graditi robusne, spremne za produkciju MCP aplikacije.
 
 ## Pregled
 
-Ova lekcija fokusira se na praktične aspekte primjene MCP-a u različitim programskim jezicima. Istražit ćemo kako koristiti MCP SDK-ove u C#, Java s Springom, TypeScriptu, JavaScriptu i Pythonu za izgradnju robusnih aplikacija, otklanjanje pogrešaka i testiranje MCP servera te stvaranje resursa, upita i alata koji se mogu ponovno koristiti.
+Ova lekcija fokusira se na praktične aspekte implementacije MCP-a u više programskih jezika. Istražit ćemo kako koristiti MCP SDK-ove u C#, Javi, TypeScriptu, JavaScriptu i Pythonu za izgradnju robusnih aplikacija, otklanjanje pogrešaka i testiranje MCP servera te kreiranje ponovljivih resursa, promptova i alata.
 
 ## Ciljevi učenja
 
-Na kraju ove lekcije moći ćete:
-
-- Primijeniti MCP rješenja koristeći službene SDK-ove u različitim programskim jezicima
+Do kraja ove lekcije moći ćete:
+- Implementirati MCP rješenja koristeći službene SDK-ove u različitim programskim jezicima
 - Sustavno otklanjati pogreške i testirati MCP servere
 - Stvarati i koristiti značajke servera (Resursi, Upiti i Alati)
 - Dizajnirati učinkovite MCP radne procese za složene zadatke
@@ -45,11 +40,11 @@ Model Context Protocol nudi službene SDK-ove za više jezika:
 
 ## Rad s MCP SDK-ovima
 
-Ovaj odjeljak pruža praktične primjere primjene MCP-a u različitim programskim jezicima. Uzorke koda možete pronaći u direktoriju `samples` organiziranom po jezicima.
+Ovaj odjeljak pruža praktične primjere implementacije MCP-a u više programskih jezika. Uzorke koda možete pronaći u direktoriju `samples` organiziranom po jezicima.
 
 ### Dostupni uzorci
 
-Repozitorij uključuje [uzorke implementacija](../../../04-PracticalImplementation/samples) u sljedećim jezicima:
+Repozitorij uključuje [primjere implementacija](../../../04-PracticalImplementation/samples) na sljedećim jezicima:
 
 - [C#](./samples/csharp/README.md)
 - [Java s Spring](./samples/java/containerapp/README.md)
@@ -57,7 +52,7 @@ Repozitorij uključuje [uzorke implementacija](../../../04-PracticalImplementati
 - [JavaScript](./samples/javascript/README.md)
 - [Python](./samples/python/README.md)
 
-Svaki uzorak demonstrira ključne MCP koncepte i obrasce implementacije za određeni jezik i ekosustav.
+Svaki primjer demonstrira ključne MCP koncepte i obrasce implementacije za taj specifični jezik i ekosustav.
 
 ## Osnovne značajke servera
 
@@ -85,15 +80,15 @@ Upiti su predlošci poruka i radni procesi za korisnike:
 Alati su funkcije koje AI model može izvršavati:
 
 - Alati za obradu podataka
-- Integracije vanjskih API-ja
-- Računalne sposobnosti
+- Integracije s vanjskim API-jima
+- Računalne mogućnosti
 - Funkcionalnost pretraživanja
 
 ## Uzorci implementacije: Implementacija u C#
 
 Službeni C# SDK repozitorij sadrži nekoliko uzoraka implementacije koji demonstriraju različite aspekte MCP-a:
 
-- **Osnovni MCP klijent**: Jednostavan primjer koji pokazuje kako stvoriti MCP klijent i pozvati alate
+- **Osnovni MCP klijent**: Jednostavan primjer kako kreirati MCP klijenta i pozivati alate
 - **Osnovni MCP server**: Minimalna implementacija servera s osnovnom registracijom alata
 - **Napredni MCP server**: Server s punim značajkama, uključujući registraciju alata, autentifikaciju i rukovanje pogreškama
 - **Integracija s ASP.NET-om**: Primjeri integracije s ASP.NET Core
@@ -106,11 +101,11 @@ C# MCP SDK je u fazi pregleda i API-ji se mogu mijenjati. Kontinuirano ćemo až
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 - Izgradnja vašeg [prvog MCP servera](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
-Za potpune uzorke implementacije u C#, posjetite [službeni C# SDK repozitorij uzoraka](https://github.com/modelcontextprotocol/csharp-sdk)
+Za potpune primjere implementacije u C#, posjetite [službeni repozitorij C# SDK primjera](https://github.com/modelcontextprotocol/csharp-sdk)
 
 ## Uzorak implementacije: Implementacija u Java s Springom
 
-Java s Spring SDK nudi robusne opcije za MCP implementaciju s značajkama na razini poduzeća.
+Java SDK nudi robusne opcije implementacije MCP-a s enterprise značajkama.
 
 ### Ključne značajke
 
@@ -119,7 +114,7 @@ Java s Spring SDK nudi robusne opcije za MCP implementaciju s značajkama na raz
 - Podrška za reaktivno programiranje
 - Sveobuhvatno rukovanje pogreškama
 
-Za potpuni uzorak implementacije u Java s Spring, pogledajte [Java s Spring uzorak](samples/java/containerapp/README.md) u direktoriju uzoraka.
+Za potpuni primjer implementacije u Javi, pogledajte [Java primjer](samples/java/containerapp/README.md) u direktoriju uzoraka.
 
 ## Uzorak implementacije: Implementacija u JavaScriptu
 
@@ -132,11 +127,11 @@ JavaScript SDK pruža lagan i fleksibilan pristup MCP implementaciji.
 - Jednostavna integracija s Expressom i drugim okvirima
 - Podrška za WebSocket za streaming
 
-Za potpuni uzorak implementacije u JavaScriptu, pogledajte [JavaScript uzorak](samples/javascript/README.md) u direktoriju uzoraka.
+Za potpuni primjer implementacije u JavaScriptu, pogledajte [JavaScript primjer](samples/javascript/README.md) u direktoriju uzoraka.
 
 ## Uzorak implementacije: Implementacija u Pythonu
 
-Python SDK nudi Pythonic pristup MCP implementaciji s izvrsnim integracijama s ML okvirima.
+Python SDK nudi pitoničan pristup implementaciji MCP-a s izvrsnim integracijama za ML frameworke.
 
 ### Ključne značajke
 
@@ -145,11 +140,11 @@ Python SDK nudi Pythonic pristup MCP implementaciji s izvrsnim integracijama s M
 - Jednostavna registracija alata
 - Izvorna integracija s popularnim ML bibliotekama
 
-Za potpuni uzorak implementacije u Pythonu, pogledajte [Python uzorak](samples/python/README.md) u direktoriju uzoraka.
+Za potpuni primjer implementacije u Pythonu, pogledajte [Python primjer](samples/python/README.md) u direktoriju uzoraka.
 
 ## Upravljanje API-jem
 
-Azure API Management je izvrsno rješenje za osiguranje MCP servera. Ideja je postaviti instancu Azure API Managementa ispred vašeg MCP servera i omogućiti joj upravljanje značajkama koje su vam vjerojatno potrebne, poput:
+Azure API Management je izvrsno rješenje za osiguranje MCP servera. Ideja je postaviti Azure API Management instancu ispred vašeg MCP servera i dopustiti joj da upravlja značajkama koje ćete vjerojatno htjeti, kao što su:
 
 - ograničavanja brzine
 - upravljanja tokenima
@@ -179,7 +174,7 @@ Pogledajmo tok autorizacije detaljnije:
 
 #### Specifikacija autorizacije MCP-a
 
-Saznajte više o [specifikaciji autorizacije MCP-a](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
+Saznajte više o [MCP specifikaciji autorizacije](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
 
 ## Implementacija udaljenog MCP servera na Azure
 
@@ -217,9 +212,9 @@ Pogledajmo možemo li implementirati uzorak koji smo ranije spomenuli:
 
     ![Povezivanje s Node inspectorom](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hr.png)
 
-1. CTRL kliknite za učitavanje MCP Inspector web aplikacije s URL-a prikazanog od strane aplikacije (npr. [http://127.0.0.1:6274/#resources](http://127.0.0.1:6274/#resources))
-1. Postavite vrstu transporta na `SSE`
-1. Postavite URL na vaš API Management SSE endpoint prikazan nakon `azd up` i **Povežite se**:
+1. CTRL klikom otvorite MCP Inspector web aplikaciju s URL-a koji aplikacija prikazuje (npr. http://127.0.0.1:6274/#resources)
+1. Postavite tip transporta na `SSE`
+1. Postavite URL na vaš aktivni API Management SSE endpoint prikazan nakon `azd up` i **Povežite se**:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
@@ -227,7 +222,7 @@ Pogledajmo možemo li implementirati uzorak koji smo ranije spomenuli:
 
 1. **Popis alata**. Kliknite na alat i **Pokrenite alat**.
 
-Ako su svi koraci uspješno izvedeni, sada biste trebali biti povezani s MCP serverom i mogli ste pozvati alat.
+Ako su svi koraci prošli uspješno, sada ste povezani s MCP serverom i uspjeli ste pozvati alat.
 
 ## MCP serveri za Azure
 
@@ -235,24 +230,24 @@ Ako su svi koraci uspješno izvedeni, sada biste trebali biti povezani s MCP ser
 
 Uzorci pružaju kompletno rješenje koje omogućuje programerima:
 
-- Izgradnju i pokretanje lokalno: Razvoj i otklanjanje pogrešaka MCP servera na lokalnom računalu
-- Implementaciju na Azure: Jednostavna implementacija u oblak s jednostavnom naredbom azd up
-- Povezivanje s klijentima: Povezivanje s MCP serverom iz različitih klijenata, uključujući VS Code Copilot agent mode i MCP Inspector alat
+- Izgrade i pokrenu lokalno: razvijaju i otklanjaju pogreške MCP servera na lokalnom računalu
+- Implementiraju na Azure: jednostavno implementiraju u oblak s jednom azd up naredbom
+- Povežu se s klijentima: povezuju se s MCP serverom iz različitih klijenata uključujući VS Code-ov Copilot agent mod i MCP Inspector alat
 
 ### Ključne značajke
 
 - Sigurnost po dizajnu: MCP server je osiguran pomoću ključeva i HTTPS-a
-- Opcije autentifikacije: Podržava OAuth koristeći ugrađenu autentifikaciju i/ili upravljanje API-jem
-- Izolacija mreže: Omogućuje izolaciju mreže koristeći Azure Virtual Networks (VNET)
-- Serverless arhitektura: Koristi Azure Functions za skalabilno, događajno pokretanje
-- Lokalni razvoj: Sveobuhvatna podrška za lokalni razvoj i otklanjanje pogrešaka
-- Jednostavna implementacija: Pojednostavljen proces implementacije na Azure
+- Opcije autentikacije: podržava OAuth koristeći ugrađenu autentikaciju i/ili API Management
+- Izolacija mreže: omogućuje mrežnu izolaciju koristeći Azure Virtual Networks (VNET)
+- Serverless arhitektura: koristi Azure Functions za skalabilno, događajima vođeno izvršavanje
+- Lokalni razvoj: sveobuhvatna podrška za lokalni razvoj i otklanjanje pogrešaka
+- Jednostavna implementacija: pojednostavljen proces implementacije na Azure
 
-Repozitorij uključuje sve potrebne konfiguracijske datoteke, izvorni kod i definicije infrastrukture za brzo pokretanje produkcijski spremne implementacije MCP servera.
+Repozitorij uključuje sve potrebne konfiguracijske datoteke, izvorni kod i definicije infrastrukture za brzo započinjanje s produkcijski spremnom MCP server implementacijom.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Uzorak implementacije MCP-a koristeći Azure Functions s Pythonom
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Primjer implementacije MCP-a koristeći Azure Functions s Pythonom
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Uzorak implementacije MCP-a koristeći Azure Functions s C# .NET
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Primjer implementacije MCP-a koristeći Azure Functions s C# .NET
 
 - [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Uzorak implementacije MCP-a koristeći Azure Functions s Node/TypeScriptom.
 
@@ -268,10 +263,10 @@ Repozitorij uključuje sve potrebne konfiguracijske datoteke, izvorni kod i defi
 
 Dizajnirajte praktičan MCP radni proces koji rješava stvarni problem u vašem području:
 
-1. Identificirajte 3-4 alata koji bi bili korisni za rješavanje ovog problema
-2. Stvorite dijagram radnog procesa koji pokazuje kako ti alati međusobno djeluju
-3. Implementirajte osnovnu verziju jednog od alata koristeći vaš preferirani jezik
-4. Stvorite predložak upita koji bi pomogao modelu učinkovito koristiti vaš alat
+1. Identificirajte 3-4 alata koji bi bili korisni za rješavanje tog problema
+2. Izradite dijagram toka rada koji prikazuje kako ti alati međusobno djeluju
+3. Implementirajte osnovnu verziju jednog od alata koristeći željeni programski jezik
+4. Kreirajte predložak prompta koji će pomoći modelu da učinkovito koristi vaš alat
 
 ## Dodatni resursi
 
@@ -280,4 +275,4 @@ Dizajnirajte praktičan MCP radni proces koji rješava stvarni problem u vašem 
 Sljedeće: [Napredne teme](../05-AdvancedTopics/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije proizašle iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

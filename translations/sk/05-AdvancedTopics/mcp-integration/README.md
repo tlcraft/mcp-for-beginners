@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f84eaea79c8fa9ab318a494f40891814",
-  "translation_date": "2025-08-18T15:29:00+00:00",
+  "original_hash": "73240f845b99df9401fffd21c09a5f7b",
+  "translation_date": "2025-07-17T10:58:52+00:00",
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "sk"
 }
@@ -13,20 +13,20 @@ Pri vytváraní MCP serverov v podnikových prostrediach často potrebujete inte
 
 ## Úvod
 
-V tejto lekcii sa naučíte, ako integrovať Model Context Protocol (MCP) s podnikovými AI systémami, so zameraním na Azure OpenAI a Microsoft AI Foundry. Tieto integrácie vám umožnia využívať výkonné AI modely a nástroje, pričom si zachováte flexibilitu a rozšíriteľnosť MCP.
+V tejto lekcii sa naučíte, ako integrovať Model Context Protocol (MCP) s podnikateľskými AI systémami, so zameraním na Azure OpenAI a Microsoft AI Foundry. Tieto integrácie vám umožnia využiť výkonné AI modely a nástroje pri zachovaní flexibility a rozšíriteľnosti MCP.
 
 ## Ciele učenia
 
 Na konci tejto lekcie budete schopní:
 
-- Integrovať MCP s Azure OpenAI na využívanie jeho AI schopností.
+- Integrovať MCP s Azure OpenAI a využiť jeho AI schopnosti.
 - Implementovať orchestráciu nástrojov MCP s Azure OpenAI.
 - Kombinovať MCP s Microsoft AI Foundry pre pokročilé schopnosti AI agentov.
-- Využívať Azure Machine Learning (ML) na vykonávanie ML pipeline a registráciu modelov ako nástrojov MCP.
+- Využiť Azure Machine Learning (ML) na spúšťanie ML pipeline a registráciu modelov ako MCP nástrojov.
 
-## Integrácia Azure OpenAI
+## Integrácia s Azure OpenAI
 
-Azure OpenAI poskytuje prístup k výkonným AI modelom, ako je GPT-4 a ďalšie. Integrácia MCP s Azure OpenAI vám umožňuje využívať tieto modely, pričom si zachováte flexibilitu orchestrácie nástrojov MCP.
+Azure OpenAI poskytuje prístup k výkonným AI modelom ako GPT-4 a ďalším. Integrácia MCP s Azure OpenAI vám umožní využiť tieto modely pri zachovaní flexibility orchestrácie nástrojov MCP.
 
 ### Implementácia v C#
 
@@ -94,7 +94,7 @@ namespace EnterpriseIntegration
 }
 ```
 
-V predchádzajúcom kóde sme:
+V uvedenom kóde sme:
 
 - Nakonfigurovali klienta Azure OpenAI s endpointom, názvom nasadenia a API kľúčom.
 - Vytvorili metódu `GetCompletionWithToolsAsync` na získanie odpovedí s podporou nástrojov.
@@ -102,11 +102,11 @@ V predchádzajúcom kóde sme:
 
 Odporúčame implementovať skutočnú logiku spracovania nástrojov na základe vašej konkrétnej konfigurácie MCP servera.
 
-## Integrácia Microsoft AI Foundry
+## Integrácia s Microsoft AI Foundry
 
-Azure AI Foundry poskytuje platformu na vytváranie a nasadzovanie AI agentov. Integrácia MCP s AI Foundry vám umožňuje využívať jeho schopnosti, pričom si zachováte flexibilitu MCP.
+Azure AI Foundry poskytuje platformu na tvorbu a nasadzovanie AI agentov. Integrácia MCP s AI Foundry vám umožní využiť jeho schopnosti pri zachovaní flexibility MCP.
 
-V nasledujúcom kóde vyvíjame integráciu agenta, ktorý spracováva požiadavky a volania nástrojov pomocou MCP.
+V nasledujúcom kóde vyvíjame integráciu agenta, ktorý spracováva požiadavky a spracováva volania nástrojov pomocou MCP.
 
 ### Implementácia v Jave
 
@@ -166,15 +166,15 @@ public class AIFoundryMcpBridge {
 }
 ```
 
-V predchádzajúcom kóde sme:
+V uvedenom kóde sme:
 
 - Vytvorili triedu `AIFoundryMcpBridge`, ktorá integruje AI Foundry a MCP.
-- Implementovali metódu `processAgentRequest`, ktorá spracováva požiadavky agenta AI Foundry.
-- Spracovali volania nástrojov ich vykonaním prostredníctvom MCP klienta a odoslaním výsledkov späť agentovi AI Foundry.
+- Implementovali metódu `processAgentRequest`, ktorá spracováva požiadavky AI Foundry agenta.
+- Spracovali volania nástrojov vykonaním cez MCP klienta a odoslaním výsledkov späť AI Foundry agentovi.
 
 ## Integrácia MCP s Azure ML
 
-Integrácia MCP s Azure Machine Learning (ML) vám umožňuje využívať výkonné ML schopnosti Azure, pričom si zachováte flexibilitu MCP. Táto integrácia môže byť použitá na vykonávanie ML pipeline, registráciu modelov ako nástrojov a správu výpočtových zdrojov.
+Integrácia MCP s Azure Machine Learning (ML) vám umožní využiť výkonné ML schopnosti Azure pri zachovaní flexibility MCP. Táto integrácia sa dá použiť na spúšťanie ML pipeline, registráciu modelov ako nástrojov a správu výpočtových zdrojov.
 
 ### Implementácia v Pythone
 
@@ -300,17 +300,17 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
-V predchádzajúcom kóde sme:
+V uvedenom kóde sme:
 
 - Vytvorili triedu `EnterpriseAiIntegration`, ktorá integruje MCP s Azure ML.
-- Implementovali metódu `execute_ml_pipeline`, ktorá spracováva vstupné dáta pomocou nástrojov MCP a odosiela ML pipeline do Azure ML.
-- Implementovali metódu `register_ml_model_as_tool`, ktorá registruje model Azure ML ako nástroj MCP, vrátane vytvorenia potrebného prostredia nasadenia a výpočtových zdrojov.
-- Mapovali typy dát Azure ML na typy JSON schém pre registráciu nástrojov.
-- Použili asynchrónne programovanie na spracovanie potenciálne dlhotrvajúcich operácií, ako je vykonávanie ML pipeline a registrácia modelov.
+- Implementovali metódu `execute_ml_pipeline`, ktorá spracováva vstupné dáta pomocou MCP nástrojov a spúšťa ML pipeline v Azure ML.
+- Implementovali metódu `register_ml_model_as_tool`, ktorá registruje Azure ML model ako MCP nástroj, vrátane vytvorenia potrebného nasadenia a výpočtových zdrojov.
+- Namapovali dátové typy Azure ML na JSON schému pre registráciu nástrojov.
+- Použili asynchrónne programovanie na spracovanie potenciálne dlhých operácií, ako je spúšťanie ML pipeline a registrácia modelov.
 
 ## Čo ďalej
 
 - [5.2 Multi modality](../mcp-multi-modality/README.md)
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nenesieme zodpovednosť za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

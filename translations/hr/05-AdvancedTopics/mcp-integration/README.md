@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f84eaea79c8fa9ab318a494f40891814",
-  "translation_date": "2025-08-18T17:23:58+00:00",
+  "original_hash": "73240f845b99df9401fffd21c09a5f7b",
+  "translation_date": "2025-07-17T12:06:33+00:00",
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "hr"
 }
 -->
 # Integracija u poduzeću
 
-Prilikom izgradnje MCP poslužitelja u kontekstu poduzeća, često je potrebno integrirati se s postojećim AI platformama i uslugama. Ovaj odjeljak objašnjava kako integrirati MCP s poslovnim sustavima poput Azure OpenAI i Microsoft AI Foundry, omogućujući napredne AI mogućnosti i orkestraciju alata.
+Prilikom izgradnje MCP servera u poslovnom okruženju, često je potrebno integrirati se s postojećim AI platformama i uslugama. Ovaj odjeljak objašnjava kako integrirati MCP s poslovnim sustavima poput Azure OpenAI i Microsoft AI Foundry, omogućujući napredne AI mogućnosti i orkestraciju alata.
 
 ## Uvod
 
@@ -17,7 +17,7 @@ U ovoj lekciji naučit ćete kako integrirati Model Context Protocol (MCP) s pos
 
 ## Ciljevi učenja
 
-Na kraju ove lekcije moći ćete:
+Na kraju ove lekcije, moći ćete:
 
 - Integrirati MCP s Azure OpenAI kako biste iskoristili njegove AI mogućnosti.
 - Implementirati orkestraciju alata MCP-a s Azure OpenAI.
@@ -96,17 +96,17 @@ namespace EnterpriseIntegration
 
 U prethodnom kodu smo:
 
-- Konfigurirali Azure OpenAI klijent s krajnjom točkom, nazivom implementacije i API ključem.
-- Kreirali metodu `GetCompletionWithToolsAsync` za dobivanje odgovora s podrškom za alate.
+- Konfigurirali Azure OpenAI klijenta s endpointom, imenom deploymenta i API ključem.
+- Kreirali metodu `GetCompletionWithToolsAsync` za dobivanje dovršetaka s podrškom za alate.
 - Obradili pozive alata u odgovoru.
 
-Preporučuje se implementirati stvarnu logiku obrade alata na temelju specifične konfiguracije vašeg MCP poslužitelja.
+Preporučujemo da implementirate stvarnu logiku rukovanja alatima prema vašoj specifičnoj MCP server konfiguraciji.
 
 ## Integracija s Microsoft AI Foundry
 
-Azure AI Foundry pruža platformu za izgradnju i implementaciju AI agenata. Integracija MCP-a s AI Foundry omogućuje vam iskorištavanje njegovih mogućnosti uz zadržavanje fleksibilnosti MCP-a.
+Azure AI Foundry pruža platformu za izgradnju i implementaciju AI agenata. Integracija MCP-a s AI Foundry omogućuje vam korištenje njegovih mogućnosti uz zadržavanje fleksibilnosti MCP-a.
 
-U donjem primjeru koda razvijamo integraciju agenta koja obrađuje zahtjeve i upravlja pozivima alata koristeći MCP.
+U donjem kodu razvijamo integraciju agenta koja obrađuje zahtjeve i rukuje pozivima alata koristeći MCP.
 
 ### Implementacija u Javi
 
@@ -168,13 +168,13 @@ public class AIFoundryMcpBridge {
 
 U prethodnom kodu smo:
 
-- Kreirali klasu `AIFoundryMcpBridge` koja se integrira s AI Foundry i MCP-om.
+- Kreirali klasu `AIFoundryMcpBridge` koja integrira AI Foundry i MCP.
 - Implementirali metodu `processAgentRequest` koja obrađuje zahtjev AI Foundry agenta.
-- Obradili pozive alata izvršavajući ih putem MCP klijenta i vraćajući rezultate natrag AI Foundry agentu.
+- Obradili pozive alata izvršavajući ih preko MCP klijenta i vraćajući rezultate natrag AI Foundry agentu.
 
 ## Integracija MCP-a s Azure ML
 
-Integracija MCP-a s Azure Machine Learning (ML) omogućuje vam iskorištavanje moćnih ML mogućnosti Azure-a uz zadržavanje fleksibilnosti MCP-a. Ova integracija može se koristiti za izvršavanje ML cjevovoda, registraciju modela kao alata i upravljanje računalnim resursima.
+Integracija MCP-a s Azure Machine Learning (ML) omogućuje vam iskorištavanje moćnih ML mogućnosti Azurea uz zadržavanje fleksibilnosti MCP-a. Ova integracija može se koristiti za izvođenje ML pipelineova, registraciju modela kao alata i upravljanje računalnim resursima.
 
 ### Implementacija u Pythonu
 
@@ -303,14 +303,14 @@ class EnterpriseAiIntegration:
 U prethodnom kodu smo:
 
 - Kreirali klasu `EnterpriseAiIntegration` koja integrira MCP s Azure ML.
-- Implementirali metodu `execute_ml_pipeline` koja obrađuje ulazne podatke koristeći MCP alate i šalje ML cjevovod na Azure ML.
-- Implementirali metodu `register_ml_model_as_tool` koja registrira Azure ML model kao MCP alat, uključujući stvaranje potrebnog okruženja za implementaciju i računalnih resursa.
-- Mapirali Azure ML tipove podataka na JSON sheme za registraciju alata.
-- Koristili asinkrono programiranje za obradu potencijalno dugotrajnih operacija poput izvršavanja ML cjevovoda i registracije modela.
+- Implementirali metodu `execute_ml_pipeline` koja obrađuje ulazne podatke koristeći MCP alate i šalje ML pipeline u Azure ML.
+- Implementirali metodu `register_ml_model_as_tool` koja registrira Azure ML model kao MCP alat, uključujući kreiranje potrebnog deployment okruženja i računalnih resursa.
+- Mapirali Azure ML tipove podataka na JSON shemu za registraciju alata.
+- Koristili asinhrono programiranje za rukovanje potencijalno dugotrajnim operacijama poput izvođenja ML pipelinea i registracije modela.
 
 ## Što dalje
 
 - [5.2 Višestruka modalnost](../mcp-multi-modality/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije proizašle iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

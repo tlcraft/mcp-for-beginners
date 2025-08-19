@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1b000fd6e1b04c047578bfc5d07d54eb",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T20:55:42+00:00",
+=======
   "translation_date": "2025-08-18T16:10:53+00:00",
+>>>>>>> origin/main
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
   "language_code": "ro"
 }
@@ -44,7 +48,11 @@ MCP este **"USB-C pentru AI"** - un standard universal care conectează modelele
 - 🔒 **Pregătit pentru Enterprise**: Securitate și fiabilitate integrate  
 
 **🎯 De ce este Important MCP:**  
+<<<<<<< HEAD
+Așa cum USB-C a eliminat haosul cablurilor, MCP elimină complexitatea integrărilor AI. Un singur protocol, posibilități infinite.
+=======
 Așa cum USB-C a eliminat haosul cablurilor, MCP elimină complexitatea integrărilor AI. Un protocol, posibilități infinite.
+>>>>>>> origin/main
 
 ### 🤖 AI Toolkit pentru Visual Studio Code (AITK)
 
@@ -75,9 +83,15 @@ Extensia de dezvoltare AI de la Microsoft care transformă VS Code într-un cent
 - 🎮 Stăpâniți Terenul Interactiv pentru testarea modelelor în timp real  
 - 🤖 Construiți primul dvs. agent AI cu Agent Builder  
 - 📊 Evaluați performanța modelelor cu metrici integrate (F1, relevanță, similaritate, coerență)  
+<<<<<<< HEAD
+- ⚡ Învățați procesarea în loturi și capabilitățile de suport multi-modal  
+
+**🎯 Rezultat al Învățării**: Creați un agent AI funcțional cu o înțelegere cuprinzătoare a capabilităților AITK  
+=======
 - ⚡ Învățați procesarea în loturi și capabilitățile multi-modale  
 
 **🎯 Rezultat al Învățării**: Creați un agent AI funcțional cu o înțelegere cuprinzătoare a capacităților AITK  
+>>>>>>> origin/main
 
 ### [🌐 Modulul 2: MCP cu Fundamentele AI Toolkit](./lab2/README.md)
 
@@ -116,7 +130,11 @@ Extensia de dezvoltare AI de la Microsoft care transformă VS Code într-un cent
 
 **🎯 Rezultat al Învățării**: Implementați un server MCP pregătit pentru producție care simplifică fluxurile de lucru reale de dezvoltare  
 
+<<<<<<< HEAD
+## 💡 Aplicații Reale și Impact
+=======
 ## 💡 Aplicații și Impact în Lumea Reală
+>>>>>>> origin/main
 
 ### 🏢 Cazuri de Utilizare în Enterprise
 
@@ -126,13 +144,21 @@ Transformați fluxul de lucru de dezvoltare cu automatizare inteligentă:
 
 - **Gestionare Inteligentă a Depozitelor**: Revizuirea codului și decizii de îmbinare bazate pe AI  
 - **CI/CD Inteligent**: Optimizarea automată a pipeline-urilor pe baza modificărilor de cod  
+<<<<<<< HEAD
+- **Trierea Problemelor**: Clasificarea automată a bug-urilor și atribuirea lor  
+=======
 - **Trierea Problemelor**: Clasificarea și alocarea automată a erorilor  
+>>>>>>> origin/main
 
 #### 🧪 Revoluția Asigurării Calității
 
 Îmbunătățiți testarea cu automatizare alimentată de AI:
 
+<<<<<<< HEAD
+- **Generare Inteligentă de Teste**: Crearea automată a suitei de teste cuprinzătoare  
+=======
 - **Generare Inteligentă de Teste**: Creați suite de teste cuprinzătoare automat  
+>>>>>>> origin/main
 - **Testare Vizuală de Regresie**: Detectarea schimbărilor UI cu ajutorul AI  
 - **Monitorizare a Performanței**: Identificarea și rezolvarea proactivă a problemelor  
 
@@ -189,7 +215,11 @@ Prin completarea acestui atelier, veți dobândi competențe în:
 
 - [ ] **Stăpânirea Protocolului MCP**: Înțelegere profundă a arhitecturii și a modelelor de implementare  
 - [ ] **Proficiență AITK**: Utilizare la nivel expert a AI Toolkit pentru dezvoltare rapidă  
+<<<<<<< HEAD
+- [ ] **Dezvoltare de Servere Personalizate**: Construirea, implementarea și întreținerea serverelor MCP de producție  
+=======
 - [ ] **Dezvoltare de Servere Personalizate**: Construirea, implementarea și întreținerea serverelor MCP pentru producție  
+>>>>>>> origin/main
 - [ ] **Excelență în Integrarea Instrumentelor**: Conectarea fără cusur a AI cu fluxurile de lucru existente  
 - [ ] **Aplicarea Rezolvării Problemelor**: Aplicarea abilităților învățate la provocări reale de afaceri  
 
@@ -223,5 +253,10 @@ Prin completarea acestui atelier, veți dobândi competențe în:
 
 Hai să construim împreună viitorul aplicațiilor inteligente cu MCP și AI Toolkit!
 
+<<<<<<< HEAD
+**Declinarea responsabilității**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea realizată de un profesionist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+=======
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+>>>>>>> origin/main

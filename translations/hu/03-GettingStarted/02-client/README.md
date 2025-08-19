@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94c80ae71fb9971e9b57b51ab0912121",
-  "translation_date": "2025-08-18T14:44:00+00:00",
+  "original_hash": "8da8a0fd44d58fab5979d0f2914a1f37",
+  "translation_date": "2025-07-17T10:29:26+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "hu"
 }
 -->
 # Ügyfél létrehozása
 
-Az ügyfelek egyedi alkalmazások vagy szkriptek, amelyek közvetlenül kommunikálnak egy MCP szerverrel erőforrások, eszközök és promptok lekérése érdekében. Ellentétben az inspector eszköz használatával, amely grafikus felületet biztosít a szerverrel való interakcióhoz, saját ügyfél írása lehetővé teszi a programozott és automatizált interakciókat. Ez lehetővé teszi a fejlesztők számára, hogy az MCP képességeit integrálják saját munkafolyamataikba, automatizálják a feladatokat, és egyedi megoldásokat hozzanak létre specifikus igényekhez igazítva.
+Az ügyfelek egyedi alkalmazások vagy szkriptek, amelyek közvetlenül kommunikálnak egy MCP szerverrel erőforrások, eszközök és promptok lekérésére. Ellentétben az inspector eszköz használatával, amely grafikus felületet biztosít a szerverrel való interakcióhoz, a saját ügyfél megírása programozott és automatizált műveleteket tesz lehetővé. Ezáltal a fejlesztők beépíthetik az MCP képességeit saját munkafolyamataikba, automatizálhatják a feladatokat, és testreszabott megoldásokat hozhatnak létre speciális igényekhez.
 
 ## Áttekintés
 
@@ -25,18 +25,18 @@ A lecke végére képes leszel:
 
 ## Mi szükséges egy ügyfél írásához?
 
-Egy ügyfél írásához a következő lépéseket kell elvégezned:
+Egy ügyfél megírásához a következőket kell tenned:
 
-- **A megfelelő könyvtárak importálása**. Ugyanazt a könyvtárat fogod használni, mint korábban, csak más konstrukciókkal.
-- **Egy ügyfél példányosítása**. Ez magában foglalja egy ügyfélpéldány létrehozását és annak csatlakoztatását a kiválasztott szállítási módszerhez.
-- **Döntés az erőforrások listázásáról**. Az MCP szerver erőforrásokkal, eszközökkel és promptokkal rendelkezik, el kell döntened, melyiket listázod.
-- **Az ügyfél integrálása egy gazdaalkalmazásba**. Miután megismerted a szerver képességeit, integrálnod kell azt a gazdaalkalmazásodba, hogy ha egy felhasználó promptot vagy más parancsot ír be, a megfelelő szerverfunkció legyen meghívva.
+- **A megfelelő könyvtárak importálása.** Ugyanazt a könyvtárat használod, mint korábban, csak más konstrukciókkal.
+- **Egy ügyfél példányosítása.** Ez magában foglalja egy ügyfél példány létrehozását és csatlakoztatását a kiválasztott szállítási módhoz.
+- **Döntés arról, hogy mely erőforrásokat listázod.** Az MCP szervered erőforrásokat, eszközöket és promptokat kínál, el kell döntened, melyeket szeretnéd megjeleníteni.
+- **Az ügyfél integrálása egy host alkalmazásba.** Miután ismered a szerver képességeit, integrálnod kell az ügyfelet a host alkalmazásba, hogy ha a felhasználó promptot vagy más parancsot ír be, a megfelelő szerver funkció meghívódjon.
 
 Most, hogy magas szinten megértettük, mit fogunk csinálni, nézzünk meg egy példát.
 
 ### Példa ügyfél
 
-Nézzünk meg egy példát egy ügyfélre:
+Tekintsük meg ezt a példa ügyfelet:
 
 ### TypeScript
 
@@ -94,15 +94,15 @@ A fenti kódban:
 
 És íme, egy ügyfél, amely képes kommunikálni egy MCP szerverrel.
 
-A következő gyakorlati szakaszban bontsuk le a kódrészleteket, és magyarázzuk el, mi történik.
+A következő gyakorlatban szánjunk időt arra, hogy részletesen átvesszük a kódrészleteket és elmagyarázzuk, mi történik.
 
 ## Gyakorlat: Ügyfél írása
 
-Ahogy korábban említettük, szánjunk időt a kód magyarázatára, és ha szeretnéd, kódolj velünk.
+Ahogy fent említettük, szánjunk időt a kód magyarázatára, és természetesen, ha szeretnéd, kódolj velünk együtt.
 
-### -1- Könyvtárak importálása
+### -1- A könyvtárak importálása
 
-Importáljuk a szükséges könyvtárakat. Szükségünk lesz egy ügyfélre és a választott szállítási protokollra, stdio-ra. Az stdio egy protokoll, amely helyi gépen futó dolgokhoz készült. Az SSE egy másik szállítási protokoll, amelyet a későbbi fejezetekben mutatunk be, de ez a másik lehetőséged. Egyelőre azonban folytassuk az stdio-val.
+Importáljuk a szükséges könyvtárakat, szükségünk lesz hivatkozásokra az ügyfélhez és a választott szállítási protokollhoz, az stdio-hoz. Az stdio egy protokoll helyi gépen futó dolgokhoz. Az SSE egy másik szállítási protokoll, amit a későbbi fejezetekben mutatunk be, de most maradjunk az stdio-nál.
 
 #### TypeScript
 
@@ -130,7 +130,7 @@ using ModelContextProtocol.Protocol.Transport;
 
 #### Java
 
-A Java esetében egy ügyfelet fogsz létrehozni, amely csatlakozik az előző gyakorlatban létrehozott MCP szerverhez. A [Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java) Java Spring Boot projektstruktúráját használva hozz létre egy új Java osztályt `SDKClient` néven a `src/main/java/com/microsoft/mcp/sample/client/` mappában, és add hozzá a következő importokat:
+Java esetén egy olyan ügyfelet hozol létre, amely az előző gyakorlatban használt MCP szerverhez csatlakozik. A [Getting Started with MCP Server](../../../../03-GettingStarted/01-first-server/solution/java) Java Spring Boot projektstruktúráját használva hozz létre egy új Java osztályt `SDKClient` néven a `src/main/java/com/microsoft/mcp/sample/client/` mappában, és add hozzá a következő importokat:
 
 ```java
 import java.util.Map;
@@ -141,6 +141,34 @@ import io.modelcontextprotocol.spec.McpClientTransport;
 import io.modelcontextprotocol.spec.McpSchema.CallToolRequest;
 import io.modelcontextprotocol.spec.McpSchema.CallToolResult;
 import io.modelcontextprotocol.spec.McpSchema.ListToolsResult;
+```
+
+#### Rust
+
+A következő függőségeket kell hozzáadnod a `Cargo.toml` fájlodhoz.
+
+```toml
+[package]
+name = "calculator-client"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rmcp = { version = "0.5.0", features = ["client", "transport-child-process"] }
+serde_json = "1.0.141"
+tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
+```
+
+Ezután importálhatod a szükséges könyvtárakat az ügyfélkódodban.
+
+```rust
+use rmcp::{
+    RmcpError,
+    model::CallToolRequestParam,
+    service::ServiceExt,
+    transport::{ConfigureCommandExt, TokioChildProcess},
+};
+use tokio::process::Command;
 ```
 
 #### Rust
@@ -175,7 +203,7 @@ Folytassuk az ügyfél példányosításával.
 
 ### -2- Ügyfél és szállítás példányosítása
 
-Létre kell hoznunk egy szállítási példányt és az ügyfél példányát:
+Létre kell hoznunk egy példányt a szállításból és az ügyfélből:
 
 #### TypeScript
 
@@ -197,7 +225,7 @@ await client.connect(transport);
 
 A fenti kódban:
 
-- Létrehoztunk egy stdio szállítási példányt. Figyeld meg, hogyan adja meg a parancsot és az argumentumokat a szerver megtalálásához és elindításához, mivel ezt kell tennünk az ügyfél létrehozásakor.
+- Létrehoztunk egy stdio szállítási példányt. Figyeld meg, hogy megadja a parancsot és az argumentumokat a szerver megtalálásához és elindításához, mert ezt meg kell tennünk az ügyfél létrehozásakor.
 
     ```typescript
     const transport = new StdioClientTransport({
@@ -206,7 +234,7 @@ A fenti kódban:
     });
     ```
 
-- Létrehoztunk egy ügyfelet, megadva neki egy nevet és verziót.
+- Példányosítottunk egy ügyfelet, megadva neki nevet és verziót.
 
     ```typescript
     const client = new Client(
@@ -216,7 +244,7 @@ A fenti kódban:
     });
     ```
 
-- Csatlakoztattuk az ügyfelet a választott szállításhoz.
+- Csatlakoztattuk az ügyfelet a kiválasztott szállításhoz.
 
     ```typescript
     await client.connect(transport);
@@ -253,10 +281,10 @@ if __name__ == "__main__":
 
 A fenti kódban:
 
-- Importáltuk a szükséges könyvtárakat.
-- Létrehoztunk egy szerverparaméter-objektumot, amelyet a szerver futtatásához használunk, hogy csatlakozhassunk hozzá az ügyféllel.
-- Meghatároztunk egy `run` nevű metódust, amely viszont meghívja az `stdio_client`-et, amely elindít egy ügyfélmunkamenetet.
-- Létrehoztunk egy belépési pontot, ahol az `asyncio.run`-nak átadjuk a `run` metódust.
+- Importáltuk a szükséges könyvtárakat
+- Létrehoztunk egy szerver paraméter objektumot, amelyet a szerver futtatásához használunk, hogy az ügyfél csatlakozni tudjon hozzá.
+- Definiáltunk egy `run` metódust, amely meghívja a `stdio_client`-et, ami elindítja az ügyfél munkamenetet.
+- Létrehoztunk egy belépési pontot, ahol az `asyncio.run`-nak adjuk át a `run` metódust.
 
 #### .NET
 
@@ -288,7 +316,7 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 A fenti kódban:
 
 - Importáltuk a szükséges könyvtárakat.
-- Létrehoztunk egy stdio szállítást, és létrehoztunk egy `mcpClient` nevű ügyfelet. Ez utóbbit fogjuk használni az MCP szerver funkcióinak listázására és meghívására.
+- Létrehoztunk egy stdio szállítást és egy `mcpClient` ügyfelet. Ezt fogjuk használni az MCP szerver funkcióinak listázására és meghívására.
 
 Megjegyzés: az "Arguments" mezőben megadhatod a *.csproj* fájlt vagy a futtatható fájlt.
 
@@ -319,46 +347,14 @@ public class SDKClient {
 
 A fenti kódban:
 
-- Létrehoztunk egy fő metódust, amely beállít egy SSE szállítást, amely a `http://localhost:8080` címen futó MCP szerverre mutat.
-- Létrehoztunk egy ügyfélosztályt, amely a szállítást konstruktorparaméterként veszi át.
-- A `run` metódusban létrehoztunk egy szinkron MCP ügyfelet a szállítás használatával, és inicializáltuk a kapcsolatot.
-- Az SSE (Server-Sent Events) szállítást használtuk, amely alkalmas HTTP-alapú kommunikációra Java Spring Boot MCP szerverekkel.
-
-#### Rust
-
-Ez a Rust ügyfél feltételezi, hogy a szerver egy "calculator-server" nevű testvérprojekt ugyanabban a könyvtárban. Az alábbi kód elindítja a szervert és csatlakozik hozzá.
-
-```rust
-async fn main() -> Result<(), RmcpError> {
-    // Assume the server is a sibling project named "calculator-server" in the same directory
-    let server_dir = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
-        .parent()
-        .expect("failed to locate workspace root")
-        .join("calculator-server");
-
-    let client = ()
-        .serve(
-            TokioChildProcess::new(Command::new("cargo").configure(|cmd| {
-                cmd.arg("run").current_dir(server_dir);
-            }))
-            .map_err(RmcpError::transport_creation::<TokioChildProcess>)?,
-        )
-        .await?;
-
-    // TODO: Initialize
-
-    // TODO: List tools
-
-    // TODO: Call add tool with arguments = {"a": 3, "b": 2}
-
-    client.cancel().await?;
-    Ok(())
-}
-```
+- Létrehoztunk egy main metódust, amely beállít egy SSE szállítást, amely a `http://localhost:8080` címre mutat, ahol az MCP szerver futni fog.
+- Létrehoztunk egy ügyfél osztályt, amely a szállítást konstruktor paraméterként kapja.
+- A `run` metódusban létrehozunk egy szinkron MCP ügyfelet a szállítással, és inicializáljuk a kapcsolatot.
+- SSE (Server-Sent Events) szállítást használunk, amely alkalmas HTTP alapú kommunikációra Java Spring Boot MCP szerverekkel.
 
 ### -3- A szerver funkcióinak listázása
 
-Most van egy ügyfelünk, amely képes csatlakozni, ha a programot futtatjuk. Azonban még nem listázza a funkcióit, így ezt tegyük meg következő lépésként:
+Most már van egy ügyfelünk, amely csatlakozni tud, ha a programot futtatjuk. Azonban még nem listázza a funkciókat, ezt tegyük meg most:
 
 #### TypeScript
 
@@ -400,7 +396,7 @@ foreach (var tool in await client.ListToolsAsync())
 }
 ```
 
-A fenti példa megmutatja, hogyan listázhatjuk a szerver eszközeit. Az egyes eszközök nevét ezután kiírjuk.
+Fent egy példa arra, hogyan listázhatjuk a szerveren lévő eszközöket. Minden eszköz nevét kiírjuk.
 
 #### Java
 
@@ -415,25 +411,11 @@ client.ping();
 
 A fenti kódban:
 
-- Meghívtuk a `listTools()` metódust, hogy lekérjük az MCP szerver összes elérhető eszközét.
-- Használtuk a `ping()` metódust, hogy ellenőrizzük a szerverrel való kapcsolat működését.
-- A `ListToolsResult` információkat tartalmaz az összes eszközről, beleértve azok nevét, leírását és bemeneti sémáit.
+- Meghívtuk a `listTools()` metódust, hogy lekérjük az összes elérhető eszközt az MCP szerverről.
+- Használtuk a `ping()` metódust, hogy ellenőrizzük a szerverrel való kapcsolatot.
+- A `ListToolsResult` tartalmazza az összes eszköz nevét, leírását és bemeneti sémáit.
 
-Szuper, most már rögzítettük az összes funkciót. Most az a kérdés, mikor használjuk őket? Nos, ez az ügyfél elég egyszerű, egyszerű abban az értelemben, hogy a funkciókat explicit módon kell meghívnunk, amikor szükségünk van rájuk. A következő fejezetben egy fejlettebb ügyfelet fogunk létrehozni, amely hozzáfér saját nagy nyelvi modelljéhez (LLM). Most azonban nézzük meg, hogyan hívhatjuk meg a szerver funkcióit:
-
-#### Rust
-
-A fő függvényben, miután inicializáltuk az ügyfelet, inicializálhatjuk a szervert, és listázhatjuk néhány funkcióját.
-
-```rust
-// Initialize
-let server_info = client.peer_info();
-println!("Server info: {:?}", server_info);
-
-// List tools
-let tools = client.list_tools(Default::default()).await?;
-println!("Available tools: {:?}", tools);
-```
+Remek, most már megvannak az összes funkció. De mikor használjuk őket? Ez az ügyfél elég egyszerű, azaz explicit módon kell meghívnunk a funkciókat, amikor szükségünk van rájuk. A következő fejezetben egy fejlettebb ügyfelet készítünk, amely saját nagy nyelvi modellel (LLM) rendelkezik. Addig is nézzük meg, hogyan hívhatjuk meg a szerver funkcióit:
 
 ### -4- Funkciók meghívása
 
@@ -482,7 +464,7 @@ A fenti kódban:
     );
     ```
 
-    Az `uri` értékünk `file://example.txt` megfelel a szerveren a `file://{name}`-nek. Az `example.txt` a `name`-hez lesz leképezve.
+    A `uri` értékünk `file://example.txt` megfelel a szerveren lévő `file://{name}`-nek. Az `example.txt` a `name`-hez lesz hozzárendelve.
 
 - Egy eszközt hívunk meg, amelyet a `name` és az `arguments` megadásával hívunk meg, például így:
 
@@ -495,7 +477,7 @@ A fenti kódban:
     });
     ```
 
-- Egy promptot kérünk le, amelyet a `getPrompt()` metódussal hívunk meg, megadva a `name`-t és az `arguments`-t. A szerver kódja így néz ki:
+- Promptot kérünk, a `getPrompt()`-ot hívjuk meg `name` és `arguments` paraméterekkel. A szerver kódja így néz ki:
 
     ```typescript
     server.prompt(
@@ -553,7 +535,7 @@ A fenti kódban:
       cancellationToken:CancellationToken.None);
   ```
 
-1. Az eredmény kiírásához itt van néhány kód:
+1. Az eredmény kiíratásához itt egy példa kód:
 
   ```csharp
   Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
@@ -582,25 +564,10 @@ System.out.println("Help = " + resultHelp);
 
 A fenti kódban:
 
-- Több számológép-eszközt hívtunk meg a `callTool()` metódussal, amely `CallToolRequest` objektumokat használ.
-- Minden eszközhívás megadja az eszköz nevét és egy `Map`-et az eszköz által igényelt argumentumokkal.
-- A szerver eszközei specifikus paraméterneveket várnak (például "a", "b" matematikai műveletekhez).
-- Az eredmények `CallToolResult` objektumokként térnek vissza, amelyek tartalmazzák a szerver válaszát.
-
-#### Rust
-
-```rust
-// Call add tool with arguments = {"a": 3, "b": 2}
-let a = 3;
-let b = 2;
-let tool_result = client
-    .call_tool(CallToolRequestParam {
-        name: "add".into(),
-        arguments: serde_json::json!({ "a": a, "b": b }).as_object().cloned(),
-    })
-    .await?;
-println!("Result of {:?} + {:?}: {:?}", a, b, tool_result);
-```
+- Több számológép eszközt hívtunk meg a `callTool()` metódussal, `CallToolRequest` objektumokat használva.
+- Minden eszköz hívás megadja az eszköz nevét és egy `Map`-et az eszköz által igényelt argumentumokkal.
+- A szerver eszközök specifikus paraméterneveket várnak (például "a", "b" matematikai műveletekhez).
+- Az eredmények `CallToolResult` objektumokként érkeznek, amelyek tartalmazzák a szerver válaszát.
 
 ### -5- Az ügyfél futtatása
 
@@ -664,9 +631,9 @@ cargo run
 
 ## Feladat
 
-Ebben a feladatban az eddig tanultakat felhasználva saját ügyfelet kell létrehoznod.
+Ebben a feladatban a tanultakat felhasználva készítsd el a saját ügyfeledet.
 
-Itt van egy szerver, amelyet az ügyfélkódoddal kell meghívnod. Próbálj meg további funkciókat hozzáadni a szerverhez, hogy érdekesebbé tedd.
+Itt egy szerver, amelyet használhatsz, és amelyet az ügyfél kódoddal kell meghívnod. Próbálj meg több funkciót hozzáadni a szerverhez, hogy érdekesebb legyen.
 
 ### TypeScript
 
@@ -772,19 +739,15 @@ public static class CalculatorTool
 
 Nézd meg ezt a projektet, hogy megtudd, hogyan adhatsz hozzá [promptokat és erőforrásokat](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/samples/EverythingServer/Program.cs).
 
-Ezenkívül nézd meg ezt a linket, hogy megtudd, hogyan hívhatsz meg [promptokat és erőforrásokat](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
-
-### Rust
-
-Az [előző szakaszban](../../../../03-GettingStarted/01-first-server) megtanultad, hogyan hozz létre egy egyszerű MCP szervert Rustban. Folytathatod annak bővítését, vagy nézd meg ezt a linket további Rust-alapú MCP szerver példákért: [MCP Server Examples](https://github.com/modelcontextprotocol/rust-sdk/tree/main/examples/servers)
+Ezenkívül nézd meg ezt a linket, hogy hogyan lehet [promptokat és erőforrásokat meghívni](https://github.com/modelcontextprotocol/csharp-sdk/blob/main/src/ModelContextProtocol/Client/).
 
 ## Megoldás
 
-A **megoldás mappa** teljes, futtatható ügyfélmegvalósításokat tartalmaz, amelyek bemutatják az ebben az oktatóanyagban tárgyalt összes koncepciót. Minden megoldás tartalmazza az ügyfél- és szerverkódot különálló, önálló projektekben.
+A **megoldás mappa** teljes, futtatható ügyfél implementációkat tartalmaz, amelyek bemutatják a tutorialban tárgyalt összes fogalmat. Minden megoldás tartalmazza az ügyfél és a szerver kódját, különálló, önálló projektekben rendszerezve.
 
 ### 📁 Megoldás struktúra
 
-A megoldás könyvtár nyelv szerint van szervezve:
+A megoldás könyvtár programozási nyelv szerint van rendezve:
 
 ```text
 solution/
@@ -814,15 +777,15 @@ solution/
     └── server.csproj    # Server project file
 ```
 
-### 🚀 Mit tartalmaznak a megoldások?
+### 🚀 Mit tartalmaz minden megoldás
 
 Minden nyelvspecifikus megoldás tartalmazza:
 
-- **Teljes ügyfélmegvalósítás** az oktatóanyag összes funkciójával.
-- **Működő projektstruktúra** megfelelő függőségekkel és konfigurációval.
-- **Build- és futtatási szkriptek** az egyszerű beállításhoz és futtatáshoz.
-- **Részletes README** nyelvspecifikus utasításokkal.
-- **Hibakezelési** és eredményfeldolgozási példák.
+- **Teljes ügyfél implementációt** a tutorial összes funkciójával
+- **Működő projektstruktúrát** megfelelő függőségekkel és konfigurációval
+- **Build és futtató szkripteket** az egyszerű beállításhoz és futtatáshoz
+- **Részletes README-t** nyelvspecifikus utasításokkal
+- **Hibakezelési és eredményfeldolgozási példákat**
 
 ### 📖 A megoldások használata
 
@@ -852,24 +815,25 @@ A teljes dokumentációért és lépésről lépésre szóló utasításokért l
 
 ## 🎯 Teljes példák
 
-Teljes, működő ügyfélmegvalósításokat biztosítottunk az oktatóanyagban tárgyalt összes programozási nyelvhez. Ezek a példák bemutatják a fent leírt teljes funkcionalitást, és referenciaként vagy saját projektjeid kiindulópontjaként használhatók.
+Teljes, működő ügyfél implementációkat biztosítunk minden, a tutorialban tárgyalt programozási nyelvhez. Ezek a példák bemutatják a fent leírt teljes funkcionalitást, és használhatók referenciaként vagy kiindulópontként saját projektjeidhez.
 
 ### Elérhető teljes példák
 
-| Nyelv | Fájl | Leírás |
-|-------|------|--------|
-| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | Teljes Java ügyfél SSE szállítással, átfogó hibakezeléssel |
-| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | Teljes C# ügyfél stdio szállítással, automatikus szerverindítással |
-| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Teljes TypeScript ügyfél teljes MCP protokoll támogatással |
-|
-Minden teljes példa tartalmazza:
+| Nyelv    | Fájl                          | Leírás                                                      |
+|----------|-------------------------------|-------------------------------------------------------------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java)       | Teljes Java ügyfél SSE szállítással, átfogó hibakezeléssel  |
+| **C#**   | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs)       | Teljes C# ügyfél stdio szállítással, automatikus szerverindítással |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Teljes TypeScript ügyfél teljes MCP protokoll támogatással  |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py)       | Teljes Python ügyfél async/await mintákkal                   |
 
-- ✅ **Kapcsolat létrehozása** és hibakezelés
-- ✅ **Szerver felfedezése** (eszközök, források, promptok, ahol alkalmazható)
-- ✅ **Számológép műveletek** (összeadás, kivonás, szorzás, osztás, súgó)
-- ✅ **Eredmény feldolgozása** és formázott kimenet
-- ✅ **Átfogó hibakezelés**
-- ✅ **Tiszta, dokumentált kód** lépésről lépésre kommentekkel
+Minden teljes példa tartalmaz:
+
+- ✅ **Kapcsolat létrehozását** és hibakezelést
+- ✅ **Szerver felfedezést** (eszközök, erőforrások, promptok ahol alkalmazható)
+- ✅ **Számológép műveleteket** (összeadás, kivonás, szorzás, osztás, segítség)
+- ✅ **Eredmény feldolgozást** és formázott kimenetet
+- ✅ **Átfogó hibakezelést**
+- ✅ **Tiszta, dokumentált kódot** lépésről lépésre kommentekkel
 
 ### Teljes példák használatának kezdő lépései
 
@@ -882,22 +846,19 @@ A példák futtatásáról és testreszabásáról szóló részletes dokumentá
 
 ### 💡 Megoldás vs. Teljes példák
 
-| **Megoldás mappa** | **Teljes példák** |
-|--------------------|--------------------- |
-| Teljes projektstruktúra build fájlokkal | Egyfájlú implementációk |
-| Készen áll a futtatásra függőségekkel | Fókuszált kódpéldák |
-| Produkciós környezethez hasonló beállítás | Oktatási referencia |
-| Nyelvspecifikus eszközök | Nyelvek közötti összehasonlítás |
-
-Mindkét megközelítés értékes - használd a **megoldás mappát** teljes projektekhez, és a **teljes példákat** tanuláshoz és referenciaként.
+| **Megoldás mappa**           | **Teljes példák**                  |
+|-----------------------------|----------------------------------|
+| Teljes projektstruktúra build fájlokkal | Egyszerű, egylapos implementációk       |
+| Függősége
+Mindkét megközelítés értékes – a **solution folder** teljes projektekhez, míg a **complete examples** tanuláshoz és referenciaként használható.
 
 ## Fő tanulságok
 
-A fejezet fő tanulságai az ügyfelekkel kapcsolatban:
+Ebben a fejezetben a kliensekkel kapcsolatban a következőket érdemes megjegyezni:
 
-- Használhatók a szerver funkcióinak felfedezésére és meghívására.
-- Képesek szervert indítani, miközben maguk is elindulnak (mint ebben a fejezetben), de csatlakozhatnak már futó szerverekhez is.
-- Kiváló módja a szerver képességeinek tesztelésére, alternatívák mellett, mint például az Inspector, ahogy az előző fejezetben leírtuk.
+- Használhatók a szerver funkcióinak felfedezésére és meghívására egyaránt.
+- Elindíthatnak egy szervert, miközben maguk is elindulnak (ahogy ebben a fejezetben), de a kliensek már futó szerverekhez is csatlakozhatnak.
+- Kiváló módja a szerver képességeinek tesztelésére, az Inspectorhoz hasonló alternatívák mellett, ahogy az előző fejezetben is bemutattuk.
 
 ## További források
 

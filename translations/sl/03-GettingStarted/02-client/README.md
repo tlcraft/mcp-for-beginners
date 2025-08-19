@@ -2,14 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "94c80ae71fb9971e9b57b51ab0912121",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T22:39:39+00:00",
+=======
   "translation_date": "2025-08-18T17:59:12+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "sl"
 }
 -->
 # Ustvarjanje odjemalca
 
+<<<<<<< HEAD
+Odjemalci so prilagojene aplikacije ali skripti, ki neposredno komunicirajo z MCP strežnikom za zahtevo virov, orodij in pozivov. Za razliko od uporabe orodja za pregledovanje, ki ponuja grafični vmesnik za interakcijo s strežnikom, vam pisanje lastnega odjemalca omogoča programatične in avtomatizirane interakcije. To razvijalcem omogoča integracijo zmogljivosti MCP v lastne delovne tokove, avtomatizacijo nalog in gradnjo prilagojenih rešitev, prilagojenih specifičnim potrebam.
+=======
 Odjemalci so prilagojene aplikacije ali skripti, ki neposredno komunicirajo z MCP strežnikom za zahtevanje virov, orodij in pozivov. Za razliko od uporabe orodja za pregledovanje, ki ponuja grafični vmesnik za interakcijo s strežnikom, vam pisanje lastnega odjemalca omogoča programatične in avtomatizirane interakcije. To razvijalcem omogoča integracijo zmogljivosti MCP v lastne delovne tokove, avtomatizacijo nalog in gradnjo prilagojenih rešitev, prilagojenih specifičnim potrebam.
+>>>>>>> origin/main
 
 ## Pregled
 
@@ -30,7 +38,11 @@ Za pisanje odjemalca morate narediti naslednje:
 - **Uvoziti ustrezne knjižnice**. Uporabljali boste isto knjižnico kot prej, le z različnimi konstrukti.
 - **Ustvariti instanco odjemalca**. To vključuje ustvarjanje instance odjemalca in povezavo z izbrano transportno metodo.
 - **Odločiti se, katere vire našteti**. Vaš MCP strežnik vključuje vire, orodja in pozive, vi pa morate določiti, katere želite našteti.
+<<<<<<< HEAD
+- **Integrirati odjemalca v gostiteljsko aplikacijo**. Ko poznate zmogljivosti strežnika, ga morate integrirati v gostiteljsko aplikacijo, tako da se ob vnosu poziva ali drugega ukaza uporabnika sproži ustrezna funkcija strežnika.
+=======
 - **Integrirati odjemalca v gostiteljsko aplikacijo**. Ko poznate zmogljivosti strežnika, morate to integrirati v svojo gostiteljsko aplikacijo, tako da se ob vnosu poziva ali drugega ukaza uporabnika sproži ustrezna funkcija strežnika.
+>>>>>>> origin/main
 
 Zdaj, ko na visoki ravni razumemo, kaj bomo naredili, si poglejmo primer.
 
@@ -92,13 +104,21 @@ V zgornji kodi smo:
 - Ustvarili instanco odjemalca in jo povezali z uporabo stdio kot transporta.
 - Našteli pozive, vire in orodja ter jih vse sprožili.
 
+<<<<<<< HEAD
+Tukaj je, odjemalec, ki lahko komunicira z MCP strežnikom.
+=======
 Tukaj je torej odjemalec, ki lahko komunicira z MCP strežnikom.
+>>>>>>> origin/main
 
 V naslednjem razdelku vaj si bomo vzeli čas in razčlenili vsak del kode ter pojasnili, kaj se dogaja.
 
 ## Vaja: Pisanje odjemalca
 
+<<<<<<< HEAD
+Kot rečeno zgoraj, si vzemimo čas za pojasnitev kode, in če želite, lahko kodo sproti pišete.
+=======
 Kot rečeno zgoraj, si bomo vzeli čas za pojasnjevanje kode, in če želite, lahko kodo pišete zraven.
+>>>>>>> origin/main
 
 ### -1- Uvoz knjižnic
 
@@ -256,7 +276,11 @@ V zgornji kodi smo:
 - Uvozili potrebne knjižnice.
 - Ustvarili objekt parametrov strežnika, saj ga bomo uporabili za zagon strežnika, da se lahko povežemo z njim z našim odjemalcem.
 - Določili metodo `run`, ki nato pokliče `stdio_client`, kar začne sejo odjemalca.
+<<<<<<< HEAD
+- Ustvarili vstopno točko, kjer metodo `run` podamo `asyncio.run`.
+=======
 - Ustvarili vstopno točko, kjer metodo `run` posredujemo `asyncio.run`.
+>>>>>>> origin/main
 
 #### .NET
 
@@ -290,7 +314,11 @@ V zgornji kodi smo:
 - Uvozili potrebne knjižnice.
 - Ustvarili stdio transport in odjemalca `mcpClient`. Slednjega bomo uporabili za naštevanje in sprožanje funkcij na MCP strežniku.
 
+<<<<<<< HEAD
+Opomba: v "Arguments" lahko pokažete bodisi na *.csproj* bodisi na izvršljivo datoteko.
+=======
 Opomba: v "Arguments" lahko pokažete na *.csproj* ali na izvršljivo datoteko.
+>>>>>>> origin/main
 
 #### Java
 
@@ -484,7 +512,11 @@ V zgornji kodi smo:
 
     Naša vrednost `uri` `file://example.txt` ustreza `file://{name}` na strežniku. `example.txt` bo preslikan na `name`.
 
+<<<<<<< HEAD
+- Poklicali orodje z določitvijo njegovega `name` in `arguments`:
+=======
 - Poklicali orodje z določitvijo njegovega `name` in njegovih `arguments`:
+>>>>>>> origin/main
 
     ```typescript
     const result = await client.callTool({
@@ -513,7 +545,11 @@ V zgornji kodi smo:
     );
     ```
 
+<<<<<<< HEAD
+    In vaša odjemalska koda bo zato izgledala takole, da se ujema z deklariranim na strežniku:
+=======
     In vaša odjemalska koda zato izgleda takole, da ustreza temu, kar je deklarirano na strežniku:
+>>>>>>> origin/main
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -584,7 +620,11 @@ V zgornji kodi smo:
 
 - Poklicali več orodij kalkulatorja z uporabo metode `callTool()` in objektov `CallToolRequest`.
 - Vsak klic orodja določa ime orodja in `Map` argumentov, ki jih to orodje zahteva.
+<<<<<<< HEAD
+- Orodja strežnika pričakujejo specifična imena parametrov (kot sta "a", "b" za matematične operacije).
+=======
 - Strežniška orodja pričakujejo specifična imena parametrov (kot sta "a", "b" za matematične operacije).
+>>>>>>> origin/main
 - Rezultati so vrnjeni kot objekti `CallToolResult`, ki vsebujejo odgovor strežnika.
 
 #### Rust
@@ -819,7 +859,11 @@ solution/
 Vsaka jezikovno specifična rešitev ponuja:
 
 - **Popolno implementacijo odjemalca** z vsemi funkcijami iz vodiča.
+<<<<<<< HEAD
+- **Delujočo strukturo projekta** s pravilnimi odvisnostmi in konfiguracijo.
+=======
 - **Delujočo strukturo projekta** z ustreznimi odvisnostmi in konfiguracijo.
+>>>>>>> origin/main
 - **Skripte za gradnjo in zagon** za enostavno nastavitev in izvedbo.
 - **Podroben README** z navodili, specifičnimi za jezik.
 - **Primeri obravnave napak** in obdelave rezultatov.
@@ -856,6 +900,15 @@ Zagotovili smo popolne, delujoče implementacije odjemalcev za vse programske je
 
 ### Razpoložljivi popolni primeri
 
+<<<<<<< HEAD
+| Jezik | Datoteka | Opis |
+|-------|----------|-------|
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | Popoln Java odjemalec z uporabo SSE transporta in obsežno obravnavo napak |
+| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | Popoln C# odjemalec z uporabo stdio transporta in samodejnim zagonom strežnika |
+| **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Popoln TypeScript odjemalec s polno podporo MCP protokolu |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | Popoln Python odjemalec z uporabo async/await vzorcev |
+| **Rust** | [`client_example_rust.rs`](../../../../03-GettingStarted/02-client/client_example_rust.rs) | Popoln Rust odjemalec z uporabo Tokio za asinhrone operacije |
+=======
 | Jezik      | Datoteka                          | Opis                                                                 |
 |------------|-----------------------------------|----------------------------------------------------------------------|
 | **Java**   | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | Popoln Java odjemalec z uporabo SSE transporta in obsežno obravnavo napak |
@@ -863,6 +916,7 @@ Zagotovili smo popolne, delujoče implementacije odjemalcev za vse programske je
 | **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Popoln TypeScript odjemalec s polno podporo MCP protokola            |
 | **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | Popoln Python odjemalec z uporabo async/await vzorcev                |
 | **Rust**   | [`client_example_rust.rs`](../../../../03-GettingStarted/02-client/client_example_rust.rs)     | Popoln Rust odjemalec z uporabo Tokio za asinhrone operacije         |
+>>>>>>> origin/main
 Vsak popoln primer vključuje:
 
 - ✅ **Vzpostavitev povezave** in obravnavanje napak
@@ -874,6 +928,18 @@ Vsak popoln primer vključuje:
 
 ### Začetek z popolnimi primeri
 
+<<<<<<< HEAD
+1. **Izberite želeni jezik** iz zgornje tabele
+2. **Preglejte datoteko s popolnim primerom**, da razumete celotno implementacijo
+3. **Zaženite primer** po navodilih v [`complete_examples.md`](./complete_examples.md)
+4. **Prilagodite in razširite** primer za vaš specifični primer uporabe
+
+Za podrobno dokumentacijo o zagonu in prilagajanju teh primerov si oglejte: **[📖 Dokumentacija o popolnih primerih](./complete_examples.md)**
+
+### 💡 Rešitev vs. Popolni primeri
+
+| **Mapa z rešitvami** | **Popolni primeri** |
+=======
 1. **Izberite svoj želeni jezik** iz zgornje tabele
 2. **Preglejte datoteko s popolnim primerom**, da razumete celotno implementacijo
 3. **Zaženite primer** po navodilih v [`complete_examples.md`](./complete_examples.md)
@@ -884,13 +950,18 @@ Za podrobno dokumentacijo o zagonu in prilagajanju teh primerov si oglejte: **[�
 ### 💡 Rešitev vs. Popolni primeri
 
 | **Mapa rešitev** | **Popolni primeri** |
+>>>>>>> origin/main
 |--------------------|--------------------- |
 | Celotna struktura projekta z gradbenimi datotekami | Implementacije v eni datoteki |
 | Pripravljeno za zagon z odvisnostmi | Osredotočeni primeri kode |
 | Nastavitev podobna produkciji | Izobraževalni referenčni primeri |
 | Orodja specifična za jezik | Primerjava med jeziki |
 
+<<<<<<< HEAD
+Oba pristopa sta dragocena - uporabite **mapo z rešitvami** za celotne projekte in **popolne primere** za učenje in referenco.
+=======
 Oba pristopa sta dragocena - uporabite **mapo rešitev** za celotne projekte in **popolne primere** za učenje in referenco.
+>>>>>>> origin/main
 
 ## Ključne točke
 

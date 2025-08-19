@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "61a160248efabe92b09d7b08293d17db",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T22:19:19+00:00",
+=======
   "translation_date": "2025-08-18T17:39:34+00:00",
+>>>>>>> origin/main
   "source_file": "09-CaseStudy/README.md",
   "language_code": "sl"
 }
@@ -33,7 +37,11 @@ S preučevanjem teh študij primerov boste:
 
 ### 1. [Azure AI Travel Agents – Referenčna implementacija](./travelagentsample.md)
 
+<<<<<<< HEAD
+Ta študija primera preučuje Microsoftovo celovito referenčno rešitev, ki prikazuje, kako zgraditi večagentno aplikacijo za načrtovanje potovanj, ki temelji na umetni inteligenci, z uporabo MCP, Azure OpenAI in Azure AI Search. Projekt prikazuje:
+=======
 Ta študija primera preučuje Microsoftovo celovito referenčno rešitev, ki prikazuje, kako zgraditi večagentno aplikacijo za načrtovanje potovanj, ki temelji na umetni inteligenci, z uporabo MCP, Azure OpenAI in Azure AI Search. Projekt vključuje:
+>>>>>>> origin/main
 
 - Orkestracijo več agentov prek MCP
 - Integracijo poslovnih podatkov z Azure AI Search
@@ -41,7 +49,11 @@ Ta študija primera preučuje Microsoftovo celovito referenčno rešitev, ki pri
 - Razširljiva orodja z večkratno uporabo MCP komponent
 - Pogovorno uporabniško izkušnjo, ki jo omogoča Azure OpenAI
 
+<<<<<<< HEAD
+Arhitekturne in implementacijske podrobnosti ponujajo dragocen vpogled v gradnjo kompleksnih večagentnih sistemov z MCP kot koordinacijsko plastjo.
+=======
 Arhitekturne in implementacijske podrobnosti ponujajo dragocene vpoglede v gradnjo kompleksnih večagentnih sistemov z MCP kot koordinacijsko plastjo.
+>>>>>>> origin/main
 
 ### 2. [Posodabljanje elementov Azure DevOps z YouTube podatki](./UpdateADOItemsFromYT.md)
 
@@ -65,23 +77,38 @@ Ta študija primera vas vodi skozi povezovanje Python konzolnega odjemalca z Mod
 
 Poglavje vključuje praktično nalogo, minimalni delujoči vzorec kode in povezave do dodatnih virov za poglobljeno učenje. Celoten vodič in kodo si oglejte v povezanem poglavju, da razumete, kako MCP lahko spremeni dostop do dokumentacije in produktivnost razvijalcev v okolju konzole.
 
+<<<<<<< HEAD
+### 4. [Interaktivna spletna aplikacija za generiranje študijskega načrta z MCP](./docs-mcp/README.md)
+=======
 ### 4. [Interaktivna spletna aplikacija za generiranje študijskih načrtov z MCP](./docs-mcp/README.md)
+>>>>>>> origin/main
 
 Ta študija primera prikazuje, kako zgraditi interaktivno spletno aplikacijo z uporabo Chainlit in Model Context Protocol (MCP) za generiranje personaliziranih študijskih načrtov za katerokoli temo. Uporabniki lahko določijo predmet (npr. "AI-900 certifikacija") in trajanje študija (npr. 8 tednov), aplikacija pa bo zagotovila tedenski razpored priporočenih vsebin. Chainlit omogoča pogovorni vmesnik, ki izkušnjo naredi privlačno in prilagodljivo.
 
 - Pogovorna spletna aplikacija, ki jo poganja Chainlit
 - Uporabniško vodeni pozivi za temo in trajanje
+<<<<<<< HEAD
+- Tedenski razpored vsebin z uporabo MCP
+=======
 - Tedenski razpored priporočil vsebin z uporabo MCP
+>>>>>>> origin/main
 - Prilagodljivi odgovori v realnem času v pogovornem vmesniku
 
 Projekt prikazuje, kako lahko pogovorna umetna inteligenca in MCP združita moči za ustvarjanje dinamičnih, uporabniško usmerjenih izobraževalnih orodij v sodobnem spletnem okolju.
 
 ### 5. [Dokumentacija v urejevalniku z MCP strežnikom v VS Code](./docs-mcp/README.md)
 
+<<<<<<< HEAD
+Ta študija primera prikazuje, kako lahko Microsoft Learn dokumentacijo pripeljete neposredno v svoje VS Code okolje z uporabo MCP strežnika—brez preklapljanja med zavihki brskalnika! Videli boste, kako:
+
+- Takoj poiščete in preberete dokumentacijo znotraj VS Code z uporabo MCP plošče ali ukazne palete
+- Vstavite reference dokumentacije in povezave neposredno v svoje README ali markdown datoteke tečaja
+=======
 Ta študija primera prikazuje, kako lahko Microsoft Learn dokumentacijo pripeljete neposredno v svoje okolje VS Code z uporabo MCP strežnika—brez preklapljanja med zavihki brskalnika! Videli boste, kako:
 
 - Takoj poiščete in preberete dokumentacijo znotraj VS Code z uporabo MCP plošče ali ukazne palete
 - Vstavite povezave do dokumentacije neposredno v svoje README ali markdown datoteke tečajev
+>>>>>>> origin/main
 - Uporabite GitHub Copilot in MCP skupaj za brezhibne, z umetno inteligenco podprte delovne tokove dokumentacije in kode
 - Validirate in izboljšate svojo dokumentacijo z povratnimi informacijami v realnem času in Microsoftovo natančnostjo
 - Integrirate MCP z GitHub delovnimi tokovi za neprekinjeno validacijo dokumentacije
@@ -92,7 +119,11 @@ Implementacija vključuje:
 - Vodiče s posnetki zaslona za izkušnjo v urejevalniku
 - Nasvete za kombiniranje Copilot in MCP za maksimalno produktivnost
 
+<<<<<<< HEAD
+Ta scenarij je idealen za avtorje tečajev, pisce dokumentacije in razvijalce, ki želijo ostati osredotočeni v svojem urejevalniku med delom z dokumentacijo, Copilotom in orodji za validacijo—vse to omogoča MCP.
+=======
 Ta scenarij je idealen za avtorje tečajev, pisce dokumentacije in razvijalce, ki želijo ostati osredotočeni v urejevalniku med delom z dokumentacijo, Copilotom in orodji za validacijo—vse to omogoča MCP.
+>>>>>>> origin/main
 
 ### 6. [Ustvarjanje MCP strežnika z APIM](./apimsample.md)
 
@@ -107,9 +138,15 @@ Ta primer prikazuje, kako izkoristiti zmogljivosti Azure za ustvarjanje robustne
 
 ## Zaključek
 
+<<<<<<< HEAD
+Te študije primerov poudarjajo vsestranskost in praktične uporabe Model Context Protocol v resničnih scenarijih. Od kompleksnih večagentnih sistemov do ciljno usmerjenih avtomatiziranih delovnih tokov MCP ponuja standardiziran način povezovanja sistemov umetne inteligence z orodji in podatki, ki jih potrebujejo za ustvarjanje vrednosti.
+
+S preučevanjem teh implementacij lahko pridobite vpogled v arhitekturne vzorce, strategije implementacije in najboljše prakse, ki jih lahko uporabite v svojih MCP projektih. Primeri dokazujejo, da MCP ni zgolj teoretični okvir, temveč praktična rešitev za resnične poslovne izzive.
+=======
 Te študije primerov poudarjajo vsestranskost in praktične uporabe Model Context Protocol v resničnih scenarijih. Od kompleksnih večagentnih sistemov do ciljno usmerjenih avtomatiziranih delovnih tokov, MCP zagotavlja standardiziran način povezovanja sistemov umetne inteligence z orodji in podatki, ki jih potrebujejo za ustvarjanje vrednosti.
 
 S preučevanjem teh implementacij lahko pridobite vpogled v arhitekturne vzorce, strategije implementacije in najboljše prakse, ki jih lahko uporabite v svojih MCP projektih. Primeri dokazujejo, da MCP ni le teoretični okvir, temveč praktična rešitev za resnične poslovne izzive.
+>>>>>>> origin/main
 
 ## Dodatni viri
 
@@ -121,5 +158,10 @@ S preučevanjem teh implementacij lahko pridobite vpogled v arhitekturne vzorce,
 
 Naprej: Praktična delavnica [Poenostavitev delovnih tokov AI: Gradnja MCP strežnika z AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
+<<<<<<< HEAD
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitne nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+=======
 **Izjava o omejitvi odgovornosti**:  
 Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+>>>>>>> origin/main

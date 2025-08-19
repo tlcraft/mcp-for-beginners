@@ -2,19 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T23:41:27+00:00",
+=======
   "translation_date": "2025-08-18T19:01:48+00:00",
+>>>>>>> origin/main
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "my"
 }
 -->
 # အဖွဲ့အစည်းနှင့် အထောက်အကူပြုမှုများ
 
+<<<<<<< HEAD
+[![MCP အတွက် အထောက်အကူပြုနည်းလမ်းများ: Tools, Docs, Code နှင့် အခြားများ](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.my.png)](https://youtu.be/v1pvCYAWpRE)
+=======
 [![MCP အတွက် Tools, Docs, Code နှင့် အခြားအရာများကို ဘယ်လိုထောက်ပံ့ရမလဲ](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.my.png)](https://youtu.be/v1pvCYAWpRE)
+>>>>>>> origin/main
 
 _(ဤသင်ခန်းစာ၏ ဗီဒီယိုကို ကြည့်ရန် အထက်ပါပုံကို နှိပ်ပါ)_
 
 ## အကျဉ်းချုပ်
 
+<<<<<<< HEAD
+ဤသင်ခန်းစာသည် MCP အဖွဲ့အစည်းနှင့် ပတ်သက်ပြီး ပါဝင်ဆောင်ရွက်နည်း၊ MCP ecosystem အတွက် အထောက်အကူပြုနည်းနှင့် ပူးပေါင်းဖွံ့ဖြိုးရေးအတွက် အကောင်းဆုံးအလေ့အကျင့်များကို လိုက်နာနည်းကို အဓိကထားပါသည်။ MCP အဖွဲ့အစည်း၏ open-source project များတွင် ပါဝင်ဆောင်ရွက်နည်းကို နားလည်ခြင်းသည် ဤနည်းပညာ၏ အနာဂတ်ကို ဖွဲ့စည်းလိုသူများအတွက် အရေးကြီးပါသည်။
+
+## သင်ယူရမည့် ရည်မှန်းချက်များ
+
+ဤသင်ခန်းစာ၏ နောက်ဆုံးတွင် သင်သည် အောက်ပါများကို နားလည်နိုင်မည်ဖြစ်သည်-
+
+- MCP အဖွဲ့အစည်းနှင့် ecosystem ၏ ဖွဲ့စည်းပုံကို နားလည်ခြင်း
+- MCP အဖွဲ့အစည်း၏ ဖိုရမ်များနှင့် ဆွေးနွေးမှုများတွင် ထိရောက်စွာ ပါဝင်ဆောင်ရွက်ခြင်း
+- MCP open-source repositories တွင် အထောက်အကူပြုခြင်း
+- MCP tools နှင့် servers များကို ဖန်တီးပြီး မျှဝေခြင်း
+- MCP ဖွံ့ဖြိုးရေးနှင့် ပူးပေါင်းဆောင်ရွက်မှုအတွက် အကောင်းဆုံးအလေ့အကျင့်များကို လိုက်နာခြင်း
+- MCP ဖွံ့ဖြိုးရေးအတွက် အဖွဲ့အစည်း၏ အရင်းအမြစ်များနှင့် frameworks များကို ရှာဖွေခြင်း
+
+## MCP အဖွဲ့အစည်း၏ Ecosystem
+
+MCP ecosystem သည် protocol ကို တိုးတက်စေရန် အတူတကွ လုပ်ဆောင်နေသော အစိတ်အပိုင်းများနှင့် ပါဝင်သူများကို ပါဝင်ပါသည်။
+
+### အဓိက အဖွဲ့အစည်းအစိတ်အပိုင်းများ
+
+1. **Core Protocol Maintainers**: [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) သည် MCP specifications နှင့် reference implementations များကို တရားဝင်ထိန်းသိမ်းသည်။
+2. **Tool Developers**: MCP tools နှင့် servers များကို ဖန်တီးသော ပုဂ္ဂိုလ်များနှင့် အဖွဲ့များ
+3. **Integration Providers**: MCP ကို ၎င်းတို့၏ ထုတ်ကုန်များနှင့် ဝန်ဆောင်မှုများတွင် ပေါင်းစပ်အသုံးပြုသော ကုမ္ပဏီများ
+4. **End Users**: MCP ကို ၎င်းတို့၏ applications တွင် အသုံးပြုသော developer များနှင့် အဖွဲ့အစည်းများ
+5. **Contributors**: Code, documentation, သို့မဟုတ် အခြားအရင်းအမြစ်များကို အထောက်အကူပြုသော အဖွဲ့အစည်းအဖွဲ့ဝင်များ
+
+### အဖွဲ့အစည်း၏ အရင်းအမြစ်များ
+
+#### တရားဝင် Channel များ
+=======
 ဤသင်ခန်းစာသည် MCP အဖွဲ့အစည်းနှင့် ပူးပေါင်းဆောင်ရွက်မှုများတွင် ပါဝင်ရန်၊ MCP စနစ်ကို ထောက်ပံ့ရန်၊ နှင့် ပူးပေါင်းဆောင်ရွက်မှုအတွက် အကောင်းဆုံးအလေ့အထများကို လိုက်နာရန် အဓိကထားဆွေးနွေးထားသည်။ MCP အဖွဲ့အစည်း၏ အခမဲ့ရင်းမြစ်ပရောဂျက်များတွင် ပါဝင်ပတ်သက်ပုံကို နားလည်ခြင်းသည် ဤနည်းပညာ၏ အနာဂတ်ကို ပုံဖော်လိုသူများအတွက် အရေးကြီးသည်။
 
 ## သင်ခန်းစာရည်မှန်းချက်များ
@@ -33,6 +71,7 @@ _(ဤသင်ခန်းစာ၏ ဗီဒီယိုကို ကြည့�
 MCP စနစ်သည် ပေါင်းစည်းလက်တွဲလုပ်ဆောင်သော အစိတ်အပိုင်းများနှင့် ပါဝင်သူများဖြင့် ဖွဲ့စည်းထားသည်။
 
 ### အဓိက အဖွဲ့အစည်းအစိတ်အပိုင်းများ
+>>>>>>> origin/main
 
 1. **Core Protocol Maintainers**: [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) သည် MCP သတ်မှတ်ချက်များနှင့် ရည်ညွှန်းအကောင်အထည်ဖော်မှုများကို ထိန်းသိမ်းသည်  
 2. **Tool Developers**: MCP Tools နှင့် Servers များကို ဖန်တီးသူများ  
@@ -40,6 +79,54 @@ MCP စနစ်သည် ပေါင်းစည်းလက်တွဲလု
 4. **End Users**: MCP ကို မိမိတို့ Applications တွင် အသုံးပြုသော Developer များနှင့် အဖွဲ့အစည်းများ  
 5. **Contributors**: Code, Documentation, သို့မဟုတ် အခြားရင်းမြစ်များကို ထောက်ပံ့သူများ  
 
+<<<<<<< HEAD
+#### အဖွဲ့အစည်းအခြေခံ Channel များ
+
+- [MCP Clients](https://modelcontextprotocol.io/clients) - MCP integrations ကို ပံ့ပိုးသော clients များ၏ စာရင်း
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - အဖွဲ့အစည်းဖွံ့ဖြိုးထားသော MCP servers များ၏ တိုးတက်လာသော စာရင်း
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - MCP servers များ၏ စုစည်းထားသော စာရင်း
+- [PulseMCP](https://www.pulsemcp.com/) - MCP အရင်းအမြစ်များကို ရှာဖွေရန် အဖွဲ့အစည်း hub နှင့် newsletter
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - MCP developers များနှင့် ချိတ်ဆက်ရန်
+- ဘာသာစကားအလိုက် SDK implementations
+- Blog posts နှင့် tutorials
+
+## MCP အတွက် အထောက်အကူပြုခြင်း
+
+### အထောက်အကူပြုမှုအမျိုးအစားများ
+
+MCP ecosystem သည် အမျိုးမျိုးသော အထောက်အကူပြုမှုများကို ကြိုဆိုပါသည်-
+
+1. **Code Contributions**:
+   - Core protocol တိုးတက်မှုများ
+   - Bug fixes
+   - Tool နှင့် server implementations
+   - Client/server libraries များကို အမျိုးမျိုးသော ဘာသာစကားများတွင် ဖန်တီးခြင်း
+
+2. **Documentation**:
+   - ရှိပြီးသား documentation ကို တိုးတက်စေခြင်း
+   - Tutorials နှင့် guides များ ဖန်တီးခြင်း
+   - Documentation များကို ဘာသာပြန်ခြင်း
+   - ဥပမာများနှင့် sample applications များ ဖန်တီးခြင်း
+
+3. **Community Support**:
+   - ဖိုရမ်များနှင့် ဆွေးနွေးမှုများတွင် မေးခွန်းများကို ဖြေရှင်းခြင်း
+   - စမ်းသပ်ပြီး ပြဿနာများကို အစီရင်ခံခြင်း
+   - အဖွဲ့အစည်းပွဲများကို စီစဉ်ခြင်း
+   - အသစ်ဝင်လာသော contributors များကို အကြံပေးခြင်း
+
+### Core Protocol အတွက် အထောက်အကူပြုမှု လုပ်ငန်းစဉ်
+
+Core MCP protocol သို့မဟုတ် တရားဝင် implementations များတွင် အထောက်အကူပြုရန် [official contributing guidelines](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) မှ အောက်ပါအချက်များကို လိုက်နာပါ-
+
+1. **ရိုးရှင်းမှုနှင့် အနည်းဆုံးဖြစ်စေခြင်း**: MCP specification သည် concepts အသစ်များ ထည့်သွင်းရန် အမြင့်မားသော စံချိန်ကို ထိန်းသိမ်းထားသည်။ Specification တွင် အရာများကို ထည့်သွင်းရန် ပိုလွယ်ကူပြီး ဖယ်ရှားရန် ပိုခက်သည်။
+
+2. **Concrete Approach**: Specification ပြောင်းလဲမှုများသည် အထူး implementation ပြဿနာများအပေါ် အခြေခံထားသင့်ပြီး အတိတ်ကာလအတွေးအမြင်များအပေါ် မူတည်သင့်ပါ။
+
+3. **Proposal ၏ အဆင့်များ**:
+   - Define: ပြဿနာအကျယ်အဝန်းကို စူးစမ်းပြီး အခြား MCP users များတွင် တူညီသော ပြဿနာရှိကြောင်း အတည်ပြုပါ
+   - Prototype: ဥပမာဖြေရှင်းချက်တစ်ခုကို တည်ဆောက်ပြီး ၎င်း၏ လက်တွေ့အသုံးချမှုကို ပြသပါ
+   - Write: Prototype အပေါ် အခြေခံပြီး specification proposal ကို ရေးပါ
+=======
 ### အဖွဲ့အစည်းရင်းမြစ်များ
 
 #### တရားဝင်ရင်းမြစ်များ
@@ -87,6 +174,7 @@ MCP စနစ်သည် အမျိုးမျိုးသော ထော�
 ### Core Protocol အတွက် ထောက်ပံ့မှုလုပ်ငန်းစဉ်
 
 MCP Core Protocol သို့မဟုတ် တရားဝင်အကောင်အထည်ဖော်မှုများတွင် ထောက်ပံ့မှုပြုလုပ်ရန် [official contributing guidelines](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) တွင် ဖော်ပြထားသော အခြေခံမူများကို လိုက်နာပါ-
+>>>>>>> origin/main
 
 1. **ရိုးရှင်းမှုနှင့် အနည်းဆုံးဖြစ်စေမှု**: MCP သတ်မှတ်ချက်သည် အသစ်သော အကြံအချက်များထည့်သွင်းရန် အလွန်မြင့်မားသော စံချိန်စံညွှန်းကို ထိန်းသိမ်းထားသည်။  
 2. **အထောက်အထားအခြေခံ Approach**: သတ်မှတ်ချက်ပြောင်းလဲမှုများသည် အကောင်အထည်ဖော်မှုအခက်အခဲများအပေါ် အခြေခံထားရမည်ဖြစ်ပြီး အတိတ်ကူးအိပ်အိပ်အကြံများမဟုတ်ရပါ။  
@@ -117,7 +205,11 @@ npm run format
 npm run serve:docs
 ```
 
+<<<<<<< HEAD
+### ဥပမာ: Bug Fix တစ်ခုကို အထောက်အကူပြုခြင်း
+=======
 ### ဥပမာ: Bug ပြင်ဆင်မှုအတွက် ထောက်ပံ့မှုပြုလုပ်ခြင်း
+>>>>>>> origin/main
 
 ```javascript
 // Original code with bug in the typescript-sdk
@@ -149,7 +241,11 @@ export function validateResource(resource: unknown): resource is MCPResource {
 }
 ```
 
+<<<<<<< HEAD
+### ဥပမာ: Standard Library အတွက် Tool အသစ်တစ်ခုကို အထောက်အကူပြုခြင်း
+=======
 ### ဥပမာ: Standard Library အတွက် Tool အသစ်ထည့်သွင်းခြင်း
+>>>>>>> origin/main
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -311,6 +407,16 @@ class CsvProcessingTool(Tool):
 
 ### ထောက်ပံ့မှုလမ်းညွှန်ချက်များ
 
+<<<<<<< HEAD
+MCP projects များတွင် အောင်မြင်သော အထောက်အကူပြုမှုတစ်ခုလုပ်ဆောင်ရန်-
+
+1. **Start Small**: Documentation, bug fixes သို့မဟုတ် အနည်းငယ်သော တိုးတက်မှုများဖြင့် စတင်ပါ
+2. **Style Guide ကို လိုက်နာပါ**: Project ၏ coding style နှင့် conventions များကို လိုက်နာပါ
+3. **Tests ရေးပါ**: Code contributions များအတွက် unit tests များ ထည့်သွင်းပါ
+4. **သင့်အလုပ်ကို Documentation ထည့်သွင်းပါ**: Features အသစ်များ သို့မဟုတ် ပြောင်းလဲမှုများအတွက် ရှင်းလင်းသော documentation ထည့်သွင်းပါ
+5. **Targeted PRs တင်ပါ**: Pull requests များကို တစ်ခုတည်းသော ပြဿနာ သို့မဟုတ် feature အပေါ် အလေးထားပါ
+6. **Feedback နှင့် ပူးပေါင်းဆောင်ရွက်ပါ**: သင့်အထောက်အကူပြုမှုများအပေါ် feedback ကို တုံ့ပြန်ပါ
+=======
 MCP ပရောဂျက်များတွင် အောင်မြင်သော ထောက်ပံ့မှုပြုလုပ်ရန်-
 
 1. **အသေးစားစတင်ပါ**: Documentation, Bug ပြင်ဆင်မှုများ သို့မဟုတ် အသေးစားတိုးတက်မှုများဖြင့် စတင်ပါ  
@@ -319,6 +425,7 @@ MCP ပရောဂျက်များတွင် အောင်မြင်
 4. **သင်၏အလုပ်ကို Documentation ပြုလုပ်ပါ**: အသစ်ထည့်သွင်းသော အင်္ဂါရပ်များ သို့မဟုတ် ပြောင်းလဲမှုများအတွက် ရှင်းလင်းသော Documentation ထည့်သွင်းပါ  
 5. **Targeted PRs တင်ပါ**: Pull Requests များကို တစ်ခုတည်းသော ပြဿနာ သို့မဟုတ် အင်္ဂါရပ်အပေါ် အာရုံစိုက်ထားပါ  
 6. **Feedback နှင့် ပူးပေါင်းဆောင်ရွက်ပါ**: သင်၏ ထောက်ပံ့မှုများအပေါ် ရရှိသော Feedback များကို တုံ့ပြန်ပါ  
+>>>>>>> origin/main
 
 ### ထောက်ပံ့မှုလုပ်ငန်းစဉ် ဥပမာ
 
@@ -348,11 +455,19 @@ git push origin feature/my-contribution
 
 ## MCP Servers ဖန်တီးခြင်းနှင့် မျှဝေခြင်း
 
+<<<<<<< HEAD
+MCP ecosystem အတွက် အထောက်အကူပြုရန် အဖွဲ့အစည်းအတွက် အဖွဲ့အစည်း MCP servers များကို ဖန်တီးပြီး မျှဝေခြင်းသည် အဖွဲ့အစည်းအတွက် အဖိုးတန်ဆုံးသော နည်းလမ်းတစ်ခုဖြစ်သည်။
+=======
 MCP စနစ်ကို တိုးတက်အောင်ပြုလုပ်ရန် အဖွဲ့အစည်းအတွက် အဖိုးတန်ဆုံးသော နည်းလမ်းတစ်ခုမှာ MCP Servers များကို ဖန်တီးပြီး မျှဝေခြင်းဖြစ်သည်။  
+>>>>>>> origin/main
 
 ### MCP Server ဖွံ့ဖြိုးတိုးတက်မှု Framework များ
 
+<<<<<<< HEAD
+MCP server development ကို လွယ်ကူစေသော frameworks များ ရရှိနိုင်ပါသည်-
+=======
 MCP Server ဖွံ့ဖြိုးတိုးတက်မှုကို လွယ်ကူစေသော Framework များစွာ ရရှိနိုင်ပါသည်-
+>>>>>>> origin/main
 
 1. **တရားဝင် SDK များ**:  
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)  
@@ -362,6 +477,17 @@ MCP Server ဖွံ့ဖြိုးတိုးတက်မှုကို �
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)  
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)  
 
+<<<<<<< HEAD
+2. **Community Frameworks**:
+   - [MCP-Framework](https://mcp-framework.com/) - TypeScript ဖြင့် MCP servers များကို elegance နှင့် speed ဖြင့် တည်ဆောက်ပါ
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Java ဖြင့် annotation-driven MCP servers
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - MCP servers အတွက် Java framework
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP servers အတွက် Starter Next.js project
+
+### Shareable Tools ဖန်တီးခြင်း
+
+#### .NET Example: Shareable Tool Package တစ်ခု ဖန်တီးခြင်း
+=======
 2. **အဖွဲ့အစည်း Framework များ**:  
    - [MCP-Framework](https://mcp-framework.com/) - TypeScript ဖြင့် MCP Servers များကို လွယ်ကူနှင့် မြန်ဆန်စွာ ဖန်တီးရန်  
    - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Java ဖြင့် Annotation-Driven MCP Servers  
@@ -371,6 +497,7 @@ MCP Server ဖွံ့ဖြိုးတိုးတက်မှုကို �
 ### မျှဝေရန် Tools ဖန်တီးခြင်း
 
 #### .NET ဥပမာ: Shareable Tool Package ဖန်တီးခြင်း
+>>>>>>> origin/main
 
 ```csharp
 // Create a new .NET library project
@@ -476,7 +603,11 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
+<<<<<<< HEAD
+#### Java Example: Tools အတွက် Maven Package တစ်ခု ဖန်တီးခြင်း
+=======
 #### Java ဥပမာ: Maven Package ဖန်တီးခြင်း
+>>>>>>> origin/main
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -577,7 +708,11 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
+<<<<<<< HEAD
+#### Python Example: PyPI Package တစ်ခုကို ထုတ်ဝေခြင်း
+=======
 #### Python ဥပမာ: PyPI Package တင်ခြင်း
+>>>>>>> origin/main
 
 ```python
 # Directory structure for a PyPI package:
@@ -682,6 +817,70 @@ class SentimentAnalysisTool(Tool):
 # python -m twine upload dist/*
 ```
 
+<<<<<<< HEAD
+### အကောင်းဆုံးအလေ့အကျင့်များကို မျှဝေခြင်း
+
+MCP tools များကို အဖွဲ့အစည်းနှင့် မျှဝေသောအခါ-
+
+1. **Documentation ပြည့်စုံမှု**:
+   - ရည်ရွယ်ချက်၊ အသုံးပြုနည်းနှင့် ဥပမာများကို documentation ထည့်သွင်းပါ
+   - Parameters နှင့် return values ကို ရှင်းလင်းစွာ ရှင်းပြပါ
+   - အပြင်ပေါ် dependencies များကို documentation ထည့်သွင်းပါ
+
+2. **Error Handling**:
+   - Error handling ကို ခိုင်မာစွာ အကောင်အထည်ဖော်ပါ
+   - အသုံးဝင်သော error messages များပေးပါ
+   - Edge cases များကို သေချာစွာ ကိုင်တွယ်ပါ
+
+3. **Performance ကို စဉ်းစားပါ**:
+   - Speed နှင့် resource usage အတွက် optimize လုပ်ပါ
+   - လိုအပ်သောအခါ caching ကို အသုံးပြုပါ
+   - Scalability ကို စဉ်းစားပါ
+
+4. **Security**:
+   - Secure API keys နှင့် authentication ကို အသုံးပြုပါ
+   - Inputs များကို validate နှင့် sanitize လုပ်ပါ
+   - External API calls အတွက် rate limiting ကို အကောင်အထည်ဖော်ပါ
+
+5. **Testing**:
+   - Comprehensive test coverage ကို ထည့်သွင်းပါ
+   - Input types နှင့် edge cases များဖြင့် စမ်းသပ်ပါ
+   - Test procedures များကို documentation ထည့်သွင်းပါ
+
+## အဖွဲ့အစည်းပူးပေါင်းဆောင်ရွက်မှုနှင့် အကောင်းဆုံးအလေ့အကျင့်များ
+
+MCP ecosystem တိုးတက်မှုအတွက် ထိရောက်သော ပူးပေါင်းဆောင်ရွက်မှုသည် အရေးကြီးပါသည်။
+
+### ဆက်သွယ်ရေး Channel များ
+
+- GitHub Issues နှင့် Discussions
+- Microsoft Tech Community
+- Discord နှင့် Slack channels
+- Stack Overflow (tag: `model-context-protocol` သို့မဟုတ် `mcp`)
+
+### Code Reviews
+
+MCP contributions များကို ပြန်လည်သုံးသပ်သောအခါ-
+
+1. **ရှင်းလင်းမှု**: Code သည် ရှင်းလင်းပြီး documentation ပြည့်စုံပါသလား?
+2. **မှန်ကန်မှု**: ၎င်းသည် မျှော်မှန်းထားသည့်အတိုင်း အလုပ်လုပ်ပါသလား?
+3. **အညီအမျှမှု**: Project conventions များကို လိုက်နာပါသလား?
+4. **ပြည့်စုံမှု**: Tests နှင့် documentation များ ပါဝင်ပါသလား?
+5. **လုံခြုံရေး**: လုံခြုံရေးဆိုင်ရာ စိုးရိမ်မှုများ ရှိပါသလား?
+
+### Version Compatibility
+
+MCP အတွက် ဖွံ့ဖြိုးရေးလုပ်ဆောင်သောအခါ-
+
+1. **Protocol Versioning**: MCP protocol version ကို လိုက်နာပါ
+2. **Client Compatibility**: Backward compatibility ကို စဉ်းစားပါ
+3. **Server Compatibility**: Server implementation guidelines ကို လိုက်နာပါ
+4. **Breaking Changes**: Breaking changes များကို ရှင်းလင်းစွာ documentation ထည့်သွင်းပါ
+
+## အဖွဲ့အစည်း Project ဥပမာ: MCP Tool Registry
+
+MCP tools များအတွက် public registry တစ်ခု ဖွံ့ဖြိုးခြင်းသည် အရေးကြီးသော အဖွဲ့အစည်းအထောက်အကူပြုမှုတစ်ခုဖြစ်နိုင်သည်။
+=======
 ### အကောင်းဆုံးအလေ့အထများကို မျှဝေခြင်း
 
 MCP Tools များကို အဖွဲ့အစည်းနှင့် မျှဝေသည့်အခါ-
@@ -744,6 +943,7 @@ MCP အတွက် ဖွံ့ဖြိုးတိုးတက်မှုမ
 ## အဖွဲ့အစည်းပရောဂျက်ဥပမာ: MCP Tool Registry
 
 MCP Tools များအတွက် Public Registry တစ်ခု ဖွံ့ဖြိုးတိုးတက်အောင် ပြုလုပ်ခြင်းသည် အရေးကြီးသော အဖွဲ့အစည်းထောက်ပံ့မှုတစ်ခု ဖြစ်နိုင်သည်။
+>>>>>>> origin/main
 
 ```python
 # Example schema for a community tool registry API
@@ -824,6 +1024,32 @@ async def delete_tool(tool_name: str):
 
 ## အဓိကအချက်များ
 
+<<<<<<< HEAD
+- MCP အဖွဲ့အစည်းသည် အမျိုးမျိုးသော အထောက်အကူပြုမှုများကို ကြိုဆိုပါသည်
+- MCP အတွက် အထောက်အကူပြုမှုသည် core protocol တိုးတက်မှုများမှ custom tools များအထိ ကွဲပြားနိုင်သည်
+- Contribution guidelines များကို လိုက်နာခြင်းသည် သင့် PR အောင်မြင်စွာ လက်ခံရရှိရန် အခွင့်အလမ်းများ တိုးတက်စေသည်
+- MCP tools များကို ဖန်တီးပြီး မျှဝေခြင်းသည် ecosystem ကို တိုးတက်စေသော အဖိုးတန်နည်းလမ်းတစ်ခုဖြစ်သည်
+- MCP ၏ တိုးတက်မှုနှင့် အဆင်ပြေမှုအတွက် အဖွဲ့အစည်းပူးပေါင်းဆောင်ရွက်မှုသည် အရေးကြီးပါသည်
+
+## လေ့ကျင့်ခန်း
+
+1. သင့်ကျွမ်းကျင်မှုနှင့် စိတ်ဝင်စားမှုအပေါ် အခြေခံပြီး MCP ecosystem ၏ အထောက်အကူပြုနိုင်သော နေရာတစ်ခုကို ရှာဖွေပါ
+2. MCP repository ကို fork လုပ်ပြီး local development environment ကို setup လုပ်ပါ
+3. အဖွဲ့အစည်းအတွက် အကျိုးရှိသော enhancement, bug fix သို့မဟုတ် tool တစ်ခု ဖန်တီးပါ
+4. သင့် contribution ကို သင့်တော်သော tests နှင့် documentation ဖြင့် ရှင်းလင်းစွာ ဖော်ပြပါ
+5. သင့် pull request ကို သင့်တော်သော repository သို့ တင်ပါ
+
+## အပိုဆောင်းအရင်းအမြစ်များ
+
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+
+---
+
+နောက်တစ်ခု: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+
+**ဝက်ဘ်ဆိုက်မှတ်ချက်**:  
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေပါသော်လည်း၊ အလိုအလျောက်ဘာသာပြန်ဆိုမှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်ပါသည်။ မူရင်းစာရွက်စာတမ်းကို ၎င်း၏ မူလဘာသာစကားဖြင့် အာဏာတည်သောရင်းမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူကောင်းမွန်သော ပရော်ဖက်ရှင်နယ်ဘာသာပြန်ဝန်ဆောင်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုမှားများ သို့မဟုတ် အဓိပ္ပာယ်မှားများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+=======
 - MCP အဖွဲ့အစည်းသည် အမျိုးမျိုးသော ထောက်ပံ့မှုများကို ကြိုဆိုပါသည်  
 - MCP အတွက် ထောက်ပံ့မှုများသည် Core Protocol တိုးတက်မှုမှ စ၍ Custom Tools များအထိ ကွဲပြားနိုင်သည်  
 - ထောက်ပံ့မှုလမ်းညွှန်ချက်များကို လိုက်နာခြင်းသည် သင့် PR အောင်မြင်စွာ လက်ခံခြင်းအတွက် အရေးကြီးသည်  
@@ -832,3 +1058,4 @@ async def delete_tool(tool_name: str):
 
 **အကြောင်းကြားချက်**:  
 ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းစာရွက်စာတမ်းကို ၎င်း၏ မူရင်းဘာသာစကားဖြင့် အာဏာတရ အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များမှ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွဲအချော်များ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+>>>>>>> origin/main

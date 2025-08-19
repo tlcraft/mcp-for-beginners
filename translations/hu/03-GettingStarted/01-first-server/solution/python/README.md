@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-18T14:39:36+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-13T18:01:40+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "hu"
 }
 -->
 # A példa futtatása
 
-Ajánlott telepíteni az `uv`-t, de nem kötelező, lásd [utasítások](https://docs.astral.sh/uv/#highlights)
+Ajánlott telepíteni az `uv`-t, de nem kötelező, lásd a [utasításokat](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Hozz létre egy virtuális környezetet
 
@@ -47,13 +47,13 @@ Ez elindít egy webes szervert vizuális felülettel, amely lehetővé teszi a p
 
 Miután a szerver csatlakozott:
 
-- próbáld meg listázni az eszközöket, és futtasd az `add`-et, 2 és 4 argumentumokkal, az eredményben 6-ot kell látnod.
+- próbáld meg lekérdezni az eszközöket, és futtasd az `add` parancsot a 2 és 4 argumentummal, az eredménynek 6-nak kell lennie.
 
-- menj a forrásokhoz és a forrássablonhoz, és hívd meg a `get_greeting`-et, írj be egy nevet, és egy üdvözlést kell látnod az általad megadott névvel.
+- menj a resources és resource template részhez, hívd meg a get_greeting-et, írj be egy nevet, és egy névre szóló üdvözlést kell látnod.
 
 ### Tesztelés CLI módban
 
-Az általad futtatott inspector valójában egy Node.js alkalmazás, és a `mcp dev` egy wrapper körülötte.
+Az inspector, amit futtattál, valójában egy Node.js alkalmazás, és a `mcp dev` egy wrapper köré építve.
 
 Közvetlenül CLI módban is elindíthatod az alábbi parancs futtatásával:
 
@@ -61,7 +61,7 @@ Közvetlenül CLI módban is elindíthatod az alábbi parancs futtatásával:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Ez listázza az összes elérhető eszközt a szerveren. A következő kimenetet kell látnod:
+Ez kilistázza a szerveren elérhető összes eszközt. A következő kimenetet kell látnod:
 
 ```text
 {
@@ -98,7 +98,7 @@ Egy eszköz meghívásához írd be:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-A következő kimenetet kell látnod:
+Az alábbi kimenetet kell látnod:
 
 ```text
 {
@@ -112,9 +112,9 @@ A következő kimenetet kell látnod:
 }
 ```
 
-> [!TIP]
-> Általában sokkal gyorsabb CLI módban futtatni az inspectort, mint böngészőben.
+> ![!TIP]
+> Általában sokkal gyorsabb az inspectort CLI módban futtatni, mint a böngészőben.
 > További információ az inspectorról [itt](https://github.com/modelcontextprotocol/inspector).
 
-**Felelősségkizárás**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

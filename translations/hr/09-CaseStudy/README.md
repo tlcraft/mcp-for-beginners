@@ -1,23 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "61a160248efabe92b09d7b08293d17db",
-  "translation_date": "2025-08-18T17:15:32+00:00",
+  "original_hash": "873741da08dd6537858d5e14c3a386e1",
+  "translation_date": "2025-07-14T05:51:52+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "hr"
 }
 -->
 # MCP u praksi: Studije slučaja iz stvarnog svijeta
 
-[![MCP u praksi: Studije slučaja iz stvarnog svijeta](../../../translated_images/10.3262cc80b4de5071fde8ba74c5c5d6738a0a9f398dcc0423f0210f632e2238b8.hr.png)](https://youtu.be/IxshWb2Az5w)
-
-_(Kliknite na sliku iznad za pregled videa ove lekcije)_
-
-Model Context Protocol (MCP) mijenja način na koji AI aplikacije komuniciraju s podacima, alatima i uslugama. Ovaj odjeljak predstavlja studije slučaja iz stvarnog svijeta koje prikazuju praktične primjene MCP-a u raznim poslovnim scenarijima.
+Model Context Protocol (MCP) mijenja način na koji AI aplikacije komuniciraju s podacima, alatima i uslugama. Ovaj odjeljak prikazuje studije slučaja iz stvarnog svijeta koje demonstriraju praktične primjene MCP-a u različitim poslovnim scenarijima.
 
 ## Pregled
 
-Ovaj odjeljak prikazuje konkretne primjere implementacije MCP-a, ističući kako organizacije koriste ovaj protokol za rješavanje složenih poslovnih izazova. Analizom ovih studija slučaja steći ćete uvid u svestranost, skalabilnost i praktične prednosti MCP-a u stvarnim situacijama.
+Ovaj odjeljak prikazuje konkretne primjere implementacija MCP-a, ističući kako organizacije koriste ovaj protokol za rješavanje složenih poslovnih izazova. Analizom ovih studija slučaja dobit ćete uvid u svestranost, skalabilnost i praktične prednosti MCP-a u stvarnim situacijama.
 
 ## Ključni ciljevi učenja
 
@@ -33,7 +29,7 @@ Kroz ove studije slučaja, naučit ćete:
 
 ### 1. [Azure AI Travel Agents – Referentna implementacija](./travelagentsample.md)
 
-Ova studija slučaja analizira Microsoftovo sveobuhvatno referentno rješenje koje pokazuje kako izgraditi aplikaciju za planiranje putovanja s više agenata, pokretanu AI-jem, koristeći MCP, Azure OpenAI i Azure AI Search. Projekt prikazuje:
+Ova studija slučaja analizira Microsoftovo sveobuhvatno referentno rješenje koje pokazuje kako izgraditi aplikaciju za planiranje putovanja s više agenata, pokretanu AI-jem, koristeći MCP, Azure OpenAI i Azure AI Search. Projekt uključuje:
 
 - Orkestraciju više agenata putem MCP-a
 - Integraciju poslovnih podataka s Azure AI Search
@@ -54,36 +50,36 @@ Ova studija slučaja prikazuje praktičnu primjenu MCP-a za automatizaciju radni
 
 Ovaj primjer ilustrira kako čak i relativno jednostavne implementacije MCP-a mogu donijeti značajne uštede vremena automatizacijom rutinskih zadataka i poboljšanjem dosljednosti podataka između sustava.
 
-### 3. [Pristup dokumentaciji u stvarnom vremenu pomoću MCP-a](./docs-mcp/README.md)
+### 3. [Preuzimanje dokumentacije u stvarnom vremenu s MCP-om](./docs-mcp/README.md)
 
-Ova studija slučaja vodi vas kroz povezivanje Python konzolnog klijenta s MCP serverom za dohvaćanje i bilježenje kontekstualno svjesne Microsoftove dokumentacije u stvarnom vremenu. Naučit ćete kako:
+Ova studija slučaja vodi vas kroz povezivanje Python konzolnog klijenta s Model Context Protocol (MCP) serverom za dohvat i zapisivanje Microsoftove dokumentacije u stvarnom vremenu, prilagođene kontekstu. Naučit ćete kako:
 
 - Povezati se s MCP serverom koristeći Python klijent i službeni MCP SDK
 - Koristiti streaming HTTP klijente za učinkovito dohvaćanje podataka u stvarnom vremenu
-- Pozivati alate za dokumentaciju na serveru i bilježiti odgovore izravno u konzolu
-- Integrirati ažuriranu Microsoftovu dokumentaciju u svoj radni tijek bez napuštanja terminala
+- Pozivati alate za dokumentaciju na serveru i zapisivati odgovore izravno u konzolu
+- Integrirati najnoviju Microsoftovu dokumentaciju u svoj radni tijek bez napuštanja terminala
 
 Poglavlje uključuje praktični zadatak, minimalni radni uzorak koda i poveznice na dodatne resurse za dublje učenje. Pogledajte cijeli vodič i kod u povezanom poglavlju kako biste razumjeli kako MCP može transformirati pristup dokumentaciji i produktivnost programera u konzolnim okruženjima.
 
 ### 4. [Interaktivna web aplikacija za generiranje plana učenja pomoću MCP-a](./docs-mcp/README.md)
 
-Ova studija slučaja pokazuje kako izgraditi interaktivnu web aplikaciju koristeći Chainlit i Model Context Protocol (MCP) za generiranje personaliziranih planova učenja za bilo koju temu. Korisnici mogu odabrati predmet (npr. "AI-900 certifikacija") i trajanje učenja (npr. 8 tjedana), a aplikacija će pružiti tjedni raspored preporučenog sadržaja. Chainlit omogućuje konverzacijsku chat sučelje, čineći iskustvo zanimljivim i prilagodljivim.
+Ova studija slučaja prikazuje kako izgraditi interaktivnu web aplikaciju koristeći Chainlit i Model Context Protocol (MCP) za generiranje personaliziranih planova učenja za bilo koju temu. Korisnici mogu odabrati predmet (npr. "AI-900 certifikacija") i trajanje učenja (npr. 8 tjedana), a aplikacija će pružiti tjedni raspored preporučenog sadržaja. Chainlit omogućuje konverzacijsko chat sučelje, čineći iskustvo zanimljivim i prilagodljivim.
 
 - Konverzacijska web aplikacija pokretana Chainlitom
-- Korisnički unos za temu i trajanje
-- Tjedne preporuke sadržaja koristeći MCP
-- Odgovori u stvarnom vremenu prilagođeni korisniku u chat sučelju
+- Korisnički definirani upiti za temu i trajanje
+- Preporuke sadržaja tjedan po tjedan koristeći MCP
+- Odgovori u stvarnom vremenu u chat sučelju
 
-Projekt ilustrira kako se konverzacijski AI i MCP mogu kombinirati za stvaranje dinamičnih, korisnički vođenih edukacijskih alata u modernom web okruženju.
+Projekt ilustrira kako se konverzacijski AI i MCP mogu kombinirati za stvaranje dinamičnih, korisnički vođenih edukativnih alata u modernom web okruženju.
 
 ### 5. [Dokumentacija u editoru pomoću MCP servera u VS Code](./docs-mcp/README.md)
 
-Ova studija slučaja pokazuje kako možete donijeti Microsoft Learn dokumentaciju izravno u svoje VS Code okruženje koristeći MCP server—bez potrebe za prebacivanjem između kartica preglednika! Vidjet ćete kako:
+Ova studija slučaja pokazuje kako možete dovesti Microsoft Learn Docs izravno u VS Code okruženje koristeći MCP server—nema više prebacivanja između kartica preglednika! Vidjet ćete kako:
 
-- Trenutno pretraživati i čitati dokumentaciju unutar VS Code-a koristeći MCP panel ili naredbeni izbornik
-- Referencirati dokumentaciju i umetati poveznice izravno u README ili markdown datoteke
-- Koristiti GitHub Copilot i MCP zajedno za besprijekorne, AI-pokretane tijekove dokumentacije i koda
-- Validirati i poboljšati dokumentaciju uz povratne informacije u stvarnom vremenu i Microsoftovu točnost
+- Odmah pretraživati i čitati dokumentaciju unutar VS Codea koristeći MCP panel ili naredbeni paletu
+- Referencirati dokumentaciju i umetati poveznice izravno u README ili markdown datoteke tečaja
+- Koristiti GitHub Copilot i MCP zajedno za besprijekorne AI-pokretane tijekove rada s dokumentacijom i kodom
+- Validirati i poboljšavati dokumentaciju uz povratne informacije u stvarnom vremenu i točnost iz Microsoft izvora
 - Integrirati MCP s GitHub tijekovima rada za kontinuiranu validaciju dokumentacije
 
 Implementacija uključuje:
@@ -96,7 +92,7 @@ Ovaj scenarij je idealan za autore tečajeva, pisce dokumentacije i programere k
 
 ### 6. [Kreiranje MCP servera pomoću APIM-a](./apimsample.md)
 
-Ova studija slučaja pruža korak-po-korak vodič o tome kako kreirati MCP server koristeći Azure API Management (APIM). Pokriva:
+Ova studija slučaja pruža korak-po-korak vodič kako kreirati MCP server koristeći Azure API Management (APIM). Obuhvaća:
 
 - Postavljanje MCP servera u Azure API Management
 - Izlaganje API operacija kao MCP alata
@@ -122,4 +118,4 @@ Analizom ovih implementacija možete steći uvide u arhitektonske obrasce, strat
 Sljedeće: Praktična radionica [Optimizacija AI tijekova rada: Izgradnja MCP servera s AI alatima](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za bilo kakva pogrešna tumačenja ili nesporazume koji proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

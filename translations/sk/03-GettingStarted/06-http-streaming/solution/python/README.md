@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
-  "translation_date": "2025-08-18T15:40:37+00:00",
+  "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
+  "translation_date": "2025-07-13T21:22:11+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "sk"
 }
@@ -13,9 +13,9 @@ Tu je návod, ako spustiť klasický HTTP streaming server a klient, ako aj MCP 
 
 ### Prehľad
 
-- Nastavíte MCP server, ktorý bude počas spracovania položiek posielať klientovi notifikácie o priebehu.
-- Klient zobrazí každú notifikáciu v reálnom čase.
-- Táto príručka pokrýva predpoklady, nastavenie, spustenie a riešenie problémov.
+- Nastavíte MCP server, ktorý bude klientovi streamovať notifikácie o priebehu spracovania položiek.
+- Klient bude zobrazovať každú notifikáciu v reálnom čase.
+- Tento návod pokrýva požiadavky, nastavenie, spustenie a riešenie problémov.
 
 ### Predpoklady
 
@@ -132,9 +132,9 @@ Tu je návod, ako spustiť klasický HTTP streaming server a klient, ako aj MCP 
 ### Kľúčové kroky implementácie
 
 1. **Vytvorte MCP server pomocou FastMCP.**
-2. **Definujte nástroj, ktorý spracuje zoznam a posiela notifikácie pomocou `ctx.info()` alebo `ctx.log()`.**
+2. **Definujte nástroj, ktorý spracováva zoznam a odosiela notifikácie pomocou `ctx.info()` alebo `ctx.log()`.**
 3. **Spustite server s `transport="streamable-http"`.**
-4. **Implementujte klienta so správcom správ, ktorý zobrazuje notifikácie, keď prichádzajú.**
+4. **Implementujte klienta s handlerom správ, ktorý zobrazuje notifikácie hneď, ako prídu.**
 
 ### Prehľad kódu
 - Server používa asynchrónne funkcie a MCP kontext na odosielanie aktualizácií o priebehu.
@@ -143,9 +143,9 @@ Tu je návod, ako spustiť klasický HTTP streaming server a klient, ako aj MCP 
 ### Tipy a riešenie problémov
 
 - Používajte `async/await` pre neblokujúce operácie.
-- Vždy ošetrite výnimky na strane servera aj klienta pre vyššiu spoľahlivosť.
+- Vždy ošetrujte výnimky na strane servera aj klienta pre väčšiu spoľahlivosť.
 - Testujte s viacerými klientmi, aby ste videli aktualizácie v reálnom čase.
 - Ak narazíte na chyby, skontrolujte verziu Pythonu a uistite sa, že všetky závislosti sú nainštalované.
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby na automatický preklad [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie odporúčame profesionálny ľudský preklad. Nezodpovedáme za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

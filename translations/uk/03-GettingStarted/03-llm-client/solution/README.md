@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4117a42f3e7baae859515f7b8b911e56",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T23:03:10+00:00",
+=======
   "translation_date": "2025-08-18T18:24:00+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/03-llm-client/solution/README.md",
   "language_code": "uk"
 }

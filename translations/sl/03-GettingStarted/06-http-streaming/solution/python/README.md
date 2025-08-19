@@ -2,19 +2,31 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T22:39:25+00:00",
+=======
   "translation_date": "2025-08-18T17:59:00+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "sl"
 }
 -->
 # Zagon tega primera
 
+<<<<<<< HEAD
+Tukaj je opisano, kako zagnati klasični HTTP strežnik in odjemalca za pretakanje ter MCP strežnik in odjemalca za pretakanje z uporabo Pythona.
+=======
 Tukaj je opis, kako zagnati klasični HTTP strežniški in odjemalski tok ter MCP strežniški in odjemalski tok z uporabo Pythona.
+>>>>>>> origin/main
 
 ### Pregled
 
 - Nastavili boste MCP strežnik, ki med obdelavo elementov pošilja obvestila o napredku odjemalcu.
+<<<<<<< HEAD
+- Odjemalec bo vsako obvestilo prikazal v realnem času.
+=======
 - Odjemalec bo prikazoval vsako obvestilo v realnem času.
+>>>>>>> origin/main
 - Ta vodič zajema predpogoje, nastavitev, zagon in odpravljanje težav.
 
 ### Predpogoji
@@ -50,15 +62,25 @@ Tukaj je opis, kako zagnati klasični HTTP strežniški in odjemalski tok ter MC
 - **Strežnik:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
 - **Odjemalec:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
 
+<<<<<<< HEAD
+### Zagon klasičnega HTTP strežnika za pretakanje
+
+1. Pojdite v mapo z rešitvijo:
+=======
 ### Zagon klasičnega HTTP strežniškega toka
 
 1. Pomaknite se v mapo z rešitvijo:
+>>>>>>> origin/main
 
    ```pwsh
    cd 03-GettingStarted/06-http-streaming/solution
    ```
 
+<<<<<<< HEAD
+2. Zaženite klasični HTTP strežnik za pretakanje:
+=======
 2. Zaženite klasični HTTP strežniški tok:
+>>>>>>> origin/main
 
    ```pwsh
    python server.py
@@ -71,7 +93,11 @@ Tukaj je opis, kako zagnati klasični HTTP strežniški in odjemalski tok ter MC
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
+<<<<<<< HEAD
+### Zagon klasičnega HTTP odjemalca za pretakanje
+=======
 ### Zagon klasičnega HTTP odjemalskega toka
+>>>>>>> origin/main
 
 1. Odprite nov terminal (aktivirajte isto virtualno okolje in mapo):
 
@@ -80,7 +106,11 @@ Tukaj je opis, kako zagnati klasični HTTP strežniški in odjemalski tok ter MC
    python client.py
    ```
 
+<<<<<<< HEAD
+2. Videli boste zaporedno natisnjena sporočila:
+=======
 2. Videli boste zaporedno natisnjena sporočila toka:
+>>>>>>> origin/main
 
    ```text
    Running classic HTTP streaming client...
@@ -93,6 +123,15 @@ Tukaj je opis, kako zagnati klasični HTTP strežniški in odjemalski tok ter MC
    --- Stream Ended ---
    ```
 
+<<<<<<< HEAD
+### Zagon MCP strežnika za pretakanje
+
+1. Pojdite v mapo z rešitvijo:
+   ```pwsh
+   cd 03-GettingStarted/06-http-streaming/solution
+   ```
+2. Zaženite MCP strežnik z uporabo transporta "streamable-http":
+=======
 ### Zagon MCP strežniškega toka
 
 1. Pomaknite se v mapo z rešitvijo:
@@ -100,6 +139,7 @@ Tukaj je opis, kako zagnati klasični HTTP strežniški in odjemalski tok ter MC
    cd 03-GettingStarted/06-http-streaming/solution
    ```
 2. Zaženite MCP strežnik z uporabo transporta streamable-http:
+>>>>>>> origin/main
    ```pwsh
    python server.py mcp
    ```
@@ -109,7 +149,11 @@ Tukaj je opis, kako zagnati klasični HTTP strežniški in odjemalski tok ter MC
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
+<<<<<<< HEAD
+### Zagon MCP odjemalca za pretakanje
+=======
 ### Zagon MCP odjemalskega toka
+>>>>>>> origin/main
 
 1. Odprite nov terminal (aktivirajte isto virtualno okolje in mapo):
    ```pwsh
@@ -137,7 +181,11 @@ Tukaj je opis, kako zagnati klasični HTTP strežniški in odjemalski tok ter MC
 4. **Implementirajte odjemalca z obdelovalcem sporočil za prikaz obvestil ob njihovem prihodu.**
 
 ### Pregled kode
+<<<<<<< HEAD
+- Strežnik uporablja asinhrone funkcije in MCP kontekst za pošiljanje posodobitev o napredku.
+=======
 - Strežnik uporablja asinhrone funkcije in MCP kontekst za pošiljanje posodobitev napredka.
+>>>>>>> origin/main
 - Odjemalec implementira asinhroni obdelovalec sporočil za tiskanje obvestil in končnega rezultata.
 
 ### Nasveti in odpravljanje težav
@@ -147,5 +195,10 @@ Tukaj je opis, kako zagnati klasični HTTP strežniški in odjemalski tok ter MC
 - Testirajte z več odjemalci, da opazujete posodobitve v realnem času.
 - Če naletite na napake, preverite svojo različico Pythona in zagotovite, da so vse odvisnosti nameščene.
 
+<<<<<<< HEAD
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovni prevod s strani človeškega prevajalca. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+=======
 **Izjava o omejitvi odgovornosti**:  
 Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+>>>>>>> origin/main

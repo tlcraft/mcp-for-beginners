@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "69ba3bd502bd743233137bac5539c08b",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T20:51:04+00:00",
+=======
   "translation_date": "2025-08-18T16:06:06+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "ro"
 }
@@ -52,7 +56,11 @@ Odată ce serverul este conectat:
 
 ### Testarea în modul CLI
 
+<<<<<<< HEAD
+Inspectorul pe care l-ați rulat este de fapt o aplicație Node.js, iar `mcp dev` este un wrapper în jurul acesteia.
+=======
 Inspectorul pe care l-ați rulat este de fapt o aplicație Node.js, iar `mcp dev` este un wrapper pentru aceasta.
+>>>>>>> origin/main
 
 Îl puteți lansa direct în modul CLI rulând următoarea comandă:
 

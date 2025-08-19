@@ -1,88 +1,82 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-  "translation_date": "2025-08-18T15:26:53+00:00",
+  "original_hash": "80e5c8949af5af0f401fce6f905990aa",
+  "translation_date": "2025-07-17T10:55:13+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "sk"
 }
 -->
-# Najlepšie postupy pri vývoji MCP
-
-[![Najlepšie postupy pri vývoji MCP](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.sk.png)](https://youtu.be/W56H9W7x-ao)
-
-_(Kliknite na obrázok vyššie pre zobrazenie videa k tejto lekcii)_
+# Najlepšie postupy vývoja MCP
 
 ## Prehľad
 
-Táto lekcia sa zameriava na pokročilé najlepšie postupy pri vývoji, testovaní a nasadzovaní MCP serverov a funkcií v produkčných prostrediach. Ako sa ekosystémy MCP stávajú komplexnejšími a dôležitejšími, dodržiavanie zavedených vzorcov zabezpečuje spoľahlivosť, udržateľnosť a interoperabilitu. Táto lekcia zhromažďuje praktické poznatky získané z reálnych implementácií MCP, aby vás usmernila pri vytváraní robustných, efektívnych serverov s účinnými zdrojmi, promptami a nástrojmi.
+Táto lekcia sa zameriava na pokročilé najlepšie postupy pri vývoji, testovaní a nasadzovaní MCP serverov a funkcií v produkčných prostrediach. Ako MCP ekosystémy rastú na zložitosti a význame, dodržiavanie osvedčených vzorov zabezpečuje spoľahlivosť, udržiavateľnosť a interoperabilitu. Táto lekcia zhrňuje praktické skúsenosti získané z reálnych implementácií MCP, aby vás viedla k vytváraniu robustných a efektívnych serverov s účinnými zdrojmi, promptmi a nástrojmi.
 
 ## Ciele učenia
 
 Na konci tejto lekcie budete schopní:
-
-- Aplikovať najlepšie postupy pri návrhu MCP serverov a funkcií
+- Použiť pri návrhu MCP serverov a funkcií osvedčené priemyselné postupy
 - Vytvoriť komplexné testovacie stratégie pre MCP servery
-- Navrhnúť efektívne, opakovane použiteľné pracovné vzory pre komplexné MCP aplikácie
+- Navrhovať efektívne, znovupoužiteľné vzory pracovných tokov pre zložité MCP aplikácie
 - Implementovať správne spracovanie chýb, logovanie a pozorovateľnosť v MCP serveroch
-- Optimalizovať implementácie MCP z hľadiska výkonu, bezpečnosti a udržateľnosti
+- Optimalizovať MCP implementácie z hľadiska výkonu, bezpečnosti a udržiavateľnosti
 
 ## Základné princípy MCP
 
-Predtým, než sa pustíme do konkrétnych implementačných postupov, je dôležité pochopiť základné princípy, ktoré vedú k efektívnemu vývoju MCP:
+Predtým, než sa pustíme do konkrétnych implementačných postupov, je dôležité pochopiť základné princípy, ktoré riadia efektívny vývoj MCP:
 
 1. **Štandardizovaná komunikácia**: MCP používa JSON-RPC 2.0 ako základ, poskytujúc konzistentný formát pre požiadavky, odpovede a spracovanie chýb vo všetkých implementáciách.
 
-2. **Dizajn orientovaný na používateľa**: Vždy uprednostňujte súhlas, kontrolu a transparentnosť používateľa vo vašich implementáciách MCP.
+2. **Dizajn orientovaný na používateľa**: Vždy uprednostňujte súhlas používateľa, kontrolu a transparentnosť vo vašich MCP implementáciách.
 
 3. **Bezpečnosť na prvom mieste**: Implementujte robustné bezpečnostné opatrenia vrátane autentifikácie, autorizácie, validácie a obmedzenia rýchlosti.
 
-4. **Modulárna architektúra**: Navrhujte MCP servery modulárnym spôsobom, kde každý nástroj a zdroj má jasný, zameraný účel.
+4. **Modulárna architektúra**: Navrhujte MCP servery modulárne, kde každý nástroj a zdroj má jasný a zameraný účel.
 
-5. **Stavové spojenia**: Využite schopnosť MCP udržiavať stav medzi viacerými požiadavkami pre koherentnejšie a kontextovo uvedomelé interakcie.
+5. **Stavové pripojenia**: Využívajte schopnosť MCP udržiavať stav naprieč viacerými požiadavkami pre koherentnejšie a kontextovo uvedomelejšie interakcie.
 
 ## Oficiálne najlepšie postupy MCP
 
 Nasledujúce najlepšie postupy sú odvodené z oficiálnej dokumentácie Model Context Protocol:
 
-### Najlepšie postupy bezpečnosti
+### Najlepšie bezpečnostné postupy
 
-1. **Súhlas a kontrola používateľa**: Vždy vyžadujte explicitný súhlas používateľa pred prístupom k údajom alebo vykonávaním operácií. Poskytnite jasnú kontrolu nad tým, aké údaje sú zdieľané a ktoré akcie sú autorizované.
+1. **Súhlas a kontrola používateľa**: Vždy vyžadujte explicitný súhlas používateľa pred prístupom k dátam alebo vykonaním operácií. Poskytnite jasnú kontrolu nad tým, aké dáta sa zdieľajú a ktoré akcie sú autorizované.
 
-2. **Ochrana údajov**: Zverejňujte údaje používateľa len s explicitným súhlasom a chráňte ich vhodnými kontrolami prístupu. Zabezpečte sa proti neoprávnenému prenosu údajov.
+2. **Ochrana súkromia dát**: Zverejňujte používateľské dáta len s explicitným súhlasom a chráňte ich vhodnými prístupovými kontrolami. Zabráňte neoprávnenému prenosu dát.
 
-3. **Bezpečnosť nástrojov**: Vyžadujte explicitný súhlas používateľa pred použitím akéhokoľvek nástroja. Zabezpečte, aby používatelia rozumeli funkčnosti každého nástroja a presadzujte robustné bezpečnostné hranice.
+3. **Bezpečnosť nástrojov**: Vyžadujte explicitný súhlas používateľa pred spustením akéhokoľvek nástroja. Zabezpečte, aby používatelia rozumeli funkciám každého nástroja a uplatnite pevné bezpečnostné hranice.
 
-4. **Kontrola povolení nástrojov**: Konfigurujte, ktoré nástroje môže model používať počas relácie, aby boli dostupné len explicitne autorizované nástroje.
+4. **Kontrola povolení nástrojov**: Konfigurujte, ktoré nástroje môže model počas relácie používať, aby boli prístupné len tie, ktoré sú výslovne autorizované.
 
 5. **Autentifikácia**: Vyžadujte správnu autentifikáciu pred udelením prístupu k nástrojom, zdrojom alebo citlivým operáciám pomocou API kľúčov, OAuth tokenov alebo iných bezpečných metód autentifikácie.
 
-6. **Validácia parametrov**: Presadzujte validáciu pre všetky volania nástrojov, aby ste zabránili nesprávnym alebo škodlivým vstupom dosiahnuť implementácie nástrojov.
+6. **Validácia parametrov**: Vynucujte validáciu všetkých volaní nástrojov, aby sa zabránilo prieniku nesprávnych alebo škodlivých vstupov do implementácií nástrojov.
 
-7. **Obmedzenie rýchlosti**: Implementujte obmedzenie rýchlosti, aby ste zabránili zneužívaniu a zabezpečili spravodlivé využívanie serverových zdrojov.
+7. **Obmedzovanie rýchlosti**: Implementujte obmedzovanie rýchlosti, aby ste zabránili zneužitiu a zabezpečili spravodlivé využívanie serverových zdrojov.
 
-### Najlepšie postupy implementácie
+### Najlepšie implementačné postupy
 
-1. **Vyjednávanie schopností**: Počas nastavenia spojenia si vymieňajte informácie o podporovaných funkciách, verziách protokolu, dostupných nástrojoch a zdrojoch.
+1. **Vyjednávanie schopností**: Počas nastavovania pripojenia si vymieňajte informácie o podporovaných funkciách, verziách protokolu, dostupných nástrojoch a zdrojoch.
 
-2. **Dizajn nástrojov**: Vytvárajte zamerané nástroje, ktoré robia jednu vec dobre, namiesto monolitických nástrojov, ktoré riešia viacero problémov.
+2. **Návrh nástrojov**: Vytvárajte zamerané nástroje, ktoré robia jednu vec dobre, namiesto monolitických nástrojov riešiacich viacero problémov naraz.
 
-3. **Spracovanie chýb**: Implementujte štandardizované chybové správy a kódy, ktoré pomáhajú diagnostikovať problémy, elegantne spracovať zlyhania a poskytovať akčné spätné väzby.
+3. **Spracovanie chýb**: Implementujte štandardizované chybové správy a kódy, ktoré pomáhajú diagnostikovať problémy, zvládať zlyhania s gráciou a poskytovať použiteľnú spätnú väzbu.
 
 4. **Logovanie**: Konfigurujte štruktúrované logy na auditovanie, ladenie a monitorovanie interakcií protokolu.
 
-5. **Sledovanie pokroku**: Pri dlhodobých operáciách hláste aktualizácie pokroku, aby ste umožnili responzívne používateľské rozhrania.
+5. **Sledovanie priebehu**: Pri dlhodobých operáciách hláste aktualizácie priebehu, aby používateľské rozhrania boli responzívne.
 
 6. **Zrušenie požiadaviek**: Umožnite klientom zrušiť požiadavky, ktoré už nie sú potrebné alebo trvajú príliš dlho.
 
 ## Ďalšie referencie
 
-Pre najaktuálnejšie informácie o najlepších postupoch MCP si pozrite:
-
-- [Dokumentácia MCP](https://modelcontextprotocol.io/)
-- [Špecifikácia MCP](https://spec.modelcontextprotocol.io/)
-- [GitHub Repository](https://github.com/modelcontextprotocol)
-- [Najlepšie postupy bezpečnosti](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+Pre najaktuálnejšie informácie o najlepších postupoch MCP navštívte:
+- [MCP Dokumentácia](https://modelcontextprotocol.io/)
+- [MCP Špecifikácia](https://spec.modelcontextprotocol.io/)
+- [GitHub Repozitár](https://github.com/modelcontextprotocol)
+- [Bezpečnostné najlepšie postupy](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
 ## Praktické príklady implementácie
 
@@ -90,7 +84,7 @@ Pre najaktuálnejšie informácie o najlepších postupoch MCP si pozrite:
 
 #### 1. Princíp jednej zodpovednosti
 
-Každý MCP nástroj by mal mať jasný, zameraný účel. Namiesto vytvárania monolitických nástrojov, ktoré sa snažia riešiť viacero problémov, vyvíjajte špecializované nástroje, ktoré vynikajú v konkrétnych úlohách.
+Každý MCP nástroj by mal mať jasný a zameraný účel. Namiesto vytvárania monolitických nástrojov, ktoré sa snažia riešiť viacero problémov naraz, vyvíjajte špecializované nástroje, ktoré excelujú v konkrétnych úlohách.
 
 ```csharp
 // A focused tool that does one thing well
@@ -444,7 +438,7 @@ public class RateLimitingMiddleware
 
 ### 1. Jednotkové testovanie MCP nástrojov
 
-Vždy testujte svoje nástroje izolovane, simulujúc externé závislosti:
+Vždy testujte svoje nástroje izolovane, pomocou mockovania externých závislostí:
 
 ```typescript
 // TypeScript example of a tool unit test
@@ -539,9 +533,9 @@ async def test_mcp_server_integration():
 
 ## Optimalizácia výkonu
 
-### 1. Stratégie ukladania do vyrovnávacej pamäte
+### 1. Stratégiá cachovania
 
-Implementujte vhodné ukladanie do vyrovnávacej pamäte na zníženie latencie a využívania zdrojov:
+Implementujte vhodné cachovanie na zníženie latencie a využitia zdrojov:
 
 ```csharp
 // C# example with caching
@@ -608,20 +602,19 @@ public class CachedWeatherTool : ITool
         };
     }
 }
-```
 
-#### 2. Injekcia závislostí a testovateľnosť
+#### 2. Dependency Injection and Testability
 
-Navrhujte nástroje tak, aby prijímali svoje závislosti prostredníctvom injekcie konštruktora, čím sa stanú testovateľnými a konfigurovateľnými:
+Design tools to receive their dependencies through constructor injection, making them testable and configurable:
 
 ```java
-// Java example with dependency injection
+// Príklad v Jave s dependency injection
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // Závislosti injektované cez konštruktor
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -631,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // Implementácia nástroja
     // ...
 }
 ```
 
-#### 3. Komponovateľné nástroje
+#### 3. Composable Tools
 
-Navrhujte nástroje, ktoré je možné kombinovať na vytvorenie komplexnejších pracovných tokov:
+Design tools that can be composed together to create more complex workflows:
 
 ```python
-# Python example showing composable tools
+# Príklad v Pythone ukazujúci kompozitné nástroje
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # Implementácia...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # Tento nástroj môže používať výsledky z dataFetch nástroja
     async def execute_async(self, request):
-        # Implementation...
+        # Implementácia...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # Tento nástroj môže používať výsledky z dataAnalysis nástroja
     async def execute_async(self, request):
-        # Implementation...
+        # Implementácia...
         pass
 
-# These tools can be used independently or as part of a workflow
+# Tieto nástroje môžu byť použité samostatne alebo ako súčasť pracovného toku
 ```
 
-### Najlepšie postupy návrhu schém
+### Schema Design Best Practices
 
-Schéma je zmluva medzi modelom a vaším nástrojom. Dobre navrhnuté schémy vedú k lepšej použiteľnosti nástrojov.
+The schema is the contract between the model and your tool. Well-designed schemas lead to better tool usability.
 
-#### 1. Jasné popisy parametrov
+#### 1. Clear Parameter Descriptions
 
-Vždy zahrňte popisné informácie pre každý parameter:
+Always include descriptive information for each parameter:
 
 ```csharp
 public object GetSchema()
@@ -685,25 +678,25 @@ public object GetSchema()
         properties = new {
             query = new { 
                 type = "string", 
-                description = "Search query text. Use precise keywords for better results." 
+                description = "Text vyhľadávacieho dopytu. Použite presné kľúčové slová pre lepšie výsledky." 
             },
             filters = new {
                 type = "object",
-                description = "Optional filters to narrow down search results",
+                description = "Voliteľné filtre na zúženie výsledkov vyhľadávania",
                 properties = new {
                     dateRange = new { 
                         type = "string", 
-                        description = "Date range in format YYYY-MM-DD:YYYY-MM-DD" 
+                        description = "Dátumové rozpätie vo formáte YYYY-MM-DD:YYYY-MM-DD" 
                     },
                     category = new { 
                         type = "string", 
-                        description = "Category name to filter by" 
+                        description = "Názov kategórie na filtrovanie" 
                     }
                 }
             },
             limit = new { 
                 type = "integer", 
-                description = "Maximum number of results to return (1-50)",
+                description = "Maximálny počet vrátených výsledkov (1-50)",
                 default = 10
             }
         },
@@ -712,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. Obmedzenia validácie
+#### 2. Validation Constraints
 
-Zahrňte obmedzenia validácie, aby ste zabránili neplatným vstupom:
+Include validation constraints to prevent invalid inputs:
 
 ```java
 Map<String, Object> getSchema() {
@@ -723,25 +716,25 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // Vlastnosť email s validáciou formátu
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
-    email.put("description", "User email address");
+    email.put("description", "Emailová adresa používateľa");
     
-    // Age property with numeric constraints
+    // Vlastnosť vek s číselnými obmedzeniami
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
-    age.put("description", "User age in years");
+    age.put("description", "Vek používateľa v rokoch");
     
-    // Enumerated property
+    // Enumerovaná vlastnosť
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
     subscription.put("default", "free");
-    subscription.put("description", "Subscription tier");
+    subscription.put("description", "Úroveň predplatného");
     
     properties.put("email", email);
     properties.put("age", age);
@@ -754,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Konzistentné štruktúry odpovedí
+#### 3. Consistent Return Structures
 
-Udržujte konzistenciu vo vašich štruktúrach odpovedí, aby modely mohli ľahšie interpretovať výsledky:
+Maintain consistency in your response structures to make it easier for models to interpret results:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # Spracovanie požiadavky
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # Vždy vrátiť konzistentnú štruktúru
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -785,7 +778,7 @@ async def execute_async(self, request):
         )
     
 def _format_item(self, item):
-    """Ensures each item has a consistent structure"""
+    """Zabezpečí, že každý prvok má konzistentnú štruktúru"""
     return {
         "id": item.id,
         "title": item.title,
@@ -795,13 +788,13 @@ def _format_item(self, item):
     }
 ```
 
-### Spracovanie chýb
+### Error Handling
 
-Robustné spracovanie chýb je kľúčové pre MCP nástroje na udržanie spoľahlivosti.
+Robust error handling is crucial for MCP tools to maintain reliability.
 
-#### 1. Elegantné spracovanie chýb
+#### 1. Graceful Error Handling
 
-Spracujte chyby na vhodných úrovniach a poskytujte informatívne správy:
+Handle errors at appropriate levels and provide informative messages:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -819,39 +812,39 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
         }
         catch (FileNotFoundException)
         {
-            throw new ToolExecutionException($"File not found: {fileId}");
+            throw new ToolExecutionException($"Súbor nenájdený: {fileId}");
         }
         catch (UnauthorizedAccessException)
         {
-            throw new ToolExecutionException("You don't have permission to access this file");
+            throw new ToolExecutionException("Nemáte oprávnenie na prístup k tomuto súboru");
         }
         catch (Exception ex) when (ex is IOException || ex is TimeoutException)
         {
-            _logger.LogError(ex, "Error accessing file {FileId}", fileId);
-            throw new ToolExecutionException("Error accessing file: The service is temporarily unavailable");
+            _logger.LogError(ex, "Chyba pri prístupe k súboru {FileId}", fileId);
+            throw new ToolExecutionException("Chyba pri prístupe k súboru: Služba je dočasne nedostupná");
         }
     }
     catch (JsonException)
     {
-        throw new ToolExecutionException("Invalid file ID format");
+        throw new ToolExecutionException("Neplatný formát ID súboru");
     }
     catch (Exception ex)
     {
-        _logger.LogError(ex, "Unexpected error in FileAccessTool");
-        throw new ToolExecutionException("An unexpected error occurred");
+        _logger.LogError(ex, "Neočekávaná chyba v FileAccessTool");
+        throw new ToolExecutionException("Došlo k neočakávanej chybe");
     }
 }
 ```
 
-#### 2. Štruktúrované odpovede na chyby
+#### 2. Structured Error Responses
 
-Vráťte štruktúrované informácie o chybách, keď je to možné:
+Return structured error information when possible:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // Implementácia
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -869,45 +862,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
-        throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
+        // Znovu vyhodiť ostatné výnimky ako ToolExecutionException
+        throw new ToolExecutionException("Vykonanie nástroja zlyhalo: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. Logika opakovania
+#### 3. Retry Logic
 
-Implementujte vhodnú logiku opakovania pre prechodné zlyhania:
+Implement appropriate retry logic for transient failures:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # sekundy
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # Volanie externého API
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
-                raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
+                raise ToolExecutionException(f"Operácia zlyhala po {max_retries} pokusoch: {str(e)}")
                 
-            # Exponential backoff
+            # Exponenciálne oneskorenie
             delay = base_delay * (2 ** (retry_count - 1))
-            logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
+            logging.warning(f"Prechodná chyba, opakujem za {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
-            raise ToolExecutionException(f"Operation failed: {str(e)}")
+            # Neprechodná chyba, neopakovať
+            raise ToolExecutionException(f"Operácia zlyhala: {str(e)}")
 ```
 
-### Optimalizácia výkonu
+### Performance Optimization
 
-#### 1. Ukladanie do vyrovnávacej pamäte
+#### 1. Caching
 
-Implementujte ukladanie do vyrovnávacej pamäte pre nákladné operácie:
+Implement caching for expensive operations:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -921,23 +914,25 @@ public class CachedDataTool : IMcpTool
         _cache = cache;
     }
     
-    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+    public async Task
+
+ExecuteAsync(ToolRequest request)
     {
         var query = request.Parameters.GetProperty("query").GetString();
         
-        // Create cache key based on parameters
+        // Vytvorenie kľúča cache na základe parametrov
         var cacheKey = $"data_query_{ComputeHash(query)}";
         
-        // Try to get from cache first
+        // Najprv sa pokúsime získať výsledok z cache
         if (_cache.TryGetValue(cacheKey, out var cachedResult))
         {
             return new ToolResponse { Result = cachedResult };
         }
         
-        // Cache miss - perform actual query
+        // Cache neobsahuje výsledok - vykonaj skutočný dopyt
         var result = await _database.QueryAsync(query);
         
-        // Store in cache with expiration
+        // Ulož do cache s expiráciou
         var cacheOptions = new MemoryCacheEntryOptions()
             .SetAbsoluteExpiration(TimeSpan.FromMinutes(15));
             
@@ -948,14 +943,14 @@ public class CachedDataTool : IMcpTool
     
     private string ComputeHash(string input)
     {
-        // Implementation to generate stable hash for cache key
+        // Implementácia na generovanie stabilného hashu pre kľúč cache
     }
 }
 ```
 
-#### 2. Asynchrónne spracovanie
+#### 2. Asynchronous Processing
 
-Používajte asynchrónne programovacie vzory pre operácie viazané na I/O:
+Use asynchronous programming patterns for I/O-bound operations:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -966,23 +961,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // Pri dlhodobých operáciách vráťte okamžite ID spracovania
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // Spusti asynchrónne spracovanie
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // Vykonaj dlhodobú operáciu
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // Aktualizuj stav (zvyčajne by sa ukladalo do databázy)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // Vráť okamžitú odpoveď s ID procesu
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -991,7 +986,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // Nástroj na kontrolu stavu procesu
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -1004,35 +999,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Obmedzenie zdrojov
+#### 3. Resource Throttling
 
-Implementujte obmedzenie zdrojov, aby ste zabránili preťaženiu:
+Implement resource throttling to prevent overload:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # Povoliť 5 požiadaviek za sekundu
+            bucket_size=10        # Povoliť nárazové zaťaženie až do 10 požiadaviek
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # Skontroluj, či môžeme pokračovať alebo musíme počkať
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # Ak je čakanie príliš dlhé
                 raise ToolExecutionException(
-                    f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
+                    f"Limit rýchlosti prekročený. Skúste to znova o {delay:.1f} sekúnd."
                 )
             else:
-                # Wait for the appropriate delay time
+                # Počkaj príslušný čas
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # Spotrebuj token a pokračuj s požiadavkou
         self.rate_limiter.consume()
         
-        # Call API
+        # Zavolaj API
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -1050,7 +1045,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # Vypočítaj čas do dostupnosti ďalšieho tokenu
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1062,86 +1057,86 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # Pridaj nové tokeny na základe uplynulého času
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### Najlepšie postupy bezpečnosti
+### Security Best Practices
 
-#### 1. Validácia vstupov
+#### 1. Input Validation
 
-Vždy dôkladne validujte vstupné parametre:
+Always validate input parameters thoroughly:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 {
-    // Validate parameters exist
+    // Over, či parametre existujú
     if (!request.Parameters.TryGetProperty("query", out var queryProp))
     {
-        throw new ToolExecutionException("Missing required parameter: query");
+        throw new ToolExecutionException("Chýba povinný parameter: query");
     }
     
-    // Validate correct type
+    // Over správny typ
     if (queryProp.ValueKind != JsonValueKind.String)
     {
-        throw new ToolExecutionException("Query parameter must be a string");
+        throw new ToolExecutionException("Parameter query musí byť reťazec");
     }
     
     var query = queryProp.GetString();
     
-    // Validate string content
+    // Over obsah reťazca
     if (string.IsNullOrWhiteSpace(query))
     {
-        throw new ToolExecutionException("Query parameter cannot be empty");
+        throw new ToolExecutionException("Parameter query nemôže byť prázdny");
     }
     
     if (query.Length > 500)
     {
-        throw new ToolExecutionException("Query parameter exceeds maximum length of 500 characters");
+        throw new ToolExecutionException("Parameter query presahuje maximálnu dĺžku 500 znakov");
     }
     
-    // Check for SQL injection attacks if applicable
+    // Skontroluj SQL injection útoky, ak je to relevantné
     if (ContainsSqlInjection(query))
     {
-        throw new ToolExecutionException("Invalid query: contains potentially unsafe SQL");
+        throw new ToolExecutionException("Neplatný dopyt: obsahuje potenciálne nebezpečný SQL kód");
     }
     
-    // Proceed with execution
+    // Pokračuj vo vykonaní
     // ...
 }
 ```
 
-#### 2. Kontroly autorizácie
+#### 2. Authorization Checks
 
-Implementujte správne kontroly autorizácie:
+Implement proper authorization checks:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // Získaj používateľský kontext z požiadavky
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // Skontroluj, či má používateľ potrebné oprávnenia
     if (!authorizationService.hasPermission(user, "documents:read")) {
-        throw new ToolExecutionException("User does not have permission to access documents");
+        throw new ToolExecutionException("Používateľ nemá oprávnenie na prístup k dokumentom");
     }
     
-    // For specific resources, check access to that resource
+    // Pre konkrétne zdroje skontroluj prístup k danému zdroju
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
-        throw new ToolExecutionException("Access denied to the requested document");
+        throw new ToolExecutionException("Prístup k požadovanému dokumentu bol zamietnutý");
     }
     
-    // Proceed with tool execution
+    // Pokračuj vo vykonaní nástroja
     // ...
 }
 ```
 
-#### 3. Manipulácia s citlivými údajmi
+#### 3. Sensitive Data Handling
 
-Manipulujte s citlivými údajmi opatrne:
+Handle sensitive data carefully:
 
 ```python
 class SecureDataTool(Tool):
@@ -1159,56 +1154,56 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # Získaj údaje používateľa
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # Filtrovanie citlivých údajov, pokiaľ nie sú výslovne požadované A autorizované
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # Skontroluj úroveň autorizácie v kontexte požiadavky
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # Vytvor kópiu, aby sa neovplyvnili pôvodné údaje
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # Cenzuruj konkrétne citlivé polia
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # Cenzuruj vnorené citlivé údaje
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## Najlepšie postupy testovania MCP nástrojov
+## Testing Best Practices for MCP Tools
 
-Komplexné testovanie zabezpečuje, že MCP nástroje fungujú správne, spracovávajú hraničné prípady a správne sa integrujú so zvyškom systému.
+Comprehensive testing ensures that MCP tools function correctly, handle edge cases, and integrate properly with the rest of the system.
 
-### Jednotkové testovanie
+### Unit Testing
 
-#### 1. Testovanie každého nástroja izolovane
+#### 1. Test Each Tool in Isolation
 
-Vytvorte zamerané testy pre funkčnosť každého nástroja:
+Create focused tests for each tool's functionality:
 
 ```csharp
 [Fact]
 public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 {
-    // Arrange
+    // Príprava
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("Seattle", 3))
-        .ReturnsAsync(new WeatherForecast(/* test data */));
+        .ReturnsAsync(new WeatherForecast(/* testovacie dáta */));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -1220,10 +1215,10 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
         })
     );
     
-    // Act
+    // Vykonanie
     var response = await tool.ExecuteAsync(request);
     
-    // Assert
+    // Overenie
     Assert.NotNull(response);
     var result = JsonSerializer.Deserialize<WeatherForecast>(response.Result);
     Assert.Equal("Seattle", result.Location);
@@ -1233,11 +1228,11 @@ public async Task WeatherTool_ValidLocation_ReturnsCorrectForecast()
 [Fact]
 public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 {
-    // Arrange
+    // Príprava
     var mockWeatherService = new Mock<IWeatherService>();
     mockWeatherService
         .Setup(s => s.GetForecastAsync("InvalidLocation", It.IsAny<int>()))
-        .ThrowsAsync(new LocationNotFoundException("Location not found"));
+        .ThrowsAsync(new LocationNotFoundException("Miesto nebolo nájdené"));
     
     var tool = new WeatherForecastTool(mockWeatherService.Object);
     
@@ -1249,36 +1244,36 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
         })
     );
     
-    // Act & Assert
+    // Vykonanie a overenie
     var exception = await Assert.ThrowsAsync<ToolExecutionException>(
         () => tool.ExecuteAsync(request)
     );
     
-    Assert.Contains("Location not found", exception.Message);
+    Assert.Contains("Miesto nebolo nájdené", exception.Message);
 }
 ```
 
-#### 2. Testovanie validácie schém
+#### 2. Schema Validation Testing
 
-Testujte, či sú schémy platné a správne presadzujú obmedzenia:
+Test that schemas are valid and properly enforce constraints:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // Vytvor inštanciu nástroja
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // Získaj schému
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // Prekonvertuj schému do JSON pre validáciu
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // Over, že schéma je platný JSONSchema
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // Testuj platné parametre
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -1286,14 +1281,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // Testuj chýbajúci povinný parameter
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // Testuj neplatný typ parametra
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1303,21 +1298,21 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. Testy spracovania chýb
+#### 3. Error Handling Tests
 
-Vytvorte špecifické testy pre chybové podmienky:
+Create specific tests for error conditions:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # Príprava
+    tool = ApiTool(timeout=0.1)  # Veľmi krátky timeout
     
-    # Mock a request that will time out
+    # Mock požiadavky, ktorá vyprší časový limit
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Dlhšie ako timeout
         )
         
         request = ToolRequest(
@@ -1325,19 +1320,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Vykonanie a overenie
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # Over správu výnimky
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # Príprava
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # Mock odpovede s obmedzením rýchlosti
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -1351,27 +1346,27 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Vykonanie a overenie
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # Over, že výnimka obsahuje informácie o limite rýchlosti
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### Integračné testovanie
+### Integration Testing
 
-#### 1. Testovanie reťazca nástrojov
+#### 1. Tool Chain Testing
 
-Testujte nástroje pracujúce spolu v očakávaných kombináciách:
+Test tools working together in expected combinations:
 
 ```csharp
 [Fact]
 public async Task DataProcessingWorkflow_CompletesSuccessfully()
 {
-    // Arrange
+    // Príprava
     var dataFetchTool = new DataFetchTool(mockDataService.Object);
     var analysisTools = new DataAnalysisTool(mockAnalysisService.Object);
     var visualizationTool = new DataVisualizationTool(mockVisualizationService.Object);
@@ -1383,30 +1378,31 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
     
     var workflowExecutor = new WorkflowExecutor(toolRegistry);
     
-    // Act
-    var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
-        new ToolCall("dataFetch", new { source = "sales2023" }),
-        new ToolCall("dataAnalysis", ctx => new { 
+    // Vykonanie
+var result = await workflowExecutor.ExecuteWorkflowAsync(new[] {
+    new ToolCall("dataFetch", new { source = "sales2023" }),
+    new ToolCall("dataAnalysis", ctx =>
+        new { 
             data = ctx.GetResult("dataFetch"),
             analysis = "trend" 
         }),
-        new ToolCall("dataVisualize", ctx => new {
-            analysisResult = ctx.GetResult("dataAnalysis"),
-            type = "line-chart"
-        })
-    });
-    
-    // Assert
-    Assert.NotNull(result);
-    Assert.True(result.Success);
-    Assert.NotNull(result.GetResult("dataVisualize"));
-    Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
+    new ToolCall("dataVisualize", ctx => new {
+        analysisResult = ctx.GetResult("dataAnalysis"),
+        type = "line-chart"
+    })
+});
+
+// Overenie
+Assert.NotNull(result);
+Assert.True(result.Success);
+Assert.NotNull(result.GetResult("dataVisualize"));
+Assert.Contains("chartUrl", result.GetResult("dataVisualize").ToString());
 }
 ```
 
-#### 2. Testovanie MCP servera
+#### 2. MCP Server Testing
 
-Testujte MCP server s kompletnou registráciou nástrojov a ich vykonávaním:
+Test the MCP server with full tool registration and execution:
 
 ```java
 @SpringBootTest
@@ -1421,7 +1417,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // Otestuj endpoint pre zistenie nástrojov
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1432,7 +1428,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // Vytvor požiadavku na nástroj
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -1442,7 +1438,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // Pošli požiadavku a over odpoveď
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1452,17 +1448,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // Vytvor neplatnú požiadavku na nástroj
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // Chýba parameter "b"
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // Pošli požiadavku a over chybu v odpovedi
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1472,32 +1468,32 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. Testovanie od začiatku do konca
+#### 3. End-to-End Testing
 
-Testujte kompletné pracovné toky od promptu modelu po vykonanie nástroja:
+Test complete workflows from model prompt to tool execution:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # Príprava - nastavenie MCP klienta a mock modelu
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # Mock odpovede modelu
     mock_model = MockLanguageModel([
         MockResponse(
-            "What's the weather in Seattle?",
+            "Aké je počasie v Seattli?",
             tool_calls=[{
                 "tool_name": "weatherForecast",
                 "parameters": {"location": "Seattle", "days": 3}
             }]
         ),
         MockResponse(
-            "Here's the weather forecast for Seattle:\n- Today: 65°F, Partly Cloudy\n- Tomorrow: 68°F, Sunny\n- Day after: 62°F, Rain",
+            "Tu je predpoveď počasia pre Seattle:\n- Dnes: 65°F, čiastočne oblačno\n- Zajtra: 68°F, slnečno\n- Pozajtra: 62°F, dážď",
             tool_calls=[]
         )
     ])
     
-    # Mock weather tool response
+    # Mock odpoveď nástroja počasia
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1513,14 +1509,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # Vykonanie
         response = await mcp_client.send_prompt(
-            "What's the weather in Seattle?",
+            "Aké je počasie v Seattli?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # Overenie
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1529,17 +1525,17 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### Testovanie výkonu
+### Performance Testing
 
-#### 1. Testovanie záťaže
+#### 1. Load Testing
 
-Testujte, koľko súbežných požiadaviek dokáže váš MCP server spracovať:
+Test how many concurrent requests your MCP server can handle:
 
 ```csharp
 [Fact]
 public async Task McpServer_HandlesHighConcurrency()
 {
-    // Arrange
+    // Príprava
     var server = new McpServer(
         name: "TestServer",
         version: "1.0",
@@ -1551,7 +1547,7 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var client = new McpClient("http://localhost:5000");
     
-    // Act
+    // Vykonanie
     var tasks = new List<Task<McpResponse>>();
     for (int i = 0; i < 1000; i++)
     {
@@ -1560,15 +1556,15 @@ public async Task McpServer_HandlesHighConcurrency()
     
     var results = await Task.WhenAll(tasks);
     
-    // Assert
+    // Overenie
     Assert.Equal(1000, results.Length);
     Assert.All(results, r => Assert.NotNull(r));
 }
 ```
 
-#### 2. Testovanie stresu
+#### 2. Stress Testing
 
-Testujte systém pod extrémnou záťažou:
+Test the system under extreme load:
 
 ```java
 @Test
@@ -1577,13 +1573,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // Nastavenie JMeter pre záťažové testovanie
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // Konfigurácia testovacieho plánu JMeter
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // Vytvorenie testovacieho plánu, skupiny vlákien, samplerov atď.
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1595,7 +1591,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // Pridanie HTTP sampleru pre vykonanie nástroja
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1606,58 +1602,58 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // Pridanie poslucháčov
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // Spustenie testu
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // Overenie výsledkov
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // Priemerný čas odozvy < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90. percentil < 500ms
 }
 ```
 
-#### 3. Monitorovanie a profilovanie
+#### 3. Monitoring and Profiling
 
-Nastavte monitorovanie pre dlhodobú analýzu výkonu:
+Set up monitoring for long-term performance analysis:
 
 ```python
-# Configure monitoring for an MCP server
+# Konfigurácia monitoringu pre MCP server
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Nastavenie Prometheus metrík
     prometheus_metrics = {
-        "request_count": Counter("mcp_requests_total", "Total MCP requests"),
+        "request_count": Counter("mcp_requests_total", "Celkový počet MCP požiadaviek"),
         "request_latency": Histogram(
             "mcp_request_duration_seconds", 
-            "Request duration in seconds",
+            "Dĺžka trvania požiadavky v sekundách",
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_execution_count": Counter(
             "mcp_tool_executions_total", 
-            "Tool execution count",
+            "Počet vykonaní nástrojov",
             labelnames=["tool_name"]
         ),
         "tool_execution_latency": Histogram(
             "mcp_tool_duration_seconds", 
-            "Tool execution duration in seconds",
+            "Dĺžka vykonávania nástroja v sekundách",
             labelnames=["tool_name"],
             buckets=[0.01, 0.05, 0.1, 0.5, 1.0, 2.5, 5.0, 10.0]
         ),
         "tool_errors": Counter(
             "mcp_tool_errors_total",
-            "Tool execution errors",
+            "Chyby pri vykonávaní nástrojov",
             labelnames=["tool_name", "error_type"]
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # Pridanie middleware pre meranie času a zaznamenávanie metrík
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # Sprístupnenie endpointu pre metriky
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1665,29 +1661,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## Návrhové vzory pracovných tokov MCP
+## MCP Workflow Design Patterns
 
-Dobre navrhnuté pracovné toky MCP zlepšujú efektivitu, spoľahlivosť a udržateľnosť. Tu sú kľúčové vzory, ktoré treba dodržiavať:
+Well-designed MCP workflows improve efficiency, reliability, and maintainability. Here are key patterns to follow:
 
-### 1. Vzor reťazca nástrojov
+### 1. Chain of Tools Pattern
 
-Spojte viacero nástrojov do sekvencie, kde výstup každého nástroja sa stáva vstupom pre ďalší:
+Connect multiple tools in a sequence where each tool's output becomes the input for the next:
 
 ```python
-# Python Chain of Tools implementation
+# Implementácia reťazca nástrojov v Pythone
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # Zoznam názvov nástrojov, ktoré sa vykonávajú postupne
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # Vykonaj každý nástroj v reťazci, pričom ako vstup použije predchádzajúci výsledok
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # Ulož výsledok a použij ho ako vstup pre ďalší nástroj
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1696,7 +1692,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# Príklad použitia
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1710,9 +1706,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Vzor dispečera
+### 2. Dispatcher Pattern
 
-Použite centrálny nástroj, ktorý rozdeľuje úlohy na špecializované nástroje na základe vstupu:
+Use a central tool that dispatches to specialized tools based on input:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1725,7 +1721,7 @@ public class ContentDispatcherTool : IMcpTool
     }
     
     public string Name => "contentProcessor";
-    public string Description => "Processes content of various types";
+    public string Description => "Spracováva obsah rôznych typov";
     
     public object GetSchema()
     {
@@ -1752,10 +1748,10 @@ public class ContentDispatcherTool : IMcpTool
         var contentType = request.Parameters.GetProperty("contentType").GetString();
         var operation = request.Parameters.GetProperty("operation").GetString();
         
-        // Determine which specialized tool to use
+        // Urči, ktorý špecializovaný nástroj použiť
         string targetTool = DetermineTargetTool(contentType, operation);
         
-        // Forward to the specialized tool
+        // Preposli požiadavku špecializovanému nástroju
         var specializedResponse = await _mcpClient.ExecuteToolAsync(
             targetTool,
             new { content, options = GetOptionsForTool(targetTool, operation) }
@@ -1772,29 +1768,67 @@ public class ContentDispatcherTool : IMcpTool
             ("text", "analyze") => "textAnalyzer",
             ("html", _) => "htmlProcessor",
             ("markdown", _) => "markdownProcessor",
-            ("csv", _) => "csvProcessor",
-            ("code", _) => "codeAnalyzer",
-            _ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
-        };
-    }
-    
-    private object GetOptionsForTool(string toolName, string operation)
-    {
-        // Return appropriate options for each specialized tool
-        return toolName switch
-        {
-            "textSummarizer" => new { length = "medium" },
-            "htmlProcessor" => new { cleanUp = true, operation },
-            // Options for other tools...
-            _ => new { }
-        };
-    }
+            ("csv", _) =>
+# csvProcessor
+
+Tento modul poskytuje nástroje na spracovanie CSV súborov efektívne a jednoducho.
+
+## Funkcie
+
+- `loadCSV(filePath)`: Načíta CSV súbor z daného `filePath` a vráti jeho obsah ako pole objektov.
+- `parseRow(row)`: Analyzuje jednotlivý riadok CSV a prevedie ho na objekt.
+- `filterRows(data, criteria)`: Filtruje pole dát podľa zadaných kritérií.
+- `exportCSV(data, destination)`: Exportuje pole dát späť do CSV formátu a uloží ho na `destination`.
+
+## Použitie
+
+```javascript
+const data = loadCSV('data.csv');
+const filtered = filterRows(data, { status: 'active' });
+exportCSV(filtered, 'filtered_data.csv');
+```
+
+[!NOTE]  
+Uistite sa, že CSV súbor má správnu štruktúru a kódovanie UTF-8, aby sa predišlo problémom pri načítaní.
+
+[!WARNING]  
+Funkcia `exportCSV` prepíše existujúci súbor bez varovania.
+
+## Tipy
+
+- Pri práci s veľkými CSV súbormi zvážte použitie streamovania na zníženie spotreby pamäte.
+- Použite `parseRow` na validáciu a čistenie dát pred ich ďalším spracovaním.
+
+## Chyby
+
+- `loadCSV` vyhodí chybu, ak súbor neexistuje alebo nie je prístupný.
+- `parseRow` môže vrátiť `null`, ak riadok nevyhovuje očakávanému formátu.
+
+## Kontakt
+
+Pre viac informácií navštívte dokumentáciu alebo kontaktujte podporu.
+("code", _) => "codeAnalyzer",
+_ => throw new ToolExecutionException($"Nástroj nie je dostupný pre {contentType}/{operation}")
+};
+}
+
+private object GetOptionsForTool(string toolName, string operation)
+{
+// Vráti vhodné možnosti pre každý špecializovaný nástroj
+return toolName switch
+{
+    "textSummarizer" => new { length = "medium" },
+    "htmlProcessor" => new { cleanUp = true, operation },
+    // Možnosti pre ďalšie nástroje...
+    _ => new { }
+};
+}
 }
 ```
 
-### 3. Vzor paralelného spracovania
+### 3. Parallel Processing Pattern
 
-Vykonávajte viacero nástrojov súčasne pre efektivitu:
+Execute multiple tools simultaneously for efficiency:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1805,11 +1839,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // Krok 1: Získať metadata datasetu (synchronne)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // Krok 2: Spustiť viacero analýz paralelne
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1831,25 +1865,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // Počkajte, kým všetky paralelné úlohy dokončia prácu
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // Čaká na dokončenie
         
-        // Step 3: Combine results
+        // Krok 3: Spojiť výsledky
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // Krok 4: Vygenerovať súhrnnú správu
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // Vrátiť kompletný výsledok workflow
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1860,9 +1894,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Vzor obnovy chýb
+### 4. Error Recovery Pattern
 
-Implementujte elegantné záložné riešenia pre zlyhania nástrojov:
+Implement graceful fallbacks for tool failures:
 
 ```python
 class ResilientWorkflow:
@@ -1871,7 +1905,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # Najprv skúsiť primárny nástroj
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1879,12 +1913,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
-            logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
+            # Zaznamenať zlyhanie
+            logging.warning(f"Primárny nástroj '{primary_tool}' zlyhal: {str(e)}")
             
-            # Fall back to secondary tool
+            # Prejsť na záložný nástroj
             try:
-                # Might need to transform parameters for fallback tool
+                # Možno bude potrebné upraviť parametre pre záložný nástroj
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1895,30 +1929,30 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
-                logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
+                # Oba nástroje zlyhali
+                logging.error(f"Oba nástroje, primárny aj záložný, zlyhali. Chyba záložného: {str(fallback_error)}")
                 raise WorkflowExecutionException(
-                    f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
+                    f"Workflow zlyhal: primárna chyba: {str(e)}; chyba záložného: {str(fallback_error)}"
                 )
     
     def _adapt_parameters(self, params, from_tool, to_tool):
-        """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        """Prispôsobiť parametre medzi rôznymi nástrojmi, ak je to potrebné"""
+        # Táto implementácia závisí od konkrétnych nástrojov
+        # V tomto príklade jednoducho vrátime pôvodné parametre
         return params
 
-# Example usage
+# Príklad použitia
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # Primárne (platené) API počasia
+        "basicWeatherService",    # Záložné (bezplatné) API počasia
         {"location": location}
     )
 ```
 
-### 5. Vzor kompozície pracovných tokov
+### 5. Workflow Composition Pattern
 
-Budujte komplexné pracovné toky skladaním jednoduchších:
+Build complex workflows by composing simpler ones:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1938,10 +1972,10 @@ public class CompositeWorkflow : IWorkflow
         {
             var workflowResult = await workflow.ExecuteAsync(context);
             
-            // Store each workflow's result
+            // Uložiť výsledok každého workflow
             results[workflow.Name] = workflowResult;
             
-            // Update context with the result for the next workflow
+            // Aktualizovať kontext výsledkom pre ďalší workflow
             context = context.WithResult(workflow.Name, workflowResult);
         }
         
@@ -1949,10 +1983,10 @@ public class CompositeWorkflow : IWorkflow
     }
     
     public string Name => "CompositeWorkflow";
-    public string Description => "Executes multiple workflows in sequence";
+    public string Description => "Spúšťa viacero workflow postupne za sebou";
 }
 
-// Example usage
+// Príklad použitia
 var documentWorkflow = new CompositeWorkflow(new IWorkflow[] {
     new DocumentFetchWorkflow(),
     new DocumentProcessingWorkflow(),
@@ -1965,44 +1999,44 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# Testovanie MCP serverov: Najlepšie postupy a tipy
+# Testing MCP Servers: Best Practices and Top Tips
 
-## Prehľad
+## Overview
 
-Testovanie je kritickým aspektom vývoja spoľahlivých, vysokokvalitných MCP serverov. Tento sprievodca poskytuje komplexné najlepšie postupy a tipy na testovanie vašich MCP serverov počas celého vývojového cyklu, od jednotkových testov po integračné testy a validáciu od začiatku do konca.
+Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
 
-## Prečo je testovanie dôležité pre MCP servery
+## Why Testing Matters for MCP Servers
 
-MCP servery slúžia ako kľúčové middleware medzi AI modelmi a klientskými aplikáciami. Dôkladné testovanie zabezpečuje:
+MCP servers serve as crucial middleware between AI models and client applications. Thorough testing ensures:
 
-- Spoľahlivosť v produkčných prostrediach
-- Presné spracovanie požiadaviek a odpovedí
-- Správnu implementáciu špecifikácií MCP
-- Odolnosť voči zlyhaniam a hraničným prípadom
-- Konzistentný výkon pri rôznych záťažiach
+- Reliability in production environments
+- Accurate handling of requests and responses
+- Proper implementation of MCP specifications
+- Resilience against failures and edge cases
+- Consistent performance under various loads
 
-## Jednotkové testovanie MCP serverov
+## Unit Testing for MCP Servers
 
-### Jednotkové testovanie (Základ)
+### Unit Testing (Foundation)
 
-Jednotkové testy overujú jednotlivé komponenty MCP servera izolovane.
+Unit tests verify individual components of your MCP server in isolation.
 
-#### Čo testovať
+#### What to Test
 
-1. **Spracovatelia zdrojov**: Testujte logiku každého spracovateľa zdrojov nezávisle
-2. **Implementácie nástrojov**: Overte správanie nástrojov s rôznymi vstupmi
-3. **Šablóny promptov**: Zabezpečte, že šablóny promptov sa správne vykresľujú
-4. **Validácia schém**: Testujte logiku validácie parametrov
-5. **Spracovanie chýb**: Overte odpovede na chyby pri neplatných vstupoch
+1. **Resource Handlers**: Test each resource handler's logic independently
+2. **Tool Implementations**: Verify tool behavior with various inputs
+3. **Prompt Templates**: Ensure prompt templates render correctly
+4. **Schema Validation**: Test parameter validation logic
+5. **Error Handling**: Verify error responses for invalid inputs
 
-#### Najlepšie postupy pre jednotkové testovanie
+#### Best Practices for Unit Testing
 
 ```csharp
-// Example unit test for a calculator tool in C#
+// Príklad jednotkového testu pre kalkulačný nástroj v C#
 [Fact]
 public async Task CalculatorTool_Add_ReturnsCorrectSum()
 {
-    // Arrange
+    // Príprava
     var calculator = new CalculatorTool();
     var parameters = new Dictionary<string, object>
     {
@@ -2011,19 +2045,19 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
         ["b"] = 7
     };
     
-    // Act
+    // Vykonanie
     var response = await calculator.ExecuteAsync(parameters);
     var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
     
-    // Assert
+    // Overenie
     Assert.Equal(12, result.Value);
 }
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# Príklad jednotkového testu pre kalkulačný nástroj v Pythone
 def test_calculator_tool_add():
-    # Arrange
+    # Príprava
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -2031,34 +2065,34 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # Vykonanie
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # Overenie
     assert result["value"] == 12
 ```
 
-### Integračné testovanie (Stredná vrstva)
+### Integration Testing (Middle Layer)
 
-Integračné testy overujú interakcie medzi komponentmi MCP servera.
+Integration tests verify interactions between components of your MCP server.
 
-#### Čo testovať
+#### What to Test
 
-1. **Inicializácia servera**: Testujte spustenie servera s rôznymi konfiguráciami
-2. **Registrácia trás**: Overte, že všetky koncové body sú správne registrované
-3. **Spracovanie požiadaviek**: Testujte celý cyklus požiadavka-odpoveď
-4. **Propagácia chýb**: Zabezpečte, že chyby sú správne spracované medzi komponentmi
-5. **Autentifikácia a autorizácia**: Testujte bezpečnostné mechanizmy
+1. **Server Initialization**: Test server startup with various configurations
+2. **Route Registration**: Verify all endpoints are correctly registered
+3. **Request Processing**: Test the full request-response cycle
+4. **Error Propagation**: Ensure errors are properly handled across components
+5. **Authentication & Authorization**: Test security mechanisms
 
-#### Najlepšie postupy pre integračné testovanie
+#### Best Practices for Integration Testing
 
 ```csharp
-// Example integration test for MCP server in C#
+// Príklad integračného testu pre MCP server v C#
 [Fact]
 public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 {
-    // Arrange
+    // Príprava
     var server = new McpServer();
     server.RegisterTool(new CalculatorTool());
     await server.StartAsync();
@@ -2074,40 +2108,40 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
         }
     };
     
-    // Act
+    // Vykonanie
     var response = await server.ProcessRequestAsync(request);
     
-    // Assert
+    // Overenie
     Assert.NotNull(response);
     Assert.Equal(McpStatusCodes.Success, response.StatusCode);
-    // Additional assertions for response content
+    // Ďalšie overenia obsahu odpovede
     
-    // Cleanup
+    // Upratovanie
     await server.StopAsync();
 }
 ```
 
-### Testovanie od začiatku do konca (Najvyššia vrstva)
+### End-to-End Testing (Top Layer)
 
-Testy od začiatku do konca overujú kompletné správanie systému od klienta po server.
+End-to-end tests verify the complete system behavior from client to server.
 
-#### Čo testovať
+#### What to Test
 
-1. **Komunikácia klient-server**: Testujte kompletné cykly požiadavka-odpoveď
-2. **Reálne klientské SDK**: Testujte s aktuálnymi implementáciami klientov
-3. **Výkon pri záťaži**: Overte správanie pri viacerých súbežných požiadavkách
-4. **Obnova chýb**: Testujte obnovu systému po zlyhaniach
-5. **Dlhodobé operácie**: Overte spracovanie streamovania a dlhých operácií
+1. **Client-Server Communication**: Test complete request-response cycles
+2. **Real Client SDKs**: Test with actual client implementations
+3. **Performance Under Load**: Verify behavior with multiple concurrent requests
+4. **Error Recovery**: Test system recovery from failures
+5. **Long-Running Operations**: Verify handling of streaming and long operations
 
-#### Najlepšie postupy pre E2E testovanie
+#### Best Practices for E2E Testing
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// Príklad E2E testu s klientom v TypeScripte
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // Spustiť server v testovacom prostredí
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -2116,28 +2150,135 @@ describe('MCP Server E2E Tests', () => {
     await stopTestServer();
   });
   
-  test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+  test('Klient dokáže zavolať kalkulačný nástroj a získať správny výsledok', async () => {
+    // Vykonanie
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // Overenie
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
 });
 ```
 
-## Stratégie simulácie pre testovanie MCP
+## Mocking Strategies for MCP Testing
 
-Simulácia je nevyhnut
-3. **Výkonnostné štandardy**: Udržiavajte výkonnostné benchmarky na odhalenie regresií  
-4. **Bezpečnostné skeny**: Automatizujte bezpečnostné testovanie ako súčasť pipeline  
+Mocking is essential for isolating components during testing.
 
-### Príklad CI Pipeline (GitHub Actions)
+### Components to Mock
+
+1. **External AI Models**: Mock model responses for predictable testing
+2. **External Services**: Mock API dependencies (databases, third-party services)
+3. **Authentication Services**: Mock identity providers
+4. **Resource Providers**: Mock expensive resource handlers
+
+### Example: Mocking an AI Model Response
+
+```csharp
+// Príklad v C# s Moq
+var mockModel = new Mock<ILanguageModel>();
+mockModel
+    .Setup(m => m.GenerateResponseAsync(
+        It.IsAny<string>(),
+        It.IsAny<McpRequestContext>()))
+    .ReturnsAsync(new ModelResponse { 
+        Text = "Mocked model response",
+        FinishReason = FinishReason.Completed
+    });
+
+var server = new McpServer(modelClient: mockModel.Object);
+```
+
+```python
+# Príklad v Pythone s unittest.mock
+@patch('mcp_server.models.OpenAIModel')
+def test_with_mock_model(mock_model):
+    # Konfigurácia mocku
+    mock_model.return_value.generate_response.return_value = {
+        "text": "Mocked model response",
+        "finish_reason": "completed"
+    }
+    
+    # Použitie mocku v teste
+    server = McpServer(model_client=mock_model)
+    # Pokračovanie testu
+```
+
+## Performance Testing
+
+Performance testing is crucial for production MCP servers.
+
+### What to Measure
+
+1. **Latency**: Response time for requests
+2. **Throughput**: Requests handled per second
+3. **Resource Utilization**: CPU, memory, network usage
+4. **Concurrency Handling**: Behavior under parallel requests
+5. **Scaling Characteristics**: Performance as load increases
+
+### Tools for Performance Testing
+
+- **k6**: Open-source load testing tool
+- **JMeter**: Comprehensive performance testing
+- **Locust**: Python-based load testing
+- **Azure Load Testing**: Cloud-based performance testing
+
+### Example: Basic Load Test with k6
+
+```javascript
+// k6 skript na záťažové testovanie MCP servera
+import http from 'k6/http';
+import { check, sleep } from 'k6';
+
+export const options = {
+  vus: 10,  // 10 virtuálnych používateľov
+  duration: '30s',
+};
+
+export default function () {
+  const payload = JSON.stringify({
+    tool: 'calculator',
+    parameters: {
+      operation: 'add',
+      a: Math.floor(Math.random() * 100),
+      b: Math.floor(Math.random() * 100)
+    }
+  });
+
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer test-token'
+    },
+  };
+
+  const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
+  
+  check(res, {
+    'status je 200': (r) => r.status === 200,
+    'doba odozvy < 500ms': (r) => r.timings.duration < 500,
+  });
+  
+  sleep(1);
+}
+```
+
+## Test Automation for MCP Servers
+
+Automating your tests ensures consistent quality and faster feedback loops.
+
+### CI/CD Integration
+
+1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
+2. **Integration Tests in Staging**: Run integration tests in pre-production environments
+3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
+4. **Security Scans**: Automate security testing as part of the pipeline
+
+### Example CI Pipeline (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -2176,11 +2317,11 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## Testovanie zhody so špecifikáciou MCP
+## Testing for Compliance with MCP Specification
 
-Overte, či váš server správne implementuje špecifikáciu MCP.
+Verify your server correctly implements the MCP specification.
 
-### Kľúčové oblasti zhody
+### Key Compliance Areas
 
 1. **API Endpointy**: Testujte požadované endpointy (/resources, /tools, atď.)  
 2. **Formát požiadaviek/odpovedí**: Validujte súlad so schémou  
@@ -2188,7 +2329,7 @@ Overte, či váš server správne implementuje špecifikáciu MCP.
 4. **Typy obsahu**: Testujte spracovanie rôznych typov obsahu  
 5. **Autentifikačný tok**: Overte mechanizmy autentifikácie v súlade so špecifikáciou  
 
-### Testovacia sada zhody
+### Compliance Test Suite
 
 ```csharp
 [Fact]
@@ -2217,15 +2358,15 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 
 ## Top 10 tipov pre efektívne testovanie MCP servera
 
-1. **Testujte definície nástrojov samostatne**: Overte schémy nezávisle od logiky nástrojov  
-2. **Používajte parametrizované testy**: Testujte nástroje s rôznymi vstupmi, vrátane hraničných prípadov  
-3. **Kontrolujte chybové odpovede**: Overte správne spracovanie všetkých možných chybových stavov  
-4. **Testujte logiku autorizácie**: Zabezpečte správnu kontrolu prístupu pre rôzne používateľské role  
-5. **Monitorujte pokrytie testov**: Snažte sa o vysoké pokrytie kritického kódu  
-6. **Testujte streamované odpovede**: Overte správne spracovanie streamovaného obsahu  
-7. **Simulujte problémy s sieťou**: Testujte správanie pri zlých sieťových podmienkach  
-8. **Testujte limity zdrojov**: Overte správanie pri dosiahnutí kvót alebo limitov  
-9. **Automatizujte regresné testy**: Vytvorte sadu, ktorá sa spúšťa pri každej zmene kódu  
+1. **Testujte definície nástrojov samostatne**: Overujte definície schém nezávisle od logiky nástrojov  
+2. **Používajte parameterizované testy**: Testujte nástroje s rôznymi vstupmi vrátane hraničných prípadov  
+3. **Kontrolujte chybové odpovede**: Overte správne spracovanie chýb pre všetky možné chybové stavy  
+4. **Testujte autorizačnú logiku**: Zabezpečte správnu kontrolu prístupu pre rôzne používateľské roly  
+5. **Sledujte pokrytie testami**: Usilujte o vysoké pokrytie kritických častí kódu  
+6. **Testujte streamingové odpovede**: Overte správne spracovanie streamovaného obsahu  
+7. **Simulujte sieťové problémy**: Testujte správanie pri zlých sieťových podmienkach  
+8. **Testujte limity zdrojov**: Overte správanie pri dosiahnutí kvót alebo limitov rýchlosti  
+9. **Automatizujte regresné testy**: Vytvorte sadu testov, ktoré sa spúšťajú pri každej zmene kódu  
 10. **Dokumentujte testovacie prípady**: Udržiavajte jasnú dokumentáciu testovacích scenárov  
 
 ## Bežné chyby pri testovaní
@@ -2234,7 +2375,7 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 - **Ignorovanie výkonnostného testovania**: Identifikujte úzke miesta skôr, než ovplyvnia produkciu  
 - **Testovanie iba v izolácii**: Kombinujte jednotkové, integračné a E2E testy  
 - **Neúplné pokrytie API**: Zabezpečte testovanie všetkých endpointov a funkcií  
-- **Nekonzistentné testovacie prostredia**: Používajte kontajnery na zabezpečenie konzistentných prostredí  
+- **Nekonzistentné testovacie prostredia**: Používajte kontajnery pre zabezpečenie konzistentnosti prostredí  
 
 ## Záver
 
@@ -2267,8 +2408,8 @@ Implementujte schémy nástrojov, spracovanie chýb a pracovný tok, ktorý najl
 2. Prispievajte do open-source [MCP projektov](https://github.com/modelcontextprotocol)  
 3. Aplikujte MCP princípy vo vlastných AI iniciatívach vašej organizácie  
 4. Preskúmajte špecializované MCP implementácie pre váš priemysel  
-5. Zvážte absolvovanie pokročilých kurzov na špecifické MCP témy, ako je multimodálna integrácia alebo integrácia podnikových aplikácií  
-6. Experimentujte s vytváraním vlastných MCP nástrojov a pracovných tokov pomocou princípov naučených v [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+5. Zvážte absolvovanie pokročilých kurzov na špecifické témy MCP, ako je multimodálna integrácia alebo integrácia podnikových aplikácií  
+6. Experimentujte s tvorbou vlastných MCP nástrojov a pracovných postupov podľa princípov naučených v [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
 Ďalej: Najlepšie postupy [prípadové štúdie](../09-CaseStudy/README.md)  
 

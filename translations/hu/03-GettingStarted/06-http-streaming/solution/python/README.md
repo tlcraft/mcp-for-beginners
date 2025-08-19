@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T19:35:59+00:00",
+=======
   "translation_date": "2025-08-18T14:43:43+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "hu"
 }
@@ -13,8 +17,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Áttekintés
 
+<<<<<<< HEAD
+- Be fogsz állítani egy MCP szervert, amely feldolgozás közben értesítéseket küld a kliensnek.
+- A kliens valós időben megjeleníti az értesítéseket.
+=======
 - Beállítasz egy MCP szervert, amely feldolgozás közben értesítéseket küld a kliensnek.
 - A kliens valós időben jeleníti meg az értesítéseket.
+>>>>>>> origin/main
 - Ez az útmutató lefedi az előfeltételeket, a beállítást, a futtatást és a hibaelhárítást.
 
 ### Előfeltételek

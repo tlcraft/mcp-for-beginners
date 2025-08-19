@@ -2,18 +2,30 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f84eaea79c8fa9ab318a494f40891814",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T18:58:12+00:00",
+=======
   "translation_date": "2025-08-18T14:01:33+00:00",
+>>>>>>> origin/main
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "sw"
 }
 -->
 # Ujumuishaji wa Biashara
 
+<<<<<<< HEAD
+Unapojenga MCP Servers katika muktadha wa biashara, mara nyingi unahitaji kuunganisha na majukwaa na huduma za AI zilizopo. Sehemu hii inashughulikia jinsi ya kuunganisha MCP na mifumo ya biashara kama Azure OpenAI na Microsoft AI Foundry, kuwezesha uwezo wa hali ya juu wa AI na uratibu wa zana.
+
+## Utangulizi
+
+Katika somo hili, utajifunza jinsi ya kuunganisha Model Context Protocol (MCP) na mifumo ya AI ya biashara, ukilenga Azure OpenAI na Microsoft AI Foundry. Ujumuishaji huu hukuruhusu kutumia mifano na zana zenye nguvu za AI huku ukidumisha kubadilika na upanuzi wa MCP.
+=======
 Unapojenga Seva za MCP katika muktadha wa biashara, mara nyingi unahitaji kuunganisha na majukwaa na huduma za AI zilizopo. Sehemu hii inashughulikia jinsi ya kuunganisha MCP na mifumo ya biashara kama Azure OpenAI na Microsoft AI Foundry, kuwezesha uwezo wa hali ya juu wa AI na uratibu wa zana.
 
 ## Utangulizi
 
 Katika somo hili, utajifunza jinsi ya kuunganisha Model Context Protocol (MCP) na mifumo ya AI ya biashara, ukilenga Azure OpenAI na Microsoft AI Foundry. Ujumuishaji huu hukuwezesha kutumia mifano na zana zenye nguvu za AI huku ukidumisha unyumbufu na upanuzi wa MCP.
+>>>>>>> origin/main
 
 ## Malengo ya Kujifunza
 
@@ -22,11 +34,19 @@ Ifikapo mwisho wa somo hili, utaweza:
 - Kuunganisha MCP na Azure OpenAI ili kutumia uwezo wake wa AI.
 - Kutekeleza uratibu wa zana za MCP na Azure OpenAI.
 - Kuchanganya MCP na Microsoft AI Foundry kwa uwezo wa hali ya juu wa mawakala wa AI.
+<<<<<<< HEAD
+- Kutumia Azure Machine Learning (ML) kutekeleza mabomba ya ML na kusajili mifano kama zana za MCP.
+
+## Ujumuishaji wa Azure OpenAI
+
+Azure OpenAI inatoa ufikiaji wa mifano yenye nguvu ya AI kama GPT-4 na mingineyo. Kuunganisha MCP na Azure OpenAI hukuruhusu kutumia mifano hii huku ukidumisha kubadilika kwa uratibu wa zana za MCP.
+=======
 - Kutumia Azure Machine Learning (ML) kwa kutekeleza mabomba ya ML na kusajili mifano kama zana za MCP.
 
 ## Ujumuishaji wa Azure OpenAI
 
 Azure OpenAI hutoa ufikiaji wa mifano yenye nguvu ya AI kama GPT-4 na mingine. Kuunganisha MCP na Azure OpenAI hukuwezesha kutumia mifano hii huku ukidumisha unyumbufu wa uratibu wa zana za MCP.
+>>>>>>> origin/main
 
 ### Utekelezaji wa C#
 
@@ -96,17 +116,29 @@ namespace EnterpriseIntegration
 
 Katika msimbo uliotangulia tumefanya yafuatayo:
 
+<<<<<<< HEAD
+- Kuseti mteja wa Azure OpenAI na endpoint, jina la deployment, na API key.
+- Kuunda mbinu `GetCompletionWithToolsAsync` ili kupata majibu yenye msaada wa zana.
+- Kushughulikia miito ya zana katika majibu.
+=======
 - Tumesanidi mteja wa Azure OpenAI na endpoint, jina la deployment, na API key.
 - Tumeunda mbinu `GetCompletionWithToolsAsync` ili kupata majibu yenye msaada wa zana.
 - Tumeshughulikia miito ya zana katika majibu.
+>>>>>>> origin/main
 
 Unahimizwa kutekeleza mantiki halisi ya kushughulikia zana kulingana na usanidi maalum wa seva yako ya MCP.
 
 ## Ujumuishaji wa Microsoft AI Foundry
 
+<<<<<<< HEAD
+Azure AI Foundry inatoa jukwaa la kujenga na kupeleka mawakala wa AI. Kuunganisha MCP na AI Foundry hukuruhusu kutumia uwezo wake huku ukidumisha kubadilika kwa MCP.
+
+Katika msimbo wa chini, tunatengeneza ujumuishaji wa Wakala unaochakata maombi na kushughulikia miito ya zana kwa kutumia MCP.
+=======
 Azure AI Foundry hutoa jukwaa la kujenga na kupeleka mawakala wa AI. Kuunganisha MCP na AI Foundry hukuwezesha kutumia uwezo wake huku ukidumisha unyumbufu wa MCP.
 
 Katika msimbo hapa chini, tunatengeneza ujumuishaji wa Wakala ambao hushughulikia maombi na kushughulikia miito ya zana kwa kutumia MCP.
+>>>>>>> origin/main
 
 ### Utekelezaji wa Java
 
@@ -166,6 +198,17 @@ public class AIFoundryMcpBridge {
 }
 ```
 
+<<<<<<< HEAD
+Katika msimbo uliotangulia, tumefanya:
+
+- Kuunda darasa la `AIFoundryMcpBridge` linalounganisha AI Foundry na MCP.
+- Kutekeleza mbinu `processAgentRequest` inayochakata ombi la wakala wa AI Foundry.
+- Kushughulikia miito ya zana kwa kuitekeleza kupitia mteja wa MCP na kuwasilisha matokeo kwa wakala wa AI Foundry.
+
+## Kuunganisha MCP na Azure ML
+
+Kuunganisha MCP na Azure Machine Learning (ML) hukuruhusu kutumia uwezo wa hali ya juu wa ML wa Azure huku ukidumisha kubadilika kwa MCP. Ujumuishaji huu unaweza kutumika kutekeleza mabomba ya ML, kusajili mifano kama zana, na kusimamia rasilimali za kompyuta.
+=======
 Katika msimbo uliotangulia, tumefanya yafuatayo:
 
 - Tumeunda darasa `AIFoundryMcpBridge` linalounganisha AI Foundry na MCP.
@@ -175,6 +218,7 @@ Katika msimbo uliotangulia, tumefanya yafuatayo:
 ## Kuunganisha MCP na Azure ML
 
 Kuunganisha MCP na Azure Machine Learning (ML) hukuwezesha kutumia uwezo wa hali ya juu wa ML wa Azure huku ukidumisha unyumbufu wa MCP. Ujumuishaji huu unaweza kutumika kutekeleza mabomba ya ML, kusajili mifano kama zana, na kusimamia rasilimali za kompyuta.
+>>>>>>> origin/main
 
 ### Utekelezaji wa Python
 
@@ -300,6 +344,15 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
+<<<<<<< HEAD
+Katika msimbo uliotangulia, tumefanya:
+
+- Kuunda darasa la `EnterpriseAiIntegration` linalounganisha MCP na Azure ML.
+- Kutekeleza mbinu `execute_ml_pipeline` inayochakata data ya pembejeo kwa kutumia zana za MCP na kuwasilisha bomba la ML kwa Azure ML.
+- Kutekeleza mbinu `register_ml_model_as_tool` inayosajili mfano wa Azure ML kama zana ya MCP, ikijumuisha kuunda mazingira muhimu ya kupeleka na rasilimali za kompyuta.
+- Kuweka ramani ya aina za data za Azure ML kwa aina za JSON schema kwa usajili wa zana.
+- Kutumia programu ya asynchronous kushughulikia shughuli zinazoweza kuchukua muda mrefu kama utekelezaji wa mabomba ya ML na usajili wa mifano.
+=======
 Katika msimbo uliotangulia, tumefanya yafuatayo:
 
 - Tumeunda darasa `EnterpriseAiIntegration` linalounganisha MCP na Azure ML.
@@ -307,10 +360,15 @@ Katika msimbo uliotangulia, tumefanya yafuatayo:
 - Tumetekeleza mbinu `register_ml_model_as_tool` inayosajili mfano wa Azure ML kama zana ya MCP, ikijumuisha kuunda mazingira ya deployment yanayohitajika na rasilimali za kompyuta.
 - Tumefanya ramani ya aina za data za Azure ML kwa aina za JSON schema kwa usajili wa zana.
 - Tumetumia programu ya asynchronous kushughulikia shughuli zinazoweza kuchukua muda mrefu kama utekelezaji wa mabomba ya ML na usajili wa mifano.
+>>>>>>> origin/main
 
 ## Nini cha Kufanya Baadaye
 
 - [5.2 Multi modality](../mcp-multi-modality/README.md)
 
 **Kanusho**:  
+<<<<<<< HEAD
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+=======
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+>>>>>>> origin/main

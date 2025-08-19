@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T22:26:21+00:00",
+=======
   "translation_date": "2025-08-18T17:46:40+00:00",
+>>>>>>> origin/main
   "source_file": "08-BestPractices/README.md",
   "language_code": "sl"
 }
@@ -47,9 +51,15 @@ Naslednje najboljše prakse izhajajo iz uradne dokumentacije Model Context Proto
 
 ### Najboljše prakse za varnost
 
+<<<<<<< HEAD
+1. **Soglasje in nadzor uporabnika**: Vedno zahtevajte izrecno soglasje uporabnika pred dostopom do podatkov ali izvajanjem operacij. Omogočite jasen nadzor nad tem, kateri podatki se delijo in katere akcije so odobrene.
+
+2. **Zasebnost podatkov**: Uporabniške podatke razkrivajte le z izrecnim soglasjem in jih zaščitite z ustreznimi kontrolami dostopa. Preprečite nepooblaščeno prenašanje podatkov.
+=======
 1. **Soglasje in nadzor uporabnika**: Vedno zahtevajte izrecno soglasje uporabnika pred dostopom do podatkov ali izvajanjem operacij. Omogočite jasen nadzor nad tem, kateri podatki so deljeni in katere akcije so odobrene.
 
 2. **Zasebnost podatkov**: Razkrijte podatke uporabnika le z izrecnim soglasjem in jih zaščitite z ustreznimi kontrolami dostopa. Preprečite nepooblaščeno prenašanje podatkov.
+>>>>>>> origin/main
 
 3. **Varnost orodij**: Zahtevajte izrecno soglasje uporabnika pred uporabo katerega koli orodja. Poskrbite, da uporabniki razumejo funkcionalnost vsakega orodja in uveljavite robustne varnostne meje.
 
@@ -57,7 +67,11 @@ Naslednje najboljše prakse izhajajo iz uradne dokumentacije Model Context Proto
 
 5. **Avtentikacija**: Zahtevajte ustrezno avtentikacijo pred odobritvijo dostopa do orodij, virov ali občutljivih operacij z uporabo API ključev, OAuth žetonov ali drugih varnih metod avtentikacije.
 
+<<<<<<< HEAD
+6. **Validacija parametrov**: Uveljavite validacijo za vse pozive orodij, da preprečite, da bi nepravilni ali zlonamerni vnosi dosegli implementacije orodij.
+=======
 6. **Validacija parametrov**: Uvedite validacijo za vse pozive orodij, da preprečite, da bi neveljavni ali zlonamerni vnosi dosegli implementacije orodij.
+>>>>>>> origin/main
 
 7. **Omejevanje hitrosti**: Uvedite omejevanje hitrosti, da preprečite zlorabe in zagotovite pošteno uporabo strežniških virov.
 
@@ -67,7 +81,11 @@ Naslednje najboljše prakse izhajajo iz uradne dokumentacije Model Context Proto
 
 2. **Oblikovanje orodij**: Ustvarite osredotočena orodja, ki dobro opravljajo eno nalogo, namesto monolitnih orodij, ki obravnavajo več skrbi.
 
+<<<<<<< HEAD
+3. **Obravnava napak**: Uvedite standardizirana sporočila o napakah in kode za pomoč pri diagnosticiranju težav, elegantno obravnavanje neuspehov in zagotavljanje uporabnih povratnih informacij.
+=======
 3. **Obravnava napak**: Uvedite standardizirana sporočila o napakah in kode za pomoč pri diagnosticiranju težav, obravnavanju neuspehov in zagotavljanju uporabnih povratnih informacij.
+>>>>>>> origin/main
 
 4. **Beleženje**: Konfigurirajte strukturirane dnevnike za revizijo, odpravljanje napak in spremljanje interakcij protokola.
 
@@ -77,7 +95,11 @@ Naslednje najboljše prakse izhajajo iz uradne dokumentacije Model Context Proto
 
 ## Dodatni viri
 
+<<<<<<< HEAD
+Za najbolj ažurne informacije o najboljših praksah MCP glejte:
+=======
 Za najnovejše informacije o najboljših praksah MCP glejte:
+>>>>>>> origin/main
 
 - [Dokumentacija MCP](https://modelcontextprotocol.io/)
 - [Specifikacija MCP](https://spec.modelcontextprotocol.io/)
@@ -90,7 +112,11 @@ Za najnovejše informacije o najboljših praksah MCP glejte:
 
 #### 1. Načelo enotne odgovornosti
 
+<<<<<<< HEAD
+Vsako MCP orodje naj ima jasno, osredotočeno nalogo. Namesto ustvarjanja monolitnih orodij, ki poskušajo obravnavati več skrbi, razvijte specializirana orodja, ki odlično opravljajo specifične naloge.
+=======
 Vsako MCP orodje naj ima jasno, osredotočeno nalogo. Namesto ustvarjanja monolitnih orodij, ki poskušajo obravnavati več skrbi, razvijajte specializirana orodja, ki odlično opravljajo specifične naloge.
+>>>>>>> origin/main
 
 ```csharp
 // A focused tool that does one thing well
@@ -442,7 +468,7 @@ public class RateLimitingMiddleware
 
 ## Najboljše prakse testiranja
 
-### 1. Enotno testiranje MCP orodij
+### 1. Enotestiranje MCP orodij
 
 Vedno testirajte svoja orodja ločeno, z uporabo simuliranih zunanjih odvisnosti:
 
@@ -669,7 +695,11 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
+<<<<<<< HEAD
+### Najboljše prakse oblikovanja shem
+=======
 ### Najboljše prakse za oblikovanje shem
+>>>>>>> origin/main
 
 Shema je pogodba med modelom in vašim orodjem. Dobro oblikovane sheme vodijo k boljši uporabnosti orodij.
 
@@ -756,7 +786,11 @@ Map<String, Object> getSchema() {
 
 #### 3. Dosledne strukture odgovorov
 
+<<<<<<< HEAD
+Ohranite doslednost v svojih strukturah odgovorov, da modelom olajšate interpretacijo rezultatov:
+=======
 Ohranite doslednost v svojih strukturah odgovorov, da olajšate interpretacijo rezultatov modelom:
+>>>>>>> origin/main
 
 ```python
 async def execute_async(self, request):
@@ -799,7 +833,11 @@ def _format_item(self, item):
 
 Robustna obravnava napak je ključna za zanesljivost MCP orodij.
 
+<<<<<<< HEAD
+#### 1. Elegantna obravnava napak
+=======
 #### 1. Milostna obravnava napak
+>>>>>>> origin/main
 
 Obravnavajte napake na ustreznih ravneh in zagotovite informativna sporočila:
 
@@ -953,9 +991,15 @@ public class CachedDataTool : IMcpTool
 }
 ```
 
+<<<<<<< HEAD
+#### 2. Asinhrono procesiranje
+
+Uporabite asinhrone vzorce programiranja za operacije, vezane na vhodno-izhodne procese:
+=======
 #### 2. Asinhrona obdelava
 
 Uporabite asinhrone vzorce programiranja za operacije, ki temeljijo na vhodno-izhodnih operacijah:
+>>>>>>> origin/main
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -1139,9 +1183,15 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
+<<<<<<< HEAD
+#### 3. Ravnanje z občutljivimi podatki
+
+Občutljive podatke obravnavajte previdno:
+=======
 #### 3. Občutljivo ravnanje s podatki
 
 Ravnajte z občutljivimi podatki previdno:
+>>>>>>> origin/main
 
 ```python
 class SecureDataTool(Tool):
@@ -1194,7 +1244,11 @@ class SecureDataTool(Tool):
 
 Celovito testiranje zagotavlja, da MCP orodja pravilno delujejo, obravnavajo robne primere in se pravilno integrirajo s preostalim sistemom.
 
+<<<<<<< HEAD
+### Enotestiranje
+=======
 ### Enotno testiranje
+>>>>>>> origin/main
 
 #### 1. Testirajte vsako orodje ločeno
 
@@ -1260,7 +1314,11 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 
 #### 2. Testiranje validacije shem
 
+<<<<<<< HEAD
+Preverite, ali so sheme veljavne in pravilno uveljavljajo omejitve:
+=======
 Testirajte, da so sheme veljavne in pravilno uveljavljajo omejitve:
+>>>>>>> origin/main
 
 ```java
 @Test
@@ -1406,7 +1464,11 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. Testiranje MCP strežnika
 
+<<<<<<< HEAD
+Testirajte MCP strežnik s popolno registracijo in izvedbo orodij:
+=======
 Testirajte MCP strežnik s polno registracijo orodij in izvedbo:
+>>>>>>> origin/main
 
 ```java
 @SpringBootTest
@@ -1533,7 +1595,11 @@ async def test_model_interaction_with_tool():
 
 #### 1. Testiranje obremenitve
 
+<<<<<<< HEAD
+Preverite, koliko sočasnih zahtev lahko obravnava vaš MCP strežnik:
+=======
 Testirajte, koliko sočasnih zahtev lahko obravnava vaš MCP strežnik:
+>>>>>>> origin/main
 
 ```csharp
 [Fact]
@@ -1568,7 +1634,11 @@ public async Task McpServer_HandlesHighConcurrency()
 
 #### 2. Testiranje stresa
 
+<<<<<<< HEAD
+Preverite sistem pod ekstremno obremenitvijo:
+=======
 Testirajte sistem pod ekstremno obremenitvijo:
+>>>>>>> origin/main
 
 ```java
 @Test
@@ -1665,7 +1735,11 @@ def configure_monitoring(server):
     return server
 ```
 
+<<<<<<< HEAD
+## Oblikovanje delovnih tokov MCP
+=======
 ## Oblikovanje vzorcev delovnih tokov MCP
+>>>>>>> origin/main
 
 Dobro oblikovani delovni tokovi MCP izboljšajo učinkovitost, zanesljivost in vzdržljivost. Tukaj so ključni vzorci, ki jih je treba upoštevati:
 
@@ -1712,7 +1786,11 @@ result = await data_processing_chain.execute(
 
 ### 2. Vzorec dispečerja
 
+<<<<<<< HEAD
+Uporabite osrednje orodje, ki usmerja na specializirana orodja glede na vhod:
+=======
 Uporabite osrednje orodje, ki razporeja na specializirana orodja glede na vhod:
+>>>>>>> origin/main
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1792,7 +1870,11 @@ public class ContentDispatcherTool : IMcpTool
 }
 ```
 
+<<<<<<< HEAD
+### 3. Vzorec vzporednega procesiranja
+=======
 ### 3. Vzorec vzporedne obdelave
+>>>>>>> origin/main
 
 Izvedite več orodij hkrati za večjo učinkovitost:
 
@@ -1862,7 +1944,11 @@ public class ParallelDataProcessingWorkflow {
 
 ### 4. Vzorec obnovitve napak
 
+<<<<<<< HEAD
+Uvedite elegantne rešitve za neuspehe orodij:
+=======
 Uvedite milostne rešitve za neuspehe orodij:
+>>>>>>> origin/main
 
 ```python
 class ResilientWorkflow:
@@ -1969,7 +2055,11 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 
 ## Pregled
 
+<<<<<<< HEAD
+Testiranje je ključni vidik razvoja zanesljivih, visokokakovostnih MCP strežnikov. Ta vodnik ponuja celovite najboljše prakse in nasvete za testiranje vaših MCP strežnikov skozi celoten razvojni cikel, od enotestov do integracijskih testov in validacije od konca do konca.
+=======
 Testiranje je ključni vidik razvoja zanesljivih, visokokakovostnih MCP strežnikov. Ta vodnik ponuja celovite najboljše prakse in nasvete za testiranje vaših MCP strežnikov skozi celoten razvojni cikel, od enotnih testov do integracijskih testov in validacije od konca do konca.
+>>>>>>> origin/main
 
 ## Zakaj je testiranje pomembno za MCP strežnike
 
@@ -1977,6 +2067,27 @@ MCP strežniki služijo kot ključni vmesnik med AI modeli in odjemalskimi aplik
 
 - Zanesljivost v produkcijskih okoljih
 - Natančno obravnavo zahtev in odgovorov
+<<<<<<< HEAD
+- Pravilno implementacijo specifikacij MCP
+- Odpornost proti neuspehom in robnim primerom
+- Dosledno zmogljivost pod različnimi obremenitvami
+
+## Enotestiranje MCP strežnikov
+
+### Enotestiranje (osnova)
+
+Enotesti preverjajo posamezne komponente vašega MCP strežnika ločeno.
+
+#### Kaj testirati
+
+1. **Upravljalniki virov**: Testirajte logiko vsakega upravljalnika virov neodvisno
+2. **Implementacije orodij**: Preverite vedenje orodij z različnimi vnosi
+3. **Predloge pozivov**: Zagotovite pravilno upodabljanje predlog pozivov
+4. **Validacija shem**: Testirajte logiko validacije parametrov
+5. **Obravnava napak**: Preverite odgovore na napake za neveljavne vnose
+
+#### Najboljše prakse za enotestiranje
+=======
 - Pravilno implementacijo MCP specifikacij
 - Odpornost proti neuspehom in robnim primerom
 - Dosledno zmogljivost pod različnimi obremenitvami
@@ -1996,6 +2107,7 @@ Enotni testi preverjajo posamezne komponente vašega MCP strežnika ločeno.
 5. **Obravnava napak**: Preverite odgovore na napake za neveljavne vnose
 
 #### Najboljše prakse za enotno testiranje
+>>>>>>> origin/main
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -2048,7 +2160,11 @@ Integracijski testi preverjajo interakcije med komponentami vašega MCP strežni
 1. **Inicializacija strežnika**: Testirajte zagon strežnika z različnimi konfiguracijami
 2. **Registracija poti**: Preverite, ali so vsi končne točke pravilno registrirane
 3. **Obdelava zahtev**: Testirajte celoten cikel zahteva-odgovor
+<<<<<<< HEAD
+4. **Propagacija napak**: Zagotovite pravilno obravnavo napak med komponentami
+=======
 4. **Propagacija napak**: Zagotovite, da se napake pravilno obravnavajo med komponentami
+>>>>>>> origin/main
 5. **Avtentikacija in avtorizacija**: Testirajte varnostne mehanizme
 
 #### Najboljše prakse za integracijsko testiranje
@@ -2094,12 +2210,21 @@ Testi od konca do konca preverjajo celotno vedenje sistema od odjemalca do stre�
 #### Kaj testirati
 
 1. **Komunikacija odjemalec-strežnik**: Testirajte celotne cikle zahteva-odgovor
+<<<<<<< HEAD
+2. **Resnični odjemalski SDK-ji**: Testirajte z dejanskimi implementacijami odjemalcev
+3. **Zmogljivost pod obremenitvijo**: Preverite vedenje pri več sočasnih zahtevah
+4. **Obnovitev napak**: Testirajte obnovitev sistema po neuspehih
+5. **Dolgotrajne operacije**: Preverite obravnavo pretakanja in dolgih operacij
+
+#### Najboljše prakse za testiranje od konca do konca
+=======
 2. **Pravi odjemalski SDK-ji**: Testirajte z dejanskimi implementacijami odjemalcev
 3. **Zmogljivost pod obremenitvijo**: Preverite vedenje z več sočasnimi zahtevami
 4. **Obnovitev napak**: Testirajte obnovitev sistema po neuspehih
 5. **Dolgotrajne operacije**: Preverite obravnavo pretakanja in dolgih operacij
 
 #### Najboljše prakse za testiranje E2E
+>>>>>>> origin/main
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -2131,18 +2256,32 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
+<<<<<<< HEAD
+## Strategije simuliranja za testiranje MCP
+
+Simuliranje je bistveno za izolacijo komponent med testiranjem.
+
+### Komponente za simuliranje
+=======
 ## Strategije simulacije za testiranje MCP
 
 Simulacija je bistvena za izolacijo komponent med testiranjem.
 
 ### Komponente za simulacijo
+>>>>>>> origin/main
 
 1. **Zunanji AI modeli**: Simulirajte odzive modelov za predvidljivo testiranje
 2. **Zunanje storitve**: Simulirajte odvisnosti API-jev (podatkovne baze, storitve tretjih oseb)
 3. **Storitve avtentikacije**: Simulirajte ponudnike identitete
+<<<<<<< HEAD
+4. **Ponudniki virov**: Simulirajte drage upravljalnike virov
+
+### Primer: Simuliranje odziva AI modela
+=======
 4. **Ponudniki virov**: Simulirajte drage obravnavalce virov
 
 ### Primer: Simulacija odziva AI modela
+>>>>>>> origin/main
 
 ```csharp
 // C# example with Moq
@@ -2176,10 +2315,21 @@ def test_with_mock_model(mock_model):
 
 ## Testiranje zmogljivosti
 
+<<<<<<< HEAD
+Testiranje zmogljivosti je ključno za produkcijske MCP strežnike.
+
+### Kaj meriti
+
+1. **
+3. **Osnovne zmogljivosti**: Ohranjajte merila zmogljivosti za odkrivanje regresij
+4. **Varnostni pregledi**: Avtomatizirajte varnostno testiranje kot del cevovoda
+
+=======
 Testiranje zmogljivosti je
 3. **Osnovne zmogljivosti**: Ohranjajte merila zmogljivosti za odkrivanje regresij
 4. **Varnostni pregledi**: Avtomatizirajte varnostno testiranje kot del cevovoda
 
+>>>>>>> origin/main
 ### Primer CI cevovoda (GitHub Actions)
 
 ```yaml
@@ -2266,7 +2416,11 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 4. **Testirajte logiko avtorizacije**: Zagotovite pravilno kontrolo dostopa za različne uporabniške vloge
 5. **Spremljajte pokritost testov**: Ciljajte na visoko pokritost kritične kode
 6. **Testirajte pretočne odgovore**: Preverite pravilno obravnavo pretočne vsebine
+<<<<<<< HEAD
+7. **Simulirajte težave z omrežjem**: Testirajte obnašanje v slabih omrežnih pogojih
+=======
 7. **Simulirajte težave v omrežju**: Testirajte obnašanje v slabih omrežnih pogojih
+>>>>>>> origin/main
 8. **Testirajte omejitve virov**: Preverite obnašanje pri doseganju kvot ali omejitev hitrosti
 9. **Avtomatizirajte regresijske teste**: Zgradite zbirko, ki se izvaja ob vsaki spremembi kode
 10. **Dokumentirajte testne primere**: Ohranjajte jasno dokumentacijo testnih scenarijev
@@ -2276,6 +2430,18 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 - **Preveliko zanašanje na testiranje "srečne poti"**: Poskrbite, da temeljito testirate primere napak
 - **Ignoriranje testiranja zmogljivosti**: Identificirajte ozka grla, preden vplivajo na produkcijo
 - **Testiranje samo v izolaciji**: Združite enote, integracijo in E2E teste
+<<<<<<< HEAD
+- **Nepopolna pokritost API-ja**: Poskrbite, da so testirane vse končne točke in funkcije
+- **Nedosledna testna okolja**: Uporabljajte vsebnike za zagotavljanje doslednih testnih okolij
+
+## Zaključek
+
+Celovita strategija testiranja je ključna za razvoj zanesljivih in visokokakovostnih MCP strežnikov. Z izvajanjem najboljših praks in nasvetov, opisanih v tem vodniku, lahko zagotovite, da vaše MCP implementacije dosegajo najvišje standarde kakovosti, zanesljivosti in zmogljivosti.
+
+## Ključne točke
+
+1. **Oblikovanje orodij**: Upoštevajte načelo enotne odgovornosti, uporabite vbrizgavanje odvisnosti in oblikujte za sestavljivost
+=======
 - **Nepopolna pokritost API-ja**: Zagotovite, da so testirane vse končne točke in funkcije
 - **Nedosledna testna okolja**: Uporabljajte vsebnike za dosledna testna okolja
 
@@ -2286,6 +2452,7 @@ Celovita strategija testiranja je ključna za razvoj zanesljivih, visokokakovost
 ## Ključne točke
 
 1. **Oblikovanje orodij**: Upoštevajte načelo enotne odgovornosti, uporabite injekcijo odvisnosti in oblikujte za sestavljivost
+>>>>>>> origin/main
 2. **Oblikovanje shem**: Ustvarite jasne, dobro dokumentirane sheme z ustreznimi omejitvami validacije
 3. **Obravnava napak**: Izvedite elegantno obravnavo napak, strukturirane odgovore na napake in logiko ponovnih poskusov
 4. **Zmogljivost**: Uporabljajte predpomnjenje, asinhrono obdelavo in omejevanje virov
@@ -2306,14 +2473,26 @@ Izvedite sheme orodij, obravnavo napak in vzorec delovnega toka, ki najbolj ustr
 
 ## Viri
 
+<<<<<<< HEAD
+1. Pridružite se MCP skupnosti na [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs), da ostanete na tekočem z najnovejšimi novostmi
+2. Prispevajte k odprtokodnim [MCP projektom](https://github.com/modelcontextprotocol)
+3. Uporabite MCP načela v AI pobudah vaše organizacije
+4. Raziščite specializirane MCP implementacije za vašo industrijo
+5. Razmislite o naprednih tečajih na specifičnih MCP temah, kot so multimodalna integracija ali integracija aplikacij v podjetjih
+=======
 1. Pridružite se MCP skupnosti na [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs), da ostanete na tekočem z najnovejšimi razvoji
 2. Prispevajte k odprtokodnim [MCP projektom](https://github.com/modelcontextprotocol)
 3. Uporabite MCP načela v svojih organizacijskih AI pobudah
 4. Raziščite specializirane MCP implementacije za svojo industrijo
 5. Razmislite o naprednih tečajih o specifičnih MCP temah, kot so multimodalna integracija ali integracija aplikacij v podjetjih
+>>>>>>> origin/main
 6. Eksperimentirajte z gradnjo lastnih MCP orodij in delovnih tokov z uporabo načel, pridobljenih skozi [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 Naprej: Najboljše prakse [študije primerov](../09-CaseStudy/README.md)
 
 **Omejitev odgovornosti**:  
+<<<<<<< HEAD
+Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+=======
 Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+>>>>>>> origin/main

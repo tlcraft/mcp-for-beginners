@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d26f746e21775c30b4d7ed97962b24df",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T23:01:26+00:00",
+=======
   "translation_date": "2025-08-18T18:22:46+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "uk"
 }
@@ -53,7 +57,11 @@ mcp dev server.py
 
 ### Тестування в режимі CLI
 
+<<<<<<< HEAD
+Інспектор, який ви запустили, насправді є додатком Node.js, а `mcp dev` — це обгортка навколо нього.
+=======
 Інспектор, який ви запустили, насправді є додатком Node.js, а `mcp dev` — це оболонка навколо нього.
+>>>>>>> origin/main
 
 Ви можете запустити його безпосередньо в режимі CLI, виконавши наступну команду:
 

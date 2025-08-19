@@ -2,12 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "997c7119766a69552e23d7d681316902",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T20:42:01+00:00",
+=======
   "translation_date": "2025-08-18T15:55:32+00:00",
+>>>>>>> origin/main
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "ro"
 }
 -->
+<<<<<<< HEAD
+# Cele Mai Bune Practici de Securitate MCP - Ghid Avansat de Implementare
+=======
 # Cele Mai Bune Practici de Securitate MCP - Ghid de Implementare Avansată
+>>>>>>> origin/main
 
 > **Standard Curent**: Acest ghid reflectă cerințele de securitate din [Specificația MCP 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) și [Cele Mai Bune Practici de Securitate MCP](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices).
 
@@ -15,7 +23,11 @@ Securitatea este esențială pentru implementările MCP, mai ales în medii ente
 
 ## Introducere
 
+<<<<<<< HEAD
+Model Context Protocol (MCP) introduce provocări unice de securitate care depășesc securitatea software tradițională. Pe măsură ce sistemele AI obțin acces la instrumente, date și servicii externe, apar noi vectori de atac, inclusiv injecția de prompturi, otrăvirea instrumentelor, deturnarea sesiunilor, problemele de tip "confused deputy" și vulnerabilitățile de tip "token passthrough".
+=======
 Model Context Protocol (MCP) introduce provocări unice de securitate care depășesc securitatea software tradițională. Pe măsură ce sistemele AI obțin acces la instrumente, date și servicii externe, apar noi vectori de atac, inclusiv injecția de prompturi, compromiterea instrumentelor, deturnarea sesiunilor, problemele de tip "confused deputy" și vulnerabilitățile de tip "token passthrough".
+>>>>>>> origin/main
 
 Această lecție explorează implementări avansate de securitate bazate pe cea mai recentă specificație MCP (2025-06-18), soluții de securitate Microsoft și modele consacrate de securitate enterprise.
 
@@ -23,21 +35,37 @@ Această lecție explorează implementări avansate de securitate bazate pe cea 
 
 **Din Specificația MCP (2025-06-18):**
 
+<<<<<<< HEAD
+- **Interdicții Explicite**: Serverele MCP **NU TREBUIE** să accepte tokenuri care nu sunt emise pentru ele și **NU TREBUIE** să utilizeze sesiuni pentru autentificare
+- **Verificare Obligatorie**: Toate cererile primite **TREBUIE** să fie verificate, iar consimțământul utilizatorului **TREBUIE** să fie obținut pentru operațiuni de proxy
+- **Setări Implicite Sigure**: Implementați controale de securitate fail-safe cu abordări de apărare în profunzime
+- **Controlul Utilizatorului**: Utilizatorii trebuie să ofere consimțământ explicit înainte de accesarea datelor sau executarea instrumentelor
+=======
 - **Interdicții Explicite**: Serverele MCP **NU TREBUIE** să accepte tokenuri care nu sunt emise pentru ele și **NU TREBUIE** să utilizeze sesiuni pentru autentificare  
 - **Verificare Obligatorie**: Toate cererile primite **TREBUIE** să fie verificate, iar consimțământul utilizatorului **TREBUIE** să fie obținut pentru operațiuni de proxy  
 - **Setări Implicite Sigure**: Implementați controale de securitate care să eșueze în siguranță, utilizând abordări de apărare în profunzime  
 - **Controlul Utilizatorului**: Utilizatorii trebuie să ofere consimțământ explicit înainte de accesarea datelor sau executarea instrumentelor  
+>>>>>>> origin/main
 
 ## Obiectivele Învățării
 
 Până la finalul acestei lecții avansate, veți putea:
 
+<<<<<<< HEAD
+- **Implementa Autentificare Avansată**: Integrarea furnizorilor externi de identitate cu Microsoft Entra ID și modele de securitate OAuth 2.1
+- **Preveni Atacurile Specifice AI**: Protejați împotriva injecției de prompturi, otrăvirii instrumentelor și deturnării sesiunilor utilizând Microsoft Prompt Shields și Azure Content Safety
+- **Aplica Securitate Enterprise**: Implementați logare, monitorizare și răspuns la incidente pentru implementările MCP în producție  
+- **Asigura Execuția Instrumentelor**: Proiectați medii de execuție izolate cu controale adecvate de resurse
+- **Aborda Vulnerabilitățile MCP**: Identificați și atenuați problemele de tip "confused deputy", vulnerabilitățile de tip "token passthrough" și riscurile din lanțul de aprovizionare
+- **Integra Securitatea Microsoft**: Utilizați serviciile de securitate Azure și GitHub Advanced Security pentru protecție cuprinzătoare
+=======
 - **Implementa Autentificare Avansată**: Integrarea furnizorilor externi de identitate cu Microsoft Entra ID și modele de securitate OAuth 2.1  
 - **Preveni Atacurile Specifice AI**: Protejați-vă împotriva injecției de prompturi, compromiterii instrumentelor și deturnării sesiunilor utilizând Microsoft Prompt Shields și Azure Content Safety  
 - **Aplica Securitate Enterprise**: Implementați logare, monitorizare și răspuns la incidente pentru implementările MCP în producție  
 - **Asigurați Execuția Instrumentelor**: Proiectați medii de execuție izolate cu controale adecvate de resurse  
 - **Abordați Vulnerabilitățile MCP**: Identificați și atenuați problemele de tip "confused deputy", vulnerabilitățile de tip "token passthrough" și riscurile din lanțul de aprovizionare  
 - **Integrați Securitatea Microsoft**: Utilizați serviciile de securitate Azure și GitHub Advanced Security pentru protecție cuprinzătoare  
+>>>>>>> origin/main
 
 ## **Cerințe Obligatorii de Securitate**
 
@@ -62,6 +90,24 @@ Session Management:
 
 ## Autentificare și Autorizare Avansată
 
+<<<<<<< HEAD
+Implementările moderne MCP beneficiază de evoluția specificației către delegarea furnizorilor externi de identitate, îmbunătățind semnificativ postura de securitate față de implementările personalizate de autentificare.
+
+### **Integrarea Microsoft Entra ID**
+
+Specificația curentă MCP (2025-06-18) permite delegarea către furnizori externi de identitate precum Microsoft Entra ID, oferind caracteristici de securitate la nivel enterprise:
+
+**Beneficii de Securitate:**
+- Autentificare multi-factor (MFA) la nivel enterprise
+- Politici de acces condiționat bazate pe evaluarea riscurilor
+- Gestionarea centralizată a ciclului de viață al identității
+- Protecție avansată împotriva amenințărilor și detectarea anomaliilor
+- Conformitate cu standardele de securitate enterprise
+
+### Implementare .NET cu Entra ID
+
+Implementare îmbunătățită utilizând ecosistemul de securitate Microsoft:
+=======
 Implementările moderne MCP beneficiază de evoluția specificației către delegarea către furnizori externi de identitate, îmbunătățind semnificativ postura de securitate față de implementările personalizate de autentificare.
 
 ### **Integrarea Microsoft Entra ID**
@@ -78,6 +124,7 @@ Specificația MCP curentă (2025-06-18) permite delegarea către furnizori exter
 ### Implementare .NET cu Entra ID
 
 Implementare avansată utilizând ecosistemul de securitate Microsoft:
+>>>>>>> origin/main
 
 ```csharp
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -267,7 +314,11 @@ public class AuditLoggingService
 }
 ``` 
 
+<<<<<<< HEAD
+### Integrarea Java Spring Security cu OAuth 2.1
+=======
 ### Integrare Java Spring Security cu OAuth 2.1
+>>>>>>> origin/main
 
 Implementare avansată Spring Security conform modelelor de securitate OAuth 2.1 cerute de specificația MCP:
 
@@ -910,7 +961,11 @@ async def log_security_event(event_data: Dict):
 
 ### **1. Prevenirea Atacurilor de Tip "Confused Deputy"**
 
+<<<<<<< HEAD
+**Implementare Îmbunătățită Conform Specificației MCP (2025-06-18):**
+=======
 **Implementare Avansată Conform Specificației MCP (2025-06-18):**
+>>>>>>> origin/main
 
 ```python
 import asyncio
@@ -1726,6 +1781,67 @@ class MCPSupplyChainSecurity:
 
 ## Rezumatul Celor Mai Bune Practici & Ghiduri Enterprise
 
+<<<<<<< HEAD
+### **Lista de Verificare Critică pentru Implementare**
+
+Autentificare & Autorizare:
+  Integrarea furnizorilor externi de identitate (Microsoft Entra ID)
+  Validarea audienței tokenurilor (OBLIGATORIU)
+  Fără autentificare bazată pe sesiuni
+  Verificare cuprinzătoare a cererilor
+  
+Controale de Securitate AI:
+  Integrarea Microsoft Prompt Shields
+  Screening Azure Content Safety  
+  Detectarea otrăvirii instrumentelor
+  Validarea conținutului generat
+  
+Securitatea Sesiunilor:
+  ID-uri de sesiune criptografic sigure
+  Legarea sesiunilor la utilizatori specifici
+  Detectarea deturnării sesiunilor
+  Aplicarea transportului HTTPS
+  
+Securitate OAuth & Proxy:
+  Implementarea PKCE (OAuth 2.1)
+  Consimțământ explicit al utilizatorului pentru clienți dinamici
+  Validarea strictă a URI-urilor de redirecționare
+  Fără "token passthrough" (OBLIGATORIU)
+
+Integrare Enterprise:
+  Azure Key Vault pentru gestionarea secretelor
+  Application Insights pentru monitorizarea securității
+  GitHub Advanced Security pentru lanțul de aprovizionare
+  Integrarea Microsoft Defender pentru DevOps
+
+Monitorizare & Răspuns:
+  Logare cuprinzătoare a evenimentelor de securitate
+  Detectarea amenințărilor în timp real
+  Răspuns automatizat la incidente
+  Alertare bazată pe risc
+
+### **Beneficiile Ecosistemului de Securitate Microsoft**
+
+- **Postură de Securitate Integrată**: Securitate unificată pentru identitate, infrastructură și aplicații
+- **Protecție Avansată AI**: Apărări special concepute împotriva amenințărilor specifice AI  
+- **Conformitate Enterprise**: Suport încorporat pentru cerințele de reglementare și standardele din industrie
+- **Inteligență împotriva Amenințărilor**: Integrarea informațiilor globale despre amenințări pentru protecție proactivă
+- **Arhitectură Scalabilă**: Scalare la nivel enterprise cu menținerea controalelor de securitate
+
+### **Referințe & Resurse**
+
+- **[Specificația MCP (2025-06-18)](https://spec.modelcontextprotocol.io/specification/2025-06-18/)**
+- **[Cele Mai Bune Practici de Securitate MCP](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)**  
+- **[Specificația de Autorizare MCP](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)**
+- **[Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)**
+- **[Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/)**
+- **[Cele Mai Bune Practici de Securitate OAuth 2.0 (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)**
+- **[OWASP Top 10 pentru Modele de Limbaj Mare](https://genai.owasp.org/)**
+
+---
+
+> **Notă de Securitate**: Acest ghid avansat de implementare reflectă cerințele curente ale specificației MCP (2025-06-18). Verificați întotdeauna documentația oficială actualizată și luați în considerare cerințele specifice de securitate și modelul de amenințări atunci când implementați aceste controale.
+=======
 ### **Lista de Verificare pentru Implementare Critică**
 
 Autentificare & Autorizare:
@@ -1785,10 +1901,16 @@ Monitorizare & Răspuns:
 ---
 
 > **Notă de Securitate**: Acest ghid de implementare avansată reflectă cerințele curente ale specificației MCP (2025-06-18). Verificați întotdeauna documentația oficială actualizată și luați în considerare cerințele specifice de securitate și modelul de amenințări atunci când implementați aceste controale.
+>>>>>>> origin/main
 
 ## Ce urmează
 
 - [5.9 Căutare web](../web-search-mcp/README.md)
 
+<<<<<<< HEAD
+**Declinarea responsabilității**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru acuratețe, vă rugăm să aveți în vedere că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+=======
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+>>>>>>> origin/main

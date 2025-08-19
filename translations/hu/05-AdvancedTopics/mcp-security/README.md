@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "997c7119766a69552e23d7d681316902",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T19:22:32+00:00",
+=======
   "translation_date": "2025-08-18T14:29:35+00:00",
+>>>>>>> origin/main
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "hu"
 }
@@ -17,12 +21,33 @@ A biztonság kulcsfontosságú az MCP megvalósításoknál, különösen válla
 
 A Model Context Protocol (MCP) egyedi biztonsági kihívásokat vet fel, amelyek túlmutatnak a hagyományos szoftverbiztonságon. Ahogy az AI rendszerek hozzáférést kapnak eszközökhöz, adatokhoz és külső szolgáltatásokhoz, új támadási vektorok jelennek meg, például prompt injekció, eszközmérgezés, munkamenet-eltérítés, összezavart helyettesítő problémák és token átengedési sebezhetőségek.
 
+<<<<<<< HEAD
+Ez a lecke a legújabb MCP specifikáció (2025-06-18), a Microsoft biztonsági megoldásai és bevált vállalati biztonsági minták alapján mutatja be a haladó biztonsági megvalósításokat.
+=======
 Ez a lecke a legújabb MCP specifikáció (2025-06-18), a Microsoft biztonsági megoldásai és bevált vállalati biztonsági minták alapján tárgyalja a haladó biztonsági megvalósításokat.
+>>>>>>> origin/main
 
 ### **Alapvető Biztonsági Elvek**
 
 **Az MCP Specifikációból (2025-06-18):**
 
+<<<<<<< HEAD
+- **Kifejezett Tiltások**: Az MCP szerverek **NEM FOGADHATNAK EL** olyan tokeneket, amelyeket nem nekik állítottak ki, és **NEM HASZNÁLHATNAK** munkameneteket hitelesítésre.
+- **Kötelező Ellenőrzés**: Minden bejövő kérést **ELLENŐRIZNI KELL**, és a felhasználói beleegyezést **MEG KELL SZEREZNI** proxy műveletekhez.
+- **Biztonságos Alapértelmezések**: Alkalmazzon hibabiztos biztonsági vezérlőket mélységi védelemmel.
+- **Felhasználói Ellenőrzés**: A felhasználóknak kifejezett beleegyezést kell adniuk bármilyen adat-hozzáféréshez vagy eszközhasználathoz.
+
+## Tanulási Célok
+
+A lecke végére képes lesz:
+
+- **Haladó Hitelesítés Megvalósítása**: Külső identitásszolgáltató integrációjának telepítése Microsoft Entra ID-vel és OAuth 2.1 biztonsági mintákkal.
+- **AI-specifikus Támadások Megelőzése**: Védekezés prompt injekció, eszközmérgezés és munkamenet-eltérítés ellen Microsoft Prompt Shields és Azure Content Safety segítségével.
+- **Vállalati Biztonság Alkalmazása**: Átfogó naplózás, monitorozás és incidenskezelés megvalósítása termelési MCP telepítésekhez.
+- **Eszközhasználat Biztosítása**: Homokozó környezetek tervezése megfelelő izolációval és erőforrás-vezérléssel.
+- **MCP Sebezhetőségek Kezelése**: Azonosítás és enyhítés összezavart helyettesítő problémák, token átengedési sebezhetőségek és ellátási lánc kockázatok esetén.
+- **Microsoft Biztonság Integrálása**: Azure biztonsági szolgáltatások és GitHub Advanced Security használata átfogó védelem érdekében.
+=======
 - **Kifejezett Tiltások**: Az MCP szerverek **NEM FOGADHATNAK EL** számukra ki nem adott tokeneket, és **NEM HASZNÁLHATNAK** munkameneteket hitelesítésre
 - **Kötelező Ellenőrzés**: Minden bejövő kérést **ELLENŐRIZNI KELL**, és a felhasználói beleegyezést **MEG KELL SZEREZNI** proxy műveletekhez
 - **Biztonságos Alapértelmezések**: Hibabiztos biztonsági vezérlők megvalósítása mélységi védelemmel
@@ -38,6 +63,7 @@ A lecke végére képes leszel:
 - **Eszközhasználat Biztosítása**: Homokozó környezetek tervezése megfelelő izolációval és erőforrás-vezérléssel
 - **MCP Sebezhetőségek Kezelése**: Összezavart helyettesítő problémák, token átengedési sebezhetőségek és ellátási lánc kockázatok azonosítása és enyhítése
 - **Microsoft Biztonság Integrálása**: Azure biztonsági szolgáltatások és GitHub Advanced Security használata átfogó védelem érdekében
+>>>>>>> origin/main
 
 ## **KÖTELEZŐ Biztonsági Követelmények**
 
@@ -1654,9 +1680,147 @@ class MCPThreatDetectionPipeline:
         
         return detection_results
 ```
+<<<<<<< HEAD
 
 ### **Ellátási Lánc Biztonsági Integráció**
 
+```python
+class MCPSupplyChainSecurity:
+    """Comprehensive supply chain security for MCP implementations"""
+    
+    def __init__(self, github_token: str, defender_client):
+        self.github_token = github_token
+        self.defender_client = defender_client
+        self.sbom_analyzer = SoftwareBillOfMaterialsAnalyzer()
+        
+    async def validate_mcp_component_security(self, component: Dict) -> Dict:
+        """Validate security of MCP components before deployment"""
+        
+        validation_results = {
+            "component_name": component.get('name'),
+            "version": component.get('version'),
+            "source": component.get('source'),
+            "security_validated": False,
+            "vulnerabilities": [],
+            "compliance_status": {},
+            "recommendations": []
+        }
+        
+        try:
+            # 1. GitHub Advanced Security scanning
+            if component.get('source', '').startswith('https://github.com/'):
+                github_results = await self.scan_with_github_advanced_security(component)
+                validation_results["vulnerabilities"].extend(github_results['vulnerabilities'])
+                validation_results["compliance_status"]["github_security"] = github_results['status']
+            
+            # 2. Microsoft Defender for DevOps integration
+            defender_results = await self.scan_with_defender_for_devops(component)
+            validation_results["vulnerabilities"].extend(defender_results['vulnerabilities'])
+            validation_results["compliance_status"]["defender_security"] = defender_results['status']
+            
+            # 3. SBOM analysis
+            sbom_results = await self.sbom_analyzer.analyze_component(component)
+            validation_results["dependencies"] = sbom_results['dependencies']
+            validation_results["license_compliance"] = sbom_results['license_status']
+            
+            # 4. Signature verification
+            signature_valid = await self.verify_component_signature(component)
+            validation_results["signature_verified"] = signature_valid
+            
+            # 5. Reputation analysis
+            reputation_score = await self.analyze_component_reputation(component)
+            validation_results["reputation_score"] = reputation_score
+            
+            # Final validation decision
+            critical_vulns = [v for v in validation_results["vulnerabilities"] if v['severity'] == 'CRITICAL']
+            
+            validation_results["security_validated"] = (
+                len(critical_vulns) == 0 and
+                signature_valid and
+                reputation_score > 0.7 and
+                all(status == 'PASS' for status in validation_results["compliance_status"].values())
+            )
+            
+            if not validation_results["security_validated"]:
+                validation_results["recommendations"] = self.generate_security_recommendations(validation_results)
+            
+        except Exception as e:
+            validation_results["error"] = str(e)
+            validation_results["security_validated"] = False
+        
+        return validation_results
+```
+
+## Legjobb Gyakorlatok Összefoglalása és Vállalati Irányelvek
+
+### **Kritikus Megvalósítási Ellenőrzőlista**
+
+Hitelesítés és Jogosultságkezelés:
+  Külső identitásszolgáltató integráció (Microsoft Entra ID)
+  Token közönség érvényesítése (KÖTELEZŐ)
+  Munkamenet-alapú hitelesítés mellőzése
+  Átfogó kérésellenőrzés
+  
+AI Biztonsági Vezérlők:
+  Microsoft Prompt Shields integráció
+  Azure Content Safety szűrés  
+  Eszközmérgezés észlelése
+  Kimeneti tartalom érvényesítése
+  
+Munkamenet-biztonság:
+  Kriptográfiailag biztonságos munkamenet-azonosítók
+  Felhasználóspecifikus munkamenet-kötés
+  Munkamenet-eltérítés észlelése
+  HTTPS szállítási kényszerítés
+  
+OAuth és Proxy Biztonság:
+  PKCE megvalósítás (OAuth 2.1)
+  Kifejezett felhasználói beleegyezés dinamikus kliensekhez
+  Szigorú átirányítási URI érvényesítés
+  Token átengedés mellőzése (KÖTELEZŐ)
+
+Vállalati Integráció:
+  Azure Key Vault titokkezeléshez
+  Application Insights biztonsági monitorozáshoz
+  GitHub Advanced Security az ellátási lánchoz
+  Microsoft Defender for DevOps integráció
+
+Monitorozás és Reagálás:
+  Átfogó biztonsági eseménynaplózás
+  Valós idejű fenyegetésészlelés
+  Automatizált incidenskezelés
+  Kockázatalapú riasztások
+
+### **Microsoft Biztonsági Ökoszisztéma Előnyei**
+
+- **Integrált Biztonsági Helyzet**: Egységes biztonság az identitás, infrastruktúra és alkalmazások között
+- **Fejlett AI Védelem**: Kifejezetten AI-specifikus fenyegetések elleni védelem  
+- **Vállalati Megfelelőség**: Beépített támogatás szabályozási követelményekhez és iparági szabványokhoz
+- **Fenyegetés Intelligencia**: Globális fenyegetés-intelligencia integráció proaktív védelemhez
+- **Skálázható Architektúra**: Vállalati szintű skálázás fenntartott biztonsági vezérlőkkel
+
+### **Hivatkozások és Források**
+
+- **[MCP Specifikáció (2025-06-18)](https://spec.modelcontextprotocol.io/specification/2025-06-18/)**
+- **[MCP Biztonsági Legjobb Gyakorlatok](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)**  
+- **[MCP Jogosultságkezelési Specifikáció](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)**
+- **[Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)**
+- **[Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/)**
+- **[OAuth 2.0 Biztonsági Legjobb Gyakorlatok (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)**
+- **[OWASP Top 10 Nagy Nyelvi Modellekhez](https://genai.owasp.org/)**
+
+---
+
+> **Biztonsági Figyelmeztetés**: Ez a haladó megvalósítási útmutató a jelenlegi MCP specifikáció (2025-06-18) követelményeit tükrözi. Mindig ellenőrizze a legfrissebb hivatalos dokumentációt, és vegye figyelembe saját biztonsági követelményeit és fenyegetési modelljét ezen vezérlők megvalósításakor.
+=======
+>>>>>>> origin/main
+
+### **Ellátási Lánc Biztonsági Integráció**
+
+<<<<<<< HEAD
+- [5.9 Webes keresés](../web-search-mcp/README.md)
+
+=======
 ```python
 class MCPSupplyChainSecurity:
     """Comprehensive supply chain security for MCP implementations"""
@@ -1790,5 +1954,6 @@ Monitorozás és Reagálás:
 
 - [5.9 Webes keresés](../web-search-mcp/README.md)
 
+>>>>>>> origin/main
 **Felelősségkizárás**:  
 Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

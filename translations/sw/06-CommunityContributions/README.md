@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T19:10:29+00:00",
+=======
   "translation_date": "2025-08-18T14:15:54+00:00",
+>>>>>>> origin/main
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "sw"
 }
@@ -11,6 +15,27 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Jinsi ya Kuchangia MCP: Zana, Nyaraka, Msimbo na Zaidi](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.sw.png)](https://youtu.be/v1pvCYAWpRE)
 
+<<<<<<< HEAD
+_(Bonyeza picha hapo juu kutazama video ya somo hili)_
+
+## Muhtasari
+
+Somo hili linazingatia jinsi ya kushirikiana na jamii ya MCP, kuchangia katika mfumo wa MCP, na kufuata mbinu bora za maendeleo ya pamoja. Kuelewa jinsi ya kushiriki katika miradi ya wazi ya MCP ni muhimu kwa wale wanaotaka kuunda mustakabali wa teknolojia hii.
+
+## Malengo ya Kujifunza
+
+Ifikapo mwisho wa somo hili, utaweza:
+
+- Kuelewa muundo wa jamii na mfumo wa MCP  
+- Kushiriki kwa ufanisi katika mijadala na majukwaa ya jamii ya MCP  
+- Kuchangia kwenye hazina za wazi za MCP  
+- Kuunda na kushiriki zana na seva maalum za MCP  
+- Kufuatilia mbinu bora za maendeleo na ushirikiano wa MCP  
+- Kugundua rasilimali na mifumo ya jamii kwa maendeleo ya MCP  
+
+## Mfumo wa Jamii ya MCP
+
+=======
 _(Bofya picha hapo juu kutazama video ya somo hili)_
 
 ## Muhtasari
@@ -30,20 +55,46 @@ Mwisho wa somo hili, utaweza:
 
 ## Mfumo wa Jamii ya MCP
 
+>>>>>>> origin/main
 Mfumo wa MCP unajumuisha vipengele mbalimbali na washiriki wanaofanya kazi pamoja kuendeleza itifaki.
 
 ### Vipengele Muhimu vya Jamii
 
+<<<<<<< HEAD
+1. **Wadumishaji wa Itifaki ya Msingi**: Shirika rasmi la [Model Context Protocol GitHub](https://github.com/modelcontextprotocol) linadumisha maelezo ya msingi ya MCP na utekelezaji wa marejeo.  
+2. **Watengenezaji wa Zana**: Watu binafsi na timu zinazounda zana na seva za MCP.  
+3. **Watoa Huduma za Ujumuishaji**: Makampuni yanayojumuisha MCP katika bidhaa na huduma zao.  
+4. **Watumiaji wa Mwisho**: Waendelezaji na mashirika yanayotumia MCP katika programu zao.  
+5. **Wachangiaji**: Wanajamii wanaochangia msimbo, nyaraka, au rasilimali nyingine.  
+=======
 1. **Wadumishaji wa Itifaki ya Msingi**: Shirika rasmi la [Model Context Protocol GitHub](https://github.com/modelcontextprotocol) linadumisha maelezo ya msingi ya MCP na utekelezaji wa marejeo.
 2. **Watengenezaji wa Zana**: Watu binafsi na timu zinazounda zana na seva za MCP.
 3. **Watoa Huduma za Ujumuishaji**: Kampuni zinazojumuisha MCP katika bidhaa na huduma zao.
 4. **Watumiaji wa Mwisho**: Watengenezaji na mashirika yanayotumia MCP katika programu zao.
 5. **Wachangiaji**: Wanajamii wanaochangia msimbo, nyaraka, au rasilimali nyingine.
+>>>>>>> origin/main
 
 ### Rasilimali za Jamii
 
 #### Njia Rasmi
 
+<<<<<<< HEAD
+- [Shirika la MCP GitHub](https://github.com/modelcontextprotocol)  
+- [Nyaraka za MCP](https://modelcontextprotocol.io/)  
+- [Maelezo ya MCP](https://modelcontextprotocol.io/docs/specification)  
+- [Mijadala ya GitHub](https://github.com/orgs/modelcontextprotocol/discussions)  
+- [Mfano wa Hazina ya Seva za MCP](https://github.com/modelcontextprotocol/servers)  
+
+#### Rasilimali Zinazoendeshwa na Jamii
+
+- [Wateja wa MCP](https://modelcontextprotocol.io/clients) - Orodha ya wateja wanaounga mkono ujumuishaji wa MCP  
+- [Seva za Jamii za MCP](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Orodha inayokua ya seva za MCP zilizotengenezwa na jamii  
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Orodha iliyochaguliwa ya seva za MCP  
+- [PulseMCP](https://www.pulsemcp.com/) - Kitovu cha jamii na jarida la kugundua rasilimali za MCP  
+- [Seva ya Discord](https://discord.gg/jHEGxQu2a5) - Ungana na waendelezaji wa MCP  
+- Utekelezaji wa SDK maalum kwa lugha  
+- Machapisho ya blogu na mafunzo  
+=======
 - [Shirika la MCP GitHub](https://github.com/modelcontextprotocol)
 - [Nyaraka za MCP](https://modelcontextprotocol.io/)
 - [Maelezo ya MCP](https://modelcontextprotocol.io/docs/specification)
@@ -59,6 +110,7 @@ Mfumo wa MCP unajumuisha vipengele mbalimbali na washiriki wanaofanya kazi pamoj
 - [Kituo cha Discord](https://discord.gg/jHEGxQu2a5) - Ungana na watengenezaji wa MCP.
 - Utekelezaji wa SDK maalum kwa lugha.
 - Machapisho ya blogu na mafunzo.
+>>>>>>> origin/main
 
 ## Kuchangia katika MCP
 
@@ -66,6 +118,25 @@ Mfumo wa MCP unajumuisha vipengele mbalimbali na washiriki wanaofanya kazi pamoj
 
 Mfumo wa MCP unakaribisha aina mbalimbali za michango:
 
+<<<<<<< HEAD
+1. **Michango ya Msimbo**:  
+   - Uboreshaji wa itifaki ya msingi  
+   - Marekebisho ya hitilafu  
+   - Utekelezaji wa zana na seva  
+   - Maktaba za mteja/seva katika lugha tofauti  
+
+2. **Nyaraka**:  
+   - Kuboresha nyaraka zilizopo  
+   - Kuunda mafunzo na miongozo  
+   - Kutafsiri nyaraka  
+   - Kuunda mifano na programu za mfano  
+
+3. **Msaada wa Jamii**:  
+   - Kujibu maswali kwenye mijadala na majukwaa  
+   - Kupima na kuripoti matatizo  
+   - Kuandaa matukio ya jamii  
+   - Kutoa mafunzo kwa wachangiaji wapya  
+=======
 1. **Michango ya Msimbo**:
    - Uboreshaji wa itifaki ya msingi
    - Marekebisho ya hitilafu
@@ -83,9 +154,22 @@ Mfumo wa MCP unakaribisha aina mbalimbali za michango:
    - Kupima na kuripoti masuala
    - Kuandaa matukio ya jamii
    - Kutoa mafunzo kwa wachangiaji wapya
+>>>>>>> origin/main
 
-### Mchakato wa Michango: Itifaki ya Msingi
+### Mchakato wa Kuchangia: Itifaki ya Msingi
 
+<<<<<<< HEAD
+Ili kuchangia kwenye itifaki ya msingi ya MCP au utekelezaji rasmi, fuata kanuni hizi kutoka kwa [miongozo rasmi ya kuchangia](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):  
+
+1. **Unyenyekevu na Urahisi**: Maelezo ya MCP yanadumisha viwango vya juu vya kuongeza dhana mpya. Ni rahisi kuongeza vitu kwenye maelezo kuliko kuondoa.  
+
+2. **Mbinu ya Kivitendo**: Mabadiliko ya maelezo yanapaswa kutegemea changamoto maalum za utekelezaji, si mawazo ya kubahatisha.  
+
+3. **Hatua za Pendekezo**:  
+   - Fafanua: Chunguza eneo la tatizo, thibitisha kuwa watumiaji wengine wa MCP wanakutana na tatizo sawa  
+   - Tengeneza Mfano: Jenga suluhisho la mfano na onyesha matumizi yake kwa vitendo  
+   - Andika: Kulingana na mfano, andika pendekezo la maelezo  
+=======
 Ili kuchangia katika itifaki ya msingi ya MCP au utekelezaji rasmi, fuata kanuni hizi kutoka [miongozo rasmi ya kuchangia](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
 1. **Unyenyekevu na Urahisi**: Maelezo ya MCP yanadumisha viwango vya juu vya kuongeza dhana mpya. Ni rahisi kuongeza vitu kwenye maelezo kuliko kuondoa.
@@ -94,6 +178,7 @@ Ili kuchangia katika itifaki ya msingi ya MCP au utekelezaji rasmi, fuata kanuni
    - Kufafanua: Chunguza tatizo, thibitisha kuwa watumiaji wengine wa MCP wanakutana na tatizo sawa.
    - Kujaribu: Tengeneza suluhisho la mfano na onyesha matumizi yake ya vitendo.
    - Kuandika: Kulingana na mfano, andika pendekezo la maelezo.
+>>>>>>> origin/main
 
 ### Mazingira ya Maendeleo
 
@@ -309,18 +394,27 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Miongozo ya Michango
+### Miongozo ya Kuchangia
 
-Ili kufanya mchango wenye mafanikio katika miradi ya MCP:
+Ili kufanya mchango wenye mafanikio kwenye miradi ya MCP:
 
+<<<<<<< HEAD
+1. **Anza Kidogo**: Anza na nyaraka, marekebisho ya hitilafu, au maboresho madogo  
+2. **Fuata Mwongozo wa Mtindo**: Zingatia mtindo wa uandishi wa msimbo wa mradi  
+3. **Andika Majaribio**: Jumuisha majaribio ya kitengo kwa michango yako ya msimbo  
+4. **Andika Nyaraka**: Ongeza nyaraka wazi kwa vipengele au mabadiliko mapya  
+5. **Wasilisha PR Zenye Lengo**: Weka maombi ya kuvuta yakiwa yamelenga suala moja au kipengele  
+6. **Shirikiana na Maoni**: Kuwa tayari kujibu maoni kuhusu michango yako  
+=======
 1. **Anza Kidogo**: Anza na nyaraka, marekebisho ya hitilafu, au maboresho madogo.
 2. **Fuata Mwongozo wa Mtindo**: Zingatia mtindo wa msimbo na kanuni za mradi.
 3. **Andika Majaribio**: Jumuisha majaribio ya kitengo kwa michango yako ya msimbo.
 4. **Andika Nyaraka**: Ongeza nyaraka wazi kwa vipengele au mabadiliko mapya.
 5. **Tuma PR Zilizoelekezwa**: Weka maombi ya kuvuta yakiwa yamelenga suala au kipengele kimoja.
 6. **Shirikiana na Maoni**: Kuwa tayari kujibu maoni kuhusu michango yako.
+>>>>>>> origin/main
 
-### Mfano wa Mtiririko wa Michango
+### Mfano wa Mtiririko wa Kazi wa Mchango
 
 ```bash
 # Clone the repository
@@ -348,20 +442,35 @@ git push origin feature/my-contribution
 
 ## Kuunda na Kushiriki Seva za MCP
 
+<<<<<<< HEAD
+Njia mojawapo yenye thamani zaidi ya kuchangia mfumo wa MCP ni kwa kuunda na kushiriki seva maalum za MCP. Jamii tayari imeunda mamia ya seva kwa huduma na matumizi mbalimbali.
+=======
 Njia mojawapo ya kuchangia kwa thamani katika mfumo wa MCP ni kuunda na kushiriki seva za MCP zilizobinafsishwa. Jamii tayari imeunda mamia ya seva kwa huduma na matumizi mbalimbali.
+>>>>>>> origin/main
 
 ### Mifumo ya Maendeleo ya Seva za MCP
 
 Mifumo kadhaa inapatikana ili kurahisisha maendeleo ya seva za MCP:
 
-1. **SDK Rasmi**:
-   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
-   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
-   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
-   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
-   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
-   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+1. **SDK Rasmi**:  
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)  
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)  
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)  
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)  
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)  
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)  
 
+<<<<<<< HEAD
+2. **Mifumo ya Jamii**:  
+   - [MCP-Framework](https://mcp-framework.com/) - Jenga seva za MCP kwa urahisi na kasi kwa TypeScript  
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Seva za MCP zinazoendeshwa na maelezo kwa Java  
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Mfumo wa Java kwa seva za MCP  
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Mradi wa kuanzia wa Next.js kwa seva za MCP  
+
+### Kuunda Zana Zinazoweza Kushirikishwa
+
+#### Mfano wa .NET: Kuunda Kifurushi cha Zana Kinachoweza Kushirikishwa
+=======
 2. **Mifumo ya Jamii**:
    - [MCP-Framework](https://mcp-framework.com/) - Tengeneza seva za MCP kwa urahisi na kasi kwa TypeScript.
    - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Seva za MCP zinazoendeshwa na maelezo kwa Java.
@@ -371,6 +480,7 @@ Mifumo kadhaa inapatikana ili kurahisisha maendeleo ya seva za MCP:
 ### Kuunda Zana Zinazoweza Kushirikika
 
 #### Mfano wa .NET: Kuunda Kifurushi cha Zana Kinachoweza Kushirikika
+>>>>>>> origin/main
 
 ```csharp
 // Create a new .NET library project
@@ -686,6 +796,32 @@ class SentimentAnalysisTool(Tool):
 
 Unaposhiriki zana za MCP na jamii:
 
+<<<<<<< HEAD
+1. **Nyaraka Kamili**:  
+   - Eleza madhumuni, matumizi, na mifano  
+   - Eleza vigezo na thamani za kurudi  
+   - Andika utegemezi wowote wa nje  
+
+2. **Ushughulikiaji wa Hitilafu**:  
+   - Tekeleza usimamizi wa hitilafu thabiti  
+   - Toa ujumbe wa hitilafu unaofaa  
+   - Shughulikia hali za kipekee kwa uangalifu  
+
+3. **Utendaji**:  
+   - Boresha kwa kasi na matumizi ya rasilimali  
+   - Tekeleza uhifadhi wa muda inapofaa  
+   - Fikiria kuhusu upanuzi  
+
+4. **Usalama**:  
+   - Tumia funguo za API salama na uthibitishaji  
+   - Thibitisha na kusafisha pembejeo  
+   - Tekeleza mipaka ya kiwango kwa miito ya API ya nje  
+
+5. **Majaribio**:  
+   - Jumuisha chanjo ya majaribio ya kina  
+   - Jaribu na aina tofauti za pembejeo na hali za kipekee  
+   - Andika taratibu za majaribio  
+=======
 1. **Nyaraka Kamili**:
    - Andika madhumuni, matumizi, na mifano.
    - Eleza vigezo na thamani za kurudi.
@@ -710,6 +846,7 @@ Unaposhiriki zana za MCP na jamii:
    - Jumuisha chanjo kamili ya majaribio.
    - Jaribu na aina tofauti za pembejeo na hali za kipekee.
    - Andika taratibu za majaribio.
+>>>>>>> origin/main
 
 ## Ushirikiano wa Jamii na Mbinu Bora
 
@@ -717,25 +854,48 @@ Ushirikiano wa ufanisi ni muhimu kwa ukuaji wa mfumo wa MCP.
 
 ### Njia za Mawasiliano
 
+<<<<<<< HEAD
+- Masuala na Mijadala ya GitHub  
+- Microsoft Tech Community  
+- Njia za Discord na Slack  
+- Stack Overflow (tagi: `model-context-protocol` au `mcp`)  
+=======
 - Masuala na Mijadala ya GitHub
 - Microsoft Tech Community
 - Vituo vya Discord na Slack
 - Stack Overflow (tagi: `model-context-protocol` au `mcp`)
+>>>>>>> origin/main
 
 ### Mapitio ya Msimbo
 
 Unapopitia michango ya MCP:
 
+<<<<<<< HEAD
+1. **Uwazi**: Je, msimbo ni wazi na umeandikwa vizuri?  
+2. **Usahihi**: Je, unafanya kazi kama inavyotarajiwa?  
+3. **Ulinganifu**: Je, unafuata kanuni za mradi?  
+4. **Ukamilifu**: Je, majaribio na nyaraka zimejumuishwa?  
+5. **Usalama**: Je, kuna masuala yoyote ya usalama?  
+=======
 1. **Uwazi**: Je, msimbo ni wazi na umeandikwa vizuri?
 2. **Usahihi**: Je, unafanya kazi kama inavyotarajiwa?
 3. **Ulinganifu**: Je, unafuata kanuni za mradi?
 4. **Ukamilifu**: Je, majaribio na nyaraka zimejumuishwa?
 5. **Usalama**: Je, kuna masuala yoyote ya usalama?
+>>>>>>> origin/main
 
 ### Utangamano wa Toleo
 
 Unapounda kwa MCP:
 
+<<<<<<< HEAD
+1. **Toleo la Itifaki**: Zingatia toleo la itifaki ya MCP ambalo zana yako inaunga mkono  
+2. **Utangamano wa Mteja**: Fikiria kuhusu utangamano wa nyuma  
+3. **Utangamano wa Seva**: Fuata miongozo ya utekelezaji wa seva  
+4. **Mabadiliko Makubwa**: Andika wazi mabadiliko yoyote makubwa  
+
+## Mfano wa Mradi wa Jamii: Rejesta ya Zana za MCP
+=======
 1. **Utoaji wa Itifaki**: Zingatia toleo la itifaki ya MCP ambalo zana yako inaunga mkono.
 2. **Utangamano wa Mteja**: Fikiria kuhusu utangamano wa nyuma.
 3. **Utangamano wa Seva**: Fuata miongozo ya utekelezaji wa seva.
@@ -744,6 +904,7 @@ Unapounda kwa MCP:
 ## Mfano wa Mradi wa Jamii: Usajili wa Zana za MCP
 
 Michango muhimu ya jamii inaweza kuwa kuunda usajili wa umma wa zana za MCP.
+>>>>>>> origin/main
 
 ```python
 # Example schema for a community tool registry API
@@ -824,6 +985,29 @@ async def delete_tool(tool_name: str):
 
 ## Mambo Muhimu ya Kukumbuka
 
+<<<<<<< HEAD
+- Jamii ya MCP ni tofauti na inakaribisha aina mbalimbali za michango  
+- Kuchangia MCP kunaweza kuanzia maboresho ya itifaki ya msingi hadi zana maalum  
+- Kufuatilia miongozo ya kuchangia kunaongeza nafasi ya PR yako kukubaliwa  
+- Kuunda na kushiriki zana za MCP ni njia muhimu ya kuboresha mfumo  
+- Ushirikiano wa jamii ni muhimu kwa ukuaji na uboreshaji wa MCP  
+
+## Zoezi
+
+1. Tambua eneo katika mfumo wa MCP ambapo unaweza kuchangia kulingana na ujuzi na maslahi yako  
+2. Fork hazina ya MCP na weka mazingira ya maendeleo ya ndani  
+3. Unda uboreshaji mdogo, marekebisho ya hitilafu, au zana ambayo itafaidisha jamii  
+4. Andika nyaraka za mchango wako na majaribio sahihi  
+5. Wasilisha ombi la kuvuta kwenye hazina husika  
+
+## Rasilimali za Ziada
+
+- [Miradi ya Jamii ya MCP](https://github.com/topics/model-context-protocol)  
+
+---
+
+Ifuatayo: [Masomo kutoka kwa Kupitishwa Mapema](../07-LessonsfromEarlyAdoption/README.md)  
+=======
 - Jamii ya MCP ni tofauti na inakaribisha aina mbalimbali za michango.
 - Kuchangia katika MCP kunaweza kuanzia uboreshaji wa itifaki ya msingi hadi zana za kibinafsi.
 - Kufuatilia miongozo ya michango kunaboresha nafasi ya PR yako kukubaliwa.
@@ -845,6 +1029,7 @@ async def delete_tool(tool_name: str):
 ---
 
 Inayofuata: [Masomo kutoka kwa Kupitishwa Mapema](../07-LessonsfromEarlyAdoption/README.md)
+>>>>>>> origin/main
 
 **Kanusho**:  
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

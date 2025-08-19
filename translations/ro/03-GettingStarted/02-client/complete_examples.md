@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8358c13b5b6877e475674697cdc1a904",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T20:53:49+00:00",
+=======
   "translation_date": "2025-08-18T16:09:04+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/02-client/complete_examples.md",
   "language_code": "ro"
 }
@@ -95,7 +99,11 @@ Fiecare implementare de client demonstrează:
 1. **Gestionarea Conexiunii**
    - Stabilirea conexiunii cu serverul MCP
    - Gestionarea erorilor de conexiune
+<<<<<<< HEAD
+   - Curățare corespunzătoare și gestionarea resurselor
+=======
    - Curățare adecvată și gestionarea resurselor
+>>>>>>> origin/main
 
 2. **Descoperirea Serverului**
    - Listarea uneltelor disponibile
@@ -123,7 +131,11 @@ Fiecare implementare de client demonstrează:
 
 1. **Serverul MCP corespunzător pornit** (din `../01-first-server/`)
 2. **Dependențele necesare instalate** pentru limbajul ales
+<<<<<<< HEAD
+3. **Conectivitate de rețea corespunzătoare** (pentru transporturile bazate pe HTTP)
+=======
 3. **Conectivitate de rețea adecvată** (pentru transporturile bazate pe HTTP)
+>>>>>>> origin/main
 
 ## Diferențe Cheie Între Implementări
 
@@ -167,5 +179,10 @@ După ce explorați aceste exemple de clienți:
 - [MCP cu Integrare LLM](../../../../03-GettingStarted/03-llm-client)
 - [Documentația Oficială MCP](https://modelcontextprotocol.io/)
 
+<<<<<<< HEAD
+**Declinarea responsabilității**:  
+Acest document a fost tradus utilizând serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea realizată de un profesionist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+=======
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+>>>>>>> origin/main

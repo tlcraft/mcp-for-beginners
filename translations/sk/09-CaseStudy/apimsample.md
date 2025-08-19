@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
-  "translation_date": "2025-08-18T15:19:29+00:00",
+  "original_hash": "36de9fae488d6de554d969fe8e0801a8",
+  "translation_date": "2025-07-14T05:36:44+00:00",
   "source_file": "09-CaseStudy/apimsample.md",
   "language_code": "sk"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure API Management je služba, ktorá poskytuje bránu nad vašimi API koncovými bodmi. Funguje tak, že Azure API Management pôsobí ako proxy pred vašimi API a rozhoduje, čo robiť s prichádzajúcimi požiadavkami.
 
-Použitím tejto služby získate množstvo funkcií, ako napríklad:
+Používaním tejto služby získate množstvo funkcií, ako napríklad:
 
 - **Bezpečnosť** – môžete použiť všetko od API kľúčov, JWT až po spravovanú identitu.
 - **Obmedzenie rýchlosti** – skvelá funkcia, ktorá umožňuje rozhodnúť, koľko volaní prejde za určitú časovú jednotku. To pomáha zabezpečiť skvelý zážitok pre všetkých používateľov a zároveň chráni vašu službu pred zahltením požiadavkami.
@@ -24,12 +24,12 @@ Model Context Protocol sa rýchlo stáva štandardom pre agentické AI aplikáci
 
 ## Prehľad
 
-V tomto konkrétnom prípade sa naučíme zverejniť API koncové body ako MCP server. Týmto spôsobom môžeme ľahko sprístupniť tieto koncové body ako súčasť agentickej aplikácie a zároveň využiť funkcie Azure API Management.
+V tomto konkrétnom prípade sa naučíme, ako sprístupniť API koncové body ako MCP server. Týmto spôsobom môžeme tieto koncové body jednoducho začleniť do agentnej aplikácie a zároveň využiť funkcie Azure API Management.
 
 ## Kľúčové funkcie
 
-- Vyberiete metódy koncových bodov, ktoré chcete zverejniť ako nástroje.
-- Dodatočné funkcie závisia od toho, čo nakonfigurujete v sekcii politiky pre vaše API. Tu vám ukážeme, ako pridať obmedzenie rýchlosti.
+- Vyberiete metódy koncového bodu, ktoré chcete sprístupniť ako nástroje.
+- Dodatočné funkcie závisia od toho, čo nakonfigurujete v sekcii politík pre vaše API. Tu vám ukážeme, ako pridať obmedzenie počtu požiadaviek.
 
 ## Predkrok: import API
 
@@ -88,11 +88,11 @@ Tu je postup, ako nastaviť politiku na obmedzenie rýchlosti pre váš MCP serv
 
 Uistime sa, že náš MCP server funguje podľa očakávania.
 
-Na tento účel použijeme Visual Studio Code a GitHub Copilot v režime agenta. Pridáme MCP server do súboru *mcp.json*. Týmto spôsobom bude Visual Studio Code fungovať ako klient s agentickými schopnosťami a koncoví používatelia budú môcť zadať výzvu a interagovať s daným serverom.
+Na to použijeme Visual Studio Code a GitHub Copilot v režime Agenta. Pridáme MCP server do súboru *mcp.json*. Týmto spôsobom bude Visual Studio Code fungovať ako klient s agentnými schopnosťami a koncoví používatelia budú môcť zadať prompt a komunikovať s týmto serverom.
 
 Postup, ako pridať MCP server do Visual Studio Code:
 
-1. Použite príkaz MCP: **Add Server z Command Palette**.
+1. Použite príkaz MCP: **Add Server command from the Command Palette**.
 
 1. Keď budete vyzvaní, vyberte typ servera: **HTTP (HTTP alebo Server Sent Events)**.
 
@@ -134,7 +134,7 @@ Postup, ako pridať MCP server do Visual Studio Code:
 
     - Tu je postup, ako ju pridať do nastavení:
 
-    ![Pridanie hlavičky na autentifikáciu](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), toto spôsobí, že sa zobrazí výzva na zadanie hodnoty API kľúča, ktorú nájdete v Azure Portáli pre vašu inštanciu Azure API Management.
+    ![Pridanie hlavičky pre autentifikáciu](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), čo spôsobí zobrazenie výzvy na zadanie hodnoty API kľúča, ktorú nájdete v Azure Portáli pre vašu inštanciu Azure API Management.
 
    - Ak ju chcete pridať do *mcp.json*, môžete ju pridať takto:
 
@@ -158,7 +158,7 @@ Postup, ako pridať MCP server do Visual Studio Code:
     }
     ```
 
-### Použitie režimu agenta
+### Použitie režimu Agenta
 
 Teraz sme všetko nastavili buď v nastaveniach, alebo v *.vscode/mcp.json*. Vyskúšajme to.
 
@@ -180,22 +180,22 @@ Mala by sa zobraziť ikona Nástroje, kde sú uvedené zverejnené nástroje z v
 
     ![Výsledok z výzvy](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **To, čo vidíte vyššie, závisí od toho, aké nástroje ste nastavili, ale myšlienka je, že dostanete textovú odpoveď ako vyššie.**
+    **to, čo vidíte vyššie, závisí od toho, aké nástroje ste nastavili, ale podstata je, že dostanete textovú odpoveď ako na obrázku**
 
 ## Referencie
 
 Tu sa môžete dozvedieť viac:
 
-- [Tutoriál o Azure API Management a MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
-- [Python príklad: Zabezpečenie vzdialených MCP serverov pomocou Azure API Management (experimentálne)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [Návod na Azure API Management a MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
+- [Python príklad: Bezpečné vzdialené MCP servery pomocou Azure API Management (experimentálne)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 
 - [Laboratórium autorizácie MCP klienta](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
 - [Použitie rozšírenia Azure API Management pre VS Code na import a správu API](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
 - [Registrácia a objavovanie vzdialených MCP serverov v Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
-- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Skvelé repo, ktoré ukazuje mnoho AI schopností s Azure API Management
-- [AI Gateway workshopy](https://azure-samples.github.io/AI-Gateway/) Obsahuje workshopy pomocou Azure Portálu, čo je skvelý spôsob, ako začať hodnotiť AI schopnosti.
+- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Skvelé repozitár, ktorý ukazuje mnohé AI funkcie s Azure API Management
+- [AI Gateway workshopy](https://azure-samples.github.io/AI-Gateway/) Obsahuje workshopy využívajúce Azure Portal, čo je skvelý spôsob, ako začať hodnotiť AI funkcie.
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

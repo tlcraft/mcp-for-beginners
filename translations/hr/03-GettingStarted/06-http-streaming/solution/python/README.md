@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
-  "translation_date": "2025-08-18T17:33:33+00:00",
+  "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
+  "translation_date": "2025-07-13T21:22:51+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "hr"
 }
@@ -142,10 +142,10 @@ Evo kako pokrenuti klasični HTTP streaming server i klijenta, kao i MCP streami
 
 ### Savjeti i rješavanje problema
 
-- Koristite `async/await` za operacije koje ne blokiraju.
-- Uvijek obradite iznimke na serveru i klijentu radi veće pouzdanosti.
+- Koristite `async/await` za neblokirajuće operacije.
+- Uvijek hvatajte iznimke i na serveru i na klijentu radi stabilnosti.
 - Testirajte s više klijenata kako biste vidjeli ažuriranja u stvarnom vremenu.
 - Ako naiđete na greške, provjerite verziju Pythona i osigurajte da su sve ovisnosti instalirane.
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije proizašle iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

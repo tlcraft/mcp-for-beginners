@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2228721599c0c8673de83496b4d7d7a9",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T18:51:01+00:00",
+=======
   "translation_date": "2025-08-18T13:51:45+00:00",
+>>>>>>> origin/main
   "source_file": "09-CaseStudy/apimsample.md",
   "language_code": "sw"
 }
@@ -15,6 +19,18 @@ Kwa kuitumia, unaongeza vipengele vingi kama:
 
 - **Usalama**, unaweza kutumia kila kitu kutoka kwa funguo za API, JWT hadi utambulisho unaosimamiwa.
 - **Kuweka kikomo cha kiwango**, kipengele kizuri ni uwezo wa kuamua ni simu ngapi zinapita kwa muda fulani. Hii husaidia kuhakikisha watumiaji wote wanapata uzoefu mzuri na pia huduma yako haizidiwi na maombi.
+<<<<<<< HEAD
+- **Kupanua na kusawazisha mzigo**. Unaweza kusanidi idadi ya sehemu za mwisho ili kusawazisha mzigo na pia unaweza kuamua jinsi ya "kusawazisha mzigo".
+- **Vipengele vya AI kama kuhifadhi semantiki**, kikomo cha tokeni na ufuatiliaji wa tokeni na zaidi. Hivi ni vipengele bora vinavyoboresha mwitikio na pia vinakusaidia kufuatilia matumizi ya tokeni zako. [Soma zaidi hapa](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
+
+## Kwa nini MCP + Azure API Management?
+
+Model Context Protocol inakuwa haraka kiwango cha programu za AI zenye mawakala na jinsi ya kufichua zana na data kwa njia thabiti. Azure API Management ni chaguo la asili unapohitaji "kusimamia" API. Seva za MCP mara nyingi huunganishwa na API nyingine kutatua maombi kwa zana kwa mfano. Kwa hivyo, kuchanganya Azure API Management na MCP kuna mantiki sana.
+
+## Muhtasari
+
+Katika kesi hii maalum, tutajifunza kufichua sehemu za mwisho za API kama seva ya MCP. Kwa kufanya hivyo, tunaweza kwa urahisi kufanya sehemu hizi kuwa sehemu ya programu yenye mawakala huku tukitumia vipengele kutoka Azure API Management.
+=======
 - **Kuweka mizani na usawazishaji wa mzigo**. Unaweza kusanidi idadi ya sehemu za mwisho ili kusawazisha mzigo na pia unaweza kuamua jinsi ya "kusawazisha mzigo".
 - **Vipengele vya AI kama uhifadhi wa semantic**, kikomo cha tokeni na ufuatiliaji wa tokeni na zaidi. Hivi ni vipengele bora vinavyoboresha mwitikio na pia vinakusaidia kufuatilia matumizi ya tokeni zako. [Soma zaidi hapa](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
 
@@ -25,11 +41,16 @@ Model Context Protocol inakuwa haraka kiwango cha kawaida kwa programu za AI zen
 ## Muhtasari
 
 Katika kesi hii maalum, tutajifunza kufichua sehemu za mwisho za API kama seva ya MCP. Kwa kufanya hivyo, tunaweza kwa urahisi kufanya sehemu hizi za mwisho kuwa sehemu ya programu ya wakala huku tukitumia vipengele kutoka Azure API Management.
+>>>>>>> origin/main
 
 ## Vipengele Muhimu
 
 - Unachagua mbinu za sehemu za mwisho unazotaka kufichua kama zana.
+<<<<<<< HEAD
+- Vipengele vya ziada unavyopata vinategemea kile unachosanidi katika sehemu ya sera kwa API yako. Lakini hapa tutaonyesha jinsi unavyoweza kuongeza kikomo cha kiwango.
+=======
 - Vipengele vya ziada unavyopata vinategemea kile unachosanidi katika sehemu ya sera kwa API yako. Lakini hapa tutaonyesha jinsi unavyoweza kuongeza kuweka kikomo cha kiwango.
+>>>>>>> origin/main
 
 ## Hatua ya awali: kuingiza API
 
@@ -60,7 +81,11 @@ Tembelea mfano wako wa API Management.
 
 ## Hiari: Sanidi sera
 
+<<<<<<< HEAD
+Azure API Management ina dhana ya msingi ya sera ambapo unaseti sheria tofauti kwa sehemu zako za mwisho kama kwa mfano kuweka kikomo cha kiwango au kuhifadhi semantiki. Sera hizi zinaandikwa kwa XML.
+=======
 Azure API Management ina dhana ya msingi ya sera ambapo unaseti sheria tofauti kwa sehemu zako za mwisho kama kwa mfano kuweka kikomo cha kiwango au uhifadhi wa semantic. Sera hizi zinaandikwa kwa XML.
+>>>>>>> origin/main
 
 Hivi ndivyo unavyoweza kusanidi sera ya kuweka kikomo cha kiwango kwa seva yako ya MCP:
 
@@ -88,9 +113,15 @@ Hivi ndivyo unavyoweza kusanidi sera ya kuweka kikomo cha kiwango kwa seva yako 
 
 Tuhakikishe seva yetu ya MCP inafanya kazi kama ilivyokusudiwa.
 
+<<<<<<< HEAD
+Kwa hili, tutatumia Visual Studio Code na GitHub Copilot na hali yake ya Mawakala. Tutaongeza seva ya MCP kwenye faili ya *mcp.json*. Kwa kufanya hivyo, Visual Studio Code itafanya kazi kama mteja mwenye uwezo wa mawakala na watumiaji wa mwisho wataweza kuandika maelekezo na kuingiliana na seva hiyo.
+
+Hivi ndivyo, kuongeza seva ya MCP katika Visual Studio Code:
+=======
 Kwa hili, tutatumia Visual Studio Code na GitHub Copilot na hali yake ya Wakala. Tutaongeza seva ya MCP kwenye faili ya *mcp.json*. Kwa kufanya hivyo, Visual Studio Code itafanya kazi kama mteja mwenye uwezo wa wakala na watumiaji wa mwisho wataweza kuandika maelekezo na kuingiliana na seva hiyo.
 
 Tuone jinsi ya kuongeza seva ya MCP katika Visual Studio Code:
+>>>>>>> origin/main
 
 1. Tumia MCP: **Amri ya Ongeza Seva kutoka kwa Command Palette**.
 
@@ -98,7 +129,11 @@ Tuone jinsi ya kuongeza seva ya MCP katika Visual Studio Code:
 
 1. Ingiza URL ya seva ya MCP katika API Management. Mfano: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (kwa sehemu ya mwisho ya SSE) au **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (kwa sehemu ya mwisho ya MCP), angalia jinsi tofauti kati ya usafirishaji ni `/sse` au `/mcp`.
 
+<<<<<<< HEAD
+1. Ingiza ID ya seva unayopendelea. Hii si thamani muhimu lakini itakusaidia kukumbuka mfano wa seva hii.
+=======
 1. Ingiza kitambulisho cha seva unachopenda. Hii si thamani muhimu lakini itakusaidia kukumbuka seva hii ni nini.
+>>>>>>> origin/main
 
 1. Chagua ikiwa kuhifadhi usanidi kwenye mipangilio ya workspace yako au mipangilio ya mtumiaji.
 
@@ -158,6 +193,17 @@ Tuone jinsi ya kuongeza seva ya MCP katika Visual Studio Code:
     }
     ```
 
+<<<<<<< HEAD
+### Tumia Hali ya Mawakala
+
+Sasa tumeweka kila kitu katika mipangilio au katika *.vscode/mcp.json*. Hebu tujaribu.
+
+Kunapaswa kuwa na ikoni ya Zana kama ifuatavyo, ambapo zana zilizofichuliwa kutoka kwa seva yako zimeorodheshwa:
+
+![Zana kutoka kwa seva](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
+
+1. Bonyeza ikoni ya zana na unapaswa kuona orodha ya zana kama ifuatavyo:
+=======
 ### Tumia hali ya Wakala
 
 Sasa tumesanidi katika mipangilio au katika *.vscode/mcp.json*. Hebu tujaribu.
@@ -167,6 +213,7 @@ Kunapaswa kuwa na ikoni ya Zana kama hii, ambapo zana zilizofichuliwa kutoka kwa
 ![Zana kutoka kwa seva](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
 1. Bonyeza ikoni ya zana na unapaswa kuona orodha ya zana kama hii:
+>>>>>>> origin/main
 
     ![Zana](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
@@ -176,7 +223,11 @@ Kunapaswa kuwa na ikoni ya Zana kama hii, ambapo zana zilizofichuliwa kutoka kwa
     get information from order 2
     ```
 
+<<<<<<< HEAD
+    Sasa utaonyeshwa na ikoni ya zana inayokuuliza kuendelea kuendesha zana. Chagua kuendelea kuendesha zana, sasa unapaswa kuona matokeo kama ifuatavyo:
+=======
     Sasa utaonyeshwa na ikoni ya zana inayokuuliza kuendelea kuita zana. Chagua kuendelea kuendesha zana, unapaswa sasa kuona matokeo kama haya:
+>>>>>>> origin/main
 
     ![Matokeo kutoka kwa maelekezo](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
@@ -187,15 +238,27 @@ Kunapaswa kuwa na ikoni ya Zana kama hii, ambapo zana zilizofichuliwa kutoka kwa
 Hivi ndivyo unavyoweza kujifunza zaidi:
 
 - [Mafunzo kuhusu Azure API Management na MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
+<<<<<<< HEAD
+- [Mfano wa Python: Kulinda seva za MCP za mbali kwa kutumia Azure API Management (majaribio)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+=======
 - [Mfano wa Python: Salama seva za mbali za MCP kwa kutumia Azure API Management (majaribio)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+>>>>>>> origin/main
 
 - [Maabara ya idhini ya mteja wa MCP](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
 - [Tumia kiendelezi cha Azure API Management kwa VS Code kuingiza na kusimamia API](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
+<<<<<<< HEAD
+- [Sajili na gundua seva za MCP za mbali katika Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
+=======
 - [Sajili na gundua seva za mbali za MCP katika Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
+>>>>>>> origin/main
 - [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Hifadhi nzuri inayoonyesha uwezo mwingi wa AI na Azure API Management
 - [Warsha za AI Gateway](https://azure-samples.github.io/AI-Gateway/) Zina warsha zinazotumia Azure Portal, ambayo ni njia nzuri ya kuanza kutathmini uwezo wa AI.
 
 **Kanusho**:  
+<<<<<<< HEAD
+Hati hii imetafsiriwa kwa kutumia huduma ya kutafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+=======
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya binadamu ya kitaalamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+>>>>>>> origin/main

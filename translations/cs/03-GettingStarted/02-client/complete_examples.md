@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8358c13b5b6877e475674697cdc1a904",
-  "translation_date": "2025-08-18T15:14:25+00:00",
+  "original_hash": "affcf199a44f60283a289dcb69dc144e",
+  "translation_date": "2025-07-17T13:35:42+00:00",
   "source_file": "03-GettingStarted/02-client/complete_examples.md",
   "language_code": "cs"
 }
@@ -88,14 +88,14 @@ node client_example_typescript.js
 python client_example_python.py
 ```
 
-## Společné funkce všech klientů
+## Společné vlastnosti všech klientů
 
 Každá implementace klienta demonstruje:
 
 1. **Správa spojení**
    - Navázání spojení s MCP serverem
-   - Zpracování chyb při spojení
-   - Správné uvolnění zdrojů
+   - Zpracování chyb při připojení
+   - Správné ukončení a správa zdrojů
 
 2. **Objevování serveru**
    - Výpis dostupných nástrojů
@@ -142,7 +142,7 @@ Po prozkoumání těchto příkladů klientů:
 1. **Upravte klienty**, abyste přidali nové funkce nebo operace
 2. **Vytvořte vlastní server** a otestujte ho s těmito klienty
 3. **Experimentujte s různými transporty** (SSE vs. Stdio)
-4. **Vytvořte komplexnější aplikaci**, která integruje MCP funkcionalitu
+4. **Postavte složitější aplikaci**, která integruje MCP funkcionalitu
 
 ## Řešení problémů
 
@@ -157,8 +157,8 @@ Po prozkoumání těchto příkladů klientů:
 
 1. **Povolte podrobné logování** ve vašem MCP SDK
 2. **Zkontrolujte logy serveru** pro chybové zprávy
-3. **Ověřte názvy a podpisy nástrojů**, zda odpovídají mezi klientem a serverem
-4. **Nejprve otestujte pomocí MCP Inspector**, abyste ověřili funkčnost serveru
+3. **Ověřte názvy a podpisy nástrojů**, aby odpovídaly mezi klientem a serverem
+4. **Nejprve otestujte s MCP Inspector** pro ověření funkčnosti serveru
 
 ## Související dokumentace
 
@@ -167,5 +167,5 @@ Po prozkoumání těchto příkladů klientů:
 - [MCP s integrací LLM](../../../../03-GettingStarted/03-llm-client)
 - [Oficiální dokumentace MCP](https://modelcontextprotocol.io/)
 
-**Upozornění**:  
-Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o co největší přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

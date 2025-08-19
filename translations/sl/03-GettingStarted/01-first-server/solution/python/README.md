@@ -2,14 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d26f746e21775c30b4d7ed97962b24df",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T22:35:18+00:00",
+=======
   "translation_date": "2025-08-18T17:56:01+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "sl"
 }
 -->
+<<<<<<< HEAD
+# Zagon tega primera
+
+Priporočljivo je, da namestite `uv`, vendar to ni nujno potrebno. Glejte [navodila](https://docs.astral.sh/uv/#highlights).
+=======
 # Zagon tega vzorca
 
 Priporočljivo je namestiti `uv`, vendar to ni nujno potrebno, glejte [navodila](https://docs.astral.sh/uv/#highlights)
+>>>>>>> origin/main
 
 ## -0- Ustvarite virtualno okolje
 
@@ -29,13 +39,21 @@ venv\Scripts\activate
 pip install "mcp[cli]"
 ```
 
+<<<<<<< HEAD
+## -3- Zaženite primer
+=======
 ## -3- Zaženite vzorec
+>>>>>>> origin/main
 
 ```bash
 mcp run server.py
 ```
 
+<<<<<<< HEAD
+## -4- Preizkusite primer
+=======
 ## -4- Preizkusite vzorec
+>>>>>>> origin/main
 
 Ko strežnik deluje v enem terminalu, odprite drug terminal in zaženite naslednji ukaz:
 
@@ -43,6 +61,19 @@ Ko strežnik deluje v enem terminalu, odprite drug terminal in zaženite nasledn
 mcp dev server.py
 ```
 
+<<<<<<< HEAD
+To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča preizkušanje primera.
+
+Ko je strežnik povezan:
+
+- poskusite našteti orodja in zaženite `add` z argumentoma 2 in 4. Videti bi morali rezultat 6.
+
+- pojdite na vire in predlogo virov ter pokličite `get_greeting`. Vnesite ime in videti bi morali pozdrav z vnesenim imenom.
+
+### Testiranje v načinu CLI
+
+Inšpektor, ki ste ga zagnali, je pravzaprav aplikacija Node.js, `mcp dev` pa je njen ovoj. 
+=======
 To bi moralo zagnati spletni strežnik z vizualnim vmesnikom, ki vam omogoča testiranje vzorca.
 
 Ko je strežnik povezan:
@@ -54,6 +85,7 @@ Ko je strežnik povezan:
 ### Testiranje v načinu CLI
 
 Inšpektor, ki ste ga zagnali, je pravzaprav aplikacija Node.js, `mcp dev` pa je njen ovitek.
+>>>>>>> origin/main
 
 Lahko ga zaženete neposredno v načinu CLI z naslednjim ukazom:
 
@@ -117,4 +149,8 @@ Videti bi morali naslednji izpis:
 > Več o inšpektorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
 
 **Omejitev odgovornosti**:  
+<<<<<<< HEAD
+Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+=======
 Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+>>>>>>> origin/main

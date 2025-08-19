@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4117a42f3e7baae859515f7b8b911e56",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T19:04:49+00:00",
+=======
   "translation_date": "2025-08-18T14:08:54+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/01-first-server/solution/README.md",
   "language_code": "sw"
 }

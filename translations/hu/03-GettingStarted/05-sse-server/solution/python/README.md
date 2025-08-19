@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "69ba3bd502bd743233137bac5539c08b",
-  "translation_date": "2025-08-18T14:41:42+00:00",
+  "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
+  "translation_date": "2025-07-13T20:16:44+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "hu"
 }
@@ -47,12 +47,12 @@ Ez elindít egy webszervert vizuális felülettel, amely lehetővé teszi a pél
 
 Miután a szerver csatlakozott:
 
-- Próbáld ki az eszközök listázását, és futtasd az `add` műveletet a 2 és 4 argumentumokkal, az eredményben 6-ot kell látnod.
-- Menj a resources és resource template részhez, és hívd meg a get_greeting-et, írj be egy nevet, és látnod kell egy üdvözlést az általad megadott névvel.
+- próbáld meg lekérdezni az eszközöket, és futtasd az `add` parancsot a 2 és 4 argumentummal, az eredménynek 6-nak kell lennie.
+- menj a resources és resource template részhez, hívd meg a get_greeting-et, írj be egy nevet, és egy névre szóló üdvözletet kell látnod.
 
 ### Tesztelés CLI módban
 
-Az inspector, amit futtattál, valójában egy Node.js alkalmazás, és a `mcp dev` egy wrapper körülötte.
+Az inspector, amit futtattál, valójában egy Node.js alkalmazás, és a `mcp dev` egy wrapper köré építve.
 
 Közvetlenül CLI módban is elindíthatod az alábbi parancs futtatásával:
 
@@ -60,7 +60,7 @@ Közvetlenül CLI módban is elindíthatod az alábbi parancs futtatásával:
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Ez listázza az összes elérhető eszközt a szerveren. Az alábbi kimenetet kell látnod:
+Ez kilistázza az összes elérhető eszközt a szerveren. A következő kimenetet kell látnod:
 
 ```text
 {
@@ -111,8 +111,8 @@ Az alábbi kimenetet kell látnod:
 }
 ```
 
-> [!TIP]  
-> Általában sokkal gyorsabb CLI módban futtatni az inspectort, mint a böngészőben.  
+> ![!TIP]
+> Általában sokkal gyorsabb az inspectort CLI módban futtatni, mint a böngészőben.
 > További információ az inspectorról [itt](https://github.com/modelcontextprotocol/inspector).
 
 **Felelősségkizárás**:  

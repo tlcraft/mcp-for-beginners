@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "858362ce0118de3fec0f9114bf396101",
+<<<<<<< HEAD
+  "translation_date": "2025-08-18T19:03:34+00:00",
+=======
   "translation_date": "2025-08-18T14:07:26+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/README.md",
   "language_code": "sw"
 }
@@ -21,6 +25,21 @@ Sehemu hii inajumuisha masomo kadhaa:
 
 - **3 Mteja na LLM**, njia bora zaidi ya kuandika mteja ni kwa kuongeza LLM ili iweze "kujadiliana" na seva yako kuhusu nini cha kufanya, [kwenda kwenye somo](03-llm-client/README.md)
 
+<<<<<<< HEAD
+- **4 Kutumia seva katika hali ya GitHub Copilot Agent ndani ya Visual Studio Code**. Hapa, tunatazama jinsi ya kuendesha Seva ya MCP kutoka ndani ya Visual Studio Code, [kwenda kwenye somo](04-vscode/README.md)
+
+- **5 Kutumia kutoka kwa SSE (Matukio Yanayotumwa na Seva)** SSE ni kiwango cha utiririshaji wa seva-kwa-mteja, kinachoruhusu seva kusukuma masasisho ya wakati halisi kwa wateja kupitia HTTP [kwenda kwenye somo](05-sse-server/README.md)
+
+- **6 Utiririshaji wa HTTP na MCP (Streamable HTTP)**. Jifunze kuhusu utiririshaji wa kisasa wa HTTP, arifa za maendeleo, na jinsi ya kutekeleza seva na wateja wa MCP wa wakati halisi na wa kiwango kikubwa kwa kutumia Streamable HTTP. [kwenda kwenye somo](06-http-streaming/README.md)
+
+- **7 Kutumia AI Toolkit kwa VSCode** ili kutumia na kujaribu Wateja na Seva zako za MCP [kwenda kwenye somo](07-aitk/README.md)
+
+- **8 Kupima**. Hapa tutazingatia hasa jinsi tunavyoweza kujaribu seva na mteja wetu kwa njia tofauti, [kwenda kwenye somo](08-testing/README.md)
+
+- **9 Uwekaji wa Seva**. Sura hii itaangalia njia tofauti za kuweka suluhisho zako za MCP, [kwenda kwenye somo](09-deployment/README.md)
+
+Itifaki ya Model Context Protocol (MCP) ni itifaki ya wazi inayosanifisha jinsi programu zinavyotoa muktadha kwa LLMs. Fikiria MCP kama bandari ya USB-C kwa programu za AI - inatoa njia sanifu ya kuunganisha mifano ya AI na vyanzo tofauti vya data na zana.
+=======
 - **4 Kutumia Seva ya MCP katika hali ya Wakala wa GitHub Copilot ndani ya Visual Studio Code**. Hapa, tunachunguza jinsi ya kuendesha Seva yetu ya MCP kutoka ndani ya Visual Studio Code, [kwenda kwenye somo](04-vscode/README.md)
 
 - **5 Kutumia kutoka kwa SSE (Matukio Yanayotumwa na Seva)** SSE ni kiwango cha utiririshaji wa seva-kwa-mteja, kinachoruhusu seva kusukuma masasisho ya wakati halisi kwa wateja kupitia HTTP [kwenda kwenye somo](05-sse-server/README.md)
@@ -34,6 +53,7 @@ Sehemu hii inajumuisha masomo kadhaa:
 - **9 Uwekaji**. Sura hii itaangazia njia tofauti za kuweka suluhisho zako za MCP, [kwenda kwenye somo](09-deployment/README.md)
 
 Itifaki ya Muktadha wa Mfano (MCP) ni itifaki ya wazi inayosanifisha jinsi programu zinavyotoa muktadha kwa LLMs. Fikiria MCP kama bandari ya USB-C kwa programu za AI - inatoa njia sanifu ya kuunganisha mifano ya AI na vyanzo tofauti vya data na zana.
+>>>>>>> origin/main
 
 ## Malengo ya Kujifunza
 
@@ -64,12 +84,21 @@ Kabla ya kuanza maendeleo ya MCP, hakikisha una:
 Katika sura zijazo utaona suluhisho zilizojengwa kwa kutumia Python, TypeScript, Java, na .NET. Hapa kuna SDK zote rasmi zinazoungwa mkono.
 
 MCP inatoa SDK rasmi kwa lugha nyingi:
+<<<<<<< HEAD
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Inadumishwa kwa kushirikiana na Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Inadumishwa kwa kushirikiana na Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Utekelezaji rasmi wa TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Utekelezaji rasmi wa Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Utekelezaji rasmi wa Kotlin
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Inadumishwa kwa kushirikiana na Loopwork AI
+=======
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Inadumishwa kwa ushirikiano na Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Inadumishwa kwa ushirikiano na Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Utekelezaji rasmi wa TypeScript
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Utekelezaji rasmi wa Python
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Utekelezaji rasmi wa Kotlin
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Inadumishwa kwa ushirikiano na Loopwork AI
+>>>>>>> origin/main
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Utekelezaji rasmi wa Rust
 
 ## Mambo Muhimu ya Kukumbuka
@@ -78,12 +107,27 @@ MCP inatoa SDK rasmi kwa lugha nyingi:
 - Kujenga seva za MCP kunahusisha kuunda na kusajili zana zenye miundo wazi
 - Wateja wa MCP huunganishwa na seva na mifano ili kutumia uwezo wa ziada
 - Kupima na kurekebisha ni muhimu kwa utekelezaji wa MCP wa kuaminika
+<<<<<<< HEAD
+- Chaguo za uwekaji zinatofautiana kutoka maendeleo ya ndani hadi suluhisho za wingu
+=======
 - Chaguo za uwekaji zinatofautiana kutoka maendeleo ya ndani hadi suluhisho za msingi wa wingu
+>>>>>>> origin/main
 
 ## Mazoezi
 
 Tuna seti ya sampuli zinazosaidia mazoezi utakayoyaona katika sura zote za sehemu hii. Zaidi ya hayo, kila sura pia ina mazoezi na kazi zake.
 
+<<<<<<< HEAD
+- [Kikokotoo cha Java](./samples/java/calculator/README.md)
+- [Kikokotoo cha .Net](../../../03-GettingStarted/samples/csharp)
+- [Kikokotoo cha JavaScript](./samples/javascript/README.md)
+- [Kikokotoo cha TypeScript](./samples/typescript/README.md)
+- [Kikokotoo cha Python](../../../03-GettingStarted/samples/python)
+
+## Rasilimali za Ziada
+
+- [Jenga Mawakala kwa kutumia Model Context Protocol kwenye Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+=======
 - [Kalkuleta ya Java](./samples/java/calculator/README.md)
 - [Kalkuleta ya .Net](../../../03-GettingStarted/samples/csharp)
 - [Kalkuleta ya JavaScript](./samples/javascript/README.md)
@@ -93,6 +137,7 @@ Tuna seti ya sampuli zinazosaidia mazoezi utakayoyaona katika sura zote za sehem
 ## Rasilimali za Ziada
 
 - [Jenga Mawakala kwa kutumia Itifaki ya Muktadha wa Mfano kwenye Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+>>>>>>> origin/main
 - [MCP ya Mbali na Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
@@ -101,4 +146,8 @@ Tuna seti ya sampuli zinazosaidia mazoezi utakayoyaona katika sura zote za sehem
 Ifuatayo: [Kuunda Seva yako ya kwanza ya MCP](01-first-server/README.md)
 
 **Kanusho**:  
+<<<<<<< HEAD
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati asilia katika lugha yake ya awali inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+=======
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+>>>>>>> origin/main
