@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f1383103523fa822e1fec7ef81904d5",
-  "translation_date": "2025-08-18T19:35:03+00:00",
+  "original_hash": "40b1bbffdb8ce6812bf6e701cad876b6",
+  "translation_date": "2025-07-17T19:14:28+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/README.md",
   "language_code": "hu"
 }
 -->
 # HTTPS Streaming a Model Context Protocol-lal (MCP)
 
-Ez a fejezet átfogó útmutatót nyújt a biztonságos, skálázható és valós idejű streaming megvalósításához a Model Context Protocol (MCP) használatával HTTPS-en keresztül. Témakörök: a streaming motivációja, elérhető szállítási mechanizmusok, streamelhető HTTP megvalósítása MCP-ben, biztonsági legjobb gyakorlatok, migráció SSE-ről, és gyakorlati tanácsok saját streaming MCP alkalmazások építéséhez.
+Ez a fejezet átfogó útmutatót nyújt a biztonságos, skálázható és valós idejű streaming megvalósításához a Model Context Protocol (MCP) használatával HTTPS-en keresztül. Bemutatja a streaming motivációját, a rendelkezésre álló szállítási mechanizmusokat, hogyan valósítható meg a streamelhető HTTP az MCP-ben, a biztonsági legjobb gyakorlatokat, az SSE-ről való átállást, valamint gyakorlati tanácsokat saját streaming MCP alkalmazások építéséhez.
 
 ## Szállítási mechanizmusok és streaming MCP-ben
 
-Ez a rész bemutatja az MCP-ben elérhető különböző szállítási mechanizmusokat, valamint azok szerepét a valós idejű kommunikáció streaming képességeinek lehetővé tételében kliens és szerver között.
+Ebben a részben megvizsgáljuk az MCP-ben elérhető különböző szállítási mechanizmusokat, és azok szerepét a valós idejű kommunikáció streaming képességeinek biztosításában a kliens és a szerver között.
 
 ### Mi az a szállítási mechanizmus?
 
-A szállítási mechanizmus határozza meg, hogyan cserél adatot a kliens és a szerver. Az MCP több szállítási típust támogat, hogy különböző környezetekhez és igényekhez igazodjon:
+A szállítási mechanizmus meghatározza, hogyan cserélődnek az adatok a kliens és a szerver között. Az MCP többféle szállítási típust támogat, hogy különböző környezetekhez és igényekhez igazodjon:
 
 - **stdio**: Standard input/output, helyi és CLI-alapú eszközökhöz alkalmas. Egyszerű, de nem megfelelő webes vagy felhőalapú használatra.
 - **SSE (Server-Sent Events)**: Lehetővé teszi, hogy a szerver valós idejű frissítéseket küldjön a klienseknek HTTP-n keresztül. Jó webes felhasználói felületekhez, de korlátozott a skálázhatósága és rugalmassága.
@@ -25,7 +25,7 @@ A szállítási mechanizmus határozza meg, hogyan cserél adatot a kliens és a
 
 ### Összehasonlító táblázat
 
-Az alábbi táblázat segít megérteni a különböző szállítási mechanizmusok közötti különbségeket:
+Nézd meg az alábbi összehasonlító táblázatot, hogy megértsd a különbségeket ezek között a szállítási mechanizmusok között:
 
 | Szállítás          | Valós idejű frissítések | Streaming | Skálázhatóság | Használati eset            |
 |--------------------|-------------------------|-----------|--------------|----------------------------|
@@ -33,21 +33,21 @@ Az alábbi táblázat segít megérteni a különböző szállítási mechanizmu
 | SSE                | Igen                   | Igen      | Közepes      | Web, valós idejű frissítések |
 | Streamelhető HTTP  | Igen                   | Igen      | Magas        | Felhő, több kliens         |
 
-> **Tipp:** A megfelelő szállítás kiválasztása hatással van a teljesítményre, a skálázhatóságra és a felhasználói élményre. **Streamelhető HTTP** ajánlott modern, skálázható és felhőre kész alkalmazásokhoz.
+> **Tip:** A megfelelő szállítási mód kiválasztása befolyásolja a teljesítményt, a skálázhatóságot és a felhasználói élményt. A **Streamable HTTP** ajánlott modern, skálázható és felhőbarát alkalmazásokhoz.
 
-Jegyezd meg az előző fejezetekben bemutatott stdio és SSE szállításokat, valamint azt, hogy ebben a fejezetben a streamelhető HTTP szállítás kerül tárgyalásra.
+Figyeld meg a korábbi fejezetekben bemutatott stdio és SSE szállításokat, valamint hogy ebben a fejezetben a streamelhető HTTP szállításról van szó.
 
 ## Streaming: Fogalmak és motiváció
 
 A streaming alapvető fogalmainak és motivációinak megértése elengedhetetlen a hatékony valós idejű kommunikációs rendszerek megvalósításához.
 
-A **streaming** egy olyan hálózati programozási technika, amely lehetővé teszi az adatok kis, kezelhető darabokban vagy eseménysorozatként történő küldését és fogadását, ahelyett, hogy megvárnánk a teljes válasz elkészültét. Ez különösen hasznos:
+A **streaming** egy hálózati programozási technika, amely lehetővé teszi, hogy az adatokat kis, kezelhető darabokban vagy eseménysorozatként küldjük és fogadjuk, ahelyett, hogy az egész válasz elkészülésére várnánk. Ez különösen hasznos:
 
 - Nagy fájlok vagy adathalmazok esetén.
-- Valós idejű frissítésekhez (pl. csevegés, folyamatjelző sávok).
-- Hosszú futású számításoknál, ahol a felhasználót folyamatosan tájékoztatni kell.
+- Valós idejű frissítésekhez (pl. chat, folyamatjelző sávok).
+- Hosszú futásidejű számításoknál, amikor folyamatosan tájékoztatni szeretnénk a felhasználót.
 
-A streaming magas szintű működése:
+Íme, amit a streamingről tudni érdemes magas szinten:
 
 - Az adatok fokozatosan érkeznek, nem egyszerre.
 - A kliens az adatokat érkezéskor feldolgozhatja.
@@ -187,28 +187,28 @@ public class CalculatorClientApplication implements CommandLineRunner {
 
 A klasszikus streaming és az MCP streaming közötti különbségek az alábbiak szerint ábrázolhatók:
 
-| Jellemző             | Klasszikus HTTP streaming       | MCP streaming (értesítések)         |
-|----------------------|--------------------------------|-------------------------------------|
-| Fő válasz            | Darabolt                      | Egyszeri, a végén                  |
-| Folyamatfrissítések  | Adatdarabokként küldve         | Értesítésekként küldve             |
-| Kliens követelmények | Stream feldolgozása szükséges | Üzenetkezelő implementálása szükséges |
-| Használati eset      | Nagy fájlok, AI token streamek | Folyamat, naplók, valós idejű visszajelzés |
+| Jellemző               | Klasszikus HTTP streaming       | MCP streaming (értesítések)         |
+|------------------------|--------------------------------|------------------------------------|
+| Fő válasz              | Darabolt                       | Egyetlen, a végén                   |
+| Haladás frissítések    | Adatdarabokként küldve         | Értesítésekként küldve              |
+| Kliens követelmények   | Stream feldolgozása szükséges  | Üzenetkezelő megvalósítása szükséges |
+| Használati eset        | Nagy fájlok, AI token stream-ek | Haladás, naplók, valós idejű visszajelzés |
 
 ### Megfigyelt kulcsfontosságú különbségek
 
-További különbségek:
+Továbbá, itt vannak a legfontosabb különbségek:
 
 - **Kommunikációs minta:**
   - Klasszikus HTTP streaming: Egyszerű darabolt átvitelkódolást használ az adatok darabokban történő küldésére.
   - MCP streaming: Strukturált értesítési rendszert használ JSON-RPC protokollal.
 
 - **Üzenetformátum:**
-  - Klasszikus HTTP: Egyszerű szöveges darabok új sorokkal.
-  - MCP: Strukturált `LoggingMessageNotification` objektumok metaadatokkal.
+   - Klasszikus HTTP: Egyszerű szöveges darabok új sorokkal
+   - MCP: Strukturált LoggingMessageNotification objektumok metaadatokkal
 
 - **Kliens megvalósítás:**
-  - Klasszikus HTTP: Egyszerű kliens, amely feldolgozza a streaming válaszokat.
-  - MCP: Összetettebb kliens, amely üzenetkezelőt használ különböző üzenettípusok feldolgozására.
+   - Klasszikus HTTP: Egyszerű kliens, amely feldolgozza a streaming válaszokat
+   - MCP: Összetettebb kliens, amely üzenetkezelőt használ különböző típusú üzenetek feldolgozására
 
 - **Folyamatfrissítések:**
   - Klasszikus HTTP: A folyamat a fő válaszstream része.
@@ -216,7 +216,7 @@ További különbségek:
 
 ### Ajánlások
 
-Néhány ajánlás a klasszikus streaming (pl. `/stream` végpont) és az MCP streaming közötti választáshoz:
+Néhány javaslat a klasszikus streaming (például a fent bemutatott `/stream` végpont) és az MCP streaming közötti választáshoz:
 
 - **Egyszerű streaming igényekhez:** A klasszikus HTTP streaming egyszerűbb megvalósítani, és elegendő az alapvető streaming igényekhez.
 - **Összetett, interaktív alkalmazásokhoz:** Az MCP streaming strukturáltabb megközelítést kínál gazdagabb metaadatokkal és az értesítések és végső eredmények szétválasztásával.
@@ -237,23 +237,23 @@ Két meggyőző érv szól az SSE-ről Streamable HTTP-re való áttérés melle
 
 ### Kompatibilitás fenntartása
 
-Ajánlott fenntartani a kompatibilitást a meglévő SSE kliensekkel a migráció során. Íme néhány stratégia:
+Ajánlott a migráció során megőrizni a kompatibilitást a meglévő SSE kliensekkel. Néhány javasolt megoldás:
 
-- Támogathatja mind az SSE-t, mind a Streamable HTTP-t, ha különböző végpontokon futtatja azokat.
-- Fokozatosan migrálja a klienseket az új adatátvitelre.
+- Mindkét protokollt támogathatod, ha különböző végpontokon futtatod az SSE-t és a Streamable HTTP-t.
+- Fokozatosan migráld az ügyfeleket az új adatátvitelre.
 
 ### Kihívások
 
-Győződjön meg róla, hogy a következő kihívásokat kezeli a migráció során:
+A migráció során figyelj az alábbi kihívásokra:
 
-- Az összes kliens frissítése
-- Az értesítések kézbesítésében lévő különbségek kezelése
+- Minden kliens frissítésének biztosítása
+- Az értesítések kézbesítésében jelentkező különbségek kezelése
 
 ## Biztonsági szempontok
 
-A biztonság kiemelt fontosságú, amikor bármilyen szervert implementál, különösen, ha HTTP-alapú adatátvitelek, például Streamable HTTP használatáról van szó MCP-ben.
+A biztonság kiemelten fontos bármilyen szerver megvalósításánál, különösen HTTP-alapú adatátviteli módok, például a Streamable HTTP használatakor az MCP-ben.
 
-Amikor MCP szervereket valósít meg HTTP-alapú adatátvitelekkel, a biztonság elsődleges szempont, amely több támadási felület és védelmi mechanizmus gondos figyelembevételét igényli.
+Az MCP szerverek HTTP-alapú adatátvitellel történő megvalósítása során a biztonság elsődleges szempont, amely alapos figyelmet igényel a különböző támadási felületekre és védelmi mechanizmusokra.
 
 ### Áttekintés
 
@@ -261,43 +261,43 @@ A biztonság kritikus fontosságú, amikor MCP szervereket tesz elérhetővé HT
 
 Íme néhány kulcsfontosságú biztonsági szempont:
 
-- **Origin fejléc ellenőrzése**: Mindig ellenőrizze az `Origin` fejlécet a DNS rebinding támadások elkerülése érdekében.
-- **Localhost kötés**: Helyi fejlesztéshez kösse a szervereket a `localhost`-hoz, hogy elkerülje azok nyilvános internetre való kitettségét.
-- **Hitelesítés**: Valósítson meg hitelesítést (pl. API kulcsok, OAuth) a termelési környezetekben.
-- **CORS**: Konfigurálja a Cross-Origin Resource Sharing (CORS) szabályokat a hozzáférés korlátozására.
-- **HTTPS**: Használjon HTTPS-t a termelési környezetben a forgalom titkosításához.
+- **Origin fejléc ellenőrzése**: Mindig ellenőrizd az `Origin` fejlécet, hogy megakadályozd a DNS újracímzéses támadásokat.
+- **Localhost kötés**: Fejlesztés közben köss a szervereket `localhost`-hoz, hogy ne legyenek nyilvánosan elérhetők.
+- **Hitelesítés**: Éles környezetben alkalmazz hitelesítést (pl. API kulcsok, OAuth).
+- **CORS**: Állíts be Cross-Origin Resource Sharing (CORS) szabályokat a hozzáférés korlátozására.
+- **HTTPS**: Éles környezetben használj HTTPS-t a forgalom titkosításához.
 
 ### Legjobb gyakorlatok
 
-Továbbá, itt van néhány legjobb gyakorlat, amelyet követnie kell az MCP streaming szerver biztonságának megvalósításakor:
+Ezen felül az MCP streaming szerver biztonságának megvalósításakor érdemes követni az alábbiakat:
 
-- Soha ne bízzon meg a beérkező kérésekben ellenőrzés nélkül.
-- Naplózza és figyelje az összes hozzáférést és hibát.
-- Rendszeresen frissítse a függőségeket a biztonsági rések javítása érdekében.
+- Soha ne bízz meg automatikusan a bejövő kérésekben, mindig ellenőrizd őket.
+- Naplózz és figyelj minden hozzáférést és hibát.
+- Rendszeresen frissítsd a függőségeket a biztonsági rések javítása érdekében.
 
 ### Kihívások
 
 Néhány kihívással szembesülhet az MCP streaming szerverek biztonságának megvalósításakor:
 
 - A biztonság és a fejlesztés egyszerűségének egyensúlyozása
-- A különböző klienskörnyezetekkel való kompatibilitás biztosítása
+- Kompatibilitás biztosítása különböző kliens környezetekkel
 
 ### Feladat: Építsen saját streaming MCP alkalmazást
 
-**Forgatókönyv:**
-Építsen egy MCP szervert és klienst, ahol a szerver feldolgoz egy elemlistát (pl. fájlokat vagy dokumentumokat), és értesítést küld minden feldolgozott elemről. A kliensnek valós időben kell megjelenítenie az értesítéseket.
+**Forgatókönyv:**  
+Készíts egy MCP szervert és klienst, ahol a szerver egy elemlistát dolgoz fel (például fájlokat vagy dokumentumokat), és minden feldolgozott elemről értesítést küld. Az ügyfélnek valós időben kell megjelenítenie az értesítéseket.
 
 **Lépések:**
 
-1. Valósítson meg egy szerver eszközt, amely feldolgoz egy listát, és értesítéseket küld minden elemről.
-2. Valósítson meg egy klienst egy üzenetkezelővel, amely valós időben megjeleníti az értesítéseket.
-3. Tesztelje a megvalósítást a szerver és a kliens futtatásával, és figyelje meg az értesítéseket.
+1. Valósíts meg egy szerver eszközt, amely feldolgoz egy listát és értesítéseket küld minden elemről.
+2. Készíts egy klienst, amely üzenetkezelővel valós időben jeleníti meg az értesítéseket.
+3. Teszteld a megvalósítást úgy, hogy egyszerre futtatod a szervert és a klienst, és figyeled az értesítéseket.
 
 [Megoldás](./solution/README.md)
 
 ## További olvasmányok és következő lépések
 
-Ha folytatni szeretné az MCP streaminggel kapcsolatos ismereteit, és bővíteni szeretné tudását, ez a szakasz további forrásokat és javasolt következő lépéseket kínál fejlettebb alkalmazások építéséhez.
+Ha tovább szeretnéd mélyíteni MCP streaming ismereteidet és fejlettebb alkalmazásokat építenél, ez a rész további forrásokat és javasolt következő lépéseket kínál.
 
 ### További olvasmányok
 
@@ -308,9 +308,9 @@ Ha folytatni szeretné az MCP streaminggel kapcsolatos ismereteit, és bővíten
 
 ### Következő lépések
 
-- Próbáljon meg fejlettebb MCP eszközöket építeni, amelyek streaminget használnak valós idejű elemzéshez, csevegéshez vagy együttműködő szerkesztéshez.
-- Fedezze fel az MCP streaming integrálását frontend keretrendszerekkel (React, Vue stb.) az élő UI frissítésekhez.
-- Következő: [AI Toolkit használata a VSCode-hoz](../07-aitk/README.md)
+- Próbálj meg fejlettebb MCP eszközöket építeni, amelyek streaminget használnak valós idejű elemzéshez, csevegéshez vagy együttműködő szerkesztéshez.
+- Fedezd fel az MCP streaming integrálását frontend keretrendszerekkel (React, Vue stb.) az élő UI frissítésekhez.
+- Következő: [AI Toolkit használata VSCode-ban](../07-aitk/README.md)
 
-**Felelősségkizárás**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

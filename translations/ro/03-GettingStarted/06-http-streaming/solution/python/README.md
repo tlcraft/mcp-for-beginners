@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T20:52:43+00:00",
+=======
+  "translation_date": "2025-08-18T16:07:56+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "ro"
 }
@@ -24,7 +28,11 @@ Iată cum să rulezi serverul și clientul clasic de streaming HTTP, precum și 
 
 ### Instalare și configurare
 
+<<<<<<< HEAD
 1. Clonează repository-ul sau descarcă fișierele soluției.
+=======
+1. Clonează depozitul sau descarcă fișierele soluției.
+>>>>>>> origin/main
 
    ```pwsh
    git clone https://github.com/microsoft/mcp-for-beginners
@@ -132,7 +140,11 @@ Iată cum să rulezi serverul și clientul clasic de streaming HTTP, precum și 
 ### Pași cheie de implementare
 
 1. **Creează serverul MCP utilizând FastMCP.**
+<<<<<<< HEAD
 2. **Definește un instrument care procesează o listă și trimite notificări folosind `ctx.info()` sau `ctx.log()`.**
+=======
+2. **Definește un instrument care procesează o listă și trimite notificări utilizând `ctx.info()` sau `ctx.log()`.**
+>>>>>>> origin/main
 3. **Rulează serverul cu `transport="streamable-http"`.**
 4. **Implementează un client cu un handler de mesaje pentru a afișa notificările pe măsură ce sosesc.**
 
@@ -147,5 +159,10 @@ Iată cum să rulezi serverul și clientul clasic de streaming HTTP, precum și 
 - Testează cu mai mulți clienți pentru a observa actualizările în timp real.
 - Dacă întâmpini erori, verifică versiunea de Python și asigură-te că toate dependențele sunt instalate.
 
+<<<<<<< HEAD
 **Declinarea responsabilității**:  
 Acest document a fost tradus utilizând serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea realizată de un profesionist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+=======
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+>>>>>>> origin/main

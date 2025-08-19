@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5ffc7f32ed12664b640175f27f0a997a",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T23:45:29+00:00",
+=======
+  "translation_date": "2025-08-18T19:05:53+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/samples/rust/README.md",
   "language_code": "hu"
 }
@@ -11,7 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ez egy Rust példa egy MCP szerverhez.
 
+<<<<<<< HEAD
 Így néz ki a számológép rész:
+=======
+Így néz ki a kalkulátor rész:
+>>>>>>> origin/main
 
 ```rust
 #[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
@@ -74,5 +82,10 @@ cargo build
 cargo run
 ```
 
+<<<<<<< HEAD
 **Felelősség kizárása**:  
 Ez a dokumentum az AI fordítási szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár igyekszünk pontosságra törekedni, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
+=======
+**Felelősségkizárás**:  
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális, emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+>>>>>>> origin/main

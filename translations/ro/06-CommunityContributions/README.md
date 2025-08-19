@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T20:56:25+00:00",
+=======
+  "translation_date": "2025-08-18T16:11:30+00:00",
+>>>>>>> origin/main
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "ro"
 }
@@ -88,12 +92,20 @@ Ecosistemul MCP acceptă diverse tipuri de contribuții:
 
 Pentru a contribui la protocolul de bază MCP sau la implementările oficiale, urmează aceste principii din [ghidul oficial de contribuție](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
+<<<<<<< HEAD
 1. **Simplitate și Minimalism**: Specificația MCP menține un standard ridicat pentru adăugarea de noi concepte. Este mai ușor să adaugi lucruri într-o specificație decât să le elimini.
+=======
+1. **Simplitate și Minimalism**: Specificația MCP menține un standard ridicat pentru adăugarea de concepte noi. Este mai ușor să adaugi lucruri într-o specificație decât să le elimini.
+>>>>>>> origin/main
 
 2. **Abordare concretă**: Modificările specificației ar trebui să se bazeze pe provocări specifice de implementare, nu pe idei speculative.
 
 3. **Etapele unei propuneri**:
+<<<<<<< HEAD
    - Definire: Explorează spațiul problemei, validează că alți utilizatori MCP se confruntă cu o problemă similară.
+=======
+   - Definire: Explorează problema, validează că alți utilizatori MCP se confruntă cu o problemă similară.
+>>>>>>> origin/main
    - Prototip: Construiește o soluție exemplu și demonstrează aplicarea sa practică.
    - Scriere: Pe baza prototipului, redactează o propunere de specificație.
 
@@ -151,7 +163,11 @@ export function validateResource(resource: unknown): resource is MCPResource {
 }
 ```
 
+<<<<<<< HEAD
 ### Exemplu: Contribuirea unui nou instrument la biblioteca standard
+=======
+### Exemplu: Contribuirea unui instrument nou la biblioteca standard
+>>>>>>> origin/main
 
 ```python
 # Example contribution: A CSV data processing tool for the MCP standard library
@@ -315,7 +331,11 @@ class CsvProcessingTool(Tool):
 
 Pentru a face o contribuție de succes la proiectele MCP:
 
+<<<<<<< HEAD
 1. **Începe cu lucruri mici**: Începe cu documentație, remedieri de erori sau mici îmbunătățiri.
+=======
+1. **Începe cu lucruri mici**: Începe cu documentație, remedieri de erori sau îmbunătățiri minore.
+>>>>>>> origin/main
 2. **Respectă ghidul de stil**: Respectă stilul de cod și convențiile proiectului.
 3. **Scrie teste**: Include teste unitare pentru contribuțiile tale de cod.
 4. **Documentează munca ta**: Adaugă documentație clară pentru funcționalitățile sau modificările noi.
@@ -700,7 +720,11 @@ Când partajezi instrumente MCP cu comunitatea:
 
 3. **Considerații de performanță**:
    - Optimizează atât pentru viteză, cât și pentru utilizarea resurselor.
+<<<<<<< HEAD
    - Implementează caching, dacă este cazul.
+=======
+   - Implementează caching atunci când este potrivit.
+>>>>>>> origin/main
    - Ia în considerare scalabilitatea.
 
 4. **Securitate**:
@@ -834,8 +858,13 @@ async def delete_tool(tool_name: str):
 
 ## Exercițiu
 
+<<<<<<< HEAD
 1. Identifică o zonă din ecosistemul MCP unde ai putea contribui, bazându-te pe abilitățile și interesele tale.
 2. Forkează depozitul MCP și configurează un mediu de dezvoltare local.
+=======
+1. Identifică o zonă din ecosistemul MCP unde ai putea contribui pe baza abilităților și intereselor tale.
+2. Fork-uiește depozitul MCP și configurează un mediu de dezvoltare local.
+>>>>>>> origin/main
 3. Creează o mică îmbunătățire, remediere de erori sau instrument care ar beneficia comunitatea.
 4. Documentează contribuția ta cu teste și documentație adecvate.
 5. Trimite o cerere de pull către depozitul corespunzător.
@@ -848,5 +877,10 @@ async def delete_tool(tool_name: str):
 
 Următorul: [Lecții din adoptarea timpurie](../07-LessonsfromEarlyAdoption/README.md)
 
+<<<<<<< HEAD
 **Declinarea responsabilității**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea umană realizată de profesioniști. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+=======
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+>>>>>>> origin/main

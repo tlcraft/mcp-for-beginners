@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8358c13b5b6877e475674697cdc1a904",
-  "translation_date": "2025-08-18T19:37:17+00:00",
+  "original_hash": "affcf199a44f60283a289dcb69dc144e",
+  "translation_date": "2025-07-17T13:35:24+00:00",
   "source_file": "03-GettingStarted/02-client/complete_examples.md",
   "language_code": "hu"
 }
@@ -17,14 +17,13 @@ Ez a könyvtár teljes, működő MCP kliens példákat tartalmaz különböző 
 
 - **Átvitel**: SSE (Server-Sent Events) HTTP-n keresztül
 - **Cél szerver**: `http://localhost:8080`
-- **Funkciók**:
-  - Kapcsolat létrehozása és pingelés
-  - Eszközök listázása
-  - Kalkulátor műveletek (összeadás, kivonás, szorzás, osztás, súgó)
-  - Hibakezelés és eredmény kinyerés
+- **Funkciók**: 
+  - Kapcsolat létrehozása és ping
+  - Eszközlista lekérése
+  - Számológép műveletek (összeadás, kivonás, szorzás, osztás, segítség)
+  - Hibakezelés és eredmény kinyerése
 
 **Futtatáshoz:**
-
 ```bash
 # Ensure your MCP server is running on localhost:8080
 javac client_example_java.java
@@ -32,35 +31,31 @@ java client_example_java
 ```
 
 ### 2. C# kliens (`client_example_csharp.cs`)
-
-- **Átvitel**: Stdio (Standard Input/Output)
-- **Cél szerver**: Helyi .NET MCP szerver dotnet run segítségével
+- **Átvitel**: Stdio (Standard bemenet/kimenet)
+- **Cél szerver**: Helyi .NET MCP szerver a dotnet run segítségével
 - **Funkciók**:
-  - Automatikus szerverindítás stdio átvitel segítségével
-  - Eszközök és erőforrások listázása
-  - Kalkulátor műveletek
+  - Automatikus szerverindítás stdio átvitel használatával
+  - Eszköz- és erőforráslista lekérése
+  - Számológép műveletek
   - JSON eredmény feldolgozás
   - Átfogó hibakezelés
 
 **Futtatáshoz:**
-
 ```bash
 dotnet run
 ```
 
 ### 3. TypeScript kliens (`client_example_typescript.ts`)
-
-- **Átvitel**: Stdio (Standard Input/Output)
+- **Átvitel**: Stdio (Standard bemenet/kimenet)
 - **Cél szerver**: Helyi Node.js MCP szerver
 - **Funkciók**:
   - Teljes MCP protokoll támogatás
-  - Eszközök, erőforrások és prompt műveletek
-  - Kalkulátor műveletek
+  - Eszköz-, erőforrás- és prompt műveletek
+  - Számológép műveletek
   - Erőforrás olvasás és prompt végrehajtás
-  - Robusztus hibakezelés
+  - Robosztus hibakezelés
 
 **Futtatáshoz:**
-
 ```bash
 # First compile TypeScript (if needed)
 npm run build
@@ -72,18 +67,16 @@ node client_example_typescript.js
 ```
 
 ### 4. Python kliens (`client_example_python.py`)
-
-- **Átvitel**: Stdio (Standard Input/Output)  
+- **Átvitel**: Stdio (Standard bemenet/kimenet)  
 - **Cél szerver**: Helyi Python MCP szerver
 - **Funkciók**:
-  - Async/await minta a műveletekhez
-  - Eszközök és erőforrások felfedezése
-  - Kalkulátor műveletek tesztelése
+  - Async/await mintázat a műveletekhez
+  - Eszköz- és erőforrás felfedezés
+  - Számológép műveletek tesztelése
   - Erőforrás tartalom olvasása
-  - Osztály-alapú szervezés
+  - Osztály alapú szervezés
 
 **Futtatáshoz:**
-
 ```bash
 python client_example_python.py
 ```
@@ -95,24 +88,24 @@ Minden kliens implementáció bemutatja:
 1. **Kapcsolatkezelés**
    - Kapcsolat létrehozása az MCP szerverrel
    - Kapcsolati hibák kezelése
-   - Megfelelő takarítás és erőforrás-kezelés
+   - Megfelelő erőforrás-takarítás és lezárás
 
 2. **Szerver felfedezése**
    - Elérhető eszközök listázása
-   - Elérhető erőforrások listázása (ha támogatott)
-   - Elérhető promptok listázása (ha támogatott)
+   - Elérhető erőforrások listázása (ahol támogatott)
+   - Elérhető promptok listázása (ahol támogatott)
 
-3. **Eszközök meghívása**
-   - Alapvető kalkulátor műveletek (összeadás, kivonás, szorzás, osztás)
-   - Súgó parancs a szerver információkhoz
-   - Megfelelő argumentumok átadása és eredmények kezelése
+3. **Eszköz meghívás**
+   - Alapvető számológép műveletek (összeadás, kivonás, szorzás, osztás)
+   - Segítség parancs a szerver információkhoz
+   - Érvek helyes átadása és eredmény kezelése
 
 4. **Hibakezelés**
    - Kapcsolati hibák
    - Eszköz végrehajtási hibák
-   - Kíméletes hiba és felhasználói visszajelzés
+   - Kiegyensúlyozott hibakezelés és felhasználói visszajelzés
 
-5. **Eredmény feldolgozás**
+5. **Eredményfeldolgozás**
    - Szöveges tartalom kinyerése a válaszokból
    - Kimenet formázása olvashatóság érdekében
    - Különböző válaszformátumok kezelése
@@ -123,17 +116,16 @@ A kliensek futtatása előtt győződjön meg arról, hogy:
 
 1. **A megfelelő MCP szerver fut** (a `../01-first-server/` könyvtárból)
 2. **A szükséges függőségek telepítve vannak** a választott nyelvhez
-3. **Megfelelő hálózati kapcsolat** van (HTTP-alapú átvitelekhez)
+3. **Megfelelő hálózati kapcsolat áll rendelkezésre** (HTTP alapú átvitel esetén)
 
 ## Fő különbségek az implementációk között
 
-| Nyelv      | Átvitel   | Szerver indítás | Async modell | Kulcs könyvtárak       |
-|------------|-----------|-----------------|--------------|------------------------|
-| Java       | SSE/HTTP  | Külső           | Szinkron     | WebFlux, MCP SDK       |
-| C#         | Stdio     | Automatikus     | Async/Await  | .NET MCP SDK           |
-| TypeScript | Stdio     | Automatikus     | Async/Await  | Node MCP SDK           |
-| Python     | Stdio     | Automatikus     | AsyncIO      | Python MCP SDK         |
-| Rust       | Stdio     | Automatikus     | Async/Await  | Rust MCP SDK, Tokio    |
+| Nyelv      | Átvitel  | Szerver indítás | Async modell | Főbb könyvtárak      |
+|------------|----------|-----------------|--------------|---------------------|
+| Java       | SSE/HTTP | Külső           | Szinkron     | WebFlux, MCP SDK     |
+| C#         | Stdio    | Automatikus     | Async/Await  | .NET MCP SDK         |
+| TypeScript | Stdio    | Automatikus     | Async/Await  | Node MCP SDK         |
+| Python     | Stdio    | Automatikus     | AsyncIO      | Python MCP SDK       |
 
 ## Következő lépések
 
@@ -148,17 +140,17 @@ Miután felfedezte ezeket a kliens példákat:
 
 ### Gyakori problémák
 
-1. **Kapcsolat megtagadva**: Győződjön meg arról, hogy az MCP szerver a várt porton/útvonalon fut
-2. **Modul nem található**: Telepítse a szükséges MCP SDK-t a nyelvéhez
-3. **Hozzáférés megtagadva**: Ellenőrizze a fájlengedélyeket stdio átvitelhez
-4. **Eszköz nem található**: Ellenőrizze, hogy a szerver implementálja-e a várt eszközöket
+1. **Kapcsolat megtagadva**: Ellenőrizd, hogy az MCP szerver fut-e a várt porton/útvonalon
+2. **Modul nem található**: Telepítsd a szükséges MCP SDK-t a nyelvedhez
+3. **Hozzáférés megtagadva**: Ellenőrizd a fájl jogosultságokat stdio átvitel esetén
+4. **Eszköz nem található**: Győződj meg róla, hogy a szerver implementálja a várt eszközöket
 
 ### Hibakeresési tippek
 
-1. **Engedélyezze a részletes naplózást** az MCP SDK-ban
-2. **Ellenőrizze a szerver naplóit** hibaüzenetekért
-3. **Győződjön meg arról, hogy az eszköznevek és aláírások** megegyeznek a kliens és a szerver között
-4. **Tesztelje MCP Inspectorral** először a szerver funkcionalitásának validálásához
+1. **Kapcsold be a részletes naplózást** az MCP SDK-ban
+2. **Nézd meg a szerver naplóit** hibák után kutatva
+3. **Ellenőrizd az eszközneveket és aláírásokat**, hogy egyezzenek kliens és szerver között
+4. **Először teszteld az MCP Inspectorral**, hogy validáld a szerver működését
 
 ## Kapcsolódó dokumentáció
 
@@ -167,5 +159,5 @@ Miután felfedezte ezeket a kliens példákat:
 - [MCP LLM integrációval](../../../../03-GettingStarted/03-llm-client)
 - [Hivatalos MCP dokumentáció](https://modelcontextprotocol.io/)
 
-**Felelősségkizárás**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

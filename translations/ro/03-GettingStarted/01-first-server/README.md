@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T20:48:07+00:00",
+=======
+  "translation_date": "2025-08-18T16:02:52+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "ro"
 }
@@ -162,7 +166,11 @@ Iată o captură de ecran cu ceea ce poate arăta:
 | Conexiune refuzată | Verifică dacă serverul rulează și portul este corect |
 | Erori de execuție a instrumentelor | Revizuiește validarea parametrilor și gestionarea erorilor |
 | Eșecuri de autentificare | Verifică cheile API și permisiunile |
+<<<<<<< HEAD
 | Erori de validare a schemei | Asigură-te că parametrii se potrivesc cu schema definită |
+=======
+| Erori de validare a schemei | Asigură-te că parametrii corespund schemei definite |
+>>>>>>> origin/main
 | Serverul nu pornește | Verifică conflictele de port sau dependențele lipsă |
 | Erori CORS | Configurează anteturile CORS corespunzătoare pentru cererile cross-origin |
 | Probleme de autentificare | Verifică validitatea token-ului și permisiunile |
@@ -192,7 +200,7 @@ Am acoperit [Conceptele de bază](/01-CoreConcepts/README.md) într-o lecție an
 Un server MCP poate, de exemplu:
 
 - Accesa fișiere și baze de date locale
-- Conecta la API-uri externe
+- Conecta la API-uri remote
 - Efectua calcule
 - Integra cu alte instrumente și servicii
 - Oferi o interfață utilizator pentru interacțiune
@@ -895,7 +903,11 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
+<<<<<<< HEAD
 Serverul este acum configurat pentru a oferi informații de bază despre sine. Următorul pas este să adăugăm un instrument pentru efectuarea adunării.
+=======
+Serverul este acum configurat pentru a oferi informații de bază despre sine. Următorul pas este să adăugăm un instrument pentru a efectua adunări.
+>>>>>>> origin/main
 
 ### -5- Adăugarea unui instrument și a unei resurse
 
@@ -924,7 +936,11 @@ server.resource(
 );
 ```
 
+<<<<<<< HEAD
 Instrumentul tău primește parametrii `a` și `b` și rulează o funcție care produce un răspuns sub forma:
+=======
+Instrumentul tău primește parametrii `a` și `b` și rulează o funcție care produce un răspuns de forma:
+>>>>>>> origin/main
 
 ```typescript
 {
@@ -984,7 +1000,11 @@ Instrumentele au fost deja create în pasul anterior.
 
 #### Rust
 
+<<<<<<< HEAD
 Adaugă un nou instrument în blocul `impl Calculator`:
+=======
+Adaugă un nou instrument în interiorul blocului `impl Calculator`:
+>>>>>>> origin/main
 
 ```rust
 #[tool(description = "Adds a and b")]
@@ -1218,7 +1238,7 @@ mcp run server.py
 
 #### .NET
 
-Asigură-te că ești în directorul proiectului:
+Asigură-te că te afli în directorul proiectului:
 
 ```sh
 cd McpCalculatorServer
@@ -1243,7 +1263,11 @@ cargo run
 
 ### -8- Rulează folosind inspectorul
 
+<<<<<<< HEAD
 Inspectorul este un instrument excelent care poate porni serverul tău și îți permite să interacționezi cu acesta pentru a testa dacă funcționează. Să-l pornim:
+=======
+Inspectorul este un instrument excelent care poate porni serverul tău și îți permite să interacționezi cu el pentru a verifica dacă funcționează. Să-l pornim:
+>>>>>>> origin/main
 
 > [!NOTE]
 > Este posibil să arate diferit în câmpul "command", deoarece conține comanda pentru rularea unui server cu runtime-ul tău specific.
@@ -1273,7 +1297,7 @@ asigură-te că setezi `python` în câmpul `Command` și `server.py` ca `Argume
 
 #### .NET
 
-Asigură-te că ești în directorul proiectului:
+Asigură-te că te afli în directorul proiectului:
 
 ```sh
 cd McpCalculatorServer
@@ -1282,7 +1306,11 @@ npx @modelcontextprotocol/inspector dotnet run
 
 #### Java
 
+<<<<<<< HEAD
 Asigură-te că serverul calculator rulează. Apoi rulează inspectorul:
+=======
+Asigură-te că serverul calculatorului rulează. Apoi rulează inspectorul:
+>>>>>>> origin/main
 
 ```cmd
 npx @modelcontextprotocol/inspector
@@ -1293,9 +1321,15 @@ npx @modelcontextprotocol/inspector
 1. Selectează "SSE" ca tip de transport
 2. Setează URL-ul la: `http://localhost:8080/sse`
 3. Apasă "Connect"
+<<<<<<< HEAD
 ![Conectare](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.ro.png)
 
 **Acum ești conectat la server**  
+=======
+![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.ro.png)
+
+**Acum ești conectat la server**
+>>>>>>> origin/main
 **Secțiunea de testare a serverului Java este acum finalizată**
 
 Următoarea secțiune este despre interacțiunea cu serverul.
@@ -1304,12 +1338,21 @@ Ar trebui să vezi următoarea interfață de utilizator:
 
 ![Conectare](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ro.png)
 
+<<<<<<< HEAD
 1. Conectează-te la server selectând butonul Conectare.  
    După ce te conectezi la server, ar trebui să vezi următoarea imagine:
+=======
+1. Conectează-te la server selectând butonul Connect  
+   După ce te conectezi la server, ar trebui să vezi următoarele:
+>>>>>>> origin/main
 
    ![Conectat](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ro.png)
 
+<<<<<<< HEAD
 1. Selectează "Tools" și "listTools", ar trebui să vezi "Add" afișat. Selectează "Add" și completează valorile parametrilor.
+=======
+1. Selectează "Tools" și "listTools", ar trebui să vezi "Add" afișat, selectează "Add" și completează valorile parametrilor.
+>>>>>>> origin/main
 
    Ar trebui să vezi următorul răspuns, adică un rezultat de la instrumentul "add":
 
@@ -1329,6 +1372,7 @@ npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-n
 
 MCP oferă SDK-uri oficiale pentru mai multe limbaje:
 
+<<<<<<< HEAD
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Menținut în colaborare cu Microsoft  
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Menținut în colaborare cu Spring AI  
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementarea oficială TypeScript  
@@ -1351,15 +1395,46 @@ MCP oferă SDK-uri oficiale pentru mai multe limbaje:
 - [Calculator TypeScript](../samples/typescript/README.md)  
 - [Calculator Python](../../../../03-GettingStarted/samples/python)  
 - [Calculator Rust](../../../../03-GettingStarted/samples/rust)  
+=======
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Menținut în colaborare cu Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Menținut în colaborare cu Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementarea oficială TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementarea oficială Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Implementarea oficială Kotlin
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Menținut în colaborare cu Loopwork AI
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementarea oficială Rust
 
-## Sarcină
+## Puncte cheie
+
+- Configurarea unui mediu de dezvoltare MCP este simplă cu SDK-uri specifice limbajului
+- Construirea serverelor MCP implică crearea și înregistrarea instrumentelor cu scheme clare
+- Testarea și depanarea sunt esențiale pentru implementări MCP fiabile
+
+## Exemple
+
+- [Calculator Java](../samples/java/calculator/README.md)
+- [Calculator .Net](../../../../03-GettingStarted/samples/csharp)
+- [Calculator JavaScript](../samples/javascript/README.md)
+- [Calculator TypeScript](../samples/typescript/README.md)
+- [Calculator Python](../../../../03-GettingStarted/samples/python)
+- [Calculator Rust](../../../../03-GettingStarted/samples/rust)
+>>>>>>> origin/main
+
+## Temă
 
 Creează un server MCP simplu cu un instrument la alegerea ta:
 
+<<<<<<< HEAD
 1. Implementează instrumentul în limbajul tău preferat (.NET, Java, Python, TypeScript sau Rust).  
 2. Definește parametrii de intrare și valorile returnate.  
 3. Rulează instrumentul inspector pentru a te asigura că serverul funcționează corect.  
 4. Testează implementarea cu diverse intrări.  
+=======
+1. Implementează instrumentul în limbajul preferat (.NET, Java, Python, TypeScript sau Rust).
+2. Definește parametrii de intrare și valorile de returnare.
+3. Rulează instrumentul inspector pentru a te asigura că serverul funcționează conform intenției.
+4. Testează implementarea cu diverse intrări.
+>>>>>>> origin/main
 
 ## Soluție
 
@@ -1367,6 +1442,7 @@ Creează un server MCP simplu cu un instrument la alegerea ta:
 
 ## Resurse suplimentare
 
+<<<<<<< HEAD
 - [Construirea agenților folosind Model Context Protocol pe Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
 - [MCP Remote cu Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
@@ -1377,3 +1453,15 @@ Următorul pas: [Începe cu MCP Clients](../02-client/README.md)
 
 **Declinarea responsabilității**:  
 Acest document a fost tradus utilizând serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+=======
+- [Construiește agenți folosind Model Context Protocol pe Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [MCP Remote cu Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [Agent MCP OpenAI .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+
+## Ce urmează
+
+Următorul pas: [Introducere în MCP Clients](../02-client/README.md)
+
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+>>>>>>> origin/main

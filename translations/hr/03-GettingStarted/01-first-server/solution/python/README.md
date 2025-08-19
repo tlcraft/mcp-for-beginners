@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-18T22:10:20+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-13T18:02:24+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "hr"
 }
@@ -117,4 +117,4 @@ Trebali biste vidjeti sljedeći izlaz:
 > Pročitajte više o inspektoru [ovdje](https://github.com/modelcontextprotocol/inspector).
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

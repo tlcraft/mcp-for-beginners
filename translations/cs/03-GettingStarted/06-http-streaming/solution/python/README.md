@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
-  "translation_date": "2025-08-18T20:03:53+00:00",
+  "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
+  "translation_date": "2025-07-13T21:22:02+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "cs"
 }
 -->
 # Spuštění tohoto příkladu
 
-Zde je návod, jak spustit klasický HTTP streaming server a klienta, stejně jako MCP streaming server a klienta pomocí Pythonu.
+Zde je návod, jak spustit klasický HTTP streaming server a klient, stejně jako MCP streaming server a klient pomocí Pythonu.
 
 ### Přehled
 
@@ -136,16 +136,16 @@ Zde je návod, jak spustit klasický HTTP streaming server a klienta, stejně ja
 3. **Spusťte server s `transport="streamable-http"`.**
 4. **Implementujte klienta s obslužnou funkcí zpráv, která zobrazuje notifikace při jejich příchodu.**
 
-### Prohlídka kódu
-- Server používá asynchronní funkce a MCP kontext pro odesílání aktualizací o průběhu.
-- Klient implementuje asynchronní obslužnou funkci zpráv pro tisk notifikací a konečného výsledku.
+### Procházení kódu
+- Server používá asynchronní funkce a MCP kontext pro odesílání aktualizací průběhu.
+- Klient implementuje asynchronní handler zpráv, který tiskne notifikace a konečný výsledek.
 
 ### Tipy a řešení problémů
 
 - Používejte `async/await` pro neblokující operace.
-- Vždy ošetřujte výjimky jak na straně serveru, tak klienta pro zajištění robustnosti.
-- Testujte s více klienty, abyste pozorovali aktualizace v reálném čase.
-- Pokud narazíte na chyby, zkontrolujte verzi Pythonu a ujistěte se, že všechny závislosti jsou nainstalovány.
+- Vždy ošetřujte výjimky jak na straně serveru, tak klienta pro větší spolehlivost.
+- Testujte s více klienty, abyste viděli aktualizace v reálném čase.
+- Pokud narazíte na chyby, zkontrolujte verzi Pythonu a ujistěte se, že jsou nainstalovány všechny závislosti.
 
-**Prohlášení:**  
-Tento dokument byl přeložen pomocí služby pro automatizovaný překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

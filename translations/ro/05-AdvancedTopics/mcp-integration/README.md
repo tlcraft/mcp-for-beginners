@@ -2,35 +2,64 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f84eaea79c8fa9ab318a494f40891814",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T20:42:33+00:00",
+=======
+  "translation_date": "2025-08-18T15:56:02+00:00",
+>>>>>>> origin/main
   "source_file": "05-AdvancedTopics/mcp-integration/README.md",
   "language_code": "ro"
 }
 -->
 # Integrarea în mediul enterprise
 
+<<<<<<< HEAD
 Când construiți servere MCP într-un context enterprise, este adesea necesar să le integrați cu platforme și servicii AI existente. Această secțiune acoperă modul de integrare a MCP cu sisteme enterprise precum Azure OpenAI și Microsoft AI Foundry, permițând capabilități avansate de AI și orchestrare a instrumentelor.
 
 ## Introducere
 
 În această lecție, veți învăța cum să integrați Model Context Protocol (MCP) cu sisteme AI enterprise, concentrându-vă pe Azure OpenAI și Microsoft AI Foundry. Aceste integrări vă permit să valorificați modele și instrumente AI puternice, menținând în același timp flexibilitatea și extensibilitatea MCP.
+=======
+Când construiești servere MCP într-un context enterprise, este adesea necesar să integrezi platforme și servicii AI existente. Această secțiune acoperă modul de integrare a MCP cu sisteme enterprise precum Azure OpenAI și Microsoft AI Foundry, permițând capabilități avansate de AI și orchestrarea instrumentelor.
+
+## Introducere
+
+În această lecție, vei învăța cum să integrezi Protocolul Contextului Modelului (MCP) cu sisteme AI enterprise, concentrându-te pe Azure OpenAI și Microsoft AI Foundry. Aceste integrări îți permit să valorifici modele și instrumente AI puternice, menținând în același timp flexibilitatea și extensibilitatea MCP.
+>>>>>>> origin/main
 
 ## Obiectivele învățării
 
+<<<<<<< HEAD
 La finalul acestei lecții, veți putea:
 
 - Integra MCP cu Azure OpenAI pentru a utiliza capabilitățile sale AI.
 - Implementa orchestrarea instrumentelor MCP cu Azure OpenAI.
 - Combina MCP cu Microsoft AI Foundry pentru capabilități avansate ale agenților AI.
 - Valorifica Azure Machine Learning (ML) pentru a executa pipeline-uri ML și a înregistra modele ca instrumente MCP.
+=======
+La finalul acestei lecții, vei fi capabil să:
+
+- Integrezi MCP cu Azure OpenAI pentru a utiliza capabilitățile sale AI.
+- Implementezi orchestrarea instrumentelor MCP cu Azure OpenAI.
+- Combini MCP cu Microsoft AI Foundry pentru capabilități avansate ale agenților AI.
+- Valorifici Azure Machine Learning (ML) pentru a executa pipeline-uri ML și a înregistra modele ca instrumente MCP.
+>>>>>>> origin/main
 
 ## Integrarea cu Azure OpenAI
 
+<<<<<<< HEAD
 Azure OpenAI oferă acces la modele AI puternice precum GPT-4 și altele. Integrarea MCP cu Azure OpenAI vă permite să utilizați aceste modele, menținând în același timp flexibilitatea orchestrării instrumentelor MCP.
 
 ### Implementare în C#
 
 În acest fragment de cod, demonstrăm cum să integrați MCP cu Azure OpenAI utilizând SDK-ul Azure OpenAI.
+=======
+Azure OpenAI oferă acces la modele AI puternice precum GPT-4 și altele. Integrarea MCP cu Azure OpenAI îți permite să utilizezi aceste modele, menținând în același timp flexibilitatea orchestrării instrumentelor MCP.
+
+### Implementare în C#
+
+În acest fragment de cod, demonstrăm cum să integrezi MCP cu Azure OpenAI folosind SDK-ul Azure OpenAI.
+>>>>>>> origin/main
 
 ```csharp
 // .NET Azure OpenAI Integration
@@ -94,19 +123,33 @@ namespace EnterpriseIntegration
 }
 ```
 
+<<<<<<< HEAD
 În codul de mai sus, am:
+=======
+În codul anterior, am:
+>>>>>>> origin/main
 
 - Configurat clientul Azure OpenAI cu endpoint-ul, numele implementării și cheia API.
 - Creat o metodă `GetCompletionWithToolsAsync` pentru a obține completări cu suport pentru instrumente.
 - Gestionat apelurile instrumentelor în răspuns.
 
+<<<<<<< HEAD
 Sunteți încurajați să implementați logica efectivă de gestionare a instrumentelor pe baza configurației specifice a serverului MCP.
+=======
+Ești încurajat să implementezi logica reală de gestionare a instrumentelor pe baza configurației specifice a serverului MCP.
+>>>>>>> origin/main
 
 ## Integrarea cu Microsoft AI Foundry
 
+<<<<<<< HEAD
 Azure AI Foundry oferă o platformă pentru construirea și implementarea agenților AI. Integrarea MCP cu AI Foundry vă permite să valorificați capabilitățile sale, menținând în același timp flexibilitatea MCP.
 
 În codul de mai jos, dezvoltăm o integrare a unui agent care procesează cereri și gestionează apelurile instrumentelor utilizând MCP.
+=======
+Azure AI Foundry oferă o platformă pentru construirea și implementarea agenților AI. Integrarea MCP cu AI Foundry îți permite să valorifici capabilitățile sale, menținând în același timp flexibilitatea MCP.
+
+În codul de mai jos, dezvoltăm o integrare a agentului care procesează cereri și gestionează apelurile instrumentelor folosind MCP.
+>>>>>>> origin/main
 
 ### Implementare în Java
 
@@ -166,6 +209,7 @@ public class AIFoundryMcpBridge {
 }
 ```
 
+<<<<<<< HEAD
 În codul de mai sus, am:
 
 - Creat o clasă `AIFoundryMcpBridge` care integrează atât AI Foundry, cât și MCP.
@@ -175,6 +219,17 @@ public class AIFoundryMcpBridge {
 ## Integrarea MCP cu Azure ML
 
 Integrarea MCP cu Azure Machine Learning (ML) vă permite să valorificați capabilitățile puternice ale Azure ML, menținând în același timp flexibilitatea MCP. Această integrare poate fi utilizată pentru a executa pipeline-uri ML, a înregistra modele ca instrumente și a gestiona resursele de calcul.
+=======
+În codul anterior, am:
+
+- Creat o clasă `AIFoundryMcpBridge` care integrează atât AI Foundry, cât și MCP.
+- Implementat o metodă `processAgentRequest` care procesează o cerere a agentului AI Foundry.
+- Gestionat apelurile instrumentelor prin executarea lor prin clientul MCP și trimiterea rezultatelor înapoi agentului AI Foundry.
+
+## Integrarea MCP cu Azure ML
+
+Integrarea MCP cu Azure Machine Learning (ML) îți permite să valorifici capabilitățile puternice ale Azure ML, menținând în același timp flexibilitatea MCP. Această integrare poate fi utilizată pentru a executa pipeline-uri ML, a înregistra modele ca instrumente și a gestiona resursele de calcul.
+>>>>>>> origin/main
 
 ### Implementare în Python
 
@@ -300,6 +355,7 @@ class EnterpriseAiIntegration:
         return mapping.get(ml_type, "string")
 ```
 
+<<<<<<< HEAD
 În codul de mai sus, am:
 
 - Creat o clasă `EnterpriseAiIntegration` care integrează MCP cu Azure ML.
@@ -307,10 +363,24 @@ class EnterpriseAiIntegration:
 - Implementat o metodă `register_ml_model_as_tool` care înregistrează un model Azure ML ca instrument MCP, inclusiv crearea mediului de implementare necesar și a resurselor de calcul.
 - Mapat tipurile de date Azure ML la tipuri de schemă JSON pentru înregistrarea instrumentelor.
 - Utilizat programarea asincronă pentru a gestiona operațiunile potențial de lungă durată, cum ar fi execuția pipeline-urilor ML și înregistrarea modelelor.
+=======
+În codul anterior, am:
+
+- Creat o clasă `EnterpriseAiIntegration` care integrează MCP cu Azure ML.
+- Implementat o metodă `execute_ml_pipeline` care procesează datele de intrare folosind instrumentele MCP și trimite un pipeline ML către Azure ML.
+- Implementat o metodă `register_ml_model_as_tool` care înregistrează un model Azure ML ca instrument MCP, inclusiv crearea mediului de implementare necesar și a resurselor de calcul.
+- Mapat tipurile de date Azure ML la tipurile de schemă JSON pentru înregistrarea instrumentelor.
+- Utilizat programarea asincronă pentru a gestiona operațiuni potențial de lungă durată, cum ar fi execuția pipeline-urilor ML și înregistrarea modelelor.
+>>>>>>> origin/main
 
 ## Ce urmează
 
 - [5.2 Multi modalitate](../mcp-multi-modality/README.md)
 
+<<<<<<< HEAD
 **Declinarea responsabilității**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru acuratețe, vă rugăm să aveți în vedere că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+=======
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+>>>>>>> origin/main

@@ -2,14 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8358c13b5b6877e475674697cdc1a904",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T19:08:56+00:00",
+=======
+  "translation_date": "2025-08-18T14:14:13+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/02-client/complete_examples.md",
   "language_code": "sw"
 }
 -->
+<<<<<<< HEAD
 # Mifano Kamili ya Wateja wa MCP
 
 Hii ni saraka inayojumuisha mifano kamili na inayofanya kazi ya wateja wa MCP katika lugha mbalimbali za programu. Kila mteja anaonyesha utendaji wote ulioelezwa katika mafunzo ya README.md kuu.
+=======
+# Mifano Kamili za Wateja wa MCP
+
+Hili jalada lina mifano kamili na inayofanya kazi ya wateja wa MCP katika lugha mbalimbali za programu. Kila mteja anaonyesha utendaji wote ulioelezwa katika mafunzo ya README.md kuu.
+>>>>>>> origin/main
 
 ## Wateja Waliopo
 
@@ -23,7 +33,11 @@ Hii ni saraka inayojumuisha mifano kamili na inayofanya kazi ya wateja wa MCP ka
   - Operesheni za kikokotoo (kujumlisha, kutoa, kuzidisha, kugawanya, msaada)
   - Kushughulikia makosa na uchimbaji wa matokeo
 
+<<<<<<< HEAD
 **Jinsi ya kuendesha:**
+=======
+**Kukimbia:**
+>>>>>>> origin/main
 
 ```bash
 # Ensure your MCP server is running on localhost:8080
@@ -39,10 +53,17 @@ java client_example_java
   - Kuanza seva kiotomatiki kupitia usafirishaji wa stdio
   - Orodha ya zana na rasilimali
   - Operesheni za kikokotoo
+<<<<<<< HEAD
   - Uchambuzi wa matokeo ya JSON
   - Kushughulikia makosa kwa kina
 
 **Jinsi ya kuendesha:**
+=======
+  - Kuchambua matokeo ya JSON
+  - Kushughulikia makosa kwa kina
+
+**Kukimbia:**
+>>>>>>> origin/main
 
 ```bash
 dotnet run
@@ -59,7 +80,11 @@ dotnet run
   - Kusoma rasilimali na kutekeleza maelekezo
   - Kushughulikia makosa kwa nguvu
 
+<<<<<<< HEAD
 **Jinsi ya kuendesha:**
+=======
+**Kukimbia:**
+>>>>>>> origin/main
 
 ```bash
 # First compile TypeScript (if needed)
@@ -77,12 +102,21 @@ node client_example_typescript.js
 - **Seva Lengwa**: Seva ya MCP ya Python ya ndani
 - **Vipengele**:
   - Muundo wa async/await kwa operesheni
+<<<<<<< HEAD
   - Ugunduzi wa zana na rasilimali
   - Upimaji wa operesheni za kikokotoo
   - Kusoma maudhui ya rasilimali
   - Mpangilio wa msingi wa darasa
 
 **Jinsi ya kuendesha:**
+=======
+  - Kugundua zana na rasilimali
+  - Kupima operesheni za kikokotoo
+  - Kusoma maudhui ya rasilimali
+  - Mpangilio wa msingi wa darasa
+
+**Kukimbia:**
+>>>>>>> origin/main
 
 ```bash
 python client_example_python.py
@@ -119,7 +153,11 @@ Kila utekelezaji wa mteja unaonyesha:
 
 ## Mahitaji
 
+<<<<<<< HEAD
 Kabla ya kuendesha wateja hawa, hakikisha una:
+=======
+Kabla ya kukimbia wateja hawa, hakikisha una:
+>>>>>>> origin/main
 
 1. **Seva ya MCP inayolingana inayoendesha** (kutoka `../01-first-server/`)
 2. **Vitegemezi vinavyohitajika vimesakinishwa** kwa lugha uliyochagua
@@ -127,6 +165,7 @@ Kabla ya kuendesha wateja hawa, hakikisha una:
 
 ## Tofauti Muhimu Kati ya Utekelezaji
 
+<<<<<<< HEAD
 | Lugha       | Usafirishaji | Kuanza Seva   | Muundo wa Async | Maktaba Muhimu       |
 |-------------|-------------|---------------|-----------------|---------------------|
 | Java        | SSE/HTTP    | Nje           | Synkroni        | WebFlux, MCP SDK    |
@@ -134,6 +173,15 @@ Kabla ya kuendesha wateja hawa, hakikisha una:
 | TypeScript  | Stdio       | Kiotomatiki   | Async/Await     | Node MCP SDK        |
 | Python      | Stdio       | Kiotomatiki   | AsyncIO         | Python MCP SDK      |
 | Rust        | Stdio       | Kiotomatiki   | Async/Await     | Rust MCP SDK, Tokio |
+=======
+| Lugha      | Usafirishaji | Kuanza Seva   | Muundo wa Async | Maktaba Muhimu      |
+|------------|-------------|---------------|-----------------|---------------------|
+| Java       | SSE/HTTP    | Nje           | Sync            | WebFlux, MCP SDK    |
+| C#         | Stdio       | Kiotomatiki   | Async/Await     | .NET MCP SDK        |
+| TypeScript | Stdio       | Kiotomatiki   | Async/Await     | Node MCP SDK        |
+| Python     | Stdio       | Kiotomatiki   | AsyncIO         | Python MCP SDK      |
+| Rust       | Stdio       | Kiotomatiki   | Async/Await     | Rust MCP SDK, Tokio |
+>>>>>>> origin/main
 
 ## Hatua Zifuatazo
 
@@ -144,7 +192,7 @@ Baada ya kuchunguza mifano hii ya wateja:
 3. **Jaribu usafirishaji tofauti** (SSE dhidi ya Stdio)
 4. **Jenga programu ngumu zaidi** inayojumuisha utendaji wa MCP
 
-## Utatuzi wa Matatizo
+## Kutatua Tatizo
 
 ### Masuala ya Kawaida
 
@@ -156,7 +204,11 @@ Baada ya kuchunguza mifano hii ya wateja:
 ### Vidokezo vya Urekebishaji
 
 1. **Washa ufuatiliaji wa kina** katika MCP SDK yako
+<<<<<<< HEAD
 2. **Angalia kumbukumbu za seva** kwa ujumbe wa makosa
+=======
+2. **Angalia magogo ya seva** kwa ujumbe wa makosa
+>>>>>>> origin/main
 3. **Thibitisha majina ya zana na saini** yanalingana kati ya mteja na seva
 4. **Jaribu na MCP Inspector** kwanza ili kuthibitisha utendaji wa seva
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-18T20:00:29+00:00",
+  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
+  "translation_date": "2025-07-13T18:01:48+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "cs"
 }
@@ -55,7 +55,7 @@ Jakmile je server připojen:
 
 Inspektor, který jste spustili, je ve skutečnosti aplikace Node.js a `mcp dev` je obal kolem ní.
 
-Můžete jej spustit přímo v režimu CLI pomocí následujícího příkazu:
+Můžete ji spustit přímo v CLI režimu pomocí následujícího příkazu:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
@@ -116,5 +116,5 @@ Měli byste vidět následující výstup:
 > Obvykle je mnohem rychlejší spustit inspektor v režimu CLI než v prohlížeči.  
 > Více o inspektoru si můžete přečíst [zde](https://github.com/modelcontextprotocol/inspector).
 
-**Prohlášení:**  
-Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

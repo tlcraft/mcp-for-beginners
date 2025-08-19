@@ -1,40 +1,57 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-13T16:13:22+00:00",
+  "original_hash": "0a6a7bcb289c024a91289e0444cb370b",
+  "translation_date": "2025-08-18T17:29:38+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "id"
 }
 -->
-# 📖 Konsep Inti MCP: Menguasai Model Context Protocol untuk Integrasi AI
+# Konsep Inti MCP: Menguasai Model Context Protocol untuk Integrasi AI
 
-[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) adalah kerangka kerja standar yang kuat untuk mengoptimalkan komunikasi antara Large Language Models (LLM) dengan alat eksternal, aplikasi, dan sumber data. Panduan yang dioptimalkan untuk SEO ini akan membahas konsep inti MCP, memastikan Anda memahami arsitektur client-server, komponen penting, mekanisme komunikasi, dan praktik terbaik implementasinya.
+[![Konsep Inti MCP](../../../translated_images/02.8203e26c6fb5a797f38a10012061013ec66c95bb3260f6c9cfd2bf74b00860e1.id.png)](https://youtu.be/earDzWGtE84)
 
-## Ikhtisar
+_(Klik gambar di atas untuk menonton video pelajaran ini)_
 
-Pelajaran ini mengeksplorasi arsitektur dasar dan komponen yang membentuk ekosistem Model Context Protocol (MCP). Anda akan mempelajari arsitektur client-server, komponen utama, dan mekanisme komunikasi yang mendukung interaksi MCP.
+[Model Context Protocol (MCP)](https://gi- **Persetujuan Pengguna yang Jelas**: Semua akses data dan operasi memerlukan persetujuan eksplisit dari pengguna sebelum dijalankan. Pengguna harus memahami dengan jelas data apa yang akan diakses dan tindakan apa yang akan dilakukan, dengan kontrol granular atas izin dan otorisasi.
 
-## 👩‍🎓 Tujuan Pembelajaran Utama
+- **Perlindungan Privasi Data**: Data pengguna hanya dapat diakses dengan persetujuan eksplisit dan harus dilindungi dengan kontrol akses yang kuat sepanjang siklus interaksi. Implementasi harus mencegah transmisi data yang tidak sah dan menjaga batas privasi yang ketat.
 
-Di akhir pelajaran ini, Anda akan:
+- **Keamanan Eksekusi Alat**: Setiap pemanggilan alat memerlukan persetujuan eksplisit dari pengguna dengan pemahaman yang jelas tentang fungsi alat, parameter, dan dampak potensialnya. Batas keamanan yang kuat harus mencegah eksekusi alat yang tidak disengaja, tidak aman, atau berbahaya.
+
+- **Keamanan Lapisan Transportasi**: Semua saluran komunikasi harus menggunakan mekanisme enkripsi dan autentikasi yang sesuai. Koneksi jarak jauh harus menerapkan protokol transportasi yang aman dan manajemen kredensial yang tepat.
+
+#### Panduan Implementasi:
+
+- **Manajemen Izin**: Terapkan sistem izin yang terperinci yang memungkinkan pengguna mengontrol server, alat, dan sumber daya mana yang dapat diakses
+- **Autentikasi & Otorisasi**: Gunakan metode autentikasi yang aman (OAuth, API keys) dengan manajemen token dan masa berlaku yang tepat  
+- **Validasi Input**: Validasi semua parameter dan input data sesuai dengan skema yang ditentukan untuk mencegah serangan injeksi
+- **Pencatatan Audit**: Pertahankan log yang komprehensif dari semua operasi untuk pemantauan keamanan dan kepatuhan
+
+## Gambaran Umum
+
+Pelajaran ini membahas arsitektur dan komponen fundamental yang membentuk ekosistem Model Context Protocol (MCP). Anda akan mempelajari arsitektur client-server, komponen utama, dan mekanisme komunikasi yang mendukung interaksi MCP.
+
+## Tujuan Pembelajaran Utama
+
+Pada akhir pelajaran ini, Anda akan:
 
 - Memahami arsitektur client-server MCP.
-- Mengidentifikasi peran dan tanggung jawab Hosts, Clients, dan Servers.
-- Menganalisis fitur inti yang membuat MCP menjadi lapisan integrasi yang fleksibel.
+- Mengidentifikasi peran dan tanggung jawab Host, Client, dan Server.
+- Menganalisis fitur inti yang menjadikan MCP lapisan integrasi yang fleksibel.
 - Mempelajari alur informasi dalam ekosistem MCP.
 - Mendapatkan wawasan praktis melalui contoh kode dalam .NET, Java, Python, dan JavaScript.
 
-## 🔎 Arsitektur MCP: Pandangan Mendalam
+## Arsitektur MCP: Penjelasan Lebih Mendalam
 
-Ekosistem MCP dibangun berdasarkan model client-server. Struktur modular ini memungkinkan aplikasi AI berinteraksi dengan alat, basis data, API, dan sumber daya kontekstual secara efisien. Mari kita uraikan arsitektur ini ke dalam komponen utamanya.
+Ekosistem MCP dibangun di atas model client-server. Struktur modular ini memungkinkan aplikasi AI berinteraksi dengan alat, basis data, API, dan sumber daya kontekstual secara efisien. Mari kita uraikan arsitektur ini ke dalam komponen intinya.
 
-Pada dasarnya, MCP mengikuti arsitektur client-server di mana aplikasi host dapat terhubung ke beberapa server:
+Pada intinya, MCP mengikuti arsitektur client-server di mana aplikasi host dapat terhubung ke beberapa server:
 
 ```mermaid
 flowchart LR
     subgraph "Your Computer"
-        Host["Host with MCP VScode, IDEs, Tools)"]
+        Host["Host with MCP (Visual Studio, VS Code, IDEs, Tools)"]
         S1["MCP Server A"]
         S2["MCP Server B"]
         S3["MCP Server C"]
@@ -50,192 +67,250 @@ flowchart LR
 ```
 
 - **MCP Hosts**: Program seperti VSCode, Claude Desktop, IDE, atau alat AI yang ingin mengakses data melalui MCP
-- **MCP Clients**: Klien protokol yang menjaga koneksi 1:1 dengan server
-- **MCP Servers**: Program ringan yang masing-masing menyediakan kemampuan spesifik melalui Model Context Protocol yang distandarisasi
-- **Sumber Data Lokal**: File, basis data, dan layanan di komputer Anda yang dapat diakses dengan aman oleh server MCP
-- **Layanan Jarak Jauh**: Sistem eksternal yang tersedia melalui internet dan dapat dihubungkan oleh server MCP melalui API.
+- **MCP Clients**: Klien protokol yang mempertahankan koneksi 1:1 dengan server
+- **MCP Servers**: Program ringan yang masing-masing menyediakan kemampuan spesifik melalui Model Context Protocol yang terstandarisasi
+- **Sumber Data Lokal**: File, basis data, dan layanan di komputer Anda yang dapat diakses server MCP dengan aman
+- **Layanan Jarak Jauh**: Sistem eksternal yang tersedia melalui internet yang dapat dihubungkan server MCP melalui API.
 
-Protokol MCP adalah standar yang terus berkembang, Anda dapat melihat pembaruan terbaru pada [spesifikasi protokol](https://modelcontextprotocol.io/specification/2025-06-18/)
+Protokol MCP adalah standar yang terus berkembang menggunakan penomoran versi berbasis tanggal (format YYYY-MM-DD). Versi protokol saat ini adalah **2025-06-18**. Anda dapat melihat pembaruan terbaru pada [spesifikasi protokol](https://modelcontextprotocol.io/specification/2025-06-18/)
 
 ### 1. Hosts
 
-Dalam Model Context Protocol (MCP), Hosts memegang peran penting sebagai antarmuka utama tempat pengguna berinteraksi dengan protokol. Hosts adalah aplikasi atau lingkungan yang memulai koneksi dengan server MCP untuk mengakses data, alat, dan prompt. Contoh Hosts termasuk integrated development environments (IDE) seperti Visual Studio Code, alat AI seperti Claude Desktop, atau agen khusus yang dibuat untuk tugas tertentu.
+Dalam Model Context Protocol (MCP), **Hosts** adalah aplikasi AI yang berfungsi sebagai antarmuka utama di mana pengguna berinteraksi dengan protokol. Host mengoordinasikan dan mengelola koneksi ke beberapa server MCP dengan membuat klien MCP khusus untuk setiap koneksi server. Contoh Host meliputi:
 
-**Hosts** adalah aplikasi LLM yang memulai koneksi. Mereka:
+- **Aplikasi AI**: Claude Desktop, Visual Studio Code, Claude Code
+- **Lingkungan Pengembangan**: IDE dan editor kode dengan integrasi MCP  
+- **Aplikasi Kustom**: Agen AI dan alat yang dibuat khusus
 
-- Menjalankan atau berinteraksi dengan model AI untuk menghasilkan respons.
-- Memulai koneksi dengan server MCP.
-- Mengelola alur percakapan dan antarmuka pengguna.
-- Mengontrol izin dan batasan keamanan.
-- Menangani persetujuan pengguna untuk berbagi data dan eksekusi alat.
+**Hosts** adalah aplikasi yang mengoordinasikan interaksi model AI. Mereka:
+
+- **Mengatur Model AI**: Menjalankan atau berinteraksi dengan LLM untuk menghasilkan respons dan mengoordinasikan alur kerja AI
+- **Mengelola Koneksi Klien**: Membuat dan mempertahankan satu klien MCP per koneksi server MCP
+- **Mengontrol Antarmuka Pengguna**: Menangani alur percakapan, interaksi pengguna, dan penyajian respons  
+- **Menegakkan Keamanan**: Mengontrol izin, batasan keamanan, dan autentikasi
+- **Mengelola Persetujuan Pengguna**: Mengatur persetujuan pengguna untuk berbagi data dan eksekusi alat
 
 ### 2. Clients
 
-Clients adalah komponen penting yang memfasilitasi interaksi antara Hosts dan server MCP. Clients bertindak sebagai perantara, memungkinkan Hosts mengakses dan memanfaatkan fungsi yang disediakan oleh server MCP. Mereka berperan penting dalam memastikan komunikasi lancar dan pertukaran data yang efisien dalam arsitektur MCP.
+**Clients** adalah komponen penting yang mempertahankan koneksi satu-ke-satu antara Host dan server MCP. Setiap klien MCP dibuat oleh Host untuk terhubung ke server MCP tertentu, memastikan saluran komunikasi yang terorganisir dan aman. Beberapa klien memungkinkan Host terhubung ke beberapa server secara bersamaan.
 
-**Clients** adalah penghubung dalam aplikasi host. Mereka:
+**Clients** adalah komponen penghubung dalam aplikasi host. Mereka:
 
-- Mengirim permintaan ke server dengan prompt/instruksi.
-- Melakukan negosiasi kemampuan dengan server.
-- Mengelola permintaan eksekusi alat dari model.
-- Memproses dan menampilkan respons kepada pengguna.
+- **Komunikasi Protokol**: Mengirim permintaan JSON-RPC 2.0 ke server dengan prompt dan instruksi
+- **Negosiasi Kemampuan**: Menegosiasikan fitur yang didukung dan versi protokol dengan server selama inisialisasi
+- **Eksekusi Alat**: Mengelola permintaan eksekusi alat dari model dan memproses respons
+- **Pembaruan Real-time**: Menangani notifikasi dan pembaruan real-time dari server
+- **Pemrosesan Respons**: Memproses dan memformat respons server untuk ditampilkan kepada pengguna
 
 ### 3. Servers
 
-Servers bertanggung jawab menangani permintaan dari client MCP dan memberikan respons yang sesuai. Mereka mengelola berbagai operasi seperti pengambilan data, eksekusi alat, dan pembuatan prompt. Servers memastikan komunikasi antara client dan Hosts berjalan efisien dan andal, menjaga integritas proses interaksi.
+**Servers** adalah program yang menyediakan konteks, alat, dan kemampuan kepada klien MCP. Mereka dapat dijalankan secara lokal (di mesin yang sama dengan Host) atau jarak jauh (di platform eksternal), dan bertanggung jawab untuk menangani permintaan klien dan memberikan respons yang terstruktur. Server menyediakan fungsi spesifik melalui Model Context Protocol yang terstandarisasi.
 
 **Servers** adalah layanan yang menyediakan konteks dan kemampuan. Mereka:
 
-- Mendaftarkan fitur yang tersedia (sumber daya, prompt, alat)
-- Menerima dan menjalankan panggilan alat dari client
-- Menyediakan informasi kontekstual untuk meningkatkan respons model
-- Mengembalikan output ke client
-- Mempertahankan status selama interaksi jika diperlukan
+- **Pendaftaran Fitur**: Mendaftarkan dan menyediakan primitif yang tersedia (sumber daya, prompt, alat) kepada klien
+- **Pemrosesan Permintaan**: Menerima dan menjalankan panggilan alat, permintaan sumber daya, dan permintaan prompt dari klien
+- **Penyediaan Konteks**: Memberikan informasi dan data kontekstual untuk meningkatkan respons model
+- **Manajemen Status**: Mempertahankan status sesi dan menangani interaksi berbasis status jika diperlukan
+- **Notifikasi Real-time**: Mengirim notifikasi tentang perubahan kemampuan dan pembaruan kepada klien yang terhubung
 
-Servers dapat dikembangkan oleh siapa saja untuk memperluas kemampuan model dengan fungsi khusus.
+Server dapat dikembangkan oleh siapa saja untuk memperluas kemampuan model dengan fungsi khusus, dan mereka mendukung skenario penerapan lokal maupun jarak jauh.
 
-### 4. Fitur Server
+### 4. Primitif Server
 
-Server dalam Model Context Protocol (MCP) menyediakan blok bangunan dasar yang memungkinkan interaksi kaya antara client, host, dan model bahasa. Fitur-fitur ini dirancang untuk meningkatkan kemampuan MCP dengan menawarkan konteks terstruktur, alat, dan prompt.
+Server dalam Model Context Protocol (MCP) menyediakan tiga **primitif** inti yang mendefinisikan blok bangunan fundamental untuk interaksi yang kaya antara klien, host, dan model bahasa. Primitif ini menentukan jenis informasi kontekstual dan tindakan yang tersedia melalui protokol.
 
-Server MCP dapat menawarkan salah satu fitur berikut:
+Server MCP dapat menyediakan kombinasi dari tiga primitif inti berikut:
 
-#### 📑 Resources
+#### Resources 
 
-Resources dalam Model Context Protocol (MCP) mencakup berbagai jenis konteks dan data yang dapat digunakan oleh pengguna atau model AI. Ini meliputi:
+**Resources** adalah sumber data yang menyediakan informasi kontekstual untuk aplikasi AI. Mereka mewakili konten statis atau dinamis yang dapat meningkatkan pemahaman dan pengambilan keputusan model:
 
-- **Data Kontekstual**: Informasi dan konteks yang dapat dimanfaatkan pengguna atau model AI untuk pengambilan keputusan dan pelaksanaan tugas.
-- **Basis Pengetahuan dan Repositori Dokumen**: Koleksi data terstruktur dan tidak terstruktur, seperti artikel, manual, dan makalah penelitian, yang menyediakan wawasan dan informasi berharga.
-- **File dan Basis Data Lokal**: Data yang disimpan secara lokal di perangkat atau dalam basis data, dapat diakses untuk pemrosesan dan analisis.
-- **API dan Layanan Web**: Antarmuka dan layanan eksternal yang menawarkan data dan fungsi tambahan, memungkinkan integrasi dengan berbagai sumber daya dan alat online.
+- **Data Kontekstual**: Informasi terstruktur dan konteks untuk konsumsi model AI
+- **Basis Pengetahuan**: Repositori dokumen, artikel, manual, dan makalah penelitian
+- **Sumber Data Lokal**: File, basis data, dan informasi sistem lokal  
+- **Data Eksternal**: Respons API, layanan web, dan data sistem jarak jauh
+- **Konten Dinamis**: Data real-time yang diperbarui berdasarkan kondisi eksternal
 
-Contoh resource bisa berupa skema basis data atau file yang dapat diakses seperti berikut:
+Resources diidentifikasi oleh URI dan mendukung penemuan melalui metode `resources/list` dan pengambilan melalui `resources/read`:
 
 ```text
-file://log.txt
-database://schema
+file://documents/project-spec.md
+database://production/users/schema
+api://weather/current
 ```
 
-### 🤖 Prompts
+#### Prompts
 
-Prompts dalam Model Context Protocol (MCP) mencakup berbagai template dan pola interaksi yang telah ditentukan sebelumnya untuk mempermudah alur kerja pengguna dan meningkatkan komunikasi. Ini meliputi:
+**Prompts** adalah template yang dapat digunakan kembali untuk membantu menyusun interaksi dengan model bahasa. Mereka menyediakan pola interaksi standar dan alur kerja berbasis template:
 
-- **Pesan dan Alur Kerja Berbasis Template**: Pesan dan proses yang sudah terstruktur untuk memandu pengguna melalui tugas dan interaksi tertentu.
-- **Pola Interaksi yang Telah Ditentukan**: Urutan tindakan dan respons standar yang memfasilitasi komunikasi yang konsisten dan efisien.
-- **Template Percakapan Khusus**: Template yang dapat disesuaikan untuk jenis percakapan tertentu, memastikan interaksi yang relevan dan sesuai konteks.
+- **Interaksi Berbasis Template**: Pesan yang telah terstruktur dan pembuka percakapan
+- **Template Alur Kerja**: Urutan standar untuk tugas dan interaksi umum
+- **Contoh Few-shot**: Template berbasis contoh untuk instruksi model
+- **Prompt Sistem**: Prompt dasar yang mendefinisikan perilaku dan konteks model
+- **Template Dinamis**: Prompt yang diparameterisasi yang beradaptasi dengan konteks tertentu
 
-Template prompt dapat terlihat seperti ini:
+Prompts mendukung substitusi variabel dan dapat ditemukan melalui `prompts/list` dan diambil dengan `prompts/get`:
 
 ```markdown
-Generate a product slogan based on the following {{product}} with the following {{keywords}}
+Generate a {{task_type}} for {{product}} targeting {{audience}} with the following requirements: {{requirements}}
 ```
 
-#### ⛏️ Tools
+#### Tools
 
-Tools dalam Model Context Protocol (MCP) adalah fungsi yang dapat dijalankan oleh model AI untuk melakukan tugas tertentu. Tools ini dirancang untuk meningkatkan kemampuan model AI dengan menyediakan operasi yang terstruktur dan dapat diandalkan. Aspek utama meliputi:
+**Tools** adalah fungsi yang dapat dieksekusi yang dapat dipanggil oleh model AI untuk melakukan tindakan tertentu. Mereka mewakili "kata kerja" dari ekosistem MCP, memungkinkan model berinteraksi dengan sistem eksternal:
 
-- **Fungsi yang dapat dijalankan oleh model AI**: Tools adalah fungsi yang dapat dipanggil oleh model AI untuk melaksanakan berbagai tugas.
-- **Nama dan Deskripsi Unik**: Setiap tool memiliki nama yang khas dan deskripsi rinci yang menjelaskan tujuan dan fungsinya.
-- **Parameter dan Output**: Tools menerima parameter tertentu dan mengembalikan output terstruktur, memastikan hasil yang konsisten dan dapat diprediksi.
-- **Fungsi Diskrit**: Tools menjalankan fungsi diskrit seperti pencarian web, perhitungan, dan kueri basis data.
+- **Fungsi yang Dapat Dieksekusi**: Operasi diskrit yang dapat dipanggil model dengan parameter tertentu
+- **Integrasi Sistem Eksternal**: Panggilan API, kueri basis data, operasi file, perhitungan
+- **Identitas Unik**: Setiap alat memiliki nama, deskripsi, dan skema parameter yang berbeda
+- **I/O Terstruktur**: Alat menerima parameter yang divalidasi dan mengembalikan respons yang terstruktur dan bertipe
+- **Kemampuan Tindakan**: Memungkinkan model melakukan tindakan dunia nyata dan mengambil data langsung
 
-Contoh tool dapat terlihat seperti ini:
+Tools didefinisikan dengan JSON Schema untuk validasi parameter dan ditemukan melalui `tools/list` serta dieksekusi melalui `tools/call`:
 
 ```typescript
 server.tool(
-  "GetProducts",
+  "search_products", 
   {
-    pageSize: z.string().optional(),
-    pageCount: z.string().optional()
-  }, () => {
-    // return results from API
+    query: z.string().describe("Search query for products"),
+    category: z.string().optional().describe("Product category filter"),
+    max_results: z.number().default(10).describe("Maximum results to return")
+  }, 
+  async (params) => {
+    // Execute search and return structured results
+    return await productService.search(params);
   }
-)
+);
 ```
 
-## Fitur Client
+## Primitif Klien
 
-Dalam Model Context Protocol (MCP), client menawarkan beberapa fitur utama kepada server, meningkatkan fungsionalitas dan interaksi dalam protokol. Salah satu fitur penting adalah Sampling.
+Dalam Model Context Protocol (MCP), **klien** dapat menyediakan primitif yang memungkinkan server meminta kemampuan tambahan dari aplikasi host. Primitif sisi klien ini memungkinkan implementasi server yang lebih kaya dan interaktif yang dapat mengakses kemampuan model AI dan interaksi pengguna.
 
-### 👉 Sampling
+### Sampling
 
-- **Perilaku Agen yang Diinisiasi Server**: Client memungkinkan server untuk memulai tindakan atau perilaku tertentu secara otonom, meningkatkan kemampuan dinamis sistem.
-- **Interaksi Rekursif dengan LLM**: Fitur ini memungkinkan interaksi rekursif dengan large language models (LLM), memungkinkan pemrosesan tugas yang lebih kompleks dan iteratif.
-- **Permintaan Penyelesaian Model Tambahan**: Server dapat meminta penyelesaian tambahan dari model, memastikan respons yang lengkap dan relevan secara kontekstual.
+**Sampling** memungkinkan server meminta penyelesaian model bahasa dari aplikasi AI klien. Primitif ini memungkinkan server mengakses kemampuan LLM tanpa menyertakan dependensi model mereka sendiri:
+
+- **Akses Model-Independen**: Server dapat meminta penyelesaian tanpa menyertakan SDK LLM atau mengelola akses model
+- **AI yang Diprakarsai Server**: Memungkinkan server secara mandiri menghasilkan konten menggunakan model AI klien
+- **Interaksi LLM Rekursif**: Mendukung skenario kompleks di mana server memerlukan bantuan AI untuk pemrosesan
+- **Pembuatan Konten Dinamis**: Memungkinkan server membuat respons kontekstual menggunakan model host
+
+Sampling dimulai melalui metode `sampling/complete`, di mana server mengirimkan permintaan penyelesaian ke klien.
+
+### Elicitation  
+
+**Elicitation** memungkinkan server meminta informasi tambahan atau konfirmasi dari pengguna melalui antarmuka klien:
+
+- **Permintaan Input Pengguna**: Server dapat meminta informasi tambahan saat diperlukan untuk eksekusi alat
+- **Dialog Konfirmasi**: Meminta persetujuan pengguna untuk operasi yang sensitif atau berdampak
+- **Alur Kerja Interaktif**: Memungkinkan server membuat interaksi pengguna langkah-demi-langkah
+- **Pengumpulan Parameter Dinamis**: Mengumpulkan parameter yang hilang atau opsional selama eksekusi alat
+
+Permintaan elicitation dilakukan menggunakan metode `elicitation/request` untuk mengumpulkan input pengguna melalui antarmuka klien.
+
+### Logging
+
+**Logging** memungkinkan server mengirim pesan log terstruktur ke klien untuk debugging, pemantauan, dan visibilitas operasional:
+
+- **Dukungan Debugging**: Memungkinkan server memberikan log eksekusi terperinci untuk pemecahan masalah
+- **Pemantauan Operasional**: Mengirim pembaruan status dan metrik kinerja ke klien
+- **Pelaporan Kesalahan**: Memberikan konteks kesalahan terperinci dan informasi diagnostik
+- **Jejak Audit**: Membuat log komprehensif dari operasi dan keputusan server
+
+Pesan logging dikirim ke klien untuk memberikan transparansi ke dalam operasi server dan memfasilitasi debugging.
 
 ## Alur Informasi dalam MCP
 
-Model Context Protocol (MCP) mendefinisikan alur informasi terstruktur antara host, client, server, dan model. Memahami alur ini membantu menjelaskan bagaimana permintaan pengguna diproses dan bagaimana alat serta data eksternal diintegrasikan ke dalam respons model.
+Model Context Protocol (MCP) mendefinisikan alur informasi yang terstruktur antara host, klien, server, dan model. Memahami alur ini membantu memperjelas bagaimana permintaan pengguna diproses dan bagaimana alat serta data eksternal diintegrasikan ke dalam respons model.
 
 - **Host Memulai Koneksi**  
-  Aplikasi host (seperti IDE atau antarmuka chat) membuat koneksi ke server MCP, biasanya melalui STDIO, WebSocket, atau transport lain yang didukung.
+  Aplikasi host (seperti IDE atau antarmuka obrolan) membangun koneksi ke server MCP, biasanya melalui STDIO, WebSocket, atau transportasi lain yang didukung.
 
 - **Negosiasi Kemampuan**  
-  Client (yang tertanam di host) dan server bertukar informasi tentang fitur, alat, sumber daya, dan versi protokol yang didukung. Ini memastikan kedua pihak memahami kemampuan yang tersedia untuk sesi tersebut.
+  Klien (yang tertanam dalam host) dan server bertukar informasi tentang fitur, alat, sumber daya, dan versi protokol yang didukung. Ini memastikan kedua pihak memahami kemampuan yang tersedia untuk sesi tersebut.
 
 - **Permintaan Pengguna**  
-  Pengguna berinteraksi dengan host (misalnya memasukkan prompt atau perintah). Host mengumpulkan input ini dan meneruskannya ke client untuk diproses.
+  Pengguna berinteraksi dengan host (misalnya, memasukkan prompt atau perintah). Host mengumpulkan input ini dan meneruskannya ke klien untuk diproses.
 
-- **Penggunaan Resource atau Tool**  
-  - Client dapat meminta konteks atau sumber daya tambahan dari server (seperti file, entri basis data, atau artikel basis pengetahuan) untuk memperkaya pemahaman model.
-  - Jika model menentukan bahwa sebuah tool diperlukan (misalnya untuk mengambil data, melakukan perhitungan, atau memanggil API), client mengirim permintaan pemanggilan tool ke server, dengan menyebutkan nama tool dan parameter.
+- **Penggunaan Sumber Daya atau Alat**  
+  - Klien dapat meminta konteks tambahan atau sumber daya dari server (seperti file, entri basis data, atau artikel basis pengetahuan) untuk memperkaya pemahaman model.
+  - Jika model menentukan bahwa alat diperlukan (misalnya, untuk mengambil data, melakukan perhitungan, atau memanggil API), klien mengirimkan permintaan pemanggilan alat ke server, menentukan nama alat dan parameter.
 
 - **Eksekusi Server**  
-  Server menerima permintaan resource atau tool, menjalankan operasi yang diperlukan (seperti menjalankan fungsi, kueri basis data, atau mengambil file), dan mengembalikan hasil ke client dalam format terstruktur.
+  Server menerima permintaan sumber daya atau alat, menjalankan operasi yang diperlukan (seperti menjalankan fungsi, melakukan kueri basis data, atau mengambil file), dan mengembalikan hasilnya ke klien dalam format terstruktur.
 
 - **Pembuatan Respons**  
-  Client mengintegrasikan respons server (data resource, output tool, dll.) ke dalam interaksi model yang sedang berlangsung. Model menggunakan informasi ini untuk menghasilkan respons yang komprehensif dan relevan secara kontekstual.
+  Klien mengintegrasikan respons server (data sumber daya, output alat, dll.) ke dalam interaksi model yang sedang berlangsung. Model menggunakan informasi ini untuk menghasilkan respons yang komprehensif dan relevan secara kontekstual.
 
 - **Penyajian Hasil**  
-  Host menerima output akhir dari client dan menyajikannya kepada pengguna, sering kali mencakup teks yang dihasilkan model serta hasil dari eksekusi tool atau pencarian resource.
+  Host menerima output akhir dari klien dan menyajikannya kepada pengguna, sering kali mencakup teks yang dihasilkan model dan hasil dari eksekusi alat atau pencarian sumber daya.
 
 Alur ini memungkinkan MCP mendukung aplikasi AI yang canggih, interaktif, dan sadar konteks dengan menghubungkan model secara mulus dengan alat dan sumber data eksternal.
 
-## Detail Protokol
+## Arsitektur & Lapisan Protokol
 
-MCP (Model Context Protocol) dibangun di atas [JSON-RPC 2.0](https://www.jsonrpc.org/), menyediakan format pesan standar dan bahasa-agnostik untuk komunikasi antara host, client, dan server. Dasar ini memungkinkan interaksi yang andal, terstruktur, dan dapat diperluas di berbagai platform dan bahasa pemrograman.
+MCP terdiri dari dua lapisan arsitektur yang berbeda yang bekerja bersama untuk menyediakan kerangka komunikasi yang lengkap:
 
-### Fitur Utama Protokol
+### Lapisan Data
 
-MCP memperluas JSON-RPC 2.0 dengan konvensi tambahan untuk pemanggilan tool, akses resource, dan manajemen prompt. MCP mendukung berbagai lapisan transport (STDIO, WebSocket, SSE) dan memungkinkan komunikasi yang aman, dapat diperluas, dan bahasa-agnostik antar komponen.
+**Lapisan Data** mengimplementasikan protokol MCP inti menggunakan **JSON-RPC 2.0** sebagai dasarnya. Lapisan ini mendefinisikan struktur pesan, semantik, dan pola interaksi:
 
-#### 🧢 Protokol Dasar
+#### Komponen Inti:
 
-- **Format Pesan JSON-RPC**: Semua permintaan dan respons menggunakan spesifikasi JSON-RPC 2.0, memastikan struktur konsisten untuk pemanggilan metode, parameter, hasil, dan penanganan kesalahan.
-- **Koneksi Stateful**: Sesi MCP mempertahankan status di antara beberapa permintaan, mendukung percakapan berkelanjutan, akumulasi konteks, dan manajemen resource.
-- **Negosiasi Kemampuan**: Saat pengaturan koneksi, client dan server bertukar informasi tentang fitur yang didukung, versi protokol, alat, dan resource yang tersedia. Ini memastikan kedua pihak memahami kemampuan masing-masing dan dapat menyesuaikan.
+- **Protokol JSON-RPC 2.0**: Semua komunikasi menggunakan format pesan JSON-RPC 2.0 yang terstandarisasi untuk panggilan metode, respons, dan notifikasi
+- **Manajemen Siklus Hidup**: Mengelola inisialisasi koneksi, negosiasi kemampuan, dan penghentian sesi antara klien dan server  
+- **Primitif Server**: Memungkinkan server menyediakan fungsi inti melalui alat, sumber daya, dan prompt  
+- **Primitif Klien**: Memungkinkan server meminta sampling dari LLM, meminta input pengguna, dan mengirim pesan log  
+- **Notifikasi Real-time**: Mendukung notifikasi asinkron untuk pembaruan dinamis tanpa polling  
 
-#### ➕ Utilitas Tambahan
+#### Fitur Utama:
 
-Berikut beberapa utilitas dan ekstensi protokol yang disediakan MCP untuk meningkatkan pengalaman pengembang dan memungkinkan skenario lanjutan:
+- **Negosiasi Versi Protokol**: Menggunakan penomoran versi berbasis tanggal (YYYY-MM-DD) untuk memastikan kompatibilitas  
+- **Penemuan Kemampuan**: Klien dan server saling bertukar informasi fitur yang didukung selama inisialisasi  
+- **Sesi Berstatus**: Mempertahankan status koneksi di berbagai interaksi untuk kontinuitas konteks  
 
-- **Opsi Konfigurasi**: MCP memungkinkan konfigurasi dinamis parameter sesi, seperti izin alat, akses resource, dan pengaturan model, yang disesuaikan untuk setiap interaksi.
-- **Pelacakan Progres**: Operasi yang berjalan lama dapat melaporkan pembaruan progres, memungkinkan antarmuka pengguna yang responsif dan pengalaman pengguna yang lebih baik selama tugas kompleks.
-- **Pembatalan Permintaan**: Client dapat membatalkan permintaan yang sedang berjalan, memungkinkan pengguna menghentikan operasi yang tidak lagi diperlukan atau terlalu lama.
-- **Pelaporan Kesalahan**: Pesan dan kode kesalahan standar membantu mendiagnosis masalah, menangani kegagalan dengan baik, dan memberikan umpan balik yang dapat ditindaklanjuti kepada pengguna dan pengembang.
-- **Logging**: Baik client maupun server dapat mengeluarkan log terstruktur untuk audit, debugging, dan pemantauan interaksi protokol.
+### Lapisan Transportasi
 
-Dengan memanfaatkan fitur protokol ini, MCP memastikan komunikasi yang kuat, aman, dan fleksibel antara model bahasa dan alat atau sumber data eksternal.
+**Lapisan Transportasi** mengelola saluran komunikasi, pembingkaian pesan, dan autentikasi antara peserta MCP:
 
-### 🔐 Pertimbangan Keamanan
+#### Mekanisme Transportasi yang Didukung:
 
-Implementasi MCP harus mematuhi beberapa prinsip keamanan utama untuk memastikan interaksi yang aman dan dapat dipercaya:
+1. **Transportasi STDIO**:  
+   - Menggunakan aliran input/output standar untuk komunikasi proses langsung  
+   - Optimal untuk proses lokal di mesin yang sama tanpa overhead jaringan  
+   - Umumnya digunakan untuk implementasi server MCP lokal  
 
-- **Persetujuan dan Kontrol Pengguna**: Pengguna harus memberikan persetujuan eksplisit sebelum data diakses atau operasi dilakukan. Mereka harus memiliki kontrol jelas atas data yang dibagikan dan tindakan yang diizinkan, didukung oleh antarmuka pengguna yang intuitif untuk meninjau dan menyetujui aktivitas.
+2. **Transportasi HTTP yang Dapat Dialirkan**:  
+   - Menggunakan HTTP POST untuk pesan dari klien ke server  
+   - Server-Sent Events (SSE) opsional untuk streaming dari server ke klien  
+   - Memungkinkan komunikasi server jarak jauh melalui jaringan  
+   - Mendukung autentikasi HTTP standar (token bearer, kunci API, header khusus)  
+   - MCP merekomendasikan OAuth untuk autentikasi berbasis token yang aman  
 
-- **Privasi Data**: Data pengguna hanya boleh diakses dengan persetujuan eksplisit dan harus dilindungi dengan kontrol akses yang tepat. Implementasi MCP harus mencegah transmisi data tanpa izin dan memastikan privasi terjaga selama semua interaksi.
+#### Abstraksi Transportasi:
 
-- **Keamanan Alat**: Sebelum memanggil alat apa pun, persetujuan eksplisit pengguna diperlukan. Pengguna harus memahami fungsi setiap alat dengan jelas, dan batasan keamanan yang kuat harus diterapkan untuk mencegah eksekusi alat yang tidak diinginkan atau berbahaya.
+Lapisan transportasi mengabstraksi detail komunikasi dari lapisan data, memungkinkan format pesan JSON-RPC 2.0 yang sama di semua mekanisme transportasi. Abstraksi ini memungkinkan aplikasi beralih antara server lokal dan jarak jauh dengan mulus.
 
-Dengan mengikuti prinsip-prinsip ini, MCP memastikan kepercayaan, privasi, dan keamanan pengguna terjaga di seluruh interaksi protokol.
+### Pertimbangan Keamanan
+
+Implementasi MCP harus mematuhi beberapa prinsip keamanan penting untuk memastikan interaksi yang aman, terpercaya, dan terjamin di semua operasi protokol:
+
+- **Persetujuan dan Kontrol Pengguna**: Pengguna harus memberikan persetujuan eksplisit sebelum data diakses atau operasi dilakukan. Mereka harus memiliki kontrol yang jelas atas data apa yang dibagikan dan tindakan apa yang diizinkan, didukung oleh antarmuka pengguna yang intuitif untuk meninjau dan menyetujui aktivitas.  
+
+- **Privasi Data**: Data pengguna hanya boleh diungkapkan dengan persetujuan eksplisit dan harus dilindungi oleh kontrol akses yang sesuai. Implementasi MCP harus melindungi dari transmisi data yang tidak sah dan memastikan privasi terjaga di semua interaksi.  
+
+- **Keamanan Alat**: Sebelum menggunakan alat apa pun, persetujuan eksplisit pengguna diperlukan. Pengguna harus memiliki pemahaman yang jelas tentang fungsi setiap alat, dan batasan keamanan yang kuat harus ditegakkan untuk mencegah eksekusi alat yang tidak diinginkan atau tidak aman.  
+
+Dengan mengikuti prinsip keamanan ini, MCP memastikan kepercayaan, privasi, dan keamanan pengguna terjaga di semua interaksi protokol sambil memungkinkan integrasi AI yang kuat.
 
 ## Contoh Kode: Komponen Utama
 
-Berikut contoh kode dalam beberapa bahasa pemrograman populer yang menggambarkan cara mengimplementasikan komponen server MCP dan alat utama.
+Berikut adalah contoh kode dalam beberapa bahasa pemrograman populer yang menggambarkan cara mengimplementasikan komponen server MCP dan alat utama.
 
-### Contoh .NET: Membuat Server MCP Sederhana dengan Tools
+### Contoh .NET: Membuat Server MCP Sederhana dengan Alat
 
-Berikut contoh kode .NET praktis yang menunjukkan cara mengimplementasikan server MCP sederhana dengan alat kustom. Contoh ini memperlihatkan cara mendefinisikan dan mendaftarkan alat, menangani permintaan, dan menghubungkan server menggunakan Model Context Protocol.
+Berikut adalah contoh kode praktis .NET yang menunjukkan cara mengimplementasikan server MCP sederhana dengan alat khusus. Contoh ini menunjukkan cara mendefinisikan dan mendaftarkan alat, menangani permintaan, dan menghubungkan server menggunakan Model Context Protocol.
 
 ```csharp
 using System;
@@ -296,7 +371,7 @@ public class WeatherData
 
 ### Contoh Java: Komponen Server MCP
 
-Contoh ini menunjukkan server MCP dan pendaftaran alat yang sama seperti contoh .NET di atas, tetapi diimplementasikan dalam Java.
+Contoh ini menunjukkan pendaftaran server MCP dan alat yang sama seperti contoh .NET di atas, tetapi diimplementasikan dalam Java.
 
 ```java
 import io.modelcontextprotocol.server.McpServer;
@@ -376,7 +451,7 @@ class WeatherData {
 
 ### Contoh Python: Membangun Server MCP
 
-Dalam contoh ini kami menunjukkan cara membangun server MCP di Python. Anda juga diperlihatkan dua cara berbeda untuk membuat alat.
+Dalam contoh ini, kami menunjukkan cara membangun server MCP dalam Python. Anda juga ditunjukkan dua cara berbeda untuk membuat alat.
 
 ```python
 #!/usr/bin/env python3
@@ -511,78 +586,90 @@ server.connect(transport).catch(console.error);
 console.log("Weather MCP Server started");
 ```
 
-Contoh JavaScript ini menunjukkan cara membuat client MCP yang terhubung ke server, mengirim prompt, dan memproses respons termasuk panggilan alat yang dilakukan.
+Contoh JavaScript ini menunjukkan cara membuat klien MCP yang terhubung ke server, mengirimkan prompt, dan memproses respons termasuk panggilan alat yang dilakukan.
 
 ## Keamanan dan Otorisasi
-MCP mencakup beberapa konsep dan mekanisme bawaan untuk mengelola keamanan dan otorisasi sepanjang protokol:
+
+MCP mencakup beberapa konsep dan mekanisme bawaan untuk mengelola keamanan dan otorisasi di seluruh protokol:
 
 1. **Kontrol Izin Alat**:  
-  Klien dapat menentukan alat mana yang diizinkan digunakan oleh model selama sesi berlangsung. Ini memastikan hanya alat yang secara eksplisit diotorisasi yang dapat diakses, mengurangi risiko operasi yang tidak diinginkan atau tidak aman. Izin dapat dikonfigurasi secara dinamis berdasarkan preferensi pengguna, kebijakan organisasi, atau konteks interaksi.
+   Klien dapat menentukan alat mana yang diizinkan digunakan oleh model selama sesi. Ini memastikan bahwa hanya alat yang secara eksplisit diizinkan yang dapat diakses, mengurangi risiko operasi yang tidak diinginkan atau tidak aman. Izin dapat dikonfigurasi secara dinamis berdasarkan preferensi pengguna, kebijakan organisasi, atau konteks interaksi.  
 
 2. **Autentikasi**:  
-  Server dapat meminta autentikasi sebelum memberikan akses ke alat, sumber daya, atau operasi sensitif. Ini bisa melibatkan API key, token OAuth, atau skema autentikasi lainnya. Autentikasi yang tepat memastikan hanya klien dan pengguna terpercaya yang dapat memanggil kemampuan sisi server.
+   Server dapat meminta autentikasi sebelum memberikan akses ke alat, sumber daya, atau operasi sensitif. Ini dapat melibatkan kunci API, token OAuth, atau skema autentikasi lainnya. Autentikasi yang tepat memastikan bahwa hanya klien dan pengguna yang terpercaya yang dapat menggunakan kemampuan server.  
 
 3. **Validasi**:  
-  Validasi parameter diterapkan untuk semua pemanggilan alat. Setiap alat mendefinisikan tipe, format, dan batasan yang diharapkan untuk parameternya, dan server memvalidasi permintaan yang masuk sesuai dengan itu. Ini mencegah input yang salah format atau berbahaya mencapai implementasi alat dan membantu menjaga integritas operasi.
+   Validasi parameter ditegakkan untuk semua pemanggilan alat. Setiap alat mendefinisikan tipe, format, dan batasan yang diharapkan untuk parameternya, dan server memvalidasi permintaan yang masuk sesuai. Ini mencegah input yang salah atau berbahaya mencapai implementasi alat dan membantu menjaga integritas operasi.  
 
-4. **Pembatasan Laju (Rate Limiting)**:  
-  Untuk mencegah penyalahgunaan dan memastikan penggunaan sumber daya server yang adil, server MCP dapat menerapkan pembatasan laju untuk pemanggilan alat dan akses sumber daya. Pembatasan laju dapat diterapkan per pengguna, per sesi, atau secara global, dan membantu melindungi dari serangan denial-of-service atau konsumsi sumber daya yang berlebihan.
+4. **Pembatasan Laju**:  
+   Untuk mencegah penyalahgunaan dan memastikan penggunaan sumber daya server yang adil, server MCP dapat menerapkan pembatasan laju untuk pemanggilan alat dan akses sumber daya. Pembatasan laju dapat diterapkan per pengguna, per sesi, atau secara global, dan membantu melindungi dari serangan penolakan layanan atau konsumsi sumber daya yang berlebihan.  
 
-Dengan menggabungkan mekanisme ini, MCP menyediakan fondasi yang aman untuk mengintegrasikan model bahasa dengan alat dan sumber data eksternal, sekaligus memberikan kontrol yang detail kepada pengguna dan pengembang atas akses dan penggunaan.
+Dengan menggabungkan mekanisme ini, MCP menyediakan fondasi yang aman untuk mengintegrasikan model bahasa dengan alat dan sumber daya eksternal, sambil memberikan kontrol yang terperinci kepada pengguna dan pengembang atas akses dan penggunaan.
 
-## Pesan Protokol
+## Pesan Protokol & Alur Komunikasi
 
-Komunikasi MCP menggunakan pesan JSON terstruktur untuk memfasilitasi interaksi yang jelas dan dapat diandalkan antara klien, server, dan model. Jenis pesan utama meliputi:
+Komunikasi MCP menggunakan pesan **JSON-RPC 2.0** yang terstruktur untuk memfasilitasi interaksi yang jelas dan andal antara host, klien, dan server. Protokol ini mendefinisikan pola pesan spesifik untuk berbagai jenis operasi:
 
-- **Permintaan Klien**  
-  Dikirim dari klien ke server, pesan ini biasanya berisi:
-  - Prompt atau perintah pengguna
-  - Riwayat percakapan sebagai konteks
-  - Konfigurasi alat dan izin
-  - Metadata tambahan atau informasi sesi
+### Jenis Pesan Inti:
 
-- **Respons Model**  
-  Dikembalikan oleh model (melalui klien), pesan ini berisi:
-  - Teks yang dihasilkan atau penyelesaian berdasarkan prompt dan konteks
-  - Instruksi pemanggilan alat opsional jika model menentukan alat perlu dipanggil
-  - Referensi ke sumber daya atau konteks tambahan jika diperlukan
+#### **Pesan Inisialisasi**  
+- **Permintaan `initialize`**: Membangun koneksi dan menegosiasikan versi protokol dan kemampuan  
+- **Respons `initialize`**: Mengonfirmasi fitur yang didukung dan informasi server  
+- **`notifications/initialized`**: Menandakan bahwa inisialisasi selesai dan sesi siap  
 
-- **Permintaan Alat**  
-  Dikirim dari klien ke server saat sebuah alat perlu dijalankan. Pesan ini mencakup:
-  - Nama alat yang akan dipanggil
-  - Parameter yang dibutuhkan oleh alat (divalidasi sesuai skema alat)
-  - Informasi kontekstual atau pengenal untuk melacak permintaan
+#### **Pesan Penemuan**  
+- **Permintaan `tools/list`**: Menemukan alat yang tersedia dari server  
+- **Permintaan `resources/list`**: Mendaftar sumber daya yang tersedia (sumber data)  
+- **Permintaan `prompts/list`**: Mengambil template prompt yang tersedia  
 
-- **Respons Alat**  
-  Dikembalikan oleh server setelah menjalankan alat. Pesan ini menyediakan:
-  - Hasil eksekusi alat (data terstruktur atau konten)
-  - Kesalahan atau informasi status jika pemanggilan alat gagal
-  - Opsional, metadata tambahan atau log terkait eksekusi
+#### **Pesan Eksekusi**  
+- **Permintaan `tools/call`**: Menjalankan alat tertentu dengan parameter yang diberikan  
+- **Permintaan `resources/read`**: Mengambil konten dari sumber daya tertentu  
+- **Permintaan `prompts/get`**: Mengambil template prompt dengan parameter opsional  
 
-Pesan-pesan terstruktur ini memastikan setiap langkah dalam alur kerja MCP jelas, dapat dilacak, dan dapat diperluas, mendukung skenario lanjutan seperti percakapan multi-putaran, penggabungan alat, dan penanganan kesalahan yang kuat.
+#### **Pesan Sisi Klien**  
+- **Permintaan `sampling/complete`**: Server meminta penyelesaian LLM dari klien  
+- **`elicitation/request`**: Server meminta input pengguna melalui antarmuka klien  
+- **Pesan Log**: Server mengirim pesan log terstruktur ke klien  
+
+#### **Pesan Notifikasi**  
+- **`notifications/tools/list_changed`**: Server memberi tahu klien tentang perubahan alat  
+- **`notifications/resources/list_changed`**: Server memberi tahu klien tentang perubahan sumber daya  
+- **`notifications/prompts/list_changed`**: Server memberi tahu klien tentang perubahan prompt  
+
+### Struktur Pesan:
+
+Semua pesan MCP mengikuti format JSON-RPC 2.0 dengan:  
+- **Pesan Permintaan**: Termasuk `id`, `method`, dan `params` opsional  
+- **Pesan Respons**: Termasuk `id` dan `result` atau `error`  
+- **Pesan Notifikasi**: Termasuk `method` dan `params` opsional (tidak ada `id` atau respons yang diharapkan)  
+
+Komunikasi yang terstruktur ini memastikan interaksi yang andal, dapat dilacak, dan dapat diperluas yang mendukung skenario lanjutan seperti pembaruan real-time, penggabungan alat, dan penanganan kesalahan yang kuat.
 
 ## Poin Penting
 
-- MCP menggunakan arsitektur klien-server untuk menghubungkan model dengan kemampuan eksternal
-- Ekosistem terdiri dari klien, host, server, alat, dan sumber data
-- Komunikasi dapat dilakukan melalui STDIO, SSE, atau WebSockets
-- Alat adalah unit dasar fungsi yang diekspos ke model
-- Protokol komunikasi terstruktur memastikan interaksi yang konsisten
+- **Arsitektur**: MCP menggunakan arsitektur klien-server di mana host mengelola banyak koneksi klien ke server  
+- **Peserta**: Ekosistem mencakup host (aplikasi AI), klien (penghubung protokol), dan server (penyedia kemampuan)  
+- **Mekanisme Transportasi**: Komunikasi mendukung STDIO (lokal) dan HTTP yang dapat dialirkan dengan SSE opsional (jarak jauh)  
+- **Primitif Inti**: Server mengekspos alat (fungsi yang dapat dijalankan), sumber daya (sumber data), dan prompt (template)  
+- **Primitif Klien**: Server dapat meminta sampling (penyelesaian LLM), elicitation (input pengguna), dan logging dari klien  
+- **Fondasi Protokol**: Dibangun di atas JSON-RPC 2.0 dengan penomoran versi berbasis tanggal (saat ini: 2025-06-18)  
+- **Kemampuan Real-time**: Mendukung notifikasi untuk pembaruan dinamis dan sinkronisasi real-time  
+- **Keamanan Utama**: Persetujuan pengguna eksplisit, perlindungan privasi data, dan transportasi yang aman adalah persyaratan inti  
 
 ## Latihan
 
-Rancang sebuah alat MCP sederhana yang berguna di bidang Anda. Tentukan:
-1. Nama alat tersebut
-2. Parameter apa yang akan diterimanya
-3. Output apa yang akan dihasilkannya
-4. Bagaimana model dapat menggunakan alat ini untuk menyelesaikan masalah pengguna
-
+Rancang alat MCP sederhana yang berguna di bidang Anda. Tentukan:  
+1. Nama alat tersebut  
+2. Parameter yang akan diterima  
+3. Output yang akan dikembalikan  
+4. Bagaimana model dapat menggunakan alat ini untuk menyelesaikan masalah pengguna  
 
 ---
 
-## Selanjutnya
+## Langkah Selanjutnya
 
-Selanjutnya: [Chapter 2: Security](../02-Security/README.md)
+Selanjutnya: [Bab 2: Keamanan](../02-Security/README.md)  
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang timbul dari penggunaan terjemahan ini.

@@ -2,13 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83efa75a69bc831277263a6f1ae53669",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T18:54:05+00:00",
+=======
+  "translation_date": "2025-08-18T13:57:27+00:00",
+>>>>>>> origin/main
   "source_file": "04-PracticalImplementation/README.md",
   "language_code": "sw"
 }
 -->
 # Utekelezaji wa Kivitendo
 
+<<<<<<< HEAD
 [![Jinsi ya Kujenga, Kupima, na Kuweka Programu za MCP kwa Kutumia Zana na Mifumo Halisi](../../../translated_images/05.64bea204e25ca891e3dd8b8f960d2170b9a000d8364305f57db3ec4a2c049a9a.sw.png)](https://youtu.be/vCN9-mKBDfQ)
 
 _(Bofya picha hapo juu ili kutazama video ya somo hili)_
@@ -22,6 +27,21 @@ Katika sehemu zinazofuata, utapata mifano ya kivitendo, sampuli za msimbo, na mi
 ## Muhtasari
 
 Somo hili linazingatia vipengele vya kivitendo vya utekelezaji wa MCP katika lugha mbalimbali za programu. Tutachunguza jinsi ya kutumia SDK za MCP katika C#, Java na Spring, TypeScript, JavaScript, na Python ili kujenga programu imara, kufuatilia na kupima seva za MCP, na kuunda rasilimali zinazoweza kutumika tena, maelekezo, na zana.
+=======
+[![Jinsi ya Kujenga, Kupima, na Kuweka Programu za MCP kwa kutumia Zana Halisi na Mifumo ya Kazi](../../../translated_images/05.64bea204e25ca891e3dd8b8f960d2170b9a000d8364305f57db3ec4a2c049a9a.sw.png)](https://youtu.be/vCN9-mKBDfQ)
+
+_(Bofya picha hapo juu kutazama video ya somo hili)_
+
+Utekelezaji wa kivitendo ni pale ambapo nguvu ya Model Context Protocol (MCP) inakuwa dhahiri. Ingawa kuelewa nadharia na usanifu wa MCP ni muhimu, thamani halisi inaonekana unapotekeleza dhana hizi kujenga, kupima, na kuweka suluhisho zinazotatua changamoto za ulimwengu halisi. Sura hii inaunganisha pengo kati ya maarifa ya dhana na maendeleo ya vitendo, ikikuongoza kupitia mchakato wa kuleta programu za MCP kuwa hai.
+
+Ikiwa unajenga wasaidizi wa akili, unajumuisha AI katika mifumo ya kazi ya biashara, au unaunda zana maalum za usindikaji wa data, MCP hutoa msingi unaobadilika. Muundo wake usiofungamana na lugha na SDK rasmi kwa lugha maarufu za programu hufanya iweze kufikiwa na watengenezaji wengi. Kwa kutumia SDK hizi, unaweza kuunda haraka, kurudia, na kupanua suluhisho zako katika majukwaa na mazingira tofauti.
+
+Katika sehemu zinazofuata, utapata mifano ya kivitendo, sampuli za msimbo, na mikakati ya kuweka suluhisho zinazodhihirisha jinsi ya kutekeleza MCP kwa kutumia C#, Java na Spring, TypeScript, JavaScript, na Python. Pia utajifunza jinsi ya kufuatilia na kupima seva za MCP, kusimamia API, na kuweka suluhisho kwenye wingu kwa kutumia Azure. Rasilimali hizi za vitendo zimetengenezwa ili kuharakisha kujifunza kwako na kukusaidia kujenga programu za MCP zenye nguvu na tayari kwa uzalishaji kwa ujasiri.
+
+## Muhtasari
+
+Somo hili linazingatia vipengele vya kivitendo vya utekelezaji wa MCP katika lugha mbalimbali za programu. Tutachunguza jinsi ya kutumia SDK za MCP katika C#, Java na Spring, TypeScript, JavaScript, na Python kujenga programu thabiti, kufuatilia na kupima seva za MCP, na kuunda rasilimali zinazoweza kutumika tena, maelekezo, na zana.
+>>>>>>> origin/main
 
 ## Malengo ya Kujifunza
 
@@ -82,7 +102,11 @@ Maelekezo ni ujumbe uliotayarishwa na mifumo ya kazi kwa watumiaji:
 
 ### Zana
 
+<<<<<<< HEAD
 Zana ni kazi ambazo modeli ya AI inaweza kutekeleza:
+=======
+Zana ni kazi za modeli ya AI kutekeleza:
+>>>>>>> origin/main
 
 - Huduma za usindikaji wa data
 - Ujumuishaji wa API za nje
@@ -110,7 +134,11 @@ Kwa sampuli kamili za utekelezaji wa C#, tembelea [hifadhi rasmi ya sampuli za S
 
 ## Utekelezaji wa Sampuli: Utekelezaji wa Java na Spring
 
+<<<<<<< HEAD
 SDK ya Java na Spring inatoa chaguo za utekelezaji wa MCP zenye vipengele vya daraja la biashara.
+=======
+SDK ya Java na Spring inatoa chaguo thabiti za utekelezaji wa MCP na vipengele vya daraja la biashara.
+>>>>>>> origin/main
 
 ### Vipengele Muhimu
 
@@ -159,7 +187,11 @@ Azure API Management ni jibu bora kwa jinsi tunavyoweza kulinda seva za MCP. Waz
 
 ### Sampuli ya Azure
 
+<<<<<<< HEAD
 Hii hapa sampuli ya Azure inayofanya hivyo, yaani [kuunda seva ya MCP na kuilinda kwa Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
+=======
+Hapa kuna Sampuli ya Azure inayofanya hivyo, yaani [kuunda seva ya MCP na kuilinda kwa Azure API Management](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
+>>>>>>> origin/main
 
 Tazama jinsi mtiririko wa uthibitishaji unavyotokea katika picha hapa chini:
 
@@ -175,7 +207,11 @@ Katika picha iliyotangulia, yafuatayo yanatokea:
 
 Hebu tuangalie mtiririko wa uidhinishaji kwa undani zaidi:
 
+<<<<<<< HEAD
 ![Mchoro wa Mlolongo](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
+=======
+![Mchoro wa Mfululizo](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
+>>>>>>> origin/main
 
 #### Maelezo ya Uidhinishaji wa MCP
 
@@ -192,7 +228,11 @@ Hebu tuone kama tunaweza kuweka sampuli tuliyotaja awali:
     cd remote-mcp-apim-functions-python
     ```
 
+<<<<<<< HEAD
 1. Sajili mtoa rasilimali `Microsoft.App`.
+=======
+1. Sajili mtoa huduma wa rasilimali `Microsoft.App`.
+>>>>>>> origin/main
 
    - Ikiwa unatumia Azure CLI, endesha `az provider register --namespace Microsoft.App --wait`.
    - Ikiwa unatumia Azure PowerShell, endesha `Register-AzResourceProvider -ProviderNamespace Microsoft.App`. Kisha endesha `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` baada ya muda ili kuangalia ikiwa usajili umekamilika.
@@ -205,7 +245,11 @@ Hebu tuone kama tunaweza kuweka sampuli tuliyotaja awali:
 
     Amri hii inapaswa kuweka rasilimali zote za wingu kwenye Azure
 
+<<<<<<< HEAD
 ### Kupima seva yako kwa MCP Inspector
+=======
+### Kupima seva yako na MCP Inspector
+>>>>>>> origin/main
 
 1. Katika **dirisha jipya la terminal**, weka na endesha MCP Inspector
 
@@ -217,9 +261,15 @@ Hebu tuone kama tunaweza kuweka sampuli tuliyotaja awali:
 
     ![Unganisha na Node inspector](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sw.png)
 
+<<<<<<< HEAD
 1. Bofya CTRL ili kupakia programu ya wavuti ya MCP Inspector kutoka URL iliyotolewa na programu (mfano [http://127.0.0.1:6274/#resources](http://127.0.0.1:6274/#resources))
 1. Weka aina ya usafirishaji kuwa `SSE`
 1. Weka URL kwa sehemu ya mwisho ya API Management SSE inayotumika iliyotolewa baada ya `azd up` na **Unganisha**:
+=======
+1. Bofya CTRL ili kupakia programu ya wavuti ya MCP Inspector kutoka URL iliyoonyeshwa na programu (mfano [http://127.0.0.1:6274/#resources](http://127.0.0.1:6274/#resources))
+1. Weka aina ya usafirishaji kuwa `SSE`
+1. Weka URL kwa sehemu yako ya mwisho ya API Management SSE inayoonyeshwa baada ya `azd up` na **Unganisha**:
+>>>>>>> origin/main
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
@@ -231,7 +281,11 @@ Ikiwa hatua zote zimefanikiwa, sasa unapaswa kuwa umeunganishwa na seva ya MCP n
 
 ## Seva za MCP kwa Azure
 
+<<<<<<< HEAD
 [Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Hifadhi hizi ni templeti za kuanza haraka kwa kujenga na kuweka seva za MCP (Model Context Protocol) za mbali kwa kutumia Azure Functions na Python, C# .NET au Node/TypeScript.
+=======
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Hifadhi hizi ni kiolezo cha kuanza haraka kwa kujenga na kuweka seva za MCP za mbali (Model Context Protocol) kwa kutumia Azure Functions na Python, C# .NET au Node/TypeScript.
+>>>>>>> origin/main
 
 Sampuli zinatoa suluhisho kamili linaloruhusu watengenezaji:
 
@@ -243,7 +297,11 @@ Sampuli zinatoa suluhisho kamili linaloruhusu watengenezaji:
 
 - Usalama kwa muundo: Seva ya MCP inalindwa kwa kutumia funguo na HTTPS
 - Chaguo za uthibitishaji: Inasaidia OAuth kwa kutumia uthibitishaji wa ndani na/au Usimamizi wa API
+<<<<<<< HEAD
 - Kutengwa kwa mtandao: Inaruhusu kutengwa kwa mtandao kwa kutumia Mitandao ya Virtual ya Azure (VNET)
+=======
+- Kutengwa kwa mtandao: Inaruhusu kutengwa kwa mtandao kwa kutumia Mitandao ya Azure Virtual (VNET)
+>>>>>>> origin/main
 - Usanifu wa seva isiyo na hali: Inatumia Azure Functions kwa utekelezaji unaoweza kupanuka, unaotegemea matukio
 - Maendeleo ya ndani: Msaada kamili wa maendeleo ya ndani na ufuatiliaji
 - Mchakato rahisi wa kuweka: Mchakato wa kuweka ulio rahisi kwenye Azure
@@ -258,7 +316,11 @@ Hifadhi inajumuisha faili zote muhimu za usanidi, msimbo wa chanzo, na ufafanuzi
 
 ## Mambo Muhimu ya Kujifunza
 
+<<<<<<< HEAD
 - SDK za MCP zinatoa zana maalum za lugha kwa utekelezaji wa suluhisho za MCP zenye nguvu
+=======
+- SDK za MCP zinatoa zana maalum za lugha kwa utekelezaji wa suluhisho thabiti za MCP
+>>>>>>> origin/main
 - Mchakato wa kufuatilia na kupima ni muhimu kwa programu za MCP zinazotegemewa
 - Violezo vya maelekezo vinavyoweza kutumika tena vinawezesha mwingiliano thabiti wa AI
 - Mifumo ya kazi iliyoundwa vizuri inaweza kuratibu kazi ngumu kwa kutumia zana nyingi
@@ -280,4 +342,8 @@ Buni mfumo wa kazi wa MCP wa kivitendo unaoshughulikia tatizo la ulimwengu halis
 Next: [Mada za Juu](../05-AdvancedTopics/README.md)
 
 **Kanusho**:  
+<<<<<<< HEAD
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+=======
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati asilia katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+>>>>>>> origin/main

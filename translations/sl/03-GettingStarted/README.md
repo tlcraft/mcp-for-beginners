@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "858362ce0118de3fec0f9114bf396101",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T22:34:01+00:00",
+=======
+  "translation_date": "2025-08-18T17:54:21+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/README.md",
   "language_code": "sl"
 }
@@ -11,7 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Ustvari svoj prvi MCP strežnik](../../../translated_images/04.0ea920069efd979a0b2dad51e72c1df7ead9c57b3305796068a6cee1f0dd6674.sl.png)](https://youtu.be/sNDZO9N4m9Y)
 
+<<<<<<< HEAD
 _(Kliknite na zgornjo sliko za ogled videa te lekcije)_
+=======
+_(Kliknite zgornjo sliko za ogled videoposnetka te lekcije)_
+>>>>>>> origin/main
 
 Ta razdelek vsebuje več lekcij:
 
@@ -19,6 +27,7 @@ Ta razdelek vsebuje več lekcij:
 
 - **2 Odjemalec**, v tej lekciji se boste naučili, kako napisati odjemalca, ki se lahko poveže z vašim strežnikom, [na lekcijo](02-client/README.md)
 
+<<<<<<< HEAD
 - **3 Odjemalec z LLM**, še boljši način za pisanje odjemalca je dodajanje LLM, ki lahko "pogaja" z vašim strežnikom o tem, kaj storiti, [na lekcijo](03-llm-client/README.md)
 
 - **4 Uporaba strežnika v načinu GitHub Copilot Agent v Visual Studio Code**. Tukaj bomo preučili, kako zagnati naš MCP strežnik znotraj Visual Studio Code, [na lekcijo](04-vscode/README.md)
@@ -34,6 +43,23 @@ Ta razdelek vsebuje več lekcij:
 - **9 Uvajanje**. Ta poglavje bo preučilo različne načine uvajanja vaših MCP rešitev, [na lekcijo](09-deployment/README.md)
 
 Model Context Protocol (MCP) je odprt protokol, ki standardizira, kako aplikacije zagotavljajo kontekst LLM-jem. MCP si lahko predstavljate kot USB-C priključek za AI aplikacije - zagotavlja standardiziran način povezovanja AI modelov z različnimi viri podatkov in orodji.
+=======
+- **3 Odjemalec z LLM**, še boljši način pisanja odjemalca je dodajanje LLM, da lahko "pogaja" z vašim strežnikom o tem, kaj storiti, [na lekcijo](03-llm-client/README.md)
+
+- **4 Uporaba strežnika v načinu GitHub Copilot Agent v Visual Studio Code**. Tukaj bomo preučili, kako zagnati naš MCP strežnik znotraj Visual Studio Code, [na lekcijo](04-vscode/README.md)
+
+- **5 Uporaba SSE (Server Sent Events)** SSE je standard za pretakanje s strežnika na odjemalca, ki omogoča strežnikom, da pošiljajo sprotne posodobitve odjemalcem prek HTTP [na lekcijo](05-sse-server/README.md)
+
+- **6 HTTP pretakanje z MCP (Streamable HTTP)**. Spoznajte sodobno HTTP pretakanje, obvestila o napredku in kako implementirati razširljive, sprotne MCP strežnike in odjemalce z uporabo Streamable HTTP. [na lekcijo](06-http-streaming/README.md)
+
+- **7 Uporaba AI orodij za VSCode** za uporabo in testiranje vaših MCP odjemalcev in strežnikov [na lekcijo](07-aitk/README.md)
+
+- **8 Testiranje**. Tukaj se bomo osredotočili predvsem na to, kako lahko na različne načine testiramo naš strežnik in odjemalca, [na lekcijo](08-testing/README.md)
+
+- **9 Uvajanje**. To poglavje bo preučilo različne načine uvajanja vaših MCP rešitev, [na lekcijo](09-deployment/README.md)
+
+Model Context Protocol (MCP) je odprt protokol, ki standardizira, kako aplikacije zagotavljajo kontekst za LLM-je. MCP si lahko predstavljate kot USB-C priključek za AI aplikacije - zagotavlja standardiziran način povezovanja AI modelov z različnimi viri podatkov in orodji.
+>>>>>>> origin/main
 
 ## Cilji učenja
 
@@ -42,12 +68,17 @@ Do konca te lekcije boste lahko:
 - Nastavili razvojna okolja za MCP v C#, Java, Python, TypeScript in JavaScript
 - Zgradili in uvedli osnovne MCP strežnike s prilagojenimi funkcijami (viri, pozivi in orodji)
 - Ustvarili gostiteljske aplikacije, ki se povezujejo z MCP strežniki
+<<<<<<< HEAD
 - Testirali in odpravljali napake MCP implementacij
+=======
+- Testirali in odpravljali napake pri MCP implementacijah
+>>>>>>> origin/main
 - Razumeli pogoste izzive pri nastavitvah in njihove rešitve
 - Povezali svoje MCP implementacije s priljubljenimi LLM storitvami
 
 ## Nastavitev vašega MCP okolja
 
+<<<<<<< HEAD
 Preden začnete delati z MCP, je pomembno, da pripravite svoje razvojno okolje in razumete osnovni potek dela. Ta razdelek vas bo vodil skozi začetne korake nastavitve za nemoten začetek z MCP.
 
 ### Predpogoji
@@ -55,6 +86,15 @@ Preden začnete delati z MCP, je pomembno, da pripravite svoje razvojno okolje i
 Preden se lotite razvoja z MCP, poskrbite, da imate:
 
 - **Razvojno okolje**: Za izbrani programski jezik (C#, Java, Python, TypeScript ali JavaScript)
+=======
+Preden začnete delati z MCP, je pomembno, da pripravite svoje razvojno okolje in razumete osnovni potek dela. Ta razdelek vas bo vodil skozi začetne korake nastavitve, da zagotovite gladek začetek z MCP.
+
+### Predpogoji
+
+Preden se lotite razvoja MCP, poskrbite, da imate:
+
+- **Razvojno okolje**: Za izbrani jezik (C#, Java, Python, TypeScript ali JavaScript)
+>>>>>>> origin/main
 - **IDE/Urejevalnik**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm ali kateri koli sodoben urejevalnik kode
 - **Upravitelji paketov**: NuGet, Maven/Gradle, pip ali npm/yarn
 - **API ključe**: Za vse AI storitve, ki jih nameravate uporabiti v svojih gostiteljskih aplikacijah
@@ -63,7 +103,11 @@ Preden se lotite razvoja z MCP, poskrbite, da imate:
 
 V prihodnjih poglavjih boste videli rešitve, zgrajene z uporabo Python, TypeScript, Java in .NET. Tukaj so vsi uradno podprti SDK-ji.
 
+<<<<<<< HEAD
 MCP zagotavlja uradne SDK-je za več programskih jezikov:
+=======
+MCP zagotavlja uradne SDK-je za več jezikov:
+>>>>>>> origin/main
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - V sodelovanju z Microsoftom
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - V sodelovanju s Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Uradna implementacija za TypeScript
@@ -80,9 +124,15 @@ MCP zagotavlja uradne SDK-je za več programskih jezikov:
 - Testiranje in odpravljanje napak sta ključna za zanesljive MCP implementacije
 - Možnosti uvajanja segajo od lokalnega razvoja do rešitev v oblaku
 
+<<<<<<< HEAD
 ## Praktične vaje
 
 Imamo niz primerov, ki dopolnjujejo vaje, ki jih boste videli v vseh poglavjih tega razdelka. Poleg tega ima vsako poglavje tudi svoje vaje in naloge.
+=======
+## Vaja
+
+Imamo nabor primerov, ki dopolnjujejo vaje, ki jih boste videli v vseh poglavjih tega razdelka. Poleg tega ima vsako poglavje tudi svoje vaje in naloge.
+>>>>>>> origin/main
 
 - [Java Kalkulator](./samples/java/calculator/README.md)
 - [.Net Kalkulator](../../../03-GettingStarted/samples/csharp)
@@ -101,4 +151,8 @@ Imamo niz primerov, ki dopolnjujejo vaje, ki jih boste videli v vseh poglavjih t
 Naprej: [Ustvarjanje vašega prvega MCP strežnika](01-first-server/README.md)
 
 **Omejitev odgovornosti**:  
+<<<<<<< HEAD
 Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+=======
+Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+>>>>>>> origin/main

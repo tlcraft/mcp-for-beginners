@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "305a41966c4c6d376e5cb7d99af2bf45",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T18:48:24+00:00",
+=======
+  "translation_date": "2025-08-18T13:49:03+00:00",
+>>>>>>> origin/main
   "source_file": "README.md",
   "language_code": "sw"
 }
@@ -24,40 +28,65 @@ CO_OP_TRANSLATOR_METADATA:
 Fuata hatua hizi kuanza kutumia rasilimali hizi:
 1. **Fork Hifadhi**: Bonyeza [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Clone Hifadhi**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+<<<<<<< HEAD
 3. [**Jiunge na Azure AI Foundry Discord na kutana na wataalamu na watengenezaji wenzako**](https://discord.com/invite/ByRwuEEgH4)
+=======
+3. [**Jiunge na Azure AI Foundry Discord na ukutane na wataalamu na watengenezaji wenzako**](https://discord.com/invite/ByRwuEEgH4)
+>>>>>>> origin/main
 
 
 ### 🌐 Msaada wa Lugha Nyingi
 
+<<<<<<< HEAD
 #### Inasaidiwa kupitia GitHub Action (Imefanywa Kiotomatiki & Daima Imeboreshwa)
 
  [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Malay](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](./README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
 
 # 🚀 Mtaala wa Model Context Protocol (MCP) kwa Kompyuta
+=======
+#### Inasaidiwa kupitia GitHub Action (Imefanywa Kiotomatiki & Inasasishwa Kila Wakati)
+
+ [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Malay](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](./README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+
+# 🚀 Mtaala wa Model Context Protocol (MCP) kwa Anayeanza
+>>>>>>> origin/main
 
 ## **Jifunze MCP kwa Mifano ya Vitendo ya Nambari katika C#, Java, JavaScript, Rust, Python, na TypeScript**
 
 ## 🧠 Muhtasari wa Mtaala wa Model Context Protocol
 
+<<<<<<< HEAD
 **Model Context Protocol (MCP)** ni mfumo wa kisasa ulioundwa kuunda viwango vya mawasiliano kati ya mifano ya AI na programu za wateja. Mtaala huu wa chanzo huria unatoa njia ya kujifunza iliyopangwa, ikijumuisha mifano ya vitendo ya nambari na matumizi halisi, katika lugha maarufu za programu kama C#, Java, JavaScript, TypeScript, na Python.
+=======
+**Model Context Protocol (MCP)** ni mfumo wa kisasa ulioundwa kusanifisha mwingiliano kati ya mifano ya AI na programu za wateja. Mtaala huu wa chanzo huria unatoa njia ya kujifunza iliyopangiliwa, ikiwa na mifano ya vitendo ya nambari na matumizi halisi, katika lugha maarufu za programu kama C#, Java, JavaScript, TypeScript, na Python.
+>>>>>>> origin/main
 
 Ikiwa wewe ni mtengenezaji wa AI, mbunifu wa mifumo, au mhandisi wa programu, mwongozo huu ni rasilimali yako kamili ya kufahamu misingi ya MCP na mikakati ya utekelezaji.
 
 ## 🔗 Rasilimali Rasmi za MCP
 
 - 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Mafunzo ya kina na miongozo ya watumiaji  
+<<<<<<< HEAD
 - 📜 [MCP Specification](https://modelcontextprotocol.io/docs/) – Muundo wa itifaki na marejeleo ya kiufundi  
+=======
+- 📜 [MCP Specification](https://modelcontextprotocol.io/docs/) – Miundo ya itifaki na marejeleo ya kiufundi  
+>>>>>>> origin/main
 - 📜 [Original MCP Specification](https://spec.modelcontextprotocol.io/) – Marejeleo ya kiufundi ya awali (yanaweza kuwa na maelezo ya ziada)  
 - 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – SDKs za chanzo huria, zana, na mifano ya nambari
 - 🌐 [MCP Community](https://github.com/orgs/modelcontextprotocol/discussions) – Jiunge na mijadala na changia kwa jamii
 
 
  ### ➡️Tazama kwa Mahitaji - MCP Dev Days
+<<<<<<< HEAD
 Jiandae kwa siku mbili za maarifa ya kina ya kiufundi, muunganisho wa jamii, na kujifunza kwa vitendo katika MCP Dev Days, tukio la mtandaoni lililojitolea kwa Model Context Protocol (MCP) — kiwango kinachojitokeza kinachounganisha mifano ya AI na zana wanazotegemea.
+=======
+Jiandae kwa siku mbili za maarifa ya kina ya kiufundi, muunganiko wa jamii, na kujifunza kwa vitendo katika MCP Dev Days, tukio la mtandaoni lililojitolea kwa Model Context Protocol (MCP) — kiwango kipya kinachounganisha mifano ya AI na zana wanazotegemea.
+>>>>>>> origin/main
 Unaweza kutazama MCP Dev Days kwa kujisajili kwenye ukurasa wetu wa tukio: https://aka.ms/mcpdevdays. 
 
 #### Siku ya 1: Uzalishaji wa MCP, Zana za Watengenezaji, & Jamii: 
 
+<<<<<<< HEAD
 Ni kuhusu kuwawezesha watengenezaji kutumia MCP katika mtiririko wao wa kazi wa maendeleo na kusherehekea jamii ya ajabu ya MCP. Tutakuwa na wanachama wa jamii na washirika kama Arcade, Block, Okta, na Neon kuona jinsi wanavyoshirikiana na Microsoft kuunda mfumo wa MCP wazi na unaoweza kupanuka. Maonyesho halisi ya ulimwengu kote VS Code, Visual Studio, GitHub Copilot, na zana maarufu za jamii
 Mtiririko wa kazi wa maendeleo unaoendeshwa na muktadha
 Vipindi vinavyoongozwa na jamii na maarifa
@@ -76,6 +105,27 @@ Ni kwa wajenzi wa MCP. Tutazama kwa kina mikakati ya utekelezaji na mazoea bora 
 - Ulinganifu wa rejista na zana (1P + 3P)
 
 Ikiwa wewe ni mtengenezaji, mtengenezaji wa zana, au mkakati wa bidhaa za AI, siku hii imejaa maarifa unayohitaji kujenga suluhisho za MCP zinazoweza kupanuka, salama, na tayari kwa siku zijazo.
+=======
+Ni kuhusu kuwawezesha watengenezaji kutumia MCP katika mtiririko wao wa kazi wa maendeleo na kusherehekea jamii ya ajabu ya MCP. Tutajiunga na wanajamii na washirika kama Arcade, Block, Okta, na Neon kuona jinsi wanavyoshirikiana na Microsoft kuunda mfumo wa MCP ulio wazi na unaoweza kupanuliwa. 
+- Maonyesho halisi ya ulimwengu katika VS Code, Visual Studio, GitHub Copilot, na zana maarufu za jamii
+- Mitiririko ya kazi ya maendeleo inayotokana na muktadha
+- Vipindi vinavyoongozwa na jamii na maarifa
+Ikiwa unaanza tu na MCP au tayari unajenga nayo, Siku ya 1 itaweka msingi wa msukumo na mambo ya kuchukua hatua.
+
+#### Siku ya 2: Jenga Seva za MCP kwa Ujasiri
+
+Ni kwa ajili ya wajenzi wa MCP. Tutazama kwa kina mikakati ya utekelezaji na mbinu bora za kuunda seva za MCP na kuingiza MCP katika mitiririko yako ya kazi ya AI.
+
+### Mada ni pamoja na:
+
+- Kujenga Seva za MCP na kuzitia katika uzoefu wa wakala
+- Maendeleo yanayoendeshwa na maelezo
+- Mbinu bora za usalama
+- Kutumia vizuizi vya ujenzi kama Functions, ACA, na API Management
+- Ulinganifu wa rejista na zana (1P + 3P)
+
+Ikiwa wewe ni mtengenezaji, mjenzi wa zana, au mkakati wa bidhaa za AI, siku hii imejaa maarifa unayohitaji kujenga suluhisho za MCP zinazoweza kupanuliwa, salama, na tayari kwa siku zijazo.
+>>>>>>> origin/main
 
 ## 🧭 Muhtasari wa Mtaala wa MCP
 
@@ -85,14 +135,22 @@ Ikiwa wewe ni mtengenezaji, mtengenezaji wa zana, au mkakati wa bidhaa za AI, si
 |--------|-------|-------------|------|
 | **Moduli 1-3: Misingi** | | | |
 | 00 | Utangulizi wa MCP | Muhtasari wa Model Context Protocol na umuhimu wake katika mifumo ya AI | [Soma zaidi](./00-Introduction/README.md) |
+<<<<<<< HEAD
 | 01 | Ufafanuzi wa Dhana za Msingi | Uchunguzi wa kina wa dhana za msingi za MCP | [Soma zaidi](./01-CoreConcepts/README.md) |
 | 02 | Usalama katika MCP | Vitisho vya usalama na mazoea bora | [Soma zaidi](./02-Security/README.md) |
 | 03 | Kuanza na MCP | Usanidi wa mazingira, seva/mteja wa msingi, ujumuishaji | [Soma zaidi](./03-GettingStarted/README.md) |
 | **Moduli 3: Kujenga Seva & Mteja Wako wa Kwanza** | | | |
+=======
+| 01 | Maelezo ya Misingi | Uchunguzi wa kina wa dhana za msingi za MCP | [Soma zaidi](./01-CoreConcepts/README.md) |
+| 02 | Usalama katika MCP | Vitisho vya usalama na mbinu bora | [Soma zaidi](./02-Security/README.md) |
+| 03 | Kuanza na MCP | Usanidi wa mazingira, seva/mteja wa msingi, ujumuishaji | [Soma zaidi](./03-GettingStarted/README.md) |
+| **Moduli 3: Kujenga Seva na Mteja wa Kwanza** | | | |
+>>>>>>> origin/main
 | 3.1 | Seva ya Kwanza | Unda seva yako ya kwanza ya MCP | [Mwongozo](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | Mteja wa Kwanza | Tengeneza mteja wa msingi wa MCP | [Mwongozo](./03-GettingStarted/02-client/README.md) |
 | 3.3 | Mteja na LLM | Jumuisha mifano mikubwa ya lugha | [Mwongozo](./03-GettingStarted/03-llm-client/README.md) |
 | 3.4 | Ujumuishaji wa VS Code | Tumia seva za MCP katika VS Code | [Mwongozo](./03-GettingStarted/04-vscode/README.md) |
+<<<<<<< HEAD
 | 3.5 | Seva ya SSE | Unda seva kwa kutumia Server-Sent Events | [Mwongozo](./03-GettingStarted/05-sse-server/README.md) |
 | 3.6 | Ustreaming wa HTTP | Tekeleza ustreaming wa HTTP katika MCP | [Mwongozo](./03-GettingStarted/06-http-streaming/README.md) |
 | 3.7 | Zana ya AI | Tumia Zana ya AI na MCP | [Mwongozo](./03-GettingStarted/07-aitk/README.md) |
@@ -100,10 +158,20 @@ Ikiwa wewe ni mtengenezaji, mtengenezaji wa zana, au mkakati wa bidhaa za AI, si
 | 3.9 | Uwekaji | Weka seva za MCP katika uzalishaji | [Mwongozo](./03-GettingStarted/09-deployment/README.md) |
 | **Moduli 4-5: Vitendo & Juu Zaidi** | | | |
 | 04 | Utekelezaji wa Vitendo | SDKs, urekebishaji wa hitilafu, upimaji, templeti za maelezo zinazoweza kutumika tena | [Soma zaidi](./04-PracticalImplementation/README.md) |
+=======
+| 3.5 | Seva ya SSE | Unda seva kwa kutumia Matukio Yanayotumwa na Seva | [Mwongozo](./03-GettingStarted/05-sse-server/README.md) |
+| 3.6 | Utiririshaji wa HTTP | Tekeleza utiririshaji wa HTTP katika MCP | [Mwongozo](./03-GettingStarted/06-http-streaming/README.md) |
+| 3.7 | Zana ya AI | Tumia Zana ya AI na MCP | [Mwongozo](./03-GettingStarted/07-aitk/README.md) |
+| 3.8 | Upimaji | Pima utekelezaji wa seva yako ya MCP | [Mwongozo](./03-GettingStarted/08-testing/README.md) |
+| 3.9 | Upelekaji | Peleka seva za MCP katika uzalishaji | [Mwongozo](./03-GettingStarted/09-deployment/README.md) |
+| **Moduli 4-5: Vitendo & Juu** | | | |
+| 04 | Utekelezaji wa Vitendo | SDKs, urekebishaji wa hitilafu, upimaji, violezo vya maelezo vinavyoweza kutumika tena | [Soma zaidi](./04-PracticalImplementation/README.md) |
+>>>>>>> origin/main
 | 05 | Mada za Juu katika MCP | AI ya njia nyingi, upanuzi, matumizi ya biashara | [Soma zaidi](./05-AdvancedTopics/README.md) |
 | 5.1 | Ujumuishaji wa Azure | Ujumuishaji wa MCP na Azure | [Mwongozo](./05-AdvancedTopics/mcp-integration/README.md) |
 | 5.2 | Njia Nyingi | Kufanya kazi na njia nyingi | [Mwongozo](./05-AdvancedTopics/mcp-multi-modality/README.md) |
 | 5.3 | Demo ya OAuth2 | Tekeleza uthibitishaji wa OAuth2 | [Mwongozo](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+<<<<<<< HEAD
 | 5.4 | Muktadha wa Mizizi | Elewa na tekeleza muktadha wa mizizi | [Mwongozo](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | Uelekezaji | Mikakati ya uelekezaji wa MCP | [Mwongozo](./05-AdvancedTopics/mcp-routing/README.md) |
 | 5.6 | Sampuli | Mbinu za sampuli katika MCP | [Mwongozo](./05-AdvancedTopics/mcp-sampling/README.md) |
@@ -111,22 +179,41 @@ Ikiwa wewe ni mtengenezaji, mtengenezaji wa zana, au mkakati wa bidhaa za AI, si
 | 5.8 | Usalama | Mazingatio ya usalama wa juu | [Mwongozo](./05-AdvancedTopics/mcp-security/README.md) |
 | 5.9 | Utafutaji wa Wavuti | Tekeleza uwezo wa utafutaji wa wavuti | [Mwongozo](./05-AdvancedTopics/web-search-mcp/README.md) |
 | 5.10 | Ustreaming wa Wakati Halisi | Jenga utendaji wa ustreaming wa wakati halisi | [Mwongozo](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
+=======
+| 5.4 | Muktadha wa Mizizi | Fahamu na utekeleze muktadha wa mizizi | [Mwongozo](./05-AdvancedTopics/mcp-root-contexts/README.md) |
+| 5.5 | Uelekezaji | Mikakati ya uelekezaji wa MCP | [Mwongozo](./05-AdvancedTopics/mcp-routing/README.md) |
+| 5.6 | Sampuli | Mbinu za sampuli katika MCP | [Mwongozo](./05-AdvancedTopics/mcp-sampling/README.md) |
+| 5.7 | Upanuzi | Panua utekelezaji wa MCP | [Mwongozo](./05-AdvancedTopics/mcp-scaling/README.md) |
+| 5.8 | Usalama | Mawazo ya juu ya usalama | [Mwongozo](./05-AdvancedTopics/mcp-security/README.md) |
+| 5.9 | Utafutaji wa Wavuti | Tekeleza uwezo wa utafutaji wa wavuti | [Mwongozo](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 5.10 | Utiririshaji wa Wakati Halisi | Jenga utiririshaji wa wakati halisi | [Mwongozo](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
+>>>>>>> origin/main
 | 5.11 | Utafutaji wa Wakati Halisi | Tekeleza utafutaji wa wakati halisi | [Mwongozo](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
 | 5.12 | Uthibitishaji wa Entra ID | Uthibitishaji na Microsoft Entra ID | [Mwongozo](./05-AdvancedTopics/mcp-security-entra/README.md) |
 | 5.13 | Ujumuishaji wa Foundry | Jumuisha na Azure AI Foundry | [Mwongozo](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
 | 5.14 | Uhandisi wa Muktadha | Mbinu za uhandisi wa muktadha bora | [Mwongozo](./05-AdvancedTopics/mcp-contextengineering/README.md) |
+<<<<<<< HEAD
 | **Moduli 6-10: Jamii & Mazoea Bora** | | | |
 | 06 | Michango ya Jamii | Jinsi ya kuchangia kwenye mfumo wa ikolojia wa MCP | [Mwongozo](./06-CommunityContributions/README.md) |
 | 07 | Maarifa kutoka kwa Matumizi ya Awali | Hadithi za utekelezaji wa ulimwengu halisi | [Mwongozo](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | Mbinu Bora za MCP | Utendaji, uvumilivu wa hitilafu, uimara | [Mwongozo](./08-BestPractices/README.md) |
 | 09 | Uchunguzi wa Matukio ya MCP | Mifano ya utekelezaji wa vitendo | [Mwongozo](./09-CaseStudy/README.md) |
 | 10 | Warsha ya Vitendo | Kujenga Seva ya MCP kwa kutumia AI Toolkit | [Maabara](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
+=======
+| **Moduli 6-10: Jamii & Mbinu Bora** | | | |
+| 06 | Michango ya Jamii | Jinsi ya kuchangia mfumo wa ikolojia wa MCP | [Guide](./06-CommunityContributions/README.md) |
+| 07 | Maarifa kutoka kwa Matumizi ya Awali | Hadithi za utekelezaji wa ulimwengu halisi | [Guide](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | Mbinu Bora za MCP | Utendaji, uvumilivu wa hitilafu, uimara | [Guide](./08-BestPractices/README.md) |
+| 09 | Uchunguzi wa Kesi za MCP | Mifano ya utekelezaji wa vitendo | [Guide](./09-CaseStudy/README.md) |
+| 10 | Warsha ya Vitendo | Kujenga Seva ya MCP kwa kutumia AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
+>>>>>>> origin/main
 
 ### 💻 Miradi ya Sampuli ya Nambari
 
 #### Sampuli za Msingi za Kikokotoo cha MCP
 
 | Lugha | Maelezo | Kiungo |
+<<<<<<< HEAD
 |-------|---------|--------|
 | C# | Mfano wa Seva ya MCP | [Tazama Nambari](./03-GettingStarted/samples/csharp/README.md) |
 | Java | Kikokotoo cha MCP | [Tazama Nambari](./03-GettingStarted/samples/java/calculator/README.md) |
@@ -134,16 +221,34 @@ Ikiwa wewe ni mtengenezaji, mtengenezaji wa zana, au mkakati wa bidhaa za AI, si
 | Python | Seva ya MCP | [Tazama Nambari](../../03-GettingStarted/samples/python/mcp_calculator_server.py) |
 | TypeScript | Mfano wa MCP | [Tazama Nambari](./03-GettingStarted/samples/typescript/README.md) |
 | Rust | Mfano wa MCP | [Tazama Nambari](./03-GettingStarted/samples/rust/README.md) |
+=======
+|-------|----------|--------|
+| C# | Mfano wa Seva ya MCP | [View Code](./03-GettingStarted/samples/csharp/README.md) |
+| Java | Kikokotoo cha MCP | [View Code](./03-GettingStarted/samples/java/calculator/README.md) |
+| JavaScript | Onyesho la MCP | [View Code](./03-GettingStarted/samples/javascript/README.md) |
+| Python | Seva ya MCP | [View Code](../../03-GettingStarted/samples/python/mcp_calculator_server.py) |
+| TypeScript | Mfano wa MCP | [View Code](./03-GettingStarted/samples/typescript/README.md) |
+| Rust | Mfano wa MCP | [View Code](./03-GettingStarted/samples/rust/README.md) |
+>>>>>>> origin/main
 
 #### Utekelezaji wa Juu wa MCP
 
 | Lugha | Maelezo | Kiungo |
+<<<<<<< HEAD
 |-------|---------|--------|
 | C# | Sampuli ya Juu | [Tazama Nambari](./04-PracticalImplementation/samples/csharp/README.md) |
 | Java na Spring | Mfano wa Programu ya Kontena | [Tazama Nambari](./04-PracticalImplementation/samples/java/containerapp/README.md) |
 | JavaScript | Sampuli ya Juu | [Tazama Nambari](./04-PracticalImplementation/samples/javascript/README.md) |
 | Python | Utekelezaji Changamano | [Tazama Nambari](../../04-PracticalImplementation/samples/python/READMEmd) |
 | TypeScript | Sampuli ya Kontena | [Tazama Nambari](./04-PracticalImplementation/samples/typescript/README.md) |
+=======
+|-------|----------|--------|
+| C# | Sampuli ya Juu | [View Code](./04-PracticalImplementation/samples/csharp/README.md) |
+| Java na Spring | Mfano wa Programu ya Kontena | [View Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
+| JavaScript | Sampuli ya Juu | [View Code](./04-PracticalImplementation/samples/javascript/README.md) |
+| Python | Utekelezaji Changamano | [View Code](../../04-PracticalImplementation/samples/python/READMEmd) |
+| TypeScript | Sampuli ya Kontena | [View Code](./04-PracticalImplementation/samples/typescript/README.md) |
+>>>>>>> origin/main
 
 ## 🎯 Mahitaji ya Awali kwa Kujifunza MCP
 
@@ -162,7 +267,11 @@ Hifadhi hii inajumuisha rasilimali kadhaa za kukusaidia kuvinjari na kujifunza k
 
 ### Mwongozo wa Kujifunza
 
+<<<<<<< HEAD
 Mwongozo wa kina wa [Mwongozo wa Kujifunza](./study_guide.md) unapatikana ili kukusaidia kuvinjari hifadhi hii kwa ufanisi. Mwongozo unajumuisha:
+=======
+Mwongozo wa kina wa [Study Guide](./study_guide.md) unapatikana ili kukusaidia kuvinjari hifadhi hii kwa ufanisi. Mwongozo unajumuisha:
+>>>>>>> origin/main
 
 - Ramani ya mtaala inayoonyesha mada zote zinazoshughulikiwa  
 - Maelezo ya kina ya kila sehemu ya hifadhi  
@@ -172,7 +281,11 @@ Mwongozo wa kina wa [Mwongozo wa Kujifunza](./study_guide.md) unapatikana ili ku
 
 ### Changelog
 
+<<<<<<< HEAD
 Tunadumisha [Changelog](./changelog.md) ya kina inayofuatilia masasisho yote makubwa ya vifaa vya mtaala, ikijumuisha:
+=======
+Tunadumisha [Changelog](./changelog.md) ya kina inayofuatilia masasisho yote makubwa ya vifaa vya mtaala, ikiwa ni pamoja na:
+>>>>>>> origin/main
 
 - Nyongeza mpya za maudhui  
 - Mabadiliko ya kimuundo  
@@ -184,7 +297,11 @@ Tunadumisha [Changelog](./changelog.md) ya kina inayofuatilia masasisho yote mak
 Kila somo katika mwongozo huu linajumuisha:
 
 1. Maelezo wazi ya dhana za MCP  
+<<<<<<< HEAD
 2. Sampuli za nambari hai katika lugha nyingi  
+=======
+2. Sampuli za nambari hai katika lugha mbalimbali  
+>>>>>>> origin/main
 3. Mazoezi ya kujenga programu halisi za MCP  
 4. Rasilimali za ziada kwa wanaojifunza wa hali ya juu  
 
@@ -205,10 +322,17 @@ za kutumia mchango wako. Kwa maelezo zaidi, tembelea
 
 Unapowasilisha ombi la kuvuta, bot ya CLA itaamua kiotomatiki ikiwa unahitaji kutoa
 CLA na kupamba PR ipasavyo (mfano, ukaguzi wa hali, maoni). Fuata tu maagizo
+<<<<<<< HEAD
 yanayotolewa na bot. Utahitaji kufanya hivi mara moja tu kwenye hifadhi zote zinazotumia CLA yetu.  
 
 Mradi huu umechukua [Kanuni za Maadili za Chanzo Huria za Microsoft](https://opensource.microsoft.com/codeofconduct/).
 Kwa maelezo zaidi angalia [Maswali Yanayoulizwa Mara kwa Mara ya Kanuni za Maadili](https://opensource.microsoft.com/codeofconduct/faq/) au
+=======
+yanayotolewa na bot. Utahitaji kufanya hivi mara moja tu katika hifadhi zote zinazotumia CLA yetu.  
+
+Mradi huu umechukua [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+Kwa maelezo zaidi angalia [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) au
+>>>>>>> origin/main
 wasiliana na [opencode@microsoft.com](mailto:opencode@microsoft.com) kwa maswali au maoni ya ziada.  
 
 ## 📂 Muundo wa Hifadhi
@@ -216,9 +340,15 @@ wasiliana na [opencode@microsoft.com](mailto:opencode@microsoft.com) kwa maswali
 Hifadhi imepangwa kama ifuatavyo:
 
 - **Mtaala wa Msingi (00-10)**: Maudhui kuu yaliyopangwa katika moduli kumi mfululizo  
+<<<<<<< HEAD
 - **images/**: Michoro na vielelezo vinavyotumika katika mtaala  
 - **translations/**: Usaidizi wa lugha nyingi na tafsiri za kiotomatiki  
 - **translated_images/**: Matoleo yaliyotafsiriwa ya michoro na vielelezo  
+=======
+- **images/**: Mchoro na vielelezo vinavyotumika katika mtaala  
+- **translations/**: Usaidizi wa lugha nyingi na tafsiri za kiotomatiki  
+- **translated_images/**: Matoleo yaliyotafsiriwa ya mchoro na vielelezo  
+>>>>>>> origin/main
 - **study_guide.md**: Mwongozo wa kina wa kuvinjari hifadhi  
 - **changelog.md**: Rekodi ya mabadiliko yote makubwa ya vifaa vya mtaala  
 - **mcp.json**: Faili ya usanidi wa vipimo vya MCP  
@@ -227,6 +357,7 @@ Hifadhi imepangwa kama ifuatavyo:
 ## 🎒 Kozi Nyingine
 Timu yetu inazalisha kozi nyingine! Angalia:
 
+<<<<<<< HEAD
 - [Wakala wa AI kwa Kompyuta](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
 - [AI Jenereta kwa Kompyuta kwa kutumia .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
 - [AI Jenereta kwa Kompyuta kwa kutumia JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
@@ -250,5 +381,30 @@ Mradi huu unaweza kuwa na alama za biashara au nembo za miradi, bidhaa, au hudum
 Matumizi ya alama za biashara au nembo za Microsoft katika matoleo yaliyorekebishwa ya mradi huu hayapaswi kusababisha mkanganyiko au kuashiria udhamini wa Microsoft.
 Matumizi yoyote ya alama za biashara au nembo za wahusika wengine yanapaswa kufuata sera za wahusika hao.  
 
+=======
+- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
+- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
+- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Generative AI for Beginners using Java](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
+- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
+- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
+- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
+- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
+- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
+- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
+- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
+- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
+
+## ™️ Taarifa ya Alama ya Biashara
+
+Mradi huu unaweza kuwa na alama za biashara au nembo za miradi, bidhaa, au huduma. Matumizi yaliyoidhinishwa ya alama za biashara au nembo za Microsoft yanapaswa kufuata na lazima yafanye hivyo kulingana na  
+[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+Matumizi ya alama za biashara au nembo za Microsoft katika matoleo yaliyorekebishwa ya mradi huu hayapaswi kusababisha mkanganyiko au kuashiria udhamini wa Microsoft.  
+Matumizi yoyote ya alama za biashara au nembo za wahusika wengine yanapaswa kufuata sera za wahusika hao.  
+
+>>>>>>> origin/main
 **Kanusho**:  
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.

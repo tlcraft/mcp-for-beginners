@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "69ba3bd502bd743233137bac5539c08b",
-  "translation_date": "2025-08-18T20:02:41+00:00",
+  "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
+  "translation_date": "2025-07-13T20:16:51+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "cs"
 }
@@ -115,5 +115,5 @@ Měli byste vidět následující výstup:
 > Obvykle je mnohem rychlejší spustit inspektor v režimu CLI než v prohlížeči.  
 > Více o inspektoru si můžete přečíst [zde](https://github.com/modelcontextprotocol/inspector).
 
-**Prohlášení:**  
-Tento dokument byl přeložen pomocí služby pro automatizovaný překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

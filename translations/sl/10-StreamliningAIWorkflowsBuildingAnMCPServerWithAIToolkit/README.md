@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1b000fd6e1b04c047578bfc5d07d54eb",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T22:41:56+00:00",
+=======
+  "translation_date": "2025-08-18T18:01:53+00:00",
+>>>>>>> origin/main
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
   "language_code": "sl"
 }
@@ -28,7 +32,11 @@ Dobrodošli na delavnici **Model Context Protocol (MCP)**! Ta obsežna praktičn
 
 ### 🎓 Kaj se boste naučili
 
+<<<<<<< HEAD
 Do konca te delavnice boste obvladali umetnost gradnje inteligentnih aplikacij, ki povezujejo AI modele z orodji in storitvami iz resničnega sveta. Od avtomatiziranega testiranja do prilagojenih API integracij boste pridobili praktične veščine za reševanje zapletenih poslovnih izzivov.
+=======
+Do konca te delavnice boste obvladali umetnost gradnje inteligentnih aplikacij, ki povezujejo AI modele z resničnimi orodji in storitvami. Od avtomatiziranega testiranja do prilagojenih API integracij boste pridobili praktične veščine za reševanje zapletenih poslovnih izzivov.
+>>>>>>> origin/main
 
 ## 🏗️ Tehnološki sklad
 
@@ -48,7 +56,11 @@ Tako kot je USB-C odpravil zmedo s kabli, MCP odpravlja zapletenost AI integraci
 
 ### 🤖 AI Toolkit za Visual Studio Code (AITK)
 
+<<<<<<< HEAD
 Microsoftov vodilni razširitveni modul za razvoj AI, ki VS Code spremeni v AI superorodje.
+=======
+Microsoftov vodilni razširitveni modul za razvoj AI, ki preoblikuje VS Code v AI superorodje.
+>>>>>>> origin/main
 
 **🚀 Osnovne zmogljivosti:**
 
@@ -61,7 +73,11 @@ Microsoftov vodilni razširitveni modul za razvoj AI, ki VS Code spremeni v AI s
 
 - Namestitev modelov brez konfiguracije
 - Vizualno oblikovanje pozivov
+<<<<<<< HEAD
 - Igralno okolje za sprotno testiranje
+=======
+- Testno okolje v realnem času
+>>>>>>> origin/main
 - Brezhibna integracija MCP strežnika
 
 ## 📚 Učno potovanje
@@ -72,10 +88,17 @@ Microsoftov vodilni razširitveni modul za razvoj AI, ki VS Code spremeni v AI s
 
 - 🛠️ Namestitev in konfiguracija AI Toolkita za VS Code
 - 🗂️ Raziskovanje kataloga modelov (100+ modelov iz GitHub, ONNX, OpenAI, Anthropic, Google)
+<<<<<<< HEAD
 - 🎮 Obvladovanje interaktivnega igralnega okolja za sprotno testiranje modelov
 - 🤖 Gradnja prvega AI agenta z Graditeljem agentov
 - 📊 Vrednotenje zmogljivosti modela z vgrajenimi metrikami (F1, ustreznost, podobnost, koherenca)
 - ⚡ Učenje zmogljivosti za obdelavo v serijah in večmodalno podporo
+=======
+- 🎮 Obvladovanje interaktivnega testnega okolja za testiranje modelov v realnem času
+- 🤖 Izdelava prvega AI agenta z Graditeljem agentov
+- 📊 Vrednotenje zmogljivosti modela z vgrajenimi metričnimi orodji (F1, relevantnost, podobnost, koherenca)
+- ⚡ Učenje zmogljivosti za obdelavo v serijah in podporo večmodalnosti
+>>>>>>> origin/main
 
 **🎯 Rezultat učenja**: Ustvarite funkcionalnega AI agenta z obsežnim razumevanjem zmogljivosti AITK
 
@@ -85,10 +108,17 @@ Microsoftov vodilni razširitveni modul za razvoj AI, ki VS Code spremeni v AI s
 
 - 🧠 Obvladovanje arhitekture in konceptov Model Context Protocol (MCP)
 - 🌐 Raziskovanje Microsoftovega ekosistema MCP strežnikov
+<<<<<<< HEAD
 - 🤖 Gradnja agenta za avtomatizacijo brskalnika z uporabo Playwright MCP strežnika
 - 🔧 Integracija MCP strežnikov z Graditeljem agentov AI Toolkita
 - 📊 Konfiguracija in testiranje MCP orodij znotraj vaših agentov
 - 🚀 Izvoz in uvajanje agentov, ki jih poganja MCP, za uporabo v produkciji
+=======
+- 🤖 Izdelava agenta za avtomatizacijo brskalnika z uporabo Playwright MCP strežnika
+- 🔧 Integracija MCP strežnikov z Graditeljem agentov AI Toolkita
+- 📊 Konfiguracija in testiranje MCP orodij znotraj vaših agentov
+- 🚀 Izvoz in uvajanje agentov, ki uporabljajo MCP, za produkcijsko uporabo
+>>>>>>> origin/main
 
 **🎯 Rezultat učenja**: Uvedite AI agenta, okrepljenega z zunanjimi orodji prek MCP
 
@@ -99,7 +129,11 @@ Microsoftov vodilni razširitveni modul za razvoj AI, ki VS Code spremeni v AI s
 - 💻 Ustvarjanje prilagojenih MCP strežnikov z AI Toolkitom
 - 🐍 Konfiguracija in uporaba najnovejšega MCP Python SDK (v1.9.3)
 - 🔍 Nastavitev in uporaba MCP Inspectorja za odpravljanje napak
+<<<<<<< HEAD
 - 🛠️ Gradnja vremenskega MCP strežnika z uporabo profesionalnih delovnih tokov za odpravljanje napak
+=======
+- 🛠️ Izdelava vremenskega MCP strežnika z uporabo profesionalnih delovnih tokov za odpravljanje napak
+>>>>>>> origin/main
 - 🧪 Odpravljanje napak MCP strežnikov v okoljih Graditelja agentov in Inspectorja
 
 **🎯 Rezultat učenja**: Razvijte in odpravljajte napake na prilagojenih MCP strežnikih z modernimi orodji
@@ -108,7 +142,11 @@ Microsoftov vodilni razširitveni modul za razvoj AI, ki VS Code spremeni v AI s
 
 **Trajanje**: 30 minut
 
+<<<<<<< HEAD
 - 🏗️ Gradnja realnega GitHub Clone MCP strežnika za razvojne delovne tokove
+=======
+- 🏗️ Izdelava realnega GitHub Clone MCP strežnika za razvojne delovne tokove
+>>>>>>> origin/main
 - 🔄 Implementacija pametnega kloniranja repozitorijev z validacijo in obravnavo napak
 - 📁 Ustvarjanje inteligentnega upravljanja imenikov in integracije z VS Code
 - 🤖 Uporaba načina agenta GitHub Copilot z lastnimi MCP orodji
@@ -124,15 +162,25 @@ Microsoftov vodilni razširitveni modul za razvoj AI, ki VS Code spremeni v AI s
 
 Preoblikujte svoj razvojni delovni tok z inteligentno avtomatizacijo:
 
+<<<<<<< HEAD
 - **Pametno upravljanje repozitorijev**: AI-podprto pregledovanje kode in odločitve o združevanju
+=======
+- **Pametno upravljanje repozitorijev**: AI-podprto pregledovanje kode in odločanje o združitvah
+>>>>>>> origin/main
 - **Inteligentni CI/CD**: Avtomatizirana optimizacija cevovodov na podlagi sprememb kode
 - **Razvrščanje težav**: Samodejna klasifikacija in dodelitev napak
 
 #### 🧪 Revolucija zagotavljanja kakovosti
 
+<<<<<<< HEAD
 Izboljšajte testiranje z avtomatizacijo, ki jo poganja AI:
 
 - **Pametno generiranje testov**: Samodejno ustvarjanje obsežnih testnih nizov
+=======
+Izboljšajte testiranje z avtomatizacijo, podprto z AI:
+
+- **Inteligentno generiranje testov**: Samodejno ustvarjanje obsežnih testnih nizov
+>>>>>>> origin/main
 - **Vizualno regresijsko testiranje**: AI-podprto zaznavanje sprememb v uporabniškem vmesniku
 - **Spremljanje zmogljivosti**: Proaktivno prepoznavanje in reševanje težav
 
@@ -141,16 +189,27 @@ Izboljšajte testiranje z avtomatizacijo, ki jo poganja AI:
 Zgradite pametnejše delovne tokove za obdelavo podatkov:
 
 - **Prilagodljivi ETL procesi**: Samooptimizirajoče se transformacije podatkov
+<<<<<<< HEAD
 - **Zaznavanje anomalij**: Sproten nadzor kakovosti podatkov
 - **Pametno usmerjanje**: Inteligentno upravljanje podatkovnih tokov
+=======
+- **Zaznavanje anomalij**: Spremljanje kakovosti podatkov v realnem času
+- **Pametno usmerjanje**: Inteligentno upravljanje tokov podatkov
+>>>>>>> origin/main
 
 #### 🎧 Izboljšanje uporabniške izkušnje
 
 Ustvarite izjemne interakcije s strankami:
 
+<<<<<<< HEAD
 - **Podpora, ki pozna kontekst**: AI agenti z dostopom do zgodovine strank
 - **Proaktivno reševanje težav**: Prediktivna podpora strankam
 - **Večkanalna integracija**: Enotna AI izkušnja na različnih platformah
+=======
+- **Podpora, prilagojena kontekstu**: AI agenti z dostopom do zgodovine strank
+- **Proaktivno reševanje težav**: Prediktivna storitev za stranke
+- **Večkanalna integracija**: Poenotena AI izkušnja na različnih platformah
+>>>>>>> origin/main
 
 ## 🛠️ Predpogoji in nastavitev
 
@@ -158,7 +217,11 @@ Ustvarite izjemne interakcije s strankami:
 
 | Komponenta | Zahteva | Opombe |
 |------------|---------|--------|
+<<<<<<< HEAD
 | **Operacijski sistem** | Windows 10+, macOS 10.15+, Linux | Katerikoli sodoben OS |
+=======
+| **Operacijski sistem** | Windows 10+, macOS 10.15+, Linux | Vsak sodoben OS |
+>>>>>>> origin/main
 | **Visual Studio Code** | Najnovejša stabilna različica | Zahtevano za AITK |
 | **Node.js** | v18.0+ in npm | Za razvoj MCP strežnikov |
 | **Python** | 3.10+ | Opcijsko za Python MCP strežnike |
@@ -183,14 +246,23 @@ Ustvarite izjemne interakcije s strankami:
 
 ### 🏆 Seznam obvladanih veščin
 
+<<<<<<< HEAD
 Z zaključkom te delavnice boste obvladali:
+=======
+Z zaključkom te delavnice boste dosegli obvladovanje:
+>>>>>>> origin/main
 
 #### 🎯 Osnovne kompetence
 
 - [ ] **Obvladovanje MCP protokola**: Globoko razumevanje arhitekture in vzorcev implementacije
 - [ ] **Spretnost uporabe AITK**: Strokovna uporaba AI Toolkita za hiter razvoj
+<<<<<<< HEAD
 - [ ] **Razvoj prilagojenih strežnikov**: Gradnja, uvajanje in vzdrževanje produkcijskih MCP strežnikov
 - [ ] **Odličnost v integraciji orodij**: Brezhibno povezovanje AI z obstoječimi delovnimi tokovi
+=======
+- [ ] **Razvoj prilagojenih strežnikov**: Izdelava, uvajanje in vzdrževanje produkcijskih MCP strežnikov
+- [ ] **Odlična integracija orodij**: Brezhibno povezovanje AI z obstoječimi delovnimi tokovi
+>>>>>>> origin/main
 - [ ] **Uporaba za reševanje problemov**: Uporaba pridobljenih veščin za resnične poslovne izzive
 
 #### 🔧 Tehnične veščine
@@ -198,8 +270,13 @@ Z zaključkom te delavnice boste obvladali:
 - [ ] Nastavitev in konfiguracija AI Toolkita v VS Code
 - [ ] Oblikovanje in implementacija prilagojenih MCP strežnikov
 - [ ] Integracija GitHub modelov z MCP arhitekturo
+<<<<<<< HEAD
 - [ ] Gradnja avtomatiziranih testnih delovnih tokov z Playwright
 - [ ] Uvajanje AI agentov za uporabo v produkciji
+=======
+- [ ] Izdelava avtomatiziranih testnih delovnih tokov z Playwright
+- [ ] Uvajanje AI agentov za produkcijsko uporabo
+>>>>>>> origin/main
 - [ ] Odpravljanje napak in optimizacija zmogljivosti MCP strežnikov
 
 #### 🚀 Napredne zmogljivosti
@@ -214,14 +291,27 @@ Z zaključkom te delavnice boste obvladali:
 
 - [MCP Specifikacija](https://modelcontextprotocol.io/docs)
 - [GitHub repozitorij AI Toolkita](https://github.com/microsoft/vscode-ai-toolkit)
+<<<<<<< HEAD
 - [Zbirka vzorčnih MCP strežnikov](https://github.com/modelcontextprotocol/servers)
 - [Vodnik najboljših praks](https://modelcontextprotocol.io/docs/best-practices)
 
 ---
 
 **🚀 Pripravljeni na revolucijo v razvoju AI delovnih tokov?**
+=======
+- [Zbirka primerov MCP strežnikov](https://github.com/modelcontextprotocol/servers)
+- [Vodnik za najboljše prakse](https://modelcontextprotocol.io/docs/best-practices)
+
+---
+
+**🚀 Pripravljeni na revolucijo v razvoju AI?**
+>>>>>>> origin/main
 
 Zgradimo prihodnost inteligentnih aplikacij skupaj z MCP in AI Toolkit!
 
 **Omejitev odgovornosti**:  
+<<<<<<< HEAD
 Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovni prevod s strani človeškega prevajalca. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+=======
+Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+>>>>>>> origin/main

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
-  "translation_date": "2025-08-18T21:55:07+00:00",
+  "original_hash": "36de9fae488d6de554d969fe8e0801a8",
+  "translation_date": "2025-07-14T05:38:10+00:00",
   "source_file": "09-CaseStudy/apimsample.md",
   "language_code": "hr"
 }
@@ -20,7 +20,7 @@ Korištenjem ove usluge dobivate niz značajki kao što su:
 
 ## Zašto MCP + Azure API Management?
 
-Model Context Protocol brzo postaje standard za agentne AI aplikacije i način izlaganja alata i podataka na konzistentan način. Azure API Management je prirodan izbor kada trebate "upravljati" API-jima. MCP poslužitelji često se integriraju s drugim API-jima kako bi riješili zahtjeve za alatima, na primjer. Stoga kombinacija Azure API Managementa i MCP-a ima puno smisla.
+Model Context Protocol brzo postaje standard za agentne AI aplikacije i način izlaganja alata i podataka na dosljedan način. Azure API Management je prirodan izbor kada trebate "upravljati" API-jima. MCP serveri često se integriraju s drugim API-jima kako bi, na primjer, riješili zahtjeve prema nekom alatu. Stoga kombinacija Azure API Managementa i MCP-a ima puno smisla.
 
 ## Pregled
 
@@ -50,13 +50,13 @@ Za izlaganje API krajnjih točaka, slijedite ove korake:
 
     ![Odabir metoda za izlaganje](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
 
-1. Odaberite **Create**.
+1. Kliknite **Create**.
 
 1. Idite na opciju izbornika **APIs** i **MCP Servers**, trebali biste vidjeti sljedeće:
 
     ![Prikaz MCP poslužitelja u glavnom prozoru](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
 
-    MCP poslužitelj je kreiran i API operacije su izložene kao alati. MCP poslužitelj je naveden u odjeljku MCP Servers. Stupac URL prikazuje krajnju točku MCP poslužitelja koju možete koristiti za testiranje ili unutar klijentske aplikacije.
+    MCP server je kreiran, a API operacije su izložene kao alati. MCP server je naveden u odjeljku MCP Servers. Stupac URL prikazuje krajnju točku MCP servera koju možete pozvati za testiranje ili unutar klijentske aplikacije.
 
 ## Opcionalno: Konfiguriranje pravila
 
@@ -94,7 +94,7 @@ Evo kako dodati MCP poslužitelj u Visual Studio Code:
 
 1. Koristite MCP: **Add Server naredbu iz Command Palette**.
 
-1. Kada se zatraži, odaberite tip poslužitelja: **HTTP (HTTP ili Server Sent Events)**.
+1. Kad se zatraži, odaberite tip servera: **HTTP (HTTP ili Server Sent Events)**.
 
 1. Unesite URL MCP poslužitelja u API Managementu. Primjer: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (za SSE krajnju točku) ili **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (za MCP krajnju točku), obratite pažnju na razliku između transporta `/sse` ili `/mcp`.
 
@@ -134,7 +134,7 @@ Evo kako dodati MCP poslužitelj u Visual Studio Code:
 
     - Evo kako ga možete dodati u postavke:
 
-    ![Dodavanje zaglavlja za autentifikaciju](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), ovo će uzrokovati prikazivanje upita za unos vrijednosti API ključa koji možete pronaći u Azure Portalu za vašu instancu Azure API Managementa.
+    ![Dodavanje zaglavlja za autentifikaciju](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), što će prikazati upit za unos vrijednosti API ključa koji možete pronaći u Azure Portalu za vašu Azure API Management instancu.
 
    - Da biste ga dodali u *mcp.json*, možete ga dodati ovako:
 
@@ -176,11 +176,12 @@ Trebala bi se pojaviti ikona Alati, gdje su navedeni izloženi alati s vašeg po
     get information from order 2
     ```
 
-    Sada će vam se prikazati ikona alata koja vas pita želite li nastaviti s pozivanjem alata. Odaberite da nastavite s izvršavanjem alata, a zatim biste trebali vidjeti izlaz poput ovog:
+    Sada će vam se prikazati ikona alata koja traži potvrdu za pozivanje alata. Odaberite da nastavite s izvršavanjem alata, trebali biste vidjeti izlaz kao na slici:
 
     ![Rezultat upita](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **Ono što vidite ovisi o alatima koje ste postavili, ali ideja je da dobijete tekstualni odgovor poput gore navedenog.**
+    **što vidite ovisi o alatima koje ste postavili, ali ideja je da dobijete tekstualni odgovor kao gore**
+
 
 ## Reference
 
@@ -198,4 +199,4 @@ Evo kako možete saznati više:
 - [AI Gateway radionice](https://azure-samples.github.io/AI-Gateway/) Sadrži radionice koristeći Azure Portal, što je sjajan način za početak evaluacije AI mogućnosti.
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

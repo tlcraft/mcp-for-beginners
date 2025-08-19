@@ -2,13 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "98bcd044860716da5819e31c152813b7",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T22:37:07+00:00",
+=======
+  "translation_date": "2025-08-18T17:57:14+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/07-aitk/README.md",
   "language_code": "sl"
 }
 -->
 # Uporaba strežnika iz razširitve AI Toolkit za Visual Studio Code
 
+<<<<<<< HEAD
 Ko gradite AI agenta, ni pomembno le ustvarjanje pametnih odgovorov, temveč tudi omogočanje agentu, da ukrepa. Tukaj pride v igro Model Context Protocol (MCP). MCP agentom omogoča dostop do zunanjih orodij in storitev na dosleden način. Predstavljajte si, da svojega agenta priključite na orodjarno, ki jo lahko *dejansko* uporablja.
 
 Recimo, da povežete agenta s strežnikom MCP kalkulatorja. Nenadoma lahko vaš agent izvaja matematične operacije samo z uporabo poziva, kot je "Koliko je 47 krat 89?"—brez potrebe po ročnem kodiranju logike ali gradnji prilagojenih API-jev.
@@ -16,6 +21,15 @@ Recimo, da povežete agenta s strežnikom MCP kalkulatorja. Nenadoma lahko vaš 
 ## Pregled
 
 Ta lekcija zajema, kako povezati strežnik MCP kalkulatorja z agentom z uporabo razširitve [AI Toolkit](https://aka.ms/AIToolkit) v Visual Studio Code, kar omogoča vašemu agentu izvajanje matematičnih operacij, kot so seštevanje, odštevanje, množenje in deljenje prek naravnega jezika.
+=======
+Ko gradite AI agenta, ni pomembno le, da ustvarja pametne odgovore, temveč tudi, da ima sposobnost ukrepanja. Tukaj pride v igro Model Context Protocol (MCP). MCP omogoča agentom enostaven dostop do zunanjih orodij in storitev na dosleden način. Predstavljajte si, da svojega agenta priključite na orodjarno, ki jo lahko *dejansko* uporablja.
+
+Recimo, da povežete agenta s strežnikom MCP za kalkulator. Nenadoma lahko vaš agent izvaja matematične operacije samo z uporabo poziva, kot je "Koliko je 47 krat 89?"—brez potrebe po ročnem kodiranju logike ali gradnji prilagojenih API-jev.
+
+## Pregled
+
+Ta lekcija zajema, kako povezati strežnik MCP za kalkulator z agentom z uporabo razširitve [AI Toolkit](https://aka.ms/AIToolkit) v Visual Studio Code, kar omogoča vašemu agentu izvajanje matematičnih operacij, kot so seštevanje, odštevanje, množenje in deljenje, prek naravnega jezika.
+>>>>>>> origin/main
 
 AI Toolkit je zmogljiva razširitev za Visual Studio Code, ki poenostavi razvoj agentov. AI inženirji lahko enostavno gradijo AI aplikacije z razvojem in testiranjem generativnih AI modelov—lokalno ali v oblaku. Razširitev podpira večino glavnih generativnih modelov, ki so danes na voljo.
 
@@ -25,8 +39,13 @@ AI Toolkit je zmogljiva razširitev za Visual Studio Code, ki poenostavi razvoj 
 
 Do konca te lekcije boste sposobni:
 
+<<<<<<< HEAD
 - Uporabiti MCP strežnik prek AI Toolkit.
 - Konfigurirati konfiguracijo agenta, da omogočite odkrivanje in uporabo orodij, ki jih ponuja MCP strežnik.
+=======
+- Uporabiti strežnik MCP prek AI Toolkit.
+- Konfigurirati konfiguracijo agenta, da omogočite odkrivanje in uporabo orodij, ki jih ponuja strežnik MCP.
+>>>>>>> origin/main
 - Uporabljati MCP orodja prek naravnega jezika.
 
 ## Pristop
@@ -34,8 +53,13 @@ Do konca te lekcije boste sposobni:
 Tukaj je visok nivo pristopa, ki ga moramo upoštevati:
 
 - Ustvarite agenta in definirajte njegov sistemski poziv.
+<<<<<<< HEAD
 - Ustvarite MCP strežnik z orodji kalkulatorja.
 - Povežite Agent Builder z MCP strežnikom.
+=======
+- Ustvarite strežnik MCP z orodji za kalkulator.
+- Povežite Agent Builder s strežnikom MCP.
+>>>>>>> origin/main
 - Testirajte uporabo orodij agenta prek naravnega jezika.
 
 Odlično, zdaj ko razumemo potek, konfigurirajmo AI agenta, da izkoristi zunanja orodja prek MCP in izboljša svoje zmogljivosti!
@@ -50,7 +74,11 @@ Odlično, zdaj ko razumemo potek, konfigurirajmo AI agenta, da izkoristi zunanja
 > [!WARNING]
 > Opomba za uporabnike macOS. Trenutno preiskujemo težavo, ki vpliva na namestitev odvisnosti na macOS. Zaradi tega uporabniki macOS trenutno ne bodo mogli dokončati tega vodiča. Navodila bomo posodobili takoj, ko bo na voljo rešitev. Hvala za vašo potrpežljivost in razumevanje!
 
+<<<<<<< HEAD
 V tej vaji boste zgradili, zagnali in izboljšali AI agenta z orodji iz MCP strežnika znotraj Visual Studio Code z uporabo AI Toolkit.
+=======
+V tej vaji boste zgradili, zagnali in izboljšali AI agenta z orodji iz strežnika MCP znotraj Visual Studio Code z uporabo AI Toolkit.
+>>>>>>> origin/main
 
 ### -0- Predkorak, dodajte model OpenAI GPT-4o v Moji modeli
 
@@ -64,7 +92,11 @@ Vaja uporablja model **GPT-4o**. Model mora biti dodan v **Moji modeli** pred us
 
 ### -1- Ustvarite agenta
 
+<<<<<<< HEAD
 **Agent (Prompt) Builder** vam omogoča ustvarjanje in prilagajanje lastnih AI agentov. V tem razdelku boste ustvarili novega agenta in mu dodelili model za pogovor.
+=======
+**Agent (Prompt) Builder** omogoča ustvarjanje in prilagajanje lastnih AI agentov. V tem razdelku boste ustvarili novega agenta in mu dodelili model za pogovor.
+>>>>>>> origin/main
 
 1. Odprite razširitev **AI Toolkit** iz **Activity Bar**.
 1. V razdelku **Tools** izberite **Agent (Prompt) Builder**. Izbira **Agent (Prompt) Builder** odpre **Agent (Prompt) Builder** v novem zavihku urejevalnika.
@@ -79,6 +111,7 @@ Ko je agent pripravljen, je čas, da definirate njegovo osebnost in namen. V tem
 1. Za razdelek **Prompts** kliknite gumb **Generate system prompt**. Ta gumb odpre graditelj pozivov, ki uporablja AI za generiranje sistemskega poziva za agenta.
 1. V oknu **Generate a prompt** vnesite naslednje: `Vi ste koristen in učinkovit matematični asistent. Ko prejmete nalogo, ki vključuje osnovno aritmetiko, odgovorite s pravilnim rezultatom.`
 1. Kliknite gumb **Generate**. Obvestilo se bo pojavilo v spodnjem desnem kotu, ki potrjuje, da se sistemski poziv generira. Ko je generiranje poziva končano, se poziv prikaže v polju **System prompt** v **Agent (Prompt) Builder**.
+<<<<<<< HEAD
 1. Preglejte **System prompt** in ga po potrebi spremenite.
 
 ### -3- Ustvarite MCP strežnik
@@ -86,6 +119,15 @@ Ko je agent pripravljen, je čas, da definirate njegovo osebnost in namen. V tem
 Zdaj, ko ste definirali sistemski poziv agenta—ki usmerja njegovo vedenje in odgovore—je čas, da agenta opremite s praktičnimi zmogljivostmi. V tem razdelku boste ustvarili MCP strežnik kalkulatorja z orodji za izvajanje seštevanja, odštevanja, množenja in deljenja. Ta strežnik bo omogočil vašemu agentu izvajanje matematičnih operacij v realnem času kot odgovor na pozive v naravnem jeziku.
 
 AI Toolkit je opremljen s predlogami za enostavno ustvarjanje lastnega MCP strežnika. Uporabili bomo Python predlogo za ustvarjanje MCP strežnika kalkulatorja.
+=======
+1. Preglejte **System prompt** in ga po potrebi prilagodite.
+
+### -3- Ustvarite strežnik MCP
+
+Zdaj, ko ste definirali sistemski poziv agenta—ki usmerja njegovo vedenje in odgovore—je čas, da agenta opremite s praktičnimi zmogljivostmi. V tem razdelku boste ustvarili strežnik MCP za kalkulator z orodji za izvajanje seštevanja, odštevanja, množenja in deljenja. Ta strežnik bo omogočil vašemu agentu izvajanje matematičnih operacij v realnem času kot odgovor na pozive v naravnem jeziku.
+
+AI Toolkit je opremljen s predlogami za enostavno ustvarjanje lastnega strežnika MCP. Uporabili bomo Python predlogo za ustvarjanje strežnika MCP za kalkulator.
+>>>>>>> origin/main
 
 *Opomba*: AI Toolkit trenutno podpira Python in TypeScript.
 
@@ -93,15 +135,25 @@ AI Toolkit je opremljen s predlogami za enostavno ustvarjanje lastnega MCP stre�
 1. Izberite **+ Add Server**.
 1. Izberite **Create a New MCP Server**.
 1. Izberite **python-weather** kot predlogo.
+<<<<<<< HEAD
 1. Izberite **Default folder** za shranjevanje predloge MCP strežnika.
 1. Vnesite naslednje ime za strežnik: **Calculator**
 1. Odprlo se bo novo okno Visual Studio Code. Izberite **Yes, I trust the authors**.
+=======
+1. Izberite **Default folder** za shranjevanje predloge strežnika MCP.
+1. Vnesite naslednje ime za strežnik: **Calculator**
+1. Novo okno Visual Studio Code se bo odprlo. Izberite **Yes, I trust the authors**.
+>>>>>>> origin/main
 1. Uporabite terminal (**Terminal** > **New Terminal**) za ustvarjanje virtualnega okolja: `python -m venv .venv`
 1. Uporabite terminal za aktivacijo virtualnega okolja:
     1. Windows - `.venv\Scripts\activate`
     1. macOS/Linux - `source .venv/bin/activate`
 1. Uporabite terminal za namestitev odvisnosti: `pip install -e .[dev]`
+<<<<<<< HEAD
 1. V pogledu **Explorer** v **Activity Bar** razširite imenik **src** in izberite **server.py**, da odprete datoteko v urejevalniku.
+=======
+1. V **Explorer** pogledu **Activity Bar** razširite imenik **src** in izberite **server.py**, da odprete datoteko v urejevalniku.
+>>>>>>> origin/main
 1. Zamenjajte kodo v datoteki **server.py** z naslednjo in shranite:
 
     ```python
@@ -145,12 +197,21 @@ AI Toolkit je opremljen s predlogami za enostavno ustvarjanje lastnega MCP stre�
         return a / b
     ```
 
+<<<<<<< HEAD
 ### -4- Zaženite agenta z MCP strežnikom kalkulatorja
 
 Zdaj, ko ima vaš agent orodja, je čas, da jih uporabite! V tem razdelku boste poslali pozive agentu, da testirate in preverite, ali agent uporablja ustrezno orodje iz MCP strežnika kalkulatorja.
 
 1. Pritisnite `F5`, da začnete razhroščevanje MCP strežnika. **Agent (Prompt) Builder** se bo odprl v novem zavihku urejevalnika. Status strežnika je viden v terminalu.
 1. V polje **User prompt** v **Agent (Prompt) Builder** vnesite naslednji poziv: `Kupil sem 3 izdelke po ceni $25 vsak, nato pa uporabil $20 popusta. Koliko sem plačal?`
+=======
+### -4- Zaženite agenta s strežnikom MCP za kalkulator
+
+Zdaj, ko ima vaš agent orodja, je čas, da jih uporabite! V tem razdelku boste poslali pozive agentu, da testirate in preverite, ali agent uporablja ustrezno orodje iz strežnika MCP za kalkulator.
+
+1. Pritisnite `F5`, da začnete razhroščevanje strežnika MCP. **Agent (Prompt) Builder** se bo odprl v novem zavihku urejevalnika. Status strežnika je viden v terminalu.
+1. V polje **User prompt** v **Agent (Prompt) Builder** vnesite naslednji poziv: `Kupil sem 3 izdelke po ceni $25 vsak, nato pa uporabil popust $20. Koliko sem plačal?`
+>>>>>>> origin/main
 1. Kliknite gumb **Run**, da generirate odgovor agenta.
 1. Preglejte izhod agenta. Model bi moral zaključiti, da ste plačali **$55**.
 1. Tukaj je razčlenitev, kaj bi se moralo zgoditi:
@@ -160,11 +221,19 @@ Zdaj, ko ima vaš agent orodja, je čas, da jih uporabite! V tem razdelku boste 
     - Odziv vsakega orodja je prikazan v ustreznem **Tool Response**.
     - Končni izhod modela je prikazan v končnem **Model Response**.
 1. Pošljite dodatne pozive za nadaljnje testiranje agenta. Obstoječi poziv v polju **User prompt** lahko spremenite tako, da kliknete v polje in zamenjate obstoječi poziv.
+<<<<<<< HEAD
 1. Ko končate testiranje agenta, lahko ustavite strežnik prek **terminala** z vnosom **CTRL/CMD+C**, da ga zaprete.
 
 ## Naloga
 
 Poskusite dodati dodatno orodje v datoteko **server.py** (npr. vrnite kvadratni koren števila). Pošljite dodatne pozive, ki bi zahtevali, da agent uporabi vaše novo orodje (ali obstoječa orodja). Prepričajte se, da ponovno zaženete strežnik, da naložite novo dodana orodja.
+=======
+1. Ko končate s testiranjem agenta, lahko ustavite strežnik prek **terminala** z vnosom **CTRL/CMD+C**, da ga zaprete.
+
+## Naloga
+
+Poskusite dodati dodatno orodje v svojo datoteko **server.py** (npr. vrnite kvadratni koren števila). Pošljite dodatne pozive, ki bi zahtevali, da agent uporabi vaše novo orodje (ali obstoječa orodja). Prepričajte se, da ponovno zaženete strežnik, da naložite novo dodana orodja.
+>>>>>>> origin/main
 
 ## Rešitev
 
@@ -174,9 +243,15 @@ Poskusite dodati dodatno orodje v datoteko **server.py** (npr. vrnite kvadratni 
 
 Ključne ugotovitve iz tega poglavja so naslednje:
 
+<<<<<<< HEAD
 - Razširitev AI Toolkit je odličen odjemalec, ki omogoča uporabo MCP strežnikov in njihovih orodij.
 - MCP strežnikom lahko dodate nova orodja, s čimer razširite zmogljivosti agenta za izpolnjevanje spreminjajočih se zahtev.
 - AI Toolkit vključuje predloge (npr. Python MCP strežniške predloge), ki poenostavijo ustvarjanje prilagojenih orodij.
+=======
+- Razširitev AI Toolkit je odličen odjemalec, ki omogoča uporabo strežnikov MCP in njihovih orodij.
+- Strežnikom MCP lahko dodate nova orodja, s čimer razširite zmogljivosti agenta za izpolnjevanje spreminjajočih se zahtev.
+- AI Toolkit vključuje predloge (npr. Python predloge za strežnike MCP), ki poenostavijo ustvarjanje prilagojenih orodij.
+>>>>>>> origin/main
 
 ## Dodatni viri
 

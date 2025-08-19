@@ -2,14 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "aa5122c6d9868b4b566586f27577ca47",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T23:44:07+00:00",
+=======
+  "translation_date": "2025-08-18T19:04:38+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/06-http-streaming/solution/rust/calculator-httpclient/README.md",
   "language_code": "uk"
 }
 -->
 # Запуск цього прикладу
 
+<<<<<<< HEAD
 ## -1- Запустіть HTTP-сервер із потоковою передачею
+=======
+## -1- Запустіть потоковий HTTP-сервер
+>>>>>>> origin/main
 
 Відкрийте термінал у кореневій директорії цього проєкту та виконайте наступні команди:
 

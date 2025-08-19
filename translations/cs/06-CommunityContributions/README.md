@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-18T20:07:03+00:00",
+  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
+  "translation_date": "2025-07-17T10:36:16+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "cs"
 }
@@ -84,16 +84,16 @@ Ekosystém MCP vítá různé typy příspěvků:
    - Organizace komunitních akcí
    - Mentorování nových přispěvatelů
 
-### Proces přispívání: Hlavní protokol
+### Proces přispívání: Jádro protokolu
 
-Chcete-li přispět do hlavního protokolu MCP nebo oficiálních implementací, postupujte podle těchto principů z [oficiálních pokynů pro přispívání](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+Pro přispívání do jádra MCP protokolu nebo oficiálních implementací dodržujte zásady z [oficiálních pravidel přispívání](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
 1. **Jednoduchost a minimalismus**: Specifikace MCP udržuje vysokou laťku pro přidávání nových konceptů. Je snazší něco do specifikace přidat než odstranit.
 2. **Konkrétní přístup**: Změny ve specifikaci by měly vycházet z konkrétních implementačních výzev, nikoli ze spekulativních nápadů.
 3. **Fáze návrhu**:
-   - Definice: Prozkoumejte problémovou oblast, ověřte, že ostatní uživatelé MCP čelí podobnému problému.
-   - Prototyp: Vytvořte ukázkové řešení a demonstrujte jeho praktické použití.
-   - Psaní: Na základě prototypu napište návrh specifikace.
+   - Definice: Prozkoumejte problém, ověřte, že i ostatní uživatelé MCP mají podobný problém
+   - Prototyp: Vytvořte ukázkové řešení a předveďte jeho praktické využití
+   - Napsání: Na základě prototypu napište návrh specifikace
 
 ### Nastavení vývojového prostředí
 
@@ -370,7 +370,7 @@ K dispozici je několik rámců, které usnadňují vývoj serverů MCP:
 
 ### Vývoj sdílených nástrojů
 
-#### Příklad .NET: Vytvoření sdíleného balíčku nástrojů
+#### Příklad .NET: Vytvoření balíčku sdíleného nástroje
 
 ```csharp
 // Create a new .NET library project
@@ -476,7 +476,7 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Příklad Java: Vytvoření Maven balíčku pro nástroje
+#### Příklad v Javě: Vytvoření Maven balíčku pro nástroje
 
 ```java
 // pom.xml configuration for a shareable MCP tool package
@@ -577,7 +577,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Příklad Python: Publikace balíčku na PyPI
+#### Příklad Python: Publikování balíčku na PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -824,19 +824,19 @@ async def delete_tool(tool_name: str):
 
 ## Klíčové poznatky
 
-- Komunita MCP je rozmanitá a vítá různé typy příspěvků.
-- Přispívání do MCP může zahrnovat vylepšení hlavního protokolu i vlastní nástroje.
-- Dodržování pokynů pro přispívání zvyšuje šanci na přijetí vašeho PR.
-- Vytváření a sdílení nástrojů MCP je cenný způsob, jak rozšířit ekosystém.
-- Spolupráce v komunitě je zásadní pro růst a zlepšování MCP.
+- Komunita MCP je různorodá a vítá různé typy příspěvků
+- Přispívání do MCP může zahrnovat vylepšení jádra protokolu i vlastní nástroje
+- Dodržování pravidel přispívání zvyšuje šanci na přijetí vašeho PR
+- Vytváření a sdílení MCP nástrojů je cenný způsob, jak rozšířit ekosystém
+- Spolupráce v komunitě je nezbytná pro růst a zlepšování MCP
 
 ## Cvičení
 
-1. Identifikujte oblast v ekosystému MCP, kde byste mohli přispět na základě svých dovedností a zájmů.
-2. Forkněte repozitář MCP a nastavte si lokální vývojové prostředí.
-3. Vytvořte malé vylepšení, opravu chyby nebo nástroj, který by komunitě prospěl.
-4. Zdokumentujte svůj příspěvek s odpovídajícími testy a dokumentací.
-5. Odešlete pull request do příslušného repozitáře.
+1. Identifikujte oblast v ekosystému MCP, kde byste mohli přispět podle svých dovedností a zájmů
+2. Forkněte repozitář MCP a nastavte si lokální vývojové prostředí
+3. Vytvořte malé vylepšení, opravu chyby nebo nástroj, který by komunitě pomohl
+4. Zdokumentujte svůj příspěvek s odpovídajícími testy a dokumentací
+5. Odešlete pull request do příslušného repozitáře
 
 ## Další zdroje
 
@@ -846,5 +846,5 @@ async def delete_tool(tool_name: str):
 
 Další: [Lekce z raného přijetí](../07-LessonsfromEarlyAdoption/README.md)
 
-**Upozornění**:  
-Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nezodpovídáme za jakékoli nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

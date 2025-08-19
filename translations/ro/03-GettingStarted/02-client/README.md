@@ -2,7 +2,11 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "94c80ae71fb9971e9b57b51ab0912121",
+<<<<<<< HEAD
   "translation_date": "2025-08-18T20:52:56+00:00",
+=======
+  "translation_date": "2025-08-18T16:08:10+00:00",
+>>>>>>> origin/main
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "ro"
 }
@@ -30,7 +34,11 @@ Pentru a scrie un client, va trebui să faci următoarele:
 - **Importă bibliotecile corecte**. Vei folosi aceeași bibliotecă ca înainte, doar construcții diferite.
 - **Instanțiază un client**. Acest lucru va implica crearea unei instanțe de client și conectarea acesteia la metoda de transport aleasă.
 - **Decide ce resurse să listezi**. Serverul MCP vine cu resurse, unelte și prompturi, iar tu trebuie să decizi pe care să le listezi.
+<<<<<<< HEAD
 - **Integrează clientul într-o aplicație gazdă**. Odată ce cunoști capabilitățile serverului, trebuie să integrezi acest lucru în aplicația ta gazdă astfel încât, dacă un utilizator introduce un prompt sau o altă comandă, funcția corespunzătoare a serverului să fie invocată.
+=======
+- **Integrează clientul într-o aplicație gazdă**. Odată ce cunoști capabilitățile serverului, trebuie să integrezi acest lucru în aplicația ta gazdă, astfel încât, dacă un utilizator introduce un prompt sau o altă comandă, funcția corespunzătoare a serverului să fie invocată.
+>>>>>>> origin/main
 
 Acum că înțelegem la un nivel înalt ce urmează să facem, să vedem un exemplu.
 
@@ -290,7 +298,11 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 - Importat bibliotecile necesare.
 - Creat un transport stdio și un client `mcpClient`. Acesta din urmă este ceva ce vom folosi pentru a lista și invoca funcții pe serverul MCP.
 
+<<<<<<< HEAD
 Notă: În "Arguments", poți indica fie către fișierul *.csproj*, fie către executabil.
+=======
+Notă: În "Arguments", poți indica fie fișierul *.csproj*, fie executabilul.
+>>>>>>> origin/main
 
 #### Java
 
@@ -400,7 +412,11 @@ foreach (var tool in await client.ListToolsAsync())
 }
 ```
 
+<<<<<<< HEAD
 Mai sus este un exemplu despre cum putem lista uneltele de pe server. Pentru fiecare unealtă, afișăm apoi numele acesteia.
+=======
+Mai sus este un exemplu despre cum putem lista uneltele de pe server. Pentru fiecare unealtă, apoi afișăm numele acesteia.
+>>>>>>> origin/main
 
 #### Java
 
@@ -419,7 +435,11 @@ client.ping();
 - Folosit `ping()` pentru a verifica dacă conexiunea la server funcționează.
 - `ListToolsResult` conține informații despre toate uneltele, inclusiv numele, descrierile și schemele de intrare ale acestora.
 
+<<<<<<< HEAD
 Minunat, acum am capturat toate funcțiile. Întrebarea este: când le folosim? Ei bine, acest client este destul de simplu, în sensul că va trebui să apelăm explicit funcțiile atunci când le dorim. În capitolul următor, vom crea un client mai avansat care are acces la propriul său model de limbaj mare, LLM. Deocamdată, să vedem cum putem invoca funcțiile de pe server:
+=======
+Minunat, acum am capturat toate funcțiile. Întrebarea este: când le folosim? Ei bine, acest client este destul de simplu, în sensul că va trebui să apelăm explicit funcțiile atunci când le dorim. În capitolul următor, vom crea un client mai avansat care are acces la propriul său model de limbaj mare (LLM). Deocamdată, să vedem cum putem invoca funcțiile de pe server:
+>>>>>>> origin/main
 
 #### Rust
 
@@ -513,7 +533,11 @@ const promptResult = await client.getPrompt({
     );
     ```
 
+<<<<<<< HEAD
     iar codul clientului rezultat arată astfel pentru a se potrivi cu ceea ce este declarat pe server:
+=======
+    și codul clientului rezultat arată astfel pentru a se potrivi cu ceea ce este declarat pe server:
+>>>>>>> origin/main
 
     ```typescript
     const promptResult = await client.getPrompt({
@@ -664,7 +688,11 @@ cargo run
 
 ## Temă
 
+<<<<<<< HEAD
 În această temă, vei folosi ceea ce ai învățat pentru a crea un client propriu.
+=======
+În această temă, vei folosi ceea ce ai învățat pentru a crea un client, dar vei crea un client propriu.
+>>>>>>> origin/main
 
 Iată un server pe care îl poți folosi și pe care trebuie să-l apelezi prin codul clientului tău. Vezi dacă poți adăuga mai multe funcții serverului pentru a-l face mai interesant.
 
@@ -778,6 +806,10 @@ De asemenea, verifică acest link pentru a învăța cum să invoci [prompturi �
 
 În [secțiunea anterioară](../../../../03-GettingStarted/01-first-server), ai învățat cum să creezi un server MCP simplu cu Rust. Poți continua să construiești pe acesta sau să verifici acest link pentru mai multe exemple de servere MCP bazate pe Rust: [Exemple de servere MCP](https://github.com/modelcontextprotocol/rust-sdk/tree/main/examples/servers)
 
+### Rust
+
+În [secțiunea anterioară](../../../../03-GettingStarted/01-first-server), ai învățat cum să creezi un server MCP simplu cu Rust. Poți continua să construiești pe acesta sau să verifici acest link pentru mai multe exemple de servere MCP bazate pe Rust: [Exemple de servere MCP](https://github.com/modelcontextprotocol/rust-sdk/tree/main/examples/servers)
+
 ## Soluție
 
 Folderul **solution** conține implementări complete, gata de rulare, ale clienților care demonstrează toate conceptele acoperite în acest tutorial. Fiecare soluție include codul clientului și al serverului organizat în proiecte separate și independente.
@@ -866,29 +898,50 @@ Am furnizat implementări complete și funcționale ale clienților pentru toate
 Fiecare exemplu complet include:
 
 - ✅ **Stabilirea conexiunii** și gestionarea erorilor
+<<<<<<< HEAD
 - ✅ **Descoperirea serverului** (unelte, resurse, sugestii unde este cazul)
 - ✅ **Operațiuni ale calculatorului** (adunare, scădere, înmulțire, împărțire, ajutor)
 - ✅ **Procesarea rezultatelor** și afișarea formatată
 - ✅ **Gestionarea completă a erorilor**
+=======
+- ✅ **Descoperirea serverului** (instrumente, resurse, sugestii unde este cazul)
+- ✅ **Operații ale calculatorului** (adunare, scădere, înmulțire, împărțire, ajutor)
+- ✅ **Procesarea rezultatelor** și afișarea formatată
+- ✅ **Gestionarea cuprinzătoare a erorilor**
+>>>>>>> origin/main
 - ✅ **Cod curat, documentat** cu comentarii pas cu pas
 
 ### Începerea cu exemple complete
 
 1. **Alege limba preferată** din tabelul de mai sus
+<<<<<<< HEAD
 2. **Revizuiește fișierul exemplu complet** pentru a înțelege implementarea completă
 3. **Rulează exemplul** urmând instrucțiunile din [`complete_examples.md`](./complete_examples.md)
 4. **Modifică și extinde** exemplul pentru cazul tău specific
 
 Pentru documentație detaliată despre rularea și personalizarea acestor exemple, vezi: **[📖 Documentația Exemplului Complet](./complete_examples.md)**
+=======
+2. **Revizuiește fișierul de exemplu complet** pentru a înțelege implementarea integrală
+3. **Rulează exemplul** urmând instrucțiunile din [`complete_examples.md`](./complete_examples.md)
+4. **Modifică și extinde** exemplul pentru cazul tău specific
+
+Pentru documentația detaliată despre rularea și personalizarea acestor exemple, vezi: **[📖 Documentația Exemplului Complet](./complete_examples.md)**
+>>>>>>> origin/main
 
 ### 💡 Soluție vs. Exemple Complete
 
 | **Folder Soluție** | **Exemple Complete** |
 |--------------------|--------------------- |
 | Structură completă de proiect cu fișiere de build | Implementări într-un singur fișier |
+<<<<<<< HEAD
 | Gata de rulare cu toate dependențele | Exemple de cod concentrate |
 | Configurație asemănătoare producției | Referință educațională |
 | Unelte specifice limbajului | Comparare între limbaje |
+=======
+| Gata de rulare cu dependențe | Exemple de cod concentrate |
+| Configurație asemănătoare producției | Referință educațională |
+| Instrumente specifice limbajului | Comparație între limbaje |
+>>>>>>> origin/main
 
 Ambele abordări sunt valoroase - folosește **folderul soluție** pentru proiecte complete și **exemplele complete** pentru învățare și referință.
 
@@ -897,8 +950,13 @@ Ambele abordări sunt valoroase - folosește **folderul soluție** pentru proiec
 Concluziile cheie pentru acest capitol despre clienți sunt următoarele:
 
 - Pot fi folosiți atât pentru a descoperi, cât și pentru a invoca funcționalități pe server.
+<<<<<<< HEAD
 - Pot porni un server în timp ce se inițiază (ca în acest capitol), dar clienții pot, de asemenea, să se conecteze la servere deja pornite.
 - Reprezintă o metodă excelentă de a testa capabilitățile serverului, alături de alternative precum Inspectorul, descris în capitolul anterior.
+=======
+- Pot porni un server în timp ce se inițializează (ca în acest capitol), dar clienții pot să se conecteze și la servere deja pornite.
+- Reprezintă o modalitate excelentă de a testa capabilitățile serverului, alături de alternative precum Inspectorul, descris în capitolul anterior.
+>>>>>>> origin/main
 
 ## Resurse Suplimentare
 
@@ -917,5 +975,10 @@ Concluziile cheie pentru acest capitol despre clienți sunt următoarele:
 
 - Următorul: [Crearea unui client cu un LLM](../03-llm-client/README.md)
 
+<<<<<<< HEAD
 **Declinarea responsabilității**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+=======
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+>>>>>>> origin/main

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "69ba3bd502bd743233137bac5539c08b",
-  "translation_date": "2025-08-18T22:11:58+00:00",
+  "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
+  "translation_date": "2025-07-13T20:17:26+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "hr"
 }
@@ -47,8 +47,8 @@ Ovo bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje te
 
 Kada se server poveže:
 
-- pokušajte popisati alate i pokrenuti `add` s argumentima 2 i 4, trebali biste vidjeti 6 kao rezultat.
-- idite na resurse i predložak resursa te pozovite get_greeting, unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
+- pokušajte ispisati alate i pokrenuti `add` s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
+- idite na resources i resource template te pozovite get_greeting, unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
 
 ### Testiranje u CLI načinu
 
@@ -116,4 +116,4 @@ Trebali biste vidjeti sljedeći izlaz:
 > Pročitajte više o inspektoru [ovdje](https://github.com/modelcontextprotocol/inspector).
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
