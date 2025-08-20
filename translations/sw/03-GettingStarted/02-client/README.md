@@ -2,22 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "94c80ae71fb9971e9b57b51ab0912121",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T19:08:09+00:00",
-=======
-  "translation_date": "2025-08-18T14:13:09+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T14:44:19+00:00",
   "source_file": "03-GettingStarted/02-client/README.md",
   "language_code": "sw"
 }
 -->
 # Kuunda Mteja
 
-<<<<<<< HEAD
-Wateja ni programu maalum au maandishi yanayowasiliana moja kwa moja na Seva ya MCP ili kuomba rasilimali, zana, na maelekezo. Tofauti na kutumia zana ya ukaguzi, ambayo hutoa kiolesura cha picha kwa kuingiliana na seva, kuandika mteja wako mwenyewe kunaruhusu mwingiliano wa kimaandishi na kiotomatiki. Hii inawawezesha watengenezaji kuunganisha uwezo wa MCP katika mtiririko wao wa kazi, kuendesha kazi kiotomatiki, na kujenga suluhisho maalum kulingana na mahitaji maalum.
-=======
-Wateja ni programu maalum au maandiko yanayowasiliana moja kwa moja na Seva ya MCP kuomba rasilimali, zana, na maelekezo. Tofauti na kutumia zana ya ukaguzi, ambayo hutoa kiolesura cha picha kwa kuingiliana na seva, kuandika mteja wako mwenyewe kunaruhusu mwingiliano wa kiotomatiki na wa programu. Hii inawawezesha watengenezaji kuunganisha uwezo wa MCP katika mtiririko wao wa kazi, kuendesha majukumu kiotomatiki, na kujenga suluhisho maalum kulingana na mahitaji maalum.
->>>>>>> origin/main
+Wateja ni programu maalum au maandiko yanayowasiliana moja kwa moja na Seva ya MCP kuomba rasilimali, zana, na maelekezo. Tofauti na kutumia zana ya ukaguzi, ambayo hutoa kiolesura cha picha kwa kuingiliana na seva, kuandika mteja wako mwenyewe kunaruhusu mwingiliano wa kiotomatiki na wa programu. Hii inawawezesha watengenezaji kuunganisha uwezo wa MCP katika mtiririko wao wa kazi, kuendesha kazi, na kujenga suluhisho maalum kulingana na mahitaji maalum.
 
 ## Muhtasari
 
@@ -27,31 +19,20 @@ Somo hili linaanzisha dhana ya wateja ndani ya mfumo wa Model Context Protocol (
 
 Mwisho wa somo hili, utaweza:
 
-- Kuelewa mteja anaweza kufanya nini.
+- Kuelewa kile mteja anaweza kufanya.
 - Kuandika mteja wako mwenyewe.
 - Kuunganisha na kujaribu mteja na seva ya MCP ili kuhakikisha inafanya kazi kama inavyotarajiwa.
 
 ## Nini kinahitajika kuandika mteja?
 
-<<<<<<< HEAD
 Kuandika mteja, unahitaji kufanya yafuatayo:
 
 - **Kuagiza maktaba sahihi**. Utatumia maktaba ile ile kama hapo awali, lakini kwa miundo tofauti.
 - **Kuunda mteja**. Hii itahusisha kuunda mfano wa mteja na kuunganisha na njia ya usafirishaji iliyochaguliwa.
 - **Kuamua rasilimali za kuorodhesha**. Seva yako ya MCP ina rasilimali, zana, na maelekezo, unahitaji kuamua ni ipi ya kuorodhesha.
-- **Kuunganisha mteja na programu ya mwenyeji**. Mara tu unapojua uwezo wa seva, unahitaji kuunganisha hii na programu yako ya mwenyeji ili mtumiaji akiandika maelekezo au amri nyingine, kipengele husika cha seva kinaitwa.
+- **Kuunganisha mteja na programu ya mwenyeji**. Mara tu unapojua uwezo wa seva, unahitaji kuunganisha hii na programu yako ya mwenyeji ili mtumiaji akiandika maelekezo au amri nyingine, kipengele kinachofaa cha seva kinaitwa.
 
 Sasa kwa kuwa tunaelewa kwa kiwango cha juu kile tunachotaka kufanya, hebu tuangalie mfano ufuatao.
-=======
-Kuandika mteja, utahitaji kufanya yafuatayo:
-
-- **Kuagiza maktaba sahihi**. Utatumia maktaba ile ile kama hapo awali, lakini miundo tofauti.
-- **Kuunda mteja**. Hii itahusisha kuunda mfano wa mteja na kuunganisha na njia ya usafirishaji iliyochaguliwa.
-- **Kuamua rasilimali za kuorodhesha**. Seva yako ya MCP ina rasilimali, zana, na maelekezo, unahitaji kuamua ni ipi ya kuorodhesha.
-- **Kuunganisha mteja na programu ya mwenyeji**. Mara tu unapojua uwezo wa seva, unahitaji kuunganisha hii na programu yako ya mwenyeji ili mtumiaji akiandika maelekezo au amri nyingine, kipengele kinacholingana cha seva kinaitwa.
-
-Sasa kwa kuwa tunaelewa kwa kiwango cha juu tunachotarajia kufanya, hebu tuangalie mfano ufuatao.
->>>>>>> origin/main
 
 ### Mfano wa mteja
 
@@ -113,11 +94,7 @@ Katika msimbo uliotangulia:
 
 Hapo unayo, mteja anayeweza kuzungumza na Seva ya MCP.
 
-<<<<<<< HEAD
 Hebu tuchukue muda katika sehemu ya mazoezi inayofuata na kuvunja kila kipande cha msimbo na kuelezea kinachoendelea.
-=======
-Hebu tuchukue muda wetu katika sehemu ya mazoezi inayofuata na kuvunja kila kipande cha msimbo na kuelezea kinachoendelea.
->>>>>>> origin/main
 
 ## Mazoezi: Kuandika mteja
 
@@ -125,11 +102,7 @@ Kama ilivyosemwa hapo juu, hebu tuchukue muda kuelezea msimbo, na kwa vyovyote v
 
 ### -1- Kuagiza maktaba
 
-<<<<<<< HEAD
 Hebu tuagize maktaba tunazohitaji, tutahitaji marejeleo ya mteja na kwa njia yetu ya usafirishaji iliyochaguliwa, stdio. stdio ni itifaki kwa vitu vinavyokusudiwa kuendeshwa kwenye mashine yako ya ndani. SSE ni itifaki nyingine ya usafirishaji tutakayoonyesha katika sura zijazo lakini hiyo ndiyo chaguo lako lingine. Kwa sasa, tuendelee na stdio.
-=======
-Hebu tuagize maktaba tunazohitaji, tutahitaji marejeleo ya mteja na kwa njia yetu ya usafirishaji iliyochaguliwa, stdio. stdio ni itifaki kwa vitu vinavyokusudiwa kuendeshwa kwenye mashine yako ya ndani. SSE ni itifaki nyingine ya usafirishaji tutakayoonyesha katika sura zijazo lakini hiyo ndiyo chaguo lako lingine. Kwa sasa, hata hivyo, tuendelee na stdio.
->>>>>>> origin/main
 
 #### TypeScript
 
@@ -157,11 +130,7 @@ using ModelContextProtocol.Protocol.Transport;
 
 #### Java
 
-<<<<<<< HEAD
-Kwa Java, utaunda mteja anayounganisha na seva ya MCP kutoka zoezi la awali. Ukitumia muundo ule ule wa mradi wa Java Spring Boot kutoka [Kuanza na Seva ya MCP](../../../../03-GettingStarted/01-first-server/solution/java), unda darasa jipya la Java linaloitwa `SDKClient` katika folda ya `src/main/java/com/microsoft/mcp/sample/client/` na ongeza uagizaji ufuatao:
-=======
 Kwa Java, utaunda mteja anayounganisha na seva ya MCP kutoka zoezi la awali. Ukitumia muundo ule ule wa mradi wa Java Spring Boot kutoka [Kuanza na Seva ya MCP](../../../../03-GettingStarted/01-first-server/solution/java), unda darasa jipya la Java linaloitwa `SDKClient` katika folda `src/main/java/com/microsoft/mcp/sample/client/` na ongeza uagizaji ufuatao:
->>>>>>> origin/main
 
 ```java
 import java.util.Map;
@@ -190,11 +159,7 @@ serde_json = "1.0.141"
 tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
 ```
 
-<<<<<<< HEAD
-Kutoka hapo, unaweza kuagiza maktaba zinazohitajika katika msimbo wa mteja wako.
-=======
 Kutoka hapo, unaweza kuagiza maktaba zinazohitajika katika msimbo wako wa mteja.
->>>>>>> origin/main
 
 ```rust
 use rmcp::{
@@ -206,7 +171,7 @@ use rmcp::{
 use tokio::process::Command;
 ```
 
-Tuendelee na uundaji.
+Tuendelee na kuunda mfano.
 
 ### -2- Kuunda mteja na usafirishaji
 
@@ -251,7 +216,7 @@ Katika msimbo uliotangulia:
     });
     ```
 
-- Tumeunganisha mteja na usafirishaji uliyochaguliwa.
+- Tumeunganisha mteja na njia ya usafirishaji iliyochaguliwa.
 
     ```typescript
     await client.connect(transport);
@@ -354,17 +319,10 @@ public class SDKClient {
 
 Katika msimbo uliotangulia:
 
-<<<<<<< HEAD
-- Tumeunda mbinu kuu inayoseti usafirishaji wa SSE unaoelekeza kwenye `http://localhost:8080` ambapo seva yetu ya MCP itakuwa ikiendesha.
-- Tumeunda darasa la mteja linalochukua usafirishaji kama parameter ya ujenzi.
-- Katika mbinu ya `run`, tunaunda mteja wa MCP wa usawazishaji kwa kutumia usafirishaji na kuanzisha muunganisho.
-- Tumetumia usafirishaji wa SSE (Server-Sent Events) ambao unafaa kwa mawasiliano yanayotegemea HTTP na seva za Java Spring Boot MCP.
-=======
-- Tumeunda mbinu kuu inayoseti usafirishaji wa SSE unaoelekeza `http://localhost:8080` ambapo seva yetu ya MCP itakuwa inaendesha.
-- Tumeunda darasa la mteja linalochukua usafirishaji kama parameter ya ujenzi.
+- Tumeunda mbinu kuu inayoseti usafirishaji wa SSE unaoelekeza `http://localhost:8080` ambapo seva yetu ya MCP itakuwa ikiendesha.
+- Tumeunda darasa la mteja linalochukua usafirishaji kama parameter ya constructor.
 - Katika mbinu ya `run`, tunaunda mteja wa MCP wa usawazishaji kwa kutumia usafirishaji na kuanzisha muunganisho.
 - Tumetumia usafirishaji wa SSE (Server-Sent Events) ambao unafaa kwa mawasiliano yanayotegemea HTTP na seva za MCP za Java Spring Boot.
->>>>>>> origin/main
 
 #### Rust
 
@@ -400,11 +358,7 @@ async fn main() -> Result<(), RmcpError> {
 
 ### -3- Kuorodhesha vipengele vya seva
 
-<<<<<<< HEAD
-Sasa, tuna mteja anayeweza kuunganishwa ikiwa programu itaendeshwa. Hata hivyo, haionyeshi vipengele vyake, kwa hivyo hebu tufanye hivyo sasa:
-=======
 Sasa, tuna mteja anayeweza kuunganishwa ikiwa programu itaendeshwa. Hata hivyo, haionyeshi vipengele vyake kwa hivyo hebu tufanye hivyo sasa:
->>>>>>> origin/main
 
 #### TypeScript
 
@@ -465,11 +419,7 @@ Katika msimbo uliotangulia:
 - Tumetumia `ping()` kuthibitisha kuwa muunganisho na seva unafanya kazi.
 - `ListToolsResult` ina taarifa kuhusu zana zote ikiwa ni pamoja na majina yao, maelezo, na miundo ya pembejeo.
 
-<<<<<<< HEAD
-Vizuri, sasa tumeshika vipengele vyote. Sasa swali ni lini tunavitumia? Naam, mteja huyu ni rahisi sana, rahisi kwa maana kwamba tutahitaji kuita vipengele moja kwa moja tunapovihitaji. Katika sura inayofuata, tutaunda mteja wa hali ya juu zaidi ambaye ana ufikiaji wa mfano wake wa lugha kubwa, LLM. Kwa sasa, hebu tuone jinsi tunavyoweza kutumia vipengele kwenye seva:
-=======
-Vizuri, sasa tumeshika vipengele vyote. Sasa swali ni lini tunavitumia? Naam, mteja huyu ni rahisi sana, rahisi kwa maana kwamba tutahitaji kuita vipengele moja kwa moja tunapovihitaji. Katika sura inayofuata, tutaunda mteja wa hali ya juu zaidi ambaye ana ufikiaji wa mfano wake wa lugha kubwa, LLM. Kwa sasa, hata hivyo, hebu tuone jinsi tunavyoweza kutumia vipengele kwenye seva:
->>>>>>> origin/main
+Vizuri, sasa tumeshika vipengele vyote. Sasa swali ni lini tunavitumia? Naam, mteja huyu ni rahisi, rahisi kwa maana kwamba tutahitaji kuita vipengele moja kwa moja tunapovihitaji. Katika sura inayofuata, tutaunda mteja wa hali ya juu zaidi ambaye ana ufikiaji wa mfano wake wa lugha kubwa, LLM. Kwa sasa, hebu tuone jinsi tunavyoweza kutumia vipengele kwenye seva:
 
 #### Rust
 
@@ -487,7 +437,7 @@ println!("Available tools: {:?}", tools);
 
 ### -4- Kutumia vipengele
 
-Ili kutumia vipengele tunahitaji kuhakikisha tunabainisha hoja sahihi na katika baadhi ya matukio jina la kile tunachojaribu kutumia.
+Kutumia vipengele tunahitaji kuhakikisha tunabainisha hoja sahihi na katika baadhi ya matukio jina la kile tunachojaribu kutumia.
 
 #### TypeScript
 
@@ -532,11 +482,7 @@ Katika msimbo uliotangulia:
     );
     ```
 
-<<<<<<< HEAD
     Thamani yetu ya `uri` `file://example.txt` inalingana na `file://{name}` kwenye seva. `example.txt` italinganishwa na `name`.
-=======
-    Thamani yetu ya `uri` `file://example.txt` inalingana na `file://{name}` kwenye seva. `example.txt` itapangwa kwa `name`.
->>>>>>> origin/main
 
 - Tunaita zana, tunaita kwa kubainisha `name` na `arguments` zake kama ifuatavyo:
 
@@ -549,11 +495,7 @@ Katika msimbo uliotangulia:
     });
     ```
 
-<<<<<<< HEAD
 - Tunapata maelekezo, ili kupata maelekezo, unaita `getPrompt()` na `name` na `arguments`. Msimbo wa seva unaonekana kama ifuatavyo:
-=======
-- Tunapata maelekezo, ili kupata maelekezo, tunaita `getPrompt()` na `name` na `arguments`. Msimbo wa seva unaonekana kama ifuatavyo:
->>>>>>> origin/main
 
     ```typescript
     server.prompt(
@@ -640,11 +582,7 @@ System.out.println("Help = " + resultHelp);
 
 Katika msimbo uliotangulia:
 
-<<<<<<< HEAD
-- Tumetumia zana kadhaa za calculator kwa kutumia mbinu ya `callTool()` na vitu vya `CallToolRequest`.
-=======
 - Tumetumia zana kadhaa za calculator kwa kutumia mbinu `callTool()` na vitu vya `CallToolRequest`.
->>>>>>> origin/main
 - Kila wito wa zana unabainisha jina la zana na `Map` ya hoja zinazohitajika na zana hiyo.
 - Zana za seva zinatarajia majina maalum ya vigezo (kama "a", "b" kwa operesheni za hisabati).
 - Matokeo yanarudishwa kama vitu vya `CallToolResult` vinavyobeba majibu kutoka kwa seva.
@@ -666,7 +604,7 @@ println!("Result of {:?} + {:?}: {:?}", a, b, tool_result);
 
 ### -5- Kuendesha mteja
 
-Ili kuendesha mteja, andika amri ifuatayo kwenye terminal:
+Kuendesha mteja, andika amri ifuatayo kwenye terminal:
 
 #### TypeScript
 
@@ -718,19 +656,6 @@ java -jar target/calculator-client-0.0.1-SNAPSHOT.jar
 ```
 
 #### Rust
-<<<<<<< HEAD
-
-```bash
-cargo fmt
-cargo run
-```
-
-## Kazi ya Nyumbani
-
-Katika kazi hii, utatumia kile ulichojifunza katika kuunda mteja lakini utaunda mteja wako mwenyewe.
-
-Hapa kuna seva unayoweza kutumia ambayo unahitaji kuipigia simu kupitia msimbo wa mteja wako, angalia ikiwa unaweza kuongeza vipengele zaidi kwenye seva ili kuifanya iwe ya kuvutia zaidi.
-=======
 
 ```bash
 cargo fmt
@@ -742,7 +667,6 @@ cargo run
 Katika kazi hii, utatumia kile ulichojifunza katika kuunda mteja lakini utaunda mteja wako mwenyewe.
 
 Hapa kuna seva unayoweza kutumia ambayo unahitaji kuipigia simu kupitia msimbo wako wa mteja, angalia ikiwa unaweza kuongeza vipengele zaidi kwenye seva ili kuifanya iwe ya kuvutia zaidi.
->>>>>>> origin/main
 
 ### TypeScript
 
@@ -852,15 +776,11 @@ Pia, angalia kiungo hiki kwa jinsi ya kutumia [maelekezo na rasilimali](https://
 
 ### Rust
 
-<<<<<<< HEAD
-Katika [sehemu ya awali](../../../../03-GettingStarted/01-first-server), ulijifunza jinsi ya kuunda seva rahisi ya MCP kwa Rust. Unaweza kuendelea kujenga juu ya hiyo au angalia kiungo hiki kwa mifano zaidi ya seva za MCP zinazotegemea Rust: [MCP Server Examples](https://github.com/modelcontextprotocol/rust-sdk/tree/main/examples/servers)
-=======
-Katika [sehemu ya awali](../../../../03-GettingStarted/01-first-server), ulijifunza jinsi ya kuunda seva rahisi ya MCP kwa Rust. Unaweza kuendelea kujenga juu ya hiyo au angalia kiungo hiki kwa mifano zaidi ya seva za MCP zinazotegemea Rust: [Mifano ya Seva za MCP](https://github.com/modelcontextprotocol/rust-sdk/tree/main/examples/servers)
->>>>>>> origin/main
+Katika [sehemu ya awali](../../../../03-GettingStarted/01-first-server), ulijifunza jinsi ya kuunda seva rahisi ya MCP na Rust. Unaweza kuendelea kujenga juu ya hiyo au angalia kiungo hiki kwa mifano zaidi ya seva za MCP zinazotumia Rust: [MCP Server Examples](https://github.com/modelcontextprotocol/rust-sdk/tree/main/examples/servers)
 
 ## Suluhisho
 
-Folda ya **suluhisho** ina utekelezaji kamili wa wateja ulio tayari kuendeshwa unaoonyesha dhana zote zilizofunikwa katika mafunzo haya. Kila suluhisho linajumuisha msimbo wa mteja na seva ulioandaliwa katika miradi tofauti, inayojitegemea.
+Folda ya **suluhisho** ina utekelezaji kamili wa wateja walio tayari kuendeshwa ambao unaonyesha dhana zote zilizofunikwa katika mafunzo haya. Kila suluhisho linajumuisha msimbo wa mteja na seva ulioandaliwa katika miradi tofauti, inayojitegemea.
 
 ### 📁 Muundo wa Suluhisho
 
@@ -898,11 +818,7 @@ solution/
 
 Kila suluhisho maalum kwa lugha linatoa:
 
-<<<<<<< HEAD
 - **Utekelezaji kamili wa mteja** na vipengele vyote kutoka kwenye mafunzo.
-=======
-- **Utekelezaji kamili wa mteja** na vipengele vyote kutoka kwa mafunzo.
->>>>>>> origin/main
 - **Muundo wa mradi unaofanya kazi** na utegemezi sahihi na usanidi.
 - **Skripti za kujenga na kuendesha** kwa usanidi rahisi na utekelezaji.
 - **README ya kina** yenye maelekezo maalum kwa lugha.
@@ -910,11 +826,7 @@ Kila suluhisho maalum kwa lugha linatoa:
 
 ### 📖 Kutumia Suluhisho
 
-<<<<<<< HEAD
-1. **Tembelea folda ya lugha unayopendelea**:
-=======
 1. **Nenda kwenye folda ya lugha unayopendelea**:
->>>>>>> origin/main
 
    ```bash
    cd solution/typescript/    # For TypeScript
@@ -924,15 +836,9 @@ Kila suluhisho maalum kwa lugha linatoa:
    ```
 
 2. **Fuata maelekezo ya README** katika kila folda kwa:
-<<<<<<< HEAD
-   - Kusakinisha utegemezi
-   - Kujenga mradi
-   - Kuendesha mteja
-=======
    - Kusakinisha utegemezi.
    - Kujenga mradi.
    - Kuendesha mteja.
->>>>>>> origin/main
 
 3. **Mfano wa matokeo** unayopaswa kuona:
 
@@ -946,32 +852,25 @@ Kwa nyaraka kamili na maelekezo ya hatua kwa hatua, angalia: **[📖 Nyaraka za 
 
 ## 🎯 Mifano Kamili
 
-Tumetoa utekelezaji kamili wa wateja unaofanya kazi kwa lugha zote za programu zilizofunikwa katika mafunzo haya. Mifano hii inaonyesha utendaji kamili ulioelezwa hapo juu na inaweza kutumika kama utekelezaji wa marejeleo au sehemu za kuanzia kwa miradi yako mwenyewe.
+Tumetoa utekelezaji kamili wa wateja wanaofanya kazi kwa lugha zote za programu zilizofunikwa katika mafunzo haya. Mifano hii inaonyesha utendaji kamili ulioelezwa hapo juu na inaweza kutumika kama utekelezaji wa marejeleo au sehemu za kuanzia kwa miradi yako mwenyewe.
 
 ### Mifano Kamili Inayopatikana
 
 | Lugha | Faili | Maelezo |
 |-------|-------|---------|
-| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | Mteja kamili wa Java unaotumia usafirishaji wa SSE na kushughulikia makosa kwa kina |
-| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | Mteja kamili wa C# unaotumia usafirishaji wa stdio na kuanzisha seva kiotomatiki |
+| **Java** | [`client_example_java.java`](../../../../03-GettingStarted/02-client/client_example_java.java) | Mteja kamili wa Java akitumia usafirishaji wa SSE na kushughulikia makosa kwa kina |
+| **C#** | [`client_example_csharp.cs`](../../../../03-GettingStarted/02-client/client_example_csharp.cs) | Mteja kamili wa C# akitumia usafirishaji wa stdio na kuanzisha seva kiotomatiki |
 | **TypeScript** | [`client_example_typescript.ts`](../../../../03-GettingStarted/02-client/client_example_typescript.ts) | Mteja kamili wa TypeScript na msaada kamili wa itifaki ya MCP |
-| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | Mteja kamili wa Python unaotumia mifumo ya async/await |
-| **Rust** | [`client_example_rust.rs`](../../../../03-GettingStarted/02-client/client_example_rust.rs) | Mteja kamili wa Rust unaotumia Tokio kwa operesheni za async |
+| **Python** | [`client_example_python.py`](../../../../03-GettingStarted/02-client/client_example_python.py) | Mteja kamili wa Python akitumia mifumo ya async/await |
+| **Rust** | [`client_example_rust.rs`](../../../../03-GettingStarted/02-client/client_example_rust.rs) | Mteja kamili wa Rust akitumia Tokio kwa operesheni za async |
 Kila mfano kamili unajumuisha:
 
 - ✅ **Kuanzisha muunganisho** na kushughulikia makosa
 - ✅ **Ugunduzi wa seva** (vifaa, rasilimali, maelekezo inapohitajika)
-<<<<<<< HEAD
-- ✅ **Operesheni za kikokotoo** (kujumlisha, kutoa, kuzidisha, kugawa, msaada)
-- ✅ **Usindikaji wa matokeo** na matokeo yaliyopangwa vizuri
-- ✅ **Ushughulikiaji wa makosa kwa kina**
-- ✅ **Nambari safi, iliyo na maelezo** na maoni ya hatua kwa hatua
-=======
 - ✅ **Operesheni za kikokotoo** (kujumlisha, kutoa, kuzidisha, kugawanya, msaada)
 - ✅ **Usindikaji wa matokeo** na matokeo yaliyopangwa vizuri
 - ✅ **Ushughulikiaji wa makosa kwa kina**
-- ✅ **Nambari safi, iliyoandikwa vizuri** na maelezo ya hatua kwa hatua
->>>>>>> origin/main
+- ✅ **Nambari safi, iliyo na maelezo** na maoni ya hatua kwa hatua
 
 ### Kuanza na Mifano Kamili
 
@@ -987,11 +886,7 @@ Kwa maelezo ya kina kuhusu jinsi ya kuendesha na kubadilisha mifano hii, angalia
 | **Folda ya Suluhisho** | **Mifano Kamili** |
 |--------------------|--------------------- |
 | Muundo kamili wa mradi na faili za ujenzi | Utekelezaji wa faili moja |
-<<<<<<< HEAD
-| Tayari kuendeshwa na utegemezi | Mifano ya nambari iliyoelekezwa |
-=======
 | Tayari kuendeshwa na utegemezi | Mifano ya nambari iliyolenga |
->>>>>>> origin/main
 | Mpangilio wa uzalishaji | Marejeleo ya kielimu |
 | Zana maalum za lugha | Ulinganisho wa lugha tofauti |
 
@@ -999,18 +894,11 @@ Njia zote mbili zina thamani - tumia **folda ya suluhisho** kwa miradi kamili na
 
 ## Mambo Muhimu
 
-<<<<<<< HEAD
-Mambo muhimu ya sura hii kuhusu wateja ni haya yafuatayo:
-
-- Inaweza kutumika kugundua na kutumia vipengele kwenye seva.
-- Inaweza kuanzisha seva wakati inajiendesha (kama ilivyoelezwa katika sura hii) lakini wateja wanaweza pia kuunganishwa na seva zinazoendelea.
-=======
 Mambo muhimu ya sura hii kuhusu wateja ni yafuatayo:
 
 - Inaweza kutumika kugundua na kutumia vipengele kwenye seva.
-- Inaweza kuanzisha seva wakati inajiendesha (kama ilivyoelezwa katika sura hii) lakini wateja wanaweza pia kuunganishwa na seva zinazoendesha.
->>>>>>> origin/main
-- Ni njia nzuri ya kujaribu uwezo wa seva sambamba na mbadala kama Inspector kama ilivyoelezwa katika sura iliyopita.
+- Inaweza kuanzisha seva wakati inajiendesha (kama ilivyoelezwa katika sura hii) lakini wateja wanaweza pia kuungana na seva zinazoendesha.
+- Ni njia nzuri ya kujaribu uwezo wa seva kando na mbadala kama Inspector kama ilivyoelezwa katika sura iliyopita.
 
 ## Rasilimali za Ziada
 
@@ -1025,11 +913,7 @@ Mambo muhimu ya sura hii kuhusu wateja ni yafuatayo:
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 - [Rust Calculator](../../../../03-GettingStarted/samples/rust)
 
-<<<<<<< HEAD
-## Kinachofuata
-=======
 ## Nini Kinachofuata
->>>>>>> origin/main
 
 - Kinachofuata: [Kuunda mteja na LLM](../03-llm-client/README.md)
 

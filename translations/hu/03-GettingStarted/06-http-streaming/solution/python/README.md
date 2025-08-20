@@ -2,11 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T19:35:59+00:00",
-=======
-  "translation_date": "2025-08-18T14:43:43+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T15:16:36+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "hu"
 }
@@ -17,13 +13,8 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Áttekintés
 
-<<<<<<< HEAD
 - Be fogsz állítani egy MCP szervert, amely feldolgozás közben értesítéseket küld a kliensnek.
-- A kliens valós időben megjeleníti az értesítéseket.
-=======
-- Beállítasz egy MCP szervert, amely feldolgozás közben értesítéseket küld a kliensnek.
 - A kliens valós időben jeleníti meg az értesítéseket.
->>>>>>> origin/main
 - Ez az útmutató lefedi az előfeltételeket, a beállítást, a futtatást és a hibaelhárítást.
 
 ### Előfeltételek
@@ -89,7 +80,7 @@ CO_OP_TRANSLATOR_METADATA:
    python client.py
    ```
 
-2. A terminálon sorban megjelennek a streamelt üzenetek:
+2. Látni fogod, hogy az üzenetek sorban jelennek meg:
 
    ```text
    Running classic HTTP streaming client...
@@ -125,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-2. Valós időben láthatod az értesítéseket, ahogy a szerver feldolgozza az elemeket:
+2. Látni fogod, hogy az értesítések valós időben jelennek meg, ahogy a szerver feldolgozza az elemeket:
    ```
    Running MCP client...
    Starting client...
@@ -140,14 +131,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Kulcsfontosságú megvalósítási lépések
 
-1. **Hozd létre az MCP szervert a FastMCP segítségével.**
-2. **Definiálj egy eszközt, amely egy listát dolgoz fel, és értesítéseket küld a `ctx.info()` vagy `ctx.log()` használatával.**
-3. **Futtasd a szervert `transport="streamable-http"` beállítással.**
+1. **Hozd létre az MCP szervert a FastMCP használatával.**
+2. **Definiálj egy eszközt, amely egy listát dolgoz fel, és értesítéseket küld a `ctx.info()` vagy `ctx.log()` segítségével.**
+3. **Futtasd a szervert a `transport="streamable-http"` beállítással.**
 4. **Valósíts meg egy klienst egy üzenetkezelővel, amely megjeleníti az értesítéseket, amint megérkeznek.**
 
 ### Kódbemutató
-- A szerver aszinkron függvényeket és az MCP kontextust használja a folyamatjelentések küldésére.
-- A kliens egy aszinkron üzenetkezelőt valósít meg, amely értesítéseket és a végső eredményt jeleníti meg.
+- A szerver aszinkron függvényeket és az MCP kontextust használja a folyamatfrissítések küldésére.
+- A kliens egy aszinkron üzenetkezelőt valósít meg az értesítések és a végső eredmény kiírására.
 
 ### Tippek és hibaelhárítás
 

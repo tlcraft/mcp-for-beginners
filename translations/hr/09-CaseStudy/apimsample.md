@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "36de9fae488d6de554d969fe8e0801a8",
-  "translation_date": "2025-07-14T05:38:10+00:00",
+  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
+  "translation_date": "2025-08-19T17:40:53+00:00",
   "source_file": "09-CaseStudy/apimsample.md",
   "language_code": "hr"
 }
@@ -11,24 +11,24 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure API Management je usluga koja pruža Gateway iznad vaših API krajnjih točaka. Funkcionira tako da Azure API Management djeluje kao proxy ispred vaših API-ja i odlučuje što učiniti s dolaznim zahtjevima.
 
-Korištenjem ove usluge dobivate niz značajki kao što su:
+Korištenjem ove usluge dodajete niz značajki kao što su:
 
 - **Sigurnost**, možete koristiti sve od API ključeva, JWT-a do upravljanog identiteta.
-- **Ograničavanje brzine**, sjajna značajka koja omogućuje određivanje koliko poziva može proći u određenom vremenskom razdoblju. Ovo osigurava da svi korisnici imaju dobro iskustvo i da vaša usluga nije preopterećena zahtjevima.
-- **Skaliranje i balansiranje opterećenja**. Možete postaviti više krajnjih točaka za raspodjelu opterećenja i odlučiti kako "balansirati opterećenje".
+- **Ograničavanje brzine**, sjajna značajka koja omogućuje odlučivanje koliko poziva prolazi unutar određenog vremenskog razdoblja. Ovo osigurava da svi korisnici imaju dobro iskustvo i da vaša usluga nije preopterećena zahtjevima.
+- **Skaliranje i balansiranje opterećenja**. Možete postaviti više krajnjih točaka za raspodjelu opterećenja i također odlučiti kako "balansirati opterećenje".
 - **AI značajke poput semantičkog keširanja**, ograničenja tokena, praćenja tokena i još mnogo toga. Ovo su sjajne značajke koje poboljšavaju odzivnost i pomažu vam da pratite potrošnju tokena. [Pročitajte više ovdje](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
 
 ## Zašto MCP + Azure API Management?
 
-Model Context Protocol brzo postaje standard za agentne AI aplikacije i način izlaganja alata i podataka na dosljedan način. Azure API Management je prirodan izbor kada trebate "upravljati" API-jima. MCP serveri često se integriraju s drugim API-jima kako bi, na primjer, riješili zahtjeve prema nekom alatu. Stoga kombinacija Azure API Managementa i MCP-a ima puno smisla.
+Model Context Protocol brzo postaje standard za agentne AI aplikacije i način izlaganja alata i podataka na konzistentan način. Azure API Management je prirodan izbor kada trebate "upravljati" API-jima. MCP poslužitelji često se integriraju s drugim API-jima kako bi riješili zahtjeve za alatima, na primjer. Stoga kombinacija Azure API Managementa i MCP-a ima puno smisla.
 
 ## Pregled
 
-U ovom konkretnom slučaju naučit ćemo kako izložiti API krajnje točke kao MCP poslužitelj. Na taj način lako možemo učiniti ove krajnje točke dijelom agentne aplikacije, dok istovremeno koristimo značajke Azure API Managementa.
+U ovom konkretnom slučaju naučit ćemo kako izložiti API krajnje točke kao MCP poslužitelj. Na taj način, ove krajnje točke lako možemo učiniti dijelom agentne aplikacije, dok istovremeno koristimo značajke Azure API Managementa.
 
 ## Ključne značajke
 
-- Možete odabrati metode krajnjih točaka koje želite izložiti kao alate.
+- Odabirete metode krajnjih točaka koje želite izložiti kao alate.
 - Dodatne značajke koje dobivate ovise o tome što konfigurirate u odjeljku s pravilima za vaš API. Ovdje ćemo pokazati kako možete dodati ograničavanje brzine.
 
 ## Preduvjet: uvoz API-ja
@@ -56,7 +56,7 @@ Za izlaganje API krajnjih točaka, slijedite ove korake:
 
     ![Prikaz MCP poslužitelja u glavnom prozoru](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
 
-    MCP server je kreiran, a API operacije su izložene kao alati. MCP server je naveden u odjeljku MCP Servers. Stupac URL prikazuje krajnju točku MCP servera koju možete pozvati za testiranje ili unutar klijentske aplikacije.
+    MCP poslužitelj je kreiran i API operacije su izložene kao alati. MCP poslužitelj je naveden u odjeljku MCP Servers. Stupac URL prikazuje krajnju točku MCP poslužitelja koju možete koristiti za testiranje ili unutar klijentske aplikacije.
 
 ## Opcionalno: Konfiguriranje pravila
 
@@ -94,7 +94,7 @@ Evo kako dodati MCP poslužitelj u Visual Studio Code:
 
 1. Koristite MCP: **Add Server naredbu iz Command Palette**.
 
-1. Kad se zatraži, odaberite tip servera: **HTTP (HTTP ili Server Sent Events)**.
+1. Kada se zatraži, odaberite vrstu poslužitelja: **HTTP (HTTP ili Server Sent Events)**.
 
 1. Unesite URL MCP poslužitelja u API Managementu. Primjer: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (za SSE krajnju točku) ili **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (za MCP krajnju točku), obratite pažnju na razliku između transporta `/sse` ili `/mcp`.
 
@@ -128,13 +128,13 @@ Evo kako dodati MCP poslužitelj u Visual Studio Code:
 
   - **Korisničke postavke** - Konfiguracija poslužitelja se dodaje u vašu globalnu *settings.json* datoteku i dostupna je u svim radnim prostorima. Konfiguracija izgleda slično sljedećem:
 
-    ![Korisnička postavka](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
+    ![Korisničke postavke](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
 
 1. Također trebate dodati konfiguraciju, zaglavlje kako biste osigurali pravilnu autentifikaciju prema Azure API Managementu. Koristi se zaglavlje pod nazivom **Ocp-Apim-Subscription-Key**.
 
     - Evo kako ga možete dodati u postavke:
 
-    ![Dodavanje zaglavlja za autentifikaciju](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), što će prikazati upit za unos vrijednosti API ključa koji možete pronaći u Azure Portalu za vašu Azure API Management instancu.
+    ![Dodavanje zaglavlja za autentifikaciju](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), ovo će uzrokovati prikazivanje upita za unos vrijednosti API ključa koji možete pronaći u Azure Portalu za vašu instancu Azure API Managementa.
 
    - Da biste ga dodali u *mcp.json*, možete ga dodati ovako:
 
@@ -166,22 +166,21 @@ Trebala bi se pojaviti ikona Alati, gdje su navedeni izloženi alati s vašeg po
 
 ![Alati s poslužitelja](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
-1. Kliknite na ikonu alata i trebali biste vidjeti popis alata poput ovog:
+1. Kliknite ikonu alata i trebali biste vidjeti popis alata poput ovog:
 
     ![Alati](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
-1. Unesite upit u chat kako biste pozvali alat. Na primjer, ako ste odabrali alat za dobivanje informacija o narudžbi, možete pitati agenta o narudžbi. Evo primjera upita:
+1. Unesite upit u chat za pokretanje alata. Na primjer, ako ste odabrali alat za dobivanje informacija o narudžbi, možete pitati agenta o narudžbi. Evo primjera upita:
 
     ```text
     get information from order 2
     ```
 
-    Sada će vam se prikazati ikona alata koja traži potvrdu za pozivanje alata. Odaberite da nastavite s izvršavanjem alata, trebali biste vidjeti izlaz kao na slici:
+    Sada će vam se prikazati ikona alata koja vas pita želite li nastaviti s pozivom alata. Odaberite da nastavite s pokretanjem alata, trebali biste vidjeti izlaz poput ovog:
 
     ![Rezultat upita](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **što vidite ovisi o alatima koje ste postavili, ali ideja je da dobijete tekstualni odgovor kao gore**
-
+    **ono što vidite ovisi o alatima koje ste postavili, ali ideja je da dobijete tekstualni odgovor poput gore navedenog**
 
 ## Reference
 
@@ -199,4 +198,4 @@ Evo kako možete saznati više:
 - [AI Gateway radionice](https://azure-samples.github.io/AI-Gateway/) Sadrži radionice koristeći Azure Portal, što je sjajan način za početak evaluacije AI mogućnosti.
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.

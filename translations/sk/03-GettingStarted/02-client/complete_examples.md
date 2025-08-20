@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "affcf199a44f60283a289dcb69dc144e",
-  "translation_date": "2025-07-17T13:35:56+00:00",
+  "original_hash": "8358c13b5b6877e475674697cdc1a904",
+  "translation_date": "2025-08-19T16:13:33+00:00",
   "source_file": "03-GettingStarted/02-client/complete_examples.md",
   "language_code": "sk"
 }
@@ -80,7 +80,7 @@ node client_example_typescript.js
   - Objavovanie nástrojov a zdrojov
   - Testovanie operácií kalkulačky
   - Čítanie obsahu zdrojov
-  - Organizácia v triedach
+  - Organizácia na báze tried
 
 **Spustenie:**
 
@@ -110,7 +110,7 @@ Každá implementácia klienta demonštruje:
 4. **Spracovanie chýb**
    - Chyby spojenia
    - Chyby pri vykonávaní nástrojov
-   - Elegantné zlyhanie a spätná väzba používateľovi
+   - Elegantné zlyhanie a spätná väzba pre používateľa
 
 5. **Spracovanie výsledkov**
    - Extrakcia textového obsahu z odpovedí
@@ -127,13 +127,13 @@ Pred spustením týchto klientov sa uistite, že máte:
 
 ## Kľúčové rozdiely medzi implementáciami
 
-| Jazyk      | Transport | Spustenie servera | Async model | Kľúčové knižnice    |
-|------------|-----------|-------------------|-------------|---------------------|
-| Java       | SSE/HTTP  | Externé           | Sync        | WebFlux, MCP SDK    |
-| C#         | Stdio     | Automatické       | Async/Await | .NET MCP SDK        |
-| TypeScript | Stdio     | Automatické       | Async/Await | Node MCP SDK        |
-| Python     | Stdio     | Automatické       | AsyncIO     | Python MCP SDK      |
-| Rust       | Stdio     | Automatické       | Async/Await | Rust MCP SDK, Tokio |
+| Jazyk      | Transport | Spustenie servera | Async model | Kľúčové knižnice       |
+|------------|-----------|-------------------|-------------|------------------------|
+| Java       | SSE/HTTP  | Externé           | Sync        | WebFlux, MCP SDK       |
+| C#         | Stdio     | Automatické       | Async/Await | .NET MCP SDK           |
+| TypeScript | Stdio     | Automatické       | Async/Await | Node MCP SDK           |
+| Python     | Stdio     | Automatické       | AsyncIO     | Python MCP SDK         |
+| Rust       | Stdio     | Automatické       | Async/Await | Rust MCP SDK, Tokio    |
 
 ## Ďalšie kroky
 
@@ -157,15 +157,15 @@ Po preskúmaní týchto príkladov klientov:
 
 1. **Povoľte podrobné logovanie** vo vašom MCP SDK
 2. **Skontrolujte logy servera** pre chybové hlásenia
-3. **Overte názvy a podpisy nástrojov**, či zodpovedajú medzi klientom a serverom
-4. **Najskôr otestujte s MCP Inspectorom** na overenie funkčnosti servera
+3. **Overte názvy a podpisy nástrojov**, či sa zhodujú medzi klientom a serverom
+4. **Najskôr otestujte s MCP Inspector**, aby ste overili funkcionalitu servera
 
 ## Súvisiaca dokumentácia
 
-- [Hlavný návod pre klientov](./README.md)
+- [Hlavný návod pre klienta](./README.md)
 - [Príklady MCP serverov](../../../../03-GettingStarted/01-first-server)
 - [MCP s integráciou LLM](../../../../03-GettingStarted/03-llm-client)
 - [Oficiálna dokumentácia MCP](https://modelcontextprotocol.io/)
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Upozornenie**:  
+Tento dokument bol preložený pomocou služby na automatický preklad [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie odporúčame profesionálny ľudský preklad. Nezodpovedáme za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

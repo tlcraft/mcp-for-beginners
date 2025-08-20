@@ -2,38 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8358c13b5b6877e475674697cdc1a904",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T22:40:35+00:00",
-=======
-  "translation_date": "2025-08-18T18:00:09+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T18:24:42+00:00",
   "source_file": "03-GettingStarted/02-client/complete_examples.md",
   "language_code": "sl"
 }
 -->
-# Popolni Primeri MCP Odjemalcev
+# Popolni primeri MCP odjemalcev
 
 Ta mapa vsebuje popolne, delujoče primere MCP odjemalcev v različnih programskih jezikih. Vsak odjemalec prikazuje celotno funkcionalnost, opisano v glavnem vodiču README.md.
 
-## Razpoložljivi Odjemalci
+## Razpoložljivi odjemalci
 
-### 1. Java Odjemalec (`client_example_java.java`)
+### 1. Java odjemalec (`client_example_java.java`)
 
 - **Transport**: SSE (Server-Sent Events) prek HTTP
-- **Ciljni Strežnik**: `http://localhost:8080`
-<<<<<<< HEAD
+- **Ciljni strežnik**: `http://localhost:8080`
 - **Funkcionalnosti**:
   - Vzpostavitev povezave in ping
   - Seznam orodij
   - Operacije kalkulatorja (seštevanje, odštevanje, množenje, deljenje, pomoč)
   - Obdelava napak in pridobivanje rezultatov
-=======
-- **Funkcije**:
-  - Vzpostavitev povezave in ping
-  - Seznam orodij
-  - Operacije kalkulatorja (seštevanje, odštevanje, množenje, deljenje, pomoč)
-  - Upravljanje napak in pridobivanje rezultatov
->>>>>>> origin/main
 
 **Za zagon:**
 
@@ -43,25 +31,16 @@ javac client_example_java.java
 java client_example_java
 ```
 
-### 2. C# Odjemalec (`client_example_csharp.cs`)
+### 2. C# odjemalec (`client_example_csharp.cs`)
 
-- **Transport**: Stdio (Standardni Vhod/Izhod)
-- **Ciljni Strežnik**: Lokalni .NET MCP strežnik prek dotnet run
-<<<<<<< HEAD
+- **Transport**: Stdio (Standardni vhod/izhod)
+- **Ciljni strežnik**: Lokalni .NET MCP strežnik prek ukaza `dotnet run`
 - **Funkcionalnosti**:
   - Samodejni zagon strežnika prek stdio transporta
   - Seznam orodij in virov
   - Operacije kalkulatorja
-  - Parsiranje JSON rezultatov
-  - Celovita obdelava napak
-=======
-- **Funkcije**:
-  - Samodejni zagon strežnika prek stdio transporta
-  - Seznam orodij in virov
-  - Operacije kalkulatorja
   - Parsiranje rezultatov v JSON formatu
-  - Celovito upravljanje napak
->>>>>>> origin/main
+  - Celovita obdelava napak
 
 **Za zagon:**
 
@@ -69,20 +48,16 @@ java client_example_java
 dotnet run
 ```
 
-### 3. TypeScript Odjemalec (`client_example_typescript.ts`)
+### 3. TypeScript odjemalec (`client_example_typescript.ts`)
 
-- **Transport**: Stdio (Standardni Vhod/Izhod)
-- **Ciljni Strežnik**: Lokalni Node.js MCP strežnik
-<<<<<<< HEAD
+- **Transport**: Stdio (Standardni vhod/izhod)
+- **Ciljni strežnik**: Lokalni Node.js MCP strežnik
 - **Funkcionalnosti**:
-=======
-- **Funkcije**:
->>>>>>> origin/main
-  - Polna podpora MCP protokolu
+  - Popolna podpora MCP protokolu
   - Operacije z orodji, viri in pozivi
   - Operacije kalkulatorja
   - Branje virov in izvajanje pozivov
-  - Zanesljivo upravljanje napak
+  - Zanesljiva obdelava napak
 
 **Za zagon:**
 
@@ -96,15 +71,11 @@ npm run client
 node client_example_typescript.js
 ```
 
-### 4. Python Odjemalec (`client_example_python.py`)
+### 4. Python odjemalec (`client_example_python.py`)
 
-- **Transport**: Stdio (Standardni Vhod/Izhod)  
-- **Ciljni Strežnik**: Lokalni Python MCP strežnik
-<<<<<<< HEAD
+- **Transport**: Stdio (Standardni vhod/izhod)  
+- **Ciljni strežnik**: Lokalni Python MCP strežnik
 - **Funkcionalnosti**:
-=======
-- **Funkcije**:
->>>>>>> origin/main
   - Vzorec async/await za operacije
   - Odkritje orodij in virov
   - Testiranje operacij kalkulatorja
@@ -117,125 +88,84 @@ node client_example_typescript.js
 python client_example_python.py
 ```
 
-<<<<<<< HEAD
-## Skupne Funkcionalnosti Vseh Odjemalcev
-=======
-## Skupne Funkcije Vseh Odjemalcev
->>>>>>> origin/main
+## Skupne funkcionalnosti vseh odjemalcev
 
 Vsaka implementacija odjemalca prikazuje:
 
-1. **Upravljanje Povezave**
+1. **Upravljanje povezave**
    - Vzpostavitev povezave z MCP strežnikom
-<<<<<<< HEAD
    - Obdelava napak pri povezavi
-=======
-   - Upravljanje napak pri povezavi
->>>>>>> origin/main
    - Pravilno čiščenje in upravljanje virov
 
-2. **Odkritje Strežnika**
+2. **Odkritje strežnika**
    - Seznam razpoložljivih orodij
    - Seznam razpoložljivih virov (kjer je podprto)
    - Seznam razpoložljivih pozivov (kjer je podprto)
 
-3. **Izvajanje Orodij**
+3. **Izvajanje orodij**
    - Osnovne operacije kalkulatorja (seštevanje, odštevanje, množenje, deljenje)
    - Ukaz za pomoč za informacije o strežniku
-<<<<<<< HEAD
    - Pravilno posredovanje argumentov in obdelava rezultatov
 
-4. **Obdelava Napak**
-=======
-   - Pravilno posredovanje argumentov in upravljanje rezultatov
-
-4. **Upravljanje Napak**
->>>>>>> origin/main
+4. **Obdelava napak**
    - Napake pri povezavi
    - Napake pri izvajanju orodij
-   - Prijazno obveščanje uporabnika ob neuspehu
+   - Prijazno obveščanje uporabnika ob napakah
 
-5. **Obdelava Rezultatov**
+5. **Obdelava rezultatov**
    - Pridobivanje besedilne vsebine iz odgovorov
-   - Oblikovanje izhoda za boljšo berljivost
-   - Upravljanje različnih formatov odgovorov
+   - Oblikovanje izhodnih podatkov za boljšo berljivost
+   - Obdelava različnih formatov odgovorov
 
 ## Predpogoji
 
-<<<<<<< HEAD
 Pred zagonom teh odjemalcev poskrbite za:
 
-1. **Delujoč MCP strežnik** (iz `../01-first-server/`)
-=======
-Preden zaženete te odjemalce, se prepričajte, da imate:
+1. **Zagon ustreznega MCP strežnika** (iz `../01-first-server/`)
+2. **Namestitev potrebnih odvisnosti** za izbrani programski jezik
+3. **Ustrezno omrežno povezljivost** (za transporte na osnovi HTTP)
 
-1. **Ustrezno MCP strežnik, ki deluje** (iz `../01-first-server/`)
->>>>>>> origin/main
-2. **Nameščene potrebne odvisnosti** za izbrani programski jezik
-3. **Pravilno omrežno povezljivost** (za transporte na osnovi HTTP)
+## Ključne razlike med implementacijami
 
-## Ključne Razlike Med Implementacijami
-
-<<<<<<< HEAD
-| Jezik      | Transport | Zagon Strežnika | Async Model | Ključne Knjižnice   |
+| Jezik      | Transport | Zagon strežnika | Async model | Ključne knjižnice   |
 |------------|-----------|-----------------|-------------|---------------------|
 | Java       | SSE/HTTP  | Zunanji         | Sinhrono    | WebFlux, MCP SDK    |
 | C#         | Stdio     | Samodejno       | Async/Await | .NET MCP SDK        |
 | TypeScript | Stdio     | Samodejno       | Async/Await | Node MCP SDK        |
 | Python     | Stdio     | Samodejno       | AsyncIO     | Python MCP SDK      |
 | Rust       | Stdio     | Samodejno       | Async/Await | Rust MCP SDK, Tokio |
-=======
-| Jezik      | Transport | Zagon Strežnika | Async Model | Ključne Knjižnice       |
-|------------|-----------|-----------------|-------------|-------------------------|
-| Java       | SSE/HTTP  | Zunanji         | Sinhrono    | WebFlux, MCP SDK        |
-| C#         | Stdio     | Samodejno       | Async/Await | .NET MCP SDK            |
-| TypeScript | Stdio     | Samodejno       | Async/Await | Node MCP SDK            |
-| Python     | Stdio     | Samodejno       | AsyncIO     | Python MCP SDK          |
-| Rust       | Stdio     | Samodejno       | Async/Await | Rust MCP SDK, Tokio     |
->>>>>>> origin/main
 
-## Naslednji Koraki
+## Naslednji koraki
 
 Po raziskovanju teh primerov odjemalcev:
 
-<<<<<<< HEAD
-1. **Prilagodite odjemalce** za dodajanje novih funkcionalnosti ali operacij
-2. **Ustvarite svoj strežnik** in ga preizkusite z odjemalci
+1. **Prilagodite odjemalce**, da dodate nove funkcionalnosti ali operacije
+2. **Ustvarite svoj strežnik** in ga preizkusite s temi odjemalci
 3. **Eksperimentirajte z različnimi transporti** (SSE proti Stdio)
-4. **Zgradite bolj kompleksno aplikacijo**, ki vključuje MCP funkcionalnosti
-=======
-1. **Prilagodite odjemalce**, da dodate nove funkcije ali operacije
-2. **Ustvarite svoj strežnik** in ga preizkusite z odjemalci
-3. **Eksperimentirajte z različnimi transporti** (SSE proti Stdio)
-4. **Zgradite bolj kompleksno aplikacijo**, ki integrira MCP funkcionalnost
->>>>>>> origin/main
+4. **Zgradite bolj zapleteno aplikacijo**, ki vključuje MCP funkcionalnosti
 
-## Odpravljanje Težav
+## Odpravljanje težav
 
-### Pogoste Težave
+### Pogoste težave
 
-<<<<<<< HEAD
-1. **Povezava zavrnjena**: Preverite, ali MCP strežnik deluje na pričakovanem portu/poti
-=======
 1. **Povezava zavrnjena**: Prepričajte se, da MCP strežnik deluje na pričakovanem portu/poti
->>>>>>> origin/main
 2. **Modul ni najden**: Namestite zahtevani MCP SDK za vaš jezik
-3. **Dostop zavrnjen**: Preverite dovoljenja datotek za stdio transport
-4. **Orodje ni najdeno**: Preverite, ali strežnik implementira pričakovana orodja
+3. **Dostop zavrnjen**: Preverite dovoljenja za datoteke pri stdio transportu
+4. **Orodje ni najdeno**: Preverite, ali strežnik podpira pričakovana orodja
 
-### Nasveti za Debugging
+### Nasveti za odpravljanje napak
 
 1. **Omogočite podrobno beleženje** v vašem MCP SDK
-2. **Preverite strežniške dnevnike** za sporočila o napakah
+2. **Preverite dnevnike strežnika** za sporočila o napakah
 3. **Preverite imena in podpise orodij**, da se ujemajo med odjemalcem in strežnikom
 4. **Najprej preizkusite z MCP Inspectorjem**, da preverite funkcionalnost strežnika
 
-## Povezana Dokumentacija
+## Povezana dokumentacija
 
-- [Glavni Vodič za Odjemalce](./README.md)
-- [Primeri MCP Strežnikov](../../../../03-GettingStarted/01-first-server)
-- [MCP z Integracijo LLM](../../../../03-GettingStarted/03-llm-client)
-- [Uradna Dokumentacija MCP](https://modelcontextprotocol.io/)
+- [Glavni vodič za odjemalce](./README.md)
+- [Primeri MCP strežnikov](../../../../03-GettingStarted/01-first-server)
+- [MCP z integracijo LLM](../../../../03-GettingStarted/03-llm-client)
+- [Uradna dokumentacija MCP](https://modelcontextprotocol.io/)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za strojno prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovno človeško prevajanje. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.

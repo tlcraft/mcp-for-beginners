@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-07-13T20:16:44+00:00",
+  "original_hash": "69ba3bd502bd743233137bac5539c08b",
+  "translation_date": "2025-08-19T15:14:11+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "hu"
 }
 -->
 # A példa futtatása
 
-Ajánlott telepíteni az `uv`-t, de nem kötelező, lásd [útmutató](https://docs.astral.sh/uv/#highlights)
+Ajánlott telepíteni az `uv`-t, de nem kötelező, lásd [utasítások](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Hozz létre egy virtuális környezetet
 
@@ -43,16 +43,16 @@ Amíg a szerver fut az egyik terminálban, nyiss egy másik terminált, és futt
 mcp dev server.py
 ```
 
-Ez elindít egy webszervert vizuális felülettel, amely lehetővé teszi a példa tesztelését.
+Ez elindít egy webes szervert vizuális felülettel, amely lehetővé teszi a példa tesztelését.
 
 Miután a szerver csatlakozott:
 
-- próbáld meg lekérdezni az eszközöket, és futtasd az `add` parancsot a 2 és 4 argumentummal, az eredménynek 6-nak kell lennie.
-- menj a resources és resource template részhez, hívd meg a get_greeting-et, írj be egy nevet, és egy névre szóló üdvözletet kell látnod.
+- próbáld meg listázni az eszközöket, és futtasd az `add`-ot, 2 és 4 argumentumokkal, az eredményben 6-ot kell látnod.
+- menj a forrásokhoz és a forrássablonhoz, és hívd meg a `get_greeting`-et, írj be egy nevet, és látnod kell egy üdvözlést az általad megadott névvel.
 
 ### Tesztelés CLI módban
 
-Az inspector, amit futtattál, valójában egy Node.js alkalmazás, és a `mcp dev` egy wrapper köré építve.
+Az általad futtatott inspector valójában egy Node.js alkalmazás, és az `mcp dev` egy wrapper körülötte.
 
 Közvetlenül CLI módban is elindíthatod az alábbi parancs futtatásával:
 
@@ -60,7 +60,7 @@ Közvetlenül CLI módban is elindíthatod az alábbi parancs futtatásával:
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Ez kilistázza az összes elérhető eszközt a szerveren. A következő kimenetet kell látnod:
+Ez listázza az összes elérhető eszközt a szerveren. A következő kimenetet kell látnod:
 
 ```text
 {
@@ -97,7 +97,7 @@ Egy eszköz meghívásához írd be:
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Az alábbi kimenetet kell látnod:
+A következő kimenetet kell látnod:
 
 ```text
 {
@@ -111,8 +111,8 @@ Az alábbi kimenetet kell látnod:
 }
 ```
 
-> ![!TIP]
-> Általában sokkal gyorsabb az inspectort CLI módban futtatni, mint a böngészőben.
+> [!TIP]
+> Általában sokkal gyorsabb CLI módban futtatni az inspectort, mint böngészőben.
 > További információ az inspectorról [itt](https://github.com/modelcontextprotocol/inspector).
 
 **Felelősségkizárás**:  

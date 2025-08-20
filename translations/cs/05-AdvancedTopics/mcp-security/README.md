@@ -1,63 +1,83 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e363328861e6e00258187f731a773411",
-  "translation_date": "2025-07-17T10:43:18+00:00",
+  "original_hash": "997c7119766a69552e23d7d681316902",
+  "translation_date": "2025-08-19T15:34:05+00:00",
   "source_file": "05-AdvancedTopics/mcp-security/README.md",
   "language_code": "cs"
 }
 -->
-# Nejlepší bezpečnostní postupy
+# MCP Bezpečnostní nejlepší praktiky - Pokročilý implementační průvodce
 
-Bezpečnost je klíčová pro implementace MCP, zejména v podnikových prostředích. Je důležité zajistit, aby nástroje a data byly chráněny před neoprávněným přístupem, úniky dat a dalšími bezpečnostními hrozbami.
+> **Aktuální standard**: Tento průvodce odráží bezpečnostní požadavky [MCP Specifikace 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) a oficiální [MCP Bezpečnostní nejlepší praktiky](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices).
+
+Bezpečnost je klíčová pro implementace MCP, zejména v podnikových prostředích. Tento pokročilý průvodce se zabývá komplexními bezpečnostními praktikami pro produkční nasazení MCP, řeší tradiční bezpečnostní problémy i hrozby specifické pro AI, které jsou unikátní pro Model Context Protocol.
 
 ## Úvod
 
-Model Context Protocol (MCP) přináší jedinečné bezpečnostní výzvy, které přesahují tradiční softwarovou bezpečnost. Jakmile AI systémy získají přístup k nástrojům, datům a externím službám, objevují se nové vektory útoků, včetně injekce promptů, otravy nástrojů, únosu relací, problémů zmateného zástupce a zranitelností při předávání tokenů.
+Model Context Protocol (MCP) přináší unikátní bezpečnostní výzvy, které přesahují tradiční softwarovou bezpečnost. Jakmile AI systémy získají přístup k nástrojům, datům a externím službám, objevují se nové vektory útoků, včetně injekce promptů, otravy nástrojů, únosu relací, problémů zmateného zástupce a zranitelností při předávání tokenů.
 
-Tato lekce se zabývá pokročilými bezpečnostními implementacemi na základě nejnovější specifikace MCP (2025-06-18), bezpečnostních řešení Microsoftu a zavedených podnikových bezpečnostních vzorů.
+Tato lekce se zabývá pokročilými bezpečnostními implementacemi na základě nejnovější MCP specifikace (2025-06-18), bezpečnostních řešení Microsoftu a zavedených podnikových bezpečnostních vzorů.
 
-- **Souhlas a kontrola uživatele**: Uživatelé musí výslovně souhlasit před tím, než jsou data zpřístupněna nebo provedeny operace. Poskytněte jasnou kontrolu nad tím, jaká data jsou sdílena a jaké akce jsou povoleny.
-  
-- **Ochrana soukromí dat**: Uživatelská data by měla být zpřístupněna pouze s výslovným souhlasem a musí být chráněna vhodnými přístupovými kontrolami. Zabraňte neoprávněnému přenosu dat.
-  
-- **Bezpečnost nástrojů**: Před vyvoláním jakéhokoli nástroje je vyžadován výslovný souhlas uživatele. Uživatelé by měli mít jasnou představu o funkčnosti každého nástroje a musí být vynuceny pevné bezpečnostní hranice.
+### **Základní bezpečnostní principy**
+
+**Z MCP Specifikace (2025-06-18):**
+
+- **Explicitní zákazy**: MCP servery **NESMÍ** přijímat tokeny, které pro ně nebyly vydány, a **NESMÍ** používat relace pro autentizaci
+- **Povinné ověřování**: Všechny příchozí požadavky **MUSÍ** být ověřeny a uživatelský souhlas **MUSÍ** být získán pro proxy operace
+- **Bezpečné výchozí nastavení**: Implementujte bezpečnostní kontroly s přístupem obrany do hloubky
+- **Kontrola uživatele**: Uživatelé musí poskytnout explicitní souhlas před jakýmkoliv přístupem k datům nebo spuštěním nástrojů
 
 ## Cíle učení
 
 Na konci této pokročilé lekce budete schopni:
 
-- Implementovat bezpečné mechanismy autentizace a autorizace pro MCP servery.
-- Chránit citlivá data pomocí šifrování a bezpečného ukládání.
-- Zajistit bezpečné provádění nástrojů s odpovídajícími přístupovými kontrolami.
-- Aplikovat nejlepší postupy pro ochranu dat a dodržování pravidel ochrany soukromí.
-- Identifikovat a zmírnit běžné bezpečnostní zranitelnosti MCP, jako jsou problémy s confused deputy, token passthrough a session hijacking.
+- **Implementovat pokročilou autentizaci**: Nasadit integraci externího poskytovatele identity s Microsoft Entra ID a bezpečnostními vzory OAuth 2.1
+- **Zabránit útokům specifickým pro AI**: Chránit proti injekci promptů, otravě nástrojů a únosu relací pomocí Microsoft Prompt Shields a Azure Content Safety
+- **Aplikovat podnikovou bezpečnost**: Implementovat komplexní logování, monitorování a reakci na incidenty pro produkční nasazení MCP  
+- **Zabezpečit spuštění nástrojů**: Navrhnout sandboxová prostředí s odpovídající izolací a kontrolou zdrojů
+- **Řešit zranitelnosti MCP**: Identifikovat a zmírnit problémy zmateného zástupce, zranitelnosti při předávání tokenů a rizika dodavatelského řetězce
+- **Integrovat bezpečnost Microsoftu**: Využít Azure bezpečnostní služby a GitHub Advanced Security pro komplexní ochranu
 
-## Autentizace a autorizace
+## **POVINNÉ bezpečnostní požadavky**
 
-Autentizace a autorizace jsou nezbytné pro zabezpečení MCP serverů. Autentizace odpovídá na otázku „Kdo jste?“, zatímco autorizace na otázku „Co můžete dělat?“.
+### **Kritické požadavky z MCP Specifikace (2025-06-18):**
 
-Podle bezpečnostní specifikace MCP jsou tyto aspekty klíčové:
+```yaml
+Authentication & Authorization:
+  token_validation: "MUST NOT accept tokens not issued for MCP server"
+  session_authentication: "MUST NOT use sessions for authentication"
+  request_verification: "MUST verify ALL inbound requests"
+  
+Proxy Operations:  
+  user_consent: "MUST obtain consent for dynamic client registration"
+  oauth_security: "MUST implement OAuth 2.1 with PKCE"
+  redirect_validation: "MUST validate redirect URIs strictly"
+  
+Session Management:
+  session_ids: "MUST use secure, non-deterministic generation" 
+  user_binding: "SHOULD bind to user-specific information"
+  transport_security: "MUST use HTTPS for all communications"
+```
 
-1. **Validace tokenů**: MCP servery NESMÍ přijímat žádné tokeny, které nebyly výslovně vydány pro daný MCP server. „Token passthrough“ je výslovně zakázaný anti-vzor.
+## Pokročilá autentizace a autorizace
 
-2. **Ověření autorizace**: MCP servery, které implementují autorizaci, MUSÍ ověřovat všechny příchozí požadavky a NESMÍ používat session pro autentizaci.
+Moderní implementace MCP těží z evoluce specifikace směrem k delegaci externím poskytovatelům identity, což výrazně zlepšuje bezpečnostní postoj oproti vlastním implementacím autentizace.
 
-3. **Bezpečná správa session**: Při použití session pro stav musí MCP servery používat bezpečné, nedeterministické session ID generované pomocí bezpečných generátorů náhodných čísel. Session ID MĚLA být vázána na uživatelsky specifické informace.
+### **Integrace Microsoft Entra ID**
 
-4. **Výslovný souhlas uživatele**: U proxy serverů musí implementace MCP získat souhlas uživatele pro každého dynamicky registrovaného klienta před přesměrováním na autorizaci třetích stran.
+Aktuální MCP specifikace (2025-06-18) umožňuje delegaci externím poskytovatelům identity, jako je Microsoft Entra ID, což poskytuje bezpečnostní funkce na podnikové úrovni:
 
-Podívejme se na příklady, jak implementovat bezpečnou autentizaci a autorizaci v MCP serverech pomocí .NET a Java.
+**Bezpečnostní výhody:**
+- Vícefaktorová autentizace (MFA) na podnikové úrovni
+- Podmíněné přístupové politiky založené na hodnocení rizik
+- Centralizovaná správa životního cyklu identity
+- Pokročilá ochrana proti hrozbám a detekce anomálií
+- Soulad s bezpečnostními standardy podniků
 
-### Integrace .NET Identity
+### Implementace .NET s Entra ID
 
-ASP .NET Core Identity poskytuje robustní rámec pro správu autentizace a autorizace uživatelů. Můžeme jej integrovat s MCP servery pro zabezpečení přístupu k nástrojům a zdrojům.
-
-Některé základní koncepty, které je třeba pochopit při integraci ASP.NET Core Identity s MCP servery, jsou:
-
-- **Konfigurace Identity**: Nastavení ASP.NET Core Identity s uživatelskými rolemi a nároky (claims). Nárok je informace o uživateli, například jeho role nebo oprávnění, například „Admin“ nebo „User“.
-- **JWT autentizace**: Použití JSON Web Tokenů (JWT) pro bezpečný přístup k API. JWT je standard pro bezpečný přenos informací mezi stranami jako JSON objekt, který lze ověřit a důvěřovat mu, protože je digitálně podepsaný.
-- **Autorizacní politiky**: Definování politik pro kontrolu přístupu k určitým nástrojům na základě uživatelských rolí. MCP používá autorizacní politiky k určení, kteří uživatelé mají přístup k jakým nástrojům na základě jejich rolí a nároků.
+Vylepšená implementace využívající bezpečnostní ekosystém Microsoftu:
 
 ```csharp
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -249,7 +269,7 @@ public class AuditLoggingService
 
 ### Java Spring Security s integrací OAuth 2.1
 
-Vylepšená implementace Spring Security podle bezpečnostních vzorů OAuth 2.1 požadovaných specifikací MCP:
+Vylepšená implementace Spring Security podle bezpečnostních vzorů OAuth 2.1 požadovaných MCP specifikací:
 
 ```java
 @Configuration
@@ -400,38 +420,109 @@ public class AdvancedMcpSecurityInterceptor implements ToolExecutionInterceptor 
     public void beforeToolExecution(ToolRequest request, Authentication authentication) {
         
         String toolName = request.getToolName();
+        String userId = authentication.getName();
         
-        // Check if user has permissions for this tool
-        if (toolName.startsWith("admin") && !authentication.getAuthorities().contains("ROLE_ADMIN")) {
-            throw new AccessDeniedException("You don't have permission to use this tool");
-        }
-        
-        // Additional security checks based on tool or parameters
-        if ("sensitiveDataAccess".equals(toolName)) {
-            validateDataAccessPermissions(request, authentication);
+        try {
+            // 1. Validate token audience (MANDATORY)
+            validateTokenAudience(authentication);
+            
+            // 2. Check for prompt injection attempts
+            if (promptDetector.detectInjection(request.getParameters())) {
+                auditService.logSecurityEvent(SecurityEventType.PROMPT_INJECTION_ATTEMPT, 
+                    userId, toolName, request.getParameters());
+                throw new SecurityException("Potential prompt injection detected");
+            }
+            
+            // 3. Content safety screening using Azure Content Safety
+            ContentSafetyResult safetyResult = contentSafetyClient.analyzeText(
+                request.getParameters().toString());
+                
+            if (safetyResult.isHighRisk()) {
+                auditService.logSecurityEvent(SecurityEventType.CONTENT_SAFETY_VIOLATION,
+                    userId, toolName, safetyResult);
+                throw new SecurityException("Content safety violation detected");
+            }
+            
+            // 4. Tool-specific authorization checks
+            validateToolSpecificPermissions(toolName, authentication, request);
+            
+            // 5. Rate limiting and throttling
+            if (!rateLimitService.allowExecution(userId, toolName)) {
+                throw new SecurityException("Rate limit exceeded");
+            }
+            
+            // Log successful authorization
+            auditService.logSecurityEvent(SecurityEventType.TOOL_ACCESS_GRANTED,
+                userId, toolName, null);
+                
+        } catch (SecurityException e) {
+            auditService.logSecurityEvent(SecurityEventType.TOOL_ACCESS_DENIED,
+                userId, toolName, e.getMessage());
+            throw e;
         }
     }
     
-    private void validateDataAccessPermissions(ToolRequest request, Authentication auth) {
-        // Implementation to check fine-grained data access permissions
+    private void validateTokenAudience(Authentication authentication) {
+        if (authentication instanceof JwtAuthenticationToken) {
+            JwtAuthenticationToken jwtAuth = (JwtAuthenticationToken) authentication;
+            String audience = jwtAuth.getToken().getAudience().stream()
+                .findFirst()
+                .orElse("");
+                
+            if (!expectedAudience.equals(audience)) {
+                throw new SecurityException("Invalid token audience");
+            }
+        }
+    }
+    
+    private void validateToolSpecificPermissions(String toolName, 
+            Authentication auth, ToolRequest request) {
+        
+        // Implement fine-grained tool permissions
+        if (toolName.startsWith("admin.") && !hasRole(auth, "MCP_ADMIN")) {
+            throw new AccessDeniedException("Admin role required");
+        }
+        
+        if (toolName.contains("sensitive") && !hasHighTrustDevice(auth)) {
+            throw new AccessDeniedException("Trusted device required");
+        }
+        
+        // Check resource-specific permissions
+        if (request.getParameters().containsKey("resourceId")) {
+            String resourceId = request.getParameters().get("resourceId").toString();
+            if (!hasResourceAccess(auth.getName(), resourceId)) {
+                throw new AccessDeniedException("Resource access denied");
+            }
+        }
+    }
+    
+    private boolean hasRole(Authentication auth, String role) {
+        return auth.getAuthorities().stream()
+            .anyMatch(grantedAuthority -> 
+                grantedAuthority.getAuthority().equals("ROLE_" + role));
+    }
+    
+    private boolean hasHighTrustDevice(Authentication auth) {
+        if (auth instanceof JwtAuthenticationToken) {
+            JwtAuthenticationToken jwtAuth = (JwtAuthenticationToken) auth;
+            String deviceTrust = jwtAuth.getToken().getClaimAsString("deviceTrustLevel");
+            return "Compliant".equals(deviceTrust) || "DomainJoined".equals(deviceTrust);
+        }
+        return false;
+    }
+    
+    private boolean hasResourceAccess(String userId, String resourceId) {
+        // Implementation would check fine-grained resource permissions
+        return resourceAccessService.hasAccess(userId, resourceId);
     }
 }
 ```
 
-V předchozím kódu jsme:
+## Bezpečnostní kontroly specifické pro AI & řešení Microsoftu
 
-- Nakonfigurovali Spring Security pro zabezpečení MCP endpointů, umožňující veřejný přístup k objevování nástrojů a vyžadující autentizaci pro jejich spuštění.
-- Použili OAuth2 jako resource server pro zajištění bezpečného přístupu k MCP nástrojům.
-- Implementovali bezpečnostní interceptor pro vynucení přístupových kontrol při spouštění nástrojů, kontrolující uživatelské role a oprávnění před povolením přístupu k určitým nástrojům.
-- Definovali řízení přístupu na základě rolí pro omezení přístupu k administrátorským nástrojům a citlivým datům podle uživatelských rolí.
+### **Obrana proti injekci promptů pomocí Microsoft Prompt Shields**
 
-## Ochrana dat a soukromí
-
-Ochrana dat je zásadní pro zajištění bezpečného nakládání s citlivými informacemi. To zahrnuje ochranu osobních identifikovatelných údajů (PII), finančních dat a dalších citlivých informací před neoprávněným přístupem a úniky.
-
-### Příklad ochrany dat v Pythonu
-
-Podívejme se na příklad, jak implementovat ochranu dat v Pythonu pomocí šifrování a detekce PII.
+Moderní implementace MCP čelí sofistikovaným útokům specifickým pro AI, které vyžadují specializovanou obranu:
 
 ```python
 from mcp_server import McpServer
@@ -779,77 +870,925 @@ class EnterpriseCustomerDataTool(Tool):
             "required": ["customer_id", "data_type", "purpose"]
         }
     
-    async def execute_async(self, request):
-        # Implementation would access customer data securely
-        # Since we used the decorator, PII is already detected and encrypted
-        return ToolResponse(result={"status": "success"})
+    async def execute_async(self, request: ToolRequest):
+        # Implementation would access customer data
+        # All security controls are applied via the decorator
+        customer_id = request.parameters.get('customer_id')
+        data_type = request.parameters.get('data_type')
+        
+        # Simulated secure data access
+        return ToolResponse(
+            result={
+                "status": "success",
+                "message": f"Securely accessed {data_type} data for customer {customer_id}",
+                "security_level": "enterprise"
+            }
+        )
+
+async def validate_mfa_token(token: str) -> bool:
+    """Validate multi-factor authentication token"""
+    # Implementation would validate MFA token with Entra ID
+    return True  # Simplified for example
+
+async def analyze_content_safety(text: str, level: str) -> Dict:
+    """Analyze content safety using Azure Content Safety"""
+    # Implementation would call Azure Content Safety API
+    return {"risk_score": 25}  # Simplified for example
+
+async def analyze_output_safety(content: str) -> Dict:
+    """Analyze output content for safety violations"""
+    # Implementation would scan output for sensitive data, harmful content
+    return {"risk_score": 15}  # Simplified for example
+
+async def log_security_event(event_data: Dict):
+    """Log security events to Azure Monitor/Application Insights"""
+    # Implementation would send structured logs to Azure monitoring
+    logging.info(f"MCP Security Event: {json.dumps(event_data, default=str)}")
 ```
 
-V předchozím kódu jsme:
+## Pokročilé zmírnění hrozeb MCP
 
-- Implementovali třídu `PiiDetector` pro skenování textu a parametrů na osobní identifikovatelné informace (PII).
-- Vytvořili třídu `EncryptionService` pro šifrování a dešifrování citlivých dat pomocí knihovny `cryptography`.
-- Definovali dekorátor `secure_tool`, který obaluje spuštění nástroje, aby kontroloval PII, zaznamenával přístupy a v případě potřeby šifroval citlivá data.
-- Aplikovali dekorátor `secure_tool` na ukázkový nástroj (`SecureCustomerDataTool`), aby bylo zajištěno bezpečné nakládání s citlivými daty.
+### **1. Prevence útoků zmateného zástupce**
 
-## Specifická bezpečnostní rizika MCP
+**Vylepšená implementace podle MCP Specifikace (2025-06-18):**
 
-Podle oficiální dokumentace MCP o bezpečnosti existují specifická bezpečnostní rizika, která by měli implementátoři MCP znát:
+```python
+import asyncio
+import logging
+from typing import Dict, Optional
+from urllib.parse import urlparse
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
 
-### 1. Problém confused deputy
+class AdvancedConfusedDeputyProtection:
+    """Advanced protection against confused deputy attacks in MCP proxy servers"""
+    
+    def __init__(self, key_vault_url: str, tenant_id: str):
+        self.key_vault_url = key_vault_url
+        self.tenant_id = tenant_id
+        self.credential = DefaultAzureCredential()
+        self.secret_client = SecretClient(vault_url=key_vault_url, credential=self.credential)
+        self.logger = logging.getLogger(__name__)
+        
+        # Cache for validated clients (with expiration)
+        self.validated_clients = {}
+        
+    async def validate_dynamic_client_registration(
+        self, 
+        client_id: str, 
+        redirect_uri: str, 
+        user_consent_token: str,
+        static_client_id: str
+    ) -> bool:
+        """
+        MANDATORY: Validate dynamic client registration with explicit user consent
+        per MCP specification requirement
+        """
+        try:
+            # 1. MANDATORY: Obtain explicit user consent
+            consent_validated = await self.validate_user_consent(
+                user_consent_token, client_id, redirect_uri
+            )
+            
+            if not consent_validated:
+                self.logger.warning(f"User consent validation failed for client {client_id}")
+                return False
+            
+            # 2. Strict redirect URI validation
+            if not await self.validate_redirect_uri(redirect_uri, client_id):
+                self.logger.warning(f"Invalid redirect URI for client {client_id}: {redirect_uri}")
+                return False
+            
+            # 3. Validate against known malicious patterns
+            if await self.check_malicious_patterns(client_id, redirect_uri):
+                self.logger.error(f"Malicious pattern detected for client {client_id}")
+                return False
+            
+            # 4. Validate static client ID relationship
+            if not await self.validate_static_client_relationship(static_client_id, client_id):
+                self.logger.warning(f"Invalid static client relationship: {static_client_id} -> {client_id}")
+                return False
+            
+            # Cache successful validation
+            self.validated_clients[client_id] = {
+                'validated_at': datetime.utcnow(),
+                'redirect_uri': redirect_uri,
+                'user_consent': True
+            }
+            
+            self.logger.info(f"Dynamic client validation successful: {client_id}")
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"Client validation failed: {e}")
+            return False
+    
+    async def validate_user_consent(
+        self, 
+        consent_token: str, 
+        client_id: str, 
+        redirect_uri: str
+    ) -> bool:
+        """Validate explicit user consent for dynamic client registration"""
+        try:
+            # Decode and validate consent token
+            consent_data = await self.decode_consent_token(consent_token)
+            
+            if not consent_data:
+                return False
+            
+            # Verify consent specificity
+            expected_consent = {
+                'client_id': client_id,
+                'redirect_uri': redirect_uri,
+                'consent_type': 'dynamic_client_registration',
+                'explicit_approval': True
+            }
+            
+            return all(
+                consent_data.get(key) == value 
+                for key, value in expected_consent.items()
+            )
+            
+        except Exception as e:
+            self.logger.error(f"Consent validation error: {e}")
+            return False
+    
+    async def validate_redirect_uri(self, redirect_uri: str, client_id: str) -> bool:
+        """Strict validation of redirect URIs to prevent authorization code theft"""
+        try:
+            parsed_uri = urlparse(redirect_uri)
+            
+            # Security checks
+            security_checks = [
+                # Must use HTTPS for security
+                parsed_uri.scheme == 'https',
+                
+                # Domain validation
+                await self.validate_domain_ownership(parsed_uri.netloc, client_id),
+                
+                # No suspicious query parameters
+                not self.has_suspicious_query_params(parsed_uri.query),
+                
+                # Not in blocklist
+                not await self.is_uri_blocklisted(redirect_uri),
+                
+                # Path validation
+                self.validate_redirect_path(parsed_uri.path)
+            ]
+            
+            return all(security_checks)
+            
+        except Exception as e:
+            self.logger.error(f"Redirect URI validation error: {e}")
+            return False
+    
+    async def implement_pkce_validation(
+        self, 
+        code_verifier: str, 
+        code_challenge: str, 
+        code_challenge_method: str
+    ) -> bool:
+        """
+        MANDATORY: Implement PKCE (Proof Key for Code Exchange) validation
+        as required by OAuth 2.1 and MCP specification
+        """
+        try:
+            import hashlib
+            import base64
+            
+            if code_challenge_method == "S256":
+                # Generate code challenge from verifier
+                digest = hashlib.sha256(code_verifier.encode('ascii')).digest()
+                expected_challenge = base64.urlsafe_b64encode(digest).decode('ascii').rstrip('=')
+                
+                return code_challenge == expected_challenge
+            
+            elif code_challenge_method == "plain":
+                # Not recommended, but supported
+                return code_challenge == code_verifier
+            
+            else:
+                self.logger.warning(f"Unsupported code challenge method: {code_challenge_method}")
+                return False
+                
+        except Exception as e:
+            self.logger.error(f"PKCE validation error: {e}")
+            return False
+    
+    async def validate_domain_ownership(self, domain: str, client_id: str) -> bool:
+        """Validate domain ownership for the registered client"""
+        # Implementation would verify domain ownership through DNS records,
+        # certificate validation, or pre-registered domain lists
+        return True  # Simplified for example
+    
+    async def check_malicious_patterns(self, client_id: str, redirect_uri: str) -> bool:
+        """Check for known malicious patterns in client registration"""
+        malicious_patterns = [
+            # Suspicious domains
+            lambda uri: any(bad_domain in uri for bad_domain in [
+                'bit.ly', 'tinyurl.com', 'localhost', '127.0.0.1'
+            ]),
+            
+            # Suspicious client IDs
+            lambda cid: len(cid) < 8 or cid.isdigit(),
+            
+            # URL shorteners or redirectors
+            lambda uri: 'redirect' in uri.lower() or 'forward' in uri.lower()
+        ]
+        
+        return any(pattern(redirect_uri) for pattern in malicious_patterns[:1]) or \
+               any(pattern(client_id) for pattern in malicious_patterns[1:2])
 
-Tato zranitelnost nastává, když MCP server funguje jako proxy pro API třetích stran, což může útočníkům umožnit zneužít důvěryhodný vztah mezi MCP serverem a těmito API.
+# Usage example
+async def secure_oauth_proxy_flow():
+    """Example of secure OAuth proxy implementation with confused deputy protection"""
+    
+    protection = AdvancedConfusedDeputyProtection(
+        key_vault_url="https://your-keyvault.vault.azure.net/",
+        tenant_id="your-tenant-id"
+    )
+    
+    # Example flow
+    async def handle_dynamic_client_registration(request):
+        client_id = request.json.get('client_id')
+        redirect_uri = request.json.get('redirect_uri') 
+        user_consent_token = request.headers.get('User-Consent-Token')
+        static_client_id = os.getenv('STATIC_CLIENT_ID')
+        
+        # MANDATORY validation per MCP specification
+        if not await protection.validate_dynamic_client_registration(
+            client_id=client_id,
+            redirect_uri=redirect_uri, 
+            user_consent_token=user_consent_token,
+            static_client_id=static_client_id
+        ):
+            return {"error": "Client registration validation failed"}, 400
+        
+        # Proceed with OAuth flow only after validation
+        return await proceed_with_oauth_flow(client_id, redirect_uri)
+    
+    async def handle_authorization_callback(request):
+        authorization_code = request.args.get('code')
+        state = request.args.get('state')
+        code_verifier = request.json.get('code_verifier')  # From PKCE
+        code_challenge = request.session.get('code_challenge')
+        code_challenge_method = request.session.get('code_challenge_method')
+        
+        # Validate PKCE (MANDATORY for OAuth 2.1)
+        if not await protection.implement_pkce_validation(
+            code_verifier, code_challenge, code_challenge_method
+        ):
+            return {"error": "PKCE validation failed"}, 400
+        
+        # Exchange authorization code for tokens
+        return await exchange_code_for_tokens(authorization_code, code_verifier)
+```
 
-**Zmírnění:**
-- MCP proxy servery používající statická klientská ID MUSÍ získat souhlas uživatele pro každého dynamicky registrovaného klienta před přesměrováním na autorizaci třetích stran.
-- Implementujte správný OAuth tok s PKCE (Proof Key for Code Exchange) pro autorizační požadavky.
-- Přísně validujte přesměrovací URI a identifikátory klientů.
+### **2. Prevence předávání tokenů**
 
-### 2. Zranitelnosti token passthrough
+**Komplexní implementace:**
 
-Token passthrough nastává, když MCP server přijímá tokeny od MCP klienta bez ověření, že tokeny byly správně vydány pro MCP server, a předává je dále do downstream API.
+```python
+class TokenPassthroughPrevention:
+    """Prevents token passthrough vulnerabilities as mandated by MCP specification"""
+    
+    def __init__(self, expected_audience: str, trusted_issuers: List[str]):
+        self.expected_audience = expected_audience
+        self.trusted_issuers = trusted_issuers
+        self.logger = logging.getLogger(__name__)
+    
+    async def validate_token_for_mcp_server(self, token: str) -> Dict:
+        """
+        MANDATORY: Validate that tokens were explicitly issued for the MCP server
+        """
+        try:
+            import jwt
+            from jwt.exceptions import InvalidTokenError
+            
+            # Decode without verification first to check claims
+            unverified_payload = jwt.decode(
+                token, options={"verify_signature": False}
+            )
+            
+            # 1. MANDATORY: Validate audience claim
+            audience = unverified_payload.get('aud')
+            if isinstance(audience, list):
+                if self.expected_audience not in audience:
+                    self.logger.error(f"Token audience mismatch. Expected: {self.expected_audience}, Got: {audience}")
+                    return {"valid": False, "reason": "Invalid audience - token not issued for this MCP server"}
+            else:
+                if audience != self.expected_audience:
+                    self.logger.error(f"Token audience mismatch. Expected: {self.expected_audience}, Got: {audience}")
+                    return {"valid": False, "reason": "Invalid audience - token not issued for this MCP server"}
+            
+            # 2. Validate issuer is trusted
+            issuer = unverified_payload.get('iss')
+            if issuer not in self.trusted_issuers:
+                self.logger.error(f"Untrusted issuer: {issuer}")
+                return {"valid": False, "reason": "Untrusted token issuer"}
+            
+            # 3. Validate token scope/purpose
+            scope = unverified_payload.get('scp', '').split()
+            if 'mcp.server.access' not in scope:
+                self.logger.error("Token missing required MCP server scope")
+                return {"valid": False, "reason": "Token missing required MCP scope"}
+            
+            # 4. Now verify signature with proper validation
+            # This would use the issuer's public keys
+            verified_payload = await self.verify_token_signature(token, issuer)
+            
+            if not verified_payload:
+                return {"valid": False, "reason": "Token signature verification failed"}
+            
+            return {
+                "valid": True, 
+                "payload": verified_payload,
+                "audience_validated": True,
+                "issuer_trusted": True
+            }
+            
+        except InvalidTokenError as e:
+            self.logger.error(f"Token validation failed: {e}")
+            return {"valid": False, "reason": f"Token validation error: {str(e)}"}
+    
+    async def prevent_token_passthrough(self, downstream_request: Dict) -> Dict:
+        """
+        Prevent token passthrough by issuing new tokens for downstream services
+        """
+        try:
+            # Never pass through the original token
+            # Instead, issue a new token specifically for the downstream service
+            
+            original_token = downstream_request.get('authorization_token')
+            downstream_service = downstream_request.get('service_name')
+            
+            # Validate original token was issued for this MCP server
+            validation_result = await self.validate_token_for_mcp_server(original_token)
+            
+            if not validation_result['valid']:
+                raise SecurityException(f"Token validation failed: {validation_result['reason']}")
+            
+            # Issue new token for downstream service
+            new_token = await self.issue_downstream_token(
+                user_context=validation_result['payload'],
+                downstream_service=downstream_service,
+                requested_scopes=downstream_request.get('scopes', [])
+            )
+            
+            # Update request with new token
+            secure_request = downstream_request.copy()
+            secure_request['authorization_token'] = new_token
+            secure_request['_original_token_validated'] = True
+            secure_request['_token_issued_for'] = downstream_service
+            
+            return secure_request
+            
+        except Exception as e:
+            self.logger.error(f"Token passthrough prevention failed: {e}")
+            raise SecurityException("Failed to secure downstream request")
+    
+    async def issue_downstream_token(
+        self, 
+        user_context: Dict, 
+        downstream_service: str, 
+        requested_scopes: List[str]
+    ) -> str:
+        """Issue new tokens specifically for downstream services"""
+        
+        # Token payload for downstream service
+        token_payload = {
+            'iss': 'mcp-server',  # This MCP server as issuer
+            'aud': f'downstream.{downstream_service}',  # Specific to downstream service
+            'sub': user_context.get('sub'),  # Original user subject
+            'scp': ' '.join(self.filter_downstream_scopes(requested_scopes)),
+            'iat': int(datetime.utcnow().timestamp()),
+            'exp': int((datetime.utcnow() + timedelta(hours=1)).timestamp()),
+            'mcp_server_id': self.expected_audience,
+            'original_token_aud': user_context.get('aud')
+        }
+        
+        # Sign token with MCP server's private key
+        return await self.sign_downstream_token(token_payload)
+```
 
-### Rizika
-- Obcházení bezpečnostních kontrol (např. omezení počtu požadavků, validace požadavků)
-- Problémy s odpovědností a auditní stopou
-- Porušení hranic důvěry
-- Rizika budoucí kompatibility
+### **3. Prevence únosu relací**
 
-**Zmírnění:**
-- MCP servery NESMÍ přijímat žádné tokeny, které nebyly výslovně vydány pro MCP server.
-- Vždy validujte nároky publika tokenu, aby odpovídaly očekávané službě.
+**Pokročilá bezpečnost relací:**
 
-### 3. Session hijacking
+```python
+import secrets
+import hashlib
+from typing import Optional
 
-K tomu dochází, když neoprávněná osoba získá session ID a použije ho k vydávání se za původního klienta, což může vést k neoprávněným akcím.
+class AdvancedSessionSecurity:
+    """Advanced session security controls per MCP specification requirements"""
+    
+    def __init__(self, redis_client=None, encryption_key: bytes = None):
+        self.redis_client = redis_client
+        self.encryption_key = encryption_key or Fernet.generate_key()
+        self.cipher = Fernet(self.encryption_key)
+        self.logger = logging.getLogger(__name__)
+    
+    async def generate_secure_session_id(self, user_id: str, additional_context: Dict = None) -> str:
+        """
+        MANDATORY: Generate secure, non-deterministic session IDs
+        per MCP specification requirement
+        """
+        # Generate cryptographically secure random component
+        random_component = secrets.token_urlsafe(32)  # 256 bits of entropy
+        
+        # Create user-specific binding as recommended by MCP spec
+        user_binding = hashlib.sha256(f"{user_id}:{random_component}".encode()).hexdigest()
+        
+        # Add timestamp and additional context
+        timestamp = int(datetime.utcnow().timestamp())
+        context_hash = ""
+        
+        if additional_context:
+            context_str = json.dumps(additional_context, sort_keys=True)
+            context_hash = hashlib.sha256(context_str.encode()).hexdigest()[:16]
+        
+        # Format: <user_id>:<timestamp>:<random>:<context>
+        session_id = f"{user_id}:{timestamp}:{random_component}:{context_hash}"
+        
+        # Encrypt the session ID for additional security
+        encrypted_session_id = self.cipher.encrypt(session_id.encode()).decode()
+        
+        return encrypted_session_id
+    
+    async def validate_session_binding(
+        self, 
+        session_id: str, 
+        expected_user_id: str,
+        request_context: Dict
+    ) -> bool:
+        """
+        Validate session ID is bound to specific user per MCP requirements
+        """
+        try:
+            # Decrypt session ID
+            decrypted_session = self.cipher.decrypt(session_id.encode()).decode()
+            
+            # Parse session components
+            parts = decrypted_session.split(':')
+            if len(parts) != 4:
+                self.logger.warning("Invalid session ID format")
+                return False
+            
+            session_user_id, timestamp, random_component, context_hash = parts
+            
+            # Validate user binding
+            if session_user_id != expected_user_id:
+                self.logger.warning(f"Session user mismatch: {session_user_id} != {expected_user_id}")
+                return False
+            
+            # Validate session age
+            session_time = datetime.fromtimestamp(int(timestamp))
+            max_age = timedelta(hours=24)  # Configurable
+            
+            if datetime.utcnow() - session_time > max_age:
+                self.logger.warning("Session expired due to age")
+                return False
+            
+            # Validate additional context if present
+            if context_hash and request_context:
+                expected_context_hash = hashlib.sha256(
+                    json.dumps(request_context, sort_keys=True).encode()
+                ).hexdigest()[:16]
+                
+                if context_hash != expected_context_hash:
+                    self.logger.warning("Session context binding validation failed")
+                    return False
+            
+            return True
+            
+        except Exception as e:
+            self.logger.error(f"Session validation error: {e}")
+            return False
+    
+    async def implement_session_security_controls(
+        self, 
+        session_id: str, 
+        user_id: str,
+        request: Dict
+    ) -> Dict:
+        """Implement comprehensive session security controls"""
+        
+        # 1. Validate session binding (MANDATORY)
+        if not await self.validate_session_binding(session_id, user_id, request.get('context', {})):
+            raise SecurityException("Session validation failed")
+        
+        # 2. Check for session hijacking indicators
+        hijack_indicators = await self.detect_session_hijacking(session_id, request)
+        if hijack_indicators['risk_score'] > 0.7:
+            await self.invalidate_session(session_id)
+            raise SecurityException("Session hijacking detected")
+        
+        # 3. Validate request origin and transport security
+        if not self.validate_transport_security(request):
+            raise SecurityException("Insecure transport detected")
+        
+        # 4. Update session activity
+        await self.update_session_activity(session_id, request)
+        
+        # 5. Check if session rotation is needed
+        if await self.should_rotate_session(session_id):
+            new_session_id = await self.rotate_session(session_id, user_id)
+            return {"session_rotated": True, "new_session_id": new_session_id}
+        
+        return {"session_validated": True, "risk_score": hijack_indicators['risk_score']}
+    
+    async def detect_session_hijacking(self, session_id: str, request: Dict) -> Dict:
+        """Detect potential session hijacking attempts"""
+        risk_indicators = []
+        risk_score = 0.0
+        
+        # Get session history
+        session_history = await self.get_session_history(session_id)
+        
+        if session_history:
+            # IP address changes
+            current_ip = request.get('client_ip')
+            if current_ip != session_history.get('last_ip'):
+                risk_indicators.append('ip_change')
+                risk_score += 0.3
+            
+            # User agent changes
+            current_ua = request.get('user_agent')
+            if current_ua != session_history.get('last_user_agent'):
+                risk_indicators.append('user_agent_change')
+                risk_score += 0.2
+            
+            # Geographic anomalies
+            if await self.detect_geographic_anomaly(current_ip, session_history.get('last_ip')):
+                risk_indicators.append('geographic_anomaly')
+                risk_score += 0.4
+            
+            # Time-based anomalies
+            last_activity = session_history.get('last_activity')
+            if last_activity:
+                time_gap = datetime.utcnow() - datetime.fromisoformat(last_activity)
+                if time_gap > timedelta(hours=8):  # Long gap might indicate compromise
+                    risk_indicators.append('long_inactivity')
+                    risk_score += 0.1
+        
+        return {
+            'risk_score': min(risk_score, 1.0),
+            'risk_indicators': risk_indicators,
+            'requires_additional_auth': risk_score > 0.5
+        }
+```
 
-**Zmírnění:**
-- MCP servery, které implementují autorizaci, MUSÍ ověřovat všechny příchozí požadavky a NESMÍ používat session pro autentizaci.
-- Používejte bezpečné, nedeterministické session ID generované bezpečnými generátory náhodných čísel.
-- Vázat session ID na uživatelsky specifické informace pomocí formátu klíče jako `<user_id>:<session_id>`.
-- Implementujte správné politiky vypršení platnosti a rotace session.
+## Integrace podnikové bezpečnosti & monitorování
 
-## Další nejlepší bezpečnostní postupy pro MCP
+### **Komplexní logování s Azure Application Insights**
 
-Kromě základních bezpečnostních opatření MCP zvažte implementaci těchto dalších bezpečnostních praktik:
+```python
+import json
+import asyncio
+from datetime import datetime, timedelta
+from azure.monitor.opentelemetry import configure_azure_monitor
+from opentelemetry import trace
+from opentelemetry.instrumentation.auto_instrumentation import sitecustomize
 
-- **Vždy používejte HTTPS**: Šifrujte komunikaci mezi klientem a serverem, aby byly tokeny chráněny před zachycením.
-- **Implementujte řízení přístupu na základě rolí (RBAC)**: Nekontrolujte jen, zda je uživatel autentizován, ale i co má oprávnění dělat.
-- **Monitorujte a auditujte**: Logujte všechny autentizační události, abyste mohli detekovat a reagovat na podezřelou aktivitu.
-- **Řešte omezení rychlosti a throttling**: Implementujte exponenciální zpomalování a logiku opakování, abyste elegantně zvládli limity rychlosti.
-- **Bezpečné ukládání tokenů**: Ukládejte přístupové a obnovovací tokeny bezpečně pomocí systémových bezpečných úložišť nebo služeb pro správu klíčů.
-- **Zvažte použití API Managementu**: Služby jako Azure API Management mohou automaticky řešit mnoho bezpečnostních aspektů, včetně autentizace, autorizace a omezení rychlosti.
+class EnterpriseSecurityMonitoring:
+    """Enterprise-grade security monitoring with Azure integration"""
+    
+    def __init__(self, app_insights_key: str, log_analytics_workspace: str):
+        # Configure Azure Monitor integration
+        configure_azure_monitor(connection_string=f"InstrumentationKey={app_insights_key}")
+        
+        self.tracer = trace.get_tracer(__name__)
+        self.workspace_id = log_analytics_workspace
+        self.logger = logging.getLogger(__name__)
+        
+    async def log_mcp_security_event(self, event_data: Dict):
+        """Log security events to Azure Monitor with structured data"""
+        
+        with self.tracer.start_as_current_span("mcp_security_event") as span:
+            # Add structured properties to span
+            span.set_attributes({
+                "mcp.event.type": event_data.get('event_type'),
+                "mcp.tool.name": event_data.get('tool_name'),
+                "mcp.user.id": event_data.get('user_id'),
+                "mcp.security.risk_score": event_data.get('risk_score', 0),
+                "mcp.session.id": event_data.get('session_id', '')[:8] + '...',
+            })
+            
+            # Log to Application Insights
+            self.logger.info("MCP Security Event", extra={
+                "custom_dimensions": {
+                    **event_data,
+                    "timestamp": datetime.utcnow().isoformat(),
+                    "service_name": "mcp-server",
+                    "environment": os.getenv("ENVIRONMENT", "unknown")
+                }
+            })
+            
+            # For high-risk events, also create custom telemetry
+            if event_data.get('risk_score', 0) > 0.7:
+                await self.create_security_alert(event_data)
+    
+    async def create_security_alert(self, event_data: Dict):
+        """Create security alerts for high-risk events"""
+        
+        alert_data = {
+            "alert_type": "MCP_HIGH_RISK_EVENT",
+            "severity": "High" if event_data.get('risk_score', 0) > 0.8 else "Medium",
+            "description": f"High-risk MCP event detected: {event_data.get('event_type')}",
+            "affected_user": event_data.get('user_id'),
+            "tool_involved": event_data.get('tool_name'),
+            "timestamp": datetime.utcnow().isoformat(),
+            "investigation_required": True
+        }
+        
+        # Send to Azure Sentinel or security operations center
+        await self.send_to_security_center(alert_data)
+    
+    async def monitor_tool_usage_patterns(self, user_id: str, tool_name: str):
+        """Monitor for unusual tool usage patterns that might indicate compromise"""
+        
+        # Get recent usage history
+        recent_usage = await self.get_tool_usage_history(user_id, tool_name, hours=24)
+        
+        # Analyze patterns
+        analysis = {
+            "usage_frequency": len(recent_usage),
+            "time_patterns": self.analyze_time_patterns(recent_usage),
+            "parameter_patterns": self.analyze_parameter_patterns(recent_usage),
+            "risk_indicators": []
+        }
+        
+        # Detect anomalies
+        if analysis["usage_frequency"] > self.get_baseline_usage(user_id, tool_name) * 5:
+            analysis["risk_indicators"].append("excessive_usage_frequency")
+        
+        if self.detect_unusual_time_pattern(analysis["time_patterns"]):
+            analysis["risk_indicators"].append("unusual_time_pattern")
+        
+        if self.detect_suspicious_parameters(analysis["parameter_patterns"]):
+            analysis["risk_indicators"].append("suspicious_parameters")
+        
+        # Log analysis results
+        await self.log_mcp_security_event({
+            "event_type": "TOOL_USAGE_ANALYSIS",
+            "user_id": user_id,
+            "tool_name": tool_name,
+            "analysis": analysis,
+            "risk_score": len(analysis["risk_indicators"]) * 0.3
+        })
+        
+        return analysis
 
-## Reference
+### **Advanced Threat Detection Pipeline**
 
-- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
-- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/draft/basic/authorization)
-- [MCP Core Concepts](https://modelcontextprotocol.io/docs/concepts/architecture)
-- [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
+class MCPThreatDetectionPipeline:
+    """Advanced threat detection pipeline for MCP servers"""
+    
+    def __init__(self):
+        self.threat_models = self.load_threat_models()
+        self.anomaly_detectors = self.initialize_anomaly_detectors()
+        self.risk_engine = self.initialize_risk_engine()
+    
+    async def analyze_request_threat_level(self, request: Dict) -> Dict:
+        """Comprehensive threat analysis for MCP requests"""
+        
+        threat_analysis = {
+            "request_id": request.get('request_id'),
+            "timestamp": datetime.utcnow().isoformat(),
+            "user_id": request.get('user_id'),
+            "tool_name": request.get('tool_name'),
+            "threat_indicators": [],
+            "risk_score": 0.0,
+            "recommended_action": "allow"
+        }
+        
+        # 1. Prompt injection detection
+        injection_analysis = await self.detect_prompt_injection_advanced(request)
+        if injection_analysis['detected']:
+            threat_analysis["threat_indicators"].append({
+                "type": "prompt_injection",
+                "severity": injection_analysis['severity'],
+                "confidence": injection_analysis['confidence']
+            })
+            threat_analysis["risk_score"] += injection_analysis['risk_score']
+        
+        # 2. Tool poisoning detection
+        poisoning_analysis = await self.detect_tool_poisoning(request)
+        if poisoning_analysis['detected']:
+            threat_analysis["threat_indicators"].append({
+                "type": "tool_poisoning",
+                "severity": poisoning_analysis['severity'],
+                "indicators": poisoning_analysis['indicators']
+            })
+            threat_analysis["risk_score"] += poisoning_analysis['risk_score']
+        
+        # 3. Behavioral anomaly detection
+        behavioral_analysis = await self.detect_behavioral_anomalies(request)
+        if behavioral_analysis['anomalous']:
+            threat_analysis["threat_indicators"].append({
+                "type": "behavioral_anomaly",
+                "patterns": behavioral_analysis['patterns'],
+                "deviation_score": behavioral_analysis['deviation_score']
+            })
+            threat_analysis["risk_score"] += behavioral_analysis['risk_score']
+        
+        # 4. Data exfiltration indicators
+        exfiltration_analysis = await self.detect_data_exfiltration(request)
+        if exfiltration_analysis['detected']:
+            threat_analysis["threat_indicators"].append({
+                "type": "data_exfiltration",
+                "indicators": exfiltration_analysis['indicators'],
+                "data_sensitivity": exfiltration_analysis['data_sensitivity']
+            })
+            threat_analysis["risk_score"] += exfiltration_analysis['risk_score']
+        
+        # 5. Calculate final risk score and recommendation
+        threat_analysis["risk_score"] = min(threat_analysis["risk_score"], 1.0)
+        
+        if threat_analysis["risk_score"] > 0.8:
+            threat_analysis["recommended_action"] = "block"
+        elif threat_analysis["risk_score"] > 0.5:
+            threat_analysis["recommended_action"] = "require_additional_auth"
+        elif threat_analysis["risk_score"] > 0.2:
+            threat_analysis["recommended_action"] = "monitor_closely"
+        
+        return threat_analysis
+    
+    async def detect_prompt_injection_advanced(self, request: Dict) -> Dict:
+        """Advanced prompt injection detection using multiple techniques"""
+        
+        combined_text = self.extract_text_from_request(request)
+        
+        detection_results = {
+            "detected": False,
+            "severity": 0,
+            "confidence": 0.0,
+            "risk_score": 0.0,
+            "techniques": []
+        }
+        
+        # Multiple detection techniques
+        techniques = [
+            ("pattern_matching", await self.pattern_based_detection(combined_text)),
+            ("semantic_analysis", await self.semantic_injection_detection(combined_text)),
+            ("context_analysis", await self.context_based_detection(combined_text, request)),
+            ("ml_classifier", await self.ml_injection_classification(combined_text))
+        ]
+        
+        for technique_name, result in techniques:
+            if result['detected']:
+                detection_results["techniques"].append({
+                    "name": technique_name,
+                    "confidence": result['confidence'],
+                    "indicators": result.get('indicators', [])
+                })
+                detection_results["confidence"] = max(detection_results["confidence"], result['confidence'])
+        
+        # Aggregate results
+        if detection_results["techniques"]:
+            detection_results["detected"] = True
+            detection_results["severity"] = max(t.get('severity', 1) for _, r in techniques for t in [r] if r['detected'])
+            detection_results["risk_score"] = min(detection_results["confidence"] * 0.8, 0.8)
+        
+        return detection_results
+```
+
+### **Integrace bezpečnosti dodavatelského řetězce**
+
+```python
+class MCPSupplyChainSecurity:
+    """Comprehensive supply chain security for MCP implementations"""
+    
+    def __init__(self, github_token: str, defender_client):
+        self.github_token = github_token
+        self.defender_client = defender_client
+        self.sbom_analyzer = SoftwareBillOfMaterialsAnalyzer()
+        
+    async def validate_mcp_component_security(self, component: Dict) -> Dict:
+        """Validate security of MCP components before deployment"""
+        
+        validation_results = {
+            "component_name": component.get('name'),
+            "version": component.get('version'),
+            "source": component.get('source'),
+            "security_validated": False,
+            "vulnerabilities": [],
+            "compliance_status": {},
+            "recommendations": []
+        }
+        
+        try:
+            # 1. GitHub Advanced Security scanning
+            if component.get('source', '').startswith('https://github.com/'):
+                github_results = await self.scan_with_github_advanced_security(component)
+                validation_results["vulnerabilities"].extend(github_results['vulnerabilities'])
+                validation_results["compliance_status"]["github_security"] = github_results['status']
+            
+            # 2. Microsoft Defender for DevOps integration
+            defender_results = await self.scan_with_defender_for_devops(component)
+            validation_results["vulnerabilities"].extend(defender_results['vulnerabilities'])
+            validation_results["compliance_status"]["defender_security"] = defender_results['status']
+            
+            # 3. SBOM analysis
+            sbom_results = await self.sbom_analyzer.analyze_component(component)
+            validation_results["dependencies"] = sbom_results['dependencies']
+            validation_results["license_compliance"] = sbom_results['license_status']
+            
+            # 4. Signature verification
+            signature_valid = await self.verify_component_signature(component)
+            validation_results["signature_verified"] = signature_valid
+            
+            # 5. Reputation analysis
+            reputation_score = await self.analyze_component_reputation(component)
+            validation_results["reputation_score"] = reputation_score
+            
+            # Final validation decision
+            critical_vulns = [v for v in validation_results["vulnerabilities"] if v['severity'] == 'CRITICAL']
+            
+            validation_results["security_validated"] = (
+                len(critical_vulns) == 0 and
+                signature_valid and
+                reputation_score > 0.7 and
+                all(status == 'PASS' for status in validation_results["compliance_status"].values())
+            )
+            
+            if not validation_results["security_validated"]:
+                validation_results["recommendations"] = self.generate_security_recommendations(validation_results)
+            
+        except Exception as e:
+            validation_results["error"] = str(e)
+            validation_results["security_validated"] = False
+        
+        return validation_results
+```
+
+## Shrnutí nejlepších praktik & podnikové pokyny
+
+### **Kritický implementační kontrolní seznam**
+
+Autentizace & autorizace:
+  Integrace externího poskytovatele identity (Microsoft Entra ID)
+  Validace publika tokenů (POVINNÉ)
+  Žádná autentizace založená na relacích
+  Komplexní ověřování požadavků
+  
+Bezpečnostní kontroly AI:
+  Integrace Microsoft Prompt Shields
+  Screening Azure Content Safety  
+  Detekce otravy nástrojů
+  Validace výstupního obsahu
+  
+Bezpečnost relací:
+  Kryptograficky bezpečné ID relací
+  Vazba relací na konkrétního uživatele
+  Detekce únosu relací
+  Vynucení transportu přes HTTPS
+  
+OAuth & proxy bezpečnost:
+  Implementace PKCE (OAuth 2.1)
+  Explicitní uživatelský souhlas pro dynamické klienty
+  Striktní validace přesměrovací URI
+  Žádné předávání tokenů (POVINNÉ)
+
+Podniková integrace:
+  Azure Key Vault pro správu tajemství
+  Application Insights pro monitorování bezpečnosti
+  GitHub Advanced Security pro dodavatelský řetězec
+  Integrace Microsoft Defender for DevOps
+
+Monitorování & reakce:
+  Komplexní logování bezpečnostních událostí
+  Detekce hrozeb v reálném čase
+  Automatizovaná reakce na incidenty
+  Upozornění založená na riziku
+
+### **Výhody bezpečnostního ekosystému Microsoftu**
+
+- **Integrovaný bezpečnostní postoj**: Jednotná bezpečnost napříč identitou, infrastrukturou a aplikacemi
+- **Pokročilá ochrana AI**: Obrana navržená proti hrozbám specifickým pro AI  
+- **Podniková shoda**: Vestavěná podpora pro regulační požadavky a průmyslové standardy
+- **Inteligence hrozeb**: Integrace globální inteligence hrozeb pro proaktivní ochranu
+- **Škálovatelná architektura**: Škálování na podnikové úrovni při zachování bezpečnostních kontrol
+
+### **Reference & zdroje**
+
+- **[MCP Specifikace (2025-06-18)](https://spec.modelcontextprotocol.io/specification/2025-06-18/)**
+- **[MCP Bezpečnostní nejlepší praktiky](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)**  
+- **[MCP Specifikace autorizace](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)**
+- **[Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)**
+- **[Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/)**
+- **[OAuth 2.0 Bezpečnostní nejlepší praktiky (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)**
+- **[OWASP Top 10 pro velké jazykové modely](https://genai.owasp.org/)**
+
+---
+
+> **Bezpečnostní upozornění**: Tento pokročilý implementační průvodce odráží aktuální požadavky MCP specifikace (2025-06-18). Vždy ověřujte podle nejnovější oficiální dokumentace a zvažte své specifické bezpečnostní požadavky a model hrozeb při implementaci těchto kontrol.
 
 ## Co dál
 
 - [5.9 Webové vyhledávání](../web-search-mcp/README.md)
 
-**Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+**Prohlášení**:  
+Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

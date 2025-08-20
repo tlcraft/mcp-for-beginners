@@ -2,11 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8358c13b5b6877e475674697cdc1a904",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T20:53:49+00:00",
-=======
-  "translation_date": "2025-08-18T16:09:04+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T16:38:45+00:00",
   "source_file": "03-GettingStarted/02-client/complete_examples.md",
   "language_code": "ro"
 }
@@ -80,7 +76,7 @@ node client_example_typescript.js
 - **Transport**: Stdio (Intrare/Ieșire Standard)  
 - **Server Țintă**: Server MCP local Python
 - **Funcționalități**:
-  - Model asincron cu async/await pentru operații
+  - Model async/await pentru operații
   - Descoperirea uneltelor și resurselor
   - Testarea operațiilor calculatorului
   - Citirea conținutului resurselor
@@ -92,18 +88,14 @@ node client_example_typescript.js
 python client_example_python.py
 ```
 
-## Funcționalități Comune pentru Toți Clienții
+## Funcționalități Comune Tuturor Clienților
 
 Fiecare implementare de client demonstrează:
 
 1. **Gestionarea Conexiunii**
    - Stabilirea conexiunii cu serverul MCP
    - Gestionarea erorilor de conexiune
-<<<<<<< HEAD
    - Curățare corespunzătoare și gestionarea resurselor
-=======
-   - Curățare adecvată și gestionarea resurselor
->>>>>>> origin/main
 
 2. **Descoperirea Serverului**
    - Listarea uneltelor disponibile
@@ -131,21 +123,17 @@ Fiecare implementare de client demonstrează:
 
 1. **Serverul MCP corespunzător pornit** (din `../01-first-server/`)
 2. **Dependențele necesare instalate** pentru limbajul ales
-<<<<<<< HEAD
 3. **Conectivitate de rețea corespunzătoare** (pentru transporturile bazate pe HTTP)
-=======
-3. **Conectivitate de rețea adecvată** (pentru transporturile bazate pe HTTP)
->>>>>>> origin/main
 
 ## Diferențe Cheie Între Implementări
 
-| Limbaj    | Transport | Pornirea Serverului | Model Async | Biblioteci Cheie    |
-|-----------|-----------|---------------------|-------------|---------------------|
-| Java      | SSE/HTTP  | Extern              | Sincron     | WebFlux, MCP SDK    |
-| C#        | Stdio     | Automat             | Async/Await | .NET MCP SDK        |
-| TypeScript| Stdio     | Automat             | Async/Await | Node MCP SDK        |
-| Python    | Stdio     | Automat             | AsyncIO     | Python MCP SDK      |
-| Rust      | Stdio     | Automat             | Async/Await | Rust MCP SDK, Tokio |
+| Limbaj     | Transport | Pornirea Serverului | Model Async | Biblioteci Cheie    |
+|------------|-----------|---------------------|-------------|---------------------|
+| Java       | SSE/HTTP  | Extern              | Sincron     | WebFlux, MCP SDK    |
+| C#         | Stdio     | Automat             | Async/Await | .NET MCP SDK        |
+| TypeScript | Stdio     | Automat             | Async/Await | Node MCP SDK        |
+| Python     | Stdio     | Automat             | AsyncIO     | Python MCP SDK      |
+| Rust       | Stdio     | Automat             | Async/Await | Rust MCP SDK, Tokio |
 
 ## Pași Următori
 
@@ -167,8 +155,8 @@ După ce explorați aceste exemple de clienți:
 
 ### Sfaturi pentru Debugging
 
-1. **Activați logarea detaliată** în SDK-ul MCP
-2. **Verificați logurile serverului** pentru mesaje de eroare
+1. **Activați jurnalizarea detaliată** în SDK-ul MCP
+2. **Verificați jurnalele serverului** pentru mesaje de eroare
 3. **Asigurați-vă că numele și semnăturile uneltelor** se potrivesc între client și server
 4. **Testați mai întâi cu MCP Inspector** pentru a valida funcționalitatea serverului
 
@@ -179,10 +167,5 @@ După ce explorați aceste exemple de clienți:
 - [MCP cu Integrare LLM](../../../../03-GettingStarted/03-llm-client)
 - [Documentația Oficială MCP](https://modelcontextprotocol.io/)
 
-<<<<<<< HEAD
 **Declinarea responsabilității**:  
-Acest document a fost tradus utilizând serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea realizată de un profesionist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
-=======
-**Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
->>>>>>> origin/main
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

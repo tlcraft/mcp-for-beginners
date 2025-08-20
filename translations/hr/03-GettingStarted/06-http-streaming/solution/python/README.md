@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "4c4da5949611d91b06d8a5d450aae8d6",
-  "translation_date": "2025-07-13T21:22:51+00:00",
+  "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
+  "translation_date": "2025-08-19T17:58:05+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "hr"
 }
 -->
 # Pokretanje ovog primjera
 
-Evo kako pokrenuti klasični HTTP streaming server i klijenta, kao i MCP streaming server i klijenta koristeći Python.
+Evo kako pokrenuti klasični HTTP streaming server i klijent, kao i MCP streaming server i klijent koristeći Python.
 
 ### Pregled
 
@@ -22,7 +22,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijenta, kao i MCP streami
 - Python 3.9 ili noviji
 - Python paket `mcp` (instalirajte pomoću `pip install mcp`)
 
-### Instalacija i postavljanje
+### Instalacija i Postavljanje
 
 1. Klonirajte repozitorij ili preuzmite datoteke rješenja.
 
@@ -50,7 +50,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijenta, kao i MCP streami
 - **Server:** [server.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/server.py)
 - **Klijent:** [client.py](../../../../../../03-GettingStarted/06-http-streaming/solution/python/client.py)
 
-### Pokretanje klasičnog HTTP streaming servera
+### Pokretanje Klasičnog HTTP Streaming Servera
 
 1. Idite u direktorij rješenja:
 
@@ -71,7 +71,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijenta, kao i MCP streami
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Pokretanje klasičnog HTTP streaming klijenta
+### Pokretanje Klasičnog HTTP Streaming Klijenta
 
 1. Otvorite novi terminal (aktivirajte isto virtualno okruženje i direktorij):
 
@@ -80,7 +80,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijenta, kao i MCP streami
    python client.py
    ```
 
-2. Trebali biste vidjeti poruke koje se ispisuju sekvencijalno:
+2. Trebali biste vidjeti poruke koje se ispisuju redom:
 
    ```text
    Running classic HTTP streaming client...
@@ -93,7 +93,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijenta, kao i MCP streami
    --- Stream Ended ---
    ```
 
-### Pokretanje MCP streaming servera
+### Pokretanje MCP Streaming Servera
 
 1. Idite u direktorij rješenja:
    ```pwsh
@@ -109,7 +109,7 @@ Evo kako pokrenuti klasični HTTP streaming server i klijenta, kao i MCP streami
    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
    ```
 
-### Pokretanje MCP streaming klijenta
+### Pokretanje MCP Streaming Klijenta
 
 1. Otvorite novi terminal (aktivirajte isto virtualno okruženje i direktorij):
    ```pwsh
@@ -129,23 +129,23 @@ Evo kako pokrenuti klasični HTTP streaming server i klijenta, kao i MCP streami
    Tool result: meta=None content=[TextContent(type='text', text='Processed files: file_1.txt, file_2.txt, file_3.txt | Message: hello from client')]
    ```
 
-### Ključni koraci implementacije
+### Ključni Koraci Implementacije
 
 1. **Kreirajte MCP server koristeći FastMCP.**
-2. **Definirajte alat koji obrađuje listu i šalje obavijesti koristeći `ctx.info()` ili `ctx.log()`.**
+2. **Definirajte alat koji obrađuje popis i šalje obavijesti koristeći `ctx.info()` ili `ctx.log()`.**
 3. **Pokrenite server s `transport="streamable-http"`.**
-4. **Implementirajte klijenta s handlerom poruka za prikaz obavijesti čim stignu.**
+4. **Implementirajte klijenta s rukovateljem poruka za prikaz obavijesti kako stižu.**
 
-### Pregled koda
+### Pregled Koda
 - Server koristi asinhrone funkcije i MCP kontekst za slanje ažuriranja o napretku.
-- Klijent implementira asinhroni handler poruka za ispis obavijesti i konačnog rezultata.
+- Klijent implementira asinhroni rukovatelj poruka za ispis obavijesti i konačnog rezultata.
 
-### Savjeti i rješavanje problema
+### Savjeti i Rješavanje Problema
 
 - Koristite `async/await` za neblokirajuće operacije.
-- Uvijek hvatajte iznimke i na serveru i na klijentu radi stabilnosti.
-- Testirajte s više klijenata kako biste vidjeli ažuriranja u stvarnom vremenu.
+- Uvijek rukujte iznimkama na serveru i klijentu radi robusnosti.
+- Testirajte s više klijenata kako biste promatrali ažuriranja u stvarnom vremenu.
 - Ako naiđete na greške, provjerite verziju Pythona i osigurajte da su sve ovisnosti instalirane.
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije proizašle iz korištenja ovog prijevoda.

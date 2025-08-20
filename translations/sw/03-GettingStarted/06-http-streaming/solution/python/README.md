@@ -2,32 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "67ecbca6a060477ded3e13ddbeba64f7",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T19:07:58+00:00",
-=======
-  "translation_date": "2025-08-18T14:12:55+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T14:43:59+00:00",
   "source_file": "03-GettingStarted/06-http-streaming/solution/python/README.md",
   "language_code": "sw"
 }
 -->
-<<<<<<< HEAD
-# Kuendesha mfano huu
+# Kuendesha Sampuli Hii
 
 Hapa kuna jinsi ya kuendesha seva na mteja wa kawaida wa HTTP streaming, pamoja na seva na mteja wa MCP streaming kwa kutumia Python.
-=======
-# Kuendesha sampuli hii
-
-Hivi ndivyo unavyoweza kuendesha seva na mteja wa kawaida wa HTTP streaming, pamoja na seva na mteja wa MCP streaming kwa kutumia Python.
->>>>>>> origin/main
 
 ### Muhtasari
 
-- Utasanidi seva ya MCP inayotuma arifa za maendeleo kwa mteja wakati inachakata vitu.
+- Utaunda seva ya MCP inayotuma arifa za maendeleo kwa mteja wakati inachakata vitu.
 - Mteja ataonyesha kila arifa kwa wakati halisi.
-- Mwongozo huu unashughulikia mahitaji, usanidi, uendeshaji, na utatuzi wa matatizo.
+- Mwongozo huu unashughulikia mahitaji ya awali, usanidi, uendeshaji, na utatuzi wa matatizo.
 
-### Mahitaji
+### Mahitaji ya Awali
 
 - Python 3.9 au toleo jipya zaidi
 - Kifurushi cha Python `mcp` (sakinisha kwa `pip install mcp`)
@@ -90,11 +80,7 @@ Hivi ndivyo unavyoweza kuendesha seva na mteja wa kawaida wa HTTP streaming, pam
    python client.py
    ```
 
-<<<<<<< HEAD
-2. Utapaswa kuona ujumbe unaotiririshwa ukichapishwa kwa mpangilio:
-=======
-2. Utaona ujumbe unaotiririshwa ukichapishwa kwa mpangilio:
->>>>>>> origin/main
+2. Utapaswa kuona ujumbe wa streaming ukichapishwa kwa mpangilio:
 
    ```text
    Running classic HTTP streaming client...
@@ -130,11 +116,7 @@ Hivi ndivyo unavyoweza kuendesha seva na mteja wa kawaida wa HTTP streaming, pam
    cd 03-GettingStarted/06-http-streaming/solution
    python client.py mcp
    ```
-<<<<<<< HEAD
 2. Utapaswa kuona arifa zikichapishwa kwa wakati halisi wakati seva inachakata kila kipengee:
-=======
-2. Utaona arifa zikichapishwa kwa wakati halisi wakati seva inachakata kila kipengee:
->>>>>>> origin/main
    ```
    Running MCP client...
    Starting client...
@@ -160,14 +142,10 @@ Hivi ndivyo unavyoweza kuendesha seva na mteja wa kawaida wa HTTP streaming, pam
 
 ### Vidokezo na Utatuzi wa Matatizo
 
-- Tumia `async/await` kwa operesheni zisizozuia.
+- Tumia `async/await` kwa operesheni zisizo na vizuizi.
 - Daima shughulikia vizuizi katika seva na mteja kwa uimara.
 - Jaribu na wateja wengi ili kuona masasisho ya wakati halisi.
-- Ikiwa unakutana na makosa, hakikisha toleo lako la Python na utegemezi wote vimesakinishwa.
+- Ukikumbana na makosa, angalia toleo lako la Python na hakikisha utegemezi wote umesakinishwa.
 
 **Kanusho**:  
-<<<<<<< HEAD
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
-=======
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
->>>>>>> origin/main

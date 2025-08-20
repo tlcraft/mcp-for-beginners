@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d0f0d7012325b286e4a717791b23ae7e",
-  "translation_date": "2025-07-13T18:02:24+00:00",
+  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
+  "translation_date": "2025-08-19T17:55:03+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "hr"
 }
@@ -37,17 +37,17 @@ mcp run server.py
 
 ## -4- Testirajte primjer
 
-Dok je server pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
+Dok je poslužitelj pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
 
 ```bash
 mcp dev server.py
 ```
 
-Ovo bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje testiranje primjera.
+Ovo bi trebalo pokrenuti web poslužitelj s vizualnim sučeljem koje vam omogućuje testiranje primjera.
 
-Kada se server poveže:
+Kada se poslužitelj poveže:
 
-- pokušajte popisati alate i pokrenuti `add` s argumentima 2 i 4, trebali biste vidjeti 6 kao rezultat.
+- pokušajte popisati alate i pokrenuti `add`, s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
 
 - idite na resurse i predložak resursa te pozovite `get_greeting`, unesite ime i trebali biste vidjeti pozdrav s imenom koje ste unijeli.
 
@@ -61,7 +61,7 @@ Možete ga pokrenuti izravno u CLI načinu pokretanjem sljedeće naredbe:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Ovo će prikazati popis svih alata dostupnih na serveru. Trebali biste vidjeti sljedeći izlaz:
+Ovo će prikazati popis svih alata dostupnih na poslužitelju. Trebali biste vidjeti sljedeći izlaz:
 
 ```text
 {
@@ -117,4 +117,4 @@ Trebali biste vidjeti sljedeći izlaz:
 > Pročitajte više o inspektoru [ovdje](https://github.com/modelcontextprotocol/inspector).
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

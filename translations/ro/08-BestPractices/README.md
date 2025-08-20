@@ -2,11 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T20:40:31+00:00",
-=======
-  "translation_date": "2025-08-18T15:54:00+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T16:24:26+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "ro"
 }
@@ -15,12 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Cele Mai Bune Practici pentru Dezvoltarea MCP](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.ro.png)](https://youtu.be/W56H9W7x-ao)
 
-<<<<<<< HEAD
 _(Faceți clic pe imaginea de mai sus pentru a viziona videoclipul acestei lecții)_
 
 ## Prezentare Generală
 
-Această lecție se concentrează pe cele mai bune practici avansate pentru dezvoltarea, testarea și implementarea serverelor și funcțiilor MCP în medii de producție. Pe măsură ce ecosistemele MCP devin mai complexe și mai importante, urmarea unor modele consacrate asigură fiabilitatea, mentenabilitatea și interoperabilitatea. Lecția consolidează înțelepciunea practică dobândită din implementări reale MCP pentru a vă ghida în crearea unor servere robuste și eficiente, cu resurse, prompturi și instrumente eficiente.
+Această lecție se concentrează pe cele mai bune practici avansate pentru dezvoltarea, testarea și implementarea serverelor și funcțiilor MCP în medii de producție. Pe măsură ce ecosistemele MCP devin mai complexe și mai importante, urmarea unor modele consacrate asigură fiabilitate, mentenabilitate și interoperabilitate. Lecția consolidează înțelepciunea practică dobândită din implementări reale MCP pentru a vă ghida în crearea de servere robuste și eficiente, cu resurse, prompturi și instrumente eficiente.
 
 ## Obiectivele Învățării
 
@@ -29,90 +24,12 @@ Până la finalul acestei lecții, veți putea:
 - Aplica cele mai bune practici din industrie în proiectarea serverelor și funcțiilor MCP
 - Crea strategii de testare cuprinzătoare pentru serverele MCP
 - Proiecta modele de flux de lucru eficiente și reutilizabile pentru aplicații MCP complexe
-- Implementa gestionarea corectă a erorilor, jurnalizarea și observabilitatea în serverele MCP
+- Implementa gestionarea corectă a erorilor, logarea și observabilitatea în serverele MCP
 - Optimiza implementările MCP pentru performanță, securitate și mentenabilitate
 
 ## Principiile de Bază ale MCP
 
-Înainte de a aprofunda practicile specifice de implementare, este important să înțelegem principiile de bază care ghidează dezvoltarea eficientă MCP:
-
-1. **Comunicare Standardizată**: MCP folosește JSON-RPC 2.0 ca fundație, oferind un format consistent pentru cereri, răspunsuri și gestionarea erorilor în toate implementările.
-
-2. **Design Centrat pe Utilizator**: Prioritizați întotdeauna consimțământul, controlul și transparența utilizatorului în implementările MCP.
-
-3. **Securitate pe Primul Loc**: Implementați măsuri de securitate robuste, inclusiv autentificare, autorizare, validare și limitarea ratei.
-
-4. **Arhitectură Modulară**: Proiectați serverele MCP cu o abordare modulară, în care fiecare instrument și resursă are un scop clar și bine definit.
-
-5. **Conexiuni cu Stare**: Profitați de capacitatea MCP de a menține starea pe parcursul mai multor cereri pentru interacțiuni mai coerente și conștiente de context.
-
-## Cele Mai Bune Practici Oficiale MCP
-
-Următoarele bune practici sunt derivate din documentația oficială a Model Context Protocol:
-
-### Cele Mai Bune Practici de Securitate
-
-1. **Consimțământul și Controlul Utilizatorului**: Solicitați întotdeauna consimțământul explicit al utilizatorului înainte de a accesa date sau de a efectua operațiuni. Oferiți control clar asupra datelor partajate și acțiunilor autorizate.
-
-2. **Confidențialitatea Datelor**: Expuneți datele utilizatorului doar cu consimțământ explicit și protejați-le cu controale de acces adecvate. Protejați împotriva transmiterii neautorizate a datelor.
-
-3. **Siguranța Instrumentelor**: Solicitați consimțământul explicit al utilizatorului înainte de a invoca orice instrument. Asigurați-vă că utilizatorii înțeleg funcționalitatea fiecărui instrument și aplicați limite de securitate robuste.
-
-4. **Controlul Permisiunilor Instrumentelor**: Configurați ce instrumente poate utiliza un model în timpul unei sesiuni, asigurându-vă că sunt accesibile doar instrumentele autorizate explicit.
-
-5. **Autentificare**: Solicitați autentificare corespunzătoare înainte de a acorda acces la instrumente, resurse sau operațiuni sensibile, utilizând chei API, token-uri OAuth sau alte metode de autentificare securizate.
-
-6. **Validarea Parametrilor**: Aplicați validarea pentru toate invocările de instrumente pentru a preveni intrările defectuoase sau malițioase.
-
-7. **Limitarea Ratei**: Implementați limitarea ratei pentru a preveni abuzurile și pentru a asigura utilizarea echitabilă a resurselor serverului.
-
-### Cele Mai Bune Practici de Implementare
-
-1. **Negocierea Capacităților**: În timpul configurării conexiunii, schimbați informații despre funcțiile suportate, versiunile protocolului, instrumentele și resursele disponibile.
-
-2. **Proiectarea Instrumentelor**: Creați instrumente focalizate care fac un singur lucru bine, în loc de instrumente monolitice care gestionează mai multe preocupări.
-
-3. **Gestionarea Erorilor**: Implementați mesaje de eroare standardizate și coduri pentru a ajuta la diagnosticarea problemelor, gestionarea eșecurilor și oferirea de feedback acționabil.
-
-4. **Jurnalizare**: Configurați jurnale structurate pentru audit, depanare și monitorizarea interacțiunilor protocolului.
-
-5. **Urmărirea Progresului**: Pentru operațiuni de lungă durată, raportați actualizări ale progresului pentru a permite interfețe de utilizator receptive.
-
-6. **Anularea Cererilor**: Permiteți clienților să anuleze cererile în curs care nu mai sunt necesare sau care durează prea mult.
-
-## Referințe Suplimentare
-
-Pentru cele mai actualizate informații despre cele mai bune practici MCP, consultați:
-
-- [Documentația MCP](https://modelcontextprotocol.io/)
-- [Specificația MCP](https://spec.modelcontextprotocol.io/)
-- [Repository GitHub](https://github.com/modelcontextprotocol)
-- [Cele Mai Bune Practici de Securitate](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
-
-## Exemple Practice de Implementare
-
-### Cele Mai Bune Practici pentru Proiectarea Instrumentelor
-
-=======
-_(Click pe imaginea de mai sus pentru a viziona videoclipul acestei lecții)_
-
-## Prezentare Generală
-
-Această lecție se concentrează pe cele mai bune practici avansate pentru dezvoltarea, testarea și implementarea serverelor MCP și a funcționalităților în medii de producție. Pe măsură ce ecosistemele MCP devin mai complexe și mai importante, urmarea unor modele consacrate asigură fiabilitate, întreținere și interoperabilitate. Lecția consolidează înțelepciunea practică dobândită din implementările MCP din lumea reală pentru a vă ghida în crearea unor servere robuste și eficiente, cu resurse, prompturi și instrumente eficiente.
-
-## Obiective de Învățare
-
-Până la finalul acestei lecții, veți putea:
-
-- Aplica cele mai bune practici din industrie în proiectarea serverelor și funcționalităților MCP
-- Crea strategii de testare cuprinzătoare pentru serverele MCP
-- Proiecta modele de flux de lucru eficiente și reutilizabile pentru aplicații MCP complexe
-- Implementa gestionarea corectă a erorilor, logarea și observabilitatea în serverele MCP
-- Optimiza implementările MCP pentru performanță, securitate și întreținere
-
-## Principiile de Bază ale MCP
-
-Înainte de a intra în detalii despre practicile de implementare, este important să înțelegeți principiile de bază care ghidează dezvoltarea eficientă a MCP:
+Înainte de a intra în detalii despre practicile de implementare, este important să înțelegem principiile de bază care ghidează dezvoltarea eficientă MCP:
 
 1. **Comunicare Standardizată**: MCP folosește JSON-RPC 2.0 ca fundație, oferind un format consistent pentru cereri, răspunsuri și gestionarea erorilor în toate implementările.
 
@@ -126,35 +43,35 @@ Până la finalul acestei lecții, veți putea:
 
 ## Cele Mai Bune Practici Oficiale MCP
 
-Următoarele practici sunt derivate din documentația oficială a Model Context Protocol:
+Următoarele bune practici sunt derivate din documentația oficială a Model Context Protocol:
 
 ### Cele Mai Bune Practici de Securitate
 
-1. **Consimțământ și Control al Utilizatorului**: Solicitați întotdeauna consimțământul explicit al utilizatorului înainte de a accesa date sau de a efectua operațiuni. Oferiți control clar asupra datelor partajate și acțiunilor autorizate.
+1. **Consimțământul și Controlul Utilizatorului**: Solicitați întotdeauna consimțământul explicit al utilizatorului înainte de a accesa date sau de a efectua operațiuni. Oferiți control clar asupra datelor partajate și acțiunilor autorizate.
 
-2. **Confidențialitatea Datelor**: Expuneți datele utilizatorului doar cu consimțământ explicit și protejați-le cu controale de acces adecvate. Protejați împotriva transmiterii neautorizate de date.
+2. **Confidențialitatea Datelor**: Expuneți datele utilizatorului doar cu consimțământ explicit și protejați-le cu controale de acces adecvate. Preveniți transmiterea neautorizată a datelor.
 
-3. **Siguranța Instrumentelor**: Solicitați consimțământul explicit al utilizatorului înainte de a invoca orice instrument. Asigurați-vă că utilizatorii înțeleg funcționalitatea fiecărui instrument și impuneți limite de securitate robuste.
+3. **Siguranța Instrumentelor**: Solicitați consimțământul explicit al utilizatorului înainte de a invoca orice instrument. Asigurați-vă că utilizatorii înțeleg funcționalitatea fiecărui instrument și aplicați limite de securitate robuste.
 
 4. **Controlul Permisiunilor Instrumentelor**: Configurați ce instrumente poate utiliza un model în timpul unei sesiuni, asigurându-vă că doar instrumentele autorizate explicit sunt accesibile.
 
-5. **Autentificare**: Solicitați autentificare adecvată înainte de a acorda acces la instrumente, resurse sau operațiuni sensibile, utilizând chei API, token-uri OAuth sau alte metode de autentificare securizate.
+5. **Autentificare**: Solicitați autentificare adecvată înainte de a acorda acces la instrumente, resurse sau operațiuni sensibile, utilizând chei API, token-uri OAuth sau alte metode sigure de autentificare.
 
-6. **Validarea Parametrilor**: Impuneți validarea pentru toate invocările de instrumente pentru a preveni intrările malformate sau malițioase să ajungă la implementările instrumentelor.
+6. **Validarea Parametrilor**: Aplicați validarea pentru toate invocările de instrumente pentru a preveni intrările defectuoase sau malițioase.
 
 7. **Limitarea Ratei**: Implementați limitarea ratei pentru a preveni abuzurile și pentru a asigura utilizarea echitabilă a resurselor serverului.
 
 ### Cele Mai Bune Practici de Implementare
 
-1. **Negocierea Capacităților**: În timpul configurării conexiunii, schimbați informații despre funcționalitățile suportate, versiunile protocolului, instrumentele disponibile și resursele.
+1. **Negocierea Capacităților**: În timpul configurării conexiunii, schimbați informații despre funcțiile suportate, versiunile protocolului, instrumentele și resursele disponibile.
 
-2. **Designul Instrumentelor**: Creați instrumente focalizate care fac un singur lucru bine, în loc de instrumente monolitice care gestionează mai multe preocupări.
+2. **Proiectarea Instrumentelor**: Creați instrumente specializate care fac un singur lucru bine, în loc de instrumente monolitice care gestionează mai multe preocupări.
 
-3. **Gestionarea Erorilor**: Implementați mesaje de eroare standardizate și coduri pentru a ajuta la diagnosticarea problemelor, gestionarea eșecurilor cu grație și oferirea de feedback acționabil.
+3. **Gestionarea Erorilor**: Implementați mesaje de eroare și coduri standardizate pentru a ajuta la diagnosticarea problemelor, gestionarea eșecurilor cu grație și oferirea de feedback acționabil.
 
 4. **Logare**: Configurați loguri structurate pentru auditare, depanare și monitorizarea interacțiunilor protocolului.
 
-5. **Urmărirea Progresului**: Pentru operațiuni de lungă durată, raportați actualizări de progres pentru a permite interfețe de utilizator receptive.
+5. **Urmărirea Progresului**: Pentru operațiuni de lungă durată, raportați actualizări de progres pentru a permite interfețe de utilizator mai receptive.
 
 6. **Anularea Cererilor**: Permiteți clienților să anuleze cererile în curs care nu mai sunt necesare sau care durează prea mult.
 
@@ -169,9 +86,8 @@ Pentru cele mai recente informații despre cele mai bune practici MCP, consulta�
 
 ## Exemple Practice de Implementare
 
-### Cele Mai Bune Practici de Design al Instrumentelor
+### Cele Mai Bune Practici pentru Proiectarea Instrumentelor
 
->>>>>>> origin/main
 #### 1. Principiul Responsabilității Unice
 
 Fiecare instrument MCP ar trebui să aibă un scop clar și bine definit. În loc să creați instrumente monolitice care încearcă să gestioneze mai multe preocupări, dezvoltați instrumente specializate care excelează în sarcini specifice.
@@ -236,11 +152,7 @@ public class WeatherForecastTool : ITool
 
 #### 2. Gestionarea Consistentă a Erorilor
 
-<<<<<<< HEAD
-Implementați o gestionare robustă a erorilor cu mesaje de eroare informative și mecanisme de recuperare adecvate.
-=======
-Implementați gestionarea robustă a erorilor cu mesaje informative și mecanisme de recuperare adecvate.
->>>>>>> origin/main
+Implementați gestionarea robustă a erorilor cu mesaje informative și mecanisme adecvate de recuperare.
 
 ```python
 # Python example with comprehensive error handling
@@ -301,11 +213,7 @@ class DataQueryTool:
 
 #### 3. Validarea Parametrilor
 
-<<<<<<< HEAD
 Validați întotdeauna parametrii în mod riguros pentru a preveni intrările defectuoase sau malițioase.
-=======
-Validați întotdeauna parametrii în mod riguros pentru a preveni intrările malformate sau malițioase.
->>>>>>> origin/main
 
 ```javascript
 // JavaScript/TypeScript example with detailed parameter validation
@@ -534,11 +442,7 @@ public class RateLimitingMiddleware
 
 ## Cele Mai Bune Practici de Testare
 
-<<<<<<< HEAD
 ### 1. Testarea Unităților pentru Instrumentele MCP
-=======
-### 1. Testarea Unităților Instrumentelor MCP
->>>>>>> origin/main
 
 Testați întotdeauna instrumentele în izolare, simulând dependențele externe:
 
@@ -635,15 +539,9 @@ async def test_mcp_server_integration():
 
 ## Optimizarea Performanței
 
-<<<<<<< HEAD
 ### 1. Strategii de Cache
 
 Implementați cache-ul adecvat pentru a reduce latența și utilizarea resurselor:
-=======
-### 1. Strategii de Caching
-
-Implementați caching adecvat pentru a reduce latența și utilizarea resurselor:
->>>>>>> origin/main
 
 ```csharp
 // C# example with caching
@@ -714,11 +612,7 @@ public class CachedWeatherTool : ITool
 
 #### 2. Injecția Dependențelor și Testabilitatea
 
-<<<<<<< HEAD
-Proiectați instrumentele astfel încât să primească dependențele prin injecție de constructor, făcându-le testabile și configurabile:
-=======
 Proiectați instrumentele astfel încât să primească dependențele prin injecția constructorului, făcându-le testabile și configurabile:
->>>>>>> origin/main
 
 ```java
 // Java example with dependency injection
@@ -775,15 +669,9 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-<<<<<<< HEAD
 ### Cele Mai Bune Practici pentru Proiectarea Schemelor
 
 Schema este contractul dintre model și instrumentul dvs. Schemele bine proiectate duc la o utilizare mai bună a instrumentelor.
-=======
-### Cele Mai Bune Practici de Design al Schemelor
-
-Schema este contractul dintre model și instrumentul dvs. Schemelor bine proiectate conduc la o utilizare mai bună a instrumentelor.
->>>>>>> origin/main
 
 #### 1. Descrieri Clare ale Parametrilor
 
@@ -866,11 +754,7 @@ Map<String, Object> getSchema() {
 }
 ```
 
-<<<<<<< HEAD
 #### 3. Structuri de Răspuns Consistente
-=======
-#### 3. Structuri Consistente de Răspuns
->>>>>>> origin/main
 
 Mențineți consistența în structurile de răspuns pentru a facilita interpretarea rezultatelor de către modele:
 
@@ -913,7 +797,7 @@ def _format_item(self, item):
 
 ### Gestionarea Erorilor
 
-Gestionarea robustă a erorilor este crucială pentru ca instrumentele MCP să mențină fiabilitatea.
+Gestionarea robustă a erorilor este crucială pentru ca instrumentele MCP să rămână fiabile.
 
 #### 1. Gestionarea Grațioasă a Erorilor
 
@@ -961,11 +845,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Răspunsuri Structurate la Erori
 
-<<<<<<< HEAD
-Returnați informații structurate despre erori atunci când este posibil:
-=======
 Returnați informații structurate despre erori, atunci când este posibil:
->>>>>>> origin/main
 
 ```java
 @Override
@@ -995,15 +875,9 @@ public ToolResponse execute(ToolRequest request) {
 }
 ```
 
-<<<<<<< HEAD
-#### 3. Logica de Reîncercare
-
-Implementați logica de reîncercare adecvată pentru eșecurile tranzitorii:
-=======
 #### 3. Logica de Retry
 
 Implementați logica de retry adecvată pentru eșecurile tranzitorii:
->>>>>>> origin/main
 
 ```python
 async def execute_async(self, request):
@@ -1033,11 +907,7 @@ async def execute_async(self, request):
 
 #### 1. Cache
 
-<<<<<<< HEAD
 Implementați cache pentru operațiuni costisitoare:
-=======
-Implementați caching pentru operațiuni costisitoare:
->>>>>>> origin/main
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -1085,7 +955,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. Procesare Asincronă
 
-Utilizați modele de programare asincronă pentru operațiuni dependente de I/O:
+Utilizați modele de programare asincronă pentru operațiuni legate de I/O:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -1245,11 +1115,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Verificări de Autorizare
 
-<<<<<<< HEAD
-Implementați verificări corespunzătoare de autorizare:
-=======
 Implementați verificări adecvate de autorizare:
->>>>>>> origin/main
 
 ```java
 @Override
@@ -1332,7 +1198,7 @@ Testarea cuprinzătoare asigură că instrumentele MCP funcționează corect, ge
 
 #### 1. Testați Fiecare Instrument în Izolare
 
-Creați teste focalizate pentru funcționalitatea fiecărui instrument:
+Creați teste concentrate pentru funcționalitatea fiecărui instrument:
 
 ```csharp
 [Fact]
@@ -1437,11 +1303,7 @@ public void testSchemaValidation() {
 }
 ```
 
-<<<<<<< HEAD
 #### 3. Teste pentru Gestionarea Erorilor
-=======
-#### 3. Teste de Gestionare a Erorilor
->>>>>>> origin/main
 
 Creați teste specifice pentru condițiile de eroare:
 
@@ -1704,11 +1566,7 @@ public async Task McpServer_HandlesHighConcurrency()
 }
 ```
 
-<<<<<<< HEAD
 #### 2. Testarea de Stres
-=======
-#### 2. Testarea Stresului
->>>>>>> origin/main
 
 Testați sistemul sub sarcină extremă:
 
@@ -1807,15 +1665,9 @@ def configure_monitoring(server):
     return server
 ```
 
-<<<<<<< HEAD
-## Modele de Design pentru Fluxurile de Lucru MCP
+## Modele de Design pentru Fluxurile MCP
 
-Fluxurile de lucru MCP bine proiectate îmbunătățesc eficiența, fiabilitatea și mentenabilitatea. Iată câteva modele cheie de urmat:
-=======
-## Modele de Design ale Fluxurilor de Lucru MCP
-
-Fluxurile de lucru MCP bine proiectate îmbunătățesc eficiența, fiabilitatea și întreținerea. Iată câteva modele cheie de urmat:
->>>>>>> origin/main
+Fluxurile MCP bine proiectate îmbunătățesc eficiența, fiabilitatea și mentenabilitatea. Iată câteva modele cheie de urmat:
 
 ### 1. Modelul Lanțului de Instrumente
 
@@ -2008,13 +1860,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-<<<<<<< HEAD
-### 4. Modelul Recuperării după Erori
-=======
-### 4. Modelul Recuperării Erorilor
->>>>>>> origin/main
+### 4. Modelul de Recuperare a Erorilor
 
-Implementați soluții grațioase pentru eșecurile instrumentelor:
+Implementați soluții de rezervă grațioase pentru eșecurile instrumentelor:
 
 ```python
 class ResilientWorkflow:
@@ -2068,13 +1916,9 @@ async def get_weather(workflow, location):
     )
 ```
 
-### 5. Modelul Compoziției Fluxurilor de Lucru
+### 5. Modelul de Compoziție a Fluxurilor
 
-<<<<<<< HEAD
-Construiți fluxuri de lucru complexe prin compunerea unora mai simple:
-=======
-Construiți fluxuri de lucru complexe prin compunerea celor mai simple:
->>>>>>> origin/main
+Construiți fluxuri complexe prin compunerea unora mai simple:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -2121,56 +1965,35 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-<<<<<<< HEAD
-# Testarea Serverelor MCP: Cele Mai Bune Practici și Sfaturi Utile
-=======
 # Testarea Serverelor MCP: Cele Mai Bune Practici și Sfaturi de Top
->>>>>>> origin/main
 
 ## Prezentare Generală
 
 Testarea este un aspect critic al dezvoltării serverelor MCP fiabile și de înaltă calitate. Acest ghid oferă cele mai bune practici și sfaturi pentru testarea serverelor MCP pe parcursul ciclului de dezvoltare, de la teste unitare la teste de integrare și validare end-to-end.
 
-## De Ce Contează Testarea pentru Serverele MCP
+## De ce Este Importantă Testarea pentru Serverele MCP
 
-<<<<<<< HEAD
 Serverele MCP servesc drept middleware esențial între modelele AI și aplicațiile client. Testarea riguroasă asigură:
 
 - Fiabilitate în medii de producție
 - Gestionarea corectă a cererilor și răspunsurilor
 - Implementarea corectă a specificațiilor MCP
-- Reziliență la eșecuri și cazuri limită
-=======
-Serverele MCP servesc ca middleware esențial între modelele AI și aplicațiile client. Testarea riguroasă asigură:
-
-- Fiabilitate în medii de producție
-- Gestionarea corectă a cererilor și răspunsurilor
-- Implementarea adecvată a specificațiilor MCP
-- Reziliență împotriva eșecurilor și cazurilor limită
->>>>>>> origin/main
+- Rezistență la eșecuri și cazuri limită
 - Performanță consistentă sub diverse sarcini
 
 ## Testarea Unităților pentru Serverele MCP
 
-<<<<<<< HEAD
 ### Testarea Unităților (Fundație)
-=======
-### Testarea Unităților (Fundament)
->>>>>>> origin/main
 
 Testele unitare verifică componentele individuale ale serverului MCP în izolare.
 
 #### Ce să Testați
 
-1. **Handleri de Resurse**: Testați logica fiecărui handler de resurse independent
-2. **Implementări ale Instrumentelor**: Verificați comportamentul instrumentelor cu diverse intrări
-3. **Șabloane de Prompturi**: Asigurați-vă că șabloanele de prompturi se redau corect
+1. **Handler-ele Resurselor**: Testați logica fiecărui handler de resurse independent
+2. **Implementările Instrumentelor**: Verificați comportamentul instrumentelor cu diverse intrări
+3. **Șabloanele de Prompturi**: Asigurați-vă că șabloanele de prompturi se redau corect
 4. **Validarea Schemelor**: Testați logica de validare a parametrilor
-<<<<<<< HEAD
 5. **Gestionarea Erorilor**: Verificați răspunsurile de eroare pentru intrări invalide
-=======
-5. **Gestionarea Erorilor**: Verificați răspunsurile de eroare pentru intrările invalide
->>>>>>> origin/main
 
 #### Cele Mai Bune Practici pentru Testarea Unităților
 
@@ -2223,7 +2046,7 @@ Testele de integrare verifică interacțiunile dintre componentele serverului MC
 #### Ce să Testați
 
 1. **Inițializarea Serverului**: Testați pornirea serverului cu diverse configurații
-2. **Înregistrarea Rutelor**: Verificați că toate punctele finale sunt înregistrate corect
+2. **Înregistrarea Rutelor**: Verificați că toate endpoint-urile sunt înregistrate corect
 3. **Procesarea Cererilor**: Testați ciclul complet cerere-răspuns
 4. **Propagarea Erorilor**: Asigurați-vă că erorile sunt gestionate corect între componente
 5. **Autentificare și Autorizare**: Testați mecanismele de securitate
@@ -2266,25 +2089,17 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 
 ### Testarea End-to-End (Stratul Superior)
 
-Testele end-to-end verifică comportamentul complet al sistemului de la client la server.
+Testele end-to-end verifică comportamentul complet al sistemului, de la client la server.
 
 #### Ce să Testați
 
 1. **Comunicarea Client-Server**: Testați ciclurile complete cerere-răspuns
 2. **SDK-uri Client Reale**: Testați cu implementări reale ale clienților
-<<<<<<< HEAD
-3. **Performanța Sub Sarcină**: Verificați comportamentul cu mai multe cereri simultane
-4. **Recuperarea după Erori**: Testați recuperarea sistemului din eșecuri
-5. **Operațiuni de Lungă Durată**: Verificați gestionarea operațiunilor de streaming și lungi
-
-#### Cele Mai Bune Practici pentru Testarea End-to-End
-=======
 3. **Performanța Sub Sarcină**: Verificați comportamentul cu cereri multiple simultane
 4. **Recuperarea Erorilor**: Testați recuperarea sistemului din eșecuri
-5. **Operațiuni de Lungă Durată**: Verificați gestionarea operațiunilor de streaming și lungă durată
+5. **Operațiuni de Lungă Durată**: Verificați gestionarea streaming-ului și a operațiunilor lungi
 
 #### Cele Mai Bune Practici pentru Testarea E2E
->>>>>>> origin/main
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -2316,22 +2131,18 @@ describe('MCP Server E2E Tests', () => {
 });
 ```
 
-## Strategii de Simulare pentru Testarea MCP
+## Strategii de Mocking pentru Testarea MCP
 
-Simularea este esențială pentru izolarea componentelor în timpul testării.
+Mocking-ul este esențial pentru izolarea componentelor în timpul testării.
 
-### Componente de Simulat
+### Componente de Mock-uit
 
-1. **Modele AI Externe**: Simulați răspunsurile modelelor pentru testare predictibilă
-2. **Servicii Externe**: Simulați dependențele API (baze de date, servicii terțe)
-3. **Servicii de Autentificare**: Simulați furnizorii de identitate
-<<<<<<< HEAD
-4. **Furnizori de Resurse**: Simulați handlerii de resurse costisitori
-=======
-4. **Furnizori de Resurse**: Simulați handlerii de resurse costisitoare
->>>>>>> origin/main
+1. **Modele AI Externe**: Mock-uiți răspunsurile modelelor pentru testare predictibilă
+2. **Servicii Externe**: Mock-uiți dependențele API (baze de date, servicii terțe)
+3. **Servicii de Autentificare**: Mock-uiți furnizorii de identitate
+4. **Furnizorii de Resurse**: Mock-uiți handler-ele de resurse costisitoare
 
-### Exemplu: Simularea unui Răspuns al Modelului AI
+### Exemplu: Mock-uirea unui Răspuns al Modelului AI
 
 ```csharp
 // C# example with Moq
@@ -2365,31 +2176,23 @@ def test_with_mock_model(mock_model):
 
 ## Testarea Performanței
 
-<<<<<<< HEAD
 Testarea performanței este crucială pentru serverele MCP în producție.
-=======
-Testarea performanței este crucială pentru serverele MCP de producție.
->>>>>>> origin/main
 
 ### Ce să Măsurați
 
 1. **Latența**: Timpul de răspuns pentru cereri
 2. **Debit**: Cereri gestionate pe secundă
-3. **Utilizarea Resurselor**: Utilizarea CPU, memoriei, rețelei
+3. **Utilizarea Resurselor**: CPU, memorie, utilizarea rețelei
 4. **Gestionarea Concurenței**: Comportamentul sub cereri paralele
-<<<<<<< HEAD
-5. **Caracteristicile de Scalare**: Perform
+5. **Caracteristicile de Scalare**: Performanța pe măsură ce sarcina crește
+
+### Instrumente pentru Testarea Performanței
+
+- **k6**: Instrument open
 3. **Repere de performanță**: Menține reperele de performanță pentru a identifica regresiile
 4. **Scanări de securitate**: Automatizează testarea securității ca parte a pipeline-ului
 
 ### Exemplu de pipeline CI (GitHub Actions)
-=======
-5. **Caracteristicile Scalării**: Performanța pe măsură ce sar
-3. **Repere de Performanță**: Mențineți benchmark-uri de performanță pentru a identifica regresiile  
-4. **Scanări de Securitate**: Automatizați testarea securității ca parte a pipeline-ului  
-
-### Exemplu de Pipeline CI (GitHub Actions)
->>>>>>> origin/main
 
 ```yaml
 name: MCP Server Tests
@@ -2428,7 +2231,6 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-<<<<<<< HEAD
 ## Testarea conformității cu specificația MCP
 
 Verifică dacă serverul tău implementează corect specificația MCP.
@@ -2441,22 +2243,7 @@ Verifică dacă serverul tău implementează corect specificația MCP.
 4. **Tipuri de conținut**: Testează gestionarea diferitelor tipuri de conținut
 5. **Fluxul de autentificare**: Verifică mecanismele de autentificare conforme cu specificația
 
-### Suita de teste pentru conformitate
-=======
-## Testarea Conformității cu Specificația MCP  
-
-Verificați dacă serverul dvs. implementează corect specificația MCP.  
-
-### Zone Cheie de Conformitate  
-
-1. **Endpoint-uri API**: Testați endpoint-urile necesare (/resources, /tools, etc.)  
-2. **Format Cerere/Răspuns**: Validați conformitatea cu schema  
-3. **Coduri de Eroare**: Verificați codurile de stare corecte pentru diverse scenarii  
-4. **Tipuri de Conținut**: Testați gestionarea diferitelor tipuri de conținut  
-5. **Flux de Autentificare**: Verificați mecanismele de autentificare conforme cu specificația  
-
-### Suita de Testare a Conformității  
->>>>>>> origin/main
+### Suită de teste pentru conformitate
 
 ```csharp
 [Fact]
@@ -2483,53 +2270,29 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-<<<<<<< HEAD
-## Top 10 sfaturi pentru testarea eficientă a serverelor MCP
+## Top 10 sfaturi pentru testarea eficientă a serverului MCP
 
 1. **Testează definițiile instrumentelor separat**: Verifică definițiile schemelor independent de logica instrumentelor
 2. **Folosește teste parametrizate**: Testează instrumentele cu o varietate de intrări, inclusiv cazuri limită
 3. **Verifică răspunsurile de eroare**: Asigură-te că toate condițiile de eroare sunt gestionate corect
 4. **Testează logica de autorizare**: Asigură controlul adecvat al accesului pentru diferite roluri de utilizator
-5. **Monitorizează acoperirea testelor**: Vizează o acoperire ridicată a codului din calea critică
-6. **Testează răspunsurile de streaming**: Verifică gestionarea corectă a conținutului de tip streaming
+5. **Monitorizează acoperirea testelor**: Vizează o acoperire ridicată a codului critic
+6. **Testează răspunsurile de streaming**: Verifică gestionarea corectă a conținutului de streaming
 7. **Simulează probleme de rețea**: Testează comportamentul în condiții de rețea slabă
 8. **Testează limitele resurselor**: Verifică comportamentul la atingerea cotelor sau limitelor de rată
 9. **Automatizează testele de regresie**: Construiește o suită care rulează la fiecare modificare de cod
 10. **Documentează cazurile de testare**: Menține o documentație clară a scenariilor de testare
-=======
-## Top 10 Sfaturi pentru Testarea Eficientă a Serverelor MCP  
 
-1. **Testați Definițiile Uneltelor Separat**: Verificați definițiile schemelor independent de logica uneltelor  
-2. **Utilizați Teste Parametrizate**: Testați uneltele cu o varietate de intrări, inclusiv cazuri limită  
-3. **Verificați Răspunsurile de Eroare**: Asigurați-vă că toate condițiile de eroare sunt gestionate corect  
-4. **Testați Logica de Autorizare**: Asigurați controlul corect al accesului pentru diferite roluri de utilizator  
-5. **Monitorizați Acoperirea Testelor**: Vizați o acoperire ridicată a codului pe calea critică  
-6. **Testați Răspunsurile de Streaming**: Verificați gestionarea corectă a conținutului de streaming  
-7. **Simulați Probleme de Rețea**: Testați comportamentul în condiții de rețea slabă  
-8. **Testați Limitele Resurselor**: Verificați comportamentul la atingerea cotelor sau limitelor de rată  
-9. **Automatizați Testele de Regresie**: Construiți o suită care rulează la fiecare schimbare de cod  
-10. **Documentați Cazurile de Testare**: Mențineți o documentație clară a scenariilor de testare  
->>>>>>> origin/main
+## Capcane comune în testare
 
-## Capcane Comune în Testare  
-
-<<<<<<< HEAD
 - **Dependință excesivă de testarea scenariilor pozitive**: Asigură-te că testezi temeinic cazurile de eroare
-- **Ignorarea testării performanței**: Identifică blocajele înainte ca acestea să afecteze producția
+- **Ignorarea testării performanței**: Identifică blocajele înainte să afecteze producția
 - **Testarea doar în izolare**: Combină testele unitare, de integrare și E2E
 - **Acoperire incompletă a API-ului**: Asigură-te că toate punctele de acces și funcțiile sunt testate
 - **Medii de testare inconsistente**: Folosește containere pentru a asigura medii de testare consistente
-=======
-- **Supradependența de testarea pe calea fericită**: Asigurați-vă că testați temeinic cazurile de eroare  
-- **Ignorarea testării performanței**: Identificați blocajele înainte să afecteze producția  
-- **Testarea doar în izolare**: Combinați testele unitare, de integrare și E2E  
-- **Acoperire incompletă a API-ului**: Asigurați-vă că toate endpoint-urile și funcțiile sunt testate  
-- **Mediile de testare inconsistente**: Utilizați containere pentru a asigura medii de testare consistente  
->>>>>>> origin/main
 
-## Concluzie  
+## Concluzie
 
-<<<<<<< HEAD
 O strategie de testare cuprinzătoare este esențială pentru dezvoltarea serverelor MCP fiabile și de înaltă calitate. Prin implementarea celor mai bune practici și sfaturi prezentate în acest ghid, poți asigura că implementările MCP respectă cele mai înalte standarde de calitate, fiabilitate și performanță.
 
 ## Idei principale
@@ -2541,23 +2304,9 @@ O strategie de testare cuprinzătoare este esențială pentru dezvoltarea server
 5. **Securitate**: Aplică validarea riguroasă a intrărilor, verificări de autorizare și gestionarea datelor sensibile
 6. **Testare**: Creează teste unitare, de integrare și end-to-end cuprinzătoare
 7. **Modele de flux de lucru**: Aplică modele consacrate precum lanțuri, dispeceri și procesare paralelă
-=======
-O strategie cuprinzătoare de testare este esențială pentru dezvoltarea serverelor MCP fiabile și de înaltă calitate. Prin implementarea celor mai bune practici și sfaturi prezentate în acest ghid, vă puteți asigura că implementările MCP îndeplinesc cele mai înalte standarde de calitate, fiabilitate și performanță.  
 
-## Idei Principale  
+## Exercițiu
 
-1. **Designul Uneltelor**: Urmați principiul responsabilității unice, utilizați injecția de dependențe și proiectați pentru compozabilitate  
-2. **Designul Schemelor**: Creați scheme clare, bine documentate, cu constrângeri de validare adecvate  
-3. **Gestionarea Erorilor**: Implementați gestionarea grațioasă a erorilor, răspunsuri structurate și logică de retry  
-4. **Performanță**: Utilizați caching, procesare asincronă și limitarea resurselor  
-5. **Securitate**: Aplicați validarea riguroasă a intrărilor, verificările de autorizare și gestionarea datelor sensibile  
-6. **Testare**: Creați teste unitare, de integrare și end-to-end cuprinzătoare  
-7. **Modele de Flux de Lucru**: Aplicați modele consacrate precum lanțuri, dispeceri și procesare paralelă  
->>>>>>> origin/main
-
-## Exercițiu  
-
-<<<<<<< HEAD
 Proiectează un instrument MCP și un flux de lucru pentru un sistem de procesare a documentelor care:
 
 1. Acceptă documente în mai multe formate (PDF, DOCX, TXT)
@@ -2579,28 +2328,4 @@ Implementează schemele instrumentului, gestionarea erorilor și un model de flu
 Next: Best Practices [case studies](../09-CaseStudy/README.md)
 
 **Declinarea responsabilității**:  
-Acest document a fost tradus utilizând serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea umană realizată de profesioniști. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
-=======
-Proiectați o unealtă MCP și un flux de lucru pentru un sistem de procesare a documentelor care:  
-
-1. Acceptă documente în mai multe formate (PDF, DOCX, TXT)  
-2. Extrage text și informații cheie din documente  
-3. Clasifică documentele după tip și conținut  
-4. Generează un rezumat al fiecărui document  
-
-Implementați schemele uneltei, gestionarea erorilor și un model de flux de lucru care se potrivește cel mai bine acestui scenariu. Luați în considerare cum ați testa această implementare.  
-
-## Resurse  
-
-1. Alăturați-vă comunității MCP pe [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) pentru a rămâne la curent cu cele mai recente noutăți  
-2. Contribuiți la proiectele open-source [MCP](https://github.com/modelcontextprotocol)  
-3. Aplicați principiile MCP în inițiativele AI ale propriei organizații  
-4. Explorați implementările MCP specializate pentru industria dvs.  
-5. Luați în considerare cursuri avansate pe subiecte specifice MCP, cum ar fi integrarea multi-modală sau integrarea aplicațiilor enterprise  
-6. Experimentați cu construirea propriilor unelte și fluxuri MCP folosind principiile învățate prin [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
-
-Next: Best Practices [case studies](../09-CaseStudy/README.md)  
-
-**Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să aveți în vedere că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
->>>>>>> origin/main
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.

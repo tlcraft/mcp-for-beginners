@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "787440926586cd064b0899fd1c514f52",
-  "translation_date": "2025-07-14T07:15:13+00:00",
+  "original_hash": "1b000fd6e1b04c047578bfc5d07d54eb",
+  "translation_date": "2025-08-19T18:01:03+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
   "language_code": "hr"
 }
@@ -36,29 +36,32 @@ Do kraja ove radionice, savladat ćete umjetnost izgradnje inteligentnih aplikac
 
 MCP je **"USB-C za AI"** - univerzalni standard koji povezuje AI modele s vanjskim alatima i izvorima podataka.
 
-**✨ Ključne značajke:**
-- 🔄 **Standardizirana integracija**: univerzalno sučelje za povezivanje AI alata
-- 🏛️ **Fleksibilna arhitektura**: lokalni i udaljeni serveri preko stdio/SSE transporta
-- 🧰 **Bogati ekosustav**: alati, promptovi i resursi u jednom protokolu
-- 🔒 **Spreman za poduzeća**: ugrađena sigurnost i pouzdanost
+**✨ Ključne Značajke:**
 
-**🎯 Zašto je MCP važan:**
-Baš kao što je USB-C uklonio nered s kabelima, MCP uklanja složenost AI integracija. Jedan protokol, beskonačne mogućnosti.
+- 🔄 **Standardizirana Integracija**: Univerzalno sučelje za povezivanje AI alata
+- 🏛️ **Fleksibilna Arhitektura**: Lokalni i udaljeni serveri putem stdio/SSE transporta
+- 🧰 **Bogati Ekosustav**: Alati, upiti i resursi u jednom protokolu
+- 🔒 **Spremno za Poduzeća**: Ugrađena sigurnost i pouzdanost
+
+**🎯 Zašto MCP Važno:**
+Baš kao što je USB-C eliminirao kaos s kablovima, MCP eliminira složenost AI integracija. Jedan protokol, beskrajne mogućnosti.
 
 ### 🤖 AI Toolkit za Visual Studio Code (AITK)
 
-Microsoftov vodeći dodatak za razvoj AI-ja koji pretvara VS Code u moćan AI alat.
+Microsoftov vodeći dodatak za razvoj AI-a koji pretvara VS Code u AI platformu.
 
-**🚀 Osnovne mogućnosti:**
-- 📦 **Katalog modela**: pristup modelima s Azure AI, GitHub, Hugging Face, Ollama
-- ⚡ **Lokalna inferencija**: ONNX optimizirano izvođenje na CPU/GPU/NPU
-- 🏗️ **Agent Builder**: vizualni razvoj AI agenata s MCP integracijom
-- 🎭 **Višestruki modaliteti**: podrška za tekst, viziju i strukturirani izlaz
+**🚀 Osnovne Mogućnosti:**
 
-**💡 Prednosti razvoja:**
-- Deploy modela bez konfiguracije
-- Vizualno kreiranje promptova
-- Igralište za testiranje u stvarnom vremenu
+- 📦 **Katalog Modela**: Pristup modelima iz Azure AI, GitHub-a, Hugging Face-a, Ollama
+- ⚡ **Lokalna Inferencija**: ONNX-optimizirano izvođenje na CPU/GPU/NPU
+- 🏗️ **Agent Builder**: Vizualni razvoj AI agenata s MCP integracijom
+- 🎭 **Multi-modalno**: Podrška za tekst, viziju i strukturirani izlaz
+
+**💡 Prednosti Razvoja:**
+
+- Implementacija modela bez konfiguracije
+- Vizualno oblikovanje upita
+- Testiranje u stvarnom vremenu
 - Besprijekorna integracija MCP servera
 
 ## 📚 Put Učenja
@@ -66,78 +69,92 @@ Microsoftov vodeći dodatak za razvoj AI-ja koji pretvara VS Code u moćan AI al
 ### [🚀 Modul 1: Osnove AI Toolkita](./lab1/README.md)
 
 **Trajanje**: 15 minuta
-- 🛠️ Instalirajte i konfigurirajte AI Toolkit za VS Code
-- 🗂️ Istražite Katalog modela (100+ modela s GitHub, ONNX, OpenAI, Anthropic, Google)
-- 🎮 Savladajte Interaktivno igralište za testiranje modela u stvarnom vremenu
-- 🤖 Izradite svog prvog AI agenta pomoću Agent Buildera
-- 📊 Procijenite performanse modela s ugrađenim metrima (F1, relevantnost, sličnost, koherentnost)
-- ⚡ Naučite o batch obradi i podršci za višemodalne podatke
 
-**🎯 Ishod učenja**: Izradite funkcionalnog AI agenta s potpunim razumijevanjem AITK mogućnosti
+- 🛠️ Instalirajte i konfigurirajte AI Toolkit za VS Code
+- 🗂️ Istražite Katalog Modela (100+ modela s GitHub-a, ONNX-a, OpenAI-a, Anthropica, Google-a)
+- 🎮 Savladajte Interaktivno Igralište za testiranje modela u stvarnom vremenu
+- 🤖 Izgradite svog prvog AI agenta s Agent Builderom
+- 📊 Procijenite performanse modela s ugrađenim metrikama (F1, relevantnost, sličnost, koherentnost)
+- ⚡ Naučite mogućnosti obrade u serijama i podršku za multi-modalne funkcije
+
+**🎯 Ishod Učenja**: Kreirajte funkcionalnog AI agenta uz sveobuhvatno razumijevanje mogućnosti AITK-a
 
 ### [🌐 Modul 2: Osnove MCP-a s AI Toolkitom](./lab2/README.md)
 
 **Trajanje**: 20 minuta
-- 🧠 Savladajte arhitekturu i koncepte Model Context Protocola (MCP)
-- 🌐 Istražite Microsoftov MCP server ekosustav
-- 🤖 Izradite agenta za automatizaciju preglednika koristeći Playwright MCP server
+
+- 🧠 Savladajte arhitekturu i koncepte Model Context Protocol-a (MCP)
+- 🌐 Istražite Microsoftov ekosustav MCP servera
+- 🤖 Izgradite agenta za automatizaciju preglednika koristeći Playwright MCP server
 - 🔧 Integrirajte MCP servere s AI Toolkit Agent Builderom
 - 📊 Konfigurirajte i testirajte MCP alate unutar svojih agenata
-- 🚀 Izvezite i implementirajte agente pokretane MCP-om za produkciju
+- 🚀 Izvezite i implementirajte agente s MCP-om za produkcijsku upotrebu
 
-**🎯 Ishod učenja**: Implementirajte AI agenta pojačanog vanjskim alatima putem MCP-a
+**🎯 Ishod Učenja**: Implementirajte AI agenta pojačanog vanjskim alatima putem MCP-a
 
-### [🔧 Modul 3: Napredni razvoj MCP-a s AI Toolkitom](./lab3/README.md)
+### [🔧 Modul 3: Napredni Razvoj MCP-a s AI Toolkitom](./lab3/README.md)
+
 **Trajanje**: 20 minuta
+
 - 💻 Kreirajte prilagođene MCP servere koristeći AI Toolkit
 - 🐍 Konfigurirajte i koristite najnoviji MCP Python SDK (v1.9.3)
-- 🔍 Postavite i koristite MCP Inspector za otklanjanje pogrešaka
-- 🛠️ Izradite Weather MCP Server s profesionalnim radnim tokovima za debugiranje
-- 🧪 Debugirajte MCP servere u Agent Builderu i Inspector okruženjima
+- 🔍 Postavite i koristite MCP Inspector za otklanjanje grešaka
+- 🛠️ Izgradite Weather MCP Server s profesionalnim radnim tokovima za otklanjanje grešaka
+- 🧪 Otklonite greške MCP servera u Agent Builderu i Inspector okruženjima
 
-**🎯 Ishod učenja**: Razvijajte i otklanjajte pogreške na prilagođenim MCP serverima s modernim alatima
+**🎯 Ishod Učenja**: Razvijte i otklonite greške prilagođenih MCP servera koristeći moderni alat
 
-### [🐙 Modul 4: Praktični razvoj MCP-a - prilagođeni GitHub Clone Server](./lab4/README.md)
+### [🐙 Modul 4: Praktični Razvoj MCP-a - Prilagođeni GitHub Clone Server](./lab4/README.md)
+
 **Trajanje**: 30 minuta
-- 🏗️ Izradite stvarni GitHub Clone MCP Server za razvojne radne tokove
-- 🔄 Implementirajte pametno kloniranje repozitorija s validacijom i rukovanjem pogreškama
-- 📁 Kreirajte inteligentno upravljanje direktorijima i integraciju s VS Codeom
+
+- 🏗️ Izgradite stvarni GitHub Clone MCP Server za razvojne radne tokove
+- 🔄 Implementirajte pametno kloniranje repozitorija s validacijom i rukovanjem greškama
+- 📁 Kreirajte inteligentno upravljanje direktorijima i integraciju s VS Code-om
 - 🤖 Koristite GitHub Copilot Agent Mode s prilagođenim MCP alatima
 - 🛡️ Primijenite pouzdanost spremnu za produkciju i kompatibilnost na više platformi
 
-**🎯 Ishod učenja**: Implementirajte produkcijski spreman MCP server koji pojednostavljuje stvarne razvojne procese
+**🎯 Ishod Učenja**: Implementirajte MCP server spreman za produkciju koji optimizira stvarne radne tokove razvoja
 
 ## 💡 Primjene u Stvarnom Svijetu i Utjecaj
 
-### 🏢 Primjeri za poduzeća
+### 🏢 Primjeri iz Poduzeća
 
-#### 🔄 DevOps automatizacija
-Transformirajte svoj razvojni tijek rada inteligentnom automatizacijom:
-- **Pametno upravljanje repozitorijima**: AI vođeni pregled koda i odluke o spajanju
-- **Inteligentni CI/CD**: automatizirana optimizacija pipelinea na temelju promjena u kodu
-- **Triage problema**: automatska klasifikacija i dodjela bugova
+#### 🔄 Automatizacija DevOps-a
 
-#### 🧪 Revolucija osiguranja kvalitete
-Podignite testiranje na novu razinu uz AI automatizaciju:
-- **Inteligentno generiranje testova**: automatsko kreiranje sveobuhvatnih testnih skupova
-- **Vizualno regresijsko testiranje**: AI detekcija promjena u UI-ju
-- **Praćenje performansi**: proaktivno otkrivanje i rješavanje problema
+Transformirajte svoj razvojni radni tok s inteligentnom automatizacijom:
 
-#### 📊 Inteligencija podatkovnih tokova
+- **Pametno Upravljanje Repozitorijima**: AI-pokretana revizija koda i odluke o spajanju
+- **Inteligentni CI/CD**: Automatizirana optimizacija pipeline-a na temelju promjena u kodu
+- **Razvrstavanje Problema**: Automatska klasifikacija i dodjela bugova
+
+#### 🧪 Revolucija Osiguranja Kvalitete
+
+Poboljšajte testiranje uz AI-pokretanu automatizaciju:
+
+- **Pametno Generiranje Testova**: Automatsko kreiranje sveobuhvatnih testnih paketa
+- **Vizualno Testiranje Regresije**: AI-pokretano otkrivanje promjena u UI-u
+- **Praćenje Performansi**: Proaktivna identifikacija i rješavanje problema
+
+#### 📊 Inteligencija Podatkovnih Tokova
+
 Izgradite pametnije radne tokove obrade podataka:
-- **Adaptivni ETL procesi**: samopodešavajuće transformacije podataka
-- **Detekcija anomalija**: praćenje kvalitete podataka u stvarnom vremenu
-- **Inteligentno usmjeravanje**: pametno upravljanje protokom podataka
 
-#### 🎧 Unapređenje korisničkog iskustva
-Stvorite izvanredne interakcije s korisnicima:
-- **Podrška svjesna konteksta**: AI agenti s pristupom povijesti korisnika
-- **Proaktivno rješavanje problema**: prediktivna korisnička podrška
-- **Integracija na više kanala**: jedinstveno AI iskustvo na svim platformama
+- **Adaptivni ETL Procesi**: Samooptimizirajuće transformacije podataka
+- **Otkrivanje Anomalija**: Praćenje kvalitete podataka u stvarnom vremenu
+- **Pametno Usmjeravanje**: Inteligentno upravljanje protokom podataka
+
+#### 🎧 Poboljšanje Iskustva Kupaca
+
+Stvorite izvanredne interakcije s kupcima:
+
+- **Podrška Svjesna Konteksta**: AI agenti s pristupom povijesti kupaca
+- **Proaktivno Rješavanje Problema**: Prediktivna korisnička podrška
+- **Integracija Više Kanala**: Jedinstveno AI iskustvo na svim platformama
 
 ## 🛠️ Preduvjeti i Postavljanje
 
-### 💻 Zahtjevi sustava
+### 💻 Sistemski Zahtjevi
 
 | Komponenta | Zahtjev | Napomene |
 |------------|---------|----------|
@@ -145,60 +162,66 @@ Stvorite izvanredne interakcije s korisnicima:
 | **Visual Studio Code** | Najnovija stabilna verzija | Potrebno za AITK |
 | **Node.js** | v18.0+ i npm | Za razvoj MCP servera |
 | **Python** | 3.10+ | Opcionalno za Python MCP servere |
-| **Memorija** | minimalno 8GB RAM | Preporučeno 16GB za lokalne modele |
+| **Memorija** | Minimalno 8GB RAM-a | Preporučeno 16GB za lokalne modele |
+
+### 🔧 Razvojno Okruženje
 
 #### Preporučeni Dodaci za VS Code
 
-#### Preporučeni VS Code dodaci
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
 - **GitHub Copilot** (GitHub.copilot) - Opcionalno, ali korisno
 
-#### Opcionalni alati
-- **uv**: moderan Python package manager
-- **MCP Inspector**: vizualni alat za debugiranje MCP servera
-- **Playwright**: za primjere web automatizacije
+#### Opcionalni Alati
 
-## 🎖️ Ishodi učenja i put certifikacije
+- **uv**: Moderni Python upravitelj paketa
+- **MCP Inspector**: Vizualni alat za otklanjanje grešaka MCP servera
+- **Playwright**: Za primjere web automatizacije
 
-### 🏆 Popis za savladavanje vještina
+## 🎖️ Ishodi Učenja i Certifikacijski Put
 
-Završetkom ove radionice postići ćete stručnost u:
+### 🏆 Popis Vještina
 
-#### 🎯 Temeljne kompetencije
-- [ ] **MCP protokol**: duboko razumijevanje arhitekture i obrazaca implementacije
-- [ ] **AITK stručnost**: vrhunska upotreba AI Toolkita za brzi razvoj
-- [ ] **Razvoj prilagođenih servera**: izrada, implementacija i održavanje produkcijskih MCP servera
-- [ ] **Izvrsnost u integraciji alata**: besprijekorno povezivanje AI-ja s postojećim razvojnim procesima
-- [ ] **Primjena rješavanja problema**: korištenje naučenih vještina za stvarne poslovne izazove
+Završetkom ove radionice, postići ćete stručnost u:
 
-#### 🔧 Tehničke vještine
-- [ ] Postavljanje i konfiguracija AI Toolkita u VS Codeu
+#### 🎯 Osnovne Kompetencije
+
+- [ ] **Majstorstvo MCP Protokola**: Duboko razumijevanje arhitekture i obrazaca implementacije
+- [ ] **AITK Stručnost**: Ekspertna razina korištenja AI Toolkita za brzi razvoj
+- [ ] **Razvoj Prilagođenih Servera**: Izgradnja, implementacija i održavanje produkcijskih MCP servera
+- [ ] **Izvrsna Integracija Alata**: Besprijekorno povezivanje AI-a s postojećim radnim tokovima razvoja
+- [ ] **Primjena Rješavanja Problema**: Primjena naučenih vještina na stvarne poslovne izazove
+
+#### 🔧 Tehničke Vještine
+
+- [ ] Postavljanje i konfiguracija AI Toolkita u VS Code-u
 - [ ] Dizajn i implementacija prilagođenih MCP servera
 - [ ] Integracija GitHub modela s MCP arhitekturom
 - [ ] Izgradnja automatiziranih testnih radnih tokova s Playwrightom
 - [ ] Implementacija AI agenata za produkcijsku upotrebu
 - [ ] Otklanjanje grešaka i optimizacija performansi MCP servera
 
-#### 🚀 Napredne sposobnosti
+#### 🚀 Napredne Sposobnosti
+
 - [ ] Arhitektura AI integracija na razini poduzeća
 - [ ] Implementacija sigurnosnih najboljih praksi za AI aplikacije
 - [ ] Dizajn skalabilnih MCP server arhitektura
 - [ ] Kreiranje prilagođenih lanaca alata za specifične domene
 - [ ] Mentoriranje drugih u razvoju AI aplikacija
 
-## 📖 Dodatni resursi
-- [MCP specifikacija](https://modelcontextprotocol.io/docs)
-- [AI Toolkit GitHub repozitorij](https://github.com/microsoft/vscode-ai-toolkit)
-- [Zbirka uzoraka MCP servera](https://github.com/modelcontextprotocol/servers)
-- [Vodič najboljih praksi](https://modelcontextprotocol.io/docs/best-practices)
+## 📖 Dodatni Resursi
+
+- [MCP Specifikacija](https://modelcontextprotocol.io/docs)
+- [AI Toolkit GitHub Repozitorij](https://github.com/microsoft/vscode-ai-toolkit)
+- [Kolekcija Primjera MCP Servera](https://github.com/modelcontextprotocol/servers)
+- [Vodič za Najbolje Prakse](https://modelcontextprotocol.io/docs/best-practices)
 
 ---
 
-**🚀 Spremni za revoluciju u razvoju AI-ja?**
+**🚀 Spremni za revoluciju u razvoju AI radnih tokova?**
 
 Izgradimo budućnost inteligentnih aplikacija zajedno s MCP-om i AI Toolkitom!
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije proizašle iz korištenja ovog prijevoda.

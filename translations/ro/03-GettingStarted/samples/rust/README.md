@@ -2,11 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5ffc7f32ed12664b640175f27f0a997a",
-<<<<<<< HEAD
-  "translation_date": "2025-08-18T23:45:45+00:00",
-=======
-  "translation_date": "2025-08-18T19:06:08+00:00",
->>>>>>> origin/main
+  "translation_date": "2025-08-19T16:37:43+00:00",
   "source_file": "03-GettingStarted/samples/rust/README.md",
   "language_code": "ro"
 }
@@ -78,10 +74,5 @@ cargo build
 cargo run
 ```
 
-<<<<<<< HEAD
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru a asigura acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
-=======
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
->>>>>>> origin/main

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7b4b9bfacd2926725e6f1cda82bc8ff5",
-  "translation_date": "2025-07-17T10:36:16+00:00",
+  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
+  "translation_date": "2025-08-19T15:49:13+00:00",
   "source_file": "06-CommunityContributions/README.md",
   "language_code": "cs"
 }
@@ -34,7 +34,7 @@ Ekosystém MCP se skládá z různých komponent a účastníků, kteří spole�
 
 ### Klíčové komponenty komunity
 
-1. **Správci hlavního protokolu**: Oficiální [GitHub organizace Model Context Protocol](https://github.com/modelcontextprotocol) spravuje hlavní specifikace MCP a referenční implementace.
+1. **Správci jádra protokolu**: Oficiální [GitHub organizace Model Context Protocol](https://github.com/modelcontextprotocol) spravuje hlavní specifikace MCP a referenční implementace.
 2. **Vývojáři nástrojů**: Jednotlivci a týmy, které vytvářejí nástroje a servery MCP.
 3. **Poskytovatelé integrací**: Společnosti, které integrují MCP do svých produktů a služeb.
 4. **Koncoví uživatelé**: Vývojáři a organizace, které používají MCP ve svých aplikacích.
@@ -47,7 +47,7 @@ Ekosystém MCP se skládá z různých komponent a účastníků, kteří spole�
 - [GitHub organizace MCP](https://github.com/modelcontextprotocol)
 - [Dokumentace MCP](https://modelcontextprotocol.io/)
 - [Specifikace MCP](https://modelcontextprotocol.io/docs/specification)
-- [GitHub diskuse](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Diskuse na GitHubu](https://github.com/orgs/modelcontextprotocol/discussions)
 - [Repozitář příkladů a serverů MCP](https://github.com/modelcontextprotocol/servers)
 
 #### Zdroje řízené komunitou
@@ -67,7 +67,7 @@ Ekosystém MCP se skládá z různých komponent a účastníků, kteří spole�
 Ekosystém MCP vítá různé typy příspěvků:
 
 1. **Příspěvky ke kódu**:
-   - Vylepšení hlavního protokolu
+   - Vylepšení jádra protokolu
    - Opravy chyb
    - Implementace nástrojů a serverů
    - Knihovny klient/server v různých jazycích
@@ -86,14 +86,14 @@ Ekosystém MCP vítá různé typy příspěvků:
 
 ### Proces přispívání: Jádro protokolu
 
-Pro přispívání do jádra MCP protokolu nebo oficiálních implementací dodržujte zásady z [oficiálních pravidel přispívání](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+Chcete-li přispět do jádra protokolu MCP nebo oficiálních implementací, postupujte podle těchto zásad z [oficiálních pokynů pro přispívání](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
 1. **Jednoduchost a minimalismus**: Specifikace MCP udržuje vysokou laťku pro přidávání nových konceptů. Je snazší něco do specifikace přidat než odstranit.
 2. **Konkrétní přístup**: Změny ve specifikaci by měly vycházet z konkrétních implementačních výzev, nikoli ze spekulativních nápadů.
 3. **Fáze návrhu**:
-   - Definice: Prozkoumejte problém, ověřte, že i ostatní uživatelé MCP mají podobný problém
-   - Prototyp: Vytvořte ukázkové řešení a předveďte jeho praktické využití
-   - Napsání: Na základě prototypu napište návrh specifikace
+   - Definice: Prozkoumejte problémovou oblast, ověřte, že ostatní uživatelé MCP čelí podobnému problému.
+   - Prototyp: Vytvořte ukázkové řešení a demonstrujte jeho praktické použití.
+   - Návrh: Na základě prototypu napište návrh specifikace.
 
 ### Nastavení vývojového prostředí
 
@@ -317,7 +317,7 @@ Chcete-li úspěšně přispět do projektů MCP:
 2. **Dodržujte stylový průvodce**: Držte se stylu a konvencí projektu.
 3. **Pište testy**: Přidejte jednotkové testy ke svým příspěvkům.
 4. **Dokumentujte svou práci**: Přidejte jasnou dokumentaci k novým funkcím nebo změnám.
-5. **Podávejte cílené PR**: Udržujte pull requesty zaměřené na jeden problém nebo funkci.
+5. **Odesílejte cílené PR**: Udržujte pull requesty zaměřené na jeden problém nebo funkci.
 6. **Reagujte na zpětnou vazbu**: Buďte otevření zpětné vazbě na své příspěvky.
 
 ### Ukázkový pracovní postup přispívání
@@ -363,14 +363,14 @@ K dispozici je několik rámců, které usnadňují vývoj serverů MCP:
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
 
 2. **Komunitní rámce**:
-   - [MCP-Framework](https://mcp-framework.com/) - Vytvářejte servery MCP elegantně a rychle v TypeScriptu.
+   - [MCP-Framework](https://mcp-framework.com/) - Rychlý a elegantní vývoj serverů MCP v TypeScriptu.
    - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - MCP servery řízené anotacemi v Javě.
    - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java rámec pro servery MCP.
    - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Startovací projekt Next.js pro servery MCP.
 
 ### Vývoj sdílených nástrojů
 
-#### Příklad .NET: Vytvoření balíčku sdíleného nástroje
+#### Příklad v .NET: Vytvoření sdíleného balíčku nástrojů
 
 ```csharp
 // Create a new .NET library project
@@ -577,7 +577,7 @@ public class WeatherForecastTool implements Tool {
 // mvn deploy
 ```
 
-#### Příklad Python: Publikování balíčku na PyPI
+#### Příklad v Pythonu: Publikace balíčku na PyPI
 
 ```python
 # Directory structure for a PyPI package:
@@ -703,7 +703,7 @@ Při sdílení nástrojů MCP s komunitou:
 
 4. **Bezpečnost**:
    - Používejte bezpečné API klíče a autentizaci.
-   - Validujte a sanitizujte vstupy.
+   - Validujte a čistěte vstupy.
    - Implementujte omezení rychlosti pro externí API volání.
 
 5. **Testování**:
@@ -717,7 +717,7 @@ Efektivní spolupráce je klíčem k prosperujícímu ekosystému MCP.
 
 ### Komunikační kanály
 
-- GitHub Issues a diskuse
+- GitHub Issues a Diskuse
 - Microsoft Tech Community
 - Discord a Slack kanály
 - Stack Overflow (tagy: `model-context-protocol` nebo `mcp`)
@@ -824,19 +824,19 @@ async def delete_tool(tool_name: str):
 
 ## Klíčové poznatky
 
-- Komunita MCP je různorodá a vítá různé typy příspěvků
-- Přispívání do MCP může zahrnovat vylepšení jádra protokolu i vlastní nástroje
-- Dodržování pravidel přispívání zvyšuje šanci na přijetí vašeho PR
-- Vytváření a sdílení MCP nástrojů je cenný způsob, jak rozšířit ekosystém
-- Spolupráce v komunitě je nezbytná pro růst a zlepšování MCP
+- Komunita MCP je rozmanitá a vítá různé typy příspěvků.
+- Přispívání do MCP může zahrnovat vylepšení jádra protokolu i vlastní nástroje.
+- Dodržování pokynů pro přispívání zvyšuje šanci na přijetí vašeho PR.
+- Vytváření a sdílení nástrojů MCP je cenný způsob, jak rozšířit ekosystém.
+- Spolupráce v komunitě je zásadní pro růst a zlepšování MCP.
 
 ## Cvičení
 
-1. Identifikujte oblast v ekosystému MCP, kde byste mohli přispět podle svých dovedností a zájmů
-2. Forkněte repozitář MCP a nastavte si lokální vývojové prostředí
-3. Vytvořte malé vylepšení, opravu chyby nebo nástroj, který by komunitě pomohl
-4. Zdokumentujte svůj příspěvek s odpovídajícími testy a dokumentací
-5. Odešlete pull request do příslušného repozitáře
+1. Identifikujte oblast v ekosystému MCP, kde byste mohli přispět na základě svých dovedností a zájmů.
+2. Forkněte repozitář MCP a nastavte si lokální vývojové prostředí.
+3. Vytvořte malé vylepšení, opravu chyby nebo nástroj, který by komunitě prospěl.
+4. Zdokumentujte svůj příspěvek s odpovídajícími testy a dokumentací.
+5. Odesílejte pull request do příslušného repozitáře.
 
 ## Další zdroje
 
@@ -846,5 +846,5 @@ async def delete_tool(tool_name: str):
 
 Další: [Lekce z raného přijetí](../07-LessonsfromEarlyAdoption/README.md)
 
-**Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+**Prohlášení**:  
+Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

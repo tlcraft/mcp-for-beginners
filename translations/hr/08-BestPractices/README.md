@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "80e5c8949af5af0f401fce6f905990aa",
-  "translation_date": "2025-07-17T12:02:32+00:00",
+  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
+  "translation_date": "2025-08-19T17:46:00+00:00",
   "source_file": "08-BestPractices/README.md",
   "language_code": "hr"
 }
@@ -11,68 +11,69 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![MCP Najbolje Prakse Razvoja](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.hr.png)](https://youtu.be/W56H9W7x-ao)
 
-_(Kliknite na sliku iznad za pregled videa ove lekcije)_
+_(Kliknite na sliku iznad za video lekcije)_
 
 ## Pregled
 
-Ova lekcija fokusira se na napredne najbolje prakse za razvoj, testiranje i implementaciju MCP servera i značajki u produkcijskim okruženjima. Kako MCP ekosustavi postaju složeniji i važniji, pridržavanje utvrđenih obrazaca osigurava pouzdanost, održivost i interoperabilnost. Ova lekcija objedinjuje praktične spoznaje stečene kroz stvarne MCP implementacije kako bi vas vodila u stvaranju robusnih, učinkovitih servera s učinkovitim resursima, promptovima i alatima.
+Ova lekcija se fokusira na napredne najbolje prakse za razvoj, testiranje i implementaciju MCP servera i funkcionalnosti u produkcijskim okruženjima. Kako MCP ekosustavi postaju sve složeniji i važniji, pridržavanje utvrđenih obrazaca osigurava pouzdanost, održivost i interoperabilnost. Ova lekcija objedinjuje praktična iskustva stečena iz stvarnih MCP implementacija kako bi vas vodila u stvaranju robusnih, učinkovitih servera s učinkovitim resursima, promptovima i alatima.
 
-## Ciljevi Učenja
+## Ciljevi učenja
 
-Na kraju ove lekcije moći ćete:
-- Primijeniti najbolje industrijske prakse u dizajnu MCP servera i značajki
-- Kreirati sveobuhvatne strategije testiranja MCP servera
-- Dizajnirati učinkovite, višekratno upotrebljive obrasce radnih tokova za složene MCP aplikacije
-- Implementirati pravilno rukovanje pogreškama, zapisivanje i promatranje u MCP serverima
+Na kraju ove lekcije, moći ćete:
+
+- Primijeniti industrijske najbolje prakse u dizajnu MCP servera i funkcionalnosti
+- Kreirati sveobuhvatne strategije testiranja za MCP servere
+- Dizajnirati učinkovite, višekratno upotrebljive obrasce tijeka rada za složene MCP aplikacije
+- Implementirati pravilno rukovanje greškama, logiranje i praćenje u MCP serverima
 - Optimizirati MCP implementacije za performanse, sigurnost i održivost
 
-## Osnovna načela MCP-a
+## Osnovni MCP Principi
 
-Prije nego što se upustimo u specifične prakse implementacije, važno je razumjeti temeljna načela koja vode učinkovit razvoj MCP-a:
+Prije nego što se upustimo u specifične prakse implementacije, važno je razumjeti osnovne principe koji vode učinkovit MCP razvoj:
 
-1. **Standardizirana komunikacija**: MCP koristi JSON-RPC 2.0 kao temelj, pružajući dosljedan format za zahtjeve, odgovore i rukovanje pogreškama u svim implementacijama.
+1. **Standardizirana komunikacija**: MCP koristi JSON-RPC 2.0 kao temelj, pružajući dosljedan format za zahtjeve, odgovore i rukovanje greškama u svim implementacijama.
 
-2. **Dizajn usmjeren na korisnika**: Uvijek dajte prioritet pristanku korisnika, kontroli i transparentnosti u vašim MCP implementacijama.
+2. **Dizajn usmjeren na korisnika**: Uvijek dajte prednost pristanku korisnika, kontroli i transparentnosti u vašim MCP implementacijama.
 
-3. **Sigurnost na prvom mjestu**: Implementirajte snažne sigurnosne mjere uključujući autentifikaciju, autorizaciju, validaciju i ograničavanje brzine.
+3. **Sigurnost na prvom mjestu**: Implementirajte robusne sigurnosne mjere uključujući autentifikaciju, autorizaciju, validaciju i ograničavanje brzine.
 
-4. **Modularna arhitektura**: Dizajnirajte svoje MCP servere modularno, gdje svaki alat i resurs ima jasnu, fokusiranu svrhu.
+4. **Modularna arhitektura**: Dizajnirajte MCP servere s modularnim pristupom, gdje svaki alat i resurs ima jasnu, fokusiranu svrhu.
 
-5. **Stanje veza**: Iskoristite mogućnost MCP-a da održava stanje kroz više zahtjeva za koherentnije i kontekstualno svjesne interakcije.
+5. **Stalne veze**: Iskoristite MCP mogućnost održavanja stanja kroz više zahtjeva za koherentnije i kontekstualno svjesne interakcije.
 
 ## Službene MCP Najbolje Prakse
 
 Sljedeće najbolje prakse izvedene su iz službene dokumentacije Model Context Protocol-a:
 
-### Najbolje Prakse Sigurnosti
+### Sigurnosne Najbolje Prakse
 
-1. **Pristanak i kontrola korisnika**: Uvijek zahtijevajte izričit pristanak korisnika prije pristupa podacima ili izvođenja operacija. Omogućite jasnu kontrolu nad time koji se podaci dijele i koje su radnje ovlaštene.
+1. **Pristanak i kontrola korisnika**: Uvijek zahtijevajte izričit pristanak korisnika prije pristupa podacima ili izvođenja operacija. Omogućite jasnu kontrolu nad time koji se podaci dijele i koje su radnje autorizirane.
 
-2. **Privatnost podataka**: Izlažite korisničke podatke samo uz izričit pristanak i štitite ih odgovarajućim kontrolama pristupa. Zaštitite od neovlaštenog prijenosa podataka.
+2. **Privatnost podataka**: Izlažite korisničke podatke samo uz izričit pristanak i zaštitite ih odgovarajućim kontrolama pristupa. Osigurajte se protiv neovlaštenog prijenosa podataka.
 
-3. **Sigurnost alata**: Zahtijevajte izričit pristanak korisnika prije pozivanja bilo kojeg alata. Osigurajte da korisnici razumiju funkcionalnost svakog alata i provodite snažne sigurnosne granice.
+3. **Sigurnost alata**: Zahtijevajte izričit pristanak korisnika prije pozivanja bilo kojeg alata. Osigurajte da korisnici razumiju funkcionalnost svakog alata i provedite robusne sigurnosne granice.
 
-4. **Kontrola dopuštenja alata**: Konfigurirajte koje alate model smije koristiti tijekom sesije, osiguravajući da su dostupni samo eksplicitno ovlašteni alati.
+4. **Kontrola dozvola alata**: Konfigurirajte koji alati model smije koristiti tijekom sesije, osiguravajući da su dostupni samo izričito autorizirani alati.
 
-5. **Autentifikacija**: Zahtijevajte ispravnu autentifikaciju prije nego što se omogući pristup alatima, resursima ili osjetljivim operacijama koristeći API ključeve, OAuth tokene ili druge sigurne metode autentifikacije.
+5. **Autentifikacija**: Zahtijevajte pravilnu autentifikaciju prije odobravanja pristupa alatima, resursima ili osjetljivim operacijama koristeći API ključeve, OAuth tokene ili druge sigurne metode autentifikacije.
 
-6. **Validacija parametara**: Provodite validaciju za sva pozivanja alata kako biste spriječili da neispravan ili zlonamjeran unos dođe do implementacija alata.
+6. **Validacija parametara**: Provedite validaciju za sve pozive alata kako biste spriječili neispravan ili zlonamjeran unos da dođe do implementacije alata.
 
-7. **Ograničenje brzine**: Implementirajte ograničenje brzine kako biste spriječili zloupotrebu i osigurali poštenu upotrebu resursa servera.
+7. **Ograničavanje brzine**: Implementirajte ograničavanje brzine kako biste spriječili zloupotrebu i osigurali pravednu upotrebu resursa servera.
 
 ### Najbolje Prakse Implementacije
 
-1. **Pregovaranje mogućnosti**: Tijekom uspostave veze razmijenite informacije o podržanim značajkama, verzijama protokola, dostupnim alatima i resursima.
+1. **Pregovaranje o sposobnostima**: Tijekom postavljanja veze, razmijenite informacije o podržanim značajkama, verzijama protokola, dostupnim alatima i resursima.
 
-2. **Dizajn alata**: Kreirajte fokusirane alate koji dobro obavljaju jednu stvar, umjesto monolitnih alata koji pokrivaju više područja.
+2. **Dizajn alata**: Kreirajte fokusirane alate koji dobro obavljaju jednu stvar, umjesto monolitnih alata koji se bave višestrukim problemima.
 
-3. **Rukovanje pogreškama**: Implementirajte standardizirane poruke i kodove pogrešaka kako biste olakšali dijagnostiku problema, elegantno rukovali neuspjesima i pružili korisne povratne informacije.
+3. **Rukovanje greškama**: Implementirajte standardizirane poruke o greškama i kodove kako biste pomogli u dijagnosticiranju problema, graciozno rukovali neuspjesima i pružili korisne povratne informacije.
 
-4. **Zapisivanje**: Konfigurirajte strukturirane zapise za reviziju, otklanjanje pogrešaka i nadzor interakcija protokola.
+4. **Logiranje**: Konfigurirajte strukturirane logove za reviziju, otklanjanje grešaka i praćenje interakcija protokola.
 
-5. **Praćenje napretka**: Za dugotrajne operacije izvještavajte o napretku kako biste omogućili responzivne korisničke sučelja.
+5. **Praćenje napretka**: Za dugotrajne operacije, prijavite ažuriranja napretka kako biste omogućili responzivna korisnička sučelja.
 
-6. **Otkaži zahtjev**: Omogućite klijentima da otkažu zahtjeve u tijeku koji više nisu potrebni ili traju predugo.
+6. **Otkazivanje zahtjeva**: Omogućite klijentima da otkažu zahtjeve koji više nisu potrebni ili predugo traju.
 
 ## Dodatne Reference
 
@@ -81,15 +82,15 @@ Za najnovije informacije o MCP najboljim praksama, pogledajte:
 - [MCP Dokumentacija](https://modelcontextprotocol.io/)
 - [MCP Specifikacija](https://spec.modelcontextprotocol.io/)
 - [GitHub Repozitorij](https://github.com/modelcontextprotocol)
-- [Najbolje Prakse Sigurnosti](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [Sigurnosne Najbolje Prakse](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 
-## Primjeri praktične implementacije
+## Praktični Primjeri Implementacije
 
 ### Najbolje Prakse Dizajna Alata
 
-#### 1. Princip jedne odgovornosti
+#### 1. Načelo Jedne Odgovornosti
 
-Svaki MCP alat treba imati jasnu, fokusiranu svrhu. Umjesto stvaranja monolitnih alata koji pokušavaju pokriti više područja, razvijajte specijalizirane alate koji su izvrsni u određenim zadacima.
+Svaki MCP alat treba imati jasnu, fokusiranu svrhu. Umjesto stvaranja monolitnih alata koji pokušavaju obraditi više problema, razvijajte specijalizirane alate koji izvrsno obavljaju specifične zadatke.
 
 ```csharp
 // A focused tool that does one thing well
@@ -295,7 +296,7 @@ class FileOperationTool {
 }
 ```
 
-### Primjeri Implementacije Sigurnosti
+### Primjeri Sigurnosne Implementacije
 
 #### 1. Autentifikacija i Autorizacija
 
@@ -501,7 +502,7 @@ describe('WeatherForecastTool', () => {
 
 ### 2. Integracijsko Testiranje
 
-Testirajte kompletan tijek od zahtjeva klijenta do odgovora servera:
+Testirajte cijeli tijek od zahtjeva klijenta do odgovora servera:
 
 ```python
 # Python integration test example
@@ -540,7 +541,7 @@ async def test_mcp_server_integration():
 
 ### 1. Strategije Keširanja
 
-Implementirajte odgovarajuće keširanje kako biste smanjili latenciju i potrošnju resursa:
+Implementirajte odgovarajuće keširanje kako biste smanjili kašnjenje i potrošnju resursa:
 
 ```csharp
 // C# example with caching
@@ -611,7 +612,7 @@ public class CachedWeatherTool : ITool
 
 #### 2. Injekcija Ovisnosti i Testabilnost
 
-Design tools to receive their dependencies through constructor injection, making them testable and configurable:
+Dizajnirajte alate tako da primaju svoje ovisnosti putem injekcije konstruktora, čineći ih testabilnima i konfigurabilnima:
 
 ```java
 // Java example with dependency injection
@@ -635,9 +636,9 @@ public class CurrencyConversionTool implements Tool {
 }
 ```
 
-#### 3. Composable Tools
+#### 3. Složivi Alati
 
-Design tools that can be composed together to create more complex workflows:
+Dizajnirajte alate koji se mogu kombinirati kako bi se stvorili složeniji tijekovi rada:
 
 ```python
 # Python example showing composable tools
@@ -668,7 +669,7 @@ class DataVisualizationTool(Tool):
 # These tools can be used independently or as part of a workflow
 ```
 
-### Schema Design Best Practices
+### Najbolje Prakse Dizajna Sheme
 
 Shema je ugovor između modela i vašeg alata. Dobro dizajnirane sheme vode do bolje upotrebljivosti alata.
 
@@ -713,7 +714,7 @@ public object GetSchema()
 
 #### 2. Ograničenja Validacije
 
-Include validation constraints to prevent invalid inputs:
+Uključite ograničenja validacije kako biste spriječili neispravne unose:
 
 ```java
 Map<String, Object> getSchema() {
@@ -755,7 +756,7 @@ Map<String, Object> getSchema() {
 
 #### 3. Dosljedne Strukture Povratnih Odgovora
 
-Maintain consistency in your response structures to make it easier for models to interpret results:
+Održavajte dosljednost u strukturama odgovora kako bi modeli lakše interpretirali rezultate:
 
 ```python
 async def execute_async(self, request):
@@ -842,9 +843,9 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Structured Error Responses
+#### 2. Strukturirani Odgovori o Greškama
 
-Return structured error information when possible:
+Vratite strukturirane informacije o greškama kad god je to moguće:
 
 ```java
 @Override
@@ -1067,7 +1068,7 @@ class TokenBucketRateLimiter:
         self.last_refill = now
 ```
 
-### Najbolje Prakse Sigurnosti
+### Sigurnosne Najbolje Prakse
 
 #### 1. Validacija Unosa
 
@@ -1114,7 +1115,7 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Provjere Autorizacije
 
-Implementirajte odgovarajuće provjere autorizacije:
+Implementirajte pravilne provjere autorizacije:
 
 ```java
 @Override
@@ -1257,7 +1258,7 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. Schema Validation Testing
+#### 2. Testiranje Validacije Sheme
 
 Testirajte da su sheme valjane i pravilno provode ograničenja:
 
@@ -1405,7 +1406,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. Testiranje MCP Servera
 
-Test the MCP server with full tool registration and execution:
+Testirajte MCP server s punom registracijom alata i izvršenjem:
 
 ```java
 @SpringBootTest
@@ -1471,9 +1472,9 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. End-to-End Testing
+#### 3. Testiranje Od Kraja do Kraja
 
-Test complete workflows from model prompt to tool execution:
+Testirajte kompletne tijekove rada od prompta modela do izvršenja alata:
 
 ```python
 @pytest.mark.asyncio
@@ -1532,7 +1533,7 @@ async def test_model_interaction_with_tool():
 
 #### 1. Testiranje Opterećenja
 
-Testirajte koliko istovremenih zahtjeva vaš MCP server može podnijeti:
+Testirajte koliko istovremenih zahtjeva vaš MCP server može obraditi:
 
 ```csharp
 [Fact]
@@ -1622,7 +1623,7 @@ public void testServerUnderStress() {
 
 #### 3. Praćenje i Profiliranje
 
-Set up monitoring for long-term performance analysis:
+Postavite praćenje za dugoročnu analizu performansi:
 
 ```python
 # Configure monitoring for an MCP server
@@ -1664,13 +1665,13 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP Workflow Design Patterns
+## Dizajnerski Obrasci MCP Tijekova Rada
 
-Well-designed MCP workflows improve efficiency, reliability, and maintainability. Here are key patterns to follow:
+Dobro dizajnirani MCP tijekovi rada poboljšavaju učinkovitost, pouzdanost i održivost. Evo ključnih obrazaca koje treba slijediti:
 
 ### 1. Obrazac Lanca Alata
 
-Connect multiple tools in a sequence where each tool's output becomes the input for the next:
+Povežite više alata u sekvencu gdje izlaz svakog alata postaje ulaz za sljedeći:
 
 ```python
 # Python Chain of Tools implementation
@@ -1711,7 +1712,7 @@ result = await data_processing_chain.execute(
 
 ### 2. Obrazac Dispečera
 
-Use a central tool that dispatches to specialized tools based on input:
+Koristite centralni alat koji šalje zahtjeve specijaliziranim alatima na temelju ulaza:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1793,7 +1794,7 @@ public class ContentDispatcherTool : IMcpTool
 
 ### 3. Obrazac Paralelnog Procesiranja
 
-Execute multiple tools simultaneously for efficiency:
+Izvršite više alata istovremeno radi učinkovitosti:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1861,7 +1862,7 @@ public class ParallelDataProcessingWorkflow {
 
 ### 4. Obrazac Oporavka od Grešaka
 
-Implementirajte graciozne povratne mehanizme za neuspjehe alata:
+Implementirajte graciozne zamjene za neuspjehe alata:
 
 ```python
 class ResilientWorkflow:
@@ -1915,9 +1916,9 @@ async def get_weather(workflow, location):
     )
 ```
 
-### 5. Workflow Composition Pattern
+### 5. Obrazac Kompozicije Tijekova Rada
 
-Build complex workflows by composing simpler ones:
+Izgradite složene tijekove rada kombiniranjem jednostavnijih:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1968,9 +1969,9 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 
 ## Pregled
 
-Testing is a critical aspect of developing reliable, high-quality MCP servers. This guide provides comprehensive best practices and tips for testing your MCP servers throughout the development lifecycle, from unit tests to integration tests and end-to-end validation.
+Testiranje je ključni aspekt razvoja pouzdanih, visokokvalitetnih MCP servera. Ovaj vodič pruža sveobuhvatne najbolje prakse i savjete za testiranje vaših MCP servera tijekom cijelog životnog ciklusa razvoja, od jediničnih testova do integracijskih testova i validacije od kraja do kraja.
 
-## Why Testing Matters for MCP Servers
+## Zašto Testiranje Važno za MCP Servere
 
 MCP serveri služe kao ključni posrednici između AI modela i klijentskih aplikacija. Temeljito testiranje osigurava:
 
@@ -1988,11 +1989,11 @@ Jedinični testovi provjeravaju pojedinačne komponente vašeg MCP servera u izo
 
 #### Što Testirati
 
-1. **Resource Handlers**: Test each resource handler's logic independently
-2. **Tool Implementations**: Verify tool behavior with various inputs
-3. **Prompt Templates**: Ensure prompt templates render correctly
-4. **Schema Validation**: Test parameter validation logic
-5. **Error Handling**: Verify error responses for invalid inputs
+1. **Rukovatelji Resursa**: Testirajte logiku svakog rukovatelja resursa neovisno
+2. **Implementacije Alata**: Provjerite ponašanje alata s različitim unosima
+3. **Predlošci Promptova**: Osigurajte da se predlošci promptova pravilno prikazuju
+4. **Validacija Sheme**: Testirajte logiku validacije parametara
+5. **Rukovanje Greškama**: Provjerite odgovore na greške za neispravne unose
 
 #### Najbolje Prakse za Jedinično Testiranje
 
@@ -2045,7 +2046,7 @@ Integracijski testovi provjeravaju interakcije između komponenti vašeg MCP ser
 #### Što Testirati
 
 1. **Inicijalizacija Servera**: Testirajte pokretanje servera s različitim konfiguracijama
-2. **Registracija Ruta**: Provjerite jesu li svi krajnji točke ispravno registrirane
+2. **Registracija Ruta**: Provjerite jesu li svi krajnji točke pravilno registrirane
 3. **Obrada Zahtjeva**: Testirajte cijeli ciklus zahtjeva i odgovora
 4. **Propagacija Grešaka**: Osigurajte da se greške pravilno obrađuju između komponenti
 5. **Autentifikacija i Autorizacija**: Testirajte sigurnosne mehanizme
@@ -2086,19 +2087,19 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 }
 ```
 
-### End-to-End Testing (Top Layer)
+### Testiranje Od Kraja do Kraja (Gornji Sloj)
 
-End-to-end tests verify the complete system behavior from client to server.
+Testovi od kraja do kraja provjeravaju kompletno ponašanje sustava od klijenta do servera.
 
 #### Što Testirati
 
-1. **Client-Server Communication**: Test complete request-response cycles
-2. **Real Client SDKs**: Test with actual client implementations
-3. **Performance Under Load**: Verify behavior with multiple concurrent requests
-4. **Error Recovery**: Test system recovery from failures
-5. **Long-Running Operations**: Verify handling of streaming and long operations
+1. **Komunikacija Klijent-Server**: Testirajte kompletne cikluse zahtjeva i odgovora
+2. **Stvarni Klijentski SDK-ovi**: Testirajte s stvarnim klijentskim implementacijama
+3. **Performanse Pod Opterećenjem**: Provjerite ponašanje s više istovremenih zahtjeva
+4. **Oporavak od Grešaka**: Testirajte oporavak sustava od neuspjeha
+5. **Dugotrajne Operacije**: Provjerite rukovanje streamingom i dugotrajnim operacijama
 
-#### Best Practices for E2E Testing
+#### Najbolje Prakse za E2E Testiranje
 
 ```typescript
 // Example E2E test with a client in TypeScript
@@ -2136,10 +2137,10 @@ Simulacija je ključna za izolaciju komponenti tijekom testiranja.
 
 ### Komponente za Simulaciju
 
-1. **External AI Models**: Mock model responses for predictable testing
-2. **External Services**: Mock API dependencies (databases, third-party services)
-3. **Authentication Services**: Mock identity providers
-4. **Resource Providers**: Mock expensive resource handlers
+1. **Vanjski AI Modeli**: Simulirajte odgovore modela za predvidljivo testiranje
+2. **Vanjske Usluge**: Simulirajte API ovisnosti (baze podataka, usluge trećih strana)
+3. **Usluge Autentifikacije**: Simulirajte pružatelje identiteta
+4. **Pružatelji Resursa**: Simulirajte skupe rukovatelje resursa
 
 ### Primjer: Simulacija Odgovora AI Modela
 
@@ -2177,73 +2178,16 @@ def test_with_mock_model(mock_model):
 
 Testiranje performansi ključno je za produkcijske MCP servere.
 
-### What to Measure
+### Što Mjeriti
 
-1. **Latency**: Response time for requests
-2. **Throughput**: Requests handled per second
-3. **Resource Utilization**: CPU, memory, network usage
-4. **Concurrency Handling**: Behavior under parallel requests
-5. **Scaling Characteristics**: Performance as load increases
+1. **Kašnjenje**: Vrijeme odgovora za zahtjeve
+2. **Propusnost**: Broj obrađenih zahtjeva po sekundi
+3. **Iskorištenost Resursa**: Potrošnja CPU-a, memorije, mreže
+4. **Rukovanje Istovremenosti**: Ponašanje pod
+3. **Osnovne performanse**: Održavajte referentne vrijednosti performansi kako biste otkrili regresije  
+4. **Sigurnosne provjere**: Automatizirajte sigurnosno testiranje kao dio cjevovoda  
 
-### Tools for Performance Testing
-
-- **k6**: Open-source load testing tool
-- **JMeter**: Comprehensive performance testing
-- **Locust**: Python-based load testing
-- **Azure Load Testing**: Cloud-based performance testing
-
-### Example: Basic Load Test with k6
-
-```javascript
-// k6 skripta za load testiranje MCP servera
-import http from 'k6/http';
-import { check, sleep } from 'k6';
-
-export const options = {
-  vus: 10,  // 10 virtualnih korisnika
-  duration: '30s',
-};
-
-export default function () {
-  const payload = JSON.stringify({
-    tool: 'calculator',
-    parameters: {
-      operation: 'add',
-      a: Math.floor(Math.random() * 100),
-      b: Math.floor(Math.random() * 100)
-    }
-  });
-
-  const params = {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer test-token'
-    },
-  };
-
-  const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
-  
-  check(res, {
-    'status je 200': (r) => r.status === 200,
-    'vrijeme odgovora < 500ms': (r) => r.timings.duration < 500,
-  });
-  
-  sleep(1);
-}
-```
-
-## Test Automation for MCP Servers
-
-Automating your tests ensures consistent quality and faster feedback loops.
-
-### CI/CD Integration
-
-1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality
-2. **Integration Tests in Staging**: Run integration tests in pre-production environments
-3. **Performance Baselines**: Maintain performance benchmarks to catch regressions
-4. **Security Scans**: Automate security testing as part of the pipeline
-
-### Example CI Pipeline (GitHub Actions)
+### Primjer CI cjevovoda (GitHub Actions)  
 
 ```yaml
 name: MCP Server Tests
@@ -2284,7 +2228,7 @@ jobs:
 
 ## Testiranje usklađenosti sa MCP specifikacijom  
 
-Provjerite da vaš server ispravno implementira MCP specifikaciju.  
+Provjerite da vaš poslužitelj ispravno implementira MCP specifikaciju.  
 
 ### Ključna područja usklađenosti  
 
@@ -2321,40 +2265,40 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```  
 
-## Top 10 savjeta za učinkovito testiranje MCP servera  
+## Top 10 savjeta za učinkovito testiranje MCP poslužitelja  
 
-1. **Testirajte definicije alata zasebno**: Provjerite definicije shema neovisno o logici alata  
-2. **Koristite parametarske testove**: Testirajte alate s različitim ulazima, uključujući rubne slučajeve  
-3. **Provjerite odgovore na pogreške**: Osigurajte pravilno rukovanje svim mogućim pogreškama  
-4. **Testirajte logiku autorizacije**: Provjerite ispravnu kontrolu pristupa za različite korisničke uloge  
-5. **Pratite pokrivenost testovima**: Ciljajte na visoku pokrivenost kritičnog koda  
+1. **Testirajte definicije alata odvojeno**: Provjerite sheme neovisno o logici alata  
+2. **Koristite parametarske testove**: Testirajte alate s raznim ulazima, uključujući rubne slučajeve  
+3. **Provjerite odgovore na greške**: Provjerite ispravno rukovanje svim mogućim uvjetima grešaka  
+4. **Testirajte logiku autorizacije**: Osigurajte pravilnu kontrolu pristupa za različite korisničke uloge  
+5. **Pratite pokrivenost testova**: Ciljajte visoku pokrivenost kritičnog koda  
 6. **Testirajte streaming odgovore**: Provjerite ispravno rukovanje streaming sadržajem  
-7. **Simulirajte mrežne probleme**: Testirajte ponašanje u uvjetima loše mreže  
+7. **Simulirajte mrežne probleme**: Testirajte ponašanje u lošim mrežnim uvjetima  
 8. **Testirajte ograničenja resursa**: Provjerite ponašanje pri dosezanju kvota ili ograničenja brzine  
-9. **Automatizirajte regresijske testove**: Izgradite skup testova koji se pokreću pri svakoj promjeni koda  
+9. **Automatizirajte regresijske testove**: Izgradite paket koji se pokreće pri svakoj promjeni koda  
 10. **Dokumentirajte testne slučajeve**: Održavajte jasnu dokumentaciju testnih scenarija  
 
 ## Uobičajene zamke u testiranju  
 
-- **Prevelika oslanjanja na testiranje samo "sretnog puta"**: Obavezno temeljito testirajte i slučajeve pogrešaka  
-- **Ignoriranje testiranja performansi**: Otkrivajte uska grla prije nego što utječu na produkciju  
-- **Testiranje samo u izolaciji**: Kombinirajte jedinicne, integracijske i end-to-end testove  
-- **Nepotpuna pokrivenost API-ja**: Osigurajte da su svi endpointi i funkcionalnosti testirani  
-- **Nekonzistentna testna okruženja**: Koristite kontejnere za dosljedna testna okruženja  
+- **Preveliko oslanjanje na testiranje "sretnih putova"**: Obavezno temeljito testirajte slučajeve grešaka  
+- **Ignoriranje testiranja performansi**: Identificirajte uska grla prije nego što utječu na produkciju  
+- **Testiranje samo u izolaciji**: Kombinirajte jedinice, integraciju i E2E testove  
+- **Nepotpuna pokrivenost API-ja**: Osigurajte da su sve krajnje točke i značajke testirane  
+- **Nedosljedna testna okruženja**: Koristite kontejnere za osiguranje dosljednih testnih okruženja  
 
 ## Zaključak  
 
-Sveobuhvatna strategija testiranja ključna je za razvoj pouzdanih i kvalitetnih MCP servera. Primjenom najboljih praksi i savjeta iz ovog vodiča osigurat ćete da vaše MCP implementacije zadovoljavaju najviše standarde kvalitete, pouzdanosti i performansi.
+Sveobuhvatna strategija testiranja ključna je za razvoj pouzdanih, visokokvalitetnih MCP poslužitelja. Implementacijom najboljih praksi i savjeta navedenih u ovom vodiču, možete osigurati da vaša MCP implementacija zadovoljava najviše standarde kvalitete, pouzdanosti i performansi.  
 
 ## Ključne točke  
 
-1. **Dizajn alata**: Slijedite princip jedne odgovornosti, koristite dependency injection i dizajnirajte za kompozabilnost  
-2. **Dizajn sheme**: Kreirajte jasne, dobro dokumentirane sheme s odgovarajućim validacijskim ograničenjima  
-3. **Rukovanje pogreškama**: Implementirajte elegantno rukovanje pogreškama, strukturirane odgovore i logiku ponovnog pokušaja  
+1. **Dizajn alata**: Slijedite princip jedne odgovornosti, koristite injekciju ovisnosti i dizajnirajte za kompozibilnost  
+2. **Dizajn sheme**: Kreirajte jasne, dobro dokumentirane sheme s odgovarajućim ograničenjima validacije  
+3. **Rukovanje greškama**: Implementirajte elegantno rukovanje greškama, strukturirane odgovore na greške i logiku ponovnog pokušaja  
 4. **Performanse**: Koristite keširanje, asinkrono procesiranje i ograničavanje resursa  
-5. **Sigurnost**: Primijenite temeljitu validaciju unosa, provjere autorizacije i rukovanje osjetljivim podacima  
-6. **Testiranje**: Kreirajte sveobuhvatne jedinicne, integracijske i end-to-end testove  
-7. **Radni obrasci**: Primijenite etablirane obrasce poput lanaca, dispatcher-a i paralelnog procesiranja  
+5. **Sigurnost**: Primijenite temeljitu validaciju ulaza, provjere autorizacije i rukovanje osjetljivim podacima  
+6. **Testiranje**: Kreirajte sveobuhvatne jedinice, integracijske i end-to-end testove  
+7. **Obrasci tijeka rada**: Primijenite ustaljene obrasce poput lanaca, dispečera i paralelnog procesiranja  
 
 ## Vježba  
 
@@ -2365,7 +2309,7 @@ Dizajnirajte MCP alat i tijek rada za sustav obrade dokumenata koji:
 3. Klasificira dokumente prema vrsti i sadržaju  
 4. Generira sažetak svakog dokumenta  
 
-Implementirajte sheme alata, rukovanje pogreškama i radni obrazac koji najbolje odgovara ovom scenariju. Razmislite kako biste testirali ovu implementaciju.
+Implementirajte sheme alata, rukovanje greškama i obrazac tijeka rada koji najbolje odgovara ovom scenariju. Razmislite kako biste testirali ovu implementaciju.  
 
 ## Resursi  
 
@@ -2379,4 +2323,4 @@ Implementirajte sheme alata, rukovanje pogreškama i radni obrazac koji najbolje
 Sljedeće: Najbolje prakse [studije slučaja](../09-CaseStudy/README.md)  
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije proizašle iz korištenja ovog prijevoda.
