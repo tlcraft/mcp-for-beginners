@@ -172,7 +172,7 @@ Whether you’re just getting started with MCP or already building with it, Day 
 
 Is for MCP builders. We’ll go deep into implementation strategies and best practices for creating MCP servers and integrating MCP into your AI workflows.
 
-### Topics include:
+#### Topics include:
 
 - Building MCP Servers and integrating them into agent experiences
 - Prompt-driven development
