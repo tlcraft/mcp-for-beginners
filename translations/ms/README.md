@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "305a41966c4c6d376e5cb7d99af2bf45",
-  "translation_date": "2025-08-18T17:47:45+00:00",
+  "original_hash": "f8162ac4132ec1964655ae5d25a703c9",
+  "translation_date": "2025-08-21T07:34:08+00:00",
   "source_file": "README.md",
   "language_code": "ms"
 }
@@ -23,13 +23,13 @@ CO_OP_TRANSLATOR_METADATA:
 Ikuti langkah-langkah berikut untuk mula menggunakan sumber ini:
 1. **Fork Repositori**: Klik [![Fork GitHub](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Klon Repositori**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Sertai Azure AI Foundry Discord dan berhubung dengan pakar serta pembangun lain**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Sertai Discord Azure AI Foundry dan berhubung dengan pakar serta pembangun lain**](https://discord.com/invite/ByRwuEEgH4)
 
 ### 🌐 Sokongan Pelbagai Bahasa
 
 #### Disokong melalui GitHub Action (Automatik & Sentiasa Dikemas Kini)
 
- [Arab](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaria](../bg/README.md) | [Burma (Myanmar)](../my/README.md) | [Cina (Ringkas)](../zh/README.md) | [Cina (Tradisional, Hong Kong)](../hk/README.md) | [Cina (Tradisional, Macau)](../mo/README.md) | [Cina (Tradisional, Taiwan)](../tw/README.md) | [Croatia](../hr/README.md) | [Czech](../cs/README.md) | [Denmark](../da/README.md) | [Belanda](../nl/README.md) | [Finland](../fi/README.md) | [Perancis](../fr/README.md) | [Jerman](../de/README.md) | [Yunani](../el/README.md) | [Ibrani](../he/README.md) | [Hindi](../hi/README.md) | [Hungary](../hu/README.md) | [Indonesia](../id/README.md) | [Itali](../it/README.md) | [Jepun](../ja/README.md) | [Korea](../ko/README.md) | [Melayu](./README.md) | [Marathi](../mr/README.md) | [Nepal](../ne/README.md) | [Norway](../no/README.md) | [Parsi (Farsi)](../fa/README.md) | [Poland](../pl/README.md) | [Portugis (Brazil)](../br/README.md) | [Portugis (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romania](../ro/README.md) | [Rusia](../ru/README.md) | [Serbia (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenia](../sl/README.md) | [Sepanyol](../es/README.md) | [Swahili](../sw/README.md) | [Sweden](../sv/README.md) | [Tagalog (Filipina)](../tl/README.md) | [Thai](../th/README.md) | [Turki](../tr/README.md) | [Ukraine](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnam](../vi/README.md)
+ [Arab](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaria](../bg/README.md) | [Burma (Myanmar)](../my/README.md) | [Cina (Ringkas)](../zh/README.md) | [Cina (Tradisional, Hong Kong)](../hk/README.md) | [Cina (Tradisional, Macau)](../mo/README.md) | [Cina (Tradisional, Taiwan)](../tw/README.md) | [Croatia](../hr/README.md) | [Czech](../cs/README.md) | [Denmark](../da/README.md) | [Belanda](../nl/README.md) | [Finland](../fi/README.md) | [Perancis](../fr/README.md) | [Jerman](../de/README.md) | [Greek](../el/README.md) | [Ibrani](../he/README.md) | [Hindi](../hi/README.md) | [Hungary](../hu/README.md) | [Indonesia](../id/README.md) | [Itali](../it/README.md) | [Jepun](../ja/README.md) | [Korea](../ko/README.md) | [Melayu](./README.md) | [Marathi](../mr/README.md) | [Nepal](../ne/README.md) | [Norway](../no/README.md) | [Parsi (Farsi)](../fa/README.md) | [Poland](../pl/README.md) | [Portugis (Brazil)](../br/README.md) | [Portugis (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romania](../ro/README.md) | [Rusia](../ru/README.md) | [Serbia (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenia](../sl/README.md) | [Sepanyol](../es/README.md) | [Swahili](../sw/README.md) | [Sweden](../sv/README.md) | [Tagalog (Filipina)](../tl/README.md) | [Thai](../th/README.md) | [Turki](../tr/README.md) | [Ukraine](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnam](../vi/README.md)
 
 # 🚀 Kurikulum Model Context Protocol (MCP) untuk Pemula
 
@@ -49,38 +49,12 @@ Sama ada anda seorang pembangun AI, arkitek sistem, atau jurutera perisian, pand
 - 🧑‍💻 [Repositori GitHub MCP](https://github.com/modelcontextprotocol) – SDK sumber terbuka, alat, dan contoh kod
 - 🌐 [Komuniti MCP](https://github.com/orgs/modelcontextprotocol/discussions) – Sertai perbincangan dan sumbang kepada komuniti
 
-### ➡️Tonton Sesuai Permintaan - MCP Dev Days
-Bersedia untuk dua hari wawasan teknikal mendalam, sambungan komuniti, dan pembelajaran praktikal di MCP Dev Days, acara maya yang didedikasikan untuk Model Context Protocol (MCP) — standard baru yang menghubungkan model AI dan alat yang mereka gunakan.  
-Anda boleh menonton MCP Dev Days dengan mendaftar di halaman acara kami: https://aka.ms/mcpdevdays. 
-
-#### Hari 1: Produktiviti MCP, Alat Pembangun, & Komuniti: 
-
-Fokus pada memperkasakan pembangun untuk menggunakan MCP dalam aliran kerja mereka dan meraikan komuniti MCP yang luar biasa. Kami akan disertai oleh ahli komuniti dan rakan kongsi seperti Arcade, Block, Okta, dan Neon untuk melihat bagaimana mereka bekerjasama dengan Microsoft untuk membentuk ekosistem MCP yang terbuka dan boleh diperluas.  
-- Demo dunia sebenar di VS Code, Visual Studio, GitHub Copilot, dan alat komuniti popular  
-- Aliran kerja pembangun yang praktikal dan berasaskan konteks  
-- Sesi dan wawasan yang dipimpin komuniti  
-Sama ada anda baru bermula dengan MCP atau sudah membangunnya, Hari 1 akan memberikan inspirasi dan langkah-langkah yang boleh diambil.
-
-#### Hari 2: Bina Pelayan MCP dengan Keyakinan
-
-Dikhususkan untuk pembangun MCP. Kami akan mendalami strategi pelaksanaan dan amalan terbaik untuk mencipta pelayan MCP dan mengintegrasikan MCP ke dalam aliran kerja AI anda.
-
-### Topik termasuk:
-
-- Membina Pelayan MCP dan mengintegrasikannya ke dalam pengalaman agen  
-- Pembangunan berasaskan prompt  
-- Amalan terbaik keselamatan  
-- Menggunakan blok binaan seperti Functions, ACA, dan Pengurusan API  
-- Penjajaran pendaftaran dan alat (1P + 3P)  
-
-Jika anda seorang pembangun, pembina alat, atau ahli strategi produk AI, hari ini penuh dengan wawasan yang anda perlukan untuk membina penyelesaian MCP yang berskala, selamat, dan bersedia untuk masa depan.
-
 ## 🧭 Gambaran Keseluruhan Kurikulum MCP
 
 ### 📚 Struktur Kurikulum Lengkap
 
 | Modul | Topik | Penerangan | Pautan |
-|--------|-------|-------------|------|
+|-------|-------|------------|--------|
 | **Modul 1-3: Asas** | | | |
 | 00 | Pengenalan kepada MCP | Gambaran keseluruhan Model Context Protocol dan kepentingannya dalam saluran AI | [Baca lebih lanjut](./00-Introduction/README.md) |
 | 01 | Konsep Teras Dijelaskan | Penjelasan mendalam tentang konsep teras MCP | [Baca lebih lanjut](./01-CoreConcepts/README.md) |
@@ -89,7 +63,7 @@ Jika anda seorang pembangun, pembina alat, atau ahli strategi produk AI, hari in
 | **Modul 3: Membina Pelayan & Klien Pertama Anda** | | | |
 | 3.1 | Pelayan Pertama | Cipta pelayan MCP pertama anda | [Panduan](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | Klien Pertama | Bangunkan klien MCP asas | [Panduan](./03-GettingStarted/02-client/README.md) |
-| 3.3 | Klien dengan LLM | Integrasikan model bahasa besar | [Panduan](./03-GettingStarted/03-llm-client/README.md) |
+| 3.3 | Klien dengan LLM | Integrasi model bahasa besar | [Panduan](./03-GettingStarted/03-llm-client/README.md) |
 | 3.4 | Integrasi VS Code | Gunakan pelayan MCP dalam VS Code | [Panduan](./03-GettingStarted/04-vscode/README.md) |
 | 3.5 | Pelayan SSE | Cipta pelayan menggunakan Server-Sent Events | [Panduan](./03-GettingStarted/05-sse-server/README.md) |
 | 3.6 | Penstriman HTTP | Laksanakan penstriman HTTP dalam MCP | [Panduan](./03-GettingStarted/06-http-streaming/README.md) |
@@ -97,7 +71,7 @@ Jika anda seorang pembangun, pembina alat, atau ahli strategi produk AI, hari in
 | 3.8 | Pengujian | Uji pelaksanaan pelayan MCP anda | [Panduan](./03-GettingStarted/08-testing/README.md) |
 | 3.9 | Penerapan | Terapkan pelayan MCP ke pengeluaran | [Panduan](./03-GettingStarted/09-deployment/README.md) |
 | **Modul 4-5: Praktikal & Lanjutan** | | | |
-| 04 | Pelaksanaan Praktikal | SDK, debugging, pengujian, templat prompt boleh guna semula | [Baca lebih lanjut](./04-PracticalImplementation/README.md) |
+| 04 | Pelaksanaan Praktikal | SDK, penyahpepijatan, pengujian, templat prompt boleh guna semula | [Baca lebih lanjut](./04-PracticalImplementation/README.md) |
 | 05 | Topik Lanjutan dalam MCP | AI multi-modal, penskalaan, penggunaan perusahaan | [Baca lebih lanjut](./05-AdvancedTopics/README.md) |
 | 5.1 | Integrasi Azure | Integrasi MCP dengan Azure | [Panduan](./05-AdvancedTopics/mcp-integration/README.md) |
 | 5.2 | Multi-modaliti | Bekerja dengan pelbagai modaliti | [Panduan](./05-AdvancedTopics/mcp-multi-modality/README.md) |
@@ -115,12 +89,12 @@ Jika anda seorang pembangun, pembina alat, atau ahli strategi produk AI, hari in
 | 5.14 | Kejuruteraan Konteks | Teknik untuk kejuruteraan konteks yang berkesan | [Panduan](./05-AdvancedTopics/mcp-contextengineering/README.md) |
 | **Modul 6-10: Komuniti & Amalan Terbaik** | | | |
 | 06 | Sumbangan Komuniti | Cara menyumbang kepada ekosistem MCP | [Panduan](./06-CommunityContributions/README.md) |
-| 07 | Pandangan dari Pengguna Awal | Kisah pelaksanaan dunia sebenar | [Panduan](./07-LessonsFromEarlyAdoption/README.md) |
-| 08 | Amalan Terbaik untuk MCP | Prestasi, toleransi kesilapan, ketahanan | [Panduan](./08-BestPractices/README.md) |
+| 07 | Pandangan daripada Pengguna Awal | Kisah pelaksanaan dunia sebenar | [Panduan](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | Amalan Terbaik untuk MCP | Prestasi, toleransi kesalahan, ketahanan | [Panduan](./08-BestPractices/README.md) |
 | 09 | Kajian Kes MCP | Contoh pelaksanaan praktikal | [Panduan](./09-CaseStudy/README.md) |
 | 10 | Bengkel Praktikal | Membina Pelayan MCP dengan AI Toolkit | [Makmal](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
-### 💻 Projek Kod Contoh
+### 💻 Projek Contoh Kod
 
 #### Contoh Kalkulator MCP Asas
 
@@ -137,11 +111,11 @@ Jika anda seorang pembangun, pembina alat, atau ahli strategi produk AI, hari in
 
 | Bahasa | Penerangan | Pautan |
 |--------|------------|--------|
-| C# | Contoh Lanjutan | [Lihat Kod](./04-PracticalImplementation/samples/csharp/README.md) |
-| Java dengan Spring | Contoh Aplikasi Kontena | [Lihat Kod](./04-PracticalImplementation/samples/java/containerapp/README.md) |
-| JavaScript | Contoh Lanjutan | [Lihat Kod](./04-PracticalImplementation/samples/javascript/README.md) |
-| Python | Pelaksanaan Kompleks | [Lihat Kod](../../04-PracticalImplementation/samples/python/READMEmd) |
-| TypeScript | Contoh Kontena | [Lihat Kod](./04-PracticalImplementation/samples/typescript/README.md) |
+| C# | Contoh Lanjutan | [View Code](./04-PracticalImplementation/samples/csharp/README.md) |
+| Java dengan Spring | Contoh Aplikasi Container | [View Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
+| JavaScript | Contoh Lanjutan | [View Code](./04-PracticalImplementation/samples/javascript/README.md) |
+| Python | Implementasi Kompleks | [View Code](../../04-PracticalImplementation/samples/python/READMEmd) |
+| TypeScript | Contoh Container | [View Code](./04-PracticalImplementation/samples/typescript/README.md) |
 
 ## 🎯 Prasyarat untuk Belajar MCP
 
@@ -152,25 +126,25 @@ Untuk mendapatkan manfaat maksimum daripada kurikulum ini, anda perlu mempunyai:
 - Kefahaman tentang konsep REST dan HTTP
 - (Pilihan) Latar belakang dalam konsep AI/ML
 
-- Menyertai perbincangan komuniti kami untuk sokongan
+- Sertai perbincangan komuniti kami untuk sokongan
 
 ## 📚 Panduan Belajar & Sumber
 
-Repositori ini termasuk beberapa sumber untuk membantu anda menavigasi dan belajar dengan berkesan:
+Repositori ini menyediakan pelbagai sumber untuk membantu anda belajar dengan berkesan:
 
 ### Panduan Belajar
 
-Panduan Belajar [Panduan Belajar](./study_guide.md) yang komprehensif tersedia untuk membantu anda menavigasi repositori ini dengan berkesan. Panduan ini termasuk:
+Panduan Belajar [Study Guide](./study_guide.md) yang komprehensif tersedia untuk membantu anda menavigasi repositori ini dengan berkesan. Panduan ini merangkumi:
 
 - Peta kurikulum visual yang menunjukkan semua topik yang diliputi
 - Pecahan terperinci setiap bahagian repositori
-- Panduan tentang cara menggunakan projek contoh
+- Panduan tentang cara menggunakan projek sampel
 - Laluan pembelajaran yang disyorkan untuk tahap kemahiran yang berbeza
 - Sumber tambahan untuk melengkapkan perjalanan pembelajaran anda
 
 ### Changelog
 
-Kami menyelenggara [Changelog](./changelog.md) terperinci yang menjejaki semua kemas kini penting kepada bahan kurikulum, termasuk:
+Kami menyelenggara [Changelog](./changelog.md) terperinci yang merekodkan semua kemas kini penting kepada bahan kurikulum, termasuk:
 
 - Penambahan kandungan baharu
 - Perubahan struktur
@@ -179,20 +153,55 @@ Kami menyelenggara [Changelog](./changelog.md) terperinci yang menjejaki semua k
 
 ## 🛠️ Cara Menggunakan Kurikulum Ini dengan Berkesan
 
-Setiap pelajaran dalam panduan ini termasuk:
+Setiap pelajaran dalam panduan ini merangkumi:
 
 1. Penjelasan jelas tentang konsep MCP  
 2. Contoh kod langsung dalam pelbagai bahasa  
 3. Latihan untuk membina aplikasi MCP sebenar  
 4. Sumber tambahan untuk pelajar lanjutan  
 
-## 🌟 Penghargaan Komuniti
+## Acara 
 
-Terima kasih kepada Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) kerana menyumbang contoh kod penting. 
+### [MCP Dev Days Julai 2025](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+#### [➡️Tonton On Demand - MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+Bersiaplah untuk dua hari penuh wawasan teknikal mendalam, hubungan komuniti, dan pembelajaran langsung di MCP Dev Days, acara maya yang didedikasikan untuk Model Context Protocol (MCP) — standard yang muncul untuk menghubungkan model AI dan alat yang mereka gunakan. Anda boleh menonton MCP Dev Days dengan mendaftar di halaman acara kami: https://aka.ms/mcpdevdays. 
+
+#### [Hari 1: Produktiviti MCP, DevTools, & Komuniti:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+
+Fokus pada memperkasakan pembangun untuk menggunakan MCP dalam aliran kerja mereka dan meraikan komuniti MCP yang luar biasa. Kami akan disertai oleh ahli komuniti dan rakan kongsi seperti Arcade, Block, Okta, dan Neon untuk melihat bagaimana mereka bekerjasama dengan Microsoft untuk membentuk ekosistem MCP yang terbuka dan boleh diperluas. 
+Demo dunia nyata merentasi VS Code, Visual Studio, GitHub Copilot, dan alat komuniti popular
+Aliran kerja pembangunan yang praktikal dan berasaskan konteks
+Sesi dan wawasan yang dipimpin oleh komuniti
+Sama ada anda baru bermula dengan MCP atau sudah membina dengannya, Hari 1 akan memberikan inspirasi dan panduan yang boleh diambil tindakan.
+
+#### [Hari 2: Bina Pelayan MCP dengan Keyakinan](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+
+Dikhususkan untuk pembangun MCP. Kami akan mendalami strategi pelaksanaan dan amalan terbaik untuk mencipta pelayan MCP dan mengintegrasikan MCP ke dalam aliran kerja AI anda.
+
+#### Topik termasuk:
+
+- Membangun Pelayan MCP dan mengintegrasikannya ke dalam pengalaman agen
+- Pembangunan berasaskan prompt
+- Amalan terbaik keselamatan
+- Menggunakan blok binaan seperti Functions, ACA, dan API Management
+- Penjajaran dan alat pendaftaran (1P + 3P)
+
+Jika anda seorang pembangun, pembina alat, atau ahli strategi produk AI, hari ini penuh dengan wawasan yang anda perlukan untuk membina penyelesaian MCP yang berskala, selamat, dan bersedia untuk masa depan.
+
+### MCP Boot Camp Ogos 2025
+Belajar melalui sesi video intensif cara mencipta pelayan MCP, mengintegrasi dengan VS Code, dan melancarkan secara profesional di Azure berdasarkan kandungan kurikulum MCP untuk Pemula. Dapatkan kemahiran praktikal dalam teknologi yang sudah digunakan oleh syarikat besar.
+
+#### [➡️Tonton On Demand MCP Bootcamp | English](https://developer.microsoft.com/en-us/reactor/series/s-1568/)
+#### [➡️Tonton On Demand MCP Bootcamp | Brasil](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
+#### [➡️Tonton On Demand MCP Bootcamp | Spanish](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
+
+## 🌟 Terima Kasih Komuniti
+
+Terima kasih kepada Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) kerana menyumbang sampel kod penting. 
 
 ## 📜 Maklumat Lesen
 
-Kandungan ini dilesenkan di bawah **Lesen MIT**. Untuk terma dan syarat, lihat [LICENSE](../../LICENSE).
+Kandungan ini dilesenkan di bawah **MIT License**. Untuk terma dan syarat, lihat [LICENSE](../../LICENSE).
 
 ## 🤝 Garis Panduan Sumbangan
 
@@ -202,10 +211,10 @@ hak untuk menggunakan sumbangan anda. Untuk butiran, lawati
 <https://cla.opensource.microsoft.com>.
 
 Apabila anda menghantar permintaan tarik, bot CLA akan secara automatik menentukan sama ada anda perlu memberikan
-CLA dan menghiasi PR dengan sewajarnya (contohnya, semakan status, komen). Ikuti sahaja arahan
+CLA dan menghias PR dengan sewajarnya (contohnya, pemeriksaan status, komen). Ikuti sahaja arahan
 yang diberikan oleh bot. Anda hanya perlu melakukan ini sekali untuk semua repositori yang menggunakan CLA kami.
 
-Projek ini telah mengguna pakai [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+Projek ini telah mengadopsi [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 Untuk maklumat lanjut lihat [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) atau
 hubungi [opencode@microsoft.com](mailto:opencode@microsoft.com) dengan sebarang soalan atau komen tambahan.
 
@@ -216,7 +225,7 @@ Repositori ini disusun seperti berikut:
 - **Kurikulum Teras (00-10)**: Kandungan utama yang disusun dalam sepuluh modul berturutan
 - **images/**: Diagram dan ilustrasi yang digunakan sepanjang kurikulum
 - **translations/**: Sokongan pelbagai bahasa dengan terjemahan automatik
-- **translated_images/**: Versi lokal diagram dan ilustrasi
+- **translated_images/**: Versi diagram dan ilustrasi yang telah dilokalkan
 - **study_guide.md**: Panduan komprehensif untuk menavigasi repositori
 - **changelog.md**: Rekod semua perubahan penting kepada bahan kurikulum
 - **mcp.json**: Fail konfigurasi untuk spesifikasi MCP
@@ -238,15 +247,15 @@ Pasukan kami menghasilkan kursus lain! Lihat:
 - [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot untuk Pembangun C#/.NET](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 ## ™️ Notis Tanda Dagangan
 
-Projek ini mungkin mengandungi tanda dagangan atau logo untuk projek, produk, atau perkhidmatan. Penggunaan yang dibenarkan untuk tanda dagangan atau logo Microsoft tertakluk kepada dan mesti mengikuti
+Projek ini mungkin mengandungi tanda dagangan atau logo untuk projek, produk, atau perkhidmatan. Penggunaan yang dibenarkan untuk tanda dagangan atau logo Microsoft mesti mematuhi dan mengikuti
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
 Penggunaan tanda dagangan atau logo Microsoft dalam versi yang diubah suai projek ini tidak boleh menyebabkan kekeliruan atau menyiratkan penajaan oleh Microsoft.
-Sebarang penggunaan tanda dagangan atau logo pihak ketiga adalah tertakluk kepada dasar pihak ketiga tersebut.
+Sebarang penggunaan tanda dagangan atau logo pihak ketiga mesti mematuhi dasar pihak ketiga tersebut.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
