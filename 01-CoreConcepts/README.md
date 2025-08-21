@@ -4,7 +4,9 @@
 
 _(Click the image above to view video of this lesson)_
 
-The [Model Context Protocol (MCP)](https://gi- **Explicit User Consent**: All data access and operations require explicit user approval before execution. Users must clearly understand what data will be accessed and what actions will be performed, with granular control over permissions and authorizations.
+The [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) is a powerful, standardized framework that optimizes communication between Large Language Models (LLMs) and external tools, applications, and data sources. This guide will walk you through the core concepts of MCP, ensuring you understand its client-server architecture, essential components, communication mechanics, and implementation best practices.
+
+- **Explicit User Consent**: All data access and operations require explicit user approval before execution. Users must clearly understand what data will be accessed and what actions will be performed, with granular control over permissions and authorizations.
 
 - **Data Privacy Protection**: User data is only exposed with explicit consent and must be protected by robust access controls throughout the entire interaction lifecycle. Implementations must prevent unauthorized data transmission and maintain strict privacy boundaries.
 
@@ -17,7 +19,7 @@ The [Model Context Protocol (MCP)](https://gi- **Explicit User Consent**: All da
 - **Permission Management**: Implement fine-grained permission systems that allow users to control which servers, tools, and resources are accessible
 - **Authentication & Authorization**: Use secure authentication methods (OAuth, API keys) with proper token management and expiration  
 - **Input Validation**: Validate all parameters and data inputs according to defined schemas to prevent injection attacks
-- **Audit Logging**: Maintain comprehensive logs of all operations for security monitoring and compliancecom/modelcontextprotocol) is a powerful, standardized framework that optimizes communication between Large Language Models (LLMs) and external tools, applications, and data sources. This guide will walk you through the core concepts of MCP, ensuring you understand its client-server architecture, essential components, communication mechanics, and implementation best practices.
+- **Audit Logging**: Maintain comprehensive logs of all operations for security monitoring and compliance
 
 ## Overview
 
