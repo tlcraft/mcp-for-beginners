@@ -105,7 +105,7 @@ app = Starlette(
     - `MapMcp`：`/SSE`や`/messages`のようなルートを追加します。
 ```
 
-Now that we know a little bit more about SSE, let's build an SSE server next.
+SSE についてもう少し理解できたので、次は SSE サーバーを構築してみましょう。
 
 ## Exercise: Creating an SSE Server
 
