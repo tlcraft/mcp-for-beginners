@@ -42,32 +42,6 @@ Whether you're an AI developer, system architect, or software engineer, this gui
 - 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples
 - 🌐 [MCP Community](https://github.com/orgs/modelcontextprotocol/discussions) – Join discussions and contribute to the community
 
-
- ### ➡️Watch on Demand - MCP Dev Days
-Get ready for two days of deep technical insight, community connection, and hands-on learning at MCP Dev Days, a virtual event dedicated to the Model Context Protocol (MCP) — the emerging standard that bridges AI models and the tools they rely on.
-You can watch MCP Dev Days by registering on our event page: https://aka.ms/mcpdevdays. 
-
-#### Day 1: MCP Productivity, DevTools, & Community: 
-
-Is all about empowering developers to use MCP in their developer workflow and celebrating the amazing MCP community. We’ll be joined with community members and partners such as Arcade, Block, Okta, and Neon to see how they are collaborating with Microsoft to shape an open, extensible MCP ecosystem. Real-world demos across VS Code, Visual Studio, GitHub Copilot, and popular community tools
-Practical, context-driven dev workflows
-Community-led sessions and insights
-Whether you’re just getting started with MCP or already building with it, Day 1 will set the stage with inspiration and actionable takeaways.
-
-#### Day 2: Build MCP Servers with Confidence
-
-Is for MCP builders. We’ll go deep into implementation strategies and best practices for creating MCP servers and integrating MCP into your AI workflows.
-
-### Topics include:
-
-- Building MCP Servers and integrating them into agent experiences
-- Prompt-driven development
-- Security best practices
-- Using building blocks like Functions, ACA, and API Management
-- Registry alignment and tooling (1P + 3P)
-
-If you’re a developer, tool builder, or AI product strategist, this day is packed with the insights you need to build scalable, secure, and future-ready MCP solutions.
-
 ## 🧭 MCP Curriculum Overview
 
 ### 📚 Complete Curriculum Structure
@@ -179,6 +153,41 @@ Each lesson in this guide includes:
 2. Live code examples in multiple languages  
 3. Exercises to build real MCP applications  
 4. Extra resources for advanced learners
+
+## Events 
+
+### [MCP Dev Days July 2025](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+#### [➡️Watch on Demand - MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+Get ready for two days of deep technical insight, community connection, and hands-on learning at MCP Dev Days, a virtual event dedicated to the Model Context Protocol (MCP) — the emerging standard that bridges AI models and the tools they rely on.
+You can watch MCP Dev Days by registering on our event page: https://aka.ms/mcpdevdays. 
+
+#### [Day 1: MCP Productivity, DevTools, & Community:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+
+Is all about empowering developers to use MCP in their developer workflow and celebrating the amazing MCP community. We’ll be joined with community members and partners such as Arcade, Block, Okta, and Neon to see how they are collaborating with Microsoft to shape an open, extensible MCP ecosystem. Real-world demos across VS Code, Visual Studio, GitHub Copilot, and popular community tools
+Practical, context-driven dev workflows
+Community-led sessions and insights
+Whether you’re just getting started with MCP or already building with it, Day 1 will set the stage with inspiration and actionable takeaways.
+
+#### [Day 2: Build MCP Servers with Confidence](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+
+Is for MCP builders. We’ll go deep into implementation strategies and best practices for creating MCP servers and integrating MCP into your AI workflows.
+
+#### Topics include:
+
+- Building MCP Servers and integrating them into agent experiences
+- Prompt-driven development
+- Security best practices
+- Using building blocks like Functions, ACA, and API Management
+- Registry alignment and tooling (1P + 3P)
+
+If you’re a developer, tool builder, or AI product strategist, this day is packed with the insights you need to build scalable, secure, and future-ready MCP solutions.
+
+### MCP Boot Camp August 2025
+Learn in intensive video sessions how to create MCP servers, integrate with VS Code, and deploy professionally on Azure based on content from the MCP for Beginners curriculum. Walk away with practical skills in a technology that major companies are already using.
+
+#### [➡️Watch on Demand MCP Bootcamp | English](https://developer.microsoft.com/en-us/reactor/series/s-1568/)
+#### [➡️Watch on Demand MCP Bootcamp | Brasil](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
+#### [➡️Watch on Demand MCP Bootcamp | Spanish](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
 
 
 ## 🌟 Community Thanks
