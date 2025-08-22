@@ -107,7 +107,7 @@ app = Starlette(
 
 SSE についてもう少し理解できたので、次は SSE サーバーを構築してみましょう。
 
-## Exercise: Creating an SSE Server
+## 演習: SSE サーバーの作成
 
 To create our server, we need to keep two things in mind:
 
