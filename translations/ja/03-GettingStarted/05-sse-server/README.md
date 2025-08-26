@@ -109,10 +109,12 @@ SSE についてもう少し理解できたので、次は SSE サーバーを�
 
 ## 演習: SSE サーバーの作成
 
-To create our server, we need to keep two things in mind:
+サーバーを作成するには、次の 2 つの点に留意する必要があります。
+
 
 - 接続とメッセージのエンドポイントを公開するには、Web サーバーを使用する必要があります。
 - Build our server like we normally do with tools, resources and prompts when we were using stdio.
+
 
 ### -1- Create a server instance
 
