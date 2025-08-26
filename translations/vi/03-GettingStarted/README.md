@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "858362ce0118de3fec0f9114bf396101",
-  "translation_date": "2025-08-18T17:19:00+00:00",
+  "original_hash": "1197b6dbde36773e04a5ae826557fdb9",
+  "translation_date": "2025-08-26T18:01:29+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "vi"
 }
@@ -19,20 +19,19 @@ Phần này bao gồm một số bài học:
 
 - **2 Client**, trong bài học này, bạn sẽ học cách viết một client có thể kết nối với máy chủ của bạn, [đến bài học](02-client/README.md)
 
-- **3 Client với LLM**, một cách tốt hơn để viết client là thêm LLM vào để nó có thể "đàm phán" với máy chủ của bạn về những việc cần làm, [đến bài học](03-llm-client/README.md)
+- **3 Client với LLM**, một cách viết client tốt hơn là thêm LLM vào để nó có thể "đàm phán" với máy chủ của bạn về những việc cần làm, [đến bài học](03-llm-client/README.md)
 
-- **4 Sử dụng chế độ GitHub Copilot Agent của máy chủ trong Visual Studio Code**. Tại đây, chúng ta sẽ xem cách chạy máy chủ MCP từ trong Visual Studio Code, [đến bài học](04-vscode/README.md)
+- **4 Sử dụng chế độ GitHub Copilot Agent trong Visual Studio Code**. Tại đây, chúng ta sẽ xem cách chạy máy chủ MCP từ trong Visual Studio Code, [đến bài học](04-vscode/README.md)
 
-- **5 Sử dụng từ SSE (Server Sent Events)** SSE là một tiêu chuẩn cho việc truyền dữ liệu từ máy chủ đến client, cho phép máy chủ gửi cập nhật theo thời gian thực đến client qua HTTP [đến bài học](05-sse-server/README.md)
+- **5 Máy chủ Transport stdio** stdio transport là tiêu chuẩn được khuyến nghị cho giao tiếp giữa máy chủ và client MCP trong đặc tả hiện tại, cung cấp giao tiếp an toàn dựa trên quy trình con, [đến bài học](05-stdio-server/README.md)
 
-- **6 HTTP Streaming với MCP (Streamable HTTP)**. Tìm hiểu về HTTP streaming hiện đại, thông báo tiến trình, và cách triển khai máy chủ và client MCP theo thời gian thực, có khả năng mở rộng bằng Streamable HTTP. [đến bài học](06-http-streaming/README.md)
+- **6 HTTP Streaming với MCP (HTTP có thể truyền)**. Tìm hiểu về HTTP streaming hiện đại, thông báo tiến độ, và cách triển khai máy chủ và client MCP theo thời gian thực, có khả năng mở rộng bằng HTTP có thể truyền. [đến bài học](06-http-streaming/README.md)
 
 - **7 Sử dụng AI Toolkit cho VSCode** để tiêu thụ và thử nghiệm các client và máy chủ MCP của bạn [đến bài học](07-aitk/README.md)
 
 - **8 Kiểm tra**. Tại đây, chúng ta sẽ tập trung vào cách kiểm tra máy chủ và client của bạn theo nhiều cách khác nhau, [đến bài học](08-testing/README.md)
 
 - **9 Triển khai**. Chương này sẽ xem xét các cách khác nhau để triển khai các giải pháp MCP của bạn, [đến bài học](09-deployment/README.md)
-
 
 Giao thức Model Context Protocol (MCP) là một giao thức mở chuẩn hóa cách các ứng dụng cung cấp ngữ cảnh cho LLMs. Hãy nghĩ về MCP như một cổng USB-C dành cho các ứng dụng AI - nó cung cấp một cách chuẩn hóa để kết nối các mô hình AI với các nguồn dữ liệu và công cụ khác nhau.
 
@@ -42,7 +41,7 @@ Kết thúc bài học này, bạn sẽ có thể:
 
 - Thiết lập môi trường phát triển cho MCP bằng C#, Java, Python, TypeScript, và JavaScript
 - Xây dựng và triển khai các máy chủ MCP cơ bản với các tính năng tùy chỉnh (tài nguyên, lời nhắc, và công cụ)
-- Tạo ứng dụng host kết nối với các máy chủ MCP
+- Tạo ứng dụng host kết nối với máy chủ MCP
 - Kiểm tra và gỡ lỗi các triển khai MCP
 - Hiểu các thách thức thiết lập phổ biến và cách giải quyết chúng
 - Kết nối các triển khai MCP của bạn với các dịch vụ LLM phổ biến
@@ -51,7 +50,7 @@ Kết thúc bài học này, bạn sẽ có thể:
 
 Trước khi bắt đầu làm việc với MCP, điều quan trọng là chuẩn bị môi trường phát triển và hiểu quy trình làm việc cơ bản. Phần này sẽ hướng dẫn bạn các bước thiết lập ban đầu để đảm bảo khởi đầu suôn sẻ với MCP.
 
-### Yêu cầu
+### Yêu cầu trước
 
 Trước khi bắt đầu phát triển MCP, hãy đảm bảo bạn có:
 
@@ -59,7 +58,6 @@ Trước khi bắt đầu phát triển MCP, hãy đảm bảo bạn có:
 - **IDE/Trình chỉnh sửa**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, hoặc bất kỳ trình chỉnh sửa mã hiện đại nào
 - **Trình quản lý gói**: NuGet, Maven/Gradle, pip, hoặc npm/yarn
 - **API Keys**: Cho bất kỳ dịch vụ AI nào bạn dự định sử dụng trong ứng dụng host của mình
-
 
 ### SDK chính thức
 
@@ -76,7 +74,7 @@ MCP cung cấp các SDK chính thức cho nhiều ngôn ngữ:
 
 ## Những điểm chính
 
-- Thiết lập môi trường phát triển MCP rất đơn giản với các SDK dành riêng cho ngôn ngữ
+- Thiết lập môi trường phát triển MCP rất đơn giản với các SDK theo ngôn ngữ
 - Xây dựng máy chủ MCP bao gồm việc tạo và đăng ký các công cụ với các schema rõ ràng
 - Các client MCP kết nối với máy chủ và mô hình để tận dụng các khả năng mở rộng
 - Kiểm tra và gỡ lỗi là rất quan trọng để triển khai MCP đáng tin cậy
@@ -102,5 +100,7 @@ Chúng tôi có một bộ mẫu bổ sung cho các bài tập bạn sẽ thấy
 
 Tiếp theo: [Tạo máy chủ MCP đầu tiên của bạn](01-first-server/README.md)
 
+---
+
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn tham khảo chính thức. Đối với các thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp từ con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.

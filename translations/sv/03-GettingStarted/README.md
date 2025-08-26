@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "858362ce0118de3fec0f9114bf396101",
-  "translation_date": "2025-08-18T14:55:14+00:00",
+  "original_hash": "1197b6dbde36773e04a5ae826557fdb9",
+  "translation_date": "2025-08-26T17:50:08+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "sv"
 }
@@ -15,23 +15,23 @@ _(Klicka på bilden ovan för att se videon för denna lektion)_
 
 Den här sektionen består av flera lektioner:
 
-- **1 Din första server**, i denna första lektion kommer du att lära dig hur man skapar sin första server och inspekterar den med inspektionsverktyget, ett värdefullt sätt att testa och felsöka din server, [till lektionen](01-first-server/README.md)
+- **1 Din första server**, i denna första lektion kommer du att lära dig hur du skapar din första server och inspekterar den med inspektionsverktyget, ett värdefullt sätt att testa och felsöka din server, [till lektionen](01-first-server/README.md)
 
-- **2 Klient**, i denna lektion kommer du att lära dig hur man skriver en klient som kan ansluta till din server, [till lektionen](02-client/README.md)
+- **2 Klient**, i denna lektion kommer du att lära dig hur du skriver en klient som kan ansluta till din server, [till lektionen](02-client/README.md)
 
 - **3 Klient med LLM**, ett ännu bättre sätt att skriva en klient är att lägga till en LLM så att den kan "förhandla" med din server om vad den ska göra, [till lektionen](03-llm-client/README.md)
 
-- **4 Konsumera en server i GitHub Copilot Agent-läge i Visual Studio Code**. Här tittar vi på att köra vår MCP-server från Visual Studio Code, [till lektionen](04-vscode/README.md)
+- **4 Konsumera en server GitHub Copilot Agent-läge i Visual Studio Code**. Här tittar vi på att köra vår MCP-server från Visual Studio Code, [till lektionen](04-vscode/README.md)
 
-- **5 Konsumera från SSE (Server Sent Events)** SSE är en standard för server-till-klient-strömning, som gör det möjligt för servrar att skicka realtidsuppdateringar till klienter via HTTP [till lektionen](05-sse-server/README.md)
+- **5 stdio Transport Server** stdio transport är den rekommenderade standarden för MCP-server-till-klient-kommunikation enligt den aktuella specifikationen, vilket ger säker kommunikation baserad på subprocess, [till lektionen](05-stdio-server/README.md)
 
-- **6 HTTP-strömning med MCP (Streamable HTTP)**. Lär dig om modern HTTP-strömning, progressmeddelanden och hur man implementerar skalbara, realtids MCP-servrar och klienter med Streamable HTTP. [till lektionen](06-http-streaming/README.md)
+- **6 HTTP Streaming med MCP (Streamable HTTP)**. Lär dig om modern HTTP-streaming, progressnotifikationer och hur du implementerar skalbara, realtids-MCP-servrar och klienter med Streamable HTTP, [till lektionen](06-http-streaming/README.md)
 
-- **7 Utnyttja AI Toolkit för VSCode** för att konsumera och testa dina MCP-klienter och servrar [till lektionen](07-aitk/README.md)
+- **7 Utnyttja AI Toolkit för VSCode** för att konsumera och testa dina MCP-klienter och servrar, [till lektionen](07-aitk/README.md)
 
 - **8 Testning**. Här fokuserar vi särskilt på hur vi kan testa vår server och klient på olika sätt, [till lektionen](08-testing/README.md)
 
-- **9 Utrullning**. Detta kapitel kommer att titta på olika sätt att distribuera dina MCP-lösningar, [till lektionen](09-deployment/README.md)
+- **9 Utrullning**. Detta kapitel tittar på olika sätt att distribuera dina MCP-lösningar, [till lektionen](09-deployment/README.md)
 
 
 Model Context Protocol (MCP) är ett öppet protokoll som standardiserar hur applikationer tillhandahåller kontext till LLMs. Tänk på MCP som en USB-C-port för AI-applikationer - det ger ett standardiserat sätt att ansluta AI-modeller till olika datakällor och verktyg.
@@ -49,7 +49,7 @@ I slutet av denna lektion kommer du att kunna:
 
 ## Ställa in din MCP-miljö
 
-Innan du börjar arbeta med MCP är det viktigt att förbereda din utvecklingsmiljö och förstå det grundläggande arbetsflödet. Denna sektion kommer att guida dig genom de första stegen för att säkerställa en smidig start med MCP.
+Innan du börjar arbeta med MCP är det viktigt att förbereda din utvecklingsmiljö och förstå det grundläggande arbetsflödet. Denna sektion guidar dig genom de första stegen för att säkerställa en smidig start med MCP.
 
 ### Förutsättningar
 
@@ -57,7 +57,7 @@ Innan du dyker in i MCP-utveckling, se till att du har:
 
 - **Utvecklingsmiljö**: För det språk du valt (C#, Java, Python, TypeScript eller JavaScript)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm eller någon modern kodredigerare
-- **Paketverktyg**: NuGet, Maven/Gradle, pip eller npm/yarn
+- **Paketadministratörer**: NuGet, Maven/Gradle, pip eller npm/yarn
 - **API-nycklar**: För de AI-tjänster du planerar att använda i dina värdapplikationer
 
 
@@ -82,7 +82,7 @@ MCP tillhandahåller officiella SDK:er för flera språk:
 - Testning och felsökning är avgörande för pålitliga MCP-implementationer
 - Distributionsalternativ sträcker sig från lokal utveckling till molnbaserade lösningar
 
-## Övning
+## Praktiska övningar
 
 Vi har en uppsättning exempel som kompletterar övningarna du kommer att se i alla kapitel i denna sektion. Dessutom har varje kapitel sina egna övningar och uppgifter.
 
@@ -102,5 +102,7 @@ Vi har en uppsättning exempel som kompletterar övningarna du kommer att se i a
 
 Nästa: [Skapa din första MCP-server](01-first-server/README.md)
 
+---
+
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör du vara medveten om att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

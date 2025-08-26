@@ -1,45 +1,116 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f8162ac4132ec1964655ae5d25a703c9",
-  "translation_date": "2025-08-21T06:50:15+00:00",
+  "original_hash": "866c8877136cb03e1efb9ad633a2f0a6",
+  "translation_date": "2025-08-26T16:58:55+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
 -->
-| C# | Advanced MCP Server with AI Toolkit | [View Code](./05-AdvancedTopics/samples/csharp/README.md) |
-| Java | Multi-modal MCP Implementation | [View Code](./05-AdvancedTopics/samples/java/README.md) |
-| JavaScript | Real-time Streaming MCP | [View Code](./05-AdvancedTopics/samples/javascript/README.md) |
-| Python | OAuth2 Authentication in MCP | [View Code](../../05-AdvancedTopics/samples/python/mcp_oauth2_demo.py) |
-| TypeScript | MCP with Azure Integration | [View Code](./05-AdvancedTopics/samples/typescript/README.md) |
-| Rust | Scalable MCP Server | [View Code](./05-AdvancedTopics/samples/rust/README.md) |
+![MCP-for-beginners](../../translated_images/mcp-beginners.2ce2b317996369ff66c5b72e25eff9d4288ab2741fc70c0b4e523d1ae1e249fd.en.png) 
 
----
+[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/graphs/contributors)  
+[![GitHub issues](https://img.shields.io/github/issues/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/issues)  
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/pulls)  
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)  
 
-## 🛠️ Contributing to MCP
+[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/mcp-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/mcp-for-beginners/watchers)  
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)  
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/mcp-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/mcp-for-beginners/stargazers)  
 
-We welcome contributions from the community! Whether it's fixing a bug, improving documentation, or adding new features, your help is invaluable. Check out our [Contribution Guidelines](./CONTRIBUTING.md) to get started.
+[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)  
 
-### 📢 Code of Conduct
+Follow these steps to start using these resources:  
+1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)  
+2. **Clone the Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`  
+3. [**Join The Azure AI Foundry Discord and connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4)  
 
-Please adhere to our [Code of Conduct](./CODE_OF_CONDUCT.md) to ensure a welcoming and inclusive environment for everyone.
+### 🌐 Multi-Language Support  
 
----
+#### Supported via GitHub Action (Automated & Always Up-to-Date)  
 
-## 📞 Need Help?
+ [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Malay](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)  
 
-If you have questions or need assistance, feel free to:
+# 🚀 Model Context Protocol (MCP) Curriculum for Beginners  
 
-- Join the [Azure AI Foundry Discord](https://discord.com/invite/ByRwuEEgH4) to connect with experts and other developers.
-- Open an issue in the [GitHub repository](https://github.com/microsoft/mcp-for-beginners/issues).
+## **Learn MCP with Hands-on Code Examples in C#, Java, JavaScript, Rust, Python, and TypeScript**  
 
----
+## 🧠 Overview of the Model Context Protocol Curriculum  
 
-## 🌟 Acknowledgments
+The **Model Context Protocol (MCP)** is an innovative framework designed to standardize interactions between AI models and client applications. This open-source curriculum provides a structured learning path, complete with practical coding examples and real-world use cases, across popular programming languages like C#, Java, JavaScript, TypeScript, and Python.  
 
-We extend our gratitude to all contributors, early adopters, and the open-source community for their support in making MCP accessible to everyone. Together, we are shaping the future of AI development.
+Whether you're an AI developer, system architect, or software engineer, this guide is your all-in-one resource for mastering MCP fundamentals and implementation strategies.  
 
-Happy learning! 🚀
+## 🔗 Official MCP Resources  
+
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Comprehensive tutorials and user guides  
+- 📜 [MCP Specification](https://modelcontextprotocol.io/docs/) – Protocol architecture and technical references  
+- 📜 [Original MCP Specification](https://spec.modelcontextprotocol.io/) – Legacy technical references (may include additional details)  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDKs, tools, and code samples  
+- 🌐 [MCP Community](https://github.com/orgs/modelcontextprotocol/discussions) – Join discussions and contribute to the community  
+
+## 🧭 MCP Curriculum Overview  
+
+### 📚 Complete Curriculum Structure  
+
+| Module | Topic | Description | Link |  
+|--------|-------|-------------|------|  
+| **Module 1-3: Fundamentals** | | | |  
+| 00 | Introduction to MCP | Overview of the Model Context Protocol and its importance in AI pipelines | [Read more](./00-Introduction/README.md) |  
+| 01 | Core Concepts Explained | Detailed exploration of core MCP concepts | [Read more](./01-CoreConcepts/README.md) |  
+| 02 | Security in MCP | Security threats and best practices | [Read more](./02-Security/README.md) |  
+| 03 | Getting Started with MCP | Environment setup, basic servers/clients, integration | [Read more](./03-GettingStarted/README.md) |  
+| **Module 3: Building Your First Server & Client** | | | |  
+| 3.1 | First Server | Create your first MCP server | [Guide](./03-GettingStarted/01-first-server/README.md) |  
+| 3.2 | First Client | Develop a basic MCP client | [Guide](./03-GettingStarted/02-client/README.md) |  
+| 3.3 | Client with LLM | Integrate large language models | [Guide](./03-GettingStarted/03-llm-client/README.md) |  
+| 3.4 | VS Code Integration | Consume MCP servers in VS Code | [Guide](./03-GettingStarted/04-vscode/README.md) |  
+| 3.5 | stdio Server | Create servers using stdio transport | [Guide](./03-GettingStarted/05-stdio-server/README.md) |  
+| 3.6 | HTTP Streaming | Implement HTTP streaming in MCP | [Guide](./03-GettingStarted/06-http-streaming/README.md) |  
+| 3.7 | AI Toolkit | Use AI Toolkit with MCP | [Guide](./03-GettingStarted/07-aitk/README.md) |  
+| 3.8 | Testing | Test your MCP server implementation | [Guide](./03-GettingStarted/08-testing/README.md) |  
+| 3.9 | Deployment | Deploy MCP servers to production | [Guide](./03-GettingStarted/09-deployment/README.md) |  
+| **Module 4-5: Practical & Advanced** | | | |  
+| 04 | Practical Implementation | SDKs, debugging, testing, reusable prompt templates | [Read more](./04-PracticalImplementation/README.md) |  
+| 05 | Advanced Topics in MCP | Multi-modal AI, scaling, enterprise use | [Read more](./05-AdvancedTopics/README.md) |  
+| 5.1 | Azure Integration | MCP Integration with Azure | [Guide](./05-AdvancedTopics/mcp-integration/README.md) |  
+| 5.2 | Multi-modality | Working with multiple modalities | [Guide](./05-AdvancedTopics/mcp-multi-modality/README.md) |  
+| 5.3 | OAuth2 Demo | Implement OAuth2 authentication | [Guide](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |  
+| 5.4 | Root Contexts | Understand and implement root contexts | [Guide](./05-AdvancedTopics/mcp-root-contexts/README.md) |  
+| 5.5 | Routing | MCP routing strategies | [Guide](./05-AdvancedTopics/mcp-routing/README.md) |  
+| 5.6 | Sampling | Sampling techniques in MCP | [Guide](./05-AdvancedTopics/mcp-sampling/README.md) |  
+| 5.7 | Scaling | Scale MCP implementations | [Guide](./05-AdvancedTopics/mcp-scaling/README.md) |  
+| 5.8 | Security | Advanced security considerations | [Guide](./05-AdvancedTopics/mcp-security/README.md) |  
+| 5.9 | Web Search | Implement web search capabilities | [Guide](./05-AdvancedTopics/web-search-mcp/README.md) |  
+| 5.10 | Realtime Streaming | Build realtime streaming functionality | [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |  
+| 5.11 | Realtime Search | Implement realtime search | [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md) |  
+| 5.12 | Entra ID Auth | Authentication with Microsoft Entra ID | [Guide](./05-AdvancedTopics/mcp-security-entra/README.md) |  
+| 5.13 | Foundry Integration | Integrate with Azure AI Foundry | [Guide](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |  
+| 5.14 | Context Engineering | Techniques for effective context engineering | [Guide](./05-AdvancedTopics/mcp-contextengineering/README.md) |  
+| **Module 6-10: Community & Best Practices** | | | |  
+| 06 | Community Contributions | How to contribute to the MCP ecosystem | [Guide](./06-CommunityContributions/README.md) |  
+| 07 | Insights from Early Adoption | Real-world implementation stories | [Guide](./07-LessonsFromEarlyAdoption/README.md) |  
+| 08 | Best Practices for MCP | Performance, fault-tolerance, resilience | [Guide](./08-BestPractices/README.md) |  
+| 09 | MCP Case Studies | Practical implementation examples | [Guide](./09-CaseStudy/README.md) |  
+| 10 | Hands-on Workshop | Building an MCP Server with AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |  
+
+### 💻 Sample Code Projects  
+
+#### Basic MCP Calculator Samples  
+
+| Language | Description | Link |  
+|----------|-------------|------|  
+| C# | MCP Server Example | [View Code](./03-GettingStarted/samples/csharp/README.md) |  
+| Java | MCP Calculator | [View Code](./03-GettingStarted/samples/java/calculator/README.md) |  
+| JavaScript | MCP Demo | [View Code](./03-GettingStarted/samples/javascript/README.md) |  
+| Python | MCP Server | [View Code](../../03-GettingStarted/samples/python/mcp_calculator_server.py) |  
+| TypeScript | MCP Example | [View Code](./03-GettingStarted/samples/typescript/README.md) |  
+| Rust | MCP Example | [View Code](./03-GettingStarted/samples/rust/README.md) |  
+
+#### Advanced MCP Implementations  
+
+| Language | Description | Link |  
+|----------|-------------|------|  
 | C# | Advanced Example | [View Code](./04-PracticalImplementation/samples/csharp/README.md) |
 | Java with Spring | Container App Example | [View Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
 | JavaScript | Advanced Example | [View Code](./04-PracticalImplementation/samples/javascript/README.md) |
@@ -98,26 +169,25 @@ You can watch MCP Dev Days by registering on our event page: https://aka.ms/mcpd
 
 #### [Day 1: MCP Productivity, DevTools, & Community:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-This day is dedicated to empowering developers to incorporate MCP into their workflows and celebrating the vibrant MCP community. We’ll feature community members and partners like Arcade, Block, Okta, and Neon, showcasing their collaboration with Microsoft to build an open, extensible MCP ecosystem.  
-Highlights include:  
-- Real-world demos across VS Code, Visual Studio, GitHub Copilot, and popular community tools  
-- Practical, context-driven development workflows  
-- Community-led sessions and insights  
-Whether you’re new to MCP or already using it, Day 1 will provide inspiration and actionable insights.
+This day is dedicated to empowering developers to incorporate MCP into their workflows and celebrating the vibrant MCP community. We’ll feature community members and partners like Arcade, Block, Okta, and Neon to showcase how they’re collaborating with Microsoft to build an open, extensible MCP ecosystem.  
+Real-world demos across VS Code, Visual Studio, GitHub Copilot, and popular community tools  
+Practical, context-driven development workflows  
+Community-led sessions and insights  
+Whether you’re new to MCP or already working with it, Day 1 will provide inspiration and actionable takeaways.
 
 #### [Day 2: Build MCP Servers with Confidence](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-This day is tailored for MCP developers. We’ll dive deep into strategies and best practices for building MCP servers and integrating MCP into AI workflows.
+This day is for MCP developers. We’ll dive deep into strategies and best practices for building MCP servers and integrating MCP into AI workflows.
 
 #### Topics include:
 
-- Creating MCP Servers and integrating them into agent experiences  
-- Prompt-driven development  
-- Security best practices  
-- Leveraging building blocks like Functions, ACA, and API Management  
-- Registry alignment and tooling (1P + 3P)  
+- Creating MCP Servers and integrating them into agent experiences
+- Prompt-driven development
+- Security best practices
+- Leveraging building blocks like Functions, ACA, and API Management
+- Registry alignment and tooling (1P + 3P)
 
-If you’re a developer, tool creator, or AI product strategist, Day 2 is packed with the knowledge you need to build scalable, secure, and future-ready MCP solutions.
+If you’re a developer, tool creator, or AI product strategist, this day is packed with insights to help you build scalable, secure, and future-ready MCP solutions.
 
 ### MCP Boot Camp August 2025
 Learn through intensive video sessions how to build MCP servers, integrate with VS Code, and deploy professionally on Azure using content from the MCP for Beginners curriculum. Gain practical skills in a technology already adopted by major companies.
@@ -141,45 +211,47 @@ We welcome contributions and suggestions for this project. Most contributions re
 When you submit a pull request, a CLA bot will automatically check whether you need to sign a CLA and will update the PR accordingly (e.g., status check, comment). Follow the instructions provided by the bot. You only need to do this once across all repositories using our CLA.
 
 This project adheres to the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
-For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any questions or comments.
+For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## 📂 Repository Structure
 
 The repository is organized as follows:
 
-- **Core Curriculum (00-10)**: The main content divided into ten sequential modules  
-- **images/**: Diagrams and illustrations used throughout the curriculum  
-- **translations/**: Multi-language support with automated translations  
-- **translated_images/**: Localized versions of diagrams and illustrations  
-- **study_guide.md**: Comprehensive guide to navigating the repository  
-- **changelog.md**: Record of all major updates to the curriculum materials  
-- **mcp.json**: Configuration file for MCP specification  
-- **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Project governance documents  
+- **Core Curriculum (00-10)**: The main content divided into ten sequential modules
+- **images/**: Diagrams and illustrations used throughout the curriculum
+- **translations/**: Multi-language support with automated translations
+- **translated_images/**: Localized versions of diagrams and illustrations
+- **study_guide.md**: Comprehensive guide to navigating the repository
+- **changelog.md**: Record of all major changes to the curriculum materials
+- **mcp.json**: Configuration file for MCP specification
+- **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Project governance documents
 
 ## 🎒 Other Courses
 Our team offers additional courses! Check out:
 
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Generative AI for Beginners using Java](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)  
-- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)  
-- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)  
-- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)  
-- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)  
-- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)  
-- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)  
-- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)  
-- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)  
+- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using Java](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 ## ™️ Trademark Notice
 
 This project may include trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos must comply with [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Use of Microsoft trademarks or logos in modified versions of this project must not create confusion or imply sponsorship by Microsoft.  
-Any use of third-party trademarks or logos must adhere to the policies of those third parties.  
+Use of Microsoft trademarks or logos in modified versions of this project must not create confusion or imply Microsoft sponsorship.  
+Any use of third-party trademarks or logos must adhere to the policies of those third parties.
+
+---
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
