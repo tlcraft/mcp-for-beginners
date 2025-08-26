@@ -122,7 +122,7 @@ The key difference from SSE is that stdio servers:
 - Communicate through stdin/stdout streams
 - Are simpler to implement and debug
 
-## Exercise: Creating an SSE Server
+## Exercise: Creating a stdio Server
 
 To create our server, we need to keep two things in mind:
 
