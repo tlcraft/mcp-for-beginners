@@ -568,8 +568,9 @@ When your server starts correctly, you should see:
 - Check that no other processes are interfering
 - Verify the Inspector command syntax
 
-## AssignmentTry building out your server with more capabilities. See [this page](https://api.chucknorris.io/) to, for example, add a tool that calls an API. You decide what the server should look like. Have fun :)
+## Assignment
 
+Try building out your server with more capabilities. See [this page](https://api.chucknorris.io/) to, for example, add a tool that calls an API. You decide what the server should look like. Have fun :)
 ## Solution
 
 [Solution](./solution/README.md) Here's a possible solution with working code.
