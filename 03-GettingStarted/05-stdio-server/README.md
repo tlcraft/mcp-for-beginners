@@ -578,9 +578,9 @@ When your server starts correctly, you should see:
 
 The key takeaways from this chapter are the following:
 
-- SSE is the second supported transport next to stdio.
-- To support SSE, you need to manage incoming connections and messages using a web framework.
-- You can use both Inspector and Visual Studio Code to consume an SSE server, just like stdio servers. Note how it differs a little between stdio and SSE. For SSE, you need to start up the server separately and then run your inspector tool. For the inspector tool, there's also some differences in that you need to specify the URL. 
+- The stdio transport is the recommended mechanism for local MCP servers.
+- Stdio transport allows seamless communication between MCP servers and clients using standard input and output streams.
+- You can use both Inspector and Visual Studio Code to consume stdio servers directly, making debugging and integration straightforward.
 
 ## Samples 
 
