@@ -116,7 +116,7 @@ SSE についてもう少し理解できたので、次は SSE サーバーを�
 - Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
 
-### -1- Create a server instance
+### -1- サーバーインスタンスを作成する
 
 To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 
