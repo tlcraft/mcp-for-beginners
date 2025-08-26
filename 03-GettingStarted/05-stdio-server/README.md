@@ -277,20 +277,6 @@ You can test your server using the MCP Inspector:
 2. Run the Inspector and point it to your server
 3. Test the tools you've created
 
-### Python
-
-```python
-app = Starlette(
-    routes=[
-        Mount('/', app=mcp.sse_app()),
-    ]
-)
-```
-
-In the preceding code we've:
-
-- Created an ASGI app instance using the Starlette framework. As part of that we passes `mcp.sse_app()` to it's list of routes. That ends up mounting an `/sse` and `/messages` route on the app instance.
-
 ### .NET
 
 ```csharp
