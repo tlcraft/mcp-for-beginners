@@ -1,66 +1,66 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-07-13T20:17:40+00:00",
+  "original_hash": "69ba3bd502bd743233137bac5539c08b",
+  "translation_date": "2025-08-19T18:54:23+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "my"
 }
 -->
-# ဤနမူနာကို chạyခြင်း
+# ဒီနမူနာကို အလုပ်လုပ်စေခြင်း
 
-`uv` ကို 설치ရန် 권장하지만 필수는 아니며, 자세한 내용은 [instructions](https://docs.astral.sh/uv/#highlights)에서 확인하세요။
+`uv` ကို install လုပ်ရန် အကြံပြုထားပေမယ့် မဖြစ်မနေလိုအပ်တာမဟုတ်ပါဘူး၊ [ညွှန်ကြားချက်များ](https://docs.astral.sh/uv/#highlights) ကိုကြည့်ပါ။
 
-## -0- 가상 환경 생성하기
+## -0- Virtual Environment တစ်ခု ဖန်တီးပါ
 
 ```bash
 python -m venv venv
 ```
 
-## -1- 가상 환경 활성화하기
+## -1- Virtual Environment ကို အလုပ်လုပ်စေပါ
 
 ```bash
 venv\Scrips\activate
 ```
 
-## -2- 의존성 설치하기
+## -2- လိုအပ်သော Dependencies များကို Install လုပ်ပါ
 
 ```bash
 pip install "mcp[cli]"
 ```
 
-## -3- 샘플 실행하기
+## -3- နမူနာကို အလုပ်လုပ်စေပါ
 
 ```bash
-mcp run server.py
+uvicorn server:app
 ```
 
-## -4- 샘플 테스트하기
+## -4- နမူနာကို စမ်းသပ်ပါ
 
-서버가 한 터미널에서 실행 중일 때, 다른 터미널을 열고 다음 명령어를 실행하세요:
+Server ကို တစ်ခုသော terminal မှာ အလုပ်လုပ်နေစေပြီး၊ အခြား terminal တစ်ခုဖွင့်ပြီး အောက်ပါ command ကို run လုပ်ပါ:
 
 ```bash
 mcp dev server.py
 ```
 
-이 명령어는 시각적 인터페이스가 있는 웹 서버를 시작하여 샘플을 테스트할 수 있게 합니다.
+ဒါက visual interface ပါဝင်တဲ့ web server တစ်ခုကို စတင်ပေးပါမယ်၊ နမူနာကို စမ်းသပ်နိုင်အောင်။
 
-서버가 연결되면:
+Server တစ်ခုကို ချိတ်ဆက်ပြီးနောက်:
 
-- 도구 목록을 확인하고 `add`를 인수 2와 4와 함께 실행해 보세요. 결과로 6이 보여야 합니다.
-- resources와 resource template로 이동하여 get_greeting을 호출하고 이름을 입력하면 입력한 이름이 포함된 인사말을 볼 수 있습니다.
+- tools များကို စမ်းသပ်ကြည့်ပြီး `add` ကို args 2 နှင့် 4 ဖြင့် run လုပ်ပါ၊ ရလဒ်မှာ 6 ဖြစ်ရမယ်။
+- resources နှင့် resource template ကိုသွားပြီး get_greeting ကိုခေါ်ပါ၊ နာမည်တစ်ခုရိုက်ထည့်ပြီး သင့်ရိုက်ထည့်ထားတဲ့ နာမည်နဲ့ greeting တစ်ခုကို မြင်ရပါမယ်။
 
-### CLI 모드에서 테스트하기
+### CLI Mode မှာ စမ်းသပ်ခြင်း
 
-실행한 inspector는 사실 Node.js 앱이며 `mcp dev`는 이를 감싸는 래퍼입니다.
+သင့်ရဲ့ inspector က အမှန်တကယ် Node.js app တစ်ခုဖြစ်ပြီး `mcp dev` က အဲဒါကို wrapper လုပ်ထားတာပါ။
 
-다음 명령어를 실행하여 CLI 모드에서 직접 실행할 수 있습니다:
+CLI mode မှာ တိုက်ရိုက်စတင်နိုင်ဖို့ အောက်ပါ command ကို run လုပ်ပါ:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-이 명령어는 서버에서 사용 가능한 모든 도구를 나열합니다. 다음과 같은 출력이 보여야 합니다:
+ဒါက Server မှာ ရနိုင်တဲ့ tools အားလုံးကို ပြသပေးပါမယ်။ အောက်ပါ output ကို မြင်ရပါမယ်:
 
 ```text
 {
@@ -91,13 +91,13 @@ npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method too
 }
 ```
 
-도구를 호출하려면 다음과 같이 입력하세요:
+Tool တစ်ခုကို ခေါ်ရန်:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-다음과 같은 출력이 보여야 합니다:
+အောက်ပါ output ကို မြင်ရပါမယ်:
 
 ```text
 {
@@ -112,8 +112,8 @@ npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method too
 ```
 
 > ![!TIP]
-> 일반적으로 브라우저보다 CLI 모드에서 inspector를 실행하는 것이 훨씬 빠릅니다.
-> inspector에 대해 더 알아보려면 [여기](https://github.com/modelcontextprotocol/inspector)를 참고하세요.
+> CLI mode မှာ inspector ကို run လုပ်တာ Browser မှာ run လုပ်တာထက် အများကြီးမြန်တတ်ပါတယ်။
+> Inspector အကြောင်းပိုမိုဖတ်ရှုရန် [ဒီမှာ](https://github.com/modelcontextprotocol/inspector) ကြည့်ပါ။
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+**ဝက်ဘ်ဆိုက်မှတ်ချက်**:  
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေပါသော်လည်း၊ အလိုအလျောက်ဘာသာပြန်ဆိုမှုများတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါဝင်နိုင်သည်ကို ကျေးဇူးပြု၍ သတိပြုပါ။ မူရင်းစာရွက်စာတမ်းကို ၎င်း၏ မူလဘာသာစကားဖြင့် အာဏာတည်သောရင်းမြစ်အဖြစ် သတ်မှတ်ပါ။ အရေးကြီးသော အချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူသားဘာသာပြန်ဝန်ဆောင်မှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုမှားများ သို့မဟုတ် အဓိပ္ပါယ်မှားများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

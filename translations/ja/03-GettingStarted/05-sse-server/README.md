@@ -105,16 +105,18 @@ app = Starlette(
     - `MapMcp`：`/SSE`や`/messages`のようなルートを追加します。
 ```
 
-Now that we know a little bit more about SSE, let's build an SSE server next.
+SSE についてもう少し理解できたので、次は SSE サーバーを構築してみましょう。
 
-## Exercise: Creating an SSE Server
+## 演習: SSE サーバーの作成
 
-To create our server, we need to keep two things in mind:
+サーバーを作成するには、次の 2 つの点に留意する必要があります。
 
-- We need to use a web server to expose endpoints for connection and messages.
+
+- 接続とメッセージのエンドポイントを公開するには、Web サーバーを使用する必要があります。
 - Build our server like we normally do with tools, resources and prompts when we were using stdio.
 
-### -1- Create a server instance
+
+### -1- サーバーインスタンスを作成する
 
 To create our server, we use the same types as with stdio. However, for the transport, we need to choose SSE.
 

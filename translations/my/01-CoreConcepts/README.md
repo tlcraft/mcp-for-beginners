@@ -1,40 +1,60 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "355b12a5970c5c9e6db0bee970c751ba",
-  "translation_date": "2025-07-13T16:29:05+00:00",
+  "original_hash": "88b863a69b4f18b15e82da358ffd3489",
+  "translation_date": "2025-08-21T13:57:58+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "my"
 }
 -->
-# 📖 MCP အခြေခံအယူအဆများ: AI ပေါင်းစည်းမှုအတွက် Model Context Protocol ကို ကျွမ်းကျင်စွာ အသုံးပြုခြင်း
+# MCP အဓိကအကြောင်းအရာများ: AI ပေါင်းစည်းမှုအတွက် Model Context Protocol ကိုကျွမ်းကျင်စွာအသုံးပြုခြင်း
 
-[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) သည် ကြီးမားသောဘာသာစကားမော်ဒယ်များ (LLMs) နှင့် ပြင်ပကိရိယာများ၊ အက်ပလီကေးရှင်းများ၊ ဒေတာရင်းမြစ်များအကြား ဆက်သွယ်မှုကို ထိရောက်စွာ စနစ်တကျ ပြုလုပ်ပေးနိုင်သော အင်အားကြီးပြီး စံသတ်မှတ်ထားသော ဖရိမ်ဝေါ့ခ်ဖြစ်သည်။ ဒီ SEO အတွက် အကောင်းဆုံး လမ်းညွှန်စာအုပ်က MCP ၏ အခြေခံအယူအဆများကို ရှင်းပြပေးမှာဖြစ်ပြီး၊ ၎င်း၏ client-server ဖွဲ့စည်းပုံ၊ အရေးကြီးသော အစိတ်အပိုင်းများ၊ ဆက်သွယ်မှုနည်းလမ်းများနှင့် အကောင်းဆုံး လက်တွေ့အသုံးပြုနည်းများကို နားလည်စေပါလိမ့်မယ်။
+[![MCP အဓိကအကြောင်းအရာများ](../../../translated_images/02.8203e26c6fb5a797f38a10012061013ec66c95bb3260f6c9cfd2bf74b00860e1.my.png)](https://youtu.be/earDzWGtE84)
 
-## အနှစ်ချုပ်
+_(ဤသင်ခန်းစာ၏ဗီဒီယိုကိုကြည့်ရန် အထက်ပါပုံကိုနှိပ်ပါ)_
 
-ဒီသင်ခန်းစာမှာ Model Context Protocol (MCP) စနစ်၏ အခြေခံဖွဲ့စည်းပုံနှင့် အစိတ်အပိုင်းများကို လေ့လာသွားမှာဖြစ်သည်။ MCP ဆက်သွယ်မှုများကို အားပေးသော client-server ဖွဲ့စည်းပုံ၊ အဓိကအစိတ်အပိုင်းများနှင့် ဆက်သွယ်မှုနည်းလမ်းများကို သင်ယူရမည်ဖြစ်သည်။
+[Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) သည် Large Language Models (LLMs) နှင့် ပြင်ပကိရိယာများ၊ အပလီကေးရှင်းများနှင့် ဒေတာအရင်းအမြစ်များအကြား ဆက်သွယ်မှုကို အကောင်းဆုံးဖြစ်စေသော စံပြစနစ်တစ်ခုဖြစ်သည်။  
+ဤလမ်းညွှန်စာအုပ်သည် MCP ၏ အဓိကအကြောင်းအရာများကို သင်ကြားပေးမည်ဖြစ်သည်။ Client-server စနစ်၊ အရေးကြီးသောအစိတ်အပိုင်းများ၊ ဆက်သွယ်မှုစနစ်များနှင့် အကောင်းဆုံးအကောင်အထည်ဖော်နည်းများကို သင်လေ့လာနိုင်မည်ဖြစ်သည်။
 
-## 👩‍🎓 အဓိက သင်ယူရမည့် ရည်မှန်းချက်များ
+- **အသုံးပြုသူ၏ သဘောတူညီမှု**: ဒေတာဝင်ရောက်မှုနှင့် လုပ်ဆောင်မှုအားလုံးသည် အသုံးပြုသူ၏ သဘောတူညီမှုကို ရရှိထားရမည်။ အသုံးပြုသူများသည် ဝင်ရောက်မည့်ဒေတာနှင့် လုပ်ဆောင်မည့်အရာများကို ရှင်းလင်းစွာနားလည်ပြီး ခွင့်ပြုချက်များနှင့် အာဏာပေးမှုများကို အသေးစိတ်ထိန်းချုပ်နိုင်ရမည်။
 
-ဒီသင်ခန်းစာပြီးဆုံးချိန်မှာ သင်သည် -
+- **ဒေတာကိုယ်ရေးကိုယ်တာအကာအကွယ်**: အသုံးပြုသူ၏ ဒေတာကို သဘောတူညီမှုမရှိဘဲ မဖော်ထုတ်ရ။ ဆက်သွယ်မှုတစ်ခုလုံးတွင် ခိုင်မာသော ဝင်ရောက်ခွင့်ထိန်းချုပ်မှုများဖြင့် ကာကွယ်ထားရမည်။ မလိုလားအပ်သော ဒေတာပို့ဆောင်မှုများကို တားဆီးပြီး ကိုယ်ရေးကိုယ်တာအကန့်အသတ်များကို တင်းကျပ်စွာထိန်းသိမ်းရမည်။
 
-- MCP client-server ဖွဲ့စည်းပုံကို နားလည်နိုင်မည်။
-- Hosts, Clients, Servers တို့၏ တာဝန်များနှင့် အခန်းကဏ္ဍများကို ဖော်ထုတ်နိုင်မည်။
-- MCP ကို ပေါင်းစည်းမှုအလွယ်တကူဖြစ်စေသော အဓိက လက္ခဏာများကို ခွဲခြမ်းစိတ်ဖြာနိုင်မည်။
-- MCP စနစ်အတွင်း သတင်းအချက်အလက်များ ဘယ်လို လည်ပတ်သွားသည်ကို သင်ယူနိုင်မည်။
-- .NET, Java, Python, JavaScript တို့တွင် ကုဒ်နမူနာများမှတဆင့် လက်တွေ့ အမြင်ရရှိနိုင်မည်။
+- **ကိရိယာအသုံးပြုမှုလုံခြုံမှု**: ကိရိယာတစ်ခုချင်းစီကို အသုံးပြုမည့်အခါ အသုံးပြုသူ၏ သဘောတူညီမှုနှင့် ကိရိယာ၏ လုပ်ဆောင်နိုင်မှု၊ ပါရာမီတာများနှင့် ဖြစ်နိုင်သော သက်ရောက်မှုများကို ရှင်းလင်းစွာနားလည်ရမည်။ မလိုလားအပ်သော၊ မလုံခြုံသော သို့မဟုတ် မကောင်းမဆိုးသော ကိရိယာအသုံးပြုမှုများကို တားဆီးရန် ခိုင်မာသော လုံခြုံရေးကန့်သတ်ချက်များရှိရမည်။
 
-## 🔎 MCP ဖွဲ့စည်းပုံ: နက်ရှိုင်းစွာ ကြည့်ရှုခြင်း
+- **သယ်ယူပို့ဆောင်မှုအလွှာလုံခြုံမှု**: ဆက်သွယ်မှုလမ်းကြောင်းအားလုံးသည် သင့်လျော်သော စာဝှက်ခြင်းနှင့် အတည်ပြုမှုစနစ်များကို အသုံးပြုရမည်။ ဝေးလံသောဆက်သွယ်မှုများတွင် လုံခြုံသော သယ်ယူပို့ဆောင်မှုနည်းလမ်းများနှင့် သင့်လျော်သော အထောက်အထားစီမံခန့်ခွဲမှုများကို အကောင်အထည်ဖော်ရမည်။
 
-MCP စနစ်သည် client-server မော်ဒယ်ပေါ်တွင် တည်ဆောက်ထားသည်။ ဒီ modular ဖွဲ့စည်းပုံက AI အက်ပလီကေးရှင်းများကို ကိရိယာများ၊ ဒေတာဘေ့စ်များ၊ API များနှင့် context အရင်းအမြစ်များနှင့် ထိရောက်စွာ ဆက်သွယ်နိုင်စေသည်။ ဒီဖွဲ့စည်းပုံကို အဓိကအစိတ်အပိုင်းများအဖြစ် ခွဲခြမ်းကြည့်ကြမယ်။
+#### အကောင်အထည်ဖော်မှုလမ်းညွှန်ချက်များ:
 
-MCP သည် client-server ဖွဲ့စည်းပုံကို လိုက်နာပြီး host application တစ်ခုက server များစွာနှင့် ချိတ်ဆက်နိုင်သည်။
+- **ခွင့်ပြုချက်စီမံခန့်ခွဲမှု**: အသုံးပြုသူများအား ဝင်ရောက်ခွင့်ရှိသော server များ၊ ကိရိယာများနှင့် အရင်းအမြစ်များကို ထိန်းချုပ်နိုင်စေရန် အသေးစိတ်ခွင့်ပြုချက်စနစ်များကို အကောင်အထည်ဖော်ပါ  
+- **အတည်ပြုမှုနှင့် အာဏာပေးမှု**: လုံခြုံသော အတည်ပြုမှုနည်းလမ်းများ (OAuth, API key များ) ကို သက်တမ်းကုန်ဆုံးမှုနှင့် token စီမံခန့်ခွဲမှုမှန်ကန်စွာ အသုံးပြုပါ  
+- **အဝင်ဒေတာစစ်ဆေးမှု**: Injection အတိုက်အခံများကို တားဆီးရန် သတ်မှတ်ထားသော schema များအတိုင်း ပါရာမီတာများနှင့် အဝင်ဒေတာအားလုံးကို စစ်ဆေးပါ  
+- **မှတ်တမ်းသိမ်းဆည်းမှု**: လုံခြုံရေးစောင့်ကြည့်မှုနှင့် လိုက်နာမှုအတွက် လုပ်ဆောင်မှုအားလုံး၏ ပြည့်စုံသော မှတ်တမ်းများကို ထိန်းသိမ်းပါ  
+
+## အကျဉ်းချုပ်
+
+ဤသင်ခန်းစာတွင် Model Context Protocol (MCP) စနစ်၏ အခြေခံဖွဲ့စည်းမှုနှင့် အစိတ်အပိုင်းများကို လေ့လာမည်ဖြစ်သည်။ MCP ဆက်သွယ်မှုများကို အားပေးသော client-server စနစ်၊ အဓိကအစိတ်အပိုင်းများနှင့် ဆက်သွယ်မှုစနစ်များကို သင်လေ့လာနိုင်မည်ဖြစ်သည်။
+
+## အဓိကသင်ယူရမည့်ရည်ရွယ်ချက်များ
+
+ဤသင်ခန်းစာအဆုံးတွင် သင်သည်-
+
+- MCP client-server စနစ်ကို နားလည်နိုင်မည်။
+- Hosts, Clients, နှင့် Servers ၏ အခန်းကဏ္ဍများနှင့် တာဝန်များကို သတ်မှတ်နိုင်မည်။
+- MCP ကို အပြောင်းအလဲများအတွက် တိကျသော ပေါင်းစည်းမှုအလွှာဖြစ်စေသော အဓိကအင်္ဂါရပ်များကို ခွဲခြားနိုင်မည်။
+- MCP စနစ်အတွင်း ဒေတာစီးဆင်းမှုကို လေ့လာနိုင်မည်။
+- .NET, Java, Python, နှင့် JavaScript တို့ဖြင့် ကုဒ်ဥပမာများမှ လက်တွေ့အမြင်များ ရရှိနိုင်မည်။
+
+## MCP ဖွဲ့စည်းမှု: နက်ရှိုင်းစွာလေ့လာခြင်း
+
+MCP စနစ်သည် client-server မော်ဒယ်ပေါ်တွင် တည်ဆောက်ထားသည်။ ဤ module-based ဖွဲ့စည်းမှုသည် AI အပလီကေးရှင်းများအား ကိရိယာများ၊ ဒေတာဘေ့စ်များ၊ API များနှင့် အကြောင်းအရာဆိုင်ရာ အရင်းအမြစ်များနှင့် ထိရောက်စွာ ဆက်သွယ်နိုင်စေသည်။ ယခုဖွဲ့စည်းမှုကို အဓိကအစိတ်အပိုင်းများအဖြစ် ခွဲခြားကြည့်ရှုကြမည်။
+
+MCP ၏ အခြေခံတွင် client-server ဖွဲ့စည်းမှုကို လိုက်နာပြီး host application တစ်ခုသည် server များစွာနှင့် ချိတ်ဆက်နိုင်သည်-
 
 ```mermaid
 flowchart LR
     subgraph "Your Computer"
-        Host["Host with MCP VScode, IDEs, Tools)"]
+        Host["Host with MCP (Visual Studio, VS Code, IDEs, Tools)"]
         S1["MCP Server A"]
         S2["MCP Server B"]
         S3["MCP Server C"]
@@ -49,197 +69,478 @@ flowchart LR
     end
 ```
 
-- **MCP Hosts**: VSCode, Claude Desktop, IDE များ သို့မဟုတ် MCP မှတဆင့် ဒေတာရယူလိုသော AI ကိရိယာများကဲ့သို့သော ပရိုဂရမ်များ
-- **MCP Clients**: server များနှင့် 1:1 ချိတ်ဆက်မှုကို ထိန်းသိမ်းထားသော protocol clients များ
-- **MCP Servers**: စံသတ်မှတ်ထားသော Model Context Protocol ဖြင့် အထူးစွမ်းရည်များကို ဖော်ပြပေးသော အလေးချိန်နည်းသော ပရိုဂရမ်များ
-- **Local Data Sources**: သင့်ကွန်ပျူတာတွင်ရှိသော ဖိုင်များ၊ ဒေတာဘေ့စ်များနှင့် ဝန်ဆောင်မှုများကို MCP servers များက လုံခြုံစွာ ဝင်ရောက်အသုံးပြုနိုင်သည်
-- **Remote Services**: အင်တာနက်မှတဆင့် ရရှိနိုင်သော ပြင်ပစနစ်များကို MCP servers များက API များဖြင့် ချိတ်ဆက်နိုင်သည်။
+- **MCP Hosts**: VSCode, Claude Desktop, IDEs, သို့မဟုတ် MCP မှတစ်ဆင့် ဒေတာဝင်ရောက်လိုသော AI ကိရိယာများ  
+- **MCP Clients**: Server များနှင့် 1:1 ဆက်သွယ်မှုကို ထိန်းသိမ်းထားသော protocol clients  
+- **MCP Servers**: Model Context Protocol စံစနစ်ဖြင့် အထူးစွမ်းဆောင်ရည်များကို ဖော်ထုတ်သော ပေါ့ပါးသော ပရိုဂရမ်များ  
+- **Local Data Sources**: MCP servers မှ လုံခြုံစွာ ဝင်ရောက်နိုင်သော သင့်ကွန်ပျူတာ၏ ဖိုင်များ၊ ဒေတာဘေ့စ်များနှင့် ဝန်ဆောင်မှုများ  
+- **Remote Services**: MCP servers မှ API များမှတစ်ဆင့် ချိတ်ဆက်နိုင်သော အင်တာနက်ပေါ်ရှိ ပြင်ပစနစ်များ  
 
-MCP Protocol သည် တိုးတက်နေဆဲ စံသတ်မှတ်ချက်ဖြစ်ပြီး နောက်ဆုံးအပ်ဒိတ်များကို [protocol specification](https://modelcontextprotocol.io/specification/2025-06-18/) တွင် ကြည့်ရှုနိုင်ပါသည်။
+MCP Protocol သည် YYYY-MM-DD ပုံစံဖြင့် ရက်စွဲအခြေပြု ဗားရှင်းစနစ်ကို အသုံးပြုသော တိုးတက်နေသော စံစနစ်တစ်ခုဖြစ်သည်။ လက်ရှိ protocol ဗားရှင်းမှာ **2025-06-18** ဖြစ်သည်။ [protocol specification](https://modelcontextprotocol.io/specification/2025-06-18/) တွင် နောက်ဆုံးအပ်ဒိတ်များကို ကြည့်ရှုနိုင်သည်။
 
 ### 1. Hosts
 
-Model Context Protocol (MCP) တွင် Hosts သည် အသုံးပြုသူများ protocol နှင့် ဆက်သွယ်ရာတွင် အဓိက အင်တာဖေ့စ်အဖြစ် အရေးပါသည်။ Hosts သည် MCP servers များနှင့် ချိတ်ဆက်၍ ဒေတာ၊ ကိရိယာများနှင့် prompt များကို ရယူရန် စတင်ဆောင်ရွက်သော အက်ပလီကေးရှင်းများ သို့မဟုတ် ပတ်ဝန်းကျင်များဖြစ်သည်။ ဥပမာအားဖြင့် Visual Studio Code ကဲ့သို့သော integrated development environments (IDEs), Claude Desktop ကဲ့သို့သော AI ကိရိယာများ သို့မဟုတ် အထူးတာဝန်များအတွက် ဖန်တီးထားသော custom-built agents များ ပါဝင်သည်။
+Model Context Protocol (MCP) တွင် **Hosts** သည် အသုံးပြုသူများမှ protocol နှင့် အဓိကအဆက်အသွယ်အဖြစ် တာဝန်ယူသော AI အပလီကေးရှင်းများဖြစ်သည်။ Hosts များသည် MCP server များစွာနှင့် ချိတ်ဆက်မှုများကို စီမံခန့်ခွဲရန် MCP clients များကို ဖန်တီးပေးသည်။ Host များ၏ ဥပမာများမှာ-
 
-**Hosts** သည် LLM applications ဖြစ်ပြီး ချိတ်ဆက်မှုများကို စတင်ဆောင်ရွက်သည်။ ၎င်းတို့သည် -
+- **AI အပလီကေးရှင်းများ**: Claude Desktop, Visual Studio Code, Claude Code  
+- **ဖွံ့ဖြိုးရေးပတ်ဝန်းကျင်များ**: MCP ပေါင်းစည်းမှုပါရှိသော IDE များနှင့် ကုဒ်တည်းဖြတ်သူများ  
+- **စိတ်ကြိုက်အပလီကေးရှင်းများ**: ရည်ရွယ်ချက်အထူးပြု AI အေးဂျင့်များနှင့် ကိရိယာများ  
 
-- AI မော်ဒယ်များနှင့် ဆက်သွယ်၍ တုံ့ပြန်ချက်များ ထုတ်ပေးသည်။
-- MCP servers များနှင့် ချိတ်ဆက်မှုများ စတင်ဆောင်ရွက်သည်။
-- စကားပြောစီးဆင်းမှုနှင့် အသုံးပြုသူ အင်တာဖေ့စ်ကို စီမံခန့်ခွဲသည်။
-- ခွင့်ပြုချက်နှင့် လုံခြုံရေး ကန့်သတ်ချက်များကို ထိန်းချုပ်သည်။
-- ဒေတာမျှဝေခြင်းနှင့် ကိရိယာများ အသုံးပြုခြင်းအတွက် အသုံးပြုသူ၏ သဘောတူညီချက်ကို ကိုင်တွယ်သည်။
+**Hosts** သည် AI မော်ဒယ်အဆက်အသွယ်များကို စီမံခန့်ခွဲသော အပလီကေးရှင်းများဖြစ်သည်။ ၎င်းတို့သည်-
+
+- **AI မော်ဒယ်များကို စီမံခန့်ခွဲခြင်း**: LLM များကို အကောင်အထည်ဖော်ခြင်း သို့မဟုတ် အပြန်အလှန်ဆက်သွယ်ခြင်းဖြင့် AI လုပ်ငန်းစဉ်များကို စီမံခန့်ခွဲသည်  
+- **Client ချိတ်ဆက်မှုများကို စီမံခန့်ခွဲခြင်း**: MCP server တစ်ခုချင်းစီအတွက် MCP client တစ်ခုစီကို ဖန်တီးပြီး ထိန်းသိမ်းသည်  
+- **အသုံးပြုသူအင်တာဖေ့စ်ကို ထိန်းချုပ်ခြင်း**: စကားဝိုင်းစီးဆင်းမှု၊ အသုံးပြုသူအပြန်အလှန်ဆက်သွယ်မှုများနှင့် အဖြေတင်ပြမှုကို စီမံခန့်ခွဲသည်  
+- **လုံခြုံရေးကို အာမခံခြင်း**: ခွင့်ပြုချက်များ၊ လုံခြုံရေးကန့်သတ်ချက်များနှင့် အတည်ပြုမှုများကို ထိန်းချုပ်သည်  
+- **အသုံးပြုသူ၏ သဘောတူညီမှုကို စီမံခန့်ခွဲခြင်း**: ဒေတာမျှဝေမှုနှင့် ကိရိယာအသုံးပြုမှုအတွက် အသုံးပြုသူ၏ အတည်ပြုမှုကို စီမံခန့်ခွဲသည်  
 
 ### 2. Clients
 
-Clients သည် Hosts နှင့် MCP servers များအကြား ဆက်သွယ်မှုကို အဆင်ပြေစေသော အရေးပါသော အစိတ်အပိုင်းများဖြစ်သည်။ Clients သည် အလယ်အလတ်အဖြစ် လုပ်ဆောင်ကာ Hosts များကို MCP servers များမှ ပေးသော လုပ်ဆောင်ချက်များကို အသုံးပြုခွင့်ပေးသည်။ MCP ဖွဲ့စည်းပုံအတွင်း ဆက်သွယ်မှုနှင့် ဒေတာလဲလှယ်မှုများကို ပြေလည်စေသည်။
+**Clients** သည် Hosts နှင့် MCP servers အကြား တစ်ဦးချင်းဆက်သွယ်မှုများကို ထိန်းသိမ်းထားသော အရေးကြီးအစိတ်အပိုင်းများဖြစ်သည်။ MCP client တစ်ခုစီသည် Host မှ ဖန်တီးပြီး သီးသန့် MCP server တစ်ခုနှင့် ချိတ်ဆက်ထားသည်။ Clients များသည် Hosts များအား တစ်ချိန်တည်းတွင် server များစွာနှင့် ချိတ်ဆက်နိုင်စေသည်။
 
-**Clients** သည် host application အတွင်း ချိတ်ဆက်သူများဖြစ်သည်။ ၎င်းတို့သည် -
+**Clients** သည် host application အတွင်းရှိ ချိတ်ဆက်မှုအစိတ်အပိုင်းများဖြစ်သည်။ ၎င်းတို့သည်-
 
-- prompt/ညွှန်ကြားချက်များနှင့် server များသို့ တောင်းဆိုမှုများ ပို့သည်။
-- server များနှင့် စွမ်းရည်များကို ညှိနှိုင်းဆွေးနွေးသည်။
-- မော်ဒယ်များမှ ကိရိယာများ အသုံးပြုရန် တောင်းဆိုမှုများကို စီမံခန့်ခွဲသည်။
-- တုံ့ပြန်ချက်များကို အသုံးပြုသူထံ ပြသသည်။
+- **Protocol ဆက်သွယ်မှု**: JSON-RPC 2.0 တောင်းဆိုမှုများကို server များသို့ ပို့ပေးသည်  
+- **စွမ်းဆောင်ရည်ညှိနှိုင်းမှု**: စတင်ချိန်တွင် server များနှင့် protocol ဗားရှင်းများနှင့် အင်္ဂါရပ်များကို ညှိနှိုင်းသည်  
+- **ကိရိယာအကောင်အထည်ဖော်မှု**: မော်ဒယ်များမှ tool execution တောင်းဆိုမှုများကို စီမံခန့်ခွဲပြီး အဖြေများကို ပြန်လည်ဆောင်ရွက်သည်  
+- **အချိန်နှင့်တပြေးညီ အပ်ဒိတ်များ**: server များမှ အကြောင်းကြားချက်များနှင့် အပ်ဒိတ်များကို စီမံခန့်ခွဲသည်  
+- **အဖြေများကို စီမံခြင်း**: server ၏ အဖြေများကို အသုံးပြုသူများအတွက် ပြသရန် ဖော်ပြပေးသည်  
 
 ### 3. Servers
 
-Servers သည် MCP clients များမှ တောင်းဆိုမှုများကို ကိုင်တွယ်ပြီး သင့်တော်သော တုံ့ပြန်ချက်များ ပေးသည်။ ဒေတာ ရယူခြင်း၊ ကိရိယာများ အသုံးပြုခြင်း၊ prompt များ ဖန်တီးခြင်း စသည့် လုပ်ဆောင်ချက်များကို စီမံခန့်ခွဲသည်။ Clients နှင့် Hosts အကြား ဆက်သွယ်မှုကို ထိရောက်စွာ ပြုလုပ်နိုင်ရန် Servers သည် ယုံကြည်စိတ်ချရမှုနှင့် တိကျမှုကို ထိန်းသိမ်းပေးသည်။
+**Servers** သည် MCP clients များအား context, tools, နှင့် စွမ်းဆောင်ရည်များကို ပေးစွမ်းသော ပရိုဂရမ်များဖြစ်သည်။ ၎င်းတို့သည် local (Host နှင့် တူညီသောစက်ပေါ်တွင်) သို့မဟုတ် remote (ပြင်ပပလက်ဖောင်းများပေါ်တွင်) အကောင်အထည်ဖော်နိုင်ပြီး client တောင်းဆိုမှုများကို ကိုင်တွယ်ပြီး ဖွဲ့စည်းထားသော အဖြေများကို ပေးသည်။ Servers များသည် Model Context Protocol စံစနစ်ဖြင့် အထူးစွမ်းဆောင်ရည်များကို ဖော်ထုတ်သည်။
 
-**Servers** သည် context နှင့် စွမ်းရည်များ ပေးသော ဝန်ဆောင်မှုများဖြစ်သည်။ ၎င်းတို့သည် -
+**Servers** သည် context နှင့် စွမ်းဆောင်ရည်များကို ပေးစွမ်းသော ဝန်ဆောင်မှုများဖြစ်သည်။ ၎င်းတို့သည်-
 
-- ရရှိနိုင်သော လက္ခဏာများ (အရင်းအမြစ်များ၊ prompt များ၊ ကိရိယာများ) ကို မှတ်ပုံတင်သည်။
-- client မှ ကိရိယာခေါ်ဆိုမှုများ လက်ခံပြီး ဆောင်ရွက်သည်။
-- မော်ဒယ်တုံ့ပြန်ချက်များ တိုးတက်စေရန် context အချက်အလက်များ ပေးသည်။
-- output များကို client ထံ ပြန်ပေးပို့သည်။
-- လိုအပ်ပါက ဆက်သွယ်မှုများအတွင်း အခြေအနေကို ထိန်းသိမ်းထားသည်။
+- **စွမ်းဆောင်ရည်မှတ်ပုံတင်မှု**: Clients များအား ရရှိနိုင်သော primitives (အရင်းအမြစ်များ, prompts, tools) များကို မှတ်ပုံတင်ပြီး ဖော်ထုတ်သည်  
+- **တောင်းဆိုမှုကို ကိုင်တွယ်ခြင်း**: Clients များမှ tool calls, resource requests, နှင့် prompt requests များကို လက်ခံပြီး အကောင်အထည်ဖော်သည်  
+- **အကြောင်းအရာပေးခြင်း**: မော်ဒယ်၏ အဖြေများကို မြှင့်တင်ရန် အကြောင်းအရာဆိုင်ရာ ဒေတာများကို ပေးသည်  
+- **အခြေအနေစီမံခန့်ခွဲမှု**: လိုအပ်ပါက session state ကို ထိန်းသိမ်းပြီး stateful interactions များကို ကိုင်တွယ်သည်  
+- **အချိန်နှင့်တပြေးညီ အကြောင်းကြားချက်များ**: Clients များအား စွမ်းဆောင်ရည်ပြောင်းလဲမှုများနှင့် အပ်ဒိတ်များကို ပေးပို့သည်  
 
-Servers များကို မည်သူမဆို ဖန်တီးနိုင်ပြီး မော်ဒယ်စွမ်းရည်များကို အထူးပြု လုပ်ဆောင်ချက်များဖြင့် တိုးချဲ့နိုင်သည်။
+Servers များကို မည်သူမဆို ဖွံ့ဖြိုးတိုးတက်စေပြီး အထူးစွမ်းဆောင်ရည်များဖြင့် မော်ဒယ်များကို တိုးချဲ့နိုင်သည်။ ၎င်းတို့သည် local နှင့် remote deployment အခြေအနေများနှစ်မျိုးလုံးကို ပံ့ပိုးပေးသည်။
 
-### 4. Server Features
+### 4. Server Primitives
 
-Model Context Protocol (MCP) တွင် Servers သည် clients, hosts နှင့် ဘာသာစကားမော်ဒယ်များအကြား အပြည့်အဝ ဆက်သွယ်မှုများ ဖြစ်စေသော အခြေခံ အဆောက်အအုံများကို ပံ့ပိုးပေးသည်။ ၎င်းတို့သည် MCP ၏ စွမ်းရည်များကို context, ကိရိယာများနှင့် prompt များဖြင့် တိုးတက်စေသည်။
+Model Context Protocol (MCP) တွင် Servers များသည် Clients, Hosts, နှင့် Language Models အကြား ချိတ်ဆက်မှုများကို ပိုမိုကြွယ်ဝစေသော အခြေခံအဆောက်အအုံများကို ပေးစွမ်းသည်။ Servers များသည် အောက်ပါ အခြေခံ primitives သုံးမျိုးကို ဖော်ထုတ်နိုင်သည်-
 
-MCP servers များသည် အောက်ပါ လက္ခဏာများကို ပေးနိုင်သည် -
+#### Resources
 
-#### 📑 Resources
+**Resources** သည် AI အပလီကေးရှင်းများအား အကြောင်းအရာဆိုင်ရာ ဒေတာများကို ပေးစွမ်းသော ဒေတာအရင်းအမြစ်များဖြစ်သည်။ ၎င်းတို့သည် မော်ဒယ်၏ နားလည်မှုနှင့် ဆုံးဖြတ်ချက်ချမှုများကို မြှင့်တင်စေသော static သို့မဟုတ် dynamic အကြောင်းအရာများကို ကိုယ်စားပြုသည်-
 
-Model Context Protocol (MCP) တွင် Resources သည် အသုံးပြုသူများ သို့မဟုတ် AI မော်ဒယ်များ အသုံးပြုနိုင်သော context နှင့် ဒေတာအမျိုးမျိုးကို ဖော်ပြသည်။ ၎င်းတို့တွင် -
+- **အကြောင်းအရာဆိုင်ရာ ဒေတာများ**: AI မော်ဒယ်များအတွက် ဖွဲ့စည်းထားသော အချက်အလက်များ  
+- **အသိပညာအရင်းအမြစ်များ**: စာရွက်စာတမ်းများ၊ ဆောင်းပါးများ၊ လက်စွဲစာအုပ်များနှင့် သုတေသနစာတမ်းများ  
+- **Local Data Sources**: ဖိုင်များ, ဒေတာဘေ့စ်များ, နှင့် local system အချက်အလက်များ  
+- **ပြင်ပဒေတာများ**: API တုံ့ပြန်မှုများ, web services, နှင့် remote system ဒေတာများ  
+- **Dynamic Content**: ပြင်ပအခြေအနေများအပေါ်မူတည်၍ အချိန်နှင့်တပြေးညီ အပ်ဒိတ်လုပ်ဆောင်သော ဒေတာများ  
 
-- **Contextual Data**: အသုံးပြုသူများ သို့မဟုတ် AI မော်ဒယ်များ အတွက် ဆုံးဖြတ်ချက်ချခြင်းနှင့် လုပ်ငန်းဆောင်ရွက်ခြင်းအတွက် အသုံးပြုနိုင်သော အချက်အလက်များနှင့် context များ။
-- **Knowledge Bases နှင့် Document Repositories**: ဆောင်းပါးများ၊ လက်စွဲစာအုပ်များ၊ သုတေသနစာတမ်းများကဲ့သို့ ဖွဲ့စည်းထားသော ဒေတာများနှင့် ဖွဲ့စည်းမထားသော ဒေတာများ စုစည်းထားသော အရင်းအမြစ်များ။
-- **Local Files နှင့် Databases**: စက်ပစ္စည်းတွင် ဒေတာသိမ်းဆည်းထားသော ဖိုင်များနှင့် ဒေတာဘေ့စ်များ၊ လုပ်ငန်းဆောင်ရွက်ခြင်းနှင့် ခွဲခြမ်းစိတ်ဖြာခြင်းအတွက် ရရှိနိုင်သည်။
-- **APIs နှင့် Web Services**: အွန်လိုင်းရင်းမြစ်များနှင့် ကိရိယာများနှင့် ပေါင်းစည်းနိုင်ရန် အပိုဒေတာနှင့် လုပ်ဆောင်ချက်များ ပေးသော ပြင်ပ အင်တာဖေ့စ်များနှင့် ဝန်ဆောင်မှုများ။
+Resources များကို URIs ဖြင့် သတ်မှတ်ပြီး `resources/list` နှင့် `resources/read` နည်းလမ်းများမှတစ်ဆင့် ရှာဖ
+- **JSON-RPC 2.0 Protocol**: ဆက်သွယ်မှုအားလုံးသည် နည်းလမ်းခေါ်ဆိုမှုများ၊ တုံ့ပြန်မှုများနှင့် အသိပေးချက်များအတွက် စံပြ JSON-RPC 2.0 မက်ဆေ့ချ်ဖော်မတ်ကို အသုံးပြုသည်  
+- **Lifecycle Management**: Client နှင့် Server အကြား ချိတ်ဆက်မှု စတင်ခြင်း၊ စွမ်းရည်ညှိနှိုင်းမှုနှင့် အစည်းအဝေးအဆုံးသတ်ခြင်းကို စီမံခန့်ခွဲသည်  
+- **Server Primitives**: Server များအနေဖြင့် အဓိကလုပ်ဆောင်ချက်များကို ကိရိယာများ၊ အရင်းအမြစ်များနှင့် အကြံပြုချက်များမှတဆင့် ပံ့ပိုးပေးနိုင်စေသည်  
+- **Client Primitives**: Server များအနေဖြင့် LLM များမှ နမူနာယူခြင်း၊ အသုံးပြုသူထံမှ အချက်အလက်တောင်းခံခြင်းနှင့် မှတ်တမ်းမက်ဆေ့ချ်များပို့ခြင်းကို တောင်းဆိုနိုင်စေသည်  
+- **Real-time Notifications**: Polling မလိုအပ်ဘဲ အချိန်နှင့်တပြေးညီ အသိပေးချက်များကို ပံ့ပိုးပေးသည်  
 
-Resource တစ်ခု၏ ဥပမာမှာ ဒေတာဘေ့စ် schema သို့မဟုတ် ဖိုင်တစ်ခုဖြစ်နိုင်ပြီး အောက်ပါအတိုင်း ရယူနိုင်သည် -
+#### အဓိကအင်္ဂါရပ်များ:
 
-```text
-file://log.txt
-database://schema
+- **Protocol Version Negotiation**: သက်ဆိုင်မှုရှိစေရန် (YYYY-MM-DD) အခြေခံထားသော ဗားရှင်းစနစ်ကို အသုံးပြုသည်  
+- **Capability Discovery**: Client နှင့် Server များအကြား စတင်ချိန်တွင် ပံ့ပိုးနိုင်သော အင်္ဂါရပ်များကို ဖလှယ်သည်  
+- **Stateful Sessions**: အကြောင်းအရာဆက်စပ်မှုအတွက် အများအပြား အပြန်အလှန်ဆက်သွယ်မှုများအတွင်း ချိတ်ဆက်မှုအခြေအနေကို ထိန်းသိမ်းထားသည်  
+
+### Transport Layer
+
+**Transport Layer** သည် MCP ပါဝင်သူများအကြား ဆက်သွယ်မှုချန်နယ်များ၊ မက်ဆေ့ချ်ဖရိမ်မင်နှင့် authentication ကို စီမံခန့်ခွဲသည်။
+
+#### ပံ့ပိုးထားသော Transport Mechanisms:
+
+1. **STDIO Transport**:
+   - တိုက်ရိုက် process ဆက်သွယ်မှုအတွက် standard input/output streams ကို အသုံးပြုသည်  
+   - တူညီသောစက်ပေါ်တွင် အခြေခံထားသော local process များအတွက် အကောင်းဆုံးဖြစ်သည်  
+   - Local MCP server အကောင်အထည်ဖော်မှုများအတွက် အများဆုံးအသုံးပြုသည်  
+
+2. **Streamable HTTP Transport**:
+   - Client-to-server မက်ဆေ့ချ်များအတွက် HTTP POST ကို အသုံးပြုသည်  
+   - Server-to-client streaming အတွက် Server-Sent Events (SSE) ကို ရွေးချယ်နိုင်သည်  
+   - ကွန်ရက်များအကြား remote server ဆက်သွယ်မှုကို ပံ့ပိုးပေးသည်  
+   - Standard HTTP authentication (bearer tokens, API keys, custom headers) ကို ပံ့ပိုးပေးသည်  
+   - MCP သည် လုံခြုံသော token-based authentication အတွက် OAuth ကို အကြံပြုသည်  
+
+#### Transport Abstraction:
+
+Transport layer သည် data layer မှ ဆက်သွယ်မှုအသေးစိတ်ကို ခွဲထုတ်ပေးပြီး transport mechanisms အားလုံးအတွက် တူညီသော JSON-RPC 2.0 မက်ဆေ့ချ်ဖော်မတ်ကို အသုံးပြုနိုင်စေသည်။ ယင်း abstraction သည် local နှင့် remote server များအကြား အလွယ်တကူ ပြောင်းလဲနိုင်စေသည်။
+
+### လုံခြုံရေးစဉ်းစားချက်များ
+
+MCP အကောင်အထည်ဖော်မှုများသည် protocol လုပ်ဆောင်ချက်အားလုံးအတွင်း လုံခြုံမှု၊ ယုံကြည်စိတ်ချမှုနှင့် လုံခြုံရေးကို သေချာစေရန် အရေးကြီးသော လုံခြုံရေးမူဝါဒများကို လိုက်နာရမည်ဖြစ်သည်။
+
+- **User Consent and Control**: အသုံးပြုသူများသည် မည်သည့်ဒေတာကို ရယူမည်၊ မည်သည့်လုပ်ဆောင်ချက်များကို ခွင့်ပြုမည်ဆိုသည်ကို ရှင်းလင်းစွာ သိရှိပြီး အတည်ပြုရန် လိုအပ်သည်။  
+- **Data Privacy**: အသုံးပြုသူဒေတာကို ခွင့်ပြုချက်မရှိဘဲ မဖော်ထုတ်ရ၊ လုံခြုံရေးထိန်းချုပ်မှုများဖြင့် ကာကွယ်ရမည်။  
+- **Tool Safety**: မည်သည့် tool ကိုမဆို အသုံးပြုမီ အသုံးပြုသူ၏ ခွင့်ပြုချက်ကို ရယူရမည်။ Tool ၏ လုပ်ဆောင်ချက်များကို အသုံးပြုသူများ သိရှိနားလည်စေရန် အထောက်အကူပြုရမည်။  
+
+ဤလုံခြုံရေးမူဝါဒများကို လိုက်နာခြင်းအားဖြင့် MCP သည် အသုံးပြုသူ၏ ယုံကြည်မှု၊ ကိုယ်ရေးအချက်အလက်လုံခြုံမှုနှင့် လုံခြုံရေးကို ထိန်းသိမ်းထားနိုင်သည်။
+
+## Code Examples: အဓိကအစိတ်အပိုင်းများ
+
+အောက်တွင် MCP server အစိတ်အပိုင်းများနှင့် tools များကို အကောင်အထည်ဖော်ရန် နမူနာကို နာမည်ကြီး programming language များဖြင့် ဖော်ပြထားသည်။
+
+### .NET နမူနာ: MCP Server တစ်ခု ဖန်တီးခြင်း
+
+ဤနမူနာသည် custom tools များဖြင့် MCP server တစ်ခုကို .NET ဖြင့် အကောင်အထည်ဖော်ပုံကို ပြသသည်။
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using ModelContextProtocol.Server;
+using ModelContextProtocol.Server.Transport;
+using ModelContextProtocol.Server.Tools;
+
+public class WeatherServer
+{
+    public static async Task Main(string[] args)
+    {
+        // Create an MCP server
+        var server = new McpServer(
+            name: "Weather MCP Server",
+            version: "1.0.0"
+        );
+        
+        // Register our custom weather tool
+        server.AddTool<string, WeatherData>("weatherTool", 
+            description: "Gets current weather for a location",
+            execute: async (location) => {
+                // Call weather API (simplified)
+                var weatherData = await GetWeatherDataAsync(location);
+                return weatherData;
+            });
+        
+        // Connect the server using stdio transport
+        var transport = new StdioServerTransport();
+        await server.ConnectAsync(transport);
+        
+        Console.WriteLine("Weather MCP Server started");
+        
+        // Keep the server running until process is terminated
+        await Task.Delay(-1);
+    }
+    
+    private static async Task<WeatherData> GetWeatherDataAsync(string location)
+    {
+        // This would normally call a weather API
+        // Simplified for demonstration
+        await Task.Delay(100); // Simulate API call
+        return new WeatherData { 
+            Temperature = 72.5,
+            Conditions = "Sunny",
+            Location = location
+        };
+    }
+}
+
+public class WeatherData
+{
+    public double Temperature { get; set; }
+    public string Conditions { get; set; }
+    public string Location { get; set; }
+}
 ```
 
-### 🤖 Prompts
+### Java နမူနာ: MCP Server အစိတ်အပိုင်းများ
 
-Model Context Protocol (MCP) တွင် Prompts သည် အသုံးပြုသူ လုပ်ငန်းစဉ်များကို လွယ်ကူစေပြီး ဆက်သွယ်မှုကို တိုးတက်စေသော ကြိုတင်သတ်မှတ်ထားသော ပုံစံများနှင့် ဆက်သွယ်မှု နမူနာများ ပါဝင်သည်။ ၎င်းတို့တွင် -
+ဤနမူနာသည် .NET နမူနာနှင့် တူသော MCP server နှင့် tool registration ကို Java ဖြင့် ပြသသည်။
 
-- **ပုံစံသတ်မှတ်ထားသော စာတိုများနှင့် လုပ်ငန်းစဉ်များ**: အသုံးပြုသူများကို အထူးလုပ်ငန်းများနှင့် ဆက်သွယ်မှုများအတွက် လမ်းညွှန်ပေးသော ကြိုတင်ဖွဲ့စည်းထားသော စာတိုများနှင့် လုပ်ငန်းစဉ်များ။
-- **ကြိုတင်သတ်မှတ်ထားသော ဆက်သွယ်မှု နမူနာများ**: တိကျပြီး ထိရောက်သော ဆက်သွယ်မှုအတွက် စံသတ်မှတ်ထားသော လုပ်ဆောင်ချက်များနှင့် တုံ့ပြန်ချက်များ၏ အစဉ်လိုက်။
-- **အထူးပြု စကားပြောပုံစံများ**: အထူးအမျိုးအစား စကားပြောများအတွက် ကိုက်ညီသော ပုံစံများ၊ သက်ဆိုင်ရာ context နှင့် ကိုက်ညီမှုရှိစေရန်။
+```java
+import io.modelcontextprotocol.server.McpServer;
+import io.modelcontextprotocol.server.McpToolDefinition;
+import io.modelcontextprotocol.server.transport.StdioServerTransport;
+import io.modelcontextprotocol.server.tool.ToolExecutionContext;
+import io.modelcontextprotocol.server.tool.ToolResponse;
 
-Prompt ပုံစံတစ်ခုကို အောက်ပါအတိုင်း ဖော်ပြနိုင်သည် -
+public class WeatherMcpServer {
+    public static void main(String[] args) throws Exception {
+        // Create an MCP server
+        McpServer server = McpServer.builder()
+            .name("Weather MCP Server")
+            .version("1.0.0")
+            .build();
+            
+        // Register a weather tool
+        server.registerTool(McpToolDefinition.builder("weatherTool")
+            .description("Gets current weather for a location")
+            .parameter("location", String.class)
+            .execute((ToolExecutionContext ctx) -> {
+                String location = ctx.getParameter("location", String.class);
+                
+                // Get weather data (simplified)
+                WeatherData data = getWeatherData(location);
+                
+                // Return formatted response
+                return ToolResponse.content(
+                    String.format("Temperature: %.1f°F, Conditions: %s, Location: %s", 
+                    data.getTemperature(), 
+                    data.getConditions(), 
+                    data.getLocation())
+                );
+            })
+            .build());
+        
+        // Connect the server using stdio transport
+        try (StdioServerTransport transport = new StdioServerTransport()) {
+            server.connect(transport);
+            System.out.println("Weather MCP Server started");
+            // Keep server running until process is terminated
+            Thread.currentThread().join();
+        }
+    }
+    
+    private static WeatherData getWeatherData(String location) {
+        // Implementation would call a weather API
+        // Simplified for example purposes
+        return new WeatherData(72.5, "Sunny", location);
+    }
+}
 
-```markdown
-Generate a product slogan based on the following {{product}} with the following {{keywords}}
+class WeatherData {
+    private double temperature;
+    private String conditions;
+    private String location;
+    
+    public WeatherData(double temperature, String conditions, String location) {
+        this.temperature = temperature;
+        this.conditions = conditions;
+        this.location = location;
+    }
+    
+    public double getTemperature() {
+        return temperature;
+    }
+    
+    public String getConditions() {
+        return conditions;
+    }
+    
+    public String getLocation() {
+        return location;
+    }
+}
 ```
 
-#### ⛏️ Tools
+### Python နမူနာ: MCP Server တည်ဆောက်ခြင်း
 
-Model Context Protocol (MCP) တွင် Tools သည် AI မော်ဒယ်က အထူးတာဝန်များ ဆောင်ရွက်ရန် အသုံးပြုနိုင်သော function များဖြစ်သည်။ ၎င်းတို့သည် AI မော်ဒယ်၏ စွမ်းရည်များကို တိုးတက်စေပြီး တိကျယုံကြည်စိတ်ချရသော လုပ်ဆောင်ချက်များ ပေးသည်။ အဓိက အချက်များမှာ -
+ဤနမူနာတွင် Python ဖြင့် MCP server တစ်ခုကို တည်ဆောက်ပုံနှင့် tools ဖန်တီးပုံကို ပြသသည်။
 
-- **AI မော်ဒယ်က ဆောင်ရွက်နိုင်သော function များ**: Tools သည် AI မော်ဒယ်က ခေါ်ယူ၍ လုပ်ဆောင်နိုင်သော function များဖြစ်သည်။
-- **ထူးခြားသော နာမည်နှင့် ဖော်ပြချက်**: Tool တစ်ခုစီတွင် ထူးခြားသော နာမည်နှင့် ၎င်း၏ ရည်ရွယ်ချက်နှင့် လုပ်ဆောင်ချက်ကို ဖော်ပြသည့် အသေးစိတ် ဖော်ပြချက် ရှိသည်။
-- **ပါရာမီတာများနှင့် output များ**: Tools သည် သတ်မှတ်ထားသော ပါရာမီတာများကို လက်ခံပြီး တိကျစွာ ဖော်ပြထားသော output များကို ပြန်လည်ပေးပို့သည်။
-- **သီးခြား function များ**: Tools များသည် ဝက်ဘ်ရှာဖွေမှု၊ တွက်ချက်မှုများ၊ ဒေတာဘေ့စ် မေးခွန်းများ ကဲ့သို့ သီးခြား function များ ဆောင်ရွက်သည်။
+```python
+#!/usr/bin/env python3
+import asyncio
+from mcp.server.fastmcp import FastMCP
+from mcp.server.transports.stdio import serve_stdio
 
-Tool တစ်ခု၏ ဥပမာကို အောက်ပါအတိုင်း ဖော်ပြနိုင်သည် -
-
-```typescript
-server.tool(
-  "GetProducts",
-  {
-    pageSize: z.string().optional(),
-    pageCount: z.string().optional()
-  }, () => {
-    // return results from API
-  }
+# Create a FastMCP server
+mcp = FastMCP(
+    name="Weather MCP Server",
+    version="1.0.0"
 )
+
+@mcp.tool()
+def get_weather(location: str) -> dict:
+    """Gets current weather for a location."""
+    # This would normally call a weather API
+    # Simplified for demonstration
+    return {
+        "temperature": 72.5,
+        "conditions": "Sunny",
+        "location": location
+    }
+
+# Alternative approach using a class
+class WeatherTools:
+    @mcp.tool()
+    def forecast(self, location: str, days: int = 1) -> dict:
+        """Gets weather forecast for a location for the specified number of days."""
+        # This would normally call a weather API forecast endpoint
+        # Simplified for demonstration
+        return {
+            "location": location,
+            "forecast": [
+                {"day": i+1, "temperature": 70 + i, "conditions": "Partly Cloudy"}
+                for i in range(days)
+            ]
+        }
+
+# Instantiate the class to register its tools
+weather_tools = WeatherTools()
+
+# Start the server using stdio transport
+if __name__ == "__main__":
+    asyncio.run(serve_stdio(mcp))
 ```
 
-## Client Features
+### JavaScript နမူနာ: MCP Server ဖန်တီးခြင်း
 
-Model Context Protocol (MCP) တွင် clients များသည် servers များအား အဓိက လက္ခဏာများ ပေးစွမ်းကာ protocol အတွင်း လုပ်ဆောင်ချက်နှင့် ဆက်သွယ်မှုကို တိုးတက်စေသည်။ ထူးခြားသော လက္ခဏာတစ်ခုမှာ Sampling ဖြစ်သည်။
+ဤနမူနာသည် JavaScript ဖြင့် MCP server တစ်ခုကို ဖန်တီးခြင်းနှင့် weather ဆိုင်ရာ tools နှစ်ခုကို register ပြုလုပ်ပုံကို ပြသသည်။
 
-### 👉 Sampling
+```javascript
+// Using the official Model Context Protocol SDK
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { z } from "zod"; // For parameter validation
 
-- **Server-Initiated Agentic Behaviors**: Clients များက server များအား အလိုအလျောက် အရေးယူမှုများ သို့မဟုတ် လုပ်ဆောင်ချက်များ စတင်ဆောင်ရွက်နိုင်စေသည်၊ စနစ်၏ dynamic စွမ်းရည်များ တိုးတက်စေသည်။
-- **Recursive LLM Interactions**: ဒီလက္ခဏာက ကြီးမားသောဘာသာစကားမော်ဒယ်များ (LLMs) နှင့် အကြိမ်ကြိမ် ဆက်သွယ်မှုများ ပြုလုပ်နိုင်စေပြီး ပိုမိုရှုပ်ထွေးပြီး အဆင့်ဆင့် လုပ်ငန်းစဉ်များကို လုပ်ဆောင်နိုင်စေသည်။
-- **Requesting Additional Model Completions**: Servers များက မော်ဒယ်ထံမှ ပိုမိုပြီး ပြည့်စုံသော တုံ့ပြန်ချက်များ ရယူရန် တောင်းဆိုနိုင်သည်။
+// Create an MCP server
+const server = new McpServer({
+  name: "Weather MCP Server",
+  version: "1.0.0"
+});
 
-## MCP တွင် သတင်းအချက်အလက် လည်ပတ်မှု
+// Define a weather tool
+server.tool(
+  "weatherTool",
+  {
+    location: z.string().describe("The location to get weather for")
+  },
+  async ({ location }) => {
+    // This would normally call a weather API
+    // Simplified for demonstration
+    const weatherData = await getWeatherData(location);
+    
+    return {
+      content: [
+        { 
+          type: "text", 
+          text: `Temperature: ${weatherData.temperature}°F, Conditions: ${weatherData.conditions}, Location: ${weatherData.location}` 
+        }
+      ]
+    };
+  }
+);
 
-Model Context Protocol (MCP) သည် hosts, clients, servers နှင့် မော်ဒယ်များအကြား သတင်းအချက်အလက် လည်ပတ်မှုကို စနစ်တကျ သတ်မှတ်ထားသည်။ ဒီလည်ပတ်မှုကို နားလည်ခြင်းက အသုံးပြုသူ တောင်းဆိုမှုများကို မည်သို့ ကိုင်တွယ်ပြီး ပြင်ပကိရိယာများနှင့် ဒေတာများကို မော်ဒယ်တုံ့ပြန်ချက်များထဲသို့ ပေါင်းစည်းသွားသည်ကို ရှင်းလင်းစေသည်။
+// Define a forecast tool
+server.tool(
+  "forecastTool",
+  {
+    location: z.string(),
+    days: z.number().default(3).describe("Number of days for forecast")
+  },
+  async ({ location, days }) => {
+    // This would normally call a weather API
+    // Simplified for demonstration
+    const forecast = await getForecastData(location, days);
+    
+    return {
+      content: [
+        { 
+          type: "text", 
+          text: `${days}-day forecast for ${location}: ${JSON.stringify(forecast)}` 
+        }
+      ]
+    };
+  }
+);
 
-- **Host သည် ချိတ်ဆက်မှု စတင်သည်**  
-  Host application (IDE သို့မဟုတ် စကားပြောအင်တာဖေ့စ်ကဲ့သို့) သည် MCP server တစ်ခုနှင့် ချိတ်ဆက်မှုတစ်ခုကို STDIO, WebSocket သို့မဟုတ် အခြားထောက်ခံထားသော သယ်ယူပို့ဆောင်မှုဖြင့် တည်ဆောက်သည်။
+// Helper functions
+async function getWeatherData(location) {
+  // Simulate API call
+  return {
+    temperature: 72.5,
+    conditions: "Sunny",
+    location: location
+  };
+}
 
-- **စွမ်းရည် ညှိနှိုင်းမှု**  
-  Host အတွင်း client နှင့် server တို့သည် ၎င်းတို့ထောက်ခံသော လက္ခဏာများ၊ ကိရိယာများ၊ အရင်းအမြစ်များနှင့် protocol ဗားရှင်းများအကြောင်း အချက်အလက်များ လဲလှယ်သည်။ ၎
-MCP သည် protocol အတွင်း လုံခြုံရေးနှင့် ခွင့်ပြုချက်များကို စီမံခန့်ခွဲရန်အတွက် အတွင်းပိုင်းတွင် ပါဝင်သော အယူအဆများနှင့် မက်ကနစ်များစွာ ပါဝင်သည်။
+async function getForecastData(location, days) {
+  // Simulate API call
+  return Array.from({ length: days }, (_, i) => ({
+    day: i + 1,
+    temperature: 70 + Math.floor(Math.random() * 10),
+    conditions: i % 2 === 0 ? "Sunny" : "Partly Cloudy"
+  }));
+}
 
-1. **ကိရိယာ ခွင့်ပြုချက် ထိန်းချုပ်မှု**  
-  Client များသည် session အတွင်း မော်ဒယ်အသုံးပြုခွင့်ရှိသည့် ကိရိယာများကို သတ်မှတ်နိုင်သည်။ ၎င်းသည် သတ်မှတ်ထားသော ကိရိယာများသာ အသုံးပြုခွင့်ရှိစေရန် အာမခံပေးပြီး မလိုလားအပ်သော သို့မဟုတ် မလုံခြုံသော လုပ်ဆောင်ချက်များ ဖြစ်ပေါ်မှုကို လျော့နည်းစေသည်။ ခွင့်ပြုချက်များကို အသုံးပြုသူ စိတ်ကြိုက်၊ အဖွဲ့အစည်း မူဝါဒများ သို့မဟုတ် ဆက်သွယ်မှုအခြေအနေများအပေါ် မူတည်၍ အလိုအလျောက် ပြင်ဆင်နိုင်သည်။
+// Connect the server using stdio transport
+const transport = new StdioServerTransport();
+server.connect(transport).catch(console.error);
 
-2. **အတည်ပြုခြင်း**  
-  Server များသည် ကိရိယာများ၊ အရင်းအမြစ်များ သို့မဟုတ် အထူးသဖြင့် လုပ်ဆောင်ချက်များကို ဝင်ရောက်ခွင့်ပေးရန် မတိုင်မီ အတည်ပြုမှုကို တောင်းဆိုနိုင်သည်။ ၎င်းတွင် API key များ၊ OAuth token များ သို့မဟုတ် အခြားအတည်ပြုမှု စနစ်များ ပါဝင်နိုင်သည်။ မှန်ကန်သော အတည်ပြုမှုသည် ယုံကြည်စိတ်ချရသော client များနှင့် အသုံးပြုသူများသာ server အပေါ် လုပ်ဆောင်ချက်များကို ခေါ်ယူနိုင်စေရန် အာမခံပေးသည်။
+console.log("Weather MCP Server started");
+```
 
-3. **အတည်ပြုခြင်း (Validation)**  
-  ကိရိယာခေါ်ယူမှုတိုင်းအတွက် ပါရာမီတာများကို အတည်ပြုမှု ပြုလုပ်ရမည်။ ကိရိယာတိုင်းသည် မျှော်မှန်းထားသော အမျိုးအစားများ၊ ဖော်မတ်များနှင့် ကန့်သတ်ချက်များကို သတ်မှတ်ပြီး server သည် လာရောက်သော တောင်းဆိုမှုများကို ထိုအတိုင်း စစ်ဆေးသည်။ ၎င်းက မမှန်ကန်သော သို့မဟုတ် မကောင်းသော အချက်အလက်များက ကိရိယာများထံ မရောက်ရှိစေရန်ကာကွယ်ပေးပြီး လုပ်ဆောင်ချက်များ၏ တိကျမှန်ကန်မှုကို ထိန်းသိမ်းပေးသည်။
+ဤ JavaScript နမူနာသည် MCP client တစ်ခုကို ဖန်တီးပြီး server နှင့် ချိတ်ဆက်ခြင်း၊ prompt ပေးပို့ခြင်းနှင့် tool calls များကို ပြန်လည်ဆန်းစစ်ပုံကို ပြသသည်။
 
-4. **နှုန်းထား ကန့်သတ်ခြင်း**  
-  Server အရင်းအမြစ်များကို မတရားအသုံးပြုမှုမှ ကာကွယ်ရန်နှင့် တရားမျှတသော အသုံးပြုမှုကို သေချာစေရန် MCP server များသည် ကိရိယာခေါ်ယူမှုများနှင့် အရင်းအမြစ် ဝင်ရောက်မှုများအတွက် နှုန်းထား ကန့်သတ်မှုများကို အကောင်အထည်ဖော်နိုင်သည်။ နှုန်းထား ကန့်သတ်မှုများကို အသုံးပြုသူအလိုက်၊ session အလိုက် သို့မဟုတ် အထွေထွေ အလိုက် သတ်မှတ်နိုင်ပြီး denial-of-service တိုက်ခိုက်မှုများ သို့မဟုတ် အရင်းအမြစ်များ များပြားစွာ သုံးစွဲမှုမှ ကာကွယ်ပေးသည်။
+## လုံခြုံရေးနှင့် ခွင့်ပြုချက်
 
-ဤမက်ကနစ်များကို ပေါင်းစပ်အသုံးပြုခြင်းဖြင့် MCP သည် ဘာသာစကား မော်ဒယ်များကို ပြင်ပကိရိယာများနှင့် ဒေတာအရင်းအမြစ်များနှင့် ပေါင်းစည်းရာတွင် လုံခြုံမှုရှိသော အခြေခံအဆောက်အအုံကို ပံ့ပိုးပေးပြီး အသုံးပြုသူများနှင့် ဖန်တီးသူများအား ဝင်ရောက်ခွင့်နှင့် အသုံးပြုမှုကို အသေးစိတ် ထိန်းချုပ်နိုင်စေသည်။
+MCP သည် protocol အတွင်း လုံခြုံရေးနှင့် ခွင့်ပြုချက်များကို စီမံခန့်ခွဲရန် အဆင့်မြင့်စနစ်များကို ပံ့ပိုးပေးထားသည်။
 
-## Protocol Messages
+1. **Tool Permission Control**:  
+   Client များအနေဖြင့် session အတွင်း model သုံးနိုင်သည့် tools များကို သတ်မှတ်နိုင်သည်။  
+2. **Authentication**:  
+   Server များအနေဖြင့် tools, resources, သို့မဟုတ် sensitive operations များကို အသုံးပြုခွင့်မပေးမီ authentication လိုအပ်သည်။  
+3. **Validation**:  
+   Tool invocation များအတွက် parameter validation ကို အတည်ပြုသည်။  
+4. **Rate Limiting**:  
+   Server resources များကို မတရားအသုံးမပြုနိုင်စေရန် rate limiting ကို အသုံးပြုသည်။  
 
-MCP ဆက်သွယ်မှုတွင် client များ၊ server များနှင့် မော်ဒယ်များအကြား ရိုးရှင်းပြီး ယုံကြည်စိတ်ချရသော ဆက်သွယ်မှုများအတွက် ဖွဲ့စည်းထားသော JSON မက်ဆေ့ခ်ျများကို အသုံးပြုသည်။ အဓိက မက်ဆေ့ခ်ျအမျိုးအစားများမှာ -
+ဤစနစ်များပေါင်းစပ်ခြင်းအားဖြင့် MCP သည် language models နှင့် tools များကို လုံခြုံစွာ ပေါင်းစပ်အသုံးပြုနိုင်စေသည်။
 
-- **Client Request**  
-  Client မှ server သို့ ပို့သော မက်ဆေ့ခ်ျဖြစ်ပြီး အများအားဖြင့် အောက်ပါအချက်များ ပါဝင်သည် -  
-  - အသုံးပြုသူ၏ prompt သို့မဟုတ် command  
-  - ဆက်သွယ်မှု သမိုင်းကြောင်း (context)  
-  - ကိရိယာ ဖွဲ့စည်းမှုနှင့် ခွင့်ပြုချက်များ  
-  - အခြား metadata သို့မဟုတ် session အချက်အလက်များ
+## Protocol Messages & Communication Flow
 
-- **Model Response**  
-  မော်ဒယ်မှ (client မှတဆင့်) ပြန်ပေးပို့သော မက်ဆေ့ခ်ျဖြစ်ပြီး အောက်ပါအချက်များ ပါဝင်သည် -  
-  - prompt နှင့် context အပေါ် မူတည်၍ ဖန်တီးထားသော စာသား သို့မဟုတ် ပြီးစီးမှု  
-  - မော်ဒယ်က ကိရိယာခေါ်ယူရန်လိုအပ်ကြောင်း သတ်မှတ်ပါက ကိရိယာခေါ်ယူမှု ညွှန်ကြားချက်များ  
-  - လိုအပ်သလို အရင်းအမြစ်များ သို့မဟုတ် ထပ်ဆောင်း context ကို ရည်ညွှန်းချက်များ
+MCP ဆက်သွယ်မှုသည် **JSON-RPC 2.0** မက်ဆေ့ချ်များကို အသုံးပြု၍ host, client, server များအကြား ရှင်းလင်းတိကျသော ဆက်သွယ်မှုများကို ပံ့ပိုးပေးသည်။
 
-- **Tool Request**  
-  ကိရိယာတစ်ခုကို လုပ်ဆောင်ရန်လိုအပ်သောအခါ client မှ server သို့ ပို့သော မက်ဆေ့ခ်ျဖြစ်ပြီး အောက်ပါအချက်များ ပါဝင်သည် -  
-  - ခေါ်ယူမည့် ကိရိယာအမည်  
-  - ကိရိယာ၏ schema အတိုင်း အတည်ပြုထားသော ပါရာမီတာများ  
-  - တောင်းဆိုမှုကို လိုက်လံစစ်ဆေးရန် context သို့မဟုတ် အမှတ်အသားများ
+### အဓိက မက်ဆေ့ချ်အမျိုးအစားများ:
 
-- **Tool Response**  
-  ကိရိယာကို server မှ လုပ်ဆောင်ပြီးနောက် ပြန်ပေးပို့သော မက်ဆေ့ခ်ျဖြစ်ပြီး အောက်ပါအချက်များ ပါဝင်သည် -  
-  - ကိရိယာ လုပ်ဆောင်မှုရလဒ်များ (ဖွဲ့စည်းထားသော ဒေတာ သို့မဟုတ် အကြောင်းအရာ)  
-  - ကိရိယာခေါ်ယူမှု မအောင်မြင်ပါက အမှား သို့မဟုတ် အခြေအနေ အချက်အလက်များ  
-  - လိုအပ်ပါက လုပ်ဆောင်မှုနှင့် ဆက်စပ်သော metadata သို့မဟုတ် မှတ်တမ်းများ
+#### **Initialization Messages**
+- **`initialize` Request**: ချိတ်ဆက်မှုကို စတင်ပြီး protocol version နှင့် စွမ်းရည်များကို ညှိနှိုင်းသည်  
+- **`initialize` Response**: ပံ့ပိုးနိုင်သော အင်္ဂါရပ်များနှင့် server အချက်အလက်များကို အတည်ပြုသည်  
+- **`notifications/initialized`**: Initialization ပြီးဆုံးပြီး session အသင့်ဖြစ်ကြောင်း အသိပေးသည်  
 
-ဤဖွဲ့စည်းထားသော မက်ဆေ့ခ်ျများသည် MCP လုပ်ငန်းစဉ်၏ အဆင့်တိုင်းကို ထင်ရှား၊ လိုက်လံစစ်ဆေးနိုင်ပြီး တိုးချဲ့နိုင်စေရန် အထောက်အကူပြုသည်။ ၎င်းသည် မျိုးစုံသော ဆွေးနွေးမှုများ၊ ကိရိယာချိတ်ဆက်မှုများနှင့် ခိုင်မာသော အမှားကိုင်တွယ်မှုများကို ပံ့ပိုးပေးသည်။
+#### **Discovery Messages**
+- **`tools/list` Request**: Server မှ ရရှိနိုင်သော tools များကို ရှာဖွေသည်  
+- **`resources/list` Request**: ရရှိနိုင်သော resources (ဒေတာအရင်းအမြစ်များ) ကို ဖော်ပြသည်  
+- **`prompts/list` Request**: ရရှိနိုင်သော prompt templates များကို ရယူသည်  
 
-## အဓိက အချက်များ
+#### **Execution Messages**  
+- **`tools/call` Request**: သတ်မှတ်ထားသော parameters များဖြင့် tool တစ်ခုကို အကောင်အထည်ဖော်သည်  
+- **`resources/read` Request**: သတ်မှတ်ထားသော resource မှ content ကို ရယူသည်  
+- **`prompts/get` Request**: parameters များနှင့်အတူ prompt template တစ်ခုကို ရယူသည်  
 
-- MCP သည် client-server ဖွဲ့စည်းမှုဖြင့် မော်ဒယ်များကို ပြင်ပ စွမ်းဆောင်ရည်များနှင့် ချိတ်ဆက်သည်  
-- Ecosystem တွင် client များ၊ host များ၊ server များ၊ ကိရိယာများနှင့် ဒေတာအရင်းအမြစ်များ ပါဝင်သည်  
-- ဆက်သွယ်မှုကို STDIO, SSE သို့မဟုတ် WebSockets ဖြင့် ပြုလုပ်နိုင်သည်  
-- ကိရိယာများသည် မော်ဒယ်များအား ဖော်ပြသော အခြေခံ လုပ်ဆောင်ချက်ယူနစ်များဖြစ်သည်  
-- ဖွဲ့စည်းထားသော ဆက်သွယ်မှု protocol များသည် တိကျညီညာသော ဆက်သွယ်မှုများကို အာမခံပေးသည်
+#### **Client-side Messages**
+- **`sampling/complete` Request**: Server သည် client ထံမှ LLM completion ကို တောင်းဆိုသည်  
+- **`elicitation/request`**: Server သည် client interface မှတဆင့် အသုံးပြုသူ input ကို တောင်းဆိုသည်  
+- **Logging Messages**: Server သည် client ထံသို့ structured log messages များကို ပို့သည်  
+
+#### **Notification Messages**
+- **`notifications/tools/list_changed`**: Tool များပြောင်းလဲမှုကို Server မှ Client ကို အသိပေးသည်  
+- **`notifications/resources/list_changed`**: Resource များပြောင်းလဲမှုကို Server မှ Client ကို အသိပေးသည်  
+- **`notifications/prompts/list_changed`**: Prompt များပြောင်းလဲမှုကို Server မှ Client ကို အသိပေးသည်  
+
+### မက်ဆေ့ချ်ဖွဲ့စည်းမှု:
+
+MCP မက်ဆေ့ချ်အားလုံးသည် JSON-RPC 2.0 ဖော်မတ်ကို လိုက်နာပြီး:
+- **Request Messages**: `id`, `method`, နှင့် optional `params` ပါဝင်သည်  
+- **Response Messages**: `id` နှင့် `result` သို့မဟုတ် `error` ပါဝင်သည်  
+- **Notification Messages**: `method` နှင့် optional `params` ပါဝင်ပြီး (no `id` or response expected)  
+
+ဤဖွဲ့စည်းမှုသည် အချိန်နှင့်တပြေးညီ အချက်အလက်များ၊ tool chaining နှင့် error handling များအတွက် ယုံကြည်စိတ်ချရသော ဆက်သွယ်မှုကို ပံ့ပိုးပေးသည်။
+
+## အဓိကအချက်များ
+
+- **Architecture**: MCP သည် client-server architecture ကို အသုံးပြုသည်  
+- **Participants**: Host (AI applications), Client (protocol connectors), Server (capability providers)  
+- **Transport Mechanisms**: STDIO (local) နှင့် Streamable HTTP (remote)  
+- **Core Primitives**: Server များသည် tools, resources, prompts များကို ပံ့ပိုးပေးသည်  
+- **Client Primitives**: Server များသည် sampling, elicitation, logging ကို တောင်းဆိုနိုင်သည်  
+- **Protocol Foundation**: JSON-RPC 2.0 နှင့် date-based versioning (current: 2025-06-18)  
+- **Real-time Capabilities**: အသိပေးချက်များနှင့် အချိန်နှင့်တပြေးညီ synchronization  
+- **Security First**: အသုံးပြုသူခွင့်ပြုချက်၊ ဒေတာလုံခြုံရေးနှင့် လုံခြုံသော transport  
 
 ## လေ့ကျင့်ခန်း
 
-သင့်လုပ်ငန်းခွင်တွင် အသုံးဝင်မည့် ရိုးရှင်းသော MCP ကိရိယာတစ်ခုကို ဒီဇိုင်းဆွဲပါ။ အောက်ပါအချက်များကို သတ်မှတ်ပါ -  
-1. ကိရိယာအမည်  
-2. လက်ခံမည့် ပါရာမီတာများ  
-3. ထုတ်ပေးမည့် အထွက်  
-4. အသုံးပြုသူပြဿနာများကို ဖြေရှင်းရန် မော်ဒယ်က ဤကိရိယာကို မည်သို့ အသုံးပြုနိုင်မည်နည်း
+သင့်လုပ်ငန်းနယ်ပယ်အတွက် အသုံးဝင်မည့် MCP tool တစ်ခုကို ဒီဇိုင်းဆွဲပါ။  
+1. Tool ၏ နာမည်  
+2. လက်ခံမည့် parameters  
+3. ပြန်ပေးမည့် output  
+4. Model သည် အသုံးပြုသူ၏ ပြဿနာများကို ဖြေရှင်းရန် tool ကို မည်သို့အသုံးပြုမည်  
 
 ---
 
-## နောက်တစ်ဆင့်
+## နောက်တစ်ခု
 
-နောက်တစ်ဆင့်: [Chapter 2: Security](../02-Security/README.md)
+နောက်တစ်ခု: [Chapter 2: Security](../02-Security/README.md)
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+**ဝက်ဘ်ဆိုက်မှတ်ချက်**:  
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေပါသော်လည်း၊ အလိုအလျောက်ဘာသာပြန်ဆိုမှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို ကျေးဇူးပြု၍ သတိပြုပါ။ မူရင်းစာရွက်စာတမ်းကို ၎င်း၏ မူလဘာသာစကားဖြင့် အာဏာတည်သောရင်းမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် ပရော်ဖက်ရှင်နယ် လူသားဘာသာပြန်ကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုမှားများ သို့မဟုတ် အဓိပ္ပါယ်မှားများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

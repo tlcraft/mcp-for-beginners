@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d700e180ce74b2675ce51a567a36c9e4",
-  "translation_date": "2025-07-13T20:14:44+00:00",
+  "original_hash": "69ba3bd502bd743233137bac5539c08b",
+  "translation_date": "2025-08-18T12:57:26+00:00",
   "source_file": "03-GettingStarted/05-sse-server/solution/python/README.md",
   "language_code": "pt"
 }
 -->
 # Executar este exemplo
 
-Recomenda-se instalar o `uv`, mas não é obrigatório, veja as [instruções](https://docs.astral.sh/uv/#highlights)
+Recomenda-se instalar `uv`, mas não é obrigatório. Veja [instruções](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Criar um ambiente virtual
 
@@ -32,12 +32,12 @@ pip install "mcp[cli]"
 ## -3- Executar o exemplo
 
 ```bash
-mcp run server.py
+uvicorn server:app
 ```
 
 ## -4- Testar o exemplo
 
-Com o servidor a correr num terminal, abra outro terminal e execute o seguinte comando:
+Com o servidor a funcionar num terminal, abra outro terminal e execute o seguinte comando:
 
 ```bash
 mcp dev server.py
@@ -45,22 +45,22 @@ mcp dev server.py
 
 Isto deverá iniciar um servidor web com uma interface visual que permite testar o exemplo.
 
-Assim que o servidor estiver ligado:
+Depois de o servidor estar conectado:
 
-- experimente listar as ferramentas e executar `add`, com os argumentos 2 e 4, deverá ver 6 no resultado.
-- vá a resources e resource template e chame get_greeting, escreva um nome e deverá ver uma saudação com o nome que forneceu.
+- Experimente listar ferramentas e executar `add`, com os argumentos 2 e 4. Deverá ver 6 no resultado.
+- Vá a recursos e ao modelo de recurso e chame `get_greeting`. Insira um nome e deverá ver uma saudação com o nome que forneceu.
 
-### Testar em modo CLI
+### Testar no modo CLI
 
-O inspector que executou é na verdade uma aplicação Node.js e o `mcp dev` é um wrapper à sua volta.
+O inspetor que executou é, na verdade, uma aplicação Node.js, e `mcp dev` é um wrapper em torno dela.
 
-Pode lançá-lo diretamente em modo CLI executando o seguinte comando:
+Pode iniciá-lo diretamente no modo CLI executando o seguinte comando:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
 ```
 
-Isto irá listar todas as ferramentas disponíveis no servidor. Deverá ver a seguinte saída:
+Isto irá listar todas as ferramentas disponíveis no servidor. Deverá ver o seguinte output:
 
 ```text
 {
@@ -91,13 +91,13 @@ Isto irá listar todas as ferramentas disponíveis no servidor. Deverá ver a se
 }
 ```
 
-Para invocar uma ferramenta, escreva:
+Para invocar uma ferramenta, digite:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Deverá ver a seguinte saída:
+Deverá ver o seguinte output:
 
 ```text
 {
@@ -111,9 +111,9 @@ Deverá ver a seguinte saída:
 }
 ```
 
-> ![!TIP]
-> Normalmente é muito mais rápido executar o inspector em modo CLI do que no navegador.
-> Leia mais sobre o inspector [aqui](https://github.com/modelcontextprotocol/inspector).
+> [!TIP]  
+> Normalmente, é muito mais rápido executar o inspetor no modo CLI do que no navegador.  
+> Leia mais sobre o inspetor [aqui](https://github.com/modelcontextprotocol/inspector).
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte oficial. Para informações críticas, recomenda-se uma tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas resultantes do uso desta tradução.

@@ -1,119 +1,125 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "873741da08dd6537858d5e14c3a386e1",
-  "translation_date": "2025-07-14T05:49:48+00:00",
+  "original_hash": "61a160248efabe92b09d7b08293d17db",
+  "translation_date": "2025-08-19T14:23:45+00:00",
   "source_file": "09-CaseStudy/README.md",
   "language_code": "sw"
 }
 -->
-# MCP Katika Vitendo: Masomo Halisi ya Kesi
+# MCP katika Vitendo: Uchunguzi wa Kesi za Ulimwengu Halisi
 
-Model Context Protocol (MCP) inabadilisha jinsi programu za AI zinavyoshirikiana na data, zana, na huduma. Sehemu hii inaonyesha masomo halisi ya kesi yanayoonyesha matumizi ya vitendo ya MCP katika mazingira mbalimbali ya biashara.
+[![MCP katika Vitendo: Uchunguzi wa Kesi za Ulimwengu Halisi](../../../translated_images/10.3262cc80b4de5071fde8ba74c5c5d6738a0a9f398dcc0423f0210f632e2238b8.sw.png)](https://youtu.be/IxshWb2Az5w)
+
+_(Bofya picha hapo juu kutazama video ya somo hili)_
+
+Model Context Protocol (MCP) inabadilisha jinsi programu za AI zinavyoshirikiana na data, zana, na huduma. Sehemu hii inatoa uchunguzi wa kesi za ulimwengu halisi unaoonyesha matumizi ya vitendo ya MCP katika hali mbalimbali za biashara.
 
 ## Muhtasari
 
-Sehemu hii inaonyesha mifano halisi ya utekelezaji wa MCP, ikionyesha jinsi mashirika yanavyotumia itifaki hii kutatua changamoto ngumu za biashara. Kwa kupitia masomo haya ya kesi, utapata maarifa kuhusu ufanisi, upanuzi, na faida za vitendo za MCP katika mazingira halisi.
+Sehemu hii inaonyesha mifano halisi ya utekelezaji wa MCP, ikionyesha jinsi mashirika yanavyotumia itifaki hii kutatua changamoto ngumu za biashara. Kwa kuchunguza uchunguzi huu wa kesi, utapata ufahamu juu ya uwezo, upanuzi, na faida za vitendo za MCP katika hali halisi.
 
 ## Malengo Muhimu ya Kujifunza
 
-Kwa kuchunguza masomo haya ya kesi, utakuwa na uwezo wa:
+Kwa kuchunguza uchunguzi huu wa kesi, utaweza:
 
 - Kuelewa jinsi MCP inavyoweza kutumika kutatua matatizo maalum ya biashara
-- Kujifunza kuhusu mifumo tofauti ya muunganiko na mbinu za usanifu
+- Kujifunza kuhusu mifumo tofauti ya ujumuishaji na mbinu za usanifu
 - Kutambua mbinu bora za kutekeleza MCP katika mazingira ya biashara
-- Kupata maarifa kuhusu changamoto na suluhisho zilizokumbwa katika utekelezaji halisi
-- Kubaini fursa za kutumia mifumo kama hiyo katika miradi yako mwenyewe
+- Kupata ufahamu juu ya changamoto na suluhisho zilizokumbwa katika utekelezaji wa ulimwengu halisi
+- Kutambua fursa za kutumia mifumo kama hiyo katika miradi yako mwenyewe
 
-## Masomo ya Kesi Yanayojulikana
+## Uchunguzi wa Kesi Ulioangaziwa
 
 ### 1. [Wakala wa Safari wa Azure AI – Utekelezaji wa Marejeleo](./travelagentsample.md)
 
-Kesi hii inachunguza suluhisho kamili la marejeleo la Microsoft linaloonyesha jinsi ya kujenga programu ya kupanga safari yenye mawakala wengi, inayotumia AI kwa msaada wa MCP, Azure OpenAI, na Azure AI Search. Mradi huu unaonyesha:
+Uchunguzi huu wa kesi unachunguza suluhisho la marejeleo la Microsoft linaloonyesha jinsi ya kujenga programu ya upangaji safari inayotumia AI na mawakala wengi kwa kutumia MCP, Azure OpenAI, na Azure AI Search. Mradi huu unaonyesha:
 
-- Uendeshaji wa mawakala wengi kupitia MCP
-- Muunganiko wa data za biashara na Azure AI Search
-- Usanifu salama na unaoweza kupanuka ukitumia huduma za Azure
-- Zana zinazoweza kupanuliwa kwa kutumia vipengele vya MCP vinavyoweza kutumika tena
-- Uzoefu wa mtumiaji wa mazungumzo unaotumia Azure OpenAI
+- Uratibu wa mawakala wengi kupitia MCP
+- Ujumuishaji wa data za biashara na Azure AI Search
+- Usanifu salama na unaoweza kupanuka kwa kutumia huduma za Azure
+- Zana zinazoweza kupanuliwa na vipengele vya MCP vinavyoweza kutumika tena
+- Uzoefu wa mtumiaji wa mazungumzo unaoendeshwa na Azure OpenAI
 
-Maelezo ya usanifu na utekelezaji yanatoa maarifa muhimu kuhusu jinsi ya kujenga mifumo tata ya mawakala wengi kwa kutumia MCP kama safu ya uratibu.
+Maelezo ya usanifu na utekelezaji yanatoa maarifa muhimu juu ya jinsi ya kujenga mifumo changamano ya mawakala wengi kwa kutumia MCP kama safu ya uratibu.
 
-### 2. [Kusasisha Vitu vya Azure DevOps Kutoka Data ya YouTube](./UpdateADOItemsFromYT.md)
+### 2. [Kusasisha Vipengee vya Azure DevOps Kutoka kwa Data ya YouTube](./UpdateADOItemsFromYT.md)
 
-Kesi hii inaonyesha matumizi ya vitendo ya MCP kwa kuendesha mchakato wa kazi kiotomatiki. Inaonyesha jinsi zana za MCP zinavyoweza kutumika:
+Uchunguzi huu wa kesi unaonyesha matumizi ya vitendo ya MCP kwa kugeuza mchakato wa kazi kuwa wa kiotomatiki. Unaonyesha jinsi zana za MCP zinavyoweza kutumika:
 
-- Kuchukua data kutoka majukwaa ya mtandaoni (YouTube)
-- Kusasisha vitu vya kazi katika mifumo ya Azure DevOps
-- Kuunda michakato ya otomatiki inayoweza kurudiwa
-- Kuunganisha data kutoka mifumo tofauti
+- Kuchota data kutoka majukwaa ya mtandaoni (YouTube)
+- Kusasisha vipengee vya kazi katika mifumo ya Azure DevOps
+- Kuunda mchakato wa kazi wa kiotomatiki unaoweza kurudiwa
+- Kujumuisha data kutoka mifumo tofauti
 
-Mfano huu unaonyesha jinsi hata utekelezaji rahisi wa MCP unaweza kuleta ufanisi mkubwa kwa kuendesha kazi za kawaida kiotomatiki na kuboresha uthabiti wa data kati ya mifumo.
+Mfano huu unaonyesha jinsi hata utekelezaji rahisi wa MCP unaweza kuleta ufanisi mkubwa kwa kugeuza kazi za kawaida kuwa za kiotomatiki na kuboresha uthabiti wa data katika mifumo.
 
-### 3. [Kupata Nyaraka kwa Wakati Halisi kwa MCP](./docs-mcp/README.md)
+### 3. [Upatikanaji wa Hati kwa Wakati Halisi na MCP](./docs-mcp/README.md)
 
-Kesi hii inakuongoza jinsi ya kuunganisha mteja wa Python wa console na seva ya Model Context Protocol (MCP) ili kupata na kurekodi nyaraka za Microsoft zinazojali muktadha kwa wakati halisi. Utajifunza jinsi ya:
+Uchunguzi huu wa kesi unakuongoza jinsi ya kuunganisha mteja wa Python kwenye seva ya Model Context Protocol (MCP) ili kuchota na kuhifadhi hati za Microsoft zinazojali muktadha kwa wakati halisi. Utajifunza jinsi ya:
 
-- Kuunganisha na seva ya MCP kwa kutumia mteja wa Python na SDK rasmi ya MCP
-- Kutumia wateja wa HTTP wanaotiririsha data kwa ufanisi kwa wakati halisi
-- Kupiga simu zana za nyaraka kwenye seva na kurekodi majibu moja kwa moja kwenye console
-- Kuunganisha nyaraka za Microsoft zilizosasishwa katika mchakato wako bila kuondoka kwenye terminal
+- Kuunganisha kwenye seva ya MCP kwa kutumia mteja wa Python na MCP SDK rasmi
+- Kutumia wateja wa HTTP wa kutiririsha kwa uchotaji wa data wa haraka na wa wakati halisi
+- Kuita zana za hati kwenye seva na kuhifadhi majibu moja kwa moja kwenye koni
+- Kujumuisha hati za Microsoft zilizosasishwa katika mchakato wako wa kazi bila kuacha terminal
 
-Sura hii ina kazi ya vitendo, sampuli ndogo ya msimbo unaofanya kazi, na viungo vya rasilimali za ziada kwa kujifunza zaidi. Angalia mwongozo kamili na msimbo katika sura iliyounganishwa ili kuelewa jinsi MCP inavyoweza kubadilisha upatikanaji wa nyaraka na ufanisi wa waendelezaji katika mazingira ya console.
+Sura hii inajumuisha kazi ya vitendo, sampuli ya msimbo inayofanya kazi, na viungo vya rasilimali za ziada kwa ajili ya kujifunza kwa kina. Tazama mwongozo kamili na msimbo katika sura iliyounganishwa ili kuelewa jinsi MCP inavyoweza kubadilisha upatikanaji wa hati na tija ya msanidi programu katika mazingira ya msingi wa koni.
 
-### 4. [Programu ya Mtandao ya Kizazi cha Mpango wa Masomo Inayoshirikiana kwa MCP](./docs-mcp/README.md)
+### 4. [Programu ya Wavuti ya Jenereta ya Mpango wa Kujifunza wa Kimaingiliano na MCP](./docs-mcp/README.md)
 
-Kesi hii inaonyesha jinsi ya kujenga programu ya mtandao inayoshirikiana kwa kutumia Chainlit na Model Context Protocol (MCP) kuunda mipango ya masomo binafsi kwa mada yoyote. Watumiaji wanaweza kubainisha somo (kama "cheti cha AI-900") na muda wa masomo (mfano, wiki 8), na programu itatoa muhtasari wa maudhui inayopendekezwa kila wiki. Chainlit inaruhusu kiolesura cha mazungumzo, kufanya uzoefu kuwa wa kuvutia na unaobadilika.
+Uchunguzi huu wa kesi unaonyesha jinsi ya kujenga programu ya wavuti ya kimaingiliano kwa kutumia Chainlit na Model Context Protocol (MCP) ili kuunda mipango ya kujifunza ya kibinafsi kwa mada yoyote. Watumiaji wanaweza kubainisha somo (kama "Cheti cha AI-900") na muda wa kujifunza (mfano, wiki 8), na programu itatoa mgawanyo wa wiki kwa wiki wa maudhui yanayopendekezwa. Chainlit inaruhusu kiolesura cha mazungumzo, na kufanya uzoefu kuwa wa kuvutia na unaobadilika.
 
-- Programu ya mtandao ya mazungumzo inayotumia Chainlit
-- Maagizo yanayotolewa na mtumiaji kwa mada na muda
-- Mapendekezo ya maudhui kila wiki kwa kutumia MCP
-- Majibu ya wakati halisi, yanayobadilika katika kiolesura cha mazungumzo
+- Programu ya wavuti ya mazungumzo inayotumia Chainlit
+- Maoni yanayoendeshwa na mtumiaji kwa mada na muda
+- Mapendekezo ya maudhui ya wiki kwa wiki kwa kutumia MCP
+- Majibu ya wakati halisi na yanayobadilika katika kiolesura cha mazungumzo
 
-Mradi huu unaonyesha jinsi AI ya mazungumzo na MCP vinaweza kuunganishwa kuunda zana za elimu zinazobadilika na kuendeshwa na mtumiaji katika mazingira ya mtandao ya kisasa.
+Mradi huu unaonyesha jinsi AI ya mazungumzo na MCP vinaweza kuunganishwa ili kuunda zana za kielimu za kisasa, zinazoendeshwa na mtumiaji katika mazingira ya wavuti.
 
-### 5. [Nyaraka Ndani ya Mhariri kwa MCP Server katika VS Code](./docs-mcp/README.md)
+### 5. [Hati Ndani ya Mhariri na Seva ya MCP katika VS Code](./docs-mcp/README.md)
 
-Kesi hii inaonyesha jinsi unavyoweza kuleta Microsoft Learn Docs moja kwa moja ndani ya mazingira yako ya VS Code kwa kutumia seva ya MCP—hakuna tena kubadili tabo za kivinjari! Utaona jinsi ya:
+Uchunguzi huu wa kesi unaonyesha jinsi unavyoweza kuleta Microsoft Learn Docs moja kwa moja katika mazingira yako ya VS Code kwa kutumia seva ya MCP—hakuna haja ya kubadilisha tabo za kivinjari! Utaona jinsi ya:
 
-- Kutafuta na kusoma nyaraka ndani ya VS Code mara moja kwa kutumia paneli ya MCP au orodha ya amri
-- Kurejelea nyaraka na kuingiza viungo moja kwa moja katika README au faili za markdown za kozi
-- Kutumia GitHub Copilot na MCP pamoja kwa mtiririko wa kazi wa nyaraka na msimbo unaotumia AI kwa urahisi
-- Kuhakiki na kuboresha nyaraka zako kwa maoni ya wakati halisi na usahihi unaotokana na Microsoft
-- Kuunganisha MCP na mtiririko wa kazi wa GitHub kwa uhakiki endelevu wa nyaraka
+- Kutafuta na kusoma hati papo hapo ndani ya VS Code kwa kutumia paneli ya MCP au paleti ya amri
+- Kurejelea hati na kuingiza viungo moja kwa moja kwenye faili zako za README au markdown za kozi
+- Kutumia GitHub Copilot na MCP pamoja kwa mtiririko wa kazi wa hati na msimbo unaoendeshwa na AI
+- Kuhakiki na kuboresha hati zako kwa maoni ya wakati halisi na usahihi wa chanzo cha Microsoft
+- Kujumuisha MCP na mtiririko wa kazi wa GitHub kwa uthibitishaji wa hati unaoendelea
 
 Utekelezaji unajumuisha:
-- Mipangilio ya mfano `.vscode/mcp.json` kwa usanidi rahisi
-- Mwongozo wa picha unaoonyesha uzoefu ndani ya mhariri
-- Vidokezo vya kuunganisha Copilot na MCP kwa ufanisi mkubwa
 
-Hali hii ni bora kwa waandishi wa kozi, waandishi wa nyaraka, na waendelezaji wanaotaka kuendelea na kazi zao ndani ya mhariri huku wakitumia nyaraka, Copilot, na zana za uhakiki—vyote vinavyotumia MCP.
+- Mfano wa usanidi wa `.vscode/mcp.json` kwa urahisi wa kuanzisha
+- Mwongozo wa hatua kwa hatua wenye picha za skrini za uzoefu ndani ya mhariri
+- Vidokezo vya kuchanganya Copilot na MCP kwa tija ya juu zaidi
 
-### 6. [Uundaji wa MCP Server kwa APIM](./apimsample.md)
+Hali hii ni bora kwa waandishi wa kozi, waandishi wa hati, na wasanidi programu wanaotaka kubaki makini katika mhariri wao huku wakifanya kazi na hati, Copilot, na zana za uthibitishaji—vyote vikiongozwa na MCP.
 
-Kesi hii inatoa mwongozo wa hatua kwa hatua jinsi ya kuunda seva ya MCP kwa kutumia Azure API Management (APIM). Inajumuisha:
+### 6. [Uundaji wa Seva ya MCP ya APIM](./apimsample.md)
+
+Uchunguzi huu wa kesi unatoa mwongozo wa hatua kwa hatua juu ya jinsi ya kuunda seva ya MCP kwa kutumia Azure API Management (APIM). Inashughulikia:
+
 - Kuweka seva ya MCP katika Azure API Management
-- Kufichua shughuli za API kama zana za MCP
-- Kusanidi sera za kuzuia kasi na usalama
-- Kupima seva ya MCP kwa kutumia Visual Studio Code na GitHub Copilot
+- Kufichua operesheni za API kama zana za MCP
+- Kusakinisha sera za kupunguza kiwango na usalama
+- Kujaribu seva ya MCP kwa kutumia Visual Studio Code na GitHub Copilot
 
-Mfano huu unaonyesha jinsi ya kutumia uwezo wa Azure kuunda seva thabiti ya MCP inayoweza kutumika katika programu mbalimbali, ikiboresha muunganiko wa mifumo ya AI na API za biashara.
+Mfano huu unaonyesha jinsi ya kutumia uwezo wa Azure kuunda seva thabiti ya MCP inayoweza kutumika katika programu mbalimbali, na kuboresha ujumuishaji wa mifumo ya AI na API za biashara.
 
 ## Hitimisho
 
-Masomo haya ya kesi yanaonyesha ufanisi na matumizi ya vitendo ya Model Context Protocol katika mazingira halisi. Kuanzia mifumo tata ya mawakala wengi hadi michakato maalum ya otomatiki, MCP hutoa njia iliyosanifiwa ya kuunganisha mifumo ya AI na zana na data wanazohitaji kutoa thamani.
+Uchunguzi huu wa kesi unaonyesha uwezo na matumizi ya vitendo ya Model Context Protocol katika hali halisi. Kutoka kwa mifumo changamano ya mawakala wengi hadi mchakato wa kazi wa kiotomatiki, MCP hutoa njia sanifu ya kuunganisha mifumo ya AI na zana na data wanazohitaji ili kutoa thamani.
 
-Kwa kusoma utekelezaji huu, unaweza kupata maarifa kuhusu mifumo ya usanifu, mikakati ya utekelezaji, na mbinu bora zinazoweza kutumika katika miradi yako ya MCP. Mifano inaonyesha kuwa MCP si tu mfumo wa nadharia bali suluhisho la vitendo kwa changamoto halisi za biashara.
+Kwa kusoma utekelezaji huu, unaweza kupata ufahamu juu ya mifumo ya usanifu, mikakati ya utekelezaji, na mbinu bora zinazoweza kutumika katika miradi yako ya MCP. Mifano hii inaonyesha kuwa MCP si tu mfumo wa kinadharia bali ni suluhisho la vitendo kwa changamoto halisi za biashara.
 
-## Rasilimali Zaidi
+## Rasilimali za Ziada
 
-- [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)
-- [Azure DevOps MCP Tool](https://github.com/microsoft/azure-devops-mcp)
-- [Playwright MCP Tool](https://github.com/microsoft/playwright-mcp)
-- [Microsoft Docs MCP Server](https://github.com/MicrosoftDocs/mcp)
-- [MCP Community Examples](https://github.com/microsoft/mcp)
+- [Hifadhi ya GitHub ya Wakala wa Safari wa Azure AI](https://github.com/Azure-Samples/azure-ai-travel-agents)
+- [Zana ya MCP ya Azure DevOps](https://github.com/microsoft/azure-devops-mcp)
+- [Zana ya MCP ya Playwright](https://github.com/microsoft/playwright-mcp)
+- [Seva ya MCP ya Microsoft Docs](https://github.com/MicrosoftDocs/mcp)
+- [Mifano ya Jamii ya MCP](https://github.com/microsoft/mcp)
 
-Ifuatayo: Maabara ya Vitendo [Kuweka Mchakato wa AI Uendeshwe kwa Ufanisi: Kujenga MCP Server kwa AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+Ifuatayo: Maabara ya Vitendo [Kufanikisha Mtiririko wa Kazi wa AI: Kujenga Seva ya MCP kwa Zana ya AI](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
-**Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kanusho**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
