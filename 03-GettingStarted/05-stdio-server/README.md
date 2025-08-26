@@ -336,34 +336,6 @@ You can also debug your MCP server directly in VS Code:
 - Test with simple tools first before adding complex functionality
 - Use the Inspector to verify message formats
 
-### TypeScript
-
-```typescript
-// server-sse.ts
-import { Request, Response } from "express";
-import express from "express";
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse.js";
-
-// Create an MCP server
-const server = new McpServer({
-  name: "example-server",
-  version: "1.0.0",
-});
-
-const app = express();
-
-const transports: { [sessionId: string]: SSEServerTransport } = {};
-
-app.get("/sse", async (_: Request, res: Response) => {
-  const transport = new SSEServerTransport("/messages", res);
-  transports[transport.sessionId] = transport;
-  res.on("close", () => {
-    delete transports[transport.sessionId];
-  });
-  await server.connect(transport);
-});
-
 ## Consuming your stdio server in VS Code
 
 Once you've built your MCP stdio server, you can integrate it with VS Code to use it with Claude or other MCP-compatible clients.
