@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "858362ce0118de3fec0f9114bf396101",
-  "translation_date": "2025-07-29T00:41:31+00:00",
+  "original_hash": "1197b6dbde36773e04a5ae826557fdb9",
+  "translation_date": "2025-08-26T17:36:26+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "pt"
 }
@@ -23,7 +23,7 @@ Esta secção consiste em várias lições:
 
 - **4 Consumir um servidor no modo GitHub Copilot Agent no Visual Studio Code**. Aqui, exploramos como executar o nosso Servidor MCP dentro do Visual Studio Code, [para a lição](04-vscode/README.md)
 
-- **5 Consumir a partir de SSE (Server Sent Events)**. SSE é um padrão para streaming de servidor para cliente, permitindo que servidores enviem atualizações em tempo real para clientes via HTTP, [para a lição](05-sse-server/README.md)
+- **5 Servidor com transporte stdio**. O transporte stdio é o padrão recomendado para comunicação entre servidor e cliente MCP na especificação atual, proporcionando comunicação segura baseada em subprocessos, [para a lição](05-stdio-server/README.md)
 
 - **6 Streaming HTTP com MCP (HTTP Streamable)**. Aprenda sobre streaming HTTP moderno, notificações de progresso e como implementar servidores e clientes MCP escaláveis e em tempo real usando HTTP Streamable, [para a lição](06-http-streaming/README.md)
 
@@ -33,7 +33,7 @@ Esta secção consiste em várias lições:
 
 - **9 Implementação**. Este capítulo irá explorar diferentes formas de implementar as suas soluções MCP, [para a lição](09-deployment/README.md)
 
-O Model Context Protocol (MCP) é um protocolo aberto que padroniza como as aplicações fornecem contexto para LLMs. Pense no MCP como uma porta USB-C para aplicações de IA - ele fornece uma forma padronizada de conectar modelos de IA a diferentes fontes de dados e ferramentas.
+O Model Context Protocol (MCP) é um protocolo aberto que padroniza como as aplicações fornecem contexto aos LLMs. Pense no MCP como uma porta USB-C para aplicações de IA - ele fornece uma forma padronizada de conectar modelos de IA a diferentes fontes de dados e ferramentas.
 
 ## Objetivos de Aprendizagem
 
@@ -46,7 +46,7 @@ Ao final desta lição, será capaz de:
 - Compreender desafios comuns de configuração e suas soluções
 - Conectar as suas implementações MCP a serviços populares de LLM
 
-## Configuração do Ambiente MCP
+## Configurar o Seu Ambiente MCP
 
 Antes de começar a trabalhar com MCP, é importante preparar o seu ambiente de desenvolvimento e compreender o fluxo de trabalho básico. Esta secção irá guiá-lo pelos passos iniciais de configuração para garantir um início tranquilo com MCP.
 
@@ -72,7 +72,7 @@ O MCP fornece SDKs oficiais para várias linguagens:
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Mantido em colaboração com Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementação oficial em Rust
 
-## Pontos Principais
+## Pontos-Chave
 
 - Configurar um ambiente de desenvolvimento MCP é simples com SDKs específicos para cada linguagem
 - Construir servidores MCP envolve criar e registar ferramentas com esquemas claros
@@ -92,13 +92,15 @@ Temos um conjunto de exemplos que complementa os exercícios que verá em todos 
 
 ## Recursos Adicionais
 
-- [Construir Agentes usando Model Context Protocol no Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [MCP Remoto com Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [Crie Agentes usando Model Context Protocol no Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [MCP remoto com Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [Agente MCP OpenAI em .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## O que vem a seguir
 
 Próximo: [Criar o seu primeiro Servidor MCP](01-first-server/README.md)
 
+---
+
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, é importante ter em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autoritária. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

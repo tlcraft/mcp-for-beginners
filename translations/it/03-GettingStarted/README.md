@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "858362ce0118de3fec0f9114bf396101",
-  "translation_date": "2025-08-18T17:32:48+00:00",
+  "original_hash": "1197b6dbde36773e04a5ae826557fdb9",
+  "translation_date": "2025-08-26T17:39:46+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "it"
 }
@@ -19,19 +19,19 @@ Questa sezione è composta da diverse lezioni:
 
 - **2 Client**, in questa lezione imparerai a scrivere un client che può connettersi al tuo server, [alla lezione](02-client/README.md)
 
-- **3 Client con LLM**, un modo ancora migliore per scrivere un client è aggiungere un LLM in modo che possa "negoziare" con il tuo server su cosa fare, [alla lezione](03-llm-client/README.md)
+- **3 Client con LLM**, un modo ancora migliore per scrivere un client è aggiungere un LLM, così da poter "negoziare" con il tuo server su cosa fare, [alla lezione](03-llm-client/README.md)
 
-- **4 Utilizzo di un server in modalità GitHub Copilot Agent in Visual Studio Code**. Qui vedremo come eseguire il nostro server MCP all'interno di Visual Studio Code, [alla lezione](04-vscode/README.md)
+- **4 Utilizzo di un server in modalità GitHub Copilot Agent in Visual Studio Code**. Qui vedremo come eseguire il nostro server MCP direttamente da Visual Studio Code, [alla lezione](04-vscode/README.md)
 
-- **5 Consumo da un SSE (Server Sent Events)**. SSE è uno standard per lo streaming server-to-client, che consente ai server di inviare aggiornamenti in tempo reale ai client tramite HTTP, [alla lezione](05-sse-server/README.md)
+- **5 Server con trasporto stdio**. Il trasporto stdio è lo standard raccomandato per la comunicazione server-client MCP nella specifica attuale, fornendo una comunicazione sicura basata su sottoprocessi, [alla lezione](05-stdio-server/README.md)
 
-- **6 Streaming HTTP con MCP (Streamable HTTP)**. Scopri lo streaming HTTP moderno, le notifiche di progresso e come implementare server e client MCP scalabili e in tempo reale utilizzando Streamable HTTP, [alla lezione](06-http-streaming/README.md)
+- **6 Streaming HTTP con MCP (HTTP Streamable)**. Scopri lo streaming HTTP moderno, le notifiche di progresso e come implementare server e client MCP scalabili e in tempo reale utilizzando HTTP Streamable, [alla lezione](06-http-streaming/README.md)
 
 - **7 Utilizzo dell'AI Toolkit per VSCode** per consumare e testare i tuoi client e server MCP, [alla lezione](07-aitk/README.md)
 
 - **8 Test**. Qui ci concentreremo in particolare su come testare il nostro server e client in modi diversi, [alla lezione](08-testing/README.md)
 
-- **9 Deployment**. Questo capitolo esaminerà i diversi modi di distribuire le tue soluzioni MCP, [alla lezione](09-deployment/README.md)
+- **9 Deployment**. Questo capitolo esaminerà i diversi modi per distribuire le tue soluzioni MCP, [alla lezione](09-deployment/README.md)
 
 Il Model Context Protocol (MCP) è un protocollo aperto che standardizza il modo in cui le applicazioni forniscono contesto agli LLM. Pensa a MCP come a una porta USB-C per le applicazioni AI: fornisce un modo standardizzato per connettere i modelli AI a diverse fonti di dati e strumenti.
 
@@ -44,11 +44,11 @@ Alla fine di questa lezione, sarai in grado di:
 - Creare applicazioni host che si connettono ai server MCP
 - Testare e fare debug delle implementazioni MCP
 - Comprendere le sfide comuni di configurazione e le loro soluzioni
-- Collegare le tue implementazioni MCP ai servizi LLM più popolari
+- Connettere le tue implementazioni MCP ai servizi LLM più popolari
 
-## Configurazione dell'ambiente MCP
+## Configurare il tuo ambiente MCP
 
-Prima di iniziare a lavorare con MCP, è importante preparare il tuo ambiente di sviluppo e comprendere il flusso di lavoro di base. Questa sezione ti guiderà attraverso i passaggi iniziali di configurazione per garantire un avvio senza problemi con MCP.
+Prima di iniziare a lavorare con MCP, è importante preparare il tuo ambiente di sviluppo e comprendere il flusso di lavoro di base. Questa sezione ti guiderà attraverso i passaggi iniziali per garantire un avvio senza problemi con MCP.
 
 ### Prerequisiti
 
@@ -66,11 +66,11 @@ Nei capitoli successivi vedrai soluzioni costruite utilizzando Python, TypeScrip
 MCP fornisce SDK ufficiali per diversi linguaggi:
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Mantenuto in collaborazione con Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Mantenuto in collaborazione con Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - L'implementazione ufficiale TypeScript
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - L'implementazione ufficiale Python
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - L'implementazione ufficiale Kotlin
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - L'implementazione ufficiale in TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - L'implementazione ufficiale in Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - L'implementazione ufficiale in Kotlin
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Mantenuto in collaborazione con Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - L'implementazione ufficiale Rust
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - L'implementazione ufficiale in Rust
 
 ## Punti chiave
 
@@ -78,17 +78,17 @@ MCP fornisce SDK ufficiali per diversi linguaggi:
 - Creare server MCP implica la creazione e la registrazione di strumenti con schemi chiari
 - I client MCP si connettono ai server e ai modelli per sfruttare capacità estese
 - Testare e fare debug è essenziale per implementazioni MCP affidabili
-- Le opzioni di distribuzione variano dallo sviluppo locale a soluzioni basate su cloud
+- Le opzioni di distribuzione vanno dallo sviluppo locale a soluzioni basate su cloud
 
 ## Pratica
 
 Abbiamo un set di esempi che integra gli esercizi che vedrai in tutti i capitoli di questa sezione. Inoltre, ogni capitolo ha i propri esercizi e compiti.
 
-- [Calcolatrice Java](./samples/java/calculator/README.md)
-- [Calcolatrice .Net](../../../03-GettingStarted/samples/csharp)
-- [Calcolatrice JavaScript](./samples/javascript/README.md)
-- [Calcolatrice TypeScript](./samples/typescript/README.md)
-- [Calcolatrice Python](../../../03-GettingStarted/samples/python)
+- [Calcolatrice in Java](./samples/java/calculator/README.md)
+- [Calcolatrice in .Net](../../../03-GettingStarted/samples/csharp)
+- [Calcolatrice in JavaScript](./samples/javascript/README.md)
+- [Calcolatrice in TypeScript](./samples/typescript/README.md)
+- [Calcolatrice in Python](../../../03-GettingStarted/samples/python)
 
 ## Risorse aggiuntive
 
@@ -100,5 +100,7 @@ Abbiamo un set di esempi che integra gli esercizi che vedrai in tutti i capitoli
 
 Prossimo: [Creare il tuo primo server MCP](01-first-server/README.md)
 
+---
+
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si consiglia una traduzione professionale eseguita da un traduttore umano. Non siamo responsabili per eventuali fraintendimenti o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un traduttore umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.

@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "858362ce0118de3fec0f9114bf396101",
-  "translation_date": "2025-08-18T17:12:17+00:00",
+  "original_hash": "1197b6dbde36773e04a5ae826557fdb9",
+  "translation_date": "2025-08-26T17:38:04+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "br"
 }
 -->
 ## Introdução  
 
-[![Construa Seu Primeiro Servidor MCP](../../../translated_images/04.0ea920069efd979a0b2dad51e72c1df7ead9c57b3305796068a6cee1f0dd6674.br.png)](https://youtu.be/sNDZO9N4m9Y)
+[![Crie seu primeiro servidor MCP](../../../translated_images/04.0ea920069efd979a0b2dad51e72c1df7ead9c57b3305796068a6cee1f0dd6674.br.png)](https://youtu.be/sNDZO9N4m9Y)
 
 _(Clique na imagem acima para assistir ao vídeo desta lição)_
 
@@ -23,17 +23,17 @@ Esta seção consiste em várias lições:
 
 - **4 Consumindo um servidor no modo GitHub Copilot Agent no Visual Studio Code**. Aqui, veremos como executar nosso servidor MCP dentro do Visual Studio Code, [para a lição](04-vscode/README.md)
 
-- **5 Consumindo de um SSE (Server Sent Events)** SSE é um padrão para streaming de servidor para cliente, permitindo que servidores enviem atualizações em tempo real para clientes via HTTP [para a lição](05-sse-server/README.md)
+- **5 Servidor com transporte stdio**. O transporte stdio é o padrão recomendado para comunicação entre servidor e cliente MCP na especificação atual, fornecendo comunicação segura baseada em subprocessos, [para a lição](05-stdio-server/README.md)
 
-- **6 Streaming HTTP com MCP (HTTP Streamable)**. Aprenda sobre streaming HTTP moderno, notificações de progresso e como implementar servidores e clientes MCP escaláveis e em tempo real usando HTTP Streamable. [para a lição](06-http-streaming/README.md)
+- **6 Streaming HTTP com MCP (HTTP Streamable)**. Aprenda sobre streaming HTTP moderno, notificações de progresso e como implementar servidores e clientes MCP escaláveis e em tempo real usando HTTP Streamable, [para a lição](06-http-streaming/README.md)
 
-- **7 Utilizando o AI Toolkit para VSCode** para consumir e testar seus clientes e servidores MCP [para a lição](07-aitk/README.md)
+- **7 Utilizando o AI Toolkit para VSCode** para consumir e testar seus clientes e servidores MCP, [para a lição](07-aitk/README.md)
 
-- **8 Testando**. Aqui, focaremos especialmente em como podemos testar nosso servidor e cliente de diferentes maneiras, [para a lição](08-testing/README.md)
+- **8 Testes**. Aqui, focaremos especialmente em como podemos testar nosso servidor e cliente de diferentes maneiras, [para a lição](08-testing/README.md)
 
 - **9 Implantação**. Este capítulo abordará diferentes maneiras de implantar suas soluções MCP, [para a lição](09-deployment/README.md)
 
-O Model Context Protocol (MCP) é um protocolo aberto que padroniza como aplicativos fornecem contexto para LLMs. Pense no MCP como uma porta USB-C para aplicativos de IA - ele fornece uma maneira padronizada de conectar modelos de IA a diferentes fontes de dados e ferramentas.
+O Model Context Protocol (MCP) é um protocolo aberto que padroniza como os aplicativos fornecem contexto para LLMs. Pense no MCP como uma porta USB-C para aplicativos de IA - ele fornece uma maneira padronizada de conectar modelos de IA a diferentes fontes de dados e ferramentas.
 
 ## Objetivos de Aprendizado
 
@@ -46,7 +46,7 @@ Ao final desta lição, você será capaz de:
 - Compreender desafios comuns de configuração e suas soluções
 - Conectar suas implementações MCP a serviços populares de LLM
 
-## Configurando Seu Ambiente MCP
+## Configurando seu Ambiente MCP
 
 Antes de começar a trabalhar com MCP, é importante preparar seu ambiente de desenvolvimento e entender o fluxo de trabalho básico. Esta seção irá guiá-lo pelos passos iniciais de configuração para garantir um início tranquilo com MCP.
 
@@ -72,7 +72,7 @@ O MCP fornece SDKs oficiais para várias linguagens:
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Mantido em colaboração com Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementação oficial em Rust
 
-## Pontos Principais
+## Principais Pontos
 
 - Configurar um ambiente de desenvolvimento MCP é simples com SDKs específicos para cada linguagem
 - Construir servidores MCP envolve criar e registrar ferramentas com esquemas claros
@@ -92,13 +92,15 @@ Temos um conjunto de exemplos que complementa os exercícios que você verá em 
 
 ## Recursos Adicionais
 
-- [Construa Agentes usando Model Context Protocol no Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
-- [MCP Remoto com Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
-- [Agente MCP OpenAI em .NET](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
+- [Crie agentes usando o Model Context Protocol no Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [MCP remoto com Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## O que vem a seguir
 
 Próximo: [Criando seu primeiro servidor MCP](01-first-server/README.md)
 
+---
+
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.

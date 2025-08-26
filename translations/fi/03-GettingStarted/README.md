@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "858362ce0118de3fec0f9114bf396101",
-  "translation_date": "2025-08-18T16:12:52+00:00",
+  "original_hash": "1197b6dbde36773e04a5ae826557fdb9",
+  "translation_date": "2025-08-26T17:55:49+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "fi"
 }
@@ -15,49 +15,51 @@ _(Klikkaa yllä olevaa kuvaa nähdäksesi tämän oppitunnin videon)_
 
 Tämä osio koostuu useista oppitunneista:
 
-- **1 Ensimmäinen palvelimesi**, tässä ensimmäisessä oppitunnissa opit luomaan ensimmäisen palvelimesi ja tarkastelemaan sitä tarkastustyökalulla, joka on hyödyllinen tapa testata ja debugata palvelintasi, [siirry oppituntiin](01-first-server/README.md)
+- **1 Ensimmäinen palvelimesi**, tässä ensimmäisessä oppitunnissa opit luomaan ensimmäisen palvelimesi ja tarkastelemaan sitä tarkastustyökalulla, joka on arvokas tapa testata ja debugata palvelintasi, [oppituntiin](01-first-server/README.md)
 
-- **2 Asiakas**, tässä oppitunnissa opit kirjoittamaan asiakkaan, joka voi muodostaa yhteyden palvelimeesi, [siirry oppituntiin](02-client/README.md)
+- **2 Asiakas**, tässä oppitunnissa opit kirjoittamaan asiakkaan, joka voi muodostaa yhteyden palvelimeesi, [oppituntiin](02-client/README.md)
 
-- **3 Asiakas LLM:n kanssa**, vielä parempi tapa kirjoittaa asiakas on lisätä siihen LLM, jotta se voi "neuvotella" palvelimesi kanssa siitä, mitä tehdä, [siirry oppituntiin](03-llm-client/README.md)
+- **3 Asiakas LLM:n kanssa**, vielä parempi tapa kirjoittaa asiakas on lisätä siihen LLM, jotta se voi "neuvotella" palvelimesi kanssa siitä, mitä tehdä, [oppituntiin](03-llm-client/README.md)
 
-- **4 Palvelimen käyttäminen GitHub Copilot Agent -tilassa Visual Studio Codessa**. Tässä tarkastellaan MCP-palvelimen suorittamista Visual Studio Codessa, [siirry oppituntiin](04-vscode/README.md)
+- **4 Palvelimen käyttäminen GitHub Copilot Agent -tilassa Visual Studio Codessa**. Tässä tarkastellaan MCP-palvelimen suorittamista Visual Studio Codessa, [oppituntiin](04-vscode/README.md)
 
-- **5 SSE:n (Server Sent Events) hyödyntäminen**. SSE on standardi palvelimelta asiakkaalle tapahtuvaan suoratoistoon, joka mahdollistaa reaaliaikaisten päivitysten lähettämisen HTTP:n kautta, [siirry oppituntiin](05-sse-server/README.md)
+- **5 stdio Transport Server** stdio-kuljetus on suositeltu standardi MCP-palvelimen ja asiakkaan väliseen viestintään nykyisessä spesifikaatiossa, tarjoten turvallisen aliprosessipohjaisen viestinnän [oppituntiin](05-stdio-server/README.md)
 
-- **6 HTTP-suoratoisto MCP:n kanssa (Streamable HTTP)**. Opi modernista HTTP-suoratoistosta, etenemisen ilmoituksista ja siitä, miten toteuttaa skaalautuvia, reaaliaikaisia MCP-palvelimia ja -asiakkaita Streamable HTTP:n avulla, [siirry oppituntiin](06-http-streaming/README.md)
+- **6 HTTP-suoratoisto MCP:n kanssa (Streamable HTTP)**. Opit modernista HTTP-suoratoistosta, etenemisen ilmoituksista ja siitä, kuinka toteuttaa skaalautuvia, reaaliaikaisia MCP-palvelimia ja -asiakkaita Streamable HTTP:n avulla. [oppituntiin](06-http-streaming/README.md)
 
-- **7 AI Toolkitin hyödyntäminen VSCodea varten** MCP-asiakkaiden ja -palvelimien testaamiseen ja käyttämiseen, [siirry oppituntiin](07-aitk/README.md)
+- **7 AI Toolkitin hyödyntäminen VSCode:ssa** MCP-asiakkaiden ja -palvelimien testaamiseen ja käyttämiseen [oppituntiin](07-aitk/README.md)
 
-- **8 Testaus**. Tässä keskitymme erityisesti siihen, miten voimme testata palvelintamme ja asiakastamme eri tavoilla, [siirry oppituntiin](08-testing/README.md)
+- **8 Testaus**. Tässä keskitytään erityisesti siihen, miten palvelinta ja asiakasta voidaan testata eri tavoilla, [oppituntiin](08-testing/README.md)
 
-- **9 Käyttöönotto**. Tässä luvussa tarkastellaan erilaisia tapoja ottaa MCP-ratkaisut käyttöön, [siirry oppituntiin](09-deployment/README.md)
+- **9 Käyttöönotto**. Tässä luvussa tarkastellaan eri tapoja ottaa MCP-ratkaisut käyttöön, [oppituntiin](09-deployment/README.md)
 
-Model Context Protocol (MCP) on avoin protokolla, joka standardoi, miten sovellukset tarjoavat kontekstia LLM:ille. Ajattele MCP:tä kuin USB-C-porttina tekoälysovelluksille – se tarjoaa standardoidun tavan yhdistää tekoälymalleja eri tietolähteisiin ja työkaluihin.
+
+Model Context Protocol (MCP) on avoin protokolla, joka standardoi, miten sovellukset tarjoavat kontekstia LLM:ille. Ajattele MCP:tä kuin USB-C-porttia AI-sovelluksille - se tarjoaa standardoidun tavan yhdistää AI-mallit eri tietolähteisiin ja työkaluihin.
 
 ## Oppimistavoitteet
 
 Tämän oppitunnin lopussa osaat:
 
-- Määrittää kehitysympäristöt MCP:lle C#:ssa, Javassa, Pythonissa, TypeScriptissä ja JavaScriptissä
+- Määrittää MCP-kehitysympäristöt C#:lle, Javalle, Pythonille, TypeScriptille ja JavaScriptille
 - Rakentaa ja ottaa käyttöön perus-MCP-palvelimia mukautetuilla ominaisuuksilla (resurssit, kehotteet ja työkalut)
 - Luoda isäntäsovelluksia, jotka yhdistyvät MCP-palvelimiin
 - Testata ja debugata MCP-toteutuksia
 - Ymmärtää yleisiä asennushaasteita ja niiden ratkaisuja
 - Yhdistää MCP-toteutuksesi suosittuihin LLM-palveluihin
 
-## MCP-ympäristön määrittäminen
+## MCP-ympäristön asennus
 
-Ennen kuin aloitat MCP:n parissa työskentelyn, on tärkeää valmistella kehitysympäristösi ja ymmärtää perusprosessit. Tämä osio opastaa sinut alkuvalmisteluissa, jotta pääset sujuvasti alkuun MCP:n kanssa.
+Ennen kuin aloitat MCP:n parissa työskentelyn, on tärkeää valmistella kehitysympäristösi ja ymmärtää perusprosessit. Tämä osio opastaa sinut alkuasennuksen vaiheiden läpi varmistaen sujuvan aloituksen MCP:n kanssa.
 
 ### Esivaatimukset
 
 Ennen kuin sukellat MCP-kehitykseen, varmista, että sinulla on:
 
 - **Kehitysympäristö**: Valitsemallesi kielelle (C#, Java, Python, TypeScript tai JavaScript)
-- **IDE/Editori**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm tai mikä tahansa moderni koodieditori
-- **Paketinhallinnat**: NuGet, Maven/Gradle, pip tai npm/yarn
-- **API-avaimet**: Kaikille tekoälypalveluille, joita aiot käyttää isäntäsovelluksissasi
+- **IDE/editori**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm tai mikä tahansa moderni koodieditori
+- **Paketinhallintatyökalut**: NuGet, Maven/Gradle, pip tai npm/yarn
+- **API-avaimet**: Kaikille AI-palveluille, joita aiot käyttää isäntäsovelluksissasi
+
 
 ### Viralliset SDK:t
 
@@ -74,15 +76,15 @@ MCP tarjoaa virallisia SDK:ita useille kielille:
 
 ## Keskeiset huomiot
 
-- MCP-kehitysympäristön määrittäminen on suoraviivaista kielikohtaisten SDK:iden avulla
-- MCP-palvelimien rakentaminen sisältää työkalujen luomisen ja rekisteröinnin selkeillä skeemoilla
+- MCP-kehitysympäristön asennus on suoraviivaista kielikohtaisten SDK:iden avulla
+- MCP-palvelimien rakentaminen sisältää työkalujen luomisen ja rekisteröinnin selkeillä kaavioilla
 - MCP-asiakkaat yhdistyvät palvelimiin ja malleihin hyödyntääkseen laajennettuja ominaisuuksia
 - Testaus ja debuggaus ovat olennaisia luotettavien MCP-toteutusten kannalta
-- Käyttöönottovaihtoehdot vaihtelevat paikallisesta kehityksestä pilvipohjaisiin ratkaisuihin
+- Käyttöönotto voi tapahtua paikallisesta kehityksestä pilvipohjaisiin ratkaisuihin
 
 ## Harjoittelu
 
-Meillä on joukko esimerkkejä, jotka täydentävät tämän osion kaikissa luvuissa nähtäviä harjoituksia. Lisäksi jokaisessa luvussa on omat harjoituksensa ja tehtävänsä.
+Meillä on joukko esimerkkejä, jotka täydentävät kaikkien tämän osion lukujen harjoituksia. Lisäksi jokaisessa luvussa on omat harjoituksensa ja tehtävänsä.
 
 - [Java-laskin](./samples/java/calculator/README.md)
 - [.Net-laskin](../../../03-GettingStarted/samples/csharp)
@@ -99,6 +101,8 @@ Meillä on joukko esimerkkejä, jotka täydentävät tämän osion kaikissa luvu
 ## Mitä seuraavaksi
 
 Seuraavaksi: [Ensimmäisen MCP-palvelimen luominen](01-first-server/README.md)
+
+---
 
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.

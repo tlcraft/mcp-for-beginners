@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "858362ce0118de3fec0f9114bf396101",
-  "translation_date": "2025-08-18T17:39:34+00:00",
+  "original_hash": "1197b6dbde36773e04a5ae826557fdb9",
+  "translation_date": "2025-08-26T18:03:44+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "id"
 }
@@ -23,25 +23,25 @@ Bagian ini terdiri dari beberapa pelajaran:
 
 - **4 Menggunakan mode GitHub Copilot Agent server di Visual Studio Code**. Di sini, kita akan melihat cara menjalankan Server MCP dari dalam Visual Studio Code, [ke pelajaran](04-vscode/README.md)
 
-- **5 Menggunakan SSE (Server Sent Events)** SSE adalah standar untuk streaming server-ke-klien, memungkinkan server mendorong pembaruan real-time ke klien melalui HTTP [ke pelajaran](05-sse-server/README.md)
+- **5 Server Transport stdio** stdio transport adalah standar yang direkomendasikan untuk komunikasi server-ke-klien MCP dalam spesifikasi saat ini, menyediakan komunikasi berbasis subprocess yang aman [ke pelajaran](05-stdio-server/README.md)
 
-- **6 HTTP Streaming dengan MCP (Streamable HTTP)**. Pelajari tentang streaming HTTP modern, notifikasi progres, dan cara mengimplementasikan server dan klien MCP real-time yang skalabel menggunakan Streamable HTTP. [ke pelajaran](06-http-streaming/README.md)
+- **6 HTTP Streaming dengan MCP (Streamable HTTP)**. Pelajari tentang HTTP streaming modern, notifikasi progres, dan cara mengimplementasikan server dan klien MCP yang skalabel dan real-time menggunakan Streamable HTTP. [ke pelajaran](06-http-streaming/README.md)
 
 - **7 Memanfaatkan AI Toolkit untuk VSCode** untuk menggunakan dan menguji Klien dan Server MCP Anda [ke pelajaran](07-aitk/README.md)
 
 - **8 Pengujian**. Di sini kita akan fokus pada berbagai cara untuk menguji server dan klien Anda, [ke pelajaran](08-testing/README.md)
 
-- **9 Deployment**. Bab ini akan membahas berbagai cara untuk menerapkan solusi MCP Anda, [ke pelajaran](09-deployment/README.md)
+- **9 Deployment**. Bab ini akan membahas berbagai cara untuk mendistribusikan solusi MCP Anda, [ke pelajaran](09-deployment/README.md)
 
 
-Model Context Protocol (MCP) adalah protokol terbuka yang menstandarisasi cara aplikasi menyediakan konteks ke LLM. Pikirkan MCP seperti port USB-C untuk aplikasi AI - ini menyediakan cara standar untuk menghubungkan model AI ke berbagai sumber data dan alat.
+Model Context Protocol (MCP) adalah protokol terbuka yang menstandarkan cara aplikasi menyediakan konteks ke LLM. Pikirkan MCP seperti port USB-C untuk aplikasi AI - ini menyediakan cara standar untuk menghubungkan model AI ke berbagai sumber data dan alat.
 
 ## Tujuan Pembelajaran
 
 Pada akhir pelajaran ini, Anda akan dapat:
 
 - Menyiapkan lingkungan pengembangan untuk MCP dalam C#, Java, Python, TypeScript, dan JavaScript
-- Membangun dan menerapkan server MCP dasar dengan fitur khusus (sumber daya, prompt, dan alat)
+- Membangun dan mendistribusikan server MCP dasar dengan fitur kustom (sumber daya, prompt, dan alat)
 - Membuat aplikasi host yang terhubung ke server MCP
 - Menguji dan men-debug implementasi MCP
 - Memahami tantangan umum dalam pengaturan dan solusinya
@@ -49,7 +49,7 @@ Pada akhir pelajaran ini, Anda akan dapat:
 
 ## Menyiapkan Lingkungan MCP Anda
 
-Sebelum Anda mulai bekerja dengan MCP, penting untuk mempersiapkan lingkungan pengembangan Anda dan memahami alur kerja dasar. Bagian ini akan memandu Anda melalui langkah-langkah awal pengaturan untuk memastikan awal yang lancar dengan MCP.
+Sebelum Anda mulai bekerja dengan MCP, penting untuk mempersiapkan lingkungan pengembangan Anda dan memahami alur kerja dasar. Bagian ini akan memandu Anda melalui langkah-langkah awal untuk memastikan awal yang lancar dengan MCP.
 
 ### Prasyarat
 
@@ -80,7 +80,7 @@ MCP menyediakan SDK resmi untuk berbagai bahasa:
 - Membangun server MCP melibatkan pembuatan dan pendaftaran alat dengan skema yang jelas
 - Klien MCP terhubung ke server dan model untuk memanfaatkan kemampuan yang diperluas
 - Pengujian dan debugging sangat penting untuk implementasi MCP yang andal
-- Opsi deployment mencakup pengembangan lokal hingga solusi berbasis cloud
+- Opsi distribusi mencakup pengembangan lokal hingga solusi berbasis cloud
 
 ## Berlatih
 
@@ -100,7 +100,9 @@ Kami memiliki serangkaian contoh yang melengkapi latihan yang akan Anda lihat di
 
 ## Selanjutnya
 
-Berikutnya: [Membuat Server MCP Pertama Anda](01-first-server/README.md)
+Berikutnya: [Membuat Server MCP pertama Anda](01-first-server/README.md)
+
+---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

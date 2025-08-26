@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "858362ce0118de3fec0f9114bf396101",
-  "translation_date": "2025-08-18T15:18:44+00:00",
+  "original_hash": "1197b6dbde36773e04a5ae826557fdb9",
+  "translation_date": "2025-08-26T17:52:11+00:00",
   "source_file": "03-GettingStarted/README.md",
   "language_code": "da"
 }
@@ -23,25 +23,25 @@ Denne sektion består af flere lektioner:
 
 - **4 Forbrug af en server GitHub Copilot Agent-tilstand i Visual Studio Code**. Her ser vi på, hvordan man kører vores MCP-server fra Visual Studio Code, [til lektionen](04-vscode/README.md)
 
-- **5 Forbrug fra SSE (Server Sent Events)** SSE er en standard for server-til-klient streaming, der giver servere mulighed for at sende realtidsopdateringer til klienter via HTTP [til lektionen](05-sse-server/README.md)
+- **5 stdio Transport Server** stdio transport er den anbefalede standard for MCP-server-til-klient-kommunikation i den nuværende specifikation, der giver sikker kommunikation baseret på underprocesser [til lektionen](05-stdio-server/README.md)
 
-- **6 HTTP-streaming med MCP (Streamable HTTP)**. Lær om moderne HTTP-streaming, statusopdateringer og hvordan man implementerer skalerbare, realtids MCP-servere og -klienter ved hjælp af Streamable HTTP. [til lektionen](06-http-streaming/README.md)
+- **6 HTTP Streaming med MCP (Streamable HTTP)**. Lær om moderne HTTP-streaming, statusnotifikationer og hvordan man implementerer skalerbare, realtids MCP-servere og -klienter ved hjælp af Streamable HTTP. [til lektionen](06-http-streaming/README.md)
 
-- **7 Udnyttelse af AI Toolkit til VSCode** til at forbruge og teste dine MCP-klienter og -servere [til lektionen](07-aitk/README.md)
+- **7 Udnyttelse af AI Toolkit til VSCode** for at forbruge og teste dine MCP-klienter og -servere [til lektionen](07-aitk/README.md)
 
-- **8 Testning**. Her vil vi især fokusere på, hvordan vi kan teste vores server og klient på forskellige måder, [til lektionen](08-testing/README.md)
+- **8 Testning**. Her fokuserer vi især på, hvordan vi kan teste vores server og klient på forskellige måder, [til lektionen](08-testing/README.md)
 
-- **9 Udrulning**. Dette kapitel vil se på forskellige måder at udrulle dine MCP-løsninger på, [til lektionen](09-deployment/README.md)
+- **9 Udrulning**. Dette kapitel ser på forskellige måder at udrulle dine MCP-løsninger på, [til lektionen](09-deployment/README.md)
 
 
-Model Context Protocol (MCP) er en åben protokol, der standardiserer, hvordan applikationer giver kontekst til LLM'er. Tænk på MCP som en USB-C-port for AI-applikationer - det giver en standardiseret måde at forbinde AI-modeller til forskellige datakilder og værktøjer.
+Model Context Protocol (MCP) er en åben protokol, der standardiserer, hvordan applikationer giver kontekst til LLM'er. Tænk på MCP som en USB-C-port for AI-applikationer - den giver en standardiseret måde at forbinde AI-modeller til forskellige datakilder og værktøjer.
 
 ## Læringsmål
 
 Ved afslutningen af denne lektion vil du være i stand til at:
 
 - Opsætte udviklingsmiljøer for MCP i C#, Java, Python, TypeScript og JavaScript
-- Bygge og udrulle grundlæggende MCP-servere med tilpassede funktioner (ressourcer, prompts og værktøjer)
+- Bygge og udrulle grundlæggende MCP-servere med brugerdefinerede funktioner (ressourcer, prompts og værktøjer)
 - Oprette værtsapplikationer, der forbinder til MCP-servere
 - Teste og fejlfinde MCP-implementeringer
 - Forstå almindelige opsætningsudfordringer og deres løsninger
@@ -57,7 +57,7 @@ Før du dykker ned i MCP-udvikling, skal du sikre dig, at du har:
 
 - **Udviklingsmiljø**: For det valgte sprog (C#, Java, Python, TypeScript eller JavaScript)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm eller enhver moderne kodeeditor
-- **Pakkehåndteringsværktøjer**: NuGet, Maven/Gradle, pip eller npm/yarn
+- **Pakkestyringsværktøjer**: NuGet, Maven/Gradle, pip eller npm/yarn
 - **API-nøgler**: Til de AI-tjenester, du planlægger at bruge i dine værtsapplikationer
 
 
@@ -76,10 +76,10 @@ MCP tilbyder officielle SDK'er til flere sprog:
 
 ## Vigtige pointer
 
-- Opsætning af et MCP-udviklingsmiljø er enkelt med sprog-specifikke SDK'er
+- Opsætning af et MCP-udviklingsmiljø er ligetil med sprog-specifikke SDK'er
 - Opbygning af MCP-servere indebærer oprettelse og registrering af værktøjer med klare skemaer
 - MCP-klienter forbinder til servere og modeller for at udnytte udvidede funktioner
-- Testning og fejlretning er afgørende for pålidelige MCP-implementeringer
+- Testning og fejlfinding er afgørende for pålidelige MCP-implementeringer
 - Udrulningsmuligheder spænder fra lokal udvikling til cloud-baserede løsninger
 
 ## Øvelse
@@ -98,9 +98,11 @@ Vi har et sæt eksempler, der supplerer de øvelser, du vil se i alle kapitler i
 - [Remote MCP med Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## Hvad er næste skridt
+## Hvad er det næste
 
-Næste: [Opret din første MCP-server](01-first-server/README.md)
+Næste: [Oprettelse af din første MCP-server](01-first-server/README.md)
+
+---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at sikre nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
