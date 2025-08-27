@@ -283,7 +283,7 @@ You can test your server using the MCP Inspector:
 var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddMcpServer();
-
+ ```
 ## Debugging your stdio server
 
 ### Using the MCP Inspector
