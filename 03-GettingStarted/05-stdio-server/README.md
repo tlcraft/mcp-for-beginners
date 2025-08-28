@@ -475,7 +475,7 @@ In this updated lesson, you learned how to:
 - Integrate your stdio server with VS Code and Claude
 
 The stdio transport provides a simpler, more secure, and more performant way to build MCP servers compared to the deprecated SSE approach. It's the recommended transport for most MCP server implementations as of the 2025-06-18 specification.
-```
+
 
 ### .NET
 
@@ -485,6 +485,7 @@ The stdio transport provides a simpler, more secure, and more performant way to 
   using System.ComponentModel;
   using System.Text.Json;
   using ModelContextProtocol.Server;
+  ```
 
 ## Exercise: Testing your stdio server
 
