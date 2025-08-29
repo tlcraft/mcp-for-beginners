@@ -99,7 +99,7 @@ MCPサーバーを使えば、VS CodeやVisual Studioなどの開発環境に留
 
 **従来の方法：**
 ```
-1. Code a feature
+1. 機能をコーディングする
 2. Open browser → Navigate to GitHub
 3. Create an issue for testing
 4. Open another tab → Check Azure docs for deployment
