@@ -150,8 +150,35 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### コンプライアンスとガバナンス
 - [GDPR Compliance for AI](https://learn.microsoft.com/compliance/regulatory/gdpr-data-protection-impact-assessments) - AIシステムにおけるプライバシーコンプライアンス
-- [AI Governance
-- **ツール開発**: MCPエコシステム向けのセキュリティツールやライブラリを開発し、共有する
+- [AI Governance Framework](https://learn.microsoft.com/azure/architecture/guide/responsible-ai/responsible-ai-overview) - 責任あるAI実装
+- [SOC 2 for AI Services](https://learn.microsoft.com/compliance/regulatory/offering-soc) - AIサービスプロバイダー向けのセキュリティ管理
+- [HIPAA Compliance for AI](https://learn.microsoft.com/compliance/regulatory/offering-hipaa-hitech) - ヘルスケアAIのコンプライアンス要件
+
+### DevSecOps & Automation
+- [DevSecOps Pipeline for AI](https://learn.microsoft.com/azure/devops/migrate/security-validation-cicd-pipeline) - 安全なAI開発パイプライン
+- [Automated Security Testing](https://learn.microsoft.com/security/engineering/devsecops) - 継続的なセキュリティ検証
+- [Infrastructure as Code Security](https://learn.microsoft.com/security/engineering/infrastructure-security) - 安全なインフラストラクチャの展開
+- [Container Security for AI](https://learn.microsoft.com/azure/container-instances/container-instances-image-security) - AIワークロードコンテナ化セキュリティ
+
+### Monitoring & Incident Response  
+- [Azure Monitor for AI Workloads](https://learn.microsoft.com/azure/azure-monitor/overview) - 包括的な監視ソリューション
+- [AI Security Incident Response](https://learn.microsoft.com/security/compass/incident-response-playbooks) - AI特有のインシデント手順
+- [SIEM for AI Systems](https://learn.microsoft.com/azure/sentinel/overview) - セキュリティ情報およびイベント管理
+- [Threat Intelligence for AI](https://learn.microsoft.com/security/compass/security-operations-videos-and-decks#threat-intelligence) - AI脅威インテリジェンスソース
+
+## 🔄 継続的な改善
+
+### 進化する標準規格への対応
+- **MCP仕様の更新**: 公式MCP仕様の変更とセキュリティアドバイザリを監視
+- **脅威インテリジェンス**: AIセキュリティ脅威フィードと脆弱性データベースを購読
+- **コミュニティエンゲージメント**: MCPセキュリティコミュニティのディスカッションやワーキンググループに参加
+- **定期評価**: 四半期ごとにセキュリティ態勢評価を実施し、それに応じてプラクティスを更新
+
+### MCPセキュリティへの貢献
+- **セキュリティリサーチ**: MCPセキュリティリサーチと脆弱性開示プログラムに貢献
+- **ベストプラクティスの共有**: セキュリティ実装と得られた教訓をコミュニティと共有
+- **標準規格の開発**: MCP仕様の策定とセキュリティ標準規格の作成に参加
+- **ツール開発**: MCPエコシステム向けのセキュリティツールとライブラリを開発・共有
 
 ---
 
