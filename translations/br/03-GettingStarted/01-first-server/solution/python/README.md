@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-18T17:13:24+00:00",
+  "original_hash": "d4c162484df410632550a4a357d40341",
+  "translation_date": "2025-09-03T16:05:57+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "br"
 }
@@ -47,9 +47,9 @@ Isso deve iniciar um servidor web com uma interface visual que permite testar o 
 
 Uma vez que o servidor esteja conectado:
 
-- Experimente listar as ferramentas e executar `add`, com os argumentos 2 e 4. Você deve ver 6 como resultado.
+- tente listar as ferramentas e executar `add`, com os argumentos 2 e 4. Você deve ver 6 como resultado.
 
-- Vá para recursos e modelo de recurso e chame `get_greeting`. Digite um nome e você deve ver uma saudação com o nome que forneceu.
+- vá para recursos e modelo de recurso e chame `get_greeting`, digite um nome e você deve ver uma saudação com o nome que forneceu.
 
 ### Testando no modo CLI
 
@@ -116,5 +116,7 @@ Você deve ver a seguinte saída:
 > Geralmente é muito mais rápido executar o inspetor no modo CLI do que no navegador.
 > Leia mais sobre o inspetor [aqui](https://github.com/modelcontextprotocol/inspector).
 
+---
+
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autoritativa. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
