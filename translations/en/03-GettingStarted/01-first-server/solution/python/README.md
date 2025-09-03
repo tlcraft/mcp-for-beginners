@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-19T14:14:38+00:00",
+  "original_hash": "d4c162484df410632550a4a357d40341",
+  "translation_date": "2025-09-03T15:54:06+00:00",
   "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
   "language_code": "en"
 }
@@ -55,7 +55,7 @@ Once the server is connected:
 
 The inspector you launched is actually a Node.js application, and `mcp dev` is a wrapper for it.
 
-You can start it directly in CLI mode by running the following command:
+You can run it directly in CLI mode by executing the following command:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
@@ -112,9 +112,11 @@ You should see the following output:
 }
 ```
 
-> [!TIP]  
-> Running the inspector in CLI mode is usually much faster than using the browser.  
+> [!TIP]
+> Running the inspector in CLI mode is usually much faster than using the browser.
 > Learn more about the inspector [here](https://github.com/modelcontextprotocol/inspector).
+
+---
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
