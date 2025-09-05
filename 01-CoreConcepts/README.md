@@ -447,10 +447,13 @@ class WeatherData {
 ### Python Example: Building an MCP Server
 
 This example uses fastmcp, so please ensure you install it first:
-```
+
+```python
 pip install fastmcp
 ```
-```
+Code Sample 
+
+```python
 #!/usr/bin/env python3
 import asyncio
 from fastmcp import FastMCP
