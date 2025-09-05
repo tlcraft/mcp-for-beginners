@@ -446,7 +446,7 @@ class WeatherData {
 
 ### Python Example: Building an MCP Server
 
-In this example we show how to build an MCP server in Python. Using the fastmcp please ensure you install fastmcp
+This example uses fastmcp, so please ensure you install it first:
 ```
 pip install fastmcp
 ```
