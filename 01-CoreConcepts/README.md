@@ -451,7 +451,7 @@ This example uses fastmcp, so please ensure you install it first:
 ```python
 pip install fastmcp
 ```
-Code Sample 
+Code Sample:
 
 ```python
 #!/usr/bin/env python3
