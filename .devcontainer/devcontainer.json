@@ -17,7 +17,6 @@
                 "ms-dotnettools.dotnet-interactive-vscode", // Polyglot Notebooks. Required,
                 "ms-dotnettools.csdevkit", // devkit
                 "mermaidchart.vscode-mermaid-chart" // Documentation diagrams
-
             ]
         }
     },
