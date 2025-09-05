@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "88b863a69b4f18b15e82da358ffd3489",
-  "translation_date": "2025-08-21T12:21:26+00:00",
+  "original_hash": "904b59de1de9264801242d90a42cdd9d",
+  "translation_date": "2025-09-05T10:12:40+00:00",
   "source_file": "01-CoreConcepts/README.md",
   "language_code": "en"
 }
@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 _(Click the image above to view the video of this lesson)_
 
 The [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) is a powerful, standardized framework designed to enhance communication between Large Language Models (LLMs) and external tools, applications, and data sources.  
-This guide will introduce you to the core concepts of MCP, including its client-server architecture, key components, communication mechanics, and best practices for implementation.
+This guide introduces the core concepts of MCP, including its client-server architecture, key components, communication mechanics, and best practices for implementation.
 
 - **Explicit User Consent**: All data access and operations require clear user approval before execution. Users must fully understand what data will be accessed and what actions will be performed, with detailed control over permissions and authorizations.
 
@@ -100,10 +100,10 @@ In the Model Context Protocol (MCP), **Hosts** are AI applications that serve as
 **Clients** are connector components within the host application. They:
 
 - **Protocol Communication**: Send JSON-RPC 2.0 requests to servers with prompts and instructions.  
-- **Capability Negotiation**: Negotiate supported features and protocol versions with servers during initialization.  
+- **Capability Negotiation**: Determine supported features and protocol versions with servers during initialization.  
 - **Tool Execution**: Manage tool execution requests from models and process responses.  
 - **Real-time Updates**: Handle notifications and real-time updates from servers.  
-- **Response Processing**: Format and process server responses for user display.
+- **Response Processing**: Format server responses for display to users.
 
 ### 3. Servers
 
@@ -264,7 +264,7 @@ The **Data Layer** implements the core MCP protocol using **JSON-RPC 2.0** as it
 - **Lifecycle Management**: Manages connection setup, capability negotiation, and session termination between clients and servers.
 - **Server Primitives**: Allows servers to provide core functionality through tools, resources, and prompts.
 - **Client Primitives**: Enables servers to request sampling from LLMs, gather user input, and send log messages.
-- **Real-time Notifications**: Supports asynchronous notifications for dynamic updates without the need for polling.
+- **Real-time Notifications**: Supports asynchronous notifications for dynamic updates without requiring polling.
 
 #### Key Features:
 
@@ -300,7 +300,7 @@ MCP implementations must follow several key security principles to ensure safe, 
 
 - **User Consent and Control**: Users must explicitly consent before any data is accessed or operations are performed. They should have clear control over what data is shared and which actions are authorized, supported by intuitive user interfaces for reviewing and approving activities.
 
-- **Data Privacy**: User data should only be exposed with explicit consent and must be protected by appropriate access controls. MCP implementations must prevent unauthorized data transmission and ensure privacy is maintained throughout all interactions.
+- **Data Privacy**: User data should only be accessed with explicit consent and must be protected by appropriate access controls. MCP implementations must prevent unauthorized data transmission and ensure privacy is maintained throughout all interactions.
 
 - **Tool Safety**: Explicit user consent is required before invoking any tool. Users should clearly understand each tool’s functionality, and strong security boundaries must be enforced to prevent unintended or unsafe tool execution.
 
@@ -453,13 +453,18 @@ class WeatherData {
 
 ### Python Example: Building an MCP Server
 
-This example demonstrates how to build an MCP server in Python. It also shows two different methods for creating tools.
+This example uses fastmcp, so ensure you install it first:
+
+```python
+pip install fastmcp
+```  
+Code Sample:
 
 ```python
 #!/usr/bin/env python3
 import asyncio
-from mcp.server.fastmcp import FastMCP
-from mcp.server.transports.stdio import serve_stdio
+from fastmcp import FastMCP
+from fastmcp.transports.stdio import serve_stdio
 
 # Create a FastMCP server
 mcp = FastMCP(
@@ -470,8 +475,6 @@ mcp = FastMCP(
 @mcp.tool()
 def get_weather(location: str) -> dict:
     """Gets current weather for a location."""
-    # This would normally call a weather API
-    # Simplified for demonstration
     return {
         "temperature": 72.5,
         "conditions": "Sunny",
@@ -483,8 +486,6 @@ class WeatherTools:
     @mcp.tool()
     def forecast(self, location: str, days: int = 1) -> dict:
         """Gets weather forecast for a location for the specified number of days."""
-        # This would normally call a weather API forecast endpoint
-        # Simplified for demonstration
         return {
             "location": location,
             "forecast": [
@@ -493,17 +494,17 @@ class WeatherTools:
             ]
         }
 
-# Instantiate the class to register its tools
+# Register class tools
 weather_tools = WeatherTools()
 
-# Start the server using stdio transport
+# Start the server
 if __name__ == "__main__":
     asyncio.run(serve_stdio(mcp))
 ```
 
 ### JavaScript Example: Creating an MCP Server
 
-This example shows how to create an MCP server in JavaScript and register two weather-related tools.
+This example demonstrates MCP server creation in JavaScript and how to register two weather-related tools.
 
 ```javascript
 // Using the official Model Context Protocol SDK
@@ -588,7 +589,7 @@ server.connect(transport).catch(console.error);
 console.log("Weather MCP Server started");
 ```
 
-This JavaScript example also demonstrates how to create an MCP client that connects to a server, sends a prompt, and processes the response, including any tool calls made.
+This JavaScript example also shows how to create an MCP client that connects to a server, sends a prompt, and processes the response, including any tool calls made.
 
 ## Security and Authorization
 
@@ -617,7 +618,7 @@ MCP communication uses structured **JSON-RPC 2.0** messages to enable clear and 
 #### **Initialization Messages**
 - **`initialize` Request**: Establishes connection and negotiates protocol version and capabilities.
 - **`initialize` Response**: Confirms supported features and server information.  
-- **`notifications/initialized`**: Indicates that initialization is complete and the session is ready.
+- **`notifications/initialized`**: Signals that initialization is complete and the session is ready.
 
 #### **Discovery Messages**
 - **`tools/list` Request**: Discovers available tools from the server.
@@ -635,9 +636,9 @@ MCP communication uses structured **JSON-RPC 2.0** messages to enable clear and 
 - **Logging Messages**: Server sends structured log messages to the client.
 
 #### **Notification Messages**
-- **`notifications/tools/list_changed`**: Server notifies the client of tool changes.
-- **`notifications/resources/list_changed`**: Server notifies the client of resource changes.  
-- **`notifications/prompts/list_changed`**: Server notifies the client of prompt changes.
+- **`notifications/tools/list_changed`**: Server notifies client of tool changes.
+- **`notifications/resources/list_changed`**: Server notifies client of resource changes.  
+- **`notifications/prompts/list_changed`**: Server notifies client of prompt changes.
 
 ### Message Structure:
 
@@ -672,6 +673,8 @@ Design a simple MCP tool that would be useful in your domain. Define:
 ## What's next
 
 Next: [Chapter 2: Security](../02-Security/README.md)
+
+---
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
