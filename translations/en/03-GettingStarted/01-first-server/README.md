@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-19T14:13:44+00:00",
+  "original_hash": "ec11ee93f31fdadd94facd3e3d22f9e6",
+  "translation_date": "2025-09-09T21:17:22+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "en"
 }
@@ -81,6 +81,9 @@ server.resource(
       uri: uri.href,
       text: `File, ${path}!`
     }]
+  })
+);
+
 // Add a file resource that reads the file contents
 server.resource(
   "file",
@@ -120,7 +123,7 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-In the preceding code, we:
+In the preceding code we:
 
 - Import the necessary classes from the MCP TypeScript SDK.
 - Create and configure a new MCP server instance.
@@ -960,10 +963,10 @@ def get_greeting(name: str) -> str:
     return f"Hello, {name}!"
 ```
 
-In the preceding code, we've:
+In the preceding code we've:
 
-- Defined a tool `add` that takes parameters `a` and `p`, both integers.
-- Created a resource called `greeting` that takes the parameter `name`.
+- Defined a tool `add` that takes parameters `a` and `b`, both integers.
+- Created a resource called `greeting` that takes parameter `name`.
 
 #### .NET
 
@@ -1268,7 +1271,8 @@ However, it doesn't implement all the methods available on the tool, so you're r
 npx @modelcontextprotocol/inspector mcp run server.py
 ```
 
-If you're using a tool or IDE that allows you to configure commands and arguments for running scripts, make sure to set `python` in the `Command` field and `server.py` as `Arguments`. This ensures the script runs correctly.
+If you're using a tool or IDE that allows you to configure commands and arguments for running scripts, 
+make sure to set `python` in the `Command` field and `server.py` as `Arguments`. This ensures the script runs correctly.
 
 #### .NET
 
@@ -1294,7 +1298,7 @@ In the inspector web interface:
 3. Click "Connect".
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.en.png)
 
-**You're now connected to the server**  
+**You are now connected to the server**  
 **The Java server testing section is now complete**
 
 The next section focuses on interacting with the server.
@@ -1304,13 +1308,13 @@ You should see the following user interface:
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.en.png)
 
 1. Connect to the server by clicking the Connect button.  
-   Once connected, you should see the following:
+   Once connected to the server, you should see the following:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.en.png)
 
-2. Select "Tools" and then "listTools." You should see the "Add" option appear. Select "Add" and fill in the parameter values.
+2. Select "Tools" and then "listTools." You should see "Add" appear. Select "Add" and provide the parameter values.
 
-   You should see the following response, which is the result from the "add" tool:
+   You should see the following response, which is the result of the "add" tool:
 
    ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.en.png)
 
@@ -1318,7 +1322,7 @@ Congratulations, you've successfully created and run your first server!
 
 #### Rust
 
-To run the Rust server with the MCP Inspector CLI, use the following command:
+To run the Rust server using the MCP Inspector CLI, use the following command:
 
 ```sh
 npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-name add --tool-arg a=1 b=2
@@ -1326,7 +1330,7 @@ npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-n
 
 ### Official SDKs
 
-MCP provides official SDKs for several programming languages:
+MCP offers official SDKs for various programming languages:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Maintained in collaboration with Microsoft  
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Maintained in collaboration with Spring AI  
@@ -1339,7 +1343,7 @@ MCP provides official SDKs for several programming languages:
 ## Key Takeaways
 
 - Setting up an MCP development environment is simple with language-specific SDKs.  
-- Building MCP servers involves creating and registering tools with clear schemas.  
+- Building MCP servers involves creating and registering tools with well-defined schemas.  
 - Testing and debugging are crucial for reliable MCP implementations.  
 
 ## Samples
@@ -1353,12 +1357,12 @@ MCP provides official SDKs for several programming languages:
 
 ## Assignment
 
-Create a simple MCP server with a tool of your choice:
+Create a basic MCP server with a tool of your choice:
 
 1. Implement the tool in your preferred language (.NET, Java, Python, TypeScript, or Rust).  
 2. Define input parameters and return values.  
-3. Run the inspector tool to ensure the server works as expected.  
-4. Test the implementation with various inputs.  
+3. Use the inspector tool to verify the server's functionality.  
+4. Test the implementation with different inputs.  
 
 ## Solution
 
@@ -1374,5 +1378,7 @@ Create a simple MCP server with a tool of your choice:
 
 Next: [Getting Started with MCP Clients](../02-client/README.md)  
 
+---
+
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.

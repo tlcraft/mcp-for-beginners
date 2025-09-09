@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-18T14:55:31+00:00",
+  "original_hash": "ec11ee93f31fdadd94facd3e3d22f9e6",
+  "translation_date": "2025-09-09T21:55:08+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sv"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Välkommen till dina första steg med Model Context Protocol (MCP)! Oavsett om du är nybörjare eller vill fördjupa din förståelse, kommer den här guiden att leda dig genom den grundläggande installationen och utvecklingsprocessen. Du kommer att upptäcka hur MCP möjliggör smidig integration mellan AI-modeller och applikationer, och lära dig hur du snabbt kan förbereda din miljö för att bygga och testa MCP-drivna lösningar.
 
-> TLDR; Om du bygger AI-appar, vet du att du kan lägga till verktyg och andra resurser till din LLM (large language model) för att göra den mer kunnig. Men om du placerar dessa verktyg och resurser på en server, kan appen och serverns kapacitet användas av vilken klient som helst, med eller utan en LLM.
+> TLDR; Om du bygger AI-appar, vet du att du kan lägga till verktyg och andra resurser till din LLM (large language model) för att göra den mer kunnig. Men om du placerar dessa verktyg och resurser på en server, kan appen och serverns funktioner användas av vilken klient som helst, med eller utan en LLM.
 
 ## Översikt
 
@@ -21,7 +21,7 @@ Model Context Protocol (MCP) är ett öppet protokoll som standardiserar hur app
 
 ## Lärandemål
 
-I slutet av den här lektionen kommer du att kunna:
+I slutet av denna lektion kommer du att kunna:
 
 - Ställa in utvecklingsmiljöer för MCP i C#, Java, Python, TypeScript och Rust
 - Bygga och distribuera grundläggande MCP-servrar med anpassade funktioner (resurser, prompts och verktyg)
@@ -36,7 +36,7 @@ Innan du börjar arbeta med MCP är det viktigt att förbereda din utvecklingsmi
 
 Innan du dyker in i MCP-utveckling, se till att du har:
 
-- **Utvecklingsmiljö**: För ditt valda språk (C#, Java, Python, TypeScript eller Rust)
+- **Utvecklingsmiljö**: För det språk du valt (C#, Java, Python, TypeScript eller Rust)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm eller någon modern kodredigerare
 - **Paketadministratörer**: NuGet, Maven/Gradle, pip, npm/yarn eller Cargo
 - **API-nycklar**: För de AI-tjänster du planerar att använda i dina värdapplikationer
@@ -81,6 +81,9 @@ server.resource(
       uri: uri.href,
       text: `File, ${path}!`
     }]
+  })
+);
+
 // Add a file resource that reads the file contents
 server.resource(
   "file",
@@ -140,7 +143,7 @@ MCP tillhandahåller verktyg för att hjälpa dig testa och felsöka dina servra
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) är ett visuellt testverktyg som hjälper dig:
 
-1. **Upptäcka serverkapacitet**: Identifiera tillgängliga resurser, verktyg och prompts automatiskt
+1. **Upptäcka serverfunktioner**: Identifiera tillgängliga resurser, verktyg och prompts automatiskt
 2. **Testa verktygsutförande**: Prova olika parametrar och se svar i realtid
 3. **Visa servermetadata**: Undersök serverinformation, scheman och konfigurationer
 
@@ -149,7 +152,7 @@ MCP tillhandahåller verktyg för att hjälpa dig testa och felsöka dina servra
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-När du kör ovanstående kommandon kommer MCP Inspector att starta ett lokalt webbgränssnitt i din webbläsare. Du kan förvänta dig att se en instrumentpanel som visar dina registrerade MCP-servrar, deras tillgängliga verktyg, resurser och prompts. Gränssnittet låter dig interaktivt testa verktygsutförande, inspektera servermetadata och visa svar i realtid, vilket gör det enklare att validera och felsöka dina MCP-serverimplementationer.
+När du kör ovanstående kommandon startar MCP Inspector ett lokalt webbgränssnitt i din webbläsare. Du kan förvänta dig att se en instrumentpanel som visar dina registrerade MCP-servrar, deras tillgängliga verktyg, resurser och prompts. Gränssnittet låter dig interaktivt testa verktygsutförande, inspektera servermetadata och visa svar i realtid, vilket gör det enklare att validera och felsöka dina MCP-serverimplementationer.
 
 Här är en skärmdump av hur det kan se ut:
 
@@ -548,7 +551,7 @@ await builder.Build().RunAsync();
 
 #### Java
 
-För Java, skapa de centrala serverkomponenterna. Börja med att modifiera huvudapplikationsklassen:
+För Java, skapa de centrala serverkomponenterna. Börja med att ändra huvudapplikationsklassen:
 
 *src/main/java/com/microsoft/mcp/sample/server/McpServerApplication.java*:
 
@@ -1256,7 +1259,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 eller lägg till det i din *package.json* som så här: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` och kör sedan `npm run inspector`
 
-Python omsluter ett Node.js-verktyg som heter inspector. Det är möjligt att kalla detta verktyg så här:
+Python omsluter ett Node.js-verktyg som kallas inspector. Det är möjligt att kalla detta verktyg så här:
 
 ```sh
 mcp dev server.py
@@ -1296,7 +1299,7 @@ I Inspector-webbgränssnittet:
 ![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.sv.png)
 
 **Du är nu ansluten till servern**  
-**Testsektionen för Java-servern är nu klar**
+**Testsektionen för Java-servern är nu avslutad**
 
 Nästa sektion handlar om att interagera med servern.
 
@@ -1309,7 +1312,7 @@ Du bör se följande användargränssnitt:
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.sv.png)
 
-1. Välj "Tools" och "listTools", du bör se "Add" dyka upp. Välj "Add" och fyll i parametervärdena.
+2. Välj "Tools" och "listTools", du bör se "Add" dyka upp. Välj "Add" och fyll i parametervärdena.
 
    Du bör se följande svar, dvs. ett resultat från verktyget "add":
 
@@ -1375,5 +1378,7 @@ Skapa en enkel MCP-server med ett verktyg du väljer:
 
 Nästa: [Kom igång med MCP-klienter](../02-client/README.md)  
 
+---
+
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen notera att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör du vara medveten om att automatiserade översättningar kan innehålla fel eller inexaktheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-19T15:10:18+00:00",
+  "original_hash": "ec11ee93f31fdadd94facd3e3d22f9e6",
+  "translation_date": "2025-09-09T22:09:34+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "hu"
 }
 -->
 # Első lépések az MCP-vel
 
-Üdvözlünk a Model Context Protocol (MCP) világában! Akár most ismerkedsz az MCP-vel, akár mélyebb megértésre törekszel, ez az útmutató segít az alapvető beállításokban és fejlesztési folyamatban. Felfedezheted, hogyan teszi az MCP zökkenőmentessé az integrációt AI modellek és alkalmazások között, és megtanulhatod, hogyan készítsd elő környezeted MCP-alapú megoldások építéséhez és teszteléséhez.
+Üdvözlünk a Model Context Protocol (MCP) világában! Akár új vagy az MCP-ben, akár szeretnéd elmélyíteni tudásodat, ez az útmutató végigvezet az alapvető beállítási és fejlesztési folyamatokon. Felfedezheted, hogyan teszi az MCP zökkenőmentessé az integrációt AI modellek és alkalmazások között, valamint megtanulhatod, hogyan készítsd elő környezeted MCP-alapú megoldások fejlesztéséhez és teszteléséhez.
 
-> Röviden: Ha AI alkalmazásokat fejlesztesz, tudod, hogy eszközöket és egyéb erőforrásokat adhatsz a LLM-hez (nagy nyelvi modell), hogy az még tájékozottabb legyen. Azonban, ha ezeket az eszközöket és erőforrásokat egy szerverre helyezed, az alkalmazás és a szerver képességei bármely kliens által használhatók, akár LLM-mel, akár anélkül.
+> Röviden: Ha AI alkalmazásokat fejlesztesz, tudod, hogy eszközöket és egyéb erőforrásokat adhatsz a LLM-hez (nagy nyelvi modell), hogy az LLM tudásosabb legyen. Azonban, ha ezeket az eszközöket és erőforrásokat egy szerverre helyezed, az alkalmazás és a szerver képességei bármely kliens által használhatók, akár LLM-mel, akár anélkül.
 
 ## Áttekintés
 
-Ez a lecke gyakorlati útmutatást nyújt MCP környezetek beállításához és az első MCP alkalmazások létrehozásához. Megtanulhatod, hogyan állítsd be a szükséges eszközöket és keretrendszereket, építs alapvető MCP szervereket, hozz létre host alkalmazásokat, és teszteld implementációidat.
+Ez a lecke gyakorlati útmutatást nyújt MCP környezetek beállításához és az első MCP alkalmazások létrehozásához. Megtanulhatod, hogyan állítsd be a szükséges eszközöket és keretrendszereket, hogyan építs alapvető MCP szervereket, hozz létre host alkalmazásokat, és teszteld implementációidat.
 
 A Model Context Protocol (MCP) egy nyílt protokoll, amely szabványosítja, hogyan biztosítanak az alkalmazások kontextust az LLM-ek számára. Gondolj az MCP-re úgy, mint egy USB-C portra az AI alkalmazások számára – szabványos módot kínál az AI modellek különböző adatforrásokhoz és eszközökhöz való csatlakoztatására.
 
@@ -26,7 +26,7 @@ A lecke végére képes leszel:
 - MCP fejlesztési környezeteket beállítani C#, Java, Python, TypeScript és Rust nyelveken
 - Alapvető MCP szervereket építeni és telepíteni egyedi funkciókkal (erőforrások, promptok és eszközök)
 - Host alkalmazásokat létrehozni, amelyek csatlakoznak MCP szerverekhez
-- MCP implementációkat tesztelni és hibakeresést végezni
+- MCP implementációkat tesztelni és hibakeresni
 
 ## MCP környezet beállítása
 
@@ -39,7 +39,7 @@ Mielőtt belevágnál az MCP fejlesztésbe, győződj meg róla, hogy rendelkeze
 - **Fejlesztési környezet**: A választott nyelvhez (C#, Java, Python, TypeScript vagy Rust)
 - **IDE/Szerkesztő**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm vagy bármely modern kódszerkesztő
 - **Csomagkezelők**: NuGet, Maven/Gradle, pip, npm/yarn vagy Cargo
-- **API kulcsok**: Azokhoz az AI szolgáltatásokhoz, amelyeket a host alkalmazásokban használni tervezel
+- **API kulcsok**: Az AI szolgáltatásokhoz, amelyeket host alkalmazásaidban tervezel használni
 
 ## Alapvető MCP szerver struktúra
 
@@ -47,7 +47,7 @@ Egy MCP szerver általában tartalmazza:
 
 - **Szerver konfiguráció**: Port, hitelesítés és egyéb beállítások
 - **Erőforrások**: Az LLM-ek számára elérhetővé tett adatok és kontextus
-- **Eszközök**: Funkciók, amelyeket a modellek meghívhatnak
+- **Eszközök**: Funkcionalitás, amelyet a modellek meghívhatnak
 - **Promptok**: Szöveg generálására vagy strukturálására szolgáló sablonok
 
 Íme egy egyszerű példa TypeScript-ben:
@@ -81,6 +81,9 @@ server.resource(
       uri: uri.href,
       text: `File, ${path}!`
     }]
+  })
+);
+
 // Add a file resource that reads the file contents
 server.resource(
   "file",
@@ -131,17 +134,17 @@ A fenti kódban:
 
 Mielőtt elkezdenéd tesztelni MCP szerveredet, fontos megérteni a rendelkezésre álló eszközöket és a legjobb gyakorlatokat a hibakereséshez. A hatékony tesztelés biztosítja, hogy szervered az elvárásoknak megfelelően működjön, és segít gyorsan azonosítani és megoldani a problémákat. Az alábbi szakasz ajánlott megközelítéseket ismertet MCP implementációd érvényesítéséhez.
 
-Az MCP eszközöket biztosít a szerverek teszteléséhez és hibakereséséhez:
+Az MCP eszközöket biztosít szerverek teszteléséhez és hibakereséséhez:
 
-- **Inspector eszköz**: Ez a grafikus felület lehetővé teszi, hogy csatlakozz a szerverhez, és teszteld az eszközöket, promptokat és erőforrásokat.
-- **curl**: Parancssori eszközzel, például curl-lel vagy más HTTP parancsokat futtató kliensekkel is csatlakozhatsz a szerverhez.
+- **Inspector eszköz**: Ez a grafikus felület lehetővé teszi, hogy csatlakozz szerveredhez, és teszteld az eszközöket, promptokat és erőforrásokat.
+- **curl**: Parancssori eszköz, amellyel HTTP parancsokat futtathatsz, és csatlakozhatsz szerveredhez.
 
 ### MCP Inspector használata
 
 Az [MCP Inspector](https://github.com/modelcontextprotocol/inspector) egy vizuális tesztelő eszköz, amely segít:
 
 1. **Szerver képességek felfedezése**: Automatikusan észleli az elérhető erőforrásokat, eszközöket és promptokat
-2. **Eszköz végrehajtás tesztelése**: Különböző paramétereket próbálhatsz ki, és valós időben láthatod a válaszokat
+2. **Eszköz végrehajtás tesztelése**: Különböző paramétereket próbálhatsz ki, és valós idejű válaszokat láthatsz
 3. **Szerver metaadatok megtekintése**: Vizsgálhatod a szerver információit, sémáit és konfigurációit
 
 ```bash
@@ -160,12 +163,12 @@ A fenti parancsok futtatásakor az MCP Inspector egy helyi webes felületet ind�
 | Probléma | Lehetséges megoldás |
 |----------|---------------------|
 | Kapcsolat megtagadva | Ellenőrizd, hogy a szerver fut-e, és a port helyes-e |
-| Eszköz végrehajtási hibák | Vizsgáld meg a paraméterek validálását és a hibakezelést |
+| Eszköz végrehajtási hibák | Ellenőrizd a paraméterek validálását és a hibakezelést |
 | Hitelesítési hibák | Ellenőrizd az API kulcsokat és jogosultságokat |
 | Séma validálási hibák | Győződj meg róla, hogy a paraméterek megfelelnek a meghatározott sémának |
-| Szerver nem indul | Ellenőrizd a portütközéseket vagy a hiányzó függőségeket |
-| CORS hibák | Állítsd be megfelelő CORS fejlécet a cross-origin kérésekhez |
-| Hitelesítési problémák | Ellenőrizd a token érvényességét és jogosultságait |
+| Szerver nem indul | Ellenőrizd a port ütközéseket vagy hiányzó függőségeket |
+| CORS hibák | Állítsd be megfelelő CORS fejlécet a kereszt-domain kérésekhez |
+| Hitelesítési problémák | Ellenőrizd a token érvényességét és jogosultságokat |
 
 ## Helyi fejlesztés
 
@@ -181,7 +184,7 @@ npm run start
 # Server running at http://localhost:3000
 ```
 
-## Első MCP szervered építése
+## Első MCP szervered létrehozása
 
 Korábban már áttekintettük a [Core koncepciókat](/01-CoreConcepts/README.md), most itt az ideje, hogy ezt a tudást gyakorlatba ültessük.
 
@@ -238,7 +241,7 @@ cd McpCalculatorServer
 
 #### Java
 
-Hozz létre egy Spring Boot projektet:
+Java esetén hozz létre egy Spring Boot projektet:
 
 ```bash
 curl https://start.spring.io/starter.zip \
@@ -408,11 +411,11 @@ cargo add serde
 cargo add tokio --features rt-multi-thread
 ```
 
-### -3- Projektfájlok létrehozása
+### -3- Projekt fájlok létrehozása
 
 #### TypeScript
 
-Nyisd meg a *package.json* fájlt, és cseréld le a tartalmát az alábbiakra, hogy biztosítsd a szerver építését és futtatását:
+Nyisd meg a *package.json* fájlt, és cseréld ki a tartalmát az alábbiakra, hogy biztosítsd a szerver építését és futtatását:
 
 ```json
 {
@@ -485,11 +488,11 @@ dotnet add package Microsoft.Extensions.Hosting
 
 #### Java
 
-Java Spring Boot projektek esetén a projekt struktúrája automatikusan létrejön.
+Java Spring Boot projektek esetén a projekt struktúra automatikusan létrejön.
 
 #### Rust
 
-Rust esetén egy *src/main.rs* fájl jön létre alapértelmezés szerint, amikor futtatod a `cargo init` parancsot. Nyisd meg a fájlt, és töröld az alapértelmezett kódot.
+Rust esetén egy *src/main.rs* fájl alapértelmezés szerint létrejön, amikor futtatod a `cargo init` parancsot. Nyisd meg a fájlt, és töröld az alapértelmezett kódot.
 
 ### -4- Szerver kód létrehozása
 
@@ -576,7 +579,7 @@ public class McpServerApplication {
 }
 ```
 
-Hozd létre a kalkulátor szolgáltatást *src/main/java/com/microsoft/mcp/sample/server/service/CalculatorService.java*:
+Hozd létre a számológép szolgáltatást *src/main/java/com/microsoft/mcp/sample/server/service/CalculatorService.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.service;
@@ -812,7 +815,7 @@ public class GlobalExceptionHandler {
 }
 ```
 
-Hozd létre egy egyedi bannert *src/main/resources/banner.txt*:
+Hozd létre az egyedi bannert *src/main/resources/banner.txt*:
 
 ```text
 _____      _            _       _             
@@ -841,7 +844,7 @@ use rmcp::{
 use std::error::Error;
 ```
 
-A kalkulátor szerver egy egyszerű szerver lesz, amely két szám összeadását végzi. Hozzunk létre egy struktúrát a kalkulátor kérés reprezentálására.
+A számológép szerver egy egyszerű szerver lesz, amely két számot tud összeadni. Hozz létre egy struktúrát a számológép kérés reprezentálásához.
 
 ```rust
 #[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
@@ -851,7 +854,7 @@ pub struct CalculatorRequest {
 }
 ```
 
-Ezután hozzunk létre egy struktúrát a kalkulátor szerver reprezentálására. Ez a struktúra tartalmazza az eszköz routert, amelyet eszközök regisztrálására használunk.
+Ezután hozz létre egy struktúrát a számológép szerver reprezentálásához. Ez a struktúra tartalmazza az eszköz routert, amelyet eszközök regisztrálására használnak.
 
 ```rust
 #[derive(Debug, Clone)]
@@ -884,7 +887,7 @@ impl ServerHandler for Calculator {
 }
 ```
 
-Végül implementálnunk kell a fő függvényt a szerver indításához. Ez a függvény létrehoz egy `Calculator` struktúra példányt, és szabványos bemeneti/kimeneti csatornán keresztül szolgáltatja.
+Végül implementálnunk kell a fő függvényt a szerver indításához. Ez a függvény létrehoz egy `Calculator` struktúra példányt, és standard bemeneti/kimeneti csatornán keresztül szolgáltatja.
 
 ```rust
 #[tokio::main]
@@ -899,7 +902,7 @@ A szerver most már alapvető információkat tud biztosítani magáról. Követ
 
 ### -5- Eszköz és erőforrás hozzáadása
 
-Adjunk hozzá egy eszközt és egy erőforrást az alábbi kód hozzáadásával:
+Adj hozzá egy eszközt és egy erőforrást az alábbi kód hozzáadásával:
 
 #### TypeScript
 
@@ -924,7 +927,7 @@ server.resource(
 );
 ```
 
-Az eszköz paramétereket `a` és `b` fogad, és egy függvényt futtat, amely a következő formátumú választ ad:
+Az eszköz paramétereket (`a` és `b`) vesz fel, és egy függvényt futtat, amely a következő formátumú választ ad:
 
 ```typescript
 {
@@ -934,7 +937,7 @@ Az eszköz paramétereket `a` és `b` fogad, és egy függvényt futtat, amely a
 }
 ```
 
-Az erőforrás egy "greeting" nevű stringen keresztül érhető el, és egy `name` paramétert fogad, amely hasonló választ ad az eszközhöz:
+Az erőforrás egy "greeting" nevű stringen keresztül érhető el, és egy `name` paramétert vesz fel, amely hasonló választ ad az eszközhöz:
 
 ```typescript
 {
@@ -962,8 +965,8 @@ def get_greeting(name: str) -> str:
 
 A fenti kódban:
 
-- Meghatároztunk egy `add` nevű eszközt, amely két egész számot (`a` és `p`) fogad.
-- Létrehoztunk egy `greeting` nevű erőforrást, amely egy `name` paramétert fogad.
+- Meghatároztunk egy `add` nevű eszközt, amely két egész számot (`a` és `p`) vesz fel.
+- Létrehoztunk egy `greeting` nevű erőforrást, amely egy `name` paramétert vesz fel.
 
 #### .NET
 
@@ -998,7 +1001,7 @@ async fn add(
 
 ### -6- Végleges kód
 
-Adjunk hozzá az utolsó kódot, amely szükséges a szerver indításához:
+Adjuk hozzá az utolsó kódot, amely szükséges a szerver indításához:
 
 #### TypeScript
 
@@ -1214,7 +1217,7 @@ npm run build
 mcp run server.py
 ```
 
-> Az MCP Inspector használatához használd a `mcp dev server.py` parancsot, amely automatikusan elindítja az Inspectort és biztosítja a szükséges proxy session tokent. Ha a `mcp run server.py` parancsot használod, manuálisan kell elindítanod az Inspectort és konfigurálnod a kapcsolatot.
+> Az MCP Inspector használatához használd a `mcp dev server.py` parancsot, amely automatikusan elindítja az Inspectort, és biztosítja a szükséges proxy session tokent. Ha a `mcp run server.py` parancsot használod, manuálisan kell elindítanod az Inspectort, és konfigurálnod a kapcsolatot.
 
 #### .NET
 
@@ -1243,11 +1246,11 @@ cargo run
 
 ### -8- Inspector használata
 
-Az Inspector egy nagyszer
+Az Inspector egy nagyszerű eszköz, amely elindítja a szervered
 ![Csatlakozás](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.hu.png)
 
 **Most már csatlakoztál a szerverhez**  
-**A Java szerver tesztelési szakasz most befejeződött**
+**A Java szerver tesztelési szakasza befejeződött**
 
 A következő szakasz a szerverrel való interakcióról szól.
 
@@ -1260,13 +1263,13 @@ A következő felhasználói felületet kell látnod:
 
    ![Csatlakozva](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.hu.png)
 
-2. Válaszd ki az "Eszközök" és "listTools" opciókat, majd meg kell jelennie az "Add" opciónak. Válaszd ki az "Add" opciót, és töltsd ki a paraméterek értékeit.
+1. Válaszd ki az "Eszközök" és "listTools" opciót, ekkor megjelenik az "Add" (Hozzáadás) lehetőség. Válaszd ki az "Add" opciót, és töltsd ki a paraméterek értékeit.
 
    A következő választ kell látnod, azaz az "add" eszköz eredményét:
 
    ![Add futtatásának eredménye](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.hu.png)
 
-Gratulálok, sikeresen létrehoztad és futtattad az első szerveredet!
+Gratulálunk, sikeresen létrehoztad és futtattad az első szerveredet!
 
 #### Rust
 
@@ -1326,5 +1329,7 @@ Hozz létre egy egyszerű MCP szervert egy általad választott eszközzel:
 
 Következő: [MCP kliensekkel való kezdés](../02-client/README.md)
 
-**Felelősségkizárás**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+---
+
+**Felelősség kizárása**:  
+Ez a dokumentum az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével lett lefordítva. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.

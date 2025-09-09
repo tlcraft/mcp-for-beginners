@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-18T15:44:51+00:00",
+  "original_hash": "ec11ee93f31fdadd94facd3e3d22f9e6",
+  "translation_date": "2025-09-09T21:57:40+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "no"
 }
@@ -15,7 +15,7 @@ Velkommen til dine første steg med Model Context Protocol (MCP)! Enten du er ny
 
 ## Oversikt
 
-Denne leksjonen gir praktisk veiledning for å sette opp MCP-miljøer og bygge dine første MCP-applikasjoner. Du vil lære hvordan du setter opp nødvendige verktøy og rammeverk, bygger grunnleggende MCP-servere, oppretter vertsapplikasjoner og tester implementasjonene dine.
+Denne leksjonen gir praktisk veiledning for å sette opp MCP-miljøer og bygge dine første MCP-applikasjoner. Du vil lære hvordan du setter opp nødvendige verktøy og rammeverk, bygger grunnleggende MCP-servere, lager vertsapplikasjoner og tester implementasjonene dine.
 
 Model Context Protocol (MCP) er en åpen protokoll som standardiserer hvordan applikasjoner gir kontekst til LLM-er. Tenk på MCP som en USB-C-port for AI-applikasjoner – den gir en standardisert måte å koble AI-modeller til ulike datakilder og verktøy.
 
@@ -25,7 +25,7 @@ Ved slutten av denne leksjonen vil du kunne:
 
 - Sette opp utviklingsmiljøer for MCP i C#, Java, Python, TypeScript og Rust
 - Bygge og distribuere grunnleggende MCP-servere med tilpassede funksjoner (ressurser, prompts og verktøy)
-- Opprette vertsapplikasjoner som kobler til MCP-servere
+- Lage vertsapplikasjoner som kobler til MCP-servere
 - Teste og feilsøke MCP-implementasjoner
 
 ## Sette opp MCP-miljøet ditt
@@ -81,6 +81,9 @@ server.resource(
       uri: uri.href,
       text: `File, ${path}!`
     }]
+  })
+);
+
 // Add a file resource that reads the file contents
 server.resource(
   "file",
@@ -129,7 +132,7 @@ I koden ovenfor:
 
 ## Testing og feilsøking
 
-Før du begynner å teste MCP-serveren din, er det viktig å forstå tilgjengelige verktøy og beste praksis for feilsøking. Effektiv testing sikrer at serveren din oppfører seg som forventet og hjelper deg med å raskt identifisere og løse problemer. Følgende seksjon skisserer anbefalte tilnærminger for validering av MCP-implementeringen din.
+Før du begynner å teste MCP-serveren din, er det viktig å forstå tilgjengelige verktøy og beste praksis for feilsøking. Effektiv testing sikrer at serveren din oppfører seg som forventet og hjelper deg med å raskt identifisere og løse problemer. Følgende seksjon skisserer anbefalte tilnærminger for å validere MCP-implementeringen din.
 
 MCP tilbyr verktøy for å hjelpe deg med å teste og feilsøke serverne dine:
 
@@ -158,9 +161,9 @@ Her er et skjermbilde av hvordan det kan se ut:
 ## Vanlige oppsettsproblemer og løsninger
 
 | Problem | Mulig løsning |
-|--------|---------------|
+|---------|---------------|
 | Tilkobling nektet | Sjekk om serveren kjører og porten er korrekt |
-| Feil ved verktøyutførelse | Gå gjennom parametervalidering og feilbehandling |
+| Feil ved verktøyutførelse | Gå gjennom parametervalidering og feilhåndtering |
 | Autentiseringsfeil | Verifiser API-nøkler og tillatelser |
 | Skjemavalideringsfeil | Sørg for at parametere samsvarer med det definerte skjemaet |
 | Server starter ikke | Sjekk for portkonflikter eller manglende avhengigheter |
@@ -199,9 +202,9 @@ En MCP-server kan for eksempel:
 
 Flott, nå som vi vet hva vi kan gjøre med den, la oss begynne å kode.
 
-## Øvelse: Opprette en server
+## Øvelse: Lage en server
 
-For å opprette en server må du følge disse stegene:
+For å lage en server må du følge disse stegene:
 
 - Installer MCP SDK.
 - Opprett et prosjekt og sett opp prosjektstrukturen.
@@ -491,7 +494,7 @@ For Java Spring Boot-prosjekter opprettes prosjektstrukturen automatisk.
 
 For Rust opprettes en *src/main.rs*-fil som standard når du kjører `cargo init`. Åpne filen og slett standardkoden.
 
-### -4- Opprett serverkode
+### -4- Skriv serverkode
 
 #### TypeScript
 
@@ -851,7 +854,7 @@ pub struct CalculatorRequest {
 }
 ```
 
-Opprett deretter en struct for å representere kalkulator-serveren. Denne structen vil holde verktøy-ruteren, som brukes til å registrere verktøy.
+Deretter oppretter vi en struct for å representere kalkulator-serveren. Denne structen vil holde verktøy-ruteren, som brukes til å registrere verktøy.
 
 ```rust
 #[derive(Debug, Clone)]
@@ -934,7 +937,7 @@ Verktøyet ditt tar parametere `a` og `b` og kjører en funksjon som produserer 
 }
 ```
 
-Ressursen din er tilgjengelig gjennom en streng "greeting" og tar en parameter `name` og produserer et lignende svar som verktøyet:
+Ressursen din er tilgjengelig gjennom en streng "greeting" og tar parameteren `name` og produserer et lignende svar som verktøyet:
 
 ```typescript
 {
@@ -996,9 +999,9 @@ async fn add(
 }
 ```
 
-### -6- Endelig kode
+### -6- Siste kode
 
-La oss legge til den siste koden vi trenger slik at serveren kan starte:
+La oss legge til den siste koden vi trenger for at serveren skal starte:
 
 #### TypeScript
 
@@ -1246,7 +1249,7 @@ cargo run
 Inspector er et flott verktøy som kan starte opp serveren din og lar deg interagere med den slik at du kan teste at den fungerer. La oss starte den opp:
 
 > [!NOTE]
-> Det kan se annerledes ut i "kommando"-feltet da det inneholder kommandoen for å kjøre en server med din spesifikke runtime.
+> Det kan se annerledes ut i "command"-feltet da det inneholder kommandoen for å kjøre en server med din spesifikke runtime.
 
 #### TypeScript
 
@@ -1254,9 +1257,9 @@ Inspector er et flott verktøy som kan starte opp serveren din og lar deg intera
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-eller legg det til i *package.json* som så: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` og deretter kjør `npm run inspector`
+eller legg det til i *package.json* slik: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` og kjør deretter `npm run inspector`
 
-Python pakker inn et Node.js-verktøy kalt inspector. Det er mulig å kalle dette verktøyet slik:
+Python bruker et Node.js-verktøy kalt inspector. Det er mulig å kalle dette verktøyet slik:
 
 ```sh
 mcp dev server.py
@@ -1269,7 +1272,7 @@ npx @modelcontextprotocol/inspector mcp run server.py
 ```
 
 Hvis du bruker et verktøy eller IDE som lar deg konfigurere kommandoer og argumenter for å kjøre skript, 
-sørg for å sette `python` i `Command`-feltet og `server.py` som `Arguments`. Dette sikrer at skriptet kjører korrekt.
+sørg for å sette `python` i `Command`-feltet og `server.py` som `Arguments`. Dette sikrer at skriptet kjører riktig.
 
 #### .NET
 
@@ -1282,7 +1285,8 @@ npx @modelcontextprotocol/inspector dotnet run
 
 #### Java
 
-Sørg for at kalkulator-serveren din kjører. Kjør deretter Inspector:
+Sørg for at kalkulator-serveren din kjører.
+Kjør deretter Inspector:
 
 ```cmd
 npx @modelcontextprotocol/inspector
@@ -1354,7 +1358,7 @@ MCP tilbyr offisielle SDK-er for flere språk:
 
 ## Oppgave
 
-Lag en enkel MCP-server med et verktøy du selv velger:
+Lag en enkel MCP-server med et verktøy etter eget valg:
 
 1. Implementer verktøyet i ditt foretrukne språk (.NET, Java, Python, TypeScript eller Rust).
 2. Definer inputparametere og returverdier.
@@ -1371,9 +1375,11 @@ Lag en enkel MCP-server med et verktøy du selv velger:
 - [Fjern-MCP med Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## Hva er neste steg
+## Hva skjer videre
 
 Neste: [Kom i gang med MCP-klienter](../02-client/README.md)
+
+---
 
 **Ansvarsfraskrivelse**:  
 Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-18T15:19:06+00:00",
+  "original_hash": "ec11ee93f31fdadd94facd3e3d22f9e6",
+  "translation_date": "2025-09-09T21:56:21+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "da"
 }
 -->
 # Kom godt i gang med MCP
 
-Velkommen til dine første skridt med Model Context Protocol (MCP)! Uanset om du er ny inden for MCP eller ønsker at uddybe din forståelse, vil denne guide føre dig gennem den essentielle opsætning og udviklingsproces. Du vil opdage, hvordan MCP muliggør problemfri integration mellem AI-modeller og applikationer, og lære, hvordan du hurtigt gør din udviklingsmiljø klar til at bygge og teste MCP-baserede løsninger.
+Velkommen til dine første skridt med Model Context Protocol (MCP)! Uanset om du er ny inden for MCP eller ønsker at uddybe din forståelse, vil denne guide føre dig gennem den essentielle opsætning og udviklingsproces. Du vil opdage, hvordan MCP muliggør problemfri integration mellem AI-modeller og applikationer, og lære, hvordan du hurtigt gør dit miljø klar til at bygge og teste MCP-baserede løsninger.
 
-> TLDR; Hvis du bygger AI-applikationer, ved du, at du kan tilføje værktøjer og andre ressourcer til din LLM (large language model) for at gøre den mere vidende. Men hvis du placerer disse værktøjer og ressourcer på en server, kan appen og serverens funktioner bruges af enhver klient med/uden en LLM.
+> TLDR; Hvis du bygger AI-applikationer, ved du, at du kan tilføje værktøjer og andre ressourcer til din LLM (large language model) for at gøre den mere vidende. Men hvis du placerer disse værktøjer og ressourcer på en server, kan appen og serverens kapaciteter bruges af enhver klient med/uden en LLM.
 
 ## Oversigt
 
@@ -24,7 +24,7 @@ Model Context Protocol (MCP) er en åben protokol, der standardiserer, hvordan a
 Ved afslutningen af denne lektion vil du kunne:
 
 - Opsætte udviklingsmiljøer for MCP i C#, Java, Python, TypeScript og Rust
-- Bygge og implementere grundlæggende MCP-servere med tilpassede funktioner (ressourcer, prompts og værktøjer)
+- Bygge og implementere grundlæggende MCP-servere med brugerdefinerede funktioner (ressourcer, prompts og værktøjer)
 - Oprette host-applikationer, der forbinder til MCP-servere
 - Teste og fejlfinde MCP-implementeringer
 
@@ -36,7 +36,7 @@ Før du begynder at arbejde med MCP, er det vigtigt at forberede dit udviklingsm
 
 Før du dykker ned i MCP-udvikling, skal du sikre dig, at du har:
 
-- **Udviklingsmiljø**: For dit valgte sprog (C#, Java, Python, TypeScript eller Rust)
+- **Udviklingsmiljø**: For det valgte sprog (C#, Java, Python, TypeScript eller Rust)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm eller en moderne kodeeditor
 - **Pakkestyringsværktøjer**: NuGet, Maven/Gradle, pip, npm/yarn eller Cargo
 - **API-nøgler**: Til de AI-tjenester, du planlægger at bruge i dine host-applikationer
@@ -81,6 +81,9 @@ server.resource(
       uri: uri.href,
       text: `File, ${path}!`
     }]
+  })
+);
+
 // Add a file resource that reads the file contents
 server.resource(
   "file",
@@ -124,8 +127,8 @@ I den foregående kode:
 
 - Importerer vi de nødvendige klasser fra MCP TypeScript SDK.
 - Opretter og konfigurerer vi en ny MCP-serverinstans.
-- Registrerer vi et tilpasset værktøj (`calculator`) med en handlerfunktion.
-- Starter vi serveren for at lytte efter indkommende MCP-forespørgsler.
+- Registrerer vi et brugerdefineret værktøj (`calculator`) med en handlerfunktion.
+- Starter vi serveren for at lytte efter indkommende MCP-anmodninger.
 
 ## Test og fejlfinding
 
@@ -140,7 +143,7 @@ MCP tilbyder værktøjer til at hjælpe dig med at teste og fejlfinde dine serve
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) er et visuelt testværktøj, der hjælper dig med:
 
-1. **Opdage serverfunktioner**: Automatisk registrere tilgængelige ressourcer, værktøjer og prompts
+1. **Opdage serverkapaciteter**: Automatisk registrere tilgængelige ressourcer, værktøjer og prompts
 2. **Teste værktøjsudførelse**: Prøve forskellige parametre og se svar i realtid
 3. **Se servermetadata**: Undersøge serverinfo, skemaer og konfigurationer
 
@@ -162,9 +165,9 @@ Her er et skærmbillede af, hvordan det kan se ud:
 | Forbindelse nægtet | Tjek om serveren kører, og om porten er korrekt |
 | Fejl ved værktøjsudførelse | Gennemgå parametervalidering og fejlhåndtering |
 | Autentifikationsfejl | Bekræft API-nøgler og tilladelser |
-| Skemavalideringsfejl | Sørg for, at parametre matcher det definerede skema |
+| Skemavalideringsfejl | Sørg for, at parametrene matcher det definerede skema |
 | Server starter ikke | Tjek for portkonflikter eller manglende afhængigheder |
-| CORS-fejl | Konfigurer korrekte CORS-headere for cross-origin forespørgsler |
+| CORS-fejl | Konfigurer korrekte CORS-headere for cross-origin-anmodninger |
 | Autentifikationsproblemer | Bekræft token gyldighed og tilladelser |
 
 ## Lokal udvikling
@@ -841,7 +844,7 @@ use rmcp::{
 use std::error::Error;
 ```
 
-Calculator-serveren vil være en simpel en, der kan lægge to tal sammen. Lad os oprette en struct til at repræsentere calculator-forespørgslen.
+Calculator-serveren vil være en simpel en, der kan lægge to tal sammen. Lad os oprette en struct til at repræsentere calculator-anmodningen.
 
 ```rust
 #[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
@@ -1243,7 +1246,7 @@ cargo run
 
 ### -8- Kør med inspector
 
-Inspector er et fantastisk værktøj, der kan starte din server og lade dig interagere med den, så du kan teste, at den fungerer. Lad os starte det op:
+Inspector er et fantastisk værktøj, der kan starte din server og lade dig interagere med den, så du kan teste, at den fungerer. Lad os starte den op:
 
 > [!NOTE]
 > Det kan se anderledes ud i "command"-feltet, da det indeholder kommandoen til at køre en server med din specifikke runtime.
@@ -1292,29 +1295,29 @@ I inspector-webgrænsefladen:
 1. Vælg "SSE" som transporttype
 2. Indstil URL'en til: `http://localhost:8080/sse`
 3. Klik på "Connect"
-![Forbind](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.da.png)
+![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.da.png)
 
-**Du er nu forbundet til serveren**  
+**Du er nu forbundet til serveren**
 **Java-serverens testsektion er nu afsluttet**
 
 Den næste sektion handler om at interagere med serveren.
 
 Du bør se følgende brugergrænseflade:
 
-![Forbind](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.da.png)
+![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.da.png)
 
-1. Forbind til serveren ved at vælge knappen "Forbind".  
-   Når du er forbundet til serveren, bør du nu se følgende:
+1. Forbind til serveren ved at vælge knappen "Connect".
+   Når du har forbundet til serveren, bør du nu se følgende:
 
-   ![Forbundet](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.da.png)
+   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.da.png)
 
-1. Vælg "Tools" og "listTools". Du bør se "Add" dukke op. Vælg "Add" og udfyld parameterværdierne.
+1. Vælg "Tools" og "listTools", du bør se "Add" dukke op. Vælg "Add" og udfyld parameter-værdierne.
 
    Du bør se følgende svar, dvs. et resultat fra "add"-værktøjet:
 
-   ![Resultat af at køre add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.da.png)
+   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.da.png)
 
-Tillykke, du har nu oprettet og kørt din første server!
+Tillykke, du har formået at oprette og køre din første server!
 
 #### Rust
 
@@ -1328,37 +1331,37 @@ npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-n
 
 MCP tilbyder officielle SDK'er til flere sprog:
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Vedligeholdes i samarbejde med Microsoft  
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Vedligeholdes i samarbejde med Spring AI  
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Den officielle TypeScript-implementering  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Den officielle Python-implementering  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Den officielle Kotlin-implementering  
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Vedligeholdes i samarbejde med Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Den officielle Rust-implementering  
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Vedligeholdes i samarbejde med Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Vedligeholdes i samarbejde med Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Den officielle TypeScript-implementering
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Den officielle Python-implementering
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Den officielle Kotlin-implementering
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Vedligeholdes i samarbejde med Loopwork AI
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Den officielle Rust-implementering
 
 ## Vigtige pointer
 
-- Opsætning af et MCP-udviklingsmiljø er enkelt med sprog-specifikke SDK'er  
-- At bygge MCP-servere indebærer at oprette og registrere værktøjer med klare skemaer  
-- Test og fejlfinding er afgørende for pålidelige MCP-implementeringer  
+- Opsætning af et MCP-udviklingsmiljø er enkelt med sprog-specifikke SDK'er
+- Opbygning af MCP-servere indebærer oprettelse og registrering af værktøjer med klare skemaer
+- Test og fejlfinding er afgørende for pålidelige MCP-implementeringer
 
 ## Eksempler
 
-- [Java Calculator](../samples/java/calculator/README.md)  
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
-- [JavaScript Calculator](../samples/javascript/README.md)  
-- [TypeScript Calculator](../samples/typescript/README.md)  
-- [Python Calculator](../../../../03-GettingStarted/samples/python)  
-- [Rust Calculator](../../../../03-GettingStarted/samples/rust)  
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Rust Calculator](../../../../03-GettingStarted/samples/rust)
 
 ## Opgave
 
 Opret en simpel MCP-server med et værktøj efter eget valg:
 
-1. Implementér værktøjet i dit foretrukne sprog (.NET, Java, Python, TypeScript eller Rust).  
-2. Definér inputparametre og returværdier.  
-3. Kør inspektionsværktøjet for at sikre, at serveren fungerer som forventet.  
-4. Test implementeringen med forskellige input.  
+1. Implementer værktøjet i dit foretrukne sprog (.NET, Java, Python, TypeScript eller Rust).
+2. Definer inputparametre og returværdier.
+3. Kør inspektorværktøjet for at sikre, at serveren fungerer som forventet.
+4. Test implementeringen med forskellige inputs.
 
 ## Løsning
 
@@ -1366,13 +1369,15 @@ Opret en simpel MCP-server med et værktøj efter eget valg:
 
 ## Yderligere ressourcer
 
-- [Byg agenter ved hjælp af Model Context Protocol på Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [Fjern-MCP med Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
+- [Byg agenter ved hjælp af Model Context Protocol på Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Fjern-MCP med Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## Hvad er det næste
+## Hvad er næste skridt
 
-Næste: [Kom godt i gang med MCP-klienter](../02-client/README.md)  
+Næste: [Kom godt i gang med MCP-klienter](../02-client/README.md)
+
+---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at sikre nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

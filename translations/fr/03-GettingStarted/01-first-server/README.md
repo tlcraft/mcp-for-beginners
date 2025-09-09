@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-12T21:26:06+00:00",
+  "original_hash": "ec11ee93f31fdadd94facd3e3d22f9e6",
+  "translation_date": "2025-09-09T21:18:28+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "fr"
 }
 -->
 # Premiers pas avec MCP
 
-Bienvenue dans vos premiers pas avec le protocole Model Context Protocol (MCP) ! Que vous soyez novice en MCP ou que vous cherchiez à approfondir vos connaissances, ce guide vous accompagnera dans les étapes essentielles de configuration et de développement. Vous découvrirez comment MCP permet une intégration fluide entre les modèles d'IA et les applications, et apprendrez à préparer rapidement votre environnement pour créer et tester des solutions basées sur MCP.
+Bienvenue dans vos premiers pas avec le Model Context Protocol (MCP) ! Que vous soyez novice en MCP ou que vous cherchiez à approfondir vos connaissances, ce guide vous accompagnera dans les étapes essentielles de configuration et de développement. Vous découvrirez comment MCP permet une intégration fluide entre les modèles d'IA et les applications, et apprendrez à préparer rapidement votre environnement pour créer et tester des solutions basées sur MCP.
 
-> Résumé : Si vous développez des applications d'IA, vous savez que vous pouvez ajouter des outils et d'autres ressources à votre LLM (modèle de langage étendu) pour le rendre plus performant. Cependant, si vous placez ces outils et ressources sur un serveur, les capacités de l'application et du serveur peuvent être utilisées par n'importe quel client, avec ou sans LLM.
+> TLDR; Si vous développez des applications d'IA, vous savez que vous pouvez ajouter des outils et d'autres ressources à votre LLM (modèle de langage étendu) pour le rendre plus performant. Cependant, si vous placez ces outils et ressources sur un serveur, les capacités de l'application et du serveur peuvent être utilisées par n'importe quel client, avec ou sans LLM.
 
-## Aperçu
+## Vue d'ensemble
 
 Cette leçon fournit des conseils pratiques pour configurer des environnements MCP et créer vos premières applications MCP. Vous apprendrez à configurer les outils et frameworks nécessaires, à construire des serveurs MCP basiques, à créer des applications hôtes et à tester vos implémentations.
 
-Le protocole Model Context Protocol (MCP) est un protocole ouvert qui standardise la manière dont les applications fournissent du contexte aux LLM. Pensez à MCP comme un port USB-C pour les applications d'IA : il offre une manière standardisée de connecter des modèles d'IA à différentes sources de données et outils.
+Le Model Context Protocol (MCP) est un protocole ouvert qui standardise la manière dont les applications fournissent du contexte aux LLM. Pensez à MCP comme un port USB-C pour les applications d'IA : il offre une manière standardisée de connecter des modèles d'IA à différentes sources de données et outils.
 
 ## Objectifs d'apprentissage
 
@@ -36,7 +36,7 @@ Avant de commencer à travailler avec MCP, il est important de préparer votre e
 
 Avant de plonger dans le développement MCP, assurez-vous d'avoir :
 
-- **Environnement de développement** : Pour le langage de votre choix (C#, Java, Python, TypeScript ou Rust)
+- **Environnement de développement** : Pour le langage choisi (C#, Java, Python, TypeScript ou Rust)
 - **IDE/Éditeur** : Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm ou tout éditeur de code moderne
 - **Gestionnaires de paquets** : NuGet, Maven/Gradle, pip, npm/yarn ou Cargo
 - **Clés API** : Pour les services d'IA que vous prévoyez d'utiliser dans vos applications hôtes
@@ -45,7 +45,7 @@ Avant de plonger dans le développement MCP, assurez-vous d'avoir :
 
 Un serveur MCP inclut généralement :
 
-- **Configuration du serveur** : Configuration du port, authentification et autres paramètres
+- **Configuration du serveur** : Paramètres de port, authentification et autres réglages
 - **Ressources** : Données et contexte mis à disposition des LLM
 - **Outils** : Fonctionnalités que les modèles peuvent invoquer
 - **Invites** : Modèles pour générer ou structurer du texte
@@ -81,6 +81,9 @@ server.resource(
       uri: uri.href,
       text: `File, ${path}!`
     }]
+  })
+);
+
 // Add a file resource that reads the file contents
 server.resource(
   "file",
@@ -127,14 +130,14 @@ Dans le code précédent, nous :
 - Enregistrons un outil personnalisé (`calculator`) avec une fonction de gestion.
 - Démarrons le serveur pour écouter les requêtes MCP entrantes.
 
-## Test et débogage
+## Tests et débogage
 
-Avant de commencer à tester votre serveur MCP, il est important de comprendre les outils disponibles et les bonnes pratiques de débogage. Un test efficace garantit que votre serveur fonctionne comme prévu et vous aide à identifier et résoudre rapidement les problèmes. La section suivante présente des approches recommandées pour valider votre implémentation MCP.
+Avant de commencer à tester votre serveur MCP, il est important de comprendre les outils disponibles et les bonnes pratiques de débogage. Des tests efficaces garantissent que votre serveur fonctionne comme prévu et vous aident à identifier et résoudre rapidement les problèmes. La section suivante présente des approches recommandées pour valider votre implémentation MCP.
 
 MCP fournit des outils pour vous aider à tester et déboguer vos serveurs :
 
-- **Outil Inspector** : Une interface graphique qui vous permet de connecter votre serveur et de tester vos outils, invites et ressources.
-- **curl** : Vous pouvez également connecter votre serveur en utilisant un outil en ligne de commande comme curl ou d'autres clients capables de créer et exécuter des commandes HTTP.
+- **Outil Inspector**, une interface graphique qui vous permet de connecter votre serveur et de tester vos outils, invites et ressources.
+- **curl**, vous pouvez également connecter votre serveur en utilisant un outil en ligne de commande comme curl ou d'autres clients capables de créer et exécuter des commandes HTTP.
 
 ### Utilisation de MCP Inspector
 
@@ -171,7 +174,7 @@ Voici une capture d'écran de ce à quoi cela peut ressembler :
 
 Pour le développement et les tests locaux, vous pouvez exécuter des serveurs MCP directement sur votre machine :
 
-1. **Démarrez le processus serveur** : Exécutez votre application serveur MCP
+1. **Démarrez le processus du serveur** : Exécutez votre application serveur MCP
 2. **Configurez le réseau** : Assurez-vous que le serveur est accessible sur le port attendu
 3. **Connectez les clients** : Utilisez des URL de connexion locales comme `http://localhost:3000`
 
@@ -412,7 +415,7 @@ cargo add tokio --features rt-multi-thread
 
 #### TypeScript
 
-Ouvrez le fichier *package.json* et remplacez le contenu par le suivant pour garantir que vous pouvez construire et exécuter le serveur :
+Ouvrez le fichier *package.json* et remplacez le contenu par ce qui suit pour garantir que vous pouvez construire et exécuter le serveur :
 
 ```json
 {
@@ -1254,9 +1257,9 @@ L'inspector est un excellent outil qui peut démarrer votre serveur et vous perm
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-ou ajoutez-le à votre *package.json* comme suit : `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` et exécutez `npm run inspector`.
+ou ajoutez-le à votre *package.json* comme suit : `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` puis exécutez `npm run inspector`.
 
-Python utilise un outil Node.js appelé inspector. Il est possible d'appeler cet outil comme suit :
+Python encapsule un outil Node.js appelé inspector. Il est possible d'appeler cet outil comme suit :
 
 ```sh
 mcp dev server.py
@@ -1305,11 +1308,11 @@ Vous devriez voir l'interface utilisateur suivante :
 ![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.fr.png)
 
 1. Connectez-vous au serveur en sélectionnant le bouton Connect.  
-   Une fois connecté au serveur, vous devriez voir ceci :
+   Une fois connecté au serveur, vous devriez voir ce qui suit :
 
    ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.fr.png)
 
-2. Sélectionnez "Tools" puis "listTools". Vous devriez voir apparaître "Add". Sélectionnez "Add" et renseignez les valeurs des paramètres.
+1. Sélectionnez "Tools" et "listTools", vous devriez voir "Add" apparaître. Sélectionnez "Add" et remplissez les valeurs des paramètres.
 
    Vous devriez voir la réponse suivante, c'est-à-dire un résultat de l'outil "add" :
 
@@ -1327,7 +1330,7 @@ npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-n
 
 ### SDKs officiels
 
-MCP propose des SDKs officiels pour plusieurs langages :
+MCP fournit des SDKs officiels pour plusieurs langages :
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Maintenu en collaboration avec Microsoft  
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Maintenu en collaboration avec Spring AI  
@@ -1359,7 +1362,7 @@ Créez un serveur MCP simple avec un outil de votre choix :
 1. Implémentez l'outil dans le langage de votre choix (.NET, Java, Python, TypeScript ou Rust).  
 2. Définissez les paramètres d'entrée et les valeurs de retour.  
 3. Exécutez l'outil d'inspection pour vérifier que le serveur fonctionne comme prévu.  
-4. Testez l'implémentation avec différentes entrées.  
+4. Testez l'implémentation avec différents inputs.  
 
 ## Solution
 
@@ -1371,9 +1374,11 @@ Créez un serveur MCP simple avec un outil de votre choix :
 - [MCP à distance avec Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
 
-## Et après ?
+## Et après
 
 Prochainement : [Premiers pas avec les clients MCP](../02-client/README.md)  
 
+---
+
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
