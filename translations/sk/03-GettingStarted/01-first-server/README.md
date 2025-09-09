@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-19T16:07:24+00:00",
+  "original_hash": "ec11ee93f31fdadd94facd3e3d22f9e6",
+  "translation_date": "2025-09-09T22:12:18+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "sk"
 }
 -->
 # Začíname s MCP
 
-Vitajte pri vašich prvých krokoch s Model Context Protocol (MCP)! Či už ste v MCP nováčikom alebo chcete prehĺbiť svoje znalosti, tento sprievodca vás prevedie základným nastavením a procesom vývoja. Objavíte, ako MCP umožňuje bezproblémovú integráciu medzi AI modelmi a aplikáciami, a naučíte sa, ako rýchlo pripraviť svoje prostredie na tvorbu a testovanie riešení poháňaných MCP.
+Vitajte pri vašich prvých krokoch s Model Context Protocol (MCP)! Či už ste v MCP nováčik alebo chcete prehĺbiť svoje znalosti, tento návod vás prevedie základným nastavením a procesom vývoja. Objavíte, ako MCP umožňuje bezproblémovú integráciu medzi AI modelmi a aplikáciami, a naučíte sa, ako rýchlo pripraviť svoje prostredie na tvorbu a testovanie riešení poháňaných MCP.
 
 > TLDR; Ak vytvárate AI aplikácie, viete, že môžete pridať nástroje a ďalšie zdroje do vášho LLM (veľkého jazykového modelu), aby bol model informovanejší. Ak však umiestnite tieto nástroje a zdroje na server, aplikácia a schopnosti servera môžu byť použité akýmkoľvek klientom s/bez LLM.
 
@@ -37,13 +37,13 @@ Predtým, než začnete pracovať s MCP, je dôležité pripraviť vaše vývojo
 Predtým, než sa pustíte do vývoja MCP, uistite sa, že máte:
 
 - **Vývojové prostredie**: Pre váš zvolený jazyk (C#, Java, Python, TypeScript alebo Rust)
-- **IDE/Editory**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm alebo akýkoľvek moderný editor kódu
-- **Správcov balíkov**: NuGet, Maven/Gradle, pip, npm/yarn alebo Cargo
+- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm alebo akýkoľvek moderný editor kódu
+- **Správca balíčkov**: NuGet, Maven/Gradle, pip, npm/yarn alebo Cargo
 - **API kľúče**: Pre akékoľvek AI služby, ktoré plánujete použiť vo vašich hostiteľských aplikáciách
 
 ## Základná štruktúra MCP servera
 
-Typický MCP server zahŕňa:
+MCP server zvyčajne zahŕňa:
 
 - **Konfiguráciu servera**: Nastavenie portu, autentifikácie a ďalších nastavení
 - **Zdroje**: Dáta a kontext sprístupnené LLM
@@ -81,6 +81,9 @@ server.resource(
       uri: uri.href,
       text: `File, ${path}!`
     }]
+  })
+);
+
 // Add a file resource that reads the file contents
 server.resource(
   "file",
@@ -133,10 +136,10 @@ Predtým, než začnete testovať váš MCP server, je dôležité pochopiť dos
 
 MCP poskytuje nástroje na pomoc pri testovaní a ladení vašich serverov:
 
-- **Nástroj Inspector**, grafické rozhranie, ktoré vám umožňuje pripojiť sa k vášmu serveru a testovať vaše nástroje, výzvy a zdroje.
+- **Inspector tool**, grafické rozhranie, ktoré vám umožňuje pripojiť sa k vášmu serveru a testovať vaše nástroje, výzvy a zdroje.
 - **curl**, môžete sa tiež pripojiť k vášmu serveru pomocou príkazového nástroja ako curl alebo iných klientov, ktoré dokážu vytvárať a spúšťať HTTP príkazy.
 
-### Použitie MCP Inspector
+### Používanie MCP Inspector
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) je vizuálny testovací nástroj, ktorý vám pomáha:
 
@@ -161,18 +164,18 @@ Tu je snímka obrazovky, ako to môže vyzerať:
 |---------|----------------|
 | Odmietnuté pripojenie | Skontrolujte, či server beží a port je správny |
 | Chyby pri vykonávaní nástrojov | Skontrolujte validáciu parametrov a obsluhu chýb |
-| Zlyhanie autentifikácie | Overte API kľúče a povolenia |
+| Zlyhanie autentifikácie | Overte API kľúče a oprávnenia |
 | Chyby validácie schémy | Uistite sa, že parametre zodpovedajú definovanej schéme |
 | Server sa nespúšťa | Skontrolujte konflikty portov alebo chýbajúce závislosti |
 | CORS chyby | Nakonfigurujte správne CORS hlavičky pre požiadavky z rôznych domén |
-| Problémy s autentifikáciou | Overte platnosť tokenov a povolenia |
+| Problémy s autentifikáciou | Overte platnosť tokenov a oprávnenia |
 
 ## Lokálny vývoj
 
 Pre lokálny vývoj a testovanie môžete spustiť MCP servery priamo na vašom počítači:
 
 1. **Spustite proces servera**: Spustite vašu MCP serverovú aplikáciu
-2. **Nakonfigurujte sieťové nastavenia**: Uistite sa, že server je dostupný na očakávanom porte
+2. **Nakonfigurujte sieťové nastavenia**: Uistite sa, že server je prístupný na očakávanom porte
 3. **Pripojte klientov**: Použite lokálne URL pripojenia ako `http://localhost:3000`
 
 ```bash
@@ -195,7 +198,7 @@ MCP server môže napríklad:
 - Pripojiť sa k vzdialeným API
 - Vykonávať výpočty
 - Integrovať sa s inými nástrojmi a službami
-- Poskytovať používateľské rozhranie na interakciu
+- Poskytovať užívateľské rozhranie na interakciu
 
 Skvelé, teraz keď vieme, čo môžeme robiť, poďme začať kódovať.
 
@@ -412,7 +415,7 @@ cargo add tokio --features rt-multi-thread
 
 #### TypeScript
 
-Otvorte súbor *package.json* a nahraďte obsah nasledujúcim, aby ste zabezpečili, že môžete server zostaviť a spustiť:
+Otvorte súbor *package.json* a nahraďte obsah nasledujúcim, aby ste zabezpečili, že môžete zostaviť a spustiť server:
 
 ```json
 {
@@ -476,7 +479,7 @@ touch server.py
 
 #### .NET
 
-Nainštalujte požadované NuGet balíky:
+Nainštalujte požadované NuGet balíčky:
 
 ```sh
 dotnet add package ModelContextProtocol --prerelease
@@ -509,7 +512,7 @@ const server = new McpServer({
 });
 ```
 
-Teraz máte server, ale zatiaľ toho veľa nerobí, poďme to zmeniť.
+Teraz máte server, ale zatiaľ nerobí veľa, poďme to napraviť.
 
 #### Python
 
@@ -825,8 +828,6 @@ _____      _            _       _
 Calculator MCP Server v1.0
 Spring Boot MCP Application
 ```
-
-</details>
 
 #### Rust
 
@@ -1220,7 +1221,7 @@ mcp run server.py
 
 #### .NET
 
-Uistite sa, že ste vo vašom projektovom adresári:
+Uistite sa, že ste vo vašom adresári projektu:
 
 ```sh
 cd McpCalculatorServer
@@ -1243,9 +1244,9 @@ cargo fmt
 cargo run
 ```
 
-### -8- Spustenie pomocou Inspector
+### -8- Spustenie pomocou inspectora
 
-Inspector je skvelý nástroj, ktorý dokáže spustiť váš server a umožní vám s ním interagovať, aby ste mohli testovať, či funguje. Poďme ho spustiť:
+Inspector je skvelý nástroj, ktorý dokáže spustiť váš server a umožní vám s ním interagovať, aby ste mohli otestovať, že funguje. Poďme ho spustiť:
 
 > [!NOTE]
 > Môže vyzerať odlišne v poli "command", pretože obsahuje príkaz na spustenie servera s vaším konkrétnym runtime.
@@ -1256,7 +1257,7 @@ Inspector je skvelý nástroj, ktorý dokáže spustiť váš server a umožní 
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-alebo ho pridajte do vášho *package.json* ako: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` a potom spustite `npm run inspector`.
+alebo ho pridajte do vášho *package.json* ako: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` a potom spustite `npm run inspector`
 
 Python obaluje nástroj Node.js nazvaný inspector. Je možné zavolať tento nástroj takto:
 
@@ -1275,7 +1276,7 @@ uistite sa, že nastavíte `python` v poli `Command` a `server.py` ako `Argument
 
 #### .NET
 
-Uistite sa, že ste vo vašom projektovom adresári:
+Uistite sa, že ste vo vašom adresári projektu:
 
 ```sh
 cd McpCalculatorServer
@@ -1291,7 +1292,7 @@ Potom spustite inspector:
 npx @modelcontextprotocol/inspector
 ```
 
-V webovom rozhraní inspector:
+V webovom rozhraní inspectora:
 
 1. Vyberte "SSE" ako typ transportu
 2. Nastavte URL na: `http://localhost:8080/sse`
@@ -1378,5 +1379,7 @@ Vytvorte jednoduchý MCP server s nástrojom podľa vášho výberu:
 
 Ďalej: [Začíname s MCP klientmi](../02-client/README.md)  
 
+---
+
 **Upozornenie**:  
-Tento dokument bol preložený pomocou služby na automatický preklad [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nezodpovedáme za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou služby AI prekladu [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

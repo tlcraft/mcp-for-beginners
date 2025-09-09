@@ -1,18 +1,18 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a3f252a62f059360855de5331a575898",
-  "translation_date": "2025-08-26T20:49:24+00:00",
+  "original_hash": "9a6a4d3497921d2f6d9699f0a6a1890c",
+  "translation_date": "2025-09-09T22:25:15+00:00",
   "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/README.md",
   "language_code": "lt"
 }
 -->
 # Weather MCP Server
 
-Tai yra pavyzdinis MCP serveris, sukurtas naudojant Python, kuris įgyvendina orų įrankius su imituotais atsakymais. Jis gali būti naudojamas kaip pagrindas jūsų MCP serveriui. Jame yra šios funkcijos:
+Tai yra pavyzdinis MCP serveris, sukurtas naudojant Python, kuris įgyvendina orų įrankius su imituotais atsakymais. Jis gali būti naudojamas kaip pagrindas jūsų MCP serveriui. Šis serveris apima šias funkcijas:
 
 - **Orų įrankis**: Įrankis, teikiantis imituotą informaciją apie orus pagal nurodytą vietą.
-- **Git klonavimo įrankis**: Įrankis, kuris nuklonuoja git saugyklą į nurodytą aplanką.
+- **Git klonavimo įrankis**: Įrankis, kuris klonuoja git saugyklą į nurodytą aplanką.
 - **VS Code atidarymo įrankis**: Įrankis, kuris atidaro aplanką VS Code arba VS Code Insiders.
 - **Prisijungimas prie Agent Builder**: Funkcija, leidžianti prijungti MCP serverį prie Agent Builder testavimui ir derinimui.
 - **Derinimas naudojant [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: Funkcija, leidžianti derinti MCP serverį naudojant MCP Inspector.
@@ -21,7 +21,7 @@ Tai yra pavyzdinis MCP serveris, sukurtas naudojant Python, kuris įgyvendina or
 
 > **Būtinos sąlygos**
 >
-> Norint paleisti MCP serverį vietinėje kūrimo mašinoje, jums reikės:
+> Norint paleisti MCP serverį vietinėje kūrimo aplinkoje, jums reikės:
 >
 > - [Python](https://www.python.org/)
 > - [Git](https://git-scm.com/) (Reikalingas git_clone_repo įrankiui)
@@ -31,21 +31,21 @@ Tai yra pavyzdinis MCP serveris, sukurtas naudojant Python, kuris įgyvendina or
 
 ## Paruoškite aplinką
 
-Yra du būdai, kaip nustatyti aplinką šiam projektui. Galite pasirinkti bet kurį, priklausomai nuo jūsų pageidavimų.
+Yra du būdai, kaip nustatyti aplinką šiam projektui. Galite pasirinkti bet kurį, atsižvelgdami į savo pageidavimus.
 
 > Pastaba: Perkraukite VSCode arba terminalą, kad įsitikintumėte, jog naudojamas virtualios aplinkos Python po jos sukūrimo.
 
-| Būdas | Veiksmai |
-| ----- | -------- |
+| Metodas | Veiksmai |
+| ------- | -------- |
 | Naudojant `uv` | 1. Sukurkite virtualią aplinką: `uv venv` <br>2. Paleiskite VSCode komandą "***Python: Select Interpreter***" ir pasirinkite Python iš sukurtos virtualios aplinkos <br>3. Įdiekite priklausomybes (įskaitant kūrimo priklausomybes): `uv pip install -r pyproject.toml --extra dev` |
 | Naudojant `pip` | 1. Sukurkite virtualią aplinką: `python -m venv .venv` <br>2. Paleiskite VSCode komandą "***Python: Select Interpreter***" ir pasirinkite Python iš sukurtos virtualios aplinkos <br>3. Įdiekite priklausomybes (įskaitant kūrimo priklausomybes): `pip install -e .[dev]` |
 
-Po aplinkos nustatymo galite paleisti serverį vietinėje kūrimo mašinoje per Agent Builder kaip MCP klientą, kad pradėtumėte:
+Po aplinkos nustatymo galite paleisti serverį vietinėje kūrimo aplinkoje per Agent Builder kaip MCP klientą, kad pradėtumėte:
 1. Atidarykite VS Code derinimo skydelį. Pasirinkite `Debug in Agent Builder` arba paspauskite `F5`, kad pradėtumėte derinti MCP serverį.
-2. Naudokite AI Toolkit Agent Builder, kad išbandytumėte serverį su [šiuo užklausos šablonu](../../../../../../../../../../../open_prompt_builder). Serveris bus automatiškai prijungtas prie Agent Builder.
+2. Naudokite AI Toolkit Agent Builder, kad išbandytumėte serverį su [šiuo užklausos pavyzdžiu](../../../../../../../../../../../open_prompt_builder). Serveris bus automatiškai prijungtas prie Agent Builder.
 3. Spustelėkite `Run`, kad išbandytumėte serverį su užklausa.
 
-**Sveikiname**! Jūs sėkmingai paleidote Weather MCP Server vietinėje kūrimo mašinoje per Agent Builder kaip MCP klientą.
+**Sveikiname**! Jūs sėkmingai paleidote Weather MCP Server vietinėje kūrimo aplinkoje per Agent Builder kaip MCP klientą.
 ![DebugMCP](https://raw.githubusercontent.com/microsoft/windows-ai-studio-templates/refs/heads/dev/mcpServers/mcp_debug.gif)
 
 ## Kas įtraukta į šabloną
@@ -72,16 +72,16 @@ Po aplinkos nustatymo galite paleisti serverį vietinėje kūrimo mašinoje per 
 | `location` | string | Vieta, kurioje norite gauti informaciją apie orus (pvz., miesto pavadinimas, valstija ar koordinatės) |
 
 ### Git klonavimo įrankis
-`git_clone_repo` įrankis nuklonuoja git saugyklą į nurodytą aplanką.
+`git_clone_repo` įrankis klonuoja git saugyklą į nurodytą aplanką.
 
 | Parametras | Tipas | Aprašymas |
 | ---------- | ----- | --------- |
-| `repo_url` | string | Git saugyklos URL, kurią norite nuklonuoti |
-| `target_folder` | string | Kelias į aplanką, kuriame turėtų būti nuklonuota saugykla |
+| `repo_url` | string | Git saugyklos URL, kurią norite klonuoti |
+| `target_folder` | string | Kelias į aplanką, kuriame turėtų būti klonuota saugykla |
 
 Įrankis grąžina JSON objektą su:
 - `success`: Boolean, nurodantis, ar operacija buvo sėkminga
-- `target_folder` arba `error`: Nuklonuotos saugyklos kelias arba klaidos pranešimas
+- `target_folder` arba `error`: Klonuotos saugyklos kelias arba klaidos pranešimas
 
 ### VS Code atidarymo įrankis
 `open_in_vscode` įrankis atidaro aplanką VS Code arba VS Code Insiders programoje.
@@ -95,10 +95,10 @@ Po aplinkos nustatymo galite paleisti serverį vietinėje kūrimo mašinoje per 
 - `success`: Boolean, nurodantis, ar operacija buvo sėkminga
 - `message` arba `error`: Patvirtinimo pranešimas arba klaidos pranešimas
 
-## Derinimo režimas | Aprašymas | Derinimo veiksmai |
-| ---------------- | --------- | ----------------- |
-| Agent Builder | Derinkite MCP serverį Agent Builder per AI Toolkit. | 1. Atidarykite VS Code derinimo skydelį. Pasirinkite `Debug in Agent Builder` ir paspauskite `F5`, kad pradėtumėte derinti MCP serverį.<br>2. Naudokite AI Toolkit Agent Builder, kad išbandytumėte serverį su [šiuo užklausos šablonu](../../../../../../../../../../../open_prompt_builder). Serveris bus automatiškai prijungtas prie Agent Builder.<br>3. Spustelėkite `Run`, kad išbandytumėte serverį su užklausa. |
-| MCP Inspector | Derinkite MCP serverį naudodami MCP Inspector. | 1. Įdiekite [Node.js](https://nodejs.org/)<br> 2. Nustatykite Inspector: `cd inspector` && `npm install` <br> 3. Atidarykite VS Code derinimo skydelį. Pasirinkite `Debug SSE in Inspector (Edge)` arba `Debug SSE in Inspector (Chrome)`. Paspauskite F5, kad pradėtumėte derinti.<br> 4. Kai MCP Inspector paleidžiamas naršyklėje, spustelėkite `Connect` mygtuką, kad prijungtumėte šį MCP serverį.<br> 5. Tada galite `List Tools`, pasirinkti įrankį, įvesti parametrus ir `Run Tool`, kad derintumėte savo serverio kodą.<br> |
+| Derinimo režimas | Aprašymas | Veiksmai derinimui |
+| ---------------- | --------- | ------------------ |
+| Agent Builder | Derinkite MCP serverį Agent Builder per AI Toolkit. | 1. Atidarykite VS Code derinimo skydelį. Pasirinkite `Debug in Agent Builder` ir paspauskite `F5`, kad pradėtumėte derinti MCP serverį.<br>2. Naudokite AI Toolkit Agent Builder, kad išbandytumėte serverį su [šiuo užklausos pavyzdžiu](../../../../../../../../../../../open_prompt_builder). Serveris bus automatiškai prijungtas prie Agent Builder.<br>3. Spustelėkite `Run`, kad išbandytumėte serverį su užklausa. |
+| MCP Inspector | Derinkite MCP serverį naudodami MCP Inspector. | 1. Įdiekite [Node.js](https://nodejs.org/)<br> 2. Nustatykite Inspector: `cd inspector` && `npm install` <br> 3. Atidarykite VS Code derinimo skydelį. Pasirinkite `Debug SSE in Inspector (Edge)` arba `Debug SSE in Inspector (Chrome)`. Paspauskite F5, kad pradėtumėte derinti.<br> 4. Kai MCP Inspector paleidžiamas naršyklėje, spustelėkite mygtuką `Connect`, kad prijungtumėte šį MCP serverį.<br> 5. Tada galite `List Tools`, pasirinkti įrankį, įvesti parametrus ir `Run Tool`, kad derintumėte serverio kodą.<br> |
 
 ## Numatytieji prievadai ir pritaikymai
 
@@ -114,4 +114,4 @@ Jei turite atsiliepimų ar pasiūlymų dėl šio šablono, prašome atidaryti pr
 ---
 
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.

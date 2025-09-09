@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-18T16:34:06+00:00",
+  "original_hash": "ec11ee93f31fdadd94facd3e3d22f9e6",
+  "translation_date": "2025-09-09T22:00:14+00:00",
   "source_file": "03-GettingStarted/01-first-server/README.md",
   "language_code": "nl"
 }
@@ -15,7 +15,7 @@ Welkom bij je eerste stappen met het Model Context Protocol (MCP)! Of je nu nieu
 
 ## Overzicht
 
-Deze les biedt praktische richtlijnen voor het opzetten van MCP-omgevingen en het bouwen van je eerste MCP-applicaties. Je leert hoe je de benodigde tools en frameworks installeert, basis MCP-servers bouwt, host-applicaties maakt en je implementaties test.
+Deze les biedt praktische richtlijnen voor het opzetten van MCP-omgevingen en het bouwen van je eerste MCP-applicaties. Je leert hoe je de benodigde tools en frameworks installeert, basis MCP-servers bouwt, hostapplicaties maakt en je implementaties test.
 
 Het Model Context Protocol (MCP) is een open protocol dat standaardiseert hoe applicaties context bieden aan LLMs. Denk aan MCP als een USB-C-poort voor AI-applicaties - het biedt een gestandaardiseerde manier om AI-modellen te verbinden met verschillende databronnen en tools.
 
@@ -25,21 +25,21 @@ Aan het einde van deze les kun je:
 
 - Ontwikkelomgevingen instellen voor MCP in C#, Java, Python, TypeScript en Rust
 - Basis MCP-servers bouwen en implementeren met aangepaste functies (bronnen, prompts en tools)
-- Host-applicaties maken die verbinding maken met MCP-servers
+- Hostapplicaties maken die verbinding maken met MCP-servers
 - MCP-implementaties testen en debuggen
 
 ## Je MCP-omgeving instellen
 
-Voordat je begint met MCP, is het belangrijk om je ontwikkelomgeving voor te bereiden en de basisworkflow te begrijpen. Dit gedeelte begeleidt je door de eerste stappen om een soepele start met MCP te garanderen.
+Voordat je begint met MCP, is het belangrijk om je ontwikkelomgeving voor te bereiden en de basisworkflow te begrijpen. Dit gedeelte begeleidt je door de eerste stappen van de installatie om een soepele start met MCP te garanderen.
 
 ### Vereisten
 
-Voordat je aan MCP-ontwikkeling begint, zorg ervoor dat je beschikt over:
+Voordat je begint met MCP-ontwikkeling, zorg ervoor dat je beschikt over:
 
 - **Ontwikkelomgeving**: Voor je gekozen programmeertaal (C#, Java, Python, TypeScript of Rust)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm of een moderne code-editor
 - **Pakketbeheerders**: NuGet, Maven/Gradle, pip, npm/yarn of Cargo
-- **API-sleutels**: Voor AI-diensten die je in je host-applicaties wilt gebruiken
+- **API-sleutels**: Voor AI-diensten die je in je hostapplicaties wilt gebruiken
 
 ## Basisstructuur van een MCP-server
 
@@ -81,6 +81,9 @@ server.resource(
       uri: uri.href,
       text: `File, ${path}!`
     }]
+  })
+);
+
 // Add a file resource that reads the file contents
 server.resource(
   "file",
@@ -133,7 +136,7 @@ Voordat je begint met het testen van je MCP-server, is het belangrijk om de besc
 
 MCP biedt tools om je servers te testen en debuggen:
 
-- **Inspector-tool**, een grafische interface waarmee je verbinding kunt maken met je server en tools, prompts en bronnen kunt testen.
+- **Inspector-tool**, een grafische interface waarmee je verbinding kunt maken met je server en je tools, prompts en bronnen kunt testen.
 - **curl**, je kunt ook verbinding maken met je server via een commandoregeltool zoals curl of andere clients die HTTP-commando's kunnen uitvoeren.
 
 ### MCP Inspector gebruiken
@@ -149,7 +152,7 @@ De [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is een vis
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Wanneer je bovenstaande commando's uitvoert, start de MCP Inspector een lokale webinterface in je browser. Je ziet een dashboard met je geregistreerde MCP-servers, hun beschikbare tools, bronnen en prompts. De interface stelt je in staat om tools interactief te testen, servermetadata te inspecteren en realtime reacties te bekijken, wat het valideren en debuggen van je MCP-serverimplementaties eenvoudiger maakt.
+Wanneer je bovenstaande commando's uitvoert, start de MCP Inspector een lokale webinterface in je browser. Je ziet een dashboard met je geregistreerde MCP-servers, hun beschikbare tools, bronnen en prompts. De interface stelt je in staat om interactief tooluitvoering te testen, servermetadata te inspecteren en realtime reacties te bekijken, wat het gemakkelijker maakt om je MCP-serverimplementaties te valideren en debuggen.
 
 Hier is een screenshot van hoe het eruit kan zien:
 
@@ -158,7 +161,7 @@ Hier is een screenshot van hoe het eruit kan zien:
 ## Veelvoorkomende installatieproblemen en oplossingen
 
 | Probleem | Mogelijke oplossing |
-|----------|---------------------|
+|----------|----------------------|
 | Verbinding geweigerd | Controleer of de server actief is en de poort correct is ingesteld |
 | Fouten bij tooluitvoering | Controleer parametervalidatie en foutafhandeling |
 | Authenticatiefouten | Verifieer API-sleutels en machtigingen |
@@ -183,7 +186,7 @@ npm run start
 
 ## Je eerste MCP-server bouwen
 
-We hebben [Kernconcepten](/01-CoreConcepts/README.md) behandeld in een vorige les, nu is het tijd om die kennis in de praktijk te brengen.
+We hebben [Kernconcepten](/01-CoreConcepts/README.md) behandeld in een vorige les, nu is het tijd om die kennis in praktijk te brengen.
 
 ### Wat een server kan doen
 
@@ -963,7 +966,7 @@ def get_greeting(name: str) -> str:
 In de bovenstaande code hebben we:
 
 - Een tool `add` gedefinieerd die parameters `a` en `p` neemt, beide gehele getallen.
-- Een bron genaamd `greeting` gemaakt die parameter `name` neemt.
+- Een bron gemaakt genaamd `greeting` die parameter `name` neemt.
 
 #### .NET
 
@@ -1214,7 +1217,7 @@ npm run build
 mcp run server.py
 ```
 
-> Om MCP Inspector te gebruiken, gebruik `mcp dev server.py`, wat automatisch de Inspector start en de vereiste proxy-sessietoken biedt. Als je `mcp run server.py` gebruikt, moet je de Inspector handmatig starten en de verbinding configureren.
+> Om MCP Inspector te gebruiken, gebruik `mcp dev server.py` wat automatisch de Inspector start en de vereiste proxy-sessietoken biedt. Als je `mcp run server.py` gebruikt, moet je de Inspector handmatig starten en de verbinding configureren.
 
 #### .NET
 
@@ -1256,7 +1259,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 of voeg het toe aan je *package.json* zoals: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` en voer vervolgens `npm run inspector` uit.
 
-Python gebruikt een Node.js-tool genaamd inspector. Het is mogelijk om die tool als volgt aan te roepen:
+Python gebruikt een Node.js-tool genaamd inspector. Het is mogelijk om die tool aan te roepen zoals:
 
 ```sh
 mcp dev server.py
@@ -1282,13 +1285,14 @@ npx @modelcontextprotocol/inspector dotnet run
 
 #### Java
 
-Zorg ervoor dat je calculatorserver actief is. Voer vervolgens de inspector uit:
+Zorg ervoor dat je calculatorserver actief is.
+Voer vervolgens de inspector uit:
 
 ```cmd
 npx @modelcontextprotocol/inspector
 ```
 
-In de webinterface van de inspector:
+In de inspector-webinterface:
 
 1. Selecteer "SSE" als transporttype
 2. Stel de URL in op: `http://localhost:8080/sse`
@@ -1304,8 +1308,8 @@ Je zou de volgende gebruikersinterface moeten zien:
 
 ![Verbinden](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.nl.png)
 
-1. Verbind met de server door op de knop Verbinden te klikken.  
-   Zodra je verbinding hebt gemaakt met de server, zou je het volgende moeten zien:
+1. Verbind met de server door op de knop "Verbinden" te klikken.  
+   Zodra je verbonden bent met de server, zou je het volgende moeten zien:
 
    ![Verbonden](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.nl.png)
 
@@ -1340,7 +1344,7 @@ MCP biedt officiële SDK's voor meerdere talen:
 ## Belangrijke punten
 
 - Het opzetten van een MCP-ontwikkelomgeving is eenvoudig met taal-specifieke SDK's.  
-- Het bouwen van MCP-servers omvat het maken en registreren van tools met duidelijke schema's.  
+- Het bouwen van MCP-servers omvat het creëren en registreren van tools met duidelijke schema's.  
 - Testen en debuggen zijn essentieel voor betrouwbare MCP-implementaties.  
 
 ## Voorbeelden
@@ -1358,7 +1362,7 @@ Maak een eenvoudige MCP-server met een tool naar keuze:
 
 1. Implementeer de tool in je favoriete programmeertaal (.NET, Java, Python, TypeScript of Rust).  
 2. Definieer invoerparameters en retourwaarden.  
-3. Voer de inspectortool uit om te controleren of de server naar behoren werkt.  
+3. Voer de inspectortool uit om te controleren of de server correct werkt.  
 4. Test de implementatie met verschillende invoerwaarden.  
 
 ## Oplossing
@@ -1375,5 +1379,7 @@ Maak een eenvoudige MCP-server met een tool naar keuze:
 
 Volgende: [Aan de slag met MCP-clients](../02-client/README.md)  
 
+---
+
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we ons best doen om nauwkeurigheid te garanderen, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
