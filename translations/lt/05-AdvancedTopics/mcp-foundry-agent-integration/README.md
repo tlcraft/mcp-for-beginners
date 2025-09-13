@@ -60,7 +60,7 @@ Pasirinkite pageidaujamą kūrimo aplinką:
 
 ## Python įgyvendinimas
 
-***Pastaba*** Galite paleisti šį [notebook](./mcp_support_python.ipynb)
+***Pastaba*** Galite paleisti šį [notebook](mcp_support_python.ipynb)
 
 ### 1. Įdiekite reikalingus paketus
 
@@ -189,7 +189,7 @@ with project_client:
 
 ## .NET įgyvendinimas
 
-***Pastaba*** Galite paleisti šį [notebook](./mcp_support_dotnet.ipynb)
+***Pastaba*** Galite paleisti šį [notebook](mcp_support_dotnet.ipynb)
 
 ### 1. Įdiekite reikalingus paketus
 
