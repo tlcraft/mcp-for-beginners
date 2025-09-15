@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e56e4571ad666874979dcfcf822f6966",
-  "translation_date": "2025-09-15T18:55:47+00:00",
+  "original_hash": "db69f754d127d295e6449e29c08ed5c8",
+  "translation_date": "2025-09-15T20:45:28+00:00",
   "source_file": "README.md",
   "language_code": "vi"
 }
@@ -33,7 +33,7 @@ Làm theo các bước sau để bắt đầu sử dụng tài nguyên này:
 
  [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Malay](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](./README.md)
 
-# 🚀 Giáo trình Model Context Protocol (MCP) dành cho người mới bắt đầu
+# 🚀 Giáo trình Model Context Protocol (MCP) cho người mới bắt đầu
 
 ## **Học MCP với các ví dụ mã thực hành trong C#, Java, JavaScript, Rust, Python và TypeScript**
 
@@ -41,7 +41,7 @@ Làm theo các bước sau để bắt đầu sử dụng tài nguyên này:
 
 **Model Context Protocol (MCP)** là một khung làm việc tiên tiến được thiết kế để chuẩn hóa các tương tác giữa các mô hình AI và ứng dụng khách. Giáo trình mã nguồn mở này cung cấp một lộ trình học tập có cấu trúc, bao gồm các ví dụ mã thực hành và các trường hợp sử dụng thực tế, trên các ngôn ngữ lập trình phổ biến như C#, Java, JavaScript, TypeScript và Python.
 
-Dù bạn là nhà phát triển AI, kiến trúc sư hệ thống hay kỹ sư phần mềm, hướng dẫn này là tài nguyên toàn diện để bạn nắm vững các nguyên tắc cơ bản và chiến lược triển khai MCP.
+Dù bạn là nhà phát triển AI, kiến trúc sư hệ thống hay kỹ sư phần mềm, hướng dẫn này là tài nguyên toàn diện để nắm vững các nguyên tắc cơ bản và chiến lược triển khai MCP.
 
 ## 🔗 Tài nguyên chính thức của MCP
 
@@ -67,7 +67,7 @@ Dù bạn là nhà phát triển AI, kiến trúc sư hệ thống hay kỹ sư 
 | 3.2 | Ứng dụng khách đầu tiên | Phát triển ứng dụng khách MCP cơ bản | [Hướng dẫn](./03-GettingStarted/02-client/README.md) |
 | 3.3 | Ứng dụng khách với LLM | Tích hợp các mô hình ngôn ngữ lớn | [Hướng dẫn](./03-GettingStarted/03-llm-client/README.md) |
 | 3.4 | Tích hợp VS Code | Sử dụng máy chủ MCP trong VS Code | [Hướng dẫn](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | Máy chủ stdio | Tạo máy chủ sử dụng giao thức stdio | [Hướng dẫn](./03-GettingStarted/05-stdio-server/README.md) |
+| 3.5 | Máy chủ stdio | Tạo máy chủ sử dụng giao thức truyền stdio | [Hướng dẫn](./03-GettingStarted/05-stdio-server/README.md) |
 | 3.6 | HTTP Streaming | Triển khai HTTP streaming trong MCP | [Hướng dẫn](./03-GettingStarted/06-http-streaming/README.md) |
 | 3.7 | AI Toolkit | Sử dụng AI Toolkit với MCP | [Hướng dẫn](./03-GettingStarted/07-aitk/README.md) |
 | 3.8 | Kiểm thử | Kiểm thử triển khai máy chủ MCP của bạn | [Hướng dẫn](./03-GettingStarted/08-testing/README.md) |
@@ -80,7 +80,7 @@ Dù bạn là nhà phát triển AI, kiến trúc sư hệ thống hay kỹ sư 
 | 5.3 | Demo OAuth2 | Triển khai xác thực OAuth2 | [Hướng dẫn](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
 | 5.4 | Root Contexts | Hiểu và triển khai root contexts | [Hướng dẫn](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | Routing | Chiến lược định tuyến MCP | [Hướng dẫn](./05-AdvancedTopics/mcp-routing/README.md) |
-| 5.6 | Sampling | Kỹ thuật sampling trong MCP | [Hướng dẫn](./05-AdvancedTopics/mcp-sampling/README.md) |
+| 5.6 | Sampling | Kỹ thuật lấy mẫu trong MCP | [Hướng dẫn](./05-AdvancedTopics/mcp-sampling/README.md) |
 | 5.7 | Mở rộng quy mô | Mở rộng triển khai MCP | [Hướng dẫn](./05-AdvancedTopics/mcp-scaling/README.md) |
 | 5.8 | Bảo mật | Các cân nhắc bảo mật nâng cao | [Hướng dẫn](./05-AdvancedTopics/mcp-security/README.md) |
 | 5.9 | Tìm kiếm web | Triển khai khả năng tìm kiếm web | [Hướng dẫn](./05-AdvancedTopics/web-search-mcp/README.md) |
@@ -89,12 +89,14 @@ Dù bạn là nhà phát triển AI, kiến trúc sư hệ thống hay kỹ sư 
 | 5.12 | Xác thực Entra ID | Xác thực với Microsoft Entra ID | [Hướng dẫn](./05-AdvancedTopics/mcp-security-entra/README.md) |
 | 5.13 | Tích hợp Foundry | Tích hợp với Azure AI Foundry | [Hướng dẫn](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
 | 5.14 | Kỹ thuật Context | Kỹ thuật để xây dựng context hiệu quả | [Hướng dẫn](./05-AdvancedTopics/mcp-contextengineering/README.md) |
+| 5.15 | MCP Custom Transport | Triển khai giao thức truyền tùy chỉnh | [Hướng dẫn](./05-AdvancedTopics/mcp-transport/README.md) |
+
 | **Module 6-10: Cộng đồng & Thực hành tốt nhất** | | | |
 | 06 | Đóng góp cộng đồng | Cách đóng góp cho hệ sinh thái MCP | [Hướng dẫn](./06-CommunityContributions/README.md) |
 | 07 | Bài học từ việc áp dụng sớm | Các câu chuyện triển khai thực tế | [Hướng dẫn](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | Thực hành tốt nhất cho MCP | Hiệu suất, khả năng chịu lỗi, khả năng phục hồi | [Hướng dẫn](./08-BestPractices/README.md) |
 | 09 | Nghiên cứu trường hợp MCP | Các ví dụ triển khai thực tế | [Hướng dẫn](./09-CaseStudy/README.md) |
-| 10 | Hội thảo thực hành | Xây dựng máy chủ MCP với AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
+| 10 | Workshop thực hành | Xây dựng máy chủ MCP với AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
 ### 💻 Dự án mẫu mã
 
@@ -108,8 +110,7 @@ Dù bạn là nhà phát triển AI, kiến trúc sư hệ thống hay kỹ sư 
 | Python | Máy chủ MCP | [Xem mã](../../03-GettingStarted/samples/python/mcp_calculator_server.py) |
 | TypeScript | Ví dụ MCP | [Xem mã](./03-GettingStarted/samples/typescript/README.md) |
 | Rust | Ví dụ MCP | [Xem mã](./03-GettingStarted/samples/rust/README.md) |
-
-#### Triển khai MCP nâng cao
+#### Các triển khai MCP nâng cao
 
 | Ngôn ngữ | Mô tả | Liên kết |
 |----------|-------------|------|
@@ -123,12 +124,12 @@ Dù bạn là nhà phát triển AI, kiến trúc sư hệ thống hay kỹ sư 
 
 Để tận dụng tối đa chương trình học này, bạn nên có:
 
-- Kiến thức cơ bản về lập trình trong ít nhất một ngôn ngữ sau: C#, Java, JavaScript, Python hoặc TypeScript
+- Kiến thức cơ bản về lập trình ít nhất một trong các ngôn ngữ sau: C#, Java, JavaScript, Python hoặc TypeScript
 - Hiểu biết về mô hình client-server và API
 - Quen thuộc với các khái niệm REST và HTTP
 - (Tùy chọn) Nền tảng về các khái niệm AI/ML
 
-- Tham gia thảo luận cộng đồng của chúng tôi để được hỗ trợ
+- Tham gia các cuộc thảo luận cộng đồng của chúng tôi để được hỗ trợ
 
 ## 📚 Hướng dẫn học tập & Tài nguyên
 
@@ -142,11 +143,11 @@ Một [Hướng dẫn học tập](./study_guide.md) toàn diện có sẵn đ�
 - Phân tích chi tiết từng phần của kho lưu trữ
 - Hướng dẫn cách sử dụng các dự án mẫu
 - Lộ trình học tập được đề xuất cho các cấp độ kỹ năng khác nhau
-- Tài nguyên bổ sung để bổ sung hành trình học tập của bạn
+- Các tài nguyên bổ sung để bổ sung cho hành trình học tập của bạn
 
 ### Changelog
 
-Chúng tôi duy trì một [Changelog](./changelog.md) chi tiết để theo dõi tất cả các cập nhật quan trọng đối với tài liệu chương trình học, bao gồm:
+Chúng tôi duy trì một [Changelog](./changelog.md) chi tiết theo dõi tất cả các cập nhật quan trọng đối với tài liệu chương trình học, bao gồm:
 
 - Bổ sung nội dung mới
 - Thay đổi cấu trúc
@@ -157,7 +158,7 @@ Chúng tôi duy trì một [Changelog](./changelog.md) chi tiết để theo dõ
 
 Mỗi bài học trong hướng dẫn này bao gồm:
 
-1. Giải thích rõ ràng về các khái niệm MCP  
+1. Giải thích rõ ràng các khái niệm MCP  
 2. Ví dụ mã trực tiếp bằng nhiều ngôn ngữ  
 3. Bài tập để xây dựng các ứng dụng MCP thực tế  
 4. Tài nguyên bổ sung cho người học nâng cao
@@ -166,44 +167,44 @@ Mỗi bài học trong hướng dẫn này bao gồm:
 
 ### [MCP Dev Days Tháng 7 năm 2025](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 #### [➡️Xem theo yêu cầu - MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
-Hãy sẵn sàng cho hai ngày tìm hiểu kỹ thuật sâu sắc, kết nối cộng đồng và học tập thực hành tại MCP Dev Days, một sự kiện trực tuyến dành riêng cho Model Context Protocol (MCP) — tiêu chuẩn mới nổi kết nối các mô hình AI và các công cụ mà chúng dựa vào.
-Bạn có thể xem MCP Dev Days bằng cách đăng ký trên trang sự kiện của chúng tôi: https://aka.ms/mcpdevdays. 
+Hãy sẵn sàng cho hai ngày tìm hiểu kỹ thuật sâu sắc, kết nối cộng đồng và học tập thực hành tại MCP Dev Days, một sự kiện trực tuyến dành riêng cho Model Context Protocol (MCP) — tiêu chuẩn mới nổi kết nối các mô hình AI và các công cụ mà chúng dựa vào.  
+Bạn có thể xem MCP Dev Days bằng cách đăng ký trên trang sự kiện của chúng tôi: https://aka.ms/mcpdevdays.  
 
 #### [Ngày 1: Năng suất MCP, DevTools, & Cộng đồng:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Tập trung vào việc trao quyền cho các nhà phát triển sử dụng MCP trong quy trình làm việc của họ và tôn vinh cộng đồng MCP tuyệt vời. Chúng tôi sẽ cùng các thành viên cộng đồng và đối tác như Arcade, Block, Okta, và Neon để xem cách họ hợp tác với Microsoft để định hình một hệ sinh thái MCP mở và có thể mở rộng. 
+Tập trung vào việc trao quyền cho các nhà phát triển sử dụng MCP trong quy trình làm việc của họ và tôn vinh cộng đồng MCP tuyệt vời. Chúng tôi sẽ cùng các thành viên cộng đồng và đối tác như Arcade, Block, Okta, và Neon để xem cách họ hợp tác với Microsoft để định hình một hệ sinh thái MCP mở và có thể mở rộng.  
 Các bản demo thực tế trên VS Code, Visual Studio, GitHub Copilot, và các công cụ cộng đồng phổ biến  
 Quy trình làm việc phát triển theo ngữ cảnh thực tế  
 Các phiên cộng đồng dẫn dắt và thông tin chi tiết  
-Dù bạn mới bắt đầu với MCP hay đã xây dựng với nó, Ngày 1 sẽ mang lại cảm hứng và các bài học thực tế.
+Dù bạn mới bắt đầu với MCP hay đã xây dựng với nó, Ngày 1 sẽ tạo nền tảng với cảm hứng và các hành động cụ thể.
 
 #### [Ngày 2: Xây dựng máy chủ MCP với sự tự tin](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Dành cho những người xây dựng MCP. Chúng tôi sẽ đi sâu vào các chiến lược triển khai và các thực tiễn tốt nhất để tạo máy chủ MCP và tích hợp MCP vào quy trình làm việc AI của bạn.
+Dành cho những người xây dựng MCP. Chúng tôi sẽ đi sâu vào các chiến lược triển khai và các thực hành tốt nhất để tạo máy chủ MCP và tích hợp MCP vào quy trình làm việc AI của bạn.
 
 #### Các chủ đề bao gồm:
 
-- Xây dựng máy chủ MCP và tích hợp chúng vào trải nghiệm agent  
-- Phát triển dựa trên prompt  
-- Các thực tiễn tốt nhất về bảo mật  
-- Sử dụng các khối xây dựng như Functions, ACA, và API Management  
-- Căn chỉnh registry và công cụ (1P + 3P)  
+- Xây dựng máy chủ MCP và tích hợp chúng vào trải nghiệm agent
+- Phát triển dựa trên prompt
+- Các thực hành tốt nhất về bảo mật
+- Sử dụng các khối xây dựng như Functions, ACA, và API Management
+- Căn chỉnh registry và công cụ (1P + 3P)
 
-Nếu bạn là nhà phát triển, người xây dựng công cụ, hoặc chiến lược gia sản phẩm AI, ngày này sẽ cung cấp những thông tin bạn cần để xây dựng các giải pháp MCP có thể mở rộng, an toàn và sẵn sàng cho tương lai.
+Nếu bạn là nhà phát triển, người xây dựng công cụ, hoặc chiến lược gia sản phẩm AI, ngày này sẽ cung cấp những thông tin chi tiết bạn cần để xây dựng các giải pháp MCP có thể mở rộng, an toàn và sẵn sàng cho tương lai.
 
 ### MCP Boot Camp Tháng 8 năm 2025
-Học qua các phiên video chuyên sâu cách tạo máy chủ MCP, tích hợp với VS Code, và triển khai chuyên nghiệp trên Azure dựa trên nội dung từ chương trình học MCP cho người mới bắt đầu. Kết thúc với các kỹ năng thực tế trong một công nghệ mà các công ty lớn đã sử dụng.
+Học qua các phiên video chuyên sâu cách tạo máy chủ MCP, tích hợp với VS Code, và triển khai chuyên nghiệp trên Azure dựa trên nội dung từ chương trình MCP cho người mới bắt đầu. Bạn sẽ có được các kỹ năng thực tế trong một công nghệ mà các công ty lớn đã sử dụng.
 
 #### [➡️Xem theo yêu cầu MCP Bootcamp | Tiếng Anh](https://developer.microsoft.com/en-us/reactor/series/s-1568/)
 #### [➡️Xem theo yêu cầu MCP Bootcamp | Brasil](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
 #### [➡️Xem theo yêu cầu MCP Bootcamp | Tiếng Tây Ban Nha](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
 
 ### Học MCP với C# - Chuỗi hướng dẫn
-Hãy cùng tìm hiểu về Model Context Protocol (MCP), một framework tiên tiến được thiết kế để chuẩn hóa các tương tác giữa các mô hình AI và ứng dụng client. Qua phiên học thân thiện với người mới bắt đầu này, chúng tôi sẽ giới thiệu MCP và hướng dẫn bạn tạo máy chủ MCP đầu tiên của mình.
-#### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
-#### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
-#### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
-#### Python: [https://aka.ms/letslearnmcp-python](https://aka.ms/letslearnmcp-python)
+Hãy tìm hiểu về Model Context Protocol (MCP), một framework tiên tiến được thiết kế để chuẩn hóa các tương tác giữa các mô hình AI và ứng dụng khách. Qua phiên học thân thiện với người mới bắt đầu này, chúng tôi sẽ giới thiệu bạn về MCP và hướng dẫn bạn tạo máy chủ MCP đầu tiên của mình.  
+#### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)  
+#### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)  
+#### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)  
+#### Python: [https://aka.ms/letslearnmcp-python](https://aka.ms/letslearnmcp-python)  
 
 ## 🌟 Cảm ơn cộng đồng
 
@@ -215,10 +216,10 @@ Nội dung này được cấp phép theo **Giấy phép MIT**. Để biết cá
 
 ## 🤝 Hướng dẫn đóng góp
 
-Dự án này hoan nghênh các đóng góp và gợi ý. Hầu hết các đóng góp yêu cầu bạn đồng ý với
+Dự án này hoan nghênh các đóng góp và đề xuất. Hầu hết các đóng góp yêu cầu bạn đồng ý với
 Thỏa thuận Giấy phép Người đóng góp (CLA) tuyên bố rằng bạn có quyền, và thực sự cấp cho chúng tôi
-quyền sử dụng đóng góp của bạn. Để biết chi tiết, truy cập 
-<https://cla.opensource.microsoft.com>.
+quyền sử dụng đóng góp của bạn. Để biết chi tiết, truy cập  
+<https://cla.opensource.microsoft.com>.  
 
 Khi bạn gửi một pull request, bot CLA sẽ tự động xác định liệu bạn có cần cung cấp
 CLA và trang trí PR một cách thích hợp (ví dụ: kiểm tra trạng thái, bình luận). Chỉ cần làm theo hướng dẫn
@@ -260,12 +261,12 @@ Nhóm của chúng tôi sản xuất các khóa học khác! Xem thêm:
 - [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
-## ™️ Thông báo về thương hiệu
+## ™️ Thông báo về nhãn hiệu
 
-Dự án này có thể chứa các thương hiệu hoặc logo cho các dự án, sản phẩm, hoặc dịch vụ. Việc sử dụng hợp pháp các thương hiệu hoặc logo của Microsoft phải tuân theo và tuân thủ
-[Hướng dẫn về Thương hiệu & Nhãn hiệu của Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Việc sử dụng các thương hiệu hoặc logo của Microsoft trong các phiên bản sửa đổi của dự án này không được gây nhầm lẫn hoặc ngụ ý sự tài trợ của Microsoft.
-Việc sử dụng các thương hiệu hoặc logo của bên thứ ba phải tuân theo chính sách của bên thứ ba đó.
+Dự án này có thể chứa các nhãn hiệu hoặc logo cho các dự án, sản phẩm, hoặc dịch vụ. Việc sử dụng nhãn hiệu hoặc logo của Microsoft phải tuân theo và tuân thủ  
+[Hướng dẫn về nhãn hiệu & thương hiệu của Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+Việc sử dụng nhãn hiệu hoặc logo của Microsoft trong các phiên bản sửa đổi của dự án này không được gây nhầm lẫn hoặc ngụ ý tài trợ của Microsoft.  
+Việc sử dụng nhãn hiệu hoặc logo của bên thứ ba phải tuân theo chính sách của bên thứ ba đó.  
 
 ---
 
