@@ -1,187 +1,226 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "245b03ae1e7973094fe82b8051ae0939",
-  "translation_date": "2025-08-19T18:28:55+00:00",
+  "original_hash": "56dd5af7e84cc0db6e17e310112109ae",
+  "translation_date": "2025-09-15T22:38:30+00:00",
   "source_file": "changelog.md",
   "language_code": "my"
 }
 -->
-# Changelog: MCP သင်ခန်းစာအစီအစဉ်အတွက် ပြောင်းလဲမှုများ
+# Changelog: MCP သင်ခန်းစာအစီအစဉ် (Beginner များအတွက်)
 
-ဤစာရွက်စာတမ်းသည် Model Context Protocol (MCP) သင်ခန်းစာအစီအစဉ်အတွက် အရေးပါသော ပြောင်းလဲမှုများအား မှတ်တမ်းတင်ထားသော အချက်အလက်များကို ဖော်ပြထားသည်။ ပြောင်းလဲမှုများကို နောက်ဆုံးအပ်ဒိတ်မှ စတင်၍ အနောက်ဆုံးအပ်ဒိတ်အတိုင်း စီစဉ်ထားသည်။
+ဤစာရွက်စာတမ်းသည် Model Context Protocol (MCP) သင်ခန်းစာအစီအစဉ်တွင် ပြုလုပ်ခဲ့သော အရေးပါသော ပြောင်းလဲမှုများအား မှတ်တမ်းတင်ရန် ရည်ရွယ်ပါသည်။ ပြောင်းလဲမှုများကို နောက်ဆုံးပြောင်းလဲမှုမှ စတင်၍ အနောက်မှရှေ့သို့ မှတ်တမ်းတင်ထားသည်။
 
-## ၂၀၂၅ ခုနှစ်၊ သြဂုတ်လ ၁၈ ရက်
+## စက်တင်ဘာ ၁၅၊ ၂၀၂၅
 
-### စာရွက်စာတမ်း အပြည့်အစုံ အပ်ဒိတ် - MCP 2025-06-18 စံနှုန်းများ
+### အဆင့်မြင့်ခေါင်းစဉ်များ တိုးချဲ့ခြင်း - Custom Transports & Context Engineering
 
-#### MCP လုံခြုံရေး အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ (02-Security/) - ပြည့်စုံသော ခေတ်မီပြောင်းလဲမှု
-- **MCP-SECURITY-BEST-PRACTICES-2025.md**: MCP Specification 2025-06-18 နှင့် ကိုက်ညီသော အပြည့်အစုံ ပြန်ရေးသားမှု
-  - **မဖြစ်မနေလိုအပ်ချက်များ**: တိကျသော MUST/MUST NOT လိုအပ်ချက်များကို ရှင်းလင်းသော အထောက်အထားများဖြင့် ထည့်သွင်းထားသည်
-  - **လုံခြုံရေး လုပ်ထုံးလုပ်နည်း ၁၂ ခု**: ၁၅ ခုမှ ၁၂ ခုအထိ ပြန်လည်ဖွဲ့စည်းထားပြီး လုံခြုံရေးကဏ္ဍများအဖြစ် ဖော်ပြထားသည်
-    - Token လုံခြုံရေးနှင့် အပြင် Identity Provider ပေါင်းစည်းမှု
-    - Session စီမံခန့်ခွဲမှုနှင့် Transport လုံခြုံရေး (cryptographic လိုအပ်ချက်များ)
-    - AI-specific အန္တရာယ်ကာကွယ်မှု (Microsoft Prompt Shields ပေါင်းစည်းမှု)
-    - Access Control နှင့် Permissions (အနည်းဆုံး လိုအပ်ချက်များ)
-    - Content လုံခြုံရေးနှင့် စောင့်ကြည့်မှု (Azure Content Safety ပေါင်းစည်းမှု)
-    - Supply Chain လုံခြုံရေး (component အတည်ပြုမှု)
-    - OAuth လုံခြုံရေးနှင့် Confused Deputy ကာကွယ်မှု (PKCE အကောင်အထည်ဖော်မှု)
-    - အန္တရာယ်ဖြေရှင်းမှုနှင့် ပြန်လည်ထူထောင်မှု (automation စနစ်များ)
-    - Compliance နှင့် Governance (စည်းမျဉ်းများနှင့် ကိုက်ညီမှု)
-    - ခေတ်မီ လုံခြုံရေး ထိန်းချုပ်မှုများ (zero trust architecture)
-    - Microsoft လုံခြုံရေး Ecosystem ပေါင်းစည်းမှု
-    - လုံခြုံရေး ဆက်လက်တိုးတက်မှု (adaptive လုပ်ထုံးလုပ်နည်းများ)
-  - **Microsoft လုံခြုံရေး ဖြေရှင်းနည်းများ**: Prompt Shields, Azure Content Safety, Entra ID, GitHub Advanced Security အတွက် ပေါင်းစည်းမှု လမ်းညွှန်ချက်များ တိုးမြှင့်ထားသည်
-  - **အကောင်အထည်ဖော်မှု အရင်းအမြစ်များ**: Official MCP Documentation, Microsoft Security Solutions, Security Standards, Implementation Guides အလိုက် အုပ်စုခွဲထားသည်
+#### MCP Custom Transports (05-AdvancedTopics/mcp-transport/) - အဆင့်မြင့် အကောင်အထည်ဖော်လမ်းညွှန် အသစ်
+- **README.md**: Custom MCP transport များအတွက် အကောင်အထည်ဖော်လမ်းညွှန် ပြည့်စုံ
+  - **Azure Event Grid Transport**: Serverless event-driven transport အကောင်အထည်ဖော်မှု
+    - C#, TypeScript, Python နမူနာများနှင့် Azure Functions ပေါင်းစပ်မှု
+    - Scalable MCP ဖြေရှင်းချက်များအတွက် Event-driven architecture patterns
+    - Webhook receivers နှင့် push-based message handling
+  - **Azure Event Hubs Transport**: High-throughput streaming transport အကောင်အထည်ဖော်မှု
+    - Low-latency အခြေအနေများအတွက် Real-time streaming စွမ်းရည်
+    - Partitioning strategies နှင့် checkpoint management
+    - Message batching နှင့် စွမ်းဆောင်ရည် တိုးတက်မှု
+  - **Enterprise Integration Patterns**: ထုတ်လုပ်မှုအဆင့် architectural နမူနာများ
+    - Azure Functions များအကြား MCP ကို ဖြန့်ဖြူးလုပ်ဆောင်ခြင်း
+    - Transport အမျိုးအစားများ ပေါင်းစပ်ထားသော Hybrid transport architectures
+    - Message durability, reliability, နှင့် error handling strategies
+  - **Security & Monitoring**: Azure Key Vault ပေါင်းစပ်မှုနှင့် observability patterns
+    - Managed identity authentication နှင့် least privilege access
+    - Application Insights telemetry နှင့် စွမ်းဆောင်ရည် စောင့်ကြည့်မှု
+    - Circuit breakers နှင့် fault tolerance patterns
+  - **Testing Frameworks**: Custom transports များအတွက် စမ်းသပ်မှု strategies
+    - Unit testing with test doubles နှင့် mocking frameworks
+    - Integration testing with Azure Test Containers
+    - Performance နှင့် load testing အတွေးအခေါ်များ
 
-#### ခေတ်မီ လုံခြုံရေး ထိန်းချုပ်မှုများ (02-Security/) - စီးပွားရေးအဆင့် အကောင်အထည်ဖော်မှု
-- **MCP-SECURITY-CONTROLS-2025.md**: စီးပွားရေးအဆင့် လုံခြုံရေး framework ဖြင့် ပြန်လည်ရေးသားမှု
-  - **လုံခြုံရေး ကဏ္ဍ ၉ ခု**: အခြေခံထိန်းချုပ်မှုများမှ စီးပွားရေးအဆင့် framework အထိ တိုးချဲ့ထားသည်
-    - Advanced Authentication နှင့် Authorization (Microsoft Entra ID ပေါင်းစည်းမှု)
-    - Token လုံခြုံရေးနှင့် Anti-Passthrough ထိန်းချုပ်မှုများ
-    - Session လုံခြုံရေး ထိန်းချုပ်မှုများ
-    - AI-specific လုံခြုံရေး ထိန်းချုပ်မှုများ
-    - Confused Deputy ကာကွယ်မှု (OAuth proxy လုံခြုံရေး)
-    - Tool အကောင်အထည်ဖော်မှု လုံခြုံရေး (sandboxing နှင့် isolation)
-    - Supply Chain လုံခြုံရေး ထိန်းချုပ်မှုများ
-    - စောင့်ကြည့်မှုနှင့် အန္တရာယ်ရှာဖွေမှု (SIEM ပေါင်းစည်းမှု)
-    - အန္တရာယ်ဖြေရှင်းမှုနှင့် ပြန်လည်ထူထောင်မှု (automation စနစ်များ)
-  - **အကောင်အထည်ဖော်မှု ဥပမာများ**: YAML configuration blocks နှင့် code ဥပမာများ ထည့်သွင်းထားသည်
-  - **Microsoft Solutions Integration**: Azure လုံခြုံရေးဝန်ဆောင်မှုများ၊ GitHub Advanced Security နှင့် စီးပွားရေး identity စီမံခန့်ခွဲမှုများကို အပြည့်အစုံ ဖော်ပြထားသည်
+#### Context Engineering (05-AdvancedTopics/mcp-contextengineering/) - AI အဆင့်မြင့်နယ်ပယ်
+- **README.md**: Context engineering ကို အကျယ်အဝန်း လေ့လာခြင်း
+  - **Core Principles**: Context sharing, action decision awareness, နှင့် context window management
+  - **MCP Protocol Alignment**: MCP design သည် context engineering စိန်ခေါ်မှုများကို မည်သို့ ဖြေရှင်းပေးသနည်း
+    - Context window အကန့်အသတ်များနှင့် progressive loading strategies
+    - Relevance determination နှင့် dynamic context retrieval
+    - Multi-modal context handling နှင့် security စဉ်းစားမှုများ
+  - **Implementation Approaches**: Single-threaded နှင့် multi-agent architectures
+    - Context chunking နှင့် prioritization techniques
+    - Progressive context loading နှင့် compression strategies
+    - Layered context approaches နှင့် retrieval optimization
+  - **Measurement Framework**: Context effectiveness အတွက် metrics အသစ်များ
+    - Input efficiency, performance, quality, နှင့် user experience စဉ်းစားမှုများ
+    - Experimental approaches to context optimization
+    - Failure analysis နှင့် တိုးတက်မှုနည်းလမ်းများ
 
-#### ခေတ်မီ လုံခြုံရေး Advanced Topics (05-AdvancedTopics/mcp-security/) - ထုတ်လုပ်မှုအဆင့် အကောင်အထည်ဖော်မှု
-- **README.md**: စီးပွားရေး လုံခြုံရေး အကောင်အထည်ဖော်မှုအတွက် ပြန်လည်ရေးသားမှု
-  - **လက်ရှိ Specification ကိုက်ညီမှု**: MCP Specification 2025-06-18 နှင့် mandatory လုံခြုံရေးလိုအပ်ချက်များကို အပ်ဒိတ်လုပ်ထားသည်
-  - **Authentication တိုးတက်မှု**: Microsoft Entra ID ပေါင်းစည်းမှု (.NET နှင့် Java Spring Security ဥပမာများ)
-  - **AI လုံခြုံရေး ပေါင်းစည်းမှု**: Microsoft Prompt Shields နှင့် Azure Content Safety အကောင်အထည်ဖော်မှု (Python ဥပမာများ)
-  - **အန္တရာယ် ကာကွယ်မှု**: PKCE နှင့် user consent validation, audience validation, cryptographic binding နှင့် behavioral analysis အတွက် အကောင်အထည်ဖော်မှု ဥပမာများ
-  - **စီးပွားရေး လုံခြုံရေး ပေါင်းစည်းမှု**: Azure Application Insights monitoring, threat detection pipelines, supply chain security
-  - **အကောင်အထည်ဖော်မှု စစ်ဆေးစာရင်း**: Microsoft security ecosystem အကျိုးကျေးဇူးများနှင့် mandatory vs. recommended လုံခြုံရေး ထိန်းချုပ်မှုများ
+#### Curriculum Navigation Updates (README.md)
+- **Enhanced Module Structure**: အဆင့်မြင့်ခေါင်းစဉ်များကို ထည့်သွင်းထားသော သင်ခန်းစာဇယားကို အဆင့်မြှင့်တင်ထားသည်
+  - Context Engineering (5.14) နှင့် Custom Transport (5.15) entries ထည့်သွင်းထားသည်
+  - Module အားလုံးတွင် တူညီသော format နှင့် navigation links
+  - လက်ရှိ content scope ကို ရှင်းလင်းဖော်ပြထားသော updated descriptions
 
-### စာရွက်စာတမ်း အရည်အသွေးနှင့် စံနှုန်း ကိုက်ညီမှု
-- **Specification References**: MCP Specification 2025-06-18 ကို ကိုက်ညီသော references အားလုံးကို အပ်ဒိတ်လုပ်ထားသည်
-- **Microsoft Security Ecosystem**: လုံခြုံရေး စာရွက်စာတမ်းများတွင် ပေါင်းစည်းမှု လမ်းညွှန်ချက်များ တိုးမြှင့်ထားသည်
-- **အကောင်အထည်ဖော်မှု လမ်းညွှန်ချက်များ**: .NET, Java, Python အတွက် အကောင်အထည်ဖော်မှု ဥပမာများ ထည့်သွင်းထားသည်
-- **အရင်းအမြစ် စီစဉ်မှု**: Official documentation, security standards, implementation guides အလိုက် အုပ်စုခွဲထားသည်
-- **မြင်သာသော အထောက်အထားများ**: မဖြစ်မနေလိုအပ်ချက်များနှင့် အကြံပြုချက်များကို ရှင်းလင်းစွာ ဖော်ပြထားသည်
+### Directory Structure Improvements
+- **Naming Standardization**: "mcp transport" ကို "mcp-transport" ဟု အမည်ပြောင်းထားသည်
+- **Content Organization**: 05-AdvancedTopics folder အားလုံးကို တူညီသော naming pattern (mcp-[topic]) ဖြင့် ပြုလုပ်ထားသည်
 
-#### အခြေခံ အယူအဆများ (01-CoreConcepts/) - ပြည့်စုံသော ခေတ်မီပြောင်းလဲမှု
-- **Protocol Version Update**: MCP Specification 2025-06-18 ကို ကိုက်ညီသော versioning (YYYY-MM-DD format) အပ်ဒိတ်လုပ်ထားသည်
-- **Architecture Refinement**: Hosts, Clients, Servers အတွက် လက်ရှိ MCP architecture patterns ကို ရှင်းလင်းစွာ ဖော်ပြထားသည်
-  - Hosts ကို MCP client connections များကို စီမံခန့်ခွဲသော AI applications အဖြစ် ဖော်ပြထားသည်
-  - Clients ကို protocol connectors အဖြစ် ဖော်ပြထားသည်
-  - Servers ကို local နှင့် remote deployment scenarios အဖြစ် ဖော်ပြထားသည်
-- **Primitive Restructuring**: Server နှင့် Client primitives အား ပြန်လည်ဖွဲ့စည်းထားသည်
-  - Server Primitives: Resources (data sources), Prompts (templates), Tools (executable functions)
-  - Client Primitives: Sampling (LLM completions), Elicitation (user input), Logging (debugging/monitoring)
-  - Discovery (`*/list`), Retrieval (`*/get`), Execution (`*/call`) method patterns ကို အပ်ဒိတ်လုပ်ထားသည်
-- **Protocol Architecture**: Two-layer architecture model ကို ဖော်ပြထားသည်
+### Documentation Quality Enhancements
+- **MCP Specification Alignment**: MCP Specification 2025-06-18 ကို ရည်ညွှန်းထားသော content အသစ်များ
+- **Multi-Language Examples**: C#, TypeScript, Python code နမူနာများ
+- **Enterprise Focus**: Azure cloud integration နှင့် production-ready patterns
+- **Visual Documentation**: Architecture နှင့် flow visualization အတွက် Mermaid diagrams
+
+## သြဂုတ် ၁၈၊ ၂၀၂၅
+
+### Documentation Comprehensive Update - MCP 2025-06-18 Standards
+
+#### MCP Security Best Practices (02-Security/) - ပြည့်စုံသော ပြုပြင်မှု
+- **MCP-SECURITY-BEST-PRACTICES-2025.md**: MCP Specification 2025-06-18 နှင့် ကိုက်ညီသော ပြုပြင်မှု
+  - **Mandatory Requirements**: MUST/MUST NOT requirements များကို ရှင်းလင်းဖော်ပြထားသည်
+  - **12 Core Security Practices**: Security domains အဖြစ် ပြန်လည်ဖွဲ့စည်းထားသည်
+    - Token Security & Authentication
+    - Session Management & Transport Security
+    - AI-Specific Threat Protection
+    - Access Control & Permissions
+    - Content Safety & Monitoring
+    - Supply Chain Security
+    - OAuth Security & Confused Deputy Prevention
+    - Incident Response & Recovery
+    - Compliance & Governance
+    - Advanced Security Controls
+    - Microsoft Security Ecosystem Integration
+    - Continuous Security Evolution
+  - **Microsoft Security Solutions**: Prompt Shields, Azure Content Safety, Entra ID, GitHub Advanced Security
+  - **Implementation Resources**: Official MCP Documentation, Microsoft Security Solutions, Security Standards, Implementation Guides
+
+#### Advanced Security Controls (02-Security/) - Enterprise Implementation
+- **MCP-SECURITY-CONTROLS-2025.md**: Enterprise-grade security framework
+  - **9 Comprehensive Security Domains**: Advanced Authentication & Authorization, Token Security, Session Security, AI-Specific Security Controls, Confused Deputy Attack Prevention, Tool Execution Security, Supply Chain Security Controls, Monitoring & Detection Controls, Incident Response & Recovery
+  - **Implementation Examples**: YAML configuration blocks နှင့် code နမူနာများ
+  - **Microsoft Solutions Integration**: Azure security services, GitHub Advanced Security
+
+#### Advanced Topics Security (05-AdvancedTopics/mcp-security/) - Production-Ready Implementation
+- **README.md**: Enterprise security implementation အတွက် rewrite
+  - **Current Specification Alignment**: MCP Specification 2025-06-18
+  - **Enhanced Authentication**: Microsoft Entra ID integration
+  - **AI Security Integration**: Microsoft Prompt Shields နှင့် Azure Content Safety
+  - **Advanced Threat Mitigation**: Confused Deputy Attack Prevention, Token Passthrough Prevention, Session Hijacking Prevention
+  - **Enterprise Security Integration**: Azure Application Insights monitoring, threat detection pipelines
+  - **Implementation Checklist**: Mandatory vs. recommended security controls
+
+### Documentation Quality & Standards Alignment
+- **Specification References**: MCP Specification 2025-06-18 ကို ရည်ညွှန်းထားသည်
+- **Microsoft Security Ecosystem**: Integration guidance
+- **Practical Implementation**: .NET, Java, Python code နမူနာများ
+- **Resource Organization**: Official documentation, security standards, implementation guides
+
+#### Core Concepts (01-CoreConcepts/) - Complete Modernization
+- **Protocol Version Update**: MCP Specification 2025-06-18 ကို ရည်ညွှန်းထားသည်
+- **Architecture Refinement**: Hosts, Clients, Servers ကို ပြန်လည်ဖော်ပြထားသည်
+  - Hosts: AI applications coordinating multiple MCP client connections
+  - Clients: Protocol connectors maintaining one-to-one server relationships
+  - Servers: Local vs. remote deployment scenarios
+- **Primitive Restructuring**: Server နှင့် client primitives
+  - Server Primitives: Resources, Prompts, Tools
+  - Client Primitives: Sampling, Elicitation, Logging
+  - Discovery (`*/list`), retrieval (`*/get`), execution (`*/call`) method patterns
+- **Protocol Architecture**: Two-layer architecture model
   - Data Layer: JSON-RPC 2.0 foundation
   - Transport Layer: STDIO (local) နှင့် Streamable HTTP with SSE (remote)
-- **Security Framework**: User consent, data privacy, tool execution safety, transport layer security အတွက် လုံခြုံရေး စံနှုန်းများ
-- **Communication Patterns**: Protocol messages အတွက် initialization, discovery, execution, notification flows ကို ဖော်ပြထားသည်
-- **Code Examples**: .NET, Java, Python, JavaScript အတွက် MCP SDK patterns ကို အပ်ဒိတ်လုပ်ထားသည်
+- **Security Framework**: User consent, data privacy protection, tool execution safety, transport layer security
+- **Communication Patterns**: Initialization, discovery, execution, notification flows
+- **Code Examples**: .NET, Java, Python, JavaScript MCP SDK patterns
 
-#### လုံခြုံရေး (02-Security/) - ပြည့်စုံသော လုံခြုံရေး ပြောင်းလဲမှု  
-- **Standards Alignment**: MCP Specification 2025-06-18 လုံခြုံရေးလိုအပ်ချက်များနှင့် ကိုက်ညီမှု
-- **Authentication Evolution**: Custom OAuth servers မှ external identity provider delegation (Microsoft Entra ID) သို့ ပြောင်းလဲမှု
-- **AI-Specific Threat Analysis**: ခေတ်မီ AI အန္တရာယ်များကို ဖော်ပြထားသည်
-  - Prompt injection attack scenarios
-  - Tool poisoning mechanisms
-  - Context window poisoning နှင့် model confusion attacks
-- **Microsoft AI Security Solutions**: Microsoft security ecosystem အတွက် အပြည့်အစုံ coverage
-  - AI Prompt Shields
-  - Azure Content Safety integration patterns
-  - GitHub Advanced Security
-- **Advanced Threat Mitigation**: MCP-specific attack scenarios အတွက် လုံခြုံရေး ထိန်းချုပ်မှုများ
-  - Session hijacking
-  - Confused deputy problems
-  - Token passthrough vulnerabilities
-- **Supply Chain Security**: AI supply chain coverage
-- **Foundation Security**: Zero trust architecture နှင့် Microsoft security ecosystem
-- **Resource Organization**: Official Docs, Standards, Research, Microsoft Solutions, Implementation Guides အလိုက် အုပ်စုခွဲထားသည်
+#### Security (02-Security/) - Comprehensive Security Overhaul  
+- **Standards Alignment**: MCP Specification 2025-06-18
+- **Authentication Evolution**: Microsoft Entra ID integration
+- **AI-Specific Threat Analysis**: Prompt injection, tool poisoning, context window poisoning
+- **Microsoft AI Security Solutions**: Prompt Shields, Azure Content Safety, GitHub Advanced Security
+- **Advanced Threat Mitigation**: Session hijacking, Confused deputy problems, Token passthrough vulnerabilities
+- **Supply Chain Security**: Foundation models, embeddings services, context providers, third-party APIs
+- **Foundation Security**: Zero trust architecture, Microsoft security ecosystem
+- **Resource Organization**: Official Docs, Standards, Research, Microsoft Solutions, Implementation Guides
 
-### စာရွက်စာတမ်း အရည်အသွေး တိုးတက်မှုများ
-- **Structured Learning Objectives**: သင်ယူရမည့် ရည်မှန်းချက်များကို တိကျစွာ ဖော်ပြထားသည်
-- **Cross-References**: လုံခြုံရေးနှင့် အခြေခံ အယူအဆများအကြား ချိတ်ဆက်ထားသည်
-- **Current Information**: Date references နှင့် specification links ကို အပ်ဒိတ်လုပ်ထားသည်
-- **Implementation Guidance**: အကောင်အထည်ဖော်မှု လမ်းညွှန်ချက်များ ထည့်သွင်းထားသည်
+### Documentation Quality Improvements
+- **Structured Learning Objectives**: Specific, actionable outcomes 
+- **Cross-References**: Related security နှင့် core concept topics
+- **Current Information**: Updated date references
+- **Implementation Guidance**: Actionable implementation guidelines
 
-## ၂၀၂၅ ခုနှစ်၊ ဇူလိုင်လ ၁၆ ရက်
+## ဇူလိုင် ၁၆၊ ၂၀၂၅
 
-### README နှင့် Navigation တိုးတက်မှုများ
-- README.md တွင် navigation ကို ပြန်လည်ဖွဲ့စည်းထားသည်
-- `<details>` tags များကို table-based format ဖြင့် အစားထိုးထားသည်
-- "alternative_layouts" folder တွင် layout options များ ထည့်သွင်းထားသည်
-- Card-based, tabbed-style, accordion-style navigation ဥပမာများ ထည့်သွင်းထားသည်
-- Repository structure ကို အပ်ဒိတ်လုပ်ထားသည်
-- "How to Use This Curriculum" အပိုင်းကို ရှင်းလင်းစွာ ဖော်ပြထားသည်
-- MCP specification links ကို မှန်ကန်သော URLs သို့ ပြောင်းလဲထားသည်
-- Context Engineering အပိုင်း (5.14) ကို curriculum structure တွင် ထည့်သွင်းထားသည်
+### README နှင့် Navigation Improvements
+- README.md တွင် curriculum navigation ပြန်လည်ဖော်ပြထားသည်
+- `<details>` tags ကို table-based format ဖြင့် အစားထိုးထားသည်
+- Alternative layout options ထည့်သွင်းထားသည်
+- Repository structure section ကို အဆင့်မြှင့်တင်ထားသည်
+- "How to Use This Curriculum" ကို ရှင်းလင်းဖော်ပြထားသည်
+- Context Engineering section (5.14) ထည့်သွင်းထားသည်
 
 ### Study Guide Updates
-- Repository structure နှင့် ကိုက်ညီသော study guide ကို ပြန်လည်ရေးသားထားသည်
+- Repository structure နှင့် ကိုက်ညီသော study guide
 - MCP Clients နှင့် Tools, Popular MCP Servers အပိုင်းများ ထည့်သွင်းထားသည်
-- Visual Curriculum Map ကို အပ်ဒိတ်လုပ်ထားသည်
-- Advanced Topics အပိုင်းကို တိုးချဲ့ဖော်ပြထားသည်
-- Case Studies အပိုင်းကို အမှန်တကယ် ဥပမာများဖြင့် အပ်ဒိတ်လုပ်ထားသည်
-- Comprehensive changelog ကို ထည့်သွင်းထားသည်
+- Visual Curriculum Map ကို အတိအကျ ပြန်လည်ဖော်ပြထားသည်
+- Advanced Topics ကို အကျယ်ဖော်ပြထားသည်
+- Case Studies ကို အမှန်တကယ် နမူနာများဖြင့် ပြန်လည်ဖော်ပြထားသည်
 
 ### Community Contributions (06-CommunityContributions/)
-- MCP servers အတွက် အချက်အလက်များ ထည့်သွင်းထားသည်
-- Claude ကို VSCode တွင် အသုံးပြုခြင်းအပိုင်း ထည့်သွင်းထားသည်
-- Cline terminal client setup နှင့် အသုံးပြုခြင်း လမ်းညွှန်ချက်များ ထည့်သွင်းထားသည်
-- MCP client အပိုင်းကို popular client options များနှင့် အပ်ဒိတ်လုပ်ထားသည်
-- Contribution examples ကို code samples များဖြင့် တိုးမြှင့်ထားသည်
+- MCP servers for image generation
+- Claude in VSCode အသုံးပြုမှု
+- Cline terminal client setup နှင့် usage instructions
+- MCP client options
+- Contribution examples
 
 ### Advanced Topics (05-AdvancedTopics/)
-- Specialized topic folders များကို consistent naming ဖြင့် စီစဉ်ထားသည်
-- Context engineering materials နှင့် examples ထည့်သွင်းထားသည်
-- Foundry agent integration documentation ထည့်သွင်းထားသည်
-- Entra ID security integration documentation တိုးမြှင့်ထားသည်
+- Specialized topic folders
+- Context engineering materials
+- Foundry agent integration documentation
+- Entra ID security integration documentation
 
-## ၂၀၂၅ ခုနှစ်၊ ဇွန်လ ၁၁ ရက်
+## ဇွန် ၁၁၊ ၂၀၂၅
 
-### စတင်ဖန်တီးမှု
-- MCP for Beginners သင်ခန်းစာအစီအစဉ်၏ ပထမဆုံး version ကို ထုတ်ဝေခဲ့သည်
-- အဓိက အပိုင်း ၁၀ ခုအတွက် အခြေခံဖွဲ့စည်းမှုကို ဖန်တီးခဲ့သည်
-- Visual Curriculum Map ကို navigation အတွက် ထည့်သွင်းခဲ့သည်
-- Programming languages များစွာဖြင့် initial sample projects များ ထည့်သွင်းခဲ့သည်
+### Initial Creation
+- MCP for Beginners curriculum ၏ ပထမဆုံး version
+- ၁၀ အပိုင်းအခြေခံဖွဲ့စည်းမှု
+- Visual Curriculum Map
+- Programming languages များအတွက် sample projects
 
-### စတင်အသုံးပြုခြင်း (03-GettingStarted/)
-- Server implementation examples များ ဖန်တီးခဲ့သည်
-- Client development လမ်းညွှန်ချက်များ ထည့်သွင်းခဲ့သည်
-- LLM client integration လမ်းညွှန်ချက်များ ထည့်သွင်းခဲ့သည်
-- VS Code integration documentation ထည့်သွင်းခဲ့သည်
-- Server-Sent Events (SSE) server examples များ ထည့်သွင်းခဲ့သည်
+### Getting Started (03-GettingStarted/)
+- Server implementation examples
+- Client development guidance
+- LLM client integration instructions
+- VS Code integration documentation
+- Server-Sent Events (SSE) server examples
 
-### အခြေခံ အယူအဆများ (01-CoreConcepts/)
-- Client-server architecture အကြောင်း ရှင်းလင်းစွာ ဖော်ပြခဲ့သည်
-- Protocol components အရေးပါသော အချက်များကို documentation ပြုလုပ်ခဲ့သည်
-- MCP messaging patterns ကို documentation ပြုလုပ်ခဲ့သည်
+### Core Concepts (01-CoreConcepts/)
+- Client-server architecture
+- Key protocol components
+- Messaging patterns
 
-## ၂၀၂၅ ခုနှစ်၊ မေလ ၂၃ ရက်
+## မေ ၂၃၊ ၂၀၂၅
 
 ### Repository Structure
-- Repository ကို အခြေခံ folder structure ဖြင့် စတင်ခဲ့သည်
-- အဓိက အပိုင်းတစ်ခုစီအတွက် README files များ ဖန်တီးခဲ့သည်
-- Translation infrastructure ကို စတင်ခဲ့သည်
-- Image assets နှင့် diagrams များ ထည့်သွင်းခဲ့သည်
+- Repository အခြေခံ folder structure
+- README files
+- Translation infrastructure
+- Image assets နှင့် diagrams
 
 ### Documentation
-- Curriculum overview ပါဝင်သော README.md ကို စတင်ဖန်တီးခဲ့သည်
-- CODE_OF_CONDUCT.md နှင့် SECURITY.md ကို ဖန်တီးခဲ့သည်
-- SUPPORT.md ကို အကူအညီရယူရန် လမ်းညွှန်ချက်များဖြင့် ဖန်တီးခဲ့သည်
-- Preliminary study guide structure ကို ဖန်တီးခဲ့သည်
+- README.md
+- CODE_OF_CONDUCT.md နှင့် SECURITY.md
+- SUPPORT.md
+- Study guide structure
 
-## ၂၀၂၅ ခုနှစ်၊ ဧပြီလ ၁၅ ရက်
+## ဧပြီ ၁၅၊ ၂၀၂၅
 
-### အစီအစဉ်နှင့် Framework
-- MCP for Beginners သင်ခန်းစာအစီအစဉ်အတွက် စီစဉ်မှုကို စတင်ခဲ့သည်
-- သင်ယူရမည့် ရည်မှန်းချက်များနှင့် ရည်ရွယ်ထားသော ပရိသတ်ကို သတ်မှတ်ခဲ့သည်
-- Curriculum ၏ အပိုင်း ၁၀ ခုကို အကြမ်းဖျင်း ဖော်ပြခဲ့သည်
-- ဥပမာများနှင့် case studies အတွက် conceptual framework ကို ဖွံ့ဖြိုးခဲ့သည်
-- အရေးပါသော အယူအဆများအတွက် initial prototype examples များ ဖန်တီးခဲ့သည်
+### Planning and Framework
+- MCP for Beginners curriculum အတွက် စီမံချက်
+- Learning objectives နှင့် target audience
+- ၁၀-section structure
+- Examples နှင့် case studies
+- Prototype examples
+
+---
 
 **အကြောင်းကြားချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေပါသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်မှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူရင်းစာရွက်စာတမ်းကို ၎င်း၏ မူလဘာသာစကားဖြင့် အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် ရှုလေ့လာသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူက ဘာသာပြန်မှု ဝန်ဆောင်မှုကို အသုံးပြုရန် အကြံပြုပါသည်။ ဤဘာသာပြန်မှုကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွတ်များ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှုအတွက် ကြိုးစားနေသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မတိကျမှုများ ပါရှိနိုင်သည်ကို သတိပြုပါ။ မူရင်းစာရွက်စာတမ်းကို ၎င်း၏ မူရင်းဘာသာစကားဖြင့် အာဏာတရားရှိသော အရင်းအမြစ်အဖြစ် ရှုလေ့ရှိသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များမှ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော အလွဲအလွတ်များ သို့မဟုတ် အနားလွဲမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
