@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "245b03ae1e7973094fe82b8051ae0939",
-  "translation_date": "2025-08-19T17:39:31+00:00",
+  "original_hash": "56dd5af7e84cc0db6e17e310112109ae",
+  "translation_date": "2025-09-15T22:36:25+00:00",
   "source_file": "changelog.md",
   "language_code": "hr"
 }
@@ -11,128 +11,145 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ovaj dokument služi kao zapis svih značajnih promjena napravljenih u kurikulumu Model Context Protocol (MCP) za početnike. Promjene su dokumentirane obrnutim kronološkim redoslijedom (najnovije promjene na vrhu).
 
+## 15. rujna 2025.
+
+### Proširenje naprednih tema - Prilagođeni transporti i inženjering konteksta
+
+#### MCP Prilagođeni transporti (05-AdvancedTopics/mcp-transport/) - Novi vodič za naprednu implementaciju
+- **README.md**: Potpuni vodič za implementaciju prilagođenih MCP transportnih mehanizama
+  - **Azure Event Grid Transport**: Sveobuhvatna implementacija transporta temeljenog na serverless događajima
+    - Primjeri u C#, TypeScriptu i Pythonu s integracijom Azure Functions
+    - Obrasci arhitekture temeljene na događajima za skalabilna MCP rješenja
+    - Primanje webhooks i rukovanje porukama temeljenim na push metodama
+  - **Azure Event Hubs Transport**: Implementacija transporta za visokopropusno strujanje
+    - Sposobnosti za strujanje u stvarnom vremenu za scenarije niske latencije
+    - Strategije particioniranja i upravljanje kontrolnim točkama
+    - Grupiranje poruka i optimizacija performansi
+  - **Obrasci integracije u poduzeću**: Primjeri arhitekture spremni za produkciju
+    - Distribuirana MCP obrada preko više Azure Functions
+    - Hibridne transportne arhitekture koje kombiniraju više vrsta transporta
+    - Strategije trajnosti poruka, pouzdanosti i rukovanja greškama
+  - **Sigurnost i praćenje**: Integracija Azure Key Vaulta i obrasci za promatranje
+    - Autentifikacija upravljanim identitetima i pristup s najmanjim privilegijama
+    - Telemetrija Application Insights i praćenje performansi
+    - Obrasci za prekidače i toleranciju na greške
+  - **Okviri za testiranje**: Sveobuhvatne strategije testiranja za prilagođene transporte
+    - Jedinično testiranje s testnim duplikatima i okvirima za simulaciju
+    - Integracijsko testiranje s Azure Test Containers
+    - Razmatranja za testiranje performansi i opterećenja
+
+#### Inženjering konteksta (05-AdvancedTopics/mcp-contextengineering/) - Nova AI disciplina
+- **README.md**: Sveobuhvatno istraživanje inženjeringa konteksta kao novog područja
+  - **Osnovni principi**: Potpuno dijeljenje konteksta, svijest o donošenju odluka i upravljanje prozorima konteksta
+  - **Usklađenost s MCP protokolom**: Kako MCP dizajn rješava izazove inženjeringa konteksta
+    - Ograničenja prozora konteksta i strategije progresivnog učitavanja
+    - Određivanje relevantnosti i dinamičko dohvaćanje konteksta
+    - Višemodalno rukovanje kontekstom i sigurnosni aspekti
+  - **Pristupi implementaciji**: Jednonitne naspram višeagentske arhitekture
+    - Tehnike segmentiranja i prioritizacije konteksta
+    - Progresivno učitavanje i strategije kompresije konteksta
+    - Slojeviti pristupi kontekstu i optimizacija dohvaćanja
+  - **Okvir za mjerenje**: Novi metrički sustavi za procjenu učinkovitosti konteksta
+    - Učinkovitost ulaza, performanse, kvaliteta i razmatranja korisničkog iskustva
+    - Eksperimentalni pristupi optimizaciji konteksta
+    - Analiza neuspjeha i metodologije poboljšanja
+
+#### Ažuriranja navigacije kurikuluma (README.md)
+- **Poboljšana struktura modula**: Ažurirana tablica kurikuluma za uključivanje novih naprednih tema
+  - Dodani inženjering konteksta (5.14) i prilagođeni transport (5.15)
+  - Dosljedno formatiranje i navigacijski linkovi kroz sve module
+  - Ažurirani opisi kako bi odražavali trenutni opseg sadržaja
+
+### Poboljšanja strukture direktorija
+- **Standardizacija naziva**: Preimenovan "mcp transport" u "mcp-transport" radi dosljednosti s ostalim mapama naprednih tema
+- **Organizacija sadržaja**: Sve mape 05-AdvancedTopics sada slijede dosljedan obrazac imenovanja (mcp-[tema])
+
+### Poboljšanja kvalitete dokumentacije
+- **Usklađenost sa specifikacijom MCP-a**: Svi novi sadržaji referiraju trenutnu MCP specifikaciju 2025-06-18
+- **Primjeri na više jezika**: Sveobuhvatni primjeri koda u C#, TypeScriptu i Pythonu
+- **Fokus na poduzeće**: Obrasci spremni za produkciju i integracija s Azure cloudom
+- **Vizualna dokumentacija**: Dijagrami izrađeni u Mermaidu za vizualizaciju arhitekture i tijeka
+
 ## 18. kolovoza 2025.
 
 ### Sveobuhvatno ažuriranje dokumentacije - MCP standardi 2025-06-18
 
 #### MCP Sigurnosne najbolje prakse (02-Security/) - Potpuna modernizacija
 - **MCP-SECURITY-BEST-PRACTICES-2025.md**: Potpuno prepisano u skladu s MCP specifikacijom 2025-06-18
-  - **Obavezni zahtjevi**: Dodani eksplicitni zahtjevi MUST/MUST NOT iz službene specifikacije s jasnim vizualnim oznakama
+  - **Obavezni zahtjevi**: Dodani eksplicitni MUST/MUST NOT zahtjevi iz službene specifikacije s jasnim vizualnim indikatorima
   - **12 osnovnih sigurnosnih praksi**: Restrukturirano s popisa od 15 stavki u sveobuhvatne sigurnosne domene
-    - Sigurnost tokena i autentifikacija s integracijom vanjskog pružatelja identiteta
-    - Upravljanje sesijama i sigurnost prijenosa s kriptografskim zahtjevima
+    - Sigurnost tokena i autentifikacija s integracijom vanjskih pružatelja identiteta
+    - Upravljanje sesijama i sigurnost transporta s kriptografskim zahtjevima
     - Zaštita od AI-specifičnih prijetnji s integracijom Microsoft Prompt Shields
-    - Kontrola pristupa i dozvole prema načelu najmanjih privilegija
-    - Sigurnost sadržaja i nadzor s integracijom Azure Content Safety
-    - Sigurnost opskrbnog lanca s provjerom svih komponenti
-    - OAuth sigurnost i prevencija "Confused Deputy" napada s implementacijom PKCE
-    - Odgovor na incidente i oporavak s automatiziranim mogućnostima
+    - Kontrola pristupa i dozvola s principom najmanjih privilegija
+    - Sigurnost sadržaja i praćenje s integracijom Azure Content Safety
+    - Sigurnost opskrbnog lanca s provjerom komponenti
+    - OAuth sigurnost i prevencija napada "zbunjenog zamjenika" s PKCE implementacijom
+    - Odgovor na incidente i oporavak s automatiziranim sposobnostima
     - Usklađenost i upravljanje s regulatornim zahtjevima
     - Napredne sigurnosne kontrole s arhitekturom nultog povjerenja
-    - Integracija s Microsoft sigurnosnim ekosustavom s cjelovitim rješenjima
-    - Kontinuirana evolucija sigurnosti s prilagodljivim praksama
+    - Integracija Microsoft sigurnosnog ekosustava s sveobuhvatnim rješenjima
+    - Kontinuirana evolucija sigurnosti s adaptivnim praksama
   - **Microsoft sigurnosna rješenja**: Poboljšane smjernice za integraciju Prompt Shields, Azure Content Safety, Entra ID i GitHub Advanced Security
   - **Resursi za implementaciju**: Kategorizirani sveobuhvatni linkovi na službenu MCP dokumentaciju, Microsoft sigurnosna rješenja, sigurnosne standarde i vodiče za implementaciju
 
 #### Napredne sigurnosne kontrole (02-Security/) - Implementacija za poduzeća
 - **MCP-SECURITY-CONTROLS-2025.md**: Potpuno preuređeno s okvirom sigurnosti za poduzeća
-  - **9 sveobuhvatnih sigurnosnih domena**: Prošireno s osnovnih kontrola na detaljan okvir za poduzeća
+  - **9 sveobuhvatnih sigurnosnih domena**: Prošireno od osnovnih kontrola do detaljnog okvira za poduzeća
     - Napredna autentifikacija i autorizacija s integracijom Microsoft Entra ID
-    - Sigurnost tokena i kontrole protiv prosljeđivanja s cjelovitom validacijom
+    - Sigurnost tokena i kontrole protiv prosljeđivanja s sveobuhvatnom validacijom
     - Sigurnosne kontrole sesije s prevencijom otmica
     - AI-specifične sigurnosne kontrole s prevencijom ubrizgavanja prompta i trovanja alata
-    - Prevencija "Confused Deputy" napada s OAuth proxy sigurnošću
-    - Sigurnost izvršavanja alata s izolacijom i sandboxingom
+    - Prevencija napada "zbunjenog zamjenika" s OAuth proxy sigurnošću
+    - Sigurnost izvršenja alata s izolacijom i sandboxingom
     - Kontrole sigurnosti opskrbnog lanca s provjerom ovisnosti
-    - Kontrole nadzora i detekcije s integracijom SIEM-a
-    - Odgovor na incidente i oporavak s automatiziranim mogućnostima
+    - Kontrole praćenja i detekcije s integracijom SIEM-a
+    - Odgovor na incidente i oporavak s automatiziranim sposobnostima
   - **Primjeri implementacije**: Dodani detaljni YAML konfiguracijski blokovi i primjeri koda
   - **Integracija Microsoft rješenja**: Sveobuhvatno pokrivanje Azure sigurnosnih usluga, GitHub Advanced Security i upravljanja identitetima za poduzeća
 
 #### Sigurnost naprednih tema (05-AdvancedTopics/mcp-security/) - Implementacija spremna za produkciju
 - **README.md**: Potpuno prepisano za implementaciju sigurnosti u poduzećima
   - **Usklađenost s trenutnom specifikacijom**: Ažurirano prema MCP specifikaciji 2025-06-18 s obaveznim sigurnosnim zahtjevima
-  - **Poboljšana autentifikacija**: Integracija Microsoft Entra ID s detaljnim primjerima za .NET i Java Spring Security
-  - **Integracija AI sigurnosti**: Implementacija Microsoft Prompt Shields i Azure Content Safety s detaljnim Python primjerima
+  - **Poboljšana autentifikacija**: Integracija Microsoft Entra ID s sveobuhvatnim primjerima u .NET-u i Java Spring Security
+  - **Integracija AI sigurnosti**: Implementacija Microsoft Prompt Shields i Azure Content Safety s detaljnim primjerima u Pythonu
   - **Napredna mitigacija prijetnji**: Sveobuhvatni primjeri implementacije za
-    - Prevenciju "Confused Deputy" napada s PKCE i validacijom korisničkog pristanka
+    - Prevenciju napada "zbunjenog zamjenika" s PKCE i validacijom korisničkog pristanka
     - Prevenciju prosljeđivanja tokena s validacijom publike i sigurnim upravljanjem tokenima
-    - Prevenciju otmica sesije s kriptografskim vezivanjem i analizom ponašanja
-  - **Integracija sigurnosti za poduzeća**: Nadzor s Azure Application Insights, detekcija prijetnji i sigurnost opskrbnog lanca
-  - **Kontrolni popis za implementaciju**: Jasne obavezne i preporučene sigurnosne kontrole s prednostima Microsoft sigurnosnog ekosustava
+    - Prevenciju otmica sesije s kriptografskim vezanjem i analizom ponašanja
+  - **Integracija sigurnosti za poduzeća**: Praćenje Application Insights, detekcijski kanali prijetnji i sigurnost opskrbnog lanca
+  - **Kontrolni popis implementacije**: Jasne obavezne naspram preporučenih sigurnosnih kontrola s prednostima Microsoft sigurnosnog ekosustava
 
-### Kvaliteta dokumentacije i usklađenost sa standardima
-- **Reference na specifikacije**: Ažurirane sve reference na trenutnu MCP specifikaciju 2025-06-18
-- **Microsoft sigurnosni ekosustav**: Poboljšane smjernice za integraciju kroz svu sigurnosnu dokumentaciju
-- **Praktična implementacija**: Dodani detaljni primjeri koda u .NET, Java i Python s obrascima za poduzeća
+### Poboljšanja kvalitete dokumentacije i usklađenost sa standardima
+- **Reference specifikacija**: Ažurirane sve reference na trenutnu MCP specifikaciju 2025-06-18
+- **Microsoft sigurnosni ekosustav**: Poboljšane smjernice za integraciju kroz cijelu sigurnosnu dokumentaciju
+- **Praktična implementacija**: Dodani detaljni primjeri koda u .NET-u, Javi i Pythonu s obrascima za poduzeća
 - **Organizacija resursa**: Sveobuhvatna kategorizacija službene dokumentacije, sigurnosnih standarda i vodiča za implementaciju
 - **Vizualni indikatori**: Jasno označavanje obaveznih zahtjeva naspram preporučenih praksi
-
-#### Osnovni koncepti (01-CoreConcepts/) - Potpuna modernizacija
-- **Ažuriranje verzije protokola**: Ažurirano na trenutnu MCP specifikaciju 2025-06-18 s verzioniranjem prema datumu (YYYY-MM-DD format)
-- **Rafiniranje arhitekture**: Poboljšani opisi domaćina, klijenata i poslužitelja kako bi odražavali trenutne MCP arhitekturne obrasce
-  - Domaćini sada jasno definirani kao AI aplikacije koje koordiniraju više MCP klijentskih veza
-  - Klijenti opisani kao konektori protokola koji održavaju odnose jedan-na-jedan s poslužiteljima
-  - Poslužitelji poboljšani s lokalnim i udaljenim scenarijima implementacije
-- **Restrukturiranje primitiva**: Potpuno preuređenje poslužiteljskih i klijentskih primitiva
-  - Poslužiteljski primitivi: Resursi (izvori podataka), Prompti (predlošci), Alati (izvršne funkcije) s detaljnim objašnjenjima i primjerima
-  - Klijentski primitivi: Uzorkovanje (LLM završeci), Elicitacija (korisnički unos), Zapisivanje (debugging/nadzor)
-  - Ažurirano s trenutnim metodama otkrivanja (`*/list`), dohvaćanja (`*/get`) i izvršavanja (`*/call`)
-- **Arhitektura protokola**: Uveden model dvoslojne arhitekture
-  - Sloj podataka: JSON-RPC 2.0 osnova s upravljanjem životnim ciklusom i primitivima
-  - Sloj prijenosa: STDIO (lokalno) i Streamable HTTP sa SSE (udaljeno) mehanizmima prijenosa
-- **Sigurnosni okvir**: Sveobuhvatna sigurnosna načela uključujući eksplicitni korisnički pristanak, zaštitu privatnosti podataka, sigurnost izvršavanja alata i sigurnost sloja prijenosa
-- **Obrasci komunikacije**: Ažurirane poruke protokola za prikaz inicijalizacije, otkrivanja, izvršavanja i obavijesti
-- **Primjeri koda**: Osvježeni primjeri na više jezika (.NET, Java, Python, JavaScript) kako bi odražavali trenutne MCP SDK obrasce
-
-#### Sigurnost (02-Security/) - Sveobuhvatna sigurnosna revizija  
-- **Usklađenost sa standardima**: Potpuna usklađenost s MCP specifikacijom 2025-06-18 sigurnosnih zahtjeva
-- **Evolucija autentifikacije**: Dokumentirana evolucija od prilagođenih OAuth poslužitelja do delegacije vanjskim pružateljima identiteta (Microsoft Entra ID)
-- **AI-specifična analiza prijetnji**: Poboljšano pokrivanje modernih AI vektora napada
-  - Detaljni scenariji napada ubrizgavanja prompta s primjerima iz stvarnog svijeta
-  - Mehanizmi trovanja alata i obrasci napada "rug pull"
-  - Trovanje kontekstualnog prozora i napadi zbunjivanja modela
-- **Microsoft AI sigurnosna rješenja**: Sveobuhvatno pokrivanje Microsoft sigurnosnog ekosustava
-  - AI Prompt Shields s naprednom detekcijom, označavanjem i tehnikama razgraničenja
-  - Obrasci integracije Azure Content Safety
-  - GitHub Advanced Security za zaštitu opskrbnog lanca
-- **Napredna mitigacija prijetnji**: Detaljne sigurnosne kontrole za
-  - Otmicu sesije s MCP-specifičnim scenarijima napada i kriptografskim zahtjevima za ID sesije
-  - Problemi "Confused Deputy" u MCP proxy scenarijima s eksplicitnim zahtjevima za pristanak
-  - Ranljivosti prosljeđivanja tokena s obaveznim kontrolama validacije
-- **Sigurnost opskrbnog lanca**: Prošireno pokrivanje AI opskrbnog lanca uključujući osnovne modele, usluge ugrađivanja, pružatelje konteksta i API-je trećih strana
-- **Osnovna sigurnost**: Poboljšana integracija s obrascima sigurnosti za poduzeća uključujući arhitekturu nultog povjerenja i Microsoft sigurnosni ekosustav
-- **Organizacija resursa**: Kategorizirani sveobuhvatni linkovi na službene dokumente, standarde, istraživanja, Microsoft rješenja i vodiče za implementaciju
-
-### Poboljšanja kvalitete dokumentacije
-- **Strukturirani ciljevi učenja**: Poboljšani ciljevi učenja s konkretnim, provedivim ishodima 
-- **Unakrsne reference**: Dodane poveznice između povezanih sigurnosnih i osnovnih tema
-- **Ažurne informacije**: Ažurirani svi datumi i poveznice na specifikacije prema trenutnim standardima
-- **Smjernice za implementaciju**: Dodane specifične, provedive smjernice za implementaciju kroz oba odjeljka
 
 ## 16. srpnja 2025.
 
 ### Poboljšanja README-a i navigacije
-- Potpuno redizajnirana navigacija kurikulumom u README.md
-- Zamijenjene `<details>` oznake pristupačnijim formatom tablica
+- Potpuno redizajnirana navigacija kurikuluma u README.md
+- Zamijenjeni `<details>` tagovi pristupačnijim formatom temeljenim na tablicama
 - Kreirane alternativne opcije izgleda u novoj mapi "alternative_layouts"
-- Dodani primjeri navigacije u stilu kartica, tabova i harmonike
+- Dodani primjeri navigacije u stilu kartica, tabova i akordeona
 - Ažuriran odjeljak strukture repozitorija kako bi uključio sve najnovije datoteke
 - Poboljšan odjeljak "Kako koristiti ovaj kurikulum" s jasnim preporukama
-- Ažurirane poveznice na MCP specifikacije kako bi ukazivale na ispravne URL-ove
-- Dodan odjeljak o inženjeringu konteksta (5.14) u strukturu kurikuluma
+- Ažurirani linkovi na MCP specifikaciju kako bi pokazivali na ispravne URL-ove
+- Dodan odjeljak inženjeringa konteksta (5.14) u strukturu kurikuluma
 
 ### Ažuriranja vodiča za učenje
-- Potpuno revidiran vodič za učenje kako bi bio usklađen s trenutnom strukturom repozitorija
-- Dodani novi odjeljci za MCP klijente i alate te popularne MCP poslužitelje
+- Potpuno revidiran vodič za učenje kako bi se uskladio s trenutnom strukturom repozitorija
+- Dodani novi odjeljci za MCP klijente i alate te popularne MCP servere
 - Ažurirana vizualna karta kurikuluma kako bi točno odražavala sve teme
 - Poboljšani opisi naprednih tema kako bi pokrili sva specijalizirana područja
 - Ažuriran odjeljak studija slučaja kako bi odražavao stvarne primjere
 - Dodan ovaj sveobuhvatni dnevnik promjena
 
 ### Doprinosi zajednice (06-CommunityContributions/)
-- Dodane detaljne informacije o MCP poslužiteljima za generiranje slika
-- Dodan sveobuhvatan odjeljak o korištenju Claude-a u VSCode-u
+- Dodane detaljne informacije o MCP serverima za generiranje slika
+- Dodan sveobuhvatan odjeljak o korištenju Claudea u VSCodeu
 - Dodane upute za postavljanje i korištenje Cline terminal klijenta
 - Ažuriran odjeljak MCP klijenata kako bi uključio sve popularne opcije klijenata
 - Poboljšani primjeri doprinosa s točnijim uzorcima koda
@@ -141,7 +158,7 @@ Ovaj dokument služi kao zapis svih značajnih promjena napravljenih u kurikulum
 - Organizirane sve mape specijaliziranih tema s dosljednim imenovanjem
 - Dodani materijali i primjeri za inženjering konteksta
 - Dodana dokumentacija za integraciju Foundry agenta
-- Poboljšana dokumentacija za sigurnosnu integraciju Entra ID-a
+- Poboljšana dokumentacija za sigurnosnu integraciju Entra ID
 
 ## 11. lipnja 2025.
 
@@ -149,17 +166,17 @@ Ovaj dokument služi kao zapis svih značajnih promjena napravljenih u kurikulum
 - Objavljena prva verzija kurikuluma MCP za početnike
 - Kreirana osnovna struktura za svih 10 glavnih odjeljaka
 - Implementirana vizualna karta kurikuluma za navigaciju
-- Dodani početni uzorci projekata na više programskih jezika
+- Dodani početni uzorci projekata u više programskih jezika
 
 ### Početak rada (03-GettingStarted/)
-- Kreirani prvi primjeri implementacije poslužitelja
+- Kreirani prvi primjeri implementacije servera
 - Dodane smjernice za razvoj klijenata
 - Uključene upute za integraciju LLM klijenata
-- Dodana dokumentacija za integraciju s VS Code-om
-- Implementirani primjeri poslužitelja sa Server-Sent Events (SSE)
+- Dodana dokumentacija za integraciju s VS Codeom
+- Implementirani primjeri servera s događajima poslanim od strane servera (SSE)
 
 ### Osnovni koncepti (01-CoreConcepts/)
-- Dodano detaljno objašnjenje arhitekture klijent-poslužitelj
+- Dodano detaljno objašnjenje arhitekture klijent-server
 - Kreirana dokumentacija o ključnim komponentama protokola
 - Dokumentirani obrasci poruka u MCP-u
 
@@ -182,9 +199,11 @@ Ovaj dokument služi kao zapis svih značajnih promjena napravljenih u kurikulum
 ### Planiranje i okvir
 - Početno planiranje kurikuluma MCP za početnike
 - Definirani ciljevi učenja i ciljana publika
-- Nacrtana struktura od 10 odjeljaka kurikuluma
+- Osmišljena struktura od 10 odjeljaka kurikuluma
 - Razvijen konceptualni okvir za primjere i studije slučaja
 - Kreirani početni prototipovi primjera za ključne koncepte
 
+---
+
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za bilo kakve nesporazume ili pogrešne interpretacije proizašle iz korištenja ovog prijevoda.
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.

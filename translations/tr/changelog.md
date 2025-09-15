@@ -1,114 +1,118 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "245b03ae1e7973094fe82b8051ae0939",
-  "translation_date": "2025-08-18T17:41:51+00:00",
+  "original_hash": "56dd5af7e84cc0db6e17e310112109ae",
+  "translation_date": "2025-09-15T22:11:47+00:00",
   "source_file": "changelog.md",
   "language_code": "tr"
 }
 -->
 # Değişiklik Günlüğü: Yeni Başlayanlar için MCP Müfredatı
 
-Bu belge, Model Context Protocol (MCP) için Yeni Başlayanlar müfredatında yapılan tüm önemli değişikliklerin kaydını tutar. Değişiklikler, kronolojik olarak ters sırada (en yeni değişiklikler önce) belgelenmiştir.
+Bu belge, Model Context Protocol (MCP) için Yeni Başlayanlar müfredatında yapılan tüm önemli değişikliklerin kaydını tutar. Değişiklikler, ters kronolojik sırayla (en yeni değişiklikler önce) belgelenmiştir.
+
+## 15 Eylül 2025
+
+### Gelişmiş Konular Genişletmesi - Özel Taşıma Mekanizmaları ve Bağlam Mühendisliği
+
+#### MCP Özel Taşıma Mekanizmaları (05-AdvancedTopics/mcp-transport/) - Yeni Gelişmiş Uygulama Kılavuzu
+- **README.md**: Özel MCP taşıma mekanizmaları için eksiksiz uygulama kılavuzu
+  - **Azure Event Grid Taşıma Mekanizması**: Kapsamlı sunucusuz olay odaklı taşıma mekanizması uygulaması
+    - Azure Functions entegrasyonu ile C#, TypeScript ve Python örnekleri
+    - Ölçeklenebilir MCP çözümleri için olay odaklı mimari desenler
+    - Webhook alıcıları ve itme tabanlı mesaj işleme
+  - **Azure Event Hubs Taşıma Mekanizması**: Yüksek verimli akış taşıma mekanizması uygulaması
+    - Düşük gecikme senaryoları için gerçek zamanlı akış yetenekleri
+    - Bölümlendirme stratejileri ve kontrol noktası yönetimi
+    - Mesaj gruplama ve performans optimizasyonu
+  - **Kurumsal Entegrasyon Desenleri**: Üretime hazır mimari örnekler
+    - Birden fazla Azure Functions arasında dağıtılmış MCP işleme
+    - Birden fazla taşıma türünü birleştiren hibrit taşıma mimarileri
+    - Mesaj dayanıklılığı, güvenilirlik ve hata işleme stratejileri
+  - **Güvenlik ve İzleme**: Azure Key Vault entegrasyonu ve gözlemlenebilirlik desenleri
+    - Yönetilen kimlik doğrulama ve en az ayrıcalıklı erişim
+    - Application Insights telemetri ve performans izleme
+    - Devre kesiciler ve hata toleransı desenleri
+  - **Test Çerçeveleri**: Özel taşıma mekanizmaları için kapsamlı test stratejileri
+    - Test doubles ve mocking çerçeveleri ile birim testi
+    - Azure Test Containers ile entegrasyon testi
+    - Performans ve yük testi değerlendirmeleri
+
+#### Bağlam Mühendisliği (05-AdvancedTopics/mcp-contextengineering/) - Gelişen AI Disiplini
+- **README.md**: Bağlam mühendisliğini gelişen bir alan olarak kapsamlı bir şekilde keşfetme
+  - **Temel İlkeler**: Tam bağlam paylaşımı, eylem karar farkındalığı ve bağlam pencere yönetimi
+  - **MCP Protokol Uyumu**: MCP tasarımının bağlam mühendisliği zorluklarını nasıl ele aldığı
+    - Bağlam pencere sınırlamaları ve aşamalı yükleme stratejileri
+    - Alaka belirleme ve dinamik bağlam alma
+    - Çok modlu bağlam işleme ve güvenlik değerlendirmeleri
+  - **Uygulama Yaklaşımları**: Tek iş parçacıklı ve çoklu ajan mimarileri
+    - Bağlam parçalama ve önceliklendirme teknikleri
+    - Aşamalı bağlam yükleme ve sıkıştırma stratejileri
+    - Katmanlı bağlam yaklaşımları ve alma optimizasyonu
+  - **Ölçüm Çerçevesi**: Bağlam etkinliğini değerlendirmek için gelişen metrikler
+    - Girdi verimliliği, performans, kalite ve kullanıcı deneyimi değerlendirmeleri
+    - Bağlam optimizasyonu için deneysel yaklaşımlar
+    - Hata analizi ve iyileştirme metodolojileri
+
+#### Müfredat Navigasyon Güncellemeleri (README.md)
+- **Geliştirilmiş Modül Yapısı**: Yeni gelişmiş konuları içerecek şekilde güncellenmiş müfredat tablosu
+  - Bağlam Mühendisliği (5.14) ve Özel Taşıma Mekanizmaları (5.15) girişleri eklendi
+  - Tüm modüller arasında tutarlı formatlama ve navigasyon bağlantıları
+  - Mevcut içerik kapsamını yansıtacak şekilde güncellenmiş açıklamalar
+
+### Dizin Yapısı İyileştirmeleri
+- **Adlandırma Standartlaştırması**: "mcp transport" klasörü, diğer gelişmiş konu klasörleriyle tutarlılık sağlamak için "mcp-transport" olarak yeniden adlandırıldı
+- **İçerik Organizasyonu**: Tüm 05-AdvancedTopics klasörleri artık tutarlı bir adlandırma düzenini takip ediyor (mcp-[konu])
+
+### Dokümantasyon Kalitesi İyileştirmeleri
+- **MCP Spesifikasyon Uyumu**: Tüm yeni içerik, mevcut MCP Spesifikasyonu 2025-06-18'e referans veriyor
+- **Çok Dilli Örnekler**: C#, TypeScript ve Python'da kapsamlı kod örnekleri
+- **Kurumsal Odak**: Üretime hazır desenler ve Azure bulut entegrasyonu
+- **Görsel Dokümantasyon**: Mimari ve akış görselleştirme için Mermaid diyagramları
 
 ## 18 Ağustos 2025
 
-### Belgelerin Kapsamlı Güncellemesi - MCP 2025-06-18 Standartları
+### Dokümantasyon Kapsamlı Güncellemesi - MCP 2025-06-18 Standartları
 
 #### MCP Güvenlik En İyi Uygulamaları (02-Security/) - Tam Modernizasyon
-- **MCP-SECURITY-BEST-PRACTICES-2025.md**: MCP Spesifikasyonu 2025-06-18 ile uyumlu olarak tamamen yeniden yazıldı
-  - **Zorunlu Gereksinimler**: Resmi spesifikasyondan açıkça belirtilmiş MUST/MUST NOT gereksinimleri, net görsel göstergelerle eklendi
+- **MCP-SECURITY-BEST-PRACTICES-2025.md**: Resmi spesifikasyondan açıkça belirtilmiş MUST/MUST NOT gereksinimleri içeren tam yeniden yazım
   - **12 Temel Güvenlik Uygulaması**: 15 maddelik listeden kapsamlı güvenlik alanlarına yeniden yapılandırıldı
-    - Harici kimlik sağlayıcı entegrasyonu ile Token Güvenliği ve Kimlik Doğrulama
-    - Kriptografik gereksinimlerle Oturum Yönetimi ve Taşıma Güvenliği
-    - Microsoft Prompt Shields entegrasyonu ile AI-Specifik Tehdit Koruması
-    - En az ayrıcalık ilkesiyle Erişim Kontrolü ve İzinler
-    - Azure Content Safety entegrasyonu ile İçerik Güvenliği ve İzleme
-    - Kapsamlı bileşen doğrulama ile Tedarik Zinciri Güvenliği
-    - PKCE uygulaması ile OAuth Güvenliği ve Karışık Vekil Önleme
-    - Otomatik yeteneklerle Olay Müdahalesi ve Kurtarma
-    - Düzenleyici uyum ile Uyumluluk ve Yönetim
-    - Sıfır güven mimarisi ile Gelişmiş Güvenlik Kontrolleri
-    - Kapsamlı çözümlerle Microsoft Güvenlik Ekosistemi Entegrasyonu
-    - Uyarlanabilir uygulamalarla Sürekli Güvenlik Gelişimi
-  - **Microsoft Güvenlik Çözümleri**: Prompt Shields, Azure Content Safety, Entra ID ve GitHub Advanced Security için geliştirilmiş entegrasyon rehberliği
-  - **Uygulama Kaynakları**: Resmi MCP Belgeleri, Microsoft Güvenlik Çözümleri, Güvenlik Standartları ve Uygulama Kılavuzları olarak kategorize edilmiş kapsamlı kaynak bağlantıları
+    - Token Güvenliği ve Kimlik Doğrulama ile harici kimlik sağlayıcı entegrasyonu
+    - Oturum Yönetimi ve Taşıma Güvenliği ile kriptografik gereksinimler
+    - AI-Specifik Tehdit Koruması ile Microsoft Prompt Shields entegrasyonu
+    - Erişim Kontrolü ve İzinler ile en az ayrıcalık ilkesi
+    - İçerik Güvenliği ve İzleme ile Azure Content Safety entegrasyonu
+    - Tedarik Zinciri Güvenliği ile kapsamlı bileşen doğrulama
+    - OAuth Güvenliği ve Confused Deputy Önleme ile PKCE uygulaması
+    - Olay Yanıtı ve Kurtarma ile otomatik yetenekler
+    - Uyumluluk ve Yönetim ile düzenleyici uyum
+    - Gelişmiş Güvenlik Kontrolleri ile sıfır güven mimarisi
+    - Microsoft Güvenlik Ekosistemi Entegrasyonu ile kapsamlı çözümler
+    - Sürekli Güvenlik Evrimi ile uyarlanabilir uygulamalar
+  - **Microsoft Güvenlik Çözümleri**: Prompt Shields, Azure Content Safety, Entra ID ve GitHub Advanced Security için geliştirilmiş entegrasyon rehberi
+  - **Uygulama Kaynakları**: Resmi MCP Dokümantasyonu, Microsoft Güvenlik Çözümleri, Güvenlik Standartları ve Uygulama Kılavuzları olarak kategorize edilmiş kapsamlı kaynak bağlantıları
 
 #### Gelişmiş Güvenlik Kontrolleri (02-Security/) - Kurumsal Uygulama
-- **MCP-SECURITY-CONTROLS-2025.md**: Kurumsal düzeyde güvenlik çerçevesi ile tamamen yeniden düzenlendi
-  - **9 Kapsamlı Güvenlik Alanı**: Temel kontrollerden ayrıntılı kurumsal çerçeveye genişletildi
-    - Microsoft Entra ID entegrasyonu ile Gelişmiş Kimlik Doğrulama ve Yetkilendirme
-    - Kapsamlı doğrulama ile Token Güvenliği ve Passthrough Önleme Kontrolleri
-    - Oturum Güvenliği Kontrolleri ile ele geçirme önleme
-    - Prompt enjeksiyonu ve araç zehirlenmesi önleme ile AI-Specifik Güvenlik Kontrolleri
-    - OAuth proxy güvenliği ile Karışık Vekil Saldırısı Önleme
-    - Sandboxing ve izolasyon ile Araç Çalıştırma Güvenliği
-    - Bağımlılık doğrulama ile Tedarik Zinciri Güvenlik Kontrolleri
-    - SIEM entegrasyonu ile İzleme ve Tespit Kontrolleri
-    - Otomatik yeteneklerle Olay Müdahalesi ve Kurtarma
-  - **Uygulama Örnekleri**: Ayrıntılı YAML yapılandırma blokları ve kod örnekleri eklendi
+- **MCP-SECURITY-CONTROLS-2025.md**: Temel kontrollerden detaylı kurumsal çerçeveye genişletilmiş tam yeniden yazım
+  - **9 Kapsamlı Güvenlik Alanı**: Gelişmiş kimlik doğrulama ve yetkilendirme, oturum güvenliği, AI tehdit koruması gibi detaylı kurumsal çerçeve
+  - **Uygulama Örnekleri**: Detaylı YAML yapılandırma blokları ve kod örnekleri eklendi
   - **Microsoft Çözümleri Entegrasyonu**: Azure güvenlik hizmetleri, GitHub Advanced Security ve kurumsal kimlik yönetimi kapsamlı şekilde ele alındı
 
-#### Gelişmiş Konular Güvenliği (05-AdvancedTopics/mcp-security/) - Üretime Hazır Uygulama
-- **README.md**: Kurumsal güvenlik uygulaması için tamamen yeniden yazıldı
-  - **Mevcut Spesifikasyon Uyumu**: MCP Spesifikasyonu 2025-06-18 ile güncellendi ve zorunlu güvenlik gereksinimleri eklendi
+#### Gelişmiş Konular Güvenlik (05-AdvancedTopics/mcp-security/) - Üretime Hazır Uygulama
+- **README.md**: Kurumsal güvenlik uygulaması için tam yeniden yazım
+  - **Mevcut Spesifikasyon Uyumu**: MCP Spesifikasyonu 2025-06-18'e güncellendi
   - **Gelişmiş Kimlik Doğrulama**: Microsoft Entra ID entegrasyonu ile kapsamlı .NET ve Java Spring Security örnekleri
-  - **AI Güvenlik Entegrasyonu**: Microsoft Prompt Shields ve Azure Content Safety uygulaması ile ayrıntılı Python örnekleri
-  - **Gelişmiş Tehdit Azaltma**: Kapsamlı uygulama örnekleri
-    - PKCE ve kullanıcı onayı doğrulaması ile Karışık Vekil Saldırısı Önleme
-    - Hedef doğrulama ve güvenli token yönetimi ile Token Passthrough Önleme
-    - Kriptografik bağlama ve davranış analizi ile Oturum Ele Geçirme Önleme
+  - **AI Güvenlik Entegrasyonu**: Microsoft Prompt Shields ve Azure Content Safety uygulaması ile detaylı Python örnekleri
+  - **Gelişmiş Tehdit Azaltma**: PKCE ve kullanıcı onayı doğrulama gibi detaylı uygulama örnekleri
   - **Kurumsal Güvenlik Entegrasyonu**: Azure Application Insights izleme, tehdit algılama hatları ve tedarik zinciri güvenliği
-  - **Uygulama Kontrol Listesi**: Microsoft güvenlik ekosistemi avantajları ile net zorunlu ve önerilen güvenlik kontrolleri
+  - **Uygulama Kontrol Listesi**: Microsoft güvenlik ekosistemi avantajları ile açıkça belirtilmiş zorunlu ve önerilen güvenlik kontrolleri
 
-### Belge Kalitesi ve Standartlara Uyum
-- **Spesifikasyon Referansları**: Tüm referanslar MCP Spesifikasyonu 2025-06-18 ile güncellendi
-- **Microsoft Güvenlik Ekosistemi**: Tüm güvenlik belgelerinde geliştirilmiş entegrasyon rehberliği
-- **Pratik Uygulama**: .NET, Java ve Python'da ayrıntılı kod örnekleri ile kurumsal desenler eklendi
-- **Kaynak Organizasyonu**: Resmi belgeler, güvenlik standartları ve uygulama kılavuzları kapsamlı şekilde kategorize edildi
-- **Görsel Göstergeler**: Zorunlu gereksinimler ve önerilen uygulamalar net şekilde işaretlendi
-
-#### Temel Kavramlar (01-CoreConcepts/) - Tam Modernizasyon
-- **Protokol Versiyon Güncellemesi**: Mevcut MCP Spesifikasyonu 2025-06-18'e referans verildi ve tarih bazlı versiyonlama (YYYY-MM-DD formatı) eklendi
-- **Mimari İyileştirme**: Mevcut MCP mimari desenlerini yansıtacak şekilde Hostlar, İstemciler ve Sunucuların tanımları geliştirildi
-  - Hostlar artık birden fazla MCP istemci bağlantısını koordine eden AI uygulamaları olarak açıkça tanımlandı
-  - İstemciler, bir sunucu ile birebir ilişkiyi sürdüren protokol bağlayıcıları olarak tanımlandı
-  - Sunucular, yerel ve uzak dağıtım senaryoları ile geliştirildi
-- **İlkel Yapılandırma**: Sunucu ve istemci ilkel öğeleri tamamen yeniden düzenlendi
-  - Sunucu İlkel Öğeleri: Kaynaklar (veri kaynakları), Prompts (şablonlar), Araçlar (çalıştırılabilir işlevler) ile ayrıntılı açıklamalar ve örnekler
-  - İstemci İlkel Öğeleri: Örnekleme (LLM tamamlama), Elicitation (kullanıcı girdisi), Logging (hata ayıklama/izleme)
-  - Mevcut keşif (`*/list`), alma (`*/get`) ve çalıştırma (`*/call`) yöntem desenleri ile güncellendi
-- **Protokol Mimarisi**: İki katmanlı mimari modeli tanıtıldı
-  - Veri Katmanı: JSON-RPC 2.0 temeli ile yaşam döngüsü yönetimi ve ilkel öğeler
-  - Taşıma Katmanı: STDIO (yerel) ve Streamable HTTP ile SSE (uzak) taşıma mekanizmaları
-- **Güvenlik Çerçevesi**: Açık kullanıcı onayı, veri gizliliği koruması, araç çalıştırma güvenliği ve taşıma katmanı güvenliği dahil kapsamlı güvenlik ilkeleri
-- **İletişim Desenleri**: Başlatma, keşif, çalıştırma ve bildirim akışlarını gösteren protokol mesajları güncellendi
-- **Kod Örnekleri**: Mevcut MCP SDK desenlerini yansıtacak şekilde çoklu dil örnekleri (.NET, Java, Python, JavaScript) yenilendi
-
-#### Güvenlik (02-Security/) - Kapsamlı Güvenlik Yeniden Düzenlemesi  
-- **Standartlara Uyum**: MCP Spesifikasyonu 2025-06-18 güvenlik gereksinimleri ile tam uyum
-- **Kimlik Doğrulama Gelişimi**: Özel OAuth sunucularından harici kimlik sağlayıcı delegasyonuna (Microsoft Entra ID) geçiş belgelenmiştir
-- **AI-Specifik Tehdit Analizi**: Modern AI saldırı vektörlerinin kapsamlı analizi
-  - Gerçek dünya örnekleriyle ayrıntılı prompt enjeksiyonu saldırı senaryoları
-  - Araç zehirlenmesi mekanizmaları ve "rug pull" saldırı desenleri
-  - Bağlam penceresi zehirlenmesi ve model karışıklığı saldırıları
-- **Microsoft AI Güvenlik Çözümleri**: Microsoft güvenlik ekosisteminin kapsamlı ele alınması
-  - Gelişmiş tespit, vurgulama ve ayırıcı tekniklerle AI Prompt Shields
-  - Azure Content Safety entegrasyon desenleri
-  - Tedarik zinciri koruması için GitHub Advanced Security
-- **Gelişmiş Tehdit Azaltma**: Ayrıntılı güvenlik kontrolleri
-  - MCP'ye özgü saldırı senaryoları ve kriptografik oturum kimliği gereksinimleri ile oturum ele geçirme
-  - MCP proxy senaryolarında açık onay gereksinimleri ile karışık vekil sorunları
-  - Zorunlu doğrulama kontrolleri ile token passthrough açıkları
-- **Tedarik Zinciri Güvenliği**: Temel modeller, gömme hizmetleri, bağlam sağlayıcılar ve üçüncü taraf API'ler dahil genişletilmiş AI tedarik zinciri kapsamı
-- **Temel Güvenlik**: Sıfır güven mimarisi ve Microsoft güvenlik ekosistemi dahil kurumsal güvenlik desenleri ile geliştirilmiş entegrasyon
-- **Kaynak Organizasyonu**: Resmi Belgeler, Standartlar, Araştırma, Microsoft Çözümleri ve Uygulama Kılavuzları olarak kategorize edilmiş kapsamlı kaynak bağlantıları
-
-### Belge Kalitesi İyileştirmeleri
-- **Yapılandırılmış Öğrenme Hedefleri**: Belirli, uygulanabilir sonuçlarla geliştirilmiş öğrenme hedefleri
-- **Çapraz Referanslar**: İlgili güvenlik ve temel kavram konuları arasında bağlantılar eklendi
-- **Güncel Bilgiler**: Tüm tarih referansları ve spesifikasyon bağlantıları güncel standartlara göre güncellendi
-- **Uygulama Rehberliği**: Her iki bölümde de belirli, uygulanabilir uygulama yönergeleri eklendi
+### Dokümantasyon Kalitesi ve Standart Uyumu
+- **Spesifikasyon Referansları**: Tüm referanslar mevcut MCP Spesifikasyonu 2025-06-18'e güncellendi
+- **Microsoft Güvenlik Ekosistemi**: Tüm güvenlik dokümantasyonu boyunca geliştirilmiş entegrasyon rehberi
+- **Pratik Uygulama**: .NET, Java ve Python'da detaylı kod örnekleri ile kurumsal desenler eklendi
+- **Kaynak Organizasyonu**: Resmi dokümantasyon, güvenlik standartları ve uygulama kılavuzları olarak kapsamlı kategorize edilmiş kaynak bağlantıları
+- **Görsel Göstergeler**: Zorunlu gereksinimler ve önerilen uygulamalar için açık işaretleme
 
 ## 16 Temmuz 2025
 
@@ -120,7 +124,7 @@ Bu belge, Model Context Protocol (MCP) için Yeni Başlayanlar müfredatında ya
 - En son dosyaları içerecek şekilde depo yapısı bölümü güncellendi
 - "Bu Müfredat Nasıl Kullanılır" bölümüne net öneriler eklendi
 - MCP spesifikasyon bağlantıları doğru URL'lere yönlendirildi
-- Müfredat yapısına Context Engineering bölümü (5.14) eklendi
+- Müfredat yapısına Bağlam Mühendisliği bölümü (5.14) eklendi
 
 ### Çalışma Kılavuzu Güncellemeleri
 - Çalışma kılavuzu, mevcut depo yapısına uyacak şekilde tamamen revize edildi
@@ -131,36 +135,36 @@ Bu belge, Model Context Protocol (MCP) için Yeni Başlayanlar müfredatında ya
 - Bu kapsamlı değişiklik günlüğü eklendi
 
 ### Topluluk Katkıları (06-CommunityContributions/)
-- Görüntü oluşturma için MCP sunucuları hakkında ayrıntılı bilgiler eklendi
-- VSCode'da Claude kullanımı için kapsamlı bir bölüm eklendi
+- Görüntü oluşturma için MCP sunucuları hakkında detaylı bilgiler eklendi
+- VSCode'da Claude kullanımı hakkında kapsamlı bir bölüm eklendi
 - Cline terminal istemcisi kurulum ve kullanım talimatları eklendi
 - MCP istemci bölümü tüm popüler istemci seçeneklerini içerecek şekilde güncellendi
 - Daha doğru kod örnekleriyle katkı örnekleri geliştirildi
 
 ### Gelişmiş Konular (05-AdvancedTopics/)
-- Tüm özel konu klasörleri tutarlı adlandırma ile düzenlendi
-- Context engineering materyalleri ve örnekleri eklendi
-- Foundry ajan entegrasyonu belgeleri eklendi
-- Entra ID güvenlik entegrasyonu belgeleri geliştirildi
+- Tüm özel konu klasörleri tutarlı bir adlandırma ile düzenlendi
+- Bağlam mühendisliği materyalleri ve örnekleri eklendi
+- Foundry ajan entegrasyonu dokümantasyonu eklendi
+- Entra ID güvenlik entegrasyonu dokümantasyonu geliştirildi
 
 ## 11 Haziran 2025
 
 ### İlk Oluşturma
-- Yeni Başlayanlar için MCP müfredatının ilk sürümü yayınlandı
+- Yeni Başlayanlar için MCP müfredatının ilk versiyonu yayınlandı
 - Tüm 10 ana bölüm için temel yapı oluşturuldu
 - Navigasyon için Görsel Müfredat Haritası uygulandı
-- Birden fazla programlama dilinde ilk örnek projeler eklendi
+- Birden fazla programlama dilinde örnek projeler eklendi
 
-### Başlarken (03-GettingStarted/)
+### Başlangıç (03-GettingStarted/)
 - İlk sunucu uygulama örnekleri oluşturuldu
-- İstemci geliştirme rehberliği eklendi
+- İstemci geliştirme rehberi eklendi
 - LLM istemci entegrasyon talimatları eklendi
-- VS Code entegrasyon belgeleri eklendi
+- VS Code entegrasyon dokümantasyonu eklendi
 - Server-Sent Events (SSE) sunucu örnekleri uygulandı
 
 ### Temel Kavramlar (01-CoreConcepts/)
-- İstemci-sunucu mimarisi hakkında ayrıntılı açıklamalar eklendi
-- Anahtar protokol bileşenleri hakkında belgeler oluşturuldu
+- İstemci-sunucu mimarisi hakkında detaylı açıklamalar eklendi
+- Anahtar protokol bileşenleri hakkında dokümantasyon oluşturuldu
 - MCP'deki mesajlaşma desenleri belgelenmiştir
 
 ## 23 Mayıs 2025
@@ -171,10 +175,10 @@ Bu belge, Model Context Protocol (MCP) için Yeni Başlayanlar müfredatında ya
 - Çeviri altyapısı kuruldu
 - Görsel varlıklar ve diyagramlar eklendi
 
-### Belgeler
+### Dokümantasyon
 - Müfredat genel görünümü ile ilk README.md oluşturuldu
 - CODE_OF_CONDUCT.md ve SECURITY.md eklendi
-- Yardım alma rehberliği ile SUPPORT.md kuruldu
+- SUPPORT.md ile yardım alma rehberi oluşturuldu
 - İlk çalışma kılavuzu yapısı oluşturuldu
 
 ## 15 Nisan 2025
@@ -186,5 +190,7 @@ Bu belge, Model Context Protocol (MCP) için Yeni Başlayanlar müfredatında ya
 - Örnekler ve vaka çalışmaları için kavramsal çerçeve geliştirildi
 - Anahtar kavramlar için ilk prototip örnekler oluşturuldu
 
+---
+
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Belgenin orijinal dilindeki hali, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
