@@ -2,6 +2,65 @@
 
 This document serves as a record of all significant changes made to the Model Context Protocol (MCP) for Beginners curriculum. Changes are documented in reverse chronological order (newest changes first).
 
+## September 15, 2025
+
+### Advanced Topics Expansion - Custom Transports & Context Engineering
+
+#### MCP Custom Transports (05-AdvancedTopics/mcp-transport/) - New Advanced Implementation Guide
+- **README.md**: Complete implementation guide for custom MCP transport mechanisms
+  - **Azure Event Grid Transport**: Comprehensive serverless event-driven transport implementation
+    - C#, TypeScript, and Python examples with Azure Functions integration
+    - Event-driven architecture patterns for scalable MCP solutions
+    - Webhook receivers and push-based message handling
+  - **Azure Event Hubs Transport**: High-throughput streaming transport implementation
+    - Real-time streaming capabilities for low-latency scenarios
+    - Partitioning strategies and checkpoint management
+    - Message batching and performance optimization
+  - **Enterprise Integration Patterns**: Production-ready architectural examples
+    - Distributed MCP processing across multiple Azure Functions
+    - Hybrid transport architectures combining multiple transport types
+    - Message durability, reliability, and error handling strategies
+  - **Security & Monitoring**: Azure Key Vault integration and observability patterns
+    - Managed identity authentication and least privilege access
+    - Application Insights telemetry and performance monitoring
+    - Circuit breakers and fault tolerance patterns
+  - **Testing Frameworks**: Comprehensive testing strategies for custom transports
+    - Unit testing with test doubles and mocking frameworks
+    - Integration testing with Azure Test Containers
+    - Performance and load testing considerations
+
+#### Context Engineering (05-AdvancedTopics/mcp-contextengineering/) - Emerging AI Discipline
+- **README.md**: Comprehensive exploration of context engineering as an emerging field
+  - **Core Principles**: Complete context sharing, action decision awareness, and context window management
+  - **MCP Protocol Alignment**: How MCP design addresses context engineering challenges
+    - Context window limitations and progressive loading strategies
+    - Relevance determination and dynamic context retrieval
+    - Multi-modal context handling and security considerations
+  - **Implementation Approaches**: Single-threaded vs. multi-agent architectures
+    - Context chunking and prioritization techniques
+    - Progressive context loading and compression strategies
+    - Layered context approaches and retrieval optimization
+  - **Measurement Framework**: Emerging metrics for context effectiveness evaluation
+    - Input efficiency, performance, quality, and user experience considerations
+    - Experimental approaches to context optimization
+    - Failure analysis and improvement methodologies
+
+#### Curriculum Navigation Updates (README.md)
+- **Enhanced Module Structure**: Updated curriculum table to include new advanced topics
+  - Added Context Engineering (5.14) and Custom Transport (5.15) entries
+  - Consistent formatting and navigation links across all modules
+  - Updated descriptions to reflect current content scope
+
+### Directory Structure Improvements
+- **Naming Standardization**: Renamed "mcp transport" to "mcp-transport" for consistency with other advanced topic folders
+- **Content Organization**: All 05-AdvancedTopics folders now follow consistent naming pattern (mcp-[topic])
+
+### Documentation Quality Enhancements
+- **MCP Specification Alignment**: All new content references current MCP Specification 2025-06-18
+- **Multi-Language Examples**: Comprehensive code examples in C#, TypeScript, and Python
+- **Enterprise Focus**: Production-ready patterns and Azure cloud integration throughout
+- **Visual Documentation**: Mermaid diagrams for architecture and flow visualization
+
 ## August 18, 2025
 
 ### Documentation Comprehensive Update - MCP 2025-06-18 Standards
