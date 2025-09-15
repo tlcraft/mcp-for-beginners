@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "866c8877136cb03e1efb9ad633a2f0a6",
-  "translation_date": "2025-08-26T17:51:01+00:00",
+  "original_hash": "e56e4571ad666874979dcfcf822f6966",
+  "translation_date": "2025-09-15T18:50:05+00:00",
   "source_file": "README.md",
   "language_code": "da"
 }
@@ -39,7 +39,7 @@ Følg disse trin for at komme i gang med at bruge disse ressourcer:
 
 ## 🧠 Oversigt over Model Context Protocol Læseplanen
 
-**Model Context Protocol (MCP)** er en banebrydende ramme designet til at standardisere interaktioner mellem AI-modeller og klientapplikationer. Denne open-source læseplan tilbyder en struktureret læringssti med praktiske kodeeksempler og virkelige anvendelser på tværs af populære programmeringssprog som C#, Java, JavaScript, TypeScript og Python.
+**Model Context Protocol (MCP)** er en banebrydende ramme designet til at standardisere interaktioner mellem AI-modeller og klientapplikationer. Denne open-source læseplan tilbyder en struktureret læringsvej med praktiske kodeeksempler og virkelige anvendelsesscenarier på populære programmeringssprog som C#, Java, JavaScript, TypeScript og Python.
 
 Uanset om du er AI-udvikler, systemarkitekt eller softwareingeniør, er denne guide din omfattende ressource til at mestre MCP's grundlæggende principper og implementeringsstrategier.
 
@@ -73,11 +73,11 @@ Uanset om du er AI-udvikler, systemarkitekt eller softwareingeniør, er denne gu
 | 3.8 | Testning | Test din MCP-serverimplementering | [Vejledning](./03-GettingStarted/08-testing/README.md) |
 | 3.9 | Udrulning | Udrul MCP-servere til produktion | [Vejledning](./03-GettingStarted/09-deployment/README.md) |
 | **Modul 4-5: Praktisk & Avanceret** | | | |
-| 04 | Praktisk Implementering | SDK'er, fejlfinding, testning, genanvendelige promptskabeloner | [Læs mere](./04-PracticalImplementation/README.md) |
+| 04 | Praktisk Implementering | SDK'er, debugging, testning, genanvendelige promptskabeloner | [Læs mere](./04-PracticalImplementation/README.md) |
 | 05 | Avancerede Emner i MCP | Multi-modal AI, skalering, virksomhedsanvendelse | [Læs mere](./05-AdvancedTopics/README.md) |
 | 5.1 | Azure Integration | MCP Integration med Azure | [Vejledning](./05-AdvancedTopics/mcp-integration/README.md) |
 | 5.2 | Multi-modalitet | Arbejde med flere modaliteter | [Vejledning](./05-AdvancedTopics/mcp-multi-modality/README.md) |
-| 5.3 | OAuth2 Demo | Implementer OAuth2-autentifikation | [Vejledning](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+| 5.3 | OAuth2 Demo | Implementer OAuth2-autentificering | [Vejledning](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
 | 5.4 | Root Contexts | Forstå og implementer root contexts | [Vejledning](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | Routing | MCP routing-strategier | [Vejledning](./05-AdvancedTopics/mcp-routing/README.md) |
 | 5.6 | Sampling | Sampling-teknikker i MCP | [Vejledning](./05-AdvancedTopics/mcp-sampling/README.md) |
@@ -86,15 +86,15 @@ Uanset om du er AI-udvikler, systemarkitekt eller softwareingeniør, er denne gu
 | 5.9 | Websøgning | Implementer websøgningsevner | [Vejledning](./05-AdvancedTopics/web-search-mcp/README.md) |
 | 5.10 | Realtidsstreaming | Byg funktionalitet til realtidsstreaming | [Vejledning](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
 | 5.11 | Realtidssøgning | Implementer realtidssøgning | [Vejledning](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
-| 5.12 | Entra ID Auth | Autentifikation med Microsoft Entra ID | [Vejledning](./05-AdvancedTopics/mcp-security-entra/README.md) |
+| 5.12 | Entra ID Auth | Autentificering med Microsoft Entra ID | [Vejledning](./05-AdvancedTopics/mcp-security-entra/README.md) |
 | 5.13 | Foundry Integration | Integrer med Azure AI Foundry | [Vejledning](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
 | 5.14 | Context Engineering | Teknikker til effektiv context engineering | [Vejledning](./05-AdvancedTopics/mcp-contextengineering/README.md) |
 | **Modul 6-10: Fællesskab & Bedste Praksis** | | | |
-| 06 | Fællesskabsbidrag | Hvordan man bidrager til MCP-økosystemet | [Vejledning](./06-CommunityContributions/README.md) |
+| 06 | Fællesskabsbidrag | Sådan bidrager du til MCP-økosystemet | [Vejledning](./06-CommunityContributions/README.md) |
 | 07 | Indsigter fra Tidlig Adoptering | Virkelige implementeringshistorier | [Vejledning](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | Bedste Praksis for MCP | Ydeevne, fejltolerance, robusthed | [Vejledning](./08-BestPractices/README.md) |
 | 09 | MCP Case Studies | Praktiske implementeringseksempler | [Vejledning](./09-CaseStudy/README.md) |
-| 10 | Praktisk Workshop | Byg en MCP-server med AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
+| 10 | Hands-on Workshop | Byg en MCP-server med AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
 ### 💻 Eksempelprojekter med Kode
 
@@ -125,8 +125,8 @@ For at få mest muligt ud af dette pensum bør du have:
 
 - Grundlæggende kendskab til programmering i mindst én af følgende sprog: C#, Java, JavaScript, Python eller TypeScript
 - Forståelse af klient-server-modellen og API'er
-- Kendskab til REST og HTTP-konceptet
-- (Valgfrit) Baggrund i AI/ML-konceptet
+- Kendskab til REST og HTTP-koncepter
+- (Valgfrit) Baggrund i AI/ML-koncepter
 
 - Deltagelse i vores fællesskabsdiskussioner for støtte
 
@@ -157,16 +157,16 @@ Vi opretholder en detaljeret [Ændringslog](./changelog.md), der sporer alle væ
 
 Hver lektion i denne vejledning inkluderer:
 
-1. Klare forklaringer af MCP-konceptet  
+1. Klare forklaringer af MCP-koncepter  
 2. Live kodeeksempler i flere sprog  
 3. Øvelser til at bygge rigtige MCP-applikationer  
-4. Ekstra ressourcer til avancerede elever
+4. Ekstra ressourcer til avancerede elever  
 
 ## Events 
 
 ### [MCP Dev Days Juli 2025](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 #### [➡️Se On Demand - MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
-Gør dig klar til to dage med dyb teknisk indsigt, fællesskabskonnektion og praktisk læring ved MCP Dev Days, en virtuel begivenhed dedikeret til Model Context Protocol (MCP) — den nye standard, der forbinder AI-modeller og de værktøjer, de er afhængige af.
+Gør dig klar til to dage med dyb teknisk indsigt, fællesskabsforbindelse og praktisk læring ved MCP Dev Days, en virtuel begivenhed dedikeret til Model Context Protocol (MCP) — den nye standard, der forbinder AI-modeller og de værktøjer, de er afhængige af.
 Du kan se MCP Dev Days ved at registrere dig på vores begivenhedsside: https://aka.ms/mcpdevdays. 
 
 #### [Dag 1: MCP Produktivitet, DevTools & Fællesskab:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
@@ -198,13 +198,20 @@ Lær i intensive videosessioner, hvordan du opretter MCP-servere, integrerer med
 #### [➡️Se On Demand MCP Bootcamp | Brasil](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
 #### [➡️Se On Demand MCP Bootcamp | Spansk](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
 
+### Lad os Lære MCP med C# - Tutorial Serie
+Lad os lære om Model Context Protocol (MCP), et banebrydende framework designet til at standardisere interaktioner mellem AI-modeller og klientapplikationer. Gennem denne begyndervenlige session vil vi introducere dig til MCP og guide dig gennem oprettelsen af din første MCP-server.
+#### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
+#### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
+#### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
+#### Python: [https://aka.ms/letslearnmcp-python](https://aka.ms/letslearnmcp-python)
+
 ## 🌟 Tak til Fællesskabet
 
-Tak til Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) for at bidrage med vigtige kodeeksempler.
+Tak til Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) for at bidrage med vigtige kodeeksempler. 
 
 ## 📜 Licensinformation
 
-Dette indhold er licenseret under **MIT-licensen**. For vilkår og betingelser, se [LICENSE](../../LICENSE).
+Dette indhold er licenseret under **MIT License**. For vilkår og betingelser, se [LICENSE](../../LICENSE).
 
 ## 🤝 Retningslinjer for Bidrag
 
@@ -214,8 +221,8 @@ rettighederne til at bruge dit bidrag. For detaljer, besøg
 <https://cla.opensource.microsoft.com>.
 
 Når du indsender en pull request, vil en CLA-bot automatisk afgøre, om du skal give
-en CLA og dekorere PR'en passende (f.eks. statuscheck, kommentar). Følg blot instruktionerne
-givet af botten. Du skal kun gøre dette én gang på tværs af alle repos, der bruger vores CLA.
+en CLA og dekorere PR'en passende (f.eks. statuscheck, kommentar). Følg blot de instruktioner,
+der gives af botten. Du skal kun gøre dette én gang på tværs af alle repos, der bruger vores CLA.
 
 Dette projekt har vedtaget [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For mere information, se [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) eller
@@ -264,4 +271,4 @@ Enhver brug af tredjeparts varemærker eller logoer er underlagt disse tredjepar
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at opnå nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
