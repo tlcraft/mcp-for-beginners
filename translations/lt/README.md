@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e56e4571ad666874979dcfcf822f6966",
-  "translation_date": "2025-09-15T19:13:11+00:00",
+  "original_hash": "db69f754d127d295e6449e29c08ed5c8",
+  "translation_date": "2025-09-15T21:23:42+00:00",
   "source_file": "README.md",
   "language_code": "lt"
 }
@@ -27,7 +27,7 @@ Sekite šiuos žingsnius, kad pradėtumėte naudotis šiais ištekliais:
 3. [**Prisijunkite prie Azure AI Foundry Discord ir susipažinkite su ekspertais bei kitais kūrėjais**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Daugiakalbė Palaikymas
+### 🌐 Daugiakalbė palaikymas
 
 #### Palaikoma per GitHub Action (Automatizuota ir visada atnaujinta)
 
@@ -39,13 +39,13 @@ Sekite šiuos žingsnius, kad pradėtumėte naudotis šiais ištekliais:
 
 ## 🧠 Modelio Konteksto Protokolo Mokymo Programos Apžvalga
 
-**Modelio Konteksto Protokolas (MCP)** yra pažangus pagrindas, skirtas standartizuoti sąveiką tarp AI modelių ir klientų programų. Ši atvirojo kodo mokymo programa siūlo struktūrizuotą mokymosi kelią, įskaitant praktinius kodavimo pavyzdžius ir realaus pasaulio naudojimo atvejus, populiariausiomis programavimo kalbomis, tokiomis kaip C#, Java, JavaScript, TypeScript ir Python.
+**Modelio Konteksto Protokolas (MCP)** yra pažangus pagrindas, skirtas standartizuoti sąveiką tarp AI modelių ir klientų programų. Ši atvirojo kodo mokymo programa siūlo struktūrizuotą mokymosi kelią, papildytą praktiniais kodavimo pavyzdžiais ir realaus pasaulio naudojimo atvejais, naudojant populiarias programavimo kalbas, tokias kaip C#, Java, JavaScript, TypeScript ir Python.
 
 Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos inžinierius, šis vadovas yra jūsų išsamus šaltinis MCP pagrindų ir įgyvendinimo strategijų įvaldymui.
 
 ## 🔗 Oficialūs MCP Ištekliai
 
-- 📘 [MCP Dokumentacija](https://modelcontextprotocol.io/) – Išsamūs mokymai ir vartotojo vadovai  
+- 📘 [MCP Dokumentacija](https://modelcontextprotocol.io/) – Išsamūs vadovai ir vartotojo instrukcijos  
 - 📜 [MCP Specifikacija](https://modelcontextprotocol.io/docs/) – Protokolo architektūra ir techninės nuorodos  
 - 📜 [Originali MCP Specifikacija](https://spec.modelcontextprotocol.io/) – Senesnės techninės nuorodos (gali turėti papildomos informacijos)  
 - 🧑‍💻 [MCP GitHub Repozitorija](https://github.com/modelcontextprotocol) – Atvirojo kodo SDK, įrankiai ir kodų pavyzdžiai
@@ -58,7 +58,7 @@ Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos 
 | Modulis | Tema | Aprašymas | Nuoroda |
 |--------|-------|-------------|------|
 | **Modulis 1-3: Pagrindai** | | | |
-| 00 | Įvadas į MCP | Modelio Konteksto Protokolo apžvalga ir jo svarba AI procesuose | [Skaityti daugiau](./00-Introduction/README.md) |
+| 00 | MCP Įvadas | Modelio Konteksto Protokolo apžvalga ir jo svarba AI procesuose | [Skaityti daugiau](./00-Introduction/README.md) |
 | 01 | Pagrindinės Sąvokos | Išsamus MCP pagrindinių sąvokų tyrimas | [Skaityti daugiau](./01-CoreConcepts/README.md) |
 | 02 | MCP Saugumas | Grėsmės saugumui ir geriausios praktikos | [Skaityti daugiau](./02-Security/README.md) |
 | 03 | Pradžia su MCP | Aplinkos nustatymas, pagrindiniai serveriai/klientai, integracija | [Skaityti daugiau](./03-GettingStarted/README.md) |
@@ -76,7 +76,7 @@ Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos 
 | 04 | Praktinis Įgyvendinimas | SDK, derinimas, testavimas, pakartotinai naudojami šablonai | [Skaityti daugiau](./04-PracticalImplementation/README.md) |
 | 05 | Pažangios MCP Temos | Daugiamodalinis AI, mastelio keitimas, įmonių naudojimas | [Skaityti daugiau](./05-AdvancedTopics/README.md) |
 | 5.1 | Azure Integracija | MCP Integracija su Azure | [Vadovas](./05-AdvancedTopics/mcp-integration/README.md) |
-| 5.2 | Daugiamodalumas | Darbas su keliomis modalumais | [Vadovas](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.2 | Daugiamodalumas | Darbas su keliais modalumais | [Vadovas](./05-AdvancedTopics/mcp-multi-modality/README.md) |
 | 5.3 | OAuth2 Demonstracija | Įgyvendinkite OAuth2 autentifikaciją | [Vadovas](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
 | 5.4 | Pagrindiniai Kontekstai | Supraskite ir įgyvendinkite pagrindinius kontekstus | [Vadovas](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | Maršrutizavimas | MCP maršrutizavimo strategijos | [Vadovas](./05-AdvancedTopics/mcp-routing/README.md) |
@@ -89,6 +89,8 @@ Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos 
 | 5.12 | Entra ID Autentifikacija | Autentifikacija su Microsoft Entra ID | [Vadovas](./05-AdvancedTopics/mcp-security-entra/README.md) |
 | 5.13 | Foundry Integracija | Integracija su Azure AI Foundry | [Vadovas](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
 | 5.14 | Konteksto Inžinerija | Efektyvios konteksto inžinerijos technikos | [Vadovas](./05-AdvancedTopics/mcp-contextengineering/README.md) |
+| 5.15 | MCP Pritaikytas Transportas | Pritaikyto Transporto įgyvendinimai | [Vadovas](./05-AdvancedTopics/mcp-transport/README.md) |
+
 | **Modulis 6-10: Bendruomenė ir Geriausios Praktikos** | | | |
 | 06 | Bendruomenės Indėlis | Kaip prisidėti prie MCP ekosistemos | [Vadovas](./06-CommunityContributions/README.md) |
 | 07 | Ankstyvojo Naudojimo Įžvalgos | Realūs įgyvendinimo pavyzdžiai | [Vadovas](./07-LessonsFromEarlyAdoption/README.md) |
@@ -98,30 +100,29 @@ Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos 
 
 ### 💻 Kodų Pavyzdžių Projektai
 
-#### Pagrindiniai MCP Skaičiuotuvo Pavyzdžiai
+#### Pagrindiniai MCP Skaičiuoklės Pavyzdžiai
 
 | Kalba | Aprašymas | Nuoroda |
 |----------|-------------|------|
 | C# | MCP Serverio Pavyzdys | [Peržiūrėti Kodą](./03-GettingStarted/samples/csharp/README.md) |
-| Java | MCP Skaičiuotuvas | [Peržiūrėti Kodą](./03-GettingStarted/samples/java/calculator/README.md) |
+| Java | MCP Skaičiuoklė | [Peržiūrėti Kodą](./03-GettingStarted/samples/java/calculator/README.md) |
 | JavaScript | MCP Demonstracija | [Peržiūrėti Kodą](./03-GettingStarted/samples/javascript/README.md) |
 | Python | MCP Serveris | [Peržiūrėti Kodą](../../03-GettingStarted/samples/python/mcp_calculator_server.py) |
 | TypeScript | MCP Pavyzdys | [Peržiūrėti Kodą](./03-GettingStarted/samples/typescript/README.md) |
 | Rust | MCP Pavyzdys | [Peržiūrėti Kodą](./03-GettingStarted/samples/rust/README.md) |
-
-#### Pažangūs MCP Įgyvendinimai
+#### Pažangios MCP įgyvendinimo galimybės
 
 | Kalba | Aprašymas | Nuoroda |
-|----------|-------------|------|
-| C# | Pažangus pavyzdys | [View Code](./04-PracticalImplementation/samples/csharp/README.md) |
-| Java su Spring | Konteinerinės programos pavyzdys | [View Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
-| JavaScript | Pažangus pavyzdys | [View Code](./04-PracticalImplementation/samples/javascript/README.md) |
-| Python | Sudėtinga įgyvendinimo versija | [View Code](../../04-PracticalImplementation/samples/python/READMEmd) |
-| TypeScript | Konteinerio pavyzdys | [View Code](./04-PracticalImplementation/samples/typescript/README.md) |
+|-------|-----------|---------|
+| C# | Pažangus pavyzdys | [Peržiūrėti kodą](./04-PracticalImplementation/samples/csharp/README.md) |
+| Java su Spring | Konteinerinės programos pavyzdys | [Peržiūrėti kodą](./04-PracticalImplementation/samples/java/containerapp/README.md) |
+| JavaScript | Pažangus pavyzdys | [Peržiūrėti kodą](./04-PracticalImplementation/samples/javascript/README.md) |
+| Python | Sudėtingas įgyvendinimas | [Peržiūrėti kodą](../../04-PracticalImplementation/samples/python/READMEmd) |
+| TypeScript | Konteinerio pavyzdys | [Peržiūrėti kodą](./04-PracticalImplementation/samples/typescript/README.md) |
 
-## 🎯 Mokymosi MCP Priešreikalavimai
+## 🎯 MCP mokymosi reikalavimai
 
-Kad maksimaliai pasinaudotumėte šia mokymo programa, turėtumėte turėti:
+Kad maksimaliai išnaudotumėte šią mokymo programą, turėtumėte turėti:
 
 - Pagrindines programavimo žinias bent viena iš šių kalbų: C#, Java, JavaScript, Python arba TypeScript
 - Kliento-serverio modelio ir API supratimą
@@ -136,17 +137,17 @@ Kad maksimaliai pasinaudotumėte šia mokymo programa, turėtumėte turėti:
 
 ### Mokymosi vadovas
 
-Išsamus [Mokymosi vadovas](./study_guide.md) yra prieinamas, kad padėtų jums efektyviai naršyti šioje saugykloje. Vadovas apima:
+Išsamus [Mokymosi vadovas](./study_guide.md) padės jums efektyviai naršyti šioje saugykloje. Vadove rasite:
 
-- Vizualinį mokymo programos žemėlapį, kuriame pateikiamos visos aptariamos temos
-- Detalią kiekvienos saugyklos dalies analizę
+- Vizualinį mokymo programos žemėlapį su visomis aptartomis temomis
+- Detalų kiekvienos saugyklos dalies suskirstymą
 - Patarimus, kaip naudoti pavyzdinius projektus
 - Rekomenduojamus mokymosi kelius skirtingiems įgūdžių lygiams
 - Papildomus išteklius, kurie papildys jūsų mokymosi kelionę
 
 ### Pakeitimų žurnalas
 
-Mes palaikome išsamų [Pakeitimų žurnalą](./changelog.md), kuriame sekami visi reikšmingi mokymo medžiagos atnaujinimai, įskaitant:
+Mes palaikome išsamų [Pakeitimų žurnalą](./changelog.md), kuriame fiksuojami visi reikšmingi mokymo medžiagos atnaujinimai, įskaitant:
 
 - Naujo turinio papildymus
 - Struktūrinius pakeitimus
@@ -158,7 +159,7 @@ Mes palaikome išsamų [Pakeitimų žurnalą](./changelog.md), kuriame sekami vi
 Kiekviena pamoka šiame vadove apima:
 
 1. Aiškius MCP koncepcijų paaiškinimus  
-2. Gyvus kodo pavyzdžius keliomis kalbomis  
+2. Gyvus kodų pavyzdžius įvairiomis kalbomis  
 3. Pratimus, skirtus realių MCP programų kūrimui  
 4. Papildomus išteklius pažengusiems mokiniams
 
@@ -173,13 +174,13 @@ MCP Dev Days galite žiūrėti užsiregistravę mūsų renginio puslapyje: https
 
 Skirta kūrėjams, norintiems naudoti MCP savo darbo eigoje ir švęsti nuostabią MCP bendruomenę. Prisijungsime prie bendruomenės narių ir partnerių, tokių kaip Arcade, Block, Okta ir Neon, kad pamatytume, kaip jie bendradarbiauja su Microsoft, formuodami atvirą, išplečiamą MCP ekosistemą. 
 Realių pavyzdžių demonstracijos su VS Code, Visual Studio, GitHub Copilot ir populiariais bendruomenės įrankiais
-Praktiniai, konteksto pagrindu sukurti darbo srautai
+Praktiniai, konteksto pagrindu sukurti darbo procesai
 Bendruomenės vedamos sesijos ir įžvalgos
 Nesvarbu, ar tik pradedate dirbti su MCP, ar jau kuriate su juo, 1 diena suteiks įkvėpimo ir praktinių patarimų.
 
 #### [2 diena: Kurkite MCP serverius užtikrintai](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Skirta MCP kūrėjams. Gilinsimės į įgyvendinimo strategijas ir geriausią praktiką kuriant MCP serverius ir integruojant MCP į AI darbo eigas.
+Skirta MCP kūrėjams. Gilinsimės į įgyvendinimo strategijas ir geriausią praktiką, kaip kurti MCP serverius ir integruoti MCP į AI darbo eigas.
 
 #### Temos apima:
 
@@ -189,7 +190,7 @@ Skirta MCP kūrėjams. Gilinsimės į įgyvendinimo strategijas ir geriausią pr
 - Naudojimą tokių komponentų kaip Functions, ACA ir API Management
 - Registrų suderinimą ir įrankius (1P + 3P)
 
-Jei esate kūrėjas, įrankių kūrėjas ar AI produktų strategas, ši diena bus kupina įžvalgų, reikalingų kurti mastelius, saugius ir ateities MCP sprendimus.
+Jei esate kūrėjas, įrankių kūrėjas ar AI produktų strategas, ši diena suteiks jums įžvalgų, reikalingų kurti mastelio, saugumo ir ateities MCP sprendimus.
 
 ### MCP Boot Camp 2025 m. rugpjūtis
 Intensyvių vaizdo sesijų metu sužinokite, kaip kurti MCP serverius, integruoti su VS Code ir profesionaliai diegti Azure platformoje, remiantis MCP pradedančiųjų mokymo programa. Išmokite praktinių įgūdžių technologijoje, kurią jau naudoja didelės įmonės.
@@ -198,8 +199,9 @@ Intensyvių vaizdo sesijų metu sužinokite, kaip kurti MCP serverius, integruot
 #### [➡️Žiūrėti pagal poreikį MCP Bootcamp | Brazilų](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
 #### [➡️Žiūrėti pagal poreikį MCP Bootcamp | Ispanų](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
 
+
 ### Mokykimės MCP su C# - Pamokų serija
-Susipažinkite su Model Context Protocol (MCP), pažangia sistema, sukurta standartizuoti sąveikas tarp AI modelių ir klientų programų. Šioje pradedantiesiems skirtoje sesijoje pristatysime MCP ir padėsime jums sukurti pirmąjį MCP serverį.
+Susipažinkite su Model Context Protocol (MCP), pažangia sistema, sukurta standartizuoti sąveiką tarp AI modelių ir klientų programų. Šioje pradedantiesiems skirtoje sesijoje pristatysime MCP ir padėsime jums sukurti pirmąjį MCP serverį.
 #### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
 #### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
 #### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
@@ -207,22 +209,21 @@ Susipažinkite su Model Context Protocol (MCP), pažangia sistema, sukurta stand
 
 ## 🌟 Bendruomenės padėka
 
-Dėkojame Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) už svarbių kodo pavyzdžių indėlį. 
+Dėkojame Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) už svarbių kodų pavyzdžių indėlį. 
 
 ## 📜 Licencijos informacija
 
 Šis turinys licencijuotas pagal **MIT licenciją**. Sąlygas ir nuostatas rasite [LICENSE](../../LICENSE).
 
-## 🤝 Indėlio gairės
+## 🤝 Prisidėjimo gairės
 
-Šis projektas priima indėlius ir pasiūlymus. Dauguma indėlių reikalauja, kad sutiktumėte su
-Contributor License Agreement (CLA), patvirtinančiu, kad turite teisę ir iš tikrųjų suteikiate mums
+Šis projektas laukia indėlių ir pasiūlymų. Dauguma indėlių reikalauja, kad sutiktumėte su
+Contributor License Agreement (CLA), patvirtinančiu, kad turite teisę ir faktiškai suteikiate mums
 teisę naudoti jūsų indėlį. Daugiau informacijos rasite 
 <https://cla.opensource.microsoft.com>.
 
-Kai pateikiate pull request, CLA bot automatiškai nustatys, ar jums reikia pateikti
-CLA ir pažymės PR atitinkamai (pvz., statuso patikrinimas, komentaras). Tiesiog vykdykite
-bot pateiktas instrukcijas. Tai reikės padaryti tik vieną kartą visose saugyklose, naudojančiose mūsų CLA.
+Kai pateiksite „pull request“, CLA bot automatiškai nustatys, ar jums reikia pateikti
+CLA ir pažymės PR atitinkamai (pvz., būsenos patikrinimas, komentaras). Tiesiog vykdykite bot pateiktas instrukcijas. Tai reikės padaryti tik vieną kartą visose saugyklose, naudojančiose mūsų CLA.
 
 Šis projektas priėmė [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 Daugiau informacijos rasite [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) arba
@@ -238,7 +239,7 @@ Saugykla organizuota taip:
 - **translated_images/**: Lokalizuotos diagramų ir iliustracijų versijos
 - **study_guide.md**: Išsamus vadovas, kaip naršyti saugyklą
 - **changelog.md**: Visų reikšmingų mokymo medžiagos pakeitimų įrašas
-- **mcp.json**: Konfigūracijos failas MCP specifikacijai
+- **mcp.json**: MCP specifikacijos konfigūracijos failas
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Projekto valdymo dokumentai
 
 ## 🎒 Kiti kursai
