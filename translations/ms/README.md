@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "866c8877136cb03e1efb9ad633a2f0a6",
-  "translation_date": "2025-08-26T18:04:23+00:00",
+  "original_hash": "e56e4571ad666874979dcfcf822f6966",
+  "translation_date": "2025-09-15T18:58:03+00:00",
   "source_file": "README.md",
   "language_code": "ms"
 }
@@ -46,7 +46,7 @@ Sama ada anda seorang pembangun AI, arkitek sistem, atau jurutera perisian, pand
 ## 🔗 Sumber Rasmi MCP
 
 - 📘 [Dokumentasi MCP](https://modelcontextprotocol.io/) – Tutorial dan panduan pengguna terperinci  
-- 📜 [Spesifikasi MCP](https://modelcontextprotocol.io/docs/) – Seni bina protokol dan rujukan teknikal  
+- 📜 [Spesifikasi MCP](https://modelcontextprotocol.io/docs/) – Rujukan teknikal dan seni bina protokol  
 - 📜 [Spesifikasi MCP Asal](https://spec.modelcontextprotocol.io/) – Rujukan teknikal lama (mungkin mengandungi butiran tambahan)  
 - 🧑‍💻 [Repositori GitHub MCP](https://github.com/modelcontextprotocol) – SDK sumber terbuka, alat, dan contoh kod
 - 🌐 [Komuniti MCP](https://github.com/orgs/modelcontextprotocol/discussions) – Sertai perbincangan dan sumbang kepada komuniti
@@ -70,13 +70,13 @@ Sama ada anda seorang pembangun AI, arkitek sistem, atau jurutera perisian, pand
 | 3.5 | Pelayan stdio | Cipta pelayan menggunakan pengangkutan stdio | [Panduan](./03-GettingStarted/05-stdio-server/README.md) |
 | 3.6 | Penstriman HTTP | Laksanakan penstriman HTTP dalam MCP | [Panduan](./03-GettingStarted/06-http-streaming/README.md) |
 | 3.7 | Toolkit AI | Gunakan Toolkit AI dengan MCP | [Panduan](./03-GettingStarted/07-aitk/README.md) |
-| 3.8 | Ujian | Uji pelaksanaan pelayan MCP anda | [Panduan](./03-GettingStarted/08-testing/README.md) |
-| 3.9 | Penghantaran | Hantar pelayan MCP ke pengeluaran | [Panduan](./03-GettingStarted/09-deployment/README.md) |
+| 3.8 | Pengujian | Uji pelaksanaan pelayan MCP anda | [Panduan](./03-GettingStarted/08-testing/README.md) |
+| 3.9 | Pengeluaran | Laksanakan pelayan MCP ke pengeluaran | [Panduan](./03-GettingStarted/09-deployment/README.md) |
 | **Modul 4-5: Praktikal & Lanjutan** | | | |
-| 04 | Pelaksanaan Praktikal | SDK, debugging, ujian, templat prompt boleh guna semula | [Baca lebih lanjut](./04-PracticalImplementation/README.md) |
+| 04 | Pelaksanaan Praktikal | SDK, debugging, pengujian, templat prompt boleh guna semula | [Baca lebih lanjut](./04-PracticalImplementation/README.md) |
 | 05 | Topik Lanjutan dalam MCP | AI multi-modal, penskalaan, penggunaan perusahaan | [Baca lebih lanjut](./05-AdvancedTopics/README.md) |
 | 5.1 | Integrasi Azure | Integrasi MCP dengan Azure | [Panduan](./05-AdvancedTopics/mcp-integration/README.md) |
-| 5.2 | Multi-modality | Bekerja dengan pelbagai modaliti | [Panduan](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.2 | Multi-modaliti | Bekerja dengan pelbagai modaliti | [Panduan](./05-AdvancedTopics/mcp-multi-modality/README.md) |
 | 5.3 | Demo OAuth2 | Laksanakan pengesahan OAuth2 | [Panduan](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
 | 5.4 | Konteks Akar | Fahami dan laksanakan konteks akar | [Panduan](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | Penghalaan | Strategi penghalaan MCP | [Panduan](./05-AdvancedTopics/mcp-routing/README.md) |
@@ -96,7 +96,7 @@ Sama ada anda seorang pembangun AI, arkitek sistem, atau jurutera perisian, pand
 | 09 | Kajian Kes MCP | Contoh pelaksanaan praktikal | [Panduan](./09-CaseStudy/README.md) |
 | 10 | Bengkel Praktikal | Membina Pelayan MCP dengan Toolkit AI | [Makmal](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
-### 💻 Projek Kod Contoh
+### 💻 Projek Contoh Kod
 
 #### Contoh Kalkulator MCP Asas
 
@@ -128,7 +128,7 @@ Untuk mendapatkan manfaat maksimum daripada kurikulum ini, anda perlu mempunyai:
 - Kefahaman tentang konsep REST dan HTTP
 - (Pilihan) Latar belakang dalam konsep AI/ML
 
-- Sertai perbincangan komuniti kami untuk sokongan
+- Menyertai perbincangan komuniti kami untuk sokongan
 
 ## 📚 Panduan Belajar & Sumber
 
@@ -160,22 +160,22 @@ Setiap pelajaran dalam panduan ini termasuk:
 1. Penjelasan jelas tentang konsep MCP  
 2. Contoh kod langsung dalam pelbagai bahasa  
 3. Latihan untuk membina aplikasi MCP sebenar  
-4. Sumber tambahan untuk pelajar lanjutan  
+4. Sumber tambahan untuk pelajar lanjutan
 
 ## Acara 
 
 ### [MCP Dev Days Julai 2025](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 #### [➡️Tonton On Demand - MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
-Bersedia untuk dua hari wawasan teknikal mendalam, sambungan komuniti, dan pembelajaran secara langsung di MCP Dev Days, acara maya yang didedikasikan untuk Model Context Protocol (MCP) — standard yang sedang berkembang yang menghubungkan model AI dan alat yang mereka gunakan.
+Bersiaplah untuk dua hari wawasan teknikal mendalam, sambungan komuniti, dan pembelajaran langsung di MCP Dev Days, acara maya yang didedikasikan untuk Model Context Protocol (MCP) — standard yang muncul untuk menjembatani model AI dan alat yang mereka gunakan.
 Anda boleh menonton MCP Dev Days dengan mendaftar di halaman acara kami: https://aka.ms/mcpdevdays. 
 
 #### [Hari 1: Produktiviti MCP, DevTools, & Komuniti:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
 Fokus pada memperkasakan pembangun untuk menggunakan MCP dalam aliran kerja mereka dan meraikan komuniti MCP yang luar biasa. Kami akan disertai oleh ahli komuniti dan rakan kongsi seperti Arcade, Block, Okta, dan Neon untuk melihat bagaimana mereka bekerjasama dengan Microsoft untuk membentuk ekosistem MCP yang terbuka dan boleh diperluas. 
-Demo dunia sebenar merentasi VS Code, Visual Studio, GitHub Copilot, dan alat komuniti popular
+Demo dunia nyata merentasi VS Code, Visual Studio, GitHub Copilot, dan alat komuniti popular
 Aliran kerja pembangunan yang praktikal dan berasaskan konteks
-Sesi dan wawasan yang diketuai komuniti
-Sama ada anda baru bermula dengan MCP atau sudah membina dengannya, Hari 1 akan memberikan inspirasi dan panduan yang boleh diambil tindakan.
+Sesi dan wawasan yang dipimpin oleh komuniti
+Sama ada anda baru bermula dengan MCP atau sudah membina dengannya, Hari 1 akan memberikan inspirasi dan langkah-langkah yang boleh diambil.
 
 #### [Hari 2: Bina Pelayan MCP dengan Keyakinan](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
@@ -186,17 +186,25 @@ Dikhususkan untuk pembina MCP. Kami akan mendalami strategi pelaksanaan dan amal
 - Membina Pelayan MCP dan mengintegrasikannya ke dalam pengalaman agen
 - Pembangunan berasaskan prompt
 - Amalan terbaik keselamatan
-- Menggunakan blok binaan seperti Functions, ACA, dan API Management
+- Menggunakan blok binaan seperti Functions, ACA, dan Pengurusan API
 - Penjajaran registry dan alat (1P + 3P)
 
 Jika anda seorang pembangun, pembina alat, atau ahli strategi produk AI, hari ini penuh dengan wawasan yang anda perlukan untuk membina penyelesaian MCP yang boleh diskalakan, selamat, dan bersedia untuk masa depan.
 
 ### MCP Boot Camp Ogos 2025
-Belajar dalam sesi video intensif cara mencipta pelayan MCP, mengintegrasi dengan VS Code, dan melancarkan secara profesional di Azure berdasarkan kandungan daripada kurikulum MCP untuk Pemula. Dapatkan kemahiran praktikal dalam teknologi yang sudah digunakan oleh syarikat besar.
+Belajar melalui sesi video intensif cara mencipta pelayan MCP, mengintegrasi dengan VS Code, dan melancarkan secara profesional di Azure berdasarkan kandungan dari kurikulum MCP untuk Pemula. Tinggalkan dengan kemahiran praktikal dalam teknologi yang sudah digunakan oleh syarikat besar.
 
 #### [➡️Tonton On Demand MCP Bootcamp | English](https://developer.microsoft.com/en-us/reactor/series/s-1568/)
 #### [➡️Tonton On Demand MCP Bootcamp | Brasil](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
 #### [➡️Tonton On Demand MCP Bootcamp | Spanish](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
+
+
+### Mari Belajar MCP dengan C# - Siri Tutorial
+Mari belajar tentang Model Context Protocol (MCP), kerangka kerja canggih yang direka untuk menyeragamkan interaksi antara model AI dan aplikasi klien. Melalui sesi mesra pemula ini, kami akan memperkenalkan anda kepada MCP dan membimbing anda mencipta pelayan MCP pertama anda.
+#### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
+#### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
+#### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
+#### Python: [https://aka.ms/letslearnmcp-python](https://aka.ms/letslearnmcp-python)
 
 ## 🌟 Terima Kasih Komuniti
 
@@ -209,7 +217,7 @@ Kandungan ini dilesenkan di bawah **MIT License**. Untuk terma dan syarat, lihat
 ## 🤝 Garis Panduan Sumbangan
 
 Projek ini mengalu-alukan sumbangan dan cadangan. Kebanyakan sumbangan memerlukan anda bersetuju dengan
-Contributor License Agreement (CLA) yang menyatakan bahawa anda mempunyai hak untuk, dan sebenarnya memberikan kami
+Perjanjian Lesen Penyumbang (CLA) yang menyatakan bahawa anda mempunyai hak untuk, dan sebenarnya memberikan kami
 hak untuk menggunakan sumbangan anda. Untuk butiran, lawati 
 <https://cla.opensource.microsoft.com>.
 
@@ -228,7 +236,7 @@ Repositori ini disusun seperti berikut:
 - **Kurikulum Teras (00-10)**: Kandungan utama yang disusun dalam sepuluh modul berturutan
 - **images/**: Diagram dan ilustrasi yang digunakan sepanjang kurikulum
 - **translations/**: Sokongan pelbagai bahasa dengan terjemahan automatik
-- **translated_images/**: Versi lokal diagram dan ilustrasi
+- **translated_images/**: Versi diagram dan ilustrasi yang telah dilokalkan
 - **study_guide.md**: Panduan komprehensif untuk menavigasi repositori
 - **changelog.md**: Rekod semua perubahan penting kepada bahan kurikulum
 - **mcp.json**: Fail konfigurasi untuk spesifikasi MCP
@@ -250,8 +258,9 @@ Pasukan kami menghasilkan kursus lain! Lihat:
 - [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Mastering GitHub Copilot untuk Pembangun C#/.NET](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+
 
 ## ™️ Notis Tanda Dagangan
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "866c8877136cb03e1efb9ad633a2f0a6",
-  "translation_date": "2025-08-26T18:22:24+00:00",
+  "original_hash": "e56e4571ad666874979dcfcf822f6966",
+  "translation_date": "2025-09-15T19:08:32+00:00",
   "source_file": "README.md",
   "language_code": "hr"
 }
@@ -21,33 +21,33 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-Slijedite ove korake kako biste započeli korištenje ovih resursa:
+Slijedite ove korake kako biste započeli s korištenjem ovih resursa:
 1. **Forkajte repozitorij**: Kliknite [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Klonirajte repozitorij**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Pridružite se Azure AI Foundry Discordu i upoznajte stručnjake i kolege programere**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Pridružite se Azure AI Foundry Discordu i upoznajte stručnjake i kolege developere**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Podrška za više jezika
 
-#### Podržano putem GitHub Action (Automatizirano i uvijek ažurirano)
+#### Podržano putem GitHub Actiona (Automatizirano i uvijek ažurirano)
 
  [Arapski](../ar/README.md) | [Bengalski](../bn/README.md) | [Bugarski](../bg/README.md) | [Burmanski (Mjanmar)](../my/README.md) | [Kineski (pojednostavljeni)](../zh/README.md) | [Kineski (tradicionalni, Hong Kong)](../hk/README.md) | [Kineski (tradicionalni, Macau)](../mo/README.md) | [Kineski (tradicionalni, Tajvan)](../tw/README.md) | [Hrvatski](./README.md) | [Češki](../cs/README.md) | [Danski](../da/README.md) | [Nizozemski](../nl/README.md) | [Finski](../fi/README.md) | [Francuski](../fr/README.md) | [Njemački](../de/README.md) | [Grčki](../el/README.md) | [Hebrejski](../he/README.md) | [Hindski](../hi/README.md) | [Mađarski](../hu/README.md) | [Indonezijski](../id/README.md) | [Talijanski](../it/README.md) | [Japanski](../ja/README.md) | [Korejski](../ko/README.md) | [Malajski](../ms/README.md) | [Marathi](../mr/README.md) | [Nepalski](../ne/README.md) | [Norveški](../no/README.md) | [Perzijski (Farsi)](../fa/README.md) | [Poljski](../pl/README.md) | [Portugalski (Brazil)](../br/README.md) | [Portugalski (Portugal)](../pt/README.md) | [Pandžapski (Gurmukhi)](../pa/README.md) | [Rumunjski](../ro/README.md) | [Ruski](../ru/README.md) | [Srpski (ćirilica)](../sr/README.md) | [Slovački](../sk/README.md) | [Slovenski](../sl/README.md) | [Španjolski](../es/README.md) | [Svahili](../sw/README.md) | [Švedski](../sv/README.md) | [Tagalog (Filipinski)](../tl/README.md) | [Tajlandski](../th/README.md) | [Turski](../tr/README.md) | [Ukrajinski](../uk/README.md) | [Urdu](../ur/README.md) | [Vijetnamski](../vi/README.md)
 
-# 🚀 Kurikulum za Model Context Protocol (MCP) za početnike
+# 🚀 Kurikulum Model Context Protocol (MCP) za početnike
 
 ## **Naučite MCP uz praktične primjere koda u C#, Java, JavaScript, Rust, Python i TypeScript**
 
-## 🧠 Pregled kurikuluma za Model Context Protocol
+## 🧠 Pregled kurikuluma Model Context Protocol
 
 **Model Context Protocol (MCP)** je napredni okvir dizajniran za standardizaciju interakcija između AI modela i klijentskih aplikacija. Ovaj otvoreni kurikulum nudi strukturirani put učenja, uključujući praktične primjere koda i stvarne primjene, u popularnim programskim jezicima kao što su C#, Java, JavaScript, TypeScript i Python.
 
-Bez obzira jeste li AI programer, sistemski arhitekt ili softverski inženjer, ovaj vodič je vaš sveobuhvatni resurs za savladavanje osnova MCP-a i strategija implementacije.
+Bilo da ste AI developer, sistemski arhitekt ili softverski inženjer, ovaj vodič je vaš sveobuhvatan resurs za savladavanje osnova MCP-a i strategija implementacije.
 
 ## 🔗 Službeni MCP resursi
 
 - 📘 [MCP Dokumentacija](https://modelcontextprotocol.io/) – Detaljni vodiči i korisnički priručnici  
 - 📜 [MCP Specifikacija](https://modelcontextprotocol.io/docs/) – Arhitektura protokola i tehničke reference  
-- 📜 [Originalna MCP Specifikacija](https://spec.modelcontextprotocol.io/) – Legacy tehničke reference (može sadržavati dodatne detalje)  
+- 📜 [Originalna MCP Specifikacija](https://spec.modelcontextprotocol.io/) – Legacy tehničke reference (mogu sadržavati dodatne detalje)  
 - 🧑‍💻 [MCP GitHub Repozitorij](https://github.com/modelcontextprotocol) – Open-source SDK-ovi, alati i primjeri koda
 - 🌐 [MCP Zajednica](https://github.com/orgs/modelcontextprotocol/discussions) – Pridružite se raspravama i doprinesite zajednici
 
@@ -60,23 +60,23 @@ Bez obzira jeste li AI programer, sistemski arhitekt ili softverski inženjer, o
 | **Modul 1-3: Osnove** | | | |
 | 00 | Uvod u MCP | Pregled Model Context Protocol-a i njegova važnost u AI procesima | [Pročitajte više](./00-Introduction/README.md) |
 | 01 | Objašnjenje osnovnih pojmova | Detaljno istraživanje osnovnih MCP pojmova | [Pročitajte više](./01-CoreConcepts/README.md) |
-| 02 | Sigurnost u MCP-u | Prijetnje sigurnosti i najbolje prakse | [Pročitajte više](./02-Security/README.md) |
+| 02 | Sigurnost u MCP-u | Sigurnosne prijetnje i najbolje prakse | [Pročitajte više](./02-Security/README.md) |
 | 03 | Početak rada s MCP-om | Postavljanje okruženja, osnovni serveri/klijenti, integracija | [Pročitajte više](./03-GettingStarted/README.md) |
 | **Modul 3: Izrada vašeg prvog servera i klijenta** | | | |
 | 3.1 | Prvi server | Izradite svoj prvi MCP server | [Vodič](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | Prvi klijent | Razvijte osnovni MCP klijent | [Vodič](./03-GettingStarted/02-client/README.md) |
-| 3.3 | Klijent s LLM | Integrirajte velike jezične modele | [Vodič](./03-GettingStarted/03-llm-client/README.md) |
-| 3.4 | Integracija s VS Code | Koristite MCP servere u VS Code | [Vodič](./03-GettingStarted/04-vscode/README.md) |
+| 3.3 | Klijent s LLM-om | Integrirajte velike jezične modele | [Vodič](./03-GettingStarted/03-llm-client/README.md) |
+| 3.4 | Integracija s VS Code | Koristite MCP servere u VS Code-u | [Vodič](./03-GettingStarted/04-vscode/README.md) |
 | 3.5 | stdio Server | Izradite servere koristeći stdio transport | [Vodič](./03-GettingStarted/05-stdio-server/README.md) |
 | 3.6 | HTTP Streaming | Implementirajte HTTP streaming u MCP-u | [Vodič](./03-GettingStarted/06-http-streaming/README.md) |
 | 3.7 | AI Toolkit | Koristite AI Toolkit s MCP-om | [Vodič](./03-GettingStarted/07-aitk/README.md) |
-| 3.8 | Testiranje | Testirajte svoju implementaciju MCP servera | [Vodič](./03-GettingStarted/08-testing/README.md) |
+| 3.8 | Testiranje | Testirajte implementaciju svog MCP servera | [Vodič](./03-GettingStarted/08-testing/README.md) |
 | 3.9 | Implementacija | Implementirajte MCP servere u produkciju | [Vodič](./03-GettingStarted/09-deployment/README.md) |
 | **Modul 4-5: Praktično i napredno** | | | |
 | 04 | Praktična implementacija | SDK-ovi, debugiranje, testiranje, predlošci za ponovnu upotrebu | [Pročitajte više](./04-PracticalImplementation/README.md) |
-| 05 | Napredne teme u MCP-u | Multi-modalni AI, skaliranje, primjena u poduzećima | [Pročitajte više](./05-AdvancedTopics/README.md) |
+| 05 | Napredne teme u MCP-u | Multimodalni AI, skaliranje, primjena u poduzećima | [Pročitajte više](./05-AdvancedTopics/README.md) |
 | 5.1 | Integracija s Azureom | MCP integracija s Azureom | [Vodič](./05-AdvancedTopics/mcp-integration/README.md) |
-| 5.2 | Multi-modalnost | Rad s više modaliteta | [Vodič](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.2 | Multimodalnost | Rad s više modaliteta | [Vodič](./05-AdvancedTopics/mcp-multi-modality/README.md) |
 | 5.3 | OAuth2 Demo | Implementirajte OAuth2 autentifikaciju | [Vodič](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
 | 5.4 | Root Contexts | Razumijevanje i implementacija root konteksta | [Vodič](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | Usmjeravanje | Strategije usmjeravanja u MCP-u | [Vodič](./05-AdvancedTopics/mcp-routing/README.md) |
@@ -114,7 +114,7 @@ Bez obzira jeste li AI programer, sistemski arhitekt ili softverski inženjer, o
 | Jezik | Opis | Link |
 |----------|-------------|------|
 | C# | Napredni primjer | [View Code](./04-PracticalImplementation/samples/csharp/README.md) |
-| Java s Springom | Primjer aplikacije u kontejneru | [View Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
+| Java sa Springom | Primjer aplikacije u kontejneru | [View Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
 | JavaScript | Napredni primjer | [View Code](./04-PracticalImplementation/samples/javascript/README.md) |
 | Python | Složena implementacija | [View Code](../../04-PracticalImplementation/samples/python/READMEmd) |
 | TypeScript | Primjer kontejnera | [View Code](./04-PracticalImplementation/samples/typescript/README.md) |
@@ -124,11 +124,11 @@ Bez obzira jeste li AI programer, sistemski arhitekt ili softverski inženjer, o
 Kako biste maksimalno iskoristili ovaj kurikulum, trebali biste imati:
 
 - Osnovno znanje programiranja u barem jednom od sljedećih jezika: C#, Java, JavaScript, Python ili TypeScript
-- Razumijevanje modela klijent-poslužitelj i API-ja
+- Razumijevanje modela klijent-server i API-ja
 - Poznavanje REST i HTTP koncepata
 - (Opcionalno) Pozadina u AI/ML konceptima
 
-- Pridruživanje našim zajedničkim raspravama za podršku
+- Pridruživanje našim zajedničkim diskusijama za podršku
 
 ## 📚 Vodič za učenje i resursi
 
@@ -136,11 +136,11 @@ Ovaj repozitorij uključuje nekoliko resursa koji će vam pomoći da se učinkov
 
 ### Vodič za učenje
 
-Dostupan je sveobuhvatan [Vodič za učenje](./study_guide.md) koji će vam pomoći da se učinkovito snađete u ovom repozitoriju. Vodič uključuje:
+Dostupan je sveobuhvatan [Vodič za učenje](./study_guide.md) koji će vam pomoći da učinkovito navigirate ovim repozitorijem. Vodič uključuje:
 
 - Vizualnu mapu kurikuluma koja prikazuje sve obrađene teme
 - Detaljan pregled svakog dijela repozitorija
-- Upute za korištenje uzoraka projekata
+- Smjernice za korištenje uzoraka projekata
 - Preporučene putanje učenja za različite razine vještina
 - Dodatne resurse za dopunu vašeg procesa učenja
 
@@ -172,31 +172,38 @@ MCP Dev Days možete gledati registracijom na našoj stranici događaja: https:/
 #### [Dan 1: MCP produktivnost, razvojni alati i zajednica:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
 Posvećen je osnaživanju programera da koriste MCP u svom razvojnom tijeku rada i slavljenju nevjerojatne MCP zajednice. Pridružit će nam se članovi zajednice i partneri poput Arcade, Block, Okta i Neon kako bismo vidjeli kako surađuju s Microsoftom na oblikovanju otvorenog, proširivog MCP ekosustava. 
-Prikazi stvarnog svijeta u VS Code, Visual Studio, GitHub Copilot i popularnim alatima zajednice
-Praktični, kontekstualno vođeni razvojni tijekovi rada
+Prikazi stvarnog svijeta kroz VS Code, Visual Studio, GitHub Copilot i popularne alate zajednice
+Praktični, kontekstualno vođeni tijekovi rada za razvoj
 Sesije vođene zajednicom i uvidi
-Bilo da tek počinjete s MCP-om ili već gradite s njim, Dan 1 će postaviti temelje s inspiracijom i praktičnim savjetima.
+Bilo da tek počinjete s MCP-om ili već gradite s njim, Dan 1 će postaviti temelje s inspiracijom i praktičnim zaključcima.
 
-#### [Dan 2: Izgradite MCP poslužitelje s povjerenjem](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+#### [Dan 2: Izgradite MCP servere s povjerenjem](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Namijenjen je MCP graditeljima. Duboko ćemo zaroniti u strategije implementacije i najbolje prakse za stvaranje MCP poslužitelja i integraciju MCP-a u vaše AI tijekove rada.
+Namijenjen je MCP graditeljima. Duboko ćemo zaroniti u strategije implementacije i najbolje prakse za stvaranje MCP servera i integraciju MCP-a u vaše AI tijekove rada.
 
 #### Teme uključuju:
 
-- Izgradnja MCP poslužitelja i njihova integracija u iskustva agenata
-- Razvoj vođen promptovima
+- Izgradnja MCP servera i njihova integracija u iskustva agenata
+- Razvoj vođen promptima
 - Najbolje prakse sigurnosti
 - Korištenje građevnih blokova poput Functions, ACA i API Management
 - Poravnanje registra i alati (1P + 3P)
 
-Ako ste programer, graditelj alata ili strateg za AI proizvode, ovaj dan je prepun uvida koji su vam potrebni za izgradnju skalabilnih, sigurnih i spremnih za budućnost MCP rješenja.
+Ako ste programer, graditelj alata ili strateg za AI proizvode, ovaj dan je prepun uvida koji su vam potrebni za izgradnju skalabilnih, sigurnih i budućnosti spremnih MCP rješenja.
 
 ### MCP Boot Camp kolovoz 2025
-Naučite u intenzivnim video sesijama kako stvoriti MCP poslužitelje, integrirati s VS Codeom i profesionalno implementirati na Azureu na temelju sadržaja iz MCP za početnike kurikuluma. Steknite praktične vještine u tehnologiji koju već koriste velike tvrtke.
+Naučite kroz intenzivne video sesije kako stvoriti MCP servere, integrirati s VS Codeom i profesionalno implementirati na Azureu na temelju sadržaja iz MCP za početnike kurikuluma. Steknite praktične vještine u tehnologiji koju već koriste velike tvrtke.
 
 #### [➡️Gledajte na zahtjev MCP Bootcamp | Engleski](https://developer.microsoft.com/en-us/reactor/series/s-1568/)
 #### [➡️Gledajte na zahtjev MCP Bootcamp | Brazil](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
 #### [➡️Gledajte na zahtjev MCP Bootcamp | Španjolski](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
+
+### Naučimo MCP s C# - Serija vodiča
+Naučimo o Model Context Protocolu (MCP), naprednom okviru dizajniranom za standardizaciju interakcija između AI modela i klijentskih aplikacija. Kroz ovu sesiju prilagođenu početnicima, predstavit ćemo MCP i voditi vas kroz stvaranje vašeg prvog MCP servera.
+#### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
+#### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
+#### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
+#### Python: [https://aka.ms/letslearnmcp-python](https://aka.ms/letslearnmcp-python)
 
 ## 🌟 Zahvala zajednici
 
@@ -209,8 +216,8 @@ Ovaj sadržaj licenciran je pod **MIT licencom**. Za uvjete i odredbe, pogledajt
 ## 🤝 Smjernice za doprinos
 
 Ovaj projekt pozdravlja doprinose i prijedloge. Većina doprinosa zahtijeva da se složite s
-Ugovorom o licenci za doprinos (CLA) koji izjavljuje da imate pravo i zapravo dajete
-nam prava za korištenje vašeg doprinosa. Za detalje, posjetite 
+Ugovorom o licenci za doprinos (CLA) koji izjavljuje da imate pravo i stvarno dajete
+prava za korištenje vašeg doprinosa. Za detalje, posjetite 
 <https://cla.opensource.microsoft.com>.
 
 Kada pošaljete pull request, CLA bot automatski će odrediti trebate li pružiti
@@ -218,7 +225,7 @@ CLA i označiti PR na odgovarajući način (npr. provjera statusa, komentar). Je
 koje pruža bot. To ćete morati učiniti samo jednom za sve repozitorije koji koriste naš CLA.
 
 Ovaj projekt usvojio je [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-Za više informacija pogledajte [FAQ o kodeksu ponašanja](https://opensource.microsoft.com/codeofconduct/faq/) ili
+Za više informacija pogledajte [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) ili
 kontaktirajte [opencode@microsoft.com](mailto:opencode@microsoft.com) s dodatnim pitanjima ili komentarima.
 
 ## 📂 Struktura repozitorija
