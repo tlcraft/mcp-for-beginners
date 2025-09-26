@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
-  "translation_date": "2025-07-18T10:33:52+00:00",
+  "original_hash": "719117a0a5f34ade7b5dfb61ee06fb13",
+  "translation_date": "2025-09-26T19:18:59+00:00",
   "source_file": "study_guide.md",
   "language_code": "my"
 }
 -->
-# Model Context Protocol (MCP) for Beginners - သင်ခန်းစာလမ်းညွှန်
+# မော်ဒယ်အကြောင်းအရာ ပရိုတိုကော (MCP) အတွက် အခြေခံသင်ခန်းစာ - လေ့လာမှုလမ်းညွှန်
 
-ဤသင်ခန်းစာလမ်းညွှန်သည် "Model Context Protocol (MCP) for Beginners" သင်ရိုးညွှန်းတမ်းအတွက် repository ဖွဲ့စည်းမှုနှင့် အကြောင်းအရာများကို အနှစ်ချုပ်ပေးထားသည်။ Repository ကို ထိရောက်စွာ လမ်းညွှန်ရန်နှင့် ရရှိနိုင်သော အရင်းအမြစ်များကို အပြည့်အဝ အသုံးချနိုင်ရန် ဤလမ်းညွှန်ကို အသုံးပြုပါ။
+ဒီလမ်းညွှန်စာအုပ်က "မော်ဒယ်အကြောင်းအရာ ပရိုတိုကော (MCP) အတွက် အခြေခံသင်ခန်းစာ" သင်ရိုးညွှန်းတမ်းအတွက် repository ဖွဲ့စည်းမှုနဲ့ အကြောင်းအရာအကျဉ်းကို ပေးထားပါတယ်။ Repository ကို ထိရောက်စွာ အသုံးပြုနိုင်ဖို့ ဒီလမ်းညွှန်ကို အသုံးပြုပါ။
 
-## Repository အနှစ်ချုပ်
+## Repository အကျဉ်းချုပ်
 
-Model Context Protocol (MCP) သည် AI မော်ဒယ်များနှင့် client application များအကြား ဆက်သွယ်မှုများအတွက် စံပြဖွဲ့စည်းမှုတစ်ခုဖြစ်သည်။ မူလအားဖြင့် Anthropic မှ ဖန်တီးခဲ့ပြီး ယခုအခါ MCP community ကြီးမှ GitHub အဖွဲ့အစည်းမှ တာဝန်ယူထိန်းသိမ်းနေသည်။ ဤ repository တွင် C#, Java, JavaScript, Python နှင့် TypeScript စသည့် programming languages များဖြင့် လက်တွေ့ code ဥပမာများပါဝင်သည့် သင်ရိုးညွှန်းတမ်းတစ်ခုကို AI developer များ၊ system architect များနှင့် software engineer များအတွက် ဖန်တီးထားသည်။
+မော်ဒယ်အကြောင်းအရာ ပရိုတိုကော (MCP) က AI မော်ဒယ်နဲ့ client အပလီကေးရှင်းများအကြား အပြန်အလှန်ဆက်သွယ်မှုအတွက် စံသတ်မှတ်ထားတဲ့ framework တစ်ခုဖြစ်ပါတယ်။ အစပိုင်းမှာ Anthropic က ဖန်တီးခဲ့ပြီးနောက်ပိုင်းမှာ MCP အသိုင်းအဝိုင်းက GitHub အဖွဲ့အစည်းမှတဆင့် ထိန်းသိမ်းဆောင်ရွက်နေပါတယ်။ ဒီ repository မှာ C#, Java, JavaScript, Python, TypeScript စတဲ့ programming language များအတွက် လက်တွေ့ကိုင်တွယ်နိုင်တဲ့ code နမူနာများပါဝင်တဲ့ သင်ရိုးညွှန်းတမ်းတစ်ခုကို AI developer, system architect, software engineer များအတွက် ဖန်တီးပေးထားပါတယ်။
 
-## Visual Curriculum Map
+## သင်ရိုးညွှန်းတမ်းမြေပုံ
 
 ```mermaid
 mindmap
@@ -100,6 +100,8 @@ mindmap
       (AI Travel Agent)
       (Azure DevOps Integration)
       (Documentation MCP)
+      (GitHub MCP Registry)
+      (VS Code Integration)
       (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
@@ -110,168 +112,154 @@ mindmap
       (4-Lab Structure)
 ```
 
+
 ## Repository ဖွဲ့စည်းမှု
 
-Repository ကို MCP ၏ အစိတ်အပိုင်းအမျိုးမျိုးကို အာရုံစိုက်ထားသည့် အဓိကပိုင်း ၁၀ ခုအဖြစ် စီစဉ်ထားသည်-
+ဒီ repository ကို MCP ရဲ့ အမျိုးမျိုးသော အချက်အလက်များကို အဓိကအပိုင်း ၁၀ ခုအဖြစ် ဖွဲ့စည်းထားပါတယ်။
 
-1. **Introduction (00-Introduction/)**
-   - Model Context Protocol အကြောင်းအနှစ်ချုပ်
-   - AI pipeline များတွင် စံပြဖွဲ့စည်းမှု၏ အရေးပါမှု
-   - လက်တွေ့အသုံးချမှုများနှင့် အကျိုးကျေးဇူးများ
+1. **နိဒါန်း (00-Introduction/)**
+   - မော်ဒယ်အကြောင်းအရာ ပရိုတိုကော အကြောင်းအရာ
+   - AI pipeline များအတွက် စံသတ်မှတ်မှု အရေးကြီးမှု
+   - လက်တွေ့အသုံးချမှုနဲ့ အကျိုးကျေးဇူးများ
 
-2. **Core Concepts (01-CoreConcepts/)**
-   - Client-server ဖွဲ့စည်းမှု
-   - Protocol ၏ အဓိကအစိတ်အပိုင်းများ
-   - MCP တွင် အသုံးပြုသော စာတိုက်ပုံစံများ
+2. **အဓိကအယူအဆများ (01-CoreConcepts/)**
+   - Client-server architecture
+   - ပရိုတိုကောရဲ့ အဓိကအစိတ်အပိုင်းများ
+   - MCP မှာ messaging pattern များ
 
-3. **Security (02-Security/)**
-   - MCP အခြေပြု စနစ်များတွင် ဖြစ်ပေါ်နိုင်သော လုံခြုံရေး အန္တရာယ်များ
-   - လုံခြုံရေး အကောင်အထည်ဖော်မှုအတွက် အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများ
-   - အတည်ပြုခြင်းနှင့် ခွင့်ပြုခြင်း မဟာဗျူဟာများ
-   - **လုံခြုံရေး စာတမ်းများ အပြည့်အစုံ**:
+3. **လုံခြုံရေး (02-Security/)**
+   - MCP-based system များအတွက် လုံခြုံရေး အန္တရာယ်များ
+   - လုံခြုံရေးအကောင်အထည်ဖော်မှုအတွက် အကောင်းဆုံးနည်းလမ်းများ
+   - Authentication နဲ့ authorization များ
+   - **လုံခြုံရေးဆိုင်ရာ စာရွက်စာတမ်းများ**:
      - MCP Security Best Practices 2025
      - Azure Content Safety Implementation Guide
      - MCP Security Controls and Techniques
      - MCP Best Practices Quick Reference
-   - **အဓိက လုံခြုံရေး ခေါင်းစဉ်များ**:
-     - Prompt injection နှင့် tool poisoning တိုက်ခိုက်မှုများ
-     - Session hijacking နှင့် confused deputy ပြဿနာများ
+   - **အဓိက လုံခြုံရေးအကြောင်းအရာများ**:
+     - Prompt injection နဲ့ tool poisoning အန္တရာယ်များ
+     - Session hijacking နဲ့ confused deputy ပြဿနာများ
      - Token passthrough အားနည်းချက်များ
-     - အလွန်အကျွံ ခွင့်ပြုချက်များနှင့် access control
-     - AI အစိတ်အပိုင်းများအတွက် supply chain လုံခြုံရေး
+     - Excessive permissions နဲ့ access control
+     - AI components အတွက် supply chain security
      - Microsoft Prompt Shields ပေါင်းစပ်မှု
 
-4. **Getting Started (03-GettingStarted/)**
-   - ပတ်ဝန်းကျင် ပြင်ဆင်ခြင်းနှင့် ဖွဲ့စည်းခြင်း
-   - အခြေခံ MCP server နှင့် client များ ဖန်တီးခြင်း
-   - ရှိပြီးသား application များနှင့် ပေါင်းစည်းခြင်း
-   - အပိုင်းများတွင် ပါဝင်သည်-
-     - ပထမဆုံး server အကောင်အထည်ဖော်ခြင်း
-     - Client ဖန်တီးခြင်း
-     - LLM client ပေါင်းစည်းခြင်း
-     - VS Code ပေါင်းစည်းခြင်း
+4. **စတင်အသုံးပြုခြင်း (03-GettingStarted/)**
+   - ပတ်ဝန်းကျင် setup နဲ့ configuration
+   - အခြေခံ MCP server နဲ့ client ဖန်တီးခြင်း
+   - ရှိပြီးသား အပလီကေးရှင်းများနဲ့ ပေါင်းစပ်ခြင်း
+   - အပိုင်းများပါဝင်သည့်အတိုင်း:
+     - ပထမဆုံး server ဖန်တီးခြင်း
+     - Client ဖွံ့ဖြိုးတိုးတက်မှု
+     - LLM client ပေါင်းစပ်မှု
+     - VS Code ပေါင်းစပ်မှု
      - Server-Sent Events (SSE) server
      - HTTP streaming
-     - AI Toolkit ပေါင်းစည်းခြင်း
-     - စမ်းသပ်မှု မဟာဗျူဟာများ
-     - တပ်ဆင်ခြင်း လမ်းညွှန်ချက်များ
+     - AI Toolkit ပေါင်းစပ်မှု
+     - စမ်းသပ်မှုနည်းလမ်းများ
+     - Deployment လမ်းညွှန်ချက်များ
 
-5. **Practical Implementation (04-PracticalImplementation/)**
-   - အမျိုးမျိုးသော programming language များတွင် SDK များ အသုံးပြုခြင်း
-   - Debugging, စမ်းသပ်ခြင်းနှင့် အတည်ပြုခြင်း နည်းလမ်းများ
-   - ပြန်လည်အသုံးပြုနိုင်သော prompt template များနှင့် workflow များ ဖန်တီးခြင်း
-   - အကောင်အထည်ဖော်မှု ဥပမာများပါဝင်သည့် စမ်းသပ်ပရောဂျက်များ
+5. **လက်တွေ့အကောင်အထည်ဖော်မှု (04-PracticalImplementation/)**
+   - အမျိုးမျိုးသော programming language များအတွက် SDK အသုံးပြုခြင်း
+   - Debugging, testing, validation နည်းလမ်းများ
+   - Reusable prompt template နဲ့ workflow များ ဖန်တီးခြင်း
+   - လက်တွေ့နမူနာများပါဝင်သော စမ်းသပ် project များ
 
-6. **Advanced Topics (05-AdvancedTopics/)**
-   - Context engineering နည်းပညာများ
-   - Foundry agent ပေါင်းစည်းခြင်း
+6. **အဆင့်မြင့်အကြောင်းအရာများ (05-AdvancedTopics/)**
+   - Context engineering နည်းလမ်းများ
+   - Foundry agent ပေါင်းစပ်မှု
    - Multi-modal AI workflow များ
-   - OAuth2 authentication များ ပြသခြင်း
-   - အချိန်နှင့်တပြေးညီ ရှာဖွေရေး စွမ်းဆောင်ရည်များ
+   - OAuth2 authentication နမူနာများ
+   - အချိန်နှင့်တပြေးညီ search လုပ်ဆောင်မှုများ
    - အချိန်နှင့်တပြေးညီ streaming
-   - Root context များ အကောင်အထည်ဖော်ခြင်း
-   - Routing မဟာဗျူဟာများ
+   - Root contexts အကောင်အထည်ဖော်မှု
+   - Routing နည်းလမ်းများ
    - Sampling နည်းလမ်းများ
    - Scaling နည်းလမ်းများ
-   - လုံခြုံရေး စဉ်းစားချက်များ
-   - Entra ID လုံခြုံရေး ပေါင်းစည်းမှု
-   - Web search ပေါင်းစည်းမှု
+   - လုံခြုံရေးအချက်များ
+   - Entra ID လုံခြုံရေး ပေါင်းစပ်မှု
+   - Web search ပေါင်းစပ်မှု
 
-7. **Community Contributions (06-CommunityContributions/)**
-   - ကုဒ်နှင့် စာတမ်းများ ပံ့ပိုးပေးခြင်းနည်းလမ်းများ
+7. **အသိုင်းအဝိုင်း၏ အထောက်အကူများ (06-CommunityContributions/)**
+   - Code နဲ့ documentation တွေကို ဘယ်လိုပေးပို့ရမလဲ
    - GitHub မှတဆင့် ပူးပေါင်းဆောင်ရွက်ခြင်း
-   - အသိုင်းအဝိုင်းမှ တိုးတက်မှုများနှင့် တုံ့ပြန်ချက်များ
+   - အသိုင်းအဝိုင်းအခြေပြု တိုးတက်မှုများနဲ့ အကြံပြုချက်များ
    - MCP client များ (Claude Desktop, Cline, VSCode) အသုံးပြုခြင်း
-   - လူကြိုက်များသော MCP server များနှင့် ပူးပေါင်းဆောင်ရွက်ခြင်း (ပုံဖန်တီးခြင်း အပါအဝင်)
+   - ပုံရိပ်ဖန်တီးမှုအတွက် MCP server များနဲ့ အလုပ်လုပ်ခြင်း
 
-8. **Lessons from Early Adoption (07-LessonsfromEarlyAdoption/)**
-   - လက်တွေ့ အကောင်အထည်ဖော်မှုများနှင့် အောင်မြင်မှုဇာတ်လမ်းများ
-   - MCP အခြေပြု ဖြေရှင်းချက်များ တည်ဆောက်ခြင်းနှင့် တပ်ဆင်ခြင်း
-   - လမ်းကြောင်းနှင့် အနာဂတ် ရှုမြင်ချက်များ
-   - **Microsoft MCP Servers Guide**: ၁၀ ခုသော ထုတ်လုပ်မှုအဆင်သင့် Microsoft MCP server များအတွက် လမ်းညွှန်ချက် အပြည့်အစုံ
-     - Microsoft Learn Docs MCP Server
-     - Azure MCP Server (၁၅+ အထူးပြု ချိတ်ဆက်ကွန်နက်တာများ)
-     - GitHub MCP Server
-     - Azure DevOps MCP Server
-     - MarkItDown MCP Server
-     - SQL Server MCP Server
-     - Playwright MCP Server
-     - Dev Box MCP Server
-     - Azure AI Foundry MCP Server
-     - Microsoft 365 Agents Toolkit MCP Server
+8. **အစောပိုင်းအသုံးပြုမှုမှ သင်ခန်းစာများ (07-LessonsfromEarlyAdoption/)**
+   - လက်တွေ့အကောင်အထည်ဖော်မှုနဲ့ အောင်မြင်မှုဇာတ်လမ်းများ
+   - MCP-based ဖြေရှင်းချက်များ ဖန်တီးခြင်းနဲ့ တင်သွင်းခြင်း
+   - လမ်းကြောင်းနဲ့ အနာဂတ်ရဲ့ လမ်းပြမြေပုံ
+   - **Microsoft MCP Servers Guide**: Microsoft MCP server ၁၀ ခုအတွက် လမ်းညွှန်ချက်
 
-9. **Best Practices (08-BestPractices/)**
-   - စွမ်းဆောင်ရည် တိုးတက်မှုနှင့် အကောင်းဆုံး ပြုပြင်ခြင်း
-   - MCP စနစ်များကို အမှားခံနိုင်စွမ်းရှိအောင် ဒီဇိုင်းဆွဲခြင်း
-   - စမ်းသပ်ခြင်းနှင့် တည်ငြိမ်မှု မဟာဗျူဟာများ
+9. **အကောင်းဆုံးနည်းလမ်းများ (08-BestPractices/)**
+   - Performance tuning နဲ့ optimization
+   - Fault-tolerant MCP system များ ဒီဇိုင်းဆွဲခြင်း
+   - စမ်းသပ်မှုနဲ့ resilience နည်းလမ်းများ
 
-10. **Case Studies (09-CaseStudy/)**
-    - Azure API Management ပေါင်းစည်းမှု ဥပမာ
-    - ခရီးသွားအေးဂျင့် အကောင်အထည်ဖော်မှု ဥပမာ
-    - Azure DevOps နှင့် YouTube အပ်ဒိတ် ပေါင်းစည်းမှု
-    - စာတမ်းရေးခြင်း MCP အကောင်အထည်ဖော်မှု ဥပမာများ
-    - အသေးစိတ်စာတမ်းများပါဝင်သည့် အကောင်အထည်ဖော်မှု ဥပမာများ
+10. **လေ့လာမှုနမူနာများ (09-CaseStudy/)**
+    - **နမူနာ ၇ ခု**:
+      - Azure AI Travel Agents
+      - Azure DevOps Integration
+      - Real-Time Documentation Retrieval
+      - Interactive Study Plan Generator
+      - In-Editor Documentation
+      - Azure API Management
+      - GitHub MCP Registry
 
-11. **Hands-on Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - MCP နှင့် AI Toolkit ပေါင်းစပ်ထားသည့် လက်တွေ့ လေ့ကျင့်ခန်း
-    - AI မော်ဒယ်များနှင့် လက်တွေ့ကိရိယာများကို ချိတ်ဆက်သည့် အတတ်ပညာဆိုင်ရာ application များ တည်ဆောက်ခြင်း
-    - အခြေခံအကြောင်းအရာများ၊ စိတ်ကြိုက် server ဖန်တီးခြင်းနှင့် ထုတ်လုပ်မှု တပ်ဆင်ခြင်း မော်ဂျူးများ ပါဝင်သည်
+11. **လက်တွေ့အလုပ်ရုံဆွေးနွေးပွဲ (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
+    - MCP နဲ့ AI Toolkit ပေါင်းစပ်မှု
+    - Intelligent application များ ဖန်တီးခြင်း
     - **Lab ဖွဲ့စည်းမှု**:
-      - Lab 1: MCP Server အခြေခံများ
-      - Lab 2: အဆင့်မြင့် MCP Server ဖန်တီးခြင်း
-      - Lab 3: AI Toolkit ပေါင်းစည်းခြင်း
-      - Lab 4: ထုတ်လုပ်မှု တပ်ဆင်ခြင်းနှင့် တိုးချဲ့ခြင်း
-    - Lab အခြေပြု သင်ယူမှုနည်းလမ်းဖြင့် အဆင့်ဆင့် လမ်းညွှန်ချက်များ
+      - Lab 1: MCP Server Fundamentals
+      - Lab 2: Advanced MCP Server Development
+      - Lab 3: AI Toolkit Integration
+      - Lab 4: Production Deployment and Scaling
 
-## အပိုဆောင်း အရင်းအမြစ်များ
+## ထပ်ဆောင်းအရင်းအမြစ်များ
 
-Repository တွင် အောက်ပါ အထောက်အပံ့များ ပါဝင်သည်-
-
-- **Images ဖိုလ်ဒါ**: သင်ရိုးညွှန်းတမ်းအတွင်း အသုံးပြုထားသည့် ပုံဆွဲများနှင့် ရုပ်ပုံများ
-- **ဘာသာပြန်ချက်များ**: စာတမ်းများကို အလိုအလျောက် ဘာသာပြန်ထားခြင်းဖြင့် ဘာသာစကားစုံ ထောက်ပံ့မှု
-- **တရားဝင် MCP အရင်းအမြစ်များ**:
+- **Images folder**: သင်ရိုးညွှန်းတမ်းအတွင်းမှာ အသုံးပြုထားတဲ့ ပုံများ
+- **Translations**: စာရွက်စာတမ်းများကို အလိုအလျောက် ဘာသာပြန်ပေးမှု
+- **MCP အရာများ**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
   - [MCP Specification](https://spec.modelcontextprotocol.io/)
   - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
-## ဤ Repository ကို မည်သို့ အသုံးပြုမည်နည်း
+## ဒီ Repository ကို ဘယ်လိုအသုံးပြုမလဲ
 
-1. **အဆင့်လိုက် သင်ယူခြင်း**: အခန်းများကို အစဉ်လိုက် (00 မှ 10 အထိ) လေ့လာပါ။
-2. **ဘာသာစကားအလိုက် အာရုံစိုက်ခြင်း**: သင်စိတ်ဝင်စားသော programming language အတွက် sample directory များကို ရှာဖွေပါ။
-3. **လက်တွေ့ အကောင်အထည်ဖော်ခြင်း**: "Getting Started" အပိုင်းမှ စ၍ ပတ်ဝန်းကျင် ပြင်ဆင်ခြင်းနှင့် ပထမဆုံး MCP server နှင့် client ဖန်တီးခြင်းကို စတင်ပါ။
-4. **အဆင့်မြင့် လေ့လာမှု**: အခြေခံများကို နားလည်ပြီးနောက် အဆင့်မြင့် ခေါင်းစဉ်များသို့ ဝင်ရောက်လေ့လာပါ။
-5. **အသိုင်းအဝိုင်း ပါဝင်ဆောင်ရွက်ခြင်း**: GitHub ဆွေးနွေးပွဲများနှင့် Discord ချန်နယ်များမှတဆင့် MCP အသိုင်းအဝိုင်းနှင့် ဆက်သွယ်ပါ။
+1. **အဆင့်လိုက်လေ့လာမှု**: အခန်း 00 မှ 10 အထိ အစဉ်လိုက် လေ့လာပါ။
+2. **Programming Language အထူးပြုမှု**: သင့်အကြိုက် programming language အတွက် နမူနာ directory များကို လေ့လာပါ။
+3. **လက်တွေ့အကောင်အထည်ဖော်မှု**: "Getting Started" အပိုင်းကနေ စတင်ပြီး MCP server နဲ့ client ကို ဖန်တီးပါ။
+4. **အဆင့်မြင့်အကြောင်းအရာများ**: အခြေခံများနားလည်ပြီးပါက အဆင့်မြင့်အပိုင်းများကို လေ့လာပါ။
+5. **အသိုင်းအဝိုင်းပူးပေါင်းမှု**: GitHub discussions နဲ့ Discord channel များမှတဆင့် MCP အသိုင်းအဝိုင်းနဲ့ ဆက်သွယ်ပါ။
 
-## MCP Client များနှင့် ကိရိယာများ
+## MCP Clients နဲ့ Tools
 
-သင်ရိုးညွှန်းတမ်းတွင် MCP client များနှင့် ကိရိယာများ အမျိုးမျိုး ပါဝင်သည်-
-
-1. **တရားဝင် Client များ**:
-   - Visual Studio Code
+1. **တရားဝင် Clients**:
+   - Visual Studio Code 
    - MCP in Visual Studio Code
    - Claude Desktop
-   - Claude in VSCode
+   - Claude in VSCode 
    - Claude API
 
-2. **အသိုင်းအဝိုင်း Client များ**:
+2. **အသိုင်းအဝိုင်း Clients**:
    - Cline (terminal-based)
    - Cursor (code editor)
    - ChatMCP
    - Windsurf
 
-3. **MCP စီမံခန့်ခွဲမှု ကိရိယာများ**:
+3. **MCP စီမံခန့်ခွဲမှု Tools**:
    - MCP CLI
    - MCP Manager
    - MCP Linker
    - MCP Router
 
-## လူကြိုက်များသော MCP Server များ
+## လူကြိုက်များသော MCP Servers
 
-Repository တွင် မတူညီသော MCP server များကို မိတ်ဆက်ထားသည်-
-
-1. **တရားဝင် Microsoft MCP Server များ**:
+1. **Microsoft MCP Servers**:
    - Microsoft Learn Docs MCP Server
-   - Azure MCP Server (၁၅+ အထူးပြု ချိတ်ဆက်ကွန်နက်တာများ)
+   - Azure MCP Server (15+ specialized connectors)
    - GitHub MCP Server
    - Azure DevOps MCP Server
    - MarkItDown MCP Server
@@ -281,42 +269,43 @@ Repository တွင် မတူညီသော MCP server များကိ�
    - Azure AI Foundry MCP Server
    - Microsoft 365 Agents Toolkit MCP Server
 
-2. **တရားဝင် ကိုးကား Server များ**:
+2. **Reference Servers**:
    - Filesystem
    - Fetch
    - Memory
    - Sequential Thinking
 
-3. **ပုံဖန်တီးခြင်း**:
+3. **ပုံရိပ်ဖန်တီးမှု**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
 
-4. **ဖွံ့ဖြိုးရေး ကိရိယာများ**:
+4. **ဖွံ့ဖြိုးရေး Tools**:
    - Git MCP
    - Terminal Control
    - Code Assistant
 
-5. **အထူးပြု Server များ**:
+5. **အထူးပြု Servers**:
    - Salesforce
    - Microsoft Teams
    - Jira & Confluence
 
-## ပံ့ပိုးမှု ပေးခြင်း
+## ပူးပေါင်းဆောင်ရွက်မှု
 
-ဤ repository သည် အသိုင်းအဝိုင်းမှ ပံ့ပိုးမှုများကို ကြိုဆိုပါသည်။ MCP ecosystem တွင် ထိရောက်စွာ ပံ့ပိုးပေးရန် Community Contributions အပိုင်းကို ကြည့်ရှုပါ။
+ဒီ repository က အသိုင်းအဝိုင်းမှ ပူးပေါင်းမှုများကို ကြိုဆိုပါတယ်။ Community Contributions အပိုင်းကို ကြည့်ပြီး MCP ecosystem အတွက် ထိရောက်စွာ ပူးပေါင်းဆောင်ရွက်နိုင်ပါသည်။
 
-## ပြောင်းလဲမှုမှတ်တမ်း
+## Changelog
 
 | ရက်စွဲ | ပြောင်းလဲမှုများ |
-|---------|------------------|
-| ၂၀၂၅ ခုနှစ် ဇူလိုင် ၁၈ ရက် | - Microsoft MCP Servers Guide ပါဝင်သည့် repository ဖွဲ့စည်းမှု အသစ်<br>- ထုတ်လုပ်မှုအဆင်သင့် Microsoft MCP server ၁၀ ခုစာရင်း ထည့်သွင်း<br>- လူကြိုက်များသော MCP Server အပိုင်းတွင် တရားဝင် Microsoft MCP Server များ ထည့်သွင်း<br>- Case Studies အပိုင်းတွင် အမှန်တကယ် ဖိုင် ဥပမာများ ထည့်သွင်း<br>- Hands-on Workshop အတွက် Lab ဖွဲ့စည်းမှု အသေးစိတ် ထည့်သွင်း |
-| ၂၀၂၅ ခုနှစ် ဇူလိုင် ၁၆ ရက် | - လက်ရှိ အကြောင်းအရာများကို ပြသရန် repository ဖွဲ့စည်းမှု ပြင်ဆင်<br>- MCP Clients နှင့် Tools အပိုင်း ထည့်သွင်း<br>- လူကြိုက်များသော MCP Server အပိုင်း ထည့်သွင်း<br>- Visual Curriculum Map ကို လက်ရှိ ခေါင်းစဉ်များဖြင့် ပြင်ဆင်<br>- Advanced Topics အပိုင်းတွင် အထူးပြု ခေါင်းစဉ်များ ထည့်သွင်း<br>- Case Studies ကို အမှန်တကယ် ဥပမာများဖြင့် ပြင်ဆင်<br>- MCP ကို Anthropic မှ ဖန်တီးခဲ့သည်ဟု ဖော်ပြချက် ထည့်သွင်း |
-| ၂၀၂၅ ခုနှစ် ဇွန် ၁၁ ရက် | - သင်ခန်းစာလမ်းညွှန် မူလ ဖန်တီးခြင်း<br>- Visual Curriculum Map ထည့်သွင်းခြင်း<br>- Repository ဖွဲ့စည်းမှု အကြောင်း ရေးသားခြင်း<br>- စမ်းသပ်ပရောဂျက်များနှင့် အပိုဆောင်း အရင်းအမြစ်များ ထည့်သွင်းခြင်း |
+|------|---------|
+| ၂၀၂၅ စက်တင်ဘာ ၂၆ | - GitHub MCP Registry case study ကို 09-CaseStudy အပိုင်းထဲ ထည့်သွင်း<br>- Case Studies ကို comprehensive case studies ၇ ခုအဖြစ် ပြင်ဆင်<br>- နမူနာဖော်ပြချက်များကို အကောင်အထည်ဖော်မှုအသေးစိတ်များဖြင့် တိုးမြှင့်<br>- Visual Curriculum Map ကို GitHub MCP Registry ထည့်သွင်း<br>- Study guide ဖွဲ့စည်းမှုကို ecosystem development အာရုံစိုက်မှုအတိုင်း ပြင်ဆင် |
+| ၂၀၂၅ ဇူလိုင် ၁၈ | - Microsoft MCP Servers Guide ကို repository ဖွဲ့စည်းမှုထဲ ထည့်သွင်း<br>- Microsoft MCP server ၁၀ ခုစာရင်းကို ထည့်သွင်း<br>- Popular MCP Servers အပိုင်းကို Microsoft MCP Servers ဖြင့် တိုးမြှင့်<br>- Case Studies အပိုင်းကို နမူနာဖိုင်များဖြင့် ပြင်ဆင်<br>- Hands-on Workshop အတွက် Lab Structure အသေးစိတ် ထည့်သွင်း |
+| ၂၀၂၅ ဇူလိုင် ၁၆ | - Repository ဖွဲ့စည်းမှုကို လက်ရှိအကြောင်းအရာအတိုင်း ပြင်ဆင်<br>- MCP Clients နဲ့ Tools အပိုင်း ထည့်သွင်း<br>- Popular MCP Servers အပိုင်း ထည့်သွင်း<br>- Visual Curriculum Map ကို လက်ရှိအကြောင်းအရာများဖြင့် ပြင်ဆင်<br>- Advanced Topics အပိုင်းကို အထူးပြုအကြောင်းအရာများဖြင့် တိုးမြှင့်<br>- Case Studies ကို နမူနာများဖြင့် ပြင်ဆင်<br>- MCP ရဲ့ မူလဖန်တီးသူ Anthropic ဖြစ်ကြောင်း ရှင်းလင်း |
+| ၂၀၂၅ ဇွန် ၁၁ | - Study guide ကို စတင်ဖန်တီး<br>- Visual Curriculum Map ထည့်သွင်း<br>- Repository ဖွဲ့စည်းမှုကို အကျဉ်းချုပ်<br>- စမ်းသပ် project များနဲ့ ထပ်ဆောင်းအရင်းအမြစ်များ ထည့်သွင်း |
 
 ---
 
-*ဤသင်ခန်းစာလမ်းညွှန်ကို ၂၀၂၅ ခုနှစ် ဇူလိုင် ၁၈ ရက်တွင် ပြင်ဆင်ပြီး ထိုရက်စွဲအထိ repository အကြောင်းအရာကို အနှစ်ချုပ်ပေးထားပါသည်။ ထိုရက်စွဲနောက်ပိုင်းတွင် repository အကြောင်းအရာများ ပြောင်းလဲနိုင်ပါသည်။*
+*ဒီလမ်းညွှန်စာအုပ်ကို ၂၀၂၅ စက်တင်ဘာ ၂၆ ရက်နေ့တွင် ပြင်ဆင်ပြီး အဆိုပါရက်စွဲအထိ repository အကြောင်းအရာကို ဖော်ပြထားပါသည်။*
 
-**အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+---
+
