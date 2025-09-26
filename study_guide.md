@@ -91,6 +91,8 @@ mindmap
       (AI Travel Agent)
       (Azure DevOps Integration)
       (Documentation MCP)
+      (GitHub MCP Registry)
+      (VS Code Integration)
       (Real-world Implementations)
     10. Hands-on Workshop
       ::icon(fa fa-laptop)
@@ -197,11 +199,15 @@ The repository is organized into ten main sections, each focusing on different a
    - Testing and resilience strategies
 
 10. **Case Studies (09-CaseStudy/)**
-    - Azure API Management integration sample
-    - Travel agent implementation sample
-    - Azure DevOps integration with YouTube updates
-    - Documentation MCP implementation examples
-    - Implementation examples with detailed documentation
+    - **Seven comprehensive case studies** demonstrating MCP versatility across diverse scenarios:
+    - **Azure AI Travel Agents**: Multi-agent orchestration with Azure OpenAI and AI Search
+    - **Azure DevOps Integration**: Automating workflow processes with YouTube data updates
+    - **Real-Time Documentation Retrieval**: Python console client with streaming HTTP
+    - **Interactive Study Plan Generator**: Chainlit web app with conversational AI
+    - **In-Editor Documentation**: VS Code integration with GitHub Copilot workflows
+    - **Azure API Management**: Enterprise API integration with MCP server creation
+    - **GitHub MCP Registry**: Ecosystem development and agentic integration platform
+    - Implementation examples spanning enterprise integration, developer productivity, and ecosystem development
 
 11. **Hands-on Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Comprehensive hands-on workshop combining MCP with AI Toolkit
@@ -301,10 +307,11 @@ This repository welcomes contributions from the community. See the Community Con
 
 | Date | Changes |
 |------|---------|
+| September 26, 2025 | - Added GitHub MCP Registry case study to 09-CaseStudy section<br>- Updated Case Studies to reflect seven comprehensive case studies<br>- Enhanced case study descriptions with specific implementation details<br>- Updated Visual Curriculum Map to include GitHub MCP Registry<br>- Revised study guide structure to reflect ecosystem development focus |
 | July 18, 2025 | - Updated repository structure to include Microsoft MCP Servers Guide<br>- Added comprehensive list of 10 production-ready Microsoft MCP servers<br>- Enhanced Popular MCP Servers section with Official Microsoft MCP Servers<br>- Updated Case Studies section with actual file examples<br>- Added Lab Structure details for Hands-on Workshop |
 | July 16, 2025 | - Updated repository structure to reflect current content<br>- Added MCP Clients and Tools section<br>- Added Popular MCP Servers section<br>- Updated Visual Curriculum Map with all current topics<br>- Enhanced Advanced Topics section with all specialized areas<br>- Updated Case Studies to reflect actual examples<br>- Clarified MCP origin as created by Anthropic |
 | June 11, 2025 | - Initial creation of the study guide<br>- Added Visual Curriculum Map<br>- Outlined repository structure<br>- Included sample projects and additional resources |
 
 ---
 
-*This study guide was updated on July 18, 2025, and provides an overview of the repository as of that date. Repository content may be updated after this date.*
+*This study guide was updated on September 26, 2025, and provides an overview of the repository as of that date. Repository content may be updated after this date.*
