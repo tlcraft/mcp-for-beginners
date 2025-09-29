@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "db69f754d127d295e6449e29c08ed5c8",
-  "translation_date": "2025-09-15T20:38:26+00:00",
+  "original_hash": "260ef49b183d9dc4d364c1a58c9ddcfd",
+  "translation_date": "2025-09-29T21:45:51+00:00",
   "source_file": "README.md",
   "language_code": "fi"
 }
@@ -21,9 +21,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-Seuraa näitä ohjeita päästäksesi alkuun näiden resurssien käytössä:
-1. **Haarauta repositorio**: Klikkaa [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
-2. **Kloonaa repositorio**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+Noudata näitä vaiheita aloittaaksesi näiden resurssien käytön:
+1. **Haarauta arkisto**: Klikkaa [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
+2. **Kloonaa arkisto**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Liity Azure AI Foundry Discordiin ja tapaa asiantuntijoita sekä muita kehittäjiä**](https://discord.com/invite/ByRwuEEgH4)
 
 
@@ -31,29 +31,29 @@ Seuraa näitä ohjeita päästäksesi alkuun näiden resurssien käytössä:
 
 #### Tuettu GitHub Actionin kautta (automaattinen ja aina ajan tasalla)
 
- [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Finnish](./README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Malay](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+ [Arabia](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaria](../bg/README.md) | [Burma (Myanmar)](../my/README.md) | [Kiina (yksinkertaistettu)](../zh/README.md) | [Kiina (perinteinen, Hongkong)](../hk/README.md) | [Kiina (perinteinen, Macao)](../mo/README.md) | [Kiina (perinteinen, Taiwan)](../tw/README.md) | [Kroatia](../hr/README.md) | [Tšekki](../cs/README.md) | [Tanska](../da/README.md) | [Hollanti](../nl/README.md) | [Suomi](./README.md) | [Ranska](../fr/README.md) | [Saksa](../de/README.md) | [Kreikka](../el/README.md) | [Heprea](../he/README.md) | [Hindi](../hi/README.md) | [Unkari](../hu/README.md) | [Indonesia](../id/README.md) | [Italia](../it/README.md) | [Japani](../ja/README.md) | [Korea](../ko/README.md) | [Malaiji](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norja](../no/README.md) | [Persia (Farsi)](../fa/README.md) | [Puola](../pl/README.md) | [Portugali (Brasilia)](../br/README.md) | [Portugali (Portugali)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romania](../ro/README.md) | [Venäjä](../ru/README.md) | [Serbia (kyrillinen)](../sr/README.md) | [Slovakki](../sk/README.md) | [Sloveeni](../sl/README.md) | [Espanja](../es/README.md) | [Swahili](../sw/README.md) | [Ruotsi](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thai](../th/README.md) | [Turkki](../tr/README.md) | [Ukraina](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnam](../vi/README.md)
 
-# 🚀 Model Context Protocol (MCP) -kurssi aloittelijoille
+# 🚀 Model Context Protocol (MCP) -opetusohjelma aloittelijoille
 
-## **Opi MCP käytännön koodiesimerkkien avulla C#:ssa, Javassa, JavaScriptissä, Rustissa, Pythonissa ja TypeScriptissä**
+## **Opi MCP käytännön koodiesimerkeillä C#:ssa, Javassa, JavaScriptissä, Rustissa, Pythonissa ja TypeScriptissä**
 
-## 🧠 Model Context Protocol -kurssin yleiskatsaus
+## 🧠 Model Context Protocol -opetusohjelman yleiskatsaus
 
-**Model Context Protocol (MCP)** on huipputason kehys, joka on suunniteltu standardoimaan vuorovaikutusta tekoälymallien ja asiakassovellusten välillä. Tämä avoimen lähdekoodin kurssi tarjoaa jäsennellyn oppimispolun, joka sisältää käytännön koodiesimerkkejä ja todellisia käyttötapauksia suosituilla ohjelmointikielillä, kuten C#, Java, JavaScript, TypeScript ja Python.
+**Model Context Protocol (MCP)** on huippuluokan kehys, joka on suunniteltu standardoimaan vuorovaikutusta tekoälymallien ja asiakassovellusten välillä. Tämä avoimen lähdekoodin opetusohjelma tarjoaa jäsennellyn oppimispolun, joka sisältää käytännön koodiesimerkkejä ja todellisia käyttötapauksia suosituilla ohjelmointikielillä, kuten C#, Java, JavaScript, TypeScript ja Python.
 
 Olitpa tekoälykehittäjä, järjestelmäarkkitehti tai ohjelmistosuunnittelija, tämä opas on kattava resurssi MCP:n perusteiden ja toteutusstrategioiden hallintaan.
 
 ## 🔗 Viralliset MCP-resurssit
 
-- 📘 [MCP-dokumentaatio](https://modelcontextprotocol.io/) – Yksityiskohtaiset opetusohjelmat ja käyttöoppaat  
+- 📘 [MCP-dokumentaatio](https://modelcontextprotocol.io/) – Yksityiskohtaiset opetusohjelmat ja käyttäjäoppaat  
 - 📜 [MCP-määrittely](https://modelcontextprotocol.io/docs/) – Protokollan arkkitehtuuri ja tekniset viitteet  
 - 📜 [Alkuperäinen MCP-määrittely](https://spec.modelcontextprotocol.io/) – Vanhemmat tekniset viitteet (saattaa sisältää lisätietoja)  
-- 🧑‍💻 [MCP GitHub -repositorio](https://github.com/modelcontextprotocol) – Avoimen lähdekoodin SDK:t, työkalut ja koodiesimerkit
+- 🧑‍💻 [MCP GitHub-arkisto](https://github.com/modelcontextprotocol) – Avoimen lähdekoodin SDK:t, työkalut ja koodiesimerkit
 - 🌐 [MCP-yhteisö](https://github.com/orgs/modelcontextprotocol/discussions) – Liity keskusteluihin ja osallistu yhteisöön
 
-## 🧭 MCP-kurssin yleiskatsaus
+## 🧭 MCP-opetusohjelman yleiskatsaus
 
-### 📚 Kurssin rakenne
+### 📚 Koko opetusohjelman rakenne
 
 | Moduuli | Aihe | Kuvaus | Linkki |
 |--------|-------|-------------|------|
@@ -61,19 +61,19 @@ Olitpa tekoälykehittäjä, järjestelmäarkkitehti tai ohjelmistosuunnittelija,
 | 00 | Johdatus MCP:hen | Yleiskatsaus Model Context Protocoliin ja sen merkitykseen tekoälyputkistoissa | [Lue lisää](./00-Introduction/README.md) |
 | 01 | Keskeiset käsitteet | Syvällinen tutkimus MCP:n keskeisistä käsitteistä | [Lue lisää](./01-CoreConcepts/README.md) |
 | 02 | Turvallisuus MCP:ssä | Turvauhat ja parhaat käytännöt | [Lue lisää](./02-Security/README.md) |
-| 03 | MCP:n käyttöönotto | Ympäristön asennus, peruspalvelimet/asiakkaat, integrointi | [Lue lisää](./03-GettingStarted/README.md) |
+| 03 | MCP:n käytön aloittaminen | Ympäristön asennus, peruspalvelimet/asiakkaat, integrointi | [Lue lisää](./03-GettingStarted/README.md) |
 | **Moduuli 3: Ensimmäisen palvelimen ja asiakkaan rakentaminen** | | | |
 | 3.1 | Ensimmäinen palvelin | Luo ensimmäinen MCP-palvelimesi | [Opas](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | Ensimmäinen asiakas | Kehitä perus MCP-asiakas | [Opas](./03-GettingStarted/02-client/README.md) |
-| 3.3 | Asiakas LLM:n kanssa | Integroi suuret kielimallit | [Opas](./03-GettingStarted/03-llm-client/README.md) |
+| 3.3 | Asiakas LLM:llä | Integroi suuret kielimallit | [Opas](./03-GettingStarted/03-llm-client/README.md) |
 | 3.4 | VS Code -integraatio | Käytä MCP-palvelimia VS Codessa | [Opas](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | stdio-palvelin | Luo palvelimia stdio-kuljetuksen avulla | [Opas](./03-GettingStarted/05-stdio-server/README.md) |
+| 3.5 | stdio-palvelin | Luo palvelimia stdio-kuljetuksella | [Opas](./03-GettingStarted/05-stdio-server/README.md) |
 | 3.6 | HTTP-suoratoisto | Toteuta HTTP-suoratoisto MCP:ssä | [Opas](./03-GettingStarted/06-http-streaming/README.md) |
 | 3.7 | AI Toolkit | Käytä AI Toolkitia MCP:n kanssa | [Opas](./03-GettingStarted/07-aitk/README.md) |
 | 3.8 | Testaus | Testaa MCP-palvelimen toteutusta | [Opas](./03-GettingStarted/08-testing/README.md) |
 | 3.9 | Käyttöönotto | Ota MCP-palvelimet käyttöön tuotannossa | [Opas](./03-GettingStarted/09-deployment/README.md) |
 | **Moduuli 4-5: Käytännön ja edistyneet aiheet** | | | |
-| 04 | Käytännön toteutus | SDK:t, virheenkorjaus, testaus, uudelleenkäytettävät kehotepohjat | [Lue lisää](./04-PracticalImplementation/README.md) |
+| 04 | Käytännön toteutus | SDK:t, virheenkorjaus, testaus, uudelleenkäytettävät kehotemallit | [Lue lisää](./04-PracticalImplementation/README.md) |
 | 05 | Edistyneet aiheet MCP:ssä | Monimodaalinen tekoäly, skaalaus, yrityskäyttö | [Lue lisää](./05-AdvancedTopics/README.md) |
 | 5.1 | Azure-integraatio | MCP-integraatio Azureen | [Opas](./05-AdvancedTopics/mcp-integration/README.md) |
 | 5.2 | Monimodaalisuus | Työskentely useiden modaliteettien kanssa | [Opas](./05-AdvancedTopics/mcp-multi-modality/README.md) |
@@ -93,41 +93,41 @@ Olitpa tekoälykehittäjä, järjestelmäarkkitehti tai ohjelmistosuunnittelija,
 
 | **Moduuli 6-10: Yhteisö ja parhaat käytännöt** | | | |
 | 06 | Yhteisön panokset | Kuinka osallistua MCP-ekosysteemiin | [Opas](./06-CommunityContributions/README.md) |
-| 07 | Oivalluksia varhaisesta käyttöönotosta | Käytännön toteutustarinoita | [Opas](./07-LessonsFromEarlyAdoption/README.md) |
+| 07 | Oivalluksia varhaisesta käyttöönotosta | Todelliset toteutustarinat | [Opas](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | MCP:n parhaat käytännöt | Suorituskyky, vikasietoisuus, resilienssi | [Opas](./08-BestPractices/README.md) |
-| 09 | MCP-tapaustutkimukset | Käytännön toteutusesimerkkejä | [Opas](./09-CaseStudy/README.md) |
-| 10 | Käytännön työpaja | MCP-palvelimen rakentaminen AI Toolkitin avulla | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
+| 09 | MCP-tapaustutkimukset | Käytännön toteutusesimerkit | [Opas](./09-CaseStudy/README.md) |
+| 10 | Käytännön työpaja | MCP-palvelimen rakentaminen AI Toolkitilla | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
-### 💻 Esimerkkiprojektit
+### 💻 Esimerkkikoodiprojektit
 
-#### Perus MCP-laskin esimerkit
+#### Perus MCP-laskinesimerkit
 
 | Kieli | Kuvaus | Linkki |
 |----------|-------------|------|
-| C# | MCP-palvelimen esimerkki | [Katso koodi](./03-GettingStarted/samples/csharp/README.md) |
+| C# | MCP-palvelinesimerkki | [Katso koodi](./03-GettingStarted/samples/csharp/README.md) |
 | Java | MCP-laskin | [Katso koodi](./03-GettingStarted/samples/java/calculator/README.md) |
 | JavaScript | MCP-demo | [Katso koodi](./03-GettingStarted/samples/javascript/README.md) |
 | Python | MCP-palvelin | [Katso koodi](../../03-GettingStarted/samples/python/mcp_calculator_server.py) |
 | TypeScript | MCP-esimerkki | [Katso koodi](./03-GettingStarted/samples/typescript/README.md) |
 | Rust | MCP-esimerkki | [Katso koodi](./03-GettingStarted/samples/rust/README.md) |
-#### Kehittyneet MCP-toteutukset
+#### Edistyneet MCP-toteutukset
 
 | Kieli | Kuvaus | Linkki |
-|-------|--------|-------|
-| C# | Kehittynyt esimerkki | [View Code](./04-PracticalImplementation/samples/csharp/README.md) |
-| Java ja Spring | Esimerkki konttisovelluksesta | [View Code](./04-PracticalImplementation/samples/java/containerapp/README.md) |
-| JavaScript | Kehittynyt esimerkki | [View Code](./04-PracticalImplementation/samples/javascript/README.md) |
-| Python | Monimutkainen toteutus | [View Code](../../04-PracticalImplementation/samples/python/READMEmd) |
-| TypeScript | Esimerkki kontista | [View Code](./04-PracticalImplementation/samples/typescript/README.md) |
+|-------|--------|--------|
+| C# | Edistynyt esimerkki | [Katso koodi](./04-PracticalImplementation/samples/csharp/README.md) |
+| Java Springillä | Esimerkki konttisovelluksesta | [Katso koodi](./04-PracticalImplementation/samples/java/containerapp/README.md) |
+| JavaScript | Edistynyt esimerkki | [Katso koodi](./04-PracticalImplementation/samples/javascript/README.md) |
+| Python | Monimutkainen toteutus | [Katso koodi](../../04-PracticalImplementation/samples/python/READMEmd) |
+| TypeScript | Esimerkki kontista | [Katso koodi](./04-PracticalImplementation/samples/typescript/README.md) |
 
-## 🎯 MCP:n oppimisen edellytykset
+## 🎯 Esitiedot MCP:n oppimiseen
 
-Jotta saat parhaan hyödyn tästä oppimateriaalista, sinulla tulisi olla:
+Jotta saat tästä oppimateriaalista kaiken irti, sinulla tulisi olla:
 
 - Perustiedot ohjelmoinnista vähintään yhdessä seuraavista kielistä: C#, Java, JavaScript, Python tai TypeScript
 - Ymmärrys asiakas-palvelin-mallista ja API:ista
 - REST- ja HTTP-konseptien tuntemus
-- (Valinnainen) Taustatietoa AI/ML-konsepteista
+- (Valinnainen) Taustaa AI/ML-konsepteista
 
 - Osallistuminen yhteisökeskusteluihin tuen saamiseksi
 
@@ -137,30 +137,30 @@ Tämä arkisto sisältää useita resursseja, jotka auttavat sinua navigoimaan j
 
 ### Opas
 
-Kattava [Opas](./study_guide.md) on saatavilla, jotta voit navigoida tässä arkistossa tehokkaasti. Oppaassa on:
+Kattava [Opas](./study_guide.md) on saatavilla, jotta voit navigoida tässä arkistossa tehokkaasti. Opas sisältää:
 
-- Visuaalinen opintokartta, joka näyttää kaikki käsitellyt aiheet
-- Yksityiskohtainen jaottelu jokaisesta arkiston osasta
+- Visuaalisen opetussuunnitelmakartan, joka näyttää kaikki käsitellyt aiheet
+- Yksityiskohtaisen jaon jokaisesta arkiston osasta
 - Ohjeet esimerkkiprojektien käyttöön
 - Suositellut oppimispolut eri taitotasoille
 - Lisäresursseja oppimismatkan täydentämiseksi
 
 ### Muutosloki
 
-Pidämme yksityiskohtaista [Muutoslokia](./changelog.md), joka seuraa kaikkia merkittäviä päivityksiä oppimateriaaleihin, mukaan lukien:
+Pidämme yksityiskohtaista [Muutoslokia](./changelog.md), joka seuraa kaikkia merkittäviä päivityksiä oppimateriaalissa, mukaan lukien:
 
 - Uudet sisältölisäykset
-- Rakenneuudistukset
-- Ominaisuusparannukset
-- Dokumentaatiopäivitykset
+- Rakenteelliset muutokset
+- Ominaisuuksien parannukset
+- Dokumentaation päivitykset
 
-## 🛠️ Kuinka käyttää tätä oppimateriaalia tehokkaasti
+## 🛠️ Kuinka käyttää tätä opetussuunnitelmaa tehokkaasti
 
-Jokainen oppitunti sisältää:
+Jokainen oppitunti tässä oppaassa sisältää:
 
 1. Selkeät selitykset MCP-konsepteista  
 2. Live-koodiesimerkkejä useilla kielillä  
-3. Harjoituksia todellisten MCP-sovellusten rakentamiseen  
+3. Harjoituksia MCP-sovellusten rakentamiseen  
 4. Lisäresursseja edistyneille oppijoille
 
 ## Tapahtumat 
@@ -170,19 +170,19 @@ Jokainen oppitunti sisältää:
 Valmistaudu kahden päivän syvälliseen tekniseen oppimiseen, yhteisön verkostoitumiseen ja käytännön harjoitteluun MCP Dev Days -tapahtumassa, joka on virtuaalinen tapahtuma Model Context Protocolin (MCP) ympärillä — nouseva standardi, joka yhdistää AI-mallit ja niiden käyttämät työkalut.
 Voit katsoa MCP Dev Days -tapahtuman rekisteröitymällä tapahtumasivullamme: https://aka.ms/mcpdevdays. 
 
-#### [Päivä 1: MCP tuottavuus, kehitystyökalut ja yhteisö:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+#### [Päivä 1: MCP-tuottavuus, kehitystyökalut ja yhteisö:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Keskittyy kehittäjien voimaannuttamiseen MCP:n käytössä heidän kehitystyönkulussaan ja MCP-yhteisön juhlistamiseen. Mukana ovat yhteisön jäsenet ja kumppanit, kuten Arcade, Block, Okta ja Neon, jotka näyttävät, kuinka he tekevät yhteistyötä Microsoftin kanssa avoimen ja laajennettavan MCP-ekosysteemin luomiseksi.  
-Reaaliaikaisia demoja VS Code, Visual Studio, GitHub Copilot ja suosittujen yhteisötyökalujen parissa  
-Käytännönläheisiä, kontekstiin perustuvia kehitystyönkulkuja  
-Yhteisön vetämiä sessioita ja näkemyksiä  
+Keskittyy kehittäjien voimaannuttamiseen MCP:n käytössä heidän kehitystyönkulussaan ja MCP-yhteisön juhlistamiseen. Mukana ovat yhteisön jäsenet ja kumppanit, kuten Arcade, Block, Okta ja Neon, jotka näyttävät, kuinka he tekevät yhteistyötä Microsoftin kanssa avoimen ja laajennettavan MCP-ekosysteemin muokkaamiseksi. 
+- Reaaliaikaisia demoja VS Code, Visual Studio, GitHub Copilot ja suosittujen yhteisötyökalujen parissa
+- Käytännönläheisiä, kontekstiin perustuvia kehitystyönkulkuja
+- Yhteisön vetämiä sessioita ja näkemyksiä
 Olitpa vasta aloittamassa MCP:n kanssa tai jo rakentamassa sen avulla, päivä 1 tarjoaa inspiraatiota ja konkreettisia vinkkejä.
 
 #### [Päivä 2: Rakenna MCP-palvelimia luottavaisin mielin](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
 On tarkoitettu MCP-rakentajille. Sukellamme syvälle toteutusstrategioihin ja parhaisiin käytäntöihin MCP-palvelimien luomisessa ja MCP:n integroinnissa AI-työnkulkuihin.
 
-#### Aiheita ovat:
+#### Aiheita:
 
 - MCP-palvelimien rakentaminen ja niiden integrointi agenttikokemuksiin
 - Kehitys ohjattuna kehotteilla
@@ -193,18 +193,18 @@ On tarkoitettu MCP-rakentajille. Sukellamme syvälle toteutusstrategioihin ja pa
 Jos olet kehittäjä, työkalujen rakentaja tai AI-tuotestrategi, tämä päivä tarjoaa tarvitsemasi näkemykset skaalautuvien, turvallisten ja tulevaisuuteen valmiiden MCP-ratkaisujen rakentamiseen.
 
 ### MCP Boot Camp elokuu 2025
-Opettele intensiivisissä videosessioissa, kuinka luoda MCP-palvelimia, integroida VS Codeen ja ottaa käyttöön ammattilaismaisesti Azureen MCP for Beginners -oppimateriaalin sisällön pohjalta. Saat käytännön taitoja teknologiasta, jota suuret yritykset jo käyttävät.
+Opettele intensiivisissä videosessioissa, kuinka luoda MCP-palvelimia, integroida VS Codeen ja ottaa käyttöön ammatillisesti Azureen MCP for Beginners -opetussuunnitelman sisällön pohjalta. Saat käytännön taitoja teknologiassa, jota suuret yritykset jo käyttävät.
 
 #### [➡️Katso tallenteena MCP Bootcamp | Englanti](https://developer.microsoft.com/en-us/reactor/series/s-1568/)
 #### [➡️Katso tallenteena MCP Bootcamp | Brasilia](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
 #### [➡️Katso tallenteena MCP Bootcamp | Espanja](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
 
-### Opetellaan MCP:tä C#:llä - opetusvideosarja
-Opetellaan Model Context Protocolia (MCP), huippuluokan kehystä, joka on suunniteltu standardoimaan vuorovaikutukset AI-mallien ja asiakassovellusten välillä. Tässä aloittelijaystävällisessä sessiossa esittelemme MCP:n ja opastamme sinua ensimmäisen MCP-palvelimesi luomisessa.  
-#### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)  
-#### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)  
-#### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)  
-#### Python: [https://aka.ms/letslearnmcp-python](https://aka.ms/letslearnmcp-python)  
+### Opitaan MCP:tä C#:llä - Opetusvideosarja
+Opitaan Model Context Protocolista (MCP), huippuluokan kehys, joka on suunniteltu standardoimaan vuorovaikutukset AI-mallien ja asiakassovellusten välillä. Tässä aloittelijaystävällisessä sessiossa esittelemme MCP:n ja opastamme sinut ensimmäisen MCP-palvelimen luomisessa.
+#### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
+#### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
+#### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
+#### Python: [https://aka.ms/letslearnmcp-python](https://aka.ms/letslearnmcp-python)
 
 ## 🌟 Yhteisön kiitokset
 
@@ -216,32 +216,33 @@ Tämä sisältö on lisensoitu **MIT-lisenssillä**. Ehdot ja edellytykset löyt
 
 ## 🤝 Ohjeet osallistumiseen
 
-Tämä projekti toivottaa tervetulleeksi osallistumisen ja ehdotukset. Useimmat osallistumiset edellyttävät, että hyväksyt  
-Contributor License Agreementin (CLA), jossa vakuutat, että sinulla on oikeus antaa meille oikeudet käyttää panostasi. Lisätietoja:  
-<https://cla.opensource.microsoft.com>.  
+Tämä projekti toivottaa tervetulleeksi osallistumiset ja ehdotukset. Useimmat osallistumiset edellyttävät, että hyväksyt
+Contributor License Agreementin (CLA), jossa vakuutat, että sinulla on oikeus antaa meille
+oikeudet käyttää osallistumistasi. Lisätietoja: <https://cla.opensource.microsoft.com>.
 
-Kun lähetät pull requestin, CLA-botti määrittää automaattisesti, tarvitsetko CLA:n ja merkitsee PR:n asianmukaisesti (esim. tilatarkistus, kommentti). Seuraa botin antamia ohjeita. Sinun tarvitsee tehdä tämä vain kerran kaikissa CLA:ta käyttävissä arkistoissa.
+Kun lähetät pull requestin, CLA-botti määrittää automaattisesti, tarvitsetko CLA:n ja merkitsee PR:n asianmukaisesti (esim. tilatarkistus, kommentti). Seuraa yksinkertaisesti botin antamia ohjeita. Sinun tarvitsee tehdä tämä vain kerran kaikissa CLA:ta käyttävissä arkistoissa.
 
-Tämä projekti on omaksunut [Microsoft Open Source Code of Conductin](https://opensource.microsoft.com/codeofconduct/).  
-Lisätietoja löytyy [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq)-sivulta tai  
-ota yhteyttä [opencode@microsoft.com](mailto:opencode@microsoft.com), jos sinulla on lisäkysymyksiä tai kommentteja.
+Tämä projekti on omaksunut [Microsoft Open Source Code of Conductin](https://opensource.microsoft.com/codeofconduct/).
+Lisätietoja löytyy [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)-sivulta tai
+ota yhteyttä [opencode@microsoft.com](mailto:opencode@microsoft.com) lisäkysymyksissä tai kommenteissa.
 
 ## 📂 Arkiston rakenne
 
 Arkisto on järjestetty seuraavasti:
 
 - **Core Curriculum (00-10)**: Pääsisältö, joka on järjestetty kymmeneen peräkkäiseen moduuliin
-- **images/**: Kaaviot ja kuvitukset, joita käytetään oppimateriaalissa
+- **images/**: Kaaviot ja kuvitukset, joita käytetään opetussuunnitelmassa
 - **translations/**: Monikielinen tuki automaattisilla käännöksillä
 - **translated_images/**: Lokalisoidut versiot kaavioista ja kuvituksista
 - **study_guide.md**: Kattava opas arkiston navigointiin
-- **changelog.md**: Merkittävien muutosten kirjaus oppimateriaaleihin
-- **mcp.json**: MCP-määrittelyn konfiguraatiotiedosto
+- **changelog.md**: Merkittävien muutosten kirjaus oppimateriaaleissa
+- **mcp.json**: Konfiguraatiotiedosto MCP-määrittelylle
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Projektin hallintadokumentit
 
 ## 🎒 Muut kurssit
 Tiimimme tuottaa muita kursseja! Tutustu:
 
+- [**UUSI** Edge AI For Beginners](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
@@ -260,9 +261,10 @@ Tiimimme tuottaa muita kursseja! Tutustu:
 
 ## ™️ Tavaramerkkihuomautus
 
-Tämä projekti saattaa sisältää tavaramerkkejä tai logoja projekteille, tuotteille tai palveluille. Microsoftin tavaramerkkien tai logojen valtuutettu käyttö on Microsoftin tavaramerkki- ja brändiohjeiden mukaista:  
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Microsoftin tavaramerkkien tai logojen käyttö muokatuissa projektiversioissa ei saa aiheuttaa sekaannusta tai antaa ymmärtää Microsoftin sponsorointia.  
+Tämä projekti saattaa sisältää tavaramerkkejä tai logoja projekteille, tuotteille tai palveluille. Microsoftin
+tavaramerkkien tai logojen valtuutettu käyttö on Microsoftin tavaramerkki- ja brändiohjeiden mukaista:
+[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Microsoftin tavaramerkkien tai logojen käyttö muokatuissa versioissa tästä projektista ei saa aiheuttaa sekaannusta tai antaa ymmärtää Microsoftin sponsorointia.
 Kolmannen osapuolen tavaramerkkien tai logojen käyttö on kyseisten osapuolten käytäntöjen alaista.
 
 ---

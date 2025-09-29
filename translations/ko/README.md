@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "db69f754d127d295e6449e29c08ed5c8",
-  "translation_date": "2025-09-15T20:00:06+00:00",
+  "original_hash": "260ef49b183d9dc4d364c1a58c9ddcfd",
+  "translation_date": "2025-09-29T21:27:27+00:00",
   "source_file": "README.md",
   "language_code": "ko"
 }
@@ -31,23 +31,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### GitHub Action을 통해 지원 (자동화 및 항상 최신 상태 유지)
 
- [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](../id/README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Korean](./README.md) | [Malay](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+ [아랍어](../ar/README.md) | [벵골어](../bn/README.md) | [불가리아어](../bg/README.md) | [버마어 (미얀마)](../my/README.md) | [중국어 (간체)](../zh/README.md) | [중국어 (번체, 홍콩)](../hk/README.md) | [중국어 (번체, 마카오)](../mo/README.md) | [중국어 (번체, 대만)](../tw/README.md) | [크로아티아어](../hr/README.md) | [체코어](../cs/README.md) | [덴마크어](../da/README.md) | [네덜란드어](../nl/README.md) | [핀란드어](../fi/README.md) | [프랑스어](../fr/README.md) | [독일어](../de/README.md) | [그리스어](../el/README.md) | [히브리어](../he/README.md) | [힌디어](../hi/README.md) | [헝가리어](../hu/README.md) | [인도네시아어](../id/README.md) | [이탈리아어](../it/README.md) | [일본어](../ja/README.md) | [한국어](./README.md) | [말레이어](../ms/README.md) | [마라티어](../mr/README.md) | [네팔어](../ne/README.md) | [노르웨이어](../no/README.md) | [페르시아어 (파르시)](../fa/README.md) | [폴란드어](../pl/README.md) | [포르투갈어 (브라질)](../br/README.md) | [포르투갈어 (포르투갈)](../pt/README.md) | [펀자브어 (구르무키)](../pa/README.md) | [루마니아어](../ro/README.md) | [러시아어](../ru/README.md) | [세르비아어 (키릴)](../sr/README.md) | [슬로바키아어](../sk/README.md) | [슬로베니아어](../sl/README.md) | [스페인어](../es/README.md) | [스와힐리어](../sw/README.md) | [스웨덴어](../sv/README.md) | [타갈로그어 (필리핀어)](../tl/README.md) | [태국어](../th/README.md) | [터키어](../tr/README.md) | [우크라이나어](../uk/README.md) | [우르두어](../ur/README.md) | [베트남어](../vi/README.md)
 
 # 🚀 초보자를 위한 모델 컨텍스트 프로토콜 (MCP) 커리큘럼
 
-## **C#, Java, JavaScript, Rust, Python, TypeScript로 실습 코드 예제를 통해 MCP 배우기**
+## **C#, Java, JavaScript, Rust, Python, TypeScript로 실습하며 MCP 배우기**
 
 ## 🧠 모델 컨텍스트 프로토콜 커리큘럼 개요
 
-**모델 컨텍스트 프로토콜 (MCP)**은 AI 모델과 클라이언트 애플리케이션 간의 상호작용을 표준화하기 위해 설계된 최첨단 프레임워크입니다. 이 오픈소스 커리큘럼은 C#, Java, JavaScript, TypeScript, Python을 포함한 인기 있는 프로그래밍 언어를 통해 실용적인 코딩 예제와 실제 사용 사례를 제공하는 체계적인 학습 경로를 제공합니다.
+**모델 컨텍스트 프로토콜 (MCP)**은 AI 모델과 클라이언트 애플리케이션 간의 상호작용을 표준화하기 위해 설계된 최첨단 프레임워크입니다. 이 오픈소스 커리큘럼은 C#, Java, JavaScript, TypeScript, Python 등 인기 있는 프로그래밍 언어를 활용한 실습 코드 예제와 실제 사례를 포함한 체계적인 학습 경로를 제공합니다.
 
 AI 개발자, 시스템 아키텍트, 소프트웨어 엔지니어라면 MCP의 기본 개념과 구현 전략을 마스터하기 위한 종합적인 리소스를 이 가이드에서 찾을 수 있습니다.
 
 ## 🔗 공식 MCP 리소스
 
-- 📘 [MCP 문서](https://modelcontextprotocol.io/) – 상세한 튜토리얼 및 사용자 가이드  
+- 📘 [MCP 문서](https://modelcontextprotocol.io/) – 상세 튜토리얼 및 사용자 가이드  
 - 📜 [MCP 명세](https://modelcontextprotocol.io/docs/) – 프로토콜 아키텍처 및 기술 참조  
-- 📜 [원본 MCP 명세](https://spec.modelcontextprotocol.io/) – 레거시 기술 참조 (추가 세부 정보 포함 가능)  
+- 📜 [원본 MCP 명세](https://spec.modelcontextprotocol.io/) – 기존 기술 참조 (추가 세부 정보 포함 가능)  
 - 🧑‍💻 [MCP GitHub 저장소](https://github.com/modelcontextprotocol) – 오픈소스 SDK, 도구 및 코드 샘플
 - 🌐 [MCP 커뮤니티](https://github.com/orgs/modelcontextprotocol/discussions) – 토론에 참여하고 커뮤니티에 기여하세요
 
@@ -65,7 +65,7 @@ AI 개발자, 시스템 아키텍트, 소프트웨어 엔지니어라면 MCP의 
 | **모듈 3: 첫 번째 서버 및 클라이언트 구축** | | | |
 | 3.1 | 첫 번째 서버 | 첫 MCP 서버 만들기 | [가이드](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | 첫 번째 클라이언트 | 기본 MCP 클라이언트 개발 | [가이드](./03-GettingStarted/02-client/README.md) |
-| 3.3 | LLM 클라이언트 | 대규모 언어 모델 통합 | [가이드](./03-GettingStarted/03-llm-client/README.md) |
+| 3.3 | LLM 클라이언트 | 대형 언어 모델 통합 | [가이드](./03-GettingStarted/03-llm-client/README.md) |
 | 3.4 | VS Code 통합 | VS Code에서 MCP 서버 사용 | [가이드](./03-GettingStarted/04-vscode/README.md) |
 | 3.5 | stdio 서버 | stdio 전송을 사용하는 서버 만들기 | [가이드](./03-GettingStarted/05-stdio-server/README.md) |
 | 3.6 | HTTP 스트리밍 | MCP에서 HTTP 스트리밍 구현 | [가이드](./03-GettingStarted/06-http-streaming/README.md) |
@@ -74,13 +74,13 @@ AI 개발자, 시스템 아키텍트, 소프트웨어 엔지니어라면 MCP의 
 | 3.9 | 배포 | MCP 서버를 프로덕션에 배포 | [가이드](./03-GettingStarted/09-deployment/README.md) |
 | **모듈 4-5: 실용적 및 고급 주제** | | | |
 | 04 | 실용적 구현 | SDK, 디버깅, 테스트, 재사용 가능한 프롬프트 템플릿 | [자세히 보기](./04-PracticalImplementation/README.md) |
-| 05 | MCP 고급 주제 | 멀티모달 AI, 확장, 엔터프라이즈 사용 | [자세히 보기](./05-AdvancedTopics/README.md) |
+| 05 | MCP 고급 주제 | 멀티모달 AI, 확장, 엔터프라이즈 활용 | [자세히 보기](./05-AdvancedTopics/README.md) |
 | 5.1 | Azure 통합 | MCP와 Azure 통합 | [가이드](./05-AdvancedTopics/mcp-integration/README.md) |
 | 5.2 | 멀티모달 | 여러 모달리티 작업 | [가이드](./05-AdvancedTopics/mcp-multi-modality/README.md) |
 | 5.3 | OAuth2 데모 | OAuth2 인증 구현 | [가이드](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
 | 5.4 | 루트 컨텍스트 | 루트 컨텍스트 이해 및 구현 | [가이드](./05-AdvancedTopics/mcp-root-contexts/README.md) |
 | 5.5 | 라우팅 | MCP 라우팅 전략 | [가이드](./05-AdvancedTopics/mcp-routing/README.md) |
-| 5.6 | 샘플링 | MCP에서 샘플링 기법 | [가이드](./05-AdvancedTopics/mcp-sampling/README.md) |
+| 5.6 | 샘플링 | MCP에서 샘플링 기술 | [가이드](./05-AdvancedTopics/mcp-sampling/README.md) |
 | 5.7 | 확장 | MCP 구현 확장 | [가이드](./05-AdvancedTopics/mcp-scaling/README.md) |
 | 5.8 | 보안 | 고급 보안 고려 사항 | [가이드](./05-AdvancedTopics/mcp-security/README.md) |
 | 5.9 | 웹 검색 | 웹 검색 기능 구현 | [가이드](./05-AdvancedTopics/web-search-mcp/README.md) |
@@ -88,7 +88,7 @@ AI 개발자, 시스템 아키텍트, 소프트웨어 엔지니어라면 MCP의 
 | 5.11 | 실시간 검색 | 실시간 검색 구현 | [가이드](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
 | 5.12 | Entra ID 인증 | Microsoft Entra ID로 인증 | [가이드](./05-AdvancedTopics/mcp-security-entra/README.md) |
 | 5.13 | Foundry 통합 | Azure AI Foundry와 통합 | [가이드](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
-| 5.14 | 컨텍스트 엔지니어링 | 효과적인 컨텍스트 엔지니어링 기법 | [가이드](./05-AdvancedTopics/mcp-contextengineering/README.md) |
+| 5.14 | 컨텍스트 엔지니어링 | 효과적인 컨텍스트 엔지니어링 기술 | [가이드](./05-AdvancedTopics/mcp-contextengineering/README.md) |
 | 5.15 | MCP 사용자 정의 전송 | 사용자 정의 전송 구현 | [가이드](./05-AdvancedTopics/mcp-transport/README.md) |
 
 | **모듈 6-10: 커뮤니티 및 모범 사례** | | | |
@@ -125,25 +125,25 @@ AI 개발자, 시스템 아키텍트, 소프트웨어 엔지니어라면 MCP의 
 
 이 커리큘럼을 최대한 활용하려면 다음을 준비해야 합니다:
 
-- C#, Java, JavaScript, Python, 또는 TypeScript 중 하나 이상의 언어에 대한 기본적인 프로그래밍 지식
-- 클라이언트-서버 모델과 API에 대한 이해
-- REST와 HTTP 개념에 대한 친숙함
+- C#, Java, JavaScript, Python 또는 TypeScript 중 하나 이상의 언어에 대한 기본 프로그래밍 지식
+- 클라이언트-서버 모델 및 API에 대한 이해
+- REST 및 HTTP 개념에 대한 친숙함
 - (선택 사항) AI/ML 개념에 대한 배경 지식
 
-- 지원을 위한 커뮤니티 토론 참여
+- 커뮤니티 토론에 참여하여 지원 받기
 
 ## 📚 학습 가이드 및 자료
 
-이 저장소에는 효과적으로 학습하고 탐색할 수 있도록 돕는 다양한 자료가 포함되어 있습니다:
+이 저장소는 효과적으로 학습하고 탐색할 수 있도록 여러 자료를 제공합니다:
 
 ### 학습 가이드
 
 포괄적인 [학습 가이드](./study_guide.md)가 제공되어 이 저장소를 효과적으로 탐색할 수 있도록 도와줍니다. 가이드에는 다음이 포함됩니다:
 
-- 다루는 모든 주제를 보여주는 시각적 커리큘럼 맵
+- 모든 주제를 보여주는 시각적 커리큘럼 맵
 - 각 저장소 섹션에 대한 상세한 설명
-- 샘플 프로젝트를 사용하는 방법에 대한 안내
-- 다양한 숙련도에 따른 추천 학습 경로
+- 샘플 프로젝트 활용 방법에 대한 안내
+- 다양한 기술 수준에 맞춘 추천 학습 경로
 - 학습 여정을 보완할 추가 자료
 
 ### 변경 로그
@@ -155,7 +155,7 @@ AI 개발자, 시스템 아키텍트, 소프트웨어 엔지니어라면 MCP의 
 - 기능 개선
 - 문서 업데이트
 
-## 🛠️ 이 커리큘럼을 효과적으로 사용하는 방법
+## 🛠️ 이 커리큘럼을 효과적으로 활용하는 방법
 
 이 가이드의 각 레슨에는 다음이 포함됩니다:
 
@@ -167,42 +167,41 @@ AI 개발자, 시스템 아키텍트, 소프트웨어 엔지니어라면 MCP의 
 ## 이벤트 
 
 ### [MCP Dev Days 2025년 7월](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
-#### [➡️MCP Dev Days 다시보기](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
-MCP Dev Days는 AI 모델과 이를 지원하는 도구를 연결하는 새로운 표준인 Model Context Protocol(MCP)에 초점을 맞춘 가상 이벤트로, 깊이 있는 기술 통찰, 커뮤니티 연결, 실습 학습을 제공하는 이틀간의 행사입니다.  
-이벤트 페이지에서 등록 후 MCP Dev Days를 시청할 수 있습니다: https://aka.ms/mcpdevdays. 
+#### [➡️ MCP Dev Days 다시보기](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+AI 모델과 이를 지원하는 도구를 연결하는 새로운 표준인 Model Context Protocol(MCP)에 전념하는 가상 이벤트에서 깊이 있는 기술 통찰력, 커뮤니티 연결, 실습 학습을 위한 이틀간의 준비를 하세요. MCP Dev Days는 이벤트 페이지에서 등록하여 시청할 수 있습니다: https://aka.ms/mcpdevdays.
 
 #### [Day 1: MCP 생산성, 개발 도구 및 커뮤니티](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-MCP를 개발자 워크플로우에 활용하고 놀라운 MCP 커뮤니티를 기념하는 데 초점을 맞춥니다. Arcade, Block, Okta, Neon과 같은 커뮤니티 멤버 및 파트너와 함께 Microsoft와 협력하여 개방적이고 확장 가능한 MCP 생태계를 형성하는 방법을 살펴봅니다.  
-- VS Code, Visual Studio, GitHub Copilot 및 인기 있는 커뮤니티 도구를 활용한 실제 데모  
-- 실용적이고 컨텍스트 중심의 개발 워크플로우  
-- 커뮤니티 주도 세션 및 통찰  
-MCP를 처음 접하는 분이든 이미 MCP를 활용하고 있는 분이든, Day 1은 영감과 실행 가능한 통찰을 제공합니다.
+MCP를 개발자 워크플로우에서 활용하고 놀라운 MCP 커뮤니티를 축하하는 데 초점을 맞춥니다. Arcade, Block, Okta, Neon과 같은 커뮤니티 멤버 및 파트너와 함께 Microsoft와 협력하여 개방적이고 확장 가능한 MCP 생태계를 형성하는 방법을 살펴봅니다.  
+실제 데모: VS Code, Visual Studio, GitHub Copilot 및 인기 있는 커뮤니티 도구  
+실용적이고 컨텍스트 중심의 개발 워크플로우  
+커뮤니티 주도 세션 및 통찰력  
+MCP를 처음 시작하거나 이미 MCP로 작업 중인 경우, Day 1은 영감과 실행 가능한 정보를 제공합니다.
 
-#### [Day 2: 자신 있게 MCP 서버 구축하기](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
+#### [Day 2: MCP 서버를 자신 있게 구축하기](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-MCP 서버를 구축하는 전략과 AI 워크플로우에 MCP를 통합하는 모범 사례를 심도 있게 다룹니다.
+MCP 구축자를 위한 날입니다. MCP 서버를 생성하고 AI 워크플로우에 MCP를 통합하기 위한 구현 전략 및 모범 사례를 깊이 있게 다룹니다.
 
 #### 주요 주제:
 
-- MCP 서버 구축 및 에이전트 경험에 통합  
-- 프롬프트 기반 개발  
-- 보안 모범 사례  
-- Functions, ACA, API Management와 같은 빌딩 블록 사용  
-- 레지스트리 정렬 및 도구 (1P + 3P)  
+- MCP 서버 구축 및 에이전트 경험에 통합
+- 프롬프트 기반 개발
+- 보안 모범 사례
+- Functions, ACA, API Management와 같은 빌딩 블록 사용
+- 레지스트리 정렬 및 도구 (1P + 3P)
 
-개발자, 도구 제작자, AI 제품 전략가라면 확장 가능하고 안전하며 미래 지향적인 MCP 솔루션을 구축하는 데 필요한 통찰을 얻을 수 있습니다.
+개발자, 도구 제작자 또는 AI 제품 전략가라면, 이 날은 확장 가능하고 안전하며 미래 지향적인 MCP 솔루션을 구축하는 데 필요한 통찰력을 제공합니다.
 
 ### MCP 부트캠프 2025년 8월
-MCP 서버를 생성하고, VS Code와 통합하며, Azure에 전문적으로 배포하는 방법을 배우는 집중 비디오 세션입니다. MCP 초급 커리큘럼의 내용을 기반으로 실질적인 기술을 익히세요. 주요 기업들이 이미 사용 중인 기술을 배울 수 있습니다.
+MCP 초급 커리큘럼의 내용을 기반으로 MCP 서버를 생성하고, VS Code와 통합하며, Azure에서 전문적으로 배포하는 방법을 집중적인 비디오 세션을 통해 배웁니다. 주요 기업들이 이미 사용하고 있는 기술에 대한 실질적인 기술을 얻을 수 있습니다.
 
-#### [➡️MCP 부트캠프 다시보기 | 영어](https://developer.microsoft.com/en-us/reactor/series/s-1568/)
-#### [➡️MCP 부트캠프 다시보기 | 브라질](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
-#### [➡️MCP 부트캠프 다시보기 | 스페인어](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
+#### [➡️ MCP 부트캠프 다시보기 | 영어](https://developer.microsoft.com/en-us/reactor/series/s-1568/)
+#### [➡️ MCP 부트캠프 다시보기 | 브라질](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
+#### [➡️ MCP 부트캠프 다시보기 | 스페인어](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
 
 
-### C#으로 MCP 배우기 - 튜토리얼 시리즈
-Model Context Protocol(MCP)은 AI 모델과 클라이언트 애플리케이션 간의 상호작용을 표준화하기 위해 설계된 최첨단 프레임워크입니다. 이 초급자 친화적인 세션을 통해 MCP를 소개하고 첫 MCP 서버를 만드는 방법을 안내합니다.
+### C#로 MCP 배우기 - 튜토리얼 시리즈
+Model Context Protocol(MCP)에 대해 알아보세요. MCP는 AI 모델과 클라이언트 애플리케이션 간의 상호작용을 표준화하도록 설계된 최첨단 프레임워크입니다. 초보자 친화적인 세션을 통해 MCP를 소개하고 첫 MCP 서버를 만드는 방법을 안내합니다.
 #### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
 #### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
 #### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
@@ -210,26 +209,26 @@ Model Context Protocol(MCP)은 AI 모델과 클라이언트 애플리케이션 �
 
 ## 🌟 커뮤니티 감사
 
-중요한 코드 샘플을 기여해 주신 Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/)님께 감사드립니다.
+중요한 코드 샘플을 제공해 주신 Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/)님께 감사드립니다.
 
 ## 📜 라이선스 정보
 
-이 콘텐츠는 **MIT 라이선스**에 따라 라이선스가 부여됩니다. 이용 약관은 [LICENSE](../../LICENSE)를 참조하세요.
+이 콘텐츠는 **MIT 라이선스**에 따라 제공됩니다. 이용 약관은 [LICENSE](../../LICENSE)를 참조하세요.
 
-## 🤝 기여 가이드라인
+## 🤝 기여 지침
 
-이 프로젝트는 기여와 제안을 환영합니다. 대부분의 기여는 Contributor License Agreement(CLA)에 동의해야 하며, 이를 통해 기여자가 기여 권리를 부여하고 실제로 부여했음을 선언합니다. 자세한 내용은 <https://cla.opensource.microsoft.com>를 참조하세요.
+이 프로젝트는 기여와 제안을 환영합니다. 대부분의 기여는 기여자 라이선스 계약(CLA)에 동의해야 하며, 이를 통해 기여자가 기여할 권리를 가지고 있으며 실제로 기여를 사용할 권리를 부여한다는 것을 선언합니다. 자세한 내용은 <https://cla.opensource.microsoft.com>를 참조하세요.
 
-풀 리퀘스트를 제출하면 CLA 봇이 자동으로 CLA 제공 여부를 확인하고 PR에 적절히 표시합니다(예: 상태 확인, 댓글). 봇이 제공하는 지침을 따르세요. CLA는 이 CLA를 사용하는 모든 저장소에서 한 번만 제공하면 됩니다.
+풀 리퀘스트를 제출하면 CLA 봇이 자동으로 CLA 제공 여부를 결정하고 PR에 적절히 표시합니다(예: 상태 확인, 댓글). 봇이 제공하는 지침을 따르세요. CLA는 모든 저장소에서 한 번만 제공하면 됩니다.
 
 이 프로젝트는 [Microsoft 오픈 소스 행동 강령](https://opensource.microsoft.com/codeofconduct/)을 채택했습니다. 자세한 내용은 [행동 강령 FAQ](https://opensource.microsoft.com/codeofconduct/faq/)를 참조하거나 [opencode@microsoft.com](mailto:opencode@microsoft.com)으로 추가 질문이나 의견을 보내주세요.
 
 ## 📂 저장소 구조
 
-이 저장소는 다음과 같이 구성되어 있습니다:
+저장소는 다음과 같이 구성되어 있습니다:
 
-- **핵심 커리큘럼 (00-10)**: 10개의 순차적 모듈로 구성된 주요 콘텐츠
-- **images/**: 커리큘럼 전반에 사용되는 다이어그램 및 삽화
+- **핵심 커리큘럼 (00-10)**: 10개의 순차적인 모듈로 구성된 주요 콘텐츠
+- **images/**: 커리큘럼 전반에 사용된 다이어그램 및 삽화
 - **translations/**: 자동 번역을 통한 다국어 지원
 - **translated_images/**: 다이어그램 및 삽화의 현지화된 버전
 - **study_guide.md**: 저장소 탐색을 위한 포괄적인 가이드
@@ -238,8 +237,9 @@ Model Context Protocol(MCP)은 AI 모델과 클라이언트 애플리케이션 �
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: 프로젝트 관리 문서
 
 ## 🎒 기타 강좌
-우리 팀이 제작한 다른 강좌를 확인하세요!
+우리 팀은 다른 강좌도 제작합니다! 확인해보세요:
 
+- [**NEW** Edge AI For Beginners](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 - [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
@@ -259,11 +259,10 @@ Model Context Protocol(MCP)은 AI 모델과 클라이언트 애플리케이션 �
 
 ## ™️ 상표 고지
 
-이 프로젝트에는 프로젝트, 제품 또는 서비스에 대한 상표 또는 로고가 포함될 수 있습니다. Microsoft 상표 또는 로고의 허가된 사용은 [Microsoft 상표 및 브랜드 가이드라인](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)을 따라야 합니다.  
-수정된 버전의 이 프로젝트에서 Microsoft 상표 또는 로고를 사용하는 경우 혼란을 초래하거나 Microsoft의 후원을 암시해서는 안 됩니다.  
-제3자 상표 또는 로고의 사용은 해당 제3자의 정책을 따라야 합니다.  
+이 프로젝트는 프로젝트, 제품 또는 서비스에 대한 상표 또는 로고를 포함할 수 있습니다. Microsoft 상표 또는 로고의 승인된 사용은 [Microsoft 상표 및 브랜드 가이드라인](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general)을 따라야 하며, 수정된 버전의 이 프로젝트에서 Microsoft 상표 또는 로고를 사용하는 경우 혼란을 초래하거나 Microsoft 후원을 암시해서는 안 됩니다.  
+제3자 상표 또는 로고의 사용은 해당 제3자의 정책을 따라야 합니다.
 
 ---
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 신뢰할 수 있는 권위 있는 자료로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 모국어 버전이 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
