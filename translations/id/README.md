@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "db69f754d127d295e6449e29c08ed5c8",
-  "translation_date": "2025-09-15T20:48:11+00:00",
+  "original_hash": "260ef49b183d9dc4d364c1a58c9ddcfd",
+  "translation_date": "2025-09-29T21:50:35+00:00",
   "source_file": "README.md",
   "language_code": "id"
 }
@@ -24,14 +24,14 @@ CO_OP_TRANSLATOR_METADATA:
 Ikuti langkah-langkah berikut untuk mulai menggunakan sumber daya ini:
 1. **Fork Repository**: Klik [![Fork GitHub](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Clone Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Gabung ke Azure AI Foundry Discord dan temui para ahli serta pengembang lainnya**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Bergabunglah dengan Azure AI Foundry Discord dan temui para ahli serta pengembang lainnya**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Dukungan Multi-Bahasa
 
 #### Didukung melalui GitHub Action (Otomatis & Selalu Terbaru)
 
- [Arabic](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarian](../bg/README.md) | [Burmese (Myanmar)](../my/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Croatian](../hr/README.md) | [Czech](../cs/README.md) | [Danish](../da/README.md) | [Dutch](../nl/README.md) | [Finnish](../fi/README.md) | [French](../fr/README.md) | [German](../de/README.md) | [Greek](../el/README.md) | [Hebrew](../he/README.md) | [Hindi](../hi/README.md) | [Hungarian](../hu/README.md) | [Indonesian](./README.md) | [Italian](../it/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Malay](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norwegian](../no/README.md) | [Persian (Farsi)](../fa/README.md) | [Polish](../pl/README.md) | [Portuguese (Brazil)](../br/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Romanian](../ro/README.md) | [Russian](../ru/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Slovak](../sk/README.md) | [Slovenian](../sl/README.md) | [Spanish](../es/README.md) | [Swahili](../sw/README.md) | [Swedish](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thai](../th/README.md) | [Turkish](../tr/README.md) | [Ukrainian](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamese](../vi/README.md)
+ [Arab](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgaria](../bg/README.md) | [Burma (Myanmar)](../my/README.md) | [Cina (Sederhana)](../zh/README.md) | [Cina (Tradisional, Hong Kong)](../hk/README.md) | [Cina (Tradisional, Makau)](../mo/README.md) | [Cina (Tradisional, Taiwan)](../tw/README.md) | [Kroasia](../hr/README.md) | [Ceko](../cs/README.md) | [Denmark](../da/README.md) | [Belanda](../nl/README.md) | [Finlandia](../fi/README.md) | [Prancis](../fr/README.md) | [Jerman](../de/README.md) | [Yunani](../el/README.md) | [Ibrani](../he/README.md) | [Hindi](../hi/README.md) | [Hungaria](../hu/README.md) | [Indonesia](./README.md) | [Italia](../it/README.md) | [Jepang](../ja/README.md) | [Korea](../ko/README.md) | [Melayu](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norwegia](../no/README.md) | [Persia (Farsi)](../fa/README.md) | [Polandia](../pl/README.md) | [Portugis (Brasil)](../br/README.md) | [Portugis (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumania](../ro/README.md) | [Rusia](../ru/README.md) | [Serbia (Kiril)](../sr/README.md) | [Slovakia](../sk/README.md) | [Slovenia](../sl/README.md) | [Spanyol](../es/README.md) | [Swahili](../sw/README.md) | [Swedia](../sv/README.md) | [Tagalog (Filipina)](../tl/README.md) | [Thailand](../th/README.md) | [Turki](../tr/README.md) | [Ukraina](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnam](../vi/README.md)
 
 # 🚀 Kurikulum Model Context Protocol (MCP) untuk Pemula
 
@@ -39,7 +39,7 @@ Ikuti langkah-langkah berikut untuk mulai menggunakan sumber daya ini:
 
 ## 🧠 Gambaran Umum Kurikulum Model Context Protocol
 
-**Model Context Protocol (MCP)** adalah kerangka kerja mutakhir yang dirancang untuk menstandarkan interaksi antara model AI dan aplikasi klien. Kurikulum sumber terbuka ini menawarkan jalur pembelajaran yang terstruktur, lengkap dengan contoh kode praktis dan kasus penggunaan dunia nyata, dalam berbagai bahasa pemrograman populer seperti C#, Java, JavaScript, TypeScript, dan Python.
+**Model Context Protocol (MCP)** adalah kerangka kerja mutakhir yang dirancang untuk menstandarkan interaksi antara model AI dan aplikasi klien. Kurikulum sumber terbuka ini menawarkan jalur pembelajaran yang terstruktur, lengkap dengan contoh kode praktis dan kasus penggunaan nyata, dalam berbagai bahasa pemrograman populer seperti C#, Java, JavaScript, TypeScript, dan Python.
 
 Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, panduan ini adalah sumber daya komprehensif untuk menguasai dasar-dasar MCP dan strategi implementasinya.
 
@@ -56,7 +56,7 @@ Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, 
 ### 📚 Struktur Kurikulum Lengkap
 
 | Modul | Topik | Deskripsi | Tautan |
-|-------|-------|-----------|-------|
+|-------|-------|-----------|--------|
 | **Modul 1-3: Dasar-Dasar** | | | |
 | 00 | Pengantar MCP | Gambaran umum Model Context Protocol dan pentingnya dalam pipeline AI | [Baca lebih lanjut](./00-Introduction/README.md) |
 | 01 | Penjelasan Konsep Inti | Eksplorasi mendalam tentang konsep inti MCP | [Baca lebih lanjut](./01-CoreConcepts/README.md) |
@@ -83,12 +83,12 @@ Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, 
 | 5.6 | Sampling | Teknik sampling dalam MCP | [Panduan](./05-AdvancedTopics/mcp-sampling/README.md) |
 | 5.7 | Scaling | Skalakan implementasi MCP | [Panduan](./05-AdvancedTopics/mcp-scaling/README.md) |
 | 5.8 | Keamanan | Pertimbangan keamanan lanjutan | [Panduan](./05-AdvancedTopics/mcp-security/README.md) |
-| 5.9 | Pencarian Web | Implementasi kemampuan pencarian web | [Panduan](./05-AdvancedTopics/web-search-mcp/README.md) |
-| 5.10 | Streaming Realtime | Bangun fungsi streaming realtime | [Panduan](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
-| 5.11 | Pencarian Realtime | Implementasi pencarian realtime | [Panduan](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
+| 5.9 | Pencarian Web | Implementasikan kemampuan pencarian web | [Panduan](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 5.10 | Streaming Realtime | Bangun fungsionalitas streaming realtime | [Panduan](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
+| 5.11 | Pencarian Realtime | Implementasikan pencarian realtime | [Panduan](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
 | 5.12 | Autentikasi Entra ID | Autentikasi dengan Microsoft Entra ID | [Panduan](./05-AdvancedTopics/mcp-security-entra/README.md) |
 | 5.13 | Integrasi Foundry | Integrasi dengan Azure AI Foundry | [Panduan](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
-| 5.14 | Teknik Context Engineering | Teknik untuk rekayasa konteks yang efektif | [Panduan](./05-AdvancedTopics/mcp-contextengineering/README.md) |
+| 5.14 | Teknik Rekayasa Konteks | Teknik untuk rekayasa konteks yang efektif | [Panduan](./05-AdvancedTopics/mcp-contextengineering/README.md) |
 | 5.15 | Transport Kustom MCP | Implementasi Transport Kustom | [Panduan](./05-AdvancedTopics/mcp-transport/README.md) |
 
 | **Modul 6-10: Komunitas & Praktik Terbaik** | | | |
@@ -96,14 +96,14 @@ Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, 
 | 07 | Wawasan dari Adopsi Awal | Kisah implementasi dunia nyata | [Panduan](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | Praktik Terbaik untuk MCP | Performa, toleransi kesalahan, ketahanan | [Panduan](./08-BestPractices/README.md) |
 | 09 | Studi Kasus MCP | Contoh implementasi praktis | [Panduan](./09-CaseStudy/README.md) |
-| 10 | Workshop Praktis | Membangun Server MCP dengan AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
+| 10 | Lokakarya Praktis | Membangun Server MCP dengan AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 
 ### 💻 Proyek Contoh Kode
 
 #### Contoh Kalkulator MCP Dasar
 
 | Bahasa | Deskripsi | Tautan |
-|--------|-----------|-------|
+|--------|-----------|--------|
 | C# | Contoh Server MCP | [Lihat Kode](./03-GettingStarted/samples/csharp/README.md) |
 | Java | Kalkulator MCP | [Lihat Kode](./03-GettingStarted/samples/java/calculator/README.md) |
 | JavaScript | Demo MCP | [Lihat Kode](./03-GettingStarted/samples/javascript/README.md) |
@@ -115,17 +115,17 @@ Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, 
 | Bahasa | Deskripsi | Tautan |
 |--------|-----------|--------|
 | C# | Contoh Lanjutan | [Lihat Kode](./04-PracticalImplementation/samples/csharp/README.md) |
-| Java dengan Spring | Contoh Aplikasi Kontainer | [Lihat Kode](./04-PracticalImplementation/samples/java/containerapp/README.md) |
+| Java dengan Spring | Contoh Aplikasi Container | [Lihat Kode](./04-PracticalImplementation/samples/java/containerapp/README.md) |
 | JavaScript | Contoh Lanjutan | [Lihat Kode](./04-PracticalImplementation/samples/javascript/README.md) |
 | Python | Implementasi Kompleks | [Lihat Kode](../../04-PracticalImplementation/samples/python/READMEmd) |
-| TypeScript | Contoh Kontainer | [Lihat Kode](./04-PracticalImplementation/samples/typescript/README.md) |
+| TypeScript | Contoh Container | [Lihat Kode](./04-PracticalImplementation/samples/typescript/README.md) |
 
 
 ## 🎯 Prasyarat untuk Belajar MCP
 
 Untuk mendapatkan manfaat maksimal dari kurikulum ini, Anda sebaiknya memiliki:
 
-- Pengetahuan dasar pemrograman dalam salah satu bahasa berikut: C#, Java, JavaScript, Python, atau TypeScript
+- Pengetahuan dasar pemrograman dalam setidaknya salah satu bahasa berikut: C#, Java, JavaScript, Python, atau TypeScript
 - Pemahaman tentang model client-server dan API
 - Familiaritas dengan konsep REST dan HTTP
 - (Opsional) Latar belakang dalam konsep AI/ML
@@ -138,7 +138,7 @@ Repositori ini mencakup berbagai sumber daya untuk membantu Anda belajar dengan 
 
 ### Panduan Belajar
 
-Panduan Belajar [komprehensif](./study_guide.md) tersedia untuk membantu Anda menjelajahi repositori ini dengan baik. Panduan ini mencakup:
+Panduan Belajar [Study Guide](./study_guide.md) yang komprehensif tersedia untuk membantu Anda menjelajahi repositori ini dengan efektif. Panduan ini mencakup:
 
 - Peta kurikulum visual yang menunjukkan semua topik yang dibahas
 - Rincian mendalam dari setiap bagian repositori
@@ -146,12 +146,12 @@ Panduan Belajar [komprehensif](./study_guide.md) tersedia untuk membantu Anda me
 - Jalur pembelajaran yang direkomendasikan untuk berbagai tingkat keterampilan
 - Sumber daya tambahan untuk melengkapi perjalanan belajar Anda
 
-### Catatan Perubahan
+### Changelog
 
-Kami menjaga [Catatan Perubahan](./changelog.md) yang mendetail untuk melacak semua pembaruan signifikan pada materi kurikulum, termasuk:
+Kami menjaga [Changelog](./changelog.md) yang terperinci untuk melacak semua pembaruan signifikan pada materi kurikulum, termasuk:
 
 - Penambahan konten baru
-- Perubahan struktur
+- Perubahan struktural
 - Peningkatan fitur
 - Pembaruan dokumentasi
 
@@ -182,7 +182,7 @@ Apakah Anda baru memulai dengan MCP atau sudah membangun dengannya, Hari 1 akan 
 
 Didedikasikan untuk pembangun MCP. Kami akan mendalami strategi implementasi dan praktik terbaik untuk membuat server MCP dan mengintegrasikan MCP ke dalam alur kerja AI Anda.
 
-#### Topik yang dibahas:
+#### Topik meliputi:
 
 - Membangun Server MCP dan mengintegrasikannya ke dalam pengalaman agen
 - Pengembangan berbasis prompt
@@ -219,15 +219,14 @@ Konten ini dilisensikan di bawah **MIT License**. Untuk syarat dan ketentuan, li
 
 Proyek ini menyambut kontribusi dan saran. Sebagian besar kontribusi mengharuskan Anda menyetujui
 Contributor License Agreement (CLA) yang menyatakan bahwa Anda memiliki hak untuk, dan benar-benar memberikan kami
-hak untuk menggunakan kontribusi Anda. Untuk detail, kunjungi 
-<https://cla.opensource.microsoft.com>.
+hak untuk menggunakan kontribusi Anda. Untuk detail, kunjungi <https://cla.opensource.microsoft.com>.
 
 Saat Anda mengirimkan pull request, bot CLA akan secara otomatis menentukan apakah Anda perlu memberikan
 CLA dan menghias PR dengan tepat (misalnya, status check, komentar). Cukup ikuti instruksi
 yang diberikan oleh bot. Anda hanya perlu melakukan ini sekali di semua repositori yang menggunakan CLA kami.
 
 Proyek ini telah mengadopsi [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-Untuk informasi lebih lanjut, lihat [FAQ Kode Etik](https://opensource.microsoft.com/codeofconduct/faq/) atau
+Untuk informasi lebih lanjut, lihat [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) atau
 hubungi [opencode@microsoft.com](mailto:opencode@microsoft.com) untuk pertanyaan atau komentar tambahan.
 
 ## 📂 Struktur Repositori
@@ -246,7 +245,8 @@ Repositori ini diorganisasikan sebagai berikut:
 ## 🎒 Kursus Lainnya
 Tim kami juga memproduksi kursus lainnya! Lihat:
 
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [**BARU** Edge AI Untuk Pemula](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI Agents Untuk Pemula](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI untuk Pemula menggunakan .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 - [Generative AI untuk Pemula menggunakan JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 - [Generative AI untuk Pemula](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -265,12 +265,12 @@ Tim kami juga memproduksi kursus lainnya! Lihat:
 
 ## ™️ Pemberitahuan Merek Dagang
 
-Proyek ini mungkin berisi merek dagang atau logo untuk proyek, produk, atau layanan. Penggunaan merek dagang atau logo Microsoft yang diizinkan harus mengikuti
+Proyek ini mungkin berisi merek dagang atau logo untuk proyek, produk, atau layanan. Penggunaan merek dagang atau logo Microsoft yang diizinkan harus tunduk pada dan mengikuti
 [Pedoman Merek & Brand Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
 Penggunaan merek dagang atau logo Microsoft dalam versi modifikasi dari proyek ini tidak boleh menyebabkan kebingungan atau menyiratkan sponsor Microsoft.
-Penggunaan merek dagang atau logo pihak ketiga tunduk pada kebijakan pihak ketiga tersebut.
+Setiap penggunaan merek dagang atau logo pihak ketiga harus tunduk pada kebijakan pihak ketiga tersebut.
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
