@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "719117a0a5f34ade7b5dfb61ee06fb13",
-  "translation_date": "2025-09-26T18:57:35+00:00",
+  "original_hash": "aa1ce97bc694b08faf3018bab6d275b9",
+  "translation_date": "2025-09-30T21:31:21+00:00",
   "source_file": "study_guide.md",
   "language_code": "hu"
 }
@@ -13,7 +13,7 @@ Ez a tanulási útmutató áttekintést nyújt a "Model Context Protocol (MCP) k
 
 ## Adattár áttekintése
 
-A Model Context Protocol (MCP) egy szabványosított keretrendszer az AI modellek és kliensalkalmazások közötti interakciókhoz. Eredetileg az Anthropic hozta létre, de ma már a szélesebb MCP közösség tartja karban az hivatalos GitHub szervezeten keresztül. Ez az adattár átfogó tananyagot kínál gyakorlati kódpéldákkal C#, Java, JavaScript, Python és TypeScript nyelveken, AI fejlesztők, rendszerarchitekták és szoftvermérnökök számára.
+A Model Context Protocol (MCP) egy szabványosított keretrendszer az AI modellek és kliensalkalmazások közötti interakciókhoz. Eredetileg az Anthropic hozta létre, de jelenleg a szélesebb MCP közösség tartja karban az hivatalos GitHub szervezetén keresztül. Ez az adattár átfogó tananyagot kínál gyakorlati kódpéldákkal C#, Java, JavaScript, Python és TypeScript nyelveken, AI fejlesztők, rendszerarchitekták és szoftvermérnökök számára.
 
 ## Vizualizált tananyag térkép
 
@@ -110,11 +110,20 @@ mindmap
       (AI Toolkit Integration)
       (Production Deployment)
       (4-Lab Structure)
+    11. Database Integration Labs
+      ::icon(fa fa-database)
+      (PostgreSQL Integration)
+      (Retail Analytics Use Case)
+      (Row Level Security)
+      (Semantic Search)
+      (Production Deployment)
+      (13-Lab Structure)
+      (Hands-on Learning)
 ```
 
 ## Adattár szerkezete
 
-Az adattár tíz fő szakaszra van osztva, amelyek az MCP különböző aspektusaira összpontosítanak:
+Az adattár tizenegy fő szakaszra van osztva, amelyek az MCP különböző aspektusaira összpontosítanak:
 
 1. **Bevezetés (00-Introduction/)**
    - A Model Context Protocol áttekintése
@@ -137,7 +146,7 @@ Az adattár tíz fő szakaszra van osztva, amelyek az MCP különböző aspektus
      - MCP Gyors Referencia Legjobb Gyakorlatok
    - **Kulcsfontosságú biztonsági témák**:
      - Prompt injekció és eszközmérgezési támadások
-     - Munkamenet eltérítése és zavart helyettes problémák
+     - Munkamenet eltérítés és zavart helyettesítő problémák
      - Token átadási sebezhetőségek
      - Túlzott jogosultságok és hozzáférés-ellenőrzés
      - Ellátási lánc biztonsága AI komponensek esetében
@@ -208,33 +217,45 @@ Az adattár tíz fő szakaszra van osztva, amelyek az MCP különböző aspektus
    - Tesztelési és ellenállóképességi stratégiák
 
 10. **Esettanulmányok (09-CaseStudy/)**
-    - **Hét átfogó esettanulmány** az MCP sokoldalúságának bemutatására különböző helyzetekben:
-    - **Azure AI Utazási Ügynökök**: Több ügynök összehangolása Azure OpenAI és AI Search segítségével
+    - **Hét átfogó esettanulmány**, amelyek bemutatják az MCP sokoldalúságát különböző helyzetekben:
+    - **Azure AI Utazási Ügynökök**: Több ügynök összehangolása Azure OpenAI-val és AI kereséssel
     - **Azure DevOps Integráció**: Munkafolyamatok automatizálása YouTube adatfrissítésekkel
     - **Valós idejű dokumentáció visszakeresés**: Python konzol kliens streaming HTTP-vel
     - **Interaktív tanulási terv generátor**: Chainlit webalkalmazás beszélgetési AI-val
-    - **Szerkesztőben belüli dokumentáció**: VS Code integráció GitHub Copilot munkafolyamatokkal
+    - **Dokumentáció szerkesztőben**: VS Code integráció GitHub Copilot munkafolyamatokkal
     - **Azure API Management**: Vállalati API integráció MCP szerver létrehozásával
     - **GitHub MCP Registry**: Ökoszisztéma fejlesztés és ügynöki integrációs platform
     - Megvalósítási példák a vállalati integráció, fejlesztői termelékenység és ökoszisztéma fejlesztés területén
 
 11. **Gyakorlati workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Átfogó gyakorlati workshop MCP és AI Toolkit kombinálásával
-    - Intelligens alkalmazások építése, amelyek összekapcsolják az AI modelleket a valós eszközökkel
-    - Gyakorlati modulok az alapok, egyedi szerverfejlesztés és gyártási telepítési stratégiák lefedésére
-    - **Labor szerkezet**:
-      - Labor 1: MCP szerver alapjai
-      - Labor 2: Haladó MCP szerver fejlesztés
-      - Labor 3: AI Toolkit integráció
-      - Labor 4: Gyártási telepítés és méretezés
+    - Intelligens alkalmazások építése, amelyek összekötik az AI modelleket a valós eszközökkel
+    - Gyakorlati modulok az alapoktól a testreszabott szerverfejlesztésig és gyártási telepítési stratégiákig
+    - **Laborstruktúra**:
+      - Labor 1: MCP Szerver Alapok
+      - Labor 2: Haladó MCP Szerver Fejlesztés
+      - Labor 3: AI Toolkit Integráció
+      - Labor 4: Gyártási Telepítés és Méretezés
     - Laboralapú tanulási megközelítés lépésről lépésre
+
+12. **MCP Szerver Adatbázis Integrációs Laborok (11-MCPServerHandsOnLabs/)**
+    - **Átfogó 13-laboros tanulási útvonal** gyártásra kész MCP szerverek építéséhez PostgreSQL integrációval
+    - **Valós kiskereskedelmi analitika megvalósítása** a Zava Retail esettanulmány használatával
+    - **Vállalati szintű minták**, beleértve a sor szintű biztonságot (RLS), szemantikus keresést és több bérlős adat-hozzáférést
+    - **Teljes laborstruktúra**:
+      - **Laborok 00-03: Alapok** - Bevezetés, Architektúra, Biztonság, Környezet beállítása
+      - **Laborok 04-06: MCP Szerver építése** - Adatbázis tervezés, MCP Szerver megvalósítás, Eszközfejlesztés
+      - **Laborok 07-09: Haladó funkciók** - Szemantikus keresés, Tesztelés és hibakeresés, VS Code integráció
+      - **Laborok 10-12: Gyártás és legjobb gyakorlatok** - Telepítés, Monitorozás, Optimalizálás
+    - **Tárgyalt technológiák**: FastMCP keretrendszer, PostgreSQL, Azure OpenAI, Azure Container Apps, Application Insights
+    - **Tanulási eredmények**: Gyártásra kész MCP szerverek, adatbázis integrációs minták, AI-alapú analitika, vállalati biztonság
 
 ## További erőforrások
 
-Az adattár tartalmaz támogató erőforrásokat:
+Az adattár támogató erőforrásokat tartalmaz:
 
 - **Képek mappa**: Diagramokat és illusztrációkat tartalmaz, amelyek a tananyagban szerepelnek
-- **Fordítások**: Többnyelvű támogatás automatikus dokumentációfordításokkal
+- **Fordítások**: Többnyelvű támogatás az automatikus dokumentációfordításokkal
 - **Hivatalos MCP erőforrások**:
   - [MCP Dokumentáció](https://modelcontextprotocol.io/)
   - [MCP Specifikáció](https://spec.modelcontextprotocol.io/)
@@ -242,9 +263,9 @@ Az adattár tartalmaz támogató erőforrásokat:
 
 ## Hogyan használja az adattárat
 
-1. **Szekvenciális tanulás**: Kövesse a fejezeteket sorrendben (00-tól 10-ig) a strukturált tanulási élmény érdekében.
-2. **Nyelvspecifikus fókusz**: Ha egy adott programozási nyelv érdekli, böngéssze a minták könyvtárát a kedvenc nyelvén megvalósított példákért.
-3. **Gyakorlati megvalósítás**: Kezdje az "Első lépések" szekcióval, hogy beállítsa környezetét és létrehozza első MCP szerverét és kliensét.
+1. **Szekvenciális tanulás**: Kövesse a fejezeteket sorrendben (00-tól 11-ig) a strukturált tanulási élmény érdekében.
+2. **Nyelvspecifikus fókusz**: Ha egy adott programozási nyelv érdekli, böngéssze a minták könyvtárait a kedvenc nyelvén megvalósított példákért.
+3. **Gyakorlati megvalósítás**: Kezdje az "Első lépések" szekcióval, hogy beállítsa a környezetét és létrehozza első MCP szerverét és kliensét.
 4. **Haladó felfedezés**: Miután megismerkedett az alapokkal, merüljön el a haladó témákban, hogy bővítse tudását.
 5. **Közösségi részvétel**: Csatlakozzon az MCP közösséghez GitHub vitákon és Discord csatornákon keresztül, hogy kapcsolatba lépjen szakértőkkel és más fejlesztőkkel.
 
@@ -288,10 +309,10 @@ Az adattár bemutatja a különböző MCP szervereket, beleértve:
    - Microsoft 365 Agents Toolkit MCP Szerver
 
 2. **Hivatalos referencia szerverek**:
-   - Filesystem
+   - Fájlrendszer
    - Fetch
-   - Memory
-   - Sequential Thinking
+   - Memória
+   - Szekvenciális gondolkodás
 
 3. **Képgenerálás**:
    - Azure OpenAI DALL-E 3
@@ -300,8 +321,8 @@ Az adattár bemutatja a különböző MCP szervereket, beleértve:
 
 4. **Fejlesztői eszközök**:
    - Git MCP
-   - Terminál vezérlés
-   - Kód asszisztens
+   - Terminálvezérlés
+   - Kódasszisztens
 
 5. **Speciális szerverek**:
    - Salesforce
@@ -310,20 +331,23 @@ Az adattár bemutatja a különböző MCP szervereket, beleértve:
 
 ## Hozzájárulás
 
-Ez az adattár szívesen fogadja a közösség hozzájárulásait. Lásd a Közösségi hozzájárulások szekciót az MCP ökoszisztémához való hatékony hozzájárulás útmutatójáért.
+Ez az adattár szívesen fogadja a közösség hozzájárulásait. Lásd a Közösségi hozzájárulások szekciót az MCP ökoszisztémához való hatékony hozzájárulás útmutatásáért.
 
 ## Változásnapló
 
 | Dátum | Változások |
-|------|---------|
-| 2025. szeptember 26. | - GitHub MCP Registry esettanulmány hozzáadása a 09-CaseStudy szekcióhoz<br>- Esettanulmányok frissítése hét átfogó esettanulmányra<br>- Esettanulmány leírások bővítése konkrét megvalósítási részletekkel<br>- Vizualizált tananyag térkép frissítése a GitHub MCP Registry-vel<br>- Tanulási útmutató szerkezetének átdolgozása az ökoszisztéma fejlesztési fókusz tükrözésére |
-| 2025. július 18. | - Adattár szerkezetének frissítése a Microsoft MCP Szerverek Útmutatóval<br>- 10 gyártásra kész Microsoft MCP szerver átfogó listájának hozzáadása<br>- Népszerű MCP szerverek szekció bővítése hivatalos Microsoft MCP szerverekkel<br>- Esettanulmányok szekció frissítése tényleges fájlpéldákkal<br>- Labor szerkezet részleteinek hozzáadása a gyakorlati workshophoz |
-| 2025. július 16. | - Adattár szerkezetének frissítése az aktuális tartalom tükrözésére<br>- MCP kliensek és eszközök szekció hozzáadása<br>- Népszerű MCP szerverek szekció hozzáadása<br>- Vizualizált tananyag térkép frissítése az összes aktuális témával<br>- Haladó témák szekció bővítése minden speciális területtel<br>- Esettanulmányok frissítése tényleges példákkal<br>- MCP eredetének tisztázása, mint az Anthropic által létrehozott |
-| 2025. június 11. | - Tanulási útmutató kezdeti létrehozása<br>- Vizualizált tananyag térkép hozzáadása<br>- Adattár szerkezetének körvonalazása<br>- Mintaprojektek és további erőforrások hozzáadása |
+|------|---------||
+| 2025. szeptember 29. | - Hozzáadva a 11-MCPServerHandsOnLabs szekció átfogó 13-laboros adatbázis integrációs tanulási útvonallal<br>- Frissítve a Vizualizált tananyag térkép az Adatbázis Integrációs Laborokkal<br>- Az adattár szerkezete frissítve, hogy tükrözze a tizenegy fő szekciót<br>- Részletes leírás hozzáadva a PostgreSQL integrációról, kiskereskedelmi analitika esettanulmányról és vállalati mintákról<br>- Frissítve a navigációs útmutató, hogy tartalmazza a 00-11 szekciókat |
+| 2025. szeptember 26. | - Hozzáadva a GitHub MCP Registry esettanulmány a 09-CaseStudy szekcióhoz<br>- Frissítve az Esettanulmányok szekció hét átfogó esettanulmány tükrözésére<br>- Esettanulmány leírások bővítése konkrét megvalósítási részletekkel<br>- Frissítve a Vizualizált tananyag térkép a GitHub MCP Registry-vel<br>- Átdolgozva a tanulási útmutató szerkezete az ökoszisztéma fejlesztési fókusz tükrözésére |
+| 2025. július 18. | - Az adattár szerkezete frissítve, hogy tartalmazza a Microsoft MCP Szerverek Útmutatót<br>- Hozzáadva átfogó lista 10 gyártásra kész Microsoft MCP szerverről<br>- Népszerű MCP szerverek szekció bővítése Hivatalos Microsoft MCP szerverekkel<br>- Frissítve az Esettanulmányok szekció tényleges fájlpéldákkal<br>- Hozzáadva Laborstruktúra részletek a Gyakorlati Workshophoz |
+| 2025. július 16. | - Az adattár szerkezete frissítve, hogy tükrözze az aktuális tartalmat<br>- Hozzáadva MCP kliensek és eszközök szekció<br>- Hozzáadva Népszerű MCP szerverek szekció<br>- Frissítve a Vizualizált tananyag térkép az összes aktuális témával<br>- Haladó témák szekció bővítése az összes specializált területtel<br>- Frissítve az Esettanulmányok tényleges példák tükrözésére<br>- Tisztázva az MCP eredete, mint az Anthropic által létrehozott |
+| 2025. június 11. | - A tanulási útmutató kezdeti létrehozása<br>- Hozzáadva Vizualizált tananyag térkép<br>- Az adattár szerkezete körvonalazva<br>- Mintaprojektek és további erőforrások hozzáadva |
 
 ---
 
-*Ez a tanulási útmutató 2025. szeptember 26-án frissült, és az adattár ezen a dátumon érvényes áttekintését nyújtja. Az adattár tartalma ezen dátum után frissülhet.*
+*Ez a tanulási útmutató 2025. szeptember 29-én frissült, és az adattár ezen a dátumon érvényes áttekintését nyújtja. Az adattár tartalma ezen dátum után frissülhet.*
 
 ---
 
+**Felelősség kizárása**:  
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
