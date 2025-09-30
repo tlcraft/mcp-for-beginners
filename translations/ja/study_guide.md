@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "719117a0a5f34ade7b5dfb61ee06fb13",
-  "translation_date": "2025-09-26T17:55:55+00:00",
+  "original_hash": "aa1ce97bc694b08faf3018bab6d275b9",
+  "translation_date": "2025-09-30T12:34:18+00:00",
   "source_file": "study_guide.md",
   "language_code": "ja"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## リポジトリ概要
 
-Model Context Protocol (MCP) は、AIモデルとクライアントアプリケーション間のやり取りを標準化するフレームワークです。もともとAnthropicによって作成されたMCPは、現在公式GitHub組織を通じて広範なMCPコミュニティによって維持されています。このリポジトリは、C#、Java、JavaScript、Python、TypeScriptでの実践的なコード例を含む包括的なカリキュラムを提供し、AI開発者、システムアーキテクト、ソフトウェアエンジニア向けに設計されています。
+Model Context Protocol (MCP) は、AIモデルとクライアントアプリケーション間のやり取りを標準化するフレームワークです。もともとAnthropicによって作成されたMCPは、現在、公式GitHub組織を通じて広範なMCPコミュニティによって維持されています。このリポジトリは、C#、Java、JavaScript、Python、TypeScriptでの実践的なコード例を含む包括的なカリキュラムを提供し、AI開発者、システムアーキテクト、ソフトウェアエンジニア向けに設計されています。
 
 ## ビジュアルカリキュラムマップ
 
@@ -110,12 +110,21 @@ mindmap
       (AI Toolkit Integration)
       (Production Deployment)
       (4-Lab Structure)
+    11. Database Integration Labs
+      ::icon(fa fa-database)
+      (PostgreSQL Integration)
+      (Retail Analytics Use Case)
+      (Row Level Security)
+      (Semantic Search)
+      (Production Deployment)
+      (13-Lab Structure)
+      (Hands-on Learning)
 ```
 
 
 ## リポジトリ構造
 
-リポジトリはMCPの異なる側面に焦点を当てた10の主要セクションに分かれています：
+リポジトリは、MCPのさまざまな側面に焦点を当てた11の主要セクションに整理されています：
 
 1. **イントロダクション (00-Introduction/)**
    - Model Context Protocol の概要
@@ -145,7 +154,7 @@ mindmap
      - Microsoft Prompt Shields の統合
 
 4. **はじめに (03-GettingStarted/)**
-   - 環境設定と構成
+   - 環境のセットアップと構成
    - 基本的なMCPサーバーとクライアントの作成
    - 既存アプリケーションとの統合
    - 以下のセクションを含む：
@@ -184,24 +193,24 @@ mindmap
    - コードとドキュメントの貢献方法
    - GitHubを通じたコラボレーション
    - コミュニティ主導の改善とフィードバック
-   - 様々なMCPクライアントの使用 (Claude Desktop、Cline、VSCode)
+   - 各種MCPクライアントの使用（Claude Desktop、Cline、VSCode）
    - 画像生成を含む人気のMCPサーバーとの作業
 
 8. **初期採用からの教訓 (07-LessonsfromEarlyAdoption/)**
    - 実際の実装と成功事例
    - MCPベースのソリューションの構築と展開
    - トレンドと将来のロードマップ
-   - **Microsoft MCP Servers Guide**: 以下を含む10のプロダクション対応Microsoft MCPサーバーの包括的なガイド：
-     - Microsoft Learn Docs MCP Server
-     - Azure MCP Server (15以上の専門コネクタ)
-     - GitHub MCP Server
-     - Azure DevOps MCP Server
-     - MarkItDown MCP Server
-     - SQL Server MCP Server
-     - Playwright MCP Server
-     - Dev Box MCP Server
-     - Azure AI Foundry MCP Server
-     - Microsoft 365 Agents Toolkit MCP Server
+   - **Microsoft MCPサーバーガイド**: 10のプロダクション対応Microsoft MCPサーバーの包括的なガイド：
+     - Microsoft Learn Docs MCPサーバー
+     - Azure MCPサーバー（15以上の専門コネクタ）
+     - GitHub MCPサーバー
+     - Azure DevOps MCPサーバー
+     - MarkItDown MCPサーバー
+     - SQL Server MCPサーバー
+     - Playwright MCPサーバー
+     - Dev Box MCPサーバー
+     - Azure AI Foundry MCPサーバー
+     - Microsoft 365 Agents Toolkit MCPサーバー
 
 9. **ベストプラクティス (08-BestPractices/)**
    - パフォーマンスチューニングと最適化
@@ -210,19 +219,19 @@ mindmap
 
 10. **ケーススタディ (09-CaseStudy/)**
     - **7つの包括的なケーススタディ**が示すMCPの多様なシナリオでの汎用性：
-    - **Azure AI旅行代理店**: Azure OpenAIとAI検索を用いたマルチエージェントオーケストレーション
+    - **Azure AI旅行代理店**: Azure OpenAIとAI検索を使用したマルチエージェントオーケストレーション
     - **Azure DevOps統合**: YouTubeデータ更新を自動化するワークフロープロセス
     - **リアルタイムドキュメント取得**: ストリーミングHTTPを使用したPythonコンソールクライアント
-    - **インタラクティブ学習計画ジェネレーター**: 会話型AIを備えたChainlitウェブアプリ
-    - **エディター内ドキュメント**: GitHub Copilotワークフローを備えたVS Code統合
+    - **インタラクティブ学習計画ジェネレーター**: 会話型AIを使用したChainlitウェブアプリ
+    - **エディター内ドキュメント**: GitHub Copilotワークフローを使用したVS Code統合
     - **Azure API管理**: MCPサーバー作成を伴うエンタープライズAPI統合
-    - **GitHub MCP Registry**: エコシステム開発とエージェント統合プラットフォーム
+    - **GitHub MCPレジストリ**: エコシステム開発とエージェント統合プラットフォーム
     - エンタープライズ統合、開発者の生産性、エコシステム開発にまたがる実装例
 
 11. **ハンズオンワークショップ (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - MCPとAIツールキットを組み合わせた包括的なハンズオンワークショップ
     - AIモデルと現実世界のツールを橋渡しするインテリジェントアプリケーションの構築
-    - 基礎、カスタムサーバー開発、プロダクション展開戦略をカバーする実践的モジュール
+    - 基礎、カスタムサーバー開発、プロダクション展開戦略をカバーする実践的なモジュール
     - **ラボ構造**:
       - ラボ1: MCPサーバーの基礎
       - ラボ2: 高度なMCPサーバー開発
@@ -230,28 +239,40 @@ mindmap
       - ラボ4: プロダクション展開とスケーリング
     - ステップバイステップの指示を伴うラボベースの学習アプローチ
 
+12. **MCPサーバーデータベース統合ラボ (11-MCPServerHandsOnLabs/)**
+    - **13のラボ学習パス**を含む、PostgreSQL統合を伴うプロダクション対応MCPサーバーの構築
+    - **Zava Retailユースケース**を使用した実際の小売分析の実装
+    - **エンタープライズグレードのパターン**: Row Level Security (RLS)、セマンティック検索、マルチテナントデータアクセス
+    - **完全なラボ構造**:
+      - **ラボ00-03: 基礎** - イントロダクション、アーキテクチャ、セキュリティ、環境セットアップ
+      - **ラボ04-06: MCPサーバーの構築** - データベース設計、MCPサーバー実装、ツール開発
+      - **ラボ07-09: 高度な機能** - セマンティック検索、テスト＆デバッグ、VS Code統合
+      - **ラボ10-12: プロダクション＆ベストプラクティス** - 展開、監視、最適化
+    - **対象技術**: FastMCPフレームワーク、PostgreSQL、Azure OpenAI、Azure Container Apps、Application Insights
+    - **学習成果**: プロダクション対応MCPサーバー、データベース統合パターン、AI駆動分析、エンタープライズセキュリティ
+
 ## 追加リソース
 
 リポジトリには以下のサポートリソースが含まれています：
 
-- **Imagesフォルダ**: カリキュラム全体で使用される図やイラストを含む
+- **画像フォルダー**: カリキュラム全体で使用される図やイラストを含む
 - **翻訳**: ドキュメントの自動翻訳による多言語サポート
 - **公式MCPリソース**:
-  - [MCP Documentation](https://modelcontextprotocol.io/)
-  - [MCP Specification](https://spec.modelcontextprotocol.io/)
-  - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+  - [MCPドキュメント](https://modelcontextprotocol.io/)
+  - [MCP仕様](https://spec.modelcontextprotocol.io/)
+  - [MCP GitHubリポジトリ](https://github.com/modelcontextprotocol)
 
 ## このリポジトリの使い方
 
-1. **順序学習**: 構造化された学習体験のために、章を順番に追ってください (00から10まで)。
-2. **言語特化型学習**: 特定のプログラミング言語に興味がある場合は、好みの言語での実装を含むサンプルディレクトリを探索してください。
-3. **実践的な実装**: 「はじめに」セクションから始めて環境を設定し、最初のMCPサーバーとクライアントを作成してください。
+1. **順序学習**: 構造化された学習体験のために、章を順番に（00から11まで）進めてください。
+2. **言語特化型学習**: 特定のプログラミング言語に興味がある場合は、サンプルディレクトリで好みの言語の実装を探索してください。
+3. **実践的な実装**: 「はじめに」セクションから始めて環境をセットアップし、最初のMCPサーバーとクライアントを作成してください。
 4. **高度な探求**: 基本を習得したら、高度なトピックに進んで知識を広げてください。
 5. **コミュニティ参加**: GitHubディスカッションやDiscordチャンネルを通じてMCPコミュニティに参加し、専門家や他の開発者とつながりましょう。
 
 ## MCPクライアントとツール
 
-カリキュラムでは様々なMCPクライアントとツールを取り上げています：
+カリキュラムでは、さまざまなMCPクライアントとツールを取り上げています：
 
 1. **公式クライアント**:
    - Visual Studio Code
@@ -261,8 +282,8 @@ mindmap
    - Claude API
 
 2. **コミュニティクライアント**:
-   - Cline (ターミナルベース)
-   - Cursor (コードエディター)
+   - Cline（ターミナルベース）
+   - Cursor（コードエディター）
    - ChatMCP
    - Windsurf
 
@@ -274,19 +295,19 @@ mindmap
 
 ## 人気のMCPサーバー
 
-リポジトリでは様々なMCPサーバーを紹介しています：
+リポジトリでは、さまざまなMCPサーバーを紹介しています：
 
 1. **公式Microsoft MCPサーバー**:
-   - Microsoft Learn Docs MCP Server
-   - Azure MCP Server (15以上の専門コネクタ)
-   - GitHub MCP Server
-   - Azure DevOps MCP Server
-   - MarkItDown MCP Server
-   - SQL Server MCP Server
-   - Playwright MCP Server
-   - Dev Box MCP Server
-   - Azure AI Foundry MCP Server
-   - Microsoft 365 Agents Toolkit MCP Server
+   - Microsoft Learn Docs MCPサーバー
+   - Azure MCPサーバー（15以上の専門コネクタ）
+   - GitHub MCPサーバー
+   - Azure DevOps MCPサーバー
+   - MarkItDown MCPサーバー
+   - SQL Server MCPサーバー
+   - Playwright MCPサーバー
+   - Dev Box MCPサーバー
+   - Azure AI Foundry MCPサーバー
+   - Microsoft 365 Agents Toolkit MCPサーバー
 
 2. **公式リファレンスサーバー**:
    - Filesystem
@@ -316,15 +337,18 @@ mindmap
 ## 変更履歴
 
 | 日付 | 変更内容 |
-|------|---------|
-| 2025年9月26日 | - GitHub MCP Registryケーススタディを09-CaseStudyセクションに追加<br>- ケーススタディを7つの包括的なケーススタディに更新<br>- ケーススタディの説明を具体的な実装詳細で強化<br>- ビジュアルカリキュラムマップをGitHub MCP Registryを含むよう更新<br>- エコシステム開発に焦点を当てた学習ガイド構造を改訂 |
-| 2025年7月18日 | - リポジトリ構造をMicrosoft MCP Servers Guideを含むよう更新<br>- 10のプロダクション対応Microsoft MCPサーバーの包括的リストを追加<br>- 人気のMCPサーバーセクションを公式Microsoft MCPサーバーで強化<br>- ケーススタディセクションを実際のファイル例で更新<br>- ハンズオンワークショップのラボ構造詳細を追加 |
-| 2025年7月16日 | - 現在の内容を反映するようリポジトリ構造を更新<br>- MCPクライアントとツールセクションを追加<br>- 人気のMCPサーバーセクションを追加<br>- 現在のトピックを含むビジュアルカリキュラムマップを更新<br>- 高度なトピックセクションをすべての専門分野で強化<br>- ケーススタディを実際の例で更新<br>- MCPの起源をAnthropicによる作成として明確化 |
-| 2025年6月11日 | - 学習ガイドの初期作成<br>- ビジュアルカリキュラムマップを追加<br>- リポジトリ構造を概説<br>- サンプルプロジェクトと追加リソースを含む |
+|------|---------||
+| 2025年9月29日 | - 11-MCPServerHandsOnLabsセクションを追加し、包括的な13ラボのデータベース統合学習パスを提供<br>- データベース統合ラボを含むビジュアルカリキュラムマップを更新<br>- 11の主要セクションを反映するようリポジトリ構造を強化<br>- PostgreSQL統合、小売分析ユースケース、エンタープライズパターンの詳細を追加<br>- ナビゲーションガイダンスをセクション00-11を含むよう更新 |
+| 2025年9月26日 | - GitHub MCP Registryケーススタディを09-CaseStudyセクションに追加<br>- ケーススタディを7つの包括的なケーススタディを反映するよう更新<br>- ケーススタディの説明を具体的な実装詳細で強化<br>- GitHub MCP Registryを含むビジュアルカリキュラムマップを更新<br>- エコシステム開発に焦点を当てた学習ガイド構造を改訂 |
+| 2025年7月18日 | - Microsoft MCP Servers Guideを含むようリポジトリ構造を更新<br>- 10のプロダクション対応Microsoft MCPサーバーの包括的なリストを追加<br>- 人気のMCPサーバーセクションを公式Microsoft MCPサーバーで強化<br>- ケーススタディセクションを実際のファイル例で更新<br>- ハンズオンワークショップのラボ構造詳細を追加 |
+| 2025年7月16日 | - 現在の内容を反映するようリポジトリ構造を更新<br>- MCPクライアントとツールセクションを追加<br>- 人気のMCPサーバーセクションを追加<br>- 現在のトピックを含むビジュアルカリキュラムマップを更新<br>- 高度なトピックセクションをすべての専門分野で強化<br>- ケーススタディを実際の例を反映するよう更新<br>- MCPの起源をAnthropicによって作成されたことを明確化 |
+| 2025年6月11日 | - 学習ガイドの初回作成<br>- ビジュアルカリキュラムマップを追加<br>- リポジトリ構造を概説<br>- サンプルプロジェクトと追加リソースを含む |
 
 ---
 
-*この学習ガイドは2025年9月26日に更新され、その日付時点でのリポジトリの概要を提供します。その後、リポジトリ内容が更新される可能性があります。*
+*この学習ガイドは2025年9月29日に更新され、その日付時点でのリポジトリの概要を提供します。その後、リポジトリ内容が更新される可能性があります。*
 
 ---
 
+**免責事項**:  
+この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。元の言語で記載された文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当方は一切の責任を負いません。
