@@ -1,70 +1,112 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "704c94da1dde019de2d8eb1d671f418f",
-  "translation_date": "2025-09-26T18:56:40+00:00",
+  "original_hash": "f9d56a1327805a9f6df085a41fb81083",
+  "translation_date": "2025-09-30T21:30:09+00:00",
   "source_file": "changelog.md",
   "language_code": "hu"
 }
 -->
 # Változások naplója: MCP kezdőknek tananyag
 
-Ez a dokumentum a Model Context Protocol (MCP) kezdőknek szóló tananyagában történt jelentős változások nyilvántartására szolgál. A változások fordított időrendben vannak dokumentálva (a legújabb változások elöl).
+Ez a dokumentum a Model Context Protocol (MCP) kezdőknek szóló tananyagában végrehajtott jelentős változások nyilvántartásaként szolgál. A változások fordított időrendben vannak dokumentálva (a legújabb változások elöl).
+
+## 2025. szeptember 29.
+
+### MCP szerver adatbázis-integrációs laborok - Átfogó gyakorlati tanulási útvonal
+
+#### 11-MCPServerHandsOnLabs - Új, teljes adatbázis-integrációs tananyag
+- **Teljes 13-laboros tanulási útvonal**: Átfogó gyakorlati tananyag hozzáadása, amely termelésre kész MCP szerverek építését tanítja PostgreSQL adatbázis-integrációval
+  - **Valós példák**: Zava Retail analitikai esettanulmány, amely vállalati szintű mintákat mutat be
+  - **Strukturált tanulási folyamat**:
+    - **Laborok 00-03: Alapok** - Bevezetés, alapvető architektúra, biztonság és több-bérlős megoldások, környezet beállítása
+    - **Laborok 04-06: MCP szerver építése** - Adatbázis-tervezés és séma, MCP szerver implementáció, eszközfejlesztés  
+    - **Laborok 07-09: Haladó funkciók** - Szemantikus keresés integráció, tesztelés és hibakeresés, VS Code integráció
+    - **Laborok 10-12: Termelés és legjobb gyakorlatok** - Telepítési stratégiák, monitorozás és megfigyelés, optimalizálás és legjobb gyakorlatok
+  - **Vállalati technológiák**: FastMCP keretrendszer, PostgreSQL pgvectorral, Azure OpenAI beágyazások, Azure Container Apps, Application Insights
+  - **Haladó funkciók**: Sor szintű biztonság (RLS), szemantikus keresés, több-bérlős adat-hozzáférés, vektor beágyazások, valós idejű monitorozás
+
+#### Terminológia egységesítése - Modulok laborokká alakítása
+- **Átfogó dokumentáció frissítés**: Az összes README fájl szisztematikus frissítése a 11-MCPServerHandsOnLabs-ban, hogy "Labor" terminológiát használjon "Modul" helyett
+  - **Szakaszfejlécek**: Az "Mit tartalmaz ez a modul" frissítése "Mit tartalmaz ez a labor" formára mind a 13 laborban
+  - **Tartalomleírás**: Az "Ez a modul bemutatja..." átalakítása "Ez a labor bemutatja..." formára a dokumentációban
+  - **Tanulási célok**: Az "A modul végére..." frissítése "A labor végére..." formára
+  - **Navigációs hivatkozások**: Az összes "Modul XX:" hivatkozás átalakítása "Labor XX:" formára a kereszthivatkozásokban és navigációban
+  - **Teljesítési nyomon követés**: Az "A modul befejezése után..." frissítése "A labor befejezése után..." formára
+  - **Technikai hivatkozások megőrzése**: A Python modul hivatkozások megőrzése a konfigurációs fájlokban (pl. `"module": "mcp_server.main"`)
+
+#### Tanulási útmutató fejlesztése (study_guide.md)
+- **Vizualizált tananyag térkép**: Új "11. Adatbázis-integrációs laborok" szakasz hozzáadása átfogó laborstruktúra vizualizációval
+- **Repository struktúra**: Frissítés tízről tizenegy fő szakaszra, részletes 11-MCPServerHandsOnLabs leírással
+- **Tanulási útvonal iránymutatás**: Navigációs utasítások bővítése a 00-11 szakaszok lefedésére
+- **Technológiai lefedettség**: FastMCP, PostgreSQL, Azure szolgáltatások integrációjának részletei
+- **Tanulási eredmények**: Termelésre kész szerverfejlesztés, adatbázis-integrációs minták és vállalati biztonság hangsúlyozása
+
+#### Fő README struktúra fejlesztése
+- **Labor-alapú terminológia**: A fő README.md frissítése a 11-MCPServerHandsOnLabs-ban, hogy következetesen "Labor" struktúrát használjon
+- **Tanulási útvonal szervezése**: Egyértelmű haladás az alapfogalmaktól a haladó implementáción át a termelési telepítésig
+- **Valós példákra fókuszálás**: Gyakorlati, kézzelfogható tanulás hangsúlyozása vállalati szintű mintákkal és technológiákkal
+
+### Dokumentáció minőségi és konzisztencia fejlesztések
+- **Gyakorlati tanulás hangsúlyozása**: Gyakorlati, labor-alapú megközelítés megerősítése a dokumentációban
+- **Vállalati minták fókusza**: Termelésre kész implementációk és vállalati biztonsági szempontok kiemelése
+- **Technológiai integráció**: Modern Azure szolgáltatások és AI integrációs minták átfogó lefedettsége
+- **Tanulási folyamat**: Egyértelmű, strukturált út az alapfogalmaktól a termelési telepítésig
 
 ## 2025. szeptember 26.
 
-### Esettanulmányok bővítése - GitHub MCP Registry integráció
+### Esettanulmányok fejlesztése - GitHub MCP Registry integráció
 
-#### Esettanulmányok (09-CaseStudy/) - Ökoszisztéma fejlesztés fókuszban
+#### Esettanulmányok (09-CaseStudy/) - Ökoszisztéma fejlesztési fókusz
 - **README.md**: Jelentős bővítés átfogó GitHub MCP Registry esettanulmánnyal
-  - **GitHub MCP Registry esettanulmány**: Új, átfogó esettanulmány a GitHub MCP Registry 2025 szeptemberi bevezetéséről
+  - **GitHub MCP Registry esettanulmány**: Új, átfogó esettanulmány a GitHub MCP Registry szeptemberi 2025-ös bevezetéséről
     - **Problémaelemzés**: Részletes vizsgálat a töredezett MCP szerver felfedezési és telepítési kihívásokról
     - **Megoldás architektúra**: GitHub központosított regiszter megközelítése egykattintásos VS Code telepítéssel
     - **Üzleti hatás**: Mérhető javulások a fejlesztői bevezetésben és termelékenységben
     - **Stratégiai érték**: Moduláris ügynök telepítés és eszközök közötti interoperabilitás hangsúlyozása
     - **Ökoszisztéma fejlesztés**: Alapvető platformként való pozícionálás az ügynöki integrációhoz
-  - **Esettanulmányok szerkezetének bővítése**: Mind a hét esettanulmány frissítése egységes formázással és átfogó leírásokkal
-    - Azure AI utazási ügynökök: Több ügynök összehangolásának hangsúlyozása
-    - Azure DevOps integráció: Munkafolyamat automatizálás fókuszban
-    - Valós idejű dokumentáció visszakeresés: Python konzol kliens megvalósítás
+  - **Esettanulmány struktúra fejlesztése**: Mind a hét esettanulmány frissítése következetes formázással és átfogó leírásokkal
+    - Azure AI Travel Agents: Több ügynökös koordináció hangsúlyozása
+    - Azure DevOps integráció: Munkafolyamat automatizálás fókusza
+    - Valós idejű dokumentáció visszakeresés: Python konzol kliens implementáció
     - Interaktív tanulási terv generátor: Chainlit beszélgető webalkalmazás
-    - Dokumentáció szerkesztőben: VS Code és GitHub Copilot integráció
-    - Azure API kezelés: Vállalati API integrációs minták
+    - Szerkesztőben megjelenő dokumentáció: VS Code és GitHub Copilot integráció
+    - Azure API Management: Vállalati API integrációs minták
     - GitHub MCP Registry: Ökoszisztéma fejlesztés és közösségi platform
-  - **Átfogó következtetés**: Újraírt következtetés szakasz, amely kiemeli a hét esettanulmányt, amelyek az MCP megvalósítás különböző dimenzióit ölelik fel
-    - Vállalati integráció, több ügynök összehangolás, fejlesztői termelékenység
+  - **Átfogó következtetés**: Újraírt következtetés szakasz, amely kiemeli a hét esettanulmányt, amelyek az MCP implementáció különböző dimenzióit fedik le
+    - Vállalati integráció, több ügynökös koordináció, fejlesztői termelékenység
     - Ökoszisztéma fejlesztés, oktatási alkalmazások kategorizálása
-    - Mélyebb betekintés az architektúra mintákba, megvalósítási stratégiákba és legjobb gyakorlatokba
-    - Hangsúly az MCP mint érett, gyártásra kész protokoll
+    - Fejlett betekintések az architektúra mintákba, implementációs stratégiákba és legjobb gyakorlatokba
+    - Az MCP mint érett, termelésre kész protokoll hangsúlyozása
 
 #### Tanulási útmutató frissítések (study_guide.md)
-- **Vizuális tananyag térkép**: Frissített gondolattérkép, amely tartalmazza a GitHub MCP Registry-t az esettanulmányok szekcióban
+- **Vizualizált tananyag térkép**: Frissített gondolattérkép, amely tartalmazza a GitHub MCP Registry-t az esettanulmányok szakaszában
 - **Esettanulmányok leírása**: Általános leírások helyett részletes bontás a hét átfogó esettanulmányról
-- **Repository szerkezet**: Frissített 10. szekció, amely tükrözi az átfogó esettanulmány lefedettséget konkrét megvalósítási részletekkel
-- **Változások naplója integráció**: Hozzáadva a 2025. szeptember 26-i bejegyzés, amely dokumentálja a GitHub MCP Registry hozzáadását és az esettanulmányok bővítéseit
-- **Dátum frissítések**: Frissített lábléc időbélyeg az utolsó revízióra (2025. szeptember 26.)
+- **Repository struktúra**: A 10. szakasz frissítése, hogy átfogó esettanulmány lefedettséget tükrözzön konkrét implementációs részletekkel
+- **Változások naplója integráció**: 2025. szeptember 26-i bejegyzés hozzáadása, amely dokumentálja a GitHub MCP Registry hozzáadását és az esettanulmányok fejlesztéseit
+- **Dátum frissítések**: A lábléc időbélyegének frissítése a legutóbbi revízióra (2025. szeptember 26.)
 
 ### Dokumentáció minőségi fejlesztések
-- **Konzisztencia javítása**: Egységes esettanulmány formázás és szerkezet minden példában
-- **Átfogó lefedettség**: Az esettanulmányok most már kiterjednek vállalati, fejlesztői termelékenységi és ökoszisztéma fejlesztési forgatókönyvekre
-- **Stratégiai pozícionálás**: Fokozott hangsúly az MCP mint alapvető platform az ügynöki rendszerek telepítéséhez
-- **Erőforrás integráció**: Frissített további erőforrások, amelyek tartalmazzák a GitHub MCP Registry linket
+- **Következetesség javítása**: Az esettanulmány formázásának és struktúrájának szabványosítása mind a hét példában
+- **Átfogó lefedettség**: Az esettanulmányok mostantól vállalati, fejlesztői termelékenységi és ökoszisztéma fejlesztési forgatókönyveket fednek le
+- **Stratégiai pozícionálás**: Az MCP mint alapvető platform hangsúlyozása az ügynöki rendszer telepítéséhez
+- **Erőforrás integráció**: További erőforrások frissítése, beleértve a GitHub MCP Registry linket
 
 ## 2025. szeptember 15.
 
 ### Haladó témák bővítése - Egyedi szállítások és kontextus mérnökség
 
-#### MCP egyedi szállítások (05-AdvancedTopics/mcp-transport/) - Új haladó megvalósítási útmutató
-- **README.md**: Teljes megvalósítási útmutató az egyedi MCP szállítási mechanizmusokhoz
-  - **Azure Event Grid szállítás**: Átfogó szerver nélküli eseményvezérelt szállítási megvalósítás
+#### MCP egyedi szállítások (05-AdvancedTopics/mcp-transport/) - Új haladó implementációs útmutató
+- **README.md**: Teljes implementációs útmutató egyedi MCP szállítási mechanizmusokhoz
+  - **Azure Event Grid szállítás**: Átfogó szerver nélküli eseményvezérelt szállítási implementáció
     - C#, TypeScript és Python példák Azure Functions integrációval
     - Eseményvezérelt architektúra minták skálázható MCP megoldásokhoz
     - Webhook fogadók és push-alapú üzenetkezelés
-  - **Azure Event Hubs szállítás**: Nagy áteresztőképességű streaming szállítási megvalósítás
+  - **Azure Event Hubs szállítás**: Nagy áteresztőképességű streaming szállítási implementáció
     - Valós idejű streaming képességek alacsony késleltetésű forgatókönyvekhez
     - Particionálási stratégiák és ellenőrzési pontok kezelése
-    - Üzenetcsomagolás és teljesítmény optimalizálás
-  - **Vállalati integrációs minták**: Gyártásra kész architektúra példák
+    - Üzenetcsomagolás és teljesítményoptimalizálás
+  - **Vállalati integrációs minták**: Termelésre kész architektúra példák
     - Elosztott MCP feldolgozás több Azure Functions között
     - Hibrid szállítási architektúrák több szállítási típus kombinálásával
     - Üzenet tartósság, megbízhatóság és hibaelhárítási stratégiák
@@ -72,19 +114,19 @@ Ez a dokumentum a Model Context Protocol (MCP) kezdőknek szóló tananyagában 
     - Kezelt identitás hitelesítés és minimális jogosultság hozzáférés
     - Application Insights telemetria és teljesítmény monitorozás
     - Áramkör megszakítók és hibatűrési minták
-  - **Tesztelési keretrendszerek**: Átfogó tesztelési stratégiák az egyedi szállításokhoz
+  - **Tesztelési keretrendszerek**: Átfogó tesztelési stratégiák egyedi szállításokhoz
     - Egységtesztelés teszt duplikátumokkal és mock keretrendszerekkel
     - Integrációs tesztelés Azure Test Containers segítségével
-    - Teljesítmény és terhelési tesztelési szempontok
+    - Teljesítmény- és terhelés tesztelési szempontok
 
 #### Kontextus mérnökség (05-AdvancedTopics/mcp-contextengineering/) - Feltörekvő AI diszciplína
-- **README.md**: Átfogó feltárás a kontextus mérnökségről mint feltörekvő területről
+- **README.md**: Átfogó feltárás a kontextus mérnökség mint feltörekvő terület
   - **Alapelvek**: Teljes kontextus megosztás, cselekvési döntés tudatosság és kontextus ablak kezelés
   - **MCP protokoll igazítás**: Hogyan kezeli az MCP tervezés a kontextus mérnökség kihívásait
     - Kontextus ablak korlátok és progresszív betöltési stratégiák
     - Relevancia meghatározás és dinamikus kontextus visszakeresés
     - Többmódú kontextus kezelés és biztonsági szempontok
-  - **Megvalósítási megközelítések**: Egy szálú vs. több ügynök architektúrák
+  - **Implementációs megközelítések**: Egy szálas vs. több ügynökös architektúrák
     - Kontextus darabolás és prioritási technikák
     - Progresszív kontextus betöltés és tömörítési stratégiák
     - Rétegezett kontextus megközelítések és visszakeresési optimalizálás
@@ -94,152 +136,156 @@ Ez a dokumentum a Model Context Protocol (MCP) kezdőknek szóló tananyagában 
     - Hibaanalízis és javítási módszertanok
 
 #### Tananyag navigációs frissítések (README.md)
-- **Fejlesztett modul szerkezet**: Frissített tananyag táblázat, amely tartalmazza az új haladó témákat
-  - Hozzáadva Kontextus mérnökség (5.14) és Egyedi szállítás (5.15) bejegyzések
-  - Egységes formázás és navigációs linkek minden modulban
-  - Frissített leírások, amelyek tükrözik az aktuális tartalom terjedelmét
+- **Fejlesztett modul struktúra**: A tananyag táblázat frissítése új haladó témák hozzáadásával
+  - Kontextus mérnökség (5.14) és Egyedi szállítás (5.15) bejegyzések hozzáadása
+  - Következetes formázás és navigációs hivatkozások az összes modulban
+  - Leírások frissítése az aktuális tartalom terjedelmének tükrözésére
 
-### Könyvtár szerkezet fejlesztések
-- **Elnevezési szabványosítás**: Az "mcp transport" átnevezése "mcp-transport"-ra, hogy összhangban legyen más haladó témák mappáival
-- **Tartalom szervezés**: Az összes 05-AdvancedTopics mappa most már egységes elnevezési mintát követ (mcp-[téma])
+### Könyvtárstruktúra fejlesztések
+- **Elnevezési szabványosítás**: Az "mcp transport" átnevezése "mcp-transport"-ra, hogy következetes legyen más haladó témájú mappákkal
+- **Tartalom szervezése**: Az összes 05-AdvancedTopics mappa most következetes elnevezési mintát követ (mcp-[téma])
 
 ### Dokumentáció minőségi fejlesztések
-- **MCP specifikáció igazítás**: Minden új tartalom hivatkozik az aktuális MCP Specifikációra (2025-06-18)
-- **Többnyelvű példák**: Átfogó kódpéldák C#, TypeScript és Python nyelveken
-- **Vállalati fókusz**: Gyártásra kész minták és Azure felhő integráció mindenhol
-- **Vizuális dokumentáció**: Mermaid diagramok az architektúra és folyamatok vizualizálásához
+- **MCP specifikáció igazítás**: Az összes új tartalom hivatkozik az aktuális MCP Specifikációra (2025-06-18)
+- **Többnyelvű példák**: Átfogó kódpéldák C#, TypeScript és Python nyelven
+- **Vállalati fókusz**: Termelésre kész minták és Azure felhő integráció az egész dokumentációban
+- **Vizualizált dokumentáció**: Mermaid diagramok az architektúra és folyamatok vizualizálásához
 
 ## 2025. augusztus 18.
 
 ### Dokumentáció átfogó frissítése - MCP 2025-06-18 szabványok
 
 #### MCP biztonsági legjobb gyakorlatok (02-Security/) - Teljes modernizáció
-- **MCP-SECURITY-BEST-PRACTICES-2025.md**: Teljes újraírás az MCP Specifikáció 2025-06-18-hoz igazítva
-  - **Kötelező követelmények**: Hozzáadva explicit KELL/NEM KELL követelmények az hivatalos specifikációból, egyértelmű vizuális jelölésekkel
-  - **12 alapvető biztonsági gyakorlat**: Átszervezve 15 elemből álló listáról átfogó biztonsági területekre
+- **MCP-SECURITY-BEST-PRACTICES-2025.md**: Teljes újraírás az MCP Specifikáció 2025-06-18 igazításával
+  - **Kötelező követelmények**: Explicit MUST/MUST NOT követelmények hozzáadása az hivatalos specifikációból, egyértelmű vizuális jelölésekkel
+  - **12 alapvető biztonsági gyakorlat**: Átszervezés 15 elemből álló listáról átfogó biztonsági területekre
     - Token biztonság és hitelesítés külső identitás szolgáltató integrációval
     - Munkamenet kezelés és szállítási biztonság kriptográfiai követelményekkel
     - AI-specifikus fenyegetésvédelem Microsoft Prompt Shields integrációval
-    - Hozzáférés-vezérlés és jogosultságok minimális jogosultság elvével
+    - Hozzáférés-ellenőrzés és jogosultságok a minimális jogosultság elvével
     - Tartalom biztonság és monitorozás Azure Content Safety integrációval
     - Ellátási lánc biztonság átfogó komponens ellenőrzéssel
-    - OAuth biztonság és zavart helyettesítő megelőzés PKCE megvalósítással
-    - Incidens válasz és helyreállítás automatizált képességekkel
-    - Megfelelőség és irányítás szabályozási igazítással
-    - Haladó biztonsági vezérlők nulla bizalom architektúrával
-    - Microsoft biztonsági ökoszisztéma integráció átfogó megoldásokkal
-    - Folyamatos biztonsági fejlődés adaptív gyakorlatokkal
-  - **Microsoft biztonsági megoldások**: Fejlesztett integrációs útmutató Prompt Shields, Azure Content Safety, Entra ID és GitHub Advanced Security számára
-  - **Megvalósítási erőforrások**: Kategorizált átfogó erőforrás linkek hivatalos MCP dokumentációval, Microsoft biztonsági megoldásokkal, biztonsági szabványokkal és megvalósítási útmutatókkal
+- **Vizuális Jelzések**: Kötelező követelmények és ajánlott gyakorlatok egyértelmű megjelölése
 
-#### Haladó biztonsági vezérlők (02-Security/) - Vállalati megvalósítás
-- **MCP-SECURITY-CONTROLS-2025.md**: Teljes átdolgozás vállalati szintű biztonsági keretrendszerrel
-  - **9 átfogó biztonsági terület**: Bővítve alapvető vezérlőkből részletes vállalati keretrendszerre
-    - Haladó hitelesítés és jogosultság Microsoft Entra ID integrációval
-    - Token biztonság és anti-passthrough vezérlők átfogó validációval
-    - Munkamenet biztonsági vezérlők eltérítés megelőzésével
-    - AI-specifikus biztonsági vezérlők prompt injekció és eszköz mérgezés megelőzésével
-    - Zavart helyettesítő támadás megelőzés OAuth proxy biztonsággal
-    - Eszköz végrehajtási biztonság sandboxing és izolációval
-    - Ellátási lánc biztonsági vezérlők függőség ellenőrzéssel
-    - Monitorozás és észlelési vezérlők SIEM integrációval
-    - Incidens válasz és helyreállítás automatizált képességekkel
-  - **Megvalósítási példák**: Részletes YAML konfigurációs blokkok és kódpéldák hozzáadva
-  - **Microsoft megoldások integrációja**: Átfogó lefedettség Azure biztonsági szolgáltatások, GitHub Advanced Security és vállalati identitás kezelés terén
+#### Alapfogalmak (01-CoreConcepts/) - Teljes Modernizáció
+- **Protokoll Verzió Frissítése**: Frissítve a jelenlegi MCP Specifikáció 2025-06-18 hivatkozására, dátum-alapú verziózással (YYYY-MM-DD formátum)
+- **Architektúra Finomítása**: A Hostok, Kliensek és Szerverek leírásának fejlesztése a jelenlegi MCP architektúra minták alapján
+  - Hostok most egyértelműen AI alkalmazásokként definiálva, amelyek több MCP kliens kapcsolatot koordinálnak
+  - Kliensek protokoll csatlakozóként leírva, amelyek egy-egy szerverrel tartanak fenn kapcsolatot
+  - Szerverek helyi és távoli telepítési forgatókönyvekkel bővítve
+- **Primitívek Átszervezése**: Szerver és kliens primitívek teljes átalakítása
+  - Szerver Primitívek: Erőforrások (adatforrások), Promtok (sablonok), Eszközök (végrehajtható funkciók) részletes magyarázatokkal és példákkal
+  - Kliens Primitívek: Mintavétel (LLM kimenetek), Kérdezés (felhasználói bemenet), Naplózás (hibakeresés/monitorozás)
+  - Frissítve a jelenlegi felfedezési (`*/list`), lekérési (`*/get`) és végrehajtási (`*/call`) módszer mintákkal
+- **Protokoll Architektúra**: Két rétegű architektúra modell bevezetése
+  - Adat Réteg: JSON-RPC 2.0 alap, életciklus-kezeléssel és primitívekkel
+  - Szállítási Réteg: STDIO (helyi) és Streamable HTTP SSE-vel (távoli) szállítási mechanizmusok
+- **Biztonsági Keretrendszer**: Átfogó biztonsági elvek, beleértve a felhasználói beleegyezést, adatvédelem biztosítását, eszköz végrehajtási biztonságot és szállítási réteg biztonságot
+- **Kommunikációs Minták**: Frissített protokoll üzenetek, amelyek bemutatják az inicializálási, felfedezési, végrehajtási és értesítési folyamatokat
+- **Kód Példák**: Többnyelvű példák (.NET, Java, Python, JavaScript) frissítve a jelenlegi MCP SDK mintákra
 
-#### Haladó témák biztonság (05-AdvancedTopics/mcp-security/) - Gyártásra kész megvalósítás
-- **README.md**: Teljes újraírás vállalati biztonsági megvalósításhoz
-  - **Aktuális specifikáció igazítás**: Frissítve az MCP Specifikáció 2025-06-18-hoz kötelező biztonsági követelményekkel
-  - **Fejlesztett hitelesítés**: Microsoft Entra ID integráció átfogó .NET és Java Spring Security példákkal
-  - **AI biztonsági integráció**: Microsoft Prompt Shields és Azure Content Safety megvalósítás részletes Python példákkal
-  - **Haladó fenyegetés mérséklés**: Átfogó megvalósítási példák
-    - Zavart helyettesítő támadás megelőzés PKCE és felhasználói beleegyezés validációval
-    - Token passthrough megelőzés közönség validációval és biztonságos token kezeléssel
-    - Munkamenet eltérítés megelőzés kriptográfiai kötés és viselkedés elemzés segítségével
-  - **Vállalati biztonsági integráció**: Azure Application Insights monitorozás, fenyegetés észlelési csatornák és ellátási lánc biztonság
-  - **Megvalósítási ellenőrzőlista**: Egyértelmű kötelező vs. ajánlott biztonsági vezérlők Microsoft biztonsági ökoszisztéma előnyeivel
+#### Biztonság (02-Security/) - Átfogó Biztonsági Átalakítás  
+- **Szabványokhoz Igazítás**: Teljes igazítás a MCP Specifikáció 2025-06-18 biztonsági követelményeihez
+- **Hitelesítés Fejlődése**: Dokumentálva az egyedi OAuth szerverektől a külső identitás szolgáltató delegációig (Microsoft Entra ID)
+- **AI-Specifikus Fenyegetés Elemzés**: Modern AI támadási vektorok kiterjesztett lefedettsége
+  - Részletes prompt injekció támadási forgatókönyvek valós példákkal
+  - Eszköz mérgezési mechanizmusok és "szőnyegkihúzás" támadási minták
+  - Kontextus ablak mérgezés és modell zavar támadások
+- **Microsoft AI Biztonsági Megoldások**: Microsoft biztonsági ökoszisztéma átfogó lefedettsége
+  - AI Prompt Shields fejlett észlelési, kiemelési és határolási technikákkal
+  - Azure Content Safety integrációs minták
+  - GitHub Advanced Security az ellátási lánc védelmére
+- **Fejlett Fenyegetés Enyhítés**: Részletes biztonsági kontrollok
+  - Munkamenet eltérítés MCP-specifikus támadási forgatókönyvekkel és kriptográfiai munkamenet ID követelményekkel
+  - Zavaros helyettes problémák MCP proxy forgatókönyvekben kifejezett beleegyezési követelményekkel
+  - Token átengedési sebezhetőségek kötelező validációs kontrollokkal
+- **Ellátási Lánc Biztonság**: Kiterjesztett AI ellátási lánc lefedettség, beleértve az alapmodelleket, beágyazási szolgáltatásokat, kontextus szolgáltatókat és harmadik fél API-kat
+- **Alap Biztonság**: Fejlesztett integráció vállalati biztonsági mintákkal, beleértve a zero trust architektúrát és a Microsoft biztonsági ökoszisztémát
+- **Erőforrás Szervezés**: Átfogó erőforrás linkek kategorizálása típus szerint (Hivatalos Dokumentációk, Szabványok, Kutatások, Microsoft Megoldások, Megvalósítási Útmutatók)
 
-### Dokumentáció minőségi és szabvány igazítás
-- **Specifikáció hivatkozások**: Minden hivatkozás frissítve az aktuális MCP Specifikációra (2025-06-18)
-- **Microsoft biztonsági ökoszisztéma**: Fejlesztett integrációs útmutató minden biztonsági dokumentációban
-- **Gyakorlati megvalósítás**: Részletes kódpéldák hozzáadva .NET, Java és Python nyelveken vállalati mintákkal
-- **Erőforrás szervezés**: Átfogó kategorizálás hivatalos dokumentációval, biztonsági szabványokkal és megvalósítási útmutatókkal
-- **Vizuális jelölések**: Egyértelmű kötelező követelmények vs. ajánlott gyakorlatok megjelölése
+### Dokumentáció Minőségi Fejlesztések
+- **Strukturált Tanulási Célok**: Fejlesztett tanulási célok konkrét, cselekvésre ösztönző eredményekkel
+- **Kereszthivatkozások**: Linkek hozzáadása kapcsolódó biztonsági és alapfogalmi témák között
+- **Aktuális Információk**: Minden dátum hivatkozás és specifikáció link frissítése a jelenlegi szabványokra
+- **Megvalósítási Útmutatás**: Konkrét, cselekvésre ösztönző megvalósítási útmutatók hozzáadása mindkét szakaszban
 
-#### Alapfogalmak (01-CoreConcepts/) - Teljes modernizáció
-- **Protokoll verzió frissítés**: Frissítve az aktuális MCP Specifikációra (2025-06-18) dátum alapú verziózással (YYYY-MM-DD formátum)
-- **Architektúra finomítás**: Fejlesztett leírások a Hostokról, Kliensekről és Szerverekről, amelyek tü
-- A `<details>` címkék helyett hozzáférhetőbb, táblázat-alapú formátumot használtam
-- Új "alternative_layouts" mappában alternatív elrendezési opciókat hoztam létre
-- Hozzáadtam kártya-alapú, füles-stílusú és harmonika-stílusú navigációs példákat
-- Frissítettem a repozitórium szerkezeti szekcióját, hogy tartalmazza az összes legújabb fájlt
-- Fejlesztettem a "Hogyan használjuk ezt a tananyagot" szekciót egyértelmű ajánlásokkal
-- Frissítettem az MCP specifikációs linkeket, hogy a helyes URL-ekre mutassanak
-- Hozzáadtam a Kontextus Mérnökség szekciót (5.14) a tananyag szerkezetéhez
+## 2025. július 16.
+
+### README és Navigációs Fejlesztések
+- Teljesen újratervezett tananyag navigáció a README.md-ben
+- `<details>` tagek helyett hozzáférhetőbb táblázat-alapú formátumot alkalmazva
+- Alternatív elrendezési opciók létrehozása az új "alternative_layouts" mappában
+- Kártya-alapú, füles-stílusú és harmonika-stílusú navigációs példák hozzáadása
+- Frissített adattár szerkezeti szakasz, amely tartalmazza az összes legújabb fájlt
+- Fejlesztett "Hogyan Használjuk Ezt a Tananyagot" szakasz egyértelmű ajánlásokkal
+- Frissített MCP specifikációs linkek, amelyek a megfelelő URL-ekre mutatnak
+- Kontextus Mérnöki szakasz (5.14) hozzáadása a tananyag szerkezetéhez
 
 ### Tanulási Útmutató Frissítések
-- Teljesen átdolgoztam a tanulási útmutatót, hogy igazodjon a jelenlegi repozitórium szerkezetéhez
-- Új szekciókat adtam hozzá az MCP kliensek és eszközök, valamint a népszerű MCP szerverek témájában
-- Frissítettem a Vizualizált Tananyag Térképet, hogy pontosan tükrözze az összes témát
-- Fejlesztettem a Haladó Témák leírásait, hogy lefedjék az összes specializált területet
-- Frissítettem az Esettanulmányok szekciót, hogy valós példákat tartalmazzon
-- Hozzáadtam ezt az átfogó változásnaplót
+- Teljesen átdolgozott tanulási útmutató, amely igazodik a jelenlegi adattár szerkezetéhez
+- Új szakaszok hozzáadása MCP Kliensek és Eszközök, valamint Népszerű MCP Szerverek témában
+- Frissített Vizuális Tananyag Térkép, amely pontosan tükrözi az összes témát
+- Fejlesztett leírások a Haladó Témák szakaszban, amelyek lefedik az összes specializált területet
+- Frissített Esettanulmányok szakasz, amely valós példákat tükröz
+- Hozzáadva ezt az átfogó változásnaplót
 
 ### Közösségi Hozzájárulások (06-CommunityContributions/)
-- Részletes információkat adtam hozzá az MCP szerverekről képgeneráláshoz
-- Átfogó szekciót hoztam létre Claude VSCode-ban való használatáról
-- Hozzáadtam a Cline terminál kliens beállítási és használati útmutatóját
-- Frissítettem az MCP kliens szekciót, hogy tartalmazza az összes népszerű kliens opciót
-- Fejlesztettem a hozzájárulási példákat pontosabb kódmintákkal
+- Részletes információk hozzáadása MCP szerverekről képgeneráláshoz
+- Átfogó szakasz hozzáadása Claude használatáról VSCode-ban
+- Cline terminál kliens beállítási és használati útmutató hozzáadása
+- Frissített MCP kliens szakasz, amely tartalmazza az összes népszerű kliens opciót
+- Fejlesztett hozzájárulási példák pontosabb kódmintákkal
 
 ### Haladó Témák (05-AdvancedTopics/)
-- Minden specializált témamappát egységes elnevezéssel szerveztem
-- Hozzáadtam kontextus mérnökségi anyagokat és példákat
-- Hozzáadtam Foundry ügynök integrációs dokumentációt
-- Fejlesztettem az Entra ID biztonsági integrációs dokumentációt
+- Minden specializált téma mappa konzisztens elnevezéssel szervezve
+- Kontextus mérnöki anyagok és példák hozzáadása
+- Foundry ügynök integrációs dokumentáció hozzáadása
+- Entra ID biztonsági integrációs dokumentáció fejlesztése
 
 ## 2025. június 11.
 
-### Első Létrehozás
-- Kiadtam az MCP Kezdőknek tananyag első verzióját
-- Létrehoztam az összes 10 fő szekció alapstruktúráját
-- Megvalósítottam a Vizualizált Tananyag Térképet a navigációhoz
-- Hozzáadtam kezdeti mintaprojekteket több programozási nyelven
+### Kezdeti Létrehozás
+- Az MCP Kezdőknek tananyag első verziójának kiadása
+- Alapvető szerkezet létrehozása mind a 10 fő szakaszhoz
+- Vizuális Tananyag Térkép implementálása navigációhoz
+- Kezdeti mintaprojektek hozzáadása több programozási nyelven
 
 ### Első Lépések (03-GettingStarted/)
-- Létrehoztam első szerver implementációs példákat
-- Hozzáadtam kliens fejlesztési útmutatót
-- Tartalmaztam LLM kliens integrációs útmutatót
-- Hozzáadtam VS Code integrációs dokumentációt
-- Megvalósítottam Server-Sent Events (SSE) szerver példákat
+- Első szerver implementációs példák létrehozása
+- Kliens fejlesztési útmutatás hozzáadása
+- LLM kliens integrációs utasítások hozzáadása
+- VS Code integrációs dokumentáció hozzáadása
+- Server-Sent Events (SSE) szerver példák implementálása
 
 ### Alapfogalmak (01-CoreConcepts/)
-- Részletes magyarázatot adtam a kliens-szerver architektúráról
-- Dokumentáltam a protokoll kulcselemeit
-- Dokumentáltam az üzenetküldési mintákat MCP-ben
+- Részletes magyarázat hozzáadása a kliens-szerver architektúráról
+- Dokumentáció létrehozása a kulcsfontosságú protokoll komponensekről
+- Üzenetküldési minták dokumentálása MCP-ben
 
 ## 2025. május 23.
 
-### Repó Szerkezete
-- Inicializáltam a repozitóriumot alapvető mappastruktúrával
-- Létrehoztam README fájlokat minden fő szekcióhoz
-- Beállítottam fordítási infrastruktúrát
-- Hozzáadtam képes eszközöket és diagramokat
+### Adattár Szerkezete
+- Az adattár inicializálása alapvető mappa szerkezettel
+- README fájlok létrehozása minden fő szakaszhoz
+- Fordítási infrastruktúra beállítása
+- Kép eszközök és diagramok hozzáadása
 
 ### Dokumentáció
-- Létrehoztam az első README.md-t a tananyag áttekintésével
-- Hozzáadtam CODE_OF_CONDUCT.md és SECURITY.md fájlokat
-- Beállítottam SUPPORT.md-t segítségnyújtási útmutatóval
-- Létrehoztam előzetes tanulási útmutató struktúrát
+- Kezdeti README.md létrehozása tananyag áttekintéssel
+- CODE_OF_CONDUCT.md és SECURITY.md hozzáadása
+- SUPPORT.md beállítása segítségnyújtási útmutatással
+- Előzetes tanulási útmutató szerkezet létrehozása
 
 ## 2025. április 15.
 
 ### Tervezés és Keretrendszer
-- Kezdeti tervezés az MCP Kezdőknek tananyaghoz
-- Meghatároztam a tanulási célokat és a célközönséget
-- Körvonalaztam a tananyag 10 szekciós struktúráját
-- Kifejlesztettem koncepcionális keretrendszert példákhoz és esettanulmányokhoz
-- Létrehoztam kezdeti prototípus példákat kulcsfogalmakhoz
+- Az MCP Kezdőknek tananyag kezdeti tervezése
+- Tanulási célok és célközönség meghatározása
+- A tananyag 10 szakaszos szerkezetének körvonalazása
+- Fogalmi keretrendszer kidolgozása példákhoz és esettanulmányokhoz
+- Kulcsfontosságú fogalmak kezdeti prototípus példáinak létrehozása
 
 ---
 
+**Felelősség kizárása**:  
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével került lefordításra. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely a fordítás használatából eredhet.
