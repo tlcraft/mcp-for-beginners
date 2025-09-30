@@ -2,6 +2,48 @@
 
 This document serves as a record of all significant changes made to the Model Context Protocol (MCP) for Beginners curriculum. Changes are documented in reverse chronological order (newest changes first).
 
+## September 29, 2025
+
+### MCP Server Database Integration Labs - Comprehensive Hands-On Learning Path
+
+#### 11-MCPServerHandsOnLabs - New Complete Database Integration Curriculum
+- **Complete 13-Lab Learning Path**: Added comprehensive hands-on curriculum for building production-ready MCP servers with PostgreSQL database integration
+  - **Real-World Implementation**: Zava Retail analytics use case demonstrating enterprise-grade patterns
+  - **Structured Learning Progression**:
+    - **Labs 00-03: Foundations** - Introduction, Core Architecture, Security & Multi-Tenancy, Environment Setup
+    - **Labs 04-06: Building the MCP Server** - Database Design & Schema, MCP Server Implementation, Tool Development  
+    - **Labs 07-09: Advanced Features** - Semantic Search Integration, Testing & Debugging, VS Code Integration
+    - **Labs 10-12: Production & Best Practices** - Deployment Strategies, Monitoring & Observability, Best Practices & Optimization
+  - **Enterprise Technologies**: FastMCP framework, PostgreSQL with pgvector, Azure OpenAI embeddings, Azure Container Apps, Application Insights
+  - **Advanced Features**: Row Level Security (RLS), semantic search, multi-tenant data access, vector embeddings, real-time monitoring
+
+#### Terminology Standardization - Module to Lab Conversion
+- **Comprehensive Documentation Update**: Systematically updated all README files in 11-MCPServerHandsOnLabs to use "Lab" terminology instead of "Module"
+  - **Section Headers**: Updated "What This Module Covers" to "What This Lab Covers" across all 13 labs
+  - **Content Description**: Changed "This module provides..." to "This lab provides..." throughout documentation
+  - **Learning Objectives**: Updated "By the end of this module..." to "By the end of this lab..." 
+  - **Navigation Links**: Converted all "Module XX:" references to "Lab XX:" in cross-references and navigation
+  - **Completion Tracking**: Updated "After completing this module..." to "After completing this lab..."
+  - **Preserved Technical References**: Maintained Python module references in configuration files (e.g., `"module": "mcp_server.main"`)
+
+#### Study Guide Enhancement (study_guide.md)
+- **Visual Curriculum Map**: Added new "11. Database Integration Labs" section with comprehensive lab structure visualization
+- **Repository Structure**: Updated from ten to eleven main sections with detailed 11-MCPServerHandsOnLabs description
+- **Learning Path Guidance**: Enhanced navigation instructions to cover sections 00-11
+- **Technology Coverage**: Added FastMCP, PostgreSQL, Azure services integration details
+- **Learning Outcomes**: Emphasized production-ready server development, database integration patterns, and enterprise security
+
+#### Main README Structure Enhancement
+- **Lab-Based Terminology**: Updated main README.md in 11-MCPServerHandsOnLabs to consistently use "Lab" structure
+- **Learning Path Organization**: Clear progression from foundational concepts through advanced implementation to production deployment
+- **Real-World Focus**: Emphasis on practical, hands-on learning with enterprise-grade patterns and technologies
+
+### Documentation Quality & Consistency Improvements
+- **Hands-On Learning Emphasis**: Reinforced practical, lab-based approach throughout documentation
+- **Enterprise Patterns Focus**: Highlighted production-ready implementations and enterprise security considerations
+- **Technology Integration**: Comprehensive coverage of modern Azure services and AI integration patterns
+- **Learning Progression**: Clear, structured path from basic concepts to production deployment
+
 ## September 26, 2025
 
 ### Case Studies Enhancement - GitHub MCP Registry Integration

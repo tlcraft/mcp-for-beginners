@@ -101,11 +101,20 @@ mindmap
       (AI Toolkit Integration)
       (Production Deployment)
       (4-Lab Structure)
+    11. Database Integration Labs
+      ::icon(fa fa-database)
+      (PostgreSQL Integration)
+      (Retail Analytics Use Case)
+      (Row Level Security)
+      (Semantic Search)
+      (Production Deployment)
+      (13-Lab Structure)
+      (Hands-on Learning)
 ```
 
 ## Repository Structure
 
-The repository is organized into ten main sections, each focusing on different aspects of MCP:
+The repository is organized into eleven main sections, each focusing on different aspects of MCP:
 
 1. **Introduction (00-Introduction/)**
    - Overview of the Model Context Protocol
@@ -220,6 +229,18 @@ The repository is organized into ten main sections, each focusing on different a
       - Lab 4: Production Deployment and Scaling
     - Lab-based learning approach with step-by-step instructions
 
+12. **MCP Server Database Integration Labs (11-MCPServerHandsOnLabs/)**
+    - **Comprehensive 13-lab learning path** for building production-ready MCP servers with PostgreSQL integration
+    - **Real-world retail analytics implementation** using the Zava Retail use case
+    - **Enterprise-grade patterns** including Row Level Security (RLS), semantic search, and multi-tenant data access
+    - **Complete Lab Structure**:
+      - **Labs 00-03: Foundations** - Introduction, Architecture, Security, Environment Setup
+      - **Labs 04-06: Building the MCP Server** - Database Design, MCP Server Implementation, Tool Development
+      - **Labs 07-09: Advanced Features** - Semantic Search, Testing & Debugging, VS Code Integration
+      - **Labs 10-12: Production & Best Practices** - Deployment, Monitoring, Optimization
+    - **Technologies Covered**: FastMCP framework, PostgreSQL, Azure OpenAI, Azure Container Apps, Application Insights
+    - **Learning Outcomes**: Production-ready MCP servers, database integration patterns, AI-powered analytics, enterprise security
+
 ## Additional Resources
 
 The repository includes supporting resources:
@@ -233,7 +254,7 @@ The repository includes supporting resources:
 
 ## How to Use This Repository
 
-1. **Sequential Learning**: Follow the chapters in order (00 through 10) for a structured learning experience.
+1. **Sequential Learning**: Follow the chapters in order (00 through 11) for a structured learning experience.
 2. **Language-Specific Focus**: If you're interested in a particular programming language, explore the samples directories for implementations in your preferred language.
 3. **Practical Implementation**: Start with the "Getting Started" section to set up your environment and create your first MCP server and client.
 4. **Advanced Exploration**: Once comfortable with the basics, dive into the advanced topics to expand your knowledge.
@@ -306,7 +327,8 @@ This repository welcomes contributions from the community. See the Community Con
 ## Changelog
 
 | Date | Changes |
-|------|---------|
+|------|---------||
+| September 29, 2025 | - Added 11-MCPServerHandsOnLabs section with comprehensive 13-lab database integration learning path<br>- Updated Visual Curriculum Map to include Database Integration Labs<br>- Enhanced repository structure to reflect eleven main sections<br>- Added detailed description of PostgreSQL integration, retail analytics use case, and enterprise patterns<br>- Updated navigation guidance to include sections 00-11 |
 | September 26, 2025 | - Added GitHub MCP Registry case study to 09-CaseStudy section<br>- Updated Case Studies to reflect seven comprehensive case studies<br>- Enhanced case study descriptions with specific implementation details<br>- Updated Visual Curriculum Map to include GitHub MCP Registry<br>- Revised study guide structure to reflect ecosystem development focus |
 | July 18, 2025 | - Updated repository structure to include Microsoft MCP Servers Guide<br>- Added comprehensive list of 10 production-ready Microsoft MCP servers<br>- Enhanced Popular MCP Servers section with Official Microsoft MCP Servers<br>- Updated Case Studies section with actual file examples<br>- Added Lab Structure details for Hands-on Workshop |
 | July 16, 2025 | - Updated repository structure to reflect current content<br>- Added MCP Clients and Tools section<br>- Added Popular MCP Servers section<br>- Updated Visual Curriculum Map with all current topics<br>- Enhanced Advanced Topics section with all specialized areas<br>- Updated Case Studies to reflect actual examples<br>- Clarified MCP origin as created by Anthropic |
@@ -314,4 +336,4 @@ This repository welcomes contributions from the community. See the Community Con
 
 ---
 
-*This study guide was updated on September 26, 2025, and provides an overview of the repository as of that date. Repository content may be updated after this date.*
+*This study guide was updated on September 29, 2025, and provides an overview of the repository as of that date. Repository content may be updated after this date.*
