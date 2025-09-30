@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "719117a0a5f34ade7b5dfb61ee06fb13",
-  "translation_date": "2025-09-26T18:39:58+00:00",
+  "original_hash": "aa1ce97bc694b08faf3018bab6d275b9",
+  "translation_date": "2025-09-30T19:13:23+00:00",
   "source_file": "study_guide.md",
   "language_code": "nl"
 }
@@ -110,11 +110,20 @@ mindmap
       (AI Toolkit Integration)
       (Production Deployment)
       (4-Lab Structure)
+    11. Database Integration Labs
+      ::icon(fa fa-database)
+      (PostgreSQL Integration)
+      (Retail Analytics Use Case)
+      (Row Level Security)
+      (Semantic Search)
+      (Production Deployment)
+      (13-Lab Structure)
+      (Hands-on Learning)
 ```
 
 ## Structuur van de Repository
 
-De repository is georganiseerd in tien hoofdsecties, elk gericht op verschillende aspecten van MCP:
+De repository is georganiseerd in elf hoofdsecties, elk gericht op verschillende aspecten van MCP:
 
 1. **Introductie (00-Introduction/)**
    - Overzicht van het Model Context Protocol
@@ -136,15 +145,15 @@ De repository is georganiseerd in tien hoofdsecties, elk gericht op verschillend
      - MCP Security Controls and Techniques
      - MCP Best Practices Quick Reference
    - **Belangrijke Beveiligingsthema's**:
-     - Prompt-injectie en toolvergiftigingsaanvallen
-     - Sessiekaping en confused deputy-problemen
-     - Token-passthrough kwetsbaarheden
+     - Prompt injection en tool poisoning aanvallen
+     - Sessiekaping en confused deputy problemen
+     - Token passthrough kwetsbaarheden
      - Overmatige permissies en toegangscontrole
      - Leveringsketenbeveiliging voor AI-componenten
-     - Microsoft Prompt Shields-integratie
+     - Microsoft Prompt Shields integratie
 
 4. **Aan de slag (03-GettingStarted/)**
-   - Omgevingsinstelling en configuratie
+   - Omgevingsinstellingen en configuratie
    - Basis MCP-servers en -clients maken
    - Integratie met bestaande toepassingen
    - Inclusief secties voor:
@@ -165,18 +174,18 @@ De repository is georganiseerd in tien hoofdsecties, elk gericht op verschillend
    - Voorbeeldprojecten met implementatievoorbeelden
 
 6. **Geavanceerde Onderwerpen (05-AdvancedTopics/)**
-   - Context-engineeringtechnieken
-   - Foundry-agentintegratie
+   - Context engineering technieken
+   - Foundry agent integratie
    - Multi-modale AI-workflows
-   - OAuth2-authenticatiedemo's
+   - OAuth2 authenticatiedemo's
    - Real-time zoekmogelijkheden
    - Real-time streaming
-   - Root-contexten implementeren
-   - Routeringsstrategieën
+   - Root contexts implementatie
+   - Routingstrategieën
    - Samplingtechnieken
    - Schaalmethoden
    - Beveiligingsoverwegingen
-   - Entra ID-beveiligingsintegratie
+   - Entra ID beveiligingsintegratie
    - Webzoekintegratie
 
 7. **Communitybijdragen (06-CommunityContributions/)**
@@ -190,7 +199,7 @@ De repository is georganiseerd in tien hoofdsecties, elk gericht op verschillend
    - Implementaties en succesverhalen uit de praktijk
    - MCP-gebaseerde oplossingen bouwen en implementeren
    - Trends en toekomstige roadmap
-   - **Microsoft MCP Servers Guide**: Uitgebreide gids voor 10 productieklare Microsoft MCP-servers, waaronder:
+   - **Microsoft MCP Servers Gids**: Uitgebreide gids voor 10 productieklare Microsoft MCP-servers, waaronder:
      - Microsoft Learn Docs MCP Server
      - Azure MCP Server (15+ gespecialiseerde connectors)
      - GitHub MCP Server
@@ -210,24 +219,36 @@ De repository is georganiseerd in tien hoofdsecties, elk gericht op verschillend
 10. **Case Studies (09-CaseStudy/)**
     - **Zeven uitgebreide case studies** die de veelzijdigheid van MCP demonstreren in diverse scenario's:
     - **Azure AI Travel Agents**: Multi-agent orkestratie met Azure OpenAI en AI Search
-    - **Azure DevOps Integratie**: Workflowprocessen automatiseren met YouTube-data-updates
-    - **Real-Time Documentatieophaling**: Python-consoleclient met HTTP-streaming
-    - **Interactieve Studieplan Generator**: Chainlit-webapp met conversatie-AI
-    - **In-Editor Documentatie**: VS Code-integratie met GitHub Copilot-workflows
+    - **Azure DevOps Integratie**: Workflowprocessen automatiseren met YouTube data-updates
+    - **Real-Time Documentatie Retrieval**: Python console client met HTTP-streaming
+    - **Interactieve Studieplan Generator**: Chainlit webapp met conversatie-AI
+    - **In-Editor Documentatie**: VS Code-integratie met GitHub Copilot workflows
     - **Azure API Management**: Enterprise API-integratie met MCP-servercreatie
     - **GitHub MCP Registry**: Ecosysteemontwikkeling en agentische integratieplatform
-    - Implementatievoorbeelden variërend van bedrijfsintegratie, ontwikkelaarsproductiviteit tot ecosysteemontwikkeling
+    - Implementatievoorbeelden variërend van enterprise-integratie, ontwikkelaarsproductiviteit tot ecosysteemontwikkeling
 
 11. **Hands-on Workshop (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
     - Uitgebreide hands-on workshop die MCP combineert met AI Toolkit
     - Intelligente toepassingen bouwen die AI-modellen verbinden met echte tools
-    - Praktische modules die de basis, aangepaste serverontwikkeling en productie-implementatiestrategieën behandelen
+    - Praktische modules die basisprincipes, aangepaste serverontwikkeling en productie-implementatiestrategieën behandelen
     - **Labstructuur**:
-      - Lab 1: MCP Server Fundamentals
-      - Lab 2: Advanced MCP Server Development
-      - Lab 3: AI Toolkit Integration
-      - Lab 4: Production Deployment and Scaling
+      - Lab 1: MCP Server Basisprincipes
+      - Lab 2: Geavanceerde MCP Server Ontwikkeling
+      - Lab 3: AI Toolkit Integratie
+      - Lab 4: Productie-implementatie en Schaling
     - Lab-gebaseerde leerbenadering met stapsgewijze instructies
+
+12. **MCP Server Database Integratie Labs (11-MCPServerHandsOnLabs/)**
+    - **Uitgebreid 13-lab leerpad** voor het bouwen van productieklare MCP-servers met PostgreSQL-integratie
+    - **Praktische retail analytics implementatie** met de Zava Retail use case
+    - **Enterprise-grade patronen** inclusief Row Level Security (RLS), semantisch zoeken en multi-tenant data toegang
+    - **Volledige Labstructuur**:
+      - **Labs 00-03: Basisprincipes** - Introductie, Architectuur, Beveiliging, Omgevingsinstelling
+      - **Labs 04-06: MCP Server Bouwen** - Databaseontwerp, MCP Server Implementatie, Toolontwikkeling
+      - **Labs 07-09: Geavanceerde Functies** - Semantisch Zoeken, Testen & Debuggen, VS Code Integratie
+      - **Labs 10-12: Productie & Best Practices** - Implementatie, Monitoring, Optimalisatie
+    - **Technologieën Gedekt**: FastMCP framework, PostgreSQL, Azure OpenAI, Azure Container Apps, Application Insights
+    - **Leerresultaten**: Productieklare MCP-servers, database-integratiepatronen, AI-gestuurde analytics, enterprise-beveiliging
 
 ## Aanvullende Bronnen
 
@@ -235,18 +256,18 @@ De repository bevat ondersteunende bronnen:
 
 - **Afbeeldingenmap**: Bevat diagrammen en illustraties die door het hele curriculum worden gebruikt
 - **Vertalingen**: Meertalige ondersteuning met geautomatiseerde vertalingen van documentatie
-- **Officiële MCP-bronnen**:
+- **Officiële MCP Bronnen**:
   - [MCP Documentatie](https://modelcontextprotocol.io/)
   - [MCP Specificatie](https://spec.modelcontextprotocol.io/)
   - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
 ## Hoe deze Repository te Gebruiken
 
-1. **Sequentieel Leren**: Volg de hoofdstukken op volgorde (00 tot 10) voor een gestructureerde leerervaring.
-2. **Taalgerichte Focus**: Als je geïnteresseerd bent in een specifieke programmeertaal, bekijk dan de voorbeeldmappen voor implementaties in jouw voorkeurstaal.
+1. **Sequentieel Leren**: Volg de hoofdstukken op volgorde (00 tot 11) voor een gestructureerde leerervaring.
+2. **Taal-specifieke Focus**: Als je geïnteresseerd bent in een specifieke programmeertaal, bekijk dan de voorbeeldmappen voor implementaties in jouw voorkeurstaal.
 3. **Praktische Implementatie**: Begin met de sectie "Aan de slag" om je omgeving in te stellen en je eerste MCP-server en -client te maken.
 4. **Geavanceerde Verkenning**: Zodra je vertrouwd bent met de basis, duik in de geavanceerde onderwerpen om je kennis uit te breiden.
-5. **Communitybetrokkenheid**: Sluit je aan bij de MCP-community via GitHub-discussies en Discord-kanalen om in contact te komen met experts en medeontwikkelaars.
+5. **Community Betrokkenheid**: Word lid van de MCP-community via GitHub-discussies en Discord-kanalen om in contact te komen met experts en mede-ontwikkelaars.
 
 ## MCP Clients en Tools
 
@@ -265,7 +286,7 @@ Het curriculum behandelt verschillende MCP-clients en tools:
    - ChatMCP
    - Windsurf
 
-3. **MCP Beheertools**:
+3. **MCP Management Tools**:
    - MCP CLI
    - MCP Manager
    - MCP Linker
@@ -287,7 +308,7 @@ De repository introduceert verschillende MCP-servers, waaronder:
    - Azure AI Foundry MCP Server
    - Microsoft 365 Agents Toolkit MCP Server
 
-2. **Officiële Referentieservers**:
+2. **Officiële Referentie Servers**:
    - Filesystem
    - Fetch
    - Memory
@@ -315,15 +336,18 @@ Deze repository verwelkomt bijdragen van de community. Zie de sectie Communitybi
 ## Wijzigingslogboek
 
 | Datum | Wijzigingen |
-|------|-------------|
-| 26 september 2025 | - GitHub MCP Registry case study toegevoegd aan sectie 09-CaseStudy<br>- Case Studies bijgewerkt met zeven uitgebreide case studies<br>- Case study beschrijvingen verbeterd met specifieke implementatiedetails<br>- Visuele Curriculumkaart bijgewerkt met GitHub MCP Registry<br>- Studiegidsstructuur herzien om ecosysteemontwikkelingsfocus te weerspiegelen |
-| 18 juli 2025 | - Repositorystructuur bijgewerkt met Microsoft MCP Servers Guide<br>- Uitgebreide lijst toegevoegd van 10 productieklare Microsoft MCP-servers<br>- Populaire MCP Servers-sectie verbeterd met Officiële Microsoft MCP Servers<br>- Case Studies-sectie bijgewerkt met daadwerkelijke bestandsvoorbeelden<br>- Labstructuurdetails toegevoegd voor Hands-on Workshop |
-| 16 juli 2025 | - Repositorystructuur bijgewerkt om huidige inhoud te weerspiegelen<br>- MCP Clients en Tools-sectie toegevoegd<br>- Populaire MCP Servers-sectie toegevoegd<br>- Visuele Curriculumkaart bijgewerkt met alle huidige onderwerpen<br>- Geavanceerde Onderwerpen-sectie verbeterd met alle gespecialiseerde gebieden<br>- Case Studies bijgewerkt met daadwerkelijke voorbeelden<br>- Oorsprong van MCP verduidelijkt als ontwikkeld door Anthropic |
+|------|---------||
+| 29 september 2025 | - Sectie 11-MCPServerHandsOnLabs toegevoegd met uitgebreid 13-lab database-integratie leerpad<br>- Visuele Curriculumkaart bijgewerkt om Database Integratie Labs op te nemen<br>- Repositorystructuur verbeterd om elf hoofdsecties te weerspiegelen<br>- Gedetailleerde beschrijving toegevoegd van PostgreSQL-integratie, retail analytics use case en enterprise patronen<br>- Navigatierichtlijnen bijgewerkt om secties 00-11 op te nemen |
+| 26 september 2025 | - GitHub MCP Registry case study toegevoegd aan sectie 09-CaseStudy<br>- Case Studies bijgewerkt om zeven uitgebreide case studies te weerspiegelen<br>- Case study beschrijvingen verbeterd met specifieke implementatiedetails<br>- Visuele Curriculumkaart bijgewerkt om GitHub MCP Registry op te nemen<br>- Studiegidsstructuur herzien om ecosysteemontwikkelingsfocus te weerspiegelen |
+| 18 juli 2025 | - Repositorystructuur bijgewerkt om Microsoft MCP Servers Gids op te nemen<br>- Uitgebreide lijst toegevoegd van 10 productieklare Microsoft MCP-servers<br>- Sectie Populaire MCP Servers verbeterd met Officiële Microsoft MCP Servers<br>- Sectie Case Studies bijgewerkt met daadwerkelijke bestandsvoorbeelden<br>- Labstructuurdetails toegevoegd voor Hands-on Workshop |
+| 16 juli 2025 | - Repositorystructuur bijgewerkt om huidige inhoud te weerspiegelen<br>- Sectie MCP Clients en Tools toegevoegd<br>- Sectie Populaire MCP Servers toegevoegd<br>- Visuele Curriculumkaart bijgewerkt met alle huidige onderwerpen<br>- Sectie Geavanceerde Onderwerpen verbeterd met alle gespecialiseerde gebieden<br>- Sectie Case Studies bijgewerkt met daadwerkelijke voorbeelden<br>- Oorsprong van MCP verduidelijkt als ontwikkeld door Anthropic |
 | 11 juni 2025 | - Initiële creatie van de studiegids<br>- Visuele Curriculumkaart toegevoegd<br>- Repositorystructuur geschetst<br>- Voorbeeldprojecten en aanvullende bronnen opgenomen |
 
 ---
 
-*Deze studiegids is bijgewerkt op 26 september 2025 en biedt een overzicht van de repository zoals die op die datum was. De inhoud van de repository kan na deze datum worden bijgewerkt.*
+*Deze studiegids is bijgewerkt op 29 september 2025 en biedt een overzicht van de repository zoals die op die datum was. De inhoud van de repository kan na deze datum worden bijgewerkt.*
 
 ---
 
+**Disclaimer**:  
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
