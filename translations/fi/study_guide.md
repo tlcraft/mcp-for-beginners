@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "719117a0a5f34ade7b5dfb61ee06fb13",
-  "translation_date": "2025-09-26T18:38:06+00:00",
+  "original_hash": "aa1ce97bc694b08faf3018bab6d275b9",
+  "translation_date": "2025-09-30T17:57:22+00:00",
   "source_file": "study_guide.md",
   "language_code": "fi"
 }
 -->
 # Model Context Protocol (MCP) aloittelijoille - Opas
 
-Tämä opas tarjoaa yleiskatsauksen "Model Context Protocol (MCP) for Beginners" -kurssin arkiston rakenteesta ja sisällöstä. Käytä tätä opasta navigoidaksesi arkistossa tehokkaasti ja hyödyntääksesi saatavilla olevia resursseja parhaalla mahdollisella tavalla.
+Tämä opas tarjoaa yleiskatsauksen "Model Context Protocol (MCP) for Beginners" -opetussuunnitelman arkiston rakenteesta ja sisällöstä. Käytä tätä opasta navigoidaksesi arkistossa tehokkaasti ja hyödyntääksesi saatavilla olevia resursseja parhaalla mahdollisella tavalla.
 
 ## Arkiston yleiskatsaus
 
-Model Context Protocol (MCP) on standardoitu kehys AI-mallien ja asiakassovellusten välisille vuorovaikutuksille. Alun perin Anthropicin luoma MCP on nyt laajemman MCP-yhteisön ylläpitämä virallisen GitHub-organisaation kautta. Tämä arkisto tarjoaa kattavan kurssin käytännön koodiesimerkeillä C#:ssa, Javassa, JavaScriptissä, Pythonissa ja TypeScriptissä, suunnattu AI-kehittäjille, järjestelmäarkkitehdeille ja ohjelmistosuunnittelijoille.
+Model Context Protocol (MCP) on standardoitu kehys AI-mallien ja asiakassovellusten välisille vuorovaikutuksille. Alun perin Anthropicin luoma MCP on nyt laajemman MCP-yhteisön ylläpitämä virallisen GitHub-organisaation kautta. Tämä arkisto tarjoaa kattavan opetussuunnitelman käytännön koodiesimerkeillä C#:ssa, Javassa, JavaScriptissä, Pythonissa ja TypeScriptissä, ja se on suunnattu AI-kehittäjille, järjestelmäarkkitehdeille ja ohjelmistosuunnittelijoille.
 
-## Visuaalinen kurssikartta
+## Visuaalinen opetussuunnitelmakartta
 
 ```mermaid
 mindmap
@@ -110,18 +110,27 @@ mindmap
       (AI Toolkit Integration)
       (Production Deployment)
       (4-Lab Structure)
+    11. Database Integration Labs
+      ::icon(fa fa-database)
+      (PostgreSQL Integration)
+      (Retail Analytics Use Case)
+      (Row Level Security)
+      (Semantic Search)
+      (Production Deployment)
+      (13-Lab Structure)
+      (Hands-on Learning)
 ```
 
 ## Arkiston rakenne
 
-Arkisto on jaettu kymmeneen pääosioon, joista jokainen keskittyy MCP:n eri osa-alueisiin:
+Arkisto on jaettu yhteentoista pääosioon, joista jokainen keskittyy MCP:n eri osa-alueisiin:
 
 1. **Johdanto (00-Introduction/)**
    - Model Context Protocolin yleiskatsaus
    - Miksi standardointi on tärkeää AI-putkistoissa
    - Käytännön käyttötapaukset ja hyödyt
 
-2. **Keskeiset käsitteet (01-CoreConcepts/)**
+2. **Peruskäsitteet (01-CoreConcepts/)**
    - Asiakas-palvelin-arkkitehtuuri
    - Protokollan keskeiset komponentit
    - Viestintämallit MCP:ssä
@@ -136,7 +145,7 @@ Arkisto on jaettu kymmeneen pääosioon, joista jokainen keskittyy MCP:n eri osa
      - MCP Security Controls and Techniques
      - MCP Best Practices Quick Reference
    - **Keskeiset tietoturva-aiheet**:
-     - Prompt injection ja työkalujen myrkytys
+     - Prompt injection- ja työkalumyrkytysiskut
      - Istunnon kaappaus ja confused deputy -ongelmat
      - Token passthrough -haavoittuvuudet
      - Liialliset käyttöoikeudet ja pääsynhallinta
@@ -160,21 +169,21 @@ Arkisto on jaettu kymmeneen pääosioon, joista jokainen keskittyy MCP:n eri osa
 
 5. **Käytännön toteutus (04-PracticalImplementation/)**
    - SDK:iden käyttö eri ohjelmointikielissä
-   - Virheenkorjaus, testaus ja validointitekniikat
+   - Virheenkorjaus-, testaus- ja validointitekniikat
    - Uudelleenkäytettävien prompt-mallien ja työnkulkujen luominen
    - Esimerkkiprojektit toteutusesimerkeillä
 
 6. **Edistyneet aiheet (05-AdvancedTopics/)**
    - Kontekstisuunnittelutekniikat
    - Foundry-agentin integrointi
-   - Multimodaaliset AI-työnkulut
+   - Monimodaaliset AI-työnkulut
    - OAuth2-todennusdemot
    - Reaaliaikaiset hakutoiminnot
    - Reaaliaikainen suoratoisto
    - Root-kontekstien toteutus
    - Reititysstrategiat
    - Näytteenottotekniikat
-   - Skaalausmenetelmät
+   - Skaalauslähestymistavat
    - Tietoturvanäkökohdat
    - Entra ID -tietoturvaintegraatio
    - Web-hakuintegraatio
@@ -192,7 +201,7 @@ Arkisto on jaettu kymmeneen pääosioon, joista jokainen keskittyy MCP:n eri osa
    - Trendit ja tulevaisuuden tiekartta
    - **Microsoft MCP Servers Guide**: Kattava opas 10 tuotantovalmiista Microsoft MCP -palvelimesta, mukaan lukien:
      - Microsoft Learn Docs MCP Server
-     - Azure MCP Server (15+ erikoisliitintä)
+     - Azure MCP Server (15+ erikoistunutta liitintä)
      - GitHub MCP Server
      - Azure DevOps MCP Server
      - MarkItDown MCP Server
@@ -211,29 +220,41 @@ Arkisto on jaettu kymmeneen pääosioon, joista jokainen keskittyy MCP:n eri osa
     - **Seitsemän kattavaa tapaustutkimusta**, jotka osoittavat MCP:n monipuolisuuden eri skenaarioissa:
     - **Azure AI Travel Agents**: Moniagenttiorganisointi Azure OpenAI:n ja AI-haun kanssa
     - **Azure DevOps -integraatio**: Työnkulkujen automatisointi YouTube-datapäivityksillä
-    - **Reaaliaikainen dokumentaatiohaku**: Python-konsoliasiakas HTTP-suoratoistolla
-    - **Interaktiivinen opintosuunnitelman generaattori**: Chainlit-verkkosovellus keskustelevaa AI:ta käyttäen
+    - **Reaaliaikainen dokumentaatiohaku**: Python-konsoliasiakas suoratoistavalla HTTP:llä
+    - **Interaktiivinen opintosuunnitelman luonti**: Chainlit-verkkosovellus keskustelevaa AI:ta käyttäen
     - **Dokumentaatio editorissa**: VS Code -integraatio GitHub Copilot -työnkulkujen kanssa
     - **Azure API Management**: Yrityksen API-integraatio MCP-palvelimen luomisella
     - **GitHub MCP Registry**: Ekosysteemin kehitys ja agenttien integrointialusta
-    - Toteutusesimerkit, jotka kattavat yritysintegraation, kehittäjien tuottavuuden ja ekosysteemin kehittämisen
+    - Toteutusesimerkit kattavat yritysintegraation, kehittäjän tuottavuuden ja ekosysteemin kehityksen
 
 11. **Käytännön työpaja (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Kattava käytännön työpaja MCP:n ja AI Toolkitin yhdistämisestä
+    - Kattava käytännön työpaja, joka yhdistää MCP:n AI Toolkitin kanssa
     - Älykkäiden sovellusten rakentaminen, jotka yhdistävät AI-mallit todellisiin työkaluihin
     - Käytännön moduulit, jotka kattavat perusteet, mukautetun palvelimen kehittämisen ja tuotantokäyttöönottostrategiat
     - **Lab-rakenne**:
       - Lab 1: MCP-palvelimen perusteet
       - Lab 2: Edistynyt MCP-palvelimen kehitys
       - Lab 3: AI Toolkit -integraatio
-      - Lab 4: Tuotantokäyttöönotto ja skaalaus
+      - Lab 4: Tuotantokäyttö ja skaalaus
     - Lab-pohjainen oppimismenetelmä vaiheittaisilla ohjeilla
+
+12. **MCP-palvelimen tietokantaintegraatiolaboratoriot (11-MCPServerHandsOnLabs/)**
+    - **Kattava 13-laboratorion oppimispolku** tuotantovalmiiden MCP-palvelimien rakentamiseen PostgreSQL-integraatiolla
+    - **Todellisen vähittäiskaupan analytiikan toteutus** Zava Retail -käyttötapauksen avulla
+    - **Yritystason mallit**, mukaan lukien rivitason tietoturva (RLS), semanttinen haku ja monivuokraajadata
+    - **Täydellinen laboratoriorakenne**:
+      - **Laboratoriot 00-03: Perusteet** - Johdanto, arkkitehtuuri, tietoturva, ympäristön asennus
+      - **Laboratoriot 04-06: MCP-palvelimen rakentaminen** - Tietokantasuunnittelu, MCP-palvelimen toteutus, työkalujen kehitys
+      - **Laboratoriot 07-09: Edistyneet ominaisuudet** - Semanttinen haku, testaus ja virheenkorjaus, VS Code -integraatio
+      - **Laboratoriot 10-12: Tuotanto ja parhaat käytännöt** - Käyttöönotto, valvonta, optimointi
+    - **Käytetyt teknologiat**: FastMCP-kehys, PostgreSQL, Azure OpenAI, Azure Container Apps, Application Insights
+    - **Oppimistulokset**: Tuotantovalmiit MCP-palvelimet, tietokantaintegraatiomallit, AI-pohjainen analytiikka, yritystason tietoturva
 
 ## Lisäresurssit
 
 Arkisto sisältää tukiresursseja:
 
-- **Kuvat-kansio**: Sisältää kaavioita ja kuvituksia, joita käytetään kurssin aikana
+- **Kuvat-kansio**: Sisältää kaavioita ja kuvituksia, joita käytetään opetussuunnitelmassa
 - **Käännökset**: Monikielinen tuki dokumentaation automaattisilla käännöksillä
 - **Viralliset MCP-resurssit**:
   - [MCP Documentation](https://modelcontextprotocol.io/)
@@ -242,15 +263,15 @@ Arkisto sisältää tukiresursseja:
 
 ## Kuinka käyttää tätä arkistoa
 
-1. **Järjestelmällinen oppiminen**: Seuraa lukuja järjestyksessä (00–10) saadaksesi rakenteellisen oppimiskokemuksen.
-2. **Kielikohtainen painotus**: Jos olet kiinnostunut tietystä ohjelmointikielestä, tutustu näytekansioihin toteutuksiin suosikkikielelläsi.
-3. **Käytännön toteutus**: Aloita "Getting Started" -osiosta asentaaksesi ympäristön ja luodaksesi ensimmäisen MCP-palvelimen ja -asiakkaan.
+1. **Järjestelmällinen oppiminen**: Seuraa lukuja järjestyksessä (00–11) saadaksesi rakenteellisen oppimiskokemuksen.
+2. **Kielikohtainen painotus**: Jos olet kiinnostunut tietystä ohjelmointikielestä, tutustu näytekansioihin toteutuksiin haluamallasi kielellä.
+3. **Käytännön toteutus**: Aloita "Aloittaminen"-osiosta asentaaksesi ympäristön ja luodaksesi ensimmäisen MCP-palvelimen ja -asiakkaan.
 4. **Edistynyt tutkimus**: Kun perusasiat ovat hallussa, syvenny edistyneisiin aiheisiin laajentaaksesi osaamistasi.
 5. **Yhteisön osallistuminen**: Liity MCP-yhteisöön GitHub-keskustelujen ja Discord-kanavien kautta saadaksesi yhteyden asiantuntijoihin ja muihin kehittäjiin.
 
 ## MCP-asiakkaat ja työkalut
 
-Kurssi kattaa erilaisia MCP-asiakkaita ja työkaluja:
+Opetussuunnitelma kattaa erilaisia MCP-asiakkaita ja työkaluja:
 
 1. **Viralliset asiakkaat**:
    - Visual Studio Code 
@@ -277,7 +298,7 @@ Arkisto esittelee erilaisia MCP-palvelimia, mukaan lukien:
 
 1. **Viralliset Microsoft MCP-palvelimet**:
    - Microsoft Learn Docs MCP Server
-   - Azure MCP Server (15+ erikoisliitintä)
+   - Azure MCP Server (15+ erikoistunutta liitintä)
    - GitHub MCP Server
    - Azure DevOps MCP Server
    - MarkItDown MCP Server
@@ -288,10 +309,10 @@ Arkisto esittelee erilaisia MCP-palvelimia, mukaan lukien:
    - Microsoft 365 Agents Toolkit MCP Server
 
 2. **Viralliset referenssipalvelimet**:
-   - Filesystem
+   - Tiedostojärjestelmä
    - Fetch
-   - Memory
-   - Sequential Thinking
+   - Muisti
+   - Järjestelmällinen ajattelu
 
 3. **Kuvagenerointi**:
    - Azure OpenAI DALL-E 3
@@ -300,8 +321,8 @@ Arkisto esittelee erilaisia MCP-palvelimia, mukaan lukien:
 
 4. **Kehitystyökalut**:
    - Git MCP
-   - Terminal Control
-   - Code Assistant
+   - Terminaalin hallinta
+   - Koodiassistentti
 
 5. **Erikoistuneet palvelimet**:
    - Salesforce
@@ -310,20 +331,23 @@ Arkisto esittelee erilaisia MCP-palvelimia, mukaan lukien:
 
 ## Osallistuminen
 
-Tämä arkisto toivottaa yhteisön panokset tervetulleiksi. Katso Community Contributions -osio saadaksesi ohjeita MCP-ekosysteemiin osallistumisesta.
+Tämä arkisto toivottaa yhteisön panokset tervetulleiksi. Katso Yhteisön panokset -osio saadaksesi ohjeita MCP-ekosysteemiin osallistumisesta.
 
 ## Muutosloki
 
 | Päivämäärä | Muutokset |
-|------------|-----------|
-| 26. syyskuuta 2025 | - Lisätty GitHub MCP Registry -tapaustutkimus 09-CaseStudy-osioon<br>- Päivitetty tapaustutkimukset sisältämään seitsemän kattavaa tapaustutkimusta<br>- Parannettu tapaustutkimusten kuvauksia yksityiskohtaisilla toteutustiedoilla<br>- Päivitetty visuaalinen kurssikartta sisältämään GitHub MCP Registry<br>- Uudistettu opasrakenne ekosysteemin kehityksen painotuksella |
-| 18. heinäkuuta 2025 | - Päivitetty arkiston rakenne sisältämään Microsoft MCP Servers Guide<br>- Lisätty kattava lista 10 tuotantovalmiista Microsoft MCP-palvelimesta<br>- Parannettu Suositut MCP-palvelimet -osio virallisilla Microsoft MCP-palvelimilla<br>- Päivitetty tapaustutkimukset todellisilla tiedosto-esimerkeillä<br>- Lisätty Lab-rakenne yksityiskohdat käytännön työpajaan |
-| 16. heinäkuuta 2025 | - Päivitetty arkiston rakenne vastaamaan nykyistä sisältöä<br>- Lisätty MCP-asiakkaat ja työkalut -osio<br>- Lisätty Suositut MCP-palvelimet -osio<br>- Päivitetty visuaalinen kurssikartta kaikilla nykyisillä aiheilla<br>- Parannettu edistyneet aiheet -osio kaikilla erikoistuneilla alueilla<br>- Päivitetty tapaustutkimukset todellisilla esimerkeillä<br>- Selkeytetty MCP:n alkuperä Anthropicin luomana |
-| 11. kesäkuuta 2025 | - Oppaan alkuperäinen luominen<br>- Lisätty visuaalinen kurssikartta<br>- Kuvaillut arkiston rakenne<br>- Sisällytetty esimerkkiprojektit ja lisäresurssit |
+|------------|-----------||
+| 29. syyskuuta 2025 | - Lisätty 11-MCPServerHandsOnLabs-osio kattavalla 13-laboratorion tietokantaintegraation oppimispolulla<br>- Päivitetty visuaalinen opetussuunnitelmakartta sisältämään tietokantaintegraatiolaboratoriot<br>- Parannettu arkiston rakennetta heijastamaan yksitoista pääosaa<br>- Lisätty yksityiskohtainen kuvaus PostgreSQL-integraatiosta, vähittäiskaupan analytiikan käyttötapauksesta ja yritystason malleista<br>- Päivitetty navigointiohjeet sisältämään osiot 00–11 |
+| 26. syyskuuta 2025 | - Lisätty GitHub MCP Registry -tapaustutkimus 09-CaseStudy-osioon<br>- Päivitetty tapaustutkimukset sisältämään seitsemän kattavaa tapaustutkimusta<br>- Parannettu tapaustutkimusten kuvauksia erityisillä toteutustiedoilla<br>- Päivitetty visuaalinen opetussuunnitelmakartta sisältämään GitHub MCP Registry<br>- Tarkistettu opasrakenne heijastamaan ekosysteemin kehityksen painopistettä |
+| 18. heinäkuuta 2025 | - Päivitetty arkiston rakenne sisältämään Microsoft MCP Servers Guide<br>- Lisätty kattava lista 10 tuotantovalmiista Microsoft MCP-palvelimesta<br>- Parannettu Suositut MCP-palvelimet -osio virallisilla Microsoft MCP-palvelimilla<br>- Päivitetty tapaustutkimukset todellisten tiedostoesimerkkien kanssa<br>- Lisätty Lab-rakenteen yksityiskohdat käytännön työpajalle |
+| 16. heinäkuuta 2025 | - Päivitetty arkiston rakenne heijastamaan nykyistä sisältöä<br>- Lisätty MCP-asiakkaat ja työkalut -osio<br>- Lisätty Suositut MCP-palvelimet -osio<br>- Päivitetty visuaalinen opetussuunnitelmakartta kaikilla nykyisillä aiheilla<br>- Parannettu Edistyneet aiheet -osio kaikilla erikoistuneilla alueilla<br>- Päivitetty tapaustutkimukset todellisten esimerkkien kanssa<br>- Selkeytetty MCP:n alkuperä Anthropicin luomana |
+| 11. kesäkuuta 2025 | - Oppaan alkuperäinen luominen<br>- Lisätty visuaalinen opetussuunnitelmakartta<br>- Kuvaillut arkiston rakenne<br>- Sisällytetty esimerkkiprojektit ja lisäresurssit |
 
 ---
 
-*Tämä opas päivitettiin 26. syyskuuta 2025 ja tarjoaa yleiskatsauksen arkistosta kyseisenä päivänä. Arkiston sisältöä voidaan päivittää tämän päivämäärän jälkeen.*
+*Tämä opas päivitettiin 29. syyskuuta 2025 ja tarjoaa yleiskatsauksen arkistosta kyseisenä päivänä. Arkiston sisältöä voidaan päivittää tämän päivämäärän jälkeen.*
 
 ---
 
+**Vastuuvapauslauseke**:  
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
