@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "719117a0a5f34ade7b5dfb61ee06fb13",
-  "translation_date": "2025-09-26T19:14:11+00:00",
+  "original_hash": "aa1ce97bc694b08faf3018bab6d275b9",
+  "translation_date": "2025-09-30T22:41:43+00:00",
   "source_file": "study_guide.md",
   "language_code": "hr"
 }
 -->
 # Protokol konteksta modela (MCP) za početnike - Vodič za učenje
 
-Ovaj vodič za učenje pruža pregled strukture repozitorija i sadržaja za kurikulum "Protokol konteksta modela (MCP) za početnike". Koristite ovaj vodič kako biste učinkovito navigirali repozitorijem i maksimalno iskoristili dostupne resurse.
+Ovaj vodič za učenje pruža pregled strukture i sadržaja repozitorija za kurikulum "Protokol konteksta modela (MCP) za početnike". Koristite ovaj vodič kako biste učinkovito navigirali repozitorijem i maksimalno iskoristili dostupne resurse.
 
 ## Pregled repozitorija
 
-Protokol konteksta modela (MCP) je standardizirani okvir za interakcije između AI modela i klijentskih aplikacija. Prvotno ga je kreirao Anthropic, a MCP sada održava šira MCP zajednica putem službene GitHub organizacije. Ovaj repozitorij pruža sveobuhvatan kurikulum s praktičnim primjerima koda u C#, Java, JavaScript, Python i TypeScript, namijenjen AI programerima, sistemskim arhitektima i softverskim inženjerima.
+Protokol konteksta modela (MCP) je standardizirani okvir za interakciju između AI modela i klijentskih aplikacija. Prvotno ga je kreirao Anthropic, a MCP sada održava šira MCP zajednica putem službene GitHub organizacije. Ovaj repozitorij pruža sveobuhvatan kurikulum s praktičnim primjerima koda u C#, Java, JavaScript, Python i TypeScript, namijenjen AI programerima, arhitektima sustava i softverskim inženjerima.
 
-## Vizualna mapa kurikuluma
+## Vizualna karta kurikuluma
 
 ```mermaid
 mindmap
@@ -110,11 +110,20 @@ mindmap
       (AI Toolkit Integration)
       (Production Deployment)
       (4-Lab Structure)
+    11. Database Integration Labs
+      ::icon(fa fa-database)
+      (PostgreSQL Integration)
+      (Retail Analytics Use Case)
+      (Row Level Security)
+      (Semantic Search)
+      (Production Deployment)
+      (13-Lab Structure)
+      (Hands-on Learning)
 ```
 
 ## Struktura repozitorija
 
-Repozitorij je organiziran u deset glavnih sekcija, od kojih svaka pokriva različite aspekte MCP-a:
+Repozitorij je organiziran u jedanaest glavnih sekcija, od kojih svaka pokriva različite aspekte MCP-a:
 
 1. **Uvod (00-Introduction/)**
    - Pregled Protokola konteksta modela
@@ -132,18 +141,18 @@ Repozitorij je organiziran u deset glavnih sekcija, od kojih svaka pokriva razli
    - Strategije autentifikacije i autorizacije
    - **Sveobuhvatna dokumentacija o sigurnosti**:
      - MCP najbolje prakse za sigurnost 2025
-     - Vodič za implementaciju sigurnosti sadržaja u Azureu
+     - Vodič za implementaciju Azure Content Safety
      - Kontrole i tehnike sigurnosti MCP-a
      - Brzi referentni vodič za najbolje prakse MCP-a
-   - **Ključne teme sigurnosti**:
-     - Napadi ubrizgavanjem prompta i trovanje alata
-     - Otimanje sesije i problemi zbunjenog zamjenika
-     - Ranljivosti prijenosa tokena
-     - Prekomjerne dozvole i kontrola pristupa
+   - **Ključne sigurnosne teme**:
+     - Napadi ubrizgavanja prompta i trovanja alata
+     - Otmica sesije i problemi s zbunjenim zamjenikom
+     - Ranljivosti prosljeđivanja tokena
+     - Pretjerane dozvole i kontrola pristupa
      - Sigurnost opskrbnog lanca za AI komponente
      - Integracija Microsoft Prompt Shields
 
-4. **Prvi koraci (03-GettingStarted/)**
+4. **Početak rada (03-GettingStarted/)**
    - Postavljanje i konfiguracija okruženja
    - Kreiranje osnovnih MCP servera i klijenata
    - Integracija s postojećim aplikacijama
@@ -160,7 +169,7 @@ Repozitorij je organiziran u deset glavnih sekcija, od kojih svaka pokriva razli
 
 5. **Praktična implementacija (04-PracticalImplementation/)**
    - Korištenje SDK-ova u različitim programskim jezicima
-   - Tehnike za otklanjanje grešaka, testiranje i validaciju
+   - Tehnike za otklanjanje pogrešaka, testiranje i validaciju
    - Izrada predložaka prompta i radnih tijekova koji se mogu ponovno koristiti
    - Primjeri projekata s implementacijom
 
@@ -171,7 +180,7 @@ Repozitorij je organiziran u deset glavnih sekcija, od kojih svaka pokriva razli
    - Demonstracije autentifikacije putem OAuth2
    - Sposobnosti pretraživanja u stvarnom vremenu
    - Streaming u stvarnom vremenu
-   - Implementacija korijenskih konteksta
+   - Implementacija osnovnih konteksta
    - Strategije usmjeravanja
    - Tehnike uzorkovanja
    - Pristupi skaliranju
@@ -187,7 +196,7 @@ Repozitorij je organiziran u deset glavnih sekcija, od kojih svaka pokriva razli
    - Rad s popularnim MCP serverima uključujući generiranje slika
 
 8. **Lekcije iz ranog usvajanja (07-LessonsfromEarlyAdoption/)**
-   - Implementacije u stvarnom svijetu i priče o uspjehu
+   - Implementacije iz stvarnog svijeta i uspješne priče
    - Izgradnja i implementacija rješenja temeljenih na MCP-u
    - Trendovi i buduća mapa puta
    - **Vodič za Microsoft MCP servere**: Sveobuhvatan vodič za 10 Microsoft MCP servera spremnih za produkciju, uključujući:
@@ -210,28 +219,40 @@ Repozitorij je organiziran u deset glavnih sekcija, od kojih svaka pokriva razli
 10. **Studije slučaja (09-CaseStudy/)**
     - **Sedam sveobuhvatnih studija slučaja** koje demonstriraju svestranost MCP-a u različitim scenarijima:
     - **Azure AI putnički agenti**: Orkestracija više agenata s Azure OpenAI i AI pretraživanjem
-    - **Integracija Azure DevOpsa**: Automatizacija radnih tijekova s ažuriranjima podataka s YouTubea
-    - **Dohvaćanje dokumentacije u stvarnom vremenu**: Python konzolni klijent s HTTP streamingom
+    - **Integracija Azure DevOps-a**: Automatizacija radnih tijekova s ažuriranjima podataka s YouTubea
+    - **Dohvaćanje dokumentacije u stvarnom vremenu**: Python konzolni klijent sa streamingom putem HTTP-a
     - **Interaktivni generator plana učenja**: Chainlit web aplikacija s konverzacijskim AI-jem
-    - **Dokumentacija unutar uređivača**: Integracija s VS Code i GitHub Copilot radnim tijekovima
-    - **Upravljanje API-jem u Azureu**: Integracija API-ja za poduzeća s kreiranjem MCP servera
+    - **Dokumentacija unutar uređivača**: Integracija VS Code-a s GitHub Copilot radnim tijekovima
+    - **Upravljanje API-jem Azure**: Integracija API-ja za poduzeća s kreiranjem MCP servera
     - **GitHub MCP Registry**: Razvoj ekosustava i platforma za agentičku integraciju
     - Primjeri implementacije koji obuhvaćaju integraciju u poduzeću, produktivnost programera i razvoj ekosustava
 
 11. **Praktična radionica (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Sveobuhvatna praktična radionica koja kombinira MCP s AI alatom
+    - Sveobuhvatna praktična radionica koja kombinira MCP s AI Toolkitom
     - Izgradnja inteligentnih aplikacija koje povezuju AI modele s alatima iz stvarnog svijeta
     - Praktični moduli koji pokrivaju osnove, razvoj prilagođenih servera i strategije implementacije u produkciji
     - **Struktura laboratorija**:
       - Laboratorij 1: Osnove MCP servera
       - Laboratorij 2: Napredni razvoj MCP servera
-      - Laboratorij 3: Integracija AI alata
+      - Laboratorij 3: Integracija AI Toolkita
       - Laboratorij 4: Implementacija u produkciji i skaliranje
-    - Pristup učenju temeljen na laboratorijima s detaljnim uputama
+    - Pristup učenju temeljen na laboratorijima s korak-po-korak uputama
+
+12. **Laboratoriji za integraciju MCP servera s bazom podataka (11-MCPServerHandsOnLabs/)**
+    - **Sveobuhvatan put učenja kroz 13 laboratorija** za izgradnju MCP servera spremnih za produkciju s integracijom PostgreSQL-a
+    - **Implementacija analitike maloprodaje iz stvarnog svijeta** koristeći Zava Retail slučaj
+    - **Obrasci na razini poduzeća** uključujući sigurnost na razini redaka (RLS), semantičko pretraživanje i pristup podacima za više korisnika
+    - **Kompletna struktura laboratorija**:
+      - **Laboratoriji 00-03: Osnove** - Uvod, Arhitektura, Sigurnost, Postavljanje okruženja
+      - **Laboratoriji 04-06: Izgradnja MCP servera** - Dizajn baze podataka, Implementacija MCP servera, Razvoj alata
+      - **Laboratoriji 07-09: Napredne značajke** - Semantičko pretraživanje, Testiranje i otklanjanje pogrešaka, Integracija s VS Code-om
+      - **Laboratoriji 10-12: Produkcija i najbolje prakse** - Implementacija, Praćenje, Optimizacija
+    - **Obuhvaćene tehnologije**: FastMCP okvir, PostgreSQL, Azure OpenAI, Azure Container Apps, Application Insights
+    - **Rezultati učenja**: MCP serveri spremni za produkciju, obrasci integracije baza podataka, analitika temeljena na AI-ju, sigurnost na razini poduzeća
 
 ## Dodatni resursi
 
-Repozitorij uključuje podršku resursima:
+Repozitorij uključuje podržavajuće resurse:
 
 - **Mapa slika**: Sadrži dijagrame i ilustracije korištene u cijelom kurikulumu
 - **Prijevodi**: Podrška za više jezika s automatskim prijevodima dokumentacije
@@ -242,11 +263,11 @@ Repozitorij uključuje podršku resursima:
 
 ## Kako koristiti ovaj repozitorij
 
-1. **Sekvencijalno učenje**: Slijedite poglavlja redom (00 do 10) za strukturirano iskustvo učenja.
-2. **Fokus na specifični jezik**: Ako vas zanima određeni programski jezik, istražite direktorije s primjerima implementacije u željenom jeziku.
-3. **Praktična implementacija**: Započnite s odjeljkom "Prvi koraci" kako biste postavili svoje okruženje i kreirali svoj prvi MCP server i klijent.
-4. **Napredno istraživanje**: Kada savladate osnove, zaronite u napredne teme kako biste proširili svoje znanje.
-5. **Angažman zajednice**: Pridružite se MCP zajednici putem GitHub rasprava i Discord kanala kako biste se povezali s stručnjacima i drugim programerima.
+1. **Sekvencijalno učenje**: Slijedite poglavlja redoslijedom (00 do 11) za strukturirano iskustvo učenja.
+2. **Fokus na specifične jezike**: Ako vas zanima određeni programski jezik, istražite direktorije s primjerima implementacije u željenom jeziku.
+3. **Praktična implementacija**: Započnite s odjeljkom "Početak rada" kako biste postavili svoje okruženje i kreirali svoj prvi MCP server i klijent.
+4. **Napredno istraživanje**: Kada se upoznate s osnovama, zaronite u napredne teme kako biste proširili svoje znanje.
+5. **Angažman zajednice**: Pridružite se MCP zajednici putem GitHub rasprava i Discord kanala kako biste se povezali s stručnjacima i kolegama programerima.
 
 ## MCP klijenti i alati
 
@@ -254,9 +275,9 @@ Kurikulum pokriva različite MCP klijente i alate:
 
 1. **Službeni klijenti**:
    - Visual Studio Code 
-   - MCP u Visual Studio Code
+   - MCP u Visual Studio Code-u
    - Claude Desktop
-   - Claude u VSCode 
+   - Claude u VSCode-u 
    - Claude API
 
 2. **Klijenti zajednice**:
@@ -287,7 +308,7 @@ Repozitorij uvodi različite MCP servere, uključujući:
    - Azure AI Foundry MCP Server
    - Microsoft 365 Agents Toolkit MCP Server
 
-2. **Referentni serveri**:
+2. **Službeni referentni serveri**:
    - Filesystem
    - Fetch
    - Memory
@@ -310,20 +331,23 @@ Repozitorij uvodi različite MCP servere, uključujući:
 
 ## Doprinosi
 
-Ovaj repozitorij pozdravlja doprinose zajednice. Pogledajte odjeljak Doprinosi zajednice za smjernice o tome kako učinkovito doprinijeti MCP ekosustavu.
+Ovaj repozitorij pozdravlja doprinose zajednice. Pogledajte sekciju Doprinosi zajednice za smjernice o tome kako učinkovito doprinijeti MCP ekosustavu.
 
 ## Promjene
 
 | Datum | Promjene |
-|------|---------|
-| 26. rujna 2025 | - Dodana studija slučaja GitHub MCP Registry u odjeljak 09-CaseStudy<br>- Ažurirane studije slučaja kako bi odražavale sedam sveobuhvatnih studija slučaja<br>- Poboljšani opisi studija slučaja s detaljima implementacije<br>- Ažurirana vizualna mapa kurikuluma kako bi uključila GitHub MCP Registry<br>- Revidirana struktura vodiča za učenje kako bi odražavala fokus na razvoj ekosustava |
-| 18. srpnja 2025 | - Ažurirana struktura repozitorija kako bi uključila Vodič za Microsoft MCP servere<br>- Dodan sveobuhvatan popis 10 Microsoft MCP servera spremnih za produkciju<br>- Poboljšan odjeljak Popularni MCP serveri s službenim Microsoft MCP serverima<br>- Ažuriran odjeljak Studije slučaja s stvarnim primjerima datoteka<br>- Dodani detalji strukture laboratorija za praktičnu radionicu |
-| 16. srpnja 2025 | - Ažurirana struktura repozitorija kako bi odražavala trenutni sadržaj<br>- Dodan odjeljak MCP klijenti i alati<br>- Dodan odjeljak Popularni MCP serveri<br>- Ažurirana vizualna mapa kurikuluma sa svim trenutnim temama<br>- Poboljšan odjeljak Napredne teme sa svim specijaliziranim područjima<br>- Ažurirane studije slučaja kako bi odražavale stvarne primjere<br>- Pojašnjeno MCP podrijetlo kao kreacija Anthropic-a |
-| 11. lipnja 2025 | - Početno kreiranje vodiča za učenje<br>- Dodana vizualna mapa kurikuluma<br>- Nacrtana struktura repozitorija<br>- Uključeni primjeri projekata i dodatni resursi |
+|------|---------||
+| 29. rujna 2025. | - Dodana sekcija 11-MCPServerHandsOnLabs s sveobuhvatnim putem učenja kroz 13 laboratorija za integraciju baze podataka<br>- Ažurirana vizualna karta kurikuluma kako bi uključila laboratorije za integraciju baze podataka<br>- Poboljšana struktura repozitorija kako bi odražavala jedanaest glavnih sekcija<br>- Dodan detaljan opis integracije PostgreSQL-a, slučaja analitike maloprodaje i obrazaca na razini poduzeća<br>- Ažurirane smjernice za navigaciju kako bi uključile sekcije 00-11 |
+| 26. rujna 2025. | - Dodana studija slučaja GitHub MCP Registry u sekciju 09-CaseStudy<br>- Ažurirane studije slučaja kako bi odražavale sedam sveobuhvatnih studija slučaja<br>- Poboljšani opisi studija slučaja sa specifičnim detaljima implementacije<br>- Ažurirana vizualna karta kurikuluma kako bi uključila GitHub MCP Registry<br>- Revidirana struktura vodiča za učenje kako bi odražavala fokus na razvoj ekosustava |
+| 18. srpnja 2025. | - Ažurirana struktura repozitorija kako bi uključila Vodič za Microsoft MCP servere<br>- Dodan sveobuhvatan popis 10 Microsoft MCP servera spremnih za produkciju<br>- Poboljšana sekcija Popularni MCP serveri s službenim Microsoft MCP serverima<br>- Ažurirana sekcija Studije slučaja s stvarnim primjerima datoteka<br>- Dodani detalji strukture laboratorija za praktičnu radionicu |
+| 16. srpnja 2025. | - Ažurirana struktura repozitorija kako bi odražavala trenutni sadržaj<br>- Dodana sekcija MCP klijenti i alati<br>- Dodana sekcija Popularni MCP serveri<br>- Ažurirana vizualna karta kurikuluma sa svim trenutnim temama<br>- Poboljšana sekcija Napredne teme sa svim specijaliziranim područjima<br>- Ažurirane studije slučaja kako bi odražavale stvarne primjere<br>- Pojašnjeno podrijetlo MCP-a kao kreacija Anthropic-a |
+| 11. lipnja 2025. | - Početno kreiranje vodiča za učenje<br>- Dodana vizualna karta kurikuluma<br>- Nacrtana struktura repozitorija<br>- Uključeni primjeri projekata i dodatni resursi |
 
 ---
 
-*Ovaj vodič za učenje ažuriran je 26. rujna 2025. i pruža pregled repozitorija na taj datum. Sadržaj repozitorija može biti ažuriran nakon ovog datuma.*
+*Ovaj vodič za učenje ažuriran je 29. rujna 2025. i pruža pregled repozitorija na taj datum. Sadržaj repozitorija može biti ažuriran nakon ovog datuma.*
 
 ---
 
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za nesporazume ili pogrešna tumačenja koja mogu proizaći iz korištenja ovog prijevoda.
