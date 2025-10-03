@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c1775052e6f2ce4201e1c148d9e1b080",
-  "translation_date": "2025-09-30T22:52:36+00:00",
+  "original_hash": "14ff8da45161b7c294d7c0e60115c2b8",
+  "translation_date": "2025-10-03T08:04:03+00:00",
   "source_file": "README.md",
   "language_code": "lt"
 }
 -->
-![MCP pradedantiesiems](../../translated_images/mcp-beginners.2ce2b317996369ff66c5b72e25eff9d4288ab2741fc70c0b4e523d1ae1e249fd.lt.png) 
+![MCP pradedantiesiems](../../translated_images/mcp-beginners.2ce2b317996369ff66c5b72e25eff9d4288ab2741fc70c0b4e523d1ae1e249fd.lt.png)
 
 [![GitHub contributors](https://img.shields.io/github/contributors/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/graphs/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/issues)
@@ -18,20 +18,18 @@ CO_OP_TRANSLATOR_METADATA:
 [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/mcp-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/mcp-for-beginners/stargazers)
 
-
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Sekite šiuos žingsnius, kad pradėtumėte naudotis šiais ištekliais:
 1. **Fork Repozitoriją**: Spustelėkite [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
-2. **Klonuokite Repozitoriją**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+2. **Klonuokite Repozitoriją**: `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Prisijunkite prie Azure AI Foundry Discord ir susipažinkite su ekspertais bei kitais kūrėjais**](https://discord.com/invite/ByRwuEEgH4)
-
 
 ### 🌐 Daugiakalbė palaikymas
 
 #### Palaikoma per GitHub Action (Automatizuota ir visada atnaujinta)
 
- [Arabų](../ar/README.md) | [Bengalų](../bn/README.md) | [Bulgarų](../bg/README.md) | [Birmos (Mianmaras)](../my/README.md) | [Kinų (supaprastinta)](../zh/README.md) | [Kinų (tradicinė, Honkongas)](../hk/README.md) | [Kinų (tradicinė, Makao)](../mo/README.md) | [Kinų (tradicinė, Taivanas)](../tw/README.md) | [Kroatų](../hr/README.md) | [Čekų](../cs/README.md) | [Danų](../da/README.md) | [Olandų](../nl/README.md) | [Suomių](../fi/README.md) | [Prancūzų](../fr/README.md) | [Vokiečių](../de/README.md) | [Graikų](../el/README.md) | [Hebrajų](../he/README.md) | [Hindi](../hi/README.md) | [Vengrų](../hu/README.md) | [Indoneziečių](../id/README.md) | [Italų](../it/README.md) | [Japonų](../ja/README.md) | [Korėjiečių](../ko/README.md) | [Malajų](../ms/README.md) | [Maratų](../mr/README.md) | [Nepalų](../ne/README.md) | [Norvegų](../no/README.md) | [Persų (Farsi)](../fa/README.md) | [Lenkų](../pl/README.md) | [Portugalų (Brazilija)](../br/README.md) | [Portugalų (Portugalija)](../pt/README.md) | [Pundžabi (Gurmukhi)](../pa/README.md) | [Rumunų](../ro/README.md) | [Rusų](../ru/README.md) | [Serbų (kirilica)](../sr/README.md) | [Slovakų](../sk/README.md) | [Slovėnų](../sl/README.md) | [Ispanų](../es/README.md) | [Svahilių](../sw/README.md) | [Švedų](../sv/README.md) | [Tagalogų (Filipinų)](../tl/README.md) | [Tajų](../th/README.md) | [Turkų](../tr/README.md) | [Ukrainiečių](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamiečių](../vi/README.md)
+[Arabų](../ar/README.md) | [Bengalų](../bn/README.md) | [Bulgarų](../bg/README.md) | [Birmos (Mianmaras)](../my/README.md) | [Kinų (supaprastinta)](../zh/README.md) | [Kinų (tradicinė, Honkongas)](../hk/README.md) | [Kinų (tradicinė, Makao)](../mo/README.md) | [Kinų (tradicinė, Taivanas)](../tw/README.md) | [Kroatų](../hr/README.md) | [Čekų](../cs/README.md) | [Danų](../da/README.md) | [Olandų](../nl/README.md) | [Suomių](../fi/README.md) | [Prancūzų](../fr/README.md) | [Vokiečių](../de/README.md) | [Graikų](../el/README.md) | [Hebrajų](../he/README.md) | [Hindi](../hi/README.md) | [Vengrų](../hu/README.md) | [Indoneziečių](../id/README.md) | [Italų](../it/README.md) | [Japonų](../ja/README.md) | [Korėjiečių](../ko/README.md) | [Malajų](../ms/README.md) | [Maratų](../mr/README.md) | [Nepalų](../ne/README.md) | [Norvegų](../no/README.md) | [Persų (Farsi)](../fa/README.md) | [Lenkų](../pl/README.md) | [Portugalų (Brazilija)](../br/README.md) | [Portugalų (Portugalija)](../pt/README.md) | [Pandžabų (Gurmukhi)](../pa/README.md) | [Rumunų](../ro/README.md) | [Rusų](../ru/README.md) | [Serbų (kirilica)](../sr/README.md) | [Slovakų](../sk/README.md) | [Slovėnų](../sl/README.md) | [Ispanų](../es/README.md) | [Svahilių](../sw/README.md) | [Švedų](../sv/README.md) | [Tagalog (Filipinų)](../tl/README.md) | [Tajų](../th/README.md) | [Turkų](../tr/README.md) | [Ukrainiečių](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamiečių](../vi/README.md)
 
 # 🚀 Modelio konteksto protokolo (MCP) mokymo programa pradedantiesiems
 
@@ -45,11 +43,11 @@ Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos 
 
 ## 🔗 Oficialūs MCP ištekliai
 
-- 📘 [MCP Dokumentacija](https://modelcontextprotocol.io/) – Išsamūs vadovai ir mokymo medžiaga  
-- 📜 [MCP Specifikacija](https://modelcontextprotocol.io/docs/) – Protokolo architektūra ir techninės nuorodos  
-- 📜 [Originali MCP Specifikacija](https://spec.modelcontextprotocol.io/) – Senesnės techninės nuorodos (gali turėti papildomos informacijos)  
-- 🧑‍💻 [MCP GitHub Repozitorija](https://github.com/modelcontextprotocol) – Atvirojo kodo SDK, įrankiai ir kodų pavyzdžiai
-- 🌐 [MCP Bendruomenė](https://github.com/orgs/modelcontextprotocol/discussions) – Prisijunkite prie diskusijų ir prisidėkite prie bendruomenės
+- 📘 [MCP dokumentacija](https://modelcontextprotocol.io/) – Išsamūs vadovai ir vartotojo instrukcijos  
+- 📜 [MCP specifikacija](https://modelcontextprotocol.io/docs/) – Protokolo architektūra ir techninės nuorodos  
+- 📜 [Originali MCP specifikacija](https://spec.modelcontextprotocol.io/) – Senesnės techninės nuorodos (gali turėti papildomos informacijos)  
+- 🧑‍💻 [MCP GitHub repozitorija](https://github.com/modelcontextprotocol) – Atvirojo kodo SDK, įrankiai ir kodų pavyzdžiai
+- 🌐 [MCP bendruomenė](https://github.com/orgs/modelcontextprotocol/discussions) – Prisijunkite prie diskusijų ir prisidėkite prie bendruomenės
 
 ## 🧭 MCP mokymo programos apžvalga
 
@@ -58,7 +56,7 @@ Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos 
 | Modulis | Tema | Aprašymas | Nuoroda |
 |--------|-------|-------------|------|
 | **Modulis 1-3: Pagrindai** | | | |
-| 00 | MCP Įvadas | Modelio konteksto protokolo apžvalga ir jo svarba AI procesuose | [Skaityti daugiau](./00-Introduction/README.md) |
+| 00 | MCP įvadas | Modelio konteksto protokolo apžvalga ir jo svarba AI procesuose | [Skaityti daugiau](./00-Introduction/README.md) |
 | 01 | Pagrindinės sąvokos | Išsamus MCP pagrindinių sąvokų tyrimas | [Skaityti daugiau](./01-CoreConcepts/README.md) |
 | 02 | MCP saugumas | Grėsmės saugumui ir geriausios praktikos | [Skaityti daugiau](./02-Security/README.md) |
 | 03 | Pradžia su MCP | Aplinkos nustatymas, pagrindiniai serveriai/klientai, integracija | [Skaityti daugiau](./03-GettingStarted/README.md) |
@@ -89,10 +87,10 @@ Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos 
 | 5.12 | Entra ID autentifikacija | Autentifikacija su Microsoft Entra ID | [Vadovas](./05-AdvancedTopics/mcp-security-entra/README.md) |
 | 5.13 | Foundry integracija | Integracija su Azure AI Foundry | [Vadovas](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
 | 5.14 | Konteksto inžinerija | Efektyvios konteksto inžinerijos technikos | [Vadovas](./05-AdvancedTopics/mcp-contextengineering/README.md) |
-| 5.15 | MCP pritaikytas transportas | Pritaikyto transporto įgyvendinimai | [Vadovas](./05-AdvancedTopics/mcp-transport/README.md) |
+| 5.15 | MCP pritaikytas transportas | Pritaikyto transporto įgyvendinimas | [Vadovas](./05-AdvancedTopics/mcp-transport/README.md) |
 | **Modulis 6-10: Bendruomenė ir geriausios praktikos** | | | |
 | 06 | Bendruomenės indėlis | Kaip prisidėti prie MCP ekosistemos | [Vadovas](./06-CommunityContributions/README.md) |
-| 07 | Ankstyvo naudojimo įžvalgos | Realūs įgyvendinimo pavyzdžiai | [Vadovas](./07-LessonsFromEarlyAdoption/README.md) |
+| 07 | Ankstyvojo naudojimo įžvalgos | Realūs įgyvendinimo pavyzdžiai | [Vadovas](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | Geriausios MCP praktikos | Našumas, gedimų tolerancija, atsparumas | [Vadovas](./08-BestPractices/README.md) |
 | 09 | MCP atvejų analizės | Praktiniai įgyvendinimo pavyzdžiai | [Vadovas](./09-CaseStudy/README.md) |
 | 10 | Praktinis seminaras | MCP serverio kūrimas su AI įrankių rinkiniu | [Laboratorija](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
@@ -100,8 +98,8 @@ Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos 
 | 11 | MCP serverio duomenų bazės integracija | Išsamus 13 laboratorijų mokymosi kelias PostgreSQL integracijai | [Laboratorijos](./11-MCPServerHandsOnLabs/README.md) |
 | 11.1 | Įvadas | MCP apžvalga su duomenų bazės integracija ir mažmeninės prekybos analitikos naudojimo atveju | [Laboratorija 00](./11-MCPServerHandsOnLabs/00-Introduction/README.md) |
 | 11.2 | Pagrindinė architektūra | MCP serverio architektūros, duomenų bazės sluoksnių ir saugumo modelių supratimas | [Laboratorija 01](./11-MCPServerHandsOnLabs/01-Architecture/README.md) |
-| 11.3 | Saugumas ir daugiaklientė aplinka | Eilučių lygio saugumas, autentifikacija ir daugiaklientė duomenų prieiga | [Laboratorija 02](./11-MCPServerHandsOnLabs/02-Security/README.md) |
-| 11.4 | Aplinkos paruošimas | Programavimo aplinkos, Docker ir Azure resursų paruošimas | [Laboratorija 03](./11-MCPServerHandsOnLabs/03-Setup/README.md) |
+| 11.3 | Saugumas ir daugiabučių aplinka | Eilės lygio saugumas, autentifikacija ir daugiabučių duomenų prieiga | [Laboratorija 02](./11-MCPServerHandsOnLabs/02-Security/README.md) |
+| 11.4 | Aplinkos paruošimas | Programavimo aplinkos, Docker, Azure resursų paruošimas | [Laboratorija 03](./11-MCPServerHandsOnLabs/03-Setup/README.md) |
 | 11.5 | Duomenų bazės dizainas | PostgreSQL paruošimas, mažmeninės prekybos schemos dizainas ir pavyzdiniai duomenys | [Laboratorija 04](./11-MCPServerHandsOnLabs/04-Database/README.md) |
 | 11.6 | MCP serverio įgyvendinimas | FastMCP serverio kūrimas su duomenų bazės integracija | [Laboratorija 05](./11-MCPServerHandsOnLabs/05-MCP-Server/README.md) |
 | 11.7 | Įrankių kūrimas | Duomenų bazės užklausų įrankių kūrimas ir schemos introspekcija | [Laboratorija 06](./11-MCPServerHandsOnLabs/06-Tools/README.md) |
@@ -114,18 +112,18 @@ Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos 
 
 ### 💻 Pavyzdiniai kodų projektai
 
-#### Pagrindiniai MCP skaičiuoklės pavyzdžiai
+#### Pagrindiniai MCP skaičiuotuvo pavyzdžiai
 
 | Kalba | Aprašymas | Nuoroda |
 |-------|-----------|---------|
 | C# | MCP serverio pavyzdys | [Peržiūrėti kodą](./03-GettingStarted/samples/csharp/README.md) |
-| Java | MCP skaičiuoklė | [Peržiūrėti kodą](./03-GettingStarted/samples/java/calculator/README.md) |
+| Java | MCP skaičiuotuvas | [Peržiūrėti kodą](./03-GettingStarted/samples/java/calculator/README.md) |
 | JavaScript | MCP demonstracija | [Peržiūrėti kodą](./03-GettingStarted/samples/javascript/README.md) |
 | Python | MCP serveris | [Peržiūrėti kodą](../../03-GettingStarted/samples/python/mcp_calculator_server.py) |
 | TypeScript | MCP pavyzdys | [Peržiūrėti kodą](./03-GettingStarted/samples/typescript/README.md) |
 | Rust | MCP pavyzdys | [Peržiūrėti kodą](./03-GettingStarted/samples/rust/README.md) |
 
-#### Pažangūs MCP įgyvendinimai
+#### Pažangios MCP įgyvendinimo versijos
 
 | Kalba | Aprašymas | Nuoroda |
 |-------|-----------|---------|
@@ -135,27 +133,27 @@ Nesvarbu, ar esate AI kūrėjas, sistemų architektas, ar programinės įrangos 
 | Python | Sudėtingas įgyvendinimas | [Peržiūrėti kodą](../../04-PracticalImplementation/samples/python/READMEmd) |
 | TypeScript | Konteinerio pavyzdys | [Peržiūrėti kodą](./04-PracticalImplementation/samples/typescript/README.md) |
 
-## 🎯 MCP mokymosi reikalavimai
+## 🎯 Mokymosi MCP prielaidos
 
-Norint maksimaliai pasinaudoti šia mokymo programa, rekomenduojama turėti:
+Norint maksimaliai išnaudoti šią mokymo programą, turėtumėte turėti:
 
 - Pagrindines programavimo žinias bent viena iš šių kalbų: C#, Java, JavaScript, Python arba TypeScript
 - Kliento-serverio modelio ir API supratimą
-- REST ir HTTP koncepcijų žinias
+- Susipažinimą su REST ir HTTP koncepcijomis
 - (Pasirinktinai) AI/ML koncepcijų pagrindus
 
-- Prisijungti prie mūsų bendruomenės diskusijų pagalbai
+- Prisijungimą prie mūsų bendruomenės diskusijų pagalbai
 
 ## 📚 Mokymosi vadovas ir ištekliai
 
-Šiame saugykloje rasite įvairius išteklius, kurie padės efektyviai mokytis:
+Šiame saugykloje yra keletas išteklių, kurie padės jums efektyviai mokytis:
 
 ### Mokymosi vadovas
 
-Išsamus [Mokymosi vadovas](./study_guide.md) padės jums naršyti šią saugyklą. Vadove rasite:
+Išsamus [Mokymosi vadovas](./study_guide.md) padės jums efektyviai naršyti šioje saugykloje. Vadove rasite:
 
-- Vizualų mokymo programos žemėlapį su visomis aptartomis temomis
-- Detalų kiekvienos saugyklos dalies aprašymą
+- Vizualų mokymo programos žemėlapį, kuriame pateikiamos visos aptariamos temos
+- Išsamų kiekvienos saugyklos dalies suskirstymą
 - Patarimus, kaip naudoti pavyzdinius projektus
 - Rekomenduojamus mokymosi kelius skirtingiems įgūdžių lygiams
 - Papildomus išteklius, kurie papildys jūsų mokymosi kelionę
@@ -164,7 +162,7 @@ Išsamus [Mokymosi vadovas](./study_guide.md) padės jums naršyti šią saugykl
 
 Mes palaikome išsamų [Pakeitimų žurnalą](./changelog.md), kuriame sekami visi reikšmingi mokymo medžiagos atnaujinimai, įskaitant:
 
-- Naujo turinio pridėjimus
+- Naujo turinio papildymus
 - Struktūrinius pakeitimus
 - Funkcijų patobulinimus
 - Dokumentacijos atnaujinimus
@@ -187,25 +185,25 @@ MCP Dev Days galite žiūrėti užsiregistravę mūsų renginio puslapyje: https
 
 #### [1 diena: MCP produktyvumas, kūrimo įrankiai ir bendruomenė:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Skirta kūrėjams, norintiems naudoti MCP savo darbo eigoje ir švęsti nuostabią MCP bendruomenę. Prisijungsime prie bendruomenės narių ir partnerių, tokių kaip Arcade, Block, Okta ir Neon, kad pamatytume, kaip jie bendradarbiauja su Microsoft, formuodami atvirą, išplečiamą MCP ekosistemą. 
+Skirta suteikti kūrėjams galimybę naudoti MCP savo kūrimo darbo eigoje ir švęsti nuostabią MCP bendruomenę. Prisijungsime prie bendruomenės narių ir partnerių, tokių kaip Arcade, Block, Okta ir Neon, kad pamatytume, kaip jie bendradarbiauja su Microsoft, formuodami atvirą, išplečiamą MCP ekosistemą. 
 Tikri demonstraciniai pavyzdžiai su VS Code, Visual Studio, GitHub Copilot ir populiariais bendruomenės įrankiais
-Praktiniai, kontekstiniai kūrimo darbo srautai
+Praktiški, kontekstu paremti kūrimo darbo srautai
 Bendruomenės vedamos sesijos ir įžvalgos
 Nesvarbu, ar tik pradedate dirbti su MCP, ar jau kuriate su juo, 1 diena suteiks įkvėpimo ir praktinių patarimų.
 
 #### [2 diena: Kurkite MCP serverius užtikrintai](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Skirta MCP kūrėjams. Gilinsimės į įgyvendinimo strategijas ir geriausias praktikas, kaip kurti MCP serverius ir integruoti MCP į AI darbo eigas.
+Skirta MCP kūrėjams. Gilinsimės į įgyvendinimo strategijas ir geriausias praktikas, skirtas MCP serverių kūrimui ir MCP integravimui į jūsų AI darbo eigą.
 
-#### Temos:
+#### Temos apima:
 
-- MCP serverių kūrimas ir jų integravimas į agentų patirtis
-- Kūryba, paremta užklausomis
-- Saugumo geriausios praktikos
-- Naudojant statybinius blokus, tokius kaip Functions, ACA ir API Management
-- Registrų suderinimas ir įrankiai (1P + 3P)
+- MCP serverių kūrimą ir jų integravimą į agentų patirtis
+- Kūrybą, paremtą užklausomis
+- Saugumo geriausias praktikas
+- Naudojimą tokių blokų kaip Functions, ACA ir API Management
+- Registrų suderinimą ir įrankius (1P + 3P)
 
-Jei esate kūrėjas, įrankių kūrėjas ar AI produktų strategas, ši diena bus kupina įžvalgų, reikalingų kurti mastelio, saugumo ir ateities MCP sprendimus.
+Jei esate kūrėjas, įrankių kūrėjas ar AI produktų strategas, ši diena bus kupina įžvalgų, reikalingų kurti mastelio, saugumo ir ateities poreikius atitinkančius MCP sprendimus.
 
 ### MCP Boot Camp 2025 m. rugpjūtis
 Intensyvių vaizdo sesijų metu sužinokite, kaip kurti MCP serverius, integruoti su VS Code ir profesionaliai diegti Azure, remiantis MCP pradedančiųjų mokymo programa. Išmokite praktinių įgūdžių technologijoje, kurią jau naudoja didelės įmonės.
@@ -215,7 +213,7 @@ Intensyvių vaizdo sesijų metu sužinokite, kaip kurti MCP serverius, integruot
 #### [➡️Žiūrėti pagal poreikį MCP Bootcamp | Ispanų kalba](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
 
 ### Mokykimės MCP su C# - Pamokų serija
-Susipažinkite su Model Context Protocol (MCP), pažangia sistema, skirta standartizuoti sąveiką tarp AI modelių ir klientų programų. Šioje pradedantiesiems skirtoje sesijoje supažindinsime jus su MCP ir padėsime sukurti pirmąjį MCP serverį.
+Susipažinkime su Model Context Protocol (MCP), pažangia sistema, sukurta standartizuoti sąveiką tarp AI modelių ir klientų programų. Šioje pradedantiesiems skirtoje sesijoje supažindinsime jus su MCP ir padėsime sukurti pirmąjį MCP serverį.
 #### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
 #### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
 #### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
@@ -231,11 +229,11 @@ Dėkojame Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/
 
 ## 🤝 Indėlio gairės
 
-Šis projektas laukia indėlių ir pasiūlymų. Dauguma indėlių reikalauja, kad sutiktumėte su
+Šis projektas priima indėlius ir pasiūlymus. Dauguma indėlių reikalauja, kad sutiktumėte su
 Contributor License Agreement (CLA), patvirtinančiu, kad turite teisę ir iš tikrųjų suteikiate mums
 teisę naudoti jūsų indėlį. Daugiau informacijos rasite <https://cla.opensource.microsoft.com>.
 
-Kai pateikiate „pull request“, CLA bot automatiškai nustatys, ar jums reikia pateikti
+Kai pateikiate pull request, CLA bot automatiškai nustatys, ar jums reikia pateikti
 CLA ir atitinkamai pažymės PR (pvz., statuso patikrinimas, komentaras). Tiesiog vykdykite bot pateiktas instrukcijas. Tai reikės padaryti tik vieną kartą visose saugyklose, naudojančiose mūsų CLA.
 
 Šis projektas priėmė [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
@@ -253,7 +251,7 @@ Saugykla organizuota taip:
 - **translated_images/**: Lokalizuotos diagramų ir iliustracijų versijos
 - **study_guide.md**: Išsamus vadovas, kaip naršyti saugyklą
 - **changelog.md**: Visų reikšmingų mokymo medžiagos pakeitimų įrašas
-- **mcp.json**: MCP specifikacijos konfigūracijos failas
+- **mcp.json**: Konfigūracijos failas MCP specifikacijai
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Projekto valdymo dokumentai
 
 ## 🎒 Kiti kursai
@@ -272,16 +270,24 @@ Mūsų komanda kuria ir kitus kursus! Peržiūrėkite:
 - [Web kūrimas pradedantiesiems](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 - [IoT pradedantiesiems](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [XR kūrimas pradedantiesiems](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [GitHub Copilot valdymas AI poriniam programavimui](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [GitHub Copilot valdymas C#/.NET kūrėjams](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [GitHub Copilot įvaldymas AI poriniam programavimui](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [GitHub Copilot įvaldymas C#/.NET kūrėjams](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [Pasirinkite savo Copilot nuotykį](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 ## ™️ Prekės ženklo pranešimas
 
-Šiame projekte gali būti naudojami prekių ženklai arba logotipai, susiję su projektais, produktais ar paslaugomis. Leidžiamas „Microsoft“ prekių ženklų ar logotipų naudojimas turi atitikti ir laikytis [„Microsoft“ prekių ženklų ir prekės ženklo gairių](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). 
+Šiame projekte gali būti naudojami prekių ženklai arba logotipai, susiję su projektais, produktais ar paslaugomis. Leidžiamas „Microsoft“ prekių ženklų ar logotipų naudojimas turi atitikti ir laikytis [„Microsoft“ prekių ženklų ir prekės ženklo gairių](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Naudojant „Microsoft“ prekių ženklus ar logotipus modifikuotose šio projekto versijose, neturi būti sukeliama painiava ar sudaromas įspūdis, kad „Microsoft“ remia projektą. Bet koks trečiųjų šalių prekių ženklų ar logotipų naudojimas turi atitikti tų trečiųjų šalių politiką.
 
-„Microsoft“ prekių ženklų ar logotipų naudojimas modifikuotose šio projekto versijose neturi sukelti painiavos ar sudaryti įspūdžio, kad „Microsoft“ remia projektą. Bet koks trečiųjų šalių prekių ženklų ar logotipų naudojimas turi atitikti tų trečiųjų šalių politiką.
+## Pagalbos gavimas
+
+Jei susiduriate su sunkumais ar turite klausimų apie AI programų kūrimą, prisijunkite:
+
+[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+
+Jei turite atsiliepimų apie produktą ar susiduriate su klaidomis kurdami, apsilankykite:
+
+[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+**Atsakomybės atsisakymas**:  
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar neteisingus interpretavimus, atsiradusius naudojant šį vertimą.

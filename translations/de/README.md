@@ -1,35 +1,37 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c1775052e6f2ce4201e1c148d9e1b080",
-  "translation_date": "2025-09-30T13:24:24+00:00",
+  "original_hash": "14ff8da45161b7c294d7c0e60115c2b8",
+  "translation_date": "2025-10-03T07:00:56+00:00",
   "source_file": "README.md",
   "language_code": "de"
 }
 -->
-![MCP-für-Anfänger](../../translated_images/mcp-beginners.2ce2b317996369ff66c5b72e25eff9d4288ab2741fc70c0b4e523d1ae1e249fd.de.png)
+![MCP-für-Anfänger](../../translated_images/mcp-beginners.2ce2b317996369ff66c5b72e25eff9d4288ab2741fc70c0b4e523d1ae1e249fd.de.png) 
 
-[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/graphs/contributors)  
-[![GitHub issues](https://img.shields.io/github/issues/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/issues)  
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/pulls)  
+[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/graphs/contributors)
+[![GitHub issues](https://img.shields.io/github/issues/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/issues)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/mcp-for-beginners.svg)](https://GitHub.com/microsoft/mcp-for-beginners/pulls)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/mcp-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/mcp-for-beginners/watchers)  
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)  
+[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/mcp-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/mcp-for-beginners/watchers)
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/mcp-for-beginners?style=social&label=Star)](https://GitHub.com/microsoft/mcp-for-beginners/stargazers)
+
 
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-Folgen Sie diesen Schritten, um mit diesen Ressourcen zu beginnen:  
-1. **Repository forken**: Klicken Sie hier [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)  
-2. **Repository klonen**: `git clone https://github.com/microsoft/mcp-for-beginners.git`  
+Folgen Sie diesen Schritten, um mit diesen Ressourcen zu beginnen:
+1. **Repository forken**: Klicken Sie hier [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
+2. **Repository klonen**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Treten Sie dem Azure AI Foundry Discord bei und tauschen Sie sich mit Experten und anderen Entwicklern aus**](https://discord.com/invite/ByRwuEEgH4)
+
 
 ### 🌐 Mehrsprachige Unterstützung
 
 #### Unterstützt durch GitHub Action (Automatisiert & Immer aktuell)
 
-[Arabisch](../ar/README.md) | [Bengalisch](../bn/README.md) | [Bulgarisch](../bg/README.md) | [Birmanisch (Myanmar)](../my/README.md) | [Chinesisch (vereinfacht)](../zh/README.md) | [Chinesisch (traditionell, Hongkong)](../hk/README.md) | [Chinesisch (traditionell, Macau)](../mo/README.md) | [Chinesisch (traditionell, Taiwan)](../tw/README.md) | [Kroatisch](../hr/README.md) | [Tschechisch](../cs/README.md) | [Dänisch](../da/README.md) | [Niederländisch](../nl/README.md) | [Finnisch](../fi/README.md) | [Französisch](../fr/README.md) | [Deutsch](./README.md) | [Griechisch](../el/README.md) | [Hebräisch](../he/README.md) | [Hindi](../hi/README.md) | [Ungarisch](../hu/README.md) | [Indonesisch](../id/README.md) | [Italienisch](../it/README.md) | [Japanisch](../ja/README.md) | [Koreanisch](../ko/README.md) | [Malaiisch](../ms/README.md) | [Marathi](../mr/README.md) | [Nepalesisch](../ne/README.md) | [Norwegisch](../no/README.md) | [Persisch (Farsi)](../fa/README.md) | [Polnisch](../pl/README.md) | [Portugiesisch (Brasilien)](../br/README.md) | [Portugiesisch (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumänisch](../ro/README.md) | [Russisch](../ru/README.md) | [Serbisch (kyrillisch)](../sr/README.md) | [Slowakisch](../sk/README.md) | [Slowenisch](../sl/README.md) | [Spanisch](../es/README.md) | [Swahili](../sw/README.md) | [Schwedisch](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thailändisch](../th/README.md) | [Türkisch](../tr/README.md) | [Ukrainisch](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamesisch](../vi/README.md)
+ [Arabisch](../ar/README.md) | [Bengalisch](../bn/README.md) | [Bulgarisch](../bg/README.md) | [Birmanisch (Myanmar)](../my/README.md) | [Chinesisch (vereinfacht)](../zh/README.md) | [Chinesisch (traditionell, Hongkong)](../hk/README.md) | [Chinesisch (traditionell, Macau)](../mo/README.md) | [Chinesisch (traditionell, Taiwan)](../tw/README.md) | [Kroatisch](../hr/README.md) | [Tschechisch](../cs/README.md) | [Dänisch](../da/README.md) | [Niederländisch](../nl/README.md) | [Finnisch](../fi/README.md) | [Französisch](../fr/README.md) | [Deutsch](./README.md) | [Griechisch](../el/README.md) | [Hebräisch](../he/README.md) | [Hindi](../hi/README.md) | [Ungarisch](../hu/README.md) | [Indonesisch](../id/README.md) | [Italienisch](../it/README.md) | [Japanisch](../ja/README.md) | [Koreanisch](../ko/README.md) | [Malaiisch](../ms/README.md) | [Marathi](../mr/README.md) | [Nepalesisch](../ne/README.md) | [Norwegisch](../no/README.md) | [Persisch (Farsi)](../fa/README.md) | [Polnisch](../pl/README.md) | [Portugiesisch (Brasilien)](../br/README.md) | [Portugiesisch (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumänisch](../ro/README.md) | [Russisch](../ru/README.md) | [Serbisch (kyrillisch)](../sr/README.md) | [Slowakisch](../sk/README.md) | [Slowenisch](../sl/README.md) | [Spanisch](../es/README.md) | [Swahili](../sw/README.md) | [Schwedisch](../sv/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Thai](../th/README.md) | [Türkisch](../tr/README.md) | [Ukrainisch](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamesisch](../vi/README.md)
 
 # 🚀 Model Context Protocol (MCP) Curriculum für Anfänger
 
@@ -46,15 +48,15 @@ Egal, ob Sie KI-Entwickler, Systemarchitekt oder Software-Ingenieur sind – die
 - 📘 [MCP-Dokumentation](https://modelcontextprotocol.io/) – Detaillierte Tutorials und Benutzerhandbücher  
 - 📜 [MCP-Spezifikation](https://modelcontextprotocol.io/docs/) – Protokollarchitektur und technische Referenzen  
 - 📜 [Originale MCP-Spezifikation](https://spec.modelcontextprotocol.io/) – Technische Referenzen der Vorgängerversion (könnte zusätzliche Details enthalten)  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-Source-SDKs, Tools und Code-Beispiele  
-- 🌐 [MCP-Community](https://github.com/orgs/modelcontextprotocol/discussions) – Treten Sie Diskussionen bei und tragen Sie zur Community bei  
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-Source-SDKs, Tools und Code-Beispiele
+- 🌐 [MCP-Community](https://github.com/orgs/modelcontextprotocol/discussions) – Treten Sie Diskussionen bei und tragen Sie zur Community bei
 
 ## 🧭 Überblick über das MCP-Curriculum
 
 ### 📚 Vollständige Curriculum-Struktur
 
 | Modul | Thema | Beschreibung | Link |
-|-------|-------|--------------|------|
+|--------|-------|-------------|------|
 | **Modul 1-3: Grundlagen** | | | |
 | 00 | Einführung in MCP | Überblick über das Model Context Protocol und seine Bedeutung in KI-Pipelines | [Mehr erfahren](./00-Introduction/README.md) |
 | 01 | Kernkonzepte erklärt | Detaillierte Erkundung der Kernkonzepte von MCP | [Mehr erfahren](./01-CoreConcepts/README.md) |
@@ -68,7 +70,7 @@ Egal, ob Sie KI-Entwickler, Systemarchitekt oder Software-Ingenieur sind – die
 | 3.5 | stdio-Server | Erstellen von Servern mit stdio-Transport | [Anleitung](./03-GettingStarted/05-stdio-server/README.md) |
 | 3.6 | HTTP-Streaming | Implementierung von HTTP-Streaming in MCP | [Anleitung](./03-GettingStarted/06-http-streaming/README.md) |
 | 3.7 | AI Toolkit | Nutzung des AI Toolkits mit MCP | [Anleitung](./03-GettingStarted/07-aitk/README.md) |
-| 3.8 | Tests | Testen Ihrer MCP-Server-Implementierung | [Anleitung](./03-GettingStarted/08-testing/README.md) |
+| 3.8 | Testen | Testen Ihrer MCP-Server-Implementierung | [Anleitung](./03-GettingStarted/08-testing/README.md) |
 | 3.9 | Bereitstellung | Bereitstellung von MCP-Servern in der Produktion | [Anleitung](./03-GettingStarted/09-deployment/README.md) |
 | **Modul 4-5: Praktisch & Fortgeschritten** | | | |
 | 04 | Praktische Implementierung | SDKs, Debugging, Tests, wiederverwendbare Prompt-Vorlagen | [Mehr erfahren](./04-PracticalImplementation/README.md) |
@@ -82,12 +84,12 @@ Egal, ob Sie KI-Entwickler, Systemarchitekt oder Software-Ingenieur sind – die
 | 5.7 | Skalierung | Skalierung von MCP-Implementierungen | [Anleitung](./05-AdvancedTopics/mcp-scaling/README.md) |
 | 5.8 | Sicherheit | Fortgeschrittene Sicherheitsüberlegungen | [Anleitung](./05-AdvancedTopics/mcp-security/README.md) |
 | 5.9 | Websuche | Implementierung von Websuchfunktionen | [Anleitung](./05-AdvancedTopics/web-search-mcp/README.md) |
-| 5.10 | Echtzeit-Streaming | Aufbau von Echtzeit-Streaming-Funktionen | [Anleitung](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
+| 5.10 | Echtzeit-Streaming | Aufbau von Echtzeit-Streaming-Funktionalitäten | [Anleitung](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
 | 5.11 | Echtzeitsuche | Implementierung von Echtzeitsuche | [Anleitung](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
 | 5.12 | Entra ID-Authentifizierung | Authentifizierung mit Microsoft Entra ID | [Anleitung](./05-AdvancedTopics/mcp-security-entra/README.md) |
 | 5.13 | Foundry-Integration | Integration mit Azure AI Foundry | [Anleitung](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
 | 5.14 | Kontext-Engineering | Techniken für effektives Kontext-Engineering | [Anleitung](./05-AdvancedTopics/mcp-contextengineering/README.md) |
-| 5.15 | MCP-Custom-Transport | Implementierung von benutzerdefinierten Transporten | [Anleitung](./05-AdvancedTopics/mcp-transport/README.md) |
+| 5.15 | MCP Custom Transport | Implementierung von benutzerdefinierten Transporten | [Anleitung](./05-AdvancedTopics/mcp-transport/README.md) |
 | **Modul 6-10: Community & Best Practices** | | | |
 | 06 | Beiträge der Community | Wie Sie zum MCP-Ökosystem beitragen können | [Anleitung](./06-CommunityContributions/README.md) |
 | 07 | Erkenntnisse aus der frühen Einführung | Geschichten aus der realen Implementierung | [Anleitung](./07-LessonsFromEarlyAdoption/README.md) |
@@ -98,16 +100,16 @@ Egal, ob Sie KI-Entwickler, Systemarchitekt oder Software-Ingenieur sind – die
 | 11 | MCP-Server-Datenbankintegration | Umfassender 13-Lab-Lernpfad für PostgreSQL-Integration | [Labs](./11-MCPServerHandsOnLabs/README.md) |
 | 11.1 | Einführung | Überblick über MCP mit Datenbankintegration und Anwendungsfall für Einzelhandelsanalysen | [Lab 00](./11-MCPServerHandsOnLabs/00-Introduction/README.md) |
 | 11.2 | Kernarchitektur | Verständnis der MCP-Server-Architektur, Datenbankebenen und Sicherheitsmuster | [Lab 01](./11-MCPServerHandsOnLabs/01-Architecture/README.md) |
-| 11.3 | Sicherheit & Multi-Tenancy | Zeilenbasierte Sicherheit, Authentifizierung und Multi-Tenant-Datenzugriff | [Lab 02](./11-MCPServerHandsOnLabs/02-Security/README.md) |
+| 11.3 | Sicherheit & Multi-Tenancy | Zeilenebene-Sicherheit, Authentifizierung und Multi-Tenant-Datenzugriff | [Lab 02](./11-MCPServerHandsOnLabs/02-Security/README.md) |
 | 11.4 | Umgebungseinrichtung | Einrichtung der Entwicklungsumgebung, Docker, Azure-Ressourcen | [Lab 03](./11-MCPServerHandsOnLabs/03-Setup/README.md) |
-| 11.5 | Datenbankdesign | PostgreSQL-Einrichtung, Entwurf des Einzelhandelsschemas und Beispieldaten | [Lab 04](./11-MCPServerHandsOnLabs/04-Database/README.md) |
+| 11.5 | Datenbankdesign | PostgreSQL-Einrichtung, Entwurf des Einzelhandel-Schemas und Beispieldaten | [Lab 04](./11-MCPServerHandsOnLabs/04-Database/README.md) |
 | 11.6 | MCP-Server-Implementierung | Aufbau des FastMCP-Servers mit Datenbankintegration | [Lab 05](./11-MCPServerHandsOnLabs/05-MCP-Server/README.md) |
-| 11.7 | Tool-Entwicklung | Erstellung von Datenbankabfragetools und Schema-Introspektion | [Lab 06](./11-MCPServerHandsOnLabs/06-Tools/README.md) |
-| 11.8 | Semantische Suche | Implementierung von Vektor-Einbettungen mit Azure OpenAI und pgvector | [Lab 07](./11-MCPServerHandsOnLabs/07-Semantic-Search/README.md) |
+| 11.7 | Tool-Entwicklung | Erstellung von Datenbankabfrage-Tools und Schema-Inspektion | [Lab 06](./11-MCPServerHandsOnLabs/06-Tools/README.md) |
+| 11.8 | Semantische Suche | Implementierung von Vektor-Embeddings mit Azure OpenAI und pgvector | [Lab 07](./11-MCPServerHandsOnLabs/07-Semantic-Search/README.md) |
 | 11.9 | Testen & Debugging | Teststrategien, Debugging-Tools und Validierungsansätze | [Lab 08](./11-MCPServerHandsOnLabs/08-Testing/README.md) |
 | 11.10 | VS Code-Integration | Konfiguration der VS Code MCP-Integration und Nutzung von AI-Chat | [Lab 09](./11-MCPServerHandsOnLabs/09-VS-Code/README.md) |
 | 11.11 | Bereitstellungsstrategien | Docker-Bereitstellung, Azure Container Apps und Skalierungsüberlegungen | [Lab 10](./11-MCPServerHandsOnLabs/10-Deployment/README.md) |
-| 11.12 | Überwachung | Application Insights, Logging und Leistungsüberwachung | [Lab 11](./11-MCPServerHandsOnLabs/11-Monitoring/README.md) |
+| 11.12 | Überwachung | Application Insights, Logging, Leistungsüberwachung | [Lab 11](./11-MCPServerHandsOnLabs/11-Monitoring/README.md) |
 | 11.13 | Best Practices | Leistungsoptimierung, Sicherheitsverstärkung und Tipps für die Produktion | [Lab 12](./11-MCPServerHandsOnLabs/12-Best-Practices/README.md) |
 
 ### 💻 Beispielprojekte
@@ -153,14 +155,14 @@ Dieses Repository enthält mehrere Ressourcen, die Ihnen helfen, effektiv zu ler
 Ein umfassender [Lernleitfaden](./study_guide.md) steht zur Verfügung, um Ihnen zu helfen, dieses Repository effektiv zu nutzen. Der Leitfaden enthält:
 
 - Eine visuelle Übersicht des Curriculums mit allen behandelten Themen
-- Detaillierte Aufschlüsselung jedes Abschnitts des Repositories
+- Detaillierte Aufschlüsselung jedes Abschnitts des Repositorys
 - Anleitung zur Nutzung der Beispielprojekte
 - Empfohlene Lernpfade für verschiedene Fähigkeitsstufen
 - Zusätzliche Ressourcen zur Ergänzung Ihrer Lernreise
 
 ### Änderungsprotokoll
 
-Wir führen ein detailliertes [Änderungsprotokoll](./changelog.md), das alle wesentlichen Updates der Curriculum-Materialien dokumentiert, einschließlich:
+Wir führen ein detailliertes [Änderungsprotokoll](./changelog.md), das alle wesentlichen Updates der Curriculum-Materialien nachverfolgt, einschließlich:
 
 - Neue Inhalte
 - Strukturelle Änderungen
@@ -174,18 +176,18 @@ Jede Lektion in diesem Leitfaden enthält:
 1. Klare Erklärungen der MCP-Konzepte  
 2. Live-Code-Beispiele in mehreren Sprachen  
 3. Übungen zum Aufbau echter MCP-Anwendungen  
-4. Zusätzliche Ressourcen für fortgeschrittene Lernende  
+4. Zusätzliche Ressourcen für fortgeschrittene Lernende
 
 ## Veranstaltungen 
 
 ### [MCP Dev Days Juli 2025](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 #### [➡️Auf Abruf ansehen - MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
-Bereiten Sie sich auf zwei Tage voller technischer Einblicke, Community-Verbindungen und praktischen Lernens bei den MCP Dev Days vor, einer virtuellen Veranstaltung, die dem Model Context Protocol (MCP) gewidmet ist – dem aufstrebenden Standard, der KI-Modelle und die Tools, die sie nutzen, verbindet.
+Bereiten Sie sich auf zwei Tage voller technischer Einblicke, Community-Verbindungen und praktischer Lernmöglichkeiten bei den MCP Dev Days vor, einer virtuellen Veranstaltung, die dem Model Context Protocol (MCP) gewidmet ist – dem aufstrebenden Standard, der KI-Modelle und die Tools, die sie nutzen, verbindet.
 Sie können die MCP Dev Days ansehen, indem Sie sich auf unserer Veranstaltungsseite registrieren: https://aka.ms/mcpdevdays. 
 
 #### [Tag 1: MCP Produktivität, DevTools & Community:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Dreht sich darum, Entwicklern zu helfen, MCP in ihren Entwicklungsworkflow zu integrieren, und die großartige MCP-Community zu feiern. Wir werden von Community-Mitgliedern und Partnern wie Arcade, Block, Okta und Neon begleitet, um zu sehen, wie sie mit Microsoft zusammenarbeiten, um ein offenes, erweiterbares MCP-Ökosystem zu gestalten.  
+Dreht sich darum, Entwicklern zu helfen, MCP in ihren Entwicklungsworkflow zu integrieren und die großartige MCP-Community zu feiern. Wir werden von Community-Mitgliedern und Partnern wie Arcade, Block, Okta und Neon begleitet, um zu sehen, wie sie mit Microsoft zusammenarbeiten, um ein offenes, erweiterbares MCP-Ökosystem zu gestalten. 
 Echte Demos mit VS Code, Visual Studio, GitHub Copilot und beliebten Community-Tools  
 Praktische, kontextgesteuerte Entwicklungsworkflows  
 Community-geführte Sitzungen und Einblicke  
@@ -213,15 +215,15 @@ Lernen Sie in intensiven Videositzungen, wie Sie MCP-Server erstellen, mit VS Co
 #### [➡️Auf Abruf ansehen MCP Bootcamp | Spanisch](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
 
 ### Lernen wir MCP mit C# - Tutorial-Serie
-Lernen Sie das Model Context Protocol (MCP) kennen, ein hochmodernes Framework, das entwickelt wurde, um Interaktionen zwischen KI-Modellen und Client-Anwendungen zu standardisieren. In dieser anfängerfreundlichen Sitzung führen wir Sie in MCP ein und zeigen Ihnen, wie Sie Ihren ersten MCP-Server erstellen.  
-#### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)  
-#### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)  
-#### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)  
-#### Python: [https://aka.ms/letslearnmcp-python](https://aka.ms/letslearnmcp-python)  
+Lernen Sie das Model Context Protocol (MCP) kennen, ein hochmodernes Framework, das entwickelt wurde, um Interaktionen zwischen KI-Modellen und Client-Anwendungen zu standardisieren. In dieser anfängerfreundlichen Sitzung führen wir Sie in MCP ein und zeigen Ihnen, wie Sie Ihren ersten MCP-Server erstellen.
+#### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
+#### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
+#### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
+#### Python: [https://aka.ms/letslearnmcp-python](https://aka.ms/letslearnmcp-python)
 
 ## 🌟 Community-Dank
 
-Vielen Dank an Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) für die Bereitstellung wichtiger Codebeispiele.  
+Vielen Dank an Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) für die Bereitstellung wichtiger Code-Beispiele. 
 
 ## 📜 Lizenzinformationen
 
@@ -252,8 +254,8 @@ Das Repository ist wie folgt organisiert:
 - **translated_images/**: Lokalisierte Versionen von Diagrammen und Illustrationen
 - **study_guide.md**: Umfassender Leitfaden zur Navigation im Repository
 - **changelog.md**: Aufzeichnung aller wesentlichen Änderungen an den Curriculum-Materialien
-- **mcp.json**: Konfigurationsdatei für die MCP-Spezifikation
-- **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Dokumente zur Projektführung
+- **mcp.json**: Konfigurationsdatei für MCP-Spezifikation
+- **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Dokumente zur Projektverwaltung
 
 ## 🎒 Weitere Kurse
 Unser Team produziert weitere Kurse! Schauen Sie sich an:
@@ -276,7 +278,17 @@ Unser Team produziert weitere Kurse! Schauen Sie sich an:
 - [Wählen Sie Ihr eigenes Copilot-Abenteuer](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 ## ™️ Hinweis zu Marken
 
-Dieses Projekt kann Marken oder Logos für Projekte, Produkte oder Dienstleistungen enthalten. Die autorisierte Verwendung von Microsoft-Marken oder -Logos unterliegt den [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) und muss diesen folgen. Die Verwendung von Microsoft-Marken oder -Logos in modifizierten Versionen dieses Projekts darf keine Verwirrung stiften oder eine Unterstützung durch Microsoft implizieren. Jegliche Verwendung von Marken oder Logos Dritter unterliegt den Richtlinien dieser Dritten.
+Dieses Projekt kann Marken oder Logos für Projekte, Produkte oder Dienstleistungen enthalten. Die autorisierte Nutzung von Microsoft-Marken oder -Logos unterliegt den [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) und muss diesen folgen. Die Verwendung von Microsoft-Marken oder -Logos in modifizierten Versionen dieses Projekts darf keine Verwirrung stiften oder eine Unterstützung durch Microsoft implizieren. Jegliche Nutzung von Marken oder Logos Dritter unterliegt den Richtlinien dieser Drittparteien.
+
+## Hilfe erhalten
+
+Falls Sie nicht weiterkommen oder Fragen zum Erstellen von KI-Anwendungen haben, treten Sie bei:
+
+[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+
+Falls Sie Produktfeedback geben möchten oder auf Fehler beim Erstellen stoßen, besuchen Sie:
+
+[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

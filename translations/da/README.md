@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c1775052e6f2ce4201e1c148d9e1b080",
-  "translation_date": "2025-09-30T17:47:08+00:00",
+  "original_hash": "14ff8da45161b7c294d7c0e60115c2b8",
+  "translation_date": "2025-10-03T07:36:31+00:00",
   "source_file": "README.md",
   "language_code": "da"
 }
@@ -21,17 +21,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
-Følg disse trin for at komme i gang med at bruge ressourcerne:
+Følg disse trin for at komme i gang med at bruge disse ressourcer:
 1. **Fork repositoryet**: Klik [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Klon repositoryet**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Deltag i Azure AI Foundry Discord og mød eksperter og andre udviklere**](https://discord.com/invite/ByRwuEEgH4)
 
 
-### 🌐 Understøttelse af flere sprog
+### 🌐 Flersproget support
 
-#### Understøttet via GitHub Action (Automatisk & Altid Opdateret)
+#### Understøttet via GitHub Action (Automatisk & Altid opdateret)
 
- [Arabisk](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarsk](../bg/README.md) | [Burmesisk (Myanmar)](../my/README.md) | [Kinesisk (Forenklet)](../zh/README.md) | [Kinesisk (Traditionelt, Hong Kong)](../hk/README.md) | [Kinesisk (Traditionelt, Macau)](../mo/README.md) | [Kinesisk (Traditionelt, Taiwan)](../tw/README.md) | [Kroatisk](../hr/README.md) | [Tjekkisk](../cs/README.md) | [Dansk](./README.md) | [Hollandsk](../nl/README.md) | [Finsk](../fi/README.md) | [Fransk](../fr/README.md) | [Tysk](../de/README.md) | [Græsk](../el/README.md) | [Hebraisk](../he/README.md) | [Hindi](../hi/README.md) | [Ungarsk](../hu/README.md) | [Indonesisk](../id/README.md) | [Italiensk](../it/README.md) | [Japansk](../ja/README.md) | [Koreansk](../ko/README.md) | [Malayisk](../ms/README.md) | [Marathi](../mr/README.md) | [Nepalesisk](../ne/README.md) | [Norsk](../no/README.md) | [Persisk (Farsi)](../fa/README.md) | [Polsk](../pl/README.md) | [Portugisisk (Brasilien)](../br/README.md) | [Portugisisk (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumænsk](../ro/README.md) | [Russisk](../ru/README.md) | [Serbisk (Kyrillisk)](../sr/README.md) | [Slovakisk](../sk/README.md) | [Slovensk](../sl/README.md) | [Spansk](../es/README.md) | [Swahili](../sw/README.md) | [Svensk](../sv/README.md) | [Tagalog (Filippinsk)](../tl/README.md) | [Thai](../th/README.md) | [Tyrkisk](../tr/README.md) | [Ukrainsk](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamesisk](../vi/README.md)
+ [Arabisk](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarsk](../bg/README.md) | [Burmesisk (Myanmar)](../my/README.md) | [Kinesisk (Forenklet)](../zh/README.md) | [Kinesisk (Traditionelt, Hong Kong)](../hk/README.md) | [Kinesisk (Traditionelt, Macau)](../mo/README.md) | [Kinesisk (Traditionelt, Taiwan)](../tw/README.md) | [Kroatisk](../hr/README.md) | [Tjekkisk](../cs/README.md) | [Dansk](./README.md) | [Hollandsk](../nl/README.md) | [Finsk](../fi/README.md) | [Fransk](../fr/README.md) | [Tysk](../de/README.md) | [Græsk](../el/README.md) | [Hebraisk](../he/README.md) | [Hindi](../hi/README.md) | [Ungarsk](../hu/README.md) | [Indonesisk](../id/README.md) | [Italiensk](../it/README.md) | [Japansk](../ja/README.md) | [Koreansk](../ko/README.md) | [Malaysisk](../ms/README.md) | [Marathi](../mr/README.md) | [Nepalesisk](../ne/README.md) | [Norsk](../no/README.md) | [Persisk (Farsi)](../fa/README.md) | [Polsk](../pl/README.md) | [Portugisisk (Brasilien)](../br/README.md) | [Portugisisk (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumænsk](../ro/README.md) | [Russisk](../ru/README.md) | [Serbisk (Kyrillisk)](../sr/README.md) | [Slovakisk](../sk/README.md) | [Slovensk](../sl/README.md) | [Spansk](../es/README.md) | [Swahili](../sw/README.md) | [Svensk](../sv/README.md) | [Tagalog (Filippinsk)](../tl/README.md) | [Thai](../th/README.md) | [Tyrkisk](../tr/README.md) | [Ukrainsk](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamesisk](../vi/README.md)
 
 # 🚀 Model Context Protocol (MCP) Curriculum for Begyndere
 
@@ -39,11 +39,11 @@ Følg disse trin for at komme i gang med at bruge ressourcerne:
 
 ## 🧠 Oversigt over Model Context Protocol Curriculum
 
-**Model Context Protocol (MCP)** er en banebrydende ramme designet til at standardisere interaktioner mellem AI-modeller og klientapplikationer. Denne open-source curriculum tilbyder en struktureret læringssti med praktiske kodeeksempler og virkelige anvendelsestilfælde på populære programmeringssprog som C#, Java, JavaScript, TypeScript og Python.
+**Model Context Protocol (MCP)** er en banebrydende ramme designet til at standardisere interaktioner mellem AI-modeller og klientapplikationer. Denne open-source curriculum tilbyder en struktureret læringssti med praktiske kodeeksempler og virkelige anvendelsesscenarier på populære programmeringssprog som C#, Java, JavaScript, TypeScript og Python.
 
 Uanset om du er AI-udvikler, systemarkitekt eller softwareingeniør, er denne guide din omfattende ressource til at mestre MCP's grundlæggende principper og implementeringsstrategier.
 
-## 🔗 Officielle MCP Ressourcer
+## 🔗 Officielle MCP-ressourcer
 
 - 📘 [MCP Dokumentation](https://modelcontextprotocol.io/) – Detaljerede vejledninger og brugermanualer  
 - 📜 [MCP Specifikation](https://modelcontextprotocol.io/docs/) – Protokolarkitektur og tekniske referencer  
@@ -90,7 +90,7 @@ Uanset om du er AI-udvikler, systemarkitekt eller softwareingeniør, er denne gu
 | 5.13 | Foundry Integration | Integrer med Azure AI Foundry | [Guide](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
 | 5.14 | Context Engineering | Teknikker til effektiv context engineering | [Guide](./05-AdvancedTopics/mcp-contextengineering/README.md) |
 | 5.15 | MCP Custom Transport | Custom Transport-implementeringer | [Guide](./05-AdvancedTopics/mcp-transport/README.md) |
-| **Modul 6-10: Fællesskab & Bedste Praksis** | | | |
+| **Modul 6-10: Fællesskab & Bedste praksis** | | | |
 | 06 | Fællesskabsbidrag | Hvordan man bidrager til MCP-økosystemet | [Guide](./06-CommunityContributions/README.md) |
 | 07 | Indsigter fra tidlig adoption | Virkelige implementeringshistorier | [Guide](./07-LessonsFromEarlyAdoption/README.md) |
 | 08 | Bedste praksis for MCP | Ydeevne, fejltolerance, modstandsdygtighed | [Guide](./08-BestPractices/README.md) |
@@ -102,9 +102,9 @@ Uanset om du er AI-udvikler, systemarkitekt eller softwareingeniør, er denne gu
 | 11.2 | Core Architecture | Forstå MCP-serverarkitektur, databaselag og sikkerhedsmønstre | [Lab 01](./11-MCPServerHandsOnLabs/01-Architecture/README.md) |
 | 11.3 | Sikkerhed & Multi-Tenancy | Rækkeniveau-sikkerhed, autentifikation og multi-tenant dataadgang | [Lab 02](./11-MCPServerHandsOnLabs/02-Security/README.md) |
 | 11.4 | Opsætning af Miljø | Opsætning af udviklingsmiljø, Docker, Azure-ressourcer | [Lab 03](./11-MCPServerHandsOnLabs/03-Setup/README.md) |
-| 11.5 | Database Design | PostgreSQL opsætning, design af detailhandels-skema og eksempledata | [Lab 04](./11-MCPServerHandsOnLabs/04-Database/README.md) |
+| 11.5 | Database Design | PostgreSQL opsætning, design af detailhandels-skema og eksempeldata | [Lab 04](./11-MCPServerHandsOnLabs/04-Database/README.md) |
 | 11.6 | MCP Server Implementering | Opbygning af FastMCP-server med databaseintegration | [Lab 05](./11-MCPServerHandsOnLabs/05-MCP-Server/README.md) |
-| 11.7 | Værktøjsudvikling | Oprettelse af databaseforespørgselsværktøjer og skema-introspektion | [Lab 06](./11-MCPServerHandsOnLabs/06-Tools/README.md) |
+| 11.7 | Værktøjsudvikling | Oprettelse af databaseforespørgselsværktøjer og skemaindsigt | [Lab 06](./11-MCPServerHandsOnLabs/06-Tools/README.md) |
 | 11.8 | Semantisk Søgning | Implementering af vektorindlejring med Azure OpenAI og pgvector | [Lab 07](./11-MCPServerHandsOnLabs/07-Semantic-Search/README.md) |
 | 11.9 | Test & Fejlfinding | Teststrategier, fejlfindingværktøjer og valideringsmetoder | [Lab 08](./11-MCPServerHandsOnLabs/08-Testing/README.md) |
 | 11.10 | VS Code Integration | Konfiguration af VS Code MCP integration og brug af AI Chat | [Lab 09](./11-MCPServerHandsOnLabs/09-VS-Code/README.md) |
@@ -141,18 +141,18 @@ For at få mest muligt ud af dette pensum bør du have:
 
 - Grundlæggende kendskab til programmering i mindst ét af følgende sprog: C#, Java, JavaScript, Python eller TypeScript
 - Forståelse af klient-server-modellen og API'er
-- Kendskab til REST og HTTP-koncepter
-- (Valgfrit) Baggrund i AI/ML-koncepter
+- Kendskab til REST og HTTP-konceptet
+- (Valgfrit) Baggrund i AI/ML-konceptet
 
 - Deltagelse i vores fællesskabsdiskussioner for support
 
 ## 📚 Studievejledning & Ressourcer
 
-Dette repository indeholder flere ressourcer, der hjælper dig med at navigere og lære effektivt:
+Dette repository indeholder flere ressourcer til at hjælpe dig med at navigere og lære effektivt:
 
 ### Studievejledning
 
-En omfattende [Studievejledning](./study_guide.md) er tilgængelig for at hjælpe dig med at navigere effektivt i dette repository. Vejledningen inkluderer:
+En omfattende [Studievejledning](./study_guide.md) er tilgængelig for at hjælpe dig med at navigere effektivt i dette repository. Guiden inkluderer:
 
 - Et visuelt pensumkort, der viser alle dækkede emner
 - Detaljeret opdeling af hver sektion i repositoryet
@@ -162,7 +162,7 @@ En omfattende [Studievejledning](./study_guide.md) er tilgængelig for at hjælp
 
 ### Ændringslog
 
-Vi opretholder en detaljeret [Ændringslog](./changelog.md), der sporer alle væsentlige opdateringer af pensummaterialerne, herunder:
+Vi opretholder en detaljeret [Ændringslog](./changelog.md), der sporer alle væsentlige opdateringer til pensummaterialerne, herunder:
 
 - Nye indholdsadditioner
 - Strukturelle ændringer
@@ -173,9 +173,9 @@ Vi opretholder en detaljeret [Ændringslog](./changelog.md), der sporer alle væ
 
 Hver lektion i denne vejledning inkluderer:
 
-1. Klare forklaringer af MCP-koncepter  
+1. Klare forklaringer af MCP-konceptet  
 2. Live kodeeksempler i flere sprog  
-3. Øvelser til at bygge rigtige MCP-applikationer  
+3. Øvelser til at opbygge rigtige MCP-applikationer  
 4. Ekstra ressourcer til avancerede elever
 
 ## Events 
@@ -187,7 +187,7 @@ Du kan se MCP Dev Days ved at registrere dig på vores begivenhedsside: https://
 
 #### [Dag 1: MCP Produktivitet, DevTools & Fællesskab:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Handler om at give udviklere mulighed for at bruge MCP i deres udviklerarbejdsgang og fejre det fantastiske MCP-fællesskab. Vi vil blive ledsaget af fællesskabsmedlemmer og partnere som Arcade, Block, Okta og Neon for at se, hvordan de samarbejder med Microsoft for at forme et åbent, udvideligt MCP-økosystem. 
+Handler om at give udviklere mulighed for at bruge MCP i deres udviklerarbejdsgang og fejre det fantastiske MCP-fællesskab. Vi vil blive ledsaget af fællesskabsmedlemmer og partnere som Arcade, Block, Okta og Neon for at se, hvordan de samarbejder med Microsoft om at forme et åbent, udvideligt MCP-økosystem. 
 Reelle demoer på tværs af VS Code, Visual Studio, GitHub Copilot og populære fællesskabsværktøjer
 Praktiske, kontekstbaserede udviklerarbejdsgange
 Fællesskabsledede sessioner og indsigter
@@ -208,7 +208,7 @@ Er for MCP-byggere. Vi vil gå dybt ind i implementeringsstrategier og bedste pr
 Hvis du er udvikler, værktøjsbygger eller AI-produktstrateg, er denne dag fyldt med de indsigter, du har brug for til at bygge skalerbare, sikre og fremtidssikrede MCP-løsninger.
 
 ### MCP Boot Camp August 2025
-Lær i intensive videosessioner, hvordan man opretter MCP-servere, integrerer med VS Code og professionelt udruller på Azure baseret på indhold fra MCP for Beginners pensum. Gå derfra med praktiske færdigheder i en teknologi, som store virksomheder allerede bruger.
+Lær i intensive videosessioner, hvordan du opretter MCP-servere, integrerer med VS Code og professionelt udruller på Azure baseret på indhold fra MCP for Beginners-pensum. Gå derfra med praktiske færdigheder i en teknologi, som store virksomheder allerede bruger.
 
 #### [➡️Se på efterspørgsel MCP Bootcamp | Engelsk](https://developer.microsoft.com/en-us/reactor/series/s-1568/)
 #### [➡️Se på efterspørgsel MCP Bootcamp | Brasil](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
@@ -227,7 +227,7 @@ Tak til Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in
 
 ## 📜 Licensinformation
 
-Dette indhold er licenseret under **MIT-licensen**. For vilkår og betingelser, se [LICENSE](../../LICENSE).
+Dette indhold er licenseret under **MIT License**. For vilkår og betingelser, se [LICENSE](../../LICENSE).
 
 ## 🤝 Retningslinjer for bidrag
 
@@ -243,7 +243,7 @@ Dette projekt har vedtaget [Microsoft Open Source Code of Conduct](https://opens
 For mere information, se [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) eller
 kontakt [opencode@microsoft.com](mailto:opencode@microsoft.com) med yderligere spørgsmål eller kommentarer.
 
-## 📂 Repository-struktur
+## 📂 Repository Struktur
 
 Repositoryet er organiseret som følger:
 
@@ -255,7 +255,7 @@ Repositoryet er organiseret som følger:
 - **study_guide.md**: Omfattende vejledning til navigation i repositoryet
 - **changelog.md**: Registrering af alle væsentlige ændringer i pensummaterialerne
 - **mcp.json**: Konfigurationsfil for MCP-specifikation
-- **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Dokumenter for projektstyring
+- **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Projektstyringsdokumenter
 
 ## 🎒 Andre kurser
 Vores team producerer andre kurser! Tjek:
@@ -280,7 +280,17 @@ Vores team producerer andre kurser! Tjek:
 
 Dette projekt kan indeholde varemærker eller logoer for projekter, produkter eller tjenester. Autoriseret brug af Microsofts varemærker eller logoer er underlagt og skal følge [Microsofts retningslinjer for varemærker og brand](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Brug af Microsofts varemærker eller logoer i modificerede versioner af dette projekt må ikke skabe forvirring eller antyde Microsoft-sponsorering. Enhver brug af tredjeparts varemærker eller logoer er underlagt disse tredjeparts politikker.
 
+## Få hjælp
+
+Hvis du sidder fast eller har spørgsmål om at bygge AI-apps, kan du deltage i:
+
+[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+
+Hvis du har produktfeedback eller oplever fejl under udviklingen, besøg:
+
+[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
+
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på at sikre nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal det bemærkes, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os ikke ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
