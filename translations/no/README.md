@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c1775052e6f2ce4201e1c148d9e1b080",
-  "translation_date": "2025-09-30T17:50:13+00:00",
+  "original_hash": "14ff8da45161b7c294d7c0e60115c2b8",
+  "translation_date": "2025-10-03T07:37:39+00:00",
   "source_file": "README.md",
   "language_code": "no"
 }
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 Følg disse stegene for å komme i gang med ressursene:
 1. **Fork repositoryen**: Klikk [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Klon repositoryen**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
-3. [**Bli med på Azure AI Foundry Discord og møt eksperter og andre utviklere**](https://discord.com/invite/ByRwuEEgH4)
+3. [**Bli med i Azure AI Foundry Discord og møt eksperter og andre utviklere**](https://discord.com/invite/ByRwuEEgH4)
 
 
 ### 🌐 Støtte for flere språk
@@ -37,7 +37,7 @@ Følg disse stegene for å komme i gang med ressursene:
 
 ## **Lær MCP med praktiske kodeeksempler i C#, Java, JavaScript, Rust, Python og TypeScript**
 
-## 🧠 Oversikt over Model Context Protocol Læremateriell
+## 🧠 Oversikt over MCP-læremateriell
 
 **Model Context Protocol (MCP)** er et banebrytende rammeverk som standardiserer interaksjoner mellom AI-modeller og klientapplikasjoner. Dette open-source læremateriellet tilbyr en strukturert læringsvei med praktiske kodeeksempler og virkelige brukstilfeller, på populære programmeringsspråk som C#, Java, JavaScript, TypeScript og Python.
 
@@ -45,15 +45,15 @@ Enten du er AI-utvikler, systemarkitekt eller programvareingeniør, er denne gui
 
 ## 🔗 Offisielle MCP-ressurser
 
-- 📘 [MCP Dokumentasjon](https://modelcontextprotocol.io/) – Detaljerte opplæringer og brukerveiledninger  
-- 📜 [MCP Spesifikasjon](https://modelcontextprotocol.io/docs/) – Protokollarkitektur og tekniske referanser  
-- 📜 [Original MCP Spesifikasjon](https://spec.modelcontextprotocol.io/) – Legacy tekniske referanser (kan inneholde ekstra detaljer)  
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Open-source SDK-er, verktøy og kodeeksempler
-- 🌐 [MCP Community](https://github.com/orgs/modelcontextprotocol/discussions) – Delta i diskusjoner og bidra til fellesskapet
+- 📘 [MCP-dokumentasjon](https://modelcontextprotocol.io/) – Detaljerte opplæringer og brukerveiledninger  
+- 📜 [MCP-spesifikasjon](https://modelcontextprotocol.io/docs/) – Protokollarkitektur og tekniske referanser  
+- 📜 [Original MCP-spesifikasjon](https://spec.modelcontextprotocol.io/) – Legacy tekniske referanser (kan inneholde ekstra detaljer)  
+- 🧑‍💻 [MCP GitHub-repository](https://github.com/modelcontextprotocol) – Open-source SDK-er, verktøy og kodeeksempler
+- 🌐 [MCP-fellesskap](https://github.com/orgs/modelcontextprotocol/discussions) – Delta i diskusjoner og bidra til fellesskapet
 
-## 🧭 MCP Læremateriell Oversikt
+## 🧭 Oversikt over MCP-læremateriell
 
-### 📚 Komplett Struktur for Læremateriell
+### 📚 Komplett struktur for læremateriell
 
 | Modul | Emne | Beskrivelse | Lenke |
 |--------|-------|-------------|------|
@@ -63,54 +63,54 @@ Enten du er AI-utvikler, systemarkitekt eller programvareingeniør, er denne gui
 | 02 | Sikkerhet i MCP | Sikkerhetstrusler og beste praksis | [Les mer](./02-Security/README.md) |
 | 03 | Komme i gang med MCP | Miljøoppsett, grunnleggende servere/klienter, integrasjon | [Les mer](./03-GettingStarted/README.md) |
 | **Modul 3: Bygg din første server og klient** | | | |
-| 3.1 | Første server | Lag din første MCP-server | [Guide](./03-GettingStarted/01-first-server/README.md) |
-| 3.2 | Første klient | Utvikle en grunnleggende MCP-klient | [Guide](./03-GettingStarted/02-client/README.md) |
-| 3.3 | Klient med LLM | Integrer store språkmodeller | [Guide](./03-GettingStarted/03-llm-client/README.md) |
-| 3.4 | VS Code-integrasjon | Bruk MCP-servere i VS Code | [Guide](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | stdio Server | Lag servere med stdio transport | [Guide](./03-GettingStarted/05-stdio-server/README.md) |
-| 3.6 | HTTP Streaming | Implementer HTTP streaming i MCP | [Guide](./03-GettingStarted/06-http-streaming/README.md) |
-| 3.7 | AI Toolkit | Bruk AI Toolkit med MCP | [Guide](./03-GettingStarted/07-aitk/README.md) |
-| 3.8 | Testing | Test din MCP-serverimplementasjon | [Guide](./03-GettingStarted/08-testing/README.md) |
-| 3.9 | Utrulling | Rull ut MCP-servere til produksjon | [Guide](./03-GettingStarted/09-deployment/README.md) |
-| **Modul 4-5: Praktisk og Avansert** | | | |
+| 3.1 | Første server | Lag din første MCP-server | [Veiledning](./03-GettingStarted/01-first-server/README.md) |
+| 3.2 | Første klient | Utvikle en grunnleggende MCP-klient | [Veiledning](./03-GettingStarted/02-client/README.md) |
+| 3.3 | Klient med LLM | Integrer store språkmodeller | [Veiledning](./03-GettingStarted/03-llm-client/README.md) |
+| 3.4 | VS Code-integrasjon | Bruk MCP-servere i VS Code | [Veiledning](./03-GettingStarted/04-vscode/README.md) |
+| 3.5 | stdio-server | Lag servere med stdio-transport | [Veiledning](./03-GettingStarted/05-stdio-server/README.md) |
+| 3.6 | HTTP-streaming | Implementer HTTP-streaming i MCP | [Veiledning](./03-GettingStarted/06-http-streaming/README.md) |
+| 3.7 | AI Toolkit | Bruk AI Toolkit med MCP | [Veiledning](./03-GettingStarted/07-aitk/README.md) |
+| 3.8 | Testing | Test din MCP-serverimplementering | [Veiledning](./03-GettingStarted/08-testing/README.md) |
+| 3.9 | Utrulling | Rull ut MCP-servere til produksjon | [Veiledning](./03-GettingStarted/09-deployment/README.md) |
+| **Modul 4-5: Praktisk og avansert** | | | |
 | 04 | Praktisk implementering | SDK-er, debugging, testing, gjenbrukbare prompt-maler | [Les mer](./04-PracticalImplementation/README.md) |
-| 05 | Avanserte emner i MCP | Multi-modal AI, skalering, bruk i bedrifter | [Les mer](./05-AdvancedTopics/README.md) |
-| 5.1 | Azure-integrasjon | MCP-integrasjon med Azure | [Guide](./05-AdvancedTopics/mcp-integration/README.md) |
-| 5.2 | Multi-modalitet | Arbeid med flere modaliteter | [Guide](./05-AdvancedTopics/mcp-multi-modality/README.md) |
-| 5.3 | OAuth2 Demo | Implementer OAuth2-autentisering | [Guide](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
-| 5.4 | Root Contexts | Forstå og implementer root contexts | [Guide](./05-AdvancedTopics/mcp-root-contexts/README.md) |
-| 5.5 | Routing | MCP-routingstrategier | [Guide](./05-AdvancedTopics/mcp-routing/README.md) |
-| 5.6 | Sampling | Sampling-teknikker i MCP | [Guide](./05-AdvancedTopics/mcp-sampling/README.md) |
-| 5.7 | Skalering | Skalere MCP-implementasjoner | [Guide](./05-AdvancedTopics/mcp-scaling/README.md) |
-| 5.8 | Sikkerhet | Avanserte sikkerhetsbetraktninger | [Guide](./05-AdvancedTopics/mcp-security/README.md) |
-| 5.9 | Websøk | Implementer websøk-funksjonalitet | [Guide](./05-AdvancedTopics/web-search-mcp/README.md) |
-| 5.10 | Sanntidsstreaming | Bygg sanntidsstreaming-funksjonalitet | [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
-| 5.11 | Sanntidssøk | Implementer sanntidssøk | [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
-| 5.12 | Entra ID Auth | Autentisering med Microsoft Entra ID | [Guide](./05-AdvancedTopics/mcp-security-entra/README.md) |
-| 5.13 | Foundry-integrasjon | Integrer med Azure AI Foundry | [Guide](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
-| 5.14 | Context Engineering | Teknikker for effektiv context engineering | [Guide](./05-AdvancedTopics/mcp-contextengineering/README.md) |
-| 5.15 | MCP Custom Transport | Tilpassede transportimplementasjoner | [Guide](./05-AdvancedTopics/mcp-transport/README.md) |
-| **Modul 6-10: Fellesskap og Beste Praksis** | | | |
-| 06 | Bidrag fra fellesskapet | Hvordan bidra til MCP-økosystemet | [Guide](./06-CommunityContributions/README.md) |
-| 07 | Innsikt fra tidlig adopsjon | Virkelige implementeringshistorier | [Guide](./07-LessonsFromEarlyAdoption/README.md) |
-| 08 | Beste praksis for MCP | Ytelse, feiltoleranse, robusthet | [Guide](./08-BestPractices/README.md) |
-| 09 | MCP Case Studies | Praktiske implementeringseksempler | [Guide](./09-CaseStudy/README.md) |
+| 05 | Avanserte emner i MCP | Multimodal AI, skalering, bruk i bedrifter | [Les mer](./05-AdvancedTopics/README.md) |
+| 5.1 | Azure-integrasjon | MCP-integrasjon med Azure | [Veiledning](./05-AdvancedTopics/mcp-integration/README.md) |
+| 5.2 | Multimodalitet | Arbeid med flere modaliteter | [Veiledning](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.3 | OAuth2-demo | Implementer OAuth2-autentisering | [Veiledning](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+| 5.4 | Rotkontekster | Forstå og implementer rotkontekster | [Veiledning](./05-AdvancedTopics/mcp-root-contexts/README.md) |
+| 5.5 | Ruting | MCP-rutingsstrategier | [Veiledning](./05-AdvancedTopics/mcp-routing/README.md) |
+| 5.6 | Sampling | Sampling-teknikker i MCP | [Veiledning](./05-AdvancedTopics/mcp-sampling/README.md) |
+| 5.7 | Skalering | Skalere MCP-implementeringer | [Veiledning](./05-AdvancedTopics/mcp-scaling/README.md) |
+| 5.8 | Sikkerhet | Avanserte sikkerhetsbetraktninger | [Veiledning](./05-AdvancedTopics/mcp-security/README.md) |
+| 5.9 | Websøk | Implementer websøk-funksjonalitet | [Veiledning](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 5.10 | Sanntidsstreaming | Bygg sanntidsstreaming-funksjonalitet | [Veiledning](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
+| 5.11 | Sanntidssøk | Implementer sanntidssøk | [Veiledning](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
+| 5.12 | Entra ID-autentisering | Autentisering med Microsoft Entra ID | [Veiledning](./05-AdvancedTopics/mcp-security-entra/README.md) |
+| 5.13 | Foundry-integrasjon | Integrer med Azure AI Foundry | [Veiledning](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
+| 5.14 | Kontekstingeniørkunst | Teknikker for effektiv kontekstingeniørkunst | [Veiledning](./05-AdvancedTopics/mcp-contextengineering/README.md) |
+| 5.15 | MCP Custom Transport | Tilpassede transportimplementeringer | [Veiledning](./05-AdvancedTopics/mcp-transport/README.md) |
+| **Modul 6-10: Fellesskap og beste praksis** | | | |
+| 06 | Bidrag fra fellesskapet | Hvordan bidra til MCP-økosystemet | [Veiledning](./06-CommunityContributions/README.md) |
+| 07 | Innsikt fra tidlig adopsjon | Virkelige implementeringshistorier | [Veiledning](./07-LessonsFromEarlyAdoption/README.md) |
+| 08 | Beste praksis for MCP | Ytelse, feiltoleranse, robusthet | [Veiledning](./08-BestPractices/README.md) |
+| 09 | MCP-case-studier | Praktiske implementeringseksempler | [Veiledning](./09-CaseStudy/README.md) |
 | 10 | Praktisk workshop | Bygg en MCP-server med AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
-| **Modul 11: MCP Server Praktisk Lab** | | | |
-| 11 | MCP Server Database-integrasjon | Omfattende 13-lab læringssti for PostgreSQL-integrasjon | [Labs](./11-MCPServerHandsOnLabs/README.md) |
+| **Modul 11: MCP-server Hands-on Lab** | | | |
+| 11 | MCP-server databaseintegrasjon | Omfattende 13-lab læringssti for PostgreSQL-integrasjon | [Labs](./11-MCPServerHandsOnLabs/README.md) |
 | 11.1 | Introduksjon | Oversikt over MCP med databaseintegrasjon og brukstilfelle for detaljhandelsanalyse | [Lab 00](./11-MCPServerHandsOnLabs/00-Introduction/README.md) |
 | 11.2 | Kjernearkitektur | Forstå MCP-serverarkitektur, databaselag og sikkerhetsmønstre | [Lab 01](./11-MCPServerHandsOnLabs/01-Architecture/README.md) |
-| 11.3 | Sikkerhet og Multi-Tenancy | Radnivå-sikkerhet, autentisering og multi-tenant datatilgang | [Lab 02](./11-MCPServerHandsOnLabs/02-Security/README.md) |
+| 11.3 | Sikkerhet og Multi-Tenancy | Radnivåsikkerhet, autentisering og multi-tenant datatilgang | [Lab 02](./11-MCPServerHandsOnLabs/02-Security/README.md) |
 | 11.4 | Miljøoppsett | Oppsett av utviklingsmiljø, Docker, Azure-ressurser | [Lab 03](./11-MCPServerHandsOnLabs/03-Setup/README.md) |
-| 11.5 | Database Design | PostgreSQL-oppsett, detaljhandelsskjema-design og eksempeldata | [Lab 04](./11-MCPServerHandsOnLabs/04-Database/README.md) |
+| 11.5 | Databasedesign | PostgreSQL-oppsett, detaljhandelsskjema og eksempeldata | [Lab 04](./11-MCPServerHandsOnLabs/04-Database/README.md) |
 | 11.6 | MCP Server Implementering | Bygging av FastMCP-server med databaseintegrasjon | [Lab 05](./11-MCPServerHandsOnLabs/05-MCP-Server/README.md) |
-| 11.7 | Verktøyutvikling | Oppretting av databaseforespørselsverktøy og skjema-introspeksjon | [Lab 06](./11-MCPServerHandsOnLabs/06-Tools/README.md) |
-| 11.8 | Semantisk Søking | Implementering av vektor-embedding med Azure OpenAI og pgvector | [Lab 07](./11-MCPServerHandsOnLabs/07-Semantic-Search/README.md) |
+| 11.7 | Verktøyutvikling | Oppretting av databaseforespørselsverktøy og skjemaintrospeksjon | [Lab 06](./11-MCPServerHandsOnLabs/06-Tools/README.md) |
+| 11.8 | Semantisk søk | Implementering av vektorembedding med Azure OpenAI og pgvector | [Lab 07](./11-MCPServerHandsOnLabs/07-Semantic-Search/README.md) |
 | 11.9 | Testing og Feilsøking | Teststrategier, feilsøkingsverktøy og valideringsmetoder | [Lab 08](./11-MCPServerHandsOnLabs/08-Testing/README.md) |
 | 11.10 | VS Code Integrasjon | Konfigurering av VS Code MCP-integrasjon og bruk av AI Chat | [Lab 09](./11-MCPServerHandsOnLabs/09-VS-Code/README.md) |
-| 11.11 | Utrullingsstrategier | Docker-utrulling, Azure Container Apps og skaleringshensyn | [Lab 10](./11-MCPServerHandsOnLabs/10-Deployment/README.md) |
-| 11.12 | Overvåking | Application Insights, logging, ytelsesovervåking | [Lab 11](./11-MCPServerHandsOnLabs/11-Monitoring/README.md) |
-| 11.13 | Beste Praksis | Ytelsesoptimalisering, sikkerhetsforbedringer og produksjonstips | [Lab 12](./11-MCPServerHandsOnLabs/12-Best-Practices/README.md) |
+| 11.11 | Utrullingsstrategier | Docker-utrulling, Azure Container Apps og skalering | [Lab 10](./11-MCPServerHandsOnLabs/10-Deployment/README.md) |
+| 11.12 | Overvåking | Application Insights, logging og ytelsesovervåking | [Lab 11](./11-MCPServerHandsOnLabs/11-Monitoring/README.md) |
+| 11.13 | Beste praksis | Ytelsesoptimalisering, sikkerhetsforbedringer og produksjonstips | [Lab 12](./11-MCPServerHandsOnLabs/12-Best-Practices/README.md) |
 
 ### 💻 Eksempelprosjekter
 
@@ -135,7 +135,7 @@ Enten du er AI-utvikler, systemarkitekt eller programvareingeniør, er denne gui
 | Python | Kompleks Implementering | [Se kode](../../04-PracticalImplementation/samples/python/READMEmd) |
 | TypeScript | Container Eksempel | [Se kode](./04-PracticalImplementation/samples/typescript/README.md) |
 
-## 🎯 Forutsetninger for å Lære MCP
+## 🎯 Forutsetninger for å lære MCP
 
 For å få mest mulig ut av dette kurset, bør du ha:
 
@@ -146,9 +146,9 @@ For å få mest mulig ut av dette kurset, bør du ha:
 
 - Delta i våre diskusjoner for støtte
 
-## 📚 Studieveiledning og Ressurser
+## 📚 Studieveiledning og ressurser
 
-Dette repositoriet inneholder flere ressurser for å hjelpe deg med å navigere og lære effektivt:
+Dette repositoriet inkluderer flere ressurser for å hjelpe deg med å navigere og lære effektivt:
 
 ### Studieveiledning
 
@@ -169,7 +169,7 @@ Vi opprettholder en detaljert [Endringslogg](./changelog.md) som sporer alle bet
 - Funksjonsforbedringer
 - Dokumentasjonsoppdateringer
 
-## 🛠️ Hvordan Bruke Dette Kurset Effektivt
+## 🛠️ Hvordan bruke dette kurset effektivt
 
 Hver leksjon i denne veiledningen inkluderer:
 
@@ -182,16 +182,16 @@ Hver leksjon i denne veiledningen inkluderer:
 
 ### [MCP Dev Days Juli 2025](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 #### [➡️Se på forespørsel - MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
-Gjør deg klar for to dager med dyp teknisk innsikt, fellesskapstilknytning og praktisk læring på MCP Dev Days, et virtuelt arrangement dedikert til Model Context Protocol (MCP) — den fremvoksende standarden som kobler AI-modeller og verktøyene de er avhengige av.
+Gjør deg klar for to dager med dyp teknisk innsikt, fellesskapstilknytning og praktisk læring på MCP Dev Days, et virtuelt arrangement dedikert til Model Context Protocol (MCP) — den nye standarden som kobler AI-modeller og verktøyene de er avhengige av.
 Du kan se MCP Dev Days ved å registrere deg på vår arrangementside: https://aka.ms/mcpdevdays. 
 
 #### [Dag 1: MCP Produktivitet, Utviklingsverktøy og Fellesskap:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Handler om å styrke utviklere til å bruke MCP i sin utviklerarbeidsflyt og feire det fantastiske MCP-fellesskapet. Vi vil bli med fellesskapsmedlemmer og partnere som Arcade, Block, Okta og Neon for å se hvordan de samarbeider med Microsoft for å forme et åpent, utvidbart MCP-økosystem. 
+Handler om å gi utviklere mulighet til å bruke MCP i sin utviklingsarbeidsflyt og feire det fantastiske MCP-fellesskapet. Vi vil bli med fellesskapsmedlemmer og partnere som Arcade, Block, Okta og Neon for å se hvordan de samarbeider med Microsoft for å forme et åpent, utvidbart MCP-økosystem. 
 Reelle demoer på tvers av VS Code, Visual Studio, GitHub Copilot og populære fellesskapsverktøy
-Praktiske, kontekstbaserte utviklerarbeidsflyter
+Praktiske, kontekstbaserte utviklingsarbeidsflyter
 Fellesskapsledede sesjoner og innsikt
-Enten du nettopp har begynt med MCP eller allerede bygger med det, vil Dag 1 sette scenen med inspirasjon og handlingsrettede takeaways.
+Enten du nettopp har begynt med MCP eller allerede bygger med det, vil Dag 1 sette scenen med inspirasjon og handlingsrettede tips.
 
 #### [Dag 2: Bygg MCP Servere med Selvtillit](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
@@ -214,14 +214,14 @@ Lær gjennom intensive videosesjoner hvordan du lager MCP-servere, integrerer me
 #### [➡️Se på forespørsel MCP Bootcamp | Brasil](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
 #### [➡️Se på forespørsel MCP Bootcamp | Spansk](https://developer.microsoft.com/en-us/reactor/series/S-1567/)
 
-### La oss Lære MCP med C# - Tutorialserie
-La oss lære om Model Context Protocol (MCP), et banebrytende rammeverk designet for å standardisere interaksjoner mellom AI-modeller og klientapplikasjoner. Gjennom denne nybegynnervennlige sesjonen vil vi introdusere deg til MCP og veilede deg gjennom å lage din første MCP-server.
+### La oss lære MCP med C# - Tutorial-serie
+La oss lære om Model Context Protocol (MCP), et banebrytende rammeverk designet for å standardisere interaksjoner mellom AI-modeller og klientapplikasjoner. Gjennom denne nybegynnervennlige sesjonen vil vi introdusere deg for MCP og veilede deg gjennom å lage din første MCP-server.
 #### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
 #### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
 #### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
 #### Python: [https://aka.ms/letslearnmcp-python](https://aka.ms/letslearnmcp-python)
 
-## 🌟 Takk til Fellesskapet
+## 🌟 Takk til fellesskapet
 
 Takk til Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) for å bidra med viktige kodeeksempler. 
 
@@ -229,7 +229,7 @@ Takk til Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/i
 
 Dette innholdet er lisensiert under **MIT-lisensen**. For vilkår og betingelser, se [LICENSE](../../LICENSE).
 
-## 🤝 Retningslinjer for Bidrag
+## 🤝 Retningslinjer for bidrag
 
 Dette prosjektet ønsker bidrag og forslag velkommen. De fleste bidrag krever at du godtar en
 Contributor License Agreement (CLA) som erklærer at du har rett til, og faktisk gir oss,
@@ -243,7 +243,7 @@ Dette prosjektet har vedtatt [Microsoft Open Source Code of Conduct](https://ope
 For mer informasjon, se [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) eller
 kontakt [opencode@microsoft.com](mailto:opencode@microsoft.com) med eventuelle spørsmål eller kommentarer.
 
-## 📂 Repositoriets Struktur
+## 📂 Repositoriets struktur
 
 Repositoriet er organisert som følger:
 
@@ -257,28 +257,38 @@ Repositoriet er organisert som følger:
 - **mcp.json**: Konfigurasjonsfil for MCP-spesifikasjon
 - **CODE_OF_CONDUCT.md, LICENSE, SECURITY.md, SUPPORT.md**: Dokumenter for prosjektstyring
 
-## 🎒 Andre Kurs
+## 🎒 Andre kurs
 Vårt team produserer andre kurs! Sjekk ut:
 
-- [**NY** Edge AI For Nybegynnere](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI Agenter For Nybegynnere](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generativ AI for Nybegynnere med .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-- [Generativ AI for Nybegynnere med JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
-- [Generativ AI for Nybegynnere](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generativ AI for Nybegynnere med Java](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
-- [ML for Nybegynnere](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-- [Data Science for Nybegynnere](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI for Nybegynnere](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Cybersikkerhet for Nybegynnere](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
-- [Webutvikling for Nybegynnere](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [IoT for Nybegynnere](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [XR Utvikling for Nybegynnere](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Mestre GitHub Copilot for AI Samarbeidsprogrammering](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [Mestre GitHub Copilot for C#/.NET Utviklere](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
-- [Velg Din Egen Copilot Eventyr](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
+- [**NY** Edge AI For Beginners](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generative AI for Beginners using Java](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+- [ML for Beginners](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+- [Data Science for Beginners](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI for Beginners](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+- [Cybersecurity for Beginners](https://github.com/microsoft/Security-101?WT.mc_id=academic-96948-sayoung)
+- [Web Dev for Beginners](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+- [IoT for Beginners](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [XR Development for Beginners](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot for AI Paired Programming](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [Mastering GitHub Copilot for C#/.NET Developers](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [Choose Your Own Copilot Adventure](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 ## ™️ Varemerkevarsel
 
-Dette prosjektet kan inneholde varemerker eller logoer for prosjekter, produkter eller tjenester. Autorisert bruk av Microsofts varemerker eller logoer er underlagt og må følge [Microsofts retningslinjer for varemerker og merkevare](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Bruk av Microsofts varemerker eller logoer i modifiserte versjoner av dette prosjektet må ikke skape forvirring eller antyde sponsing fra Microsoft. Enhver bruk av tredjeparts varemerker eller logoer er underlagt disse tredjepartenes retningslinjer.
+Dette prosjektet kan inneholde varemerker eller logoer for prosjekter, produkter eller tjenester. Autorisert bruk av Microsofts varemerker eller logoer er underlagt og må følge [Microsofts retningslinjer for varemerker og merkevare](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Bruk av Microsofts varemerker eller logoer i modifiserte versjoner av dette prosjektet må ikke skape forvirring eller antyde sponsing fra Microsoft. All bruk av tredjeparts varemerker eller logoer er underlagt disse tredjepartenes retningslinjer.
+
+## Få hjelp
+
+Hvis du står fast eller har spørsmål om å bygge AI-apper, bli med:
+
+[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+
+Hvis du har produktfeedback eller opplever feil under bygging, besøk:
+
+[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 

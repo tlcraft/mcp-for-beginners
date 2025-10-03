@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c1775052e6f2ce4201e1c148d9e1b080",
-  "translation_date": "2025-09-30T19:20:24+00:00",
+  "original_hash": "14ff8da45161b7c294d7c0e60115c2b8",
+  "translation_date": "2025-10-03T07:44:21+00:00",
   "source_file": "README.md",
   "language_code": "id"
 }
@@ -22,8 +22,8 @@ CO_OP_TRANSLATOR_METADATA:
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 
 Ikuti langkah-langkah berikut untuk mulai menggunakan sumber daya ini:
-1. **Fork Repositori**: Klik [![Fork GitHub](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
-2. **Clone Repositori**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
+1. **Fork Repository**: Klik [![Fork GitHub](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
+2. **Clone Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. [**Bergabunglah dengan Azure AI Foundry Discord dan temui para ahli serta pengembang lainnya**](https://discord.com/invite/ByRwuEEgH4)
 
 
@@ -39,7 +39,7 @@ Ikuti langkah-langkah berikut untuk mulai menggunakan sumber daya ini:
 
 ## 🧠 Gambaran Umum Kurikulum Model Context Protocol
 
-**Model Context Protocol (MCP)** adalah kerangka kerja mutakhir yang dirancang untuk menstandarisasi interaksi antara model AI dan aplikasi klien. Kurikulum sumber terbuka ini menawarkan jalur pembelajaran yang terstruktur, lengkap dengan contoh kode praktis dan kasus penggunaan dunia nyata, dalam berbagai bahasa pemrograman populer seperti C#, Java, JavaScript, TypeScript, dan Python.
+**Model Context Protocol (MCP)** adalah kerangka kerja mutakhir yang dirancang untuk menstandarkan interaksi antara model AI dan aplikasi klien. Kurikulum sumber terbuka ini menawarkan jalur pembelajaran terstruktur, lengkap dengan contoh kode praktis dan kasus penggunaan dunia nyata, dalam berbagai bahasa pemrograman populer seperti C#, Java, JavaScript, TypeScript, dan Python.
 
 Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, panduan ini adalah sumber daya komprehensif untuk menguasai dasar-dasar MCP dan strategi implementasinya.
 
@@ -48,7 +48,7 @@ Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, 
 - 📘 [Dokumentasi MCP](https://modelcontextprotocol.io/) – Tutorial dan panduan pengguna yang mendetail  
 - 📜 [Spesifikasi MCP](https://modelcontextprotocol.io/docs/) – Arsitektur protokol dan referensi teknis  
 - 📜 [Spesifikasi MCP Asli](https://spec.modelcontextprotocol.io/) – Referensi teknis lama (mungkin berisi detail tambahan)  
-- 🧑‍💻 [Repositori GitHub MCP](https://github.com/modelcontextprotocol) – SDK sumber terbuka, alat, dan contoh kode
+- 🧑‍💻 [Repository GitHub MCP](https://github.com/modelcontextprotocol) – SDK sumber terbuka, alat, dan contoh kode
 - 🌐 [Komunitas MCP](https://github.com/orgs/modelcontextprotocol/discussions) – Bergabunglah dalam diskusi dan berkontribusi pada komunitas
 
 ## 🧭 Gambaran Umum Kurikulum MCP
@@ -58,7 +58,7 @@ Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, 
 | Modul | Topik | Deskripsi | Tautan |
 |--------|-------|-------------|------|
 | **Modul 1-3: Dasar-Dasar** | | | |
-| 00 | Pengantar MCP | Gambaran umum Model Context Protocol dan pentingnya dalam alur kerja AI | [Baca lebih lanjut](./00-Introduction/README.md) |
+| 00 | Pengantar MCP | Gambaran umum Model Context Protocol dan pentingnya dalam pipeline AI | [Baca lebih lanjut](./00-Introduction/README.md) |
 | 01 | Penjelasan Konsep Inti | Eksplorasi mendalam tentang konsep inti MCP | [Baca lebih lanjut](./01-CoreConcepts/README.md) |
 | 02 | Keamanan dalam MCP | Ancaman keamanan dan praktik terbaik | [Baca lebih lanjut](./02-Security/README.md) |
 | 03 | Memulai dengan MCP | Pengaturan lingkungan, server/klien dasar, integrasi | [Baca lebih lanjut](./03-GettingStarted/README.md) |
@@ -74,7 +74,7 @@ Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, 
 | 3.9 | Penerapan | Terapkan server MCP ke produksi | [Panduan](./03-GettingStarted/09-deployment/README.md) |
 | **Modul 4-5: Praktis & Lanjutan** | | | |
 | 04 | Implementasi Praktis | SDK, debugging, pengujian, template prompt yang dapat digunakan kembali | [Baca lebih lanjut](./04-PracticalImplementation/README.md) |
-| 05 | Topik Lanjutan dalam MCP | AI multi-modal, skala, penggunaan perusahaan | [Baca lebih lanjut](./05-AdvancedTopics/README.md) |
+| 05 | Topik Lanjutan dalam MCP | AI multi-modal, skalabilitas, penggunaan perusahaan | [Baca lebih lanjut](./05-AdvancedTopics/README.md) |
 | 5.1 | Integrasi Azure | Integrasi MCP dengan Azure | [Panduan](./05-AdvancedTopics/mcp-integration/README.md) |
 | 5.2 | Multi-modalitas | Bekerja dengan berbagai modalitas | [Panduan](./05-AdvancedTopics/mcp-multi-modality/README.md) |
 | 5.3 | Demo OAuth2 | Implementasikan autentikasi OAuth2 | [Panduan](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
@@ -93,7 +93,7 @@ Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, 
 | **Modul 6-10: Komunitas & Praktik Terbaik** | | | |
 | 06 | Kontribusi Komunitas | Cara berkontribusi pada ekosistem MCP | [Panduan](./06-CommunityContributions/README.md) |
 | 07 | Wawasan dari Adopsi Awal | Kisah implementasi dunia nyata | [Panduan](./07-LessonsFromEarlyAdoption/README.md) |
-| 08 | Praktik Terbaik untuk MCP | Performa, toleransi kesalahan, ketahanan | [Panduan](./08-BestPractices/README.md) |
+| 08 | Praktik Terbaik untuk MCP | Kinerja, toleransi kesalahan, ketahanan | [Panduan](./08-BestPractices/README.md) |
 | 09 | Studi Kasus MCP | Contoh implementasi praktis | [Panduan](./09-CaseStudy/README.md) |
 | 10 | Lokakarya Praktis | Membangun Server MCP dengan Toolkit AI | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 | **Modul 11: Lab Praktis Server MCP** | | | |
@@ -108,7 +108,7 @@ Baik Anda seorang pengembang AI, arsitek sistem, atau insinyur perangkat lunak, 
 | 11.8 | Pencarian Semantik | Mengimplementasikan embedding vektor dengan Azure OpenAI dan pgvector | [Lab 07](./11-MCPServerHandsOnLabs/07-Semantic-Search/README.md) |
 | 11.9 | Pengujian & Debugging | Strategi pengujian, alat debugging, dan pendekatan validasi | [Lab 08](./11-MCPServerHandsOnLabs/08-Testing/README.md) |
 | 11.10 | Integrasi VS Code | Mengonfigurasi integrasi MCP di VS Code dan penggunaan AI Chat | [Lab 09](./11-MCPServerHandsOnLabs/09-VS-Code/README.md) |
-| 11.11 | Strategi Deployment | Deployment Docker, Azure Container Apps, dan pertimbangan skalabilitas | [Lab 10](./11-MCPServerHandsOnLabs/10-Deployment/README.md) |
+| 11.11 | Strategi Penerapan | Penerapan Docker, Azure Container Apps, dan pertimbangan skalabilitas | [Lab 10](./11-MCPServerHandsOnLabs/10-Deployment/README.md) |
 | 11.12 | Pemantauan | Application Insights, logging, pemantauan kinerja | [Lab 11](./11-MCPServerHandsOnLabs/11-Monitoring/README.md) |
 | 11.13 | Praktik Terbaik | Optimalisasi kinerja, penguatan keamanan, dan tips produksi | [Lab 12](./11-MCPServerHandsOnLabs/12-Best-Practices/README.md) |
 
@@ -144,7 +144,7 @@ Untuk mendapatkan manfaat maksimal dari kurikulum ini, Anda sebaiknya memiliki:
 - Familiaritas dengan konsep REST dan HTTP
 - (Opsional) Latar belakang dalam konsep AI/ML
 
-- Bergabunglah dengan diskusi komunitas kami untuk mendapatkan dukungan
+- Bergabunglah dalam diskusi komunitas kami untuk mendapatkan dukungan
 
 ## 📚 Panduan Belajar & Sumber Daya
 
@@ -182,12 +182,12 @@ Setiap pelajaran dalam panduan ini mencakup:
 
 ### [MCP Dev Days Juli 2025](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 #### [➡️Tonton Sesuai Permintaan - MCP Dev Days](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
-Bersiaplah untuk dua hari wawasan teknis mendalam, koneksi komunitas, dan pembelajaran langsung di MCP Dev Days, acara virtual yang didedikasikan untuk Model Context Protocol (MCP) — standar baru yang menjembatani model AI dan alat yang mereka gunakan.
+Bersiaplah untuk dua hari wawasan teknis mendalam, koneksi komunitas, dan pembelajaran langsung di MCP Dev Days, acara virtual yang didedikasikan untuk Model Context Protocol (MCP) — standar yang sedang berkembang yang menjembatani model AI dan alat yang mereka gunakan.
 Anda dapat menonton MCP Dev Days dengan mendaftar di halaman acara kami: https://aka.ms/mcpdevdays. 
 
 #### [Hari 1: Produktivitas MCP, DevTools, & Komunitas:](https://developer.microsoft.com/en-us/reactor/series/S-1563/)
 
-Berfokus pada pemberdayaan pengembang untuk menggunakan MCP dalam alur kerja pengembang mereka dan merayakan komunitas MCP yang luar biasa. Kami akan bergabung dengan anggota komunitas dan mitra seperti Arcade, Block, Okta, dan Neon untuk melihat bagaimana mereka berkolaborasi dengan Microsoft untuk membentuk ekosistem MCP yang terbuka dan dapat diperluas. Demo dunia nyata di VS Code, Visual Studio, GitHub Copilot, dan alat komunitas populer
+Berfokus pada memberdayakan pengembang untuk menggunakan MCP dalam alur kerja pengembang mereka dan merayakan komunitas MCP yang luar biasa. Kami akan bergabung dengan anggota komunitas dan mitra seperti Arcade, Block, Okta, dan Neon untuk melihat bagaimana mereka berkolaborasi dengan Microsoft untuk membentuk ekosistem MCP yang terbuka dan dapat diperluas. Demo dunia nyata di VS Code, Visual Studio, GitHub Copilot, dan alat komunitas populer
 Alur kerja pengembang yang praktis dan berbasis konteks
 Sesi dan wawasan yang dipimpin komunitas
 Apakah Anda baru memulai dengan MCP atau sudah membangun dengannya, Hari 1 akan memberikan inspirasi dan langkah-langkah yang dapat diterapkan.
@@ -207,7 +207,7 @@ Berfokus pada pembangun MCP. Kami akan mendalami strategi implementasi dan prakt
 Jika Anda seorang pengembang, pembuat alat, atau ahli strategi produk AI, hari ini penuh dengan wawasan yang Anda butuhkan untuk membangun solusi MCP yang skalabel, aman, dan siap masa depan.
 
 ### MCP Boot Camp Agustus 2025
-Pelajari dalam sesi video intensif cara membuat server MCP, mengintegrasikan dengan VS Code, dan melakukan deployment secara profesional di Azure berdasarkan konten dari kurikulum MCP untuk Pemula. Dapatkan keterampilan praktis dalam teknologi yang sudah digunakan oleh perusahaan besar.
+Pelajari dalam sesi video intensif cara membuat server MCP, mengintegrasikan dengan VS Code, dan menerapkan secara profesional di Azure berdasarkan konten dari kurikulum MCP untuk Pemula. Dapatkan keterampilan praktis dalam teknologi yang sudah digunakan oleh perusahaan besar.
 
 #### [➡️Tonton Sesuai Permintaan MCP Bootcamp | English](https://developer.microsoft.com/en-us/reactor/series/s-1568/)
 #### [➡️Tonton Sesuai Permintaan MCP Bootcamp | Brasil](https://developer.microsoft.com/en-us/reactor/series/S-1566/)
@@ -222,7 +222,7 @@ Mari belajar tentang Model Context Protocol (MCP), kerangka kerja mutakhir yang 
 
 ## 🌟 Terima Kasih Komunitas
 
-Terima kasih kepada Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) atas kontribusi contoh kode pentingnya. 
+Terima kasih kepada Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) atas kontribusi contoh kode penting. 
 
 ## 📜 Informasi Lisensi
 
@@ -244,10 +244,10 @@ hubungi [opencode@microsoft.com](mailto:opencode@microsoft.com) untuk pertanyaan
 
 ## 📂 Struktur Repositori
 
-Repositori ini diorganisasi sebagai berikut:
+Repositori ini diorganisasikan sebagai berikut:
 
-- **Kurikulum Inti (00-11)**: Konten utama yang diorganisasi dalam sebelas modul berurutan, termasuk lab integrasi basis data yang komprehensif
-- **11-MCPServerHandsOnLabs/**: Jalur pembelajaran 13-lab lengkap untuk membangun server MCP yang siap produksi dengan integrasi PostgreSQL
+- **Kurikulum Inti (00-11)**: Konten utama yang diorganisasikan dalam sebelas modul berurutan, termasuk lab integrasi basis data yang komprehensif
+- **11-MCPServerHandsOnLabs/**: Jalur pembelajaran 13-lab lengkap untuk membangun server MCP siap produksi dengan integrasi PostgreSQL
 - **images/**: Diagram dan ilustrasi yang digunakan di seluruh kurikulum
 - **translations/**: Dukungan multi-bahasa dengan terjemahan otomatis
 - **translated_images/**: Versi diagram dan ilustrasi yang telah dilokalisasi
@@ -259,8 +259,8 @@ Repositori ini diorganisasi sebagai berikut:
 ## 🎒 Kursus Lainnya
 Tim kami juga memproduksi kursus lainnya! Lihat:
 
-- [**BARU** Edge AI For Beginners](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI Agents For Beginners](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [**BARU** Edge AI Untuk Pemula](https://github.com/microsoft/edgeai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI Agen Untuk Pemula](https://github.com/microsoft/ai-agents-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI untuk Pemula menggunakan .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 - [Generative AI untuk Pemula menggunakan JavaScript](https://github.com/microsoft/generative-ai-with-javascript?WT.mc_id=academic-105485-koreyst)
 - [Generative AI untuk Pemula](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
@@ -277,9 +277,22 @@ Tim kami juga memproduksi kursus lainnya! Lihat:
 - [Pilih Petualangan Copilot Anda Sendiri](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 ## ™️ Pemberitahuan Merek Dagang
 
-Proyek ini mungkin mengandung merek dagang atau logo untuk proyek, produk, atau layanan. Penggunaan merek dagang atau logo Microsoft yang diizinkan harus sesuai dan mengikuti [Panduan Merek Dagang & Merek Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Penggunaan merek dagang atau logo Microsoft dalam versi modifikasi dari proyek ini tidak boleh menyebabkan kebingungan atau menyiratkan dukungan dari Microsoft. Penggunaan merek dagang atau logo pihak ketiga tunduk pada kebijakan pihak ketiga tersebut.
+Proyek ini mungkin mengandung merek dagang atau logo untuk proyek, produk, atau layanan. Penggunaan yang diizinkan atas merek dagang atau logo Microsoft harus sesuai dan mengikuti
+[Panduan Merek Dagang & Brand Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
+Penggunaan merek dagang atau logo Microsoft dalam versi modifikasi dari proyek ini tidak boleh menyebabkan kebingungan atau menyiratkan dukungan dari Microsoft.
+Setiap penggunaan merek dagang atau logo pihak ketiga harus sesuai dengan kebijakan pihak ketiga tersebut.
+
+## Mendapatkan Bantuan
+
+Jika Anda mengalami kesulitan atau memiliki pertanyaan tentang membangun aplikasi AI, bergabunglah di:
+
+[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+
+Jika Anda memiliki masukan produk atau menemukan kesalahan saat membangun, kunjungi:
+
+[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
